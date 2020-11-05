@@ -45,11 +45,11 @@ To access the EnterpriseOne HTML server:
 
     **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
 
-    ![](./images/1.3.png " ")
+![](./images/1.3.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
 
-    ![](./images/1.4.png " ")
+![](./images/1.4.png " ")
 
 5)	In the JD Edwards EnterpriseOne HTML Server sign-on page, sign in using these credentials:
 
@@ -57,11 +57,11 @@ To access the EnterpriseOne HTML server:
     *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1)
 
 
-    ![](./images/1.5.png " ")
+![](./images/1.5.png " ")
 
     At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
 
-    ![](./images/1.5.2.png " ")
+![](./images/1.5.2.png " ")
 
 ## **Step 2**:  Connect to EnterpriseOne Orchestrator Studio
 
@@ -84,22 +84,22 @@ To access the Orchestrator Studio:
 
     **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
 
-    ![](./images/2.3.png " ")
+![](./images/2.3.png " ")
 
 4)	Click the ***Confirm Security Exception button*** to add the URL to the trusted location list for the browser.
 
-    ![](./images/2.4.png " ")
+![](./images/2.4.png " ")
 
 5)	In the JD Edwards EnterpriseOne Orchestrator Studio sign-on page, sign in using these credentials:
 
     *	User name: ***JDE***
     *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1c).
 
-    ![](./images/2.5.png " ")
+![](./images/2.5.png " ")
 
     At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
 
-    ![](./images/2.6.png " ")
+![](./images/2.6.png " ")
 
 ## **Step 3**: Explore JDE Service Commands 
 After you have successfully deployed your Trial Edition instance in the Oracle Cloud Infrastructure, all services are automatically started for each JD Edwards EnterpriseOne server type, which includes the Database Server, Enterprise Server, HTML Web Servers, BI Publisher Server, and ADF/AIS server
@@ -113,36 +113,36 @@ To utilize the jde service commands:
         
         [opc]#  sudo –i
     
-    ![](./images/3.2.png " ")
+![](./images/3.2.png " ")
 
  
 3)	First run the jde-status command.  That will probe all the essential pieces running on the JDE Trial Edition (Database, Enterprise Server, Web Servers, ADF Server, BI Publisher Server) and report on the status of the piece.  Any service reporting anything but “Running” might have a problem
       
         [root]#  jde-status
 
-    ![](./images/3.3.png " ")
+![](./images/3.3.png " ")
 
 4)	Next, there are services broken down by piece.  Issue the following commands to review the specific services:
 
     a)	Database:    **jde-db status**
 
-    ![](./images/3.41.png " ")
+![](./images/3.41.png " ")
 
     b)	Enterprise Server:  **jde-ent status**
 
-    ![](./images/3.42.png " ")
+![](./images/3.42.png " ")
 
     c)	Web Server:  **jde-html status**
 
-    ![](./images/3.43.png " ")
+![](./images/3.43.png " ")
 
     d)	ADF Server:  **jde-adf status**
 
-    ![](./images/3.44.png " ")
+![](./images/3.44.png " ")
 
     e)	BIP Server:  **jde-bip status**
 
-    ![](./images/3.45.png " ")
+![](./images/3.45.png " ")
 
 5)	To stop a particular service, issue the following commands:
 
@@ -190,17 +190,17 @@ To access the ADF container:
 
     **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
 
-       ![](./images/4.3.png " ")
+![](./images/4.3.png " ")
 
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
 
-    ![](./images/4.4.png " ")
+![](./images/4.4.png " ")
 
 5)	The ADF Container page will appear. It is a blank page with a ? and X in the upper right-hand corner.
 
 
-    ![](./images/4.5.png " ")
+![](./images/4.5.png " ")
 
     At this point, ADF applications should function normally when run through the JD Edwards EnterpriseOne HTML Client.
 
@@ -228,21 +228,21 @@ To access the Oracle BI Publisher Server:
     
     **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
 
-    ![](./images/5.3.png " ")
+![](./images/5.3.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
 
-    ![](./images/5.4.png " ")
+![](./images/5.4.png " ")
 
 5)	In the Oracle BI Publisher sign-on page, sign in using these credentials:
     *	Username: weblogic
     *	Password: JDE_Rules1 (this is the password defined in the final configuration in Lab 2, Step 3)
 
-    ![](./images/5.5.png " ")
+![](./images/5.5.png " ")
 
     At this point, the Oracle BI Publisher Server for OVR is ready for use.
 
-    ![](./images/5.6.png " ")
+![](./images/5.6.png " ")
 
 
 

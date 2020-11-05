@@ -35,11 +35,11 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
 2)  On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu   in the upper-left corner, select Identity, and then select the Compartments option.
 
-    ![](./images/1.2.png " ")
+![](./images/1.2.png " ")
 
 3)	Click the Create Compartment button
 
-    ![](./images/1.3.png " ")
+![](./images/1.3.png " ")
 
 4)	Choose a Name (e.g. “**TestDrive**”), fill out the form and click the   button. Note: that the parent compartment should be the root compartment
 
@@ -49,11 +49,11 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 1)	On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard
  
-    ![](./images/2.1.png " ")
+![](./images/2.1.png " ")
 
 2)	Select VCN with Internet Connectivity, and then click Start VCN Wizard
 
-      ![](./images/2.2.png " ")
+![](./images/2.2.png " ")
 
 3) In this window, fill in the following fields with the information shown below:
 

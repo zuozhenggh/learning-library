@@ -30,55 +30,55 @@ Create an instance in OCI that is based off the JDE Trial Edition image
 1)	If not already done, sign in to OCI tenancy.
 On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation*** Menu Button in the upper-left corner and select ***Marketplace***
 
-    ![](./images/1.1.png " ")
+![](./images/1.1.png " ")
 
 2) Locate the Oracle JD Edwards image tile for ***JD Edwards EnterpriseOne Trial Edition*** (you might have to search for it; there could be several images out there) and click the tile
 
-    ![](./images/1.12.png " ")
+![](./images/1.12.png " ")
 
 3) On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.4.3 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right
 
-    ![](./images/1.3.png " ")
+![](./images/1.3.png " ")
 
 4) Next, define the instance with the following options:
 
     a)	Instance Name: jdetrial
 
-    ![](./images/4a.png " ")
+![](./images/4a.png " ")
 
     b) Operating System or Image Source: leave ***JD Edwards EnterpriseOne Trial Edition*** selected
 
-     ![](./images/4b.png " ")
+![](./images/4b.png " ")
 
     c) If the following is not visible on your screen, click on ***Show Shape***, ***Network and Storage Options***.  Depending on the region selected, there might be one or more availability domains.   Select Availability Domain: ***AD1*** (if since AD available) or ***AD3*** (if multiple ADs available)
     
-    ![](./images/4c.png " ")
+![](./images/4c.png " ")
 
     d) Instance Shape: click on ***Change Shape***
 
-    ![](./images/4d.png " ")
+![](./images/4d.png " ")
 
     e) Select ***Virtual Machine***, then select a shape.  For the purposes of this lab, select either an ***Intel Skylake VM.Standard2.2*** shape, or under the Specialty and Legacy series, select the ***VM.Standard.E2.2*** shape
-     ![](./images/4e.png " ")
+![](./images/4e.png " ")
 
     f)	Configure Networking: This will be populated by default, but review and confirm the VCN, compartment, and subnet.  Ensure that the ***Assign a public IP address*** radio button is selected
 
-    ![](./images/4f.png " ")
+![](./images/4f.png " ")
 
 	g) Configure Boot Volume: The default boot size of 100GB will be sufficient for this lab
-    ![](./images/4g.png " ")
+![](./images/4g.png " ")
 
     h) Add SSH key: Select the ***Choose SSH Key file*** radio button.  Browse to select the public SSH key file you created earlier (LAB 1, Step 2: Generate a Secure Shell (SSH) Key Pair) by navigating to the location where the SSH files are stored.  Alternatively, drag and drop the .pub file to the window
 
-    ![](./images/4h.png " ")
+![](./images/4h.png " ")
 
     i) Click the ***Create*** button.
 
-    ![](./images/4i.png " ")
+![](./images/4i.png " ")
 
     j) After a few minutes, the instance will be running and ready.  Copy and take note of the **Public IP address** under the ***Instance Access*** section, which is required to connect to the instance – in this example, it is 129.213.43.190.
 
-    ![](./images/4j.png " ")
+![](./images/4j.png " ")
 
 ##  **Step 2:**  Accessing the OCI Instance
 
@@ -100,7 +100,7 @@ Once connected, you can continue to ***Step 3*** below
 
 1) Launch Git Bash
 
-    ![](./images/2.1.png " ")
+![](./images/2.1.png " ")
 
 2) To connect over SSH you can use the following command on a Linux/UNIX style system.
 
@@ -112,7 +112,7 @@ Once connected, you can continue to ***Step 3*** below
 
 3) If, after entering the ssh command, you receive a message like in the screen shot below, reply with YES
 
-  ![](./images/2.3.png " ")
+![](./images/2.3.png " ")
 
 4) Once connected, you can continue to ***Step 3*** below.
 
@@ -122,31 +122,31 @@ For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an
 
 1)	Launch ***PuTTY***
 
-    ![](./images/2.21.png " ")
+![](./images/2.21.png " ")
 
 2) Within the PuTTY session, under Session category, enter the Public IP Address (example: 132.145.187.16) from the instance information into the ***Host Name*** field, and then select category ***Connection → Data***
 
-    ![](./images/2.22.png " ")
+![](./images/2.22.png " ")
 
 3) Enter ***opc*** in the ***Auto-login username*** field and then select the category ***Connection → SSH → Auth***
 
-    ![](./images/2.23.png " ")
+![](./images/2.23.png " ")
 
 4) In the Auth category, use the ***Browse*** button to locate the ppk (OCISSHKey.ppk) SSH file in the location where you saved it (Lab 1, Exercise 2, Step L). Return to the ***Session*** category.
 
-    ![](./images/2.24.png " ")
+![](./images/2.24.png " ")
 
 5) In the Session category, enter a unique label (example: JDE Trial Edition) for the connection in the ***Saved Sessions*** field, and click the ***Save*** button. This will retain all settings for future connections.
 
-    ![](./images/2.25.png " ")
+![](./images/2.25.png " ")
 
 6) Finally, connect to the instance by clicking the ***Open*** button.
 
-    ![](./images/2.26.png " ")
+![](./images/2.26.png " ")
 
 7) PuTTY will open a command window. On first connection, a Security Alert window will appear. Click ***Yes*** to accept that you trust the connection to this host.
 
-    ![](./images/2.27.png " ")
+![](./images/2.27.png " ")
 
 ## **Step 3:** Perform First-Time Configuration of Trial Edition
 
@@ -164,7 +164,7 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
 
     Note: This must match the port number added to the Ingress Rules for the Security List
 
-    ![](./images/3.11.png " ")
+![](./images/3.11.png " ")
 
 2)	Database System Password (& confirmation): ***JDE_Rules1*** – Any password that meets the following rules:
     *	Must be between 8 and 10 characters
@@ -172,15 +172,15 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
     *	May not contain any shell metadata characters such as $, |, @, and so on
 
 
-    ![](./images/3.2.png " ")
+![](./images/3.2.png " ")
 
 3) JDE User Password (& confirmation): ***JDE_Rules1*** – same password rules
 
-    ![](./images/3.3.png " ")
+![](./images/3.3.png " ")
 
 4)	Weblogic Admin Password (& confirmation): ***JDE_Rules1*** – same password rules
 
-    ![](./images/3.4.png " ")
+![](./images/3.4.png " ")
 
 5)	Final Confirmation: Y – Yes to commit the configuration settings and run the script to set up
 

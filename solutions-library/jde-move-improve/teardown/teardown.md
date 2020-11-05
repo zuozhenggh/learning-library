@@ -25,11 +25,10 @@ To delete instances:
 
 2)	Navigate to your Compartment. Select the JDE trial instance in the list of Instances
  
-
-    ![](./images/delete.png " ")
+![](./images/delete.png " ")
 
 3)	Next click on More Actions. From there select Terminate to terminate the instance
 
-    ![](./images/delete2.png " ")
+![](./images/delete2.png " ")
 
 4)	Wait for the instance to terminate. Once terminated your instance should be gone from the instance list
