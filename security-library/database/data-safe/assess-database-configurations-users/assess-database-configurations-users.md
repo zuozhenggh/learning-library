@@ -97,7 +97,7 @@ You can use Security Assessment to evaluate the current security state of your t
     - The total number of findings per risk level (**High Risk**, **Medium Risk**, **Low Risk**, **Advisory**, **Evaluate**, and **Pass**). These totals give you an idea of how secure your database is. The risk levels are color coded to make them easier to identify.
     - The total number of findings for **Security Controls**, **User Security**, and **Security Configurations**. These are high level categories in the report.
 
-     ![Totals in the Comprehensive Assessment report](images/totals-in-comprehensive-assessment-report.png)
+  ![Totals in the Comprehensive Assessment report](images/totals-in-comprehensive-assessment-report.png)
 
 
 2. Expand the **Summary** category (if needed).
@@ -112,7 +112,7 @@ You can use Security Assessment to evaluate the current security state of your t
 
     - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
 
-     ![Summary table in the Comprehensive Assessment report](images/findings-user-accounts.png)
+    ![Summary table in the Comprehensive Assessment report](images/findings-user-accounts.png)
 
 
 5. Collapse **User Accounts** and expand **Privileges and Roles**. Review the list of findings.
@@ -148,7 +148,7 @@ You can use the User Assessment feature to identify user settings and user risks
 
     - The page is updated to show the number of **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk** users.
 
-     ![User Assessment page after assessment](images/user-assessment-completed.png)
+    ![User Assessment page after assessment](images/user-assessment-completed.png)
 
 
 2. In the **Last Generated Report** column, click **View Report**. The **Users** page is displayed.
@@ -193,7 +193,7 @@ You can use the User Assessment feature to identify user settings and user risks
 
 6. Examine the **All Activity** report for the `ADMIN` user. This report is automatically filtered to show you the audit records for the past week, for the `ADMIN` user, and for your target database.
 
-![All Activity report](images/all-activity-report-admin-user.png)
+  ![All Activity report](images/all-activity-report-admin-user.png)
 
 7. At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
 

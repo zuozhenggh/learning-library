@@ -68,7 +68,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
   <img src="./images/provision-db-9-subnet1.png" width="70%">
 
-4. Keep the defaults for the **Subnet Type** and enter a CIDR block of `10.0.5.0/24`
+4. Keep the defaults for the **Subnet Type** and enter a CIDR block of `10.0.7.0/24`
 
   <img src="./images/provision-db-9-subnet2b.png" width="70%">
 
