@@ -83,7 +83,7 @@ Choose the environment where you created your SSH Key.
 
   Download the zip file to this folder.
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4tcV_zZFruaGi4wz-U6IERHuzwx2NqIcRJAnitcIE-jGAQfVccZXFk20FxKuIpvW/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LK1k7CgQxR2LcgcF1sG8E0Z_B3q3yNC4H62dZQ8xaSr7OBN7D6lcpIutXF17oZU6/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
     ```
 
   ![](images/download_PAR.png " ")
