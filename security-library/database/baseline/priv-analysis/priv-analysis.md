@@ -31,7 +31,7 @@ This lab assumes you have:
 | 2 | Analyze the workload caputred | 5 minutes |
 | 3 | (Optionnal) Drop the capture | <5 minutes |
 
-## **STEP 1**: Capture the workloard to analyze
+## **STEP 1**: Capture the workload to analyze
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
