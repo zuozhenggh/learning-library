@@ -352,7 +352,7 @@ Follow the steps below to continue with the lab exercises.
 
     Figure 4. Provisioned Account - Access Request
 
-### Optional: check the account on the target application
+### Optional: Check the account on the target application
 1. This step is optional and requires to have the OAM server running to test the provisioned account. Since you have already started the OIM components, you will need at least 48 GB of total memory in your environment to be able to start the OAM server components in addition to OIM.
 
     E.g. login as **oracle** user and run the following command to start OAM:
@@ -436,5 +436,8 @@ Use these links to get more information about Oracle Identity and Access Managem
 - **Last Updated By/Date** - Ricardo Gutierrez, June 2020
 
 ## Need Help?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
 
