@@ -45,14 +45,17 @@ This workshop requires a certain number of ports to be available, a requirement 
 
 ## **STEP 3**: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
-  -  Create Stack:  *Compute + Networking*
-  -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+-  Create Stack:  *Compute + Networking*
+  - Compute Instance Count (4): dbsec-lab, avs, dbf, and okv
+  - Virtual Network Count (1): dbsec
+-  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+  - Compute Instance Count (4): dbsec-lab, avs, dbf and okv
 
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -368,12 +368,27 @@ You have completed the lab.
 
 ## **STEP 6**: Audit Vault - Access Rights and User Activity on Sensitive Data
 
-In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab (For more details, please refer to the `Oracle DB Security Baseline Workshop`). To avoid to perform the DBSAT lab, we have already generated the needed files for you here.
+In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. For ease of execution, the required step from the Database Security Assessment Tool (DBSAT) lab was performed and the output saved. The first step here will help download and stage it accordingly.
 
-1. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
+1. Download and stage the sensitive data to `/home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data`
+  - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+  - Now we need to become `oracle` User
 
-    - Open a SSH session on your **AVS VM as *opc* User**
+    ````
+    <copy>su - oracle</copy>
+    ````
 
+  - Once we have switched to `oracle`, download and stage the file
+
+    ````
+    <copy>
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/g7HGibfhPXhmVXvyiP5G4yGe_MH3yPGUkiCrccuYhCKewZvgd-mlPycLPxaOAxcC/n/natdsecurity/b/labs-files/o/pdb1_dbsat_discover.csv -O /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data/pdb1_dbsat_discover.csv
+    </copy>
+    ````
+
+2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
+
+    - Open an SSH session to your **AVS VM** as user *opc*
     - Now we need to become `oracle` User
 
       ````
@@ -392,7 +407,7 @@ In this lab you will use the results from a Database Security Assessment Tool (D
 
     - Close the session
 
-2. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
+3. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
 
     - Go back to the SSH session on your **DBSec-Lab VM** and go to the scripts directory
 
@@ -409,7 +424,7 @@ In this lab you will use the results from a Database Security Assessment Tool (D
      - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab
         - It will look like this: `http://<DBSECLAB-VM_@IP-Public>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_discover.csv`
         - In a web browser, copy/paste this URL and download locally the `pdb1_dbsat_discover.csv` file
-      
+
      - Upload the `csv`file into AVDF Console
         - In another web browser page, login to the Audit Vault as *AVADMIN* using the password "*T06tron.*"
         - Click the `Targets` tab
@@ -423,7 +438,7 @@ In this lab you will use the results from a Database Security Assessment Tool (D
 
    ![](images/csv_file_loaded01.png " ")
 
-3. View the Sensitive Data
+4. View the Sensitive Data
 
     - Go back to your web browser page session as `AVAUDITOR`
     - Click the `Reports` tab
@@ -437,7 +452,7 @@ In this lab you will use the results from a Database Security Assessment Tool (D
 
    ![](images/sensitive_data_report01.png " ")
 
-4. You can also view additional reports about Sensitive Data
+5. You can also view additional reports about Sensitive Data
 
    ![](images/sensitive_data_reports01.png " ")
 
@@ -1432,7 +1447,7 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
