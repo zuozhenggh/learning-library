@@ -1118,7 +1118,8 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 
 ## Summary
  
-    In this lab we performed steps of rest enabling schema and its table. Also to make rest call we defined things like - creating module, templates and its handlers. We also created restful services using JSON data, XML data and Spatial data.
+In this lab we performed steps of rest enabling schema and its table. Also to make rest call we defined things like - creating module, templates and its handlers. We also created restful services using `JSON data`, `XML data` and `Spatial data`.
+
 ## ORDS Video
   
   [](youtube:rvxTbTuUm5k)
