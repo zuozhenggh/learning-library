@@ -1,6 +1,6 @@
 ## Lab 6
 
-Update August 19, 2020
+Updated November 05, 2020
 
 ## Bi-Directional Replication, AutoCDR, Rapid Deployment and Intro to the Admin Client
 ## Introduction

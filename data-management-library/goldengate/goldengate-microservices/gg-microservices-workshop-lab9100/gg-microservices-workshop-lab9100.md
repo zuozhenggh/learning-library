@@ -1,5 +1,7 @@
 # Lab 4 -  Setup of Golden Gate Classic Workshop 
 
+Update November 5, 2020
+
 ![](./images/ggmicroservicesarchitecture.png)
 
 ## Want to learn more:

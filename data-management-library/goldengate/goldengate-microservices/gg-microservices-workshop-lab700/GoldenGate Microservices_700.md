@@ -1,6 +1,6 @@
 ## Lab 7 - Optional
 
-Update August 19, 2020
+Update November 5, 2020
 
 ## GoldenGate Micro services Heterogeneous Replication
 ## Introduction

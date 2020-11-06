@@ -1,5 +1,7 @@
 # Lab 4 -  Setup of Golden Gate Microservices Workshop 
 
+November 05, 2020
+
 ![](./images/ggmicroservicesarchitecture.png)
 
 ## Want to learn more:

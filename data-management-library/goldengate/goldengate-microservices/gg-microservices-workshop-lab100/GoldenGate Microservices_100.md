@@ -1,6 +1,6 @@
 ## Lab 1
 
-Updated Aug 19, 2020
+Updated November 05, 2020
 
 #### Introduction
 

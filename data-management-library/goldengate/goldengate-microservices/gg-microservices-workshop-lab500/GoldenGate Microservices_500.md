@@ -1,5 +1,7 @@
 # Lab - 5
  
+ Updated November 05, 2020
+ 
 This lab, will contains four parts and covers how access the services from Oracle GoldenGate MicroServices using the REST APIs.
 
 Part 1: Remove the previous lab replication processes with via the REST API.

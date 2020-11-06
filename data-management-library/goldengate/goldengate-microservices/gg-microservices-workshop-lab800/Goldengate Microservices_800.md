@@ -1,6 +1,8 @@
 
 # Lab - 8
 
+Update November 5, 2020
+
 ![](./images/ggmicroservicesarchitecture.png)
 
 Manipulating Numbers and Character Strings.

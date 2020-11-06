@@ -1,5 +1,7 @@
 ## Configuring ServiceManager
 
+November 05, 2020
+
 ## Introduction
 
 This lab walks you through configuring ServiceManager, Atlanta and SanFran deployments using **Goldengate 19.1 MicroServices** web interface and the **Oracle GoldenGate Configuration Assistant (OGGCA)** silent install scripts in a Cloud environment.
