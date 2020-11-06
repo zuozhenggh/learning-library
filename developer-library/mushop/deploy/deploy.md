@@ -100,7 +100,7 @@ In this lab, you will:
     </copy>
     ````
 
-## **STEP 2**: Cluster Setup for the App
+## **STEP 2**: Cluster Setup for the App with Helm
 
 MuShop provides an umbrella helm chart called setup, which includes several recommended installations on the cluster. These installations represent common 3rd party services, which integrate with Oracle Cloud Infrastructure or enable certain application features.
 
@@ -183,7 +183,15 @@ By default, the mushop helm chart creates an Ingress resource, routing ALL traff
     mushop-utils-ingress-nginx-controller   LoadBalancer   10.96.150.230   129.xxx.xxx.xxx   80:30195/TCP,443:31059/TCP   1m
     ````
 
-## **STEP 4**: Deploy with Helm
+1. Explore the cluster services deployments:
+
+    ````shell
+    <copy>
+    kubectl get deployments --namespace mushop-utilities
+    </copy>
+    ````
+
+## **STEP 4**: Deploy the eCommerce App with Helm
 
 Remembering that helm provides a way of packaging and deploying configurable charts, next we will deploy the application in "mock mode" where cloud services are mocked, yet the application is fully functional
 
@@ -219,7 +227,85 @@ Remembering that helm provides a way of packaging and deploying configurable cha
 
     ![MuShop Storefront](images/mushop-storefront.png)
 
-## **STEP 5**: Under the Hood
+## **STEP 5**: Explore the deployed app
+
+When you create a Deployment, you'll need to specify the container image for your application and the number of replicas that you want to run.
+
+Kubernetes created a Pod to host your application instance. A Pod is a Kubernetes abstraction that represents a group of one or more application containers (such as Docker), and some shared resources for those containers. Those resources include:
+
+* Shared storage, as Volumes
+* Networking, as a unique cluster IP address
+* Information about how to run each container, such as the container image version or specific ports to use
+
+The most common operations can be done with the following kubectl commands:
+
+* **kubectl get** - list resources
+* **kubectl describe** - show detailed information about a resource
+* **kubectl logs** - print the logs from a container in a pod
+* **kubectl exec** - execute a command on a container in a pod
+
+You can use these commands to see when applications were deployed, what their current statuses are, where they are running and what their configurations are.
+
+1. Check the microservices deployments for MuShop
+
+    ````shell
+    <copy>
+    kubectl get deployments
+    </copy>
+    ````
+
+    *Note:* You should use `kubectl get deployments --namespace mushop` if you didn't set _mushop_ as default namespace
+
+1. Check the pods deployed
+
+    ````shell
+    <copy>
+    kubectl get pods
+    </copy>
+    ````
+
+1. Get the last created pod to inspect
+
+    ````shell
+    <copy>
+    export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'|awk '{print $1}'|tail -n 1) && \
+    echo Using Pod: $POD_NAME
+    </copy>
+    ````
+
+1. View what containers are inside that Pod and what images are used to build those containers
+
+    ````shell
+    <copy>
+    kubectl describe pod $POD_NAME
+    </copy>
+    ````
+
+1. Anything that the application would normally send to `STDOUT` becomes logs for the container within the Pod. We can retrieve these logs using the `kubectl logs` command:
+
+    ````shell
+    <copy>
+    kubectl logs $POD_NAME
+    </copy>
+    ````
+
+1. Execute commands directly on the container once the Pod is up and running.
+
+    ````shell
+    <copy>
+    kubectl exec $POD_NAME env
+    </copy>
+    ````
+
+1. start a bash session in the Pod’s container:
+
+    ````shell
+    <copy>
+    kubectl exec -ti $POD_NAME bash
+    </copy>
+    ````
+
+## **STEP 6**: Under the Hood
 
 1. To get a beter look at all the installed Kubernetes manifests by using the template command.
 
@@ -239,6 +325,13 @@ Remembering that helm provides a way of packaging and deploying configurable cha
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+
+* [MuShop Github Repo](https://github.com/oracle-quickstart/oci-cloudnative)
+* [MuShop Deployment documentation](https://oracle-quickstart.github.io/oci-cloudnative/cloud/)
+* [Terraform Deploymment scripts](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/complete/terraform)
+* Full Solution deployment with one click - launches in OCI Resource Manager directly ![Deploy to Oracle Cloud][magic_button]][magic_mushop_stack]
+
 ## Acknowledgements
 
 * **Author** - Adao Junior
@@ -250,3 +343,6 @@ You may now [proceed to the next lab](#next).
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
+[magic_button]: https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg
+[magic_mushop_stack]: https://console.us-ashburn-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-quickstart/oci-cloudnative/releases/latest/download/mushop-stack-latest.zip
