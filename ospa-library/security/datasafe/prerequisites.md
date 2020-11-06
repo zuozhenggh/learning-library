@@ -22,8 +22,8 @@ To enable Oracle Data Safe, you must belong to one of the following groups in Or
 * Your tenancy's Administrators group. This group has permission on all resources in your tenancy.
 * A group in your tenancy that has the manage permission for Oracle Data Safe and can inspect groups in the tenancy.
 To grant the Data-Safe-Admins group all permissions on all resources in a tenancy, the policy might be:
-Allow group Data-Safe-Admins to manage all-resources in tenancy
-Allow group Data-Safe-Admins to inspect groups in tenancy
+    `Allow group Data-Safe-Admins to manage all-resources in tenancy`
+    `Allow group Data-Safe-Admins to inspect groups in tenancy`
 Once the required permissions have been set up, you can enable Data Safe by following the next steps:
   
 
