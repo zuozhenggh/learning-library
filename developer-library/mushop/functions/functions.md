@@ -6,7 +6,7 @@ Adao, start updating here:
 
 There are three options to deploying MuShop, they range from manual (docker) to automated (Helm).  
 
-Designing in microservices offers excellent separation concerns and provides developer independence.  While these benefits are clear, they can often introduce some complexity for development enviornment.  Services support configurations that offer flexibility, when necessary, and establish parity as much as possible.  It is important to use the same tools for devleopment all the way to production.
+Designing in microservices offers excellent separation concerns and provides developer independence.  While these benefits are clear, they can often introduce some complexity for development environment.  Services support configurations that offer flexibility, when necessary, and establish parity as much as possible.  It is important to use the same tools for devleopment all the way to production.
 
 ![](images/mushop-deployment.png)
 
