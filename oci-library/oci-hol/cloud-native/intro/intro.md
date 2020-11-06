@@ -28,6 +28,12 @@ In this lab, you will:
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+
+* [Cloud Native on OCI using MuShop sample](https://oracle-quickstart.github.io/oci-cloudnative/)
+* [Reference Architecture: Deploy a microservices-based application in Kubernetes](https://docs.oracle.com/en/solutions/cloud-native-ecommerce/index.html#GUID-CB180453-1F32-4465-8F27-EA7300ECF771)
+* [Overview of Functions](https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm)
+
 ## Acknowledgements
 
 * **Author** - Adao Junior
