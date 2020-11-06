@@ -34,21 +34,17 @@ In this lab, you will:
 
 
 ### Prerequisites
-1. User already has a tenancy with Administrator user access. (Please complete "Prerequisites" section)
+* User already has a tenancy with Administrator user access. (Please complete "Prerequisites" section)
+* My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
+* User should have their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
+* User has access to a workstation/laptop with the following installed:
+  - If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win  
 
-2. My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
+  - User must have admin privileges on their laptop to update the **etc/hosts** file to add URL/IP address for PSFT Cloud Manager. Please let the team know if you can't get this access.
 
-3. User should have their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
+    **NOTE: If you don't have admin privileges in your local machine, please make sure to follow the "Windows VM Compute Lab" after Step 5 in Lab 2. You can use the windows compute to follow this Workshop. Please also make sure to install Git Bash in Windows Compute.** You will also need to install **Remote Desktop Connection** in your local machine from this [link](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps).
 
-4. User has access to a workstation/laptop with the following installed:
-
-    a. If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win  
-
-    b. User must have admin privileges on their laptop to update the **etc/hosts** file to add URL/IP address for PSFT Cloud Manager. Please let the team know if you can't get this access.
-
-    **NOTE: If you don't have admin privileges in your local machine, please make sure to follow the "Windows VM Compute Lab" after step 5 in Lab 2. You can use the windows compute to follow this Workshop. Please also make sure to install Git Bash in Windows Compute.** You will also need to install **Remote Desktop Connection** in your local machine from this [link](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps).
-
-    c. A web browser to connect to OCI web console and Cloud Manager PIA – Firefox or Chrome recommended.
+  - A web browser to connect to OCI web console and Cloud Manager PIA – Firefox or Chrome recommended.
 
 ## Appendix
 
