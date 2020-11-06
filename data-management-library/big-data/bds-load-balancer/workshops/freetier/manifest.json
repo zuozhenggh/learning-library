@@ -1,0 +1,16 @@
+{
+  "workshoptitle": "Create a Load Balancer for Oracle Big Data Service",
+    "tutorials": [
+      {
+         "title": "Get Started with LiveLabs",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
+          "title": "Access Services on Big Data Service By Using a Load Balancer",
+          "description": "Access Services on Big Data Service By Using a Load Balancer",
+          "filename": "../../bds-use-load-balancer/bds-use-load-balancer.md"
+      }
+
+           ]
+}
