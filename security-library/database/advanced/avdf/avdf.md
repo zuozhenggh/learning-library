@@ -147,7 +147,7 @@ Before starting the labs, you must enable the workshop pre-configured AVDF Web C
       **Note**:
       - You will need to enter the `AVAUDITUSER` password during this step
       - This user is a database user that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
-      - The password for `AVAUDITUSER` is `Oracle123`
+      - The password for `AVAUDITUSER` is *Oracle123*
 
       ````
       <copy>./01_register_database.sh</copy>
@@ -179,7 +179,7 @@ Before starting the labs, you must enable the workshop pre-configured AVDF Web C
 
 4. View audit data collected via the All Activity Report using the web browser
     - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
-    - Login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+    - Login to Audit Vault Web Console as *AVAUDITOR* with the password "*T06tron.*"
     - Click on the **Reports** tab
     - Under the **Activity Reports** section titled **Summary**, click on the **All Activity** name to load the report
     - You should see a report that looks something like this:
@@ -201,17 +201,13 @@ Before starting the labs, you must enable the workshop pre-configured AVDF Web C
 
 You will retrieve and provision the Unified Audit settings for the `pdb1` pluggable database
 
-1. Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
+1. Go back to Audit Vault Web Console as `AVAUDITOR`
 
-2. Login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+2. Click on the `Targets` tab
 
-   ![](./images/avauditor_login01.png " ")
+3. Click on the Target `pdb1`
 
-3. Click on the `Targets` tab
-
-4. Click on the Target `pdb1`
-
-5. On the target screen, under `Audit Policy` perform the following:
+4. On the target screen, under `Audit Policy` perform the following:
     - Checkbox `Retrieve Immediately`
     - Change the radio button for `Schedule` to `Enable`    
     - Set the `Schedule` to `Repeat Every` **1 Day**    
@@ -219,7 +215,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
    ![](./images/save_audit_policy01.png " ")
 
-6. Next, view the audit policy reports for `pdb1`
+5. Next, view the audit policy reports for `pdb1`
     - Click on the `Policies` tab and you will be placed on the `Audit Policies` page
     - Click on the Target Name `pdb1`
     - On this screen, you will see two tabs, `Unified Auditing` and `Traditional Auditing`. Since this is a modern version of Oracle, 12.1 or higher, we want to use Unified Auditing
@@ -232,7 +228,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
    ![](./images/provision_uat01.png " ")
 
-7. Verify the job completed successfully
+6. Verify the job completed successfully
     - Click on the `Settings` tab
     - Click on the `Jobs` section on the left menu bar
     - You should see at least one `Job Type` that says `Unified Audit Policy`
@@ -240,7 +236,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
    ![](./images/completed_provision_uat01.png " ")
 
-8. The next thing you can do is check which Unified Audit Policies exist and which Unified Audit Policies are enabled by using `SQL*Plus`
+7. The next thing you can do is check which Unified Audit Policies exist and which Unified Audit Policies are enabled by using `SQL*Plus`
     - Go back to the terminal and go to the scripts directory
 
       ````
@@ -259,13 +255,11 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
       <copy>./02_query_enabled_unified_policies.sh</copy>
       ````
 
-9. If you want, you can re-do the previous steps and make changes to the Unified Audit Policies. For example, don't enable the `Center for Internet Security (CIS) Configuration` and re-run the two shell scripts to see what changes!
+8. If you want, you can re-do the previous steps and make changes to the Unified Audit Policies. For example, don't enable the `Center for Internet Security (CIS) Configuration` and re-run the two shell scripts to see what changes!
 
 ## **STEP 5**: Audit Vault - Retrieve User Entitlements
 
-1. Login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
-
-   ![](./images/avauditor_login01.png " ")
+1. Go back to Audit Vault Web Console as `AVAUDITOR`
 
 2. Click on the `Targets` tab
 
@@ -374,23 +368,13 @@ You have completed the lab.
 
 ## **STEP 6**: Audit Vault - Access Rights and User Activity on Sensitive Data
 
-1. In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab (For more details, please refer to the `Oracle DB Security Baseline Workshop`).
+In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab (For more details, please refer to the `Oracle DB Security Baseline Workshop`). To avoid to perform the DBSAT lab, we have already generated the needed files for you here.
 
-2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
+1. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
 
-    - From your terminal session, open a SSH session onto your Audit Vault Server VM as `support` User with the password `T06tron.`
+    - Open a SSH session on your **AVS VM as *opc* User**
 
-      ````
-      <copy>ssh support@av</copy>
-      ````
-
-    - Switch to the `root` user and, again, use the password `T06tron.`
-
-      ````
-      <copy>su -</copy>
-      ````
-
-    - Now that we are `root` we need to become `oracle` User
+    - Now we need to become `oracle` User
 
       ````
       <copy>su - oracle</copy>
@@ -406,9 +390,11 @@ You have completed the lab.
 
    ![](images/grant_sensitive_role01.png " ")
 
-3. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
+    - Close the session
 
-    - Go to the scripts directory
+2. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
+
+    - Go back to the SSH session on your **DBSec-Lab VM** and go to the scripts directory
 
       ````
       <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data</copy>
@@ -420,10 +406,12 @@ You have completed the lab.
       <copy>./01_download_sensitive_data_csv.sh</copy>
       ````
 
-     - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab. It will look like this: `http://<DBSECLAB-VM_@IP-Public>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_discover.csv`
-
-    - Using the web browser, save and download the `pdb1_dbsat_discover.csv` file
-        - Login to the Audit Vault as `AVADMIN` using the password `T06tron.`
+     - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab
+        - It will look like this: `http://<DBSECLAB-VM_@IP-Public>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_discover.csv`
+        - In a web browser, copy/paste this URL and download locally the `pdb1_dbsat_discover.csv` file
+      
+     - Upload the `csv`file into AVDF Console
+        - In another web browser page, login to the Audit Vault as *AVADMIN* using the password "*T06tron.*"
         - Click the `Targets` tab
         - Click the `pdb1` target name
         - In the right, top, corner of the page click `Sensitive Objects`
@@ -435,19 +423,21 @@ You have completed the lab.
 
    ![](images/csv_file_loaded01.png " ")
 
-4. View the Sensitive Data
+3. View the Sensitive Data
 
-    - Using the web browser, in your `AVAUDITOR` session, click the `Reports` tab
+    - Go back to your web browser page session as `AVAUDITOR`
+    - Click the `Reports` tab
     - On the left side menu, click `Compliance Reports`
     - Click [**Go**] to associate the `pdb1` target with the `Data Private Report (GDPR)` group
-    - Checkbox `pdb1` and then click [**Add**]
-    - Unfortunately, once you associate the target with the report, Audit Vault takes you to some unknown page
-    - Navigate back to the original page by clicking `Reports` then `Compliance Reports`
+    - Checkbox `pdb1`
+    - Click [**Add**]
+    - Click [**Save**]
+    - Unfortunately, once you associate the target with the report, Audit Vault takes you to some unknown page, so please navigate back to the original page by clicking `Reports` then `Compliance Reports`
     - Click `Sensitive Data` and now you can see the Schema, Objects, Object Types, and Column Name and Sensitive Types
 
    ![](images/sensitive_data_report01.png " ")
 
-5. You can also view additional reports about Sensitive Data
+4. You can also view additional reports about Sensitive Data
 
    ![](images/sensitive_data_reports01.png " ")
 
@@ -466,7 +456,7 @@ Transaction Log collector takes advantage of Oracle GoldenGate’s Integrated Ex
 **Getting Started**
 The first thing we need to do is to set up the database to be ready for Golden Gate
 
-1. Go to the scripts directory
+1. Go back to the SSH session and go to the scripts directory
 
       ````
     <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Before_and_After_Changes</copy>
@@ -500,7 +490,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
     <copy>./04_start_gg.sh</copy>
       ````
 
-6. Using a web browser, login to your Database Security VM as `oggadmin` with the password `Oracle123`
+6. Using a web browser, login to your Database Security VM as `oggadmin` with the password "*Oracle123*"
 
     `http://<DBSECLAB-VM_@IP-Public>:50002/`
 
@@ -541,11 +531,11 @@ The first thing we need to do is to set up the database to be ready for Golden G
    ![](images/add_extract01.png " ")
 
     - Choose `Integrated Extract` and click [**Next**]
-    - The `Basic Information` section should look like this screenshot
+    - In the `Basic Information` section, please fill out the field like this screenshot
 
    ![](images/extract_basic_info01.png " ")
 
-    - The `Registration Information` section should look like this screenshot:
+    - and in the `Registration Information` section, please fill out the field like this screenshot
 
    ![](images/extract_reg_info01.png " ")
 
@@ -569,21 +559,22 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
     - Press `Create and Run`
 
-    - You will be redirected to the dashboard and you should now have one `Extract` in `Other` status
-
-   ![](images/extract_other_status01.png " ")
-
-    - On the `PDB1` Extract, click [**Action**] and click [**Start**]
-
-    - Confirm you want to `Start` the Extract process
-
-    - Confirm your `Extract` now shows `Running`
+    - You will be redirected to the dashboard and you should now have one `Extract` in `Running` status
 
    ![](images/extract_running01.png " ")
 
+    - If not, please start it
+
+   ![](images/start_pdb1_extract01.png " ")
+
+       - On the `PDB1` Extract, click [**Action**] and click [**Start**]
+       - Confirm you want to `Start` the Extract process
+       - Confirm your `Extract` now shows `Running`
+
+
 **Configure a new Audit Trail**
 
-14. Using a web browser, login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+14. Using a web browser, login to the Audit Vault Web Console as `AVADMIN` with the password "*T06tron.*"
 
 15. Click the `Targets` tab
 
@@ -596,7 +587,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
 19. Click [**Add**] to tell the collect this database is in the PDT timezone
 
     - Name: `av.collector.TimeZoneOffset`
-    - Value: `-7:00`
+    - Value: <YOUR_TIMEZONE> (here `-7:00`)
 
    ![](images/add_collect_attr01.png " ")
 
@@ -621,13 +612,13 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
 **Generate Changes and View the Audit Vault Reports**
 
-23. Generate data and object changes
+23. Go back to your SSH session and generate data and object changes
 
       ````
-    <copy>./04_generate_employeesearch_prod_changes.sh</copy>
+    <copy>./05_generate_employeesearch_prod_changes.sh</copy>
       ````
 
-24. Using a web browser, login to the Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+24. Using a web browser, login to the Audit Vault Web Console as `AVAUDITOR` with the password "*T06tron.*"
 
 25. Click the `Reports` tab
 
@@ -684,7 +675,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 7. Click [**Save**]
 
-8. Create an Alert Policy: go back to your terminal session and go to the scripts directory
+8. Go back to your terminal session and go to the scripts directory to create an Alert Policy
 
       ````
       <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Create_Alert_Policies</copy>
@@ -696,9 +687,9 @@ In this lab you will modify the Database Firewall connection for the pluggable d
       <copy>./01_create_users.sh</copy>
       ````
 
-10. View Alerts: go back to the Audit Vault Web Console as `AVAUDITOR`
+10. Go back to the Audit Vault Web Console as `AVAUDITOR` to view alerts
 
-11. Click `Alerts`
+11. Click on `Alerts` tab
 
 12. View the Alerts that have occurred related to our user creation SQL commands
 
