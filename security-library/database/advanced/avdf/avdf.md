@@ -64,17 +64,23 @@ This lab assumes you have:
 |19| MySQL Audit Collection | 5 minutes|
 -->
 
-## **STEP 0**: Audit Vault - Initialize ADVF Console Login
+## **STEP 0**: Audit Vault - Initialize ADVF Web Console
 
-1. Initialize ADVF Console Login as `opc` User
+Before starting the labs, you must enable the workshop pre-configured AVDF Web Console
+
+1. Open a SSH session on your **AVS VM as *opc* User**
+
+2. Initialize the ADVF Console Login
 
       ````
-      <copy> sudo /root/bootstrap/fix-apex-login.sh</copy>
+      <copy>sudo /root/bootstrap/fix-apex-login.sh</copy>
       ````
+
+3. Close the session
 
 ## **STEP 1**: Audit Vault - Run the Deploy Agent
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your **DBSec-Lab VM as *oracle* User**
 
       ````
       <copy>sudo su - oracle</copy>
