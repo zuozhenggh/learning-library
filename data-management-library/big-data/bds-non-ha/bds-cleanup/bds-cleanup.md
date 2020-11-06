@@ -145,6 +145,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Reviewers:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
+    + Alexey Filanovskiy, Senior Principal Product Manager, DW & Big Data Global Leaders Program 
 * **Last Updated By/Date:** Lauran Serhal, November 2020
 
 ## Need Help?
