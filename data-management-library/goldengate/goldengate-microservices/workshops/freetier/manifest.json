@@ -19,37 +19,37 @@
            "filename": "../../servicemanager/servicemanager.md"
        },
         {
-            "title": "Lab 3: MySQL to HDFS",
+            "title": "Lab 3: Microservices",
             "description": "mysql-to-hdfs",
             "filename": "../../mysql-to-hdfs/mysql-to-hdfs.md"
         },
         {
-            "title": "Lab 4: MySQL to Hive",
+            "title": "Lab 4: Microservices",
             "description": "Lab 4 GGBD mysql-to-hive",
             "filename": "../../mysql-to-hive/mysql-to-hive.md"
         },
         {
-            "title": "Lab 5: MySQL to HBase",
+            "title": "Lab 5: Microservices",
             "description": "Lab 5 GGBD mysql-to-hbase",
             "filename": "../../mysql-to-hbase/mysql-to-hbase.md"
         },
         {
-            "title": "Lab 6: MySQL to Kafka",
+            "title": "Lab 6: Microservices",
             "description": "Lab 6 GGBD mysql-to-Kafka",
             "filename": "../../mysql-to-kafka/mysql-to-kafka.md"
         },
         {
-            "title": "Lab 7: MySQL to Cassandra",
+            "title": "Lab 7: Microservices",
             "description": "Lab 7 GGBD mysql-to-Cassandra",
             "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
         },
         {
-            "title": "Lab 8: Appendix",
+            "title": "Lab 8: Microservices",
             "description": "Lab 8 GGBD Appendix",
             "filename": "../../lab8-appendix/lab8-appendix.md"
         },
         {
-            "title": "Lab 9: MySQL to Oracle (Optional)",
+            "title": "Lab 9: Microservices",
             "description": "Lab 9 GGBD mysql-to-oracle",
             "filename": "../../lab9-mysql-to-oracle/lab9-mysql-to-oracle.md"
         }
