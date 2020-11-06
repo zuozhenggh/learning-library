@@ -1,6 +1,6 @@
-# Lab 4 -  Setup of Golden Gate Classic Workshop 
+# Lab 4 -  Setup of Golden Gate Microservices Workshop 
 
-![](./images/image200_1.png)
+![](./images/ggmicroservicesarchitecture.png)
 
 ## Want to learn more:
 "https://www.oracle.com/middleware/data-integration/goldengate/"

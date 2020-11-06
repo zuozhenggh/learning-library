@@ -1,6 +1,8 @@
 
 # Lab - 8
 
+![](./images/ggmicroservicesarchitecture.png)
+
 Manipulating Numbers and Character Strings.
 
 

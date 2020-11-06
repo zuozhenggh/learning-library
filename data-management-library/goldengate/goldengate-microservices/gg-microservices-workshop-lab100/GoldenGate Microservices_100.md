@@ -4,6 +4,8 @@ Updated Aug 19, 2020
 
 #### Introduction
 
+![](./images/ggmicroservicesarchitecture.png)
+
 This is the first of a series of labs to introduce you to the capabilities of GoldenGate Microservices for Oracle Database.   It is a significant release that changes the underlying architecture of GoldenGate to enable it to be administered, monitored, managed and configured through a series of common services.   Each service supports a standard web-based user interface, REST (Representational State Transfer) APIs and a command line client, that allow all configuration to be done remotely in an agile manner. 
 
 In this first lab you will walk through the process of installing this new version of GoldenGate and configuring a deployment for the target environment. (Already completed prior to Lab)

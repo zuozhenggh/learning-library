@@ -1,5 +1,7 @@
 # Lab - 9
  
+![](./images/ggmicroservicesarchitecture.png)
+
 In this step you will run script to create a uni-directional replication from *ATLANTA to SANFRAN deployments via pre- configured script.
 
 On the desktop, right-click and select “Open Terminal”.

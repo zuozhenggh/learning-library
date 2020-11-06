@@ -3,6 +3,8 @@
 ## Introduction
 This lab walks you through configuring ServiceManager, Atlanta and SanFran deployments using **Goldengate 19.1 MicroServices** web interface and the **Oracle GoldenGate Configuration Assistant (OGGCA)** silent install scripts in a Cloud environment.
 
+![](./images/ggmicroservicesarchitecture.png)
+
 Estimated Lab Time: xx minutes
 
 ### Objectives

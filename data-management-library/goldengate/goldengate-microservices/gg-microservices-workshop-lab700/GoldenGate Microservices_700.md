@@ -12,6 +12,8 @@ This lab supports the following use cases:
 - Setting up GoldenGate for MySQL.
 - Setting up Replication in GoldenGate Microservices architecture for Oracle PDB ( OGGOOW182 ).
 
+![](./images/ggmicroservicesarchitecture.png)
+
 ## Objectives
 
 Create a classic GoldenGate architecture capture process (Extract) for MySQL and a Microservices delivery process (Replicat) to receive the data.  While MySQL isn’t supported as a deployment option for Microservices yet, you can still connect to existing Classic GoldenGate instances to replicate data.

@@ -8,6 +8,8 @@ Update August 19, 2020
 
 In this lab, you will take a look at how to set up replication from MySQL DB to Oracle Autonomous Data warehouse(ADWC) using Classic Goldengate for MySQL and Goldengate Microservices architecture.
 
+![](./images/ggmicroservicesarchitecture.png)
+
 This lab supports the following use cases:
 
 - Setting up GoldenGate for MySQL.

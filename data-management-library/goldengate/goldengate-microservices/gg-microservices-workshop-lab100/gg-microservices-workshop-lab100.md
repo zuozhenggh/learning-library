@@ -1,6 +1,6 @@
 # Lab 4 -  Setup of Golden Gate Classic Workshop 
 
-![](./images/image200_1.png)
+![](./images/.png)
 
 ## Want to learn more:
 "https://www.oracle.com/middleware/data-integration/goldengate/"
@@ -10,10 +10,10 @@ Contents
 
 Introduction
  Disclaimer
-  Oracle GoldenGate for Big Data Workshop Architecture 
-  Setup the QuickStart VM for GoldenGate for Big Data Workshop
+  Oracle GoldenGate for Microservices Workshop Architecture 
 
-Lab  – Setup GoldenGate Classic
+
+Lab  – Setup GoldenGate Microservices 
 
 Lab  – MySQL ->  Oracle  unidirectional replication
   
@@ -21,11 +21,6 @@ Lab  – Oracle ->  mySQL  unidirectional replication
 
 Lab  – Classic Active-Active Replication 
 
-Lab  – Classic Column Conversions 
-
-Lab  - Replication to PostgreSQL
-
-Lab  - Replication from PostgreSQL
 
 ### Objectives
 

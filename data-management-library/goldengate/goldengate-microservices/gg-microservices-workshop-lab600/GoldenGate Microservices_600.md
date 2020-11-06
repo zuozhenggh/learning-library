@@ -7,6 +7,8 @@ Update August 19, 2020
 
 Since we’ve already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
 
+![](./images/ggmicroservicesarchitecture.png)
+
 ## Objectives
 
 - Rapid Deployment using:
