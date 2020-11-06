@@ -10,9 +10,11 @@ Estimated time: 2 hours
 
 In this lab, you will:
 
-* Create an OKE Cluster
-* Deploy an eCommerce microservices-based solution to Kubernetes (MuShop App)
-* Monitor your Kuberntes Cluster and the deployed App
+* Create a Kubernetes Cluster on OKE
+* Deploy an eCommerce microservices-based solution to Kubernetes (MuShop App) using [helm](https://helm.sh/)
+* Explore your App
+* Expose your app publicly
+* Monitor your Kubernetes Cluster and the deployed App
 * Create a Function Application
 * Clean up the deployments
 
@@ -22,14 +24,14 @@ In this lab, you will:
 1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
 1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
 1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-1. [Connecting to a Compute Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+1. Basic conceptual knowledge of containers and [Kubernetes](https://kubernetes.io/)
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Steven Nichols
-* **Contributors** -  Kamryn Vinson, Adao Junior
+* **Author** - Adao Junior
+* **Contributors** -  Kamryn Vinson, Adao Junior, Steven Nichols
 * **Last Updated By/Date** - Adao Junior, October 2020
 
 ## Need Help?

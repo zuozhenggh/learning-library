@@ -19,8 +19,9 @@ In this lab, you will:
 
 * Gather Cloud Information
 * Download Source Code
-* Setup OKE Cluster
+* Setup Kubernetes Cluster on OKE
 * Deploy with Helm
+* Expose your app publicly
 * Explore under the Hood
 
 ### Prerequisites
@@ -218,9 +219,7 @@ Remembering that helm provides a way of packaging and deploying configurable cha
 
     ![MuShop Storefront](images/mushop-storefront.png)
 
-You can complete the optional step or [proceed to the next lab](#next).
-
-## **STEP 5**: (Optional) Under the Hood
+## **STEP 5**: Under the Hood
 
 1. To get a beter look at all the installed Kubernetes manifests by using the template command.
 
