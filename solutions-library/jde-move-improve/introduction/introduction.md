@@ -164,11 +164,11 @@ There are many tools available for Windows users to create SSH key pairs and con
 ## Summary
 At this point, everything is allocated and generated to start creating instances in Oracle Cloud Infrastructure.  
 
-#
+
 ## Acknowledgements
 * **Author** - AJ Kurzman, Cloud Engineer
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Contributors** -  Marc-Eddy Paul, William Masdon, Chris Wegenek - Cloud Engineers; Jeff Kalowes, Mani Julakanti - Principal JDE Specialists
+* **Last Updated By/Date** - AJ Kurzman - 11/6/2020
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
 ## See an issue?

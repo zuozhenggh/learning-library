@@ -28,13 +28,13 @@ To deploy JDE Trial Edition, in this lab, you will:
 Create an instance in OCI that is based off the JDE Trial Edition image
 
 1)	If not already done, sign in to OCI tenancy.
-On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation*** Menu Button in the upper-left corner and select ***Marketplace***
+On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation*** Menu Button in the upper-left corner and select ***Marketplace***.
     ![](./images/1.1.png " ")
 
-2) Locate the Oracle JD Edwards image tile for ***JD Edwards EnterpriseOne Trial Edition*** (you might have to search for it; there could be several images out there) and click the tile
+2) Locate the Oracle JD Edwards image tile for ***JD Edwards EnterpriseOne Trial Edition*** (you might have to search for it; there could be several images out there) and click the tile.
     ![](./images/1.12.png " ")
 
-3) On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.4.3 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right
+3) On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.4.3 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right.
     ![](./images/1.3.png " ")
 
 4) Next, define the instance with the following options: 
@@ -75,7 +75,7 @@ To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is neces
 
 ### Connecting to an OCI Compute instance using a Mac/Linux/Unix based machine using Command Line SSH
 
-Mac OS X includes a command-line SSH client as part of the operating system. To use it, go to Finder, and select Go -> Utilities from the top menu. Then look for Terminal. To connect over SSH you can use the following command on a Linux/UNIX style system
+Mac OS X includes a command-line SSH client as part of the operating system. To use it, go to Finder, and select Go -> Utilities from the top menu. Then look for Terminal. To connect over SSH you can use the following command on a Linux/UNIX style system:
 
     $ ssh –l opc –i </path/to/privateKey> <PublicIP_Address>
 
@@ -87,7 +87,7 @@ Once connected, you can continue to ***Step 3*** below
 
 **Method 1:** Using SSH with Git Bash
 
-1) Launch Git Bash
+1) Launch Git Bash.
     ![](./images/2.1.png " ")
 
 2) To connect over SSH you can use the following command on a Linux/UNIX style system.
@@ -96,24 +96,24 @@ Once connected, you can continue to ***Step 3*** below
 
     Example: $ ssh –l opc –i ./keys/id_rsa 132.145.187.16
 
-**Hint:** Do not copy and paste the line above into Git Bash.  Unpredictable results may occur
+**Hint:** Do not copy and paste the line above into Git Bash.  Unpredictable results may occur.
 
-3) If, after entering the ssh command, you receive a message like in the screen shot below, reply with YES
+3) If, after entering the ssh command, you receive a message like in the screen shot below, reply with YES.
     ![](./images/2.3.png " ")
 
 4) Once connected, you can continue to ***Step 3*** below.
 
 **Method 2:** Using SSH with Putty for Windows
 
-For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an OCI instance
+For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an OCI instance.
 
-1)	Launch ***PuTTY***
+1)	Launch ***PuTTY***.
     ![](./images/2.21.png " ")
 
-2) Within the PuTTY session, under Session category, enter the Public IP Address (example: 132.145.187.16) from the instance information into the ***Host Name*** field, and then select category ***Connection → Data***
+2) Within the PuTTY session, under Session category, enter the Public IP Address (example: 132.145.187.16) from the instance information into the ***Host Name*** field, and then select category ***Connection → Data***.
     ![](./images/2.22.png " ")
 
-3) Enter ***opc*** in the ***Auto-login username*** field and then select the category ***Connection → SSH → Auth***
+3) Enter ***opc*** in the ***Auto-login username*** field and then select the category ***Connection → SSH → Auth***.
     ![](./images/2.23.png " ")
 
 4) In the Auth category, use the ***Browse*** button to locate the ppk (OCISSHKey.ppk) SSH file in the location where you saved it (Lab 1, Exercise 2, Step L). Return to the ***Session*** category.
@@ -137,9 +137,9 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
 
  On the first connection to the instance after the yum update has completed, the initial configuration script will be triggered and needs to be run prior to anything working.
 
- In the first connection to the Trial Edition Instance, follow along and answer the following prompts to complete the configuration
+ In the first connection to the Trial Edition Instance, follow along and answer the following prompts to complete the configuration:
 
-1)	HTML Port [8080]: – set this as **8080**
+1)	HTML Port [8080]: – set this as **8080**.
 
     Note: This must match the port number added to the Ingress Rules for the Security List
 
@@ -151,17 +151,17 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
 *	May not contain any shell metadata characters such as $, |, @, and so on
     ![](./images/3.2.png " ")
 
-3) JDE User Password (& confirmation): ***JDE_Rules1*** – same password rules
+3) JDE User Password (& confirmation): ***JDE_Rules1*** – same password rules.
     ![](./images/3.3.png " ")
 
-4)	Weblogic Admin Password (& confirmation): ***JDE_Rules1*** – same password rules
+4)	Weblogic Admin Password (& confirmation): ***JDE_Rules1*** – same password rules.
     ![](./images/3.4.png " ")
 
-5)	Final Confirmation: Y – Yes to commit the configuration settings and run the script to set up
+5)	Final Confirmation: Y – Yes to commit the configuration settings and run the script to set up.
 
 
-Configuration will take between 25-30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status ***“Successfully completed u01/vmScripts/EOne_Sync.sh”***
+Configuration will take between 25-30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status ***“Successfully completed u01/vmScripts/EOne_Sync.sh”***.
     ![](./images/3.5.png " ")
 
 ## **Summary**
-At this point, the JD Edwards EnterpriseOne Trial Edition is ready for use and you can now move onto the next Lab 
+At this point, the JD Edwards EnterpriseOne Trial Edition is ready for use and you can now move onto the next Lab. 

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Trial Edition is now running and ready for use. In this lab, you will learn how to utilize it
+Trial Edition is now running and ready for use. In this lab, you will learn how to utilize it.
 
 Estimated Lab Time: 10 minutes
 
@@ -29,7 +29,7 @@ HTML Server is the primary interface to the EnterpriseOne system.
 
 To access the EnterpriseOne HTML server:
 
-1)	Open a supported browser from any workstation connected to the internet
+1)	Open a supported browser from any workstation connected to the internet.
 
 2)	Using the Public IP Address for the instance and port number (Lab 2, Exercise 3, Step 1a) assigned to the HTML server as part of the final configuration and security list, enter the following URL into the browser:
 
@@ -60,11 +60,11 @@ At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
 
 ## **Step 2**:  Connect to EnterpriseOne Orchestrator Studio
 
-The EnterpriseOne Orchestrator Studio is an interface to help create orchestrations
+The EnterpriseOne Orchestrator Studio is an interface to help create orchestrations.
 
 To access the Orchestrator Studio:
 
-1)	Open a supported browser from any workstation connected to the internet
+1)	Open a supported browser from any workstation connected to the internet.
 
 2)	Using the Public IP Address for the instance and port number 7077, which is automatically assigned to the Orchestrator Studio and is part of the security list, enter the following URL into the browser:
 
@@ -74,11 +74,11 @@ For example:
 
     https://129.213.43.190:7077/studio/studio.html
 
-3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted
+3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. his example is from a Mozilla Firefox browser
+**Note:** Message and Security differ from browser to browser. his example is from a Mozilla Firefox browser.
 
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
+**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
     ![](./images/2.3.png " ")
 
 4)	Click the ***Confirm Security Exception button*** to add the URL to the trusted location list for the browser.
@@ -94,21 +94,21 @@ At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use
     ![](./images/2.6.png " ")
 
 ## **Step 3**: Explore JDE Service Commands 
-After you have successfully deployed your Trial Edition instance in the Oracle Cloud Infrastructure, all services are automatically started for each JD Edwards EnterpriseOne server type, which includes the Database Server, Enterprise Server, HTML Web Servers, BI Publisher Server, and ADF/AIS server
+After you have successfully deployed your Trial Edition instance in the Oracle Cloud Infrastructure, all services are automatically started for each JD Edwards EnterpriseOne server type, which includes the Database Server, Enterprise Server, HTML Web Servers, BI Publisher Server, and ADF/AIS server.
 
-After initial startup, all these services can be manually started and stopped by the root user.  The JDE Trial Edition is equipped with command line features for easy status checking and start/stop capabilities.  This Exercise will walk through running these commands to find status and start/stop services
+After initial startup, all these services can be manually started and stopped by the root user.  The JDE Trial Edition is equipped with command line features for easy status checking and start/stop capabilities.  This Exercise will walk through running these commands to find status and start/stop services.
 
 To utilize the jde service commands:
 
 1)	Utilizing the SSH key, open a command line session to the JDE trial edition instance.
 
-2)	Change to root user
+2)	Change to root user.
         
     [opc]#  sudo –i
 ![](./images/3.2.png " ")
 
  
-3)	First run the jde-status command.  That will probe all the essential pieces running on the JDE Trial Edition (Database, Enterprise Server, Web Servers, ADF Server, BI Publisher Server) and report on the status of the piece.  Any service reporting anything but “Running” might have a problem
+3)	First run the jde-status command.  That will probe all the essential pieces running on the JDE Trial Edition (Database, Enterprise Server, Web Servers, ADF Server, BI Publisher Server) and report on the status of the piece.  Any service reporting anything but “Running” might have a problem.
       
     [root]#  jde-status
 ![](./images/3.3.png " ")
@@ -142,7 +142,7 @@ To utilize the jde service commands:
 
 * BIP Server:  **jde-bip stop**
 
-7)	To start a particular service, issue the following commands:
+6)	To start a particular service, issue the following commands:
 
 * Database:    **jde-db start**
     
@@ -170,11 +170,11 @@ For example:
 
 	https://132.145.187.16:7072/JDEADFContainer/faces/index
 
-3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted
+3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser
+**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
 
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
+**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
     ![](./images/4.3.png " ")
 
 
@@ -188,11 +188,11 @@ At this point, ADF applications should function normally when run through the JD
 
 ## **Step 5**:  Connect to Oracle BI Publisher Server for OVR
 
-The Oracle BI Publisher Server for OVR is a reporting tool
+The Oracle BI Publisher Server for OVR is a reporting tool.
 
 To access the Oracle BI Publisher Server:
 
-1)	Open a supported browser from any workstation connected to the internet
+1)	Open a supported browser from any workstation connected to the internet.
 
 2)	Using the Public IP Address for the instance and port number 9705, which is automatically assigned to the BI Publisher and is part of the security list, enter the following URL into the browser:
 
@@ -204,11 +204,11 @@ For example:
 
 
 
-3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted
+3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser
+**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
     
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
+**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
     ![](./images/5.3.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
