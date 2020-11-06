@@ -19,23 +19,23 @@ The Data Science Service:
 *Estimated Lab Time*: 5 minutes
 
 ### Objectives
-In this lab, you will:
+In this lab, you:
 * Become familiar with concepts and terminology used in the Data Science service.
 
 ### Prerequisites
-This lab assumes you have:
+
 * None.
 
 ## Data Science Service Concepts
 
-The following concepts and terms will help you to get started with the Data Science service.
+Review the following concepts and terms to help you get started with the Data Science service.
 
-* **Project**: Projects are collaborative workspaces for organizing and documenting Data Science assets such as notebook sessions and models.
+* **Project**: Projects are collaborative workspaces for organizing and documenting Data Science assets, such as notebook sessions and models.
 * **Notebook Session**: Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions come with many pre-installed open source and Oracle developed machine learning and data science packages.
 * **Accelerated Data Science SDK**: The Oracle Accelerated Data Science (ADS) SDK is a Python library that is included as part of the Oracle Cloud Infrastructure Data Science service. ADS has many functions and objects that automate or simplify many of the steps in the Data Science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface to access the Data Science service model catalog and other Oracle Cloud Infrastructure services including Object Storage. To familiarize yourself with ADS, see the [Oracle Accelerated Data Science Library documentation](https://docs.cloud.oracle.com/iaas/tools/ads-sdk/latest/index.html).
 * **Model**: Models define a mathematical representation of your data and business processes. The model catalog is a place to store, track, share, and manage models.
 
-You may now *proceed to the next lab*.
+You can *proceed to the next lab*.
 
 ## Acknowledgements
 
@@ -45,5 +45,5 @@ You may now *proceed to the next lab*.
 
 ## See an issue?
 
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1) and include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, enter it manually. If you want us to follow up with you, enter your email in the *Feedback Comments* section and include the workshop name and lab in your request.
 
