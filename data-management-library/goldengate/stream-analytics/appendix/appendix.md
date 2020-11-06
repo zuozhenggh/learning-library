@@ -23,111 +23,111 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 ## GetCustomerDetails Stage
 **New Query**
 
-![](./images/orderstreamstage2.png)
+![](./images/orderstreamstage2.png " ")
 
 **Name Query**
 
-![](./images/orderstreamstage3.png)
+![](./images/orderstreamstage3.png " ")
 
 **Add a Source**
 
-![](./images/getcustomerdetails2.png)
+![](./images/getcustomerdetails2.png " ")
 
 **New Stage added**
 
-![](./images/getcustomerdetails3.png)
+![](./images/getcustomerdetails3.png " ")
 
 **Correlation**
 
-![](./images/getcustomerdetails4.png)
+![](./images/getcustomerdetails4.png " ")
 
 **Query added**
 
-![](./images/getcustomerdetails5.png)
+![](./images/getcustomerdetails5.png " ")
 
 
 ## GetLatLongFromZipCode Stage
 
 **New Lat-Long from Zip stage**
 
-![](./images/getlatlongfromzipcode.png)
+![](./images/getlatlongfromzipcode.png " ")
 
 ## FilterCustomers Stage
 
 **Add new filter customer stage**
 
-![](./images/filtercustomers.png)
+![](./images/filtercustomers.png " ")
 
 **Select a Pattern**
 
-![](./images/geofilterpattern.png)
+![](./images/geofilterpattern.png " ")
 
 **Geo Filter Visualization**
 
-![](./images/geofiltervisual.png)
+![](./images/geofiltervisual.png " ")
 
 ## GetProductDetails Stage
 
 **Add new Product Details Stage**
 
-![](./images/getproductdetails.png)
+![](./images/getproductdetails.png " ")
 
 **Product Details Stage Added**
 
-![](./images/getproductdetails2.png)
+![](./images/getproductdetails2.png " ")
 
 
 ## SegmentCustomers Stage
 
 **Use Formula to add Column**
 
-![](./images/discountoffered.png)
+![](./images/discountoffered.png " ")
 
 
 **Rename Column**
 
-![](./images/newaddedfields.png)
+![](./images/newaddedfields.png " ")
 
 **Define Rules**
 
-![](./images/goldcustomers.png)
+![](./images/goldcustomers.png " ")
 
 
 ## RealtimeRevenue Stage
 
 **Real Time Revenue Visualization**
 
-![](./images/revenuebycustomersegment.png)
+![](./images/revenuebycustomersegment.png " ")
 
 
 **Add Summary**
 
-![](./images/rtrvenuesummaries.png)
+![](./images/rtrvenuesummaries.png " ")
 
 **Rename Column**
 
-![](./images/rtrvenuesummariesrename.png)
+![](./images/rtrvenuesummariesrename.png " ")
 
 
 ## GetCustomer Stage
 
-![](./images/getcustomer.png)
+![](./images/getcustomer.png " ")
 
 
 ## LikelyBuyersByTypeAndZip Stage
 
 
 
-![](./images/likelybuyersbytypeandzip.png)
+![](./images/likelybuyersbytypeandzip.png " ")
 
 
 **Likely Buyers Stage added**
 
-![](./images/likelybuyersbytypeandzipgroups.png)
+![](./images/likelybuyersbytypeandzipgroups.png " ")
 
 **Likely Buyers Visualization**
 
-![](./images/likelybuyersbytypeandzipvisual.png)
+![](./images/likelybuyersbytypeandzipvisual.png " ")
 
 ## Learn More
 
@@ -139,5 +139,7 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
 * **Last Updated By/Date** - Hadi Javaherian, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

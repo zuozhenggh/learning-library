@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running the Converged Database marketplace image and a Virtual Cloud Network (VCN).
 
+*Estimated Lab Time:* 15 minutes
+
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
@@ -15,7 +17,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **Step 1A**: Create Stack:  Compute + Networking
+## **STEP 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
@@ -32,9 +34,9 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-5.  Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
+5.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
+  ![](./images/zip-file.png " ")
 
 6. Enter the following information:
 
@@ -77,9 +79,9 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Step 1B**: Create Stack:  Compute only
+## **STEP 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
+- Ingress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
 
 If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
 
@@ -97,9 +99,9 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
+  ![](./images/zip-file.png " ")
 
   Enter the following information:
     - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
@@ -148,7 +150,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-stack-details-b.png " ")
 
-## **Step 2**: Terraform Plan (OPTIONAL)
+## **STEP 2**: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -165,7 +167,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-plan-results-4.png " ")
 
-## **Step 3**: Terraform Apply
+## **STEP 3**: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
@@ -194,7 +196,7 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
 
-## **Step 4**: Connect to your instance
+## **STEP 4**: Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 ***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
@@ -207,7 +209,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
   ![](./images/em-cloudshell.png " ")
 
-2.  If you didn't jot down your comput instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
     ````
@@ -266,7 +268,7 @@ To save all your settings:
 
 You may now *proceed to the next lab*.  
 
-## Appendix:  Teraform and Resource Manager
+## Appendix:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
@@ -294,7 +296,7 @@ This workshop requires a certain number of ports to be available.
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 - Availability Domain Mismatch
 - Limits Exceeded
 - Invalid public key
@@ -340,7 +342,7 @@ When creating a stack your ability to create an instance is based on the capacit
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
 5.  Click on the stack you created previously
@@ -364,7 +366,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
@@ -382,5 +384,7 @@ If you have other compute instances you are not using, you can go to those insta
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
