@@ -7,7 +7,7 @@ In SOA 12c, SOA composites can use end-to-end JSON. This means that the REST ser
 
 Estimated Lab Time: 60 minutes
 
-## **STEP 1**:   REST-Enabled the Service Bus Proxy End-Point
+## **STEP 1**: REST-Enabled the Service Bus Proxy End-Point
 
 1. In the Components swimlane, right-click the left wired connection of validatePaymentProcess, and select **Expose as REST**.
 
@@ -18,7 +18,7 @@ Estimated Lab Time: 60 minutes
    [](youtube:50i0b8ry-z8)
 
 
-## **Summary**
+## **STEP 2**: Review Post workshop
 
 Congratulations you've completed developing the validate payment service using SOA composite app; register it to Oracle Service Bus. You've also enabled the app so it can be invoked using https protocol, REST api.
 
@@ -59,6 +59,14 @@ At the end of this module, your solution will look similar to the following proc
 
 
  <!-- [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md) -->
+
+## Learn More
+
+Congratulations you've exposed a REST-api end-point from the Oracle Service Bus.
+
+To find more detail about Service Bus development using JDeveloper - please go to this [Oracle Service Bus link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/getting-started-oracle-service-bus-jdeveloper.html#GUID-669A9F6F-EE55-499A-AF33-D2FF7DB651B4)
+
+Further details about generating REST Services can be found on [this link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/creating-rest-services-oracle-service-bus.html#GUID-50F6B4C8-D34F-4729-BC8E-7785CEE66DA5)
 
 ## Acknowledgements
 * **Author for LiveLabs** - Daniel Tarudji

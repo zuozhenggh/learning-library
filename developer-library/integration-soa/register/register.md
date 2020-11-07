@@ -246,6 +246,14 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
+## Learn More
+
+Congratulations you've developed and registered the validate payment service to the Oracle Service Bus.
+
+To find more detail about Service Bus, Enterprise Service Bus - please go to this [Oracle Service Bus link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/index.html)
+
+*You may proceed to the next lab: REST-api enabled the payment service*
+
 ## Acknowledgements
 * **Author** - Daniel Tarudji
 * **Contributors** - Kamryn Vinson

@@ -18,7 +18,7 @@ Critical business services, such as customer, financial, ordering information, a
 
 Estimated time taken to complete: 15 minutes
 
-## STEP 1: Oracle SOA Development tool, JDeveloper 12c
+## STEP 1: SOA Suite Development, JDeveloper 12c
 
 - SOA development tool, JDeveloper 12c
 
@@ -34,7 +34,7 @@ A preview about Oracle SOA Composite development on JDeveloper 12c
 -  ![](./images/jdev-on-desktop.png)
 
 
-## STEP 2: Access JDeveloper 12c
+## STEP 2: Accessing JDeveloper 12c
 
 Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The following will appear on the desktop:
 
@@ -52,7 +52,10 @@ Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The followi
 
 -![](./images/start-jdev-weblogic.png)
 
+Once the Weblogic App Server start completed, the following would appear:
 
+- ![](./images/jdev-weblogic-started.png)
+- 
 <!--
 ### Prerequisites
 
@@ -84,7 +87,7 @@ Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The followi
 
 -->
 
-## **Summary**
+## Learn More
 
 More details about JDeveloper can be found on [JDeveloper12c] (https://www.oracle.com/application-development/technologies/jdeveloper.html)
 
