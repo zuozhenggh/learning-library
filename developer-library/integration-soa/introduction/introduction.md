@@ -36,9 +36,19 @@ The Integration SOA workshop consists of 4 separate labs.  The labs should be fo
 
 ## STEP 2: Lab Environment
 
-The workshop has been setup to expedite your SOA development process. The environment consists of JDeveloper 12c, version 12.2.1.4 hosted on an Oracle Linux operating system.
+The workshop has been setup to expedite your SOA development process. The environment consists of JDeveloper 12c, version 12.2.1.4 with preconfigured for SOA Suite. It hosted on an Oracle Linux operating system.
 
-You may proceed to the next lab
+The JDeveloper in this distribution is pre-configured with some JDeveloper IDE extensions so that you can create various kinds of applications immediately. These pre-installed IDE extensions include the following:
+- Oracle BPEL Process Manager
+- Oracle Human Workflow
+- Oracle Business Rules
+- Oracle Mediator
+- Oracle Service Bus
+- Oracle Enterprise Scheduler
+- SOA Spring Component Design Time
+
+You may now proceed to the next lab.
+
 ## Learn More
 
 - <a href= https://cloudmarketplace.oracle.com/marketplace/en_US/listing/74792101> SOA on Oracle Marketplace </a>
