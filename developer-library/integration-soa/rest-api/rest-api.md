@@ -35,9 +35,9 @@ SOA complement Microservices architecture by
 4. Strong emphasis on DevOps and Continuous Delivery 
 5. Communicate through an API layer.
    
-<!-- You may proceed to next module in the advance workshop - build the process order application using soa composite.
+<!-- You may proceed to next module in the advance workshop - build the process order application using soa composite. -->
 
-## The advance workshop
+<!-- The advance workshop
 Once this workshop is completed. Next step is an advance workshop. In the advance workshop is to build a new order processing system for Avitek, referred to as ProcessOrder.
 
 For the new business requirements in Avitek ‘s new order processing system:

@@ -56,7 +56,7 @@ Once the Weblogic App Server start completed, the following would appear:
 
 - ![](./images/jdev-weblogic-started.png)
 - 
-<!--
+<!-- comment out paragraph
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account

@@ -19,7 +19,7 @@ Estimated Workshop Time, to complete 4 labs: 3 Hours
 
 *{Note: For this lab, it assumes you have access to JDeveloper12c environment, which can be run on Linux instance on OCI.}*
 
-### Labs:
+## STEP 1: Labs
 
 The Integration SOA workshop consists of 4 separate labs.  The labs should be followed in order from Lab 1 to Lab 4.  There are also screen shots available throughout the labs to guide you through the exercises. 
 
@@ -34,6 +34,11 @@ The Integration SOA workshop consists of 4 separate labs.  The labs should be fo
 
 ![](../images/2/soa-tutorialpdf.png) -->
 
+## STEP 2: Lab Environment
+
+The workshop has been setup to expedite your SOA development process. The environment consists of JDeveloper 12c, version 12.2.1.4 hosted on an Oracle Linux operating system.
+
+You may proceed to the next lab
 ## Learn More
 
 - <a href= https://cloudmarketplace.oracle.com/marketplace/en_US/listing/74792101> SOA on Oracle Marketplace </a>
