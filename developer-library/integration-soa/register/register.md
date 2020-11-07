@@ -246,6 +246,9 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
+
+You may now proceed to the next lab.
+
 ## Learn More
 
 Congratulations you've developed and registered the validate payment service to the Oracle Service Bus.

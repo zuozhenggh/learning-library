@@ -62,7 +62,7 @@ At the end of this module, your solution will look similar to the following proc
 
 ## Learn More
 
-Congratulations you've exposed a REST-api end-point from the Oracle Service Bus.
+Congratulations you've exposed a REST-api end-point from the Oracle Service Bus. You've also completed the Integration-SOA workshop.
 
 To find more detail about Service Bus development using JDeveloper - please go to this [Oracle Service Bus link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/getting-started-oracle-service-bus-jdeveloper.html#GUID-669A9F6F-EE55-499A-AF33-D2FF7DB651B4)
 

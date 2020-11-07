@@ -47,6 +47,8 @@ The JDeveloper in this distribution is pre-configured with some JDeveloper IDE e
 - Oracle Enterprise Scheduler
 - SOA Spring Component Design Time
 
+A pre-installed JDeveloper 12c (12.2.1.4) on a Linux desktop has been provisioned on the Oracle Cloud (OCI). To access a pre-installed JDeveloper environment, you need any modern browser on your laptop or workstation and use the following URL http://[provided ip address]:8080/guacamole with user oracle, password: "Guac.LiveLabs_" note: an underscore character at the end.
+
 You may now proceed to the next lab.
 
 ## Learn More

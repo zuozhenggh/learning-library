@@ -55,7 +55,9 @@ Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The followi
 Once the Weblogic App Server start completed, the following would appear:
 
 - ![](./images/jdev-weblogic-started.png)
-- 
+
+You may now proceed to the next lab.
+
 <!-- comment out paragraph
 ### Prerequisites
 
