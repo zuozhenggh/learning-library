@@ -297,13 +297,15 @@ You can use these commands to see when applications were deployed, what their cu
     </copy>
     ````
 
-1. start a bash session in the Pod’s container:
+1. List the content of the Pod’s container work folder:
 
     ````shell
     <copy>
-    kubectl exec -ti $POD_NAME bash
+    kubectl exec -ti $POD_NAME ls
     </copy>
     ````
+
+    *Note:* You can also start a `bash` session on the Pod's container, just change the `ls` to `bash`. Remember that you need to type `exit` to exit the bash session.
 
 ## **STEP 6**: Under the Hood
 
@@ -330,7 +332,7 @@ You may now [proceed to the next lab](#next).
 * [MuShop Github Repo](https://github.com/oracle-quickstart/oci-cloudnative)
 * [MuShop Deployment documentation](https://oracle-quickstart.github.io/oci-cloudnative/cloud/)
 * [Terraform Deploymment scripts](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/complete/terraform)
-* Full Solution deployment with one click - launches in OCI Resource Manager directly ![Deploy to Oracle Cloud][magic_button]][magic_mushop_stack]
+* Full Solution deployment with one click - launches in OCI Resource Manager directly ![Deploy to Oracle Cloud][magic_button][magic_mushop_stack]
 
 ## Acknowledgements
 
