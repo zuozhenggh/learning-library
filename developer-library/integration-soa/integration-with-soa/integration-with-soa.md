@@ -40,12 +40,13 @@ Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The followi
 
 - ![](./images/jdev-role-selection.png)
 
-- Choose Studio Developer (All Features)
-- Next, click OK button, JDeveloper 12c now opens on your desktop
+- For the role, choose Studio Developer (All Features).
+- - you may want to uncheck the "Always prompt for role selection on startup"
+- Next, click OK button. JDeveloper 12c now opens on your desktop
 
 -![](./images/jdev-ide-open.png)
 
-- Next start the weblogic server in JDeveloper
+- Next start the Weblogic server, embedded in default domain of JDeveloper
 - - From the application server tab, right click
 - - Start server instance
 
