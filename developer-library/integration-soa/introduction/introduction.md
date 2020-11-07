@@ -8,7 +8,7 @@ The bulk fulfillment process must run according to a predefined pick-up schedule
 
 Estimated Workshop Time, to complete 4 labs: 3 Hours
 
-## Objectives of the workshop
+## About this workshop
 
 * Introducing SOA development tool, JDeveloper 12c
 * Design Integration composite using JDeveloper as an IDE
