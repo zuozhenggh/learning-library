@@ -34,7 +34,11 @@ A preview about Oracle SOA Composite development on JDeveloper 12c
 -  ![](./images/jdev-on-desktop.png)
 
 
+## STEP 2: Open JDeveloper 12c
 
+Double click on the Oracle JDeveloper 12c. The following will appear on the desktop:
+
+![](/images/jdev-role-selection.png)
 More details about JDeveloper can be found on [JDeveloper12c] (https://www.oracle.com/application-development/technologies/jdeveloper.html)
 
 
