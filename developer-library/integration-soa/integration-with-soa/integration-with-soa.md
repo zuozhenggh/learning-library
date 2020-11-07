@@ -36,7 +36,7 @@ A preview about Oracle SOA Composite development on JDeveloper 12c
 
 ## STEP 2: Access JDeveloper 12c
 
-Double click on the Oracle JDeveloper 12c. The following will appear on the desktop:
+Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The following will appear on the desktop:
 
 - ![](./images/jdev-role-selection.png)
 
@@ -45,6 +45,9 @@ Double click on the Oracle JDeveloper 12c. The following will appear on the desk
 
 -![](./images/jdev-ide-open.png)
 
+- Next start the weblogic server in JDeveloper
+
+-![](./images/start-jdev-weblogic.png)
 
 More details about JDeveloper can be found on [JDeveloper12c] (https://www.oracle.com/application-development/technologies/jdeveloper.html)
 
