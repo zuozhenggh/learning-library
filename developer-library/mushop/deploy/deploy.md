@@ -324,7 +324,7 @@ You can use these commands to see when applications were deployed, what their cu
     ````
 
 1. Explore the files, and see each output.
-
+  
 You may now [proceed to the next lab](#next).
 
 ## Learn More
@@ -332,7 +332,7 @@ You may now [proceed to the next lab](#next).
 * [MuShop Github Repo](https://github.com/oracle-quickstart/oci-cloudnative)
 * [MuShop Deployment documentation](https://oracle-quickstart.github.io/oci-cloudnative/cloud/)
 * [Terraform Deploymment scripts](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/complete/terraform)
-* Full Solution deployment with one click - launches in OCI Resource Manager directly ![Deploy to Oracle Cloud][magic_button][magic_mushop_stack]
+* Full Solution deployment with one click - launches in OCI Resource Manager directly [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://console.us-ashburn-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-quickstart/oci-cloudnative/releases/latest/download/mushop-stack-latest.zip)  
 
 ## Acknowledgements
 
@@ -345,6 +345,3 @@ You may now [proceed to the next lab](#next).
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-[magic_button]: https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg
-[magic_mushop_stack]: https://console.us-ashburn-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-quickstart/oci-cloudnative/releases/latest/download/mushop-stack-latest.zip
