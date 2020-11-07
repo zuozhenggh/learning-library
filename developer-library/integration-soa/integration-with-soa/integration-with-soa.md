@@ -41,16 +41,15 @@ Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The followi
 - ![](./images/jdev-role-selection.png)
 
 - Choose Studio Developer (All Features)
-- Next, click OK button
+- Next, click OK button, JDeveloper 12c now opens on your desktop
 
 -![](./images/jdev-ide-open.png)
 
 - Next start the weblogic server in JDeveloper
+- - From the application server tab, right click
+- - Start server instance
 
 -![](./images/start-jdev-weblogic.png)
-
-More details about JDeveloper can be found on [JDeveloper12c] (https://www.oracle.com/application-development/technologies/jdeveloper.html)
-
 
 
 <!--
@@ -85,6 +84,8 @@ More details about JDeveloper can be found on [JDeveloper12c] (https://www.oracl
 -->
 
 ## **Summary**
+
+More details about JDeveloper can be found on [JDeveloper12c] (https://www.oracle.com/application-development/technologies/jdeveloper.html)
 
 At this point, you're ready to start building amazing enterprise-grade orchestration and integration, rapidly. 
 
