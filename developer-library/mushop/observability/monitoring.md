@@ -211,7 +211,7 @@ This step showcases the [Horizontal Pod Autoscaling](https://kubernetes.io/docs/
 
     Verify that targets increased and the number of replicas have started to increase
 
-    *Note:* Depending on the shapes of the Cluster worker nodes, the usage can have lower variations
+    *Note:* Depending on the shapes of the Cluster worker nodes, the usage can have variations to lower or higher numbers.
 
 1. Return to the Grafana console and review the dashboards
 
@@ -223,6 +223,7 @@ This step showcases the [Horizontal Pod Autoscaling](https://kubernetes.io/docs/
     <copy>
     kubectl delete -f src/load/load-dep.yaml
     </copy>
+    ````
 
     Notice that after few minutes the preasure will be reduced and targets will be reduced to the lowest level. At this point the Kubernetes will start to **scale down** and will bring the number of replicas back to minimum.
 
