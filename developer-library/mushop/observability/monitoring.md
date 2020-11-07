@@ -215,7 +215,7 @@ This step showcases the [Horizontal Pod Autoscaling](https://kubernetes.io/docs/
 
 1. Return to the Grafana console and review the dashboards
 
-    You will notice an increase of CPU and Memory usage as a variation on the number of replicas
+    You will notice an increase of CPU and Memory usage, and variations on the number of replicas
 
 1. Remove the load simulator
 
