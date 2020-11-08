@@ -266,7 +266,7 @@ Congratulations you've developed and registered the validate payment service to 
 
 To find more detail about Service Bus, Enterprise Service Bus - please go to this [Oracle Service Bus link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/index.html)
 
-*You may proceed to the next lab: REST-api enabled the payment service*
+You may now proceed to the next lab
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji

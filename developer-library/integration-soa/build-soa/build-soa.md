@@ -369,13 +369,14 @@ The first design iteration is complete and you are now ready to deploy the compo
    For more details of how to, please refer to Chapter 2, from <ins>**page 37 to 42**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
 
 
-## Learn More
+Congratulations! you have completed your first SOA composite app to validate payment service with orchestration approach.
 
-Congratulations you completed your first SOA Suite 12c composite! for validate payment with orchestration approach.
+You may now proceed to the next lab.
+
+## Learn More
 
 To find more detail about BPEL, Process manager - please go to this [SOA 12c link](https://docs.oracle.com/en/middleware/soa-suite/bpel/12.2.1.4/)
 
-*You may proceed to the next lab: Register the payment service with Oracle Service Bus*
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji

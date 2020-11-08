@@ -46,7 +46,9 @@ SOA complement Microservices architecture by
 3. Quick and easy deployment with docker and Kubernetes
 4. Strong emphasis on DevOps and Continuous Delivery 
 5. Communicate through an API layer.
-   
+
+Congratulations you've exposed a REST-api end-point from the Oracle Service Bus. You've also completed the Integration-SOA workshop.
+
 <!-- You may proceed to next module in the advance workshop - build the process order application using soa composite. -->
 
 <!-- The advance workshop
@@ -73,8 +75,6 @@ At the end of this module, your solution will look similar to the following proc
  <!-- [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md) -->
 
 ## Learn More
-
-Congratulations you've exposed a REST-api end-point from the Oracle Service Bus. You've also completed the Integration-SOA workshop.
 
 To find more detail about Service Bus development using JDeveloper - please go to this [Oracle Service Bus link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/getting-started-oracle-service-bus-jdeveloper.html#GUID-669A9F6F-EE55-499A-AF33-D2FF7DB651B4)
 
