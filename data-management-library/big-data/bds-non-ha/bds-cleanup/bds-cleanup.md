@@ -110,7 +110,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
   ![](./images/reserved-ips.png " ")
 
-4. Click the **Actions** button associated with **`traininmn0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click * pane*Terminate**.
+4. Click the **Actions** button associated with **`traininmn0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
 5. Click the **Actions** button associated with **`traininqs0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
@@ -145,7 +145,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Reviewers:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
-    + Alexey Filanovskiy, Senior Principal Product Manager, DW & Big Data Global Leaders Program 
+    + Alexey Filanovskiy, Senior Principal Product Manager, DW & Big Data Global Leaders Program
 * **Last Updated By/Date:** Lauran Serhal, November 2020
 
 ## Need Help?
