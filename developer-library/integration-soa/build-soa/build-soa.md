@@ -16,9 +16,11 @@ The validate payment solution will look as the following from an architectural p
 
 Estimated Lab Time: 90 minutes
 
-### **Construct Payment Validation process flow**
+### Objectives
 
-The validation process:
+**Construct Payment Validation process orchestration**
+
+The validation process flow are outlined here:
 + The payment information is retrieved from the database, using the credit card number quoted in the order message as the key. If there is no data available with this credit card number, payment is denied.
 + If data for the credit card number is available, the expiry date in the database record is compared to the expiry date listed in the order message. If they are not the same, the payment is also denied.
 + The last check compares if the total order amount is less than the daily limit on the credit card in the database.
@@ -26,6 +28,15 @@ The validation process:
 + The implementation of this service uses a BPEL process to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
 
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+  
 
 **Validation Payment, development Steps:**
 

@@ -19,7 +19,7 @@ Critical business services, such as customer, financial, ordering information, a
 Estimated time taken to complete: 15 minutes
 
 ### Objectives
-- Using JDeveloper12c as development platform to construct integration service orchestration
+- This lab shows JDeveloper12c as a development platform to construct integration service orchestration. It also show how to access JDeveloper 12c on the Linux OCI.
 
 ### Prerequisites
 This lab assumes you have:

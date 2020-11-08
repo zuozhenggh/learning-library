@@ -17,7 +17,7 @@ Estimated Workshop Time, to complete 4 labs: 3 Hours
 * REST-api enabled the composite on SOA server in JDeveloper
 
 ### Objectives
-- Explore **JDeveloper12c** as Oracle development primer
+- Explore **JDeveloper12c**, 12.2.1.4 as an Oracle SOA development foundation.
 
 ### Prerequisites
 This lab assumes you have:

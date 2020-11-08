@@ -8,12 +8,11 @@ Service Bus will protect consumers of the validatePayment composite from routine
 
 ![](./images/servc-bus-0.png)
 
-For next step, You will start by first creating a Business Service to register the composite URI (the composite end-point). You will then add a simple Pipeline and Proxy. Pipelines contain actions performed on the Service Bus, typically reporting, data transformation and validation, before invoking the backend service. Consumers of validatePayment service will call the end-point API via the Proxy rather than connecting directly to the composite end-point, allowing more agility and flexibility in managing change.
-
 Estimated Lab Time: 60 minutes
 
 ### Objectives
 - Utilize Oracle JDeveloper 12c to construct Proxy and Business services on Oracle Service Bus.
+- In this lab, you will start by first creating a Business Service to register the composite URI (the composite end-point). You will then add a simple Pipeline and Proxy. Pipelines contain actions performed on the Service Bus, typically reporting, data transformation and validation, before invoking the backend service. Consumers of validatePayment service will call the end-point API via the Proxy rather than connecting directly to the composite end-point, allowing more agility and flexibility in managing change.
 
 ### Prerequisites
 This lab assumes you have:
