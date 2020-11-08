@@ -18,6 +18,7 @@ Estimated Workshop Time, to complete 4 labs: 3 Hours
 
 ### Objectives
 - Explore **JDeveloper12c**, 12.2.1.4 as an Oracle SOA development foundation.
+- Gain familiarity with Oracle JDeveloper 12c that has pre-configured with SOA extensions.
 
 ### Prerequisites
 This lab assumes you have:
@@ -49,7 +50,7 @@ The Integration SOA workshop consists of 4 separate labs.  The labs should be fo
 
 The workshop has been setup to expedite your SOA development process. The environment consists of JDeveloper 12c, version 12.2.1.4 with preconfigured for SOA Suite. It hosted on an Oracle Linux operating system.
 
-The JDeveloper in this distribution is pre-configured with some JDeveloper IDE extensions so that you can create various kinds of applications immediately. These pre-installed IDE extensions include the following:
+The JDeveloper in this distribution is pre-configured with some JDeveloper IDE extensions so that you can create various kinds of integration orchestration applications immediately. These pre-installed IDE extensions include the following:
 - Oracle BPEL Process Manager
 - Oracle Human Workflow
 - Oracle Business Rules
