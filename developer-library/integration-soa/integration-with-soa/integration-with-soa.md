@@ -12,7 +12,7 @@ Oracle SOA Suite provides easy-to-use, reusable, and unified application develop
 
 SOA Suite functional architecture
 
-  ![](./images/soa-architecture.png)
+  ![](./images/soa-architecture.png " ")
 
 Critical business services, such as customer, financial, ordering information, and others that were previously accessible only in packaged application user interfaces can now be rapidly repurposed for digital-enabled channel such as: smart phone and tablets.
 
@@ -36,7 +36,7 @@ This lab assumes you have:
 
 - Oracle JDeveloper offers complete end-to-end development for Oracle's platform and Oracle's applications. 
 
-  ![](./images/jdev-lifecycle.png)
+  ![](./images/jdev-lifecycle.png " ")
 
 A preview about Oracle SOA Composite development on JDeveloper 12c
 
@@ -50,23 +50,23 @@ A preview about Oracle SOA Composite development on JDeveloper 12c
 
 Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The following will appear on the desktop:
 
-- ![](./images/jdev-role-selection.png)
+- ![](./images/jdev-role-selection.png " ")
 
 - For the role, choose Studio Developer (All Features).
 - - you may want to uncheck the "Always prompt for role selection on startup"
 - Next, click OK button. JDeveloper 12c now opens on your desktop
 
--![](./images/jdev-ide-open.png)
+-![](./images/jdev-ide-open.png " ")
 
 - Next start the Weblogic server, embedded in default domain of JDeveloper
 - - From the application server tab, right click
 - - Start server instance
 
--![](./images/start-jdev-weblogic.png)
+-![](./images/start-jdev-weblogic.png " ")
 
 Once the Weblogic App Server start completed, the following would appear:
 
-- ![](./images/jdev-weblogic-started.png)
+ ![](./images/jdev-weblogic-started.png " ")
 
 You may now proceed to the next lab.
 

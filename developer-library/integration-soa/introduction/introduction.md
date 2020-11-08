@@ -1,6 +1,6 @@
 # Introduction
 
-This Oracle SOA workshop demonstrates an implementation of business use case for integration by walking through application development - validating payment for an online ordering system. The ordering system will also need to integrate with a mobile application. The composite SOA app built must support access through RESTful APIs.
+This Oracle SOA workshop demonstrates an implementation of business use case for integration by walking through application development - validating payment for an online ordering system. The ordering system will also need to be integrated and invoked by a mobile application via https/REST. The composite SOA app built must support access through RESTful APIs.
 
 <!-- In the advanced workshop, the order processing would also integrate with systems and apps from the packaging department to do ship orders with preferred shipping providers based on the type of shipping service (2 day, 5-7 day shipping, and so on).
 
