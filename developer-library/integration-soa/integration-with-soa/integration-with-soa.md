@@ -18,6 +18,18 @@ Critical business services, such as customer, financial, ordering information, a
 
 Estimated time taken to complete: 15 minutes
 
+### Objectives
+- Using JDeveloper12c as development platform to construct integration service orchestration
+
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+
 ## STEP 1: SOA Suite Development, JDeveloper 12c
 
 - SOA development tool, JDeveloper 12c

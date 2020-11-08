@@ -16,7 +16,18 @@ Estimated Workshop Time, to complete 4 labs: 3 Hours
 * Register the composite with Service Bus and deploy
 * REST-api enabled the composite on SOA server in JDeveloper
 
+### Objectives
+- Explore **JDeveloper12c** as Oracle development primer
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+  
 *{Note: For this lab, it assumes you have access to JDeveloper12c environment, which can be run on Linux instance on OCI.}*
 
 ## STEP 1: Labs

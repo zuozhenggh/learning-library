@@ -7,6 +7,18 @@ In SOA 12c, SOA composites can use end-to-end JSON. This means that the REST ser
 
 Estimated Lab Time: 60 minutes
 
+### Objectives
+- Use JDeveloper12c to REST-enabled API an existing Proxy service constructed on the Oracle Service Bus.
+
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+
 ## **STEP 1**: REST-Enabled the Service Bus Proxy End-Point
 
 1. In the Components swimlane, right-click the left wired connection of validatePaymentProcess, and select **Expose as REST**.

@@ -12,6 +12,18 @@ For next step, You will start by first creating a Business Service to register t
 
 Estimated Lab Time: 60 minutes
 
+### Objectives
+- Utilize Oracle JDeveloper 12c to construct Proxy and Business services on Oracle Service Bus.
+
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+
 ## **STEP 1**:  Create a Service Bus Application and New Project **Validate Payment**. 
 
 1. Create a new Service Bus application. There are various ways and shortcuts to do this, and in this case choose **File** > **New** > **Application**... from the menu.
