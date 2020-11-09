@@ -21,33 +21,33 @@ As a Developer or Data Engineer,
 
 ## **STEP 1**: Navigate to the OCI Marketplace
 1. Click the Hamburger Menu (≡) on the top left corner.
- <img src="images/click_hamburger.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+ ![](./images/click_hamburger.png)
 2. Scroll down and click Marketplace.
-<img src="images/click_marketplace.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/click_marketplace.png)
 3. Search the marketplace for **HPC** and select HPC Cluster.
-<img src="images/marketplace.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/marketplace.png)
 
 4. Review the and accept the **Oracle Standard Terms and Restrictions** and
 click **Launch Stack**.
-<img src="images/launch_stack.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/launch_stack.png)
 
 ## **STEP 2**: Configure the HPC Stack
 After launching the stack you'll be redirected to the Create Stack Wizard where you'll fill in the Stack information.
 
 1. In **Stack Information** give the Stack a name and *(optionally)* specify to deploy in a compartment that you are currently not in.
-<img src="images/stack_p1.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/stack_p1.png)
 
 2. Select the desired **AD** for the compute shapes and the bastion.
 
 3. Copy-paste your public **ssh key**
-<img src="images/stack_p2_1.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/stack_p2_1.png)
 4. Type in the number of **Compute Instances** for the cluster
-<img src="images/stack_p2_2.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/stack_p2_2.png)
 5. Under **Network Options** leave the defaults
-<img src="images/stack_p2_3.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/stack_p2_3.png)
 
 6. Click **Next** to review the configuration.
-<img src="images/stack_p3.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/stack_p3.png)
 
 7. Click **Create**
 
@@ -62,11 +62,11 @@ Once you've created the Stack it will redirect you to a page where you can view 
 4. **Outputs**
 5. **View State** of the job
 
- <img src="images/stack_detail_provisioning.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+ ![](./images/stack_detail_provisioning.png)
 
  To navigate to this page where you can view all your Stacks in your current compartment click on the Hamburger Menu (≡) on the top left and under **Solutions and Platform** hover over **Resource Manager** > **Stacks**.
 
- <img src="images/nav_resource_manager.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+ ![](./images/nav_resource_manager.png)
 
 All Done! This completes the demo for provisioning an HPC Cluster from Oracle Marketplace Image. 
 

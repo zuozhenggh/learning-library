@@ -1,6 +1,6 @@
-# Migrate the on-premises database to Autonomous Database
+# Migrate the On-Premises Database to Autonomous Database
 
-## About This lab
+## Introduction
 
 In this lab, we will migrate the on-premises database to the Autonomous Database on Oracle Cloud Infrastructure.
 
@@ -354,21 +354,21 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
 1. Go to **User -> User Settings**
 
-2. Take note of your full username 
+2. Take note of your full username
 
-    <img src="./images/username.png" width="70%" />
+    ![](./images/username.png)
 
-2. Go to **Auth Tokens**
+3. Go to **Auth Tokens**
 
-    <img src="./images/auth-token.png" width="70%" />
+    ![](././images/auth-token.png)
 
-3. Click **Generate Token**
+4. Click **Generate Token**
 
-4. Give it a name
+5. Give it a name
 
-5. Click **Generate Token**
+6. Click **Generate Token**
 
-6. Copy the output of the token to notepad
+7. Copy the output of the token to notepad
 
 ## **STEP 8:** Configure ATP cloud credential
 

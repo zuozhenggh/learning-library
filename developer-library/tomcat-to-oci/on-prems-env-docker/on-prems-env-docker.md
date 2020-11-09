@@ -1,4 +1,4 @@
-# Setup a local (on-premises) environment using Docker
+# Setup a Demo On-Premises Environment Using Docker
 
 ## Introduction
 
@@ -222,8 +222,6 @@ c99433b680ce        tomcat-to-oci_tomcat         "catalina.sh run"        26 sec
     ```
 
     Before proceeding, make sure the local environment has been deployed properly and is running. 
-
-    ![](./images/localhost-admin-console.png)
 
     The **SimpleDB** application should be running at [http://localhost:8080/SimpleDB/](http://localhost:8080/SimpleDB/)
 

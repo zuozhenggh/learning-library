@@ -34,32 +34,30 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
 
 ## **STEP 1**: Installing ocihpc on macOS/Linux
 
-1. Download the latest release with the following command and extract it
-   
+1. Download the latest release with the following command and extract it:
     ```sh
-    $ <copy>curl -LO https://github.com/oracle-quickstart/oci-ocihpc/releases/download/v1.0.0/ocihpc_v1.0.0_darwin_x86_64.tar.gz</copy>
+    $ curl -LO https://github.com/oracle-quickstart/oci-ocihpc/releases/download/v1.0.0/ocihpc_v1.0.0_darwin_x86_64.tar.gz
     ```
-
 2. Unzip the file you downloaded in Step 1.
     ```sh
-    $ <copy>gunzip -c ocihpc_v1.0.0_darwin_x86_64.tar.gz | tar xopf -</copy>
+    $ gunzip -c ocihpc_v1.0.0_darwin_x86_64.tar.gz | tar xopf -
     ```
 
 
 3. Make the ocihpc binary executable.
     ```sh
-    $ <copy>chmod +x ./ocihpc</copy> 
+    $ chmod +x ./ocihpc 
     ```
 
 4. Move the ocihpc binary to your PATH.
     ```sh
-    $ <copy>sudo mv ./ocihpc /usr/local/bin/ocihpc</copy> 
+    $ sudo mv ./ocihpc /usr/local/bin/ocihpc 
     ```
 
 5. Test that it works.
     
     ```sh
-    $ <copy>ocihpc version</copy>
+    $ ocihpc version 
     ```
 
 ## **STEP 2**: Installing ocihpc on Windows
@@ -71,7 +69,7 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
 3. Test that it works.
     
     ```sh
-    $ <copy>ocihpc.exe version</copy>
+    $ ocihpc.exe version 
     ```
 
 ## **STEP 3**: Creating an ssh keypair on the Command Line
@@ -83,19 +81,19 @@ Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG
 
 2. Navigate to your .oci folder
     ```sh
-    $ <copy>cd Users/enjli/.ssh</copy>
+    $ cd Users/enjli/.ssh
     ```
 
 3. If you haven't already created the folder, create a .ssh directory to store the credentials:
     ```sh
-    $ <copy>mkdir Users/enjli/.ssh</copy>
+    $ mkdir Users/enjli/.ssh
     ```
 
 4. If you don't see any id_rsa key pairs in the folder, enter the following command and provide a name and passphrase when prompted. The keys will be created with the default values: RSA keys of 2048 bits.
 
 
     ```sh
-    $ <copy>ssh-keygen</copy>
+    $ ssh-keygen
     ```
 
 
@@ -108,23 +106,22 @@ Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/API
 
 1. If you haven't already, create a .oci directory to store the credentials:
     ```sh
-    $ <copy>mkdir Users/enjli/.oci</copy>
+    $ mkdir Users/enjli/.oci
     ```
 
-2. Generate the private key with the following commands:
+2. Generate the private key with  following commands.
     ```sh
-    $ <copy>openssl genrsa -out ~/.oci/oci_api_key.pem 2048</copy>
+    $ openssl genrsa -out ~/.oci/oci_api_key.pem 2048
     ```
-
 3. Ensure that only you can read the private key file:
     ```sh
-    $ <copy>chmod go-rwx ~/.oci/oci_api_key.pem</copy>
+    $ chmod go-rwx ~/.oci/oci_api_key.pem
     ```
 
 4. Generate the public key:
     
     ```sh
-    $ <copy>openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem</copy>
+    $ openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
     ```
 
 ## **STEP 5**: Add public key to Oracle Cloud Infrastructure
@@ -136,11 +133,13 @@ Now that you have a private / public key combo , you must add it to OCI console 
 2. Login to your OCI console and click on Menu and select Identity and Users. Select a User and navigate to User Detail page.
 
 3. Click on Add Public Key under API Keys section.
-![](./images/ResourcesMenu.png)
-![](./images/APIKeys.png)
+<img src="images/ResourcesMenu.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+<img src="images/APIKeys.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+
 
 4. Paste Public key which you copied from CLI in Add Public Key
-![](./images/AddPublicKey.png)
+<img src="images/AddPublicKey.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+
 
 
 ## **STEP 6**: Configure
@@ -151,27 +150,30 @@ This step describes the required configuration for the CLI and includes optional
 
 2. Run *ocihpc configure* to check if you have a valid configuration to access OCI. The tool will walk you through creating a configuration.
 
-    You will be notified where your config file is written to:
+  You will be notified where your config file is written to:
 
-    *Configuration file saved to: /Users/enjli/.oci/config*
+  *Configuration file saved to: /Users/enjli/.oci/config*
 
-    In order to create your config file, you will need:
+  In order to create your config file, you will need:
       1. Your user OCID (found in profile section at the top right of the screen under > user settings > user information tab),
       2. Tenancy OCID (Administration > Tenancy Details > Tenancy Information tab),
       3. The region you are working out of (i.e. us-phoenix-1, us-ashburn-1, etc.),
       4. User's fingerprint(found in user information tab),
       5. Path to your API private signing key. 
    
-    An example `config` file would look like this:
-    ![](./images/oci_config.png)
+  An example `config` file would look like this:
+  <img src="images/oci_config.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+
 
 ## **STEP 7**: List
 
-1. You can get the list of available stacks by running `ocihpc list`. For example
+You can get the list of available stacks by running `ocihpc list`.
+
+Example:
 
     ```
-
-    $ <copy>ocihpc list</copy>
+    sh
+    $ ocihpc list
 
     List of available stacks:
 
@@ -184,15 +186,15 @@ This step describes the required configuration for the CLI and includes optional
 
 1. Create a folder that you will use as the deployment source.
 
-  IMPORTANT: Use a different folder per stack. Do not initialize more than one stack in the same folder. Otherwise, the tool will overwrite the previous one.
+IMPORTANT: Use a different folder per stack. Do not initialize more than one stack in the same folder. Otherwise, the tool will overwrite the previous one.
 
 2. Change to that folder and run `ocihpc init <stack name>`. `ocihpc` will download the necessary files to that folder.
 
 
     ```
-    $ <copy>mkdir ocihpc-test</copy>
-    $ <copy>cd ocihpc-test</copy>
-    $ <copy>ocihpc init --stack ClusterNetwork</copy>
+    $ mkdir ocihpc-test
+    $ cd ocihpc-test
+    $ ocihpc init --stack ClusterNetwork
 
     Downloading stack: ClusterNetwork
 
@@ -218,16 +220,19 @@ This step describes the required configuration for the CLI and includes optional
     ```
 
 2. To modify your `config.json` file, navigate to your newly created directory (ocihpc-test in this case) and open the “config.json” file using texteditor or notepad.
-![](./images/config_json.png)
+<img src="images/config_json.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-  Note that this is not the same config file we configured in step 1.
 
-  For this config file, we will need:
+Note that this is not the same config file we configured in step 1.
+
+For this config file, we will need:
   1. The availability domain information that contains the HPC resources in our tenancy (Administration > Tenancy Details > Scroll down to the Service Limits section > Compute > and scroll down to find “BM.HPC2.36”) - In the screenshot below, we can see that we have a total of 6 BM.HPC2.36 machines to use in AD-2, 0 of which are currently in use. 
-  ![](./images/hpc_resource.png)
+<img src="images/hpc_resource.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+
 
   2. The Bastion AD can be any AD you chose as long as there are resources (VM.standard2.1 shape)
+Bastion shape should be filled in already - VM.Standard2.1
   3. Node count - for the purposes of this lab, we will go with 2 so as to use up all HPC resources
   4. Our public ssh key 
 
@@ -247,7 +252,7 @@ This step describes the required configuration for the CLI and includes optional
       Example:
 
       ```
-      $ <copy>ocihpc deploy --stack ClusterNetwork --node-count 5 --region us-ashburn-1 --compartment-id ocid1.compartment.oc1..6zvhnus3q</copy>
+      $ ocihpc deploy --stack ClusterNetwork --node-count 5 --region us-ashburn-1 --compartment-id ocid1.compartment.oc1..6zvhnus3q
 
       Deploying ClusterNetwork-ocihpc-test-7355 [0min 0sec]
       Deploying ClusterNetwork-ocihpc-test-7355 [0min 17sec]
@@ -258,15 +263,15 @@ This step describes the required configuration for the CLI and includes optional
 
 ## **STEP 10**: Connect
 
-1. When deployment is completed, you will see the the bastion/headnode IP that you can connect to:
+When deployment is completed, you will see the the bastion/headnode IP that you can connect to:
 
     ```
     $ Successfully deployed ClusterNetwork-ocihpc-test-7355
 
-    $ You can connect to your head node using the command: <copy>ssh opc@$123.221.10.8 -i <location of the private key you used></copy>
+    $ You can connect to your head node using the command: ssh opc@$123.221.10.8 -i <location of the private key you used>
     ```
 
-    You can also get the connection details by running `ocihpc get ip` command.
+You can also get the connection details by running `ocihpc get ip` command.
 
 ## **STEP 11**: Manage
 In addition, you can use cli commands to easily manage and keep tracks of your resources:
@@ -283,11 +288,11 @@ In addition, you can use cli commands to easily manage and keep tracks of your r
 
 
 ## **STEP 12**: Delete
+When you are done with your deployment, you can delete it by changing to the stack folder and running `ocihpc delete --stack <stack name>`.
 
-1. When you are done with your deployment, you can delete it by changing to the stack folder and running `ocihpc delete --stack <stack name>`. For example:
-
+    Example:
     ```
-    $ <copy>ocihpc delete --stack ClusterNetwork</copy>
+    $ ocihpc delete --stack ClusterNetwork
 
     Deleting ClusterNetwork-ocihpc-test-7355 [0min 0sec]
     Deleting ClusterNetwork-ocihpc-test-7355 [0min 17sec]
@@ -309,7 +314,5 @@ This is detailed information about managing High Performance Compute Instance. F
 * **Last Updated By/Date** - Harrison Dvoor, October 2020
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
