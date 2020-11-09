@@ -671,18 +671,14 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 5. Enter the following information for our new `Alert`
 
-    - Alert Name: `CREATE USER`
-    - Type: `Oracle Database`
-    - Severity: `Warning`
-    - Threshold (times): `1`
-    - Duration (min): `0`
-    - Group By (Field): `- Select Field - `
-    - Description: `Alert on CREATE USER statements`
-    - Condition: ` :EVENT_NAME = 'CREATE USER'`
-    - Template: `Alert Notification Template`
-    - Distribution List: `-- No Distribution List --`
-    - To: `null`
-    - Cc: `null`
+    - Alert Name: *CREATE USER*
+    - Type: *Oracle Database*
+    - Severity: *Warning*
+    - Threshold (times): *1*
+    - Duration (min): *0*
+    - Description: *Alert on CREATE USER statements*
+    - Condition: *:EVENT_NAME = 'CREATE USER'*
+    - Template: *Alert Notification Template*
 
 6. Your `Alert` should look like the following screenshot:
 
@@ -724,7 +720,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 ## **STEP 9**: DB Firewall - Add the Firewall Monitoring
 
-1. Login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+1. Login to the Audit Vault Web Console as *AVADMIN* with the password "*T06tron.*"
 
    ![](images/login_avadmin01.png " ")
 
