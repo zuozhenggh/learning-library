@@ -58,8 +58,14 @@ To publish your GitHub Pages site:
   This may take a few hours to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
+## **STEP 3:** Sharing your Workshop for Review
+After you have successfully set up your GitHub pages, you can share your workshop (index.html) for review.
+To share and view your workshop:
+1. In the browser, enter the URL of your GitHub Pages [https://achepuri.github.io/learning-library/](https://achepuri.github.io/learning-library/).
+2. Append the URL with the details of your workshop.
+    The complete URL will look similar to this: [https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/), which can be share for review.
 
-## **STEP 3**: Create a Pull Request to Upload Your Content to the Master Repository
+## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
