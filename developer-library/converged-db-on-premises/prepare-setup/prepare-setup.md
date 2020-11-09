@@ -6,8 +6,8 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 *Estimated Lab Time:* 15 minutes
 
 ### Objectives
--   Download ORM stack
--   Configure an existing Virtual Cloud Network (VCN)
+- Download ORM stack
+- Configure an existing Virtual Cloud Network (VCN)
 
 ### Prerequisites
 This lab assumes you have:
@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [modernize-01-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YLOUExrs-HP1MjYdp-t7lIsWt8FuuJF3asz9fwkOqalzTLVLcTz1lu7ACaXuqff2/n/natdsecurity/b/stack/o/modernize-01-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G0b79dLclzxjZa_txLAqGi2EXS5zmqyjIltpLeVGfSXaKCn07lIDBWSJm0UqldHF/n/natdsecurity/b/stack/o/converged-db-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -27,10 +27,13 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 80             | Application (http)                    |
-| 443            | Application (https)                   |
-| 7101           | Weblogic Console                      |
-| 8080           | Application (http)                    |
+| 1521           | Database Listener                     |
+| 3000           | Node JS Application                   |
+| 3001           | Node JS Application                   |
+| 3003           | Node JS Application                   |
+| 7007           | Graph UI                              |
+| 8080           | Guacamole                             |
+| 9090           | ORDS Port                             |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
@@ -51,9 +54,9 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
