@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle Coherence Workshop",
+    "workshoptitle": "Oracle Weblogic and Helidon Workshop",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -20,7 +20,7 @@
             "title": "Lab 2: Prepare Setup",
             "description": "How to download your ORM stack and update security rules for an existing VCN",
             "publisheddate": "09/28/2020",
-            "filename": "../../prepare-setup/prepare-setup.md"
+            "filename": "../../../prepare-setup/prepare-setup.md"
         },
         {
             "title": "Lab 3: Environment Setup",
@@ -29,10 +29,10 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
         },
         {
-            "title": "Lab 4: Coherence",
-            "description": "Coherence Lab",
+            "title": "Lab 4: Weblogic and Helidon",
+            "description": "Weblogic and Helidon Lab",
             "publisheddate": "08/10/2020",
-            "filename": "../../features/features.md"
+            "filename": "../../weblogic-helidon/weblogic-helidon.md"
         }
     ]
 }
