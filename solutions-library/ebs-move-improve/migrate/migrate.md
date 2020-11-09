@@ -32,6 +32,7 @@ In this lab, you will:
 * A source **Oracle E-Business Suite 12.2.8** instance with DB 12.1.0 provisioned on OCI following the tutorial described here: [Provision a New Oracle E-Business Suite Installation on a Single Node on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/provision_ebs_on_single_node_on_oci/index.html). (Including step 6 - Configure Web Entry Point with hostname **apps**)
 * A MyOracleSupport account is needed to download the Cloud Backup tool to the source EBS environment.
 * key-data.txt file documented with following information:
+
     * `Oracle_Cloud_Region_Identifier`
     * `Oracle_Cloud_Tenant_Name`
     * `Oracle_Cloud_Tenant_OCID`
@@ -43,12 +44,13 @@ In this lab, you will:
     * `Source_EBS_Instance_private_IP`
 
 ## **STEP 1**: Prepare the Source Oracle E-Business Suite Environment. 
-You will now copy the API Signing key from the Cloud Manager instance to the source Oracle E-Business Suite environment. If you would like to use a different API key for the Source EBS instance you can follow the steps in these short tutorials. See [See How to Generate an API Signing Key](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How), [How to Get the Key's Fingerprint](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How3), and "To Upload an API Signing Key" in [Using the Console](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#three).
+You will now copy the API Signing key from the Cloud Manager instance to the source Oracle E-Business Suite environment. If you would like to use a different API key for the Source EBS instance you can follow the steps in these short tutorials. See [How to Generate an API Signing Key](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How), [How to Get the Key's Fingerprint](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How3), and "To Upload an API Signing Key" in [Using the Console](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#three).
 Then you will create the stage area directories that will hold the backups and the Backup tool.
 You will ensure SSH connectivity between all the nodes 
   - The Node where the Backup tool is deployed
   - Application Tier Node 
-  - Database Tier Node)
+  - Database Tier Node
+
 Finally, you will put the Database in Archive Mode before creating the backup.
 
 1. Copy the private API signing key files from the Cloud Manager instance to the source Oracle E-Business Suite environment.
@@ -69,8 +71,9 @@ The key file must be placed in a location where it can be referenced by the Orac
         <copy>
         sudo cat /u01/install/APPS/.oci/ebscm.admin@example.com.pem
         </copy>
-        Select all the resulted characters to copy the key (make sure not to copy any spaces)
-        Paste the key in a text file on your desktop 
+
+    Select all the resulted characters to copy the key (make sure not to copy any spaces)
+    Paste the key in a text file on your desktop 
 
     ![](./images/2.png " ")
   
@@ -108,18 +111,23 @@ The key file must be placed in a location where it can be referenced by the Orac
         <copy>
         vi /u01/install/APPS/.oci/ebscm.admin@example.com.pem
         </copy>
-        Press ``i``
-        Paste the key with right click
-        Press ``Esc``
-        To save the file write ``:wq`` and press Enter
-
+    
     ![](./images/6.png " ")
+
+    Press **i** on your keyboard to insert text
+    Paste the key with right click
+    Press **Esc**
+    To save the file write **:wq** and press Enter
+
+    
     ![](./images/7.png " ")
 
 2. Create stage area directories for the Application tier and Database Tier.
+
 These directories will hold:
-Apps Stage Area directory: temporary files used during the application tier backup process as well as the application tier backup file in zip or tar format that is created locally before it is uploaded to Oracle Cloud Infrastructure Object Storage.
-DB Stage Area directory: backup utilities and the temporary files used to process the backup
+
+  - Apps Stage Area directory - temporary files used during the application tier backup process as well as the application tier backup file in zip or tar format that is created locally before it is uploaded to Oracle Cloud Infrastructure Object Storage.
+  - DB Stage Area directory - backup utilities and the temporary files used to process the backup.
 
         <copy>
         mkdir /u01/install/APPS/stage
@@ -132,7 +140,8 @@ DB Stage Area directory: backup utilities and the temporary files used to proces
 3. Do the following to ensure that the Oracle E-Business Suite Cloud Backup Module can connect to all required nodes:
 All nodes must have SSH enabled. 
 In our case Application Tier Node, DB Tier Node and Backup module are on the same instance
-    a. The SSH configuration file (~/.ssh/config) must have the entry "ServerAliveInterval 100".
+
+    a. The SSH configuration file (~/.ssh/config) must have the entry **ServerAliveInterval 100**.
 
         <copy>
         cd  ~/.ssh
@@ -143,10 +152,10 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
     
     ![](./images/9.png " ")
         
-        Press ``i``
-        Insert a new line containing **ServerAliveInterval 100**
-        Press ``Esc``
-        To save the file write ``:wq`` and press Enter
+    Press **i** on your keyboard to insert text
+    Insert a new line containing **ServerAliveInterval 100**
+    Press **Esc**
+    To save the file write **:wq** and press Enter
 
     ![](./images/10.png " ")
 
@@ -173,7 +182,8 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
         <copy>
         ssh oracle@<ebsvm-private-ip>
         </copy>
-        Choose yes to connect to the host
+
+    Choose yes to connect to the host
 
     ![](./images/13.png " ")
 
@@ -185,7 +195,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/14.png " ")
 
-4. The Database must be in Archive Mode
+4. The Database must be in **Archive Mode**
 
     a.	Stop Apps Tier using the stopapps.sh script
 
@@ -256,15 +266,15 @@ Download the Backup Module from My Oracle Support to the backup module server.
 ![](./images/21.png " ")
 
 2. Copy the download link for the Backup Module. 
-Access the latest version of the Backup Module from My Oracle Support[Patch 31254259](https://updates.oracle.com/download/31254259.html). Right click on the Download button and select ``Copy link address``
+Access the latest version of the Backup Module from My Oracle Support [Patch 31254259](https://updates.oracle.com/download/31254259.html). Right click on the Download button and select **Copy link address**
 
 3. Enter the wget command containing the patch name, your MyOracleSupport e-mail address and the download link.
 
-        Make sure to replace firstname.name@oracle.com with your MOS email address in this example: 
+    Make sure to replace firstname.name@oracle.com with your MOS email address in this example: 
         
         wget --output-document=p31254259_R12_Generic.zip --http-user=firstname.name@example.com --ask-password 'https://updates.oracle.com/Orion/Download/process_form/p31254259_R12_GENERIC.zip?file_id=109968332&aru=23539624&userid=O-firstname.name@example.com&email=firstname.name@example.com.com&patch_password=&patch_file=p31254259_R12_GENERIC.zip'
 
-        Enter your MyOracleSupport account password
+    Enter your MyOracleSupport account password
 
 ![](./images/22.png " ")
 
@@ -295,10 +305,10 @@ The EBSCloudBackup.pl script validates key requirements before beginning the act
 
 To ensure a successful backup, avoid activities that could interfere with the backup process while EBSCloudBackup.pl is running.
 
-    - Do not apply patches. Note that this restriction applies not only to   - Oracle E-Business Suite patches, but to application technology stack and database patches as well. If you are running Oracle E-Business Suite Release 12.2, you must complete any active patching cycle before you begin the backup process.
-    - Do not remove or move archive logs.
-    - Do not shut down application tier or database tier services.
-    - Do not perform configuration updates.
+  - Do not apply patches. Note that this restriction applies not only to   - Oracle E-Business Suite patches, but to application technology stack and database patches as well. If you are running Oracle E-Business Suite Release 12.2, you must complete any active patching cycle before you begin the backup process.
+  - Do not remove or move archive logs.
+  - Do not shut down application tier or database tier services.
+  - Do not perform configuration updates.
 
 1. Before you start running EBSCloudBackup.pl, inform users that a backup is being taken, and request that they do not perform any destructive operation on the file system, such as removing directories, until the backup is complete.
 
@@ -336,14 +346,15 @@ Specify whether Transparent Data Encryption (TDE) is enabled for the source data
 
 Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
 
-        ```
         Enter Fully Qualified Hostname : **apps.example.com**
         OS User Name : **oracle**
         OS User Password [skip if not applicable] : Press Enter to skip
         OS User Custom Private Key [skip if not applicable] : Press Enter to skip     
         OS User Passphrase [skip if not applicable] : Press Enter to skip
+        
         Context File : **/u01/install/APPS/12.1.0/appsutil/ebsdb_apps.xml**
-        Database Transparent Data Encrypted ( TDE ): ( Yes | No ) : **Yes**
+        
+        Database Transparent Data Encrypted ( TDE ): ( Yes | No ) : **No**
 
         You have not entered Password or Custom Private Key location
         We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
@@ -351,8 +362,7 @@ Finally, specify the location of the stage area directory you prepared to hold t
 
         Validating the details...
         Stage Directory : **/u01/install/stage/dbStage**
-        ```
-
+        
 ![](./images/28.png " ")
 
 7. Next, indicate whether communication between the source application tier and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
@@ -369,7 +379,6 @@ Additionally, specify the location of the context file on the application tier, 
 
 For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle WebLogic Server administrator password for the source environment.
 
-        ```
         Enter Fully Qualified Hostname : **apps.example.com**
         OS User Name : **oracle**
         OS User Password [skip if not applicable] : Press Enter to skip
@@ -378,7 +387,7 @@ For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle 
 
         Context File : **/u01/install/APPS/fs1/inst/apps/ebsdb_apps/appl/admin/ebsdb_apps.xml**
 
-        APPS Password (example: apps) : password
+        APPS Password (example: **apps**) : password
         
         You have not entered Password or Custom Private Key location
         We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
@@ -387,9 +396,8 @@ For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle 
         Validating the details... 
         Stage Directory : **/u01/install/stage/appsStage**
 
-        WebLogic Server Admin Password : welcome1
-        ```
-
+        WebLogic Server Admin Password : **welcome1**
+        
 ![](./images/30.png " ")
 
 9. Enter details to specify how you want to create the backup on Oracle Cloud Infrastructure Object Storage.
@@ -451,18 +459,18 @@ If you are satisfied with the values shown, enter option 1 to proceed.
 
 ![](./images/34.png " ")
 
-**Note:** Do not close the SSH connection until the backup has finnised. 
+**Note:** Do not close the SSH connection until the backup is completed. 
 
 The script performs the following tasks:
 
-    - Validates OS level authentications.
-    - Validates whether the Oracle Database version is certified.
-    - Validates whether the database is archivelog enabled.
-    - Validates whether mandatory patches are present.
-    - Creates a database backup.
-    - Executes remote calls to the application tier to create a tar package containing the application files. 
+  - Validates OS level authentications.
+  - Validates whether the Oracle Database version is certified.
+  - Validates whether the database is archivelog enabled.
+  - Validates whether mandatory patches are present.
+  - Creates a database backup.
+  - Executes remote calls to the application tier to create a tar package containing the application files. 
     For Oracle E-Business Suite Release 12.2, the tar package includes the contents of the EBSapps directory on the run file system, including the APPL_TOP directory, the COMMON_TOP directory, the OracleAS 10.1.2 directory, and a packaged version of the Oracle Fusion Middleware home. For Oracle E-Business Suite Release 12.1.3, the tar package includes the contents of the APPL_TOP, COMMON_TOP, OracleAS 10.1.2, and OracleAS 10.1.3 directories.
-    - Transfers the application tier tar package and database backup to a new bucket in your Oracle Cloud Infrastructure Backup Service account associated with your Oracle Cloud Infrastructure tenancy.
+  - Transfers the application tier tar package and database backup to a new bucket in your Oracle Cloud Infrastructure Backup Service account associated with your Oracle Cloud Infrastructure tenancy.
 
 If the script indicates that a validation failed, you can review the log files in the RemoteClone/logs directory to help identify which value failed validation.
 
@@ -489,7 +497,7 @@ You may proceed to the next lab.
 
 * **Author:** Quintin Hill, Cloud Engineering
 * **Contributors:** 
-  - Aurelian Baetu, Solution Engineering - Cloud Infrastructure
+  - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
   - Santiago Bastidas, Product Management Director
   - William Masdon, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
