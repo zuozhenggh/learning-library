@@ -1,7 +1,7 @@
 # OAS Environment Setup #
 
 ## Introduction ##
-In this lab you will setup both Database and OAS environments by running the script files. 
+In this lab you will setup both Database and OAS environments by running the script files.
 
 ### Pre-requisites ###
 
@@ -17,11 +17,11 @@ This lab assumes you have completed the following labs:
 <copy>
 sudo su - oracle
 </copy>
-````` 
+`````
 ![](./images/oas-environment1.png " ")
 
 2. To set the environment for Database and access the binaries, Enter “ . oraenv “ on command prompt.
-   
+
 ![](./images/oas-environment2.png " ")
 
 Enter **convergedcdb** for ORACLE\_SID.
@@ -51,7 +51,7 @@ Check for the success status before moving to OAS login screen.
 
 ## Step 2: Login to Oracle Analytics Server
 
-1. Open web browser (preferabily Chrome) and access the OAS Data Visualization service by the below URL structure.  
+1. Open web browser (preferably Chrome) and access the OAS Data Visualization service by the below URL structure.  
 
       Lab 3 - Create Compute Instance will provide you the instance IP address. ?? (public / private)
 ````
@@ -78,7 +78,7 @@ http://Your-Machine-IP:9502/dv/ui
 ![](./images/oas-environment8.png " ")
 ![](./images/oas-environment9.png " ")
 
-**Connection Details:**	
+**Connection Details:**
 
 | Argument  | Description   |
 | ------------- | ------------- |
