@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will create an Object Storage Buckets, Oracle Function, Autonomous Database and trigger the function whenever a file is uploaded to the Object Storage. The function will take the file and write it to the database and move it into the second storage bucket.
+In this lab you will create an Object Storage Buckets, Oracle Function, Autonomous Database and trigger the function whenever a file is uploaded to the Object Storage. The function will take the file and write it to the database.
 
 Estimated time: 30 minutes
 
@@ -10,7 +10,7 @@ Estimated time: 30 minutes
 
 - Create an application.
 - Create a Dynamic Group.
-- Create Object Storage Buckets.
+- Create Object Storage Bucket.
 - Create an Autonomous Data Warehouse Database.
 - Deploy a Function.
 - Create an Event rule.
@@ -57,15 +57,17 @@ Now you're ready to create a dynamic group.
 4. For description, enter `Group with all functions in a compartment`.
 3. To select the functions that belong to the dynamic group, [write matching rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Writing). Write the following matching rule that includes all functions within a compartment you created your application in:
 
+    ```
     <copy>
     All {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..example'}
     </copy>
+    ```
 
   *Note:* Make sure you replace the above value with the compartment OCID you stored earlier.
 
-## **STEP 3:** Create Object Storage Buckets
+## **STEP 3:** Create Object Storage Bucket
 
-You need two buckets in Object Storage, the `input-bucket` and the `processed-bucket`. The first bucket (`input-bucket`) is where you will drop the CSV files. The function will import them into Autonomous Datawarehouse. Once the function processed the files, it moves them to the second bucket (`processed-bucket`).
+You need a `input-bucket` bucket in Object Storage. You will use the `input-bucket` to drop-in the CSV files. The function will process the file and import them into Autonomous Datawarehouse.
 
 Let's create the `input-bucket` first:
 
@@ -79,35 +81,27 @@ Let's create the `input-bucket` first:
 
 ![Create input bucket](./images/create-input-bucket.png)
 
-Next, create the second bucket (`processed-bucket`):
-
-1. Open the navigation menu, select **Object Storage**, and then select **Object Storage**.
-2. Select your development compartment from the **Compartment** list.
-3. Click the **Create Bucket**.
-4. Name the bucket **processed-bucket**.
-5. Select the **Standard** storage tier.
-6. Click **Create Bucket**.
-
 ## **STEP 4:** Create IAM policies
 
-Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the two buckets.
+Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
 1. Open the navigation menu, select **Identity**, and then select **Policies**.
 2. Click **Create Policy**.
 3. For name, enter `functions-buckets-policy`.
-4. For description, enter `Policy that allows functions dynamic group to manage objects in the buckets`.
+4. For description, enter `Policy that allows functions dynamic group to manage objects in the bucket`.
 5. Click the **Customize (Advanced)** link and paste the policy statements into the Policy Builder field: 
 
+    ```
     <copy>
     Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'
-    Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='processsed-bucket'
     </copy>
+    ```
 
     Note: replace the `compartment-name` with the name of your development compartment (the one where you created the VCN and Function Application).
 
 6. Click **Create**.
 
-![Create functins-buckets-policy](./images/create-fn-bucket-policy.png)
+![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
 
 ## **STEP 5:** Create an Autonomous Data Warehouse
 
@@ -130,10 +124,12 @@ Wait for OCI to provision the Autonomous Database, and then click the **Service 
 2. Under RESTful Services and SODA, click **Copy URL**.
 3. From your terminal (or Cloud Shell), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
 
+    ```
     <copy>
     export ORDS_BASE_URL=<ORDS_BASE_URL>
     curl -X PUT -u 'ADMIN:<DB-PASSWORD>' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/regionsnumbers
     </copy>
+    ```
 
 4. To double check collection was created, you can list all collections. The output should look similar as below:
 
@@ -150,26 +146,33 @@ In this step, you will clone the functions source code repository and use the `f
 1. From the Console UI, open the Cloud Shell.
 2. Clone the Functions source code repository:
 
+    ```
     <copy>
     git clone https://github.com/oracle/oracle-functions-samples.git
     </copy>
+    ```
 
 3. Go to the `samples/oci-load-file-into-adw-python` folder:
 
+    ```
     <copy>
     cd oracle-functions-samples/samples/oci-load-file-into-adw-python
     </copy>
+    ```
 
 4. Deploy the function to the `etl-app`:
 
+    ```
     <copy>
     fn -v deploy --app etl-app
     </copy>
+    ```
 
 After you deploy the function, you need to set function configuration values so the function knows how to connect to the Autonomous Database.
 
 5. Using the Fn CLI, set the following configuration values. Make sure you replace the `[ORDS_BASE_URL]` and `[DB_PASSWORD]` with your values:
 
+    ```
     <copy>
     fn config function etl-app oci-load-file-into-adw-python ords-base-url [ORDS_BASE_URL]
     fn config function etl-app oci-load-file-into-adw-python db-schema admin
@@ -178,6 +181,7 @@ After you deploy the function, you need to set function configuration values so 
     fn config function etl-app oci-load-file-into-adw-python input-bucket input-bucket
     fn config function etl-app oci-load-file-into-adw-python processed-bucket processed-bucket
     </copy>
+    ```
 
 ## **STEP 7:** Create an Event rule
 
@@ -212,9 +216,11 @@ To test the function, you can upload a `.csv` file to the `input-bucket`. You ca
 1. Open the Cloud Shell.
 2. Go to the functions folder:
 
+    ```
     <copy>
     cd ~/oracle-functions-samples/samples/oci-load-file-into-adw-python
     </copy>
+    ```
 
 3. Use the OCI CLI to upload `file1.csv` to the `input-bucket`:
 
@@ -228,7 +234,6 @@ To test the function, you can upload a `.csv` file to the `input-bucket`. You ca
     }
     ```
 
-Uploading a file to the bucket triggers an event that invokes the function. The function will write the results to the Autonomous Database and to the `processed-bucket`.
 
 To see the data in the database, follow these steps:
 
@@ -242,9 +247,11 @@ To see the data in the database, follow these steps:
 8. Use **ADMIN** and the admin password to authenticate.
 9. In the worksheet, enter the following query:
 
+    ```
     <copy>
     select UTL_RAW.CAST_TO_VARCHAR2( DBMS_LOB.SUBSTR( JSON_DOCUMENT, 4000, 1 )) AS json from regionsnumbers
     </copy>
+    ```
 
 10. Click the green play button to execute the query.
 

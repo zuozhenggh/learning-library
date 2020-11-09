@@ -12,8 +12,11 @@ In this lab you will:
 
 - Create a Vault
 - Create a Key
-- Create a Secret to hold the WebLogic Admin password on OCI
-- Copy the Secret OCID to use during the provisioning stage
+- Create a Secret to hold the WebLogic Admin password
+<if type="oke">
+- Create a Secret to hold the OCI Docker Image Registry Auth Token
+</if>
+- Copy the Secret<if type="oke">s</if> OCID<if type="oke">s</if> to use during the provisioning stage
 
 ### Prerequisites
 
@@ -68,6 +71,38 @@ For this lab you will need:
 4. Click the `WebLogicAdminPassword` **Secret** you just created and **make a note** of its **OCID**
 
    <img src="./images/prereq-secret4.png" width="100%">
+
+<if type="oke">
+## **STEP 4:** Create an Auth Token to access OCI Registry
+
+1. Go to **User -> User Settings** and click **Auth Tokens** on the left menu
+
+   <img src="./images/auth-token.png" width="60%">
+
+2. Click **Generate Token**
+
+3. Give it a name like **OCIR**
+
+4. Click **Generate Token**
+
+5. Copy the **output** of the token to clipboard
+
+## **STEP 5:** Create a Secret with the Auth Token
+
+1. Go back to the **Security -> Vault -> Secrets** 
+
+2. Click **Create Secret**
+
+3. Name it **OCIR**
+
+4. Use the *same key* (`WebLogicKey`)
+
+5. Paste the **Auth Token** created and copied to clipboard earlier as the **Secret Contents**
+
+6. Click **Create Secret**
+
+7. Click the **OCIR** secret you created and make a note of the **OCID** of the Secret for later use.
+</if>
 
 That is all that's needed to get started.
 

@@ -15,7 +15,7 @@ In this lab, you will:
 * Provision a Cloud Manager instance from the Marketplace Stack 
 * Login to the Cloud Manager
 
-### Prerequisties
+### Prerequisites
 1. Oracle Cloud Infrastructure account credentials.
     - User
     - Password
