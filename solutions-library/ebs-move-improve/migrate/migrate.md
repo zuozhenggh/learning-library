@@ -44,9 +44,12 @@ In this lab, you will:
     * `Source_EBS_Instance_private_IP`
 
 ## **STEP 1**: Prepare the Source Oracle E-Business Suite Environment. 
-You will now copy the API Signing key from the Cloud Manager instance to the source Oracle E-Business Suite environment. If you would like to use a different API key for the Source EBS instance you can follow the steps in these short tutorials. See [How to Generate an API Signing Key](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How), [How to Get the Key's Fingerprint](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How3), and "To Upload an API Signing Key" in [Using the Console](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#three).
+You will now copy the API Signing key from the Cloud Manager instance to the source Oracle E-Business Suite environment. 
+If you would like to use a different API key for the Source EBS instance you can follow the steps in these short tutorials. See [How to Generate an API Signing Key](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How), [How to Get the Key's Fingerprint](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How3), and "To Upload an API Signing Key" in [Using the Console](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#three).
+
 Then you will create the stage area directories that will hold the backups and the Backup tool.
-You will ensure SSH connectivity between all the nodes 
+
+You will ensure SSH connectivity between all the nodes:
   - The Node where the Backup tool is deployed
   - Application Tier Node 
   - Database Tier Node
@@ -72,12 +75,14 @@ The key file must be placed in a location where it can be referenced by the Orac
         sudo cat /u01/install/APPS/.oci/ebscm.admin@example.com.pem
         </copy>
 
-    Select all the resulted characters to copy the key (make sure not to copy any spaces)
+    Select all the resulted characters to copy the key (make sure not to copy any spaces).
+
     Paste the key in a text file on your desktop 
 
     ![](./images/2.png " ")
   
-    d. Connect to the source EBS environment. 
+    d. Connect to the source EBS environment.
+
     To connect, follow the instructions under “Connecting to a Linux Instance”  in [Connecting to an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/accessinginstance.htm).
     SSH into the source EBS instance from your local machine by using the IP address and the SSH private key you used during the deployment of the source EBS instance . 
 
@@ -115,8 +120,11 @@ The key file must be placed in a location where it can be referenced by the Orac
     ![](./images/6.png " ")
 
     Press **i** on your keyboard to insert text
+
     Paste the key with right click
+
     Press **Esc**
+
     To save the file write **:wq** and press Enter
 
     
@@ -153,9 +161,12 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
     ![](./images/9.png " ")
         
     Press **i** on your keyboard to insert text
+
     Insert a new line containing **ServerAliveInterval 100**
+
     Press **Esc**
-    To save the file write **:wq** and press Enter
+
+    To save the file write **:wq** and press **Enter**
 
     ![](./images/10.png " ")
 
@@ -215,7 +226,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/16.png " ")
 
-    c. Check weather the Database is in archive mode
+    c. Check wether the Database is in archive mode
 
         <copy>
         archive log list;
@@ -266,7 +277,10 @@ Download the Backup Module from My Oracle Support to the backup module server.
 ![](./images/21.png " ")
 
 2. Copy the download link for the Backup Module. 
-Access the latest version of the Backup Module from My Oracle Support [Patch 31254259](https://updates.oracle.com/download/31254259.html). Right click on the Download button and select **Copy link address**
+
+Access the latest version of the Backup Module from My Oracle Support [Patch 31254259](https://updates.oracle.com/download/31254259.html). 
+
+Right click on the Download button and select **Copy link address**
 
 3. Enter the wget command containing the patch name, your MyOracleSupport e-mail address and the download link.
 
