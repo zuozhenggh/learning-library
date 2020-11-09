@@ -53,13 +53,10 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
 2. Click **Create Stack**.
 
-<<<<<<< Updated upstream
-      - **Select a Terraform Configuration (.zip) File to Upload:** Upload the zip file [orm-lbass-demo.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/OQyEclrT5xN48AL6ktwsVuNpHWh2_bCdI2HhIwORqOYheU-n0JrNQoUgP6VGesN8/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip)
-=======
-      - Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file [orm-lbass-demo.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip). Click **Select**.
+      - Select **My Configuration**, choose the **.ZIP FILE** button, click **Browse** link and select the terraform configuration zip file [orm-lbass-demo.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip). Click **Select**.
 
       ![](./images/zip-file.png) 
->>>>>>> Stashed changes
+      
       - **Name:** HA Load Balanced Simple Web App
       - **Description:** Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app application.
       - **Create in Compartment:** Select an existing compartment
