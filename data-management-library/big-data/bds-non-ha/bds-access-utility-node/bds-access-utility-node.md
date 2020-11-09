@@ -198,7 +198,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-    + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
+    + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
 * **Last Updated By/Date:** Lauran Serhal, November 2020
 
 ## Need Help?
