@@ -1,4 +1,4 @@
-# GoldenGate Microservices Architecture Labs
+# GoldenGate Microservices Architecture Lab
 
 Update November 09, 2020
 
