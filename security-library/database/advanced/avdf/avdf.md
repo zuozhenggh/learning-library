@@ -371,14 +371,14 @@ You have completed the lab.
 In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. For ease of execution, the required step from the Database Security Assessment Tool (DBSAT) lab was performed and the output saved. The first step here will help download and stage it accordingly.
 
 1. Download and stage the sensitive data to `/home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data`
-  - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
-  - Now we need to become `oracle` User
+    - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+    - Now we need to become `oracle` User
 
     ````
     <copy>su - oracle</copy>
     ````
 
-  - Once we have switched to `oracle`, download and stage the file
+    - Once we have switched to `oracle`, download and stage the file
 
     ````
     <copy>
