@@ -24,9 +24,9 @@ Estimated Time: 90 minutes
 
 | # | Lab | Est. Time |
 | --- | --- | --- |
-| 1 | [Generate SSH KEYS](?lab=lab-1-forms-install) | 10 min |
-| 2 | [Setup VCN](?lab=lab-2-VNCsetup) | 5 min |
-| 3 | [Setup Oracle Forms Services](?lab=lab-3-convert-forms-to-apex) | 30 min |
+| 1 | [Generate SSH KEYS] | 10 min |
+| 2 | [Setup VCN] | 5 min |
+| 3 | [Setup Oracle Forms Services] | 30 min |
 | 4 | [Setup/Obtain Apex Development Environment) | 10 min |
 | 4 | [Create Migration Project for Oracle forms in Oracle Apex ] | 5 min |
 | 5 | [Create the Apex application]  | 30 min |
