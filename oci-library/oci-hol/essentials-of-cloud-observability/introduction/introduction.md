@@ -33,11 +33,11 @@ You may proceed to the Lab 1.
 ## Learn More
 
 * [OCI Logging Service Overview](https://docs.cloud.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm)
-* [OCI Logging Analytics](https://docs.cloud.oracle.com/en-us/iaas/logging-analytics/index.html)
+
 
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
-* **Last Updated Date** - Randall Barnes, October 2020
+* **Last Updated Date** - Kamryn Vinson, October 2020
 
 
 ## Need Help?
