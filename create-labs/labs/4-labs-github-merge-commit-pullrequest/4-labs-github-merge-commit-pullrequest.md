@@ -59,7 +59,7 @@ To publish your GitHub Pages site:
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
 ## **STEP 3:** Sharing your Workshop for Review
-After you have successfully set up your GitHub pages, you can share your workshop (index.html) for review.
+After you have successfully set up your GitHub pages, you can share your workshop for review.
 To share and view your workshop:
 1. In the browser, enter the URL of your GitHub Pages [https://achepuri.github.io/learning-library/](https://achepuri.github.io/learning-library/).
 2. Append the URL with the details of your workshop.
