@@ -74,7 +74,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author for LiveLabs** - Daniel Tarudji
-* **Contributors** - Tom McGinn, Kamryn Vinson, Rene Fontcha, Meghana Banka
+* **Contributors** - Rene Fontcha, Meghana Banka, Tom McGinn, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## Need Help?

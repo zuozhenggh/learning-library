@@ -270,7 +270,7 @@ You may now proceed to the next lab
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Kamryn Vinson
+* **Contributors** - Meghana Banka, Rene Fontcha, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## Need Help?

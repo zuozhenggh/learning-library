@@ -380,7 +380,7 @@ To find more detail about BPEL, Process manager - please go to this [SOA 12c lin
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Kamryn Vinson
+* **Contributors** - Rene Fontcha, Meghana Banka, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## Need Help?

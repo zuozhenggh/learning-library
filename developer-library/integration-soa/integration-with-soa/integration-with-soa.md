@@ -111,7 +111,7 @@ You may proceed to the next lab: **Develop SOA Composite for Validating Payment*
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Tom McGinn, Kamryn Vinson, Rene Fontcha
+* **Contributors** - Meghana Banka, Tom McGinn, Kamryn Vinson, Rene Fontcha
 * **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## Need Help?
