@@ -146,8 +146,10 @@ These directories will hold:
 ![](./images/8.png " ")
 
 3. Do the following to ensure that the Oracle E-Business Suite Cloud Backup Module can connect to all required nodes:
+
 All nodes must have SSH enabled. 
-In our case Application Tier Node, DB Tier Node and Backup module are on the same instance
+
+In our case Application Tier Node, DB Tier Node and Backup module are on the same instance.
 
     a. The SSH configuration file (~/.ssh/config) must have the entry **ServerAliveInterval 100**.
 
@@ -274,7 +276,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
         cd /u01/install/APPS/stage
         </copy>
 
-![](./images/21.png " ")
+    ![](./images/21.png " ")
 
 2. Copy the download link for the Backup Module. 
 
@@ -286,11 +288,13 @@ Download the Backup Module from My Oracle Support to the backup module server.
 
     Make sure to replace firstname.name@oracle.com with your MOS email address in this example: 
         
+        <copy>
         wget --output-document=p31254259_R12_Generic.zip --http-user=firstname.name@example.com --ask-password 'https://updates.oracle.com/Orion/Download/process_form/p31254259_R12_GENERIC.zip?file_id=109968332&aru=23539624&userid=O-firstname.name@example.com&email=firstname.name@example.com.com&patch_password=&patch_file=p31254259_R12_GENERIC.zip'
+        </copy>
 
     Enter your MyOracleSupport account password
 
-![](./images/22.png " ")
+    ![](./images/22.png " ")
 
 4. Extract the downloaded patch. Unzipping the patch zip file creates a directory named RemoteClone.
 
@@ -298,7 +302,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
         unzip p31254259_R12_Generic.zip
         </copy>
 
-![](./images/23.png " ")
+    ![](./images/23.png " ")
 
 5. Change to the RemoteClone directory and change the permission to "execute" for all the downloaded scripts.
 
@@ -309,7 +313,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
         chmod +x lib/*.sh
         </copy>
 
-![](./images/24.png " ")
+    ![](./images/24.png " ")
 
 ## **STEP 3:** Create a Backup with the Oracle E-Business Suite Cloud Backup Module
 
@@ -326,8 +330,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
 
 1. Before you start running EBSCloudBackup.pl, inform users that a backup is being taken, and request that they do not perform any destructive operation on the file system, such as removing directories, until the backup is complete.
 
-2. Temporarily stop any application tier or database backup cron jobs that are scheduled.
-If you have not already done so, change to the RemoteClone directory on the backup module server.
+2. Temporarily stop any application tier or database backup cron jobs that are scheduled. If you have not already done so, change to the RemoteClone directory on the backup module server.
 
 3. Run the EBSCloudBackup.pl script using the following command in the RemoteClone directory.
 If you are using an Oracle E-Business Suite application tier node or database tier node as the backup module server, note that you should not source the Oracle E-Business Suite environment before running the Oracle E-Business Suite Cloud Backup Module.
@@ -336,16 +339,16 @@ If you are using an Oracle E-Business Suite application tier node or database ti
         3pt/perl/bin/perl EBSCloudBackup.pl
         </copy>
 
-![](./images/25.png " ")
+    ![](./images/25.png " ")
 
 4. On the first screen, choose option 1, Create E-Business Suite Backup and Upload to Oracle Cloud Infrastructure.
 
 ![](./images/26.png " ")
 
 5. Next, indicate whether communication between the source database server and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
-We are not going to use a proxy, choose option 2
+    We are not going to use a proxy, choose option 2
 
-![](./images/27.png " ")
+    ![](./images/27.png " ")
 
 6. Enter the details for the database tier of the source Oracle E-Business Suite environment.
 
@@ -378,12 +381,12 @@ We are not going to use a proxy, choose option 2
         Validating the details...
         Stage Directory : **/u01/install/stage/dbStage**
         
-![](./images/28.png " ")
+    ![](./images/28.png " ")
 
 7. Next, indicate whether communication between the source application tier and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
-We are not going to use a proxy, choose option 2
+    We are not going to use a proxy, choose option 2
 
-![](./images/29.png " ")
+    ![](./images/29.png " ")
 
 8. When entering the host name for the source application tier server, ensure that you enter the fully qualified domain name.
 
@@ -414,7 +417,7 @@ We are not going to use a proxy, choose option 2
 
         WebLogic Server Admin Password : **welcome1**
         
-![](./images/30.png " ")
+    ![](./images/30.png " ")
 
 9. Enter details to specify how you want to create the backup on Oracle Cloud Infrastructure Object Storage.
 
@@ -438,7 +441,7 @@ We are not going to use a proxy, choose option 2
 10. Next, indicate whether you access the cloud service through a proxy and need to specify the proxy details.
     We are not going to use a proxy, choose option 2
 
-![](./images/32.png " ")
+    ![](./images/32.png " ")
 
 11. Enter your Oracle Cloud Infrastructure details.
 
@@ -464,7 +467,7 @@ We are not going to use a proxy, choose option 2
 
         Target Database Type - (Compute | VM DB System | Exadata DB System ): **Compute**
 
-![](./images/33.png " ")
+    ![](./images/33.png " ")
 
 12. Review the values specified for the backup creation. The mode is set automatically based on your database release and target database type.
     - BMCS - Environments with Oracle Database Release 11.2.0.4, or environments with Oracle Database Release 12.1.0.2 or 19c where the target database service is Compute
@@ -474,7 +477,7 @@ We are not going to use a proxy, choose option 2
 
     If you are satisfied with the values shown, enter option 1 to proceed.
 
-![](./images/34.png " ")
+    ![](./images/34.png " ")
 
     **Note:** Do not close the SSH connection until the backup is completed. 
 
