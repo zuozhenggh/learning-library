@@ -7,11 +7,10 @@ As a take home exercise, you can provision a PeopleSoft environment with a Windo
 Estimated Lab Time: 3 hours
 
 ### Objectives
-
 The purpose of this lab is to test your knowledge with Labs 1-7 and gain familiarity with the Windows client node.
 
 ### Prerequisites
-Complete Labs 1-7
+- Complete Labs 1-7
 
 ## **STEP 1: Removing PUM Topology**
   Remove the PUM topology from the Environment Template that was used to provision in the previous section – Refer Step 2 in  Lab 6: Create a New Environment Template.
@@ -40,10 +39,9 @@ Complete Labs 1-7
 
 
 ## Acknowledgements
-**Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
-- Sara Lipowsky, Cloud Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

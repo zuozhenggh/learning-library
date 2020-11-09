@@ -15,10 +15,8 @@ In this lab, you will:
 * Access the Windows Instance with Remote Desktop Connection
 
 ### Prerequisites
-
-1. Permissions to create compute instances in OCI
-
-2. Remote Desktop Connection downloaded
+- Permissions to create compute instances in OCI
+- Remote Desktop Connection downloaded
 
 ## **STEP 1**: Create Windows Instance
 
@@ -79,10 +77,9 @@ Enter the default password you noted from the instance details page.
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
-- Sara Lipowsky, Cloud Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

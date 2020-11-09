@@ -16,21 +16,20 @@ In this lab, you will:
 * Login to the Cloud Manager
 
 ### Prerequisties
-1. Oracle Cloud Infrastructure account credentials.
-    - User
-    - Password
-    - Tenant
-
-2. Admin privileges on your local machine.
+- Oracle Cloud Infrastructure account credentials.
+    * User
+    * Password
+    * Tenant
+- Admin privileges on your local machine.
 
 
 ## **STEP 1**: Generating Keys
 
-You can also use these pre-built keys for the demo purpose: [TestDrivekeys.zip](./files/TestDrivekeys.zip)
+You can also use these pre-built keys for the demo purpose: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
 
 1. Ensure Git Bash is installed on your laptop/workstation.
 
-2. Download the following script: [make_keys.sh](./files/make_keys.sh)
+2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4siaoXfcndYoTXRI9y7evzGbNLgCcLt1YjMpb76eW87EAVGoGJCkzFxWk1S-EMn8/n/c4u03/b/solutions-library/o/make_keys.sh)
 
 3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded.
 
@@ -325,7 +324,6 @@ SSH key pair required to access Cloud Manager instance was created in Step 1 of 
 
     NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
-    <!-- Here is a video that navigates you through the workshop until Lab 6. [Video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m9ftrl_8RSOMrmOdBU-40MvIIZHbVABb6kOgYs54dIyHACgdyvZWaxw4B35y1oN6/n/orasenatdpltoci03/b/TestDrive/o/LabOverview.mp4) -->
 
 ## **STEP 9**: Access Cloud Manager
 
@@ -346,9 +344,10 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 **Created By/Date**   
-- Rich Konopka, Peoplesoft Specialist, October 2020  
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020  
-- Sara Lipowsky, Cloud Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
+* **Lab Expiry Date** - June 30, 2021 
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

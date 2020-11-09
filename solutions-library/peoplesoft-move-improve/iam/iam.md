@@ -1,7 +1,6 @@
 # Lab 1: Creating Identity and Access Management (IAM) Resources
 
 ## Introduction
-
 This lab walks you through the steps to prepare your Orace Cloud Infrastructure Tenancy
 
 Estimated Lab Time: 20 minutes
@@ -25,13 +24,13 @@ In this lab, you will:
 
 ### Prerequisites
 
-1.	Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
+* Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 
-2. 	To sign in to the Console, you need the following: 
+* To sign in to the Console, you need the following: 
 
-    1. Tenant, User name and Password
-    2. URL for the Console: [https://oracle.com] (https://oracle.com)
-    3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
+    - Tenant, User name and Password
+    - URL for the Console: [https://oracle.com] (https://oracle.com)
+    - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
@@ -77,7 +76,7 @@ Please check if you have enough resource availability in your Availability Domai
 
     **NOTE**: You will need 2 instances. Make sure you have at least 1 of each of the below marked resource (it doesn't need to be in same availability domain):
 
-![](./images/resource.png " ")
+    ![](./images/resource.png " ")
 
 ## **STEP 3:** Creating a Demo Compartment
 **Compartments Overview:**
@@ -258,10 +257,9 @@ You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
-- Sara Lipowsky, Cloud Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
 
 
 ## Need Help?
