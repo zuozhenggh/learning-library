@@ -11,26 +11,27 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 ### Lab Overview
 
-TASK 1: PREPARATION STEPS
-TASK 2: CONFIGURE DATABASE AND GOLDENGATE USERS
-TASK 3: CREATING DEPLOYMENTS
-TASK 4: CONFIGURE REVERSE PROXY
-TASK 5: CREATE CREDENTIALS
-TASK 6: ADD EXTRACT AND DISTRIBUTION PATHS
-TASK 7: INSTANTIATION
-TASK 8: CREATE THE REPLICAT28EXTRA: GENERATE DATA LOAD
+TASK 1: CREATING DEPLOYMENTS
+TASK 2: CONFIGURE REVERSE PROXY
+TASK 3: CREATE CREDENTIALS
+TASK 4: ADD EXTRACT AND DISTRIBUTION PATHS
+TASK 5: INSTANTIATION
+TASK 6: CREATE THE REPLICAT
+TASK 7: GENERATE DATA LOAD
+TASK 8: ACTIVE-ACTIVE
+TASK 9: HA/DR
 
 
 ## Learn More
 
 * [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
 
-* [GoldenGate with PostgreSQL](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/using-oracle-goldengate-postgresql.html/")
+* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, October 2020
-* **Contributors** - Madhu Kumar
-* **Last Updated By/Date** - Brian Elliott, October 2020
+* **Author** - Brian Elliott, Data Integration Team, Oracle, November 2020
+* **Contributors** -Zia Khan
+* **Last Updated By/Date** - Brian Elliott, Novermber 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
