@@ -19,7 +19,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 - A Vault
 - A Key
-- A Secret for the WebLogic Admin passord
+- A Secret for the WebLogic Admin password
 
 
 ## **STEP 1:** Provision the stack through the Marketplace
