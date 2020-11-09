@@ -63,7 +63,7 @@ After you have successfully set up your GitHub pages, you can share your worksho
 To share and view your workshop:
 1. In the browser, enter the URL of your GitHub Pages [https://achepuri.github.io/learning-library/](https://achepuri.github.io/learning-library/).
 2. Append the URL with the details of your workshop.
-    The complete URL will look similar to this: [https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/), which can be share for review.
+    The complete URL will look similar to this: [https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/), which can be shared for review.
 
 ## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 
