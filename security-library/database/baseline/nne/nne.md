@@ -111,6 +111,10 @@ You will enable SQL*Net encryption with the `REQUESTED` value for `SQLNET.ENCRYP
 
 1. To begin with, we use this option because it will allow non-encrypted connections to still connect. While this rarely has an impact, it is often important to do this so the change does not interfere with production systems that cannot encrypt between the client and the database!
 
+      ````
+      <copy>./05_request_nne.sh</copy>
+      ````
+
    ![](./images/nne-005.png " ")
 
     **Note**: There's an alternative to Native Network Encryption, it's TLS certificates but those require user management and more configuration
