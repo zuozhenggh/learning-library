@@ -4,7 +4,7 @@
 
 In this Lab, you will learn how to launch a MySQL Database Service System on Oracle Cloud Infrastructure and connect to it using the Console.
 
-Estimated Lab Time: 60 minutes
+Estimated Lab Time: 90 minutes
 
 ### About MySQL Database Service
 
