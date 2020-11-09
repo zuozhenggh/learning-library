@@ -2,36 +2,34 @@
 
 ## Introduction
 
-If you want to re-run the labs in this workshop again, you will need to perform the clean up steps in this lab. In this lab, you will learn how to delete the resources that you have created in this workshop.
+In this lab, you will learn how to delete the resources that you created in this workshop. If you want to run the labs in this workshop again, perform these clean up steps.
 
 **Note:**    
-If you are using a **Free Trial** account to run this workshop, Oracle recommends that you at least delete the BDS cluster that you created when you complete the workshop to avoid unnecessary charges.
+If you are using a **Free Trial** account to run this workshop, Oracle recommends that you at least delete the BDS cluster that you created when you complete the workshop, to avoid unnecessary charges.
 
 ### Objectives
 
 * Delete your **`training-cluster`** Big Data Service Cluster.
-* Delete the resources that you have created in your **`training-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, VCN, reserved IP addresses, and so on.
+* Delete the resources that you created in your **`training-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, VCN, reserved IP addresses, and so on.
 
 ### What Do You Need?
 
 This lab assumes that you have successfully completed all the labs listed in the **Contents** menu.
 
 **Note:**     
-You can get a list of all of your resources in your **`training-compartment`** (optional), you can use the **Compartment Explorer** page. From the **Oracle Cloud Console** Home page, navigate to **Governance and Administration > Governance > Compartment Explorer**. On the **Compartment Explorer** page, in the **Search Compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
+If you want to list the resources in your **`training-compartment`**, you can use the **Compartment Explorer** page. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Governance > Compartment Explorer**. On the **Compartment Explorer** page, in the **Search Compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
 
 ## **STEP 1:** Delete Your **`training-cluster`** Big Data Service Cluster
 
-You can use the **Clusters** page to delete your cluster.
-
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used in the workshop.
 
-2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Navigate to **Data and AI > Big Data**.
+2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console**, and then navigate to **Data and AI > Big Data**.
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button, and then select **Terminate Big Data Cluster** from the context menu.
 
   ![](./images/terminate-cluster.png " ")    
 
-4. A confirmation message box is displayed. Enter the name of the cluster, and then click **Terminate**. The status of the cluster in the **State** column is **Deleting**. It can take up to 30 minutes before the cluster id deleted.  
+4. A confirmation message box is displayed. Enter the name of the cluster, and then click **Terminate**. The status of the cluster in the **State** column is **Deleting**. It can take up to 30 minutes before the cluster is deleted.  
 
   ![](./images/delete-cluster-message.png " ")    
 
@@ -39,8 +37,7 @@ You can use the **Clusters** page to delete your cluster.
 
   ![](./images/status-deleting.png " ")    
 
-
-6. To view the status of the deletion process, click the cluster's name link in the **Name** column to display the **Cluster Details** page. In the **Resources** section at the bottom of the page, click **Work Requests**. In the **Work Requests** section, you can see the **% Complete** information.   
+6. To view the status of the deletion process, click the cluster's name link in the **Name** column to display the **Cluster Details** page. In the **Resources** section at the bottom left-hand side of the page, click **Work Requests**. In the **Work Requests** section, you can see the **% Complete** information.   
 
     **Note:** For additional details on the deletion process, click **CREATE\_BDS** in the **Operation** column. The **DELETE_BDS** page displays the logs, and errors, if any.
 
@@ -49,7 +46,7 @@ You can use the **Clusters** page to delete your cluster.
 
 ## **STEP 2:** Delete Your IAM Group, IAM User, and IAM Policies
 
-1. From the **Oracle Cloud Console** page, click the **Navigation** menu. Navigate to **Governance and Administration > Identity > Groups**.
+1. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Groups**.
 
 2. From the list of available groups, search for your **training-bds-admin-group**. You cannot delete a group that contains any members; therefore, you will need to remove the **training-bds-admin** user from this group first. Click the group's name link in the **Name** column.
 
@@ -63,11 +60,11 @@ You can use the **Clusters** page to delete your cluster.
 
 7. Click the **Actions** button associated with the **training-bds-policy** policy, and then select **Delete** from the context menu. A confirmation message box is displayed, click **Delete**.
 
-## **STEP 3:** Delete Your VCN
+## **STEP 3:** Delete Your Virtual Cloud Network (VCN)
 
 To delete a VCN, it must first be empty and have no related resources or attached gateways such as internet gateway, dynamic routing gateway, and so on. To delete a VCN's subnets, they must first be empty too.
 
-1. From the **Oracle Cloud Console** page, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks**.
+1. From the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks**.
 
 2. From the list of available VCNs in your compartment, click the VCN's name link in the **Name** column. The **Virtual Cloud Network Details** page is displayed.
 
@@ -102,7 +99,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 ## **STEP 4:** Delete Your Reserved Public IP Addresses
 
-1. From the Oracle Cloud Console page, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed.
+1. From the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed.
 
 2. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
 
@@ -110,7 +107,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
   ![](./images/reserved-ips.png " ")
 
-4. Click the **Actions** button associated with **`traininmn0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click * pane*Terminate**.
+4. Click the **Actions** button associated with **`traininmn0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
 5. Click the **Actions** button associated with **`traininqs0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
@@ -118,7 +115,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 ## **STEP 5:** Delete Your Compartment
 
-1. From the Oracle Cloud Console page, click the **Navigation** menu. Navigate to **Governance and Administration > Identity > Compartments**.
+1. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Compartments**.
 
 2. From the list of available compartments, search for your **training-compartment**.
 
@@ -145,7 +142,8 @@ To delete a VCN, it must first be empty and have no related resources or attache
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Reviewers:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
-    + Alexey Filanovskiy, Senior Principal Product Manager, DW & Big Data Global Leaders Program 
+    + Alexey Filanovskiy, Senior Principal Product Manager, DW & Big Data Global Leaders Program
+    + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
 * **Last Updated By/Date:** Lauran Serhal, November 2020
 
 ## Need Help?
