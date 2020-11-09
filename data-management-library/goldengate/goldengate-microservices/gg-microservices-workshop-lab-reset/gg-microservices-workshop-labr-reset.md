@@ -1,6 +1,6 @@
 # Lab - reset
 
-Update November 05, 2020
+Update November 09, 2020
 
 ## GoldenGate Micro Services : Reset Lab
 
@@ -93,3 +93,15 @@ In this step you will run several scripts.
         [oracle@OGG181DB183 db]$ ./clone_pdb_182.sh
 
 You have completed lab 1000!   **Great Job!**
+
+## Learn More
+
+* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
+
+## Acknowledgements
+* **Author** - Brian Elliott, Data Integration, November 2020
+* **Contributors** - Zia Khan
+* **Last Updated By/Date** - Brian Elliott, November 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
