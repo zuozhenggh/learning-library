@@ -21,6 +21,8 @@ There are 9 hands-on labs in this workshop.
 
 ### Lab Overview
 
+TASK 0: INITIAL SETUP
+
 TASK 1: CREATING DEPLOYMENTS
 
 TASK 2: CONFIGURE REVERSE PROXY

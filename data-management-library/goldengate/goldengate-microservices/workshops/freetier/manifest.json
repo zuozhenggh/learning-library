@@ -28,24 +28,31 @@
       "publisheddate": "06/30/2020",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
+
+    {
+      "title": "Lab 4: GG Initial Setup",
+      "description": "GG Initial Setup",
+      "filename": "../../gg-microservices-workshop-ogg-env-initial-setup/gg-microservices-workshop-ogg-env-initial-setup.md"
+    },
+
      {
-      "title": "Lab 4: Create Replication",
+      "title": "Lab 5: Create Replication",
       "description": "Create Replication",
       "filename": "../../gg-microservices-workshop-create-replication/gg-microservices-workshop-create-replication.md"
     },
     {
-      "title": "Lab 5: Active Active Relication",
+      "title": "Lab 6: Active Active Replication",
       "description": "Active - Active Replication",
       "filename": "../../gg-microservices-workshop-active-active-setup-with-auto-cdr/gg-microservices-workshop-active-active-setup-with-auto-cdr.md"
     },
   
     {
-      "title": "Lab 6: High Availability / Disaster Recovery Replication",
+      "title": "Lab 7: High Availability / Disaster Recovery Replication",
       "description": "Hign Availability / Disaster Recovery Replication",
       "filename": "../../gg-microservices-workshop-high-availability-disaster-recovery/gg-microservices-workshop-high-availability-disaster-recovery.md"
     },
     {
-      "title": "Lab 7: Transformations Using GoldenGate Microservices",
+      "title": "Lab 8: Transformations Using GoldenGate Microservices",
       "description": "Transformations using GoldenGate Microservices ",
       "filename": "../../gg-microservices-workshop-transformations-using-goldengate/gg-microservices-workshop-transformations-using-goldengate.md"
 
