@@ -278,9 +278,9 @@ Download the Backup Module from My Oracle Support to the backup module server.
 
 2. Copy the download link for the Backup Module. 
 
-Access the latest version of the Backup Module from My Oracle Support [Patch 31254259](https://updates.oracle.com/download/31254259.html). 
+    Access the latest version of the Backup Module from My Oracle Support [Patch 31254259](https://updates.oracle.com/download/31254259.html). 
 
-Right click on the Download button and select **Copy link address**
+    Right click on the Download button and select **Copy link address**
 
 3. Enter the wget command containing the patch name, your MyOracleSupport e-mail address and the download link.
 
@@ -349,16 +349,17 @@ We are not going to use a proxy, choose option 2
 
 6. Enter the details for the database tier of the source Oracle E-Business Suite environment.
 
-When entering the host name for the source database server, ensure that you enter the fully qualified domain name.
+    When entering the host name for the source database server, ensure that you enter the fully qualified domain name.
 
-You must specify an operating system user name with which to connect to the source database server using SSH. You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id_rsa) on the backup module server. The prompts for the custom private key and passphrase appear only if you do not enter an OS user password. 
-**Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm that you want to continue with the SSH key at the indicated location.
+    You must specify an operating system user name with which to connect to the source database server using SSH. 
+    
+    You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id_rsa) on the backup module server. The prompts for the custom private key and passphrase appear only if you do not enter an OS user password. **Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm that you want to continue with the SSH key at the indicated location.
 
-Additionally, enter the location of the context file on the database tier, including the complete file path.
+    Additionally, enter the location of the context file on the database tier, including the complete file path.
 
-Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.8 image from the OCI Marketplace**
+    Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.8 image from the OCI Marketplace**
 
-Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
+    Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
 
         Enter Fully Qualified Hostname : **apps.example.com**
         OS User Name : **oracle**
@@ -386,12 +387,13 @@ We are not going to use a proxy, choose option 2
 
 8. When entering the host name for the source application tier server, ensure that you enter the fully qualified domain name.
 
-You must specify an operating system user name with which to connect to the source application tier server using SSH. You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id_rsa) on the backup module server. The prompts for the custom private key and passphrase appear only if you do not enter an OS user password. 
-**Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm that you want to continue with the SSH key at the indicated location.
+    You must specify an operating system user name with which to connect to the source application tier server using SSH.
 
-Additionally, specify the location of the context file on the application tier, including the complete file path, the password for the Oracle E-Business Suite APPS schema, and the location of the stage area directory you created to hold the temporary files created on the application tier during the backup creation process.
+    You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id_rsa) on the backup module server. The prompts for the custom private key and passphrase appear only if you do not enter an OS user password. **Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm that you want to continue with the SSH key at the indicated location.
 
-For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle WebLogic Server administrator password for the source environment.
+    Additionally, specify the location of the context file on the application tier, including the complete file path, the password for the Oracle E-Business Suite APPS schema, and the location of the stage area directory you created to hold the temporary files created on the application tier during the backup creation process.
+
+    For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle WebLogic Server administrator password for the source environment.
 
         Enter Fully Qualified Hostname : **apps.example.com**
         OS User Name : **oracle**
@@ -434,7 +436,7 @@ For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle 
 ![](./images/31.png " ")
 
 10. Next, indicate whether you access the cloud service through a proxy and need to specify the proxy details.
-We are not going to use a proxy, choose option 2
+    We are not going to use a proxy, choose option 2
 
 ![](./images/32.png " ")
 
@@ -467,15 +469,16 @@ We are not going to use a proxy, choose option 2
 12. Review the values specified for the backup creation. The mode is set automatically based on your database release and target database type.
     - BMCS - Environments with Oracle Database Release 11.2.0.4, or environments with Oracle Database Release 12.1.0.2 or 19c where the target database service is Compute
     - BMCS_CDB - Environments with Oracle Database Release 12.1.0.2 or 19c where the target database service is Virtual Machine DB System or Exadata DB System
-The custom private key locations for the source database tier and source application tier are shown only if you chose to authenticate the OS user on those tiers with a custom private SSH key.
 
-If you are satisfied with the values shown, enter option 1 to proceed.
+    The custom private key locations for the source database tier and source application tier are shown only if you chose to authenticate the OS user on those tiers with a custom private SSH key.
+
+    If you are satisfied with the values shown, enter option 1 to proceed.
 
 ![](./images/34.png " ")
 
-**Note:** Do not close the SSH connection until the backup is completed. 
+    **Note:** Do not close the SSH connection until the backup is completed. 
 
-The script performs the following tasks:
+    The script performs the following tasks:
 
   - Validates OS level authentications.
   - Validates whether the Oracle Database version is certified.
@@ -486,7 +489,7 @@ The script performs the following tasks:
     For Oracle E-Business Suite Release 12.2, the tar package includes the contents of the EBSapps directory on the run file system, including the APPL_TOP directory, the COMMON_TOP directory, the OracleAS 10.1.2 directory, and a packaged version of the Oracle Fusion Middleware home. For Oracle E-Business Suite Release 12.1.3, the tar package includes the contents of the APPL_TOP, COMMON_TOP, OracleAS 10.1.2, and OracleAS 10.1.3 directories.
   - Transfers the application tier tar package and database backup to a new bucket in your Oracle Cloud Infrastructure Backup Service account associated with your Oracle Cloud Infrastructure tenancy.
 
-If the script indicates that a validation failed, you can review the log files in the RemoteClone/logs directory to help identify which value failed validation.
+    If the script indicates that a validation failed, you can review the log files in the RemoteClone/logs directory to help identify which value failed validation.
 
 13. After the script finishes and the backup is complete, you should notify users that they can resume normal file system activities. You should also restart any application tier or database backup cron jobs that you stopped before you began running the script, and resume patching and maintenance activities as needed.
 
