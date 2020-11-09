@@ -1,9 +1,9 @@
 # Introduction
 
 ## About this Workshop
-In this lab you will using a compute instance in OCI to simulate the on-premise database, which is deployed in one region (For example: Seoul). The standby cloud database is deployed in another region (For example: Tokyo). The primary and the standby database communicate through public internet.
+In this workshop you will be using a compute instance in OCI to simulate the on-premise database, which is deployed in one region (For example: Seoul). The standby cloud database is deployed in another region (For example: Tokyo). The primary and the standby database communicate through public internet.
 
-When provisioning Database Cloud Services in OCI, there are 2 options to for the storage management. One is **Oracle Grid Infrastructure** which is using ASM to manage the database files. The other is **Logical Volume Manager** which is using the File System to manage the database files. In Lab3, please choose the right one according to your requirement. When doing Lab5, choose Lab5A for LVM or Lab5B for ASM.
+When provisioning Database Cloud Services in OCI, there are 2 options for the storage management. One is **Oracle Grid Infrastructure** which is using ASM to manage the database files. The other is **Logical Volume Manager** which is using the File System to manage the database files. In Lab 3, please choose the right one according to your requirement. When doing Lab 5, choose Lab 5A for LVM or Lab 5B for ASM.
 
 Estimated Workshop Time: 5 hours
 
