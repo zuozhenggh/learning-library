@@ -32,8 +32,11 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 3001           | Node JS Application                   |
 | 3003           | Node JS Application                   |
 | 7007           | Graph UI                              |
-| 8080           | Guacamole                             |
-| 9090           | ORDS Port                             |
+| 7101           | WebLogic Admin Console                |
+| 7102           | WebLogic Admin Console                |
+| 8080           | Tomcat (Guacamole)                    |
+| 9090           | ORDS                                  |
+| 9502           | OAS Presentation service              |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
