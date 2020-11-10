@@ -50,7 +50,7 @@ Note: If/When going through the above lab to provision a new EBS Instance rememb
 * `Oracle_Cloud_Compartment_OCID`
 * `Cloud_Manager_Instance_public_IP`
 
-From your source EBS Instance
+**From your source EBS Instance**
 
 * `Source_EBS_Instance_public_IP`
 * `Source_EBS_Instance_private_IP`
