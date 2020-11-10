@@ -1,7 +1,5 @@
 # Introduction
 
-## Introduction
-
 High Performance Computing is changing product development and research enabling customers to solve complex problems faster. This means fewer prototypes, accelerates testing, and decreases time to market. Oracle offers on-demand HPC infrastructure, suitable for any HPC workload, based on the most advanced compute, storage, networking, and software technologies. You get all this at a fraction of the cost of building it yourself and avoid capacity utilization issues.
 
 Oracle provides the most elastic and scalable cloud infrastructure to run your HPC applications. With virtually unlimited capacity, engineers, researchers, and HPC system owners can innovate beyond the limitations of on-premises HPC infrastructure. Oracle delivers an integrated suite of services that provides everything needed to quickly and easily build and manage HPC clusters in the cloud to run the most compute intensive workloads across various industry verticals. These workloads span the traditional HPC applications, like genomics, computational chemistry, financial risk modeling, computer aided engineering, seismic imaging, and weather prediction, as well as emerging applications, like machine learning, deep learning, and autonomous driving.
@@ -10,9 +8,9 @@ With Oracle Cloud Infrastructure, businesses can run performance intensive HPC w
 
 These hands-on lab guides provide step-by-step process of deploying an LS Dyna cluster on Oracle Cloud with low latency networking between the compute nodes. Running LS Dyna on Oracle Cloud is quite straightforward, follow along this guide for all the tips and tricks.
 
-Estimated Workshop Time: 4 hours
+Estimated Workshop Time: 100 minutes
 
-### About High Performance Computing (HPC)
+## About High Performance Computing (HPC)
 
 HPC, or supercomputing, is like everyday computing, only more powerful. It is a way of processing huge volumes of data at very high speeds using multiple computers and storage devices as a cohesive fabric. HPC makes it possible to explore and find answers to some of the world’s biggest problems in science, engineering, and business.
 
@@ -48,7 +46,7 @@ In this lab, you will:
 ## About this Workshop
 
 - Launch a High Performance Compute Cluster Network in the Oracle Cloud Infrastructure
-- Access your cluster using your bastion's public IP adresss
+- Access your cluster using your bastion's public IP adress
 - Create and configure Visualization Tools for your simulation using GPU Visualization node
 - Access your VNC by connecting through an SSH tunnel
 - Install LS-DYNA on your instance by adding all the required libraries and binary files
