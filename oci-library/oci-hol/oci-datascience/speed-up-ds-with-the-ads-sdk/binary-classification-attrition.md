@@ -65,7 +65,7 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 1. Execute the cells in order. If you run into problems and want to start over again, click **Kernel** then click  **Restart Kernel and Clear All Outputs...**
 1. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs.
 
-## **Step 3:** Next Steps
+## **Step 4:** Next Steps
 
 **Congratulations! You have successfully completed the lab**
 
