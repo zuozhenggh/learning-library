@@ -46,7 +46,7 @@ In this lab, you will:
 ## About this Workshop
 
 - Launch a High Performance Compute Cluster Network in the Oracle Cloud Infrastructure
-- Access your cluster using your bastion's public IP adress
+- Access your cluster using your bastion's public IP address
 - Create and configure Visualization Tools for your simulation using GPU Visualization node
 - Access your VNC by connecting through an SSH tunnel
 - Install LS-DYNA on your instance by adding all the required libraries and binary files
