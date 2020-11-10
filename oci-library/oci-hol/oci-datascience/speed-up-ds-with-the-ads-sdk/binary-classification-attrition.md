@@ -33,13 +33,15 @@ In this lab, you will:
 This lab assumes that you have:
 * A Data Science notebook session.
 
-## **Step 1:** Working with JupyterLab
+## **STEP 1:** Working with JupyterLab
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc..
 
+![](./../speed-up-ds-with-the-ads-sdk/images/notebook-session.png)
+
 There is a menu across the top of the screen. For this lab, the most interesting menu item is **Run**. It will allow you to execute code cells in the document. It is recommended that you manually execute the cells one at a time as you progress through the notebook. It is, generally important, that you execute them in order. To do this from the keyboard, press *shift + enter* in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
-## **Step 2:** Summary of Commands
+## **STEP 2:** Summary of Commands
 
 The following is a summary of the steps that are covered in this lab along with the most important Python commands. You can use it as a reference guide for when you build your own models.
 
@@ -54,7 +56,7 @@ The following is a summary of the steps that are covered in this lab along with 
 1. **Local explanations**: ``local_explainer = explainer.local_explanation()``
 1. **Feature important**: ``global_explainer.feature_importance_summary()`` and ``global_explainer.compute_feature_importance()``
 
-## **Step 3:** Binary Classification Model
+## **STEP 3:** Binary Classification Model
 
 To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**. 
 
@@ -65,7 +67,7 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 1. Execute the cells in order. If you run into problems and want to start over again, click **Kernel** then click  **Restart Kernel and Clear All Outputs...**
 1. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs.
 
-## **Step 4:** Next Steps
+## **STEP 4:** Next Steps
 
 **Congratulations! You have successfully completed the lab**
 
@@ -83,6 +85,7 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date**:
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, November 2020
 
-## See an issue?
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
