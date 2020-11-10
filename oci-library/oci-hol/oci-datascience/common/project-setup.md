@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Projects are containers that enable you to organize your work. They contain a collection of notebook sessions and models.
+Projects are used to collect related data science resources and artifact, such that it enables you to organize your work. They contain a collection of notebook sessions and models.
 
 *Estimated Lab Time*: 5 minutes
 

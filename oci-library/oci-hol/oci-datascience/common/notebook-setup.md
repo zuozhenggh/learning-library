@@ -6,7 +6,7 @@ Data Science notebook sessions are interactive coding environments for building 
 
 A notebook session is associated with a compute instance, VCN, subnet, and block storage. There are two block storage drives that are associated with a notebook session. There is a boot volume that is initialized each time the notebook session is activated. Any data on the boot volume is lost when the notebook session is deactivated or terminated. There is an additional block storage that is persisted when a notebook session is deactivated, but it is not persisted when a notebook session is terminated. This block volume is mounted in the ``/home/datascience`` directory and it is where the JupyterLab notebooks, data files, installed custom software, and other files should be stored.
 
-When a notebook session is activated or created, the compute instance shape, block storage, VCN, and subnet are configured. These resources can be changed by deactivating a notebook session, then activating the session and changing the configuration. The size of the block storage can only be increased.
+When a notebook session is activated or created, the compute instance shape, block storage, VCN, and subnet are configured. These resources can only be changed by deactivating a notebook session, and then changing the configuration while activating the notebook session again. The size of the block storage can only be increased.
 
 *Estimated Lab Time*: 15 minutes
 
