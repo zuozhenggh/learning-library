@@ -64,73 +64,71 @@ This lab assumes you have:
 |19| MySQL Audit Collection | 5 minutes|
 -->
 
-## **STEP 0**: Audit Vault - Initialize ADVF Web Console
+## **STEP 1**: Audit Vault - Run the Deploy Agent
 
-Before starting the labs, you must enable the workshop pre-configured AVDF Web Console
+1. To perform the Audit Vault labs, you must run this script to enable the pre-configure Audit Vault Server for this workshop
 
-1. Open a SSH session on your **AVS VM as *opc* User**
+    - Open a SSH session on your **AVS VM as *opc* User**
 
-2. Initialize the ADVF Console Login
+    - Initialize the Audit Vault server
 
       ````
       <copy>sudo /root/bootstrap/fix-apex-login.sh</copy>
       ````
 
-3. Close the session
+    - Close the session
 
-## **STEP 1**: Audit Vault - Run the Deploy Agent
-
-1. Open a SSH session on your **DBSec-Lab VM as *oracle* User**
+2. Now, open a SSH session on your **DBSec-Lab VM as *oracle* User**
 
       ````
       <copy>sudo su - oracle</copy>
       ````
 
-2. Go to the scripts directory
+3. Go to the scripts directory
 
       ````
       <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Deploy_Agent</copy>
       ````
 
-3. The first script will unpack the `avcli.jar` utility so we can automate most of the agent, host, and audit trail deployment
+4. The first script will unpack the `avcli.jar` utility so we can automate most of the agent, host, and audit trail deployment
 
       ````
       <copy>./01_deploy_avcli.sh</copy>
       ````
 
-4. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
+5. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
 
       ````
       <copy>./02_register_host.sh</copy>
       ````
 
-5. Your output will look similar to this but your `Activation Key` will be different
+6. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-001.png " ")
 
-6. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
+7. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
 
       ````
       <copy>./03_deploy_avagent.sh</copy>
       ````
 
-7. Once deployed, we will need to activate the Audit Vault Agent. Remember the activation key we saw above and paste the key when prompted.
+8. Once deployed, we will need to activate the Audit Vault Agent. Remember the activation key we saw above and paste the key when prompted.
 
       ````
       <copy>./04_activate_avagent.sh</copy>
       ````
 
-8. Your output will look similar to this but your `Activation Key` will be different
+9. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-002.png " ")
 
-9. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
+10. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
 
       ````
       <copy>./05_show_host.sh</copy>
       ````
 
-10. Notice the output says `Running` for the Agent Status column
+11. Notice the output says `Running` for the Agent Status column
 
    ![](./images/avdf-003.png " ")
 
@@ -718,7 +716,45 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
     **Note**: Once you understand how to create an alert, feel free to create another and test it manually.
 
-## **STEP 9**: DB Firewall - Add the Firewall Monitoring
+## **STEP 9**: DB Firewall - Register the DB Firewall Server
+
+1. To perform the DB Firewall labs, you must run this script to enable the pre-configure DB Firewall Server for this workshop
+
+    - Open a SSH session on your **DBF VM as *opc* User**
+
+    - Initialize the DB Firewall server
+
+      ````
+      <copy>sudo /root/bootstrap/init-dbf-config.sh</copy>
+      ````
+
+    - Close the session
+
+2. Login to the Audit Vault Web Console as *AVADMIN* with the password "*T06tron.*"
+
+   ![](images/login_avadmin01.png " ")
+
+3. Click on `Database Firewalls` tab
+
+4. Click [**Register**]
+
+   ![](images/avdf-112.png " ")
+
+5. Fill out as following:
+    - Name: *dbfw*
+    - IP Address: *10.0.0.152*
+
+      ![](images/avdf-113.png " ")
+
+    **Note**: You don't need to upload the AVS certificate because we have already done it for you!
+
+6. Click [**Save**]
+
+7. The DB Firewall has to be "Up" now
+
+   ![](images/dbfw_details01.png " ")
+
+## **STEP 10**: DB Firewall - Add the Firewall Monitoring
 
 1. Login to the Audit Vault Web Console as *AVADMIN* with the password "*T06tron.*"
 
@@ -812,7 +848,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     - You should see that the connection shows an IP Address of `10.0.0.152` which is the Database Firewall IP Address
     - This verifies that you are connecting **through** the Database Firewall
 
-## **STEP 10**: DB Firewall - Configure and Verify Glassfish to use the Database Firewall
+## **STEP 11**: DB Firewall - Configure and Verify Glassfish to use the Database Firewall
 
 In this lab you will modify the Glassfish connection. Instead of connecting directly to the pluggable database, `pdb1`, Glassfish will connect through the Oracle Database Firewall so we can monitor, and block, SQL commands.
 
@@ -872,7 +908,7 @@ In this lab you will modify the Glassfish connection. Instead of connecting dire
 
    ![](images/firewall_ip_address.png " ")
 
-## **STEP 11**: DB Firewall - Train the Database Firewall for expected SQL traffic
+## **STEP 12**: DB Firewall - Train the Database Firewall for expected SQL traffic
 In this lab you will use the Glassfish Application to connect through the Oracle Database Firewall so we can monitor, and block, SQL commands
 
 **Set the NTP Server**
@@ -1000,7 +1036,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
 31. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
 
-## **STEP 12**: DB Firewall - Build and Test the DB Firewall Allow-List Policy
+## **STEP 13**: DB Firewall - Build and Test the DB Firewall Allow-List Policy
 
 1. Before we build our policy we have to make sure DB Firewall has logged the SQL Statements from the **Train the Database Firewall for expected SQL traffic** Lab as well as SQL statements from our `sqlplus` scripts.
 
@@ -1192,7 +1228,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
     **Note**:  Remember, this is because the Database Firewall substituted "`select * from dual where 1=2`" for the regular query
 
-## **STEP 13**: (Advanced Labs) PostgreSQL Audit Collection
+## **STEP 14**: (Advanced Labs) PostgreSQL Audit Collection
 The objective of this lab is to collect audit log records from PostgreSQL databases (with pgaudit configured) into Oracle Audit Vault and Database Firewall:
 - Ensure to that `pgaudit` is installed extension:
     - The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL
@@ -1293,7 +1329,7 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
 
 18. Continue to explore until you are comfortable!
 
-## **STEP 14**: (Advanced Labs) Linux Audit Collection
+## **STEP 15**: (Advanced Labs) Linux Audit Collection
 
 Audit Vault can collect and report on the operating system audit data
 
@@ -1373,7 +1409,7 @@ Audit Vault can collect and report on the operating system audit data
 
 17. Continue to explore until you are comfortable!
 
-## **STEP 15**: (Advanced Labs) LDAP/Active Directory Configuration
+## **STEP 16**: (Advanced Labs) LDAP/Active Directory Configuration
 - You must have an Microsoft Active Directory Server 2016 or higher available in the same VCN as the DBSecLab VMs (DBsec-lab, AV, DBFW, OKV)
 - You must have the knowledege to configure the MS AD 2016 server appropriately
 
