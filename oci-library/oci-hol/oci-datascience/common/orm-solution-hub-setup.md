@@ -2,7 +2,7 @@
 
 ## Introduction
 
-To use the Oracle Cloud Infrastructure (OCI) Data Science service, your tenancy has to be configured to grant permission to users and resources. If your tenancy is not already configured, you need administrator permissions to configure it. If you created a free tier account, your account has administrator permissions . There are two ways to create configure the tenancy. It can be [manually configured](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/configure-tenancy.htm) or configured via the [Oracle Resource Manager](https://www.oracle.com/cloud/systems-management/resource-manager/). In this lab, your tenancy is configured using the [Data Science Solution Hub](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/orm-configure-tenancy.htm), which is part of the Oracle Resource Manager. The Oracle Resource Manager provides an interface that assists in creating customized stacks that configure a tenancy to work with the Data Science service.
+To use the Oracle Cloud Infrastructure (OCI) Data Science service, your tenancy has to be configured to grant permission to users and resources. If your tenancy is not already configured, you need administrator permissions to configure it. If you created a free tier account, your account has administrator permissions . There are two ways to configure the tenancy. It can be [manually configured](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/configure-tenancy.htm) or configured via the [Oracle Resource Manager](https://www.oracle.com/cloud/systems-management/resource-manager/). In this lab, your tenancy is configured using the [Data Science Solution Hub](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/orm-configure-tenancy.htm), which is part of the Oracle Resource Manager. The Oracle Resource Manager provides an interface that assists in creating customized stacks that configure a tenancy to work with the Data Science service.
 
 The **Quick-start Tenancy Configuration** and **Advanced Configuration of a Tenancy** both provide instructions on using the Data Science Solution Hub to configure your tenancy. The **Quick-start Tenancy Configuration** provides instructions to set up a basic configuration to work with the Data Science service. We recommend this path for free tier accounts and other tenancies that have a standard configuration. The **Advanced Configuration of a Tenancy** section provides more details and options and should be used if a tenancy needs customization. For more elaborate tenancy configurations, you can [manually configure the resources](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/configure-tenancy.htm). 
 
@@ -17,7 +17,7 @@ In this lab, you:
 * Use the Oracle Resource Manager Solution Hub to create a stack
 * Become familiar with the options available to configure a tenancy to work with the Data Science service.
 * Apply a stack to create the policies, groups, dynamic groups, VCN, subnet, and other resources need to access the Data Science service.
-* Destroy a stack is the stack fails to be applied.
+* Destroy a stack if the stack fails to be applied.
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ Configuring a tenancy using Oracle Resource Manager includes creating a solution
 1. Click **Sample Solution**, and then click **Select Solution**.
 1. Select **Data Science**, and then click **Select Solution**.
 1. Click **Next**. The **Configure Variables** panel displays variables that are automatically populated from the Terraform configuration for the Data Science solution.
-1. By default the **Use Existing VCN** is unchecked. If you have not created a VCN then leave this option unchecked.  If you have already set up a VCN you will need to use it. Free Tier accounts have a default limit of two VCNs and the stack will fail to build if this bock in not checked.
+1. By default the **Use Existing VCN** is unchecked. If you have not created a VCN then leave this option unchecked.  If you have already set up a VCN you will need to use it. Free Trial accounts have a default limit of two VCNs and the stack will fail to build if this bock in not checked.
 1. Deselect **Create a Project and Notebook Session?** 
 1. Deselect **Enable Vault Support?**
 1. Deselect  **Provision Functions and API Gateway?** 

@@ -13,7 +13,7 @@ When a notebook session is activated or created, the compute instance shape, blo
 ### Objectives
 In this lab, you:
 * Use the Console to create a Data Science notebook session
-* Use the console to open the Data Science notebook session
+* Use the Console to open the Data Science notebook session
 
 ### Prerequisites
 
