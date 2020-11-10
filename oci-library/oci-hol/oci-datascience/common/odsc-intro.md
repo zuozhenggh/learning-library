@@ -16,7 +16,7 @@ The Data Science Service:
 * Integrates with the rest of the Oracle Cloud Infrastructure stack, including Functions, Data Flow, Autonomous Data Warehouse, and Object Storage.
 * Helps data scientists concentrate on methodology and domain expertise to deliver more models to production.
 
-*Estimated Lab Time*: 5 minutes
+Estimated Workshop Time: 3 hours
 
 ### Objectives
 In this lab, you will:
