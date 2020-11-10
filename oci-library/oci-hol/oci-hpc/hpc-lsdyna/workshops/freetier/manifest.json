@@ -1,6 +1,10 @@
 {
-    "workshoptitle": "High Performance Compute - Siemens Simcenter STAR-CCM+",
+    "workshoptitle": "High Performance Compute - LS-Dyna Runbook",
     "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
         {
             "title": "Introduction",
             "description": "Brief Introduction on Oracle HPC",
@@ -12,36 +16,32 @@
             "filename": "../../ls-dyna/ls-dyna-intro.md"      
         },
         {
-            "title": "Architecture",
-            "filename": "../../architecture/architecture.md"
-        },
-        {
-            "title": "Launch HPC Cluster Network",
+            "title": "Lab 1: Launch HPC Cluster Network",
             "description": "Steps to launch HPC Cluster Network",
             "filename": "../../launch-cluster/launch-cluster.md"        
         },
         {
-            "title": "Access your Cluster",
+            "title": "Lab 2: Access your Cluster",
             "description": "Steps to access the cluster",
             "filename": "../../access-cluster/access-cluster.md"
             
         },
         {         
-            "title": "Configure Visualization",
+            "title": "Lab 3: Configure Visualization",
             "description": "Setup and configure Visualization Tools",
             "filename": "../../config-visualization/config-visualization.md"
         },
         {
-            "title": "Access your VNC",
+            "title": "Lab 4: Access your VNC",
             "description": "Steps to access VNC",
             "filename": "../../access-VNC/access-VNC.md"
         },
         {
-            "title": "Install LS-DYNA",
+            "title": "Lab 5: Install LS-DYNA",
             "filename": "../../install/install.md"
         },
         {
-            "title": "Run LS-DYNA",
+            "title": "Lab 6: Run LS-DYNA",
             "filename": "../../run/run.md"
         }
     ]

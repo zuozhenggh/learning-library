@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "High Performance Compute - Siemens Simcenter STAR-CCM+",
+    "workshoptitle": "High Performance Compute - LS-Dyna Runbook",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -12,47 +12,38 @@
             "filename": "../../intro/intro.md"   
         },
         {
-            "title": "Siemens STAR-CCM Introduction",
+            "title": "LS-DYNA Introduction",
             "description": "Introduction to the software",
-            "filename": "../../starCCM-intro/starCCM-intro.md"      
+            "filename": "../../ls-dyna/ls-dyna-intro.md"      
         },
         {
-            "title": "Lab 1: Generate SSH Key - Cloud Shell",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
-        },
-        {
-            "title": "Lab 2: Launch HPC Cluster Network",
+            "title": "Lab 1: Launch HPC Cluster Network",
             "description": "Steps to launch HPC Cluster Network",
             "filename": "../../launch-cluster/launch-cluster.md"        
         },
         {
-            "title": "Lab 3: Access your Cluster",
+            "title": "Lab 2: Access your Cluster",
             "description": "Steps to access the cluster",
             "filename": "../../access-cluster/access-cluster.md"
             
         },
         {         
-            "title": "Lab 4: Configure Visualization",
+            "title": "Lab 3: Configure Visualization",
             "description": "Setup and configure Visualization Tools",
             "filename": "../../config-visualization/config-visualization.md"
         },
         {
-            "title": "Lab 5: Access your VNC",
+            "title": "Lab 4: Access your VNC",
             "description": "Steps to access VNC",
             "filename": "../../access-VNC/access-VNC.md"
         },
         {
-            "title": "Lab 6: Install STAR-CCM",
+            "title": "Lab 5: Install LS-DYNA",
             "filename": "../../install/install.md"
         },
         {
-            "title": "Lab 7: Run STAR-CCM",
+            "title": "Lab 6: Run LS-DYNA",
             "filename": "../../run/run.md"
-        },
-        {
-            "title": "Benchmark Example",
-            "filename": "../../benchmark/benchmark.md"
         }
-        
     ]
 }

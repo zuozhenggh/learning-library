@@ -65,7 +65,7 @@ To plot the target’s value distribution:
 ```
 ds.target.show_in_notebook()
 ```
-![](../speed_up_ds_with_the_ads_sdk/images/target-show-in-notebook.png " ")
+![](./../speed-up-ds-with-the-ads-sdk/images/target-show-in-notebook.png " ")
 
 ### Automatic Data Visualization
 
@@ -75,13 +75,13 @@ Example of a Gaussian heat map:
 ```
 ds.plot('col01', y='col03').show_in_notebook()
 ```
-![](../speed_up_ds_with_the_ads_sdk/images/plot-show-in-notebook.png " ")
+![](./../speed-up-ds-with-the-ads-sdk/images/plot-show-in-notebook.png " ")
 
 Example of plotting latitude and longitude points on a map:
 ```
 earthquake.plot_gis_scatter(lon="longitude", lat="latitude")
 ```
-![](../speed_up_ds_with_the_ads_sdk/images/plot-gis-scatter.png " ")
+![](./../speed-up-ds-with-the-ads-sdk/images/plot-gis-scatter.png " ")
 
 ### Feature Engineering
 
@@ -100,7 +100,7 @@ Save and load a copy of any dataset in a binary optimized Parquet format. By sna
 
 Example of visualizing a decision tree:
 ```
-![](../speed_up_ds_with_the_ads_sdk/images/decision-tree.png " ")
+![](./../speed-up-ds-with-the-ads-sdk/images/decision-tree.png " ")
 
 The Oracle AutoML engine, that produces ``ADSModel`` models, automates:
 
@@ -126,7 +126,7 @@ Example of tuning trial results:
 ```
 automl.visualize_tuning_trial()
 ```
-![](../speed_up_ds_with_the_ads_sdk/images/automl-hyperparameter-tuning.png " ")
+![](./../speed-up_ds-with-the-ads-sdk/images/automl-hyperparameter-tuning.png " ")
 
 ### Model Evaluations
 
@@ -139,7 +139,7 @@ Example of model evaluations:
 evaluator = ADSEvaluator(test, models=[model, my_model, baseline], training_data=train)
 evaluator.show_in_notebook()
 ```
-![](../speed_up_ds_with_the_ads_sdk/images/model-evaluation.png " ")
+![](./../speed-up-ds-with-the-ads-sdk/images/model-evaluation.png " ")
 
 ### Model Interpretation and Explainability
 
@@ -161,6 +161,7 @@ You can *proceed to the next lab*.
 * **Last Updated By/Date**: 
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
 
-## See an issue?
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1) and include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, enter it manually. If you want us to follow up with you, enter your email in the *Feedback Comments* section and include the workshop name and lab in your request.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
