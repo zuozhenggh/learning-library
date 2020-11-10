@@ -72,8 +72,7 @@ This lab assumes you have:
 In this lab we will setup GoldenGate Microservices
 
 
-## **Step 1:** In this task, you will create two deployments that will be used throughout the rest of the Hands-On Lab.  
-
+## **Step 1:** In this task, you will create two deployments 
 
 Open a terminal session
 
@@ -156,7 +155,7 @@ Each of the parameters will be used to replace items in the response file and bu
 <PMSPort> = Port number of the Performance Metric Service (16004)
 <PMSPortUDP> = UDP port number for Performance Metric Service NoSQL Database connection (16005)
 
-11. Run the script using the following parameter values, to create the Atlanta Deployment:
+11. **Run the script using the following parameter values, to create the Atlanta Deployment:**
 ```
 <copy>sh ./create_deployment.sh Atlanta Welcome_1 16000 16001 16002 16003 16004 16005</copy>
 ```
@@ -168,7 +167,7 @@ Each of the parameters will be used to replace items in the response file and bu
 
 13. Return to the Terminal Window where you ran the create_deployment.sh script and re-run the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
 
-**To run the script:**
+**Run the script using the following parameter values, to create the Boston Deployment::**
 
 ```
 <copy>sh ./create_deployment.sh Boston Welcome_1 16000 17001 17002 17003 17004 17005</copy>
@@ -180,17 +179,166 @@ Each of the parameters will be used to replace items in the response file and bu
 
 ![](./images/a7.png)
 
+## **Step 2:** Configure Reverse Proxy
+
+In this Task, you will configure the NGINX Reverse Proxy.  
+
+Note:  Prior to configuring the reverse proxy, you have to have a self-signed certificate.  These certificates have already been created for you and are stored in ~/wallet.  These are the same certificates that were used to setup the security for the ServiceManager and Deployments you created in an Task 3.
+
+To complete this task, you will need to run the following script:
+
+configureNginx.sh
+
+After the completion of this task, accessing the Oracle GoldenGate Microservices HTML5 pages will be simpler.  
+
+1.	From the Terminal window in the VNC Console, navigate to the Lab4 directory under ~/Desktop/Scripts/HOL/Lab3
+```
+<copy>cd ~/Desktop/Scripts/HOL/Lab3</copy>
+```
+2.	Execute the script.  This script will configure all items related to the Nginx Reverse Proxy
+
+**Note: The configureNginx.sh script is making a call to the ReverseProxySettings utility that can be found under $OGG_HOME/lib/util/reverseproxy.  We provide this script to make it easier for you to configure the Nginx Reverse Proxy in your environment.**
+
+```
+<copy>sh ./configureNginx.sh oggadmin Welcome111! 16000</copy>
+```
+![](./images/a8.png)
+
+**During the script run, it will ask you the password for user oracle so it can run sudo, the password is Welcome111!.**
+
+3.	Upon completion, return to your web browser.   You should be able to access the ServiceManager page by only using the URL without a port number.
+
+```
+<copy>https://localhost</copy>
+```
+If this is the first time you access this address, you will need click through some security exceptions page as it is using a self-signed certificate.  Once you get to the page, you will see below website.
+
+![](./images/a9.png)
+
+Once you are able to access the ServiceManager by using the simpler URL, you have completed this task.
+
+
+Extra Information:
+
+Simplified URLs:
+
+The benefit of using the Reverse Proxy is that is makes the URLs simpler to use.  If you are so inclined, provide your browser a URL that models this:
+
+https://localhost/<deployment>/adminsrvr
+
+<deployment> = the name of a deployment you build in Task 3. 
+
+In the example, if using the Atlanta deployment, the URL would look like this:
+
+**https://localhost/Atlanta/adminsrvr**
+
+```
+<copy>https://localhost/Atlanta/adminsrvr</copy>
+```
+![](./images/a10.png)
+
+## **Step 3:** Create Credentials
+
+In this Task, you will configure the database user credentials and tnsnames entries needed for replication.  This requires running the following scripts:
+
+Edit_tnsnames.sh
+Create_credential_GGAlias.sh
+Add_SchemaTrandata.sh
+
+After running these scripts, you will be able to establish connections for replication between the source and target pluggable database.
+
+
+**Note: The script create_credential_protocol.sh will not be used in this lab and can be ignored.**
+
+Before you work through this task, understand that there are multiple ways of doing this lab.  The scripts provided are meant to speed up the lab process.  If you are interested in creating credentials and adding schematrandata from the web pages or AdminClient the beginning steps are provided below for you.
+
+For web page access, access the Administration Service (adminsrvr) using the simplified URL (https://localhost/<deployment>/adminsrvr).  Login and go to Context Menu -> Configuration -> Credentials -> click on the plus ( + ) sign.
+
+![](./images/a11.png)
+
+1. To access the AdminClient, open a Terminal Window and execute:
+```
+<copy> $OGG_HOME/bin/adminclient</copy>
+```
+## **Step 4:** Create Oracle Objects
+
+To begin this Task 5, follow the below steps:
+
+1.	From the Terminal window in the Remote Desktop Viewer, navigate to the Lab5 directory under ~/Desktop/Scripts/HOL.
+```
+<copy>cd ~/Desktop/Scripts/HOL/Lab4</copy>
+```
+
+![](./images/a12.png)
+
+2.	Edit the tnsnames.ora file using the edit_tnsnames.sh script.  This script will need to be ran twice to add entries for both pluggable databases (oggoow19 & oggoow191)
+
+```
+<copy>sh ./edit_tnsnames.sh oggoow19</copy>
+```
+```
+<copy>sh ./edit_tnsnames.sh oggoow191</copy>
+```
+
+![](./images/a13.png)
+
+3.	Verify that the tnsnames.ora file has been updated.
+
+```
+<copy>cat $ORACLE_HOME/network/admin/tnsnames.ora</copy>
+```
+4.	With the tnsnames.ora file updated, you can now create the Oracle GoldenGate Credentials (create_credential_GGAlias.sh) needed to connect the capture process (Extract) to the Oracle Database. 
+ 
+In order to create the required credentials, run the following:
+
+```
+<copy>sh ./create_credential_GGAlias.sh Welcome_1 16001 c##ggate@orcl ggate</copy>
+```
+After running this script, can go to your browser and that the credential was created
+
+5. Open a new browser tab and connect to 
+```
+<copy>https://localhost/<deployment>/adminsrvr</copy>
+```
+6. Login with the following oggadmin/Welcome_1
+
+7. c.	Click the Context Menu in the upper left, then select Configuration from the left pane
+
+![](./images/a14.png)
+
+8.	Next, we will enable schematrandata on the schema that we want to replicate.  In order to do this, you will need to run the add_SchemaTrandata.sh script.  
+
+To run this script, execute the following
+
+```
+<copy>sh ./add_SchemaTrandata.sh Welcome1 16001</copy>
+```
+![](./images/a15.png)
+
+9. You can also check that SCHEMATRANDATA has been added from the Administration Service -> Configuration page as well.  Simply log in to the SGGATE alias.
+
+![](./images/a16.png)
+
+10. Then, under “Trandata”, make sure that the magnifying glass and radio button for “Schema” are selected.  Enter “oggoow19.soe” into the search box and then select the magnifying glass to the right of the search box to perform the search.
+
+![](./images/a17.png)
+
+11. After the search is performed, you will see a column that provides the number of tables enabled for supplemental logging within the “SOE” schema.
+
+![](./images/a18.png)
+
+You have now completed configuring schema level supplemental logging needed for use in the replication process
 
 You may now *proceed to the next lab*.
 
-## Learn More
+## Learn **More
 
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Zia Khan
-* **Last Updated By/Date** - Brian Elliott, Novemberber 2020
+* **Last Updated By/Date** - Brian Elliott, November 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
