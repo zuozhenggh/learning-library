@@ -155,7 +155,7 @@ To utilize the jde service commands:
     
 * BIP Server:  **jde-bip start**
 
-## **Exercise 4**: Connect to EnterpriseOne ADF Container
+## **Step 4**: Connect to EnterpriseOne ADF Container
 
 The EnterpriseOne ADF Container is utilized by EnterpriseOne for select UX One applications. For those applications to function correctly, the self-signed certificate needs to be approved separately by the client browser.  
 
