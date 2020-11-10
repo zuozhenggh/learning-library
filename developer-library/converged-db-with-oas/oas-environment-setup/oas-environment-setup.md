@@ -1,22 +1,22 @@
-# Start Database and OAS #
+# Start Database and OAS 
 
-## Introduction ##
+## Introduction 
 In this lab you will start both Database and OAS environments by running the script files. 
 
 Estimated Lab Time: 10 Mintues.
 
-### Objectives ###
+### Objectives 
 
 - Start the Oracle Database and Listener
 - Start OAS services
   
-### Prerequisites ###
+### Prerequisites 
 
 This lab assumes you have completed the following labs:  
 - Lab: Generate SSH Key - Cloud Shell
 - Lab: Setup Compute Instance  
 
-## STEP 1: Starting Database And OAS Services
+## **STEP 1**: Starting Database And OAS Services
 
 1. Login to putty using the public ip obtained earlier and switch user to oracle.
       ![](./images/oas-environment1.png " ")
@@ -63,7 +63,7 @@ This lab assumes you have completed the following labs:
 
       Check for the success status as shown above, before login to OAS screen.
 
-## STEP 2: Login To Oracle Analytics Server
+## **STEP 2**: Login To Oracle Analytics Server
 
 1. Open web browser (preferabily Chrome) and access the OAS Data Visualization service by the below URL structure.  
 
@@ -81,7 +81,7 @@ This lab assumes you have completed the following labs:
 
       Password 	: Oracle_4U
 
-## STEP 3: Create A Connection To Database
+## **STEP 3**: Create A Connection To Database
 
 1. From Home screen, click on **Create** button and select **Connection**.
 

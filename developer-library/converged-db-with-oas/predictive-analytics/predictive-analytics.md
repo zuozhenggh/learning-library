@@ -1,6 +1,6 @@
-# Predictive Analytics #
+# Predictive Analytics 
 
-## Introduction ##
+## Introduction 
 
 Oracle Analytics Server offers extended Machine Learning design capabilities. You need simple, one-click actions along with powerful machine learning (ML) models to predict results and better understand your data. To help you deploy sophisticated analytics to everyone in your organization, Oracle Analytics is focused on embedding, consuming, and training ML models to enrich your data preparation, discovery, and collaboration.  
 
@@ -10,7 +10,7 @@ Estimated Lab Time: 30 Mintues.
 
 ![](./images/predictiveanalytics.png " ")
 
-### Objectives ###
+### Objectives 
 
 In this Lab, we are going to focus on how to predict attrition using binary classification algorithm and show how to use in-built algorithms for addressing a real-life, common question for any organization.  
 
@@ -19,7 +19,7 @@ Here we are going to use “binary classification”. Binary classification is a
 
 We will also use visualizations on the predicted data for ease of decision making.
 
-### Prerequisites  ###
+### Prerequisites  
 
 This lab assumes you have completed the following labs:  
 - Lab : Generate SSH Key - Cloud Shell
@@ -36,7 +36,7 @@ The below pre-loaded data objects are available in Converged Database.
 | HR\_ATTRITION\_PREDICT | Table | Relational | Data used to test the model we create |
 
 
-## STEP 1: Create Dataset
+## **STEP 1**: Create Dataset
 
 In this step, create a dataset to work on.
 
@@ -57,7 +57,7 @@ In this step, create a dataset to work on.
 7. Finally click on “Add” to add the data set.
 ![](./images/paoas1.5.png " ")
 
-## STEP 2: Create Dataflow - ML Model
+## **STEP 2**: Create Dataflow - ML Model
 
 In this step, we will build a Machine learning model using OAS Dataflow capability to train our dataset.
 
@@ -83,7 +83,7 @@ In this step, we will build a Machine learning model using OAS Dataflow capabili
 
 We now have an ML model to test our data.
 
-## STEP 3: Check ML Model Quality
+## **STEP 3**: Check ML Model Quality
 
 In this step , we will check the parameters which determines the credibility of a model.
 
@@ -96,7 +96,7 @@ In this step , we will check the parameters which determines the credibility of 
 
  Based on the above shown parameters one can compare various algorithms and select the algorithm for best results of their data.
 
-## STEP 4: Apply Training Model to Predict
+## **STEP 4**: Apply Training Model to Predict
 
 In this step, we will apply the previously created ML model to the test data.
 
@@ -125,7 +125,7 @@ In this step, we will apply the previously created ML model to the test data.
 Now our training model is successfully mapped to the ML model.
   
 
-## STEP 5: Create Visualizations
+## **STEP 5**: Create Visualizations
 
 In this step we will enrich our insights with predictive analytics by creating some visuals on the prediction data.
 

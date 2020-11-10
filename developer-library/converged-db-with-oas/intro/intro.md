@@ -1,6 +1,6 @@
-# Introduction #
+# Introduction 
 
-## About this Workshop ##
+## About this Workshop
 
 This workshop Labs are intended for an audience with little or no previous experience on how to use augemented analytics feature of Oracle Analytics Server using variety of data and data visualizations.
 
@@ -8,14 +8,14 @@ Post lab session, you will quickly gain an understanding on using Oracle Analyti
 
 Estimated Workshop Time: 3 hours
 
-### What is Oracle's Converged Database? ###
+### What is Oracle's Converged Database? 
 A converged database is a database that has native support for all modern data types and the latest development paradigms built into one product.
 
 Converged databases support Spatial data for location awareness, JSON for document stores, IoT for device integration, in-memory technologies for real-time analytics, and of course, traditional relational data. By providing support for all of these data types, a Converged Database can run all sorts of workloads from IoT to Blockchain to Analytics and Machine Learning. It can also handle any development paradigm, including Microservices, Events, REST, SaaS, and CI/CD, to name a few.
 
 [](youtube:9d76-LhgMQs)
 
-### Objectives ###
+### Objectives 
 To show how converged database data can be fetched into Oracle Analytics Server.
 
 Mainly two components are explored in this workshop along with few features of the tool.

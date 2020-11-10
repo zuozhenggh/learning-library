@@ -1,6 +1,6 @@
-# Data Visualization #
+# Data Visualization 
 
-## Introduction ##
+## Introduction 
 
 With Oracle Analytics Server, we can create visualizations and projects that reveal trends in your company's data and help you answer questions and discover important insights about your business.
 Creating visualizations and projects is easy, and your data analysis work is flexible and exploratory. Oracle Analytics helps you to understand your data from different perspectives and fully explore your data to find correlations, discover patterns, and see trends.
@@ -16,7 +16,7 @@ Watch this below video to explore more on data visualization.
 [](youtube:yOYemBtdpnQ)
 
 
-### Objectives ###
+### Objectives 
 
 In this lab we will be using Oracle Analytics Server self-service capabilities on JSON, XML and Relational data of Converged Database.  We will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
 
@@ -32,7 +32,7 @@ The end result should look like below:
 
 ![](./images/oascdb1.png " ")
 
-### Prerequisites  ###
+### Prerequisites  
 
 This lab assumes you have completed the following labs:  
 - Lab : Generate SSH Key - Cloud Shell
@@ -55,7 +55,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
 
   
     
-## STEP 1: Create Data Set ##
+## **STEP 1**: Create Data Set 
   
   In this step, we will create individual data sets of different data types: json, xml and relational.
 
@@ -75,7 +75,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
 5. Click on "Add All" to select all the columns from table.
        ![](./images/oascdb10.png " ")
 
-6. Clck on "Add" and preview the sample records.  Verify dataset name as shown below.
+6. Click on "Add" and preview the sample records.  Verify dataset name as shown below.
        ![](./images/oascdb11.png " ")
 
 
@@ -85,7 +85,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
     - **FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW**
 
 
-## STEP 2: Merge Data Sets Using Data Flow ##
+## **STEP 2**: Merge Data Sets Using Data Flow 
    **Data Flow :** Data flows enable you to organize and integrate your data to produce a curated data set that your users can analyze.  
    To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you've configured your data flow, you execute it to produce a data set.
 
@@ -98,7 +98,7 @@ Let's create a dataflow to merge all the different types of datasets created in 
 2. Click on "+" and then "Add Data".
     ![](./images/oascdb1.3.png " ")
 
-3. select **FINANCIALS\_JSON\_UK\_VIEW** data set And click on "Add".
+3. Select **FINANCIALS\_JSON\_UK\_VIEW** data set And click on "Add".
     ![](./images/oascdb1.4.png " ")
 
 4. Now add data **FINANCIALS\_REL\_SPAIN\_ITALY** by clicking on "+".
@@ -107,7 +107,7 @@ Let's create a dataflow to merge all the different types of datasets created in 
 5. Click on "Add Data".
     ![](./images/oascdb1.6.png " ")
 
-6. select **FINANCIALS\_REL\_SPAIN\_ITALY** dataset and click on "Add"
+6. Select **FINANCIALS\_REL\_SPAIN\_ITALY** dataset and click on "Add"
     ![](./images/oascdb1.7.png " ")
 
 7. By default join operator will be selected. Since we have to merge different types of datasets, let us replace the "Join" step with "Union Rows" step.
@@ -153,7 +153,7 @@ Let's create a dataflow to merge all the different types of datasets created in 
     
     
 
-## STEP 3: Data Preparation ##
+## **STEP 3**: Data Preparation ##
 In this step we will perform some data prepartion steps to make data set ready for visualizatuion.
 
 1. Complete data set is created in STEP 1. Now on Home Screen, click on "Data".
@@ -212,7 +212,7 @@ by providing relevant formats.
 9. Now click on "Apply Script" to complete data preparation steps. And now dataset is ready for visualization.
     ![](./images/oascdb34.png " ")
 
-## STEP 4: Build Visualizations ##
+## **STEP 4**: Build Visualizations ##
 Let us analyze the data to get some insights using different kind of visualizaions.  
 
 1. **Performance Tile**   
@@ -242,7 +242,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb40.png " ")
 
 
-1. **Map** visualization  
+2. **Map** visualization  
    It works with geographic and measure columns.  
  
    In our data set select REGION and REVENUE columns and pick "Map" as visualization.
@@ -255,7 +255,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
    We can also select desired and relevant map layers via properties(Bottom Left).
     ![](./images/oascdb43.png " ")
 
-2. **Combo Graph** : Overlapping of line, bar and area        
+3. **Combo Graph** : Overlapping of line, bar and area        
     Select REVENUE, OPERATING EXPENSES, NETINCOME and QUARTER. Pick Combo as Visualization.  
     ![](./images/oascdb1.21.png " ")
 
@@ -273,11 +273,11 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 
    Similarly rename the combo graph.
 
-3. Rename Canvas    
+4. Rename Canvas    
    Rename individual Canvas to "Financials Overview".
     ![](./images/oascdb49.png " ")
 
-4. Analyzing Expenses    
+5. Analyzing Expenses    
     Select (+) symbol on the bottom to add another canvas, in this canvas we will add visulizations analysing expenses.  
     ![](./images/oascdb69.png " ")
 
@@ -287,31 +287,30 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     Result should look like below:
     ![](./images/oascdb51.png " ")
 
-5. **Sankey Graph** Visualization    
+6. **Sankey Graph** Visualization    
    We will see quartery expenses by account groups.    
    Select  OPERATING EXPENSES, QUARTER and ACCOUNTGROUP. Pick **Sankey Graph**.
     ![](./images/oascdb52.png " ")
 
-6. **Stacked Bar** visualization     
+7. **Stacked Bar** visualization     
    We will analyze region wise expenses quarterly.  
    Select OPERATING EXPENSES, PREVIOUS YEAR OPERATING EXPENSES and QUARTER. Pick **Stacked Bar**.  
     ![](./images/oascdb53.png " ")
 
-7. **Tree Map** visualization      
+8. **Tree Map** visualization      
    We will analze Expenses by Cost Centre.    
    Select OPERATING EXPENSES, COSTCENTER.  Pick **Tree Map**. 
     ![](./images/oascdb54.png " ")
 
-8.  Rename canvas "Expenses" as in point 5.  
+9.  Rename canvas "Expenses" as in point 5.  
     Rename individual visualizations and canvases.
 
-9.  More KPIs Analysis   
-    Select (+) symbol on the bottom to add another canvas, in this canvas we will add some more visulizations.  
-    ![](./images/oascdb70.png " ")
+10.  More KPIs Analysis   
+    Select (+) symbol on the bottom to add another canvas, in this canvas we will add some more visulizations.      ![](./images/oascdb70.png " ")
 
     Please refer to previous steps for selecting the required fields and visualization type.   
     
-10. **Combo Graph** for comparing PAYABLES and RECEIVABLES by MONTH(similar to as we did in STEP 4- point 3).
+11. **Combo Graph** for comparing PAYABLES and RECEIVABLES by MONTH(similar to as we did in STEP 4- point 3).
    ![](./images/oascdb56.png " ")
 
 12. **Simple Bar Graph**  
@@ -342,10 +341,10 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb1.23.1.png " ")
 
 
-## STEP 5: Data Action For Drill Down To Detail Report 
+## **STEP 5**: Data Action For Drill Down To Detail Report 
 
-1.   Select (+) symbol on the bottom to add another canvas(refer to STEP 4 - point 11), in this canvas we will build the tabular report.  
-    select all the required columns (as shown below) and pick table as visualization.
+1.   Select (+) symbol on the bottom to add another canvas (refer to STEP 4 - point 11), in this canvas we will build the tabular report.  
+    Select all the required columns (as shown below) and pick table as visualization.
     ![](./images/oascdb60.png " ")
 
 2. Now click on hamburger then select "Data Actions" (top Right corner).
@@ -369,7 +368,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 
 
 
-## STEP 6: Adding Filters ##
+## **STEP 6**: Adding Filters ##
 Filters are used to make canvas interactable for the users. Users can view desired data by adding filters to the canvas. In this way filters enable users to interact with canvas. 
 
 1. Click (+) symbol on the top screen as shown in below screenshot and select the fields as required. Here we have selected Year, Month, Account Group.
