@@ -160,7 +160,7 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
     - The table displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts.
 
-      ![Sensitive columns table](images/data-discovery-report.png)
+    ![Sensitive columns table](images/data-discovery-report.png)
 
 
 17. Click the chart's **Expand** button.

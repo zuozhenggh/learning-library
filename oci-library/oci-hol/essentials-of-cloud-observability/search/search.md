@@ -24,33 +24,44 @@ In this lab, you will:
 
 ## **STEP 1**: Select Logs to be included in Search
 
-1. Navigate to **Logging** --> **Search**.
+1. In the OCI Management Console, ensure you have selected the same Region as the previous Labs.  Navigate to **Logging** --> **Search**.
 
     ![Log Search](images/log-search.png)
 
-2. Click inside the **SELECT LOGS TO SEARCH** box to bring up the search panel.  
+2. Click inside the **SELECT LOGS TO SEARCH** box to bring up the pop-up search panel.  
 
-3. Select logservicedemo **COMPARTMENT**, logservicelg **Log Groups** and both the custom and service log listed in the **LOGS** section.
+3.  Select logservicedemo **COMPARTMENT**, logservicelg **Log Groups** and both the custom and service log listed in the **LOGS** section.
 
-   Your selection screen should look similar to the image below.
+   This may take some time and a few extra clicks to become familiar with the log selection process.  In the end, your selection screen should look similar to the image below.  As long as **customlog01** and **servicelog01** are showing in the **SELECT LOGS TO SEARCH** box you're good to proceed.
 
 
   ![Log Search](images/select-logs.png)
 
   ![Log Search](images/select-logs-1.png)
 
+4.  Click **Continue** to close the panel and return to the search landing page.
 
 ## **STEP 2:** Search Content and Explore Logs
 
-1. In the **FILTER BY FIELD OR TEXT SEARCH** box enter candidate search keywords such as "ERROR" or "REJECT".  View the results in the results panel.  
+1.  On the log search page, click the **Search** button and review the results in the panel below.  
+
+2.  In the **FILTER BY FIELD OR TEXT SEARCH** box enter candidate search keywords such as "ERROR" or "REJECT".  View the results in the results panel.  
 
   ![Log Search](images/explore-logs-combined.png)
+
+3.  Click the **Search** button an review the filtered results.
+
+4.  **Optional**: Update the search parameters to filter the results.
+
+When complete, you may proceed to the next Lab.
+
+## Learn More
+
 
 
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
 * **Last Updated Date** - Kamryn Vinson, October 2020
-
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
