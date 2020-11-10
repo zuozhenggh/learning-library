@@ -29,13 +29,13 @@ Mainly two components are explored in this workshop along with few features of t
     - Predictive Analytics 
 
 
-### Prerequisites  ###
+### Prerequisites  
 
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
 To complete this workshop, you will use a preconfigured OAS images available in Oracle's Cloud Marketplace to build your compute instance.  This image comes pre-installed with all the information you need to create your environment. 
 
-## What is Oracle Analytics Server? ##
+## What is Oracle Analytics Server? 
 
 Oracle Analytics Server (OAS) is an on-premises self-service visualization and augmented artificial intelligence (AI)analytics platform. It provides a full range of capabilities including AI that quickly surfaces key insights in your datasets, data enrichment features that automatically recommend new elements for analysis, machine learning (ML) capabilities for both traditional and citizen data scientists, and stunning data visualizations for your dashboards with pixel perfect reporting.  Built on a proven and modern technological foundation, it supports the highest workloads and most complex deployments while providing timely insights to users across an enterprise at a low overall total cost of ownership. 
 
@@ -61,7 +61,7 @@ Support:
 [](youtube:Ml-McI6yBOU)
 
 
-## Why Converge Database with OAS ? ##
+## Why Converge Database with OAS ? 
 Every actionable insights are drived from data and data is available in variety of formats like, Relational, XML, JSON, Spatial, Graph etc.  Organizations are heavily depending on accurate data and its availability for processing. Hence, many organizations are trying to keep data at its originately or in various source formats.  To take right decision at right time, single truth version of data is required and hence consolidation is the key.  Hence, variety of data needs to be processed using tools to get single version of true data.   Not one solution or tool is sufficient to handle these various fomrats of data. Oracle has come up with one solution which can host or process variety of data of an organization called Converged Database.  Hence, no more looking for many tools for hosting or consolidation of variety data. For stunning data visualization fetching converged database, Oracle Analytics Server is frontline tool.  Let us see how one can create stunning data visualizations to bring up the actionable insights from converged database using Oracle Analytics Server.
 
 Oracle Analytics Server has rich collection of data visualizations and capability to connect various data sources.  Converged database has greater advantage of hosting variety of data types. 
