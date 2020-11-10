@@ -1,18 +1,10 @@
-# Connecting to JDE Trial Edition 
-
+# Lab 4: Connecting to JDE Trial Edition 
 
 ## Introduction
 
 Trial Edition is now running and ready for use. In this lab, you will learn how to utilize it.
 
 Estimated Lab Time: 10 minutes
-
-### About Product/Technology
-Enter background information here....
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -22,6 +14,13 @@ In this lab, you will:
 *	Connect to EnterpriseOne Orchestrator Studio
 *	Connect to Oracle BI Publisher
 *	Learn Where Additional Resources are Located
+
+## Prerequisites
+
+To have the greatest success in completing this lab make sure you have aready completed:
+*   Lab 1
+*   Lab 2
+*   Lab 3 
 
 ## **Step 1**: Connect to EnterpriseOne HTML Server
 
@@ -33,17 +32,18 @@ To access the EnterpriseOne HTML server:
 
 2)	Using the Public IP Address for the instance and port number (Lab 2, Exercise 3, Step 1a) assigned to the HTML server as part of the final configuration and security list, enter the following URL into the browser:
 
-    https://<ip address>:<port>/jde
+    https://"ip address:port"/jde
 
-For example:
+    For example:
 
-    https://132.145.187.16:8080/jde
+        https://132.145.187.16:8080/jde
 
 3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
+    **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
 
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+    **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+
     ![](./images/1.3.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
@@ -55,7 +55,7 @@ For example:
 *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1)
     ![](./images/1.5.png " ")
 
-At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
+    At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
     ![](./images/1.5.2.png " ")
 
 ## **Step 2**:  Connect to EnterpriseOne Orchestrator Studio
@@ -70,15 +70,16 @@ To access the Orchestrator Studio:
 
     https://<ip_address>:7077/studio/studio.html
 
-For example:
+    For example:
 
-    https://129.213.43.190:7077/studio/studio.html
+        https://129.213.43.190:7077/studio/studio.html
 
 3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. his example is from a Mozilla Firefox browser.
+    **Note:** Message and Security differ from browser to browser. his example is from a Mozilla Firefox browser.
 
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+    **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+
     ![](./images/2.3.png " ")
 
 4)	Click the ***Confirm Security Exception button*** to add the URL to the trusted location list for the browser.
@@ -90,7 +91,7 @@ For example:
 *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1c).
     ![](./images/2.5.png " ")
 
-At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
+    At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
     ![](./images/2.6.png " ")
 
 ## **Step 3**: Explore JDE Service Commands 
@@ -172,9 +173,10 @@ For example:
 
 3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
+    **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
 
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+    **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+
     ![](./images/4.3.png " ")
 
 
@@ -206,9 +208,10 @@ For example:
 
 3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
+    **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
     
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+    **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+
     ![](./images/5.3.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
@@ -219,7 +222,7 @@ For example:
 *	Password: JDE_Rules1 (this is the password defined in the final configuration in Lab 2, Step 3)
     ![](./images/5.5.png " ")
 
-At this point, the Oracle BI Publisher Server for OVR is ready for use.
+    At this point, the Oracle BI Publisher Server for OVR is ready for use.
     ![](./images/5.6.png " ")
 
 

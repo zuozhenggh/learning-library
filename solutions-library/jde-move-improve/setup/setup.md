@@ -1,4 +1,4 @@
-# Set Up OCI for JDE Trial Edition Deployment 
+# Lab 2: Set Up OCI for JDE Trial Edition Deployment 
 
 
 ## Introduction
@@ -9,19 +9,18 @@ In this lab, the recently provisioned OCI Trial tenancy will be set up for JDE T
 
 Estimated Lab Time: 10 minutes
 
-### About Product/Technology
-Enter background information here....
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
-
 ### Objectives
 
 To set up the OCI tenancy, in this lab, you will:
 *   Create a Compartment
 *   Create a Virtual Cloud Network (VCN)
 *   Establish Security List Rules for JDE
+
+### Prerequisites 
+
+To have the greatest success in completing this lab make sure you meet the following criteria:
+* You have completed Lab 1 
+* You have a general knowledge of OCI and its web interface
 
 ## **Step 1**: Create a Compartment 
 
@@ -112,11 +111,13 @@ With the VCN in place, define the open inbound and outbound ports that will be a
 
     | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 9703-9705 |
 
-Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
+    Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
     ![](./images/3.4.png " ")
 
-These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
+    These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 
 ## **Summary**
 
 In this lab, OCI has been set up for the networking required to be able to access a JDE Trial Edition that will be created in the next lab.
+
+You may now proceed to the next lab

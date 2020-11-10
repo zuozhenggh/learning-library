@@ -1,4 +1,4 @@
-# Creating a Trial Edition Instance in OCI
+# Lab 3: Creating a Trial Edition Instance in OCI
 
 ## Introduction
 
@@ -6,12 +6,6 @@ In this lab, a JDE Trial Edition will be created in OCI. The JDE Trial Edition w
 
 Estimated Lab Time: 40 minutes
 
-### About Product/Technology
-Enter background information here....
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -22,6 +16,11 @@ To deploy JDE Trial Edition, in this lab, you will:
 *   Perform First-Time Configuration of Trial Edition
 *   Connect to JDE Resources
 
+## Prerequisites
+
+To have the greatest success in completing this lab make sure you have aready completed:
+*   Lab 1
+*   Lab 2
 
 ## **Step 1**: Provision Trial Edition from OCI Marketplace
 
@@ -108,6 +107,7 @@ Once connected, you can continue to ***Step 3*** below
 For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an OCI instance.
 
 1)	Launch ***PuTTY***.
+
     ![](./images/2.21.png " ")
 
 2) Within the PuTTY session, under Session category, enter the Public IP Address (example: 132.145.187.16) from the instance information into the ***Host Name*** field, and then select category ***Connection → Data***.
@@ -160,7 +160,7 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
 5)	Final Confirmation: Y – Yes to commit the configuration settings and run the script to set up.
 
 
-Configuration will take between 25-30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status ***“Successfully completed u01/vmScripts/EOne_Sync.sh”***.
+    Configuration will take between 25-30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status ***“Successfully completed u01/vmScripts/EOne_Sync.sh”***.
     ![](./images/3.5.png " ")
 
 ## **Summary**
