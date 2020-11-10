@@ -8,7 +8,7 @@ The steps in this tutorial take approximately 45 minutes to perform, not includi
 
 Estimated Lab Time: 45 minutes
 
-## Background
+### **Background**
 
 Creating a backup of your source Oracle E-Business Suite instance is the first part of a lift and shift process. You can subsequently complete the lift and shift process by using Oracle E-Business Suite Cloud Manager to provision an environment on Oracle Cloud Infrastructure based on the backup.
 
@@ -17,7 +17,7 @@ Note: Although this process is intended primarily for on-premises instances, you
   - You want to migrate your environment from one tenancy to another. The lift and shift process can be used for this purpose whether or not you are currently using Oracle E-Business Suite Cloud Manager.
 
 
-### Objectives
+### **Objectives**
 
 In this lab, you will:
 
@@ -25,23 +25,38 @@ In this lab, you will:
 * Install the Oracle E-Business Suite Cloud Backup Module
 * Create a Backup with the Oracle E-Business Suite Cloud Backup Module
 
-### Prerequisites
+### **Prerequisites**
 
-* Lab 1: Preparing Your Tenancy for Oracle E-Business Suite
-* Lab 2: Oracle E-Business Suite Cloud Manager Deployment and Configuration
+* Complete Lab 1: Preparing Your Tenancy for Oracle E-Business Suite
+* Complete Lab 2: Oracle E-Business Suite Cloud Manager Deployment and Configuration
 * A source **Oracle E-Business Suite 12.2.8** instance with DB 12.1.0 provisioned on OCI following the tutorial described here: [Provision a New Oracle E-Business Suite Installation on a Single Node on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/provision_ebs_on_single_node_on_oci/index.html). (Including step 6 - Configure Web Entry Point with hostname **apps**)
+
+Note: If/When going through the above lab to provision a new EBS Instance remember to document the values that you set throughout that pre-requisite lab. (Specifically the ones noted under **From your source EBS Instance**)
+
 * A MyOracleSupport account is needed to download the Cloud Backup tool to the source EBS environment.
 * key-data.txt file documented with following information:
 
-    * `Oracle_Cloud_Region_Identifier`
-    * `Oracle_Cloud_Tenant_Name`
-    * `Oracle_Cloud_Tenant_OCID`
-    * `Cloud_Manager_Admin_OCID`
-    * `Cloud_Manager_Admin_Fingerprint`
-    * `Oracle_Cloud_Compartment_OCID`
-    * `Cloud_Manager_Instance_public_IP`
-    * `Source_EBS_Instance_public_IP`
-    * `Source_EBS_Instance_private_IP`
+**From MyOracleSupport Account:**
+
+* `MOS_Email_Address` (typically your tenancy admin user)
+
+**From Provisioning your Cloud Manager Instance You Should have recorded:**
+
+* `Oracle_Cloud_Region_Identifier`
+* `Oracle_Cloud_Tenancy_Name`
+* `Oracle_Cloud_Tenancy_OCID`
+* `Cloud_Manager_Admin_User_OCID`
+* `Cloud_Manager_Admin_Fingerprint`
+* `Oracle_Cloud_Compartment_OCID`
+* `Cloud_Manager_Instance_public_IP`
+
+From your source EBS Instance
+
+* `Source_EBS_Instance_public_IP`
+* `Source_EBS_Instance_private_IP`
+* `Fully_Qualified_Hostname` (In this Lab: apps.example.com)
+* `apps_password` (In this Lab: apps)
+* `weblogic_password` (In this Lab: welcome1)
 
 ## **STEP 1**: Prepare the Source Oracle E-Business Suite Environment. 
 You will now copy the API Signing key from the Cloud Manager instance to the source Oracle E-Business Suite environment. 
@@ -54,83 +69,84 @@ You will ensure SSH connectivity between all the nodes:
   - Application Tier Node 
   - Database Tier Node
 
-Finally, you will put the Database in Archive Mode before creating the backup.
+Then, you will put the Database in Archive Mode before creating the backup.
 
-1. Copy the private API signing key files from the Cloud Manager instance to the source Oracle E-Business Suite environment.
+### **Part 1. Copy the private API signing key files from the Cloud Manager instance to the source Oracle E-Business Suite environment.** 
 The key file must be placed in a location where it can be referenced by the Oracle E-Business Suite Cloud Backup Module. For example: /u01/install/APPS/.oci/
 
-    a. Connect to your Oracle E-Business Suite Cloud Manager Compute instance that was created according to Lab 2: Oracle E-Business Suite Cloud Manager Deployment and Configuration. 
-    To connect, follow the instructions under “Connecting to a Linux Instance”  in [Connecting to an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/accessinginstance.htm).
-    SSH into the Cloud Manager instance from your local machine by using the IP address in the ``key-data.txt`` file and the SSH private key you used during the deployment of the Cloud Manager in OCI or by using Putty on a Windows machine. 
+a. Connect to your Oracle E-Business Suite Cloud Manager Compute instance that was created according to Lab 2: Oracle E-Business Suite Cloud Manager Deployment and Configuration. 
+    
+To connect, follow the instructions under “Connecting to a Linux Instance”  in [Connecting to an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/accessinginstance.htm).
+    
+SSH into the Cloud Manager instance from your local machine by using the IP address in the ``key-data.txt`` file and the SSH private key you used during the deployment of the Cloud Manager in OCI or by using Putty on a Windows machine. 
 
-        <copy>
-        ssh -i <filepath_to_private_ssh_key> opc@<cloud_manager_public_ip>
-        </copy>
+    ssh -i <filepath_to_private_ssh_key> opc@<Cloud_Manager_Instance_public_IP>
 
-    ![](./images/1.png " ")
+![](./images/1.png " ")
 
-    b. Read the private API key using the ``cat`` command and copy the private API key to your clipboard or in a text file on your desktop.
+b. Read the private API key using the ``cat`` command and copy the private API key to your clipboard or in a text file on your desktop.
 
-        <copy>
-        sudo cat /u01/install/APPS/.oci/ebscm.admin@example.com.pem
-        </copy>
+    sudo cat /u01/install/APPS/.oci/<Cloud Manager_Admin_Username>.pem
 
-    Select all the resulted characters to copy the key (make sure not to copy any spaces).
+Example:
 
-    Paste the key in a text file on your desktop 
+    <copy>
+    sudo cat /u01/install/APPS/.oci/myebscm.admin@example.com.pem
+    </copy>
 
-    ![](./images/2.png " ")
+Select all the resulted characters to copy the key (make sure not to copy any spaces).
+
+Paste the key in a text file on your desktop 
+
+![](./images/2.png " ")
   
-    d. Connect to the source EBS environment.
+d. Connect to the source EBS environment.
 
-    To connect, follow the instructions under “Connecting to a Linux Instance”  in [Connecting to an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/accessinginstance.htm).
-    SSH into the source EBS instance from your local machine by using the IP address and the SSH private key you used during the deployment of the source EBS instance . 
+To connect, follow the instructions under “Connecting to a Linux Instance”  in [Connecting to an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/accessinginstance.htm).
+SSH into the source EBS instance from your local machine by using the IP address and the SSH private key you used during the deployment of the source EBS instance . 
 
-        <copy>
-        ssh -i <filepath_to_private_ssh_key> opc@<ebsvm_public_ip>
-        </copy>
+    ssh -i <filepath_to_private_ssh_key> opc@<Source_EBS_Instance_public_IP>
 
-    ![](./images/3.png " ")
+![](./images/3.png " ")
 
-    e. Switch to the Oracle user in the source EBS instance
+e. Switch to the Oracle user in the source EBS instance
 
-        <copy>
-        sudo su - oracle
-        </copy>
+    <copy>
+    sudo su - oracle
+    </copy>
 
-    ![](./images/4.png " ")
+![](./images/4.png " ")
 
-    f. Create a directory named **.oci**, create a .pem file named **ebscm.admin@example.com.pem** and change permissions to the file.
+f. Create a directory named **.oci**, create a .pem file with the same name as you had in the cloud manager instance. For example: **ebscm.admin@example.com.pem** and change permissions to the file.
 
-        <copy>
-        mkdir /u01/install/APPS/.oci
-        cd /u01/install/APPS/.oci
-        touch /u01/install/APPS/.oci/ebscm.admin@example.com.pem
-        chmod 600 /u01/install/APPS/.oci/ebscm.admin@example.com.pem
-        </copy>
+    <copy>
+    mkdir /u01/install/APPS/.oci
+    cd /u01/install/APPS/.oci
+    touch /u01/install/APPS/.oci/ebscm.admin@example.com.pem
+    chmod 600 /u01/install/APPS/.oci/ebscm.admin@example.com.pem
+    </copy>
 
-    ![](./images/5.png " ")
+![](./images/5.png " ")
 
-    g. Open the vi editor along with the path and name for the API key, paste the API key from your clipboard and Exit the vi editor with save.
+g. Open the vi editor along with the path and name for the API key, paste the API key from your clipboard and Exit the vi editor with save.
 
-        <copy>
-        vi /u01/install/APPS/.oci/ebscm.admin@example.com.pem
-        </copy>
+    <copy>
+    vi /u01/install/APPS/.oci/ebscm.admin@example.com.pem
+    </copy>
     
-    ![](./images/6.png " ")
+![](./images/6.png " ")
 
-    Press **i** on your keyboard to insert text
+Press **i** on your keyboard to insert text
 
-    Paste the key with right click
+Paste the key with right click
 
-    Press **Esc**
+Press **Esc**
 
-    To save the file write **:wq** and press Enter
-
+To save the file write **:wq** and press Enter
     
-    ![](./images/7.png " ")
+![](./images/7.png " ")
 
-2. Create stage area directories for the Application tier and Database Tier.
+### **Part 2. Create stage area directories for the Application tier and Database Tier.**
 
 These directories will hold:
 
@@ -145,124 +161,122 @@ These directories will hold:
 
 ![](./images/8.png " ")
 
-3. Do the following to ensure that the Oracle E-Business Suite Cloud Backup Module can connect to all required nodes:
+### **Part 3. Do the following to ensure that the Oracle E-Business Suite Cloud Backup Module can connect to all required nodes:**
 
 All nodes must have SSH enabled. 
 
 In our case Application Tier Node, DB Tier Node and Backup module are on the same instance.
 
-    a. The SSH configuration file (~/.ssh/config) must have the entry **ServerAliveInterval 100**.
+a. The SSH configuration file (~/.ssh/config) must have the entry **ServerAliveInterval 100**.
 
-        <copy>
-        cd  ~/.ssh
-        touch ~/.ssh/config
-        chmod 644 ~/.ssh/config
-        vi ~/.ssh/config
-        </copy>
+    <copy>
+    cd  ~/.ssh
+    touch ~/.ssh/config
+    chmod 644 ~/.ssh/config
+    vi ~/.ssh/config
+    </copy>
     
-    ![](./images/9.png " ")
+![](./images/9.png " ")
         
-    Press **i** on your keyboard to insert text
+Press **i** on your keyboard to insert text
 
-    Insert a new line containing **ServerAliveInterval 100**
+Insert a new line containing **ServerAliveInterval 100**
 
-    Press **Esc**
+Press **Esc**
 
-    To save the file write **:wq** and press **Enter**
+To save the file write **:wq** and press **Enter**
 
-    ![](./images/10.png " ")
+![](./images/10.png " ")
 
-    b. Generate a new set of SSH keys without passphrase in the ~/.ssh/ directory.
-    Choose default name for the keys.
+b. Generate a new set of SSH keys without passphrase in the ~/.ssh/ directory.
+Choose default name for the keys.
 
-        <copy>
-        cd ~/.ssh
-        ssh-keygen
-        </copy>
+    <copy>
+    cd ~/.ssh
+    ssh-keygen
+    </copy>
 
-    ![](./images/11.png " ")
+![](./images/11.png " ")
 
-    c. Create the authorized keys file and update it with the SSH public key.
+c. Create the authorized keys file and update it with the SSH public key.
 
-        <copy>
-        cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-        </copy>
+    <copy>
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    </copy>
 
-    ![](./images/12.png " ")
+![](./images/12.png " ")
 
-    f. Verify if ssh connection using privateIP is working.
+f. Verify if ssh connection using privateIP is working.
+
+    ssh oracle@<Source_EBS_Instance_private_IP>
+
+Choose yes to connect to the host
+
+![](./images/13.png " ")
+
+g. After verifing the connection is established you can close it. 
         
-        <copy>
-        ssh oracle@<ebsvm-private-ip>
-        </copy>
+    <copy>
+    exit
+    </copy>
 
-    Choose yes to connect to the host
+![](./images/14.png " ")
 
-    ![](./images/13.png " ")
+### **Part 4.** The Database must be in **Archive Mode**
 
-    g. After verifing the connection is established you can close it. 
+a.	Stop Apps Tier using the stopapps.sh script
+
+    <copy>
+    /u01/install/APPS/scripts/stopapps.sh
+    </copy>
+
+![](./images/15.png " ")
+
+b. Source the EBS environment and connect to the database
         
-        <copy>
-        exit
-        </copy>
+    <copy>
+    cd /u01/install/APPS/12.1.0/
+    . ./ebsdb_apps.env
+    sqlplus / as sysdba
+    </copy>
 
-    ![](./images/14.png " ")
+![](./images/16.png " ")
 
-4. The Database must be in **Archive Mode**
+c. Check wether the Database is in archive mode
 
-    a.	Stop Apps Tier using the stopapps.sh script
+    <copy>
+    archive log list;
+    </copy>
 
-        <copy>
-        /u01/install/APPS/scripts/stopapps.sh
-        </copy>
+![](./images/17.png " ")
 
-    ![](./images/15.png " ")
+e. Put the Database in Archive mode
 
-    b. Source the EBS environment and connect to the database
-        
-        <copy>
-        cd /u01/install/APPS/12.1.0/
-        . ./ebsdb_apps.env
-        sqlplus / as sysdba
-        </copy>
+    <copy>
+    shutdown immediate;
+    startup mount;
+    alter database archivelog;
+    alter database open;
+    </copy>
 
-    ![](./images/16.png " ")
+![](./images/18.png " ")
 
-    c. Check wether the Database is in archive mode
+f. Confirm that the Database is in Archive mode and close the Database connection
 
-        <copy>
-        archive log list;
-        </copy>
+    <copy>
+    archive log list;
+    exit
+    </copy>
 
-    ![](./images/17.png " ")
+![](./images/19.png " ")
 
-    e. Put the Database in Archive mode
+g. Start the applications tier by running the startapps.sh script
 
-        <copy>
-        shutdown immediate;
-        startup mount;
-        alter database archivelog;
-        alter database open;
-        </copy>
+    <copy>
+    /u01/install/APPS/scripts/startapps.sh
+    </copy>
 
-    ![](./images/18.png " ")
-
-    f. Confirm that the Database is in Archive mode and close the Database connection
-
-        <copy>
-        archive log list;
-        exit
-        </copy>
-
-    ![](./images/19.png " ")
-
-    g. Start the applications tier by running the startapps.sh script
-
-        <copy>
-        /u01/install/APPS/scripts/startapps.sh
-        </copy>
-
-    ![](./images/20.png " ")
+![](./images/20.png " ")
 
 ## **STEP 2:** Install the Oracle E-Business Suite Cloud Backup Module
 
@@ -287,10 +301,12 @@ Download the Backup Module from My Oracle Support to the backup module server.
 3. Enter the wget command containing the patch name, your MyOracleSupport e-mail address and the download link.
 
     Make sure to replace firstname.name@oracle.com with your MOS email address in this example: 
-        
-        <copy>
-        wget --output-document=p31254259_R12_Generic.zip --http-user=firstname.name@example.com --ask-password 'https://updates.oracle.com/Orion/Download/process_form/p31254259_R12_GENERIC.zip?file_id=109968332&aru=23539624&userid=O-firstname.name@example.com&email=firstname.name@example.com.com&patch_password=&patch_file=p31254259_R12_GENERIC.zip'
-        </copy>
+
+        wget --output-document=p31254259_R12_Generic.zip --http-user=<MOS_Email_Address> --ask-password '<download link>'
+    
+    Example
+
+        wget --output-document=p31254259_R12_Generic.zip --http-user=firstname.name@oracle.com --ask-password 'https://updates.oracle.com/Orion/Download/process_form/p31254259_R12_GENERIC.zip?file_id=109968332&aru=23539624&userid=O-firstname.name@example.com&email=firstname.name@example.com.com&patch_password=&patch_file=p31254259_R12_GENERIC.zip'
 
     Enter your MyOracleSupport account password
 
@@ -316,6 +332,8 @@ Download the Backup Module from My Oracle Support to the backup module server.
     ![](./images/24.png " ")
 
 ## **STEP 3:** Create a Backup with the Oracle E-Business Suite Cloud Backup Module
+
+**FOLLOW ALONG AND READ CLOSELY, THERE ARE MANY VALUES AND STEPS THAT MUST BE COMPLETED ACCURATELY TO CREATE THE BACKUP**
 
 In this section, you will run the Oracle E-Business Suite Cloud Backup Module, EBSCloudBackup.pl, to create a backup of your on-premises Oracle E-Business Suite environment on Oracle Cloud Infrastructure Backup Service.
 
@@ -343,7 +361,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
 4. On the first screen, choose option 1, Create E-Business Suite Backup and Upload to Oracle Cloud Infrastructure.
 
-![](./images/26.png " ")
+    ![](./images/26.png " ")
 
 5. Next, indicate whether communication between the source database server and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
     We are not going to use a proxy, choose option 2
@@ -364,22 +382,27 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
 
-        Enter Fully Qualified Hostname : **apps.example.com**
-        OS User Name : **oracle**
-        OS User Password [skip if not applicable] : Press Enter to skip
-        OS User Custom Private Key [skip if not applicable] : Press Enter to skip     
-        OS User Passphrase [skip if not applicable] : Press Enter to skip
-        
-        Context File : **/u01/install/APPS/12.1.0/appsutil/ebsdb_apps.xml**
-        
-        Database Transparent Data Encrypted ( TDE ): ( Yes | No ) : **No**
+    In the entries below a value depicted with:
+    * <> -- will be a variable that should be recorded in your ``key-data.txt``.
+    * `** **` -- will be the value to enter
+    * `Press Enter to skip` -- will be for hitting the Enter key.  
 
-        You have not entered Password or Custom Private Key location
-        We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
-        Do you want to continue (Yes | No) : **Yes**
+            Enter Fully Qualified Hostname (ex: **apps.example.com**) : <Fully_Qualified_Hostname> 
+            OS User Name : **oracle**
+            OS User Password [skip if not applicable] : Press Enter to skip
+            OS User Custom Private Key [skip if not applicable] : Press Enter to skip     
+            OS User Passphrase [skip if not applicable] : Press Enter to skip
+        
+            Context File : **/u01/install/APPS/12.1.0/appsutil/ebsdb_apps.xml**
+        
+            Database Transparent Data Encrypted ( TDE ): ( Yes | No ) : **No**
 
-        Validating the details...
-        Stage Directory : **/u01/install/stage/dbStage**
+            You have not entered Password or Custom Private Key location
+            We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
+            Do you want to continue (Yes | No) : **Yes**
+
+            Validating the details...
+            Stage Directory : **/u01/install/stage/dbStage**
         
     ![](./images/28.png " ")
 
@@ -398,7 +421,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle WebLogic Server administrator password for the source environment.
 
-        Enter Fully Qualified Hostname : **apps.example.com**
+        Enter Fully Qualified Hostname (ex: **apps.example.com**) : <Fully_Qualified_Hostname> 
         OS User Name : **oracle**
         OS User Password [skip if not applicable] : Press Enter to skip
         OS User Custom Private Key [skip if not applicable] : Press Enter to skip  
@@ -406,7 +429,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
         Context File : **/u01/install/APPS/fs1/inst/apps/ebsdb_apps/appl/admin/ebsdb_apps.xml**
 
-        APPS Password (example: **apps**) : password
+        APPS Password (example: **apps**) : <apps_password>
         
         You have not entered Password or Custom Private Key location
         We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
@@ -415,28 +438,35 @@ If you are using an Oracle E-Business Suite application tier node or database ti
         Validating the details... 
         Stage Directory : **/u01/install/stage/appsStage**
 
-        WebLogic Server Admin Password : **welcome1**
+        WebLogic Server Admin Password (example: **welcome1**) : <weblogic_password>
         
     ![](./images/30.png " ")
 
 9. Enter details to specify how you want to create the backup on Oracle Cloud Infrastructure Object Storage.
 
-    - Backup Identifier Tag - Enter a name to uniquely identify your backup. The script adds this tag as a prefix when creating the containers to store objects in a compartment within an Oracle Cloud Infrastructure Object Storage namespace, known as buckets. The generic bucket for the application tier and database tier Oracle home backup is named ``<Backup_Identifier_Tag>Generic``. The database bucket for the database RMAN backup is named ``<Backup_Identifier_Tag>DB``.
+    - Backup Identifier Tag - Enter a name to uniquely identify your backup. The script adds this tag as a prefix when creating the containers to store objects in a compartment within an Oracle Cloud Infrastructure Object Storage namespace, known as buckets. The generic bucket for the application tier and database tier Oracle home backup is named ``<Backup_Identifier_Tag>Generic``. 
+    - The database bucket for the database RMAN backup is named ``<Backup_Identifier_Tag>DB``.
     - Backup Thread Count - Specify the number of threads used to upload the application tier and database tier file system backups. The default value is 1. If your CPU count is less than 8, then the maximum value for the backup thread count is 2 times the CPU count. If your CPU count is 8 or more, then the maximum value for the backup thread count is 1.5 times the CPU count.
     - Backup Archive Type - Specify tgz to compress the backups before the upload, or tar if you do not want to compress the backups. We recommend that you specify tgz.
     - RMAN Advanced Configuration Parameter File Path - If you created an advanced configuration parameter file in Section 4, then specify the directory path and file name for the file in this parameter. Otherwise, leave this parameter blank.
     - Backup Encryption Password - Specify a password to encrypt the application tier file system and database tier file system. If Transparent Data Encryption (TDE) is not enabled in the source database, then this password is also used to encrypt the database RMAN backup.
     - Confirm Backup Encryption Password - Re-enter the same backup encryption password to confirm it.
 
-        ```
-        Backup Identifier Tag                           : **EBS1228COMPUTE**
-        Backup Thread Count                             : **4**
-        Backup Archive Type ( tar | tgz )               : **tgz**
-        RMAN Advanced Configuration Parameter File Path : Press Enter to skip
-        Backup Encryption Password                      : **password**
-        Confirm Backup Encryption Password              : **password**
+            Backup Identifier Tag                           : **EBS1228COMPUTE**
 
-![](./images/31.png " ")
+            Backup Thread Count                             : **4**
+
+            Backup Archive Type ( tar | tgz )               : **tgz**
+
+            RMAN Advanced Configuration Parameter File Path : Press Enter to skip
+
+            Backup Encryption Password                      : **password**
+
+            Confirm Backup Encryption Password              : **password**
+
+    ![](./images/31.png " ")
+
+    - Note: Save your **BackupIdentifier Tag** and **Backup Encryption Password** to your ``key-data.txt`` file
 
 10. Next, indicate whether you access the cloud service through a proxy and need to specify the proxy details.
     We are not going to use a proxy, choose option 2
@@ -446,7 +476,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 11. Enter your Oracle Cloud Infrastructure details.
 
     - The user who performs the backup must be a member of the Oracle E-Business Suite administrators group defined according to Lab 2: Oracle E-Business Suite Cloud Manager Deployment and Configuration.
-    In this workshop the user is **ebscm.admin@example.com**
+    In this workshop this is your `Cloud Manager_Admin_Username`
     - Enter the OCID for your tenancy, the [region identifier](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) of the region where you plan to provision an environment from this backup, your tenancy name, and the OCID of the compartment where the backup buckets should be created.
 
     For environments with Oracle Database Release 12.1.0.2 or Release 19c, you must also specify the Cloud database service on which you plan to provision the target environment based on this backup.
@@ -455,17 +485,23 @@ If you are using an Oracle E-Business Suite application tier node or database ti
     - For 1-Node VM DB System (Single Instance) or 2-Node VM DB System (Oracle RAC), enter VM DB System.
     - For Exadata DB System, enter Exadata DB System.
 
-        ```
-        Oracle Cloud User OCID : **ocid1.user.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
-        Oracle Cloud Fingerprint : **xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx**
-        Oracle Cloud User Private Key Path on Database Tier : **/u01/install/APPS/.oci/ebscm.admin@example.com.pem**
-        Oracle Cloud User Private Key Path on APPS Tier : **/u01/install/APPS/.oci/ebscm.admin@example.com.pem**
-        Oracle Cloud Tenancy OCID : **ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
-        Oracle Cloud Region : **xx-xxxxxx-1**
-        Oracle Cloud Tenant Name : **xxxxxxx**
-        Oracle Cloud Compartment OCID : **ocid1.compartment.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
+            Oracle Cloud User OCID : <Cloud_Manager_Admin_User_OCID>
 
-        Target Database Type - (Compute | VM DB System | Exadata DB System ): **Compute**
+            Oracle Cloud Fingerprint : <Cloud_Manager_Admin_FingerPrint>
+
+            Oracle Cloud User Private Key Path on Database Tier : /u01/install/APPS/.oci/<Cloud_Manager_Sdmin_Username>.pem
+
+            Oracle Cloud User Private Key Path on APPS Tier : /u01/install/APPS/.oci/<Cloud_Manager_Admin_Username>.pem
+
+            Oracle Cloud Tenancy OCID : <Oracle_Cloud_Tenancy_OCID>
+
+            Oracle Cloud Region : <Oracle_Cloud_Region_Identifier>
+
+            Oracle Cloud Tenant Name : <Oracle_Cloud_Tenancy_Name>
+
+            Oracle Cloud Compartment OCID : <EBSCM_Compartment_OCID>
+
+            Target Database Type - (Compute | VM DB System | Exadata DB System ): **Compute**
 
     ![](./images/33.png " ")
 
@@ -475,7 +511,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     The custom private key locations for the source database tier and source application tier are shown only if you chose to authenticate the OS user on those tiers with a custom private SSH key.
 
-    If you are satisfied with the values shown, enter option 1 to proceed.
+    If you are satisfied with the values shown, enter **option 1** to proceed.
 
     ![](./images/34.png " ")
 
@@ -483,14 +519,14 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     The script performs the following tasks:
 
-  - Validates OS level authentications.
-  - Validates whether the Oracle Database version is certified.
-  - Validates whether the database is archivelog enabled.
-  - Validates whether mandatory patches are present.
-  - Creates a database backup.
-  - Executes remote calls to the application tier to create a tar package containing the application files. 
-    For Oracle E-Business Suite Release 12.2, the tar package includes the contents of the EBSapps directory on the run file system, including the APPL_TOP directory, the COMMON_TOP directory, the OracleAS 10.1.2 directory, and a packaged version of the Oracle Fusion Middleware home. For Oracle E-Business Suite Release 12.1.3, the tar package includes the contents of the APPL_TOP, COMMON_TOP, OracleAS 10.1.2, and OracleAS 10.1.3 directories.
-  - Transfers the application tier tar package and database backup to a new bucket in your Oracle Cloud Infrastructure Backup Service account associated with your Oracle Cloud Infrastructure tenancy.
+    - Validates OS level authentications.
+    - Validates whether the Oracle Database version is certified.
+    - Validates whether the database is archivelog enabled.
+    - Validates whether mandatory patches are present.
+    - Creates a database backup.
+    - Executes remote calls to the application tier to create a tar package containing the application files. 
+    For Oracle E-Business Suite Release 12.2, the tar package includes the contents of the EBSapps directory on the run file system, including the `APPL_TOP` directory, the `COMMON_TOP directory`, the OracleAS 10.1.2 directory, and a packaged version of the Oracle Fusion Middleware home. For Oracle E-Business Suite Release 12.1.3, the tar package includes the contents of the `APPL_TOP`, `COMMON_TOP`, OracleAS 10.1.2, and OracleAS 10.1.3 directories.
+    - Transfers the application tier tar package and database backup to a new bucket in your Oracle Cloud Infrastructure Backup Service account associated with your Oracle Cloud Infrastructure tenancy.
 
     If the script indicates that a validation failed, you can review the log files in the RemoteClone/logs directory to help identify which value failed validation.
 
