@@ -60,7 +60,7 @@
             "filename": "../../../migrate-wls-oke/migrate-wls-oke.md"
         },
         {
-            "title": "Lab 9: Tear down the Environment",
+            "title": "Lab 8: Tear down the Environment",
             "publisheddate": "07/30/2020",
             "filename": "../../../tear-down/tear-down.md",
             "type": "dbcs"
