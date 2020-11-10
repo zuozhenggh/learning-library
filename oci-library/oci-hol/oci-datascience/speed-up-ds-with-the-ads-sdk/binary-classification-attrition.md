@@ -45,14 +45,14 @@ The following is a summary of the steps that are covered in this lab along with 
 
 1. **Open dataset**: ``ds = DatasetFactory.open()``
 1. **Visualize dataset**: ``ds.show_in_notebook()``
-1. **Automatic feature engineering**: ``ds.auto_transform()``
+1. **Automatic feature engineering**: ``transformed_ds = ds.auto_transform()``
 1. **Split data into train and test sets**: ``train, test = transformed_ds.train_test_split()``
 1. **Train the model with AutoML**: ``model, baseline = automl.train()``
 1. **Evaluate the model**: ``evaluator = ADSEvaluator()``
 1. **Explain the model**: ``explainer = ADSExplainer(test, model)``
 1. **Global explanations**: ``global_explainer = explainer.global_explanation()``
 1. **Local explanations**: ``local_explainer = explainer.local_explanation()``
-1. **Feature important**: ``global_explainer.feature_importance_summary()`` and`` global_explainer.compute_feature_importance()``
+1. **Feature important**: ``global_explainer.feature_importance_summary()`` and ``global_explainer.compute_feature_importance()``
 
 ## **Step 3:** Binary Classification Model
 
