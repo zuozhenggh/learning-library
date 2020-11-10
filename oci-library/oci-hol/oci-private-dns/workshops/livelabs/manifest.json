@@ -16,7 +16,7 @@
           },
           {
               "title": "Lab 2: Configuring Private DNS",
-              "filename": "./../../oci-private-dns/oci-private-dns.md"
+              "filename": "./../../oci-private-dns/lab02-zones-views-resolvers.md"
           }
       ]
   }
