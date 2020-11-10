@@ -26,7 +26,7 @@ In this lab, you:
 
 ## Quick Start Tenancy Configuration
 
-Configuring a tenancy using Oracle Resource Manager includes creating a solution stack, selecting the solution, providing identifying information for the new stack, and updating variables. For most tenancies, the default options are sufficient. These instructions outline the minimal requirements needed for configuring a tenancy to work with the Data Science service. If your tenancy has a more advanced configuration, then go to **Advanced Configuration of a Tenancy**. For most tenancies, the following instructions will be sufficient but minor changes may be needed. It is possible to change the configuration later.
+Configuring a tenancy using Oracle Resource Manager includes creating a solution stack, selecting the solution, providing identifying information for the new stack, and updating variables. For most tenancies, the default options are sufficient. These instructions outline the minimal requirements needed for configuring a tenancy to work with the Data Science service. If your tenancy has a more advanced configuration, then go to **Advanced Configuration of a Tenancy**. For most tenancies, the following instructions are sufficient but minor changes may be needed. It is possible to change the configuration later.
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html) with an account with administrator permissions.
 1. Open the navigation menu. 
@@ -36,6 +36,7 @@ Configuring a tenancy using Oracle Resource Manager includes creating a solution
 1. Click **Sample Solution**, and then click **Select Solution**.
 1. Select **Data Science**, and then click **Select Solution**.
 1. Click **Next**. The **Configure Variables** panel displays variables that are automatically populated from the Terraform configuration for the Data Science solution.
+1. By default the **Use Existing VCN** is unchecked. If you have not created a VCN then leave this option unchecked.  If you have already set up a VCN you will need to use it. Free Tier accounts have a default limit of two VCNs and the stack will fail to build if this bock in not checked.
 1. Deselect **Create a Project and Notebook Session?** 
 1. Deselect **Enable Vault Support?**
 1. Deselect  **Provision Functions and API Gateway?** 
