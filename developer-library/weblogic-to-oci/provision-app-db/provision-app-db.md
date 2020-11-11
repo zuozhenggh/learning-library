@@ -26,15 +26,31 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-1.png" width="50%">
 
-2. Click the VCN that was created by the stack, which would be called `nonjrf-wls` if you used the same naming conventions.
+2. Click the VCN that was created by the stack, which would be called <if type="oci">`nonjrf-wls`</if><if type="oke">`nonjrf-vcn`</if> if you used the same naming conventions.
 
-  <img src="./images/provision-db-2.png" width="100%">
+  <if type="oci">
+  <img src="./images/provision-db-2.png" width="70%">
 
-  You should find 2 subnets: a `nonjrf-lb-pubsubnet` and a `nonjrf-wls-subnet`, both public subnets since the WebLogic server instances were provisioned in a public subnet.
+  You should find 2 subnets: a `nonjrf-lb-pubsubnet` and a `nonjrf-wls-subnet`.
+  </if>
+  <if type="oke">
+  <img src="./images/provision-db-2oke.png" width="70%">
+
+  You should find 5 subnets, including `nonjrf-workers`, which is the subnet for the WLS worker nodes.
+  </if>
+
+<if type="oci">
 
 3. Copy the CIDR block of the `nonjrf-wls-subnet` (which should be 10.0.3.0/24) and click **Security Lists** on the left-side menu
 
   <img src="./images/provision-db-3-seclists.png" width="100%">
+</if>
+<if type="oke">
+
+3. Copy the CIDR block of the `nonjrf-workwers` subnet (which should be 10.0.4.0/28) and click **Security Lists** on the left-side menu
+
+  <img src="./images/provision-db-3-seclistsoke.png" width="100%">
+</if>
 
 4. Click **Create Security List**
 
@@ -48,9 +64,18 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-5-ingress1521.png" width="70%">
 
+<if type="oci">
+
 7. For **Source CIDR**, paste the CIDR block of the `nonjrf-wls-subnet` copied earlier (`10.0.3.0/24`) and for **Destination Port Range** enter **1521**
 
-  <img src="./images/provision-db-5-ingress1521.png" width="70%">
+  <img src="./images/provision-db-5-ingress1521b.png" width="70%">
+</if>
+<if type="oke">
+
+7. For **Source CIDR**, paste the CIDR block of the `nonjrf-workers` copied earlier (`10.0.4.0/28`) and for **Destination Port Range** enter **1521**
+
+  <img src="./images/provision-db-5-ingress1521boke.png" width="70%">
+</if>
 
 8. Click **Additional Ingress Rule** and enter `0.0.0.0/0` for the **Source CIDR** and enter `22` for the **Destination Port Range** to authorize SSH from outside (through the bastion host)
 
@@ -76,7 +101,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-9-subnet2.png" width="70%">
 
-5. **Select** the `Default Routing Table for nonjrf-wls` for the **Routing Table**
+5. **Select** the `Default Routing Table for `<if type="oci">`nonjrf-wls`</if><if type="oke">`nonjrf-vcn`</if> for the **Routing Table**
 
   <img src="./images/provision-db-9-subnet3.png" width="70%">
 
@@ -84,7 +109,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-9-subnet4.png" width="70%">
 
-7. Keep the defaults for the DNS resolution and label and select `Default DHCP Options for nonjrf-wls` for **DHCP Options**
+7. Keep the defaults for the DNS resolution and label and select `Default DHCP Options for `<if type="oci">`nonjrf-wls`</if><if type="oke">`nonjrf-vcn`</if> for **DHCP Options**
 
   <img src="./images/provision-db-9-subnet5.png" width="70%">
 
@@ -144,7 +169,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-18-license.png" width="70%">
 
-10. Select the **Virtual cloud network** `nonjrf-wls`, the **Client subnet** `nonjrf-db-subnet` and set a **Hostname prefix** of `db`
+10. Select the **Virtual cloud network** <if type="oci">`nonjrf-wls`</if><if type="oke">`nonjrf-vcn`</if>, the **Client subnet** `nonjrf-db-subnet` and set a **Hostname prefix** of `db`
 
   <img src="./images/provision-db-19-net.png" width="70%">
 
