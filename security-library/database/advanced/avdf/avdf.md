@@ -371,7 +371,7 @@ You have completed the lab.
 In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. For ease of execution, the required step from the Database Security Assessment Tool (DBSAT) lab was performed and the output saved. The first step here will help download and stage it accordingly.
 
 1. Download and stage the sensitive data to `/home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data`
-  - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+
   - Now we need to become `oracle` User
 
     ````
@@ -724,13 +724,20 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 ## **STEP 9**: DB Firewall - Add the Firewall Monitoring
 
-1. Login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+1. Open an SSH session to your **DBF VM** as user *opc* and start NetworkManager
+
+  ````
+  <copy>
+  sudo systemctl enable NetworkManager
+  sudo systemctl start NetworkManager
+  </copy>
+  ````
+
+2. Login to the Audit Vault Web Console at `https://<YOUR_AVS-VM_PUBLIC-IP>` as `AVADMIN` with the password `T06tron.`
 
    ![](images/login_avadmin01.png " ")
 
-2. Click on `Database Firewalls` tab
-
-3. Click on `dbfw` Database Firewall Name
+3. Click on `Database Firewalls` tab then on `dbfw` Database Firewall Name
 
    ![](images/dbfw_details01.png " ")
 
