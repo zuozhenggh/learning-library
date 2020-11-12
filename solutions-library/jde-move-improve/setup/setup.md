@@ -46,13 +46,14 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
 To create a VCN on Oracle Cloud Infrastructure:
 
-1)	On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard.
+1)	On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on ***Set up a network with a wizard***.
     ![](./images/2.1.png " ")
 
-2)	Select VCN with Internet Connectivity, and then click Start VCN Wizard.
+2)	Select VCN with Internet Connectivity, and then click ***Start VCN Wizard***.
     ![](./images/2.2.png " ")
 
 3) In this window, fill in the following fields with the information shown below:
+    *NOTE*: Avoid special charcters and spaces in instance names 
 
 * **VCN NAME:**
    TestDriveVCN     (or any other unique name for the VCN)
@@ -75,12 +76,12 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 Then, scroll down to the bottom and click the ***Next*** button.
 
-4)	On the “Review and Create” page, click on the create button.
+4)	On the “Review and Create” page, click on the ***create*** button.
 
 5) On the “Created Virtual Cloud Network” page wait until you see the following graphic.
     ![](./images/2.4.png " ")
 
-Then click on the View Virtual Cloud Network Button shown.
+Then click on the ***View Virtual Cloud Network*** Button shown.
     ![](./images/2.5.png " ")
 
  
@@ -94,7 +95,7 @@ With the VCN in place, define the open inbound and outbound ports that will be a
 2)	In the Security Lists section, click the Default ***Security List*** for ***TestDriveVCN*** link.  
     ![](./images/3.2.png " ")
 
-3)	On Default Security List, under Resources, click the Add Ingress Rules button.
+3)	On Default Security List, under Resources, click the ***Add Ingress Rules*** button.
     ![](./images/3.33.png " ")
 
 4) Set five new ingress rules with the following properties:
@@ -111,10 +112,10 @@ With the VCN in place, define the open inbound and outbound ports that will be a
 
     | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 9703-9705 |
 
-    Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
+Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
     ![](./images/3.4.png " ")
 
-    These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
+These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 
 ## **Summary**
 

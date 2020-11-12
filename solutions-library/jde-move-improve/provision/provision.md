@@ -36,7 +36,8 @@ On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation***
 3) On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.4.3 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right.
     ![](./images/1.3.png " ")
 
-4) Next, define the instance with the following options: 
+4) Next, define the instance with the following options:
+    *NOTE*: Avoid special charcters and spaces in instance names
 
 * Instance Name: jdetrial
     ![](./images/4a.png " ")
@@ -70,7 +71,7 @@ On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation***
 
 ##  **Step 2:**  Accessing the OCI Instance
 
-To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is necessary to connect to the VM Instance.  The username on the instance is ***opc***.  There isn’t a password, the account can only be accessed using the SSH private key.
+To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is necessary to connect to the VM Instance.  The username on the instance is **opc**.  There isn’t a password, the account can only be accessed using the SSH private key.
 
 ### Connecting to an OCI Compute instance using a Mac/Linux/Unix based machine using Command Line SSH
 
@@ -80,7 +81,7 @@ Mac OS X includes a command-line SSH client as part of the operating system. To 
 
     Example: $ ssh –l opc –i ./keys/id_rsa 132.145.187.16
 
-Once connected, you can continue to ***Step 3*** below
+Once connected, you can continue to **Step 3** below
 
 ### Connecting to an OCI Compute instance using a Windows based machine
 
@@ -100,7 +101,7 @@ Once connected, you can continue to ***Step 3*** below
 3) If, after entering the ssh command, you receive a message like in the screen shot below, reply with YES.
     ![](./images/2.3.png " ")
 
-4) Once connected, you can continue to ***Step 3*** below.
+4) Once connected, you can continue to **Step 3** below.
 
 **Method 2:** Using SSH with Putty for Windows
 
