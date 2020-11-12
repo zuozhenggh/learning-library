@@ -48,23 +48,23 @@ This lab assumes you have:
 2. Go to the scripts directory
 
       ````
-      <copy>cd $DBSEC_LABS/database-vault</copy>
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Enable_Database_Vault</copy>
       ````
 
-3. Start by enabling Database Vault in the container database
+3. Start by enabling Database Vault in the container database.
 
       ````
-      <copy>./dv_enable_on_cdb.sh</copy>
+      <copy>./01_config_enable_dv_on_cdb.sh</copy>
       ````
 
    ![](./images/dv-001.png " ")
 
       **Note**: To enable DB Vault, database will be rebooted!
 
-4. Next, enable it on the pluggable database. For now, just enable it on pdb1
+4. Next, enable it on the pluggable database. For now, just enable it on pdb1.
 
       ````
-      <copy>./dv_enable_on_pdb.sh pdb1</copy>
+      <copy>./02_config_enable_dv_on_pdb.sh pdb1</copy>
       ````
 
    You should see a status like this:
@@ -83,147 +83,149 @@ This lab assumes you have:
 
 4. Click [**Search**]
 
-5. Go back to your SSH session and run the command to view the details about the Glassfish session
+5. Go back to your SSH session and go to the scripts directory
 
       ````
-      <copy>./dv_query_employee_data.sh</copy>
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Simple_Realm</copy>
+      ````
+
+6. Run the command to view the details about the Glassfish session
+
+      ````
+      <copy>./01_query_employee_data.sh</copy>
       ````
 
    ![](./images/dv-003.png " ")
 
-6. Now, create the Realm
+7. Now, create the Realm
 
       ````
-      <copy>./dv_create_realm.sh</copy>
+      <copy>./02_create_realm.sh</copy>
       ````
 
    ![](./images/dv-004.png " ")
 
-7. Add objects to the Realm to protect
+8. Add objects to the Realm to protect
 
       ````
-      <copy>./dv_add_obj_to_realm.sh</copy>
+      <copy>./03_add_objects_to_realm.sh</copy>
       ````
 
    ![](./images/dv-005.png " ")
 
-8. Make sure you have an authorized user in the realm. In this step, we will add `EMPLOYEESEARCH_PROD` as a realm authorized owner
+9. Make sure you have an authorized user in the realm. In this step, we will add `EMPLOYEESEARCH_PROD` as a realm authorized owner.
 
       ````
-      <copy>./dv_add_auth_to_realm.sh</copy>
+      <copy>./04_add_auth_to_realm.sh</copy>
       ````
 
    ![](./images/dv-006.png " ")
 
-9. Re-execute the SQL query to show that SYS now receives the **insufficient privileges** error message
+10. Re-execute the SQL query to show that SYS now receives the **insufficient privileges** error message
 
       ````
-      <copy>./dv_query_employee_data.sh</copy>
+      <copy>./05_query_employee_data.sh</copy>
       ````
 
-   ![](./images/dv-007a.png " ")
+   ![](./images/dv-007.png " ")
 
-10. When you have completed this lab, you can drop the Realm
+11. When you have completed this lab, you can drop the Realm
 
       ````
-      <copy>./dv_drop_realm.sh</copy>
+      <copy>./06_drop_realm.sh</copy>
       ````
-
-   ![](./images/dv-007b.png " ")
 
 ## **STEP 3**: Create a Trusted Path / Multi-factor Authorization
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
 
-   ![](./images/dv-029.png " ")
-
 2. Login as `hradmin/Oracle123`
-
-   ![](./images/dv-030.png " ")
 
 3. Click [**Search Employee**]
 
-   ![](./images/dv-031.png " ")
-
 4. Click [**Search**]
 
-   ![](./images/dv-032.png " ")
-
-5. Go back to your SSH session and run this query to view the session information associated with the Glassfish application
+5. Go back to your SSH session and go to the scripts directory
 
       ````
-      <copy>./dv_query_employeesearch_usage.sh</copy>
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Trusted_App_Path</copy>
+      ````
+
+6. Next, run this query to view the session information associated with the Glassfish application
+
+      ````
+      <copy>./01_query_employeesearch_usage.sh</copy>
       ````
 
    ![](./images/dv-019.png " ")
 
-6. Now, query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table with the owner `EMPLOYEESEARCH_PROD` to demonstrate it is accessible
+7. Now, query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table as `SYS` to demonstrate it is accessible
 
       ````
-      <copy>./dv_query_employee_search.sh</copy>
+      <copy>./02_query_employeesearch.sh</copy>
       ````
 
    ![](./images/dv-020.png " ")
 
-7. Begin protecting the application credentials by creating a Database Vault Rule
+8. Begin protecting the application credentials by creating a Database Vault Rule
 
       ````
-      <copy>./dv_create_rule.sh</copy>
+      <copy>./03_create_rule.sh</copy>
       ````
 
    ![](./images/dv-021.png " ")
 
-      **Note**: We authorize as a Trusted Path app only the access from Glassfish Web App (JDBC Thin Client) through the schema owner `EMPLOYEESEARCH_PROD`!
-
-8. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set. If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches
+9. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set. If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches
 
     ````
-    <copy>./dv_create_rule_set.sh</copy>
+    <copy>./04_create_rule_set.sh</copy>
     ````
 
    ![](./images/dv-022.png " ")
 
-9. Create a Command Rule on Connect to protect the `EMPLOYEESEARCH_PROD` user. You can only `CONNECT` AS `EMPLOYEESEARCH_PROD` if you match the Rule Set we created
+10. Create a Command Rule on Connect to protect the `EMPLOYEESEARCH_PROD` user. You can only `CONNECT` AS `EMPLOYEESEARCH_PROD` if you match the Rule Set we created
 
     ````
-    <copy>./dv_create_command_rule.sh</copy>
+    <copy>./05_create_command_rule.sh</copy>
     ````
 
    ![](./images/dv-023.png " ")
 
-10. Go to your web browser and refresh a few times and run some queries by clicking [**Search**] and explore employee data
+11. Go to your web browser and refresh a few times and run some queries by clicking [**Search**] and explore employee data
 
-      **Note**: Because you're using the Glassfish App as a Trusted Path app you can access the data!
-
-11. Go back to your terminal session and re-run our query of the application usage to verify that it still works
+12. Go back to your terminal session and re-run our query of the application usage to verify that it still works.
 
     ````
-    <copy>./dv_query_employeesearch_usage.sh</copy>
+    <copy>./06_query_employeesearch_usage.sh</copy>
     ````
 
    ![](./images/dv-024.png " ")
 
-12. Now, try to query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table with the owner `EMPLOYEESEARCH_PROD`... You should be blocked!
+13. Now, try to query the `DEMO_HR_EMPLOYEES` table as `SYS`... You should be blocked!
 
     ````
-    <copy>./dv_query_employee_search.sh</copy>
+    <copy>./07_query_employeesearch.sh</copy>
     ````
 
    ![](./images/dv-025.png " ")
 
-      **Note**: Because you're querying via a non-"Trusted Path" app you can't access the data!
-
-13. Once you have successfully completed the lab, you can delete the `Command Rule`, `Rule Set`, and `Rule` from Database Vault
+14. Once you have successfully completed the lab, you can delete the `Command Rule`, `Rule Set`, and `Rule` from Database Vault
 
     ````
-    <copy>./dv_del_trusted_path.sh</copy>
+    <copy>./08_delete_trusted_path.sh</copy>
     ````
 
    ![](./images/dv-026.png " ")
 
 ## **STEP 4**: Simulation Mode
 
-1. First, query the simulation log to show that it has no current values
+1. Go to the scripts directory
+
+      ````
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Simulation_Mode</copy>
+      ````
+
+2. First, query the simulation log to show that it has no current values
 
       ````
       <copy>./01_query_simulation_log.sh</copy>
@@ -231,7 +233,7 @@ This lab assumes you have:
 
    ![](./images/dv-008.png " ")
 
-2. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
+3. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
 
       ````
       <copy>./02_command_rule_sim_mode.sh</copy>
@@ -239,7 +241,7 @@ This lab assumes you have:
 
    ![](./images/dv-009.png " ")
 
-3. Execute a script to create some db connections and generate some log entries
+4. Execute a script to create some db connections and generate some log entries
 
       ````
       <copy>./03_run_queries.sh</copy>
@@ -247,7 +249,7 @@ This lab assumes you have:
 
    ![](./images/dv-010.png " ")
 
-4. Now, we query the simulation log again to see what new entries we have. Remember we created a command rule to simulate blocking user connections!
+5. Now, we query the simulation log again to see what new entries we have. Remember we created a command rule to simulate blocking user connections!
 
       ````
       <copy>./04_query_simulation_log.sh</copy>
@@ -257,7 +259,7 @@ This lab assumes you have:
 
    The log shows all the users who connected and would have been blocked by the rule. It also shows where they connected from and what client they used to connect
 
-5. Run this script to get a list of distinct usernames
+6. Run this script to get a list of distinct usernames
 
       ````
       <copy>./05_distinct_users_sim_log.sh</copy>
@@ -265,9 +267,9 @@ This lab assumes you have:
 
    ![](./images/dv-012.png " ")
 
-6. Although we only used Simulation mode on a `CONNECT` rule, we could have used this on a Realm to show what violations we would had
+7. Although we only used Simulation mode on a `CONNECT` rule, we could have used this on a Realm to show what violations we would had
 
-7. Before moving to the next lab, we will remove the command rule and clean out the log
+8. Before moving to the next lab, we will remove the command rule and clean out the log
 
       ````
       <copy>./06_purge_sim_log.sh</copy>
