@@ -18,7 +18,7 @@ That is exactly what we are going to build.
 
 You can package related **Custom Components** together.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ## **STEP 1**: Create a Custom Component to integrate with backend services
 
@@ -32,7 +32,7 @@ Ready to create your **Custom Component** scaffolding.
 
     ```bash
     npx @oracle/bots-node-sdk init tasks-cc --component-name tasks
-      ```
+    ```
 
     Where `tasks-cc` is the name of the custom component module. And `tasks` is the name of our first custom component implementation.
 
@@ -87,12 +87,14 @@ Ready to create your **Custom Component** scaffolding.
 
 9. **Edit** the file `tasks.js` and **replace** the whole content with the following code or download it from [here](files/tasks.js) to download the customer component source code.
 
+    **IMPORTANT**: **Remember** to change the `URL_COPIED_FROM_APEX` with the **URL** copied on **APEX** in **Lab 2**.
+
     ```javascript
     "use strict";
 
     const fetch = require("node-fetch");
 
-    const ordsURL = "<URL_copied_from_APEX>";
+    const ordsURL = "URL_COPIED_FROM_APEX";
 
     function getTasks(urlRequest, logger, callback) {
     logger.info(urlRequest);
@@ -135,10 +137,6 @@ Ready to create your **Custom Component** scaffolding.
     };
     ```
 
-    **IMPORTANT**:
-
-    **Remember** to change the `<URL_copied_from_APEX>` with the **URL** copied on **APEX** in **Lab 2**.
-
     ![Copy URL from APEX](./images/apex_copy_url.png)
 
     It should look like this:
@@ -148,7 +146,7 @@ Ready to create your **Custom Component** scaffolding.
         "https://xxx-yyy.adb.region.oraclecloudapps.com/ords/tasks/oda/tasks/";
     ```
 
-10. Don't forget the **save** tasks.js file.
+   10.   Don't forget the **save** tasks.js file.
 
 ## **STEP 2**: Deploy the custom component
 
@@ -184,5 +182,7 @@ There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
