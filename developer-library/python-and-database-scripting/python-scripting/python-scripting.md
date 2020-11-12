@@ -506,7 +506,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     In the method, the **pool.acquire()** call gets one connection from the pool (as long as less than 5 are already in use). This connection is used in a loop of 4 iterations to query the sequence myseq. At the end of the method, cx\_Oracle will automatically close the cursor and release the connection back to the pool for reuse.
 
-    The **seqval, = cur.fetchone()** line fetches a row and puts the single value contained in the result tuple into the variable   seqval. Without the comma, the value in seqval would be a tuple like "(1,)".
+    The **seqval, = cur.fetchone()** line fetches a row and puts the single value contained in the result tuple into the variable **seqval**. Without the comma, the value in **seqval** would be a tuple like **"(1,)"**.
 
     Two threads are created, each invoking the Query() method.
 
@@ -1162,7 +1162,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     cx\_Oracle can fetch and bind named object types such as Oracle's Spatial Data Objects (SDO).
 
-    In a terminal window, start SQL*Plus using the lab credentials and connection string, such as:
+    In a terminal window, start SQL\*Plus using the lab credentials and connection string, such as:
 
     ````
     <copy>
@@ -1170,7 +1170,7 @@ Bind variables enable you to re-execute statements with new data values, without
     </copy>
     ````
 
-    Use the SQL*Plus **DESCRIBE** command to look at the SDO definition:
+    Use the SQL\*Plus **DESCRIBE** command to look at the SDO definition:
 
     ````
     <copy>
@@ -1190,7 +1190,7 @@ Bind variables enable you to re-execute statements with new data values, without
     SDO_ORDINATES                                      MDSYS.SDO_ORDINATE_ARRAY
     ````
 
-    In the terminal type **exit** to exit from SQL*Plus and review the code contained in **bind\_sdo.py**:
+    In the terminal type **exit** to exit from SQL\*Plus and review the code contained in **bind\_sdo.py**:
 
     ````
     import cx_Oracle
@@ -1969,7 +1969,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     </copy>
     ````
 
-## Step 14: Advanced Queueing
+## **Step 14:** Advanced Queueing
 
 1. Message passing with Oracle Advanced Queuing
 
@@ -2087,7 +2087,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     If you are stuck, look in the **solutions** directory at the aq-dequeue.py, aq-enqueue.py and aq-queuestart.py files.
 
-## Step 15: Simple Oracle Document Access (SODA)
+## **Step 15:** Simple Oracle Document Access (SODA)
 
 Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database. By default, documents are JSON strings. SODA APIs exist in many languages.
 
@@ -2206,7 +2206,7 @@ An additional lab on using Python with is available in the New Features for Deve
 
 * **Author** - Christopher Jones, Anthony Tuininga
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Kay Malcolm, DB Product Management, June 2020
+* **Last Updated By/Date** - Troy Anthony, DB Product Management, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
