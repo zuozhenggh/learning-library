@@ -728,7 +728,6 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
   ````
   <copy>
-  sudo systemctl enable NetworkManager
   sudo systemctl start NetworkManager
   </copy>
   ````
