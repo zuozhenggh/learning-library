@@ -71,7 +71,7 @@ Estimated Lab Time: 30 minutes.
 
     ![](./images/model-channels-delete-property.png " ")
 
-3. Click on the *SALES\_CUSTOMERS* edge table.
+3. Click on the **SALES\_CUSTOMERS** edge table.
 
     As you can see from the **Source Vertex** and **Destination Vertex** information, this edge type maps all relations from the **SALES** table to the **CUSTOMERS** table. In other words, it models **bought by** relationships.
     By default, the modeler gave this edge type the label **SALES\_CUSTOMER\_FK**.
@@ -82,7 +82,7 @@ Estimated Lab Time: 30 minutes.
 
     ![](./images/model-bought-by.png " ")
 
-5. Click on the *Source* tab on the upper left.
+5. Click on the **Source** tab on the upper left.
 
     ![](./images/model-source-view.png " ")
 
@@ -118,7 +118,7 @@ Estimated Lab Time: 30 minutes.
     
     ![](./images/model-confirm-delete-demographics.png)
 
-11. Go back to **Preview** mode. You will notice the *SUPPLEMENTARY\_DEMOGRAPHICS* vertex table is gone from our visual representation of the model.
+11. Go back to **Preview** mode. You will notice the **SUPPLEMENTARY\_DEMOGRAPHICS** vertex table is gone from our visual representation of the model.
 
 12. Click **Next** on the top right.
 
@@ -128,7 +128,7 @@ Estimated Lab Time: 30 minutes.
 
 ## **STEP 3**: Start the Graph Creation Job
 
-1. Click *Create Graph* on the top right.
+1. Click **Create Graph** on the top right.
 
     ![](./images/model-design-view-create-graph-step.png " ")
 
@@ -149,7 +149,7 @@ Estimated Lab Time: 30 minutes.
     ![](./images/jobs-log-for-sh-graph.png " ")
 
     You can leave the resulting logs dialog open to monitor the progress of the graph creation. Graph Studio automatically refreshes the logs once every few seconds.
-    The graph creation job should succeed after a few minutes. After completion, another *Load into memory* job is started automatically. 
+    The graph creation job should succeed after a few minutes. After completion, another **Load into memory** job is started automatically. 
 
     ![](./images/jobs-sh-load-into-memory-started.png)
 

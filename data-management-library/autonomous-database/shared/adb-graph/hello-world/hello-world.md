@@ -130,7 +130,7 @@ Learn how to
 
     ![](./images/notebooks-menu.png " ")
 
-2. Click the *Create* button on the right.  
+2. Click the **Create** button on the right.  
    
 3. Name the notebook **Learn/My First Notebook**, then click **Create**. That will create a folder named `Learn` and the note `My First Notebook` within it.
 
@@ -220,7 +220,7 @@ Learn how to
 
     ![](./images/first-notebook-pgql-settings.png " ") 
 
-9.  Navigate to the **Visualization** tab and select *NAME* as the label to render next to the vertices:
+9.  Navigate to the **Visualization** tab and select **NAME** as the label to render next to the vertices:
 
     ![](./images/first-notebook-pgql-viz-label.png " ")    
 

@@ -32,7 +32,7 @@ Before graphs can be analyzed in a notebook, we need to make sure the graph is l
 
     If the graph is loaded into memory (it says "![](./images/graphs-fa-bolt.png) in memory"), then you can proceed to STEP 2.
 
-If the graph is *not* loaded into memory, as in the following screenshot,  click the **Load into memory** (lightning bolt) icon on the top right of the details section. In the resulting dialog, click *Yes*.
+If the graph is **not** loaded into memory, as in the following screenshot,  click the **Load into memory** (lightning bolt) icon on the top right of the details section. In the resulting dialog, click **Yes**.
 
     ![](./images/graphs-sh-graph-details.png " ")
 
@@ -42,18 +42,18 @@ If the graph is *not* loaded into memory, as in the following screenshot,  click
 
 ## **STEP 2**: Clone the Sales History Analysis Example Notebook
 
-1. Click on the *Notebooks* icon in the menu on the left.
+1. Click on the **Notebooks** icon in the menu on the left.
 
 
-2. Open the *Use Cases* folder:
+2. Open the **Use Cases** folder:
 
     ![](./images/notebooks-list-sales-analysis.png " ")
 
-3. Click on the *Sales Analysis* notebook to open it.
+3. Click on the **Sales Analysis** notebook to open it.
 
     ![](./images/notebooks-open-sales-analysis.png " ")
 
-4. The *Sales Analysis* notebook is a *built-in* notebook. You can identify **built-in** notebooks by the author being shown as `<<system-user>>`. Built-in notebooks are shared between all users and therefore read-only and locked.
+4. The **Sales Analysis** notebook is a **built-in** notebook. You can identify **built-in** notebooks by the author being shown as `<<system-user>>`. Built-in notebooks are shared between all users and therefore read-only and locked.
    To execute the notebook, we need to create a private copy first and then unlock it. On the top of the notebook, click the **Clone** button.
 
     ![](./images/notebooks-clone-button.png " ")
@@ -62,7 +62,7 @@ If the graph is *not* loaded into memory, as in the following screenshot,  click
 
     ![](./images/notebooks-clone-sales-analysis.png " ")
 
-6. Click the *Unlock* button on the top right of the cloned notebook.
+6. Click the **Unlock** button on the top right of the cloned notebook.
 
     ![](./images/notebooks-unlocked-for-write.png " ")
 
@@ -70,7 +70,7 @@ If the graph is *not* loaded into memory, as in the following screenshot,  click
 
 ## **STEP 3**: Explore the Basic Notebook Features
 
-Each notebook is organized into a set of **paragraphs**. Each paragraph has an input (called *Code*) and an output (called *Result*). In Graph Studio, there are 3 types of paragraphs:
+Each notebook is organized into a set of **paragraphs**. Each paragraph has an input (called **Code**) and an output (called **Result**). In Graph Studio, there are 3 types of paragraphs:
 
 - Markdown paragraphs start with `%md`
 - PGQL paragraphs start with `%pgql-px`
@@ -117,13 +117,13 @@ modify any code to make the paragraphs execute.
 
     ![](./images/notebooks-who-bought-from-same-channel.png " ")
 
-    Any non-complex PGQL query can also be rendered as a graph instead of a table or chart. Exceptions to this are queries which do not return singular entities like queries that contain `GROUP BY` or other aggregations. Click on the *Settings* button to explore all the graph visualization options. You can choose what properties to render next to an vertex or edge, what graph layout to use and much more. Try to change of few settings to see the effect.
+    Any non-complex PGQL query can also be rendered as a graph instead of a table or chart. Exceptions to this are queries which do not return singular entities like queries that contain `GROUP BY` or other aggregations. Click on the **Settings** button to explore all the graph visualization options. You can choose what properties to render next to an vertex or edge, what graph layout to use and much more. Try to change of few settings to see the effect.
 
 2. In the graph visualization settings, open the **Highlights** tab.
 
     ![](./images/notebooks-viz-highlights.png " ")
 
-    By using *Highlights*, you can emphasize certain elements in your graph by giving them a different color, icon, size, etc. than others based on certain conditions. As you can see, here we added a few highlights to render different types of vertices differently based on a label condition. Try to create your own hightlight or edit an existing one to see how it affects the output, by clicking the *New *Highlight** and **Edit Highlight** buttons respectively.
+    By using **Highlights**, you can emphasize certain elements in your graph by giving them a different color, icon, size, etc. than others based on certain conditions. As you can see, here we added a few highlights to render different types of vertices differently based on a label condition. Try to create your own hightlight or edit an existing one to see how it affects the output, by clicking the **New Highlight** and **Edit Highlight** buttons respectively.
 
 3. Close the settings dialog again and do a right-click on one of the vertices. It will show all the associated properties of that vertex. The properties which are part the projection of the original PGQL query are shown in bold:
 
@@ -131,7 +131,7 @@ modify any code to make the paragraphs execute.
 
 ## **STEP 5**: Play with Graph Exploration 
 
-The graph visualization feature allows you to further *explore* the graph visually directly in the visualization canvas.
+The graph visualization feature allows you to further **explore** the graph visually directly in the visualization canvas.
 
 1. Click on one of the vertices in the rendered graph.
 
@@ -141,7 +141,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-selected-vertex-with-expand.png)
 
-2. Click on the *Expand* action.
+2. Click on the **Expand** action.
 
     ![](./images/notebooks-expanded-vertex.png " ")
 
@@ -153,7 +153,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-undo-last-action.png " ")
 
-4. Select a vertex again, this time click *Focus*. Focus is like **Expand**, but it will remove all the other elements on the canvas.
+4. Select a vertex again, this time click **Focus**. Focus is like **Expand**, but it will remove all the other elements on the canvas.
 
     ![](./images/notebooks-focus.png " ")
 
@@ -172,7 +172,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-ungroup.png " ")
 
-7. You can also drop individual elements from the visualization. Click on a vertex and then click the *Drop* action.
+7. You can also drop individual elements from the visualization. Click on a vertex and then click the **Drop** action.
 
     ![](./images/notebooks-drop-selected.png " ")
 
@@ -180,7 +180,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-dropped-selected.png)
 
-8. Paragraph results can be expanded into a full screen to give you more space for graph manipulation. Click the *Expand* button on the top right of the paragraph to enter full screen mode.
+8. Paragraph results can be expanded into a full screen to give you more space for graph manipulation. Click the **Expand** button on the top right of the paragraph to enter full screen mode.
 
     ![](./images/notebooks-choose-fullscreen.png " ")
 
