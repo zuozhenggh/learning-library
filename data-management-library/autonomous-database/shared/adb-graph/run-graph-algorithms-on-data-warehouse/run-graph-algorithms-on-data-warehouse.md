@@ -22,23 +22,23 @@ Estimated Lab Time: 20 minutes.
 
 - The following lab requires an ADW/ATP account.
 
-- This lab assumes you have completed the previous lab (Lab 2) where we created the *SH* graph.
+- This lab assumes you have completed the previous lab (Lab 2) where we created the **SH** graph.
 
 ## **STEP 1**: Make sure the SH Graph is Loaded into Memory.
 
-Before graphs can be analyzed in a notebook, we need to make sure the graph is loaded into memory. In the Graph Studio user interface, navigate to the **Graphs** page, verify whether the *SH* graph is loaded into memory or not.
+Before graphs can be analyzed in a notebook, we need to make sure the graph is loaded into memory. In the Graph Studio user interface, navigate to the **Graphs** page, verify whether the **SH** graph is loaded into memory or not.  
 
-    ![](./images/graphs-sh-is-in-memory.png " ")
+![SH Graph is in memory](./images/graphs-sh-is-in-memory.png " ")
 
-    If the graph is loaded into memory (it says "![](./images/graphs-fa-bolt.png) in memory"), then you can proceed to STEP 2.
+If the graph is loaded into memory (it says "![](./images/graphs-fa-bolt.png) in memory"), then you can proceed to STEP 2.
 
 If the graph is **not** loaded into memory, as in the following screenshot,  click the **Load into memory** (lightning bolt) icon on the top right of the details section. In the resulting dialog, click **Yes**.
 
-    ![](./images/graphs-sh-graph-details.png " ")
+![SH graph details](./images/graphs-sh-graph-details.png " ")
 
-    This will create a "Load into Memory" job for you. Wait for this job to finish:
+This will create a "Load into Memory" job for you. Wait for this job to finish:
 
-    ![](./images/jobs-sh-load-into-memory-started.png " ")
+![Loading SH into memory](./images/jobs-sh-load-into-memory-started.png " ")
 
 ## **STEP 2**: Clone the Sales History Analysis Example Notebook
 
