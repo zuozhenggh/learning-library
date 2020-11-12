@@ -3,7 +3,7 @@
 ## Introduction
 There are several steps within this lab.
 -  The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
--  The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
+-  The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions `XMLQuery`, `XMLTable`, `XMLExists`, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
 -  The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document. The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database.
 
 -  The last step you will look at various sample queries and functions within XML.
@@ -43,16 +43,16 @@ This lab assumes you have:
      - Lab :  Setup Compute Instance 
      - Lab :  Start Database and Application
 
-## **Step 1:** Connect to the Pluggable Database (PDB)
+## **STEP 1:** Connect to the Pluggable Database (PDB)
 
-1. Open a terminal window and sudo to the user **oracle**
+1. Open a terminal window and sudo to the user `oracle`
     ````
     <copy>
     sudo su - oracle
     </copy>
     ````
 
-2. Navigate to the xml directory.
+2. Navigate to the `xml` directory.
     ````
     <copy>
     cd /u01/workshop/xml
@@ -73,7 +73,7 @@ This lab assumes you have:
     </copy>
     ````
 
-5. Open SQLPlus as the user appjson
+5. Open SQLPlus as the user `appjson`
 
     ````
     <copy>
@@ -81,21 +81,21 @@ This lab assumes you have:
     </copy>
     ````
 
-## **Step 2:** Connect to SQL Developer
+## **STEP 2:** Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
-      - **Name**: XML
-      - **Username**: appxml
-      - **Password**: Oracle_4U
-      - **Hostname**: PUBLIC-IP
-      - **Port**: 1521
-      - **Service name**: JXLPDB
+      - **Name**: `XML`
+      - **Username**: `appxml`
+      - **Password**: `Oracle_4U`
+      - **Hostname**: `PUBLIC-IP`
+      - **Port**: `1521`
+      - **Service name**: `JXLPDB`
 
 
     ![](./images/xml_sql_developer.png " ")
 
-## **Step 3:** XML Query
+## **STEP 3:** XML Query
 
 1. Getting the number of XML documents.
     ````
@@ -106,7 +106,7 @@ This lab assumes you have:
 
     ![](./images/xml_s3_p1.png " ")
 
-2. Retrieving the content of an XML document-using pseudocolumn OBJECT_VALUE
+2. Retrieving the content of an XML document-using pseudocolumn `OBJECT_VALUE`
     ````
     <copy>
       SELECT t.object_value.getclobval()FROM   purchaseorder t
@@ -142,7 +142,7 @@ This lab assumes you have:
 
     ![](./images/xml_step3_search.png " ")
 
-## **Step 4:** Insert XML record.
+## **STEP 4:** Insert XML record.
 
 1. Let's take a count of the rows we have currently and then do a insert.
 
@@ -156,10 +156,10 @@ This lab assumes you have:
      ![](./images/xml_s4_p1.png " ")
 
 
-2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
+2. The insert query is available as a SQL file in the directory “`/u01/workshop/xml`”. The script is called as `insert.sql`. You can run this connecting to the SQL prompt.
 
 
-3. Set your oracle environment and connect to PDB as **oracle** user.
+3. Set your oracle environment and connect to PDB as `oracle` user.
     ````
     <copy>
     . oraenv
@@ -195,12 +195,12 @@ This lab assumes you have:
     ````
     ![](./images/xml_s4_p3.png " ")
 
-## **Step 5:** Update XML table
+## **STEP 5:** Update XML table
 
-1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
-  The script is called as **update.sql**. You can run this connecting to the SQL prompt.
+1. The update query is available as a sql file in the directory “`/u01/workshop/xml`”.
+  The script is called as `update.sql`. You can run this connecting to the SQL prompt.
 
-2. Set your oracle environment and connect to PDB as **oracle** user.
+2. Set your oracle environment and connect to PDB as `oracle` user.
     ````
     <copy>
     . oraenv
@@ -241,10 +241,10 @@ This lab assumes you have:
     ````
     ![](./images/xml_s5_p2.png " ")
 
-## **Step 6:** Example Queries
+## **STEP 6:** Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
-    **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
+    `XMLEXISTS` is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
 
     ````
     <copy>
@@ -257,7 +257,7 @@ This lab assumes you have:
     ![](./images/xml_s6_p1.png " ")
 
 2. Customer purchase history  
-    **XMLTABLE** converts XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
+    `XMLTABLE` converts XML Data into Rows and Columns using SQL. The `XMLTABLE` operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
     ````
     <copy>
@@ -269,8 +269,8 @@ This lab assumes you have:
 
     ![](./images/xml_step_6_q2.png " ")
 
-3. Listing the product description those unit price matches to ‘$xx’.  
-    **XMLSERIALIZE** is a SQL/XML operator that you can use to convert an XML type to a character type.
+3. Listing the product description those unit price matches to ‘`$xx`’.  
+    `XMLSERIALIZE` is a SQL/XML operator that you can use to convert an XML type to a character type.
 
     ````
     <copy>
@@ -292,7 +292,7 @@ This lab assumes you have:
     ![](./images/xml_s6_p3.png " ")
 
 4. Customer order summary – Cost center wise.  
-    **XMLQUERY** lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
+    `XMLQUERY` lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
 
     ````
     <copy>
@@ -318,7 +318,7 @@ This lab assumes you have:
     ![](./images/xml_m9a.png " ")
 
 5. Next Day Air - Customer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
-    **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
+    `ExistsNodechecks` if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
 
     ````
     <copy>
@@ -331,7 +331,7 @@ This lab assumes you have:
     ![](./images/xml_m10_gg.png " ")
 
 6. Priority Overnight - Customer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
-    **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
+    `ExistsNodechecks` if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
 
     ````
     <copy>

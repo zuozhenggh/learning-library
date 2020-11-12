@@ -1,7 +1,7 @@
 # Introduction
 
 ## About Oracle's Converged Database
-The Oracle Database converges support for multiple data models and workloads into a single database, while supporting popular development tools and techniques like events and REST interfaces. As opposed to using multiple single purpose databases for each data type, using a converged database results in a **unified data tier**, enabling real-time analytics and machine learning on production data.
+The Oracle Database converges support for multiple data models and workloads into a single database, while supporting popular development tools and techniques like events and REST interfaces. As opposed to using multiple single purpose databases for each data type, using a converged database results in a `unified data tier`, enabling real-time analytics and machine learning on production data.
 
 ![](images/single-vs-converged.png " ")
 

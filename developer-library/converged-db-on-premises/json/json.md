@@ -4,8 +4,8 @@
 This lab is setup into multiple steps.
 -  In the first step you will setup the environment for `JSON lab`. In this lab, you will connect using Oracle SQL Developer.
 -  The second step has already been completed but has been included for reference. This step creates the schema.
--  The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function `json\_mergepatch` to update specific portions of a JSON document.
--  The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with `JSON\_EXISTS`, `JSON\_VALUE `and other functions can utilize a materialized view created over a query that contains a `JSON\_TABLE` function.
+-  The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function `json_mergepatch` to update specific portions of a JSON document.
+-  The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with `JSON_EXISTS`, `JSON_VALUE `and other functions can utilize a materialized view created over a query that contains a `JSON_TABLE` function.
 
 *Estimated Lab Time:* 20 Minutes
 
@@ -109,7 +109,7 @@ This lab assumes you have:
     create or replace directory ORDER_ENTRY as '/u01/workshop/dump';
     ````
 
-2. This statement creates a very simple table, `PURCHASE\_ORDER`. The table has a column `PO\_DOCUMENT` of type CLOB. The IS JSON constraint is applied to the column `PO\_DOCUMENT`, ensuring that the column can store only well formed JSON documents. In Oracle there is no dedicated JSON data type. JSON documents are stored in the database using standard Oracle data types such as VARCHAR2, CLOB and BLOB. In order to ensure that the content of the column is valid JSON data, a new constraint IS JSON, is provided that can be applied to a column. This constraint returns TRUE if the content of the column is well-formed, valid JSON and FALSE otherwise. This first statement in this module creates a table which will be used to contain JSON documents.
+2. This statement creates a very simple table, `PURCHASE_ORDER`. The table has a column `PO_DOCUMENT` of type CLOB. The IS JSON constraint is applied to the column `PO_DOCUMENT`, ensuring that the column can store only well formed JSON documents. In Oracle there is no dedicated JSON data type. JSON documents are stored in the database using standard Oracle data types such as VARCHAR2, CLOB and BLOB. In order to ensure that the content of the column is valid JSON data, a new constraint IS JSON, is provided that can be applied to a column. This constraint returns TRUE if the content of the column is well-formed, valid JSON and FALSE otherwise. This first statement in this module creates a table which will be used to contain JSON documents.
 
     ````
     create table PURCHASE_ORDER
@@ -147,7 +147,7 @@ This lab assumes you have:
       REJECT LIMIT UNLIMITED
       ````
 
-4. The following statement copies the `JSON` documents from the dump file into the `PURCHASE\_ORDER` table.
+4. The following statement copies the `JSON` documents from the dump file into the `PURCHASE_ORDER` table.
 
     ````
     insert into PURCHASE_ORDER
@@ -224,7 +224,7 @@ This lab assumes you have:
 ## **STEP 5:** Update a Table.
 1. We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
 
-2. Copy the following update statement and substitute the ID you saved from the previous STEP in where it says `ID\_copied\_from\_previous\_step`. Run the statement.
+2. Copy the following update statement and substitute the ID you saved from the previous STEP in where it says `ID_copied_from_previous_step`. Run the statement.
 
     ````
     <copy>
@@ -254,7 +254,7 @@ This lab assumes you have:
 
     ![](./images/json_s6_p1.png " ")
 
-2. Find all customers who purchased an items tagged with a specific UPC. The `JSON\_EXISTS`operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression. The `JSON\_EXISTS` operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. `JSON\_EXISTS` provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression. The UPC, Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.
+2. Find all customers who purchased an items tagged with a specific UPC. The `JSON_EXISTS`operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression. The `JSON_EXISTS` operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. `JSON_EXISTS` provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression. The UPC, Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.
 
     ````
     <copy>
@@ -298,7 +298,7 @@ This lab assumes you have:
     ![](./images/specific_product1.png " ")
 
 
-4. Find the customers who all are purchased a specific products based on the description of the product. The `JSON\_TABLE` operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
+4. Find the customers who all are purchased a specific products based on the description of the product. The `JSON_TABLE` operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
 
     ````
     <copy>
@@ -414,7 +414,7 @@ This lab assumes you have:
     ![](./images/lab5_snap3.png " ")    
 
 
-6. Customer Purchase History Details with `PRETTY.JSON\_QUERY` finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
+6. Customer Purchase History Details with `PRETTY.JSON_QUERY` finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
 
     ````
     <copy>
@@ -427,7 +427,7 @@ This lab assumes you have:
 
     ![](./images/json_fun_5a.png " ")  
 
-7. Customer Purchase History Details without PRETTY. `JSON\_VALUE` selects a scalar value from JSON data and returns it as a SQL value. You can also use `json\_value` to create function-based B-tree indexes for use with JSON data — see Indexes for JSON Data. Function `json\_value` has two required arguments and accepts optional returning and error clauses.
+7. Customer Purchase History Details without PRETTY. `JSON_VALUE` selects a scalar value from JSON data and returns it as a SQL value. You can also use `json_value` to create function-based B-tree indexes for use with JSON data — see Indexes for JSON Data. Function `json_value` has two required arguments and accepts optional returning and error clauses.
 
     ````
     <copy>
