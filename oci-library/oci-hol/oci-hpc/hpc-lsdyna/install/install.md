@@ -1,8 +1,13 @@
 # Installing LS-DYNA
 
-## **STEP 1**: Download the binaries
+## Introduction
+In this lab, you will install LS-DYNA.
 
-You can download the LS-DYNA binaries from the [LSTC Website](http://www.lstc.com/download/ls-dyna) website or push it to your machine using scp.
+Estimated Lab Time: 25 minutes
+
+## **STEP 1**: Download the Binaries
+
+You can download the LS-DYNA binaries from the [LSTC Website](http://www.lstc.com/download/ls-dyna) or push it to your machine using scp.
 
 Take the version that was created for mpi and compiled for RedHat Ent Srv 5.4. According to our findings, IntelMPI performs faster than Platform MPI on OCI. (ls-dyna_mpp_s_r10_1_123355_x64_centos65_ifort160_avx2_intelmpi-413 (1).tar.gz)
 
@@ -39,21 +44,21 @@ tar -xf installer.tgz
 unzip installer.tgz
 </copy>
 ```
-## **STEP 3**: Install LS-DYNA
+## **STEP 2**: Install LS-DYNA
 
-Untar the binaries on a shared location. By default, an HPC cluster has a NFS-share or a Gluster-share mounted on all the compute nodes.
+1. Untar the binaries on a shared location. By default, an HPC cluster has a NFS-share or a Gluster-share mounted on all the compute nodes.
 
-```
-<copy>
-mkdir /mnt/nfs-share/install/lsdyna
-mv ls-dyna_mpp_s_r10_1_123355_x64_centos65_ifort160_avx2_intelmpi-413.tar.gz /mnt/nfs-share/install/lsdyna/
-cd /mnt/nfs-share/install/lsdyna/
-tar -xf ls-dyna_mpp_s_r10_1_123355_x64_centos65_ifort160_avx2_intelmpi-413.tar.gz
-</copy>
+    ```
+    <copy>
+    mkdir /mnt/nfs-share/install/lsdyna
+    mv ls-dyna_mpp_s_r10_1_123355_x64_centos65_ifort160_avx2_intelmpi-413.tar.gz /mnt/nfs-share/install/lsdyna/
+    cd /mnt/nfs-share/install/lsdyna/
+    tar -xf ls-dyna_mpp_s_r10_1_123355_x64_centos65_ifort160_avx2_intelmpi-413.tar.gz
+    </copy>
 
-```
+    ```
 
-## **STEP 4**: Install MPI Libraries
+## **STEP 3**: Install MPI Libraries
 
 **Intel MPI 2018**
 
@@ -72,7 +77,7 @@ sudo yum install -y intel-mpi-2018.4-057 intel-mpi-samples-2018.4-274
 **Platform MPI**
 
 
-Install those librairies:
+Install those libraries:
 
 ```
 <copy>
