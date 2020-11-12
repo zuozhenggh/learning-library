@@ -1,19 +1,13 @@
-# Oracle Cross Datatype
+<!-- # Oracle Cross Datatype -->
 
 ## Introduction
 
 This lab will show you how to use cross data functions.
-- JSON with Relational
-- XML with Relational
-- JSON with Spatial
+- `JSON with Relational`
+- `XML with Relational`
+- `JSON with Spatial`
 
 *Estimated Lab Time:* 20 Minutes
-
-### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
 
 ### About Oracle Cross Datatype
 
@@ -21,6 +15,14 @@ This lab assumes you have completed the following labs:
 
 The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+     - Lab :  Generate SSH Key
+     - Lab :  Setup Compute Instance 
+     - Lab :  Start Database and Application
 
 ## **STEP 1:** Connect to the Pluggable Database (PDB)
 
