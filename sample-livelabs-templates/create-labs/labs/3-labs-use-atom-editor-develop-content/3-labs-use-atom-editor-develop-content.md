@@ -88,21 +88,21 @@ To create your lab and workshop content:
   After you copy the sample folder to your project folder, you can delete your copy of the **files** folder from your project folder.
   Your lab will look similar to this example:
   ![](./images/lab-folder-structure.png " ")
-    **Important Note**: The **create-labs\labs** folders are internal to this "**Creating Labs and Workshops**" workshop. These folders are not available at the production. This means that when you fork the **oracle\learning-library** repository to your fork, such as **your account\learning-library**, you will not find the **create-labs\labs** folders, and thereby will not be available in your cloned repository as well.   
-5. Similarly, copy the **workshops** folder along with its contents from **learning-library\sample-livelabs-templates\sample-workshop** to your project folder. For example, **GitHub\learning-library\create-labs\labs**.
+
+5. Similarly, copy the **workshops** folder along with its contents from **learning-library\sample-livelabs-templates\sample-workshop** to your project folder. For example, **GitHub\learning-library\sample-livelabs-templates\create-labs\labs**.
 6. To edit the `.md` file of your lab, open **Atom** Editor, click **File > Open Folder** to display the **Open Folder** dialog box.
   ![](./images/use-atom-editor-open-folder.png " ")
-7. Navigate to **GitHub\learning-library\create-labs\labs** and click **Select Folder** to open your project folder.
+7. Navigate to **GitHub\learning-library\sample-livelabs-templates\create-labs\labs** and click **Select Folder** to open your project folder.
   ![](./images/atom-editor-browse-select-lab.png " ")
   The project folder along with the labs and **workshops** folder is displayed in **Atom** Editor.
     ![](./images/atom-editor-project-folder-displayed.png " ")
 
 8. Select the `.md` file you want to edit, for example, select the `1-labs-git-hub-get-started-install-configure.md` file and edit your lab content. Similarly, edit the `.md` files of the rest of your labs.
     ![](./images/atom-editor-browse-open-mdfile-editing.png " ")
-9. If you want to add images in your lab, then include them within the **images** folder.
+9. If you want to add images in your lab, then include them within the **images** folder. You can insert images in the respective `.md` file. 
 10. Similarly to edit your workshop content, expand the **workshops\freetier** folder in **Atom**, edit the `manifest.json` to list the labs you have added to your workshop (or plan to add) and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
-8. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your **workshops\freetier** folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
+11. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your **workshops\freetier** folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
     ![](./images/use-atom-editor-readme-update.png " ")
 
 In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
@@ -139,7 +139,7 @@ In this example, your project folder **labs** contains 5 labs and a workshop. Yo
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Anuradha Chepuri, October 2020
+* **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
 ## Need Help?  
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

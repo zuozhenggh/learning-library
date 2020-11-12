@@ -63,7 +63,7 @@ After you have successfully set up your GitHub pages, you can share your worksho
 To share and view your workshop:
 1. In the browser, enter the URL of your GitHub Pages [https://achepuri.github.io/learning-library/](https://achepuri.github.io/learning-library/).
 2. Append the URL with the details of your workshop.
-    The complete URL will look similar to this: [https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/create-labs/labs/workshops/freetier/), which can be shared for review.
+    The complete URL will look similar to this: [https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/), which can be shared for review.
 
 ## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 
@@ -109,7 +109,7 @@ To create a Pull Request:
 * **Reviewed by:**  
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Anuradha Chepuri, October 2020
+* **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
 ## Need Help?  
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
