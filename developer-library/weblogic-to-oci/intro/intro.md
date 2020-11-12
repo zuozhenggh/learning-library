@@ -1,6 +1,6 @@
 # Introduction
 
-## About Workshop
+## About this Workshop
 
 This lab will walk you through the process of migrating an existing 'on-premises' WebLogic domain to WebLogic for <if type="oci">Oracle Cloud Infrastructure (OCI)</if><if type="oke">Oracle Kubernetes Engine (OKE)</if>. The WebLogic domain we'll migrate contains a couple Java applications and a datasource connecting to a database that will be migrated along the WebLogic domain.
 
