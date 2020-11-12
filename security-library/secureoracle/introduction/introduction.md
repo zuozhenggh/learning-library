@@ -4,14 +4,14 @@ The lab exercises in the **SecureOracle 8.0** workshop walk you through some of 
 
 The Oracle IAM Suite provides a unified, integrated security platform designed to manage user lifecycle and provide secure access across enterprise resources, both within and beyond the firewall and into the cloud.
 
-## Objectives
+### Objectives
 At the end of this workshop, you will have a good understanding of:
 - SecureOracle Demonstration Environment
 - Employee Lifecycle Management
 - Identity Certifications
 - RESTful APIs for Identity Governance, OAuth Client and Token Management
 
-## Prerequisites
+### Prerequisites
 The following is required to participate in this workshop:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
@@ -44,7 +44,7 @@ Figure 2. SecureOracle - Demonstration Platform for IAM Suite 12c R2 PS4
 
 By default all non-SSL ports are used to execute the different lab exercises, however you can enable SSL ports as needed to meet specific demo requirements. Please refer to the official product documentation for details in how to enable SSL.
 
-## Lab Breakdown
+### Lab Overview
 
 - **Lab Getting Started with SecureOracle 8.0** -
     In this lab we will review what is new in SecureOracle 8.0 demonstration platform and learn how to start the different components, run the development tools and access the different administration consoles and demo applications.
