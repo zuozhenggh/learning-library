@@ -76,13 +76,13 @@ In this section, you use the `ORDER BY` clause to sort the rows that are retriev
 
 2. Modify the `SELECT` statement to display rows in descending order. Use the `DESC` keyword.
 
-`SELECT cust_last_name, cust_credit_limit, cust_year_of_birth`
+    `SELECT cust_last_name, cust_credit_limit, cust_year_of_birth`
 
-`FROM   sh.customers`
+    `FROM   sh.customers`
 
-`WHERE  cust_state_province='Noord-Holland'`
+    `WHERE  cust_state_province='Noord-Holland'`
 
-`ORDER BY cust_year_of_birth DESC;`
+    `ORDER BY cust_year_of_birth DESC;`
 
   ![](./images/order-by-cust-year-of-birth-desc.png " ")  
 
@@ -92,18 +92,18 @@ In this section, you use the `RANK ()` function to rank the rows that are retrie
 
 1. Execute the following `SELECT` statement to rank the rows using RANK as an analytical function.
 
-```
-<copy>SELECT channel_desc, TO_CHAR(SUM(amount_sold), '9,999,999,999') SALES$,
-RANK() OVER (ORDER BY SUM(amount_sold)) AS default_rank,
-RANK() OVER (ORDER BY SUM(amount_sold) DESC NULLS LAST) AS custom_rank
-FROM sh.sales, sh.products, sh.customers, sh.times, sh.channels, sh.countries
-WHERE sales.prod_id=products.prod_id AND sales.cust_id=customers.cust_id
-AND customers.country_id = countries.country_id AND sales.time_id=times.time_id
-AND sales.channel_id=channels.channel_id
-AND times.calendar_month_desc IN ('2000-09', '2000-10')
-AND country_iso_code='US'
-GROUP BY channel_desc;</copy>
-```
+    ```
+    <copy>SELECT channel_desc, TO_CHAR(SUM(amount_sold), '9,999,999,999') SALES$,
+    RANK() OVER (ORDER BY SUM(amount_sold)) AS default_rank,
+    RANK() OVER (ORDER BY SUM(amount_sold) DESC NULLS LAST) AS custom_rank
+    FROM sh.sales, sh.products, sh.customers, sh.times, sh.channels, sh.countries
+    WHERE sales.prod_id=products.prod_id AND sales.cust_id=customers.cust_id
+    AND customers.country_id = countries.country_id AND sales.time_id=times.time_id
+    AND sales.channel_id=channels.channel_id
+    AND times.calendar_month_desc IN ('2000-09', '2000-10')
+    AND country_iso_code='US'
+    GROUP BY channel_desc;</copy>
+    ```
 
   ![](./images/ranking-data.png " ")  
 
