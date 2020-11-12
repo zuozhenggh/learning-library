@@ -7,17 +7,14 @@ This lab walks you through the steps to create a new environment template from t
 Estimated Lab Time: 10 minutes
 
 ### Objectives
-
 The purpose of this lab is to show you how to create a new environment template from a downloaded PeopleSoft Image in order to create a new PeopleSoft Environment.
 
 In this lab, you will:
 * Create a new environment template
 
 ### Prerequisites
-
-1. A PeopleSoft Cloud Manager Instance
-
-2. A downloaded PeopleSoft Image
+- A PeopleSoft Cloud Manager Instance
+- A downloaded PeopleSoft Image
 
 ## **STEP 1**: Creating a New Environment Template
 
@@ -86,11 +83,11 @@ You may proceed to the next lab.
 ## Acknowledgements
 
 **Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
 
-**Last Updated By/Date** 
-- Sara Lipowsky, Cloud Engineer, October 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
