@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-
 # Lab  - Golden Gate Microservices Active - Active replication
 
 Nov 12
