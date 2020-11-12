@@ -87,6 +87,7 @@ To create a Pull Request:
   When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
 
   When the pull request is approved and merged into the **upstream/master** repository, two emails are sent to the e-mail account associated with your GitHub account.
+
   **Note**:
     * The first email notifies you that your pull request was approved (or rejected).
     * If your pull request was approved, then the second email notifies you that your pull request was merged into the **upstream/master** repository.  
