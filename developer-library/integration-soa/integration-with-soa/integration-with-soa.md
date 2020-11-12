@@ -45,7 +45,9 @@ A preview about Oracle SOA Composite development on JDeveloper 12c
 -  an Oracle SOA Suite Quick Start environment has been deployed using the Integrated WebLogic Server's default domain in JDeveloper 12c shown here:
 -  ![](./images/jdev-on-desktop.png)
 
-
+- To access the JDeveloper environment, you need any modern browser on your laptop or workstation and use the following URL http://[provided ip address]:8080/guacamole with user oracle, password: "Guac.LiveLabs_" note: an underscore character at the end.
+- Please review the previous lab, introduction, to find details about accessing a pre-installed JDeveloper on Oracle Linux OCI.
+  
 ## STEP 2: Accessing JDeveloper 12c
 
 Double click on the Oracle JDeveloper 12c icon on the Linux desktop. The following will appear on the desktop:
