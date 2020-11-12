@@ -1116,18 +1116,17 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
     ````
     ![](./images/ordslab3.39.png " ")
 
-## Summary
- 
-In this lab we performed steps of rest enabling schema and its table. Also to make rest call we defined things like - creating module, templates and its handlers. We also created restful services using `JSON data`, `XML data` and `Spatial data`.
-
 ## ORDS Video
   
-  [](youtube:rvxTbTuUm5k)
+  [](youtube:gKXkH6GkWKs)
   
 
 ## Learn more
 - [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
 
+## Summary
+ 
+In this lab we performed steps of rest enabling schema and its table. Also to make rest call we defined things like - creating module, templates and its handlers. We also created restful services using `JSON data`, `XML data` and `Spatial data`.
 
 ## Acknowledgements
 

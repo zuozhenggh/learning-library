@@ -10,12 +10,6 @@ There are several steps within this lab.
 
 *Estimated Lab Time:* 15 Minutes
 
-### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
-
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
 
 ### About Oracle XML
@@ -39,6 +33,15 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
  [](youtube:lGQvxPCYR2c)
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
+
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+     - Lab :  Generate SSH Key
+     - Lab :  Setup Compute Instance 
+     - Lab :  Start Database and Application
 
 ## **Step 1:** Connect to the Pluggable Database (PDB)
 
@@ -341,8 +344,11 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_m10_ba.png " ")
 
-## Want to learn more
-- [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
+## Learn more
+- [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adxdb/index.html)
+
+## Summary
+In this lab we queried XML data using different ways. We performed operations like inserting and updating XML data. Also, leveraged XML functions like `XML_EXISTS`, `XMLTABLE` , `XML_QUERY` and so on.
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope

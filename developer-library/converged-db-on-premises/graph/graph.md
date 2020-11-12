@@ -6,12 +6,6 @@ This lab walks you through the steps of setting up the environment for property 
 
 *Estimated Lab Time:* 30 Minutes
 
-### Prerequisites
-This lab assumes you have completed the following labs:
-  - Lab: Generate SSH Key
-  - Lab: Setup Compute Instance
-  - Lab: Start Database and Application
-
 ### Overview of Oracle Graph
 
 Oracle’s converged, multi-model database natively supports graphs and delivers high performance, scalable graph data management, query, and analytics for enterprise applications. State-of-the-art graph features are available along with functionality required for enterprise grade applications: fine-grained security, high availability, easy manageability, and integration with other data in an application.
@@ -19,7 +13,7 @@ Oracle’s converged, multi-model database natively supports graphs and delivers
 
 Oracle’s mission is to help people see data in new ways, discover insights, and unlock endless possibilities.  Graph analysis is about understanding relationships and connections in data, and detecting patterns that identify new insights. With Oracle’s Graph offerings developers can use a comprehensive suite of graph query and analytics tools to integrate graphs into applications on enterprise grade data management infrastructure.
 
-**For example,** graph algorithms can identify what individual or item is most connected to others in social networks or business processes.  They can identify communities, anomalies, common patterns, and paths that connect individuals or related transactions.
+`For example,` graph algorithms can identify what individual or item is most connected to others in social networks or business processes.  They can identify communities, anomalies, common patterns, and paths that connect individuals or related transactions.
 Every Oracle Database now includes both property graph and RDF graph data models as well as algorithms, query languages, and visualization tools.
 
 **Property Graph database includes:**
@@ -90,12 +84,20 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 <-  an incoming edge from destination to source
 []  indicates an edge variable
 ````
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+     - Lab :  Generate SSH Key
+     - Lab :  Setup Compute Instance 
+     - Lab :  Start Database and Application
 
-## **Step 1:** Connect to Graph Server and Client
+## **STEP 1:** Connect to Graph Server and Client
 
-**The graph server has already been setup for you. For more information on the graph server setup see the "Want to learn more section" of this lab.**
+`The graph server has already been setup for you. For more information on the graph server setup see the "Want to learn more section" of this lab.`
 
-1. For connecting to graph server, open a terminal and execute below steps as oracle user.
+1. For connecting to graph server, open a terminal and execute below STEPS as oracle user.
     ````
     <copy>
     cd /u01/script/graph_startup
@@ -125,9 +127,9 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     </copy>
     ````
 
-## **Step 2:** Create Graph
+## **STEP 2:** Create Graph
 
-**For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. The SQL has been provided as reference.**
+`For STEP 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. The SQL has been provided as reference.`
 
 1. We have created the views for the use of orders and order_items as multiple edge tables using below commands.
     ````
@@ -212,7 +214,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
     ````
 
-## **Step 3:** Querying graph using PGQL
+## **STEP 3:** Querying graph using PGQL
 
 1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
@@ -304,9 +306,9 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG15.PNG)
 
-## **Step 4:** Load the graph into memory and publish it.
+## **STEP 4:** Load the graph into memory and publish it.
 
-1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
+1. Run the below command in jshell prompt. This STEP will run the script called "04_graphintoMemory.jsh"  which will perform two STEPs. The first STEP is loading the graph into memory. The second STEP is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
     ````
     <copy>
     /open /u01/script/graph_startup/04_graphintoMemory.jsh
@@ -364,9 +366,9 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG21.PNG)
 
-## **Step 5:** Visualize the Graph
+## **STEP 5:** Visualize the Graph
 
-We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
+We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous STEP and that your graph has been loaded into memory and published otherwise this STEP will fail.
 
 GraphViz should be accessible at http://&lt;instance\_ip\_address&gt;:7007/ui
 
@@ -520,10 +522,6 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     </copy>
     ````
 
-## Want to learn more
-- [Oracle Graph](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
-- [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
-
 **Oracle Graph Server and Client**
 
 It is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server and Client includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.
@@ -549,6 +547,14 @@ This interactive graph shell dynamically interprets command-line inputs from the
 This graph shell is implemented on top of the Java Shell tool (JShell).
 
 The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --base_url command-line option) and creates a PGX session.
+
+## Learn more
+- [Oracle Graph](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
+- [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
+
+
+## Summary
+In this lab we created a graph called OE_SAMPLE_GRAPH and queried the same using PGQL statements. We also loaded the graph into memory and then queried it. We explored GraphViz which is a graph visualization tool and ran some PGQL queries to visualize the results as a graph instead of a tabular result.
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
