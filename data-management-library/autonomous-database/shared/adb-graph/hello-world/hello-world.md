@@ -6,7 +6,7 @@
 In this lab you will explore Graph Studio and learn how you can create and analyze a graph from scratch very quickly using
 Autonomous Data Warehouse - Shared Infrastructure (ADW) or Autonomous Transaction Processing - Shared Infrastructure (ATP) instance.
 
-*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
+**Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.**
 
 Estimated lab time: 10 minutes. 
 
@@ -71,7 +71,9 @@ Then click the "Sign In" button.
 
     ```
     <copy>
-    CREATE PROPERTY GRAPH my_first_graph;
+    DROP PROPERTY GRAPH my_first_graph  
+
+    CREATE PROPERTY GRAPH my_first_graph
 
     INSERT INTO my_first_graph
         VERTEX austin LABELS (City) PROPERTIES (austin.name = 'Austin', austin.population = 964254),
@@ -88,9 +90,11 @@ Then click the "Sign In" button.
         EDGE tokyoCapital BETWEEN tokyo AND japan LABELS (capital_of),
         EDGE tokyoCountry BETWEEN tokyo AND japan LABELS (located_in),
         EDGE zurichTokyo BETWEEN zurich AND tokyo LABELS (connecting_flight) PROPERTIES (zurichTokyo.distance_km = 9576),
-        EDGE zurichAustin BETWEEN zurich AND austin LABELS (connecting_flight) PROPERTIES (zurichAustin.distance_km = 8674)
+        EDGE zurichAustin BETWEEN zurich AND austin LABELS (connecting_flight) PROPERTIES (zurichAustin.distance_km = 8674)  
+
     </copy>
     ```
+
 
     This will create a very simple graph with 7 vertices and 8 edges. For more information about the syntax, please refer to the [PGQL specification](https://pgql-lang.org/spec/1.3/#inserting-vertices)
 
@@ -108,11 +112,11 @@ Then click the "Sign In" button.
 
     ![](./images/graph-first-graph-click-load-into-memory.png " ")
 
-3. Click on the *Load into memory* icon on the right of the details section:
+3. Click on the **Load into memory** icon on the right of the details section:
 
     ![](./images/graph-click-load-into-memory.png " ")
 
-    In the resulting dialog, click *Yes*.
+    In the resulting dialog, click **Yes**.
 
     ![](./images/my-first-graph-load-into-memory.png " ")
 
@@ -128,11 +132,17 @@ Then click the "Sign In" button.
 
 2. Click the *Create* button on the right.  
    
-3. Name the notebook *Learn/My First Notebook*, then click *Create*. That will create a folder named `Learn` and the note `My First Notebook` within it.
+3. Name the notebook **Learn/My First Notebook**, then click **Create**. That will create a folder named `Learn` and the note `My First Notebook` within it.
 
     ![](./images/notebooks-create-first-notebook.png "
 
-4. Enter the following text into the first paragraph.
+4. Each notebook is organized into a set of **paragraphs**. Each paragraph has an input (called *Code*) and an output (called **Result**). In Graph Studio, there are 3 types of paragraphs:
+
+- Markdown paragraphs start with `%md`
+- PGQL paragraphs start with `%pgql-px`
+- PGX Java paragraphs start with `%java-pgx`
+   
+   Enter the following text into the first paragraph.
 
     ```
     <copy>
@@ -157,7 +167,7 @@ Then click the "Sign In" button.
 
 ## **STEP 5**: Analyze, query and visualize the graph
 
-1. Add another paragraph to the notebook by hovering at the middle of the bottom of the paragrah and clicking the *+* button which appears.
+1. Add another paragraph to the notebook by hovering at the middle of the bottom of the paragrah and clicking the **+** button which appears.
    
    ![](./images/first-notebook-add-para.png)
    
@@ -188,7 +198,7 @@ Then click the "Sign In" button.
 
     ![](./images/first-notebook-pgx-count-triangles.png " ")
 
-5. Add a PGQL paragraph and enter the following code.
+5. Add a paragraph and enter the following code. This will be a PGQL paragraph since it starts with the line `%pgql-pgx`. 
 
     ```
     <copy>
@@ -210,7 +220,7 @@ Then click the "Sign In" button.
 
     ![](./images/first-notebook-pgql-settings.png " ") 
 
-9.  Navigate to the *Visualization* tab and select *NAME* as the label to render next to the vertices:
+9.  Navigate to the **Visualization** tab and select *NAME* as the label to render next to the vertices:
 
     ![](./images/first-notebook-pgql-viz-label.png " ")    
 
@@ -233,12 +243,12 @@ Then click the "Sign In" button.
 
 Congratulations! You successfully created, analyzed and visualized a graph from scratch using Graph Studio. Hopefully this little example gave you a feeling of how can use your Autonomous Database as a graph database. 
 
-Please *proceed to the next lab* to see more complex examples of how to create and analyze graphs.
+Please **proceed to the next lab** to see more complex examples of how to create and analyze graphs.
 
 ## Acknowledgements
 * **Author** - Korbi Schmid, Product Development
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Oct 2020
+* **Last Updated By/Date** - Jayant Sharma, Nov 2020
   
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
