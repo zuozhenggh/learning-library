@@ -9,7 +9,7 @@ You can quickly upload data from a variety of sources (for example, spreadsheets
 
 It provides several interactive visuals to show the story in your data for example, Trend Lines, Bar, Sankey Graph, Map, etc.
 
-Estimated Lab Time: 40 Mintues.
+*Estimated Lab Time:* 40 Mintues.
 
 Watch this below video to explore more on data visualization.
 
@@ -382,7 +382,7 @@ Filters are used to make canvas interactable for the users. Users can view desir
 
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
 
-You may now proceed to the next lab.
+You may now *proceed to the next lab*.
 
 ## Want To Learn More
 

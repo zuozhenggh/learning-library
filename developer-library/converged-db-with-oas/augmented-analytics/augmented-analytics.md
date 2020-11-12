@@ -4,7 +4,7 @@
 
 Oracle powers deeper insights by embedding machine learning and AI into every aspect of the analytics process, making your job easier than ever.  Oracle employ smart data preparation and discovery to enhance your overall experience. Natural language processing (NLP) powers modern, conversational-style analytics.
 
-Estimated Lab Time: 30 Mintues.
+*Estimated Lab Time:* 30 Mintues.
 
 ![](./images/augmentedanalytics.png " ")
 
@@ -100,7 +100,7 @@ Let us use forecast feature on the sample financial data.
 
 Great! Now, you have completed augmented analytics lab and hope you have learnt to use Explain and Forecast features of the tool to generate and present insights.
 
-You may now proceed to the next lab.
+You may now *proceed to the next lab*.
 
 ## Want To Learn More
 

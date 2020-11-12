@@ -3,7 +3,7 @@
 ## Introduction 
 In this lab you will start both Database and OAS environments by running the script files. 
 
-Estimated Lab Time: 10 Mintues.
+*Estimated Lab Time:* 10 Mintues.
 
 ### Objectives 
 
@@ -106,7 +106,7 @@ This lab assumes you have completed the following labs:
 
 3. Once connection details are provided click **Save** to save the connection.
 
-Now, you are ready to move to further labs.
+You may now *proceed to the next lab*.
 
 ## Acknowledgements
 

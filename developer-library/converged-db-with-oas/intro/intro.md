@@ -6,7 +6,7 @@ This workshop Labs are intended for an audience with little or no previous exper
 
 Post lab session, you will quickly gain an understanding on using Oracle Analytics Server which can connect to Oracle's Converged Database for creating valuable insights from variety of data.
 
-Estimated Workshop Time: 3 hours
+*Estimated Workshop Time:* 3 hours
 
 ### What is Oracle's Converged Database? 
 A converged database is a database that has native support for all modern data types and the latest development paradigms built into one product.
