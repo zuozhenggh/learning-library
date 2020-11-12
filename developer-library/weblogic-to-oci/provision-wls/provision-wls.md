@@ -19,16 +19,16 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 - A Vault
 - A Key
-- A Secret for the WebLogic Admin passord
+- A Secret for the WebLogic Admin password
 
 
 ## **STEP 1:** Provision the stack through the Marketplace
 
-1. Go to **Solutions and Platforms**
+1. Go to **Solutions and Platforms -> Marketplace -> Applications** 
 
   <img src="./images/provision-1.png" width="50%">
 
-2. In the search input, type "`weblogic`". For this lab, we'll use the **WebLogic Enterprise Edition UCM**
+2. In the search input, type "`weblogic`". For this lab, we'll use the **Oracle WebLogic Server Enterprise Edition UCM**
 
    <img src="./images/provision-2.png" width="100%">
 
@@ -257,7 +257,9 @@ Once the stack is provisioned, you can find the information regarding the URL an
     ```
     In this case we use the default ssh key created on that host and we bind the port to 0.0.0.0 so it is accessible outside.
 
-    You can then access the weblogic console provisioned on OCI on port 7002 on your 'on-premises' Public IP address. Make sure you use Firefox and go to `https://IP_OF_DEMO_INSTANCE:7002/console` with `https://` scheme to access as the WLS on OCI admin server uses SSL. You'll be prompted with the SSL self-signed certificate warning.
+    You can then access the weblogic console provisioned on OCI on port 7002 on your 'on-premises' Public IP address. Make sure you use *Firefox* and go to `https://IP_OF_DEMO_INSTANCE:7002/console` with `https://` scheme to access as the WLS on OCI admin server uses SSL. 
+    
+    You'll be prompted with the SSL self-signed certificate warning: click **Advanced** then **Accept the risk and continue**
 
 While the WebLogic instances are provisioning, it's possible to move forward with the Application Database provisioning as soon as the VCN is provisioned.
 
