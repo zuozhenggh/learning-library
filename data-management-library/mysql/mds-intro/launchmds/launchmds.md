@@ -1,4 +1,4 @@
-# Launching Your First MySQL Database Service System
+# Launch Your First MySQL Database Service System
 
 ## Introduction
 
@@ -150,7 +150,7 @@ The state will be shown as Creating during the creation.
 
  ```
     $ ssh-keygen -t rsa -N "" -b 2048 \-C "<key_name>" \-f <path/root_name>
-    ```
+ ```
 ![COMPUTE](./images/compute5.png " ")
 
 7. Choose SSH keys (Choose public key fro .ssh folder). Click the Create button
@@ -160,7 +160,7 @@ The state will be shown as Creating during the creation.
 8.	The state Running indicates that the Virtual Machine is ready to use. Save the Public IP Address under Primary VNIC Information on the Instance page. 
 ![COMPUTE](./images/compute7.png " ")
 
-4. Connect to the Compute instance using SSH. For example, using the Terminal:
+9. Connect to the Compute instance using SSH. For example, using the Terminal:
 
     `$ ssh -i ~/.ssh/id_rsa opc@&<your_compute_instance_ip>;`
 
@@ -191,7 +191,7 @@ Use the following command to connect to MySQL using the MySQL Shell client tool.
 
 ![Connect](./images/shellconnect.png " ")
 
-2. (Optional) At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
+4. (Optional) At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
 In your pre installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH.
 
@@ -211,21 +211,16 @@ In your pre installed MySQL Workbench, configure a connection using the method "
 4. Delete the MySQL policies for the compartment.
 ![Connect](./images/clean4.png " ")
 
+## Learn More
 
-
+* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
+* [MySQL Database Documentation](https://www.mysql.com)
 ## Acknowledgements
+* **Author** -  Airton Lastori, MySQL Principal Product Manager, MySQL Product Management 
+* **Contributors** -  Perside Foster, MySQL Solution Engineering
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, November 2020
 
-- **Author** \- <airton lastori,="" title,="MySQL Principal Product Manager" group="MySQL Product Management"></airton>
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-- **Contributors** \- <perside foster,="" group="MySQL Solution Engineering"> -- optional</perside>
-
-- **Last Updated By/Date** \- <perside foster,="" group,="MySQL Solution Engineering" month="November" year="2020"></perside>
-
-- **Workshop (or Lab) Expiry Date** \- <month year=""> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.</month>
-
-
-## See an issue?
-
-Please submit feedback using this [form](<https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1>). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
-<!-- Downloaded from Tutorial Creator on Tue Nov 03 2020 20:15:32 GMT-0500 (Eastern Standard Time) -->
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

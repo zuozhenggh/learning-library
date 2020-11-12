@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Launching Your First MySQL Database Service System",
+  "workshoptitle": "Launch Your First MySQL Database Service System",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -12,7 +12,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Launch MDS",
+            "title": "Lab 1: Launch Your First MySQL Database Service System",
             "filename": "../../launchmds/launchmds.md"
         }
     ]
