@@ -1,19 +1,11 @@
 {
     "tutorials": [
-        {         
+        {
             "title": "Introduction and Overview",
-            "description": "Introduction to Multitenant Workshop",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "10/16/2020",
-            "contentid": "12nnnn",
-            "filename": "./../../intro/intro.md"
+            "filename": "./../../../intro/intro.md"
         },
-        {         
+        {
             "title": "Lab 1: Login to Oracle Cloud",
-            "description": "Login to Oracle Cloud",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "10/16/2020",
-            "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
@@ -21,9 +13,9 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
           },
 
-        {         
+        {
             "title": "Lab 3: Using Ansible with OCI modules to manage infrastructure",
-            "filename": "./../../ansible-with-oci-modules/ansible-with-oci-modules.md"
+            "filename": "./../../../ansible-with-oci-modules/ansible-with-oci-modules.md"
         }
     ]
 }

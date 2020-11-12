@@ -2,7 +2,7 @@
     "tutorials": [
         {
             "title": "Introduction and Overview",
-            "filename": "./../../intro/intro-sandbox.md"
+            "filename": "./../../../intro/intro-sandbox.md"
         },
         {
             "title": "Lab 1: Generate SSH Keys",
@@ -10,7 +10,7 @@
         },
         {
             "title": "Lab 2: Using Ansible with OCI modules to manage infrastructure",
-            "filename": "./../../ansible-with-oci-modules/ansible-with-oci-modules-sandbox.md"
+            "filename": "./../../../ansible-with-oci-modules/ansible-with-oci-modules-sandbox.md"
         }
     ]
 }

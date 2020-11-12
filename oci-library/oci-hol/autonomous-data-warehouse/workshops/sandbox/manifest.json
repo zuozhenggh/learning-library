@@ -2,11 +2,11 @@
     "tutorials": [
         {
             "title": "Introduction and Overview",
-            "filename": "./../../intro/intro-sandbox.md"
+            "filename": "./../../../intro/intro-sandbox.md"
         },
         {
             "title": "Deploying and configuring Autonomous Data Warehouse",
-            "filename": "./../../autonomous-data-warehouse/autonomous-data-warehouse-sandbox.md"
+            "filename": "./../../../autonomous-data-warehouse/autonomous-data-warehouse-sandbox.md"
         }
     ]
 }
