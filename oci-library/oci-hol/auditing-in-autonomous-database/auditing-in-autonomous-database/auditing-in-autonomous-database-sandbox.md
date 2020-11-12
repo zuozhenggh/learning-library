@@ -23,13 +23,12 @@ We will do the following:
 
 3. Click the hamburger menu at the upper right, and select **Autonomous Transaction Processing** under Oracle Database.
 
-4. Select your compartment. <if type="livelabs">Your compartment should begin with the username you logged in with. Do not select the root compartment.
-</if>Leave Transaction Processing selected. Click **Create Autonomous Database**.
+4. Select your compartment. Leave Transaction Processing selected. Click **Create Autonomous Database**.
 
 5. Fill out the dialog box:
 
-    - DISPLAY NAME: Provide a name <if type="livelabs">- to ensure you have create a unique name, prepend the name with you username, for example "LL-234-DB"</if>
-    - DATABASE NAME: Provide a name <if type="livelabs">- to ensure you have create a unique name, prepend the name with you username, without any hyphens, for example "LL234DB"</if>
+    - DISPLAY NAME: Provide a name
+    - DATABASE NAME: Provide a name
     - Choose a Workload type: Transaction Processing
     - Choose a Deployment type: Shared Infrastructure
 
@@ -210,8 +209,3 @@ We will do the following:
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Tom McGinn, August 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
