@@ -1,48 +1,49 @@
-# GoldenGate Microservices Architecture Labs
+# GoldenGate Microservices Architecture Lab
 
-THIS IS UNDER CONSTRUCTION
-Update November 05, 2020
+Update November 09, 2020
 
+## Workshop architecture
 
-![](images/100/GGMicroServicesArchitecture.png)
-
-
-## Introduction	1 hour 
-
-- Oracle GoldenGate Microservices Archiecture Overview/updates Presentation. [>>Click<< to download presentation](https://github.com/OracleCPS/GGMicroservices/raw/master/GG18.1_Workshop.pptx)
-
-REDO THIS.  DO NOT SHARE GITHUB LINKS
-## Lab 100	[Install GoldenGate Microservices Architecture](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_100.html)
-
-- Install the Oracle GoldenGate Microservces for Oracle in the target environment using the Oracle Universal Installer (OUI) tool.
+![](./images/ggmicroservicesarchitecture.png)
 
 
-## Lab 200	[Creating Deployments](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_200.html)
-- After Installation create the Oracle GoldenGate Microservices Deployments
+## Oracle Golgengate Microservices Workshop
+ 
+Welcome to the Golden Gate Microservices Workshop. The content will give you a basic understanding of Golden Gate using Microservices
 
-## Lab 300	[Creating Credentials](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_300.html)
-- Creating Database Credentials for Oracle GoldenGate Microservices setup
+## About Oracle GoldentGate Microservices
+
+Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
+
+## Workshop Details
+
+There are 9 hands-on labs in this workshop. 
+
+### Lab Overview
+
+TASK 0: INITIAL SETUP
+
+TASK 1: CREATING DEPLOYMENTS
+
+TASK 2: CONFIGURE REVERSE PROXY
+
+TASK 3: CREATE CREDENTIALS
+
+TASK 4: ADD EXTRACT AND DISTRIBUTION PATHS
+
+TASK 5: INSTANTIATION
+
+TASK 6: CREATE THE REPLICAT
+
+TASK 7: GENERATE DATA LOAD
+
+TASK 8: DATA TRANSFORMATIONS
+
+TASK 9: HA/DR (ACTIVE/ACTIVE)
 
 
-## Lab 400	[Uni Directional and DDL Replication](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_400.html)
-- Using Web interface of Oracle GoldenGate Microservices  (HTML5 Pages)
-
-		
-## Lab 500	[Zero Downtime Configuration](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_500.html)
-- Doing file based data migration using the MicroServices architecture and the REST API for automation
 
 
-## Lab 600	[Bi-Directional and Auto Conflict Detection and Resolution(CDR)](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_600.html)
-- Use CDR functions to setup Auto-CDR in the database with Oracle GoldenGate Microservices
-		
-## Lab 700	[Heterogeneous Replication](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_700.html)
-- Setup Oracle GoldenGate for "MySQL" using classic Architecture and Oracle GoldenGate for "Oracle" using Microservices Architecture for Uni-directional replication
-		
-## Lab 800	[Data Transformations](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_800.html)
-- Demonstrate use of Oracle GoldenGate Microservices for transformation capabilities like column concatenating, data masking and use of environment variables/tokens
-		
-## Lab 900	[Performance Metrics](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_900.html)		
-- View the detailed replication statistics in real-time with the Oracle GoldenGate Metric Service in Microservices Architecture
 
-## Lab 9100 	[Replicating into Oracle Autonomous Data Warehouse from Heterogeneous database](https://oraclecps.github.io/GGMicroservices/CloudWorkshop_GoldenGate%20Microservices_9100.html)
-- Setup Oracle GoldenGate for "MySQL" using classic Architecture and Oracle GoldenGate for "Oracle Autonomous Data Warehouse" using Microservices Architecture for Uni-directional replication
+
+

@@ -1,58 +1,62 @@
 {
-    "tutorials": [
-        {
-            "title": "Prerequisites",
-            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        }, 
-        {
-            "title": "Introduction",
-            "filename": "../../introduction/introduction.md"
-        },
-        {
-          "title": "Lab 1: Installation",
-          "description": "Introduction to GGBD",
-          "filename": "../../installation/installation.md"
-      },
-      {
-           "title": "Lab 2: ServiceManager",
-           "filename": "../../servicemanager/servicemanager.md"
-       },
-        {
-            "title": "Lab 3: Microservices",
-            "description": "mysql-to-hdfs",
-            "filename": "../../mysql-to-hdfs/mysql-to-hdfs.md"
-        },
-        {
-            "title": "Lab 4: Microservices",
-            "description": "Lab 4 GGBD mysql-to-hive",
-            "filename": "../../mysql-to-hive/mysql-to-hive.md"
-        },
-        {
-            "title": "Lab 5: Microservices",
-            "description": "Lab 5 GGBD mysql-to-hbase",
-            "filename": "../../mysql-to-hbase/mysql-to-hbase.md"
-        },
-        {
-            "title": "Lab 6: Microservices",
-            "description": "Lab 6 GGBD mysql-to-Kafka",
-            "filename": "../../mysql-to-kafka/mysql-to-kafka.md"
-        },
-        {
-            "title": "Lab 7: Microservices",
-            "description": "Lab 7 GGBD mysql-to-Cassandra",
-            "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
-        },
-        {
-            "title": "Lab 8: Microservices",
-            "description": "Lab 8 GGBD Appendix",
-            "filename": "../../lab8-appendix/lab8-appendix.md"
-        },
-        {
-            "title": "Lab 9: Microservices",
-            "description": "Lab 9 GGBD mysql-to-oracle",
-            "filename": "../../lab9-mysql-to-oracle/lab9-mysql-to-oracle.md"
-        }
-        
-    ]
+  "workshoptitle": "Oracle GoldenGate Microservices",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+
+    {
+      "title": "Lab 4: GG Initial Setup",
+      "description": "GG Initial Setup",
+      "filename": "../../gg-microservices-workshop-ogg-env-initial-setup/gg-microservices-workshop-ogg-env-initial-setup.md"
+    },
+
+     {
+      "title": "Lab 5: Create Replication",
+      "description": "Create Replication",
+      "filename": "../../gg-microservices-workshop-create-replication/gg-microservices-workshop-create-replication.md"
+    },
+    {
+      "title": "Lab 6: Active Active Replication",
+      "description": "Active - Active Replication",
+      "filename": "../../gg-microservices-workshop-active-active-setup-with-auto-cdr/gg-microservices-workshop-active-active-setup-with-auto-cdr.md"
+    },
+  
+    {
+      "title": "Lab 7: High Availability / Disaster Recovery Replication",
+      "description": "Hign Availability / Disaster Recovery Replication",
+      "filename": "../../gg-microservices-workshop-high-availability-disaster-recovery/gg-microservices-workshop-high-availability-disaster-recovery.md"
+    },
+    {
+      "title": "Lab 8: Transformations Using GoldenGate Microservices",
+      "description": "Transformations using GoldenGate Microservices ",
+      "filename": "../../gg-microservices-workshop-transformations-using-goldengate/gg-microservices-workshop-transformations-using-goldengate.md"
+
+    }
+
+  ]
 }
