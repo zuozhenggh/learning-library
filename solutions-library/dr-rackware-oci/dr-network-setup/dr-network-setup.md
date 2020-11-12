@@ -6,7 +6,7 @@ Estimated Lab Time 45-60 minutes
 
 
 ### Objectives
-- Deploy Terraform to setup necessary architechture for DR
+- Deploy Terraform to setup necessary architecture for DR
 
 ### Prerequisites
 1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l1ytoY8pby813IG_wdmHvlnG-32rWlsj1wql1mFqyYFmzywCPxvTrwAMh8TaMFOT/n/c4u03/b/solutions-library/o/DR-ORDS-RW.zip) to your local machine.
@@ -75,11 +75,11 @@ Estimated Lab Time 45-60 minutes
     The ords.war file can be downloaded using the following link [ords](https://www.oracle.com/database/technologies/appdev/rest-data-services-downloads.html)
         ![](rackwaresaleplay/Objectstorage.PNG)
     
-## **Step 1:** Create Stack    
+## **STEP 1:** Create Stack    
 1. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
 
 2. Import the zip file into the stack 
-    ![](./images/ResourceManager.PNG)
+    ![](./images/zip-file.png)
 
 3. Input the configuration for the instances.
     ![](./images/ResourceManager-Input-Basic.PNG)
@@ -96,7 +96,7 @@ Estimated Lab Time 45-60 minutes
 7. Review 
     ![](./images/ResourceManager-Review.PNG)
 
-## **Step 2:** Plans
+## **STEP 2:** Plans
 
 1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Plan-2.PNG)
@@ -104,24 +104,24 @@ Estimated Lab Time 45-60 minutes
 2.  Make sure everything looks okay and then proceed
     ![](./images/ResourceManager-Plan-3.PNG)
 
-3.  Wait until the icon to turn green.
+3.  Wait until the icon turns green.
     ![](./images/ResourceManager-Plan-4.PNG)
 
-## **Step 3:** Apply
+## **STEP 3:** Apply
 
-1.  Select plan from the dropdown menu.
+1.  Select apply from the dropdown menu.
     ![](./images/ResourceManager-Apply-1.PNG)
 
-2.  Wait unitl the icon to turn green.
+2.  Wait until the icon turns green.
     ![](./images/ResourceManager-Apply-2.PNG)
 
-## **Step 4:** Destroy
-1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
+## **STEP 4:** Destroy
+1.  First navigate to OCI Console and terminate the Standby database and once the termination is successful then run the following command
 
 2.  Select destroy from the dropdown menu.
     ![](./images/ResourceManager-Destroy.PNG)
 
-3.  Wait unitl the icon to turn green.
+3.  Wait until the icon turns green.
     ![](./images/ResourceManager-Destroy-2.PNG)
 
 You may now **proceed to the next lab.**
@@ -135,6 +135,8 @@ You may now **proceed to the next lab.**
 - **Author** - Saul Chavez
 - **Last Updated by/date** Will Bullock, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
