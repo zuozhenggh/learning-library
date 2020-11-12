@@ -328,7 +328,7 @@ Execute the script to generate the creation of a PL/SQL function, creating a tab
 
 `./01_stored_procedure.sh`
 
-Next, using a web browser, login to Audit Vault as `AVAUDITOR` and the password `T06tron.` with the `dot` included in the password.
+Next, using a web browser, login to Audit Vault as `AVAUDITOR` and the password *"T06tron."* with the `dot` included in the password.
 
    ![](images/login_avauditor01.png " ")
 
@@ -385,7 +385,7 @@ In this lab you will use the results from a Database Security Assessment Tool (D
     </copy>
     ````
 
-2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
+2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user *"AVADMIN"*:
 
     - Open an SSH session to your **AVS VM** as user *opc*
     - Now we need to become `oracle` User
@@ -588,7 +588,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
 **Configure a new Audit Trail**
 
-14. Using a web browser, login to the Audit Vault Web Console as `AVADMIN` with the password "*T06tron.*"
+14. Using a web browser, login to the Audit Vault Web Console as *"AVADMIN"* with the password "*T06tron.*"
 
 15. Click the `Targets` tab
 
@@ -658,7 +658,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
 In this lab you will modify the Database Firewall connection for the pluggable database, `pdb1`
 
-1. Login to the Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+1. Login to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -722,19 +722,17 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 1. To perform the DB Firewall labs, you must run this script to enable the pre-configure DB Firewall Server for this workshop
 
     - Open a SSH session on your **DBF VM as *opc* User**
-
     - Start NetworkManager
 
       ````
       <copy>
-      sudo systemctl enable NetworkManager
       sudo systemctl start NetworkManager
       </copy>
       ````
 
     - Close the session
 
-2. Login to the Audit Vault Web Console as *AVADMIN* with the password "*T06tron.*"
+2. Login to the Audit Vault Web Console at `https://<YOUR_AVS-VM_PUBLIC-IP>` as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
@@ -891,7 +889,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 **Set the NTP Server**
 
-1. Login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+1. Login to the Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
@@ -909,7 +907,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 **Enable Unique Logging**
 
-8. Login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+8. Login to the Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -972,7 +970,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 Sometimes DB Firewall activity may take 5 minutes to appear in the Database Firewall Activity Reports
 
-24. In your web browser, log back to the Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+24. In your web browser, log back to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
 25. Click `Reports`
 
@@ -1032,7 +1030,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
 **Create a Database Firewall Policy**
 
-4. Login to the Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+4. Login to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -1228,7 +1226,7 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
       <copy>sudo -u postgres ./01_init_postgreSQL.sh</copy>
       ````
 
-3. Next, using a web browser, login to Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+3. Next, using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
@@ -1281,7 +1279,7 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
       <copy>./02_pgsql_auditable_commands.sh</copy>
       ````
 
-11. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+11. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -1323,7 +1321,7 @@ Audit Vault can collect and report on the operating system audit data
       <copy>./01_setup_linux_auditing.sh</copy>
       ````
 
-3. Next, using a web browser, login to Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+3. Next, using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
@@ -1361,7 +1359,7 @@ Audit Vault can collect and report on the operating system audit data
       <copy>./02_generate_audit_activity.sh</copy>
       ````
 
-10. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+10. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -1391,7 +1389,7 @@ Audit Vault can collect and report on the operating system audit data
 - You must have an Microsoft Active Directory Server 2016 or higher available in the same VCN as the DBSecLab VMs (DBsec-lab, AV, DBFW, OKV)
 - You must have the knowledege to configure the MS AD 2016 server appropriately
 
-1. Using a web browser, login to Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+1. Using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
