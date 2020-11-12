@@ -1,4 +1,3 @@
-
 # Lab  - Golden Gate Microservices HA / DR replication
 
 ![](./images/ggmicroservicesarchitecture.png)
