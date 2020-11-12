@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "JDE Lift and Shift to Oracle Cloud Infrastructure",
     "tutorials": [
         {
             "title": "Prerequisites",
