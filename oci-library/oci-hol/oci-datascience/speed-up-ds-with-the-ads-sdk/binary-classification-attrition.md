@@ -61,10 +61,23 @@ The following is a summary of the steps that are covered in this lab along with 
 To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**. 
 
 1. Click on the **Notebook Examples**. A drop down will appear.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/click-ne.png)
+
 1. Select **binary\_classification\_attrition.ipynb**. 
+    ![](./../speed-up-ds-with-the-ads-sdk/images/load-example.png)
+
 1. Click **Load Example**. The notebook will open in a new tab.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/binary-notebook.png)
+
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
-1. Execute the cells in order. If you run into problems and want to start over again, click **Kernel** then click  **Restart Kernel and Clear All Outputs...**
+    ![](./../speed-up-ds-with-the-ads-sdk/images/running-cell.png)
+    ![](./../speed-up-ds-with-the-ads-sdk/images/finished-cell.png)
+
+
+1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/restart-kernel.png)
+    ![](./../speed-up-ds-with-the-ads-sdk/images/restart.png)
+
 1. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs.
 
 ## **STEP 4:** Next Steps
