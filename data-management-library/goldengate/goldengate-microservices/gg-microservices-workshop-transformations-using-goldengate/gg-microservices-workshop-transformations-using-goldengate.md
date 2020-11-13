@@ -87,15 +87,15 @@ Open a terminal session
 
 ## **Step 2:**  Concatenating the source ‘m‘ columns into target single ‘n’ columns
 
-![](./images/terminal3.png) c1
+![](./images/c1.png)
 
 1. •	Edit the parameter of the REPLICAT IREP with the attributes to concatenate the string from columns “CUST_FIRST_NAME” & “CUST_LAST_NAME” into “CUSTOMER_NAME”.Add the following, after commenting the already existing map statement with ”–“.
 
-![](./images/terminal3.png) c2
+![](./images/c2.png)
 
 2. Open the Administration Server of the Target deployment i.e. Baston at http://localhost:17001. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process.
 
-![](./images/terminal3.png) c3
+![](./images/c3.png)
 
 3. Open a terminal window and execute “insert_customer.sql” script in SQLPLUS to insert data into customer table
 
@@ -105,7 +105,7 @@ Open a terminal session
 ```
 <copy>sqlplus ggate/ggate@oggoow19</copy>
 ```
-![](./images/terminal3.png) c4
+![](./images/c4.png)
 
 
  **1 row copied**
@@ -129,7 +129,7 @@ Commit;</copy>
 ```
 <copy>select CUST_FIRST_NAME,CUST_LAST_NAME,CUSTOMER_NAME from SOE.CUSTOMERS where customer_id=12345678;</copy>
 ```
-![](./images/terminal3.png) c5
+![](./images/c5.png)
 
 ```
 <copy>exit</copy>
@@ -137,7 +137,7 @@ Commit;</copy>
 
 ## **Step 3:** Masking the Source Crucial email-id’s into a dummy email in the target
 
-![](./images/terminal3.png) c6
+![](./images/c6.png)
 
 1. Go to Admin Server console for deployment Baston (http://localhost:17001) and edit the parameter of the REPLICAT IREP with the attributes to pass customer email to SQLEXEC() for execution of stored procedure and mapping it back to the target table.Add the following, after commenting the already existing map statement for CUSTOMERS table with ”–“.
 
@@ -147,7 +147,7 @@ MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id)
 SQLEXEC (SPNAME P_MAIL, PARAMS (code_param = CUST_EMAIL)), &
 COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIRST_NAME,CUST_LAST_NAME));
 
-![](./images/terminal3.png) c7
+![](./images/c7.png)
 
 2. Open Terminal and SQLPLUS into Target Database (OGGOOW191).Create a required stored procedure under GGATE users. This will be used in the SQLEXEC call in the mapping statement
 
@@ -165,7 +165,7 @@ SQL>
   /</copy>
   ```
 **Function created**
-![](./images/terminal3.png) c8
+![](./images/c8.png)
 
 3. Select F_MAIL and verify results
 
@@ -173,7 +173,7 @@ SQL>
 <copy>select F_MAIL('MADHU') from dual;</copy>
 ```
 
-![](./images/terminal3.png) c9
+![](./images/c9.png)
 
 4. Create or replace procedure
 CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2)
@@ -187,14 +187,14 @@ CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARC
   /</copy>
   ```
 
-![](./images/terminal3.png) c10
+![](./images/c10.png)
 
 ```
 <copy>exit</copy>
 ```
 5. Open the Administration Server of the Target deployment i.e. Boston at http://localhost:17001. When the page is completely open, you should be at a page where you can see Replicat 6. •	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing @update_email.sql scriptIREP. Please stop and start the IREP process.
 
-![](./images/terminal3.png) c11
+![](./images/c11.png)
 
 6. Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing @update_email.sql script
 
@@ -224,12 +224,12 @@ commit;</copy>
 <copy>select CUST_EMAIL from soe.customers where customer_ID between 562 and 570;</copy>
 ```
 
-![](./images/terminal3.png) c12
+![](./images/c12.png)
 
 ## **Step 4:** Using Environment Variables/Tokens
 
 
-![](./images/terminal3.png) c13
+![](./images/c13.png)
 
 
 
