@@ -21,12 +21,11 @@ ODI Web Studio is a product offering that enables customers to quickly set up an
 -   Use ODI Web Studio to create a data flow and load data into the autonomous database
 
 ## Lab Breakdown
-- **Lab 1:** Log in to Oracle Cloud.
-- **Lab 2:** Set permissions enabling automatic iscovery of autonomous databases.
-- **Lab 3:** Create an ADW database and seed it with data.
-- **Lab 4:** Create an ODI Web instance from OCI Marketplace.
-- **Lab 5:** Create an ADW database as an additional source.
-- **Lab 6:** Create a data flow using ODI Web.
+- **Lab 1:** Set permissions enabling automatic discovery of autonomous databases.
+- **Lab 2:** Create an ADW database and seed it with data.
+- **Lab 3:** Create an ODI Web instance from OCI Marketplace.
+- **Lab 4:** Create an ADW database as an additional source.
+- **Lab 5:** Create a data flow using ODI Web.
 
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a <a href="https://www.oracle.com/cloud/free/" target="\_blank">trial or Free Tier account</a>, or a training account whose details were given to you by an Oracle instructor.
@@ -36,7 +35,7 @@ If you have a question during this workshop then use the <a href="https://cloudc
 
 Are you completely new to the **Cloud Customer Connect**</a> forums? Visit our <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="\_blank">**Getting Started forum page**</a> to learn how to best leverage community resources.
 
-**You are all set; let's begin! Click Lab 1 in the Lab Contents menu on the right.**
+**You are all set; let's begin! Click [here to go to the next lab](#next).**
 
 ## Want to Learn More About ODI Web Studio and Autonomous Database?
 
@@ -58,4 +57,7 @@ Use these links to get more information about ODI Web Studio and Oracle Autonomo
  - **Adapted for Cloud by** - Rick Green, Principal Developer, Database User Assistance
  - **Last Updated By/Date** - Rick Green, July 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
