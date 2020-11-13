@@ -165,7 +165,10 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
     ![](./images/3.5.png " ")
 
 ## **Summary**
-At this point, the JD Edwards EnterpriseOne Trial Edition is ready for use and you can now move onto the next Lab. 
+At this point, the JD Edwards EnterpriseOne Trial Edition is ready for use.
+
+You may now proceed to the next lab.
+
 
 ## Acknowledgements
 * **Author:** 
