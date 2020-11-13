@@ -6,7 +6,8 @@
           "filename": "./../../../intro/intro-sandbox.md"
       },
       {
-          "title": "Create and Attach a Block Volume Service",
+          "title": "Lab 1: Create and Attach a Block Volume Service",
+          "type": "freetier",
           "filename": "./../../block-volume-sandbox.md"
       }
     ]

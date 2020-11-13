@@ -309,7 +309,7 @@ You can use these commands to see when applications were deployed, what their cu
 
 ## **STEP 6**: Under the Hood
 
-1. To get a better look at all the installed Kubernetes manifests by using the template command.
+1. To get a beter look at all the installed Kubernetes manifests by using the template command.
 
     ````shell
     <copy>
@@ -324,7 +324,7 @@ You can use these commands to see when applications were deployed, what their cu
     ````
 
 1. Explore the files, and see each output.
-
+  
 You may now [proceed to the next lab](#next).
 
 ## Learn More

@@ -5,7 +5,7 @@
           "filename": "./../../../intro/intro-sandbox.md"
       },
       {
-          "title": "Using Backup and Clone Feature of Block Volume Storage",
+          "title": "Lab 1: Using Backup and Clone Feature of Block Volume Storage",
           "filename": "./../../block-volume-backup-clone-sandbox.md"
       }
     ]

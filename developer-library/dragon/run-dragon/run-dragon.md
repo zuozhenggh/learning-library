@@ -343,7 +343,7 @@ You need to collect the credentials below.  You will need an OCI user able to ca
     $ <copy>./dragon-linux-x86_64-2.0.0 -destroy</copy>
     ```
 
-Congratulations! You have complete the workshop!
+Contratulations! You have complete the workshop!
 
 ## Learn More
 
