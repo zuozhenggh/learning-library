@@ -67,13 +67,13 @@ For this lab you need:
 
 *It will take another 4 to 5 minutes for all the services to come online.*
 
-The console will be available at `http://PUBLIC-IP:7001/console` (replace `PUBLIC_IP` with the Compute instance public IP) and the WebLogic admin user is `weblogic` with password `welcome1`
+1. The console will be available at `http://PUBLIC-IP:7001/console` (replace `PUBLIC_IP` with the Compute instance public IP) and the WebLogic admin user is `weblogic` with password `welcome1`
 
   <img src="./images/localhost-admin-console.png"  width="100%">
 
-The **SimpleDB** application will be running at `http://PUBLIC-IP:7003/SimpleDB/` (substitute `PUBLIC-IP` with the public IP of the instance). It may take a minute or 2 after the admin console is up for the SimpleDB app to be running.
+2. The **SimpleDB** application will be running at `http://PUBLIC-IP:7003/SimpleDB/` (substitute `PUBLIC-IP` with the public IP of the instance). It may take a minute or 2 after the admin console is up for the SimpleDB app to be running.
 
-It shows statistics of riders of the Tour de France stored in the database, and looks like this:
+3. It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
   <img src="./images/localhost-simpledb-app.png" width="100%">
 

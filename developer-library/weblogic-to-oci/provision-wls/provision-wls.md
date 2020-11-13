@@ -176,31 +176,30 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 1. Go to **Outputs** (or you can find the same information at the bottom of the logs)
 
-
-*If you provisioned in a **Public Subnet***, you should see something like the following:
+- *If you provisioned in a **Public Subnet***, you should see something like the following:
 
   <img src="./images/provision-27.png" width="100%">
 
 
-  - Make a note of the **WebLogic Admin Server Public IP address** from the **WebLogic Admin Server Console URL** for later use.
+    - Make a note of the **WebLogic Admin Server Public IP address** from the **WebLogic Admin Server Console URL** for later use.
 
-  - Make a note of the **Load Balancer IP** for later use.
+    - Make a note of the **Load Balancer IP** for later use.
 
   You can copy/paste the **WebLogic Admin Console URL** in your browser and explore the provisioned WebLogic domain. You should find that there are no applications in **deployments** and no data sources in the **service->datasources** menu
 
-*If you provisioned in a **Private Subnet***, you should see something like the following:
+- *If you provisioned in a **Private Subnet***, you should see something like the following:
 
   <img src="./images/provision-28.png" width="100%">
 
-  - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
+    - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
 
-  - Make a note of the **Load Balancer IP** for later use.
+    - Make a note of the **Load Balancer IP** for later use.
 
-  - Make a note of the Bastion Instance **Public IP address** for later use.
+    - Make a note of the Bastion Instance **Public IP address** for later use.
 
   To access the WebLogic Admin console, you will need to create a tunnel through the bastion host to your local machine.
 
-  *If you used Docker*, open a new terminal session on your local machine, in the `weblogic-to-oci` folder, and export the following local variables (On Windows, use Putty for tunneling):
+- *If you used Docker*, open a new terminal session on your local machine, in the `weblogic-to-oci` folder, and export the following local variables (On Windows, use Putty for tunneling):
 
     ```bash
     <copy>
@@ -221,7 +220,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
     You can explore the provisioned WebLogic domain. You should find that there are no applications in **deployments** and no data sources in the **service->datasources** menu
 
-  *If you used the Marketplace demo image*, export the local variables:
+- *If you used the Marketplace demo image*, export the local variables:
 
     ```bash
     <copy>
