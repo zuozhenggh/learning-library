@@ -1,7 +1,7 @@
 # Oracle Spatial
 
 ## Introduction
-This lab walks you through the steps of setting up the environment for Spatial lab. You can connect to the Oracle Database instance using any client of your choice. In this lab, you will connect using `Oracle SQL Developer.`
+This lab walks you through the steps of setting up the environment for Spatial lab. You can connect to the Oracle Database instance using any client of your choice. In this lab, you will connect using `Oracle SQL Developer`.
 
 *Estimated Lab Time:* 30 Minutes
 

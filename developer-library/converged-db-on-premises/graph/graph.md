@@ -37,7 +37,6 @@ This workbook provides an overview of Oracle Graph support for property graph fe
 
 Here is are two videos that talk more about Oracle Graph.
 
-[](youtube:-DYVgYJPbQA)
 [](youtube:zfefKdNfAY4)
 
 ### Introduction to Property Graph
