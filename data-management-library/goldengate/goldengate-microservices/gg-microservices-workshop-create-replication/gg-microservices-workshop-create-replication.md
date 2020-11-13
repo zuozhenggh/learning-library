@@ -131,18 +131,17 @@ First, find out your current VM’s local IP Address by issuing the following co
 (** The IP address it shows might be different than the IP address you obtained when using VNC Viewer to connect.  That is fine)
 
 8. Open oggca_deployment.rsp with an editor, such as vi.  Find the following line, replace the IP address with the value you got from above ‘hostname -I’ command
-```
-<copy>hostname -I</copy>
-```
+
 Example: HOST_SERVICEMANAGER=10.0.2.15
 
-9. For example, using above IP address, change it to:
-
- HOST_SERVICEMANAGER=<YourPublicIP>
+9. For example, using above IP address, change it to
+```
+<copy>HOST_SERVICEMANAGER= <your_public_ip></copy>
+```
 
 10. To run the create_deployment.sh script, you will need to provide eight (8) command line parameters.  Here is the template of the command:
 
-$ sh ./create_deployment.sh <deployment_name> <admin password> <SMPort> <ASPort> <DSPort> <RSPort> <PMSPort> <PMSPortUDP>
+**sh ./create_deployment.sh (deployment_name) (admin password) (SMPort) (ASPort) (DSPort) (RSPort) (PMSPort) (PMSPortUDP)**
 
 Each of the parameters will be used to replace items in the response file and build the Deployment and associated services.  Each of the command line parameters corresponds to the following:
 
@@ -167,7 +166,7 @@ Each of the parameters will be used to replace items in the response file and bu
 
 13. Return to the Terminal Window where you ran the create_deployment.sh script and re-run the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
 
-**Run the script using the following parameter values, to create the Boston Deployment::**
+**Run the script using the following parameter values, to create the Boston Deployment:**
 
 ```
 <copy>sh ./create_deployment.sh Boston Welcome_1 16000 17001 17002 17003 17004 17005</copy>
@@ -218,15 +217,15 @@ If this is the first time you access this address, you will need click through s
 Once you are able to access the ServiceManager by using the simpler URL, you have completed this task.
 
 
-Extra Information:
+**Extra Information:**
 
 Simplified URLs:
 
 The benefit of using the Reverse Proxy is that is makes the URLs simpler to use.  If you are so inclined, provide your browser a URL that models this:
 
-https://localhost/<deployment>/adminsrvr
+https://localhost/(deployment)/adminsrvr
 
-<deployment> = the name of a deployment you build in Task 3. 
+(deployment) = the name of a deployment you build in Task 3. 
 
 In the example, if using the Atlanta deployment, the URL would look like this:
 
@@ -298,7 +297,7 @@ After running this script, can go to your browser and that the credential was cr
 
 5. Open a new browser tab and connect to 
 ```
-<copy>https://localhost/<deployment>/adminsrvr</copy>
+<copy>https://localhost/(deployment)/adminsrvr</copy>
 ```
 6. Login with the following oggadmin/Welcome_1
 

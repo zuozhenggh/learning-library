@@ -29,8 +29,6 @@ Oracle GoldenGate Classic provides optimized and high performance delivery.
 
 Oracle GoldenGate Classic real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
-Time to complete - 60 mins
-
 ### Summary
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
@@ -41,6 +39,7 @@ integration architectures to big data systems without impacting the performance 
 This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
 
 ### Prerequisites
+
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
@@ -51,10 +50,11 @@ This lab assumes you have:
     - Lab: Configure GoldenGate
 
 In this lab we will setup GoldenGate Microservices Active - Active Replication
-Time to Complete -
-Approximately 60 minutes
+
+Time to Complete - Approximately 60 minutes
 
 ## **Step 1:** Configuration for Microservices HA / DR Lab
+
 
 1. Open a terminal session
 
@@ -134,13 +134,12 @@ Service -> Configuration page as well. Simply log in to the TCGGATE alias**
 ![](./images/b5.png)
 
 
-
 ## **Step 2:** Add Extract and Distribution Path on oggoow191
 
-You will use the following two scripts to configure these processes:
+You will use the following two scripts to configure these processes
 
-•	add_extract_Target.sh
-•	Add_DistroPath.sh
+-	add_extract_Target.sh
+-	Add_DistroPath.sh
 
 1. From the Terminal Window in the VNC Console, navigate to the Lab6 directory under
 ~/Desktop/Scripts/HOL/Lab6.
@@ -177,7 +176,7 @@ at your terminal session:
 ![](./images/b7.png)
 
 
-## **Step 3:**  Create the Replicat on oggoow19  Target
+## **Step 3:**  Create the Replicat on oggoow191  Target
 
 
 To begin this Task, follow the below steps:

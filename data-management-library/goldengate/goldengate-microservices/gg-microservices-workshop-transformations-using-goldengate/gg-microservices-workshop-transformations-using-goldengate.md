@@ -1,7 +1,10 @@
 # Lab - GoldenGate Microservices Transformations 
 
+![](./images/ggmicroservicesarchitecture.png)
+
 ## Want to learn more:
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
+
+[GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 ## Introduction
 
@@ -39,7 +42,6 @@ Oracle GoldenGate Microservices provides optimized and high performance delivery
 
 Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
-Time to complete - 60 mins
 
 ### Summary
 
@@ -64,13 +66,9 @@ In this lab we will setup GoldenGate Microservices Transformations
 
 ![](./images/ggmicroservicesarchitecture.png)
 
-
 ### Disclaimer
 
 This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
-
-Time to Complete -
-Approximately 60 min
 
 In this lab we will setup GoldenGate Microservices Transformations
 
@@ -89,11 +87,11 @@ Open a terminal session
 
 ![](./images/c1.png)
 
-1. •	Edit the parameter of the REPLICAT IREP with the attributes to concatenate the string from columns “CUST_FIRST_NAME” & “CUST_LAST_NAME” into “CUSTOMER_NAME”.Add the following, after commenting the already existing map statement with ”–“.
+1. Edit the parameter of the REPLICAT IREP with the attributes to concatenate the string from columns “CUST_FIRST_NAME” & “CUST_LAST_NAME” into “CUSTOMER_NAME”.Add the following, after commenting the already existing map statement with ”–“.
 
 ![](./images/c2.png)
 
-2. Open the Administration Server of the Target deployment i.e. Baston at http://localhost:17001. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process.
+2. Open the Administration Server of the Target deployment i.e. Boston at http://localhost:17001. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process.
 
 ![](./images/c3.png)
 
@@ -143,8 +141,10 @@ Commit;</copy>
 
 **Replicat Definition**
 
-MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id), &
-SQLEXEC (SPNAME P_MAIL, PARAMS (code_param = CUST_EMAIL)), &
+MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id), 
+
+SQLEXEC (SPNAME P_MAIL, PARAMS (code_param = CUST_EMAIL)), 
+
 COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIRST_NAME,CUST_LAST_NAME));
 
 ![](./images/c7.png)
@@ -248,16 +248,16 @@ Relicat Settings
  tablename=@GETENV ('GGHEADER','TABLENAME'),&
  optype=@GETENV ('GGHEADER','OPTYPE'));</copy>
  ```
- ![](./images/c13.png) c14
+ ![](./images/c14.png)
 
  2. REPLICAT IREP param file will look like 
 
 
-![](./images/c13.png) c15
+![](./images/c15.png)
 
 3. Open the Administration Server of the Target deployment i.e. Baston at http://localhost:17001. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process
 
-![](./images/c13.png) c16
+![](./images/c16.png)
 
 4. Open the terminal and log into SQLPLUS to do transaction on source DB (OGGOOW19) in table LOGON
 
@@ -269,7 +269,7 @@ Relicat Settings
 ```
 <copy>@insert_logon.sql</copy>
 ```
-![](./images/c13.png) c17
+![](./images/c17.png)
 
 6. Open the terminal and log into SQLPLUS to do look at the transactions replicated on target DB (OGGOOW191) in table *LOGON_AUDIT
 
@@ -279,14 +279,10 @@ Relicat Settings
  ```
  <copy>select * from SOE.LOGON_AUDIT;</copy>
  ```
- ![](./images/c13.png) c18
-
- 
+ ![](./images/c18.png)
 
 
-
-
-You may now *proceed to the next lab*.
+**You have completed the GoldenGate Microservices Workshop !!**
 
 ## Learn More
 
