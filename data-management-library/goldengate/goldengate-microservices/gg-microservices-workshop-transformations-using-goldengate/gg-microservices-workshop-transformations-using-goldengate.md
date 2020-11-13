@@ -231,6 +231,57 @@ commit;</copy>
 
 ![](./images/c13.png)
 
+1. Go to Admin Server console for deployment Baston (http://localhost:17001) and edit the parameter of the REPLICAT IREP with the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command 
+
+Relicat Settings
+```
+<copy>MAP OGGOOW19.SOE.LOGON, TARGET OGGOOW191.SOE.LOGON_AUDIT, KEYCOLS(LOGON_ID), &
+ COLMAP (USEDEFAULTS,&
+ host=@GETENV('GGENVIRONMENT','HOSTNAME'),&
+ gg_group=@GETENV ('GGENVIRONMENT','GROUPNAME'),&
+ osuser=@GETENV ('GGENVIRONMENT','OSUSERNAME'),&
+ domain=@GETENV ('GGENVIRONMENT','DOMAINNAME'),&
+ ba_ind=@GETENV ('GGHEADER','BEFOREAFTERINDICATOR'),&
+ commit=@GETENV ('GGHEADER','COMMITTIMESTAMP'),&
+ pos=@GETENV ('GGHEADER','LOGPOSITION'),&
+ rba=@GETENV ('GGHEADER','LOGRBA'),&
+ tablename=@GETENV ('GGHEADER','TABLENAME'),&
+ optype=@GETENV ('GGHEADER','OPTYPE'));</copy>
+ ```
+ ![](./images/c13.png) c14
+
+ 2. REPLICAT IREP param file will look like 
+
+
+![](./images/c13.png) c15
+
+3. Open the Administration Server of the Target deployment i.e. Baston at http://localhost:17001. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process
+
+![](./images/c13.png) c16
+
+4. Open the terminal and log into SQLPLUS to do transaction on source DB (OGGOOW19) in table LOGON
+
+```
+<copy>sqlplus ggate/ggate@oggoow19</copy>
+```
+5. Run @insert_logon.sql script
+
+```
+<copy>@insert_logon.sql</copy>
+```
+![](./images/c13.png) c17
+
+6. Open the terminal and log into SQLPLUS to do look at the transactions replicated on target DB (OGGOOW191) in table *LOGON_AUDIT
+
+```
+ <copy>sqlplus ggate/ggate@oggoow191</copy>
+ ```
+ ```
+ <copy>select * from SOE.LOGON_AUDIT;</copy>
+ ```
+ ![](./images/c13.png) c18
+
+ 
 
 
 
