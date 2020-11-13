@@ -1,4 +1,3 @@
-@@ -1,1487 +0,0 @@
 # Oracle Audit Vault and DB Firewall (AVDF)
 
 ## Introduction
