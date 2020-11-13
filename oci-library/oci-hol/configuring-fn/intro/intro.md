@@ -2,6 +2,8 @@
 ## Introduction
 Get hands-on learning with training labs about Oracle cloud solutions. The workshops featured cover various solutions, skill levels, and categories based on Oracle Cloud Infrastructure (OCI). This workshop involves multiple components of the Oracle Cloud including the OCI Load Balancing Service, Networking, Compute and Oracle Cloud Shell.  
 
+Estimated workshop time: 90 minutes
+
 ### Oracle Functions
 
 The Oracle Functions service provides a way for developers to run code without worrying about hardware, operating systems, language runtimes, or containers. Oracle Functions are serverless and do not require infrastructure administration. There is no need to worry about instances or software patches/upgrades. Oracle Functions allow your app to be highly-available, scalable, secure, and monitored.
@@ -14,7 +16,7 @@ Watch the video below for a quick overview of Oracle Functions.
 
 [](youtube:C4cwkLPxGpc)
 
-## Additional Recommended Resources
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
@@ -30,7 +32,9 @@ Watch the video below for a quick overview of Oracle Functions.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer, NA Cloud
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-- **Last Updated By/Date** - Jaden McElvey, July 2020
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

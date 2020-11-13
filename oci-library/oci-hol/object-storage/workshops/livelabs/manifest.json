@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Create an Object Storage Service",
     "tutorials": [
       {
           "title": "Prerequisites",
@@ -7,11 +8,12 @@
       },
       {
           "title": "Introduction",
-          "filename": "./../../../intro/intro.md"
+          "filename": "./../../intro/intro.md"
       },
       {
           "title": "Lab 1: Create an Object Storage Service",
-          "filename": "./../../object-storage/object-storage.md"
+          "type": "livelabs",
+          "filename": "./../../object-storage.md"
       }
     ]
 }

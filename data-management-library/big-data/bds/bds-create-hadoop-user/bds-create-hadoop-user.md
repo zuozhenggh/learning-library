@@ -11,20 +11,20 @@ In this lab, you will map the private IP address of the **first master node** to
 ### Objectives
 
 * Map the private IP address of the first master node to a public IP address.
-* Connect to the cluster's first master node using Putty.
+* Connect to the cluster's first master node using PuTTY.
 * Create a new Kerberos principal.
 * Create a new Linux administrator user.
 * Access HDFS using the newly created user.
 * Add the new user to Hue.
 
 ### What Do You Need?
-This lab assumes that you have successfully completed all the labs in the **Contents** menu on the right.
+This lab assumes that you have successfully completed all the labs in the **Contents** menu.
 
-## **Step 1:** Gather Information About the Cluster
+## **STEP 1:** Gather Information About the Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Data & AI**, select **Big Data**.
+2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Data and AI**, select **Big Data**.
 
 3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
 
@@ -36,7 +36,7 @@ This lab assumes that you have successfully completed all the labs in the **Cont
 
   ![](./images/mn0-private-ip.png " ")
 
-## **Step 2:** Map the Private IP Address of the First Master Node to a Public IP Address
+## **STEP 2:** Map the Private IP Address of the First Master Node to a Public IP Address
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first master node** to a new public IP address.
 
@@ -47,13 +47,13 @@ In this step, you will set three variables using the **`export`** command. The v
 2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
     ```
-    $ <copy>export DISPLAY_NAME=<i>"traininmn0-public-ip"</i></copy>
+    $ <copy>export DISPLAY_NAME="traininmn0-public-ip"</copy>
     ```
 
 3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.   
 
     ```
-    $ <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
+    $ <copy>export SUBNET_OCID="subnet-ocid"</copy>
     ```
     **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab.
 
@@ -65,7 +65,7 @@ In this step, you will set three variables using the **`export`** command. The v
 4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
     ```
-    $ <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
+    $ <copy>export PRIVATE_IP="ip-address"</copy>
     ```
   **Note:** In the preceding command, substitute **_`ip-address`_** with your first master node's private IP address.
 
@@ -89,15 +89,16 @@ In this step, you will set three variables using the **`export`** command. The v
   ![](./images/mn0-reserved-public-ip.png " ")
 
 
-## **Step 3:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## **STEP 3:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
 The Kerberos Distribution Center (KDC) is running on the cluster's first master node. In this lab, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
 Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab,  we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH.
 
+ ```
+<b>$</b> <copy>ssh –i private_key username@public-ip-address</copy>
 ```
-<copy>ssh –i private_key username@public-ip-address</Copy>
-```
+
 **Note:** For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
 
@@ -127,7 +128,7 @@ _If you are already connected to your cluster's first master node using the Open
     ![](./images/traininmn0-connected.png " ")
 
 
-## **Step 4:** Create the **`training`** Administrator Kerberos Principal
+## **STEP 4:** Create the **`training`** Administrator Kerberos Principal
 
 In this step, you will create a new Kerberos principal named **`training`**. Identities in Kerberos are called principals. Every user and service that uses the Kerberos authentication protocol requires a principal to uniquely identify itself. There are user principals and service principals. User principal names, or UPNs, represent regular users such as **`training`**.
 
@@ -159,7 +160,7 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
 
     ![](./images/addprinc-training.png " ")
 
-## **Step 5:** Create the **`training`** Linux OS Administrator User
+## **STEP 5:** Create the **`training`** Linux OS Administrator User
 
 Create the **`training`** Linux administrator user and the OS group **`supergroup`**. Assign **`training`** the **`supergroup`** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
 
@@ -198,7 +199,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
 
     ![](./images/id-training.png " ")
 
-## **Step 6:** Access HDFS Using the New **`training`** Administrator User
+## **STEP 6:** Access HDFS Using the New **`training`** Administrator User
 
 Log into any of the Big Data Service nodes such as the **first master node**, get a Kerberos ticket for the **`training`** user, and then perform a file listing of HDFS:
 
@@ -222,7 +223,7 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
 
     ![](./images/no-ticket.png " ")
 
-## **Step 7:** Add the **`training`** User to Hue (optional)
+## **STEP 7:** Add the **`training`** User to Hue (optional)
 
 In this step, you log into Hue as an administrator and add the **`training`** user as an administrator. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
@@ -286,7 +287,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
 
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Want to Learn More?
 
@@ -306,6 +307,9 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 * **Authors:**
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, October 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

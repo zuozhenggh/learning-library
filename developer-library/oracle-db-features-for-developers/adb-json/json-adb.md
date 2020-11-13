@@ -202,7 +202,7 @@ Note: Remember to replace ***&YourGeoNameUsername*** with the username of your a
       begin   
         UTL_HTTP.SET_WALLET('');
 
-        t_http_req:= utl_http.begin_request('https://secure.geonames.org/countryInfoJSON?formatted=true&' || 'lang=en&' || 'country=ES&' || 'username=&YourGeoUsername&' || 'style=full','GET','HTTP/1.1');
+        t_http_req:= utl_http.begin_request('https://secure.geonames.org/countryInfoJSON?formatted=true&' || 'lang=en&' || 'country=countryCode&' || 'username=&YourGeoUsername&' || 'style=full','GET','HTTP/1.1');
         UTL_HTTP.SET_HEADER(t_http_req, 'User-Agent', 'Mozilla/4.0');
         t_http_resp:= utl_http.get_response(t_http_req);
         UTL_HTTP.read_text(t_http_resp, t_response_text);
@@ -378,5 +378,7 @@ Watch this video to learn more about JSON in the Oracle Database.
 - **Contributors** - Beda Hammerschmidt (Architect), Nilay Panchal, Anoosha Pilli & Troy Anthony (Product Management), Dylan McLeod (LiveLabs QA Intern)
 - **Last Updated By/Date** - Nilay Panchal, DB Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

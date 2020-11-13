@@ -43,7 +43,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
    ![Image alt text](images/db19c-freetier-step1-3.png " ")
 5.  Enter the name for your VCN:  **livelabsvcn**.  Click **next**.
    ![Image alt text](images/db19c-freetier-step1-4.png " ")
-6. Inspect and then accept all default values in the Configure Variables screen and click **Next**. 
+6. Inspect and then accept all default values in the Configure Variables screen and click **Next**.
    ![Image alt text](images/db19c-freetier-step1-5.png " ")
 7.  Review your selections and click **Next**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
@@ -73,12 +73,12 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-17.png " ")  
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
-   
-## **STEP 3**: Setup Compute Stack 
+
+## **STEP 3**: Setup Compute Stack
 
 Now that you have a network for your compute instance, it's time to create the compute instance.  
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
     - [db19c-compute-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xbuVfRwRZRhZCiGrsFOa3l_3mW3wyk3ZNl4pm7GzCak/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v1.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 
 2.  Save in your downloads folder.
@@ -91,11 +91,10 @@ Now that you have a network for your compute instance, it's time to create the c
 
     ![](./images/db19c-freetier-step3-1.png " ")
 
-4.  Click the **Browse** link and select the zip file (db19c-compute-livelabs.zip) that you downloaded. Click **Open**.
+4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (db19c-compute-livelabs.zip) that you downloaded. Click **Select**.
 
-    ![](./images/db19c-freetier-step3-2.png " ")
+    ![](./images/zip-file.png " ")
 
-    ![](./images/db19c-freetier-step3-4.png " ")
 
     Enter the following information:
 
@@ -154,7 +153,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 - Oracle Cloud Shell
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
-  
+
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
@@ -268,7 +267,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
-You may now *proceed to the next lab*. 
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
@@ -276,4 +275,4 @@ You may now *proceed to the next lab*.
 - **Last Updated By/Date** - Kay Malcolm, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

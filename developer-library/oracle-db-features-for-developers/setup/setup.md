@@ -12,9 +12,11 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the opc user*.  Run a *whoami* to ensure the value *opc* comes back.  If you are stil the oracle user, type the **exit** command to return back to opc)
 
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    ```
+    whoami
+    ```
 
     ````
-    whoami   
     <copy>
     cd /home/opc/
 
@@ -42,7 +44,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     ````
     ![](./images/oraenv.png " " )
 
-3.  Install the Sample Schemas by running the script below. 
+3.  Install the Sample Schemas by running the script below. Accept the default SID *ORCL* when prompted.
 
     ````
     <copy>
@@ -72,5 +74,7 @@ The above copyright notice and this permission notice shall be included in all c
 - **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

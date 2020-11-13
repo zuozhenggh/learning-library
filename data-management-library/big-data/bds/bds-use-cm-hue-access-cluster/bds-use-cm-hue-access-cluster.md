@@ -1,4 +1,4 @@
-#  Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
+#  Use Cloudera Manager and Hue to Access a BDS Cluster
 
 ## Introduction
 
@@ -18,13 +18,20 @@ In this lab, you will learn how to access CM and Hue directly in a web browser.
 
 ### What Do You Need?
 
-This lab assumes that you have successfully completed the following labs in the **Contents** menu on the right:
+This lab assumes that you have successfully completed the following labs in the **Contents** menu:
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 + **Lab 4: Access a BDS Node Using a Public IP Address**
 
-## **Step 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
+### Video Preview
+
+Watch a video demonstration of using Cloudera Manager and Hue to access a Big Data Service cluster
+
+[](youtube:dAGD1If39fw)
+
+
+## **STEP 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
 
 In this step, you will add ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Cloudera Manager on port **`7183`** and Hue on port **`8888`**.
 
@@ -81,7 +88,7 @@ In this step, you will add ingress security rules to the default security list i
 
   ![](./images/ingress-rules-added.png " ")
 
-## **Step 2:** Use Cloudera Manager to Access the Cluster
+## **STEP 2:** Use Cloudera Manager to Access the Cluster
 
 In this step, you will use CM to access the cluster. In an HA-cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in step 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
 
@@ -133,6 +140,7 @@ In this step, you will use CM to access the cluster. In an HA-cluster, CM runs o
 
     ![](./images/roles-table.png " ")
 
+
     **Note:**    
     You can hover over any icon in the table to display the name of the service or gateway.
 
@@ -142,7 +150,7 @@ In this step, you will use CM to access the cluster. In an HA-cluster, CM runs o
 
     ![](./images/logout-cm.png " ")
 
-## **Step 3:** Use Hue to Access the Cluster
+## **STEP 3:** Use Hue to Access the Cluster
 
 In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
@@ -153,6 +161,7 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
     ```
     https://<ip-address>:8888
     ```
+
     **Note:**    
     In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **second utility node** in your cluster, **`traininun1`**, which you created in the previous lab.
 
@@ -164,11 +173,11 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
 
 3. On the Hue Login screen, enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
 
-**Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
+    **Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
 
-  ![](./images/hue-login-page.png " ")
+    ![](./images/hue-login-page.png " ")
 
-  The **Hue Editor** page is displayed.
+    The **Hue Editor** page is displayed.
 
   ![](./images/hue-home-page.png " ")
 
@@ -181,7 +190,7 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
   ![](./images/hue-logout.png " ")
 
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Want to Learn More?
 
@@ -200,6 +209,9 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, October 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
