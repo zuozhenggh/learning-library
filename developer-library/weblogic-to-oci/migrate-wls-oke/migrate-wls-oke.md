@@ -534,7 +534,7 @@ appDeployments:
 
 ## **STEP 6:** Run the update-domain build job on Jenkins
 
-1. Go to the Jenkins UI at *http://<PRIVATE_LOAD_BALANCER_IP>/jenkins* using the tunnel setup earlier
+1. Go to the Jenkins UI at *http://PRIVATE_LOAD_BALANCER_IP/jenkins* using the tunnel setup earlier
 
 2. Click the top menu **Jenkins**
 
@@ -600,7 +600,7 @@ appDeployments:
 
   <img src="./images/oci-simpledb-app.png" width="100%">
 
-  You will be prompted ocne again with the self-sign certificate warning in Firefox
+  You will be prompted once again with the self-sign certificate warning in Firefox
 
 
 You may proceed to the next lab.

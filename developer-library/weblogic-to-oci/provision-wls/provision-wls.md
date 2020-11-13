@@ -24,11 +24,11 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 ## **STEP 1:** Provision the stack through the Marketplace
 
-1. Go to **Solutions and Platforms**
+1. Go to **Solutions and Platforms -> Marketplace -> Applications** 
 
   <img src="./images/provision-1.png" width="50%">
 
-2. In the search input, type "`weblogic`". For this lab, we'll use the **WebLogic Enterprise Edition UCM**
+2. In the search input, type "`weblogic`". For this lab, we'll use the **Oracle WebLogic Server Enterprise Edition UCM**
 
    <img src="./images/provision-2.png" width="100%">
 
@@ -176,31 +176,30 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 1. Go to **Outputs** (or you can find the same information at the bottom of the logs)
 
-
-*If you provisioned in a **Public Subnet***, you should see something like the following:
+- *If you provisioned in a **Public Subnet***, you should see something like the following:
 
   <img src="./images/provision-27.png" width="100%">
 
 
-  - Make a note of the **WebLogic Admin Server Public IP address** from the **WebLogic Admin Server Console URL** for later use.
+    - Make a note of the **WebLogic Admin Server Public IP address** from the **WebLogic Admin Server Console URL** for later use.
 
-  - Make a note of the **Load Balancer IP** for later use.
+    - Make a note of the **Load Balancer IP** for later use.
 
   You can copy/paste the **WebLogic Admin Console URL** in your browser and explore the provisioned WebLogic domain. You should find that there are no applications in **deployments** and no data sources in the **service->datasources** menu
 
-*If you provisioned in a **Private Subnet***, you should see something like the following:
+- *If you provisioned in a **Private Subnet***, you should see something like the following:
 
   <img src="./images/provision-28.png" width="100%">
 
-  - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
+    - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
 
-  - Make a note of the **Load Balancer IP** for later use.
+    - Make a note of the **Load Balancer IP** for later use.
 
-  - Make a note of the Bastion Instance **Public IP address** for later use.
+    - Make a note of the Bastion Instance **Public IP address** for later use.
 
   To access the WebLogic Admin console, you will need to create a tunnel through the bastion host to your local machine.
 
-  *If you used Docker*, open a new terminal session on your local machine, in the `weblogic-to-oci` folder, and export the following local variables (On Windows, use Putty for tunneling):
+- *If you used Docker*, open a new terminal session on your local machine, in the `weblogic-to-oci` folder, and export the following local variables (On Windows, use Putty for tunneling):
 
     ```bash
     <copy>
@@ -221,7 +220,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
     You can explore the provisioned WebLogic domain. You should find that there are no applications in **deployments** and no data sources in the **service->datasources** menu
 
-  *If you used the Marketplace demo image*, export the local variables:
+- *If you used the Marketplace demo image*, export the local variables:
 
     ```bash
     <copy>
@@ -257,7 +256,9 @@ Once the stack is provisioned, you can find the information regarding the URL an
     ```
     In this case we use the default ssh key created on that host and we bind the port to 0.0.0.0 so it is accessible outside.
 
-    You can then access the weblogic console provisioned on OCI on port 7002 on your 'on-premises' Public IP address. Make sure you use Firefox and go to `https://IP_OF_DEMO_INSTANCE:7002/console` with `https://` scheme to access as the WLS on OCI admin server uses SSL. You'll be prompted with the SSL self-signed certificate warning.
+    You can then access the weblogic console provisioned on OCI on port 7002 on your 'on-premises' Public IP address. Make sure you use *Firefox* and go to `https://IP_OF_DEMO_INSTANCE:7002/console` with `https://` scheme to access as the WLS on OCI admin server uses SSL. 
+    
+    You'll be prompted with the SSL self-signed certificate warning: click **Advanced** then **Accept the risk and continue**
 
 While the WebLogic instances are provisioning, it's possible to move forward with the Application Database provisioning as soon as the VCN is provisioned.
 
