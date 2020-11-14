@@ -1,5 +1,9 @@
 # Access your Cluster
 
+## Introduction
+In this lab, you will access your cluster.
+
+Estimated Lab Time: 10 minutes
 
 ## **STEP**: Access your Cluster
 

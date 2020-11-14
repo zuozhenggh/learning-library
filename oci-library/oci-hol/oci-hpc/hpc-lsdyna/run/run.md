@@ -1,5 +1,10 @@
 # Running LS-DYNA
 
+## Introduction
+In this lab, you will Run LS-DYNA.
+
+Estimated Lab Time: 10 minutes
+
 ## Running LS-DYNA
 Running LS-DYNA is pretty straightforward. To specify the host you need to run on, you need to create a machinefile. You can generate it as follow, or manually. Format is hostname:corenumber for both Platform and IntelMPI.
 

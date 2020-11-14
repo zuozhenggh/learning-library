@@ -1,0 +1,40 @@
+{
+    "workshoptitle": "Introduction to ODI Web with Autonomous Database Workshop",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction to ODI Web with Autonomous Database",
+            "description": "Introduction to ODI Web with Autonomous Database",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Set Permissions Enabling Discovery of Autonomous Databases",
+            "description": "Set Permissions Enabling Discovery of Autonomous Databases",
+            "filename": "./../../permissions/permissions.md"
+        },
+        {
+            "title": "Lab 2: Create an ADW Database and Seed Data",
+            "description": "Create an ADW Database and Seed Data",
+            "filename": "./../../create-adw-database/create-adw-database.md"
+        },
+        {
+            "title": "Lab 3: Create an ODI instance from Marketplace",
+            "description": "Create an ODI instance from Marketplace",
+            "filename": "./../../create-odi-instance/create-odi-instance.md"
+        },
+        {
+            "title": "Lab 4: Create an Autonomous Data Warehouse as an Additional Source",
+            "description": "Create an Autonomous Data Warehouse as an Additional Source",
+            "filename": "./../../additional-source/additional-source.md"
+        },
+        {
+            "title": "Lab 5: Create a Data Flow using ODI Web",
+            "description": "Create a Data Flow using ODI Web",
+            "filename": "./../../dataflow/dataflow.md"
+        }
+    ]
+}
