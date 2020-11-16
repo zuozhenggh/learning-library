@@ -25,7 +25,13 @@ In this lab you will tear down the infrastructure provisioned.
     </copy>
     ```
 
+    Note: the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment
+
 ### If you used the workshop image from the marketplace
+
+*If you intend on accessing the environment deployed after destroying the demo environment, you must extract the SSH key pair that was created inside the demo VM, or you will lose SSH access to the OCI environment*
+
+To destroy the demo VM:
 
 1. Go to **Resources Manager**
 
@@ -125,6 +131,6 @@ You need to terminate the DB subnet before you can tear down the WebLogic deploy
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

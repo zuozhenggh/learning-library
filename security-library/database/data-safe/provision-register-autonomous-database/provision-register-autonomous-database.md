@@ -4,9 +4,12 @@
 ## Introduction
 This lab shows you how to create an Autonomous Database in Oracle Cloud Infrastructure, register it with Oracle Data Safe, and load sample data into it. You also view the list of registered target databases from the Oracle Data Safe Console and from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console.
 
+- This is a test to link to [analyze alerts and audit reports](?lab=analyze-alerts-audit-reports)
+
 Estimated Lab Time: 30 minutes
 
 ### Objectives
+
 In this lab, you'll:
 
 - Provision an Autonomous Transaction Processing (ATP) database
@@ -15,21 +18,15 @@ In this lab, you'll:
 - Sign in to the Oracle Data Safe Console and view the list of registered target databases
 - View the list of registered target databases from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
 
-
 ### Prerequisites
 To complete this lab, you need to have the following:
 
 - An Oracle Cloud account
 - Access to a compartment in Oracle Cloud Infrastructure where you can create your Autonomous Database
 
-
 ### Assumptions
 
 - You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.
-
-
-
-
 
 ## **STEP 1**: Provision an Autonomous Transaction Processing database
 
@@ -77,8 +74,6 @@ To complete this lab, you need to have the following:
 
   ![Database AVAILABLE message](images/database-available.png)
 
-
-
 ## **STEP 2**: Register your Autonomous Database with Oracle Data Safe
 
 1. On the **Autonomous Database Information** tab, under **Data Safe**, click **Register**. If there is no **Register** option, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. Please contact your tenancy administrator to gain access to an appropriate region.
@@ -90,8 +85,6 @@ To complete this lab, you need to have the following:
 3. Wait for the registration process to finish. When registration is completed, the status reads **Registered**. By default, when you register an Autonomous Database, you are authorized to use the User Assessment, Security Assessment, and Activity Auditing features in Oracle Data Safe with your database.
 
     ![Status reads registered](images/status-registered.png)
-
-
 
 ## **STEP 3**: Run a SQL script using SQL Developer Web to load sample data into your database
 
@@ -105,7 +98,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 4. If a help note is displayed, click the **X** button to close it.
 
-5. Open the [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script in a text editor, such as NotePad.
+5. Open the [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script in a text editor, such as NotePad.
 
 6. Copy the entire script to the clipboard and then paste it into a worksheet in SQL Developer Web.
 
@@ -127,7 +120,6 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 10. If you don't see **HCM1** listed, sign out and sign in again. Click **SQL Worksheet**, and then on the **Navigator** tab, select the **HCM1** schema from the first drop-down list.
 
-
 11. On the toolbar, click the **Clear** button (trash can icon) to clear the worksheet.
 
 12. On the **Script Output** tab, click the **Clear output** button (trash can icon) to clear the output.
@@ -144,12 +136,11 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
       - `REGIONS` - 4 rows
       - `SUPPLEMENTAL_DATA` - 149 rows
 
-14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script.
+14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script.
 
 15. Sign out of SQL Developer Web and close the tab.
 
 ## **STEP 4**: Sign in to the Oracle Data Safe Console and view the list of registered target databases
-
 
 1. Return to the **Oracle Cloud Infrastructure** tab. The **Tools** subtab on the **Autonomous Database Details** page is where you last left off.
 
@@ -167,30 +158,23 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
       -  There is a filter set on your database name so that the dashboard displays data for your database only.
       - When you first sign in to the Oracle Data Safe Console, the charts in your dashboard do not contain data because you have not yet used any of the features.
 
-     ![Oracle Data Safe Dashboard](images/dashboard.png)
-
+    ![Oracle Data Safe Dashboard](images/dashboard.png)
 
 5. Click each top tab and review the content on the page.
 
     - The top tabs provide quick access to the dashboard (**Home** tab), registered target databases (**Targets** tab), the Oracle Data Safe Library (**Library** tab), reports for all Oracle Data Safe features (**Reports** tab), all of the alerts (**Alerts** tab), and all of the current and scheduled jobs (**Jobs** tab).
 
-     ![Top tabs in the Oracle Data Safe Console](images/top-tabs-data-safe-console.png)
-
+    ![Top tabs in the Oracle Data Safe Console](images/top-tabs-data-safe-console.png)
 
 6. Click each side tab and review the content on the page.
 
     - The side tabs provide quick access to the wizards for Oracle Data Safe's main features, including **Security Assessment**, **User Assessment**, **Data Discovery**, **Data Masking**, and **Activity Auditing**.
 
-     ![Side tabs in the Oracle Data Safe Console](images/side-tabs-data-safe-console.png)
-
-
+    ![Side tabs in the Oracle Data Safe Console](images/side-tabs-data-safe-console.png)
 
 7. Click the **Targets** tab. Notice that your database is listed as a target database.
 
-    ![Targets tab circled in the Oracle Data Safe Console](images/target-listed-on-targets-tab.png)
-
-
-
+  ![Targets tab circled in the Oracle Data Safe Console](images/target-listed-on-targets-tab.png)
 
 8. Click the name of your target database to view its details.
 
@@ -200,12 +184,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
       - You can view the compartment to which the database belongs. The compartment for an Autonomous Database is the same compartment in Oracle Cloud Infrastructure in which the database resides.
       - Oracle Data Safe connects to the database via a TLS connection.
 
-
 10. Click **Cancel** to close the **Target Details** dialog box.
-
-
-
-
 
 ## **STEP 5**: View the list of registered target databases from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
 
@@ -228,9 +207,7 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
 
     ![Registered Databases tab in OCI](images/access-data-safe-console-from-registered-databases-tab.png)
 
-
 You may now proceed to the next lab.
-
 
 ## Learn More
 
@@ -241,10 +218,9 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, October 29, 2020
+  * **Last Updated By/Date** - Jody Glover, November 3, 2020
 
-
-  ## Need Help?
-  Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+## Need Help?
+  Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
   If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

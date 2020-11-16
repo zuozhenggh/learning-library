@@ -1,11 +1,11 @@
 # Introduction
 
 ## About this Workshop
-In this lab you will using a compute instance in OCI to simulate the on-premise database, which is deployed in one region (For example: Seoul). The standby cloud database is deployed in another region (For example: Tokyo). The primary and the standby database communicate through public internet.
+In this workshop you will be using a compute instance in OCI to simulate the on-premise database, which is deployed in one region (For example: Seoul). The standby cloud database is deployed in another region (For example: Tokyo). The primary and the standby database communicate through public internet.
 
-When provisioning Database Cloud Services in OCI, there are 2 options to for the storage management. One is **Oracle Grid Infrastructure** which is using ASM to manage the database files. The other is **Logical Volume Manager** which is using the File System to manage the database files. In Lab3, please choose the right one according to your requirement. When doing Lab5, choose Lab5A for LVM or Lab5B for ASM.
+When provisioning Database Cloud Services in OCI, there are 2 options for the storage management. One is **Oracle Grid Infrastructure** which is using ASM to manage the database files. The other is **Logical Volume Manager** which is using the File System to manage the database files. In Lab 3, please choose the right one according to your requirement. When doing Lab 5, choose Lab 5A for LVM or Lab 5B for ASM.
 
-Estimated Lab Time: 5 hours
+Estimated Workshop Time: 5 hours
 
 ### About ADG
 Oracle’s Maximum Availability Architecture (Oracle MAA) is the best practices blueprint for data protection and availability for Oracle databases deployed on private, public or hybrid clouds. Data Guard and Active Data Guard provide disaster recovery (DR) for databases with recovery time objectives (RTO) that cannot be met by restoring from backup. Customers use these solutions to deploy one or more synchronized replicas (standby databases) of a production database (the primary database) in physically separate locations to provide high availability, comprehensive data protection, and disaster recovery for mission-critical data. 
@@ -41,12 +41,10 @@ In this lab, you will:
 - [Oracle Database 19c](https://www.oracle.com/database/)
 
 ## Acknowledgements
-* **Author** - Minqiao Wang, DB Product Management, Oct 2020
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
-* **Workshop (or Lab) Expiry Date** - <Month Year> 
+* **Author** - Minqiao Wang, DB Product Management
+* **Last Updated By/Date** - Minqiao Wang, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
