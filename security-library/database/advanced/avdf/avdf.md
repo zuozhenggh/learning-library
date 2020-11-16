@@ -1,3 +1,4 @@
+@@ -1,1487 +0,0 @@
 # Oracle Audit Vault and DB Firewall (AVDF)
 
 ## Introduction
@@ -64,73 +65,71 @@ This lab assumes you have:
 |19| MySQL Audit Collection | 5 minutes|
 -->
 
-## **STEP 0**: Audit Vault - Initialize ADVF Web Console
+## **STEP 1**: Audit Vault - Run the Deploy Agent
 
-Before starting the labs, you must enable the workshop pre-configured AVDF Web Console
+1. To perform the Audit Vault labs, you must run this script to enable the pre-configure Audit Vault Server for this workshop
 
-1. Open a SSH session on your **AVS VM as *opc* User**
+    - Open a SSH session on your **AVS VM as *opc* User**
 
-2. Initialize the ADVF Console Login
+    - Initialize the Audit Vault server
 
       ````
       <copy>sudo /root/bootstrap/fix-apex-login.sh</copy>
       ````
 
-3. Close the session
+    - Close the session
 
-## **STEP 1**: Audit Vault - Run the Deploy Agent
-
-1. Open a SSH session on your **DBSec-Lab VM as *oracle* User**
+2. Now, open a SSH session on your **DBSec-Lab VM as *oracle* User**
 
       ````
       <copy>sudo su - oracle</copy>
       ````
 
-2. Go to the scripts directory
+3. Go to the scripts directory
 
       ````
       <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Deploy_Agent</copy>
       ````
 
-3. The first script will unpack the `avcli.jar` utility so we can automate most of the agent, host, and audit trail deployment
+4. The first script will unpack the `avcli.jar` utility so we can automate most of the agent, host, and audit trail deployment
 
       ````
       <copy>./01_deploy_avcli.sh</copy>
       ````
 
-4. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
+5. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
 
       ````
       <copy>./02_register_host.sh</copy>
       ````
 
-5. Your output will look similar to this but your `Activation Key` will be different
+6. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-001.png " ")
 
-6. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
+7. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
 
       ````
       <copy>./03_deploy_avagent.sh</copy>
       ````
 
-7. Once deployed, we will need to activate the Audit Vault Agent. Remember the activation key we saw above and paste the key when prompted.
+8. Once deployed, we will need to activate the Audit Vault Agent. Remember the activation key we saw above and paste the key when prompted.
 
       ````
       <copy>./04_activate_avagent.sh</copy>
       ````
 
-8. Your output will look similar to this but your `Activation Key` will be different
+9. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-002.png " ")
 
-9. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
+10. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
 
       ````
       <copy>./05_show_host.sh</copy>
       ````
 
-10. Notice the output says `Running` for the Agent Status column
+11. Notice the output says `Running` for the Agent Status column
 
    ![](./images/avdf-003.png " ")
 
@@ -329,7 +328,7 @@ Execute the script to generate the creation of a PL/SQL function, creating a tab
 
 `./01_stored_procedure.sh`
 
-Next, using a web browser, login to Audit Vault as `AVAUDITOR` and the password `T06tron.` with the `dot` included in the password.
+Next, using a web browser, login to Audit Vault as `AVAUDITOR` and the password *"T06tron."* with the `dot` included in the password.
 
    ![](images/login_avauditor01.png " ")
 
@@ -371,14 +370,14 @@ You have completed the lab.
 In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. For ease of execution, the required step from the Database Security Assessment Tool (DBSAT) lab was performed and the output saved. The first step here will help download and stage it accordingly.
 
 1. Download and stage the sensitive data to `/home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data`
-  - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
-  - Now we need to become `oracle` User
+    - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+    - Now we need to become `oracle` User
 
     ````
     <copy>su - oracle</copy>
     ````
 
-  - Once we have switched to `oracle`, download and stage the file
+    - Once we have switched to `oracle`, download and stage the file
 
     ````
     <copy>
@@ -386,7 +385,7 @@ In this lab you will use the results from a Database Security Assessment Tool (D
     </copy>
     ````
 
-2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
+2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user *"AVADMIN"*:
 
     - Open an SSH session to your **AVS VM** as user *opc*
     - Now we need to become `oracle` User
@@ -589,7 +588,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
 **Configure a new Audit Trail**
 
-14. Using a web browser, login to the Audit Vault Web Console as `AVADMIN` with the password "*T06tron.*"
+14. Using a web browser, login to the Audit Vault Web Console as *"AVADMIN"* with the password "*T06tron.*"
 
 15. Click the `Targets` tab
 
@@ -659,7 +658,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
 In this lab you will modify the Database Firewall connection for the pluggable database, `pdb1`
 
-1. Login to the Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+1. Login to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -671,18 +670,14 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 5. Enter the following information for our new `Alert`
 
-    - Alert Name: `CREATE USER`
-    - Type: `Oracle Database`
-    - Severity: `Warning`
-    - Threshold (times): `1`
-    - Duration (min): `0`
-    - Group By (Field): `- Select Field - `
-    - Description: `Alert on CREATE USER statements`
-    - Condition: ` :EVENT_NAME = 'CREATE USER'`
-    - Template: `Alert Notification Template`
-    - Distribution List: `-- No Distribution List --`
-    - To: `null`
-    - Cc: `null`
+    - Alert Name: *CREATE USER*
+    - Type: *Oracle Database*
+    - Severity: *Warning*
+    - Threshold (times): *1*
+    - Duration (min): *0*
+    - Description: *Alert on CREATE USER statements*
+    - Condition: *:EVENT_NAME = 'CREATE USER'*
+    - Template: *Alert Notification Template*
 
 6. Your `Alert` should look like the following screenshot:
 
@@ -722,27 +717,40 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
     **Note**: Once you understand how to create an alert, feel free to create another and test it manually.
 
-## **STEP 9**: DB Firewall - Add the Firewall Monitoring
+## **STEP 9**: DB Firewall - Register the DB Firewall Server
 
-1. Login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+1. To perform the DB Firewall labs, you must run this script to enable the pre-configure DB Firewall Server for this workshop
+
+    - Open a SSH session on your **DBF VM as *opc* User**
+    - Start NetworkManager
+
+      ````
+      <copy>
+      sudo systemctl start NetworkManager
+      </copy>
+      ````
+
+    - Close the session
+
+2. Login to the Audit Vault Web Console at `https://<YOUR_AVS-VM_PUBLIC-IP>` as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
-2. Click on `Database Firewalls` tab
+3. Click on `Database Firewalls` tab
 
-3. Click on `dbfw` Database Firewall Name
+4. Click on `dbfw` Database Firewall Name
 
    ![](images/dbfw_details01.png " ")
 
-4. Click `Network Settings`
+5. Click `Network Settings`
 
    ![](images/dbfw_network_settings01.png " ")
 
-5. Click on `eth0`
+6. Click on `eth0`
 
    ![](images/eth0_details01.png " ")
 
-6. To add a `Proxy Port`
+7. To add a `Proxy Port`
     - Click [**Add**]
     - Name it `dbfw_proxy`
     - Use the port `15223`
@@ -750,28 +758,28 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
    ![](images/add_proxy_port01.png " ")
 
-7. Your Database Firewall Network Settings should now look like this:
+8. Your Database Firewall Network Settings should now look like this:
 
    ![](images/dbfw_network_settings_final01.png " ")
 
-8. Now, you will enable Database Firewall Monitoring for `pdb1` using the Proxy Port we just created
+9. Now, you will enable Database Firewall Monitoring for `pdb1` using the Proxy Port we just created
 
-9. Click the `Targets` tab
+10. Click the `Targets` tab
 
-10. Click `pdb1`
+11. Click `pdb1`
 
-11. In the `Database Firewall Monitoring` section of this page, click [**Add**]
+12. In the `Database Firewall Monitoring` section of this page, click [**Add**]
 
-12. Fill out the following details
+13. Fill out the following details
 
     - Database Firewall: `dbfw`
     - Mode: `Monitoring / Blocking (Proxy)`
     - Network Interface Card: `eth0`
     - Proxy Ports: `dbfw_proxy (15223)`
 
-13. Click [**Add**]
+14. Click [**Add**]
 
-14. Fill out the fields as following
+15. Fill out the fields as following
     - Host Name / IP Address: `10.0.0.150`
     - Port: `1521`
     - Service Name: `pdb1`
@@ -782,19 +790,19 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     - Ensure you use the IP Address not the hostname because the DBSecLab VMs are using DNS!
     - This is a demonstration environment limitation not an AVDF limitation
 
-15. Click [**Save**]
+16. Click [**Save**]
 
-16. The result should look like this:
+17. The result should look like this:
 
    ![](images/dbfw_network_settings_final02.png " ")
 
-17. Now, verify connectivity between the database and the DB Firewall: go back to your terminal session and go to the scripts directory
+18. Now, verify connectivity between the database and the DB Firewall: go back to your terminal session and go to the scripts directory
 
       ````
       <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Add_Firewall_Monitor</copy>
       ````
 
-18. Verify connectivity **without** the Database Firewall
+19. Verify connectivity **without** the Database Firewall
 
       ````
       <copy>./01_sqlplus_without_dbfw.sh</copy>
@@ -805,7 +813,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     - You should see that the connection shows an IP Address of `10.0.0.150` which is the IP Address of the DBSec-Lab VM
     - This verifies that you are connecting **directly** to the `pdb1` pluggable database
 
-19. Now, verify connectivity **with** the Database Firewall
+20. Now, verify connectivity **with** the Database Firewall
 
       ````
       <copy>./02_sqlplus_with_dbfw.sh</copy>
@@ -881,7 +889,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 **Set the NTP Server**
 
-1. Login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+1. Login to the Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
@@ -899,7 +907,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 **Enable Unique Logging**
 
-8. Login to the Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+8. Login to the Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -962,7 +970,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 Sometimes DB Firewall activity may take 5 minutes to appear in the Database Firewall Activity Reports
 
-24. In your web browser, log back to the Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+24. In your web browser, log back to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
 25. Click `Reports`
 
@@ -1022,7 +1030,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
 **Create a Database Firewall Policy**
 
-4. Login to the Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+4. Login to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -1218,7 +1226,7 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
       <copy>sudo -u postgres ./01_init_postgreSQL.sh</copy>
       ````
 
-3. Next, using a web browser, login to Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+3. Next, using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
@@ -1271,7 +1279,7 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
       <copy>./02_pgsql_auditable_commands.sh</copy>
       ````
 
-11. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+11. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -1313,7 +1321,7 @@ Audit Vault can collect and report on the operating system audit data
       <copy>./01_setup_linux_auditing.sh</copy>
       ````
 
-3. Next, using a web browser, login to Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+3. Next, using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
@@ -1351,7 +1359,7 @@ Audit Vault can collect and report on the operating system audit data
       <copy>./02_generate_audit_activity.sh</copy>
       ````
 
-10. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
+10. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
    ![](images/login_avauditor01.png " ")
 
@@ -1381,7 +1389,7 @@ Audit Vault can collect and report on the operating system audit data
 - You must have an Microsoft Active Directory Server 2016 or higher available in the same VCN as the DBSecLab VMs (DBsec-lab, AV, DBFW, OKV)
 - You must have the knowledege to configure the MS AD 2016 server appropriately
 
-1. Using a web browser, login to Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
+1. Using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
    ![](images/login_avadmin01.png " ")
 
