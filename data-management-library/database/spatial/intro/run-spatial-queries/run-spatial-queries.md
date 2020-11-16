@@ -30,10 +30,17 @@ explanation...
 **Identify 5 closest branches to the the Dallas Warehouse:**
 ```
 <copy> 
-select branch_name, branch_type
-from branches b, warehouses w
-where w.warehouse_name = 'Dallas Warehouse'
-and sdo_nn(b.geometry, w.geometry, 'sdo_num_res=5') = 'TRUE';
+SELECT
+    BRANCH_NAME,
+    BRANCH_TYPE
+FROM
+    BRANCHES    B,
+    WAREHOUSES  W
+WHERE
+    W.WAREHOUSE_NAME = 'Dallas Warehouse'
+    AND SDO_NN(
+        B.GEOMETRY, W.GEOMETRY, 'sdo_num_res=5'
+    ) = 'TRUE';
 </copy>
 ```
 
@@ -46,11 +53,24 @@ Notes:
 **Identify 5 closest branches to the the Dallas Warehouse with distance:**
 ```
 <copy>
-select branch_name, branch_type, round(sdo_nn_distance(1),2) distance_km
-from branches b, warehouses w
-where w.warehouse_name = 'Dallas Warehouse'
-and sdo_nn(b.geometry, w.geometry, 'sdo_num_res=5 unit=km', 1) = 'TRUE'
-order by distance_km;
+SELECT
+    BRANCH_NAME,
+    BRANCH_TYPE,
+    ROUND(
+        SDO_NN_DISTANCE(
+            1
+        ), 2
+    ) DISTANCE_KM
+FROM
+    BRANCHES    B,
+    WAREHOUSES  W
+WHERE
+    W.WAREHOUSE_NAME = 'Dallas Warehouse'
+    AND SDO_NN(
+        B.GEOMETRY, W.GEOMETRY, 'sdo_num_res=5 unit=km', 1
+    ) = 'TRUE'
+ORDER BY
+    DISTANCE_KM;
 </copy>
 ```
 
@@ -61,16 +81,29 @@ Notes:
 * The ORDER BY DISTANCE clause ensures that the distances are returned in order, with the shortest distance first.
 
 
-**Identify 5 closest wholesale branches to the the Dallas Warehouse with distance:**
+**Identify 5 closest WHOLESALE branches to the the Dallas Warehouse with distance:**
 ```
 <copy>
-select branch_name, branch_type, round(sdo_nn_distance(1),2) distance_km
-from branches b, warehouses w
-where w.warehouse_name = 'Dallas Warehouse'
-and b.branch_type='WHOLESALE'
-and sdo_nn(b.geometry, w.geometry, 'sdo_batch_size=5 unit=km', 1) = 'TRUE'
-and rownum <= 5
-order by distance_km;
+SELECT
+    BRANCH_NAME,
+    BRANCH_TYPE,
+    ROUND(
+        SDO_NN_DISTANCE(
+            1
+        ), 2
+    ) DISTANCE_KM
+FROM
+    BRANCHES    B,
+    WAREHOUSES  W
+WHERE
+    W.WAREHOUSE_NAME = 'Dallas Warehouse'
+    AND B.BRANCH_TYPE = 'WHOLESALE'
+    AND SDO_NN(
+        B.GEOMETRY, W.GEOMETRY, 'sdo_batch_size=5 unit=km', 1
+    ) = 'TRUE'
+    AND ROWNUM <= 5
+ORDER BY
+    DISTANCE_KM;
 </copy>
 ```
 
@@ -83,14 +116,17 @@ Notes:
 **Identify branches within 50km of Houston Warehouse:**
 ```
 <copy>
-select b.branch_name, b.branch_type
-from branches b, warehouses w
-where w.warehouse_name = 'Houston Warehouse'
-and sdo_within_distance (
-  b.geometry,
-  w.geometry,
-  'distance = 50 unit=km') 
-  = 'TRUE';
+SELECT
+    B.BRANCH_NAME,
+    B.BRANCH_TYPE
+FROM
+    BRANCHES    B,
+    WAREHOUSES  W
+WHERE
+    W.WAREHOUSE_NAME = 'Houston Warehouse'
+    AND SDO_WITHIN_DISTANCE(
+        B.GEOMETRY, W.GEOMETRY, 'distance=50 unit=km'
+    ) = 'TRUE';
 </copy>
 ```
 
@@ -104,20 +140,24 @@ Notes:
 
 ```
 <copy>
-select b.branch_name, b.branch_type,
-       round(
-         sdo_geom.sdo_distance(
-           b.geometry,
-           w.geometry,
-           0.05, 'unit = km'), 2) as distance_km
-from branches b, warehouses w
-where w.warehouse_name = 'Houston Warehouse'
-and sdo_within_distance (
-  b.geometry,
-  w.geometry,
-  'distance = 50 unit=km') 
-  = 'TRUE'
-order by distance_km;
+SELECT
+    B.BRANCH_NAME,
+    B.BRANCH_TYPE,
+    ROUND(
+        SDO_GEOM.SDO_DISTANCE(
+            B.GEOMETRY, W.GEOMETRY, 0.05, 'unit=km'
+        ), 2
+    ) AS DISTANCE_KM
+FROM
+    BRANCHES    B,
+    WAREHOUSES  W
+WHERE
+    W.WAREHOUSE_NAME = 'Houston Warehouse'
+    AND SDO_WITHIN_DISTANCE(
+        B.GEOMETRY, W.GEOMETRY, 'distance=50 unit=km'
+    ) = 'TRUE'
+ORDER BY
+    DISTANCE_KM;
 </copy>
 ```
 
@@ -132,39 +172,50 @@ Notes:
 
 ```
 <copy>
-select b.branch_name, b.branch_type
-from branches b, coastal_zone c
-where sdo_inside (
-  b.geometry,
-  c.geometry) 
-  = 'TRUE';
+SELECT
+    B.BRANCH_NAME,
+    B.BRANCH_TYPE
+FROM
+    BRANCHES      B,
+    COASTAL_ZONE  C
+WHERE
+    SDO_INSIDE(
+        B.GEOMETRY, C.GEOMETRY
+    ) = 'TRUE';
 </copy>
 ```
 
 Notes:
 
 
-**Identify branches outside but within 10km of coastal zone:**
+**Identify branches outside and within 10km of coastal zone:**
 
 ```
 <copy>
-select * from 
- ( 
-  select b.branch_name, b.branch_type,
-        round(
-          sdo_geom.sdo_distance(
-            b.geometry,
-            c.geometry,
-            0.05, 'unit = km'), 2) as distance_km
- from branches b, coastal_zone c
- where sdo_within_distance (
-   b.geometry,
-   c.geometry,
-   'distance = 10 unit=km') 
-   = 'TRUE'
-  order by distance_km
- )
-where distance_km>0;
+
+( SELECT
+    B.BRANCH_NAME,
+    B.BRANCH_TYPE
+FROM
+    BRANCHES      B,
+    COASTAL_ZONE  C
+WHEREƒ
+    SDO_WITHIN_DISTANCE(
+        B.GEOMETRY, C.GEOMETRY, 'distance=10 unit=km'
+    ) = 'TRUE'
+)
+MINUS
+( SELECT
+    B.BRANCH_NAME,
+    B.BRANCH_TYPE
+FROM
+    BRANCHES      B,
+    COASTAL_ZONE  C
+WHERE
+    SDO_ANYINTERACT(
+        B.GEOMETRY, C.GEOMETRY
+    ) = 'TRUE'
+);
 </copy>
 ```
 
