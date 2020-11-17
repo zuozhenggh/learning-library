@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Lift and Shift JDE to OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
