@@ -37,6 +37,6 @@ Lab 7  –  Active - Active Replication
 
 Lab 8  –  GoldenGate Column Conversions
 
-Lab 9a -  GoldenGate PostgreSQL as a source
+Lab 9 -  GoldenGate PostgreSQL Installation
 
-Lab 9a -  GoldenGate PostgreSQL as a target
+Lab 10 -  GoldenGate PostgreSQL One Way PG to OG Replication
