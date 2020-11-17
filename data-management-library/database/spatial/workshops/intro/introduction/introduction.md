@@ -20,14 +20,14 @@ For more information please visit [https://oracle.com/goto/spatial] (https://ora
 
 ## Workshop Overview
 
-In this workshop you will create and configure spatial data and perform some basic spatial queries.  The scenario involves WAREHOUSES, BRANCHES, and a COASTAL\_ZONE. The WAREREHOUSES and BRANCHES are points, and the COASTAL\_ZONE is a polygon. You will create and configure these spatial tables, and then perform spatial queries to identify items on proximity and containment.
+In this workshop you will create and configure spatial data and perform some basic spatial queries.  The scenario involves WAREHOUSES, BRANCHES, and a COASTAL\_ZONE. The WAREHOUSES and BRANCHES are points, and the COASTAL\_ZONE is a polygon. You will create and configure these spatial tables, and then perform spatial queries to identify items on proximity and containment.
 
 
 ## Acknowledgements
 
-- **Authors/Contributors** - David Lapp
-- **Last Updated By/Date** - 
-- **Workshop Expiration Date** - 
+* **Author** - David Lapp, Database Product Management, Oracle, November 2020
+<!-- - **Last Updated By/Date**  -->
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
