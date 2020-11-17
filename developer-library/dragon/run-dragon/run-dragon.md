@@ -4,106 +4,17 @@
 
 This lab walks you through the steps to download, install and run the DRAGON stack. <more>
 
-Estimated Lab Time:  minutes
+Estimated Lab Time:  10 minutes
 
 ### About DRAGON
-The DRAGON stack consists of _D_ata, _R_eact components, _A_utonomous Database, _G_raalVM, _O_racle REST data services, and _N_ode.js. In this short workshop, you'll download the stack and deploy the stack to Oracle Cloud.
+The DRAGON stack is designed to speed up you development of applications that leverage the power of Oracle Autonomous Database. In this short workshop, you'll download the stack and deploy the stack to Oracle Cloud.
 
 
 ### Prerequisites
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1:** Prepare SSH Keys Pairs, Create an Auth Token and collect data
 
-You need to collect the credentials below.  You will need an OCI user able to call APIs with these credentials.
-
-   - RSA key pair in PEM format (minimum 2048 bits).
-   - Fingerprint of the public key.
-   - Tenancy OCID and user OCID.
-
-1.  Start the Oracle Cloud shell. Go to your Cloud console and click the cloud shell icon at the top right of the page.
-
-    ![](./images/cloudshellopen.png " ")
-
-    ![](./images/cloudshellsetup.png " ")
-
-    ![](./images/cloudshell.png " ")
-
-1. Create a `.oci` directory to store the credentials:
-
-    ```
-    <copy>mkdir ~/.oci</copy>
-    ```
-
-2. Generate the private key with one of the following commands.
-
-    ```
-    <copy>openssl genrsa -out ~/.oci/oci_api_key.pem 2048</copy>
-    ```
-
-3. Ensure that only you can read the private key file:
-
-    ```
-    <copy>chmod go-rwx ~/.oci/oci_api_key.pem</copy>
-    ```
-
-4. Generate the public key:
-
-    ```
-    <copy>openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem</copy>
-    ```
-
-5. Cat the public key. Copy all the content of the public key.
-
-    ```
-    <copy>cat ~/.oci/oci_api_key_public.pem</copy>
-    ```
-
-6. Get the key's fingerprint with the following OpenSSL command. If you are using Windows you can get the fingerprint with Git Bash for Windows.
-
-    ```
-    <copy>openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c</copy>
-    ```
-
-   When you upload the public key in the Console, the fingerprint is also automatically displayed there.
-
-7. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add Public Key**.
-   ![](./images/select-user.png " ")
-   ![](./images/create-api-key.png " ")
-
-8. Paste the content of oci\_api\_key\_public.pem copied earlier and click **Add**. A new finger print will be generated. Compare the fingerprint in the output of config file to the one in OCI console window and make sure they match.
-   ![](./images/add-public-key.png " ")
-
-  Make a note of the fingerprint for later.
-
-  To see more information about generating the keys and finding your OCIDs, refer to [API Signing Key](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
-
-9. On the User Details page, copy the user OCID and save it for later:
-
-  ![](images/user-ocid.png)
-
-10. Click on the user icon again and click **Tenancy: <tenancy-name>**, then copy and save the tenancy OCID for later:
-
-  ![](images/tenancy-ocid.png)
-
-<if type="livelabs">
-11. From the Oracle Cloud menu, select **Governance** -> **Compartment Explorer**.
-
-  ![](images/compartment-explorer.png)
-
-12. Select the compartment assigned to you from the left, then click on the compartment link above.
-
-  ![](images/select-compartment.png)
-</if>
-13. From your compartment details page, copy the compartment OCID and save it for later.
-
-  ![](images/compartment-details.png)
-
-14. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) to determine your region code. Save it for later.
-
-
-## **STEP 2**: Download the DRAGON Stack
+## **STEP 1**: Download the DRAGON Stack
 
 1. In Cloud Shell, change directories to your home directory:
 
@@ -343,7 +254,7 @@ You need to collect the credentials below.  You will need an OCI user able to ca
     $ <copy>./dragon-linux-x86_64-2.0.0 -destroy</copy>
     ```
 
-Contratulations! You have complete the workshop!
+Congratulations! You have complete the workshop!
 
 ## Learn More
 
