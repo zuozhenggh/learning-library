@@ -20,9 +20,9 @@ Estimated lab time: 10 minutes
 
 ### Prerequisites
 
--   This lab requires completion of the preceding 4 labs in the Contents menu on the left.
+-   This lab requires completion of the preceding labs in the Contents menu on the left.
 
-## **Step 1:** Querying Tables
+## **STEP 1:** Querying Tables
 
 In this section, you execute the `SELECT` statement to retrieve data from tables and views. You can select rows and columns that you want to return in the output. In its simplest form, a `SELECT` statement must contain the following:
 -   A `SELECT` clause, which specifies columns containing the values to be matched
@@ -45,7 +45,7 @@ In this section, you execute the `SELECT` statement to retrieve data from tables
 
     ![](./images/select-promo-name-promo-end-date-from-promotions.png " ")
 
-## **Step 2:** Restricting Data
+## **STEP 2:** Restricting Data
 In this section, you use the `WHERE` clause to restrict the rows that are returned from the `SELECT` query. A `WHERE` clause contains a condition that must be met. It directly follows the `FROM` clause. If the condition is true, the row that meets the condition is returned.
 
 1. Modify the `SELECT` statement. Execute the following query to restrict the number of rows to where the `PROMO_SUBCATEGORY` has a value of `radio commercial`:
@@ -58,7 +58,7 @@ In this section, you use the `WHERE` clause to restrict the rows that are return
 
     ![](./images/where-promo-subcategory-equals-radio-commercial.png " ")
 
-## **Step 3:** Sorting Data
+## **STEP 3:** Sorting Data
 
 In this section, you use the `ORDER BY` clause to sort the rows that are retrieved from the `SELECT` statement. You specify the column based on the rows that must be sorted. You also specify the `ASC` keyword to display rows in ascending order (default), and you specify the `DESC` keyword to display rows in descending order.
 
@@ -86,7 +86,7 @@ In this section, you use the `ORDER BY` clause to sort the rows that are retriev
 
   ![](./images/order-by-cust-year-of-birth-desc.png " ")  
 
-## **Step 4:**  Ranking Data
+## **STEP 4:**  Ranking Data
 
 In this section, you use the `RANK ()` function to rank the rows that are retrieved from the `SELECT` statement. You can use the RANK function as an **aggregate**  function (takes multiple rows and returns a single number) or as an **analytical** function (takes criteria and shows a number for each record).
 
@@ -121,6 +121,6 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt
 - **Last Updated By/Date** - Rick Green, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
