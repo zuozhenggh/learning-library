@@ -1,6 +1,5 @@
 # Lab - reset
 
-Update November 09, 2020
 
 ## GoldenGate Micro Services : Reset Lab
 

@@ -37,17 +37,12 @@
 
      {
       "title": "Lab 5: Create Replication",
-      "description": "Create Replication",
+      "description": "GG Replication",
       "filename": "../../gg-microservices-workshop-create-replication/gg-microservices-workshop-create-replication.md"
-    },
-    {
-      "title": "Lab 6: Active Active Replication",
-      "description": "Active - Active Replication",
-      "filename": "../../gg-microservices-workshop-active-active-setup-with-auto-cdr/gg-microservices-workshop-active-active-setup-with-auto-cdr.md"
     },
   
     {
-      "title": "Lab 7: High Availability / Disaster Recovery Replication",
+      "title": "Lab 7: HA/DR Replication",
       "description": "Hign Availability / Disaster Recovery Replication",
       "filename": "../../gg-microservices-workshop-high-availability-disaster-recovery/gg-microservices-workshop-high-availability-disaster-recovery.md"
     },
