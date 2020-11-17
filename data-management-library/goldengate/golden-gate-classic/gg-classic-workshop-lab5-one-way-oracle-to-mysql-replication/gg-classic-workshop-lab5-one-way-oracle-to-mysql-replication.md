@@ -107,15 +107,15 @@ checkpointtable ggadmin.ggchkpoint
 <copy./ggsci</copy>
 ````
 >
-**OGG Credential Store**
+4. **OGG Credential Store**
 
 In GGSCI, create the OGG Credential Store by executing the command: 
 ````
 <copy>add credentialstore</copy>
 ````
-4. Add OGG database user credentials into each credential store.
+5. Add OGG database user credentials into each credential store.
 
-**Oracle**
+6. **Oracle**
 
 ````
     <copy>alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture</copy>
@@ -128,7 +128,7 @@ In GGSCI, create the OGG Credential Store by executing the command:
 <copy>alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest</copy>
 ````
        
-**MySQL**
+7. **MySQL**
 ````
 <copy>alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture</copy>
 ````
@@ -177,7 +177,7 @@ Command:
 ````
 <copy>info masterkey</copy>
 ````
-1.  GGSCI (ogg-ggbd) 5> 
+6.  GGSCI (ogg-ggbd) 5> 
 
 ````
 <copy>./ggsci</copy>
@@ -186,7 +186,7 @@ Command:
 ````
 <copy>info masterkey</copy>
 ````
-Masterkey Name: OGG_DEFAULT_MASTERKEY
+7. Masterkey Name: OGG_DEFAULT_MASTERKEY
 
 Version         Creation Date                            Status
 2020-09-10T15:22:28.000+00:00   Current
@@ -200,9 +200,9 @@ alter pluggable database PDBWEST open;</copy>
 
 1.  In GGSCI, create the OGG Replicat Checkpoint Table by executing the commands:
 
-**Oracle**
+2. **Oracle**
 
-2. Connect to the target database: 
+Connect to the target database: 
 ````
 <copy>dblogin useridalias ggapplywest</copy>
 ````
@@ -315,6 +315,10 @@ To configure the OGG Manager process in both the Oracle and MySQL OGG environmen
 5. Save and close the file.
 
 6. Start the OGG Manager
+```
+<copy>cd $OGG_HOME
+./ggsci</copy>
+```
 
 ## **Step 7:**- Startup GoldenGate
 

@@ -25,7 +25,7 @@ Approximately 60 minutes
 
 ## **Step 1:** - GoldenGate for Oracle Capture
 
-Open a terminal session
+1. Open a terminal session
 
 ![](./images/terminal3.png)
 
@@ -36,15 +36,15 @@ Open a terminal session
 <copy>sudo su - oracle</copy>
 ````
 
-**Oracle data capture**
+2. **Oracle data capture**
 
-2. To configure the Oracle Integrated Extract:
+3. To configure the Oracle Integrated Extract:
 Execute the GGSCI command: 
 
 ````
 <copy>edit param etpc</copy>
 ````
-3. Enter the following settings:
+4. Enter the following settings:
 
 ````
 	       <copy>extract etpc
@@ -56,21 +56,22 @@ Execute the GGSCI command:
           table pdbeast.tpc.*;</copy>
 
 ````
-4. Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
+5. Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
 Add the parameter that will cause Integrated Extract to encrypt its OGG Trail files.
-5. Save and close the file.
+
+6. Save and close the file.
    
 **Data transmission to MySQL**
 
 This is not technically required because the OGG and MySQL installations are on the same machine. However, if data is being transmitted over a LAN/WAN an Extract Data Pump is required.
 To configure the Oracle to MySQL Extract Data Pump:
 
-6. Execute the GGSCI command: 
+7. Execute the GGSCI command: 
 ````
 <copy>edit param pmysql</copy>
 ````
 
-7. Enter the following settings:
+8. Enter the following settings:
 
 ````
   	      <copy>extract pmysql
@@ -80,19 +81,20 @@ To configure the Oracle to MySQL Extract Data Pump:
           table pdbeast.tpc.*;</copy>
 ````
 
-8. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
-9. Save and close the file.
+9. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
+
+10. Save and close the file.
 	  
 **Oracle data apply**
 
 To configure the Parallel Replicat:
 
-10. Execute the GGSCI command 
+11. Execute the GGSCI command 
 ````
 <copy>edit param rtpc</copy>
 ````
 
-Enter the following settings:
+12. Enter the following settings:
 ````
 	      <copy>replicat rtpc
           useridalias ggapplywest
@@ -105,7 +107,7 @@ Enter the following settings:
 ````   
    Add the parameters to auto-tune the number of Appliers; with a minimum of 3 and a maximum of 12
 
-11. Save and close the file.
+13. Save and close the file.
 
 ## **Step 2:** - GoldenGate MySQL Data Apply
 
@@ -122,7 +124,7 @@ To configure the Coordinated Replicat in the MySQL OGG environment:
 <copy>edit param rtpc</copy>
 ````
 
-1. Enter the following settings:
+2. Enter the following settings:
 
    ````     
     <copy>replicat rtpc
@@ -141,7 +143,7 @@ To configure the Coordinated Replicat in the MySQL OGG environment:
            map pdbeast.tpc.products_to_categories, target "tpc"."products_to_categories", thread (20);</copy>
   ````
 
-4. Enter "MAP" statements for the following
+3. Enter "MAP" statements for the following
 
 Operations for the table "tpc.orders" are to be applied by thread 1.
 
@@ -149,13 +151,13 @@ Operations for the table "tpc.orders_products" and to be ranged across threads 2
 
 Operations for the table "tpc.orders_status_history" are to be ranged across threads 6 and 7.
 
-5. Save and close the file.
+4. Save and close the file.
 	
-6. Enable schema level supplemental logging in source.
+5. Enable schema level supplemental logging in source.
 
-7. To enable schema level supplemental logging in the source Oracle PDB:
+6. To enable schema level supplemental logging in the source Oracle PDB:
 
-8. Execute the GGSCI commands
+7. Execute the GGSCI commands
 
 ````
 <copy>./ggsci</copy>
@@ -166,14 +168,14 @@ Operations for the table "tpc.orders_status_history" are to be ranged across thr
 add schematrandata pdbeast.tpc</copy>
 ````
 		  
-9. Create the OGG replication Groups
+8. Create the OGG replication Groups
 
-**??Create the OGG Groups by executing the following commands**
+**Create the OGG Groups by executing the following commands**
 
 
 ## **Step 3:** - GoldenGate for Oracle Integrated Extract and Apply
 
-**Oracle Integrated Extract:**
+1. **Oracle Integrated Extract:**
 ````
 <copy>./ggsci</copy>
 ````
@@ -193,7 +195,7 @@ add schematrandata pdbeast.tpc</copy>
 <copy>add exttrail ./dirdat/et, extract etpc, megabytes 250</copy>
 ````
 
-**Oracle Extract Data Pump:**
+2. **Oracle Extract Data Pump:**
 
 ````
 <copy>./ggsci</copy>
@@ -207,7 +209,7 @@ add schematrandata pdbeast.tpc</copy>
 <copy>add rmttrail ./dirdat/rt, extract pmysql, megabytes 250</copy>
 ````
 
-**Oracle Parallel Apply**
+3. **Oracle Parallel Apply**
 
 ````
 <copy>./ggsci</copy>
@@ -244,13 +246,13 @@ Start the OGG environment:
 <copy>./ggsci</copy>
 ````
 
-**Oracle:** 
+2. **Oracle:** 
 
 ````
 <copy>start er *</copy>
 ````   
 
-**MySQL:** 
+3. **MySQL:** 
 
 ````
 <copy>start er *</copy>
@@ -289,31 +291,31 @@ For any STOPPED or ABEND groups, view their report file to find the error.
 ````
 <copy>./ggsci</copy>
 ````
-**view report xxxx**
+2. **view report xxxx**
 
 Use the ggsci "stats" command to see how many operations were processed by each Extract and Replicat.
 
-**stats xxxx total**
+3. **stats xxxx total**
 
 Use the ggsci "view report" command to see how many operations were processed per second by each Extract and Replicat.
 
 For MySQL,
 
-2. use the ggsci command "info rtpc, detail" to see how many Replicats were spawned.
+4. use the ggsci command "info rtpc, detail" to see how many Replicats were spawned.
 
 ````
 <copy>info rtpc, detail</copy>
 ````
 
 On the database server:
-3. Login to PDBWEST as ggadmin: 
+5. Login to PDBWEST as ggadmin: 
 ````
 <copy>sqlplus ggadmin@pdbwest</copy>
 ````
 
 When prompted enter the password: Oracle1
 
-4. Execute the following query to see additional information about lag:  
+6. Execute the following query to see additional information about lag:  
  ````
       <copy>set heap on
       set wrap off
@@ -323,7 +325,7 @@ When prompted enter the password: Oracle1
       column Replicat format a9</copy>
   ```` 
   
-  4. Execute the following query 
+  7. Execute the following query 
   ````
    <copy>select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
        incoming_extract Extract
@@ -364,7 +366,7 @@ On the database server:
 
 When prompted enter the password: Oracle1
 
-1. Execute the following:
+3. Execute the following:
 	 ````
          <copy>create table ddltest (
            cola number(15,0) not null,
