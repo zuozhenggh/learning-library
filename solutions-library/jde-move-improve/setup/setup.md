@@ -1,4 +1,4 @@
-# Set Up OCI for JDE Trial Edition Deployment 
+# Lab 2: Set Up OCI for JDE Trial Edition Deployment 
 
 
 ## Introduction
@@ -72,7 +72,7 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 Then, scroll down to the bottom and click the ***Next*** button.
 
-4)	On the “Review and Create” page, click on the create button.
+4)	On the “Review and Create” page, click on the ***create*** button.
 
 5)  On the “Created Virtual Cloud Network” page wait until you see the following graphic.
     ![](./images/2.4.png " ")
@@ -85,13 +85,13 @@ Then, scroll down to the bottom and click the ***Next*** button.
 
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN.
 
-1)	From the details page of the TestDriveVCN, under the ***Resources*** section in the left pane, select ***Security Lists*** 
+1)	From the details page of the TestDriveVCN, under the ***Resources*** section in the left pane, select ***Security Lists***. 
     ![](./images/3.1.png " ")
 
-2)	In the Security Lists section, click the Default ***Security List*** for ***TestDriveVCN*** link  
+2)	In the Security Lists section, click the Default ***Security List*** for ***TestDriveVCN*** link.  
     ![](./images/3.2.png " ")
 
-3)	On Default Security List, under Resources, click the Add Ingress Rules button.
+3)	On Default Security List, under Resources, click the ***Add Ingress Rules*** button.
     ![](./images/3.33.png " ")
 
 4)  Set five new ingress rules with the following properties:
@@ -116,6 +116,20 @@ These Ingress Rules will be sufficient to allow the network traffic required for
 ## **Summary**
 
 In this lab, OCI has been set up for the networking required to be able to access a JDE Trial Edition that will be created in the next lab.
+
+You may now proceed to the next lab.
+
+## Acknowledgements
+* **Author:** 
+* AJ Kurzman, Cloud Engineering
+* **Contributors:**
+* Jeff Kalowes, Principal JDE Specialist
+* Mani Julakanti, Principal JDE Specialist
+* Marc-Eddy Paul, Cloud Engineering
+* William Masdon, Cloud Engineering
+* Chris Wegenek, Cloud Engineering 
+* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, 11/9/2020
+
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

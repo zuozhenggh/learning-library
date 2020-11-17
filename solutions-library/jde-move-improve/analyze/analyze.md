@@ -1,5 +1,4 @@
-# Connecting to JDE Trial Edition 
-
+# Lab 4: Connecting to JDE Trial Edition 
 
 ## Introduction
 
@@ -30,17 +29,18 @@ To access the EnterpriseOne HTML server:
 
 2)  Using the Public IP Address for the instance and port number (Lab 2, Exercise 3, Step 1a) assigned to the HTML server as part of the final configuration and security list, enter the following URL into the browser:
 
-    https://<ip address>:<port>/jde
+    https://"ip address:port"/jde
 
-For example:
+    For example:
 
-    https://132.145.187.16:8080/jde
+        https://132.145.187.16:8080/jde
 
 3)  If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
+    **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
 
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+    **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+
     ![](./images/1.3.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
@@ -52,7 +52,7 @@ For example:
 *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1)
     ![](./images/1.5.png " ")
 
-At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
+    At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
     ![](./images/1.5.2.png " ")
 
 ## **STEP 2**:  Connect to EnterpriseOne Orchestrator Studio
@@ -67,15 +67,14 @@ To access the Orchestrator Studio:
 
     https://<ip_address>:7077/studio/studio.html
 
-For example:
+    For example:
 
-    https://129.213.43.190:7077/studio/studio.html
+        https://129.213.43.190:7077/studio/studio.html
 
 3)	If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
-**Note:** Message and Security differ from browser to browser. his example is from a Mozilla Firefox browser
+    **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
 
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
     ![](./images/2.3.png " ")
 
 4)	Click the ***Confirm Security Exception button*** to add the URL to the trusted location list for the browser.
@@ -87,25 +86,25 @@ For example:
 *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1c).
     ![](./images/2.5.png " ")
 
-At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
+    At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
     ![](./images/2.6.png " ")
 
 ## **STEP 3**: Explore JDE Service Commands 
 After you have successfully deployed your Trial Edition instance in the Oracle Cloud Infrastructure, all services are automatically started for each JD Edwards EnterpriseOne server type, which includes the Database Server, Enterprise Server, HTML Web Servers, BI Publisher Server, and ADF/AIS server
 
-After initial startup, all these services can be manually started and stopped by the root user.  The JDE Trial Edition is equipped with command line features for easy status checking and start/stop capabilities.  This Exercise will walk through running these commands to find status and start/stop services
+After initial startup, all these services can be manually started and stopped by the root user.  The JDE Trial Edition is equipped with command line features for easy status checking and start/stop capabilities.  This Exercise will walk through running these commands to find status and start/stop services.
 
 To utilize the jde service commands:
 
 1)	Utilizing the SSH key, open a command line session to the JDE trial edition instance.
 
-2)	Change to root user
+2)	Change to root user.
         
     [opc]#  sudo –i
 ![](./images/3.2.png " ")
 
  
-3)	First run the jde-status command.  That will probe all the essential pieces running on the JDE Trial Edition (Database, Enterprise Server, Web Servers, ADF Server, BI Publisher Server) and report on the status of the piece.  Any service reporting anything but “Running” might have a problem
+3)	First run the jde-status command.  That will probe all the essential pieces running on the JDE Trial Edition (Database, Enterprise Server, Web Servers, ADF Server, BI Publisher Server) and report on the status of the piece.  Any service reporting anything but “Running” might have a problem.
       
     [root]#  jde-status
 ![](./images/3.3.png " ")
@@ -139,7 +138,7 @@ To utilize the jde service commands:
 
 * BIP Server:  **jde-bip stop**
 
-7)	To start a particular service, issue the following commands:
+6)	To start a particular service, issue the following commands:
 
 * Database:    **jde-db start**
     
@@ -185,7 +184,7 @@ At this point, ADF applications should function normally when run through the JD
 
 ## **STEP 5**:  Connect to Oracle BI Publisher Server for OVR
 
-The Oracle BI Publisher Server for OVR is a reporting tool
+The Oracle BI Publisher Server for OVR is a reporting tool.
 
 To access the Oracle BI Publisher Server:
 
@@ -205,7 +204,8 @@ For example:
 
 **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
     
-**Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate
+    **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
+
     ![](./images/5.3.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
@@ -216,7 +216,7 @@ For example:
 *	Password: JDE_Rules1 (this is the password defined in the final configuration in Lab 2, Step 3)
     ![](./images/5.5.png " ")
 
-At this point, the Oracle BI Publisher Server for OVR is ready for use.
+    At this point, the Oracle BI Publisher Server for OVR is ready for use.
     ![](./images/5.6.png " ")
 
 
@@ -233,3 +233,18 @@ https://console.us-ashburn-1.oraclecloud.com/marketplace/application/51184836/ov
 
 # **Summary**
 Enjoy JDE!   Enjoy OCI!  
+
+## Acknowledgements
+* **Author:** 
+* AJ Kurzman, Cloud Engineering
+* **Contributors:**
+* Jeff Kalowes, Principal JDE Specialist
+* Mani Julakanti, Principal JDE Specialist
+* Marc-Eddy Paul, Cloud Engineering
+* William Masdon, Cloud Engineering
+* Chris Wegenek, Cloud Engineering 
+* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, 11/9/2020
+
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

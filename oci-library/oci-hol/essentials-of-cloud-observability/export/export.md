@@ -23,22 +23,22 @@ In this lab, you will:
 
 ## **STEP 1**: Create Object Storage Archive Bucket
 
-The target bucket must already exist prior to creating the service connector.
+The target bucket must already exist prior to creating the service connector, so let's create a bucket now.
 
-1. In the OCI Management Console, ensure you have selected the same region where you have created the resources from the previous Labs in this workshop.  Navigate to the object Storage service.
+1.  In the OCI Management Console, ensure you have selected the same region where you have created the resources from the previous Labs in this workshop.  Navigate to the Object Storage service.
 
     ![Object Storage](images/object-storage.png)
 
-2. In the Object Storage service landing page, ensure your scope is set to **Compartment** logservicedemo.
+2.  In the Object Storage service landing page, ensure your scope is set to **Compartment** logservicedemo.
     ![Object Storage](images/scope-compartment.png)
 
-3. Click on **Create Bucket** to bring up the create bucket panel.
+3.  Click on **Create Bucket** to bring up the create bucket panel.
     ![Object Storage](images/create-bucket.png)
 
-4. In the **Create Bucket** panel, enter **BUCKET NAME** logarchivedemo, **STORAGE TIER** Standard, leave **OBJECT EVENTS** and **OBJECT VERSIONING** deselected, and enure **ENCRYPTION** is configured to ENCRYPT USING ORACLE MANAGED KEYS as shown in the following image.
+4.  In the **Create Bucket** panel, enter **BUCKET NAME** logarchivedemo, **STORAGE TIER** Standard, leave **OBJECT EVENTS** and **OBJECT VERSIONING** deselected, and ensure **ENCRYPTION** is configured to ENCRYPT USING ORACLE MANAGED KEYS as shown in the following image.
     ![Object Storage](images/create-bucket-wizard.png)
 
-5. Click **Create Bucket** to complete the new bucket creation task, and you're ready to move on to the next step.
+5.  Click **Create Bucket** to complete the new bucket creation task, and you're ready to move on to the next step.
 
 ## **STEP 2:** Configure Automated Export
 
@@ -65,7 +65,7 @@ In this step you will create a **Service Connector** to export Log content to th
     
     ![Service Connector](images/create-service-connector-3.png)
 
-6. The Connector Service provides an option to automatically create the security policy (permissions) required for this connector job to export data.within  Click **Create** in the box.
+6. The Connector Service provides an option to automatically create the security policy (permissions) required for this connector job to export data.  Click **Create** in the box as shown in the image below.  **Note**: depending on your account type and previous setup steps, these permissions may have already been implicitly created.  In that case this option will not be presented and it's safe to proceed to the next item.
     
     ![Service Connector](images/create-service-connector-4.png)
 
@@ -95,13 +95,15 @@ Log content archived to Object Storage is aggregated via batches (default every 
     ![Log Archive](images/log-archive.png)
 
 
-3. Select a file for download, extraction and viewing.  
+3. Select a file for download, extraction and viewing. The download option may be found by clicking the vertical dots in the far righthand column.  
 
     ![Log Archive](images/log-archive-download.png)
 
 4. User your preferred log or text viewer to verify content.
 
     ![Log Archive](images/log-viewer.png)
+
+## Learn More
 
 
 ## Acknowledgements
