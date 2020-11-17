@@ -22,11 +22,11 @@
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-sqldevweb/adb-sqldevweb.md"
     },
       {
-        "title": "Create sample data",
+        "title": "Create Sample Sata",
         "filename": "../../../intro/create-sample-data/create-sample-data.md"
     },
     {
-      "title": "Run spatial queries",
+      "title": "Run Spatial Queries",
       "filename": "../../../intro/run-spatial-queries/run-spatial-queries.md"
   }
     ]

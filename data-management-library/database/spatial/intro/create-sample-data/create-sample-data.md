@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to create sample spatial data in Oracle Database.  
+This lab walks you through the steps to create sample spatial data in Oracle Database.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 5 minutes
 
 ### About Product/Technology
 Oracle Database stores spatial data (points, lines, polygons) in a native data type called  SDO_GEOMETRY.  Oracle Database also provides a native spatial index for high performance spatial operations. This spatial index relies on spatial metadata that is entered for each table and geometry column storing spatial data. Once spatial data is populated and indexed, rubust APIs are available to perform spatual analysis, calulations, and processing.
@@ -24,9 +24,9 @@ As described in the workshop introduction, you need access to an Oracle Database
 
 <!--  *This is the "fold" - below items are collapsed by default*  -->
 
-## **STEP 1**: Create tables with coordinates
+## Step 1: Create tables with coordinates
 
-We begin by creating tables with latitude, longitude coordinates. This is a common starting point for creating spatial data, for example coordinates from GPS, street address geocodes, or IP address geocodes.
+We begin by creating tables with latitude, longitude coordinates. This is a common starting point for creating spatial data, for example coordinates from GPS, or from geocoding street address or IP address.
 
 The instructions and screen shots refer to SQL Developer Web, however the same steps apply for other SQL clients.
 
@@ -41,7 +41,7 @@ The instructions and screen shots refer to SQL Developer Web, however the same s
     ![Image alt text](images/refresh-tables-1.png)
 
 
-## **STEP 2:** Create geometries from coordinates
+## Step 2: Create geometries from coordinates
 
 Geometries are stored in SDO_GEOMETRY columns which are added to a table just like any other data type. Geometries can then be populated with SQL, in this case by specifying the coordinates of point geometries based on  latitude and longitude columns.
 
@@ -82,7 +82,7 @@ Geometries are stored in SDO_GEOMETRY columns which are added to a table just li
     ```
 
 
-## **STEP 3**: Create table with polygon
+## Step 3: Create table with polygon
 
 Lines and polygons can be created in the same way. While a point geometry requires one coordinate, lines and polygons require all of the coordinates that define the geometry. In this case we create a table to store a polygon.
 
@@ -122,9 +122,10 @@ Lines and polygons can be created in the same way. While a point geometry requir
   ```
 
 Refresh the table listing to see the COASTAL_ZONE table.
+![Image alt text](images/refresh-tables-2.png)
 
 
-## **STEP 4**: Add spatial metadata and indexes 
+## Step 4:  Add spatial metadata and indexes 
 Oracle Database provides a native spatial index for high performance spatial operations. Our sample data is so small that a spatial index is not really needed. However we perform the following steps since they are important for tyical production data volumes. A spatial index requires a row of metadata for the geometry being indexed. We create this metadata and then the spatial indexes.
 
 
@@ -197,12 +198,11 @@ Oracle Database provides a native spatial index for high performance spatial ope
     </copy>
     ```
 
-    Refresh the table listing. You will see 3 tables having names beginning with MDRT_. These are artifacts of the spatial indexes and are managed by Oracle Database automatically. You should never manually manipulate these tables.
+    After the indexes are created, refresh the table listing. You will see 3 tables having names beginning with MDRT_. These are artifacts of the spatial indexes and are managed by Oracle Database automatically. You should never manually manipulate these tables.
+    ![Image alt text](images/refresh-tables-3.png)
 
 
-
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+Our sample data is now prepared and ready for spatial queries. Please proceed to the next lab.
 
 ## Learn More
 

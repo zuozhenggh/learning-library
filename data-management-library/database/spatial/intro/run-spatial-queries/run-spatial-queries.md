@@ -2,30 +2,30 @@
 
 ## Introduction
 
-This lab walks you through basic spatial queries in Oracle Database.  
+This lab walks you through basic spatial queries in Oracle Database.  You will use the sample data created in the previous lab to identify items based on proximity and containment.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 15 minutes
 
 ### About Product/Technology
-Enter background information here..
+Oracle Database includes a robust library of functions and operators for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and much more. These operations are accesasible through native SQL, PL/SQL, Java APIs, and any other language that communicates with Oracle Database.
 
 ### Objectives
 
 In this lab, you will:
-* 
+* Identify BRANCHES having proximity relationships to a WAREHOUSE
+* Identify BRANCHES having containment and provimity relationships to a COASTAL_ZONE
 
 ### Prerequisites
 
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+* Completion of previous lab; Create Sample Data
 
 <!--  *This is the "fold" - below items are collapsed by default*  -->
 
 
 ## Spatial Queries 
 
-explanation...
+Spatial queries in Oracle Database are just like any other traiditonal queries you are accustomed to. The only difference is a set of spatial functions and operators that are probably new to you.
 
 **Identify 5 closest branches to the the Dallas Warehouse:**
 ```
@@ -43,7 +43,7 @@ WHERE
     ) = 'TRUE';
 </copy>
 ```
-
+![Image alt text](images/q1.png)
 Notes:
     
 * The ```SDO_NN``` operator returns the 'n nearest' branches to the Dallas Warehouse, where 'n' is the value specificed for ```SDO_NUM_RES```. The first argument to ```SDO_NN``` (b.geometry in the example above) is the column to search. The second argument (w.geometry in the example above) is the location you want to find the neighbors nearest to. No assumptions should be made about the order of the returned results. For example, the first row returned is not guaranteed to be the closest. If two or more branches are an equal distance from the warehouse, then either may be returned on subsequent calls to ```SDO_NN```.
@@ -73,7 +73,7 @@ ORDER BY
     DISTANCE_KM;
 </copy>
 ```
-
+![Image alt text](images/q2.png)
 Notes:
 
 * The ```SDO_NN_DISTANCE``` operator is an ancillary operator to the ```SDO_NN``` operator; it can only be used within the ```SDO_NN``` operator. The argument for this operator is a number that matches the number specified as the last argument of SDO_NN; in this example it is 1. There is no hidden meaning to this argument, it is simply a tag. If ```SDO_NN_DISTANCE()``` is specified, you can order the results by distance and guarantee that the first row returned is the closest. If the data you are querying is stored as longitude and latitude, the default unit for ```SDO_NN_DISTANCE``` is meters.
@@ -107,6 +107,7 @@ ORDER BY
 </copy>
 ```
 
+![Image alt text](images/q3.png)
 Notes:
 * ```SDO_BATCH_SIZE``` is a tunable parameter that may affect your query's performance. ```SDO_NN``` internally calculates that number of distances at a time. The initial batch of rows returned may not satisfy the constraints in the WHERE clause, so the number of rows specified by ```SDO_BATCH_SIZE``` is continuously returned until all the constraints in the WHERE clause are satisfied. You should choose a ```SDO_BATCH_SIZE``` that initially returns the number of rows likely to satisfy the constraints in your WHERE clause.
 * The UNIT parameter used within the ```SDO_NN``` operator specifies the unit of measure of the ```SDO_NN_DISTANCE``` parameter. The default unit is the unit of measure associated with the data. For longitude and latitude data, the default is meters.
@@ -129,7 +130,7 @@ WHERE
     ) = 'TRUE';
 </copy>
 ```
-
+![Image alt text](images/q4.png)
 Notes:
 * The first argument to ```SDO_WITHIN_DISTANCE``` is the column to search. The second argument to ```SDO_WITHIN_DISTANCE (w.wh_geo_location in the example above)``` is the location you want to determine the distances from. No assumptions should be made about the order of the returned results. For example, the first row returned is not guaranteed to be the customer closest to warehouse 3.
 * The DISTANCE parameter used within the ```SDO_WITHIN_DISTANCE``` operator specifies the distance value; in this example it is 100.
@@ -160,7 +161,7 @@ ORDER BY
     DISTANCE_KM;
 </copy>
 ```
-
+![Image alt text](images/q5.png)
 Notes:
 * The ```SDO_GEOM.SDO_DISTANCE``` function computes the exact distance between the customer's location and warehouse 3. The first argument to ```SDO_GEOM.SDO_DISTANCE (c.cust_geo_location in the example above)``` contains the customer's location whose distance from warehouse 3 is to be computed. The second argument to ```SDO_WITHIN_DISTANCE (w.wh_geo_location in the example above)``` is the location of warehouse 3, whose distance from the customer's location is to be computed.
 * The third argument to ```SDO_GEOM.SDO_DISTANCE (0.005)``` is the tolerance value. The tolerance is a round-off error value used by Oracle Spatial. The tolerance is in meters for longitude and latitude data. In this example, the tolerance is 5 mm.
@@ -184,7 +185,7 @@ WHERE
     ) = 'TRUE';
 </copy>
 ```
-
+![Image alt text](images/q6.png)
 Notes:
 
 
@@ -199,7 +200,7 @@ Notes:
 FROM
     BRANCHES      B,
     COASTAL_ZONE  C
-WHEREƒ
+WHERE
     SDO_WITHIN_DISTANCE(
         B.GEOMETRY, C.GEOMETRY, 'distance=10 unit=km'
     ) = 'TRUE'
@@ -218,7 +219,7 @@ WHERE
 );
 </copy>
 ```
-
+![Image alt text](images/q7.png)
 *At the conclusion of the lab add this statement:*
 You may proceed to the next lab.
 
