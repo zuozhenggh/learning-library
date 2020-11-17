@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # UniDirectional replication between PostgreSQL to PostgreSQL
 
 ## Introduction

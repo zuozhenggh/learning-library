@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Environment Setup Oracle GoldenGate for PostgreSQL Installation
 
 ## Introduction

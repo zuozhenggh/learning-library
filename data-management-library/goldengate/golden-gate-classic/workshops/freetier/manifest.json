@@ -55,13 +55,13 @@
 
     },
     {
-      "title": "Lab 9: Goldengate Non Oracle replication from PostpresSQL Lab 9a",
-      "description": "Lab 9: Goldengate in stall for PostgresSQL",
+      "title": "Lab 9: Goldengate Installation of Oracle replication with PostgresSQL",
+      "description": "Lab 9: Goldengate installation for PostgresSQL",
       "filename": "../../gg-classic-workshop-lab9-gg-postgres-installation/gg-classic-workshop-lab9-gg-postgres-installation.md"
 
     },
     {
-      "title": "Lab 10: Goldengate Non Oracle replication to PostpresSQL",
+      "title": "Lab 10: Goldengate One Way replication to PostgresSQL",
       "description": "Lab 10: Goldengate replication to PostpresSQL Lab",
       "filename": "../../gg-classic-workshop-lab10-one-way-postgresql-to-postgresql-replication/gg-classic-workshop-lab10-one-way-postgresql-to-postgresql-replication.md"
     }

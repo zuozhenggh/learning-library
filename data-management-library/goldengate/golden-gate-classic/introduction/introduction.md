@@ -40,9 +40,9 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 * [GoldenGate with PostgreSQL](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/using-oracle-goldengate-postgresql.html/")
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, October 2020
+* **Author** - Brian Elliott, Data Integration Team, Oracle, November 2020
 * **Contributors** - Madhu Kumar
-* **Last Updated By/Date** - Brian Elliott, October 2020
+* **Last Updated By/Date** - Brian Elliott, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
