@@ -1,28 +1,43 @@
 # Introduction
 
-This Oracle SOA workshop demonstrates an implementation of business use case by walking through application development of validating payment processing for an online ordering system. The ordering system will integrate with a mobile application. The composite SOA app built must be able to support access through RESTful APIs.
+This Oracle SOA workshop demonstrates an implementation of business use case for integration by walking through application development - validating payment for an online ordering system. The ordering system will also need to be integrated and invoked by a mobile application via https/REST. The composite SOA app built must support access through RESTful APIs.
 
-In the advanced workshop, the order processing would also integrate with systems and apps from the packaging department to do ship orders with preferred shipping providers based on the type of shipping service (2 day, 5-7 day shipping, and so on).
+<!-- In the advanced workshop, the order processing would also integrate with systems and apps from the packaging department to do ship orders with preferred shipping providers based on the type of shipping service (2 day, 5-7 day shipping, and so on).
 
-The bulk fulfillment process must run according to a predefined pick-up schedule. Upon fulfillment processing and orders being sent to the packaging department, a message must be communicated to the customer (either bulk or on-demand).
+The bulk fulfillment process must run according to a predefined pick-up schedule. Upon fulfillment processing and orders being sent to the packaging department, a message must be communicated to the customer (either bulk or on-demand). -->
 
-Estimated Workshop Time: 3.5 Hours
+Estimated Workshop Time, to complete 4 labs: 3 Hours
 
-## Objectives
+## About this workshop
 
 * Introducing SOA development tool, JDeveloper 12c
-* Design SOA composite application using JDeveloper
-* Develop service orchestration with SOA process automation
-* Deploy the composite application on the embedded Weblogic in JDeveloper
+* Design Integration composite using JDeveloper as an IDE
+* Develop and build the SOA service orchestration on JDeveloper 12c
+* Register the composite with Service Bus and deploy
+* REST-api enabled the composite on SOA server in JDeveloper
 
+### Objectives
+- Explore **JDeveloper12c**, 12.2.1.4 as an Oracle SOA development foundation.
+- Gain familiarity with Oracle JDeveloper 12c that has pre-configured with SOA extensions.
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+  
 *{Note: For this lab, it assumes you have access to JDeveloper12c environment, which can be run on Linux instance on OCI.}*
 
-### Modules
+## STEP 1: Labs
 
-| # | Module | Estimate Time |
+The Integration SOA workshop consists of 4 separate labs.  The labs should be followed in order from Lab 1 to Lab 4.  There are also screen shots available throughout the labs to guide you through the exercises. 
+
+| # | Lab | Estimate Time |
 | --- | --- | --- |
-| 1 | Introduction to SOA | 10 min |
+| 1 | Integration using Oracle SOA | 10 min |
 | 2 | Build composite integration app for validating payment | 90 min |
 | 3 | Register the composite app to Service Bus | 60 min |
 | 4 | Enabled REST api access for Validate Payment app | 60 min |
@@ -30,6 +45,23 @@ Estimated Workshop Time: 3.5 Hours
 <!-- During the live lab, the tutorial pdf document can be found on the desktop of your OCI Linux instance.
 
 ![](../images/2/soa-tutorialpdf.png) -->
+
+## STEP 2: Lab Environment
+
+The workshop has been setup to expedite your SOA development process. The environment consists of JDeveloper 12c, version 12.2.1.4 with preconfigured for SOA Suite. It hosted on an Oracle Linux operating system.
+
+The JDeveloper in this distribution is pre-configured with some JDeveloper IDE extensions so that you can create various kinds of integration orchestration applications immediately. These pre-installed IDE extensions include the following:
+- Oracle BPEL Process Manager
+- Oracle Human Workflow
+- Oracle Business Rules
+- Oracle Mediator
+- Oracle Service Bus
+- Oracle Enterprise Scheduler
+- SOA Spring Component Design Time
+
+A pre-installed JDeveloper 12c (12.2.1.4) on a Linux desktop has been provisioned on the Oracle Cloud (OCI). To access a pre-installed JDeveloper environment, you need any modern browser on your laptop or workstation and use the following URL http://[provided ip address]:8080/guacamole with user oracle, password: "Guac.LiveLabs_" note: an underscore character at the end.
+
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -42,7 +74,7 @@ Estimated Workshop Time: 3.5 Hours
 
 ## Acknowledgements
 * **Author for LiveLabs** - Daniel Tarudji
-* **Contributors** - Tom McGinn, Kamryn Vinson
+* **Contributors** - Rene Fontcha, Meghana Banka, Tom McGinn, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## Need Help?

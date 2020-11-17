@@ -16,7 +16,7 @@ In this lab you will:
 
 ### Prerequisites
 
-We'll use the 'on-premises' environment as our working environment from which we'll connect to the newly deployed environment, so we'll need to create a SSH key pair there.
+- We'll use the 'on-premises' environment as our working environment from which we'll connect to the newly deployed environment, so we'll need to create a SSH key pair there.
 
 ## **STEP 1:** Create a SSH key pair 
 
@@ -28,45 +28,45 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 2. In the terminal, create a SSH key
 
-   ```
-   <copy>
-   ssh-keygen
-   </copy>
-   ```
+    ```
+    <copy>
+    ssh-keygen
+    </copy>
+    ```
 
-   - Hit **Enter** to use all defaults to all questions
+    - Hit **Enter** to use all defaults to all questions
 
 3. Get the content of the public key
 
    Getting the content of the key depends on the environment:
 
-   - if you used the demo marketplace 'on-premises' environment, SSH from your local machine to the VM with 
+    - If you used the demo marketplace 'on-premises' environment, SSH from your local machine to the VM with 
 
-   ```
-   <copy>
-   ssh -p 7022 oracle@<PUBLIC_IP>
-   </copy>
-   ```
+    ```
+    <copy>
+    ssh -p 7022 oracle@<PUBLIC_IP>
+    </copy>
+    ```
 
-   Where the `PUBLIC_IP` is the public IP of the on-premises enviroment you gathered when provisioning the VM in Lab 1a, 
-   
+   Where the `PUBLIC_IP` is the public IP of the on-premises enviroment you gathered when provisioning the VM in Lab 1a,
+
    The password you will be prompted for is `oracle`
 
    Then use:
 
-   ```
-   <copy>
-   cat ~/.ssh/id_rsa.pub
-   </copy>
-   ```
+    ```
+    <copy>
+    cat ~/.ssh/id_rsa.pub
+    </copy>
+    ```
 
-   - If you used the Virtual Box VM, you should be able to output the key directly with
+    - If you used the Virtual Box VM, you should be able to output the key directly with
 
-   ```
-   <copy>
-   cat ~/.ssh/id_rsa.pub
-   </copy>
-   ```
+    ```
+    <copy>
+    cat ~/.ssh/id_rsa.pub
+    </copy>
+    ```
 
    and copy the content to clipboard.
 
@@ -106,7 +106,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
    <img src="../../provision-soamp/images/service-type.png" width="70%">
 
 
-7. Keep the **Enable SOA Schema partinioning** unchecked
+7. Keep the **Enable SOA Schema partitioning** unchecked
 
    <img src="../../provision-soamp/images/partitioning.png" width="70%">
 
@@ -166,7 +166,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 21. Select **EXISTING SUBNET FOR BASTION HOST** as `Public Subnet-SOAMP1VCN(Regional)`
 
-   **Note:** Since we are choosing private subnet for SOA instance we need a bastion host in public subnet (using public IP which is the gateway to SOA instance for the external world) to connect internally to the private IP of SOA Instance , bastion host wouldn't be required if we use public subnet for SOA instance as it will have a public IP to be commnubicated from eternal world.
+   **Note:** Since we are choosing private subnet for SOA instance we need a bastion host in public subnet (using public IP which is the gateway to SOA instance for the external world) to connect internally to the private IP of SOA Instance , bastion host wouldn't be required if we use public subnet for SOA instance as it will have a public IP to be communicated from eternal world.
 
   <img src="../../provision-soamp/images/bastion3.png" width="70%">
 

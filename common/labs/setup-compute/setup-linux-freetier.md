@@ -20,7 +20,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you hav!e:
+This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Lab:  Generate SSH Keys
 
@@ -37,7 +37,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
    ![Image alt text](images/db19c-freetier-step1-3.png " ")
 5.  Enter the name for your VCN:  **livelabsvcn**.  Click **next**.
    ![Image alt text](images/db19c-freetier-step1-4.png " ")
-6. Inspect and then accept all default values in the Configure Variables screen and click **Next**. 
+6. Inspect and then accept all default values in the Configure Variables screen and click **Next**.
    ![Image alt text](images/db19c-freetier-step1-5.png " ")
 7.  Review your selections and click **Next**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
@@ -48,7 +48,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-7.png " ")
 2. Select **Apply**
 ![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
+3. Inspect the apply job, accept all defaults and click **Apply**
 ![Image alt text](images/db19c-freetier-step1-9.png " ")
 4. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
@@ -67,7 +67,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-17.png " ")  
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
-   
+
 ## **STEP 3**: Setup Compute Stack
 1.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**
 ![Create a stack](images/db19c-freetier-step1.png " ")
@@ -76,13 +76,13 @@ Now that your stack has been created, you will run an *apply* job to create the 
 
 4.  Enter the name for your Compute Stack:  **livelabslinux**.  Click **next**.
    ![Image alt text](images/linux-compute-step3-2.png " ")
-5. Fill in the following values for your new compute instance. 
+5. Fill in the following values for your new compute instance.
    - Compute Instance Display Name: Choose a name for your instance
    - Choose the VCN you created in the previous step
    - Choose a subnet from the drop down
-  
+
    ![Image alt text](images/linux-compute-step3-3.png " ")
-6.  Scroll down. 
+6.  Scroll down.
    - Check the Assign Public IP *(Note: This is VERY IMPORTANT, you will not be able to login to your instance without this)
    - Paste the public key you created in the earlier lab
    ![Image alt text](images/linux-compute-step3-4.png " ")
@@ -96,7 +96,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-7.png " ")
 2. Select **Apply**
 ![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
+3. Inspect the apply job, accept all defaults and click **Apply**
 ![Image alt text](images/db19c-freetier-step1-9.png " ")
 4. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
@@ -115,7 +115,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 - Oracle Cloud Shell
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
-  
+
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
@@ -123,7 +123,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ![](./images/cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP addresss for your instance.
+3.  On the instance homepage, find the Public IP address for your instance.
 
     ![](./images/linux-compute-step3-11.png " ")
 4.  Enter the command below to login to your instance.    
@@ -138,7 +138,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -184,7 +184,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.  
 
-You may now *proceed to the next lab*. 
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management

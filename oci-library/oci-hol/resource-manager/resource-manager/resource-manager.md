@@ -15,7 +15,7 @@ In this lab, you will create configure identity access manager, create a resourc
 **Note:** You can skip the steps below if you are using an user with admin privileges. If this were a real production system, it's both more secure and practical to create additional groups with more granular permissions. For example, it is likely we'd need to create a development team group that can only use predefined stacks and run jobs against it (use-orm-stack and use-orm-job, respectively).
 [Check Best Practices for IAM](https://docs.cloud.oracle.com/iaas/Content/Security/Concepts/security_features.htm#IdentityandAccessManagementIAMService).
 
-If you are not the adminstrator, you have to request the admin to give you permissions to manage Resource Manager Stacks by creating the following IAM policies in a compartment of your choice with the following statements:
+If you are not the administrator, you have to request the admin to give you permissions to manage Resource Manager Stacks by creating the following IAM policies in a compartment of your choice with the following statements:
 
   - `Allow group <group_name> to manage orm-stacks in compartment <compartment_name>`
   - `Allow group <group_name> to manage orm-jobs in compartment <compartment_name>`
@@ -43,9 +43,9 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
 ## **Step 2:** Create Resource Manager Stack
 
- A Stack represents definitions for a collection of OCI resources within a specific compartment. With this in mind, we're going to configure a new stack in the compartment of your choice name it "HA Load Balanced Simple Web App". As the stack's name suggests, its configuration files define the load balancing, networking, and compute resources to deploy the target architecture plus an HTTP server.
+ A Stack represents definitions for a collection of OCI resources within a specific compartment. With this in mind, we're going to configure a new stack in the compartment of your choice and name it "HA Load Balanced Simple Web App". As the stack's name suggests, its configuration files define the load balancing, networking, and compute resources to deploy the target architecture plus an HTTP server.
 
- Download [HA Load Balanced Simple Web App](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip) and save to your local machine.
+ Download [HA Load Balanced Simple Web App](https://objectstorage.us-phoenix-1.oraclecloud.com/p/9avXPYdf7I4aoZCsBrESnmoimx1ZlHD8neRL45HMNOnEwq2KWKeGYTz4aL9wSHWk/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip) and save to your local machine.
 
 1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stacks**.
 
@@ -53,7 +53,10 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
 2. Click **Create Stack**.
 
-      - **Select a Terraform Configuration (.zip) File to Upload:** Upload the zip file [orm-lbass-demo.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip)
+      - Select **My Configuration**, choose the **.ZIP FILE** button, click **Browse** link and select the terraform configuration zip file [orm-lbass-demo.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/9avXPYdf7I4aoZCsBrESnmoimx1ZlHD8neRL45HMNOnEwq2KWKeGYTz4aL9wSHWk/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip). Click **Select**.
+
+      ![](./images/zip-file.png) 
+      
       - **Name:** HA Load Balanced Simple Web App
       - **Description:** Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app application.
       - **Create in Compartment:** Select an existing compartment
@@ -65,6 +68,7 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
       - **Configure Variables:** Configure the variables for the infrastructure resources that this stack will create when you run the apply job for this execution plan.
         - **Select Load Balancer Shape:** 100Mbps
         - **Select Compute Shape:** VM.Standard2.1
+        - **Select Availability Domain:** <*Pick one Avaiability Domain*>
         - **SSH Key Configuration:** <*Enter the content of your public ssh key*>
       - **Virtual Cloud Network Configuration:** 
         - **Enter your VCN Name:** vcn01
@@ -104,9 +108,7 @@ From the Stack Details page, we can completely manage the stack's configuration 
 
 2. Once the job succeeded, on the Job Details page review the information and scroll through the logs containing the Terraform output. You may also edit the job or download the Terraform Configuration and logs.
 
-    ![](./../resource-manager/images/image006.png " ")
-
-3. Since the previous plan action succeeded, lets go back to the Stack page by clicking the HA Load Balanced Simple Web App breadcrumb on top of the page. On the Stack details page you can select the Apply from the Terraform Actions menu. Click on **Terraform Actions** --> **Apply**.
+3. Since the previous plan action succeeded, lets go back to the Stack page by clicking Stack Details breadcrumb on top of the page. On the Stack details page you can select the Apply from the Terraform Actions menu. Click on **Terraform Actions** --> **Apply**.
 
     ![](./../resource-manager/images/image007.png " ")
 
@@ -138,7 +140,7 @@ As you often hear Terraform referred to as Infrastructure is Code, an optimal st
 **Important** This exercise requires some working experience with Git, and an account with gitlab.com.  You can set up a free account here:
 https://gitlab.com/users/sign_up
 
-1. In order to create a configuration source provider, you will need an **Access Token** for gitlab.com.  While logged into gitlab.com, navigate to: https://gitlab.com/profile/personal_access_tokens.  Enter the following details:
+1. In order to create a configuration source provider, you will need an **Access Token** for gitlab.com.  First you need to login to your GitLab Account and, once logged into gitlab.com, navigate to: "https://gitlab.com/-/profile/personal_access_tokens".  Enter the following details:
 
     ![](./../resource-manager/images/ConfigSource01.png " ")
 
@@ -147,11 +149,15 @@ https://gitlab.com/users/sign_up
       - Scopes: **read_api**
 
 
-    For security reasons, you may choose to set the token expiration 30 days out.  The personal access token (PAT) should be rotated regularly.
+    For security reasons, you may choose to set the token expiration 30 days out.  The personal access token (PAT) should be rotated regularly. Click **Create personal access token**
 
-2. Return to the resource manager console and navigate to configuration source providers.  Click **Create Configuration Source Provider**.
+2. The screen wil display your personal access token at the top of the page. Copy and save the token.
 
-3. Complete the required fields as follows and click **Create**:
+   ![](./../resource-manager/images/gitoken.png " ")
+
+3. Return to the resource manager console and navigate to configuration source providers.  Click **Create Configuration Source Provider**.
+
+4. Complete the required fields as follows and click **Create**:
 
     ![](./../resource-manager/images/ConfigSource02.png " ")
 
@@ -159,15 +165,15 @@ https://gitlab.com/users/sign_up
 
     *Important* The configuration source provider need only reference your Gitlab account.  You will specify a particular repository and branch at the Stack level.
 
-4. Create a new Project (repository) in Gitlab. Again, we are using *Sample ORM Source* for this guide.
+5. Create a new Project (repository) in Gitlab. Again, we are using *Sample ORM Source* for this guide.
 
   https://docs.gitlab.com/ee/gitlab-basics/create-project.html
 
-4. In order to modify the source for the existing stack, you will need to utilize the Cloud Shell utility to execute a Command Line Interface (CLI) command.  Click the Cloud Shell link in the top right corner of the console.
+6. In order to modify the source for the existing stack, you will need to utilize the Cloud Shell utility to execute a Command Line Interface (CLI) command.  Click the Cloud Shell link in the top right corner of the console.
 
     ![](./../resource-manager/images/CloudShell.png " ")
 
-5. When the Cloud Shell console opens, run the following command.  *NOTE* you will need to change the property values to match your environment.
+7. When the Cloud Shell console opens, run the following command.  *NOTE* you will need to change the property values to match your environment.
 
     ```
     oci resource-manager stack update-from-git-provider \
@@ -186,31 +192,67 @@ https://gitlab.com/users/sign_up
     --config-source-repository-url https://gitlab.com/oci-labs/sample-orm-source.git
     ```
 
-6. When the command completes, return to Stacks, select the stack created earlier in this lab, and view the stack details to confirm that the changes were applied.
+8. When the command completes, return to Stacks, select the stack created earlier in this lab, and view the stack details to confirm that the changes were applied.
 
   ![](./../resource-manager/images/UpdateStack01.png " ")
 
-7. You may close / exit the cloud shell now.
+9.  Next, you will need to push your Terraform code to Gitlab.
+  
+- Clone your Gitlab repo into Cloud Shell:
+  
+```
+# git clone https://gitlab.com/<username>/sample-orm-source
+# cd sample-orm-source
+```
 
-8. Next, you will need to push your Terraform code to Gitlab.  At a high level, you will clone your Gitlab repo locally, extract the terraform zip file into this directory, then Add / Commit / Push to Gitlab.  The following screenshots illustrate the process using Git client in Linux.
+- Configure your GitLab environment:
+  
+```
+# git config --global user.email <your_email@example.com>
+# git config --global user.name <gitlab_username>
+```
 
-    ![](./../resource-manager/images/gitsample01.png " ")
 
-    ![](./../resource-manager/images/gitsample02.png " ")
+- Download and extract the orm-lbass-demo.zip file: 
 
-    ![](./../resource-manager/images/gitsample03.png " ")
+```
+# wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/9avXPYdf7I4aoZCsBrESnmoimx1ZlHD8neRL45HMNOnEwq2KWKeGYTz4aL9wSHWk/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip
+# unzip orm-lbass-demo.zip
+```
 
-9. Run terraform plan once more.  Your new source (Gitlab) should contain the same code that was used to create the stack initially.  Therefore, the plan will result in ZERO changes.
+![](./../resource-manager/images/gitsample01.png " ")
 
-10. **EXPERIMENT** Now you can update the code in Gitlab and Plan/Apply them directly to your stack.
+- Now Add / Commit / Push to Gitlab.
 
-- Return to the folder where you unzipped the Terraform files and created the local Git repo.  
-- Modify the ./userdata/bootstrap file by adding one more line of html just before the line that started with `hostname >>`:
+```
+# git add -A
+# git commit -m "Pushing first version of terraform source to GitLab"
+```
 
-  ``echo '<marquee>My app now has a scrolling marquee' >> /var/www/html/index.html``
+![](./../resource-manager/images/gitsample02.png " ")
 
-- Save / Commit / Push to gitlab
-- Apply the changes to your stack.
+```
+# git push
+```
+
+![](./../resource-manager/images/gitsample03.png " ")
+    
+  
+10.  Run terraform plan once more.  Your new source (Gitlab) should contain the same code that was used to create the stack initially.  Therefore, the plan will result in ZERO changes.
+
+11.  **EXPERIMENT** Now you can update the code in Gitlab and Plan/Apply them directly to your stack.
+
+- Return to the folder where you unzipped the stack and created the local Git repo.  
+- Modify the **compute.tf** file by changing the display name of the Web-Server-01 to Web-Server-03:
+  
+  ``display_name = "Web-Server-01"``
+
+  to
+
+  ``display_name = "Web-Server-03"``
+
+- Save the file / Add / Commit / Push to Gitlab
+- Plan and Apply the changes to your stack
 
 ## **Step 5:** Execute Jobs: Destroy
 

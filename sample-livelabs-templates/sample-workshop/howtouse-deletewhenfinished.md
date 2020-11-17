@@ -6,8 +6,9 @@
 2. Start atom-live-server (Atom) or live-server (Visual Studio Code)
 3. We precreated 7 folders.  A workshop is created out of multiple labs.  
 4. Make sure you stick to all lower case and dashes for spaces
-5. Make sure you watch this [video](https://otube.oracle.com/media/1_ucr6grc6) for how to do Self QA of a workshop.  These are the standards that need to be met before going to production.  (It's short don't worry!)
-6. Download our [QA Feedback doc](https://confluence.oraclecorp.com/confluence/download/attachments/1966947336/LiveLabs-QA-Feedback-Form-v2.docx?version=2&modificationDate=1598913736000&api=v2) as well.  We find workshops get in production quicker when you know what's needed to move to production up front and you use the skeleton.
+5. Your image names should have descriptive names. Not just adb1, adb2, adb3.  For handicap accessiblity we need the image descriptions to explain what the image looks like.  Remember all lower case and dashes.
+6. Make sure you watch this [video](https://otube.oracle.com/media/1_ucr6grc6) for how to do Self QA of a workshop.  These are the standards that need to be met before going to production.  (It's short don't worry!)
+7. Download our [QA Feedback doc](https://confluence.oraclecorp.com/confluence/download/attachments/1966947336/LiveLabs-QA-Feedback-Form-v2.docx?version=2&modificationDate=1598913736000&api=v2) as well.  We find workshops get in production quicker when you know what's needed to move to production up front and you use the skeleton.
 
 PS  You do not need a Readme.md.  Readme's exist only at the top library levels. We direct all traffic to LiveLabs since we can't track usage on GitHub.  Do not create any direct links to GitHub, your workshop may be super popular but we can't track it so no one will know.
 
@@ -26,7 +27,7 @@ sample-workshop/
         analyze/
         visualize
         introduction/
-          introduction.md       -- description of the everything workshop
+          introduction.md       -- description of the everything workshop, note that it is a "lab" since there is only one
 
     workshops/
        freetier/                -- freetier version of the workshop
@@ -50,25 +51,19 @@ The folder structure includes a Introduction "lab" that describes the workshop a
 
 Look at the product-name-workshop/freetier folder and look at the manifest.json file to see the structure.
 
-The Prerequisite "lab" is the first lab in a common folder three levels up:
+The Prerequisite "lab" is the first lab in a common folder on the oracle/learning-library repo. Because this lab already exists, we can use a RAW/absolute URL instead:
 
   ```
-  "filename": "../../../common/prerequisite-freetier/prerequisite-freetier.md"
+  "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"        },
   ```
 
-Labs that are common across all workshops are linked using an absolute path, for example:
-
-```
-"filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-```
-
-The labs are located three levels up, for example:
+The manifest.json file needs to know the location of each lab relative to where it exists in the hierarchy. In this structure, labs are located two levels up, for example:
 
   ```
-  "filename": "../../../provision/provision.md"
+  "filename": "../../provision/provision.md"
   ```
 
-### For example
+### For example:
 
 This [APEX Workshop](https://oracle.github.io/learning-library/developer-library/apex/spreadsheet/workshops/freetier/) is a good example a workshop with a single set of labs: [https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet](https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet).
 

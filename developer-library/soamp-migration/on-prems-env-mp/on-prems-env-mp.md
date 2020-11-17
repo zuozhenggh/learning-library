@@ -108,6 +108,9 @@ Connect to the instance using your RDP Client (examples are using Microsoft Remo
 
     <img src="../../on-prems-env-mp/images/soa-soa.png"  width="100%">
 
+    <img src="../../on-prems-env-mp/images/soa-soa-console.png"  width="100%">
+
+
 ## **STEP 4:** Check the local environment is up and running
 
 1. Once the domains are started open the firefox web browser and select the bookmark for EM, which points to `http://localhost:7001/em'
@@ -122,7 +125,7 @@ to open the EM console
 
   <img src="../../on-prems-env-mp/images/soa-desktop-em-status.png" width="100%">
 
-
+You may proceed to the next lab
 
 ## Acknowledgements
 

@@ -108,8 +108,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
       ```
 
       The output will look like
-        [](./images/migrate-db-1.png)
-        <img src="./images/migrate-db-1.png" width="100%">
+        ![](./images/migrate-db-1.png)
 
 
 
@@ -129,18 +128,24 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
 2. Enter the `BASTION_IP`
 
-     The `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
+      <if type="oci">
+     If you provisioned in a *Private Subnet* the `BASTION_IP` is the **public IP** of the Bastion Instance.
+     
+     If you provisioned in a *Public Subnet* the `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
 
      Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**
 
-       <img src="./images/migrate-db-2.png" width="100%">
-
+       ![](./images/migrate-db-2.png)
+      </if>
+      <if type="oke">
+      The `BASTION_IP` is the **public IP** of the Bastion Instance
+      </if>
 
 3. Enter the `TARGET_DB_HOST` **private IP address**
  
      This IP address was gathered from the Database System details, under **Database System -> details -> Nodes**
 
-       <img src="./images/provision-db-26-nodeip.png" width="100%">
+       ![](./images/provision-db-26-nodeip.png)
 
 
 4. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. 
@@ -180,6 +185,6 @@ You may proceed to the next lab.
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
