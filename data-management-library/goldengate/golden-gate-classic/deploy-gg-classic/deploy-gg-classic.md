@@ -1,4 +1,4 @@
-# Deploy GoldenGate for Classic
+# Deploy GoldenGate Classic
 
 ## Introduction
 

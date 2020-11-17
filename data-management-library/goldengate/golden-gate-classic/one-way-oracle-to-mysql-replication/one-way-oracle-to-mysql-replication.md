@@ -1,4 +1,4 @@
-#  Lab 5 -  one-way-oracle-to-mysql-replication
+#  One Way Oracle to MySql Replication
 
 ## Introduction
 

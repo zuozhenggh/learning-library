@@ -1,4 +1,4 @@
-# Lab 4 -  Setup of Golden Gate Classic Workshop 
+# Setup of GoldenGate Classic Workshop 
 
 ![](./images/image200_1.png)
 

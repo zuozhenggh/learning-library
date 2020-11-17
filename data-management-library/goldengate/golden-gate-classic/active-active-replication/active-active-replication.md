@@ -1,4 +1,4 @@
-# Lab 8 -  Column Conversions
+# Active Active / HA-DR Replication with GoldenGate
 
 ### Introduction
 In this lab we will load data in and configure active-active for High Availability
@@ -152,7 +152,7 @@ Operations for the table "tpc.orders_status_history" are to be ranged across thr
 
 To enable schema level supplemental logging in the source Oracle PDB:
 
-7. Execute the GGSCI commands:
+Execute the GGSCI commands:
 
 ````
 <copy>./ggsci</copy>
@@ -163,7 +163,7 @@ To enable schema level supplemental logging in the source Oracle PDB:
 add schematrandata pdbeast.tpc</copy>
 ````
 		  
-8. Create the OGG replication Groups
+6. Create the OGG replication Groups
 
 Create the OGG Groups by executing the following commands:
 Oracle Integrated Extract:
@@ -178,14 +178,14 @@ register extract etpc, database, container (*)
 add exttrail ./dirdat/et, extract etpc, megabytes 250</copy>
 ````
 
-9. **Oracle Extract Data Pump**
+7. **Oracle Extract Data Pump**
 
 ````
 <copy>add extract pmysql, exttrailsource ./dirdat/et
 add rmttrail ./dirdat/rt, extract pmysql, megabytes 250</copy>
 ````
 
-10. **Oracle Parallel Apply**
+8. **Oracle Parallel Apply**
 
 ````
 <copy>dblogin useridalias ggapplywest
@@ -227,10 +227,10 @@ Start the OGG environment:
 Verify all OGG Groups are running.
 Generate data
 
-5. In the window connected to the database server:
+In the window connected to the database server:
 Change to the "/Test_Software/Scripts/Oracle/orderentry" directory.
 
-6. Login to the database as the user "tpc"
+5. Login to the database as the user "tpc"
 
 ````
 <copy>sqlplus tpc@pdbeast</copy>
@@ -238,7 +238,7 @@ Change to the "/Test_Software/Scripts/Oracle/orderentry" directory.
 
 When prompted enter the password: Oracle1
 
-7. At the SQL> prompt, enter: 
+At the SQL> prompt, enter: 
 ````
 <copy>@gentrans.sql</copy>
 ````
@@ -358,7 +358,5 @@ You may now *proceed to the next lab*.
 * **Contributors** - Madhu Kumar
 * **Last Updated By/Date** - Brian Elliott, November 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
