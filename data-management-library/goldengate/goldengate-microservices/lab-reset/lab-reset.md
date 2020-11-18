@@ -42,7 +42,7 @@ Once the script is executed, you will see a statement saying that the ***“Succ
 
 Below example will guide to how to delete the deployment **"Target"** - (***SanFran***)
 
-|    Arguement    | DESCRIPTION	       	        |       Example	      |
+|    Argument    | DESCRIPTION	       	        |       Example	      |
 |-----------------|-----------------------------|---------------------|
 |      A1         |Deployment Name	            |   SanFran           |
 |      A2         |Admin User Password	        |   Welcome1          |
