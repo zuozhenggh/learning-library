@@ -96,10 +96,10 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
 1. Select **Provision Functions and API Gateway?** to enable deploying models to Oracle Functions and use the API gateway.
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/stack-details2.png)
+    ![](./../speed-up-ds-with-the-ads-sdk/images/stack-details.png)
 
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues and then repeat this step.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/apply2.png)
+    ![](./../speed-up-ds-with-the-ads-sdk/images/apply.png)
 
 You can *proceed to the next lab*.
 
