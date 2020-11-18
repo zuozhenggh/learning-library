@@ -22,7 +22,7 @@ To have the greatest success in completing this lab make sure you meet the follo
 * You have completed Lab 1 
 * You have a general knowledge of OCI and its web interface
 
-## **Step 1**: Create a Compartment 
+## **STEP 1**: Create a Compartment 
 
 In this part of the lab, we create a compartment to organize the resources we will create.
 
@@ -42,7 +42,7 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
 4)	Choose a Name (e.g. “**TestDrive**”), fill out the form and click the   button. Note: that the parent compartment should be the root compartment.
 
-## **Step 2:**  Create a Virtual Cloud Network (VCN)
+## **STEP 2:**  Create a Virtual Cloud Network (VCN)
 
 To create a VCN on Oracle Cloud Infrastructure:
 
@@ -85,7 +85,7 @@ Then click on the ***View Virtual Cloud Network*** Button shown.
     ![](./images/2.5.png " ")
 
  
-## **Step 3:**  Establish Security List Rules for JDE 
+## **STEP 3:**  Establish Security List Rules for JDE 
 
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN.
 
@@ -132,8 +132,10 @@ You may now proceed to the next lab
 * Marc-Eddy Paul, Cloud Engineering
 * William Masdon, Cloud Engineering
 * Chris Wegenek, Cloud Engineering 
-* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, 11/9/2020
+* **Last Updated By/Date** - AJ Kurzman, Cloud Engineering, 11/17/2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

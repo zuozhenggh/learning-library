@@ -1,16 +1,14 @@
 # Lab 1: Preparation for JDE Workshop
 
-## Introduction
+## About This Workshop
 
 This lab will serve as a foundation for the rest of the workshop and provide you with the tools necessary to complete the steps required to migrate JDE to OCI.
 
-## Objectives
-
-This workshop will demonstrate how to deploy JD Edwards EnterpriseOne Release 9.2 Trial Edition to Oracle Cloud Infrastructure (OCI).
+The workshop will also demonstrate how to deploy JD Edwards EnterpriseOne Release 9.2 Trial Edition to Oracle Cloud Infrastructure (OCI).
 
 Upon completion of this lab, you will have a working deployment of JD Edwards EnterpriseOne Trial Edition with Tools Release 9.2 and Applications Release 9.2 on a fully functional suite of interconnected virtual machine.You can use it to verify functionality and to investigate proofs of concept.
 
-### About Product/Technology
+### About the Product/Technology
 
 Trial Edition is for training and demonstration purposes only. It can be used to verify functionality and to investigate proofs of concept (POCs). The Trial Edition on OCI Compute contains only the Pristine (PS920) environment, which is one of the four standard JD Edwards EnterpriseOne environments.  
 
@@ -24,8 +22,8 @@ This single image is built using an Oracle Linux VM instance containing these JD
 
 * Application Development Framework (ADF) Server
 
-**Duration:** 2 hours (additional time may be needed for first-time users)
 
+**Duration:** 2 hours (additional time may be needed for first-time users)
 
 
 ### Objectives
@@ -68,7 +66,9 @@ JD Edwards EnterpriseOne is a comprehensive suite of integrated global business 
   Recommended Shape: VMStandard2.4 (4 OCPUs and 30 GB memory)
 * Boot Volume Storage of 100 GB
 
-## **OPTIONAL:** Generate a Secure Shell (SSH) Key Pair
+## Setup
+
+In this section you will generate a Secure Shell (SSH) key pair that you will use to connect to your instance.
 
 **NOTE:**  If you have a previously generated key available, you can use that key and skip this exercise.
 
@@ -96,25 +96,25 @@ There are many tools available for Windows users to create SSH key pairs and con
 1)  Install Git for windows if not already Installed. Download the latest release of [Git](https://github.com/git-for-windows/git/releases/) for Windows and install accepting all the default settings.
 
 2)  Open Git Bash by either checking the ***Launch Git Bash*** option in the installer ***OR*** by navigating to it from the Windows Start Menu:
-
      ![](./images/lab1_gitsetup.png " ")
      ![](./images/lab1_gitbash.png " ")
 
 3)  Generate ssh-keys by the command ssh-keygen in Git Bash and then simply hit “Enter” for all steps:
 
-        ssh-keygen  
-        Generating public/private rsa key pair. Enter file in which to save the key
+    # ssh-keygen  
+Generating public/private rsa key pair. Enter file in which to save the key
 
-        (/c/Users/username/.ssh/id_rsa): (Press enter for this step)
-         Created directory '/c/Users/username/.ssh'.
+    (/c/Users/username/.ssh/id_rsa): (Press enter for this step)
+Created directory '/c/Users/username/.ssh'.
 
-        Enter passphrase (empty for no passphrase): (Press enter for this step)
+    Enter passphrase (empty for no passphrase): (Press enter for this step)
 
-        Enter same passphrase again: (Press enter for this step)
-        Your identification has been saved in /c/Users/username/.ssh/id_rsa.  
-        Your public key has been saved in /c/Users/username/.ssh/id_rsa.pub
+    Enter same passphrase again: (Press enter for this step)
+Your identification has been saved in /c/Users/username/.ssh/id_rsa.
 
-    **Note:**
+Your public key has been saved in /c/Users/username/.ssh/id_rsa.pub
+
+**Note:**
 
     •   In Git Bash, C:\Users\username\ is shown as /c/Users/username/
 
@@ -125,37 +125,30 @@ There are many tools available for Windows users to create SSH key pairs and con
 1)  Install Puttygen (PUTTY) for Windows if not already installed. Download the latest release of [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), 64-bit MSI Installer and install accepting all the default settings.
 
 2)  Open PuTTY Gen: 
-
     ![](./images/lab1_puttygen.png " ")
 
 3)  In the PuTTY Key Generator, ensure that the ***Type of key to generate*** is set to ***RSA*** and the Number of bits in a generated key is set to ***2048***, and then click the ***Generate*** button.
- 
     ![](./images/lab1_puttykey.png " ")
 
 4)  After clicking the ***Generate button***, move the mouse around the blank area to generate randomness for the SSH key to be generated.
- 
     ![](./images/lab1_keygenerator.png " ")
 
 5)  In the PuTTY Key Generator dialog, select all the characters in the ***Public key for pasting into OpenSSH authorized_keys file*** field, and then right-click and select ***Copy***.
 
-    **Note:** Ensure that you select all the characters and not just the ones shown in the narrow window. Scroll down as necessary.
- 
+**Note:** Ensure that you select all the characters and not just the ones shown in the narrow window. Scroll down as necessary.
     ![](./images/lab1_copykey.png " ")
 
 6)  Paste the copied string into a plain text editor (such as Notepad) and save the plain text file. Save it to a known location with any file name but ensure that it has the extension .pub (example: OCISSHKey.pub) to indicate that it is a public key.  Make note of this file name as you will need it later.
 
 7)  Next, save the OpenSSH private key. In the same PuTTY Key Generator window, from the ***Conversions*** menu, select the ***Export OpenSSH key*** option.
-
     ![](./images/lab1_exportkey.png " ")
 
 8)  PuTTYgen will ask you to verify that the key will be saved without a passphrase. Click the ***Yes*** button.
- 
     ![](./images/lab1_puttyyes.png " ")
 
 9)  Again, save the file to the same known location with any file name but ensure that the file has ***NO extension*** on it (example: OCISSHKey).  Make note of this file name as you will need it later.
 
 10) Save the Windows private key. In the same PuTTY Key Generator window, click the ***Save private key*** button. 
- 
     ![](./images/lab1_puttyprivatekey.png " ")
 
 11) Again, click the ***Yes*** button to verify saving the key without a passphrase.
@@ -177,11 +170,13 @@ You may now proceed to the next lab.
 * Marc-Eddy Paul, Cloud Engineering
 * William Masdon, Cloud Engineering
 * Chris Wegenek, Cloud Engineering 
-* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, 11/9/2020
+* **Last Updated By/Date** - AJ Kurzman, Cloud Engineering, 11/17/2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 
 

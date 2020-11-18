@@ -18,11 +18,12 @@ To deploy JDE Trial Edition, in this lab, you will:
 
 ## Prerequisites
 
-To have the greatest success in completing this lab make sure you have aready completed:
-*   Lab 1
-*   Lab 2
+*   Virtual Cloud Network (VCN) Created
+*   Established Security List Rules for JDE
+*   SSH Key Pair Generated
+*   Familiarity with OCI Console
 
-## **Step 1**: Provision Trial Edition from OCI Marketplace
+## **STEP 1**: Provision Trial Edition from OCI Marketplace
 
 Create an instance in OCI that is based off the JDE Trial Edition image
 
@@ -69,7 +70,7 @@ On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation***
 5) After a few minutes, the instance will be running and ready.  Copy and take note of the **Public IP address** under the ***Instance Access*** section, which is required to connect to the instance – in this example, it is 129.213.43.190.
     ![](./images/4j.png " ")
 
-##  **Step 2:**  Accessing the OCI Instance
+##  **STEP 2:**  Accessing the OCI Instance
 
 To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is necessary to connect to the VM Instance.  The username on the instance is **opc**.  There isn’t a password, the account can only be accessed using the SSH private key.
 
@@ -101,14 +102,13 @@ Once connected, you can continue to **Step 3** below
 3) If, after entering the ssh command, you receive a message like in the screen shot below, reply with YES.
     ![](./images/2.3.png " ")
 
-4) Once connected, you can continue to **Step 3** below.
+4) Once connected, you can continue to **STEP 3** below.
 
 **Method 2:** Using SSH with Putty for Windows
 
 For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an OCI instance.
 
 1)	Launch ***PuTTY***.
-
     ![](./images/2.21.png " ")
 
 2) Within the PuTTY session, under Session category, enter the Public IP Address (example: 132.145.187.16) from the instance information into the ***Host Name*** field, and then select category ***Connection → Data***.
@@ -129,7 +129,7 @@ For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an
 7) PuTTY will open a command window. On first connection, a Security Alert window will appear. Click ***Yes*** to accept that you trust the connection to this host.
     ![](./images/2.27.png " ")
 
-## **Step 3:** Perform First-Time Configuration of Trial Edition
+## **STEP 3:** Perform First-Time Configuration of Trial Edition
 
 During the first connection to a Trial Edition instance (after completing Lab3 Step 2), a process will run to verify if any critical updates are required to the OS and the installed software packages on the instance.  If so, the following screen will display noting that the yum update packages are installing.  This process can take anywhere from 5 to 10 minutes to run. 
 
@@ -161,7 +161,7 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
 5)	Final Confirmation: Y – Yes to commit the configuration settings and run the script to set up.
 
 
-    Configuration will take between 25-30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status ***“Successfully completed u01/vmScripts/EOne_Sync.sh”***.
+Configuration will take between 25-30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status ***“Successfully completed u01/vmScripts/EOne_Sync.sh”***.
     ![](./images/3.5.png " ")
 
 ## **Summary**
@@ -179,8 +179,10 @@ You may now proceed to the next lab.
 * Marc-Eddy Paul, Cloud Engineering
 * William Masdon, Cloud Engineering
 * Chris Wegenek, Cloud Engineering 
-* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, 11/9/2020
+* **Last Updated By/Date** - AJ Kurzman, Cloud Engineering, 11/17/2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
