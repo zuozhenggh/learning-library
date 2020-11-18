@@ -1,4 +1,3 @@
-@@ -1,1487 +0,0 @@
 # Oracle Audit Vault and DB Firewall (AVDF)
 
 ## Introduction
@@ -369,12 +368,13 @@ You have completed the lab.
 
 In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. For ease of execution, the required step from the Database Security Assessment Tool (DBSAT) lab was performed and the output saved. The first step here will help download and stage it accordingly.
 
+<!--
 1. Download and stage the sensitive data to `/home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data`
     - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
     - Now we need to become `oracle` User
 
     ````
-    <copy>su - oracle</copy>
+    <copy>sudo su - oracle</copy>
     ````
 
     - Once we have switched to `oracle`, download and stage the file
@@ -436,6 +436,53 @@ In this lab you will use the results from a Database Security Assessment Tool (D
     - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
 
    ![](images/csv_file_loaded01.png " ")
+-->
+1. Click on the link below to download the sensitive data (`pdb1_dbsat_discover.csv`) generated from DBSAT lab to your local computer
+
+[pdb1_dbsat_discover.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/g7HGibfhPXhmVXvyiP5G4yGe_MH3yPGUkiCrccuYhCKewZvgd-mlPycLPxaOAxcC/n/natdsecurity/b/labs-files/o/pdb1_dbsat_discover.csv)
+
+2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user *"AVADMIN"*:
+
+    - Open an SSH session to your **AVS VM** as user *opc*
+    - Now we need to become `oracle` User
+
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
+
+    - Once we have switched to `oracle`, we have to run the Python script to grant the additional role
+
+      ````
+      <copy>python /usr/local/dbfw/bin/av_sensitive_role grant avadmin</copy>
+      ````
+
+    - The results should look like this screenshot
+
+   ![](images/grant_sensitive_role01.png " ")
+
+    - Close the session
+
+3. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
+
+    - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+    - Now we need to become `oracle` User
+
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+    - Launch the browser to `https://<AVS-VM-Public_IP` and login to the Audit Vault as *AVADMIN* using the password "*T06tron.*"
+    - Upload the `pdb1_dbsat_discover.csv` file you downloaded earlier into AVDF Console
+        - Click the `Targets` tab
+        - Click the `pdb1` target name
+        - In the right, top, corner of the page click `Sensitive Objects`
+        - Select the `pdb1_dbsat_discover.csv` file you saved to your local system
+
+   ![](images/upload_csv_file01.png " ")
+
+    - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
+
+   ![](images/csv_file_loaded01.png " ")
+
 
 4. View the Sensitive Data
 
