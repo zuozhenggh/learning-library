@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -72,11 +72,11 @@ You may now *proceed to the next lab*.
 * [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
 
 * [GoldenGate with PostgreSQL](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/using-oracle-goldengate-postgresql.html/")
-* 
+*
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration  November 2020
-* **Contributors** - Madhu Kumar
-* **Last Updated By/Date** - Brian Elliott, November 2020
+* **Contributors** - Madhu Kumar, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
 
 
 ## See an issue?

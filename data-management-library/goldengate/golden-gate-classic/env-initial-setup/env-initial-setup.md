@@ -1,4 +1,4 @@
-# Setup of GoldenGate Classic Workshop 
+# Setup of GoldenGate Classic Workshop
 
 ![](./images/image200_1.png)
 
@@ -10,18 +10,18 @@ Contents
 
 Introduction
  Disclaimer
-  Oracle GoldenGate for Big Data Workshop Architecture 
+  Oracle GoldenGate for Big Data Workshop Architecture
   Setup the QuickStart VM for GoldenGate for Big Data Workshop
 
 Lab  – Setup GoldenGate Classic
 
 Lab  – MySQL ->  Oracle  unidirectional replication
-  
+
 Lab  – Oracle ->  mySQL  unidirectional replication
 
-Lab  – Classic Active-Active Replication 
+Lab  – Classic Active-Active Replication
 
-Lab  – Classic Column Conversions 
+Lab  – Classic Column Conversions
 
 Lab  - Replication to PostgreSQL
 
@@ -33,15 +33,15 @@ KEY FEATURES
 
 Non-invasive, real-time transactional data streaming
 
-Secured, reliable and fault-tolerant data delivery 
-Easy to install, configure and maintain 
-Streams real-time changed data 
+Secured, reliable and fault-tolerant data delivery
+Easy to install, configure and maintain
+Streams real-time changed data
 Easily extensible and flexible to stream changed data to other relational targets
 
 KEY BENEFITS
 
-Improve IT productivity in integrating with data management systems 
-Use real-time data in big data analytics for more timely and reliable insight 
+Improve IT productivity in integrating with data management systems
+Use real-time data in big data analytics for more timely and reliable insight
 Improve operations and customer experience with enhanced business insight • Minimize overhead on source systems to maintain high performance
 
 Oracle GoldenGate Classic provides optimized and high performance delivery.
@@ -57,7 +57,7 @@ integration architectures to big data systems without impacting the performance 
 
 ### Disclaimer
 
-This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
+This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment.
 
 Time to Complete -
 Approximately 30 min
@@ -75,7 +75,7 @@ This lab assumes you have:
 In this lab we will setup GoldenGate Classic
 
 
-## **Step 1:** Configuration for Classic Lab
+## **STEP 1:** Configuration for Classic Lab
 
 Open a terminal session
 
@@ -85,7 +85,7 @@ Open a terminal session
 <copy>sudo su - oracle</copy>
 ````
 
-## **Step 2:**  Test connectivity for the OGG users: (Completed prior to the Lab)
+## **STEP 2:**  Test connectivity for the OGG users: (Completed prior to the Lab)
 
 1. sqlplus c##ggadmin
 
@@ -93,7 +93,7 @@ When prompted enter the password: Oracle1
 ````
 <copy>sqlplus c##ggadmin@pdbeast</copy>
 ````
-When prompted enter the password: Oracle1	
+When prompted enter the password: Oracle1
 
 2. open a secong session
 
@@ -101,7 +101,7 @@ When prompted enter the password: Oracle1
 <copy>sqlplus ggadmin@pdbwest</copy>
 ````
 When prompted enter the password: Oracle1
-		   
+
 1. Change to the "/opt/Test_Software/Scripts/Oracle/orderentry" directory
 
 ````
@@ -175,7 +175,7 @@ Each PDB in the database (pdbeast and pdbwest) will now contain a TPC schema wit
 ````
 
 
-## **Step 3:** - Conenctivity to Oracle environment using ggadmin
+## **STEP 3:** - Conenctivity to Oracle environment using ggadmin
 
 Test connectivity to **MySQL** by executing the commands:
 
@@ -207,7 +207,7 @@ There should be 14 tables in the tpc database.
 <copy>exit;</copy>
 ````
 
-## **Step 4:**  - Conenctivity to MySQL environment using ggrep
+## **STEP 4:**  - Conenctivity to MySQL environment using ggrep
 
 ````
 <copy>sudo mysql -u ggrep -p@Oracle1@</copy>
@@ -226,8 +226,8 @@ There should be 14 tables in the tpc database.
 <copy>exit;</copy>
 ````
 
-## **Step 5:**  - GoldenGate GoldenGate for Oracle setup and configuration
-	
+## **STEP 5:**  - GoldenGate GoldenGate for Oracle setup and configuration
+
 1. start a second session
 
 2. Switch to the "oracle" user.
@@ -260,7 +260,7 @@ This validates remote connectivity to the Oracle Database.
 <copy>exit</copy>
 ````
 
-## **Step 6:**  - GoldenGate GoldenGate for MySQL setup and configuration
+## **STEP 6:**  - GoldenGate GoldenGate for MySQL setup and configuration
 
 ````
 <copy>mysql -uroot -pData1Integration!
@@ -309,7 +309,7 @@ This validates remote connectivity to the MySQL Database for apply.
 ````
 <copy>exit</copy>
 ````
-	
+
 1.  Enter "exit" twice to close the connection to the database machine.
 
 2.  Shutdown the MySQL database.
@@ -329,7 +329,7 @@ This validates remote connectivity to the MySQL Database for apply.
 ````
 
 5.  Shutdown the Oracle database and listener.
-    
+
 ````
 <copy>sqlplus / as sysdba
 	  shutdown immediate
@@ -346,9 +346,8 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
-* **Contributors** - Madhu Kumar
-* **Last Updated By/Date** - Brian Elliott, November 2020
+* **Contributors** - Madhu Kumar, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
