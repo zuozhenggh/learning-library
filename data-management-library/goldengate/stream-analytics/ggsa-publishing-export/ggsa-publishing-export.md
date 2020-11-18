@@ -25,7 +25,7 @@ This lab assumes you have:
 ## **STEP 1**: Publishing vs. Draft
 
 1. Select Pipelines from the left Nav Bar and see all the pipelines.  
-2. Click on the RetailPromotions from Lab 3 to see that pipeline running with Live Output.Also note that every time you click on the Done button the stream stops but all the changes are saved to the pipeline.  
+2. Click on the RetailPromotions from Lab 3 to see that pipeline running with Live Output. Also note that every time you click on the Done button the stream stops but all the changes are saved to the pipeline.  
 3. On the top right part of the screen notice that the pipeline is in the Draft mode and only runs while the pipeline is open for each user
 
     ![](./images/donedraft.png " ")
@@ -35,7 +35,7 @@ In order to make the pipeline available for production for all users the pipelin
 
 You can Publish a pipeline in two ways.  You can hover over the pipeline in the Catalog page and see the Publish button highlighted.  Alternatively, you can open the pipeline and click on the Publish button on the top right-hand corner of the screen.
 
-1. Go ahead and Publish the RetailPromotions from Lab 3.
+1. Go ahead and Publish the RetailPromotions from *Create Retail Pipeline Lab*.
 2. In the Pipeline Settings page note the parameters that are configurable for Spark such as number of Executors and Memory as well as Driver Memory. For this lab we are going to keep all the defaults since we are only running on one node. In production, setting these parameters affect the performance of the pipeline.
 3. Do NOT make any changes to the settings and click on the Publish button
 
@@ -66,7 +66,7 @@ A *Dashboard* is an analytic feature that allows visualization of the pipeline o
     ![](./images/newDashboard.png " ")
 
 7. Keep the defaults and Save the dashboard.  
-8. Notice that the new dashboard is now visible in the Catalog page. 
+8. Notice that the new dashboard is now visible in the Catalog page.
 9.  Click on the new RevenueByCustomerSegmentLab3.
 10. Click on the Edit Dashboard button on the top right hand corner.
 
@@ -78,7 +78,7 @@ A *Dashboard* is an analytic feature that allows visualization of the pipeline o
     ![](./images/editdashboard2.png " ")
 
 13. A new Add Visualizations to Dashboard screen comes up.  
-14. Check the RevenueByCustomerSegementLab3 visualization 
+14. Check the RevenueByCustomerSegementLab3 visualization
 15. Click on the Add Visualizations button.
 
     ![](./images/addVisualization.png " ")
@@ -90,7 +90,7 @@ A *Dashboard* is an analytic feature that allows visualization of the pipeline o
 17. You can now Exit the dashboard using the Actions dropdown.
 
 ## **STEP 4**: Import/Export
-You can use export and import to migrate your pipeline and its contents between GoldenGate Stream Analytics systems, or you can also migrate only select artifacts. You can import a pipeline developed with the latest version of GoldenGate Stream Analytics.You have learned the import functionality in the beginning of this workshop.  In this lab you will export the dashboard that you just create in the last step.
+You can use export and import to migrate your pipeline and its contents between GoldenGate Stream Analytics systems, or you can also migrate only select artifacts. You can import a pipeline developed with the latest version of GoldenGate Stream Analytics. You have learned the import functionality in the beginning of this workshop.  In this lab you will export the dashboard that you just create in the last step.
 
 1. Hover over the RevenueByCustomerSegementLab3 dashboard
 2. Click on the Export icon on the right part of the screen.
@@ -102,14 +102,13 @@ You can use export and import to migrate your pipeline and its contents between 
 5. Notice that a zip file such as `RevenueByCustomerSegmentLab3Export.zip` has been downloaded to your local machine.
 
 ## Learn More
-
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
-* **Contributors** - Shrinidhi Kulkarni, Solution Engineer
-* **Last Updated By/Date** - Meghana Banka, October 2020
+* **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

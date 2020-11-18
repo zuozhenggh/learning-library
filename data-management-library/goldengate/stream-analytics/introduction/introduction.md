@@ -2,6 +2,8 @@
 
 This workshop aims at providing hands-on lab in creating a complete solution platform to filter, correlate, and process events in real-time using GoldenGate for Big data and GoldenGate stream Analytics.  
 
+*Estimated Lab Time*: 3 hours
+
 ## About GoldenGate Stream Analytics (GGSA)
 Golden Gate Stream Analytics is an environment that originally began as a Complex Event Processing engine and evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka.  The tool is designed to ingest a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST, or even a file system file.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.  
 
@@ -17,12 +19,12 @@ In this workshop however, we will be reading streaming data from the file system
 In this workshop you will:
 * Navigate Oracle GoldenGate Stream Analytics UI
 * Walk-through an IoT Use Case
-* Create a pipeleine for a Retail Use Case
+* Create a pipeline for a Retail Use Case
 * Create dashboards and export artifacts
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-  
+
 ### Lab Overview
 
 | Lab Title | Description | Approx. Time |
@@ -35,17 +37,26 @@ In this workshop you will:
 
 
 ### Required Credentials for GoldenGate Stream Analytics
-    
 
-    MySQL root password: OSADemo1111! 
+    ```
+    MySQL root password: <copy>OSADemo1111!</copy>
+    ```
 
-    OSA_DEMO database password:Welcome123!
+    ```
+    OSA_DEMO database password: <copy>Welcome123!</copy>
+    ```
 
-    osaadmin password:welcome1
+    ```
+    osaadmin password: <copy>welcome1</copy>
+    ```
 
-    Spark Username:sparkadmin
+    ```
+    Spark Username: <copy>sparkadmin</copy>
+    ```
 
-    Spark Password:Sparkadmin#123 
+    ```
+    Spark Password: <copy>Sparkadmin#123</copy>
+    ```
 
 ## Learn More
 
@@ -54,8 +65,8 @@ In this workshop you will:
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
-* **Contributors** - Shrinidhi Kulkarni, Solution Engineer
-* **Last Updated By/Date** - Meghana Banka, October 2020
+* **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

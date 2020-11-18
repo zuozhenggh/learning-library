@@ -1,11 +1,11 @@
-#  Setup of Golden Gate Microservices Workshop 
+#  Setup of Golden Gate Microservices Workshop
 
 ## Introduction
 Contents
 
 Introduction
 Disclaimer
-Oracle GoldenGate Microservices Workshop Architecture 
+Oracle GoldenGate Microservices Workshop Architecture
 
 Lab  – Setup GoldenGate Microservices
 
@@ -20,16 +20,16 @@ KEY FEATURES
 
 Non-invasive, real-time transactional data streaming
 
-- Secured, reliable and fault-tolerant data delivery 
-- Easy to install, configure and maintain 
-- Streams real-time changed data 
+- Secured, reliable and fault-tolerant data delivery
+- Easy to install, configure and maintain
+- Streams real-time changed data
 - Easily extensible and flexible to stream changed data to other relational targets
 
 KEY BENEFITS
 
-- Improve IT productivity in integrating with data management systems 
-- Use real-time data in big data analytics for more timely and reliable insight 
-- Improve operations and customer experience with enhanced business insight 
+- Improve IT productivity in integrating with data management systems
+- Use real-time data in big data analytics for more timely and reliable insight
+- Improve operations and customer experience with enhanced business insight
 - Minimize overhead on source systems to maintain high performance
 
 Oracle GoldenGate Microservices provides optimized and high performance delivery.
@@ -62,7 +62,6 @@ Open a terminal session
 ## **STEP 2:**  Test connectivity for the OGG users: (Completed prior to the Lab)
 
 
-
 ### Summary
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
@@ -72,7 +71,6 @@ You may now *proceed to the next lab*.
 
 ## Learn More
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
-
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 
