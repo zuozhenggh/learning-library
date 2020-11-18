@@ -250,6 +250,8 @@ Follow the steps below to continue with the lab exercises.
 
 5. Additional details can be found in the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A). 
 
+You may now *proceed to the next lab*.
+
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
 - <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>

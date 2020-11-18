@@ -425,6 +425,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
 
 11. Go back to the **Manage Sandboxes** tab, select the sandbox name you created and click on **Publish Sandbox** and then click **Yes** to confirm.
 
+You may now *proceed to the next lab*.
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:

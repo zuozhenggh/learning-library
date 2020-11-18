@@ -425,6 +425,8 @@ Follow the steps below to continue with the lab exercises.
 
 5. You can learn more about the OIM system defined operations and rules in the following [link](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.3/omadm/managing-workflows.html#GUID-F21C1DC9-49A3-48F1-820C-2422CB24678A). 
 
+You may now *proceed to the next lab*.
+
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
 - <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>
