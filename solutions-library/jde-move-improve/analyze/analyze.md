@@ -1,4 +1,4 @@
-# Lab 4: Connecting to JDE Trial Edition 
+# Lab 3: Connecting to JDE Trial Edition 
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Lab 2: Set Up OCI for JDE Trial Edition Deployment 
+# Lab 1: Set Up OCI for JDE Trial Edition Deployment 
 
 
 ## Introduction

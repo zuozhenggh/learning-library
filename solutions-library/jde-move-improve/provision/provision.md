@@ -1,4 +1,4 @@
-# Lab 3: Creating a Trial Edition Instance in OCI
+# Lab 2: Creating a Trial Edition Instance in OCI
 
 ## Introduction
 

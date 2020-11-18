@@ -1,4 +1,4 @@
-# Lab 1: Preparation for JDE Workshop
+# Introduction
 
 ## About This Workshop
 
