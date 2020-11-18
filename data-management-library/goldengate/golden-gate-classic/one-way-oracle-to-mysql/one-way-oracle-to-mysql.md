@@ -1,4 +1,4 @@
-#  One Way Oracle to MySql Replication
+#  One Way - Oracle to MySql 
 
 ## Introduction
 

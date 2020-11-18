@@ -36,17 +36,17 @@
     {
       "title": "Replication Oracle to MySql",
       "description": "Replication Oracle to MySql",
-      "filename": "../../one-way-oracle-to-mysql-replication/one-way-oracle-to-mysql-replication.md"
+      "filename": "../../one-way-oracle-to-mysql/one-way-oracle-to-mysql.md"
     },
     {
       "title": "Replication MySql to Oracle",
-      "description": "MySql to Oracle replication",
-      "filename": "../../one-way-replication-mysql-to-oracle/one-way-replication-mysql-to-oracle.md"
+      "description": "MySql to Oracle",
+      "filename": "../../one-way-mysql-to-oracle/one-way-mysql-to-oracle.md"
     },
     {
       "title": "Active Active Replication",
-      "description": "Bidirectional Active Active Replication",
-      "filename": "../../active-active-replication/active-active-replication.md"
+      "description": "Bidirectional Active Active - HA/DR",
+      "filename": "../../active-active/active-active.md"
     },
     {
       "title": "GoldenGate Column Conversions",
@@ -63,7 +63,7 @@
     {
       "title": "GoldenGate One Way replication to PostgresSQL",
       "description": "GoldenGate replication to PostpresSQL Lab",
-      "filename": "../../one-way-postgresql-to-postgresql-replication/one-way-postgresql-to-postgresql-replication.md"
+      "filename": "../../one-way-postgresql-to-postgresql/one-way-postgresql-to-postgresql.md"
     }
   ]
 }

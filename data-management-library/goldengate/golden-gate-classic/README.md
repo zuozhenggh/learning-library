@@ -33,7 +33,7 @@ Lab   –   MySQL -> Oracle
 
 Lab   –  Oracle -> MySQL
 
-Lab   –  Active - Active Replication
+Lab   –  Active - Active - HA/DR
 
 Lab   –  GoldenGate Column Conversions
 

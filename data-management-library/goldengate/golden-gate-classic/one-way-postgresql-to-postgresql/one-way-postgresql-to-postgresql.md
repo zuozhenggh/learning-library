@@ -1,4 +1,4 @@
-# UniDirectional replication between PostgreSQL and PostgreSQL
+# UniDirectional between PostgreSQL and PostgreSQL
 
 ## Introduction
 This lab will show you how to setup an ***UniDirectional replication between PostgreSQL to PostgreSQL***.
