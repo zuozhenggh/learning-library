@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle GoldenGate Microservices",
+  "workshoptitle": "Oracle GoldenGate Classic",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -8,7 +8,7 @@
     },
     {
       "title": "Introduction",
-      "description": "Introduction to GoldenGate Microservices",
+      "description": "Introduction to Classic",
       "filename": "../../introduction/introduction.md"
     },
     {
@@ -29,24 +29,41 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: GG Initial Setup",
-      "description": "GG Initial Setup",
+      "title": "Lab 4: Initial GoldenGate Setup",
+      "description": "Initial Setup",
       "filename": "../../initial-setup/initial-setup.md"
     },
     {
-      "title": "Lab 5: Create Replication",
-      "description": "GG Replication",
-      "filename": "../../create-replication/create-replication.md"
+      "title": "Lab 5: Oracle to MySql Replication",
+      "description": "Oracle to MySql Replication",
+      "filename": "../../oracle-to-mysql/oracle-to-mysql.md"
     },
     {
-      "title": "Lab 7: HA/DR Replication",
-      "description": "Hign Availability / Disaster Recovery Replication",
-      "filename": "../../ha-dr/ha-dr.md"
+      "title": "Lab 6: MySql to Oracle Replication",
+      "description": "MySql to Oracle Replication",
+      "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
     },
     {
-      "title": "Lab 8: Transformations Using GoldenGate Microservices",
-      "description": "Transformations using GoldenGate Microservices ",
-      "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
+      "title": "Lab 7: Active Active Replication",
+      "description": "Bidirectional Active Active Replication - HA/DR",
+      "filename": "../../active-active/active-active.md"
+    },
+    {
+      "title": "Lab 8: GoldenGate Column Conversions",
+      "description": "GoldenGate Column Conversions",
+      "filename": "../../column-conversions/column-conversions.md"
+
+    },
+    {
+      "title": "Lab 9: Install GoldenGate for PostgresSQL",
+      "description": "GoldenGate installation for PostgresSQL",
+      "filename": "../../postgres-installation/postgres-installation.md"
+
+    },
+    {
+      "title": "Lab 10: PostgreSQL to PostgresSQL Replication",
+      "description": "PostgreSQL to PostpresSQL Replication",
+      "filename": "../../postgresql-to-postgresql/postgresql-to-postgresql.md"
     }
   ]
 }
