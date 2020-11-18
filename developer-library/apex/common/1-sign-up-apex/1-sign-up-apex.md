@@ -4,7 +4,7 @@
 
 Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to decide which Oracle Database you are going to use for the workshop, and then create an APEX workspace in that database.
 
-If you already have an APEX 20.1 Workspace provisioned, you can skip this lab.
+If you already have an APEX 20.2 Workspace provisioned, you can skip this lab.
 
 Estimated Time: 5 minutes
 
@@ -26,7 +26,7 @@ To determine which release of Oracle Application Express you are currently runni
   ![](images/version.png)
 
 ### Where to Run the Lab
-You can run this lab in any Oracle Database with APEX 20.1 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.1 is installed), on a third party cloud provider where APEX 20.1 is installed, or even on your laptop by installing Oracle XE or Oracle VirtualBox App Dev VM and installing APEX 20.1.
+You can run this lab in any Oracle Database with APEX 20.2 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.2 is installed), on a third party cloud provider where APEX 20.2 is installed, or even on your laptop by installing Oracle XE or Oracle VirtualBox App Dev VM and installing APEX 20.2.
 
 Below are steps on how to sign up for either an *Oracle Autonomous Database* cloud service or *apex.oracle.com* service. The Always Free Oracle Autonomous Database is ideal for learning about the Oracle Database and APEX, and provides 1 OCPU and 20 GB of compressed storage. This service can also be utilized for production applications, and can readily be upgraded to a paid service as necessary. On the other hand, apex.oracle.com is also a free service; however, it is only designated for development purposes, and running production apps is not allowed. For conducting labs in this workshop, either service can be utilized.
 

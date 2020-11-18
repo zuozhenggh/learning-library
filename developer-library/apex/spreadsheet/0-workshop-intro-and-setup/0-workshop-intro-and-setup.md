@@ -14,7 +14,7 @@ Estimated Time: 40 minutes
 * Improve Calendar page
 * Link pages
 
-*Note: This workshop assumes you are using Oracle APEX 20.1.*
+*Note: This workshop assumes you are using Oracle APEX 20.2.*
 
 ### Labs
 
