@@ -52,6 +52,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     cd scripts/swingbench/swingbench
     bin/charbench -c /home/oracle/scripts/swingbench/swingbench/configs/SOE_Client_Side_2.xml</copy>
     ````
+
     ![](images/emratlab1step1.png " ")
 
 2.  Capture STS (SQL Tuning Set)
@@ -68,8 +69,9 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     sqlplus '/ as sysdba'
     SQL> alter session set container = oltp;
     SQL> EXEC dbms_sqltune.create_sqlset('soests1');
-    SQL> EXEC dbms_sqltune.capture_cursor_cache_sqlset(sqlset_name => 'soests1', time_limit => 300, repeat_interval => 60)</copy>
+    SQL> EXEC dbms_sqltune.capture_cursor_cache_sqlset(sqlset_name => 'soests1', time_limit => 300, repeat_interval => 60,basic_filter => 'parsing_schema_name in (''SOE'')')</copy>
     ````
+
     ![](images/emratlab1step2a.png " ")
 
     ![](images/emratlab1step2b.png " ")
@@ -88,6 +90,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     SQL> exit
     emrep:oracle@emcc:~> expdp system/welcome1@oltp directory=DPDIR dumpfile=soests1.dmp tables=sqlset_tab</copy>
     ````
+
     ![](images/emratlab1step3a.png " ")
 
     ![](images/emratlab1step3b.png " ")
@@ -106,99 +109,153 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     SQL> alter session set container = OLTP_CL2;
     SQL> exec DBMS_SQLTUNE.unpack_stgtab_sqlset(sqlset_name => 'soests1', sqlset_owner => 'SYS', staging_table_name => 'SQLSET_TAB',replace => TRUE, staging_schema_owner => 'SYSTEM');</copy>
     ````
+
     ![](images/emratlab1step3c.png " ")
 
     ![](images/emratlab1step3d.png " ")
 
 
-4.  **Click** on the Containers tab. It is located at the upper right-hand corner of the page, underneath the Performance tile. This will show the list of pluggable databases in the CDB and their activity
-
-    ![](images/c6bc11e91d6db9627a146b3e79d0ce19.jpg " ")
-
-5.  Notice that the PSALES database is the busiest. We focus our attention to this PDB. Let us now navigate to Performance Hub. **Select** Performance Hub from the Performance Menu and **Click** on ASH Analytics and use the sales\_system credential name from the database login screen
-
-    ![](images/e131e1ce965ab5bb248d5439529fc921.jpg " ")
-
-    ![](images/d4ec276ea05aceb2ff86f5b7ea71c36e.jpg " ")
-
-    ![](images/58e81976fa9957ee57f89139a06c4841.jpg " ")
-
-6. Make sure to slide the time picker on an area of high usage (e.g., CPU, IO or Waits). Notice how the corresponding selected time window also changes in the summary section. You can also resize the slider to entirely cover the time period of your interest.
-
-    Notice the graph at bottom, it is providing more detailed view of the time window you selected. By Default the wait class dimension is selected. On the right hand side of the graph you have a list of wait classes for the time window you selected (blue for user I/O, green for CPU etc.). Notice how the color changes if you hover over either the menu or the graph to highlight the particular wait class.
-
-    Wait class isn’t the only dimension you can drill into the performance issue by. Let’s say you wanted to identify the SQL that was causing the biggest performance impact. You can do that by **Clicking** the drop down list and changing the top dimension from wait class to SQL ID.
-
-7.  **Select** the SQL ID dimension from the list of available dimensions (Under Top Dimensions) using the dropdown box that is currently displaying Wait Class. Top Dimensions SQL ID
-
-    ![](images/32b079f89c002058721d0c8a3e41f993.jpg " ")
-
-8. **Hover** your mouse on top of the SQL (one at the bottom) and you will be able to see how much activity is consumed by this SQL. Now using the same list of filters select the PDB dimension. Session Identifiers PDB
-
-    ![](images/95cce3b331aa85fc893b8eecc9a6c0a6.jpg " ")
-
-9. What do you see? The chart changes to activity by the different pluggable databases created in this Container database. **Click** on the ‘PSALES” pluggable database on the list to add it to the filter by list and drilldown to activity by this PDB on the same page.
-
-    ![](images/384fdb12e234cbc0d60df1639079dc3e.jpg " ")
-
-    ![](images/07dcb138dcb6773ee6b560681a62ec5f.jpg " ")
-
-10.  **Click** on the SQL Monitoring Tab
-
-      ![](images/6e47bf2703c3c1e4adffd39d2202045f.jpg " ")
-
-11. You can see all the executed SQL during that time along with different attributes like ‘user’,’Start’,’Ended’ etc. The test next to the \@ sign indicates the name of the PDB. **Click** on any SQL of your choice (e.g. 6kd5jj7kr8swv)
-
-    ![](images/533523dca8453a0ce246ac933fdb639c.jpg " ")
-
-12. It will navigate you to show the details of this particular query. You can see the plan, parallelism and activity of the query. “Plan Statistics” tab is selected by default. You can see the plan of this query in graphical mode. In some cases, the Monitored SQL may have aged out and no rows are displayed, in this case try using the time-picker and pick last 24 hrs. time period to identify the historical SQL that was monitored.
-
-13. **Select** “Parallel” tab. This will give details about parallel coordinator and parallel slaves.
-
-14. **Click** on the SQL Text tab. You can see the query text which got executed.
-
-15. **Click** on the activity tab to understand about the activity breakdown for this SQL
-
-16. **Click** on “Save” button on top right corner of the page. This will help you to save this monitored execution in “.html” format, which you can use it to share or to diagnose offline.
-
-## **STEP 2:** Real-Time Database Operations Monitoring
-
-  - Login as user "opc",
-  - Sudo over to user "oracle"
-  - Change directory to **scripts**
-  - Set your environment variables with ***SALESENV***
-  - Change directory to **load/frame/queries/awrv**
-
+4.  Create and run SPA task
+    - Create Database Link from target to source
     ````
-    <copy>sudo su - oracle
-    cd scripts
-    source SALESENV
-    cd load/frame/queries/awrv</copy>
+    <copy>
+    . 19c.env
+    sqlplus '/ as sysdba'
+    SQL> alter session set container = OLTP_CL2;
+    SQL> create public database link oltp connect to system identified by welcome1 using '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = oltp.subnet.vcn.oraclevcn.com)))';
+    </copy>
     ````
 
-1. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file. At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation.
-Now execute the file \@DBOP.sql
+    ![](images/emratlab1step4a.png " ")
+
+    - Create SPA task
     ````
-    <copy>sqlplus sh2/sh2@psales
-    @DBOP.sql</copy>
+    <copy>
+    SQL> var atname varchar2(30);
+    SQL> exec :atname := 'SPA_TEST_API';
+    SQL> begin
+        :atname := DBMS_SQLPA.CREATE_ANALYSIS_TASK (sqlset_owner => 'SYS',sqlset_name => 'soests1', task_name => :atname);
+        end;
+        /
+    </copy>    
     ````
 
-2. You should already be logged on to Enterprise Manager. If you are not, please follow the instructions detailed earlier. Select the Monitored SQL tab.
+    ![](images/emratlab1step4b.png " ")
 
-3. Review the list of currently executing SQLs are visible click on the DBOP\_DEMO name. This will open the DBOP named DBOP\_DEMO.
+    - Run SPA task test-execute to source 18c via dblink
+    ````
+    <copy>
+    SQL> begin
+        DBMS_SQLPA.EXECUTE_ANALYSIS_TASK(
+        task_name => 'SPA_TEST_API',
+        execution_type => 'TEST EXECUTE',
+        execution_name => 'oltp18c',
+        execution_params => dbms_advisor.arglist('DATABASE_LINK', 'OLTP.SUBNET.VCN.ORACLEVCN.COM'));
+        end;
+        /
+    </copy>  
+    ````
 
-    Note: You may need to scroll down or select “Database operations” from the type dropdown.
+    ![](images/emratlab1step4c.png " ")
 
-    ![](images/b10c056370e56dd1286ca1f556118c8f.jpg " ")
+    - Run SPA task test-execute in target 19c
+    ````
+    <copy>
+    SQL> begin
+        DBMS_SQLPA.EXECUTE_ANALYSIS_TASK(
+        task_name => 'SPA_TEST_API',
+        execution_type => 'TEST EXECUTE',
+        execution_name => 'oltp19c');
+        end;
+        /
+    </copy>  
+    ````
 
-4. Review the details of the Database Operations.
+    ![](images/emratlab1step4d.png " ")
 
-    ![](images/a59f28bdd1166978c41e9c9c6a5d9b93.jpg " ")
 
-5.  Click on the Activity tab. You will see all the activity for this operation.
+5.  Run SPA Analyze Compare and generate SPA report
+    - Run SPA Compare Analysis based on elapse time
+    ````
+    <copy>
+    SQL> begin
+      DBMS_SQLPA.EXECUTE_ANALYSIS_TASK(
+      task_name => 'SPA_TEST_API',
+      execution_type => 'COMPARE',
+      execution_name => 'oltp18cvs19c_elapsetime',
+      execution_params => dbms_advisor.arglist(
+          'comparison_metric',
+          'elapsed_time'));
+      end;
+      /
+    </copy>  
+    ````
 
-    ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
+    ![](images/emratlab1step4e.png " ")
 
+    - Generate SPA report
+    ````
+    <copy>
+    SQL> set long 10000000 longchunksize 10000000 linesize 200 head off feedback off echo off
+    SQL> spool /tmp/spaapirep.html
+    SQL> SELECT dbms_sqlpa.report_analysis_task(task_name => 'SPA_TEST_API', type => 'html', section => 'ALL') FROM dual;
+    SQL> spool off
+    SQL> exit
+    emrep:oracle@emcc:~> chmod 777 /tmp/spaapirep.html
+    </copy>
+    ````
+    - Use a scp client tp copy file to your local machine
+
+
+## **STEP 2:** SQL Performance Analyzer - EM UI
+
+1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
+
+    ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
+
+2. **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
+
+    ![](images/emratlab2step2.png " ")
+
+3. Here you will notice different databases listed, such as SALES, HR etc., we will work in pluggable database psales inside the sales container database. **Expand** the Sales database from the list, and **Click** sales.subnet.vcn.oraclevcn.com_PSALES
+
+    ![](images/emratlab2step3.png " ")
+
+4. Go to SQL Tuning Set page by **Click** on Performance menu -> SQL -> SQL Tuning Set. And use SYS_SALES credential name from the database login screen
+
+    ![](images/emratlab2step4.png " ")
+
+    ![](images/emratlab2step5.png " ")
+
+5. Pick SQL Tuning Set 'shsts1' and **Click** Copy To A Database button
+
+    ![](images/emratlab2step6.png " ")
+
+6. Enter Copy SQL Tuning Set
+    - Pick **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for Destination Database
+    - Pick **STSCOPY** for Directory Object
+    - Pick **ORACLE** for both Source and Destination Credentials and **SYS_SALES** for Destination Database Credential
+    - **Click** Ok
+
+    ![](images/emratlab2step7.png " ")
+
+    ![](images/emratlab2step8.png " ")
+
+    ![](images/emratlab2step9.png " ")
+
+    - View on job page to check status of the Copy STS job
+
+7. After the COPY STS job successfully finished, **Click** Target - Database
+    - **Click** db19c.subnet.vcn.oraclevcn.com - PDB **PSAL_CLone1**
+    - **Click** on menu Performance - SQL - SQL Performance Analyzer
+
+    ![](images/emratlab2step10.png " ")
+
+    ![](images/emratlab2step11.png " ")
+
+    ![](images/emratlab2step12.png " ")
+
+8. 
 ## **STEP 3:** Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
