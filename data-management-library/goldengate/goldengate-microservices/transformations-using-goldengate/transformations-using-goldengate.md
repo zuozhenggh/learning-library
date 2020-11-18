@@ -3,16 +3,16 @@
 ## Introduction
 
 This lab is intended to give you familiarity with how to configure GG for database to database replication transformations. GoldenGate is Non-invasive, real-time transactional data streaming
-Secured, reliable and fault-tolerant data delivery. It is easy to install, configure and maintain real-time changed data 
+Secured, reliable and fault-tolerant data delivery. It is easy to install, configure and maintain real-time changed data
 Easily extensible and flexible to stream transformed data to other relational targets
 
-Oracle GoldenGate for Microservices Workshop Architecture 
+Oracle GoldenGate for Microservices Workshop Architecture
 
 
 Lab  – Create GoldenGate Microservices Replication
 
 Lab  – Active - Active Replication
-  
+
 Lab  – High Availability / Disaster Recovery
 
 Lab  - Transformations using GoldenGate Microservices
@@ -21,7 +21,7 @@ Lab  - Transformations using GoldenGate Microservices
 
 #### Lab Architecture
 
-![](./images/ggmicroservicesarchitecture.png)
+![](./images/ggmicroservicesarchitecture.png " ")
 
 
 ### Objectives
@@ -32,9 +32,9 @@ Non-invasive, real-time transactional data streaming while applying target trans
 
 KEY BENEFITS
 
-- Improve IT productivity in integrating with data management systems. 
-- Use real-time data in big data analytics for more timely and reliable insight 
-- Improve operations and customer experience with enhanced business insight 
+- Improve IT productivity in integrating with data management systems.
+- Use real-time data in big data analytics for more timely and reliable insight
+- Improve operations and customer experience with enhanced business insight
 - Minimize overhead on source systems to maintain high performance
 
 Oracle GoldenGate Microservices provides optimized and high performance delivery.Designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.  
@@ -89,7 +89,7 @@ Open a terminal session
 
 4. Query inside the script for insert
 ```
-<copy>INSERT INTO SOE.CUSTOMERS VALUES (12345678,’LARRY’,’ELLISON’,’NY’,’NEW YORK’,’5000’,’LARRY@ORACLE.COM’,’365’,’15-OCT- 11’,’BUSINESS’,’MUSIC’,’4-JAN-61’,’Y’,’N’,’2767122’,’126219999’); 
+<copy>INSERT INTO SOE.CUSTOMERS VALUES (12345678,’LARRY’,’ELLISON’,’NY’,’NEW YORK’,’5000’,’LARRY@ORACLE.COM’,’365’,’15-OCT- 11’,’BUSINESS’,’MUSIC’,’4-JAN-61’,’Y’,’N’,’2767122’,’126219999’);
 
 Commit;</copy>
 
@@ -120,9 +120,9 @@ Commit;</copy>
 
 **Replicat Definition**
 
-MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id), 
+MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id),
 
-SQLEXEC (SPNAME P_MAIL, PARAMS (code_param = CUST_EMAIL)), 
+SQLEXEC (SPNAME P_MAIL, PARAMS (code_param = CUST_EMAIL)),
 
 COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIRST_NAME,CUST_LAST_NAME));
 
@@ -133,13 +133,13 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
 ```
-SQL> 
+SQL>
 ```
-<copy>CREATE  OR REPLACE FUNCTION F_MAIL(CODE_PARAM IN VARCHAR2) 
-  RETURN VARCHAR2 
+<copy>CREATE  OR REPLACE FUNCTION F_MAIL(CODE_PARAM IN VARCHAR2)
+  RETURN VARCHAR2
   IS DESC_PARAM VARCHAR2(100);
-  BEGIN 
-  RETURN 'XXXXXXXXX@dummy.com'; 
+  BEGIN
+  RETURN 'XXXXXXXXX@dummy.com';
   END;
   /</copy>
   ```
@@ -157,7 +157,7 @@ SQL>
 
 4. Create or replace the procedure
 CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2)
-  IS 
+  IS
   ```
   <copy>begin
   select F_MAIL('CODE_PARAM')
@@ -189,7 +189,7 @@ CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARC
 
 **1 row updated**
 
-8. Query inside the script for update 
+8. Query inside the script for update
 
 ```
 <copy>update soe.customers  set CUST_EMAIL='madhu.kumar.s@yahoo.com' where CUSTOMER_ID=12345678;
@@ -210,7 +210,7 @@ commit;</copy>
 
 ![](./images/c13.png " ")
 
-1. Go to Admin Server console for deployment Baston (http://localhost:17001) and edit the parameter of the REPLICAT IREP with the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command 
+1. Go to Admin Server console for deployment Baston (http://localhost:17001) and edit the parameter of the REPLICAT IREP with the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command
 
 Relicat Settings
 ```
@@ -229,7 +229,7 @@ Relicat Settings
  ```
  ![](./images/c14.png " ")
 
- 2. REPLICAT IREP param file will look like 
+ 2. REPLICAT IREP param file will look like
 
  ![](./images/c15.png " ")
 
@@ -281,4 +281,3 @@ integration architectures without impacting the performance of the source system
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-

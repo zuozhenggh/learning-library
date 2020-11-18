@@ -1,4 +1,4 @@
-# Setup of Golden Gate Microservices for Replication
+# Setup of GoldenGate Microservices for Replication
 
 ## Introduction
 
@@ -6,13 +6,13 @@ Contents
 
 Introduction
 Disclaimer
-Oracle GoldenGate for Microservices Workshop Architecture 
+Oracle GoldenGate for Microservices Workshop Architecture
 
 
 Lab  – Create GoldenGate Microservices Replication
 
 Lab  – Active - Active Replication
-  
+
 Lab  – High Availability / Disaster Recovery
 
 Lab  - Transformations using GoldenGate Microservices
@@ -29,15 +29,15 @@ KEY FEATURES
 
 Non-invasive, real-time transactional data streaming
 
-- Secured, reliable and fault-tolerant data delivery 
-- Easy to install, configure and maintain real-time changed data 
+- Secured, reliable and fault-tolerant data delivery
+- Easy to install, configure and maintain real-time changed data
 - Easily extensible and flexible to stream changed data to other relational targets
 
 KEY BENEFITS
 
-- Improve IT productivity in integrating with data management systems. 
-- Use real-time data in big data analytics for more timely and reliable insight 
-- Improve operations and customer experience with enhanced business insight 
+- Improve IT productivity in integrating with data management systems.
+- Use real-time data in big data analytics for more timely and reliable insight
+- Improve operations and customer experience with enhanced business insight
 
 • Minimize overhead on source systems to maintain high performance
 
@@ -211,7 +211,7 @@ The benefit of using the Reverse Proxy is that is makes the URLs simpler to use.
 
 https://localhost/(deployment)/adminsrvr
 
-(deployment) = the name of a deployment you build in Task 3. 
+(deployment) = the name of a deployment you build in Task 3.
 
 In the example, if using the Atlanta deployment, the URL would look like this:
 
@@ -272,8 +272,8 @@ To begin this Task 5, follow the below steps:
 ```
 <copy>cat $ORACLE_HOME/network/admin/tnsnames.ora</copy>
 ```
-4.	With the tnsnames.ora file updated, you can now create the Oracle GoldenGate Credentials (create_credential_GGAlias.sh) needed to connect the capture process (Extract) to the Oracle Database. 
- 
+4.	With the tnsnames.ora file updated, you can now create the Oracle GoldenGate Credentials (create_credential_GGAlias.sh) needed to connect the capture process (Extract) to the Oracle Database.
+
 In order to create the required credentials, run the following:
 
 ```
@@ -281,7 +281,7 @@ In order to create the required credentials, run the following:
 ```
 After running this script, can go to your browser and that the credential was created
 
-5. Open a new browser tab and connect to 
+5. Open a new browser tab and connect to
 ```
 <copy>https://localhost/(deployment)/adminsrvr</copy>
 ```

@@ -1,6 +1,6 @@
-# Golden Gate Microservices HA / DR replication
+# GoldenGate Microservices HA / DR replication
 ## Introduction
-Oracle GoldenGate for Microservices Workshop Architecture 
+Oracle GoldenGate for Microservices Workshop Architecture
 
 *Estimated Lab Time*:  60 minutes
 
@@ -13,15 +13,15 @@ KEY FEATURES
 
 Non-invasive, real-time transactional data streaming
 
-- Secured, reliable and fault-tolerant data delivery 
-- Easy to install, configure and maintain 
-- Streams real-time changed data 
+- Secured, reliable and fault-tolerant data delivery
+- Easy to install, configure and maintain
+- Streams real-time changed data
 - Easily extensible and flexible to stream changed data to other relational targets
 
 KEY BENEFITS
 
-- Improve IT productivity in integrating with data management systems 
-- Use real-time data in big data analytics for more timely and reliable insight 
+- Improve IT productivity in integrating with data management systems
+- Use real-time data in big data analytics for more timely and reliable insight
 - Improve operations and customer experience with enhanced business insight
 - Minimize overhead on source systems to maintain high performance
 
@@ -102,7 +102,7 @@ Login with the following credentials
 
 ![](./images/b4.png " ")
 
-9. Next add the schema 
+9. Next add the schema
 
 Back to terminal session run:
 
