@@ -520,7 +520,7 @@ appDeployments:
     ```
     Note: this is NOT the private load balancer IP, this is the **Private IP of the admin node**, found in the **Outputs** of the deployment stack
 
-    <img src="./images/admin-ip.png" width="70%">
+    <img src="../../../migrate-wls-oke/images/admin-ip.png" width="70%">
 
 1. Run the following command to copy the files:
 
@@ -534,7 +534,7 @@ appDeployments:
 
 ## **STEP 6:** Run the update-domain build job on Jenkins
 
-1. Go to the Jenkins UI at *http://<PRIVATE_LOAD_BALANCER_IP>/jenkins* using the tunnel setup earlier
+1. Go to the Jenkins UI at *http://PRIVATE_LOAD_BALANCER_IP/jenkins* using the tunnel setup earlier
 
 2. Click the top menu **Jenkins**
 
@@ -573,13 +573,13 @@ appDeployments:
 
 6. Run the job with the **Build** button
 
-    <img src="./images/jenkins4.png" width="60%">
+    <img src="../../../migrate-wls-oke/images/jenkins4.png" width="60%">
 
 7. In case of failure, hover over the job step and check the logs for information about issues at each build step.
 
 8. Wait until the job completes without failure in Jenkins
 
-    <img src="./images/jenkins5.png" width="80%">
+    <img src="../../../migrate-wls-oke/images/jenkins5.png" width="80%">
 
 
 ### You're done!
@@ -594,13 +594,13 @@ appDeployments:
 
 3. Find the IP of the Public Load Balancer
 
-  <img src="./images/public-lb.png" width="70%">
+  <img src="../../../migrate-wls-oke/images/public-lb.png" width="70%">
 
 4. Go to *https://PUBLIC_LOAD_BALANCER_IP/SimpleDB* to see the SimpleDB application
 
-  <img src="./images/oci-simpledb-app.png" width="100%">
+  <img src="../../../migrate-wls-oke/images/oci-simpledb-app.png" width="100%">
 
-  You will be prompted ocne again with the self-sign certificate warning in Firefox
+  You will be prompted once again with the self-sign certificate warning in Firefox
 
 
 You may proceed to the next lab.
@@ -611,6 +611,6 @@ You may proceed to the next lab.
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

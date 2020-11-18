@@ -31,18 +31,33 @@ Configuring a tenancy using Oracle Resource Manager includes creating a solution
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html) with an account with administrator permissions.
 1. Open the navigation menu. 
 1. Under **Solutions and Platform**, select **Resource Manager** and click **Stacks**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/select-stacks.png)
+
 1. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you are not sure which compartment to use, contact an administrator.
 1. Click **Create Stack**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/create-stack.png)
+
 1. Click **Sample Solution**, and then click **Select Solution**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/select-solution.png)
+
 1. Select **Data Science**, and then click **Select Solution**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/select-data-science.png)
+
 1. Click **Next**. The **Configure Variables** panel displays variables that are automatically populated from the Terraform configuration for the Data Science solution.
-1. By default the **Use Existing VCN** is unchecked. If you have not created a VCN then leave this option unchecked.  If you have already set up a VCN you will need to use it. Free Trial accounts have a default limit of two VCNs and the stack will fail to build if this bock in not checked.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/configure-variables.png)
+
+1. By default the **Use Existing VCN** is unchecked. If you have not created a VCN then leave this option unchecked.  If you have already set up a VCN you will need to use it. Free Trial accounts have a default limit of two VCNs and the stack will fail to build if this box is not checked.
 1. Deselect **Create a Project and Notebook Session?** 
 1. Deselect **Enable Vault Support?**
 1. Deselect  **Provision Functions and API Gateway?** 
+    ![](./../speed-up-ds-with-the-ads-sdk/images/uncheck.png)
+
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but doesn't create any Data Science resources. The **Stack Details** page appears.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/stack-details.png)
+
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues, and then repeat this step.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/apply.png)
 
 ## Advanced Configuration of a Tenancy
 
@@ -53,15 +68,27 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html) with an account with administrator permissions.
 1. Open the navigation menu. 
 1. Under **Solutions and Platform**, select **Resource Manager**, and click **Stacks**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/select-stacks.png)
+
 1. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you are not sure which compartment to use, contact an administrator.
 1. Click **Create Stack**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/create-stack.png)
+
 1. Click **Sample Solution**, and then click **Select Solution**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/select-solution.png)
+
 1. Select **Data Science**, and then click **Select Solution**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/select-data-science.png)
+
 1. Enter a **Name** for the new stack, or use the default.
 1. (Optional) Enter a **Description**.
 1. Select the compartment where you want to create the stack. This compartment contains all of the resources the stack creates.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/stack-info.png)
+
 1. (Optional) You can apply tags.
 1. Click **Next**. The **Configure Variables** panel displays variables automatically populated from the Terraform configuration for the Data Science solution.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/configure-variables.png)
+
 1. Change the IAM variables as necessary.
 1. Enter the network information or use the defaults to create a VCN, or select **Use Existing VCN** to enter the information to connect to an existing network.
 1. Optionally, select **Create a Project and Notebook Session?** and enter a project and notebook configuration. We recommend that you do not create a project or notebook session until you need them, see [Creating Projects](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/manage-projects.htm#create-project) and [Creating Notebook Sessions](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/manage-notebook-sessions.htm#create-notebooks).
@@ -69,7 +96,10 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
 1. Select **Provision Functions and API Gateway?** to enable deploying models to Oracle Functions and use the API gateway.
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/stack-details2.png)
+
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues and then repeat this step.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/apply2.png)
 
 You can *proceed to the next lab*.
 
@@ -79,6 +109,7 @@ You can *proceed to the next lab*.
 * **Last Updated By/Date**:
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, November 2020
 
-## See an issue?
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1) and include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, enter it manually. If you want us to follow up with you, enter your email in the *Feedback Comments* section and include the workshop name and lab in your request.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
