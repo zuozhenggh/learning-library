@@ -25,10 +25,10 @@ To delete instances:
 
 
 3) Navigate to your Compartment. Select the JDE trial instance in the list of Instances.
-    ![](./images/jde_trial_select.png " ")
+    ![](./images/jde-trial-select.png " ")
 
 4) Next click on More Actions. From there select Terminate to terminate the instance.
-    ![](./images/terminate_button.png " ")
+    ![](./images/terminate-button.png " ")
 
 5) Wait for the instance to terminate. Once terminated your instance should be gone from the instance list.
 
@@ -37,10 +37,10 @@ To delete instances:
 To delete the Virtual Cloud Network:
 
 1) On the Oracle Cloud Infrastructure Console homepage, click on the ***Navigation Menu*** in the upper-left corner and hover over ***Networking*** then select ***Virtual Cloud Network***.
-    ![](./images/vcn_select.png " ")
+    ![](./images/vcn-select.png " ")
 
 2) Under the list of Virtual Cloud Networks (VCN), click on the ***Action*** button on the right hand side and select ***Terminate***.
-    ![](./images/vcn_terminate2.png " ")
+    ![](./images/vcn-terminate.png " ")
 
 3) Wait for the Virtual Cloud Network (VCN) to finish terminating and reload the page. The item should be removed from the list. 
 

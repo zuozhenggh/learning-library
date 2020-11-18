@@ -38,23 +38,23 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
     https://console.us-ashburn-1.oraclecloud.com/ 
 
 2)  On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu   in the upper-left corner, select Identity, and then select the Compartments option.
-    ![](./images/navigation_menu.png " ")
+    ![](./images/navigation-menu.png " ")
 
 3)	Click the Create Compartment button.
-    ![](./images/create_compartment.png " ")
+    ![](./images/create-compartment.png " ")
 
 4)  Choose a Name (e.g. “**TestDrive**”), fill out the form and click the   button. Note: that the parent compartment should be the root compartment.
-    ![](./images/test_drive.png " ")
+    ![](./images/test-drive.png " ")
 
 ## **STEP 2:**  Create a Virtual Cloud Network (VCN)
 
 To create a VCN on Oracle Cloud Infrastructure:
 
 1)	On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard.
-    ![](./images/vcn_wizard.png " ")
+    ![](./images/vcn-wizard.png " ")
 
 2)	Select VCN with Internet Connectivity, and then click Start VCN Wizard.
-    ![](./images/internet_connectivity.png " ")
+    ![](./images/internet-connectivity.png " ")
 
 3)  In this window, fill in the following fields with the information shown below:
 
@@ -75,17 +75,17 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 * **USE DNS HOSTNAMES IN THIS VCN:**
   Make sure this is checked
-    ![](./images/dns_hostname.png " ")
+    ![](./images/dns-hostname.png " ")
 
 Then, scroll down to the bottom and click the ***Next*** button.
 
 4)	On the “Review and Create” page, click on the ***create*** button.
 
 5)  On the “Created Virtual Cloud Network” page wait until you see the following graphic.
-    ![](./images/creation_complete.png " ")
+    ![](./images/creation-complete.png " ")
 
 Then click on the View Virtual Cloud Network Button shown
-    ![](./images/vcn_button.png " ")
+    ![](./images/vcn-button.png " ")
 
  
 ## **STEP 3:**  Establish Security List Rules for JDE 
@@ -93,13 +93,13 @@ Then click on the View Virtual Cloud Network Button shown
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN.
 
 1)	From the details page of the TestDriveVCN, under the ***Resources*** section in the left pane, select ***Security Lists***. 
-    ![](./images/security_lists.png " ")
+    ![](./images/security-lists.png " ")
 
 2)	In the Security Lists section, click the Default ***Security List*** for ***TestDriveVCN*** link.  
-    ![](./images/default_security_list.png " ")
+    ![](./images/default-security-list.png " ")
 
 3)	On Default Security List, under Resources, click the ***Add Ingress Rules*** button.
-    ![](./images/ingress_rules.png " ")
+    ![](./images/ingress-rules.png " ")
 
 4)  Set five new ingress rules with the following properties:
     
@@ -116,7 +116,7 @@ With the VCN in place, define the open inbound and outbound ports that will be a
     | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 9703-9705 |
 
 Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
-    ![](./images/ingress_details.png " ")
+    ![](./images/ingress-details.png " ")
 
 These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 

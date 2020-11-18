@@ -97,8 +97,8 @@ There are many tools available for Windows users to create SSH key pairs and con
 1)  Install Git for windows if not already Installed. Download the latest release of [Git](https://github.com/git-for-windows/git/releases/) for Windows and install accepting all the default settings.
 
 2)  Open Git Bash by either checking the ***Launch Git Bash*** option in the installer ***OR*** by navigating to it from the Windows Start Menu:
-     ![](./images/lab1_gitsetup.png " ")
-     ![](./images/lab1_gitbash.png " ")
+     ![](./images/lab1-gitsetup.png " ")
+     ![](./images/lab1-gitbash.png " ")
 
 3)  Generate ssh-keys by the command ssh-keygen in Git Bash and then simply hit “Enter” for all steps:
 
@@ -126,31 +126,31 @@ Your public key has been saved in /c/Users/username/.ssh/id_rsa.pub
 1)  Install Puttygen (PUTTY) for Windows if not already installed. Download the latest release of [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), 64-bit MSI Installer and install accepting all the default settings.
 
 2)  Open PuTTY Gen: 
-    ![](./images/lab1_puttygen.png " ")
+    ![](./images/lab1-puttygen.png " ")
 
 3)  In the PuTTY Key Generator, ensure that the ***Type of key to generate*** is set to ***RSA*** and the Number of bits in a generated key is set to ***2048***, and then click the ***Generate*** button.
-    ![](./images/lab1_puttykey.png " ")
+    ![](./images/lab1-puttykey.png " ")
 
 4)  After clicking the ***Generate button***, move the mouse around the blank area to generate randomness for the SSH key to be generated.
-    ![](./images/lab1_keygenerator.png " ")
+    ![](./images/lab1-keygenerator.png " ")
 
 5)  In the PuTTY Key Generator dialog, select all the characters in the ***Public key for pasting into OpenSSH authorized_keys file*** field, and then right-click and select ***Copy***.
 
 **Note:** Ensure that you select all the characters and not just the ones shown in the narrow window. Scroll down as necessary.
-    ![](./images/lab1_copykey.png " ")
+    ![](./images/lab1-copykey.png " ")
 
 6)  Paste the copied string into a plain text editor (such as Notepad) and save the plain text file. Save it to a known location with any file name but ensure that it has the extension .pub (example: OCISSHKey.pub) to indicate that it is a public key.  Make note of this file name as you will need it later.
 
 7)  Next, save the OpenSSH private key. In the same PuTTY Key Generator window, from the ***Conversions*** menu, select the ***Export OpenSSH key*** option.
-    ![](./images/lab1_exportkey.png " ")
+    ![](./images/lab1-exportkey.png " ")
 
 8)  PuTTYgen will ask you to verify that the key will be saved without a passphrase. Click the ***Yes*** button.
-    ![](./images/lab1_puttyyes.png " ")
+    ![](./images/lab1-puttyyes.png " ")
 
 9)  Again, save the file to the same known location with any file name but ensure that the file has ***NO extension*** on it (example: OCISSHKey).  Make note of this file name as you will need it later.
 
 10) Save the Windows private key. In the same PuTTY Key Generator window, click the ***Save private key*** button. 
-    ![](./images/lab1_puttyprivatekey.png " ")
+    ![](./images/lab1-puttyprivatekey.png " ")
 
 11) Again, click the ***Yes*** button to verify saving the key without a passphrase.
 

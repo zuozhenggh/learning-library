@@ -45,19 +45,19 @@ For example:
 **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
 
 **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
-    ![](./images/ssl_certificate.png " ")
+    ![](./images/ssl-certificate.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
-    ![](./images/confirm_security_exception.png " ")
+    ![](./images/confirm-security-exception.png " ")
 
 5)	In the JD Edwards EnterpriseOne HTML Server sign-on page, sign in using these credentials:
 
 *   User ID: ***JDE***
 *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1)
-    ![](./images/jde_html_sign_in.png " ")
+    ![](./images/jde-html-sign-in.png " ")
 
     At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
-    ![](./images/jde_html_landing_page.png " ")
+    ![](./images/jde-html-landing-page.png " ")
 
 ## **STEP 2**:  Connect to EnterpriseOne Orchestrator Studio
 
@@ -80,19 +80,19 @@ For example:
 **Note:** Message and Security differ from browser to browser. his example is from a Mozilla Firefox browser.
 
 **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
-    ![](./images/ssl_certificate_2.png " ")
+    ![](./images/ssl-certificate-2.png " ")
 
 4)	Click the ***Confirm Security Exception button*** to add the URL to the trusted location list for the browser.
-    ![](./images/confirm_secuirty_exception_2.png " ")
+    ![](./images/confirm-secuirty-exception-2.png " ")
 
 5)	In the JD Edwards EnterpriseOne Orchestrator Studio sign-on page, sign in using these credentials:
 
 *	User name: ***JDE***
 *	Password: ***JDE_Rules1*** (this is the password defined in the final configuration in Lab 2, Exercise 3, Step 1c).
-    ![](./images/orchestrator_sign_in.png " ")
+    ![](./images/orchestrator-sign-in.png " ")
 
     At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
-    ![](./images/orchestrator_landing_page.png " ")
+    ![](./images/orchestrator-landing-page.png " ")
 
 ## **STEP 3**: Explore JDE Service Commands 
 After you have successfully deployed your Trial Edition instance in the Oracle Cloud Infrastructure, all services are automatically started for each JD Edwards EnterpriseOne server type, which includes the Database Server, Enterprise Server, HTML Web Servers, BI Publisher Server, and ADF/AIS server.
@@ -106,30 +106,30 @@ To utilize the jde service commands:
 2)	Change to root user.
         
     [opc]#  sudo –i
-![](./images/root_command.png " ")
+![](./images/root-command.png " ")
 
  
 3)	First run the jde-status command.  That will probe all the essential pieces running on the JDE Trial Edition (Database, Enterprise Server, Web Servers, ADF Server, BI Publisher Server) and report on the status of the piece.  Any service reporting anything but “Running” might have a problem.
       
     [root]#  jde-status
-![](./images/jde_status_command.png " ")
+![](./images/jde-status-command.png " ")
 
 4)	Next, there are services broken down by piece.  Issue the following commands to review the specific services:
 
 * Database:    **jde-db status**
-    ![](./images/db_status_command.png " ")
+    ![](./images/db-status-command.png " ")
 
 * Enterprise Server:  **jde-ent status**
-    ![](./images/ent_server_command.png " ")
+    ![](./images/ent-server-command.png " ")
 
 * Web Server:  **jde-html status**
-    ![](./images/web_server_command.png " ")
+    ![](./images/web-server-command.png " ")
 
 * ADF Server:  **jde-adf status**
-    ![](./images/adf_server_command.png " ")
+    ![](./images/adf-server-command.png " ")
 
 * BIP Server:  **jde-bip status**
-    ![](./images/bip_server_command.png " ")
+    ![](./images/bip-server-command.png " ")
 
 5)	To stop a particular service, issue the following commands:
 
@@ -176,14 +176,14 @@ For example:
 **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
 
 **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
-    ![](./images/ssl_certificate_3.png " ")
+    ![](./images/ssl-certificate-3.png " ")
 
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
-    ![](./images/confirm_security_exeception_3.png " ")
+    ![](./images/confirm-security-exeception_3.png " ")
 
 5)	The ADF Container page will appear. It is a blank page with a ? and X in the upper right-hand corner.
-    ![](./images/adf_container_page.png " ")
+    ![](./images/adf-container-page.png " ")
 
 At this point, ADF applications should function normally when run through the JD Edwards EnterpriseOne HTML Client.
 
@@ -210,18 +210,18 @@ For example:
 **Note:** Message and Security differ from browser to browser. This example is from a Mozilla Firefox browser.
     
 **Note:** If this Trial Edition is for long-term usage, it is recommended that you replace the temporary SSL Certificate with a real SSL Certificate.
-    ![](./images/ssl_certificate_4.png " ")
+    ![](./images/ssl-certificate-4.png " ")
 
 4)	Click the ***Confirm Security Exception*** button to add the URL to the trusted location list for the browser.
-    ![](./images/confirm_security_exception_4.png " ")
+    ![](./images/confirm-security-exception-4.png " ")
 
 5)	In the Oracle BI Publisher sign-on page, sign in using these credentials:
 *	Username: weblogic
 *	Password: JDE_Rules1 (this is the password defined in the final configuration in Lab 2, Step 3)
-    ![](./images/bi_publisher_sign_in.png " ")
+    ![](./images/bi-publisher-sign-in.png " ")
 
     At this point, the Oracle BI Publisher Server for OVR is ready for use.
-    ![](./images/bi_publisher_landing_page.png " ")
+    ![](./images/bi-publisher-landing-page.png " ")
 
 
 
