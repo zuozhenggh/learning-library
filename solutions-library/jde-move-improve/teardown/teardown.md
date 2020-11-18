@@ -55,7 +55,7 @@ To delete the Virtual Cloud Network:
     * Marc-Eddy Paul, Cloud Engineering
     * William Masdon, Cloud Engineering
     * Chris Wegenek, Cloud Engineering 
-* **Last Updated By/Date** - AJ Kurzman, Cloud Engineering, 11/18/2020
+* **Last Updated By/Date:** AJ Kurzman, Cloud Engineering, 11/18/2020
 
 
 ## Need Help?
