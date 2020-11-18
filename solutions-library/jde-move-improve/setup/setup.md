@@ -71,11 +71,11 @@ There are many tools available for Windows users to create SSH key pairs and con
         Your identification has been saved in /c/Users/username/.ssh/id_rsa.
         Your public key has been saved in /c/Users/username/.ssh/id_rsa.pub
 
-**Note:**
+    **Note:**
 
-*   In Git Bash, C:\Users\username\ is shown as /c/Users/username/
+    *   In Git Bash, C:\Users\username\ is shown as /c/Users/username/
 
-*   These instructions will create a minimally secure ssh key for you (and one well suited for this tutorial). For production environments we recommend an SSH-2 RSA key with 4096 bits and a passphrase. For example: ssh-keygen -t rsa -b 4096 -N "<myPassphrase>" -f ~/keys/id_rsa -C "This is my comment"
+    *   These instructions will create a minimally secure ssh key for you (and one well suited for this tutorial). For production environments we recommend an SSH-2 RSA key with 4096 bits and a passphrase. For example: ssh-keygen -t rsa -b 4096 -N "<myPassphrase>" -f ~/keys/id_rsa -C "This is my comment"
 
 ### Puttygen:
 
@@ -92,8 +92,8 @@ There are many tools available for Windows users to create SSH key pairs and con
 
 5.  In the PuTTY Key Generator dialog, select all the characters in the ***Public key for pasting into OpenSSH authorized_keys file*** field, and then right-click and select ***Copy***.
 
-**Note:** Ensure that you select all the characters and not just the ones shown in the narrow window. Scroll down as necessary.
-    ![](./images/lab1-copykey.png " ")
+    **Note:** Ensure that you select all the characters and not just the ones shown in the narrow window. Scroll down as necessary.
+        ![](./images/lab1-copykey.png " ")
 
 6.  Paste the copied string into a plain text editor (such as Notepad) and save the plain text file. Save it to a known location with any file name but ensure that it has the extension .pub (example: OCISSHKey.pub) to indicate that it is a public key.  Make note of this file name as you will need it later.
 
@@ -203,10 +203,10 @@ With the VCN in place, define the open inbound and outbound ports that will be a
 
     | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 9703-9705 |
 
-Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
-    ![](./images/ingress-details.png " ")
+    **NOTE:** Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
+        ![](./images/ingress-details.png " ")
 
-These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
+    These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 
 ## Summary
 
