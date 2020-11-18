@@ -4,11 +4,11 @@
 
 ........
 
-*Estimated Lab Time*:  n minutes
+*Estimated Lab Time*:  15 minutes
 
 ### Objective:
 
-In this lab we will demostrate how to ***RESET*** the deployments, which will remove the deployments and any Extracts, Replicats and Distribution Paths that are under those deployments.
+In this lab we will demonstrate how to ***RESET*** the deployments, which will remove the deployments and any Extracts, Replicats and Distribution Paths that are under those deployments.
 If needed there is a second step to recreate the deployments.  This will not create any Extracts, Replicats or Distribution Paths.
 Also, if needed there is a third step to refresh the databases.
 
