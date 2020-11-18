@@ -19,7 +19,7 @@
         {
             "title": "Lab 2: Create a Project",
             "description": "Create a project to contain the Data Science Notebooks.",
-            "filename": "./../../common/project-setup.md"
+            "filename": "./../../common/project-setup-free-tier.md"
         },
         {
             "title": "Lab 3: Create a Notebook Session",

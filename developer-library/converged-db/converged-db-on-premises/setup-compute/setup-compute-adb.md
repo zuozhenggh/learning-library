@@ -12,16 +12,17 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Objectives
 -   Create Compute + ADB + Networking Resource Manager Stack
--   Connect to compute instance
+-   Connect to compute instance, SQL Developer
+-   Create auth token
 
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **STEP 1A**: Create Stack:  Compute + Networking
+## **STEP 1**: Create Stack:  Compute + ADB + Networking
 
-If you already have a VCN setup, proceed to *Step 1B*.
+If you already have a VCN setup, please visit the appendix to see how to optionally create a stack with just Compute + ADB.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
       - [converged-db-adb.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SkUC15rHseuHYjEmashs0PEuQYWofh2ver_pSBxHtphjaRG0MU6XgrMbMZpb3yIf/n/idcd8c1uxhbm/b/converged-db/o/converged-db-adb.zip)
@@ -36,9 +37,9 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-5.  Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-adb.zip) that you downloaded. Click **Select**.
+5.  Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
-  ![](./images/zip-file.png " ")
+  ![](./images/em-create-stack-1.png " ")
 
 6. Enter the following information:
 
@@ -79,7 +80,167 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-stack-details.png " ")
 
-You may now proceed to Step 2 (skip Step 1B).
+
+
+## **STEP 2**: Terraform Apply
+When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Typically you would execute a Terraform Plan first.  This is an optional step that we've included in the Appendix.  Please see the Appendix to run the plan step to validate the configuration.  Otherwise let's proceed and create your stack.  
+
+1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
+
+  ![](./images/em-stack-details-post-plan.png " ")
+
+  ![](./images/em-stack-apply-1.png " ")
+
+  ![](./images/em-stack-apply-2.png " ")
+
+2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  
+
+***Note:*** *If you encounter any issues running the terraform stack, visit the Appendix: Troubleshooting Tips section below.*
+
+  ![](./images/em-stack-apply-results-0.png " ")
+
+  ![](./images/em-stack-apply-results-1.png " ")
+
+  ![](./images/em-stack-apply-results-2.png " ")
+
+  ![](./images/em-stack-apply-results-3.png " ")
+
+3.  Congratulations, your environment is created!  Click on the Application Information tab to get additional information about what you have just done.
+
+  ![](./images/app-info.png " ")
+
+4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
+
+## **STEP 3**: Verify connection to your instance
+
+Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
+***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
+
+### Oracle Cloud Shell
+
+1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  
+
+***Note:*** *Make sure you are in the region you were assigned*
+
+  ![](./images/em-cloudshell.png " ")
+
+2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+3.  On the instance homepage, find the Public IP address for your instance.
+4.  Enter the command below to login to your instance.    
+
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+    ![](./images/em-cloudshell-ssh.png " ")
+
+6.  When prompted, answer **yes** to continue connecting.
+7.  Exit the instance 
+   
+    ````
+    exit
+    ````
+
+## **STEP 4:** Create Oracle Wallet
+There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
+
+1.  With the autononous\_database\_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
+   
+      ````
+      <copy>
+      oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
+      ````
+2.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
+3.  Click the list command below to verify the *converged-wallet.zip* was created
+   
+      ````
+      ls
+      ````
+4.  Transfer this wallet file to your application compute instance.  Replace the instance below with your instance 
+
+    ````
+    sftp -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address> <<< $'mput ../converged-wallet*' 
+    ````
+
+
+## **STEP 5:** Create Auth Token
+There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
+
+1.  Click on the person icon in the upper right corner.
+2.  Select **User Settings**
+3.  Under the **User Information** tab, click the **Copy** button to copy your User OCID.
+4.  Create your auth token using the command below substituting your actual *user id* for the userid below.
+   
+      ````
+      <copy>
+       oci iam auth-token create --description ConvergedDB --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
+      ````
+5.  Copy the token somewhere safe, you will need it for the next step.
+
+
+## **STEP 6:** Connect to SQL Developer and Create Credentials
+1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous JSON Database**
+2.  Click on the **Display Name**, *cvgadbnn*
+3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browswer will open up
+4.  Login with the *admin* user and the password that you wrote down in the previous lab.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
+5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
+   
+    ````
+    begin
+      DBMS_CLOUD.create_credential(
+        credential_name => 'DEF_CRED_NAME',
+        username => 'admin',
+        password => '*****************************'
+      );
+    end;
+    /
+    ````
+
+You may now [proceed to the next lab](#next).
+
+## Appendix:  Teraform and Resource Manager
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
+
+Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
+
+[](youtube:udJdVCz5HYs)
+
+### Oracle Cloud Marketplace
+The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
+
+[Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
+
+## Appendix:  Adding Security Rules to an Existing VCN
+This workshop requires a certain number of ports to be available.
+
+1.  Go to Networking -> Virtual Cloud Networks
+2.  Choose your network
+3.  Under Resources, select Security Lists
+4.  Click on Default Security Lists under the Create Security List button
+5.  Click Add Ingress Rule button
+6.  Enter the following:  
+    - Source CIDR: 0.0.0.0/0
+    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22
+7.  Click the Add Ingress Rules button
+
+
+## Appendix: Terraform Plan 
+When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
+
+1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
+
+  ![](./images/em-stack-plan-1.png " ")
+
+  ![](./images/em-stack-plan-2.png " ")
+
+  ![](./images/em-stack-plan-results-1.png " ")
+
+  ![](./images/em-stack-plan-results-2.png " ")
+
+  ![](./images/em-stack-plan-results-3.png " ")
+
+  ![](./images/em-stack-plan-results-4.png " ")
+
+Return to the Terraform Apply step to continue.
 
 ## **STEP 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
@@ -103,7 +264,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
 4. Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
-  ![](./images/zip-file.png " ")
+  ![](./images/em-create-stack-1.png " ")
 
   Enter the following information:
     - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
@@ -152,163 +313,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-stack-details-b.png " ")
 
-## **STEP 2**: Terraform Plan (OPTIONAL)
-When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
-
-1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
-
-  ![](./images/em-stack-plan-1.png " ")
-
-  ![](./images/em-stack-plan-2.png " ")
-
-  ![](./images/em-stack-plan-results-1.png " ")
-
-  ![](./images/em-stack-plan-results-2.png " ")
-
-  ![](./images/em-stack-plan-results-3.png " ")
-
-  ![](./images/em-stack-plan-results-4.png " ")
-
-## **STEP 3**: Terraform Apply
-When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
-
-1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
-
-  ![](./images/em-stack-details-post-plan.png " ")
-
-  ![](./images/em-stack-apply-1.png " ")
-
-  ![](./images/em-stack-apply-2.png " ")
-
-2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  
-
-***Note:*** *If you encounter any issues running the terraform stack, visit the Appendix: Troubleshooting Tips section below.*
-
-  ![](./images/em-stack-apply-results-0.png " ")
-
-  ![](./images/em-stack-apply-results-1.png " ")
-
-  ![](./images/em-stack-apply-results-2.png " ")
-
-  ![](./images/em-stack-apply-results-3.png " ")
-
-3.  Congratulations, your environment is created!  Click on the Application Information tab to get additional information about what you have just done.
-
-  ![](./images/app-info.png " ")
-
-4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
-
-## **STEP 4**: Verify connection to your instance
-
-Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
-***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
-
-### Oracle Cloud Shell
-
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  
-
-***Note:*** *Make sure you are in the region you were assigned*
-
-  ![](./images/em-cloudshell.png " ")
-
-2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP address for your instance.
-4.  Enter the command below to login to your instance.    
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-    ![](./images/em-cloudshell-ssh.png " ")
-
-6.  When prompted, answer **yes** to continue connecting.
-7.  Exit the instance 
-   
-    ````
-    exit
-    ````
-
-## **STEP 5:** Create Oracle Wallet
-There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
-
-1.  With the autonomous_database_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
-   
-      ````
-      <copy>
-      oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
-      ````
-2.  The wallet file will be downloaded to your cloud shell file system
-3.  Click the list command below to verify the *converged-wallet.zip* was created
-   
-      ````
-      ls
-      ````
-4.  Transfer this wallet file to your application compute instance
-
-    ````
-    sftp -i cloudshellkey opc@150.136.216.184 <<< $'mput ../converged-wallet*' 
-    ````
-
-## **STEP 6:** Create Auth Token
-There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
-
-1.  Click on the person icon in the upper right corner.
-2.  Select **User Settings**
-3.  Under the **User Information** tab, click the **Copy** button to copy your User OCID.
-4.  Create your auth token using the command below substituting your actual *user id* for the userid below.
-5.  
-      ````
-      <copy>
-       oci iam auth-token create --description ConvergedDB --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
-      ````
-6.  Copy the token somewhere safe, you will need it for the next step.
-
-
-## **STEP 7:** Connect to SQL Developer and Create Credentials
-1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous JSON Database**
-2.  Click on the **Display Name**, *cvgadbnn*
-3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browsrer will open up
-4.  Login with the *admin* user and the password that you wrote down in the previous lab.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
-5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
-   
-    ````
-    begin
-      DBMS_CLOUD.create_credential(
-        credential_name => 'DEF_CRED_NAME',
-        username => 'admin',
-        password => '*****************************'
-      );
-    end;
-    /
-    ````
-
-
-You may now [proceed to the next lab](#next).
-
-## Appendix:  Teraform and Resource Manager
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
-
-Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
-
-[](youtube:udJdVCz5HYs)
-
-### Oracle Cloud Marketplace
-The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
-
-[Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
-
-## Appendix:  Adding Security Rules to an Existing VCN
-This workshop requires a certain number of ports to be available.
-
-1.  Go to Networking -> Virtual Cloud Networks
-2.  Choose your network
-3.  Under Resources, select Security Lists
-4.  Click on Default Security Lists under the Create Security List button
-5.  Click Add Ingress Rule button
-6.  Enter the following:  
-    - Source CIDR: 0.0.0.0/0
-    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22
-7.  Click the Add Ingress Rules button
-
+Return to the Terraform Apply step to continue.
 
 ## Appendix: Troubleshooting Tips
 
@@ -358,7 +363,7 @@ When creating a stack your ability to create an instance is based on the capacit
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
 5.  Click on the stack you created previously
@@ -382,7 +387,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
