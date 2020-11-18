@@ -29,6 +29,7 @@ Estimated Workshop Time: 2-3 hours
 ## Acknowledgements
 - **Author** - Will Bullock
 - **Last Updated by/date** Will Bullock, November 2020
+- **Lab Expiry Date** - 11/30/2021
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
