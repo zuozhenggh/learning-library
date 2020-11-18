@@ -25,7 +25,7 @@ You create a Data Science project to organize your notebook sessions and models 
 1. Under **Data and AI**, select **Data Sciences**, and then click **Projects**.
 1. Select the compartment that you noted previously. Generally, you will need to expand (click the + symbol) the ``root`` and ``Livelabs`` sections.
 1. Click **Create Project**.
-1. (Optional, but recommended) Enter a unique name (255 character limit) for the project. If you do not provide a name, a name is automatically generated for you. For example, ``datascienceproject20200108222435``.
+1. (Optional, but recommended) Enter a unique name (255 character limit) for the project. If you do not provide a name, a name is automatically generated for you.
 1. (Optional, but recommended) Enter a description (400 character limit) for the project. If you do not add a description, it remains empty.
 1. (Optional) Add tags to easily locate and track the project by selecting a tag namespace, then entering the key and value. To add more than one tag, click **+Additional Tags**. [Tagging](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) describes the various tags that you can use organize and find projects including [cost-tracking tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/usingcosttrackingtags.htm).
 1. (Optional) To view the details for your project immediately after creation, select **Display project details after creation**.

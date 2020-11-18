@@ -36,7 +36,7 @@ In this lab, you:
     ![](./../speed-up-ds-with-the-ads-sdk/images/create-notebook.png)
 
 1. Select the compartment that you want to contain the notebook session.
-1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you. For example, ``datasciencenotebooksession20200108222435``.
+1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
 1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. In this lab, it is suggested a VM.Standard2.4 or larger is used.
 1. Enter the block volume in GB. The suggested size is 100 Gb or larger. 
 1. Select the VCN compartment that contains the VCN that you want to use. 
