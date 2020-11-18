@@ -1,13 +1,78 @@
 # Create Sample Data
 
+Estimated Lab Time: 10 minutes
+
 ## Introduction
 
-This lab walks you through the steps to create sample spatial data in Oracle Database.
+This lab walks you through the steps to create sample spatial data in Oracle Database. 
 
-Estimated Lab Time: 5 minutes
 
 ### About Product/Technology
 Oracle Database stores spatial data (points, lines, polygons) in a native data type called  SDO_GEOMETRY.  Oracle Database also provides a native spatial index for high performance spatial operations. This spatial index relies on spatial metadata that is entered for each table and geometry column storing spatial data. Once spatial data is populated and indexed, rubust APIs are available to perform spatual analysis, calulations, and processing.
+
+The SDO_GEOMETRY type has the following general format: 
+```
+SDO_GEOMETRY( 
+ [geometry type],                   --ID for point/line/polygon
+ [coordinate system],               --ID of coordinate system
+ [point coordinate array],          --only used for points
+ [line/polygon info],               --only used for lines/polygons 
+ [line/polygon coordinates array]   --only used for lines/polygons 
+  )
+ ```
+
+The most common geometry types are 2-dimensional:
+
+  | ID |Type |
+  | --- | --- | 
+  | 2001 |Point |
+  | 2002 |Line |
+  | 2003 |Polygon |
+
+The most common coordinate systems are:
+
+  | ID |Coordinate System |
+  | --- | --- | 
+  | 4326 |Latitude/Longitude|
+  | 3857 |World Mercator|
+
+  When using latitude/longitude, note that latitude is the Y coordinate and longitude is the X coordinate. Since coordinates are listed as X,Y pair, the values are actually in the order longitude, latitude.
+
+  The following is an example point geometry using latitude/longitude coordinates  :
+
+```
+SDO_GEOMETRY( 
+ 2001,               --2D point
+ 4326,               --latitude/longitude
+ SDO_POINT_TYPE(     --coordinates
+    -100.123, 20.456 
+    ),         
+ NULL,               --only used for lines/polygons 
+ NULL                --only used for lines/polygons 
+  )
+```
+
+  The following is an example polygon geometry using latitude/longitude coordinates  :
+
+```
+SDO_GEOMETRY( 
+ 2003,                  --2D polygon
+ 4326,                  --latitude/longitude
+ NULL,                  --only used for points          
+ SDO_ELEM_INFO_ARRAY(
+      1, 1003, 1        --indicates simple exterior polygon
+        ), 
+ SDO_ORDINATE_ARRAY(    -- coordinates
+    -98.789065,39.90973,
+    -101.2522,39.639537,
+    -99.84374,37.160316,
+    -96.67987,35.460699,
+    -94.21875,39.639537,
+    -98.789025,39.90973
+      )
+    )
+);
+```
 
 ### Objectives
 
@@ -43,7 +108,7 @@ The instructions and screen shots refer to SQL Developer Web, however the same s
 
 ## STEP 2: Create geometries from coordinates
 
-Geometries are stored in SDO_GEOMETRY columns which are added to a table just like any other data type. Geometries can then be populated with SQL, in this case by specifying the coordinates of point geometries based on  latitude and longitude columns.
+Geometries can be populated with SQL, for exathis case by specifying the coordinates of point geometries based on  latitude and longitude columns.
 
 1. Add geometry columns:
 
@@ -80,7 +145,6 @@ Geometries are stored in SDO_GEOMETRY columns which are added to a table just li
     </copy>
     ```
 
-
 ## STEP 3: Create table with polygon
 
 Lines and polygons can be created in the same way. While a point geometry requires one coordinate, lines and polygons require all of the coordinates that define the geometry. In this case we create a table to store a polygon.
@@ -97,9 +161,9 @@ Lines and polygons can be created in the same way. While a point geometry requir
     INSERT INTO COASTAL_ZONE VALUES (
         1,
         SDO_GEOMETRY(
-            2003, 4326, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(
+            2003, 4326, NULL, SDO_ELEM_INFO_ARRAY(
                 1, 1003, 1
-            ), MDSYS.SDO_ORDINATE_ARRAY(
+            ), SDO_ORDINATE_ARRAY(
                 -93.719934, 30.210638,
                 -95.422592, 29.773714, 
                 -95.059698, 29.322204, 
@@ -134,10 +198,10 @@ Oracle Database provides a native spatial index for high performance spatial ope
     INSERT INTO USER_SDO_GEOM_METADATA VALUES (
        'WAREHOUSES',
        'GEOMETRY',
-       MDSYS.SDO_DIM_ARRAY(
-           MDSYS.SDO_DIM_ELEMENT(
+       SDO_DIM_ARRAY(
+           SDO_DIM_ELEMENT(
                'x', -180, 180, 0.05
-           ), MDSYS.SDO_DIM_ELEMENT(
+           ), SDO_DIM_ELEMENT(
                'y', -90, 90, 0.05
            )
        ),
@@ -147,10 +211,10 @@ Oracle Database provides a native spatial index for high performance spatial ope
    INSERT INTO USER_SDO_GEOM_METADATA VALUES (
        'BRANCHES',
        'GEOMETRY',
-       MDSYS.SDO_DIM_ARRAY(
-           MDSYS.SDO_DIM_ELEMENT(
+       SDO_DIM_ARRAY(
+           SDO_DIM_ELEMENT(
                'x', -180, 180, 0.05
-           ), MDSYS.SDO_DIM_ELEMENT(
+           ), SDO_DIM_ELEMENT(
                'y', -90, 90, 0.05
            )
        ),
@@ -160,10 +224,10 @@ Oracle Database provides a native spatial index for high performance spatial ope
    INSERT INTO USER_SDO_GEOM_METADATA VALUES (
        'COASTAL_ZONE',
        'GEOMETRY',
-       MDSYS.SDO_DIM_ARRAY(
-           MDSYS.SDO_DIM_ELEMENT(
+       SDO_DIM_ARRAY(
+           SDO_DIM_ELEMENT(
                'x', -180, 180, 0.05
-           ), MDSYS.SDO_DIM_ELEMENT(
+           ), SDO_DIM_ELEMENT(
                'y', -90, 90, 0.05
            )
        ),
