@@ -12,7 +12,7 @@ Estimated Lab Time: 30-45 minutes
 ### Prerequisites
 - Succesful completion of all previous labs in this workshop
 
-## **Step 1:** Connect the new instance to the Backup database
+## **STEP 1:** Connect the new instance to the Backup database
 1. Start an ssh connection to the newly created instance.
 2. Navigate to the root compartment and edit the *defaults.xml* file
     ```
@@ -43,7 +43,7 @@ Estimated Lab Time: 30-45 minutes
 *(This will make sure the new instance points to the backup database after every sync)*
 
 
-## **Step 2:** Conduct the failover operation to activate the backup database
+## **STEP 2:** Conduct the failover operation to activate the backup database
 
 1. Navigate to the standby database
     ![](./images/db-nav.PNG)
@@ -56,7 +56,7 @@ Estimated Lab Time: 30-45 minutes
 5. Navigate back to the StandbyDatabase DB system and look at the Peer Role under Data Guard Associations. It shows Disabled Standby which also reaffirms that the failover was successful.
     ![](./images/pr-role.PNG)
 
-## **Step 3:** Verify the APEX application changes in the new Instance
+## **STEP 3:** Verify the APEX application changes in the new Instance
 1. Navigate to the new APEX instance through a web browser i.e. https://\<target-public-ip>:8888/ords/drpdb
 2. Login with the same workspace & admin credentials created in step 3 & 5 of the lab **Configure APEX instance for DR**
     ![](./images/login.PNG)
@@ -67,7 +67,7 @@ Estimated Lab Time: 30-45 minutes
 5. Navigate to the **Products** using the shopping cart icon on the left to verify the "Hat" product was added.
     ![](./images/hat2.PNG)
 
-## **Step 4:** Cleanup Process
+## **STEP 4:** Cleanup Process
 1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
 
 2.  Select destroy from the dropdown menu.
@@ -82,6 +82,8 @@ Estimated Lab Time: 30-45 minutes
 - **Author** - Will Bullock
 - **Last Updated by/date** Will Bullock, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

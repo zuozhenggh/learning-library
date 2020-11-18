@@ -71,7 +71,7 @@ Estimated Lab Time 45-60 minutes
         └── variables.tf
 
     
-## **Step 1:** Create Stack    
+## **STEP 1:** Create Stack    
 1. Navigate to the resource manager tab in OCI. Then create a new stack to import the "DR-ORDS-RW.zip” zip file.
 
 2. Import the zip file into the stack 
@@ -93,7 +93,7 @@ Estimated Lab Time 45-60 minutes
 7. Review & click on the **Create** button
     ![](./images/ResourceManager-Review.PNG)
 
-## **Step 2:** Plans
+## **STEP 2:** Plans
 
 1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Plan-2.PNG)
@@ -104,7 +104,7 @@ Estimated Lab Time 45-60 minutes
 3.  Wait until the icon to turn green.
     ![](./images/ResourceManager-Plan-4.PNG)
 
-## **Step 3:** Apply
+## **STEP 3:** Apply
 
 1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Apply-1.PNG)
@@ -125,6 +125,8 @@ You may now **proceed to the next lab.**
 - **Last Updated by/date** Will Bullock, November 2020
 - **Lab Expiry Date** - 11/30/2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
