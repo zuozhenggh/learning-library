@@ -199,11 +199,11 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 **Note: The configureNginx.sh script is making a call to the ReverseProxySettings utility that can be found under $OGG_HOME/lib/util/reverseproxy.  We provide this script to make it easier for you to configure the Nginx Reverse Proxy in your environment.**
 
 ```
-<copy>sh ./configureNginx.sh oggadmin Welcome111! 16000</copy>
+<copy>sh ./configureNginx.sh oggadmin Welcome_1 16000</copy>
 ```
 ![](./images/a8.png)
 
-**During the script run, it will ask you the password for user oracle so it can run sudo, the password is Welcome111!.**
+**During the script run, it will ask you the password for user oracle so it can run sudo, the password is Welcome_1**
 
 3.	Upon completion, return to your web browser.   You should be able to access the ServiceManager page by only using the URL without a port number.
 
