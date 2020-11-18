@@ -19,9 +19,7 @@ In this lab, you:
 
 You create a Data Science project to organize your notebook sessions and models within your project.
 
-1. Open the [My Reservations](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/my-reservations) page.
-1. On the [My Reservations](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/my-reservations) page click on **Launch Workshop**. If you have multiple workshops list, make sure that you click on the one for this lab.
-1. Note the name of the compartment. It generally has the format ``LL####-COMPARTMENT`` where ``####`` is a number.
+1. At the top of this page in the **Workshop Details** section, note the name of the compartment. It generally has the format ``LL####-COMPARTMENT`` where ``####`` is a number.
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
 1. Under **Data and AI**, select **Data Sciences**, and then click **Projects**.
