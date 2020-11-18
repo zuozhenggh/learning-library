@@ -44,8 +44,8 @@ The most common coordinate systems are:
 SDO_GEOMETRY( 
  2001,               --2D point
  4326,               --latitude/longitude
- SDO_POINT_TYPE(     --coordinates
-    -100.123, 20.456 
+ SDO_POINT_TYPE(     
+    -100.123, 20.456 --coordinate
     ),         
  NULL,               --only used for lines/polygons 
  NULL                --only used for lines/polygons 
@@ -62,8 +62,8 @@ SDO_GEOMETRY(
  SDO_ELEM_INFO_ARRAY(
       1, 1003, 1        --indicates simple exterior polygon
         ), 
- SDO_ORDINATE_ARRAY(    -- coordinates
-    -98.789065,39.90973,
+ SDO_ORDINATE_ARRAY(   
+    -98.789065,39.90973, -- coordinates
     -101.2522,39.639537,
     -99.84374,37.160316,
     -96.67987,35.460699,
