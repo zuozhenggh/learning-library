@@ -117,9 +117,9 @@ Your public key has been saved in /c/Users/username/.ssh/id_rsa.pub
 
 **Note:**
 
-    •   In Git Bash, C:\Users\username\ is shown as /c/Users/username/
+*   In Git Bash, C:\Users\username\ is shown as /c/Users/username/
 
-    •   These instructions will create a minimally secure ssh key for you (and one well suited for this tutorial). For production environments we recommend an SSH-2 RSA key with 4096 bits and a passphrase. For example: ssh-keygen -t rsa -b 4096 -N "<myPassphrase>" -f ~/keys/id_rsa -C "This is my comment"
+*   These instructions will create a minimally secure ssh key for you (and one well suited for this tutorial). For production environments we recommend an SSH-2 RSA key with 4096 bits and a passphrase. For example: ssh-keygen -t rsa -b 4096 -N "<myPassphrase>" -f ~/keys/id_rsa -C "This is my comment"
 
 ### Puttygen:
 

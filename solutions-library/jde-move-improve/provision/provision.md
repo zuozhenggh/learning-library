@@ -166,7 +166,7 @@ During the first connection to a Trial Edition instance (after completing Lab3 S
 Configuration will take between 25-30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status ***“Successfully completed u01/vmScripts/EOne_Sync.sh”***.
     ![](./images/configuration_screen.png " ")
 
-## **Summary**
+## Summary
 At this point, the JD Edwards EnterpriseOne Trial Edition is ready for use.
 
 You may now proceed to the next lab.

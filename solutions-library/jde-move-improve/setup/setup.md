@@ -120,7 +120,7 @@ Within the interface, click the + ***Additional Ingress Rules*** button to add n
 
 These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 
-## **Summary**
+## Summary
 
 In this lab, OCI has been set up for the networking required to be able to access a JDE Trial Edition that will be created in the next lab.
 

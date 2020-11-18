@@ -235,7 +235,7 @@ https://apexapps.oracle.com/pls/apex/f?p=44785:50:0:::50:P50_EVENT_ID,P50_COURSE
 *	Marketplace Listing
 https://console.us-ashburn-1.oraclecloud.com/marketplace/application/51184836/overview
 
-# **Summary**
+## Summary
 Enjoy JDE!   Enjoy OCI!  
 
 ## Acknowledgements
