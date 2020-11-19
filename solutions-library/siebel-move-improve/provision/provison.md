@@ -4,7 +4,7 @@
 
 In this exercise, you will create your Siebel instance by setting up the Siebel Marketplace image and use Jenkins to deploy an instance of Siebel.
 
-Estimated Lab Time: 60 minutes
+Estimated Lab Time: 1 hour 15 minutes
 
 
   [](youtube:zNKxJjkq0Pw)
@@ -113,7 +113,7 @@ Generating Jenkins URL
 
 8. After hitting run you will see that your new Siebel instance is being created, by clicking on it you can see more details
 
-    **This should take around min**
+    **This can take 40 minutes to fully deploy**
 
     ![](./images/2.8.png " ")
 
@@ -127,7 +127,7 @@ You can create the application URL using the port 4430, that you opened in the p
 
 The url you will need to type into your browser's search bar should look like this:
 
-    https://"<public IP address>:4430/siebel/app/industry/enu"
+    "https://<public IP address>:4430/siebel/app/<industry>/enu"
 
 For example, if you selected Sales, your application URL for Sales industry  could be the following.
 
@@ -158,6 +158,12 @@ Please also not that the application URL will be specific to the Industry you se
 For Service - https://"your ip address":4430/siebel/app/callcenter/enu
 
 For Siebel Management Console (SMC) - https://"your ip address":4430/siebel/smc
+
+#Extension to provision
+Verify Siebel version on home screen
+login home Page
+from the health menu - check technical support Option
+popup box will show siebel version, db connection, etc.
 
 # Summary
 

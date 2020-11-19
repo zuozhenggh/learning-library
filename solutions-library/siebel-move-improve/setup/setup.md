@@ -16,6 +16,11 @@ To set up the OCI tenancy, in this lab, you will:
 *   Create a Virtual Cloud Network (VCN)
 *   Establish Security List Rules for Siebel
 
+### Prerequisites
+* User with 'manage' access to Networking and Compute, compartment, marketplace access
+* SSH key
+
+
 ## **STEP 1**: Create a Sub-Compartment
 
 In this part of the lab, we create a sub-compartment to organize the resources we will create
