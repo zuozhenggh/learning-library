@@ -25,46 +25,54 @@ Estimated Time: 30-45 minutes
 
     *NOTE: Ensure the correct Compartment is selected under COMPARTMENT list*
 
-2.  On the Cloud Shell, enter the command below.
+2.  On the Cloud Shell, enter the command below to generate SSH keys to be used for later .
+
+    ```
+    ssh-keygen -t rsa
+    ```
+
+    *NOTE: Accept the default options when prompted for input after entering the command. Hit **Enter/Return** key to choose default option.*
+
+3.  On the Cloud Shell, enter the command below to make sure **id_rsa** and **id_rsa.pub** keys are generated.
 
     ```
     cd .ssh
     ```
-3.  Enter **ls** and verify your key files that will be used to access compute instance exists.
+4.  Enter **ls** and verify your key files that will be used to access compute instance exists.
 
     ```
     ls
     ```
 
-4. Next you will need to gather some information so that you can use it later while configuring terraform files. First you will need your user OCID. Go to your profile page by clicking the human icon in the top right and then your username. Then click the copy button to copy your user OCID. Record your OCID in a text for later use.
+5. Next you will need to gather some information so that you can use it later while configuring terraform files. First you will need your user OCID. Go to your profile page by clicking the human icon in the top right and then your username. Then click the copy button to copy your user OCID. Record your OCID in a text for later use.
 
     ![](images/Terraform_021.png " ")
 
-5. Next you will need to get your tenancy OCID. Click the human icon in the top right and then your tenancy. Then click the copy button to copy your tenancy OCID. Record your tenancy OCID for later use.
+6. Next you will need to get your tenancy OCID. Click the human icon in the top right and then your tenancy. Then click the copy button to copy your tenancy OCID. Record your tenancy OCID for later use.
 
     ![](images/Terraform_022.png " ")
 
-6. Next you will need to get your region identifier. Click your region and then click manage regions. Then copy your region identifier and record it.
+7. Next you will need to get your region identifier. Click your region and then click manage regions. Then copy your region identifier and record it.
 
     ![](images/Terraform_023.png " ")
 
-7. Next we will generate API signing key to allow Terraform to authenticate with OCI. Enter the following command.
+8. Next we will generate API signing key to allow Terraform to authenticate with OCI. Enter the following command.
 
     ```
     oci setup config
     ```
 
-8. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID, enter the information you had saved in earlier steps. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
+9. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID, enter the information you had saved in earlier steps. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
 
     ![](images/Terraform_024.png " ")
 
-9. The `oci setup config` command also generated an API signing key. We will need to upload the public API key into our OCI account for authentication of API calls.
+10. The `oci setup config` command also generated an API signing key. We will need to upload the public API key into our OCI account for authentication of API calls.
 
     ```
     cat ~/.oci/oci_api_key_public.pem
     ```
 
-10. Highlight and copy the content from the oracle cloud shell. Click the human icon followed by your user name. Then scroll down and click **API Keys**. In your user details page click **Add Public Key**. In the dialog box paste the public key content and click **Add**. Make sure to copy the key generated after adding the public key.
+11. Highlight and copy the content from the oracle cloud shell. Click the human icon followed by your user name. Then scroll down and click **API Keys**. In your user details page click **Add Public Key**. In the dialog box paste the public key content and click **Add**. Make sure to copy the key generated after adding the public key.
 
     ![](images/Terraform_025.png " ")
 
