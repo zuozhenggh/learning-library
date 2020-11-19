@@ -9,19 +9,19 @@
         {
             "title": "Introduction",
             "description": "This workshop will show you how to do Pilot Light DR on Oracle Cloud.",
-            "filename": "./introduction/introduction.md"
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Lab 1: Setup your Environment",
-            "filename": "./lab-1/lab-1.md"
+            "filename": "../../setup/lab-1.md"
         },
         {
             "title": "Lab 2: Configure Failover & Recovery Backups",
-            "filename": "./lab-2/lab-2.md"
+            "filename": "../../configure/lab-2.md"
         },
         {
             "title": "Lab 3: Simulate Disaster",
-            "filename": "./lab-3/lab-3.md"
+            "filename": "../../simulate/lab-3.md"
         }
       ]
 }
