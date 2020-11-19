@@ -189,14 +189,13 @@ Notice that the name of the first cluster is shown in the Linux prompt. In the e
 
     Directory: C:\Users\MYHOME\ssl-files
 
-  Mode         LastWriteTime         Length Name
-  ----         -------------         ------ ----
-  -a----       11/17/2020   9:21 AM   1285 first-util-node-cert.pem
-  -a----       11/17/2020   9:30 AM   1675 first-util-node.key
-  -a----       11/17/2020   9:32 AM   1285 second-util-node-cert.pem
-  -a----       11/17/2020   9:32 AM   1675 second-util-node.key   
-    ```
-
+    Mode         LastWriteTime         Length Name
+    &#8209;&#8209;&#8209;&#8209;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8209;&#8209;&#8209;&#8209;&#8209;&#8209;&nbsp;&nbsp;&nbsp;&nbsp;&#8209;&#8209;&#8209;&#8209;
+    &#8209;a&#8209;&#8209;&#8209;&#8209;       11/17/2020   9:21 AM   1285 first-util-node-cert.pem
+    &#8209;a&#8209;&#8209;&#8209;&#8209;       11/17/2020   9:30 AM   1675 first-util-node.key
+    &#8209;a&#8209;&#8209;&#8209;&#8209;       11/17/2020   9:32 AM   1285 second-util-node-cert.pem
+    &#8209;a&#8209;&#8209;&#8209;&#8209;       11/17/2020   9:32 AM   1675 second-util-node.key   
+      ```
 
 ## **STEP 3:** Create the Load Balancer
 
@@ -494,8 +493,6 @@ In this step, you'll save your SSL certificate files and key files as two bundle
     * **Verify Peer Certificate:** Leave this box unchecked.
 
     * **Backend Set:** From the list, select the backend set you created for Big Data Studio in **STEP 8: Create a Backend Set for Big Data Studio**; for example, **data-studio-backend-set**.
-
-      ![](./images/create-load-bal-win2.png " ")
 
 3. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
