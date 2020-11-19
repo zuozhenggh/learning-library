@@ -6,36 +6,44 @@ As a take home exercise, you can provision a PeopleSoft environment with a Windo
 
 Estimated Lab Time: 3 hours
 
+### Objectives
+The purpose of this lab is to test your knowledge with Labs 1-7 and gain familiarity with the Windows client node.
 
-## **STEPS**
-1.	Remove the PUM topology from the Environment Template that was used to provision in the previous section – Refer Step 2 in  Lab 6: Create a New Environment Template.
+### Prerequisites
+- Complete Labs 1-7
 
-2.	Edit the PUM topology and add a new Windows Client node.  Select an available shape. Refer Step 1 in Lab 4: Review and Update a Topology.  Hint - Click + to add a node. 
+## **STEP 1: Removing PUM Topology**
+  Remove the PUM topology from the Environment Template that was used to provision in the previous section – Refer Step 2 in  Lab 6: Create a New Environment Template.
 
-3.	Edit the Environment Template and re-add the PUM topology – Refer Step 2 in Lab 6: Create a New Environment Template. Hint - Search for PUM topology. 
+## **STEP 2: Editing PUM Topology**
+  Edit the PUM topology and add a new Windows Client node.  Select an available shape. Refer Step 1 in Lab 4: Reviewing and Updating the Topology.  Hint - Click + to add a node. 
 
-4.	Configure the Custom Attributes of the topology in the template.  Ensure to select the Availability Domain which has the required shapes – Refer Step 3 in Lab 5: Create a New Environment Template.
+## **STEP 3: Editing Environment Template**
+  Edit the Environment Template and re-add the PUM topology – Refer Step 2 in Lab 6: Creating a New Environment Template. Hint - Search for PUM topology. 
 
-5.	Create a new Environment using the newly modified template – Refer Lab 7: Create Environment. 
+## **STEP 4: Configuring Topology Attributes**
+  Configure the Custom Attributes of the topology in the template.  Ensure to select the Availability Domain which has the required shapes – Refer Step 3 in Lab 6: Creating a New Environment Template.
+
+## **STEP 5: Creating New Environment**
+  Create a new Environment using the newly modified template – Refer Lab 7: Creating Environment in PeopleSoft. 
 
   While entering windows password, make sure to follow following rules:
 
-    - The Windows password must be at least 12 characters long. Additionally, the password must satisfy the following complexity rules:
-    - Not contain the user's account name or parts of the user's full name that exceed two consecutive characters
-    - Contain characters from three of the following four categories:
-    - English uppercase characters (A through Z)
-    - English lowercase characters (a through z)
-    - Base 10 digits (0 through 9)
-    - Non-alphabetic characters (for example, !, $, #, %)
+  - The Windows password must be at least 12 characters long. Additionally, the password must satisfy the following complexity rules:
+  - Not contain the user's account name or parts of the user's full name that exceed two consecutive characters
+  - Contain characters from three of the following four categories:
+  - English uppercase characters (A through Z)
+  - English lowercase characters (a through z)
+  - Base 10 digits (0 through 9)
+  - Non-alphabetic characters (for example, !, $, #, %)
 
 
 ## Acknowledgements
-**Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
 
-**Last Updated By/Date** 
-- Sara Lipowsky, Cloud Engineer, October 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
