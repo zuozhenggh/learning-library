@@ -202,7 +202,7 @@ Notice that the name of the first cluster is shown in the Linux prompt. In the e
 
 1. On the Oracle Cloud Console banner at the top of the page, click ![](./images/nav-button.png) to open the console navigation menu. Under **Core Infrastructure**, point to **Networking**, and then click **Load Balancers**.
 
-2. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under Compartment in the panel on the left, select the compartment where you want to create the load balancer. Then click **Create Load Balancer**.
+2. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment where you want to create the load balancer. Then click **Create Load Balancer**.
 
 3. On the **Add Details** page of the Create Load Balancer wizard, enter the following information:
 
