@@ -87,112 +87,113 @@ This lab assumes you have:
 3. Go to the scripts directory
 
       ````
-      <copy>cd $DBSEC_LABS/avdf/avs</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Deploy_Agent</copy>
       ````
 
-4. First, unpack the `avcli.jar` utility to install the Audit Vault Command Line Interface (avcli) so we can automate most of the Agent, host, and Audit Trail deployment
+4. The first script will unpack the `avcli.jar` utility so we can automate most of the agent, host, and audit trail deployment
 
       ````
-      <copy>./avs_deploy_avcli.sh</copy>
+      <copy>./01_deploy_avcli.sh</copy>
       ````
+
+5. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
+
+      ````
+      <copy>./02_register_host.sh</copy>
+      ````
+
+6. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-001.png " ")
 
-5. Next, we will use avcli to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
+7. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
 
       ````
-      <copy>./avs_register_host.sh</copy>
+      <copy>./03_deploy_avagent.sh</copy>
       ````
+
+8. Once deployed, we will need to activate the Audit Vault Agent. Remember the activation key we saw above and paste the key when prompted.
+
+      ````
+      <copy>./04_activate_avagent.sh</copy>
+      ````
+
+9. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-002.png " ")
 
-    **Note**: Your output will look similar to this but your `Activation Key` will be different
-
-6. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
+10. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
 
       ````
-      <copy>./avs_deploy_agent.sh</copy>
+      <copy>./05_show_host.sh</copy>
       ````
+
+11. Notice the output says `Running` for the Agent Status column
 
    ![](./images/avdf-003.png " ")
 
-7. Once deployed, we will need to activate the Audit Vault Agent
-
-      ````
-      <copy>./avs_activate_agent.sh</copy>
-      ````
-    
-   ![](./images/avdf-004.png " ")
-
-    **Note**: Remember the Activation Key we saw above and paste the key when prompted!
-
-8. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
-
-      ````
-      <copy>./avs_show_host.sh</copy>
-      ````
-
-   ![](./images/avdf-005.png " ")
-
-    **Note**: Notice the output says `Running` for the Agent Status column
-
 ## **STEP 2**: Audit Vault - Register a Pluggable Database as Target
 
-1. Use the avcli utility to register the pluggable database `pdb1` as an AV target
+1. Go to the scripts directory
 
       ````
-      <copy>./avs_register_pdb.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Register_Database</copy>
       ````
 
-   ![](./images/avdf-006.png " ")
+2. You could perform the register from the Audit Vault Web UI but we will use the AVCLI instead
 
-    **Note**:
-    - You could also perform this register from the Audit Vault Web Console
-    - This script will use the database user `AVAUDITUSER` that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
-    - The password for `AVAUDITUSER` is *Oracle123*
+      **Note**:
+      - You will need to enter the `AVAUDITUSER` password during this step
+      - This user is a database user that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
+      - The password for `AVAUDITUSER` is *Oracle123*
+
+      ````
+      <copy>./01_register_database.sh</copy>
+      ````
+
+3. When complete, your output should look similar to this:
+
+   ![](./images/register_database01.png " ")
 
 ## **STEP 3**: Audit Vault - Register an Audit Trail
 
-1. First, use the avcli utility to register the Unified Audit Trail for the pluggable database `pdb1` to collect audit data
+1. Go to the scripts directory
 
       ````
-      <copy>./avs_register_audit_trail.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Register_Audit_Trail</copy>
       ````
 
-   ![](./images/avdf-007.png " ")
-
-2. Next, list the Audit Trails for the pluggable database `pdb1`
+2. The first script will use the AVCLI to register the Unified Audit Trail for the `pdb1` database
 
       ````
-      <copy>./avs_list_audit_trails.sh</copy>
+      <copy>./01_register_audit_trail.sh</copy>
       ````
 
-   ![](./images/avdf-008.png " ")
+3. The second script will list the Audit Trails for the `pdb1` pluggable database. You should see one row returned for the Unified Audit Trail and the output from the script should look similar to this:
 
-      **Note**:
-      - You should see one row returned for the Unified Audit Trail
-      - The `Status` column should say `Collecting` or `Idle`
-      - If it says something else please run the script again and verify it changes state
+   ![](./images/verify_audit_trail01.png " ")
 
-3. Using the Audit Vault Web Console view audit data collected via the All Activity Report 
+      **Note**: The `Status` column should say `Collecting` or `Idle`.  If it says something else please run the script again and verify it changes state.
+
+4. View audit data collected via the All Activity Report using the web browser
     - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
     - Login to Audit Vault Web Console as *AVAUDITOR* with the password "*T06tron.*"
     - Click on the **Reports** tab
     - Under the **Activity Reports** section titled **Summary**, click on the **All Activity** name to load the report
     - You should see a report that looks something like this:
 
-   ![](./images/avdf-009.png " ")
+   ![](./images/all_activity_report01.png " ")
 
     - You can click on the **Event Status** header and narrow down the report to `Event Status = 'FAILURE'`
     - It might look something like this:
 
-   ![](./images/avdf-010.png " ")
+   ![](./images/all_activity_failures01.png " ")
 
       **Note**:
       - This was just a small example to verify that audit data was being collected and is visible in Audit Vault
       - There will be more detailed report generation labs later in the workshop
 
-4. You have completed the lab to register the Unified Audit Trail for `pdb1` with Audit Vault
+5. You have completed the lab to register the Unified Audit Trail for `pdb1` with Audit Vault
 
 ## **STEP 4**: Audit Vault - Manage Unified Audit Settings
 
@@ -205,12 +206,12 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 3. Click on the Target `pdb1`
 
 4. On the target screen, under `Audit Policy` perform the following:
-    - Checkbox *Retrieve Immediately*
-    - Change the "Schedule" radio button to *Enable*
-    - Set "Repeat Every" to *1 Days*
-    - Click [**Save**] to save and continue
+    - Checkbox `Retrieve Immediately`
+    - Change the radio button for `Schedule` to `Enable`    
+    - Set the `Schedule` to `Repeat Every` **1 Day**    
+    - Press `Save` to save and continue
 
-   ![](./images/avdf-011.png " ")
+   ![](./images/save_audit_policy01.png " ")
 
 5. Next, view the audit policy reports for `pdb1`
     - Click on the `Policies` tab and you will be placed on the `Audit Policies` page
@@ -223,7 +224,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
         - Center for Internet Security (CIS) Configuration
     - Click `Provision Unified Policy`
 
-   ![](./images/avdf-012.png " ")
+   ![](./images/provision_uat01.png " ")
 
 6. Verify the job completed successfully
     - Click on the `Settings` tab
@@ -231,25 +232,26 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
     - You should see at least one `Job Type` that says `Unified Audit Policy`
     - Verify it shows `Complete` and it was provisioned on `pdb1`
 
-   ![](./images/avdf-013.png " ")
+   ![](./images/completed_provision_uat01.png " ")
 
 7. The next thing you can do is check which Unified Audit Policies exist and which Unified Audit Policies are enabled by using `SQL*Plus`
-
-    - Go back to your SSH session and list `ALL` the Unified Audit Policies in `pdb1`
-
-      ````
-      <copy>./avs_query_all_unified_policies.sh</copy>
-      ````
-
-   ![](./images/avdf-014.png " ")
-
-    - Next, show the **enabled** Unified Audit policies
+    - Go back to the terminal and go to the scripts directory
 
       ````
-      <copy>./avs_query_enabled_unified_policies.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Manage_Unified_Auditing</copy>
       ````
 
-   ![](./images/avdf-015.png " ")
+    - Run the first script to query `all` of the Unified Audit Policies in `pdb1`
+
+      ````
+      <copy>./01_query_all_unified_policies.sh</copy>
+      ````
+
+    - Run the second script to show the **enabled** Unified Audit policies
+
+      ````
+      <copy>./02_query_enabled_unified_policies.sh</copy>
+      ````
 
 8. If you want, you can re-do the previous steps and make changes to the Unified Audit Policies. For example, don't enable the `Center for Internet Security (CIS) Configuration` and re-run the two shell scripts to see what changes!
 
@@ -259,28 +261,28 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
 2. Click on the `Targets` tab
 
-3. Click on the Target `pdb1`
+3. Click on the Target Name
 
 4. Under `User Entitlements`
-    - Checkbox *Retrieve Immediately*
-    - Change the "Schedule" radio button to *Enable*
-    - Set "Repeat Every" to *1 Days*
-    - Click [**Save**] to save and continue
+    - Checkbox `Retrieve Immediately`
+    - Change the `Schedule` radio button to Enable
+    - Set `Repeat Every` to `1 Days`
+    - In this section, click [**Save**]
 
-   ![](./images/avdf-016.png " ")
+   ![](images/safe_user_entitlements_collection01.png " ")
 
 5. Click on the `Reports` tab
 
 6. Scroll down and expand the `Entitlement Reports` section
 
-   ![](./images/avdf-017.png " ")
+   ![](images/entitlement_reports01.png " ")
 
 7. Click on the `User Accounts` report
     - Under `Target Name`, select `All`
     - For `Label`, select `Latest`
     - Click [**Go**] and you will see a report that looks like this
 
-   ![](./images/avdf-018.png " ")
+   ![](images/user_accounts_report01.png " ")
 
 <!---
 8. Now that we have seen a simple report, we will create a differential report:
@@ -435,13 +437,13 @@ In this lab you will use the results from a Database Security Assessment Tool (D
 
    ![](images/csv_file_loaded01.png " ")
 -->
-1. Before beginning the lab, you have to download to your local computer the sensitive data file (`pdb1_dbsat_discover.csv`) that we have generated for you from DBSAT: 
-[> Click here to download <](https://objectstorage.us-ashburn-1.oraclecloud.com/p/g7HGibfhPXhmVXvyiP5G4yGe_MH3yPGUkiCrccuYhCKewZvgd-mlPycLPxaOAxcC/n/natdsecurity/b/labs-files/o/pdb1_dbsat_discover.csv)
+1. Click on the link below to download the sensitive data (`pdb1_dbsat_discover.csv`) generated from DBSAT lab to your local computer
 
-2. Next, grant privilege to the admin user `AVADMIN` to import sensitive data
+[pdb1_dbsat_discover.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/g7HGibfhPXhmVXvyiP5G4yGe_MH3yPGUkiCrccuYhCKewZvgd-mlPycLPxaOAxcC/n/natdsecurity/b/labs-files/o/pdb1_dbsat_discover.csv)
+
+2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user *"AVADMIN"*:
 
     - Open an SSH session to your **AVS VM** as user *opc*
-
     - Now we need to become `oracle` User
 
       ````
@@ -454,49 +456,51 @@ In this lab you will use the results from a Database Security Assessment Tool (D
       <copy>python /usr/local/dbfw/bin/av_sensitive_role grant avadmin</copy>
       ````
 
-   ![](./images/avdf-019.png " ")
+    - The results should look like this screenshot
+
+   ![](images/grant_sensitive_role01.png " ")
 
     - Close the session
 
-3. Now that you have the role granted, you can load the data from our DBSAT file
+3. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
 
-    - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
+    - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+    - Now we need to become `oracle` User
 
-    - Login to Audit Vault Web Console as *AVADMIN* with the password "*T06tron.*"
-
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+    - Launch the browser to `https://<AVS-VM-Public_IP` and login to the Audit Vault as *AVADMIN* using the password "*T06tron.*"
     - Upload the `pdb1_dbsat_discover.csv` file you downloaded earlier into AVDF Console
         - Click the `Targets` tab
         - Click the `pdb1` target name
         - In the right, top, corner of the page click `Sensitive Objects`
-        - Browse the `pdb1_dbsat_discover.csv` file you saved to your local system
+        - Select the `pdb1_dbsat_discover.csv` file you saved to your local system
 
-          ![](./images/avdf-020.png " ")
+   ![](images/upload_csv_file01.png " ")
 
-        - Click [**Upload**]
-        - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
+    - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
 
-          ![](./images/avdf-021.png " ")
+   ![](images/csv_file_loaded01.png " ")
+
 
 4. View the Sensitive Data
 
-    - Go back to Audit Vault Web Console as `AVAUDITOR`
+    - Go back to your web browser page session as `AVAUDITOR`
     - Click the `Reports` tab
     - On the left side menu, click `Compliance Reports`
     - Click [**Go**] to associate the `pdb1` target with the `Data Private Report (GDPR)` group
     - Checkbox `pdb1`
     - Click [**Add**]
-
-   ![](./images/avdf-022.png " ")
-
     - Click [**Save**]
     - Unfortunately, once you associate the target with the report, Audit Vault takes you to some unknown page, so please navigate back to the original page by clicking `Reports` then `Compliance Reports`
     - Click `Sensitive Data` and now you can see the Schema, Objects, Object Types, and Column Name and Sensitive Types
 
-   ![](./images/avdf-023.png " ")
+   ![](images/sensitive_data_report01.png " ")
 
-5. You can also view additional `Compliance Reports` about Sensitive Data
+5. You can also view additional reports about Sensitive Data
 
-   ![](./images/avdf-024.png " ")
+   ![](images/sensitive_data_reports01.png " ")
 
 ## **STEP 7**: Audit Vault - Auditing Column Data Changes - Before and After Values
 
