@@ -410,7 +410,7 @@ Click [**Search**]
 
       ![](./images/dms-059.png " ")
 
-    **Note** Here, we take the value of `LASTNAME` associated to the `FIRSTNAME` value which has been attributed randomly previoulsy
+    **Note**: Here, we take the value of `LASTNAME` associated to the `FIRSTNAME` value which has been attributed randomly previoulsy
 
 17. Click [**OK**]
 
@@ -427,6 +427,8 @@ Click [**Search**]
 20. Click [**Import**]
 
    ![](./images/dms-062.png " ")
+
+    **Note**: Here, this pre-defined library uses the Function `MGMT_DM_GEN_ANYC` of the Package `DBSNMP.DM_FMTLIB` and it's automatically put in the correct field
 
 21. You can see the algorythmic sequence and click [**OK**]
 
@@ -622,7 +624,7 @@ This script could be taken and executed on other targets
     **Note**: The masking script file will be stored in this directory on **DBSecLab VM** and can be reused as many times as you need
 
 4. Configure access permissions
-    - Go to **Host Credentials** and select the Named credentials `ORACLE-OS`
+    - Go to **Host Credentials** and select the Named credentials `ORACLE-OS` (user: *oracle* / password: *T06tron.*)
     - Go to **Database Credentials** and select the Named credentials `DMS_ADMIN`
 
    ![](./images/dms-090.png " ")
