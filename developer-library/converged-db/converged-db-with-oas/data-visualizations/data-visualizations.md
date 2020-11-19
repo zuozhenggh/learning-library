@@ -59,7 +59,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
   
   In this step, we will create individual data sets of different data types: json, xml and relational.
 
-1. create **FINANCIALS\_JSON\_UK\_VIEW**  data set   
+1. Create **FINANCIALS\_JSON\_UK\_VIEW**  data set   
    On the Home screen, select "Create" and click on "Data Set".
        ![](./images/oascdb1.1.png " ")
 

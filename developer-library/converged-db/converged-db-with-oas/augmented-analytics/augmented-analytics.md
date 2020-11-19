@@ -35,7 +35,7 @@ The below pre-loaded data object is available in Converged Database.
 
 ## **STEP 1**: Create A Data Set From Database
 
-1. In the home screen, click the humberger to select **Data** and then **Connections** tab. Select the  created connection and browse schema **OASLABS** as shown below.
+1. In the home screen, click the hamburger to select **Data** and then **Connections** tab. Select the  created connection and browse schema **OASLABS** as shown below.
 ![](./images/aa4.png " ")
 ![](./images/aa5.png " ")
 
