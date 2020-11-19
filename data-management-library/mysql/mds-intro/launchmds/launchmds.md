@@ -33,7 +33,7 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
 
 1. Make sure you have created a tenancy and log-in to the Console as an Administrator.
 
-2. Create a compartment named **MySQLSandbox** On the Navigation Menu, under Governance and Administration, select Identity -> Compartments. 
+2. Create a compartment named **MySQL_Sandbox** On the Navigation Menu, under Governance and Administration, select Identity -> Compartments. 
 
     ![Compartment1](./images/compartment1.png " ")
 3. On Compartments Page, click on Create Compartment.
@@ -89,10 +89,12 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
 3. On Start VCN Wizard, select VCN with Internet Connectivity and click on Button Start VCN Wizard.
 ![VCN](./images/vcn3.png " ")
 
-4. On Create a VCN with Internet Connectivity, under Basic Information, enter VCN Name (MDSVCN), select the MDS_Sandbox Compartment and click on the Next button.
+4. On Create a VCN with Internet Connectivity, under Basic Information enter  
+ Name (MDS_Policy)
+5. Select the MDS_Sandbox Compartment and click on the Next button.
 ![VCN](./images/vcn4.png " ")
 
-5. On Create a VCN with Internet Connectivity click the Create button 
+6. On Create a VCN with Internet Connectivity click the Create button 
 ![VCN](./images/vcn5.png " ")
     Completed VCN Creation
     ![VCN](./images/vcn6.png " ")
@@ -103,25 +105,29 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
 ![MDS](./images/mds1.png " ")
 2. On DB Systems in MDSSandbox Compartment, click on Create MySQL DB System.
 ![MDS](./images/mds2.png " ")
-3. On Create MySQL DB System, under DB System Information, select a Compartment, enter a Name (MDSDB) for the DB System, add a Description, select an Availability Domain, select a Fault Domain, select a configuration for the MySQL Shape, and click Next.
+3. On Create MySQL DB System, under DB System Information, select a Compartment.
+
+4. Enter a Name (MDS_DB) for the DB System
+
+5. Add a Description, select an Availability Domain, select a configuration for the MySQL Shape, and click Next.
 ![MDS](./images/mds3.png " ")
 
-4. On Create MySQL DB System, under Database Information, create the Administrator Credentials by entering Username (admin) and Password (Welcome1!), specify the network information selecting the Virtual Cloud Network and Subnet in the compartment and entering Hosting Name, and click Next.
+6. On Create MySQL DB System, under Database Information, create the Administrator Credentials by entering Username (admin) and Password (Welcome1!), specify the network information selecting the Virtual Cloud Network and Subnet in the compartment and entering Hosting Name, and click Next.
 ![MDS](./images/mds4.png " ")
-5. On Backup Information, select Enable Automatic Backups, select the Backup Retention Period (1 day), select Default Backup Window, and click on Create.
+7. On Backup Information, select Enable Automatic Backups, select the Backup Retention Period (1 day), select Default Backup Window, and click on Create.
 
-6. The New MySQL DB System will be ready to use after a few minutes. The state will be shown as Creating during the creation.
+8. The New MySQL DB System will be ready to use after a few minutes. The state will be shown as Creating during the creation.
 
-7. The state Active indicates that the DB System is ready to use. Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page. 
+9. The state Active indicates that the DB System is ready to use. Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page. 
 
 Click the Create button 
 ![MDS](./images/mds5.png " ")
 
-6.	The New MySQL DB System will be ready to use after a few minutes. 
+10.	The New MySQL DB System will be ready to use after a few minutes. 
 The state will be shown as Creating during the creation.  
 ![MDS](./images/mds6.png " ")
 
-7.	The state Active indicates that the DB System is ready to use. Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page.
+11.	The state Active indicates that the DB System is ready to use. Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page.
 ![MDS](./images/mds7.png " ")
 
 ## **STEP 5:** Create Client Virtual Machine
@@ -146,12 +152,8 @@ The state will be shown as Creating during the creation.
  ![COMPUTE](./images/compute4.png " ")
 
 
-6.	Create a SSH Key Pair on the Command Line. 
-
- ```
-    $ ssh-keygen -t rsa -N "" -b 2048 \-C "<key_name>" \-f <path/root_name>
- ```
-![COMPUTE](./images/compute5.png " ")
+6. If you have not already created your SSH key, perform "Lab 1: Create Local SSH Key". Return to this next line (STEP 5: #5)
+when you are done.
 
 7. Choose SSH keys (Choose public key fro .ssh folder). Click the Create button
 ![COMPUTE](./images/compute6.png " ")
@@ -217,7 +219,7 @@ In your pre installed MySQL Workbench, configure a connection using the method "
 * [MySQL Database Documentation](https://www.mysql.com)
 ## Acknowledgements
 * **Author** -  Airton Lastori, MySQL Principal Product Manager, MySQL Product Management 
-* **Contributors** -  Perside Foster, MySQL Solution Engineering
+* **Contributors** -  Priscila Galvao, MySQL Solution Engineering
 * **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, November 2020
 
 ## Need Help?
