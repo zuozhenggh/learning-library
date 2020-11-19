@@ -42,21 +42,19 @@
     },
   
     {
-      "title": "Lab 7: HA/DR Replication",
+      "title": "Lab 6: HA/DR Replication",
       "description": "Hign Availability / Disaster Recovery Replication",
       "filename": "../../gg-microservices-workshop-high-availability-disaster-recovery/gg-microservices-workshop-high-availability-disaster-recovery.md"
     },
     {
-      "title": "Lab 8: Transformations Using GoldenGate Microservices",
-      "description": "Transformations using GoldenGate Microservices ",
+      "title": "Lab 7: Transformations",
+      "description": "Transformations",
       "filename": "../../gg-microservices-workshop-transformations-using-goldengate/gg-microservices-workshop-transformations-using-goldengate.md"
-
     },
     {
-      "title": "Lab 9: Adminclient",
+      "title": "Lab 8: Adminclient",
       "description": "Microservices Adminclient",
       "filename": "../../gg-microservices-administration-client/gg-microservices-administration-client.md"
     }
-
   ]
 }
