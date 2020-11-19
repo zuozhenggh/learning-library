@@ -1,107 +1,140 @@
-# Setup the Environment
+# LAB 1: Set Up OCI for Siebel Deployment
 
-## Introduction
+## About this Workshop
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, the recently provisioned OCI Trial tenancy will be set up for the Siebel Application
 
-Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+Estimated Lab Time: 20 minutes
+
+  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+To set up the OCI tenancy, in this lab, you will:
+*   Create a Sub-Compartment
+*   Create a Virtual Cloud Network (VCN)
+*   Establish Security List Rules for Siebel
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+## **STEP 1**: Create a Sub-Compartment
 
-### Prerequisites
+In this part of the lab, we create a sub-compartment to organize the resources we will create
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+Compartments are the primary building blocks you use to organize your cloud resources. You use compartments to organize and isolate your resources to make it easier to manage and secure access to them
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+When your tenancy is provisioned, a root compartment is created for you. Your root compartment holds ***all*** your cloud resources
 
-*This is the "fold" - below items are collapsed by default*
+1.  Please log into to your OCI tenancy, if you are not already signed in. Example for Ashburn location - https://console.us-ashburn-1.oraclecloud.com/
 
-## **STEP 1**: title
+2.  On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu   in the upper-left corner, select Identity, and then select the Compartments option.
 
-Step 1 opening paragraph.
+![](./images/1.22.png " ")
 
-1. Sub step 1
+3.	If you only have a root compartment you can click the Create Compartment button
 
-  To create a link to local file you want the reader to download, use this format:
+    If have a development compartment click on its name to open it. Inside of there we will click on the create compartment button and create a child as shown
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+![](./images/my_compartment.png " ")
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
 
-    ![Image alt text](images/sample1.png "Image title")
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+4.	Choose a Name (e.g. “**siebelchild**”), fill out the form and click the ***Create Compartment*** button
 
-    ![Image alt text](images/sample1.png)
+  **Note:** that the parent compartment should be either in your the root compartment or your root compartment itself
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+![](./images/1.23.png " ")
 
-5. One example with bold **text**.
+  Now you can click the Oracle icon at the top of your screen to go to the home page and move onto the next step
 
-   If you add another paragraph, add 3 spaces before the line.
+![](./images/home.png " ")
 
-## **STEP 2:** title
 
-1. Sub step 1
+##  **Step 2:**  Create a Virtual Cloud Network (VCN)
 
-  Use tables sparingly:
+To create a VCN on Oracle Cloud Infrastructure:
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+![](./images/2.11.png " ")
 
-    - List item 1
-    - List item 2
+2.	Select VCN with Internet Connectivity, and then click Start VCN Wizard
 
-3. Code examples
+![](./images/2.2.png " ")
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+3. In this window, fill in the following fields with the information shown below:
 
-4. Code examples that include variables
+    **VCN NAME:**
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+        Siebel_VCN     (or any other unique name for the VCN)
 
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+    **COMPARTMENT:**
 
-## Learn More
+        siebelchild        (or any other compartment previously created)
 
-*(optional - include links to docs, white papers, blogs, etc)*
+    **VCN CIDR BLOCK:**
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+        10.0.0.0/16
 
-## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+    **PUBLIC SUBNET CIDR BLOCK:**
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+        10.0.2.0/24
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+    **PRIVATE SUBNET CIDR BLOCK:**
+
+       10.0.1.0/24
+
+    **USE DNS HOSTNAMES IN THIS VCN:**
+
+        Make sure this is checked
+
+    ![](./images/2.33.png " ")
+
+    Then, scroll down to the bottom and click the ***Next*** button.
+
+4.	On the “Review and Create” page, click on the create button.
+
+
+
+5. On the “Created Virtual Cloud Network” page wait until you see ***Virtual Cloud Network creation complete*** at the top of the list
+
+    **NOTE:** If any of the necessary resources fail to be created simply click the retry button and it should correct the issue immediately
+
+    ![](./images/2.44.png " ")
+
+    Then click on the View Virtual CLoud Network Button shown
+
+    ![](./images/2.5.png " ")
+
+
+## **Step 3:**  Establish Security List Rules for Siebel
+
+With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN
+
+1.	From the details page of the Siebel_VCN, under the ***Resources*** section in the left pane, select ***Security Lists***
+![](./images/3.11.png " ")
+
+2.	In the Security Lists section, click the Default ***Security List*** for ***Siebel_VCN*** link  
+![](./images/3.22.png " ")
+
+3.	On Default Security List, under Resources, click the Add Ingress Rules button.
+![](./images/3.3.png " ")
+
+4.   Within the interface, click the + ***Additional Ingress Rules*** button and add 2 new rows with the following criteria
+
+        | Stateless | Source Type |	Source CIDR | IP Protocol | Source Port Range |	Destination Port |
+        | --- | --- | --- | --- | --- | --- |
+        | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	4430 |
+        | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	8080 |
+
+        Click the ***Add Ingress Rules***  button when complete
+
+        After you have created the two new rules your Security List should look like this
+
+![](./images/3.55.png " ")
+
+These Ingress Rules will be sufficient to allow the network traffic required for the Siebel environment
+
+## **Summary**
+
+In this lab, OCI has been set up for the networking required to be able to access the Siebel environment that will be created in the next lab
