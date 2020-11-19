@@ -1,8 +1,8 @@
-# Setup the Environment
+# Analyze Data
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Create an Oracle Database 21c instance. If you plan to create the instance in Oracle Cloud Infrastructure, follow the instructions explained in the <A class=external-link href="https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db/" rel=nofollow>Create an Oracle Cloud Infrastructure VM Database</A> tutorial.
 
 Estimated Lab Time: n minutes
 
@@ -65,24 +65,24 @@ Step 1 opening paragraph.
   | 2 |Some text or a link | More text |
   | 3 | Some text or a link | More text |
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+2. You can also include bulleted lists - make sure to indent by at three spaces:
 
-    - List item 1
-    - List item 2
+      - List item 1
+      - List item 2
 
 3. Code examples
 
     ```
     Adding code examples
-  	Indentation is important for the code example to appear inside the step
+	Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+	<copy>Enclose the text you want to copy in <copy&gt;</copy&gt;.</copy>
     ```
 
 4. Code examples that include variables
 
 	```
-  <copy>ssh -i <ssh-key-file></copy>
+  <copy>ssh -i <ssh-key-file&gt;</copy>
   ```
 
 *At the conclusion of the lab add this statement:*
