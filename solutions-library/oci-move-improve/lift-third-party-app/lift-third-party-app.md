@@ -7,7 +7,7 @@ This lab walks you through the steps to capture an image of an existing, on-prem
 [Video 3](https://video.oracle.com/detail/video/6164386994001/lab-100-provisioning-a-vm-with-a-custom-image?autoStart=true&q=ocimoveimprove)
 [Video 4](https://video.oracle.com/detail/video/6164388506001/lab-100-accessing-the-cloud-native-application-instance?autoStart=true&q=ocimoveimprove)
 
-Estimated Lab Time:  3 hours
+Estimated Lab Time:  3 hour - 
 
 ### Objectives
 * Create a cloud-compatible VMDK file
@@ -15,7 +15,7 @@ Estimated Lab Time:  3 hours
 * Provision cloud infrastructure (networking, routing, compute)
 * Deploy cloud-native servers
 
-### Prerequisites 
+### Prerequisites
 * An Oracle Paid or LiveLabs Cloud account.
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Preinstalled Ubuntu Virtual Image (Will be provided to you during workshop from OraDocs repository)
@@ -507,7 +507,7 @@ lynx localhost/catalog/index.php
 
 ## **Step 11:** Confirm Customized OsCommerce App is Running
 
-1. Open Firefox and enter in “localhost/catalog/index.php”. 
+1. Open Firefox and enter in “localhost/catalog/index.php”.
 2. If you see a similar window as shown in the photo below, you have successfully completed this lab!
     ![](./images/48.png "")
 
