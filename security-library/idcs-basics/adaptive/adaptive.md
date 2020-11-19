@@ -28,7 +28,7 @@ In this lab, you will:
 1. Login into IDCS Admin console as an administrator:
 
     ```
-        https://<your tenant>/ui/v1/adminconsole
+    https://<your tenant>/ui/v1/adminconsole
     ```
 
 2. Navigate to *Security* and select *Adaptive Security*.
@@ -64,7 +64,7 @@ In this lab, you will:
 1. Login into IDCS Admin console as an administrator:
 
     ```
-        https://<your tenant>/ui/v1/adminconsole
+    https://<your tenant>/ui/v1/adminconsole
     ```
 
 2. Navigate to *Security* and select *Sign-On Policies*.
@@ -102,7 +102,7 @@ In this lab, you will:
 1. Login into IDCS Admin console as an administrator:
 
     ```
-       https://<your tenant>/ui/v1/adminconsole
+    https://<your tenant>/ui/v1/adminconsole
     ```
 
 2. Navigate to *User* and click on *Add*.

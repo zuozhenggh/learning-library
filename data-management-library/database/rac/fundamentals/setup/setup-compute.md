@@ -33,9 +33,9 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, click the **Browse** link and select the zip file (db\_system\_rac.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (db\_system\_rac.zip) that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
+  ![](./images/zip-file.png " ")
 
 5. Enter the following information:
 
@@ -119,9 +119,9 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
     - **Compartment:** Accept the default you entered initially
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
-    - **DB System Node Shape**: Choose VMStandardE2.4, VMStandard2.4, or VMStandard2.2 (Note that choosing VMStandard2.2 may take some time to create the system)
+    - **DB System Node Shape**: Choose VMStandard2.4 or VMStandard2.2 (Note that choosing VMStandard2.2 may take some time to create the system)
     - **DB edition**: Enterprise Edition Extreme Performance is required for a RAC database
-    - **Database Admin Password**: Database Admin Password must contain two UPPER-case characters, and two special characters (\_, \#) and be 12-30 characters in length (remember this value)
+    - **Database Admin Password**: Database Admin Password must contain two UPPER-case characters, and two special characters (\_, \#) and be 12-30 characters in length. For this workshop, we recommend setting your password to *W3lc0m3#W3lc0m3#*.  However you may choose the password of your preference (write the password down, you will need it for most labs.)
     - **Oracle Database Version**: Choose 19.7.0.0
 
     *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
@@ -217,25 +217,27 @@ Before logging in, first note down your IP addresses.
 
   ![](./images/setup-compute-4.png " ")
 
-5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps.
-- [Step 5: Oracle Cloud Shell](#STEP5:OracleCloudShell)
+5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps.  We recommend you choose Oracle Cloud Shell for this series of workshops.
+- [Step 5: Oracle Cloud Shell (RECOMMENDED)](#STEP5:OracleCloudShell)
 - [Step 6: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
 - [Step 7: Putty](#STEP7:WindowsusingPutty)
 
 ## **STEP 5**: Oracle Cloud Shell
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+1.  To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-  ![](./images/em-cloudshell.png " ")
+    ![](../clusterware/images/start-cloudshell.png " ")
 
-2.  Using one of the Public IP addresses in Step 4, enter the command below to login to your instance.    
+2.  Using one of the Public IP addresses in Step 4, enter the command below to login as the *opc* user and verify connection to your nodes.    
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
 3.  When prompted, answer **yes** to continue connecting.
-4.  You may now *proceed to the next lab*.  
+4.  Repeat step 2 for your 2nd node.
+5.  You may now *proceed to the next lab*.  
 
 
 ## **STEP 6**: MAC or Windows CYGWIN Emulator
@@ -362,7 +364,7 @@ When creating a stack your ability to create an instance is based on the capacit
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
 5.  Click on the stack you created previously
@@ -384,7 +386,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
@@ -400,7 +402,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 * **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Troy Anthony, Product Manager, Database Product Management, August 20 2020
+* **Last Updated By/Date** - Kay Malcolm, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

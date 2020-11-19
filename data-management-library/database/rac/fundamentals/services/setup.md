@@ -16,14 +16,14 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the oracle user*.  Run a *whoami* to ensure the value *oracle* comes back.)
 
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
 2.  Start Cloudshell
    
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 (you identified the IP in an earlier lab). 
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -31,9 +31,13 @@ Copy the following commands into your terminal. These commands download the file
     ![](../clusterware/images/racnode1-login.png " ")
 
 4.  Switch to the oracle user
+   
     ````
+    <copy>
     sudo su - oracle
+    </copy>
     ````
+
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
 5.  Get the seutp files
     ````
@@ -48,28 +52,36 @@ Copy the following commands into your terminal. These commands download the file
     chmod +x setupDB.sh
     </copy>
     ````
-    ![](./images/setup_services-1.png " " )
+    ![](./images/setup-num5.png " " )
 
-6. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Edit the script using nano and replace the db_pwd with the password you entered in an earlier lab.
+6. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Edit the script using vi.
 
     ````
-    <copy>
-    nano setupDB.sh
-    </copy>
+    vi setupDB.sh
     ````
+    ![](./images/setup-num6.png " " )
+
+7. Replace the db_pwd with the password you entered when your database was setup.
 
     ````
     # Pwds may need to be changed
     db_pwd="W3lc0m3#W3lc0m3#"
+    ````
+     ![](./images/setup-num7.png " " )
 
-    ````   
-7. No other lines need to be changed.  Run the **setupDB.sh** script
+8. To save the file press the **esc** key and **wq!** to save the file.
+   
+9.  No other lines need to be changed.  Run the **setupDB.sh** script
 
     ````
     <copy>
     /home/oracle/setupDB.sh
     </copy>
     ````
+
+    ![](./images/setup-num7.png " " )
+
+    *Note:* There may be some drop user errors, ignore them.  Please be patient as this script takes some time.
 
 Congratulations! Now you have the data to run subsequent labs.
 
