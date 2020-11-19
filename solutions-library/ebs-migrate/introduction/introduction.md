@@ -2,9 +2,20 @@
 
 ## About this Workshop
 
-This workshop showcases the use of the Oracle E-Business Suite Cloud Manager graphical user interface to provision and clone environments on Oracle Cloud Infrastructure. In addition, a demonstration of the lift and shift of an on-premises Oracle E-Business Suite environment to Oracle Cloud Infrastructure will be conducted.
+This workshop showcases the use of the migration of an existing Oracle E-Business Suite to Oracle Cloud Infrastructure using the Object Storage service. 
+
+The In order to omplete this lab, it is required that you complete the **EBS Cloud Manager Lab** found [here](link to livelabs). This workshop uses information that is recorded in the referenced lab. This information is necessary in order to preform this workshop. 
 
 Estimated Workshop Time: 1.5 hours
+    Note: This does not include downtime for creating the backup, which lasts about 2.5 hours. 
+
+### **Background**
+
+Creating a backup of your source Oracle E-Business Suite instance is the first part of a lift and shift process. You can subsequently complete the lift and shift process by using Oracle E-Business Suite Cloud Manager to provision an environment on Oracle Cloud Infrastructure based on the backup.
+
+Note: Although this process is intended primarily for on-premises instances, you can also run the Oracle E-Business Suite Cloud Backup module to conduct a lift and shift in certain cases when the source environment is already in Oracle Cloud Infrastructure with optional database services. These cases include the following:
+  - You initially used a manual procedure, such as a platform migration, to migrate an environment to Oracle Cloud Infrastructure, and now would like to leverage Oracle E-Business Suite Cloud Manager to manage that environment going forward.
+  - You want to migrate your environment from one tenancy to another. The lift and shift process can be used for this purpose whether or not you are currently using Oracle E-Business Suite Cloud Manager.
 
 Notes:
 
@@ -53,55 +64,39 @@ Figure W-2: Storyboard
 ### Objectives
 
 In this lab, you will:
-* Prepare your Oracle E-Business Suite environment
-* Deploy the Oracle E-Business Suite Cloud Manager Compute instance using an Oracle Cloud Infrastructure Marketplace image and configure Oracle E-Business Suite Cloud Manager
-* Use One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment
-* Use Cloning feature of Oracle E-Business Suite Cloud Manager to clone your Oracle E-Business Suite environment
+* Create a standalone E-Business Suite Environment that will act as the source for the migration
+* Prepare the source EBS enviornment for migration
+* Install the Oracle E-Business Suite Cloud Backup Module on the source environment
+* Create a backup of the source EBS environment and store it on the Oracle Object Storage service
 
-### Prerequisites
+### **Prerequisites**
 
-You will need the following in order to complete this workshop:
+* Complete Workshop: [OCI EBS Cloud Manager Workshop name](link)
+* A MyOracleSupport account is needed to download the Cloud Backup tool to the source EBS environment.
+* key-data.txt file documented with following information (from the EBS Cloud Manger lab):
 
-* A modern browser
-* A secure remote login (Secure Shell, or SSH) utility
-        - Such as PuTTY - downloaded from [here](https://www.ssh.com/ssh/putty/download)
-* A secure copy program
-        - Such as WinSCP - downloaded from [here](https://winscp.net/eng/index.php)
-* Knowledge of basic UNIX commands
+**From MyOracleSupport Account:**
 
-## Setup
+* `MOS_Email_Address` (typically your tenancy admin user)
 
-In this section, you will prepare your workstation. In addition the following zip file provides a key-data.txt to store all information that you will need to refer back to. We recommend you use this file to store your variables while going through the lab.
+**From Provisioning your Cloud Manager Instance You Should have recorded:**
 
-Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RPRU26R15Fc4DN8Q7QzD_Z8B-vXE-OgSnlbJFvCw9GKWr6TgbyXsgyPaSQPcoRh3/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files.
+* `Oracle_Cloud_Region_Identifier`
+* `Oracle_Cloud_Tenancy_Name`
+* `Oracle_Cloud_Tenancy_OCID`
+* `Cloud_Manager_Admin_User_OCID`
+* `Cloud_Manager_Admin_Fingerprint`
+* `Oracle_Cloud_Compartment_OCID`
+* `Cloud_Manager_Instance_public_IP`
 
-Additionally there is a terraform configuration included if you would do this lab using resource manager. This lab uses marketplace stack, but if you decide to use resource manager the terraform file is available.
+**From your source EBS Instance**
 
-Proceed to the appropriate section, depending on your workstation operating system:
+* `Source_EBS_Instance_public_IP`
+* `Source_EBS_Instance_private_IP`
+* `Fully_Qualified_Hostname` (In this Lab: apps.example.com)
+* `apps_password` (In this Lab: apps)
+* `weblogic_password` (In this Lab: welcome1)
 
-### Using a Windows Workstation
-
-From the download link:
-
-  1. Download the hol zip file.
-
-  2. Open Windows Explorer and navigate to the downloaded zip file.
-
-  3. Move the zip file to your folder Desktop
-
-  4. Unzip the files.
-
-### Using a Mac Workstation
-
-From the download link:
-
-  1. Download the hol zip file.
-
-  2. Open Finder and navigate to the downloaded zip file.
-
-  3. Move the zip file to your Desktop
-
-  4. Unzip the files.
 
 You may now proceed to the next lab.
 
@@ -136,9 +131,9 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 ## Acknowledgements
 
-* **Author:** Quintin Hill, Cloud Engineering
+* **Author:** William Masdon, Cloud Engineering
 * **Contributors:** Santiago Bastidas, Product Management Director
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, Nov 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
