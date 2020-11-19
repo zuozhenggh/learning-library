@@ -51,6 +51,11 @@
       "description": "Transformations using GoldenGate Microservices ",
       "filename": "../../gg-microservices-workshop-transformations-using-goldengate/gg-microservices-workshop-transformations-using-goldengate.md"
 
+    },
+    {
+      "title": "Lab 9: Adminclient",
+      "description": "Microservices Adminclient",
+      "filename": "../../gg-microservices-administration-client/gg-microservices-administration-client.md"
     }
 
   ]
