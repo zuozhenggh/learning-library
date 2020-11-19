@@ -8,7 +8,7 @@ Service Bus will protect consumers of the validatePayment composite from routine
 
 ![](./images/servc-bus-0.png " ")
 
-Estimated Lab Time: 60 minutes
+*Estimated Lab Time*: 60 minutes
 
 ### Objectives
 - Utilize Oracle JDeveloper 12c to construct Proxy and Business services on Oracle Service Bus.
@@ -56,7 +56,6 @@ fields, leaving the others with their default values:
     
     Other Palette categories, Technology, Adapters and Advanced, contain adapters and transports for building Business Services (External References) and Proxy (Exposed Services).
 11. If your Properties window is on the bottom right of the JDeveloper screen, please drag and position it to the bottom center as shown in the above diagram. This will make editing properties of Pipeline actions easier.
-
 
 
 [//]: # (click **Create Application**. )
@@ -119,15 +118,13 @@ For this project, we will keep the structure simple since there are only a few a
     ![](./images/sb12.png " ")
 
 
-
-
 ## **STEP 3**: Configure a Business Service for the ValidatePayment Composite and Review Properties.
 
 In this section, you will configure a Business Service to represent your validatePayment composite.
 There are different ways to create artifacts in Service Bus in JDeveloper:
-+ right-click menu from the left-hand Application Navigator (traditional approach)
-+ drag and drop icons from the Component Palette on to the overview canvas (new)
-+ right click directly on the overview canvas to insert artifacts (new)
++ Right-click menu from the left-hand Application Navigator (traditional approach)
++ Drag and drop icons from the Component Palette on to the overview canvas (new)
++ Right click directly on the overview canvas to insert artifacts (new)
   
 We will use the drag and drop Component Palette to build our first Service Bus project; however, feel free to experiment with other mechanisms.
 

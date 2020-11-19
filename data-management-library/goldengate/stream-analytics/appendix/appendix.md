@@ -19,7 +19,6 @@ Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of da
 ### Instructions
 At each stage of the Lab 3 you can refer back to this appendix to compare your pipeline and screens with the screen shots provided here.  Each stage is marked with the name of the stage so that you can reference it while performing the task for that stage.
 
-
 ## GetCustomerDetails Stage
 **New Query**
 

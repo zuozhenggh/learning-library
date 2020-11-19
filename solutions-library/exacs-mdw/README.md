@@ -26,7 +26,7 @@ Lab 5 is geared towards Monitoring and Managing your Exadata Cloud Service datab
 
 Lab 6 is intended for Migrating your databases.
 
-Lab 7 is around connecting your ExaCS DB to Oracle Analytics cloud.
+Lab 7 is around connecting your ExaCS DB to Oracle Analytics Cloud.
 
 ### Goals for this workshop
 
@@ -127,8 +127,11 @@ As a LOB user
 
 ## Acknowledgements
 
-**Author** - Tasbir Imam, Phani Turlapati, Abdul Rafae, Sravya Ganugapati, Sathis Muniyasamy, Albert Kwok, Padma Priya, Aubrey Patsika, Jacob Harless, Tejus Subrahmanya
+- **Author** - Tasbir Imam, Phani Turlapati, Abdul Rafae, Sravya Ganugapati, Sathis Muniyasamy, Albert Kwok, Padma Priya, Aubrey Patsika, Jacob Harless, Tejus Subrahmanya
 
-**Last Update** - July 21, 2020.
+- **Last Updated By/Date** - Jess Rein - Cloud Engineer, November 2020
 
-**You are all set. Let us begin!**
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
