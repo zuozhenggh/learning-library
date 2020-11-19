@@ -87,18 +87,16 @@ To copy the files:
 
     ```
     PS C:\Users\MYHOME\> <copy>ssh -i <private-ssh-key> opc@<first-util-node-ip></copy>
-
     ```
   For example, if you're working from `C:\Users\MYHOME`, your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`, and the accessible IP address of the first utility node of your cluster is `10.2.0.101`, enter:
 
     ```
-
     PS C:\Users\MYHOME\> <copy>ssh -i ./bds/ssh/my-ssh-key opc@10.2.0.101</copy>
     Last login: Tue Nov 10 17:59:41 2020 from some-host
     [opc@myclustun0 ~]$
-
     ```
-Notice that the name of the first cluster is shown in the Linux prompt. In the example, it's `myclustun0`.
+
+Notice that the name of the first cluster is shown in the Linux prompt. In the example above, it's `myclustun0`.
 
 3. At the Linux prompt, list the contents of the ``/opt/cloudera/security/x509/``, which is the directory that contains the SSL files on the node. For example:
 
@@ -145,17 +143,15 @@ Notice that the name of the first cluster is shown in the Linux prompt. In the e
 7. Copy the SSL certificate from the second utility node (`node1`):  
 
     ```
-
     PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename> </copy>
-
     ```
+
     For example:
 
     ```
-
     PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/second-util-node-cert.pem</copy>
-
     ```
+
     Notice that the IP address is for the second utility node. In this example, it's  `10.2.0.102`.
 
     **Note** You could have copied both certificate files from either the first or second utility nodes, because the SSL certificate files for all the nodes are stored on all the nodes. However, in the next two steps, you must copy the key file for the first utility node from the first utility node and the key file for the second utility node from the second utility node.
@@ -164,21 +160,20 @@ Notice that the name of the first cluster is shown in the Linux prompt. In the e
 
     ```
     PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
-
     ```
+
     For example:
 
     ```
     PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/first-util-node.key</copy>
     ```
 
-
 9. Copy the SSL key file  (also named `node.hue.key`) for the second utility node:  
 
     ```
     PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
-
     ```
+
     For example:
 
     ```
@@ -200,7 +195,6 @@ Notice that the name of the first cluster is shown in the Linux prompt. In the e
   -a----       11/17/2020   9:30 AM   1675 first-util-node.key
   -a----       11/17/2020   9:32 AM   1285 second-util-node-cert.pem
   -a----       11/17/2020   9:32 AM   1675 second-util-node.key   
-
     ```
 
 
@@ -264,7 +258,6 @@ Notice that the name of the first cluster is shown in the Linux prompt. In the e
 
 
 8. Click **Submit**. When the large load balancer status icon load balancer status icon at the top of the **Load Balancer Details** page is green and says "Active," you can continue with the steps below. It may take a few minutes to create the load balancer.
-
 
   ![](./images/lb-status-large-icon.png)
 
@@ -504,7 +497,6 @@ In this step, you'll save your SSL certificate files and key files as two bundle
 
       ![](./images/create-load-bal-win2.png " ")
 
-
 3. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
 ## **STEP 14:** Access the Cluster
@@ -517,15 +509,15 @@ To open the services included in this load balancer:
 
 1. Find the IP address or the hostname used for your load balancer.
 
-      * IP address:
+  * IP address:
 
-        The IP address is listed in the Load Balancer Information panel at the top of the load balancer pages in the console.
+    The IP address is listed in the Load Balancer Information panel at the top of the load balancer pages in the console.
 
-      * DNS hostname:
+  * DNS hostname:
 
-          After the load balancer is created and it's been given an IP address, you or another administrator must add a DNS entry to your DNS name servers, to resolve your desired hostname (for example, bds-frontend.mycompany.com) to the public IP address of the load balancer. Then, the services registered in the load balancer will be accessible by using that hostname; for example, `bds-frontend.mycompany.com:7183` for Cloudera Manager.
+    After the load balancer is created and it's been given an IP address, you or another administrator must add a DNS entry to your DNS name servers, to resolve your desired hostname (for example, bds-frontend.mycompany.com) to the public IP address of the load balancer. Then, the services registered in the load balancer will be accessible by using that hostname; for example, `bds-frontend.mycompany.com:7183` for Cloudera Manager.
 
-          For information about using DNS in Oracle Cloud Infrastructure, see [Overview of the DNS Service](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm) in the Oracle Cloud Infrastructure documentation.
+    For information about using DNS in Oracle Cloud Infrastructure, see [Overview of the DNS Service](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm) in the Oracle Cloud Infrastructure documentation.
 
 2. In a web browser, enter the address as follows:
 
@@ -533,9 +525,9 @@ To open the services included in this load balancer:
 
   * To use the load balancer's hostname in a domain: `https://`*`<hostname>`*:*`<port>`*
 
-  That is, for Cloudera Manager:
+    That is, for Cloudera Manager:
 
-      * `https://`*`<load-balancer-ip>`*`:7183`
+    * `https://`*`<load-balancer-ip>`*`:7183`
 
       ![](./images/cm-url.png)
 
@@ -549,21 +541,7 @@ To open the services included in this load balancer:
       * `https://`*`<load-balancer-ip>`*`:30000`
       * `https://`*`<hostname>`*`:30000`
 
-
-
-
-
-
-<!--
-reserved text
-
-To view your reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > Public IPs**. The  reserved public IP address is displayed in the **Reserved Public IPs** list.
--->
-
-
-
-
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+**This concludes this lab. <!-- Please proceed to the next lab in the Contents menu.-->**
 
 ## Want to Learn More?
 
@@ -581,3 +559,10 @@ To view your reserved public IP address in the console, click the Navigation men
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
+
+<!--
+reserved text
+
+To view your reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > Public IPs**. The  reserved public IP address is displayed in the **Reserved Public IPs** list.
+-->
