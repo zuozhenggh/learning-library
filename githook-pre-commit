@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash; C:/Program\ Files/Git/usr/bin/sh.exe
 # check and exit if a binary file is in the commit, proceed otherwise
 
 has_invalid_file=false

@@ -6,19 +6,12 @@ In this scenario we are working with a retailer who is running promotions in a s
 The retailer is asking us to use the input data to provide the following output and analysis:
 
 * Get the customers details and their order history
-
 * Filter out all the customers who live outside Geo area as where the discounts are offered
-
 * Get the product details for each customer
-
 * Segment the customers into Gold, Diamond and Platinum based on the history of their purchase
-
 * Get the revenue generated from these customers
-
 * Predict whether the customers are likely to Buy based on the discount they are being offered using ML
-
 * Send data revenue and likely buyers to targets downstream
-
 
 *Estimated Lab Time*: 70 minutes
 
@@ -98,7 +91,7 @@ You need to create a pipeline that includes about 17 stages and resources.  Befo
 
 Now that we have the order history we would like to enrich this data with the customer details from the database.  
 
-## **STEP 2:** GetCustomerDetails Stage
+## **STEP 2:** Create GetCustomerDetails Stage
 
 1. Right click on the OrderStream and add a Query Stage.  
 2. Name the query stage *GetCustomerDetails* and add a description.  
@@ -106,25 +99,28 @@ Now that we have the order history we would like to enrich this data with the cu
 4. You should see CustomerDetails added to both pipeline and the details pane.  Notice that the Correlation Conditions are shown.  Ignore the Some sources are not correlated error message.  This is because we are not done with the query conditions yet.  
 5. Pick Match Any condition because we would like to use an or condition.  For each field pick the appropriate value from the drop down shown in the Example below.  
 6. Make sure you create two query conditions as explained below.  
-7. Once you have added both conditions click anywhere outside of the query pane and the errors will go away and you will see the data from both sources joined and streaming.You can Pause the stream to understand the steps and the enriched data better.
+7. Once you have added both conditions click anywhere outside of the query pane and the errors will go away and you will see the data from both sources joined and streaming. You can Pause the stream to understand the steps and the enriched data better.
 
-    Note: Some of the parameters that come in from the streams have two values such as **after_PRODUCT_SKU** and **before_PRODUCT_SKU**.  These are events within a stream
+    Note: Some of the parameters that come in from the streams have two values such as *`after_PRODUCT_SKU`* and *`before_PRODUCT_SKU`*.  These are events within a stream
 
     An event is always before or after a time, and the stream is potentially infinite and ever-changing.  In simple terms a *before* value represents what was already in the stream and an *after* event is an update to that value.  In most of our queries we will have to make sure that we include both events.
 
     Example:
-
-    Custid equals after_CUSTOMER_ID
+    ```
+    <copy>Custid equals after_CUSTOMER_ID</copy>
+    ```
 
     OR
 
-    Custid equals before_CUSTOMER_ID
+    ```
+    <copy>Custid equals before_CUSTOMER_ID</copy>
+    ```
 
     <em>Hint: You can find the Lab 3 screens in the Appendix section of this workshop.  Feel free to reference them to build your pipeline</em>
 
 8. At any time during design of a pipeline you can click on Done button on the top left to exit the pipeline and get back to the catalog.  All your changes will be saved.
 
-## **STEP 3:** GetLatLongFromZipCode Stage
+## **STEP 3:** Create GetLatLongFromZipCode Stage
 
 In this stage we would like to map a customer’s zip code to an actual latitude and longitude.
 
@@ -135,7 +131,7 @@ In this stage we would like to map a customer’s zip code to an actual latitude
     <em>Hint: this should be information from the database - A join of GetCustomerDetails with ZipToLatLogng from the dropdown.
     You can compare your pipeline with the screen shots in the Appendix section.</em>
 
-## **STEP 4:** FilterCustomers Stage
+## **STEP 4:** Create FilterCustomers Stage
 
 In the next stage we are only interested in customers that are located in our campaign regions and filter out everyone else.
 
@@ -147,7 +143,7 @@ In the next stage we are only interested in customers that are located in our ca
 6. After setting up the Parameters click on the Visualizations tab and see the Geo Filter that we are interested in for our campaign.  
 7. Also, notice the arrows indicating the customers location.
 
-## **STEP 5:** GetProductDetails Stage
+## **STEP 5:** Create GetProductDetails Stage
 
 In the this stage we would like to retrieve the product details from local database for those products that the customers have purchased by joining two sources.
 
@@ -159,52 +155,51 @@ In the this stage we would like to retrieve the product details from local datab
     <em>Hint: this should be information from the database.  
     You can compare your pipeline with the screen shots in the Appendix section.</em>
 
-## **STEP 6:** SegmentCustomers Stage
+## **STEP 6:** Create SegmentCustomers Stage
 
 Now we would like to add a Rule Stage to segment our customers based on what they have spent on their previous purchases by adding two additional fields based on rules defined below.
 
-1. First begin by using the Expression Builder **<em>(fx)</em>** to add the two new fields.  
+1. First begin by using the Expression Builder *`<em>(fx)</em>`* to add the two new fields.  
 2. Click on the (Sigma) button and add a new field as a String.  
 3. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it CustomerType.  
-4. Use **<em>(fx)</em>** again and add a new field as a numerical value.  
-5. For a numerical value make sure to begin the expression with = sign. You can give it default value like =0.  
+4. Use *`<em>(fx)</em>`* again and add a new field as a numerical value.  
+5. For a numerical value make sure to begin the expression with `=` sign. You can give it default value like `=0`.  
 6. Rename the Calc to DiscountOffered using the right mouse click.
 7. Now right click on the GetProductDetails stage and add a Rule Stage
 8. Name the new rule stage *SegmentCustomers* with the appropriate description.
+9. In the Rules tab add the following three rules:
 
-In the Rules tab add the following three rules:
-
-9. *GoldCustomers:*
+    - *GoldCustomers:*
 
 If they have purchased ELECTRONICS AND the storesales (*Match All*) greater than $50 AND storesales  lower than or equal $900
 Then offer them a $5 discount as DiscountOffered and set the CustomerType to *GOLD*
 
-10. *DiamondCustomers:*
+    - *DiamondCustomers:*
 
 If they have purchased both ELECTRONICS AND FURNITURE between $900 AND $1500
 Then offer them a $10 discount as DiscountOffered and set the CustomerType to *Diamond*
 
-11. *PlatinumCustomers:*
+    - *PlatinumCustomers:*
 
 If they have purchased any product and spent more than $1500
 Then offer them a $25 discount as DiscountOffered and set the CustomerType to *Platinum*
 
-Note that all other customers are automatically segmented as *BRONZE*
+Note that all other customers are automatically segmented as *BRONZE*. Also, feel free to compare your pipeline with the screen shots in the Appendix section.
 
-Also,feel free to compare your pipeline with the screen shots in the Appendix section.
+We are going to use the data from this stage in two ways which is why we are going to create two branches out from this stage.  In the first branch we will do some analysis on the revenue generated by customer types, i.e. the revenue amount generated by each segment.
 
-We are going to use the data from this stage in two ways which is why we are going to create two branches out from this stage.  In the first branch we will do some analysis on the revenue generated by customer types, i.e, the revenue amount generated by each segment.
-
-## **STEP 7:** RealtimeRevenue Stage
+## **STEP 7:** Create RealtimeRevenue Stage
 After we have segmented the customers we need to Filter out all the customers that don’t generate any revenue.  
 
 1. Begin by adding a Query Stage to the SegmentCustomers stage and name it *RealtimeRevenue*.  
-2. Use the **<em>Filters</em>** tab to query for:
+2. Use the *`<em>Filters</em>`* tab to query for:
+
   ```
-    after_REVENUE is not null
+  after_REVENUE is not null
   ```
-3. Then in the Summaries tab add a summary and do a SUM of all ```after_REVENUE``` to create a new field.
-4. Notice that at first the new field is named ```SUM_after_REVENUE```, but double clicking that column should enable you to rename it to RevByCustomerType.  Rename the new column.  
+
+3. Then in the Summaries tab add a summary and do a SUM of all *`after_REVENUE`* to create a new field.
+4. Notice that at first the new field is named *`SUM_after_REVENUE`*, but double clicking that column should enable you to rename it to RevByCustomerType.  Rename the new column.  
 5. Finally Add a Group by with the CustomerType.
 6. Click on the Visualizations tab and name it to *RevenueByCustomerSegment*.  
 7. Add the Visualizations with Bar type with X Axis as the CustomerType and Y Axis as the RevByCustomerType.  
@@ -212,7 +207,7 @@ After we have segmented the customers we need to Filter out all the customers th
 
 Now we are going to create a parallel branch at the SegmentCustomers stage.  We are going to create this parallel branch to make predictions whether the customer is likely to redeem the offer based on their WebSales and StoreSales and the amount of Avgdiscount that is being offered.  
 
-## **STEP 8:** PredictBuyNoBuy Stage
+## **STEP 8:** Create PredictBuyNoBuy Stage
 
 1. Begin by creating a new Scoring stage by right clicking on the SegmentCustomers stage.   
 2. Name the stage *PredictBuyNoBuy*.
@@ -224,7 +219,7 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 8. Based on these model features the output columns are RedeemPrediction, IgnoreProbability and RedeemProbability.  
 9. See them streaming in the Live Output region at the bottom of the screen.
 
-## **STEP 9:** GetCustomer Stage
+## **STEP 9:** Create GetCustomer Stage
 
 1. Once again and from the SegmentCustomers stage we also like to define a parallel stage (to the PredictBuyNoBuy stage) so that we have access to the data in the previous stage by creating a query stage.  
 2. Right click on the SegmentCustomers stage and create a new query stage.  
@@ -233,30 +228,28 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 5. Click Save.
 6. Click on Add a Source and select the PredictBuyNotBuy.
 7. Now run the following queries or Correlation Conditions:
-  ```
+
+    ```
     Storesales_1 equals STORESALES**
-
     AND
-
     Websales_1 equals WEBSALES
-
     AND
-
     Avgdiscount_1 equals AVGDISCOUNT
-  ```
+    ```
+
 8. Be sure to select Now and not Unspecified.
 9. See the streaming data in the Live Output.
 
-## **STEP 10:**  FilterLikelyBuyers Stage
+## **STEP 10:** Create FilterLikelyBuyers Stage
 
 1. From the GetCustomer stage add a new Query Stage.
 2. Name the new stage *FilterLikelyBuyers*.
 3. Add a description: Removes customers who are unlikely to redeem the offer.
 4. Click Save.
-       In this stage we are only interested in customers that are likely to take advantage of the offer by querying for all the customers whose RedeemPrediction equals (case sensitive) 1.  
+In this stage we are only interested in customers that are likely to take advantage of the offer by querying for all the customers whose RedeemPrediction equals (case sensitive) 1.  
 5. Click on the Filters tab and Add a Filter.
 
-## **STEP 11:** PersistPredictionsToKafka Stage
+## **STEP 11:** Create PersistPredictionsToKafka Stage
 
 In the last stage we are interested in sending the data to a Kafka Target by mapping the topic params to the stream parameters.  Again the topic could be created before the pipeline is built or as the stage is being created.
 1. Create a new Target Stage.
@@ -265,7 +258,7 @@ In the last stage we are interested in sending the data to a Kafka Target by map
 4. Click Save.
 5. Select PersistPrediction topic from the dropdown and make sure the properties are all mapped properly.
 
-## **STEP 12:** LikelyBuyersByTypeAndZip Stage
+## **STEP 12:** Create LikelyBuyersByTypeAndZip Stage
 
 Create a parallel stage to group the likely buyers by type and by zip code.
 
@@ -282,14 +275,13 @@ Create a parallel stage to group the likely buyers by type and by zip code.
 *You may now *proceed to the next lab*.
 
 ## Learn More
-
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
-* **Contributors** - Shrinidhi Kulkarni, Solution Engineer
-* **Last Updated By/Date** - Meghana Banka, October 2020
+* **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
