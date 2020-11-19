@@ -1,11 +1,17 @@
-## **Run the Stack**
+# Run the Stack
 
+## Introduction
+In this lab, you will run the stack.
+
+Estimated Lab Time: 2 minutes
+
+## **STEP**: Run the Stack
 Now that your stack is created, you can run jobs.
 
-Select the stack that you created. 
+1. Select the stack that you created. 
 
-In the "Terraform Actions" dropdown menu, run 'Apply' to launch the GPU infrastructure.
-![](./images/tf_actions.png)
+2. In the "Terraform Actions" dropdown menu, run 'Apply' to launch the GPU infrastructure.
+    ![](./images/tf_actions.png)
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team

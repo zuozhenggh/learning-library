@@ -50,7 +50,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
  2. Login to ggsci (GG command line interface)
 
     ```  
-    <copy>ggsci</copy>
+    <copy>./ggsci</copy>
     ```
 3. Add the replicat with the below commands by logging into ggsci prompt
 
@@ -120,19 +120,23 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm</copy>
     ```
 
-5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
+5. Now Goto ggsci command prompt and start the replicat. 
+```
+<copy>start rjdbc</copy>
+```
+   We can see the stats of the replicat
 
 6. Login to the database `cdb1`
 
     ```
     <copy>. oraenv</copy>
-    ORACLE_SID = [cdb1] ?
+    ORACLE_SID = [cdb1] 
     ```
     ```
     <copy>sqlplus employees/employees@pdb1</copy>
     ```
 
-6. Now run the below script to get the tables counts
+7. Now run the below script to get the tables counts
 
     ```
     <copy>select 'employees       table -> '|| count(1) as Target from employees.employees UNION ALL
@@ -154,6 +158,6 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

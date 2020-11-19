@@ -43,34 +43,34 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Explore GoldenGate Configuration  
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-**By default ggadmin will automatically start in the labmenu**
+  **By default ggadmin will automatically start in the labmenu**
 
   ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **7**
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
-
+  
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
-      <copy> cd /u01/gg4mysql/dirprm
+    <copy> cd /u01/gg4mysql/dirprm
     view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
-      <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+    <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
     ```
     ```
-      <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+    <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
     ```
     ```
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
     <copy> cd /u01/gg4hadoop123010/dirprm</copy>
-    ````
-    ````
-    view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
+    ```
+    ```
+    <copy>view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
     ```
     ```
     <copy>view /u01/gg4hadoop123010/dirprm/rcass.prm</copy>
@@ -81,9 +81,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 5. Start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done.
 
-````
-   <copy>startcass</copy>
-````
+    ````
+      <copy>startcass</copy>
+    ````
 Now we need to start the GG manager process on both the source and target. Keep these sessions opened for the rest of this lab.
 
 ## **STEP 2**: GoldenGate Source Configuration
@@ -280,7 +280,7 @@ Now that GG processes have been created and started on both the source and targe
     <copy>stats rcass total</copy>
     ```
 
-# Summary
+## Summary
 In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rcas’` read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
@@ -296,6 +296,6 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

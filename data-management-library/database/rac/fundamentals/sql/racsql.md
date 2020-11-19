@@ -6,18 +6,30 @@ This lab walks you through the use of SEQUENCES in a RAC database.
 
 Estimated Lab Time: 20 Minutes
 ### Prerequisites
-
-This lab assumes you have completed the following labs:
+- An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
+- Lab: Fast Application Notification
+- Lab: Install Sample Schema
+- Lab: Services
 
 ## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
-1.  Connect to your cluster nodes with Putty or MAC CYGWIN as described earlier. Open a window to one of the nodes
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
-    ![](./images/clusterware-1.png " ")
+2.  Start Cloudshell
+   
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![](../clusterware/images/start-cloudshell.png " ")
 
-2.  Connect to the pluggable database, **PDB1** as SYSDBA
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ````
+    ![](../clusterware/images/racnode1-login.png " ")
+
+4.  Connect to the pluggable database, **PDB1** as SYSDBA.  Replace the password below with the password you used to provision your system.
 
     ````
     <copy>
@@ -25,8 +37,9 @@ This lab assumes you have completed the following labs:
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
+    ![](./images/seq-step1-num4.png " ")
 
-3. Build the **runstats** package
+5. Build the **runstats** package by pasting this in your sql prompt
 
     ````
     <copy>
@@ -142,11 +155,14 @@ This lab assumes you have completed the following labs:
     /
     </copy>
     ````
+
+    ![](./images/seq-step1-num4.png " ")
+
 ## **STEP 2:** Sequence Test
 
-1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance :
+1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance.
 
-2. Connect to node 1
+2. You should still be connected as the *sys* user on **node 1**.  If you disconnected, connect to **node 1** as the *opc* user and switch to the *oracle* user.  *Remember to replace the password as you did in Step 1.*
    
     ````
     <copy>
@@ -154,7 +170,7 @@ This lab assumes you have completed the following labs:
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
-3. Connect to node 2.
+3. Connect to **node 2** as the *opc* user and switch to the *oracle* user.  *Remember to replace the password as you did in Step 1.*
    
     ````
     <copy>
@@ -162,7 +178,9 @@ This lab assumes you have completed the following labs:
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode2:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
-4. Create the following SEQUENCES
+    ![](./images/sqlplus-node2.png " ")
+
+4. Create the following SEQUENCES on *both* **node 1** and **node 2**
    
     ````
     <copy>
@@ -176,7 +194,9 @@ This lab assumes you have completed the following labs:
     set serveroutput on;
     </copy>
     ````
-5. On node 1 run the following statements 2 or 3 times
+    ![](./images/create-seq.png " ")
+
+5. On **node 1** run the following statements 2 or 3 times in the sqlplus window you are still logged into.
 
     ````
     <copy>
@@ -203,7 +223,7 @@ This lab assumes you have completed the following labs:
     /
     exec runstats_pkg.rs_stop;
     </copy>
-    ````    
+    ````
 
 6. The runstats results will show similar to:
     ````
