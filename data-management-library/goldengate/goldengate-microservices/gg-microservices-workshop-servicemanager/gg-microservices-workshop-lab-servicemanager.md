@@ -1,19 +1,22 @@
 # Lab 4 -  Setup of Golden Gate Microservices Workshop 
 
-Update November 5, 2020
 
+**Workshop Architecture**
 ![](./images/ggmicroservicesarchitecture.png)
+
+# Introduction
+
+This hands-on lab is designed to demonstrate how setup Oracle GoldenGate 19c Microservices which then can be used as a realtime replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+
+The labs will walk the end-user through how to add all components of Oracle GoldenGate replication.  To do the instantiation of the target database, the end-user will be performing a data pump export and import.  All replication process will be started as they are built.
+
+
+## About Oracle GoldentGate Microservices
+Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
 ## Want to learn more:
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
-
-## Introduction
-Contents
-
-Introduction
- Disclaimer
-  Oracle GoldenGate Microservices Workshop Architecture 
 
 Lab  – Setup GoldenGate Microservices
 

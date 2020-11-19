@@ -1,9 +1,19 @@
 # Lab - reset
 
 
+**Workshop Architecture**
+    ![](./images/ggmicroservicesarchitecture.png)
+    
 ## GoldenGate Micro Services : Reset Lab
 
-## Introduction
+# Introduction
+
+This hands-on lab is designed to reset the Microservices Workshop environment.
+
+
+## About Oracle GoldentGate Microservices
+Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
+
 
 ## Objective:
 

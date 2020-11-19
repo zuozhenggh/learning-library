@@ -1,14 +1,23 @@
 # Lab  - Golden Gate Microservices HA / DR replication
 
+
+**Workshop Architecture**
 ![](./images/ggmicroservicesarchitecture.png)
+
+# Introduction
+
+This hands-on lab is designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment for High Availability and Disater Recovery via shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+
+The labs will walk the end-user through how to add all components of Oracle GoldenGate replication for an Active-Active replication. To do the instantiation of the target database, the end-user will be performing a data pump export and import.  All replication process will be started as they are built and Auto Collision Detection will be configured for this bidirectional replication.
+
+
+## About Oracle GoldentGate Microservices
+Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
 ### Want to learn more:
 [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
-### Introduction
-  Oracle GoldenGate for Microservices Workshop Architecture 
 
-### Objectives
 
 KEY FEATURES
 
