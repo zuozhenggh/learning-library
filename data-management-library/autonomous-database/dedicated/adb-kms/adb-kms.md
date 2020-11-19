@@ -4,6 +4,7 @@
 The Autonomous database service allows customers to retain control of the database encryption master keys. Keys are stored in an HSM based Vault service in OCI and are accessed by the database for encryption / decryption of data keys. No human operator has access to the keys once they are in the vault. Customers retain full control of their key vault and can disable / delete keys as required. 
 Each autonomous container database (ACD) and each autonomous database (ADB) within it can have its own unique master encryption key (MEK). Keys may be rotated at desired frequency either through console UI or using REST APIs.
 
+[](youtube:JoAJ7lAgdkA)
 
 ### Objectives
 
@@ -37,6 +38,12 @@ The first step is for a security admin responsible for all encryption keys to lo
 ![](./images/vault2.png)
 
 - Once your Vault is ready you may then create a Master Encryption Key.
+
+![](./images/vault3.png)
+
+Ensure you pick the HSM protection mode, provide a key name (preferably matching your ACD name for easier identification) and hit 'Create'
+
+![](./images/pick_hsm.png)
 
 Scroll down on the Vault console page, make sure you select 'Master Encryption Keys' from the list of Resources on the left and hit 'Create Key'
 
@@ -121,5 +128,7 @@ ADB Key rotation option is under **More Action** drop down button on the databas
 - **Last Updated By/Date** -  September 22nd, 2020
 
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

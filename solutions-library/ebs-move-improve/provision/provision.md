@@ -5,6 +5,10 @@ In this lab, we will use the One-Click Provisioning feature of Oracle E-Business
 
 Estimated Lab Time: 45 minutes
 
+Watch this short video to preview how to provision Oracle E-Business Suite using cloud manager.
+
+[](youtube:Y2VvbSsK6K8)
+
 ### Objectives
 * Enable and Set Oracle E-Business Suite Account Passwords
 * Configure Local Hosts File and Log in to Oracle E-Business Suite
@@ -47,25 +51,25 @@ You can check the status of the activity to provision the environment in the Act
 
     a. SSH into the Cloud Manager instance from your local machine by using the IP address in the ``key-data.txt`` file and the private key you created during the deployment of the Cloud Manager in OCI. 
 
-        $ ssh -i <filepath_to_private_ssh_key> opc@<cloud_manager_public_ip>
+        ssh -i <filepath_to_private_ssh_key> opc@<cloud_manager_public_ip>
 
     b. Switch to the Oracle user in the Cloud Manager instance
 
         <copy>
-        $ sudo su - oracle
+        sudo su - oracle
         </copy>
     
     c. Connect to the ``ebsholenv1`` by executing the following
 
         <copy>
-        $ ssh <ebsholenv1_private_ip>
+        ssh <ebsholenv1_private_ip>
         </copy>
 2. Once logged into your EBS instance as an Oracle user, source your variables for the release you are using via the following commands:
         
       a. Source variables for **release 12.2** 
     
         <copy>
-        $ . /u01/install/APPS/EBSapps.env run 
+        . /u01/install/APPS/EBSapps.env run 
         </copy>  
 
       Note: If you are using a different version than 12.2, refer to the documentation in Step 12: [Enable and Set Oracle E-Business Account Passwords (Conditionally Required)](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html).
@@ -74,11 +78,11 @@ You can check the status of the activity to provision the environment in the Act
 
     ```
     <copy>
-    $ mkdir -p ~/logs
+    mkdir -p ~/logs
 
-    $ cd  ~/logs
+    cd  ~/logs
 
-    $ sh /u01/install/APPS/scripts/enableSYSADMIN.sh
+    sh /u01/install/APPS/scripts/enableSYSADMIN.sh
     </copy>
     ```
 
@@ -130,7 +134,7 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
         ```
         <copy>
-        $ sudo vi /etc/hosts
+        sudo vi /etc/hosts
         </copy>
         ```
 
@@ -166,5 +170,7 @@ You may now proceed to the next lab.
   - Mitsu Mehta, Cloud Engineering
 * **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
