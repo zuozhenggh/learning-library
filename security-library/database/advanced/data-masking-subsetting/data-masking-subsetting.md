@@ -40,6 +40,7 @@ This lab assumes you have:
 |10 | Generate Data Masking Scripts | 5 minutes |
 |11 | Execute the Data Masking Script | 5 minutes |
 |12 | Compare the Pre-Masked Data vs. the Post-Masked Data | 5 minutes |
+|13 | (Optional) Restore Dev Data | <5 minutes |
 
 ## **STEP 1**: Import schema structure
 
@@ -126,7 +127,9 @@ This lab assumes you have:
 
    ![](./images/dms-013.png " ")
 
-6. Now, your ADM is created!
+6. Click [**Save and Return**]
+
+7. Now, your ADM is created!
 
 ## **STEP 3**: Use Pre-Defined Sensitive Column Types
 
@@ -611,7 +614,7 @@ This script could be taken and executed on other targets
    ![](./images/dms-088.png " ")
 
 3. Go to **Data Mask Options** and enter:
-    - Script File Location: `/home/oracle/DBSecLab/workshops/Database_Security_Labs/Data_Masking_Subsetting/scripts`
+    - Script File Location: `/home/oracle/DBSecLab/livelabs/dms`
     - Script File Name: `mask_emp_data_in-db_<timestamp>.sql`
 
    ![](./images/dms-089.png " ")
@@ -711,6 +714,31 @@ This script could be taken and executed on other targets
     ![](./images/dms-102.png " ")
 
 8. **Now, your sensitive data has been masked!**
+
+## **STEP 13**: (Optional) Restore Dev Data
+
+This lab will reset the `EMPLOYEESEARCH_DEV` tables on `PDB1` by cloning data from `EMPLOYEESEARCH_PROD` schema
+
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
+
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
+
+2. Go to the scripts directory
+
+      ````
+      <copy>cd $DBSEC_LABS/dms</copy>
+      ````
+
+3. Reset the EMPLOYEESEARCH_DEV data as it was before masking
+
+      ````
+      <copy>./dms_restore_pdb1_dev.sh</copy>
+      ````
+
+   ![](./images/ols-001.png " ")
+
 
 You may now proceed to the next lab.
 
