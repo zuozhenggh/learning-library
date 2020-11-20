@@ -47,7 +47,7 @@ Currently, the standby database is created in the same region as the primary dat
 * In regions with a single availability domain, the standby database is provisioned automatically on a different physical machine than the primary database.
 
 
-## STEP 1: Enable Autonomous Data Guard
+## **STEP 1**: Enable Autonomous Data Guard
 
 1. If you are not logged in to Oracle Cloud Console, log in and navigate to your Autonomous Database.
 2. Under **Autonomous Data Guard** section, click **Enable** to enable the Data Guard feature.
@@ -68,7 +68,7 @@ In a disaster situation when the Primary becomes unavailable the Switchover butt
 In the rare case when your primary is down and automatic failover is unsuccessful, the Switchover button will turn into a Failover button and the user can trigger and perform a **Manual Failover**. During a manual failover, the system automatically recovers as much as data possible, minimizing any potential data loss; there may be a few seconds or minutes of data loss. You would usually only perform a manual failover in a true disaster scenario, accepting the few minutes of potential data loss to ensure getting your database back online as soon as possible.
 For manual failover, the RTO is 2 minutes and RPO is 5 minutes.
 
-## STEP  2: Test Switchover to a Standby Database
+## **STEP 2**: Test Switchover to a Standby Database
 After Autonomous Data Guard is enabled, if you perform a switchover operation the primary database becomes the standby database, and the standby database becomes the primary database, with no data loss. A switchover is typically done to test your application's failover procedures when Autonomous Data Guard is enabled.
 
 The Oracle Cloud Infrastructure console shows a switchover link in the Peer State field when both the primary database and the standby database are available. That is, the primary database Lifecycle State field shows Available or Stopped and the standby database is available (the Peer State field shows Available).
@@ -85,7 +85,7 @@ The database Lifecycle State changes to **Updating** and the Peer State field sh
     * The Peer State field will change to Available when the standby is ready. (The standby may go into a Provisioning state first, if necessary, without blocking operations on the Primary.)
     * You can see the time of the last switchover when you hover over the tooltip icon in the **Peer State** field.
 
-## STEP  3: (Optional) Disable Autonomous Data Guard
+## **STEP 3**: (Optional) Disable Autonomous Data Guard
 1. If you are not logged in to Oracle Cloud Console, log in and navigate into your Autonomous Database.
 2. Under **Autonomous Data Guard** section, click **Disable** to disable the Autonomous Data Guard.
 ![](./images/adg-disable.png)
