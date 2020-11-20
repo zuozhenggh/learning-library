@@ -1,10 +1,5 @@
 # Configure Failover & Recovery Backups
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
 ## Introduction
 
 This lab walks you through how to automate your block and boot volumes backups to a new region. Should disaster strike your primary region, it is critical to have the backups elsewhere. Then you will configure the Traffic Management policy - in the event that your servers in the primary region are down, your DNS entry will re-route visitors to your servers in your DR region.
@@ -68,8 +63,11 @@ Estimated lab time: 1 hour
   ![](./images/7.png " ")
 
   ![](./images/8.png " ")
+
 6. Input the information like above. 
+
   ![](./images/9.png " ")
+
 7. Make sure to attach the health check to your primary region's load balancer, this is what determines if traffic should be re-directed to your standby region. 
 
   ![](./images/10.png " ")
@@ -96,42 +94,42 @@ Estimated lab time: 1 hour
 
 ### What do the scripts do
 
-1.   Boot Volume script (boot-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region thru volume backups
+1.  Boot Volume script (boot-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region through volume backups.
 
-        usage: boot-volume-migration.py [-h] 
-                    --compartment-id COMPARTMENT_ID
-        
-                    --destination-region DESTINATION_REGION
-        
-                    --availability-domain AVAILABILITY_DOMAIN
+    ```
+    usage: boot-volume-migration.py [-h] 
+          --compartment-id COMPARTMENT_ID
+          --destination-region DESTINATION_REGION
+          --availability-domain AVAILABILITY_DOMAIN
+    ```
 
-2. Block Volume script (block-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region thru volume backups
+2. Block Volume script (block-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region through volume backups.
 
-        usage: block-volume-migration.py [-h] 
-                     --compartment-id COMPARTMENT_ID
-        
-                     --destination-region DESTINATION_REGION
-        
-                     --availability-domain AVAILABILITY_DOMAIN
-
+    ```
+    usage: block-volume-migration.py [-h] 
+          --compartment-id COMPARTMENT_ID
+          --destination-region DESTINATION_REGION
+          --availability-domain AVAILABILITY_DOMAIN
+    ```
 Steps in the automation scripts:
 
-1. create_volume_backups in source region
-2. copy_volume_backups across destination region
-3. restore_volume in destination region
+1. create\_volume\_backups in source region
+2. copy\_volume\_backups across destination region
+3. restore\_volume in destination region
 
-## **STEP 3 (alternative):** Run the scripts manually ##
+## **STEP 3 (alternative):** Run the scripts manually
 
 ### Run the scripts
 
 1. Below is the command to run each script.
-  ```
-  python block-volume-migration.py --compartment-id ocid1.compartment.oc1..123 --destination-region eu-frankfurt-1 --availability-domain AD-2
-  ```
 
-  ```
-  python boot-volume-migration.py --compartment-id ocid1.compartment.oc1..aaaaanq --destination-region eu-frankfurt-1 --availability-domain AD-2
-  ```
+    ```
+    python block-volume-migration.py --compartment-id ocid1.compartment.oc1..123 --destination-region eu-frankfurt-1 --availability-domain AD-2
+    ```
+
+    ```
+    python boot-volume-migration.py --compartment-id ocid1.compartment.oc1..aaaaanq --destination-region eu-frankfurt-1 --availability-domain AD-2
+    ```
 
 2. Below you can see the volume backups now created in your source region, our's is London.
 
@@ -146,7 +144,7 @@ Steps in the automation scripts:
 
 1. The terraform script configures a cron job on bastion server to run the python scripts which copies boot/block volumes and restores them across to DR region (default schedule is set for 12 hours).
 
-**The previous manual step of running the scripts yourself means you do not have to reconfigure the scheduler with the instructions below to proceed in this lab.** 
+  **The previous manual step of running the scripts yourself means you do not have to reconfigure the scheduler with the instructions below to proceed in this lab.** 
 
 2. Navigate to OCI Console and verify that both boot volumes and block volumes are copied to DR region, in this case Frankfurt. You can tweak the cron scheduler on bastion server of Primary region using "crontab -e" for testing purposes or as needed.
 
@@ -249,7 +247,7 @@ Verify the application is working as expected in the Frankfurt DR region by navi
 
 5. Verify the file gets replicated to the standby region's FSS.
 
-6. SSH into private server IP of the replication_compute server, and navigate to '/home/opc/dst_filestore' and verify the file exists there.
+6. SSH into private server IP of the replication\_compute server, and navigate to '/home/opc/dst\_filestore' and verify the file exists there.
 
 ## **STEP 7:** Database Replication
 
@@ -259,11 +257,9 @@ Verify the application is working as expected in the Frankfurt DR region by navi
 
 ## Summary
 
--   In this lab, you used the OCI Python SDK to automate your block volume backups to another region, and then restore them. You configured your DNS to route to your DR region in the event of a disaster in your primary region. In the next lab, we will be simulating a disaster. You also have working rsync between your object storage buckets and file storage systems between your primary and DR regions. Lastly, the databases in your regions are now connected with Active Data Guard, but you can see how to manually configure that [here].
+In this lab, you used the OCI Python SDK to automate your block volume backups to another region, and then restore them. You configured your DNS to route to your DR region in the event of a disaster in your primary region. In the next lab, we will be simulating a disaster. You also have working rsync between your object storage buckets and file storage systems between your primary and DR regions. Lastly, the databases in your regions are now connected with Active Data Guard, but you can see how to manually configure that [here].
 
--   You may now **proceed to the next lab**.
-
-[Back to top](#introduction)
+You may now **proceed to the next lab**.
 
 ## Learn More
 
