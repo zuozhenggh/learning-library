@@ -13,8 +13,7 @@ Oracle’s mission is to help people see data in new ways, discover insights, an
 
 As illustrated below, the spatial features of Oracle Database provide scalable and performant storage, processing and analysis of both basic and advanced spatial data types. A series of deployable Java EE componants are also provided to support common mid-tier services. 
 
-![](./images/spatial-platform.png " ")
-
+  ![About the Spatial platform](./images/spatial-platform.png "Oracle Spatial Platform")
 
 For more information please visit [https://oracle.com/goto/spatial] (https://oracle.com/goto/spatial)
 

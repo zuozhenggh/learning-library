@@ -1,10 +1,11 @@
 # Create Sample Data
 
-Estimated Lab Time: 10 minutes
 
 ## Introduction
 
 This lab walks you through the steps to create sample spatial data in Oracle Database. 
+
+Estimated Lab Time: 10 minutes
 
 
 ### About Product/Technology
@@ -13,11 +14,11 @@ Oracle Database stores spatial data (points, lines, polygons) in a native data t
 The SDO_GEOMETRY type has the following general format: 
 ```
 SDO_GEOMETRY( 
- [geometry type],                   --ID for point/line/polygon
- [coordinate system],               --ID of coordinate system
- [point coordinate array],          --only used for points
- [line/polygon info],               --only used for lines/polygons 
- [line/polygon coordinates array]   --only used for lines/polygons 
+ [geometry type],           --ID for point/line/polygon
+ [coordinate system],       --ID of coordinate system
+ [point coordinate],        --for points only
+ [line/polygon info],       --for lines/polygons only
+ [line/polygon coordinates] --for lines/polygons only
   )
  ```
 
@@ -47,8 +48,8 @@ SDO_GEOMETRY(
  SDO_POINT_TYPE(     
     -100.123, 20.456 --coordinate
     ),         
- NULL,               --only used for lines/polygons 
- NULL                --only used for lines/polygons 
+ NULL,               --for lines/polygons only
+ NULL                --for lines/polygons only
   )
 ```
 
@@ -58,7 +59,7 @@ SDO_GEOMETRY(
 SDO_GEOMETRY( 
  2003,                  --2D polygon
  4326,                  --latitude/longitude
- NULL,                  --only used for points          
+ NULL,                  --for points only       
  SDO_ELEM_INFO_ARRAY(
       1, 1003, 1        --indicates simple exterior polygon
         ), 
@@ -264,7 +265,9 @@ Oracle Database provides a native spatial index for high performance spatial ope
     ![Image alt text](images/refresh-tables-3.png)
 
 
-Our sample data is now prepared and ready for spatial queries. Please proceed to the next lab.
+Our sample data is now prepared and ready for spatial queries. 
+
+You may now proceed to the next lab.
 
 If you need to revert this lab and remove the items created, run the following:
 
