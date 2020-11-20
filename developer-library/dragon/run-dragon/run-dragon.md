@@ -22,11 +22,23 @@ The DRAGON stack is designed to speed up you development of applications that le
     <copy>cd</copy>
     ```
 
-2. Download the DRAGON stack and make it executable:
-   *Note: see [the GitHub repo](https://github.com/loiclefevre/dragon) for the latest version.*
+2. If you have an existing DRAGON stack you can simply upgrade it to the latest version:
 
     ```
-    <copy>wget https://github.com/loiclefevre/dragon/releases/download/v2.0.5/dragon-linux-x86_64-2.0.5</copy>
+    <copy><your existing dragon version> -upgrade</copy>
+    ```
+
+    For example:
+
+    ![](images/dragon-upgrade.png)
+
+    *[Click here to skip to STEP 4](#STEP4:DeploytheDRAGONstack)*
+
+2. Download the DRAGON stack and make it executable:
+   *See [the GitHub repo](https://github.com/loiclefevre/dragon) for the latest version.*
+
+    ```
+    <copy>wget https://github.com/loiclefevre/dragon/releases/download/v2.0.6/dragon-linux-x86_64-2.0.6</copy>
     ```
 
     ```
@@ -36,8 +48,8 @@ The DRAGON stack is designed to speed up you development of applications that le
 3. Run the dragon command to generate SSH keys and display the config file:
 
     ```
-    <copy>dragon-linux-x86_64-2.0.5 -config-template -create-keys</copy>
-    DRAGON Stack manager v2.0.5
+    <copy>dragon-linux-x86_64-2.0.6 -config-template -create-keys</copy>
+    DRAGON Stack manager v2.0.6
 
     > Command line parameters ................................................... ok
     Entering keys generation process...
@@ -134,8 +146,8 @@ The DRAGON stack is designed to speed up you development of applications that le
 1. Use the `-help` to see the parameters that DRAGON accepts:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.5 -help</copy>
-    DRAGON Stack manager v2.0.5
+    $ <copy>./dragon-linux-x86_64-2.0.6 -help</copy>
+    DRAGON Stack manager v2.0.6
 
     > Command line parameters ................................................... ok
     Usage:
@@ -172,8 +184,8 @@ The DRAGON stack is designed to speed up you development of applications that le
 3. Create the DRAGON stack with the employees collection:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.5 -loadjson</copy>
-    DRAGON Stack manager v2.0.5
+    $ <copy>./dragon-linux-x86_64-2.0.6 -loadjson</copy>
+    DRAGON Stack manager v2.0.6
 
     > Command line parameters ................................................... ok
     > Oracle Cloud Infrastructure configuration ................................. ok
@@ -225,7 +237,7 @@ The DRAGON stack is designed to speed up you development of applications that le
 1. In Cloud Shell, build the front-end:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.5 -create-react-app</copy>
+    $ <copy>./dragon-linux-x86_64-2.0.6 -create-react-app</copy>
     DRAGON Stack manager v2.0.0
 
     > Command line parameters ................................................... ok
@@ -276,7 +288,7 @@ The DRAGON stack is designed to speed up you development of applications that le
     <copy>wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip; unzip ngrok-stable-linux-amd64.zip</copy>
     ```
 
-4. Start ngrok and then access the website:
+4. Start ngrok and then access the website (Note: if you get an error, make sure you are not on your company's VPN.)
 
     ```
     <copy>npm start &</copy>
@@ -292,7 +304,6 @@ The DRAGON stack is designed to speed up you development of applications that le
 
     ![](images/dragon-frontend.png)
 
-    *maybe add more here?*
 
 ## **STEP 7:** Cleanup your environment
 
