@@ -14,7 +14,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     *Note - You may have to use the arrows at the top of the calendar to navigate backward or forward months to see data displayed.*
 
-2. In the Developer Toolbar, click **Edit Page 7**. Alternatively, navigate back to the APEX App Builder browser tab and manually navigate to Page 7.
+2. In the Developer Toolbar, click **Edit Page 6**. Alternatively, navigate back to the APEX App Builder browser tab and manually navigate to Page 6.
 
 3. You can change the displayed column and make the events duration based by updating the calendar attributes.
 
@@ -29,7 +29,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 
 5. Reviewing the revised calendar changing to duration-based events is not optimal. Therefore, you should remove the End Date Column added above.
 
-    Navigate back to the APEX App Builder, in Page Designer, with Page 7 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
+    Navigate back to the APEX App Builder, in Page Designer, with Page 6 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
     Within the Property Editor (right pane), for Settings > End Date Column select **- Select -** to clear the **END\_DATE** entry.
 
     ![](images/remove-end-date.png " ")
@@ -41,9 +41,9 @@ The **Calendar** page currently displays the project, rather than the task name,
 ## **STEP 2** - Linking the Calendar
 When you click on a calendar entry then it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
 
-1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 7 selected.
+1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 6 selected.
 
-2. Define a view / edit link from the **Calendar** region to **Page 4**, the Project Tasks form page you modified in the previous lab.
+2. Define a view / edit link from the **Calendar** region to **Page 5**, the Project Tasks form page you modified in the previous lab.
 
     In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
     Within the Property Editor (right pane), for Settings > View / Edit Link click **No Link Defined**.
@@ -52,10 +52,10 @@ When you click on a calendar entry then it shows event details. It would be far 
 
     | Property | Value |
     | --- | --- |
-    | Page | **4** |
-    | Set Items > Name | **P4\_ID** |
+    | Page | **5** |
+    | Set Items > Name | **P5\_ID** |
     | Set Items > Value | **&ID.** |
-    | Clear Cache | **4** |
+    | Clear Cache | **5** |
 
     ![](images/set-link.png " ")
 
