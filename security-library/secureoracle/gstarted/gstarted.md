@@ -30,7 +30,7 @@ Version 8.0 of SecureOracle include the following features:
 * [HTTPie](https://httpie.org/) open source command line HTTP client to interact with RESTful APIs, Web Services and HTTP servers.
 * Oracle Identity Governance includes the following 12c connectors:
 	* Box, Concur, DB Applications Table, Oracle/MySQL DB User Management, Flat File, Google Apps, GoToMeeting, IDCS, Microsoft AD User Management, Office365, EBS Employee Reconciliation, EBS User Management, OID/ODSEE/OUD/LDAP, Salesforce, SAP Success Factor, SAP User Management, SAP User Management Engine, ServiceNow, Unix, WebEx
-* [Cockpit](https://cockpit-project.org/) open source tool to manage servers using an easy to use web console. Cockpit comes pre-installed with SecureOracle and allows to start all components without having to use an SSH client.
+* [Cockpit](https://cockpit-project.org/) is an open source tool to manage servers using an easy to use web console. Cockpit comes pre-installed with SecureOracle and allows to start all components without having to use an SSH client.
 
   <a name="image-01"></a>![Image](images/img-cockpit.png)
 
@@ -74,6 +74,7 @@ Version 8.0 of SecureOracle include the following features:
 	* OAM Webgate configured in cloud-mode for integration with IDCS
 
 ## **STEP 0:** Running your Lab
+
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -135,7 +136,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
 
 1. The development tools in SecureOracle are aimed to support use cases like editing SOA composites for OIG workflow approvals but also to help in customizing and configuring the different components as needed. Login as “*oracle*” user using an X terminal utility like [MobaXterm](https://mobaxterm.mobatek.net/ "MobaXterm") or [Putty](https://www.putty.org/) + [Xming X Server for Windows](https://sourceforge.net/projects/xming/ "Xming X Server for Windows").
 
-2. To star **Oracle JDeveloper with SOA extensions** run the following commands:
+2. To start **Oracle JDeveloper with SOA extensions** run the following commands:
 
     ```
     <copy>
@@ -144,7 +145,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
     </copy>
     ```
 
-    **Note**: you can find sample applications showcasing SOA composites with OIG workflows available under folder **/home/oracle/jdevhome**.
+    **Note**: You can find sample applications showcasing SOA composites with OIG workflows available under folder **/home/oracle/jdevhome**.
 
     ```
     NAME                                 DESCRIPTION
@@ -168,7 +169,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
     </copy>
     ```
 
-    **Notes**: three connections: `HR`, `HEDWIG` and `IAMDB` are already defined to access My HR, Hedwig and IAM database schemas. Alternatively you can install SQL Developer in your local host computer to access the different database schemas.
+    **Notes**: Three connections: `HR`, `HEDWIG` and `IAMDB` are already defined to access My HR, Hedwig and IAM database schemas. Alternatively you can install SQL Developer in your local host computer to access the different database schemas.
 
 4. To start **Apache Studio** and manage the OUD/LDAP instance run the following commands:
 
@@ -179,7 +180,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
     </copy>
     ```
 
-    **Note**: a connection `IAM-OUD` is already defined to access OUD.
+    **Note**: A connection `IAM-OUD` is already defined to access OUD.
 
 5. To start **Oracle PL/SQL** command line tool pointing to the IAM database, run the following commands:
 
@@ -192,6 +193,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
     ```
 
 ## **STEP 3**: Admin Consoles, Applications and User Credentials
+
 1. Use the following URLs and credentials to access all the different web consoles:
 
     Oracle Identity Manager Web Admin Console:
@@ -340,6 +342,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
     ```
 
 ## **STEP 4**: About the Sample Organization
+
 1. SecureOracle includes a sample top OIM organization **Oracle Users** and two child departments **Sales** and **Finance**. For each department an administrator account has been defined to demonstrate delegated administration. In addition, sample users have been added to demonstrate manager approval, escalation and organizational transfers.
 
     <a name="image-04"></a>![Image](images/img-orgtree.png)
@@ -357,7 +360,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
     JSMITH          Finance          Finance Manager
     ```
 
-3. In addition, email accounts has been created for all demo users, you can access their in-boxes using the [Roundcube](http://secureoracle.oracledemo.com/roundcubemail-1.4.1/) email client with credentials **USERNAME/Oracle123**.
+3. In addition, email accounts have been created for all demo users.You can access their in-boxes using the [Roundcube](http://secureoracle.oracledemo.com/roundcubemail-1.4.1/) email client with credentials **USERNAME/Oracle123**.
 
     ```
     USERNAME     EMAIL
@@ -435,7 +438,7 @@ Use these links to get more information about Oracle Identity and Access Managem
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
-- **Last Updated By/Date** - Ricardo Gutierrez, June 2020
+- **Last Updated By/Date** - Ricardo Gutierrez, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

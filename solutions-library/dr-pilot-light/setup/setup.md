@@ -3,7 +3,6 @@
 ## Introduction
 
 Disaster Recovery Network and connectivity setup
-=======================================================
 
 This solution provides a Network Architecture deployment to demonstrate Disaster Recovery scenario across 2 regions [examples are geared towards region London & Frankfurt, but any regions in OCI can be used].
 
@@ -14,6 +13,7 @@ Estimated lab time: 1 hour
 ![](./images/1.png)
 
 ### Objectives
+
 - Use attached Terraform scripts to provision the environment
 - Complete standby region load balancer setup in OCI console
 - Configure DNS for primary region
@@ -121,11 +121,13 @@ shaded out on the page. You will not be able to configure.
     
     ![](./images/7.PNG)
     
-    ### Review process
+### Review process
     
+1.  Review process
+
     ![](./images/8.PNG)
     
-    ### Plan
+### Plan
 
 
 1.  Select plan from the dropdown menu.
@@ -140,7 +142,7 @@ shaded out on the page. You will not be able to configure.
 
     ![](./images/11.PNG)
     
-    ### Apply
+### Apply
     
 1.  Select apply from the dropdown menu. 
 
@@ -163,6 +165,7 @@ shaded out on the page. You will not be able to configure.
     ![](./images/15.PNG)
 
 ### Inputs
+
 *The following inputs are required for terraform modules:*
 
     Argument
@@ -214,6 +217,7 @@ shaded out on the page. You will not be able to configure.
     Cron schedule for synchronizing the file storage system between both standby and primary region. The rsync job is run as part of this cron scheduler on the compute "dr_replication_server" in standby region. Example "*/30 * * * *" this runs every 30 minutes
 
 ### Example of the results terraform will produce.
+
  1. *Example: Instances in the Primary Region*
 
     ![](./images/23.PNG)
@@ -233,6 +237,7 @@ shaded out on the page. You will not be able to configure.
 ## **STEP 3:** Create the DNS zone.
 
 ### Create a new DNS zone
+
 1. Create the DNS Zone as Primary inside your designated DR compartment. 
 
     ![](./images/16.png)
@@ -252,6 +257,7 @@ You can place these HTML files in your app-tier compute nodes to demonstrate the
 ### Primary Instance
 
 *Follow the instructions here*
+
     # Replace the text in index.html with the text from PRIMARY.html.
     # sudo vi /var/www/html/index.html
 
@@ -286,6 +292,7 @@ You can place these HTML files in your app-tier compute nodes to demonstrate the
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
+
 - **Last Updated by/Date** - Alex MacDonald, November 2020
 - **Workshop Expiry Date** - November 30, 2021
 
