@@ -213,7 +213,7 @@ select test_no,
        sessions,
        queries_finished,
        test_duration_in_seconds,
-       avg_query_time,
+       avg_query_time
 from   (select test_no,
                cpu_count,
                count(distinct sid) sessions,
@@ -273,7 +273,7 @@ order by 1;
 
     ![](images/monitored-sql-while-three-procedures-running-with-auto-scaling.png " ")
 
-3. As before, go back to your SQL Developer Web worksheets sure all 3 tests in the worksheets indicate that the queries have **executed** completely.
+3. As before, go back to your SQL Developer Web worksheets to be sure all 3 tests in the worksheets indicate that the queries have **executed** completely.
 
     ![](images/procedure-successfully-completed.png " ")
 
@@ -289,7 +289,7 @@ select test_no,
        sessions,
        queries_finished,
        test_duration_in_seconds,
-       avg_query_time,
+       avg_query_time
 from   (select test_no,
                cpu_count,
                count(distinct sid) sessions,
