@@ -2,7 +2,9 @@
 
 The lab exercises in the **SecureOracle 8.0** workshop walk you through some of the functionality to get started using the **Oracle IAM Suite 12c R2 PS4 (12.2.1.4.0)**. You will practice employee lifecycle management, identity certifications, RESTful APIs for identity governance, OAuth client and token management.
 
-The Oracle IAM Suite provides a unified, integrated security platform designed to manage user lifecycle and provide secure access across enterprise resources, both within and beyond the firewall and into the cloud.
+The Oracle IAM Suite provides a unified, integrated security platform designed to manage user lifecycle and provides secure access across enterprise resources, both within and beyond the firewall and into the cloud.
+
+*Estimated Workshop Time*: 4 hours
 
 ### Objectives
 At the end of this workshop, you will have a good understanding of:
@@ -28,7 +30,7 @@ SecureOracle 8.0 is a demonstration environment for the Oracle IAM Suite 12c R2 
 
 **Note:** OIM and OIG are interchangeable terms and refer to the same product Oracle Identity Manager or Oracle Identity Governance.
 
-SecureOracle can be use with Oracle Identity Cloud Service (IDCS) to showcase a hybrid identity management environment. When integrated with IDCS, the OIG component offers provisioning and governance services while IDCS provides access management services to cloud and on-prem applications.
+SecureOracle can be used with Oracle Identity Cloud Service (IDCS) to showcase a hybrid identity management environment. When integrated with IDCS, the OIG component offers provisioning and governance services while IDCS provides access management services to cloud and on-prem applications.
 
 The Oracle IAM Suite 12c R2 PS4 can be deployed using the Oracle IAM standard installation topology which is flexible and can be use as a starting point in production environments. The [Figure 1](#image-01) depicts a standard WebLogic Server domain that contains an Administration Server and one or more clusters containing one or more Managed Servers.
 
@@ -42,23 +44,21 @@ The [Figure 2](#image-02) depicts the domains that make up the SecureOracle envi
 
 Figure 2. SecureOracle - Demonstration Platform for IAM Suite 12c R2 PS4
 
-By default all non-SSL ports are used to execute the different lab exercises, however you can enable SSL ports as needed to meet specific demo requirements. Please refer to the official product documentation for details in how to enable SSL.
+By default all non-SSL ports are used to execute the different lab exercises, however you can enable SSL ports as needed to meet specific demo requirements. Please refer to the official product documentation for details on how to enable SSL.
 
 ### Lab Overview
 
-- **Lab Getting Started with SecureOracle 8.0** -
+- **Lab: Getting Started with SecureOracle 8.0** -
     In this lab we will review what is new in SecureOracle 8.0 demonstration platform and learn how to start the different components, run the development tools and access the different administration consoles and demo applications.
 
-- **Lab Employee Lifecycle Management** -
+- **Lab: Employee Lifecycle Management** -
     In this lab we will exercise several use cases associated with employee on-boarding, user lifecycle, transfers, manager approvals and employee terminations using My HR Application as authoritative source in Oracle Identity Manager.
 
-- **Lab Identity Certification** -
+- **Lab: Identity Certification** -
     Identity certification is the process of reviewing user entitlements and access-privileges within an enterprise to ensure that users have not acquired entitlements that they are not authorized to have. It also involves either approving (certifying) or rejecting (revoking) each access-privilege. In this lab we will review user certification with custom reviewers.
 
-- **Lab RESTful OIM and OAM APIs** -
+- **Lab: RESTful OIM and OAM APIs** -
     In this lab we will review several use cases associated with invoking REST APIs for OIM Self Service, User Profile Updates, Request, Approvals and OAM OAuth Service.
-
-Estimated Lab Time: 4 hours
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
