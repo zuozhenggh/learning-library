@@ -45,8 +45,8 @@ When you click on a calendar entry then it shows event details. It would be far 
 
 2. Define a view / edit link from the **Calendar** region to **Page 5**, the Project Tasks form page you modified in the previous lab.
 
-    In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
-    Within the Property Editor (right pane), for Settings > View / Edit Link click **No Link Defined**.
+    In Page Designer, within the Rendering tree (left pane), find Calendar, and then click on **Attributes** tab in Property Editor (right pane).
+    Within the **Attributes** tab, for Settings > View / Edit Link click **No Link Defined**.
 
     In the Link Builder page, enter the following and click **Ok**.
 
@@ -113,7 +113,7 @@ You now know how to create an application by uploading a file, enhancing the pag
 ## **Acknowledgements**
 
  - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
