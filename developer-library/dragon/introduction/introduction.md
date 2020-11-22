@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop introduces the Oracle DRAGON stack project, a simple way to deploy applications using an Oracle Autonomous Database, using an Always Free Oracle Autonomous Transaction Processing (ATP), Oracle Autonomous JSON Database, or Oracle Autonomous Data Warehouse. The DRAGON stack consists of _D_ata, _R_eact components, _A_utonomous Database, _G_raalVM, _O_racle REST data services, and _N_ode.js. In this short workshop, you'll download the stack and deploy the stack to Oracle Cloud.
+This workshop introduces the Oracle DRAGON stack project, a simple way to deploy applications using an Oracle Autonomous Database, using an Always Free Oracle Autonomous Transaction Processing (ATP), Oracle Autonomous JSON Database, or Oracle Autonomous Data Warehouse. In this short workshop, you'll download the stack and deploy the stack to Oracle Cloud.
 
 Estimated Workshop Time: 10 minutes
 
