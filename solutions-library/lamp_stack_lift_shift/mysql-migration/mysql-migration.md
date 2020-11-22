@@ -31,7 +31,7 @@ Please ensure you have MySQL Database installed on your local machine. Before pr
 ```
    /usr/local/mysql/bin/mysql -u root -p
 ```
-    ![](./images/image1.png "")
+    ![](./images/image1 "")
 
 3. Double check that your settings match the screenshot below. Once confirmed, click the import button. This process should take approximately 5 minutes.
 
