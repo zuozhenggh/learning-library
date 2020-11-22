@@ -2,7 +2,7 @@
 
 ## Introductions
 This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing LAMP Stack application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to migrate data from on-prem MySQL to MySQL on OCI (MDS). Later, the workshop focuses on how to configure a Compute Instance and migrate the PHP LAMP Stack Application to OCI and how to connect the PHP Application with MySQL (MDS). The workshop also focuses on how to dockerize the application and deploy the LAMP Stack application on OKE Cluster.
-This workshop will also help you to understand how to configure Network, Security Lists.
+This workshop will also help you to understand how to configure Network, Security Lists. The LAMP stack stands for Linux, Apache, MySQL, PHP and SSH.
 
 Estimated Workshop Time:  xx minutes
 
