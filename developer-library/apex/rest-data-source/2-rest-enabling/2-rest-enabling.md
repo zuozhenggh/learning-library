@@ -6,11 +6,11 @@ In this lab, you will learn how to REST enable a schema and database objects.
 Estimated Time: 10 minutes
 
 ### Background Information
-In this lab you will be creating the EMP and DEPT tables, REST enabling them, and then building an application all in the same schema. Normally, you would REST enable database objects in a remote database schema, and then utilize those REST endpoints to define Web Source modules in an application, where APEX is installed, within the local database, as outlined below.
+In this lab you will be creating the EMP and DEPT tables, REST enabling them, and then building an application all in the same schema. Normally, you would REST enable database objects in a remote database schema, and then utilize those REST endpoints to define REST Data Sources in an application, where APEX is installed, within the local database, as outlined below.
 
 ![](images/rest-arch.png " ")
 
-Once the Web Source module is defined in an APEX application, rather than calling a local database object, the APEX Engine calls the REST endpoint, to retrieve the data from the remote database. If the PUT, POST, and DELETE handlers have also been defined, then APEX applications can also perform updates, inserts, and deletes on the remote database objects.
+Once the REST Data Source is defined in an APEX application, rather than calling a local database object, the APEX Engine calls the REST endpoint, to retrieve the data from the remote database. If the PUT, POST, and DELETE handlers have also been defined, then APEX applications can also perform updates, inserts, and deletes on the remote database objects.
 
 ## **STEP 1** – Creating the Sample Tables
 This lab utilizes the common EMP and DEPT tables. These can easily be installed using Sample Datasets.
@@ -219,13 +219,13 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
     *Note: Depending on your browser you may just see the raw JSON document rather than the formatted output displayed above.*
 
 ## **Summary**
-This completes Lab 2. You now know how to REST enable database objects include all of the necessary handlers. [Click here to navigate to Lab 3](?lab=lab-3-defining-web-sources).
+This completes Lab 2. You now know how to REST enable database objects include all of the necessary handlers. [Click here to navigate to Lab 3](?lab=lab-3-defining-rest-data-sources).
 
 ## **Acknowledgements**
 
  - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
- - **Last Updated By/Date** - Tom McGinn, Database Innovation Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
