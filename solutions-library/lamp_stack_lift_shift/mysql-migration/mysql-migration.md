@@ -1,37 +1,37 @@
-# Lifting a Third Party Application to the Cloud
+# Lifting a LAMP Stack Application to the Cloud
 
 ## Introduction
-This lab walks you through the steps to capture an image of an existing, on-prem third party application. First you will capture a .ova file of the application and convert it to a cloud compatible .vmdk file. From there you will import the .vmdk to Object Storage and then create a cloud-native server that will use the file as a custom image. For a technical overview of this portion of the lab see the following videos:
-[Video 1](https://video.oracle.com/detail/video/6164374092001/lab-100-uploading-a-vmdk-to-oci?autoStart=true&q=ocimoveimprove)
-[Video 2](https://video.oracle.com/detail/video/6164371967001/lab-100-creating-a-custom-image?autoStart=true&q=ocimoveimprove)
-[Video 3](https://video.oracle.com/detail/video/6164386994001/lab-100-provisioning-a-vm-with-a-custom-image?autoStart=true&q=ocimoveimprove)
-[Video 4](https://video.oracle.com/detail/video/6164388506001/lab-100-accessing-the-cloud-native-application-instance?autoStart=true&q=ocimoveimprove)
+This lab walks you through the steps to install MySQL on local system, setup MySQL-shell and spin up MySQL Database on OCI.
+First you will create MySQL database on locally and then migrate the database to MySQL on OCI using MySQL Shell tool. The MySQL Shell uses OCI CLI to move the database dump to Object storage.
 
-Estimated Lab Time:  3 hour -
+Estimated Lab Time:  1 hour
 
 ### Objectives
-* Create a cloud-compatible VMDK file
+* Create a MySQL Database on OCI
 * Leverage Object Storage
-* Provision cloud infrastructure (networking, routing, compute)
-* Deploy cloud-native servers
+* Migrate Database from on-prem MySQL to MDS on OCI
 
 ### Prerequisites
 * An Oracle Paid or LiveLabs Cloud account.
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* Preinstalled Ubuntu Virtual Image (Will be provided to you during workshop from OraDocs repository)
-* VNC Viewer
+* Please install MySQL version 8+ on your local system depending on your OS
+* [Install MySQL](https://dev.mysql.com/downloads/mysql/)
+* [Install OCI CLI](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
+* [Configure OCI CLI](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm)
+* [Install MySQL Shell](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html)
+* [Install MySQL WorkBench](https://dev.mysql.com/downloads/workbench/)
 
 ### Administrative Note
-Part 1 of Lab100 is optional. This section outlines how to configure an On-Premises e-Commerce application and capture a snapshot of it in the form of a .ova file which is converted to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Part 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JPnFpTHgLX9vNwc6KtkXIkXAFFM65sOHfzooM8AJfDk/n/orasenatdecanational01/b/osCommerceTest/o/osCommerceDemo-disk001.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
+Please ensure you have MySQL Database installed on your local machine. Before proceeding with the lab ensure you have installed all the mentioned pre-requisites. This section outlines how to migrate database from On-Premises MySQL to MDS on OCI. For this workshop we will use the provided database. [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JPnFpTHgLX9vNwc6KtkXIkXAFFM65sOHfzooM8AJfDk/n/orasenatdecanational01/b/osCommerceTest/o/osCommerceDemo-disk001.vmdk). Please note in this workshop we are using Mac-OS.
 
-## **Step 1:** Download VirtualBox and Import Ubuntu Instance
-1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/P2EwRTj2PxXxG52U8XrFCeLZsb_P9wha2RDef5bYz9E/n/orasenatdecanational01/b/OsCommerce_ova_file/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
+## **Step 1:** Download the Database to your local MySQL Database
+1. If you do not have it on your local machine, make sure to download the database file.[VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-    ![](./images/1.png "")
+2. Open the terminal and connect to your local MySQL Database. Enter the password you specified when installing MySQL.
 
-2. Open Virtualbox and click File > Import Applicance. Select the .ova file downloaded earlier.
-
-    ![](./images/2.png "")
+```
+   /usr/local/mysql/bin/mysql -u root -p
+```
+    ![](./images/image1.png "")
 
 3. Double check that your settings match the screenshot below. Once confirmed, click the import button. This process should take approximately 5 minutes.
 
