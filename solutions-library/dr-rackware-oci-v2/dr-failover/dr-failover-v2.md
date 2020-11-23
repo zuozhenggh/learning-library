@@ -10,7 +10,7 @@ Estimated Lab Time: 30-45 minutes
 - Connect to the replicated APEX instance
 
 ### Prerequisites
-- Succesful completion of all previous labs in this workshop
+- Successful completion of all previous labs in this workshop
 
 ## **STEP 1:** Connect the new instance to the Backup database
 1. Start an ssh connection to the newly created instance.
@@ -19,7 +19,7 @@ Estimated Lab Time: 30-45 minutes
     opc@<target-machine>$ sudo su -
     root@<target-machine>$ vi /home/oracle/conf/ords/defaults.xml
     ```
-3. Change the db.hostname entry to relfect the IP of the backup database
+3. Change the db.hostname entry to reflect the IP of the backup database
     ![](./images/defaults-db.PNG)
 
 4. Update the db.hostname in *ords_params.properties* file to reflect the IP of the backup database
@@ -68,12 +68,12 @@ Estimated Lab Time: 30-45 minutes
     ![](./images/hat2.PNG)
 
 ## **STEP 4:** Cleanup Process
-1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
+1.  First navigate to OCI Console and terminate the Standby database and once the termination is successful then run the following command
 
-2.  Select destroy from the dropdown menu.
+2.  Select **Destroy** from the dropdown menu.
     ![](./images/ResourceManager-Destroy.PNG)
 
-3.  Wait unitl the icon to turn green.
+3.  Wait until the icon turns green.
     ![](./images/ResourceManager-Destroy-2.PNG)    
 	
 **Congratulations! If you see the change reflected in the new instance, you have successfully created a Disaster Recovery setup using RackWare on OCI!**
