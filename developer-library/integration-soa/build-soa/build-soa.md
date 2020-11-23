@@ -18,14 +18,14 @@ Estimated Lab Time: 90 minutes
 
 ### Objectives
 
-**Construct Payment Validation process orchestration**
+**Construct Payment Validation orchestration**
 
-The validation process flow are outlined here:
+The validation process flow outlines:
 + The payment information is retrieved from the database, using the credit card number quoted in the order message as the key. If there is no data available with this credit card number, payment is denied.
 + If data for the credit card number is available, the expiry date in the database record is compared to the expiry date listed in the order message. If they are not the same, the payment is also denied.
 + The last check compares if the total order amount is less than the daily limit on the credit card in the database.
 + When all tests are successful, the payment is authorized. Otherwise it’s denied.
-+ The implementation of this service uses a BPEL process to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
++ The implementation of this service uses a BPEL (Business Process Execution Language), a process orchestrator to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
 
 
 ### Prerequisites
@@ -38,7 +38,7 @@ This lab assumes you have:
     - Lab: Environment Setup
   
 
-**Validation Payment, development Steps:**
+**Detail Development Steps:**
 
 ## **STEP 1**:  Create a New SOA Composite Application 
 
