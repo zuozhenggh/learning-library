@@ -45,13 +45,15 @@ This lab assumes you have:
 ## **STEP 1**: Add an Endpoint
 First of all, we need Oracle Key Vault to know about our database server. We do this by creating it as an endpoint in OKV
 
-1. Open a Web Browser at the URL `https://<OKV-VM_@IP-Public>`
+1. Before beginning this lab, make sure you have performed at least the steps 1 to 4 of the [TDE labs available here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=703&p210_type=3&session=116816896334316)
 
-2. Login to Oracle Key Vault Web Console as "*RESTADMIN*" with the password "*T06tron.*"
+2. Now, open a Web Browser at the URL `https://<OKV-VM_@IP-Public>`
+
+3. Login to Oracle Key Vault Web Console as "*RESTADMIN*" with the password "*T06tron.*"
 
    ![](./images/okv-001.png " ")
 
-3. Click [**Endpoints**]
+4. Click [**Endpoints**]
 
    ![](./images/okv-002.png " ")
 
@@ -79,15 +81,15 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
         <copy>./okv_unpack_restservice.sh</copy>
           ````
 
-   ![](./images/okv-004.png " ")
+       ![](./images/okv-004.png " ")
 
-    - Check the OKV Server config
+    - Create the script to create the Endpoint, Wallet and deploy the OKV software
 
           ````
-        <copy>./02_review_config.sh</copy>
+        <copy>./okv_crea_config_script.sh</copy>
           ````
 
-   ![](./images/okv-005.png " ")
+       ![](./images/okv-005.png " ")
 
     - Add your `CDB1` database on DBSec-Lab VM as Endpoint
 
