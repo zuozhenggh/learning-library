@@ -45,11 +45,10 @@ This lab assumes you have:
 |10| Configure and Verify Glassfish to use the Database Firewall | 10 minutes|
 |11| Train the Database Firewall for expected SQL traffic | 20 minutes|
 |12| Build and Test the DB Firewall Allow-List Policy | 20 minutes|
-|13| Restore Glassfish to use direct mode (without the Database Firewall) | <5 minutes|
 || **AVDF Advanced Labs**||
-|14| PostgreSQL Audit Collection | 10 minutes|
-|15| Linux Audit Collection | 10 minutes|
-|16| LDAP/Active Directory Configuration | <5 minutes|
+|13| PostgreSQL Audit Collection | 10 minutes|
+|14| Linux Audit Collection | 10 minutes|
+|15| LDAP/Active Directory Configuration | <5 minutes|
 
 <!-- DB Firewall in progress!
 |06| Audit Vault - Audit Stored Procedures Changes | 5 minutes|
@@ -67,19 +66,19 @@ This lab assumes you have:
 
 ## **STEP 1**: Audit Vault - Run the Deploy Agent
 
-1. Before beginning the Audit Vault labs, you must run this script to enable the pre-configure Audit Vault Server for this workshop
+1. To perform the Audit Vault labs, you must run this script to enable the pre-configure Audit Vault Server for this workshop
 
-    - Open a SSH session on your **AVS VM as *opc* user**
+    - Open a SSH session on your **AVS VM as *opc* User**
 
     - Initialize the Audit Vault server
 
-          ````
-          <copy>sudo /root/bootstrap/fix-apex-login.sh</copy>
-          ````
+      ````
+      <copy>sudo /root/bootstrap/fix-apex-login.sh</copy>
+      ````
 
     - Close the session
 
-2. Now, open a SSH session on your **DBSec-Lab VM as *oracle* user**
+2. Now, open a SSH session on your **DBSec-Lab VM as *oracle* User**
 
       ````
       <copy>sudo su - oracle</copy>
@@ -88,136 +87,131 @@ This lab assumes you have:
 3. Go to the scripts directory
 
       ````
-      <copy>cd $DBSEC_LABS/avdf/avs</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Deploy_Agent</copy>
       ````
 
-4. First, unpack the `avcli.jar` utility to install the Audit Vault Command Line Interface (avcli) so we can automate most of the Agent, host, and Audit Trail deployment
+4. The first script will unpack the `avcli.jar` utility so we can automate most of the agent, host, and audit trail deployment
 
       ````
-      <copy>./avs_deploy_avcli.sh</copy>
+      <copy>./01_deploy_avcli.sh</copy>
       ````
+
+5. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
+
+      ````
+      <copy>./02_register_host.sh</copy>
+      ````
+
+6. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-001.png " ")
 
-5. Next, we will use avcli to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
+7. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
 
       ````
-      <copy>./avs_register_host.sh</copy>
+      <copy>./03_deploy_avagent.sh</copy>
       ````
+
+8. Once deployed, we will need to activate the Audit Vault Agent. Remember the activation key we saw above and paste the key when prompted.
+
+      ````
+      <copy>./04_activate_avagent.sh</copy>
+      ````
+
+9. Your output will look similar to this but your `Activation Key` will be different
 
    ![](./images/avdf-002.png " ")
 
-    **Note**: Your output will look similar to this but your `Activation Key` will be different
-
-6. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
+10. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
 
       ````
-      <copy>./avs_deploy_agent.sh</copy>
+      <copy>./05_show_host.sh</copy>
       ````
+
+11. Notice the output says `Running` for the Agent Status column
 
    ![](./images/avdf-003.png " ")
 
-7. Once deployed, we will need to activate the Audit Vault Agent
-
-      ````
-      <copy>./avs_activate_agent.sh</copy>
-      ````
-    
-   ![](./images/avdf-004.png " ")
-
-    **Note**: Remember the Activation Key we saw above and paste the key when prompted!
-
-8. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
-
-      ````
-      <copy>./avs_show_host.sh</copy>
-      ````
-
-   ![](./images/avdf-005.png " ")
-
-    **Note**: Notice the output says `Running` for the Agent Status column
-
 ## **STEP 2**: Audit Vault - Register a Pluggable Database as Target
 
-1. Use the avcli utility to register the pluggable database `pdb1` as an AV target
+1. Go to the scripts directory
 
       ````
-      <copy>./avs_register_pdb.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Register_Database</copy>
       ````
 
-   ![](./images/avdf-006.png " ")
+2. You could perform the register from the Audit Vault Web UI but we will use the AVCLI instead
 
-    **Note**:
-    - You could also perform this register from the Audit Vault Web Console
-    - This script will use the database user `AVAUDITUSER` that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
-    - The password for `AVAUDITUSER` is *Oracle123*
+      **Note**:
+      - You will need to enter the `AVAUDITUSER` password during this step
+      - This user is a database user that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
+      - The password for `AVAUDITUSER` is *Oracle123*
+
+      ````
+      <copy>./01_register_database.sh</copy>
+      ````
+
+3. When complete, your output should look similar to this:
+
+   ![](./images/register_database01.png " ")
 
 ## **STEP 3**: Audit Vault - Register an Audit Trail
 
-1. First, use the avcli utility to register the Unified Audit Trail for the pluggable database `pdb1` to collect audit data
+1. Go to the scripts directory
 
       ````
-      <copy>./avs_register_audit_trail.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Register_Audit_Trail</copy>
       ````
 
-   ![](./images/avdf-007.png " ")
-
-2. Next, list the Audit Trails for the pluggable database `pdb1`
+2. The first script will use the AVCLI to register the Unified Audit Trail for the `pdb1` database
 
       ````
-      <copy>./avs_list_audit_trails.sh</copy>
+      <copy>./01_register_audit_trail.sh</copy>
       ````
 
-   ![](./images/avdf-008.png " ")
+3. The second script will list the Audit Trails for the `pdb1` pluggable database. You should see one row returned for the Unified Audit Trail and the output from the script should look similar to this:
 
-      **Note**:
-      - You should see one row returned for the Unified Audit Trail
-      - The `Status` column should say `Collecting` or `Idle`
-      - If it says something else please run the script again and verify it changes state
+   ![](./images/verify_audit_trail01.png " ")
 
-3. Using the Audit Vault Web Console view audit data collected via the All Activity Report 
+      **Note**: The `Status` column should say `Collecting` or `Idle`.  If it says something else please run the script again and verify it changes state.
 
-    - Open a new Web Browser tab at the URL `https://<AVS-VM_@IP-Public>`
-    - Login to Audit Vault Web Console as "*AVAUDITOR*" with the password "*T06tron.*" (keep it open for the rest of the lab)
-
-       ![](./images/avdf-300.png " ")
-
+4. View audit data collected via the All Activity Report using the web browser
+    - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
+    - Login to Audit Vault Web Console as *AVAUDITOR* with the password "*T06tron.*"
     - Click on the **Reports** tab
     - Under the **Activity Reports** section titled **Summary**, click on the **All Activity** name to load the report
     - You should see a report that looks something like this:
 
-       ![](./images/avdf-009.png " ")
+   ![](./images/all_activity_report01.png " ")
 
     - You can click on the **Event Status** header and narrow down the report to `Event Status = 'FAILURE'`
     - It might look something like this:
 
-       ![](./images/avdf-010.png " ")
+   ![](./images/all_activity_failures01.png " ")
 
       **Note**:
       - This was just a small example to verify that audit data was being collected and is visible in Audit Vault
       - There will be more detailed report generation labs later in the workshop
 
-4. You have completed the lab to register the Unified Audit Trail for `pdb1` with Audit Vault
+5. You have completed the lab to register the Unified Audit Trail for `pdb1` with Audit Vault
 
 ## **STEP 4**: Audit Vault - Manage Unified Audit Settings
 
 You will retrieve and provision the Unified Audit settings for the `pdb1` pluggable database
 
-1. Go back to Audit Vault Web Console as "*AVAUDITOR*"
-
-   ![](./images/avdf-300.png " ")
+1. Go back to Audit Vault Web Console as `AVAUDITOR`
 
 2. Click on the `Targets` tab
 
 3. Click on the Target `pdb1`
 
 4. On the target screen, under `Audit Policy` perform the following:
-    - Checkbox *Retrieve Immediately*
-    - Change the "Schedule" radio button to *Enable*
-    - Set "Repeat Every" to *1 Days*
-    - Click [**Save**] to save and continue
+    - Checkbox `Retrieve Immediately`
+    - Change the radio button for `Schedule` to `Enable`    
+    - Set the `Schedule` to `Repeat Every` **1 Day**    
+    - Press `Save` to save and continue
 
-      ![](./images/avdf-011.png " ")
+   ![](./images/save_audit_policy01.png " ")
 
 5. Next, view the audit policy reports for `pdb1`
     - Click on the `Policies` tab and you will be placed on the `Audit Policies` page
@@ -230,7 +224,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
         - Center for Internet Security (CIS) Configuration
     - Click `Provision Unified Policy`
 
-      ![](./images/avdf-012.png " ")
+   ![](./images/provision_uat01.png " ")
 
 6. Verify the job completed successfully
     - Click on the `Settings` tab
@@ -238,58 +232,57 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
     - You should see at least one `Job Type` that says `Unified Audit Policy`
     - Verify it shows `Complete` and it was provisioned on `pdb1`
 
-      ![](./images/avdf-013.png " ")
+   ![](./images/completed_provision_uat01.png " ")
 
 7. The next thing you can do is check which Unified Audit Policies exist and which Unified Audit Policies are enabled by using `SQL*Plus`
+    - Go back to the terminal and go to the scripts directory
 
-    - Go back to your SSH session and list `ALL` the Unified Audit Policies in `pdb1`
+      ````
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Manage_Unified_Auditing</copy>
+      ````
 
-          ````
-          <copy>./avs_query_all_unified_policies.sh</copy>
-          ````
+    - Run the first script to query `all` of the Unified Audit Policies in `pdb1`
 
-       ![](./images/avdf-014.png " ")
+      ````
+      <copy>./01_query_all_unified_policies.sh</copy>
+      ````
 
-    - Next, show the **enabled** Unified Audit policies
+    - Run the second script to show the **enabled** Unified Audit policies
 
-          ````
-          <copy>./avs_query_enabled_unified_policies.sh</copy>
-          ````
-
-       ![](./images/avdf-015.png " ")
+      ````
+      <copy>./02_query_enabled_unified_policies.sh</copy>
+      ````
 
 8. If you want, you can re-do the previous steps and make changes to the Unified Audit Policies. For example, don't enable the `Center for Internet Security (CIS) Configuration` and re-run the two shell scripts to see what changes!
 
 ## **STEP 5**: Audit Vault - Retrieve User Entitlements
 
-1. Go back to Audit Vault Web Console as "*AVAUDITOR*"
-
-   ![](./images/avdf-300.png " ")
+1. Go back to Audit Vault Web Console as `AVAUDITOR`
 
 2. Click on the `Targets` tab
 
-3. Click on the Target `pdb1`
+3. Click on the Target Name
 
 4. Under `User Entitlements`
-    - Checkbox *Retrieve Immediately*
-    - Change the "Schedule" radio button to *Enable*
-    - Set "Repeat Every" to *1 Days*
-    - Click [**Save**] to save and continue
+    - Checkbox `Retrieve Immediately`
+    - Change the `Schedule` radio button to Enable
+    - Set `Repeat Every` to `1 Days`
+    - In this section, click [**Save**]
 
-       ![](./images/avdf-016.png " ")
+   ![](images/safe_user_entitlements_collection01.png " ")
 
 5. Click on the `Reports` tab
 
 6. Scroll down and expand the `Entitlement Reports` section
 
-   ![](./images/avdf-017.png " ")
+   ![](images/entitlement_reports01.png " ")
 
 7. Click on the `User Accounts` report
     - Under `Target Name`, select `All`
     - For `Label`, select `Latest`
     - Click [**Go**] and you will see a report that looks like this
 
-       ![](./images/avdf-018.png " ")
+   ![](images/user_accounts_report01.png " ")
 
 <!---
 8. Now that we have seen a simple report, we will create a differential report:
@@ -334,9 +327,9 @@ Execute the script to generate the creation of a PL/SQL function, creating a tab
 
 `./01_stored_procedure.sh`
 
-Next, go back to Audit Vault Web Console as "*AVAUDITOR*"
+Next, using a web browser, login to Audit Vault as `AVAUDITOR` and the password *"T06tron."* with the `dot` included in the password.
 
-   ![](./images/avdf-300.png " ")
+   ![](images/login_avauditor01.png " ")
 
 - Click [**Targets**]
 
@@ -375,72 +368,139 @@ You have completed the lab.
 
 In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. For ease of execution, the required step from the Database Security Assessment Tool (DBSAT) lab was performed and the output saved. The first step here will help download and stage it accordingly.
 
-1. Before beginning the lab, you have to download to your local computer the sensitive data file (`pdb1_dbsat_discover.csv`) that we have generated for you from DBSAT: 
-[> Click here to download <](https://objectstorage.us-ashburn-1.oraclecloud.com/p/g7HGibfhPXhmVXvyiP5G4yGe_MH3yPGUkiCrccuYhCKewZvgd-mlPycLPxaOAxcC/n/natdsecurity/b/labs-files/o/pdb1_dbsat_discover.csv)
+<!--
+1. Download and stage the sensitive data to `/home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data`
+    - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+    - Now we need to become `oracle` User
 
-2. Next, grant privilege to the admin user `AVADMIN` to import sensitive data
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
 
-    - Open an SSH session to your **AVS VM as *opc* user**
+    - Once we have switched to `oracle`, download and stage the file
 
-    - Now we need to become `oracle` user
+    ````
+    <copy>
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/g7HGibfhPXhmVXvyiP5G4yGe_MH3yPGUkiCrccuYhCKewZvgd-mlPycLPxaOAxcC/n/natdsecurity/b/labs-files/o/pdb1_dbsat_discover.csv -O /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data/pdb1_dbsat_discover.csv
+    </copy>
+    ````
 
-          ````
-          <copy>sudo su - oracle</copy>
-          ````
+2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user *"AVADMIN"*:
+
+    - Open an SSH session to your **AVS VM** as user *opc*
+    - Now we need to become `oracle` User
+
+      ````
+      <copy>su - oracle</copy>
+      ````
 
     - Once we have switched to `oracle`, we have to run the Python script to grant the additional role
 
-          ````
-          <copy>python /usr/local/dbfw/bin/av_sensitive_role grant avadmin</copy>
-          ````
+      ````
+      <copy>python /usr/local/dbfw/bin/av_sensitive_role grant avadmin</copy>
+      ````
 
-          ![](./images/avdf-019.png " ")
+    - The results should look like this screenshot
+
+   ![](images/grant_sensitive_role01.png " ")
 
     - Close the session
 
-3. Now that you have the role granted, you can load the data from our DBSAT file
+3. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
 
-    - Open a new Web Browser tab at the URL `https://<AVS-VM_@IP-Public>`
-    - Login to Audit Vault Web Console as "*AVADMIN*" with the password "*T06tron.*" (keep it open for the rest of the lab)
+    - Go back to the SSH session on your **DBSec-Lab VM** and go to the scripts directory
 
-          ![](./images/avdf-200.png " ")
+      ````
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DBSAT_and_Sensitive_Data</copy>
+      ````
 
+    - Copy the DBSAT `csv` file, created during the DBSAT Sensitive Data Discovery lab, to the Glassfish directory for us to download
+
+      ````
+      <copy>./01_download_sensitive_data_csv.sh</copy>
+      ````
+
+     - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab
+        - It will look like this: `http://<DBSECLAB-VM_@IP-Public>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_discover.csv`
+        - In a web browser, copy/paste this URL and download locally the `pdb1_dbsat_discover.csv` file
+
+     - Upload the `csv`file into AVDF Console
+        - In another web browser page, login to the Audit Vault as *AVADMIN* using the password "*T06tron.*"
+        - Click the `Targets` tab
+        - Click the `pdb1` target name
+        - In the right, top, corner of the page click `Sensitive Objects`
+        - Choose the `pdb1_dbsat_discover.csv` file you saved to your local system
+
+   ![](images/upload_csv_file01.png " ")
+
+    - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
+
+   ![](images/csv_file_loaded01.png " ")
+-->
+1. Click on the link below to download the sensitive data (`pdb1_dbsat_discover.csv`) generated from DBSAT lab to your local computer
+
+[pdb1_dbsat_discover.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/g7HGibfhPXhmVXvyiP5G4yGe_MH3yPGUkiCrccuYhCKewZvgd-mlPycLPxaOAxcC/n/natdsecurity/b/labs-files/o/pdb1_dbsat_discover.csv)
+
+2. Grant Privilege to Import Sensitive Data. Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user *"AVADMIN"*:
+
+    - Open an SSH session to your **AVS VM** as user *opc*
+    - Now we need to become `oracle` User
+
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
+
+    - Once we have switched to `oracle`, we have to run the Python script to grant the additional role
+
+      ````
+      <copy>python /usr/local/dbfw/bin/av_sensitive_role grant avadmin</copy>
+      ````
+
+    - The results should look like this screenshot
+
+   ![](images/grant_sensitive_role01.png " ")
+
+    - Close the session
+
+3. Loading the Sensitive Data from DBSAT. Now that we have the role granted, we can load the data from our DBSAT lab.
+
+    - Open an SSH session to your **DBSEC-LAB VM** as user *opc*
+    - Now we need to become `oracle` User
+
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+    - Launch the browser to `https://<AVS-VM-Public_IP` and login to the Audit Vault as *AVADMIN* using the password "*T06tron.*"
     - Upload the `pdb1_dbsat_discover.csv` file you downloaded earlier into AVDF Console
         - Click the `Targets` tab
         - Click the `pdb1` target name
         - In the right, top, corner of the page click `Sensitive Objects`
-        - Browse the `pdb1_dbsat_discover.csv` file you saved to your local system
+        - Select the `pdb1_dbsat_discover.csv` file you saved to your local system
 
-          ![](./images/avdf-020.png " ")
+   ![](images/upload_csv_file01.png " ")
 
-        - Click [**Upload**]
-        - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
+    - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
 
-          ![](./images/avdf-021.png " ")
+   ![](images/csv_file_loaded01.png " ")
+
 
 4. View the Sensitive Data
 
-    - Go back to Audit Vault Web Console as "*AVAUDITOR*"
-
-       ![](./images/avdf-300.png " ")
-
+    - Go back to your web browser page session as `AVAUDITOR`
     - Click the `Reports` tab
     - On the left side menu, click `Compliance Reports`
     - Click [**Go**] to associate the `pdb1` target with the `Data Private Report (GDPR)` group
     - Checkbox `pdb1`
     - Click [**Add**]
-
-       ![](./images/avdf-022.png " ")
-
     - Click [**Save**]
     - Unfortunately, once you associate the target with the report, Audit Vault takes you to some unknown page, so please navigate back to the original page by clicking `Reports` then `Compliance Reports`
     - Click `Sensitive Data` and now you can see the Schema, Objects, Object Types, and Column Name and Sensitive Types
 
-       ![](./images/avdf-023.png " ")
+   ![](images/sensitive_data_report01.png " ")
 
-5. You can also view additional `Compliance Reports` about Sensitive Data
+5. You can also view additional reports about Sensitive Data
 
-   ![](./images/avdf-024.png " ")
+   ![](images/sensitive_data_reports01.png " ")
 
 ## **STEP 7**: Audit Vault - Auditing Column Data Changes - Before and After Values
 
@@ -457,95 +517,90 @@ Transaction Log collector takes advantage of Oracle GoldenGate’s Integrated Ex
 **Getting Started**
 The first thing we need to do is to set up the database to be ready for Golden Gate
 
-1. Go back to your SSH session on DBSec-Lab VM to create the Golden Gate Database Administration user `C##AVGGADMIN` in the container database `cdb1`
+1. Go back to the SSH session and go to the scripts directory
 
       ````
-    <copy>./avs_create_oggadmin_db_user.sh</copy>
+    <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Before_and_After_Changes</copy>
       ````
 
-   ![](./images/avdf-025.png " ")
-
-2. Next, we have to configure the database to have the appropriate `sga_target` and `streams_pool_size` values, enable the `enable_goldengate_replication` initialization parameter and `forcing logging` for redo collection
+2. We will create the Golden Gate Database Administration user, `C##AVGGADMIN`, in the container database, `cdb1`
 
       ````
-    <copy>./avs_configure_db_for_ogg.sh</copy>
+    <copy>./01_create_ggadmin_db_user.sh</copy>
       ````
 
-   ![](./images/avdf-026.png " ")
+3. Next, we have to configure the database to have the appropriate `sga_target` and `streams_pool_size` values, enable the `enable_goldengate_replication` initialization parameter and `forcing logging` for redo collection
+
+      ````
+    <copy>./02_configure_db_for_gg.sh</copy>
+      ````
 
      **Note**: This will require a reboot and this script will do this for you
 
-3. Finally, verify connectivity to the `cdb1` container database before we continue with the configuration of the GoldenGate Extract
+4. Finally, verify connectivity to the `cdb1` container database before we continue with the configuration of the GoldenGate Extract
 
       ````
-    <copy>./avs_test_dbuser_connectivity.sh</copy>
+    <copy>./03_test_dbuser_connectivity.sh</copy>
       ````
-
-   ![](./images/avdf-027.png " ")
 
 **Configuring a GoldenGate Extract**
 
-4. In the DBSecLab VM, the `Oracle GoldenGate for Oracle` software has been already installed and configured, but ensure the Golden Gate Administration Service is up and running
+5. In the VM, the `Oracle GoldenGate for Oracle` software has been already installed and configured, but ensure the Golden Gate Administration Service is up and running
 
       ````
-    <copy>./avs_start_ogg.sh</copy>
-      ```` 
+    <copy>./04_start_gg.sh</copy>
+      ````
 
-   ![](./images/avdf-028.png " ")
+6. Using a web browser, login to your Database Security VM as `oggadmin` with the password "*Oracle123*"
 
-    **Note**: The URL `http://<DBSECLAB-VM_@IP-Public>:50002/` is provided with your own public IP address
+    `http://<DBSECLAB-VM_@IP-Public>:50002/`
 
-5. Login to your Golden Gate Web Console
+   ![](images/ogg_login_screen01.jpg)
 
-    - Open a new Web Browser tab at the URL `http://<DBSECLAB-VM_@IP-Public>:50002/`
-    - Login to Golden Gate Web Console as *oggadmin* with the password "*Oracle123*"
+7. In the top left corner, click the `burger menu`
 
-       ![](./images/avdf-029.png " ")
+8. Click `Configuration`
 
-6. In the top left corner, open the Burger menu and select **Configuration**
+9. Click the `+` next to `Credentials`
 
-7. Click the `+` next to `Credentials`
+10. Next, create a new Credential with the following values
 
-8. Next, create a new Credential with the following values
+    - Credential Domain: `cdb1`
+    - Credential Aalias: `cdb1`
+    - User ID: `c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))`
+    - Password: `Oracle123`
+    - Verify Password: `Oracle123`
 
-    - Credential Domain: *cdb1*
-    - Credential Aalias: *cdb1*
-    - User ID: *c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))*
-    - Password: *Oracle123*
-    - Verify Password: *Oracle123*
+   ![](images/ogg_add_credential01.png " ")
 
-       ![](./images/avdf-030.png " ")
+    - Press `Submit`
 
-    - Click [**Submit**]
+11. Under `Action`, press the `Verify` button for the `cdb1` Domain
 
-9. Under `Action`, press the `Verify` button for the `cdb1` Domain
+   ![](images/verify_connection01.png " ")
 
-   ![](./images/avdf-031.png " ")
+12. If your connection was successful, you should now see a `Checkpoint`, a `Transaction Information` and a `Heartbeat` section
 
-10. If your connection was successful, you should now see a `Checkpoint`, a `Transaction Information` and a `Heartbeat` section
+   ![](images/successful_credential_test01.png " ")
 
-   ![](./images/avdf-032.png " ")
+13. Now we will navigate back to the GoldenGate Administration Server dashboard and add a GoldenGate `Extract`
 
-11. Now we will navigate back to the GoldenGate Administration Server dashboard
-    - In the top left corner, open the Burger menu
-    - Select **Overview**
-
-12. Add a GoldenGate `Extract`
-
+    - In the top left corner, click the `burger menu`
+    - Click `Overview`
     - In the `Extracts` section, click the `+` symbol to create a new Extract
 
-          ![](./images/avdf-033.png " ")
+   ![](images/add_extract01.png " ")
 
     - Choose `Integrated Extract` and click [**Next**]
     - In the `Basic Information` section, please fill out the field like this screenshot
 
-          ![](./images/avdf-034.png " ")
+   ![](images/extract_basic_info01.png " ")
 
     - and in the `Registration Information` section, please fill out the field like this screenshot
 
-          ![](./images/avdf-035.png " ")
+   ![](images/extract_reg_info01.png " ")
 
-    - Click [**Next**]
+    - Press `Next`
 
     - Replace the existing `Parameter File` with this
 
@@ -561,101 +616,98 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
     - Your `Parameter File` should look like this
 
-          ![](./images/avdf-036.png " ")
+   ![](images/update_parameter_file01.png " ")
 
-    - Click [**Create and Run**]
+    - Press `Create and Run`
 
     - You will be redirected to the dashboard and you should now have one `Extract` in `Running` status
 
-          ![](./images/avdf-037.png " ")
+   ![](images/extract_running01.png " ")
 
-          **Note**: If it's not running, please start it:
-          - On the `PDB1` Extract, click [**Action**] and click [**Start**]
-          - Confirm you want to `Start` the Extract process
-          - Confirm your `Extract` now shows `Running`
+    - If not, please start it
 
-             ![](./images/avdf-038.png " ")
+   ![](images/start_pdb1_extract01.png " ")
+
+       - On the `PDB1` Extract, click [**Action**] and click [**Start**]
+       - Confirm you want to `Start` the Extract process
+       - Confirm your `Extract` now shows `Running`
 
 
 **Configure a new Audit Trail**
 
-13. Go back to Audit Vault Web Console as "*AVADMIN*"
+14. Using a web browser, login to the Audit Vault Web Console as *"AVADMIN"* with the password "*T06tron.*"
 
-   ![](./images/avdf-200.png " ")
+15. Click the `Targets` tab
 
-14. Click the `Targets` tab
+16. Click the `pdb1` Target
 
-15. Click the `pdb1` Target
+17. Click [**Modify**] to add an attribute to the Target
 
-16. Click [**Modify**] to add an attribute to the Target
+18. Click the `Audit Collection Attributes` tab
 
-17. Click the `Audit Collection Attributes` tab
+19. Click [**Add**] to tell the collect this database is in the PDT timezone
 
-18. Click [**Add**] to tell the collect this database is in your timezone
+    - Name: `av.collector.TimeZoneOffset`
+    - Value: <YOUR_TIMEZONE> (here `-7:00`)
 
-    - Name: *av.collector.TimeZoneOffset*
-    - Value: *`<YOUR_DBSECLAB_VM_TIMEZONE>`* (here UTC time "`0:00`")
-
-        ![](./images/avdf-039.png " ")
+   ![](images/add_collect_attr01.png " ")
 
     - Click [**Save**]
 
-19. In the `Audit Data Collection` section, click [**Add**]
+20. In the `Audit Data Collection` section, click [**Add**]
 
-20. For the new Audit Trail, use the following values
+21. For the new Audit Trail, use the following values
 
-    - Audit Trail Type: *TRANSACTION LOG*
-    - Trail Location: */u01/app/oracle/product/ogg/var/lib/data*
-    - Agent Host: *dbseclab*
+    - Audit Trail Type: `TRANSACTION LOG`
+    - Trail Location: `/u01/app/oracle/product/ogg/var/lib/data`
+    - Agent Host: `dbseclab`
     - Review the inputs for accuracy
 
-        ![](./images/avdf-040.png " ")
+   ![](images/add_audit_trail_trans01.png " ")
 
     - Click [**Save**]
 
-21. The new `Audit Trail` might say `Stopped` but if you refresh the page (press `F5`) then it should switch to `Collecting` or `Idle`
+22. The new `Audit Trail` might say `Stopped` but if you refresh the page (press `F5`) then it should switch to `Collecting` or `Idle`
 
-   ![](./images/avdf-041.png " ")
+   ![](images/two_audit_trails01.png " ")
 
 **Generate Changes and View the Audit Vault Reports**
 
-22. Go back to your SSH session and generate data and object changes
+23. Go back to your SSH session and generate data and object changes
 
       ````
-    <copy>./avs_generate_employeesearch_prod_changes.sh</copy>
+    <copy>./05_generate_employeesearch_prod_changes.sh</copy>
       ````
 
-   ![](./images/avdf-042.png " ")
+24. Using a web browser, login to the Audit Vault Web Console as `AVAUDITOR` with the password "*T06tron.*"
 
-23. Go back to Audit Vault Web Console as "*AVAUDITOR*"
+25. Click the `Reports` tab
 
-   ![](./images/avdf-300.png " ")
+26. In the `Data Access & Modification` section, click `Data Modification Before-After Values`
 
-24. Click the `Reports` tab
+27. You should see an output similar to the following screenshot:
 
-25. In the `Data Access & Modification` section, click `Data Modification Before-After Values`
-
-26. You should see an output similar to the following screenshot:
-
-   ![](./images/avdf-043.png " ")
+   ![](images/before_after_values_report01.png " ")
 
 **Troubleshooting Issues and Errors**
 
-27. If you are not seeing Before/After value changes in Audit Vault, ensure you:
-    - Are logged in as "`AVAUDITOR`" to view the AV reports
-    - You properly executed the scripts in `Before_and_After_Changes` folder to create the "`C##GGAVADMIN`" user and setup the database
-    - Your GoldenGate Microservices are started
-    - Golden Gate Extracts are in a state of `Running` (if not, from the Golden Gate Web Console, click [**Action**] for the `PDB1` extract and set it to `Start`)
-    - The Timezone of your Audit Trail is correctly set to your VM Timezone
-    - Your Audit Trail is up and running
+28. If you are not seeing Before/After value changes in Audit Vault, ensure you:
+    - Are logged in as `AVAUDITOR` to view the AV reports
+    - You properly executed the scripts in `Before_and_After_Changes` folder to create the `C##GGAVADMIN` user and setup the database
+    - Your GoldenGate Microservices are started by running `$DBSEC_ADMIN/start_gg.sh`
+    - Golden Gate Extracts are in a state of `Running`. If not, perform the following:
+        - Using a web browser login to the GoldenGate Admin server you used above (`http://<DBSECLAB-VM_@IP_PUBLIC>:50002`)
+        - From the Console, click [**Action**] for the `PDB1` extract and set it to `Start`
+
+   ![](images/start_pdb1_extract01.png " ")
 
 ## **STEP 8**: Audit Vault - Create Alert Policies
 
 In this lab you will modify the Database Firewall connection for the pluggable database, `pdb1`
 
-1. Go back to Audit Vault Web Console as "*AVAUDITOR*"
+1. Login to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
-   ![](./images/avdf-300.png " ")
+   ![](images/login_avauditor01.png " ")
 
 2. Click the `Policies` tab
 
@@ -676,216 +728,217 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 6. Your `Alert` should look like the following screenshot:
 
-   ![](./images/avdf-044.png " ")
+   ![](images/alert_create_user01.png " ")
 
 7. Click [**Save**]
 
-8. Go back to your SSH session and create users within the `pdb1` pluggable database
+8. Go back to your terminal session and go to the scripts directory to create an Alert Policy
 
       ````
-      <copy>./avs_create_users.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Create_Alert_Policies</copy>
       ````
 
-   ![](./images/avdf-045.png " ")
-
-9. Go back to the Audit Vault Web Console as "*AVAUDITOR*" to view alerts
-
-   ![](./images/avdf-300.png " ")
-
-10. Click on `Alerts` tab
-
-11. View the Alerts that have occurred related to our user creation SQL commands
-
-   ![](./images/avdf-046.png " ")
-
-12. Click on the details of one of the alerts
-
-   ![](./images/avdf-047.png " ")
-
-13. Go back to your SSH session and drop the users we created in the previous script
+9. Create users within the `pdb1` pluggable database
 
       ````
-      <copy>./avs_drop_users.sh</copy>
+      <copy>./01_create_users.sh</copy>
       ````
 
-   ![](./images/avdf-048.png " ")
+10. Go back to the Audit Vault Web Console as `AVAUDITOR` to view alerts
 
-    **Note**: Once you understand how to create an alert, feel free to create another and test it manually
+11. Click on `Alerts` tab
+
+12. View the Alerts that have occurred related to our user creation SQL commands
+
+   ![](images/view_create_user_alerts.png " ")
+
+13. Click on the details of one of the alerts
+
+   ![](images/view_details_create_user_alert.png " ")
+
+14. Execute the script to drop the users we created in the previous script
+
+      ````
+      <copy>./02_drop_users.sh</copy>
+      ````
+
+    **Note**: Once you understand how to create an alert, feel free to create another and test it manually.
 
 ## **STEP 9**: DB Firewall - Register the DB Firewall Server
 
-1. Before beginning the DB Firewall labs, you must run this script to enable the pre-configure DB Firewall Server for this workshop
+1. To perform the DB Firewall labs, you must run this script to enable the pre-configure DB Firewall Server for this workshop
 
-    - Open a SSH session on your **DBF VM as *opc* user**
+    - Open a SSH session on your **DBF VM as *opc* User**
+    - Start NetworkManager
 
-    - Start Network Manager
-
-          ````
-          <copy>sudo systemctl start NetworkManager</copy>
-          ````
+      ````
+      <copy>
+      sudo systemctl start NetworkManager
+      </copy>
+      ````
 
     - Close the session
 
-2. Now, go back to Audit Vault Web Console as "*AVADMIN*"
+2. Login to the Audit Vault Web Console at `https://<YOUR_AVS-VM_PUBLIC-IP>` as *"AVADMIN"* with the password *"T06tron."*
 
-   ![](./images/avdf-200.png " ")
+   ![](images/login_avadmin01.png " ")
 
 3. Click on `Database Firewalls` tab
 
 4. Click on `dbfw` Database Firewall Name
 
-   ![](./images/avdf-101.png " ")
+   ![](images/dbfw_details01.png " ")
 
 5. Click `Network Settings`
 
-   ![](./images/avdf-102.png " ")
+   ![](images/dbfw_network_settings01.png " ")
 
 6. Click on `eth0`
 
-   ![](./images/avdf-103.png " ")
+   ![](images/eth0_details01.png " ")
 
 7. To add a `Proxy Port`
     - Click [**Add**]
-    - Name it *`dbfw_proxy`*
-    - Use the port *`15223`*
-
-       ![](./images/avdf-104.png " ")
-
+    - Name it `dbfw_proxy`
+    - Use the port `15223`
     - Click [**Save**]
+
+   ![](images/add_proxy_port01.png " ")
 
 8. Your Database Firewall Network Settings should now look like this:
 
-   ![](./images/avdf-105.png " ")
+   ![](images/dbfw_network_settings_final01.png " ")
 
-9. Click [**Close**]
+9. Now, you will enable Database Firewall Monitoring for `pdb1` using the Proxy Port we just created
 
-10. Now, you will enable DB Firewall Monitoring for `pdb1` using the Proxy Port we just created
+10. Click the `Targets` tab
 
-11. Click the `Targets` tab and click `pdb1`
+11. Click `pdb1`
 
 12. In the `Database Firewall Monitoring` section of this page, click [**Add**]
 
 13. Fill out the following details
 
-    - Database Firewall: *`dbfw`*
-    - Mode: *`Monitoring / Blocking (Proxy)`*
-    - Network Interface Card: *`eth0`*
-    - Proxy Ports: *`dbfw_proxy (15223)`*
-
-       ![](./images/avdf-106.png " ")
+    - Database Firewall: `dbfw`
+    - Mode: `Monitoring / Blocking (Proxy)`
+    - Network Interface Card: `eth0`
+    - Proxy Ports: `dbfw_proxy (15223)`
 
 14. Click [**Add**]
 
 15. Fill out the fields as following
-    - Host Name / IP Address: *`10.0.0.150`*
-    - Port: *`1521`*
-    - Service Name: *`pdb1`*
+    - Host Name / IP Address: `10.0.0.150`
+    - Port: `1521`
+    - Service Name: `pdb1`
 
-       ![](./images/avdf-107.png " ")
+   ![](images/dbfw_monitoring_setup01.png " ")
 
-        **Note**:
-        - Ensure you use the IP Address not the hostname because the DBSecLab VMs are using DNS!
-        - This is a demonstration environment limitation not an AVDF limitation
+    **Note**:
+    - Ensure you use the IP Address not the hostname because the DBSecLab VMs are using DNS!
+    - This is a demonstration environment limitation not an AVDF limitation
 
 16. Click [**Save**]
 
 17. The result should look like this:
 
-   ![](./images/avdf-108.png " ")
+   ![](images/dbfw_network_settings_final02.png " ")
 
-18. Now, verify connectivity between the database and the DB Firewall
+18. Now, verify connectivity between the database and the DB Firewall: go back to your terminal session and go to the scripts directory
 
-    - Go back to your SSH session and go to the DBF directoy
-    
-          ````
-          <copy>cd $DBSEC_LABS/avdf/dbf</copy>
-          ````
+      ````
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/Add_Firewall_Monitor</copy>
+      ````
 
-    - Verify connectivity to the database *without* the Database Firewall
+19. Verify connectivity **without** the Database Firewall
 
-          ````
-          <copy>./dbf_sqlplus_without_dbfw.sh</copy>
-          ````
+      ````
+      <copy>./01_sqlplus_without_dbfw.sh</copy>
+      ````
 
-          ![](./images/avdf-109.png " ")
+    **Note**:
+    - This will connect directly to the database on the standard listener port
+    - You should see that the connection shows an IP Address of `10.0.0.150` which is the IP Address of the DBSec-Lab VM
+    - This verifies that you are connecting **directly** to the `pdb1` pluggable database
 
-          **Note**:
-          - This will connect **directly** to the pluggable database `pdb1` on the standard listener port 1521
-          - You should see that the connection shows **`10.0.0.150`** which is the IP Address of the DBSec-Lab VM
+20. Now, verify connectivity **with** the Database Firewall
 
-    - Verify connectivity to the database *with* the Database Firewall
+      ````
+      <copy>./02_sqlplus_with_dbfw.sh</copy>
+      ````
 
-          ````
-          <copy>./dbf_sqlplus_with_dbfw.sh</copy>
-          ````
-
-          ![](./images/avdf-110.png " ")
-
-          **Note**:
-          - This will connect to the `pdb1` pluggable database **through the proxy** (Database Firewall Monitoring) we just configured
-          - You should see that the connection shows **`10.0.0.152`** which is the IP Address of the DB Firewall VM
+    **Note**:
+    - This will proxy through the Database Firewall and then to the `pdb1` pluggable database using the Database Firewall Monitoring we just configured
+    - You should see that the connection shows an IP Address of `10.0.0.152` which is the Database Firewall IP Address
+    - This verifies that you are connecting **through** the Database Firewall
 
 ## **STEP 10**: DB Firewall - Configure and Verify Glassfish to use the Database Firewall
 
 In this lab you will modify the Glassfish connection. Instead of connecting directly to the pluggable database, `pdb1`, Glassfish will connect through the Oracle Database Firewall so we can monitor, and block, SQL commands.
 
-1. First, open a new Web browser tab and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
-
-    **Note**: Take the URL and use it to verify that the application functions **before** we make any changes to connection string!
-
-2. Login to the application as *`hradmin`* with the password "*`Oracle123`*"
-
-   ![](./images/avdf-111.png " ")
-
-   ![](./images/avdf-112.png " ")
-
-3. Click `Search Employees`
-
-   ![](./images/avdf-113.png " ")
-
-4. Click [**Search**]
-
-   ![](images/avdf-114.png " ")
-
-5. In the top right hand corner of the App, click on the `Welcome HR Administrator` link and you will be sent to a page with session data
-
-   ![](./images/avdf-115.png " ")
-
-6. On the `Session Details` screen, you will see how the application is connected to the database. This information is taken from the `userenv` namespace by executing the `SYS_CONTEXT` function.
-
-   ![](./images/avdf-116.png " ")
-
-7. Logout
-
-   ![](./images/avdf-117.png " ")
-
-8. Now, go back to your SSH session and migrate the Glassfish Application connection string to proxy through the Database Firewall
+1. Go to the scripts directory
 
       ````
-      <copy>./dbf_start_proxy_glassfish.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DB_Firewall_and_Glassfish</copy>
       ````
 
-   ![](./images/avdf-118.png " ")
+2. First, use your web browser and navigate to the Glassfish application page
 
-9. Next, verify the application functions as expected
+    - You can identify the URL by running this script
 
-    - Go back to your Glassfish App web page and login as *`hradmin`* with the password "*`Oracle123`*"
-    - Click `Search Employees`
-    - Click [**Search**]
+      ````
+      <copy>./01_start_glassfish.sh</copy>
+      ````
 
-       **Note**: You should see the same results as you did before connecting through the Database Firewall
+    - Take the URL from the output of this and use it in your web browser. We are verifying that the application functions **before** we make any changes to connection string!
 
-    - In the top right hand corner of the App, click on the `Weclome HR Administrator` link to view the `Session Details` page
-    - Now, you should see that the `IP Address` row has changed from `10.0.0.150` to `10.0.0.152`, which is the IP Address of the DB Firewall VM
+3. Click [**Login**]
 
-       ![](./images/avdf-119.png " ")
+4. Login to the `My HR Application` as `hradmin` with the password `Oracle123`
+
+   ![](images/login_as_hradmin01.png " ")
+
+5. Click `Search Employees`
+
+6. Click [**Search**] to run a search without filters
+
+   ![](images/search_all01.png " ")
+
+7. In the top right hand corner of the browser, click on `Welcome HR Administrator` and you will be sent to a page with session data
+
+   ![](images/welcome_admin_link01.png " ")
+
+8. On the `Session Details` screen, you will see how the application is connected to the database. This information is taken from the `userenv` namespace by executing the `SYS_CONTEXT` function.
+
+   ![](images/direct_ip_address.png " ")
+
+9. Now, we are going to migrate the Glassfish Application to proxy through the Database Firewall and repeat the above steps. First, run the script to migrate connection string to the Database Firewall.
+
+      ````
+      <copy>./02_start_FW_glassfish.sh</copy>
+      ````
+
+10. Next, verify the application functions as expected. Login to `My Hr Application` as `hradmin` with the `Oracle123` password
+
+11. Click the `Search Employees` link
+
+12. Click [**Search**]
+
+    **Note**: You should see the same results as you did before connecting through the Database Firewall
+
+13. Click the `Weclome HR Administrator` link to view the `Session Details` page
+
+14. Now, you should see that the `IP Address` row has changed from `10.0.0.150` to `10.0.0.152`, which is the IP Address of the Database Firewall
+
+   ![](images/firewall_ip_address.png " ")
 
 ## **STEP 11**: DB Firewall - Train the Database Firewall for expected SQL traffic
 In this lab you will use the Glassfish Application to connect through the Oracle Database Firewall so we can monitor, and block, SQL commands
 
-1. Go back to Audit Vault Web Console as "*AVADMIN*"
+**Set the NTP Server**
 
-   ![](./images/avdf-200.png " ")
+1. Login to the Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
+
+   ![](images/login_avadmin01.png " ")
 
 2. Click the `Database Firewalls` tab
 
@@ -893,162 +946,181 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 4. Under `Configuration`, click `System Services`
 
-5. Select the `Date and Time` tab
+5. Select the `NTP` tab
 
-6. Ensure the first NTP service is `ON` and the IP is `169.254.169.254`, and close the pop-up windows
+6. Enter the IP of `169.254.169.254` for the first NTP service
 
-   ![](./images/avdf-120.png " ")
+7. Click [**Save**]
 
-7. Next, enable "Unique Logging", so go back to Audit Vault Web Console as "*AVAUDITOR*"
+**Enable Unique Logging**
 
-   ![](./images/avdf-300.png " ")
+8. Login to the Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
-8. On top, click on the `Targets` tab
+   ![](images/login_avauditor01.png " ")
 
-9. Click `pdb1`
+9. Click `Targets`
 
-10. Click the `Database Firewall Monitoring` sub-tab
+10. Click `pdb1`
 
-11. Change `Database Firewall Policy` from `Pass all` to *`Log unique`*
+11. Click the `Database Firewall Monitoring` sub-tab
 
-   ![](./images/avdf-121.png " ")
+12. Change `Database Firewall Policy` from `Pass all` to `Log unique`
 
-12. Click the `green check` to save
+   ![](images/dbfirewall_log_unique01.png " ")
 
-   ![](./images/avdf-122.png " ")
+13. Click the `green check` to save
 
-13. Now, generate Glassfish Application Traffic
-    - Go back to your Glassfish App web page and login as *`hradmin`* with the password "*`Oracle123`*"
-    - Click `Search Employees`
+   ![](images/dbfirewall_log_unique_submitted01.png " ")
 
-14. In the `HR ID` field enter *`164`* and click [**Search**]
+**Generate Glassfish Application Traffic**
 
-   ![](./images/avdf-123.png " ")
+14. On a Web browser, open your Glassfish HR App to verify that the application functions **before** make any changes to connection string
 
-15. Clear the `HR ID` field and click [**Search**] again to see all rows
+15. Click [**Login**]
 
-   ![](./images/avdf-114.png " ")
+16. Login to the `My HR Application` as `hradmin` with the password `Oracle123`
 
-16. Enter the following information in the `Search Employee` fields
+   ![](images/login_as_hradmin01.png " ")
 
-    - HR ID: *`196`*
-    - Active: *`Active`*
-    - Employee Type: *`Full-Time Employee`*
-    - First Name: *`William`*
-    - Position: *`Administrator`*
-    - Last Name: *`Harvey`*
-    - Department: *`Marketing`*
-    - City: *`London`*
+17. Click `Search Employees`
 
-17. Click [**Search**]
+18. Click [**Search**] to run a search without filters
 
-   ![](./images/avdf-124.png " ")
+   ![](images/search_all01.png " ")
 
-18. Click on `Harvey, William` to view the details of this employee
+19. In the `HR ID` field enter `164` and press [**Search**] to narrow the results down to a single employee
 
-   ![](./images/avdf-125.png " ")
+   ![](images/search_hrid164.png " ")
 
-19. Now, let's view the Database Firewall Activity, so go back to Audit Vault Web Console as "*AVAUDITOR*"
+20. Clear the `HR ID` field and click [**Search**] again to see all rows
 
-   ![](./images/avdf-300.png " ")
+21. Enter the following information in the `Search Employee` fields
 
-20. Click `Reports`
+    - HR ID: `196`
+    - Active: `Active`
+    - Employee Type: `Full-Time Employee`
+    - First Name: `William`
+    - Position: `Administrator`
+    - Last Name: `Harvey`
+    - Department: `Marketing`
+    - City: `London`
 
-21. Scroll down to `Database Firewall Reports`
+22. Press [**Search**] and you should return one row
 
-22. Click `Database Firewall Monitored Activity`
+   ![](images/william_harvey01.png " ")
 
-    **Note**: Sometimes DB Firewall activity may take 5 minutes to appear in the Database Firewall Activity Reports
+23. Click on `Harvey, William` to view the details of this employee
 
-23. Your activity should show queries from `EMPLOYEESEARCH_PROD` using a `JDBC Thin Client`
+   ![](images/william_harvey_details01.png " ")
 
-   ![](./images/avdf-126.png " ")
+**View Database Firewall Activity**
 
-24. Click on the details of a query to see more information and notice the following information:
+Sometimes DB Firewall activity may take 5 minutes to appear in the Database Firewall Activity Reports
+
+24. In your web browser, log back to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
+
+25. Click `Reports`
+
+26. Scroll down to `Database Firewall Reports`
+
+27. Click `Database Firewall Monitoring Activity`
+
+28. Your activity should show queries from `EMPLOYEESEARCH_PROD` using a `JDBC Thin Client`
+
+   ![](images/dbfirewall_activity01.png " ")
+
+29. Click on the details of a query to see more information and notice the following information:
     - Policy Name: `Log unique`
     - Threat Severity: `undefined`
     - Log Cause: `unseen`
     - Location: `Network`
 
-       ![](./images/avdf-127.png " ")
+   ![](images/dbfirewall_activity_details01.png " ")
 
        **Note**:       
-          - This information tells us a lot about our Database Firewall policies and why we are capturing this particular query
-          - If your reports show a lot of unknown activity you probably have **Native Network Encryption** enabled
-          - Please disable it from a terminal session and run the queries again:
-             - To check, run the following script: `$DBSEC_LABS/nne/nne_view_sqlnet_ora.sh`
-             - If it says `SQLNET.ENCRYPTION_SERVER=REQUESTED` or `SQLNET.ENCRYPTION_SERVER=REQUIRED` then it needs to be disabled
-             - To disable it, run the following scripts: `$DBSEC_LABS/nne/nne_disable.sh`
-             - To verify, run the following script: `$DBSEC_LABS/nne/nne_view_sqlnet_ora.sh`
-          - It should return no contents now!
+       - This information tells us a lot about our Database Firewall policies and why we are capturing this particular query
+       - If your reports show a lot of unknown activity you probably have **Native Network Encryption** enabled
+       - Please disable it from a terminal session and run the queries again:
+            - To check, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
+            - If it says `SQLNET.ENCRYPTION_SERVER=REQUESTED` or `SQLNET.ENCRYPTION_SERVER=REQUIRED` then it needs to be disabled
+            - To disable, run the following scripts: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/disable_native_network_enc.sh`
+            - To verify, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
+       - It should return no contents now!
 
-25. One of our favorite queries is this SQL statement:
+30. One of our favorite queries is this SQL statement:
 
-    ```
-    select USERID,FIRSTNAME,LASTNAME from DEMO_HR_USERS where ( USERSTATUS is NULL or upper( USERSTATUS ) = '######' ) and upper(USERID) = '#######' and password = '#########'
-    ```
+      ````
+      <copy>select USERID,FIRSTNAME,LASTNAME from DEMO_HR_USERS where ( USERSTATUS is NULL or upper( USERSTATUS ) = '######' ) and upper(USERID) = '#######' and password = '#########'</copy>
+      ````
 
      **Note**:
      - We like this query because this is the authentication SQL the `My HR App` uses to validate the `hradmin` and `Oracle123` password. Remember, the application is authenticated against a table not the database so queries like this will be captured
      - Notice how the Database Firewall has removed the bind values that would have included the username and password. This is to minimize the collection of sensitive data within Audit Vault and Database Firewall
 
-26. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
+31. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
 
 ## **STEP 12**: DB Firewall - Build and Test the DB Firewall Allow-List Policy
 
-1. Before we build our policy we have to make sure DB Firewall has logged the SQL Statements from the **Train the Database Firewall for expected SQL traffic** Lab as well as SQL statements from our `sqlplus` scripts
+1. Before we build our policy we have to make sure DB Firewall has logged the SQL Statements from the **Train the Database Firewall for expected SQL traffic** Lab as well as SQL statements from our `sqlplus` scripts.
 
-2. Go back to your terminal session to demonstrate connectivity through the Database Firewall and the ability to query the `EMPLOYEESEARCH_PROD` tables
+2. Go back to your terminal session and go to the scripts directory
 
       ````
-      <copy>./dbf_query_fw_policy.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DB_Firewall_Allow_List_Policy</copy>
       ````
 
-   ![](./images/avdf-128.png " ")
+3. Demonstrate connectivity through the Database Firewall and the ability to query the `EMPLOYEESEARCH_PROD` tables
 
-3. Go back to Audit Vault Web Console as "*AVAUDITOR*" to create a Database Firewall Policy
+      ````
+      <copy>./01_query_dbfw_log_unique.sh</copy>
+      ````
 
-   ![](./images/avdf-300.png " ")
+**Create a Database Firewall Policy**
 
-4. Click the `Policies` tab
+4. Login to the Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
-5. Click the `Database Firewall Policies` tab
+   ![](images/login_avauditor01.png " ")
 
-6. Click [**Create**]
+5. Click the `Policies` tab
 
-7. Create the Database Firewall Policy with the following information
+6. Click the `Database Firewall Policies` tab
 
-    - Target Type: *`Oracle Database`*
-    - Policy Name: *`HR Policy`*
-    - Description: *`This policy will protect the My HR App`*
+7. Click [**Create**]
 
-       ![](./images/avdf-129.png " ")
+8. Create the Database Firewall Policy with the following information
+
+    - Target Type: `Oracle Database`
+    - Policy Name: `HR Policy`
+    - Description: `This policy will protect the My HR App.`
+
+   ![](images/create_policy01.png " ")
 
     - Click [**Save**]
 
-8. Click [**Sets/Profiles**]
+9. Click on the `Hr Policy` Policy Name
 
-   ![](./images/avdf-130.png " ")
+   ![](images/hr_policy_name01.png " ")
 
-9. In the `SQL Cluster Sets` subtab, click [**Add**]
+10. Click the `Sets/Profiles` button
 
-   ![](./images/avdf-131.png " ")
+   ![](images/hr_profile_sets_profiles01.png " ")
 
-10. In the `Add SQL Cluster Set` screen, enter the following
+11. In the `SQL Cluster Sets` subtab, click `Add`
 
-    - Name: *`HR SQL Cluster`*
-    - Description: *`Known SQL statements for HR App`*
-    - Target: *`pdb1`*
-    - Show cluster for: *`Last 24 Hours`* (or make this `Last Week`)
-    - Click [**Go**]
+   ![](images/hr_policy_add_sqlcluster01.png " ")
 
-       ![](./images/avdf-132.png " ")
-    
-    - Click [**Actions**] and select *`ALL`* in `Row per page` option to display all the results
+12. In the `Add SQL Cluster Set` screen, enter the following
+
+    - Name: `HR SQL Cluster`
+    - Description: `Known SQL statements for HR App`
+    - Target: `pdb1`
+    - Show cluster for: `Last 24 Hours` (or make this `Last Week`)
+
+       ![](images/create_add_sql_cluster_set01.png " ")
 
     - Check the `Select all` box next to  the `Cluster ID` Header
 
-    - Like that we are sure to add the SQL Clusters that also allow our `sqlplus` connections to work
+    - Make sure you add the SQL Clusters that also allow our `sqlplus` connections to work
 
         ```
         SELECT DECODE(USER, '#######', XS_SYS_CONTEXT('##########','########'), USER) FROM SYS.DUAL
@@ -1060,117 +1132,126 @@ In this lab you will use the Glassfish Application to connect through the Oracle
         extracted_from_protocol invalid '#####################################'
         ```
 
-    - They should look like this:
+    - They should look like these two screenshots
 
-       ![](./images/avdf-133.png " ")
+       ![](images/hr_sql_profile_statements02.png " ")
+
+       ![](images/hr_sql_profile_statements03.png " ")
+
+        - Click [**Save**]
+
+13. Click [**Back**]
+
+14. In the `SQL Statement` sub-tab, click [**Add**]
+
+15. Complete the `SQL Statement` with the following information
+
+    - Rule Name: `Allows HR SQL`
+    - Description: `Allowed SQL statements for HR App`
+    - Profile: `Default`
+    - Cluster Set(s): `HR SQL Cluster`
+
+    - Action: `Pass`
+    - Logging Level: `Don't Log`
+    - Threat Severity: `Minimal`
+
+   ![](images/create_sql_statement_allow_rule.png " ")
+
+    - Click [**Save**]
+
+16. Next, add database users that we trust to connect to the database through the Database Firewall. We will create a `Database User Set` of our Database Administrators.
+
+17. Click `Sets/Profiles`
+
+18. Click `Database User Sets`
+
+19. Click [**Add**] and enter the following information
+
+    - Name: `Privileged Users`
+    - Description: `Users We Trust`
+    - Your output should look like this screenshot
+
+   ![](images/db_user_set01.png " ")
 
     - Click [**Save**]
 
-11. Click [**Back**]
+20. Your `HR Policy` should look like this from the `Session Context` sub-tab
 
-12. In the `SQL Statement` sub-tab, click [**Add**]
+   ![](images/hr_policy_final_session_context01.png " ")
 
-13. Complete the `SQL Statement` with the following information
+21. Your `HR Policy` should look like this from the `SQL Statement` sub-tab
 
-    - Rule Name: *`Allows HR SQL`*
-    - Description: *`Allowed SQL statements for HR App`*
-    - Profile: *`Default`*
-    - Cluster Set(s): *`HR SQL Cluster`*
-    - Action: *`Pass`*
-    - Logging Level: *`Don't Log`*
-    - Threat Severity: *`Minimal`*
+   ![](images/hr_policy_final_sql_statement01.png " ")
 
-       ![](./images/avdf-134.png " ")
+22. Your `HR Policy` should look like this from the `Database Objects` sub-tab
 
-    - Click [**Save**]
+   ![](images/hr_policy_final_db_objects01.png " ")
 
-14. Next, add database users that we trust to connect to the database through the Database Firewall. We will create a `Database User Set` of our Database Administrators.
+23. Your `HR Policy` should look like this from the `Default` sub-tab
 
-15. Click [**Sets/Profiles**]
+   ![](images/hr_policy_final_default01.png " ")    
 
-16. Click `Database User Sets` tab
+24. Click [**Save**]
 
-17. Click [**Add**] and enter the following information
+25. Then, contrary to what you would normally do, click [**Cancel**] to get back to the `User-defined Policies` section of the `Database Firewall Policies` sub-menu
 
-    - Name: *`Privileged Users`*
-    - Description: *`Users We Trust`*
-    - Sets Values: *`SYSTEM, EMPLOYEESEARCH_PROD`*
+**Publish the Database Firewall Policy**
 
-       ![](./images/avdf-135.png " ")
+26. If you are not already in the `Policies` tab, click `Policies` on the top menu
 
-    - Click [**Save**]
-    - Click [**Back**]
+27. Click the `Database Firewall Policies` link on the left-hand menu
 
-18. Your `HR Policy` should look like this from the `Session Context` sub-tab (`No Session Context Created`)
+28. Click the `checkbox` for `HR Policy` and click `Publish`
 
-   ![](./images/avdf-136.png " ")
+   ![](images/publish_db_firewall01.png " ")
 
-19. Your `HR Policy` should look like this from the `SQL Statement` sub-tab
+**Implement the Database Firewall Policy**
 
-   ![](./images/avdf-137.png " ")
+29. From the Audit Vault Dashboard, as `AVAUDITOR`, perform the following
 
-20. Your `HR Policy` should look like this from the `Database Objects` sub-tab (`No Database Objects Created`)
+30. Click the `Targets` tab
 
-   ![](./images/avdf-138.png " ")
+31. Click the Target Name `pdb1`
 
-21. Your `HR Policy` should look like this from the `Default` sub-tab
+32. Click the `Database Firewall Monitoring` sub-tab
 
-   ![](./images/avdf-139.png " ")
+33. Under `Database Firewall Policy`, change the Name to `HR Policy` and click the green `checkmark`
 
-22. Click [**Save**]
+   ![](images/apply_hr_firewall_policy.png " ")
 
-23. Then, click `Database Firewall Policies` sub-menu
+**Verify the Database Firewall Policy**
 
-24. Click the `checkbox` for `HR Policy` and click [**Publish**]
+34. Using your web browser, navigate to the Glassfish `My HR Application` (login as `hradmin` with the password `Oracle123`). We will validate that the Glassfish application functions as expected
 
-   ![](./images/avdf-140.png " ")
+35. Click `Search Employees`
 
-25. Click the `Targets` tab
+36. Click [**Search**]
 
-26. Click the Target Name `pdb1`
+   ![](images/hr_app_search_all01.png " ")
 
-27. Click the `Database Firewall Monitoring` sub-tab
+37. Add a search criteria and query again
 
-28. Under `Database Firewall Policy`, change the Name to *`HR Policy`* and click the green `checkmark` to implement the Database Firewall Policy
+   ![](images/hr_search_hrid196.png " ")
 
-   ![](./images/avdf-141.png " ")
-
-29. Now, we will validate that the Glassfish App functions as expected
-    - Go back to your Glassfish App web page and login as *`hradmin`* with the password "*`Oracle123`*"
-    - Click `Search Employees`
-    - Click [**Search**]
-
-       ![](./images/avdf-114.png " ")
-
-30. Add a search criteria and query again
-
-   ![](./images/avdf-142.png " ")
-
-31. Go back to your SSH session and run the same script to verify the new DB Firewall policy
+38. Go back to your terminal session and go to the scripts directory
 
       ````
-      <copy>./dbf_query_fw_policy.sh</copy>
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/AVDF/DB_Firewall_Allow_List_Policy</copy>
+      ````
+
+39. Execute the next script. This is a copy of the first script just with a different name so it creates a different outfile file.
+
+      ````
+      <copy>./02_query_dbfw_hr_policy.sh</copy>
       ````
 
 40. The output should show the `desc` command but return `No rows selected` for the SQL query
 
-   ![](./images/avdf-143.png " ")
+   ![](images/query_with_dbfw_hr_policy_enabled01.png " ")
 
     **Note**:  Remember, this is because the Database Firewall substituted "`select * from dual where 1=2`" for the regular query
 
-## **STEP 13**: DB Firewall - Restore Glassfish to use direct mode (without the Database Firewall)
-
-In this lab you will restore the Glassfish connection in order to connecting directly to the pluggable database `pdb1`
-
-1. Restore the Glassfish App connection string to direct connect mode
-
-      ````
-      <copy>./dbf_stop_proxy_glassfish.sh</copy>
-      ````
-
-   ![](./images/avdf-???.png " ")
-
-## **STEP 14**: (Advanced Labs) PostgreSQL Audit Collection
+## **STEP 13**: (Advanced Labs) PostgreSQL Audit Collection
 The objective of this lab is to collect audit log records from PostgreSQL databases (with pgaudit configured) into Oracle Audit Vault and Database Firewall:
 - Ensure to that `pgaudit` is installed extension:
     - The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL
@@ -1192,9 +1273,9 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
       <copy>sudo -u postgres ./01_init_postgreSQL.sh</copy>
       ````
 
-3. Next, go back to Audit Vault Web Console as "*AVADMIN*"
+3. Next, using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
-   ![](./images/avdf-200.png " ")
+   ![](images/login_avadmin01.png " ")
 
 4. Click the `Targets` tab
 
@@ -1245,9 +1326,9 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
       <copy>./02_pgsql_auditable_commands.sh</copy>
       ````
 
-11. Next, go back to Audit Vault Web Console as "*AVAUDITOR*"
+11. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
-   ![](./images/avdf-300.png " ")
+   ![](images/login_avauditor01.png " ")
 
 12. Click the `Reports` tab
 
@@ -1271,7 +1352,7 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
 
 18. Continue to explore until you are comfortable!
 
-## **STEP 15**: (Advanced Labs) Linux Audit Collection
+## **STEP 14**: (Advanced Labs) Linux Audit Collection
 
 Audit Vault can collect and report on the operating system audit data
 
@@ -1287,9 +1368,9 @@ Audit Vault can collect and report on the operating system audit data
       <copy>./01_setup_linux_auditing.sh</copy>
       ````
 
-3. Next, Go back to Audit Vault Web Console as "*AVADMIN*"
+3. Next, using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
-   ![](./images/avdf-200.png " ")
+   ![](images/login_avadmin01.png " ")
 
 4. Click `Targets`
 
@@ -1325,9 +1406,9 @@ Audit Vault can collect and report on the operating system audit data
       <copy>./02_generate_audit_activity.sh</copy>
       ````
 
-10. Next, go back to Audit Vault Web Console as "*AVAUDITOR*"
+10. Next, using a web browser, login to Audit Vault Web Console as `AVAUDITOR` with the password *"T06tron."*
 
-   ![](./images/avdf-300.png " ")
+   ![](images/login_avauditor01.png " ")
 
 11. Click the `Reports` tab
 
@@ -1351,13 +1432,13 @@ Audit Vault can collect and report on the operating system audit data
 
 17. Continue to explore until you are comfortable!
 
-## **STEP 16**: (Advanced Labs) LDAP/Active Directory Configuration
+## **STEP 15**: (Advanced Labs) LDAP/Active Directory Configuration
 - You must have an Microsoft Active Directory Server 2016 or higher available in the same VCN as the DBSecLab VMs (DBsec-lab, AV, DBFW, OKV)
 - You must have the knowledege to configure the MS AD 2016 server appropriately
 
-1. Go back to Audit Vault Web Console as "*AVADMIN*"
+1. Using a web browser, login to Audit Vault Web Console as *"AVADMIN"* with the password *"T06tron."*
 
-   ![](./images/avdf-200.png " ")
+   ![](images/login_avadmin01.png " ")
 
 2. Navigate to the Audit vault settings
 
