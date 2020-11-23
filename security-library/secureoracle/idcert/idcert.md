@@ -115,7 +115,7 @@ Follow the steps below to continue with the lab exercises.
 
     **Note**: You are welcome to add additional reviewers and users. OIM will generate a certification task for each **Map Name**. For more details in rules and definitions please consult the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A).
 
-    <a name="image-01"></a>![Image](images/img-custom-reviewer.png)
+    ![](./images/img-custom-reviewer.png " ")
     
     Figure 1. Custom Reviewers
 
@@ -221,13 +221,13 @@ Follow the steps below to continue with the lab exercises.
 	Server      secureoracle.oracledemo.com
     ```
 
-    <a name="image-02"></a>![Image](images/img-cert-email.png)
+    ![](./images/img-cert-email.png " ")
     
     Figure 2. Certification Email
 
 12. Proceed to Login to OIM Self Service as user **MGRAFF**. Go to **Self Service -> Certifications**. In the **Pending Certifications** page the new certification will be listed, proceed to click in the link name **2019 Q4 Review [Molly Graff]** to review and certify the users.
 
-    <a name="image-03"></a>![Image](images/user-certifications.png)
+    ![](./images/user-certifications.png " ")
     
     Figure 3. User Certification
 
@@ -254,9 +254,9 @@ You may now *proceed to the next lab*.
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
-- <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html" target="\_blank">Oracle Identity Governance Documentation</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html" target="\_blank">Oracle Access Management Documentation</a>
+- [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+- [Oracle Identity Governance Documentation](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html)
+- [Oracle Access Management Documentation](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html)
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
