@@ -34,18 +34,19 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-### Available Resources and definitions
+## **STEP 0:** Import Resources
+
 1. Click on the Home page and Import the Retail example
 
     ![](./images/importretail.png " ")
 
-We will be using the following resources for this lab.  Make sure they have all been imported.
-2.  Click on the Retail Sample tag link next to any of the resources.  
-3.  See that the grey menu bar on top includes Retail Sample and that there are 10 of 15 Resources visible in the main page
+2.  Make sure all the resources have all been imported.  We will be using them for this lab.
+3.  Click on the Retail Sample tag link next to any of the resources.  
+4.  See that the grey menu bar on top includes Retail Sample and that there are 10 of 15 Resources visible in the main page
 
     ![](./images/verifyimportedretail.png " ")
 
-### Available Sources for Lab 3 Pipeline
+### Available Sources and Definitions for Lab 3 Pipeline
 
 You need to create a pipeline that includes about 17 stages and resources.  Before you create a new pipeline make sure the resources below have all been imported.  Also make sure that in the catalog page all the connections that you use in the pipeline have the correct connections in the existing streams and DB sources.  Understand the properties for each resource and use them to create your pipeline.  For Streams for example you can double click on each stream in the catalog page and see its properties.  For the visualization resources below, you can click on the properties on the right part of the screen as you mouse over each resource.  Do not edit any of these resources as you will need them for this lab:
 
@@ -93,13 +94,35 @@ Now that we have the order history we would like to enrich this data with the cu
 
 ## **STEP 2:** Create GetCustomerDetails Stage
 
+
+
 1. Right click on the OrderStream and add a Query Stage.  
+   
+   ![](./images/orderstreamstage2.png " ")
+
 2. Name the query stage *GetCustomerDetails* and add a description.  
+
+   ![](./images/orderstreamstage3.png " ")
+
 3. On the details pane click on the Add a Source and pick CustomerDetails from the list.
+
+    ![](./images/getcustomerdetails2.png " ")
+
 4. You should see CustomerDetails added to both pipeline and the details pane.  Notice that the Correlation Conditions are shown.  Ignore the Some sources are not correlated error message.  This is because we are not done with the query conditions yet.  
-5. Pick Match Any condition because we would like to use an or condition.  For each field pick the appropriate value from the drop down shown in the Example below.  
-6. Make sure you create two query conditions as explained below.  
+
+    ![](./images/getcustomerdetails3.png " ")
+
+5. Pick Match Any condition because we would like to use an OR condition.  For each field pick the appropriate value from the drop down shown in the Example below.  
+
+    ![](./images/getcustomerdetails4.png " ")
+
+6. Make sure you create two query conditions as explained below. 
+   
+    
+
 7. Once you have added both conditions click anywhere outside of the query pane and the errors will go away and you will see the data from both sources joined and streaming. You can Pause the stream to understand the steps and the enriched data better.
+
+    ![](./images/getcustomerdetails5.png " ")
 
     Note: Some of the parameters that come in from the streams have two values such as *`after_PRODUCT_SKU`* and *`before_PRODUCT_SKU`*.  These are events within a stream
 
@@ -116,7 +139,6 @@ Now that we have the order history we would like to enrich this data with the cu
     <copy>Custid equals before_CUSTOMER_ID</copy>
     ```
 
-    <em>Hint: You can find the Lab 3 screens in the Appendix section of this workshop.  Feel free to reference them to build your pipeline</em>
 
 8. At any time during design of a pipeline you can click on Done button on the top left to exit the pipeline and get back to the catalog.  All your changes will be saved.
 
@@ -129,19 +151,30 @@ In this stage we would like to map a customer’s zip code to an actual latitude
 3. Click on Add a Source and select a source from the drop down.
 
     <em>Hint: this should be information from the database - A join of GetCustomerDetails with ZipToLatLogng from the dropdown.
-    You can compare your pipeline with the screen shots in the Appendix section.</em>
+
+    ![](./images/getlatlongfromzipcode.png " ")
 
 ## **STEP 4:** Create FilterCustomers Stage
 
 In the next stage we are only interested in customers that are located in our campaign regions and filter out everyone else.
 
 1. Right click on your stream and Add a Stage.  In this step your stage is NOT a Query stage.  Instead we are looking for a Pattern of type Spatial that selects customers based on a Geo Filter.  
+
+    ![](./images/geofilterpattern.png " ")
+
 2. Name your stage *FilterCustomers* and add the appropriate description.  
+
+    
 3. In the top right hand pane you should see the new stage.  
 4. Provide the correct resource from the drop down and map the associated parameters from the stream, namely LAT, LNG and for Object Key pick name using the + sign. The Coordinate System parameter is fixed and cannot be changed.  
+
+    ![](./images/filtercustomers.png " ")
+
 5. Observe that the data now starts streaming in with this Geo Filter.  
 6. After setting up the Parameters click on the Visualizations tab and see the Geo Filter that we are interested in for our campaign.  
 7. Also, notice the arrows indicating the customers location.
+
+    ![](./images/geofiltervisual.png " ")
 
 ## **STEP 5:** Create GetProductDetails Stage
 
@@ -150,26 +183,47 @@ In the this stage we would like to retrieve the product details from local datab
 1. Right mouse click on the end stream and Add a Stage.
 2. Name the new stage *GetProductDetails* with the appropriate description.  
 3. In the top right hand pane you should see the new stage and the type of stream you are using
+
 4. Click on Add a Source and select a source from the drop down that will give us the details about the Products.
 
+    ![](./images/getproductdetails.png " ")
+
     <em>Hint: this should be information from the database.  
-    You can compare your pipeline with the screen shots in the Appendix section.</em>
+
+    ![](./images/getproductdetails2.png " ")
 
 ## **STEP 6:** Create SegmentCustomers Stage
 
 Now we would like to add a Rule Stage to segment our customers based on what they have spent on their previous purchases by adding two additional fields based on rules defined below.
 
-1. First begin by using the Expression Builder *`<em>(fx)</em>`* to add the two new fields.  
+1. First begin by using the Expression Builder *`<em>(fx)</em>`* in the bottom half of the screen to add the two new fields.
+
+    ![](./images/expressionfx.png " ")
+
 2. Click on the (Sigma) button and add a new field as a String.  
+
+    ![](./images/expressionsigma.png " ")
+
 3. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it CustomerType.  
+
+    ![](./images/newaddedfields.png " ")
+
+
 4. Use *`<em>(fx)</em>`* again and add a new field as a numerical value.  
 5. For a numerical value make sure to begin the expression with `=` sign. You can give it default value like `=0`.  
-6. Rename the Calc to DiscountOffered using the right mouse click.
+
+    ![](./images/discountoffered.png " ")
+
+6. Rename the new Calc column to DiscountOffered using the right mouse click.
 7. Now right click on the GetProductDetails stage and add a Rule Stage
+
 8. Name the new rule stage *SegmentCustomers* with the appropriate description.
-9. In the Rules tab add the following three rules:
+9.  In the Rules tab add the following three rules:
 
     - *GoldCustomers:*
+
+
+    ![](./images/goldcustomers.png " ")
 
 If they have purchased ELECTRONICS AND the storesales (*Match All*) greater than $50 AND storesales  lower than or equal $900
 Then offer them a $5 discount as DiscountOffered and set the CustomerType to *GOLD*
@@ -184,7 +238,7 @@ Then offer them a $10 discount as DiscountOffered and set the CustomerType to *D
 If they have purchased any product and spent more than $1500
 Then offer them a $25 discount as DiscountOffered and set the CustomerType to *Platinum*
 
-Note that all other customers are automatically segmented as *BRONZE*. Also, feel free to compare your pipeline with the screen shots in the Appendix section.
+Note that all other customers are automatically segmented as *BRONZE*. 
 
 We are going to use the data from this stage in two ways which is why we are going to create two branches out from this stage.  In the first branch we will do some analysis on the revenue generated by customer types, i.e. the revenue amount generated by each segment.
 
@@ -198,26 +252,46 @@ After we have segmented the customers we need to Filter out all the customers th
   after_REVENUE is not null
   ```
 
-3. Then in the Summaries tab add a summary and do a SUM of all *`after_REVENUE`* to create a new field.
+    
+   
+
+3. Then in the Summaries tab add a summary and do a SUM of all *`after_REVENUE`* to create a new field. 
+    
+    ![](./images/rtrvenuesummaries.png " ")
+
+
+
 4. Notice that at first the new field is named *`SUM_after_REVENUE`*, but double clicking that column should enable you to rename it to RevByCustomerType.  Rename the new column.  
+
+    ![](./images/rtrvenuesummariesrename.png " ")
+    
 5. Finally Add a Group by with the CustomerType.
 6. Click on the Visualizations tab and name it to *RevenueByCustomerSegment*.  
 7. Add the Visualizations with Bar type with X Axis as the CustomerType and Y Axis as the RevByCustomerType.  
 8. Once you have created the bar chart you should see the streaming data as bar chart.
 
+    ![](./images/revenuebycustomersegment.png " ")
+
 Now we are going to create a parallel branch at the SegmentCustomers stage.  We are going to create this parallel branch to make predictions whether the customer is likely to redeem the offer based on their WebSales and StoreSales and the amount of Avgdiscount that is being offered.  
 
 ## **STEP 8:** Create PredictBuyNoBuy Stage
 
-1. Begin by creating a new Scoring stage by right clicking on the SegmentCustomers stage.   
+1. Begin by creating a new Scoring stage by right clicking on the SegmentCustomers stage.  
+
+    ![](./images/scoring.png " ")
+
 2. Name the stage *PredictBuyNoBuy*.
 3. Add description such as Predicts if customer is likely to redeem the offer using a classification algorithm.  
 4. Click Save.
+
 5. The Scoring stage allows you to use your own Machine Learning model that you have imported into GGSA.  
 6. Select the ML model CustomerRedeemModel that was imported from the dropdown and accept the default Model Version.
 7. Now make sure to map all the Model Property to the appropriate Pipeline Property if they are not already done for you.
-8. Based on these model features the output columns are RedeemPrediction, IgnoreProbability and RedeemProbability.  
-9. See them streaming in the Live Output region at the bottom of the screen.
+8.  Based on these model features the output columns are RedeemPrediction, IgnoreProbability and RedeemProbability.  
+
+    ![](./images/predictbuynotbuy.png " ")
+
+9.  See them streaming in the Live Output region at the bottom of the screen.
 
 ## **STEP 9:** Create GetCustomer Stage
 
@@ -240,14 +314,19 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 8. Be sure to select Now and not Unspecified.
 9. See the streaming data in the Live Output.
 
+    ![](./images/getcustomer.png " ")
+
 ## **STEP 10:** Create FilterLikelyBuyers Stage
 
 1. From the GetCustomer stage add a new Query Stage.
 2. Name the new stage *FilterLikelyBuyers*.
+
 3. Add a description: Removes customers who are unlikely to redeem the offer.
 4. Click Save.
 In this stage we are only interested in customers that are likely to take advantage of the offer by querying for all the customers whose RedeemPrediction equals (case sensitive) 1.  
 5. Click on the Filters tab and Add a Filter.
+
+    ![](./images/filterlikelybuyers.png " ")
 
 ## **STEP 11:** Create PersistPredictionsToKafka Stage
 
@@ -258,6 +337,8 @@ In the last stage we are interested in sending the data to a Kafka Target by map
 4. Click Save.
 5. Select PersistPrediction topic from the dropdown and make sure the properties are all mapped properly.
 
+    ![](./images/predicttokafka.png " ")
+
 ## **STEP 12:** Create LikelyBuyersByTypeAndZip Stage
 
 Create a parallel stage to group the likely buyers by type and by zip code.
@@ -267,12 +348,21 @@ Create a parallel stage to group the likely buyers by type and by zip code.
 3. Add description: Likely buyers by customer type and zip code.
 4. Click Save.
 5. Click on the Groups tab and Add a Summary with condition Count_of_RedeemPrediction.  
+
+    ![](./images/likelybuyersbytypeandzip.png " ")
+
 6. Again the column should be renamed to *LikelyBuyersByCustomerType*.  
 7. Now Add a GroupBy and select CustomerType.
-8. Repeat the same steps and Add a Summary with condition Count_of_RedeemPrediction but this time rename it to *LikelyBuyersByZipCode*.
-9. Click on the Visualizations tab and create a Pie chart for the LikelyBuyersByCustomerType and a Bar chart for the LikelyBuyersByZipCode.
 
-*You may now *proceed to the next lab*.
+8. Repeat the same steps and Add a Summary with condition Count_of_RedeemPrediction but this time rename it to *LikelyBuyersByZipCode*.
+
+    ![](./images/likelybuyersbytypeandzipgroups.png " ")
+
+9.  Click on the Visualizations tab and create a Pie chart for the LikelyBuyersByCustomerType and a Bar chart for the LikelyBuyersByZipCode.
+
+    ![](./images/likelybuyersbytypeandzipvisual.png " ")
+
+*You may now proceed to the next lab*.
 
 ## Learn More
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
