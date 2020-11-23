@@ -1,12 +1,12 @@
 # Column Conversions using GoldenGate
 
 ### Introduction
-In this lab we will load data in and configure active-active for High Availability
+In this lab we will load data in and configure Column Conversions
 
 *Estimated Lab Time*:  60 minutes
 
 ### Objectives
-Active - Active Replication using GoldenGate
+Column Conversions using GoldenGate
 
 ### Prerequisites
 This lab assumes you have:

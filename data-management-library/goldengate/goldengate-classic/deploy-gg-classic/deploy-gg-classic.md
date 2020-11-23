@@ -20,6 +20,9 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
+
+*Estimated Lab Time*:  60 minutes
+
 ## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
