@@ -32,24 +32,24 @@
     {
       "title": "GG Initial Setup",
       "description": "GG Initial Setup",
-      "filename": "../../gg-microservices-workshop-ogg-env-initial-setup/gg-microservices-workshop-ogg-env-initial-setup.md"
+      "filename": "../../initial-setup/initial-setup.md"
     },
 
      {
       "title": "Create Replication",
       "description": "GG Replication",
-      "filename": "../../gg-microservices-workshop-create-replication/gg-microservices-workshop-create-replication.md"
+      "filename": "../../create-replication/create-replication.md"
     },
   
     {
       "title": "HA/DR Replication",
       "description": "Hign Availability / Disaster Recovery Replication",
-      "filename": "../../gg-microservices-workshop-high-availability-disaster-recovery/gg-microservices-workshop-high-availability-disaster-recovery.md"
+      "filename": "../../ha-dr/ha-dr.md"
     },
     {
       "title": "Transformations",
       "description": "Transformations",
-      "filename": "../../gg-microservices-workshop-transformations-using-goldengate/gg-microservices-workshop-transformations-using-goldengate.md"
+      "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
     },
     {
       "title": "Adminclient",
