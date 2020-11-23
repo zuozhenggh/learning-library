@@ -1,10 +1,9 @@
-# Analyze Data
+# Setup Environment
 
 ## Introduction
+In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop. 
 
-Create an Oracle Database 21c instance. If you plan to create the instance in Oracle Cloud Infrastructure, follow the instructions explained in the <A class=external-link href="https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db/" rel=nofollow>Create an Oracle Cloud Infrastructure VM Database</A> tutorial.
-
-Estimated Lab Time: n minutes
+Estimated Lab Time: 15 minutes
 
 ### About Product/Technology
 Enter background information here..
@@ -29,63 +28,22 @@ In this lab, you will:
 
 ## **STEP 1**: title
 
-Step 1 opening paragraph.
+1. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created, that alias entries are either automatically or manually created in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
+2. The sub-directory `OraDB21Home1` is the sub-directory mentioned in the file `/u01/app/oraInventory/ContentsXML/oraInventory`.
+      ````
+      <HOME_LIST>
+      <HOME NAME="OraGrid210" LOC="/u01/app/21.0.0.0/grid" TYPE="O" IDX="1" CRS="true">
+      <HOME NAME="<B>OraDB21000_home1</B>" LOC="/u01/app/oracle/product/21.0.0.0/dbhome_1" TYPE="O" IDX="2">
+      </HOME_LIST>
+      ````
+3. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.
+      ````
+      cat /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
+      ````
+4. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.
 
-1. Sub step 1
 
-  To create a link to local file you want the reader to download, use this format:
 
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
-
-    ![Image alt text](images/sample1.png "Image title")
-
-3. Ordered list item 3 with the same image but no link to the text description below.
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. One example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent by at three spaces:
-
-      - List item 1
-      - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-	<copy>Enclose the text you want to copy in <copy&gt;</copy&gt;.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file&gt;</copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).
 
 ## Learn More
