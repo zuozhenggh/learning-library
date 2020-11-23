@@ -1,16 +1,16 @@
 # Defining a List of Values
 
 ## Introduction
-In this lab, you will learn how to utilize Web Source modules as the basis for list of values for use within an application.
+In this lab, you will learn how to utilize REST Data Sources as the basis for list of values for use within an application.
 
 Estimated Time: 10 minutes
 
 ### Information
 
 When you ran the script in your first workspace you created a REST
-handler for both the EMP and DEPT tables. You have already created a Web Source module for the EMP table. If you also create a Web Source module for the DEPT table, you can readily define List of Values for each in Shared Components. These can then be utilized within your pages to improve the data displayed and significantly improve data entry and quality.
+handler for both the EMP and DEPT tables. You have already created a REST Data Source for the EMP table. If you also create a REST Data Source for the DEPT table, you can readily define List of Values for each in Shared Components. These can then be utilized within your pages to improve the data displayed and significantly improve data entry and quality.
 
-## **STEP 1** – Add Web Source for DEPT
+## **STEP 1** – Add REST Data Source for DEPT
 
 1. Return to the Application Builder.
 2. Go to the App Builder Home Page.
@@ -19,19 +19,19 @@ handler for both the EMP and DEPT tables. You have already created a Web Source 
 
     ![](images/go-shared.png " ")
 
-5. On the Shared Components page, under Data Sources, click **Web Source Modules**.
+5. On the Shared Components page, under Data Sources, click **REST Data Sources**.
 
     ![](images/go-ws.png " ")
 
-6. On the Web Source Modules page, click **Create**.
+6. On the REST Data Sources page, click **Create**.
 
-    On the Create Web Source Module - Method dialog, click **Next**. *Default: From Scratch*
+    On the Create REST Data Source - Method dialog, click **Next**. *Default: From Scratch*
 
     ![](images/set-method.png " ")
 
-7. On the Create Web Source - General dialog, enter the following.
+7. On the Create REST Data Source - General dialog, enter the following.
 
-    - **Web Source Type:** select **ORACLE REST Data Services**
+    - **REST Data Source Type:** select **ORACLE REST Data Services**
     - **Name:** enter **REST DEPT Source**
     - **URL Endpoint:** enter the REST URI for the dept.rest handler Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/
 
@@ -46,18 +46,18 @@ handler for both the EMP and DEPT tables. You have already created a Web Source 
 
     ![](images/review-urls.png " ")
 
-    *Note: As you have already defined a Web Source with the same base path, for the REST EMP Source, then the Base URL is not updateable.*
+    *Note: As you have already defined a REST Data Source with the same base path, for the REST EMP Source, then the Base URL is not updateable.*
 
 9. On the Authentication dialog, click **Discover**.
     Authentication Required = No
-10. On the Preview dialog, click **Create Web Source**
+10. On the Preview dialog, click **Create REST Data Source**
 
     ![](images/create-ws.png " ")
 
 ## **STEP 2** – Creating List of Values
-You now have the Web Source modules which can be used as the basis for List of Values.
+You now have the REST Data Sources which can be used as the basis for List of Values.
 
-1. From the Web Source Modules page, in the breadcrumbs, click **Shared Components**.
+1. From the REST Data Sources page, in the breadcrumbs, click **Shared Components**.
 
     ![](images/go-from-breadcrumbs.png " ")
 
@@ -79,8 +79,8 @@ You now have the Web Source modules which can be used as the basis for List of V
 
 5. On the List of Values Source dialog, enter the following.
 
-    - **Data Source:** click **Web Source**
-    - **Web Source Module:**  select **REST EMP Source**
+    - **Data Source:** click **REST Data Source**
+    - **REST Data Source:**  select **REST EMP Source**
 
     Click **Next**.
 
@@ -106,8 +106,8 @@ You now have the Web Source modules which can be used as the basis for List of V
 
 9. On the List of Values Source dialog, enter the following.
 
-    - **Data Source:** click **Web Source**
-    - **Web Source Module**:  select **REST DEPT Source**
+    - **Data Source:** click **REST Data Source**
+    - **REST Data Source**:  select **REST DEPT Source**
 
     Click **Next**.
 
@@ -121,11 +121,11 @@ You now have the Web Source modules which can be used as the basis for List of V
 ## **STEP 3** – Update the Form
 If you review the Maintain Employee form page more closely you will see that the Department Number (DEPTNO) and the Manager (MGR) item are both numeric items and expect the end user to know the relevant numbers, rather than select from a list of names.
 
-1. From the Lists of Values page, in the Application Builder toolbar, click **Edit Page 5**.
+1. From the Lists of Values page, in the Application Builder toolbar, click **Edit Page 3**.
 
     ![](images/go-page3.png " ")
 
-2. From Page Designer, in the Rendering tree (left pane), click **P5_DEPTNO**.
+2. From Page Designer, in the Rendering tree (left pane), click **P3_DEPTNO**.
 
     In the Property Editor (right pane), enter the following.
 
@@ -137,7 +137,7 @@ If you review the Maintain Employee form page more closely you will see that the
     ![](images/set-deptno.png " ")
     ![](images/set-deptno2.png " ")
 
-3. From Page Designer, in the Rendering tree (left pane), click **P5_MGR**.
+3. From Page Designer, in the Rendering tree (left pane), click **P3_MGR**.
 
     In the Property Editor (right pane), enter the following.
 
@@ -153,7 +153,7 @@ If you review the Maintain Employee form page more closely you will see that the
 ## **STEP 4** – Update the Report
 Similarly, the Employees report shows numerical values rather than names.
 
-1. Navigate to Page 4 in Page Designer.     
+1. Navigate to Page 2 in Page Designer.     
     In the Page Designer toolbar, use the Page Selector or the down arrow next to the page number.
 
     ![](images/go-page2.png " ")

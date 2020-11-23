@@ -1,7 +1,7 @@
 # Creating Pages
 
 ## Introduction
-In this lab, you will learn how to utilize Web Source modules as the basis for creating reports and forms within the application.
+In this lab, you will learn how to utilize REST Data Sources as the basis for creating reports and forms within the application.
 
 Estimated Time: 15 minutes
 
@@ -34,8 +34,8 @@ Estimated Time: 15 minutes
     ![](images/set-nav.png " ")
 
 5. On the Data Source dialog, enter the following.
-    - **Data Source:** click **Web Source**
-    - **Web Source Module:** select **REST EMP Source**
+    - **Data Source:** click **REST Data Source**
+    - **REST Data Source:** select **REST EMP Source**
 
     Click **Next**.
 
@@ -90,7 +90,7 @@ The form page for editing records also needs some improvement.
 1. Click the edit icon on a row.
     The Form Page is displayed.
 
-    In the Developer Toolbar, click **Edit Page 5**.     
+    In the Developer Toolbar, click **Edit Page 3**.     
     Page Designer will be displayed for the current page.
 
     ![](images/go-pd.png " ")
@@ -99,7 +99,7 @@ The form page for editing records also needs some improvement.
 
 2. The Employee Number (EMPNO) item is currently hidden, as it is defined as the primary key for the table. However, users should be able to enter a value when inserting a record.
 
-    Within Page Designer, in the Rendering tab (left pane), click item **P5\_EMPNO**.
+    Within Page Designer, in the Rendering tab (left pane), click item **P3\_EMPNO**.
 
     In the Property Editor (right pane), enter the following.
 
@@ -110,16 +110,16 @@ The form page for editing records also needs some improvement.
 
 3. Employee Number should only be entered and should not be updated, as it is the primary key for the table. Therefore, you should make the item read only if displaying an existing record.
 
-    In the Property Editor (right pane), with **P5\_EMPNO** selected, enter the following.
+    In the Property Editor (right pane), with **P3\_EMPNO** selected, enter the following.
     - **Read Only > Type:** select **Item is NOT NULL**
-    - **Read Only > Item:** select **P5\_EMPNO**
+    - **Read Only > Item:** select **P3\_EMPNO**
 
     ![](images/set-empno-ro.png " ")
 
 4. The Job and Name items are currently defined as a Textarea, yet neither will be that large a value. Therefore, they should be changed to be a Text Field.
 
-    In the Rendering tab (left pane), click item **P5\_JOB**.        
-    Hold the {Control} Key and click **P5\_NAME**.
+    In the Rendering tab (left pane), click item **P3\_JOB**.        
+    Hold the {Control} Key and click **P3\_NAME**.
 
     In the Property Editor (right pane), for Identification > Type, select **Text Field**.
 
@@ -127,18 +127,18 @@ The form page for editing records also needs some improvement.
 
 5. The order of the items should be improved. This can easily be achieved by dragging and dropping items in either the Rendering tree or the Layout.
 
-    In the Rendering tree, click item **P5\_ENAME**.      
-    Drag **P5\_ENAME** up to be under **P5\_EMPNO**.  
+    In the Rendering tree, click item **P3\_ENAME**.      
+    Drag **P3\_ENAME** up to be under **P3\_EMPNO**.  
 
     ![](images/drag-name.png " ")
 
-6. In the Rendering tab (left pane), click item **P5\_DEPTNO**.      
-    Drag **P5\_DEPTNO** up to be under **P5\_ENAME**.
+6. In the Rendering tab (left pane), click item **P3\_DEPTNO**.      
+    Drag **P3\_DEPTNO** up to be under **P3\_ENAME**.
 
 7. The Commission (COMM) item should be placed on the same line as Salary (SAL).
 
-    In Layout (middle pane), select **P5\_COMM**.        
-    Drag it up next to **P5\_SAL**.
+    In Layout (middle pane), select **P3\_COMM**.        
+    Drag it up next to **P3\_SAL**.
 
     *Note: Do not drop the item until a large dark yellow box appears to the right of the existing items.*    
 
@@ -214,7 +214,7 @@ This completes Lab 4. You now know how to utilize a REST endpoint to develop a r
 
  - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
- - **Last Updated By/Date** - Tom McGinn, Database Innovation Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
