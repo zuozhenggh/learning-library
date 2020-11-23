@@ -38,7 +38,7 @@ This lab assumes you have:
     - Lab: Environment Setup
   
 
-**Detail Development Steps:**
+**Development Steps:**
 
 ## **STEP 1**:  Create a New SOA Composite Application 
 
