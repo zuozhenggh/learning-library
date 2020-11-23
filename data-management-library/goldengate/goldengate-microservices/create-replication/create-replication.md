@@ -18,8 +18,6 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 
-
-
 Lab  – Create GoldenGate Microservices Replication
 
 Lab  – Active - Active Replication
@@ -27,6 +25,8 @@ Lab  – Active - Active Replication
 Lab  – High Availability / Disaster Recovery
 
 Lab  - Transformations using GoldenGate Microservices
+
+Lab - AdminClient for remote support
 
 
 ### Objectives
