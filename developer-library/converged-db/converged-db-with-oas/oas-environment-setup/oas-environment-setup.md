@@ -35,7 +35,7 @@ This lab assumes you have completed the following labs:
       ````
 3. Run the script file to start the services.
    
-      ![](./images/oas-environment4.png " ")
+      ![](./images/oas-environment2.png " ")
       ````
       <copy>
       ./env_setup_oas-workshop.sh
@@ -44,13 +44,13 @@ This lab assumes you have completed the following labs:
   
       This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. 
 
-      ![](./images/oas-environment5.png " ")
+      ![](./images/oas-environment3.png " ")
 
       Check for the "Finished starting servers" status before proceeding next.
 
 4. Run "status.sh" file to get the status of all the services required for OAS. 
 
-      ![](./images/oas-environment6.png " ")
+      ![](./images/oas-environment4.png " ")
       ````
       <copy>
       /u01/oas/Oracle/middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh 
@@ -59,7 +59,7 @@ This lab assumes you have completed the following labs:
  
       The command shows all the service names and their status.
 
-      ![](./images/oas-environment7.png " ")
+      ![](./images/oas-environment5.png " ")
 
       Check for the success status as shown above, before login to OAS screen.
 
