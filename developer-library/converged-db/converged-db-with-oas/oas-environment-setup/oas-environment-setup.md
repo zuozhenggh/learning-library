@@ -35,7 +35,7 @@ This lab assumes you have completed the following labs:
       ````
 3. Run the script file to start the services.
    
-      ![](./images/oas-environment2.png " ")
+      ![](./images/oas-environment2.png " ") 
       ````
       <copy>
       ./env_setup_oas-workshop.sh
