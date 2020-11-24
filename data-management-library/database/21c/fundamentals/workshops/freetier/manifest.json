@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Database 21c Fundamentals",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -12,21 +12,21 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Create SSH Keys",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
+            "title": "Lab 2: Create a Virtual Cloud Network",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-virtual-cloud-network/create-virtual-cloud-network.md"
+        },
+        {
+            "title": "Lab 3: Create an OCI VM Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-oci-vm-db/create-oci-vm-db.md"
+        },
+        {
+            "title": "Lab 4: Prepare for 21c",
             "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
-        },
-        {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
         },
         {
             "title": "Lab 5: Analyze Data",

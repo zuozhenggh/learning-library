@@ -1,4 +1,4 @@
-# Lab 4: Tearing down Your JDE Environment
+# Tearing down Your JDE Environment
 
 ## Introduction
 Now that the lab has been completed, we will use the OCI Console to destroy your JDE Trial Edition in order to make sure all resources are properly managed. 

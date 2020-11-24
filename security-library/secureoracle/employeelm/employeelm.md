@@ -4,7 +4,7 @@
 
 In this lab we will exercise several use cases associated with employee on-boarding, user lifecycle, transfers, manager approvals and employee terminations using **My HR Application** as authoritative source in Oracle Identity Manager.
 
-My HR Application is a sample application developed in Oracle APEX and hosted in the Oracle database, its main function is to manage and store employees data in tables within the database HR schema. The Oracle Identity Manager **DBAT Connector** is used to interface with the database tables facilitating the on-boarding and management of employees records into Oracle Identity Manager.
+My HR Application is a sample application developed in Oracle APEX and hosted in the Oracle database. Its main function is to manage and store employee data in tables within the database HR schema. The Oracle Identity Manager **DBAT Connector** is used to interface with the database tables facilitating the on-boarding and management of employees records into Oracle Identity Manager.
 
 <a name="image-01"></a>![Image](images/img-myhr-app-menu.png)
 
@@ -149,7 +149,7 @@ Follow the steps below to continue with the lab exercises.
 
 7. Login as user **hradmin** with password **Oracle123** to My HR Application.
 
-    E.g. Use the following link and credentials:
+    E.g. use the following link and credentials:
 
     ```
     URL         http://secureoracle.oracledemo.com:7001/ords/f?p=100
@@ -157,7 +157,7 @@ Follow the steps below to continue with the lab exercises.
     Password    Oracle123
     ```
 
-8. Click on **Employees** tile to open the employees page and verify that employees in the table below has been added.
+8. Click on **Employees** tile to open the employees page and verify that employees in the table below have been added.
 
     E.g. the following new employees should be added after completing the previous import process:
 
@@ -169,7 +169,7 @@ Follow the steps below to continue with the lab exercises.
     Robin Mainor  RMAINOR   rmainor@oracledemo.com   Finance    Accountant  03-Sep-2018  28-Sep-2019  JSMITH    
     ```
 
-    **Note:** email accounts for the above employees have been created already, so you don't need to create the email accounts. Unless instructed to do so, do not delete existing employees as this will result in terminating existing OIM users which are part of other use cases in the demonstration environment.
+    **Note:** Email accounts for the above employees have been created already, so you don't need to create the email accounts. Unless instructed to do so, do not delete existing employees as this will result in terminating existing OIM users which are part of other use cases in the demonstration environment.
 
 9. Optionally, you can manually create new employees by clicking on the **Create** button, however be aware that only employees belonging to **Finance** or **Sales** departments should be successfully imported via the reconciliation task in OIM.
 
@@ -192,7 +192,7 @@ Follow the steps below to continue with the lab exercises.
 
 5. A list of events with Profile Name **HRData** should be listed as recent events indicating that records were processed. Click on one of the event IDs to see the details. If the current status shows **Creation Succeeded** for all the events, the import was successful. Sign out from the Admin Console.
 
-    **Notes**: the reconciliation job import new employees that do not exist in OIM. Optionally, you can perform a filtered reconciliation by entering a filter expression in the **Filter** field under the **Parameters** section in the Job Details page.
+    **Notes**: The reconciliation job import new employees that do not exist in OIM. Optionally, you can perform a filtered reconciliation by entering a filter expression in the **Filter** field under the **Parameters** section in the Job Details page.
 
     E.g. the following is a valid DBAT Connector filter expression to return employees with title **Accountant**:
 
@@ -226,7 +226,7 @@ Follow the steps below to continue with the lab exercises.
 ### Optional: Check for notification and new credentials
 1. Optionally, proceed to login to the Email Web client **Roundcube** as employee **DCOBY** using **Oracle123** as password.
 
-    E.g. login to Roundcube Email Client:
+    E.g. Login to Roundcube Email Client:
 
     ```
     URL         http://secureoracle.oracledemo.com/roundcubemail-1.4.1/
@@ -267,6 +267,7 @@ Follow the steps below to continue with the lab exercises.
 7. Once the job is completed with job status **Stopped::Success**, proceed to close the Scheduler window and sign out from the Admin Console.
 
 ### Checking on department transfer and role updates
+
 1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **Manage -> Users**, click on user login **DCOBY**.
 
 2. In the user details page, click on **Attributes** tab and check if the organization name has changed from Sales to Finance.
@@ -278,6 +279,7 @@ Follow the steps below to continue with the lab exercises.
 5. Sign out from the Self Service Console.
 
 ## **STEP 4**: Self Service, Access Request and Approvals
+
 1. Login to the Email Web client **Roundcube** as employee **RLAURIA** using password **Oracle123** to obtain the OIM user credentials (UserID) and link to set the password and challenge questions.
 
 2. Once the previous step is completed, proceed to login to the OIM Self Service console. Click on **Request Access -> Request for Self**.
@@ -294,7 +296,7 @@ Follow the steps below to continue with the lab exercises.
 
 8. Enter the application details as appropiate.
 
-    E.g. enter the following data for user **RLAURIA**
+    E.g. Enter the following data for user **RLAURIA**
 
     ```
 	ATTRIBUTE       VALUE
@@ -340,6 +342,7 @@ Follow the steps below to continue with the lab exercises.
 6. Logout from the Email Web Client.
 
 ### Checking on the requested application access
+
 1. Login as user **RLAURIA** to the OIM Self Service Console. Click on **My Access** tile.
 
 2. On my access page, click on the **Accounts** tab and confirm if the application **My OUD Directory** is listed.
@@ -353,6 +356,7 @@ Follow the steps below to continue with the lab exercises.
     Figure 4. Provisioned Account - Access Request
 
 ### Optional: Check the account on the target application
+
 1. This step is optional and requires to have the OAM server running to test the provisioned account. Since you have already started the OIM components, you will need at least 48 GB of total memory in your environment to be able to start the OAM server components in addition to OIM.
 
     E.g. login as **oracle** user and run the following command to start OAM:
@@ -380,6 +384,7 @@ Follow the steps below to continue with the lab exercises.
 4. Proceed to sign out from the OAM console.
 
 ## **STEP 5**: Employee Termination
+
 1. Login as user **hradmin** with password **Oracle123** to My HR Application.
 
 2. Click on **Employees** tile to open the employees page, select one employee e.g. **Denny Coby** and click on the **Pencil** icon to edit the employee details.
@@ -397,11 +402,13 @@ Follow the steps below to continue with the lab exercises.
 8. A list of events with Profile Name **HRData** should be listed as recent events indicating that records were processed. Click on the last event ID to see the details. If the current status shows **Delete Succeeded** for the event, the employee was successfully deleted. Sign out from the Admin Console.
 
 ### Checking on terminated employees
+
 1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **Manage -> Users**, review if the terminated employee is not listed as user in the users page.
 
 2. Sign out from the Self Service Console.
 
 ## **STEP 6**: About Approval Workflows
+
 1. OIM Request generation and approval depends on the usage and configuration of workflow rules. Workflow rules determine the following:
 	* Whether or not approvals are required for an operation
 	* Which workflow must be invoked for a specific operation
@@ -435,7 +442,7 @@ Use these links to get more information about Oracle Identity and Access Managem
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
-- **Last Updated By/Date** - Ricardo Gutierrez, June 2020
+- **Last Updated By/Date** - Ricardo Gutierrez, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
