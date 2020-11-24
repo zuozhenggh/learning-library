@@ -131,6 +131,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     user=<user ocid>
     fingerprint=<api key fingerprint>
     key_file=~/dragon_ssh_key
+    pass_phrase=banana
     tenancy=<tenancy ocid>
     compartment_id=<compartment ocid>
     region=<region code>
@@ -150,6 +151,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     user=<user ocid>
     fingerprint=<api key fingerprint>
     key_file=~/dragon_ssh_key
+    pass_phrase=banana
     tenancy=<tenancy ocid>
     compartment_id=<compartment ocid>
     region=<region code>
@@ -277,7 +279,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     $ <copy>cd</copy>
     ```
 
-3. Destroy you DRAGON Stack backend
+3. Destroy your DRAGON Stack backend
 
     ```
     $ <copy>./dragon-linux-x86_64-2.0.7 -destroy</copy>
