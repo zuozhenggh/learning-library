@@ -1,0 +1,4 @@
+This image shows the Big Data Service Add Backends page in the Cloud Console. 
+
+The page contains:
+

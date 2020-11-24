@@ -1,0 +1,4 @@
+This image shows the ??? Status icon Big Data Service Load Balancer Details page in the Cloud Console. 
+
+The page contains:
+
