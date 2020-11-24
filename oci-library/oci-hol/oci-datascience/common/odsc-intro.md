@@ -16,7 +16,7 @@ The Data Science Service:
 * Integrates with the rest of the Oracle Cloud Infrastructure stack, including Functions, Data Flow, Autonomous Data Warehouse, and Object Storage.
 * Helps data scientists concentrate on methodology and domain expertise to deliver more models to production.
 
-Estimated Workshop Time: 3 hours
+Estimated Workshop Time: 2 hours
 
 ### Objectives
 In this lab, you:
@@ -43,7 +43,8 @@ You can *proceed to the next lab*.
 * **Last Updated By/Date**: 
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
 
-## See an issue?
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1) and include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, enter it manually. If you want us to follow up with you, enter your email in the *Feedback Comments* section and include the workshop name and lab in your request.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

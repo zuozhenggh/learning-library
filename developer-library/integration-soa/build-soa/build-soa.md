@@ -14,19 +14,18 @@ The validate payment solution will look as the following from an architectural p
 
 ![](./images/Paymentvalidation.png " ")
 
-Estimated Lab Time: 90 minutes
+*Estimated Lab Time*: 90 minutes
 
 ### Objectives
 
-**Construct Payment Validation process orchestration**
+**Construct Payment Validation orchestration**
 
-The validation process flow are outlined here:
-+ The payment information is retrieved from the database, using the credit card number quoted in the order message as the key. If there is no data available with this credit card number, payment is denied.
-+ If data for the credit card number is available, the expiry date in the database record is compared to the expiry date listed in the order message. If they are not the same, the payment is also denied.
-+ The last check compares if the total order amount is less than the daily limit on the credit card in the database.
-+ When all tests are successful, the payment is authorized. Otherwise it’s denied.
-+ The implementation of this service uses a BPEL process to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
-
+The validation process flow outlines:
+- The payment information is retrieved from the database, using the credit card number quoted in the order message as the key. If there is no data available with this credit card number, payment is denied.
+- If data for the credit card number is available, the expiry date in the database record is compared to the expiry date listed in the order message. If they are not the same, the payment is also denied.
+- The last check compares if the total order amount is less than the daily limit on the credit card in the database.
+- When all tests are successful, the payment is authorized. Otherwise it’s denied.
+- The implementation of this service uses a BPEL (Business Process Execution Language), a process orchestrator to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
 
 ### Prerequisites
 This lab assumes you have:
@@ -37,9 +36,6 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
   
-
-**Validation Payment, development Steps:**
-
 ## **STEP 1**:  Create a New SOA Composite Application 
 
 Let's name the application e2e-1201-composites and the SOA project in JDeveloper called ValidatePayment.
@@ -75,7 +71,6 @@ To make sure of the templates, please follow the steps below:
 
 8. Click OK to close the Preferences window.
 
-
 ## **STEP 2**:  Use a New Template to Create the ValidatePayment Composite.
 
 Create a new SOA application and project. There are various ways and shortcuts to do this, and in this case choose File > New > Application... from the menu.
@@ -91,7 +86,7 @@ with their default values:
       - b. Directory of your choice, as shown below
    ![](./images/validatepymnt11.png " ")
 
-5. Click Next
+5. Click Next.
 
 6. When you create a new application, you are prompted to create a new project. Set the following fields:
       - a. Project Name: ValidatePayment
@@ -99,7 +94,7 @@ with their default values:
       - c. Project Features: SOA Suite
    ![](./images/validatepymnt12.png " ")
 
-7. Click Next
+7. Click Next.
 8. The next step is to pick a ‘Standard Composite’, or a ‘SOA Template’. Choose ‘SOA Template’.
 
    ![](./images/validatepymnt13.png " ")
@@ -177,9 +172,6 @@ Now build your project:
    If your log looks like this, everything is fine:
 
    ![](./images/validatepymnt21.png " ")
-
-
-
 
 **Let's review the validate payment BPEL process.** 
 7.  Double-click the BPEL process to open the BPEL designer shown here:
