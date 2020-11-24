@@ -49,7 +49,13 @@
             }
             ,
             {
-            "title": "Lab 7: Clean up Resources Used in the Workshop (Optional)",
+            "title": "Lab 7: Upload Data to Hadoop Distributed File System (HDFS) and Object Store",
+            "description": "This lab shows you how to upload data to HDFS and Object Store.",
+            "filename": "./../../upload-query-data/upload-query-data.md"
+            }
+            ,
+            {
+            "title": "Lab 8: Clean up Resources Used in the Workshop (Optional)",
             "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
             "filename": "./../../bds-cleanup/bds-cleanup.md"
             }
