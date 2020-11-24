@@ -15,18 +15,6 @@
             "title": "Lab 1: Migration of MySQL Database to the Cloud",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../mysql-migration/mysql-migration.md"
-        },
-        {
-            "title": "Lab 2: High Availability for the OsCommerce instance",
-            "filename": "../../ha-oscommerce/ha-oscommerce.md"
-        },
-        {
-            "title": "Lab 3: Integrate Oracle Cloud with your Application",
-            "filename": "../../integrate/integrate.md"
-        },
-        {
-            "title": "Lab 4: Monitoring your Application with OMC",
-            "filename": "../../monitoring/monitoring.md"
         }
     ]
 }

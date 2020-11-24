@@ -22,10 +22,10 @@ Estimated Lab Time:  1 hour
 * [Spin MySQL on OCI](https://oracle.github.io/learning-library/data-management-library/mysql/mds-intro/workshops/freetier/?lab=introduction)
 
 ### Administrative Note
-Please ensure you have MySQL Database installed on your local machine. Before proceeding with the lab ensure you have installed all the mentioned pre-requisites. This section outlines how to migrate database from On-Premises MySQL to MDS on OCI. For this workshop we will use the provided database. [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JPnFpTHgLX9vNwc6KtkXIkXAFFM65sOHfzooM8AJfDk/n/orasenatdecanational01/b/osCommerceTest/o/osCommerceDemo-disk001.vmdk). Please note in this workshop we are using Mac-OS.
+Please ensure you have MySQL Database installed on your local machine. Before proceeding with the lab ensure you have installed all the mentioned pre-requisites. This section outlines how to migrate database from On-Premises MySQL to MDS on OCI. For this workshop we will use the provided database. [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LTguZ7S_JQ_v7rBhNX8qOoSAw3dU4cgMoY7tdtv6JBpuj4DB7T-sYEk0DnwC_ALI/n/orasenatdpltintegration03/b/mysql_test/o/library-dump.sql). Please note in this workshop we are using Mac-OS.
 
 ## **Step 1:** Download the Database to your local MySQL Database
-1. If you do not have it on your local machine, make sure to download the database file.[Database Dump](https://www.virtualbox.org/wiki/Downloads).
+1. If you do not have it on your local machine, make sure to download the database file.[Database Dump](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LTguZ7S_JQ_v7rBhNX8qOoSAw3dU4cgMoY7tdtv6JBpuj4DB7T-sYEk0DnwC_ALI/n/orasenatdpltintegration03/b/mysql_test/o/library-dump.sql).
 
 2. Open the terminal and connect to your local MySQL Database. Enter the password you specified when installing MySQL.
 
