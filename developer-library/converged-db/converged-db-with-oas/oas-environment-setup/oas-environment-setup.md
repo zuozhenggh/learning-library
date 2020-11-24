@@ -35,7 +35,7 @@ This lab assumes you have completed the following labs:
       ````
 3. Run the script file to start the services.
    
-      ![](./images/oas-environment2.PNG " ") 
+      ![](./images/oas-environment2.png " ") 
       ````
       <copy>
       ./env_setup_oas-workshop.sh
@@ -44,7 +44,7 @@ This lab assumes you have completed the following labs:
   
       All the required services of converged database and OAS will start in 5-6 minutes. 
 
-      ![](./images/oas-environment3.PNG " ")
+      ![](./images/oas-environment3.png " ")
 
       Check for the "Finished starting servers" status before proceeding next.
 
