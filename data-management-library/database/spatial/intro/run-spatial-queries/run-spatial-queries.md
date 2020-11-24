@@ -6,14 +6,14 @@ This lab walks you through basic spatial queries in Oracle Database.  You will u
 
 Estimated Lab Time: 15 minutes
 
-### About Product/Technology
-Oracle Database includes a robust library of functions and operators for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and much more. These operations are accesasible through native SQL, PL/SQL, Java APIs, and any other language that communicates with Oracle Database.
+### About Spatial Queries
+Oracle Database includes a robust library of functions and operators for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and much more. These operations are accessible through native SQL, PL/SQL, Java APIs, and any other language that communicates with Oracle Database.
 
 ### Objectives
 
 In this lab, you will:
 * Identify BRANCHES having proximity relationships to a WAREHOUSE
-* Identify BRANCHES having containment and provimity relationships to a COASTAL_ZONE
+* Identify BRANCHES having containment and proximity relationships to a COASTAL_ZONE
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ In this lab, you will:
 
 ## Spatial Queries 
 
-Spatial queries in Oracle Database are just like any other traiditonal queries you are accustomed to. The only difference is a set of spatial functions and operators that are probably new to you.
+Spatial queries in Oracle Database are just like any other traditional queries you are accustomed to. The only difference is a set of spatial functions and operators that are probably new to you.
 
 **Identify 5 closest branches to the the Dallas Warehouse:**
 ```
@@ -232,11 +232,11 @@ Notes:
 * [Spatial blogs](https://blogs.oracle.com/oraclespatial/)
 
 ## Acknowledgements
-* **Author** - David Lapp, Database Product Management, Oracle, November 2020
-<!--*  **Last Updated By/Date** - <Name, Group, Month Year>  -->
+* **Author** - David Lapp, Database Product Management, Oracle
+*  **Last Updated By/Date** - Kamryn Vinson, November 2020
 
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-spatial). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
