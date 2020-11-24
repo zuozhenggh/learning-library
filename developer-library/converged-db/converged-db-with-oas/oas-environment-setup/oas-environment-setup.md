@@ -42,7 +42,7 @@ This lab assumes you have completed the following labs:
       </copy>
       ````
   
-      This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. 
+      All the required services of converged database and OAS shall starts in 5-6 minutes. 
 
       ![](./images/oas-environment3.png " ")
 
