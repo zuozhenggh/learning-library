@@ -74,8 +74,6 @@ Estimated lab time: 1 hour
 
 In this lab, you learned how to simulate a disaster event, and redirect traffic to your DR region. You have completed this workshop.
 
-[Back to top](#introduction)
-
 ## Learn More
 
 -   To learn more about Load Balancer, feel free to explore the capabilities by clicking on this link: [Load Balancer Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
