@@ -55,12 +55,6 @@
 
     },
     {
-      "title": "GoldenGate for PostgresSQL Setup",
-      "description": "GoldenGate for PostgresSQL Setup",
-      "filename": "../../postgres-installation/postgres-installation.md"
-
-    },
-    {
       "title": "PostgreSQL to PostgresSQL",
       "description": "PostgreSQL to PostpresSQL",
       "filename": "../../postgresql-to-postgresql/postgresql-to-postgresql.md"
