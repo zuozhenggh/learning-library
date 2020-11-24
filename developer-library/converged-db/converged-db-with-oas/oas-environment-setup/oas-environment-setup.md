@@ -42,7 +42,7 @@ This lab assumes you have completed the following labs:
       </copy>
       ````
   
-      All the required services of converged database and OAS shall starts in 5-6 minutes. 
+      All the required services of converged database and OAS will start in 5-6 minutes. 
 
       ![](./images/oas-environment3.png " ")
 
