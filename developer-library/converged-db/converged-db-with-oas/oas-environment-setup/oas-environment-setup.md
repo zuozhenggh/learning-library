@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
       ![](./images/oas-environment4.png " ")
       ````
       <copy>
-      ./env_setup_script.sh
+      ./env_setup_oas-workshop.sh
       </copy>
       ````
   
@@ -53,7 +53,7 @@ This lab assumes you have completed the following labs:
       ![](./images/oas-environment6.png " ")
       ````
       <copy>
-      /u01/oas/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
+      /u01/oas/Oracle/middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh 
       </copy>
       ````
  
