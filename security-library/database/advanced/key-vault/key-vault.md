@@ -45,15 +45,13 @@ This lab assumes you have:
 ## **STEP 1**: Add an Endpoint
 First of all, we need Oracle Key Vault to know about our database server. We do this by creating it as an endpoint in OKV
 
-1. Before beginning this lab, make sure you have performed at least the steps 1 to 4 of the [TDE labs available here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=703&p210_type=3&session=116816896334316)
+1. Open a Web Browser at the URL `https://<OKV-VM_@IP-Public>`
 
-2. Now, open a Web Browser at the URL `https://<OKV-VM_@IP-Public>`
-
-3. Login to Oracle Key Vault Web Console as "*RESTADMIN*" with the password "*T06tron.*"
+2. Login to Oracle Key Vault Web Console as *"RESTADMIN"* with the password *"T06tron."*
 
    ![](./images/okv-001.png " ")
 
-4. Click [**Endpoints**]
+3. Click [**Endpoints**]
 
    ![](./images/okv-002.png " ")
 
@@ -61,7 +59,7 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
 
    ![](./images/okv-003.png " ")
 
-5. You will use the `OKVdeploy.tar` file to deploy the utiliy to automate the processes
+5. You will use the utility we have created, `OKVdeploy.tar`, to automate this process
 
     - Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -72,24 +70,24 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
     - Go to the scripts directory
 
           ````
-        <copy>cd $DBSEC_LABS/okv</copy>
+        <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Key_Vault/Add_Endpoint</copy>
           ````
 
-    - Unpack the binary (we have already downloaded the file for you into the DBSecLab VM)
+    - Unpack the binary (file has been already downloaded into your VM by default)
 
           ````
-        <copy>./okv_unpack_restservice.sh</copy>
+        <copy>./01_unpack_restservice.sh</copy>
           ````
 
-       ![](./images/okv-004.png " ")
+   ![](./images/okv-004.png " ")
 
-    - Create the script to create the Endpoint, Wallet and deploy the OKV software
+    - Check the OKV Server config
 
           ````
-        <copy>./okv_crea_config_script.sh</copy>
+        <copy>./02_review_config.sh</copy>
           ````
 
-       ![](./images/okv-005.png " ")
+   ![](./images/okv-005.png " ")
 
     - Add your `CDB1` database on DBSec-Lab VM as Endpoint
 
