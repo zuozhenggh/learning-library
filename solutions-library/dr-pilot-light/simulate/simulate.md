@@ -16,6 +16,7 @@ Estimated lab time: 1 hour
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Configured [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html) for the python scripts to call resources in your tenancy.
 
 ## **STEP 1:** The Disaster
 
@@ -47,14 +48,9 @@ Estimated lab time: 1 hour
   ![](./images/8.png)
 
 7. If you navigate to health/check traffic steering - you can see the health for the Primary region load balancer is now critical. If you visit the IP address of this load balancer, you will get 502 bad gateway. 
-
 8. Now, enter your DNS url in your web browswer, you should see the HTML indicating you are now seeing traffic steered to your standby region. 
 
 ## **STEP 2:** Scaling the standby region compute node
-
-### Configure SDK
-
-1. Please follow steps in [lab200](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide200.md) to configure the SDK for your python scripts to call resources in your tenancy.
 
 ### Run Python scripts
 
@@ -77,8 +73,6 @@ Estimated lab time: 1 hour
   ![](./images/11.PNG)
 
 In this lab, you learned how to simulate a disaster event, and redirect traffic to your DR region. You have completed this workshop.
-
-[Back to top](#introduction)
 
 ## Learn More
 

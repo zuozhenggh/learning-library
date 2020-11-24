@@ -35,7 +35,7 @@ Estimated lab time: 1 hour
         │   │   ├── boot-volume-migration.py
     ```
         
-- Configure OCI SDK
+- Configured [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html) for the python scripts to call resources in your tenancy.
 - Relevant IAM permissions in your tenancy to manage [DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/dnspolicyreference.htm) & [block volumes](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm#Details_for_the_Core_Services)
 
 ## **STEP 1:** DNS traffic steering
