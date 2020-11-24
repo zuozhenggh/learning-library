@@ -88,7 +88,7 @@ When prompted enter the password: Oracle1
 ````
 When prompted enter the password: Oracle1
 
-2. open a secong session
+2. open a second session
 
 ````
 <copy>sqlplus ggadmin@pdbwest</copy>
