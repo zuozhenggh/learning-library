@@ -29,8 +29,8 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Initial GoldenGate Setup",
-      "description": "Initial Setup",
+      "title": "GoldenGate for Oracle Setup",
+      "description": "GoldenGate for Oracle Setup",
       "filename": "../../initial-setup/initial-setup.md"
     },
     {
@@ -55,8 +55,8 @@
 
     },
     {
-      "title": "Install GoldenGate for PostgresSQL",
-      "description": "GoldenGate installation for PostgresSQL",
+      "title": "GoldenGate for PostgresSQL Setup",
+      "description": "GoldenGate for PostgresSQL Setup",
       "filename": "../../postgres-installation/postgres-installation.md"
 
     },
