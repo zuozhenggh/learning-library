@@ -98,6 +98,11 @@ Time to update the existing chart line (series), and add a few more data series.
 
     ![](images/set-series1.png " ")
 
+    - Select **Axes > y**
+    - **Value > Decimal Places** enter **1**, this will allow the labels on the chart to have decimal values that are more readable.
+
+    ![](images/set-y-axis.png " ")
+
 2. The next two series are very similar to the first, so it is easiest to just duplicate the existing series.
 
     In the Rendering tree (left pane), under **Country Chart**, right-click **Dollar Exchange Rate**, click **Duplicate**.
@@ -170,7 +175,7 @@ This completes Lab 5. In this lab you learnt how to create and modify a chart ad
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -1,0 +1,369 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "ai-ml-library": {
+      "name": "ai-ml-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "analytics-library": {
+      "name": "analytics-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "common": {
+      "name": "common",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "data-management-library": {
+      "name": "data-management-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "developer-library": {
+      "name": "developer-library",
+      "isOrdered": true,
+      "folders": {
+        "apex": {
+          "name": "apex",
+          "isOrdered": true,
+          "folders": {
+            "apex-192": {
+              "name": "apex-192",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "apex-201": {
+              "name": "apex-201",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "common": {
+              "name": "common",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "developer-live": {
+              "name": "developer-live",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "existing-tables": {
+              "name": "existing-tables",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "intro-to-javascript": {
+              "name": "intro-to-javascript",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "low-code-development": {
+              "name": "low-code-development",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "proof-of-concept": {
+              "name": "proof-of-concept",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "remote-data-source": {
+              "name": "remote-data-source",
+              "isOrdered": true,
+              "folders": {
+                "0-workshop-intro-and-setup": {
+                  "name": "0-workshop-intro-and-setup",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "2-create-table": {
+                  "name": "2-create-table",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "3-populating-table": {
+                  "name": "3-populating-table",
+                  "isOrdered": true,
+                  "folders": {
+                    "images": {
+                      "name": "images",
+                      "isOrdered": true,
+                      "folders": {},
+                      "files": {}
+                    }
+                  },
+                  "files": {
+                    "3-populating-table": 0
+                  }
+                },
+                "4-improving-report": {
+                  "name": "4-improving-report",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "5-adding-chart": {
+                  "name": "5-adding-chart",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "6-adding-chart-criteria": {
+                  "name": "6-adding-chart-criteria",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "solutions": {
+                  "name": "solutions",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "workshops": {
+                  "name": "workshops",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                }
+              },
+              "files": {}
+            },
+            "rest-data-source": {
+              "name": "rest-data-source",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "spreadsheet": {
+              "name": "spreadsheet",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {
+            "README": 0
+          }
+        },
+        "atp-apex-oda": {
+          "name": "atp-apex-oda",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "build-digital-assistant": {
+          "name": "build-digital-assistant",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "build-low-code-apps": {
+          "name": "build-low-code-apps",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "cloud-native": {
+          "name": "cloud-native",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "converged-db": {
+          "name": "converged-db",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "dragon": {
+          "name": "dragon",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "goldengate": {
+          "name": "goldengate",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "goldengateforbigdata": {
+          "name": "goldengateforbigdata",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "hub": {
+          "name": "hub",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "integration-soa-workshop": {
+          "name": "integration-soa-workshop",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "integration-soa": {
+          "name": "integration-soa",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "micronaut-oci-atp": {
+          "name": "micronaut-oci-atp",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "microservices-serverless-workshop": {
+          "name": "microservices-serverless-workshop",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "microservices-with-converged-db": {
+          "name": "microservices-with-converged-db",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "mushop": {
+          "name": "mushop",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "mysql-nodejs": {
+          "name": "mysql-nodejs",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "new-features-for-developers": {
+          "name": "new-features-for-developers",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "oracle-db-features-for-developers": {
+          "name": "oracle-db-features-for-developers",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "orcl-db-cicd-hol": {
+          "name": "orcl-db-cicd-hol",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "python-and-database-scripting": {
+          "name": "python-and-database-scripting",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "python-on-atp": {
+          "name": "python-on-atp",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "rest-services-for-adb": {
+          "name": "rest-services-for-adb",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "soamp-migration": {
+          "name": "soamp-migration",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "tomcat-to-oci": {
+          "name": "tomcat-to-oci",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "weblogic-to-oci": {
+          "name": "weblogic-to-oci",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {
+        "README": 0
+      }
+    },
+    "enterprise-manageability-library": {
+      "name": "enterprise-manageability-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "oci-library": {
+      "name": "oci-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "ospa-library": {
+      "name": "ospa-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "sample-livelabs-templates": {
+      "name": "sample-livelabs-templates",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "security-library": {
+      "name": "security-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "solutions-library": {
+      "name": "solutions-library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "workshops": {
+      "name": "workshops",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "LICENSE": 0,
+    "CONTRIBUTING": 1,
+    "README": 2
+  }
+}
