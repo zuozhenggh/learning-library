@@ -1,7 +1,7 @@
 # Annotating images with COCO Annotator
 
 ## Introduction
-Image annotation is a powerful process that enabled computer vision system to segment objects in image or video data. The core of computer vision techniques hinge on this data. COCO is a large dataset with already annotated images that can be downloaded and used as sample when developing new methodolgies. In this lab we will explore how to create your own dataset around a hypothetical use case: segmenting and identifying `apples` and `oranges` in images. Since COCO already has a number of images we can use, we will pull our dataset from there in order to save time. One you are familiar with the workflow, the potential for extensibility is near infinite!
+Image annotation is a powerful process that enables object segmentation for artificial intelligence models in image or video data. The core of many computer vision techniques hinge on annotated images for training. COCO is a large dataset with already annotated images that can be downloaded and used as sample when developing new solutions for artificial intelligence use cases. In this lab we will explore how to create your own dataset around a hypothetical use case: segmenting and identifying `apples` and `oranges` in images. Since COCO already has a number of images we can use, we will pull our dataset from there in order to save time. One you are familiar with the workflow, the potential for extensibility is near infinite!
 
 Estimated Lab Time:  2 hours
 
@@ -13,30 +13,30 @@ In this lab, you will learn about:
 
 ## **STEP 1**: Downloading Sample COCO Data
 
-For our example, we will build a simple dataset of apples and oranges. Go to the [COCO dataset explorer](https://cocodataset.org/#explore) and select the filters for `apple` and `orange` and then click `search`. This will return a list of images that fit those categories. The results are not exclusive, so there will be other objects in the images as well. 
+For this example, we will build a simple dataset of apples and oranges. Go to the [COCO dataset explorer](https://cocodataset.org/#explore) and select the filters for `apple` and `orange` and then click `search`. This will return a list of images that fit those categories. The results are not exclusive, so there will be other objects in the images as well. 
 
 ![COCO Explorer homepage](images/coco-explorer-1.png)
 
-To download an image, click on the `URL` icon above the image. This will drop down 1 or more links. Find **20 images** that clearly show both `apples` and `oranges`, right click on their respective URLs, and save the images in a folder. These images will be used for training. Additionally, download 3 images for a validation dataset.
+To download an image, click on the `URL` icon above the image. This will drop down 1 or more links. Find **20 images** that clearly show both `apples` and `oranges`, click on their respective URLs, and then save the images in a folder. These images will be used for training. Additionally, download **3 images** for validation.
 
 ![COCO Image URL](images/coco-explorer-2.png)
 ![Downloading the image](images/coco-explorer-3.png)
 
-Next, with the COCO annotator running, navigate to it on your browser (http://localhost:5000 from `Setting Up the Environment` lab) and create a dataset by clicking on **Datasets** in the top navigation menu, and then the green **Create** button. In the resulting pop up window, enter a name for the dataset (ex: fruit-types) and defining the categories in the dataset. Categories are the types of objects that will be identified via annotation for this dataset. In our case, we will only have **apple** and **orange**, but these values can represent any object. Click **Create Dataset** to finish. The folder that is created by this wizard will be located under the "coco-annotations" folder where the library was downloaded in the setup process.
+Next, with the COCO annotator running, navigate to it on your browser (`http://localhost:5000` from *Setting Up the Environment* lab). Create a dataset by clicking on **Datasets** in the top navigation menu, and then the green **Create** button. In the resulting pop up window, enter a name for the dataset (ex: fruit-types) and define the categories in the dataset. Categories are the types of objects that will be identified via annotation for this dataset. In our case, we will only have `apple` and `orange`, but these values can represent any object. Click **Create Dataset** to finish. The folder that is created by this wizard will be located under the *coco-annotations* folder where the library was downloaded in the setup process.
 
 ![Creating the dataset in COCO Annotator](images/coco-annotator-2.png)
 
 ## **STEP 2**: Transferring Data to the Instance
 
-The next step is to copy the images downloaded from COCO Explorer and put them into the newly created dataset folder. This can be accomplished by any means you wish. I will use secure copy (SCP).
+The next step is to copy the images downloaded from COCO Explorer and put them into the newly created dataset folder. This can be accomplished by any means you wish, but this guide will demonstrate with secure copy (SCP).
 
 Open a terminal on your local machine. Execute the following command based on the path to where your image data is stored.
 
-***NOTE: *** The '.' after the final slash is important as it will copy the contents of the directory without the folder. Since the destination will have it's own folder name defined by COCO annotator and we want to preserve that structure. Make sure there are no other files in the image directory or they will be copied as well.
-
 	scp -r /path/to/local-images/. <terminal-login>@<ip-address>:<path-to-annotator-dataset>
 
-If your orgin directory is `/home/user-name/coco-images`, and *terminal-login* is `opc` and your *ip-address* is `123.456.78.90` and your destination directory is `/home/opc/coco-annotator/datasets/fruit-types/` the command would be
+***NOTE:*** The '.' after the forward-slash is important as it will copy the contents of the directory without the folder. Since the destination will have it's own folder name defined by COCO annotator and we want to preserve that structure. Make sure there are no other files in the image directory or they will be copied as well.
+
+If your orgin directory is `/home/user-name/coco-images/`, and *terminal-login* is `opc` and your *ip-address* is `123.456.78.90` and your destination directory is `/home/opc/coco-annotator/datasets/fruit-types/` the command would be
 
 	scp -r /home/user-name/coco-images/. opc@123.456.78.90:/home/opc/coco-annotator/datasets/fruit-types/
 
@@ -44,24 +44,29 @@ Copy the validation dataset into a folder labelled `fruit-types-val`
 
 ## **STEP 3**: Annotating Images
 
-Return to the COCO annotator and refresh the page. Click on **Datasets** then **fruit-types**. With the **Images** tab selected, your images should be populated in the interface. Click on the first image. On the right you should see the two categories defined earlier **apple** and **orange**. Click the **+** icon next to the category for the outline you'd like to outline with a mask.
+Return to the COCO annotator and refresh the page. Click on **Datasets** then **fruit-types**. With the **Images** tab selected, your images should be populated in the interface. Click on the first image. On the right you should see the two categories defined earlier `apple` and `orange`. Click the **+** icon next to the category for the outline you'd like to outline with a mask.
 
-On the left the toolbar should highlight with the various types of annotation tools. Essentially, these tools will allow you to create polygons around your subject. If you have used an image editing software before, these tools operate in similar fashion.
+On the left the toolbar contains various types of annotation tools. These tools will allow you to create polygons around your subject. If you have used an image editing software before, these tools operate in similar fashion.
 
 ![Select tool icon](images/coco-select.png)
 The hand icon is for navigation. If you need to zoom and pan, select this tool to not disturb your annotations.
-![BBox tool icon](images/coco-bbox.png)
-The BBox (Bounding Bos) tool draws rectangular boxes
-![Polygon tool icon](images/coco-polygon.png)
-The Polygon creates points in succession. To close the polygon when you are complete, either click next to the starting point, or move the mouse over to the right of the window and click **Close Polygon**. This will connect the last-placed point with the first-placed point, creating the final polygon.
-![Magic Wand tool icon](images/coco-magic-wand.png)
-The Magic Wand tool will create a polygon for you around similar colors. This is useful for clearly defined objects with mostly-uniform color.
-![Brush tool icon](images/coco-brush.png)
-The Brush tool allows you to 'paint' the mask onto the screen and automatically generates individual points for you. Note that this method will generate a lot of points.
-![Eraser tool icon](images/coco-eraser.png)
-The Eraser tool will erase points from a polygon
 
-It is best-practice to minimize the number of points used to define an object with a mask, however, that must be balanced against the amount of time it takes to annotate an image. Use more automated tools like the Magic Wand and the Brush tools at your discretion.
+![BBox tool icon](images/coco-bbox.png)
+**BBox (Bounding Box)** tool draws rectangular boxes
+
+![Polygon tool icon](images/coco-polygon.png)
+**Polygon** creates points in succession. To close the polygon when you are complete, either click next to the starting point, or move the mouse over to the right of the window and click **Close Polygon**. This will connect the last-placed point with the first-placed point, creating the final polygon.
+
+![Magic Wand tool icon](images/coco-magic-wand.png)
+**Magic Wand** tool will create a polygon for you around similar colors. This is useful for clearly defined objects with mostly-uniform color.
+
+![Brush tool icon](images/coco-brush.png)
+**Brush** tool allows you to 'paint' the mask onto the screen and automatically generates individual points for you. Note that this method will generate a lot of points.
+
+![Eraser tool icon](images/coco-eraser.png)
+**Eraser** tool will erase points from a polygon
+
+It is best-practice to minimize the number of points used to define an object with a mask. Each annotation point has a small impact on performance, but can add up with large datasets. However, that must be balanced against the amount of time it takes to annotate an image. Use more automated tools like the Magic Wand and the Brush tools at your discretion.
 
 Use this interface to define all of the target objects (apples and oranges) in the image. If you are confused about the best way to draw a mask for an object, browse the COCO Explorer for examples.
 
