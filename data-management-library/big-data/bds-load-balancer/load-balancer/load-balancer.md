@@ -96,7 +96,7 @@ To copy the files:
     [opc@myclustun0 ~]$
     ```
 
-  Notice that the name of the first cluster is shown in the Linux prompt. In the example above, it's `myclustun0`.
+  Notice that the name of the first utility node is shown in the Linux prompt. In the example above, it's `myclustun0`.
 
 3. At the Linux prompt, list the contents of the ``/opt/cloudera/security/x509/``, which is the directory that contains the SSL files on the node. For example:
 
