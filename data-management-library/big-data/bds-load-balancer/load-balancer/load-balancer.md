@@ -446,9 +446,7 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
 2. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing the listener, and select **Edit**.
 
-3. On the **Edit Listener** page, enter the following information.
-
-  **Note** Most of these options were set when you created the load balancer in **STEP 3: Create the Load Balancer**, above. The option you'll change in this step is **Use SSL**.
+3. On the **Edit Listener** page, enter the following information. (Most of these options were set when you created the load balancer in **STEP 3: Create the Load Balancer**, above. The option you'll change in this step is **Use SSL**.)
 
     * **Name:** Read only.
 
