@@ -1,22 +1,20 @@
-# Upload Data to Hadoop Distributed File System (HDFS) and Object Store
+# Upload Data to Hadoop Distributed File System and Object Storage
 
 ## Introduction
 
-_Marty: Please feel free to edit as needed_    
-In this lab, you will download and run two sets of scripts. First, you will download and run the HDFS scripts to download data from Amazon S3 (Simple Storage Service) to a new local directory on your master node in your Hadoop cluster. Next, you will manipulate some of the downloaded data files, and then upload them to new HDFS directories. The HDFS scripts also create Hive databases and tables which you will query using Hue. Second, you will download and run the object store scripts to download data from Amazon S3 to your local directory using OCI Cloud Shell. Next, you will upload the data to new objects in a new bucket.
+In this lab, you will download and run two sets of scripts. First, you will download and run the Hadoop Distributed File System (HDFS) scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to a new local directory on your master node in your Hadoop cluster. The HDFS script manipulates some of the downloaded data files, and then upload them to new HDFS directories. The HDFS script also create Hive databases and tables which you will query using Hue. Second, you will download and run the object store scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to your local directory using OCI Cloud Shell. The object store script uploads the data to new objects in a new bucket. See the [Data License Agreement](https://www.citibikenyc.com/data-sharing-policy) for information about the Citi Bikes NYC data license agreement.
 
 ### Objectives
 
-_Marty: Please feel free to edit as needed_
-* Download and run the HDFS and object store scripts that are required to set up your environment and to download the dataset from Amazon S3 to the **`training`** Administrator user's local working directory and to your OCI Cloud Shell directory.
-* Manipulate and upload the downloaded data from the local working directory to new HDFS directories. You will use SSH to connect to your master node in your cluster.
-* Upload the downloaded data from the local working directory to HDFS and Object Store. You will use OCI Cloud Shell.
+* Download and the HDFS and object store scripts that are required to set up your environment and to download the dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the **`training`** Administrator user's local working directory and to your OCI Cloud Shell directory.
+* Use SSH to connect to your master node in your cluster. You then run the HDFS scripts to set up your HDFS environment and to manipulate and upload the downloaded data from the local working directory to new HDFS directories.
+* Use OCI Cloud Shell to run the object store scripts to set up your object storage environment and to upload the downloaded data from the local working directory to object storage.
 * Create Hive databases and tables that represents the data that you uploaded to HDFS, and then query the Hive tables using Hue.
 
 
 ### What Do You Need?
 + This lab assumes that you have successfully completed all the labs in the **Contents** menu.
-+ Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some random weather data from GitHub.
++ Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from GitHub.
 
 ## **STEP 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
 
@@ -74,18 +72,18 @@ In this step, you will connect to the first (only one master node in a non-HA cl
 
 ## **STEP 3:** Download and Run the Scripts to Set Up the HDFS Data
 
-In this step, you download two scripts that you will use to set up your environment and to download the HDFS dataset from Amazon S3. The dataset represents the Citi Bikes trip data and stations information from the [Citibike System Data](https://www.citibikenyc.com/system-data) page, and some random weather data that is hosted on GitHub.
+In this step, you download two scripts that you will use to set up your HDFS environment and to download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
 
-The Citi Bikes detailed trip data files (in zipped format) are first downloaded to a new local directory. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are then uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables: **`bikes.trips_ext`** and **`bikes.trips`**. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
+The Citi Bikes detailed trip data files (in zipped format) are first downloaded to a new local directory. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are then uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables. **`bikes.trips_ext`** is an external table defined over the source data. The **`bikes.trips`** table is created from this source; it is a partitioned table that stores the data in Parquet format. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
 
 The stations data file is downloaded (and then manipulated) from the [station information](https://gbfs.citibikenyc.com/gbfs/es/station_information.json) page. The updated file is then uploaded to a new **`/data/stations`** HDFS directory.
 
 The weather data is downloaded from the [GitHub repository](https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/weather-newark-airport.csv). Next, the header row in the file is removed. The updated file is then uploaded to a new **`/data/weather`** HDFS directory. Next, a new **`weather`** Hive database and **`weather.weather_ext`** table are created and populated with from the `weather-newark-airport.csv` file in the **`/data/weather`** directory.
 
 **Note:**    
-Developers, engineers, statisticians and academics can find and download data on Citi Bike membership, ridership and trip histories from [Citi Bikes NYC](https://www.citibikenyc.com/system-data). See the [Data License Agreement](https://www.citibikenyc.com/data-sharing-policy) for information about the data license agreement. To view the complete data files that are available, navigate to [Citibike System Data](https://www.citibikenyc.com/system-data) page. In the **Citi Bike Trip Histories** section, click [downloadable files of Citi Bike trip data](https://s3.amazonaws.com/tripdata/index.html). The [Index of bucket "tripdata"](https://s3.amazonaws.com/tripdata/index.html) page displays the available data files. In this lab, you will be using only some of the data files on that page.  
+To view the complete data files that are available, navigate to [Citibike System Data](https://www.citibikenyc.com/system-data) page. In the **Citi Bike Trip Histories** section, click [downloadable files of Citi Bike trip data](https://s3.amazonaws.com/tripdata/index.html). The [Index of bucket "tripdata"](https://s3.amazonaws.com/tripdata/index.html) page displays the available data files. In this lab, you will be using only some of the data files on that page.  
 
-1. Run the following command to download the **`env.sh`** script to the **`training`** working directory. You will use this script to set up your environment.
+1. Run the following command to download the **`env.sh`** script to the **`training`** working directory. You will use this script to set up your HDFS environment.
 
     ```
     $ <copy>wget https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/env.sh</copy>
@@ -94,7 +92,7 @@ Developers, engineers, statisticians and academics can find and download data on
     ![](./images/run-env-script.png " ")
 
 
-2. Run the following command to download the **`download-all-hdfs-data.sh`** script to the **`training`** working directory. You will run this script to download the dataset to your local working directory. You will then upload this data to HDFS.
+2. Run the following command to download the **`download-all-hdfs-data.sh`** script to the **`training`** working directory. You will run this script to download the dataset to your local working directory. The script will then upload this data to HDFS.
 
     ```
     $ <copy>wget https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/download-all-hdfs-data.sh</copy>
@@ -119,7 +117,7 @@ Developers, engineers, statisticians and academics can find and download data on
   ![](./images/env-script.png " ")
 
 
-  **Note:** You will download the data from Amazon S3 to the new **`Downloads`** local target directory as specified in the **`env.sh`** file. You will upload the data from the local **`Downloads`** directory to the following new HDFS directories under the new **`/data`** HDFS directory as specified **`env.sh`** file: **`biketrips`**, **`stations`**, and **`weather`**.
+  **Note:** You will download the data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the new **`Downloads`** local target directory as specified in the **`env.sh`** file. You will upload the data from the local **`Downloads`** directory to the following new HDFS directories under the new **`/data`** HDFS directory as specified in the **`env.sh`** and the HDFS scripts: **`biketrips`**, **`stations`**, and **`weather`**.
 
 5. Use the **`cat`** command to display the content of the **`download-all-hdfs-data.sh`** script. This script downloads the **`download-citibikes-hdfs.sh`** and **`download-weather-hdfs.sh`** scripts to the local **`training`** working directory, adds execute privilege on both of those scripts, and then runs the two scripts.
 
@@ -131,18 +129,17 @@ Developers, engineers, statisticians and academics can find and download data on
 
   The **`download-citibikes-hdfs.sh`** script does the following:
 
-      + Runs the **`env.sh`** script to set up your target local and HDFS directories.
+      + Runs the **`env.sh`** script to set up your local and HDFS target directories.
       + Downloads the stations information from the Citi Bike Web site to the local **`Downloads`** target directory.
       + Creates a new **`/data/stations`** HDFS directory, and then copies the `stations.json` file to this HDFS directory.
-      + Downloads the bike rental data files (the zipped `.csv` files) from the NYC Bike Share, LLC and Jersey City Bike Share data sharing service to the local **`Downloads`** target directory.
-      _Question for Marty: Is Citibikes site different than the NYC Bike Share service?_
+      + Downloads the bike rental data files (the zipped `.csv` files) from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the local **`Downloads`** target directory.
       + Unzips the bike rental files, and removes the header row from each file.
       + Creates a new **`/data/biketrips`** HDFS directory, and then uploads the updated `csv` files to this HDFS directory. Next, it adds execute file permissions to both `.sh` files.
-      + Creates the `bikes` Hive database and the `bikes.trips_ext` and `bikes.trips` Hive tables in that database. It then populates the tables with the bike trips data from the **`/data/biketrips`** HDFS directory.
+      + Creates the `bikes` Hive database with two Hive tables. **`bikes.trips_ext`** is an external table defined over the source data. **`bikes.trips`** is created from this source; it is a partitioned table that stores the data in Parquet format. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
 
   The **`download-weather-hdfs.sh`** script provides a random weather data set for Newark Liberty Airport in New Jersey. It does the following:
 
-      + Runs the `env.sh` script to set up your target local and HDFS directories. _Marty: Why do we need to run this again? We just ran it in the previous script_
+      + Runs the `env.sh` script to set up your local and HDFS target directories.
       + Downloads the `weather-newark-airport.csv` file to the **`Downloads`** stations information from the Citi Bike Web site to the local **`Downloads`** target directory.
       + Removes the header row from the file.
       + Creates a new **`/data/weather`** HDFS directory, and then uploads the `weather-newark-airport.csv` file to this HDFS directory.
@@ -191,7 +188,7 @@ Developers, engineers, statisticians and academics can find and download data on
 
     ![](./images/hdfs-directories.png " ")
 
-12. Use the following command to display the first 5 rows from the uploaded **`JC-201901-citibike-tripdata.csv`** file in the **`/data/biketrip`** HDFS folder. Remember, the header row for this uploaded `.csv` file was removed when you ran the **`download-citibikes-hdfs.sh`** script.
+12. Use the following command to display the first 5 rows from the uploaded **`JC-201901-citibike-tripdata.csv`** file in the **`/data/biketrips`** HDFS folder. Remember, the header row for this uploaded `.csv` file was removed when you ran the **`download-citibikes-hdfs.sh`** script.
 
     ```
     $ <copy>hadoop fs -cat /data/biketrips/JC-201902-citibike-tripdata.csv | head -5</copy>
@@ -363,9 +360,11 @@ In this step, you will download two scripts that will set up your environment an
 ## Acknowledgements
 
 * **Author:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Contributors:**
-    * Martin Gubar, Director, Oracle Big Data Product Management
+    + Martin Gubar, Director, Oracle Big Data Product Management
+* **Reviewers:**  
+    + Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, November 2020
 
 ## Need Help?
