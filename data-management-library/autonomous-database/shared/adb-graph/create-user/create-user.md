@@ -68,11 +68,13 @@ Learn how to
    </copy>
    ```
 
-    ![](./images/alter-user.png " ")  
+   The screenshots below show an example of executing the ALTER USER statement.
 
-    ![](./images/run-sql.png " ")  
+   ![](./images/alter-user.png " ")  
 
-    ![](./images/user-altered.png " ") 
+   ![](./images/run-sql.png " ")  
+
+   ![](./images/user-altered.png " ") 
  
 
 Please **proceed to the next lab** to learn how to create and analyze graphs in ADB.
