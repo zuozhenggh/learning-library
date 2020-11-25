@@ -14,6 +14,8 @@ In this lab, you will:
 
 * Implement end-to-end Secure Sockets Layer (SSL) encryption for the load balancer. You'll use the self-signed SSL certificates that are included with the cluster.
 
+**Note:** If you want to create a load balancer for a non-HA cluster or if you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
+
 ### What Do You Need?
 
 This lab requires an Oracle Cloud account. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
@@ -555,9 +557,6 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 ## Want to Learn More?
 
 * [Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/)
-
-* [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) tells how to create a load balancer with for a non-HA cluster and tells how to use SSL certificates from a trusted certificate authority.
-
 
 ## Acknowledgements
 
