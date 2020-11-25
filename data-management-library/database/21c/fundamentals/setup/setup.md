@@ -3,19 +3,14 @@
 ## Introduction
 In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop. 
 
-Estimated Lab Time: 15 minutes
-
-### About Product/Technology
-Enter background information here..
+Estimated Lab Time: 15 minute
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
 * Define and test the connections
-* Objective 2
-* Objective 3
+* Download scripts
+* Update scripts
 
 ### Prerequisites
 
@@ -27,6 +22,7 @@ In this lab, you will:
 1. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created, that alias entries are either automatically or manually created in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
 
 2. The sub-directory `OraDB21Home1` is the sub-directory mentioned in the file `/u01/app/oraInventory/ContentsXML/oraInventory`.
+   
       ````
       <HOME_LIST>
       <HOME NAME="OraGrid210" LOC="/u01/app/21.0.0.0/grid" TYPE="O" IDX="1" CRS="true">
@@ -34,6 +30,7 @@ In this lab, you will:
       </HOME_LIST>
       ````
 3. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.
+   
       ````
       cat /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
       ````
@@ -46,47 +43,49 @@ In this lab, you will:
 
 6. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
    
-   ````
-   sqlplus sys@CDB21_iad1bw AS SYSDBA
-   ````
+      ````
+      sqlplus sys@CDB21_iad1bw AS SYSDBA
+      ````
 
 7. Verify that the container name is CDB$ROOT.
-   ````
-   SHOW CON_NAME;
-   ````
+      ````
+      SHOW CON_NAME;
+      ````
 
 8. Test the connection to PDB21
    
-   ````
-   CONNECT sys@PDB21 AS SYSDBA
-   ````
+      ````
+      CONNECT sys@PDB21 AS SYSDBA
+      ````
 
 9.  Show the container name
     
-    ````
-    SHOW CON_NAME;
-    ````
+      ````
+      SHOW CON_NAME;
+      ````
 10. Exit SQL*Plus
-    ````
-    exit
-    ````
+    
+      ````
+      exit
+      ````
 
-## **STEP 2**: Download the practices scripts
-Download the Cloud_Preview_21c_labs.zip file to the /home/oracle directory on your VM and unzip the file.
+## **STEP 2**: Download scripts
+Download the Cloud\_Preview\_21c\_labs.zip file to the /home/oracle directory on your VM and unzip the file.
 
 1.  Change to the oracle user home directory
+   
       ````
       cd /home/oracle
       ````
-2.  Unzip Cloud_Preview_21c_labs.zip
+2.  Unzip Cloud\_Preview\_21c\_labs.zip
 
       ````
       unzip Cloud_Preview_21c_labs.zip
       ````
 
-## **STEP 3**: Update the practices scripts to the current environment
+## **STEP 3**: Update the scripts to the current environment
 
-Execute the /home/oracle/labs/update_pass.sh shell script. The shell script prompts you to enter the password_defined_during_DBSystem_creation and sets it in all shell scripts and SQL scripts that will be used in the practices.
+Execute the /home/oracle/labs/update\_pass.sh shell script. The shell script prompts you to enter the password\_defined\_during\_DBSystem\_creation and sets it in all shell scripts and SQL scripts that will be used in the practices.
 1. Make the script readable, writable, and executable by everyone.
 
       ````
@@ -106,8 +105,6 @@ Execute the /home/oracle/labs/update_pass.sh shell script. The shell script prom
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
