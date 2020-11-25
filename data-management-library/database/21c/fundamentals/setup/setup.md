@@ -1,4 +1,4 @@
-# Setup Environment
+# Setup 21C Environment
 
 ## Introduction
 In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop. 
@@ -16,6 +16,9 @@ In this lab, you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Working knowledge of vi
+* Lab: SSH Keys
+* Lab: Create a VCN
+* Lab: Create an OCI VM Database
 
 ## **STEP 1**: Define and test the connections
 
