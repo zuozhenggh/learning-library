@@ -2,7 +2,7 @@
 
 ## Introduction
 
-You can create a load balancer as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your Big Data Service cluster.
+You can create a load balancer as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your Big Data Service ccluster.
 
 ### Objectives
 

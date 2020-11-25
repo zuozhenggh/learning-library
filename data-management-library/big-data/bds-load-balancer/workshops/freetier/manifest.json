@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Create a Load Balancer for Oracle Big Data Service",
+  "workshoptitle": "Access Services on a Big Data Service Cluster",
     "tutorials": [
       {
          "title": "Get Started with LiveLabs",
@@ -8,7 +8,7 @@
       },
       {
           "title": "Use a Load Balancer to Access Services on a Big Data Service Cluster",
-          "description": "Access Services on Big Data Service By Using a Load Balancer",
+          "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
           "filename": "./../../load-balancer/load-balancer.md"
       }
 
