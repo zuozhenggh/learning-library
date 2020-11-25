@@ -2,12 +2,15 @@
 
 ## Introduction
 
-In this lab, you run two sets of scripts. First, you will run the HDFS scripts to download data from Amazon S3 to a new local directory on your master node in your Hadoop cluster. Next, you will manipulate some of the downloaded data files, and then upload them to new HDFS directories. The HDFS scripts also create Hive databases and tables which you will query using Hue. Second, you will run the object store scripts to download data from Amazon S3 to your local directory using OCI Cloud Shell. Next, you will upload the data to new objects in a new bucket.
+_Marty: Please feel free to edit as needed_    
+In this lab, you will download and run two sets of scripts. First, you will download and run the HDFS scripts to download data from Amazon S3 (Simple Storage Service) to a new local directory on your master node in your Hadoop cluster. Next, you will manipulate some of the downloaded data files, and then upload them to new HDFS directories. The HDFS scripts also create Hive databases and tables which you will query using Hue. Second, you will download and run the object store scripts to download data from Amazon S3 to your local directory using OCI Cloud Shell. Next, you will upload the data to new objects in a new bucket.
 
 ### Objectives
 
-* Download and run scripts that are required to set up your environment and to download the dataset from Amazon's S3 to the **`training`** Administrator user's local working directory.
-* Manipulate and upload the downloaded data from the local working directory to HDFS and Object Store.
+_Marty: Please feel free to edit as needed_
+* Download and run the HDFS and object store scripts that are required to set up your environment and to download the dataset from Amazon S3 to the **`training`** Administrator user's local working directory and to your OCI Cloud Shell directory.
+* Manipulate and upload the downloaded data from the local working directory to new HDFS directories. You will use SSH to connect to your master node in your cluster.
+* Upload the downloaded data from the local working directory to HDFS and Object Store. You will use OCI Cloud Shell.
 * Create Hive databases and tables that represents the data that you uploaded to HDFS, and then query the Hive tables using Hue.
 
 
@@ -61,14 +64,19 @@ In this step, you will connect to the first (only one master node in a non-HA cl
 
 4. Use the `cd` command to change the working directory to that of the **`training`** user. Use the `ls -l` command to confirm that you are in the `training` working directory:
 
+    ```
+    $ <copy>cd</copy>
+    $ <copy>ls -l</copy>
+    ```
+
     ![](./images/change-directory.png " ")
 
 
 ## **STEP 3:** Download and Run the Scripts to Set Up the HDFS Data
 
-In this step, you download two scripts that you will use to set up your environment and to download the HDFS dataset from Amazon's S3 (Simple Storage Service). The dataset represents the Citi Bikes trip data and stations information from the [Citibike System Data](https://www.citibikenyc.com/system-data) page, and some random weather data that is hosted on GitHub _(for now Marty until I get the Object Store resources from the LiveLabs team)_.
+In this step, you download two scripts that you will use to set up your environment and to download the HDFS dataset from Amazon S3. The dataset represents the Citi Bikes trip data and stations information from the [Citibike System Data](https://www.citibikenyc.com/system-data) page, and some random weather data that is hosted on GitHub.
 
-The Citi Bikes trip data zipped files are first downloaded to a local folder. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are then uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables: **`bikes.trips_ext`** and **`bikes.trips`**. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
+The Citi Bikes detailed trip data files (in zipped format) are first downloaded to a new local directory. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are then uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables: **`bikes.trips_ext`** and **`bikes.trips`**. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
 
 The stations data file is downloaded (and then manipulated) from the [station information](https://gbfs.citibikenyc.com/gbfs/es/station_information.json) page. The updated file is then uploaded to a new **`/data/stations`** HDFS directory.
 
@@ -123,21 +131,21 @@ Developers, engineers, statisticians and academics can find and download data on
 
   The **`download-citibikes-hdfs.sh`** script does the following:
 
-      + Runs the **`env.sh`** script.
+      + Runs the **`env.sh`** script to set up your target local and HDFS directories.
       + Downloads the stations information from the Citi Bike Web site to the local **`Downloads`** target directory.
-      + Creates a new **`stations`** HDFS directory under the **`data`** HDFS directory, and then copies the `stations.json` file to the **`stations`** HDFS directory.
+      + Creates a new **`/data/stations`** HDFS directory, and then copies the `stations.json` file to this HDFS directory.
       + Downloads the bike rental data files (the zipped `.csv` files) from the NYC Bike Share, LLC and Jersey City Bike Share data sharing service to the local **`Downloads`** target directory.
       _Question for Marty: Is Citibikes site different than the NYC Bike Share service?_
       + Unzips the bike rental files, and removes the header row from each file.
-      + Creates a new `biketrips` HDFS directory under the **`data`** HDFS directory, and then uploads the updated `csv` files to the `biketrips` HDFS directory. Next, it changes the file permissions to read, write, and execute.
+      + Creates a new **`/data/biketrips`** HDFS directory, and then uploads the updated `csv` files to this HDFS directory. Next, it adds execute file permissions to both `.sh` files.
       + Creates the `bikes` Hive database and the `bikes.trips_ext` and `bikes.trips` Hive tables in that database. It then populates the tables with the bike trips data from the **`/data/biketrips`** HDFS directory.
 
   The **`download-weather-hdfs.sh`** script provides a random weather data set for Newark Liberty Airport in New Jersey. It does the following:
 
-      + Runs the `env.sh` script._why do we need to run this again?_
+      + Runs the `env.sh` script to set up your target local and HDFS directories. _Marty: Why do we need to run this again? We just ran it in the previous script_
       + Downloads the `weather-newark-airport.csv` file to the **`Downloads`** stations information from the Citi Bike Web site to the local **`Downloads`** target directory.
       + Removes the header row from the file.
-      + Creates a new **`weather`** HDFS directory under the **`data`** HDFS directory, and uploads the `weather-newark-airport.csv` file to that directory.
+      + Creates a new **`/data/weather`** HDFS directory, and then uploads the `weather-newark-airport.csv` file to this HDFS directory.
       + Creates the `weather` Hive database and the `weather.weather_ext` Hive table. It then populates the table with the weather data from the `weather-newark-airport.csv` file in the local **`Downloads`** directory.
 
 6. Run the **`download-all-hdfs-data.sh`** script as follows:
@@ -156,7 +164,7 @@ Developers, engineers, statisticians and academics can find and download data on
 
     ![](./images/data-downloaded.png " ")
 
-9. Use the **`head`** command to display the first two records of the downloaded **`stations.json`** file.
+9. Use the **`head`** command to display the first two records from the **`stations.json`** file.
 
     ```
     $ <copy>head -2 stations.json </copy>
@@ -164,7 +172,7 @@ Developers, engineers, statisticians and academics can find and download data on
 
     ![](./images/view-stations.png " ")
 
-10. Use the **`head`** command to display the content of the downloaded **`weather-newark-airport.csv`** file.
+10. Use the **`head`** command to display the first 10 records from the **`weather-newark-airport.csv`** file.
 
     ```
     $ <copy>head weather-newark-airport.csv </copy>
@@ -281,7 +289,7 @@ In this step, you will download two scripts that will set up your environment an
 
     ![](./images/saving-os.png " ")
 
-7. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. You will run this script to download the dataset to your local working directory. You will then upload this data to Object Store. Press the **`[Enter]`** key to run the command.
+7. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. You will run this script to download the dataset to your local working directory. You will then upload this data to a new object in a new bucket. Press the **`[Enter]`** key to run the command.
 
     ```
     <b>$</b> <copy>wget https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/download-all-objstore.sh
@@ -306,7 +314,7 @@ In this step, you will download two scripts that will set up your environment an
 
     ![](./images/cat-os-script.png " ")
 
-  You can use the **`cat`** command to display the content of this script. The **`download-all-objstore.sh`** script runs the **`env.sh`** script which sets the environment. The script writes some of the data from Amazon S3 to the local **`Downloads`** local directory and to a new bucket named **`training`**, as specified in the **`env.sh`** script. The **`training`** bucket will contain the following new objects:
+  You can use the **`cat`** command to display the content of this script. The **`download-all-objstore.sh`** script runs the **`env.sh`** script which sets the environment. The script writes some of the data from Amazon S3 to the your local Cloud Shell directory and to a new object in a new bucket named **`training`**, as specified in the **`env.sh`** script. The **`training`** bucket will contain the following new objects:
 
     + The **`weather`** object which stores the weather data.
     + The **`stations`** object which stores the stations data.
