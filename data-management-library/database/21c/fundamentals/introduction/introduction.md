@@ -4,7 +4,7 @@
 
 This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
 
-Estimated Lab Time: n minutes 
+Estimated Workshop Time: xx minutes 
 
 ### About Product/Technology
 For the world’s most demanding enterprise applications and workloads, Oracle Database 21c is a converged database that delivers a high performance, highly available, secure and scalable data management platform for cloud as well as on-premises environments.
