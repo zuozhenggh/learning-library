@@ -1,4 +1,0 @@
-This image shows the Big Data Service Create Backend Set page in the Cloud Console. 
-
-The page contains:
-

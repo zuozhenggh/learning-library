@@ -1,4 +1,0 @@
-This image shows the Certificates list on the Big Data Service ??????? page in the Cloud Console. 
-
-The page contains:
-

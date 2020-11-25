@@ -7,9 +7,9 @@
          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
       },
       {
-          "title": "Access Services on Big Data Service By Using a Load Balancer",
+          "title": "Use a Load Balancer to Access Services on a Big Data Service Cluster",
           "description": "Access Services on Big Data Service By Using a Load Balancer",
-          "filename": "../../load-balancer/load-balancer.md"
+          "filename": "./../../load-balancer/load-balancer.md"
       }
 
            ]

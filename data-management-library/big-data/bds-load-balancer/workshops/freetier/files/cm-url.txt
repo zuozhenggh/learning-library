@@ -1,2 +1,0 @@
-This image shows a web browser address bar containing the address https://10.2.0.101:7183.
-
