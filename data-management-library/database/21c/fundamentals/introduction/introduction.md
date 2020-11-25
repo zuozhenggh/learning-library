@@ -2,13 +2,11 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
+This workshop offers hands-on labs that highlight the latest enhancements in the latest release of the Oracle Database, 21c.  For the world’s most demanding enterprise applications and workloads, Oracle Database 21c is a converged database that delivers a high performance, highly available, secure and scalable data management platform for cloud as well as on-premises environments.
 
-Estimated Workshop Time: xx minutes 
+Estimated Workshop Time: 60 minutes 
 
-### About Product/Technology
-For the world’s most demanding enterprise applications and workloads, Oracle Database 21c is a converged database that delivers a high performance, highly available, secure and scalable data management platform for cloud as well as on-premises environments.
-
+### About Oracle Database 21c
 The latest 21c release furthers the converged capabilities of Oracle Database with additional support for blockchain tables, JSON, machine learning, graph and 
 persistent memory.
 
@@ -24,19 +22,19 @@ With 21c, customers can
 * Develop powerful, data-driven applications
 
 
-**Add 21c video here**
+**Add 21c video here, Willie to send**
   [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
-Lab:  Create SSH Keys
-Lab:  Create VCN & DB System
-Lab:  Prepare for 21c
-Lab:  Using New Set Operators
+* Lab:  Create SSH Keys
+* Lab:  Create VCN & DB System
+* Lab:  Prepare for 21c
+* Lab:  Using New Set Operators
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Working knowledge of vi
 
 

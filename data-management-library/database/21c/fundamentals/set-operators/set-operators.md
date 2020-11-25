@@ -37,7 +37,12 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
       ```
       
       $ <copy>cd /home/oracle/labs/M104783GC10</copy>
-      
+
+      ```
+
+2. Run the script to setup the Order Entry (OE) tables.
+
+      ```
       $ <copy>/home/oracle/labs/M104783GC10/setup_oe_tables.sh</copy>
       
       ...
@@ -73,7 +78,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
       
       ```
 
-2. Count in both tables, `INVENTORIES` and `ORDER_ITEMS`, respectively the number of products available in the inventory and the number of products that customers ordered.
+2. Count in both tables, `INVENTORIES` and `ORDER_ITEMS`, respectively the number of products available in the inventory and the number of products that customers ordered.  Start with the `INVENTORIES` table.
 
   
       ```
@@ -85,7 +90,11 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
       -----------------
       
                   208
-      
+
+3. Run a count in the `ORDER_ITEMS` table.  Note the difference.
+
+      ```
+
       SQL> <copy>SELECT count(distinct product_id) FROM order_items;</copy>
       
       COUNT(PRODUCT_ID)
@@ -98,7 +107,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
       
       ```
 
-3. How many products are in the inventory that were never ordered? Use the `EXCEPT` operator to retrieve only unique rows returned by the first query but not by the second.
+4. How many products are in the inventory that were never ordered? Use the `EXCEPT` operator to retrieve only unique rows returned by the first query but not by the second.
 
   
       ```
@@ -121,7 +130,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
       
       ```
 
-4. How many products were ordered that are now missing in the inventory? The order of the queries is relevant for the result.
+5. How many products were ordered that are now missing in the inventory? The order of the queries is relevant for the result.
 
   
       ```
@@ -132,7 +141,8 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
       
                   EXCEPT
       
-            SELECT product_id FROM inventories);</copy>
+            SELECT product_id FROM inventories);
+            </copy>
       
       COUNT(*)
       
@@ -146,7 +156,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 
 ## **STEP  3**: Test the set operator with the `EXCEPT ALL` clause
 
-1. Would the usage of ALL in the set operator defined in a query in a previous step mean anything?
+1. Would the usage of ALL in the set operator defined in a query in a previous step mean anything? Run the SQL statement using the *EXCEPT ALL* operator.
 
       ```
 
@@ -184,7 +194,10 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
             3503
 
       826 rows selected.
+      ```
+2. Run the same query but reverse the tables.  
 
+      ```
       SQL> <copy>SELECT count(*) FROM 
             (SELECT product_id FROM inventories
             EXCEPT ALL
@@ -203,8 +216,7 @@ The result shows all rows in the `INVENTORIES` table that contain products that 
 
 1. How many products that were ordered are still orderable? The statement combining the results from two queries with the `INTERSECT` operator returns only those unique rows returned by both queries.
 
-      ```
-
+      ````
       SQL> <copy>SELECT count(*) FROM 
             (SELECT product_id FROM inventories
             INTERSECT
@@ -214,10 +226,18 @@ The result shows all rows in the `INVENTORIES` table that contain products that 
       ----------
             124
 
-      SQL> <copy>SELECT count(*) FROM 
+      ````
+
+2. Run the sql statement below reversing the intersect clause.
+
+      ````
+      SQL> 
+      <copy>
+      SELECT count(*) FROM 
             (SELECT product_id FROM order_items
             INTERSECT
-            SELECT product_id FROM inventories);</copy>
+            SELECT product_id FROM inventories);
+            </copy>
 
       COUNT(*)
       ----------
@@ -225,9 +245,9 @@ The result shows all rows in the `INVENTORIES` table that contain products that 
 
       SQL>
 
-      ```
+      ````
 
-## **STEP  5 **: Test the set operator with the `INTERSECT ALL` clause
+## **STEP  5**: Test the set operator with the `INTERSECT ALL` clause
 
 1. Would the usage of `ALL` in the operator defined in the query in step 8 mean anything?
 
@@ -241,10 +261,12 @@ The result shows all rows in the `INVENTORIES` table that contain products that 
       COUNT(*)
       ----------
             286
+      ````
 
-      SQL> <copy>EXIT</copy>
-      $
-
+2. Exit SQL*Plus
+   
+      ````
+      SQL> <copy>exit</copy>
       ```
 The result shows all rows in the `INVENTORIES` table that contain products that were ordered. This does not mean that these products were ordered from these warehouses. The query does not mean anything relevant. The use of `ALL` in operators must be appropriate.
 
