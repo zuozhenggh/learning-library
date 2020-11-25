@@ -13,22 +13,19 @@ Enter background information here..
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
 In this lab, you will:
-* Objective 1
+* Define and test the connections
 * Objective 2
 * Objective 3
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+* Working knowledge of vi
 
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
+## **STEP 1**: Define and test the connections
 
 1. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created, that alias entries are either automatically or manually created in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
+
 2. The sub-directory `OraDB21Home1` is the sub-directory mentioned in the file `/u01/app/oraInventory/ContentsXML/oraInventory`.
       ````
       <HOME_LIST>
@@ -40,9 +37,71 @@ In this lab, you will:
       ````
       cat /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
       ````
-4. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.
+4. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.  Use vi to do this.
 
+      ````
+      vi /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+      ````
+5. Do the same operation for each new PDB created in the CDB.
 
+6. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+   
+   ````
+   sqlplus sys@CDB21_iad1bw AS SYSDBA
+   ````
+
+7. Verify that the container name is CDB$ROOT.
+   ````
+   SHOW CON_NAME;
+   ````
+
+8. Test the connection to PDB21
+   
+   ````
+   CONNECT sys@PDB21 AS SYSDBA
+   ````
+
+9.  Show the container name
+    
+    ````
+    SHOW CON_NAME;
+    ````
+10. Exit SQL*Plus
+    ````
+    exit
+    ````
+
+## **STEP 2**: Download the practices scripts
+Download the Cloud_Preview_21c_labs.zip file to the /home/oracle directory on your VM and unzip the file.
+
+1.  Change to the oracle user home directory
+      ````
+      cd /home/oracle
+      ````
+2.  Unzip Cloud_Preview_21c_labs.zip
+
+      ````
+      unzip Cloud_Preview_21c_labs.zip
+      ````
+
+## **STEP 3**: Update the practices scripts to the current environment
+
+Execute the /home/oracle/labs/update_pass.sh shell script. The shell script prompts you to enter the password_defined_during_DBSystem_creation and sets it in all shell scripts and SQL scripts that will be used in the practices.
+1. Make the script readable, writable, and executable by everyone.
+
+      ````
+      <copy>
+      chmod 777 /home/oracle/labs/update_pass.sh
+      </copy>
+      ````
+
+2. Run the script.
+
+      ````
+      <copy>
+      /home/oracle/labs/update_pass.sh
+      </copy>
+      ````
 
 You may now [proceed to the next lab](#next).
 
@@ -54,10 +113,9 @@ You may now [proceed to the next lab](#next).
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Dominique Jeunot, Database UA Team
+* **Contributors** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, Database Product Management
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
