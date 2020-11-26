@@ -73,17 +73,17 @@ In this lab, you will:
       ````
 
 ## **STEP 2**: Download scripts
-Download the Cloud\_Preview\_21c\_labs.zip file to the /home/oracle directory on your VM and unzip the file.
+Download the Cloud\_21c\_labs.zip file to the /home/oracle directory on your VM and unzip the file.
 
 1.  Change to the oracle user home directory
    
       ````
       cd /home/oracle
       ````
-2.  Unzip Cloud\_Preview\_21c\_labs.zip
+2.  Unzip Cloud\_21c\_labs.zip
 
       ````
-      unzip Cloud_Preview_21c_labs.zip
+      unzip Cloud_21c_labs.zip.zip
       ````
 
 ## **STEP 3**: Update the scripts to the current environment
