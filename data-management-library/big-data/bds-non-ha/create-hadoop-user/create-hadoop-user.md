@@ -93,14 +93,13 @@ In this step, you will set three variables using the **`export`** command. The v
 
 In this step, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
-Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH.
+Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH. For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
+
+**Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
 ```
 <b>$</b> <copy>ssh –i private_key username@public-ip-address</copy>
 ```
-
-**Note:** For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
-
 
 + **`private_key`** is the full path and name of the file that contains the private key associated with the instance you want to access.
 +  **`username`** is the default name for the cluster. The default user name is **`opc`**.
@@ -294,10 +293,11 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
 ## Acknowledgements
 
-* **Authors:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+* **Author:**
+    * Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+* **Contributor:**
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, October 2020
+* **Last Updated By/Date:** Lauran Serhal, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

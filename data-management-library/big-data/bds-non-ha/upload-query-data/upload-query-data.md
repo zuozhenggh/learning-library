@@ -35,7 +35,9 @@ In this lab, you will download and run two sets of scripts. First, you will down
 
 In this step, you will connect to the first (only one master node in a non-HA cluster) master node in your cluster using SSH as the **`training`** Hadoop Administrator user that you created in **Lab 6**.
 
-**Note:** In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. Refer to **Lab 6: Create a Hadoop Administrator User**, if needed, to review the steps on how to connect to first master node in your cluster. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you will need to use your Linux system or Windows PowerShell as shown in **Lab 6**.
+In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. Refer to **Lab 6: Create a Hadoop Administrator User**, if needed, to review the steps on how to connect to first master node in your cluster. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you will need to use your Linux system or Windows PowerShell as shown in **Lab 6**.
+
+**Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
 1. Start **PuTTY**. The **PuTTY Configuration** window is displayed. In **Saved Sessions** section, click the `ssh to traininmn0 on BDS cluster` saved session that you created in **Lab 6**, and then click **Load**.
 
@@ -70,7 +72,7 @@ In this step, you will connect to the first (only one master node in a non-HA cl
     ![](./images/change-directory.png " ")
 
 
-## **STEP 3:** Download and Run the Scripts to Set Up the HDFS Data
+## **STEP 3:** Download and Run HDFS Scripts to Set Up the HDFS Data
 
 In this step, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
 
@@ -247,9 +249,9 @@ limit 10;</copy>
   ![](./images/hue-doc.png " ")
 
 
-## **STEP 5:** Download and Run the Scripts to Set Up the Object Storage Data
+## **STEP 5:** Download and Run Object Storage Scripts to Set Up the Object Storage Data
 
-In this step, you will download two scripts that will set up your environment and download the Object Storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
+In this step, you will download two scripts that will set up your object storage environment and download the object storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -360,8 +362,8 @@ In this step, you will download two scripts that will set up your environment an
 ## Acknowledgements
 
 * **Author:**
-    + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Contributors:**
+    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+* **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Reviewers:**  
     + Martin Gubar, Director, Oracle Big Data Product Management

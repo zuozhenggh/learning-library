@@ -10,7 +10,7 @@ If you are using a **Free Trial** account to run this workshop, Oracle recommend
 ### Objectives
 
 * Delete your **`training-cluster`** Big Data Service Cluster.
-* Delete the resources that you created in your **`training-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, VCN, reserved IP addresses, and so on.
+* Delete the resources that you created in your **`training-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, VCN, reserved IP addresses, object storage bucket and its objects, and so on.
 
 ### What Do You Need?
 
@@ -113,7 +113,32 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 6. Click the **Actions** button associated with **`traininun0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
-## **STEP 5:** Delete Your Compartment
+## **STEP 5:** Delete Your Object Storage Bucket
+
+1. In the **Oracle Cloud Console** navigation menu, navigate to **Object Storage > Object Storage**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
+
+  **Note:** Before you can delete a bucket that contains objects, you must delete all the objects in the buckets first.
+
+2. The **Bucket Details** page for the **training** bucket is displayed. Scroll-down to the **Objects** section.
+
+3. On the row for the **biketrips** object, click the **Actions** button, and then select **Delete Folder** from the context menu.
+
+  ![](./images/delete-biketrips.png " ")
+
+4. A confirmation message box is displayed. Enter **biketrips** in the **TYPE THE FOLDER NAME TO CONFIRM DELETION** text box, and then click **Delete**. The object is deleted and the **Bucket Details** page is re-displayed.
+
+5. On the row for the **stations** object, click the **Actions** button, and then select **Delete Folder** from the context menu.
+
+6. A confirmation message box is displayed. Enter **stations** in the **TYPE THE FOLDER NAME TO CONFIRM DELETION** text box, and then click **Delete**. The object is deleted and the  **Bucket Details** page is re-displayed.
+
+7. On the row for the **weather** object, click the **Actions** button, and then select **Delete Folder** from the context menu.
+
+8. A confirmation message box is displayed. Enter **weather** in the **TYPE THE FOLDER NAME TO CONFIRM DELETION** text box, and then click **Delete**. The object is deleted and the  **Bucket Details** page is re-displayed.
+
+9. Scroll up the page, and then click the **Delete** button. A confirmation message box is displayed. Click **Delete**. The bucket is deleted and the **Buckets** page is re-displayed.
+
+
+## **STEP 6:** Delete Your Compartment
 
 1. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Compartments**.
 
@@ -139,12 +164,12 @@ To delete a VCN, it must first be empty and have no related resources or attache
 ## Acknowledgements
 
 * **Author:**  
-    + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Reviewers:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Alexey Filanovskiy, Senior Principal Product Manager, DW & Big Data Global Leaders Program
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, November 2020
+* **Last Updated By/Date:** Lauran Serhal, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

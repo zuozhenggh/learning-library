@@ -187,7 +187,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
     + In the **POLICY VERSIONING** section, accept the default **KEEP POLICY CURRENT** option.
 
     + Uncheck the **CREATE ANOTHER POLICY** check box.
-    
+
 7. Click **Create**. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
 
        ![](./images/policy-2-detail-page.png " ")
@@ -263,9 +263,9 @@ In this step of the lab, you will create a new Virtual Cloud Network (VCN) that 
 
 ## Acknowledgements
 * **Authors:**
+    * Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Last Updated By/Date:** Lauran Serhal, October 2020
+* **Last Updated By/Date:** Lauran Serhal, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
