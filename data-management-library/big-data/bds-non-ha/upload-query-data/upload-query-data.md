@@ -72,7 +72,7 @@ In this step, you will connect to the first (only one master node in a non-HA cl
 
 ## **STEP 3:** Download and Run the Scripts to Set Up the HDFS Data
 
-In this step, you download two scripts that you will use to set up your HDFS environment and to download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
+In this step, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
 
 The Citi Bikes detailed trip data files (in zipped format) are first downloaded to a new local directory. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are then uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables. **`bikes.trips_ext`** is an external table defined over the source data. The **`bikes.trips`** table is created from this source; it is a partitioned table that stores the data in Parquet format. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
 
@@ -247,9 +247,9 @@ limit 10;</copy>
   ![](./images/hue-doc.png " ")
 
 
-## **STEP 5:** Download and Run the Scripts to Set Up the Object Store Data
+## **STEP 5:** Download and Run the Scripts to Set Up the Object Storage Data
 
-In this step, you will download two scripts that will set up your environment and download the Object Store dataset from Amazon's S3. The dataset represents the Citi Bikes trip data and stations information from the [Citibike System Data](https://www.citibikenyc.com/system-data) page, and some random weather data that is hosted on GitHub.
+In this step, you will download two scripts that will set up your environment and download the Object Storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -365,7 +365,7 @@ In this step, you will download two scripts that will set up your environment an
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Reviewers:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, November 2020
+* **Last Updated By/Date:** Lauran Serhal, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
