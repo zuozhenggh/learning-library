@@ -117,7 +117,9 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 1. In the **Oracle Cloud Console** navigation menu, navigate to **Object Storage > Object Storage**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
 
-  **Note:** Before you can delete a bucket that contains objects, you must delete all the objects in the buckets first.
+  ![](./images/buckets-page.png " ")
+
+  **Note:** Before you can delete a bucket that contains objects, you must delete all the objects in the bucket first.
 
 2. The **Bucket Details** page for the **training** bucket is displayed. Scroll-down to the **Objects** section.
 
