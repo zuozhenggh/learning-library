@@ -39,7 +39,7 @@ In this lab, we will connect to our cluster using Windows **PuTTY** and provide 
 
 **Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
-1. Start **PuTTY**. The **PuTTY Configuration** window is displayed. In **Saved Sessions** section, click the `ssh to traininmn0 on BDS cluster` saved session that you created in **Lab 6**, and then click **Load**.
+1. Start **PuTTY**. The **PuTTY Configuration** window is displayed. In the **Saved Sessions** section, click the `ssh to traininmn0 on BDS cluster` saved session that you created in **Lab 6**, and then click **Load**.
 
    ![](./images/connect-to-traininmn0.png " ")
 
