@@ -63,6 +63,10 @@
         {
             "title": "Audit",
             "filename": "../../inroduction/intro-audit.md"
+        },
+        {
+            "title": "Lab: Unified Audit Policies",
+            "filename": "../../unified-audit-policies/unified-audit-policies.md"
         }, 
         {
             "title": "Lab: Unified Audit Policies for STIG",
@@ -71,10 +75,6 @@
         {
             "title": "Lab: SYSLOG Destination for Audit Policies",
             "filename": "../../common-audit-dest/common-audit-dest.md"
-        },
-        {
-            "title": "Lab: Unified Audit Policies",
-            "filename": "../../unified-audit-policies/unified-audit-policies.md"
         }
         
     ]

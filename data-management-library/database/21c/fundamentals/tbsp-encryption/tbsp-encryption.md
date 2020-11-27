@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set the default tablespace encryption algorithm
+## **STEP 1:** Set the default tablespace encryption algorithm
 
 - Connect to the CDB root and display the default tablespace encryption algorithm.
 
@@ -113,7 +113,7 @@ In this lab, you will:
   
   ```
 
-## Step 2 : Verify the tablespace encryption algorithm used 
+## **STEP 2:** Verify the tablespace encryption algorithm used 
 
 ```
 

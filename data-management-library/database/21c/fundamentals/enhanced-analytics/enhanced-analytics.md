@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment
+## **STEP 1:** Set up the environment
 
 The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` the user `REPORT`, grants `REPORT` the `CREATE SESSION`, `CREATE TABLE` and `UNLIMITED TABLESPACE` privileges, and finally creates the table `TRADES` including rows.
 
@@ -120,7 +120,7 @@ $
 
 ```
 
-## Step 2 : Experiment the usage of the `GROUPS` clause of the window frame
+## **STEP 2:** Experiment the usage of the `GROUPS` clause of the window frame
 
 - Display the rows of `REPORT.TRADES` in `PDB20`. Using `ROWS`, the user specifies the window frame extent by counting rows forward or backward from the current row. `ROWS` allows any number of sort keys, of any ordered data types. This can be advantageous, because counting rows is oblivious to any “holes” in the values that are sorted. On the other hand, counting rows from the current row can be non-deterministic when there are multiple rows that are identical in the sort keys, causing an arbitrary cutoff between two rows that have the same values in the sort keys. Using `RANGE`, the user specifies an offset. There must be precisely one sort key, and its declared type must be amenable to addition and subtraction (i.e., numeric,datetime or interval). This avoids the non-determinism of arbitrarily cutting between two adjacent rows with the same value, but it can only be used with a single sort key of an additive type. SQL:2011 standard includes a third way of specifying the window frame extent, using the keyword `GROUPS`. Like `ROWS`, a `GROUPS` window can have any number of sort keys, of any ordered types. Like `RANGE`, a `GROUPS` window does not make cutoffs between adjacent rows with the same values in the sort keys. Thus, `GROUPS` combines some of the features of both `ROWS` and `RANGE`. 
 
@@ -310,7 +310,7 @@ $
   
   Notice that the syntax avoids the need for a nested grouped query and a join with `TRADES` as it was the case in the previous step.
 
-## Step 3 : Experiment the usage of the `EXCLUDE` clause of the window frame
+## **STEP 3:** Experiment the usage of the `EXCLUDE` clause of the window frame
 
 - Execute the `/home/oracle/labs/M104784GC10/create_T_table.sql` SQL script. 
 
@@ -516,7 +516,7 @@ $
   
   ```
 
-## Step 4 : Experiment the usage of the `GROUPS` and `EXCLUDE` clauses of the window frame
+## **STEP 4:** Experiment the usage of the `GROUPS` and `EXCLUDE` clauses of the window frame
 
 - Use the `EXCLUDE` options for window frame exclusion with `GROUPS`.
 

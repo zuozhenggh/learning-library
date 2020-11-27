@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Create a table with a SecureFile LOB
+## **STEP 1:** Create a table with a SecureFile LOB
 
 - Execute a shell script that creates a tablespace with sufficient space to let the LOB grow and be candidate for shrinking.
 
@@ -104,7 +104,7 @@ In this lab, you will:
   
   ```
 
-## Step 2 : Shrink the SecureFile LOB after rows inserted and updated
+## **STEP 2:** Shrink the SecureFile LOB after rows inserted and updated
 
 - Insert rows, update the CLOB data and commit.
 
@@ -201,7 +201,7 @@ In this lab, you will:
   
   As a result, two blocks are freed.
 
-## Step 3 : Shrink the SecureFile LOB after rows updated
+## **STEP 3:** Shrink the SecureFile LOB after rows updated
 
 - Update the CLOB. 
 

@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment
+## **STEP 1:** Set up the environment
 
 - Connect to `PDB21` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with skewed data.
 
@@ -76,7 +76,7 @@ SQL>
 
 ```
 
-## Step 2 : Examine skewed data
+## **STEP 2:** Examine skewed data
 
 - Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other. With Skewness, you measure whether there is more data towards the left or the right end of the tail (positive/negative) or how close you are to a normal distribution (skewness = 0).
 
@@ -188,7 +188,7 @@ SQL>
   
   
 
-## Step 3 : Examine skewed data after data evolution
+## **STEP 3:** Examine skewed data after data evolution
 
 - Insert more rows in the table.
 

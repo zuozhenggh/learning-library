@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Test
+## **STEP 1:** Test
 
 - Log in to `CDB21` as `SYSTEM.`
 

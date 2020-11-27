@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Prepare the tablespace to be exported
+## **STEP 1:** Prepare the tablespace to be exported
 
 - In `PDB21`, set the tablespace `USERS` to transport to read only. If the tablespace does not exist, create it. IF the master key is not set yet, set it.
 
@@ -64,7 +64,7 @@ $
 
 ```
 
-## Step 2 : Perform the TTS in parallel
+## **STEP 2:** Perform the TTS in parallel
 
 - Perform the TTS in parallel against `PDB21`.
 
@@ -94,7 +94,7 @@ $
 
 ```
 
-## Step 3 : Set the tablespace back to read write
+## **STEP 3:** Set the tablespace back to read write
 
 - Use the `ALTER TABLESPACE` command to set the tablespace back to read write.
 

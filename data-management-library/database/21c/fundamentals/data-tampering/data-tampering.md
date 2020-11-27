@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment
+## **STEP 1:** Set up the environment
 
 - Execute the `/home/oracle/labs/M104784GC10/setup_SH_tables.sh` shell script to create and load `SH.SALES` and `SH.TIMES` tables.
 
@@ -126,7 +126,7 @@ SQL>
 
 ```
 
-## Step 2 : Examine data before tampering
+## **STEP 2:** Examine data before tampering
 
 - At the end of each month and fiscal period, for legislative reasons, there is an audit table that stores what was sold. Verify the amount sold at the end of fiscal year 1998.
 
@@ -223,7 +223,7 @@ SQL>
   
   ```
 
-## Step 3 : Examine data after tampering
+## **STEP 3:** Examine data after tampering
 
 - In the initial terminal session, check that no one tampered with old sales.
 

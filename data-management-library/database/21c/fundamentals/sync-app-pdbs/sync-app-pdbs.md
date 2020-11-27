@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment
+## **STEP 1:** Set up the environment
 
 - Install the `TOYS_APP` and the `SALES_TOYS_APP` applications in the `TOYS_ROOT` application container for both `ROBOTS` and `DOLLS` application PDBs. The script defines the application container, installs the two applications in the application container, and finally creates the two application PDBs in the application container.
 
@@ -99,7 +99,7 @@ In this lab, you will:
   
   
 
-## Step 2 : Display the applications installed
+## **STEP 2:** Display the applications installed
 
 ```
 
@@ -126,7 +126,7 @@ SQL>
 ```
 Observe that the applications `toys_app` and `sales_toys_app` are installed in the application container at version 1.0.
 
-## Step 3 : Synchronize the application PDBs
+## **STEP 3:** Synchronize the application PDBs
 
 - Synchronize the application PDBs with the new applications `toys_app` and `sales_toys_app` installed.
 

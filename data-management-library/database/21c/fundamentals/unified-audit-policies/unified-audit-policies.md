@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Create the users and a procedure
+## **STEP 1:** Create the users and a procedure
 
 - Connect to `PDB21` as `SYSTEM` and verify which predefined unified audit policies are implemented.
 
@@ -131,7 +131,7 @@ In this lab, you will:
   
   ```
 
-## Step 2 : Create and enable an audit policy 
+## **STEP 2:** Create and enable an audit policy 
 
 - In `PDB21`, create and enable an audit policy so as to audit any query on `HR.EMPLOYEES` table executed by the login user `U2`.
 
@@ -160,7 +160,7 @@ In this lab, you will:
   
   ```
 
-## Step 3 : Test
+## **STEP 3:** Test
 
 - Connect to `PDB21` as the user `U2` and execute the `U1.PROCEMP` procedure.
 

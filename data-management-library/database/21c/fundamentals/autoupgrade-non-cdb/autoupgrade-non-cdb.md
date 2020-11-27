@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Prepare the AutoUpgrade configuration file
+## **STEP 1:** Prepare the AutoUpgrade configuration file
 
 Before upgrading the Oracle Database 19c `CDB19` andthe non-CDB `ORCL` to Oracle Database 21c, prepare the AutoUpgrade configuration file. The name of the AutoUpgrade configuration file is `/home/oracle/labs/M103786GC10/config.txt`.   
 
@@ -104,7 +104,7 @@ Before upgrading the Oracle Database 19c `CDB19` andthe non-CDB `ORCL` to Oracle
   
   
 
-## Step 2 : Launch the AutoUpgrade in analysis mode
+## **STEP 2:** Launch the AutoUpgrade in analysis mode
 
 Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mode, using the configuration file.
 
@@ -473,7 +473,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
   
   The analysis for the upgrade of the two databases is completed. You can now deploy the databases upgrade.
 
-## Step 3 : Launch the AutoUpgrade in deploy mode
+## **STEP 3:** Launch the AutoUpgrade in deploy mode
 
 - Upgrade both `CDB19` and `ORCL` using the AutoUpgrade utility with the `deploy` mode, using the configuration file. 
 
@@ -895,7 +895,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
   
   
 
-## Step 4 : Diagnose and troubleshoot AutoUpgrade operations
+## **STEP 4:** Diagnose and troubleshoot AutoUpgrade operations
 
 Let's handle possible errors while analyzing or upgrading databases. The cases below show different situations and therefore different job number and dates.
 
@@ -2161,7 +2161,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-## Step 5 : Abort and restart upgrade operations
+## **STEP 5:** Abort and restart upgrade operations
 
 You may have to abort a running AutoUpgrade operation to restart a new upgrade operation. For example, you tested non-CDB and CDBs upgrade, but after too numerous errors, you decided to re-create the test non-CDB and CDBs and start a new upgrade operation.
 
@@ -2324,7 +2324,7 @@ You may have to abort a running AutoUpgrade operation to restart a new upgrade o
   
   ```
 
-## Step 6 : Clean up directories
+## **STEP 6:** Clean up directories
 
 - If you plan to use the same log directories, clean up the log files in the directories defined in the configuration file.
 

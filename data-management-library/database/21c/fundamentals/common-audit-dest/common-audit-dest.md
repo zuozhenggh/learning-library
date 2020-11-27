@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Create a common user
+## **STEP 1:** Create a common user
 
 - Before configuring the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination, execute the `/home/oracle/labs/M104781GC10/setup_SYSLOG_audit.sh` shell script against `CDB21`. The shell script creates a common user `C##TEST` and commonly grants the common user the `CREATE SESSION` and `CREATE TABLE` privileges..  
 
@@ -85,7 +85,7 @@ In this lab, you will:
   
   ```
 
-## Step 2 : Create a common and local audit policy
+## **STEP 2:** Create a common and local audit policy
 
 - Create the common audit policy at the CDB root in `CDB21`.
 
@@ -184,7 +184,7 @@ In this lab, you will:
   
   ```
 
-## Step 3 : Configure the `SYSLOG` destination for common and local audit policies
+## **STEP 3:** Configure the `SYSLOG` destination for common and local audit policies
 
 - Configure the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination. The `facility_clause` refers to the facility to which you will write the audit trail records. Valid choices are `USER` and `LOCAL`. If you enter `LOCAL`, then optionally append 0–7 to designate a local custom facility for the `SYSLOG` records. `priority_clause` refers to the type of warning in which to categorize the record. Valid choices are `NOTICE`, `INFO`, `DEBUG`, `WARNING`, `ERR`,`CRIT` , `ALERT`, and `EMERG`. 
 
@@ -291,7 +291,7 @@ In this lab, you will:
   
   ```
 
-## Step 4 : Define the OS directories for the SYSLOG files
+## **STEP 4:** Define the OS directories for the SYSLOG files
 
 - Before audited actions are recorded by the SYSLOG system, define the OS directories for the SYSLOG files to store the audited records. Open another terminal session as `root`. 
 
@@ -352,7 +352,7 @@ In this lab, you will:
   
   ```
 
-## Step 5 : Test
+## **STEP 5:** Test
 
 - In the `oracle` UNIX session, log on as the common user `C##TEST` to the CDB root and perform a `CREATE TABLE` operation followed by `INSERT` operation on the table created.  
 

@@ -32,11 +32,11 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Ensure Database Vault is not installed
+## **STEP 1:** Ensure Database Vault is not installed
 
 Before starting the reinstallation of Database Vault, use the [Practice: Deinstalling Oracle Database Vault](https://confluence.oci.oraclecorp.com/display/DB21CNEWFT/Practice%3A+Deinstalling+Oracle+Database+Vault) in case Database Vault is already installed.
 
-## Step 2 : Use DBCA to reinstall or install Database Vault in the CDB
+## **STEP 2:** Use DBCA to reinstall or install Database Vault in the CDB
 
 - Before running the command, replace the password in the command below for both the DV owner and the DV account manager. Ensure that the DV owner and DV account manager accounts do not exist in the CDB root.
 

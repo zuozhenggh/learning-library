@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Observe the predefined unified audit policies implemented
+## **STEP 1:** Observe the predefined unified audit policies implemented
 
 - Connect to `PDB21` as `SYSTEM`.
 
@@ -362,7 +362,7 @@ In this lab, you will:
   
   
 
-## Step 2 : Enable all three audit policies for all users
+## **STEP 2:** Enable all three audit policies for all users
 
 ```
 

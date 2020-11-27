@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 :  Enable the In-Memory column store in the CDB and set up the Oracle Text user in the PDB
+## **STEP 1:**  Enable the In-Memory column store in the CDB and set up the Oracle Text user in the PDB
 
 - Run the `setup_Text21c.sh` script.
 
@@ -107,7 +107,7 @@ $
 
 ```
 
-## Step 2 : Create a table, a `CONTEXT` index, and a `JSON` search index
+## **STEP 2:** Create a table, a `CONTEXT` index, and a `JSON` search index
 
 - Connect in `PDB21` as `TEXTUSER`, create a table and insert rows.
 
@@ -203,7 +203,7 @@ $
   
   SQL>`</pre
 
-## Step 3 : Populate the table and its text columns into the In-Memory Column Store
+## **STEP 3:** Populate the table and its text columns into the In-Memory Column Store
 
 - Enable IM Full Text Columns on the table.
 
@@ -308,7 +308,7 @@ $
   
   ```
 
-## Step 4 : Query the data from the In-Memory Column Store
+## **STEP 4:** Query the data from the In-Memory Column Store
 
 - Before dropping the indexes, observe whether the queries use the indexes or the data from the In-Memory column store.
 

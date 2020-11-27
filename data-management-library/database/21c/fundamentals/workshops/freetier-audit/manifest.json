@@ -9,7 +9,7 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "../../introduction/intro-audit.md"
         },
         {
             "title": "Lab 1: Create SSH Keys",
@@ -29,16 +29,16 @@
             "filename": "../../setup/setup.md"
         },
         {
+            "title": "Lab: Unified Audit Policies",
+            "filename": "../../unified-audit-policies/unified-audit-policies.md"
+        },
+        {
             "title": "Lab: Unified Audit Policies for STIG",
             "filename": "../../audit-stig-compl/audit-stig-compl.md"
         },
         {
             "title": "Lab: SYSLOG Destination for Audit Policies",
             "filename": "../../common-audit-dest/common-audit-dest.md"
-        },
-        {
-            "title": "Lab: Unified Audit Policies",
-            "filename": "../../unified-audit-policies/unified-audit-policies.md"
         }
         
     ]

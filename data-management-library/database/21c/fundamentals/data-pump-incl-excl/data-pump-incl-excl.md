@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment
+## **STEP 1:** Set up the environment
 
 - Use the `/home/oracle/labs/M104780GC10/create_PDB21_2.sh` shell script to create the `PDB21_2` PDB and the `HR` user in `PDB21_2`.
 
@@ -159,7 +159,7 @@ In this lab, you will:
   
   
 
-## Step 2 : Export tables excluding their statistics
+## **STEP 2:** Export tables excluding their statistics
 
 Export from `PDB21` two `HR` tables, excluding their statistics.
 
@@ -187,7 +187,7 @@ $
 
 ```
 
-## Step 3 : Import tables
+## **STEP 3:** Import tables
 
 - Import the dumpfile into another PDB, `PDB21_2` in `CDB21`.
 

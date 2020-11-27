@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Use SQL Macro as a scalar expression
+## **STEP 1:** Use SQL Macro as a scalar expression
 
 - Ensure that `PDB21` is opened. If it is not opened, open it first.
 
@@ -228,7 +228,7 @@ In this lab, you will:
   
   ```
 
-## Step 2 : Use SQL Macro as a table expression
+## **STEP 2:** Use SQL Macro as a table expression
 
 - The first usage of an SQL macro as a table expression shows how to use the SQM to implement a polymorphic view.
 

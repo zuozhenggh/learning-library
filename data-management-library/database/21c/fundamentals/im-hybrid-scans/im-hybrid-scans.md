@@ -28,7 +28,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment with In-Memory Column Store
+## **STEP 1:** Set up the environment with In-Memory Column Store
 
 The `IM_Hybrid_setup.sh` shell script configures the IM column store to 110M, creates an in-memory table `IMU.IMTAB` containing two `INMEMORY` columns and one `NO INMEMORY` column, and finally inserts rows in the table. The shell script executes the same operations in an Oracle Database 19c and Oracle Database 21c.
 
@@ -216,7 +216,7 @@ $
   
   ```
 
-## Step 3 : Complete In-Memory Scans
+## **STEP 3:** Complete In-Memory Scans
 
 - Execute a first query on the `IMU.IMTAB` table. The SELECT list contains the `NO INMEMORY` column and the predicate contains only the `NO INMEMORY` columns. Then examine the execution plan.
 
@@ -415,7 +415,7 @@ $
   
   The optimizer in both sessions choose different access methods. In 20c, the `TABLE ACCESS INMEMORY FULL (HYBRID)` access method is chosen because the predicate contains only `INMEMORY` columns and the SELECT list a `NO INMEMORY` column.
 
-## Step 4 : Drop the user
+## **STEP 4:** Drop the user
 
 - Drop the `imu` user.
 

@@ -33,7 +33,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment
+## **STEP 1:** Set up the environment
 
 - Connect to `PDB21` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with data.
 
@@ -83,7 +83,7 @@ SQL>
 
 ```
 
-## Step 2 : Examine the kurtosis of the distribution
+## **STEP 2:** Examine the kurtosis of the distribution
 
 - Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other.
 
@@ -181,7 +181,7 @@ SQL>
   
   `PRICE_SMALL_CITY` has a higher kurtosis compared to `PRICE_BIG_CITY`. Observe whether there is more data in the tails or around the peak in `PRICE_SMALL_CITY` and in `PRICE_BIG_CITY`.
 
-## Step 3 : Examine the kurtosis of the distribution after data evolution
+## **STEP 3:** Examine the kurtosis of the distribution after data evolution
 
 - Insert more rows in the table.
 

@@ -32,7 +32,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Set up the environment with In-Memory Column Store
+## **STEP 1:** Set up the environment with In-Memory Column Store
 
 The shell script configures the IM column store to 110M, creates `NO
                         INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tables.
@@ -184,7 +184,7 @@ $
   
   ```
 
-## Step 3 : Configure Automatic In-Memory
+## **STEP 3:** Configure Automatic In-Memory
 
 - Connect to the CDB root, then set `INMEMORY_AUTOMATIC_LEVEL` to `HIGH`, and re-start the database instance.
 
@@ -322,7 +322,7 @@ $
   
   ```
 
-## Step 4 : Test
+## **STEP 4:** Test
 
 - Wait one minute to observe the `HR` tables to be automatically assigned the `INMEMORY` attribute.
 

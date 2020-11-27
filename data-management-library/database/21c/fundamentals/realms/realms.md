@@ -33,7 +33,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## Step 1 : Configure and enable Database Vault at the CDB and PDB levels
+## **STEP 1:** Configure and enable Database Vault at the CDB and PDB levels
 
 - Configure and enable Database Vault at the CDB root level and at the PDB level. The script creates the `HR.G_EMP` table in the root container and also the `HR.L_EMP` table in `PDB21`.  
 
@@ -166,7 +166,7 @@ In this lab, you will:
   
   ```
 
-## Step 2 : Test table data accessibility with no realm on common objects
+## **STEP 2:** Test table data accessibility with no realm on common objects
 
 - Connect to the CDB root as `C##SEC_ADMIN` to verify the status of `DV_ALLOW_COMMON_OPERATION`. This is the default behavior: it allows local users to create Database Vault controls on common users objects.
 
@@ -281,7 +281,7 @@ In this lab, you will:
   
   ```
 
-## Step 3 : Test table data accessibility with a common regular or mandatory realm on common objects
+## **STEP 3:** Test table data accessibility with a common regular or mandatory realm on common objects
 
 - Create a common regular realm on `C##TEST1` tables in the CDB root. 
 
@@ -566,7 +566,7 @@ In this lab, you will:
   
   
 
-## Step 4 : Test table data accessibility on common objects with a PDB regular or mandatory realm
+## **STEP 4:** Test table data accessibility on common objects with a PDB regular or mandatory realm
 
 - Create a PDB regular realm on `C##TEST1` tables in `PDB21`.
 
@@ -852,7 +852,7 @@ In this lab, you will:
   
   
 
-## Step 5 : Restrict local users from creating Oracle Database Vault controls on common objects
+## **STEP 5:** Restrict local users from creating Oracle Database Vault controls on common objects
 
 ```
 
@@ -879,7 +879,7 @@ SQL>
 
 ```
 
-## Step 6 : Test table data accessibility with a common regular or mandatory realm on common objects
+## **STEP 6:** Test table data accessibility with a common regular or mandatory realm on common objects
 
 - Create a common regular realm on `C##TEST1` tables in the CDB root. 
 
@@ -1167,7 +1167,7 @@ SQL>
   
   
 
-## Step 7 : Test table data accessibility on common objects with a PDB regular or mandatory realm
+## **STEP 7:** Test table data accessibility on common objects with a PDB regular or mandatory realm
 
 - Create a PDB regular realm on `C##TEST1` tables in `PDB21`.
 
@@ -1482,7 +1482,7 @@ SQL>
   
   
 
-## Step 8 : Summary
+## **STEP 8:** Summary
 
   Let's summarize the behavior of data access on common users objects in PDBs when you switch the `DV_ALLOW_COMMON_OPERATION` value.
 
