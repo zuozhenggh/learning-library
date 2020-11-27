@@ -3,21 +3,11 @@
 ## Introduction
 This lab shows how queries referencing both `INMEMORY` and `NO INMEMORY` columns can access columnar data. This optimizer access method called IM hybrid scan can improve performance by orders of magnitude. If the optimizer chooses a table scan, the storage engine automatically determines whether an IM hybrid scan performs better than a regular row store scan from the buffer cache.
 
-### About Product/Technology
-The optimizer considers hybrid scans when the following conditions are met:
-
-* The predicate contains only `INMEMORY` columns.
-* The SELECT list contains an arbitrary combination of `INMEMORY` and `NO INMEMORY` columns.
-
 Estimated Lab Time: XX minutes
 
 ### Objectives
 In this lab, you will:
 * Setup the environment
-* Test the set operator with the EXCEPT clause
-* Test the set operator with the EXCEPT ALL clause
-* Test the set operator with the INTERSECT clause
-* Test the set operator with the INTERSECT ALL clause
 
 ### Prerequisites
 

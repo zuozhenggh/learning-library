@@ -3,25 +3,13 @@
 ## Introduction
 This lab shows how to enable all audit records from common unified audit policies to be consolidated into a single destination. The new initialization parameter used for the configuration is supported only on UNIX platforms and NOT available on Windows.
 
-### About Product/Technology
-Until Oracle Database 21c, only the set operator UNION could be combined with ALL. Oracle Database 21c introduces two set operators, MINUS ALL (same as EXCEPT ALL) and INTERSECT ALL.
-
- ![Set Operators](images/set-operators.png "Set Operators")
-
-- The 1st and 2nd statements use the EXCEPT operator to return only unique rows returned by the 1st query but not the 2nd.  
-- The 3rd and 4th statements combine results from two queries using EXCEPT ALL reteruning only rows returned by the 1st query but not the 2nd even if not unique.
-- The 5th and 6th statement combines results from 2 queries using INTERSECT ALL returning only unique rows returned by both queries.
-
-
-Estimated Lab Time: XX minutes
-
 ### Objectives
 In this lab, you will:
-* Setup the environment
-* Test the set operator with the EXCEPT clause
-* Test the set operator with the EXCEPT ALL clause
-* Test the set operator with the INTERSECT clause
-* Test the set operator with the INTERSECT ALL clause
+* Create a common user
+* Create a common and local audit policy
+* Configure the SYSLOG destination
+* Define the OS directories
+* Test and Cleanup
 
 ### Prerequisites
 
@@ -34,7 +22,7 @@ In this lab, you will:
 
 ## **STEP 1:** Create a common user
 
-- Before configuring the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination, execute the `/home/oracle/labs/M104781GC10/setup_SYSLOG_audit.sh` shell script against `CDB21`. The shell script creates a common user `C##TEST` and commonly grants the common user the `CREATE SESSION` and `CREATE TABLE` privileges..  
+1. Before configuring the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination, execute the `/home/oracle/labs/M104781GC10/setup_SYSLOG_audit.sh` shell script against `CDB21`. The shell script creates a common user `C##TEST` and commonly grants the common user the `CREATE SESSION` and `CREATE TABLE` privileges..  
 
   
   ```
@@ -87,7 +75,7 @@ In this lab, you will:
 
 ## **STEP 2:** Create a common and local audit policy
 
-- Create the common audit policy at the CDB root in `CDB21`.
+1. Create the common audit policy at the CDB root in `CDB21`.
 
   
   ```
@@ -134,7 +122,7 @@ In this lab, you will:
   
   ```
 
-- Create the local audit policy at the PDB level in `PDB2``1`.
+2. Create the local audit policy at the PDB level in `PDB2``1`.
 
   
   ```
@@ -157,7 +145,7 @@ In this lab, you will:
   
   ```
 
-- Display the policy names, their actions and commonality.
+3. Display the policy names, their actions and commonality.
 
   
   ```
@@ -184,9 +172,9 @@ In this lab, you will:
   
   ```
 
-## **STEP 3:** Configure the `SYSLOG` destination for common and local audit policies
+## **STEP 3:** Configure the SYSLOG destination for common and local audit policies
 
-- Configure the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination. The `facility_clause` refers to the facility to which you will write the audit trail records. Valid choices are `USER` and `LOCAL`. If you enter `LOCAL`, then optionally append 0–7 to designate a local custom facility for the `SYSLOG` records. `priority_clause` refers to the type of warning in which to categorize the record. Valid choices are `NOTICE`, `INFO`, `DEBUG`, `WARNING`, `ERR`,`CRIT` , `ALERT`, and `EMERG`. 
+1. Configure the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination. The `facility_clause` refers to the facility to which you will write the audit trail records. Valid choices are `USER` and `LOCAL`. If you enter `LOCAL`, then optionally append 0–7 to designate a local custom facility for the `SYSLOG` records. `priority_clause` refers to the type of warning in which to categorize the record. Valid choices are `NOTICE`, `INFO`, `DEBUG`, `WARNING`, `ERR`,`CRIT` , `ALERT`, and `EMERG`. 
 
   
   ```
@@ -203,7 +191,7 @@ In this lab, you will:
   
   ```
 
-- Configure the `SYSLOG` destination for local unified audit policies to be consolidated into a single destination.
+2. Configure the `SYSLOG` destination for local unified audit policies to be consolidated into a single destination.
 
   
   ```
@@ -242,7 +230,7 @@ In this lab, you will:
   
   
 
-- Restart the database instance because the initialization parameter `UNIFIED_AUDIT_COMMON_SYSTEMLOG` has been set at the `SPFILE` scope. Execute the `/home/oracle/labs/M104781GC10/wallet.sh` to restart the instance and also open the wallet.
+3.  Restart the database instance because the initialization parameter `UNIFIED_AUDIT_COMMON_SYSTEMLOG` has been set at the `SPFILE` scope. Execute the `/home/oracle/labs/M104781GC10/wallet.sh` to restart the instance and also open the wallet.
 
   
   ```
@@ -293,7 +281,7 @@ In this lab, you will:
 
 ## **STEP 4:** Define the OS directories for the SYSLOG files
 
-- Before audited actions are recorded by the SYSLOG system, define the OS directories for the SYSLOG files to store the audited records. Open another terminal session as `root`. 
+1. Before audited actions are recorded by the SYSLOG system, define the OS directories for the SYSLOG files to store the audited records. Open another terminal session as `root`. 
 
   
   ```
@@ -306,7 +294,7 @@ In this lab, you will:
   
   ```
 
-- Edit the `/etc/rsyslog.conf` configuration file and under the `RULES` section, add as many lines as different values defined in the CDB for SYSTEMLOG to specify related OS directories.
+2. Edit the `/etc/rsyslog.conf` configuration file and under the `RULES` section, add as many lines as different values defined in the CDB for SYSTEMLOG to specify related OS directories.
 
   
   ```
@@ -335,7 +323,7 @@ In this lab, you will:
   
   ```
 
-- Restart the SYSLOG daemon.
+3. Restart the SYSLOG daemon.
 
   
   ```
@@ -354,7 +342,7 @@ In this lab, you will:
 
 ## **STEP 5:** Test
 
-- In the `oracle` UNIX session, log on as the common user `C##TEST` to the CDB root and perform a `CREATE TABLE` operation followed by `INSERT` operation on the table created.  
+1. In the `oracle` UNIX session, log on as the common user `C##TEST` to the CDB root and perform a `CREATE TABLE` operation followed by `INSERT` operation on the table created.  
 
   
   ```
@@ -387,7 +375,7 @@ In this lab, you will:
   
   ```
 
-- Back in the `root` UNIX session, check that a syslog entry is created in `/var/log/root_common_audit_records.log` file because an audit record for CREATE TABLE got generated due to the common audit policy `POL_COMMON`.
+2. Back in the `root` UNIX session, check that a syslog entry is created in `/var/log/root_common_audit_records.log` file because an audit record for CREATE TABLE got generated due to the common audit policy `POL_COMMON`.
 
   
   ```
@@ -408,7 +396,7 @@ In this lab, you will:
   
   
 
-- Check that syslog entries are created in `/var/log/root_audit_records.log` file because audit records for `INSERT` got generated due to the local root audit policy `POL_ROOT`.
+3. Check that syslog entries are created in `/var/log/root_audit_records.log` file because audit records for `INSERT` got generated due to the local root audit policy `POL_ROOT`.
 
   
   ```
@@ -431,7 +419,7 @@ In this lab, you will:
   
   
 
-- Back in the `oracle` UNIX session, log on as the common user `C##TEST` to the PDB `PDB21` and perform a `CREATE TABLE` operation followed by `INSERT` operation on the table created.
+4. Back in the `oracle` UNIX session, log on as the common user `C##TEST` to the PDB `PDB21` and perform a `CREATE TABLE` operation followed by `INSERT` operation on the table created.
 
   
   ```
@@ -464,7 +452,7 @@ In this lab, you will:
   
   ```
 
-- Back in the `root` UNIX session, check whether a syslog entry is created in `/var/log/root_common_audit_records.log` file.
+5. Back in the `root` UNIX session, check whether a syslog entry is created in `/var/log/root_common_audit_records.log` file.
 
   
   ```
@@ -483,7 +471,7 @@ In this lab, you will:
   
   
 
-- Check whether syslog entries are created in `/var/log/root_audit_records.log` file.
+6. Check whether syslog entries are created in `/var/log/root_audit_records.log` file.
 
   
   ```
@@ -510,7 +498,7 @@ In this lab, you will:
 
 ## Step 6: Cleanup
 
-- Back in the `oracle` UNIX session, execute the `/home/oracle/labs/M104781GC10/cleanup.sh` shell script to reset the `SYSLOG` destinations for both common and local unified audit policies, and dropping the policies int he CDB root and `PDB21`.
+1. Back in the `oracle` UNIX session, execute the `/home/oracle/labs/M104781GC10/cleanup.sh` shell script to reset the `SYSLOG` destinations for both common and local unified audit policies, and dropping the policies int he CDB root and `PDB21`.
 
   
   ```
@@ -654,9 +642,6 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 

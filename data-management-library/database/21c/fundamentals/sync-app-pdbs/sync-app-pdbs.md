@@ -3,25 +3,11 @@
 ## Introduction
 This lab shows how to reduce the number of synchronization statements when you have to synchronize multiple applications in application PDBs. In previous Oracle Database versions, you had to execute as many synchronization statements as applications.
 
-### About Product/Technology
-Until Oracle Database 21c, only the set operator UNION could be combined with ALL. Oracle Database 21c introduces two set operators, MINUS ALL (same as EXCEPT ALL) and INTERSECT ALL.
-
- ![Set Operators](images/set-operators.png "Set Operators")
-
-- The 1st and 2nd statements use the EXCEPT operator to return only unique rows returned by the 1st query but not the 2nd.  
-- The 3rd and 4th statements combine results from two queries using EXCEPT ALL reteruning only rows returned by the 1st query but not the 2nd even if not unique.
-- The 5th and 6th statement combines results from 2 queries using INTERSECT ALL returning only unique rows returned by both queries.
-
-
 Estimated Lab Time: XX minutes
 
 ### Objectives
 In this lab, you will:
 * Setup the environment
-* Test the set operator with the EXCEPT clause
-* Test the set operator with the EXCEPT ALL clause
-* Test the set operator with the INTERSECT clause
-* Test the set operator with the INTERSECT ALL clause
 
 ### Prerequisites
 

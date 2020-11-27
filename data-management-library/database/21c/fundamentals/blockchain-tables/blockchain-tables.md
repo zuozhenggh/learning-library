@@ -3,28 +3,16 @@
 ## Introduction
 This lab shows how to create, alter and drop Oracle blockchain tables.
 
-### About Product/Technology
-Until Oracle Database 21c, only the set operator UNION could be combined with ALL. Oracle Database 21c introduces two set operators, MINUS ALL (same as EXCEPT ALL) and INTERSECT ALL.
-
- ![Set Operators](images/set-operators.png "Set Operators")
-
-- The 1st and 2nd statements use the EXCEPT operator to return only unique rows returned by the 1st query but not the 2nd.  
-- The 3rd and 4th statements combine results from two queries using EXCEPT ALL reteruning only rows returned by the 1st query but not the 2nd even if not unique.
-- The 5th and 6th statement combines results from 2 queries using INTERSECT ALL returning only unique rows returned by both queries.
-
-
 Estimated Lab Time: XX minutes
 
 ### Objectives
 In this lab, you will:
-* Setup the environment
-* Test the set operator with the EXCEPT clause
-* Test the set operator with the EXCEPT ALL clause
-* Test the set operator with the INTERSECT clause
-* Test the set operator with the INTERSECT ALL clause
+* Create the blockchain table
+* Insert and delete rows
+* Drop the blockchain table
+* Check the validity of rows in the blockchain table
 
 ### Prerequisites
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a VCN
@@ -34,328 +22,327 @@ In this lab, you will:
 
 ## **STEP 1:** Create the blockchain table
 
-- Create the AUDITOR user, owner of the blockchain table.
+1. Create the AUDITOR user, owner of the blockchain table.
+
+    ```
+    
+    $ <copy>cd /home/oracle/labs/M104781GC10</copy>
+    
+    $ <copy>/home/oracle/labs/M104781GC10/setup_user.sh</copy>
+    
+    SQL> host mkdir /u01/app/oracle/admin/CDB21/tde
+    
+    mkdir: cannot create directory '/u01/app/oracle/admin/CDB21/tde': File exists
+    
+    SQL>
+    
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL ;
+    
+    ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL
+    
+    *
+    
+    ERROR at line 1:
+    
+    ORA-28389: cannot close auto login wallet
+    
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    
+    keystore altered.
+    
+    SQL> ALTER SYSTEM SET wallet_root = '/u01/app/oracle/admin/CDB21/tde'
+    
+      2         SCOPE=SPFILE;
+    
+    System altered.
+    
+    ...
+    
+    specify password for HR as parameter 1:
+    
+    specify default tablespeace for HR as parameter 2:
+    
+    specify temporary tablespace for HR as parameter 3:
+    
+    specify log path as parameter 4:
+    
+    PL/SQL procedure successfully completed.
+    
+    ...
+    
+    SQL> Disconnected from Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
+    
+    Version 21.2.0.0.0
+    
+    SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 9 05:34:16 2020
+    
+    Version 21.2.0.0.0
+    
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    
+    Connected to:
+    
+    Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
+    
+    Version 21.2.0.0.0
+    
+    SQL> DROP USER auditor CASCADE;
+    
+    DROP USER auditor CASCADE
+    
+              *
+    
+    ERROR at line 1:
+    
+    ORA-01918: user 'AUDITOR' does not exist
+    
+    SQL> ALTER SYSTEM SET db_create_file_dest='/home/oracle/labs';
+    
+    System altered.
+    
+    SQL>
+    
+    SQL> DROP TABLESPACE ledgertbs INCLUDING CONTENTS AND DATAFILES cascade constraints;
+    
+    DROP TABLESPACE ledgertbs INCLUDING CONTENTS AND DATAFILES cascade constraints
+    
+    *
+    
+    ERROR at line 1:
+    
+    ORA-00959: tablespace 'LEDGERTBS' does not exist
+    
+    SQL> CREATE TABLESPACE ledgertbs;
+    
+    Tablespace created.
+    
+    SQL> CREATE USER auditor identified by password DEFAULT TABLESPACE ledgertbs;
+    
+    User created.
+    
+    SQL> GRANT create session, create table, unlimited tablespace TO auditor;
+    
+    Grant succeeded.
+    
+    SQL> GRANT execute ON sys.dbms_blockchain_table TO auditor;
+    
+    Grant succeeded.
+    
+    SQL> GRANT select ON hr.employees TO auditor;
+    
+    Grant succeeded.
+    
+    SQL>
+    
+    SQL> exit
+    
+    $
+    
+    ```
+
+2. Create the blockchain table named `AUDITOR.LEDGER_EMP` that will maintain a tamper-resistant ledger of current and historical transactions about `HR.EMPLOYEES` in `PDB21`. Rows can never be deleted in the blockchain table `AUDITOR.LEDGER_EMP`. Moreover the blockchain table can be dropped only after 31 days of inactivity.
 
   
-  ```
+    ```
+    
+    $ <copy>sqlplus auditor@PDB21</copy>
+    
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    
+    Enter password: <i><copy>password</copy></i>
+    
+    SQL> <copy>CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER);</copy>
+    
+    CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER)
+    
+                                                          *
+    
+    ERROR at line 1:
+    
+    ORA-00905: missing keyword
+    
+    SQL> 
+    
+    ```
   
-  $ <copy>cd /home/oracle/labs/M104781GC10</copy>
+*Observe that the `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory.*
   
-  $ <copy>/home/oracle/labs/M104781GC10/setup_user.sh</copy>
-  
-  SQL> host mkdir /u01/app/oracle/admin/CDB21/tde
-  
-  mkdir: cannot create directory '/u01/app/oracle/admin/CDB21/tde': File exists
-  
-  SQL>
-  
-  SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL ;
-  
-  ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL
-  
-  *
-  
-  ERROR at line 1:
-  
-  ORA-28389: cannot close auto login wallet
-  
-  SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
-  
-  keystore altered.
-  
-  SQL> ALTER SYSTEM SET wallet_root = '/u01/app/oracle/admin/CDB21/tde'
-  
-    2         SCOPE=SPFILE;
-  
-  System altered.
-  
-  ...
-  
-  specify password for HR as parameter 1:
-  
-  specify default tablespeace for HR as parameter 2:
-  
-  specify temporary tablespace for HR as parameter 3:
-  
-  specify log path as parameter 4:
-  
-  PL/SQL procedure successfully completed.
-  
-  ...
-  
-  SQL> Disconnected from Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
-  
-  Version 21.2.0.0.0
-  
-  SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 9 05:34:16 2020
-  
-  Version 21.2.0.0.0
-  
-  Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-  
-  Connected to:
-  
-  Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
-  
-  Version 21.2.0.0.0
-  
-  SQL> DROP USER auditor CASCADE;
-  
-  DROP USER auditor CASCADE
-  
-            *
-  
-  ERROR at line 1:
-  
-  ORA-01918: user 'AUDITOR' does not exist
-  
-  SQL> ALTER SYSTEM SET db_create_file_dest='/home/oracle/labs';
-  
-  System altered.
-  
-  SQL>
-  
-  SQL> DROP TABLESPACE ledgertbs INCLUDING CONTENTS AND DATAFILES cascade constraints;
-  
-  DROP TABLESPACE ledgertbs INCLUDING CONTENTS AND DATAFILES cascade constraints
-  
-  *
-  
-  ERROR at line 1:
-  
-  ORA-00959: tablespace 'LEDGERTBS' does not exist
-  
-  SQL> CREATE TABLESPACE ledgertbs;
-  
-  Tablespace created.
-  
-  SQL> CREATE USER auditor identified by password DEFAULT TABLESPACE ledgertbs;
-  
-  User created.
-  
-  SQL> GRANT create session, create table, unlimited tablespace TO auditor;
-  
-  Grant succeeded.
-  
-  SQL> GRANT execute ON sys.dbms_blockchain_table TO auditor;
-  
-  Grant succeeded.
-  
-  SQL> GRANT select ON hr.employees TO auditor;
-  
-  Grant succeeded.
-  
-  SQL>
-  
-  SQL> exit
-  
-  $
-  
-  ```
+    ```
+    
+    SQL> <copy>CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER)
+    
+                        NO DROP UNTIL 31 DAYS IDLE
+    
+                        NO DELETE LOCKED
+    
+                        HASHING USING "SHA2_512" VERSION "v1";</copy>
+    
+    Table created.
+    
+    SQL> 
+    
+    ```
 
-- Create the blockchain table named `AUDITOR.LEDGER_EMP` that will maintain a tamper-resistant ledger of current and historical transactions about `HR.EMPLOYEES` in `PDB21`. Rows can never be deleted in the blockchain table `AUDITOR.LEDGER_EMP`. Moreover the blockchain table can be dropped only after 31 days of inactivity.
+3. Verify the attributes set for the blockchain table in the appropriate data dictionary view.
 
   
-  ```
-  
-  $ <copy>sqlplus auditor@PDB21</copy>
-  
-  Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-  
-  Enter password: <i><copy>password</copy></i>
-  
-  SQL> <copy>CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER);</copy>
-  
-  CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER)
-  
-                                                         *
-  
-  ERROR at line 1:
-  
-  ORA-00905: missing keyword
-  
-  SQL> 
-  
-  ```
-  
-  *Observe that the `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory.*
-  
-  ```
-  
-  SQL> <copy>CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER)
-  
-                       NO DROP UNTIL 31 DAYS IDLE
-  
-                       NO DELETE LOCKED
-  
-                       HASHING USING "SHA2_512" VERSION "v1";</copy>
-  
-  Table created.
-  
-  SQL> 
-  
-  ```
+    ```
+    
+    SQL> <copy>SELECT row_retention, row_retention_locked, 
+    
+                        table_inactivity_retention, hash_algorithm  
+    
+                  FROM   user_blockchain_tables 
+    
+                  WHERE  table_name='LEDGER_EMP';</copy>
+    
+    ROW_RETENTION ROW TABLE_INACTIVITY_RETENTION HASH_ALG
+    
+    ------------- --- -------------------------- --------
+    
+                  YES                         31 SHA2_512
+    
+    SQL> 
+    
+    ```
 
-- Verify the attributes set for the blockchain table in the appropriate data dictionary view.
+3. Show the description of the table.
 
   
-  ```
+    ```
+    
+    SQL> <copy>DESC ledger_emp</copy>
+    
+    Name                                      Null?    Type
+    
+    ----------------------------------------- -------- ----------------------------
+    
+    EMPLOYEE_ID                                        NUMBER
+    
+    SALARY                                             NUMBER
+    
+    SQL> 
+    
+    ```
   
-  SQL> <copy>SELECT row_retention, row_retention_locked, 
-  
-                       table_inactivity_retention, hash_algorithm  
-  
-                FROM   user_blockchain_tables 
-  
-                WHERE  table_name='LEDGER_EMP';</copy>
-  
-  ROW_RETENTION ROW TABLE_INACTIVITY_RETENTION HASH_ALG
-  
-  ------------- --- -------------------------- --------
-  
-                YES                         31 SHA2_512
-  
-  SQL> 
-  
-  ```
-
-- Show the description of the table.
-
-  
-  ```
-  
-  SQL> <copy>DESC ledger_emp</copy>
-  
-   Name                                      Null?    Type
-  
-   ----------------------------------------- -------- ----------------------------
-  
-   EMPLOYEE_ID                                        NUMBER
-  
-   SALARY                                             NUMBER
-  
-  SQL> 
-  
-  ```
-  
-  *Observe that the description displays only the visible columns.*
+*Observe that the description displays only the visible columns.*
   
   
 
-- Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
+4. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
 
   
-  ```
-  
-  SQL> <copy>COL "Data Length" FORMAT 9999</copy>
-  
-  SQL> <copy>COL "Column Name" FORMAT A24</copy>
-  
-  SQL> <copy>COL "Data Type" FORMAT A28</copy>
-  
-  SQL> <copy>SELECT internal_column_id "Col ID", SUBSTR(column_name,1,30) "Column Name", 
-  
-                       SUBSTR(data_type,1,30) "Data Type", data_length "Data Length"
-  
-                FROM   user_tab_cols       
-  
-                WHERE  table_name = 'LEDGER_EMP' ORDER BY internal_column_id;</copy>
-  
-      Col ID Column Name              Data Type                    Data Length
-  
-  ---------- ------------------------ ---------------------------- -----------
-  
-           1 EMPLOYEE_ID              NUMBER                                22
-  
-           2 SALARY                   NUMBER                                22
-  
-           3 ORABCTAB_INST_ID$        NUMBER                                22
-  
-           4 ORABCTAB_CHAIN_ID$       NUMBER                                22
-  
-           5 ORABCTAB_SEQ_NUM$        NUMBER                                22
-  
-           6 ORABCTAB_CREATION_TIME$  TIMESTAMP(6) WITH TIME ZONE           13
-  
-           7 ORABCTAB_USER_NUMBER$    NUMBER                                22
-  
-           8 ORABCTAB_HASH$           RAW                                 2000
-  
-           9 ORABCTAB_SIGNATURE$      RAW                                 2000
-  
-          10 ORABCTAB_SIGNATURE_ALG$  NUMBER                                22
-  
-          11 ORABCTAB_SIGNATURE_CERT$ RAW                                   16
-  
-          12 ORABCTAB_SPARE$          RAW                                 2000
-  
-  12 rows selected.
-  
-  SQL> 
-  
-  ```
+    ```
+    
+    SQL> <copy>COL "Data Length" FORMAT 9999</copy>
+    
+    SQL> <copy>COL "Column Name" FORMAT A24</copy>
+    
+    SQL> <copy>COL "Data Type" FORMAT A28</copy>
+    
+    SQL> <copy>SELECT internal_column_id "Col ID", SUBSTR(column_name,1,30) "Column Name", 
+    
+                        SUBSTR(data_type,1,30) "Data Type", data_length "Data Length"
+    
+                  FROM   user_tab_cols       
+    
+                  WHERE  table_name = 'LEDGER_EMP' ORDER BY internal_column_id;</copy>
+    
+        Col ID Column Name              Data Type                    Data Length
+    
+    ---------- ------------------------ ---------------------------- -----------
+    
+            1 EMPLOYEE_ID              NUMBER                                22
+    
+            2 SALARY                   NUMBER                                22
+    
+            3 ORABCTAB_INST_ID$        NUMBER                                22
+    
+            4 ORABCTAB_CHAIN_ID$       NUMBER                                22
+    
+            5 ORABCTAB_SEQ_NUM$        NUMBER                                22
+    
+            6 ORABCTAB_CREATION_TIME$  TIMESTAMP(6) WITH TIME ZONE           13
+    
+            7 ORABCTAB_USER_NUMBER$    NUMBER                                22
+    
+            8 ORABCTAB_HASH$           RAW                                 2000
+    
+            9 ORABCTAB_SIGNATURE$      RAW                                 2000
+    
+            10 ORABCTAB_SIGNATURE_ALG$  NUMBER                                22
+    
+            11 ORABCTAB_SIGNATURE_CERT$ RAW                                   16
+    
+            12 ORABCTAB_SPARE$          RAW                                 2000
+    
+    12 rows selected.
+    
+    SQL> 
+    
+    ```
 
 ## **STEP 2:** Insert rows into the blockchain table
 
-- Insert a first row into the blockchain table.
+1. Insert a first row into the blockchain table.
 
   
-  ```
-  
-  SQL> <copy>INSERT INTO ledger_emp VALUES (106,12000);</copy>
-  
-  1 row created.
-  
-  SQL> <copy>COMMIT;</copy>
-  
-  Commit complete.
-  
-  SQL> 
-  
-  ```
+    ```
+    
+    SQL> <copy>INSERT INTO ledger_emp VALUES (106,12000);</copy>
+    
+    1 row created.
+    
+    SQL> <copy>COMMIT;</copy>
+    
+    Commit complete.
+    
+    SQL> 
+    
+    ```
 
-- Display the internal values of the first row of the chain.
+2.  Display the internal values of the first row of the chain.
 
   
-  ```
-  
-  SQL> <copy>COL "Chain date" FORMAT A17</copy>
-  
-  SQL> <copy>COL "Chain ID" FORMAT 99999999</copy>
-  
-  SQL> <copy>COL "Seq Num" FORMAT 99999999</copy>
-  
-  SQL> <copy>COL "User Num" FORMAT 9999999</copy>
-  
-  SQL> <copy>COL "Chain HASH" FORMAT 99999999999999</copy>
-  
-  SQL> <copy>SELECT ORABCTAB_CHAIN_ID$ "Chain ID", ORABCTAB_SEQ_NUM$ "Seq Num",
-  
-              to_char(ORABCTAB_CREATION_TIME$,'dd-Mon-YYYY hh-mi') "Chain date",
-  
-              ORABCTAB_USER_NUMBER$ "User Num", ORABCTAB_HASH$ "Chain HASH"
-  
-       FROM   ledger_emp;</copy>
-  
-   Chain ID   Seq Num Chain date        User Num
-  
-  --------- --------- ----------------- --------
-  
-  Chain HASH
-  
-  --------------------------------------------------------------------------------
-  
-         14         1 06-Apr-2020 12-26      119
-  
-  5812238B734B019EE553FF8A7FF573A14CFA1076AB312517047368D600984CFAB001FA1FF2C98B13
-  
-  9AB03DDCCF8F6C14ADF16FFD678756572F102D43420E69B3
-  
-  SQL> 
-  
-  ```
+    ```
+    
+    SQL> <copy>COL "Chain date" FORMAT A17</copy>
+    
+    SQL> <copy>COL "Chain ID" FORMAT 99999999</copy>
+    
+    SQL> <copy>COL "Seq Num" FORMAT 99999999</copy>
+    
+    SQL> <copy>COL "User Num" FORMAT 9999999</copy>
+    
+    SQL> <copy>COL "Chain HASH" FORMAT 99999999999999</copy>
+    
+    SQL> <copy>SELECT ORABCTAB_CHAIN_ID$ "Chain ID", ORABCTAB_SEQ_NUM$ "Seq Num",
+    
+                to_char(ORABCTAB_CREATION_TIME$,'dd-Mon-YYYY hh-mi') "Chain date",
+    
+                ORABCTAB_USER_NUMBER$ "User Num", ORABCTAB_HASH$ "Chain HASH"
+    
+        FROM   ledger_emp;</copy>
+    
+    Chain ID   Seq Num Chain date        User Num
+    
+    --------- --------- ----------------- --------
+    
+    Chain HASH
+    
+    --------------------------------------------------------------------------------
+    
+          14         1 06-Apr-2020 12-26      119
+    
+    5812238B734B019EE553FF8A7FF573A14CFA1076AB312517047368D600984CFAB001FA1FF2C98B13
+    
+    9AB03DDCCF8F6C14ADF16FFD678756572F102D43420E69B3
+    
+    SQL> 
+    
+    ```
 
-- Connect as `HR` and insert a row into the blockchain table as if your auditing application would do it. First grant the `INSERT` privilege on the table to `HR`.
+2. Connect as `HR` and insert a row into the blockchain table as if your auditing application would do it. First grant the `INSERT` privilege on the table to `HR`.
 
   
   ```
@@ -368,7 +355,7 @@ In this lab, you will:
   
   ```
 
-- Connect as `HR` and insert a new row.
+3. Connect as `HR` and insert a new row.
 
   
   ```
@@ -391,7 +378,7 @@ In this lab, you will:
   
   ```
 
-- Connect as `AUDITOR` and display the internal and external values of the blockchain table rows.
+4. Connect as `AUDITOR` and display the internal and external values of the blockchain table rows.
 
   
   ```
@@ -450,7 +437,7 @@ In this lab, you will:
 
 ## **STEP 3:** Delete rows from the blockchain table
 
-- Delete the row inserted by `HR`.
+1. Delete the row inserted by `HR`.
 
   
   ```
@@ -504,7 +491,7 @@ In this lab, you will:
   
   
 
-- Truncate the table.
+2. Truncate the table.
 
   
   ```
@@ -523,7 +510,7 @@ In this lab, you will:
   
   ```
 
-- Specify now that rows cannot be deleted until 15 days after they were created.
+3. Specify now that rows cannot be deleted until 15 days after they were created.
 
   
   ```
@@ -542,13 +529,13 @@ In this lab, you will:
   
   ```
   
-  *Why cannot you change this attribute? You created the table with the `NO DELETE LOCKED` attribute. The `LOCKED` clause indicates that you can never subsequently modify the row retention.*
+*Why cannot you change this attribute? You created the table with the `NO DELETE LOCKED` attribute. The `LOCKED` clause indicates that you can never subsequently modify the row retention.*
   
   
 
 ## **STEP 4:** Drop the blockchain table
 
-- Drop the table.
+1. Drop the table.
 
   
   ```
@@ -574,7 +561,7 @@ In this lab, you will:
   
   
 
-- Change the behavior of the table to allow a lower retention.
+2. Change the behavior of the table to allow a lower retention.
 
   
   ```
@@ -603,7 +590,7 @@ In this lab, you will:
 
 ## **STEP 5:** Check the validity of rows in the blockchain table
 
-- Create another blockchain table `AUDITOR.LEDGER_TEST`. Rows cannot be deleted until 5 days after they were inserted, allowing rows to be deleted. Moreover the blockchain table can be dropped only after 1 day of inactivity.
+1. Create another blockchain table `AUDITOR.LEDGER_TEST`. Rows cannot be deleted until 5 days after they were inserted, allowing rows to be deleted. Moreover the blockchain table can be dropped only after 1 day of inactivity.
 
   
   ```
@@ -638,7 +625,7 @@ In this lab, you will:
   
   ```
 
-- Connect as `HR` and insert a row into the blockchain table as if your auditing application would do it. First grant the `INSERT` privilege on the table to `HR`
+2. Connect as `HR` and insert a row into the blockchain table as if your auditing application would do it. First grant the `INSERT` privilege on the table to `HR`
 
   
   ```
@@ -651,7 +638,7 @@ In this lab, you will:
   
   ```
 
-- Connect as `HR` and insert a new row.
+3. Connect as `HR` and insert a new row.
 
   
   ```
@@ -674,7 +661,7 @@ In this lab, you will:
   
   ```
 
-- Connect as `AUDITOR` and display the row inserted.
+4. Connect as `AUDITOR` and display the row inserted.
 
   
   ```
@@ -697,7 +684,7 @@ In this lab, you will:
   
   ```
 
-- Verify that the content of the rows are still valid. Use the `DBMS_BLOCKCHAIN_TABLE.VERIFY_ROWS`.
+5. Verify that the content of the rows are still valid. Use the `DBMS_BLOCKCHAIN_TABLE.VERIFY_ROWS`.
 
   
   ```

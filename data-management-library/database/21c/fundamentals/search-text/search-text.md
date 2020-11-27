@@ -3,25 +3,11 @@
 ## Introduction
 This lab shows how applying the `INMEMORY TEXT` clause to non-scalar columns of an in-memory table enables fast in-memory searching of text, XML, or JSON documents using the `CONTAINS()` or `JSON_TEXTCONTAINS()` operators. When the IM column store contains both scalar and non-scalar columns, OLAP applications that access both types of data can avoid accessing row-based storage, thereby improving performance. The `PRIORITY` clause has the same effect on population of IM full text columns as standard in-memory columns. The default priority is `NONE`. The `MEMCOMPRESS` clause is not valid with `INMEMORY TEXT`.
 
-### About Product/Technology
-Until Oracle Database 21c, only the set operator UNION could be combined with ALL. Oracle Database 21c introduces two set operators, MINUS ALL (same as EXCEPT ALL) and INTERSECT ALL.
-
- ![Set Operators](images/set-operators.png "Set Operators")
-
-- The 1st and 2nd statements use the EXCEPT operator to return only unique rows returned by the 1st query but not the 2nd.  
-- The 3rd and 4th statements combine results from two queries using EXCEPT ALL reteruning only rows returned by the 1st query but not the 2nd even if not unique.
-- The 5th and 6th statement combines results from 2 queries using INTERSECT ALL returning only unique rows returned by both queries.
-
-
 Estimated Lab Time: XX minutes
 
 ### Objectives
 In this lab, you will:
 * Setup the environment
-* Test the set operator with the EXCEPT clause
-* Test the set operator with the EXCEPT ALL clause
-* Test the set operator with the INTERSECT clause
-* Test the set operator with the INTERSECT ALL clause
 
 ### Prerequisites
 
