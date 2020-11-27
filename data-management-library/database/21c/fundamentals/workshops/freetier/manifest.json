@@ -30,7 +30,7 @@
         },
         {
             "title": "Upgrades and Migration",
-            "filename": "../../inroduction/upgrades.md"
+            "filename": "../../inroduction/intro-upgrades.md"
         }, 
         {
             "title": "Lab: AutoUpgrade",
@@ -42,7 +42,7 @@
         },
         {
             "title": "Application Development",
-            "filename": "../../inroduction/appdev.md"
+            "filename": "../../inroduction/intro-appdev.md"
         }, 
         {
             "title": "Lab: New Set Operators",
@@ -62,7 +62,7 @@
         },
         {
             "title": "Big Data and DW",
-            "filename": "../../inroduction/big-data-dw.md"
+            "filename": "../../inroduction/intro-bigdata-dw.md"
         }, 
         {
             "title": "Lab: Bitwise Aggregate Functions",
@@ -86,7 +86,7 @@
         },
         {
             "title": "Performance and HA",
-            "filename": "../../inroduction/performance.md"
+            "filename": "../../inroduction/intro-perf-ha.md"
         }, 
         {
             "title": "Lab: PDB Point-in-Time Recovery",
@@ -118,7 +118,7 @@
         },
         {
             "title": "Database Utilties",
-            "filename": "../../inroduction/dbutilities.md"
+            "filename": "../../inroduction/intro-dbutilities.md"
         }, 
         {
             "title": "Lab: Data Pump Checksums",
@@ -137,8 +137,8 @@
             "filename": "../../data-pump-index-comp/data-pump-index-comp.md"
         },
         {
-            "title": "Security & Database Vault",
-            "filename": "../../inroduction/dbvault.md"
+            "title": "Security ",
+            "filename": "../../inroduction/intro-security.md"
         }, 
         {
             "title": "Lab: Blockchain Tables & Rows",
@@ -162,7 +162,7 @@
         },
         {
             "title": "Authentication and Administration",
-            "filename": "../../inroduction/dbvault.md"
+            "filename": "../../inroduction/intro-admin.md"
         }, 
         {
             "title": "Lab: Upgraded Password File Case Sensitivity",
@@ -174,7 +174,7 @@
         },
         {
             "title": "Audit",
-            "filename": "../../inroduction/dbvault.md"
+            "filename": "../../inroduction/intro-audit.md"
         }, 
         {
             "title": "Lab: Unified Audit Policies for STIG",
