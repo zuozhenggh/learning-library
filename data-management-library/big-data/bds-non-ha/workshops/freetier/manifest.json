@@ -49,7 +49,7 @@
             }
             ,
             {
-            "title": "Lab 7: Upload Data to Hadoop Distributed File System (HDFS) and Object Store",
+            "title": "Lab 7: Upload Data to Hadoop Distributed File System (HDFS) and Object Storage",
             "description": "This lab shows you how to upload data to HDFS and Object Store.",
             "filename": "./../../upload-query-data/upload-query-data.md"
             }
