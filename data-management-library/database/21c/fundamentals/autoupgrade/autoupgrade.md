@@ -3,26 +3,16 @@
 ## Introduction
 This lab shows how to upgrade one or many databases using the AutoUpgrade tool without human intervention, all with one command and a single configuration file. Since Oracle Database 19c (19.3) and later target Oracle homes, the `autoupgrade.jar` file exists by default under `$ORACLE_HOME/rdbms/admin`. Oracle strongly recommends that you always download the latest `autoupgrade.jar` from MOS (doc ID 2485457.1) and replace it with the version in `$ORACLE_HOME/rdbms/admin`. Since Oracle Database 19c (19.3) and later target Oracle homes, the `autoupgrade.jar` file exists by default under `$ORACLE_HOME/rdbms/admin`.
 
-
-### About Product/Technology
-Until Oracle Database 21c, only the set operator UNION could be combined with ALL. Oracle Database 21c introduces two set operators, MINUS ALL (same as EXCEPT ALL) and INTERSECT ALL.
-
- ![Set Operators](images/set-operators.png "Set Operators")
-
-- The 1st and 2nd statements use the EXCEPT operator to return only unique rows returned by the 1st query but not the 2nd.  
-- The 3rd and 4th statements combine results from two queries using EXCEPT ALL reteruning only rows returned by the 1st query but not the 2nd even if not unique.
-- The 5th and 6th statement combines results from 2 queries using INTERSECT ALL returning only unique rows returned by both queries.
-
-
 Estimated Lab Time: XX minutes
 
 ### Objectives
 In this lab, you will:
-* Setup the environment
-* Test the set operator with the EXCEPT clause
-* Test the set operator with the EXCEPT ALL clause
-* Test the set operator with the INTERSECT clause
-* Test the set operator with the INTERSECT ALL clause
+* Prepare the AutoUpgrade File
+* Launch the utility in analysis mode
+* Launch the utility in deploy mode
+* Diagnose and troubleshoot operations
+* Abort and restart upgrade operations
+* Clean up directories
 
 ### Prerequisites
 
@@ -37,34 +27,34 @@ In this lab, you will:
 
 Before upgrading the Oracle Database 19c `CDB19` and `ORCL` to Oracle Database 21c, prepare the AutoUpgrade configuration file. The name of the AutoUpgrade configuration file is `/home/oracle/labs/M103786GC10/config.txt`.   
 
-- Define the local parameters in the AutoUpgrade configuration file because they are all required except where indicated with (Optional). Set the prefix `CDB19` for all parameters that need to identify the `CDB19` CDB or upgrade. Set the prefix `ORCL` for all parameters that need to identify the `ORCL` non-CDB or upgrade. The prefix identifies the specific upgrade job to which the parameter applies in the configuration file.    
+1. Define the local parameters in the AutoUpgrade configuration file because they are all required except where indicated with (Optional). Set the prefix `CDB19` for all parameters that need to identify the `CDB19` CDB or upgrade. Set the prefix `ORCL` for all parameters that need to identify the `ORCL` non-CDB or upgrade. The prefix identifies the specific upgrade job to which the parameter applies in the configuration file.    
 
   
-  ```
-  
-  $ <copy>vi /home/oracle/labs/M103786GC10/config.txt</copy>
-  
-  #
-  
-  # Database CDB19
-  
-  #
-  
-  CDB19.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
-  
-  CDB19.target_home=/u01/app/oracle/product/21.0.0/dbhome_1
-  
-  CDB19.sid=CDB19
-  
-  CDB19.log_dir=/u01/app/oracle/upgrade-jobs
-  
-  CDB19.pdbs=PDB19
-  
-  CDB19.restoration=yes
-  
-  $ 
-  
-  ```
+    ```
+    
+    $ <copy>vi /home/oracle/labs/M103786GC10/config.txt</copy>
+    
+    #
+    
+    # Database CDB19
+    
+    #
+    
+    CDB19.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
+    
+    CDB19.target_home=/u01/app/oracle/product/21.0.0/dbhome_1
+    
+    CDB19.sid=CDB19
+    
+    CDB19.log_dir=/u01/app/oracle/upgrade-jobs
+    
+    CDB19.pdbs=PDB19
+    
+    CDB19.restoration=yes
+    
+    $ 
+    
+    ```
   
   *The `log_dir` parameter sets the location of log files that are generated for database upgrades that are in the set of databases included in the upgrade job identified by the prefix for the parameter. AutoUpgrade creates a hierarchical directory based on the local log file path specified.*
   
@@ -72,36 +62,36 @@ Before upgrading the Oracle Database 19c `CDB19` and `ORCL` to Oracle Database 2
   
   
 
-- Append the same parameters in the AutoUpgrade configuration file for the `ORCL` non-CDB, except the `pdbs` parameter because `ORCL` is a non-CDB.
+2. Append the same parameters in the AutoUpgrade configuration file for the `ORCL` non-CDB, except the `pdbs` parameter because `ORCL` is a non-CDB.
 
   
-  ```
-  
-  $ <copy>vi /home/oracle/labs/M103786GC10/config.txt</copy>
-  
-  ...
-  
-  #
-  
-  # Database ORCL
-  
-  #
-  
-  ORCL.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
-  
-  ORCL.target_home=/u01/app/oracle/product/21.0.0/dbhome_1
-  
-  ORCL.sid=ORCL
-  
-  ORCL.log_dir=/u01/app/oracle/upgrade-jobs
-  
-  ORCL.restoration=yes
-  
-  $ 
-  
-  ```
-  
-  *The `run_utlrp` utility recompiles all Data Dictionary objects that become invalid during a database upgrade. Oracle recommends that you run this utility after every Oracle Database upgrade. The default is enabled (`yes`).*
+    ```
+    
+    $ <copy>vi /home/oracle/labs/M103786GC10/config.txt</copy>
+    
+    ...
+    
+    #
+    
+    # Database ORCL
+    
+    #
+    
+    ORCL.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
+    
+    ORCL.target_home=/u01/app/oracle/product/21.0.0/dbhome_1
+    
+    ORCL.sid=ORCL
+    
+    ORCL.log_dir=/u01/app/oracle/upgrade-jobs
+    
+    ORCL.restoration=yes
+    
+    $ 
+    
+    ```
+
+*The `run_utlrp` utility recompiles all Data Dictionary objects that become invalid during a database upgrade. Oracle recommends that you run this utility after every Oracle Database upgrade. The default is enabled (`yes`).*
   
   
 
@@ -109,318 +99,317 @@ Before upgrading the Oracle Database 19c `CDB19` and `ORCL` to Oracle Database 2
 
 Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mode, using the configuration file.
 
-- Run the `autoupgrade.jar` with the config file created in Analyze mode. The AutoUpgrade parameter `console` turns on the AutoUpgrade Console, and provides a set of commands to monitor the progress of AutoUpgrade jobs. Set the environment variables to `CDB21` so that the `ORACLE_HOME` is set to Oracle Database 21c.
+1. Run the `autoupgrade.jar` with the config file created in Analyze mode. The AutoUpgrade parameter `console` turns on the AutoUpgrade Console, and provides a set of commands to monitor the progress of AutoUpgrade jobs. Set the environment variables to `CDB21` so that the `ORACLE_HOME` is set to Oracle Database 21c.
 
   
-  ```
-  
-  $ <copy>. oraenv</copy>
-  
-  ORACLE_SID = [CDB21] ? <b>CDB21</b>
-  
-  The Oracle base remains unchanged with value /u01/app/oracle
-  
-  $ <copy>cd $ORACLE_HOME/rdbms/admin</copy>
-  
-  $ <copy>java -jar autoupgrade.jar -config /home/oracle/labs/M103786GC10/config.txt -mode analyze -console</copy>
-  
-  AutoUpgrade tool launched with default options
-  
-  Processing config file ...
-  
-  ------------ ERROR ------------
-  
-  Error Cause: Database ORCL shutdown or open with incorrect binaries for ANALYZE. Ensure it is open with /u01/app/oracle/product/19.3.0/dbhome_1
-  
-  ------------ ERROR ------------
-  
-  Error Cause: <b>Database ORCL open with status CLOSED.  For ANALYZE mode, open it with one of the following: [OPEN, MOUNTED].</b>
-  
-  Unable to connect to database ORCL for entry orcl
-  
-  $ 
-  
-  ```
+    ```
+    
+    $ <copy>. oraenv</copy>
+    
+    ORACLE_SID = [CDB21] ? <b>CDB21</b>
+    
+    The Oracle base remains unchanged with value /u01/app/oracle
+    
+    $ <copy>cd $ORACLE_HOME/rdbms/admin</copy>
+    
+    $ <copy>java -jar autoupgrade.jar -config /home/oracle/labs/M103786GC10/config.txt -mode analyze -console</copy>
+    
+    AutoUpgrade tool launched with default options
+    
+    Processing config file ...
+    
+    ------------ ERROR ------------
+    
+    Error Cause: Database ORCL shutdown or open with incorrect binaries for ANALYZE. Ensure it is open with /u01/app/oracle/product/19.3.0/dbhome_1
+    
+    ------------ ERROR ------------
+    
+    Error Cause: <b>Database ORCL open with status CLOSED.  For ANALYZE mode, open it with one of the following: [OPEN, MOUNTED].</b>
+    
+    Unable to connect to database ORCL for entry orcl
+    
+    $ 
+    
+    ```
 
-- According to the message, open the non-CDB.
-
-  
-  ```
-  
-  $ <copy>. oraenv</copy>
-  
-  ORACLE_SID = [CDB21] ? <b>ORCL</b>
-  
-  The Oracle base remains unchanged with value /u01/app/oracle
-  
-  $ <copy>sqlplus / AS SYSDBA</copy>
-  
-  SQL*Plus: Release 19.0.0.0.0 - Production on Wed Sep 9 00:30:10 2020
-  
-  Version 19.3.0.0.0
-  
-  Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-  
-  Connected to an idle instance.
-  
-  SQL> <copy>STARTUP</copy>
-  
-  ORACLE instance started.
-  
-  Total System Global Area 5033163616 bytes
-  
-  Fixed Size                  9145184 bytes
-  
-  Variable Size             905969664 bytes
-  
-  Database Buffers         4110317920 bytes
-  
-  Redo Buffers                7630848 bytes
-  
-  Database mounted.
-  
-  Database opened.
-  
-  SQL> <copy>EXIT</copy>
-  
-  Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-  
-  Version 19.3.0.0.0
-  
-  $ 
-  
-  ```
-
-- Relaunch the autoupgrade utility.
+2.  According to the message, open the non-CDB.
 
   
-  ```
-  
-  $ <copy>java -jar autoupgrade.jar -config /home/oracle/labs/M103786GC10/config.txt -mode analyze -console</copy>
-  
-  AutoUpgrade tool launched with default options
-  
-  Processing config file ...
-  
-  +--------------------------------+
-  
-  | Starting AutoUpgrade execution |
-  
-  +--------------------------------+
-  
-  <b>2 databases will be analyzed</b>
-  
-  Type 'help' to list console commands
-  
-  upg> 
-  
-  ```
+    ```
+    
+    $ <copy>. oraenv</copy>
+    
+    ORACLE_SID = [CDB21] ? <b>ORCL</b>
+    
+    The Oracle base remains unchanged with value /u01/app/oracle
+    
+    $ <copy>sqlplus / AS SYSDBA</copy>
+    
+    SQL*Plus: Release 19.0.0.0.0 - Production on Wed Sep 9 00:30:10 2020
+    
+    Version 19.3.0.0.0
+    
+    Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+    
+    Connected to an idle instance.
+    
+    SQL> <copy>STARTUP</copy>
+    
+    ORACLE instance started.
+    
+    Total System Global Area 5033163616 bytes
+    
+    Fixed Size                  9145184 bytes
+    
+    Variable Size             905969664 bytes
+    
+    Database Buffers         4110317920 bytes
+    
+    Redo Buffers                7630848 bytes
+    
+    Database mounted.
+    
+    Database opened.
+    
+    SQL> <copy>EXIT</copy>
+    
+    Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    
+    Version 19.3.0.0.0
+    
+    $ 
+    
+    ```
 
-- Find the list of possible commands.
-
-  
-  ```
-  
-  upg> <copy>help</copy>
-  
-  exit                          // To close and exit
-  
-  help                         // Displays help
-  
-  lsj [(-r|-f|-p|-e) | -n <number>]  // list jobs by status up to n elements.
-  
-          -f Filter by finished jobs.
-  
-          -r Filter by running jobs.
-  
-          -e Filter by jobs with errors.
-  
-          -p Filter by jobs being prepared.
-  
-          -n <number> Display up to n jobs.
-  
-  lsr                           // Displays the restoration queue
-  
-  lsa                           // Displays the abort queue
-  
-  tasks                         // Displays the tasks running
-  
-  clear                         // Clears the terminal
-  
-  resume -job <number>          // Restarts a previous job that was running
-  
-  status [-job <number> [-long]]// Lists all the jobs or a specific job
-  
-  restore -job <number>         // Restores the database to its state prior to the upgrade
-  
-  restore all_failed            // Restores all failed jobs to their previous states prior to the upgrade
-  
-  logs                          // Displays all the log locations
-  
-  abort -job <number>           // Aborts the specified job
-  
-  h[ist]                        // Displays the command line history
-  
-  /[<number>]                   // Executes the command specified from the history. 
-  
-  The default is the last command
-  
-  upg> 
-  
-  ```
-
-- List the jobs running.
+2.  Relaunch the autoupgrade utility.
 
   
-  ```
-  
-  upg> <copy>lsj</copy>
-  
-  +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
-  
-  |Job#|DB_NAME|    STAGE|OPERATION| STATUS|    START_TIME|END_TIME| UPDATED|          MESSAGE|
-  
-  +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
-  
-  | 100|   ORCL|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:49:21|  Remaining 3/197|
-  
-  | 101|  CDB19|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:43:19|LOW RECOVERY_AREA|
-  
-  +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
-  
-  Total jobs 2
-  
-  upg> 
-  
-  ```
+    ```
+    
+    $ <copy>java -jar autoupgrade.jar -config /home/oracle/labs/M103786GC10/config.txt -mode analyze -console</copy>
+    
+    AutoUpgrade tool launched with default options
+    
+    Processing config file ...
+    
+    +--------------------------------+
+    
+    | Starting AutoUpgrade execution |
+    
+    +--------------------------------+
+    
+    <b>2 databases will be analyzed</b>
+    
+    Type 'help' to list console commands
+    
+    upg> 
+    
+    ```
 
-- Wait until the AutoUpgrade returns information.
+2. Find the list of possible commands.
 
-  
-  ```
-  
-  upg> <copy>lsj</copy>
-  
-  +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
-  
-  |Job#|DB_NAME|    STAGE|OPERATION| STATUS|    START_TIME|END_TIME| UPDATED|          MESSAGE|
-  
-  +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
-  
-  | 100|   ORCL|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:49:21|  Remaining 3/197|
-  
-  | 101|  CDB19|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:43:19|LOW RECOVERY_AREA|
-  
-  +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
-  
-  Total jobs 2
-  
-  upg> <b>Job 100 completed</b>
-  
-  upg> 
-  
-  ```
+    
+    ```
+    
+    upg> <copy>help</copy>
+    
+    exit                          // To close and exit
+    
+    help                         // Displays help
+    
+    lsj [(-r|-f|-p|-e) | -n <number>]  // list jobs by status up to n elements.
+    
+            -f Filter by finished jobs.
+    
+            -r Filter by running jobs.
+    
+            -e Filter by jobs with errors.
+    
+            -p Filter by jobs being prepared.
+    
+            -n <number> Display up to n jobs.
+    
+    lsr                           // Displays the restoration queue
+    
+    lsa                           // Displays the abort queue
+    
+    tasks                         // Displays the tasks running
+    
+    clear                         // Clears the terminal
+    
+    resume -job <number>          // Restarts a previous job that was running
+    
+    status [-job <number> [-long]]// Lists all the jobs or a specific job
+    
+    restore -job <number>         // Restores the database to its state prior to the upgrade
+    
+    restore all_failed            // Restores all failed jobs to their previous states prior to the upgrade
+    
+    logs                          // Displays all the log locations
+    
+    abort -job <number>           // Aborts the specified job
+    
+    h[ist]                        // Displays the command line history
+    
+    /[<number>]                   // Executes the command specified from the history. 
+    
+    The default is the last command
+    
+    upg> 
+    
+    ```
 
-- Check the result of job 100 corresponding of the upgrade of `ORCL`.
-
-  
-  ```
-  
-  upg> <copy>lsj</copy>
-  
-  +----+-------+---------+---------+--------+--------------+--------------+--------+--------------------+
-  
-  |Job#|DB_NAME|    STAGE|OPERATION|  STATUS|    START_TIME|      END_TIME| UPDATED|             MESSAGE|
-  
-  +----+-------+---------+---------+--------+--------------+--------------+--------+--------------------+
-  
-  | 100|   ORCL|PRECHECKS|  <b>STOPPED|FINISHED</b>|20/09/09 00:43|20/09/09 00:52|00:52:51|<b>Ended database check</b>|
-  
-  | 101|  CDB19|PRECHECKS|PREPARING| RUNNING|20/09/09 00:43|           N/A|00:43:19|   LOW RECOVERY_AREA|
-  
-  +----+-------+---------+---------+--------+--------------+--------------+--------+--------------------+
-  
-  Total jobs 2
-  
-  upg> 
-  
-  ```
-
-- Wait until the AutoUpgrade returns new information.
-
-  
-  ```
-  
-  upg>-------------------------------------------------
-  
-  job 101 has not shown progress in last 25 minutes
-  
-  database [CDB19]
-  
-  Stage    [PRECHECKS]
-  
-  Operation[PREPARING]
-  
-  Status   [RUNNING]
-  
-  Info     <b>[LOW RECOVERY_AREA]</b>
-  
-  [Review log files for further information]
-  
-  -----------------------------------------------
-  
-  Logs: /u01/app/oracle/upgrade-jobs/CDB19/101
-  
-  -----------------------------------------------
-  
-  upg> 
-  
-  ```
-
-- From another terminal session that we wil name *Session2*, logged in as oracle user, increase the fast recovery area for `CDB19`.
+3. List the jobs running.
 
   
-  ```
-  
-  $ <copy>. oraenv</copy>
-  
-  ORACLE_SID = [oracle] ? <b>CDB19</b>
-  
-  The Oracle base has been set to /u01/app/oracle
-  
-  $ <copy>sqlplus / AS SYSDBA</copy>
-  
-  SQL*Plus: Release 19.0.0.0.0 - Production on Wed Jan 22 05:05:23 2020
-  
-  Version 19.3.0.0.0
-  
-  Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-  
-  Connected to:
-  
-  Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-  
-  Version 19.3.0.0.0
-  
-  SQL> <copy>SHOW PARAMETER db_recovery_file_dest_size</copy>
-  
-  NAME                                 TYPE        VALUE
-  
-  ------------------------------------ ----------- ------------------------------
-  
-  db_recovery_file_dest_size           big integer 15000M
-  
-  SQL> <copy>ALTER SYSTEM SET db_recovery_file_dest_size=200000M SCOPE=BOTH;</copy>
-  
-  System altered.
-  
-  SQL> <copy>EXIT</copy>
-  
-  $
-  
-  ```
+    ```
+    
+    upg> <copy>lsj</copy>
+    
+    +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
+    
+    |Job#|DB_NAME|    STAGE|OPERATION| STATUS|    START_TIME|END_TIME| UPDATED|          MESSAGE|
+    
+    +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
+    
+    | 100|   ORCL|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:49:21|  Remaining 3/197|
+    
+    | 101|  CDB19|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:43:19|LOW RECOVERY_AREA|
+    
+    +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
+    
+    Total jobs 2
+    
+    upg> 
+    
+    ```
 
-- Back to the inital session, check the status of job 101.
+4. Wait until the AutoUpgrade returns information.
+
+  
+    ```
+    
+    upg> <copy>lsj</copy>
+    
+    +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
+    
+    |Job#|DB_NAME|    STAGE|OPERATION| STATUS|    START_TIME|END_TIME| UPDATED|          MESSAGE|
+    
+    +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
+    
+    | 100|   ORCL|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:49:21|  Remaining 3/197|
+    
+    | 101|  CDB19|PRECHECKS|PREPARING|RUNNING|20/09/09 00:43|     N/A|00:43:19|LOW RECOVERY_AREA|
+    
+    +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
+    
+    Total jobs 2
+    
+    upg> <b>Job 100 completed</b>
+    
+    upg> 
+    
+    ```
+
+5. 
+  
+    ```
+    
+    upg> <copy>lsj</copy>
+    
+    +----+-------+---------+---------+--------+--------------+--------------+--------+--------------------+
+    
+    |Job#|DB_NAME|    STAGE|OPERATION|  STATUS|    START_TIME|      END_TIME| UPDATED|             MESSAGE|
+    
+    +----+-------+---------+---------+--------+--------------+--------------+--------+--------------------+
+    
+    | 100|   ORCL|PRECHECKS|  <b>STOPPED|FINISHED</b>|20/09/09 00:43|20/09/09 00:52|00:52:51|<b>Ended database check</b>|
+    
+    | 101|  CDB19|PRECHECKS|PREPARING| RUNNING|20/09/09 00:43|           N/A|00:43:19|   LOW RECOVERY_AREA|
+    
+    +----+-------+---------+---------+--------+--------------+--------------+--------+--------------------+
+    
+    Total jobs 2
+    
+    upg> 
+    
+    ```
+
+6. Wait until the AutoUpgrade returns new information.
+
+    
+    ```
+    
+    upg>-------------------------------------------------
+    
+    job 101 has not shown progress in last 25 minutes
+    
+    database [CDB19]
+    
+    Stage    [PRECHECKS]
+    
+    Operation[PREPARING]
+    
+    Status   [RUNNING]
+    
+    Info     <b>[LOW RECOVERY_AREA]</b>
+    
+    [Review log files for further information]
+    
+    -----------------------------------------------
+    
+    Logs: /u01/app/oracle/upgrade-jobs/CDB19/101
+    
+    -----------------------------------------------
+    
+    upg> 
+    
+    ```
+
+7. From another terminal session that we wil name *Session2*, logged in as oracle user, increase the fast recovery area for `CDB19`.
+
+  
+    ```
+    
+    $ <copy>. oraenv</copy>
+    
+    ORACLE_SID = [oracle] ? <b>CDB19</b>
+    
+    The Oracle base has been set to /u01/app/oracle
+    
+    $ <copy>sqlplus / AS SYSDBA</copy>
+    
+    SQL*Plus: Release 19.0.0.0.0 - Production on Wed Jan 22 05:05:23 2020
+    
+    Version 19.3.0.0.0
+    
+    Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+    
+    Connected to:
+    
+    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    
+    Version 19.3.0.0.0
+    
+    SQL> <copy>SHOW PARAMETER db_recovery_file_dest_size</copy>
+    
+    NAME                                 TYPE        VALUE
+    
+    ------------------------------------ ----------- ------------------------------
+    
+    db_recovery_file_dest_size           big integer 15000M
+    
+    SQL> <copy>ALTER SYSTEM SET db_recovery_file_dest_size=200000M SCOPE=BOTH;</copy>
+    
+    System altered.
+    
+    SQL> <copy>EXIT</copy>
+    
+    $
+    
+    ```
+
+8. Back to the inital session, check the status of job 101.
 
   
   ```
@@ -445,7 +434,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
   
   ```
 
-- Wait until the AutoUpgrade returns new information.
+9. Wait until the AutoUpgrade returns new information.
 
   
   ```
@@ -476,10 +465,10 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
 
 ## **STEP 3:** Launch the AutoUpgrade in deploy mode
 
-- Upgrade both `CDB19` and `ORCL` using the AutoUpgrade utility with the `deploy` mode, using the configuration file. 
+1. Upgrade both `CDB19` and `ORCL` using the AutoUpgrade utility with the `deploy` mode, using the configuration file. 
 
     
-    - The operation runs and displays the ongoing status of the jobs. Use the list jobs `lsj` command to get the ongoing progress of the upgrade deployment.
+2. The operation runs and displays the ongoing status of the jobs. Use the list jobs `lsj` command to get the ongoing progress of the upgrade deployment.
 
     ```
     
@@ -557,7 +546,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
     *The `Executing describe` step tells you that the non-CDB `ORCL` is being tested for the compatibility after being unplugged and then plugged into `CDB20` as a new PDB, just as you would run the `DBMS_PDB.DESCRIBE` procedure and `DBMS_PDB.CHECK_PLUG_COMPATIBILITY`function.*
     
 
-    - Regularly check the progress of the upgrade.
+3.  Regularly check the progress of the upgrade.
 
     ```
     
@@ -725,7 +714,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
   
   ```
 
-- Quit the AutoUpgrade session.
+4. Quit the AutoUpgrade session.
 
   
   ```
@@ -766,7 +755,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
   
   The AutoUpgrade created a guaranteed restore point (GRP) during Deploy processing mode because the `CDB19.restoration` parameter was set to `yes`. You do not need to have a previously defined GRP. This requires a lot of space in the FRA and this is the reason why you had to set the `DB_RECOVERY_FILE_DEST_SIZE` to a high value. However, if the parameter was set, you must drop the GRP. “Guaranteed” means that if FRA runs out of space, the database will come to a complete halt.
 
-- Drop the guaranteed restore point created for the sake of a possible restoration if the upgrade had failed.
+5. Drop the guaranteed restore point created for the sake of a possible restoration if the upgrade had failed.
 
   
   ```
@@ -791,7 +780,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
   
   ```
 
-- Check that `CDB19` is now an Oracle Database 21c database.
+6. Check that `CDB19` is now an Oracle Database 21c database.
 
   
   ```
@@ -820,7 +809,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
   
   ```
 
-- If there is still a pending job, restart the pending AutoUpgrade job. The job is not stopped, therefore you do not have to resume it.
+7. If there is still a pending job, restart the pending AutoUpgrade job. The job is not stopped, therefore you do not have to resume it.
     
     - Re-run the AutoUpgrade job in the `deploy` mode.
 
@@ -867,7 +856,7 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
     
     ```
 
-    - Check that the non-CDB `ORCL` is now the Oracle Database 21c `ORCL` PDB in `CDB21`. In another terminal session, set the environment variables to `CDB21`.
+8. Check that the non-CDB `ORCL` is now the Oracle Database 21c `ORCL` PDB in `CDB21`. In another terminal session, set the environment variables to `CDB21`.
 
     ```
     
@@ -900,9 +889,9 @@ Before upgrading the CDB and non-CDB, run the AutoUpgrade utility in Analyze mod
 
 Let's handle possible errors while analyzing or upgrading databases. The cases below show different situations and therefore different job number and dates.
 
-- Use different vays to examine the ongoing status of the upgrade operation.
+1. Use different vays to examine the ongoing status of the upgrade operation.
     
-    - Use the `status` command in AutoUpgrade.
+2. Use the `status` command in AutoUpgrade.
 
     ```
     
@@ -947,7 +936,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - List the directories of the log files for alld and each of the databases being upgraded.
+3. List the directories of the log files for alld and each of the databases being upgraded.
 
     ```
     
@@ -959,7 +948,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - You can view the status and all operations completed or in progress during the upgrade of `CDB19` in the `/u01/app/oracle/upgrade-jobs/CDB19/102/autoupgrade_20200122_user.log` log file.
+4. You can view the status and all operations completed or in progress during the upgrade of `CDB19` in the `/u01/app/oracle/upgrade-jobs/CDB19/102/autoupgrade_20200122_user.log` log file.
 
     ```
     
@@ -1072,7 +1061,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - You can view the status and all operations completed or in progress during the upgrade of `ORCL` in the `/u01/app/oracle/upgrade-jobs/ORCL/103/autoupgrade_20200128_user.log` log file.
+5. You can view the status and all operations completed or in progress during the upgrade of `ORCL` in the `/u01/app/oracle/upgrade-jobs/ORCL/103/autoupgrade_20200128_user.log` log file.
 
     ```
     
@@ -1107,7 +1096,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - More detailed information is visible in the `/u01/app/oracle/upgrade-jobs/CDB19/102/autoupgrade_20200122.log` log file.
+6. More detailed information is visible in the `/u01/app/oracle/upgrade-jobs/CDB19/102/autoupgrade_20200122.log` log file.
 
     ```
     
@@ -1147,10 +1136,10 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-- During the analyzing phase, you may have to interpret the suggestions so as to correct the config file.
+7. During the analyzing phase, you may have to interpret the suggestions so as to correct the config file.
 
     
-    - A first information may mention that the parameter `global.autoupg_log_dir` is not found in the config file. It is a global required parameter that sets the location of the log files, and temporary files that belong to global modules, which AutoUpgrade uses. If you do not use this parameter to set a path, then the log files are placed in the current location where you run AutoUpgrade. This is the reason why the AutoUpgrade tool uses the session working directory `/u01/app/oracle/product/21.0.0/dbhome_1/rdbms/admin/`. Add the parameter `global.autoupg_log_dir` to the config file.
+8. A first information may mention that the parameter `global.autoupg_log_dir` is not found in the config file. It is a global required parameter that sets the location of the log files, and temporary files that belong to global modules, which AutoUpgrade uses. If you do not use this parameter to set a path, then the log files are placed in the current location where you run AutoUpgrade. This is the reason why the AutoUpgrade tool uses the session working directory `/u01/app/oracle/product/21.0.0/dbhome_1/rdbms/admin/`. Add the parameter `global.autoupg_log_dir` to the config file.
 
     ```
     
@@ -1181,7 +1170,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - A second information may mention that `ORCL Missing parameter for
+9. A second information may mention that `ORCL Missing parameter for
                                     db ORCL, you need to specify a target cdb`. The reason for this information is that non-CDBs are no longer supported in Oracle Database 21c. Add the parameter `target_cdb` to the config file to specify that the `ORCL` non-CDB will be upgraded as a PDB in `CDB21`.
 
     ```
@@ -1194,7 +1183,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-- In *Session2*, you made an error by dropping the directory where the upgrade log files are created for `ORCL`.
+10. In *Session2*, you made an error by dropping the directory where the upgrade log files are created for `ORCL`.
 
   
   ```
@@ -1210,7 +1199,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
 
     
-    - The AutoUpgrade job stops.
+11. The AutoUpgrade job stops.
 
     ```
     
@@ -1232,7 +1221,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - In *Session2*, you recreate the directory for the upgrade log files for `ORCL`.
+12. In *Session2*, you recreate the directory for the upgrade log files for `ORCL`.
 
     ```
     
@@ -1241,7 +1230,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - Resume the job, from the initial session.
+13. Resume the job, from the initial session.
 
     ```
     
@@ -1270,7 +1259,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     *The `resume` command restarts a previous job that was running.*
     
 
-    - As the job stops again, restore the database to its previous state.
+14. As the job stops again, restore the database to its previous state.
 
     ```
     
@@ -1311,7 +1300,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     *The `restore``-job` command restores the database to its state prior to the upgrade.*
     
 
-    - After the restoration, resume the job so as to restart the job.
+15. After the restoration, resume the job so as to restart the job.
 
     ```
     
@@ -1343,7 +1332,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-- Suddenly, the AutoUpgrade in deploy mode displays an error while upgrading `CDB19`.
+16. Suddenly, the AutoUpgrade in deploy mode displays an error while upgrading `CDB19`.
 
   
   ```
@@ -1382,8 +1371,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-    
-    - In *Session2*, read the log file to examine the root cause of the error for `CDB19`.
+17. In *Session2*, read the log file to examine the root cause of the error for `CDB19`.
 
     ```
     
@@ -1401,7 +1389,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - Still from *Session2*, increase the fast recovery area for `CDB19`.
+18. Still from *Session2*, increase the fast recovery area for `CDB19`.
 
     ```
     
@@ -1433,7 +1421,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - After fixing the issue, resume the job in the AutoUpgrade session.
+19. After fixing the issue, resume the job in the AutoUpgrade session.
 
     ```
     
@@ -1455,7 +1443,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-- The AutoUpgrade may display another error while upgrading `CDB19`.
+  20. The AutoUpgrade may display another error while upgrading `CDB19`.
 
   
   ```
@@ -1493,7 +1481,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
 
     
-    - In *Session2*, read the log file to examine the root cause of the error for `CDB19`.
+21. In *Session2*, read the log file to examine the root cause of the error for `CDB19`.
 
     ```
     
@@ -1517,7 +1505,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - Change the fast recovery area for `CDB21`. It was set to a non-writeable directory.
+22. Change the fast recovery area for `CDB21`. It was set to a non-writeable directory.
 
     ```
     
@@ -1543,12 +1531,12 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - After fixing the issue, resume the job in the AutoUpgrade session.
+23. After fixing the issue, resume the job in the AutoUpgrade session.
 
   
   
 
-- Suddenly, the AutoUpgrade displays an error while upgrading `ORCL`.
+24.  Suddenly, the AutoUpgrade displays an error while upgrading `ORCL`.
 
   
   ```
@@ -1586,7 +1574,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
 
     
-    - In Session2, test the command.
+25.  In Session2, test the command.
 
     ```
     
@@ -1622,7 +1610,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - Set the `LOCAL_LISTENER` parameter to NULL.
+26. Set the `LOCAL_LISTENER` parameter to NULL.
 
     ```
     
@@ -1635,12 +1623,12 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - After fixing the issue, resume the job in the AutoUpgrade session.
+27.  After fixing the issue, resume the job in the AutoUpgrade session.
 
   
   
 
-- Suddenly, the AutoUpgrade displays an error while upgrading `ORCL`.
+28. Suddenly, the AutoUpgrade displays an error while upgrading `ORCL`.
 
   
   ```
@@ -1673,8 +1661,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-    
-    - In *Session2*, read the log file to examine the root cause of the error for `ORCL`.
+29.  In *Session2*, read the log file to examine the root cause of the error for `ORCL`.
 
     ```
     
@@ -1723,7 +1710,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   
 
-- The AutoUpgrade displays the following error.
+30.  The AutoUpgrade displays the following error.
 
   
   ```
@@ -1761,7 +1748,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
 
     
-    - In *Session2*, examine the log file.
+31. In *Session2*, examine the log file.
 
     ```
     
@@ -1796,7 +1783,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - Increase the `SGA_TARGET`.
+32. Increase the `SGA_TARGET`.
 
     ```
     
@@ -1862,12 +1849,12 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - After fixing the issue, resume the job in the AutoUpgrade session.
+33. After fixing the issue, resume the job in the AutoUpgrade session.
 
   
   
 
-- The AutoUpgrade displays the following error.
+34. The AutoUpgrade displays the following error.
 
   
   ```
@@ -1919,12 +1906,12 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - After fixing the issue, resume the job in the AutoUpgrade session.
+35. After fixing the issue, resume the job in the AutoUpgrade session.
 
   
   
 
-- The AutoUpgrade displays the following error.
+36. The AutoUpgrade displays the following error.
 
   
   ```
@@ -1949,7 +1936,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
   
   ```
     
-    - Find the error in the autoupgrade log for `ORCL`.
+37. Find the error in the autoupgrade log for `ORCL`.
 
     ```
     
@@ -1993,13 +1980,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-  
-  
-
-  
-  <li style="list-style-type: none;background-image: none;">
-    
-    - Connect to `ORCL` in `CDB21` and execute the `orcl_utltz_upg_check.sql` SQL script.
+38. Connect to `ORCL` in `CDB21` and execute the `orcl_utltz_upg_check.sql` SQL script.
 
     ```
     
@@ -2063,7 +2044,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - Execute the `orcl_utltz_upg_apply.sql` SQL script.
+39. Execute the `orcl_utltz_upg_apply.sql` SQL script.
 
     ```
     
@@ -2108,7 +2089,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
     
     ```
 
-    - After fixing the issue, resume the job in the AutoUpgrade session. The execution of the failed postfixups scripts helps the next operation to execute and finally complete the job successfully.
+  40. After fixing the issue, resume the job in the AutoUpgrade session. The execution of the failed postfixups scripts helps the next operation to execute and finally complete the job successfully.
 
     ```
     
@@ -2166,7 +2147,7 @@ Let's handle possible errors while analyzing or upgrading databases. The cases b
 
 You may have to abort a running AutoUpgrade operation to restart a new upgrade operation. For example, you tested non-CDB and CDBs upgrade, but after too numerous errors, you decided to re-create the test non-CDB and CDBs and start a new upgrade operation.
 
-- Launch the AutoUpgrade.
+1. Launch the AutoUpgrade.
 
   
   ```
@@ -2243,7 +2224,7 @@ You may have to abort a running AutoUpgrade operation to restart a new upgrade o
   
   ```
 
-- Displays the abort queue.
+2. Displays the abort queue.
 
   
   ```
@@ -2282,7 +2263,7 @@ You may have to abort a running AutoUpgrade operation to restart a new upgrade o
   
   ```
 
-- Displays the running jobs only.
+3. Displays the running jobs only.
 
   
   ```
@@ -2327,78 +2308,76 @@ You may have to abort a running AutoUpgrade operation to restart a new upgrade o
 
 ## **STEP 6:** Clean up directories
 
-- If you plan to use the same log directories, clean up the log files in the directories defined in the configuration file.
+1.  If you plan to use the same log directories, clean up the log files in the directories defined in the configuration file.
 
   
-  ```
-  
-  $ <copy>cat /home/oracle/labs/M104786GC10/config.txt</copy>
-  
-  #
-  
-  # Global parameters
-  
-  #
-  
-  global.autoupg_log_dir=/home/oracle/labs/AutoUpgrade
-  
-  #
-  
-  # Database CDB19
-  
-  #
-  
-  CDB19.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
-  
-  CDB19.target_home=/u01/app/oracle/product/20.2.0/dbhome_1
-  
-  CDB19.sid=CDB19
-  
-  CDB19.log_dir=/u01/app/oracle/upgrade-jobs
-  
-  CDB19.pdbs=PDB19
-  
-  CDB19.restoration=yes
-  
-  #
-  
-  # Database ORCL
-  
-  #
-  
-  ORCL.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
-  
-  ORCL.target_home=/u01/app/oracle/product/20.2.0/dbhome_1
-  
-  ORCL.sid=ORCL
-  
-  ORCL.target_cdb=CDB21
-  
-  ORCL.log_dir=/u01/app/oracle/upgrade-jobs
-  
-  ORCL.restoration=yes
-  
-  $ <copy>cd /home/oracle/labs/AutoUpgrade</copy>
-  
-  $ <copy>rm -rf *</copy>
-  
-  $ <copy>cd /u01/app/oracle/upgrade-jobs</copy>
-  
-  $ <copy>ls</copy>
-  
-  CDB19  ORCL
-  
-  $ <copy>rm -rf *</copy>
-  
-  $
-  
-  ```
+    ```
+    
+    $ <copy>cat /home/oracle/labs/M104786GC10/config.txt</copy>
+    
+    #
+    
+    # Global parameters
+    
+    #
+    
+    global.autoupg_log_dir=/home/oracle/labs/AutoUpgrade
+    
+    #
+    
+    # Database CDB19
+    
+    #
+    
+    CDB19.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
+    
+    CDB19.target_home=/u01/app/oracle/product/20.2.0/dbhome_1
+    
+    CDB19.sid=CDB19
+    
+    CDB19.log_dir=/u01/app/oracle/upgrade-jobs
+    
+    CDB19.pdbs=PDB19
+    
+    CDB19.restoration=yes
+    
+    #
+    
+    # Database ORCL
+    
+    #
+    
+    ORCL.source_home=/u01/app/oracle/product/19.3.0/dbhome_1
+    
+    ORCL.target_home=/u01/app/oracle/product/20.2.0/dbhome_1
+    
+    ORCL.sid=ORCL
+    
+    ORCL.target_cdb=CDB21
+    
+    ORCL.log_dir=/u01/app/oracle/upgrade-jobs
+    
+    ORCL.restoration=yes
+    
+    $ <copy>cd /home/oracle/labs/AutoUpgrade</copy>
+    
+    $ <copy>rm -rf *</copy>
+    
+    $ <copy>cd /u01/app/oracle/upgrade-jobs</copy>
+    
+    $ <copy>ls</copy>
+    
+    CDB19  ORCL
+    
+    $ <copy>rm -rf *</copy>
+    
+    $
+    
+    ```
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
