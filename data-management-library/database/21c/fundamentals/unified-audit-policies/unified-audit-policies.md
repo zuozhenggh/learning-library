@@ -1,7 +1,7 @@
 # Enforcing Unified Audit Policies on the Current User
 
 ## Introduction
-This lab shows how to use SQL Macro as scalar and table expressions.
+This lab shows how unified audit policies are enforced on the current user who executes the SQL statement.
 
 ### About Product/Technology
 Until Oracle Database 21c, only the set operator UNION could be combined with ALL. Oracle Database 21c introduces two set operators, MINUS ALL (same as EXCEPT ALL) and INTERSECT ALL.

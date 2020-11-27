@@ -1,4 +1,4 @@
-# Using MAX_IDLE_BLOCKER_TIME Parameter
+# Using MAX\_IDLE\_BLOCKER\_TIME Parameter
 
 ## Introduction
 This lab shows how to terminate a blocking session by using the new initialization parameter `MAX_IDLE_BLOCKER_TIME`.

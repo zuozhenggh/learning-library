@@ -38,7 +38,7 @@
         },
         {
             "title": "Lab: Autoupgrade - Non-CDB to PDB",
-            "filename": "../../autoupgrade-non-cdb/autoupgrade-non-cdb.md"
+            "filename": "../../autoupgrade/autoupgrade.md"
         },
         {
             "title": "Application Development",
@@ -186,7 +186,7 @@
         },
         {
             "title": "Lab: Unified Audit Policies",
-            "filename": "../../unified-audit-policies/unified-audit-policies.md"
+            "filename": "../../unified-audit-policies/cunified-audit-policies.md"
         }
         
     ]
