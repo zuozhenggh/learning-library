@@ -1,8 +1,26 @@
-# Introduction
+# Introduction 
 
-This workshop offers hands-on labs that highlight the latest enhancements in the latest release of the Oracle Database, 21c.  For the world’s most demanding enterprise applications and workloads, Oracle Database 21c is a converged database that delivers a high performance, highly available, secure and scalable data management platform for cloud as well as on-premises environments.
+This workshop offers hands-on labs that highlight the latest enhancements in the latest release of the Oracle Database, 21c centering on Performance and High Availability.
 
-### About Oracle Database 21c
+Estimated Workshop Time: 60 minutes 
+
+### Labs
+* PDB Point-In-Time Recovery
+* Automatic Zone Maps
+* SecureFile LOBs
+* Automatic In-Memory
+* In-Memory Hybrid Scans
+* Synchronizing Apps in App PDBs
+* MAX_IDLE_BLOCKER_TIME Parameter
+
+### Prerequisites
+
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
+* Working knowledge of vi
+
+You may now [proceed to the next lab](#next).
+
+## About Oracle Database 21c
 The 21c generation of Oracle's converged database offers customers; best of breed support for all data types (e.g. relational, JSON, XML, spatial, graph, OLAP, etc.), and industry leading performance,scalability, availability and security for all their operational, analytical and other mixed workloads.
 
  ![Oracle DB 21c Advantages](images/21c-support.png "Oracle DB 21c Advantages")
@@ -17,24 +35,6 @@ With 21c, customers can
 * Unlock innovation
 * Develop powerful, data-driven applications
 
-
-**Add 21c video here, Willie to send**
-  [](youtube:zNKxJjkq0Pw)
-
-### Objectives
-
-* Lab:  Create SSH Keys
-* Lab:  Create VCN & DB System
-* Lab:  Prepare for 21c
-* Lab:  Using New Set Operators
-
-### Prerequisites
-
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Working knowledge of vi
-
-
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 
