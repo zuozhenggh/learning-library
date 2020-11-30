@@ -1,4 +1,4 @@
-# Lab 2: Creating a Trial Edition Instance in OCI
+# Creating a Trial Edition Instance in OCI
 
 ## Introduction
 
@@ -7,7 +7,8 @@ In this lab, a JDE Trial Edition will be created in OCI. The JDE Trial Edition w
 Estimated Lab Time: 40 minutes
 
 ### About Product/Technology
-The process includes creating the JDE Trial Edition environment, setting up a bridge to connect to the JDE Trial Edition, ensuring the configurations are correct for the JDE Trial Edition, and finally getting the IP addresses of the JDE consoles in order to access them in your web browser. 
+
+The process includes creating the JDE Trial Edition environment, setting up a bridge to connect to the JDE Trial Edition, ensuring the configurations are correct for the JDE Trial Edition, and finally getting the IP addresses of the JDE consoles in order to access them in your web browser.
 
 
 ### Objectives
@@ -43,31 +44,31 @@ On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation***
 4.  Next, define the instance with the following options: 
 
     * Instance Name: jdetrial
-        ![](./images/instance-name.png " ")
+    ![](./images/instance-name.png " ")
 
     * Operating System or Image Source: leave ***JD Edwards EnterpriseOne Trial Edition*** selected.
-        ![](./images/operating-system.png " ")
+    ![](./images/operating-system.png " ")
 
     * If the following is not visible on your screen, click on ***Show Shape***, ***Network and Storage Options***.  Depending on the region selected, there might be one or more availability domains.   Select Availability Domain: ***AD1*** (if since AD available) or ***AD3*** (if multiple ADs available).
-        ![](./images/availability-domain.png " ")
+    ![](./images/availability-domain.png " ")
 
     * Instance Shape: click on ***Change Shape***
-        ![](./images/change-shape.png " ")
+    ![](./images/change-shape.png " ")
 
     * Select ***Virtual Machine***, then select a shape.  For the purposes of this lab, select either an ***Intel Skylake VM.Standard2.2*** shape, or under the Specialty and Legacy series, select the ***VM.Standard.E2.2*** shape.
-        ![](./images/vm-shape.png " ")
+    ![](./images/vm-shape.png " ")
 
     * Configure Networking: This will be populated by default, but review and confirm the VCN, compartment, and subnet.  Ensure that the ***Assign a public IP address*** radio button is selected.
-        ![](./images/public-ip.png " ")
+    ![](./images/public-ip.png " ")
 
     * Configure Boot Volume: The default boot size of 100GB will be sufficient for this lab.
-        ![](./images/boot-size.png " ")
+    ![](./images/boot-size.png " ")
 
     * Add SSH key: Select the ***Choose SSH Key file*** radio button.  Browse to select the public SSH key file you created earlier (LAB 1, Step 2: Generate a Secure Shell (SSH) Key Pair) by navigating to the location where the SSH files are stored.  Alternatively, drag and drop the .pub file to the window.
-        ![](./images/ssh-upload.png " ")
+    ![](./images/ssh-upload.png " ")
 
     * Click the ***Create*** button.
-        ![](./images/create-button.png " ")
+    ![](./images/create-button.png " ")
 
 5.  After a few minutes, the instance will be running and ready.  Copy and take note of the **Public IP address** under the ***Instance Access*** section, which is required to connect to the instance – in this example, it is 129.213.43.190.
     ![](./images/finished-instance.png " ")

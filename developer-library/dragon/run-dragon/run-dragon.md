@@ -1,43 +1,55 @@
-# Download and run DRAGON
+# Create your first React Web Application using the DRAGON Stack
 
 ## Introduction
 
-This lab walks you through the steps to download, install and run the DRAGON stack. <more>
+This lab walks you through the steps to download, configure, and run the DRAGON Stack manager in order to create your very first React Web Application connected to an Autonomous Transaction Processing database (Always Free or not). 
 
 Estimated Lab Time:  10 minutes
 
 ### About DRAGON
-The DRAGON stack is designed to speed up you development of applications that leverage the power of Oracle Autonomous Database. In this short workshop, you'll download the stack and deploy the stack to Oracle Cloud.
-
+The DRAGON Stack manager is designed to speed up as much as possible the development of applications that leverage the power of Oracle Autonomous Databases.
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-
-## **STEP 1**: Download the DRAGON Stack
+## **STEP 1**: Download the DRAGON Stack manager
 
 1. In Cloud Shell, change directories to your home directory:
 
     ```
-    <copy>cd</copy>
+    $ <copy>cd</copy>
     ```
 
-2. Download the DRAGON stack and make it executable:
-   *Note: see [the GitHub repo](https://github.com/loiclefevre/dragon) for the latest version.*
+2. If you have an existing DRAGON Stack manager you can simply *upgrade* it to the latest version:
 
     ```
-    <copy>wget https://github.com/loiclefevre/dragon/releases/download/v2.0.5/dragon-linux-x86_64-2.0.5</copy>
+    $ <copy>dragon-linux-x86_64-<your version> -upgrade</copy>
+    ```
+
+    For example:
+
+    ![DRAGON Stack manager being upgraded](images/dragon-upgrading.png)
+    
+    ![DRAGON Stack manager upgraded with success](images/dragon-upgrade.png)
+
+    *[Click here to skip to STEP 4](#STEP4:DeploytheDRAGONStackbackend)*
+
+2. Download the DRAGON Stack manager and make it executable:
+   *See [the GitHub repo](https://github.com/loiclefevre/dragon) for the latest version.*
+
+    ```
+    $ <copy>wget https://github.com/loiclefevre/dragon/releases/download/v2.0.7/dragon-linux-x86_64-2.0.7</copy>
     ```
 
     ```
-    <copy>chmod +x dragon-linux-*</copy>
+    $ <copy>chmod +x dragon-linux-*</copy>
     ```
 
 3. Run the dragon command to generate SSH keys and display the config file:
 
     ```
-    <copy>dragon-linux-x86_64-2.0.5 -config-template -create-keys</copy>
-    DRAGON Stack manager v2.0.5
+    $ <copy>./dragon-linux-x86_64-2.0.7 -config-template -create-keys</copy>
+    DRAGON Stack manager v2.0.7
 
     > Command line parameters ................................................... ok
     Entering keys generation process...
@@ -79,11 +91,11 @@ The DRAGON stack is designed to speed up you development of applications that le
 ## **STEP 2:** Gather Data you need
 
 1. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add Public Key**.
-   ![](./images/select-user.png " ")
-   ![](./images/create-api-key.png " ")
+   ![Select user in OCI Console](./images/select-user.png " ")
+   ![Create an API key for the user](./images/create-api-key.png " ")
 
 2. Paste the content of public key you created and click **Add**. A new finger print will be generated.
-   ![](./images/add-public-key.png " ")
+   ![Add a public key for the user](./images/add-public-key.png " ")
 
   Make a note of the fingerprint for later.
 
@@ -91,24 +103,24 @@ The DRAGON stack is designed to speed up you development of applications that le
 
 3. On the User Details page, copy the user OCID and save it for later:
 
-  ![](images/user-ocid.png)
+  ![Retrieve user OCID](images/user-ocid.png)
 
 4. Click on the user icon again and click **Tenancy: <tenancy-name>**, then copy and save the tenancy OCID for later:
 
-  ![](images/tenancy-ocid.png)
+  ![Retrieve tenancy OCID](images/tenancy-ocid.png)
 
 5. From your compartment details page, copy the compartment OCID and save it for later.
 
-  ![](images/compartment-details.png)
+  ![Retrieve compartment OCID](images/compartment-details.png)
 
-6. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) to determine your region code. Save it for later.
+6. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top) to determine your region code. Save it for later.
 
 ## **STEP 3:** Create the dragon.config file
 
 1. Create a `dragon.config` file using vi, nano or your favorite editor:
 
     ```
-    <copy>nano dragon.config</copy>
+    $ <copy>nano dragon.config</copy>
     ```
 
 2. Copy the following and paste it into the file, and add the values you collected earlier:
@@ -119,45 +131,47 @@ The DRAGON stack is designed to speed up you development of applications that le
     user=<user ocid>
     fingerprint=<api key fingerprint>
     key_file=~/dragon_ssh_key
+    pass_phrase=banana
     tenancy=<tenancy ocid>
     compartment_id=<compartment ocid>
     region=<region code>
     auth_token=<authentication token>
     database_password=5uPeR_5tRoNg_PaSsWoRd
-    database_collections=employees></copy>
+    database_collections=employees
+    </copy>
     ```
 
-    *Recommend we provide a sample JSON file for the collection*
+    *Remark: we provide a sample JSON file for initializing a JSON collection during the deployment of the stack.*
 
-## **STEP 4:** Deploy the DRAGON stack
+3. In the case of Always Free Database limit reached for a paid tenant or a LiveLabs provided account, you can change the type of the database to provision using the `database_type` parameter:
+
+    ```
+    <copy>
+    [DEFAULT]
+    user=<user ocid>
+    fingerprint=<api key fingerprint>
+    key_file=~/dragon_ssh_key
+    pass_phrase=banana
+    tenancy=<tenancy ocid>
+    compartment_id=<compartment ocid>
+    region=<region code>
+    auth_token=<authentication token>
+    database_password=5uPeR_5tRoNg_PaSsWoRd
+    database_collections=employees
+    database_type=ajd
+    </copy>
+    ```
+ 
+## **STEP 4:** Deploy the DRAGON Stack backend
 
 1. Use the `-help` to see the parameters that DRAGON accepts:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.5 -help</copy>
-    DRAGON Stack manager v2.0.5
-
-    > Command line parameters ................................................... ok
-    Usage:
-    -config-template                        displays a configuration file template
-      -create-keys                          create the user's OCI API Key pair (use with -config-template)
-    -profile <profile name>                 to choose the given profile name from dragon.config (default profile name: DEFAULT)
-    -db <database name>                     to denote the database name to create or destroy
-    -loadjson                               loads {JSON} data corresponding to collections (default: no data loaded)
-                                             . use with configuration parameters database_collections and data_path
-                                             . loading JSON data can be done during and/or after database provisioning
-                                             . JSON file names must match <collection name>[_[0-9]+].json
-    -create-react-app [name]                creates a React frontend (default name: frontend)
-    -create-spring-boot-petclinic [name]    creates the Spring Boot Petclinic (default name: petclinic)
-    -destroy                                to destroy the database
-    -upgrade                                to download the latest version for your platform... (if available)
-
-    Reporting issues:
-    Please report any issue (bug, enhancement request, documentation needs...) at http://bit.ly/DragonStack in the "Issues" tab.
-    $
+    $ <copy>./dragon-linux-x86_64-2.0.7 -help</copy>
     ```
+    ![Help for DRAGON Stack manager](./images/dragon-help.png)
 
-2. Create a sample JSON file to load. Open the following file and paste the contents into it, and save the file:
+2. Create a sample JSON file to load named `employees.json`. Open the following file and paste the content into it, and save the file:
 
     ```
     $ <copy>nano employees.json</copy>
@@ -167,46 +181,33 @@ The DRAGON stack is designed to speed up you development of applications that le
     <copy>{"Employees":[{"userId":"rirani","jobTitleName":"Developer","firstName":"Romin","lastName":"Irani","preferredFullName":"Romin Irani","employeeCode":"E1","region":"CA","phoneNumber":"408-1234567","emailAddress":"romin.k.irani@gmail.com"},{"userId":"nirani","jobTitleName":"Developer","firstName":"Neil","lastName":"Irani","preferredFullName":"Neil Irani","employeeCode":"E2","region":"CA","phoneNumber":"408-1111111","emailAddress":"neilrirani@gmail.com"},{"userId":"thanks","jobTitleName":"Program Directory","firstName":"Tom","lastName":"Hanks","preferredFullName":"Tom Hanks","employeeCode":"E3","region":"CA","phoneNumber":"408-2222222","emailAddress":"tomhanks@gmail.com"}]}</copy>
     ```
 
-    *Note: JSON files must be minified(no line breaks).*
+3. Create the DRAGON Stack backend with the employees collection:
 
-3. Create the DRAGON stack with the employees collection:
+    The following commad will use the configuration information from the `dragon.config`file in order to deploy an
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.5 -loadjson</copy>
-    DRAGON Stack manager v2.0.5
-
-    > Command line parameters ................................................... ok
-    > Oracle Cloud Infrastructure configuration ................................. ok
-    > Database creation ................................................. ok [1m 8s]
-    > Database wallet download ..................................... ok [dragon.zip]
-    > Database configuration .................................................... ok
-    > Object storage configuration .............................................. ok
-    > Data loading .............................................................. ok
-    > Local configuration ....................................................... ok
-    > Local configuration ....................................................... ok
-    You can connect to your database using SQL Developer Web:
-    - URL  : https://DEQ7GMUGY6X3FK1-DRAGON.adb.uk-london-1.oraclecloudapps.com/ords/dragon/sign-in/?username=DRAGON&r=_sdw%2F
-    - login: dragon
-    duration: 1m 48s
+    $ <copy>./dragon-linux-x86_64-2.0.7 -loadjson</copy>
     ```
+   
+    ![Autonomous database provisioned with DRAGON](./images/dragon-provisioned-backend.png)
 
 ## **STEP 5:** Using DRAGON
 
 1. Copy and paste the link into a browser and connect to SQL Developer Web:
 
-  ![](images/connect-to-sql-dev-web.png)
+  ![SQL Developer Web connect link](images/connect-to-sql-dev-web.png)
 
-2. Login, using the login name and password you created in the config file:
+2. Login, using the login name and password you created in the `dragon.config` file:
 
-  ![](images/sql-dev-web-signin.png)
+  ![Signing-in into SQL Developer Web](images/sql-dev-web-signin.png)
 
 3. Click SQL Worksheet:
 
-  ![](images/open-sql-worksheet.png)
+  ![SQL Developer Web - SQL Worksheet](images/open-sql-worksheet.png)
 
 4. Expand the two collections:
 
-  ![](images/expand-collections.png)
+  ![Listing SODA collections in SQL Developer Web](images/expand-collections.png)
 
 5. In the worksheet, enter the following command to look at the contents of the employees collection (JSON), and click **Run Statement**:
 
@@ -214,85 +215,59 @@ The DRAGON stack is designed to speed up you development of applications that le
   <copy>select json_query(json_document, '$' returning CLOB) from employees;</copy>
   ```
 
-  ![](images/view-employees-collection-json.png)
+  ![Query JSON documents from the employees collection](images/view-employees-collection-json.png)
 
 6. Click in the query result to see the contents of the JSON document:
 
-  ![](images/employees-values.png)
+  ![View a JSON document](images/employees-values.png)
 
 ## **STEP 6:** Create the front end React application
 
-1. In Cloud Shell, build the front-end:
+1. In Cloud Shell, generate the front-end project:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.5 -create-react-app</copy>
-    DRAGON Stack manager v2.0.0
-
-    > Command line parameters ................................................... ok
-    > Oracle Cloud Infrastructure configuration ................................. ok
-    > Local configuration ....................................................... ok
-    > Stack creation .......................................... ok [React: frontend]
-    Success! Created frontend at /home/tom_mcginn/frontend
-    Inside that directory, you can run several commands:
-
-      npm install
-        Installs all the dependencies.
-
-      npm start
-        Starts the development server.
-
-      npm run build
-        Bundles the app into static files for production.
-
-      npm test
-        Starts the test runner.
-
-      npm run eject
-        Removes this tool and copies build dependencies, configuration files
-        and scripts into the app directory. If you do this, you can’t go back!
-
-    We suggest that you begin by typing:
-
-      cd frontend
-      npm install
-      npm start
-
-    Happy hacking!
-    duration: 0.012s
-    $
+    $ <copy>./dragon-linux-x86_64-2.0.6 -create-react-app</copy>
     ```
+    ![Create the React frontend with the DRAGON Stack manager](images/frontend-creation.png)
 
-2. Build the front end using npm:
+2. Configure Cloud Shell `Node.js` version using the command provided (optional if you are in the good version already):
 
     ```
-    <copy>cd frontend; npm install; npm start</copy>
+    $ <copy>nvm install 14.15.1 --latest-npm</copy>
     ```
 
-    ![](images/frontend-installed.png)
-
-3. When the build completes, install NGROK to access the local website (deployed on Cloud Shell):
+3. Build the front end using npm:
 
     ```
-    <copy>wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip; unzip ngrok-stable-linux-amd64.zip</copy>
+    $ <copy>cd frontend; npm install</copy>
     ```
 
-4. Start ngrok and then access the website:
+    ![Deploys the React frontend with npm](images/deploying-stack-frontend.png)
+
+4. Once the Web Application deployed, install NGROK to access the local website (deployed on Cloud Shell):
 
     ```
-    <copy>npm start &</copy>
+    $ <copy>wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip; unzip ngrok-stable-linux-amd64.zip</copy>
     ```
 
+5. Start ngrok and then access the website (Note: if you get an error, make sure you are not on your company's VPN.)
+
     ```
-    <copy>./ngrok http 3000</copy>
+    $ <copy>npm start &</copy>
     ```
 
-    ![](images/ngrok.png)
+    ![React frontend started](images/frontend-installed.png)
 
-5. Click in the interface to learn more about the DRAGON project, Reactjs, ORDS, or sign into the database on your ATP instance.
+    ```
+    $ <copy>./ngrok http 3000</copy>
+    ```
 
-    ![](images/dragon-frontend.png)
+    ![NGROK link to connect from OCI Cloud Shell](images/ngrok.png)
 
-    *maybe add more here?*
+6. Click in the interface to learn more about the DRAGON project, Reactjs, ORDS, or sign into the database on your ATP instance.
+
+    ![React frontend connected to the backend](images/dragon-react-frontend.png)
+
 
 ## **STEP 7:** Cleanup your environment
 
@@ -304,22 +279,25 @@ The DRAGON stack is designed to speed up you development of applications that le
     $ <copy>cd</copy>
     ```
 
-3. Destroy you DRAGON stack
+3. Destroy your DRAGON Stack backend
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.0 -destroy</copy>
+    $ <copy>./dragon-linux-x86_64-2.0.7 -destroy</copy>
     ```
+   ![Destroying the backend with the DRAGON Stack manager](./images/dragon-destroy-backend.png)
 
-Congratulations! You have complete the workshop!
+Congratulations! You have completed the very first DRAGON Stack workshop!
 
 ## Learn More
 
-* [DRAGON Project (GitHub)](https://github.com/loiclefevre/dragon)
 * [Oracle REST Data Services](https://www.oracle.com/database/technologies/appdev/rest.html)
+* [DRAGON Project (GitHub)](https://bit.ly/DRAGONStack) and add a star :)
 
 ## Acknowledgements
 * **Author** - Loic Lefevre, Principal Product Manager
 * **Last Updated By/Date** - Tom McGinn, Database Product Management, November 2020
+
+![DRAGON Stack logo](./images/dragon-logo.png)
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
