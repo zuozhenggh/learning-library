@@ -73,12 +73,13 @@ In this lab, you will:
       ````
 
 ## **STEP 2**: Download scripts
-Download the Cloud\_21c\_labs.zip file to the /home/oracle directory on your VM and unzip the file.
+Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle Cloud object storage and unzip the file.
 
 1.  Change to the oracle user home directory
    
       ````
       cd /home/oracle
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/cM3vILBs5jcFJ0f8F6DSYAJGvEIlg7tl-8KFhXWCdlcWMPSsiLuoMN7fwApUteG1/n/c4u03/b/data-management-library-files/o/Cloud_21c_labs.zip
       ````
 2.  Unzip Cloud\_21c\_labs.zip
 
