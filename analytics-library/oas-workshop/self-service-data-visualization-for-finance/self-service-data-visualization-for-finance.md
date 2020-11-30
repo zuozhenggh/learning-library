@@ -25,10 +25,10 @@ Oracle Analytics Server features powerful, intuitive data visualization capabili
 
 This exercise will introduce you to the key features of data visualization and will help us to tell a story on what is happening at JTC America Group, a fictional conglomerate with operations in multiple geographies and segments covering a vast portfolio of products.
 
-1. Login to Oracle Analytics by entering the URL provided by your instructor
+1. **Login** to Oracle Analytics by entering the URL provided by your instructor
    ![](./images/asdvff1.png " ")
 
-2. Click on Create -> Project to start a new self-service project
+2. **Click** on Create -> Project to start a new self-service project
    ![](./images/asdvff2.png " ")
 
 3. **Select** the “Sample App” subject area and **Click** “Add to Project”
@@ -41,14 +41,14 @@ This exercise will introduce you to the key features of data visualization and w
 
    First, let’s see how the product ratios are split across Product Types.
 
-   Control select “Products – Product Type” and “Profit Metrics – Profit Ratio %”
+   **Control select** “Products – Product Type” and “Profit Metrics – Profit Ratio %”
 
-   Right click, select “Pick Visualization.”
+   **Right click**, select “Pick Visualization.”
 
    ![](./images/asdvff4.png " ")
 
 
-5. Select “Donut” Chart
+5. **Select** “Donut” Chart
    ![](./images/asdvff5.png " ")
 
 6. Observe the donut chart on the canvas. You can see that of all the product ratios “Audio” has the lowest profit ratio percentage.
@@ -58,19 +58,19 @@ This exercise will introduce you to the key features of data visualization and w
 
    Let’s see how the products under “Audio” have been doing over time.
 
-   Holding control select “Time - Month”, “Products - Product”, and “Profit Metrics - Profit Ratio %” and drag them to the left of Donut chart.
+   **Holding control select** “Time - Month”, “Products - Product”, and “Profit Metrics - Profit Ratio %” and **drag them** to the left of Donut chart.
 
    A dark blue line appears.  It identifies the location of your visualization.  
 
    You may drop the visualization to the left, right or top or bottom.
    ![](./images/asdvff7.png " ")
 
-8. In order to review each product separately, Move “Products” to Trellis Rows. You should  see an individual line chart for each product as shown in the image.
+8. In order to review each product separately, **Move** “Products” to **Trellis Rows**. You should  see an individual line chart for each product as shown in the image.
    ![](./images/asdvff8.png " ")
 
    Since we are concerned about the profit % of the Audio product type, we will filter down to the product level. 
   
-   To do this, drag “Products - Product Type” to the filters section and select “Audio”
+   To do this, **drag** “Products - Product Type” to the filters section and select “Audio”
 
    Observe that “MicroPod” has declining profit ratios and “SoundX Nano” could also be improved.
 
@@ -83,12 +83,12 @@ This exercise will introduce you to the key features of data visualization and w
   Click on “+” and “Add Data Set”
   ![](./images/asdvff10.png " ")
 
-10. Click on “Create Data Set”
+10. **Click** on “Create Data Set”
 
-    Click on “Drop data file here or click to browse”
+    **Click** on “Drop data file here or click to browse”
     ![](./images/asdvff11.png " ")
 
-    Select the file “Inventory.xlsx” on your local folders and click “Open.”
+    **Select** the file “Inventory.xlsx” on your local folders and **click** “Open.”
     ![](./images/asdvff12.png " ")
 
 11. Oracle Analytics Server includes its own light weight data preparation capabilities. When you add your data source it will take you to the Preparation tab before adding the data to the project.
@@ -97,19 +97,19 @@ This exercise will introduce you to the key features of data visualization and w
 
    Note here that if the attributes were named exactly the same they would be matched automatically.
 
-   Click on “Product Name.”
+   **Click** on “Product Name.”
 
    Note the properties box in the lower left hand corner.
 
-   Click on the “None” link associated with “Match” and
+   **Click** on the “None” link associated with “Match” and
    select “Products -> Product” from the subject area.
 
    ![](./images/asdvff13.png " ")
    ![](./images/asdvff14.png " ")
 
-   Click “Add.” 
+   **Click** “Add.” 
 
-   Navigate to the “Visualize” tab, where you can start playing with the data.
+   **Navigate** to the “Visualize” tab, where you can start playing with the data.
    ![](./images/asdvff15.png " ")
 
 
@@ -117,13 +117,13 @@ This exercise will introduce you to the key features of data visualization and w
 
     Note the Inventory spread sheet is listed under SampleApp.
 
-    Now, in order to do a mashup of the data sets, hold control and select “Product -> Product” from the subject area and “Stock” and “Demand” from the spreadsheet source.
+    Now, in order to do a mashup of the data sets, **hold control** and **select** “Product -> Product” from the subject area and “Stock” and “Demand” from the spreadsheet source.
 
-    Right Click and Select “Pick Visualization.”
+    **Right Click** and **Select** “Pick Visualization.”
     Explore the data elements panel on the left.  
     ![](./images/asdvff16.png " ")
 
-    Select “Bar”
+    **Select** “Bar”
     ![](./images/asdvff17.png " ")
 
 13. Arranging both the metrics “Stock” and “Demand” in the Y axis respectively, the graph should render as shown in the image.
@@ -138,7 +138,7 @@ This exercise will introduce you to the key features of data visualization and w
 14. We decide to investigate payables and receivables.  
    In order to continue our analysis, we import our Vendor Outstanding Payment spreadsheet which we obtained from our financial system.
 
-   Import the spreadsheet and repeat the steps from 10 and 11, including match.
+   **Import** the spreadsheet and repeat the steps from 10 and 11, including match.
 
    You should now see the data set for Vendor Payments appear in the data elements panel of the project.
 
@@ -146,26 +146,23 @@ This exercise will introduce you to the key features of data visualization and w
 
 15. Let’s create a visualization to understand which products have more outstanding vendor payments.
 
-   Control select
+   **Control select**
 
-   Products:
-      •	Product
+   - Products:
+      - Product
+   - Vendor Payments:
+      - OutstandingPayment
 
-   and
-
-   Vendor Payments:
-      •	OutstandingPayment
-
-   Then, right click and select “Pick Visualization.”
+   Then, **right click **and **select** “Pick Visualization.”
 
    ![](./images/asdvff20.png " ")
 
-16. Select “Tag Cloud”
+16. **Select** “Tag Cloud”
     ![](./images/asdvff21.png " ")
 
 17. You should see a new visualization on the canvas.
 
-   The visual shows that MicroPod and SoundX Nano are the products with the greatest amount of outstanding vendor payments.
+   The visual shows that **MicroPod** and **SoundX Nano** are the products with the greatest amount of outstanding vendor payments.
 
    It is quite possible that the vendors might not be willing to ship the order quantities if there substantial outstanding payments on the account.
 
@@ -175,47 +172,45 @@ This exercise will introduce you to the key features of data visualization and w
 
 18. Let’s play with a couple of options.
 
-   On the bar chart, right click on the Green bar (Demand) and Sort -> “Product by Demand Low to High.”
+   On the bar chart, **right click** on the Green bar (Demand) and **Sort** -> “Product by Demand Low to High.”
 
    See that the graph sorts itself with Demand in order from lowest to highest demand.
    ![](./images/asdvff23.png " ")
 
    You can filter the entire canvas by using “Keep Selected.”
 
-   To show this Right Click on the “Audio” pie slice and select “Keep Selected.”
+   To show this **Right Click** on the “Audio” pie slice and **select** “Keep Selected.”
    ![](./images/asdvff24.png " ")
 
 19. See that the whole canvas gets filtered for the Audio Product Type
     ![](./images/asdvff25.png " ")
 
-20. You can clear your filter section by Right Clicking on the “Audio” pie slice and selecting “Remove Selected”.
+20. You can clear your filter section by Right **Clicking** on the “Audio” pie slice and **selecting** “Remove Selected”.
     ![](./images/asdvff26.png " ")
 
 21. Now, let’s look at how to add custom visualizations to the canvas.
 
-    Let’s start by adding a new canvas. Click on the “+” icon at the bottom to create a new canvas.
+    Let’s start by adding a new canvas. **Click** on the “+” icon at the bottom to create a new canvas.
     ![](./images/asdvff27.png " ")
 
-22. Control Select:
+22. **Control Select**:
 
-    Revenue Metrics
-     •	Revenue
+    - Revenue Metrics
+        - Revenue
 
-    and
+    - Products
+        - Product
+        - Brand
+        - LOB
 
-    Products
-     •	Product
-     •	Brand
-     •	LOB
-
-    Then, right click and select “Pick Visualization”
+    Then, **right click** and **select** “Pick Visualization”.
     ![](./images/asdvff28.png " ")
 
-23. Select the “Circle Pack,” which is a custom visualization.
+23. **Select** the “Circle Pack,” which is a custom visualization.
 
     Note: if you are interested in learning how to upload custom visualization types, please see the section at the end of this document.
 
-    Drag “Products” from Color to the Rows section.
+    **Drag** “Products” from Color to the Rows section.
     ![](./images/asdvff29.png " ")
 
 24. The circle pack visualization appears as shown in the image.
@@ -226,15 +221,14 @@ This exercise will introduce you to the key features of data visualization and w
 25. Now, let’s look at revenue by date by leveraging another custom
 Visualization type called “Calendar Heatmap.”
 
-   Hold control Select
+   **Hold control Select**
 
-   Time
-    •	Date
-   and
-   Revenue Metrics
-    •	Revenue
+   - Time
+     - Date
+   - Revenue Metrics
+     - Revenue
 
-   Then, right click and select the “Calendar Heatmap” visual.  
+   Then, **right click** and **select** the “Calendar Heatmap” visual.  
    ![](./images/asdvff31.png " ")
 
    Recall in the previous activity, the calendar map visualization was not available for selection.
@@ -244,11 +238,10 @@ Visualization type called “Calendar Heatmap.”
    We now see a new visual appear next to the Circle Pack visual.
    [](./images/asdvff32.png " ")
 
-26. Click on the “Save” icon at the top right of the screen to save your project.
+26. **Click** on the “Save” icon at the top right of the screen to save your project.
     [](./images/asdvff33.png " ")
 
-27. Save your project under
-    /My Folders as “<your_name>_Project”.
+27. **Save** your project under  /My Folders as “<your_name>_Project”.
     [](./images/asdvff34.png " ")
     
 
@@ -262,10 +255,10 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
    Let’s start by adding a new canvas.
 
-   Click on the “+” icon at the bottom to create a new canvas.
+   **Click** on the “+” icon at the bottom to create a new canvas.
    [](./images/asdvff35.png " ")
 
-2. Right Click on the “My Calculations” folder.  Select “Add Calculation”.
+2. **Right Click** on the “My Calculations” folder.  **Select** “Add Calculation”.
 
    Now we will create a new metric called “Profit by Customer Count”.
    [](./images/asdvff36.png " ")
@@ -273,7 +266,7 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 3. Utilize the expression builder to create the calculation.
    [](./images/asdvff37.png " ")  
 
-4. Select “Profit Value” from “Profit Metrics” and drag and drop into the calculation dialog. Type “/” after the “Profit Value” then drag and drop “# of Customers” from
+4. **Select** “Profit Value” from “Profit Metrics” and **drag** and **drop** into the calculation dialog. Type “/” after the “Profit Value” then drag and drop “# of Customers” from
 “Revenue Metrics” after “/.” Click Validate. Click Save.
 
    You have successfully created your own custom calculation that can be used like any other metric.
@@ -282,10 +275,10 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 5. There are a wide range of functions available for creating custom calculations.
    [](./images/asdvff39.png " ") 
 
-6. Select “Country Name” from “Geography” and drag and drop to the top left of the canvas, right above the canvas,  where it is labelled “Click here or drag data to add filter.” Filter to “United States” by typing “uni” and select “United States”.
+6. **Select** “Country Name” from “Geography” and drag and drop to the top left of the canvas, right above the canvas,  where it is labelled “Click here or drag data to add filter.” Filter to “United States” by typing “uni” and select “United States”.
     [](./images/asdvff40.png " ")
 
-7. Select “State Province” from “Geography” and your new custom calculation under “My Calculations.” Drag and drop them onto the canvas.” You will notice that not all states are making a profit. 
+7. **Select** “State Province” from “Geography” and your new custom calculation under “My Calculations.” Drag and drop them onto the canvas.” You will notice that not all states are making a profit. 
 
    Let’s see what this looks like on a map.
    [](./images/asdvff41.png " ")
@@ -293,40 +286,40 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
 8. Switch the visualization to horizontal bar graph if needed.
 
-   On the upper right corner of the visual click the menu hamburger and select “Edit” and then “Duplicate Visualization”.
+   On the upper right corner of the visual, **click** the menu hamburger and **select** “Edit” and then “Duplicate Visualization”.
    [](./images/asdvff42.png " ")
 
    [](./images/asdvff43.png " ")
 
-9. Delete duplicated visualization by right clicking visualization and selecting “Delete Visualization”.
+9. Delete duplicated visualization by right **clicking** visualization and **selecting** “Delete Visualization”.
 
    Change the visualization type for the visualizations by selecting the “change visualization” menu in the upper left-hand corner of the grammar panel. 
 
-   Select map.
+   **Select** map.
    [](./images/asdvff44.png " ")
    [](./images/asdvff45.png " ")
 
 10. Let’s change the default color scheme to a red to green gradient.   
-    From Color Assignment, click on the down arrow  > Manage Assignments
+    From Color Assignment, **click** on the down arrow  > Manage Assignments
 
     [](./images/asdvff46.png " ")
 
 11. Scroll to Series, and locate the calculation you created : Profit by Customer Count measure
 
-    Click the edit option (the pen) for Profit by Customer Count.
+    **Click** the edit option (the pen) for Profit by Customer Count.
 
-    Click the Down arrow next to the color bar 
+    **Click** the Down arrow next to the color bar 
 
-    Select the red to green gradient second from the bottom right. 
+    **Select** the red to green gradient second from the bottom right. 
 
-    Click “Done”.
+    **Click** “Done”.
 
     [](./images/asdvff47.png " ")
 
-12. Within the properties box, select the visualization options. Change the “Zoom Control” to ‘On”.
+12. Within the properties box, select the visualization options. Change the “Zoom Control” to "On".
      [](./images/asdvff48.png " ")
 
-13. Click the + on the zoom. You have successfully completed custom calculations and mapping. Select “Save” to save and update your project.
+13. **Click** the + on the zoom. You have successfully completed custom calculations and mapping. Select “Save” to save and update your project.
      [](./images/asdvff49.png " ")
 
     
@@ -344,24 +337,24 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
     
    [](./images/asdvff50.png " ")
 
-2. Click “Auto Fit” and change it to “Freeform.” Click “Ok”
+2. **Click** “Auto Fit” and change it to “Freeform.” **Click** “Ok”
    [](./images/asdvff51.png " ")
 
-3. Select “Profit Ratio %”, “Revenue” and “Month.” Pick Visualization. Select “Combo.”
+3. **Select** “Profit Ratio %”, “Revenue” and “Month.” Pick Visualization. **Select** “Combo.”
    
    Notice in freeform mode the entire canvas is not utilized automatically.
    [](./images/asdvff52.png " ")
 
-4. Right mouse click “Profit Ratio %” and select “Y2 Axis.” Enlarge the visualization for a better view.
+4. **Right mouse click** “Profit Ratio %” and select “Y2 Axis.” Enlarge the visualization for a better view.
     [](./images/asdvff53.png " ")
 
-5. Select the “Analytics” option from the navigation panel on the left.
+5. **Select** the “Analytics” option from the navigation panel on the left.
    Drag and drop “Trend Line” onto the visualization.
     [](./images/asdvff54.png " ")
 
 6. You have now created a management report that shows both Revenue and Profit Ratio % with their corresponding trendlines all with no coding.
 
-    Drag and drop “Forecast” on the visualization and you will see forecasted results for both measures. This may take a few moments, please wait.
+    **Drag** and **drop** “Forecast” on the visualization and you will see forecasted results for both measures. This may take a few moments, please wait.
     [](./images/asdvff55.png " ")
 
     Review the properties box. 
@@ -372,7 +365,7 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
     [](./images/asdvff56.png " ")
 
 7. Next we will add the JTC Americas logo to our canvas.
-    Click the Visualizations menu on the left side of the pane. Select “Image” and drag and drop it on the canvas. Click “Select Image” and upload the “JTC Americas Group.jpg” file.
+    **Click** the Visualizations menu on the left side of the pane. **Select** “Image” and **drag** and **drop** it on the canvas. Click “Select Image” and upload the “JTC Americas Group.jpg” file.
 
     [](./images/asdvff57.png " ")
 
@@ -381,10 +374,10 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
 8. On the Image properties panel change the “Width” and Height” properties to “Auto Fit”.
    [](./images/asdvff59.png " ")
 
-9. Move the image of the company logo on top of the trendline visualization. “Right-Click and select “Order Visualization”->”Send Backward”.
+9. Move the image of the company logo on top of the trendline visualization. “**Right-Click** and **select** “Order Visualization”->”Send Backward”.
     [](./images/asdvff60.png " ")
 
-10. On the Image properties panel set the “Transparency.” You can click the value of “0” and use the slider to see how the transparency looks beneath your trendline visualization.
+10. On the Image properties panel set the “Transparency.” You can **click** the value of “0” and use the slider to see how the transparency looks beneath your trendline visualization.
     [](./images/asdvff61.png " ")
 
 11. The result should look something like this. Select “save” to update and save your project.
