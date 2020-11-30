@@ -37,7 +37,6 @@ The below pre-loaded data objects are available in Converged Database.
 
 
 ## **STEP 1**: Create Dataset
-
 In this step, create a dataset to work on.
 
 1. In the home page, click on create button and select dataset.
