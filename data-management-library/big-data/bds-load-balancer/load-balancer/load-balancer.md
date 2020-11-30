@@ -83,7 +83,7 @@ To copy the files:
 
 1. On the Windows taskbar, right-click the Windows **Start** button and select **Windows PowerShell**.
 
-  ![Windows icon](./images/launch-powershell.png "Launch powershell")
+  ![](./images/launch-powershell.png "Launch powershell")
 
   **Note:** If you use a Virtual Private Network (VPN), you may need to disconnect from VPN before using PowerShell to connect to your cluster. Re-establish your VPN connection when you move on to **STEP 3: Create the Load Balancer,** below.
 
@@ -92,7 +92,7 @@ To copy the files:
       ```
       PS C:\Users\MYHOME\> <copy>ssh -i <private-ssh-key> opc@<first-util-node-ip></copy>
       ```
-    For example, if you're working from `C:\Users\MYHOME`, your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`, and the accessible IP address of the first utility node of your cluster is `10.2.0.101`, enter:
+      For example, if you're working from `C:\Users\MYHOME`, your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`, and the accessible IP address of the first utility node of your cluster is `10.2.0.101`, enter:
 
       ```
       PS C:\Users\MYHOME\> <copy>ssh -i ./bds/ssh/my-ssh-key opc@10.2.0.101</copy>
@@ -100,7 +100,7 @@ To copy the files:
       [opc@myclustun0 ~]$
       ```
 
-    Notice that the name of the first utility node is shown in the Linux prompt. In the example above, it's `myclustun0`.
+      Notice that the name of the first utility node is shown in the Linux prompt. In the example above, it's `myclustun0`.
 
 3. At the Linux prompt, list the contents of the ``/opt/cloudera/security/x509/``, which is the directory that contains the SSL files on the node. For example:
 
