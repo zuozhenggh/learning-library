@@ -1,14 +1,12 @@
 # Configure Database and GoldenGate Users 
 
 ## Introduction
-Contents
 
-Introduction
-Disclaimer
-Oracle GoldenGate for Microservices Workshop Architecture 
+In this lab we will setup the required database and GoldeGate replication users.
 
 *Estimated Lab Time*:  60 minutes
-#### Lab Architecture
+
+**Workshop Architecture**
 ![](./images/ggmicroservicesarchitecture.png " ")
 
 ### Objectives
@@ -159,8 +157,6 @@ integration architectures to big data systems without impacting the performance 
 You may now *proceed to the next lab*.
 
 ## Learn More
-
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 

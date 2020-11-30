@@ -1,7 +1,7 @@
 # Reset Lab
 
 ## Introduction
-
+This lab will reset the GoldenGate Microservices Workshop and allow you to start from the beginning if required.
 ........
 
 *Estimated Lab Time*:  15 minutes
@@ -36,6 +36,7 @@ This lab assumes you have:
 
 3. From here you will run the script to delete deployment.  In order to do this, you will need to run the ***delete_deployment.sh*** script. To run this script, you need to execute the following at the command line:
 
+Example of of parameters. See table below
         $ sh delete_deployment.sh A1 A2 A3 A4 A5 A6 A6 A7 A8
 
 Once the script is executed, you will see a statement saying that the ***“Successfully Setup Software.”*** indicates that deployment has been deleted.
@@ -53,7 +54,7 @@ Below example will guide to how to delete the deployment **"Target"** - (***SanF
 |      A7         |Metrics Server Port          |   17004             |
 |      A8         |Metrics Server UDP Port      |   17005             |
 
-4.  From the terminal enter **"./delete_deployment.sh SanFran Welcome1 16000 17001 17002 17003 17004 17005"**
+1.  From the terminal enter **"./delete_deployment.sh SanFran welcome1 16000 17001 17002 17003 17004 17005"**
 
         [oracle@OGG181DB183 Reset]$ ./delete_deployment.sh SanFran Welcome1 16000 17001 17002 17003 17004 17005
         Successfully Setup Software.
@@ -72,7 +73,7 @@ Below example will guide to how to delete the deployment **"Source"** - (***Atla
 |      A7         |Metrics Server Port          |   16004             |
 |      A8         |Metrics Server UDP Port      |   16005             |
 
-5.  From the terminal enter **"./delete_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005"**
+5.  From the terminal enter **"./delete_deployment.sh Atlanta welcome1 16000 16001 16002 16003 16004 16005"**
 
         [oracle@OGG181DB183 Reset]$ ./delete_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005
         Successfully Setup Software.
@@ -102,7 +103,7 @@ In this step you will run several scripts.
 
         [oracle@OGG181DB183 db]$ ./clone_pdb_182.sh
 
-You have completed lab 1000! **Great Job!**
+You may now *proceed to the next lab*.
 
 ## Learn More
 

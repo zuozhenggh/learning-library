@@ -52,9 +52,9 @@
       "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
     },
     {
-      "title": "Adminclient",
+      "title": "Administration Client",
       "description": "Microservices Adminclient",
-      "filename": "../../gg-microservices-administration-client/gg-microservices-administration-client.md"
+      "filename": "../../administration-client/administration-client.md"
     }
   ]
 }

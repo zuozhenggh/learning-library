@@ -23,8 +23,9 @@ TASK 4: ADD EXTRACT AND DISTRIBUTION PATHS
 TASK 5: INSTANTIATION
 TASK 6: CREATE THE REPLICAT
 TASK 7: GENERATE DATA LOAD
-TASK 8: HA/DR using GG ACTIVE-ACTIVE
-TASK 9: Transformations using GG
+TASK 8: HA/DR USING GG ACTIVE-ACTIVE
+TASK 9: TRANSFORMATIONS USING MICROSERVICES
+TASK 10: ADMINISTRATION CLIENT
 
 ### Passwords
 
@@ -37,8 +38,6 @@ Unix Account (Oracle): ggDemo123#!
 
 
 ## Learn More
-
-* [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
 
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 

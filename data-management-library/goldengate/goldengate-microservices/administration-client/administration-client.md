@@ -1,35 +1,36 @@
 # Lab  -  Golden Gate Microservices adminclient
 
-**Workshop Architecture**
 
-![](./images/ggmicroservicesarchitecture.png)
+**(WAITING FOR LAB FROM ZIA/PMs)**
 
 # Introduction
 
-This hands-on lab is designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to manage a replication environment using Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+This hands-on lab is designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to manage a replication environment using Rest API interfaces. This lab will provide insight into how to use the Administration Client to manage Microservices from Windows or Linux.
 
 The labs will walk the end-user through how to manage all components of Oracle GoldenGate replication.  To do the instantiation of the target database, the end-user will be performing a data pump export and import.  All replication process will be started as they are built.
 
+**Lab Architecture**
+
+![](./images/ggmicroservicesarchitecture.png)
+
+## Want to learn more:
+* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
+* 
+
+
+### Summary
+
+Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform leveraging RestfulAPIs.. It easily extends customers’ real-time data
+integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
 ## About Oracle GoldentGate Microservices
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
-## Want to learn more:
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
-
-
-
-
-Lab  – Create GoldenGate Microservices Replication
-
-Lab  – Active - Active Replication
-  
-Lab  – High Availability / Disaster Recovery
-
-Lab  - Transformations using GoldenGate Microservices
-
 
 ### Objectives
+
+Familiarization with Microservices Administration Client
+
 
 KEY FEATURES
 
@@ -53,17 +54,6 @@ Oracle GoldenGate Microservices real-time data streaming platform also allows cu
 
 Time to complete - 60 mins
 
-### Summary
-
-Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data
-integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
-
-### Disclaimer
-
-This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
-
-Time to Complete -
-Approximately 30 min
 
 ### Prerequisites
 This lab assumes you have:
@@ -81,7 +71,7 @@ In this lab we will setup GoldenGate Microservices
 
 
 
-## **Step 1:** In this task, you will create two deployments 
+## **STEP 1:** In this task, you will create two deployments 
 
 Open a terminal session
 
@@ -187,7 +177,7 @@ Each of the parameters will be used to replace items in the response file and bu
 
 ![](./images/a7.png)
 
-## **Step 2:** Configure Reverse Proxy
+## **STEP 2:** Configure Reverse Proxy
 
 In this Task, you will configure the NGINX Reverse Proxy.  
 
@@ -245,7 +235,7 @@ In the example, if using the Atlanta deployment, the URL would look like this:
 ```
 ![](./images/a10.png)
 
-## **Step 3:** Create Credentials
+## **STEP 3:** Create Credentials
 
 In this Task, you will configure the database user credentials and tnsnames entries needed for replication.  This requires running the following scripts:
 
@@ -268,7 +258,7 @@ For web page access, access the Administration Service (adminsrvr) using the sim
 ```
 <copy> $OGG_HOME/bin/adminclient</copy>
 ```
-## **Step 4:** Create Oracle Objects
+## **STEP 4:** Create Oracle Objects
 
 To begin this Task 5, follow the below steps:
 
@@ -339,7 +329,7 @@ You have now completed configuring schema level supplemental logging needed for 
 
 You may now *proceed to the next lab*.
 
-## Learn **More
+## Learn More
 
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 

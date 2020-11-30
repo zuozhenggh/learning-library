@@ -2,28 +2,22 @@
 
 ## Introduction
 
-Contents
+This hands-on lab is designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
-Introduction
-Disclaimer
-Oracle GoldenGate for Microservices Workshop Architecture
+The labs will walk the end-user through how to add all components of Oracle GoldenGate replication.  To do the instantiation of the target database, the end-user will be performing a data pump export and import.  All replication process will be started as they are built.
 
-
-Lab  – Create GoldenGate Microservices Replication
-
-Lab  – Active - Active Replication
-
-Lab  – High Availability / Disaster Recovery
-
-Lab  - Transformations using GoldenGate Microservices
-
-*Estimated Lab Time*: - 60 mins
+## About Oracle GoldentGate Microservices
+Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
 #### Lab Architecture
 
 ![](./images/ggmicroservicesarchitecture.png " ")
 
+*Estimated Lab Time*: - 60 mins
+
 ### Objectives
+
+The objectives of the lab is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices.
 
 KEY FEATURES
 
@@ -45,6 +39,10 @@ Oracle GoldenGate Microservices provides optimized and high performance delivery
 
 Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
+* [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
+
+* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
+* 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -316,6 +314,8 @@ You have now completed configuring schema level supplemental logging needed for 
 
 ### Summary
 
+The objectives of the lab was to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices.
+
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data
 integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
@@ -323,7 +323,6 @@ You may now *proceed to the next lab*.
 
 ## Learn More
 
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 ## Acknowledgements

@@ -6,7 +6,9 @@ This lab is intended to give you familiarity with how to configure GG for databa
 Secured, reliable and fault-tolerant data delivery. It is easy to install, configure and maintain real-time changed data
 Easily extensible and flexible to stream transformed data to other relational targets
 
-Oracle GoldenGate for Microservices Workshop Architecture
+#### Workshop Architecture
+
+![](./images/ggmicroservicesarchitecture.png " ")
 
 
 Lab  – Create GoldenGate Microservices Replication
@@ -17,12 +19,9 @@ Lab  – High Availability / Disaster Recovery
 
 Lab  - Transformations using GoldenGate Microservices
 
+Lab - Administration Client
+
 *Estimated Lab Time*:  60 minutes
-
-#### Lab Architecture
-
-![](./images/ggmicroservicesarchitecture.png " ")
-
 
 ### Objectives
 
@@ -264,11 +263,9 @@ Relicat Settings
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data
 integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-**You have completed the GoldenGate Microservices Workshop !!**
+You may now *proceed to the next lab*.
 
 ## Learn More
-
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 

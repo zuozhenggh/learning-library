@@ -1,10 +1,11 @@
 # GoldenGate Microservices HA / DR replication
+
 ## Introduction
-Oracle GoldenGate for Microservices Workshop Architecture
+This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availabilit/Disaster Recovery using Active-Active Technology
 
 *Estimated Lab Time*:  60 minutes
 
-#### Lab Architecture
+**Workshop Architecture**
 ![](./images/ggmicroservicesarchitecture.png " ")
 
 ### Objectives
@@ -52,10 +53,12 @@ In this lab we will setup GoldenGate Microservices Active - Active Replication
 <copy>sudo su - oracle</copy>
 ```
 
-2. create_credential_TGGAlias.sh
+2. Will use the following command to create a target alias - create_credential_TGGAlias.sh
 
 ```
-<copy>sh ./create_credential_TGGAlias.sh Welcome1 17001 c##ggate@orcl ggate</copy>
+<copy>sqlplus / as sysdba
+sh ./create_credential_TGGAlias.sh Welcome1 17001 c##ggate@orcl ggate
+exit</copy>
 ```
 3. After running this script,you can go to your browser and verify that the credential was created
 
@@ -67,7 +70,7 @@ In this lab we will setup GoldenGate Microservices Active - Active Replication
 <copy>sudo su - oracle</copy>
 ````
 
-4. Change directory to Lab 5
+5. Change directory to Lab 5
 
 ```
 <copy>cd /Desktop/Scripts/HOL/Lab5</copy>
@@ -75,9 +78,9 @@ In this lab we will setup GoldenGate Microservices Active - Active Replication
 ```
 <copy>sh ./create_credential_TGGAlias.sh Welcome1 17001 c##ggate@orcl ggate</copy>
 ```
-5. After running this script, go to your browser and that the credential was created
+6. After running this script, go to your browser and that the credential was created
 
-6. Open a new browser tab and connect to Admin Server
+7. Open a new browser tab and connect to Admin Server
 
 ![](./images/b1.png " ")
 
@@ -91,18 +94,16 @@ Login with the following credentials
 <copy> oggadmin/Welcome1</copy>
 
 ```
-7. Select the "Hamburger Menu"
+8. Select the "Hamburger Menu", then -
 
-![](./images/b2.png " ")
-
-8. Select Administrator
+9. Select Administrator
 
 ![](./images/b3.png " ")
 
 
 ![](./images/b4.png " ")
 
-9. Next add the schema
+10. Next we need to add the schema
 
 Back to terminal session run:
 
@@ -113,7 +114,7 @@ Back to terminal session run:
 **Note: You can also check that SCHEMATRANDATA has been added from the Administration
 Service -> Configuration page as well. Simply log in to the TCGGATE alias**
 
-10. Then, under “Trandata”, make sure that the magnifying glass and radio button for
+11. Then, under “Trandata”, make sure that the magnifying glass and radio button for
 “Schema” is selected. Enter “oggoow191.soe” into the search box and then select the magnifying glass to the right of the search box to perform the search.
 
 ![](./images/b5.png " ")
@@ -136,7 +137,7 @@ You will use the following two scripts to configure these processes
 ```
 <copy>sh ./add_extract_Target.sh Welcome1 17001 EXTSOE1</copy>
 ```
-4. After the script has completed, you can go to the Administration Server and see that the extract is there on the Overview page. Remember to use the short URL to access the Administration Server.
+3. After the script has completed, you can go to the Administration Server and see that the extract is there on the Overview page. Remember to use the short URL to access the Administration Server.
 
 ```
 <copy>https://localhost/Atlanta/adminsrvr</copy>
@@ -144,15 +145,15 @@ You will use the following two scripts to configure these processes
 
 ![](./images/b6.png " ")
 
-5. Now you will create the Distribution Path that will be used to ship trail files from the Deployment to the Deployment. In order to do this, you will need to run the add_DistroPath.sh script.
+4. Now you will create the Distribution Path that will be used to ship trail files from the Deployment to the Deployment. In order to do this, you will need to run the add_DistroPath.sh script.
 
 At your terminal session:
 ```
 <copy>sh ./add_DistroPath.sh Welcome1 17002 SOE12SOE zz 16003 za</copy>
 ```
-6. After running the add_DistroPath.sh script, you will see the path created in the Distribution Service. Using the short URL approach, you can quickly see the Distribution Path. Using your browser navigate to the Distribution Server and review the Distribution Path.
+5. After running the add_DistroPath.sh script, you will see the path created in the Distribution Service. Using the short URL approach, you can quickly see the Distribution Path. Using your browser navigate to the Distribution Server and review the Distribution Path.
 
-7.  At the URL
+6.  At the URL
 ```
 <copy>https://localhost/Atlanta/distsrvr</copy>
 ```
@@ -243,8 +244,6 @@ integration architectures to big data systems without impacting the performance 
 You may now *proceed to the next lab*
 
 ## Learn More
-
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
