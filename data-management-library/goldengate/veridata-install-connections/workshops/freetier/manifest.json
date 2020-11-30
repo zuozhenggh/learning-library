@@ -10,11 +10,10 @@
         ,
         {
               "title": "Lab 1: Install and Configure Oracle GoldenGate Veridata",
-              "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+              "description": "This lab walks you through the required and optional tasks to install Oracle GoldenGate Veridata.",
               "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
         }
         ,
-
 
         {
               "title": "Lab 2: Create Connections to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP)",

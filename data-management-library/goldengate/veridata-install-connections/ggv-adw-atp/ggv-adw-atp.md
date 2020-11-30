@@ -8,7 +8,7 @@ Java applications require Java Key Store (JKS) or Oracle wallets to connect to A
   * Using Java Key Stores
   * Using Oracle Wallet
 
-**Note**: This lab is for using the Oracle Wallet only. For using Java Key Sores (JKS),see [Java Connectivity with Autonomous Database (ATP or ADW)](https://www.oracle.com/database/technologies/java-connectivity-to-atp.html)
+**Note**: This lab is for using the Oracle Wallet only. For using Java Key Sores (JKS), see [Java Connectivity with Autonomous Database (ATP or ADW)](https://www.oracle.com/database/technologies/java-connectivity-to-atp.html).
 
 ### What Do You Need?
 

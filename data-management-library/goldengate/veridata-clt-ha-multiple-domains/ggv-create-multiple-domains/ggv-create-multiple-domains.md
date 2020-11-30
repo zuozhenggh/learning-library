@@ -4,13 +4,11 @@
 This lab shows you how to create multiple domains for Oracle GoldenGate Veridata.
 This scenario considers an existing Oracle GoldenGate Veridata install that is fully functional, any user logged on to the Web interface can see all the jobs created and run by other users in the existing WebLogic domain, and users belong to different department or LOB. If users from a particular LOB wish to create and run their own jobs not visible to other LOB, they can create a new domain that is isolated from the existing domain. In the new domain, they can add users only from their own line of businesses (LOB), or add all users from original domain but restrict privilege of users from certain LOB.
 
-**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
-
 ### What Do You Need?
 
 + **An existing Oracle GoldenGate Veridata install that is functional, version 12.2.1.2 and higher**
 
-## **Step 1:** Create the Oracle GoldenGate Veridata Repository Schema
+## **STEP 1:** Create the Oracle GoldenGate Veridata Repository Schema
 In this step you will learn how to use the Repository Creation Utility (RCU) to create the Veridata database repository where your Oracle GoldenGate domain instances are hosted.
 1. Ensure to have installed and configured a certified database. See [My Oracle Support](https://support.oracle.com/portal/) for information on supported database.
 
@@ -32,7 +30,7 @@ The custom prefix is used to logically group these schemas together for use in t
 9. Navigate through the remainder of the RCU screens to complete schema creation. When you reach the **Completion Summary** screen, click Close to dismiss RCU.
 
 
-## **Step 2:** Configure Domain for Oracle GoldenGate Veridata
+## **STEP 2:** Configure Domain for Oracle GoldenGate Veridata
 
 In this step you will create and configure an Expanded WebLogic domain for Oracle GoldenGate Veridata using the configuration wizard. To configure a domain:
 
@@ -93,7 +91,7 @@ Familiarize yourself with the tasks described in this section and perform them a
 * **Reviewed by:**
     + Jonathan Fu, Director, Product Development, GoldenGate Development
 
-* **Last Updated By/Date:** Anuradha Chepuri, August 2020
+* **Last Updated By/Date:** Anuradha Chepuri, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

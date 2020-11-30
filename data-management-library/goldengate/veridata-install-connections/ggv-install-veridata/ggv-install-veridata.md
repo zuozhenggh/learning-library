@@ -26,7 +26,7 @@ In a nutshell, the installation process includes the following four major tasks.
 4. Click **Next** to continue.
 5. Select either installation type (Fusion Middleware infrastructure With Examples or Fusion Middleware Infrastructure). Towards the end of this step, the Oracle WebLogic Server gets installed.
     ![](./images/4FMWScreen4_InstallationType.png " ")
-6. Wait for the progress bar to reach 100%. The Java version required is 1.7 or higher. Click **Next** to continue to the **Prerequisistes Checks** screen.
+6. Wait for the progress bar to reach 100%. The Java version required is 1.7 or higher. Click **Next** to continue to the **Prerequisites Checks** screen.
     ![](./images/5FMWScreen5_PrerequisitesChecks.png " ")
 7. Click **Next** to continue to the **Installation Summary** screen.
     ![](./images/6FMWScreen6_InstallationSummary.png " ")
