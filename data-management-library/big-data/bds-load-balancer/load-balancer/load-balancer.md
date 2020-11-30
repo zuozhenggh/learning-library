@@ -88,14 +88,15 @@ To copy the files:
 2. In PowerShell, use `ssh` with your private key to connect to the first utility node:
 
       ```
-      PS C:\Users\MYHOME\> <copy>ssh -i <private-ssh-key> opc@<first-util-node-ip></copy>
+    PS C:\Users\MYHOME\> <copy>ssh -i <private-ssh-key> opc@<first-util-node-ip></copy>
       ```
-      For example, if you're working from `C:\Users\MYHOME`, your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`, and the accessible IP address of the first utility node of your cluster is `10.2.0.101`, enter:
+    For example, if you're working from `C:\Users\MYHOME`, your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`, and the accessible IP address of the first utility node of your cluster is `10.2.0.101`, enter:
 
       ```
-      PS C:\Users\MYHOME\> <copy>ssh -i ./bds/ssh/my-ssh-key opc@10.2.0.101</copy>
-      Last login: Tue Nov 10 17:59:41 2020 from some-host
-      [opc@myclustun0 ~]$
+    PS C:\Users\MYHOME\> <copy>ssh -i ./bds/ssh/my-ssh-key opc@10.2.0.101</copy>
+    Last login: Tue Nov 10 17:59:41 2020 from some-host
+    [opc@myclustun0 ~]$
+
       ```
 
       Notice that the name of the first utility node is shown in the Linux prompt. In the example above, it's `myclustun0`.
@@ -103,24 +104,25 @@ To copy the files:
 3. At the Linux prompt, list the contents of the ``/opt/cloudera/security/x509/``, which is the directory that contains the SSL files on the node. For example:
 
       ```
-      [opc@myclustun0 ~]$ <copy>ls /opt/cloudera/security/x509/</copy>
-      agents.pem
-      hostname.key
-      hostname.pem
-      hue.pem
-      node_myclustmn0.sub12345678901.myclustevcn.oraclevcn.com.pem
-      node_myclustmn1.sub12345678901.myclustevcn.oraclevcn.com.pem
-      node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem
-      node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem
-      node_myclustwn0.sub12345678901.myclustevcn.oraclevcn.com.pem
-      node_myclustwn1.sub12345678901.myclustevcn.oraclevcn.com.pem
-      node_myclustwn2.sub12345678901.myclustevcn.oraclevcn.com.pem
-      node.cert
-      node.hue.key
-      node.key
-      ssl.cacerts.pem
-      ssl.private.key
-    ```
+    [opc@myclustun0 ~]$ <copy>ls /opt/cloudera/security/x509/</copy>
+    agents.pem
+    hostname.key
+    hostname.pem
+    hue.pem
+    node_myclustmn0.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustmn1.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustwn0.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustwn1.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustwn2.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node.cert
+    node.hue.key
+    node.key
+    ssl.cacerts.pem
+    ssl.private.key
+      ```
+
 4. Copy and save the file *names* of the PEM files for the first and second utility nodes. You can identify them by looking at the first part of the names, where ``<cluster>`` is the first seven letters of the cluster name and `un0` and `un1` identify the nodes. For example, on a cluster named `mycluster`:
 
     * `node_myclust`**`un0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem` (first node)
@@ -133,13 +135,13 @@ To copy the files:
 6. Remain in PowerShell, and use the `scp` command to copy the SSL certificate from the first utility node  (`node0`) to a ``<target>`` location on your computer. For convenience later, copy the file to an easily recognizable name, with a `.pem` filename extension:
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename></copy>
-
+    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename></copy>
       ```
+
       For example, if you're in your `C:\Users\MYHOME` directory, you want to copy the file to your `C:\Users\MYHOME\bds\ssl\` directory, and you want to rename the file to `first-util-node-cert.pem`, enter the following:
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/first-util-node-cert.pem</copy>
+    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/first-util-node-cert.pem</copy>
       ```
 
       Notice that the IP address is for the first utility node. In this example, it's  `10.2.0.101`.
@@ -147,13 +149,13 @@ To copy the files:
 7. Copy the SSL certificate from the second utility node (`node1`):  
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename> </copy>
+    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename> </copy>
       ```
 
       For example:
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/second-util-node-cert.pem</copy>
+    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/second-util-node-cert.pem</copy>
       ```
 
       Notice that the IP address is for the second utility node. In this example, it's  `10.2.0.102`.
@@ -163,25 +165,25 @@ To copy the files:
 8. Copy the SSL key file (named `node.hue.key`) for the first utility node to a ``<target>`` location on your computer. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
+    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
       ```
 
       For example:
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/first-util-node.key</copy>
+    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/first-util-node.key</copy>
       ```
 
 9. Copy the SSL key file  (also named `node.hue.key`) for the second utility node:  
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
+    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
       ```
 
       For example:
 
       ```
-      PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/second-util-node.key</copy>
+    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/second-util-node.key</copy>
       ```
 
       Notice that the IP address is for the second utility node. In this example, it's `10.2.0.102`.
@@ -189,17 +191,18 @@ To copy the files:
 10. List your downloaded files to make sure the files were downloaded appropriately, for example:
 
       ```
-      PS C:\Users\MYHOME\> <copy>ls</copy> ./bds/ssl-files
+    PS C:\Users\MYHOME\> <copy>ls</copy> ./bds/ssl-files
 
-      Directory: C:\Users\MYHOME\ssl-files
+    Directory: C:\Users\MYHOME\ssl-files
 
-      Mode      LastWriteTime            Length Name
-      ----      -------------  ------    ----
-      -a----    11/17/2020     9:21 AM   1285 first-util-node-cert.pem
-      -a----    11/17/2020     9:30 AM   1675 first-util-node.key
-      -a----    11/17/2020     9:32 AM   1285 second-util-node-cert.pem
-      -a----    11/17/2020     9:32 AM   1675 second-util-node.key   
+    Mode      LastWriteTime            Length Name
+    ----      -------------  ------    ----
+    -a----    11/17/2020     9:21 AM   1285 first-util-node-cert.pem
+    -a----    11/17/2020     9:30 AM   1675 first-util-node.key
+    -a----    11/17/2020     9:32 AM   1285 second-util-node-cert.pem
+    -a----    11/17/2020     9:32 AM   1675 second-util-node.key   
       ```
+      
 11. Close Windows PowerShell.
 
 ## **STEP 3:** Create the Load Balancer
