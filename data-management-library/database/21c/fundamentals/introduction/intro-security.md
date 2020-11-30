@@ -13,8 +13,8 @@ Estimated Workshop Time: 60 minutes
 * Install/Uninstall Database Vault
 
 ### Administration Labs
-* Upgraded Password File Case Iensitivity
-* Password Length Inforcement
+* Upgraded Password File Case insensitivity
+* Password Length enforcement
 
 ### Auditing Labs
 * Unified Audit Policies
@@ -47,12 +47,11 @@ With 21c, customers can
 ## Learn More
 
 * [21c Blog](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
 * **Contributors** - Kay Malcolm, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, Database Product Management
+* **Last Updated By/Date** - Kay Malcolm, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
