@@ -1,4 +1,4 @@
-# LAB 1: Set Up OCI for Siebel Deployment
+# Set Up OCI for Siebel Deployment
 
 ## About this Workshop
 

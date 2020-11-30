@@ -1,4 +1,4 @@
-# LAB 2: Deploying the Siebel Application
+# Provisioning the Siebel Application
 
 ## About this Workshop
 
@@ -7,7 +7,7 @@ In this exercise, you will create your Siebel instance by setting up the Siebel 
 Estimated Lab Time: 1 hour 15 minutes
 
 
-  [](youtube:zNKxJjkq0Pw)
+[](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -24,15 +24,15 @@ To deploy the Siebel Application, in this lab, you will:
 
 2. Navigate to ***Oracle Cloud Infrastructure Marketplace*** by using the dropdown menu on the left side of your screen and clicking the ***Marketplace*** option under ***Solutions and Platforms***
 
-![](./images/2.png " ")
+  ![from menu bar, click on Marketplace](./images/2.png " ")
 
 3. In the search bar type in siebel and hit search. Click on ***Siebel CRM 20.x install Container w/Sample Database*** image
 
-![](./images/3.png " ")
+  ![](./images/3.png " ")
 
 4. In the instance page select the most up to date version and then select the compartment you made earlier. Then click ***Launch Instance***
 
-![](./images/4.png " ")
+  ![](./images/4.png " ")
 
 5. In the Create Compute Instance page you will need to fill in additional info for your Instance
 
@@ -58,14 +58,14 @@ To deploy the Siebel Application, in this lab, you will:
 
     g. Now review your settings and click ***Create*** at the bottom of the page when you are ready
 
-![](./images/5.1.png " ")
-![](./images/5.2.png " ")
+    ![](./images/5.1.png " ")
+    ![](./images/5.2.png " ")
 
 6. Now you will be taken to the Instance Page and will see that your newly created instance is provisioning
 
      Once you see the small orange box change to green your instance will have provisioned successfully and now you can move onto the next step in the Lab
 
-![](./images/6.png " ")
+     ![](./images/6.png " ")
 
 
 ## **STEP 2**: Deploying the Siebel Application
@@ -93,23 +93,23 @@ Generating Jenkins URL
     USERNAME AND PASSWORD :  siebel/oracle
 
 
-![](./images/2.3.png " ")
+    ![](./images/2.3.png " ")
 
 4. After you have logged in you will see the Jenkins Home Screen. Select the ***SiebelDeploy*** option from the list
 
-![](./images/2.4.png " ")
+  ![](./images/2.4.png " ")
 
 5. Now select the ***Open Blue Ocean*** Option from the dropdown on the lefthand side of the screen
 
-![](./images/2.5.png " ")
+  ![](./images/2.5.png " ")
 
 6. Select the ***Run*** button to create your new instance
 
-![](./images/2.6.png " ")
+  ![](./images/2.6.png " ")
 
-7. In the window that opens you can specify the Siebel version and Industry that you desire. For this Lab we will choose Siebel version ***20.1*** and select ***Sales*** as the industry; then click the ***Run*** button
+7. In the window that opens you can specify the Siebel version and Industry that you desire. For this Lab we will choose Siebel version ***20.8*** and select ***Sales*** as the industry; then click the ***Run*** button
 
-    ![](./images/2.7.png " ")
+  ![TODO: update picture to correct version number](./images/2.7.png " ")
 
 8. After hitting run you will see that your new Siebel instance is being created, by clicking on it you can see more details
 
@@ -123,11 +123,13 @@ Generating Jenkins URL
 
 You can create the application URL using the port 4430, that you opened in the previous lab, and the industry you selected while deployment
 
-**NOTE:** For this step you Google Chrome may not allow you to access the site, we reccomend using an alternative such as Firefox for this step
+**NOTE:** For this step you Google Chrome may not allow you to access the site, we recommend using an alternative such as Firefox for this step
 
 The url you will need to type into your browser's search bar should look like this:
 
-    "https://<public IP address>:4430/siebel/app/<industry>/enu"
+```
+https://<public IP address>:4430/siebel/app/<industry>/enu
+```
 
 For example, if you selected Sales, your application URL for Sales industry  could be the following.
 
@@ -159,14 +161,24 @@ For Service - https://"your ip address":4430/siebel/app/callcenter/enu
 
 For Siebel Management Console (SMC) - https://"your ip address":4430/siebel/smc
 
-#Extension to provision
+# Extension to provision
 Verify Siebel version on home screen
 login home Page
 from the health menu - check technical support Option
-popup box will show siebel version, db connection, etc.
-
-# Summary
+popup box will show Siebel version, db connection, etc.
 
 In this lab you launched an instance of Siebel from the OCI marketplace, deployed the Siebel application, and then deployed the Siebel CRM Application.
 
-***Congratulations*** on completing this interactive lab and integrating Siebel with OCI. Please continue to work within the OCI environment using our other tutorials and explore our countless other features and possiblitities
+***Congratulations*** on completing this interactive lab and integrating Siebel with OCI. Please continue to work within the OCI environment using our other tutorials and explore our countless other features and possibilities
+
+
+## Acknowledgements
+* **Author** - <Name, Title, Group>
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
