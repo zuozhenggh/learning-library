@@ -6,6 +6,7 @@ This workshop offers hands-on labs that highlight the latest enhancements in the
 The 21c generation of Oracle's converged database offers customers; best of breed support for all data types (e.g. relational, JSON, XML, spatial, graph, OLAP, etc.), and industry leading performance,scalability, availability and security for all their operational, analytical and other mixed workloads.
 
  ![Oracle DB 21c Advantages](images/21c-support.png "Oracle DB 21c Advantages")
+
 Key updates made in Database 21c are:
 * JSON binary data type
 * Blockchain tables
@@ -16,10 +17,6 @@ With 21c, customers can
 * Reduce IT cost and complexity 
 * Unlock innovation
 * Develop powerful, data-driven applications
-
-
-**Add 21c video here, Willie to send**
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -33,13 +30,11 @@ With 21c, customers can
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Working knowledge of vi
 
-
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
 * [21c Blog](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
