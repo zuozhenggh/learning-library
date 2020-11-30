@@ -14,13 +14,13 @@
               "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
         }
         ,
-
         {
               "title": "Lab 2: Set Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability",
               "description": "This lab shows you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.x) deployed on the Oracle WebLogic Platform for High Availability.",
-              "filename": "./../../ggv-ha-dataserver/ggv-ha-dataserver.md"
+              "filename": "./../../ggv_ha_data-server/ggv-ha-data-server.md"
           }
           ,
+
           {
                "title": "Lab 3: Create Multiple Domains for Oracle GoldenGate Veridata",
                 "description": "This lab shows you how to create multiple domains for Oracle GoldenGate Veridata",

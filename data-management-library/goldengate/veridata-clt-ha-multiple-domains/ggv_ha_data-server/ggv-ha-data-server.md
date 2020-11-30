@@ -16,7 +16,7 @@ This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. T
 + **Oracle GoldenGate Veridata repository created using the Repository Creation Utility (RCU)**
 + **Web Browser**
 
-## **Step 1:** Create the Oracle WebLogic Server Domain on Host 1
+## **STEP 1:** Create the Oracle WebLogic Server Domain on Host 1
 To create the Oracle WebLogic Server domain (for example, *domain_name*):
 1. In the command line, enter the following: `$ORACLE_HOME/oracle_common/common/bin/config.sh` to display the **Fusion Middleware Configuration Wizard**.
   Ensure that you have set the `$ORACLE_HOME` to a middleware location, such as `MW_HOME`, where you have installed the Oracle WebLogic Server.
