@@ -39,7 +39,7 @@ Below data objects are available in Converged Database.
 | HR\_ATTRITION\_PREDICT | Table | Relational | Data used to test the model we create |
 
 
-## Step 1 :Create Dataset
+## **STEP 1:**Create Dataset
 
 In this step, we will use the database connection created in **OAS Lab 5 : Data Visualization** and create a dataset to work on.
 
@@ -60,7 +60,7 @@ In this step, we will use the database connection created in **OAS Lab 5 : Data 
 7. Finally click on “Add” to add the data set.
 ![](./images/paoas1.5.png " ")
 
-## Step 2 :Create Dataflow - ML Model
+## **STEP 2:**Create Dataflow - ML Model
 
 In this step , we will build a Machine learning model using OAS Dataflow capabilities to train our data on.
 

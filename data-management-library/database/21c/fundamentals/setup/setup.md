@@ -1,105 +1,121 @@
-# Setup the Environment
+# Setup 21C Environment
 
 ## Introduction
+In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop. 
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
+Estimated Lab Time: 15 minute
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Define and test the connections
+* Download scripts
+* Update scripts
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+* Working knowledge of vi
+* Lab: SSH Keys
+* Lab: Create a VCN
+* Lab: Create an OCI VM Database
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 1**: Define and test the connections
 
-## **STEP 1**: title
+1. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created, that alias entries are either automatically or manually created in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
 
-Step 1 opening paragraph.
+2. The sub-directory `OraDB21Home1` is the sub-directory mentioned in the file `/u01/app/oraInventory/ContentsXML/oraInventory`.
+   
+      ````
+      <HOME_LIST>
+      <HOME NAME="OraGrid210" LOC="/u01/app/21.0.0.0/grid" TYPE="O" IDX="1" CRS="true">
+      <HOME NAME="<B>OraDB21000_home1</B>" LOC="/u01/app/oracle/product/21.0.0.0/dbhome_1" TYPE="O" IDX="2">
+      </HOME_LIST>
+      ````
+3. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.
+   
+      ````
+      cat /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
+      ````
+4. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.  Use vi to do this.
 
-1. Sub step 1
+      ````
+      vi /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+      ````
+5. Do the same operation for each new PDB created in the CDB.
 
-  To create a link to local file you want the reader to download, use this format:
+6. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+   
+      ````
+      sqlplus sys@CDB21_iad1bw AS SYSDBA
+      ````
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+7. Verify that the container name is CDB$ROOT.
+      ````
+      SHOW CON_NAME;
+      ````
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+8. Test the connection to PDB21
+   
+      ````
+      CONNECT sys@PDB21 AS SYSDBA
+      ````
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+9.  Show the container name
+    
+      ````
+      SHOW CON_NAME;
+      ````
+10. Exit SQL*Plus
+    
+      ````
+      exit
+      ````
 
-    ![Image alt text](images/sample1.png "Image title")
+## **STEP 2**: Download scripts
+Download the Cloud\_21c\_labs.zip file to the /home/oracle directory on your VM and unzip the file.
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+1.  Change to the oracle user home directory
+   
+      ````
+      cd /home/oracle
+      ````
+2.  Unzip Cloud\_21c\_labs.zip
 
-    ![Image alt text](images/sample1.png)
+      ````
+      unzip Cloud_21c_labs.zip.zip
+      ````
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+## **STEP 3**: Update the scripts to the current environment
 
-5. One example with bold **text**.
+Execute the /home/oracle/labs/update\_pass.sh shell script. The shell script prompts you to enter the password\_defined\_during\_DBSystem\_creation and sets it in all shell scripts and SQL scripts that will be used in the practices.
+1. Make the script readable, writable, and executable by everyone.
 
-   If you add another paragraph, add 3 spaces before the line.
+      ````
+      <copy>
+      chmod 777 /home/oracle/labs/update_pass.sh
+      </copy>
+      ````
 
-## **STEP 2:** title
+2. Run the script.
 
-1. Sub step 1
+      ````
+      <copy>
+      /home/oracle/labs/update_pass.sh
+      </copy>
+      ````
 
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Dominique Jeunot, Database UA Team
+* **Contributors** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, Database Product Management
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

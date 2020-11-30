@@ -36,6 +36,7 @@ This lab assumes you have:
 
 ## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
+
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
@@ -69,7 +70,7 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note:** in the previous command the **session** parameter instructs HTTPie to store the access token internally for future use.
+    **Note:** In the previous command the **session** parameter instructs HTTPie to store the access token internally for future use.
 
 2. Proceed to obtain the direct reports for manager JSMITH.
 
@@ -82,9 +83,9 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note**: since we have already stored the access token we don't need to specify the user credentials and HTTPie is able to successful invoke the API as shown in [Figure 1](#image-01).
+    **Note**: Since we have already stored the access token we don't need to specify the user credentials and HTTPie is able to successful invoke the API as shown in Figure 1.
 
-    <a name="image-01"></a>![Image](images/oim-rest-direct-reports.png)
+	![](./images/oim-rest-direct-reports.png " ")
 
     Figure 1. Get Direct Reports API
 
@@ -203,7 +204,7 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note**: since we have already stored the access token we don't need to specify the user credentials.
+    **Note**: Since we have already stored the access token we don't need to specify the user credentials.
 
 3. The result from the previous command will contain in JSON format the user profile properties of manager **MGRAFF**.
 
@@ -268,7 +269,7 @@ Follow the steps below to continue with the lab exercises.
   	}
     ```
 
-4. As manager **MGRAFF** also have the permissions to obtain the user properties of her direct reports.
+4. As manager **MGRAFF** also has permissions to obtain the user properties of her direct reports.
 
     E.g. Run the following HTTPie command to obtain the user properties of direct report **JMALLIN**:
 
@@ -363,7 +364,7 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note:** in the previous command the **session** parameter instructs HTTPie to store the access token internally for future use.
+    **Note:** In the previous command the **session** parameter instructs HTTPie to store the access token internally for future use.
 
 2. Proceed to submit a request to update **MGRAFF** user profile.
 
@@ -376,7 +377,7 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note**: in the previous command an input file **usr_changes.json** is provided to the HTTPie command which include the user id and property to be updated. Feel free to review the content of the file in **/home/oracle/demo/rest-apis/usr_changes.json**
+    **Note**: In the previous command an input file **usr_changes.json** is provided to the HTTPie command which include the user id and property to be updated. Feel free to review the content of the file in `/home/oracle/demo/rest-apis/usr_changes.json`
 
     The response should be similar to the following content:
 
@@ -703,7 +704,7 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note**: in the previous command file **oam_oauth_domain.json** contains sample parameters to define an identity domain. Feel free to review the content of the file in **/home/oracle/demo/rest-apis/oam_oauth_domain.json**.
+    **Note**: In the previous command file **oam_oauth_domain.json** contains sample parameters to define an identity domain. Feel free to review the content of the file in **/home/oracle/demo/rest-apis/oam_oauth_domain.json**.
 
     The response should be similar to the following content:
 
@@ -754,7 +755,7 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note**: in the previous command file **oam_oauth_resource.json** contains sample parameters to define an OAuth resource. Feel free to review the content of the file in **/home/oracle/demo/rest-apis/oam_oauth_resource.json**.
+    **Note**: In the previous command file **oam_oauth_resource.json** contains sample parameters to define an OAuth resource. Feel free to review the content of the file in **/home/oracle/demo/rest-apis/oam_oauth_resource.json**.
 
     The response should be similar to the following content:
 
@@ -810,9 +811,9 @@ Follow the steps below to continue with the lab exercises.
     </copy>
     ```
 
-    **Note 1**: in the previous command file **oam_oauth_client.json** contains sample parameters to define an OAuth client. Feel free to review the content of the file in **/home/oracle/demo/rest-apis/oam_oauth_client.json**.
+    **Note 1**: In the previous command file **oam_oauth_client.json** contains sample parameters to define an OAuth client. Feel free to review the content of the file in **/home/oracle/demo/rest-apis/oam_oauth_client.json**.
 
-    **Note 2**: only the first time the API is invoked to create a new client, the **Client ID** and **Secret** values are returned in the response in clear text. Further queries to review the client definition will return the Secret value masked.
+    **Note 2**: Only the first time the API is invoked to create a new client, the **Client ID** and **Secret** values are returned in the response in clear text. Further queries to review the client definition will return the Secret value masked.
 
     The response should be similar to the following content:
 
@@ -984,13 +985,13 @@ Follow the steps below to continue with the lab exercises.
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
-- <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html" target="\_blank">Oracle Identity Governance Documentation</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html" target="\_blank">Oracle Access Management Documentation</a>
+- [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+- [Oracle Identity Governance Documentation](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html)
+- [Oracle Access Management Documentation](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html)
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
-- **Last Updated By/Date** - Ricardo Gutierrez, June 2020
+- **Last Updated By/Date** - Ricardo Gutierrez, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
