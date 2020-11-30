@@ -2,30 +2,38 @@
 
 ## Introduction
 
-*Estimated Lab Time:* 20 Minutes <need to confirm>
+*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Oracle Analytics Server
+Estimated Lab Time: n minutes
 
-***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
-
-### About Oracle Analytics Server ###
+### Oracle Analytics Server:
 
 Oracle Analytics Server features powerful, intuitive data visualization capabilities that enable analysts to create self-service data visualizations on an accurate and consistent data set.
 
-**Self Service Data Visualization**
+### Objectives
 
-<video>
+*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+
+In this lab, you will:
+* Objective 1
+* Objective 2
+* Objective 3
+
+### Prerequisites
+
+*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Item no 2 with url - [URL Text](https://www.oracle.com).
+
+
 
 
 ## **Step 1:** Data Visualization and Mash Ups
 
 This exercise will introduce you to the key features of data visualization and will help us to tell a story on what is happening at JTC America Group, a fictional conglomerate with operations in multiple geographies and segments covering a vast portfolio of products.
 
-1. **Login** to Oracle Analytics by entering the URL provided by your instructor
+1. **Login** to Oracle Analytics by entering the URL : <url need to add>
    ![](./images/asdvff1.png " ")
 
 2. **Click** on Create -> Project to start a new self-service project

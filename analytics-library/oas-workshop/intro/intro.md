@@ -2,9 +2,10 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
+Oracle Analytics Server is a comprehensive enterprise analytics solution that empowers you to ask any question – of any data – in any environment – on any device.
 
-Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+This workshop illustrates how organizations worldwide rely on Oracle to manage their data and uncover value across the entire data lifecycle: creating and blending data, self-service data discovery and visual analysis, securely collaborating and sharing analysis across teams, and leveraging embedded augmented analytics and machine learning capabilities to deliver deeper insight.
+
 
 ### About Product/Technology
 Enter background information here....
@@ -18,12 +19,12 @@ Enter background information here....
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
 
 In this lab, you will:
-* Provision
-* Setup
-* Data Load
-* Query
-* Analyze
-* Visualize
+* -----
+* ----
+* -----
+* -----
+* -----
+* -----
 
 ### Prerequisites
 
@@ -47,10 +48,11 @@ You may now [proceed to the next lab](#next).
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Authors** - 
+* **Contributors** - 
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, NA Technology, November 2020
+
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

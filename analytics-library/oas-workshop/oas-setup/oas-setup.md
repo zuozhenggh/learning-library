@@ -1,107 +1,94 @@
-# OAS Environment Setup #
+# Environment Setup
 
-## Introduction ##
-In this lab you will setup both Database and OAS environments by running the script files.
+## Introduction
+This lab will show you how to start a database instance and listener from a Putty window. You will also setup SQL Developer.
 
-### Pre-requisites ###
+*Estimated time:* 10 Minutes
 
-This lab assumes you have completed the following labs:  
-- Lab 1: Login to Oracle Cloud  
-- Lab 2: Generate SSH Key  
-- Lab 3: Create Compute Instance  
+### Objectives
+- Start the Oracle Database and Listener
+- Download and Setup SQL Developer Client
 
-## Step 1: Starting Database and OAS services
+### Prerequisites
 
-1. Login to putty and change user to oracle.
-`````
-<copy>
-sudo su - oracle
-</copy>
-`````
-![](./images/oas-environment1.png " ")
+- Lab: Generate SSH Key
+- Lab: Setup Compute Instance
 
-2. To set the environment for Database and access the binaries, Enter “ . oraenv “ on command prompt.
+## **STEP 1:** Login to ConvergedDB Compute instance
+If you aren't already logged in, follow the steps below to login.  If you are logged in, skip to Step 2.
 
-![](./images/oas-environment2.png " ")
+1. Click the Hamburger Menu in the top left corner. Then hover over **Compute** > **Instances**. Find the instance you created in the previous lab.
 
-Enter **convergedcdb** for ORACLE\_SID.
-So that the Oracle_Base will be set.
-![](./images/oas-environment3.png " ")
+   ![](./images/nav_compute_instance.png " ")
 
-3. Go to folder /u01/script
+2. Click on your instance and copy your Public IP address to a notepad.
 
-````
-<copy>
-cd /u01/script
-</copy>
-````
-4. Run the script file to start the services
-````
-<copy>
-./env_setup_script.sh
-</copy>
-````
-![](./images/oas-environment4.png " ")
+   ![](./images/public_ip.png " ")
 
-This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. Here you can get all the service names and their status in the end of the script.
 
-![](./images/oas-environment5.png " ")
+3. In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
 
-Check for the success status before moving to OAS login screen.
+      ````
+      ssh -i <<sshkeylocation>> opc@<<your address>>
+      ````
 
-## Step 2: Login to Oracle Analytics Server
+      - sshkeylocation - Full path of your SSH key
+      - your address - Your Public IP Address
 
-1. Open web browser (preferably Chrome) and access the OAS Data Visualization service by the below URL structure.  
+## **STEP 2:** Start the Database and the Listener
+4. Switch to the oracle user
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
-      Lab 3 - Create Compute Instance will provide you the instance IP address. ?? (public / private)
-````
-<copy>
-http://Your-Machine-IP:9502/dv/ui
-</copy>
-````
-![](./images/oas-environment6.png " ")
+   ![](./images/env1.png " ")
 
-2. Login with the below credentials;
+5.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
-      Username	: Weblogic
 
-      Password 	: Oracle_4U
+      ````
+      <copy>cd /u01/script
+      ./env_setup_script.sh</copy>
+      ````
+   ![](./images/setup-script.png " ")
 
-## Step 3: Create a connection to database
+## **STEP 3:** Download SQL Developer
+Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
-1. From Home screen, click on **Create** button and select **Connection**.
+1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your local system.
 
-![](./images/oas-environment7.png " ")
+2. Once installed, open up the SQL Developer console.
 
-2. Select **Oracle Database** for connecting to database and provide required connection details.  
+      ![](./images/start-sql-developer.png " ")
 
-![](./images/oas-environment8.png " ")
-![](./images/oas-environment9.png " ")
+## **STEP 4:**  Test a connection
+1.  In the connections page click the green plus to create a new connection
 
-**Connection Details:**
+2.  Enter the following connection information to test your connection:
+      - **Name**: CDB
+      - **Username**: system
+      - **Password**: Oracle_4U
+      - **Hostname**: <instance_publicIP>
+      - **Port**: 1521
+      - **SID**: convergedcdb
 
-| Argument  | Description   |
-| ------------- | ------------- |
-| Connection Name | ConvergedDB_Retail |
-| Connection Type | Basic  |
-| Host | localhost  |
-| Port | 1521  |
-| Service Name | apppdb  |
-| Username | oaslabs  |
-| Password | Oracle_4U  |
+    ![](./images/sql_developer_connection.png " ")
 
-3. Once connection details are provided click **Save** to save the connection.
+    *Note: If you cannot login to SQL Developer, check to ensure your VCN has the correct ports opened*
 
-Now, you are ready to move to further labs.
+3.  Once your connection is successful in the SQL Developer panel execute the query below
+      ````
+      <copy>select name, open_mode from v$database;</copy>
+      ````
+
+      ![](./images/vdatabase.png " ")
 
 ## Acknowledgements
-
-- **Authors** - Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
-- **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
-- **Team** - North America Analytics Specialists
-- **Last Updated By** - Vishwanath Venkatachalaiah
+* **Authors** - 
+* **Contributors** - 
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer: Analytics, NA Technology, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/converged-database). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
