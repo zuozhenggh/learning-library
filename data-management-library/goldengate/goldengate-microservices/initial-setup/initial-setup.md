@@ -27,9 +27,9 @@ KEY BENEFITS
 - Improve operations and customer experience with enhanced business insight 
 - Minimize overhead on - source systems to maintain high performance
 
-Oracle GoldenGate Classic provides optimized and high performance delivery.
+Oracle GoldenGate Microservices provides optimized and high performance delivery.
 
-Oracle GoldenGate Classic real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
+Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
 ### Prerequisites
 This lab assumes you have:
@@ -124,7 +124,7 @@ alter system switch logfile;</copy>
 
 ## **STEP 2:** Create the GoldenGate users needed at the Container Database and Pluggable Database Layers
 
-1. From SQL*Plus run the following SQL statements to create thcreate e Common User within the Container Database (CDB).
+1. From SQL*Plus run the following SQL statements to create the Common User within the Container Database (CDB).
 
 ```
 <copy> create user c##ggate identified by ggate quota unlimited on USERS account unlock;
