@@ -26,9 +26,9 @@ KEY BENEFITS
 - Improve operations and customer experience with enhanced business insight
 - Minimize overhead on source systems to maintain high performance
 
-Oracle GoldenGate Classic provides optimized and high performance delivery.
+Oracle GoldenGate Microservices provides optimized and high performance delivery.
 
-Oracle GoldenGate Classic real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
+Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
 ### Prerequisites
 
