@@ -2,33 +2,45 @@
 
 ## Introduction
 
-Spatial Studio is a JEE application providing self-service access to the spatial feature of Oracle Database. Spatial Studio may be provisioned in several ways:
+Spatial Studio is a self-service web tool providing access to the spatial feature of Oracle Database. With Spatial Studio, users are able to perform spatial analysis, create interactive map visualizations, and publish/share results, all without the need for database or web coding. 
 
-- Using the Oracle Cloud Marketplace
-- Running the self-contained Quick Start
-- Deploying the JEE app to WebLogic or Tomcat 
-
+For more information, see .....
 
 Estimated Lab Time: n minutes
 
 ### About Product/Technology
-Enter background information here..
+
+Spatial Studio is a JEE application and is packaged in several ways:
+
+Quick Start
+
+- Spatial Studio pre-deployed in lightweight Jetty server
+- Meant for personal use, i.e. dev/test
+- Simply unzip and run
+- Jetty is open source, so no JEE server license requirement
+
+Tomcat war file
+
+- Spatial Studio as war file optimized for Tomcat deployment
+- Supports production use cases
+- Tomcat is open source, so no JEE server license requirement
+
+WebLogic ear file
+
+- Spatial Studio as ear file optimized for WebLogic deployment
+- Supports production use cases
+- WebLogic requires license or cloud plan. It is not free.
+
+
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+In this lab, you will deploy Spatial Studio and verify that it's running.
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+  
 
 *This is the "fold" - below items are collapsed by default*
 

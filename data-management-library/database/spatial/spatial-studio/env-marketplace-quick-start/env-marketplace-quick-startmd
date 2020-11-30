@@ -23,19 +23,17 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: launch the Spatial Studio stack
+## **STEP 1**: Launch the Spatial Studio stack
 
 Step 1 opening paragraph.
 
-1. Sub step 1
+1. Log into your Oracle Cloud account and navigate to Marketplace
 
-  To create a link to local file you want the reader to download, use this format:
+    ![Image alt text](images/sample1.png "Image title")
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+2. Search for Spatial Studio
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+  We will use the "Oracle Spatial Studio - Quick Start" app which is compatible with Always Free resources. This is a lightweight instance meant for personal and development use. For production use you should use ...
 
     ![Image alt text](images/sample1.png "Image title")
 
