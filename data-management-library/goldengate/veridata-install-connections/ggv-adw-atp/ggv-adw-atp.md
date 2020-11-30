@@ -16,7 +16,7 @@ Java applications require Java Key Store (JKS) or Oracle wallets to connect to A
 + **Oracle Database 12c and above (for the repository)**
 + **Download and install latest jdk (JDK > JDK8u162), and jars in Step 1 > 6 from [Oracle Database 18c (18.3) JDBC Driver and UCP Downloads](https://www.oracle.com/database/technologies/appdev/jdbc-ucp-183-downloads.html)**
 
-## **Step 1:** Set up the Oracle Wallet and Oracle GoldenGate Veridata Agent
+## **STEP 1:** Set up the Oracle Wallet and Oracle GoldenGate Veridata Agent
 To set up Oracle Wallet and the Oracle GoldenGate Veridata Agent:
 1. Ensure that you have downloaded the `Wallet_ADW20190410NS.zip` from the ADW/ATP console.
 2. Unzip the wallet in a location:
@@ -69,7 +69,7 @@ To set up Oracle Wallet and the Oracle GoldenGate Veridata Agent:
 10. Connect to the Agent through the Oracle GoldenGate Veridata Server.
 
 
-## **Step 2:** Add Proxy Information (Optional Topic)
+## **STEP 2:** Add Proxy Information (Optional Topic)
 
 To add proxy information:
 
