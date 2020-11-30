@@ -2,22 +2,23 @@
 
 ## Introduction
 
-This lab walks you through the steps to create an instance of an Oracle 21c Preview Database running in Oracle Cloud Infrastructure. Oracle Cloud Infrastructure provides several options for rapidly creating a Database system for development and testing, including fast provisioning of 1-node virtual machine database systems.
+This lab walks you through the steps to create a virtual cloud network (VCN) and an instance of an Oracle 21c Preview Database running in Oracle Cloud Infrastructure. Oracle Cloud Infrastructure provides several options for rapidly creating a Database system for development and testing, including fast provisioning of 1-node virtual machine database systems.
 
-A virtual cloud network (VCN) provides the necessary network Infrastructure required to support resources, including Oracle Database instances. This includes a gateway, route tables, security lists, DNS and so on. Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the creation of a basic, public internet accessible VCN.
+A virtual cloud network (VCN) provides the necessary network Infrastructure required to support resources, including Oracle Database instances. This includes a gateway, route tables, security lists, DNS and so on. 
 
-### Background
+### Objectives
 You can use a 1-node virtual database system to complete labs and tutorials that require an Oracle database.
 
-### What Do You Need?
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * SSH Keys
-* A Virtual Cloud Network (VCN)
   
 ## **STEP 1**: Create a Virtual Cloud Network instance
+Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the creation of a basic, public internet accessible VCN.
 
-1. From the Console menu, select **Networking > Virtual Cloud Networks**.
+1. Login to Oracle Cloud
+2. From the Console menu, select **Networking > Virtual Cloud Networks**.
 
   ![](images/virtual-cloud-networks.png " ")
 
