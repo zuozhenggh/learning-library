@@ -73,7 +73,7 @@ In this step you will create and configure an Expanded WebLogic domain for Oracl
 
 16. Review your Domain Home and Administration Server URL. The **Configuration Success** screen will show the Domain home location and URL of the Administration Server you just configured. You must make a note of both items as you will need them to start the servers in your domain. Click **Finish** to close the Configuration Wizard.
 
-## **Step 3:** Perform Next Steps
+## **STEP 3:** Perform Next Steps
 Familiarize yourself with the tasks described in this section and perform them as needed to verify that your domain is properly configured. See [Next Steps After Configuring an Oracle GoldenGate Veridata Domain](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdis/next-steps-configuring-oracle-goldengate-veridata-domain.html#GUID-0ACB030D-738F-4AAA-B0D7-0AAF5ED562D1)
 
 
