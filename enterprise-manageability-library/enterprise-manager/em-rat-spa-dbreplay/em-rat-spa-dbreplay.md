@@ -282,7 +282,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     ![](images/emratlab2step10b.png " ")
 
     - Default per-SQL Time Limit
-    - Database Link: pick **PSALES.SUBNET.VNC.ORACLEVCN.COM**
+    - Database Link: pick **PSALES.SUBNET.VCN.ORACLEVCN.COM**
 
     ![](images/emratlab2step10c.png " ")
 
@@ -374,12 +374,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     mkdir /home/oracle/scripts/CAPTURE/lab3SOE
     sqlplus '/ as sysdba'
     SQL> create directory LAB3SOE as '/home/oracle/scripts/CAPTURE/lab3SOE';
-    SQL> BEGIN
-DBMS_WORKLOAD_CAPTURE.START_CAPTURE (name => 'Lab 3 Sales Order Entry', dir => 'LAB3SOE',
-duration => 600);
-END;
-/
-</copy>
+    SQL> exec  DBMS_WORKLOAD_CAPTURE.START_CAPTURE (name => 'Lab 3 Sales Order Entry', dir => 'LAB3SOE',duration => 600); </copy>
     ````
 
     ![](images/emratlab3step2.png " ")
@@ -388,7 +383,7 @@ END;
 3.  Import DB Replay's Capture into EM
     - The DB's Replay's Capture and workload scheduled for 10 minutes
     - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
-    - Navigate from **Entprise** to **Quality Management** top then **Database Replay**
+    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
 
     ![](images/emratlab3step3a.png " ")
 
@@ -476,18 +471,15 @@ END;
     ````
     <copy>
     begin
-  for i in (select conn_id, capture_conn
-    from dba_workload_connection_map m, dba_workload_replays r
-    where replay_id = id
-    and name = 'lab3rep')
-  loop
+    for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab3rep')
+    loop
       dbms_workload_replay.remap_connection(connection_id=>i.conn_id, replay_connection=>'(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))');
-  end loop;
-  commit;
-end;
-/
-  </copy>
-  ````
+     end loop;
+     commit;
+      end;
+      /
+      </copy>
+      ````
      - Prepare the replay  
      ````
      <copy>
@@ -518,23 +510,148 @@ end;
      ````
 6.  Import running Replay into EM
 
-    ![](images/4532cfdb72eeef8ade51f86d9974061e.jpg " ")
+    - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
+    - **Click** Replay Tasks tab and **Click** Create button
+
+     ![](images/emratlab3step6a.png " ")
+
+    - **Enter** Name **soetask** in Create Task page
+    - **Click** Add button in Workloads section
+    - **Pick** Lab3SalesOrderEntry
+    - **Uncheck** Create a new replay in Replays section
+    - **Click** Submit
+
+     ![](images/emratlab3step6b.png " ")
+
+    - Back to **Database  Replay** main page
+    - **Click** soetask replay task
+
+     ![](images/emratlab3step6c.png " ")
+
+    - In Replay Task page **click** Import button in Replays section
+
+     ![](images/emratlab3step6d.png " ")
+
+    - **Check** Attach to a replay of this replay task running in a database target
+
+     ![](images/emratlab3step6e.png " ")
+
+    - **Select** db19c.subnet.vcn.oraclevcn.com
+
+     ![](images/emratlab3step6f.png " ")
+
+    - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential
+
+     ![](images/emratlab3step6g.png " ")
+
+    - **Click** Discover Replay and **Next** button
+
+     ![](images/emratlab3step6h.png " ")  
+
+    - **Click Submit**
+
+     ![](images/emratlab3step6i.png " ")
+
+7. Generate Replay report and comparison report
+
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
+    - Set Environment variables for sales database **. 19c.env**
+    - Generate replay report  
+    ````
+    <copy>Set long 500000
+    Set linesize 200
+    Set pagesize 0
+
+    Spool replay_report.txt
+    select dbms_workload_replay.report (replay_id => 1, format=> 'TEXT') from dual;
+    spool off</copy>
+    ````
+    - Import capture's awr into relay's DB
+
+    ````
+    <copy>
+    SELECT DBMS_WORKLOAD_CAPTURE.IMPORT_AWR (capture_id => 11,staging_schema => 'SYSTEM') from dual;</copy>
+    ````
+
+    - Generate replay capture comparison report
+
+    ````
+    <copy>spool compare_period_report.html
+
+    VAR v_clob CLOB
+    BEGIN dbms_workload_replay.compare_period_report(replay_id1 => 1, replay_id2 => null, format => DBMS_WORKLOAD_REPLAY.TYPE_HTML, result => :v_clob);
+    END;
+    /
+
+    print v_clob;
+    spool off
+    exit</copy>
+    ````
+
+    - Generate and view report in EM
+    Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
+    - **Expand** soetask and **click** lab3rep
+
+    ![](images/emratlab3step7a.png " ")
+
+    -  We view 3 reports: Database Replay Report, Replay Compare Period Report, AWR Compare Period Report
+
+    ![](images/emratlab3step7b.png " ")
 
 
+This concludes the Database Replay lab activity.
 
-This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity.
+## **STEP 4:** Database Consolidation Replay
 
-## **STEP 4:** SQL Performance Analyzer Optimizer Statistics
+1.  Refresh **SOE** schema in **db19c-oltp_cl2** for another replay and copy capture from Lab3 to a Consolidation Folder and by combining pre-existed a Sales History workload
+    **SSH Session 1**
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
+    - Set Environment variables for sales database **. 19c.env**
+    - Run script **sh scripts/refsoe.sh**
+    - **cd /home/oracle/scripts/CAPTURE**
+    - **cp -r lab3SOE lab4con**
 
-In this activity we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
+    ````
+    <copy>
+    . 19c.env
+    sh scripts/refsoe.sh
+    cd /home/oracle/scripts/CAPTURE
+    cp -r lab3SOE lab4con
+    </copy>
+    ````
 
-1.  Execute SPA task using optimizer statistics - Login using username and password **sysman/ welcome1**
+    ![](images/emratlab4step1.png " ")
 
-    ![](images/6dc92e956b3d9cd7b140a588219ee285.jpg " ")
+2.  Import pre-existed Sales History Workload and labe 3 SOE capture into a consolidation capture to EM
+    - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
+    - In Database Replay page, Captured Workload tab **click** on **Import**
 
-2.  Navigate to the Job library, from **Enterprise**, to **Job**, to **Library**
+    ![](images/emratlab4step2a.png " ")
 
-    ![](images/4037bd7209e67b936206da6f43991120.jpg " ")
+    - Pick **Import a completed captured workload from a directory in the file system** and click **Next**
+
+    ![](images/emratlab4step2b.png " ")
+
+    - Pick **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for  Database Target
+
+    ![](images/emratlab4step2c.png " ")
+
+    - Pick **SYS_DB19C** as Named Credential for Database Credential, pick **ORACLE** as Named Credential for Database Host Target
+    - Enter **/home/oracle/scripts/CAPTURE/lab4con** as Workload Location
+    - Check **Specified workload location is a consolidated replay directory** and **click** Next
+
+    ![](images/emratlab4step2d.png " ")  
+
+    - **Click** Discover Workload and update Lab 3 Sales Order Entry to Lab3SalesOE then cick **Submit**
+
+    ![](images/emratlab4step2e.png " ")
 
 3.  Select SPA\_STAT\_SETUP and **Click** the **Submit** button
 
@@ -636,218 +753,6 @@ You have now learned how to work with SPA. As you can see there are Guided Workf
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
-## **STEP 5:** Database Workload Replay
-
-1. Create a Replay Task
-You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.  
-
-    ````
-    <copy>sudo su - oracle</copy>
-    ````
-
-#### SSH Session 1
-
-2. Set Environment variables for sales database
-
-    ````
-    <copy>. ./sales.env</copy>
-    ````
-
-3. Connect to sales database and create indexes. (indexes are already created, just need to make them visible)
-
-    ````
-    <copy>sqlplus system/welcome1@oltp <<EOF
-    alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
-    alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
-    alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
-    EOF</copy>
-    ````
-
-4. We have already performed the capture and stored it in
-
-    /home/oracle/scripts/dbpack/RAT\_CAPTURE/DBReplayWorkload\_OLTP\_CAP\_1 RAT\_REPLAY
-    The capture directory should be copied to a Replay directory. In a normal situation replay is performed against a test server. This test environment is limited so we will only copy the directory to a replay path instead
-
-    ````
-    <copy>cd scripts/dbpack
-    cp -r RAT_CAPTURE/DBReplayWorkload_OLTP_CAP_1 RAT_REPLAY
-    cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-    ````
-
-5. Connect to as sysdba and grant become user to system on all containers
-
-    ````
-    <copy>sqlplus sys/welcome1 as sysdba <<EOF
-    grant become user to system container=all;
-    EOF</copy>
-    ````
-
-6. Connect to system create a directory object to locate the capture and preprocess the capture
-
-    ````
-    <copy>connect system/welcome1
-    CREATE DIRECTORY DBR_REPLAY AS '/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1';
-    exec DBMS_WORKLOAD_REPLAY.PROCESS_CAPTURE (capture_dir => 'DBR_REPLAY');</copy>
-    ````
-
-7. We can now start to replay the workload. Initialize replay will load replay metadata created during preprocessing
-
-    ````
-    <copy>exec DBMS_WORKLOAD_REPLAY.INITIALIZE_REPLAY (replay_name => 'REPLAY_1', replay_dir => 'DBR_REPLAY');</copy>
-    ````
-
-8. If the replay environment uses different connect strings compared to the capture environment then we need to remap connections. Check connect strings.
-
-    ````
-    <copy>select * from DBA_WORKLOAD_CONNECTION_MAP;</copy>
-    ````
-
-9. Next, remap connections
-
-    ````
-    <copy>exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 1, replay_connection => 'HR');
-    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 2, replay_connection => 'OLTP');
-    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 3, replay_connection => 'SALES');
-    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 4, replay_connection => 'SALES');
-    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 5, replay_connection => 'PSALES');
-    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 6, replay_connection=> 'SALES');</copy>
-    ````
-
-10. Now check new settings for connect strings
-
-    ````
-    <copy>select * from DBA_WORKLOAD_CONNECTION_MAP;</copy>
-    ````
-
-11. Prepare the replay by setting replay options. This replay will use default synchronization which is time-based synchronization. With this setting we honor timing for each individual call the best as possible. If a session has slow SQL statements then other sessions will still honor timing but they will not wait for the slow session. This can cause higher divergence. If divergence is less than 10 % then it should be considered as a good replay.
-
-    ````
-    <copy>exec DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY (synchronization => 'TIME');</copy>
-    ````
-
-Now switch to session 2. You should already be connected as user oracle
-
-#### SSH Session 2
-
-12. Set Environment variables for sales database and change to the replay directory
-
-    ````
-    <copy>. ./sales.env
-    cd scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-    ````
-
-13. Calibrate the replay and validate how many replay clients that are needed to replay the workload.
-
-    ````
-    <copy>wrc mode=calibrate replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-    ````
-
-**Note**: Replay clients are the application tier and should not be co-allocated with the database due to resource usage. Our recommendation is to place replay clients close to the database to avoid delays between database and replay clients. This is regardless if the application tier is located far away. The reason is that the replay clients communicate with the database to know when a certain database call should be replayed and if replay clients are located far away it will delay the call and create artificial delays during the replay.
-
-##### Calibrate output
-
->Workload Replay Client: Release 18.0.0.0.0 - Production on Tue Nov 5 09:43:45 2019 Copyright (c) 1982, 2018, Oracle and/or its affiliates. All rights reserved.
->Report for Workload in: /home/oracle/scripts/dbpack/RAT\_REPLAY/DBReplayWorkload\_OLTP\_CAP\_1
->
->Recommendation: consider using at least 1 client divided among 1 CPU(s). You will need at least 112 MB of memory per client process. If your machine(s) cannot match that number, consider using more clients.
-
->Workload Characteristics:
-- max concurrency: 30 sessions
-- total number of sessions: 534
->
-Assumptions:
-- 1 client process per 100 concurrent sessions
-- 4 client processes per CPU
-- 256 KB of memory cache per concurrent session
-- think time scale = 100
-- connect time scale = 100
-- synchronization = TRUE
-
-14. The workload is relatively small and it needs only one replay client so we will start it from this session
-
-    ````
-    <copy>wrc system/welcome1@sales mode=replay replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-    ````
-
-Now switch back to session 1. You should already be connected as user oracle
-
-#### SSH Session 1
-
-15. You should still be connected in the SQL*Plus session as used before. From this window start the replay
-
-    ````
-    <copy>Exec DBMS_WORKLOAD_REPLAY.START_REPLAY ();</copy>
-    ````
-
-16.	Monitor the replay in session 2 and when the replay has finished the generate replay reports from session 1
-
-17.	When replay has finished import capture AWR data. First create a common user as staging schema
-
-    ````
-    <copy>Create user C##CAP_AWR;
-    Grant DBA to C##CAP_AWR;
-    SELECT DBMS_WORKLOAD_CAPTURE.IMPORT_AWR (capture_id => 11,staging_schema => 'C##CAP_AWR') from dual;</copy>
-    ````
-
-18.	Generate replay report as a text report. This report can also be generated in HTML or XML format.
-
-    ````
-    <copy>Set long 500000
-    Set linesize 200
-    Set pagesize 0
-
-    Spool replay_report.txt
-    select dbms_workload_replay.report (replay_id => 1, format=> 'TEXT') from dual;
-    spool off</copy>
-    ````
-
-19.	Please open the text report with a Linux editor of your choice such as vi and look at replay details.
-
-    ````
-    <copy>!vi replay_report.txt</copy>
-    ````
-
-20.	Can you see if the replay uses more or less database time than the capture? Exit the report in vi use “ZZ” and you will return back to SQL*plus
-
-21.	Generate compare period report as HTML report.
-
-    ````
-    <copy>spool compare_period_report.html
-
-    VAR v_clob CLOB
-    BEGIN dbms_workload_replay.compare_period_report(replay_id1 => 1, replay_id2 => null, format => DBMS_WORKLOAD_REPLAY.TYPE_HTML, result => :v_clob);
-    END;
-    /
-
-    print v_clob;
-    spool off
-    exit</copy>
-    ````
-
-23.	To be able to read the report it needs to be downloaded change file permissions and copy the file to
-
-    ````
-    <copy>chmod 777 compare_period_report.html
-    cp compare_period_report.html /tmp</copy>
-    ````
-
-24.	Use a scp client to copy the file to your local machine. Open the file in a text editor and remove initial lines before first row starting with
-
-    ````
-    <copy>“< html lang="en">”</copy>
-    ````
-
-    And trailing lines after last row ending with
-
-    ````
-    <copy>“<b> End of Report. </b>
-      </body>
-    </html> “</copy>
-    ````
-
-27.	You can now open the report in a browser and look at SQL statement with performance improvements and regression.
-
-  We have seen how you can use Real Application Testing Database Replay to validate changes that may impact performance on both SQL statements and DML statements. We have also seen the extensive reporting that will help you find and analyze bottlenecks or peaks during certain workloads.
 
 This completes the Lab
 
