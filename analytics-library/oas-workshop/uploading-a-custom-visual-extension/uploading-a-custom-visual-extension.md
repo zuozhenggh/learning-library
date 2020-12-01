@@ -1,4 +1,4 @@
-# Self-Service Data Visualization for Finance
+# Uploading a custom visual extension
 
 ## Introduction
 
