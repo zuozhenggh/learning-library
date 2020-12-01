@@ -6,7 +6,7 @@ In this lab we will exercise several use cases associated with employee on-board
 
 My HR Application is a sample application developed in Oracle APEX and hosted in the Oracle database. Its main function is to manage and store employee data in tables within the database HR schema. The Oracle Identity Manager **DBAT Connector** is used to interface with the database tables facilitating the on-boarding and management of employees records into Oracle Identity Manager.
 
-<a name="image-01"></a>![Image](images/img-myhr-app-menu.png)
+![](./images/img-myhr-app-menu.png " ")
 
 Figure 1. My HR Application
 
@@ -252,7 +252,7 @@ Follow the steps below to continue with the lab exercises.
 
 2. Click on **Employees** tile to open the employees page, select one employee e.g. **DCOBY** and click on the **Pencil** icon to edit the employee details.
 
-    <a name="image-02"></a>![Image](images/img-myhr-app.png)
+    ![](./images/img-myhr-app.png " ")
 
     Figure 2. Edit Employee Details
 
@@ -331,7 +331,7 @@ Follow the steps below to continue with the lab exercises.
 
 3. Open the email and verify if the requester is **Ray Lauria** and proceed to click on the **Approve** link.
 
-    <a name="image-03"></a>![Image](images/uc03-action-notification.png)
+    ![](./images/uc03-action-notification.png " ")
 
     Figure 3. Actionable Notification - Approvals
 
@@ -351,7 +351,7 @@ Follow the steps below to continue with the lab exercises.
 
 4. Proceed to sign out from the Self Service Console.
 
-    <a name="image-04"></a>![Image](images/uc03-account-provisioned.png)
+    ![](./images/uc03-account-provisioned.png " ")
 
     Figure 4. Provisioned Account - Access Request
 
@@ -436,9 +436,9 @@ You may now *proceed to the next lab*.
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
-- <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html" target="\_blank">Oracle Identity Governance Documentation</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html" target="\_blank">Oracle Access Management Documentation</a>
+- [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+- [Oracle Identity Governance Documentation](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html)
+- [Oracle Access Management Documentation](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html)
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
