@@ -27,17 +27,17 @@
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
       "filename": "../../gstarted/gstarted.md"
     },
-  {
+    {
       "title": "Lab 5: Employee Lifecycle Management",
       "filename": "../../employeelm/employeelm.md"
-  },
-  {
+    },
+    {
       "title": "Lab 6: Identity Certification",
       "filename": "../../idcert/idcert.md"
-  },
-  {
+    },
+    {
       "title": "Lab 7: RESTful OIM and OAM APIs",
       "filename": "../../restapi/restapi.md"
-  }
+    }
   ]
 }

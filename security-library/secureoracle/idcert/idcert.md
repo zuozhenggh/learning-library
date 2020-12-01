@@ -21,15 +21,53 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
-- You have added the public IP of the Oracle Cloud compute instance to your computer host file. E.g. if using Microsoft Windows edit file **C:\Windows\System32\drivers\etc\hosts** and add the following line:
+- You have added the public IP of the Oracle Cloud compute instance to your computer host file. E.g. if using Microsoft Windows edit file **`C:\Windows\System32\drivers\etc\hosts`** and add the following line:
 
 ```
-<copy><public_ip> secureoracle.oracledemo.com</copy>
+<copy><public_ip> secureoracle.oracledemo.com  secureoracle</copy>
 ```
 
-## **STEP 0:** Running your Lab
+## **STEP 0**: Running your Lab
+### Access the graphical desktop
+For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+
+1. Launch your browser to the following URL
+
+```
+URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+```
+
+  ![](./images/guacamole-login.png " ")
+
+2. Provide login credentials
+
+```
+Username: <copy>oracle</copy>
+```
+```
+Password: <copy>Guac.LiveLabs_</copy>
+```
+
+*Note*: There is an underscore `_` character at the end of the password.
+
+  ![](./images/guacamole-landing.png " ")
+
+3. Launch Firefox. Click on "*Applications > Firefox*"
+
+  ![](./images/guacamole-firefox.png " ")
+
+For your convenience, important URLs used throughout this workshop have been bookmarked.
+
+  ![](./images/guacamole-bookmarks.png " ")
+
+4. Launch terminal: Right-Click anywhere on the desktop and select "*Open Terminal*"
+
+  ![](./images/guacamole-terminal.png " ")
+
+  ![](./images/guacamole-terminal-landing.png " ")
+
 ### Login to Host using SSH Key based authentication
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*oracle*”.
@@ -116,7 +154,7 @@ Follow the steps below to continue with the lab exercises.
     **Note**: You are welcome to add additional reviewers and users. OIM will generate a certification task for each **Map Name**. For more details in rules and definitions please consult the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A).
 
     ![](./images/img-custom-reviewer.png " ")
-    
+
     Figure 1. Custom Reviewers
 
 5. Proceed to sign out from My IGA Application.
@@ -138,20 +176,20 @@ Follow the steps below to continue with the lab exercises.
     ```
     Password required on sign-off                : [checked]
     Allow comments on certify operations         : [unchecked]
-    Allow comments on all non-certify operations : [checked]	
+    Allow comments on all non-certify operations : [checked]
     Verify employee access                       : [checked]
     Prevent self certification                   : [checked]
 	                                               Alternate Reviewer : User Manager
 
     User and Account Selections         : Include any user with active accounts
     Allow advanced delegation           : [unchecked]
-    Allow multi-phased review           : [unchecked]	
+    Allow multi-phased review           : [unchecked]
     Allow reassignment                  : [unchecked]
     Allow auto-claim                    : [checked]
     Perform closed loop remediation     : [checked]
-				
-    Enable Interactive Excel            : [unchecked]	
-    Enable Certification Reports        : [checked]	
+
+    Enable Interactive Excel            : [unchecked]
+    Enable Certification Reports        : [checked]
     ```
 
     Proceed to click the **Test Connection** button to test the communication with the BI Publisher component, if you make changes, save the changes otherwise click **Cancel** to close the page.
@@ -222,13 +260,13 @@ Follow the steps below to continue with the lab exercises.
     ```
 
     ![](./images/img-cert-email.png " ")
-    
+
     Figure 2. Certification Email
 
 12. Proceed to Login to OIM Self Service as user **MGRAFF**. Go to **Self Service -> Certifications**. In the **Pending Certifications** page the new certification will be listed, proceed to click in the link name **2019 Q4 Review [Molly Graff]** to review and certify the users.
 
     ![](./images/user-certifications.png " ")
-    
+
     Figure 3. User Certification
 
 13. Once all the users are certified by default OIM will prompt the reviewer **MGRAFF** to enter her credentials to sign off the certification task.
@@ -248,7 +286,7 @@ Follow the steps below to continue with the lab exercises.
 
 4. In the SecureOracle environment, My IGA Application contains a custom UI to maintain the **CERT_CUSTOM_ACCESS_REVIEWERS** table, so administrators can easily define custom reviewers, this option is available under **Custom Reviewers** option in My IGA Application menu.
 
-5. Additional details can be found in the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A). 
+5. Additional details can be found in the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A).
 
 You may now *proceed to the next lab*.
 

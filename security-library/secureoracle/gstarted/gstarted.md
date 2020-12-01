@@ -74,9 +74,46 @@ Version 8.0 of SecureOracle include the following features:
 	* OAM Webgate configured in cloud-mode for integration with IDCS
 
 ## **STEP 0:** Running your Lab
+### Access the graphical desktop
+For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+
+1. Launch your browser to the following URL
+
+```
+URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+```
+
+  ![](./images/guacamole-login.png " ")
+
+2. Provide login credentials
+
+```
+Username: <copy>oracle</copy>
+```
+```
+Password: <copy>Guac.LiveLabs_</copy>
+```
+
+*Note*: There is an underscore `_` character at the end of the password.
+
+  ![](./images/guacamole-landing.png " ")
+
+3. Launch Firefox. Click on "*Applications > Firefox*"
+
+  ![](./images/guacamole-firefox.png " ")
+
+For your convenience, important URLs used throughout this workshop have been bookmarked.
+
+  ![](./images/guacamole-bookmarks.png " ")
+
+4. Launch terminal: Right-Click anywhere on the desktop and select "*Open Terminal*"
+
+  ![](./images/guacamole-terminal.png " ")
+
+  ![](./images/guacamole-terminal-landing.png " ")
 
 ### Login to Host using SSH Key based authentication
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*oracle*”.
@@ -88,6 +125,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     <copy>sudo su - oracle</copy>
     ```
+
 Follow the steps below to Start and Stop the different SecureOracle components.
 
 ## **STEP 1**: Start and Stop SecureOracle Components
