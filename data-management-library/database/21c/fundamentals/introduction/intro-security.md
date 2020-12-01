@@ -1,8 +1,8 @@
-# Introduction 
+# Introduction
 
-This workshop offers hands-on labs that highlight the latest enhancements in the latest release of the Oracle Database, 21c centering on security.  Hands on examples will be provided on Oracle Database Vault, authentication, administration and auditing.
+This section of the workshop highlights enhancements to Oracle Database security, including Blockchain tables, the capability to set the default tables space encryption algorithm, and additional controls on users creating Database Vault controls.
 
-Estimated Workshop Time: 60 minutes 
+Estimated Workshop Time: 60 minutes
 
 ### Security Labs
 * Blockchain Tables & Rows
@@ -12,15 +12,6 @@ Estimated Workshop Time: 60 minutes
 * Realms
 * Install/Uninstall Database Vault
 
-### Administration Labs
-* Upgraded Password File Case insensitivity
-* Password Length enforcement
-
-### Auditing Labs
-* Unified Audit Policies
-* Unified Audit Policies for STIG
-* SYSLOG Destination for Audit Policies
-
 ### Prerequisites
 
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
@@ -29,17 +20,17 @@ Estimated Workshop Time: 60 minutes
 You may now [proceed to the next lab](#next).
 
 ## About Oracle Database 21c
-The 21c generation of Oracle's converged database offers customers; best of breed support for all data types (e.g. relational, JSON, XML, spatial, graph, OLAP, etc.), and industry leading performance,scalability, availability and security for all their operational, analytical and other mixed workloads.
+The 21c generation of Oracle's converged database offers customers; best of breed support for all data types (e.g. relational, JSON, XML, spatial, graph, OLAP, etc.), and industry leading performance, scalability, availability and security for all their operational, analytical and other mixed workloads.
 
  ![Oracle DB 21c Advantages](images/21c-support.png "Oracle DB 21c Advantages")
 Key updates made in Database 21c are:
 * JSON binary data type
 * Blockchain tables
-* Auto machine learning with Python 
+* Auto machine learning with Python
 * Enhancements for sharding, database in-memory and graph analytics.
 
 With 21c, customers can
-* Reduce IT cost and complexity 
+* Reduce IT cost and complexity
 * Unlock innovation
 * Develop powerful, data-driven applications
 
