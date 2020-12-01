@@ -44,13 +44,13 @@ This lab assumes you have:
 
 ## **STEP 1**: Import schema structure
 
-1. Open a Web Browser at the URL `https://<DBSecLab-VM_@IP-Public>:7803/em`
+1. Open a Web Browser at the URL *`https://<DBSecLab-VM_@IP-Public>:7803/em`*
 
-2. Login to Enterprise Manager Console as `SYSMAN/Oracle123`
+2. Login to Oracle Enterprise Manager 13c Console as "*SYSMAN*" with the password "*Oracle123*"
 
    ![](./images/dms-043.png " ")
 
-3. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Models** as follow:
+3. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling** as follow:
 
    ![](./images/dms-042.png " ")
 
@@ -59,8 +59,8 @@ This lab assumes you have:
    ![](./images/dms-001.png " ")
 
 5. Click [**Create**] to add a new ADM called `Employee_ADM` on the `cdb1_pdb1` database:
-    - Name the ADM: `EmpSearch_ADM`
-    - Click the spyglass for Source Database and select `cdb_PDB1`
+    - Name the ADM: *`Employee_ADM`*
+    - Click the spyglass for Source Database and select *`cdb_PDB1`*
     - Chose the option type **Custom Application Suite**
     - Checkbox the option **Create One Application For Each Schema (default)**
 
@@ -70,13 +70,13 @@ This lab assumes you have:
 
 6. Click [**Continue**]
 
-7. Select the "Named" radio button, choose the Credential Name `DMS_ADMIN` (pwd: `Oracle123`) and click [**Login**]
+7. Select the "Named" radio button, choose the Credential Name *`DMS_ADMIN`* (pwd: `Oracle123`) and click [**Login**]
 
    ![](./images/dms-003.png " ")
 
     **Note**: Alternatively, SYS can be used as well... In a production environment, you could limit the privileges of DMS_ADMIN to only the packages necessary to perform their duties
 
-8. Select the **EMPLOYEESEARCH_DEV** schema for the application data model
+8. Select the *EMPLOYEESEARCH_DEV* schema for the application data model
 
    ![](./images/dms-004.png " ")
 
@@ -104,7 +104,7 @@ This lab assumes you have:
 
    ![](./images/dms-008.png " ")
 
-3. In the **Edit Application Data Model**: `Employee_ADM` screen, notice the applications for `EMPLOYEESEARCH_DEV` have been created based on the schema. Expand the entire list of tables associated with these applications (Menu **View** and Submenu **Expand All**)
+3. In the **Edit Application Data Model** screen, notice the applications for `EMPLOYEESEARCH_DEV` have been created based on the schema. Expand the entire list of tables associated with these applications (Menu **View** and Submenu **Expand All**)
 
    ![](./images/dms-009.png " ")
 
@@ -133,21 +133,15 @@ This lab assumes you have:
 
 ## **STEP 3**: Use Pre-Defined Sensitive Column Types
 
-1. Open a Web Browser at the URL `https://<DBSecLab-VM_@IP-Public>:7803/em`
-
-2. Login to Enterprise Manager Console as `SYSMAN/Oracle123`
-
-   ![](./images/dms-043.png " ")
-
-3. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Models** as follow:
+1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling** as follow:
 
    ![](./images/dms-042.png " ")
 
-4. Look at the list of Sensitive column types. Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
+2. Look at the list of Sensitive column types. Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
 
    ![](./images/dms-014.png " ")
 
-5. Review the Sensitive Column Discovery Templates that are shipped by default with the Data Masking Pack. As an example, review the `EMAIL_ID` template by hovering over the name `EMAIL_ID`. When using this Sensitive Column Type will:
+3. Review the Sensitive Column Discovery Templates that are shipped by default with the Data Masking Pack. As an example, review the `EMAIL_ID` template by hovering over the name `EMAIL_ID`. When using this Sensitive Column Type will:
     - Search for '`EMAIL`' or '`MAIL`' in the Column Name
     - Search for '`EMAIL`' or '`MAIL`' in the Column Comment
     - Apply a regular expression pattern match to all of the Column Data if the user (i.e. `DMS_ADMIN`) has access to the data
@@ -160,15 +154,15 @@ This lab assumes you have:
 
 ## **STEP 4**: Create a new Sensitive Column Type
 
-1. Click [**Create...**] to add a custom Sensitive Column Type
+1. Navigate to the sub-menu **Sensitive column types** as described in Step 3 previously and click [**Create...**] to add a custom Sensitive Column Type
 
    ![](./images/dms-016.png " ")
 
 2. Create a Sensitive Column Type that will look for the wildcard "**NAME**" as part of the Column Name or the Column Comment:
-    - Name: `NAME`
-    - Description: `Search for NAME in either the Column Name or in the Column Comment`
-    - Column Name: `*NAME*`
-    - Column Comment: `*NAME*`
+    - Name: *`NAME`*
+    - Description: *`Search for NAME in either the Column Name or in the Column Comment`*
+    - Column Name: *`NAME`*
+    - Column Comment: *`NAME`*
 
    ![](./images/dms-017.png " ")
 
@@ -179,16 +173,18 @@ This lab assumes you have:
 
 ## **STEP 5**: Create a new Sensitive Column Type using Pre-Defined Templates
 
-1. Select your Sensitive Column Type template (here `EMAIL_ID`) and click [**Create Like...**]
+1. Navigate to the sub-menu **Sensitive column types** as described in Step 3 previously and select the Sensitive Column Type template that you want to duplicate (here `EMAIL_ID`)
 
    ![](./images/dms-019.png " ")
 
-2. Create the customized Sensitive Column Type "`EMAIL_ORA`" to identify the email from oracle.com
-    - Name: `EMAIL_ORA`
-    - Description: `Search for EMAIL from Oracle Corp`
-    - Column Name: `EMAIL.*;MAIL.*`
-    - Column Comment: `EMAIL.*;MAIL.*`
-    - Column Data: `^[a-zA-Z0-9._%+-]+@oracle[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$`
+2. Click [**Create Like...**]
+
+3. Create the customized Sensitive Column Type "`EMAIL_ORA`" to identify the email from oracle.com
+    - Name: *`EMAIL_ORA`*
+    - Description: *`Search for EMAIL from Oracle Corp`*
+    - Column Name: *`EMAIL.*;MAIL.*`*
+    - Column Comment: *`EMAIL.*;MAIL.*`*
+    - Column Data: *`^[a-zA-Z0-9._%+-]+@oracle[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$`*
 
    ![](./images/dms-020.png " ")
 
@@ -214,8 +210,8 @@ This lab assumes you have:
    ![](./images/dms-024.png " ")
 
 4. Provide required information for the new format:
-  - Name: `Mask Oracle Corp EMail`
-  - Sensitive Colum Type: `EMAIL_ORA`
+  - Name: *`Mask Oracle Corp EMail`*
+  - Sensitive Colum Type: *`EMAIL_ORA`*
 
    ![](./images/dms-025.png " ")
 
@@ -224,7 +220,7 @@ This lab assumes you have:
 
       ![](./images/dms-026.png " ")
 
-      - Mention the **start length** (`6`) and **end length** (`8`) in the Edit Format screen of Format Library and click [**OK**]
+      - Mention the **start length** (here "*`6`*") and **end length** (here "*`8`*") in the Edit Format screen of Format Library and click [**OK**]
 
       ![](./images/dms-027.png " ")
 
@@ -232,7 +228,7 @@ This lab assumes you have:
 
       ![](./images/dms-028.png " ")
 
-      - Mention the string you want to add (here `@elcaro.com`) and click [**OK**]
+      - Mention the string you want to add (here "*`@elcaro.com`*") and click [**OK**]
 
       ![](./images/dms-029.png " ")
 
@@ -249,7 +245,7 @@ This lab assumes you have:
 
 ## **STEP 7**: Manually Identify Sensitive Columns
 
-1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Models** as follow:
+1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling** as follow:
 
    ![](./images/dms-042.png " ")
 
@@ -267,7 +263,7 @@ This lab assumes you have:
 
 5. Currently, there are no sensitive columns discovered so you must initiate a search. Click the option to **Create Discovery Job...**
 
-6. Provide the parameters for the sensitive columns discovery job. Choose the `EMPLOYEESEARCH_DEV` schema and choose the all of them except `EMAIL_ID`, `ISBN_10`, `ISBN_13`, and `UNIVERSAL_PRODUCT_CODE` Sensitive Column Types
+6. Provide the parameters for the sensitive columns discovery job. Choose the *`EMPLOYEESEARCH_DEV`* schema and choose the all of them except `EMAIL_ID`, `ISBN_10`, `ISBN_13`, and `UNIVERSAL_PRODUCT_CODE` Sensitive Column Types
 
    ![](./images/dms-035.png " ")
 
@@ -291,7 +287,7 @@ This lab assumes you have:
 
    ![](./images/dms-039.png " ")
 
-12. Notice that the Sensitive Status of these columns is currently set to **Undefined**. Set the sensitive status of all columns to "Sensitive" that you want to mask. Select each identified sensitive column entry and click "**Set Sensitive Status**" menu item and then pick "**Sensitive**" sub menu item. Upon successful completion, you should see all "Undefined" labels toggle to "Sensitive". For this lab, select the `PAYMENT_ACCT_NO`, `EMAIL`, `FIRST_NAME`, `LAST_NAME` and `ROUTING_NUMBER`.
+12. Notice that the Sensitive Status of these columns is currently set to **Undefined**. Set the sensitive status of all columns to "Sensitive" that you want to mask. Select each identified sensitive column entry and click "**Set Sensitive Status**" menu item and then pick *`Sensitive`* sub menu item. Upon successful completion, you should see all "Undefined" labels toggle to "Sensitive". For this lab, select the *`PAYMENT_ACCT_NO`*, *`EMAIL`*, *`FIRST_NAME`*, *`LAST_NAME`* and *`ROUTING_NUMBER`*.
 
    ![](./images/dms-040.png " ")
 
@@ -307,48 +303,41 @@ This lab assumes you have:
 
 ## **STEP 8**: Create Data Masking Definitions
 
-1. Open a Web Browser at the URL `https://<DBSecLab-VM_@IP-Public>:7803/em`
-
-2. Login to Enterprise Manager Console as `SYSMAN/Oracle123`
-
-   ![](./images/dms-043.png " ")
-
-3. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Masking Definitions** as follow:
+1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Masking Definitions** as follow:
 
    ![](./images/dms-044.png " ")
 
-4. From the Data Masking Definitions Dialog, we will create a new definition. Click on the [**Create**] button to begin the process of masking data
+2. From the Data Masking Definitions Dialog, we will create a new definition. Click on the [**Create**] button to begin the process of masking data
 
-5. From the **Create Masking Definition** screen, fill it as follow:
-    - Name: `EMPLOYEE_DATA_MASK`
-    - Application Data Model: `Employee_ADM` (generated in the lab exercise [Creating an Application Data Model](../create-adm/create-adm.md))
-    - Reference Database: `cdb1_pdb1`
-    - Description: `Mask Employee Data`
+3. From the **Create Masking Definition** screen, fill it as follow:
+    - Name: *`EMPLOYEE_DATA_MASK`*
+    - Application Data Model: *`Employee_ADM`*
+    - Reference Database: *`cdb1_pdb1`*
+    - Description: *`Mask Employee Data`*
 
    ![](./images/dms-046.png " ")
 
-6. Click [**Add**]
+4. Click [**Add**]
 
-7. You may be asked for the database credentials. If so, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username and click [**Login**]
+5. You may be asked for the database credentials. If so, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username and click [**Login**]
 
    ![](./images/dms-047.png " ")
 
-8. We are going to search for all of the identified and tagged "**Sensitive**" columns in the lab exercise [Identifying Sensitive Data](../search-sensitive-data/search-sensitive-data.md)
-Click [**Search**]
+6. Click [**Search**] to search for all of the identified and tagged "**Sensitive**" columns in Step 7 previously
 
    ![](./images/dms-048.png " ")
 
-9. Tick the checkboxes to select the all the columns
+7. Tick the checkboxes to select all the columns
 
    ![](./images/dms-049.png " ")
 
-10. Click [**Add**]
+8. Click [**Add**]
 
-11. All the columns appear in the Masking Definition page
+9. All the columns appear in the Masking Definition page
 
    ![](./images/dms-050.png " ")
 
-12. The next step is to format columns by clicking the **Define Format** icon:
+10. The next step is to format columns by clicking the **Define Format** icon:
 
       ![](./images/dms-051.png " ")
 
@@ -356,39 +345,43 @@ Click [**Search**]
 
 ## **STEP 9**: Format Columns Using the Format Library and Masking Primitive
 
-1. Select `DEMO_HR_EMPLOYEES.EMAIL` and click the icon
+1. In the Data Masking Definitions page definied previously in Step 8, select *`DEMO_HR_EMPLOYEES.EMAIL`*
 
-2.  As previously discussed, there are many different options to format the column of data to ensure the quality of the data masking
+2. Click on the **Define Format** icon:
+
+      ![](./images/dms-051.png " ")
+
+3.  As previously discussed, there are many different options to format the column of data to ensure the quality of the data masking
 
    ![](./images/dms-052.png " ")
 
-3.  To use an existing format from the Format Library, click on the [**Import Format**] button
+4.  To use an existing format from the Format Library, click on the [**Import Format**] button
 
    ![](./images/dms-060.png " ")
 
-4. In this particular example, we are going to select the Masking Format "**Mask Oracle Corp Email**" we've defined ourselves previously (see Lab [Create a New Masking Format](../search-sensitive-data/search-sensitive-data.md#create-a-new-masking-format))
+5. In this particular example, we are going to select the Masking Format *`Mask Oracle Corp Email`* we've defined ourselves previously in Step 6
 
    ![](./images/dms-053.png " ")
 
-5. Click [**Import**]
+6. Click [**Import**]
 
    ![](./images/dms-054.png " ")
 
-6. You can see the algorythmic sequence and click [**OK**]
+7. You can see the algorythmic sequence and click [**OK**]
 
-7. Once a format is defined, the **Define Format** icon disappears and it means you will be able modify the format later is you want
+8. Once a format is defined, the **Define Format** icon disappears and it means you will be able modify the format later is you want
 
    ![](./images/dms-055.png " ")
 
-8. Now, let's do it for another column: select `DEMO_HR_EMPLOYEES.FIRSTNAME` to define its masking format
+9. Now, let's do it for another column: select *`DEMO_HR_EMPLOYEES.FIRSTNAME`* to define its masking format
 
-9. Select **Shuffle** from the drop down list box
+10. Select **Shuffle** from the drop down list box
 
    ![](./images/dms-056.png " ")
 
-10. Click [**Add**]
+11. Click [**Add**]
 
-11. Click on the **Sample** icon to check the generated masked value
+12. Click on the **Sample** icon to check the generated masked value
 
    ![](./images/dms-057.png " ")
 
@@ -396,153 +389,153 @@ Click [**Search**]
 
    ![](./images/dms-058.png " ")
 
-12. Click [**OK**]
+13. Click [**OK**]
 
-13. We’ll now use the same algorythm for the `DEMO_HR_EMPLOYEES.LASTNAME` column but this one according to the FIRSTNAME column value in order to keep the consistence of the employee identity for the app. Of course in real life we won't do that, but here we only want to show you how to associate a masking value to another. Select `LASTNAME` row and click on **Define Format** icon.
+14. We’ll now use the same algorythm for the `LASTNAME` column but this one according to the FIRSTNAME column value in order to keep the consistence of the employee identity for the app. Of course in real life we won't do that, but here we only want to show you how to associate a masking value to another. Select *`DEMO_HR_EMPLOYEES.LASTNAME`* row and click on **Define Format** icon.
 
-14. Select **Shuffle** from the drop down list box
+15. Select **Shuffle** from the drop down list box
 
    ![](./images/dms-056.png " ")
 
-15. Click [**Add**]
+16. Click [**Add**]
 
-16. Enter `FIRSTNAME` as value in the Grouping Columns and click on the **Sample** icon to check the generated masked value
+17. Enter *`FIRSTNAME`* as value in the Grouping Columns and click on the **Sample** icon to check the generated masked value
 
       ![](./images/dms-059.png " ")
 
     **Note**: Here, we take the value of `LASTNAME` associated to the `FIRSTNAME` value which has been attributed randomly previoulsy
 
-17. Click [**OK**]
+18. Click [**OK**]
 
-18. We’ll now apply a format to the `DEMO_HR_SUPPLEMENTAL_DATA.PAYMENT_ACCT_NO` column. Select the row and click on the **Define Format** icon
+19. We’ll now apply a format to the *`DEMO_HR_SUPPLEMENTAL_DATA.PAYMENT_ACCT_NO`* column. Select the row and click on the **Define Format** icon
 
-19. In this example we are going to use one of the formats that Oracle provides - the **Generic Credit Card**. Click on the [**Import Format**] button
+20. In this example we are going to use one of the formats that Oracle provides - the **Generic Credit Card**. Click on the [**Import Format**] button
 
    ![](./images/dms-060.png " ")
 
-19. Select the **Generic Credit Card Number** radio button
+21. Select the **Generic Credit Card Number** radio button
 
    ![](./images/dms-061.png " ")
 
-20. Click [**Import**]
+22. Click [**Import**]
 
    ![](./images/dms-062.png " ")
 
     **Note**: Here, this pre-defined library uses the Function `MGMT_DM_GEN_ANYC` of the Package `DBSNMP.DM_FMTLIB` and it's automatically put in the correct field
 
-21. You can see the algorythmic sequence and click [**OK**]
+23. You can see the algorythmic sequence and click [**OK**]
 
-22. We’ll define a customised format to the `DEMO_HR_SUPPLEMENTAL_DATA.ROUTING_NUMBER` column as the format `999-999-999` where digits are randomly attributed. Select the row and click on the **Define Format** icon
+24. We’ll define a customised format to the *`DEMO_HR_SUPPLEMENTAL_DATA.ROUTING_NUMBER`* column as the format `999-999-999` where digits are randomly attributed. Select the row and click on the **Define Format** icon
 
-23. Select **Random Digits** from the drop down list box
+25. Select **Random Digits** from the drop down list box
 
    ![](./images/dms-063.png " ")
 
-24. Click [**Add**]
+26. Click [**Add**]
 
-25. Enter `3` for **Start Length** and **End Length**
+27. Enter "*`3`*" for **Start Length** and **End Length**
 
    ![](./images/dms-064.png " ")
 
-26. Select **Fixed String** from the drop down list box
+28. Select **Fixed String** from the drop down list box
 
    ![](./images/dms-065.png " ")
 
-27. Click [**Add**]
+29. Click [**Add**]
 
-28. Enter "`-`" for value
+30. Enter "*`-`*" for value
 
    ![](./images/dms-066.png " ")
 
-29. Select **Random Digits** from the drop down list box
+31. Select **Random Digits** from the drop down list box
 
    ![](./images/dms-063.png " ")
 
-30. Click [**Add**]
+32. Click [**Add**]
 
-31. Enter `3` for **Start Length** and **End Length**
+33. Enter "*`3`*" for **Start Length** and **End Length**
 
    ![](./images/dms-067.png " ")
 
-32. Select **Fixed String** from the drop down list box
+34. Select **Fixed String** from the drop down list box
 
    ![](./images/dms-065.png " ")
 
-33. Click [**Add**]
+35. Click [**Add**]
 
-34. Enter "`-`" for value
+36. Enter "*`-`*" for value
 
    ![](./images/dms-068.png " ")
 
-35. Select **Random Digits** from the drop down list box
+37. Select **Random Digits** from the drop down list box
 
    ![](./images/dms-063.png " ")
 
-36. Click [**Add**]
+38. Click [**Add**]
 
-37. Enter `3` for **Start Length** and **End Length**
+39. Enter "*`3`*" for **Start Length** and **End Length**
 
    ![](./images/dms-069.png " ")
 
-38. Click on the **Sample** icon to check if the generated value conforms to the format you want
+40. Click on the **Sample** icon to check if the generated value conforms to the format you want
 
    ![](./images/dms-070.png " ")
 
-39. Click [**OK**]
+41. Click [**OK**]
 
-40. Finally, we’ll define a format to the `DEMO_HR_USERS.EMAIL` column. Select the row and click on the **Define Format** icon
+42. Finally, we’ll define a format to the *`DEMO_HR_USERS.EMAIL`* column. Select the row and click on the **Define Format** icon
 
-41. Select **Array List** from the drop down list box
+43. Select **Array List** from the drop down list box
 
    ![](./images/dms-071.png " ")
-
-41. Click [**Add**]
-
-42. Enter `mask0,mask1,mask2,mask3` as **List of Values**
-
-   ![](./images/dms-072.png " ")
-
-43. Select **Fixed String** from the drop down list box
-
-   ![](./images/dms-065.png " ")
 
 44. Click [**Add**]
 
-45. Enter "`@`" for value
+45. Enter "*`mask0,mask1,mask2,mask3`*" as **List of Values**
 
-   ![](./images/dms-073.png " ")
+   ![](./images/dms-072.png " ")
 
-46. Select **Array List** from the drop down list box
+46. Select **Fixed String** from the drop down list box
 
-   ![](./images/dms-071.png " ")
+   ![](./images/dms-065.png " ")
 
 47. Click [**Add**]
 
-48. Enter `mail.com,look.com,ux.net,boot.org` as **List of Values**
+48. Enter "*`@`*" for value
+
+   ![](./images/dms-073.png " ")
+
+49. Select **Array List** from the drop down list box
+
+   ![](./images/dms-071.png " ")
+
+50. Click [**Add**]
+
+51. Enter "*`mail.com,look.com,ux.net,boot.org`*" as **List of Values**
 
    ![](./images/dms-074.png " ")
 
-49. Click on the **Sample** icon to check if the generated value conforms to the format you want
+52. Click on the **Sample** icon to check if the generated value conforms to the format you want
 
    ![](./images/dms-075.png " ")
 
-50. Click [**OK**]
+53. Click [**OK**]
 
    ![](./images/dms-076.png " ")
 
-51. Now click [**OK**] to complete the creation of a Masking Definition
+54. Now click [**OK**] to complete the creation of a Masking Definition
 
    ![](./images/dms-077.png " ")
 
 ## **STEP 10**: Generate Data Masking Scripts
 
-1. Once you've defined formats, the status of your masking definition is:
+1. Once you've defined all the data masking formats in Step 9, the status of your masking definition is:
 
    ![](./images/dms-078.png " ")
 
     **Note**: This status means that you have to generate now the script before executing the masking of your sensitive data
 
-2. Select the masking definition `EMPLOYEE_DATA_MASK` and click on the [**Generate Script**] button
+2. Select the masking definition *`EMPLOYEE_DATA_MASK`* and click on the [**Generate Script**] button
 
    ![](./images/dms-079.png " ")
 
@@ -554,15 +547,15 @@ Click [**Search**]
 
 4. Click [**Login**]
 
-5. Thick the masking mode you want:
-  - **Mask In-Database** to replace sensitive directly inside the database. Usually, you will execute this script into a copy of the Production DB
-  - **Mask In-Export** to generate from the source database an Oracle Data Pump file including the masked data. Usually, you will execute this script from Production DB
+5. In the **Script Generation Options** section, tick the masking mode you want (here *Mask In-Database*):
 
    ![](./images/dms-081b.png " ")
 
-Here, select **Mask In-Database**
+    **Note**:
+    - **Mask In-Database** to replace sensitive directly inside the database. Usually, you will execute this script into a copy of the Production DB
+    - **Mask In-Export** to generate from the source database an Oracle Data Pump file including the masked data. Usually, you will execute this script from Production DB
 
-6. Select the `DMS_ADMIN` for Credential Name
+6. In the **Database Credentials** section, check the *`Named`* option and select *`DMS_ADMIN`* for Credential Name
 
    ![](./images/dms-081.png " ")
 
@@ -596,36 +589,41 @@ Here, select **Mask In-Database**
   - Unlike masking processes that are traditionally slow because they perform table updates, Oracle Data Masking Pack takes advantage of the built-in optimizations in the database to **disable database logging** and **execute in parallel** to quickly create a masked replacement for the original table
   - The original table containing sensitive data is dropped from the database completely and is no longer accessible
 
-**Tips**: You have the ability to save the script by clicking [**Save Script**]
+    **Tips**:
+    - You have the ability to save the script locally by clicking [**Save Script**]
 
-   ![](./images/dms-087.png " ")
+       ![](./images/dms-087.png " ")
 
-This script could be taken and executed on other targets
+    - This script could be taken and executed on other targets which have exactly the same schema structure
 
 12. Click [**Return**] to return to the Data Masking Definitions screen
 
 
 ## **STEP 11**: Execute the Data Masking Script
 
-1. Make sure the radio button next to `EMPLOYEE_DATA_MASK` is selected and click [**Schedule Job**] to immediately schedule and run the masking operation
+1. Once you've generated the data masking script in Step 10, select *`EMPLOYEE_DATA_MASK`* and click [**Schedule Job**]
 
    ![](./images/dms-079.png " ")
 
-2. Select the masking mode used during the script generating phase previoulsy (here, select **Mask In-Database**) and tick **The select target is not a production database**
+    **Note**: This action will immediately schedule and run the masking operation on your target database
+
+2. Select the masking mode used during the script generating phase previoulsy (here, select *`Mask In-Database`*) and tick **The select target is not a production database**
 
    ![](./images/dms-088.png " ")
 
-3. Go to **Data Mask Options** and enter:
-    - Script File Location: `/home/oracle/DBSecLab/livelabs/dms`
-    - Script File Name: `mask_emp_data_in-db_<timestamp>.sql`
+    **Note**: If you don't tick it, the script will not be executed!
+
+3. In the **Data Mask Options** section, enter:
+    - Script File Location: *`/home/oracle/DBSecLab/livelabs/dms`*
+    - Script File Name: *`mask_emp_data_in-db_<your_timestamp>.sql`*
 
    ![](./images/dms-089.png " ")
 
     **Note**: The masking script file will be stored in this directory on **DBSecLab VM** and can be reused as many times as you need
 
 4. Configure access permissions
-    - Go to **Host Credentials** and select the Named credentials `ORACLE-OS` (user: *oracle* / password: *T06tron.*)
-    - Go to **Database Credentials** and select the Named credentials `DMS_ADMIN`
+    - In the **Host Credentials** section, check the *`Named`* option and select *`OS_ORACLE_SSH`* for Credential Name
+    - In the **Database Credentials** section, check the *`Named`* option and select *`DMS_ADMIN`* for Credential Name
 
    ![](./images/dms-090.png " ")
 
@@ -643,7 +641,7 @@ This script could be taken and executed on other targets
 
 1. Once the job successfully completes, query the masked data in the Development and Production environments for a before and after comparison
 
-2. Open **SQL Developer** on your PC and connect to `pdb1 as sysdba`
+2. Open **SQL Developer** on your PC and connect to *`pdb1 as sysdba`*
 
    ![](./images/dms-093.png " ")
 
