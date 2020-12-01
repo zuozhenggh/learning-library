@@ -248,65 +248,54 @@ This lab assumes you have:
 1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling** as follow:
 
    ![](./images/dms-002.png " ")
-   ![](./images/dms-042.png " ")
 
 2. Select the `Employee_ADM` Model and click [**Edit...**]
 
    ![](./images/dms-034.png " ")
-   ![](./images/dms-032.png " ")
 
 3. You may be asked for the database credentials. If so, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username and click [**Continue**]
 
    ![](./images/dms-035.png " ")
-   ![](./images/dms-033.png " ")
 
 4. Select the **Sensitive Columns** tab
 
    ![](./images/dms-036.png " ")
-   ![](./images/dms-034.png " ")
 
 5. Currently, there are no sensitive columns discovered so you must initiate a search. Click the option to **Create Discovery Job...**
 
 6. Provide the parameters for the sensitive columns discovery job. Choose the *`EMPLOYEESEARCH_DEV`* schema and choose the all of them except `EMAIL_ID`, `ISBN_10`, `ISBN_13`, and `UNIVERSAL_PRODUCT_CODE` Sensitive Column Types
 
    ![](./images/dms-037.png " ")
-   ![](./images/dms-035.png " ")
 
 7. Click [**Continue**] to perform the search
 
 8. And click [**Submit**] to run the job
 
    ![](./images/dms-038.png " ")
-   ![](./images/dms-036.png " ")
 
 9. The job discover the Sensitive Data has been submitted
 
    ![](./images/dms-039.png " ")
-   ![](./images/dms-037.png " ")
 
     **Tips**: Right click on "View Job Details" link and select "Open Link in New Tab" to follow the process
 
 10. Once the job completes, click "**Discover Results...**"
 
    ![](./images/dms-040.png " ")
-   ![](./images/dms-038.png " ")
 
 11. Click "**View**" the "**Expand All**" to review the Sensitive Column Discovery Results
 
    ![](./images/dms-041.png " ")
-   ![](./images/dms-039.png " ")
 
 12. Notice that the Sensitive Status of these columns is currently set to **Undefined**. Set the sensitive status of all columns to "Sensitive" that you want to mask. Select each identified sensitive column entry and click "**Set Sensitive Status**" menu item and then pick *`Sensitive`* sub menu item. Upon successful completion, you should see all "Undefined" labels toggle to "Sensitive". For this lab, select the *`PAYMENT_ACCT_NO`*, *`EMAIL`*, *`FIRST_NAME`*, *`LAST_NAME`* and *`ROUTING_NUMBER`*.
 
    ![](./images/dms-042.png " ")
-   ![](./images/dms-040.png " ")
 
 13. Click [**OK**]
 
 14. Here is the result expected:
 
    ![](./images/dms-043.png " ")
-   ![](./images/dms-041.png " ")
 
 15. Click [**Save and Return**]
 
@@ -327,36 +316,30 @@ This lab assumes you have:
     - Description: *`Mask Employee Data`*
 
    ![](./images/dms-045.png " ")
-   ![](./images/dms-046.png " ")
 
 4. Click [**Add**]
 
 5. You may be asked for the database credentials. If so, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username and click [**Login**]
 
    ![](./images/dms-046.png " ")
-   ![](./images/dms-047.png " ")
 
 6. Click [**Search**] to search for all of the identified and tagged "**Sensitive**" columns in Step 7 previously
 
    ![](./images/dms-047.png " ")
-   ![](./images/dms-048.png " ")
 
 7. Tick the checkboxes to select all the columns
 
    ![](./images/dms-048.png " ")
-   ![](./images/dms-049.png " ")
 
 8. Click [**Add**]
 
 9. All the columns appear in the Masking Definition page
 
    ![](./images/dms-049.png " ")
-   ![](./images/dms-050.png " ")
 
 10. The next step is to format columns by clicking the **Define Format** icon:
 
    ![](./images/dms-050.png " ")
-   ![](./images/dms-051.png " ")
 
     **Note** Colums that have this icon do not have a masking format defined
 
@@ -367,17 +350,14 @@ This lab assumes you have:
 2. Click on the **Define Format** icon:
 
    ![](./images/dms-050.png " ")
-   ![](./images/dms-051.png " ")
 
 3.  As previously discussed, there are many different options to format the column of data to ensure the quality of the data masking
 
    ![](./images/dms-051.png " ")
-   ![](./images/dms-052.png " ")
 
 4.  To use an existing format from the Format Library, click on the [**Import Format**] button
 
    ![](./images/dms-052.png " ")
-   ![](./images/dms-060.png " ")
 
 5. In this particular example, we are going to select the Masking Format *`Mask Oracle Corp Email`* we've defined ourselves previously in Step 6
 
@@ -385,9 +365,9 @@ This lab assumes you have:
 
 6. Click [**Import**]
 
-   ![](./images/dms-054.png " ")
-
 7. You can see the algorythmic sequence and click [**OK**]
+
+   ![](./images/dms-054.png " ")
 
 8. Once a format is defined, the **Define Format** icon disappears and it means you will be able modify the format later is you want
 
@@ -549,7 +529,7 @@ This lab assumes you have:
 
 ## **STEP 10**: Generate Data Masking Scripts
 
-1. Once you've defined all the data masking formats in Step 9, the status of your masking definition is:
+1. Once you've defined all the data masking formats in Step 9, the status of your masking definition is "**`Script Not Generated`**"
 
    ![](./images/dms-078.png " ")
 
@@ -564,14 +544,12 @@ This lab assumes you have:
 3. At the Database Login screen, choose the Named Credential for `DMS_ADMIN`
 
    ![](./images/dms-046.png " ")
-   ![](./images/dms-047.png " ")
 
 4. Click [**Login**]
 
 5. In the **Script Generation Options** section, tick the masking mode you want (here *Mask In-Database*):
 
    ![](./images/dms-080.png " ")
-   ![](./images/dms-081b.png " ")
 
     **Note**:
     - **Mask In-Database** to replace sensitive directly inside the database. Usually, you will execute this script into a copy of the Production DB
@@ -591,7 +569,7 @@ This lab assumes you have:
 
    ![](./images/dms-083.png " ")
 
-9. Once generating the script, the status will change from "Script Generation Job Scheduled" to "**Script Generated**"
+9. Once generating the script, the status will change from "`Script Generation Job Scheduled`" to "**`Script Generated`**"
 
    ![](./images/dms-084.png " ")
 
@@ -603,23 +581,22 @@ This lab assumes you have:
 
    ![](./images/dms-086.png " ")
 
-  - Oracle Data Masking Pack **performs a series of validation steps** to ensure that the data masking process proceeds to a successful completion without errors. One of the checks that it performs is **validating the masking formats**. This is a necessary step in the data masking process to ensure that the chosen masking formats meet the database and application integrity requirements
-  - These requirements may include generating unique values for the column being masked because of uniqueness constraints or generating values that meet the column length or type requirements
-  - Upon successful completion of the validation check, Oracle Data Masking Pack **generates the PL/SQL-based masking script that is transferred to the target database for execution**
-  - Oracle Data Masking Pack uses a highly efficient and robust mechanism to create masked data
-  - Oracle Data Masking Pack **performs bulk operations** to rapidly replace the table containing sensitive data with an identical table containing masked data while retaining the original database constraints, referential integrity and associated access structures, such as INDEXs and PARTITIONs, and access permissions, such as GRANTs
-  - Unlike masking processes that are traditionally slow because they perform table updates, Oracle Data Masking Pack takes advantage of the built-in optimizations in the database to **disable database logging** and **execute in parallel** to quickly create a masked replacement for the original table
-  - The original table containing sensitive data is dropped from the database completely and is no longer accessible
+    **Note**:
+    - Oracle Data Masking Pack **performs a series of validation steps** to ensure that the data masking process proceeds to a successful completion without errors. One of the checks that it performs is **validating the masking formats**. This is a necessary step in the data masking process to ensure that the chosen masking formats meet the database and application integrity requirements
+    - These requirements may include generating unique values for the column being masked because of uniqueness constraints or generating values that meet the column length or type requirements
+    - Upon successful completion of the validation check, Oracle Data Masking Pack **generates the PL/SQL-based masking script that is transferred to the target database for execution**
+    - Oracle Data Masking Pack uses a highly efficient and robust mechanism to create masked data
+    - Oracle Data Masking Pack **performs bulk operations** to rapidly replace the table containing sensitive data with an identical table containing masked data while retaining the original database constraints, referential integrity and associated access structures, such as INDEXs and PARTITIONs, and access permissions, such as GRANTs
+    - Unlike masking processes that are traditionally slow because they perform table updates, Oracle Data Masking Pack takes advantage of the built-in optimizations in the database to **disable database logging** and **execute in parallel** to quickly create a masked replacement for the original table
+    - The original table containing sensitive data is dropped from the database completely and is no longer accessible
 
     **Tips**:
+    - This script could be taken and executed on other targets which have exactly the same schema structure
     - You have the ability to save the script locally by clicking [**Save Script**]
 
-       ![](./images/dms-087.png " ")
-
-    - This script could be taken and executed on other targets which have exactly the same schema structure
+      ![](./images/dms-087.png " ")
 
 12. Click [**Return**] to return to the Data Masking Definitions screen
-
 
 ## **STEP 11**: Execute the Data Masking Script
 
@@ -629,7 +606,7 @@ This lab assumes you have:
 
     **Note**: This action will immediately schedule and run the masking operation on your target database
 
-2. Select the masking mode used during the script generating phase previoulsy (here, select *`Mask In-Database`*) and tick **The select target is not a production database**
+2. Select the masking mode used during the script generating phase previoulsy (here, select *`Mask In-Database`*) and tick *`The select target is not a production database`*
 
    ![](./images/dms-088.png " ")
 
@@ -759,7 +736,7 @@ This lab will reset the `EMPLOYEESEARCH_DEV` tables on `PDB1` by cloning data fr
       <copy>./dms_restore_pdb1_dev.sh</copy>
       ````
 
-   ![](./images/ols-001.png " ")
+   ![](./images/dms-103.png " ")
 
 
 You may now proceed to the next lab.
