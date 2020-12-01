@@ -1,8 +1,8 @@
 # Introduction 
 
-This workshop offers hands-on labs that highlight the latest enhancements in the latest release of the Oracle Database, 21c centering on Database Utilities, primarily Data Pump.
+This section of the workshop highlights enhancements in Oracle Data Pump. Oracle Data Pump has the capacity to resume transportable tablespace export and import jobs. Due to errors, or other problems, you can find that transportable tablespace export or import jobs are stopped. Oracle Data Pump's capacity to resume these stopped jobs helps to save you time, and makes the system more available.
 
-Estimated Workshop Time: 60 minutes 
+Estimated Workshop Time: 60 minutes
 
 ### Labs
 * Data Pump Checksums
@@ -18,17 +18,17 @@ Estimated Workshop Time: 60 minutes
 You may now [proceed to the next lab](#next).
 
 ## About Oracle Database 21c
-The 21c generation of Oracle's converged database offers customers; best of breed support for all data types (e.g. relational, JSON, XML, spatial, graph, OLAP, etc.), and industry leading performance,scalability, availability and security for all their operational, analytical and other mixed workloads.
+The 21c generation of Oracle's converged database offers customers; best of breed support for all data types (e.g. relational, JSON, XML, spatial, graph, OLAP, etc.), and industry leading performance, scalability, availability and security for all their operational, analytical and other mixed workloads.
 
  ![Oracle DB 21c Advantages](images/21c-support.png "Oracle DB 21c Advantages")
 Key updates made in Database 21c are:
 * JSON binary data type
 * Blockchain tables
-* Auto machine learning with Python 
+* Auto machine learning with Python
 * Enhancements for sharding, database in-memory and graph analytics.
 
 With 21c, customers can
-* Reduce IT cost and complexity 
+* Reduce IT cost and complexity
 * Unlock innovation
 * Develop powerful, data-driven applications
 

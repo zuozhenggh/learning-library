@@ -1,8 +1,10 @@
-# Introduction 
+# Introduction
 
-This workshop offers hands-on labs that highlight the latest enhancements in the latest release of the Oracle Database, 21c centering on upgrades namely the AutoUpgrade utility.
+In this section of the workshop, you will work on upgrading Oracle Databases using the AutoUpgrade utility. The AutoUpgrade utility identifies issues before upgrades, performs pre- and postupgrade actions, deploys upgrades, performs postupgrade actions, and starts the upgraded Oracle, without human intervention.
 
-Estimated Workshop Time: 60 minutes 
+The AutoUpgrade utility is designed to automate the upgrade process, both before starting upgrades, during upgrade deployments, and during postupgrade checks and configuration migration. You use AutoUpgrade after you have downloaded binaries for the new Oracle Database release, and set up new release Oracle homes. When you use AutoUpgrade, you can upgrade multiple Oracle Database deployments at the same time, using a single configuration file, customized as needed for each database deployment. AutoUpgrade can also be used to upgrade non-CDB databases to PDB databases.
+
+Estimated Workshop Time: 60 minutes
 
 ### Labs
 * AutoUpgrade
@@ -22,11 +24,11 @@ The 21c generation of Oracle's converged database offers customers; best of bree
 Key updates made in Database 21c are:
 * JSON binary data type
 * Blockchain tables
-* Auto machine learning with Python 
+* Auto machine learning with Python
 * Enhancements for sharding, database in-memory and graph analytics.
 
 With 21c, customers can
-* Reduce IT cost and complexity 
+* Reduce IT cost and complexity
 * Unlock innovation
 * Develop powerful, data-driven applications
 

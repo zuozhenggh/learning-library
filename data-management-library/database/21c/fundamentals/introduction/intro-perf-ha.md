@@ -1,8 +1,15 @@
-# Introduction 
+# Introduction
 
-This workshop offers hands-on labs that highlight the latest enhancements in the latest release of the Oracle Database, 21c centering on Performance and High Availability.
+This section of the workshop highlights enhancements in Oracle Database 21c designed to improve performance and high availability. The enhancements include:
+- A point in time recovery (flashback) to recover a database from a specific time
+- Automatic zone maps to allow the pruning of blocks and partitions based on the predicates in the queries, without any user intervention
+- Shrink SecureFile LOBs and reclaim space and improve performance
+- Automatic In-Memory to automatically and dynamically create in-memory objects
+- In Memory Hybrid scans automatically chooses the optimal method to scan rows that contain both in memory and non-in memory columnar data. This can improve performance by orders of magnitude
+- Reducing the number of statements required to synchronize multiple applications in application PDBs
+- Terminate a blocking session by using the new initialization parameter MAX_IDLE_BLOCKER_TIME
 
-Estimated Workshop Time: 60 minutes 
+Estimated Workshop Time: 60 minutes
 
 ### Labs
 * PDB Point-In-Time Recovery
@@ -27,11 +34,11 @@ The 21c generation of Oracle's converged database offers customers; best of bree
 Key updates made in Database 21c are:
 * JSON binary data type
 * Blockchain tables
-* Auto machine learning with Python 
+* Auto machine learning with Python
 * Enhancements for sharding, database in-memory and graph analytics.
 
 With 21c, customers can
-* Reduce IT cost and complexity 
+* Reduce IT cost and complexity
 * Unlock innovation
 * Develop powerful, data-driven applications
 
