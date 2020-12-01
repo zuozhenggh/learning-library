@@ -32,7 +32,9 @@
             "filename": "../../backup/backup.md"
         }, 
         {
-            "title": "teardown"
+            "title": "Lab 5: Deploy an EBS Environment on Cloud Manager from a Backup",
+            "description": "Deploy an EBS Environment on Cloud Manager from a Backup",
+            "filename": "../../deploy/deploy.md"
         }
      ]
 }

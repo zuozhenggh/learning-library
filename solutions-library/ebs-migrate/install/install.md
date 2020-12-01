@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walkthrough the downloading and privileges configuration of the Oracle E-Business Suite Cloud Backup Module. 
+This lab will walkthrough the downloading and configuration of the Oracle E-Business Suite Cloud Backup Module. 
 
 **Estimated Lab Time:** 10 minutes
 
@@ -21,24 +21,6 @@ In this lab, you will:
 **From MyOracleSupport Account:**
 
 * `MOS_Email_Address` (typically your tenancy admin user)
-
-**From Provisioning your Cloud Manager Instance You Should have recorded:**
-
-* `Oracle_Cloud_Region_Identifier`
-* `Oracle_Cloud_Tenancy_Name`
-* `Oracle_Cloud_Tenancy_OCID`
-* `Cloud_Manager_Admin_User_OCID`
-* `Cloud_Manager_Admin_Fingerprint`
-* `Oracle_Cloud_Compartment_OCID`
-* `Cloud_Manager_Instance_public_IP`
-
-**From your source EBS Instance**
-
-* `Source_EBS_Instance_public_IP`
-* `Source_EBS_Instance_private_IP`
-* `Fully_Qualified_Hostname` (In this Lab: apps.example.com)
-* `apps_password` (In this Lab: apps)
-* `weblogic_password` (In this Lab: welcome1)
 
 ## **STEP 1:** Install the Oracle E-Business Suite Cloud Backup Module
 

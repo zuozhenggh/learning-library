@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this 30-minute tutorial, you will use an image hosted in Oracle Cloud Infrastructure (OCI) to provision an Oracle E-Business Suite 12.2.9 with Oracle Database 19c or 12.1.0.2 demonstration instance on a single virtual machine (VM) on OCI.
+In this 30-minute tutorial, you will use an image hosted in Oracle Cloud Infrastructure (OCI) to provision an Oracle E-Business Suite 12.2.8 with Oracle Database 12.1.0.2 demonstration instance on a single virtual machine (VM) on OCI.
 
-Create an Oracle Cloud Infrastructure Compute instance (virtual machine) containing the Release 12.2.9 database and application tiers from the provided image. Use this single-node Vision demonstration instance to evaluate and test standard Oracle E-Business Suite functionality, and demonstrate the standard business flows delivered with the applications. Also use it to become familiar with the technology components of Oracle E-Business Suite Release 12.2 and train your users.
+Create an Oracle Cloud Infrastructure Compute instance (virtual machine) containing the Release 12.2.8 database and application tiers from the provided image. Use this single-node Vision demonstration instance to evaluate and test standard Oracle E-Business Suite functionality, and demonstrate the standard business flows delivered with the applications. Also use it to become familiar with the technology components of Oracle E-Business Suite Release 12.2 and train your users.
 
-The Oracle E-Business Suite 12.2.9 Demo Install Image can be found in the OCI Console Marketplace and also in the OCI Oracle Images list in your tenancy. Instructions for the OCI Console Marketplace are provided in this document.
+The Oracle E-Business Suite 12.2.8 Demo Install Image can be found in the OCI Console Marketplace and also in the OCI Oracle Images list in your tenancy. Instructions for the OCI Console Marketplace are provided in this document.
 
 **Estimated Lab Time:** 30 minutes
 
@@ -15,7 +15,7 @@ The Oracle E-Business Suite 12.2.9 Demo Install Image can be found in the OCI Co
 
 In this lab, you will:
 
-* Create a Subnet in which to host your source E-Business Suite environment
+* Create and configure a Subnet in which to host your source E-Business Suite environment
 * Create an Oracle E-Business Suite Instance using an Image from the OCI Marketplace
 * Configure and Start the EBS environment 
 
@@ -24,7 +24,7 @@ In this lab, you will:
 * Complete Workshop: [OCI EBS CM Workshop](link)
 * An SSH key pair
 * OCI Tenancy admin priviledges
-* A Virtual Cloud Network (VCN) and an associated subnet which will be associated with the Oracle E-Business Suite Instance
+* A Virtual Cloud Network (VCN) which will be associated with the Oracle E-Business Suite Instance (created as a part of the prerequisite workshop)
 
 
 ## **STEP 1:** Create a Subnet for the Source Environment in OCI
@@ -33,9 +33,15 @@ Follow these steps to create a subnet for your source EBS environment. This subn
 
 1. Login to Oracle Cloud Infrastructure and navigate to the **Networking** > **Virtual Cloud Networks** tab. 
 
+    ![](./images/1.png " ")
+
 2. Select the **ebshol\_compartment** that was created in the previous workshop in the dropdown on the left of the screen. Then select the **ebshol\_vcn**.
 
+    ![](./images/2.png " ")
+
 3. Select **Subnets** under **Resources** on the left and then click **Create Subnet**. 
+
+    ![](./images/3.png " ")
 
 4. In the Create Subnet window, enter the following: 
 
@@ -45,7 +51,7 @@ Follow these steps to create a subnet for your source EBS environment. This subn
 
     c. **Subnet Type:** `Regional`
 
-    d. **CIDR Block:** `10.0.3.0/24` (or another valid CIDR block within the bounds of the VCN's CIDR)
+    d. **CIDR Block:** `10.0.5.0/24` (or another valid CIDR block within the bounds of the VCN's CIDR)
 
     e. **Route Table:** select the Default Route Table
 
@@ -59,7 +65,13 @@ Follow these steps to create a subnet for your source EBS environment. This subn
 
     j. **Security Lists:** select the `Default Security List`
 
-  Once completed, click Create Subnet.
+    ![](./images/4.png " ")
+
+    ![](./images/5.png " ")
+
+    ![](./images/6-1.png " ")
+
+  Once completed, click **Create Subnet**.
 
         Note: Review the security lists associated with the subnet to ensure that an ingress rule exists with the following attributes:
 
@@ -70,6 +82,18 @@ Follow these steps to create a subnet for your source EBS environment. This subn
         c. IP Protocol: TCP
 
         d. Destination Port: 22 
+  
+5. Once the subnet has been created, add a Route Rule to the Default Route Table with the following:
+
+  a. **Target Type:** `Internet Gateway`
+  
+  b. **Destination CIDR Block:** `0.0.0.0/0`
+
+  b. **Target Internet Gateway:** `ebshol_internetgateway`
+
+  ![](./images/6-2.png " ")
+
+  ![](./images/6-3.png " ")
 
 
 ## **STEP 2:** Create Instance Using an Image from the OCI  Marketplace
@@ -85,24 +109,26 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
       - **Category:** `Packaged Application`
 
-    b. Click on **Oracle E-Business Suite 12.2.9 Demo Install Image**.
+    b. Click on **Oracle E-Business Suite 12.2.8 Demo Install Image**.
+
+    ![](./images/7.png " ")
 
 
 2. On the resulting screen, do the following:
-    
-    a. If there are multiple packages, select the latest package version from the dropdown list unless you require an earlier version. Note that the latest version contains Oracle Database 19c.
 
-    b. Select the compartment or subcompartment where you wish to install the source Oracle E-Business Suite environment. Use the **ebshol_compartment** that was created in the previous workshop. 
-        
-    c. Review and accept the Oracle Standard Terms and Restrictions.
+    a. Select the compartment or subcompartment where you wish to install the source Oracle E-Business Suite environment. Use the **ebshol_compartment** that was created in the previous workshop. 
+     
+    b. Review and accept the Oracle Standard Terms and Restrictions.
     
-    d. Click **Launch Instance**.
+    c. Click **Launch Instance**.
+
+    ![](./images/8.png " ")
 
 3. In the Create Compute Instance screen, specify the following:
 
     a. **Name:** `ebs-source-env`
 
-    b. **Compartment:** leave as is
+    b. **Compartment:** leave as is (should be `ebshol_compartment`)
 
     c. **Availability Domain:** `AD-1`
 
@@ -110,7 +136,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
     e. **Image:** `Oracle E-Business Suite 12.2.9 Demo Install Image` (leave unchanged)
 
-    f. **Shape:** click **Change Shape** and select the following:
+    f. **Shape:** click **Change Shape** and select the following if not already selected:
 
       - **Instance Type:** `Virtual Machine`
       
@@ -136,6 +162,12 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
   Once the instance has been created, copy down the Public IP Address and store it in the ``key-data.txt`` file. 
 
+  ![](./images/9.png " ")
+
+  ![](./images/10.png " ")
+
+  ![](./images/11.png " ")
+
 ## **STEP 3:** Configure and Start the source E-Business Suite Environment
 
 These steps will walk through the initial configuration of the source EBS instance and then start the applicaiton and database servers on the instance. 
@@ -147,6 +179,9 @@ These steps will walk through the initial configuration of the source EBS instan
     ssh -i <SSH private key file path> opc@<Public IP Address>
     </copy>
     ```
+
+    ![](./images/12.png " ")
+
 2. Switch to the root user and then run the ``updatehosts.sh`` script. 
 
     ```
@@ -161,6 +196,8 @@ These steps will walk through the initial configuration of the source EBS instan
     </copy>
     ```
 
+    ![](./images/13.png " ")
+
 3. Update Operating System. This will take a little bit. 
 
     ```
@@ -169,7 +206,11 @@ These steps will walk through the initial configuration of the source EBS instan
     </copy>
     ```
 
+    ![](./images/14.png " ")
+
   When prompted "Is this okay \[y/d/N\]:", enter 'y'.
+
+  ![](./images/15.png " ")
 
 4. Update host name:
 
@@ -199,6 +240,8 @@ These steps will walk through the initial configuration of the source EBS instan
       </copy>
       ```
 
+      ![](./images/16.png " ")
+
 6. Change the passwords for the users
 
   a. Set the environment
@@ -208,6 +251,8 @@ These steps will walk through the initial configuration of the source EBS instan
       . /u01/install/APPS/EBSapps.env run
       </copy>
       ```
+
+      ![](./images/17.png " ")
 
   b. Set SYSADMIN password
 
@@ -219,6 +264,8 @@ These steps will walk through the initial configuration of the source EBS instan
       </copy>
       ```
 
+      ![](./images/18.png " ")
+
     When prompted, enter a new password for the SYSADMIN user. 
 
   c. Set Demo Users password
@@ -229,6 +276,8 @@ These steps will walk through the initial configuration of the source EBS instan
       /u01/install/APPS/scripts/enableDEMOusers.sh
       <copy>
       ```
+
+      ![](./images/19.png " ")
 
     When prompted, enter a new password. 
 
@@ -244,7 +293,11 @@ These steps will walk through the initial configuration of the source EBS instan
   
   c. Click on the **ebs\_source\_subnet** and then **Security Lists** under Resources.
 
+      ![](./images/20.png " ")
+
       Select the **Default Security List** that is associated with this subnet.  
+
+      ![](./images/21.png " ")
 
   d. Click **Add Ingress Rules** and fill out the following, leaving the other options as default:
 
@@ -253,6 +306,8 @@ These steps will walk through the initial configuration of the source EBS instan
     - **Destination Port:** `8000`
 
   e. Click **Add Ingress Rules**. 
+
+  ![](./images/22.png " ")
 
 8. Configure Web Entry Point
 
@@ -273,6 +328,10 @@ These steps will walk through the initial configuration of the source EBS instan
     - **Enter the ORACLE_SID:(Eg: EBSDB):** `ebsdb`
     - **Enter the APPS user password:** `apps`
 
+    ![](./images/23.png " ")
+
+    ![](./images/24-1.png " ")
+
 9. Update local hosts file
 
   **For Windows users**
@@ -286,6 +345,8 @@ These steps will walk through the initial configuration of the source EBS instan
       d. Browse to ``C:\\Windows\System32\drivers\etc``
 
       e. Find the **file hosts**
+
+      ![](./images/24-2.png " ")
 
       f. In the hosts file, scroll down to the end of the content.
 
@@ -311,6 +372,8 @@ These steps will walk through the initial configuration of the source EBS instan
 
       d. Go to the last line and add the following entry as show below: ``<public_ip> myapps.example.com``
 
+      ![](./images/24-3.png " ")
+
       e. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
 
 10. Logon to Applications
@@ -323,7 +386,11 @@ These steps will walk through the initial configuration of the source EBS instan
       </copy>
       ```
 
+      ![](./images/25.png " ")
+
   You can now access the applications using [http://myapps.example.com:8000/OA_HTML/AppsLogin](http://myapps.example.com:8000/OA_HTML/AppsLogin).
+
+      ![](./images/26.png " ")
 
 11. Acknowledge the secure configuration recommendations.
 
@@ -334,6 +401,8 @@ These steps will walk through the initial configuration of the source EBS instan
   Description of the illustration scc.jpg
 
   Note: Once the system is "Unlocked" for normal usage, the Secure Configuration Console is still available for administrators under the 'Functional Administrator' responsibility.
+
+  ![](./images/27.png " ")
 
 You may proceed to the next lab.
 

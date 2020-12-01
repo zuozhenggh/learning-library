@@ -31,10 +31,6 @@ $ sudo yum install wget -y $ wget -O bitnami-mean-linux-installer.run https://bi
 
 ### Workshop Overview
 
-The following figure (W-1) outlines the workshop architecture.
-Figure W-1: Workshop Architecture
-
-![](./images/1.png " ")
 
 This workshop uses the following components:
 
@@ -49,17 +45,10 @@ This workshop uses the following components:
     - EBS sandbox network deployment script
 
   - Oracle E-Business Suite environment 1 Compute instance
-    - User-provisioned environment
+    - User-provisioned environment from OCI Marketplace 
     - Application and database tiers on this compute instance
 
-  - Oracle E-Business Suite environment 2 Compute instance
-    - Cloned from environment 1
-    - Application and database tiers on this Compute instance
 
-The following figure (W-2) describes the exercises that you will perform in this workshop.
-Figure W-2: Storyboard
-
-![](./images/2.png " ")
 
 ### Objectives
 
@@ -68,6 +57,7 @@ In this lab, you will:
 * Prepare the source EBS enviornment for migration
 * Install the Oracle E-Business Suite Cloud Backup Module on the source environment
 * Create a backup of the source EBS environment and store it on the Oracle Object Storage service
+* Provision a new EBS instance in Cloud Manager using the backup of the source EBS enviornment 
 
 ### **Prerequisites**
 

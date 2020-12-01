@@ -4,7 +4,7 @@
 
 In this section, you will run the Oracle E-Business Suite Cloud Backup Module, EBSCloudBackup.pl, to create a backup of your on-premises Oracle E-Business Suite environment on Oracle Cloud Infrastructure Backup Service.
 
-**Estimated Lab Time:** 45 minutes
+**Estimated Lab Time:** 30 minutes (with about 2.5 hours of waiting during the backup)
 
 ### **Objectives**
 
@@ -15,12 +15,8 @@ In this lab, you will:
 
 ### **Prerequisites**
 
-* A MyOracleSupport account is needed to download the Cloud Backup tool to the source EBS environment.
+* Complete Lab 3: **Install the Oracle E-Business Suite Cloud Backup Module**
 * key-data.txt file documented with following information:
-
-**From MyOracleSupport Account:**
-
-* `MOS_Email_Address` (typically your tenancy admin user)
 
 **From Provisioning your Cloud Manager Instance You Should have recorded:**
 
@@ -62,6 +58,14 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     ```
     <copy>
     ssh -i <private_ssh_key_filepath> opc@<Source_EBS__public_IP>
+    </copy>
+    ```
+
+    Navigate to the Remote Clone directory
+
+    ```
+    <copy>
+    cd /u01/install/APPS/stage/31254259/RemoteClone
     </copy>
     ```
 
@@ -125,7 +129,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
             Validating the details...
             Stage Directory : **/u01/install/stage/dbStage**
         
-    ![](./images/28.png " ")
+        ![](./images/28.png " ")
 
 7. Next, indicate whether communication between the source application tier and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
     We are not going to use a proxy, choose option 2
@@ -161,7 +165,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
         WebLogic Server Admin Password (example: **welcome1**) : <weblogic_password>
         
-    ![](./images/30.png " ")
+        ![](./images/30.png " ")
 
 9. Enter details to specify how you want to create the backup on Oracle Cloud Infrastructure Object Storage.
 
@@ -185,7 +189,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
             Confirm Backup Encryption Password              : **password**
 
-    ![](./images/31.png " ")
+        ![](./images/31.png " ")
 
     - Note: Save your **BackupIdentifier Tag** and **Backup Encryption Password** to your ``key-data.txt`` file
 
@@ -197,8 +201,11 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 11. Enter your Oracle Cloud Infrastructure details.
 
     - The user who performs the backup must be a member of the Oracle E-Business Suite administrators group defined according to Lab 2: Oracle E-Business Suite Cloud Manager Deployment and Configuration.
-    In this workshop this is your `Cloud Manager_Admin_Username`
+    In this workshop this is your `Cloud Manager_Admin_Username` (i.e. ebscm.admin@example.com)
+    - You can find the user's OCID and Fingerprint by Navigating to **Identity** > **Users** in Oracle Cloud Infrastucture and selecting the user.
     - Enter the OCID for your tenancy, the [region identifier](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) of the region where you plan to provision an environment from this backup, your tenancy name, and the OCID of the compartment where the backup buckets should be created.
+    - Your tenany name and OCID can be found by clicked the profile icon in the top right of Oracle Cloud Infrastructure and selecting **Tenancy: <tenancy_name>. 
+    - The compartment OCID can be found by navigating to **Identity** > **Compartments** and selecting the compartment that contains the Cloud Manager (you may have to navigate through the parent compartments to reach the correct compartment). 
 
     For environments with Oracle Database Release 12.1.0.2 or Release 19c, you must also specify the Cloud database service on which you plan to provision the target environment based on this backup.
 
@@ -224,7 +231,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
             Target Database Type - (Compute | VM DB System | Exadata DB System ): **Compute**
 
-    ![](./images/33.png " ")
+        ![](./images/33.png " ")
 
 12. Review the values specified for the backup creation. The mode is set automatically based on your database release and target database type.
     - BMCS - Environments with Oracle Database Release 11.2.0.4, or environments with Oracle Database Release 12.1.0.2 or 19c where the target database service is Compute
@@ -236,7 +243,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     ![](./images/34.png " ")
 
-    **Note:** Do not close the SSH connection until the backup is completed. 
+    **Note:** Do not close the SSH connection until the backup is completed. Also, do not let your computer go to sleep as that will close the SSH connection. 
 
     The script performs the following tasks:
 
@@ -253,16 +260,9 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
 13. After the script finishes and the backup is complete, you should notify users that they can resume normal file system activities. You should also restart any application tier or database backup cron jobs that you stopped before you began running the script, and resume patching and maintenance activities as needed.
 
-![](./images/35.png " ")
+    ![](./images/35.png " ")
 
-14. You can use Oracle E-Business Suite Cloud Manager to provision an environment on Oracle Cloud Infrastructure based on the backup you created. 
-See [Using Advanced Provisioning in Oracle E-Business Suite Cloud Manager on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/advanced_provisioning_in_ebs_cloud_manager_on_oci/104advprov.html).
-
-![](./images/36.png " ")
-
-
-## **STEP 2:** Provision an EBS Instance on the Cloud Manager from the Backup
-
+You may proceed to the next lab. 
 
 
 ## Learn More

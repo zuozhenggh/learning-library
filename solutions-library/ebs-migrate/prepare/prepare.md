@@ -22,21 +22,10 @@ In this lab, you will:
 ### **Prerequisites**
 
 * Complete Lab 1: **Creating the Source Oracle E-Business Suite Environment**
-* A MyOracleSupport account is needed to download the Cloud Backup tool to the source EBS environment.
 * key-data.txt file documented with following information:
-
-**From MyOracleSupport Account:**
-
-* `MOS_Email_Address` (typically your tenancy admin user)
 
 **From Provisioning your Cloud Manager Instance You Should have recorded:**
 
-* `Oracle_Cloud_Region_Identifier`
-* `Oracle_Cloud_Tenancy_Name`
-* `Oracle_Cloud_Tenancy_OCID`
-* `Cloud_Manager_Admin_User_OCID`
-* `Cloud_Manager_Admin_Fingerprint`
-* `Oracle_Cloud_Compartment_OCID`
 * `Cloud_Manager_Instance_public_IP`
 
 **From your source EBS Instance**
@@ -141,13 +130,13 @@ These directories will hold:
   - Apps Stage Area directory - temporary files used during the application tier backup process as well as the application tier backup file in zip or tar format that is created locally before it is uploaded to Oracle Cloud Infrastructure Object Storage.
   - DB Stage Area directory - backup utilities and the temporary files used to process the backup.
 
-        ```
-        <copy>
-        mkdir /u01/install/APPS/stage
-        mkdir /u01/install/APPS/stage/appsStage
-        mkdir /u01/install/APPS/stage/dbStage
-        </copy>
-        ```
+    ```
+    <copy>
+    mkdir /u01/install/APPS/stage
+    mkdir /u01/install/APPS/stage/appsStage
+    mkdir /u01/install/APPS/stage/dbStage
+    </copy>
+    ```
 
     ![](./images/8.png " ")
 
@@ -179,7 +168,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/10.png " ")
 
-2. Generate a new set of SSH keys without passphrase in the ~/.ssh/ directory. Choose default name for the keys.
+2. Generate a new set of SSH keys without passphrase in the ~/.ssh/ directory. Choose default name for the keys. Press 'Enter' when asked for a passcode to create the keys without one. 
 
     ```
     <copy>
