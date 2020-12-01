@@ -19,6 +19,8 @@ For this example, we will build a simple dataset of apples and oranges. Go to th
 
 To download an image, click on the `URL` icon above the image. This will drop down 1 or more links. Find **20 images** that clearly show both `apples` and `oranges`, click on their respective URLs, and then save the images in a folder. These images will be used for training. Additionally, download **3 images** for validation.
 
+***NOTE:*** Production models will require a larger dataset. 20 images is suggested to keep the lab in scope and to explain the process. The resulting model will not be strong enough for production. We will use a pre-trained model from detectron2's library during the testing stage.
+
 ![COCO Image URL](images/coco-explorer-2.png)
 ![Downloading the image](images/coco-explorer-3.png)
 
