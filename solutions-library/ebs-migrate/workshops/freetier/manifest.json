@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Lift and Shift On-premises EBS to OCI",
+  "workshoptitle": "Migrate EBS to OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -8,7 +8,7 @@
         },
         {
             "title": "Introduction",
-            "description": "Introduction to EBS lift and shift",
+            "description": "Introduction to Migrate EBS to OCI",
             "filename": "../../introduction/introduction.md"
         },
         {
