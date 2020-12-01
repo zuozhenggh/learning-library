@@ -3,10 +3,10 @@
 
 This lab walks you through the steps to create an instance of an Oracle 18c, 19c or the new 20c Preview Database running in Oracle Cloud Infrastructure. Oracle Cloud Infrastructure provides several options for rapidly creating a Database system for development and testing, including fast provisioning of 1-node virtual machine database systems.
 
-### Background
+### Objectives
 You can use a 1-node virtual database system to complete labs and tutorials that require an Oracle database.
 
-### What Do You Need?
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * SSH Keys

@@ -5,7 +5,7 @@ This lab shows how to uninstall Oracle Database Vault from an Oracle Database in
 
 The uninstallation process does not affect the initialization parameter settings, even those settings that were modified during the installation process, nor does it affect Oracle Label Security.
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 In this lab, you will:
@@ -22,462 +22,456 @@ In this lab, you will:
 
 ## **STEP 1:**  Ensure Database Vault is enabled before uninstalling
 
-- Execute the shell script to configure Database Vault at the CDB level.
+1. Execute the shell script to configure Database Vault at the CDB level.
 
   
-  ```
-  
-  $ <copy>cd /home/oracle/labs/M104781GC10</copy>
-  
-  $ <copy>/home/oracle/labs/M104781GC10/setup_DV.sh</copy>
-  
-  ...
-  
-  SQL> INSERT INTO l_tab values(2);
-  
-  1 row created.
-  
-  SQL> COMMIT;
-  
-  Commit complete.
-  
-  SQL> EXIT
-  
-  $
-  
-  ```
+    ```
+    
+    $ <copy>cd /home/oracle/labs/M104781GC10</copy>
+    
+    $ <copy>/home/oracle/labs/M104781GC10/setup_DV.sh</copy>
+    
+    ...
+    
+    SQL> INSERT INTO l_tab values(2);
+    
+    1 row created.
+    
+    SQL> COMMIT;
+    
+    Commit complete.
+    
+    SQL> EXIT
+    
+    $
+    
+    ```
 
-- Connect to the CDB root as `C##SEC_ADMIN` to verify the status of Database Vault.
-
-  
-  ```
-  
-  $ <copy>sqlplus c##sec_admin</copy>
-  
-  Enter password: <copy><i>password</i></copy>
-  
-  SQL> <copy>SELECT * FROM DVSYS.DBA_DV_STATUS;</copy>
-  
-  NAME                STATUS
-  
-  ------------------- --------------
-  
-  DV_CONFIGURE_STATUS TRUE
-  
-  DV_ENABLE_STATUS    TRUE
-  
-  DV_APP_PROTECTION   NOT CONFIGURED
-  
-  SQL>
-  
-  ```
-
-- Log into `PDB21` as user `SYS` with the `SYSDBA` administrative privilege. 
+2.  Connect to the CDB root as `C##SEC_ADMIN` to verify the status of Database Vault.
 
   
-  ```
-  
-  SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
-  
-  Enter password:  <copy><i>password</i></copy>
-  
-  Connected.
-  
-  SQL> <copy>SELECT * FROM DVSYS.DBA_DV_STATUS;</copy>
-  
-  NAME                STATUS
-  
-  ------------------- --------------
-  
-  DV_CONFIGURE_STATUS TRUE
-  
-  DV_ENABLE_STATUS    TRUE
-  
-  DV_APP_PROTECTION   NOT CONFIGURED
-  
-  SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
-  
-  PARAMETER                 VALUE   CON_ID
-  
-  ------------------------- ------- ------
-  
-  Oracle Database Vault     TRUE         0
-  
-  SQL>
-  
-  ```
+    ```
+    
+    $ <copy>sqlplus c##sec_admin</copy>
+    
+    Enter password: <copy><i>password</i></copy>
+    
+    SQL> <copy>SELECT * FROM DVSYS.DBA_DV_STATUS;</copy>
+    
+    NAME                STATUS
+    
+    ------------------- --------------
+    
+    DV_CONFIGURE_STATUS TRUE
+    
+    DV_ENABLE_STATUS    TRUE
+    
+    DV_APP_PROTECTION   NOT CONFIGURED
+    
+    SQL>
+    
+    ```
 
-- Log into the CDB root to ensure that the recycle bin is disabled.
+3. Log into `PDB21` as user `SYS` with the `SYSDBA` administrative privilege. 
 
   
-  ```
+    ```
+    
+    SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
+    
+    Enter password:  <copy><i>password</i></copy>
+    
+    Connected.
+    
+    SQL> <copy>SELECT * FROM DVSYS.DBA_DV_STATUS;</copy>
+    
+    NAME                STATUS
+    
+    ------------------- --------------
+    
+    DV_CONFIGURE_STATUS TRUE
+    
+    DV_ENABLE_STATUS    TRUE
+    
+    DV_APP_PROTECTION   NOT CONFIGURED
+    
+    SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
+    
+    PARAMETER                 VALUE   CON_ID
+    
+    ------------------------- ------- ------
+    
+    Oracle Database Vault     TRUE         0
+    
+    SQL>
+    
+    ```
+
+4. Log into the CDB root to ensure that the recycle bin is disabled.
+
   
-  SQL> <copy>CONNECT / AS SYSDBA</copy>
-  
-  Connected.
-  
-  SQL> <copy>SHOW PARAMETER recyclebin</copy>
-  
-  NAME                                 TYPE        VALUE
-  
-  ------------------------------------ ----------- ------------------------------
-  
-  recyclebin                           string      on
-  
-  SQL>
-  
-  ```
+    ```
+    
+    SQL> <copy>CONNECT / AS SYSDBA</copy>
+    
+    Connected.
+    
+    SQL> <copy>SHOW PARAMETER recyclebin</copy>
+    
+    NAME                                 TYPE        VALUE
+    
+    ------------------------------------ ----------- ------------------------------
+    
+    recyclebin                           string      on
+    
+    SQL>
+    
+    ```
   
   If the recycle bin is on, then disable it.
 
   
-  ```
-  
-  SQL> <copy>ALTER SYSTEM SET RECYCLEBIN = OFF SCOPE=SPFILE;</copy>
-  
-  System altered.
-  
-  SQL>
-  
-  ```
+    ```
+    
+    SQL> <copy>ALTER SYSTEM SET RECYCLEBIN = OFF SCOPE=SPFILE;</copy>
+    
+    System altered.
+    
+    SQL>
+    
+    ```
 
 ## **STEP 2:** Disable Database Vault at the PDB and CDB levels
 
-- Connect to `PDB21` as a user who has been granted the `DV_OWNER` or `DV_ADMIN` role, such as `C##SEC_ADMIN`. 
+1. Connect to `PDB21` as a user who has been granted the `DV_OWNER` or `DV_ADMIN` role, such as `C##SEC_ADMIN`. 
 
   
-  ```
-  
-  SQL> <copy>CONNECT c##sec_admin@PDB21</copy>
-  
-  Enter password: <copy><i>password</i></copy>
-  
-  Connected.
-  
-  SQL>
-  
-  ```
+    ```
+    
+    SQL> <copy>CONNECT c##sec_admin@PDB21</copy>
+    
+    Enter password: <copy><i>password</i></copy>
+    
+    Connected.
+    
+    SQL>
+    
+    ```
 
-- Disable Oracle Database Vault at the PDB level.
-
-  
-  ```
-  
-  SQL> <copy>EXEC DBMS_MACADM.DISABLE_DV</copy>
-  
-  PL/SQL procedure successfully completed.
-  
-  SQL>
-  
-  ```
-
-- Close and reopen `PDB21`. 
+2. Disable Oracle Database Vault at the PDB level.
 
   
-  ```
-  
-  SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
-  
-  Enter password: <copy><i>password</i></copy>
-  
-  Connected.
-  
-  SQL> <copy>SHUTDOWN</copy>
-  
-  Pluggable Database closed.
-  
-  SQL> <copy>STARTUP</copy>
-  
-  Pluggable Database opened.
-  
-  SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
-  
-  PARAMETER                 VALUE   CON_ID
-  
-  ------------------------- ------- ------
-  
-  Oracle Database Vault     FALSE        0
-  
-  SQL> 
-  
-  ```
+    ```
+    
+    SQL> <copy>EXEC DBMS_MACADM.DISABLE_DV</copy>
+    
+    PL/SQL procedure successfully completed.
+    
+    SQL>
+    
+    ```
+
+3. Close and reopen `PDB21`. 
+
+    
+    ```
+    
+    SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
+    
+    Enter password: <copy><i>password</i></copy>
+    
+    Connected.
+    
+    SQL> <copy>SHUTDOWN</copy>
+    
+    Pluggable Database closed.
+    
+    SQL> <copy>STARTUP</copy>
+    
+    Pluggable Database opened.
+    
+    SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
+    
+    PARAMETER                 VALUE   CON_ID
+    
+    ------------------------- ------- ------
+    
+    Oracle Database Vault     FALSE        0
+    
+    SQL> 
+    
+    ```
   
   *Even if the `CON_ID `displays 0, the value for the Database Vault refers to the PDB you are connected to.*
   
   
 
-- What is the status of Database Vault in the CDB root? 
+4. What is the status of Database Vault in the CDB root? 
 
   
-  ```
-  
-  SQL> <copy>CONNECT / AS SYSDBA</copy>
-  
-  Connected.
-  
-  SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
-  
-  PARAMETER                 VALUE   CON_ID
-  
-  ------------------------- ------- ------
-  
-  Oracle Database Vault     TRUE         0
-  
-  SQL>
-  
-  ```
+    ```
+    
+    SQL> <copy>CONNECT / AS SYSDBA</copy>
+    
+    Connected.
+    
+    SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
+    
+    PARAMETER                 VALUE   CON_ID
+    
+    ------------------------- ------- ------
+    
+    Oracle Database Vault     TRUE         0
+    
+    SQL>
+    
+    ```
 
-- Disable Oracle Database Vault at the CDB level.  
-
-  
-  ```
-  
-  SQL> <copy>CONNECT c##sec_admin</copy>
-  
-  Enter password: <copy><i>password</i></copy>
-  
-  Connected.
-  
-  SQL> <copy>EXEC DBMS_MACADM.DISABLE_DV</copy>
-  
-  PL/SQL procedure successfully completed.
-  
-  SQL>
-  
-  ```
-  
-  
-
-- Restart the CDB instance.
+5. Disable Oracle Database Vault at the CDB level.  
 
   
-  ```
+    ```
+    
+    SQL> <copy>CONNECT c##sec_admin</copy>
+    
+    Enter password: <copy><i>password</i></copy>
+    
+    Connected.
+    
+    SQL> <copy>EXEC DBMS_MACADM.DISABLE_DV</copy>
+    
+    PL/SQL procedure successfully completed.
+    
+    SQL>
+    
+    ```
+    
+    
+
+6. Restart the CDB instance.
+
   
-  SQL> <copy>CONNECT / AS SYSDBA</copy>
-  
-  Connected.
-  
-  SQL> <copy>SHUTDOWN IMMEDIATE</copy>
-  
-  Database closed.
-  
-  Database dismounted.
-  
-  ORACLE instance shut down.
-  
-  SQL> <copy>STARTUP</copy>
-  
-  ORACLE instance started.
-  
-  Total System Global Area 1426060208 bytes
-  
-  Fixed Size                  9687984 bytes
-  
-  Variable Size             436207616 bytes
-  
-  Database Buffers          973078528 bytes
-  
-  Redo Buffers                7086080 bytes
-  
-  Database mounted.
-  
-  Database opened.
-  
-  SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
-  
-  PARAMETER                 VALUE   CON_ID
-  
-  ------------------------- ------- ------
-  
-  Oracle Database Vault     FALSE        0
-  
-  SQL>
-  
-  ```
+    ```
+    
+    SQL> <copy>CONNECT / AS SYSDBA</copy>
+    
+    Connected.
+    
+    SQL> <copy>SHUTDOWN IMMEDIATE</copy>
+    
+    Database closed.
+    
+    Database dismounted.
+    
+    ORACLE instance shut down.
+    
+    SQL> <copy>STARTUP</copy>
+    
+    ORACLE instance started.
+    
+    Total System Global Area 1426060208 bytes
+    
+    Fixed Size                  9687984 bytes
+    
+    Variable Size             436207616 bytes
+    
+    Database Buffers          973078528 bytes
+    
+    Redo Buffers                7086080 bytes
+    
+    Database mounted.
+    
+    Database opened.
+    
+    SQL> <copy>SELECT * FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
+    
+    PARAMETER                 VALUE   CON_ID
+    
+    ------------------------- ------- ------
+    
+    Oracle Database Vault     FALSE        0
+    
+    SQL>
+    
+    ```
 
 ## **STEP 3:** Remove Database Vault metadata at the PDB and CDB levels
 
-- Run the `dvremov.sql` script to remove Oracle Database Vault related metadata. 
+1. Run the `dvremov.sql` script to remove Oracle Database Vault related metadata. 
 
   
-  ```
-  
-  SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
-  
-  Session altered.
-  
-  DECLARE
-  
-  *
-  
-  ERROR at line 1:
-  
-  ORA-48000: Cannot run dvremov.sql from CDB root when one or more PDBs are
-  
-  closed.
-  
-  ORA-06512: at line 17
-  
-  Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Development
-  
-  Version 21.1.0.0.0
-  
-  $
-  
-  ```
+    ```
+    
+    SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
+    
+    Session altered.
+    
+    DECLARE
+    
+    *
+    
+    ERROR at line 1:
+    
+    ORA-48000: Cannot run dvremov.sql from CDB root when one or more PDBs are
+    
+    closed.
+    
+    ORA-06512: at line 17
+    
+    Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Development
+    
+    Version 21.1.0.0.0
+    
+    $
+    
+    ```
 
-- Reopen `PDB21` before removing Database Vault from the CDB root. 
-
-  
-  ```
-  
-  $ <copy>sqlplus / AS SYSDBA</copy>
-  
-  Connected to:
-  
-  Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-  
-  Version 21.1.0.0.0
-  
-  SQL> <copy>ALTER PLUGGABLE DATABASE ALL OPEN;</copy>
-  
-  Pluggable database altered.
-  
-  SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
-  
-  Session altered.
-  
-  DECLARE
-  
-  *
-  
-  ERROR at line 1:
-  
-  ORA-47993: <copy>Cannot run dvremov.sql from CDB root when DV is installed in one or
-  
-  more PDBs.</copy>
-  
-  ORA-06512: at line 32
-  
-  Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Development
-  
-  Version 21.1.0.0.0
-  
-  $ <copy>oerr ORA 47993</copy>
-  
-  47993, 00000, "Cannot run dvremov.sql from CDB root when DV is installed in one or more PDBs."
-  
-  // *Cause: The Database Vault (DV) removal script was not allowed to be run from the multitenant
-  
-  //         container database (CDB) root when DV is installed in one or more of the underlying
-  
-  //         pluggable databases (PDBs).
-  
-  // *Action: <copy>Run dvremov.sql on all PDBs before running it from CDB root.</copy>
-  
-  $
-  
-  SQL>
-  
-  ```
-
-- Run the `dvremov.sql` script to remove Oracle Database Vault related metadata from `PDB21`. 
+2. Reopen `PDB21` before removing Database Vault from the CDB root. 
 
   
-  ```
-  
-  $ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
-  
-  Enter password: <copy><i>password</i></copy>
-  
-  Connected.
-  
-  SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
-  
-  Session altered.
-  
-  PL/SQL procedure successfully completed.
-  
-  ...
-  
-  User dropped.
-  
-  ...
-  
-  Role dropped.
-  
-  PL/SQL procedure successfully completed.
-  
-  ...
-  
-  Grant succeeded.
-  
-  PL/SQL procedure successfully completed.
-  
-  Noaudit succeeded.
-  
-  ...
-  
-  Commit complete.
-  
-  PL/SQL procedure successfully completed.
-  
-  Session altered.
-  
-  SQL>
-  
-  ```
+    ```
+    
+    $ <copy>sqlplus / AS SYSDBA</copy>
+    
+    Connected to:
+    
+    Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+    
+    Version 21.1.0.0.0
+    
+    SQL> <copy>ALTER PLUGGABLE DATABASE ALL OPEN;</copy>
+    
+    Pluggable database altered.
+    
+    SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
+    
+    Session altered.
+    
+    DECLARE
+    
+    *
+    
+    ERROR at line 1:
+    
+    ORA-47993: <copy>Cannot run dvremov.sql from CDB root when DV is installed in one or
+    
+    more PDBs.</copy>
+    
+    ORA-06512: at line 32
+    
+    Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Development
+    
+    Version 21.1.0.0.0
+    
+    $ <copy>oerr ORA 47993</copy>
+    
+    47993, 00000, "Cannot run dvremov.sql from CDB root when DV is installed in one or more PDBs."
+    
+    // *Cause: The Database Vault (DV) removal script was not allowed to be run from the multitenant
+    
+    //         container database (CDB) root when DV is installed in one or more of the underlying
+    
+    //         pluggable databases (PDBs).
+    
+    // *Action: <copy>Run dvremov.sql on all PDBs before running it from CDB root.</copy>
+    
+    $
+    
+    SQL>
+    
+    ```
 
-- Now remove Oracle Database Vault related metadata from the CDB root. 
+3. Run the `dvremov.sql` script to remove Oracle Database Vault related metadata from `PDB21`. 
+
+    
+    ```
+    
+    $ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
+    
+    Enter password: <copy><i>password</i></copy>
+    
+    Connected.
+    
+    SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
+    
+    Session altered.
+    
+    PL/SQL procedure successfully completed.
+    
+    ...
+    
+    User dropped.
+    
+    ...
+    
+    Role dropped.
+    
+    PL/SQL procedure successfully completed.
+    
+    ...
+    
+    Grant succeeded.
+    
+    PL/SQL procedure successfully completed.
+    
+    Noaudit succeeded.
+    
+    ...
+    
+    Commit complete.
+    
+    PL/SQL procedure successfully completed.
+    
+    Session altered.
+    
+    SQL>
+    
+    ```
+
+4. Now remove Oracle Database Vault related metadata from the CDB root. 
 
   
-  ```
-  
-  SQL> <copy>CONNECT / AS SYSDBA</copy>
-  
-  Connected.
-  
-  SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
-  
-  Session altered.
-  
-  PL/SQL procedure successfully completed.
-  
-  ...
-  
-  Commit complete.
-  
-  PL/SQL procedure successfully completed.
-  
-  ...
-  
-  Noaudit succeeded.
-  
-  Commit complete.
-  
-  PL/SQL procedure successfully completed.
-  
-  Session altered.
-  
-  SQL> <copy> EXIT</copy>
-  
-  $ 
-  
-  ```
+    ```
+    
+    SQL> <copy>CONNECT / AS SYSDBA</copy>
+    
+    Connected.
+    
+    SQL> <copy>@$ORACLE_HOME/rdbms/admin/dvremov.sql</copy>
+    
+    Session altered.
+    
+    PL/SQL procedure successfully completed.
+    
+    ...
+    
+    Commit complete.
+    
+    PL/SQL procedure successfully completed.
+    
+    ...
+    
+    Noaudit succeeded.
+    
+    Commit complete.
+    
+    PL/SQL procedure successfully completed.
+    
+    Session altered.
+    
+    SQL> <copy> EXIT</copy>
+    
+    $ 
+    
+    ```
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
 * **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -1,11 +1,13 @@
 # Synchronizing Multiple Applications In Application PDBs
 
 ## Introduction
+
 This lab shows how to reduce the number of synchronization statements when you have to synchronize multiple applications in application PDBs. In previous Oracle Database versions, you had to execute as many synchronization statements as applications.
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
+
 In this lab, you will:
 * Setup the environment
 
@@ -20,12 +22,11 @@ In this lab, you will:
 
 ## **STEP 1:** Set up the environment
 
-- Install the `TOYS_APP` and the `SALES_TOYS_APP` applications in the `TOYS_ROOT` application container for both `ROBOTS` and `DOLLS` application PDBs. The script defines the application container, installs the two applications in the application container, and finally creates the two application PDBs in the application container.
+1. Install the `TOYS_APP` and the `SALES_TOYS_APP` applications in the `TOYS_ROOT` application container for both `ROBOTS` and `DOLLS` application PDBs. The script defines the application container, installs the two applications in the application container, and finally creates the two application PDBs in the application container.
 
-    
-    - To be able to connect during the shell script execution to `TOYS_ROOT`, `ROBOTS` and `DOLLS`, create the entries in the `tnsnames.ora` file as explained in [practices environment](https://docs-uat.us.oracle.com/en/database/oracle/oracle-database/21/ftnew/practices-environment1.html#GUID-467FB8FF-C8CC-48A0-B39A-5F7E7B9A9CF8__GUID-08108F3C-C78A-45B7-8452-6985DF9EF1DD).
+2. To be able to connect during the shell script execution to `TOYS_ROOT`, `ROBOTS` and `DOLLS`, create the entries in the `tnsnames.ora` file as explained in [practices environment](https://docs-uat.us.oracle.com/en/database/oracle/oracle-database/21/ftnew/practices-environment1.html#GUID-467FB8FF-C8CC-48A0-B39A-5F7E7B9A9CF8__GUID-08108F3C-C78A-45B7-8452-6985DF9EF1DD).
 
-    - Execute the shell script.
+3. Execute the shell script.
 
     ```
     
@@ -82,156 +83,148 @@ In this lab, you will:
     
     ```
 
-  
-  
-
 ## **STEP 2:** Display the applications installed
 
-```
+1. Display the applications installed
 
-$ <copy>sqlplus / AS SYSDBA</copy>
+	```
 
-Connected to:
+	$ <copy>sqlplus / AS SYSDBA</copy>
 
-SQL> <copy>COL app_name FORMAT A16</copy>
-SQL> <copy>COL app_version FORMAT A12</copy>
-SQL> <copy>COL pdb_name FORMAT A10</copy>
-SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
-     FROM   cdb_applications a, cdb_pdbs p
-     WHERE  a.con_id = p.pdb_id
-     AND    app_name NOT LIKE '%APP$%'
-     ORDER BY 1;</copy>
+	Connected to:
 
-APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
----------------- ------------ ------------ ----------
-SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
-TOYS_APP         1.0          NORMAL       TOYS_ROOT
+	SQL> <copy>COL app_name FORMAT A16</copy>
+	SQL> <copy>COL app_version FORMAT A12</copy>
+	SQL> <copy>COL pdb_name FORMAT A10</copy>
+	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
+		FROM   cdb_applications a, cdb_pdbs p
+		WHERE  a.con_id = p.pdb_id
+		AND    app_name NOT LIKE '%APP$%'
+		ORDER BY 1;</copy>
 
-SQL>
+	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
+	---------------- ------------ ------------ ----------
+	SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
+	TOYS_APP         1.0          NORMAL       TOYS_ROOT
 
-```
-Observe that the applications `toys_app` and `sales_toys_app` are installed in the application container at version 1.0.
+	SQL>
+
+	```
+
+  Observe that the applications `toys_app` and `sales_toys_app` are installed in the application container at version 1.0.
 
 ## **STEP 3:** Synchronize the application PDBs
 
-- Synchronize the application PDBs with the new applications `toys_app` and `sales_toys_app` installed.
+1. Synchronize the application PDBs with the new applications `toys_app` and `sales_toys_app` installed.
 
   
-  ```
-  
-  SQL> <copy>CONNECT sys@robots AS SYSDBA</copy>
-  
-  Enter password: <b><i>password</i></b>
-  
-  SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
-  
-  Pluggable database altered.
-  
-  SQL>
-  
-  ```
+	```
+	
+	SQL> <copy>CONNECT sys@robots AS SYSDBA</copy>
+	
+	Enter password: <b><i>password</i></b>
+	
+	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
+	
+	Pluggable database altered.
+	
+	SQL>
+	
+	```
 
-- Display the applications installed in the application container.
+2. Display the applications installed in the application container.
 
   
-  ```
-  
-  SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
-  
-       FROM   cdb_applications a, cdb_pdbs p
-  
-       WHERE  a.con_id = p.pdb_id
-  
-       AND    app_name NOT LIKE '%APP$%'
-  
-       ORDER BY 1;</copy>
-  
-  APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-  
-  ---------------- ------------ ------------ ----------
-  
-  SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-  
-  TOYS_APP         1.0          NORMAL       ROBOTS
-  
-  SQL> <copy>CONNECT sys@dolls AS SYSDBA</copy>
-  
-  Enter password: <b><i>password</i></b>
-  
-  SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
-  
-  Pluggable database altered.
-  
-  SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
-  
-       FROM   cdb_applications a, cdb_pdbs p
-  
-       WHERE  a.con_id = p.pdb_id
-  
-       AND    app_name NOT LIKE '%APP$%'
-  
-       ORDER BY 1;</copy>
-  
-  APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-  
-  ---------------- ------------ ------------ ----------
-  
-  SALES_TOYS_APP   1.0          NORMAL       DOLLS
-  
-  TOYS_APP         1.0          NORMAL       DOLLS
-  
-  SQL> <copy>CONNECT / AS SYSDBA</copy>
-  
-  Connected.
-  
-  SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
-  
-       FROM   cdb_applications a, cdb_pdbs p
-  
-       WHERE  a.con_id = p.pdb_id
-  
-       AND    app_name NOT LIKE '%APP$%'
-  
-       ORDER BY 1;</copy>  
-  
-  APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-  
-  ---------------- ------------ ------------ ----------
-  
-  SALES_TOYS_APP   1.0          NORMAL       DOLLS
-  
-  SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-  
-  SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
-  
-  TOYS_APP         1.0          NORMAL       DOLLS
-  
-  TOYS_APP         1.0          NORMAL       TOYS_ROOT
-  
-  TOYS_APP         1.0          NORMAL       ROBOTS
-  
-  6 rows selected.
-  
-  SQL> <copy>EXIT</copy>
-  
-  $
-  
-  ```
-
+	```
+	
+	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
+	
+		FROM   cdb_applications a, cdb_pdbs p
+	
+		WHERE  a.con_id = p.pdb_id
+	
+		AND    app_name NOT LIKE '%APP$%'
+	
+		ORDER BY 1;</copy>
+	
+	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
+	
+	---------------- ------------ ------------ ----------
+	
+	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
+	
+	TOYS_APP         1.0          NORMAL       ROBOTS
+	
+	SQL> <copy>CONNECT sys@dolls AS SYSDBA</copy>
+	
+	Enter password: <b><i>password</i></b>
+	
+	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
+	
+	Pluggable database altered.
+	
+	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
+	
+		FROM   cdb_applications a, cdb_pdbs p
+	
+		WHERE  a.con_id = p.pdb_id
+	
+		AND    app_name NOT LIKE '%APP$%'
+	
+		ORDER BY 1;</copy>
+	
+	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
+	
+	---------------- ------------ ------------ ----------
+	
+	SALES_TOYS_APP   1.0          NORMAL       DOLLS
+	
+	TOYS_APP         1.0          NORMAL       DOLLS
+	
+	SQL> <copy>CONNECT / AS SYSDBA</copy>
+	
+	Connected.
+	
+	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
+	
+		FROM   cdb_applications a, cdb_pdbs p
+	
+		WHERE  a.con_id = p.pdb_id
+	
+		AND    app_name NOT LIKE '%APP$%'
+	
+		ORDER BY 1;</copy>  
+	
+	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
+	
+	---------------- ------------ ------------ ----------
+	
+	SALES_TOYS_APP   1.0          NORMAL       DOLLS
+	
+	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
+	
+	SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
+	
+	TOYS_APP         1.0          NORMAL       DOLLS
+	
+	TOYS_APP         1.0          NORMAL       TOYS_ROOT
+	
+	TOYS_APP         1.0          NORMAL       ROBOTS
+	
+	6 rows selected.
+	
+	SQL> <copy>EXIT</copy>
+	
+	$
+	
+	```
 
 You may now [proceed to the next lab](#next).
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
 * **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
