@@ -1,13 +1,13 @@
 # Introduction
 
-This section of the workshop highlights enhancements in Oracle Database 21c to improve the security of passwords. Starting in this release, the parameter to enable or disable password file case sensitivity is removed. All passwords in new password files are case-sensitive.
-
-Case-sensitive password files provide more security than older password files that are case insensitive. Oracle recommends that you use case-sensitive password files. However, upgraded password files from earlier Oracle Database releases can retain their original case-insensitivity. You can force your password files to be case-sensitive by migrating password files from one format to another.
+This section of the workshop highlights enhancements in Oracle Database 21c to improve the security of passwords.
 
 Estimated Workshop Time: 60 minutes
 
 ## Administration in Oracle Database 21c
-Auth and Admin content here.
+Starting in this release, the parameter to enable or disable password file case sensitivity is removed. All passwords in new password files are case-sensitive.
+
+Case-sensitive password files provide more security than older password files that are case insensitive. Oracle recommends that you use case-sensitive password files. However, upgraded password files from earlier Oracle Database releases can retain their original case-insensitivity. You can force your password files to be case-sensitive by migrating password files from one format to another.
 
 ### Labs
 * Upgraded Password File Case Sensitivity
