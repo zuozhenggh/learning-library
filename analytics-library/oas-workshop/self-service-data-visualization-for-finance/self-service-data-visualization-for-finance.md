@@ -153,20 +153,22 @@ This exercise will introduce you to the key features of data visualization and w
    ![](./images/asdvff19.png " ")
 
 15. Let’s create a visualization to understand which products have more outstanding vendor payments.
+    **Control select**
 
-   **Control select**
-
-   - Products:
-      - Product
-   - Vendor Payments:
-      - OutstandingPayment
+      - Products:
+          - Product
+      - Vendor Payments:
+         - OutstandingPayment
 
    Then, **right click **and **select** “Pick Visualization.”
-
    ![](./images/asdvff20.png " ")
 
-16. **Select** “Tag Cloud”
-    ![](./images/asdvff21.png " ")
+
+
+16. Select “Tag Cloud”
+   ![](./images/asdvff21.png " ")
+
+
 
 17. You should see a new visualization on the canvas.
 
@@ -231,10 +233,10 @@ Visualization type called “Calendar Heatmap.”
 
    **Hold control Select**
 
-   - Time
-     - Date
-   - Revenue Metrics
-     - Revenue
+     - Time
+        - Date
+     - Revenue Metrics
+        - Revenue
 
    Then, **right click** and **select** the “Calendar Heatmap” visual.  
    ![](./images/asdvff31.png " ")
@@ -247,10 +249,13 @@ Visualization type called “Calendar Heatmap.”
    [](./images/asdvff32.png " ")
 
 26. **Click** on the “Save” icon at the top right of the screen to save your project.
-    [](./images/asdvff33.png " ")
+    ![](./images/asdvff33.png " ")
+   
 
 27. **Save** your project under  /My Folders as “<your_name>_Project”.
-    [](./images/asdvff34.png " ")
+    ![](./images/asdvff34.png " ")
+   
+    
     
 
 
@@ -264,53 +269,53 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
    Let’s start by adding a new canvas.
 
    **Click** on the “+” icon at the bottom to create a new canvas.
-   [](./images/asdvff35.png " ")
+   ![](./images/asdvff35.png " ")
 
 2. **Right Click** on the “My Calculations” folder.  **Select** “Add Calculation”.
 
    Now we will create a new metric called “Profit by Customer Count”.
-   [](./images/asdvff36.png " ")
+   ![](./images/asdvff36.png " ")
 
 3. Utilize the expression builder to create the calculation.
-   [](./images/asdvff37.png " ")  
+   ![](./images/asdvff37.png " ")
 
 4. **Select** “Profit Value” from “Profit Metrics” and **drag** and **drop** into the calculation dialog. Type “/” after the “Profit Value” then drag and drop “# of Customers” from
 “Revenue Metrics” after “/.” Click Validate. Click Save.
 
    You have successfully created your own custom calculation that can be used like any other metric.
-   [](./images/asdvff38.png " ") 
+   ![](./images/asdvff38.png " ")
 
 5. There are a wide range of functions available for creating custom calculations.
-   [](./images/asdvff39.png " ") 
+   ![](./images/asdvff39.png " ")
 
 6. **Select** “Country Name” from “Geography” and drag and drop to the top left of the canvas, right above the canvas,  where it is labelled “Click here or drag data to add filter.” Filter to “United States” by typing “uni” and select “United States”.
-    [](./images/asdvff40.png " ")
+    ![](./images/asdvff40.png " ")
 
 7. **Select** “State Province” from “Geography” and your new custom calculation under “My Calculations.” Drag and drop them onto the canvas.” You will notice that not all states are making a profit. 
 
    Let’s see what this looks like on a map.
-   [](./images/asdvff41.png " ")
+   ![](./images/asdvff41.png " ")
 
 
 8. Switch the visualization to horizontal bar graph if needed.
 
    On the upper right corner of the visual, **click** the menu hamburger and **select** “Edit” and then “Duplicate Visualization”.
-   [](./images/asdvff42.png " ")
+   ![](./images/asdvff42.png " ")
 
-   [](./images/asdvff43.png " ")
+   ![](./images/asdvff43.png " ")
 
 9. Delete duplicated visualization by right **clicking** visualization and **selecting** “Delete Visualization”.
 
    Change the visualization type for the visualizations by selecting the “change visualization” menu in the upper left-hand corner of the grammar panel. 
 
    **Select** map.
-   [](./images/asdvff44.png " ")
-   [](./images/asdvff45.png " ")
+   ![](./images/asdvff44.png " ")
+   ![](./images/asdvff45.png " ")
 
 10. Let’s change the default color scheme to a red to green gradient.   
     From Color Assignment, **click** on the down arrow  > Manage Assignments
 
-    [](./images/asdvff46.png " ")
+    ![](./images/asdvff46.png " ")
 
 11. Scroll to Series, and locate the calculation you created : Profit by Customer Count measure
 
@@ -322,13 +327,13 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
     **Click** “Done”.
 
-    [](./images/asdvff47.png " ")
+    ![](./images/asdvff47.png " ")
 
 12. Within the properties box, select the visualization options. Change the “Zoom Control” to "On".
-     [](./images/asdvff48.png " ")
+     ![](./images/asdvff48.png " ")
 
 13. **Click** the + on the zoom. You have successfully completed custom calculations and mapping. Select “Save” to save and update your project.
-     [](./images/asdvff49.png " ")
+     ![](./images/asdvff49.png " ")
 
     
 
@@ -343,53 +348,53 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
    On the new canvas click the upside down triangle to the right of its name. Select “Canvas
    Properties”.
     
-   [](./images/asdvff50.png " ")
+   ![](./images/asdvff50.png " ")
 
 2. **Click** “Auto Fit” and change it to “Freeform.” **Click** “Ok”
-   [](./images/asdvff51.png " ")
+   ![](./images/asdvff51.png " ")
 
 3. **Select** “Profit Ratio %”, “Revenue” and “Month.” Pick Visualization. **Select** “Combo.”
    
    Notice in freeform mode the entire canvas is not utilized automatically.
-   [](./images/asdvff52.png " ")
+   ![](./images/asdvff52.png " ")
 
 4. **Right mouse click** “Profit Ratio %” and select “Y2 Axis.” Enlarge the visualization for a better view.
-    [](./images/asdvff53.png " ")
+    ![](./images/asdvff53.png " ")
 
 5. **Select** the “Analytics” option from the navigation panel on the left.
    Drag and drop “Trend Line” onto the visualization.
-    [](./images/asdvff54.png " ")
+    ![](./images/asdvff54.png " ")
 
 6. You have now created a management report that shows both Revenue and Profit Ratio % with their corresponding trendlines all with no coding.
 
     **Drag** and **drop** “Forecast” on the visualization and you will see forecasted results for both measures. This may take a few moments, please wait.
-    [](./images/asdvff55.png " ")
+    ![](./images/asdvff55.png " ")
 
     Review the properties box. 
 
     Notice the forecast has predicted revenue and profit ratio % for the next 3 months.  
 
     These variables may be modified as needed by the user. 
-    [](./images/asdvff56.png " ")
+    ![](./images/asdvff56.png " ")
 
 7. Next we will add the JTC Americas logo to our canvas.
     **Click** the Visualizations menu on the left side of the pane. **Select** “Image” and **drag** and **drop** it on the canvas. Click “Select Image” and upload the “JTC Americas Group.jpg” file.
 
-    [](./images/asdvff57.png " ")
+    ![](./images/asdvff57.png " ")
 
-    [](./images/asdvff58.png " ")
+    ![](./images/asdvff58.png " ")
 
 8. On the Image properties panel change the “Width” and Height” properties to “Auto Fit”.
-   [](./images/asdvff59.png " ")
+   ![](./images/asdvff59.png " ")
 
 9. Move the image of the company logo on top of the trendline visualization. “**Right-Click** and **select** “Order Visualization”->”Send Backward”.
-    [](./images/asdvff60.png " ")
+    ![](./images/asdvff60.png " ")
 
 10. On the Image properties panel set the “Transparency.” You can **click** the value of “0” and use the slider to see how the transparency looks beneath your trendline visualization.
-    [](./images/asdvff61.png " ")
+    ![](./images/asdvff61.png " ")
 
 11. The result should look something like this. Select “save” to update and save your project.
-    [](./images/asdvff62.png " ")
+    ![](./images/asdvff62.png " ")
     
 
 ## Want to learn more
