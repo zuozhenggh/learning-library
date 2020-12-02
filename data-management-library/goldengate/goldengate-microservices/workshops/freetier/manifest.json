@@ -50,11 +50,6 @@
       "title": "Transformations",
       "description": "Transformations",
       "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
-    },
-    {
-      "title": "Administration Client",
-      "description": "Microservices Adminclient",
-      "filename": "../../administration-client/administration-client.md"
     }
   ]
 }

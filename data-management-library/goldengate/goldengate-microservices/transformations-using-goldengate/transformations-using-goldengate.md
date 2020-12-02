@@ -25,7 +25,7 @@ Lab - Administration Client
 
 ### Objectives
 
-To use GoldegGate to perform transformations on the data during the replication process.
+To use GoldegGate to perform transformations on the data during the replication process. Even though GoldenGate is primarily a real time data replication tool, it does have the ability to create data transformations. In this lab we will create sample transformations to showcase this feature of GoldenGate.
 
 KEY FEATURES
 

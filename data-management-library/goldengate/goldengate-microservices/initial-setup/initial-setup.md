@@ -11,7 +11,7 @@ In this lab we will setup the required database and GoldeGate replication users.
 
 ### Objectives
 
-Understanding how to setup GoldenGate Database for replication and define users for replication
+Understanding how to prepare and setup an Oracle Database for replication and define users for replication. Users are created using scripts that populate the multitenanant environment with required Oracle Users while applying aliases to be used by GoldenGate. The Databases used in this lab are identified using the SOE schema in source and targets.
 
 KEY FEATURES
 

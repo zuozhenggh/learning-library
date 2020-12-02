@@ -17,7 +17,7 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 ### Objectives
 
-The objectives of the lab is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices.
+The objectives of the lab is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices while levergaring RestfulAPIs.
 
 KEY FEATURES
 
