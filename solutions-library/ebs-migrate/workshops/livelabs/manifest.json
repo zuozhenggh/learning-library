@@ -1,30 +1,44 @@
 {
-  "workshoptitle": "Lift and Shift On-premises EBS to OCI",
-    "tutorials": [
-        {
-            "title": "Prerequisites",
-            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-        },
-        {
-            "title": "Introduction",
-            "description": "Introduction to EBS lift and shift",
-            "filename": "../../introductionLL/introduction.md"
-        },
-        {
-            "title": "Lab 1: Provision Your Oracle E-Business Suite Environment",
-            "description": "Provision Your Oracle E-Business Suite Environment",
-            "filename": "../../provisionLL/provision.md"
-        },
-        {
-            "title": "Lab 2: Clone Your Oracle E-Business Suite Environment",
-            "description": "Clone Your Oracle E-Business Suite Environment",
-            "filename": "../../clone/clone.md"
-        },
-        {
-            "title": "Teardown Your Oracle E-Business Suite Environments",
-            "description": "Teardown Your Oracle E-Business Suite Environments",
-            "filename": "../../teardownLL/teardownLL.md"
-        }
-    ]
-}
+    "workshoptitle": "Migrate EBS to OCI",
+      "tutorials": [
+          {
+              "title": "Prerequisites",
+              "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+              "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+          },
+          {
+              "title": "Introduction",
+              "description": "Introduction to Migrate EBS to OCI",
+              "filename": "../../introduction/introduction.md"
+          },
+          {
+              "title": "Lab 1: Create the Source Oracle E-Business Suite Environment",
+              "description": "Create the Source Oracle E-Business Suite Environment",
+              "filename": "../../source/source.md"
+          },
+          {
+              "title": "Lab 2: Prepare the Source Oracle E-Business Suite Environment",
+              "description": "Prepare the Source Oracle E-Business Suite Environment",
+              "filename": "../../prepare/prepare.md"
+          },
+          {
+              "title": "Lab 3: Install the Oracle E-Business Suite Cloud Backup Module",
+              "description": "Install the Oracle E-Business Suite Cloud Backup Module",
+              "filename": "../../install/install.md"
+          },
+          {
+              "title": "Lab 4: Create a Backup with the Oracle E-Business Suite Cloud Backup Module",
+              "description": "Create a Backup with the Oracle E-Business Suite Cloud Backup Module",
+              "filename": "../../backup/backup.md"
+          }, 
+          {
+              "title": "Lab 5: Deploy an EBS Environment on Cloud Manager from a Backup",
+              "description": "Deploy an EBS Environment on Cloud Manager from a Backup",
+              "filename": "../../deploy/deploy.md"
+          }
+       ]
+  }
+  
+  
+  
+  
