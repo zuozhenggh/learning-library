@@ -1,4 +1,4 @@
-# Connect the Oracle GoldenGate Veridata Agent to Autonomous Data Warehouse
+# Create Connections to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP)
 
 ## Introduction
 This lab describes how to connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.
@@ -8,9 +8,7 @@ Java applications require Java Key Store (JKS) or Oracle wallets to connect to A
   * Using Java Key Stores
   * Using Oracle Wallet
 
-**Note**: This lab is for using the Oracle Wallet only. For using Java Key Sores (JKS),see [Java Connectivity with Autonomous Database (ATP or ADW)](https://www.oracle.com/database/technologies/java-connectivity-to-atp.html)
-
-**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
+**Note**: This lab is for using the Oracle Wallet only. For using Java Key Sores (JKS), see [Java Connectivity with Autonomous Database (ATP or ADW)](https://www.oracle.com/database/technologies/java-connectivity-to-atp.html).
 
 ### What Do You Need?
 
@@ -18,7 +16,7 @@ Java applications require Java Key Store (JKS) or Oracle wallets to connect to A
 + **Oracle Database 12c and above (for the repository)**
 + **Download and install latest jdk (JDK > JDK8u162), and jars in Step 1 > 6 from [Oracle Database 18c (18.3) JDBC Driver and UCP Downloads](https://www.oracle.com/database/technologies/appdev/jdbc-ucp-183-downloads.html)**
 
-## **Step 1:** Set up the Oracle Wallet and Oracle GoldenGate Veridata Agent
+## **STEP 1:** Set up the Oracle Wallet and Oracle GoldenGate Veridata Agent
 To set up Oracle Wallet and the Oracle GoldenGate Veridata Agent:
 1. Ensure that you have downloaded the `Wallet_ADW20190410NS.zip` from the ADW/ATP console.
 2. Unzip the wallet in a location:
@@ -71,16 +69,13 @@ To set up Oracle Wallet and the Oracle GoldenGate Veridata Agent:
 10. Connect to the Agent through the Oracle GoldenGate Veridata Server.
 
 
-## **Step 2:** Add Proxy Information (Optional Topic)
+## **STEP 2:** Add Proxy Information (Optional Topic)
 
-To add proxy information:
-
-1. Replace the Oracle proxy and port in below example with your own `(https_proxy=www-proxy-hqdc.us.oracle.com)(https_proxy_port=80)`. For example:
+To add proxy information, replace the Oracle proxy and port in below example with your own `(https_proxy=www-proxy-hqdc.us.oracle.com)(https_proxy_port=80)`. For example:
 
     <pre>adw20190410ns_low = (description= (address=(https_proxy=www-proxy-hqdc.us.oracle.com)(https_proxy_port=80)(protocol=tcps)
 
     (port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data= (service_name=n2yg3pftwi1lovg_adw20190410ns_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
-
     "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")) )</pre>
 
 
@@ -96,9 +91,9 @@ To add proxy information:
 * **Reviewed by:**
     + Jonathan Fu, Director, Product Development, GoldenGate Development
 
-* **Last Updated By/Date:** Anuradha Chepuri, November 2020
+* **Last Updated By/Date:** Anuradha Chepuri, December 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*. Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
