@@ -21,8 +21,6 @@ Oracle GoldenGate Veridata compares a source (original, or trusted) set of data 
   * Prior knowledge of using Linux command-line options and Oracle WebLogic Server.
   * Ensure that you have Oracle GoldenGate Veridata installed.
 
-**You are all set to begin the labs in this workshop! Click "Lab 1: Use the Oracle GoldenGate Veridata Command-line Utilities" in the Contents menu.**
-
 ## Want to Learn More?
 
 Use these links to get more information about Oracle GoldenGate and Oracle GoldenGate Veridata:

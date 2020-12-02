@@ -23,7 +23,6 @@ Watch our short video that explains the partitioning feature in Oracle GoldenGat
 ## Workshop Prerequisites
   * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
 
-**You are all set to begin the labs in this workshop! Click "Lab 1: Install and Configure Oracle GoldenGate Veridata" in the Contents menu.**
 
 ## Want to Learn More?
 

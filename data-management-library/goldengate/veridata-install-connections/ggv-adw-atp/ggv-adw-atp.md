@@ -71,14 +71,11 @@ To set up Oracle Wallet and the Oracle GoldenGate Veridata Agent:
 
 ## **STEP 2:** Add Proxy Information (Optional Topic)
 
-To add proxy information:
-
-1. Replace the Oracle proxy and port in below example with your own `(https_proxy=www-proxy-hqdc.us.oracle.com)(https_proxy_port=80)`. For example:
+To add proxy information, replace the Oracle proxy and port in below example with your own `(https_proxy=www-proxy-hqdc.us.oracle.com)(https_proxy_port=80)`. For example:
 
     <pre>adw20190410ns_low = (description= (address=(https_proxy=www-proxy-hqdc.us.oracle.com)(https_proxy_port=80)(protocol=tcps)
 
     (port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data= (service_name=n2yg3pftwi1lovg_adw20190410ns_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
-
     "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")) )</pre>
 
 

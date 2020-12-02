@@ -10,7 +10,7 @@ For proof-of-concept, you can install the following on one host: Oracle WebLogic
 + **[Oracle GoldenGate Software](https://www.oracle.com/middleware/technologies/goldengate-downloads.html)**
 
 ## **STEP 1:** Install and Configuring the Back End Servers and Infrastructure
-In a nutshell, the installation process includes the following four major tasks. After completing these steps, you can configure the Oracle GoldenGate Veridata Agents.
+In a nutshell, the installation process includes the following four major tasks. After completing these steps, you can configure the Oracle GoldenGate Veridata Agents:
 1. WebLogic Server and Infrastructure file needed for Oracle GoldenGate Veridata. Install the WebLogic Server infrastructure (formerly known as JRF) files on top of an existing 12.2.1.4.0 WebLogic Server install. Invoke this by using the command: `java -jar fmw_12.2.1.4.0_infrastructure_generic.jar`.
 2. Oracle GoldenGate Veridata Server + Oracle GoldenGate Veridata Agent. It is a jar file, and works on all supported platforms except NonStop. Select a required combination. For this lab, the choice was **complete** to get everything installed in one pass. Invoke this by using the command: `java -jar fmw_12.2.1.4.0_ogg.jar`.
 3. Run the Repository Creation Utility (RCU). It gets installed as a part of the WLS+JRF install in Step 1. You can run it once for all the products (WebLogic Server and Oracle GoldenGate Veridata.) The RCU location in this demo (and the sample VM) is: `/u01/app/oracle/product/wls/oracle_common/bin/rcu`.
@@ -150,8 +150,9 @@ To deploy agents:
     /u01/app/oracle/product/wls/veridata/agent/agent_config.sh /u01/ogg/agents/veridata/agent1
     ## Should return, "Successfully deployed the agent. </pre>
 3. These are the changes made to the `agent.properties` file: `cd /u01/ogg/agents/veridata/agent1`
+
     **Note**: The database-specific files are under the `sample_properties` directory and you need to select the respective file and copy that as `agent.properties`.
-    Example for Oracle DB:
+    Example for Oracle database:
 
     <pre>cp sample_properties/agent.properties.oracle agent.properties
     gedit agent.properties
@@ -178,9 +179,10 @@ To deploy agents:
 * **Authors:**
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate Documentation
 * **Reviewed by:**
+      + Sukin Varghese, Senior Member of Technical staff, Database Testing
       + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
       + Apeksha Polnaya, Senior Manager, Software Development, GoldenGate Development
-      + Sukin Varghese, Senior Member of Technical staff, Database Testing
+
 * **Last Updated By/Date:** Anuradha Chepuri, December 2020
 
 ## Need Help?
