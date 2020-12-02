@@ -51,7 +51,7 @@ In this lab, you will:
 
     ORA-28389: cannot close auto login wallet
 
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
 
     keystore altered.
 
@@ -75,7 +75,7 @@ In this lab, you will:
 
     ...
 
-    SQL> Disconnected from Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
+    SQL> Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 
     Version 21.2.0.0.0
 
@@ -87,7 +87,7 @@ In this lab, you will:
 
     Connected to:
 
-    Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
+    Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 
     Version 21.2.0.0.0
 
@@ -367,7 +367,7 @@ In this lab, you will:
 
     SQL> <copy>CONNECT hr@PDB21</copy>
 
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
 
@@ -390,7 +390,7 @@ In this lab, you will:
 
     SQL> <copy>CONNECT auditor@PDB21</copy>
 
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
 
@@ -650,7 +650,7 @@ In this lab, you will:
 
     SQL> <copy>CONNECT hr@PDB21</copy>
 
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
 
@@ -673,7 +673,7 @@ In this lab, you will:
 
     SQL> <copy>CONNECT auditor@PDB21</copy>
 
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
 
@@ -696,7 +696,7 @@ In this lab, you will:
 
     SQL> <copy>CONNECT auditor@PDB21</copy>
 
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
 

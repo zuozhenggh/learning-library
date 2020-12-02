@@ -71,11 +71,11 @@ In this lab, you will:
 	
 	...
 	
-	SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>password</i> container=all;
+	SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>WElcome123##</i> container=all;
 	
 	keystore altered.
 	
-	SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL;
+	SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL;
 	
 	keystore altered.
 	
@@ -89,7 +89,7 @@ In this lab, you will:
 	
 	$ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
 	
-	Enter password: <b><i>password</i></b>
+	Enter password: <b><i>WElcome123##</i></b>
 	
 	Connected.
 	
