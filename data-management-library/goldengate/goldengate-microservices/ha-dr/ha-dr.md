@@ -10,9 +10,6 @@ This lab will introduce you to Oracle GoldenGate for Microservices Workshop Arch
 
 ### Objectives
 
-
-### Objectives
-
 The objectives of the lab is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices bidirectionally while leveraging RestfulAPIs. This Lab focuses on High Availability replication and Disaster Recovery using bidirectional and Auto Collision Detect features of GoldeGate
 
 KEY FEATURES
