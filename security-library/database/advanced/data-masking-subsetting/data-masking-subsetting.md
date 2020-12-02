@@ -255,7 +255,7 @@ This lab assumes you have:
 
 3. You may be asked for the database credentials. If so, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username and click [**Continue**]
 
-   ![](./images/dms-035.png " ")
+   ![](./images/dms-010.png " ")
 
 4. Select the **Sensitive Columns** tab
 
@@ -321,7 +321,7 @@ This lab assumes you have:
 
 5. You may be asked for the database credentials. If so, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username and click [**Login**]
 
-   ![](./images/dms-046.png " ")
+   ![](./images/dms-010.png " ")
 
 6. Click [**Search**] to search for all of the identified and tagged "**Sensitive**" columns in Step 7 previously
 
@@ -543,7 +543,7 @@ This lab assumes you have:
 
 3. At the Database Login screen, choose the Named Credential for `DMS_ADMIN`
 
-   ![](./images/dms-046.png " ")
+   ![](./images/dms-010.png " ")
 
 4. Click [**Login**]
 
@@ -557,9 +557,11 @@ This lab assumes you have:
 
 6. In the **Database Credentials** section, check the *`Named`* option and select *`DMS_ADMIN`* for Credential Name
 
-   ![](./images/dms-081.png " ")
+   ![](./images/dms-081a.png " ")
 
-7. Click [**Submit**]
+7. In the **Start** section, make sure *`Immediately`* is ticked and click [**Submit**]
+
+   ![](./images/dms-081b.png " ")
 
 8. To view the status of your job, you can follow the prompts provided by Enterprise Manager Cloud Control 13c. Once the job has been successfully generated, navigate back to your Data Masking job, you are ready to submit it
 
@@ -614,7 +616,7 @@ This lab assumes you have:
 
 3. In the **Data Mask Options** section, enter:
     - Script File Location: *`/home/oracle/DBSecLab/livelabs/dms`*
-    - Script File Name: *`mask_emp_data_in-db_<your_timestamp>.sql`*
+    - Script File Name: *`mask_empdata_in-db_<your_timestamp>.sql`*
 
       ![](./images/dms-089.png " ")
 
@@ -622,9 +624,12 @@ This lab assumes you have:
 
 4. Configure access permissions
     - In the **Host Credentials** section, check the *`Named`* option and select *`OS_ORACLE_SSH`* for Credential Name
+
+      ![](./images/dms-090a.png " ")
+
     - In the **Database Credentials** section, check the *`Named`* option and select *`DMS_ADMIN`* for Credential Name
 
-      ![](./images/dms-090.png " ")
+      ![](./images/dms-090b.png " ")
 
 5. Click [**Submit**]
 
