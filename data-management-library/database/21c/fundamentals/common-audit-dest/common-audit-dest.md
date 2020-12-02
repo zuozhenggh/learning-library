@@ -35,7 +35,7 @@ In this lab, you will:
     
     Connected to:
     
-    Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
+    Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
     
     Version 21.2.0.0.0
     
@@ -61,7 +61,7 @@ In this lab, you will:
     
     ...
     
-    SQL> CREATE USER c##test IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> CREATE USER c##test IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     User created.
     
@@ -257,19 +257,19 @@ In this lab, you will:
     
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     
     ...
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>password</i> container=all;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>WElcome123##</i> container=all;
     
     keystore altered.
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL;
     
-    ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL
+    ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL
     
     *
     
@@ -545,7 +545,7 @@ In this lab, you will:
     
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     
@@ -607,9 +607,9 @@ In this lab, you will:
     
     System altered.
     
-    SQL> ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>password</i> ;
+    SQL> ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>WElcome123##</i> ;
     
-    ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>password</i> 
+    ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>WElcome123##</i> 
     
     *
     
@@ -617,11 +617,11 @@ In this lab, you will:
     
     ORA-46630: keystore cannot be created at the specified location
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>password</i> container=all;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>WElcome123##</i> container=all;
     
     keystore altered.
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL;
     
     keystore altered.
     

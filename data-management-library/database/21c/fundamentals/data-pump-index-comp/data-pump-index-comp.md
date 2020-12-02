@@ -26,7 +26,7 @@ In this lab, you will:
     
     ```
     
-    $ <copy>sqlplus "sys@PDB21 AS SYSDBA" @/home/oracle/labs/M104780GC10/hr_main.sql <i>password</i> users temp /tmp</copy>
+    $ <copy>sqlplus "sys@PDB21 AS SYSDBA" @/home/oracle/labs/M104780GC10/hr_main.sql <i>WElcome123##</i> users temp /tmp</copy>
     
     ...
     
@@ -47,7 +47,7 @@ In this lab, you will:
     
     $ <copy>sqlplus SYSTEM@PDB21</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected to:
     
@@ -113,7 +113,7 @@ Export the `HR.EMPLOYEES` table. Ignore any Database Vault warning.
   $ <copy>expdp hr@PDB21 DUMPFILE=PDB21.dmp DIRECTORY=dp_dir TABLES=EMPLOYEES REUSE_DUMPFILES=YES</copy>
 
   Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-  Password: <b><i>password</i></b>
+  Password: <b><i>WElcome123##</i></b>
 
   Starting "HR"."SYS_EXPORT_TABLE_01":  hr/********@PDB21 DUMPFILE=PDB21.dmp DIRECTORY=dp_dir TABLES=EMPLOYEES REUSE_DUMPFILES=YES
   Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
@@ -171,7 +171,7 @@ Export the `HR.EMPLOYEES` table. Ignore any Database Vault warning.
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
     
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     Master table "HR"."SYS_IMPORT_FULL_01" successfully loaded/unloaded
     

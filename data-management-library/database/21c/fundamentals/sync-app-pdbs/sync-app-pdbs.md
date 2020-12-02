@@ -42,7 +42,7 @@ In this lab, you will:
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     ...
@@ -67,7 +67,7 @@ In this lab, you will:
     Session altered.
     
     SQL> CREATE PLUGGABLE DATABASE toys_root AS APPLICATION CONTAINER
-      2    ADMIN USER admin IDENTIFIED BY <i>password</i> ROLES=(CONNECT);
+      2    ADMIN USER admin IDENTIFIED BY <i>WElcome123##</i> ROLES=(CONNECT);
     
     Pluggable database created.
     
@@ -122,7 +122,7 @@ In this lab, you will:
 	
 	SQL> <copy>CONNECT sys@robots AS SYSDBA</copy>
 	
-	Enter password: <b><i>password</i></b>
+	Enter password: <b><i>WElcome123##</i></b>
 	
 	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
 	
@@ -157,7 +157,7 @@ In this lab, you will:
 	
 	SQL> <copy>CONNECT sys@dolls AS SYSDBA</copy>
 	
-	Enter password: <b><i>password</i></b>
+	Enter password: <b><i>WElcome123##</i></b>
 	
 	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
 	

@@ -29,7 +29,7 @@ In this lab, you will:
 
      Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
-     Enter password: <b><i>password</i></b>
+     Enter password: <b><i>WElcome123##</i></b>
      Last Successful login time: Mon Mar 16 2020 08:49:41 +00:00
 
      Connected to:

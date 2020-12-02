@@ -36,7 +36,7 @@ In this lab, you will:
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
 
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
 
     keystore altered.
     ...
@@ -121,7 +121,7 @@ In this lab, you will:
       
     $ <copy>sqlplus system@PDB21</copy>
       
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
       
     SQL> <copy>SET PAGES 100</copy>
       

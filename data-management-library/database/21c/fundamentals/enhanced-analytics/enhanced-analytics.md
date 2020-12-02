@@ -37,7 +37,7 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
 
     User dropped.
 
-    SQL> CREATE USER report IDENTIFIED BY <i>password</i>;
+    SQL> CREATE USER report IDENTIFIED BY <i>WElcome123##</i>;
 
     User created.
 
@@ -117,7 +117,7 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected to:
     

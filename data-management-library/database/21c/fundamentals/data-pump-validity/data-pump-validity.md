@@ -45,7 +45,7 @@ In this lab, you will:
     
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     
@@ -132,7 +132,7 @@ In this lab, you will:
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
     
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     Starting "SYSTEM"."SYS_EXPORT_TABLE_01":  system/********@PDB21 TABLES=hr.employees dump file=dp_dir:emp.dmp CHECKSUM=YES
     
@@ -190,7 +190,7 @@ In this lab, you will:
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
     
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     ORA-39002: invalid operation
     
@@ -206,7 +206,7 @@ In this lab, you will:
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
     
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     Starting "SYSTEM"."SYS_EXPORT_TABLE_01":  system/********@PDB21 TABLES=hr.employees dump file=dp_dir:emp512.dmp CHECKSUM_ALGORITHM=SHA512
     
@@ -259,7 +259,7 @@ In this lab, you will:
     
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected to:
     
@@ -291,7 +291,7 @@ In this lab, you will:
     $ <copy>impdp system@PDB21 FULL=yes DUMPFILE=dp_dir:emp512.dmp VERIFY_ONLY=YES</copy>
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     Verifying dump file checksums
     Master table "SYSTEM"."SYS_IMPORT_FULL_01" successfully loaded/unloaded
@@ -307,7 +307,7 @@ In this lab, you will:
     $ <copy>impdp system@PDB21 FULL=yes DUMPFILE=dp_dir:emp.dmp VERIFY_ONLY=YES</copy>
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     ORA-39001: invalid argument value
     ORA-39000: bad dump file specification
@@ -338,7 +338,7 @@ In this lab, you will:
     $ <copy>impdp system@PDB21 FULL=yes DUMPFILE=dp_dir:emp.dmp</copy>
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     ORA-39001: invalid argument value
     ORA-39000: bad dump file specification
@@ -354,7 +354,7 @@ In this lab, you will:
     $ <copy>impdp system@PDB21 FULL=yes DUMPFILE=dp_dir:emp512.dmp VERIFY_CHECKSUM=YES</copy>
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     <b>Verifying dump file checksums</b>
     Master table "SYSTEM"."SYS_IMPORT_FULL_01" successfully loaded/unloaded
@@ -383,7 +383,7 @@ In this lab, you will:
     
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected to:
     
@@ -396,7 +396,7 @@ In this lab, you will:
     $ <copy>impdp hr@PDB21 FULL=yes DUMPFILE=dp_dir:emp512.dmp VERIFY_CHECKSUM=NO</copy>
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     Master table "HR"."SYS_IMPORT_FULL_01" successfully loaded/unloaded
     Connected to: Oracle Database 20c Enterprise Edition Release 20.0.0.0.0 - Production
     Warning: <b>dump file checksum verification is disabled</b>

@@ -47,7 +47,7 @@ In this lab, you will:
     
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     
@@ -139,7 +139,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected.
     
@@ -434,7 +434,7 @@ In this lab, you will:
     
     $ <copy>rman TARGET sys@PDB21</copy>
     
-    target database Password: <b><i>password</i></b>
+    target database Password: <b><i>WElcome123##</i></b>
     
     connected to target database: CDB21:PDB21 (DBID=2289122758)
     
@@ -613,7 +613,7 @@ In this lab, you will:
     
     $ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected to:
     
@@ -623,7 +623,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT system@PDB21</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected.
     
