@@ -88,16 +88,15 @@ To view the complete data files that are available, navigate to [Citibike System
 1. Run the following command to download the **`env.sh`** script to the **`training`** working directory. You will use this script to set up your HDFS environment.
 
     ```
-    $ <copy>wget https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/env.sh</copy>
+    $ <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/env.sh</copy>
     ```
 
     ![](./images/run-env-script.png " ")
 
-
 2. Run the following command to download the **`download-all-hdfs-data.sh`** script to the **`training`** working directory. You will run this script to download the dataset to your local working directory. The script will then upload this data to HDFS.
 
     ```
-    $ <copy>wget https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/download-all-hdfs-data.sh</copy>
+    $ <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/download-all-hdfs-data.sh</copy>
     ```
 
     ![](./images/run-download-hdfs-data.png " ")
@@ -160,6 +159,12 @@ To view the complete data files that are available, navigate to [Citibike System
     ![](./images/script-completed.png " ")
 
 8. Navigate to the local **`Downloads`** directory to display the downloaded trip data, stations, and weather data files.
+
+    ```
+    $ <copy>ls -l</copy>
+    $ <copy>cd Downloads</copy>
+    $ <copy>ls -ls</copy>
+    ```
 
     ![](./images/data-downloaded.png " ")
 
@@ -227,7 +232,7 @@ In this step, you log into Hue as the **`training`** administrator user and quer
 
   ![](./images/hue-home-page.png " ")
 
-4. Copy the following query that ranks the top 10 most popular start stations, and then paste it in the Query section in Hue.
+4. Copy the following query that ranks the top 10 most popular start stations, paste it in the Query section in Hue, and then click **Execute** ![](./images/execute-icon.png).
 
     ```
     <copy>select start_station_name, value,
@@ -240,7 +245,9 @@ In this step, you log into Hue as the **`training`** administrator user and quer
 limit 10;</copy>
     ```
 
-    The following is the query result.
+    ![](./images/query.png " ")
+
+    The query result is displayed.
 
     ![](./images/query-result.png " ")
 
@@ -263,7 +270,7 @@ In this step, you will download two scripts that will set up your object storage
 3. Click **Copy** to copy the following command. Right-click your mouse, select **Paste**, and then paste it on the command line.  You will use this script to set up your environment for the Object Store data. Press the **[Enter]** key to run the command.
 
     ```
-    <b>$</b> <copy>wget https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/env.sh
+    <b>$</b> <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/env.sh
     </copy>
     ```
 
@@ -291,7 +298,7 @@ In this step, you will download two scripts that will set up your object storage
 7. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. You will run this script to download the dataset to your local working directory. You will then upload this data to a new object in a new bucket. Press the **`[Enter]`** key to run the command.
 
     ```
-    <b>$</b> <copy>wget https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/download-all-objstore.sh
+    <b>$</b> <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/download-all-objstore.sh
     </copy>
     ```
     ![](./images/download-os-script.png " ")
