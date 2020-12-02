@@ -8,6 +8,34 @@ In this lab you will review GoldenGate for Classic
 
   ![](./images/image110_1.png " ")
 
+## About Oracle GoldenGate Classic
+
+### KEY FEATURES
+
+  - Non-invasive, real-time transactional data streaming
+  - Secured, reliable and fault-tolerant data delivery
+  - Easy to install, configure and maintain
+  - Streams real-time changed data
+  - Easily extensible and flexible to stream changed data to other big data targets and message queues
+
+### KEY BENEFITS
+
+  - Improve IT productivity in integrating with big data systems
+  - Use real-time data in PostgreSQL analytics for more timely and reliable insight
+  - Improve operations and customer experience with enhanced business insight
+  - Minimize overhead on source systems to maintain high performance
+
+Oracle GoldenGate Classic provides optimized and high performance delivery to PsotgreSQL to support customers with their real-time big data analytics initiatives.
+
+Oracle GoldenGate Classic includes Oracle GoldenGate for relational Oracle and Non Oracle, which enables customers to easily integrate to additional data systems.
+
+Oracle GoldenGate real-time data streaming platform also allows customers to keep their relation databases up to date with their production systems.
+
+## Summary
+
+Oracle GoldenGate classic offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for relational environments. It easily extends customers’ real-time data
+integration architectures to data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
+
 ### Objectives
 - Deploy GoldenGate Classic
 
@@ -40,33 +68,6 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 ***Congratulations!*** You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
-## About Oracle GoldenGate Classic
-
-### KEY FEATURES
-
-  - Non-invasive, real-time transactional data streaming
-  - Secured, reliable and fault-tolerant data delivery
-  - Easy to install, configure and maintain
-  - Streams real-time changed data
-  - Easily extensible and flexible to stream changed data to other big data targets and message queues
-
-### KEY BENEFITS
-
-  - Improve IT productivity in integrating with big data systems
-  - Use real-time data in PostgreSQL analytics for more timely and reliable insight
-  - Improve operations and customer experience with enhanced business insight
-  - Minimize overhead on source systems to maintain high performance
-
-Oracle GoldenGate Classic provides optimized and high performance delivery to PsotgreSQL to support customers with their real-time big data analytics initiatives.
-
-Oracle GoldenGate Classic includes Oracle GoldenGate for relational Oracle and Non Oracle, which enables customers to easily integrate to additional data systems.
-
-Oracle GoldenGate real-time data streaming platform also allows customers to keep their relation databases up to date with their production systems.
-
-## Summary
-
-Oracle GoldenGate classic offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for relational environments. It easily extends customers’ real-time data
-integration architectures to data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
 
 You may now *proceed to the next lab*.
 

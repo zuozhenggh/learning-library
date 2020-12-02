@@ -29,11 +29,6 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "GoldenGate for Oracle Setup",
-      "description": "GoldenGate for Oracle Setup",
-      "filename": "../../initial-setup/initial-setup.md"
-    },
-    {
       "title": "Oracle to MySql",
       "description": "Oracle to MySql",
       "filename": "../../oracle-to-mysql/oracle-to-mysql.md"

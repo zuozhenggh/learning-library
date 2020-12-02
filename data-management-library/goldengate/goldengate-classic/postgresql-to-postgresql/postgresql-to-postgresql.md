@@ -6,35 +6,21 @@ This workshop will show you how to install a Oracle GoldenGate for PostgreSQL.  
 
 *Estimated Lab Time*: 60 minutes
 
-
-### Objectives
--   UniDirectional replication between PostgreSQL to PostgreSQL
--   Connect to compute instance
-
-### Prerequisites
-This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
-    - Lab: Environment Setup
-
-### Environment details
-
-- GoldenGate for PostgreSQL
-- PostgreSQL database V12
-- GoldenGate Software location : /u01/software/postgres
-- GoldenGate Home : /u01/ggpost/
-
 ### About Oracle GoldenGate for PosgreSQL
 With Oracle GoldenGate for PosgreSQL, you can perform initial loads and capture transactional data from supported PostgreSQL versions and replicate the data to a PostgreSQL database or other supported Oracle GoldenGate targets, such as an Oracle Database.
 
 Oracle GoldenGate for PostgreSQL supports the mapping, manipulation, filtering, and delivery of data from other types of databases to a PostgreSQL database.
 
 ### Objectives
--   Oracle GoldenGate between PostgreSQL to PostgreSQL
+-   UniDirectional replication between PostgreSQL to PostgreSQL
 -   Connect to compute instance
+
+### Environment details
+
+- GoldenGate for PostgreSQL
+- PostgreSQL database V12
+- GoldenGate Software location : /u01/software/postgres
+- GoldenGate Home : /u01/ggpost/
 
 ### Prerequisites
 This lab assumes you have:
@@ -44,13 +30,6 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
-
-### Environment details
-
-- GoldenGate for PostgreSQL
-- PostgreSQL database V12
-- GoldenGate Software location : /u01/software/postgres
-- GoldenGate Home : /u01/ggpost/
 
 ## **STEP 1**: Installation of OGG for PostgreSQL
 

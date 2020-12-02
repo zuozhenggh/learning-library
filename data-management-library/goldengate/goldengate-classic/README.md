@@ -37,5 +37,5 @@ Lab   –  Active - Active - HA/DR
 
 Lab   –  GoldenGate Column Conversions
 
-Lab  -  GoldenGate for PostgreSQL
+Lab   -  GoldenGate for PostgreSQL
 
