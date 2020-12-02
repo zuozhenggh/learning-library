@@ -2,19 +2,21 @@
 
 ## Introduction
 
-In this lab, you will download and run two sets of scripts. First, you will download and run the Hadoop Distributed File System (HDFS) scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to a new local directory on your master node in your Hadoop cluster. The HDFS script manipulates some of the downloaded data files, and then upload them to new HDFS directories. The HDFS script also create Hive databases and tables which you will query using Hue. Second, you will download and run the object store scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to your local directory using OCI Cloud Shell. The object store script uploads the data to new objects in a new bucket. See the [Data License Agreement](https://www.citibikenyc.com/data-sharing-policy) for information about the Citi Bikes NYC data license agreement.
+In this lab, you will download and run two sets of scripts. First, you will download and run the Hadoop Distributed File System (HDFS) scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to a new local directory on your master node in your BDS cluster. The HDFS scripts manipulates some of the downloaded data files, and then upload them to new HDFS directories. The HDFS scripts also create Hive databases and tables which you will query using Hue. Second, you will download and run the object storage scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to your local directory using OCI Cloud Shell. The object storage scripts uploads the data to a new bucket in Object Storage. See the [Data License Agreement](https://www.citibikenyc.com/data-sharing-policy) for information about the Citi Bikes NYC data license agreement.
+
+**Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
 
 ### Objectives
 
-* Download and the HDFS and object store scripts that are required to set up your environment and to download the dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the **`training`** Administrator user's local working directory and to your OCI Cloud Shell directory.
-* Use SSH to connect to your master node in your cluster. You then run the HDFS scripts to set up your HDFS environment and to manipulate and upload the downloaded data from the local working directory to new HDFS directories.
-* Use OCI Cloud Shell to run the object store scripts to set up your object storage environment and to upload the downloaded data from the local working directory to object storage.
+* Download the HDFS and object storage scripts from a public bucket in Object Storage. The scripts are required to set up your environment and to download the dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the **`training`** Administrator user's local working directory and to your OCI Cloud Shell directory.
+* Use SSH to connect to your master node in your cluster. You then run the HDFS scripts to set up your HDFS environment and to manipulate and upload the downloaded data from your local working directory to new HDFS directories.
+* Use OCI Cloud Shell to run the object storage scripts to set up your Object Storage environment and to upload the downloaded data from the local working directory to a new bucket in Object Storage.
 * Create Hive databases and tables that represents the data that you uploaded to HDFS, and then query the Hive tables using Hue.
 
 
 ### What Do You Need?
 + This lab assumes that you have successfully completed all the labs in the **Contents** menu.
-+ Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from GitHub.
++ Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
 
 ## **STEP 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
 
@@ -35,7 +37,7 @@ In this lab, you will download and run two sets of scripts. First, you will down
 
 In this step, you will connect to the first (only one master node in a non-HA cluster) master node in your cluster using SSH as the **`training`** Hadoop Administrator user that you created in **Lab 6**.
 
-In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. Refer to **Lab 6: Create a Hadoop Administrator User**, if needed, to review the steps on how to connect to first master node in your cluster. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you will need to use your Linux system or Windows PowerShell as shown in **Lab 6**.
+In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. Refer to **Lab 6: Create a Hadoop Administrator User**, if needed, to review the steps on how to connect to the first master node in your cluster. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you will need to use your Linux system or Windows PowerShell as shown in **Lab 6**.
 
 **Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
@@ -74,18 +76,18 @@ In this lab, we will connect to our cluster using Windows **PuTTY** and provide 
 
 ## **STEP 3:** Download and Run HDFS Scripts to Set Up the HDFS Data
 
-In this step, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
+In this step, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 
-The Citi Bikes detailed trip data files (in zipped format) are first downloaded to a new local directory. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are then uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables. **`bikes.trips_ext`** is an external table defined over the source data. The **`bikes.trips`** table is created from this source; it is a partitioned table that stores the data in Parquet format. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
+The Citi Bikes detailed trip data files (in zipped format) are first downloaded to a new local directory. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables. **`bikes.trips_ext`** is an external table defined over the source data. The **`bikes.trips`** table is created from this source; it is a partitioned table that stores the data in Parquet format. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
 
 The stations data file is downloaded (and then manipulated) from the [station information](https://gbfs.citibikenyc.com/gbfs/es/station_information.json) page. The updated file is then uploaded to a new **`/data/stations`** HDFS directory.
 
-The weather data is downloaded from the [GitHub repository](https://raw.githubusercontent.com/martygubar/bds-getting-started/master/lab-bikes-setup/weather-newark-airport.csv). Next, the header row in the file is removed. The updated file is then uploaded to a new **`/data/weather`** HDFS directory. Next, a new **`weather`** Hive database and **`weather.weather_ext`** table are created and populated with from the `weather-newark-airport.csv` file in the **`/data/weather`** directory.
+The weather data is downloaded from a public bucket in Object Storage. Next, the header row in the file is removed. The updated file is then uploaded to a new **`/data/weather`** HDFS directory. Next, a new **`weather`** Hive database and **`weather.weather_ext`** table are created and populated with from the `weather-newark-airport.csv` file in the **`/data/weather`** directory.
 
 **Note:**    
 To view the complete data files that are available, navigate to [Citibike System Data](https://www.citibikenyc.com/system-data) page. In the **Citi Bike Trip Histories** section, click [downloadable files of Citi Bike trip data](https://s3.amazonaws.com/tripdata/index.html). The [Index of bucket "tripdata"](https://s3.amazonaws.com/tripdata/index.html) page displays the available data files. In this lab, you will be using only some of the data files on that page.  
 
-1. Run the following command to download the **`env.sh`** script to the **`training`** working directory. You will use this script to set up your HDFS environment.
+1. Run the following command to download the **`env.sh`** script from a public bucket in Object Storage to the **`training`** working directory. You will use this script to set up your HDFS environment.
 
     ```
     $ <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/env.sh</copy>
@@ -93,7 +95,7 @@ To view the complete data files that are available, navigate to [Citibike System
 
     ![](./images/run-env-script.png " ")
 
-2. Run the following command to download the **`download-all-hdfs-data.sh`** script to the **`training`** working directory. You will run this script to download the dataset to your local working directory. The script will then upload this data to HDFS.
+2. Run the following command to download the **`download-all-hdfs-data.sh`** script from a public bucket in Object Storage to the **`training`** working directory. You will run this script to download the dataset to your local working directory. The script will then upload this data to HDFS.
 
     ```
     $ <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/download-all-hdfs-data.sh</copy>
@@ -258,7 +260,7 @@ limit 10;</copy>
 
 ## **STEP 5:** Download and Run Object Storage Scripts to Set Up the Object Storage Data
 
-In this step, you will download two scripts that will set up your object storage environment and download the object storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data), and some randomized weather data that is hosted on GitHub.
+In this step, you will download two scripts that will set up your Object Storage environment and download the object storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -320,7 +322,7 @@ In this step, you will download two scripts that will set up your object storage
 
     ![](./images/cat-os-script.png " ")
 
-  You can use the **`cat`** command to display the content of this script. The **`download-all-objstore.sh`** script runs the **`env.sh`** script which sets the environment. The script writes some of the data from Amazon S3 to the your local Cloud Shell directory and to a new object in a new bucket named **`training`**, as specified in the **`env.sh`** script. The **`training`** bucket will contain the following new objects:
+  You can use the **`cat`** command to display the content of this script. The **`download-all-objstore.sh`** script runs the **`env.sh`** script which sets the environment. The script writes some of the data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data), and a randomized weather data that is stored in a public bucket in Object Storage to the your local Cloud Shell directory and to new objects in a new bucket named **`training`**, as specified in the **`env.sh`** script. The **`training`** bucket will contain the following new objects:
 
     + The **`weather`** object which stores the weather data.
     + The **`stations`** object which stores the stations data.
@@ -362,6 +364,7 @@ In this step, you will download two scripts that will set up your object storage
 
 ## Want to Learn More?
 
+* [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage)
 * [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 * [Using Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue_using.html)
