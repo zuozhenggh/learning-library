@@ -10,7 +10,7 @@ In this section, you will provision a new E-Business Suite Enviornment from the 
 
 In this lab, you will:
 
-* Provision an EBS instance in Cloud Manager from the backup
+* Provision an EBS instance in Cloud Manager from a backup
 
 ### **Prerequisites**
 
@@ -22,13 +22,13 @@ In this lab, you will:
 
 
 ## **STEP 1:** Provision an EBS Instance on the Cloud Manager from the Backup
-This step will take you through how to provision an E-Business Suite instance from a backup in Object Storage. In order to complete this step, you will need access to the Cloud Manager that was created in the previous workshop [OCI EBS Lift and Shift](link). 
+This step will take you through how to provision an E-Business Suite instance from a backup in Object Storage. In order to complete this step, you will need access to the Cloud Manager that was created in the previous workshop: [OCI EBS Lift and Shift](link). 
 
-1. Login to the EBS Cloud Manager using the SYSADMIN user and the password you created for the User in Lab 1. 
+1. Login to the EBS Cloud Manager using the SYSADMIN user and the password you created for the user in Lab 1. 
 
-2. Click on Advanced Provisioning and then select the radio button for **Provision from Object Storage Backup**
+2. Click on **Advanced Provisioning** and then select the radio button for **Provision from Object Storage Backup**
 
-3. Enter a name for the environment and then select **EBS1228COMPUTE** for Backup Bucket which contains the backup of the EBS instance you would like to deploy on OCI. 
+3. Enter a name for the environment and then select **EBS1228COMPUTE** for Backup Bucket which contains the backup of the EBS instance you created in the previous lab.
 
     a. Enter the encryption password you created in the previous lab as well as the apps (default: apps) and weblogic server (default: welcome1) passwords.
 
@@ -54,6 +54,7 @@ This step will take you through how to provision an E-Business Suite instance fr
 
     After approximately 1-1.5 hours, your new EBS instance will finish provisioning and you will have successfully migrated an EBS environment to OCI. 
 
+Congradulations, you have successfully migrated an EBS instance to the EBS Cloud Manager on OCI. 
 
 ## Learn More
 
