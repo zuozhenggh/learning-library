@@ -109,7 +109,7 @@ Generating Jenkins URL
 
 7. In the window that opens you can specify the Siebel version and Industry that you desire. For this Lab we will choose Siebel version ***20.8*** and select ***Sales*** as the industry; then click the ***Run*** button
 
-  ![TODO: update picture to correct version number](./images/2.7.png " ")
+  ![](./images/2.7.png " ")
 
 8. After hitting run you will see that your new Siebel instance is being created, by clicking on it you can see more details
 
