@@ -18,7 +18,7 @@ Estimated Lab Time: 10 minutes
 
 ### Prerequisites
 
--   This lab requires completion of the **Get a Free Trial** lab in the Contents menu on the left.  
+-   This lab requires completion of the **Prerequisites** lab in the Contents menu on the left.  
 
 ### Video Preview
 
@@ -26,7 +26,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 [](youtube:Q6hxMaAPghI)
 
-## **Step 1:** Choosing ADW or ATP from the Services Menu
+## **STEP 1:** Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -47,7 +47,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Compartment.png " ")
 
-## **Step 2:** Creating the Autonomous Database Instance
+## **STEP 2:** Creating the Autonomous Database Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -130,6 +130,6 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Last Updated By/Date** - Richard Green, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

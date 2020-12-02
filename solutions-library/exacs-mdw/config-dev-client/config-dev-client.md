@@ -9,6 +9,8 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 ![](./images/Marketplace.png " ")
 
+Estimated Lab Time: 30 minutes.
+
 ### Objectives
 
 As a database user, a DBA, or an application developer,
@@ -23,7 +25,7 @@ As a database user, a DBA, or an application developer,
 * A pre-provisioned ExaCS database instance. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how to provision an EXACS database.
 * VNC Viewer or other suitable VNC client on your local laptop
 
-## **Step 1:** Provision an OCI Marketplace Developer Client Image Instance
+## **STEP 1:** Provision an OCI Marketplace Developer Client Image Instance
 
 We start by deploying a pre-configured client machine instance from the OCI marketplace
 
@@ -71,7 +73,7 @@ We start by deploying a pre-configured client machine instance from the OCI mark
 
     ![](./images/computeready.png " ")
 
-## **Step 2:** Connect to Dev Client Desktop Over VNC
+## **STEP 2:** Connect to Dev Client Desktop Over VNC
 
 1. First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -122,7 +124,7 @@ We start by deploying a pre-configured client machine instance from the OCI mark
 13. You should now see a linux desktop in your VNC window.
 
 
-## **Step 3:** Connect to your Database Using SQL Developer and SQL Plus
+## **STEP 3:** Connect to your Database Using SQL Developer and SQL Plus
 
 1. In your VNC session, invoke SQL Developer from the top left Applications menu as shown below
 
@@ -186,5 +188,7 @@ You may proceed to the next lab.
 - **Author** - Tejus Subrahmanya, Phani Turlapati, Abdul Rafae, Sathis Muniyasamy, Sravya Ganugapati, Padma Natarajan, Aubrey Patsika, Jacob Harless
 - **Last Updated By/Date** - Jess Rein - Cloud Engineer, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
