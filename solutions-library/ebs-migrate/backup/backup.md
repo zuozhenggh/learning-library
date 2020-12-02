@@ -10,12 +10,12 @@ In this section, you will run the Oracle E-Business Suite Cloud Backup Module, E
 
 In this lab, you will:
 
-* Create a Backup of the source E-Business Suite Environment
-* Provision an EBS instance in Cloud Manager from the backup
+* Create a Backup of the source E-Business Suite Environment.
+* Provision an EBS instance in Cloud Manager from the backup.
 
 ### **Prerequisites**
 
-* Complete Lab 3: **Install the Oracle E-Business Suite Cloud Backup Module**
+* Complete Lab 3: **Install the Oracle E-Business Suite Cloud Backup Module**.
 * key-data.txt file documented with following information:
 
 **From Provisioning your Cloud Manager Instance You Should have recorded:**
