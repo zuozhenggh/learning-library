@@ -6,6 +6,12 @@ In this lab we will work on xml datatype in Converge database. You will insert s
 
 *Estimated Lab Time*: 30 Minutes
 
+### About XML
+
+XML(Extensible Markup Language) is used to store and transport data. XML data is known as self-describing or self-defining, meaning that the structure of the data is embedded with the data, thus when the data arrives there is no need to pre-build the structure to store the data; it is dynamically understood within the XML.
+
+The basic building block of an XML document is an element, defined by tags. An element has a beginning and an ending tag. All elements in an XML document are contained in an outermost element known as the root element. XML can also support nested elements, or elements within elements. This ability allows XML to support hierarchical structures. Element names describe the content of the element, and the structure describes the relationship between the elements.
+
 ### Objectives
 - Create table for XML data type
 - Walk through the SQL queries having built-in functions for XML datatype
@@ -23,12 +29,6 @@ This lab assumes you have:
     - Lab: Data Type Demonstrator Tool
 
 
-### About XML
-
-XML(Extensible Markup Language) is used to store and transport data. XML data is known as self-describing or self-defining, meaning that the structure of the data is embedded with the data, thus when the data arrives there is no need to pre-build the structure to store the data; it is dynamically understood within the XML.
-
-The basic building block of an XML document is an element, defined by tags. An element has a beginning and an ending tag. All elements in an XML document are contained in an outermost element known as the root element. XML can also support nested elements, or elements within elements. This ability allows XML to support hierarchical structures. Element names describe the content of the element, and the structure describes the relationship between the elements.
-
 ## **STEP 1**: Connect JDeveloper to database
 
 To show the ease of integration of ConvergedDB with Java applications to access and process data and to create REST endpoints in the Java application to access the different datatypes like JSON, XML and SPATIAL, we have a simple application installed along with the eSHOP application.
@@ -40,7 +40,7 @@ To show the ease of integration of ConvergedDB with Java applications to access 
     ![](./images/jdev-database-connection.png " ")
 
 3.	Click on the green **+** icon under the **Databases** tab on Left-Hand side Navigation to “Create Database Connection”.
-Provide values:
+Provide the fields with the following values:
 
     - **Connection Name**: xml
     - **Connection Type**: Oracle(JDBC)
@@ -49,7 +49,6 @@ Provide values:
     - **Hostname**: localhost
     - **Service Name**: JXLPDB
   
-
     ![](./images/jdev-add-db-connection.png " ")
 
 4.	Click on **Test Connection** and upon **Success!** message, Click **OK**.
@@ -61,7 +60,7 @@ Provide values:
 
    ![](./images/jdev-sql-xml.png " ")
 
-2.	A worksheet for connection **xml** opens up execute your query commands.
+2.	A worksheet for connection **xml** opens up ,execute your query commands.
 
     ````
     <copy>
@@ -79,7 +78,7 @@ Provide values:
     
     ![](./images/jdev-xml-db-refresh.png " ")
 
-6.	Once you see the table **XML_TYPE** on the left-hand side, In the worksheet, in a new line, key in the query below:
+6.	Once you see the table **XML_TYPE** on the left-hand side of the worksheet, in a new line, key in the query below:
      ````
 <copy>
    select * from xml_type;
@@ -101,7 +100,7 @@ Provide values:
 
 ## **STEP 3**: Modify JEE code for XML
 
-1.	Under the Projects in **Applications** tab on left Navigation, expand **converge** -> **Resources** and double click on **applicationContext.xml** to open the configuration xml to add the new datasource bean. Add the code below the **</bean>** tag of **converge.oracle.spatialAnalytics** and before ending **</beans>** tag.
+1.	Under the Projects in **Applications** tab on the left Navigation, expand **converge** -> **Resources** and double click on **applicationContext.xml** to open the configuration xml to add the new datasource bean. Add the code below the **</bean>** tag of **converge.oracle.spatialAnalytics** and before ending **</beans>** tag.
 
     ````
 <copy>
@@ -114,7 +113,7 @@ Provide values:
 
     ![](./images/jdev-xml-bean-add.png " ")
 
-2.	Click on **Save** Button.
+2.	Click on the **Save** Button.
 
 3.	Similarly, open the **DBSource.java** file under **Projects** -> **converge** -> **Application Sources** -> **converge.dbHelper** by double clicking the file.
  
@@ -146,11 +145,11 @@ Provide values:
 
     ![](./images/jdev-xml-db-code-search.png " ")
 
-4.	Click on **Save** icon to save the file.
+4.	Click on the **Save** icon to save the file.
 
     ![](./images/jdev-xml-db-code.png " ")
 
-    It is assumed that names of the DataSource parameters, function names and JNDI names to be the same as mentioned in the workshop manual and have coded the XmlController.java and the XMLDao.java having the business logic to retrieve the xml datatype from the xml_type table from the Oracle Converged Database in the PDB JXLPDB. 
+    It is assumed that the names of the DataSource parameters, function names and JNDI names to be the same as mentioned in the workshop manual and have coded the XmlController.java and the XMLDao.java having the business logic to retrieve the xml datatype from the xml_type table from the Oracle Converged Database in the PDB JXLPDB. 
 
     The logic is so designed that the tags <order><id></id></order> is mandatory with <id> to have a numeric value.
 
@@ -200,7 +199,7 @@ Provide values:
 
     ![](./images/jdev-xml-rest-code.png" ")
 
-2.	Open firefox or if already open, in other browser tab, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
+2.	Open firefox or if already open, in another browser tab, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
 
     ![](./images/rest-id1-retrieve.png" ")
 
@@ -245,7 +244,7 @@ Provide values:
 
     ![](./images/tool-xml-fetch-id2-and-update.png" ")
 
-3.	Click on blue **Update** button to update record for **pincode**. You will see a confirmation message.    
+3.	Click on the blue **Update** button to update record for **pincode**. You will see a confirmation message.    
 
     ![](./images/tool-xml-update-success.png" ")
 
@@ -277,7 +276,7 @@ Provide values:
     You have seen how easy it is to query the data points with in XML using the Oracle Converged Database’s built-in functions for XML data type.
 
 ## Summary
-In summary, you created a table to store XML data-type, performed CRUD operations on XML data-type stored in the converged database. You also got familiar with out of box functions provided by Oracle database to handle XML data-type, modified SQL queries in java code to access XML as data over REST.
+To summarize, you created a table to store XML data-type, performed CRUD operations on XML data-type stored in the converged database. You also got familiar with out of box functions provided by Oracle database to handle XML data-type, modified SQL queries in java code to access XML as data over REST.
 
 You may now *proceed to the next lab*.
 
@@ -293,7 +292,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 - **Authors** - Pradeep Chandramouli, Nishant Kaushik, Balasubramanian Ramamoorthy, Dhananjay Kumar, AppDev & Database Team, Oracle, October 2020
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Kanika Sharma, NA Technology, October 2020
+- **Last Updated By/Date** - Nishant Kaushik, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
