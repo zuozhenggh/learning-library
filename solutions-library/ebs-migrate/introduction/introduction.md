@@ -4,7 +4,7 @@
 
 This workshop showcases the use of the migration of an existing Oracle E-Business Suite to Oracle Cloud Infrastructure using the Object Storage service. 
 
-The In order to omplete this lab, it is required that you complete the **EBS Cloud Manager Lab** found [here](link to livelabs). This workshop uses information that is recorded in the referenced lab. This information is necessary in order to preform this workshop. 
+In order to complete this lab, it is required that you complete the **EBS Cloud Manager Lab** found [here](link to livelabs). This workshop uses information that is recorded in the referenced lab. This information is necessary in order to preform this workshop. 
 
 Estimated Workshop Time: 1.5 hours
     Note: This does not include downtime for creating the backup, which lasts about 2.5 hours. 
@@ -14,8 +14,8 @@ Estimated Workshop Time: 1.5 hours
 Creating a backup of your source Oracle E-Business Suite instance is the first part of a lift and shift process. You can subsequently complete the lift and shift process by using Oracle E-Business Suite Cloud Manager to provision an environment on Oracle Cloud Infrastructure based on the backup.
 
 Note: Although this process is intended primarily for on-premises instances, you can also run the Oracle E-Business Suite Cloud Backup module to conduct a lift and shift in certain cases when the source environment is already in Oracle Cloud Infrastructure with optional database services. These cases include the following:
-  - You initially used a manual procedure, such as a platform migration, to migrate an environment to Oracle Cloud Infrastructure, and now would like to leverage Oracle E-Business Suite Cloud Manager to manage that environment going forward.
-  - You want to migrate your environment from one tenancy to another. The lift and shift process can be used for this purpose whether or not you are currently using Oracle E-Business Suite Cloud Manager.
+  * You initially used a manual procedure, such as a platform migration, to migrate an environment to Oracle Cloud Infrastructure, and now would like to leverage Oracle E-Business Suite Cloud Manager to manage that environment going forward.
+  * You want to migrate your environment from one tenancy to another. The lift and shift process can be used for this purpose whether or not you are currently using Oracle E-Business Suite Cloud Manager.
 
 Notes:
 
@@ -34,40 +34,40 @@ $ sudo yum install wget -y $ wget -O bitnami-mean-linux-installer.run https://bi
 
 This workshop uses the following components:
 
-* Trial accounts (one per attendee)
+* Trial accounts (one per attendee).
 
-  - Virtual Cloud Network and related resources
-    - User-generated using Resource Manager and provided Terraform script
+* Virtual Cloud Network and related resources.
+    - User-generated using Resource Manager and provided Terraform script.
 
-  - Oracle E-Business Suite Cloud Manager Compute instance
-    - User-provisioned using Oracle Marketplace image
-    - Oracle E-Business Suite Cloud Manager application
-    - EBS sandbox network deployment script
+* Oracle E-Business Suite Cloud Manager Compute instance.
+    - User-provisioned using Oracle Marketplace image.
+    - Oracle E-Business Suite Cloud Manager application.
+    - EBS sandbox network deployment script.
 
-  - Oracle E-Business Suite environment 1 Compute instance
-    - User-provisioned environment from OCI Marketplace 
-    - Application and database tiers on this compute instance
+* Oracle E-Business Suite environment 1 Compute instance.
+    - User-provisioned environment from OCI Marketplace.
+    - Application and database tiers on this compute instance.
 
 
 
 ### Objectives
 
 In this lab, you will:
-* Create a standalone E-Business Suite Environment that will act as the source for the migration
-* Prepare the source EBS enviornment for migration
-* Install the Oracle E-Business Suite Cloud Backup Module on the source environment
-* Create a backup of the source EBS environment and store it on the Oracle Object Storage service
-* Provision a new EBS instance in Cloud Manager using the backup of the source EBS enviornment 
+* Create a standalone E-Business Suite Environment that will act as the source for the migration.
+* Prepare the source EBS enviornment for migration.
+* Install the Oracle E-Business Suite Cloud Backup Module on the source environment.
+* Create a backup of the source EBS environment and store it on the Oracle Object Storage service.
+* Provision a new EBS instance in Cloud Manager using the backup of the source EBS enviornment.
 
 ### **Prerequisites**
 
-* Complete Workshop: [OCI EBS Cloud Manager Workshop name](link)
+* Complete Workshop: [OCI EBS Cloud Manager Workshop name](link).
 * A MyOracleSupport account is needed to download the Cloud Backup tool to the source EBS environment.
-* key-data.txt file documented with following information (from the EBS Cloud Manger lab):
+* key-data.txt file documented with following information (from the EBS Cloud Manger lab).
 
 **From MyOracleSupport Account:**
 
-* `MOS_Email_Address` (typically your tenancy admin user)
+* `MOS_Email_Address` (typically your tenancy admin user).
 
 **From Provisioning your Cloud Manager Instance You Should have recorded:**
 
