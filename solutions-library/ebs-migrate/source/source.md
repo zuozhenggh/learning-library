@@ -21,7 +21,7 @@ In this lab, you will:
 
 ### **Prerequisites**
 
-* Complete Workshop: [OCI EBS CM Workshop](link)
+* Complete Workshop: [Lift and Shift On-Premises EBS to OCI Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668)
 * An SSH key pair
 * OCI Tenancy admin priviledges
 * A Virtual Cloud Network (VCN) which will be associated with the Oracle E-Business Suite Instance (created as a part of the prerequisite workshop)
@@ -71,29 +71,29 @@ Follow these steps to create a subnet for your source EBS environment. This subn
 
     ![](./images/6-1.png " ")
 
-  Once completed, click **Create Subnet**.
+    Once completed, click **Create Subnet**.
 
-        Note: Review the security lists associated with the subnet to ensure that an ingress rule exists with the following attributes:
+5. Review the security lists associated with the subnet to ensure that an ingress rule exists with the following attributes:
 
-        a. Source Type: CIDR
+    a. **Source Type:** `CIDR`
         
-        b. Source CIDR: 0.0.0.0/0
+    b. **Source CIDR:** `0.0.0.0/0`
 
-        c. IP Protocol: TCP
+    c. **IP Protocol:** `TCP`
 
-        d. Destination Port: 22 
+    d. **Destination Port:** `22` 
   
-5. Once the subnet has been created, add a Route Rule to the Default Route Table with the following:
+6. Once the subnet has been created, add a Route Rule to the Default Route Table with the following:
 
-  a. **Target Type:** `Internet Gateway`
+    a. **Target Type:** `Internet Gateway`
   
-  b. **Destination CIDR Block:** `0.0.0.0/0`
+    b. **Destination CIDR Block:** `0.0.0.0/0`
 
-  b. **Target Internet Gateway:** `ebshol_internetgateway`
+    c. **Target Internet Gateway:** `ebshol_internetgateway`
 
-  ![](./images/6-2.png " ")
+    ![](./images/6-2.png " ")
 
-  ![](./images/6-3.png " ")
+    ![](./images/6-3.png " ")
 
 
 ## **STEP 2:** Create Instance Using an Image from the OCI  Marketplace
@@ -134,7 +134,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
     d. **Choose Fault Domain:** leave unchecked
 
-    e. **Image:** `Oracle E-Business Suite 12.2.9 Demo Install Image` (leave unchanged)
+    e. **Image:** `Oracle E-Business Suite 12.2.9 Demo Install Image`  (leave unchanged)
 
     f. **Shape:** click **Change Shape** and select the following if not already selected:
 
@@ -142,7 +142,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
       
       - **Shape Series:** `Intel Skylake`
 
-      - **Shape:** `VM.Standard2.1` (you may change if desired)
+      - **Shape:** `VM.Standard2.1`  (you may change if desired)
     
     g. **Networking:** 
 
@@ -212,7 +212,7 @@ These steps will walk through the initial configuration of the source EBS instan
 
   ![](./images/15.png " ")
 
-4. Update host name:
+4. Update host name.
 
     ```
     <copy>
@@ -222,74 +222,74 @@ These steps will walk through the initial configuration of the source EBS instan
 
   Note: you will have an opportunity to change the host name later. 
 
-5. Start the database
+5. Start the database.
 
   a. Swtich to the Oracle user:
 
-      ```
-      <copy>
-      sudo su - oracle
-      </copy>
-      ```
+    ```
+    <copy>
+    sudo su - oracle
+    </copy>
+    ```
 
   b. Run the script to start the database:
 
-      ```
-      <copy>
-      /u01/install/APPS/scripts/startdb.sh
-      </copy>
-      ```
+    ```
+    <copy>
+    /u01/install/APPS/scripts/startdb.sh
+    </copy>
+    ```
 
-      ![](./images/16.png " ")
+    ![](./images/16.png " ")
 
-6. Change the passwords for the users
+6. Change the passwords for the users.
 
-  a. Set the environment
+  a. Set the environment.
 
-      ```
-      <copy>
-      . /u01/install/APPS/EBSapps.env run
-      </copy>
-      ```
+    ```
+    <copy>
+    . /u01/install/APPS/EBSapps.env run
+    </copy>
+    ```
 
-      ![](./images/17.png " ")
+    ![](./images/17.png " ")
 
-  b. Set SYSADMIN password
+  b. Set SYSADMIN password.
 
-      ```
-      <copy>
-      mkdir -p ~/logs
-      cd  ~/logs
-      sh /u01/install/APPS/scripts/enableSYSADMIN.sh
-      </copy>
-      ```
+    ```
+    <copy>
+    mkdir -p ~/logs
+    cd  ~/logs
+    sh /u01/install/APPS/scripts/enableSYSADMIN.sh
+    </copy>
+    ```
 
-      ![](./images/18.png " ")
+    ![](./images/18.png " ")
 
     When prompted, enter a new password for the SYSADMIN user. 
 
-  c. Set Demo Users password
+  c. Set Demo Users password.
 
-      ```
-      <copy>
-      cd ~/logs
-      /u01/install/APPS/scripts/enableDEMOusers.sh
-      <copy>
-      ```
+    ```
+    <copy>
+    cd ~/logs
+    /u01/install/APPS/scripts/enableDEMOusers.sh
+    </copy>
+    ```
 
-      ![](./images/19.png " ")
+    ![](./images/19.png " ")
 
     When prompted, enter a new password. 
 
     Note: Do not run this script on a fresh or production environment.
 
-7. Enable HTTP Access
+7. Enable HTTP Access.
 
   From the OCI console, add a security rule to the security list. 
 
   a. Navigate to **Networking** > **Virtual Cloud Networks**.
   
-  b. Select the VCN associated with your instance: **ebshol\_vcn** (make sure you are in **ebshol\_compartment**)
+  b. Select the VCN associated with your instance: **ebshol\_vcn** (make sure you are in **ebshol\_compartment**).
   
   c. Click on the **ebs\_source\_subnet** and then **Security Lists** under Resources.
 
@@ -299,7 +299,7 @@ These steps will walk through the initial configuration of the source EBS instan
 
       ![](./images/21.png " ")
 
-  d. Click **Add Ingress Rules** and fill out the following, leaving the other options as default:
+  d. Click **Add Ingress Rules** and fill out the following, leaving the other options as default.
 
     - **Source CIDR:** `0.0.0.0/0`
 
@@ -309,17 +309,17 @@ These steps will walk through the initial configuration of the source EBS instan
 
   ![](./images/22.png " ")
 
-8. Configure Web Entry Point
+8. Configure Web Entry Point.
 
-  a. Use the script provides to change the default webentry point, which is app.example.com.
+  a. Use the script provides to change the default webentry point, which is app.example.com
 
-      ```
-      <copy>
-      /u01/install/scripts/configwebentry.sh
-      </copy>
-      ```
+    ```
+    <copy>
+    /u01/install/scripts/configwebentry.sh
+    </copy>
+    ```
 
-  b. When prompted, enter the following values:
+  b. When prompted, enter the following values.
 
     - **Enter the Web Entry Protocol (Eg: https/http):** `http`
     - **Enter the Web Entry Host Name(Eg: public):** `myapps` 
@@ -332,7 +332,7 @@ These steps will walk through the initial configuration of the source EBS instan
 
     ![](./images/24-1.png " ")
 
-9. Update local hosts file
+9. Update local hosts file.
 
   **For Windows users**
 
@@ -344,7 +344,7 @@ These steps will walk through the initial configuration of the source EBS instan
 
       d. Browse to ``C:\\Windows\System32\drivers\etc``
 
-      e. Find the **file hosts**
+      e. Find the **file hosts**.
 
       ![](./images/24-2.png " ")
 
@@ -358,13 +358,13 @@ These steps will walk through the initial configuration of the source EBS instan
 
       a. Open a Terminal Window.
 
-      b. Enter the following command:
+      b. Enter the following command.
 
-      ```
-      <copy>
-      sudo vi /etc/hosts
-      </copy>
-      ```
+    ```
+    <copy>
+    sudo vi /etc/hosts
+    </copy>
+    ```
 
       This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
@@ -376,17 +376,17 @@ These steps will walk through the initial configuration of the source EBS instan
 
       e. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
 
-10. Logon to Applications
+10. Log on to Applications.
 
-  Returning to the SSH session in Terminal or PuTTY as the Oracle user, run the following script to start the application:
+  Returning to the SSH session in Terminal or PuTTY as the Oracle user, run the following script to start the application.
 
-      ```
-      <copy>
-      /u01/install/APPS/scripts/startapps.sh 
-      </copy>
-      ```
+    ```
+    <copy>
+    /u01/install/APPS/scripts/startapps.sh 
+    </copy>
+    ```
 
-      ![](./images/25.png " ")
+    ![](./images/25.png " ")
 
   You can now access the applications using [http://myapps.example.com:8000/OA_HTML/AppsLogin](http://myapps.example.com:8000/OA_HTML/AppsLogin).
 
