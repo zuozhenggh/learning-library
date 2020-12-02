@@ -604,23 +604,25 @@ This lab assumes you have:
 
 1. Once you've generated the data masking script in Step 10, before continuing this lab and as prerequisite, **make sure you can R/W files to your DBSecLab VM** from the OEM Console
 
-    - 
+    - Select the menu **Setup > Security > Named Credentials**
 
       ![](./images/dms-201.png " ")
 
-    - 
+    - Select *`OS_ORACLE_SSH`* named credential and click [**Edit**]
 
       ![](./images/dms-202.png " ")
 
-    - 
+      **Note**: We have already pre-configured this Named Credential for you but you have to put your own SSH Private Key to enable it!
+
+    - In the section **Credential Properties**, load your *`OCI SSH Private Key`*
 
       ![](./images/dms-203.png " ")
 
-    - 
+    - Click [**Test and Save**]
 
       ![](./images/dms-204.png " ")
 
-    - 
+    - Your connection has to be successful, if not please make sure your SSH Private Key is the correct one
 
       ![](./images/dms-205.png " ")
 
