@@ -9,6 +9,12 @@ This lab will show you how to use cross data functions.
 
 *Estimated Lab Time:* 15 Minutes
 
+### About Oracle Cross Data Type
+
+JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
+
+The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
+
 ### Objectives
 - Use different data types in combination
 
@@ -20,13 +26,6 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Setup Compute Instance
     - Lab: Start Services
-
-### About Oracle Cross Data Type
-
-JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
-
-The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
-
 
 ## **STEP 1**: Connect to the Pluggable Database (PDB)
 
@@ -188,7 +187,7 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
   - A geometry collection is a geometry object with type GeometryCollection. Instead of a coordinates field it has a geometries field, whose value is an array of geometry objects other than GeometryCollection objects.
 
 
-    Compute the distance in KM from specific point to each Geometry. This example selects the documents (there is only one in this table) for which the geometry field of the first features element is within 100 kilometers of a given point. The point is provided literally here (its coordinates are the longitude and latitude of San Francisco, California). The distance is computed from this point to each geometry object. The query orders the selected documents by the calculated distance. The tolerance in meters for the distance calculation is provided in this query as the literal argument 100.
+    Compute the distance in KM from specific point to each Geometry. This example selects the documents (there is only one in this table) for which the geometry field of the first features element is within 100 kilometers of a given point. The point is  literally provided here (its coordinates are the longitude and latitude of San Francisco, California). The distance is computed from this point to each geometry object. The query orders the selected documents by the calculated distance. The tolerance in meters for the distance calculation is provided in this query as the literal argument 100.
 
 
     ````
@@ -202,14 +201,14 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
     ![](./images/Lab9-Step5-1.png)
 
 ## Summary
-In summary, you queried different tables in Oracle converged database to access different data-types and see how they work together on a single platform.
+To summarize, you queried different tables in Oracle converged database to access different data-types and see how they work together on a single platform.
 
 You may now *proceed to the next lab*.
 
 ## Acknowledgements
 - **Authors** - Pradeep Chandramouli, Nishant Kaushik, Balasubramanian Ramamoorthy, Dhananjay Kumar, AppDev & Database Team, Oracle, October 2020
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Kanika Sharma, NA Technology, October 2020
+- **Last Updated By/Date** - Nishant Kaushik, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
