@@ -150,14 +150,14 @@ In this lab, you will:
     
     ```
 
-2. Log in `PDB21` as `SALES`, set your session in statistic trace, and query the `SALES_ZM` table a few times to see the “consistent gets” value.
+2. Log in `PDB21` as `SALES`, set your session in statistic trace, and query the `SALES_ZM` table a few times to see the “consistent gets” value. Enter the password you used to create your DB System, `WElcome123##`.
 
   
     ```
     
     $ <copy>sqlplus sales@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     SQL> <copy>SET AUTOTRACE ON STATISTIC</copy>
     

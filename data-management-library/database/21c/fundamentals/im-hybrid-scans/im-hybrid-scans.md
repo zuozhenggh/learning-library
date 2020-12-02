@@ -111,7 +111,7 @@ The `IM_Hybrid_setup.sh` shell script configures the IM column store to 110M, cr
     
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Last Successful login time: Wed Jan 08 2020 12:03:56 +00:00
     

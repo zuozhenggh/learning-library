@@ -41,7 +41,7 @@ In this lab, you will:
     
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     
@@ -78,7 +78,7 @@ In this lab, you will:
     
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Last Successful login time: Fri Dec 13 2019 10:42:50 +00:00
     

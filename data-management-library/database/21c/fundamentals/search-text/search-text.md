@@ -36,7 +36,7 @@ In this lab, you will:
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
 
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
 
     keystore altered.
     ...
@@ -80,7 +80,7 @@ In this lab, you will:
     Tablespace created.
 
     SQL>
-    SQL> CREATE USER textuser IDENTIFIED BY <i>password</i> default tablespace tbs_text;
+    SQL> CREATE USER textuser IDENTIFIED BY <i>WElcome123##</i> default tablespace tbs_text;
 
     User created.
 

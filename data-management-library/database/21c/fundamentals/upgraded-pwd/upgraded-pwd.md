@@ -198,7 +198,7 @@ In this lab, you will:
 	
 	$ <copy>orapwd file=$ORACLE_BASE/dbs/orapwCDB21 sys=Y force=Y format=12</copy>
 	
-	Enter password for SYS: <i>password</i>
+	Enter password for SYS: <i>WElcome123##</i>
 	
 	$
 	

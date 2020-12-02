@@ -60,7 +60,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 	
 	Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 	
-	Enter password: <b><i>password</i></b>
+	Enter password: <b><i>WElcome123##</i></b>
 	
 	Last Successful login time: Mon Mar 16 2020 11:32:00 +00:00
 	
