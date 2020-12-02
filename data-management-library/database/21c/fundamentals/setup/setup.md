@@ -9,28 +9,33 @@ Estimated Lab Time: 15 minute
 
 In this lab, you will:
 * Define and test the connections
-* Download scripts
-* Update scripts
+* Download scripts needed to run 21c labs
+* Update scripts with the chosen password
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Working knowledge of vi
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a 21c DBCS VM Database
+  
 
 ## **STEP 1**: Define and test the connections
 
-1. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created.
+1. Login to Oracle Cloud and re-start the Oracle Cloud Shell.  
+2. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
 
-```
-ps -ef|grep smon
-sqlplus / as sysdba
-```
-```
-show pdbs
-```
+	```
+	<copy>
+	ps -ef|grep smon
+	sqlplus / as sysdba
+	</copy>
+	```
+	```
+	<copy>
+	show pdbs
+	</copy>
+	```
 
 2. Ensure that the TNS alias have been created for both cdb21 and pdb21 in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora`
 
@@ -91,6 +96,8 @@ show pdbs
 ## **STEP 2**: Download scripts
 
 Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle Cloud object storage and unzip the file.
+
+*Note*: These scripts are designed for DBCS VM single node instances 
 
 1.  Change to the oracle user home directory
 
