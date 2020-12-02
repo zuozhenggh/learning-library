@@ -602,19 +602,45 @@ This lab assumes you have:
 
 ## **STEP 11**: Execute the Data Masking Script
 
-1. Once you've generated the data masking script in Step 10, select *`EMPLOYEE_DATA_MASK`* and click [**Schedule Job**]
+1. Once you've generated the data masking script in Step 10, before continuing this lab and as prerequisite, **make sure you can R/W files to your DBSecLab VM** from the OEM Console
+
+    - 
+
+      ![](./images/dms-201.png " ")
+
+    - 
+
+      ![](./images/dms-202.png " ")
+
+    - 
+
+      ![](./images/dms-203.png " ")
+
+    - 
+
+      ![](./images/dms-204.png " ")
+
+    - 
+
+      ![](./images/dms-205.png " ")
+
+2. Now, go back to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Masking Definitions** as follow:
+
+   ![](./images/dms-044.png " ")
+
+3. Select *`EMPLOYEE_DATA_MASK`* and click [**Schedule Job**]
 
    ![](./images/dms-079.png " ")
 
-    **Note**: This action will immediately schedule and run the masking operation on your target database
+    **Note**: This action will run the masking operation on your target database
 
-2. Select the masking mode used during the script generating phase previoulsy (here, select *`Mask In-Database`*) and tick *`The select target is not a production database`*
+4. Select the masking mode used during the script generating phase previoulsy (here, select *`Mask In-Database`*) and tick *`The select target is not a production database`*
 
    ![](./images/dms-088.png " ")
 
     **Note**: If you don't tick it, the script will not be executed!
 
-3. In the **Data Mask Options** section, enter:
+5. In the **Data Mask Options** section, enter:
     - Script File Location: *`/home/oracle/DBSecLab/livelabs/dms`*
     - Script File Name: *`mask_empdata_in-db_<your_timestamp>.sql`*
 
@@ -622,7 +648,7 @@ This lab assumes you have:
 
     **Note**: The masking script file will be stored in this directory on **DBSecLab VM** and can be reused as many times as you need
 
-4. Configure access permissions
+6. Configure access permissions
     - In the **Host Credentials** section, check the *`Named`* option and select *`OS_ORACLE_SSH`* for Credential Name
 
       ![](./images/dms-090a.png " ")
@@ -631,13 +657,13 @@ This lab assumes you have:
 
       ![](./images/dms-090b.png " ")
 
-5. Click [**Submit**]
+7. Click [**Submit**]
 
-6. Once you submit the job, you will be forwarded to a confirmation page that the job was submitted successfully. Right-click on **Masking Job Executing** link and open it in a new tab
+8. Once you submit the job, you will be forwarded to a confirmation page that the job was submitted successfully. Right-click on **Masking Job Executing** link and open it in a new tab
 
    ![](./images/dms-091.png " ")
 
-7. Once the job is successfully completed, go back to the Data Masking Definitions screen and click [**Go**] to refresh the status of the job. It will become **Masking Job Succeeded**
+9. Once the job is successfully completed, go back to the Data Masking Definitions screen and click [**Go**] to refresh the status of the job. It will become **Masking Job Succeeded**
 
    ![](./images/dms-092.png " ")
 
