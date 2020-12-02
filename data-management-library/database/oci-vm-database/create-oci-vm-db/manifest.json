@@ -19,7 +19,7 @@
       },
       {
         "title": "Lab 4: Create an Oracle Cloud Infrastructure VM Database",
-        "filename": "create-oci-vm-db/create-oci-vm-vcn.md"
+        "filename": "create-oci-vm-db/create-oci-vm-db.md"
       },
       {
           "title": "(Optional) Lab 5: Add an Ingress Rule",

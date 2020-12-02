@@ -35,7 +35,7 @@ In this lab, you will:
     
     Connected to:
     
-    Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
+    Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
     
     Version 21.2.0.0.0
     
