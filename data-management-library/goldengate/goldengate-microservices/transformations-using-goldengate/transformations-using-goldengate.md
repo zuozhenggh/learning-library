@@ -25,6 +25,8 @@ Lab - Administration Client
 
 ### Objectives
 
+To use GoldegGate to perform transformations on the data during the replication process.
+
 KEY FEATURES
 
 Non-invasive, real-time transactional data streaming while applying target transformations

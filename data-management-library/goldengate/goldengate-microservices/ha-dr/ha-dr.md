@@ -10,6 +10,8 @@ This lab will introduce you to Oracle GoldenGate for Microservices Workshop Arch
 
 ### Objectives
 
+Using GoldeGate for High Availability replication and Disaster Recovery
+
 KEY FEATURES
 
 Non-invasive, real-time transactional data streaming

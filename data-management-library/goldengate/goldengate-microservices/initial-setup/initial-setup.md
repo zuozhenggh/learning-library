@@ -11,6 +11,8 @@ In this lab we will setup the required database and GoldeGate replication users.
 
 ### Objectives
 
+Understanding how to setup GoldenGate Database for replication and define users for replication
+
 KEY FEATURES
 
 Non-invasive, real-time transactional data streaming
