@@ -26,7 +26,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
 2. Click the VCN that was created by the stack, which would be called `nonjrf-wls` if you used the same naming conventions.
 
-  ![](./images/provision-db-2.png =100%x*)
+  ![](./images/provision-db-2.png)
 
 3. Click **Network Security Groups** on the left-side menu
 
@@ -47,7 +47,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
     - **IP Protocol**: **TCP**
     - **Destination Port Range**: **1522**
 
-  ![](./images/vcn-nsg2.png =100%x*)
+  ![](./images/vcn-nsg2.png)
 
   Then click **Create**
 
@@ -58,11 +58,11 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
 1. Click **Subnets** on the left-side menu
 
-  ![](./images/provision-db-7-subnet.png =100%x*)
+  ![](./images/provision-db-7-subnet.png)
 
 2. Click **Create Subnet**
 
-  ![](./images/provision-db-8-subnet.png =100%x*)
+  ![](./images/provision-db-8-subnet.png)
 
 3. **Name** the subnet `nonjrf-db-subnet`
 
@@ -100,23 +100,23 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
 2. Click **Create Autonomous Database**
 
-  ![](./images/provision-db-atp2.png =100%x*)
+  ![](./images/provision-db-atp2.png)
 
 3. Make sure you are in the **Compartment** where you created the DB subnet, and name your **Database System** **WLSATPDB** or a name of your choice
 
-  ![](./images/provision-db-atp2b.png =100%x*)
+  ![](./images/provision-db-atp2b.png)
 
 4. Select **Workload Type** to be **Transaction Processing**.
 
-  ![](./images/provision-db-atp3.png =100%x*)
+  ![](./images/provision-db-atp3.png)
 
 5. Keep the defaults for **Deployment Type** to **Shared Infrastructure**
 
-  ![](./images/provision-db-atp4.png =100%x*)
+  ![](./images/provision-db-atp4.png)
 
 6. Keep the defaults for **Database Version**, **OCPU count**, **Storage** and **Auto Scaling**
 
-  ![](./images/provision-db-atp5.png =100%x*)
+  ![](./images/provision-db-atp5.png)
 
 7. Enter and confirm the **Admin Database password** as it is on-premises: 
 
@@ -126,11 +126,11 @@ In this section we will create a Network Security Group for the WebLogic subnet 
     </copy>
     ```
 
-  ![](./images/provision-db-atp6.png =100%x*)
+  ![](./images/provision-db-atp6.png)
 
 8. Choose **Network Access** to be **Virtual Cloud Network**
 
-  ![](./images/provision-db-atp7.png =100%x*)
+  ![](./images/provision-db-atp7.png)
 
 9. Then select the **Virtual Cloud Network** as **nonjrf-wls**
 

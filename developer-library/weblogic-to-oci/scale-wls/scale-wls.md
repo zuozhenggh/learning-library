@@ -30,11 +30,11 @@ For this lab you need:
 
 1. To scale the number of nodes, go to **Resources Manager -> Stacks** and select the stack that was used to provision the WebLogic domain
 
-  ![](./images/scale-stack.png =100%x*)
+  ![](./images/scale-stack.png)
 
 2. Click **Variables** then click **Edit Variables**
 
-  ![](./images/scale-variables.png =100%x*)
+  ![](./images/scale-variables.png)
 
 3. Scroll to the **Weblogic Server Node Count** input and adjust the number of nodes
 
@@ -66,7 +66,7 @@ For this lab you need:
 
 2. Click the WebLogic instance to modify
 
-  ![](./images/scale-compute-instance.png =100%x*)
+  ![](./images/scale-compute-instance.png)
 
 3. In the instance details, click **Edit**
 

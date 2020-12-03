@@ -119,11 +119,11 @@ to open the EM console
 
 2. Login using usename `weblogic`, and password `welcome1`
 
-  ![](./images/em-login.png =100%x*)
+  ![](./images/em-login.png)
 
 3. Check that the admin server and SOA domain are running (other domains will not be running and that is normal)
 
-  ![](./images/soa-desktop-em-status.png =100%x*)
+  ![](./images/soa-desktop-em-status.png)
 
 You may proceed to the next lab
 

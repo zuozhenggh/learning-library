@@ -805,7 +805,7 @@ updateDomain.sh completed successfully (exit code = 0)
 
 2. In Firefox you will see the self-certificate warning as below:
 
-    ![](./images/self-cert-warning.png =100%x*)
+    ![](./images/self-cert-warning.png)
 
     Click **Advanced...** and then **Accept the Risk and Continue**
 
@@ -813,14 +813,14 @@ updateDomain.sh completed successfully (exit code = 0)
 
 4. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
 
-  ![](./images/oci-deployments.png =100%x*)
+  ![](./images/oci-deployments.png)
 
 5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioning, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
     Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
 
-  ![](./images/oci-simpledb-app.png =100%x*)
+  ![](./images/oci-simpledb-app.png)
 
 You may proceed to the next lab.
 

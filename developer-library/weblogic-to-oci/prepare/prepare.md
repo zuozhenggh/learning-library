@@ -44,11 +44,11 @@ For this lab you will need:
 
 1. Once the vault is provisioned, click the vault
 
-   ![](./images/prereq-vault4.png =100%x*)
+   ![](./images/prereq-vault4.png)
 
 2. then click **Create Key**
 
-   ![](./images/prereq-key1.png =100%x*)
+   ![](./images/prereq-key1.png)
 
 3. name the key `WebLogicKey` or a name of your choosing and click **Create Key**
 
@@ -66,11 +66,11 @@ For this lab you will need:
 
 3. Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**
 
-  ![](./images/prereq-secret3.png =100%x*)
+  ![](./images/prereq-secret3.png)
 
 4. Click the `WebLogicAdminPassword` **Secret** you just created and **make a note** of its **OCID**
 
-   ![](./images/prereq-secret4.png =100%x*)
+   ![](./images/prereq-secret4.png)
 
 <if type="oke">
 ## **STEP 4:** Create an Auth Token to access OCI Registry

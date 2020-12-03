@@ -598,7 +598,7 @@ appDeployments:
 
 4. Go to *https://PUBLIC_LOAD_BALANCER_IP/SimpleDB* to see the SimpleDB application
 
-  ![](./images/oci-simpledb-app.png =100%x*)
+  ![](./images/oci-simpledb-app.png)
 
   You will be prompted once again with the self-sign certificate warning in Firefox
 

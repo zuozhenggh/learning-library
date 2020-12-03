@@ -54,15 +54,15 @@ We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigur
 
 2. Click on **Create VCN** button and then select **VCN with Internet Connectivity** and click on **Start VCN Wizard** button.
 
-  ![](./images/provision-vcn-4.png =100%x*)
+  ![](./images/provision-vcn-4.png)
 
 3. Provide the VCN NAME (we'll use `SOAMP1VCN`) and select the Compartment which you have created earlier.
 
-  ![](./images/provision-vcn-5.png =100%x*)
+  ![](./images/provision-vcn-5.png)
 
 4. Select the default values for Configure VCN and Subnets unless you have been provided by specific CIDR range from your Network Administrator to use, then click on **Next** button.
 
-  ![](./images/provision-vcn-6.png =100%x*)
+  ![](./images/provision-vcn-6.png)
 
 5. Review all the **VCN** ,**Subnet** ,**Gateway**, **Security List** and **Route Table** details and then click on **Create** button.
 
@@ -72,7 +72,7 @@ We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigur
 
 6. Click **Create**
 
-  ![](./images/provision-vcn-7.png =100%x*)
+  ![](./images/provision-vcn-7.png)
 
 7. *If you see any provisioning error, make sure to click* **Retry Provision** *before continuing*
 
@@ -100,7 +100,7 @@ In this section we will create a Security List for the SOA subnet to be able to 
 
 2. Click **Security List for Private Subnet-SOAMP1VCN** 
 
-  ![](./images/provision-db-23-sl.png =100%x*)
+  ![](./images/provision-db-23-sl.png)
 
 3. Click on **Add Ingress Rules**
 

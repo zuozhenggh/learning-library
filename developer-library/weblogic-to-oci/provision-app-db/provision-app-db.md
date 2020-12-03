@@ -43,18 +43,18 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
 3. Copy the CIDR block of the `nonjrf-wls-subnet` (which should be 10.0.3.0/24) and click **Security Lists** on the left-side menu
 
-  ![](./images/provision-db-3-seclists.png =100%x*)
+  ![](./images/provision-db-3-seclists.png)
 </if>
 <if type="oke">
 
 3. Copy the CIDR block of the `nonjrf-workwers` subnet (which should be 10.0.4.0/28) and click **Security Lists** on the left-side menu
 
-  ![](./images/provision-db-3-seclistsoke.png =100%x*)
+  ![](./images/provision-db-3-seclistsoke.png)
 </if>
 
 4. Click **Create Security List**
 
-  ![](./images/provision-db-4.png =100%x*)
+  ![](./images/provision-db-4.png)
 
 5. **Name** the security list `nonjrf-db-security-list`
 
@@ -87,11 +87,11 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
 1. Click **Subnets** on the left-side menu
 
-  ![](./images/provision-db-7-subnet.png =100%x*)
+  ![](./images/provision-db-7-subnet.png)
 
 2. Click **Create Subnet**
 
-  ![](./images/provision-db-8-subnet.png =100%x*)
+  ![](./images/provision-db-8-subnet.png)
 
 3. **Name** the subnet `nonjrf-db-subnet`
 
@@ -129,11 +129,11 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
 2. Click **Create DB System**
 
-  ![](./images/provision-db-11.png =100%x*)
+  ![](./images/provision-db-11.png)
 
 3. Make sure you are in the **Compartment** where you created the DB subnet, and name your **Database System**
 
-  ![](./images/provision-db-12.png =100%x*)
+  ![](./images/provision-db-12.png)
 
 4. Select an Availability Domain or keep the default, keep the default **Virtual Machine** and select a **Shape** that is available.
 
@@ -199,11 +199,11 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
 16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**, and click **Create DB System**
 
-  ![](./images/provision-db-24.png =100%x*)
+  ![](./images/provision-db-24.png)
 
   This will usually take up to 40 minutes to provision.
 
-  ![](./images/provision-db-25.png =100%x*)
+  ![](./images/provision-db-25.png)
 
 To save some time, you can proceed to starting the DB migration lab while the DB is provisioning if you wish, however you will need the DB fully provisioned and you will need to gather the DB information before you can finish the migration.
 

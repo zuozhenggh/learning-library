@@ -30,15 +30,15 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 2. In the search input, type "`weblogic`". For this lab, we'll use the **Oracle WebLogic Server Enterprise Edition UCM**
 
-   ![](./images/provision-2.png =100%x*)
+   ![](./images/provision-2.png)
 
 3. Make sure you are in the **Compartment** you want to use, use the **default WebLogic version** available, accept the License agreement and click **Launch the Stack**
 
-   ![](./images/provision-3.png =100%x*)
+   ![](./images/provision-3.png)
 
 4. **Name** the stack and click **Next**
 
-   ![](./images/provision-4.png =100%x*)
+   ![](./images/provision-4.png)
 
 5. **Enter** a **Resource Name Prefix**.
 
@@ -160,15 +160,15 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 24. Click **Next**
 
-  ![](./images/provision-24.png =100%x*)
+  ![](./images/provision-24.png)
 
 25. and then click **Create**
 
-  ![](./images/provision-25.png =100%x*)
+  ![](./images/provision-25.png)
 
 26. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  ![](./images/provision-26.png =100%x*)
+  ![](./images/provision-26.png)
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
@@ -178,7 +178,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 - *If you provisioned in a **Public Subnet***, you should see something like the following:
 
-  ![](./images/provision-27.png =100%x*)
+  ![](./images/provision-27.png)
 
 
     - Make a note of the **WebLogic Admin Server Public IP address** from the **WebLogic Admin Server Console URL** for later use.
@@ -189,7 +189,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 - *If you provisioned in a **Private Subnet***, you should see something like the following:
 
-  ![](./images/provision-28.png =100%x*)
+  ![](./images/provision-28.png)
 
     - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
 

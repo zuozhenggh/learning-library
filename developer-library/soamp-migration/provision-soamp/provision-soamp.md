@@ -24,7 +24,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 1. Open a terminal in the 'on-premises' environment.
 
-  ![](./images/desktop-terminal-launch.png =100%x*)
+  ![](./images/desktop-terminal-launch.png)
 
 2. In the terminal, create a SSH key
 
@@ -81,15 +81,15 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 2. In the search input, type "`soa`". For this lab, we'll use the **Oracle SOA Suite (BYOL)**
 
-   ![](./images/soa-mp-list.png =100%x*)
+   ![](./images/soa-mp-list.png)
 
 3. Make sure you are in the **Compartment** you want to use, use the **default WebLogic version** available, accept the License agreement and click **Launch the Stack**
 
-   ![](./images/provision-3.png =100%x*)
+   ![](./images/provision-3.png)
 
 4. **Name** the stack and click **Next**
 
-   ![](./images/provision-4.png =100%x*)
+   ![](./images/provision-4.png)
 
 5. **Enter** a **Resource Name Prefix**, we'll use `SOAMP2`.
 
@@ -217,11 +217,11 @@ or can Select `VM StandardE2.1` if working on trial instance
 
 31. Once you got all the port details click **Next** and then verify all the details and click **Create**
 
-  ![](./images/provision-17.png =100%x*)
+  ![](./images/provision-17.png)
 
 34. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  ![](./images/provision-19.png =100%x*)
+  ![](./images/provision-19.png)
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu. 
 
@@ -233,7 +233,7 @@ To save some time you may proceed to the next lab and move to first steps of mig
 
 1. In the job **Outputs** (left menu)
 
-  ![](./images/outputs.png =100%x*)
+  ![](./images/outputs.png)
 
    Make a note of :
 
@@ -250,7 +250,7 @@ To save some time you may proceed to the next lab and move to first steps of mig
 
    Note the Public IP address of the bastion
 
-   ![](./images/bastion-ip.png =100%x*)
+   ![](./images/bastion-ip.png)
 
 
 ## **STEP 4:** Connect to the SOA Console through the Bastion Host.
@@ -279,11 +279,11 @@ Since the stack is deployed in a **private subnet**, accessing the console is ac
 
    Note: the connection uses SSL, so make sure to use the `https://` scheme.
 
-   ![](./images/provision-29-connectinstance.png =100%x*)
+   ![](./images/provision-29-connectinstance.png)
 
 11. go to **SOA -> soa-infra** you can see some pre deployed example applications, and check the server health.
 
-   ![](./images/provision-30-connectinstance.png =100%x*)
+   ![](./images/provision-30-connectinstance.png)
 
 
 You may proceed to the next lab

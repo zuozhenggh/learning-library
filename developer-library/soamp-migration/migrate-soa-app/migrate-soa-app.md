@@ -58,7 +58,7 @@ to open the EM console for the on-premises environment,
     - usename `weblogic`
     - password `welcome1`
 
-    ![](./images/3-open-console.png =100%x*)
+    ![](./images/3-open-console.png)
 
 2. Click the menu icon
 
@@ -66,15 +66,15 @@ to open the EM console for the on-premises environment,
 
 3. Now click on top right button and go to **SOA_Domain -> SOA -> SOA-Infra**
 
-    ![](./images/4-open-project.png =100%x*)
+    ![](./images/4-open-project.png)
 
 4. Then click the **Deployed Composites** tab
 
-    ![](./images/deployed-composites.png =100%x*)
+    ![](./images/deployed-composites.png)
 
 5. Search for the composite **IWSProj3[1.0]** used for migration in this lab.
 
-    ![](./images/5-deployed-composite.png =100%x*)
+    ![](./images/5-deployed-composite.png)
 
     This application is a simple file movement composite which moves a test XML file from the `/tmp/soa/out` folder to the `/tmp/soa/out1` folder.
 
@@ -157,7 +157,7 @@ In order to achieve this, you need to:
 
 1. Open the Jdeveloper 12.2.1.3 on the on-premises desktop
 
-    ![](./images/jdev12213.png =100%x*)
+    ![](./images/jdev12213.png)
 
 2. In the Application tab, select **IWSApplication**
 
@@ -185,7 +185,7 @@ In order to achieve this, you need to:
 
 8. Let the code build successfully 
 
-    ![](./images/compilecode12213.png =100%x*)
+    ![](./images/compilecode12213.png)
 
 9. Open Jdeveloper 12.2.1.4
 
@@ -301,7 +301,7 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
     ![](./images/firefox-ssl2.png =50%x*)
 
-    ![](./images/soamp-deployment-1.png =100%x*)
+    ![](./images/soamp-deployment-1.png)
 
 3. Login with the credential from provisioning
 
@@ -318,7 +318,7 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
 4. Then click the **Deployed Composites** tab
 
-    ![](./images/deployed-composites.png =100%x*)
+    ![](./images/deployed-composites.png)
 
 5. Click **Deploy**
 
@@ -348,11 +348,11 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
 10. Select **SOA Folder** as **default** and click **Next**
 
-    ![](./images/deploy4.png =100%x*)
+    ![](./images/deploy4.png)
 
 12. Review all the information and then click **Deploy**
 
-    ![](./images/deploy5.png =100%x*)
+    ![](./images/deploy5.png)
 
 8. You can see **Processing Deploy** Deployment in progress message and wait until you get the message **Deployment Succeeded** and click **Close** button
 
@@ -360,7 +360,7 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
 9. Check the deployed project in **Dashboard** 
 
-    ![](./images/soamp-deployment-9.png =100%x*)
+    ![](./images/soamp-deployment-9.png)
 
 
 ## **STEP 5:** Check the application on the target SOA domain
@@ -396,11 +396,11 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
 6. you can check the **Flow Instances** of the project with one **FlowID** generated
 
-    ![](./images/soamp-testing-5.png =100%x*)
+    ![](./images/soamp-testing-5.png)
 
 5. Click on **FlowID** and see the **Audit Trail** and the relevant logs.
 
-    ![](./images/soamp-testing-6.png =100%x*)
+    ![](./images/soamp-testing-6.png)
 
 You may proceed to the next lab
 

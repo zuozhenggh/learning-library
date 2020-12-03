@@ -31,15 +31,15 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 2. In the search input, type "`weblogic`". For this lab, we'll use the **WebLogic Enterprise Edition on OKE UCM**
 
-   ![](./images/provision-2.png =100%x*)
+   ![](./images/provision-2.png)
 
 3. Make sure you are in the **Compartment** you want to use, use the **default WebLogic version** available, accept the License agreement and click **Launch the Stack**
 
-   ![](./images/provision-3.png =100%x*)
+   ![](./images/provision-3.png)
 
 4. **Name** the stack and click **Next**
 
-   ![](./images/provision-4.png =100%x*)
+   ![](./images/provision-4.png)
 
 5. **Enter** a **Resource Name Prefix**.
 
@@ -132,11 +132,11 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 21. and then click **Create**
 
-  ![](./images/provision-25.png =100%x*)
+  ![](./images/provision-25.png)
 
 22. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  ![](./images/provision-26.png =100%x*)
+  ![](./images/provision-26.png)
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
@@ -146,7 +146,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
   You should see something like the following:
 
-  ![](./images/provision-28.png =100%x*)
+  ![](./images/provision-28.png)
 
   - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
 
@@ -230,7 +230,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 3. In Firefox, go to *http://`PRIVATE_LOAD_BALANCER_IP`/console* to find the WebLogic Admin console
 
-  ![](./images/wls-empty.png =100%x*)
+  ![](./images/wls-empty.png)
 
   You should find the deployment list is empty under **Deployments**
 
@@ -238,7 +238,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
   You will be prompted to create a default admin user, and then you can see the Jenkins UI and pipelines
 
-  ![](./images/jenkins.png =100%x*)
+  ![](./images/jenkins.png)
 
 
 You can proceed to the next lab
