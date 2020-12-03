@@ -4,7 +4,7 @@
 
 In this lab, you will download and run two sets of scripts. First, you will download and run the Hadoop Distributed File System (HDFS) scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to a new local directory on your master node in your BDS cluster. The HDFS scripts manipulates some of the downloaded data files, and then upload them to new HDFS directories. The HDFS scripts also create Hive databases and tables which you will query using Hue. Second, you will download and run the object storage scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to your local directory using OCI Cloud Shell. The object storage scripts uploads the data to a new bucket in Object Storage. See the [Data License Agreement](https://www.citibikenyc.com/data-sharing-policy) for information about the Citi Bikes NYC data license agreement.
 
-**Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
+**Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of the content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
 
 ### Objectives
 
@@ -268,6 +268,10 @@ In this step, you will download two scripts that will set up your Object Storage
 ![](./images/cloud-shell-icon.png). It may take a few moments to connect and authenticate you.
 
     ![](./images/cloud-shell-started.png " ")
+
+    **Note:** To change the Cloud Shell background color theme from dark to light as, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
+
+    ![](./images/change-theme.png " ")
 
 3. Click **Copy** to copy the following command. Right-click your mouse, select **Paste**, and then paste it on the command line.  You will use this script to set up your environment for the Object Store data. Press the **[Enter]** key to run the command.
 
