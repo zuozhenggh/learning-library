@@ -20,7 +20,7 @@ When you create an Autonomous Database, the auto scaling checkbox is enabled by 
 
 If your organization performs intensive queries at varied times, auto scaling will ramp up and ramp down CPU resources when needed.
 
-As in our lab example below, if a customer provisions an autonomous database with 1 base OCPU and enables auto scale, they will immediately have access to 3x the 1 base OCPU provisioned, therefore 3 OCPUs. They will also immediately have access to 3x the IO.
+As in our lab example below, if a customer provisions an Autonomous Database with 1 base OCPU and enables auto scale, they will immediately have access to 3x the 1 base OCPU provisioned, therefore 3 OCPUs. They will also immediately have access to 3x the IO.
 
 The customer is charged only for the actual average number of OCPUs used per hour, between 1 and 3 OCPUs.
 
@@ -28,12 +28,12 @@ The customer is charged only for the actual average number of OCPUs used per hou
 
 -   Learn the benefits of auto scaling
 -   Learn how to enable and disable auto scaling
--   Examine the before/after performance improvements of auto scaling
+-   Examine the performance benefits of auto scaling
 
 ### Prerequisites
 
 - This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- Make sure you have completed the previous lab in the Contents menu on the left, *Provision Autonomous Database*, before you proceed with this lab, if you want to apply auto scaling to an existing ADW database. Otherwise, proceed with this lab to try auto scaling with a new autonomous database.
+- Make sure you have completed the previous lab in the Contents menu on the left, *Provision Autonomous Database*, before you proceed with this lab, if you want to apply auto scaling to an existing ADW database. Otherwise, proceed with this lab to try auto scaling with a new Autonomous Database.
 - **Note** Auto scaling is not available with Oracle's **Always Free** databases.
 
 ### How You Will Test a Real-World Auto Scaling Example in this Lab
@@ -51,7 +51,7 @@ The **business case** we want to answer here is to **summarize orders by month a
 
     ![](images/disable-auto-scaling.png " ")
 
-2. Go back to the details page for your ADW database. Click the **Tools** tab. In the next screen, click **Open SQL Developer Web**. In the log-in dialog, provide the username `admin` and the administrator password you specified when you created the autonomous database. (Note that you can alternatively use SQL Developer desktop client instead of SQL Developer Web.)
+2. Go back to the details page for your ADW database. Click the **Tools** tab. In the next screen, click **Open SQL Developer Web**. In the log-in dialog, provide the username `admin` and the administrator password you specified when you created the Autonomous Database. (Note that you can alternatively use SQL Developer desktop client instead of SQL Developer Web.)
 
     ![](./images/click-tools-tab.png " ")
 
@@ -107,12 +107,13 @@ create or replace procedure test_proc(i_executions number := 2) as
   v_test_start_time date;
   v_last_test_start_time date;
   v_cpu_count number;
---
+
 function get_test_no return number is
   v_last_test_no         number;
   v_last_test_start_time date;
   v_test_no              number;
   v_test_start_time      date;
+
 begin
   select test_no, start_time into v_last_test_no, v_last_test_start_time
   from   test_run_data
@@ -128,9 +129,8 @@ exception
     v_test_no:= test_run_seq.nextval;
     return v_test_no;
 end get_test_no;
---
+
 begin
---  v_end_date := sysdate + (i_minutes/1440);
   v_test_no := get_test_no;
   select userenv('SID') into v_sid from dual;
   select sum(value) into v_cpu_count from gv$parameter where name = 'cpu_count';
@@ -139,7 +139,6 @@ begin
   v_begin_date := sysdate;
   v_test_sql_1 := q'#select /* #';
   v_test_sql_2 := q'# */ /*+ NO_RESULT_CACHE */ count(*) from (
---
 -- This query will summarize orders by month and city for customers in the US in the Fall of 1992
 SELECT
     d.d_month,
@@ -241,18 +240,6 @@ order by 1;
 
   In the next steps, let's see if auto scaling reduces query time and increases CPU and IO usage.
 
-7. Go to your Autonomous Database console page and once again click **Performance Hub**. Move your mouse cursor in the **Activity** panel above the SQL Monitoring panel, and drag the rectangle horizontally across to cover the portion of the timeline that indicates your recent query activity. This will fill in the **ASH Analytics** panel at the bottom, with information from the completed test.
-
-    Scroll down and view the **Average Active Sessions** chart. You will see 3 concurrent sessions using the HIGH service.
-
-    ![](./images/drag-rectangle-to-cover-period-of-queries.png " ")
-
-    ![](./images/average-active-sessions-shows-three-sessions.png " ")
-
-8. The drop-down menu in the upper left corner of the **Average Active Sessions** chart shows Consumer Group by default. In the drop-down menu, choose **Top Dimensions** -> **Wait Class** from the sub-menu. Notice the session wait events on CPU and User I/O while the test is limited to 1 OCPU. We will come back to this graph at the end of this lab, after we have run this test with auto scaling turned on, to see a sizeable difference.
-
-    ![](./images/view-by-weight-class-three-sessions.png " ")
-
 ## **Test 2 - Auto Scaling Enabled, Providing 3x the Amount of CPU and IO Resources**
 
 ## **STEP 4**: Enable Auto Scaling
@@ -321,7 +308,11 @@ order by 1;
 
     - Consequently, the average query time reduced from ~275 seconds to ~97 seconds and therefore the duration of the total test that ran 3 worksheet sessions concurrently **reduced approximately 3x** from ~581 seconds to ~210 seconds.
 
-3. Viewing our activity in Performance Hub's Average Active Sessions chart by Wait Class in the 2nd test after auto scaling is enabled, since there are 3 OCPUs available to the running queries, we now see:
+3. Go to your Autonomous Database console page and click **Performance Hub**. Move your mouse cursor in the **Activity** panel above the SQL Monitoring panel, and drag the rectangle horizontally across to cover the portion of the timeline that indicates your recent query activity. This will fill in the **ASH Analytics** panel at the bottom, with information from the completed test.
+
+    ![](./images/drag-rectangle-to-cover-period-of-queries.png " ")
+
+4. Scroll down and view the **Average Active Sessions** chart. View the Average Active Sessions chart by Wait Class in the 2nd test after auto scaling is enabled.  Since there are 3 OCPUs available to the running queries, we now see:
 - The **inflated I/O waits** (in blue) due to the unavailability of resources reduces significantly.
 - Consequently, the workload becomes more efficient (CPU-bound) and is able to utilize more CPU (in dark green) reducing the average time spent on running each query.
 - The **Scheduler waits** (in light green) on CPU/IO resources almost entirely disappears.
