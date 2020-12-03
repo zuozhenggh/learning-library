@@ -6,8 +6,13 @@
 
 *Estimated Lab Time*: 10 Minutes
 
+### About Datatype Demonstration tool
+ The datatype access and testing utility **endPointChecker** is pre-installed as part of the eSHOP application for workshop convenience.
+ This tool will be used to perform Create, Retrieve, Update and Delete operations on the different data types.
+ The tool makes AJAX calls to the business logic.
+
 ### Objectives
-- Get introduced to pre-built data type demonstration tool
+- Introduction to pre-built data type demonstration tool
 - Launch the tool UI 
 
 ### Prerequisites
@@ -20,16 +25,11 @@ This lab assumes you have:
     - Lab: Start Services
     - Lab: eSHOP Application
 
-### About Datatype Demonstration tool
- The datatype access and testing utility **endPointChecker** is pre-installed as part of the eSHOP application for workshop convenience.
- This tool will be used to perform Create, Retrieve, Update and Delete operations on the different data types.
- The tool makes AJAX calls to the business logic.
-
 ## **STEP 1**:  Access data type code 
 
   The logic for creating REST end points to access data from converged database is written under controllers   as xxxController.java.  All the java class files collecting such data are named as xxxDao.java files.
 
-1. In the JDeveloper under Projects Navigation Pane, under Click on **+** sign against **converge**, Expand **Application Sources**, expand **converge.controllers**.
+1. In the JDeveloper under Projects Navigation Pane, Click on **+** sign against **converge**, expand **Application Sources**, expand **converge.controllers**.
 2. Double click on **JSONController.java** to open it in JDeveloper.
 3. Check all the @RequestMapping annotations.  You will find the request method and data type consumed for each method. 
 
@@ -81,14 +81,14 @@ This lab assumes you have:
 ***Note***: Certain Datatype's fetch requests may not give results instantaneosly. In certain cases we have to insert data before accessing it. 
 
 ## Summary
-In summary, you have accessed the data-type demonstration tool deployed along with eShop application and have got familiar with the tool's UI to work with different data-types in the coming labs.
+To summarize, you have accessed the data-type demonstration tool deployed along with eShop application and are familiar with the tool's UI to work with different data-types in the further labs.
 
 You may now *proceed to the next lab*.
 
 ## Acknowledgements
 - **Authors** - Pradeep Chandramouli, Nishant Kaushik, Balasubramanian Ramamoorthy, Dhananjay Kumar, AppDev & Database Team, Oracle, October 2020
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Kanika Sharma, NA Technology, October 2020
+- **Last Updated By/Date** - Nishant Kaushik, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

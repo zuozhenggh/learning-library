@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to setup tunneling for VNC, start VNC Server and connect to remote VNC session. Also, this lab will show steps to start the database instance, listener, Weblogic server and JDeveloper IDE. In this lab we will also import the eSHOP JEE Code to JDeveloper IDE.
+This lab will show you how to setup tunneling for VNC, start VNC Server and connect to remote VNC session.This lab will also show steps to start the database instance, listener, Weblogic server and JDeveloper IDE. In this lab we will also import the eSHOP JEE Code to JDeveloper IDE.
 
 *Estimated Lab Time:* 30 Minutes
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 
 If you aren't already logged in, follow the steps below to login. If you are logged in, skip to Step 2.
 
-1. Click the Hamburger Menu in the top left corner. Then hover over Compute > Instances. Find the instance you created in the previous lab.
+1. Click on the Hamburger Menu in the top left corner. Then hover over Compute > Instances. Find the instance you created in the previous lab.
 
     
     ![](./images/nav-compute-instance.png " ")
@@ -36,7 +36,6 @@ If you aren't already logged in, follow the steps below to login. If you are log
 
    
     ![](./images/public-ip.png " ")
-
 
 
 3. In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user. 
@@ -51,10 +50,7 @@ If you aren't already logged in, follow the steps below to login. If you are log
       - your address - Your Public IP Address
 
 
-
 ## **STEP 2**: Start the Database and the Listener
-
-
 
 1. Switch to the oracle user.
       ````
@@ -64,15 +60,13 @@ If you aren't already logged in, follow the steps below to login. If you are log
    ![](./images/env1.png " ")
 
 
-
-2.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
+2.  Run the script env\_setup\_script.sh,.This will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
 
       ````
       <copy>cd /u01/script
       ./env_setup_script.sh</copy>
       ````
-
 
    ![](./images/setup-script.png " ")
 
@@ -84,7 +78,7 @@ If you aren't already logged in, follow the steps below to login. If you are log
       <copy>sudo su - oracle</copy>
       ````
 
-2.	As oracle user run the setWLS14Profile.sh script.  This will setup the environment variables needed to start the WebLogic 14c Services.
+2.	As an oracle user run the setWLS14Profile.sh script. This will setup the environment variables needed to start the WebLogic 14c Services.
 
 
     ````
@@ -93,8 +87,7 @@ If you aren't already logged in, follow the steps below to login. If you are log
     cd $DOMAIN_HOME/bin</copy>
     ````
 
-
-3.	As oracle user run startWebLogic.sh script. This will start the WebLogic services.
+3.	As an oracle user run startWebLogic.sh script. This will start the WebLogic services.
 
 
     ````
@@ -111,7 +104,7 @@ If you aren't already logged in, follow the steps below to login. If you are log
     </copy>
     ````
 
-5.	Once the vnc services start command completes, Verify and note down the port on which VNC services are running.
+5.	Once the vnc services start command completes, verify and note down the port on which VNC services are running.
 
 
     ````
@@ -123,9 +116,7 @@ If you aren't already logged in, follow the steps below to login. If you are log
     ![](./images/check-vnc.png " ")
 
 
-
 ## **STEP 4**: Setup PuTTY
-
 
 **Save Private Key from CloudShell**
 
@@ -149,16 +140,14 @@ If you aren't already logged in, follow the steps below to login. If you are log
   
     ![](./images/configure-tunneling.png " ")
 
-
 4. Click on Session on left hand side menu and Save the session.
 
 
     ![](./images/save-session.png " ")
 
-
 **On Mac**
 
-1. Use command below:
+5. Use the command below:
 
     ````
         
@@ -166,7 +155,7 @@ If you aren't already logged in, follow the steps below to login. If you are log
         
     ````
 
-2.	Keep the terminal open during the entire workshop session.
+6.	Keep the terminal open during the entire workshop session.
 
 
 ## **STEP 6**: Install VNC Client and Connect
@@ -182,7 +171,7 @@ If you aren't already logged in, follow the steps below to login. If you are log
 
 
 ## Summary
-In summary, you have successfully accessed the VNC console of the lab system and started all required services to walk through the labs.
+To sumarize, you have successfully accessed the VNC console of the lab system and started all required services to walk through the labs.
 
 You may now *proceed to the next lab*.
 
@@ -190,7 +179,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 - **Authors** - Pradeep Chandramouli, Nishant Kaushik, Balasubramanian Ramamoorthy, Dhananjay Kumar, AppDev & Database Team, Oracle, October 2020
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Kanika Sharma, NA Technology, October 2020
+- **Last Updated By/Date** - Nishant Kaushik, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
