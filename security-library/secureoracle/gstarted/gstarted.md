@@ -32,7 +32,7 @@ Version 8.0 of SecureOracle include the following features:
 	* Box, Concur, DB Applications Table, Oracle/MySQL DB User Management, Flat File, Google Apps, GoToMeeting, IDCS, Microsoft AD User Management, Office365, EBS Employee Reconciliation, EBS User Management, OID/ODSEE/OUD/LDAP, Salesforce, SAP Success Factor, SAP User Management, SAP User Management Engine, ServiceNow, Unix, WebEx
 * [Cockpit](https://cockpit-project.org/) is an open source tool to manage servers using an easy to use web console. Cockpit comes pre-installed with SecureOracle and allows to start all components without having to use an SSH client.
 
-  <a name="image-01"></a>![Image](images/img-cockpit.png)
+  ![](./images/img-cockpit.png " ")
 
   Figure 1. Cockpit Web Console
 
@@ -61,11 +61,11 @@ Version 8.0 of SecureOracle include the following features:
 	* My HR Application - developed entirely in APEX and running in the Oracle Database, help demonstrate HR employee life cycle management and integration with OIG. Full HTML5 interface supporting modern browsers.
 	* My IGA Application - also developed in APEX aimed to showcase governance capabilities using OIG REST APIs and certifications like custom reviewers. Full HTML5 interface supporting modern browsers.
 
-    <a name="image-02"></a>![Image](images/img-myhr-app-menu.png)
+    ![](./images/img-myhr-app-menu.png " ")
 
     Figure 2. My HR Application
 
-    <a name="image-03"></a>![Image](images/img-iga-app-dash.png)
+    ![](./images/img-iga-app-dash.png " ")
 
     Figure 3. My IGA Application
 
@@ -345,7 +345,7 @@ Follow the steps below to Start and Stop the different SecureOracle components.
 
 1. SecureOracle includes a sample top OIM organization **Oracle Users** and two child departments **Sales** and **Finance**. For each department an administrator account has been defined to demonstrate delegated administration. In addition, sample users have been added to demonstrate manager approval, escalation and organizational transfers.
 
-    <a name="image-04"></a>![Image](images/img-orgtree.png)
+    ![](./images/img-orgtree.png " ")
 
     Figure 4. Sample OIG Organization
 
@@ -432,9 +432,9 @@ You may now *proceed to the next lab*.
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
-- <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html" target="\_blank">Oracle Identity Governance Documentation</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html" target="\_blank">Oracle Access Management Documentation</a>
+- [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+- [Oracle Identity Governance Documentation](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html)
+- [Oracle Access Management Documentation](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html)
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
