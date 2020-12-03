@@ -40,7 +40,7 @@ In this lab, you will:
 
 ## **STEP 1:** Create a Backup with the Oracle E-Business Suite Cloud Backup Module
 
-**FOLLOW ALONG AND READ CLOSELY, THERE ARE MANY VALUES AND STEPS THAT MUST BE COMPLETED ACCURATELY TO CREATE THE BACKUP**
+**FOLLOW ALONG AND READ CLOSELY, THERE ARE MANY VALUES AND STEPS THAT MUST BE COMPLETED ACCURATELY TO CREATE THE BACKUP.**
 
 The EBSCloudBackup.pl script validates key requirements before beginning the actual backup, including checking the available space, checking connections, verifying that archive logging is enabled, and verifying that mandatory patches have been applied. Check that these requirements are in place before you start running the script, so that the script can proceed with creating the backup after performing the validations.
 
@@ -69,12 +69,13 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     </copy>
     ```
 
-1. Before you start running EBSCloudBackup.pl, inform users that a backup is being taken, and request that they do not perform any destructive operation on the file system, such as removing directories, until the backup is complete.
+1. Before you start running EBSCloudBackup.pl, inform users that a backup is being taken. Request that they do not perform any destructive operation on the file system, such as removing directories, until the backup is complete.
 
 2. Temporarily stop any application tier or database backup cron jobs that are scheduled. If you have not already done so, change to the RemoteClone directory on the backup module server.
 
 3. Run the EBSCloudBackup.pl script using the following command in the RemoteClone directory.
-If you are using an Oracle E-Business Suite application tier node or database tier node as the backup module server, note that you should not source the Oracle E-Business Suite environment before running the Oracle E-Business Suite Cloud Backup Module.
+
+    **NOTE:** If you are using an Oracle E-Business Suite application tier node or database tier node as the backup module server, you should not source the Oracle E-Business Suite environment before running the Oracle E-Business Suite Cloud Backup Module.
 
     ```
     <copy>
@@ -84,28 +85,30 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     ![](./images/25.png " ")
 
-4. On the first screen, choose **option 1**, Create E-Business Suite Backup and Upload to Oracle Cloud Infrastructure.
+4. On the first screen, choose **Option 1**, "Create E-Business Suite Backup and Upload to Oracle Cloud Infrastructure".
 
     ![](./images/26.png " ")
 
 5. Next, indicate whether communication between the source database server and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
-    We are not going to use a proxy, choose **option 2**
+    We are not going to use a proxy, choose **Option 2**.
 
     ![](./images/27.png " ")
 
 6. Enter the details for the database tier of the source Oracle E-Business Suite environment.
 
-    When entering the host name for the source database server, ensure that you enter the fully qualified domain name.
+    1. When entering the host name for the source database server, ensure that you enter the fully qualified domain name.
 
-    You must specify an operating system user name with which to connect to the source database server using SSH. 
+    2. Specify an operating system username to connect to the source database server using SSH. 
     
-    You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id\_rsa) on the backup module server. The prompts for the custom private key and passphrase appear only if you do not enter an OS user password. **Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm that you want to continue with the SSH key at the indicated location.
+    3. You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id\_rsa) on the backup module server. 
+    
+        The prompts for the custom private key and passphrase appear only if you do not enter an OS user password. **Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm continuing with the SSH key at the indicated location.
 
-    Additionally, enter the location of the context file on the database tier, including the complete file path.
+    4. Enter the location of the context file on the database tier, including the complete file path.
 
-    Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.8 image from the OCI Marketplace**
+    5. Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.8 image from the OCI Marketplace**
 
-    Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
+    6. Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
 
     In the entries below a value depicted with:
     * <> -- will be a variable that should be recorded in your ``key-data.txt``.
@@ -132,17 +135,22 @@ If you are using an Oracle E-Business Suite application tier node or database ti
         ![](./images/28.png " ")
 
 7. Next, indicate whether communication between the source application tier and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
-    We are not going to use a proxy, choose option 2
+    We are not going to use a proxy, choose **Option 2**
 
     ![](./images/29.png " ")
 
 8. When entering the host name for the source application tier server, ensure that you enter the fully qualified domain name.
 
-    You must specify an operating system user name with which to connect to the source application tier server using SSH.
+    1. Specify an operating system user name with which to connect to the source application tier server using SSH.
 
-    You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id_rsa) on the backup module server. The prompts for the custom private key and passphrase appear only if you do not enter an OS user password. **Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm that you want to continue with the SSH key at the indicated location.
+    2. You can choose to authenticate the OS user with either a password, a custom private SSH key and passphrase, or the default SSH key ($HOME/.ssh/id_rsa) on the backup module server. 
+    
+        If you do not enter an OS user password, prompts for the custom private key and passphrase appear. **Do not enter a password or a custom private key.** The script indicates that the default SSH key will be used and prompts you to confirm that you want to continue with the SSH key at the indicated location.
 
-    Additionally, specify the location of the context file on the application tier, including the complete file path, the password for the Oracle E-Business Suite APPS schema, and the location of the stage area directory you created to hold the temporary files created on the application tier during the backup creation process.
+    3. Specify the location of the context file on the application tier, including:
+        * The complete file path
+        * The password for the Oracle E-Business Suite APPS schema
+        * The location of the stage area directory you created to hold the temporary files created on the application tier during the backup creation process.
 
     For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle WebLogic Server administrator password for the source environment.
 
@@ -193,8 +201,8 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     - Note: Save your **BackupIdentifier Tag** and **Backup Encryption Password** to your ``key-data.txt`` file
 
-10. Next, indicate whether you access the cloud service through a proxy and need to specify the proxy details.
-    We are not going to use a proxy, choose option 2
+10. Indicate whether you access the cloud service through a proxy and need to specify the proxy details.
+    We are not going to use a proxy, choose **Option 2**
 
     ![](./images/32.png " ")
 
@@ -204,7 +212,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
     In this workshop this is your `Cloud Manager_Admin_Username` (i.e. ebscm.admin@example.com)
     - You can find the user's OCID and Fingerprint by Navigating to **Identity** > **Users** in Oracle Cloud Infrastucture and selecting the user.
     - Enter the OCID for your tenancy, the [region identifier](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) of the region where you plan to provision an environment from this backup, your tenancy name, and the OCID of the compartment where the backup buckets should be created.
-    - Your tenany name and OCID can be found by clicked the profile icon in the top right of Oracle Cloud Infrastructure and selecting **Tenancy: <tenancy_name>. 
+    - Your tenancy name and OCID can be found by clicked the profile icon in the top right of Oracle Cloud Infrastructure and selecting **Tenancy:** < tenancy_name >. 
     - The compartment OCID can be found by navigating to **Identity** > **Compartments** and selecting the compartment that contains the Cloud Manager (you may have to navigate through the parent compartments to reach the correct compartment). 
 
     For environments with Oracle Database Release 12.1.0.2 or Release 19c, you must also specify the Cloud database service on which you plan to provision the target environment based on this backup.
@@ -239,7 +247,7 @@ If you are using an Oracle E-Business Suite application tier node or database ti
 
     The custom private key locations for the source database tier and source application tier are shown only if you chose to authenticate the OS user on those tiers with a custom private SSH key.
 
-    If you are satisfied with the values shown, enter **option 1** to proceed.
+    If you are satisfied with the values shown, enter **Option 1** to proceed.
 
     ![](./images/34.png " ")
 
