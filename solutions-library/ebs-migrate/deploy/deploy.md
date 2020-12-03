@@ -14,8 +14,9 @@ In this lab, you will:
 
 ### **Prerequisites**
 
-* Complete Lab 4: **Create a Backup with the Oracle E-Business Suite Cloud Backup Module**
+* Complete **Lab 4: Create a Backup with the Oracle E-Business Suite Cloud Backup Module**
 * key-data.txt file documented with following information:
+
     - `apps_password` (In this Lab: apps)
     - `weblogic_password` (In this Lab: welcome1)
 
