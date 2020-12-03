@@ -30,7 +30,7 @@ Before starting the reinstallation of Database Vault, use the [Practice: Deinsta
     
     ```
     
-    $ <copy>$ORACLE_HOME/bin/dbca -silent -configureDatabase -sourceDB CDB21 -dvConfiguration true -olsConfiguration true -dvUserName c##dvo -dvUserPassword <i>password</i> -dvAccountManagerName c##dvacctmgr -dvAccountManagerPassword <i>password</i> </copy>
+    $ <copy>$ORACLE_HOME/bin/dbca -silent -configureDatabase -sourceDB CDB21 -dvConfiguration true -olsConfiguration true -dvUserName c##dvo -dvUserPassword <i>WElcome123##</i> -dvAccountManagerName c##dvacctmgr -dvAccountManagerPassword <i>WElcome123##</i> </copy>
     
     Enter password for the TDE wallet: <i> password </i>
     

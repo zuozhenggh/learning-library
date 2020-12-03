@@ -2,17 +2,23 @@
 
 ## Introduction
 
-In this lab we will walk through the SQL queries containing the built-in functions for SPATIAL data. 
-Will create a test database table to store SPATIAL data and insert sample data. 
-Will modify the code, re-build and re-deploy the code the observe the SPATIAL data type with its built-in functions and also create REST end-point to access SPATIAL data. 
+In this lab we will walk through the SQL queries containing the built-in functions for SPATIAL data. We will create a test database table to store SPATIAL data and insert sample data. We will also modify the code, re-build and re-deploy the code, observe the SPATIAL data type with its built-in functions and also create REST end-point to access SPATIAL data. 
 
 *Estimated Lab Time:* 30 Minutes
 
+### About Oracle Spatial
+Spatial data types stores geometry and multi-dimensional data.  It is used to process geo-spatial data.
+
+Oracle Spatial consists of the following:
+- Schema (MDSYS)
+- A spatial indexing mechanism
+- Operators, functions, and procedures
+- Native data type for vector data called SDO\_GEOMETRY (An Oracle table can contain one or more SDO_GEOMETRY columns).
+  
 ### Objectives
 - Create a database table to store Oracle Spatial data
 - Use Spatial data type built-in functions
 - Create REST end-point to access SPATIAL data
-
 
 ### Prerequisites
 This lab assumes you have:
@@ -25,15 +31,6 @@ This lab assumes you have:
     - Lab: eSHOP Application
     - Lab: Data Type Demonstrator Tool
 
-### About Oracle Spatial
-Spatial data types stores geometry and multi-dimensional data.  It is used to process geo-spatial data.
-
-Oracle Spatial consists of the following:
-- Schema (MDSYS)
-- A spatial indexing mechanism
-- Operators, functions, and procedures
-- Native data type for vector data called SDO\_GEOMETRY (An Oracle table can contain one or more SDO_GEOMETRY columns).
-
 ## **STEP 1**: Connect JDeveloper to database
 
 1. Open JDeveloper in Studio Mode, if not open already.
@@ -42,7 +39,7 @@ Oracle Spatial consists of the following:
     ![](./images/jdev-database-connection.png)
 
 
-3. Click on the green **+** icon under the **Databases** tab on left-hand side navigation to **Create Database Connection**.
+3. Click on the green **+** icon under the **Databases** tab on the left-hand side navigation to **Create Database Connection**. Fill in the fields with the details provided below :
 
     - **Connection Name**: spatial
     - **Connection Type**: Oracle(JDBC)
@@ -65,7 +62,7 @@ Oracle Spatial consists of the following:
     ![](./images/jdev-sql-spatial.png)
 
 
-2. A worksheet for connection **spatial** opens.  Execute your query commands here.
+2. A worksheet for connection **spatial** opens. Execute your query commands here.
 
 3. Key in or copy paste the statement below in worksheet to create a table to hold spatial data.
 
@@ -80,7 +77,7 @@ Oracle Spatial consists of the following:
     ![](./images/jdev-create-spatial-table.png)
 
 
-5. Key in the statements below in worksheet to insert data in the spatial table **city_points**.
+5. Key in the statements below in the worksheet to insert data in the spatial table **city_points**.
 
     ````
     <copy>
@@ -93,7 +90,6 @@ Oracle Spatial consists of the following:
 
 6. Select the text and click on the Green **Play** icon, **Script Output** tab will show **1 Row Inserted** message 4 times.
 
-
     ![](./images/jdev-insert-spatial.png)
 
 7. Right Click on **Tables (Filtered)** on Left-Hand side and click **Refresh** to see the table created.
@@ -102,7 +98,7 @@ Oracle Spatial consists of the following:
     ![](./images/jdev-refresh-spatial.png)
 
 
-8. Once you see the table **city_points** on the left-hand side, In a new line of the worksheet key in below query.
+8. Once you see the table **city_points** on the left-hand side, In a new line of the worksheet key in the query below.
 
     ````
     <copy>
@@ -117,7 +113,7 @@ Oracle Spatial consists of the following:
     ![](./images/jdev-select-data-spatial-table.png)
 
 
-10. In the worksheet, execute the alter statement to add the SDO_Geometry column to store the spatial data, also add the geometry values to the 4 rows already present.
+10. In the worksheet, execute the alter statement to add the SDO_Geometry column to store the spatial data. Also add the geometry values to the 4 rows already present.
 
     ````
     <copy>
@@ -165,7 +161,7 @@ Oracle Spatial consists of the following:
     ![](./images/jdev-db-bean-add.png)
 
 
-2. Click on **Save** Button.
+2. Click on the **Save** Button.
 
 3. Similarly, open the **DBSource.java** file under **Projects** &#8594; **converge** &#8594; **Application Sources** &#8594; **converge.dbHelper** by double clicking the file.
 
@@ -196,7 +192,7 @@ Oracle Spatial consists of the following:
 
     ![](./images/jdev-replace-function.png)
 
-5. Click on **Save** button.
+5. Click on the **Save** button.
 
     It is assumed that the names of the DataSource parameters, function names and JNDI names are given same as mentioned in the workshop manual. SpatialController.java and the SpatialDao.java has the business logic to retrieve the spatial datatype from the city_points table from the Oracle Converged Database in the PDB SGRPDB.
     
@@ -257,7 +253,7 @@ Oracle Spatial consists of the following:
 
 
 3. You will get the notification pop-up that the record was Inserted. Click Ok.  If you do not get notification check for pop-up blockers.
-4. The map changes to point to newly added city. Zoom in/out if required to see all 5 cities.
+4. The map changes to point to the newly added city. Zoom in/out if required to see all 5 cities.
 
     ![](./images/spatial-locate-bangalore.png)
 
@@ -276,7 +272,7 @@ Oracle Spatial consists of the following:
 
 3. Select **SPATIAL** datatype and click on **Change View** button to change the view.
 
-4. Click on blue **Fetch Cities** button.
+4. Click on the blue **Fetch Cities** button.
 
 
     ![](./images/spatial-load-map-2.png)
@@ -297,10 +293,10 @@ Oracle Spatial consists of the following:
     ![](./images/spatial-sfo-deleted.png)
 
 
-    This lab, we saw, how the complicated spatial data in a converged database is handled as easily as other datatypes using the buit-in functions and support for spatial data by Oracle Converged Database.
+    In this lab, we saw, how the complicated spatial data in a converged database is handled as easily as other datatypes using the buit-in functions and support for spatial data by Oracle Converged Database.
 
 ## Summary
-In summary, you created a table to store Spatial data-type, performed CRUD operations on Spatial data-type stored in the converged database. You also got familiar with out of box functions provided by Oracle database to handle Spatial data-type, modified SQL queries in java code to access Spatial as data over REST.
+To summarize, you created a table to store Spatial data-type, performed CRUD operations on Spatial data-type stored in the converged database. You also got familiar with out of box functions provided by Oracle database to handle Spatial data-type, modified SQL queries in java code to access Spatial as data over REST.
 
 You may now *proceed to the next lab*.
 
@@ -310,7 +306,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 - **Authors** - Pradeep Chandramouli, Nishant Kaushik, Balasubramanian Ramamoorthy, Dhananjay Kumar, AppDev & Database Team, Oracle, October 2020
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Kanika Sharma, NA Technology, October 2020
+- **Last Updated By/Date** - Nishant Kaushik, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

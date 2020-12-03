@@ -1,7 +1,7 @@
 # Setup 21C Environment
 
 ## Introduction
-In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop. 
+In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop.
 
 Estimated Lab Time: 15 minute
 
@@ -22,22 +22,21 @@ In this lab, you will:
 
 ## **STEP 1**: Define and test the connections
 
-1. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created, that alias entries are either automatically or manually created in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
+1. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created.
 
-2. The sub-directory `OraDB21Home1` is the sub-directory mentioned in the file `/u01/app/oraInventory/ContentsXML/oraInventory`.
-   
-	```
-	<HOME_LIST>
-	<HOME NAME="OraGrid210" LOC="/u01/app/21.0.0.0/grid" TYPE="O" IDX="1" CRS="true">
-	<HOME NAME="<B>OraDB21000_home1</B>" LOC="/u01/app/oracle/product/21.0.0.0/dbhome_1" TYPE="O" IDX="2">
-	</HOME_LIST>
-	```
+```
+ps -ef|grep smon
+sqlplus / as sysdba
+```
+```
+show pdbs
+```
 
-3. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.
-   
+2. Ensure that the TNS alias have been created for both cdb21 and pdb21 in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora`
+
 	```
 	<copy>
-	cat /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
+	cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
 	</copy>
 	```
 
@@ -45,21 +44,19 @@ In this lab, you will:
 
 	````
 	<copy>
-	vi /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+	vi cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
 	</copy>
 	````
 
-5. Do the same operation for each new PDB created in the CDB.
+5. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
 
-6. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
-   
 	````
 	<copy>
 	sqlplus sys@CDB21_iad1bw AS SYSDBA
 	</copy>
 	````
 
-7. Verify that the container name is CDB$ROOT.
+6. Verify that the container name is CDB$ROOT.
 
 	````
 	<copy>
@@ -67,24 +64,24 @@ In this lab, you will:
 	</copy>
 	````
 
-8. Test the connection to PDB21
-   
+7. Test the connection to PDB21
+
 	````
 	<copy>
 	CONNECT sys@PDB21 AS SYSDBA
 	</copy>
 	````
 
-9.  Show the container name
-    
+8.  Show the container name
+
 	````
 	<copy>
 	SHOW CON_NAME;
 	</copy>
 	````
 
-10. Exit SQL*Plus
-    
+9. Exit SQL*Plus
+
 	````
 	<copy>
 	exit
@@ -96,7 +93,7 @@ In this lab, you will:
 Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle Cloud object storage and unzip the file.
 
 1.  Change to the oracle user home directory
-   
+
 	````
 	<copy>
 	cd /home/oracle
@@ -108,7 +105,7 @@ Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle
 
 	```
 	<copy>
-	unzip Cloud_21c_labs.zip.zip
+	unzip Cloud_21c_labs.zip
 	</copy>
 	```
 

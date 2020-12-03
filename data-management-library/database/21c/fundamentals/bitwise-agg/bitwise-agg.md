@@ -31,7 +31,7 @@ In this lab, you will:
     
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected to:
     

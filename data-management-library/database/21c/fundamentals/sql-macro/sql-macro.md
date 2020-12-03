@@ -43,7 +43,7 @@ In this lab, you will:
 
     ```
     
-    SQL> <copy>ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>password</i> CONTAINER=ALL;</copy>
+    SQL> <copy>ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;</copy>
     
     keystore altered.
     
@@ -58,11 +58,11 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sys@pdb21 AS SYSDBA</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected.
     
-    SQL> <copy>@$HOME/labs/M104780GC10/hr_main.sql <i>password</i> users temp /home/oracle/labs /home/oracle/labs</copy>
+    SQL> <copy>@$HOME/labs/M104780GC10/hr_main.sql <i>WElcome123##</i> users temp /home/oracle/labs /home/oracle/labs</copy>
     
     specify password for HR as parameter 1:
     

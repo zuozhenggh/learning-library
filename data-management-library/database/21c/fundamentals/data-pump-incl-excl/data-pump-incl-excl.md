@@ -105,7 +105,7 @@ Estimated Lab Time: 15 minutes
     
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     Last Successful login time: Tue Mar 17 2020 02:23:18 +00:00
     
     Connected to:
@@ -149,7 +149,7 @@ Export from `PDB21` two `HR` tables, excluding their statistics.
 
 $ <copy>expdp hr@PDB21 DUMPFILE=hr.dmp DIRECTORY=dp_dir INCLUDE=TABLE:\"IN \(\'JOBS\',\'DEPARTMENTS\'\)\" EXCLUDE=STATISTICS REUSE_DUMPFILES=YES</copy>
 
-Password: <b><i>password</i></b>
+Password: <b><i>WElcome123##</i></b>
 
 Starting "HR"."SYS_EXPORT_SCHEMA_01":  hr/********@PDB21 DUMPFILE=hr.dmp DIRECTORY=dp_dir INCLUDE=TABLE:"IN ('JOBS','DEPARTMENTS')" EXCLUDE=STATISTICS REUSE_DUMPFILES=YES
 Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
@@ -180,7 +180,7 @@ $
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
     
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     Master table "SYSTEM"."SYS_IMPORT_FULL_01" successfully loaded/unloaded
     
@@ -237,7 +237,7 @@ $
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
     
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     Starting "HR"."SYS_EXPORT_SCHEMA_01":  hr/********@PDB21 DUMPFILE=hr.dmp DIRECTORY=dp_dir INCLUDE=TABLE:"IN ('JOBS','DEPARTMENTS')" EXCLUDE=STATISTICS,CONSTRAINT REUSE_DUMPFILES=YES
     
@@ -274,7 +274,7 @@ $
     
     $ <copy>sqlplus system@PDB21_2</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     SQL> <copy>DROP TABLE hr.jobs CASCADE CONSTRAINTS;</copy>
     
@@ -290,7 +290,7 @@ $
     
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
     
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
     
     Master table "SYSTEM"."SYS_IMPORT_FULL_01" successfully loaded/unloaded
     
@@ -327,7 +327,7 @@ $
     
     $ <copy>sqlplus system@PDB21_2</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     SQL> <copy>SELECT num_rows FROM dba_tables WHERE table_name IN ('JOBS','DEPARTMENTS');</copy>
     

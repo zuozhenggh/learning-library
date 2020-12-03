@@ -54,7 +54,7 @@ In this lab, you will:
     
     $ <copy>sqlplus c##sec_admin</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     SQL> <copy>SELECT * FROM DVSYS.DBA_DV_STATUS;</copy>
     
@@ -79,7 +79,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
     
-    Enter password:  <copy><i>password</i></copy>
+    Enter password:  <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -150,7 +150,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##sec_admin@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -178,7 +178,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -234,7 +234,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##sec_admin</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -388,7 +388,7 @@ In this lab, you will:
     
     $ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     

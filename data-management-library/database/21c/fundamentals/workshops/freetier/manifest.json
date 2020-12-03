@@ -25,18 +25,6 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Upgrades and Migration",
-            "filename": "../../introduction/intro-upgrades.md"
-        }, 
-        {
-            "title": "Lab: AutoUpgrade",
-            "filename": "../../autoupgrade/autoupgrade.md"
-        },
-        {
-            "title": "Lab: Autoupgrade - Non-CDB to PDB",
-            "filename": "../../autoupgrade-non-cdb/autoupgrade-non-cdb.md"
-        },
-        {
             "title": "Application Development",
             "filename": "../../introduction/intro-appdev.md"
         }, 

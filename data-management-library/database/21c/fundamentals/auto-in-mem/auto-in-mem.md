@@ -40,7 +40,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
 
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     keystore altered.
 
     SQL> ALTER SYSTEM SET sga_target=812M SCOPE=spfile;
@@ -85,7 +85,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
 
     ```
     $ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     Connected to:
     SQL> <copy>COL table_name FORMAT A18</copy>
 
@@ -170,7 +170,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     
     SQl> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected.
     
