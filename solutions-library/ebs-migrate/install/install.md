@@ -30,7 +30,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
 
 1. Connect to the source EBS environment.
 
-    SSH into the source EBS instance from your local machine by using the IP address and the SSH private key you used during the deployment of the source EBS instance . 
+    SSH into the source EBS instance from your local machine by using the IP address and the SSH private key you used during the deployment of the source EBS instance. 
 
     ```
     <copy>
@@ -38,7 +38,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
     </copy>
     ```
 
-1. Change to the stage directory
+2. Change to the stage directory.
 
         <copy>
         cd /u01/install/APPS/stage
@@ -46,19 +46,19 @@ Download the Backup Module from My Oracle Support to the backup module server.
 
     ![](./images/21.png " ")
 
-2. Copy the download link for the Backup Module. 
+3. Copy the download link for the Backup Module. 
 
     Access the latest version of the Backup Module from My Oracle Support [Patch 31254259](https://updates.oracle.com/download/31254259.html). 
 
     Right click on the Download button and select **Copy link address**
 
-3. Enter the wget command containing the patch name, your MyOracleSupport e-mail address and the download link.
+4. Enter the wget command containing the patch name, your MyOracleSupport e-mail address, and the download link.
 
     Make sure to replace firstname.name@oracle.com with your MOS email address in this example: 
 
         wget --output-document=p31254259_R12_Generic.zip --http-user=<MOS_Email_Address> --ask-password '<download link>'
     
-    Example
+    Example:
 
         wget --output-document=p31254259_R12_Generic.zip --http-user=firstname.name@oracle.com --ask-password 'https://updates.oracle.com/Orion/Download/process_form/p31254259_R12_GENERIC.zip?file_id=109968332&aru=23539624&userid=O-firstname.name@example.com&email=firstname.name@example.com.com&patch_password=&patch_file=p31254259_R12_GENERIC.zip'
 
@@ -66,7 +66,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
 
     ![](./images/22.png " ")
 
-4. Extract the downloaded patch. Unzipping the patch zip file creates a directory named RemoteClone.
+5. Extract the downloaded patch. Unzipping the patch zip file creates a directory named RemoteClone.
 
         <copy>
         unzip p31254259_R12_Generic.zip
@@ -74,7 +74,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
 
     ![](./images/23.png " ")
 
-5. Change to the RemoteClone directory and change the permission to "execute" for all the downloaded scripts.
+6. Change to the RemoteClone directory and change the permission to "execute" for all the downloaded scripts.
 
         <copy>
         cd 31254259
