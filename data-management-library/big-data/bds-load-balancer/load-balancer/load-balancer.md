@@ -4,6 +4,13 @@
 
 You can create a load balancer as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your Big Data Service cluster.
 
+|test|test|
+|---|---|
+|test|test|
+||test|test|
+|test|test|x|x|
+
+
 ### Objectives
 
 In this lab, you will:
@@ -202,7 +209,7 @@ To copy the files:
     -a----    11/17/2020     9:32 AM   1285 second-util-node-cert.pem
     -a----    11/17/2020     9:32 AM   1675 second-util-node.key   
       ```
-      
+
 11. Close Windows PowerShell.
 
 ## **STEP 3:** Create the Load Balancer
