@@ -267,6 +267,7 @@ In this step, you will download two scripts that will set up your Object Storage
 2. On the **Oracle Cloud Console** banner at the top of the page, click **Cloud Shell**
 ![](./images/cloud-shell-icon.png). It may take a few moments to connect and authenticate you.
 
+
     ![](./images/cloud-shell-started.png " ")
 
     **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
@@ -379,7 +380,7 @@ In this step, you will download two scripts that will set up your Object Storage
     + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Reviewers:**  
+* **Reviewer:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, December 2020
 
