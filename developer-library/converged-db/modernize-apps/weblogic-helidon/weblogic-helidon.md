@@ -1,5 +1,5 @@
 
-# Modernize with Weblogic and Helidon
+# Modernize Apps with WebLogic and Helidon Microservices
 
 ## Introduction
 
@@ -21,7 +21,6 @@ This lab assumes you have:
     * Lab: Prepare Setup
     * Lab: Environment Setup
 
-
 ### Lab Description
 
 The very purpose of writing microservices is to do a small piece of job efficiently and re-use it multiple times in different applications. Helidon SE enables us to write one such microservice in this lab.
@@ -40,9 +39,35 @@ This lab is designed for people with no prior experience with Kubernetes, Docker
 * Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
 * Modify Bank Web Application to use Credit Score microservice and deploy on WebLogic
  
-## **STEP 0:** Running your Lab
+## **STEP 0**: Running your Lab
+### Access the graphical desktop
+For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+
+1. Launch your browser to the following URL
+
+  ```
+  URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+  ```
+
+2. Provide login credentials
+
+  ```
+  Username: <copy>oracle</copy>
+  ```
+  ```
+  Password: <copy>Guac.LiveLabs_</copy>
+  ```
+
+   ![](./images/guacamole-login.png " ")
+
+*Note*: There is an underscore `_` character at the end of the password.
+
+   ![](./images/guacamole-landing.png " ")
+
+3. Click on *Terminal* icon on the desktop to start a terminal
+
 ### Login to Host using SSH Key based authentication
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*oracle*”.
@@ -81,7 +106,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 3.	Open the Weblogic Admin Console and login with credentials provided below:
 
-  ![](../images/adminconsole.png " ")  
+  ![](./images/adminconsole.png " ")  
 
   ```
   Console URL: http://<Your instance public IP address>:7101/console
@@ -91,7 +116,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 4.	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
 
-	![](../images/deployments.png " ")  
+	![](./images/deployments.png " ")  
 
 5.	Open a new browser tab or session and access the bank application UI with URL `http://<Your instance public IP address>:7101/bestbank2020`
 6.	The existence of base version of the sample bestbank application is confirmed.
@@ -135,7 +160,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 4.	Register the creditscore route after line 108 by adding `".register("/creditscore", new CreditscoreService())"` as indicated below. This basically the context path for the service endpoint.
 
-  ![](../images/register-creditscore-route.png " ")  
+  ![](./images/register-creditscore-route.png " ")  
 
 5.	Now create a new class called CreditscoreService in the same package where the Main.java is located:
 
@@ -338,13 +363,13 @@ When the build is complete and successful, open the browser and access the new b
 	<copy>java -jar helidon-creditscore-se.jar &</copy>
 	```
 
-	![](../images/startmicroservice.png " ")  
+	![](./images/startmicroservice.png " ")  
 
 4. In the browser, check if the CreditScore Microservice application is running by checking the health check url `http://<Your instance public IP address>:8080/creditscore/healthcheck`
 5. Open the browser and access the new bank application using the URL `http://<Your instance public IP address>:7101/bestbank2020_01` or refresh the existing browser window with the above URL
 6. Select an Account Owner and click the new View button.	A pop-up window with CreditScore information of the user is seen.  
 
-	![](../images/creditscore.png " ")  
+	![](./images/creditscore.png " ")  
 
 
 *Congratulations! You have successfully completed the workshop*
@@ -352,7 +377,7 @@ When the build is complete and successful, open the browser and access the new b
 ## Acknowledgements
 * **Author** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, AppDev & Integration Team, Oracle, October 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

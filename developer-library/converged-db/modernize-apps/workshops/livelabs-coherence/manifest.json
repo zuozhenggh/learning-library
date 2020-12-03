@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Coherence Workshop",
+  "workshoptitle": "Modernize Apps",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -9,7 +9,7 @@
     {
       "title": "Introduction",
       "description": "Introduction to Weblogic and Helidon",
-      "filename": "../../introduction/introduction.md"
+      "filename": "../../intro/intro-coherence.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
@@ -22,10 +22,10 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
     },
     {
-      "title": "Lab 3: Coherence",
+      "title": "Lab 3: Modernize with Coherence Cache",
       "description": "Coherence Lab",
       "publisheddate": "08/10/2020",
-      "filename": "../../features/features.md"
+      "filename": "../../coherence/coherence.md"
     }
   ]
 }
