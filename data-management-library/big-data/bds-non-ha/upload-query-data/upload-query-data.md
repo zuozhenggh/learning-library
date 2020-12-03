@@ -269,7 +269,7 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/cloud-shell-started.png " ")
 
-    **Note:** To change the Cloud Shell background color theme from dark to light as, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
+    **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
 
     ![](./images/change-theme.png " ")
 
