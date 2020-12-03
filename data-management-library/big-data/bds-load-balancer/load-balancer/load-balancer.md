@@ -4,16 +4,7 @@
 
 You can create a load balancer as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your Big Data Service cluster.
 
-TEST TEST
-
-TEST&&
-
-|test|test|
-|---|---|
-|test|test|
-||test|test|
-|test|test|x|x|
-
+Estimated Lab Time: 60 minutes
 
 ### Objectives
 
@@ -574,15 +565,11 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 
 ## Acknowledgements
 
+* **Last Updated Date:** December 2020
 
-* **Last Updated Date:** November 2020
+## See an issue?
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name, lab* and *step* in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 <!--
 reserved text
 
