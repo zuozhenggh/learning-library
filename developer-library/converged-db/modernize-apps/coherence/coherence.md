@@ -1,4 +1,4 @@
-# Modernize with Coherence
+# Modernize Apps with Coherence Cache
 
 ## Introduction
 The Coherence Lab is an exercise to visualize the different features of Coherence as a distributed in-memory data-grid.
@@ -55,9 +55,35 @@ This lab assumes you have:
 | 6            | Test Java 8 features                   | 10min            | Illustrates how to use the Java streams when querying and processing cache entries                               | How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries       |
 | 7            | Test Asynchronous features             | 10min            | Illustrates how to asynchronously get and put data in a cache                                                    | How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries                    |
 
-## **STEP 0:** Running your Lab
+## **STEP 0**: Running your Lab
+### Access the graphical desktop
+For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+
+1. Launch your browser to the following URL
+
+  ```
+  URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+  ```
+
+2. Provide login credentials
+
+  ```
+  Username: <copy>oracle</copy>
+  ```
+  ```
+  Password: <copy>Guac.LiveLabs_</copy>
+  ```
+
+  ![](./images/guacamole-login.png " ")
+
+*Note*: There is an underscore `_` character at the end of the password.
+
+  ![](./images/guacamole-landing.png " ")
+
+3. Click on *Terminal* icon on the desktop to start a terminal
+
 ### Login to Host using SSH Key based authentication
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*oracle*”.
@@ -66,33 +92,33 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 2. Then sudo to “*oracle*”. E.g.
 
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
+  ```
+  <copy>sudo su - oracle</copy>
+  ```
 
 ## **STEP 1**: Verify Environment
 1. Open Two Terminal windows
 2. Set and verify the JAVA_HOME for both terminal windows by typing the commands below
 
-    ```
-    <copy>
-    export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
-    export PATH=$JAVA_HOME/bin:$PATH
-    echo $JAVA_HOME
-   </copy>
-    ```
+  ```
+  <copy>
+  export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
+  export PATH=$JAVA_HOME/bin:$PATH
+  echo $JAVA_HOME
+ </copy>
+  ```
 
     ![](../images/java-home.png " ")
 
 3. Set and verify COHERENCE_HOME for both terminal windows
 
-    ```
-    <copy>
-    export COHERENCE_HOME="/u01/middleware/14c/coherence"
-    export PATH=$COHERENCE_HOME/bin:$PATH
-    echo $COHERENCE_HOME
-   </copy>
-    ```
+  ```
+  <copy>
+  export COHERENCE_HOME="/u01/middleware/14c/coherence"
+  export PATH=$COHERENCE_HOME/bin:$PATH
+  echo $COHERENCE_HOME
+ </copy>
+  ```
 
    ![](../images/set-env.png " ")
 
@@ -260,7 +286,7 @@ How to asynchronously process cache entries in Coherence and to asynchronously a
 ## Acknowledgements
 * **Author** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, AppDev & Integration Team, Oracle, October 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
