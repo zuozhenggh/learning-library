@@ -24,10 +24,11 @@ This lab assumes you have:
 
 ## **STEP 1**: Remove Deployments.
 
-1. If you don't have a terminal window opened yet, right click on the Desktop of the VNC session and select **Open Terminal**
+1. If you don't have a terminal window opened yet, right click on the Desktop of the VNC session and se
 
-![](images/common/open_terminal.png " ")
+    ![](./images/terminal3.png " ")
 
+                         
 
 2.  From the Terminal window in the VNC Console, navigate to the Reset directory under ~/OGG181_WHKSHP.
 

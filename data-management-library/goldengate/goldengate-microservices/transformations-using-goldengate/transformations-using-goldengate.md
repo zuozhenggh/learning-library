@@ -91,7 +91,7 @@ Commit;</copy>
 ```
 <copy>select CUST_FIRST_NAME,CUST_LAST_NAME,CUSTOMER_NAME from SOE.CUSTOMERS where customer_id=12345678;</copy>
 ```
-![](./images/c5.png " ")
+  ![](./images/c5.png " ")
 
 ```
 <copy>exit</copy>
@@ -134,11 +134,12 @@ SQL>
 
 3. Select F_MAIL and verify results
 
+    ![](./images/c9.png " ")
+
 ```
 <copy>select F_MAIL('MADHU') from dual;</copy>
 ```
 
-![](./images/c9.png " ")
 
 4. Create or replace the procedure
 CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2)

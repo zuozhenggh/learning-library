@@ -29,7 +29,7 @@ In this lab we will setup GoldenGate Microservices
 
 1. Open a terminal session.
 
-![](./images/terminal3.png " ")
+    ![](./images/terminal3.png " ")
 
 ````
 <copy>sudo su - oracle</copy>

@@ -69,16 +69,18 @@ Password: Welcome_1
 
 4.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”.  
 
-![](./images/a2.png " ")
+    ![](./images/a2.png " ")
 
 
 5.	Now switch back to the Remote Desktop Viewer and from the Terminal window, navigate to the Lab3 directory under ~/Desktop/Scripts/HOL.
+
+    ![](./images/a3.png " ")
 
 ```
 <copy> cd ~/Desktop/Scripts/HOL/Lab2</copy>
 ```
 
-![](./images/a3.png " ")
+
 
 6.	At this point, by doing an “ls” in the directory; you will notice two files in the lab directory.  The rsp file is a template file that will be copied and used by the sh file.  In order to create two Deployments, the sh script file needs to be ran twice.
 
@@ -116,14 +118,16 @@ Each of the parameters will be used to replace items in the response file and bu
 
 11. Run the scripts  
 **Run the script using the following parameter values, to create the Atlanta Deployment:**
+
+    ![](./images/a4.png " ")
 ```
 <copy>sh ./create_deployment.sh Atlanta Welcome_1 16000 16001 16002 16003 16004 16005</copy>
 ```
-![](./images/a4.png " ")
+
 
 12.  Return to Firefox and refresh the ServiceManager page.  You should have one (1) new Deployment called Atlanta, with four (4) services listed.
 
-![](./images/a5.png " ")
+     ![](./images/a5.png " ")
 
 13. Return to the Terminal Window where you ran the create_deployment.sh script and re-run the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
 
@@ -132,12 +136,11 @@ Each of the parameters will be used to replace items in the response file and bu
 ```
 <copy>sh ./create_deployment.sh Boston Welcome_1 16000 17001 17002 17003 17004 17005</copy>
 ```
-
 ![](./images/a6.png " ")
 
 14. Return to Firefox and refresh the ServiceManager page again.  You should now have two (2) Deployments with a total of eight (8) services running.  
 
-![](./images/a7.png " ")
+ ![](./images/a7.png " ")
 
 ## **STEP 2:** Configure Reverse Proxy
 
@@ -162,7 +165,7 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 ```
 <copy>sh ./configureNginx.sh oggadmin Welcome111! 16000</copy>
 ```
-![](./images/a8.png " ")
+   ![](./images/a8.png " ")
 
 **During the script run, it will ask you the password for user oracle so it can run sudo, the password is Welcome111!.**
 
@@ -173,7 +176,8 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 ```
 If this is the first time you access this address, you will need to click through some security exceptions page as it is using a self-signed certificate.  Once you get to the page, you will see below website.
 
-![](./images/a9.png " ")
+   ![](./images/a9.jpg" ")
+
 
 Once you are able to access the ServiceManager by using the simpler URL, you have completed this task.
 
@@ -194,7 +198,7 @@ In the example, if using the Atlanta deployment, the URL would look like this:
 ```
 <copy>https://localhost/Atlanta/adminsrvr</copy>
 ```
-![](./images/a10.png " ")
+   ![](./images/a10.jpg " ")
 
 ## **STEP 3:** Create Credentials
 
@@ -263,11 +267,12 @@ After running this script, can go to your browser and that the credential was cr
 
 7. Click the Context Menu in the upper left, then select Configuration from the left pane
 
-![](./images/a14.png " ")
+    ![](./images/a14.png " ")
 
 8.	Next, we will enable schematrandata on the schema that we want to replicate.  In order to do this, you will need to run the add_SchemaTrandata.sh script.  
 
 To run this script, execute the following
+
 
 ```
 <copy>sh ./add_SchemaTrandata.sh Welcome1 16001</copy>
@@ -280,7 +285,7 @@ To run this script, execute the following
 
 10. Then, under “Trandata”, make sure that the magnifying glass and radio button for “Schema” are selected.  Enter “oggoow19.soe” into the search box and then select the magnifying glass to the right of the search box to perform the search.
 
-![](./images/a17.png " ")
+     ![](./images/a17.png " ")
 
 11. After the search is performed, you will see a column that provides the number of tables enabled for supplemental logging within the “SOE” schema.
 

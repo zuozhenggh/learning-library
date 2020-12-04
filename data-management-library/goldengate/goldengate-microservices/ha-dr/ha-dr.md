@@ -29,7 +29,7 @@ In this lab we will setup GoldenGate Microservices Active - Active Replication
 
 1. Open a terminal session
 
-![](./images/terminal3.png " ")
+   ![](./images/terminal3.png " ")
 
 ```
 <copy>sudo su - oracle</copy>
@@ -46,7 +46,7 @@ exit</copy>
 
 4. Open a terminal session
 
-![](./images/terminal3.png " ")
+   ![](./images/terminal3.png " ")
 
 ````
 <copy>sudo su - oracle</copy>
@@ -64,7 +64,7 @@ exit</copy>
 
 7. Open a new browser tab and connect to Admin Server
 
-![](./images/b1.png " ")
+   ![](./images/b1.png " ")
 
 ```
 <copy>https://localhost:17001</copy>
@@ -80,10 +80,10 @@ Login with the following credentials
 
 9. Select Administrator
 
-![](./images/b3.png " ")
+   ![](./images/b3.png " ")
 
 
-![](./images/b4.png " ")
+    ![](./images/b4.png " ")
 
 10. Next we need to add the schema
 
@@ -99,7 +99,7 @@ Service -> Configuration page as well. Simply log in to the TCGGATE alias**
 11. Then, under “Trandata”, make sure that the magnifying glass and radio button for
 “Schema” is selected. Enter “oggoow191.soe” into the search box and then select the magnifying glass to the right of the search box to perform the search.
 
-![](./images/b5.png " ")
+    ![](./images/b5.png " ")
 
 
 ## **STEP 2:** Add Extract and Distribution Path on oggoow191
@@ -125,7 +125,7 @@ You will use the following two scripts to configure these processes
 <copy>https://localhost/Atlanta/adminsrvr</copy>
 ```
 
-![](./images/b6.png " ")
+  ![](./images/b6.png " ")
 
 4. Now you will create the Distribution Path that will be used to ship trail files from the Deployment to the Deployment. In order to do this, you will need to run the add_DistroPath.sh script.
 
@@ -139,7 +139,7 @@ At your terminal session:
 ```
 <copy>https://localhost/Atlanta/distsrvr</copy>
 ```
-![](./images/b7.png " ")
+  ![](./images/b7.png " ")
 
 
 ## **STEP 3:**  Create the Replicat on oggoow191  Target
@@ -167,14 +167,14 @@ To begin this Task, follow the below steps:
 4. From the URL
 https://localhost/Boston/adminsrvr
 
-![](./images/b8.png " ")
+   ![](./images/b8.png " ")
 
 Back at your terminal session:
 ```
 <copy>sh ./add_CheckpointTable_Atlanta.sh Welcome1 16001</copy>
 ```
 
-![](./images/b9.png " ")
+  ![](./images/b9.png " ")
 
 
 5. With the target database User Alias and Checkpoint Table created, you can now create the Replicat. In order to create the Replicat, you will need to run the add_Replicat_Atlanta.sh script. Enter the following command to run the script:
@@ -186,7 +186,7 @@ Back at your terminal session:
 6. After the script is done running, you will see a running Replicat in the Administration Service for your deployment.
 
 
-![](./images/b10.png " ")
+   ![](./images/b10.png " ")
 
 
 ## **STEP 4:** Enable Auto CDR Collision Detect
@@ -216,7 +216,7 @@ END;
 /</copy>
 ```
 
-![](./images/b11.png " ")
+  ![](./images/b11.png " ")
 
 ## Summary
 
