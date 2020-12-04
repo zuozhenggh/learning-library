@@ -12,26 +12,6 @@ This lab will introduce you to Oracle GoldenGate for Microservices Workshop Arch
 
 The objectives of the lab is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices bidirectionally while leveraging RestfulAPIs. This Lab focuses on High Availability replication and Disaster Recovery using bidirectional and Auto Collision Detect features of GoldeGate
 
-KEY FEATURES
-
-Non-invasive, real-time transactional data streaming
-
-- Secured, reliable and fault-tolerant data delivery
-- Easy to install, configure and maintain
-- Streams real-time changed data
-- Easily extensible and flexible to stream changed data to other relational targets
-
-KEY BENEFITS
-
-- Improve IT productivity in integrating with data management systems
-- Use real-time data in big data analytics for more timely and reliable insight
-- Improve operations and customer experience with enhanced business insight
-- Minimize overhead on source systems to maintain high performance
-
-Oracle GoldenGate Microservices provides optimized and high performance delivery.
-
-Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
-
 ### Prerequisites
 
 This lab assumes you have:

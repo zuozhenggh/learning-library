@@ -19,30 +19,6 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 The objectives of the lab is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices while levergaring RestfulAPIs.
 
-KEY FEATURES
-
-Non-invasive, real-time transactional data streaming
-
-- Secured, reliable and fault-tolerant data delivery
-- Easy to install, configure and maintain real-time changed data
-- Easily extensible and flexible to stream changed data to other relational targets
-
-KEY BENEFITS
-
-- Improve IT productivity in integrating with data management systems.
-- Use real-time data in big data analytics for more timely and reliable insight
-- Improve operations and customer experience with enhanced business insight
-
-• Minimize overhead on source systems to maintain high performance
-
-Oracle GoldenGate Microservices provides optimized and high performance delivery.Designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.  
-
-Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
-
-* [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
-
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
-* 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account

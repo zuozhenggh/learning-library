@@ -19,28 +19,12 @@ Lab  – High Availability / Disaster Recovery
 
 Lab  - Transformations using GoldenGate Microservices
 
-Lab - Administration Client
-
 *Estimated Lab Time*:  60 minutes
 
 ### Objectives
 
 To use GoldegGate to perform transformations on the data during the replication process. Even though GoldenGate is primarily a real time data replication tool, it does have the ability to create data transformations. In this lab we will create sample transformations to showcase this feature of GoldenGate.
 
-KEY FEATURES
-
-Non-invasive, real-time transactional data streaming while applying target transformations
-
-KEY BENEFITS
-
-- Improve IT productivity in integrating with data management systems.
-- Use real-time data in big data analytics for more timely and reliable insight
-- Improve operations and customer experience with enhanced business insight
-- Minimize overhead on source systems to maintain high performance
-
-Oracle GoldenGate Microservices provides optimized and high performance delivery.Designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.  
-
-Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
 ### Prerequisites
 This lab assumes you have:

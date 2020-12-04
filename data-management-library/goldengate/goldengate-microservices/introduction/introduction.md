@@ -10,6 +10,21 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 **Workshop Architecture**
     ![](./images/ggmicroservicesarchitecture.png " ")
 
+KEY FEATURES
+
+Non-invasive, real-time transactional data streaming while applying target transformations
+
+KEY BENEFITS
+
+- Improve IT productivity in integrating with data management systems.
+- Use real-time data in big data analytics for more timely and reliable insight
+- Improve operations and customer experience with enhanced business insight
+- Minimize overhead on source systems to maintain high performance
+
+Oracle GoldenGate Microservices provides optimized and high performance delivery.Designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.  
+
+Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
+
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * A general understanding of database and data replication concepts using Oracle GoldenGate

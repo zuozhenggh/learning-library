@@ -13,26 +13,6 @@ In this lab we will setup the required database and GoldeGate replication users.
 
 Understanding how to prepare and setup an Oracle Database for replication and define users for replication. Users are created using scripts that populate the multitenanant environment with required Oracle Users while applying aliases to be used by GoldenGate. The Databases used in this lab are identified using the SOE schema in source and targets.
 
-KEY FEATURES
-
-Non-invasive, real-time transactional data streaming
-
-- Secured, reliable and fault-tolerant data delivery 
-- Easy to install, configure and maintain 
-- Streams real-time changed data 
-- Easily extensible and flexible to stream changed data to other relational targets
-
-KEY BENEFITS
-
-- Improve IT productivity in integrating with data management systems 
-- Use real-time data in big data analytics for more timely and reliable insight 
-- Improve operations and customer experience with enhanced business insight 
-- Minimize overhead on - source systems to maintain high performance
-
-Oracle GoldenGate Microservices provides optimized and high performance delivery.
-
-Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
-
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
