@@ -215,36 +215,6 @@ To copy the files:
     PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/first-util-node.key</copy>
       ```
 
-<!-- . Copy the SSL key file  (also named `node.hue.key`) for the second utility node:  
-
-      ```
-    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
-      ```
-
-      For example:
-
-      ```
-    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/second-util-node.key</copy>
-      ```
-
-      Notice that the IP address is for the second utility node. In this example, it's `10.2.0.102`.-->
-
-<!-- 10. List your downloaded files to make sure the files were downloaded appropriately, for example:
-
-      ```
-    PS C:\Users\MYHOME\> <copy>ls</copy> ./bds/ssl-files
-
-    Directory: C:\Users\MYHOME\ssl-files
-
-    Mode      LastWriteTime            Length Name
-    ----      -------------  ------    ----
-    -a----    11/17/2020     9:21 AM   1285 first-util-node-cert.pem
-    -a----    11/17/2020     9:30 AM   1675 first-util-node.key
-    -a----    11/17/2020     9:32 AM   1285 second-util-node-cert.pem
-    -a----    11/17/2020     9:32 AM   1675 second-util-node.key   
-      ```
--->
-
 8. List your downloaded files to make sure the files were downloaded appropriately, for example:
 
       ```
@@ -450,7 +420,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     ![](./images/create-backend-set.png "Create backend set page")
 
-    <!--    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example, **second-util-node-cert-bundle**.-->
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
 
@@ -477,8 +446,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
         * **Port:** Enter **`30000`**, which is the port on which Big Data Studio listens.
 
         * **URL Path (URI)**: Enter a forward slash (**/**).
-        <!--    * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**.-->
-
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
 
@@ -580,7 +547,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **Backend Set:** From the list, select the backend set you created for Hue in **STEP 6: Create a Backend Set for Hue**; for example, **hue-backend-set**.
 
-    <!--    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**. -->
 
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
@@ -593,8 +559,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
     * **Protocol:** Select **HTTP**.
 
     * **Port:** Enter **30000**, which is the port on which Big Data Studio listens.
-
-    <!--    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**. -->
 
     * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **first-util-node-cert-bundle**.
 
@@ -668,6 +632,7 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 ## See an issue?
 
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name, lab* and *step* in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+.
 <!--
 reserved text
 
