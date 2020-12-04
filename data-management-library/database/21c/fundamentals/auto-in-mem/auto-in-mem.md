@@ -7,7 +7,7 @@ This lab shows how to configure Automatic In-Memory and then observe how in-memo
 
 
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 25 minutes
 
 ### Objectives
 In this lab, you will:
@@ -40,7 +40,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
 
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     keystore altered.
 
     SQL> ALTER SYSTEM SET sga_target=812M SCOPE=spfile;
@@ -85,7 +85,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
 
     ```
     $ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     Connected to:
     SQL> <copy>COL table_name FORMAT A18</copy>
 
@@ -170,7 +170,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     
     SQl> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
     
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     
     Connected.
     
@@ -469,7 +469,7 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
 * **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

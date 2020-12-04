@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to download, configure, and run the DRAGON Stack manager in order to create your very first React Web Application connected to an Autonomous Transaction Processing database (Always Free or not). 
+This lab walks you through the steps to download, configure, and run the DRAGON Stack manager in order to create your very first React Web Application connected to an Autonomous Transaction Processing database (Always Free or not).
 
 Estimated Lab Time:  10 minutes
 
@@ -29,7 +29,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     For example:
 
     ![DRAGON Stack manager being upgraded](images/dragon-upgrading.png)
-    
+
     ![DRAGON Stack manager upgraded with success](images/dragon-upgrade.png)
 
     *[Click here to skip to STEP 4](#STEP4:DeploytheDRAGONStackbackend)*
@@ -54,7 +54,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     > Command line parameters ................................................... ok
     Entering keys generation process...
     These keys (public and private) will be used for future connection to Oracle Cloud Infrastructure API endpoints.
-    Please enter a passphrase: banana
+    Please enter a passphrase: &lt;enter a passphrase&gt;
     > Keys creation ..................................... ok [Upload the Public Key]
     Please upload this public key to your Oracle Cloud Infrastructure user's API Keys:
 
@@ -101,6 +101,18 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
   To see more information about generating the keys and finding your OCIDs, refer to [API Signing Key](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
 
+3. Click on **Auth Tokens** and click **Generate Token** to create an Authentication token.
+
+  ![](images/generate-auth-token-1.png)
+
+4. Enter a description and click **Generate Token**. Click **Copy** to save the token to the clipboard and then click **Close**.
+
+  ![](images/generate-auth-token-2.png)
+
+  ![](images/copy-auth-token.png)
+
+  Save the auth token for later.
+
 3. On the User Details page, copy the user OCID and save it for later:
 
   ![Retrieve user OCID](images/user-ocid.png)
@@ -109,7 +121,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
   ![Retrieve tenancy OCID](images/tenancy-ocid.png)
 
-5. From your compartment details page, copy the compartment OCID and save it for later.
+5. If you are using a LiveLabs reservation, your compartment OCID is provided on your reservation page. If you are using a Free Trial or Customer-owned tenancy, from your compartment details page, copy the compartment OCID and save it for later.
 
   ![Retrieve compartment OCID](images/compartment-details.png)
 
@@ -131,7 +143,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     user=<user ocid>
     fingerprint=<api key fingerprint>
     key_file=~/dragon_ssh_key
-    pass_phrase=banana
+    pass_phrase=<your passphrase>
     tenancy=<tenancy ocid>
     compartment_id=<compartment ocid>
     region=<region code>
@@ -143,25 +155,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
     *Remark: we provide a sample JSON file for initializing a JSON collection during the deployment of the stack.*
 
-3. In the case of Always Free Database limit reached for a paid tenant or a LiveLabs provided account, you can change the type of the database to provision using the `database_type` parameter:
 
-    ```
-    <copy>
-    [DEFAULT]
-    user=<user ocid>
-    fingerprint=<api key fingerprint>
-    key_file=~/dragon_ssh_key
-    pass_phrase=banana
-    tenancy=<tenancy ocid>
-    compartment_id=<compartment ocid>
-    region=<region code>
-    auth_token=<authentication token>
-    database_password=5uPeR_5tRoNg_PaSsWoRd
-    database_collections=employees
-    database_type=ajd
-    </copy>
-    ```
- 
 ## **STEP 4:** Deploy the DRAGON Stack backend
 
 1. Use the `-help` to see the parameters that DRAGON accepts:
@@ -188,8 +182,27 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     ```
     $ <copy>./dragon-linux-x86_64-2.0.7 -loadjson</copy>
     ```
-   
+
     ![Autonomous database provisioned with DRAGON](./images/dragon-provisioned-backend.png)
+
+4. If your tenancy has reached its limit for available Always Free Databases, you can change the type of the database to provision using the `database_type` parameter and try again. For example, this file uses an Autonomous Transaction Processing database (ATP).
+
+    ```
+    <copy>
+    [DEFAULT]
+    user=<user ocid>
+    fingerprint=<api key fingerprint>
+    key_file=~/dragon_ssh_key
+    pass_phrase=<your passphrase>
+    tenancy=<tenancy ocid>
+    compartment_id=<compartment ocid>
+    region=<region code>
+    auth_token=<authentication token>
+    database_password=5uPeR_5tRoNg_PaSsWoRd
+    database_collections=employees
+    database_type=atp
+    </copy>
+    ```
 
 ## **STEP 5:** Using DRAGON
 

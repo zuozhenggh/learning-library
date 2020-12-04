@@ -6,6 +6,15 @@ This lab will show how to create a datasource in WebLogic and will be recoding t
 
 *Estimated Lab Time*: 20 Minutes
 
+### About eShop Application
+
+The eSHOP company has a shopping cart web application to sell all clothing and fashion accessories to its customers.  The product details are all provided in JSON format by different vendors of the product and the customers shopping data is retained as XML as per the current single database used for the shopping application.  The store location details are stored as spatial data in a separate single purpose database and all analytical data for the application is residing in a different single purpose database.  In total., the application must deal with multiple datatypes. Hence, the eSHOP company earlier had an overhead of connecting to different single-purpose databases to work on each datatype for its shopping cart web application.
+
+The connections to databases and transactions involved with database is always costly and complex.  Because of these multiple single purpose databases, the eShop company had to have engineers knowing to handle these specific single purpose databases, bear the integration costs and complexities of handling the application code which talks to these different databases.  Scalability is another challenge the eSHOP company is facing due to the data fragmentation in the old architecture involving these multiple single-purpose databases.
+The CTO of the company decides to re-write the e-shopping  web application using J2EE standards to host on WebLogic., the market leader for enterprise application services. Java developers at eSHOP can leverage the Oracle’s best JEE development tool JDeveloper for coding this new application. 
+
+The new application re-written in J2EE standards using JDeveloper to deploy on WebLogic, demonstrates how convenient it is to work with converged oracle database.
+
 ### Objectives
 - Setup and configure eSHOP application
 - Setup and record WLST scripts from WebLogic console
@@ -20,20 +29,11 @@ This lab assumes you have:
     - Lab: Setup Compute Instance
     - Lab: Start Services
 
-### About eShop Application
-
-The eSHOP company has a shopping cart web application to sell all clothing and fashion accessories to its customers.  The product details are all provided in JSON format by different vendors of the product and the customers shopping data is retained as XML as per the current single database used for the shopping application.  The store location details are stored as spatial data in a separate single purpose database and all analytical data for the application is residing in a different single purpose database.  In total., the application must deal with multiple datatypes. Hence, the eSHOP company earlier had overhead of connecting to different single-purpose databases to work on each datatype for its shopping cart web application.
-
-The connections to databases and transactions involved with database is always costly and complex.  Because of these multiple single purpose databases, the eShop company had to have engineers knowing to handle these specific single purpose databases, bear the integration costs and complexities of handling the application code which talks to these different databases.  Scalability is another challenge the eSHOP company is facing due to the data fragmentation in the old architecture involving these multiple single-purpose databases.
-The CTO of the company decides to re-write the e-shopping  web application using J2EE standards to host on WebLogic., the market leader for enterprise application services. Java developers at eSHOP can leverage the Oracle’s best JEE development tool JDeveloper for coding this new application. 
-
-The new application re-written in J2EE standards using JDeveloper to deploy on WebLogic, demonstrates how convenient it is to work with converged oracle database
-
 ## **STEP 1**: Access the WebLogic Admin Console
 
 Handling database connections using WebLogic datasources gives the developers freedom to configure database related performance parameters on the WebLogic side rather than tweaking the application code. 
 
-It improves application performance as connections are not created/closed within a class, they are managed by the application server and can be fetched while at runtime.it provides a facility for creating a pool of connectionsrecycling of connections in the pool is helpful for enterprise application performanceIt supports distributed transactions.
+It improves application performance as connections are not created/closed within a class, they are managed by the application server and can be fetched while at runtime.It provides a facility for creating a pool of connectionsrecycling of connections in the pool is helpful for enterprise application performanceIt supports distributed transactions.
 
 1. Open the Firefox browser and navigate to `http://localhost:7101/console` OR You can use the bookmark **Oracle Weblogic Server Administration Console** under **ConvergedDB-Workshp in Bookmark Toolbar**.
 
@@ -79,7 +79,7 @@ It improves application performance as connections are not created/closed within
     ````
     ![](./images/datasource-recording-setting-prepost-text.png " ")
 
-4. Click on **Save** button.
+4. Click on the **Save** button.
 
 5. Click on **Control** tab.  Click Start **Recording**.
 
@@ -90,7 +90,7 @@ It improves application performance as connections are not created/closed within
 
 ## **STEP 3**: Create a datasource using WebLogic console
 
-1. Under **Domain Structure** tab on left hand side, expand **Service**.
+1. Under **Domain Structure** tab on the left hand side, expand **Service**.
 
 2. Click on **Data Sources**  Click on New and select **Generic Data Source**.
 
@@ -121,7 +121,7 @@ It improves application performance as connections are not created/closed within
     
     ![](./images/create-jsonxmlds-connection-properties.png " ")
 
-7. Click on **Test Configurtion** to confirm the connection.  Once you see a successful connection, Click **Next**.
+7. Click on **Test Configuration** to confirm the connection.  Once you see a successful connection, Click **Next**.
 
     ![](./images/create-jsonxmlds-test-connection.png " ")
 
@@ -137,7 +137,7 @@ Now we have successfully recorded how a datasource can be created from WebLogic 
 
 ## **STEP 4**: Edit the recorded script for creating another datasource
 
-WebLogic Scripting tool is used to do all administrative actions which can be done using administrative console on a command prompt.
+WebLogic Scripting tool is used to perform administrative actions which can be done using administrative console on a command prompt.
 
 In this step we will edit the recorded script a little to connect to the required AdminServer, change the parameters like data source name, other connection parameters and execute the script from command line.
 
@@ -165,7 +165,7 @@ In this step we will edit the recorded script a little to connect to the require
 
     ````
     <copy>
-    cmo.setPassword(**Oracle_4U**)
+    cmo.setPassword("Oracle_4U")
     </copy>
     ````
 
@@ -295,14 +295,14 @@ In this step we will edit the recorded script a little to connect to the require
  The eShop application is deployed and functional. 
  
 ## Summary
-In summary, you have deployed the eShop application on to WebLogic and verified its functionality. You have also started the JDeveloper on the lab system and have accessed to the working code of eShop application.
+To summarize, you have deployed the eShop application on to WebLogic and verified its functionality. You have also started the JDeveloper on the lab system and have accessed to the working code of eShop application.
 
 You may now *proceed to the next lab*.
 
 ## Acknowledgements
 - **Authors** - Pradeep Chandramouli, Nishant Kaushik, Balasubramanian Ramamoorthy, Dhananjay Kumar, AppDev & Database Team, Oracle, October 2020
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Kanika Sharma, NA Technology, October 2020
+- **Last Updated By/Date** - Nishant Kaushik, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
