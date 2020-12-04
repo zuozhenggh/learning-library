@@ -187,7 +187,7 @@ To copy the files:
 
       Notice that the IP address is for the first utility node. In this example, it's  `10.2.0.101`.
 
-<!-- 7. Copy the SSL certificate from the second utility node (`node1`):  
+<!--  Copy the SSL certificate from the second utility node (`node1`):  
 
       ```
     PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename> </copy>
@@ -203,7 +203,7 @@ To copy the files:
 
       **Note** You could have copied both certificate files from either the first or second utility nodes, because the SSL certificate files for all the nodes are stored on all the nodes. However, in the next two steps, you must copy the key file for the first utility node from the first utility node and the key file for the second utility node from the second utility node.-->
 
-8. Copy the SSL key file (named `node.hue.key`) for the first utility node to a ``<target>`` location on your computer. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
+7. Copy the SSL key file (named `node.hue.key`) for the first utility node to a ``<target>`` location on your computer. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
 
       ```
     PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
@@ -215,7 +215,7 @@ To copy the files:
     PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/first-util-node.key</copy>
       ```
 
-<!-- 9. Copy the SSL key file  (also named `node.hue.key`) for the second utility node:  
+<!-- . Copy the SSL key file  (also named `node.hue.key`) for the second utility node:  
 
       ```
     PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
@@ -245,7 +245,7 @@ To copy the files:
       ```
 -->
 
-10. List your downloaded files to make sure the files were downloaded appropriately, for example:
+8. List your downloaded files to make sure the files were downloaded appropriately, for example:
 
       ```
     PS C:\Users\MYHOME\> <copy>ls</copy> ./bds/ssl-files
@@ -258,7 +258,7 @@ To copy the files:
     -a----    11/17/2020     9:30 AM   1675 first-util-node.key
       ```
 
-11. Close Windows PowerShell.
+9. Close Windows PowerShell.
 
 ## **STEP 3:** Create the Load Balancer
 
