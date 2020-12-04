@@ -47,10 +47,7 @@ In this lab, you will:
 
   This lab assumes you're using a recent installation of Windows, such as Windows 10, which includes Windows PowerShell, `ssh`, and `scp`.
 
-
-  <!-- * An Oracle Cloud Infrastructure environment with a Virtual Cloud Network (VCN), a public subnet, appropriate security rules, and a non-HA Big Data Service cluster. The fastest way to set up the environment for this lab is to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop.-->
-
-* An Oracle Cloud Infrastructure environment with a Virtual Cloud Network (VCN), a public subnet, appropriate security rules, and a Big Data Service HA cluster. The fastest way to set up the environment for this lab is to complete the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop.
+  * An Oracle Cloud Infrastructure environment with a Virtual Cloud Network (VCN), a public subnet, appropriate security rules, and a Big Data Service HA cluster. The fastest way to set up the environment for this lab is to complete the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) <!-- [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) --> workshop.
 
     Specifically, you must complete the following labs in that workshop:
 
