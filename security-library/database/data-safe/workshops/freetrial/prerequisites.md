@@ -175,7 +175,7 @@ You are ready to begin the labs. Start with the [**Introduction**](?lab=introduc
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, October 29, 2020
+* **Last Updated By/Date** - Jody Glover, December 4, 2020
 
 
 ## Need Help?
