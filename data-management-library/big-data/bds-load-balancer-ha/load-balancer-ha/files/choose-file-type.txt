@@ -1,0 +1,2 @@
+This image shows the Choose File Type list opened above the Open button in the ???????? dialog box.
+

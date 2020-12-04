@@ -1,6 +1,6 @@
-<!-- #  Use a Load Balancer to Access Services on Big Data Service (HA Cluster)-->
+#  Use a Load Balancer to Access Services on Big Data Service (HA Cluster)
 
-#  Use a Load Balancer to Access Services on Big Data Service (Non-HA Cluster)
+<!-- #  Use a Load Balancer to Access Services on Big Data Service (Non-HA Cluster)-->
 
 ## Introduction
 
