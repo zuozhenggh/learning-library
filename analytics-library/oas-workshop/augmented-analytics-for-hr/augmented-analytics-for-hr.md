@@ -24,9 +24,6 @@ We will also explore how self-service machine learning enables predictive analyt
 
 ### Prerequisites ###
 
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
 - Lab: Start Oracle Analytics Server
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
