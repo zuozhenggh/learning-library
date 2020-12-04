@@ -20,7 +20,7 @@ Estimated Lab Time: 75 minutes
 
 In this lab, you will:
 
-* Create an Oracle Cloud Infrastructure load balancer for an existing Big Data Service HA  cluster.
+* Create an Oracle Cloud Infrastructure load balancer for an existing Big Data Service HA cluster..
 
 <!-- * Create an Oracle Cloud Infrastructure load balancer for an existing non-HA Big Data Service cluster.-->
 
@@ -579,9 +579,3 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 ## See an issue?
 
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name, lab* and *step* in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-<!--
-reserved text
-
-To view your reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > Public IPs**. The  reserved public IP address is displayed in the **Reserved Public IPs** list.
--->
-<!--  You could choose instead to select **Private** to create a load balancer that will be accessible only from your private network, but for simplicity these instructions describe how to create a public load balancer.-->
