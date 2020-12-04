@@ -43,7 +43,6 @@ To complete this lab, you need the following:
 
     c) Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
-
 ## **STEP 2**: Provision audit and alert policies on your target database by using the Activity Auditing wizard
 
 
