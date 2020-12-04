@@ -52,9 +52,7 @@ In this lab, you will:
 
     Once you've completed those labs, you can start with **STEP 1: Gather Information**, below.
 
-<!-- If you choose not to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, you must create and configure:
-
-<!--* An **Oracle Big Data Service HA cluster** running in a **VCN** with an internet gateway and a public regional subnet (for a public load balancer).  See [Set Up Oracle Cloud Infrastructure for Oracle Big Data Service](https://docs-uat.us.oracle.com/en/cloud/paas/big-data-service/user/set-oracle-cloud-infrastructure-oracle-big-data-service.html) and [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.-->
+If you choose not to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, you must create and configure:
 
 * A **non-HA Oracle Big Data Service cluster** running in a **VCN** with an internet gateway and a public regional subnet (for a public load balancer). See [Set Up Oracle Cloud Infrastructure for Oracle Big Data Service](https://docs-uat.us.oracle.com/en/cloud/paas/big-data-service/user/set-oracle-cloud-infrastructure-oracle-big-data-service.html) and [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
 
@@ -66,20 +64,10 @@ In this lab, you will:
 
 * **Access to the cluster file system** (via SSH). You must be able to connect directly to the first utility node on your cluster. To do this, prior to creating a load balancer, you must set up your environment to allow that access. For example you can use Oracle FastConnect or Oracle IpSec VPN, you can set up a bastion host, or you can map private IPs to public IP addresses. See  [Establish Connections to Nodes with Private IP Addresses](https://docs.oracle.com/en/cloud/paas/big-data-service/user/establish-connections-nodes-private-ip-addresses.html) in *Using Big Data Service*.
 
-<!--  In this lab, the sample IP addresses are `10.2.0.101` (first utility node) and `10.2.0.102` (second utility node). Your IP addresses will be different.-->
-
-<!-- In this lab, the sample IP addresses is `10.2.0.101` (first utility node). Your IP address will be different.-->
 
 ## **STEP 1:** Gather Information
 
 Gather the following information before you start:
-
-
-<!--   | Information | Where To Find It |
-| :--- | :--- |
-| SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br><br>In the examples shown in this lab, the SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key that was associated with the cluster when it was created). In the examples below, the private key is located in `C:\Users\MYHOME\bds\ssh\`.|
-| Target location for downloading SSL files | A location on your local computer for saving downloaded SSL files. You'll retrieve these files later, when creating the load balancer.|
-|IP Addresses of the first and second utility nodes |The accessible IP address of the first utility node, which is where Cloudera Manager runs, and the accessible IP address of the second utility node, where Hue and Big Data Studio run. <br><br>If you followed the steps in the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, these are the public IP addresses that you mapped to the nodes' private IP addresses. <br><br>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.|-->
 
   | Information | Where To Find It |
 | :--- | :--- |
@@ -97,12 +85,6 @@ You'll copy the following certificate and key from the first utility node:
   * `/opt/cloudera/security/x509/`_&lt;first\_utility\_node\_certificate&gt;_`.pem`
 
   * `/opt/cloudera/security/x509/node.hue.key`
-
-<!-- And you'll copy the following certificate and key from the _second_ utility node:
-
-  * `/opt/cloudera/security/x509/`_&lt;second\_utility\_node\_certificate&gt;_`.pem`
-
-  * `/opt/cloudera/security/x509/node.hue.key`-->
 
 To copy the files:
 
@@ -148,13 +130,6 @@ To copy the files:
     ssl.private.key
       ```
 
-<!-- 4. Copy and save the file *names* of the PEM files for the first and second utility nodes. You can identify them by looking at the first part of the names, where ``<cluster>`` is the first seven letters of the cluster name and `un0` and `un1` identify the nodes. For example, on a cluster named `mycluster`:
-
-    * `node_myclust`**`un0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem` (first utility node)
-    * `node_myclust`**`un1`**`.sub12345678901.myclustevcn.oraclevcn.com.pem` (second utility node)
-
-    You'll use these names in the following steps, when you issue commands to download the files.-->
-
   4. Copy and save the file *name* of the PEM file for the first utility node. You can identify it by looking at the first part of the names, where ``<cluster>`` is the first seven letters of the cluster name and `un0` identifies the node. For example, on a cluster named `mycluster`, the first utility node is:
 
     `node_myclust`**`un0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
@@ -176,22 +151,6 @@ To copy the files:
       ```
 
       Notice that the IP address is for the first utility node. In this example, it's  `10.2.0.101`.
-
-<!--  Copy the SSL certificate from the second utility node (`node1`):  
-
-      ```
-    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename> </copy>
-      ```
-
-      For example:
-
-      ```
-    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/second-util-node-cert.pem</copy>
-      ```
-
-      Notice that the IP address is for the second utility node. In this example, it's  `10.2.0.102`.
-
-      **Note** You could have copied both certificate files from either the first or second utility nodes, because the SSL certificate files for all the nodes are stored on all the nodes. However, in the next two steps, you must copy the key file for the first utility node from the first utility node and the key file for the second utility node from the second utility node.-->
 
 7. Copy the SSL key file (named `node.hue.key`) for the first utility node to a ``<target>`` location on your computer. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
 
@@ -283,50 +242,6 @@ To copy the files:
 8. Click **Submit**. When the large load balancer status icon at the top of the **Load Balancer Details** page is green and says "Active," you can continue with the steps below. It may take a few minutes to create the load balancer.
 
   ![](./images/lb-status-large-icon.png "Load balancer status icon")
-
-<!-- ## **STEP 4:** Create Certificate Bundles
-
-In this step, you'll create certificate bundles with the SSL certificate and key files that you downloaded in **STEP 2: Copy SSL Certificates from the Cluster**. You'll create one bundle for the first utility node and one for the second utility node. You'll use these later to configure SSL for backend sets and listeners.  
-
-1. On the left side of the **Load Balancer Details** page, under **Resources**, click **Certificates** and then click **Add Certificate**.
-
-  ![](./images/resources-certs-add-certs.png "Add certificates")
-
-2. On the **Add Certificate** page, enter the following information:
-
-    * **Certificate Name:** Enter `first-util-node-cert-bundle` (or a name of your choice).
-
-    * **SSL Certificate:** In the **SSL Certificates** box, click the **select one** link, find and select the SSL certificate you downloaded from the first utility node; for example, `first-util-node-cert.pem` in `C:\Users\MYHOME\bds\ssl-files`, and click **Open**.
-
-      **Note:** If you don't see all your `.pem` and `.key` files in the directory where you saved them in **STEP 2: Copy SSL Certificates from the Cluster**, above, make sure that all files types are displayed in the Windows **File Upload** dialog box by selecting **All Files (\*.\*)** from the list above the **Open** button.
-
-      ![](./images/choose-file-type.png "Choose file type list")
-
-    * **Specify CA Certificate:** Check this box, and then click the **select one** link to add the same file that you just added for **SSL Certificate**, above; for example, `first-util-node-cert.pem`.
-
-    * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the first utility node; for example, `first-util-node.key`.
-
-    ![](./images/add-cert.png "Add certification page ")
-
-3. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
-
-    ![](./images/cert-list.png "Certificates table")
-
-    **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (first) utility node.
-
-4. Remain on the **Certificates** page. Click **Add Certificate** again, and then on the **Add Certificate** page, enter the following information:
-
-    * **Certificate Name:** Enter `second-util-node-cert-bundle` (or a name of your choice).
-
-    * **SSL Certificate:** In the **SSL Certificates** box, click the **select one** link, find and select the SSL certificate you downloaded from the second utility node; for example, `second-util-node-cert.pem`, and click **Open**.
-
-    * **Specify CA Certificate:** Check this box, and then add the same file that you just added for **SSL Certificate**, above.
-
-    * **Specify Private Key**: Check this box, click the **select one** link, find and select the SSL key you downloaded from the second utility node; for example, `second-util-node.key`, and click **Open**.
-
-5. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table.
-
--->
 
 ## **STEP 4:** Create a Certificate Bundle
 
@@ -559,13 +474,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
 ## **STEP 14:** Access the Cluster
-
-<!-- It may take a few minutes for the backend sets and listeners to be ready to receive requests.
-
-On the left side of the page, under **Resources**, click **Backend Sets**. In the **Backend Sets** table, check the status in the **Health** column. When the status for all the backend sets are **OK**, you can use the load balancer.
-
-**Tip:** If it's taking a long time for the health check, consider shortening the interval. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing a backend set, and select **Update Heath Check**. Change **Interval in Ms** to **1000** (the minimum interval) and **Timeout in Ms** to **500**. Repeat for each backend set. You can change the settings later if you want the health checks to be performed less often.
--->
 
 It may take a few minutes for the backend sets and listeners to be ready to receive requests. To open the services included in this load balancer:
 

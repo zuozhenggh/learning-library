@@ -68,13 +68,6 @@ Gather the following information before you start:
 | Target location for downloading SSL files | A location on your local computer for saving downloaded SSL files. You'll retrieve these files later, when creating the load balancer.|
 |IP Addresses of the first and second utility nodes |The accessible IP address of the first utility node, which is where Cloudera Manager runs, and the accessible IP address of the second utility node, where Hue and Big Data Studio run. <br><br>If you followed the steps in the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, these are the public IP addresses that you mapped to the nodes' private IP addresses. <br><br>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.|
 
-<!--  | Information | Where To Find It |
-| :--- | :--- |
-| SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br><br>In the examples shown in this lab, the SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key that was associated with the cluster when it was created). In the examples below, the private key is located in `C:\Users\MYHOME\bds\ssh\`.|
-| Target location for downloading SSL files | A location on your local computer for saving downloaded SSL files. You'll retrieve these files later, when creating the load balancer.|
-|IP Addresses of the first and second utility nodes |The accessible IP address of the first utility node, which is where Cloudera Manager, Hue, and Big Data Studio run. <br><br>If you followed the steps in the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, these are the public IP addresses that you mapped to the nodes' private IP addresses. <br><br>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.| -->
-
-
 ## **STEP 2:** Copy SSL Certificates from the Cluster
 
 In this step, you'll obtain the self-signed SSL certificates that were automatically created with your cluster.
