@@ -6,14 +6,9 @@
 
 In this lab, you'll create a load balancer to be used as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your highly-available (HA) Big Data Service cluster.
 
-<!-- In this lab, you'll create a load balancer to be used as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your non-highly-available (non-HA) Big Data Service cluster.-->
-
-When you've completed the lab, you'll be able to open the consoles for those services by using the URL of the load balancer, qualified by the port number used by the service. (Each service listens on a specific port.) For example, if the URL of the load balancer is `10.2.0.2`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://10.2.0.2:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://10.2.0.2:8889`.
+When you've completed the lab, you'll be able to open the consoles for those services by using the IP address (or hostname) of the load balancer, plus the port number used by the service. (Each service listens on a specific port.) For example, if the IP address of the load balancer is `10.2.0.2`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://10.2.0.2:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://10.2.0.2:8889`.
 
 Typically, a load balancer is used  to spread workloads across multiple mirrored servers, to optimize resource usage and to ensure high-availability. However, this lab tells you how to use a load balancer to direct traffic to specific services running specific servers (that is, Big Data Service nodes). Cloudera Manager runs on the first utility node of a non-HA cluster, and Hue and Data Studio run on the second utility node. The load balancer you create in this lab handles traffic on both nodes. (In a non-HA cluster, all three services run on the first utility node.)
-
-<!-- Typically, a load balancer is used  to spread workloads across multiple mirrored servers, to optimize resource usage and to ensure high-availability. However, this lab tells you how to use a load balancer to direct traffic to multiple ports on a single server (that is, a single Big Data Service node). Cloudera Manager, Hue, and Data Studio all run on the first utility node of a non-HA cluster, and the load balancer you create in this lab will handle traffic on that node. (In an HA cluster, the services are divided between the first and second utility nodes.)
--->
 
 One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. <!--SSL is a protocol used to ensure privacy, authentication, and data security in internet communications.--> SSL encrypts and decrypts transmitted data, ensures that the sender and receiver of data are who they claim to be, and signs the data to verify its integrity.  In this lab, you'll implement end-to-end SSL, so the load balancer will accept SSL encrypted traffic from clients and encrypt traffic to the cluster.
 
@@ -31,29 +26,21 @@ In this lab, you will:
 
 * Configure the load balancer to function as a front end for connecting to Cloudera Manager, Hue, and Big Data Studio on the cluster.
 
-* Implement end-to-end Secure Sockets Layer (SSL) encryption for the load balancer. You'll use the self-signed SSL certificates that are included with the cluster.
+* Implement end-to-end SSL encryption for the load balancer. You'll use the self-signed SSL certificates that are included with the cluster.
 
-**Note:** If you want to create a load balancer for a non-HA cluster or if you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
-
-<!-- UPDATE TO POINT TO OTHER LAB -->
-
-<!-- **Note:** If you want to create a load balancer for an *HA* cluster or if you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.-->
+**Note:** If you want to create a load balancer for an non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://bgelernt.github.io/learning-library/data-management-library/big-data/bds-load-balancer/workshops/freetier/?qa=true?lab=use-load-balancer-access-services-on-big/?qa=true&lab=use-load-balancer-access-services-on-big) lab.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
 ### What Do You Need?
 
 * This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> **Get Started with Oracle Cloud** lab in the **Contents** menu. <!-- FIND OUT ABOUT RENAMING THAT TO "GET STARTED WITH ORACLE CLOUD"-->
 
-* Any operating system command shell containing Secure Shell (SSH) and Secure Copy (SCP).
+* Any operating system command shell containing Secure Shell (SSH) and Secure Copy (SCP). This lab assumes you're using a recent installation of Windows, such as Windows 10, which includes Windows PowerShell, `ssh`, and `scp`.
 
-  This lab assumes you're using a recent installation of Windows, such as Windows 10, which includes Windows PowerShell, `ssh`, and `scp`.
+    * An **Oracle Cloud Infrastructure environment** with a **Virtual Cloud Network (VCN)**, a **public subnet**, appropriate **security rules**, and a **Big Data Service non-HA cluster**. The fastest way to set up the environment for this lab is to complete the  [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service)  workshop. Specifically, you must complete the following labs in that workshop:
 
-  * An Oracle Cloud Infrastructure environment with a Virtual Cloud Network (VCN), a public subnet, appropriate security rules, and a Big Data Service HA cluster. The fastest way to set up the environment for this lab is to complete the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) <!-- [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) --> workshop.
-
-    Specifically, you must complete the following labs in that workshop:
-
-    * Lab 1: Set Up Your BDS Environment
-    * Lab 2: Create a BDS Hadoop Cluster
-    * Lab 4: Access a BDS Node Using a Public IP Address
+      * **Lab 1: Set Up Your BDS Environment**
+      * **Lab 2: Create a BDS Hadoop Cluster**
+      * **Lab 4: Access a BDS Node Using a Public IP Address**
 
     Once you've completed those labs, you can start with **STEP 1: Gather Information**, below.
 
@@ -135,7 +122,7 @@ To copy the files:
 
       Notice that the name of the first utility node is shown in the Linux prompt. In the example above, it's `myclustun0`.
 
-3. At the Linux prompt, list the contents of the ``/opt/cloudera/security/x509/``, which is the directory that contains the SSL files on the node. For example:
+3. At the Linux prompt, list the contents of ``/opt/cloudera/security/x509/``, which is the directory that contains the SSL files on the node. For example:
 
       ```
     [opc@myclustun0 ~]$ <copy>ls /opt/cloudera/security/x509/</copy>
@@ -563,7 +550,7 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 
     * **DNS hostname**
 
-      After the load balancer is created and it's been given an IP address, you or another administrator must add a DNS entry to your DNS name servers, to resolve your desired hostname (for example, `bds-frontend.mycompany.com`) to the public IP address of the load balancer. Then, the services registered in the load balancer will be accessible by using that hostname; for example, `bds-frontend.mycompany.com:7183` for Cloudera Manager.
+      (DNS hostname is optional.) After the load balancer is created and it's been given an IP address, you or another administrator must add a DNS entry to your DNS name servers, to resolve your desired hostname (for example, `bds-frontend.mycompany.com`) to the public IP address of the load balancer. Then, the services registered in the load balancer will be accessible by using that hostname; for example, `bds-frontend.mycompany.com:7183` for Cloudera Manager.
 
       For information about using DNS in Oracle Cloud Infrastructure, see [Overview of the DNS Service](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm) in the Oracle Cloud Infrastructure documentation.
 
