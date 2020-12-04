@@ -23,10 +23,10 @@ As a LOB user
 ## STEP 1: Create a Bucket
 
 - Login to the OCI tenancy. Goto Menu => Core Infrastructure => Oject Storage => Object Storage
-   ![](./Images/Img13.png " ") 
+   ![](./images/Img13.png " ") 
    
 - Ensure you are in the right compartment and Click on Create Bucket.
-   ![](./Images/Img14.png " ") 
+   ![](./images/Img14.png " ") 
 
 ## STEP 2: Install Instant Client on the Source DBCS instance
 
@@ -50,14 +50,14 @@ As a LOB user
     rpm -ivh clientrpms/oracle-instantclient18.5-basic-18.5.0.0.0-3.x86_64.rpm clientrpms/oracle-instantclient18.5-sqlplus-18.5.0.0.0-3.x86_64.rpm clientrpms/oracle-instantclient18.5-tools-18.5.0.0.0-3.x86_64.rpm
     </copy>
     ``` 
-   ![](./Images/Img2.png " ")
+   ![](./images/Img2.png " ")
 
 The instant cient package containing Basic Package, SQLPlus Package and Tools Package is now installed.
 
 ## STEP 2: Check connectivity to the Target ATP-D instance from Source
 
 - Download and transfer ATP-D DB Wallet to Source Machine (DBCS instance).  
-*Note: We have downloaded the DB Wallet onto our local machine and uploaded it to object storage. We then used scp to transfer it to DBCS. Refer to [Lab 5](?lab=lab-5-configuring-development-system) Step 2.*
+*Note: We have downloaded the DB Wallet onto our local machine and uploaded it to object storage. We then used scp to transfer it to DBCS. Refer to [Lab 8](?lab=lab-8-configuring-development-system) Step 2.*
 
     ```
     <copy>
@@ -66,7 +66,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     mv /home/opc/Wallet.zip /root/wallet/
     </copy>
     ```
-   ![](./Images/Img3.png " ")
+   ![](./images/Img3.png " ")
     
 - Edit the sqlnet file to change the wallet directory to the new location of /root/wallet and export the following paths:
 
@@ -79,7 +79,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     ```
  *Note: These paths may vary on your system. Pls check prior to performing export.*
 
-   ![](./Images/Img4.jpg " ")
+   ![](./images/Img4.jpg " ")
 
 - Copy the connect string from tnsnames.ora file existing in the Wallet folder to connect to ATP-D instance.
 
@@ -111,7 +111,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     rpm -i <name of the rpm file downloaded>
     </copy>
     ```
-   ![](./Images/Img5.jpg " ")
+   ![](./images/Img5.jpg " ")
 
 - Validate the installation. 
 
@@ -121,7 +121,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     tree /opt/mv2adb/
     </copy>
     ```
-   ![](./Images/Img6.jpg " ")
+   ![](./images/Img6.jpg " ")
 
 *Note: The cfg file created here will be used as a reference for our configuration file.*
 
@@ -135,7 +135,7 @@ Generate encrypted passwords using the “mv2adb encpass” command for system p
     ./mv2adb encpass
     </copy>
     ```
-   ![](./Images/Img7.jpg " ")
+   ![](./images/Img7.jpg " ")
 
 ## STEP 5: Run the Migration Script
 
@@ -167,13 +167,13 @@ Generate encrypted passwords using the “mv2adb encpass” command for system p
     ```
 *Note: Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ccTZey-FamcBZ02nCaU7J9yzy20c0a5UxCQf-3IciWE/n/atpdpreview11/b/mv2adb/o/samplesource.mv2adbfinal.cfg) to download a sample config file for reference.*
     
-   ![](./Images/Img8.jpg " ")
+   ![](./images/Img8.jpg " ")
 
 Navigate to your console and get the OCI Details. 
 
-   ![](./Images/Img15.jpg " ")
+   ![](./images/Img15.jpg " ")
    
-   ![](./Images/Img9.jpg " ")
+   ![](./images/Img9.jpg " ")
 
 - Run the migration script in auto mode.
 
@@ -184,8 +184,8 @@ Navigate to your console and get the OCI Details.
     </copy>
     ```
     
-   ![](./Images/Img10.jpg " ")
-   ![](./Images/Img11.jpg " ")
+   ![](./images/Img10.jpg " ")
+   ![](./images/Img11.jpg " ")
 
 *Note: Migration of schema from source machine to Autonomous Database is complete*
 
@@ -204,7 +204,7 @@ We had migrated a sample HR schema in this lab. Let's connect to the ATPD (Targe
     </copy>
     ```
    
-   ![](./Images/Img12.jpg " ")
+   ![](./images/Img12.jpg " ")
 
 ## Acknowledgements
 
@@ -213,4 +213,8 @@ We had migrated a sample HR schema in this lab. Let's connect to the ATPD (Targe
 - **Author** - Padma Priya Rajan, Navya M S & Jayshree Chatterjee
 - **Last Updated By/Date** - Jayshree Chatterjee, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

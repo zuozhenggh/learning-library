@@ -1,6 +1,12 @@
 # Python Programming
 
-## **Introduction**
+## Introduction
+
+In this lab, you will explore the various capabilities available when developing with Python against the Oracle Database.
+
+Estimated Lab Time:  20 minutes
+
+## About Python and Oracle
 
 PL/SQL is ideal for programming tasks within Oracle Database. Most Oracle professionals, however, aren't confined to working strictly within the database itself.
 
@@ -19,7 +25,7 @@ To learn about how to connect to an oracle database from python, watch the video
 -   Learn how to use Python in the Oracle Database
 -   Learn how to validate Python operations
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -34,7 +40,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 1.  Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the *opc* user.
 
     ````
-    ssh -i your key name opc@your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 2.  Check if python3 has been installed by running the command.
@@ -106,6 +112,7 @@ There are several ways to execute Python code. In this step, we start with two e
     sudo su - oracle
     </copy>
     ````
+    ![](./images/sudo-oracle.png " ")
 
 2.  Install the *cx\_Oracle* module using python3 and pip for the oracle user.
 
@@ -126,6 +133,7 @@ There are several ways to execute Python code. In this step, we start with two e
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
     ````
+    ![](./images/oraenv.png " ")
 
     ````
     <copy>
@@ -417,6 +425,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as sysdba
     </copy>
     ````
+    ![](./images/sqlplus.png " ")
 
     ````
     <copy>
@@ -502,7 +511,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
 ## Conclusion
 
-In this Lab, you had an opportunity to try out connecting Python in the Oracle Database.
+In this lab, you had an opportunity to try out connecting Python in the Oracle Database.
 The guide shows the Developer how to use the Python Interpreter to interact with the Oracle Database through the Python API. We start by introducing Python and then review its installation requirements and tools required to run the demo. TThe Python API cx_Oracle is an open-source Python package that Oracle contributes to. It is used to access an Oracle Database from Python.
 
 The second part of the guide goes through a number of demo cases available through the Python API, including a simple Hello World application, and retrieving records from the Oracle Database using the cursor technology. There is a module on working with JSON data: loading the records to the database and querying them.
@@ -512,7 +521,10 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony
-- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Contributors** - Anoosha Pilli, Dylan McLeod, Arabella Yao
+- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

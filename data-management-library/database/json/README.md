@@ -21,7 +21,7 @@ Click on one of our workshops below to access the content.
 
 ## Workshops
 
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier)
+- [JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -43,7 +43,9 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Developers Channel](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g)
 - [Oracle Product Management](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 -- Oracle Database Product Management

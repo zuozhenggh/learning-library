@@ -3,7 +3,10 @@
 ## Introduction
 Using Oracle Data Safe, create your own sensitive type and sensitive category.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 Watch the video below for an overview on how to create a Sensitive Type and Sensitive Category with Oracle Data Safe
 
@@ -27,7 +30,7 @@ Follow these general steps:
 
 ## Steps
 
-### Step 1: Sign in to the Oracle Data Safe Console for your region
+### **Step 1:** Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -42,7 +45,7 @@ Follow these general steps:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 2: Review the predefined sensitive types in the Oracle Data Safe Library
+### **Step 2:** Review the predefined sensitive types in the Oracle Data Safe Library
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Types**. The **Sensitive Types** page is displayed. On this page you can view predefined sensitive types and manage your own sensitive types.
 
@@ -74,11 +77,11 @@ The search finds **Department Name**, but nothing for department IDs.
 - Clear the search field, and then press **Enter** to restore the list.
 - Keep this page open because you return to it later in the lab.
 
-### Step 3: Connect to your ExaCS database as the SYS user with SQL Developer
+### **Step 3:** Connect to your ExaCS database as the SYS user with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Step 4: In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
+### **Step 4:** In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
 
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
@@ -92,7 +95,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 - Notice that the department ID values are 10, 20, 30, up to 270.
 
-### Step 5: In the Oracle Data Safe Console, create a sensitive type and sensitive category
+### **Step 5:** In the Oracle Data Safe Console, create a sensitive type and sensitive category
 
 - Return to the **Sensitive Types** page in the Oracle Data Safe Console.
 - Click **Add**.<br>

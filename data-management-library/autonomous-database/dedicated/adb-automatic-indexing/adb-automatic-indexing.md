@@ -20,21 +20,21 @@ As a database user, DBA or application developer,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
-- A pre-provisioned dedicated autonomous database instance. Refer [Lab 4](?lab=lab-4-provisioning-databases) on how provision an ATP database
-- A pre-provisioned Oracle Developer Client compute image. efer [Lab 5](?lab=lab-5-configure-dev-client) on how provision a developer client
+- A pre-provisioned dedicated autonomous database instance. Refer [Lab 7](?lab=lab-7-provisioning-databases) on how provision an ATP database
+- A pre-provisioned Oracle Developer Client compute image. efer [Lab 8](?lab=lab-8-configuring-development-system) on how provision a developer client
 - VNC Viewer or other suitable VNC client on your local laptop
 
 
 ## STEP 1: Download and install Swingbench
 
-The Oracle Cloud Infrastructure Marketplace provides a pre-configured developer client image that come with database drivers for Java, node.js, python and other popular languages. Instructions to install and use this developer client are provided in [Lab 5](?lab=lab-5-configure-dev-client)
+The Oracle Cloud Infrastructure Marketplace provides a pre-configured developer client image that come with database drivers for Java, node.js, python and other popular languages. Instructions to install and use this developer client are provided in [Lab 8](?lab=lab-8-configuring-development-system)
 
 Please provision a developer client image and connect it to your autonomous database instance before proceeding with the rest of this lab.
 
 
 Let's ssh into the dev client and download the swingbench application in the /home/opc folder
 
-Mac users can ssh using command below in terminal while Windows users may use powershell or an ssh client as explained in [Lab 5](?lab=lab-5-configure-dev-client)
+Mac users can ssh using command below in terminal while Windows users may use powershell or an ssh client as explained in [APPENDIX](?lab=appendix)
 
 ````
 $ ssh -i <[ath-to-key-file]> opc@<ip-address-of-dev-client>
@@ -138,7 +138,7 @@ The Automatic Indexing Settings page is where you can,
 
 Next, lets fire up swingbench and simulate an OLTP order-entry workload.
 
-Open an ssh tunnel from your laptop into the developer client machine. Step by step instructions on setting up an ssh tunnel and opening a VNC connection to your developer client image are provided in [Lab 2](?lab=lab-2-configure-dev-client)
+Open an ssh tunnel from your laptop into the developer client machine. Step by step instructions on setting up an ssh tunnel and opening a VNC connection to your developer client image are provided in [Lab 8](?lab=lab-8-configuring-development-system)
 
 ````
 $ ssh -N -L 5901:127.0.0.1:5901 -i ~/<key-file> opc@<IP-address-of-dev-client>
@@ -182,4 +182,7 @@ This view shows all auto indexing activities incuding statements used for index 
 - **Contributors** - Kris Bhanushali, Govardhanan Ramachandran
 - **Last Updated By/Date** - Kris Bhanushali, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

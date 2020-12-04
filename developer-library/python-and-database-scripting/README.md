@@ -10,5 +10,7 @@ Welcome to the Python and Oracle Database Workshop. In this tutorial, you will l
 - Use Oracle Advanced Queuing
 
 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-***To log issues***, click here to go to the [issue](https://github.com/oracle/learning-library/issues/new) submission form.  Please provide the name of the workshop and the link when you submit an issue.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

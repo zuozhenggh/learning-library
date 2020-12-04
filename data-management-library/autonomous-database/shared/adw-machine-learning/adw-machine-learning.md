@@ -1,6 +1,6 @@
 # Simple Introduction to Machine Learning Algorithms (DBMS\_PREDICTIVE\_ANALYTICS)
 
-## **Introduction**
+## Introduction
 
 In this lab, you will be using the Oracle Machine Learning (OML) notebook application provided with Autonomous Data Warehouse Cloud (ADWC) to explore some samples of the *DBMS\_PREDICTIVE\_ANALYTICS* functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
 
@@ -10,7 +10,7 @@ In this lab, you will be using the Oracle Machine Learning (OML) notebook applic
 -   Learn how to use DBMS\_PREDICTIVE\_ANALYTICS routines
 -   Learn how to use Oracle ML Examples
 
-### Lab Prerequisites
+### Prerequisites
 
 -   This lab requires a user with access to the Oracle Machine Learning Notebook application
 
@@ -93,4 +93,7 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/20/dmapi
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

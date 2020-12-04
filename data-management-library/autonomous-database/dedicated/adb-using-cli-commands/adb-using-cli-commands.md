@@ -26,7 +26,7 @@ As a developer, DBA or DevOps user,
 
     *Note:* 
     - The OCI Marketplace 'Developer Cloud Image' is pre-configured with many client tools and drivers including OCI command line interface.
-    - To deploy a dev client compute image, refer to [Lab 5](?lab=lab-5-configuring-development-system).
+    - To deploy a dev client compute image, refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
 
 ## STEP 1: Connect to development client instance and verify OCI CLI version
@@ -293,4 +293,8 @@ These are a handful of examples on using the OCI CLI REST interface to work with
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

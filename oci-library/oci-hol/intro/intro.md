@@ -1,5 +1,5 @@
 
-# Welcome to Hands-On Cloud Learning on OCI
+# Introduction
 
 Get hands-on learning with training labs about Oracle cloud solutions. The labs featured on this page cover various solutions, skill levels, and categories based on Oracle Cloud Infrastructure (OCI). Browse the labs to learn more, and launch a lab to start your hands-on cloud learning experience!
 
@@ -10,6 +10,10 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 - $300 of free credits good for up to 3500 hours of Oracle Cloud usage
 - Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
 - Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
-  
+
 Click here to request your trial account: [Try It!](https://cloud.oracle.com/tryit)
 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -2,7 +2,10 @@
 
 This lab walks you through the steps to get started using the Oracle Exadata Cloud Service Database on Oracle Exadata Cloud Service. In this lab, you will provision a new database.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 Watch the video below for an overview on how to provision databases on your Exadata Cloud Service
 
@@ -26,7 +29,7 @@ As a database user, DBA or application developer,
 In this section you will be provisioning a database using the cloud console.
 ## Steps
 
-### STEP 1: Create an Exadata Cloud Service Database
+### **Step 1:** Create an Exadata Cloud Service Database
 
 **Login to your OCI account as a database user**
 

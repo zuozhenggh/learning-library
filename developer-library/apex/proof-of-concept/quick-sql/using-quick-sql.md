@@ -29,7 +29,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account, LiveLabs account or free trial. 
+- An Oracle Cloud paid account, LiveLabs account or free trial.
 - An APEX Workspace
 
 ## **Step 1** - Open Quick SQL
@@ -156,7 +156,6 @@ You can define numerous settings to further improve the generated SQL. You can c
     Click **Save Changes**
 
     ![](images/settings.png " ")
-    ![](images/settings2.png " ")
 
     The generated SQL has changed markedly. The table names are updated, there are additional columns, and updated triggers.
 
@@ -247,12 +246,15 @@ At this stage you have created a list of SQL statements. However, you first need
     *{Note: If you do not see 217 statements processed then return to Quick SQL and click _Generate SQL_, resave the script and then run it again. If you do not see 217 successful, then review the errors displayed in Feedback within the results.}*
 
 ## **Summary**
-This completes Lab 1. You now know how to utilize Quick SQL to build complex data structures, complete with sample data. [Click here to navigate to Lab 2](?lab=lab-2-creating-application)
+You now know how to utilize Quick SQL to build complex data structures, complete with sample data.
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
+- **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous database that scales elastically, delivers fast query performance and requires no database administration. In this hands on lab, you will deploy an Autonomous Data Warehouse instance, and load a table using a text file that is stored in object storage. Using the data table, and a Zeppelin Notebook, you'll apply Machine Learning algorithms to select a good wine that costs less than $20 to bring to a party.
+Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous database that scales elastically, delivers fast query performance and requires no database administration. In this hands on lab, you will deploy an Autonomous Data Warehouse instance, and load a table using a text file that is stored in object storage. Using the data table, and a Zeppelin Notebook, you will apply Machine Learning algorithms to select a good wine that costs less than $20 to bring to a party.
 
 **Some Key points:**
 
@@ -20,7 +20,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
@@ -32,7 +32,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console
+## **Step 1:** Sign in to OCI Console
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -57,7 +57,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 4. Click in the tool or field where you want to paste and press Ctrl-V again.
 
-## Step 2: Download the Notebook from Object Storage
+## **Step 2:** Download the Notebook from Object Storage
 
 1. Find the data file in Object Storage. Select **Object Storage** from the menu, then choose **Object Storage** from pull right menu.
 
@@ -73,9 +73,9 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 6. Note the location where the file was downloaded.
 
-## Step 3: Import the Machine Learning Notebook
+## **Step 3:** Import the Machine Learning Notebook
 
-Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instance associated with your Autonomous Data Warehouse instance.
+Next, you will import a Zeppelin Notebook into the Oracle Machine Learning instance associated with your Autonomous Data Warehouse instance.
 
 1. Select Autonomous Data Warehouse from the menu
 
@@ -101,7 +101,7 @@ Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instanc
 
    ![](./../machine-learning-adw/images/ADW_ML_USER_01.png " ")
 
-7. Enter <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/machine-learning-adw/images/ADW_ML_EMAIL.png" alt="admin@oracle.com"> in the E-mail Address field, and enter <code>AAbbcc123456</code> in both password fields and click **Save**.
+7. Enter ![](https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/machine-learning-adw/images/ADW_ML_EMAIL.png) in the E-mail Address field, and enter <code>AAbbcc123456</code> in both password fields and click **Save**.
 
    ![](./../machine-learning-adw/images/ADW_ML_USER_02.png " ")
 
@@ -123,7 +123,7 @@ Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instanc
 
 13. Select the file and click **Open**.
 
-## Step 4: Run the Notebook
+## **Step 4:** Run the Notebook
 
 1. Click the notebook name to run it.
 
@@ -153,7 +153,7 @@ Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instanc
 
 8. When you have completed the Notebook, you can explore other example Notebooks by clicking **Home** from the menu, and then **Examples**.
 
-## Step 5: Delete the resources
+## **Step 5:** Delete the resources
 
 **Delete Auth Token and Autonomous Data Warehouse**
 
@@ -172,6 +172,10 @@ Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instanc
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 

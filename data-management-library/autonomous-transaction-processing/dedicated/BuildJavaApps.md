@@ -17,8 +17,10 @@ In this lab we will configure and deploy a java application in a developer clien
 
 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 
 As an application developer,
@@ -37,7 +39,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample java application
+### **Step 1:** Download sample java application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** and **Instances** from the hamburger menu top left
 
@@ -103,7 +105,7 @@ tar xzfv ojdbc8-full.tar.gz
 ```
 
 
-### STEP 2: Transfer database wallet to developer client
+### **Step 2:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and click on **Autonomous Transaction Processing** from top left menu
 ![](./images/800/atpd1.png)
@@ -137,7 +139,7 @@ sudo scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@pu
 
 - Windows users: Use a scp client such as winSCP to move your wallet to the client machine
 
-### STEP 3: Run your java application**
+### **Step 3:** Run your java application**
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder
 

@@ -12,7 +12,7 @@ Estimated Time: 10 minutes
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account, a LiveLabs account or free trial. 
+* An Oracle Cloud paid account, a LiveLabs account or free trial.
 * An APEX Workspace and application
 
 ## **Step 1** - Adding Columns to the Report.
@@ -183,12 +183,15 @@ This same LOV is used on the Links form page so we can reuse it there as well.
 
 ## **Summary**
 
-This completes Lab 5. You now know how to enhance report and list of value queries to display related details. [Click here to navigate to Lab 6](?lab=lab-6-improving-links)
+You now know how to enhance report and list of value queries to display related details. [
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

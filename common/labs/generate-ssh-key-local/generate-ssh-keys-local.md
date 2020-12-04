@@ -12,7 +12,7 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 1.  If you don't already have a shortcut to the terminal application for MacOS, you can find it in the **Applications** > **Utilities** menu or (Shift+Command+U) on your keyboard.
 
-2.  Start up **Terminal** and type in the command ```ssh-keygen```. ssh-keygen will ask you where to save the key, accept the default of the .ssh folder in your home directory by pressing Enter. File name will be ```id_rsa``` or whatever you choose to name your key. Press Enter twice for no passphrase. Remember the directory where you saved your key (~/.ssh), you'll need to reference it later when you create your instance.
+2.  Start up **Terminal** and type in the command ```ssh-keygen```. ssh-keygen will ask you where to save the key, accept the default of the .ssh folder in your home directory by pressing Enter. File name will be ```id_rsa``` or whatever you choose to name your key. Press Enter twice for no passphrase. Remember the directory where you saved your key (~/.ssh), you will need to reference it later when you create your instance.
 
     ````
     <copy>ssh-keygen</copy>
@@ -45,7 +45,7 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Option 2:  Windows 10
 
@@ -98,11 +98,11 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Option 3a: Prior Windows Versions - Git for Windows
 
-In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
+In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you will use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
 
 1.  If you don't already have it installed, access the link below and download the application. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
 
@@ -150,7 +150,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     *Note: If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.*
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Option 3b: Windows Versions - PuTTY
 
@@ -186,7 +186,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     ![](images/keylab-018.png " ")
 
-8.  Next you'll need to save the private key. Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.
+8.  Next you will need to save the private key. Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.
 
     ![](images/keylab-019.png " ")
 
@@ -238,7 +238,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Option 4: SSH Keys for Linux
 
@@ -282,11 +282,14 @@ You may now *proceed to the next lab*.
 
     In case you're interested, click [here](https://www.ssh.com/ssh/key) for more details on SSH, a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 27, 2020
+* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, October 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

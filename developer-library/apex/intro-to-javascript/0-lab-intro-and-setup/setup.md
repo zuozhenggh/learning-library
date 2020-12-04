@@ -8,7 +8,7 @@ You can create applications with Oracle Application Express on Autonomous Transa
 
 Each Autonomous Transaction Processing instance includes a dedicated instance of Oracle Application Express; you can use this instance to create multiple workspaces.
 
-### Lab Prerequisites
+### Prerequisites
 - Sign Up for Free Trial/Login to Oracle Cloud
 
 ## **Step 1:** Create an Autonomous Transaction Processing instance
@@ -82,4 +82,7 @@ You may now proceed to the next lab.
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Jeffrey Malcolm Jr, LiveLabs QA, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

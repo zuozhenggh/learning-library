@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Sign in to OCI Console and create VCN](#sign-in-to-oci-console-and-create-vcn)
 
@@ -41,7 +41,7 @@ In this lab we will create a compute instance, download a script to configure st
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-## Pre-Requisites
+## Prerequisites
 
 1. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
@@ -243,9 +243,9 @@ virtualenv <Environment_Name>
 ```
 For example **virtualenv stream_env**
 
-Now initialize the virtual enviornment, Enter command:
+Now initialize the virtual environment, Enter command:
 
-**NOTE** : Below command assumes that the enviornment name is 'stream-env'
+**NOTE** : Below command assumes that the environment name is 'stream-env'
 ```
 cd /home/opc/stream_env/bin
 ```

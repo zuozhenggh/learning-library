@@ -6,7 +6,10 @@
 
 **Terraform** is a really handy tech tool that lets you build, change, and version infrastructure safely and efficiently. **Terraform** is quietly revolutionizing DevOps by changing the way infrastructure is managed, and making it faster and more efficient to execute DevOps projects.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 Watch the video below for an overview on how to automate with Terraform
 

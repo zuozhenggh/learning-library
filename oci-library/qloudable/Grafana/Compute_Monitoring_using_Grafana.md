@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Sign in to OCI Console and create VCN](#sign-in-to-oci-console-and-create-vcn)
 
@@ -45,7 +45,7 @@ Essentially, it’s a feature-rich replacement for Graphite-web, which helps use
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-## Pre-Requisites
+## Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
@@ -260,7 +260,7 @@ User name and password are 'admin'
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_008.PNG" alt="image-alt-text">
 
 12. Switch to Grafana tab and paste the OCID in **Tenancy OCID**. Choose your region for **Default Region**
-Choose **OCI Instance** for Enviornment.
+Choose **OCI Instance** for environment.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_009.PNG" alt="image-alt-text">
 

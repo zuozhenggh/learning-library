@@ -36,9 +36,9 @@ As an developer or DBA,
 
 - Since your autonomous database in a private network, you cannot access it with the URL above unless you are on a machine that has a network path to your database subnet. 
 
-- Lets connect to the developer client machine you setup in [Lab 5](?lab=lab-5-configuring-development-system) using a secure ssh tunnel.
+- Lets connect to the developer client machine you setup in [Lab 8](?lab=lab-8-configuring-development-system) using a secure ssh tunnel.
 
-- Open an ssh tunnel from your local laptop to your developer client. For instructions, refer to [Lab 5](?lab=lab-5-configuring-development-system).
+- Open an ssh tunnel from your local laptop to your developer client. For instructions, refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
 **Mac or Linux users** 
 
@@ -69,7 +69,7 @@ As an developer or DBA,
 
 - Explore the SQL Developer Web interface and refer to its documentation for usage details.
 
-- Alternatively, you may also access the SQLDevWeb console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+- Alternatively, you may also access the SQLDevWeb console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
 
 ## STEP 3: Access the Performance Hub through SQL Developer Web Console
@@ -109,4 +109,8 @@ As an developer or DBA,
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

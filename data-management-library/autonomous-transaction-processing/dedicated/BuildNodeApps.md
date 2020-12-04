@@ -6,8 +6,10 @@ June 13, 2019
 # Lab 7: Building and deploying node.js application stacks on dedicated autonomous infrastructure
 </td></tr><table>
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Introduction
 The Oracle Cloud Infrastructure marketplace provides a pre-built image with necessary client tools and drivers to build applications on autonomous databases. As an application developer you can now provision a developer image within minutes and connect it to your dedicated or serverless database deployment. 
 
@@ -33,7 +35,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample node.js application
+### **Step 1:** Download sample node.js application
 
 - Login to your Oracle Cloud Infrastructure account select **Compute** —>  **Instances** from top left menu
 
@@ -76,7 +78,7 @@ mkdir /home/opc/ATPDnode && cd /home/opc/ATPDnode && unzip /home/opc/ATPDnode.zi
 
 Now that you have a sample application setup, lets get your database's secure wallet for connectivity
 
-### STEP 2: Transfer database wallet to developer client
+### **Step 2:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select **Autonomous Transaction Processing** from menu
 ![](./images/800/atpd1.png)
@@ -108,7 +110,7 @@ scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@publicI
 
 
 
-### STEP 3: Run your node.js application**
+### **Step 3:** Run your node.js application**
 
 Now that you have copied the database wallet to your development host, lets configure some env. variables and database authentication file to connect your node.js app to the database
 

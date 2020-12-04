@@ -1,6 +1,6 @@
 # Monitoring Your Autonomous Database Instance using the Cloud Console
 
-## **Introduction**
+## Introduction
 
 In this lab, you will explore the monitoring capabilities available for your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) database.
 
@@ -15,7 +15,7 @@ This lab covers using the Database Service Console, OCI Monitoring Console, and 
 The ADW or ATP Service Console provides dashboards to monitor the real-time and historical CPU and storage utilization, as well as database activity, like the number of running or queued statements. It also provides Real-Time SQL Monitoring to look at current and past long-running SQL statements in your instance and allows you to cancel long-running queries or set thresholds for ADW or ATP to automatically cancel them for you.
 
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the preceding labs shown in the Contents menu on the right.
 
@@ -172,4 +172,7 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Richard Green, DB Docs Team
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

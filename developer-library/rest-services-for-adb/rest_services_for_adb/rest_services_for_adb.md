@@ -1,6 +1,6 @@
 # RESTful Services for your Autonomous Database
 
-## **Introduction**
+## Introduction
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
 
@@ -336,7 +336,7 @@ The **Script Output** tab at the bottom of the screen shows the result of the SQ
     If the Authorization header is omitted, then the status *401 Unauthorized* is returned instead. Clear the **TOKEN** field to see the *401 Unauthorized* error.
 
 ## Conclusion
-In this Lab, you had an opportunity to get an introduction to REST services.
+In this lab, you had an opportunity to get an introduction to REST services.
 
 ## **Acknowledgements**
 
@@ -344,4 +344,7 @@ In this Lab, you had an opportunity to get an introduction to REST services.
  - **Contributors** - Oracle LiveLabs QA Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Ayden Smith, Intern)
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+ ## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

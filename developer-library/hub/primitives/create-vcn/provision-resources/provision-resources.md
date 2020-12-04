@@ -10,13 +10,13 @@ You may use one of the following methods to deploy the cloud resources for this 
 
 > **Resource Manager** uses Terraform to help install, configure, and manage cloud resources through the "infrastructure-as-code" model. Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm) to learn more about Resource Manager.
 
-### STEP 1 : Sign In to Oracle Cloud Infrastructure Console
+### **Step 1:** Sign In to Oracle Cloud Infrastructure Console
 
 Sign in to your **Cloud Account** from Oracle Cloud website. You will be prompted to enter your cloud tenant, user name, and password.
 
 > For detailed sign in instructions, refer to the documentation on [*Getting Started with Oracle Cloud*](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/sign-your-account-oracle-cloud-website.html).
 
-### STEP 2 : Create the Stack
+### **Step 2:** Create the Stack
 
 Creating a **Stack** involves uploading the Terraform configuration file, providing identifying information for the new stack, and (optionally) setting the variables.
 
@@ -32,7 +32,9 @@ Creating a **Stack** involves uploading the Terraform configuration file, provid
 
 3. In the **Create Stack** dialog, enter the following :
 
-	* Add the Terraform configuration file that you've downloaded earlier. You can either drag and drop it onto the dialog box or click **Browse** and navigate to the file location.
+	* Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file that you downloaded earlier. Click **Select**.
+
+		![](./images/zip-file.png)
 
 	* Enter a **Name** for the new stack (or accept the default name provided).
 
@@ -60,7 +62,7 @@ Click **Create** to create the Stack.
 
 6. Verify the Stack creation on the **Stack Details** page.
 
-### STEP 3 : Run a Plan Job
+### **Step 3:** Run a Plan Job
 
 Running a plan job parses the Terraform configuration (.zip) file and converts it into an execution plan listing resources and actions that will result when an apply job is run. We recommend generating the execution plan before running an apply job.
 
@@ -74,7 +76,7 @@ Running a plan job parses the Terraform configuration (.zip) file and converts i
 
 5. Scroll to the bottom of the plan log and verify there are no errors, and the plan indicates the resources will be added.
 
-### STEP 4 : Run an Apply Job
+### **Step 4:** Run an Apply Job
 
 When you run an apply job for a Stack, Terraform creates the resources and executes the actions defined in the Terraform configuration (.zip) file. The time required to complete an apply job depends on the number and type of cloud resources to be created.
 
