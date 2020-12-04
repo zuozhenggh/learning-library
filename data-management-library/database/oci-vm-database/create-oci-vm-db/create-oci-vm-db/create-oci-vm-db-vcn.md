@@ -66,7 +66,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
     * In the **Database name** field, change the default database name to "cdb1".
     * On the **Database version** drop down menu, select the version of the Oracle Database you want: 21c.
     * In the **PDB name** field, enter "pdb1".
-    * Enter the password: `WElcome123##` for your sys user in the **Password** field and then repeat the password in the **Confirm password** field.  This password will be used for all exercies in the 21c workshop series.  Please enter it carefully.
+    * Enter the password: `WElcome123##` for your sys user in the **Password** field and then repeat the password in the **Confirm password** field.  This password will be used for all exercises in the 21c workshop series.  Please enter it carefully.
 
     ![](images/create-VM-DB-form2.png " ")
 
