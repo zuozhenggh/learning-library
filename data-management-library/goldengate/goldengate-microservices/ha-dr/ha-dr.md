@@ -5,7 +5,7 @@ This lab will introduce you to Oracle GoldenGate for Microservices Workshop Arch
 
 *Estimated Lab Time*:  60 minutes
 
-**Workshop Architecture**
+### Lab Architecture
 ![](./images/ggmicroservicesarchitecture.png " ")
 
 ### Objectives
@@ -218,7 +218,7 @@ END;
 
 ![](./images/b11.png " ")
 
-### Summary
+## Summary
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
 integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making.

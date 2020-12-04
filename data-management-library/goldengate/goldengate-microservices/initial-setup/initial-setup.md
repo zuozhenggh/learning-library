@@ -6,7 +6,7 @@ In this lab we will setup the required database and GoldeGate replication users.
 
 *Estimated Lab Time*:  60 minutes
 
-**Workshop Architecture**
+### Lab Architecture
 ![](./images/ggmicroservicesarchitecture.png " ")
 
 ### Objectives

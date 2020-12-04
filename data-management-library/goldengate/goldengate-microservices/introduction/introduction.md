@@ -7,7 +7,7 @@ The labs will walk the end-user through how to add all components of Oracle Gold
 ## About Oracle GoldentGate Microservices
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
-**Workshop Architecture**
+### Lab Architecture
     ![](./images/ggmicroservicesarchitecture.png " ")
 
 KEY FEATURES
@@ -31,15 +31,15 @@ Oracle GoldenGate Microservices real-time data streaming platform also allows cu
 
 ### Lab Overview
 
-TASK 1: CREATING DEPLOYMENTS
-TASK 2: CONFIGURE REVERSE PROXY
-TASK 3: CREATE CREDENTIALS
-TASK 4: ADD EXTRACT AND DISTRIBUTION PATHS
-TASK 5: INSTANTIATION
-TASK 6: CREATE THE REPLICAT
-TASK 7: GENERATE DATA LOAD
-TASK 8: HA/DR USING GG ACTIVE-ACTIVE
-TASK 9: TRANSFORMATIONS USING MICROSERVICES
+LAB: CREATING DEPLOYMENTS
+LAB: CONFIGURE REVERSE PROXY
+LAB: CREATE CREDENTIALS
+LAB: ADD EXTRACT AND DISTRIBUTION PATHS
+LAB: INSTANTIATION
+LAB: CREATE THE REPLICAT
+LAB: GENERATE DATA LOAD
+LAB: HA/DR USING GG ACTIVE-ACTIVE
+LAB: TRANSFORMATIONS USING MICROSERVICES
 
 ### Passwords
 

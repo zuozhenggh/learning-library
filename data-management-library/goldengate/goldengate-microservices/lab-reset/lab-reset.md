@@ -86,7 +86,7 @@ Below example will guide to how to delete the deployment **"Source"** - (***Atla
     -   Creates the ***Atlanta*** and  ***SanFran*** deployments using a response file for OGGCA.
     -   Creates the Credentials for the deployments for uni-directional replication (Atlanta to SanFran).
 
-### **STEP 3**: Refresh Databases (if needed)
+## **STEP 3**: Refresh Databases (if needed)
 
 In this step you will run several scripts.
 

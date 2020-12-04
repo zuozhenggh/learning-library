@@ -6,7 +6,7 @@ This lab is intended to give you familiarity with how to configure GG for databa
 Secured, reliable and fault-tolerant data delivery. It is easy to install, configure and maintain real-time changed data
 Easily extensible and flexible to stream transformed data to other relational targets
 
-#### Workshop Architecture
+### Lab Architecture
 
 ![](./images/ggmicroservicesarchitecture.png " ")
 
