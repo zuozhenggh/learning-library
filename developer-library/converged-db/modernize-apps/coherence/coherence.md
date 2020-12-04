@@ -17,11 +17,11 @@ This lab assumes you have:
 * SSH Private Key to access the host via SSH
 * You have completed:
     * Lab: Generate SSH Keys
-    * Lab: Prepare Setup
+    * Lab: Prepare Setup (Free Tier and Paid Tenants Only)
     * Lab: Environment Setup   
 * Java Setup
-    * Make sure that the $COHERENCE_HOME environment variable points to the location of the unpacked Coherence directory.
-    * Make sure that the $JAVA_HOME environment variable points to the location of a supported JDK before building the examples.
+    * Make sure that the `$COHERENCE_HOME` environment variable points to the location of the unpacked Coherence directory.
+    * Make sure that the `$JAVA_HOME` environment variable points to the location of a supported JDK before building the examples.
 
 ### Directory Structure for Java
 
@@ -31,17 +31,17 @@ This lab assumes you have:
 - run-cache-server
   Runs the cache server used for the examples. The command is also used to start a proxy service that is required for extend clients.
 
-- java/classes
+- `java/classes`
   The class files output from a build. This directory will not exist until the build script is executed.
-- java/resource/config
+- `java/resource/config`
   The common Coherence configuration files required by the examples.
-- java/resource/<example name>
-  If an example has configuration that is required instead of the common configuration, it will have its own directory. The security example uses configuration files from java/resource/security.
+- `java/resource/<example name>`
+  If an example has configuration that is required instead of the common configuration, it will have its own directory. The security example uses configuration files from `java/resource/security`.
 
-- $COHERENCE_HOME/lib
+- `$COHERENCE_HOME/lib`
   Coherence libraries used for compiling and running the examples.
 - resource
-  The data file used for the contacts LoaderExample: contacts.csv.
+  The data file used for the contacts Loader Example: contacts.csv.
 
 ### Lab Details
 
@@ -98,7 +98,7 @@ While all command line tasks included in this workshop can be performed from a t
 
 ## **STEP 1**: Verify Environment
 1. Open Two Terminal windows
-2. Set and verify the JAVA_HOME for both terminal windows by typing the commands below
+2. Set and verify the `JAVA_HOME` for both terminal windows by typing the commands below
 
   ```
   <copy>
@@ -117,7 +117,7 @@ While all command line tasks included in this workshop can be performed from a t
   export COHERENCE_HOME="/u01/middleware/14c/coherence"
   export PATH=$COHERENCE_HOME/bin:$PATH
   echo $COHERENCE_HOME
- </copy>
+  </copy>
   ```
 
    ![](../images/set-env.png " ")
@@ -268,7 +268,6 @@ How to asynchronously process cache entries in Coherence and to asynchronously a
 2. Wait for the Cache Server to start in a few seconds
 
   ![](../images/run-cache-server.png " ")            
-
 
 ### Run the Example Client:
 1. On the Second terminal Window run the following command:

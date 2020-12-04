@@ -18,8 +18,9 @@ This lab assumes you have:
 * SSH Private Key to access the host via SSH
 * You have completed:
     * Lab: Generate SSH Keys
-    * Lab: Prepare Setup
+    * Lab: Prepare Setup (Free Tier and Paid Tenants Only)
     * Lab: Environment Setup
+    * Lab: Initialize Environment
 
 ### Lab Description
 
@@ -39,117 +40,30 @@ This lab is designed for people with no prior experience with Kubernetes, Docker
 * Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
 * Modify Bank Web Application to use Credit Score microservice and deploy on WebLogic
  
-## **STEP 0**: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## **STEP 1**: Develop new Credit Score Function
+Proceed to Develop new Credit Score Function as microservice using Helidon SE and deploy on local JVM
 
-1. Launch your browser to the following URL
-
-  ```
-  URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-  ```
-
-2. Provide login credentials
-
-  ```
-  Username: <copy>oracle</copy>
-  ```
-  ```
-  Password: <copy>Guac.LiveLabs_</copy>
-  ```
-
-   ![](./images/guacamole-login.png " ")
-
-*Note*: There is an underscore `_` character at the end of the password.
-
-   ![](./images/guacamole-landing.png " ")
-
-3. Click on *Terminal* icon on the desktop to start a terminal
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **STEP 1**: Setup Lab Environment
-1.	Logon to VNC console of the ConvergedDB image as an Oracle user to the instance provisioned to you
-2.	Open a terminal (Shell window) by clicking the “Terminal” icon on the desktop
-3.	Change directory to /u01/middleware_demo/scripts
-4.	Source the setWLS14Profile.sh and setBankAppEnv.sh to set the environment variables required to start the weblogic 14c Admin server and run commands to build Helidon and Bank applications:
-
-	```
-	<copy>  cd /u01/middleware_demo/scripts/
-	. ./setWLS14Profile.sh
-	. ./setBankAppEnv.sh</copy>
-	```
-
-
-## **STEP 2**: Verify Basic Bank Application Code and working application
-1.	In the same terminal window, change the working directory to WebLogic 14c domain and start AdminServer in the wl_server domain:
-
-	```
-	<copy>cd $DOMAIN_HOME/bin
-	nohup sh startWeblogic.sh &
-	tail -f nohup.out</copy>
-	Press CTRL + C to end the tail command
-	```
-2.	The terminal shows stdout logs for starting the AdminServer.
-
-3.	Open the Weblogic Admin Console and login with credentials provided below:
-
-  ![](./images/adminconsole.png " ")  
-
-  ```
-  Console URL: http://<Your instance public IP address>:7101/console
-  username: weblogic
-  password: Oracle123!
-  ```
-
-4.	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
-
-	![](./images/deployments.png " ")  
-
-5.	Open a new browser tab or session and access the bank application UI with URL `http://<Your instance public IP address>:7101/bestbank2020`
-6.	The existence of base version of the sample bestbank application is confirmed.
-7.	Change directory to `/u01/middleware_demo/wls-helidon`
-
-	```
-	<copy>cd /u01/middleware_demo/wls-helidon/</copy>
-	```
-
-9.	Verify if pom.xml and `src/` folder is available under `/u01/middleware_demo/wls-helidon`
-
-	```
-	<copy>ls -alrt</copy>
-	```
-
-## **STEP 3**: Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
 1.	Create a directory called “microservice” under `/u01/middleware_demo/wls-helidon` and navigate to `/u01/middleware_demo/wls-helidon/microservice`
 
 	```
-	<copy>mkdir microservice</copy>
-	<copy> cd /u01/middleware_demo/wls-helidon/microservice</copy>
+	<copy>
+  mkdir microservice
+	cd /u01/middleware_demo/wls-helidon/microservice
+  </copy>
 	```
 
 2.	Generate the project sources using Helidon SE Maven archetypes. The result is a simple project that shows the basics of configuring the WebServer and implementing basic routing rule
 
 	```
-	<copy>mvn archetype:generate -DinteractiveMode=false \
+	<copy>
+  mvn archetype:generate -DinteractiveMode=false \
   	-DarchetypeGroupId=io.helidon.archetypes \
   	-DarchetypeArtifactId=helidon-quickstart-se \
   	-DarchetypeVersion=1.2.0 \
   	-DgroupId=io.helidon.bestbank \
   	-DartifactId=helidon-creditscore-se \
-  	-Dpackage=io.helidon.bestbank.creditscore</copy>
+  	-Dpackage=io.helidon.bestbank.creditscore
+  </copy>
 	```
 
 3.	When the project generation is ready open the Main.java for edit:
@@ -277,12 +191,16 @@ Please note the code above accepts a GET for healthcheck and POST method to calc
   - This will create the executable jar file of the Helidon Microservice under the folder “target”
 
 	```
-	<copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target
-	ls -alrt helidon-creditscore-se.jar</copy>
+	<copy>
+  cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target
+	ls -alrt helidon-creditscore-se.jar
+  </copy>
 	```
-## **STEP 4:** Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
-Before the deployment of the Bank Web Application to consume Microservice, the following changes will be made:
 
+## **STEP 2:** Modify Bank Web Application
+Proceed to Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
+
+Before the deployment of the Bank Web Application to consume Microservice, the following changes will be made:
   -	Modify the User Interface. Create View button which opens Account Owner details window. This detail window will show the credit score value of the Account Owner.
   -	Modify the server side bean to invoke Credit Score Microservices Application.
   -	Configure the endpoint for the Bank Web Application.
@@ -291,12 +209,12 @@ Before the deployment of the Bank Web Application to consume Microservice, the f
 ### Modify user Interface
 1. Open for edit the `/u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml` HTML file.
 
-    ```
-    <copy>vi /u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml</copy>
-   	```
+  ```
+  <copy>vi /u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml</copy>
+ 	```
 
 2. Find and delete all the lines which contain REMOVE THIS LINE comment.
-Only that one(!), but that full line of comment which contains. (4 lines needs to be removed.) Save the file.
+Only that one`(!)`, but that full line of comment which contains. (4 lines needs to be removed.) Save the file.
 If you are familiar with JSF to check what has changed in the code.
 
 ### Modify Server Side Bean
@@ -370,7 +288,6 @@ When the build is complete and successful, open the browser and access the new b
 6. Select an Account Owner and click the new View button.	A pop-up window with CreditScore information of the user is seen.  
 
 	![](./images/creditscore.png " ")  
-
 
 *Congratulations! You have successfully completed the workshop*
 
