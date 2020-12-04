@@ -30,23 +30,23 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
 
 1. As oracle user set oracle Environment and connect to the PDB.
 
-  ````
-  <copy>
-  . oraenv
-  </copy>
-  ````
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ````
 
-  ````
-  <copy>
-  convergedcdb
-  </copy>
-  ````
+    ````
+    <copy>
+    convergedcdb
+    </copy>
+    ````
 
-  ````
-  <copy>
-  sqlplus CRSTYPE/Oracle_4U@APPPDB
-  </copy>
-  ````
+    ````
+    <copy>
+    sqlplus CRSTYPE/Oracle_4U@APPPDB
+    </copy>
+    ````
 
 ## **STEP 2**: Connect to SQL Developer
 
@@ -60,7 +60,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
   - **Port**: 1521
   - **Service name**: APPPDB
 
-  ![](./images/cross_sql_developer.png " ")
+    ![](./images/cross_sql_developer.png " ")
 
 
 ## **STEP 3**: JSON with Relational
@@ -71,36 +71,36 @@ Below are the examples using **JSON_TABLE**.
 
 1. Find all the Products, those sold with payment mode – Cash on Delivery
 
-  ````
-  <copy>
-  select D.*
-    from PURCHASE_ORDER p,
-        JSON_TABLE(
-          p.PO_DOCUMENT,
-          '$'
-          columns(
-            PO_NUMBER            NUMBER(10)                  path  '$.PONumber',
-            REFERENCE            VARCHAR2(30 CHAR)           path  '$.Reference',
-            REQUESTOR            VARCHAR2(32 CHAR)           path  '$.Requestor',
-            USERID               VARCHAR2(10 CHAR)           path  '$.User',
-            COSTCENTER           VARCHAR2(16)                path  '$.CostCenter',
-        "Special Instructions" VARCHAR2(4000) PATH '$."Special Instructions"',
-            NESTED PATH '$.LineItems[*]'
+    ````
+    <copy>
+    select D.*
+      from PURCHASE_ORDER p,
+          JSON_TABLE(
+            p.PO_DOCUMENT,
+            '$'
             columns(
-              ITEMNO         NUMBER(16)             path '$.ItemNumber',
-              DESCRIPTION    VARCHAR2(32 CHAR)      path '$.Part.Description',
-              UPCCODE        VARCHAR2(14 CHAR)      path '$.Part.UPCCode',
-              QUANTITY       NUMBER(5,4)            path '$.Quantity',
-              UNITPRICE      NUMBER(5,2)            path '$.Part.UnitPrice'
+              PO_NUMBER            NUMBER(10)                  path  '$.PONumber',
+              REFERENCE            VARCHAR2(30 CHAR)           path  '$.Reference',
+              REQUESTOR            VARCHAR2(32 CHAR)           path  '$.Requestor',
+              USERID               VARCHAR2(10 CHAR)           path  '$.User',
+              COSTCENTER           VARCHAR2(16)                path  '$.CostCenter',
+          "Special Instructions" VARCHAR2(4000) PATH '$."Special Instructions"',
+              NESTED PATH '$.LineItems[*]'
+              columns(
+                ITEMNO         NUMBER(16)             path '$.ItemNumber',
+                DESCRIPTION    VARCHAR2(32 CHAR)      path '$.Part.Description',
+                UPCCODE        VARCHAR2(14 CHAR)      path '$.Part.UPCCode',
+                QUANTITY       NUMBER(5,4)            path '$.Quantity',
+                UNITPRICE      NUMBER(5,2)            path '$.Part.UnitPrice'
+              )
             )
-          )
-        ) D
-  where "Special Instructions"='COD'
-  /
-  </copy>
-  ````
+          ) D
+    where "Special Instructions"='COD'
+    /
+    </copy>
+    ````
 
-  ![](./images/cd1.png " ")
+    ![](./images/cd1.png " ")
 
 2.  Purchase order history count based on City
 
@@ -111,7 +111,7 @@ Below are the examples using **JSON_TABLE**.
   </copy>
   ````
 
-  ![](./images/cd3.png)
+    ![](./images/cd3.png)
 
 ## **STEP 4**: XML with Relational
 
@@ -127,7 +127,7 @@ Below are the examples using **XMLTABLE**
   </copy>
   ````
 
-  ![](./images/cd10.png)
+    ![](./images/cd10.png)
 
 2. History of customers who ordered for a specific products
 
@@ -137,7 +137,7 @@ Below are the examples using **XMLTABLE**
   </copy>
   ````
 
-  ![](./images/cd11.png)
+    ![](./images/cd11.png)
 
 ## **STEP 5**: JSON with Spatial
 
@@ -159,7 +159,7 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
   'unit=KM') "Distance in kilometers" FROM json_geo WHERE sdo_within_distance(json_value(geo_doc, '$.features[0].geometry' RETURNING SDO_GEOMETRY),SDO_GEOMETRY(2001,4326,SDO_POINT_TYPE(-122.416667, 37.783333, NULL), NULL, NULL),'distance=100 unit=KM') = 'TRUE';
   </copy>
   ````
-  ![](./images/cd15.png)
+    ![](./images/cd15.png)
 
 
 ## Acknowledgements

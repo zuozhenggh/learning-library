@@ -7,7 +7,7 @@ In this lab we will review and startup all components required to successfully r
 *Estimated Lab Time:* 10 Minutes.
 
 ### Objectives
-- Initialize SecureOracle workshop environment.
+- Initialize the workshop environment.
 
 ### Prerequisites
 This lab assumes you have:
@@ -24,24 +24,23 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
 1. Launch your browser to the following URL
 
-  ```
-  URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-  ```
+    ```
+    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    ```
 
 2. Provide login credentials
 
-  ```
-  Username: <copy>oracle</copy>
-  ```
-  ```
-  Password: <copy>Guac.LiveLabs_</copy>
-  ```
+    ```
+    Username: <copy>oracle</copy>
+    ```
+    ```
+    Password: <copy>Guac.LiveLabs_</copy>
+    ```
 
-  ![](./images/guacamole-login.png " ")
-
+    ![](./images/guacamole-login.png " ")
 *Note*: There is an underscore `_` character at the end of the password.
 
-  ![](./images/guacamole-landing.png " ")
+    ![](./images/guacamole-landing.png " ")
 
 3. Click on *Terminal* icon on the desktop to start a terminal
 
@@ -55,27 +54,27 @@ While all command line tasks included in this workshop can be performed from a t
 
 2. Then sudo to “*oracle*”. E.g.
 
-  ```
-  <copy>sudo su - oracle</copy>
-  ```
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## **STEP 1**: Starting Database And OAS Services
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script
 
-  ```
-  <copy>
-  cd /u01/script
-  </copy>
-  ```
+    ```
+    <copy>
+    cd /u01/script
+    </copy>
+    ```
 3. Run the script file to start the components.
 
-  ```
-  <copy>
-  ./env_setup_db-workshop.sh
-  </copy>
-  ```
+    ```
+    <copy>
+    ./env_setup_db-workshop.sh
+    </copy>
+    ```
 
 This will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run
 
