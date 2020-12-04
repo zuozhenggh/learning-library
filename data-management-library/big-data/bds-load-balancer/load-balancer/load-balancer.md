@@ -93,7 +93,7 @@ Gather the following information before you start:
 | :--- | :--- |
 | SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br><br>In the examples shown in this lab, the SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key that was associated with the cluster when it was created). In the examples below, the private key is located in `C:\Users\MYHOME\bds\ssh\`.|
 | Target location for downloading SSL files | A location on your local computer for saving downloaded SSL files. You'll retrieve these files later, when creating the load balancer.|
-|IP Addresses of the first and second utility nodes |The accessible IP address of the first utility node, which is where Cloudera Manager, Hue, and Big Data Studio run. <br><br>If you followed the steps in the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, this is the public IP address that you mapped to the node's private IP address. <br><br>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.|
+|IP Addresse of the first utility node |The accessible IP address of the first utility node, which is where Cloudera Manager, Hue, and Big Data Studio run. <br><br>If you followed the steps in the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, this is the public IP address that you mapped to the node's private IP address. <br><br>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.|
 
 
 ## **STEP 2:** Copy SSL Certificates from the Cluster
@@ -122,7 +122,7 @@ To copy the files:
 
 2. In PowerShell, use `ssh` with your private key to connect to the first utility node:
 
-      ```
+    ```
     PS C:\Users\MYHOME\> <copy>ssh -i <private-ssh-key> opc@<first-util-node-ip></copy>
       ```
     For example, if you're working from `C:\Users\MYHOME`, your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`, and the accessible IP address of the first utility node of your cluster is `10.2.0.101`, enter:
@@ -434,8 +434,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
-<!--    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example, **second-util-node-cert-bundle**.-->
-
     * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Check this box.
@@ -452,6 +450,8 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     ![](./images/create-backend-set.png "Create backend set page")
 
+    <!--    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example, **second-util-node-cert-bundle**.-->
+
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
 
 ## **STEP 7:** Create a Backend Set for Big Data Studio
@@ -461,8 +461,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
     * **Name:** Enter a name; for example, **`data-studio-backend-set`**.
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
-
-<!--    * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**.-->
 
     * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **first-util-node-cert-bundle**.
 
@@ -479,6 +477,8 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
         * **Port:** Enter **`30000`**, which is the port on which Big Data Studio listens.
 
         * **URL Path (URI)**: Enter a forward slash (**/**).
+        <!--    * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**.-->
+
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
 
@@ -574,13 +574,13 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
-<!--    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**. -->
-
     * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **first-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 
     * **Backend Set:** From the list, select the backend set you created for Hue in **STEP 6: Create a Backend Set for Hue**; for example, **hue-backend-set**.
+
+    <!--    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**. -->
 
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
