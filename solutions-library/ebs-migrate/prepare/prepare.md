@@ -5,7 +5,7 @@
 In this lab we prepare the source Oracle E-Business Suite instance to be migrated to the Cloud Manager on Oracle Cloud Infrastructure. 
 You will copy the API Signing key from the Cloud Manager instance to the source Oracle E-Business Suite environment. 
 Then you will create the stage area directories that will hold the backups and the Backup tool.
-You will ensure SSH connectivity between all the nodes: the Node where the Backup tool is deployed, the Application Tier Node, and the Database Tier Node. 
+You will ensure SSH connectivity between all the of following nodes: the Node where the Backup tool is deployed, the Application Tier Node, and the Database Tier Node. 
 Lastly, you will put the Database in Archive Mode before creating the backup.
 
 **Estimated Lab Time:** 30 minutes
@@ -23,18 +23,18 @@ In this lab, you will:
 
 * Complete Lab 1: **Creating the Source Oracle E-Business Suite Environment**
 * key-data.txt file documented with following information:
+    
+    1.  **From Provisioning your Cloud Manager Instance You Should have recorded:**
 
-**From Provisioning your Cloud Manager Instance You Should have recorded:**
+        * `Cloud_Manager_Instance_public_IP`
 
-* `Cloud_Manager_Instance_public_IP`
+    2. **From your source EBS Instance**
 
-**From your source EBS Instance**
-
-* `Source_EBS_Instance_public_IP`
-* `Source_EBS_Instance_private_IP`
-* `Fully_Qualified_Hostname` (In this Lab: apps.example.com)
-* `apps_password` (In this Lab: apps)
-* `weblogic_password` (In this Lab: welcome1)
+        * `Source_EBS_Instance_public_IP`
+        * `Source_EBS_Instance_private_IP`
+        * `Fully_Qualified_Hostname` (In this Lab: apps.example.com)
+        * `apps_password` (In this Lab: apps)
+        * `weblogic_password` (In this Lab: welcome1)
 
 ## **STEP 1:** Copy API signing key to the source Oracle E-Business Suite environment
 
@@ -64,13 +64,13 @@ The key file must be placed in a location where it can be referenced by the Orac
 
     Select all the resulted characters to copy the key (make sure not to copy any spaces).
 
-    Paste the key in a text file on your desktop 
+    Paste the key in a text file on your desktop.
 
     ![](./images/2.png " ")
     
 3. Connect to the source EBS environment.
 
-    SSH into the source EBS instance from your local machine by using the IP address and the SSH private key you used during the deployment of the source EBS instance . 
+    SSH into the source EBS instance from your local machine by using the IP address and the SSH private key you used during the deployment of the source EBS instance. 
 
     ```
     <copy>
@@ -80,7 +80,7 @@ The key file must be placed in a location where it can be referenced by the Orac
 
     ![](./images/3.png " ")
 
-4. Switch to the Oracle user in the source EBS instance
+4. Switch to the Oracle user in the source EBS instance.
 
     ```
     <copy>
@@ -90,7 +90,7 @@ The key file must be placed in a location where it can be referenced by the Orac
 
     ![](./images/4.png " ")
 
-5. Create a directory named **.oci**, create a .pem file with the same name as you had in the cloud manager instance. For example: **ebscm.admin@example.com.pem** and change permissions to the file.
+5. Create a directory named ``.oci``, create a ``.pem`` file with the same name as you had in the cloud manager instance. For example: **ebscm.admin@example.com.pem** and change permissions to the file.
 
     ```
     <copy>
@@ -113,13 +113,13 @@ The key file must be placed in a location where it can be referenced by the Orac
     
     ![](./images/6.png " ")
 
-    a. Press 'i' on your keyboard to insert text
+    a. Press '``i``' on your keyboard to insert text.
 
-    b. Paste the key with right click
+    b. Paste the key by right clicking your mouse.
 
-    c. Press 'Esc'
+    c. Press '``Esc``'.
 
-    d. To save the file write ':wq' and press Enter
+    d. To save the file write '``:wq``' and press '``Enter``'.
         
     ![](./images/7.png " ")
 
@@ -127,8 +127,8 @@ The key file must be placed in a location where it can be referenced by the Orac
 
 These directories will hold:
 
-  - Apps Stage Area directory - temporary files used during the application tier backup process as well as the application tier backup file in zip or tar format that is created locally before it is uploaded to Oracle Cloud Infrastructure Object Storage.
-  - DB Stage Area directory - backup utilities and the temporary files used to process the backup.
+  * **Apps Stage Area directory** - temporary files used during the application tier backup process as well as the application tier backup file in zip or tar format that is created locally before it is uploaded to Oracle Cloud Infrastructure Object Storage.
+  * **DB Stage Area directory** - backup utilities and the temporary files used to process the backup.
 
     ```
     <copy>
@@ -158,17 +158,17 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
     
     ![](./images/9.png " ")
         
-    a. Press 'i' on your keyboard to insert text
+    a. Press '``i``' on your keyboard to insert text
 
-    b. Insert a new line containing 'ServerAliveInterval 100'
+    b. Insert a new line containing "``ServerAliveInterval 100``".
 
-    c. Press 'Esc'
+    c. Press '``Esc``'.
 
-    d. To save the file write ':wq' and press **Enter**
+    d. To save the file write '``:wq``' and press '``Enter``'.
 
     ![](./images/10.png " ")
 
-2. Generate a new set of SSH keys without passphrase in the ~/.ssh/ directory. Choose default name for the keys. Press 'Enter' when asked for a passcode to create the keys without one. 
+2. Generate a new set of SSH keys without passphrase in the ~/.ssh/ directory. Choose default name for the keys. Press '``Enter``' when asked for a passcode to create the keys without one. 
 
     ```
     <copy>
@@ -197,7 +197,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
     </copy>
     ```
 
-    Choose yes to connect to the host
+    Choose yes to connect to the host.
 
     ![](./images/13.png " ")
 
@@ -213,7 +213,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
 ## **STEP 4:** Put the database into Archive Mode
 
-1.	Stop Apps Tier using the stopapps.sh script
+1.	Stop Apps Tier using the stopapps.sh script.
 
     ```
     <copy>
@@ -223,7 +223,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/15.png " ")
 
-2. Source the EBS environment and connect to the database
+2. Source the EBS environment and connect to the database.
         
     ```
     <copy>
@@ -235,7 +235,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/16.png " ")
 
-3. Check wether the Database is in archive mode
+3. Check wether the Database is in archive mode.
 
     ```
     <copy>
@@ -245,7 +245,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/17.png " ")
 
-4. Put the Database in Archive mode
+4. Put the Database in Archive mode.
 
     ```
     <copy>
@@ -258,7 +258,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/18.png " ")
 
-5. Confirm that the Database is in Archive mode and close the Database connection
+5. Confirm that the Database is in Archive mode and close the Database connection.
 
     ```
     <copy>
@@ -269,7 +269,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/19.png " ")
 
-6. Start the applications tier by running the startapps.sh script
+6. Start the applications tier by running the startapps.sh script.
 
     ```
     <copy>
