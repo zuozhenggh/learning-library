@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Create and Publish a Web Application with Oracle Visual Builder",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -12,29 +12,41 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Create a Web Application",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../create-webapp/create-webapp.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Create Pages for Business Objects in a Visual Builder Web App",
+            "filename": "../../pages-for-BOs/pages-for-BOs.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Add Navigation and Data to a Visual Builder Web App",
+            "filename": "../../nav-and-data/nav-and-data.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Add Pages for Data Manipulation to a Visual Builder Web App",
+            "filename": "../../data-manip/data-manip.md"
         },
         {
-            "title": "Lab 5: Analyze Data",
-            "filename": "../../analyze/analyze.md"
+            "title": "Lab 5: Stage and Publish a Visaul Builder Web App",
+            "filename": "../../stage-and-publish/stage-and-publish.md"
+        },
+	 {
+            "title": "Lab 6: Create Budsiness Rules in a Visual Builder Web App",
+            "filename": "../../create-business-rules/create-business-rules.md"
+        },
+	 {
+            "title": "Lab 7: Create a Simple Web App for Charts ",
+            "filename": "../../create-web-app-charts/create-web-app-charts.md"
+        },
+	 {
+            "title": "Lab 8: Add Bar and Area Charts to a Web App",
+            "filename": "../../add-bar-charts/add-bar-charts.md"
         },
         {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
+            "title": "Lab 9: Add Pie Charts and Queries to a Web App",
+            "filename": "../../add-pie-charts/add-pie-charts.md"
         }
     ]
 }
