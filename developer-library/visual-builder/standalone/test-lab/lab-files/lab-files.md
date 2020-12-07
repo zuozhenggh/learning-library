@@ -14,7 +14,7 @@ In Oracle Visual Builder, you can populate your business objects by importing da
 
 - Access to Visual Builder's user interface
 - A supported browser
-- Completion of the previous tutorials 
+- Completion of the previous tutorials
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 ## **STEP 1**: Import Data for the Department Business Object
@@ -31,7 +31,7 @@ In Oracle Visual Builder, you can populate your business objects by importing da
 
 6. Click **Close** after the file has been successfully imported.
 
-
+## Everything below here is to be ignored
 ![This illustration shows the Data tab for the Department business object after you import data for it. The table shows the Id, Name, and Location fields for each department. ](<vbcsnd_mob_im/sample2.png>)
 
 To create a link to local file you want the reader to download, use this format:
@@ -68,7 +68,7 @@ Download the [starter file](<files/starter-file.sql>) SQL code.
     - List item 1
     - List item 2
 
-    
+
 
 3. Code examples
 

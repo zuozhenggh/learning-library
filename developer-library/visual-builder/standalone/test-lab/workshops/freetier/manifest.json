@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Import Data to an Oracle Visual Builder Mobile Applicationr",
+    "workshoptitle": "Import Data to an Oracle Visual Builder Mobile Application",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -8,12 +8,12 @@
         },
         {
             "title": "Introduction",
-            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "description": "The Introduction is always second.",
             "filename": "../../introduction/introduction.md"
-        },      
+        },
         {
-            "title": "Lab 9: Add Pie Charts and Queries to a Web App",
-            "filename": "../../test-lab/test-lab.md"
+            "title": "Lab 1: Add Pie Charts and Queries to a Web App",
+            "filename": "../../lab-files/lab-files.md"
         }
     ]
 }
