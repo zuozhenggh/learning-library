@@ -45,157 +45,60 @@ Proceed to Develop new Credit Score Function as microservice using Helidon SE an
 
 1.	Create a directory called “microservice” under `/u01/middleware_demo/wls-helidon` and navigate to `/u01/middleware_demo/wls-helidon/microservice`
 
-	```
-	<copy>
-  mkdir microservice
-	cd /u01/middleware_demo/wls-helidon/microservice
-  </copy>
-	```
+    ```
+    <copy>
+    mkdir microservice
+    cd /u01/middleware_demo/wls-helidon/microservice
+    </copy>
+    ```
 
 2.	Generate the project sources using Helidon SE Maven archetypes. The result is a simple project that shows the basics of configuring the WebServer and implementing basic routing rule
 
-	```
-	<copy>
-  mvn archetype:generate -DinteractiveMode=false \
-  	-DarchetypeGroupId=io.helidon.archetypes \
-  	-DarchetypeArtifactId=helidon-quickstart-se \
-  	-DarchetypeVersion=1.2.0 \
-  	-DgroupId=io.helidon.bestbank \
-  	-DartifactId=helidon-creditscore-se \
-  	-Dpackage=io.helidon.bestbank.creditscore
-  </copy>
-	```
+    ```
+    <copy>
+    mvn archetype:generate -DinteractiveMode=false \
+    	-DarchetypeGroupId=io.helidon.archetypes \
+    	-DarchetypeArtifactId=helidon-quickstart-se \
+    	-DarchetypeVersion=1.2.0 \
+    	-DgroupId=io.helidon.bestbank \
+    	-DartifactId=helidon-creditscore-se \
+    	-Dpackage=io.helidon.bestbank.creditscore
+    </copy>
+    ```
 
 3.	When the project generation is ready open the Main.java for edit:
 
-  ```
-  <copy>vi helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/Main.java</copy>
-  ```
+    ```
+    <copy>vi helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/Main.java</copy>
+    ```
 
 4.	Register the creditscore route after line 108 by adding `".register("/creditscore", new CreditscoreService())"` as indicated below. This basically the context path for the service endpoint.
 
-  ![](./images/register-creditscore-route.png " ")  
+    ![](./images/register-creditscore-route.png " ")  
 
-5.	Now create a new class called CreditscoreService in the same package where the Main.java is located:
+5.	Now create a new class called CreditscoreService in the same package where the Main.java is located. For ease of execution the class file has already been created and is located at *"/u01/middleware_demo/scripts/CreditscoreService.java"*. Simply run the following to copy it to the correct location:
 
-  ```
-  <copy>vi helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/CreditscoreService.java</copy>
-  ```
+    ```
+    <copy>cp /u01/middleware_demo/scripts/CreditscoreService.java helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/</copy>
+    ```
 
-6.	Add the following code block the newly created CreditscoreService.java:
+    Please note the code above accepts a GET for healthcheck and POST method to calculate the credit score value based on the account owner's details which passed using JSON.
 
-	```
-	<copy>
-  package io.helidon.bestbank.creditscore;
+6. Build the project:
 
-  import java.util.logging.Level;
-  import java.util.logging.Logger;
+    ```
+    <copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/
+    mvn package</copy>
+    ```
 
-  import javax.json.Json;
-  import javax.json.JsonObject;
+    This will create the executable jar file of the Helidon Microservice under the folder “target”
 
-  import io.helidon.webserver.Routing;
-  import io.helidon.webserver.ServerRequest;
-  import io.helidon.webserver.ServerResponse;
-  import io.helidon.webserver.Service;
-
-  /**
-   *
-   */
-
-  public class CreditscoreService implements Service {
-      private final Logger logger = Logger.getLogger(this.getClass().getName());
-
-      private static final int SCORE_MAX = 800;
-      private static final int SCORE_MIN = 550;
-
-      /**
-       * A service registers itself by updating the routine rules.
-       *
-       * @param rules the routing rules.
-       */
-      @Override
-      public final void update(final Routing.Rules rules) {
-          rules
-              .get("/healthcheck", this::getTestMessage)
-              .post("/", this::postMethodCreditscore);
-      }
-
-      /**
-       * Return a test greeting message.
-       * @param request the server request
-       * @param response the server response
-       */
-      private void getTestMessage(final ServerRequest request,
-          final ServerResponse response) {
-
-          JsonObject returnObject = Json.createObjectBuilder()
-              .add("message", "The creditscore provider is running.")
-              .build();
-          response.send(returnObject);
-      }
-
-      /**
-       * POST method to return a customer data including creditscore value, using the data that was provided.
-       * @param request the server request
-       * @param response the server response
-       */
-      private void postMethodCreditscore(final ServerRequest request,
-          final ServerResponse response) {
-
-          request.content()
-              .as(JsonObject.class)
-              .thenAccept(json - & gt; {
-                  logger.log(Level.INFO, "Request: {0}", json);
-                  response.send(
-                      Json.createObjectBuilder(json)
-                      .add("score", calculateCreditscore(json.getString("firstname"), json.getString("lastname"),
-                          json.getString("dateofbirth"), json.getString("ssn")))
-                      .build()
-                  );
-              });
-      }
-
-      /**
-       * calculate creditscore based on customer's properties
-       * @param firstname
-       * @param lastname
-       * @param dateofbirth
-       * @param ssn
-       * @return
-       */
-      private int calculateCreditscore(String firstname, String lastname, String dateofbirth, String ssn) {
-
-          int score = Math.abs(firstname.hashCode() + lastname.hashCode() +
-              dateofbirth.hashCode() + ssn.hashCode());
-
-          score = score % SCORE_MAX;
-
-          while (score & lt; SCORE_MIN) {
-              score = score + 100;
-          }
-          return score;
-      }
-  }	</copy>
-	```
-
-Please note the code above accepts a GET for healthcheck and POST method to calculate the credit score value based on the account owner's details which passed using JSON.
-
-  - Build the project:
-
-	```
-	<copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/
-	mvn package</copy>
-	```
-
-  - This will create the executable jar file of the Helidon Microservice under the folder “target”
-
-	```
-	<copy>
-  cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target
-	ls -alrt helidon-creditscore-se.jar
-  </copy>
-	```
+    ```
+    <copy>
+    cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target
+    ls -alrt helidon-creditscore-se.jar
+    </copy>
+    ```
 
 ## **STEP 2:** Modify Bank Web Application
 Proceed to Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
@@ -209,9 +112,9 @@ Before the deployment of the Bank Web Application to consume Microservice, the f
 ### Modify user Interface
 1. Open for edit the `/u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml` HTML file.
 
-  ```
-  <copy>vi /u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml</copy>
- 	```
+    ```
+    <copy>vi /u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml</copy>
+   	```
 
 2. Find and delete all the lines which contain REMOVE THIS LINE comment.
 Only that one`(!)`, but that full line of comment which contains. (4 lines needs to be removed.) Save the file.
@@ -220,24 +123,24 @@ If you are familiar with JSF to check what has changed in the code.
 ### Modify Server Side Bean
 1. Open for edit `/u01/middleware_demo/wls-helidon/src/main/java/com/oracle/oow19/wls/bestbank/AccountOwnerBean.java` class file.
 
-  ```
-  <copy>vi /u01/middleware_demo/wls-helidon/src/main/java/com/oracle/oow19/wls/bestbank/AccountOwnerBean.java</copy>
-  ```
+    ```
+    <copy>vi /u01/middleware_demo/wls-helidon/src/main/java/com/oracle/oow19/wls/bestbank/AccountOwnerBean.java</copy>
+    ```
 
 2. Find and delete the 4 lines which contain the *REMOVE THIS LINE* comment. Save the file and Check what has changed in the code.
 
-  - The postConstruct method modified to read the end point URL from the property file.
-  - New getCreditScore method created to calculate the credit score value of the Account Owner.
-  - Finally include the new method invocation in getSelectedAccountOwner method which is triggered by the View button on the User Interface.
+    - The postConstruct method modified to read the end point URL from the property file.
+    - New getCreditScore method created to calculate the credit score value of the Account Owner.
+    - Finally include the new method invocation in getSelectedAccountOwner method which is triggered by the View button on the User Interface.
 
 ### Configure End-Point
 1. The last file to modify is the `/u01/middleware_demo/wls-helidon/src/main/resources/app.properties` file.
 
-	The Bank Web Application reads this properties file to know the endpoint's URL. Obviously this solution is just for demo purposes, because in real microservices architecture the best practice is to use additional tools for better service/API management.
+    The Bank Web Application reads this properties file to know the endpoint's URL. Obviously this solution is just for demo purposes, because in real microservices architecture the best practice is to use additional tools for better service/API management.
 
-  ```
-  <copy>vi /u01/middleware_demo/wls-helidon/src/main/resources/app.properties</copy>
- 	```
+    ```
+    <copy>vi /u01/middleware_demo/wls-helidon/src/main/resources/app.properties</copy>
+   	```
 
 2. Replace the URL to your given value and save: `creditscore.url=http://<Your instance public IP address>:8080/creditscore`
 
@@ -246,25 +149,25 @@ If you are familiar with JSF to check what has changed in the code.
 2. Change to the Bank Web Application's directory:
 3. Source the `setWLS14Profile.sh` and `setBankAppEnv.sh` to set the environment variables required to start the WebLogic 14c Admin server and run commands to build Helidon and Bank applications
 
-	```
-	<copy>cd /u01/middleware_demo/scripts/
-  . ./setWLS14Profile.sh
-  . ./setBankAppEnv.sh</copy>
-	```
+    ```
+    <copy>cd /u01/middleware_demo/scripts/
+    . ./setWLS14Profile.sh
+    . ./setBankAppEnv.sh</copy>
+    ```
 
 4. Change the directory to wls-helidon where the Bank Application code reside
 
-	```
-	<copy>cd /u01/middleware_demo/wls-helidon/</copy>
-	```
+    ```
+    <copy>cd /u01/middleware_demo/wls-helidon/</copy>
+    ```
 
 5. Run the following Maven command:
 
-	```
-	<copy>mvn clean package</copy>
-	```
+    ```
+    <copy>mvn clean package</copy>
+    ```
 
-When the build is complete and successful, open the browser and access the new bank application using the URL `http://<Your instance public IP address>:7101/bestbank2020_01`
+    When the build is complete and successful, open the browser and access the new bank application using the URL *`http://<Your instance public IP address>:7101/bestbank2020_01`*
 
 6. Select an Account Owner and click the new View button. A pop-up window with no information about the credit score of the user is seen. This is because the microservice is not yet started !!!
 
@@ -272,22 +175,23 @@ When the build is complete and successful, open the browser and access the new b
 1. Open a new terminal.
 2. Navigate to `/u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target/`
 
-	```
-	<copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target/</copy>
-	```
+    ```
+    <copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target/</copy>
+    ```
 
 3. Start the Microservice application as a standalone Java Program using the command:
-	```
-	<copy>java -jar helidon-creditscore-se.jar &</copy>
-	```
 
-	![](./images/startmicroservice.png " ")  
+    ```
+    <copy>java -jar helidon-creditscore-se.jar &</copy>
+    ```
+
+    ![](./images/startmicroservice.png " ")  
 
 4. In the browser, check if the CreditScore Microservice application is running by checking the health check url `http://<Your instance public IP address>:8080/creditscore/healthcheck`
 5. Open the browser and access the new bank application using the URL `http://<Your instance public IP address>:7101/bestbank2020_01` or refresh the existing browser window with the above URL
 6. Select an Account Owner and click the new View button.	A pop-up window with CreditScore information of the user is seen.  
 
-	![](./images/creditscore.png " ")  
+    ![](./images/creditscore.png " ")  
 
 *Congratulations! You have successfully completed the workshop*
 

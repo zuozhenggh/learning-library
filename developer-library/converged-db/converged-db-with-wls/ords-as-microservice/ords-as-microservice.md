@@ -14,7 +14,7 @@ ORDS is a middle tier JAVA application that allows you to access your Oracle Dat
 
 ORDS will find and run the appropriate database workload (a query, an anonymous block), and return the output as formatted JSON.
 
-  ![](./images/lab10-about-ords.png)
+    ![](./images/lab10-about-ords.png)
 
 ### Objectives
 - Modify JEE code to replace data from database by ORDS end-point
@@ -33,15 +33,15 @@ This lab assumes you have:
 
 ## **STEP 1**: Observe eSpeedShop analytical data
 
-1. Open a web browser, type `http://localhost:7101/` and hit enter to go to eSpeedShop application home page.
+1. Open a web browser, type *`http://localhost:7101/`* and hit enter to go to eSpeedShop application home page.
 
 2. Navigate to the analytics module by clicking the Analytics link provided in application navigation bar at the top.
 
-  ![](./images/lab10-step1-2.png)
+    ![](./images/lab10-step1-2.png)
 
 3. Once redirected, observe the **Category shares in Product count** section, which displays a pie chart to show count of products by different categories.
 
-  ![](./images/lab10-step1-3.png)
+    ![](./images/lab10-step1-3.png)
 
 ## **STEP 2**: Modify data access code
 
@@ -49,7 +49,7 @@ This lab assumes you have:
 
 2. On the left side in the projects panel, locate converge application folder.
 
-  ![](./images/lab10-step2-2.png)
+    ![](./images/lab10-step2-2.png)
 
 3. Expand the **converge** application folder and locate **Application Sources** directory.
 
@@ -57,23 +57,25 @@ This lab assumes you have:
 
 5. Open AnalyticsDao.java.
 
-  ![](./images/lab10-step2-5.png)
+    ![](./images/lab10-step2-5.png)
 
 6. Search for **getProductCountByCategory** function, which is fetching data from database for **Category shares in Product count** section in Analytics page.
 
-  ![](./images/lab10-step2-6.png)
+    ![](./images/lab10-step2-6.png)
 
 7. Look for the function body and make sure it is getting data by executing the SQL query string named **PRODUCT_COUNT_BY_GROUP**.
 
 8. Modify the function in such a way that instead of getting data by executing the SQL, it should fetch data from the provided ORDS URL.
 
-In order to achieve that, uncomment the function call below:
-  ```
-  <copy>    
-  Vector v = getProductCountByCategoryOrds();
-  </copy>
-  ```
-Comment the function body after the above line, except the return statement at the end of function body.
+    In order to achieve that, uncomment the function call below:
+
+    ```
+    <copy>    
+    Vector v = getProductCountByCategoryOrds();
+    </copy>
+    ```
+
+    Comment the function body after the above line, except the return statement at the end of function body.
 
 9. Once done, save the changes using **`Ctrl + s`**.
 
@@ -81,17 +83,17 @@ Comment the function body after the above line, except the return statement at t
 
 1.	In JDeveloper, go to the project panel and right click on the project folder (converge).
 
-  ![](./images/lab10-step3-1.png)
+    ![](./images/lab10-step3-1.png)
 
 2.	Go to **Run Maven** option in the menu.
 
 3.	Select **redeploy** to execute the maven redeploy goal and redeploy application on weblogic server.
 
-  ![](./images/lab10-step3-3.png)
+    ![](./images/lab10-step3-3.png)
 
 4.	Wait and observe JDeveloper console for redeployment confirmation.
 
-  ![](./images/lab10-step3-4.png)
+    ![](./images/lab10-step3-4.png)
 
 
 ## **STEP 4**: Re-check analytical data
@@ -100,11 +102,11 @@ Comment the function body after the above line, except the return statement at t
 2.	Open the eSpeedShop application by entering the URL – localhost:7101.
 3.	Navigate to the analytics module by clicking the Analytics link, provided in the application navigation bar at the top.
 
-  ![](./images/lab10-step1-2.png)
+    ![](./images/lab10-step1-2.png)
 
 4.	Check the **Product Count By Category**, the pie chart is still plotting the same data the only difference is that this time it is getting data from the ORDS end point.
 
-  ![](./images/lab10-step1-3.png)
+    ![](./images/lab10-step1-3.png)
 
 ## Summary
 To summarize, you replaced the business logic to retrieve JSON data-type from converged database with the URL fetching the same data over REST using Oracle REST Data Services(ORDS).

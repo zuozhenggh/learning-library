@@ -61,26 +61,26 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
 1. Launch your browser to the following URL
 
-  ```
-  URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-  ```
+    ```
+    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    ```
 
 2. Provide login credentials
 
-  ```
-  Username: <copy>oracle</copy>
-  ```
-  ```
-  Password: <copy>Guac.LiveLabs_</copy>
-  ```
+    ```
+    Username: <copy>oracle</copy>
+    ```
+    ```
+    Password: <copy>Guac.LiveLabs_</copy>
+    ```
 
-  ![](./images/guacamole-login.png " ")
+    ![](./images/guacamole-login.png " ")
 
-*Note*: There is an underscore `_` character at the end of the password.
-
-  ![](./images/guacamole-landing.png " ")
+    *Note*: There is an underscore `_` character at the end of the password.
 
 3. Click on *Terminal* icon on the desktop to start a terminal
+
+    ![](./images/guacamole-landing.png " ")
 
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
@@ -92,58 +92,58 @@ While all command line tasks included in this workshop can be performed from a t
 
 2. Then sudo to “*oracle*”. E.g.
 
-  ```
-  <copy>sudo su - oracle</copy>
-  ```
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## **STEP 1**: Verify Environment
 1. Open Two Terminal windows
 2. Set and verify the `JAVA_HOME` for both terminal windows by typing the commands below
 
-  ```
-  <copy>
-  export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
-  export PATH=$JAVA_HOME/bin:$PATH
-  echo $JAVA_HOME
- </copy>
-  ```
+    ```
+    <copy>
+    export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
+    export PATH=$JAVA_HOME/bin:$PATH
+    echo $JAVA_HOME
+   </copy>
+    ```
 
-    ![](../images/java-home.png " ")
+      ![](./images/java-home.png " ")
 
 3. Set and verify COHERENCE_HOME for both terminal windows
 
-  ```
-  <copy>
-  export COHERENCE_HOME="/u01/middleware/14c/coherence"
-  export PATH=$COHERENCE_HOME/bin:$PATH
-  echo $COHERENCE_HOME
-  </copy>
-  ```
+    ```
+    <copy>
+    export COHERENCE_HOME="/u01/middleware/14c/coherence"
+    export PATH=$COHERENCE_HOME/bin:$PATH
+    echo $COHERENCE_HOME
+    </copy>
+    ```
 
-   ![](../images/set-env.png " ")
+     ![](./images/set-env.png " ")
 
 ## **STEP 2**: Build JAVA Labs
 1. Change Directory to Java Samples in both Terminal Windows (`/u01/middleware/14c/coherence/examples/java`)
 
-  ```
-  <copy>cd $COHERENCE_HOME/examples/java</copy>
-  ```
+    ```
+    <copy>cd $COHERENCE_HOME/examples/java</copy>
+    ```
 
 2. Build all the java Labs as needed and execute the build script with the name of the example collection:
 
-  ```
-  <copy>bin/build contacts
-  bin/build security
-  bin/build events
-  bin/build java8
-  bin/build async</copy>
-  ```
+    ```
+    <copy>bin/build contacts
+    bin/build security
+    bin/build events
+    bin/build java8
+    bin/build async</copy>
+    ```
 
 3. Now Run the following Labs from the following folder in both Terminal Windows
 
-  ```
-  <copy>cd $COHERENCE_HOME/examples/java</copy>
-  ```
+    ```
+    <copy>cd $COHERENCE_HOME/examples/java</copy>
+    ```
 
 ## **STEP 3**: Test Cache with Contacts get & Put
 This step shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file. To start a Coherence Cache and then put and get Contacts to/from the Cache.
@@ -153,25 +153,25 @@ This step shows the most basic data access features of Coherence including getti
 1. Start a cache server
 2. Type the following command in the first Terminal window
 
-  ```
-  <copy>bin/run-cache-server</copy>
-  ```
+    ```
+    <copy>bin/run-cache-server</copy>
+    ```
 
 3. Wait for the Cache Server to start in a few seconds as each execution starts a cache server cluster node.
 
-  ![](../images/run-cache-server.png " ")
+    ![](./images/run-cache-server.png " ")
 
 ### Run the Example Client:      
 1. Open a second terminal window:
 2. Run the terminal with the name of the example:
 
-  ```
-  <copy>bin/run contacts</copy>
-  ```
+    ```
+    <copy>bin/run contacts</copy>
+    ```
 
-The Driver.main method runs through the features of the example with output going to the command window (stdout)
+    The Driver.main method runs through the features of the example with output going to the command window (stdout)
 
-  ![](../images/run-contacts.png " ")  
+    ![](./images/run-contacts.png " ")  
 
 ## **STEP 4**: Test Cache Security Features
 This step shows the security feature of accessing Cache securely using role and password. The Coherence security set receives a cache reference that requires a password and attempts cache and invocation service operations that require different roles.
@@ -179,25 +179,25 @@ This step shows the security feature of accessing Cache securely using role and 
 ### Start Cache Server:
 1. On the First Terminal window run the following command:
 
-  ```
-  <copy>bin/run-cache-server security</copy>
-  ```
+    ```
+    <copy>bin/run-cache-server security</copy>
+    ```
 
 2. The cache server also runs a proxy service which allows connections from Coherence*Extend clients.
 3. Wait for the Cache Server to start in a few seconds
 
-  ![](../images/run-cache-server.png " ")
+    ![](./images/run-cache-server.png " ")
 
 ### Run the Example Client:
 1. On the Second Terminal window run the following command:
 
-  ```
-  <copy>bin/run security</copy>
-  ```
+    ```
+    <copy>bin/run security</copy>
+    ```
 
 2. The Driver.main method runs through the features of the example with output going to the command window (stdout)
 
-  ![](../images/run-security.png " ")  
+    ![](./images/run-security.png " ")  
 
 ## **STEP 5**:  Test Live events in Cache
 This step shows the Events feature of inserting into Cache
@@ -207,24 +207,24 @@ How to measure the elapsed time between pre- and post-events which are inserted 
 ### Start Cache Server:
 1. First Terminal window:
 
-  ```
-  <copy>bin/run-cache-server events</copy>
-  ```
+    ```
+    <copy>bin/run-cache-server events</copy>
+    ```
 
 2. Each execution starts a cache server cluster node. Wait for the Cache Server to start in a few seconds
 
-  ![](../images/run-cache-server.png " ")
+    ![](./images/run-cache-server.png " ")
 
 ### Run the Example Client:
 1. On the Second Terminal Window run the following command:
 
-  ```
-  <copy> bin/run events</copy>
-  ```
+    ```
+    <copy> bin/run events</copy>
+    ```
 
 2. The Driver.main method runs through the features of the example with output going to the command window (`stdout`).
 
-  ![](../images/run-events.png " ")
+    ![](./images/run-events.png " ")
 
 ## **STEP 6**: Test Java 8 features
 The Coherence Java 8 features step illustrates how to use the Java streams when querying and processing cache entries. how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries
@@ -234,24 +234,24 @@ The process of adding Lambda features in a Cache to simplify common Coherence ta
 ### Start Cache Server:
 1. On the First Terminal Window run the following command:
 
-  ```
-  <copy>bin/run-cache-server</copy>
-  ```
+    ```
+    <copy>bin/run-cache-server</copy>
+    ```
 
 2. Wait for the Cache Server to start in a few seconds
 
-  ![](../images/run-cache-server.png" ")
+    ![](./images/run-cache-server.png" ")
 
 ### Run the Example Client:
 1. On the Second Terminal Window run the following command:
 
-  ```
-  <copy>bin/run java8</copy>
-  ```
+    ```
+    <copy>bin/run java8</copy>
+    ```
 
 2. The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at `src/com/tangosol/examples/java8`.
 
-  ![](../images/run-java8.png " ")
+    ![](./images/run-java8.png " ")
 
 ## **STEP 7**: Test Asynchronous features
 The Coherence asynchronous features step illustrates how to asynchronously get and put data in a cache.
@@ -261,24 +261,24 @@ How to asynchronously process cache entries in Coherence and to asynchronously a
 ### Start Cache Server:
 1. On the First terminal Window run the following command:
 
-  ```
-  <copy>bin/run-cache-server</copy>
-  ```
+    ```
+    <copy>bin/run-cache-server</copy>
+    ```
 
 2. Wait for the Cache Server to start in a few seconds
 
-  ![](../images/run-cache-server.png " ")            
+    ![](./images/run-cache-server.png " ")            
 
 ### Run the Example Client:
 1. On the Second terminal Window run the following command:
 
-  ```
-  <copy> bin/run async</copy>
-  ```
+    ```
+    <copy> bin/run async</copy>
+    ```
 
 2. The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at `src/com/tangosol/examples/async`
 
-  ![](../images/run-async.png " ")
+    ![](./images/run-async.png " ")
 
 *End of Lab*
 

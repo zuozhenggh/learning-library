@@ -24,58 +24,58 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
 1. Launch your browser to the following URL
 
-  ```
-  URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-  ```
+    ```
+    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    ```
 
 2. Provide login credentials
 
-  ```
-  Username: <copy>oracle</copy>
-  ```
-  ```
-  Password: <copy>Guac.LiveLabs_</copy>
-  ```
+    ```
+    Username: <copy>oracle</copy>
+    ```
+    ```
+    Password: <copy>Guac.LiveLabs_</copy>
+    ```
 
-  ![](./images/guacamole-login.png " ")
+    ![](./images/guacamole-login.png " ")
 
-*Note*: There is an underscore `_` character at the end of the password.
-
-  ![](./images/guacamole-landing.png " ")
+    *Note*: There is an underscore `_` character at the end of the password.
 
 3. Click on *Terminal* icon on the desktop to start a terminal
 
+    ![](./images/guacamole-landing.png " ")
+
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
 
 1. First login as “*opc*” using your SSH Private Key
 
 2. Then sudo to “*oracle*”. E.g.
 
-  ```
-  <copy>sudo su - oracle</copy>
-  ```
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## **STEP 1**: Starting Database and eShop Application
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script
 
-  ```
-  <copy>
-  cd /u01/script
-  </copy>
-  ```
+    ```
+    <copy>
+    cd /u01/script
+    </copy>
+    ```
 3. Run the script file to start the components.
 
-  ```
-  <copy>
-  ./env_setup_db-workshop.sh
-  </copy>
-  ```
+    ```
+    <copy>
+    ./env_setup_db-workshop.sh
+    </copy>
+    ```
 
 This will start the database, listener, oracle rest data service and our eShop application. This script could take 2-5 minutes to run
 
@@ -85,21 +85,21 @@ This will start the database, listener, oracle rest data service and our eShop a
 
 1.	As an oracle user run the setWLS14Profile.sh script. This will setup the environment variables needed to start the WebLogic 14c Services.
 
-  ````
-  <copy>
-  cd /u01/middleware_demo/scripts/
-  . ./setWLS14Profile.sh
-  cd $DOMAIN_HOME/bin
-  </copy>
-  ````
+    ````
+    <copy>
+    cd /u01/middleware_demo/scripts/
+    . ./setWLS14Profile.sh
+    cd $DOMAIN_HOME/bin
+    </copy>
+    ````
 
 2.	As an oracle user run startWebLogic.sh script. This will start the WebLogic services.
 
-  ````
-  <copy>
-  nohup ./startWebLogic.sh &
-  </copy>
-  ````
+    ````
+    <copy>
+    nohup ./startWebLogic.sh &
+    </copy>
+    ````
 
 You may now *proceed to the next lab*.
 

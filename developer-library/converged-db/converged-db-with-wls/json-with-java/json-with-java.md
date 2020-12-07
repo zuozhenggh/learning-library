@@ -39,22 +39,22 @@ This lab assumes you have:
 
 ## **STEP 1**: Retrieve JSON data
 
-1. Open the Firefox browser and navigate to `http://localhost:7101/resources/html/endPointChecker.html` OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
 
 2. Click on the drop-down to see the list of datatypes shown in workshop.
 
 3. Select **JSON** datatype and click on **Change View** button to change.
 
-  ![](./images/datatype-tool.png " ")
+    ![](./images/datatype-tool.png " ")
 
 4. Search for product with ID **292** and Click on **Go** button.
 
 5. In the text area you will find the JSON data related to product with ID 292 displayed.
 
-  ![](./images/json-search-product-292.png " ")
+    ![](./images/json-search-product-292.png " ")
 
-6. To verify the product on eShop application, open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL `http://localhost:7101/product/292` to see the details of the product graphically.
-  ![](./images/json-product-292.png " ")
+6. To verify the product on eShop application, open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
+    ![](./images/json-product-292.png " ")
 
 7.	Verify the PID, Details and Title.
 
@@ -62,19 +62,19 @@ This lab assumes you have:
 
 1.	In the search result occurring after searching for product 292, update the price of the product from 12$ to 14$ in the text area.
 
-  ![](./images/json-product-292-update.png " ")
+    ![](./images/json-product-292-update.png " ")
 
 2.	Click on the blue **Update** button below the text area.
 
 3.	You will observe the message “1 records updated”.
 
-4.	To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL `http://localhost:7101/product/292` to see the details of the product graphically.
+4.	To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
 
-  ![](./images/json-product-292-updated.png " ")
+    ![](./images/json-product-292-updated.png " ")
 
 5.	Again, search for product **292**, to observe the results with updated price value in the JSON object retrieved from database.
 
-  ![](./images/json-search-product-292-updated.png " ")
+    ![](./images/json-search-product-292-updated.png " ")
 
    JSON manipulation function which is supplied out of the box called JSON_MERGEPATCH which is entirely replacing the JSON text with the new text is used within the code to update JSON data.  Similarly, we can re-write the query to update only a particular field and value in JSON by other methods provided to scan through and manipulate JSON key-value pairs in Oracle Converged DB for JSON.
 
@@ -84,27 +84,27 @@ This lab assumes you have:
 
 2. Click on red **Delete** button below the search result display text area.
 
-  ![](./images/json-product-292-delete.png " ")
+    ![](./images/json-product-292-delete.png " ")
 
 3. The deletion confirmation message is displayed.
 
-  ![](./images/json-product-292-delete-msg.png " ")
+    ![](./images/json-product-292-delete-msg.png " ")
 
 4. Click on **Go** button again to search for product with ID 292.
 
 5. The unavailability message is displayed.
 
-  ![](./images/json-product-292-notavlbl.png " ")
+    ![](./images/json-product-292-notavlbl.png " ")
 
-6. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL `http://localhost:7101/product/292`.
+6. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`*.
 
 7. You will find the product missing from the JSON database.
 
-   ![](./images/json-product-292-missing.png " ")
+     ![](./images/json-product-292-missing.png " ")
 
 ## **STEP 4**: Insert JSON data
 
-1.	Open the Firefox browser and navigate to `http://localhost:7101/resources/html/endPointChecker.html` OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1.	Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
 
    If the tool is already open, continue...
 
@@ -114,28 +114,28 @@ This lab assumes you have:
 
 4.	In the text area, paste the below JSON data about product **292**.
 
-  ````
-  <copy>
-  {"pid":"292","category":"Earring ","title":"Earring 1","details":"Earrings-aiony-haust-o08tVPuvDcQ-unsplash.jpg","price":"12","picture":"https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedDB4/o/Earrings-aiony-haust-o08tVPuvDcQ-unsplash.jpg"}
-  </copy>
-  ````
+    ````
+    <copy>
+    {"pid":"292","category":"Earring ","title":"Earring 1","details":"Earrings-aiony-haust-o08tVPuvDcQ-unsplash.jpg","price":"12","picture":"https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedDB4/o/Earrings-aiony-haust-o08tVPuvDcQ-unsplash.jpg"}
+    </copy>
+    ````
 5. Click on the green **Insert** button.
 
-  ![](./images/json-product-292-insert.png " ")
+    ![](./images/json-product-292-insert.png " ")
 
 6. Data insert confirmation message is displayed.
 
-  ![](./images/json-product-292-insert-msg.png " ")
+    ![](./images/json-product-292-insert-msg.png " ")
 
 7. Search for product id **292** and Click **Go**.
 
 8. The newly inserted product details are displayed in the text area.
 
-  ![](./images/json-search-product-292.png " ")
+    ![](./images/json-search-product-292.png " ")
 
-9. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL `http://localhost:7101/product/292` to see the details of the product graphically.
+9. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
 
-  ![](./images/json-product-292.png " ")
+    ![](./images/json-product-292.png " ")
 
 10.	Verify the PID, Details and Title.
 
@@ -157,30 +157,30 @@ To achieve this, lets replace the query beneath with a new query having the cond
 
 4. Compare the query with the one against `GET_PRODUCT_BY_ID_JSON_CHECK_PRICE`.
 
-  ![](./images/json-query-by-price.png " ")
+    ![](./images/json-query-by-price.png " ")
 
-  We are first using function `JSON_EXISTS` which will do a verification if the data is in the JSON format and if the condition is met.
+    We are first using function `JSON_EXISTS` which will do a verification if the data is in the JSON format and if the condition is met.
 
-  You can also see that we are simply using the key “Price” as if in a relational database not even bothering that it’s a key – value entry in a JSON text inside a database.  That is the power and ease of handing JSON data in Oracle Converged Database.
+    You can also see that we are simply using the key “Price” as if in a relational database not even bothering that it’s a key – value entry in a JSON text inside a database.  That is the power and ease of handing JSON data in Oracle Converged Database.
 
 5. Navigate down in JSONDao.java to function `getProductByID()`.
 
 6. Uncomment the line below:
 
-  ````
-  <copy>
-  pstmt = conn.prepareStatement(GET_PRODUCT_BY_ID_JSON_CHECK_PRICE);
-  </copy>
-  ````
-Comment out the line below:
+    ````
+    <copy>
+    pstmt = conn.prepareStatement(GET_PRODUCT_BY_ID_JSON_CHECK_PRICE);
+    </copy>
+    ````
+    Comment out the line below:
 
-  ````
-  <copy>
-  pstmt = conn.prepareStatement(GET_PRODUCT_BY_ID);
-  </copy>
-  ````
+    ````
+    <copy>
+    pstmt = conn.prepareStatement(GET_PRODUCT_BY_ID);
+    </copy>
+    ````
 
-  ![](./images/json-comment-code.png " ")
+    ![](./images/json-comment-code.png " ")
 
 7.	Click on the **Save** button.
 
@@ -188,25 +188,25 @@ Comment out the line below:
 
 9.	Click on **Run Maven** and click on **redeploy**.
 
-  ![](./images/json-redeploy.png " ")
+    ![](./images/json-redeploy.png " ")
 
 10.	In the JDeveloper Log message area, you will see the successful redeployment.
 
-  ![](./images/json-redeploy-log.png " ")
+    ![](./images/json-redeploy-log.png " ")
 
-11.	Navigate back to browser to the **End Point Checker** tool at `http://localhost:7101/resources/html/endPointChecker.html`.
+11.	Navigate back to browser to the **End Point Checker** tool at *`http://localhost:7101/resources/html/endPointChecker.html`*.
 
 12.	Refresh couple of times to ensure avoiding pages from cache.
 
 13.	Enter **292** as product ID and Click **Go** You will NOT see the product details as JSON in the text area., as we have set the price condition to $10, and the product we are trying to get data is worth $12.
 
-  ![](./images/json-product-292-notavlbl.png" ")
+    ![](./images/json-product-292-notavlbl.png" ")
 
 14.	Enter product with ID **11** and click **Go**.
 
 15.	You will see the product details retrieved as the price is $10.
 
-  ![](./images/json-search-product-11.png" ")
+    ![](./images/json-search-product-11.png" ")
 
  OPTIONAL
  You can also try the select statement in `GET_PRODUCT_BY_ID_JSON_QUERY` string in `JSONDao.java` which has a SQL statement containing built-in JSON operational functions `JSON_QUERY` and `JSON_VALUE` to handle the same request.

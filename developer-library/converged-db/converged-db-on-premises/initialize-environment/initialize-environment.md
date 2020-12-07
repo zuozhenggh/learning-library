@@ -38,11 +38,13 @@ For ease of execution of this workshop, your instance has been pre-configured fo
     ```
 
     ![](./images/guacamole-login.png " ")
-*Note*: There is an underscore `_` character at the end of the password.
+
+    *Note*: There is an underscore `_` character at the end of the password.
+
+3. Click on *Terminal* icon on the desktop to start a terminal
 
     ![](./images/guacamole-landing.png " ")
 
-3. Click on *Terminal* icon on the desktop to start a terminal
 
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):

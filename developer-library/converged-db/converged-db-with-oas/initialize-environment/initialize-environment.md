@@ -24,26 +24,26 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
 1. Launch your browser to the following URL
 
-  ```
-  URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-  ```
+    ```
+    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    ```
 
 2. Provide login credentials
 
-  ```
-  Username: <copy>oracle</copy>
-  ```
-  ```
-  Password: <copy>Guac.LiveLabs_</copy>
-  ```
+    ```
+    Username: <copy>oracle</copy>
+    ```
+    ```
+    Password: <copy>Guac.LiveLabs_</copy>
+    ```
 
-  ![](./images/guacamole-login.png " ")
+    ![](./images/guacamole-login.png " ")
 
-*Note*: There is an underscore `_` character at the end of the password.
-
-  ![](./images/guacamole-landing.png " ")
+    *Note*: There is an underscore `_` character at the end of the password.
 
 3. Click on *Terminal* icon on the desktop to start a terminal
+
+    ![](./images/guacamole-landing.png " ")
 
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
@@ -55,81 +55,76 @@ While all command line tasks included in this workshop can be performed from a t
 
 2. Then sudo to “*oracle*”. E.g.
 
-  ```
-  <copy>sudo su - oracle</copy>
-  ```
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## **STEP 1**: Starting Database And OAS Services
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script
 
-  ```
-  <copy>
-  cd /u01/script
-  </copy>
-  ```
-3. Run the script file to start the services.
+    ```
+    <copy>
+    cd /u01/script
+    </copy>
+    ```
+3. Run the script file to start the services. All the required services of converged database and OAS will start in 5-6 minutes.
 
-  ![](./images/oas-environment2.PNG " ")
-  ```
-  <copy>
-  ./env_setup_oas-workshop.sh
-  </copy>
-  ```
+    ![](./images/oas-environment2.PNG " ")
 
-All the required services of converged database and OAS will start in 5-6 minutes.
+    ```
+    <copy>
+    ./env_setup_oas-workshop.sh
+    </copy>
+    ```
 
-  ![](./images/oas-environment3.PNG " ")
-
+    ![](./images/oas-environment3.PNG " ")
 Check for the "Finished starting servers" status before proceeding next.
 
-4. Run "status.sh" file to get the status of all the services required for OAS.
+4. Run "status.sh" file to get the status of all the services required for OAS. The command shows all the service names and their status.
 
-  ![](./images/oas-environment4.png " ")
-  ```
-  <copy>
-  /u01/oas/Oracle/middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
-  </copy>
-  ```
+    ![](./images/oas-environment4.png " ")
+    ```
+    <copy>
+    /u01/oas/Oracle/middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
+    </copy>
+    ```
 
-The command shows all the service names and their status.
-
-  ![](./images/oas-environment5.png " ")
-
-  Check for the success status as shown above, before login to OAS screen.
+    ![](./images/oas-environment5.png " ")
+Check for the success status as shown above, before login to OAS screen.
 
 ## **STEP 2**: Login To Oracle Analytics Server
 
 1. Open web browser (preferably Chrome) and access the OAS Data Visualization service by the below URL structure.  
 
-  ```
-  <copy>
-  http://[Instance-public-ip]:9502/dv/ui
-  </copy>
-  ```
-  ![](./images/oas-environment8.png " ")
+    ```
+    <copy>
+    http://[Instance-public-ip]:9502/dv/ui
+    </copy>
+    ```
+    ![](./images/oas-environment8.png " ")
 
 2. Login with the below credentials;
 
-  ```
-  Username	: <copy>Weblogic</copy>
-  ```
+    ```
+    Username	: <copy>Weblogic</copy>
+    ```
 
-  ```
-  Password	: <copy>Oracle_4U</copy>
-  ```
+    ```
+    Password	: <copy>Oracle_4U</copy>
+    ```
 
 ## **STEP 3**: Create A Connection To Database
 
 1. From Home screen, click on **Create** button and select **Connection**.
 
-  ![](./images/oas-environment9.png " ")
+    ![](./images/oas-environment9.png " ")
 
 2. Select **Oracle Database** for connecting to database and provide required connection details.  
 
-  ![](./images/oas-environment10.png " ")
-  ![](./images/oas-environment11.png " ")
+    ![](./images/oas-environment10.png " ")
+    ![](./images/oas-environment11.png " ")
 
     **Connection Details:**
 

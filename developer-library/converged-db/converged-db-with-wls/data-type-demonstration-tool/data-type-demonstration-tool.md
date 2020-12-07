@@ -34,20 +34,21 @@ This lab assumes you have:
 2. Double click on **JSONController.java** to open it in JDeveloper.
 3. Check all the `@RequestMapping` annotations.  You will find the request method and data type consumed for each method.
 
-  ![](./images/open-jsoncontroller-code.png " ")
+    ![](./images/open-jsoncontroller-code.png " ")
 
 4. Note that the code has functions to hold logic for presenting, updating, inserting and deleting JSON datatype.
 5. Double click on JSONDao.java to open it in JDeveloper.
 
-  ![](./images/open-jsondao-code.png " ")
+    ![](./images/open-jsondao-code.png " ")
 6. Observe the SQL queries written to do database operations.
 7. In the declaration section at top of the file (around line 16) check the `GET_PRODUCT_BY_ID` string and the sql select statement.
 8. Also check the getProductById(Connection con,  String id) function consuming the SQL select query and the result set is retrieved as a CLOB.
 9. Also check the statement
 
-  ```
-  conn = dbs.getJsonXmlConnection();
-  ```
+    ```
+    conn = dbs.getJsonXmlConnection();
+    ```
+
   Clearly we can understand that this method in **DBSource.java** under converge.dbHelpers is using the be **`datasource_jsonXml`** bean name declared in **applicationContext.xml**  under **Resources** to get database connection. The bean configuration in-turn points to **converge.oracle.jsonxml** datasource to fetch the records from apppdb (PDB).
 
 10. Similarly, there are controller and DAO files for different datatypes like XML, SPATIAL and Analytics.  Open the code and verify the flow if interested.
@@ -56,7 +57,7 @@ This lab assumes you have:
 
 1. Open JDeveloper in **Studio** mode.
 
-    ![](./images/jdev-studio-option.png " ")
+      ![](./images/jdev-studio-option.png " ")
 
 2. Under **Projects**  expand **Converge**.
 3. Navigate to **Web Content** and expand it.
@@ -65,7 +66,7 @@ This lab assumes you have:
 
  ***Note***: Accept certificates if prompted and proceed.
 
-    ![](./images/jdev-open-tool-code.png " ")
+      ![](./images/jdev-open-tool-code.png " ")
 
 6. Click on **Source** to view code (Optional).
 
@@ -75,7 +76,7 @@ This lab assumes you have:
 2. Click on the drop-down to see the list of datatypes shown in workshop.
 3. Select a datatype and click on **Change View** button to change.
 
-  ![](./images/datatype-tool.png " ")
+    ![](./images/datatype-tool.png " ")
 
 ***Note***: Certain Datatype's fetch requests may not give results instantaneously. In certain cases we have to insert data before accessing it.
 

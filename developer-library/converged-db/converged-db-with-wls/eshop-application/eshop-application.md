@@ -36,115 +36,116 @@ Handling database connections using WebLogic datasources gives the developers fr
 
 It improves application performance as connections are not created/closed within a class, they are managed by the application server and can be fetched while at runtime. It provides a facility for creating a pool of connectionsrecycling of connections in the pool is helpful for enterprise application performance It supports distributed transactions.
 
-1. Open the Firefox browser on the remote desktop and navigate to `http://localhost:7101/console` OR You can use the bookmark **Oracle Weblogic Server Administration Console** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1. Open the Firefox browser on the remote desktop and navigate to *`http://localhost:7101/console`* OR You can use the bookmark **Oracle Weblogic Server Administration Console** under **ConvergedDB-Workshp in Bookmark Toolbar**.
 
 2. Login with below credentials:
 
-  ```
-  Username	: <copy>weblogic</copy>
-  ```
+    ```
+    Username	: <copy>weblogic</copy>
+    ```
 
-  ```
-  Password	: <copy>Oracle123!</copy>
-  ```
+    ```
+    Password	: <copy>Oracle123!</copy>
+    ```
 
-  ![](./images/weblogic-console-login.png " ")
+    ![](./images/weblogic-console-login.png " ")
 
 
 ## **STEP 2**: Configure datasource recoding
 
 1. Click on **Preferences**.
 
-  ![](./images/weblogic-console-preferences.png " ")
+    ![](./images/weblogic-console-preferences.png " ")
 
 2. Click on **WLST Script Recording** tab. Under **General** tab, edit the values for parameters as below:
 
-  ```
-  Base Script Directory	: <copy>/u01/middleware_demo/scripts</copy>
-  ```
+    ```
+    Base Script Directory	: <copy>/u01/middleware_demo/scripts</copy>
+    ```
 
-  ```
-  File Name	: <copy>createDS.py</copy>
-  ```
+    ```
+    File Name	: <copy>createDS.py</copy>
+    ```
 
-  ![](./images/datasource-recording-setting-path.png " ")
+    ![](./images/datasource-recording-setting-path.png " ")
 
-3. Scroll down, Select the CheckBox **Generate Prescript and Postscript**.  
+3. Scroll down, Select the CheckBox **Generate Prescript and Postscript**.  Fill the values given below in respective text areas:
 
-Fill the values given below in respective text areas:
+    - Prescript Text:
 
-Prescript Text:
-  ```
-  <copy>
-  connect("weblogic","Oracle123!","t3://localhost:7101")
-  edit()
-  startEdit()
-  </copy>
-  ```
+    ```
+    <copy>
+    connect("weblogic","Oracle123!","t3://localhost:7101")
+    edit()
+    startEdit()
+    </copy>
+    ```
 
-Postscript Text:
-  ```
-  <copy>
-  save()
-  activate()
-  exit()
-  </copy>
-  ```
-  ![](./images/datasource-recording-setting-prepost-text.png " ")
+    - Postscript Text:
+
+    ```
+    <copy>
+    save()
+    activate()
+    exit()
+    </copy>
+    ```
+
+    ![](./images/datasource-recording-setting-prepost-text.png " ")
 
 4. Click on the **Save** button.
 5. Click on **Control** tab.  Click Start **Recording**.
 
-   ![](./images/datasource-recording-start.png " ")
+     ![](./images/datasource-recording-start.png " ")
 
 ## **STEP 3**: Create a datasource using WebLogic console
 
 1. Under **Domain Structure** tab on the left hand side, expand **Service**.
 2. Click on **Data Sources**  Click on New and select **Generic Data Source**.
 
-  ![](./images/weblogic-console-create-ds.png " ")
+    ![](./images/weblogic-console-create-ds.png " ")
 
 3. Fill the values as below and click **Next** button.
 
-  ```
-  Name	: <copy>jsonxmlds</copy>
-  ```
+    ```
+    Name	: <copy>jsonxmlds</copy>
+    ```
 
-  ```
-  JNDI Name	: <copy>convergeddb.jsonxmlds</copy>
-  ```
+    ```
+    JNDI Name	: <copy>convergeddb.jsonxmlds</copy>
+    ```
 
-  ![](./images/create-jsonxmlds.png " ")
+    ![](./images/create-jsonxmlds.png " ")
 
 4. For **Database Driver** select the default value of **Oralce’s Driver (Thin) for Service Connections; Versions: Any.** Click **Next**.
 
-  ![](./images/create-jsonxmlds-driver.png " ")
+    ![](./images/create-jsonxmlds-driver.png " ")
 
 5. In the next screen do not change any values.  Let the default selections prevail.  Click **Next**.
 
-  ![](./images/create-jsonxmlds-options.png " ")
+    ![](./images/create-jsonxmlds-options.png " ")
 
 6. Under the **Connection Properties** screen provide the following values. Click **Next**.
-  - **Database Name**: JXLPDB
-  - **Host Name**: localhost
-  - **Port**: 1521
-  - **Database User Name**: appxml
-  - **Password**: Oracle_4U
-  - **Confirm Password**: Oracle_4U
+    - **Database Name**: JXLPDB
+    - **Host Name**: localhost
+    - **Port**: 1521
+    - **Database User Name**: appxml
+    - **Password**: Oracle_4U
+    - **Confirm Password**: Oracle_4U
 
-  ![](./images/create-jsonxmlds-connection-properties.png " ")
+    ![](./images/create-jsonxmlds-connection-properties.png " ")
 
 7. Click on **Test Configuration** to confirm the connection.  Once you see a successful connection, Click **Next**.
 
-  ![](./images/create-jsonxmlds-test-connection.png " ")
+    ![](./images/create-jsonxmlds-test-connection.png " ")
 
 8. In the **Select Target** screen, select the checkbox against **AdminServer**. Click **Finish**.
 
-  ![](./images/create-jsonxmlds-select-target.png " ")
+    ![](./images/create-jsonxmlds-select-target.png " ")
 
 9. Navigate back to **Preferences**, **WLST Script Recording** tab. Click **Control** tab. Click on **Stop Recording** button.
 
-  ![](./images/datasource-recording-stop.png " ")
+    ![](./images/datasource-recording-stop.png " ")
 
 Now we have successfully recorded how a datasource can be created from WebLogic Admin Console.
 
@@ -156,35 +157,35 @@ In this step we will edit the recorded script a little to connect to the require
 
 1. Open a **Terminal** in the VNC desktop.
 
-2. Edit the recorded commands in `/u01/middleware_demo/scripts/createDS.py` using the command below:
+2. Edit the recorded commands in *`/u01/middleware_demo/scripts/createDS.py`* using the command below:
 
-  ```
-  <copy>
-  gedit /u01/middleware_demo/scripts/createDS.py
-  </copy>
-  ```
+    ```
+    <copy>
+    gedit /u01/middleware_demo/scripts/createDS.py
+    </copy>
+    ```
 
 3. Remove the line with keyword **setEncrypted**( or comment it by adding **#** as the first character of the line - before the keyword **setEncrypted**.
 
-  ```
-  <copy>
-  #setEncrypted('Password', 'Password_1592840128546',
-  '/u01/middleware_demo/scripts/createDSConfig',
-  '/u01/middleware_demo/scripts/createDSSecret')
-  </copy>
-  ```
+    ```
+    <copy>
+    #setEncrypted('Password', 'Password_1592840128546',
+    '/u01/middleware_demo/scripts/createDSConfig',
+    '/u01/middleware_demo/scripts/createDSSecret')
+    </copy>
+    ```
 
 4. Instead of setEncrypted() function, we can set the password for the datasource connection using the setPassword() command in WLST.  Write the below line in place of line containing **setEncrypted**.
 
-  ```
-  <copy>
-  cmo.setPassword("Oracle_4U")
-  </copy>
-  ```
+    ```
+    <copy>
+    cmo.setPassword("Oracle_4U")
+    </copy>
+    ```
 
 5. Click on the **Menu** icon on the right hand side of the gedit window.  Click **Find and Replace** option.
 
-  ![](./images/edit-wlst-script.png " ")
+    ![](./images/edit-wlst-script.png " ")
 
 6. Find and Replace all occurrence of **jsonxmlds** with **spatialds**.
 
@@ -200,27 +201,27 @@ In this step we will edit the recorded script a little to connect to the require
 
 2. Navigate to folder where the edited datasource create script exits.
 
-  ```
-  <copy>
-  cd /u01/middleware_demo/scripts
-  </copy>
-  ```
+    ```
+    <copy>
+    cd /u01/middleware_demo/scripts
+    </copy>
+    ```
 
 3. Source the lab profile file (DOT SPACE PATH).
 
-  ```
-  <copy>
-  . /u01/middleware_demo/scripts/setWLS14Profile.sh
-  </copy>
-  ```
+    ```
+    <copy>
+    . /u01/middleware_demo/scripts/setWLS14Profile.sh
+    </copy>
+    ```
 
 4. Source the setDomainEnv.sh to set all WebLogic and WLST paths.
 
-  ```
-  <copy>
-  sh $DOMAIN_HOME/bin/setDomainEnv.sh
-  </copy>
-  ```
+    ```
+    <copy>
+    sh $DOMAIN_HOME/bin/setDomainEnv.sh
+    </copy>
+    ```
 
 5. Execute the java command below to run the WLST script to create the second datasource **spatialgraphds**.
 
@@ -230,7 +231,7 @@ In this step we will edit the recorded script a little to connect to the require
     </copy>
     ```
 
-6. Navigate to folder `/u01/middleware_demo/converge-java/utilities`.
+6. Navigate to folder *`/u01/middleware_demo/converge-java/utilities`*.
 
     ```
     <copy>
@@ -259,51 +260,51 @@ In this step we will edit the recorded script a little to connect to the require
 
     This role has access to all features of JDeveloper.  We need it for accessing different kind of project templates to build the eSHOP application.
 
-  ![](./images/jdev-studio-option.png " ")
+    ![](./images/jdev-studio-option.png " ")
 
 3. Click on **File** menu. Click **Import**.
 
 4. In the **Import** menu, Select **Maven Project** and Click **OK**.
 
-  ![](./images/jdev-import-maven-project.png " ")
+    ![](./images/jdev-import-maven-project.png " ")
 
-5. Use the **Search Icon** and navigate to `/u01/middleware_demo/converge-java` folder against the Root Directory .  Leave the **Settings File** option to default.  Select the checkbox against **pom.xml** under the **Project** options. Click **OK**.
+5. Use the **Search Icon** and navigate to *`/u01/middleware_demo/converge-java`* folder against the Root Directory .  Leave the **Settings File** option to default.  Select the checkbox against **pom.xml** under the **Project** options. Click **OK**.
 
-  ![](./images/jdev-select-project.png " ")
+    ![](./images/jdev-select-project.png " ")
 
 6. Provide a proper **Application Name** like eShopWebApp. Click **OK**.
 
-  ![](./images/jdev-project-naming.png " ")
+    ![](./images/jdev-project-naming.png " ")
 
 7. JDeveloper will take some time to import the application code.  Expand all **+** signs under **Converge** beneath the **Projects** tab on left hand side navigation bar to see different RESOURCES, WEB COMPONENTS and PACKAGES used in the eSHOP code.
 
-  ![](./images/jdev-project-expanded.png " ")
+    ![](./images/jdev-project-expanded.png " ")
 
 8. Expand **Resources**.  Double click on **pom.xml**.  In the Main window of the **JDeveloper**, Click on **Source**.
 
-We can see the weblogic-maven-plugin which calls the weblogic.deployer tool internally for and execution goal of **deploy** in a Maven call.
+    We can see the weblogic-maven-plugin which calls the weblogic.deployer tool internally for and execution goal of **deploy** in a Maven call.
 
-  ![](./images/jdev-project-pom.png " ")
+    ![](./images/jdev-project-pom.png " ")
 
 9. Under Applications Navigation Panel in JDeveloper, Under **Projects**, right click on **converge**.
 
 10. Select Run Maven, Click **Install**.
 
-  ![](./images/jdev-project-install.png " ")
+    ![](./images/jdev-project-install.png " ")
 
 11. In the Logs section **Apache-Maven-Install-Log** observe the text **BUILD SUCCESS**.
 
-Scroll up the log and observe that the Maven automation has created a deployable war file called converge.war under `/u01/middleware_demo/converge-java/target/` folder and using the **weblogic.deployer** tool, has installed it on the configured on AdminServer of WebLogic 14 installed.
+12. Scroll up the log and observe that the Maven automation has created a deployable war file called converge.war under *`/u01/middleware_demo/converge-java/target/`* folder and using the **weblogic.deployer** tool, has installed it on the configured on AdminServer of WebLogic 14 installed.
 
-  ![](./images/jdev-project-deploy-to-wls.png " ")
+    ![](./images/jdev-project-deploy-to-wls.png " ")
 
 ## **STEP 7**: Verify eSHOP functionality
 
-1. Open the Firefox browser, access the application by navigating to `http://localhost:7101/`  or from the bookmarks toolbar, Click **ConvergeDB-Workshop**, and Click **eSpeedShop**.
+1. Open the Firefox browser, access the application by navigating to *`http://localhost:7101/`*  or from the bookmarks toolbar, Click **ConvergeDB-Workshop**, and Click **eSpeedShop**.
 
 2. Navigate through all endpoints and features of the application like Dashboard, shopping cart, search etc.
 
-  ![](./images/eShop-application-home.png " ")
+    ![](./images/eShop-application-home.png " ")
 
  The eShop application is deployed and functional.
 
