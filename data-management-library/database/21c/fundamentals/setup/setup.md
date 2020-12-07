@@ -18,7 +18,7 @@ In this lab, you will:
 * Working knowledge of vi
 * Lab: SSH Keys
 * Lab: Create a 21c DBCS VM Database
-  
+
 
 ## **STEP 1**: Define and test the connections
 
@@ -97,15 +97,15 @@ In this lab, you will:
 
 Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle Cloud object storage and unzip the file.
 
-*Note*: These scripts are designed for DBCS VM single node instances 
+*Note*: These scripts are designed for DBCS VM single node instances
 
 1.  Change to the oracle user home directory
 
 	````
 	<copy>
 	cd /home/oracle
-	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/cM3vILBs5jcFJ0f8F6DSYAJGvEIlg7tl-8KFhXWCdlcWMPSsiLuoMN7fwApUteG1/n/c4u03/b/data-management-library-files/o/Cloud_21c_labs.zip
-	</copy>
+	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9WEb1xKV88FoxNZWWdFYrM_NsBZFv9bsAOnGrXpu8fo4BLE7VDLDLkfQf_BLUyuI/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
+  </copy>
 	````
 
 2.  Unzip Cloud\_21c\_labs.zip
