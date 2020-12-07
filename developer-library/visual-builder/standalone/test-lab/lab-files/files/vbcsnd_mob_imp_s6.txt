@@ -1,0 +1,1 @@
+This illustration shows the Data tab for the Department business object after you import data for it. The table shows the Id, Name, and Location fields for each department. 
