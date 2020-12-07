@@ -55,7 +55,7 @@ let enterMdData = evt => {
         do {
             matches = imagesRegExp.exec(md);
             if (matches !== null) 
-                images_md.push(matches[1].substring(matches[1].lastIndexOf('/')).replace('/', ''));
+                images_md.push(matches[1].substring(matches[1].lastIndexOf('/')).replace('/', '').split(' ')[0]);
         } while(matches);
 
         images_md = sort_unique(images_md);
