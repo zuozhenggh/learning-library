@@ -1,4 +1,4 @@
-# GoldenGate Microservices HA / DR replication
+# GoldenGate Microservices Active-Active 
 
 ## Introduction
 This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availabilit/Disaster Recovery using Active-Active Technology
@@ -7,216 +7,231 @@ This lab will introduce you to Oracle GoldenGate for Microservices Workshop Arch
 
 ### Lab Architecture
 ![](./images/ggmicroservicesarchitecture.png " ")
+## Bi-Directional Replication, AutoCDR, Rapid Deployment and Intro to the Admin Client
+## Introduction
 
-### Objectives
+Since we’ve already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
 
-The objectives of the lab is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices bidirectionally while leveraging RestfulAPIs. This Lab focuses on High Availability replication and Disaster Recovery using bidirectional and Auto Collision Detect features of GoldeGate
+## Objectives
 
-### Prerequisites
+- Rapid Deployment using:
+  - OGGCA silent deployment scripts (remove and recreate deployments).
+  - REST API to setup bi-directional GoldenGate replication between two databases.
+  - SQL Scripts to setup up auto conflict detection and resolution in the database.
 
-This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
-    - Lab: Environment Setup
-    - Lab: Configure GoldenGate
+## Required Artifacts
 
-In this lab we will setup GoldenGate Microservices Active - Active Replication
+- VNC Client for the deployment.
+- Browser to check the deployment.
+- Swingbench to apply transactions.
 
-## **STEP 1:** Configuration for Microservices HA / DR Lab
+### **STEP 1**: Run a script to perform a rapid deployment.
 
-1. Open a terminal session
+1. Open up a terminal window and change directory to Lab6 and Review script build_all_bi_di.sh.
 
-   ![](./images/terminal3.png " ")
+                [oracle@OGG181DB183 ~]$ cd ~/OGG181_WHKSHP/Lab6
+                [oracle@OGG181DB183 Lab6]$ cat build_all_bi_di.sh 
 
-```
-<copy>sudo su - oracle</copy>
-```
 
-2. Will use the following command to create a target alias - create_credential_TGGAlias.sh
+**This script performs the following:**
 
-```
-<copy>sqlplus / as sysdba
-sh ./create_credential_TGGAlias.sh Welcome1 17001 c##ggate@orcl ggate
-exit</copy>
-```
-3. After running this script,you can go to your browser and verify that the credential was created
+Drops the existing container databases.
 
-4. Open a terminal session
+Clones two container databases from a base container.
 
-   ![](./images/terminal3.png " ")
+Deletes the two deployments (Atlanta and SanFran).  This will remove any current lab setups.
 
-````
-<copy>sudo su - oracle</copy>
-````
+Creates the two deployments again.
 
-5. Change directory to Lab 5
+Creates new credentials for both deployments.
 
-```
-<copy>cd /Desktop/Scripts/HOL/Lab5</copy>
-```
-```
-<copy>sh ./create_credential_TGGAlias.sh Welcome1 17001 c##ggate@orcl ggate</copy>
-```
-6. After running this script, go to your browser and that the credential was created
+Adds Schema supplemental logging to both container databases for the SOE schema.
 
-7. Open a new browser tab and connect to Admin Server
+Adds checkpoint tables on both container databases.
 
-   ![](./images/b1.png " ")
+Adds the Extract, Distribution Path and Replicat for both deployments.  This includes the correct parameters for the Extract and Replicats.
 
-```
-<copy>https://localhost:17001</copy>
-```
+2. Run the **build_all_bi_di.sh** script
 
-Login with the following credentials
+[oracle@OGG181DB183 Lab6]$ ./build_all_bi_di.sh 
 
-```
-<copy> oggadmin/Welcome1</copy>
+While it's running note the messages displayed that informs what has been added to the services.You should see the below message to be sure that all the steps are completed.
 
-```
-8. Select the "Hamburger Menu", then -
+![](./images/600/Lab600_image6001.PNG) 
 
-9. Select Administrator
 
-   ![](./images/b3.png " ")
+### **STEP 3**: Add AutoCDR to tables in the database.
 
+When more than one replica of a table allows changes to the table, a conflict can occur when a change is made to the same row in two different databases at nearly the same time. Oracle GoldenGate replicates changes using the row LCRs. 
+It detects a conflict by comparing the old values in the row LCR for the initial change from the origin database with the current values of the corresponding table row at the destination database identified by the key columns. 
+If any column value does not match, then there is a conflict.
+After a conflict is detected, Oracle GoldenGate can resolve the conflict by overwriting values in the row with some values from the row LCR, ignoring the values in the row LCR, or computing a delta to update the row values.
 
-    ![](./images/b4.png " ")
+Automatic conflict detection and resolution does not require application changes for the following reasons:
 
-10. Next we need to add the schema
+    •	Oracle Database automatically creates and maintains invisible timestamp columns.
 
-Back to terminal session run:
+    •	Inserts, updates, and deletes use the delete tombstone log table to determine if a row was deleted.
 
-```
-<copy>sh ./add_SchemaTrandata_Target.sh Welcome1 17001</copy>
-```
+    •	LOB column conflicts can be detected.
 
-**Note: You can also check that SCHEMATRANDATA has been added from the Administration
-Service -> Configuration page as well. Simply log in to the TCGGATE alias**
+    •	Oracle Database automatically configures supplemental logging on required columns.
 
-11. Then, under “Trandata”, make sure that the magnifying glass and radio button for
-“Schema” is selected. Enter “oggoow191.soe” into the search box and then select the magnifying glass to the right of the search box to perform the search.
 
-    ![](./images/b5.png " ")
+This step runs the ADD_AUTO_CDR procedure in the DBMS_GOLDENGATE_ADM package in the database.
 
+- In the terminal window change directory to Lab6 and Review script **setup_autocdr.sh**.
 
-## **STEP 2:** Add Extract and Distribution Path on oggoow191
+                [oracle@OGG181DB183 bin]$ cd ~/OGG181_WHKSHP/Lab6
+                [oracle@OGG181DB183 Lab6]$ cat setup_autocdr.sh 
 
-You will use the following two scripts to configure these processes
+This script performs the following:
 
--	add_extract_Target.sh
--	Add_DistroPath.sh
+    1.	Logs into the database.
 
-1. From the Terminal Window in the VNC Console, navigate to the Lab6 directory under
-~/Desktop/Scripts/HOL/Lab6.
-```
-<copy>cd ~/Desktop/Scripts/HOL/Lab6</copy>
-```
-2. Create GoldenGate Extract
+    2.	Changes session to a container.
 
-```
-<copy>sh ./add_extract_Target.sh Welcome1 17001 EXTSOE1</copy>
-```
-3. After the script has completed, you can go to the Administration Server and see that the extract is there on the Overview page. Remember to use the short URL to access the Administration Server.
+    3.	Executes the ADD_AUTO_CDR procedure in the DBMS_GOLDENGATE_ADM package.  This sets up the timestamp conflict detection and resolution.  You have to do this for any table you want to enable for CDR.  That’s why it’s best to have this scripted for multiple tables.
 
-```
-<copy>https://localhost/Atlanta/adminsrvr</copy>
-```
+- Run the script setup_autocdr.sh.
 
-  ![](./images/b6.png " ")
+                [oracle@OGG181DB183 Lab6]$ ./setup_autocdr.sh 
 
-4. Now you will create the Distribution Path that will be used to ship trail files from the Deployment to the Deployment. In order to do this, you will need to run the add_DistroPath.sh script.
+                Setup AutoCDR tables in database
 
-At your terminal session:
-```
-<copy>sh ./add_DistroPath.sh Welcome1 17002 SOE12SOE zz 16003 za</copy>
-```
-5. After running the add_DistroPath.sh script, you will see the path created in the Distribution Service. Using the short URL approach, you can quickly see the Distribution Path. Using your browser navigate to the Distribution Server and review the Distribution Path.
 
-6.  At the URL
-```
-<copy>https://localhost/Atlanta/distsrvr</copy>
-```
-  ![](./images/b7.png " ")
 
+                SQL*Plus: Release 18.0.0.0.0 - Production on Thu Feb 7 22:44:15 2019
+                Version 18.3.0.0.0
 
-## **STEP 3:**  Create the Replicat on oggoow191  Target
+                Copyright (c) 1982, 2018, Oracle.  All rights reserved.
 
 
-To begin this Task, follow the below steps:
+                Connected to:
+                Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production
+                Version 18.3.0.0.0
+
+                SQL> 
+                Session altered.
+
+                SQL> 
+                PL/SQL procedure successfully completed.
+                .
+                .
+                .
+                SQL> 
+                PL/SQL procedure successfully completed.
+
+                SQL> Disconnected from Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production
+                Version 18.3.0.0.0
+
+                Done setting up AutoCDR
 
-1. From the Terminal window in the VNC Console, navigate to the Lab8 directory under
-~/Desktop/Scripts/HOL.
 
-2. From your terminal session
-```
-<copy>cd ~/Desktop/Scripts/HOL/Lab8</copy>
-```
-•	create_credential_GGAlias_Source.sh
-•	add_CheckpointTable_Atlanta.sh
-•	add_Replicat_Atlanta.sh
+                [oracle@OGG181DB183 Lab6]$ 
 
-```
-<copy>sh ./create_credential_GGAlias_Source.sh  Welcome1 16001 ggate@oggoow19 ggate</copy>
-```
+### **STEP 4**: Start Replication
 
-3. Upon a successful run, you can check the Administration Services for the Atlanta deployment from within the browser and verify the account was created. Log in with User name oggadmin and password Welcome1 when prompted.
+- Run the start_replication.sh script to start the replication processes for the Atlanta capture and the SanFran delivery.
 
-4. From the URL
-https://localhost/Boston/adminsrvr
+                [oracle@OGG181DB183 Lab6]$ ./start_replication.sh Welcome1 16001 EXTSOE1 16002 SOE2SOE1 17001 IREP2
+                % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                                Dload  Upload   Total   Spent    Left  Speed
+                100   853  100   702  100   151   8865   1907 --:--:-- --:--:-- --:--:--  9000
+                {
+                .
+                .
+                .
+                        {
+                        "$schema": "ogg:message",
+                        "code": "OGG-15426",
+                        "issued": "2019-02-07T22:51:05Z",
+                        "severity": "INFO",
+                        "title": "EXTRACT EXTSOE1 started",
+                        "type": "http://docs.oracle.com/goldengate/c1810/gg-winux/GMESG/oggus.htm#OGG-15426"
+                        }
+                ]
+                }
+                [oracle@OGG181DB183 Lab6]$ 
 
-   ![](./images/b8.png " ")
+- Next, run the start_replication.sh script again to start the replication processes for the SanFran capture and the Atlanta delivery.  Use the CREATE SCN value from OGGOOW182 as the last value of the script (See example above).  This is for the startup of the Replicat on the Atlanta deployment.
 
-Back at your terminal session:
-```
-<copy>sh ./add_CheckpointTable_Atlanta.sh Welcome1 16001</copy>
-```
+                [oracle@OGG181DB183 Lab6]$ ./start_replication.sh Welcome1 17001 EXTSOE2 17002 SOE2SOE2 16001 IREP1
+                % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                                Dload  Upload   Total   Spent    Left  Speed
+                100   853  100   702  100   151   8354   1797 --:--:-- --:--:-- --:--:--  8357
+                {
+                .
+                .
+                .
+                        {
+                        "$schema": "ogg:message",
+                        "code": "OGG-15426",
+                        "issued": "2019-02-07T22:53:42Z",
+                        "severity": "INFO",
+                        "title": "EXTRACT EXTSOE2 started",
+                        "type": "http://docs.oracle.com/goldengate/c1810/gg-winux/GMESG/oggus.htm#OGG-15426"
+                        }
+                ]
+                }
+                [oracle@OGG181DB183 Lab6]$ 
 
-  ![](./images/b9.png " ")
+### **STEP 5**: Run transactions and check conflicts with Performance Metric Service
 
+In this step we’ll use a script to invoke Swingbench to apply data to both databases at the same time and then check them using the Performance Metric Service.
 
-5. With the target database User Alias and Checkpoint Table created, you can now create the Replicat. In order to create the Replicat, you will need to run the add_Replicat_Atlanta.sh script. Enter the following command to run the script:
+- In the terminal window review script start_swingbench.sh.
 
-```
-<copy>sh ./add_Replicat_Atlanta.sh Welcome1 16001 IREP1</copy>
-```
+                [oracle@OGG181DB183 Lab6]$ cat start_swingbench.sh 
+                #!/bin/bash
+                cd ~/OGG181_WHKSHP/Lab6/Build
+                ./start_swingbench_181.sh &
+                ./start_swingbench_182.sh &
+                [oracle@OGG181DB183 Lab6]$ 
 
-6. After the script is done running, you will see a running Replicat in the Administration Service for your deployment.
+This script runs the swingbench jobs you ran in the other labs, but this time it will run two jobs in the background and each job applies data to one or the other databases.
 
+- Run start_swingbench.sh.  It will take a few seconds to start up and run for 10 mins.
 
-   ![](./images/b10.png " ")
+                [oracle@OGG181DB183 Lab6]$ ./start_swingbench.sh 
+                [oracle@OGG181DB183 Lab6]$ Author  :	 Dominic Giles
+                Author  :	 Dominic Giles
+                Version :	 2.6.0.1046
 
+                Version :	 2.6.0.1046
+                Results will be written to results.xml.
 
-## **STEP 4:** Enable Auto CDR Collision Detect
+                Results will be written to results.xml.
+                Hit Return to Terminate Run...
+                Hit Return to Terminate Run...
 
-1. Run the below commands for both the pdb’s for specific tables to enable Auto Conflict detection and Resolution.
+                Time		Users
 
-```
-<copy>SQL> alter session set container = oggoow191;</copy>
-```
-```
-<copy>SQL> BEGIN
-  DBMS_GOLDENGATE_ADM.ADD_AUTO_CDR(
-    schema_name => 'soe',
-    table_name  => 'addresses');
-END;
-/</copy>
-```
-```
-<copy>SQL> alter session set container = oggoow19;</copy>
-```
-```
-<copy>SQL> BEGIN
-  DBMS_GOLDENGATE_ADM.ADD_AUTO_CDR(
-    schema_name => 'soe',
-    table_name  => 'addresses');
-END;
-/</copy>
-```
+                Time		Users
+                00:10:47	[0/2]
+                00:10:47	[0/2]
 
-  ![](./images/b11.png " ")
+- From the browser, log in to the Service Manager using the Administrator account **"oggadmin"** the password should be **"Welcome1"**.
+
+![](./images/600/Lab600_image110.PNG) 
+
+- Next click on the link to the Performance Metrics Server for Atlanta.
+
+![](./images/600/select
+
+- Click on the Replicat icon.
+
+![](./images/600/repl_atl.PNG) 
+
+- We’ll take a longer look at the Metric Service in another lab, so for now just click on the “Database Statistics” tab.
+
+![](./images/600/sel_db_stats_atl.PNG) 
+
+On this screen you’ll see the number of operations performed and their types and also the number of conflicts detected, and the number of conflicts resolved.  This is done automatically by the AutoCDR configuration.
+
+![](./images/600/disp_db_stats_atl.PNG) 
+
+If you want, you can check the Replicat of the other deployment and you’ll see a similar display.
 
 ## Summary
 
