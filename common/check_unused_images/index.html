@@ -7,10 +7,10 @@
  
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/tool_main1.js"></script>
+    <script src="./js/main.js"></script>
 
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/favicon.ico" />
 
     <title>Check Unused Images</title>
@@ -19,7 +19,7 @@
 <body>
     <!-- Top menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Check Unused Images <small>v0.2</small></a>
+        <a class="navbar-brand" href="#" onClick="window.location.reload();">Check Unused Images <small>v0.2</small></a>
         <ul class="navbar-nav mr-auto">
                 
         </ul>
@@ -35,7 +35,7 @@
                     </div>                                        
                     <div type="button" id="import_md" class="btn btn-primary" title="Click here to upload MD file">[Click here to upload your MD file]</div>
                     <input type="file" id="upload_md" accept=".md" hidden />
-                    <div class="card-body">
+                    <div class="card-body" style="display:none;">
                         <div id = "mdfile"></div>
                         <strong>Images referenced in your markdown but missing in your images folder</strong>
                         <div id = "missing">
@@ -51,7 +51,7 @@
                     </div>
                     <div type="button" id="btn_image_files" class="btn btn-primary" title="Click here to upload images">[Click here to upload all images in your images folder]</div>
                     <input type="file" id="image_files" name="image_files[]" class="btn-preview btn" accept="image/*" multiple hidden/>
-                    <div class="card-body">
+                    <div class="card-body" style="display:none;">
                         <div id = "images"></div>
                         <strong>Extra images in your images folder</strong>
                         <div id = "extra">None</div>                        
