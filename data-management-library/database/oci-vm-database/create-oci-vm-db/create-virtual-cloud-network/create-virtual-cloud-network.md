@@ -14,11 +14,11 @@ This lab walks you through the steps to create an instance of an Oracle Virtual 
 
   ![](images/virtual-cloud-networks.png " ")
 
-2. Select your compartment and click on **Networking Quickstart**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
+2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
 
   ![](images/networking-quickstart.png " ")
 
-3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start Workflow**.
+3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start VCN Wizard**.
 
   ![](images/start-workflow.png " ")
 
