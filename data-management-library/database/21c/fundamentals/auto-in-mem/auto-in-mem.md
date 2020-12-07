@@ -20,7 +20,7 @@ In this lab, you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 ## **STEP 1:** Set up the environment with In-Memory Column Store
