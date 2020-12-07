@@ -204,7 +204,7 @@ In this step, you will use Hue to access the cluster. In a non-HA cluster, Hue r
 ## Acknowledgements
 
 * **Author:**
-    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, December 2020

@@ -294,7 +294,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 ## Acknowledgements
 
 * **Author:**
-    * Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     * Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, December 2020

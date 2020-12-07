@@ -96,7 +96,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 ## Acknowledgements
 
 * **Authors:**
-    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, December 2020

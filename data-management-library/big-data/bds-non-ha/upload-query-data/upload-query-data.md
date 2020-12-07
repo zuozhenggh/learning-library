@@ -377,7 +377,7 @@ In this step, you will download two scripts that will set up your Object Storage
 ## Acknowledgements
 
 * **Author:**
-    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Reviewer:**  

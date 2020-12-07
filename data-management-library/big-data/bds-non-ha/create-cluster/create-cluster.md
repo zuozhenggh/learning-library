@@ -243,7 +243,7 @@ If you are using a Free Trial account to run this workshop, Oracle recommends th
 ## Acknowledgements
 
 * **Author:**  
-    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
