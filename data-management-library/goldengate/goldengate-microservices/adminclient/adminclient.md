@@ -2,9 +2,16 @@
 
 ## Introduction
 
-This hands-on lab is designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+Since we’ve already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
 
-The labs will walk the end-user through how to add all components of Oracle GoldenGate replication.  To do the instantiation of the target database, the end-user will be performing a data pump export and import.  All replication process will be started as they are built.
+## Bi-Directional Replication, AutoCDR, Rapid Deployment and Intro to the Admin Client
+
+## Objectives
+
+- Rapid Deployment using:
+  - OGGCA silent deployment scripts (remove and recreate deployments).
+  - REST API to setup bi-directional GoldenGate replication between two databases.
+  - SQL Scripts to setup up auto conflict detection and resolution in the database.
 
 ## About Oracle GoldentGate Microservices
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
@@ -14,10 +21,6 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 ![](./images/ggmicroservicesarchitecture.png " ")
 
 *Estimated Lab Time*: - 60 mins
-
-### Objectives
-
-The objectives of the lab is to familiarize you with the process to manage data repication objects using Adminclient which will allow you to replicate data realtime using GoldenGate Microservices while levergaring RestfulAPIs from Windows or Linux.
 
 ### Prerequisites
 This lab assumes you have:
@@ -43,18 +46,6 @@ In this lab we will setup GoldenGate Microservices
     ````
 
 
-## Bi-Directional Replication, AutoCDR, Rapid Deployment and Intro to the Admin Client
-
-## Introduction
-
-Since we’ve already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
-
-## Objectives
-
-- Rapid Deployment using:
-  - OGGCA silent deployment scripts (remove and recreate deployments).
-  - REST API to setup bi-directional GoldenGate replication between two databases.
-  - SQL Scripts to setup up auto conflict detection and resolution in the database.
 
 ## Required Artifacts
 

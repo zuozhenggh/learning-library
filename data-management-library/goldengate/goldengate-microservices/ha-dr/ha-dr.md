@@ -25,7 +25,7 @@ Since we’ve already done multiple labs, this one will take what we used so far
 - Browser to check the deployment.
 - Swingbench to apply transactions.
 
-### **STEP 1**: Run a script to perform a rapid deployment.
+## **STEP 1**: Run a script to perform a rapid deployment.
 
 1. Open up a terminal window and change directory to Lab6 and Review script build_all_bi_di.sh.
 
@@ -60,7 +60,7 @@ While it's running note the messages displayed that informs what has been added 
 ![](./images/600/Lab600_image6001.PNG) 
 
 
-### **STEP 3**: Add AutoCDR to tables in the database.
+## **STEP 2**: Add AutoCDR to tables in the database.
 
 When more than one replica of a table allows changes to the table, a conflict can occur when a change is made to the same row in two different databases at nearly the same time. Oracle GoldenGate replicates changes using the row LCRs. 
 It detects a conflict by comparing the old values in the row LCR for the initial change from the origin database with the current values of the corresponding table row at the destination database identified by the key columns. 
@@ -80,7 +80,7 @@ Automatic conflict detection and resolution does not require application changes
 
 This step runs the ADD_AUTO_CDR procedure in the DBMS_GOLDENGATE_ADM package in the database.
 
-- In the terminal window change directory to Lab6 and Review script **setup_autocdr.sh**.
+1. In the terminal window change directory to Lab6 and Review script **setup_autocdr.sh**.
 
                 [oracle@OGG181DB183 bin]$ cd ~/OGG181_WHKSHP/Lab6
                 [oracle@OGG181DB183 Lab6]$ cat setup_autocdr.sh 
@@ -93,7 +93,7 @@ This script performs the following:
 
     3.	Executes the ADD_AUTO_CDR procedure in the DBMS_GOLDENGATE_ADM package.  This sets up the timestamp conflict detection and resolution.  You have to do this for any table you want to enable for CDR.  That’s why it’s best to have this scripted for multiple tables.
 
-- Run the script setup_autocdr.sh.
+2. Run the script setup_autocdr.sh.
 
                 [oracle@OGG181DB183 Lab6]$ ./setup_autocdr.sh 
 
@@ -130,9 +130,9 @@ This script performs the following:
 
                 [oracle@OGG181DB183 Lab6]$ 
 
-### **STEP 4**: Start Replication
+## **STEP 3**: Start Replication
 
-- Run the start_replication.sh script to start the replication processes for the Atlanta capture and the SanFran delivery.
+1. Run the start_replication.sh script to start the replication processes for the Atlanta capture and the SanFran delivery.
 
                 [oracle@OGG181DB183 Lab6]$ ./start_replication.sh Welcome1 16001 EXTSOE1 16002 SOE2SOE1 17001 IREP2
                 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -154,7 +154,7 @@ This script performs the following:
                 }
                 [oracle@OGG181DB183 Lab6]$ 
 
-- Next, run the start_replication.sh script again to start the replication processes for the SanFran capture and the Atlanta delivery.  Use the CREATE SCN value from OGGOOW182 as the last value of the script (See example above).  This is for the startup of the Replicat on the Atlanta deployment.
+2. Next, run the start_replication.sh script again to start the replication processes for the SanFran capture and the Atlanta delivery.  Use the CREATE SCN value from OGGOOW182 as the last value of the script (See example above).  This is for the startup of the Replicat on the Atlanta deployment.
 
                 [oracle@OGG181DB183 Lab6]$ ./start_replication.sh Welcome1 17001 EXTSOE2 17002 SOE2SOE2 16001 IREP1
                 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -176,11 +176,11 @@ This script performs the following:
                 }
                 [oracle@OGG181DB183 Lab6]$ 
 
-### **STEP 5**: Run transactions and check conflicts with Performance Metric Service
+## **STEP 4**: Run transactions and check conflicts with Performance Metric Service
 
 In this step we’ll use a script to invoke Swingbench to apply data to both databases at the same time and then check them using the Performance Metric Service.
 
-- In the terminal window review script start_swingbench.sh.
+1. In the terminal window review script start_swingbench.sh.
 
                 [oracle@OGG181DB183 Lab6]$ cat start_swingbench.sh 
                 #!/bin/bash
@@ -191,7 +191,7 @@ In this step we’ll use a script to invoke Swingbench to apply data to both dat
 
 This script runs the swingbench jobs you ran in the other labs, but this time it will run two jobs in the background and each job applies data to one or the other databases.
 
-- Run start_swingbench.sh.  It will take a few seconds to start up and run for 10 mins.
+2. Run start_swingbench.sh.  It will take a few seconds to start up and run for 10 mins.
 
                 [oracle@OGG181DB183 Lab6]$ ./start_swingbench.sh 
                 [oracle@OGG181DB183 Lab6]$ Author  :	 Dominic Giles
@@ -211,19 +211,19 @@ This script runs the swingbench jobs you ran in the other labs, but this time it
                 00:10:47	[0/2]
                 00:10:47	[0/2]
 
-- From the browser, log in to the Service Manager using the Administrator account **"oggadmin"** the password should be **"Welcome1"**.
+3. From the browser, log in to the Service Manager using the Administrator account **"oggadmin"** the password should be **"Welcome1"**.
 
 ![](./images/600/Lab600_image110.PNG) 
 
-- Next click on the link to the Performance Metrics Server for Atlanta.
+4. Next click on the link to the Performance Metrics Server for Atlanta.
 
 ![](./images/600/select
 
-- Click on the Replicat icon.
+    Click on the Replicat icon.
 
 ![](./images/600/repl_atl.PNG) 
 
-- We’ll take a longer look at the Metric Service in another lab, so for now just click on the “Database Statistics” tab.
+6. We’ll take a longer look at the Metric Service in another lab, so for now just click on the “Database Statistics” tab.
 
 ![](./images/600/sel_db_stats_atl.PNG) 
 
