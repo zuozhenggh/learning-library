@@ -3,7 +3,7 @@
 ## Introduction
 This lab shows how to enable automatic zone maps and how automatic zone maps are created and maintained for any user table without your intervention.
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 25 minutes
 
 ### Objectives
 In this lab, you will:
@@ -150,14 +150,14 @@ In this lab, you will:
     
     ```
 
-2. Log in `PDB21` as `SALES`, set your session in statistic trace, and query the `SALES_ZM` table a few times to see the “consistent gets” value.
+2. Log in `PDB21` as `SALES`, set your session in statistic trace, and query the `SALES_ZM` table a few times to see the “consistent gets” value. Enter the password you used to create your DB System, `WElcome123##`.
 
   
     ```
     
     $ <copy>sqlplus sales@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     SQL> <copy>SET AUTOTRACE ON STATISTIC</copy>
     
@@ -572,7 +572,7 @@ In this lab, you will:
     
             7         30
     
-    BS:succesfully created zonemap: ZN:ZMAP$_SALES_ZM BT:SALES_ZM SN:SALES CL:SALE_I
+    BS:successfully created zonemap: ZN:ZMAP$_SALES_ZM BT:SALES_ZM SN:SALES CL:SALE_I
     
     D CT:+00 00:00:02.830222 TS:2020-11-12/16:37:54 DP:8
     
@@ -690,7 +690,7 @@ In this lab, you will:
     
     SYS_ZMAP_2020-11-12/16:37:49
     
-    BS:succesfully created zonemap: ZN:ZMAP$_SALES_ZM BT:SALES_ZM SN:SALES CL:SALE_I
+    BS:successfully created zonemap: ZN:ZMAP$_SALES_ZM BT:SALES_ZM SN:SALES CL:SALE_I
     
     D CT:+00 00:00:02.830222 TS:2020-11-12/16:37:54 DP:8
     
@@ -934,15 +934,11 @@ In this lab, you will:
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
 * **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -3,7 +3,7 @@
 ## Introduction
 This lab shows how to optimize the values set in initialization parameters when they depend on environmental characteristics, such as system configurations, run-time decisions, or the values of other parameters by using expressions.
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 10 minutes
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ Estimated Lab Time: XX minutes
     
     $ <copy>sqlplus system</copy>    
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-    Enter password: <b><i>password</i></b> 
+    Enter password: <b><i>WElcome123##</i></b> 
     Last Successful login time: Mon Mar 16 2020 08:49:41 +00:00    
     Connected to:
     
@@ -159,7 +159,7 @@ Estimated Lab Time: XX minutes
 
 ## **STEP 2:** Restart the CDB
 
-7. Restart the CDB instance.
+1. Restart the CDB instance.
 
       ```
       
@@ -187,7 +187,7 @@ Estimated Lab Time: XX minutes
       
       ```
 
-8.  Display the values for `processes` and `aq_tm_processes`.
+2.  Display the values for `processes` and `aq_tm_processes`.
 
       ```
       
@@ -210,7 +210,7 @@ Estimated Lab Time: XX minutes
   
   
 
-9. Set the `db_recovery_file_dest` to the same value as `$HOME`, in `CDB21`.
+3. Set the `db_recovery_file_dest` to the same value as `$HOME`, in `CDB21`.
 
   
     ```
@@ -311,17 +311,11 @@ Estimated Lab Time: XX minutes
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
 * **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

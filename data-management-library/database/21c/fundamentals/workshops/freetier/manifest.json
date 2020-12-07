@@ -17,28 +17,12 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 2: Create a Virtual Cloud Network",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-virtual-cloud-network/create-virtual-cloud-network.md"
+            "title": "Lab 2: Create an OCI VM Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-oci-vm-db/create-oci-vm-db-vcn.md"
         },
         {
-            "title": "Lab 3: Create an OCI VM Database",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-oci-vm-db/create-oci-vm-db.md"
-        },
-        {
-            "title": "Lab 4: 21C Setup",
+            "title": "Lab 3: 21C Setup",
             "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Upgrades and Migration",
-            "filename": "../../introduction/intro-upgrades.md"
-        }, 
-        {
-            "title": "Lab: AutoUpgrade",
-            "filename": "../../autoupgrade/autoupgrade.md"
-        },
-        {
-            "title": "Lab: Autoupgrade - Non-CDB to PDB",
-            "filename": "../../autoupgrade-non-cdb/autoupgrade-non-cdb.md"
         },
         {
             "title": "Application Development",
