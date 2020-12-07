@@ -56,7 +56,7 @@ This lab assumes you have:
     - **Instance OCPUS:** Accept the default shown. e.g. (**4**) will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count by selecting from the dropdown. e.g. `[2-24]`. Please ensure you have the capacity available before increasing.
 9. If don't have quota for Flex Shapes or you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Accept the default shown. e.g. Select VM.Standard.E2.4
+    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard.E2.4
 
   ![](./images/standardshape.png " ")
 
@@ -128,7 +128,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
 6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Accept the default shown. e.g. Select VM.Standard.E2.4
+    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard.E2.4
 
   ![](./images/standardshape-2.png " ")
 
