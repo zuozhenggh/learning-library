@@ -1,0 +1,5 @@
+
+
+	You can now configure Oracle Machine Language in an existing database using DBCA. However, this is not possible during a database creation. This feature is available both in silent mode and UI mode of database configuration.
+
+The UI will have a new screen 'Oracle R and OML4PY' screen when configuring a database.

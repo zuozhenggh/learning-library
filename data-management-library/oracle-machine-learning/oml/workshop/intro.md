@@ -1,10 +1,10 @@
 # Workshop Introduction and Overview
 
-The labs in this workshop walk you through all the steps to get started using Oracle Machine Learning Notebook.
+The labs in this workshop walk you through all the steps to get started using Oracle Machine Learning Notebooks.
 
-## What is Oracle Machine Learning Notebook?
+## What is Oracle Machine Learning Notebooks?
 
-Oracle Machine Learning Notebook is an Apache Zeppelin-based collaborative web-based interface that provides a development environment to create machine learning notebooks where you can perform data exploration and visualizations, data preparation and machine learning.
+Oracle Machine Learning Notebooks is an Apache Zeppelin-based collaborative web-based interface that provides a development environment to create machine learning notebooks where you can perform data exploration and visualizations, data preparation and machine learning.
 Key features of Oracle Machine Learning Notebook:
 
 * Allows collaboration among data scientists, business and data analysts, application and dashboard developers, Database Administrators, and IT professionals.
@@ -15,7 +15,7 @@ Key features of Oracle Machine Learning Notebook:
 
 * Create Projects and Workspaces in Oracle Machine Learning
 * Create and Run Notebooks in Oracle Machine Learning
-* Collaborate and share SQL notebooks with other Oracle Machine Learning Notebook users
+* Collaborate and share SQL notebooks with other Oracle Machine Learning Notebooks users
 * Use the Scratchpad in Oracle Machine Learning to run Python, SQL, and PL/SQL scripts
 
 ## Lab Breakdown
@@ -44,8 +44,6 @@ Use these links to get more information about OML and OCI:
 
 
 ## Acknowledgements
-
-* **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
 * **Last Updated By/Date**: Dimpi Sarmah, September 2020
 

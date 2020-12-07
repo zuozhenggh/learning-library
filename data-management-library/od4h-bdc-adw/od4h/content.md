@@ -82,8 +82,8 @@ To download client credentials, do the following from Oracle Cloud Infrastructur
 
     * `ojdbc.properties`: Contains the wallet related connection property required for JDBC connection. This should be in the same path as `tnsnames.ora`.
 
-9. Edit sqlnet.ora and make sure the WALLET_LOCATION parameter points to a valid directory where the wallet is located (WALLET_LOCATION directory). An absolute path is needed.
-   Example of sqlnet.ora: Assumeming SSL Wallet zip was unzipped under /home/oracle/wallet.
+9. Edit sqlnet.ora and make sure the **WALLET_LOCATION** parameter points to a valid directory where the wallet is located. An absolute path is needed.
+   Example of sqlnet.ora: Assumeming SSL Wallet zip was unzipped under `/home/oracle/wallet`.
 
      ```
      WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/oracle/wallet")))
@@ -147,7 +147,7 @@ Navigate to the Autonomous Data Warehouse details page.
 
     ![createuser.png](images/createuser.png "createuser.png")
 
-7. As a OD4H user, create a table named **EMPLOYEEDATA** and insert some values. Copy and paste the code snippet below to your SQL Developer Web worksheet.
+7. As a `OD4H` user, create a table named `EMPLOYEEDATA` and insert some values. Copy and paste the code snippet below to your SQL Developer Web worksheet.
 
       ```
         CREATE TABLE EmployeeData ( Emp_ID NUMBER,
@@ -179,7 +179,7 @@ Navigate to the Autonomous Data Warehouse details page.
 
 ## Create and Query a Hive External Table Using the ADW Table
 
-The following section contains Hive commands to build an external Hive table that refers to EMPLOYEEDATA table.
+The following section contains Hive commands to build an external Hive table that refers to `EMPLOYEEDATA` table.
 
 1.  Connect to the BDS cluster via bastion host as `opc` user. See Connect to a Cluster Node Through Secure Shell (SSH) in Using Oracle Big Data Cloud.
 
@@ -190,7 +190,7 @@ The following section contains Hive commands to build an external Hive table tha
 
       ```
 
-2.  Create an external Hive table referring to an ADW table.
+2.  Create an external Hive table named `emp_hive` referring to an ADW table.
 
       ```
            <copy>

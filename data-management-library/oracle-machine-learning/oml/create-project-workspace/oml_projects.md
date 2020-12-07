@@ -128,7 +128,6 @@ To create a workspace:
 * [Using Oracle Machine Learning](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/omlug/index.html)
 
 ## Acknowledgements
-* **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
 * **Last Updated By/Date**: Dimpi Sarmah, September 2020
 
