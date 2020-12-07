@@ -13,7 +13,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
