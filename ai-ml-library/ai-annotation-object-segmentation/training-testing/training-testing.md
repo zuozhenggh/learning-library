@@ -19,13 +19,13 @@ This lab assumes you have:
 
 ## **STEP 1**: Download the Scripts
 
-[The training and testing scripts can be downloaded here.](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Me4VsLIUHWzJ-GJ1C5_1dTuMwzDNWQbubhP0lJwqxdsOWpwiBoAUe0HFxHzx_w_Y/n/c4u03/b/ai-ml-library/o/jblau-ai-object-detection.zip) 
+1. [The training and testing scripts can be downloaded here.](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Me4VsLIUHWzJ-GJ1C5_1dTuMwzDNWQbubhP0lJwqxdsOWpwiBoAUe0HFxHzx_w_Y/n/c4u03/b/ai-ml-library/o/jblau-ai-object-detection.zip) 
 
-Download the zip file and put it in the `coco-annotation` directory on the instance and extract the contents. This should be the same directory where the `datasets` directory is located. The scripts are configured to look for the `datasets` directory in the location where they reside.
+2. Download the zip file and put it in the `coco-annotation` directory on the instance and extract the contents. This should be the same directory where the `datasets` directory is located. The scripts are configured to look for the `datasets` directory in the location where they reside.
 
 ## **STEP 2**: Review the Training Script and Run
 
-Open the script to get an understanding for the different parameters that can be changed for the training.
+1. Open the script to get an understanding for the different parameters that can be changed for the training.
 
 ### Parameters for locating traing and testing dataset
 `DATASET_NAME_TRAINING`: The string used to access the dataset after it is loaded into memory by the detectron2 framework
@@ -77,7 +77,7 @@ After `MAX_ITERATIONS` is hit, a model will be saved to `OUTPUT_DIR` with the na
 
 ## **STEP 3**: Review the Validation Script and Run
 
-Open the prediction script to review the parameters
+1. Open the prediction script to review the parameters
 
 ### Dataset parameters
 `USE_COCO_DEMO`: This will pull a pre-trained model from detectron2's library for demonstration. Change value to *False* to use a model from the training script output. Note that you will need to add more data to the training dataset to arrive at a model that can be generalized to new data.
@@ -109,8 +109,17 @@ Open the prediction script to review the parameters
 `RESULTS_DIR`: Where the results of the test should be saved
 
 
-Run the following command to start the prediction.
+2. Run the following command to start the prediction.
 
     python prediction.py
 
 Once complete, check the results to see if the model was able to correctly identify and outline `apples` and `oranges`. By default the script will use a pre-trained model pulled from detectron2's library. The next step is to return to the start and add more images and train a model with higher values for `MAX_ITERATIONS` to build a more robust model. To test a custom model change `USE_COCO_DEMO` to *False*, which will use the model from the output of the training.
+
+## Acknowledgements
+* **Author** - Justin Blau, Senior Solutions Architect, Big Compute
+* **Last Updated By/Date** - Justin Blau, Big Compute, October 2020
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/artificialintelligence). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
