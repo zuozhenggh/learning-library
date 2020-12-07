@@ -143,3 +143,16 @@ These Ingress Rules will be sufficient to allow the network traffic required for
 ## **Summary**
 
 In this lab, OCI has been set up for the networking required to be able to access the Siebel environment that will be created in the next lab
+
+## Acknowledgements
+* **Authors**
+  - JB Anderson, Cloud Engineering
+  - Chris Wegenek, Cloud Engineering
+  - Naresh Sanodariya, Cloud Engineering
+* **Contributors** -  Arunkumar Ravichandran, Cloud Engineering
+* **Last Updated By/Date** - JB Anderson, Cloud Engineering, Dec 2020
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

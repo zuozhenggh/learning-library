@@ -173,10 +173,12 @@ In this lab you launched an instance of Siebel from the OCI marketplace, deploye
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Authors**
+  - JB Anderson, Cloud Engineering
+  - Chris Wegenek, Cloud Engineering
+  - Naresh Sanodariya, Cloud Engineering
+* **Contributors** -  Arunkumar Ravichandran, Cloud Engineering
+* **Last Updated By/Date** - JB Anderson, Cloud Engineering, Dec 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
