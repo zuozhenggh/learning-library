@@ -39,12 +39,13 @@ let enterMdData = evt => {
     let files = evt.target.files;
     let file = files[0];
     let reader = new FileReader();
-    let md;
+    let md, filename;
 
     images_md = [];
     reader.onload = (function (theFile) {
         return function (e) {
             md = e.target.result;
+            filename = theFile.name;
         };
     })(file);
     reader.onloadend = function () {
@@ -59,7 +60,8 @@ let enterMdData = evt => {
         } while(matches);
 
         images_md = sort_unique(images_md);
-        $('#import_md').text('[1 MD file with ' + images_md.length + ' image references uploaded for check]');
+        $('#import_md').text('[1 MD file containing ' + images_md.length + ' image references uploaded successfully]');
+        $('#mdfile').html('<strong>MD file you uploaded</strong><div>' +  filename + '</div><br/>');
         $('#import_md').attr('title', "Click here to upload another MD file"); 
     
         checkDiff();
@@ -87,8 +89,9 @@ let readImageContent = (evt) => {
             reader.onloadend = function () {
                 check++;                
                 if (check == total) {                      
-                    $('#btn_image_files').text('[' + uploaded_images.length + ' image(s) uploaded for check]');
-                    $('#btn_image_files').attr('title', uploaded_images.join('\n') + "\n\nClick here to upload another image(s)"); 
+                    $('#btn_image_files').text('[' + uploaded_images.length + ' image(s) uploaded successfully]');
+                    $('#images').html('<strong>Images you uploaded</strong><div>' +  uploaded_images.join(', ') + '</div><br/>');
+                    $('#btn_image_files').attr('title', "Click here to upload another image(s)"); 
                     images_dir = uploaded_images;       
                     checkDiff();                
                 }
