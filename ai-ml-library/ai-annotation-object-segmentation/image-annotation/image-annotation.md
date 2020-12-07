@@ -11,6 +11,11 @@ In this lab, you will learn about:
 * Transferring data
 * Detectron2
 
+### Prerequisites
+
+This lab assumes you have:
+- Completed the previous lab, Setting Up the Environment
+
 ## **STEP 1**: Downloading Sample COCO Data
 
 For this example, we will build a simple dataset of apples and oranges. Go to the [COCO dataset explorer](https://cocodataset.org/#explore) and select the filters for `apple` and `orange` and then click `search`. This will return a list of images that fit those categories. The results are not exclusive, so there will be other objects in the images as well. 

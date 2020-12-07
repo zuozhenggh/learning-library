@@ -12,9 +12,16 @@ In this lab, you will learn about:
 * Training a model
 * Testing the model
 
+### Prerequisites
+
+This lab assumes you have:
+- Completed the previous lab, Annotating images with COCO Annotator
+
 ## **STEP 1**: Download the Scripts
 
-[The training and testing scripts can be downloaded here](LINK TBD). Download the zip file and put it in the `coco-annotation` directory on the instance and extract the contents. This should be the same directory where the `datasets` directory is located. The scripts are configured to look for the `datasets` directory in the location where they reside.
+[The training and testing scripts can be downloaded here.](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Me4VsLIUHWzJ-GJ1C5_1dTuMwzDNWQbubhP0lJwqxdsOWpwiBoAUe0HFxHzx_w_Y/n/c4u03/b/ai-ml-library/o/jblau-ai-object-detection.zip) 
+
+Download the zip file and put it in the `coco-annotation` directory on the instance and extract the contents. This should be the same directory where the `datasets` directory is located. The scripts are configured to look for the `datasets` directory in the location where they reside.
 
 ## **STEP 2**: Review the Training Script and Run
 
