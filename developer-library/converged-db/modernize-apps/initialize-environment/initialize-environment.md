@@ -46,7 +46,9 @@ For ease of execution of this workshop, your instance has been pre-configured fo
     ![](./images/guacamole-landing.png " ")
 
 ### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
+
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*oracle*”.
