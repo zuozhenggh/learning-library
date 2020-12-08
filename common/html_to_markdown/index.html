@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="./js/turndown.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+
+    <title>HTML to Markdown</title>
+</head>
+
+<body>
+    <!-- Top menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">HTML to Markdown <small>v0.1 (work in progress)</small></a>
+        <ul class="navbar-nav mr-auto">       
+        </ul>
+        <p>Last updated: <strong><span id="lastmodified"></span></strong> | <strong>Created by:</strong> Ashwin Agarwal | Works best on Google Chrome!</p>
+    </nav>
+    <!-- Main content appears in this div -->
+    <div id="main">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="card">
+                    <div class="card-header">HTML
+                        <input type="file" id="upload_html" accept=".html" hidden />
+                        <button type="button" id="import_html" class="btn btn-primary float-right">Import HTML</button>
+                    </div>
+                    <div class="card-body">
+                        <textarea id="htmlBox" class="form-control" style="height:1000px;"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div id="rightBox" class="card">
+                    <div class="card-header">Markdown</div>
+                    <div class="card-body">
+                        <textarea id="mdBox" class="form-control" style="height:1000px;" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
