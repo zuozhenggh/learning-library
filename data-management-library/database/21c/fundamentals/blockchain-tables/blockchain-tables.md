@@ -22,8 +22,6 @@ In this lab, you will:
 * Lab: SSH Keys
 * Lab: Create a VCN
 * Lab: Create an OCI VM Database
-* Lab: 21c Setup
-
 
 ## **STEP 1:** Create Database User
 
