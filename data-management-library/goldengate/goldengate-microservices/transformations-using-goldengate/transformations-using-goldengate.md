@@ -70,6 +70,11 @@ Open a terminal session
 ```
 ![](./images/c4.png " ")
 
+```
+<copy>@insert_customer.sql</copy>
+```
+
+
  **1 row copied**
 
 4. Query inside the script for insert
@@ -101,7 +106,7 @@ Commit;</copy>
 
 ![](./images/c6.png " ")
 
-1. Go to Admin Server console for deployment Baston `http://localhost:17001` and edit the parameter of the REPLICAT IREP with the attributes to pass customer email to SQLEXEC() for execution of stored procedure and mapping it back to the target table.Add the following, after commenting the already existing map statement for CUSTOMERS table with ”–“.
+1. Go to Admin Server console for deployment Baston `http://<your ip address>:17001` and edit the parameter of the REPLICAT IREP with the attributes to pass customer email to SQLEXEC() for execution of stored procedure and mapping it back to the target table.Add the following, after commenting the already existing map statement for CUSTOMERS table with ”–“.
 
 **Replicat Definition**
 
@@ -219,7 +224,7 @@ Relicat Settings
 
  ![](./images/c15.png " ")
 
-3. Open the Administration Server of the Target deployment i.e. Baston at http://localhost:17001. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process
+3. Open the Administration Server of the Target deployment i.e. Baston at http://<your ip address>:17001. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process
 
  ![](./images/c16.png " ")
 

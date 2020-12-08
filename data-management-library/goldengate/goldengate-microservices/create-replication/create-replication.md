@@ -72,7 +72,7 @@ Password: Welcome1
     ![](./images/a2.png " ")
 
 
-5.	Now switch back to the Remote Desktop Viewer and from the Terminal window, navigate to the Lab3 directory under ~/Desktop/Scripts/HOL.
+5.	Now switch back to the Remote Desktop Viewer and from the Terminal window, navigate to the Lab2 directory under ~/Desktop/Scripts/HOL.
 
     ![](./images/a3.png " ")
 
@@ -163,11 +163,11 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 *Note*: The configureNginx.sh script is making a call to the ReverseProxySettings utility that can be found under $OGG_HOME/lib/util/reverseproxy.  We provide this script to make it easier for you to configure the Nginx Reverse Proxy in your environment.
 
 ```
-<copy>sh ./configureNginx.sh oggadmin Welcome111! 16000</copy>
+<copy>sh ./configureNginx.sh oggadmin Madhu_123#  16000</copy>
 ```
    ![](./images/a8.png " ")
 
-**During the script run, it will ask you the password for user oracle so it can run sudo, the password is Welcome111!.**
+**During the script run, it will ask you the password for user oracle so it can run sudo, the password is Madhu_123#**
 
 3.	Upon completion, return to your web browser. You should be able to access the ServiceManager page by only using the URL without a port number.
 
@@ -202,7 +202,7 @@ In the example, if using the Atlanta deployment, the URL would look like this:
 
 ## **STEP 3:** Create Credentials
 
-In this Task, you will configure the database user credentials and tnsnames entries needed for replication.  This requires running the following scripts:
+1. In this Task, you will configure the database user credentials and tnsnames entries needed for replication.  This requires running the following scripts:
 
 Edit_tnsnames.sh
 Create_credential_GGAlias.sh
@@ -219,15 +219,11 @@ For web page access, access the Administration Service (adminsrvr) using the sim
 
 ![](./images/a11.png " ")
 
-1. To access the AdminClient, open a Terminal Window and execute:
-```
-<copy> $OGG_HOME/bin/adminclient</copy>
-```
 ## **STEP 4:** Create Oracle Objects
 
-To begin this Task 5, follow the below steps:
+To begin this step, follow the below steps:
 
-1.	From the Terminal window in the Remote Desktop Viewer, navigate to the Lab5 directory under ~/Desktop/Scripts/HOL.
+1.	From the Terminal window in the Remote Desktop Viewer, navigate to the Lab4 directory under ~/Desktop/Scripts/HOL.
 ```
 <copy>cd ~/Desktop/Scripts/HOL/Lab4</copy>
 ```

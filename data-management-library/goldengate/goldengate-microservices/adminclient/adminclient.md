@@ -1,20 +1,19 @@
-# Setup of GoldenGate Microservices - Adminclient
+# LAST LAB: Setup of GoldenGate Microservices - Adminclient
 
 ## Introduction
 
 Since we’ve already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
 
-## Bi-Directional Replication, AutoCDR, Rapid Deployment and Intro to the Admin Client
+**Bi-Directional Replication, AutoCDR, Rapid Deployment and Intro to the Admin Client**
 
 ## Objectives
+
+Using the GoldenGate Microservices Adminclient, you can perform tasks to manage different deployments using RestfulAPIs from a Windows or Linux environment.
 
 - Rapid Deployment using:
   - OGGCA silent deployment scripts (remove and recreate deployments).
   - REST API to setup bi-directional GoldenGate replication between two databases.
   - SQL Scripts to setup up auto conflict detection and resolution in the database.
-
-## About Oracle GoldentGate Microservices
-Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
 ### Lab Architecture
 
@@ -49,41 +48,52 @@ In this lab we will setup GoldenGate Microservices
 
 ## Required Artifacts
 
-- VNC Client for the deployment.
-- Browser to check the deployment.
-- Swingbench to apply transactions.
+VNC Client for the deployment
+
+Browser to check the deployment
+
+Swingbench to apply transactions
 
 ### **STEP 1**: Run a script to perform a rapid deployment.
 
 1. Open up a terminal window and change directory to Lab6 and Review script build_all_bi_di.sh.
 
                 [oracle@OGG181DB183 ~]$ cd ~/OGG181_WHKSHP/Lab6
+```
+<copy>cd ~/OGG181_WHKSHP/Lab6</copy>
+```
+
                 [oracle@OGG181DB183 Lab6]$ cat build_all_bi_di.sh 
+```
+<copy>cat build_all_bi_di.sh </copy>
+```
 
 
 2. This script performs the following:
 
-                1.	Drops the existing container databases.
+Drops the existing container databases.
 
-                2.	Clones two container databases from a base container.
+Clones two container databases from a base container.
 
-                3.	Deletes the two deployments (Atlanta and SanFran).  This will remove any current lab setups.
+Deletes the two deployments (Atlanta and SanFran).  This will remove any current lab setups.
 
-                4.	Creates the two deployments again.
+Creates the two deployments again.
 
-                5.	Creates new credentials for both deployments.
+Creates new credentials for both deployments.
 
-                6.	Adds Schema supplemental logging to both container databases for the SOE schema.
+Adds Schema supplemental logging to both container databases for the SOE schema.
 
-                7.	Adds checkpoint tables on both container databases.
+Adds checkpoint tables on both container databases.
 
-                8.	Adds the Extract, Distribution Path and Replicat for both deployments.  This includes the correct 
-                parameters for the Extract and Replicats.
+Adds the Extract, Distribution Path and Replicat for both deployments.  This includes the correct 
+parameters for the Extract and Replicats.
 
 3. Run the **build_all_bi_di.sh** script
 
                 [oracle@OGG181DB183 Lab6]$ ./build_all_bi_di.sh 
-
+```
+<copy>./build_all_bi_di.sh </copy>
+```
 While it's running note the messages displayed that informs what has been added to the services.You should see the below message to be sure that all the steps are completed.
 
 ![](images/600/Lab600_image6001.PNG) 
@@ -95,15 +105,24 @@ While it's running note the messages displayed that informs what has been added 
 This step will be a short introduction to the AdminClient.  If you’re familiar with Classic GoldenGate, this would be like using GGSCI.  However, the advantage with the AdminClient is that you can connect to separate GG deployments from this one interface.  With GGSCI you would need to execute it in each server environment where GG is installed.  
 In this step we will use the AdminClient to check the deployment instead of the web interface.
 
-1. Change directory to OGG_HOME/bin.
+1. Change directory to OGG_HOME/bin
 
                 [oracle@OGG181DB183 Lab6]$ cd $OGG_HOME/bin
+```
+                <copy>cd $OGG_HOME/bin</copy>
+```
                 [oracle@OGG181DB183 bin]$ pwd
                 /opt/app/oracle/product/18.1.0_RC2/bin
+```
+                <copy>pwd</copy>
+```
 
 2. Run adminclient
 
                 [oracle@OGG181DB183 bin]$ ./adminclient 
+```
+<copy>./adminclient </copy>
+```
 
                 Oracle GoldenGate Administration Client for Oracle
                 Version 18.1.0.0.0 OGGCORE_18.1.0.0.0_PLATFORMS_180928.0432
@@ -117,38 +136,64 @@ In this step we will use the AdminClient to check the deployment instead of the 
 
 3. Use connect command
 
-                OGG (not connected) 1> connect http://localhost:16000 as oggadmin password Welcome1
+                OGG (not connected) 1> connect http://<your ip>:16000 as oggadmin password Welcome1
+```
+<copy>connect http://<your ip>:16000 as oggadmin password Welcome1</copy>
+```
 
                 ERROR: Deployment name must be specified
                 Available deployments are:
-                - Atlanta
-                - SanFran
+                Atlanta
+                SanFran
 
 You’ll see an error that you have to specify the deployment name and it will give you a list of deployments.
 
 4. Connect again using the deployment name of Atlanta.
 
-                OGG (not connected) 2> connect http://localhost:16000 deployment Atlanta as oggadmin password Welcome1
+                OGG (not connected) 2> connect http://<your ip>:16000 deployment Atlanta as oggadmin password Welcome1
+```
+<copy>connect http://<your ip>:16000 deployment Atlanta as oggadmin password Welcome1</copy>
+```
 
-                OGG (http://localhost:16000 Atlanta) 3> 
+                OGG (http://<your ip>:16000 Atlanta)
+```
+<copy>OGG (http://<your ip>:16000 Atlanta)</copy>
+```
 
 5. Type in **“help”**.  You can scroll up and down the list.  For classic GG users you’ll see some familiar commands.
 
-                OGG (http://localhost:16000 Atlanta) 3> help
+                OGG (http://<your ip>:16000 Atlanta) 
+```
+<copy>OGG (http://<your ip>:16000 Atlanta) </copy>
+```
+
+           
 
                 Admin Client Command Summary:
+```
+<copy>!</copy>
+```
+                **!** - Executes the previous command without modifications.
 
-                !                          - Executes the previous command without modifications.
-                ADD AUTORESTART            - Create an autorestart rule.
-                ADD CHECKPOINTTABLE        - Creates a checkpoint table in a database.
-                ADD CREDENTIALSTORE        - (Deprecated) Creates a credentials store (wallet) that stores encrypted database user credentials.
-                .
-                .
-                .
-                VIEW PARAMS                - Displays the contents of a parameter file in read-only mode on-screen.
-                VIEW REPORT                - Displays the process report that is generated by Extract or Replicat.
+                **ADD AUTORESTART**            - Create an autorestart rule.
+                
+                **ADD CHECKPOINTTABLE**      
+                 Creates a checkpoint table in a database.
+                
+                **ADD CREDENTIALSTORE**
+                (Deprecated) Creates a credentials store (wallet) that stores encrypted database user credentials.
+                
+                **VIEW PARAMS**
+                Displays the contents of a parameter file in read-only mode on-screen.
+                
+                **VIEW REPORT**
+                Displays the process report that is generated by Extract or Replicat.
 
-                OGG (http://localhost:16000 Atlanta) 4> 
+                OGG (http://<your ip>:16000 Atlanta) 
+```
+<copy>OGG (http://<your ip>:16000 Atlanta)</copy>
+```
+
 
 
 6. Type in **“info all”**. You’ll see the services for the Atlanta deployment we added and their status and the replication processes and their status.
@@ -207,11 +252,23 @@ You’ll see an error that you have to specify the deployment name and it will g
 
 9. Type in **"set debug off"**
 
-                OGG (http://localhost:16000 Atlanta) 7> set debug off
+                OGG (http://<your IP>:16000 Atlanta)
+```
+<copy>OGG (http://<your IP>:16000 Atlanta) </copy>
+```
+         7> set debug off
 
-10. Let’s type in a command that isn’t in classic GG.  Type in **“health deployment Atlanta”**.  You’ll get more info on the services than just the info all command gives.
+10.  Let’s type in a command that isn’t in classic GG.  Type in **“health deployment Atlanta”**.  You’ll get more info on the services than just the info all command gives.
 
-                OGG (http://localhost:16000 Atlanta) 27> health deployment Atlanta
+                OGG (http://<your IP>:16000 Atlanta) 
+```
+<copy>OGG (http://<your IP>:16000 Atlanta) </copy>
+```                
+                
+                27> health deployment Atlanta
+```
+<copy>health deployment Atlanta</copy>
+```
 
                 Deployment: Atlanta
                 Service: adminsrvr
@@ -237,21 +294,56 @@ You’ll see an error that you have to specify the deployment name and it will g
                 Resources: Name                              Type        Status      Health
                         --------------------------------  ----------  ----------  ------
 
-11. Connect to the SanFran deployment to do a quick check on the status.  You can type in **"history"** to get a list of the previous commands.
+11.  Connect to the SanFran deployment to do a quick check on the status.  You can type in **"history"** to get a list of the previous commands.
 
-12. The connect to the Atlanta deployment is there so you can check the syntax.  Enter the same command and change **"Atlanta"** to **"SanFran"**
+```
+<copy>history</copy>
+```
 
-                OGG (http://localhost:16000 Atlanta) 28> history
-                1: connect http://localhost:16000 as oggadmin password Welcome1
-                2: connect http://localhost:16000 deployment Atlanta as oggadmin password Welcome1
+12.  The connect to the Atlanta deployment is there so you can check the syntax.  Enter the same command and change **"Atlanta"** to **"SanFran"**
 
-                OGG (http://localhost:16000 Atlanta) 29> connect http://localhost:16000 deployment SanFran as oggadmin password Welcome1
+                OGG (http://<your IP>:16000 Atlanta) 
+```
+<copy>OGG (http://<your IP>:16000 Atlanta </copy>
+```
 
-                OGG (http://localhost:16000 SanFran) 30> 
+                28> history
+                
+                connect http://<your IP>:16000 as oggadmin password Welcome1
+                
+```
+<copy>connect http://<your IP>:16000 as oggadmin password Welcome1</copy>
+```
+                connect http://<your IP>:16000 deployment Atlanta as oggadmin password Welcome1
+```
+<copy>connect http://<your IP>:16000 deployment Atlanta as oggadmin password Welcome1</copy>
+```
 
-13. Type in **“info all”**.  You’ll see the services for the SanFran deployment we added and their status and the replication processes and their status.
+                OGG (http://<your IP>:16000 Atlanta) 
+```
+<copy>OGG (http://<your IP>:16000 Atlanta) </copy>
+```
+                
+                connect http://<your IP>:16000 deployment SanFran as oggadmin password Welcome1
+```
+<copy>connect http://<your IP>:16000 deployment SanFran as oggadmin password Welcome1
+</copy>
+```
+                OGG (http://<your IP>:16000 SanFran)
+```
+<copy>OGG (http://<your IP>:16000 SanFran) </copy>
+```
 
-                OGG (http://localhost:16000 SanFran) 30> info all
+13.  Type in **“info all”**.  You’ll see the services for the SanFran deployment we added and their status and the replication processes and their status.
+
+                OGG (http://<your IP>:16000 SanFran) 
+```
+<copy>OGG (http://<your IP>:16000 SanFran)</copy>
+```
+                30> info all
+```
+<copy>info all</copy>
+```
                 Program     Status      Group       Lag at Chkpt  Time Since Chkpt
 
                 ADMINSRVR   RUNNING   
@@ -263,7 +355,11 @@ You’ll see an error that you have to specify the deployment name and it will g
 
 - Exit the AdminClient by typing in **"exit"**.
 
-                OGG (http://localhost:16000 SanFran) 31> exit
+                OGG (http://<your IP>:16000 SanFran) 
+```
+<copy>OGG (http://<your IP>:16000 SanFran)</copy>
+```            
+                exit
                 [oracle@OGG181DB183 bin]$ 
 
                 You may now *proceed to the next lab*

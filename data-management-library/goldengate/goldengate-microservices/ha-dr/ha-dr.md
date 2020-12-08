@@ -1,7 +1,7 @@
 # GoldenGate Microservices Active-Active 
 
 ## Introduction
-This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availabilit/Disaster Recovery using Active-Active Technology
+This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availability / Disaster Recovery using Active-Active Technology
 
 *Estimated Lab Time*:  60 minutes
 
@@ -30,8 +30,14 @@ Since we’ve already done multiple labs, this one will take what we used so far
 1. Open up a terminal window and change directory to Lab6 and Review script build_all_bi_di.sh.
 
                 [oracle@OGG181DB183 ~]$ cd ~/OGG181_WHKSHP/Lab6
-                [oracle@OGG181DB183 Lab6]$ cat build_all_bi_di.sh 
+```
+<copy>cd ~/OGG181_WHKSHP/Lab6</copy>
+```
 
+                [oracle@OGG181DB183 Lab6]$ cat build_all_bi_di.sh 
+```
+<copy>cat build_all_bi_di.sh </copy>
+```
 
 **This script performs the following:**
 
@@ -54,6 +60,9 @@ Adds the Extract, Distribution Path and Replicat for both deployments.  This inc
 2. Run the **build_all_bi_di.sh** script
 
 [oracle@OGG181DB183 Lab6]$ ./build_all_bi_di.sh 
+```
+<copy>./build_all_bi_di.sh</copy>
+```
 
 While it's running note the messages displayed that informs what has been added to the services.You should see the below message to be sure that all the steps are completed.
 
@@ -83,7 +92,14 @@ This step runs the ADD_AUTO_CDR procedure in the DBMS_GOLDENGATE_ADM package in 
 1. In the terminal window change directory to Lab6 and Review script **setup_autocdr.sh**.
 
                 [oracle@OGG181DB183 bin]$ cd ~/OGG181_WHKSHP/Lab6
+```
+<copy>cd ~/OGG181_WHKSHP/Lab6</copy>
+```
+
                 [oracle@OGG181DB183 Lab6]$ cat setup_autocdr.sh 
+```
+<copy>cat setup_autocdr.sh </copy>
+```
 
 This script performs the following:
 
@@ -96,10 +112,10 @@ This script performs the following:
 2. Run the script setup_autocdr.sh.
 
                 [oracle@OGG181DB183 Lab6]$ ./setup_autocdr.sh 
-
+```
+<copy> ./setup_autocdr.sh </copy>
+```
                 Setup AutoCDR tables in database
-
-
 
                 SQL*Plus: Release 18.0.0.0.0 - Production on Thu Feb 7 22:44:15 2019
                 Version 18.3.0.0.0
@@ -135,6 +151,10 @@ This script performs the following:
 1. Run the start_replication.sh script to start the replication processes for the Atlanta capture and the SanFran delivery.
 
                 [oracle@OGG181DB183 Lab6]$ ./start_replication.sh Welcome1 16001 EXTSOE1 16002 SOE2SOE1 17001 IREP2
+```
+<copy>./start_replication.sh Welcome1 16001 EXTSOE1 16002 SOE2SOE1 17001 IREP2</copy>
+```
+
                 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                                 Dload  Upload   Total   Spent    Left  Speed
                 100   853  100   702  100   151   8865   1907 --:--:-- --:--:-- --:--:--  9000
@@ -157,6 +177,10 @@ This script performs the following:
 2. Next, run the start_replication.sh script again to start the replication processes for the SanFran capture and the Atlanta delivery.  Use the CREATE SCN value from OGGOOW182 as the last value of the script (See example above).  This is for the startup of the Replicat on the Atlanta deployment.
 
                 [oracle@OGG181DB183 Lab6]$ ./start_replication.sh Welcome1 17001 EXTSOE2 17002 SOE2SOE2 16001 IREP1
+```
+<copy> ./start_replication.sh Welcome1 17001 EXTSOE2 17002 SOE2SOE2 16001 IREP1</copy>
+```
+
                 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                                 Dload  Upload   Total   Spent    Left  Speed
                 100   853  100   702  100   151   8354   1797 --:--:-- --:--:-- --:--:--  8357
@@ -183,10 +207,25 @@ In this step we’ll use a script to invoke Swingbench to apply data to both dat
 1. In the terminal window review script start_swingbench.sh.
 
                 [oracle@OGG181DB183 Lab6]$ cat start_swingbench.sh 
+```
+<copycat start_swingbench.sh </copy>
+```
+>
                 #!/bin/bash
                 cd ~/OGG181_WHKSHP/Lab6/Build
+```
+<copy>cd ~/OGG181_WHKSHP/Lab6/Build</copy>
+```
+
                 ./start_swingbench_181.sh &
                 ./start_swingbench_182.sh &
+```
+<copy>./start_swingbench_181.sh</copy>
+```
+```
+<copy>./start_swingbench_182.sh</copy>
+```
+
                 [oracle@OGG181DB183 Lab6]$ 
 
 This script runs the swingbench jobs you ran in the other labs, but this time it will run two jobs in the background and each job applies data to one or the other databases.
@@ -194,6 +233,10 @@ This script runs the swingbench jobs you ran in the other labs, but this time it
 2. Run start_swingbench.sh.  It will take a few seconds to start up and run for 10 mins.
 
                 [oracle@OGG181DB183 Lab6]$ ./start_swingbench.sh 
+```
+<copy>./start_swingbench.sh </copy>
+```
+  
                 [oracle@OGG181DB183 Lab6]$ Author  :	 Dominic Giles
                 Author  :	 Dominic Giles
                 Version :	 2.6.0.1046
