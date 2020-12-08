@@ -1,4 +1,4 @@
-# Create a 21C VM Database
+# Create a 21C DBCS VM Database and VCN
 
 ## Introduction
 
@@ -7,7 +7,9 @@ This lab walks you through the steps to create a virtual cloud network (VCN) and
 A virtual cloud network (VCN) provides the necessary network Infrastructure required to support resources, including Oracle Database instances. This includes a gateway, route tables, security lists, DNS and so on. 
 
 ### Objectives
-You can use a 1-node virtual database system to complete labs and tutorials that require an Oracle database.
+* Create a VCN 
+* Create a Single Node 21c DBCS VM 
+* Login to your environment
 
 ### Prerequisites
 
@@ -22,7 +24,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
   ![](../create-virtual-cloud-network/images/virtual-cloud-networks.png " ")
 
-2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
+2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.  If you were assigned a compartment, enter it here.
 
   ![](../create-virtual-cloud-network/images/networking-quickstart.png " ")
 
@@ -70,24 +72,30 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
     * In the **Database name** field, change the default database name to "cdb1".
     * On the **Database version** select the version of the Oracle Database you want: 21c by clicking the **Change Database Image** button
+    * Select 21c from the checkbox
     * In the **PDB name** field, enter "pdb1".
     * Enter the password: `WElcome123##` for your sys user in the **Password** field and then repeat the password in the **Confirm password** field.  This password will be used for all exercises in the 21c workshop series.  Please enter it carefully.
 
     ![](images/create-VM-DB-form2.png " ")
+    ![](images/create-VM-DB-form3.png " ")
 
-5. After a few minutes, your Database System will change color from yellow (Provisioning) to green.
+5. After a few minutes, your Database System will change color from yellow (Provisioning) to green.  *Note:  If you use a smaller VM Shape, the provisioning may take longer*
 
     ![](images/database-VM-created.png " ")
 
-## **STEP 3**: Connect to the Database using SSH
+## **STEP 3**: Gather system details and connect to the Database using SSH
 
-1. On the **DB System Details** page, Click **Nodes**.
+1. Go back to the Oracle Cloud Console and click on the DB System you just created.  Note that you have a fully provisioned Database.
+2. In the Databases section, jot down your **Database Unique Name**.  You will need this for the next lab.
+3. Check your storage management software to ensure you selected **Logical Volume Manager**.  This is necessary for the next lab.
+   
+    ![](images/database-VM-created.png " ")
+
+4. On the resources tab, click **Nodes** to gather your IP address. Note your Public IP Address
 
   ![](images/VM-DB-IP.png " ")
 
-   Note the IP address.
-
-2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
+4. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -96,7 +104,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
     [opc@tmdb1 ~]$
     ```
 
-3. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
+5. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
 
     ```
     [opc@tmdb1 ~]$ sudo su - oracle

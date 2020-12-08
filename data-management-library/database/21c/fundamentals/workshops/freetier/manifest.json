@@ -25,39 +25,39 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Application Development",
+            "title": "APPLICATION DEVELOPMENT",
             "filename": "../../introduction/intro-appdev.md"
         }, 
         {
-            "title": "Lab: New Set Operators",
+            "title": "Lab 4: New Set Operators",
             "filename": "../../set-operators/set-operators.md"
         },
         {
-            "title": "Lab: Expressions in Init Parameters",
+            "title": "Lab 5: Expressions in Init Parameters",
             "filename": "../../init-params/init-params.md"
         },
         {
-            "title": "Lab: SQM Scalar and Table Expressions",
+            "title": "Lab 6: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md"
         },
         {
-            "title": "Lab: Searching Text/JSON in In-Memory",
+            "title": "Lab 7: Searching Text/JSON in In-Memory",
             "filename": "../../search-text/search-text.md"
         },
         {
-            "title": "Big Data and DW",
+            "title": "BIG DATA AND DW",
             "filename": "../../introduction/intro-bigdata-dw.md"
         }, 
         {
-            "title": "Lab: Bitwise Aggregate Functions",
+            "title": "Lab 8: Bitwise Aggregate Functions",
             "filename": "../../bitwise-agg/bitwise-agg.md"
         },
         {
-            "title": "Lab: Enhanced Analytic Functions",
+            "title": "Lab 9: Enhanced Analytic Functions",
             "filename": "../../enhanced-analytics/enhanced-analytics.md"
         },
         {
-            "title": "Lab: Detecting Data Tampering",
+            "title": "Lab 10: Detecting Data Tampering",
             "filename": "../../data-tampering/data-tampering.md"
         },
         {
@@ -69,7 +69,7 @@
             "filename": "../../kurtosis/kurtosis.md"
         },
         {
-            "title": "Performance and HA",
+            "title": "PERFORMANCE AND HA",
             "filename": "../../introduction/intro-perf-ha.md"
         }, 
         {
@@ -101,7 +101,7 @@
             "filename": "../../max-idle-blocker/max-idle-blocker.md"
         },
         {
-            "title": "Database Utilties",
+            "title": "DATABASE UTILITIES",
             "filename": "../../introduction/intro-dbutilities.md"
         }, 
         {
@@ -121,7 +121,7 @@
             "filename": "../../data-pump-index-comp/data-pump-index-comp.md"
         },
         {
-            "title": "Security ",
+            "title": "SECURITY ",
             "filename": "../../introduction/intro-security.md"
         }, 
         {
@@ -145,7 +145,7 @@
             "filename": "../../dbv-install/dbv-install.md"
         },
         {
-            "title": "Authentication and Administration",
+            "title": "AUTHENTICATION AND ADMINISTRATION",
             "filename": "../../introduction/intro-admin.md"
         }, 
         {
