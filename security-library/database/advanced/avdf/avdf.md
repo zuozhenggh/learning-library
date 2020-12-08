@@ -508,11 +508,11 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
 8. Next, create a new Credential with the following values
 
-    - Credential Domain: *cdb1*
-    - Credential Aalias: *cdb1*
-    - User ID: *c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))*
-    - Password: *Oracle123*
-    - Verify Password: *Oracle123*
+    - Credential Domain: *`cdb1`*
+    - Credential Aalias: *`cdb1`*
+    - User ID: *`c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))`*
+    - Password: *`Oracle123`*
+    - Verify Password: *`Oracle123`*
 
        ![](./images/avdf-030.png " ")
 
