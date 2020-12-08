@@ -9,7 +9,7 @@ The 21c generation of Oracle's converged database offers customers; best of bree
 
  ![Oracle DB 21c Advantages](images/21c-support.png "Oracle DB 21c Advantages")
 
-Oracle Database 21c enables SQL, REST and API transactions across all types of data models.  Some key inovations are:
+Oracle Database 21c enables SQL, REST and API transactions across all types of data models.  It is being released cloud-first with on-premises following shortly after. Some key inovations are:
 * Native JSON binary data type
 * Blockchain Tables
 * Execute JavaScript code inside the Oracle Database
