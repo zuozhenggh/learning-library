@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Create and Publish a Web Application in Oracle Visual builder",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -12,7 +12,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Create a Web Application",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../provision/provision.md"
         },
