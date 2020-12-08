@@ -76,16 +76,16 @@ In this lab, you will:
 
 4. In order to create the TNS Entries for the CDB1 and PDB1 you will need the correct SERVICE_NAME parameters for them. We will use the lsnrctl program to get the SERVICE_NAME values for our TNS entries.
 
-		```
-		lsnrctl status
-		```
+	```
+	lsnrctl status
+	```
 
 5. The output of the lsnrctl command will give you several entries. The two we care about are the following. Your values will be slightly different based on your vcn name, subnet and region.
 
-		```
-		Service "cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com"
-		Service "pdb1.subnet11241424.vcn11241424.oraclevcn.com"
-		```
+	```
+	Service "cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com"
+	Service "pdb1.subnet11241424.vcn11241424.oraclevcn.com"
+	```
 
 6. You are going to create two entries in the tnsnames.ora file. One for CDB1 and one for PDB1. vi the tnsnames.ora
 
@@ -97,35 +97,35 @@ In this lab, you will:
 
 7. Copy the entry for CDB1 that is already in the tnsnames file. Make the following changes:
     - Change the name of the entry to be CDB1 instead of the Unique Database Name.
-		- Make sure the SERVICE_NAME parameter has SERVICE_NAME from the lsnrctl command above.
+		- Make sure the SERVICE\_NAME parameter has SERVICE\_NAME from the lsnrctl command above.
 		- Do not change the host and port values.
 
-		````
-		CDB1 =
-     (DESCRIPTION =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
-      (CONNECT_DATA =
-       (SERVER = DEDICATED)
-       (SERVICE_NAME = cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com)
-      )
-     )
-    ````
+	````
+	CDB1 =
+	(DESCRIPTION =
+	(ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
+	(CONNECT_DATA =
+	(SERVER = DEDICATED)
+	(SERVICE_NAME = cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com)
+	)
+	)
+	````
 
 8. Repeat the same process for PDB1 in the tnsnames file making the following changes:
     - Change the name of the entry to be PDB1 instead of the Unique Database Name.
-    - Make sure the SERVICE_NAME parameter has SERVICE_NAME from the lsnrctl command above.
+    - Make sure the SERVICE\_NAME parameter has SERVICE\_NAME from the lsnrctl command above.
     - Do not change the host and port values.
 
 		````
-    PDB1 =
-     (DESCRIPTION =
-	    (ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
-	    (CONNECT_DATA =
-	     (SERVER = DEDICATED)
-	     (SERVICE_NAME = pdb1.subnet11241424.vcn11241424.oraclevcn.com)
-	    )
-     )
-    ````
+		PDB1 =
+		(DESCRIPTION =
+		(ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
+		(CONNECT_DATA =
+			(SERVER = DEDICATED)
+			(SERVICE_NAME = pdb1.subnet11241424.vcn11241424.oraclevcn.com)
+		)
+		)
+		````
 
 9. Test the connection to CDB1.  Connect to CDB1 with SQL*Plus.
 
