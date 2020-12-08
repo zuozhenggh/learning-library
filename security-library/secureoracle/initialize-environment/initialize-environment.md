@@ -24,50 +24,44 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
 1. Launch your browser to the following URL
 
-```
-URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-```
-
-  ![](./images/guacamole-login.png " ")
+    ```
+    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    ```
 
 2. Provide login credentials
 
-```
-Username: <copy>oracle</copy>
-```
-```
-Password: <copy>Guac.LiveLabs_</copy>
-```
+    ```
+    Username: <copy>oracle</copy>
+    ```
+    ```
+    Password: <copy>Guac.LiveLabs_</copy>
+    ```
 
-*Note*: There is an underscore `_` character at the end of the password.
+    ![](./images/guacamole-login.png " ")
 
-  ![](./images/guacamole-landing.png " ")
+    *Note*: There is an underscore `_` character at the end of the password.
 
-3. Launch Firefox. Click on "*Applications > Firefox*"
+3. To launch *Firefox* browser or a *Terminal* client, click on respective icon on the desktop
 
-  ![](./images/guacamole-firefox.png " ")
-
-4. Launch terminal: Right-Click anywhere on the desktop and select "*Open Terminal*"
-
-  ![](./images/guacamole-terminal.png " ")
-
-  ![](./images/guacamole-terminal-landing.png " ")
+    ![](./images/guacamole-landing.png " ")
 
 ### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
+
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*oracle*”.
 
 1. First login as “*opc*” using your SSH Private Key
 
-2. Then sudo to “*oracle*” user. E.g.
+2. Then sudo to “*oracle*”. E.g.
 
     ```
     <copy>sudo su - oracle</copy>
     ```
 
-Follow the steps below to Start and Stop the different SecureOracle components.
+Follow the steps below to Start/Stop SecureOracle components.
 
 ## **STEP 1**: Start and Stop SecureOracle Components
 
