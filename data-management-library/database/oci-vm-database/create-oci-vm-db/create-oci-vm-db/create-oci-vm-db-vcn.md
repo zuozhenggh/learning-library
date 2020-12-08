@@ -22,11 +22,11 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
   ![](../create-virtual-cloud-network/images/virtual-cloud-networks.png " ")
 
-2. Select your compartment and click on **Networking Quickstart**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
+2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
 
   ![](../create-virtual-cloud-network/images/networking-quickstart.png " ")
 
-3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start Workflow**.
+3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start VCN Wizard**.
 
   ![](../create-virtual-cloud-network/images/start-workflow.png " ")
 
@@ -53,18 +53,23 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 3. On the DB System Information form, enter the following information and click **Next**:
 
     * In the **Name your DB system** field, give your database a name.
-    * Select **Logical Volume Manager** as the Storage Management Software.
-    * In the **Add public SSH keys** section, browse to the location of your SSH keys and select the public key file (with a .pub extension).
+    * Select an availability domain.
+    * Select a **Virtual Machine** as your shape type.
+    * Select a **shape** *VM Standard2.4* (If you are in a Free Trial account, choose the smaller *VM Standard 2.2* shape)
+    * Configure the DB system, set **Node count** to *1* and **Software edition** to *EE High Performance*
+    * Select *Logical Volume Manager* as the **Storage Management Software**. *Note:  This is **very** important to choose Logical Volume Manager*
+    * Accept the default of *256* to **Available Storage**
+    * In the **Add public SSH keys** section, browse to the location of your SSH keys and select the public key file (with a .pub extension). *Note:  Ensure you paste a one line file if using Cloud Shell*
     * In the **Specify the Network information** section, select the VCN you created using the drop down list.
-    * Select the public subnet using the drop down list.
-    * Enter a hostname prefix.
+    * Select the *public subnet* using the drop down list.
+    * Enter a hostname prefix. *Note: Hostname should start with a letter*
 
     ![](images/create-VM-DB-form1.png " ")
 
 4. On the Database Information form, enter the following information and click **Create DB System**.
 
     * In the **Database name** field, change the default database name to "cdb1".
-    * On the **Database version** drop down menu, select the version of the Oracle Database you want: 21c.
+    * On the **Database version** select the version of the Oracle Database you want: 21c by clicking the **Change Database Image** button
     * In the **PDB name** field, enter "pdb1".
     * Enter the password: `WElcome123##` for your sys user in the **Password** field and then repeat the password in the **Confirm password** field.  This password will be used for all exercises in the 21c workshop series.  Please enter it carefully.
 
@@ -82,7 +87,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
    Note the IP address.
 
-2. In a terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
+2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -101,7 +106,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
     [oracle@tmdb1 ~]$ sqlplus / as sysdba
 
     SQL*Plus: Release 21.0.0.0.0 - Production on Sat Nov 15 14:01:48 2020
-    Version 20.2.0.0.0
+    Version 21.2.0.0.0
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
@@ -121,7 +126,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Kay Malcolm, November 30, 2020
+* **Last Updated By/Date** - Kay Malcolm, December 7, 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

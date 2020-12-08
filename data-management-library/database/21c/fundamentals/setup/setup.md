@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop.
 
-Estimated Lab Time: 15 minute
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -17,13 +17,42 @@ In this lab, you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Working knowledge of vi
 * Lab: SSH Keys
-* Lab: Create a 21c DBCS VM Database
+* Lab: Create a DBCS VM Database
 
 
 ## **STEP 1**: Define and test the connections
 
-1. Login to Oracle Cloud and re-start the Oracle Cloud Shell.  
-2. Verify that your Oracle Database 21c `CDB1` and `PDB1` are created using the commands below.
+1. If you aren't still logged in, login to Oracle Cloud and re-start the Oracle Cloud Shell otherwise skip to Step 4.
+2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
+
+    ```
+    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    Enter passphrase for key './myOracleCloudKey':
+    Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
+    [opc@tmdb1 ~]$
+    ```
+3. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
+
+    ```
+    [opc@tmdb1 ~]$ sudo su - oracle
+    [oracle@tmdb1 ~]$ . oraenv
+    ORACLE_SID = [cdb1] ?
+    The Oracle base has been set to /u01/app/oracle
+    [oracle@tmdb1 ~]$ sqlplus / as sysdba
+
+    SQL*Plus: Release 21.0.0.0.0 - Production on Sat Nov 15 14:01:48 2020
+    Version 21.2.0.0.0
+
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+
+    Connected to:
+    Oracle Database 21c EE High Perf Release 21.0.0.0.0 - Production
+    Version 21.0.0.0.0
+
+    SQL>
+	```
+
+4. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
 
 	```
 	<copy>

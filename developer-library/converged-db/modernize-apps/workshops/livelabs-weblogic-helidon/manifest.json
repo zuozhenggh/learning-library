@@ -22,6 +22,11 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
     },
     {
+      "title": "Lab 3: Initialize Environment",
+      "description": "Initialize Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
       "title": "Lab 4: Modernize with Weblogic and Helidon",
       "description": "Weblogic and Helidon Lab",
       "publisheddate": "08/10/2020",

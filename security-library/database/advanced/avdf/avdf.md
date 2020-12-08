@@ -508,11 +508,11 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
 8. Next, create a new Credential with the following values
 
-    - Credential Domain: *cdb1*
-    - Credential Aalias: *cdb1*
-    - User ID: *c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))*
-    - Password: *Oracle123*
-    - Verify Password: *Oracle123*
+    - Credential Domain: *`cdb1`*
+    - Credential Aalias: *`cdb1`*
+    - User ID: *`c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))`*
+    - Password: *`Oracle123`*
+    - Verify Password: *`Oracle123`*
 
        ![](./images/avdf-030.png " ")
 
@@ -1444,7 +1444,7 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, November 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
