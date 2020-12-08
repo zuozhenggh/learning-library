@@ -40,7 +40,7 @@ With 21c, customers can
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** - Kay Malcolm, Database Product Management
+* **Contributors** - Kay Malcolm, David Start, Kamryn Vinson, Anoosha Pilli, Tom McGinn, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, November 2020
 
 ## Need Help?
