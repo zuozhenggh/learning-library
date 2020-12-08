@@ -1,105 +1,176 @@
-# Setup the Environment
+# Setup 21C Environment
 
 ## Introduction
+In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop.
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Define and test the connections
+* Download scripts needed to run 21c labs
+* Update scripts with the chosen password
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+* Working knowledge of vi
+* Lab: SSH Keys
+* Lab: Create a DBCS VM Database
 
-*This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
+## **STEP 1**: Define and test the connections
 
-Step 1 opening paragraph.
-
-1. Sub step 1
-
-  To create a link to local file you want the reader to download, use this format:
-
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
-
-    ![Image alt text](images/sample1.png "Image title")
-
-3. Ordered list item 3 with the same image but no link to the text description below.
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. One example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
+1. If you aren't still logged in, login to Oracle Cloud and re-start the Oracle Cloud Shell otherwise skip to Step 4.
+2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    Enter passphrase for key './myOracleCloudKey':
+    Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
+    [opc@tmdb1 ~]$
     ```
+3. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
 
-4. Code examples that include variables
+    ```
+    [opc@tmdb1 ~]$ sudo su - oracle
+    [oracle@tmdb1 ~]$ . oraenv
+    ORACLE_SID = [cdb1] ?
+    The Oracle base has been set to /u01/app/oracle
+    [oracle@tmdb1 ~]$ sqlplus / as sysdba
+
+    SQL*Plus: Release 21.0.0.0.0 - Production on Sat Nov 15 14:01:48 2020
+    Version 21.2.0.0.0
+
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+
+    Connected to:
+    Oracle Database 21c EE High Perf Release 21.0.0.0.0 - Production
+    Version 21.0.0.0.0
+
+    SQL>
+	```
+
+4. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
 
 	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+	<copy>
+	ps -ef|grep smon
+	sqlplus / as sysdba
+	</copy>
+	```
+	```
+	<copy>
+	show pdbs
+	</copy>
+	```
 
-*At the conclusion of the lab add this statement:*
+2. Ensure that the TNS alias have been created for both cdb21 and pdb21 in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora`
+
+	```
+	<copy>
+	cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+	</copy>
+	```
+
+4. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.  Use vi to do this.
+
+	````
+	<copy>
+	vi cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+	</copy>
+	````
+
+5. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+
+	````
+	<copy>
+	sqlplus sys@CDB21_iad1bw AS SYSDBA
+	</copy>
+	````
+
+6. Verify that the container name is CDB$ROOT.
+
+	````
+	<copy>
+	SHOW CON_NAME;
+	</copy>
+	````
+
+7. Test the connection to PDB21
+
+	````
+	<copy>
+	CONNECT sys@PDB21 AS SYSDBA
+	</copy>
+	````
+
+8.  Show the container name
+
+	````
+	<copy>
+	SHOW CON_NAME;
+	</copy>
+	````
+
+9. Exit SQL*Plus
+
+	````
+	<copy>
+	exit
+	</copy>
+	````
+
+## **STEP 2**: Download scripts
+
+Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle Cloud object storage and unzip the file.
+
+*Note*: These scripts are designed for DBCS VM single node instances
+
+1.  Change to the oracle user home directory
+
+	````
+	<copy>
+	cd /home/oracle
+	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9WEb1xKV88FoxNZWWdFYrM_NsBZFv9bsAOnGrXpu8fo4BLE7VDLDLkfQf_BLUyuI/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
+  </copy>
+	````
+
+2.  Unzip Cloud\_21c\_labs.zip
+
+	```
+	<copy>
+	unzip Cloud_21c_labs.zip
+	</copy>
+	```
+
+## **STEP 3**: Update the scripts to the current environment
+
+Execute the /home/oracle/labs/update\_pass.sh shell script. The shell script prompts you to enter the password\_defined\_during\_DBSystem\_creation and sets it in all shell scripts and SQL scripts that will be used in the practices.
+
+1. Make the script readable, writable, and executable by everyone.
+
+	```
+	<copy>
+	chmod 777 /home/oracle/labs/update_pass.sh
+	</copy>
+	```
+
+2. Run the script.
+
+	```
+	<copy>
+	/home/oracle/labs/update_pass.sh
+	</copy>
+	```
+
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Dominique Jeunot, Database UA Team
+* **Contributors** -  Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
