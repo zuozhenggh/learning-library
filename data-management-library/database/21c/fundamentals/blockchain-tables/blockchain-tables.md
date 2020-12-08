@@ -286,6 +286,14 @@ In this lab, you will:
 
     ```
 
+6. To view all the blockchain tables in your current database, enter command:
+    
+    ```
+    <copy>
+    select * from dba_blockchain_tables;  
+    ```
+
+
 ## **STEP 2:** Insert rows into the blockchain table
 
 1. Insert a first row into the blockchain table.
