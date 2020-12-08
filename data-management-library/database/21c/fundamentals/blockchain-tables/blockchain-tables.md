@@ -15,13 +15,13 @@ In this lab, you will:
 * Create the blockchain table
 * Insert and delete rows
 * Drop the blockchain table
+* View blockchain tables hidden columns
 * Check the validity of rows in the blockchain table
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab 1: Create SSH Keys
+* Lab 2: Create an OCI VM Database
 
 ## **STEP 1:** Create Database User
 
