@@ -3,10 +3,6 @@
 ## Introduction
 This lab shows how to configure Automatic In-Memory and then observe how in-memory objects are automatically and dynamically populated in the IM column store without user intervention, and then possibly automatically evicted from the IM column store.
 
-### About Product/Technology
-
-
-
 Estimated Lab Time: 25 minutes
 
 ### Objectives
@@ -17,10 +13,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 ## **STEP 1:** Set up the environment with In-Memory Column Store
