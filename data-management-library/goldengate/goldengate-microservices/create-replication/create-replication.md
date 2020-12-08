@@ -50,7 +50,7 @@ Deployments provide a siloed approach to splitting replication environments betw
 
 2.	From the browser, connect to port 16000 to access the ServiceManager login page:
 ```
- <copy>https://<You IP Address>:16000</copy>
+ <copy>https://<Your IP Address>:16000</copy>
 ```
 The URL should bring up the following login page.
 
@@ -59,12 +59,12 @@ The URL should bring up the following login page.
 3. Log in to the Service Manager using the following credentials:
 
 User Name: oggadmin
-Password: Welcome_1
+Password: Welcome1
 ```
 <copy>oggadmin</copy>
 ```
 ```
-<copy>Welcome_1</copy>
+<copy>Welcome1</copy>
 ```
 
 4.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”.  
@@ -87,7 +87,7 @@ Password: Welcome_1
 First, find out your current VM’s local IP Address by issuing the following command
 
 ```
-<copy>$ hostname -I</copy>
+<copy>hostname -I</copy>
 ```
 7. Write down the IP Address shown.  For example, 10.145.34.23.  
 (** The IP address it shows might be different than the IP address you obtained when using VNC Viewer to connect.  That is fine)
@@ -121,7 +121,7 @@ Each of the parameters will be used to replace items in the response file and bu
 
     ![](./images/a4.png " ")
 ```
-<copy>sh ./create_deployment.sh Atlanta Welcome_1 16000 16001 16002 16003 16004 16005</copy>
+<copy>sh ./create_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005</copy>
 ```
 
 
@@ -134,7 +134,7 @@ Each of the parameters will be used to replace items in the response file and bu
 **Run the script using the following parameter values, to create the Boston Deployment:**
 
 ```
-<copy>sh ./create_deployment.sh Boston Welcome_1 16000 17001 17002 17003 17004 17005</copy>
+<copy>sh ./create_deployment.sh Boston Welcome1 16000 17001 17002 17003 17004 17005</copy>
 ```
 ![](./images/a6.png " ")
 
@@ -172,7 +172,7 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 3.	Upon completion, return to your web browser. You should be able to access the ServiceManager page by only using the URL without a port number.
 
 ```
-<copy>https://localhost</copy>
+<copy>https://<your IP address></copy>
 ```
 If this is the first time you access this address, you will need to click through some security exceptions page as it is using a self-signed certificate.  Once you get to the page, you will see below website.
 
@@ -187,16 +187,16 @@ Simplified URLs:
 
 The benefit of using the Reverse Proxy is that is makes the URLs simpler to use.  If you are so inclined, provide your browser a URL that models this:
 
-https://localhost/(deployment)/adminsrvr
+https://<your IP address>/(deployment)/adminsrvr
 
 (deployment) = the name of a deployment you build in Task 3.
 
 In the example, if using the Atlanta deployment, the URL would look like this:
 
-**https://localhost/Atlanta/adminsrvr**
+**https://<your IP address>/Atlanta/adminsrvr**
 
 ```
-<copy>https://localhost/Atlanta/adminsrvr</copy>
+<copy>https://<your IP address>/Atlanta/adminsrvr</copy>
 ```
    ![](./images/a10.jpg " ")
 
@@ -255,15 +255,15 @@ To begin this Task 5, follow the below steps:
 In order to create the required credentials, run the following:
 
 ```
-<copy>sh ./create_credential_GGAlias.sh Welcome_1 16001 c##ggate@orcl ggate</copy>
+<copy>sh ./create_credential_GGAlias.sh Welcome1 16001 c##ggate@orcl ggate</copy>
 ```
 After running this script, can go to your browser and that the credential was created
 
 5. Open a new browser tab and connect to
 ```
-<copy>https://localhost/(deployment)/adminsrvr</copy>
+<copy>https://<your ip address>/(deployment)/adminsrvr</copy>
 ```
-6. Login with the following oggadmin/Welcome_1
+6. Login with the following oggadmin/Welcome1
 
 7. Click the Context Menu in the upper left, then select Configuration from the left pane
 

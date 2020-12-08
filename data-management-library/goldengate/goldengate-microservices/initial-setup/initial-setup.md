@@ -99,9 +99,13 @@ In this lab we will setup GoldenGate Microservices
 10. Enable Minimal Supplemental Logging for the database.  Additionally, enable Force Logging then switch the log file.
 
 ```
-<copy>alter database add supplemental log data;
-alter database force logging;
-alter system switch logfile;</copy>
+<copy>alter database add supplemental log data;</copy>
+```
+```
+<copy>alter database force logging;</copy>
+```
+```
+<copy>alter system switch logfile;</copy>
 ```
 
 ## **STEP 2:** Create the GoldenGate users needed at the Container Database and Pluggable Database Layers
