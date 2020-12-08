@@ -32,6 +32,7 @@ You may now [proceed to the next lab](#next).
 ## Learn More
 
 * [Oracle Database Blog](http://blogs.oracle.com/database)
+* [Introducing Oracle Database 21c](https://blogs.oracle.com/database/introducing-oracle-database-21c)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
