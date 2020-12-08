@@ -31,7 +31,7 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-* [21c Blog](http://docs.oracle.com)
+* [Oracle Database Blog](http://blogs.oracle.com/database)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
