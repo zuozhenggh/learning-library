@@ -66,31 +66,76 @@ In this lab, you will:
 	</copy>
 	```
 
-2. Ensure that the TNS alias have been created for both cdb21 and pdb21 in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora`
+3. Ensure that the TNS alias have been created for both cdb21 and pdb21 in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
 
 	```
 	<copy>
-	cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+	cat /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
 	</copy>
 	```
 
-4. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.  Use vi to do this.
+4. In order to create the TNS Entries for the CDB1 and PDB1 you will need the correct SERVICE_NAME parameters for them. We will use the lsnrctl program to get the SERVICE_NAME values for our TNS entries.
+
+		```
+		lsnrctl status
+		```
+
+5. The output of the lsnrctl command will give you several entries. The two we care about are the following. Your values will be slightly different based on your vcn name, subnet and region.
+
+		```
+		Service "cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com"
+		Service "pdb1.subnet11241424.vcn11241424.oraclevcn.com"
+		```
+
+6. You are going to create two entries in the tnsnames.ora file. One for CDB1 and one for PDB1. vi the tnsnames.ora
 
 	````
 	<copy>
-	vi cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+	vi /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
 	</copy>
 	````
 
-5. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+7. Copy the entry for CDB1 that is already in the tnsnames file. Make the following changes:
+    - Change the name of the entry to be CDB1 instead of the Unique Database Name.
+		- Make sure the SERVICE_NAME parameter has SERVICE_NAME from the lsnrctl command above.
+		- Do not change the host and port values.
+
+		````
+		CDB1 =
+     (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
+      (CONNECT_DATA =
+       (SERVER = DEDICATED)
+       (SERVICE_NAME = cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com)
+      )
+     )
+    ````
+
+8. Repeat the same process for PDB1 in the tnsnames file making the following changes:
+    - Change the name of the entry to be PDB1 instead of the Unique Database Name.
+    - Make sure the SERVICE_NAME parameter has SERVICE_NAME from the lsnrctl command above.
+    - Do not change the host and port values.
+
+		````
+    PDB1 =
+     (DESCRIPTION =
+	    (ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
+	    (CONNECT_DATA =
+	     (SERVER = DEDICATED)
+	     (SERVICE_NAME = pdb1.subnet11241424.vcn11241424.oraclevcn.com)
+	    )
+     )
+    ````
+
+9. Test the connection to CDB1.  Connect to CDB1 with SQL*Plus.
 
 	````
 	<copy>
-	sqlplus sys@CDB21_iad1bw AS SYSDBA
+	sqlplus sys@cdb1 AS SYSDBA
 	</copy>
 	````
 
-6. Verify that the container name is CDB$ROOT.
+10. Verify that the container name is CDB$ROOT.
 
 	````
 	<copy>
@@ -98,11 +143,11 @@ In this lab, you will:
 	</copy>
 	````
 
-7. Test the connection to PDB21
+11. Test the connection to PDB1
 
 	````
 	<copy>
-	CONNECT sys@PDB21 AS SYSDBA
+	CONNECT sys@PDB1 AS SYSDBA
 	</copy>
 	````
 
@@ -141,7 +186,7 @@ Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle
 
 	```
 	<copy>
-	unzip Cloud_21c_labs.zip
+	unzip Cloud_21c_Labs.zip
 	</copy>
 	```
 
