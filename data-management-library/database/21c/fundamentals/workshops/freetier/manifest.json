@@ -61,11 +61,11 @@
             "filename": "../../data-tampering/data-tampering.md"
         },
         {
-            "title": "Lab: Measuring Asymmetry in Data",
+            "title": "Lab 11: Measuring Asymmetry in Data",
             "filename": "../../skewness/skewness.md"
         },
         {
-            "title": "Lab: Measuring Tailedness of Data",
+            "title": "Lab 12: Measuring Tailedness of Data",
             "filename": "../../kurtosis/kurtosis.md"
         },
         {
@@ -73,31 +73,31 @@
             "filename": "../../introduction/intro-perf-ha.md"
         }, 
         {
-            "title": "Lab: PDB Point-in-Time Recovery",
+            "title": "Lab 13: PDB Point-in-Time Recovery",
             "filename": "../../flashback-pdbs/flashback-pdbs.md"
         },
         {
-            "title": "Lab: Automatic Zone Maps",
+            "title": "Lab 14: Automatic Zone Maps",
             "filename": "../../auto-zone-maps/auto-zone-maps.md"
         },
         {
-            "title": "Lab: SecureFile LOBs",
+            "title": "Lab 15: SecureFile LOBs",
             "filename": "../../securefile-lobs/securefile-lobs.md"
         },
         {
-            "title": "Lab: Automatic In-Memory",
+            "title": "Lab 16: Automatic In-Memory",
             "filename": "../../auto-in-mem/auto-in-mem.md"
         },
         {
-            "title": "Lab: In-Memory Hybrid Scans",
+            "title": "Lab 17: In-Memory Hybrid Scans",
             "filename": "../../im-hybrid-scans/im-hybrid-scans.md"
         },
         {
-            "title": "Lab: Synchronizing Apps in App PDBs",
+            "title": "Lab 18: Synchronizing Apps in App PDBs",
             "filename": "../../sync-app-pdbs/sync-app-pdbs.md"
         },
         {
-            "title": "Lab: MAX_IDLE_BLOCKER_TIME Parameter",
+            "title": "Lab 19: MAX_IDLE_BLOCKER_TIME Parameter",
             "filename": "../../max-idle-blocker/max-idle-blocker.md"
         },
         {
@@ -105,19 +105,19 @@
             "filename": "../../introduction/intro-dbutilities.md"
         }, 
         {
-            "title": "Lab: Data Pump Checksums",
+            "title": "Lab 20: Data Pump Checksums",
             "filename": "../../data-pump-validity/data-pump-validity.md"
         },
         {
-            "title": "Lab: Data Pump Includes & Excludes",
+            "title": "Lab 21: Data Pump Includes & Excludes",
             "filename": "../../data-pump-incl-excl/data-pump-incl-excl.md"
         }, 
         {
-            "title": "Lab: Data Pump Transportable Tbsp",
+            "title": "Lab 22: Data Pump Transportable Tbsp",
             "filename": "../../data-pump-tts/data-pump-tts.md"
         },           
         {
-            "title": "Lab: Data Pump Index Compression",
+            "title": "Lab 23: Data Pump Index Compression",
             "filename": "../../data-pump-index-comp/data-pump-index-comp.md"
         },
         {
@@ -125,23 +125,23 @@
             "filename": "../../introduction/intro-security.md"
         }, 
         {
-            "title": "Lab: Blockchain Tables & Rows",
+            "title": "Lab 24: Blockchain Tables & Rows",
             "filename": "../../blockchain-tables/blockchain-tables.md"
         },
         {
-            "title": "Lab: Tablespace Encryption Algorithm",
+            "title": "Lab 25: Tablespace Encryption Algorithm",
             "filename": "../../tbsp-encryption/tbsp-encryption.md"
         },
         {
-            "title": "Lab: Realms",
+            "title": "Lab 26: Realms",
             "filename": "../../realms/realms.md"
         },
         {
-            "title": "Lab: Uninstall DB Vault",
+            "title": "Lab 27: Uninstall DB Vault",
             "filename": "../../dbv-uninstall/dbv-uninstall.md"
         },
         {
-            "title": "Lab: Install DB Vault",
+            "title": "Lab 28: Install DB Vault",
             "filename": "../../dbv-install/dbv-install.md"
         },
         {
@@ -149,27 +149,27 @@
             "filename": "../../introduction/intro-admin.md"
         }, 
         {
-            "title": "Lab: Upgraded Password File Case Sensitivity",
+            "title": "Lab 29: Upgraded Password File Case Sensitivity",
             "filename": "../../upgraded-pwd/upgraded-pwd.md"
         },
         {
-            "title": "Lab: Password Length Enforcement",
+            "title": "Lab 30: Password Length Enforcement",
             "filename": "../../enforce-min-pwd/enforce-min-pwd.md"
         },
         {
-            "title": "Audit",
+            "title": "AUDIT",
             "filename": "../../introduction/intro-audit.md"
         }, 
         {
-            "title": "Lab: Unified Audit Policies for STIG",
+            "title": "Lab 31: Unified Audit Policies for STIG",
             "filename": "../../audit-stig-compl/audit-stig-compl.md"
         },
         {
-            "title": "Lab: SYSLOG Destination for Audit Policies",
+            "title": "Lab 32: SYSLOG Destination for Audit Policies",
             "filename": "../../common-audit-dest/common-audit-dest.md"
         },
         {
-            "title": "Lab: Unified Audit Policies",
+            "title": "Lab 33: Unified Audit Policies",
             "filename": "../../unified-audit-policies/unified-audit-policies.md"
         }
         
