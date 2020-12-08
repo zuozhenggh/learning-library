@@ -34,7 +34,7 @@ delete big_mac_index;
 
 -- Load data from The Economist (csv) REST API
 insert into big_mac_index
-(country_name, iso, currency_code, local_price, dollar_exchange_rate, gdp_dollar, entry_date)
+(country_name, country_iso, currency_code, local_price, dollar_exchange_rate, gdp_dollar, entry_date)
 select col001, col002, col003, col004, col005, col006, to_date(col007,'YYYY-MM-DD')
 from table(apex_data_parser.parse
   (  p_content => apex_web_service.make_rest_request_b

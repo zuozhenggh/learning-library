@@ -32,7 +32,7 @@ In order for the chart to properly utilize the updated value in the select list,
     - **List of Values > SQL Query:** cut and paste the following.
 
       ```
-      <copy>select distinct country_name d, iso r  
+      <copy>select distinct country_name d, country_iso r  
       from big_mac_index  
       order by 1</copy>
       ```

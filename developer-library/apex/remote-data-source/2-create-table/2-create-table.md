@@ -25,7 +25,7 @@ Quick SQL provides an easy way to generate the SQL required to create a relation
     ```
     <copy>big_mac_index  
       country_name  
-      iso
+      country_iso
       currency_code
       local_price num
       dollar_exchange_rate num
