@@ -163,14 +163,40 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
         $ vncserver -geometry 1280x1024
         </copy>
         ```
+
+        ```
+        VNC Server will be started with below output
+        New 'formstoapexstack:1 (opc)' desktop is formstoapexstack:1
+
+        Starting applications specified in /home/opc/.vnc/xstartup
+        Log file is /home/opc/.vnc/formstoapexstack:1.log
+        ```
+
+         Note down what comes after your stack name which is :1 here.
+
+        Open the Log file to check which port the VNC connection will be listening on and note down the port number which is usually 5901 .
+
+        Excerpt from Log file:
+        ```
+        vncext:      VNC extension running!
+        vncext:      Listening for VNC connections on all interface(s), port 5901
+        vncext:      Listening for HTTP connections on all interface(s), port 5801
+        vncext:      created VNC server for screen 0
+        ```
+
     - Your development system may now be ready for accepting VNC connections.
 
       *Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer.*
 
-    -  Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
+       -  Create a tunnel for VNC through SSH,
+          In a terminal window , issue the following command, with your public IP address at the end. This will create the SSH tunnel for you to use for VNC.
+          ```
+          ssh -N -L 5901:127.0.0.1:5901 -i ~/<privatekey> opc@<publicIP>
+          ```
+       -  Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
           ![](./images/VNCViewer.png " ")
 
-      - Note how the connect string for VNC Server is simply PublicIP:5901  
+      - Note how the connect string for VNC Server is simply localhost:1
 
       - Connect to your VNC desktop and provide the password you provided on the host earlier.
 
@@ -335,9 +361,9 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 
- - **Author** -  Vanitha Subramanyam, Senior Solution Architect
- - **Contributors** -
- - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, November 2020
+- **Author** -  Vanitha Subramanyam, Senior Solution Architect
+- **Contributors** - Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
+- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
 
 ## Need Help?
  Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

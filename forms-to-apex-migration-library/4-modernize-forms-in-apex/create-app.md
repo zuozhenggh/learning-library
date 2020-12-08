@@ -92,29 +92,30 @@ We will be walking through series of steps on how to create Customer Summary Rep
     select id, first_name||' '||last_name Name from s_emp where title='Sales Representative' order by last_name
     </copy>
     ````
-    Go to your Application Home Page, Click on Customer Form page
+    Go to your Application Home Page, Click on **Shared Components** and Click on **List of Values**
+    ![](images/apex_lov.png " ")
+
+    Click on Create and choose **Source** as **From Scratch** and Click next
+    ![](images/lov_step1.png " ")
+
+    Specify the name of the List of Values , you can name it as **Salesrep LOV** and Click next
+    ![](images/lov_step2.png " ")
+
+    Choose the source type as **SQL Query** and paste the query copied from the **Record Group Query** and click next
+    ![](images/lov_step3.png " ")
+
+    Leave the default value and Click Create
+    ![](images/lov_step4.png " ")
+
+    **List of values** will be created Successfully
+    ![](images/lov_success.png " ")
+
+    To associate the List of Values to an item in the Page, Go to your Application Home Page, Click on Customer Form page
     ![](images/customer_form.png " ")
 
-    Identify the **Customers** Region and Click on **P3_SALES_REP_ID** Item,Under the Page item Section , Change the **Type** to **Select List** and Scroll down to **List of Values** Section, Change the type to **Shared Component** and for **List of Values** select S_EMP.LAST_NAME , this **List of Values** has been automatically created by APEX
+    Identify the **Customers** Region and Click on **P3_SALES_REP_ID** Item,Under the Page item Section , Change the **Type** to **Select List** and Scroll down to **List of Values** Section, Change the type to **Shared Component** and for **List of Values** select **Salesrep LOV** and Save the page. 
     ![](images/sales-rep-lov.png " ")
     ![](images/list-of-values.png " ")
-
-    Change the **List of Values** to add where clause to limit by **Sales Rep**, Click on the **Shared Component** Icon
-    ![](images/shared-component.png " ")
-
-    Click on **List of Values**
-    ![](images/sc-lov.png " ")
-
-    Click on **S_EMP.LAST_NAME** and Review the Query , if you would like to change the name or add where clause you can do it here.
-    ![](images/lov-summary.png " ")
-
-    To limit only to Sales Rep , add the following condition in the where clause section
-    ````
-    <copy>
-    title='Sales Representative'
-    </copy>
-    ````
-    ![](images/edit-salesrep-lov.png " ")
 
     That completes the List of Values section of the Migration.
 

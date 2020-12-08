@@ -161,9 +161,9 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 
- - **Author** -  Vanitha Subramanyam, Senior Solution Architect
- - **Contributors** - Nayan Karumuri  | Sakthi
- - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, October 2020
+- **Author** -  Vanitha Subramanyam, Senior Solution Architect
+- **Contributors** - Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
+- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
 
 
 
