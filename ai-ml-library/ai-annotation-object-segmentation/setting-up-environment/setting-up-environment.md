@@ -40,9 +40,9 @@ This lab assumes you have:
 
 ## **STEP 2**: Detectron2 
 
-Installation for [Detectron2](https://github.com/facebookresearch/detectron2) is straightforward and can be completed by following [their instructions](https://detectron2.readthedocs.io/tutorials/install.html)
+1. Installation for [Detectron2](https://github.com/facebookresearch/detectron2) is straightforward and can be completed by following [their instructions](https://detectron2.readthedocs.io/tutorials/install.html)
 
-Also [Install cv2](https://pypi.org/project/opencv-python/), a python package for image manipulation.
+2. Also [Install cv2](https://pypi.org/project/opencv-python/), a python package for image manipulation.
 
 ## Acknowledgements
 * **Author** - Justin Blau, Senior Solutions Architect, Big Compute
