@@ -1,107 +1,248 @@
-# Analyze Data
+# Create a Web Application in Oracle Visual Builder
 
-## Introduction
+## Before You Begin
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This 15-minute tutorial shows you how to use Oracle Visual Builder to create a basic web application and populate it with business objects.
 
-Estimated Lab Time: n minutes
+### Background
 
-### About Product/Technology
-Enter background information here..
+Oracle Visual Builder is a development tool for creating web and mobile applications by dragging and dropping components on a page. These components depend on a _business object_ for their data. A business object is just a resource -- like a purchase order or invoice -- that has fields to hold the data for your application. A business object is similar to database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your web application accesses the business objects through their REST endpoints.
 
-### Objectives
+In this tutorial, you'll create the business objects shown here:
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+![Description
+of vbcsca_dbdiagram.png follows](./img/vbcsca_dbdiagram.png)
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+Once you have your business objects, you'll use them to build a very simple Human Resources application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
-### Prerequisites
+**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating applications are the same, no matter what form your data takes.
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+### What Do You Need?
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+-   Access to Oracle Visual Builder
+    
+    This tutorial does not provide access to a Visual Builder instance. Talk to your administrator to get the URL of a Visual Builder instance as well as user credentials to access the instance.
+    
+-   A supported browser
 
-*This is the "fold" - below items are collapsed by default*
+## Create a Web Application
 
-## **STEP 1**: title
+The first thing we'll do is create the web application itself. Later, we'll construct the business objects we need so we can populate the app with data.
 
-Step 1 opening paragraph.
+1.  In the web browser, log in to Oracle Visual Builder.
+    -   If you have no current applications, the landing page appears. If you wish, click the video icon to take an interactive tour of Oracle Visual Builder. Then click **+ New Application**.
+        
+        ![Description
+        of vbcsca_cra_s1a.png follows](./img/vbcsca_cra_s1a.png)
+        
+    -   If you have one or more current applications, the Visual Applications page shows a list of applications. Click **New**.
+        
+        ![Description
+        of vbcsca_cra_s1b.png follows](./img/vbcsca_cra_s1b.png)
+        
+2.  In the Create Application dialog box, enter:
+    
+    -   **Application Name**: `HR Application`
+    -   **Description**: `Tutorial application`
+    
+    The **Application ID** text field is automatically populated as you type based on the **Application Name**. The **Application Template** field is set to Empty Application.
+    
+3.  Click **Finish**.
+    
+    The application is created and opens on the Welcome page.
+    
+    ![Description
+    of vbcsca_cra_s3.png follows](./img/vbcsca_cra_s3.png)
+    
+    The Welcome page contains a set of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts.
+    
+    In the toolbar, the `DEV` and `1.0` tags next to the application name indicate the status (development) and the version.
+    
+4.  We want to create a web app, so under **Create Apps**, click **Web Apps**.
+    
+    The Navigator opens in the Web Applications pane. On the far left side are tabs for **Mobile Applications**, **Web Applications**, **Service Connections**, **Business Objects**, **Components**, **Processes**, and **Source View**.
+    
+5.  Click **+ Web Application** (or click the **+** sign at the top of the pane).
+    
+    ![Description
+    of vbcsca_cra_s5.png follows](./img/vbcsca_cra_s5.png)
+    
+6.  In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under **General Information**. (You can specify uppercase as well as lowercase characters in the application name, but the name  
+    is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and then click **Create**.
+    
+    The application opens on the main-start page. This is the default name assigned to the first page in your application.
+    
+7.  Expand the **hrwebapp** node to view the web application structure, and expand the **Flows** and **main** nodes to view the main-start page, which is automatically created for you.  
+    
+    ![Description
+    of vbcsca_cra_s7.png follows](./img/vbcsca_cra_s7.png)
+    
+    By default, the page opens in the Page Designer, showing the Components and the Structure tabs. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, a structural view of your components will show in the Structure view.
+    
+    On the far right is the Properties tab, which lets you view or edit a component's properties in the Property Inspector. When the entire page is selected, the Property Inspector shows the Page view, where you choose a preferred page layout. (You can click the Properties tab to hide the Property Inspector.)
+    
 
-1. Sub step 1
+## Import a Location Business Object from a File
 
-  To create a link to local file you want the reader to download, use this format:
+In this step, you'll create the Location business object and then import data for it.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+1.  Click the **Business Objects** ![Business Objects icon](./img/vbcsca_bo_icon.png) tab in the Navigator.
+2.  Click the **\+ Business Object** button.
+3.  In the New Business Object dialog box, enter `Location` in the **Label** field and click **Create**. `Location` is also filled in automatically as the **Name** value. When you create a business object, specify the singular form of the noun.
+4.  Click the **Fields** tab.
+    
+    Every business object you create has five default fields: an id, plus fields that provide information on who created and updated the object and when.
+    
+    ![Description
+    of vbcsca_imp_s4.png follows](./img/vbcsca_imp_s4.png)
+    
+5.  Click **\+ Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
+6.  In the pop-up box, enter:
+    
+    -   **Label**: `Name`
+    -   **Field Name**: `name` (automatically populated)
+    -   **Type**: **String** ![String](./img/vbcsca_textfield_icon.png) (selected by default)
+    
+    Click **Create Field**.
+    
+    ![Description
+    of vbcsca_imp_s6.png follows](./img/vbcsca_imp_s6.png)
+    
+7.  In the Property Inspector, select the **Required** check box under **Constraints**.
+    
+    ![Description
+    of vbcsca_imp_s7.png follows](./img/vbcsca_imp_s7.png)
+    
+    A check mark is displayed in the **Required** column for the **Name** field.
+    
+8.  Click [this link](./files/Location.csv) and download the `Location.csv` file to your file system. The file contains four locations for the application.
+9.  In the Business Objects pane of the Navigator, click **Menu** ![Menu icon](./img/vbcsca_menu_icon.png) and select **Data Manager**.
+    
+    ![Description
+    of vbcsca_imp_s9.png follows](./img/vbcsca_imp_s9.png)
+    
+    The Data Manager is what you use to import data from a variety of sources.
+    
+10.  Click **Import from File**.
+    
+    ![Description
+    of vbcsca_imp_s10.png follows](./img/vbcsca_imp_s10.png)
+    
+11.  In the Import Data dialog box, click the import box, select `Location.csv`, and click **Import**. When the import succeeds, click **Close**.
+    
+    ![Description
+    of vbcsca_imp_s11.png follows](./img/vbcsca_imp_s11.png)
+    
+12.  In the Business Objects pane, click **Location**, then click the **Data** tab to view the locations.  
+    
+    ![Description
+    of vbcsca_imp_s12.png follows](./img/vbcsca_imp_s12.png)
+    
+    In the next step, we'll associate these locations with the departments that are located on these floors.
+    
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+## Create a Department Business Object
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
+    
+    ![Description
+    of vbcsca_cdb_s1.png follows](./img/vbcsca_cdb_s1.png)
+    
+2.  In the New Business Object dialog box, enter `Department` in the **Label** field and click **Create**. `Department` is also filled in automatically as the **Name** value.
+3.  Click the **Fields** tab, then click **\+ Field**.
+4.  In the pop-up box, enter:
+    
+    -   **Label**: `Name`
+    -   **Field Name**: `name` (automatically populated)
+    -   **Type**: **String** ![String icon](./img/vbcsca_textfield_icon.png) (selected by default)
+    
+    Click **Create Field**.
+    
+5.  In the Property Inspector for the **Name** field, select the **Required** check box under **Constraints**.
+    
+    A check mark is displayed in the **Required** column for the **Name** field.
+    
+6.  Click **\+ Field** again, then enter or select:
+    
+    -   **Label**: `Location`
+    -   **Field Name**: `location` (automatically populated)
+    -   **Type**: **Reference** ![Reference icon](./img/vbcsca_referencefield_icon.png)
+    -   **Referenced Business Object**: **Location**
+    -   **Display Field**: **Name** (automatically populated)
+    
+    The default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down.
+    
+    Click **Create Field**.
+    
+7.  ![Description
+    of vbcsca_cdb_s6.png follows](./img/vbcsca_cdb_s6.png)
+    
+    A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll specify its Location (one of the floors). The Display Field indicates that the Name field will be displayed, not the Id.
+    
 
-    ![Image alt text](images/sample1.png "Image title")
+## Create an Employee Business Object
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+In this step, we'll create the last business object we need, the Employee object, which contains the employee's name and identifying data. In this case, the Employee has a Reference field that refers to the Department.
 
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. One example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent by at three spaces:
-
-      - List item 1
-      - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-	<copy>Enclose the text you want to copy in <copy&gt;</copy&gt;.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file&gt;</copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
-## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
+2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the **Name** value.
+3.  Click the **Fields** tab, then click **\+ Field**.
+4.  In the pop-up box, enter:
+    
+    -   **Label**: `Name`
+    -   **Field Name**: `name` (automatically populated)
+    -   **Type**: **String** ![String icon](./img/vbcsca_textfield_icon.png) (selected by default)
+    
+    Click **Create Field**.
+    
+5.  In the Property Inspector for the Name field, select the **Required** check box under **Constraints**.
+6.  Click **\+ Field** again, then enter or select:
+    
+    -   **Label**: `Department`
+    -   **Field Name**: `department` (automatically populated)
+    -   **Type**: **Reference** ![Reference icon](./img/vbcsca_referencefield_icon.png)
+    -   **Referenced Business Object**: **Department**
+    -   **Display Field**: **Name** (automatically populated)
+    
+    Click **Create Field**.
+    
+7.  Click **\+ Field** again, then enter or select:
+    
+    -   **Label**: `Hire Date`
+    -   **Field Name**: `hireDate` (automatically populated)
+    -   **Type**: **Date** ![Date icon](./img/vbcsca_datefield_icon.png)
+    
+    Click **Create Field**.
+    
+8.  Click **\+ Field** again, then enter or select:
+    
+    -   **Label**: `Email`
+    -   **Field Name**: `email` (automatically populated)
+    -   **Type**: **Email** ![Email icon](./img/vbcsca_email_icon.png)
+    
+    Click **Create Field**. In the property editor, the Format is set to Email.
+    
+9.  Click the **Endpoints** tab and view the Resource APIs and REST endpoints created for the Employee business object. Because Employee refers to Department, you can see endpoints for both objects if you expand the departmentObject node. Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then minimize it again.  
+    
+    ![Description
+    of vbcsca_cde_s9.png follows](./img/vbcsca_cde_s9.png)
+    
+    If you click an endpoint, an endpoint viewer allows you to perform operations on the endpoints. For example, you can test requests and view responses with specified parameter values:
+    
+    ![Description
+    of vbcsca_cde_s9_result.png follows](./img/vbcsca_cde_s9_result.png)
+    
+10.  In the Business Objects pane of the Navigator, click the **Diagrams** tab, then click the **\+ Business Object Diagram** button.
+    
+    ![Description
+    of vbcsca_cde_s11.png follows](./img/vbcsca_cde_s11.png)
+    
+11.  In the Create Business Object Diagram dialog box, enter `HRDiagram` in the **Diagram name** field and click **Create**.
+12.  In the Property Inspector, click **Select All** to see the three business objects you created and their relationships.
+    
+    ![Description
+    of vbcsca_cde_s12.png follows](./img/vbcsca_cde_s12.png)
+    
+    The diagram looks just like the graphic in the Before You Begin section.
+    
+    So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in a later tutorial.
