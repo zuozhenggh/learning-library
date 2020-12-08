@@ -18,6 +18,8 @@ In this lab, you will:
 * Working knowledge of vi
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
+* DBCS Public Address
+* Database Unique Name
 
 
 ## **STEP 1**: Define and test the connections
