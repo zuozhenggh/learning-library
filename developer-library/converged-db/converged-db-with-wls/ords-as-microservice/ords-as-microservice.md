@@ -14,7 +14,7 @@ ORDS is a middle tier JAVA application that allows you to access your Oracle Dat
 
 ORDS will find and run the appropriate database workload (a query, an anonymous block), and return the output as formatted JSON.
 
-    ![](./images/lab10-about-ords.png)
+  ![](./images/lab10-about-ords.png)
 
 ### Objectives
 - Modify JEE code to replace data from database by ORDS end-point
@@ -63,7 +63,7 @@ This lab assumes you have:
 
     ![](./images/lab10-step2-6.png)
 
-7. Look for the function body and make sure it is getting data by executing the SQL query string named **PRODUCT_COUNT_BY_GROUP**.
+7. Look for the function body and make sure it is getting data by executing the SQL query string named **`PRODUCT_COUNT_BY_GROUP`**.
 
 8. Modify the function in such a way that instead of getting data by executing the SQL, it should fetch data from the provided ORDS URL.
 
