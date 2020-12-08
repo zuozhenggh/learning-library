@@ -331,17 +331,15 @@ If you prefer accessing these from your local computer then chose one of the fol
     ```
 
 ## **STEP 4**: Branding SecureOracle (optional)
-Use the following instructions to customize the logo in the OIG Self Service interface.
+Use the following instructions to customize the logo in the OIG Self Service interface. For illustrations we will use a sample logo image staged on your instance. Feel free to use your own image if preferred. Should you elect to use your own logo, ensure follow the recommended size of 145 x 38 pixels.
 
-1. Copy the image file to the following location:
+1. Copy the image file to *`/home/oracle/products/oim/idm/server/apps/oim.ear/iam-consoles-faces.war/images`*
 
     ```
     <copy>
-    cp /home/oracle/sample/mylogo.png /home/oracle/products/oim/idm/server/apps/oim.ear/iam-consoles-faces.war/images
+    cp /home/oracle/demo/sample-data/mylogo.png /home/oracle/products/oim/idm/server/apps/oim.ear/iam-consoles-faces.war/images
     </copy>
     ```
-
-    **Note:** an image size of 145 x 38 pixels is recommended.
 
 2. Login to the OIG Self Service console as user **xelsysadm**. Click on the **Sandboxes** link located in the top right corner of the Self Service page.
 
