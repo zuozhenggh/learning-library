@@ -18,13 +18,6 @@ With 21c, customers can
 * Unlock innovation
 * Develop powerful, data-driven applications
 
-### Objectives
-
-* Lab:  Create SSH Keys
-* Lab:  Create VCN & DB System
-* Lab:  Prepare for 21c
-* Lab:  Using New Set Operators
-
 ### Prerequisites
 
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
@@ -38,8 +31,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** - Kay Malcolm, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, November 2020
+* **Contributors** - Kay Malcolm, David Start, Kamryn Vinson, Anoosha Pilli, Tom McGinn, Database Product Management
+* **Last Updated By/Date** - Kay Malcolm, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
