@@ -15,9 +15,9 @@ In this lab, you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Working knowledge of vi
-* Lab: SSH Keys
-* Lab: Create a DBCS VM Database
+* Working knowledge of vi or nano
+* Completed Lab: SSH Keys
+* Completed Lab: Create a DBCS VM Database
 * DBCS Public Address
 * Database Unique Name
 
@@ -76,7 +76,7 @@ In this lab, you will:
 	</copy>
 	```
 
-4. In order to create the TNS Entries for the CDB1 and PDB1 you will need the correct SERVICE_NAME parameters for them. We will use the lsnrctl program to get the SERVICE_NAME values for our TNS entries.
+4. In order to create the TNS Entries for the CDB1 and PDB1 you will need the correct SERVICE\_NAME parameters for them. We will use the lsnrctl program to get the SERVICE\_NAME values for our TNS entries.
 
 	```
 	lsnrctl status
@@ -89,7 +89,7 @@ In this lab, you will:
 	Service "pdb1.subnet11241424.vcn11241424.oraclevcn.com"
 	```
 
-6. You are going to create two entries in the tnsnames.ora file. One for CDB1 and one for PDB1. vi the tnsnames.ora
+6. You are going to create two entries in the tnsnames.ora file. One for CDB1 and one for PDB1. Edit the tnsnames.ora using vi or nano to edit.
 
 	````
 	<copy>
@@ -180,7 +180,7 @@ Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle
 	````
 	<copy>
 	cd /home/oracle
-	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9WEb1xKV88FoxNZWWdFYrM_NsBZFv9bsAOnGrXpu8fo4BLE7VDLDLkfQf_BLUyuI/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
+	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/te64gQPSzMrOJZh5jwYPrmS6xwtddOdN90lIWF6mAvM_uIbJlAUEhyGzugZhUTF3/n/oraclepartnersas/b/workshop/o/Cloud_21c_Labs.zip
   </copy>
 	````
 
