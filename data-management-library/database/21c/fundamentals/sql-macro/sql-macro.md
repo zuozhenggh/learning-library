@@ -60,7 +60,8 @@ In this lab, you will:
     Enter password: <b><i>WElcome123##</i></b>
 
     Connected.
-
+    ```
+    ```
     SQL> <copy>@$HOME/labs/M104780GC10/hr_main.sql "WElcome123##" users temp /home/oracle/labs /home/oracle/labs</copy>
 
     specify password for HR as parameter 1:
@@ -93,7 +94,7 @@ In this lab, you will:
 
     ```
 
-4. Connect as `HR` in `PDB21` and create the SQM as an scalar expression.
+4. Connect as `HR` in `PDB1` and create the SQM as an scalar expression.
 
 
     ```
@@ -103,17 +104,13 @@ In this lab, you will:
     Enter password: <i><b>password</b></i>
 
     Connected to:
-
+    ```
+    ```
     SQL> <copy>CREATE OR REPLACE FUNCTION concat_self(str varchar2, cnt pls_integer)
-
                 RETURN VARCHAR2 SQL_MACRO(SCALAR)
-
           IS BEGIN
-
                 RETURN 'rpad(str, cnt * length(str), str)';
-
     END;
-
     /</copy>
 
     Function created.
