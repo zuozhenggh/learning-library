@@ -1,4 +1,4 @@
-# Create a 21C VM Database
+# Create a 21C DBCS VM Database and VCN
 
 ## Introduction
 
@@ -6,8 +6,12 @@ This lab walks you through the steps to create a virtual cloud network (VCN) and
 
 A virtual cloud network (VCN) provides the necessary network Infrastructure required to support resources, including Oracle Database instances. This includes a gateway, route tables, security lists, DNS and so on. 
 
+Estimated Lab Time: 35 minutes
+
 ### Objectives
-You can use a 1-node virtual database system to complete labs and tutorials that require an Oracle database.
+* Create a VCN 
+* Create a Single Node 21c DBCS VM 
+* Login to your environment
 
 ### Prerequisites
 
@@ -22,11 +26,11 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
   ![](../create-virtual-cloud-network/images/virtual-cloud-networks.png " ")
 
-2. Select your compartment and click on **Networking Quickstart**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
+2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.  If you were assigned a compartment, enter it here.
 
   ![](../create-virtual-cloud-network/images/networking-quickstart.png " ")
 
-3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start Workflow**.
+3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start VCN Wizard**.
 
   ![](../create-virtual-cloud-network/images/start-workflow.png " ")
 
@@ -50,39 +54,51 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
   ![](images/create-VM-DB.png " ")
 
-3. On the DB System Information form, enter the following information and click **Next**:
+3. On the DB System Information form, enter the following information and click **Next**  Enter the following
 
-    * In the **Name your DB system** field, give your database a name.
-    * Select **Logical Volume Manager** as the Storage Management Software.
-    * In the **Add public SSH keys** section, browse to the location of your SSH keys and select the public key file (with a .pub extension).
-    * In the **Specify the Network information** section, select the VCN you created using the drop down list.
-    * Select the public subnet using the drop down list.
-    * Enter a hostname prefix.
+    * **Select a compartment**:  Select the compartment you used for your VCN
+    * **Name your DB system**: Give your database a name.
+    * **Select an availability domain**:  Choose an AD
+    * **Select a shape type**:  Choose *Virtual Machine*
+    * **Select a shape**: *VM Standard2.4* (If you are in a Free Trial account, choose the smaller *VM Standard 2.2* shape, keep in mind that this will increase provisioning time)
+    * **Configure the DB system - Node count**: *1* 
+    * **Configure the DB system - Software edition**: *Enterprise Edition High Performance*
+    * **Storage Management Software**: *Logical Volume Manager* *Note:  This is **very** important to choose Logical Volume Manager*
+    * **Available Storage**: *256*
+    * **Add public SSH keys**: Paste your public key from Lab 1.  If you are in Cloud Shell use the Paste option and ensure you paste a single line (paste in notepad to check it is one line).  If you are using a terminal browse to the location of your SSH keys and select the public key file (with a .pub extension). *Note:  Ensure you paste a one line file if using Cloud Shell*
+    * **Specify the Network information - Virtual Cloud Network**: Select the VCN you created using the drop down list
+    * **Specify the Network information - Client subnet**:  *Public subnet* using the drop down list.
+    * **Hostname prefix**:  Enter a short hostname prefix *Note: Hostname should start with a letter*
 
     ![](images/create-VM-DB-form1.png " ")
 
 4. On the Database Information form, enter the following information and click **Create DB System**.
 
-    * In the **Database name** field, change the default database name to "cdb1".
-    * On the **Database version** drop down menu, select the version of the Oracle Database you want: 21c.
-    * In the **PDB name** field, enter "pdb1".
-    * Enter the password: `WElcome123##` for your sys user in the **Password** field and then repeat the password in the **Confirm password** field.  This password will be used for all exercises in the 21c workshop series.  Please enter it carefully.
+    * **Database name**: Choose default database name to "cdb1".
+    * **Database image**: Click the **Change Database Image** button and select *21c*
+    * **PDB name** field, enter "pdb1".
+    * **Create administrator credentials**: Use the password `WElcome123##` for your sys user in the **Password** field and then repeat the password in the **Confirm password** field.  This password will be used for all exercises in the 21c workshop series.  Please enter it carefully.
 
     ![](images/create-VM-DB-form2.png " ")
+    ![](images/create-VM-DB-form3.png " ")
 
-5. After a few minutes, your Database System will change color from yellow (Provisioning) to green.
+5. After a few minutes, your Database System will change color from yellow (Provisioning) to green.  *Note:  If you use a smaller VM Shape, the provisioning may take longer*
 
     ![](images/database-VM-created.png " ")
 
-## **STEP 3**: Connect to the Database using SSH
+## **STEP 3**: Gather system details and connect to the Database using SSH
 
-1. On the **DB System Details** page, Click **Nodes**.
+1. Go back to the Oracle Cloud Console and click on the DB System you just created.  Note that you have a fully provisioned Database.
+2. In the Databases section, jot down your **Database Unique Name**.  You will need this for the next lab.
+3. Check your storage management software to ensure you selected **Logical Volume Manager**.  This is necessary for the next lab.
+   
+    ![](images/database-VM-created.png " ")
+
+4. On the resources tab, click **Nodes** to gather your IP address. Note your Public IP Address
 
   ![](images/VM-DB-IP.png " ")
 
-   Note the IP address.
-
-2. In a terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
+4. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -91,7 +107,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
     [opc@tmdb1 ~]$
     ```
 
-3. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
+5. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
 
     ```
     [opc@tmdb1 ~]$ sudo su - oracle
@@ -101,7 +117,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
     [oracle@tmdb1 ~]$ sqlplus / as sysdba
 
     SQL*Plus: Release 21.0.0.0.0 - Production on Sat Nov 15 14:01:48 2020
-    Version 20.2.0.0.0
+    Version 21.2.0.0.0
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
@@ -121,7 +137,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Kay Malcolm, November 30, 2020
+* **Last Updated By/Date** - Kay Malcolm, December 7, 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
