@@ -18,6 +18,10 @@
 		{
             "title": "Lab 2: Create Pages for Business Objects",
             "filename": "../../create-pages/create-pages.md"
+        },
+		{
+            "title": "Lab 3: Add Navigation and Data to Your Web App",
+            "filename": "../../add-nav-and-data/add-nav-and-data.md"
         }
     ]
 }
