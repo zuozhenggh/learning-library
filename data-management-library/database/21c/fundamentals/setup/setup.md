@@ -76,7 +76,7 @@ In this lab, you will:
 	</copy>
 	```
 
-4. In order to create the TNS Entries for the CDB1 and PDB1 you will need the correct SERVICE_NAME parameters for them. We will use the lsnrctl program to get the SERVICE_NAME values for our TNS entries.
+4. In order to create the TNS Entries for the CDB1 and PDB1 you will need the correct SERVICE\_NAME parameters for them. We will use the lsnrctl program to get the SERVICE\_NAME values for our TNS entries.
 
 	```
 	lsnrctl status
