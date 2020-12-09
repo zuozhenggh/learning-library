@@ -178,7 +178,7 @@ Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle
 	````
 	<copy>
 	cd /home/oracle
-	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9WEb1xKV88FoxNZWWdFYrM_NsBZFv9bsAOnGrXpu8fo4BLE7VDLDLkfQf_BLUyuI/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
+	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/te64gQPSzMrOJZh5jwYPrmS6xwtddOdN90lIWF6mAvM_uIbJlAUEhyGzugZhUTF3/n/oraclepartnersas/b/workshop/o/Cloud_21c_Labs.zip
   </copy>
 	````
 

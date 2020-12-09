@@ -21,35 +21,35 @@ In this lab, you will:
 
 ## **STEP 1:** Test the bitwise AND function
 
-1. Connect to `PDB21` as `SYSTEM` to query values with numbers and bitwise aggregate functions.
+1. Connect to `PDB1` as `SYSTEM` to query values with numbers and bitwise aggregate functions.
 
-  
+
     ```
-    
-    $ <copy>sqlplus system@PDB21</copy>
-    
+
+    $ <copy>sqlplus system@PDB1</copy>
+
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-    
+
     Enter password: <b><i>WElcome123##</i></b>
-    
+
     Connected to:
-    
+
     SQL>
-    
+
     ```
 
 2.  A bitwise AND is a binary operation that takes two equal-length binary representations and performs the logical AND operation on each pair of the corresponding bits. If both bits in the compared position are 1, the bit in the resulting binary representation is 1, otherwise, the result is 0. Apply the `BIT_AND_AGG` function on two numbers. The bit pattern for the values used in the examples below are 01 for 1, 10 for 2, and 11 for 3.
 
     ```
     SQL> <copy>
-    WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual) 
+    WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual)
     SELECT BIT_AND_AGG(c1) FROM x;</copy>
-    
+
     BIT_AND_AGG(C1)
     ---------------
-                  2 
+                  2
     SQL>
-    
+
     ```
 
 ## **STEP 2:** Test the bitwise OR function
@@ -60,7 +60,7 @@ A bitwise OR is a binary operation that takes two bit patterns of equal length a
 
     ```
 
-    SQL> <copy>WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual) 
+    SQL> <copy>WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual)
                   SELECT BIT_OR_AGG(c1) FROM x;</copy>
 
     BIT_OR_AGG(C1)
@@ -73,13 +73,13 @@ A bitwise OR is a binary operation that takes two bit patterns of equal length a
 
 ## **STEP 3:** Test the bitwise XOR function
 
-A bitwise XOR is a binary operation that takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. Therefore, the comparison of two bits results in 1 if the two bits are different, and 0 if they are equal. 
+A bitwise XOR is a binary operation that takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. Therefore, the comparison of two bits results in 1 if the two bits are different, and 0 if they are equal.
 
 1. Apply the `BIT_XOR_AGG` function on two numbers.
 
     ```
 
-    SQL> <copy>WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual) 
+    SQL> <copy>WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual)
                   SELECT BIT_XOR_AGG(c1) FROM x;</copy>
 
     BIT_XOR_AGG(C1)
