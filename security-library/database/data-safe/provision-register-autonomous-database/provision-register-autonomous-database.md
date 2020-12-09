@@ -97,7 +97,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 4. If a help note is displayed, click the **X** button to close it.
 
-5. Open the [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script in a text editor, such as NotePad.
+5. Open the [load-data-safe-sample-data_admin.sql](  https://objectstorage.us-ashburn-1.oraclecloud.com/p/W0JmKtImWp4e_FXSg4gj0wlwnAEf3OJ75cCpCdicH38ly55qrPaaZbO1el3ayfyR/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script in a text editor, such as NotePad.
 
 6. Copy the entire script to the clipboard and then paste it into a worksheet in SQL Developer Web.
 
@@ -135,7 +135,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
       - `REGIONS` - 4 rows
       - `SUPPLEMENTAL_DATA` - 149 rows
 
-14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script.
+14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql](   https://objectstorage.us-ashburn-1.oraclecloud.com/p/W0JmKtImWp4e_FXSg4gj0wlwnAEf3OJ75cCpCdicH38ly55qrPaaZbO1el3ayfyR/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script.
 
 15. Sign out of SQL Developer Web and close the tab.
 
