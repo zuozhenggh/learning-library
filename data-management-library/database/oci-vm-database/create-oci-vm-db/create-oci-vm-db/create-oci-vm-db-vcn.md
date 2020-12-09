@@ -6,6 +6,8 @@ This lab walks you through the steps to create a virtual cloud network (VCN) and
 
 A virtual cloud network (VCN) provides the necessary network Infrastructure required to support resources, including Oracle Database instances. This includes a gateway, route tables, security lists, DNS and so on. 
 
+Estimated Lab Time: 35 minutes
+
 ### Objectives
 * Create a VCN 
 * Create a Single Node 21c DBCS VM 
