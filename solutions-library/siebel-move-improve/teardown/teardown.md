@@ -1,19 +1,18 @@
-# Teardown Your Oracle E-Business Suite Environments
+# Teardown Your Oracle Siebel Environment
 
 ## Introduction
-In this lab, we will use the Oracle E-Business Suite Cloud Manager to destroy your Oracle E-Business Suite environments. Then we will delete all the resources in OCI with the Stack we created in Lab 2.
+In this lab we will destroy your Siebel environment by deleting all the resources we created in OCI.
 
 Estimated Lab Time: 15 minutes
 
 
 ### Objectives
-* Delete your EBS environments
-* Destroy OCI Resources used for Cloud Manager
+* Delete your Siebel virtual machine
+* Destroy OCI Resources
 
 ### Prerequisites
 * Tenancy Admin User
 * Tenancy Admin Password
-* Cloud Manager Admin Credentials
 
 ## **STEP 1:** Delete the EBS Environment from Cloud Manager
 

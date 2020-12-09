@@ -26,8 +26,8 @@
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 4: Teardown Your Siebel Environments",
-            "description": "Teardown Your Siebel Environments",
+            "title": "Lab 4: Teardown Your Oracle Siebel Environment",
+            "description": "Teardown Your Siebel Environment",
             "filename": "../../teardown/teardown.md"
         }
     ]

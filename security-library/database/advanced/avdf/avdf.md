@@ -177,7 +177,7 @@ This lab assumes you have:
 
 3. Using the Audit Vault Web Console view audit data collected via the All Activity Report 
 
-    - Open a new Web Browser tab at the URL `https://<AVS-VM_@IP-Public>`
+    - Open a new Web Browser tab at the URL *`https://<AVS-VM_@IP-Public>`*
     - Login to Audit Vault Web Console as "*AVAUDITOR*" with the password "*T06tron.*" (keep it open for the rest of the lab)
 
        ![](./images/avdf-300.png " ")
@@ -209,7 +209,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
 2. Click on the `Targets` tab
 
-3. Click on the Target `pdb1`
+3. Click on the Target **pdb1**
 
 4. On the target screen, under `Audit Policy` perform the following:
     - Checkbox *Retrieve Immediately*
@@ -221,14 +221,14 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
 5. Next, view the audit policy reports for `pdb1`
     - Click on the `Policies` tab and you will be placed on the `Audit Policies` page
-    - Click on the Target Name `pdb1`
+    - Click on the Target Name **pdb1**
     - On this screen, you will see two tabs, `Unified Auditing` and `Traditional Auditing`. Since this is a modern version of Oracle, 12.1 or higher, we want to use Unified Auditing
-    - In the `Core Policies` section, ensure the following are checkmarked
-        - Critical Database Activity
-        - Database Schema Changes
-        - All Admin Activity
-        - Center for Internet Security (CIS) Configuration
-    - Click `Provision Unified Policy`
+    - In the **Unified Auditing** tab, go to the **Core Policies** section and ensure the following options are checkmarked
+        - *`Critical Database Activity`*
+        - *`Database Schema Changes`*
+        - *`All Admin Activity`*
+        - *`Center for Internet Security (CIS) Configuration`*
+    - Click [**Provision Unified Policy**]
 
       ![](./images/avdf-012.png " ")
 
@@ -268,7 +268,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
 2. Click on the `Targets` tab
 
-3. Click on the Target `pdb1`
+3. Click on the Target **pdb1**
 
 4. Under `User Entitlements`
     - Checkbox *Retrieve Immediately*
@@ -285,8 +285,8 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
    ![](./images/avdf-017.png " ")
 
 7. Click on the `User Accounts` report
-    - Under `Target Name`, select `All`
-    - For `Label`, select `Latest`
+    - Under `Target Name`, select *`All`*
+    - For `Label`, select *`Latest`*
     - Click [**Go**] and you will see a report that looks like this
 
        ![](./images/avdf-018.png " ")
@@ -340,7 +340,7 @@ Next, go back to Audit Vault Web Console as "*AVAUDITOR*"
 
 - Click [**Targets**]
 
-- Click `pdb1`
+- Click **pdb1**
 
 - Where the section `Stored Procedure Auditing` says `Disabled` change it to `Enabled`
 
@@ -400,21 +400,21 @@ In this lab you will use the results from a Database Security Assessment Tool (D
 
 3. Now that you have the role granted, you can load the data from our DBSAT file
 
-    - Open a new Web Browser tab at the URL `https://<AVS-VM_@IP-Public>`
+    - Open a new Web Browser tab at the URL *`https://<AVS-VM_@IP-Public>`*
     - Login to Audit Vault Web Console as "*AVADMIN*" with the password "*T06tron.*" (keep it open for the rest of the lab)
 
           ![](./images/avdf-400.png " ")
 
     - Upload the `pdb1_dbsat_discover.csv` file you downloaded earlier into AVDF Console
         - Click the `Targets` tab
-        - Click the `pdb1` target name
-        - In the right, top, corner of the page click `Sensitive Objects`
-        - Browse the `pdb1_dbsat_discover.csv` file you saved to your local system
+        - Click the target name **pdb1**
+        - In the right, top, corner of the page click [**Sensitive Objects**]
+        - Browse the *`pdb1_dbsat_discover.csv`* file you saved earlier to your local system
 
           ![](./images/avdf-020.png " ")
 
         - Click [**Upload**]
-        - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
+        - If you click [**Sensitive Objects**] again you will see you have the `csv` file loaded
 
           ![](./images/avdf-021.png " ")
 
@@ -493,26 +493,26 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
    ![](./images/avdf-028.png " ")
 
-    **Note**: The URL `http://<DBSECLAB-VM_@IP-Public>:50002/` is provided with your own public IP address
+    **Note**: The Golden Gate Administration Server URL is provided with your own DBSec-Lab VM Public IP address
 
 5. Login to your Golden Gate Web Console
 
-    - Open a new Web Browser tab at the URL `http://<DBSECLAB-VM_@IP-Public>:50002/`
+    - Open a new Web Browser tab at the URL *`http://<DBSECLAB-VM_@IP-Public>:50002/`*
     - Login to Golden Gate Web Console as *oggadmin* with the password "*Oracle123*"
 
        ![](./images/avdf-029.png " ")
 
 6. In the top left corner, open the Burger menu and select **Configuration**
 
-7. Click the `+` next to `Credentials`
+7. Click the [**+**] next to `Credentials`
 
 8. Next, create a new Credential with the following values
 
-    - Credential Domain: *cdb1*
-    - Credential Aalias: *cdb1*
-    - User ID: *c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))*
-    - Password: *Oracle123*
-    - Verify Password: *Oracle123*
+    - Credential Domain: *`cdb1`*
+    - Credential Aalias: *`cdb1`*
+    - User ID: *`c##avggadmin@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.0.0.150)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=cdb1)))`*
+    - Password: *`Oracle123`*
+    - Verify Password: *`Oracle123`*
 
        ![](./images/avdf-030.png " ")
 
@@ -613,7 +613,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
     - Click [**Save**]
 
-21. The new `Audit Trail` might say `Stopped` but if you refresh the page (press `F5`) then it should switch to `Collecting` or `Idle`
+21. The new `Audit Trail` might say `Stopped` but if you refresh the page (press `F5`) then it should switch to `Collecting` or `Idle`. Attention, don't go to next step while the Audit Trail is not started.
 
    ![](./images/avdf-041.png " ")
 
@@ -732,15 +732,15 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 3. Click on `Database Firewalls` tab
 
-4. Click on `dbfw` Database Firewall Name
+4. Click on **dbfw** Database Firewall Name
 
    ![](./images/avdf-101.png " ")
 
-5. Click `Network Settings`
+5. Click **Network Settings**
 
    ![](./images/avdf-102.png " ")
 
-6. Click on `eth0`
+6. Click on **eth0**
 
    ![](./images/avdf-103.png " ")
 
@@ -761,7 +761,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 10. Now, you will enable DB Firewall Monitoring for `pdb1` using the Proxy Port we just created
 
-11. Click the `Targets` tab and click `pdb1`
+11. Click the `Targets` tab and click **pdb1**
 
 12. In the `Database Firewall Monitoring` section of this page, click [**Add**]
 
@@ -801,7 +801,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
           <copy>cd $DBSEC_LABS/avdf/dbf</copy>
           ````
 
-    - Verify connectivity to the database *without* the Database Firewall
+    - Verify connectivity to the database **without** the Database Firewall
 
           ````
           <copy>./dbf_sqlplus_without_dbfw.sh</copy>
@@ -813,7 +813,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
           - This will connect **directly** to the pluggable database `pdb1` on the standard listener port 1521
           - You should see that the connection shows **`10.0.0.150`** which is the IP Address of the DBSec-Lab VM
 
-    - Verify connectivity to the database *with* the Database Firewall
+    - Verify connectivity to the database **with** the Database Firewall
 
           ````
           <copy>./dbf_sqlplus_with_dbfw.sh</copy>
@@ -829,7 +829,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
 In this lab you will modify the Glassfish connection. Instead of connecting directly to the pluggable database, `pdb1`, Glassfish will connect through the Oracle Database Firewall so we can monitor, and block, SQL commands.
 
-1. First, open a new Web browser tab and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
+1. First, open a new Web browser tab and launch the Glassfish app by navigating to this URL: *`http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`*
 
     **Note**: Take the URL and use it to verify that the application functions **before** we make any changes to connection string!
 
@@ -889,9 +889,9 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 2. Click the `Database Firewalls` tab
 
-3. Click the `dbfw` Target
+3. Click on the Target name **dbfw**
 
-4. Under `Configuration`, click `System Services`
+4. Under `Configuration`, click **System Services**
 
 5. Select the `Date and Time` tab
 
@@ -905,7 +905,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 8. On top, click on the `Targets` tab
 
-9. Click `pdb1`
+9. Click **pdb1**
 
 10. Click the `Database Firewall Monitoring` sub-tab
 
@@ -998,13 +998,15 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 1. Before we build our policy we have to make sure DB Firewall has logged the SQL Statements from the **Train the Database Firewall for expected SQL traffic** Lab as well as SQL statements from our `sqlplus` scripts
 
-2. Go back to your terminal session to demonstrate connectivity through the Database Firewall and the ability to query the `EMPLOYEESEARCH_PROD` tables
+2. Go back to your terminal session to demonstrate connectivity through the Database Firewall and the ability to query the `EMPLOYEESEARCH_PROD` tables **before applying the DB Firewall policy**
 
       ````
       <copy>./dbf_query_fw_policy.sh</copy>
       ````
 
    ![](./images/avdf-128.png " ")
+
+     **Note**: You can see all rows!
 
 3. Go back to Audit Vault Web Console as "*AVAUDITOR*" to create a Database Firewall Policy
 
@@ -1026,15 +1028,15 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
     - Click [**Save**]
 
-8. Click [**Sets/Profiles**]
+8. Now, create the context of this policy by clicking [**Sets/Profiles**]
 
    ![](./images/avdf-130.png " ")
 
-9. In the `SQL Cluster Sets` subtab, click [**Add**]
+9. In the **SQL Cluster Sets** subtab, click [**Add**]
 
    ![](./images/avdf-131.png " ")
 
-10. In the `Add SQL Cluster Set` screen, enter the following
+10. In the **Add SQL Cluster Set** screen, create the list of known queries as following
 
     - Name: *`HR SQL Cluster`*
     - Description: *`Known SQL statements for HR App`*
@@ -1044,23 +1046,17 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
        ![](./images/avdf-132.png " ")
     
-    - Click [**Actions**] and select *`ALL`* in `Row per page` option to display all the results
+    - Click [**Actions**] and select *`ALL`* in **Row per page** option to display all the results
 
-    - Check the `Select all` box next to  the `Cluster ID` Header
+    - Check the **Select all** box next to the `Cluster ID` Header to add all "trained" queries into the SQL Clusters
 
-    - Like that we are sure to add the SQL Clusters that also allow our `sqlplus` connections to work
+    - But please **unselect the SQL*Plus query** run earlier in Step 12-1 to block it (because here we consider that it's not an official HR App query)
 
         ```
-        SELECT DECODE(USER, '#######', XS_SYS_CONTEXT('##########','########'), USER) FROM SYS.DUAL
-        BEGIN DBMS_APPLICATION_INFO.SET_MODULE(:0,NULL); END;
-        select upper(sys_context ('#######', '############') || '#' || sys_context('#######', '########')) global_name from dual
-        BEGIN DBMS_OUTPUT.ENABLE(NULL); END;
-        extracted_from_protocol describe employeesearch_prod.demo_hr_employees
-        extracted_from_protocol transaction commit
-        extracted_from_protocol invalid '#####################################'
+        select userid, firstname, lastname, emptype, position, city, ssn, sin, nino from employeesearch_prod.demo_hr_employees where rownum < 00
         ```
 
-    - They should look like this:
+    - You should have something like this:
 
        ![](./images/avdf-133.png " ")
 
@@ -1068,9 +1064,9 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 11. Click [**Back**]
 
-12. In the `SQL Statement` sub-tab, click [**Add**]
+12. Select the **SQL Statement** sub-tab and click [**Add**]
 
-13. Complete the `SQL Statement` with the following information
+13. Complete the `SQL Statement` with the following information to allow the `HR SQL Cluster` created previoulsy (here we consider that these queries are official and can be executed)
 
     - Rule Name: *`Allows HR SQL`*
     - Description: *`Allowed SQL statements for HR App`*
@@ -1084,11 +1080,11 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
     - Click [**Save**]
 
-14. Next, add database users that we trust to connect to the database through the Database Firewall. We will create a `Database User Set` of our Database Administrators.
+14. Next, add database users that we trust to connect to the database through the Database Firewall. We will create a `Database User Set` for our DB Admin (`SYSTEM`) and for the HR App's owner (`EMPLOYEESEARCH_PROD`). Only these 2 DB users will be able to run the `HR SQL Cluster`
 
 15. Click [**Sets/Profiles**]
 
-16. Click `Database User Sets` tab
+16. Select the `Database User Sets` tab
 
 17. Click [**Add**] and enter the following information
 
@@ -1101,62 +1097,75 @@ In this lab you will use the Glassfish Application to connect through the Oracle
     - Click [**Save**]
     - Click [**Back**]
 
-18. Your `HR Policy` should look like this from the `Session Context` sub-tab (`No Session Context Created`)
+18. Finally, select the **Default** tab to specify what the DB Firewall policy has to do you if you are not in the context definied previously (here we will block all the "black-listed" queries and we will return a blank result)
+
+    - Action: *`Block`*
+    - Logging Level: *`One-Per-Session`*
+    - Threat Severity: *`Moderate`*
+    - Substitution SQL: *`select 100 from dual where 1=2`*
+
+       ![](./images/avdf-135b.png " ")
+
+    - Click [**Save**]
+
+19. Your `HR Policy` should look like this from the `Session Context` sub-tab (`No Session Context Created`)
 
    ![](./images/avdf-136.png " ")
 
-19. Your `HR Policy` should look like this from the `SQL Statement` sub-tab
+20. Your `HR Policy` should look like this from the `SQL Statement` sub-tab
 
    ![](./images/avdf-137.png " ")
 
-20. Your `HR Policy` should look like this from the `Database Objects` sub-tab (`No Database Objects Created`)
+21. Your `HR Policy` should look like this from the `Database Objects` sub-tab (`No Database Objects Created`)
 
    ![](./images/avdf-138.png " ")
 
-21. Your `HR Policy` should look like this from the `Default` sub-tab
+22. Your `HR Policy` should look like this from the `Default` sub-tab
 
    ![](./images/avdf-139.png " ")
 
-22. Click [**Save**]
+23. Click [**Save**]
 
-23. Then, click `Database Firewall Policies` sub-menu
+24. Then, click `Database Firewall Policies` sub-menu
 
-24. Click the `checkbox` for `HR Policy` and click [**Publish**]
+25. Click the `checkbox` for `HR Policy` and click [**Publish**]
 
    ![](./images/avdf-140.png " ")
 
-25. Click the `Targets` tab
+26. Click the `Targets` tab
 
-26. Click the Target Name `pdb1`
+27. Click the Target Name **pdb1**
 
-27. Click the `Database Firewall Monitoring` sub-tab
+28. Click the `Database Firewall Monitoring` sub-tab
 
-28. Under `Database Firewall Policy`, change the Name to *`HR Policy`* and click the green `checkmark` to implement the Database Firewall Policy
+29. Under `Database Firewall Policy`, change the Name to *`HR Policy`* and click the green `checkmark` to implement the Database Firewall Policy
 
    ![](./images/avdf-141.png " ")
 
-29. Now, we will validate that the Glassfish App functions as expected
+30. Once the DB Firewall Policy is enabled, we will validate the impact on the Glassfish App
     - Go back to your Glassfish App web page and login as *`hradmin`* with the password "*`Oracle123`*"
     - Click `Search Employees`
     - Click [**Search**]
 
        ![](./images/avdf-114.png " ")
 
-30. Add a search criteria and query again
+    **Note**: All rows are returned... Remember, all "official" queries from the HR App have been allowed in `HR SQL Cluter` in your DB Firewall policy
+
+30. Even if you add a search criteria and query again, you can access to the result
 
    ![](./images/avdf-142.png " ")
 
-31. Go back to your SSH session and run the same script to verify the new DB Firewall policy
+31. Now, go back to your SSH session and run the same script as at the beginning to see the impact of the DB Firewall policy
 
       ````
       <copy>./dbf_query_fw_policy.sh</copy>
       ````
 
-40. The output should show the `desc` command but return `No rows selected` for the SQL query
+40. The output should return `No rows selected` for the SQL query
 
    ![](./images/avdf-143.png " ")
 
-    **Note**:  Remember, this is because the Database Firewall substituted "`select * from dual where 1=2`" for the regular query
+    **Note**: Remember, this is because the DB Firewall policy substitute the result by "`select 100 from dual where 1=2`" for "unofficial" queries from the HR App, although you are still logged in with an authorized DB user (here SYSTEM)!
 
 ## **STEP 13**: DB Firewall - Restore the Glassfish App Configuration to Use Direct Mode
 
