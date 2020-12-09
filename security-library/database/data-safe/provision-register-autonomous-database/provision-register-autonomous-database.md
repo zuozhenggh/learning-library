@@ -4,8 +4,6 @@
 ## Introduction
 This lab shows you how to create an Autonomous Database in Oracle Cloud Infrastructure, register it with Oracle Data Safe, and load sample data into it. You also view the list of registered target databases from the Oracle Data Safe Console and from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console.
 
-- This is a test to link to [analyze alerts and audit reports](?lab=analyze-alerts-audit-reports)
-
 
 Estimated Lab Time: 30 minutes
 
@@ -54,7 +52,7 @@ To complete this lab, you need to have the following:
 
       - **Deployment Type** - Leave **Shared Infrastructure** selected.
 
-      - **Always Free** - Leave is option deselected (the slider should be to the left).
+      - **Always Free** - Leave this option deselected (the slider should be to the left).
 
       - **Database version** - Leave **19c** selected.
 
@@ -88,7 +86,7 @@ To complete this lab, you need to have the following:
 
 2. In the **Register Database with Data Safe** dialog box, click **Confirm**.
 
-3. Wait for the registration process to finish. When registration is completed, the status reads **Registered**. By default, when you register an Autonomous Database, you are authorized to use the User Assessment, Security Assessment, and Activity Auditing features in Oracle Data Safe with your database.
+3. Wait for the registration process to finish. When registration is completed, the status reads **Registered**. By default, when you register an Autonomous Database, you are authorized to use the User Assessment, Security Assessment, Activity Auditing, and Data Discovery features in Oracle Data Safe with your database.
 
     ![Status reads registered](images/status-registered.png)
 

@@ -145,7 +145,7 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
 1. From the navigation menu, select **Identity**, and then **Policies**. The **Policies** page in IAM is displayed.
 
-2. Under **COMPARTMENT**, select the user's compartment.
+2. Under **COMPARTMENT**, leave the **root** compartment selected.
 
 3. Click **Create Policy**. The **Create Policy** page is displayed.
 
@@ -167,17 +167,16 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
     e) Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**. This statement allows the user to create and manage an Autonomous Database.
 
-8. For **Policy Versioning**, leave **KEEP POLICY CURRENT** selected.
 
-9. Click **Create**.
+8. Click **Create**.
 
-10. Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
+9. Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
 
-11. Click **+ Another Statement**.
+10. Click **+ Another Statement**.
 
-12. In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
+11. In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
 
-13. Click **Save Changes**.
+12. Click **Save Changes**.
 
 
 
@@ -208,7 +207,7 @@ You can enable Oracle Data Safe in multiple regions of your tenancy, if needed. 
 4. For the user group that you created (for example, `dsg01`), select **Manage** from the **All Features** drop-down list.
 
 5. Click **Save**. The regular user can now access Oracle Data Safe.
-
+  here
 
 
 ### **Send information to the user**
@@ -220,8 +219,6 @@ When you are done setting up the environment, email the user with the following 
 - The user's compartment name.
 
 
-
-
 ## Learn More
 
 - [ Oracle Cloud Infrastructure documentation - Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm)
@@ -230,7 +227,7 @@ When you are done setting up the environment, email the user with the following 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, November 4, 2020
+* **Last Updated By/Date** - Jody Glover, December 9, 2020
 
 
 ## Need Help?
