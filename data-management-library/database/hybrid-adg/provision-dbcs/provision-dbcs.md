@@ -16,7 +16,7 @@ This lab assumes you have already completed the following:
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Create a SSH Keys pair
 
-## **Step 1:** Create the VCN
+## **STEP 1:** Create the VCN
 
 1. Open the navigation menu. Under **Core Infrastructure**, go to **Networking** and click **Virtual Cloud Networks**.
 
@@ -54,7 +54,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **Step 2:** Create the DB system
+## **STEP 2:** Create the DB System
 
 1. Open the navigation menu. Under **Database**, click **Bare Metal, VM, and Exadata**.
 
@@ -129,12 +129,10 @@ You have completed the Database Cloud provisioning steps.  It will be used as yo
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Minqiao Wang, DB Product Management, Oct 2020
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
-* **Workshop (or Lab) Expiry Date** - <Month Year> 
+* **Author** - Minqiao Wang, DB Product Management
+* **Last Updated By/Date** - Minqiao Wang, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -3,7 +3,7 @@
 ## Introduction
 In a Data Guard configuration, information is transmitted in both directions between primary and standby databases. This requires basic configuration, network tuning and opening of ports at both primary and standby databases. 
 
-Estimated Lab Time: 10 minutes.
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -19,37 +19,37 @@ This lab assumes you have already completed the following labs:
 
 In this lab, you can use 2 terminal windows, one connected to the on-premise host, the other connected to the cloud host. 
 
-## **Step 1:** Name Resolution Configure
+## **STEP 1:** Name Resolution Configure
 
 1. Connect as the opc user.
 
- ```
- ssh -i labkey opc@xxx.xxx.xxx.xxx
- ```
+    ```
+    ssh -i labkey opc@xxx.xxx.xxx.xxx
+    ```
 
 2. Edit `/etc/hosts` on both sides.
 
- ```
- <copy>sudo vi /etc/hosts</copy>
- ```
+    ```
+    <copy>sudo vi /etc/hosts</copy>
+    ```
 
-   - From on-premise side, add the cloud host **public ip** and host name in the file like the following:
+   From on-premise side, add the cloud host **public ip** and host name in the file like the following:
 
-   ```
-   xxx.xxx.xxx.xxx dbstby.***.***.oraclevcn.com  dbstby
-   ```
+      ```
+      xxx.xxx.xxx.xxx dbstby.***.***.oraclevcn.com  dbstby
+      ```
 
-   - From the cloud side, add the on-premise host **public ip** and host name in the file like the following:
+   From the cloud side, add the on-premise host **public ip** and host name in the file like the following:
 
-   ```
-   xxx.xxx.xxx.xxx primary.subnet1.primaryvcn.oraclevcn.com primary
-   ```
+      ```
+      xxx.xxx.xxx.xxx primary.subnet1.primaryvcn.oraclevcn.com primary
+      ```
 
 3. Validate the connectivity, install telnet on both sides.
 
- ```
- <copy>sudo yum -y install telnet</copy>
- ```
+    ```
+    <copy>sudo yum -y install telnet</copy>
+    ```
 
    - From the on-premise side, telnet the public ip or host name of the cloud host, enter `^]` and return to exit. 
 
@@ -85,19 +85,19 @@ In this lab, you can use 2 terminal windows, one connected to the on-premise hos
 
 
 
-## **Step 2:** Prompt-less SSH configure
+## **STEP 2:** Prompt-less SSH configure
 
 Now you will configure the prompt-less ssh for oracle users between on-premise and the cloud.
 
 1. su to **oracle** user in both side.
 
- ```
- <copy>sudo su - oracle</copy>
- ```
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 2. Configure prompt-less ssh from on-premise to cloud.
 
-     - From on-premise side, generate the ssh key, and cat the public key, copy all the content in the id_rsa.pub
+  From on-premise side, generate the ssh key, and cat the public key, copy all the content in the id_rsa.pub
 
      ```
      [oracle@primary ~]$ ssh-keygen -t rsa
@@ -126,13 +126,13 @@ Now you will configure the prompt-less ssh for oracle users between on-premise a
      [oracle@primary ~]$  
      ```
 
-     - From cloud side, edit the `authorized_keys` file, copy all the content in the id_rsa.pub into it, save and close
+  From cloud side, edit the `authorized_keys` file, copy all the content in the id_rsa.pub into it, save and close
 
      ```
      <copy>vi .ssh/authorized_keys</copy>
      ```
 
-     - From on-premise side, test the connect from on-premise to cloud, using the public ip or hostname of the cloud hosts.
+  From on-premise side, test the connect from on-premise to cloud, using the public ip or hostname of the cloud hosts.
 
      ```
      [oracle@primary ~]$ ssh oracle@dbstby echo Test success
@@ -147,7 +147,7 @@ Now you will configure the prompt-less ssh for oracle users between on-premise a
 
 3. Configure prompt-less ssh from cloud to on-premise.
 
-     - From cloud side, generate the ssh key, and cat the public key, copy all the content in the id_rsa.pub.
+  From cloud side, generate the ssh key, and cat the public key, copy all the content in the id_rsa.pub.
 
      ```
      [oracle@dbstby ~]$ ssh-keygen -t rsa
@@ -176,19 +176,19 @@ Now you will configure the prompt-less ssh for oracle users between on-premise a
      [oracle@dbstby ~]$ 
      ```
 
-     - From on-premise side, edit the `authorized_keys` file, copy all the content in the `id_rsa.pub` into it, save and close
+  From on-premise side, edit the `authorized_keys` file, copy all the content in the `id_rsa.pub` into it, save and close
 
      ```
      <copy>vi .ssh/authorized_keys</copy>
      ```
 
-     - Change mode of the file.
+  Change mode of the file.
 
      ```
      <copy>chmod 600 .ssh/authorized_keys</copy>
      ```
 
-     - From cloud side, test the connect from cloud to on-premise, using the public ip or hostname of the on-premise hosts.
+  From cloud side, test the connect from cloud to on-premise, using the public ip or hostname of the on-premise hosts.
 
      ```
      [oracle@dbstby ~]$ ssh oracle@primary echo Test success
@@ -204,12 +204,11 @@ Now you will configure the prompt-less ssh for oracle users between on-premise a
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Minqiao Wang, DB Product Management, Oct 2020
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
-* **Workshop (or Lab) Expiry Date** - <Month Year> 
+* **Author** - Minqiao Wang, DB Product Management
+* **Last Updated By/Date** - Minqiao Wang, October 2020
+
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

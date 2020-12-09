@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, You will use a compute instance in the OCI to simulate the on-premise primary database. The Oracle 19c database has been installed and patched to 19.7.0. 
 
-Estimated Lab Time: 40 minutes.
+Estimated Lab Time: 40 minutes
 
 ### Objectives
 
@@ -23,15 +23,15 @@ This lab assumes you have completed the following labs:
 * Setup Primary Environment
 
 
-## **Step 1:** Open the 1521 port for the on-premise database
+## **STEP 1:** Open the 1521 Port for the on-premise Database
 
-7. Connect to the VM which you created before with **opc** user. Use putty tool (Windows) or command line (Mac, Linux).
+1. Connect to the VM which you created before with **opc** user. Use putty tool (Windows) or command line (Mac, Linux).
 
      ```
      ssh -i labkey opc@xxx.xxx.xxx.xxx
      ```
   
-8. Copy and run the following command to open the 1521 port in the VM.
+2. Copy and run the following command to open the 1521 port in the VM.
 
      ```
      <copy>
@@ -42,7 +42,7 @@ This lab assumes you have completed the following labs:
      ```
 
 
-## **Step 2:** Enable ssh connect for the oracle user
+## **STEP 2:** Enable ssh Connect for the Oracle User
 
 1. Work as opc user, edit the ssh configure file.
 
@@ -65,7 +65,7 @@ This lab assumes you have completed the following labs:
 
 
 
-## **Step 3:** Enable TDE
+## **STEP 3:** Enable TDE
 
 Oracle MAA best practice recommends using Oracle Transparent Data Encryption (TDE) to encrypt both primary and standby databases to ensure all data is encrypted at-rest. Data can be converted during the migration process but it’s highly recommended to convert to TDE prior to migration to provide the most secure Data Guard environment. 
 
@@ -144,7 +144,7 @@ Oracle MAA best practice recommends using Oracle Transparent Data Encryption (TD
      SQL>
      ```
 
-8. Verify the keystore, you can see the wallet is openned by password.
+8. Verify the keystore, you can see the wallet is opened by password.
 
      ```
      SQL> <copy>select * from v$encryption_wallet;</copy>
@@ -266,7 +266,7 @@ Oracle MAA best practice recommends using Oracle Transparent Data Encryption (TD
 
 
 
-## **Step 4:** Encrypt the data files
+## **STEP 4:** Encrypt the Data Files
 
 According to the best practice, you should encrypt all the data files. In this lab, we only encrypt the **USERS** tablespace in the pdb.
 
@@ -308,7 +308,7 @@ According to the best practice, you should encrypt all the data files. In this l
 
 
 
-## **Step 5:** Enable the Network Encryption
+## **STEP 5:** Enable the Network Encryption
 
 VPN connection or Oracle Net encryption is also required for encryption-in-flight for any other database payload (e.g. data file or redo headers) that are not encrypted by TDE. In this lab, you use public internet to connect between on-premise and the cloud, so you need to enable the network encryption.
 
@@ -346,20 +346,20 @@ VPN connection or Oracle Net encryption is also required for encryption-in-fligh
      <copy>vi $ORACLE_HOME/network/admin/sqlnet.ora</copy>
      ```
 
-Add following lines in the sqlnet.ora, save and exit.
+     Add following lines in the sqlnet.ora, save and exit.
 
-```
-<copy>
-SQLNET.ENCRYPTION_SERVER=REQUIRED
-SQLNET.CRYPTO_CHECKSUM_SERVER=REQUIRED
-SQLNET.ENCRYPTION_TYPES_SERVER=(AES256,AES192,AES128)
-SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER=(SHA1)
-SQLNET.ENCRYPTION_CLIENT=REQUIRED
-SQLNET.CRYPTO_CHECKSUM_CLIENT=REQUIRED
-SQLNET.ENCRYPTION_TYPES_CLIENT=(AES256,AES192,AES128)
-SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
-</copy>
-```
+     ```
+     <copy>
+     SQLNET.ENCRYPTION_SERVER=REQUIRED
+     SQLNET.CRYPTO_CHECKSUM_SERVER=REQUIRED
+     SQLNET.ENCRYPTION_TYPES_SERVER=(AES256,AES192,AES128)
+     SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER=(SHA1)
+     SQLNET.ENCRYPTION_CLIENT=REQUIRED
+     SQLNET.CRYPTO_CHECKSUM_CLIENT=REQUIRED
+     SQLNET.ENCRYPTION_TYPES_CLIENT=(AES256,AES192,AES128)
+     SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
+     </copy>
+     ```
 
 
 
@@ -398,7 +398,7 @@ SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
 
 
 
-## **Step 6:** Enable achivelog and flashback
+## **STEP 6:** Enable Achivelog and Flashback
 
 1. Check the achivelog mode, you can find it's disable now.
 
@@ -472,7 +472,7 @@ SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
 
 
 
-## **Step 7:** Change redo log size and create standby log
+## **STEP 7:** Change Redo Log Size and Create Standby Log
 
 1. Change the redo log size to 1024M according to the best practice. Check the status of the redo log first.
 
@@ -496,7 +496,7 @@ SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
      </copy>
      ```
 
-3. Switch the logfile serveral times.
+3. Switch the logfile several times.
 
      ```
      <copy>
@@ -574,7 +574,7 @@ SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
      ```
 
 
-## **Step 8:** Modify the init parameters for best practice
+## **STEP 8:** Modify the Init Parameters for Best Practice
 
 Modify some init parameters for best practice.
 
@@ -599,12 +599,11 @@ SQL> exit;
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Minqiao Wang, DB Product Management, Oct 2020
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
-* **Workshop (or Lab) Expiry Date** - <Month Year> 
+* **Author** - Minqiao Wang, DB Product Management
+* **Last Updated By/Date** - Minqiao Wang, October 2020
+
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
