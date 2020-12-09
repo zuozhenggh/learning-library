@@ -47,7 +47,7 @@ This lab assumes you have:
 
 | **Step No.** | **Feature**                            | **Approx. Time** | **Details**                                                                                                      | **Value proposition**                                                                                                          |
 | ------------ | -------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| 1            | Setup and Verify Environment Variables | 5min             | Set and verify the JAVA_HOME and COHERENCE_HOME for both terminal windows                                        | Environment setup                                                                                                              |
+| 1            | Setup and Verify Environment Variables | 5min             | Set and verify the `JAVA_HOME` and `COHERENCE_HOME` for both terminal windows                                        | Environment setup                                                                                                              |
 | 2            | Build JAVA Labs                        | 10min            | Build all the java Labs as needed and execute the build script with the name of the example collection           | All the Examples are ready to be Run and Folder is current                                                                     |
 | 3            | Test Cache with Contacts Get & Put     | 5min             | Data access features of Coherence including getting, putting and removing data from a provided contacts.csv file | Test data access in Cache                                                                                                      |
 | 4            | Test Cache Security Features           | 10min            | Security feature of accessing Cache securely using role and password                                             | Test cache reference that requires a password an attempts cache and invocation service operations that require different roles |
@@ -83,7 +83,9 @@ For ease of execution of this workshop, your instance has been pre-configured fo
     ![](./images/guacamole-landing.png " ")
 
 ### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
+
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*oracle*”.

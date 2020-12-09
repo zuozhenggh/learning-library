@@ -149,11 +149,13 @@ In this lab, you will:
 
     ```
 
-    $ <copy>sqlplus auditor@PDB21</copy>
+    $ <copy>sqlplus auditor@PDB1</copy>
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
     Enter password: <i><copy>password</copy></i>
+    ```
+    ```
 
     SQL> <copy>CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER);</copy>
 
@@ -174,11 +176,8 @@ In this lab, you will:
     ```
 
     SQL> <copy>CREATE BLOCKCHAIN TABLE ledger_emp (employee_id NUMBER, salary NUMBER)
-
                         NO DROP UNTIL 31 DAYS IDLE
-
                         NO DELETE LOCKED
-
                         HASHING USING "SHA2_512" VERSION "v1";</copy>
 
     Table created.
@@ -193,11 +192,8 @@ In this lab, you will:
     ```
 
     SQL> <copy>SELECT row_retention, row_retention_locked,
-
                         table_inactivity_retention, hash_algorithm  
-
                   FROM   user_blockchain_tables
-
                   WHERE  table_name='LEDGER_EMP';</copy>
 
     ROW_RETENTION ROW TABLE_INACTIVITY_RETENTION HASH_ALG
@@ -210,7 +206,7 @@ In this lab, you will:
 
     ```
 
-3. Show the description of the table.
+4. Show the description of the table.
 
 
     ```
@@ -245,11 +241,8 @@ In this lab, you will:
     SQL> <copy>COL "Data Type" FORMAT A28</copy>
 
     SQL> <copy>SELECT internal_column_id "Col ID", SUBSTR(column_name,1,30) "Column Name",
-
                         SUBSTR(data_type,1,30) "Data Type", data_length "Data Length"
-
                   FROM   user_tab_cols       
-
                   WHERE  table_name = 'LEDGER_EMP' ORDER BY internal_column_id;</copy>
 
         Col ID Column Name              Data Type                    Data Length
@@ -286,6 +279,14 @@ In this lab, you will:
 
     ```
 
+6. To view all the blockchain tables in your current database, enter command:
+    
+    ```
+    <copy>
+    select * from dba_blockchain_tables;  
+    ```
+
+
 ## **STEP 2:** Insert rows into the blockchain table
 
 1. Insert a first row into the blockchain table.
@@ -321,11 +322,8 @@ In this lab, you will:
     SQL> <copy>COL "Chain HASH" FORMAT 99999999999999</copy>
 
     SQL> <copy>SELECT ORABCTAB_CHAIN_ID$ "Chain ID", ORABCTAB_SEQ_NUM$ "Seq Num",
-
                 to_char(ORABCTAB_CREATION_TIME$,'dd-Mon-YYYY hh-mi') "Chain date",
-
                 ORABCTAB_USER_NUMBER$ "User Num", ORABCTAB_HASH$ "Chain HASH"
-
         FROM   ledger_emp;</copy>
 
     Chain ID   Seq Num Chain date        User Num
@@ -364,11 +362,13 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT hr@PDB21</copy>
+    SQL> <copy>CONNECT hr@PDB1</copy>
 
     Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
+    ```
+    ```
 
     SQL> <copy>INSERT INTO  auditor.ledger_emp VALUES (106,24000);</copy>
 
@@ -387,20 +387,18 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT auditor@PDB21</copy>
+    SQL> <copy>CONNECT auditor@PDB1</copy>
 
     Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
+    ```
+    ```
 
     SQL> <copy>SELECT ORABCTAB_CHAIN_ID$ "Chain ID", ORABCTAB_SEQ_NUM$ "Seq Num",
-
                   to_char(ORABCTAB_CREATION_TIME$,'dd-Mon-YYYY hh-mi') "Chain date",
-
                   ORABCTAB_USER_NUMBER$ "User Num", ORABCTAB_HASH$ "Chain HASH",
-
                   employee_id, salary
-
             FROM   ledger_emp;</copy>
 
     Chain ID   Seq Num Chain date        User Num
@@ -454,7 +452,7 @@ In this lab, you will:
 
     ERROR at line 1:
 
-    ORA-05715: <copy>operation not allowed on the blockchain table</copy>
+    ORA-05715:operation not allowed on the blockchain table
 
     SQL>
 
@@ -467,17 +465,11 @@ In this lab, you will:
     SQL> <copy>SET SERVEROUTPUT ON</copy>
 
     SQL> <copy>DECLARE
-
       NUMBER_ROWS NUMBER;
-
     BEGIN
-
       DBMS_BLOCKCHAIN_TABLE.DELETE_EXPIRED_ROWS('AUDITOR','LEDGER_EMP', null, NUMBER_ROWS);
-
       DBMS_OUTPUT.PUT_LINE('Number of rows deleted=' || NUMBER_ROWS);
-
     END;
-
     /</copy>    2    3    4    5    6    7
 
     <copy>Number of rows deleted=0</copy>
@@ -508,7 +500,7 @@ In this lab, you will:
 
     ERROR at line 1:
 
-    ORA-05715: <copy>operation not allowed on the blockchain table</copy>
+    ORA-05715: operation not allowed on the blockchain table
 
     SQL>
 
@@ -527,7 +519,7 @@ In this lab, you will:
 
     ERROR at line 1:
 
-    ORA-05731: <copy>blockchain table LEDGER_EMP cannot be altered</copy>
+    ORA-05731: blockchain table LEDGER_EMP cannot be altered
 
     SQL>
 
@@ -552,7 +544,7 @@ In this lab, you will:
 
     ERROR at line 1:
 
-    ORA-05723: <copy>drop blockchain table LEDGER_EMP not allowed</copy>
+    ORA-05723: drop blockchain table LEDGER_EMP not allowed
 
     SQL>
 
@@ -600,11 +592,8 @@ In this lab, you will:
     ```
 
     SQL> <copy>CREATE BLOCKCHAIN TABLE auditor.ledger_test (id NUMBER, label VARCHAR2(2))
-
           NO DROP UNTIL 1 DAYS IDLE
-
           NO DELETE UNTIL 5 DAYS AFTER INSERT
-
           HASHING USING "SHA2_512" VERSION "v1";</copy>
 
     2    3    4  CREATE BLOCKCHAIN TABLE auditor.ledger_test (id NUMBER, label VARCHAR2(2))
@@ -616,11 +605,8 @@ In this lab, you will:
     ORA-05741: minimum retention time too low, should be at least 16 days
 
     SQL> <copy>CREATE BLOCKCHAIN TABLE auditor.ledger_test (id NUMBER, label VARCHAR2(2))
-
           NO DROP UNTIL 16 DAYS IDLE
-
           NO DELETE UNTIL 16 DAYS AFTER INSERT
-
           HASHING USING "SHA2_512" VERSION "v1";</copy>
 
     Table created.
@@ -647,11 +633,13 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT hr@PDB21</copy>
+    SQL> <copy>CONNECT hr@PDB1</copy>
 
     Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
+    ```
+    ```
 
     SQL> <copy>INSERT INTO auditor.ledger_test VALUES (1,'A1');</copy>
 
@@ -670,11 +658,13 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT auditor@PDB21</copy>
+    SQL> <copy>CONNECT auditor@PDB1</copy>
 
     Enter password: <copy><i>WElcome123##</i></copy>
 
     Connected.
+    ```
+    ```
 
     SQL> <copy>SELECT * FROM auditor.ledger_test;</copy>
 
@@ -693,7 +683,7 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT auditor@PDB21</copy>
+    SQL> <copy>CONNECT auditor@PDB1</copy>
 
     Enter password: <copy><i>WElcome123##</i></copy>
 
@@ -702,27 +692,16 @@ In this lab, you will:
     SQL> <copy>SET SERVEROUTPUT ON</copy>
 
     SQL> <copy>DECLARE
-
       row_count NUMBER;
-
       verify_rows NUMBER;
-
       instance_id NUMBER;
-
     BEGIN
-
       FOR instance_id IN 1 .. 2 LOOP
-
         SELECT COUNT(*) INTO row_count FROM auditor.ledger_test WHERE ORABCTAB_INST_ID$=instance_id;
-
         DBMS_BLOCKCHAIN_TABLE.VERIFY_ROWS('AUDITOR','LEDGER_TEST', NULL, NULL, instance_id, NULL, verify_rows);
-
         DBMS_OUTPUT.PUT_LINE('Number of rows verified in instance Id '|| instance_id || ' = '|| row_count);
-
       END LOOP;
-
     END;
-
     /</copy>
 
     Number of rows verified in instance Id 1 = 1
@@ -746,6 +725,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -6,7 +6,7 @@ Oracle powers deeper insights by embedding machine learning and AI into every as
 
 *Estimated Lab Time:* 30 Minutes.
 
-    ![](./images/augmentedanalytics.png " ")
+  ![](./images/augmentedanalytics.png " ")
 
 
 ### Objectives ###
