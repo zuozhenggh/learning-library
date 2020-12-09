@@ -6,7 +6,7 @@ The labs in this workshop walk you through all the steps to get started using Or
 
 Estimated Workshop Time: 2 hours
 
-### About Oracle Data Safe
+## About Oracle Data Safe
 
 Oracle Data Safe is Oracle’s platform for securing data in databases. As a native Oracle Cloud Infrastructure service, Oracle Data Safe lets you assess the security of your database configurations, find your sensitive data, mask that data in non-production environments, discover the risks associated with database users, and monitor database activity.
 
