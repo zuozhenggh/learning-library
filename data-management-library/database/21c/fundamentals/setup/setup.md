@@ -180,7 +180,7 @@ Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle
 	````
 	<copy>
 	cd /home/oracle
-	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9WEb1xKV88FoxNZWWdFYrM_NsBZFv9bsAOnGrXpu8fo4BLE7VDLDLkfQf_BLUyuI/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
+	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/te64gQPSzMrOJZh5jwYPrmS6xwtddOdN90lIWF6mAvM_uIbJlAUEhyGzugZhUTF3/n/oraclepartnersas/b/workshop/o/Cloud_21c_Labs.zip
   </copy>
 	````
 
@@ -216,8 +216,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
