@@ -893,6 +893,8 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 4. Under `Configuration`, click **System Services**
 
+    **Note**: According to your resources it can take up to several minutes to present the Tabs!
+
 5. Select the `Date and Time` tab
 
 6. Ensure the first NTP service is `ON` and the IP is `169.254.169.254`, and close the pop-up windows
