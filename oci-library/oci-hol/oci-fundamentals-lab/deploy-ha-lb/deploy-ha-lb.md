@@ -45,7 +45,7 @@ Lab 2: Create SSH Keys - Cloud Shell
       - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
       - Click **Next**
 
-    ![](./../../images/oci-compute-vm-configure-networking.png " ")
+    
     
 4. Verify all the information and  Click **Create**.
 
@@ -71,7 +71,7 @@ Lab 2: Create SSH Keys - Cloud Shell
       - **Virtual cloud network compartment**: Select your compartment
       - **Virtual cloud network**: Choose the VCN
       - **Subnet Compartment:** Choose your compartment.
-      - **Subnet:** Choose the Public Subnet under **Public Subnets**
+      - **Subnet:** Choose the Public Subnet
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
@@ -252,7 +252,7 @@ In this section we will create a new security list. This security list will be u
     - Compartment: Make sure the correct Compartment is selected
     - Target Internet Gateway: Select the Internet Gateway for your VCN.
 
-        ![](./../../images/oci-route-table-create.png " ")
+        ![](./../../images/oci-networking-vcn-route-table-create.png " ")
     
 
 6. Click **Create Route Table**.
@@ -306,9 +306,7 @@ When you create a load balancer, you choose its dynamic shape (maximum trhoughpu
 
     - **SPECIFY A LOAD BALANCING POLICY**: Weighted Round Robin
     - Click **Add Backend** and choose the two compute instances created earlier
-
-    ![](./../../images/oci-networking-lb-create-add-backends.png " ")
-
+   
     ***SPECIFY HEALTH CHECK POLICY***
 
     - PROTOCOL: HTTP
