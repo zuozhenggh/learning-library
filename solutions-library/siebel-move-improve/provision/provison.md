@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this exercise, you will create your Siebel instance by setting up the Siebel Marketplace image and use Jenkins to deploy an instance of Siebel.
+In this exercise, you will create your Siebel application by setting up the Siebel Marketplace image and then use Jenkins to deploy an instance of Siebel.
 
 Estimated Lab Time: 1 hour 15 minutes
 
@@ -11,11 +11,11 @@ Estimated Lab Time: 1 hour 15 minutes
 
 ### Objectives
 
-To deploy the Siebel Application, in this lab, you will:
+To deploy the Siebel Instance, in this lab, you will:
 *   Launching Instance of Siebel from Marketplace
 *   Deploy the Siebel Application
 *   Generate a Jenkins URL
-*   Deploy the Siebel CRM Application
+*   Deploy and access Siebel instance
 
 
 ## **STEP 1**: Launching Instance of Siebel from Marketplace

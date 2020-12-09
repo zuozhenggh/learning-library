@@ -14,10 +14,10 @@ Estimated Lab Time: 20 minutes
 To set up the OCI tenancy, in this lab, you will:
 *   Create a Sub-Compartment
 *   Create a Virtual Cloud Network (VCN)
-*   Establish Security List Rules for Siebel
+*   Establish Security List Rules to allow access to our Siebel Instance
 
 ### Prerequisites
-* User with 'manage' access to Networking and Compute, compartment, marketplace access
+* A user with 'manage' access to Networking and Compute, compartment, and marketplace access
 * SSH key
 
 
