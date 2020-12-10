@@ -8,16 +8,7 @@ In this lab, you’ll learn how to use Apache Zeppelin for querying and visualiz
 
 Estimated Lab Time : 30 minutes
 
-### Objectives
-
-- Analyze the graph using Apache Zeppelin and the interpreter provided by the Graph server
-
-### Prerequisites
-
-- An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-- Successful completion of all steps in the previous lab
-
-## About Zeppelin
+### About Zeppelin
 
 Apache Zeppelin is web-based notebook-style application that enables interactive data analytics and collaboration using live code, text and visualizations. Like most notebooks, Zeppelin provides a number of useful data-discovery features such as :
 
@@ -29,6 +20,15 @@ Apache Zeppelin is web-based notebook-style application that enables interactive
 Zeppelin is essentially a scripting environment for running ordinary SQL statements along with a lot of other languages such as Spark, Python, Hive, R etc. These are controlled by a feature called "interpreters".
 
 The in-memory analyst provides an interpreter implementation for Apache Zeppelin. This lab sets up a zeppelin notebook environment to connect to the in-memory analyst and runs queries to analyze the retail graph created earlier.
+
+### Objectives
+
+- Analyze the graph using Apache Zeppelin and the interpreter provided by the Graph server
+
+### Prerequisites
+
+- An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+- Successful completion of all steps in the previous lab
 
 ## **STEP 1**: Setup Zeppelin in a Docker Container
 
@@ -42,7 +42,7 @@ Running Apache Zeppelin on Docker is a great way to get started with Zeppelin. F
 
 2. The lab environment contains a Docker-compose YAML file (located in **/home/oracle/oracle-pg/docker-compose.yaml**) that defines the Zeppelin docker container configuration.
 
->**Docker Compose** is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure application’s services. Then, with a single command, create and start all the services from your configuration.
+    - **Docker Compose** is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure application’s services. Then, with a single command, create and start all the services from your configuration.
 
 3. Build the Zeppelin container using **docker-compose**.
 
@@ -67,7 +67,7 @@ Running Apache Zeppelin on Docker is a great way to get started with Zeppelin. F
 
 2. Upon a successful connection to Zeppelin you'll land at the main page similar to the below screenshot.
 
-    >On the left of the page all existing notes are listed (**Notebooks** in Zeppelin are referred to as **Notes**). Notes consist of one or more paragraphs of code, which you can use to define and run snippets of code in a flexible manner.
+    - On the left of the page all existing notes are listed (**Notebooks** in Zeppelin are referred to as **Notes**). Notes consist of one or more paragraphs of code, which you can use to define and run snippets of code in a flexible manner.
 
     ![](./images/zeppelin-homepage.png)
 
@@ -83,7 +83,7 @@ Running Apache Zeppelin on Docker is a great way to get started with Zeppelin. F
 
 6. Locate the zeppelin.json file you've downloaded and click **Upload**.
 
-    >By default, the name of the imported note is the same as the original note but you can override it by providing a new name.
+    - By default, the name of the imported note is the same as the original note but you can override it by providing a new name.
 
     ![](./images/online-retail-note-imported.png)
 
