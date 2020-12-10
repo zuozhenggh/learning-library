@@ -27,9 +27,9 @@ In this lab, you will:
 
 1. Connect to PDB1 pluggable database as SYSTEM user.
 
-   ````
-   $  sqlplus system/WElcome123##@[Hostname Prefix]:1521/pdb1.[Host Domain Name]
-   ````
+    ````
+    $  sqlplus system/WElcome123##@[Hostname Prefix]:1521/pdb1.[Host Domain Name]
+    ````
 
 **Hostname Prefix** and **Host Domain Name** values can be found on Database System details page, under Network.
 
@@ -37,13 +37,13 @@ In this lab, you will:
 
 Users require no special privileges to create and work with blockchain tables or JSON data type. A simple user will do the job just fine. As a best practice, you can create a specific tablespace for storing JSON documents, but for this simple case we will use the existing one.
 
-   ````
-   create user ooe identified by "WElcome123##" default tablespace USERS quota unlimited on USERS;
-   ````
+    ````
+    create user ooe identified by "WElcome123##" default tablespace USERS quota unlimited on USERS;
+    ````
 
-   ````
-   GRANT connect, resource TO ooe;
-   ````
+    ````
+    GRANT connect, resource TO ooe;
+    ````
 
 3. Connect to PDB1 pluggable database as OOE user.
 
