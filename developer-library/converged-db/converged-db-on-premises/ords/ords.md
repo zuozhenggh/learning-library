@@ -552,7 +552,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 
 Refer **"Define Resource Module, Resource Template" section from STEP 2** to create resource module and resource template. All those STEPS will be performed under DB connection XML.
 
-`Retrieve information from XML table using GET method`
+**Retrieve information from XML table using GET method**
 
 13. In the RESTful Services navigator, the resource module cnvg contains the resource template cnvg/:id. This template will retrieves the  information from table PURCHASEORDER based on the parameter id. Right click on template  **cnvg/:id** then select **Add handler** and select **GET**.   
    ![](./images/ordslab2_3.png " ")
