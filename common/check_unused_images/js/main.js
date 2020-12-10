@@ -6,7 +6,7 @@ const nav_pages = [{ id: '#btn_home', html: 'home1.html' }];
 let images_md = [], images_dir = [];
 
 // document.ready function
-$(() => {
+$(document).ready(function() {
     $('#lastmodified').text(document.lastModified); //sets the value for the last modified date in the HTML output
     $('.card-body').hide();
 
@@ -61,8 +61,8 @@ let enterMdData = evt => {
 
         images_md = sort_unique(images_md);
         $('#import_md').text('[1 MD file containing ' + images_md.length + ' image references uploaded successfully]');
-        $('#mdfile').html('<strong>MD file you uploaded</strong><div>' +  filename + '</div><br/>');
-        $('#import_md').attr('title', "Click here to upload another MD file"); 
+        $('#mdfile').html('<strong>MD file selected</strong><div>' +  filename + '</div><br/>');
+        $('#import_md').attr('title', "Click here to select another MD file"); 
     
         checkDiff();
     }
@@ -90,8 +90,8 @@ let readImageContent = (evt) => {
                 check++;                
                 if (check == total) {                      
                     $('#btn_image_files').text('[' + uploaded_images.length + ' image(s) uploaded successfully]');
-                    $('#images').html('<strong>Images you uploaded</strong><div>' +  uploaded_images.join(', ') + '</div><br/>');
-                    $('#btn_image_files').attr('title', "Click here to upload another image(s)"); 
+                    $('#images').html('<strong>All images in the images folder</strong><div>' +  uploaded_images.join(', ') + '</div><br/>');
+                    $('#btn_image_files').attr('title', "Click here to select another image folder"); 
                     images_dir = uploaded_images;       
                     checkDiff();                
                 }
