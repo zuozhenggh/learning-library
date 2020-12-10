@@ -29,13 +29,18 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Modernize with Coherence Cache",
+      "title": "Lab 4: Initialize Environment",
+      "description": "Initialize Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 5: Modernize with Coherence Cache",
       "description": "Coherence Lab",
       "publisheddate": "08/10/2020",
       "filename": "../../coherence/coherence.md"
     },
     {
-      "title": "Lab 5: Modernize with Weblogic and Helidon",
+      "title": "Lab 6: Modernize with Weblogic and Helidon",
       "description": "Weblogic and Helidon Lab",
       "publisheddate": "08/10/2020",
       "filename": "../../weblogic-helidon/weblogic-helidon.md"

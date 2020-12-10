@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop.
 
-Estimated Lab Time: 15 minute
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -15,15 +15,46 @@ In this lab, you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Working knowledge of vi
-* Lab: SSH Keys
-* Lab: Create a 21c DBCS VM Database
-  
+* Working knowledge of vi or nano
+* Completed Lab: SSH Keys
+* Completed Lab: Create a DBCS VM Database
+* DBCS Public Address
+* Database Unique Name
+
 
 ## **STEP 1**: Define and test the connections
 
-1. Login to Oracle Cloud and re-start the Oracle Cloud Shell.  
-2. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
+1. If you aren't still logged in, login to Oracle Cloud and re-start the Oracle Cloud Shell otherwise skip to Step 4.
+2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
+
+    ```
+    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    Enter passphrase for key './myOracleCloudKey':
+    Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
+    [opc@tmdb1 ~]$
+    ```
+3. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
+
+    ```
+    [opc@tmdb1 ~]$ sudo su - oracle
+    [oracle@tmdb1 ~]$ . oraenv
+    ORACLE_SID = [cdb1] ?
+    The Oracle base has been set to /u01/app/oracle
+    [oracle@tmdb1 ~]$ sqlplus / as sysdba
+
+    SQL*Plus: Release 21.0.0.0.0 - Production on Sat Nov 15 14:01:48 2020
+    Version 21.2.0.0.0
+
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+
+    Connected to:
+    Oracle Database 21c EE High Perf Release 21.0.0.0.0 - Production
+    Version 21.0.0.0.0
+
+    SQL>
+	```
+
+4. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
 
 	```
 	<copy>
@@ -37,31 +68,76 @@ In this lab, you will:
 	</copy>
 	```
 
-2. Ensure that the TNS alias have been created for both cdb21 and pdb21 in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora`
+3. Ensure that the TNS alias have been created for both cdb21 and pdb21 in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
 
 	```
 	<copy>
-	cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+	cat /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
 	</copy>
 	```
 
-4. Create an alias entry by copying the CDB alias entry, replace the CDB alias name with your PDB name, and the CDB service name with your PDB service name.  Use vi to do this.
+4. In order to create the TNS Entries for the CDB1 and PDB1 you will need the correct SERVICE\_NAME parameters for them. We will use the lsnrctl program to get the SERVICE\_NAME values for our TNS entries.
+
+	```
+	lsnrctl status
+	```
+
+5. The output of the lsnrctl command will give you several entries. The two we care about are the following. Your values will be slightly different based on your vcn name, subnet and region.
+
+	```
+	Service "cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com"
+	Service "pdb1.subnet11241424.vcn11241424.oraclevcn.com"
+	```
+
+6. You are going to create two entries in the tnsnames.ora file. One for CDB1 and one for PDB1. Edit the tnsnames.ora using vi or nano to edit.
 
 	````
 	<copy>
-	vi cat /u01/app/oracle/homes/OraDB21000_home1/network/admin/tnsnames.ora
+	vi /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
 	</copy>
 	````
 
-5. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+7. Copy the entry for CDB1 that is already in the tnsnames file. Make the following changes:
+    - Change the name of the entry to be CDB1 instead of the Unique Database Name.
+		- Make sure the SERVICE\_NAME parameter has SERVICE\_NAME from the lsnrctl command above.
+		- Do not change the host and port values.
+
+	````
+	CDB1 =
+	(DESCRIPTION =
+	(ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
+	(CONNECT_DATA =
+	(SERVER = DEDICATED)
+	(SERVICE_NAME = cdb1_iad1vs.subnet11241424.vcn11241424.oraclevcn.com)
+	)
+	)
+	````
+
+8. Repeat the same process for PDB1 in the tnsnames file making the following changes:
+    - Change the name of the entry to be PDB1 instead of the Unique Database Name.
+    - Make sure the SERVICE\_NAME parameter has SERVICE\_NAME from the lsnrctl command above.
+    - Do not change the host and port values.
+
+		````
+		PDB1 =
+		(DESCRIPTION =
+		(ADDRESS = (PROTOCOL = TCP)(HOST = hostname21.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
+		(CONNECT_DATA =
+			(SERVER = DEDICATED)
+			(SERVICE_NAME = pdb1.subnet11241424.vcn11241424.oraclevcn.com)
+		)
+		)
+		````
+
+9. Test the connection to CDB1.  Connect to CDB1 with SQL*Plus.
 
 	````
 	<copy>
-	sqlplus sys@CDB21_iad1bw AS SYSDBA
+	sqlplus sys@cdb1 AS SYSDBA
 	</copy>
 	````
 
-6. Verify that the container name is CDB$ROOT.
+10. Verify that the container name is CDB$ROOT.
 
 	````
 	<copy>
@@ -69,11 +145,11 @@ In this lab, you will:
 	</copy>
 	````
 
-7. Test the connection to PDB21
+11. Test the connection to PDB1
 
 	````
 	<copy>
-	CONNECT sys@PDB21 AS SYSDBA
+	CONNECT sys@PDB1 AS SYSDBA
 	</copy>
 	````
 
@@ -97,22 +173,22 @@ In this lab, you will:
 
 Download the Cloud\_21c\_labs.zip file to the /home/oracle directory from Oracle Cloud object storage and unzip the file.
 
-*Note*: These scripts are designed for DBCS VM single node instances 
+*Note*: These scripts are designed for DBCS VM single node instances
 
 1.  Change to the oracle user home directory
 
 	````
 	<copy>
 	cd /home/oracle
-	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/cM3vILBs5jcFJ0f8F6DSYAJGvEIlg7tl-8KFhXWCdlcWMPSsiLuoMN7fwApUteG1/n/c4u03/b/data-management-library-files/o/Cloud_21c_labs.zip
-	</copy>
+	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/te64gQPSzMrOJZh5jwYPrmS6xwtddOdN90lIWF6mAvM_uIbJlAUEhyGzugZhUTF3/n/oraclepartnersas/b/workshop/o/Cloud_21c_Labs.zip
+  </copy>
 	````
 
 2.  Unzip Cloud\_21c\_labs.zip
 
 	```
 	<copy>
-	unzip Cloud_21c_labs.zip
+	unzip Cloud_21c_Labs.zip
 	</copy>
 	```
 
@@ -140,8 +216,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
