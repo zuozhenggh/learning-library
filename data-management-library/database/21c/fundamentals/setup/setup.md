@@ -24,7 +24,7 @@ In this lab, you will:
 
 ## **STEP 1**: Server Setup
 
-1. If you aren't still logged in, login to Oracle Cloud and re-start the Oracle Cloud Shell otherwise skip to Step 4.
+1. If you aren't still logged in, login to Oracle Cloud and re-start the Oracle Cloud Shell otherwise skip to Step 3.
 2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
@@ -102,8 +102,15 @@ In this lab, you will:
     /home/oracle/labs/M104784GC10/create_CDB21.sh
     </copy>
     ```
+2. Set your environment. At the prompt type in `CDB21`
 
-2. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
+    ```
+    [oracle@db1 ~]$ <copy>. oraenv</copy>
+    ORACLE_SID = [CDB21] ? CDB21
+    The Oracle base remains unchanged with value /u01/app/oracle
+    [oracle@db1 ~]$
+    ```
+3. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
 
     ```
     <copy>
@@ -117,7 +124,7 @@ In this lab, you will:
     </copy>
     ```
 
-3. Ensure that the TNS alias have been created for `CDB21`, `PDB21` and `PDB21_2` in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
+4. Ensure that the TNS alias have been created for `CDB21`, `PDB21` and `PDB21_2` in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
 
     ```
 	  <copy>
@@ -125,7 +132,7 @@ In this lab, you will:
 	  </copy>
 	  ```
 
-4. Then entry for `CDB21` should have been created when the database was created. So for `PDB21` just copy the entry for `CDB21` and change the value `CDB21` to `PDB21` in both places. Repeat this for `PDB21_2`.
+5. Then entry for `CDB21` should have been created when the database was created. So for `PDB21` just copy the entry for `CDB21` and change the value `CDB21` to `PDB21` in both places. Repeat this for `PDB21_2`.
 
     ````
 	  <copy>
@@ -133,7 +140,7 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-5. There will be more in your tnsnames.ora but the for the three entries we care about should look like the entries below but with your hostname instead.
+6. There will be more in your tnsnames.ora but the for the three entries we care about should look like the entries below but with your hostname instead.
     ````
     CDB21 =
     (DESCRIPTION =
@@ -164,7 +171,7 @@ In this lab, you will:
 
     ````
 
-6. Test the connection to CDB1.  Connect to CDB1 with SQL*Plus.
+7. Test the connection to CDB1.  Connect to CDB1 with SQL*Plus.
 
     ````
 	  <copy>
@@ -172,7 +179,7 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-7. Verify that the container name is CDB$ROOT.
+8. Verify that the container name is CDB$ROOT.
 
     ````
     <copy>
@@ -180,7 +187,7 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-8. Test the connection to PDB1
+9. Test the connection to PDB1
 
     ````
     <copy>
@@ -188,7 +195,7 @@ In this lab, you will:
     </copy>
     ````
 
-9.  Show the container name
+10.  Show the container name
 
     ````
     <copy>
@@ -196,7 +203,7 @@ In this lab, you will:
     </copy>
     ````
 
-10. Exit SQL*Plus
+11. Exit SQL*Plus
 
     ````
     <copy>
