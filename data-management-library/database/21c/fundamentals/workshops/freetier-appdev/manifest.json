@@ -35,10 +35,6 @@
         {
             "title": "Lab: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md"
-        },
-        {
-            "title": "Lab: Searching Text/JSON in In-Memory",
-            "filename": "../../search-text/search-text.md"
-        } 
+        }
     ]
 }
