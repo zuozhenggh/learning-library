@@ -1,19 +1,14 @@
-# Oracle's Converged Database
-The Oracle Database converges support for multiple data models and workloads into a single database, while supporting popular development tools and techniques like events and REST interfaces. As opposed to using multiple single purpose databases for each data type, using a converged database results in a unified data tier, enabling real-time analytics and machine learning on production data. 
+# Welcome
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
 
+The Oracle Analytics LiveLabs Library is the central location for workshops related to all things Analytics on both on-premises and in the cloud.  
 
-## Workshops
-- [JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
+## How do I get started?
+Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Search for analytics.  Additional content is being added frequently.
 
+[![](../common/images/livelabs.png)](http://bit.ly/golivelabs)
 
-## Product Pages
-- [Oracle Database 19c](https://www.oracle.com/database/)
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-
-## Get an Oracle Cloud Trial Account for Free!
-If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
--	$300 of freee credits good for up to 3500 hours of Oracle Cloud usage
--	Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
--	Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
-
-Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

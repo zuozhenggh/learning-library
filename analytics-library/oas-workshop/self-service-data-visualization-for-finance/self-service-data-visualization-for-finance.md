@@ -2,9 +2,9 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This exercise will introduce you to the key features of data visualization within Oracle Analytics Server and will help to tell a story on what is happening at JTC America Group, a fictional conglomerate with operations in multiple geographies and segments covering a vast portfolio of products.
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time: 30 minutes*
 
 ### Oracle Analytics Server:
 
@@ -12,28 +12,24 @@ Oracle Analytics Server features powerful, intuitive data visualization capabili
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+In this lab, you will explore the following features and capabilities
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Data Visualization and Mash Ups
+* Custom Calculations and Maps
+* Freeform Canvases, Trend Lines, and Custom Backgrounds
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+Login to Oracle Analytics Server (url? User id and pw)
+The following files are required to complete Lab 2:
+- inventory.xlsx
+- vendor payments.xlsx
+- JRC Americas Group.jpg
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
+## **STEP 1:** Data Visualization and Mash Ups
 
-
-
-## **Step 1:** Data Visualization and Mash Ups
-
-This exercise will introduce you to the key features of data visualization and will help us to tell a story on what is happening at JTC America Group, a fictional conglomerate with operations in multiple geographies and segments covering a vast portfolio of products.
-
-1. **Login** to Oracle Analytics by entering the URL : <url need to add>
+1. **Login** to Oracle Analytics by entering the URL : [oas-instance url need to be added](https://machineip:9502/dv/ui)
    ![](./images/asdvff1.png " ")
 
 2. **Click** on Create -> Project to start a new self-service project
@@ -42,7 +38,6 @@ This exercise will introduce you to the key features of data visualization and w
 3. **Select** the "Sample App" subject area and **Click** "Add to Project"
    ![](./images/asdvff3.png " ")
    
-
 4. You will be presented with an empty canvas.
 
    Let’s start visualizing!
@@ -260,7 +255,7 @@ Visualization type called "Calendar Heatmap."
 
 
 
-## **Step 2:** Custom Calculations and Maps
+## **STEP 2:** Custom Calculations and Maps
 The data visualization capabilities in Oracle Analytics Server include mapping and custom calculations. In this exercise we will use both capabilities: we will create custom calculations based on two available metrics, and we will then display the results on a map.
 
 
@@ -339,7 +334,7 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
 
 
-## **Step 3:** Freeform Canvases, Trend Lines, and Custom Backgrounds  
+## **STEP 3:** Freeform Canvases, Trend Lines, and Custom Backgrounds  
 Oracle self-service includes a freeform canvas mode. This allows you to place visualizations and content anywhere on the canvas. In this exercise we will use this capability to display the "JTC Americas Group" corporate logo as the background for trendline analysis. Advanced analytic functions such as trendline, forecast, clustering and identifying outliers are as easy as one click or a drag and drop.
 
 1. In this exercise, we will leverage the freeform capabilities of a canvas to create a custom background.
@@ -400,10 +395,11 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
 ## Want to learn more
 - [link](to be added)
 
+
 ## Acknowledgements
-* **Authors** - 
-* **Contributors** - 
-* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, NA Technology, September 2020
+* **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
+* **Contributors** - Linda Dest, Principal Analytics Platform Specialist, NA Technology 
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, Decemeber 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

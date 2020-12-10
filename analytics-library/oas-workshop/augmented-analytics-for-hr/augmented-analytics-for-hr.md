@@ -28,7 +28,7 @@ We will also explore how self-service machine learning enables predictive analyt
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-## Step 1: Using Machine Learning to Accelerate Root Cause Analysis
+## STEP 1: Using Machine Learning to Accelerate Root Cause Analysis
 In this exercise we will explore employee attrition.  We would like to predict who is at risk for voluntary termination.  
 
 First, we will review basic descriptive statistics, attribute importance, key segments and identify anomalies related to employee attrition.  
@@ -141,7 +141,7 @@ Looking at the outliers you can see that typically female employees have a lower
 
 Save your analysis.
 
-## Step 2: Leveraging Machine Learning to Predict Attrition
+## STEP 2: Leveraging Machine Learning to Predict Attrition
 
 This exercise will explore how self-service machine learning enables predictive analytics.  
 
@@ -275,9 +275,9 @@ These classification rules are generated when we train a model using training da
 - [link](to be added)
 
 ## Acknowledgements
-* **Authors** - 
-* **Contributors** - 
-* **Last Updated By/Date** - Satya Pranvai Manthena, Associate Solution Engineer, NA Technology, September 2020
+* **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
+* **Contributors** - Linda Dest, Principal Analytics Platform Specialist, NA Technology 
+* **Last Updated By/Date** - Satya Pranvai Manthena, Associate Solution Engineer, Analytics, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

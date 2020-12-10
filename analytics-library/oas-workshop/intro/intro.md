@@ -8,51 +8,38 @@ This workshop illustrates how organizations worldwide rely on Oracle to manage t
 
 
 ### About Product/Technology
-Enter background information here....
+Oracle Analytics Server helps organizations discover deep, unique insights from their data through augmented analytics.  Streamline data access and data preparation with machine learning. Provide self-service analytics enabling users to build compelling visual stories and to confidently make highly informed decisions.
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+  [](youtube:Dk9vLite0MA)
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
+The workshop illustrates how organizations worldwide rely on Oracle to manage their data and uncover value across the entire data lifecycle: creating and blending data, self-service data visualization and analysis, securely collaborating and sharing analysis across teams, and leveraging embedded augmented analytics and machine learning capabilities to deliver the fastest time to insight across all of your data
+In this lab you will:
+  -	Review the key features of self-service analytics
+  -	Tell a story regarding what is happening at JTC America’s Group
+  -	Explore a variety of intuitive and interactive visualization charts and create visualizations
+  -	Leverage augmented analytics capabilities to accelerate root cause analysis
+  -	Leverage machine learning algorithms to predict attrition
+  -	Explore custom visual extensions in the Oracle Analytics Library
 
-In this lab, you will:
-* -----
-* ----
-* -----
-* -----
-* -----
-* -----
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+ -	An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+ -	Provide Access to Oracle Analytics Server ? 
+ -	Download collateral required in order to complete lab exercises.
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
-
-*At the conclusion of the lab add this statement: Note how you can link to whatever lab follows by using #next as the target*
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [https://www.oracle.com/business-analytics/analytics-server.html](https://www.oracle.com/business-analytics/analytics-server.html)
+* [https://www.oracle.com/business-analytics](https://www.oracle.com/business-analytics)
 
 ## Acknowledgements
-* **Authors** - 
-* **Contributors** - 
-* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, NA Technology, November 2020
-
-
+* **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
+* **Contributors** - Linda Dest, Principal Analytics Platform Specialist, NA Technology 
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, Decemeber 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
