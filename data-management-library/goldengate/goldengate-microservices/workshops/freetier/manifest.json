@@ -50,11 +50,7 @@
       "title": "Transformations",
       "description": "Transformations",
       "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
-    },
-    {
-      "title": "Adminclient",
-      "description": "Adminclient",
-      "filename": "../../adminclient/adminclient.md"
     }
+   
   ]
 }
