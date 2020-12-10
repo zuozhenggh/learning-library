@@ -415,9 +415,9 @@ You may proceed to the next lab.
 
 * **Author:** William Masdon, Cloud Engineering
 * **Contributors:** 
-  - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
-  - Santiago Bastidas, Product Management Director
-  - Quintin Hill, Cloud Engineering
+    - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
+    - Santiago Bastidas, Product Management Director
+    - Quintin Hill, Cloud Engineering
 * **Last Updated By/Date:** William Masdon, Cloud Engineering, Nov 2020
 
 ## Need Help?
