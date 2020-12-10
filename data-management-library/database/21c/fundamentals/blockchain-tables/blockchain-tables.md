@@ -149,11 +149,11 @@ In this lab, you will:
 
     ```
 
-    $ <copy>sqlplus auditor@PDB1</copy>
+    $ <copy>sqlplus auditor@PDB21</copy>
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
-    Enter password: <i><copy>password</copy></i>
+    Enter password:
     ```
     ```
 
@@ -354,9 +354,9 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT hr@PDB1</copy>
+    SQL> <copy>CONNECT hr@PDB21</copy>
 
-    Enter password: <copy><i>WElcome123##</i></copy>
+    Enter password: <i>WElcome123##</i>
 
     Connected.
     ```
@@ -379,9 +379,9 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT auditor@PDB1</copy>
+    SQL> <copy>CONNECT auditor@PDB21</copy>
 
-    Enter password: <copy><i>WElcome123##</i></copy>
+    Enter password: <i>WElcome123##</i>
 
     Connected.
     ```
@@ -464,7 +464,7 @@ In this lab, you will:
     END;
     /</copy>    2    3    4    5    6    7
 
-    <copy>Number of rows deleted=0</copy>
+    Number of rows deleted=0
 
     PL/SQL procedure successfully completed.
 
@@ -625,9 +625,9 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT hr@PDB1</copy>
+    SQL> <copy>CONNECT hr@PDB21</copy>
 
-    Enter password: <copy><i>WElcome123##</i></copy>
+    Enter password: <i>WElcome123##</i>
 
     Connected.
     ```
@@ -650,9 +650,9 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT auditor@PDB1</copy>
+    SQL> <copy>CONNECT auditor@PDB21</copy>
 
-    Enter password: <copy><i>WElcome123##</i></copy>
+    Enter password: <i>WElcome123##</i>
 
     Connected.
     ```
@@ -675,11 +675,13 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT auditor@PDB1</copy>
+    SQL> <copy>CONNECT auditor@PDB21</copy>
 
-    Enter password: <copy><i>WElcome123##</i></copy>
+    Enter password: <i>WElcome123##</i>
 
     Connected.
+    ```
+    ```
 
     SQL> <copy>SET SERVEROUTPUT ON</copy>
 

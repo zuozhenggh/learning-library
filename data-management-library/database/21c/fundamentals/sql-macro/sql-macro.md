@@ -21,7 +21,7 @@ In this lab, you will:
 
 ## **STEP 1:** Use SQL Macro as a scalar expression
 
-1. Ensure that `PDB1` is opened. If it is not opened, open it first.
+1. Ensure that `PDB21` is opened. If it is not opened, open it first.
 
 
     ```
@@ -30,7 +30,7 @@ In this lab, you will:
 
     Connected.
 
-    SQL> <copy>ALTER PLUGGABLE DATABASE pdb1 OPEN;</copy>
+    SQL> <copy>ALTER PLUGGABLE DATABASE pdb21 OPEN;</copy>
 
     Pluggable Database opened.
 
@@ -50,12 +50,12 @@ In this lab, you will:
 
     ```
 
-3. Create the `HR` schema and its tables in `PDB1`.
+3. Create the `HR` schema and its tables in `PDB21`.
 
 
     ```
 
-    SQL> <copy>CONNECT sys@pdb1 AS SYSDBA</copy>
+    SQL> <copy>CONNECT sys@pdb21 AS SYSDBA</copy>
 
     Enter password: <b><i>WElcome123##</i></b>
 
@@ -94,12 +94,12 @@ In this lab, you will:
 
     ```
 
-4. Connect as `HR` in `PDB1` and create the SQM as an scalar expression.
+4. Connect as `HR` in `PDB21` and create the SQM as an scalar expression.
 
 
     ```
 
-    $ <copy>sqlplus hr@PDB1</copy>
+    $ <copy>sqlplus hr@PDB21</copy>
 
     Enter password: <i><b>password</b></i>
 

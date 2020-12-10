@@ -28,58 +28,58 @@ In this lab, you will:
 3. Execute the shell script.
 
     ```
-    
+
     $ <copy>cd /home/oracle/labs/M104780GC10</copy>
     $ <copy>/home/oracle/labs/M104780GC10/setup_apps.sh</copy>
     SQL> host mkdir /u01/app/oracle/admin/CDB21/tde
     mkdir: cannot create directory '/u01/app/oracle/admin/CDB21/tde': File exists
-    
+
     SQL>
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL ;
     ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL
     *
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
-    
+
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
-    
+
     keystore altered.
     ...
     SQL> ALTER PLUGGABLE DATABASE toys_root CLOSE IMMEDIATE;
-    
+
     Pluggable database altered.
-    
+
     SQL> DROP PLUGGABLE DATABASE robots INCLUDING DATAFILES;
-    
+
     Pluggable database dropped.
-    
+
     SQL> DROP PLUGGABLE DATABASE dolls INCLUDING DATAFILES;
-    
+
     Pluggable database dropped.
-    
+
     SQL> DROP PLUGGABLE DATABASE toys_root INCLUDING DATAFILES;
-    
+
     Pluggable database dropped.
-    
+
     SQL> ALTER SESSION SET db_create_file_dest='/home/oracle/labs/toys_root';
-    
+
     Session altered.
-    
+
     SQL> CREATE PLUGGABLE DATABASE toys_root AS APPLICATION CONTAINER
       2    ADMIN USER admin IDENTIFIED BY <i>WElcome123##</i> ROLES=(CONNECT);
-    
+
     Pluggable database created.
-    
+
     ...
-    
+
     SQL> alter pluggable database dolls open;
-    
+
     Pluggable database altered.
-    
+
     SQL>
     SQL> exit
     $
-    
+
     ```
 
 ## **STEP 2:** Display the applications installed
@@ -116,106 +116,100 @@ In this lab, you will:
 
 1. Synchronize the application PDBs with the new applications `toys_app` and `sales_toys_app` installed.
 
-  
+
 	```
-	
-	SQL> <copy>CONNECT sys@robots AS SYSDBA</copy>
-	
+
+	SQL> <copy>CONNECT sys@localhost:1521/robots AS SYSDBA</copy>
+
 	Enter password: <b><i>WElcome123##</i></b>
-	
+  ```
+  ```
+
 	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
-	
+
 	Pluggable database altered.
-	
+
 	SQL>
-	
+
 	```
 
 2. Display the applications installed in the application container.
 
-  
+
 	```
-	
+
 	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
-	
 		FROM   cdb_applications a, cdb_pdbs p
-	
 		WHERE  a.con_id = p.pdb_id
-	
 		AND    app_name NOT LIKE '%APP$%'
-	
 		ORDER BY 1;</copy>
-	
+
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-	
+
 	---------------- ------------ ------------ ----------
-	
+
 	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-	
+
 	TOYS_APP         1.0          NORMAL       ROBOTS
-	
-	SQL> <copy>CONNECT sys@dolls AS SYSDBA</copy>
-	
+  ```
+  ```
+
+	SQL> <copy>CONNECT sys@localhost:1521/dolls AS SYSDBA</copy>
+
 	Enter password: <b><i>WElcome123##</i></b>
-	
+  ```
+  ```
+
 	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
-	
+
 	Pluggable database altered.
-	
+
 	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
-	
 		FROM   cdb_applications a, cdb_pdbs p
-	
 		WHERE  a.con_id = p.pdb_id
-	
 		AND    app_name NOT LIKE '%APP$%'
-	
 		ORDER BY 1;</copy>
-	
+
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-	
+
 	---------------- ------------ ------------ ----------
-	
+
 	SALES_TOYS_APP   1.0          NORMAL       DOLLS
-	
+
 	TOYS_APP         1.0          NORMAL       DOLLS
-	
+
 	SQL> <copy>CONNECT / AS SYSDBA</copy>
-	
+
 	Connected.
-	
+
 	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
-	
 		FROM   cdb_applications a, cdb_pdbs p
-	
 		WHERE  a.con_id = p.pdb_id
-	
 		AND    app_name NOT LIKE '%APP$%'
-	
 		ORDER BY 1;</copy>  
-	
+
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-	
+
 	---------------- ------------ ------------ ----------
-	
+
 	SALES_TOYS_APP   1.0          NORMAL       DOLLS
-	
+
 	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-	
+
 	SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
-	
+
 	TOYS_APP         1.0          NORMAL       DOLLS
-	
+
 	TOYS_APP         1.0          NORMAL       TOYS_ROOT
-	
+
 	TOYS_APP         1.0          NORMAL       ROBOTS
-	
+
 	6 rows selected.
-	
+
 	SQL> <copy>EXIT</copy>
-	
+
 	$
-	
+
 	```
 
 You may now [proceed to the next lab](#next).

@@ -33,6 +33,8 @@ In this lab, you will:
 	Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 
 	Version 21.2.0.0.0
+	```
+	```
 
 	SQL> <copy>SHOW PARAMETER TABLESPACE_ENCRYPTION_DEFAULT_ALGORITHM</copy>
 
@@ -65,7 +67,7 @@ In this lab, you will:
 
 	```
 
-	$ <copy>sqlplus sys@PDB1 AS SYSDBA</copy>
+	$ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
 
 	Enter password: <b><i>WElcome123##</i></b>
 
@@ -73,7 +75,7 @@ In this lab, you will:
   ```
   ```
 
-	SQL> <copy>CREATE TABLESPACE tbstest DATAFILE 'test01.dbf' SIZE 2M;</copy>
+	SQL> <copy>CREATE TABLESPACE tbstest DATAFILE '/u02/app/oracle/oradata/pdb21/test01.dbf' SIZE 2M;</copy>
 
 	Tablespace created.
 

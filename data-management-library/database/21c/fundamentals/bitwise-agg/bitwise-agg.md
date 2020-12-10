@@ -21,12 +21,12 @@ In this lab, you will:
 
 ## **STEP 1:** Test the bitwise AND function
 
-1. Connect to `PDB1` as `SYSTEM` to query values with numbers and bitwise aggregate functions.
+1. Connect to `PDB21` as `SYSTEM` to query values with numbers and bitwise aggregate functions.
 
 
     ```
 
-    $ <copy>sqlplus system@PDB1</copy>
+    $ <copy>sqlplus system@PDB21</copy>
 
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 

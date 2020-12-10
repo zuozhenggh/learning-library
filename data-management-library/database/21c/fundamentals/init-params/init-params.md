@@ -20,7 +20,7 @@ Estimated Lab Time: 10 minutes
 
     ```
 
-    $ <copy>sqlplus system@cdb1</copy>    
+    $ <copy>sqlplus system@cdb21</copy>    
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
     Enter password: <b><i>WElcome123##</i></b>
     Last Successful login time: Mon Mar 16 2020 08:49:41 +00:00    
@@ -178,7 +178,7 @@ Estimated Lab Time: 10 minutes
       Redo Buffers                7208960 bytes
       Database mounted.
       Database opened.
-      SQL> <copy>ALTER PLUGGABLE DATABASE pdb1 OPEN;</copy>
+      SQL> <copy>ALTER PLUGGABLE DATABASE pdb21 OPEN;</copy>
 
       Pluggable database altered.
 

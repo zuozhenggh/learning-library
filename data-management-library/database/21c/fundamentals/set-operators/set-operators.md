@@ -50,12 +50,12 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 
 ## **STEP  2**: Test the set operator with the `EXCEPT` clause
 
-1. Connect to `PDB1` as `OE`.
+1. Connect to `PDB21` as `OE`.
 
 
 	```
 
-	$ <copy>sqlplus oe@PDB1</copy>
+	$ <copy>sqlplus oe@PDB21</copy>
 
 	Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 

@@ -112,7 +112,7 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
 
     ```
 
-    $ <copy>sqlplus report@PDB1</copy>
+    $ <copy>sqlplus report@PDB21</copy>
 
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 

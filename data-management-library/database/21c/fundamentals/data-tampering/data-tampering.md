@@ -118,7 +118,7 @@ In this lab, you will:
 
     ```
 
-    $ <copy>sqlplus system@PDB1</copy>
+    $ <copy>sqlplus system@PDB21</copy>
 
     Enter password: <b><i>WElcome123##</i></b>
     ```
@@ -210,7 +210,7 @@ In this lab, you will:
 
     ```
 
-    $ <copy>sqlplus system@PDB1</copy>
+    $ <copy>sqlplus system@PDB21</copy>
 
     Enter password: <b><i>WElcome123##</i></b>
     ```
@@ -238,7 +238,7 @@ In this lab, you will:
 
     ```
 
-    $ <copy>sqlplus sh@PDB1</copy>
+    $ <copy>sqlplus sh@PDB21</copy>
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 

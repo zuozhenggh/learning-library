@@ -24,7 +24,7 @@ In this lab, you will:
      ```
 
      $ <copy>cd /home/oracle/labs/M104784GC10</copy>
-     $ <copy>sqlplus system@PDB1</copy>
+     $ <copy>sqlplus system@PDB21</copy>
 
      Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 

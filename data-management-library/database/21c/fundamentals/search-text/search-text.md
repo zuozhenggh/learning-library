@@ -96,96 +96,95 @@ In this lab, you will:
 
 1.  Connect in `PDB21` as `TEXTUSER`, create a table and insert rows.
 
-  
+
     ```
-    
+
     $ <copy>sqlplus textuser@PDB21</copy>
-    
+
     Connected to:
-    
+
     SQL> <copy>CREATE TABLE docs (id NUMBER PRIMARY KEY, text VARCHAR2(200), json_text JSON);</copy>
-    
+
     Table created.
-    
+
     SQL> <copy>INSERT INTO docs VALUES(4, 'Lyon is a city in France.', '{"country": "France", "city" : "Lyon"}');</copy>
-    
+
     1 row created.
-    
+
     SQL> <copy>INSERT INTO docs VALUES(5, 'Barcelone is a city in Spain.', '{"country": "Spain", "city" : "Barcelona"}');</copy>
-    
+
     1 row created.
-    
+
     SQL> <copy>INSERT INTO docs VALUES(3, 'France is in Europe.', '{"continent": "Europe", "country" : "France"}');</copy>
-    
+
     1 row created.
-    
+
     SQL> <copy>COMMIT;</copy>
-    
+
     Commit complete.
-    
+
     SQL>
-    
+
     ```
 
 2. Create a `CONTEXT` index on the `TEXT` column and a `JSON` search index on the `JSON_TEXT` column of the `DOCS` table.
 
-  
+
     ```
-    
+
     SQL> <copy>CREATE INDEX idx_docs_text ON docs(text) INDEXTYPE IS CTXSYS.CONTEXT;</copy>
-    
+
     Index created.
-    
+
     SQL> <copy>CREATE SEARCH INDEX idx_docs_json ON docs(json_text) FOR JSON;</copy>
-    
+
     Index created.
-    
+
     SQL>
-    
+
     ```
 
 3. Query the table to retrieve the documents that contain the word `France`, using the `CONTEXT` index.
 
-  
+
     ```
-    
+
     SQL> <copy>COLUMN id FORMAT 99</copy>
-    
+
     SQL> <copy>COLUMN text FORMAT a29</copy>
-    
+
     SQL> <copy>SELECT id, text FROM docs WHERE CONTAINS(text, 'France', 1) > 0;</copy>
-    
+
     ID TEXT
-    
+
     -- -----------------------------
-    
+
     4 Lyon is a city in France.
-    
+
     3 France is in Europe.
-    
+
     SQL>
-    
+
     ```
 
 4. Query the table to retrieve the documents that contain the word `France`, using the JSON search index.
 
-  
+
     ```
-    
+
     SQL> <copy>COL json_text FORMAT A41</copy>
-    
-    SQL> <copy>SELECT id, json_text FROM docs 
-    
-                  WHERE JSON_TEXTCONTAINS(json_text, '$.country', 'France');</copy>
-    
+
+    SQL> <copy>SELECT id, json_text FROM docs
+                      WHERE JSON_TEXTCONTAINS(json_text, '$.country', 'France');</copy>
+
     ID JSON_TEXT
-    
+
     --- -----------------------------------------
-    
+
       4 {"country":"France","city":"Lyon"}
-    
+
       3 {"continent":"Europe","country":"France"}
-    
+
     SQL>`</pre
     ```
 
@@ -193,133 +192,132 @@ In this lab, you will:
 
 1. Enable IM Full Text Columns on the table.
 
-  
+
     ```
-    
+
     SQL> <copy>ALTER TABLE docs INMEMORY INMEMORY TEXT(text, json_text);</copy>
-    
+
     Table altered.
-    
+
     SQL>
-    
+
     ```
-  
+
   The first `INMEMORY` keyword indicates that the table is to be loaded into the IM Column Store and `INMEMORY TEXT` is a separate clause indicating you want to be able to search using text and json queries on the `TEXT` and `JSON_TEXT` columns.
 
 2. Load the table into the IM Column Store by querying the table.
 
-  
+
     ```
-    
+
     SQL> <copy>SELECT * FROM docs;</copy>
-    
+
     ID TEXT                          JSON_TEXT
-    
+
     --- ----------------------------- -----------------------------------------
-    
+
       4 Lyon is a city in France.     {"country":"France","city":"Lyon"}
-    
+
       5 Barcelone is a city in Spain. {"country":"Spain","city":"Barcelona"}
-    
+
       3 France is in Europe.          {"continent":"Europe","country":"France"}
-    
+
     SQL> <copy>SELECT * FROM table(dbms_xplan.display_cursor());</copy>
-    
+
     PLAN_TABLE_OUTPUT
-    
+
     -----------------------------------------------------------------------------
-    
+
     SQL_ID  6dthd7dtuh58t, child number 0
-    
+
     -------------------------------------
-    
+
     select * from docs
-    
+
     Plan hash value: 1540662602
-    
+
     -----------------------------------------------------------------------------
-    
+
     | Id  | Operation                  | Name | Rows  | Bytes | Cost (%CPU)| Time   |
-    
+
     PLAN_TABLE_OUTPUT
-    
+
     -----------------------------------------------------------------------------
-    
+
     |   0 | SELECT STATEMENT           |      |       |       |     3 (100)|        |
-    
+
     |   1 |  <b>TABLE ACCESS INMEMORY FULL</b>| DOCS |     3 | 12351 |     3   (0)|00:00:01|
-    
+
     -----------------------------------------------------------------------------
-    
+
     PLAN_TABLE_OUTPUT
-    
+
     -----------------------------------------------------------------------------
-    
+
     Note
-    
+
     -----
-    
+
       - dynamic statistics used: dynamic sampling (level=2)
-    
+
     SQL>
-    
+
     ```
 
 3. Retrieve the In-Memory expressions created on the in-memory columns.
 
-  
+
     ```
-    
-    SQL> <copy>SELECT column_name, sql_expression FROM dba_im_expressions 
-    
-                  WHERE table_name='DOCS';</copy>
-    
+
+    SQL> <copy>SELECT column_name, sql_expression FROM dba_im_expressions
+                      WHERE table_name='DOCS';</copy>
+
     COLUMN_NAME
-    
+
     -----------------------------------------------------------------------------
-    
+
     SQL_EXPRESSION
-    
+
     -----------------------------------------------------------------------------
-    
+
     SYS_IME_IVDX_2C08A74E2BF04F99BFF4480F794661D0
-    
+
     SYS_CTX_MKIVIDX("TEXT" RETURNING RAW(32767))
-    
+
     SYS_IME_IVDX_65232FABEDB64F37BF6FF91B94EE81B0
-    
+
     SYS_CTX_MKIVIDX("JSON_TEXT" RETURNING RAW(32767))
-    
+
     SQL>
-    
+
     ```
 
 ## **STEP 4:** Query the data from the In-Memory Column Store
 
 1. Before dropping the indexes, observe whether the queries use the indexes or the data from the In-Memory column store.
 
-    
+
 2. Query the table to retrieve the documents that contain the word `France`, restricting on the `TEXT` column.
 
     ```
-    
-    SQL> <copy>SELECT id, json_text FROM docs 
+
+    SQL> <copy>SELECT id, json_text FROM docs
                   WHERE JSON_TEXTCONTAINS(json_text, '$.country', 'France');</copy>
-    
+
      ID JSON_TEXT
     --- -----------------------------------------
       4 {"country":"France","city":"Lyon"}
       3 {"continent":"Europe","country":"France"}
-    
+
     SQL> <copy>SELECT * FROM table(dbms_xplan.display_cursor());</copy>
-    
+
     PLAN_TABLE_OUTPUT
     ------------------------------------------------------------------------
     SQL_ID  3dcmjjz8nwwgk, child number 1
     -------------------------------------
     SELECT id, json_text FROM docs               WHERE
     JSON_TEXTCONTAINS(json_text, '$.country', 'France')
-    
+
     Plan hash value: 960871976
     ------------------------------------------------------------------------
     | Id  | Operation                   | Name          | Rows  | Bytes | Cost (%CPU
@@ -327,40 +325,40 @@ In this lab, you will:
     |   1 |  <b>TABLE ACCESS BY INDEX ROWID</b>| DOCS          |     1 | 20412 |    4   (0)
     |*  2 |   <b>DOMAIN INDEX</b>              | IDX_DOCS_JSON |       |       |    4   (0)
     ------------------------------------------------------------------------
-    
+
     Predicate Information (identified by operation id):
     ---------------------------------------------------
        2 - access("CTXSYS"."CONTAINS"("DOCS"."JSON_TEXT",'(France) INPATH (/country)')>0)
-    
+
     Note
     -----
        - dynamic statistics used: dynamic sampling (level=2)
-    
+
     24 rows selected.
-    
+
     SQL>
-    
+
     ```
 
 3. Query the table to retrieve the documents that contain the word France, restricting on the `JSON_TEXT` column.
 
     ```
-    
+
     SQL> <copy>SELECT id, text FROM docs WHERE CONTAINS(text, 'France', 1) > 0;</copy>
-    
+
     ID TEXT
     -- -----------------------------
      4 Lyon is a city in France.
      3 France is in Europe.
-    
+
     SQL> <copy>SELECT * FROM table(dbms_xplan.display_cursor());</copy>
-    
+
     PLAN_TABLE_OUTPUT
     ------------------------------------------------------------------------
     SQL_ID  7fb38jwxjy8mm, child number 0
     -------------------------------------
     SELECT id, text FROM docs WHERE CONTAINS(text, 'France', 1) > 0
-    
+
     Plan hash value: 1365989615
     ------------------------------------------------------------------------
     | Id  | Operation                   | Name          | Rows | Bytes|Cost (%CPU) |
@@ -372,64 +370,64 @@ In this lab, you will:
     Predicate Information (identified by operation id):
     ---------------------------------------------------
        2 - access("CTXSYS"."CONTAINS"("TEXT",'France',1)>0)
-    
+
     PLAN_TABLE_OUTPUT
     ------------------------------------------------------------------------
     Note
     -----
        - dynamic statistics used: dynamic sampling (level=2)
-    
+
     23 rows selected.
-    
+
     SQL>
-    
+
     ```
 
 4. Drop the indexes before re-querying the table to show that the queries use the data from the IM column store and no longer the indexes.
 
-    
+
 5. Drop the indexes.
 
     ```
-    
+
     SQL> <copy>DROP INDEX idx_docs_text;</copy>
-    
+
     Index dropped.
-    
+
     SQL> <copy>DROP INDEX idx_docs_json;</copy>
-    
+
     Index dropped.
-    
+
     SQL>
-    
+
     ```
 
 6. Query the table to retrieve the documents that contain the word `France`, restricting on the `TEXT` column.
 
     ```
-    
+
     SQL> <copy>SELECT id, text FROM docs WHERE CONTAINS(text, 'France', 1) > 0;</copy>
-    
+
     ID TEXT
     -- -----------------------------
      4 Lyon is a city in France.
      3 France is in Europe.
-    
+
     SQL> <copy>SELECT * FROM table(dbms_xplan.display_cursor());</copy>
-    
+
     PLAN_TABLE_OUTPUT
     ------------------------------------------------------------------------
     SQL_ID  7fb38jwxjy8mm, child number 0
     -------------------------------------
     SELECT id, text FROM docs WHERE CONTAINS(text, 'France', 1) > 0
-    
+
     Plan hash value: 1540662602
     -------------------------------------------------------------------------
     | Id  | Operation                  | Name | Rows  | Bytes | Cost (%CPU)| Time   |
     |   0 | SELECT STATEMENT           |      |       |       |     3 (100)|        |
     |*  1 |  <b>TABLE ACCESS INMEMORY FULL</b>| DOCS |     2 | 33000 |     3   (0)|00:00:01|
     -------------------------------------------------------------------------
-    
+
     PLAN_TABLE_OUTPUT
     -------------------------------------------------------------------------
     Predicate Information (identified by operation id):
@@ -438,65 +436,65 @@ In this lab, you will:
                   SYS_CTX_MKIVIDX("TEXT" RETURNING RAW(32767)))>0)
            filter(SYS_CTX_CONTAINS2("TEXT" , 'France' , SYS_CTX_MKIVIDX("TEXT"
                   RETURNING RAW(32767)))>0)
-    
+
     Note
     -----
        - dynamic statistics used: dynamic sampling (level=2)
-    
+
     25 rows selected.
-    
+
     SQL>
-    
+
     ```
 
 7. Query the table to retrieve the documents that contain the word `France`, restricting on the `JSON_TEXT` column.
 
     ```
-    
-    SQL> <copy>SELECT id, json_text FROM docs 
+
+    SQL> <copy>SELECT id, json_text FROM docs
                   WHERE JSON_TEXTCONTAINS(json_text, '$.country', 'France');</copy>
-    
+
      ID JSON_TEXT
     --- -----------------------------------------
       4 {"country":"France","city":"Lyon"}
       3 {"continent":"Europe","country":"France"}
-    
+
     SQL> <copy>SELECT * FROM table(dbms_xplan.display_cursor());</copy>
-    
+
     PLAN_TABLE_OUTPUT
     ------------------------------------------------------------------------
     SQL_ID  3dcmjjz8nwwgk, child number 0
     -------------------------------------
     SELECT id, json_text FROM docs               WHERE
     JSON_TEXTCONTAINS(json_text, '$.country', 'France')
-    
+
     Plan hash value: 1540662602
     -------------------------------------------------------------------------
     | Id  | Operation                  | Name | Rows  | Bytes | Cost (%CPU)| Time   |
     |   0 | SELECT STATEMENT           |      |       |       |     3 (100)|        |
     |*  1 |  <b>TABLE ACCESS INMEMORY FULL</b>| DOCS |     2 | 40800 |     3   (0)|00:00:01|
     -------------------------------------------------------------------------
-    
+
     Predicate Information (identified by operation id):
     ---------------------------------------------------
        1 - <b>inmemory</b>(SYS_CTX_CONTAINS2("DOCS"."JSON_TEXT" /*+ LOB_BY_VALUE */
                   , '(France) INPATH (/country)' , SYS_CTX_MKIVIDX("JSON_TEXT" /*+
                   LOB_BY_VALUE */  RETURNING RAW(32767)))>0)
            filter(SYS_CTX_CONTAINS2("DOCS"."JSON_TEXT" /*+ LOB_BY_VALUE */  ,
-    
+
     PLAN_TABLE_OUTPUT
     ------------------------------------------------------------------------
                   '(France) INPATH (/country)' , SYS_CTX_MKIVIDX("JSON_TEXT" /*+
                   LOB_BY_VALUE */  RETURNING RAW(32767)))>0)
-    
+
     Note
     -----
        - dynamic statistics used: dynamic sampling (level=2)
-    
+
     28 rows selected.
-    
+
     SQL> <copy>EXIT</copy>
-    
+
     ```
 
 You may now [proceed to the next lab](#next).
