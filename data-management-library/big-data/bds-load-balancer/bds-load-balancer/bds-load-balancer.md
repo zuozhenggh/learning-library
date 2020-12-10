@@ -129,9 +129,7 @@ To copy the files:
     node.cert
     node.hue.key
     node.key
-    ssl.cacerts.pem
-    ssl.private.key
-      ```
+        ```
 
   4. Copy and save the file *name* of the PEM file for the first utility node. You can identify it by looking at the first part of the names, where ``<cluster>`` is the first seven letters of the cluster name and `un0` identifies the node. For example, on a cluster named `mycluster`, the first utility node is:
 
