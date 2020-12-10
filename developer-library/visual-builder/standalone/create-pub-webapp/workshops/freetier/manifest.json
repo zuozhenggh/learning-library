@@ -22,6 +22,18 @@
 		{
             "title": "Lab 3: Add Navigation and Data to Your Web App",
             "filename": "../../add-nav-and-data/add-nav-and-data.md"
+        },
+		{
+            "title": "Lab 4: Add Pages for Working with Data",
+            "filename": "../../add-pages/add-pages.md"
+        },
+    {
+            "title": "Lab 5: Stage and Publish",
+            "filename": "../../stage-and-publish/stage-and-publish.md"
+        },
+    {
+            "title": "Lab 6: Create Business Rules",
+            "filename": "../../create-biz-rules/create-biz-rules.md"
         }
     ]
 }

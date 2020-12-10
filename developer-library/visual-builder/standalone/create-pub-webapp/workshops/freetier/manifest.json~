@@ -13,28 +13,27 @@
         },
         {
             "title": "Lab 1: Create a Web Application",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../create-web-app/create-web-app.md"
         },
-        {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+		{
+            "title": "Lab 2: Create Pages for Business Objects",
+            "filename": "../../create-pages/create-pages.md"
         },
-        {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+		{
+            "title": "Lab 3: Add Navigation and Data to Your Web App",
+            "filename": "../../add-nav-and-data/add-nav-and-data.md"
         },
-        {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+		{
+            "title": "Lab 4: Add Pages for Working with Data",
+            "filename": "../../add-pages/add-pages.md"
         },
-        {
-            "title": "Lab 5: Analyze Data",
-            "filename": "../../analyze/analyze.md"
+    {
+            "title": "Lab 5: Stage and Publish",
+            "filename": "../../stage-and-publish/stage-and-publish.md"
         },
-        {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
+    {
+            "title": "Lab 5: Stage and Publish",
+            "filename": "../../stage-and-publish/stage-and-publish.md"
         }
     ]
 }

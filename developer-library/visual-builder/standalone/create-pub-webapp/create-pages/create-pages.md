@@ -13,7 +13,7 @@ As a refresher, here's the Location, Department, and Employee business objects y
 
 ![](./images/vbcscp_dbdiagram.png)
 
-## Use the main-start Page to Display Departments
+## STEP 1: Use the main-start Page to Display Departments
 
 These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
 
@@ -67,7 +67,7 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
     The main-start page now has a table with three columns: Id, Name, and Location. You won't see any information in your table because we are yet to import data for the Department business object.
 
 
-## Add a Create Page for the Department Business Object
+## STEP 2: Add a Create Page for the Department Business Object
 
 A Create page allows you to populate your table with data by creating new instances of a business object.
 
@@ -106,7 +106,7 @@ A Create page allows you to populate your table with data by creating new instan
 
 9.  Click **Design** to return to Design view.
 
-## Add a Page to Display Employees
+## STEP 3: Add a Page to Display Employees
 
 In this step, you'll create a page to display employees, similar to the one you created for departments.
 
@@ -141,7 +141,7 @@ In this step, you'll create a page to display employees, similar to the one you 
 
 12.  In **Columns, Header Text** field, change `Name` to `Department`, then click ![Back to Table icon](./images/vbcscp_backtotable_icon.png) **Table** to return to the main **Data** tab.
 
-## Add a Create Page for the Employee Business Object
+## STEP 4: Add a Create Page for the Employee Business Object
 
 1.  Click the **Quick Start** tab, then click **Add Create Page**.
 2.  On the Select Endpoint page, select the **Employee** business object, if necessary, and click **Next**.
@@ -171,7 +171,7 @@ In this step, you'll create a page to display employees, similar to the one you 
 
 11.  Click **Structure** again to close the structure view.
 
-## Change the Name of the main-start Page
+## STEP 5: Change the Name of the main-start Page
 
 It makes sense at this point to change the name of the main-start page to main-departments, to match the name of the main-employees page.
 

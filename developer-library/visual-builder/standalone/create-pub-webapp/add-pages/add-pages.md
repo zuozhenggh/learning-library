@@ -1,107 +1,120 @@
-# Analyze Data
+# Add Pages for Working with Data
 
-## Introduction
+## Before You Begin
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This 15-minute tutorial shows you how to use the Quick Starts provided with Oracle Visual Builder to create pages and buttons that allow you to edit data, view details of data, and delete data in a table.
 
-Estimated Lab Time: n minutes
+### Background
 
-### About Product/Technology
-Enter background information here..
+In Oracle Visual Builder, you can use Quick Starts for table components to create specific kinds of pages to create, edit, and delete business object data. The Quick Starts add buttons and action chains that save you the work of creating these elements yourself.
 
-### Objectives
+In a previous tutorial, you used a couple of the table quick starts. In this tutorial, you'll use the rest of them.
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+## STEP 1: Add an Edit Page for the Department Business Object
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+1.  In the HR Application, click the **Web Applications** ![Web Applications icon](./images/vbcsmd_webapp_icon.png) tab, go to the **main-departments** page, then click the **Table** component in the **Page Designer** tab. If necessary, click **Reload page** ![Reload page icon](./images/vbcsmd_refresh_icon.png) to view the departments. Click the **Components** tab to make room to view the page.
+2.  Click the **Quick Start** tab in the Property Inspector to display the Quick Start menu, then click **Add Edit Page**.
 
-### Prerequisites
+    ![](./images/vbcsmd_aep_s2.png)
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+3.  On the Select Read Endpoint page, select the **Department** business object, if necessary, and click **Next**.
+4.  On the Select Update Endpoint page, select the **Department** business object, if necessary, and click **Next**.
+5.  On the Page Details page, select **location** under Endpoint Structure (**name** is already selected) and click **Finish**.
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+    An **Edit Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
-*This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
+## STEP 2: Add a Detail Page for the Department Business Object
 
-Step 1 opening paragraph.
+1.  In the Quick Start menu, click **Add Detail Page**.
+2.  On the Select Endpoint page, select the **Department** business object, if necessary, and click **Next**.
+3.  On the Page Details page, select **name** under Endpoint Structure. Expand the **locationObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name**, then click **Finish**.  
 
-1. Sub step 1
+    A **Department Detail** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
-  To create a link to local file you want the reader to download, use this format:
+4.  Click **Live**, select a row, then click the **Department Detail** button to open the main-department-detail page.
+5.  Click **Design** to return to Design view.
+6.  Click the **Input Text** field for the second **Name** label to open the Input Text Property Inspector. In the **General** tab, change the **Label Hint** value to `Location`.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+## STEP 3: Add a Delete Button for the Department Business Object
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+1.  Return to the **main-departments** page. Click the **Quick Start** tab if necessary, and click **Add Delete Action**.
+2.  On the Select Endpoint page (the only page of the Quick Start), select the **Department** business object, if necessary, and click **Finish**.
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+    A **Delete Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
-    ![Image alt text](images/sample1.png "Image title")
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+## STEP 4: Test Your New Department Pages
 
-    ![Image alt text](images/sample1.png)
+1.  Click **Preview** ![Preview icon](./images/vbcsmd_run_icon.png) to test the new pages.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    The application opens in another browser tab. The three buttons you created are inactive.
 
-5. One example with bold **text**.
+2.  Select a row. All the buttons are now active.
+3.  Click **Edit Department**.
 
-   If you add another paragraph, add 3 spaces before the line.
+    ![](./images/vbcsmd_test_s3.png)
 
-## **STEP 2:** title
+4.  On the Edit Department page, change the **Location** field to `Floor 4` and click **Save**. A success message appears briefly, and you are returned to the Departments page.
+5.  Select the row again and click **Department Detail** to display the data.
 
-1. Sub step 1
+    ![](./images/vbcsmd_test_s5.png)
 
-  Use tables sparingly:
+6.  Click **Back**.
+7.  Click **Create** and specify the name and location of a new department, then click **Save**. A success message appears. The new department is displayed in the table.
+8.  Select the new department and click **Delete Department**. A success message appears. The department is no longer displayed.
+9.  Close the browser tab.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+## STEP 5: Add an Edit Page for the Employee Business Object
 
-2. You can also include bulleted lists - make sure to indent by at three spaces:
+1.  Go to the **main-employees** page, click the **Table** component in the **Page Designer** tab.
+2.  In the Property Inspector, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
+3.  On the Select Read Endpoint page, select the **Employee** business object, if necessary, and click **Next**.
+4.  On the Select Update Endpoint page, select the **Employee** business object, if necessary, and click **Next**.
+5.  On the Page Details page, select **hireDate**, **email**, and **department** under Endpoint Structure (**name** is already selected), and then click **Finish**.
 
-      - List item 1
-      - List item 2
+    An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-3. Code examples
+6.  Click **Live**, select a row, and click the **Edit Employee** button to open the main-edit-employee page.
+7.  Click **Design** to go to Design view.
+8.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Property Inspector, set the **Max Columns** value to **2**. The fields now appear in two columns.
 
-    ```
-    Adding code examples
-	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-	<copy>Enclose the text you want to copy in <copy&gt;</copy&gt;.</copy>
-    ```
+## STEP 6: Add Detail and Delete Pages for the Employee Business Object
 
-4. Code examples that include variables
+1.  Go to the **main-employees** page. If necessary, click the table, then click the **Quick Start** tab.
+2.  In the Quick Start menu, click **Add Detail Page** tab.
+3.  On the Select Endpoint page of the Quick Start, select the **Employee** business object, if necessary, and click **Next**.
+4.  On the Page Details page of the Quick Start, select **name**, **hireDate**, and **email** under Endpoint Structure. Expand the **departmentObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name**, then click **Finish**.
 
-	```
-  <copy>ssh -i <ssh-key-file&gt;</copy>
-  ```
+    An **Employee Detail** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
+5.  In the Quick Start menu, click **Add Delete Action**.
+6.  On the Select Endpoint page (the only page of the Quick Start), select the **Employee** business object, if necessary, and click **Finish**.
 
-## Learn More
+    A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-*(optional - include links to docs, white papers, blogs, etc)*
+7.  Click **Live**, select a row, and click the **Employee Detail** button to open the main-employee-detail page.
+8.  Click the **Design** button.
+9.  Click the **Input Text** component for the second **Name** label to open the Input Text Property Inspector. Change the **Label Hint** value to `Department`.
+10.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the property inspector, set the **Max Columns** value to **2**.
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+## STEP 7: Test Your New Employee Pages
 
-## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+1.  Click **Preview** ![Preview icon](./images/vbcsmd_run_icon.png) to test the pages.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+    The application opens in another browser tab, displaying the Departments page.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+2.  Click **Display Employees Page**.
+
+    The three buttons you created are inactive.
+
+3.  Select a row. All the buttons are now active.
+
+    ![](./images/vbcsmd_testemp_s3.png)
+
+4.  Click the **Edit Employee** button.
+5.  On the Edit Employee page, change the **Department** field to `IT` and click **Save**. A success message appears, and you are returned to the Employees page.
+6.  Select the row again and click **Employee Detail** to display the data, then click **Back**.
+7.  Click **Create** and specify the data for a new employee, then click **Save**. A success message appears, and the new employee is displayed in the table.
+8.  Select the new employee and click **Delete Employee**. A success message appears. The employee is no longer displayed.
+9.  Close the browser tab.

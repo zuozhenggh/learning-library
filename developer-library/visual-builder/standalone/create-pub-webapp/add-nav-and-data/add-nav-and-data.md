@@ -1,4 +1,4 @@
-# Add Navigation and Data to an Oracle Visual Builder Web Application
+# Add Navigation and Data to Your Web App
 
 ## Before You Begin
 
@@ -6,17 +6,11 @@ This 10-minute tutorial shows you how to create navigation buttons in a web appl
 
 ### Background
 
-In Oracle Visual Builder, you can create buttons for a web page and then specify the actions that are performed when you click the buttons. An action chain is a sequence of actions. You can use and customize predefined actions or define your own. Here, you'll create buttons that navigate between the Departments page and the Employees page in your application.
+In Oracle Visual Builder, you can create buttons for a web page, then specify the actions that are performed when you click the buttons. An *action chain* is a sequence of actions. You can use and customize predefined actions or define your own. Here, you'll create buttons that navigate between the Departments page and the Employees page in your application.
 
 You can also populate your business objects by importing data from a file. You did this for the Location business object in the first tutorial, and you'll do the same for the Department and Employee business objects here.
 
-### What Do You Need?
-
--   Access to Oracle Visual Builder
--   A supported browser
--   Completion of the previous tutorials
-
-## Create an Action Chain to Navigate from the Departments Page to the Employees Page
+## STEP 1: Create an Action Chain to Navigate from the Departments Page to the Employees Page
 
 1.  In the HR Application, click the **Web Applications** ![Web Applications icon](./images/vbcsnd_webapp_icon.png) tab in the Navigator, and click **main-departments** under the **Flows** and **main** nodes. If necessary, click the **Page Designer** tab.
 2.  If necessary, click **Components** in the Page Designer to open the Components palette. Then, drag a **Button** from the **Common** components to the **Toolbar**, to the right of the **Create** button.
@@ -40,7 +34,7 @@ You can also populate your business objects by importing data from a file. You d
 7.  Click **Preview** ![Preview icon](./images/vbcsnd_run_icon.png) in the header to test the pages and navigation. The application opens in another browser tab. Click **Create** and add another department (`IT` on `Floor 2`, for example), then click **Save**. A success message is displayed briefly.
 8.  Click **Display Employees Page**, then click **Create**. Add another employee, specifying the new department, and click **Save**. You'll notice there's no way to get back to the main-departments page from the main-employees page. Close the browser tab.
 
-## Create an Action Chain to Navigate from the Employees Page to the Departments Page
+## STEP 2: Create an Action Chain to Navigate from the Employees Page to the Departments Page
 
 1.  In the Web Apps pane of the Navigator, click **main-employees** under the **Flows** and **main** nodes. If necessary, click **Reload page** ![Reload page icon](./images/vbcsnd_refresh_icon.png) to display the new employee you created.
 2.  In the Components palette, locate the **Common** components and drag a **Button** component into the **Toolbar**, to the right of the **Create** button.
@@ -60,9 +54,9 @@ You can also populate your business objects by importing data from a file. You d
     ![](./images/vbcsnd_cpc_s9.png)
 
 
-## Import Data for the Business Objects
+## STEP 3: Import Data for the Business Objects
 
-Instead of using the Data Manager to import data, this time you'll use the **Data** tab of each business object to do the same thing.
+Instead of using the Data Manager to import data, this time you'll use each business object's **Data** tab to do the same thing.
 
 1.  Click [this link](./files/Department.csv) and download the `Department.csv` file. The file contains six departments for the application.
 2.  Click [this link](./files/Employee.csv) and download the `Employee.csv` file. The file contains nine employees for the application.

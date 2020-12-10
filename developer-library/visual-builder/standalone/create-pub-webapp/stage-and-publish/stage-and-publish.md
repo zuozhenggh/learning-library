@@ -1,107 +1,92 @@
-# Analyze Data
+# Stage and Publish an Oracle Visual Builder Web Application
 
-## Introduction
+## Before You Begin
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This 10-minute tutorial shows you how to stage and publish a web application.
 
-Estimated Lab Time: n minutes
+### Background
 
-### About Product/Technology
-Enter background information here..
+Once you have created an Oracle Visual Builder application, you can stage it to allow team members to test it thoroughly. After testing is complete, you can publish the application and make it available to users.
 
-### Objectives
+Oracle Visual Builder provides different databases for the development, staging, and live phases of an application. You can use an empty database for the staging or live phase, or you can transfer data from one to another, or you can import specific data for each.
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+## STEP 1: Stage the Application
 
-### Prerequisites
+Stage the application so that other users can test its behavior.
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+1.  If necessary, log in to Oracle Visual Builder. If you are still in the HR Application, click **ORACLE Visual Builder** to return to the Visual Applications page.
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+    ![](./images/vbcssp_sta_s1.png)
 
-*This is the "fold" - below items are collapsed by default*
+2.  On the Visual Applications page, click the **Options** ![Options menu icon](./images/vbcssp_menu_icon.png) icon for HR Application and select **Stage**.
 
-## **STEP 1**: title
+    ![](./images/vbcssp_sta_s2.png)
 
-Step 1 opening paragraph.
+3.  In the Stage Application dialog box, select the **Populate Stage with Development data** option and click **Stage**.
 
-1. Sub step 1
+    ![](./images/vbcssp_sta_s3.png)
 
-  To create a link to local file you want the reader to download, use this format:
+    The application is staged, and the status changes from Development to Stage.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+4.  Click **Stage** and select **hrwebapp**, the name of the web application. The staged application opens in a new browser tab. The tables are populated with the data from Development.
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+    ![](./images/vbcssp_sta_s4.png)
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+5.  Make a note of the URL of the staged application. You can share this URL with members of your group so that they can test it.
 
-    ![Image alt text](images/sample1.png "Image title")
+    When you have finished using the application, close the browser tab to return to the Visual Applications page.
 
-3. Ordered list item 3 with the same image but no link to the text description below.
 
-    ![Image alt text](images/sample1.png)
+## STEP 2: Import Data Into the Application (Optional)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+You can import data for the Department and Employee business objects from a zip file. You can skip directly to the publishing step if you wish.
 
-5. One example with bold **text**.
+1.  Click [this link](./files/HR_Application_Stage.zip) and download the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
+2.  On the Visual Applications page, click **HR Application** in the Name column to open it.
+3.  Click the **Business Objects** ![Business Objects icon](./images/vbcssp_bo_icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
-   If you add another paragraph, add 3 spaces before the line.
+    ![](./images/vbcssp_imp_s3.png)
 
-## **STEP 2:** title
+4.  From the drop-down list in the upper right corner, select **Staging** to import the data into the staging database.  
 
-1. Sub step 1
+    ![](./images/vbcssp_imp_s4.png)
 
-  Use tables sparingly:
+5.  Click **Import from File**.
+6.  In the Import Data dialog box, click the import box, select `HR_Application_Stage.zip`, and click **Import**. When the import succeeds, click **Close**.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+    ![](./images/vbcssp_imp_s6.png)
 
-2. You can also include bulleted lists - make sure to indent by at three spaces:
+7.  In the Business Objects pane, click **Department**.
+8.  Click the **Data** tab if necessary, then select **Staging** from the drop-down list to view the new departments.
 
-      - List item 1
-      - List item 2
+    ![](./images/vbcssp_imp_s8.png)
 
-3. Code examples
+9.  Click **Employee**, then click the **Data** tab and select **Staging** to view the new employees.
 
-    ```
-    Adding code examples
-	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-	<copy>Enclose the text you want to copy in <copy&gt;</copy&gt;.</copy>
-    ```
+    ![](./images/vbcssp_imp_s9.png)
 
-4. Code examples that include variables
 
-	```
-  <copy>ssh -i <ssh-key-file&gt;</copy>
-  ```
+## STEP 3: Publish the Application
 
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
+After you have successfully tested the staged application, you can publish it and make the application live. The live application is visible to users with proper credentials.
 
-## Learn More
+1.  Click the **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png) icon in the header and select **Publish**. (If you skipped the previous section, you can click the **Options** ![Options menu icon](./images/vbcssp_menu_icon.png) icon for HR Application and select **Publish**.)
+2.  In the Publish Application dialog box, select the **Include data from Stage** option and click **Publish**.  
 
-*(optional - include links to docs, white papers, blogs, etc)*
+    ![](./images/vbcssp_pub_s2.png)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+    The application is now live. Notice the status change in the header next to the application name.
 
-## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+3.  Click **ORACLE Visual Builder** to return to the Visual Applications page.
+4.  Click **Live** and select **hrwebapp**. The application opens in a new browser tab.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+    ![](./images/vbcssp_pub_s4.png)
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+    The schema and the data from the staging database are copied to the live database.
+
+5.  Make a note of the URL of the application. You can share this URL with public users.
+
+    When you've finished using the application, close the browser tab.
+
+6.  If you want to, click the user menu in the top-right corner and select **Sign Out** from the menu. After you've published an application, you will no longer be able to make changes to it. Instead, create a new version of it and edit that.
