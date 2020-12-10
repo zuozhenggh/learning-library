@@ -15,10 +15,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 
@@ -35,7 +34,7 @@ In this lab, you will:
     
     Connected to:
     
-    Oracle Database 20c Enterprise Edition Release 21.0.0.0.0 - Production
+    Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
     
     Version 21.2.0.0.0
     
@@ -61,7 +60,7 @@ In this lab, you will:
     
     ...
     
-    SQL> CREATE USER c##test IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> CREATE USER c##test IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     User created.
     
@@ -257,19 +256,19 @@ In this lab, you will:
     
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     
     ...
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>password</i> container=all;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>WElcome123##</i> container=all;
     
     keystore altered.
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL;
     
-    ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL
+    ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL
     
     *
     
@@ -545,7 +544,7 @@ In this lab, you will:
     
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     
@@ -607,9 +606,9 @@ In this lab, you will:
     
     System altered.
     
-    SQL> ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>password</i> ;
+    SQL> ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>WElcome123##</i> ;
     
-    ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>password</i> 
+    ADMINISTER KEY MANAGEMENT CREATE KEYSTORE IDENTIFIED BY <i>WElcome123##</i> 
     
     *
     
@@ -617,11 +616,11 @@ In this lab, you will:
     
     ORA-46630: keystore cannot be created at the specified location
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>password</i> container=all;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>WElcome123##</i> container=all;
     
     keystore altered.
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL;
     
     keystore altered.
     
@@ -649,6 +648,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

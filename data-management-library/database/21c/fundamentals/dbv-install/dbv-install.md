@@ -12,10 +12,9 @@ In this lab, you will:
   
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 
@@ -30,7 +29,7 @@ Before starting the reinstallation of Database Vault, use the [Practice: Deinsta
     
     ```
     
-    $ <copy>$ORACLE_HOME/bin/dbca -silent -configureDatabase -sourceDB CDB21 -dvConfiguration true -olsConfiguration true -dvUserName c##dvo -dvUserPassword <i>password</i> -dvAccountManagerName c##dvacctmgr -dvAccountManagerPassword <i>password</i> </copy>
+    $ <copy>$ORACLE_HOME/bin/dbca -silent -configureDatabase -sourceDB CDB21 -dvConfiguration true -olsConfiguration true -dvUserName c##dvo -dvUserPassword <i>WElcome123##</i> -dvAccountManagerName c##dvacctmgr -dvAccountManagerPassword <i>WElcome123##</i> </copy>
     
     Enter password for the TDE wallet: <i> password </i>
     
@@ -110,6 +109,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

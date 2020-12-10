@@ -12,10 +12,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 ## **STEP 1:**  Enable the In-Memory column store in the CDB and set up the Oracle Text user in the PDB
@@ -36,7 +35,7 @@ In this lab, you will:
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
 
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
 
     keystore altered.
     ...
@@ -80,7 +79,7 @@ In this lab, you will:
     Tablespace created.
 
     SQL>
-    SQL> CREATE USER textuser IDENTIFIED BY <i>password</i> default tablespace tbs_text;
+    SQL> CREATE USER textuser IDENTIFIED BY <i>WElcome123##</i> default tablespace tbs_text;
 
     User created.
 
@@ -508,6 +507,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

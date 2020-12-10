@@ -13,10 +13,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 
@@ -42,7 +41,7 @@ In this lab, you will:
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
     
     keystore altered.
     ...
@@ -67,7 +66,7 @@ In this lab, you will:
     Session altered.
     
     SQL> CREATE PLUGGABLE DATABASE toys_root AS APPLICATION CONTAINER
-      2    ADMIN USER admin IDENTIFIED BY <i>password</i> ROLES=(CONNECT);
+      2    ADMIN USER admin IDENTIFIED BY <i>WElcome123##</i> ROLES=(CONNECT);
     
     Pluggable database created.
     
@@ -122,7 +121,7 @@ In this lab, you will:
 	
 	SQL> <copy>CONNECT sys@robots AS SYSDBA</copy>
 	
-	Enter password: <b><i>password</i></b>
+	Enter password: <b><i>WElcome123##</i></b>
 	
 	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
 	
@@ -157,7 +156,7 @@ In this lab, you will:
 	
 	SQL> <copy>CONNECT sys@dolls AS SYSDBA</copy>
 	
-	Enter password: <b><i>password</i></b>
+	Enter password: <b><i>WElcome123##</i></b>
 	
 	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
 	
@@ -227,6 +226,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "workshoptitle": "Lift and Shift On-premises EBS to OCI",
+=======
+  "workshoptitle": "Migrate EBS to OCI",
+>>>>>>> upstream/master
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -8,6 +12,7 @@
         },
         {
             "title": "Introduction",
+<<<<<<< HEAD
             "description": "Introduction to EBS lift and shift",
             "filename": "../../introduction/introduction.md"
         },
@@ -19,6 +24,19 @@
         {
             "title": "Lab 2: Preparing the Source Oracle E-Business Suite Environment",
             "description": "Preparing the Source Oracle E-Business Suite Environment",
+=======
+            "description": "Introduction to Migrate EBS to OCI",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create the Source Oracle E-Business Suite Environment",
+            "description": "Create the Source Oracle E-Business Suite Environment",
+            "filename": "../../source/source.md"
+        },
+        {
+            "title": "Lab 2: Prepare the Source Oracle E-Business Suite Environment",
+            "description": "Prepare the Source Oracle E-Business Suite Environment",
+>>>>>>> upstream/master
             "filename": "../../prepare/prepare.md"
         },
         {
@@ -32,7 +50,13 @@
             "filename": "../../backup/backup.md"
         }, 
         {
+<<<<<<< HEAD
             "title": "teardown"
+=======
+            "title": "Lab 5: Deploy an EBS Environment on Cloud Manager from a Backup",
+            "description": "Deploy an EBS Environment on Cloud Manager from a Backup",
+            "filename": "../../deploy/deploy.md"
+>>>>>>> upstream/master
         }
      ]
 }

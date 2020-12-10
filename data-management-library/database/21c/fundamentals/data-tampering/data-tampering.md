@@ -11,10 +11,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 
@@ -36,7 +35,7 @@ In this lab, you will:
     ERROR at line 1:
     ORA-28389: cannot close auto login wallet
 
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>password</i> CONTAINER=ALL;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
 
     keystore altered.
     ...
@@ -108,7 +107,7 @@ In this lab, you will:
 
     PL/SQL procedure successfully completed.
 
-    SQL> 
+    SQL>
 
     ```
 
@@ -116,309 +115,299 @@ In this lab, you will:
 
 1. At the end of each month and fiscal period, for legislative reasons, there is an audit table that stores what was sold. Verify the amount sold at the end of fiscal year 1998.
 
-    
+
     ```
-      
-    $ <copy>sqlplus system@PDB21</copy>
-      
-    Enter password: <b><i>password</i></b>
-      
+
+    $ <copy>sqlplus system@PDB1</copy>
+
+    Enter password: <b><i>WElcome123##</i></b>
+    ```
+    ```  
     SQL> <copy>SET PAGES 100</copy>
-      
+
     SQL> <copy>SELECT amount_sold FROM sh.sales s
-      
-        JOIN sh.times t ON (s.time_id = t.time_id)
-      
-        WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-      
-    AMOUNT_SOLD
-      
+              JOIN sh.times t ON (s.time_id = t.time_id)
+              WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
+
+          AMOUNT_SOLD
+
     -----------
-      
+
           22.99
-      
+
           44.99
-      
+
           7.99
-      
+
         149.99
-      
+
     ...
-      
+
           11.99
-      
+
           44.99
-      
+
           49.99
-      
+
           11.99
-      
+
           44.99
-      
+
           27.99
-      
+
         149.99
-      
+
           44.99
-      
+
     12400 rows selected.
-      
-    SQL> 
-      
+
+    SQL>
+
     ```
 
 2. Before storing the data for auditing, note the `CHECKSUM` value. This will help you ensure that no one is tampering with old sales.
 
-  
     ```
-      
+
       SQL> <copy>SELECT CHECKSUM(amount_sold) FROM sh.sales s
-      
-          JOIN sh.times t ON (s.time_id = t.time_id)
-      
-          WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-      
+                JOIN sh.times t ON (s.time_id = t.time_id)
+                WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
+
       CHECKSUM(AMOUNT_SOLD)
-      
+
       ---------------------
-      
+
                     793409
-      
-      SQL> 
-      
+
+      SQL>
+
     ```
 
 3.  Meanwhile in another terminal session, called SH session, someone executes a batch that updates the amount sold.
 
-  
     ```
-    
+
     $ <copy>/home/oracle/labs/M104784GC10/app_SH_tables.sh</copy>				  
-    
+
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-    
+
     Last Successful login time: Wed Mar 25 2020 03:20:17 +00:00
-    
+
     Connected to:
-    
+
     525 rows updated.
-    
+
     Commit complete.
-    
+
     $
-    
+
     ```
 
 ## **STEP 3:** Examine data after tampering
 
 1. In the initial terminal session, check that no one tampered with old sales.
 
-  
+
     ```
-    
+
+    $ <copy>sqlplus system@PDB1</copy>
+
+    Enter password: <b><i>WElcome123##</i></b>
+    ```
+
+    ```
+
     SQL> <copy>SELECT CHECKSUM(amount_sold) FROM sh.sales s
-    
-        JOIN sh.times t ON (s.time_id = t.time_id)
-    
-        WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-    
+            JOIN sh.times t ON (s.time_id = t.time_id)
+            WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
+
     CHECKSUM(AMOUNT_SOLD)
-    
+
     ---------------------
-    
+
                   835564
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
-  
+
   Since the checksum value is different from the value retrieved in step 4, someone tampered the data.
 
 2. What happens if someone attempted to tamper with old sales? In the SH session, update some old sales but then rolls the transaction back.
 
-  
+
     ```
-    
-    $ <copy>sqlplus sh@PDB21</copy>
-    
+
+    $ <copy>sqlplus sh@PDB1</copy>
+
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-    
+
     Enter password: password
-    
+
     Last Successful login time: Wed Mar 25 2020 03:28:37 +00:00
-    
+
     Connected to:
-    
+    ```
+    ```
+
     SQL> <copy>UPDATE sh.sales SET amount_sold = amount_sold*2 WHERE time_id='30-NOV-98';</copy>
-    
+
     525 rows updated.
-    
+
     SQL> <copy>ROLLBACK;</copy>
-    
+
     Rollback complete.
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
 
 3. In the initial terminal session, check that no one tampered with old sales.
 
-  
+
     ```
-    
+
     SQL> <copy>SELECT CHECKSUM(amount_sold) FROM sh.sales s
-    
         JOIN sh.times t ON (s.time_id = t.time_id)
-    
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-    
+
     CHECKSUM(AMOUNT_SOLD)
-    
+
     ---------------------
-    
+
                   835564
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
-  
+
   The checksum value for the column is still the same as it was before the rolled back update.
 
 4. Verify also the quantity sold at the end of fiscal year 1998 and the checksum value.
 
-    
+
     ```
-    
+
     SQL> <copy>SELECT DISTINCT quantity_sold FROM sh.sales s
-    
         JOIN sh.times t ON (s.time_id = t.time_id)
-    
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-    
+
     QUANTITY_SOLD
-    
+
     -------------
-    
+
                 1
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
-  
+
   As you can see, the quantity sold for any sales is one.
 
-    
+
     ```
-    
+
     SQL> <copy>SELECT CHECKSUM(quantity_sold) FROM sh.sales s
-    
         JOIN sh.times t ON (s.time_id = t.time_id)
-    
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-    
+
     CHECKSUM(QUANTITY_SOLD)
-    
+
     -----------------------
-    
+
                           0
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
-    
+
   The checksum value is 0 which is not a distinguishable value from another quantity value.
 
-  
+
   What if you use the `DISTINCT` (or `UNIQUE`- `UNIQUE` is an Oracle specific keyword and not an ANSI standard)?
 
-  
+
     ```
-    
+
     SQL> <copy>SELECT CHECKSUM(DISTINCT quantity_sold) FROM sh.sales s
-    
         JOIN sh.times t ON (s.time_id = t.time_id)
-    
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-    
+
     CHECKSUM(DISTINCTQUANTITY_SOLD)
-    
+
     -------------------------------
-    
+
                             863352
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
 
 5. In the SH session, double the quantity for all sales.
 
-  
+
     ```
-    
+
     SQL> <copy>UPDATE sh.sales SET quantity_sold = 2;</copy>
-    
+
     918843 rows updated.
-    
+
     SQL> <copy>COMMIT;</copy>
-    
+
     Commit complete.
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
 
 6. In the initial terminal session, check that no one tampered with old sales.
 
-  
+
     ```
-    
+
     SQL> <copy>SELECT CHECKSUM(quantity_sold) FROM sh.sales s
-    
         JOIN sh.times t ON (s.time_id = t.time_id)
-    
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-    
+
     CHECKSUM(AMOUNT_SOLD)
-    
+
     ---------------------
-    
+
                         0
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
-    
+
     The checksum value for the column is still the same as it was before the committed update.
 
-    
+
     ```
-      
+
       SQL> <copy>SELECT CHECKSUM(DISTINCT quantity_sold) FROM sh.sales s
-      
           JOIN sh.times t ON (s.time_id = t.time_id)
-      
           WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
-      
+
       CHECKSUM(DISTINCTQUANTITY_SOLD)
-      
+
       -------------------------------
-      
+
                                 65515
-      
-      SQL> 
-      
+
+      SQL>
+
     ```
-  
+
   The checksum value for the column is different from the one retrieved previously.
 
 7. How is NULL considered? Still in the initial terminal session, check that no one tampered with customer email addresses.
-    
+
     - First, get the checksum value of the customer email addresses whose `CUST_INCOME_LEVEL` is equal to 300000 or higher.
 
     ```
-    
+
     SQL> <copy>SELECT cust_email FROM sh.customers WHERE cust_income_level ='L: 300,000 and above';</copy>
-    
+
     CUST_EMAIL
     --------------------------------------------------
     Gowen@company.example.com
@@ -426,68 +415,68 @@ In this lab, you will:
     ...
     Krishnan@company.example.com
     Prabu@company.example.com
-    
+
     1684 rows selected.
-    
+
     SQL> <copy>SELECT CHECKSUM(cust_email) FROM sh.customers;</copy>
-    
+
     CHECKSUM(CUST_EMAIL)
     --------------------
                   107013
-    
+
     SQL><copy> SELECT CHECKSUM(DISTINCT cust_email) FROM sh.customers;</copy>
-    
+
     CHECKSUM(DISTINCTCUST_EMAIL)
     ----------------------------
                           227092
-    
-    SQL> 
-    
+
+    SQL>
+
     ```
 
     - In the SH session, the user sets the customer email addresses to NULL for customers whose `CUST_INCOME_LEVEL` is equal to 300000 or higher.
 
     ```
-    
+
     SQL> <copy>UPDATE sh.customers SET cust_email = NULL
          WHERE cust_income_level ='L: 300,000 and above';</copy>
-    
+
     1684 rows updated.
-    
+
     SQL> <copy>COMMIT;</copy>
-    
+
     Commit complete.
-    
+
     SQL>
-    
+
     ```
 
     - In the initial terminal session, get the new checksum value of customer email addresses of customers whose `CUST_INCOME_LEVEL` is equal to 300000 or higher after the update.
 
     ```
-    
+
     SQL> <copy>SELECT DISTINCT cust_email FROM sh.customers WHERE cust_income_level ='L: 300,000 and above';</copy>
-    
+
     CUST_EMAIL
     --------------------------------------------------
-    
-    
+
+
     SQL> <copy>SELECT CHECKSUM(cust_email) FROM sh.customers;</copy>
-    
+
     CHECKSUM(CUST_EMAIL)
     --------------------
                   577487
-    
+
     SQL> <copy>SELECT CHECKSUM(DISTINCT cust_email) FROM sh.customers;</copy>
-    
+
     CHECKSUM(DISTINCTCUST_EMAIL)
     ----------------------------
                           141231
-    
-    
+
+
     SQL> <copy>EXIT</copy>
     $
-    
+
     ```
     *Be aware that NULL values in `CHECKSUM` column are ignored in external tables.*
 
@@ -500,6 +489,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

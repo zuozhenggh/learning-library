@@ -14,10 +14,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 
@@ -150,14 +149,14 @@ In this lab, you will:
     
     ```
 
-2. Log in `PDB21` as `SALES`, set your session in statistic trace, and query the `SALES_ZM` table a few times to see the “consistent gets” value.
+2. Log in `PDB21` as `SALES`, set your session in statistic trace, and query the `SALES_ZM` table a few times to see the “consistent gets” value. Enter the password you used to create your DB System, `WElcome123##`.
 
   
     ```
     
     $ <copy>sqlplus sales@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     SQL> <copy>SET AUTOTRACE ON STATISTIC</copy>
     
@@ -941,6 +940,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -19,21 +19,20 @@ In this lab, you will:
 * Enable all three audit policies for all users
 
 ### Prerequisites
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 
 ## **STEP 1:** Observe the predefined unified audit policies implemented
 
-1. Connect to `PDB21` as `SYSTEM`.
+1. Connect to `PDB21` as `SYSTEM`.  Enter the password you used to create your DB System, `WElcome123##`.
 
   
     ```
     $ <copy>sqlplus system@PDB21</copy>
-    Enter password: <i><b>password</b></i>
+    Enter password: <i><b>WElcome123##</b></i>
     Connected.
     SQL>
     ```
@@ -243,10 +242,10 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  Kay Malcolm, Kamryn Vinson, Anoosha Pilli, Database Product Management
+* **Last Updated By/Date** -  Kay Malcolm, December 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

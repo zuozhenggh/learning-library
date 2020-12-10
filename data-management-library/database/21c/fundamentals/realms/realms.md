@@ -12,10 +12,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 ## **STEP 1:** Configure and enable Database Vault at the CDB and PDB levels
@@ -33,13 +32,13 @@ In this lab, you will:
     
     ...
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>password</i> container=all;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY <i>WElcome123##</i> container=all;
     
     keystore altered.
     
     ...
     
-    SQL> create user c##sec_admin identified by <i>password</i> container=ALL;
+    SQL> create user c##sec_admin identified by <i>WElcome123##</i> container=ALL;
     
     User created.
     
@@ -57,7 +56,7 @@ In this lab, you will:
     
     ORA-01918: user 'C##ACCTS_ADMIN' does not exist
     
-    SQL> create user c##accts_admin identified by <i>password</i> container=ALL;
+    SQL> create user c##accts_admin identified by <i>WElcome123##</i> container=ALL;
     
     User created.
     
@@ -160,7 +159,7 @@ In this lab, you will:
     
     $ <copy>sqlplus c##sec_admin</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     SQL> <copy>SELECT * FROM DVSYS.DBA_DV_COMMON_OPERATION_STATUS;</copy>
     
@@ -181,7 +180,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##test1</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -204,7 +203,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##test2</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -227,7 +226,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -250,7 +249,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -275,7 +274,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##sec_admin</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -326,7 +325,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -343,7 +342,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     SELECT * FROM c##test1.g_emp
@@ -360,7 +359,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -377,7 +376,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -394,7 +393,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##sec_admin</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Root Test Realm')</copy>
     
@@ -456,7 +455,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     SELECT * FROM c##test1.g_emp
@@ -474,7 +473,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     SELECT * FROM c##test1.g_emp
@@ -492,7 +491,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -509,7 +508,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -526,7 +525,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##sec_admin</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Root Test Realm')</copy>
     
@@ -545,7 +544,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sec_admin@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -596,7 +595,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -613,7 +612,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -630,7 +629,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -647,7 +646,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     SELECT * FROM c##test1.l_emp
@@ -664,7 +663,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##sec_admin@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Test Realm')</copy>
     
@@ -681,7 +680,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sec_admin@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -732,7 +731,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -749,7 +748,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -766,7 +765,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     SELECT * FROM c##test1.l_emp
@@ -783,7 +782,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     SELECT * FROM c##test1.l_emp
@@ -800,7 +799,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##sec_admin@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Test Realm')</copy>
     
@@ -817,7 +816,7 @@ In this lab, you will:
     ```
 
     SQL> <copy>CONNECT c##sec_admin</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM DVSYS.DBA_DV_COMMON_OPERATION_STATUS;</copy>
 
@@ -848,7 +847,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT c##sec_admin</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -899,7 +898,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -916,7 +915,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     SELECT * FROM c##test1.g_emp
@@ -933,7 +932,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -950,7 +949,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -967,7 +966,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##sec_admin</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Root Test Realm')</copy>
     
@@ -1032,7 +1031,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     SELECT * FROM c##test1.g_emp
@@ -1050,7 +1049,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     SELECT * FROM c##test1.g_emp
@@ -1068,7 +1067,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -1085,7 +1084,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -1102,7 +1101,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##sec_admin</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Root Test Realm')</copy>
     
@@ -1121,7 +1120,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sec_admin@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -1190,7 +1189,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -1207,7 +1206,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -1224,7 +1223,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -1241,7 +1240,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -1258,7 +1257,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##sec_admin@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Test Realm1')</copy>
     
@@ -1275,7 +1274,7 @@ In this lab, you will:
     
     SQL> <copy>CONNECT sec_admin@PDB21</copy>
     
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     
     Connected.
     
@@ -1336,7 +1335,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -1353,7 +1352,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.g_emp;</copy>
     
@@ -1370,7 +1369,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test1@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -1387,7 +1386,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT c##test2@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>SELECT * FROM c##test1.l_emp;</copy>
     
@@ -1404,7 +1403,7 @@ In this lab, you will:
     ```
     
     SQL> <copy>CONNECT sec_admin@PDB21</copy>
-    Enter password: <copy><i>password</i></copy>
+    Enter password: <copy><i>WElcome123##</i></copy>
     Connected.
     SQL> <copy>EXEC DBMS_MACADM.DELETE_REALM_CASCADE('Test Realm1')</copy>
     
@@ -1437,7 +1436,7 @@ Let's summarize the behavior of data access on common users objects in PDBs when
     
     ...
     
-    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=CURRENT;
+    SQL> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=CURRENT;
     
     keystore altered.
     
@@ -1456,6 +1455,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

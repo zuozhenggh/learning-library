@@ -11,10 +11,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
-* Lab: Create a VCN
-* Lab: Create an OCI VM Database
+* Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
 
@@ -28,14 +27,14 @@ In this lab, you will:
 
     Connected to:
 
-    SQL> <copy> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL;</copy>
-    ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>password</i> WITH BACKUP CONTAINER=ALL
+    SQL> <copy> ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL;</copy>
+    ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <i>WElcome123##</i> WITH BACKUP CONTAINER=ALL
     *
     ERROR at line 1:
     ORA-46663: master keys not created for all PDBs for REKEY
 
     SQL> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>                   
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
     Connected.
     SQL> <copy>CREATE TABLESPACE users DATAFILE '/u02/app/oracle/oradata/CDB21/users01.dbf' SIZE 50M;</copy>
 
@@ -59,7 +58,7 @@ In this lab, you will:
     $ <copy>expdp \"sys@PDB21 AS SYSDBA\" dumpfile=PDB21.dmp TRANSPORT_TABLESPACES=users TRANSPORT_FULL_CHECK=YES LOGFILE=tts.log REUSE_DUMPFILES=YES PARALLEL=2</copy>
 
     Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
-    Password: <b><i>password</i></b>
+    Password: <b><i>WElcome123##</i></b>
 
     Starting "SYS"."SYS_EXPORT_TRANSPORTABLE_02":  "sys/********@PDB21 AS SYSDBA" dumpfile=PDB21.dmp TRANSPORT_TABLESPACES=users TRANSPORT_FULL_CHECK=YES LOGFILE=tts.log REUSE_DUMPFILES=YES PARALLEL=2
     ORA-39396: Warning: exporting encrypted data using transportable option without password
@@ -90,7 +89,7 @@ In this lab, you will:
 
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
-    Enter password: <b><i>password</i></b>
+    Enter password: <b><i>WElcome123##</i></b>
 
     Connected to:
 
@@ -112,6 +111,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** -  Kay Malcolm, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
