@@ -219,10 +219,6 @@ from   (select test_no,
                count(distinct sid) sessions,
                sum(nvl2(end_time,1,0)) queries_finished,
                round(extract(minute from (max(end_time) - min(start_time))) * 60 + extract(second from (max(end_time) - min(start_time))),1) test_duration_in_seconds,
-               cast(min(start_time) as date) test_start_time,
-               cast(max(end_time) as date) test_end_time,
-               trunc(min(start_time), 'MI') + 1/1440 next_min_after_start,
-               trunc(max(end_time), 'MI') - 1/1440 min_before_end,
                round(avg(to_number(extract(minute from (end_time - start_time)) * 60 + extract(second from (end_time - start_time)))),1) avg_query_time
         from   test_run_data
         group by test_no,
