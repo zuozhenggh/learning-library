@@ -57,7 +57,7 @@
             "filename": "./../../adb-auto-scaling/adb-auto-scaling.md"
         },
         {
-            "title": "Lab 11: Autonomous Data Guard",
+            "title": "Lab 11: Disaster Recovery",
             "description": "Enable Autonomous Data Guard",
             "filename": "./../../adb-autonomous-data-guard/adb-autonomous-data-guard.md"
         },

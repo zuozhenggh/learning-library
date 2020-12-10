@@ -44,6 +44,7 @@ The **business case** we want to answer here is to **summarize orders by month a
 - **Test 2**: You will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
 
 ## **Test 1 - Auto Scaling Disabled**
+In steps 1 through 3, with auto scaling **disabled**, you will have 3 SQL Developer Web sessions executing queries sharing the CPU and IO resources, and you will examine query times.
 
 ## **STEP 1**: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
 
@@ -241,6 +242,7 @@ order by 1;
   In the next steps, let's see if auto scaling reduces query time and increases CPU and IO usage.
 
 ## **Test 2 - Auto Scaling Enabled, Providing 3x the Amount of CPU and IO Resources**
+In steps 4 through 6, you will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
 
 ## **STEP 4**: Enable Auto Scaling
 
@@ -282,10 +284,6 @@ from   (select test_no,
                count(distinct sid) sessions,
                sum(nvl2(end_time,1,0)) queries_finished,
                round(extract(minute from (max(end_time) - min(start_time))) * 60 + extract(second from (max(end_time) - min(start_time))),1) test_duration_in_seconds,
-               cast(min(start_time) as date) test_start_time,
-               cast(max(end_time) as date) test_end_time,
-               trunc(min(start_time), 'MI') + 1/1440 next_min_after_start,
-               trunc(max(end_time), 'MI') - 1/1440 min_before_end,
                round(avg(to_number(extract(minute from (end_time - start_time)) * 60 + extract(second from (end_time - start_time)))),1) avg_query_time
         from   test_run_data
         group by test_no,
@@ -333,7 +331,7 @@ For more information about auto scaling, see the documentation [Use Auto Scaling
 
 - **Authors** - Rick Green, Database User Assistance; Nilay Panchal, ADB Product Management
 - **Contributors** - John Zimmerman, Real World Performance Team; Keith Laker, ADB Product Management
-- **Last Updated By/Date** - Rick Green, October 2020
+- **Last Updated By/Date** - Rick Green, December 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
