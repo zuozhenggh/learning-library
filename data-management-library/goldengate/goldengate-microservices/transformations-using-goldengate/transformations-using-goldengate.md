@@ -117,14 +117,14 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
 ```
-SQL>
 ```
 <copy>CREATE  OR REPLACE FUNCTION F_MAIL(CODE_PARAM IN VARCHAR2)
   RETURN VARCHAR2
   IS DESC_PARAM VARCHAR2(100);</copy>
   ```
 
-  ```<copy>BEGIN
+  ```
+  <copy>BEGIN
   RETURN 'XXXXXXXXX@dummy.com';
   END;
   /</copy>
@@ -133,7 +133,7 @@ SQL>
 
 ![](./images/c8.png " ")
 
-3. Select F_MAIL and verify results
+1. Select F_MAIL and verify results
 
     ![](./images/c9.png " ")
 
