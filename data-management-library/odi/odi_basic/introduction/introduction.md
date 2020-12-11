@@ -7,6 +7,8 @@ Oracle Data Integrator (ODI) is a comprehensive data integration platform that c
 
 Estimated Workshop Time:  10 Hours
 
+Workshop Architecture
+
   ![](./images/odi_architecture.png " ")
 
 Key reasons why companies choose Oracle Data Integrator for their data integration needs:
@@ -31,9 +33,9 @@ Key reasons why companies choose Oracle Data Integrator for their data integrati
   
 ## Acknowledgements
 
- - **Author** - Jayant Mahto, July 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Jayant Mahto, September 2020
+ - **Author** - Narayanan Ramakrishnan December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

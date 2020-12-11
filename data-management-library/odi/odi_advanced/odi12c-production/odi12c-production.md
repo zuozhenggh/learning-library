@@ -3,7 +3,7 @@
 ## Introduction
 This lab describes how to run the Load Sales Administration Package in a production environment.
 
-Estimated Lab Time:  x minutes
+Estimated Lab time: 60 minutes
 
 ### Objectives
   * Introduction
@@ -11,13 +11,17 @@ Estimated Lab Time:  x minutes
   * Run the Scenario
   * Follow the Execution of the Scenario
 
+### Prerequisites
+An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+
 ### About Data Integration Flows
 The automation of the data integration flows is achieved by sequencing the execution of the different steps (mappings, procedures, and so forth) in a package and by producing a production scenario containing the ready-to-use code for each of these steps.
 Lab *Working with Packages* describes the first part of the automation process: sequencing the execution of the different processes in a Package.
 
 This Lab describes the second part: how to produce a scenario that runs automatically the Load Sales Administration Package in a production environment.
 
-## **Step 1:** Scenario Creation
+## **STEP  1:** Scenario Creation
 To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sales Administration Package:
 
 1.  In the Project accordion, expand Sales Administration and then Packages.
@@ -32,7 +36,7 @@ To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sale
 
   ![](./images/load_sales_admin.png)
 
-## **Step 2:**Run the Scenario
+## **STEP  2:**Run the Scenario
 Scenarios can be executed in several ways:
   * Executing a Scenario from ODI Studio
   * Executing a Scenario from a Command Line
@@ -53,7 +57,7 @@ To start the LOAD\_SALES\_ADMINISTRATION scenario from Oracle Data Integrator St
 
 4.  The Session Started Information Dialog is displayed. Click **OK**. The scenario is executed.
 
-## **Step 3:** Follow the Execution of the Scenario
+## **STEP  3:** Follow the Execution of the Scenario
 You can review the scenario execution in Operator Navigator, and find the same results as those obtained when the package was executed as described in Lab *Run the Package*.
 It is also possible to review the scenario execution report in Designer Navigator.
 
@@ -81,9 +85,9 @@ In this workshop, you learned how to:
 
 ## Acknowledgements
 
- - **Author** - Jayant Mahto, July 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Jayant Mahto, September 2020
+ - **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

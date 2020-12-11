@@ -2,11 +2,21 @@
 
 ## Introduction
 
-This chapter describes how to create a single mapping with multiple targets. In this chapter you will learn how to create the following mapping:
+This chapter describes how to create a single mapping with multiple targets. 
+
+Estimated Lab time: 60 minutes
+
+#### Objective
+In this chapter you will learn how to create the Multi Target mapping:
 
   * Load GEOGRAPHY: This mapping loads the data from the SRC\_REGION and SRC\_CITY tables in the *Orders Application* model into the TRG\_ COUNTRY, TRG\_CITY and TRG\_REGION target tables in the *Sales Administration* model.
 
-## **Step 1:** Load GEOGRAPHY Mapping Description
+
+### Prerequisites
+An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+
+## **STEP  1:** Load GEOGRAPHY Mapping Description
 
 This section contains the following topics:
 
@@ -48,7 +58,7 @@ The Load GEOGRAPHY mapping uses the following data and transformations:
 
   * No transformation rules.
 
-## **Step 2:** Creating the Mapping
+## **STEP  2:** Creating the Mapping
 
 This section describes how to create the Load GEOGRAPHY mapping. To create the Load GEOGRAPHY mapping perform the following procedure:
 
@@ -97,7 +107,7 @@ This section describes how to create the Load GEOGRAPHY mapping. To create the L
 ![](./images/Capture4.PNG)
 
 
-## **Step 3:** Add a Distinct Component
+## **STEP  3:** Add a Distinct Component
 
 In this example, only distinct Country fields should be retrieved. 
 
@@ -115,7 +125,7 @@ TRG_COUNTRY table as shown below:
 ![](./images/5.PNG)
 
 
-## **Step 4:** Define the Target Load Order
+## **STEP  4:** Define the Target Load Order
 
 This section describes how to connect source and target data sources and also define the target load order when there are multiple target tables.
 
@@ -138,11 +148,11 @@ visible, hover in that vicinity with your cursor and it will eventually show up)
 ![](./images/Capture9.PNG)
 
 
-## **Step 5:** Setting the Integration Type
+## **STEP  5:** Setting the Integration Type
 Select all the three target tables. In the *properties* window for the target tables, double click on each entry for Integration Type and select *Incremental Update*
 ![](./images/Capture10.PNG)
 
-## **Step 6:** Define the Data Loading Strategies (LKM)
+## **STEP  6:** Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed.
 
@@ -161,7 +171,7 @@ To define the loading strategies:
  ![](./images/Capture13.PNG)
 
 
-## **Step 7:** Define the Data Integration Strategies (IKM)
+## **STEP  7:** Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -179,7 +189,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
-## **Step 8:** Run the Mapping
+## **STEP  8:** Run the Mapping
 
 In this section , lets save and run the mapping we created to check how the data load is performed.
 
@@ -213,10 +223,9 @@ This concludes the lab on Multiple Target Mappings.
 
 ## Acknowledgements
 
- - **Author** - Satya Pranavi Manthena, September 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Satya Pranavi Manthena, September 2020
+- **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

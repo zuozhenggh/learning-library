@@ -5,6 +5,7 @@ This lab describes how to implement data quality control. An introduction to dat
 
 Note: ODI provides very basic quality checks. For complex use cases use Enterprise Data Quality (EDQ)
 
+Estimated Lab time: 60 minutes
 
 ## About Data Integrity Control
 
@@ -49,10 +50,13 @@ Some data in our source may be inconsistent. There may be constraints in the tar
 
 We want to determine which rows do not satisfy these two constraints and automatically copy the corresponding invalid records into an error table for analysis.
 
+### Prerequisites
+An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
 #### Interpreting the Problem**
 Enforcing these types of rules requires the use of a *check constraint* (also referred to as a *condition*), as well as a *reference constraint* between the SRC\_CITY and SRC\_ CUSTOMER tables.
 
-## **Step 1:** Creating Constraints
+## **STEP  1:** Creating Constraints
 
 This step describes how to create the following constraints:
   * Age Constraint
@@ -122,7 +126,7 @@ Note that in this example the Foreign Table is SRC\_CUSTOMER and the Primary Tab
 
 **Tip:** You can alternately use the \[CTRL - S\] shortcut to save the current Editor.
 
-## **Step 2:** Run the Static Control
+## **STEP  2:** Run the Static Control
 
 Running the static control verifies the constraints defined on a datastore. You can now verify the data in the SRC\_CUSTOMER datastore against the constraints defined in *Creating Constraints*.
 
@@ -146,7 +150,7 @@ To run the static control:
 
 Oracle Data Integrator automatically generates all of the code required to check your data and start an execution session.
 
-## **Step 3:** Follow the Execution of the Control in Operator Navigator
+## **STEP  3:** Follow the Execution of the Control in Operator Navigator
 
 Through Operator Navigator, you can view your execution results and manage your development executions in the sessions.
 To view the execution results of your control:
@@ -166,7 +170,7 @@ The log comprises 3 levels:
   * Step (corresponds to a checked datastore, a mapping, a procedure or a step in a package or in a scenario)
   * Task (corresponds to an elementary task of the mapping, process or check)
 
-## **Step 4:** Interpreting the Results in Operator Navigator
+## **STEP  4:** Interpreting the Results in Operator Navigator
 This section describes how to determine the invalid records. These are the records that do not satisfy the constraints and has been rejected by the static control.
 
 1. Determining the Number of Invalid Records
@@ -178,7 +182,7 @@ This section describes how to determine the invalid records. These are the recor
 
 The number of invalid records is listed in the No. of Errors field. Note that the static control of the SRC\_CUSTOMER table has revealed **6** invalid records. These records have been isolated in an error table. See next section on *Reviewing the Invalid Records* for more information.
 
-## **Step 5:** Reviewing the Invalid Records
+## **STEP  5:** Reviewing the Invalid Records
 You can access the invalid records by right-clicking on the table in your model and selecting **Control** \> **Errors\...**
 To review the error table of the static control on the SRC\_CUSTOMER table:
 
@@ -200,10 +204,10 @@ Now that the static controls have been run on the source data, you are ready to 
 
 ## Acknowledgements
 
- - **Author** - Jayant Mahto, July 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Jayant Mahto, September 2020
+- **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 

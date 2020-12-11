@@ -2,8 +2,13 @@
 
 ## Understanding the Environment  
 
-### The Example Environment
+### Objective
 The *Demo* project is an example to help you understand how to transform and check the integrity of the data in your information systems.
+
+### Prerequisites
+An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+Estimated Lab time: 60 minutes
 
 The examples in this getting started tutorial track sales from various heterogeneous data sources issued from the production systems.
 This diagram illustrates the sample environment:
@@ -99,7 +104,7 @@ During this getting started tutorial, you will learn how to:
 
 Now that you have been introduced to the concepts of the Demo Project and its components, you can move on to *Introduction to using ODI Studio*.
 
-## **Step 1:** Introduction to Using Oracle Data Integrator Studio
+## **STEP 1:** Introduction to Using Oracle Data Integrator Studio
 This step describes the first steps towards using Oracle Data Integrator Studio.
 
 1.  Using the ODI Studio Navigators
@@ -135,7 +140,7 @@ The ODI Studio client will continue to load. Click on Connect to Repository then
 3. When prompted for a wallet password enter *welcome1*
    ![](./images/odi_password.png)
 
-## **Step 2:** Designer Navigator
+## **STEP 2:** Designer Navigator
 
 Designer Navigator is used to manage metadata, to design data integrity checks, and to build transformations.
 The main objects you handle through Designer Navigator are *models* and *projects*.
@@ -165,7 +170,7 @@ Getting Started tutorial:
 The necessary Knowledge Modules (KM) are already imported in the Demo Project:
 In addition, there are many more in Global KM folder.
 
-## **Step 3:** Operator Navigator
+## **STEP 3:** Operator Navigator
 Operator Navigator is the management and monitoring tool. It is designed for IT operators and can be used by developers to check code execution and perform debugging operations. Through Operator Navigator, you can manage your development executions in the sessions, as well as the scenarios.
 The Operator Navigator has the following accordions:
 
@@ -181,9 +186,9 @@ The Operator Navigator has the following accordions:
 
 ## Acknowledgements
 
- - **Author** - Jayant Mahto, July 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Jayant Mahto, September 2020
+ - **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

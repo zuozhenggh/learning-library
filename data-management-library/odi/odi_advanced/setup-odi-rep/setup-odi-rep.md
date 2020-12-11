@@ -3,13 +3,24 @@
 ## Introduction
 This lab will show you how to access an ODI instance using Apache Guacamole and configure ODI Studio
 
+Estimated Lab time: 60 minutes
+
 ### Objecives
 * Access an ODI Instance through Apache Guacamole
 * Configure ODI Studio
 * Import Mappings and Run Initial Load
 * Test the Environment
+#
+## Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
 
-## **Step 1:** Access an ODI instance through Apache Guacamole
+## **STEP  1:** Access an ODI instance through Apache Guacamole
 
 1. Obtain the Apache Guacamole URL, credentials from the instructor and login into it using any browser.
 
@@ -50,7 +61,7 @@ This lab will show you how to access an ODI instance using Apache Guacamole and 
     ![](./images/odi_studio_3.png " ")
 
 
-## **Step 2:** Configure ODI Studio and import training repository
+## **STEP  2:** Configure ODI Studio and import training repository
 
 1. Go to the Designer tab and select import to open the import wizard.
    
@@ -77,7 +88,7 @@ The import will take approximately 5 minutes
 6. Click close on the next screen.
     ![](./images/odi_studio_5f.png " ")
 
-## **Step 3:** Import Mappings and Run Initial Load
+## **STEP  3:** Import Mappings and Run Initial Load
 
 1. If you are new to ODI, import these mappings using smart import.Select import to open the import wizard
 
@@ -119,7 +130,7 @@ The import will take approximately 5 minutes
     ![](./images/odi_env_reset_1d.png " ")  
 
 
-## **Step 4:** Test the environment
+## **STEP  4:** Test the environment
 
 1. Expand **Model** and right-click on **SRC\_AGE\_GROUP** and select **View Data**
 
@@ -133,8 +144,10 @@ Congratulations!  Now you have the environment to run the ODI labs.
 
 ## Acknowledgements
 
-- **Author** - Jayant Mahto, July 2020
-- **Last Updated By/Date** - Sri Vishnu Gullapalli, September 2020
+- **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

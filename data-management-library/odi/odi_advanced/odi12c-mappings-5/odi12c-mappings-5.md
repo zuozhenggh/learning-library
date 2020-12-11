@@ -2,12 +2,20 @@
 
 ## Introduction
 
-This chapter describes how to work with mappings in Oracle Data Integrator. The demonstration environment includes several example mappings. In this chapter you will learn how to create the following mappings:
+This chapter describes how to work with mappings in Oracle Data Integrator. 
+
+Estimated Lab time: 60 minutes
+
+#### Objectives
+The demonstration environment includes several example mappings. In this chapter you will learn how to create the following mappings:
 
   * Load Customer: This is a reusable mapping where the SRC\_CUSTOMER table in the *Orders Application* model is joined to the SRC\_AGE\_GROUP.TXT in the *Parameters* model with a few transformations like filter and lookup.
   * Load TRG\_CUSTOMER: Join the output of the reusable mapping *Load Customer* with the SRC\_SALES\_PERSON.TXT file in the *Parameters* model and then load the data into the TRG\_CUSTOMER target table in the *Sales Administration* model.
 
-## **Step 1:** Load Customer Re-usable Mapping Description
+### Prerequisites
+An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+## **STEP  1:** Load Customer Re-usable Mapping Description
 
 This section contains the following topics:
 
@@ -61,7 +69,7 @@ This section describes the mapping Load Customer that will be created in this ex
   | AGE\_RANGE     | SRC\_AGE\_GROUP.AGE\_RANGE            | SRC\_AGE\_GROUP.AGE\_RANGE|
   | SALES\_PERS\_ID    |  SRC\_CUSTOMER.SALES\_PERS\_ID   | SRC\_CUSTOMER.SALES\_PERS\_ID  |
 
-## **Step 2:** Creating the Re-usable Mapping
+## **STEP  2:** Creating the Re-usable Mapping
 
 This section describes how to create the Load Customer re-usable mapping. To create the Load Customer mapping perform the following procedure:  
 
@@ -76,12 +84,12 @@ To create a new mapping:
   ![](./images/Capture2.PNG)
  Ensure the *Create Default Input Signature* option is not selected and *Create Default Output Signature* option is checked.
 
-## **Step 3:** Define the Target
+## **STEP  3:** Define the Target
 
 The target of this mapping is the Output Signature which we have checked while creating the mapping.
  - If you do not create the re-usable mapping with the *Default output signature* option, you can always add an output signature by selecting the appropriate output signature component from the component palette.
 
-## **Step 4:** Define the Source
+## **STEP  4:** Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastores from the *Orders Application* and *Parameters* models.
 
@@ -95,7 +103,7 @@ The source datastores contain data used to load the target datastore. Two types 
 2.  The Mapping should look like:
 ![](./images/3.PNG)
 
-## **Step 5:** Define the Filter
+## **STEP  5:** Define the Filter
 
 In this example, only completed orders should be retrieved. A filter needs to be defined on the SRC\_ORDERS datastore.  
 
@@ -120,7 +128,7 @@ In this example, only completed orders should be retrieved. A filter needs to be
 
 5. Click **Save**.
 
-## **Step 6:** Define the Lookup
+## **STEP  6:** Define the Lookup
 
 This section describes how to create a lookup that defines that the customer's age must be between the minimum and maximum ages in the file.
 A lookup is a datastore (from a model or the target datastore of a map) - called the *lookup table* - associated to a source datastore - the *driving table* - via a join expression and from which data can be fetched and used in mappings.
@@ -160,7 +168,7 @@ Lookup tables are added with the Lookup Component.
 
 6.  Click **Save**.
 
-## **Step 7:** Define the Target Expressions
+## **STEP  7:** Define the Target Expressions
 
 To Auto Map columns from the sources to the target, the connector points need to be dragged and dropped between components.  
   1. Drag and drop the output connector of the LOOKUP component onto the input connector of the
@@ -196,7 +204,7 @@ To Auto Map columns from the sources to the target, the connector points need to
 
 You can now save and close the re-usable mapping. In the next step we will use it in a regular mapping.
 
-## **Step 8:** Load TRG\_Customer Mapping Description
+## **STEP  8:** Load TRG\_Customer Mapping Description
 
 This section describes how to create a standard mapping and use a reusable mapping as one of the sources.
 
@@ -256,7 +264,7 @@ This section describes how to create the Load TRG\_CUSTOMER mapping. To create t
 
  Ensure the *Create Empty Dataset* option is not selected.
 
-## **Step 9:** Define the Source
+## **STEP  9:** Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastore from the *Parameters* model and also the *Load Customer* reusable mapping.
 
@@ -268,7 +276,7 @@ The source datastores contain data used to load the target datastore. Two types 
 
  ![](./images/Capture19.PNG)
 
-## **Step 10:** Define Joins between the Source Datastores
+## **STEP  10:** Define Joins between the Source Datastores
 
 This section describes how to define joins between the source datastores. To create the join defined earlier in the mapping definition:
 
@@ -282,7 +290,7 @@ This section describes how to define joins between the source datastores. To cre
     Load Customer.SALES\_PERS\_ID=SRC\_SALES\_PERSON.SALES\_PERS\_ID
 ![](./images/Capture20.PNG)
 
-## **Step 11:** Define the Target
+## **STEP  11:** Define the Target
 
 The target is the element that will be loaded by the mapping.
 
@@ -296,7 +304,7 @@ The target is the element that will be loaded by the mapping.
 
   ![](./images/Capture21.PNG)
 
-## **Step 12:** Define the Target Expressions
+## **STEP  12:** Define the Target Expressions
 
 1. To Auto Map from the sources to the target, drag and drop the output connector of the JOIN component onto the input connector of the TRG_CUSTOMER target
    
@@ -343,11 +351,11 @@ The target is the element that will be loaded by the mapping.
 
  ![](./images/Capture26.PNG)
 
-## **Step 13:** Setting the Integration Type
+## **STEP  13:** Setting the Integration Type
 Select the target table. In the *properties* window for the target table, go to Target tab and set Integration Type to *Incremental Update*.
  ![](./images/Capture27.PNG)
 
-## **Step 14:** Define the Data Loading Strategies (LKM)
+## **STEP  14:** Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed.
 
@@ -375,7 +383,7 @@ To define the loading strategies:
 5. Select all the three access points , in the properties section it appears as below:
  ![](./images/Capture31.PNG) 
 
-## **Step 15:** Define the Data Integration Strategies (IKM)
+## **STEP  15:** Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -388,7 +396,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
-## **Step 16:** Run the Mapping
+## **STEP  16:** Run the Mapping
 
 In this section , lets save and run the mapping we created to check how the data load is performed.
 
@@ -418,12 +426,11 @@ This concludes the lab on Reusable Mappings.
 
 ## Acknowledgements
 
- - **Author** - Satya Pranavi Manthena, September 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Satya Pranavi Manthena, September 2020
+ - **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 

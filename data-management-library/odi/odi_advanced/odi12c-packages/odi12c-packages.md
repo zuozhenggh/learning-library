@@ -2,14 +2,19 @@
 
 ## Introduction
 
-This chapter describes how to work with Packages in Oracle Data Integrator. The *Load Sales Administration* package is used as an example. An introduction to Packages and automating data integration between applications is provided.
+This chapter describes how to work with Packages in Oracle Data Integrator. 
+
+#### Objective
+The *Load Sales Administration* package is used as an example. An introduction to Packages and automating data integration between applications is provided.
 
 This chapter includes the following sections:
   * Introduction
   * Load Sales Administration Package Example
 
+### Prerequisites
+An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **Step 1:**  Introduction
+## **STEP  1:**  Introduction
 This section provides an introduction to automating data integration using packages in Oracle Data Integrator.
 
 1. Automating Data Integration Flows
@@ -37,7 +42,7 @@ Refer to *Working with Scenarios* in the *Oracle Fusion Middleware Developer's G
 
 In the lab *Deploying Integrated Applications*, you will generate the *LOAD\_SALES\_ADMINISTRATION* scenario from a package and run this scenario from Oracle Data Integrator Studio.
 
-## **Step 2:** Load Sales Administration Package Example
+## **STEP  2:** Load Sales Administration Package Example
 This section contains the following topics:
   * Purpose
   * Developments Provided with Oracle Data Integrator
@@ -142,7 +147,7 @@ The resulting sequence appears in the Package diagram as shown:
   ![](./images/sales_admin_package.png)   
   5.  From the File main menu, select **Save**. The package is now ready to be executed.
 
-## **Step 3:** Executing Your Development
+## **STEP  3:** Executing Your Development
 This section describes how to execute the Load Sales Administration Package you have just created and the mappings Load TRG\_CUSTOMER and Load TRG\_SALES you have created in the lab *Working with Mappings*. This section also describes how to follow the execution and how to interpret the execution results.
 This chapter includes the following sections:
   * Executing the Load Sales Administration Package
@@ -171,7 +176,7 @@ To view the execution results of the Load Sales Administration Package:
 
   ![](./images/load_package_session_log.png)
 
-## **Step 4:** Reviewing your Results
+## **STEP  4:** Reviewing your Results
 **Interpreting the Results of the Load TRG\_CUSTOMER Session Step**
 This section describes how to determine the invalid records detected by the Load TRG\_ CUSTOMER mapping. These are the records that do not satisfy the constraints and have been rejected by the flow control of the Load TRG\_CUSTOMER mapping.
 This section includes the following topics:
@@ -216,9 +221,9 @@ The invalid records were saved into an error table and were not integrated into 
 
 ## Acknowledgements
 
- - **Author** - Jayant Mahto, July 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Jayant Mahto, September 2020
+- **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

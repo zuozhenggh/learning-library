@@ -2,11 +2,21 @@
 
 ## Introduction
 
-This chapter describes how to create a single mapping with multiple targets. In this chapter you will learn how to create the following mapping:
+This chapter describes how to create a single mapping with multiple targets. 
+
+Estimated Lab time: 60 minutes
+
+#### Objectives
+
+In this chapter you will learn how to create the following mapping:
 
   * Load REGION: In this mapping we create three tables TRG\_CITY\_NAM, TRG\_CITY\_EURO, TRG\_CITY\_APAC using the same structure as TRG\_CITY table in the *Sales Administration* model. Using a single mapping, split the data by continent(North America, Europe, Asia Pacific) and sort based on Population.
 
-## **Step 1:** Load REGION Mapping Description
+
+### Prerequisites
+An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+## **STEP  1:** Load REGION Mapping Description
 
 This section contains the following topics:
 
@@ -52,7 +62,7 @@ The Load REGION mapping uses the following data and transformations:
 
   * No transformation rules.
 
-## **Step 2:** Create New Target Datastores
+## **STEP  2:** Create New Target Datastores
 
 1. In Designer Navigator, expand the Sales Administration model, right-click on the datastore TRG_CITY and select the option "Duplicate Selection".
 ![](./images/Capture3.PNG)
@@ -92,7 +102,7 @@ The Load REGION mapping uses the following data and transformations:
 7. In the Attributes tab , modify the Length and Physical length as shown in the image below:
  ![](./images/Capture28.PNG)
 
-## **Step 3:** Create the Mapping
+## **STEP  3:** Create the Mapping
 
 This section describes how to create the Load TRG\_REGION mapping. To create the Load TRG\_REGION mapping perform the following procedure:
 
@@ -127,7 +137,7 @@ After adding the source and target datastores to the mapping, it looks as follow
 
  ![](./images/Capture9.PNG)
 
-## **Step 4:** Add the Split, Sort Components
+## **STEP  4:** Add the Split, Sort Components
 
 In this example, the data is split across three different datastores based on the continent. 
 
@@ -184,14 +194,14 @@ component
      ````
  ![](./images/Capture18.PNG)
 
-## **Step 5:** Setting the Integration Type
+## **STEP  5:** Setting the Integration Type
 Select all the three target tables. In the *properties* window for the target tables, double click on each entry for Integration Type:
 
 * select *Incremental Update* for APAC and EURO datastores.
 * select *Control Append* for NAM datastore.
  ![](./images/Capture19.PNG)
 
-## **Step 6:** Define the Data Loading Strategies (LKM)
+## **STEP  6:** Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed.
 
@@ -204,7 +214,7 @@ To define the loading strategies:
 
  ![](./images/Capture20.PNG)
 
-## **Step 7:** Define the Data Integration Strategies (IKM)
+## **STEP  7:** Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -221,7 +231,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
-## **Step 8:** Run the Mapping
+## **STEP  8:** Run the Mapping
 
 In this section , lets save and run the mapping we created to check how the data load is performed.
 
@@ -255,12 +265,11 @@ This concludes the lab on Using Split and Sort Components.
 
 ## Acknowledgements
 
- - **Author** - Satya Pranavi Manthena, September 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Satya Pranavi Manthena, September 2020
+- **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Narayanan Ramakrishnan, December 2020
 
-
-## See an issue?
+## Need Help?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
  
