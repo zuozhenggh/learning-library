@@ -68,7 +68,7 @@ Open a terminal session
 ![](./images/c4.png " ")
 
 
-1. Query inside the script for insert
+4. Query inside the script for insert
 ```
 <copy>INSERT INTO SOE.CUSTOMERS VALUES (12345678,’LARRY’,’ELLISON’,’NY’,’NEW YORK’,’5000’,’LARRY@ORACLE.COM’,’365’,’15-OCT- 11’,’BUSINESS’,’MUSIC’,’4-JAN-61’,’Y’,’N’,’2767122’,’126219999’);
 
@@ -78,7 +78,7 @@ Commit;</copy>
 **1 row copied**
 
 
-1. After the insert transaction on the source table, query target **CUSTOMER** table as below in the terminal.
+5. After the insert transaction on the source table, query target **CUSTOMER** table as below in the terminal.
 
 
 ```
@@ -104,11 +104,13 @@ Commit;</copy>
 
 2. edit the REPLICAT IREP
   
-MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id),
+```
+<copy>MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id),
 
 SQLEXEC (SPNAME P_MAIL, PARAMS (code_param = CUST_EMAIL)),
 
-COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIRST_NAME,CUST_LAST_NAME));
+COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIRST_NAME,CUST_LAST_NAME));</copy>
+```
 
 ![](./images/c7.png " ")
 
@@ -121,10 +123,8 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 <copy>CREATE  OR REPLACE FUNCTION F_MAIL(CODE_PARAM IN VARCHAR2)
   RETURN VARCHAR2
   IS DESC_PARAM VARCHAR2(100);</copy>
-  ```
-
-  ```
-  <copy>BEGIN
+ 
+ BEGIN
   RETURN 'XXXXXXXXX@dummy.com';
   END;
   /</copy>
@@ -223,7 +223,8 @@ commit;</copy>
 <copy>sqlplus ggate/ggate@oggoow19</copy>
 ```
 5. Run @insert_logon.sql script
-
+  
+**THIS ONE IS MISSING WHAT IS IN The @insert_logon.sql**
 ```
 <copy>@insert_logon.sql</copy>
 ```
