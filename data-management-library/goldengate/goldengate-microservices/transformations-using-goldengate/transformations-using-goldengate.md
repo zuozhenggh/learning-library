@@ -125,7 +125,6 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 <copy>CREATE  OR REPLACE FUNCTION F_MAIL(CODE_PARAM IN VARCHAR2)
   RETURN VARCHAR2
   IS DESC_PARAM VARCHAR2(100);</copy>
- 
  BEGIN
   RETURN 'XXXXXXXXX@dummy.com';
   END;
@@ -147,7 +146,8 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 ex: CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2)
   IS
   ```
-  <copy>begin
+  <copy>CREATE OR REPLACE PROCEDURE P_MAIL (CODEPARAM IN VARCHAR2,DESC_PARAM OUT VARCHAR2) IS
+  begin
   select F_MAIL('CODE_PARAM')
       into DESC_PARAM
       from dual;
@@ -254,9 +254,9 @@ You may now *proceed to the next lab*.
 * [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration, November 2020
-* **Contributors** - Zia Khan
-* **Last Updated By/Date** - Brian Elliott November 2020
+* **Author** - Brian Elliott, Data Integration, December 2020
+* **Contributors** - Madhu Kumar S.
+* **Last Updated By/Date** - Brian Elliott December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
