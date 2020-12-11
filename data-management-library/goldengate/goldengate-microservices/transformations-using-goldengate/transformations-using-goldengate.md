@@ -112,7 +112,7 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 
 ![](./images/c7.png " ")
 
-1. Open Terminal and SQLPLUS into Target Database (OGGOOW191).Create a required stored procedure under GGATE users. This will be used in the SQLEXEC call in the mapping statement
+3. Open Terminal and SQLPLUS into Target Database (OGGOOW191).Create a required stored procedure under GGATE users. This will be used in the SQLEXEC call in the mapping statement
 
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
@@ -133,7 +133,7 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 
 ![](./images/c8.png " ")
 
-1. Select F_MAIL and verify results
+4. Select F_MAIL and verify results
 
     ![](./images/c9.png " ")
 
@@ -141,7 +141,7 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 <copy>select F_MAIL('MADHU') from dual;</copy>
 ```
 
-4. Create or replace the procedure
+5. Create or replace the procedure
 ex: CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2)
   IS
   ```
@@ -158,24 +158,24 @@ ex: CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT 
 ```
 <copy>exit</copy>
 ```
-5. Open the Administration Server of the Target deployment i.e. Boston at `http://<your ip address>:17001`. When the page is completely open, you should be at a page where you can see Replicat 6. •	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing @update_email.sql scriptIREP. Please stop and start the IREP process.
+6. Open the Administration Server of the Target deployment i.e. Boston at `http://<your ip address>:17001`. When the page is completely open, you should be at a page where you can see Replicat 6. •	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing @update_email.sql scriptIREP. Please stop and start the IREP process.
 
 ![](./images/c11.png " ")
 
-6. Open the Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing **update_email**
+7. Open the Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing **update_email**
 
 ```
 <copy>sqlplus ggate/ggate@oggoow19</copy>
 ```
 
 
-7. Run the following Query for update
+8. Run the following Query for update
 
 ```
 <copy>update soe.customers  set CUST_EMAIL='madhu.kumar.s@yahoo.com' where CUSTOMER_ID=12345678;
 commit;</copy>
 ```
-8. Check the Target tables is stored procedure was executed for static masking of the emails. Open Terminal and SQLPLUS into Target Database (OGGOOW191). Excute “select CUST_EMAIL from soe.customers where customer_ID between 562 and 570;” in SQLPLUS
+9. Check the Target tables is stored procedure was executed for static masking of the emails. Open Terminal and SQLPLUS into Target Database (OGGOOW191). Excute “select CUST_EMAIL from soe.customers where customer_ID between 562 and 570;” in SQLPLUS
 
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
