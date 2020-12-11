@@ -32,7 +32,7 @@ Access to the following files:
  * Employee analysis.dva
 
 
-## Step 1: Using Machine Learning to Accelerate Root Cause Analysis
+## **STEP** 1: Using Machine Learning to Accelerate Root Cause Analysis
 In this exercise we are going to import a data set containing a number of employee records wi various attributes that record employee experience, performance, and incentive.  The data is historical in nature and includes a data element that identifies whether the employee has left the organization.  
 
 Note the attrition column, a binary indicator.  Each employee record contains either a “yes” or a “no” response. 
@@ -149,7 +149,7 @@ Looking at the outliers you can see that typically female employees have a lower
 
 Save your analysis.
 
-## Step 2: Leverage machine learning to predict voluntary termination 
+## **STEP** 2: Leverage machine learning to predict voluntary termination 
 
 This exercise will explore how self-service machine learning enables predictive analytics.  
 
