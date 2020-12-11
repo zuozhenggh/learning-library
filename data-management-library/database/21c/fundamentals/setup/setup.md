@@ -64,7 +64,7 @@ In this lab, you will:
     ````
     <copy>
     cd /home/oracle
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/te64gQPSzMrOJZh5jwYPrmS6xwtddOdN90lIWF6mAvM_uIbJlAUEhyGzugZhUTF3/n/oraclepartnersas/b/workshop/o/Cloud_21c_Labs.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/-e40SETuc3Dsb9QA0unE1HEhiNGJjIkhmyZ-CUToFnS0Gc2r3efaQzrd24KmeGLo/n/oraclepartnersas/b/LiveLabs1/o/Cloud_21c_Labs.zip
     </copy>
     ````
 
