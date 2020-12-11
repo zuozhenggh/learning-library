@@ -2,38 +2,46 @@
 
 ## Introduction ##
 
-One of the more sophisticated features of Oracle’s self-service offering is the ability to leverage advanced analytics and machine learning at the click of a button directly from within your self-service projects and data flows.
+One of the more sophisticated features of Oracle’s self-service offering is the ability to leverage advanced analytics and machine learning at the click of a button directly from your self-service projects and data flows.
 
-The machine learning features are a set of pre-built machine learning algorithms which can be used to extract information from your data sets such as sentiment analysis, predicting outcomes and time-series forecasting.
+The machine learning features include a set of pre-built algorithms which can be used to extract insights from your data sets such as sentiment analysis, time-series analysis, prediction outcomes and confidence scores. 
 
-Advanced analytics are statistical functions such as forecasting, trend analysis or clustering, that you apply to enhance or apply to the data already displayed on your canvas.
+Advanced analytics functions such as forecasting, trend analysis and clustering can be applied to a visualization within your canvas with one-click.
 
-As well as the pre-built options available in the user interface, you can also call custom advanced analytics or machine learning scripts either using the Evaluate Script function from within your self-service projects or by adding custom scripts as part of your data flow when preparing data
+Additionally, users can call custom machine learning scripts either using the evaluate script function from within your self-service projects, or by adding custom scripts as part of your data flow when preparing data.
 
 *Estimated Lab Time*: 30 Mintues.
 
 ### Objectives ###
 
-We will use the data profiling and semantic recommendations functionality to repair and enrich your data. These recommendations are based on the system automatically detecting a specific semantic type during the data profiling step.
+In this lab, you will play the role of an HR Analyst.  The VP of HR has noticed an increasing rate of attrition.  As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk.  
 
-You will learn how the Explain feature uses machine learning to identify insights, correlations, patterns and trends.  Explain provides the user with factual based, data driven insights, eliminating the time consuming guesswork, dropping random data elements on the canvas searching for valuable insights. 
+Additionally, you will identify those employees who are at greatest risk for leaving.   
 
-We will also leverage BI Ask functionality as part of data visualization. This feature provides an interactive way to integrate data into your visualization projects.
+* Step 1:  Use machine learning to accelerate root cause analysis  
+* Step 2:  Leverage machine learning to predict voluntary termination 
 
-We will also explore how self-service machine learning enables predictive analytics.
 
 ### Prerequisites ###
 
+This lab assumes you have completed the following labs:
 - Lab: Start Oracle Analytics Server
+  
+Access to the following files:  
+ * Attrition training.xlsx  
+ * Employee analysis.dva
 
-***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-## STEP 1: Using Machine Learning to Accelerate Root Cause Analysis
-In this exercise we will explore employee attrition.  We would like to predict who is at risk for voluntary termination.  
+## Step 1: Using Machine Learning to Accelerate Root Cause Analysis
+In this exercise we are going to import a data set containing a number of employee records wi various attributes that record employee experience, performance, and incentive.  The data is historical in nature and includes a data element that identifies whether the employee has left the organization.  
 
-First, we will review basic descriptive statistics, attribute importance, key segments and identify anomalies related to employee attrition.  
+Note the attrition column, a binary indicator.  Each employee record contains either a “yes” or a “no” response. 
 
-Next, we will execute a machine learning training model.  In order to train a model, we will utilize a data set containing a number of employee records and various attributes that track experience, performance, incentive and other elements that define the employment experience.
+Once you have imported your data into Oracle Analytics, you begin with data profiling, and reviewing semantic recommendations in order to repair and enrich your data for further analysis. 
+Next you will leverage an augmented analytics capability called ‘explain’.
+
+Explain is used to generate insights via a combination of natural language processing, descriptive statistics and predictive modeling techniques in order to better understand our data and obtain deeper insights, pre-analysis. 
+
 
 1. In the home page, click on create button and select Project.
 ![](./images/hr1.png " ")
@@ -141,7 +149,7 @@ Looking at the outliers you can see that typically female employees have a lower
 
 Save your analysis.
 
-## STEP 2: Leveraging Machine Learning to Predict Attrition
+## Step 2: Leverage machine learning to predict voluntary termination 
 
 This exercise will explore how self-service machine learning enables predictive analytics.  
 
@@ -152,7 +160,7 @@ Binary classification is a technique of classifying elements of a given dataset 
 These classification rules are generated when we train a model using training dataset which contains information about the employees and whether the employee has left the company or not.
 
 1. In the home page, click on create button and select Dataflow.
-   ![](./images/hr2_1.png " ") 
+![](./images/hr2_1.png " ") 
 2. Select the dataset we were analyzing on “Attrition Training.” Click Add.
 ![](./images/hr2_2.png " ") 
 3. This data set will be added as a source for our data flow.
@@ -247,66 +255,20 @@ These classification rules are generated when we train a model using training da
 ![](./images/hr2_29.png " ") 
 30. Save the project as “Attrition Prediction”.
 ![](./images/hr2_30.png " ") 
-31. Now that we have a project exploring the likelihood of whether an employee is likely to leave or not it might be useful to create a link to the existing Employee Analysis project from before.  
-    
-    On the ‘hamburger’ at the top right select ‘Data Actions’.
-![](./images/hr2_31.png " ") 
-32. Select the ‘+” to create a new ‘Data Action’.  
-    
-    Give it the name “Existing Employees Analysis”.  
-    
-    And select type as ‘Analytics Link’.
-![](./images/hr2_32.png " ") 
-33. On the Target row select ‘Select from Catalog’.
-![](./images/hr2_33.png " ") 
-34. Select the “Employee Analysis” project.
-![](./images/hr2_34.png " ") 
-35. Select ‘OK’.
-![](./images/hr2_35.png " ") 
-36. Now we can use the data action to navigate between projects.  
-    
-    Select a person from the pivot table, right click and select the new action for ‘Existing Employees Analysis’.
-![](./images/hr2_36.png " ") 
-37. This will take you to the project for existing employees filtered for the employee you highlighted.
-![](./images/hr2_37.png " ") 
-
 
 ## Want to learn more
-- [link](to be added)
+  [](youtube:VlMiMnk287Q)   
+
 
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Linda Dest, Principal Analytics Platform Specialist, NA Technology 
-* **Last Updated By/Date** - Satya Pranvai Manthena, Associate Solution Engineer, Analytics, NA Technology, December 2020
+* **Last Updated By/Date** - Satya Pranavi Manthena, Solution Engineer, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
