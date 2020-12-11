@@ -86,7 +86,7 @@ In this lab, you will:
 
 1. Display the applications installed
 
-	```
+	  ```
 
 	$ <copy>sqlplus / AS SYSDBA</copy>
 
@@ -106,39 +106,37 @@ In this lab, you will:
 	SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
 	TOYS_APP         1.0          NORMAL       TOYS_ROOT
 
-	SQL>
+	SQL> <copy>exit;</copy>
 
-	```
+	  ```
 
-  Observe that the applications `toys_app` and `sales_toys_app` are installed in the application container at version 1.0.
+  Observe that the applications are installed in the application container at version 1.0.
 
 ## **STEP 3:** Synchronize the application PDBs
 
-1. Synchronize the application PDBs with the new applications `toys_app` and `sales_toys_app` installed.
+1. Synchronize the application PDBs with the new applications.
 
+    ```
+	  <copy>sqlplus sys@localhost:1521/robots AS SYSDBA</copy>
 
-	```
+	  Enter password: WElcome123##
+    ```
+    ```
 
-	SQL> <copy>CONNECT sys@localhost:1521/robots AS SYSDBA</copy>
+	  SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
 
-	Enter password: <b><i>WElcome123##</i></b>
-  ```
-  ```
+	  Pluggable database altered.
 
-	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
+	  SQL>
 
-	Pluggable database altered.
-
-	SQL>
-
-	```
+  	```
 
 2. Display the applications installed in the application container.
 
 
-	```
+	  ```
 
-	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
+	  SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
 		FROM   cdb_applications a, cdb_pdbs p
 		WHERE  a.con_id = p.pdb_id
 		AND    app_name NOT LIKE '%APP$%'
@@ -151,14 +149,16 @@ In this lab, you will:
 	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
 
 	TOYS_APP         1.0          NORMAL       ROBOTS
-  ```
-  ```
 
-	SQL> <copy>CONNECT sys@localhost:1521/dolls AS SYSDBA</copy>
+  SQL><copy>exit;</copy>
+    ```
+    ```
+
+	<copy>sqlplus sys@localhost:1521/dolls AS SYSDBA</copy>
 
 	Enter password: <b><i>WElcome123##</i></b>
-  ```
-  ```
+    ```
+    ```
 
 	SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
 
@@ -210,14 +210,14 @@ In this lab, you will:
 
 	$
 
-	```
+    ```
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

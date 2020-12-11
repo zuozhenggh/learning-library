@@ -152,7 +152,7 @@ Estimated Lab Time: 10 minutes
 
       System altered.
 
-      SQL>
+      SQL> <copy>exit;</copy>
 
       ```
 
@@ -161,33 +161,17 @@ Estimated Lab Time: 10 minutes
 1. Restart the CDB instance.
 
       ```
-
-      SQL> <copy>CONNECT / AS SYSDBA</copy>
-      Connected.
-      SQL> <copy>SHUTDOWN IMMEDIATE</copy>
-      Database closed.
-      Database dismounted.
-      ORACLE instance shut down.
-      SQL> <copy>STARTUP</copy>
-      ORACLE instance started.
-
-      Total System Global Area 1140848912 bytes
-      Fixed Size                  9566480 bytes
-      Variable Size             352321536 bytes
-      Database Buffers          771751936 bytes
-      Redo Buffers                7208960 bytes
-      Database mounted.
-      Database opened.
-      SQL> <copy>ALTER PLUGGABLE DATABASE pdb21 OPEN;</copy>
-
-      Pluggable database altered.
-
-      SQL>
-
+      <copy>
+      cd /home/oracle/labs/M104780GC10
+      /home/oracle/labs/M104780GC10/wallet.sh
+      </copy>
       ```
 
 2.  Display the values for `processes` and `aq_tm_processes`.
 
+      ```
+      <copy>sqlplus / as sysdba</copy>
+      ```
       ```
 
       SQL> <copy>SHOW PARAMETER processes</copy>
@@ -306,15 +290,40 @@ Estimated Lab Time: 10 minutes
 
     ```
 
+4. Set the SGA back.
+
+    ```
+    $ <copy>sqlplus sys@cdb21 as sysdba</copy>    
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    Enter password: <b><i>WElcome123##</i></b>
+    Last Successful login time: Mon Mar 16 2020 08:49:41 +00:00    
+    Connected to:
+
+    SQL>
+    ```
+    ```
+    <copy>
+    ALTER SYSTEM SET sga_target = 5G scope=spfile;
+    exit;
+    </copy>
+    ```
+    ```
+    <copy>
+    cd /home/oracle/labs/M104780GC10
+    /home/oracle/labs/M104780GC10/wallet.sh
+    </copy>
+    ```
+
 
 
 You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
+
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

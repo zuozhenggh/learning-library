@@ -190,6 +190,8 @@ SQL> <copy>CREATE OR REPLACE DIRECTORY dp_dir AS '/home/oracle/labs';</copy>
 
 Directory created.
 
+SQL> <copy>CREATE TABLESPACE users DATAFILE '/u02/app/oracle/oradata/pdb21/pdb21_2_users01.dbf' size 100M reuse;</copy>
+
 SQL> <copy>EXIT</copy>
 $
 
@@ -374,8 +376,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

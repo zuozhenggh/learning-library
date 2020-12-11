@@ -41,10 +41,6 @@
             "filename": "../../sql-macro/sql-macro.md"
         },
         {
-            "title": "Lab: Searching Text/JSON in In-Memory",
-            "filename": "../../search-text/search-text.md"
-        },
-        {
             "title": "Big Data and DW",
             "filename": "../../introduction/intro-bigdata-dw.md"
         },
@@ -73,24 +69,12 @@
             "filename": "../../introduction/intro-perf-ha.md"
         },
         {
-            "title": "Lab: PDB Point-in-Time Recovery",
-            "filename": "../../flashback-pdbs/flashback-pdbs.md"
-        },
-        {
             "title": "Lab: Automatic Zone Maps",
             "filename": "../../auto-zone-maps/auto-zone-maps.md"
         },
         {
             "title": "Lab: SecureFile LOBs",
             "filename": "../../securefile-lobs/securefile-lobs.md"
-        },
-        {
-            "title": "Lab: Automatic In-Memory",
-            "filename": "../../auto-in-mem/auto-in-mem.md"
-        },
-        {
-            "title": "Lab: In-Memory Hybrid Scans",
-            "filename": "../../im-hybrid-scans/im-hybrid-scans.md"
         },
         {
             "title": "Lab: Synchronizing Apps in App PDBs",
@@ -107,10 +91,6 @@
         {
             "title": "Lab: Data Pump Checksums",
             "filename": "../../data-pump-validity/data-pump-validity.md"
-        },
-        {
-            "title": "Lab: Data Pump Includes & Excludes",
-            "filename": "../../data-pump-incl-excl/data-pump-incl-excl.md"
         },
         {
             "title": "Lab: Data Pump Transportable Tbsp",
@@ -137,14 +117,6 @@
             "filename": "../../realms/realms.md"
         },
         {
-            "title": "Lab: Uninstall DB Vault",
-            "filename": "../../dbv-uninstall/dbv-uninstall.md"
-        },
-        {
-            "title": "Lab: Install DB Vault",
-            "filename": "../../dbv-install/dbv-install.md"
-        },
-        {
             "title": "Authentication and Administration",
             "filename": "../../introduction/intro-admin.md"
         },
@@ -152,9 +124,5 @@
             "title": "Lab: Upgraded Password File Case Sensitivity",
             "filename": "../../upgraded-pwd/upgraded-pwd.md"
         },
-        {
-            "title": "Lab: Password Length Enforcement",
-            "filename": "../../enforce-min-pwd/enforce-min-pwd.md"
-        }
     ]
 }

@@ -89,7 +89,7 @@ In this lab, you will:
 
     Table created.
 
-    SQL>
+    SQL> <copy>alter database datafile '/u02/app/oracle/oradata/pdb21/users01.dbf' autoextend on;</copy>
 
     ```
 
@@ -234,12 +234,12 @@ In this lab, you will:
 
     ```
 
-3. Display the number of extents or blocks freed. **Make note of the LOB_OBJD to use in later commands**
+3. Display the number of extents or blocks freed. **Put the LOB_OBJD you saved from previous in and run the command**
 
 
     ```
 
-    SQL> <copy>SELECT * FROM v$securefile_shrink WHERE LOB_OBJD=76063;</copy>
+    SQL> SELECT * FROM v$securefile_shrink WHERE LOB_OBJD=76063;
 
       LOB_OBJD SHRINK_STATUS
 
@@ -317,12 +317,12 @@ In this lab, you will:
 
     ```
 
-6. Display the number of extents or blocks freed. **Make sure to change the LOB_OBJD to your LOB_OBJD or it will not return any rows**
+6. Display the number of extents or blocks freed. **Put the LOB_OBJD you saved from previous in and run the command**
 
 
     ```
 
-    SQL> <copy>SELECT * FROM v$securefile_shrink WHERE LOB_OBJD=76063;</copy>
+    SQL> SELECT * FROM v$securefile_shrink WHERE LOB_OBJD=76063;
 
       LOB_OBJD SHRINK_STATUS
 
@@ -378,8 +378,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
