@@ -64,7 +64,7 @@
       "filename": "../../crossdatatype/crossdatatype.md"
     },
     {
-      "title": "Lab 11: MicroServices",
+      "title": "Lab 11: ORDS as Microservices",
       "description": "Labs that leverage data types across schemas",
       "filename": "../../ords/ords.md"
     }
