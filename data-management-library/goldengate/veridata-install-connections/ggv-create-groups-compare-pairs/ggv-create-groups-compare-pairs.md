@@ -2,37 +2,29 @@
 
 ## Introduction
 This lab describes how to groups and compare pairs. Groups are logical containers for one or more compare pairs. They help you to organize and partition large or diverse sets of data into more manageable units. Groups are linked to jobs when jobs are created. Any group can be linked to one or more jobs, allowing you complete control over how and when data is compared.
+
 A group is associated with a set of connections to the source and target data.
+
+A compare pair is the logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Because of this, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
 
 ### What Do You Need?
 
 + **Oracle GoldenGate Veridata installed**
 + **Source and Target connections as described in Lab 2**
 
-## **STEP 1:** Login to Oracle GoldenGate Veridata
-  To login to GoldenGate Veridata:
-  1. In a browser, enter the URL, for example: http://hostName.us.oracle.com:22738/veridata/login.jsf.
-  2. Enter your login credentials and click **Login**:
-      ![](./images/1-login-veridata.png " ")
+## **STEP 1:** Create a Group
 
-## **STEP 2:** Create a Connection
-To get started with Oracle GoldenGate Veridata, you must define a connection to the source and target databases that contain the data that you want to compare. Oracle GoldenGate Veridata Server uses the connection information to communicate with Oracle GoldenGate Veridata Agent.
-**Note**: Ensure that you have the Administrator or the Power User roles to create and configure connections.
-
-To create connections:
-1. From the left navigation pane, click **Configuration** and then click **Connection Configuration** to display the **Connection configuration** page.
-    ![](./images/2-connection-configuration.png " ")
-2. Click **New** to display the **New Connection Assistant** page to create one connection for the source database.
-3. Enter the **Connection Name**, for example, **Source** and click **Next**.
-4. Enter the following details:
-    * **Host Name or IP Address**: Name of the host where Oracle GoldenGate Veridata Agent is running.
-    * **Port**: The port number for Oracle GoldenGate Veridata Agent on that host.
-    * **Datasource Type**: The datasource that is associated with this agent.
-      ![](./images/3-new-connection-assistant.png " ")
-5. Click **Next** to enter the Datasource Connection credentials:
-    ![](./images/4-new-connection-assistant-datasource-credentials.png " ")
-6. Similarly, create another connection (for example, target) for the target  database.
-
+To create a group:
+1. From the left navigation pane, click **Configuration** and then click **Group Configuration** to display the **Group configuration** page.
+    ![](./images/1-group-configuration.png " ")
+2. Click **New** to display the **New Connection Assistant** page to create a group.
+3. Click **Browse** to select a template for the group from the **From** drop-down list.
+4. Enter the **Name** and **Description** for the Group and click **Next**.
+  ![](./images/2-new-group-from-name-description.png " ")
+4. Click **Next** to enter the connection information.
+5. Browse to select the **Source Connection** and **Target Connection** (that you have created in Lab 2).
+  ![](./images/3-new-group-connection-information.png " ")
+6. Click **Finish**.
 ## Want to Learn More?
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
