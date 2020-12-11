@@ -52,7 +52,7 @@ Open a terminal session
 
 ![](./images/c1.png " ")
 
-1. Edit the parameter of the REPLICAT IREP with the attributes to concatenate the string from columns “CUST_FIRST_NAME” & “CUST_LAST_NAME” into “CUSTOMER_NAME”.Add the following, after commenting the already existing map statement with ”–“.
+1. Edit the source (Atlanta) parameter file  of the REPLICAT IREP with the attributes to concatenate the string from columns “CUST_FIRST_NAME” & “CUST_LAST_NAME” into “CUSTOMER_NAME”.Add the following, after commenting the already existing map statement with ”–“.
 
 ![](./images/c2.png " ")
 ```
