@@ -4,7 +4,7 @@
 
 An open dataset of retail transactions is available for download from [UCI](https://archive.ics.uci.edu/ml/datasets/online+retail) (and also [Kaggle](https://www.kaggle.com/jihyeseo/online-retail-data-set-from-uci-ml-repo)). This dataset contains real-world transactions of customer purchases along with product and customer data - very suitable for generating real-time product recommendations based on property graph.
 
->According to [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/online+retail), "the Online Retail Dataset is a transnational data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers."
+According to [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/online+retail), "the Online Retail Dataset is a transnational data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers."
 
 Estimated Lab Time : 15 minutes
 
@@ -51,7 +51,7 @@ You may use [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/C
 
 4. Grant the required privileges to the **RETAIL** user.
 
-    >The Oracle Graph server by default uses an Oracle database as the identity manager, which means that you log into the graph server using Oracle Database credentials. The Database user needs to be granted appropriate privileges to support this authentication method, mainly the **CREATE SESSION** and  **GRAPH\_DEVELOPER** or **GRAPH\_ADMINISTRATOR** role.
+    - The Oracle Graph server by default uses an Oracle database as the identity manager, which means that you log into the graph server using Oracle Database credentials. The Database user needs to be granted appropriate privileges to support this authentication method, mainly the **CREATE SESSION** and  **GRAPH\_DEVELOPER** or **GRAPH\_ADMINISTRATOR** role.
 
     ```
     <copy>ALTER USER retail QUOTA UNLIMITED ON data;
@@ -71,7 +71,7 @@ You may use [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/C
 
 6. Create the tables for the dataset using **create-tables-retail.sql** script located in **~/oracle-pg/scripts** folder.
 
-    >Ignore any **ORA-00942: table or view does not exist** errors.
+    - Ignore any **ORA-00942: table or view does not exist** errors.
 
     ```
     SQL> <copy>@/home/oracle/oracle-pg/scripts/create-tables-retail.sql</copy>
@@ -101,7 +101,7 @@ You may use [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/C
 
 3. Once the download completes, convert the Excel file to CSV format using open source **libreoffice**, as the data needs to be converted to plain text for loading.
 
-    >The file conversion takes a few minutes to complete.
+    - The file conversion takes a few minutes to complete.
 
     ```
     <copy>libreoffice --headless --convert-to csv OnlineRetail.xlsx</copy>

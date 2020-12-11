@@ -60,7 +60,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
     * **Name your DB system**: Give your database a name.
     * **Select an availability domain**:  Choose an AD
     * **Select a shape type**:  Choose *Virtual Machine*
-    * **Select a shape**: *VM Standard2.4* (If you are in a Free Trial account, choose the smaller *VM Standard 2.2* shape, keep in mind that this will increase provisioning time)
+    * **Select a shape**: *VM Standard2.4* (If you are in a Free Trial account, choose the smaller *VM Standard 2.2* shape, keep in mind that this will increase provisioning time, VMStandard2.2 is the recommended minimum)
     * **Configure the DB system - Node count**: *1* 
     * **Configure the DB system - Software edition**: *Enterprise Edition High Performance*
     * **Storage Management Software**: *Logical Volume Manager* *Note:  This is **very** important to choose Logical Volume Manager*
