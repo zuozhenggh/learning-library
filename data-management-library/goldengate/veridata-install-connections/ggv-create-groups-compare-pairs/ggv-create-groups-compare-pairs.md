@@ -14,10 +14,10 @@ A compare pair is the logical relationship between a source table or file and a 
 
 ## **STEP 1:** Create a Group
 
-To create a group:
+  To create a group:
 1. From the left navigation pane, click **Configuration** and then click **Group Configuration** to display the **Group configuration** page.
     ![](./images/1-group-configuration.png " ")
-2. Click **New** to display the **New Connection Assistant** page to create a group.
+2. Click **New** to display the **New Group Assistant** page to create a group.
 3. Click **Browse** to select a template for the group from the **From** drop-down list.
 4. Enter the **Name** and **Description** for the Group and click **Next**.
   ![](./images/2-new-group-from-name-description.png " ")
@@ -25,10 +25,17 @@ To create a group:
 5. Browse to select the **Source Connection** and **Target Connection** (that you have created in Lab 2).
   ![](./images/3-new-group-connection-information.png " ")
 6. Click **Finish**.
+Your new Group has been created.
+
+## **STEP 2:** Create Compare Pairs
+  To create compare pairs:
+1. After you have created the Group, click **Go to Compare Pair Configuration...** check box in the **New Group Assistant** page.
+2. 
 ## Want to Learn More?
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
-* [Configuring Connections](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-75005B4D-5C24-4467-A68B-1FE66A168905)
+* [Configuring Groups](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-70B42ABB-EA8E-4ADF-8414-7EA1752CA7E6)
+* [Compare Pairs](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-055CE119-0307-4826-98C7-A51F53E28763)
 
 ## Acknowledgements
 
