@@ -4,7 +4,7 @@
 
 Oracle Graph Server is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.
 
-> You can work with graphs in two-tier mode (graph client connects directly to Oracle Database), or three-tier mode (graph client connects to the graph server (PGX) on the middle-tier, which then connects to Oracle Database).
+You can work with graphs in two-tier mode (graph client connects directly to Oracle Database), or three-tier mode (graph client connects to the graph server (PGX) on the middle-tier, which then connects to Oracle Database).
 
 Estimated Lab Time : 15 minutes
 
@@ -23,7 +23,7 @@ As the Graph Server will fetch data from an Oracle Database, you would need a da
 
 In this step you will use **keytool** (bundled with the JDK) to generate the **keystore** file for the **RETAIL** schema.
 
->As a security best practice, it is preferred that Graph Server connects to the database with a read-only user or a user with "just-the-right" privileges on the schema, instead of the schema owner.
+- As a security best practice, it is preferred that Graph Server connects to the database with a read-only user or a user with "just-the-right" privileges on the schema, instead of the schema owner.
 
 1. In the SSH session ensure you are logged in as **oracle**. Change directory to **/home/oracle/oracle-pg**.
 
@@ -35,7 +35,7 @@ In this step you will use **keytool** (bundled with the JDK) to generate the **k
 
   When you run **keytool -importpass**, you will be first prompted to choose a **keystore password** (with verification), and then prompted to enter the **{Retail Password}** (with verification).
 
-    >**Please ensure you enter the correct passwords and in the correct order.**
+    - **Please ensure you enter the correct passwords and in the correct order.**
 
     ```
     <copy>
@@ -86,7 +86,7 @@ The Graph Server needs to be configured before loading any graphs. Please follow
 
 1. First, edit the graph server configuration file **/etc/oracle/graph/server.conf** using your favorite text editor (mainly using **nano**, **vi** or **vim**).
 
-    >When editing with vi or vim, press **i** to enable the **INSERT** mode before pasting.
+    - When editing with vi or vim, press **i** to enable the **INSERT** mode before pasting.
 
     ```
     <copy>nano /etc/oracle/graph/server.conf</copy>
@@ -94,7 +94,7 @@ The Graph Server needs to be configured before loading any graphs. Please follow
 
 2. Modify **"enable_tls"** to **false**. **SAVE** the file and **EXIT**.
 
-    >To save the file and exit in nano, hit **CTRL-X** and enter **Y** to save changes.
+    - To save the file and exit in nano, hit **CTRL-X** and enter **Y** to save changes.
 
     ![](./images/enable-tls-false.png)
 

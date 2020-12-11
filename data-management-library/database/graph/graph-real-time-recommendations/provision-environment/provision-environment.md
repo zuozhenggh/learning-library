@@ -4,7 +4,7 @@
 
 The lab environment for this workshop will be hosted in Oracle Cloud Infrastructure. To minimize the provisioning steps and automate the process, you will use Oracle Cloud Infrastructure **Resource Manager**.
 
->OCI [Resource Manager](https://docs.cloud.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm) is a managed service that can provision all Oracle Cloud Infrastructure resources and services. Resource Manager reduces configuration errors and increases productivity by managing infrastructure declaratively (i.e. "infrastructure as code") using industry standard Hashicorp Terraform®.
+OCI [Resource Manager](https://docs.cloud.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm) is a managed service that can provision all Oracle Cloud Infrastructure resources and services. Resource Manager reduces configuration errors and increases productivity by managing infrastructure declaratively (i.e. "infrastructure as code") using industry standard Hashicorp Terraform®.
 
 Estimated Lab Time : 15 mins
 
@@ -31,7 +31,7 @@ The lab environment for the workshop consists of :
 
 Sign in to your **Cloud Account** from Oracle Cloud website. You will be prompted to enter your cloud tenant, user name, and password.
 
->If this is your first time signing in to Oracle Cloud Infrastructure, or for detailed sign in instructions, refer to [*Getting Started with Oracle Cloud*](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/sign-your-cloud-account.html).
+If this is your first time signing in to Oracle Cloud Infrastructure, or for detailed sign in instructions, refer to [*Getting Started with Oracle Cloud*](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/sign-your-cloud-account.html).
 
 ## **STEP 2** : Create SSH Key Pair Using Cloud Shell
 
@@ -43,13 +43,13 @@ Oracle Cloud Infrastructure compute instances uses an SSH key pair instead of a 
 
 In this step you will use **Oracle Cloud Shell** to create an SSH key pair.
 
->For the purpose of this lab, Oracle Cloud Shell is the recommended interface for creating SSH keys as it does not require any local setup on your computer. However, you are free to choose any interface that you are familiar with for creating SSH keys (click [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html) for other methods for generating SSH Keys).
+For the purpose of this lab, Oracle Cloud Shell is the recommended interface for creating SSH keys as it does not require any local setup on your computer. However, you are free to choose any interface that you are familiar with for creating SSH keys (click [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html) for other methods for generating SSH Keys).
 
 ### Start the OCI Cloud Shell
 
 **OCI Cloud Shell** is a web browser-based terminal accessible from the Oracle Cloud Console to all OCI users. It is free to use (within monthly tenancy limits), and provides access to a Linux shell, with a pre-authenticated OCI CLI, Terraform & Ansible installations, along with a few other useful tools (refer to [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellgettingstarted.htm)  documentation for details).
 
->To use the Cloud Shell, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
+To use the Cloud Shell, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
 
 1. Start OCI Cloud Shell by clicking the **Cloud Shell** icon at the top right of Oracle Cloud Infrastructure console page. Cloud shell takes few seconds to initialize.
 
@@ -118,7 +118,7 @@ Creating a **Stack** involves uploading the Terraform configuration file, provid
 
 	![](./images_rm/click-stacks.png)
 
-2. In the **Create Stack** dialog, enter the following :
+3. In the **Create Stack** dialog, enter the following :
 
 	* Ensure **My Configuration** is selected.
 
@@ -131,13 +131,13 @@ Creating a **Stack** involves uploading the Terraform configuration file, provid
 	* Optionally, enter a **Description**.
 
 	* From the **Create in Compartment** drop-down, select the **Compartment** where you want to create the stack.
-		> You may choose the same compartment as the lab environment for the Stack.
+		- You may choose the same compartment as the lab environment for the Stack.
 
 	* Select the **Terraform Version** as **0.12**.
-		>**IMPORTANT:** The scripts require Terraform 0.12. Ensure you select the correct version as Terraform is not backwards compatible.
+		- **IMPORTANT:** The scripts require Terraform 0.12. Ensure you select the correct version as Terraform is not backwards compatible.
 
 	* Optionally, you can apply tags.
-		>Refer to the documentation section [**Tagging Overview**](https://docs.cloud.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm) for details on OCI Tagging.
+		- Refer to the documentation section [**Tagging Overview**](https://docs.cloud.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm) for details on OCI Tagging.
 
 	* Click **Next**.
 
@@ -179,7 +179,7 @@ When you run the apply job for a Stack, Terraform creates the resources and exec
 
 13. In the **Apply** dialog, review the apply job **Name** and ensure the **Apply Job Plan Resolution** is set to **Automatically Approve**.
 
-	> You may optionally add **Tag** information. Refer to the documentation section [*Tagging Overview*](https://docs.cloud.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm) for details on OCI Tagging.
+	- You may optionally add **Tag** information. Refer to the documentation section [*Tagging Overview*](https://docs.cloud.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm) for details on OCI Tagging.
 
 14. Click **Apply**.
 
@@ -195,12 +195,12 @@ When you run the apply job for a Stack, Terraform creates the resources and exec
 
 19. Please **Copy** the values in the highlighted section above and save them in a notepad. The labs will later refer to them (using the **Referred As** column).
 
-| Value       | Referred As | Description
-|----------------|-------------|----------------------|
-|ADB DB name| {ADB DB Name} | Autonomous Database Name
-|ADB Service Name HIGH|{ADB Service Name HIGH}|Database Service Name for DW workloads
-|ADB Service Name TP|{ADB Service Name TP}|Database Service Name for TP workloads
-|VM IP Address|{VM IP Address}|IP Address of the OCI VM
+	| Value       | Referred As | Description
+	|----------------|-------------|----------------------|
+	|ADB DB name| {ADB DB Name} | Autonomous Database Name
+	|ADB Service Name HIGH|{ADB Service Name HIGH}|Database Service Name for DW workloads
+	|ADB Service Name TP|{ADB Service Name TP}|Database Service Name for TP workloads
+	|VM IP Address|{VM IP Address}|IP Address of the OCI VM
 
 ## **STEP 4** : Validate Provisioning
 

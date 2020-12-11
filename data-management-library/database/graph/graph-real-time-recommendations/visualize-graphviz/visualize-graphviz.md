@@ -8,6 +8,12 @@ In this lab you will generate recommendations directly on the dataset using a bu
 
 Estimated Lab Time : 15 minutes
 
+### About GraphViz
+
+**GraphViz** is a single-page web application that works with the in-memory graph analytics server. GraphViz takes PGQL queries as input and visually renders the results. This greatly benefits data exploration as rich visualizations can help reveal new insights which otherwise may not be visible.
+
+GraphViz can visualize graphs that are have been loaded into the in-memory analytics server, either preloaded when the in-memory analytics server is started, or loaded at run-time by a client application.
+
 ### Objectives
 
 - Run Pagerank algorithm on the retail dataset for Recommendations
@@ -18,17 +24,11 @@ Estimated Lab Time : 15 minutes
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Successful completion of all steps in the previous lab
 
-## About GraphViz
-
-**GraphViz** is a single-page web application that works with the in-memory graph analytics server. GraphViz takes PGQL queries as input and visually renders the results. This greatly benefits data exploration as rich visualizations can help reveal new insights which otherwise may not be visible.
-
-GraphViz can visualize graphs that are have been loaded into the in-memory analytics server, either preloaded when the in-memory analytics server is started, or loaded at run-time by a client application.
-
 ## **STEP 1**: Compute PageRank
 
 Before attempting any visualizations with GraphViz, let's run a Page Rank algorithm to gather additional knowledge about the retail graph.
 
-> As per **Wikipedia**: "PageRank (PR) is an algorithm used by Google Search to rank web pages in their search engine results. PageRank was named after Larry Page, one of the founders of Google. PageRank is a way of measuring the importance of website pages."
+- As per **Wikipedia**: "PageRank (PR) is an algorithm used by Google Search to rank web pages in their search engine results. PageRank was named after Larry Page, one of the founders of Google. PageRank is a way of measuring the importance of website pages."
 
 ### Personalized PageRank for Recommendations
 
@@ -44,7 +44,7 @@ In addition, the walk in PPR discovers similar/related products because they wer
 
 1. In the **opg-shell** session from the previous lab, run a Personalized PageRank (PPR) algorithm on the retail graph starting with customer **cust_12353** as a focused node.
 
-    >The in-memory analyst contains a set of built-in algorithms that are available as Java APIs. The details of the APIs are documented in the Javadoc that is included in the product [documentation](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/spgdg/using-inmemory-analyst-oracle-database.html#GUID-71FC3DB6-62F1-42E6-B711-A32958FC53D4) library.
+    - The in-memory analyst contains a set of built-in algorithms that are available as Java APIs. The details of the APIs are documented in the Javadoc that is included in the product [documentation](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/spgdg/using-inmemory-analyst-oracle-database.html#GUID-71FC3DB6-62F1-42E6-B711-A32958FC53D4) library.
 
     ```
     opg-jshell> <copy>var vertex = graph.getVertex("cust_12353");</copy>
@@ -87,7 +87,7 @@ In addition, the walk in PPR discovers similar/related products because they wer
 
 The Graph Server automatically runs graph visualization application on port 7007 in embedded mode.
 
-  >GraphViz can be deployed in embedded mode or in Apache Tomcat or Oracle Weblogic Server. In this lab we will use the embedded mode of GraphViz.
+  - GraphViz can be deployed in embedded mode or in Apache Tomcat or Oracle Weblogic Server. In this lab we will use the embedded mode of GraphViz.
 
 1. From your laptop/desktop, open a new web browser and point to the following URL, replacing the **{VM IP Address}** with your lab VM's IP Address.
 
@@ -128,19 +128,19 @@ The Graph Server automatically runs graph visualization application on port 7007
 
   ![](./images/run-pgql.png)
 
-### Add Highlights to the Graph
+## **STEP 4**: Add Highlights to the Graph
 
-  > The Highlights tab includes customization options that let you modify the appearance of edges and vertices. Highlighting can be applied based on conditions (filters) on single or multiple elements.
-  >
-  > You can export and import highlight options by clicking the **Save** and **Load** buttons in the main window. Save lets you persist the highlight options, and Load lets you apply previously saved highlight options.
+- The Highlights tab includes customization options that let you modify the appearance of edges and vertices. Highlighting can be applied based on conditions (filters) on single or multiple elements.
 
-4. [Download] (https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclepartnersas/b/oracle_pg/o/highlights.json) the highlights JSON file (by **Right-Click** and **Save As**) and save it to your local machine. The file contains the graph highlight definitions, mainly, adds icons and changes the size of icons according to personalized page ranks (PPR).
+- You can export and import highlight options by clicking the **Save** and **Load** buttons in the main window. Save lets you persist the highlight options, and Load lets you apply previously saved highlight options.
 
-5. Import highlights.json by clicking **Import**.
+1. [Download] (https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclepartnersas/b/oracle_pg/o/highlights.json) the highlights JSON file (by **Right-Click** and **Save As**) and save it to your local machine. The file contains the graph highlight definitions, mainly, adds icons and changes the size of icons according to personalized page ranks (PPR).
+
+2. Import highlights.json by clicking **Import**.
 
   ![](./images/highlights.png)
 
-6. After the highlights are imported, note the icons get added to the nodes and their size is changed according to their PPR.
+3. After the highlights are imported, note the icons get added to the nodes and their size is changed according to their PPR.
 
   ![](./images/labeled-graph.png)
 
