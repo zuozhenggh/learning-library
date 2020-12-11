@@ -55,7 +55,9 @@ Open a terminal session
 1. Edit the parameter of the REPLICAT IREP with the attributes to concatenate the string from columns “CUST_FIRST_NAME” & “CUST_LAST_NAME” into “CUSTOMER_NAME”.Add the following, after commenting the already existing map statement with ”–“.
 
 ![](./images/c2.png " ")
-
+```
+<copy>MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, KEYCOLS(cust_id), COLMAP (USEDEFAULTS,CUSTOMER_NAME =@(STRCAT(CUST_FIRST_NAME,’ ‘ ,CUST_LAST_NAME));</copy>
+```
 2. Open the Administration Server of the Target deployment i.e. Boston at `http://<your ip address>:17001`. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process.
 
 ![](./images/c3.png " ")
