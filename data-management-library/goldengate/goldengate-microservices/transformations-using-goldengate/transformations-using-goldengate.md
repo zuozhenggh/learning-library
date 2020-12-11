@@ -56,39 +56,31 @@ Open a terminal session
 
 ![](./images/c2.png " ")
 
-2. Open the Administration Server of the Target deployment i.e. Boston at `http://localhost:17001`. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process.
+2. Open the Administration Server of the Target deployment i.e. Boston at `http://<your ip address>:17001`. When the page is completely open, you should be at a page where you can see Replicat IREP. Please stop and start the IREP process.
 
 ![](./images/c3.png " ")
 
-3. Open a terminal window and execute “insert_customer.sql” script in SQLPLUS to insert data into customer table.
+3. Open a terminal window and execute **insert_customer** below in SQLPLUS to insert data into customer table.
 
-```
-<copy>cd OGG181_WHKSHP/Lab8</copy>
-```
 ```
 <copy>sqlplus ggate/ggate@oggoow19</copy>
 ```
 ![](./images/c4.png " ")
 
-```
-<copy>@insert_customer.sql</copy>
-```
 
-
- **1 row copied**
-
-4. Query inside the script for insert
+1. Query inside the script for insert
 ```
 <copy>INSERT INTO SOE.CUSTOMERS VALUES (12345678,’LARRY’,’ELLISON’,’NY’,’NEW YORK’,’5000’,’LARRY@ORACLE.COM’,’365’,’15-OCT- 11’,’BUSINESS’,’MUSIC’,’4-JAN-61’,’Y’,’N’,’2767122’,’126219999’);
 
 Commit;</copy>
+```
 
-```
-5. After the insert transaction on the source table, query target **CUSTOMER** table as below in the terminal.
+**1 row copied**
 
-```
-<copy>cd OGG181_WHKSHP/Lab8</copy>
-```
+
+1. After the insert transaction on the source table, query target **CUSTOMER** table as below in the terminal.
+
+
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
 ```
@@ -110,6 +102,8 @@ Commit;</copy>
 
 **Replicat Definition**
 
+2. edit the REPLICAT IREP
+  
 MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id),
 
 SQLEXEC (SPNAME P_MAIL, PARAMS (code_param = CUST_EMAIL)),
@@ -118,7 +112,7 @@ COLMAP (USEDEFAULTS, CUST_EMAIL=P_MAIL.desc_param,CUSTOMER_NAME=@STRCAT(CUST_FIR
 
 ![](./images/c7.png " ")
 
-2. Open Terminal and SQLPLUS into Target Database (OGGOOW191).Create a required stored procedure under GGATE users. This will be used in the SQLEXEC call in the mapping statement
+1. Open Terminal and SQLPLUS into Target Database (OGGOOW191).Create a required stored procedure under GGATE users. This will be used in the SQLEXEC call in the mapping statement
 
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
@@ -127,8 +121,10 @@ SQL>
 ```
 <copy>CREATE  OR REPLACE FUNCTION F_MAIL(CODE_PARAM IN VARCHAR2)
   RETURN VARCHAR2
-  IS DESC_PARAM VARCHAR2(100);
-  BEGIN
+  IS DESC_PARAM VARCHAR2(100);</copy>
+  ```
+
+  ```<copy>BEGIN
   RETURN 'XXXXXXXXX@dummy.com';
   END;
   /</copy>
@@ -145,9 +141,8 @@ SQL>
 <copy>select F_MAIL('MADHU') from dual;</copy>
 ```
 
-
 4. Create or replace the procedure
-CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2)
+ex: CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2)
   IS
   ```
   <copy>begin
@@ -163,30 +158,24 @@ CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARC
 ```
 <copy>exit</copy>
 ```
-5. Open the Administration Server of the Target deployment i.e. Boston at `http://localhost:17001`. When the page is completely open, you should be at a page where you can see Replicat 6. •	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing @update_email.sql scriptIREP. Please stop and start the IREP process.
+5. Open the Administration Server of the Target deployment i.e. Boston at `http://<your ip address>:17001`. When the page is completely open, you should be at a page where you can see Replicat 6. •	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing @update_email.sql scriptIREP. Please stop and start the IREP process.
 
 ![](./images/c11.png " ")
 
-6. Open the Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing @update_email.sql script
+6. Open the Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transcation on the table CUSTOMER by executing **update_email**
 
 ```
 <copy>sqlplus ggate/ggate@oggoow19</copy>
 ```
-7. run @update_email.sql
 
-```
-<copy>@update_email.sql</copy>
-```
 
-**1 row updated**
-
-8. Query inside the script for update
+7. Run the following Query for update
 
 ```
 <copy>update soe.customers  set CUST_EMAIL='madhu.kumar.s@yahoo.com' where CUSTOMER_ID=12345678;
 commit;</copy>
 ```
-9. Check the Target tables is stored procedure was executed for static masking of the emails. Open Terminal and SQLPLUS into Target Database (OGGOOW191). Excute “select CUST_EMAIL from soe.customers where customer_ID between 562 and 570;” in SQLPLUS
+8. Check the Target tables is stored procedure was executed for static masking of the emails. Open Terminal and SQLPLUS into Target Database (OGGOOW191). Excute “select CUST_EMAIL from soe.customers where customer_ID between 562 and 570;” in SQLPLUS
 
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
@@ -203,7 +192,7 @@ commit;</copy>
 
 1. Go to Admin Server console for deployment Baston (http://localhost:17001) and edit the parameter of the REPLICAT IREP with the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command
 
-Relicat Settings
+**edit Relicat Settings REPLICAT IREP**
 ```
 <copy>MAP OGGOOW19.SOE.LOGON, TARGET OGGOOW191.SOE.LOGON_AUDIT, KEYCOLS(LOGON_ID), &
  COLMAP (USEDEFAULTS,&
@@ -220,7 +209,7 @@ Relicat Settings
  ```
  ![](./images/c14.png " ")
 
- 2. REPLICAT IREP param file will look like
+2. REPLICAT IREP param file will look like
 
  ![](./images/c15.png " ")
 
