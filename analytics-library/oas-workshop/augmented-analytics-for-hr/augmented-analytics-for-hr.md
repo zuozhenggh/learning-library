@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-One of the more sophisticated features of Oracle’s self-service offering is the ability to leverage advanced analytics and machine learning at the click of a button directly from your self-service projects and data flows.
+One of the more sophisticated features of Oracle’s self-service offering is the ability to leverage advanced analytics and machine learning at the click of a button directly from your self-service projects and data flows.  
 
 The machine learning features include a set of pre-built algorithms which can be used to extract insights from your data sets such as sentiment analysis, time-series analysis, prediction outcomes and confidence scores. 
 
@@ -11,6 +11,7 @@ Advanced analytics functions such as forecasting, trend analysis and clustering 
 Additionally, users can call custom machine learning scripts either using the evaluate script function from within your self-service projects, or by adding custom scripts as part of your data flow when preparing data.
 
 *Estimated Lab Time*: 30 Mintues.
+
 
 ### Objectives ###
 
@@ -24,8 +25,7 @@ Additionally, you will identify those employees who are at greatest risk for lea
 
 ### Prerequisites ###
 
-This lab assumes you have completed the following labs:
-- Lab: Start Oracle Analytics Server
+Login to Oracle Analytics Server
   
 Access to the following files:  
  * Attrition training.xlsx  
