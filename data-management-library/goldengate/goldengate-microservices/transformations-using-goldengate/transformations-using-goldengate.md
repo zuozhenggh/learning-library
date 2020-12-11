@@ -102,7 +102,7 @@ Commit;</copy>
 
 **Replicat Definition**
 
-2. edit the REPLICAT IREP
+2. edit the REPLICAT IREP and add the following lines
   
 ```
 <copy>MAP OGGOOW19.SOE.CUSTOMERS, TARGET OGGOOW191.SOE.CUSTOMERS, keycols(customer_id),
@@ -192,7 +192,7 @@ commit;</copy>
 
 1. Go to Admin Server console for deployment Baston (http://localhost:17001) and edit the parameter of the REPLICAT IREP with the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command
 
-**edit Relicat Settings REPLICAT IREP**
+**edit Relicat Settings REPLICAT IREP and add the following lines**
 ```
 <copy>MAP OGGOOW19.SOE.LOGON, TARGET OGGOOW191.SOE.LOGON_AUDIT, KEYCOLS(LOGON_ID), &
  COLMAP (USEDEFAULTS,&
