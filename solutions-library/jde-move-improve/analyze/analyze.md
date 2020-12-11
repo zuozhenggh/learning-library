@@ -229,14 +229,14 @@ To access the Oracle BI Publisher Server:
 
 For additional information, refer to these resources:
 
-*	JDE Learning Path
-https://apexapps.oracle.com/pls/apex/f?p=44785:50:0:::50:P50_EVENT_ID,P50_COURSE_ID:6152,395
+*	[JDE Learning Path](https://apexapps.oracle.com/pls/apex/f?p=44785:50:0:::50:P50_EVENT_ID,P50_COURSE_ID:6152,395)
 
-*   General Learning Paths
-https://apexapps.oracle.com/pls/apex/f?p=44785:50:102950731364668:::::
 
-*	Marketplace Listing
-https://console.us-ashburn-1.oraclecloud.com/marketplace/application/51184836/overview
+*   [General Learning Paths](https://apexapps.oracle.com/pls/apex/f?p=44785:50:102950731364668:::::)
+
+
+*	[Marketplace Listing](https://console.us-ashburn-1.oraclecloud.com/marketplace/application/51184836/overview)
+
 
 ## Summary
 Your enviornment is now fully functional and reeady to go. Enjoy JDE on OCI!  
