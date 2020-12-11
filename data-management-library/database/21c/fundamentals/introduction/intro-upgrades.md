@@ -35,7 +35,8 @@ With 21c, customers can
 
 ## Learn More
 
-* [21c Blog](http://docs.oracle.com)
+* [Oracle Database Blog](http://blogs.oracle.com/database)
+* [Introducing Oracle Database 21c](https://blogs.oracle.com/database/introducing-oracle-database-21c)
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
