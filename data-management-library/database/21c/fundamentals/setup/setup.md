@@ -86,11 +86,9 @@ In this lab, you will:
 
 8. Execute the /home/oracle/labs/update\_pass.sh shell script. The shell script prompts you to enter the password\_defined\_during\_DBSystem\_creation and sets it in all shell scripts and SQL scripts that will be used in the practices.
 
-
     ```
-    <copy>
-    /home/oracle/labs/update_pass.sh
-    </copy>
+    [oracle@da3 ~]$ <copy>/home/oracle/labs/update_pass.sh</copy>
+    Enter the password you set during the DBSystem creation: WElcome123##
     ```
 ## **STEP 2**: Database Create
 
@@ -121,6 +119,7 @@ In this lab, you will:
     ```
     <copy>
     show pdbs
+    exit;
     </copy>
     ```
 
@@ -171,11 +170,11 @@ In this lab, you will:
 
     ````
 
-7. Test the connection to CDB1.  Connect to CDB1 with SQL*Plus.
+7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
 
     ````
 	  <copy>
-	  sqlplus sys@cdb1 AS SYSDBA
+	  sqlplus sys@cdb21 AS SYSDBA
 	  </copy>
 	  ````
 
@@ -187,11 +186,11 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-9. Test the connection to PDB1
+9. Test the connection to PDB21
 
     ````
     <copy>
-    CONNECT sys@PDB1 AS SYSDBA
+    CONNECT sys@PDB21 AS SYSDBA
     </copy>
     ````
 
