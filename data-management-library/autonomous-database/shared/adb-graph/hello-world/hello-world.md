@@ -33,24 +33,18 @@ Learn how to
    ![OCI Console](./images/oci-console-adb-tools-graph-studio-link.png)
 
 
-    The ADB Service Console may also have a link to Graph Studio. Open it and click on the Development link on the left and then on the Graph Studio link.
-
-    **Note: This particular image is from an instance where some features were disabled. Your instance will likely have them all and other features. While the UI may be slightly different the Graph Studio card will be there.**
-
-    ![ADB Service Console](./images/ADWConsoleWithGraphStudio.png)
-
 2. Click on the Graph Studio card to open in a new page or tab in your browser. 
 
-3. If you prefer to connect directly and know the database, tenant, and region details then use the URL pattern shown below.
+3. If you prefer to connect directly and know the database, tenancy OCID, and region details then use the URL pattern shown below.
 
     ```
-    https://adb.<region_identifier>.oraclecloud.com/graphstudio/?tenant=<tenant_name>&database=<database_name>
+    https://adb.<region_identifier>.oraclecloud.com/graphstudio/?tenant=<tenancy_ocid>&database=<database_name>
     ```
 
-    For example, to access Graph Studio of database `ADW1` belonging to tenant `TENANT1` in the US Ashburn (IAD) region, open
+    For example, to access Graph Studio of database `ADW1` belonging to tenant `TENANT1` with OCID `ocid1.tenancy.oc1..thisisadecidedlybogusvalue` in the US Ashburn (IAD) region, open
 
     ```
-    https://adb.us-ashburn-1.oraclecloud.com/graphstudio/?tenant=TENANT1&database=ADW1
+    https://adb.us-ashburn-1.oraclecloud.com/graphstudio/?tenant=ocid1.tenancy.oc1..thisisadecidedlybogusvalue&database=ADW1
     ```
 
     in your browser. You can find the [region identifier for all regions here](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
