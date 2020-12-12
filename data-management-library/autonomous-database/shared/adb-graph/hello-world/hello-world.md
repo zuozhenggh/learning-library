@@ -26,11 +26,18 @@ Learn how to
 
 ## **STEP 1**: Connect to your Autonomous Database using Graph Studio
 
-1. Open the ADB service console and click on the Development link in the menu on the left. 
+1. If you have the Graph Studio URL then proceed to step 3. 
+
+    Log in to the OCI Console, choose the ADB-S (i.e. ADW or ATP) instance, then click on the Tools tab on the details page menu on the left. 
+
+   ![OCI Console](./images/oci-console-adb-tools-graph-studio-link.png)
+
+
+    The ADB Service Console may also have a link to Graph Studio. Open it and click on the Development link on the left and then on the Graph Studio link.
 
     **Note: This particular image is from an instance where some features were disabled. Your instance will likely have them all and other features. While the UI may be slightly different the Graph Studio card will be there.**
 
-    ![](./images/ADWConsoleWithGraphStudio.png)
+    ![ADB Service Console](./images/ADWConsoleWithGraphStudio.png)
 
 2. Click on the Graph Studio card to open in a new page or tab in your browser. 
 
