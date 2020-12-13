@@ -26,13 +26,104 @@ To determine which release of Oracle Application Express you are currently runni
   ![](images/version.png)
 
 ### Where to Run the Lab
-You can run this lab in any Oracle Database with APEX 20.2 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.2 is installed), on a third party cloud provider where APEX 20.2 is installed, or even on your laptop by installing Oracle XE or Oracle VirtualBox App Dev VM and installing APEX 20.2.
+You can run this lab in any Oracle Database with APEX 20.2 installed. This includes the new APEX Application Development Service, the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.2 is installed), on a third party cloud provider where APEX 20.2 is installed, or even on your laptop by installing Oracle XE or Oracle VirtualBox App Dev VM and installing APEX 20.2.
 
-Below are steps on how to sign up for either an *Oracle Autonomous Database* cloud service or *apex.oracle.com* service. The Always Free Oracle Autonomous Database is ideal for learning about the Oracle Database and APEX, and provides 1 OCPU and 20 GB of compressed storage. This service can also be utilized for production applications, and can readily be upgraded to a paid service as necessary. On the other hand, apex.oracle.com is also a free service; however, it is only designated for development purposes, and running production apps is not allowed. For conducting labs in this workshop, either service can be utilized.
+Below are steps on how to sign up for either an *APEX Application Development* Service, an *Oracle Autonomous Database* cloud service or *apex.oracle.com* service. The APEX Application Development Service is great if you would like to go with a flexible paid option that allows to concentrate your efforts on APEX development without worrying about the database management. It provides 1 OCPU and 1 TB and can be extended as needed. The Always Free Oracle Autonomous Database option is ideal for learning about the Oracle Database and APEX, and provides 1 OCPU and 20 GB of compressed storage. This service can also be utilized for production applications, and can readily be upgraded to a paid service as necessary. On the other hand, apex.oracle.com is also a free service; however, it is only designated for development purposes, and running production apps is not allowed. For conducting labs in this workshop, either service can be utilized.
 
 Click one of the options below to proceed.
 
-## **Option 1**: Oracle Autonomous Database
+## **Option 1**: Oracle APEX Application Development Service
+
+In this part, you will create an Oracle APEX Application Development Service trial account. Once you have signed up for the service, you will create an *APEX Service*. The final step in the process is to provision Oracle APEX.
+
+1.  Please [click this link to create your free account](https://myservices.us.oraclecloud.com/mycloud/signup?language=en). When you complete the registration process, you'll receive an account with a $300 credit that you can utilize to create an APEX Service. You can then use any remaining credit to continue to explore the Oracle Cloud. 
+
+2.  Soon after requesting your trial, you will receive a  **Get Started Now with Oracle Cloud** email.   
+    Make note of your **Username**, **Password**, and **Cloud Account Name**.
+
+    ![](images/get-started-email.png " ")
+
+3. Now that you have a service, you will log into your Oracle Cloud account, so that you can start working with various services.        
+    From any browser go to [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in).
+
+    Enter your **Cloud Account Name** in the input field and click the **Next** button.
+
+    ![](images/enter-oracle-cloud-account-name.png " ")
+
+4. Enter your **User Name** and **Password** in the input fields, and click **Sign In**.
+
+    ![](images/enter-user-name-and-password.png " ")
+
+5. From within your Oracle Cloud environment, you will create an instance of the Oracle APEX Application Development Service.
+
+    From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **APEX Application Development**.
+
+    ![](images/select-apxs-in-nav-menu.png " ")
+
+6. Select a Compartment and Click **Create APEX Service**.
+
+    ![](images/apxs-apex-create-apex-service-btn.png " ")
+
+7. Enter **```SecretPassw0rd```** for the ADMIN password, then click **Create APEX Service**.
+
+    ![](images/apxs-apex-create-apex-service-page.png " ")
+
+8. After clicking **Create APEX Service**, you will be redirected to the APEX Application Development Details page for the new instance.
+
+    Continue when the status changes from:
+
+    ![](images/apxs-status-provisioning.png " ")
+
+    to:
+
+    ![](images/apxs-status-available.png " ")
+
+9. Within your new APEX Application Development Service, APEX Workspace is not yet configured. Therefore, when you first access APEX, you will need to log in as an APEX Instance Administrator to create a workspace.
+   
+    Click **Launch APEX**.
+
+    ![](images/apxs-launch-apex.png " ")
+
+    *Note: APEX Application Development Service is a paid service. To stop the Autonomous Database behind the APEX Service, you need to click on the Database name under **APEX Instance Information** tab in the **APEX Instance Details** page:*
+
+    ![](images/apxs-db-name.png " ")
+
+    *Click **More Actions** and then **Stop***
+
+    ![](images/apxs-stop-service.png " ")
+
+10. Enter the password for the Administration Services and click **Sign In to Administration**.     
+    The password is the same as the one entered for the ADMIN user when creating the ATP instance: **```SecretPassw0rd```**
+
+    ![](images/log-in-as-admin.png " ")
+
+11. Click **Create Workspace**.
+
+    ![](images/welcome-create-workspace.png " ")
+
+12. In the Create Workspace dialog, enter the following:
+
+    | Property | Value |
+    | --- | --- |
+    | Database User | DEMO |
+    | Password | **`SecretPassw0rd`** |
+    | Workspace Name | DEMO |
+
+    Click **Create Workspace**.
+
+    ![](images/create-workspace.png " ")
+
+13. In the APEX Instance Administration page, click the **DEMO** link in the success message.         
+    *Note: This will log you out of APEX Administration so that you can log into your new workspace.*
+
+    ![](images/log-out-from-admin.png " ")
+
+14. On the APEX Workspace log in page, enter **``SecretPassw0rd``** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
+
+    ![](images/log-in-to-workspace.png " ")
+
+
+## **Option 2**: Oracle Autonomous Database
 
 In this part, you will create an Oracle Cloud trial account. Once you have signed up for the service, you will create an *Autonomous Transaction Processing* database. The final step in the process is to provision Oracle APEX.
 
@@ -119,7 +210,7 @@ In this part, you will create an Oracle Cloud trial account. Once you have signe
 
     ![](images/log-in-to-workspace.png " ")
 
-## **Option 2**: apex.oracle.com
+## **Option 3**: apex.oracle.com
 Signing up for apex.oracle.com is simply a matter of providing details on the workspace you wish to create and then waiting for the approval email.
 
 1. Go to [https://apex.oracle.com](https://apex.oracle.com.).
