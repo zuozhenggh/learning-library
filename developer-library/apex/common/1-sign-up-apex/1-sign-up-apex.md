@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to decide which Oracle Database you are going to use for the workshop, and then create an APEX workspace in that database.
+Oracle Application Express (APEX) is a feature of Oracle Database, including the new APEX Application Development Service, the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to decide which Oracle Database you are going to use for the workshop, and then create an APEX workspace in that database.
 
 If you already have an APEX 20.2 Workspace provisioned, you can skip this lab.
 
@@ -56,7 +56,7 @@ In this part, you will create an Oracle APEX Application Development Service tri
 
 5. From within your Oracle Cloud environment, you will create an instance of the Oracle APEX Application Development Service.
 
-    From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **APEX Application Development**.
+    From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **APEX Application Development** then select **APEX Instances**.
 
     ![](images/select-apxs-in-nav-menu.png " ")
 
