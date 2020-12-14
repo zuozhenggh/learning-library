@@ -101,8 +101,8 @@ In this step, you'll create the Location business object and then import data fo
 
     A check mark is displayed in the **Required** column for the **Name** field.
 
-8.  Click [this link](./files/Location.csv) and download the `Location.csv` file to your file system. The file contains four locations for the application.
-9.  In the Business Objects pane of the Navigator, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**.
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wg-SYyBho4igTK7Q7VRCJvDCadxWLueBiG33POhb7zTHQxtVU5JokCrXQGZ0C2fs/n/c4u03/b/solutions-library/o/Location.csv) and download the `Location.csv` file to your file system. The file contains four locations for the application.
+9.  In the Navigator's Business Object panel, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**.
 
     ![](./images/vbcsca_imp_s9.png)
 

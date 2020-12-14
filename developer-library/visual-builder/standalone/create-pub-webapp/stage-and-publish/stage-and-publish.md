@@ -42,7 +42,7 @@ Stage the application so that other users can test its behavior.
 
 You can import data for the Department and Employee business objects from a zip file. You can skip directly to the publishing step if you wish.
 
-1.  Click [this link](./files/HR_Application_Stage.zip) and download the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9qg3_BmDXmLGMwpnyTZmZRA4lA91PEwdNxXWdmcHam67wD5Gny6ypqAhbU2Ra5ly/n/c4u03/b/solutions-library/o/HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
 2.  On the Visual Applications page, click **HR Application** in the Name column to open it.
 3.  Click the **Business Objects** ![Business Objects icon](./images/vbcssp_bo_icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
