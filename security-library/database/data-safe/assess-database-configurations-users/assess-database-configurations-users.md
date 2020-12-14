@@ -70,7 +70,7 @@ You can use Security Assessment to evaluate the current security state of your t
 
     c) In the **At** field, click the **Select Time** button. Select **11:00 PM**, and then click **OK**.
 
-    d) Click **Schedule**. A confirmation messages states that the scheduled periodic job is successful.
+    d) Click **Update Schedule**. A confirmation messages states that the scheduled periodic job is successful.
 
     ![Schedule every Sunday](images/schedule-every-sunday.png)
 
