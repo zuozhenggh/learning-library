@@ -15,7 +15,7 @@ Take a look at this video to learn more, or just dive right into the labs.
 
 ### What Will You Learn?
 
-In this workshop, you'll learn how to create a new application, add some pages, and link them to each other. You'll also create some custom business object and learn how to import data and build pages for editing the data, as well as how to create common business rules for your web app.
+In this workshop, you'll learn how to create a new application, add some pages, and link them to each other. You'll also create some business objects and learn how to import data and build pages for editing the data, as well as how to create common business rules for your web app.
 
 ### What Do You Need?
 
