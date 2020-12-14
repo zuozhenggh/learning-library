@@ -184,20 +184,17 @@ You can use the User Assessment feature to identify user settings and user risks
 
 5. To view details for a user, click any user's name. The **User Details** dialog box shows you the following information:
 
-  - The date and time the user was created
-  - The user type (for example, Privileged)
-  - The user status (for example, OPEN)
-  - The privileged roles for the user (for example, DBA, DV Admin, Audit Admin)
-  - The risk level for the user (for example, Critical)
-  - The last date and time the user logged in to the target database
-  - The number of audit records collected for the user
-  - The roles and privileges granted to the user
+    - The date and time the user was created
+    - The user type (for example, Privileged)
+    - The user status (for example, OPEN)
+    - The privileged roles for the user (for example, DBA, DV Admin, Audit Admin)
+    - The risk level for the user (for example, Critical)
+    - The last date and time the user logged in to the target database
+    - The number of audit records collected for the user
+    - The roles and privileges granted to the user
 
-  You can position your cursor over the question marks next to **Privileged Roles** and **Risk** to view more details about the values for these fields.
-
-  The following screenshot shows you details for the `DBA_HARVEY` user.
-
-  ![Admin User Details](images/DBA_HARVEY-user-details.png)
+    You can position your cursor over the question marks next to **Privileged Roles** and **Risk** to view more details about the values for these fields. The following screenshot shows you details for the `DBA_HARVEY` user.
+    ![Admin User Details](images/DBA_HARVEY-user-details.png)
 
 6. To view audit records for the `admin` user, do the following:
 
