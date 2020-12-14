@@ -24,9 +24,6 @@ In this workshop, you'll learn how to create a new application, add some pages, 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * A Chrome browser
 
-At the conclusion of the lab add this statement: Note how you can link to whatever lab follows by using #next as the target*
-You may now [proceed to the next lab](#next).
-
 ## Acknowledgements
 * **Author** Sheryl Manoharan
 * **Last Updated By/Date** - Sheryl Manoharan, October 2020
