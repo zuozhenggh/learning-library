@@ -20,11 +20,11 @@ The following video provides an overview of the visualization component.
 
 ## **STEP 1:** Setup
 
-1. Open the Graph Viz at `http://<public_ip_for_free_tier_compute>:7007/ui`. Replace `<public_ip_for_free_tier_compute>` with the one for your Graph Server compute instance.
+1. Open the Graph Viz at `https://<public_ip_for_free_tier_compute>:7007/ui`. Replace `<public_ip_for_free_tier_compute>` with the one for your Graph Server compute instance.
 
-    You should see a screen similar to the screenshot below.  Enter the username (`customer_360`) and password you entered when createing the user in SQlDeveloperWeb.
+    You should see a screen similar to the screenshot below. Enter the username (`customer_360`) and password you entered when createing the user in SQL Developer Web.
 
-    ![GraphViz on startup](images/ADB_GViz_Login.png " ")
+    ![GraphViz on startup](images/ADB_GViz_Login.png)
 
 ### Troubleshooting
 
@@ -36,7 +36,7 @@ If you have a `Page Not Found` error, the graph you published at Lab 7 may expir
 
     You should see a graph similar to the screenshot below.
 
-    ![Customer 360 graph](images/ADB_GViz_Show50Elements.png " ")
+    ![Customer 360 graph](images/ADB_GViz_Show50Elements.png)
 
 ## **STEP 3:** Add highlights
 
@@ -44,11 +44,11 @@ Now let's add some labels and other visual context. These are known as highlight
 
 1. Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder (i.e. either to `oracle-pg/graphs/customer_360`  or the folder where you just downloaded it) and choose the file named 'highlights.json' and click Open to load that.
 
-    ![Load highlights for graph](images/GraphVizLoadHighlights.png " ")
+    ![Load highlights for graph](images/GraphVizLoadHighlights.png)
 
     The graph should now look like
 
-    ![Customer 360 graph with highlights](images/GraphVizWithHighlights.png " ")
+    ![Customer 360 graph with highlights](images/GraphVizWithHighlights.png)
 
 ## **STEP 4:** Pattern matching with PGQL
 
@@ -91,7 +91,7 @@ Click Run.
 
     The result should look as shown below.
 
-    ![Same day txns of more than 500](images/ADB_Gviz_SameDayTransfers.png " ")
+    ![Same day txns of more than 500](images/ADB_Gviz_SameDayTransfers.png)
 
 4. The next query finds patterns of transfers to and from the same two accounts, i.e. from A->B and back B->A.
 
@@ -108,7 +108,7 @@ Click Run.
 
     The result should look as shown below.
 
-    ![Transfer A to B to A](images/ADB-GViz_ABA_Transfer.png " ")
+    ![Transfer A to B to A](images/ADB-GViz_ABA_Transfer.png)
 
 6. Let's add one more account to that query to find a circular transfer pattern between 3 accounts.
 
@@ -125,7 +125,7 @@ Click Run.
 
     The result should look as shown below.
 
-    ![Circular transfer A to B to C to A](images/ADB_GViz_ABCA_Transfer.png " ")
+    ![Circular transfer A to B to C to A](images/ADB_GViz_ABCA_Transfer.png)
 
 ## Acknowledgements
 

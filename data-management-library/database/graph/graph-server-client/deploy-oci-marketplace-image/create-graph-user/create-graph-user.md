@@ -1,4 +1,4 @@
-# Create and Enable a Graph User in SQLDeveloper Web
+# Create and Enable a Database User in SQL Developer Web
 
 ## Introduction
 
@@ -8,16 +8,16 @@ Estimated time: 3 minutes
 
 ### Objectives
 
-- Learn how to create a database user in SQLDeveloperWeb.
+- Learn how to create a database user in SQL Developer Web.
 
 ### Prerequisites
 
 * Oracle cloud account
 * Provisioned Autonomous Database Shared Free Tier Instance
 
-## **STEP 1:** Create the Customer_360 user
+## **STEP 1:** Create a database user
 
-1. Login as the Admin user in SQLDevWeb of the newly created ADB Free Tier instance.
+1. Login as the Admin user in SQL Developer Web of the newly created ADB Free Tier instance.
 
   Go to your Cloud Console, click **Autonomous Transaction Processing**. Select the ADB instance **ATP Graph** you created in Lab 2.
 
@@ -40,7 +40,7 @@ Estimated time: 3 minutes
 
 2. Now create the `CUSTOMER_360` user. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
 
-  Note: Replace **<specify_a_password>** with a valid password string after copying and pasting the text below but **before executing** it in SQLDeveloperWeb.
+  Note: Replace **<specify_a_password>** with a valid password string after copying and pasting the text below but **before executing** it in SQL Developer Web.
 
     ```
     <copy>
@@ -61,11 +61,11 @@ Estimated time: 3 minutes
 
   *Notes:* 
   - *The `IDENTIFIED BY` clause specifies the password (i.e whatever you replaced <specify_a_password> with)*
-  - *Since [20.3 the Graph Server uses database authentication](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/using-inmemory-analyst-oracle-database.html). The user needs at least the graph_developer role.*
+  - *The Graph Server uses database authentication ([details](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/using-inmemory-analyst-oracle-database.html)). The user needs at least the graph_developer role.*
 
-## **STEP 2:** Enable SQLDevWeb for Customer_360
+## **STEP 2:** Enable SQL Developer Web for the new user
 
-1. Now provide SQLDevWeb access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA)
+1. Now provide SQL Developer Web access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA)
   for details.
 
   First clear the previous text in the SQL Worksheet.
@@ -88,14 +88,13 @@ Estimated time: 3 minutes
     </copy>
     ```
 
-  ![Enable SQLDevWeb for Customer_360](images/ADB_SDW_EnableLoginFor_C360.png " ")
+  ![Enable SQL Developer Web for Customer_360](images/ADB_SDW_EnableLoginFor_C360.png " ")
 
-  The URL for SQLDeveloperWeb for the Customer_360 user will have `c360` in place of `admin` in it.
+  The URL for SQL Developer Web for the `CUSTOMER_360` user will have `c360` in place of `admin` in it.
 
   Save the URL for the next step.
 
   For details, see the ["Provide SQL Developer Web Access to Database Users"](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA) section in the documentation.
-
 
   You may now proceed to the next lab.
 
@@ -103,7 +102,7 @@ Estimated time: 3 minutes
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
 * **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management.
-* **Last Updated By/Date** - Jayant Sharma, October 2020
+* **Last Updated By/Date** - Ryota Yamanaka, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
