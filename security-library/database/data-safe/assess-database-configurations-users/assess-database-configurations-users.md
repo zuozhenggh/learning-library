@@ -195,7 +195,7 @@ You can use the User Assessment feature to identify user settings and user risks
 
   You can position your cursor over the question marks next to **Privileged Roles** and **Risk** to view more details about the values for these fields.
 
-  The following diagram shows you details for the `DBA_HARVEY` user.
+  The following screenshot shows you details for the `DBA_HARVEY` user.
 
   ![Admin User Details](images/DBA_HARVEY-user-details.png)
 
@@ -243,7 +243,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, November 3, 2020
+* **Last Updated By/Date** - Jody Glover, December 14, 2020
 
 
 ## Need Help?

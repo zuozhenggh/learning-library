@@ -302,7 +302,7 @@ The Data Masking wizard generates a masking policy for your target database base
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, November 3, 2020
+* **Last Updated By/Date** - Jody Glover, December 14, 2020
 
 
 ## Need Help?
