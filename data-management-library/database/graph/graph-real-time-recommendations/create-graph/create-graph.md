@@ -6,16 +6,7 @@ As part of the Converged Oracle Database, a scalable property graph database alo
 
 Estimated Lab Time : 20 minutes
 
-### Objectives
-
-- Create the property graph using the Graph Server JShell client
-
-### Prerequisites
-
-- An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-- Successful completion of all steps in the previous lab
-
-## About Property Graph
+### About Property Graph
 
 A property graph consists of a set of objects or vertices and a set of arrows or edges connecting the vertices. Vertices and edges can have multiple properties, which are represented as key-value pairs.
 
@@ -27,6 +18,15 @@ Depending on your needs, there are two different approaches to how you can creat
 * **Graph Database Use Case.** Store data as a property graph in Oracle Database and manage that data via graph APIs. Optionally, you may use in-memory graph server (**PGX**) as an accelerator for expensive queries or to run graph algorithms on the entire graph. Note that the use of PGX is optional in this use case. For some applications the capabilities available in the database only are sufficient.
 
 * **Analytics-only Use Case.** Data is stored in relational form in the Oracle Database and you are not interested in a "graph database" but still want to benefit from the analytical capabilities of PGX, which exploit the connectivity of your data for specific analytical use cases. The Graph Server is capable of creating an in-memory property graph directly from the Oracle database, either from relational tables or Oracle Database Property Graph objects.
+
+### Objectives
+
+- Create the property graph using the Graph Server JShell client
+
+### Prerequisites
+
+- An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+- Successful completion of all steps in the previous lab
 
 ## **STEP 1**: Create an Authentication Token for Graph Server
 
