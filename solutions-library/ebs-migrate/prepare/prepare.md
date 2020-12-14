@@ -290,10 +290,10 @@ You may proceed to the next lab.
 
 * **Author:** William Masdon, Cloud Engineering
 * **Contributors:** 
-  - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
-  - Santiago Bastidas, Product Management Director
-  - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Nov 2020
+    - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
+    - Santiago Bastidas, Product Management Director
+    - Quintin Hill, Cloud Engineering
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, Dec 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
