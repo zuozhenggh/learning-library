@@ -3,10 +3,7 @@
 ## Introduction
 Ever found yourself in a situation where you have an umbrella and no rain or late at night in a parking lot with no snowbrush because you were given what you consider to be misinformation? Are you tired of your local weatherman predicting the weather incorrectly and you want to do something about it? Well, this is a lab you may find value in. Today we are going to discuss and guide you through how to set up and run WRF on OCI infrastructure. I'll also provide a custom image just incase you want to run WRF without learning how to set it up.
 
-## WRF? What is that?
-WRF is the abbreviation for The Weather Research and Forecasting Model. It is a mesoscale numerical weather prediction system designed for both atmospheric research and operational forecasting applications. WRF exists today do to a partnership that began in the late 90’s between the National Center for Atmospheric Research (NCAR), the National Oceanic and Atmospheric Administration (represented by the National Centers for Environmental Prediction (NCEP) and the Earth System Research Laboratory), the U.S. Air Force, the Naval Research Laboratory, the University of Oklahoma, and the Federal Aviation Administration (FAA). WRF is open-source and is available on github.
-WRF allows researchers to simulate the weather using either real data that has been collected via observations and analyses or idealized atmospheric conditions. WRF provides operational forecasting a platform, where many contributors have helped to make advances in physics, numerics, and data assimilation. WRF is currently in operational use at NCEP and other forecasting centers internationally which is a pretty big deal.  
-[WRF Custom Image](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JhUP79Nnrf3T2l905POpVHATtW_NEMQ8i8EUfKjep2SU4ziz-rV0NW2YhwUI_Ahy/n/hpc_limited_availability/b/Demo_Materials/o/WRF_DEMO)
+[WRF Custom Image](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lRqMYYN5VTdSgBz9f8nv7Tz5mzMGMqr7wlN2Y_q6g6GHmTdc9GX8lokgmTui81BA/n/hpc_limited_availability/b/Demo_Materials/o/WRF_DEMOV2)
 
 Estimated Lab Time:  60 minutes
 
@@ -108,24 +105,25 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
 
 ## **STEP 3**: Configuring Ubuntu
 1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Activities on the top left, then click show applications. Search for and open a terminal. Perform the following in the terminal.
+    
     ```
-    sudo apt install gfortran -y 
-    # Verify install with command: which gfortran  
-    # Should return a path: /usr/bin/gfortran
-    sudo apt install cpp  
-    # Verify install with command: which cpp  
-    # Should return a path: /usr/bin/cpp
-    sudo apt install gcc  
-    # Verify install with command: which gcc  
-    # Should return a path: /usr/bin/gcc
-    sudo apt install g++ -y
-    sudo apt install make
-    sudo apt install csh
-    sudo apt install perl
-    sudo apt-get install m4
-    sudo apt install htop
-    sudo apt install mc -y  
-    sudo apt install ncview -y 
+    sudo apt install gfortran -y   
+    # Verify install with command: which gfortran    
+    # Should return a path: /usr/bin/gfortran  
+    sudo apt install cpp    
+    # Verify install with command: which cpp    
+    # Should return a path: /usr/bin/cpp  
+    sudo apt install gcc    
+    # Verify install with command: which gcc    
+    # Should return a path: /usr/bin/gcc  
+    sudo apt install g++ -y  
+    sudo apt install make  
+    sudo apt install csh  
+    sudo apt install perl  
+    sudo apt-get install m4  
+    sudo apt install htop  
+    sudo apt install mc -y    
+    sudo apt install ncview -y   
     ```  
 ## **STEP 4**: Downloading and Compiling libraries for WRF
 Now that we have installed most dependencies we will need for WRF, lets begin to compile the libraries WRF needs to function.
