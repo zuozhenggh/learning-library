@@ -47,7 +47,7 @@ Converged Database with Weblogic for Developers workshop consists of 7 separate 
 
 | Lab Seq. | Name | Approx. Time |
 |--|------------------------------------------------------------|-------------|
-| 3 | Start Services | 30 minutes |
+| 3 | Initialize Environment (Start Services) | 30 minutes |
 | 4 | eSHOP Application | 20 minutes |
 | 5 | Data Type Demonstration Tool | 10 minutes |
 | 6 | JSON With Java | 30 minutes |
