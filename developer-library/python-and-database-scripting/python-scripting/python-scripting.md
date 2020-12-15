@@ -44,7 +44,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
     </copy>
     ````
 
-    For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**. cx\_Oracle version 7.2 (or later) is needed. Oracle database 19c is installed with the 19c client libraries. SQL*Plus is preinstalled. The Advanced Queuing section requires Oracle client 12.2 or later. The SODA section requires Oracle client 18.5, or later, and Oracle Database 18 or later.
+    For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**. cx\_Oracle version 7.2 (or later) is needed. cx\_Oracle version 8 is available. Oracle database 19c is installed with the 19c client libraries. SQL*Plus is preinstalled. The Advanced Queuing section requires Oracle client 12.2 or later. The SODA section requires Oracle client 18.5, or later, and Oracle Database 18 or later.
 
 3.  Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
 
@@ -803,7 +803,7 @@ There are several ways to execute Python code. In this step, we start with two e
     print(res)
     ````
 
-    The fetchmany() method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute    arraysize (which defaults to 100). Here the numRows parameter specifies that three rows should be returned.
+    The fetchmany() method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute **arraysize** (which defaults to 100). Here the numRows parameter specifies that three rows should be returned.
 
     Run the script in a terminal window:
 
@@ -881,7 +881,9 @@ There are several ways to execute Python code. In this step, we start with two e
 
 5.  Tuning with arraysize
 
-    This section demonstrates a way to improve query performance by increasing the number of rows returned in each batch from Oracle    to the Python program.
+    This section demonstrates a way to improve query performance by increasing the number of rows returned in each batch from Oracle to the Python program.
+
+    Row prefetching and array fetching are both internal buffering techniques to reduce round-trips to the database. The difference is the code layer that is doing the buffering, and when the buffering occurs.
 
     First, create a table with a large number of rows. Review **query\_arraysize.sql**:
 
@@ -923,7 +925,8 @@ There are several ways to execute Python code. In this step, we start with two e
     start = time.time()
 
     cur = con.cursor()
-    cur.arraysize = 10
+    cur.prefetchrows = 100
+    cur.arraysize = 100
     cur.execute("select * from bigtab")
     res = cur.fetchall()
     # print(res)  # uncomment to display the query results
@@ -932,7 +935,7 @@ There are several ways to execute Python code. In this step, we start with two e
     print(elapsed, "seconds")
     ````
 
-    This uses the 'time' module to measure elapsed time of the query. The arraysize is set to 10. This causes batches of 10 records at  a time to be returned from the database to a cache in Python. This reduces the number of "roundtrips" made to the database, often    reducing network load and reducing the number of context switches on the database server. The fetchone(), fetchmany() and fetchall () methods will read from the cache before requesting more data from the database.
+    This uses the 'time' module to measure elapsed time of the query. The prefetchrows and arraysize values are set to 100. This causes batches of 100 records at a time to be returned from the database to a cache in Python. This reduces the number of **roundtrips** made to the database, often reducing network load and reducing the number of context switches on the database server. The **fetchone()**, **fetchmany()** and **fetchall()** methods will read from the cache before requesting more data from the database.
 
     In a terminal window, run:
 
@@ -958,9 +961,10 @@ There are several ways to execute Python code. In this step, we start with two e
 
     In general, larger array sizes improve performance. Depending on how fast your system is, you may need to use different arraysizes than those given here to see a meaningful time difference.
 
-    The default arraysize used by cx\_Oracle 7 is 100. There is a time/space tradeoff for increasing the arraysize. Larger arraysizes will require more memory in Python for buffering the records.
+    There is a time/space tradeoff for increasing the values. Larger values will require more memory in Python for buffering the records.
+    If you know the query returns a fixed number of rows, for example 20 rows, then set arraysize to 20 and prefetchrows to 21.  The addition of one to prefetchrows prevents a round-trip to check for end-of-fetch.  The statement execution and fetch will take a total of one round-trip.  This minimizes load on the database.
 
-    If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
+    The default value of arraysize for cx\_Oracle is 100. If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
 
 ## **Step 8:** Binding Data
 
@@ -2089,7 +2093,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
 ## **Step 15:** Simple Oracle Document Access (SODA)
 
-Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database. By default, documents are JSON strings. SODA APIs exist in many languages.
+Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database using a set of NoSQL-style cx\_Oracle methods. By default, documents are JSON strings. SODA APIs exist in many languages.
 
 1.  Inserting JSON Documents
 
@@ -2120,9 +2124,9 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
 
     **insertOneAndGet()** inserts the content of a document into the database and returns a SODA Document Object. This allows access to meta data such as the document key. By default, document keys are automatically generated.
 
-    The find() method is used to begin an operation that will act upon documents in the collection.
+    The **find()** method is used to begin an operation that will act upon documents in the collection.
 
-    content is a dictionary. You can also get a JSON string by calling doc.getContentAsString().
+    **content** is a dictionary. You can also get a JSON string by calling **doc.getContentAsString()**.
 
     Run the file:
 
@@ -2167,11 +2171,11 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
     </copy>
     ````
 
-    The find operation filters the collection and returns documents where the city is Melbourne. Note the insertMany() method is currently in preview.
+    The find operation filters the collection and returns documents where the city is Melbourne. Note the **insertMany()** method is currently in preview.
 
     ![](./images/step15.2-soda1.png " ")
 
-    SODA supports query by example (QBE) with an extensive set of operators. Extend soda.py with a QBE to find documents where the age is less than 25:
+    SODA supports query by example (QBE) with an extensive set of operators. Extend **soda.py** with a QBE to find documents where the age is less than 25:
 
     ````
     <copy>
@@ -2206,7 +2210,7 @@ An additional lab on using Python with is available in the New Features for Deve
 
 * **Author** - Christopher Jones, Anthony Tuininga
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Troy Anthony, DB Product Management, November 2020
+* **Last Updated By/Date** - Troy Anthony, DB Product Management, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
