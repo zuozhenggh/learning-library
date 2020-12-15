@@ -1,9 +1,9 @@
 # Connecting Oracle DataSource for Apache Hadoop (OD4H) on Big Data Service to Autonomous Data Warehouse
-## Before You Begin
+## Introduction
 
-This 15-minute lab walks you through the steps to connecting OD4H on Big Data Service to Autonomous Data Warehouse.Let's say you have a table called EmployeeData on your ADW service and you want to map the corresponding columns of the EmployeeData table to the corresponding columns of the external table., In this lab, you will create an EmployeeData table on your ADW service and create the Hive DDL for creating the external table referencing the Oracle Table.
+This 15-minute lab walks you through the steps to connecting OD4H on Big Data Service to Autonomous Data Warehouse (ADW).
 
-### Background
+### About Product/Technology
 You can access Hadoop on from Autonomous Data Warehouse using Oracle DataSource For Apache Hadoop on Big Data Service.
 
 Oracle DataSource for Apache Hadoop (OD4H) does not require creating a new table. You can start working with OD4H using the following steps:
@@ -14,8 +14,16 @@ Oracle DataSource for Apache Hadoop (OD4H) does not require creating a new table
 
 External Tables allow you to define Java classes to access external database and present it as a native hive table.
 
+###Objectives
 
-### What Do You Need?
+In this lab, you will:
+
+* Download Autonomous Data Warehouse Cloud Credentials.
+* Create an OD4H user and an ```EMPLOYEEDATA``` Table on Autonomous Data Warehouse.
+* Create and Query a Hive External Table Using the Autonomous Data Warehouse Table.
+
+
+### Prerequsites
 
 * Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console.
 * Big Data Service Cluster
@@ -24,7 +32,7 @@ External Tables allow you to define Java classes to access external database and
 Oracle DataSource for Apache Hadoop (OD4H) is already installed on BDS nodes when you provision BDS. It is available under /opt/oracle/od4h/jlib.
 
 
-## Set the OD4H Jars
+## **STEP 1**: Set up the OD4H Jars
 
 
 1. Add `/opt/oracle/od4h/jlib/` to **HADOOP_CLASSPATH**.
@@ -38,7 +46,7 @@ Oracle DataSource for Apache Hadoop (OD4H) is already installed on BDS nodes whe
     ```
 Note: Ensure that ucp.jar, ojdbc8.jar and osh.jar are present in the Hive CLASSPATH, for using OD4H.
 
-## Download ADW Cloud Credentials
+## **STEP 2**: Download Autonomous Data Warehouse Cloud Credentials
 
 Oracle client credentials (wallet files) are downloaded from Autonomous Data Warehouse by a service administrator. If you are not an Autonomous Data Warehouse administrator, your administrator should provide you with the client credentials.
 
@@ -114,7 +122,7 @@ To download client credentials, do the following from Oracle Cloud Infrastructur
       'oracle.net.tns_admin' = '/home/oracle/wallet';</copy>
       ```    
 
-## Create OD4H user and EMPLOYEEDATA Table on ADW
+## **STEP 3**: Create an OD4H User and EMPLOYEEDATA Table on Autonomous Data Warehouse
 
 Although you can connect to your autonomous database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
 
@@ -177,7 +185,7 @@ Navigate to the Autonomous Data Warehouse details page.
     ```
     ![create-table.png](images/create-table.png "create-table.png")
 
-## Create and Query a Hive External Table Using the ADW Table
+## **STEP 4**: Create and Query a Hive External Table Using the Autonomous Data Warehouse Table
 
 The following section contains Hive commands to build an external Hive table that refers to `EMPLOYEEDATA` table.
 
@@ -241,7 +249,7 @@ The following section contains Hive commands to build an external Hive table tha
 
 ## Acknowledgements
 * **Authors**
-    * Dimpi Sarmah, Senior UA Developer, Oracle Database User Assistance
     * Kuassi Menah, Director of Product Management, Database Java (JVM, JDBC)
+    * Dimpi Sarmah, Senior UA Developer, Oracle Database User Assistance
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.

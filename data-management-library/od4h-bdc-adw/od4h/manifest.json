@@ -1,7 +1,7 @@
 {
     "tutorials": [
         {
-            "title": "Enter lab title here",
+            "title": "Connecting Oracle DataSource for Apache Hadoop (OD4H) on Big Data Service to Autonomous Data Warehouse",
             "description": "This lab walks you through the steps to...",
             "filename": "content.md"
         }
