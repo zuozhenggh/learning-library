@@ -285,7 +285,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     vi namelist.wps
     ```  
     **Please change all the values below to your liking based on your experiment**.
-    - `max_dom` An integer specifying the total number of domains, including the parent domain, in the simulation. Default value is 1.  
+    - `max_dom`: An integer specifying the total number of domains, including the parent domain, in the simulation. Default value is 1.  
     - `e_we`: Integers specifying the full west-east dimension of your grid. No default value.  
     - `e_sn`: Integers specifying the full south-north dimension of your grid. No default value.  
     - `dx`:  A real value specifying the grid distance (in meters) in the x-direction where the map scale factor is 1.  
@@ -299,7 +299,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ```
         &share  
         wrf_core = 'ARW',  
-        max_dom = **1**,  
+        max_dom = 1,  
         start_date = '2006-08-16_12:00:00','2006-08-16_12:00:00',  
         end_date   = '2006-08-16_18:00:00','2006-08-16_12:00:00',  
         interval_seconds = 21600  
@@ -310,8 +310,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
         parent_grid_ratio =   1,   3,  
         i_parent_start    =   1,  31,  
         j_parent_start    =   1,  17,  
-        e_we              =  **100**, 112,  
-        e_sn              =  **100**,  97,  
+        e_we              =  100, 112,  
+        e_sn              =  100,  97,  
         !  
         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IMPORTANT NOTE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
         ! The default datasets used to produce the MAXSNOALB and ALBEDO12M  
@@ -329,11 +329,11 @@ The grib2 library is actually a compilation of three separate libraries, specifi
         dx = **10000**,  
         dy = **10000**,  
         map_proj = 'lambert',  
-        ref_lat   =  **42.48**,  
-        ref_lon   = **-71.15**,  
-        truelat1  =  **42.48**,  
-        truelat2  =  **42.48**,  
-        stand_lon = **-71.15**,  
+        ref_lat   =  42.48,  
+        ref_lon   = -71.15,  
+        truelat1  =  42.48,  
+        truelat2  =  42.48,  
+        stand_lon = -71.15,  
         geog_data_path = **'/home/ubuntu/WRF/GEOG/'**  
         /  
     ```
@@ -414,9 +414,9 @@ Don’t actually download anything. We will create a script for that. We are goi
     &share  
     wrf_core = 'ARW',  
     max_dom = 1,  
-    start_date = **'2020-11-20_00:00:00'**,         # start time  
-    end_date   = **'2020-11-20_06:00:00'**,         #6 hours later than start time  
-    interval_seconds = **10800**                    #3 hours worth of seconds interval between steps  
+    start_date = '2020-11-20_00:00:00',         # start time  
+    end_date   = '2020-11-20_06:00:00',         #6 hours later than start time  
+    interval_seconds = 10800                    #3 hours worth of seconds interval between steps  
     io_form_geogrid = 2,  
     / 
     ``` 
@@ -469,15 +469,15 @@ Don’t actually download anything. We will create a script for that. We are goi
     run_hours                           = 12,
     run_minutes                         = 0,
     run_seconds                         = 0,
-    start_year                          = 2020**, 2000, 2000,
-    start_month                         = 11**,   01,   01,
-    start_day                           = 20**,   24,   24,
-    start_hour                          = 00**,   12,   12,
-    end_year                            = 2020**, 2000, 2000,
-    end_month                           = 11**,   01,   01,
-    end_day                             = 20**,   25,   25,
-    end_hour                            = 06**,   12,   12,
-    interval_seconds                    = 10800**
+    start_year                          = 2020, 2000, 2000,
+    start_month                         = 11,   01,   01,
+    start_day                           = 20,   24,   24,
+    start_hour                          = 00,   12,   12,
+    end_year                            = 2020, 2000, 2000,
+    end_month                           = 11,   01,   01,
+    end_day                             = 20,   25,   25,
+    end_hour                            = 06,   12,   12,
+    interval_seconds                    = 10800
     input_from_file                     = .true.,.true.,.true.,
     history_interval                    = 60,  60,   60,
     frames_per_outfile                  = 1, 1000, 1000,                                        
