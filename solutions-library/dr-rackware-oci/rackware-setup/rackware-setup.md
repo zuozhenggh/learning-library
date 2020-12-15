@@ -12,7 +12,7 @@ Estimated Lab Time: 45-60 minutes
 ### Prerequisites
 - Successful completion of previous labs in this workshop
 
-## **Step 1:** Import RMM Image from Rackware
+## **STEP 1:** Import RMM Image from Rackware
 1.	Navigate to <a href="https://cloudmarketplace.oracle.com/marketplace/en_US/homePage.jspx" target="_blank">Oracle Marketplace</a>
 2.	Search "RackWare" and select the "RackWare Migration Manager (RMM)"
     ![](./images/rmm-market.PNG)
@@ -26,12 +26,12 @@ Estimated Lab Time: 45-60 minutes
 7.   In the ‘Add SSH Keys’ either upload your ssh key to connect to the instance after it is created or paste the key contents
     ![](./images/add-ssh-keys.png)
 
-## **Step 2:** Configure the RackWare Migration Components
+## **STEP 2:** Configure the RackWare Migration Components
 Use the following **[guide](https://www.rackwareinc.com/rackware-rmm-oracle-marketplace-dr-march-2020)** to complete the RackWare deployment configuration. (Use the passthrough method)
 
-## **Step 3:** Create DR policy in RackWare
+## **STEP 3:** Create DR policy in RackWare
 **After you have completed the RackWare guide you must make a DR policy in RackWare to keep the source & target machines synced.**
-1. Start by navigating to the RackWare GUI and loging in with your RackWare admin credentials.
+1. Start by navigating to the RackWare GUI and logging in with your RackWare admin credentials.
     ![](./images/gui.PNG)  
 
 2. Under **DR** on the left-hand side select **Policies** and click the **+** button.
@@ -58,6 +58,8 @@ You may now **proceed to the next lab.**
 - **Author** - Will Bullock
 - **Last Updated by/date** Will Bullock, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
