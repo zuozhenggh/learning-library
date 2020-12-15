@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this lab, the recently provisioned OCI Trial tenancy will be set up for the Siebel Application
+In this lab, the recently provisioned OCI Trial tenancy will be set up for the Siebel Application.
 
 
 Estimated Lab Time: 20 minutes
