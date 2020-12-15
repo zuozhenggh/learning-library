@@ -47,7 +47,7 @@ In this part, you will create an Oracle APEX Application Development Service tri
 
         ![](images/get-started-email.png " ")
 
-    - Alternatively, you can log into your Oracle Cloud account by accessing the following URL from your browser:       
+    - Alternatively, you can login to your Oracle Cloud account by accessing the following URL from your browser:       
     [https://cloud.oracle.com](https://cloud.oracle.com)
 
         Enter your **Cloud Account Name** in the input field and click the **Next** button.
