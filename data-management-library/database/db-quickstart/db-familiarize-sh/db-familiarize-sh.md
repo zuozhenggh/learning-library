@@ -19,9 +19,9 @@ Estimated lab time: 10 minutes
 
 ### Prerequisites
 
--   This lab requires completion of the preceding 3 labs in the Contents menu on the left.
+-   This lab requires completion of the preceding labs in the Contents menu on the left.
 
-## **Step 1:** Examine the SH Tables and Their Relationships
+## **STEP 1:** Examine the SH Tables and Their Relationships
 
 A database schema is a collection of metadata that describes the relationship between the data in a database. A schema can be simply described as the "layout" of a database or the blueprint that outlines how data is organized into tables.
 
@@ -38,7 +38,7 @@ Here is the entity-relationship diagram of the SH schema:
 
 ![](./images/sales_history_sh_schema_er_diagram.png " ")
 
-## **Step 2:** Use the DESCRIBE Command to Examine the Details of an SH Table
+## **STEP 2:** Use the DESCRIBE Command to Examine the Details of an SH Table
 
 The `DESCRIBE` command provides a description of a specified table or view. The description for tables and views contains the following information:
 -   Column names
@@ -70,6 +70,6 @@ For more information on the SH schema, see the documentation on [Sample Schemas]
 - **Last Updated By/Date** - Richard Green, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

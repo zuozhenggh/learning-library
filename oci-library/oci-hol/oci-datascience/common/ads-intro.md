@@ -99,7 +99,7 @@ Save and load a copy of any dataset in a binary optimized Parquet format. By sna
 ### Model Training
 
 Example of visualizing a decision tree:
-```
+
 ![](./../speed-up-ds-with-the-ads-sdk/images/decision-tree.png " ")
 
 The Oracle AutoML engine, that produces ``ADSModel`` models, automates:
@@ -126,7 +126,7 @@ Example of tuning trial results:
 ```
 automl.visualize_tuning_trial()
 ```
-![](./../speed-up_ds-with-the-ads-sdk/images/automl-hyperparameter-tuning.png " ")
+![](./../speed-up-ds-with-the-ads-sdk/images/automl-hyperparameter-tuning.png " ")
 
 ### Model Evaluations
 

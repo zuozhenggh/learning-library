@@ -1,41 +1,48 @@
 # Load ADB Database
 
 ## Introduction
-In this lab you will run a script to import data from Object Store into your Autonomous JSON Database (AJD) using Oracle Data Pump.  
+In the previous lab you created a compute instance (running the eShop application on docker), and an AJD instance to run your application on.  In this lab you will run a script to import data from Object Store into your Autonomous JSON Database (AJD) using Oracle Data Pump.  Your data was previously in various other types of databases.  In this lab we will show you how to centralize your data onto one database that your application can read from.
 
 *Estimated time:* 40 Minutes
 
 ### Objectives
-- Connect to compute instance
-  
+- Load AJD Instance with eShop data
+- Connect application to AJD
 
 ### Prerequisites
 - Lab: Generate SSH Keys
 - Lab: Setup Compute and ADB
 
 ## **STEP 1:**  Load AJD Instance
-1. mkdir wallet
-2. cd wallet
-3. unzip ../converged-wallet.zip .
-4. vi sqlnet.ora  -> Replace sqlnet.ora with /home/<<<<>>>>/wallet
-5. export TNS_ADMIN=/home/<<<<>>>>/wallet
-6. sqlplus /nolog
-7. conn admin/<<<<<admin pwd>>>>>@cvgadb02_high
-8. If it connects then run the import script
-9. Ignore the errors related to GRANT DBA, the DBA role is not available
-10. grant dwrole to all users
+1. If you aren't already logged into Oracle Cloud please do so and restart Oracle Cloud Shell
+2. In the cloud shell prompt execute the wget command to download the load script and execute it.  
+3. Substitute yourinstance name with *your adb instance name* and append _high to the name (e.g convgdb_high)
+   
+      ````
+      cd $HOME
+      pwd
+      wget load-ajd.sh
+      load-ajd.sh yourinstancename_high
+      ````
+4.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1950 rows.
+
+      ````
+      select count(*) from orders;
+      ````
 
 
-## **STEP 2:**:  Connect Docker Instance to AJD
-
+## **STEP 2:**  Connect Docker Instance to AJD
 
 1.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
       ````
       <copy>cd /u01/script
-      ./env_setup_script.sh</copy>
+      wget env_setup_script_adb.sh
+      ./env_setup_script_adb.sh</copy>
       ````
    ![](./images/setup-script.png " ")
+
+You now have a docker container running the eShop application and all the data across multiple modalities, JSON, Analytical data, XML, Spatial and Graph.  A true converged database.
 
 You may now [proceed to the next lab](#next).
 

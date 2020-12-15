@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Migrate a WebLogic domain to Oracle Cloud Infrastructure",
+    "workshoptitle": "Migrate WebLogic to WebLogic on OKE",
     "tutorials": [
         {
             "title": "Prerequisites",

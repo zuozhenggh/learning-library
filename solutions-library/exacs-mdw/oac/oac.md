@@ -7,9 +7,11 @@ Oracle Analytics Cloud is a scalable and secure public cloud service that provid
 
 With Oracle Analytics Cloud you also get flexible service management capabilities, including fast setup, easy scaling and patching, and automated lifecycle management.
 
+Estimated Lab Time: 45 minutes.
+
 ### Objectives
 
-As a LOB user
+As a LOB user,
 * Install and configure Remote Data Gateway in Oracle Cloud Developer Image
 * Configure Remote Data Gateway with Oracle Analytics Cloud
 * Connect Exadata Cloud Service Database with Oracle Analytics Cloud
@@ -21,8 +23,7 @@ As a LOB user
 * A pre-provisioned Oracle Analytics Cloud instance. Refer [here](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acoci/create-services.html#GUID-D2F03D22-95FB-45C8-AB94-928AE4E167AB) to create an Oracle Analytics Cloud instance.
 * VNC Viewer or other suitable VNC client on your local laptop
 
-
-## **Step 1:** Connect to Dev Client Desktop over VNC
+## **STEP 1:** Connect to Dev Client Desktop over VNC
 
 1. First, we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -70,7 +71,7 @@ As a LOB user
 
 13. If all goes well, you should now see a linux desktop in your VNC window.
 
-## **Step 2:** Download, Install and Configure Remote Data Gateway
+## **STEP 2:** Download, Install and Configure Remote Data Gateway
 
 1. Download OAC Data Gateway 5.6.0+ from [here](https://www.oracle.com/middleware/technologies/oac-downloads.html).
 
@@ -188,7 +189,7 @@ As a LOB user
 
     ![](./images/RDC-installer13.png " ")
 
-## **Step 3:** Configure Remote Data Connectivity and Connect ExaCS Database to Oracle Analytics Cloud
+## **STEP 3:** Configure Remote Data Connectivity and Connect ExaCS Database to Oracle Analytics Cloud
 
 1. Now, in your Oracle Analytics Cloud URL in you local machine, log in to the console.
 
@@ -229,5 +230,7 @@ To further explore Oracle Analytics Cloud you can visit our blogs [Here](https:/
 - **Author** - Tejus Subrahmanya, Phani Turlapati, Abdul Rafae, Sathis Muniyasamy, Sravya Ganugapati, Padma Natarajan, Aubrey Patsika, Jacob Harless
 - **Last Updated By/Date** - Jess Rein - Cloud Engineer, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

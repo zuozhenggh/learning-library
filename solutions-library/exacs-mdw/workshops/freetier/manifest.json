@@ -43,55 +43,13 @@
         "filename": "../../data-safe/data-safe.md"
       },
       {
-        "title": "Lab 5-1: Register Target Database with Oracle Data Safe",
-        "description": "Register target database using private end point",
-        "publisheddate": "4/20/2020",
-        "filename": "../../data-safe-pe/data-safe-pe.md"
-      },
-      {
-        "title": "Lab 5-2: Assess Database Configurations with Oracle Data Safe",
-        "description": "Assess Database Configurations with Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "../../data-safe-assessment/data-safe-assessment.md"
-      },
-      {
-        "title": "Lab 5-3: Assess Users with Oracle Data Safe",
-        "description": "Assess Users with Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "../../user-assessment/user-assessment.md"
-      },
-      {
-        "title": "Lab 5-4: Discover Sensitive Data with Oracle Data Safe",
-        "description": "Discover Sensitive Data with Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "../../sensitive-data/sensitive-data.md"
-      },
-      {
-        "title": "Lab 5-5: Verify a Sensitive Data Model with Oracle Data Safe",
-        "description": "Verify a Sensitive Data Model with Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "../../verify-data-model/verify-data-model.md"
-      },
-      {
-        "title": "Lab 5-6: Update a Sensitive Data Model with Oracle Data Safe",
-        "description": "Update a Sensitive Data Model with Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "../../update-data-model/update-data-model.md"
-      },
-      {
-        "title": "Lab 5-7: Create a Sensitive Type and Sensitive Category with Oracle Data Safe",
-        "description": "Create a Sensitive Type and Sensitive Category with Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "../../sensitive-type-category/sensitive-type-category.md"
-      },
-      {
         "title": "Lab 6: Real-time Migration with Oracle Goldengate Replication",
         "description": "Real time migration of database using Oracle Goldengate Replication",
         "publisheddate": "4/20/2020",
         "filename": "../../golden-gate/golden-gate.md"
       },
       {
-        "title": "Lab 7: Oracle Analytics Cloud with Exadata Cloud Service",
+        "title": "Lab 7: Connect Oracle Analytics Cloud with your Exadata Cloud Service",
         "description": "OAC to EXACS",
         "publisheddate": "6/10/2020",
         "filename": "../../oac/oac.md"
