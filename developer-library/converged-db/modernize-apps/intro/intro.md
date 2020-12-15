@@ -35,11 +35,6 @@ In this workshop, you will:
 ### Prerequisites
 * This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
-    * Lab: Generate SSH Keys
-    * Lab: Prepare Setup (Free Tier and Paid Tenants only)
-    * Lab: Environment Setup
 
 ## Learn More
 * [Coherence](https://docs.oracle.com/en/middleware/standalone/coherence/14.1.1.0/index.html)
