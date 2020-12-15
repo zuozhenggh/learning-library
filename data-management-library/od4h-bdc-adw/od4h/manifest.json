@@ -1,8 +1,8 @@
 {
     "tutorials": [
         {
-            "title": "Connecting Oracle DataSource for Apache Hadoop (OD4H) on Big Data Service to Autonomous Data Warehouse",
-            "description": "This lab walks you through the steps to...",
+            "title": "Connecting Oracle DataSource for Apache Hadoop on Big Data Service to Autonomous Data Warehouse",
+            "description": "This lab walks you through the steps to  steps to connecting Oracle DataSource for Apache Hadoop on Big Data Service to Autonomous Data Warehouse",
             "filename": "content.md"
         }
     ]

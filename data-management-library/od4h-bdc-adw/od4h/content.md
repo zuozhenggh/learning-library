@@ -1,12 +1,11 @@
-# Connecting Oracle DataSource for Apache Hadoop (OD4H) on Big Data Service to Autonomous Data Warehouse
+# Connecting Oracle DataSource for Apache Hadoop on Big Data Service to Autonomous Data Warehouse
 ## Introduction
 
-This 15-minute lab walks you through the steps to connecting OD4H on Big Data Service to Autonomous Data Warehouse (ADW).
+This 15-minute lab walks you through the steps to connecting Oracle DataSource for Apache Hadoop(OD4H) on Big Data Service to Autonomous Data Warehouse(ADW).
 
 ### About Product/Technology
-You can access Hadoop on from Autonomous Data Warehouse using Oracle DataSource For Apache Hadoop on Big Data Service.
 
-Oracle DataSource for Apache Hadoop (OD4H) does not require creating a new table. You can start working with OD4H using the following steps:
+You can access Hadoop from Autonomous Data Warehouse using Oracle DataSource For Apache Hadoop on Big Data Service. OD4H does not require creating a new table. You can start working with OD4H using the following steps:
 
 * Create a new Oracle table, or, reuse an existing table.
 * Create the Hive DDL for creating the external table referencing the Oracle Table.
@@ -19,7 +18,7 @@ External Tables allow you to define Java classes to access external database and
 In this lab, you will:
 
 * Download Autonomous Data Warehouse Cloud Credentials.
-* Create an OD4H user and an ```EMPLOYEEDATA``` Table on Autonomous Data Warehouse.
+* Create an OD4H user and an `EMPLOYEEDATA` Table on Autonomous Data Warehouse.
 * Create and Query a Hive External Table Using the Autonomous Data Warehouse Table.
 
 
@@ -29,7 +28,7 @@ In this lab, you will:
 * Big Data Service Cluster
 * Autonomous Data Warehouse Service
 
-Oracle DataSource for Apache Hadoop (OD4H) is already installed on BDS nodes when you provision BDS. It is available under /opt/oracle/od4h/jlib.
+OD4H is already installed on BDS nodes when you provision BDS. It is available under `/opt/oracle/od4h/jlib`.
 
 
 ## **STEP 1**: Set up the OD4H Jars
