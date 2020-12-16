@@ -11,24 +11,29 @@ The migration project is designed to ensure all of the important business logic 
 Estimated Time: 5 minutes
 
 
+In this part, you will create APEX Migration project , upload the XML files converted from Forms and start managing the conversion process.
+## **STEP 1**: **Download the Sample Scripts and Form**
 
-In this part, you will create Apex Migration project , upload the XML files converted from Forms and start managing the conversion process.
+We have sample forms and sample database scripts that can be downloaded from
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/k9m-8Ft1Q5l8Bk880FkfX-hA8iGcxgjNNnyqFNLzwM-gx_T154_DkWOVH54Qjoue/n/c4u03/b/developer-library/o/create-apex-forms.zip
 
-## **STEP 1**: **Create Schema Objects**: Run the Scripts
+Unzip the files in your local Desktop
 
-In order to start the conversion process, the database objects associated with your Oracle Forms application must reside in the same database as Oracle Application Express.
+## **STEP 2**: **Create Schema Objects**: Run the Scripts
 
-1. From the VNC session created in previous step, Open the  APEX Workspace log in page, enter **``SecretPassw0rd``** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
+In order to start the conversion process, the database objects associated with your Oracle Forms application must reside in the same database as Oracle APEX.
+
+1. From the VNC session created in previous step, Open the Oracle APEX Workspace log in page, enter **``SecretPassw0rd``** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
     ![](images/log-in-to-workspace.png " ")
 
-2. Navigate to **SQL scripts** from the apex home Page
+2. Navigate to **SQL scripts** from the Oracle APEX home Page
     ![](images/scipts_upload.png " ")
 
-3. Upload the scripts [forms_conversion_ddl.sql](./files/apex_forms_ddl.sql) and  [forms_conversion_data_insert.sql](./files/conversion_data_insert.sql) under ![](images/script_upload1.png " ")
+3. Upload the scripts **forms_conversion_ddl.sql** and  **conversion_data_insert.sql** from your local desktop into APEX ![](images/script_upload1.png " ")
 
 4. **Run** the script to create the schema objects for customer and orders form ![](images/scripts_run.png " ")
 
-## **STEP 2**: **Create Conversion Project**
+## **STEP 3**: **Create Conversion Project**
 
 Create a conversion project by running Create Migration Project Wizard and loading the application metadata extracted from Forms to XML.
 

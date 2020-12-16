@@ -203,9 +203,10 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
       - If all goes well, you should now see a linux desktop in your VNC window.
 
 ## **STEP 3**: Copy the SQL Scripts, Shell Scripts and Sample Forms files to your development system
-      We have sample forms and sample database scripts included that will enable you to setup your development application.
+      We have sample forms and sample database scripts from
+      https://objectstorage.us-ashburn-1.oraclecloud.com/p/k9m-8Ft1Q5l8Bk880FkfX-hA8iGcxgjNNnyqFNLzwM-gx_T154_DkWOVH54Qjoue/n/c4u03/b/developer-library/o/create-apex-forms.zip
 
-      Copy the files over to your development system from your local Desktop
+      Unzip the files and Copy the files over to your development system from your local Desktop
 
       ````
       <copy>
