@@ -97,7 +97,7 @@ In this part, you will create an Oracle APEX Application Development Service tri
     ![](images/apxs-stop-service.png " ")
 
 8.  Enter the password for the Administration Services and click **Sign In to Administration**.     
-    The password is the same as the one entered for the ADMIN user when creating the ATP instance: **```SecretPassw0rd```**
+    The password is the same as the one entered for the ADMIN user when creating the APEX instance: **```SecretPassw0rd```**
 
     ![](images/log-in-as-admin.png " ")
 
