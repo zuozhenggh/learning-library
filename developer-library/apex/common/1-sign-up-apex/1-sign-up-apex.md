@@ -97,7 +97,7 @@ In this part, you will create an Oracle APEX Application Development Service tri
     ![](images/apxs-stop-service.png " ")
 
 8.  Enter the password for the Administration Services and click **Sign In to Administration**.     
-    The password is the same as the one entered for the ADMIN user when creating the ATP instance: **```SecretPassw0rd```**
+    The password is the same as the one entered for the ADMIN user when creating the APEX instance: **```SecretPassw0rd```**
 
     ![](images/log-in-as-admin.png " ")
 
@@ -257,9 +257,9 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 
- - **Author** -  Salim Hlayel, Principle Product Manager
+ - **Author** -  Salim Hlayel, Principal Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, Database Management | Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principal Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
