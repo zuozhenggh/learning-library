@@ -3,6 +3,7 @@
 ## Introduction
 This is a smaller guide in comparison to the WRF Setup, Installation, and Run Guide. It is intended to be used after you have completed WRF Setup, Installation, and Run Guide or used the download link to get started using a custom image with WRF 4.1.5 and WPS 4.1 already set up.
 
+Estimated Lab Time: 45 minutes
 ### Objectives
 In this lab, you will learn about:
 
@@ -45,6 +46,7 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
 
 ## **STEP 2**: Creating Geographical area / Domain
 1. We need to adjust the namelist.wps file to zero in on a location of choice. It will be a small grid (10,000 x 10,000 meters) with Houston Texas USA as the centerpoint.  
+   
     ```
     cd ~/WRF/WPS-4.1
     vi namelist.wps
@@ -104,8 +106,9 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     ```
     **To exit, simply press esc, then shift: followed by wq enter**  
     **All of these changes are for a geographic area with Houston TX as the epicenter.**  
-    ```
+    
 2. Now that we have put in the information for our geographic area of interest (This guide uses Houston TX USA as the centerpoint) lets use ncview to verify we have the correct location after runing the geogrid program.
+    
     ```
     ./geogrid.exe
     ncview geo_em.d01.nc
@@ -158,6 +161,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     **This script will download SIX hours of data for the date 12/09/20 at the 0p50 resolution. Please adjust to fit your needs.**  
 
 5. The following commands make the script executable and run it to download the data:
+    
     ```
     chmod +x download_gfs.sh
     ./download_gfs.sh
@@ -186,7 +190,8 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     interval_seconds = 10800                    #3 hours worth of seconds interval between steps  
     io_form_geogrid = 2,  
     /
-    ```      
+    ```
+
     **To exit, simply press esc, then shift: followed by wq enter**  
 
     **Run:**
@@ -197,6 +202,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     ./metgrid.exe
     ```
 7. We can look at the results by using ncview and looking at skintemp to see the value of the data downloaded.
+    
     ```
     ncview met_em.d01.2020-12-09_00\:00\:00.nc 
     ```
@@ -339,8 +345,9 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     ```
     ncview wrfinput_d01
     ```
-    ![Screenshot of ncview](images/nc23.png)  
     Here you can see the temperature at two meters for the target area.
+    ![Screenshot of ncview](images/nc23.png)  
+    
 
 5. We have our input, now lets use it to generate a prediction. We will run real.exe using 10 cores.
 

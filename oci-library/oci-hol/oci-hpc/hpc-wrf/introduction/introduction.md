@@ -2,7 +2,7 @@
 
 Ever found yourself in a situation where you have an umbrella and no rain or late at night in a parking lot with no snowbrush because you were given what you consider to be misinformation? Are you tired of your local weatherman predicting the weather incorrectly and you want to do something about it? Well, this is a lab you may find value in. Today we are going to discuss and guide you through how to set up and run WRF on OCI infrastructure. I'll also provide a script just incase you want to run WRF without learning how to set it up.
 
-Estimated lab time: 60 minutes
+Estimated lab time: 90 minutes
 
 ### About WRF
 

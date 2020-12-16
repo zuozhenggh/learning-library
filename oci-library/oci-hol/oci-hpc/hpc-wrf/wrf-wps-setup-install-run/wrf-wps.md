@@ -1,11 +1,11 @@
 # WRF Setup, Installation, and Run Guide
 
 ## Introduction
-Ever found yourself in a situation where you have an umbrella and no rain or late at night in a parking lot with no snowbrush because you were given what you consider to be misinformation? Are you tired of your local weatherman predicting the weather incorrectly and you want to do something about it? Well, this is a lab you may find value in. Today we are going to discuss and guide you through how to set up and run WRF on OCI infrastructure. I'll also provide a custom image just incase you want to run WRF without learning how to set it up.
+This lab is going to discuss and guide you through how to set up and run WRF on OCI infrastructure. This guide is intended to show you how to transform a vanilla Ubuntu image into an environment where you will be able to run experiments and run weather simulations. I'll also provide a custom image just incase you want to run WRF without learning how to set it up.
 
 [WRF Custom Image](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lRqMYYN5VTdSgBz9f8nv7Tz5mzMGMqr7wlN2Y_q6g6GHmTdc9GX8lokgmTui81BA/n/hpc_limited_availability/b/Demo_Materials/o/WRF_DEMOV2)
 
-Estimated Lab Time:  60 minutes
+Estimated Lab Time:  90 minutes
 
 ### Objectives
 In this lab, you will learn about:
@@ -205,6 +205,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 
 ## **STEP 5**: Compiling WRF & WPS
 1. Now that we have set up the folder structure for the libraries, we can begin to download and compile WRF and WPS. The following code block will download and place the programs in the appropriate locations.
+    
     ```
     cd ~/WRF/downloads
     wget https://github.com/wrf-model/WRF/archive/v4.1.5.tar.gz
@@ -214,6 +215,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     mv WPS-4.1/ ~/WRF/
     ```
 2. Before we can compile WRF we need to set up some environment variables so that the program can find and use the libraries we have compiled to function.
+    
     ```
     cd .. or /home/ubuntu/WRF/downloads
     cd WRF-4.1.5/
@@ -226,6 +228,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 
     **Configure:**  
     We choose option 34 to go along with our choice of using gfortran/gcc and option 1 because we will not be covering nesting in this guide.
+    
     ```
     ./configure
     34 (dmpar)
@@ -238,6 +241,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ```
     **Compile:**  
     Here we compile WRF and test that it will run.
+    
     ```
     ./compile em_real
     cd main
@@ -245,6 +249,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ./real.exe
     ```
 4. Now that WRF has been compiled we need to compile WPS. WRF must be compiled first. Here we choose option 3 because we are using the a Linux operating system (Ubuntu) on x86 infrastructure (OCI VM.Standard2.16) along with the gfortran compiler.  
+   
     ```
     cd /home/ubuntu/WRF/WPS-4.1
     export WRF_DIR=/home/ubuntu/WRF/WRF-4.1.5/
@@ -253,10 +258,12 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ./compile
     ```
 5. Now that WPS is compiled, we need to download the data that we will use to simulate the geography of the world. We will create a new folder to house this information. It takes a while to uncompress since we are using the reccommended high resolution files, so we are using PV dialog to generate a progress bar for us.  
+    
     ```
     cd /home/ubuntu/WRF
     mkdir GEOG
     cd GEOG/
+    wget https://www2.mmm.ucar.edu/wrf/src/wps_files/geog_high_res_mandatory.tar.gz  
     sudo apt-get install pv dialog -y
     (pv -n geog_high_res_mandatory.tar.gz| tar xzf - -C . ) \
     2>&1 | dialog --gauge "Extracting file..." 6 50
@@ -324,15 +331,15 @@ The grib2 library is actually a compilation of three separate libraries, specifi
         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IMPORTANT NOTE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
         !  
         geog_data_res = 'default','default',  
-        dx = **10000**,  
-        dy = **10000**,  
+        dx = 10000,  
+        dy = 10000,  
         map_proj = 'lambert',  
         ref_lat   =  42.48,  
         ref_lon   = -71.15,  
         truelat1  =  42.48,  
         truelat2  =  42.48,  
         stand_lon = -71.15,  
-        geog_data_path = **'/home/ubuntu/WRF/GEOG/'**  
+        geog_data_path = '/home/ubuntu/WRF/GEOG/'  
         /  
     ```
     **To exit, simply press esc, then shift: followed by wq enter**  
@@ -355,6 +362,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 Don’t actually download anything. We will create a script for that. We are going the lower resolution for an easier to handle datasize for this lab so 0p50 instead of 0p25. Use 0p25 if you have additional storage and want higher resolution/more reliable data. Need to download the number of files for the amount of time you want to run. Each file is one hour of data at given interval. EX if you want to run for six hours you need gfs.t00z.pgrb2.0p50.f000, gfs.t00z.pgrb2.0p50.f003, and gfs.t00z.pgrb2.0p50.f006. 0p25 is in one hour steps and 0p50 is in 3 hour steps. For tutorial we will use only 6 hours worth of data. Feel free to use more as you become more comfortable using WRF later on.
 
 10. Lets navigate to the correct directory and create our script to download data.
+    
     ```
     cd ~/WRF
     mkdir scripts
@@ -390,6 +398,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     **This script will download SIX hours of data for the date 11/20/20 at the 0p50 resolution. Please adjust to fit your needs.**  
 
 12. The following commands make the script executable and run it to download the data:
+   
     ```
     chmod +x download_gfs.sh
     ./download_gfs.sh
@@ -543,7 +552,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     non_hydrostatic                     = .true., .true., .true.,
     moist_adv_opt                       = 1,      1,      1,
     scalar_adv_opt                      = 1,      1,      1,
-    gwd_opt                             = **0**,
+    gwd_opt                             = 0,
     /
 
     &bdy_control
@@ -570,8 +579,9 @@ Don’t actually download anything. We will create a script for that. We are goi
     ```
     ncview wrfinput_d01
     ```
-    ![Screenshot of ncview](images/nc4.png)  
     Here you can see the temperature at two meters for the target area.
+    ![Screenshot of ncview](images/nc4.png)  
+    
 
 5. We have our input, now lets use it to generate a prediction.
 
