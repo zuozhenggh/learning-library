@@ -1,8 +1,10 @@
 # Create a Web Application in Oracle Visual Builder
 
-## Before You Begin
+## Introduction
 
-This 15-minute tutorial shows you how to use Oracle Visual Builder to create a basic web application and populate it with business objects.
+This lab shows you how to use Oracle Visual Builder to create a basic web application and populate it with business objects.
+
+Estimated Lab Time:  15 minutes
 
 ### Background
 
@@ -19,7 +21,7 @@ Once you have your business objects, you'll use them to build a very simple Huma
 
 **Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating applications are the same, no matter what form your data takes.
 
-## STEP 1: Create a Web Application
+## **STEP 1**: Create a Web Application
 
 The first thing we'll do is create the web application itself. Later, we'll construct the business objects we need so we can populate the app with data.
 
@@ -71,7 +73,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
     On the far right is the Properties tab, which lets you view or edit a component's properties in the Property Inspector. When the entire page is selected, the Property Inspector shows the Page view, where you choose a preferred page layout. (You can click the Properties tab to hide the Property Inspector.)
 
 
-## STEP 2: Import a Location Business Object from a File
+## **STEP 2**: Import a Location Business Object from a File
 
 In this step, you'll create the Location business object and then import data for it.
 
@@ -123,7 +125,7 @@ In this step, you'll create the Location business object and then import data fo
     In the next step, we'll associate these locations with the departments that are located on these floors.
 
 
-## STEP 3: Create a Department Business Object
+## **STEP 3**: Create a Department Business Object
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 
@@ -160,7 +162,7 @@ In this step, you'll create the Location business object and then import data fo
     A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll specify its Location (one of the floors). The Display Field indicates that the Name field will be displayed, not the Id.
 
 
-## STEP 4: Create an Employee Business Object
+## **STEP 4**: Create an Employee Business Object
 
 In this step, we'll create the last business object we need, the Employee object, which contains the employee's name and identifying data. In this case, the Employee has a Reference field that refers to the Department.
 

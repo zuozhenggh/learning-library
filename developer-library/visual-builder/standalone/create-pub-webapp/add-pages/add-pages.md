@@ -1,8 +1,10 @@
 # Add Pages for Working with Data
 
-## Before You Begin
+## Introduction
 
-This 15-minute tutorial shows you how to use the Quick Starts provided with Oracle Visual Builder to create pages and buttons that allow you to edit data, view details of data, and delete data in a table.
+This lab shows you how to use the Quick Starts provided with Oracle Visual Builder to create pages and buttons that allow you to edit data, view details of data, and delete data in a table.
+
+Estimated Lab Time:  15 minutes
 
 ### Background
 
@@ -10,7 +12,7 @@ In Oracle Visual Builder, you can use Quick Starts for table components to creat
 
 In a previous tutorial, you used a couple of the table quick starts. In this tutorial, you'll use the rest of them.
 
-## STEP 1: Add an Edit Page for the Department Business Object
+## **STEP 1**: Add an Edit Page for the Department Business Object
 
 1.  In the HR Application, click the **Web Applications** ![Web Applications icon](./images/vbcsmd_webapp_icon.png) tab, go to the **main-departments** page, then click the **Table** component in the **Page Designer** tab. If necessary, click **Reload page** ![Reload page icon](./images/vbcsmd_refresh_icon.png) to view the departments. Click the **Components** tab to make room to view the page.
 2.  Click the **Quick Start** tab in the Property Inspector to display the Quick Start menu, then click **Add Edit Page**.
@@ -24,7 +26,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
     An **Edit Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
 
-## STEP 2: Add a Detail Page for the Department Business Object
+## **STEP 2**: Add a Detail Page for the Department Business Object
 
 1.  In the Quick Start menu, click **Add Detail Page**.
 2.  On the Select Endpoint page, select the **Department** business object, if necessary, and click **Next**.
@@ -36,7 +38,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 5.  Click **Design** to return to Design view.
 6.  Click the **Input Text** field for the second **Name** label to open the Input Text Property Inspector. In the **General** tab, change the **Label Hint** value to `Location`.
 
-## STEP 3: Add a Delete Button for the Department Business Object
+## **STEP 3**: Add a Delete Button for the Department Business Object
 
 1.  Return to the **main-departments** page. Click the **Quick Start** tab if necessary, and click **Add Delete Action**.
 2.  On the Select Endpoint page (the only page of the Quick Start), select the **Department** business object, if necessary, and click **Finish**.
@@ -44,7 +46,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
     A **Delete Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
 
-## STEP 4: Test Your New Department Pages
+## **STEP 4**: Test Your New Department Pages
 
 1.  Click **Preview** ![Preview icon](./images/vbcsmd_run_icon.png) to test the new pages.
 
@@ -65,7 +67,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 8.  Select the new department and click **Delete Department**. A success message appears. The department is no longer displayed.
 9.  Close the browser tab.
 
-## STEP 5: Add an Edit Page for the Employee Business Object
+## **STEP 5**: Add an Edit Page for the Employee Business Object
 
 1.  Go to the **main-employees** page, click the **Table** component in the **Page Designer** tab.
 2.  In the Property Inspector, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
@@ -79,7 +81,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 7.  Click **Design** to go to Design view.
 8.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Property Inspector, set the **Max Columns** value to **2**. The fields now appear in two columns.
 
-## STEP 6: Add Detail and Delete Pages for the Employee Business Object
+## **STEP 6**: Add Detail and Delete Pages for the Employee Business Object
 
 1.  Go to the **main-employees** page. If necessary, click the table, then click the **Quick Start** tab.
 2.  In the Quick Start menu, click **Add Detail Page** tab.
@@ -98,7 +100,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 9.  Click the **Input Text** component for the second **Name** label to open the Input Text Property Inspector. Change the **Label Hint** value to `Department`.
 10.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the property inspector, set the **Max Columns** value to **2**.
 
-## STEP 7: Test Your New Employee Pages
+## **STEP 7**: Test Your New Employee Pages
 
 1.  Click **Preview** ![Preview icon](./images/vbcsmd_run_icon.png) to test the pages.
 

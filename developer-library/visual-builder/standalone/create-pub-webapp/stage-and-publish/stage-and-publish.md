@@ -1,8 +1,10 @@
 # Stage and Publish an Oracle Visual Builder Web Application
 
-## Before You Begin
+## Introduction
 
-This 10-minute tutorial shows you how to stage and publish a web application.
+This tutorial shows you how to stage and publish a web application.
+
+Estimated Lab Time:  10 minutes
 
 ### Background
 
@@ -11,7 +13,7 @@ Once you have created an Oracle Visual Builder application, you can stage it to 
 Oracle Visual Builder provides different databases for the development, staging, and live phases of an application. You can use an empty database for the staging or live phase, or you can transfer data from one to another, or you can import specific data for each.
 
 
-## STEP 1: Stage the Application
+## **STEP 1**: Stage the Application
 
 Stage the application so that other users can test its behavior.
 
@@ -38,7 +40,7 @@ Stage the application so that other users can test its behavior.
     When you have finished using the application, close the browser tab to return to the Visual Applications page.
 
 
-## STEP 2: Import Data Into the Application (Optional)
+## **STEP 2**: Import Data Into the Application (Optional)
 
 You can import data for the Department and Employee business objects from a zip file. You can skip directly to the publishing step if you wish.
 
@@ -67,7 +69,7 @@ You can import data for the Department and Employee business objects from a zip 
     ![](./images/vbcssp_imp_s9.png)
 
 
-## STEP 3: Publish the Application
+## **STEP 3**: Publish the Application
 
 After you have successfully tested the staged application, you can publish it and make the application live. The live application is visible to users with proper credentials.
 
