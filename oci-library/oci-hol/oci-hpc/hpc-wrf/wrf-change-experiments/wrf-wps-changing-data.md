@@ -19,7 +19,14 @@ This lab assumes you have:
     -  Note for this lab we will be using a **VM.Standard2.16 shape**. You can use a smaller shape if you 
     desire.
 - Have gone through the WRF Setup, Installation, and Run Guide or downloaded the custom image provided there or [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lRqMYYN5VTdSgBz9f8nv7Tz5mzMGMqr7wlN2Y_q6g6GHmTdc9GX8lokgmTui81BA/n/hpc_limited_availability/b/Demo_Materials/o/WRF_DEMOV2).
-    - **Note**: Ubuntu password is ppkkego and vnc password is ppkkego
+    - **Note**: Ubuntu password is ppkkego and vnc password is ppkkego  
+    They can be changed with the following commands in the remote terminal:
+
+        ```
+        sudo passwd ubuntu
+        sudo vncpasswd 
+        ```
+
 
 ## **STEP 1**: Connecting to the Gnome Desktop
 We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our instance.
