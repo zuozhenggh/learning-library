@@ -6,7 +6,19 @@ Oracle Application Express (APEX) is a feature of Oracle Database, including the
 
 If you already have an APEX 20.1 Workspace provisioned, you can skip this lab.
 
-Estimated Time: 15 minutes
+Estimated Lab Time: 15 minutes
+
+### Objectives
+
+* Setup Oracle APEX Workspace with wizard
+
+### Prerequisites
+
+- An Oracle Cloud Infrastructure account with IAM privileges to provision Autonomous database
+- Alternatively , an user account with apex.oracle.com can also be used for Oracle APEX
+
+
+## About Oracle APEX
 
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. APEX applications are built on top of these database objects.
@@ -23,7 +35,8 @@ To determine which release of Oracle Application Express you are currently runni
     - Sign in to Oracle Application Express. The Workspace home page appears.
     - Click the Help menu at the top of the page and select About. The About Application Express page appears.
 
-  ![](images/version.png)
+
+    ![](images/version.png)
 
 ### Where to Run the Lab
 You can run this lab in any Oracle Database with APEX 20.1 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.1 is installed), on a third party cloud provider where APEX 20.1 is installed, or even on your laptop by installing Oracle XE or Oracle VirtualBox App Dev VM and installing APEX 20.1.

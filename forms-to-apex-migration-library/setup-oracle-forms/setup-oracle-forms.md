@@ -1,4 +1,4 @@
-# Configuring a development system for Oracle Forms Application
+# Configuring a development system for Oracle Forms Application from Marketplace in OCI
 
 ## Introduction
 The Oracle Cloud Infrastructure marketplace provides a pre-built Oracle Forms image with necessary client tools and drivers to build the applications.
@@ -6,6 +6,8 @@ The Oracle Cloud Infrastructure marketplace provides a pre-built Oracle Forms im
 The image is pre-configured with tools and language drivers so that you can change/compile Oracle Forms Applications.
 For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu and browse details on the 'Oracle Forms Services'
     ![](./images/marketplace-forms.png " ")
+
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -18,46 +20,42 @@ As a database user, DBA or application developer,
 6. Open the forms file and compile it
 7. Convert the forms to XML
 
-Estimated Time: 30 minutes
-
-
 ### Prerequisites
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
 - VNC Viewer or other suitable VNC client on your local laptop
 
-
 ## **STEP 1**: Provision an OCI Marketplace Forms Services image
 
 We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
-- Log into your cloud account using your tenant name, username and password.
-- Click on Hamburger Menu, Select Marketplace and Click on All Applications
+1. Log into your cloud account using your tenant name, username and password.
+2. Click on Hamburger Menu, Select Marketplace and Click on All Applications
       ![](./images/cloud_marketplace.png " ")
 
-- Search for Oracle Forms Service.
+3. Search for Oracle Forms Service.
       ![](./images/oracle_forms.png " ")
 
-- Choose Oracle Forms Service image from Oracle Image section.
+4. Choose Oracle Forms Service image from Oracle Image section.
 
-- Choose the compartment before launching the instance.
+5. Choose the compartment before launching the instance.
     ![](./images/choose_compartment.png " ")
 
-- Choose VCN and subnet you have created in the previous step. This would likely be the public subnet created in previous labs.
+6. Choose VCN and subnet you have created in the previous step. This would likely be the public subnet created in previous labs.
 
     *Note:
     Please ensure you have picked the right compartments where network resources exist.*
 
-- Ensure the public IP address button is selected. You would need to ssh into this instance over public internet.
+7. Ensure the public IP address button is selected. You would need to ssh into this instance over public internet.
 
-- Add SSH key, you can choose to import ssh public key or paste ssh public key.
+8. Add SSH key, you can choose to import ssh public key or paste ssh public key.
 
-- Click on create
+9. Click on create
     ![](./images/create_stack.png " ")
 
-- Within a few mins your development instance will be available and a public IP address assigned (if it is provisioned in a public subnet).
+10. Within a few mins your development instance will be available and a public IP address assigned (if it is provisioned in a public subnet).
 
-- Once provisioned, you can click on the instance name to see details.
+11. Once provisioned, you can click on the instance name to see details.
     ![](./images/computeready.png " ")
 
 
@@ -65,14 +63,14 @@ We start with deploying a pre-configured client machine instance from the OCI ma
 
 First we ssh into the dev client and invoke the VNC server that comes pre-installed.
 
-- SSH into your dev client compute instance with public ip details we got from instance details.
+1. SSH into your dev client compute instance with public ip details we got from instance details.
 
     ```
     <copy>
     $ ssh -i <private-key> opc@PublicIP
     </copy>
     ```
-- When you login, the Oracle Forms Installation will continue and you will be prompted with if you want to use DBCS, choose N
+2. When you login, the Oracle Forms Installation will continue and you will be prompted with if you want to use DBCS, choose N
 
     ```
 
@@ -114,7 +112,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 
     ```
     Make a note of all the passwords
--   All the installation details of software installed, ORACLE_HOME, ORACLE_SID, MIDDLEWARE_HOME, FORMS_PATH
+3.   All the installation details of software installed, ORACLE_HOME, ORACLE_SID, MIDDLEWARE_HOME, FORMS_PATH
     can be found in readme file under Desktop folder
     ```
         <copy>
@@ -156,7 +154,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 
 
         ```    
--   Start your VNC server with the following command,
+4.   Start your VNC server with the following command,
 
         ```
         <copy>
@@ -184,29 +182,28 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
         vncext:      created VNC server for screen 0
         ```
 
-    - Your development system may now be ready for accepting VNC connections.
+5. Your development system may now be ready for accepting VNC connections.
 
       *Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer.*
 
-       -  Create a tunnel for VNC through SSH,
+6. Create a tunnel for VNC through SSH,
           In a terminal window , issue the following command, with your public IP address at the end. This will create the SSH tunnel for you to use for VNC.
           ```
           ssh -N -L 5901:127.0.0.1:5901 -i ~/<privatekey> opc@<publicIP>
           ```
-       -  Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
+7. Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
           ![](./images/VNCViewer.png " ")
+  Note how the connect string for VNC Server is simply localhost:1
 
-      - Note how the connect string for VNC Server is simply localhost:1
+8. Connect to your VNC desktop and provide the password you provided on the host earlier.
 
-      - Connect to your VNC desktop and provide the password you provided on the host earlier.
-
-      - If all goes well, you should now see a linux desktop in your VNC window.
+9. If all goes well, you should now see a linux desktop in your VNC window.
 
 ## **STEP 3**: Copy the SQL Scripts, Shell Scripts and Sample Forms files to your development system
-      We have sample forms and sample database scripts from
-      https://objectstorage.us-ashburn-1.oraclecloud.com/p/k9m-8Ft1Q5l8Bk880FkfX-hA8iGcxgjNNnyqFNLzwM-gx_T154_DkWOVH54Qjoue/n/c4u03/b/developer-library/o/create-apex-forms.zip
+1. We have sample forms and sample database scripts that can be downloaded from [here]
+      (https://objectstorage.us-ashburn-1.oraclecloud.com/p/QP5J-CoMLxkdSxU25SaE8_B5t1A18b6qe7j_Xv7TckRgD3yDxilgfJhp-TAJir1V/n/c4u03/b/developer-library/o/setup-oracle-forms.zip)
 
-      Unzip the files and Copy the files over to your development system from your local Desktop
+2. Unzip the files and Copy the files over to your development system from your local Desktop
 
       ````
       <copy>
@@ -247,7 +244,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     **Port**: 1521
     **SID**: orcl
 
-    - Test your connection and save. The *Status* bar will show *Success* if it is a successful connection!
+3. Test your connection and save. The *Status* bar will show *Success* if it is a successful connection!
 
 
 ## **STEP 5**: Run the scripts to create sample schema and insert sample data.

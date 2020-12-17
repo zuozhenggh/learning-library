@@ -1,4 +1,4 @@
-# Converting Customer
+# Create Migration Project in Oracle APEX
 
 ## Introduction
 
@@ -8,16 +8,27 @@ Developers do not need to be an expert in Oracle Forms and need to know how to l
 
 The migration project is designed to ensure all of the important business logic implemented in the Oracle Forms application is migrated. However, it also helps to allocate work and track migration progress.
 
-Estimated Time: 5 minutes
+Estimated Lab Time: 5 minutes
+
+### Objectives
+
+* Create the Schema for Oracle APEX application
+* Create Migration Project
 
 
-In this part, you will create APEX Migration project , upload the XML files converted from Forms and start managing the conversion process.
+### Prerequisites
+
+- Have Oracle Autonomous Database already running in OCI.
+- Have Oracle APEX Workspace defined for the migration project
+
+
+
 ## **STEP 1**: **Download the Sample Scripts and Form**
 
-We have sample forms and sample database scripts that can be downloaded from
-https://objectstorage.us-ashburn-1.oraclecloud.com/p/k9m-8Ft1Q5l8Bk880FkfX-hA8iGcxgjNNnyqFNLzwM-gx_T154_DkWOVH54Qjoue/n/c4u03/b/developer-library/o/create-apex-forms.zip
+1. Download the  sample forms and sample database scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k9m-8Ft1Q5l8Bk880FkfX-hA8iGcxgjNNnyqFNLzwM-gx_T154_DkWOVH54Qjoue/n/c4u03/b/developer-library/o/create-apex-forms.zip)
+to use in the lab
 
-Unzip the files in your local Desktop
+2. Unzip the files in your local Desktop
 
 ## **STEP 2**: **Create Schema Objects**: Run the Scripts
 

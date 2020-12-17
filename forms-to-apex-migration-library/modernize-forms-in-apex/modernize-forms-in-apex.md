@@ -1,4 +1,4 @@
-# Building your app - Using the Create Application Wizard
+# Modernizing Customer Oracle Form to Oracle APEX Page
 
 ## Introduction
 In this lab, You will learn how to create the apex application and learn how to modernize the Customer Form.  The objective is to show you the options for these sample forms and then you can get an idea to modernize your own Forms Application.
@@ -7,7 +7,18 @@ Depending on your requirements you can take advantage of this modernization to u
 
 Having said that, let's focus on creating the APEX Application.
 
-Estimated Time: 30 minutes
+Estimated Lab Time: 30 minutes
+
+### Objectives
+
+* Creating an Oracle APEX application
+* Modernize the Customer Form from Oracle Forms in Oracle APEX.
+
+
+### Prerequisites
+
+- Have Oracle Autonomous Database already running in OCI.
+- Have Oracle APEX Workspace defined for the migration project
 
 
 ## **STEP 1**: Creating an App
@@ -24,7 +35,7 @@ Estimated Time: 30 minutes
 4. Enter the application name, select appearance (template needed for app.) and add pages needed for the application.
     ![](images/create-app.png " ")
 
-## **STEP 2**:Modernizing Customer Form
+## **STEP 2**:Create Oracle APEX page for Customer Form
 
 
 We will be walking through series of steps on how to create Customer Summary Report in Interactive Report and Tree Report along with a modal form to create/update/delete customers. We will also be comparing with APEX migration project on how we can transform the Forms  Blocks/Triggers/LOV and Alerts into APEX.
@@ -71,20 +82,19 @@ We will be walking through series of steps on how to create Customer Summary Rep
 
     Creating Customer Modal Form takes care of **Data Block** conversion and **Items** from Forms to APEX
 
+## **STEP 3**:Create List of Values in Oracle APEX page
 
-11. Next step is to Create **List of Values** in APEX page
 
-    From the App Builder Home Page, Click on **Migrations**
+    1. From the App Builder Home Page, Click on **Migrations**
     ![](images/migration.png " ")
 
-    Click on **Forms Migration** Project you have created
-
+    2. Click on **Forms Migration** Project you have created
     ![](images/migration-project.png " ")
 
-    Click on **List of Values** on the **customers_fmb.xml** file name row
+    3. Click on **List of Values** on the **customers_fmb.xml** file name row
     ![](images/LOV.png " ")
 
-    There is only one LOV for **Sales Rep LOV** , Click on the pencil icon , Copy the **Record Group Query**
+    4. There is only one LOV for **Sales Rep LOV** , Click on the pencil icon , Copy the **Record Group Query**
     ![](images/record-group-details.png " ")
 
     ````
@@ -92,81 +102,84 @@ We will be walking through series of steps on how to create Customer Summary Rep
     select id, first_name||' '||last_name Name from s_emp where title='Sales Representative' order by last_name
     </copy>
     ````
-    Go to your Application Home Page, Click on **Shared Components** and Click on **List of Values**
+    5. Go to your Application Home Page, Click on **Shared Components** and Click on **List of Values**
     ![](images/apex_lov.png " ")
 
-    Click on Create and choose **Source** as **From Scratch** and Click next
+    6. Click on Create and choose **Source** as **From Scratch** and Click next
     ![](images/lov_step1.png " ")
 
-    Specify the name of the List of Values , you can name it as **Salesrep LOV** and Click next
+    7. Specify the name of the List of Values , you can name it as **Salesrep LOV** and Click next
     ![](images/lov_step2.png " ")
 
-    Choose the source type as **SQL Query** and paste the query copied from the **Record Group Query** and click next
+    8. Choose the source type as **SQL Query** and paste the query copied from the **Record Group Query** and click next
     ![](images/lov_step3.png " ")
 
-    Leave the default value and Click Create
+    9. Leave the default value and Click Create
     ![](images/lov_step4.png " ")
 
-    **List of values** will be created Successfully
+    10. **List of values** will be created Successfully
     ![](images/lov_success.png " ")
 
-    To associate the List of Values to an item in the Page, Go to your Application Home Page, Click on Customer Form page
-    ![](images/customer_form.png " ")
+    11. To associate the List of Values to an item in the Page, Go to your Application Home Page, Click on Customer Form page ![](images/customer_form.png " ")
 
-    Identify the **Customers** Region and Click on **P3_SALES_REP_ID** Item,Under the Page item Section , Change the **Type** to **Select List** and Scroll down to **List of Values** Section, Change the type to **Shared Component** and for **List of Values** select **Salesrep LOV** and Save the page.
+    12. Identify the **Customers** Region and Click on **P3_SALES_REP_ID** Item,Under the Page item Section , Change the **Type** to **Select List** and Scroll down to **List of Values** Section, Change the type to **Shared Component** and for **List of Values** select **Salesrep LOV** and Save the page.
     ![](images/sales-rep-lov.png " ")
     ![](images/list-of-values.png " ")
 
     That completes the List of Values section of the Migration.
 
+  ## **STEP 4**:Migrate **Alerts** from Forms to APEX  
 
-  12. Next step is to Migrate **Alerts** from Forms to APEX  
-      From the App Builder Home Page, Click on **Migrations**
+      1. From the App Builder Home Page, Click on **Migrations**
       ![](images/migration.png " ")
 
-      Click on **Forms Migration** Project you have created
+      2. Click on **Forms Migration** Project you have created
       ![](images/migration-project.png " ")
 
-      Click on **Alerts** on the **customers_fmb.xml** file name row
+      3. Click on **Alerts** on the **customers_fmb.xml** file name row
       ![](images/alerts.png " ")
 
-      You will see two Alerts **DELETE_ALERT** and **CONFIRM_REVERT**
+      4. You will see two Alerts **DELETE_ALERT** and **CONFIRM_REVERT**
       ![](images/alert-summary.png " ")
 
-      To See how we can migrate to APEX,
+      5. To See how we can migrate to APEX,
       Go to your Application Home Page, Click on Customer Form page
       ![](images/customer_form.png " ")
 
-      Navigate to **DELETE** button Page item Property, you will see **DELETE_ALERT** is automatically handled by APEX
+      6. Navigate to **DELETE** button Page item Property, you will see **DELETE_ALERT** is automatically handled by APEX
       ![](images/delete-alert.png " ")
 
-      **CONFIRM_ALERT** is handled by Page setting , Change the **Warn on unsaved changes** to **Page Default**
+      7. **CONFIRM_ALERT** is handled by Page setting , Change the **Warn on unsaved changes** to **Page Default**
       ![](images/confirm-revert-alert.png " ")
 
+## **STEP 4**:Migrate **Program Units** from Forms to APEX  
+      **Program Units** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-  13. **Program Units** and **Triggers** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
+## **STEP 5**:Migrate **Triggers** from Forms to APEX  
+      **Triggers** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-  14. **Customer Form** in the Oracle Forms Service was represented in a **Tree** Structure , You can easily recreate the tree structure in APEX.
+## **STEP 6**:Recreate Forms Tree Structure **Triggers** from Forms to APEX  
+     **Customer Form** in the Oracle Forms Service was represented in a **Tree** Structure , You can easily recreate the tree structure in APEX.
 
-      From the Application Home Page, click **Create Page** and Click **Next**
+      1. From the Application Home Page, click **Create Page** and Click **Next**
       ![](images/create_page.png " ")
 
-      From the Create Page, click **Blank Page** and Click **Next**
+      2. From the Create Page, click **Blank Page** and Click **Next**
       ![](images/create_tree_blank_page.png " ")
 
-      From the Create Blank Page, Enter the page **Name** and Click **Next**
+      3. From the Create Blank Page, Enter the page **Name** and Click **Next**
       ![](images/create_blank_page.png " ")
 
-      Enter the name for the menu entry and Click **Next**
+      4. Enter the name for the menu entry and Click **Next**
       ![](images/blank_page_menu.png " ")     
 
-      Finish the page
+      5. Finish the page
       ![](images/blank_page_success.png " ")   
 
-      From the Blank Page, Click on **Create Region**
+      6. From the Blank Page, Click on **Create Region**
       ![](images/create-region.png " ")   
 
-      Choose the **Tree** type under the **Identification** section of the region settings and **Source** as **SQL Query**
+      7. Choose the **Tree** type under the **Identification** section of the region settings and **Source** as **SQL Query**
       ![](images/customer_tree.png " ")  
 
       Enter the below SQL
@@ -207,18 +220,17 @@ We will be walking through series of steps on how to create Customer Summary Rep
         CONNECT BY parent_id = PRIOR id
       </copy>
       ````
-      In order for the Tree to show up , make the changes as shown below to **Settings** under **Attributes** Section
+      7. In order for the Tree to show up , make the changes as shown below to **Settings** under **Attributes** Section
       ![](images/change_tree_attribute.png " ")   and save the form.
 
-      Link the tree node to **Customer Modal Form**
-      ![](images/link_to_customer.png " ")
-      and specify the values to be passed
+      8. Link the tree node to **Customer Modal Form**
+      ![](images/link_to_customer.png " ") and specify the values to be passed
       ![](images/link_to_customer_form.png " ")
 
-      Save and Run the Page
+      9. Save and Run the Page
       ![](images/customer_tree_runtime.png " ")
 
-      Click on the tree node will open the **Customer Modal Form**
+      10. Click on the tree node will open the **Customer Modal Form**
       ![](images/customer-modal-form.png " ")
 
   Great Job !! You have successfully completed transforming the **Customer** Form to **Interactive Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
