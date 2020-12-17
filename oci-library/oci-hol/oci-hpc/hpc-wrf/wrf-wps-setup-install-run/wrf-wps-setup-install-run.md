@@ -1,4 +1,4 @@
-# WRF Setup, Installation, and Run Guide
+# WRF Setup, Installation, and Run
 
 ## Introduction
 This lab is going to discuss and guide you through how to set up and run WRF on OCI infrastructure. This guide is intended to show you how to transform a vanilla Ubuntu image into an environment where you will be able to run experiments and run weather simulations. I'll also provide a custom image just incase you want to run WRF without learning how to set it up.

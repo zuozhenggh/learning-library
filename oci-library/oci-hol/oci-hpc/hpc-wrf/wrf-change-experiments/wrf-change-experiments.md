@@ -1,4 +1,4 @@
-# WRF Running Experiments Guide
+# Changing Experiment Data with WRF
 
 ## Introduction
 This is a smaller guide in comparison to the WRF Setup, Installation, and Run Guide. It is intended to be used after you have completed WRF Setup, Installation, and Run Guide or used the download link to get started using a custom image with WRF 4.1.5 and WPS 4.1 already set up.
@@ -368,3 +368,12 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     ```
     ![Screenshot of ncview](images/nc24.png)  
 From our prediction you can see that some changes have occured when we look at the same area six hours later. There are many variables to explore, so have fun.
+
+## Acknowledgements
+* **Author** - Brian Bennett, Solution Engineer, Big Compute
+* **Last Updated By/Date** - Brian Bennett, Big Compute, December 2020
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
