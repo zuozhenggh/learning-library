@@ -44,24 +44,41 @@ Similarly, you can create any compare pairs for other tables.
 ## **STEP 3:** Create Compare Pairs (on Pattern Mapping Tab)
 Use the **Pattern Mapping** tab to map numerous source and target objects at once by using:
 
-    * An exact name match (for example TAB1=TAB1).
-    * A SQL percent (%) wildcard or an asterisk (*) wildcard to map differently named source and targets whose naming conventions support wildcarding.
+* An exact name match (for example TAB1=TAB1).
+* A SQL percent (%) wildcard or an asterisk (*) wildcard to map differently named source and targets whose naming conventions support wildcarding.
 To create compare pairs on the **Pattern Mapping** tab:
 1. In the **Compare Pair Configuration** page, click **Pattern Mapping**.
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**.
 3. Under **Pattern Compare Pair Mapping**, select a **Table Mapping Method**. You can select any of the following:
     * **Map Source and Target Tables Using Exact Names**: Let's select this option here:
-        [](./images/9-pattern-mapping-pair-mapping-option1.png " ")
+        ![](./images/9-pattern-mapping-pair-mapping-option1.png " ")
 	  * **Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**
-        [](./images/8-pattern-mapping-pair-mapping-option2.png " ")
+        ![](./images/8-pattern-mapping-pair-mapping-option2.png " ")
     * **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**
-        [](./images/10-pattern-mapping-pair-mapping-option3.png " ")
+        ![](./images/10-pattern-mapping-pair-mapping-option3.png " ")
 4. Click **Generate Mappings**. The control moves to the **Preview** tab.
 5. Click **Save** save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
-    [](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
+    ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
+## **STEP 4**: Create a Job for the Compare Pair Group
+You must create and execute the job to run the comparisons. The job configuration determines which compare pair groups are processed.
+  To create a job:
+1. From the left navigation pane, click **Run/Execute Job** to display the **Run configuration** page.
+2. Click **New** to display the **New Job Assistant** page.
+3. Enter a **Name** and **Description** for the new job, click **Next**, and then click **Finish** in the next page.
+    ![](./images/12-new-job-create-job.png " ")
+A new job is created for the compare pair.
 
-## Want to Learn More?
+## **STEP 5**: Execute the Job
+To execute a job:
+1. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Run Configuration** page.
+2. Select the job you just created from the **Job** drop-down list and click **Run Job**.
+    ![](./images/13-run-job.png " ")
+3. From the left navigation pane, click **Running Jobs** to display the status of the jobs that are running.
+  ![](./images/14-running-jobs-status.png " ")
+4. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
+    ![](./images/15-completed-jobs-compare-pair-status-chart.png " ")
+
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Groups](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-70B42ABB-EA8E-4ADF-8414-7EA1752CA7E6)
