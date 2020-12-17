@@ -39,7 +39,6 @@ There are 9 hands-on labs in this workshop.
 
 - DATA TRANSFORMATIONS
 
-- MICROSERVICES ADMINCLIENT
 
 
 
