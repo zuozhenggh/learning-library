@@ -250,7 +250,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     ```
     &time_control
     run_days                            = 0,
-    run_hours                           = 12,
+    run_hours                           = 6,
     run_minutes                         = 0,
     run_seconds                         = 0,
     start_year                          = 2020, 2000, 2000,
@@ -364,7 +364,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 
     ```
     mpirun -n 10 ./wrf.exe #This will run on 10 cores
-    tail -F rsl.out.0000 #can be used to check for errors and progress. Will throw and error, but does write everything we need.
+    tail -F rsl.out.0000 #can be used to check for errors and progress.
     ```
 6. We can look at the results of our prediction with ncview with the following:
     ```

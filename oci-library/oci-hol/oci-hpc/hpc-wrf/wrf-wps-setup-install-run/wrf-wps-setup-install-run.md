@@ -591,7 +591,7 @@ Don’t actually download anything. We will create a script for that. We are goi
 
     ```
     mpirun -n 10 ./wrf.exe #This will run on 10 cores
-    tail -F rsl.out.0000 #can be used to check for errors and progress. Will throw and error, but does write everything we need.
+    tail -F rsl.out.0000 #can be used to check for errors and progress. 
     ```
 6. We can check our prediction with the following:
     ```
