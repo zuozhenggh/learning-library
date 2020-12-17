@@ -32,7 +32,7 @@ This lab assumes you have:
 In this lab we will setup GoldenGate Microservices
 
 
-## **STEP 1:** Creating Deployments
+## **STEP 1:** Start the Oracle Database 19c (19.1) and Listener
 
  Open a terminal session
 
@@ -41,108 +41,104 @@ In this lab we will setup GoldenGate Microservices
     ````
     <copy>sudo su - oracle</copy>
     ````
-
-**Deployments are a new concept in Oracle GoldenGate Microservices.**
-
-Deployments provide a siloed approach to splitting replication environments between applications, customers, or environments.  This allows for greater control over the use of Oracle GoldenGate in larger environments.
-
-1.	Log in to ServiceManager’s HTML5 webpage.  This is done by opening Firefox on your linux host machine.
-
-2.	From the browser, connect to port 16000 to access the ServiceManager login page:
+1.	login the oracle user sudo su - oracle  
+2.	Start the database 
+    cd ~/Desktop/Scripts/HOL/Lab1  
 ```
- <copy>https://<Your IP Address>:16000</copy>
+   <copy>sh ./startup.sh</copy>
 ```
-The URL should bring up the following login page.
+![](./images/g1.png " ")    
 
-![](./images/a1.png " ")
+## **STEP 2:** STEP 2: Creating Deployments – Atlanta and Boston 
 
-3. Log in to the Service Manager using the following credentials:
+Open a terminal session 
 
-User Name: oggadmin
-Password: Welcome1
+![](./images/terminal3.png " ")
+
+````
+    <copy>sudo su - oracle</copy>
+````
+
+Deployments are a new concept in Oracle GoldenGate Microservices. 
+Deployments provide a siloed approach to splitting replication environments between applications, customers, or environments. This allows for greater control over the use of Oracle GoldenGate in larger environments. 
+
+1.	Log in to ServiceManager’s HTML5 webpage. This is done by opening Firefox on your linux host machine. 
+
+2.	From the browser, connect to port 16000 to access the ServiceManager login page:   https://YOUR IP ADDRESS:16000 
+
+![](./images/g2.png " ")
+
+3.	Log in to the Service Manager using the following credentials:
+
+User Name: **oggadmin** Password: **Welcome1**
+
+4.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”. 
+
+![](./images/g3.png " ")
+
+5.	Now switch back to the Remote Desktop Viewer and from the Terminal window, navigate to the Lab2 directory under ~/Desktop/Scripts/HOL
+
 ```
-<copy>oggadmin</copy>
+<copy>cd ~/Desktop/Scripts/HOL/Lab2</copy>
 ```
-```
-<copy>Welcome1</copy>
-```
-
-4.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”.  
-
-    ![](./images/a2.png " ")
+6.	At this point, by doing an “ls” in the directory; you will notice two files in the lab directory. The rsp file is a template file that will be copied and used by the sh file. In order to create two Deployments, the sh script file needs to be ran twice. 
 
 
-5.	Now switch back to the Remote Desktop Viewer and from the Terminal window, navigate to the Lab2 directory under ~/Desktop/Scripts/HOL.
-
-    ![](./images/a3.png " ")
-
-```
-<copy> cd ~/Desktop/Scripts/HOL/Lab2</copy>
-```
-
-
-
-6.	At this point, by doing an “ls” in the directory; you will notice two files in the lab directory.  The rsp file is a template file that will be copied and used by the sh file.  In order to create two Deployments, the sh script file needs to be ran twice.
-
-First, find out your current VM’s local IP Address by issuing the following command
-
+First, find out your current VM’s local IP Address by issuing the following command 
 ```
 <copy>hostname -I</copy>
 ```
-7. Write down the IP Address shown.  For example, 10.145.34.23.  
-(** The IP address it shows might be different than the IP address you obtained when using VNC Viewer to connect.  That is fine)
+7.	Write down the IP Address shown. For example, 10.145.34.23. 
+(** The IP address it shows might be different than the IP address you obtained when using VNC Viewer to connect. That is fine) 
 
-8. Open oggca_deployment.rsp with an editor, such as vi.  Find the following line, replace the IP address with the value you got from above ‘hostname -I’ command
+8.	Open oggca_deployment.rsp with an editor, such as vi. Find the following line, replace the IP address with the value you got from above ‘hostname -I’ command 
 
-Example: HOST_SERVICEMANAGER=10.0.2.15
+Example: HOST_SERVICEMANAGER=10.0.2.15 
 
-9. For example, using the above IP address, change it to
+9.	For example, using the above IP address, change it to 
+
 ```
 <copy>HOST_SERVICEMANAGER= <your_public_ip></copy>
 ```
+10.	To run the create_deployment.sh script, you will need to provide eight (8) command line parameters. Here is the template of the command: 
 
-10. To run the create_deployment.sh script, you will need to provide eight (8) command line parameters.  Here is the template of the command:
+sh ./create_deployment.sh (deployment_name) (admin password) (SMPort) (ASPort) 
+(DSPort) (RSPort) (PMSPort) (PMSPortUDP) 
 
-**sh ./create_deployment.sh (deployment_name) (admin password) (SMPort) (ASPort) (DSPort) (RSPort) (PMSPort) (PMSPortUDP)**
+Each of the parameters will be used to replace items in the response file and build the Deployment and associated services. Each of the command line parameters corresponds to the following: 
+ = Name of the deployment to be created  = Password used by the Security Role user for the 
+ServiceManager  = Port number of the ServiceManager (16000)  = Port number of the Administration Service (16001)  = Port number of the Distribution Service (16002)  = Port number of the Receiver Service (16003)  = Port number of the Performance Metric Service (16004)  = UDP port number for Performance Metric Service NoSQL Database connection (16005) 
 
-Each of the parameters will be used to replace items in the response file and build the Deployment and associated services.  Each of the command line parameters corresponds to the following:
+11.	Run the script using the following parameter values, to create the Atlanta Deployment: 
 
-<deployment_name> = Name of the deployment to be created
-<admin password> = Password used by the Security Role user for the ServiceManager
-<SMPort> = Port number of the ServiceManager (16000)
-<ASPort> = Port number of the Administration Service (16001)
-<DSPort> = Port number of the Distribution Service (16002)
-<RSPort> = Port number of the Receiver Service (16003)
-<PMSPort> = Port number of the Performance Metric Service (16004)
-<PMSPortUDP> = UDP port number for Performance Metric Service NoSQL Database connection (16005)
+![](./images/g4.png " ")
 
-11. Run the scripts  
-**Run the script using the following parameter values, to create the Atlanta Deployment:**
-
-    ![](./images/a4.png " ")
+***Atlanta deployment creation***  
 ```
 <copy>sh ./create_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005</copy>
 ```
+11.	Return to Firefox and refresh the ServiceManager page. You should have one (1) new Deployment called Atlanta, with four (4) services listed. 
 
+![](./images/g5.png " ")
 
-12.  Return to Firefox and refresh the ServiceManager page.  You should have one (1) new Deployment called Atlanta, with four (4) services listed.
+12.	Return to the Terminal Window where you ran the create_deployment.sh script and rerun the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number. 
 
-     ![](./images/a5.png " ")
+***Boston deployment creation***
 
-13. Return to the Terminal Window where you ran the create_deployment.sh script and re-run the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
-
-**Run the script using the following parameter values, to create the Boston Deployment:**
+13. Run the script using the following parameter values, to create the Boston Deployment: 
 
 ```
-<copy>sh ./create_deployment.sh Boston Welcome1 16000 17001 17002 17003 17004 17005</copy>
+<copy>sh ./create_deployment.sh Boston Welcome1 16000 17001 17002 17003 17004 17005 </copy>
 ```
-![](./images/a6.png " ")
 
-14. Return to Firefox and refresh the ServiceManager page again.  You should now have two (2) Deployments with a total of eight (8) services running.  
+![](./images/g6.png " ")
 
- ![](./images/a7.png " ")
+14.	Return to Firefox and refresh the ServiceManager page again. You should now have two 
+(2) Deployments with a total of eight (8) services running. 
 
-## **STEP 2:** Configure Reverse Proxy
+![](./images/g7.png " ")
+
+## **STEP 3:** Configure Reverse Proxy
 
 In this Task, you will configure the NGINX Reverse Proxy.  
 
@@ -165,11 +161,14 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 ```
 <copy>sh ./configureNginx.sh oggadmin Welcome1  16000</copy>
 ```
-**password for Oracle=Madhu_123#**
+![](./images/g8.png " ")
 
-   ![](./images/a8.png " ")
+```
+<copy>https://<your IP address></copy>
+```
+If this is the first time you access this address, you will need to click through some security exceptions page as it is using a self-signed certificate. Once you get to the page, you will see below website. 
 
-**During the script run, it will ask you the password for user oracle so it can run sudo, the password is Madhu_123#**
+![](./images/g9.png " ")
 
 3.	Upon completion, return to your web browser. You should be able to access the ServiceManager page by only using the URL without a port number.
 
@@ -178,7 +177,7 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 ```
 If this is the first time you access this address, you will need to click through some security exceptions page as it is using a self-signed certificate.  Once you get to the page, you will see below website.
 
-   ![](./images/a9.jpg" ")
+![](./images/g10.png " ")
 
 
 Once you are able to access the ServiceManager by using the simpler URL, you have completed this task.
@@ -200,9 +199,10 @@ In the example, if using the Atlanta deployment, the URL would look like this:
 ```
 <copy>https://<your IP address>/Atlanta/adminsrvr</copy>
 ```
-   ![](./images/a10.jpg " ")
+![](./images/g10.png " ")
 
-## **STEP 3:** Create Credentials
+
+## **STEP 4:** Create Credentials
 
 1. In this Task, you will configure the database user credentials and tnsnames entries needed for replication.  This requires running the following scripts:
 
@@ -212,12 +212,18 @@ Add_SchemaTrandata.sh
 
 After running these scripts, you will be able to establish connections for replication between the source and target pluggable database.
 
+Note: The script create_credential_protocol.sh will not be used in this lab and can be ignored. Before you work through this task, understand that there are multiple ways of doing this lab. The scripts provided are meant to speed up the lab process. If you are interested in creating credentials and adding schematrandata from the web pages or AdminClient the beginning steps are provided below for you. 
 
-**Note: The script create_credential_protocol.sh will not be used in this lab and can be ignored.**
+For web page access, access the Administration Service (adminsrvr) using the simplified URL
+
 
 Before you work through this task, understand that there are multiple ways of doing this lab.  The scripts provided are meant to speed up the lab process.  If you are interested in creating credentials and adding schematrandata from the web pages or AdminClient the beginning steps are provided below for you.
 
-For web page access, access the Administration Service (adminsrvr) using the simplified URL (https://localhost/<deployment>/adminsrvr).  Login and go to Context Menu -> Configuration -> Credentials -> click on the plus ( + ) sign.
+**https://localhost/Atlanta/adminsrvr**
+
+**replace localhost with your local ip address**
+
+Login and go to Context Menu -> Configuration -> Credentials -> click on the plus ( + ) sign.
 
 ![](./images/a11.png " ")
 
@@ -255,6 +261,8 @@ In order to create the required credentials, run the following:
 ```
 <copy>sh ./create_credential_GGAlias.sh Welcome1 16001 c##ggate@orcl ggate</copy>
 ```
+![](./images/g11.png " ")
+
 After running this script, can go to your browser and that the credential was created
 
 5. Open a new browser tab and connect to
@@ -271,25 +279,95 @@ After running this script, can go to your browser and that the credential was cr
 
 To run this script, execute the following
 
-
 ```
 <copy>sh ./add_SchemaTrandata.sh Welcome1 16001</copy>
 ```
+
 ![](./images/a15.png " ")
+
+![](./images/g12.png " ")
 
 9. You can also check that SCHEMATRANDATA has been added from the Administration Service -> Configuration page as well.  Simply log in to the SGGATE alias.
 
 ![](./images/a16.png " ")
 
-10. Then, under “Trandata”, make sure that the magnifying glass and radio button for “Schema” are selected.  Enter “oggoow19.soe” into the search box and then select the magnifying glass to the right of the search box to perform the search.
+10.  Then, under “Trandata”, make sure that the magnifying glass and radio button for “Schema” are selected.  Enter “oggoow19.soe” into the search box and then select the magnifying glass to the right of the search box to perform the search.
 
      ![](./images/a17.png " ")
 
-11. After the search is performed, you will see a column that provides the number of tables enabled for supplemental logging within the “SOE” schema.
+11.  After the search is performed, you will see a column that provides the number of tables enabled for supplemental logging within the “SOE” schema.
 
-![](./images/a18.png " ")
+        ![](./images/a18.png " ")
 
 You have now completed configuring schema level supplemental logging needed for use in the replication process
+
+## **STEP 5:** Create Oracle Replication Objects
+
+1.	Add Extract for Atlanta Deployment
+```
+     <copy>cd ~/Desktop/Scripts/HOL/Lab5</copy>
+```  
+```
+<copy>sh ./add_Extract.sh Welcome1 16001 EXTSOE </copy>
+```
+ ![](./images/g13.png " ")
+
+2.	From a URL – Access Atlanta adminserver 
+https://<your ip address>/Atlanta/adminsrvr 
+
+ ![](./images/g14.png " ")
+
+4. 	Create Distribution Path in Atlanta Deployment 
+
+```
+<copy>sh ./add_DistroPath.sh Welcome1 16002 SOE2SOE aa 17003 ab  </copy>
+```
+ ![](./images/g15.png " ")
+
+ ```<copy>https://<your ip address>/Atlanta/distsrvr </copy>
+ ```
+  ![](./images/g16.png " ")
+
+5. GoldenGate Replicat Creation Process 
+   
+```
+<copy>cd ~/Desktop/Scripts/HOL/Lab7 </copy>
+```
+create an alias for the target database User 
+
+6. 	Create Credential 
+   
+```
+<copy>sh ./create_credential_GGAlias.sh Welcome1 17001 ggate@oggoow191 ggate </copy>
+```
+  ![](./images/g17.png " ")
+  
+```
+<copyhttps://<your ip address>/Boston/adminsrvr/ </copy>
+```
+  ![](./images/g18.png " ")
+
+7. 	Create Checkpoint Table 
+
+```
+<copy>
+sh ./add_CheckpointTable.sh Welcome1 17001  
+</copy>
+```
+  ![](./images/g19.png " ")
+
+  ![](./images/g20.png " ")
+
+
+8. 	Create Replicat on Boston 
+```
+<copy>sh ./add_Replicat.sh Welcome1 17001 IREP  </copy>
+```
+  ![](./images/g21.png " ")
+
+  ![](./images/g22.png " ")
+
+9. Start Extract, Distribution and Replicat 
 
 ## Summary
 
