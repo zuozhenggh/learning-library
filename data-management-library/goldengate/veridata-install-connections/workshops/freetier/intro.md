@@ -1,6 +1,6 @@
 # Overview                                
 
-The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet, create groups and compare pairs, create groups, configure compare pairs, create and execute jobs, view reports, 
+The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet, create groups and compare pairs, create groups, configure compare pairs, create and execute jobs, view reports, and repair data/
 
 ## What is Oracle GoldenGate Veridata?
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
