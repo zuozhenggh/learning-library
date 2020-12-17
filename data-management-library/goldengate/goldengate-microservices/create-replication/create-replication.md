@@ -227,7 +227,7 @@ Login and go to Context Menu -> Configuration -> Credentials -> click on the plu
 
 ![](./images/a11.png " ")
 
-## **STEP 4:** Create Oracle Objects
+## **STEP 5:** Create Oracle Objects
 
 To begin this step, follow the below steps:
 
@@ -297,11 +297,11 @@ To run this script, execute the following
 
 11.  After the search is performed, you will see a column that provides the number of tables enabled for supplemental logging within the “SOE” schema.
 
-        ![](./images/a18.png " ")
+   ![](./images/a18.png " ")
 
 You have now completed configuring schema level supplemental logging needed for use in the replication process
 
-## **STEP 5:** Create Oracle Replication Objects
+## **STEP 6:** Create Oracle Replication Objects
 
 1.	Add Extract for Atlanta Deployment
 ```
@@ -324,7 +324,8 @@ https://<your ip address>/Atlanta/adminsrvr
 ```
  ![](./images/g15.png " ")
 
- ```<copy>https://<your ip address>/Atlanta/distsrvr </copy>
+ ```
+ <copy>https://<your ip address>/Atlanta/distsrvr</copy>
  ```
   ![](./images/g16.png " ")
 
@@ -367,8 +368,16 @@ sh ./add_CheckpointTable.sh Welcome1 17001
 
   ![](./images/g22.png " ")
 
-9. Start Extract, Distribution and Replicat 
+9. Start Extract, Distribution and Replicat
 
+```
+<copy> cd /home/oracle/Desktop/Scripts/HOL/Lab8</copy>
+```
+```
+<copy>./start_replication.sh Welcome1 16001 EXTSOE 16002 SOE2SOE 17001 IREP</copy>
+```
+  ![](./images/g23.png " ")
+  
 ## Summary
 
 The objectives of the lab was to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices.
