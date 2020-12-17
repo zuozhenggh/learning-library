@@ -128,7 +128,7 @@ COLMAP (USEDEFAULTS, CUST_EMAIL = P_MAIL.desc_param,CUSTOMER_NAME
 7.	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transaction on the table CUSTOMER . 
 
 ```
-<copy>8.	sqlplus ggate/ggate@oggoow19</copy>
+<copy>sqlplus ggate/ggate@oggoow19</copy>
 ```
 
 ```
