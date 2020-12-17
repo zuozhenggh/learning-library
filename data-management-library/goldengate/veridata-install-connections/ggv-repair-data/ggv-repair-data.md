@@ -19,11 +19,11 @@ The comparison report tells you how extensive an out-of-sync problem is. It also
     * **View Most Recent Comparison Run**: Selects the most recent report for each job that exists.
     * **View Last**: Selects reports that were created within the last <n> Days, Hours or Minutes.
     * **View From**: Selects reports that were created within a specific date range, with the option to include the time of day. Enter the From and To Date and Time in the format that is accepted by the client machine that is running Oracle GoldenGate Veridata Web User Interface.
-3. If you want to select reports based on Jobs, Groups, Compare Pairs, or even Report Names, enter the details and click **Apply Filter** (Optional Step):
-    * **Job Like**: Retrieves reports for jobs whose names contain a string that matches the one you enter.
-    * **Group Like**: Retrieves reports for groups whose names contain a string that matches the one you enter.
-    * **Compare Pair Like**: Retrieves reports for compare pairs whose names contain a string that matches the one you enter.
-    * **Show Report Names Like**: Retrieves reports whose file names contain a string that match the one you enter.
+3. If you want to select reports based on Jobs, Groups, Compare Pairs, or even Report Names, enter the details and click **Apply Filter** (Optional Step)
+    **Job Like**: Retrieves reports for jobs whose names contain a string that matches the one you enter.
+    **Group Like**: Retrieves reports for groups whose names contain a string that matches the one you enter.
+    **Compare Pair Like**: Retrieves reports for compare pairs whose names contain a string that matches the one you enter.
+    **Show Report Names Like**: Retrieves reports whose file names contain a string that match the one you enter.
 4. Select the Report from **Existing Reports**.
       ![](./images/2-reports-selection-view.png " ")
 5. Click **View** to display the **Report View**.
