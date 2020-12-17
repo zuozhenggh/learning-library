@@ -24,7 +24,7 @@ To deploy the Siebel Instance, in this lab, you will:
 
 2. Navigate to ***Oracle Cloud Infrastructure Marketplace*** by using the dropdown menu on the left side of your screen and clicking the ***Marketplace*** option under ***Solutions and Platforms***
 
-  ![from the menu bar in OCI console, click on Marketplace](./images/2.png " ")
+  ![From the menu bar in OCI console, click on Marketplace](./images/2.png " ")
 
 3. In the search bar type in siebel and hit search. Click on ***Siebel CRM 20.x install Container w/Sample Database*** image
 
@@ -105,7 +105,7 @@ Generating Jenkins URL
 
 6. Select the ***Run*** button to create your new instance
 
-  ![select the run button on the lefthand side of the screen](./images/2.6.png " ")
+  ![SSelect the run button on the lefthand side of the screen](./images/2.6.png " ")
 
 7. In the window that opens you can specify the Siebel version and Industry that you desire. For this Lab we will choose Siebel version ***20.8*** and select ***Sales*** as the industry; then click the ***Run*** button
 

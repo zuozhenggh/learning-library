@@ -14,48 +14,70 @@ Estimated Lab Time: 15 minutes
 * Tenancy Admin User
 * Tenancy Admin Password
 
-## **STEP 1:** Delete the EBS Environment from Cloud Manager
+## **STEP 1:** Delete the Siebel Virtual Machine In OCI
 
-1. Navigate to the Cloud Manager Environments page.
+1. Navigate to the OCI home page.
 
-2. For ebsholenv1, click the stacked lines to the right of the environment and select **Delete**. Confirm deletion by selecting **Yes** on the popup.
+2. Use the dropdown menu located in the upper lefthand corner of the screen and select **Compute** then **Instance**.
 
-    ![](./images/delete-env.png " ")
+    ![](./images/dropdown_compute_instance.png " ")
 
-    The environment will begin the deletion process. This will teardown all resources created by the environment. You can check the progress of the deletion by clicking the link next to Latest Activity.
+3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected. 
 
-    ![](./images/latestActivity.png " ")
+    ![](./images/correct_compartment.png " ")
 
-    Once the environment has been destroyed, it will no longer appear on the Cloud Manager Environments page.
+    You should now be able to see the Siebel instance you created previously.
 
-    You can repeat this step for all other EBS environments you wish to delete.
+4. Now click on the three dots to the right of your Siebel instance and then select **Terminate**.
 
+    ![](./images/terminate_instance.png " ")
 
-## **STEP 2:** Teardown the Cloud Manager Instance
+    Once the image has finished terminating you will see its state change to terminated.
 
-1. Navigate to the OCI console and login as the tenancy admin user. Go to **Resource Manager** > **Stacks** and select the stack you used to create the Cloud Manager environment (ensure that you are in the correct compartment if no items display).
+    ![](./images/terminated_instance_evidence.png " ")
 
-    ![](./images/stacks.png " ")
+## **STEP 2:** Terminating the VCN
 
-2. In the Stack Details Page, select **Terraform Actions** > **Destroy**. Name your destroy job whatever you like and then click **Destroy**.
+1. Use the dropdown menu located in the upper lefthand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
+    ![](./images/dropdown_networking_vcn.png " ")
 
-    ![](./images/destroy.png " ")
+2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected. 
 
-    The job will run and teardown all resources created by the stack, including the Cloud Manager instance and the Networking components.
+    ![](./images/correct_compartment.png " ")
 
-3. Once the destroy job has finished and the Cloud Manager has been deleted, you may go to **Governance** > **Compartment Explorer** and then select **ebshol_compartment** on the left side of the screen to validate that it is empty.
+    You shoud now be able to se the VCN that you created in the "Setup" lab.
 
-    Note: There may be resources still listed in the compartment, but they should have a status of **Terminated**. If there are still active resources in the compartment, you will need to destroy them before deleting the compartment.
+3. Now click on the three dots to the right of your VCN and then select **Terminate**.
 
-    ![](./images/explorer.png " ")
+    ![](./images/siebelVCN.png " ")
 
-    ![](./images/empty-compartment.png " ")
+4. On the next screen you will see a list of all of the Associated Resources.
 
-    In the Compartment Explorer when viewing the **ebshol\_compartment** parent compartment (in this case the root compartment), you can click on the three dots to the right of **ebshol\_compartment** and then delete the compartment.
+    After the window has finished loading all of the resources you can click the terminate all button.
 
-    ![](./images/delete-compartment.png " ")
+    **Note:** It may take a moment for all of the resources to load.
 
-    You have now torn down all the resources you created for the EBS Cloud Manager Instance and its EBS Environments.
+    ![](./images/terminate_confirm.png " ")
+
+    After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
+
+## **STEP 3:** Deleting the Siebel Compartment 
+
+1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity** then **Compartments**.
+
+    ![](./images/dropdown_compartment.png " ")
+
+    From this screen navigate to the compartment you created in the "Setup" lab.
+
+    ![Click the delete button to delete the compartment](./images/delete_compartment.png " ")
+
+    After some time the status will be shown as deleted.
+
+    ![The compartment is shown as deleted](./images/deleted_compartment.png " ")
+
+You have now torn down all the resources you created for the Siebel Marketplace Instance and its Environments.
+
+Congratulations on Completing the Siebel Move and Improve Workshop; well done you! :)
 
 
 ## Acknowledgements
@@ -64,7 +86,7 @@ Estimated Lab Time: 15 minutes
   - Chris Wegenek, Cloud Engineering
   - Naresh Sanodariya, Cloud Engineering
 * **Contributors** -  Arunkumar Ravichandran, Cloud Engineering
-* **Last Updated By/Date** - JB Anderson, Cloud Engineering, Dec 2020
+* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, Dec 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
