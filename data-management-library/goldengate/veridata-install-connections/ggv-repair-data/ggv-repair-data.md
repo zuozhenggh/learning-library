@@ -13,7 +13,7 @@ The Repair Jobs page displays a summary of all repair jobs. You can use the Filt
 ## **STEP 1:** Repair Out-of-Sync Jobs
 
 
-
+## Want to Learn More?
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Repair Data](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-B46185DF-4B7E-4647-8BE2-F7176E1FFDFF)
 
