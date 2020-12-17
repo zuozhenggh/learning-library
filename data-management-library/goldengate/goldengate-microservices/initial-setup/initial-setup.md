@@ -35,24 +35,10 @@ In this lab we will setup GoldenGate Microservices
 <copy>sudo su - oracle</copy>
 ````
 
-2. In the open Terminal Window, start SQL*Plus.
-
-```
-<copy>lsnrctl start</copy>
-```
-
-```
-<copy>sqlplus /as sysdba</copy>
-```
-
-```
-<copy>startup</copy>
-```
-
-![](./images/z1.png " ")
 
 
-3. Enable the database for GoldenGate replication.
+
+2. Enable the database for GoldenGate replication.
 
 ```
 <copy>alter system set enable_goldengate_replication=true scope=both;</copy>
@@ -60,16 +46,16 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/z2.png " ")
 
-4.	Enable Archive Log on the database.This will require you to shut down the database and restart it.
+3.	Enable Archive Log on the database.This will require you to shut down the database and restart it.
 
-5. Shutdown the database.
+4. Shutdown the database.
 
 ```
 <copy>shutdown immediate;</copy>
 ```
 ![](./images/z3.png " ")
 
-6. Start the database up in mount mode.
+5. Start the database up in mount mode.
 
 ```
 <copy>startup mount;</copy>
@@ -77,14 +63,14 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/z4.png " ")
 
-7. Change database into Archive Log mode.
+6. Change database into Archive Log mode.
 
 ```
 <copy>alter database archivelog;</copy>
 ```
 ![](./images/z5.png " ")
 
-8. Open the database.
+7. Open the database.
 
 ```
 <copy>alter database open;</copy>
@@ -92,11 +78,11 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/z6.png " ")
 
-9.	Open the Pluggable Database
+8.	Open the Pluggable Database
 ```
 <copy>alter pluggable database all open read write;</copy>
 ```
-10. Enable Minimal Supplemental Logging for the database.  Additionally, enable Force Logging then switch the log file.
+9. Enable Minimal Supplemental Logging for the database.  Additionally, enable Force Logging then switch the log file.
 
 ```
 <copy>alter database add supplemental log data;</copy>
