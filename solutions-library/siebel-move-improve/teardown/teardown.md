@@ -18,38 +18,37 @@ Estimated Lab Time: 15 minutes
 
 1. Navigate to the OCI home page.
 
-2. Use the dropdown menu located in the upper lefthand corner of the screen and select **Compute** then **Instance**.
+2. Use the dropdown menu located in the upper lefthand corner of the screen and select **Compute** then **Instances**.
 
-    ![](./images/dropdown_compute_instance.png " ")
+    ![Use the dropdown menu located in the upper lefthand corner to select instances](./images/dropdown_compute_instance.png " ")
 
 3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected. 
 
-    ![](./images/correct_compartment.png " ")
+    ![List scope compartment portion](./images/correct_compartment.png " ")
 
-    You should now be able to see the Siebel instance you created previously.
+4.   You should now be able to see the Siebel instance you created previously.
 
-4. Now click on the three dots to the right of your Siebel instance and then select **Terminate**.
+    Now click on the three dots to the right of your Siebel instance and then select **Terminate**.
 
-    ![](./images/terminate_instance.png " ")
+    ![Use the small dropdown menu and click terminate](./images/terminate_instance.png " ")
 
     Once the image has finished terminating you will see its state change to terminated.
 
-    ![](./images/terminated_instance_evidence.png " ")
+    ![Status should be terminated as shown](./images/terminated_instance_evidence.png " ")
 
 ## **STEP 2:** Terminating the VCN
 
 1. Use the dropdown menu located in the upper lefthand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
-    ![](./images/dropdown_networking_vcn.png " ")
+    ![Navigate to compartments using the dropdown menu](./images/dropdown_networking_vcn.png " ")
 
 2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected. 
-
     ![](./images/correct_compartment.png " ")
 
-    You shoud now be able to se the VCN that you created in the "Setup" lab.
+3. You shoud now be able to se the VCN that you created in the "Setup" lab.
 
-3. Now click on the three dots to the right of your VCN and then select **Terminate**.
+    Now click on the three dots to the right of your VCN and then select **Terminate**.
 
-    ![](./images/siebelVCN.png " ")
+    ![List scope compartment portion](./images/siebelVCN.png " ")
 
 4. On the next screen you will see a list of all of the Associated Resources.
 
@@ -57,7 +56,7 @@ Estimated Lab Time: 15 minutes
 
     **Note:** It may take a moment for all of the resources to load.
 
-    ![](./images/terminate_confirm.png " ")
+    ![Terminate vcn menu](./images/terminate_confirm.png " ")
 
     After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
 
@@ -65,7 +64,7 @@ Estimated Lab Time: 15 minutes
 
 1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity** then **Compartments**.
 
-    ![](./images/dropdown_compartment.png " ")
+    ![Navigate to compartments using the dropdown menu](./images/dropdown_compartment.png " ")
 
     From this screen navigate to the compartment you created in the "Setup" lab.
 
