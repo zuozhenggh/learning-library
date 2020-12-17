@@ -49,7 +49,7 @@ In this lab we will setup GoldenGate Microservices
 ```
 ![](./images/g1.png " ")    
 
-## **STEP 2:** STEP 2: Creating Deployments – Atlanta and Boston 
+## **STEP 2:** Creating Deployments – Atlanta and Boston 
 
 Open a terminal session 
 
