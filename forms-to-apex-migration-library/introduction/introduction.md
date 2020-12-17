@@ -1,13 +1,11 @@
 # Introduction
 
-## Workshop Overview
+## About this Workshop
 
 This workshop walks you though setting up Oracle Forms environment from Marketplace and Converting that into Oracle Apex application. Oracle Apex Application enables you to develop responsive web application at a much faster pace and helps you modernize your applications.
 
-Estimated Time: 90 minutes
+Estimated Lab Time: 90 minutes
 
-### Prerequisites
-- Sign Up for Free Trial/Login to Oracle Cloud
 
 ### Objectives
 * Generate SSH Key
@@ -20,9 +18,11 @@ Estimated Time: 90 minutes
 
 *Note: This lab assumes you are using Oracle APEX 20.1.*
 
+### Prerequisites
+- Sign Up for Free Trial/Login to Oracle Cloud
 
 
-## Learn More - *Useful Links*
+## Learn More
 
 - [APEX on Autonomous Database](https://apex.oracle.com/autonomous)
 - [APEX Collateral](https://apex.oracle.com)

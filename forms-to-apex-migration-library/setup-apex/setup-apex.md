@@ -1,4 +1,4 @@
-# Sign up for an APEX Workspace
+# Setup Oracle APEX in Autonomous Database/Sign up for Workspace in apex.oracle.com
 
 ## Introduction
 
