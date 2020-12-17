@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section, you will provision a new E-Business Suite Enviornment from the backup you created using the EBS Cloud Backup Module in the previous lab. 
+In this section, you will provision a new E-Business Suite Environment from the backup you created using the EBS Cloud Backup Module in the previous lab. 
 
 **Estimated Lab Time:** 10 minutes (with approx. 1-1.5 hour wait time for provisioning)
 
@@ -41,26 +41,26 @@ This step will take you through how to provision an E-Business Suite instance fr
 
     Click **Next**. 
 
-5. Specify a hostname and domain name for your web entry point. 
+5. Specify a host name and domain name for your web entry point. 
 
     ![](./images/3.png " ")
 
     Click **Next**. 
 
-6. After reviewing all of the details, you can click **Submit** to begin provisioning the new instance on Cloud Manager from the backup you created in Lab 4. 
+6. After reviewing all the details, you can click **Submit** to begin provisioning the new instance on Cloud Manager from the backup you created in Lab 4. 
 
     ![](./images/4.png " ")
 
     After approximately 1-1.5 hours, your new EBS instance will finish provisioning and you will have successfully migrated an EBS environment to OCI. 
 
-Congradulations, you have successfully migrated an EBS instance to the EBS Cloud Manager on OCI. 
+Congratulations, you have successfully migrated an EBS instance to the EBS Cloud Manager on OCI. 
 
 ## Learn More
 
 * [Creating a Backup of an On-Premises Oracle E-Business Suite Instance on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/creating_backup_of_ebs_instance_on_oci/101_backup_oci.html)
 * [Requirements for Oracle E-Business Suite on Oracle Cloud Infrastructure (Doc ID 2438928.1)](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=97656525609392&id=2438928.1&_afrWindowMode=0&_adf.ctrl-state=1bsk4t5eng_4#S2)
 
-## Acknowledgements
+## Acknowledgments
 
 * **Author:** William Masdon, Cloud Engineering
 * **Contributors:** 
