@@ -17,7 +17,6 @@ Estimated Lab Time: 30 minutes
 
 ### Prerequisites
 
-- Have Oracle Autonomous Database already running in OCI.
 - Have Oracle APEX Workspace defined for the migration project
 
 
@@ -241,7 +240,7 @@ We will be walking through series of steps on how to create Customer Summary Rep
 
  - **Author** -  Vanitha Subramanyam, Senior Solution Architect
  - **Contributors** -Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
- - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, November 2020
+ - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

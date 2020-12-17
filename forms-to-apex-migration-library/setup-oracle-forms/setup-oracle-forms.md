@@ -114,6 +114,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     Make a note of all the passwords
 3.   All the installation details of software installed, ORACLE_HOME, ORACLE_SID, MIDDLEWARE_HOME, FORMS_PATH
     can be found in readme file under Desktop folder
+
     ```
         <copy>
         $ cd Desktop
@@ -151,7 +152,6 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
               WLS Administration Server : 7001
               WLS_FORMS : 9001
               OHS : 7777 & 4443 (7777 & 4443 opened in Linux firewall)
-
 
         ```    
 4.   Start your VNC server with the following command,
@@ -248,9 +248,9 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 
 ## **STEP 5**: Run the scripts to create sample schema and insert sample data.
 
-  1.  Open the script  [forms_conversion_ddl.sql](./files/forms_conversion_ddl.sql) in SQL developer in VNC and execute the script. Make a note of the credential for order user in the script.
+  1.  Open the script  forms_conversion_ddl.sql in SQL developer in VNC and execute the script. Make a note of the credential for order user in the script.
   2.  The script creates the orders schema and orders user
-  3.  In the same session connect to orders user and run the insert script [forms_conversion_data_insert.sql](./files/forms_conversion_data_insert.sql)
+  3.  In the same session connect to orders user and run the insert script forms_conversion_data_insert.sql
 
 ## **STEP 6**: Compile the forms files.
 
@@ -281,6 +281,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
       ![](./images/order_form.png " ").
 
 *Note: If you have forms compiled in 11g version you will encounter errors if you have disable_item and enable_item procedures in your triggers and process as these functions are deprecated, if you do see errors then make the following changes .*
+
     ````
     <copy>
         procedure enable_disable_regular_items is
@@ -342,6 +343,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 
     </copy>
     ````
+    
 ## **STEP 7**: Convert the Forms to XML files
 
 Before migrating  to Oracle Applications Express, Forms file have to be converted to XML file using frmf2xml utility provided with Oracle Forms Service Image. In the downloaded scripts, formsXMLconvert.sh script that can be run to convert all the Forms files in the directory where it is run from.
