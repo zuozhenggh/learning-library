@@ -14,14 +14,15 @@ Watch our short video that explains the partitioning feature in Oracle GoldenGat
   - Install Oracle GoldenGate Veridata
   - Create Datasource Connections for source and target databases.
   - Connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.
-  - Create Groups and Compare Pairs.
+  - Create Groups, Compare Pairs, and jobs.
+  - Run jobs.
 
 
 ## Lab Breakdown
   - **Lab 1:** Install and Configure Oracle GoldenGate Veridata
   - **Lab 2:** Create Datasource Connections
   - **Lab 3:** Connect the Oracle GoldenGate Veridata Agent to Autonomous Data Warehouse
-  - **Lab 4:** Create Groups and Compare Pairs
+  - **Lab 4:** Create Groups, Compare Pairs, and Jobs
 
 
 ## Workshop Prerequisites
