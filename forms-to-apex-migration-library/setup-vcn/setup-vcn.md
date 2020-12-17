@@ -1,4 +1,4 @@
-# Virtual Cloud Network
+# Setup VCN
 
 
 ## Introduction

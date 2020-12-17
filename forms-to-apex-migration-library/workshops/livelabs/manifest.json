@@ -1,16 +1,17 @@
 {
+    "workshoptitle": "Migration of Oracle Forms to Oracle APEX on ATP",
     "tutorials": [
         {
-            "title": "Workshop Overview",
-            "filename":"../../forms-to-apex-migration-library/introduction/introduction.md"
-        },
-        {
-          "title": "Sign Up for Free Trial",
+          "title": "Prerequisites",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
+            "title": "Introduction",
+            "filename":"../../forms-to-apex-migration-library/introduction/introduction.md"
+        },
+        {
             "title": "Lab 1: Generate SSH Keys",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/0-intro-and-setup/generate-ssh-keys.md"
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
 		    {
             "title": "Lab 2: Setup VCN",
