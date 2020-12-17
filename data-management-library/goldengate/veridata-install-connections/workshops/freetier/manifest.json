@@ -35,9 +35,8 @@
           {
               "title": "Lab 5: View Reports ",
               "description": "This lab walks you through the steps to view comparision Reports.",
-              "filename": "./../../ggv-create-groups-compare-pairs/ggv-Reports.md"
-          }
-
+              "filename": "./../../ggv-reports/ggv-reports.md"
+            }
 
        ]
-  }
+    }
