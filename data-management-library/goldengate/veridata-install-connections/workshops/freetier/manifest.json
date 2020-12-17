@@ -31,6 +31,12 @@
               "description": "This lab walks you through the steps to create groups and compare pairs.",
               "filename": "./../../ggv-create-groups-compare-pairs/ggv-create-groups-compare-pairs.md"
           }
+          ,
+          {
+              "title": "Lab 5: View Reports ",
+              "description": "This lab walks you through the steps to view comparision Reports.",
+              "filename": "./../../ggv-create-groups-compare-pairs/ggv-Reports.md"
+          }
 
 
        ]

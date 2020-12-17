@@ -1,6 +1,6 @@
 # Overview                                
 
-The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet, create groups and compare pairs,
+The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet, create groups and compare pairs, create groups, configure compare pairs, create and execute jobs, view reports, 
 
 ## What is Oracle GoldenGate Veridata?
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
@@ -16,13 +16,14 @@ Watch our short video that explains the partitioning feature in Oracle GoldenGat
   - Connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.
   - Create Groups, Compare Pairs, and jobs.
   - Run jobs.
-
+  - View Reports.
 
 ## Lab Breakdown
   - **Lab 1:** Install and Configure Oracle GoldenGate Veridata
   - **Lab 2:** Create Datasource Connections
   - **Lab 3:** Connect the Oracle GoldenGate Veridata Agent to Autonomous Data Warehouse
   - **Lab 4:** Create Groups, Compare Pairs, and Jobs
+  - **Lab 5:** View Reports
 
 
 ## Workshop Prerequisites
