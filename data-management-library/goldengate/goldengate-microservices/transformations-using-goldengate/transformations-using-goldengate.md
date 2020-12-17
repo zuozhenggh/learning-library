@@ -114,7 +114,7 @@ COLMAP (USEDEFAULTS, CUST_EMAIL = P_MAIL.desc_param,CUSTOMER_NAME
   ```
 
   ```
-  <copy>5.	CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2) 
+  <copy>CREATE OR REPLACE PROCEDURE  P_MAIL (CODE_PARAM IN VARCHAR2,DESC_PARAM  OUT VARCHAR2) 
    IS  
    begin 
    select F_MAIL('CODE_PARAM') 
@@ -154,7 +154,7 @@ commit;</copy>
 ```
 <copy>select CUST_EMAIL from soe.customers where customer_ID between 562 and 570;</copy>
 ```
-## **STEP 2:** Using Environment Variables/Tokens 
+## **STEP 3:** Using Environment Variables/Tokens 
 
 1.	Go to Admin Server console for deployment **Boston** (http://localhost:17001) and edit the parameter of the **REPLICAT IREP** with the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command : 
 

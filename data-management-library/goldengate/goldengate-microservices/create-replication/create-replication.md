@@ -344,7 +344,7 @@ create an alias for the target database User
   ![](./images/g17.png " ")
   
 ```
-<copyhttps://<your ip address>/Boston/adminsrvr/ </copy>
+<copy>https://<your ip address>/Boston/adminsrvr/</copy>
 ```
   ![](./images/g18.png " ")
 
