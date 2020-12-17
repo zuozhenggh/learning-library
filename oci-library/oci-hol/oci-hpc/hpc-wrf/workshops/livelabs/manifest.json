@@ -22,12 +22,12 @@
         {
             "title": "Lab 3: WRF/WPS Install, Setup, and Run",
             "description": "Simple Guide on setting up, configuring, and running WRF on OCI",
-            "filename": "../../wrf-wps-setup-install-run/wrf-wps.md"
+            "filename": "../../wrf-wps-setup-install-run/wrf-wps-setup-install-run.md"
         },
         {
             "title": "Lab 4: Changing Experiment Data with WRF",
             "description": "Modifying guide from previous lab to choose new locations and times to run WRF simulations",
-            "filename": "../../wrf-change-experiments/wrf-wps-changing-data.md"
+            "filename": "../../wrf-change-experiments/wrf-wps-change-experiments.md"
         }
     ]
 }
