@@ -38,9 +38,9 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/terminal3.png " ")
 
-    ````
+````
     <copy>sudo su - oracle</copy>
-    ````
+````
 1.	login the oracle user sudo su - oracle  
 2.	Start the database 
     cd ~/Desktop/Scripts/HOL/Lab1  
