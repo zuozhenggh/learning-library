@@ -55,8 +55,10 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
 1. We need to adjust the namelist.wps file to zero in on a location of choice. It will be a small grid (10,000 x 10,000 meters) with Houston Texas USA as the centerpoint.  
    
     ```
+    <copy>
     cd ~/WRF/WPS-4.1
     vi namelist.wps
+    </copy>
     ```  
     **Please change all the values below to your liking based on your experiment**.  
     - `max_dom` An integer specifying the total number of domains, including the parent domain, in the simulation. Default value is 1.  
@@ -117,8 +119,10 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
 2. Now that we have put in the information for our geographic area of interest (This guide uses Houston TX USA as the centerpoint) lets use ncview to verify we have the correct location after runing the geogrid program.
     
     ```
+    <copy>
     ./geogrid.exe
     ncview geo_em.d01.nc
+    </copy>
     ``` 
 3. Use the 2d var to check landmask to verify location. If satisfied with image then we are done creating domain.
 
@@ -135,9 +139,11 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 
 4. Lets navigate to the correct directory and edit pre-created script to download data.
     ```
+    <copy>
     cd ~/WRF
     cd scripts
     vi download_gfs.sh
+    </copy>
     ```
     The script will be the following:  
     You just need to edit the `year`, `month`, and `day` for the data you wish to download.  
@@ -170,19 +176,24 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 5. The following commands make the script executable and run it to download the data:
     
     ```
+    <copy>
     chmod +x download_gfs.sh
     ./download_gfs.sh
+    </copy>
     ```
 6. Now that we have downloaded our data, lets go through the process of overlaying it over our domain. We will use ungrib and metgrid to accomplish this.  We will break this up into two sections: a configure  and a run section.
 
     **Configure:**
     ```
+    <copy>
     cd ~/WRF/WPS-4.1
     rm ./Vtable
     ln -s ungrib/Variable_Tables/Vtable.GFS ./Vtable
     ./link_grib.csh ~/WRF/GFS/
     vi namelist.wps  
+    </copy>
     ```
+
     **Please change all the values below based on the files you downloaded**.  
     - `start_date` in the form: Year-Month-Day_hour:minute:second  
     - `end_date`  in the form: Year-Month-Day_hour:minute:second  
@@ -203,15 +214,19 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 
     **Run:**
     ```
+    <copy>
     ./ungrib.exe
     rm ./METGRID.TBL 
     ln -s metgrid/METGRID.TBL.ARW ./METGRID.TBL
     ./metgrid.exe
+    </copy>
     ```
 7. We can look at the results by using ncview and looking at skintemp to see the value of the data downloaded.
     
     ```
+    <copy>
     ncview met_em.d01.2020-12-09_00\:00\:00.nc 
+    </copy>
     ```
     ![Screenshot of ncview](images/nc22.png)
 
@@ -219,11 +234,13 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 1. We have downloded data to represent a geographic location and we have added meteorological data to it; its finally time to run WRF using real data.
 
     ```
+    <copy>
     cd ~/WRF/WRF-4.1.5
     cd run
     rm met_em*
     ln -s ../../WPS-4.1/met_em* .  
     vi namelist.input
+    </copy>
     ```
 2. In the namelist.input file we need to edit the contents to reflect our geographic area/domain and our date and interval.  
 
@@ -347,14 +364,18 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 3. Now we can finally run real.exe and wrf.exe. This program takes a while to run. To help speed this up, we will use MPI to run the programs on multiple cores of our shape. Remember this guide was written using a VM.Standard2.16 shape, so we will run real.exe on 2 cores.
 
     ```
+    <copy>
     cat /proc/cpuinfo #To get cpu infor (use if you forgot your OCI shape).
     mpirun -n 2 ./real.exe #This has real.exe running on two cores
     cat rsl.out.0000 #Use this command check for errors
+    </copy>
     ```
 
 4. We can look at the results by using ncview and looking at T2 to see the value of the data downloaded.
     ```
+    <copy>
     ncview wrfinput_d01
+    </copy>
     ```
     Here you can see the temperature at two meters for the target area.
     ![Screenshot of ncview](images/nc23.png)  
@@ -363,14 +384,20 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 5. We have our input, now lets use it to generate a prediction. We will run real.exe using 10 cores.
 
     ```
+    <copy>
     mpirun -n 10 ./wrf.exe #This will run on 10 cores
     tail -F rsl.out.0000 #can be used to check for errors and progress.
+    </copy>
     ```
+
 6. We can look at the results of our prediction with ncview with the following:
     ```
+    <copy>
     ncview wrfout_d01_2020-11-20_06\:00\:00 
+    </copy>
     ```
     ![Screenshot of ncview](images/nc24.png)  
+
 From our prediction you can see that some changes have occured when we look at the same area six hours later. There are many variables to explore, so have fun.
 
 ## Acknowledgements

@@ -1,9 +1,9 @@
-# WRF Setup, Installation, and Run
+# WRF/WPS Setup, Install, and Run
 
 ## Introduction
 This lab is going to discuss and guide you through how to set up and run WRF on OCI infrastructure. This guide is intended to show you how to transform a vanilla Ubuntu image into an environment where you will be able to run experiments and run weather simulations. I'll also provide a custom image just incase you want to run WRF without learning how to set it up.
 
-[WRF Custom Image](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lRqMYYN5VTdSgBz9f8nv7Tz5mzMGMqr7wlN2Y_q6g6GHmTdc9GX8lokgmTui81BA/n/hpc_limited_availability/b/Demo_Materials/o/WRF_DEMOV2)
+Download the [WRF Custom Image](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lRqMYYN5VTdSgBz9f8nv7Tz5mzMGMqr7wlN2Y_q6g6GHmTdc9GX8lokgmTui81BA/n/hpc_limited_availability/b/Demo_Materials/o/WRF_DEMOV2).
 
 Estimated Lab Time:  90 minutes
 
@@ -52,7 +52,9 @@ The technologies used in this lab are:
 ## **STEP 1**: Setup Gnome Desktop
 
 1. There are a number of different desktop technologies you can use, but this guide will go over setting up and congifuring Gnome desktop as it is the default for Ubuntu. The following steps will download, install, and configure Gnome Desktop for our Ubuntu 18.04 instance.
+
     ```
+    <copy>
     sudo apt update
     sudo apt upgrade -y
     sudo reboot # Wait about 60 seconds before proceeding
@@ -63,34 +65,53 @@ The technologies used in this lab are:
     sudo systemctl enable gdm
     vncserver # DO NOT MAKE READ ONLY and password should be no greater than 8 characters
     vncserver -kill :*
-    ```    
-2.	vi ~/.vnc/xstartup  
-    **Please enter in the following:**
+    </copy>
     ```
+
+2.	Run the command:
+
+    ```
+    <copy>
+    vi ~/.vnc/xstartup
+    </copy>
+    ```
+
+    **Please enter in the following:**
+
+    ```
+    <copy>
     #!/bin/sh  
     [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup  
     [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources  
     vncconfig -iconic &  
     dbus-launch --exit-with-session gnome-session &  
+    </copy>
     ```
+
     **To exit, simply press esc, then shift: followed by wq enter** 
 
     It should should look this:  
     ![Screenshot of vim editor](images/vnc-vi.png)
 
 3. Make the xstartup file executable and then run the vnc server.
+
     ```
+    <copy>
     sudo chmod +x ~/.vnc/xstartup
     vncserver -geometry 1440x900
+    </copy>
     ```
+
 ## **STEP 2**: Connecting to the Gnome Desktop
 
 We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our instance.
 
 1. Open a local terminal
-    
+
     Run the following command with information pertaining to your instance: ssh -L 5901:localhost:5901 ubuntu@IPADDRESS
-![Screenshot of ssh](images/ssh.png)
+
+    ![Screenshot of ssh](images/ssh.png)
+
 2. Open TigerVNC Viewer
 
     Type `localhost:1` in the VNC Server: section  
@@ -107,6 +128,7 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
 1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Activities on the top left, then click show applications. Search for and open a terminal. Perform the following in the terminal.
     
     ```
+    <copy>
     sudo apt install gfortran -y   
     # Verify install with command: which gfortran    
     # Should return a path: /usr/bin/gfortran  
@@ -124,112 +146,159 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     sudo apt install htop  
     sudo apt install mc -y    
     sudo apt install ncview -y   
-    ```  
+    </copy>
+    ```
+
 ## **STEP 4**: Downloading and Compiling libraries for WRF
+
 Now that we have installed most dependencies we will need for WRF, lets begin to compile the libraries WRF needs to function.
 
-### **4.1**: Creating folder structure and downloading libraries
+### Creating folder structure and downloading libraries
+
 1. Enter in the following commands in the remote terminal to begin setting up the required folder structure.
+
     ```
+    <copy>
     mkdir WRF
     cd WRF
     mkdir downloads
     cd downloads
+    </copy>
     ```
-2. In the downloads directory lets download all the libraries we need with the following commands.  
+
+2. In the downloads directory lets download all the libraries we need with the following commands.
+
     ```
+    <copy>
     curl -O ftp://ftp.unidata.ucar.edu/pub/netcdf/old/netcdf-4.1.2.tar.gz  
     curl -O https://www.zlib.net/zlib-1.2.11.tar.gz  
     curl -O ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng16/libpng-1.6.37.tar.gz  
     curl -O https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/jasper-1.900.1.tar.gz  
     curl -O https://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz
+    </copy>
     ```
-3. Insteading of unziping the files one by one, lets use a **loop** to do it for us then go back to our WRF directory.  
+
+3. Insteading of unziping the files one by one, lets use a **loop** to do it for us then go back to our WRF directory.
+
     ```
+    <copy>
     for i in *.gz ; do tar -xzf $i ; done
     cd ~/WRF  
+    </copy>
     ```
+
 4. Now that we are back into the WRF directory, lets set up the folder structure for our libraries for WRF. WE will also create an environmental variable to reference the library path to be used later in the guide.
+
     ```
+    <copy>
     mkdir libs  
     cd libs  
     mkdir netcdf  
     mkdir mpich  
     mkdir grib2 (this will be used for the jasper, libpng, and zlib libraries)  
     export LIBDIR=~/WRF/libs
+    </copy>
     ```
-### **4.2**: Compiling grib2 library
+
+### Compiling grib2 library
+
 The grib2 library is actually a compilation of three separate libraries, specifically, zlib, jasper, and libpng.
+
 1. Compiling Zlib
+
     ``` 
+    <copy>
     cd ~/WRF/downloads
     cd zlib-1.2.11
     ./configure --prefix=$LIBDIR/grib2
     make
     make install
-    ```   
-2. Compiling libpng
+    </copy>
     ```
+
+2. Compiling libpng
+
+    ```
+    <copy>
     cd ~/WRF/downloads
     cd libpng-1.6.37/
     ./configure --prefix=$LIBDIR/grib2 LDFLAGS="-L$LIBDIR/grib2/lib" CPPFLAGS="-I$LIBDIR/grib2/include"
     make
     make install
+    </copy>
     ```
+
 3. Compiling jasper
+
     ```
+    <copy>
     cd ~/WRF/downloads
     cd jasper-1.900.1/
     ./configure --prefix=$LIBDIR/grib2
     make
     make install
+    </copy>
     ```
 
 4. Compiling netcdf library
+
     ```
+    <copy>
     cd ~/WRF/downloads
     cd netcdf-4.1.2/
     ./configure --prefix=$LIBDIR/netcdf --disable-dap --disable-netcdf-4
     make
     make install
+    </copy>
     ```
 
 5. Compiling mpich library
+
     ```
+    <copy>
     cd ~/WRF/downloads
     cd mpich-3.3.2/
     ./configure --prefix=$LIBDIR/mpich
     make
     make install
+    </copy>
     ```
 
 ## **STEP 5**: Compiling WRF & WPS
+
 1. Now that we have set up the folder structure for the libraries, we can begin to download and compile WRF and WPS. The following code block will download and place the programs in the appropriate locations.
-    
+
     ```
+    <copy>
     cd ~/WRF/downloads
     wget https://github.com/wrf-model/WRF/archive/v4.1.5.tar.gz
     wget https://github.com/wrf-model/WPS/archive/v4.1.tar.gz
     for i in *.gz ; do tar -xzf $i ; done
     mv WRF-4.1.5/ ~/WRF/
     mv WPS-4.1/ ~/WRF/
+    </copy>
     ```
+
 2. Before we can compile WRF we need to set up some environment variables so that the program can find and use the libraries we have compiled to function.
-    
+
     ```
+    <copy>
     cd .. or /home/ubuntu/WRF/downloads
     cd WRF-4.1.5/
     export NETCDF=$LIBDIR/netcdf
     export PATH=$LIBDIR/mpich/bin:$PATH
     export JASPERLIB=$LIBDIR/grib2/lib
     export JASPERINC=$LIBDIR/grib2/include
+    </copy>
     ```
+
 3. Now that we have referenced all the libraries to environment variables, we can finally compile WRF. For this lab we will be compiling WRF to be able to use real meteorological data tha has been collected. We will break this up into two sections: a configure  and a compile section.
 
     **Configure:**  
     We choose option 34 to go along with our choice of using gfortran/gcc and option 1 because we will not be covering nesting in this guide.
     
     ```
+    <copy>
     ./configure
     34 (dmpar)
     1
@@ -238,28 +307,34 @@ The grib2 library is actually a compilation of three separate libraries, specifi
         export LD_LIBRARY_PATH=$LIBDIR/netcdf/lib:$LD_LIBRARY_PATH   
         export PATH=$LIBDIR/mpich/bin:$PATHh
     source ~/.bashrc
+    </copy>
     ```
     **Compile:**  
     Here we compile WRF and test that it will run.
     
     ```
+    <copy>
     ./compile em_real
     cd main
     ./wrf.exe
     ./real.exe
+    </copy>
     ```
 4. Now that WRF has been compiled we need to compile WPS. WRF must be compiled first. Here we choose option 3 because we are using the a Linux operating system (Ubuntu) on x86 infrastructure (OCI VM.Standard2.16) along with the gfortran compiler.  
    
     ```
+    <copy>
     cd /home/ubuntu/WRF/WPS-4.1
     export WRF_DIR=/home/ubuntu/WRF/WRF-4.1.5/
     ./configure
     3
     ./compile
+    </copy>
     ```
 5. Now that WPS is compiled, we need to download the data that we will use to simulate the geography of the world. We will create a new folder to house this information. It takes a while to uncompress since we are using the reccommended high resolution files, so we are using PV dialog to generate a progress bar for us.  
     
     ```
+    <copy>
     cd /home/ubuntu/WRF
     mkdir GEOG
     cd GEOG/
@@ -267,9 +342,12 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     sudo apt-get install pv dialog -y
     (pv -n geog_high_res_mandatory.tar.gz| tar xzf - -C . ) \
     2>&1 | dialog --gauge "Extracting file..." 6 50
+    </copy>
     ```
 6. Now that we have downloaded and extracted the geography data we need move some files around to the correct location and delete some additional files we don't need. We will use midnight commander for this, but you can just use terminal comands if you like. The following after mc will be using the Midnight Commander interface, so **`DO NOT`** `copy the following entire code block into terminal`.
+
     ```
+    <copy>
     mc    #Opens Midnight Commander
     click on the left WPS_GEOG
     Use CTRL + T to highlight all the folders
@@ -282,13 +360,18 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     F8    #This deletes the highlighted file
     ENTER #This will confirm the choice
     F10 #This is used to exit Midnight commander
+    </copy>
     ```
 
-7. We need to adjust the namelist.wps file to zero in on a location of choice. I will be a small grid (10,000 x 10,000 meters) with Woburn Massachusetts USA as the centerpoint.  
+7. We need to adjust the namelist.wps file to zero in on a location of choice. I will be a small grid (10,000 x 10,000 meters) with Woburn Massachusetts USA as the centerpoint.
+
     ```
+    <copy>
     cd /home/ubuntu/WRF/WPS-4.1
     vi namelist.wps
-    ```  
+    </copy>
+    ```
+
     **Please change all the values below to your liking based on your experiment**.
     - `max_dom`: An integer specifying the total number of domains, including the parent domain, in the simulation. Default value is 1.  
     - `e_we`: Integers specifying the full west-east dimension of your grid. No default value.  
@@ -300,7 +383,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     - `truelat1`: A real value specifying the first true latitude for the Lambert conformal projection, or the only true latitude for the Mercator and polar stereographic projections.   
     - `truelat2`: A real value specifying the second true latitude for the Lambert conformal conic projection.   
     - `stand_lon`: A real value specifying the longitude that is parallel with the y-axis in the Lambert conformal and polar stereographic projections. For the regular latitude-longitude projection, this value gives the rotation about the earth's geographic poles.    
-    - `geog_data_path`: A character string giving the path, either relative or absolute, to the directory where the geographical data directories may be found.  
+    - `geog_data_path`: A character string giving the path, either relative or absolute, to the directory where the geographical data directories may be found.
+
     ```
         &share  
         wrf_core = 'ARW',  
@@ -346,10 +430,14 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     **All of these changes are for a geographic area with Woburn MA as the epicenter.**  
 
 8. Now that we have put in the information for our geographic area of interest (This guide uses Woburn MA USA as the centerpoint) lets use ncview to verify we have the correct location after runing the geogrid program.
+
     ```
+    <copy>
     ./geogrid.exe
     ncview geo_em.d01.nc
-    ``` 
+    </copy>
+    ```
+
     Use the 2d var to check landmask to verify location. If satisfied with image then we are done creating domain.
 
     ![Screenshot of ncview](images/nc1.png)
@@ -359,18 +447,23 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     1. In a web browser navigate to  https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/
     2. Click the link with the latest date (ex gfs.20201120/ as today is November 20th, 2020) 
     3.	Choose 00  
-Don’t actually download anything. We will create a script for that. We are going the lower resolution for an easier to handle datasize for this lab so 0p50 instead of 0p25. Use 0p25 if you have additional storage and want higher resolution/more reliable data. Need to download the number of files for the amount of time you want to run. Each file is one hour of data at given interval. EX if you want to run for six hours you need gfs.t00z.pgrb2.0p50.f000, gfs.t00z.pgrb2.0p50.f003, and gfs.t00z.pgrb2.0p50.f006. 0p25 is in one hour steps and 0p50 is in 3 hour steps. For tutorial we will use only 6 hours worth of data. Feel free to use more as you become more comfortable using WRF later on.
+
+    Don’t actually download anything. We will create a script for that. We are going the lower resolution for an easier to handle datasize for this lab so 0p50 instead of 0p25. Use 0p25 if you have additional storage and want higher resolution/more reliable data. Need to download the number of files for the amount of time you want to run. Each file is one hour of data at given interval. EX if you want to run for six hours you need gfs.t00z.pgrb2.0p50.f000, gfs.t00z.pgrb2.0p50.f003, and gfs.t00z.pgrb2.0p50.f006. 0p25 is in one hour steps and 0p50 is in 3 hour steps. For tutorial we will use only 6 hours worth of data. Feel free to use more as you become more comfortable using WRF later on.
 
 10. Lets navigate to the correct directory and create our script to download data.
-    
+
     ```
+    <copy>
     cd ~/WRF
     mkdir scripts
     mkdir GFS
     cd scripts
     vi download_gfs.sh
+    </copy>
     ```
-11. The script will be the following:  
+
+11. The script will be the following:
+
     ```
     #!/bin/bash  
 
@@ -394,29 +487,37 @@ Don’t actually download anything. We will create a script for that. We are goi
             wget -O ${inputdir}/${file} ${url}  
     done  
     ```
+
     **To exit, simply press esc, then shift: followed by wq enter**   
     **This script will download SIX hours of data for the date 11/20/20 at the 0p50 resolution. Please adjust to fit your needs.**  
 
 12. The following commands make the script executable and run it to download the data:
    
     ```
+    <copy>
     chmod +x download_gfs.sh
     ./download_gfs.sh
+    </copy>
     ```
+
 13. Now that we have downloaded our data, lets go through the process of overlaying it over our domain. We will use ungrib and metgrid to accomplish this.  We will break this up into two sections: a configure  and a run section.
 
     **Configure:**
+
     ```
+    <copy>
     cd ~/WRF/WPS-4.1
     ln -s ungrib/Variable_Tables/Vtable.GFS ./Vtable
     ./link_grib.csh ~/WRF/GFS/
     vi namelist.wps  
+    </copy>
     ```
-    
+
     **Please change all the values below based on the files you downloaded**.  
     - `start_date` in the form: Year-Month-Day_hour:minute:second  
     - `end_date`  in the form: Year-Month-Day_hour:minute:second  
     - `interval seconds`: The integer number of seconds between time-varying meteorological input files. No default value.
+
     ```
     &share  
     wrf_core = 'ARW',  
@@ -431,29 +532,39 @@ Don’t actually download anything. We will create a script for that. We are goi
 
     **Run:**
     ```
+    <copy>
     ./ungrib.exe
     ln -s metgrid/METGRID.TBL.ARW ./METGRID.TBL
     ./metgrid.exe
+    </copy>
     ```
+
 14. We can look at the results by using ncview and looking at skintemp to see the value of the data we downloaded.
+
     ```
+    <copy>
     ncview met_em.d01.2020-11-20_00\:00\:00.nc
+    </copy>
     ```
     ![Screenshot of ncview](images/nc2.png)
 
 ## **STEP 6**: Running Real and WRF
+
 1. We have downloded data to represent a geographic location and we have added meteorological data to it; its finally time to run WRF using real data.
 
     ```
+    <copy>
     cd ~/WRF/WRF-4.1.5
     cd run
     ln -s ../../WPS-4.1/met_em* .
     vi namelist.input
+    </copy>
     ```
+
 2. In the namelist.input file we need to edit the contents to reflect our geographic area/domain and our date and interval.  
 **Please change all the values to your liking based on your experiment**.  
     - `run_days`: Run time in days.
-    - `run_hours`: Run time in hours. **Note**: if it is more than 1 day, you may use both run_days and run_hours or just run_hours. e.g. if the total run length is 36 hrs, you may set run_days = 1, and run_hours = 12, or run_days = 0, and run_hours = 36.
+    - `run_hours`: Run time in hours. **Note**: if it is more than 1 day, you may use both run\_days and run\_hours or just run\_hours. e.g. if the total run length is 36 hrs, you may set run\_days = 1, and run\_hours = 12, or run\_days = 0, and run\_hours = 36.
     - `run_minutes`: Run time in minutes.
     - `run_seconds`: Run time in seconds.
     - `start_year`: A 4 digit year of starting time.  
@@ -474,6 +585,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     - `num_metgrid_levels`: The number of vertical levels in WPS output.
         - Type ncdump -h on one of the met_em* files to find out this number.
     - `w_damping`: vertical velocity damping flag (for operational use). Set to 1.
+
     ```
     &time_control
     run_days                            = 0,
@@ -569,33 +681,46 @@ Don’t actually download anything. We will create a script for that. We are goi
     nio_groups = 1,
     /
     ```
+
     **To exit, simply press esc, then shift: followed by wq enter**  
 
 3. Now we can finally run real.exe and wrf.exe. This program takes a while to run. To help speed this up, we will use MPI to run the programs on multiple cores of our shape. Remember this guide was written using a VM.Standard2.16 shape, so we will run real.exe on 2 cores.
 
     ```
+    <copy>
     cat /proc/cpuinfo #To get cpu infor (use if you forgot your OCI shape).
     mpirun -n 2 ./real.exe #This has real.exe running on two cores
     cat rsl.out.0000 #Use this command check for errors
+    </copy>
     ```
 
 4. Lets use ncview to get a look at our input file.
+
     ```
+    <copy>
     ncview wrfinput_d01
+    </copy>
     ```
+
     Here you can see the temperature at two meters for the target area.
     ![Screenshot of ncview](images/nc4.png)  
-    
+
 
 5. We have our input, now lets use it to generate a prediction.
 
     ```
+    <copy>
     mpirun -n 10 ./wrf.exe #This will run on 10 cores
     tail -F rsl.out.0000 #can be used to check for errors and progress. 
+    </copy>
     ```
+
 6. We can check our prediction with the following:
+
     ```
+    <copy>
     ncview wrfout_d01_2020-11-20_06\:00\:00 
+    </copy>
     ```
 
     ![Screenshot of ncview](images/nc5.png)  
@@ -607,10 +732,12 @@ Don’t actually download anything. We will create a script for that. We are goi
     You may proceed to the next lab to learn what to do to change up the experiment with new data.
 
 ## Acknowledgements
+
 * **Author** - Brian Bennett, Solution Engineer, Big Compute
 * **Last Updated By/Date** - Brian Bennett, Big Compute, December 2020
 
 ## Need Help?
+
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
