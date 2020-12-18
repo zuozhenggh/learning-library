@@ -366,7 +366,7 @@ You’ll see an error that you have to specify the deployment name and it will g
 
 ## Learn More
 
-* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/installing/installingmicroservices-architecture-oracle-goldengate.html#GUID-2E805D77-8362-460A-BA61D267FC303863 )
+* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
