@@ -72,7 +72,7 @@ Since we’ve already done multiple labs, this one will take what we used so far
 ![](./images/h7.png " ")
 
 
-## **STEP 4**: Trandata for Boston schema SOE 
+## **STEP 3**: Trandata for Boston schema SOE 
 
 ```
 <copy> 
@@ -85,7 +85,7 @@ cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
 
 ![](./images/h9.png " ")
 
-## **STEP 5**: Add Extract to Boston Deployment 
+## **STEP 4**: Add Extract to Boston Deployment 
 
 ```
 <copy>./add_Extract2.sh Welcome1 17001 EXTSOE1  </copy>
@@ -98,7 +98,7 @@ cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
 
 ![](./images/h11.png " ")
 
-## **STEP 6**: Distribution Path Creation 
+## **STEP 5**: Distribution Path Creation 
 
 ```
 <copy>./add_DistroPath2.sh Welcome1 17002 SOE2SOE1 bb 16003 ba</copy>
@@ -112,7 +112,7 @@ cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
 
 ![](./images/h13.png " ")
 
-## **STEP 7**: Distribution path from Boston to connect to Atlanta 
+## **STEP 6**: Distribution path from Boston to connect to Atlanta 
 
 ```
 <copy>./add_DistroPath2.sh Welcome1 17002 SOE2SOE1 bb 16003 ba</copy>
@@ -218,7 +218,7 @@ You may now *proceed to the next lab*
 
 ## Learn More
 
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
+* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/installing/installingmicroservices-architecture-oracle-goldengate.html#GUID-2E805D77-8362-460A-BA61D267FC303863 )
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S., Data Integration, December 2020

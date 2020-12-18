@@ -1,4 +1,4 @@
-# LAST LAB: Setup of GoldenGate Microservices - Adminclient
+# Future LAB: Setup of GoldenGate Microservices - Adminclient
 
 ## Introduction
 
@@ -366,7 +366,7 @@ You’ll see an error that you have to specify the deployment name and it will g
 
 ## Learn More
 
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
+* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/installing/installingmicroservices-architecture-oracle-goldengate.html#GUID-2E805D77-8362-460A-BA61D267FC303863 )
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
