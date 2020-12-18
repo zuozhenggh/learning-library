@@ -20,7 +20,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-freetier.md"
         },
         {
-            "title": "Lab 3: WRF/WPS Install, Setup, and Run",
+            "title": "Lab 3: WRF/WPS Setup, Install, and Run",
             "description": "Simple Guide on setting up, configuring, and running WRF on OCI",
             "filename": "../../wrf-wps-setup-install-run/wrf-wps-setup-install-run.md"
         },
