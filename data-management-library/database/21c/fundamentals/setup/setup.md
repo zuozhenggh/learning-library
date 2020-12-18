@@ -72,7 +72,7 @@ In this lab, you will:
 
     ```
     <copy>
-    unzip Cloud_21c_Labs.zip
+    unzip Cloud_21c_Labs_12_18_20.zip
     </copy>
     ```
 
