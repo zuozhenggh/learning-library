@@ -33,15 +33,16 @@
           }
           ,
           {
-              "title": "Lab 5: View Reports ",
-              "description": "This lab walks you through the steps to view comparision Reports.",
-              "filename": "./../../ggv-reports/ggv-reports.md"
-            }
-            ,
-            {
-              "title": "Lab 6: How to Repair Data ",
+              "title": "Lab 5: How to Repair Data ",
               "description": "This lab walks you through the steps to repair jobs and data.",
               "filename": "./../../ggv-repair-data/ggv-repair-data.md"
             }
+            ,
+            {
+                "title": "Lab 6: View Reports ",
+                "description": "This lab walks you through the steps to view comparision Reports.",
+                "filename": "./../../ggv-reports/ggv-reports.md"
+              }
+
        ]
     }

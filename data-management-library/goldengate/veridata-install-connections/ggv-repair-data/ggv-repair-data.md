@@ -15,9 +15,15 @@ You can also look at these SQL Statements before the Oracle GoldenGate Veridata 
 + **Groups and Compare Pairs have been created as described in Lab 4**
 + **Jobs have been created and executed as described in Lab 4**
 
-To begin with, ensure that you have completed Lab 4
+To begin with, ensure that you have completed Lab 4.
 ## **STEP 1:** Repair Out-of-Sync Jobs
-
+  To repair out-of-sync jobs:
+  1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for generating SQL statements.
+  2. From the table under **Finished Jobs**, click the **Out-Of-Sync** link for the selected Job.
+  3. Click **Repair**.
+  The out-of-sync records for the selected job is repaired.
+    ![](./images/5-repaired-data.png " ")
+    
 ## **STEP 2:** Generate SQL files
   To generate SQL files:
   1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for generating SQL statements.
