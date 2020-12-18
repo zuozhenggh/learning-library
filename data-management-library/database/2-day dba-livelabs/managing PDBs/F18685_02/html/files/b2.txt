@@ -1,0 +1,10 @@
+This screenshot shows the Actions menu. The following options are available:
+- Create
+- Clone
+- Remote Clone
+- Relocate
+- Refresh
+- Plug
+- Unplug
+- Drop
+- Set Storage Limits

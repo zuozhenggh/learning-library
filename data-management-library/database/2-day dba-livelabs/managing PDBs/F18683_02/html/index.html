@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Part number: F18683-02 -->
+    <!-- Published date: May 2019 -->
+    <!-- Template date: October 15, 2018 -->
+    <!-- Put the content ID of this OBE between the empty quotation marks for 'content' below -->
+    <meta name="contentid" content="26753">
+    <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
+    <!-- Use an imperative verb in the title. -->
+    <title>Access and Configure Container Page for a CDB using EM Express</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="description" content="This tutorial shows you how to access container page and configure Oracle managed files for a container database.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/obe-lite.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery.tocify.jd.js"></script>
+    <script src="js/leftnav.js"></script>
+     <link rel="stylesheet" href="css/single-source.css">
+    <script src="js/singlesource.js"></script>
+    <script>
+$(function () {
+addOption("opt-release-19c", "19c");
+addOption("opt-release-18c", "18c");
+
+singleSource();
+});
+</script> 
+  </head>
+  <body>
+    <header>
+      <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com"
+
+          class="oracle-logo"> <img src="img/oracle_doc_logo.png" alt="Oracle Documentation"
+
+            style="max-width: none;" height="22" width="236"></a> </div>
+    </header>
+    <!--end header-->
+    <div id="content">
+      <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+      <!-- Use an imperative verb in the title. -->
+      <h1><img src="img/obe_tag.png" alt="Oracle by Example branding" align="middle">Access
+        and Configure Container Page for a CDB Using EM Express</h1>
+      <div class="w1024" style="clear:both; position:relative; margin-top:40px;">
+        <div class="navbackwide border-right"><!-- --></div>
+        <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+        <div id="sidebar"><!-- -->
+          <div class="left-nav-tut"><!-- -->
+            <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+            <div id="navbar" class="left-nav-w"><!-- -->
+              <div id="toc" class="tocify"><!-- --></div>
+            </div>
+          </div>
+        </div>
+        <div id="bookContainer">
+          <article>
+            <section>
+              <h2><img src="img/32_begin.png" alt="section 0" class="num_circ" height="32"
+
+                  width="32">Before You Begin</h2>
+              <p>This 10-minute tutorial shows you how to access container page
+                and configure Oracle managed files for a container database.</p>
+              <p><strong>Select the Oracle Database release:</strong> <span id="dropdown"></span></p>
+              <h3>Background</h3>
+              <p>An Oracle Database can contain a portable collection of
+                schemas, schema objects, and nonschema objects that appear to an
+                Oracle Net client as a separate database. The self-contained
+                collection is called a PDB. A CDB can include zero or more PDBs.</p>
+              <p>EM Express enables database administrators to manage a CDB and
+                its PDBs. Many of the features that EM Express provides for
+                managing PDBs in a CDB are available on the Containers page of
+                the CDB in EM Express. EM Express provides the Containers page
+                for CDBs and for an application root in an application
+                container. The Containers page is not provided for non-CDBs.</p>
+              <h3>What Do You Need?</h3>
+              <ul>
+               <li>Oracle Database <span class="opt-release-18c">18c</span><span
+
+                    class="opt-release-19c">19c</span>
+                 <p class="opt-release-19c"><strong>Note: </strong>Starting with Oracle Database 19c,
+                    Oracle EM Express, the default management option for Oracle
+                    Database, is based on Java JET technology. Currently, only the Performance menu is available in the 19c JET version. Therefore, we
+                    are using the 18c Flash Oracle EM Express in our tutorials. Use the following
+                    command to revert to Flash Oracle EM Express: </p>
+                  <pre class="opt-release-19c">SQL&gt; @?/rdbms/admin/execemx emx</pre>
+                  <p class="opt-release-19c">To return to 19c JET Oracle EM Express, use the following
+                    command: </p>
+                  <pre class="opt-release-19c">SQL&gt; @?/rdbms/admin/execemx omx</pre>
+                </li>
+                <li>The container database (CDB) must be in read/write mode</li>
+              </ul>
+            </section>
+            <!-- ========================================================================================================================= -->
+            <section>
+              <hr>
+              <h2 id="section_1" role="button" style="text-align: left;"><img src="img/32_1.png"
+
+                  alt="section 1" class="num_circ" height="32" width="32">Access
+                the Container Page for a CDB</h2>
+              <ol>
+                <li>Enter the URL for EM Express for CDB in your browser and log
+                  in as the SYS user with SYSDBA privilege.
+                  <figure><img src="img/a1.png" alt="login page"> <figcaption><a
+
+                        href="files/a1.txt">Description of the illustration a1</a></figcaption>
+                  </figure>
+                </li>
+                <li>In the Status section of the Database Home page, click the <span
+
+                    style="font-weight: bold;">CDB (n PDBs)</span> link (where n
+                  is the number of PDBs in the CDB) to navigate to the
+                  Containers page for the CDB.
+                  <figure><img src="img/a2.png" alt="Database home page"> <figcaption><a
+
+                        href="files/a2.txt">Description of the illustration a2</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="section_3" role="button" style="text-align: left;"><img src="img/32_2.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">Configure
+                Oracle Managed Files for a CDB</h2>
+              <ol>
+                <li>In EM Express, ensure that you are in the Containers page
+                  for the ORCL CDB.</li>
+                <li>On the Containers page, click the <span style="font-weight: bold;">Configure
+                    Oracle-Managed Files </span>button.
+                  <figure><img src="img/b2.png" alt="Containers page"> <figcaption><a
+
+                        href="files/b2.txt">Description of the illustration b2</a></figcaption>
+                  </figure>
+                </li>
+                <li>The Configure Oracle-Managed Files wizard appears. Specify
+                  values for these fields in the Configure Oracle-Managed Files
+                  wizard and click <span style="font-weight: bold;">OK</span>:
+                  <ul>
+                    <li>Scope: In this example, both Memory and SPFile are
+                      selected. Selecting Memory changes the value of the
+                      parameter immediately and selecting SPFile retains the
+                      value so that it remains in effect after the database is
+                      restarted.</li>
+                    <li>Deferred: In this example, deferred is not specified, so
+                      that the value of the parameter changes immediately.</li>
+                    <li>Value: The directory you specify will be the destination
+                      of Oracle Managed Files.</li>
+                    <li>Comment: You may optionally enter a comment regarding
+                      the change you made.</li>
+                  </ul>
+                  <figure><img src="img/b3.png" alt="configured oracle managed files">
+                    <figcaption><a href="files/b3.txt">Description of the
+                        illustration b3</a></figcaption> </figure>
+                </li>
+                <li>The Confirmation box appears stating that the default
+                  directory of the Oracle Managed Files has been set to the
+                  specified location. Click <span style="font-weight: bold;">OK</span>.
+                  <figure><img src="img/b4.png" alt="status page"><figcaption><a
+
+                        href="files/b4.txt">Description of the illustration b4</a></figcaption>
+                  </figure>
+                  <p>Notice that the Status section of the Containers page,
+                    shows the Using Oracle-Managed Files field value as <span style="font-weight: bold;">Yes</span>.</p>
+                </li>
+              </ol>
+            </section>
+            <hr> </article>
+        </div>
+        <br class="clearfloat">
+      </div>
+    </div>
+    <!--close main-->
+    <!--end content-->
+    <div class="footer-container ">
+      <div style="max-width: 994px; padding:10px 0 0 17px;">
+        <footer class="footer-list">
+          <ul>
+            <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About
+                Oracle</a> </li>
+            <li> <a href="https://www.oracle.com/us/corporate/contact/index.html"
+
+                target="_blank">Contact Us</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal
+                Notices</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms
+                of Use</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your
+                Privacy Rights</a> </li>
+            <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright
+                © 2019, Oracle and/or its affiliates. All rights reserved.</a></li>
+          </ul>
+        </footer>
+      </div>
+      <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+    </div>
+    <!-- OBE Dialog Box code 10/15/2018 -->
+    <!-- DO NOT ALTER THE CODE BELOW   -->
+    <div id="lpModal" class="modal">
+      <!-- Modal hdr and body -->
+      <div id="obe_dialog" class="modal-content">
+        <div class="modal-header"> <a href="#" class="close"> <span class="close">×</span>
+          </a>
+          <h1>Associated Learning Paths</h1>
+        </div>
+        <div id="dialog-content"> </div>
+        <div id="dialog-close" class="closeBtn"> <a href="#" class="close2">
+            <p class="close2"> <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span> </p>
+          </a> </div>
+      </div>
+    </div>
+    <!-- END OBE Dialog Box code -->
+  </body>
+</html>

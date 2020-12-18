@@ -1,0 +1,1 @@
+This screenshot shows the Drop PDB PDB1 wizard. The Drop Datafiles option is enabled. There are three buttons - Show SQL, OK, and Cancel.

@@ -1,0 +1,1 @@
+This screenshot shows the Enterprise Manager login page. The sys user login credentials are entered and the as sysdba option enabled. There is a button for Login.

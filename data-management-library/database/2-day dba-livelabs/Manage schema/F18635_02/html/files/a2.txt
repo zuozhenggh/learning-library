@@ -1,0 +1,2 @@
+This screenshot shows the Connections pane.
+The Indexes node under HR node is expanded and the EMP_DEPARTMENT_IX index is selected.

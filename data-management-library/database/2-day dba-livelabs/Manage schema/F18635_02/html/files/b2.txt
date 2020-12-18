@@ -1,0 +1,2 @@
+This screenshot shows a part of the Connections pane.
+The Tables node under HR is expanded and the EMPLOYEES table is right-clicked. In the context menu, Index is selected and Create Index is being clicked.

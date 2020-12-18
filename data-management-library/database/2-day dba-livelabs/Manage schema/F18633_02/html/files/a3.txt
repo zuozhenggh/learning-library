@@ -1,0 +1,16 @@
+This screenshot shows the New / Select Database Connection window. The following values are set:
+Connection Name: sys_conn
+Username: system
+Password: (encrypted value)
+Save Password: (unchecked)
+Connection Color: (default)
+Connection Type: Basic
+Role: default
+Hostname: localhost
+Port: 1521
+SID: (unselected)
+Service name (selected): orclpdb.example.com
+OS Authentication: (unchecked)
+Kerberos Authentication: (unchecked)
+Status: Success
+There are seven buttons - Advanced, Help, Save, Clear, Test, Connect, and Cancel. The Connect button is being clicked.

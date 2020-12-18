@@ -1,0 +1,1 @@
+This screenshot shows the Status section of the Enterprise Manager Database home page.

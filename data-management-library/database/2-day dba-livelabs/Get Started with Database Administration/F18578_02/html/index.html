@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Part number: F18578-02 -->
+    <!-- Published date: May 2019 -->
+    <!-- Template date: October 15, 2018 -->
+    <!-- Put the content ID of this OBE between the empty quotation marks for 'content' below -->
+    <meta name="contentid" content="26465">
+    <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
+    <!-- Use an imperative verb in the title. -->
+    <title>Start the Oracle Enterprise Manager Express </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="description" content="This 10-min tutorial shows you how to start Oracle Enterprise Manager Express, a Web-based interface for non-CDB and CDB Oracle database.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/obe-lite.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery.tocify.jd.js"></script>
+    <script src="js/leftnav.js"></script>
+    <link rel="stylesheet" href="css/copy-button.css">
+    <script src="js/copytoclipboard.js"></script>
+    <link rel="stylesheet" href="css/single-source.css">
+    <script src="js/singlesource.js"></script>
+    <script>
+$(function () {
+addOption("opt-release-19c", "19c");
+addOption("opt-release-18c", "18c");
+singleSource();
+});
+</script> </head>
+  <body>
+    <header>
+      <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com"
+
+          class="oracle-logo"> <img src="img/oracle_doc_logo.png" alt="Oracle Documentation"
+
+            style="max-width: none;" height="22" width="236"></a> </div>
+    </header>
+    <!--end header-->
+    <div id="content">
+      <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+      <!-- Use an imperative verb in the title. -->
+      <h1><img src="img/obe_tag.png" alt="Oracle by Example branding" align="middle">Start
+        the Oracle Enterprise Manager Express</h1>
+      <div class="w1024" style="clear:both; position:relative; margin-top:40px;">
+        <div class="navbackwide border-right"><!-- --></div>
+        <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+        <div id="sidebar"><!-- -->
+          <div class="left-nav-tut"><!-- -->
+            <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+            <div id="navbar" class="left-nav-w"><!-- -->
+              <div id="toc" class="tocify"><!-- --></div>
+            </div>
+          </div>
+        </div>
+        <div id="bookContainer">
+          <article>
+            <section>
+              <h2><img src="img/32_begin.png" alt="section 0" class="num_circ" height="32"
+
+                  width="32">Before You Begin</h2>
+              <p>This 10-min tutorial shows you how to start Oracle Enterprise
+                Manager Express, a Web-based interface for non-CDB and CDB
+                Oracle database.</p>
+              <p><strong>Select the Oracle Database release:</strong> <span id="dropdown"></span></p>
+              <h3>Background</h3>
+              <p>Oracle Enterprise Manager Express enables you to perform
+                administrative tasks such as managing user security and managing
+                database memory and storage. You can also view performance and
+                status information about your database. From Oracle Database 12c
+                Release 1, the concept of multitenant environment was
+                introduced. The multitenant architecture enables an Oracle
+                database to function as a multitenant container database (CDB)
+                that includes zero, one, or many customer-created pluggable
+                databases (PDBs). A PDB is a portable collection of schemas,
+                schema objects, and non-schema objects that appears to an Oracle
+                Net client as a non-CDB. All Oracle databases before Oracle
+                Database 12 were non-CDBs.</p>
+              <p>A CDB includes the following components:</p>
+              <ul>
+                <li><strong>Root</strong>
+                  <p style="max-width: 70em;">The root, named<span class="Apple-converted-space">&nbsp;</span><code
+
+                      style="font-family: monospace; font-size: 12px;">CDB$ROOT</code>,
+                    stores Oracle-supplied metadata and common users. An example
+                    of metadata is the source code for Oracle-supplied PL/SQL
+                    packages. A common user is a database user known in every
+                    container. A CDB has exactly one root.</p>
+                </li>
+                <li><strong>Seed</strong>
+                  <p style="max-width: 70em;">The seed, named<span class="Apple-converted-space">&nbsp;</span><code
+
+                      style="font-family: monospace; font-size: 12px;">PDB$SEED</code>,
+                    is a template that you can use to create new PDBs. You
+                    cannot add objects to or modify objects in the seed. A CDB
+                    has exactly one seed.</p>
+                </li>
+                <li><strong>PDBs</strong>
+                  <p style="max-width: 70em;">A PDB appears to users and
+                    applications as if it were a non-CDB. For example, a PDB can
+                    contain the data and code required to support a specific
+                    application. A PDB is fully backward compatible with Oracle
+                    Database releases before Oracle Database 12<span class="italic"
+
+                      style="font-style: italic;">c</span>.</p>
+                </li>
+              </ul>
+              <p>Each of these components is called a container. Therefore, the
+                root is a container, the seed is a container, and each PDB is a
+                container. Each container has a unique container ID and name
+                within a CDB.</p>
+              <p>In this tutorial you will perform configuration steps that
+                enable you to access Enterprise Manager Express for non-CDB, CDB
+                and PDB and view the Database Home page for respective types of
+                databases.&nbsp;</p>
+              <h3>What Do You Need?</h3>
+              <ul>
+                <li>&nbsp;Install Oracle Database <span class="opt-release-19c">19c</span>
+                  <span class="opt-release-18c">18c</span></li>
+              </ul>
+            </section>
+            <!-- ========================================================================================================================= -->
+            <section>
+              <hr>
+              <h2 id="section_1" role="button" style="text-align: left;"><img src="img/32_1.png"
+
+                  alt="section 1" class="num_circ" height="32" width="32">Start
+                EM Express for non-CDB</h2>
+              <p>Use the EM Express URL provided by DBCA when DBCA configured
+                your non-CDB to start the EM Express. That URL includes the
+                HTTPS port number for the non-CDB. If you do not know the HTTPS
+                port number for the non-CDB, then follow the steps below:</p>
+              <ol>
+                <li>Open a terminal window, execute the <span class="_obe_file_or_directory"><strong>oraenv</strong></span>
+                  command to set the environment variables and connect to the
+                  database <span class="_obe_file_or_directory"><strong>orcl</strong></span>.
+                  <pre class="allow-copy">$ <span><strong>. oraenv</strong></span>
+ORACLE_SID = [oracle] ? <span style="font-weight: bold;">orcl</span>
+The Oracle base has been set to /scratch/u01/app/oracle
+$ <span><strong>sqlplus / as sysdba</strong></span>
+
+<span class="opt-release-18c">SQL*Plus: Release 18.0.0.0.0 - Production on Mon Mar 4 22:17:53 2019
+Version 18.3.0.0.0
+
+Copyright (c) 1982, 2018, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production
+Version 18.3.0.0.0</span><span class="opt-release-19c">SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jul 15 01:08:39 2019
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0</span>
+
+SQL&gt; </pre>
+                </li>
+                <li>Check if the database is a non container database.
+                  <pre class="allow-copy">SQL&gt;<span><strong> select name, cdb, con_id from v$database;</strong></span><br>NAME	  CDB	  CON_ID
+--------- --- ----------
+ORCL	  NO	       0</pre>
+                </li>
+                <ul>
+                </ul>
+                <li>Issue the SQL statement that returns the port that is
+                  configured for EM Express.
+                  <pre class="allow-copy">SQL&gt; <span><strong>select instance_name, status, con_id from v$instance;</strong></span>
+INSTANCE_NAME	 STATUS 	  CON_ID
+---------------- ------------ ----------
+orcl		 OPEN		       0</pre>
+                </li>
+                <li>If a port number is not returned by this statement, then you
+                  must manually configure an HTTPS port for this CDB, as
+                  described in "Configuring the HTTPs Port".
+                  <pre class="allow-copy">SQL&gt;<span><strong> select dbms_xdb_config.gethttpsport() from dual;</strong></span><br>
+DBMS_XDB_CONFIG.GETHTTPSPORT()
+------------------------------
+5500</pre>
+                  <p><span>If a port number is not returned by this statement,
+                      then you must manually configure an HTTPS port for this
+                      CDB, as described in "Configuring the HTTPs Port".</span></p>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="section_2" role="button" style="text-align: left;"><img src="img/32_2.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">Start
+                EM Express for CDB</h2>
+              <p>Use the EM Express URL provided by DBCA when DBCA configured
+                your CDB to start the EM Express. That URL includes the HTTPS
+                port number for the CDB. If you do not know the HTTPS port
+                number for the CDB, then follow the steps below:</p>
+              <ol>
+                <li>Open a terminal window, execute the oraenv command to set
+                  the environment variables and connect to the multitenant
+                  container database orcl.
+                  <pre class="allow-copy">$ <span><strong>. oraenv</strong></span>
+ORACLE_SID = [oracle] ? <span style="font-weight: bold;">orcl</span>
+The Oracle base has been set to /scratch/u01/app/oracle
+$ <span style="font-weight: bold;">sqlplus / as sysdba</span>
+
+<span class="opt-release-18c">SQL*Plus: Release 18.0.0.0.0 - Production on Mon Mar 4 22:17:53 2019
+Version 18.3.0.0.0
+
+Copyright (c) 1982, 2018, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production
+Version 18.3.0.0.0</span><span class="opt-release-19c">SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jul 15 01:08:39 2019
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0</span>
+
+
+SQL&gt; </pre>
+                </li>
+                <li>Check if the database is a multitenant container database.
+                  <pre class="allow-copy">SQL&gt; <span><strong>select name, cdb, con_id from v$database;</strong></span><br>NAME	  CDB	  CON_ID
+--------- --- ----------
+ORCL	  YES	       0</pre>
+                </li>
+                <li>Check the instance name.
+                  <pre class="allow-copy">SQL&gt; <span><strong>select instance_name, status, con_id from v$instance;</strong></span>
+INSTANCE_NAME	 STATUS 	  CON_ID
+---------------- ------------ ----------
+orcl		 OPEN		       0</pre>
+                </li>
+                <li>Issue the SQL statement that returns the port that is
+                  configured for EM Express.
+                  <pre class="allow-copy">SQL&gt; <span><strong>select dbms_xdb_config.gethttpsport() from dual;</strong></span><br>
+DBMS_XDB_CONFIG.GETHTTPSPORT()
+------------------------------
+5500</pre>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="section_3" role="button" style="text-align: left;"><img src="img/32_3.png"
+
+                  alt="section 3" class="num_circ" height="32" width="32">Start
+                EM Express for PDB</h2>
+              <p>Use the EM Express URL provided by DBCA when DBCA configured
+                your PDB to start the EM Express. That URL includes the HTTPS
+                port number for the PDB. If you do not know the HTTPS port
+                number for the PDB, then follow the steps below:</p>
+              <ol>
+                <li><span>Display the PDBs.</span>
+                  <pre class="allow-copy">SQL&gt; <span><strong>select con_id, name, open_mode from v$pdbs;</strong></span>
+
+    CON_ID
+----------
+NAME
+----------------------------------------------------
+OPEN_MODE
+----------
+         2
+PDB$SEED
+READ ONLY
+
+         3
+ORCLPDB
+READ WRITE
+
+    CON_ID
+----------
+NAME
+----------------------------------------------------
+OPEN_MODE
+----------</pre>
+                </li>
+                <li>Alter the session and set container as pdb (orclpdb in this
+                  case).
+                  <pre class="allow-copy">SQL&gt; <span><strong>ALTER SESSION SET CONTAINER=orclpdb;</strong></span>
+
+Session altered.</pre>
+                </li>
+                <li>Open the pluggable database (if not already open) and issue
+                  the SQL statement that returns the port that is configured for
+                  EM Express. <br>
+                  <pre class="allow-copy">SQL&gt;<span><strong> alter pluggable database orclpdb open;</strong></span>
+
+Pluggable database altered.</pre>
+                  <pre class="allow-copy">SQL&gt;<span><strong> SELECT dbms_xdb_config.gethttpsport() from dual;</strong></span>
+
+DBMS_XDB_CONFIG.GETHTTPSPORT()
+------------------------------
+			     0  </pre>
+                  <span style="font-weight: bold;">Note: </span>When connected
+                  to a PDB, EM Express displays data and enables actions that
+                  apply to the PDB only. </li>
+                <li>If a port number is not returned by this statement, then you
+                  must manually configure an HTTPS port for this PDB, as
+                  described in "Configuring the HTTPS Port". </li>
+              </ol>
+            </section>
+            <!--close main-->
+            <!--end content--> </article>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container ">
+      <div style="max-width: 994px; padding:10px 0 0 17px;">
+        <footer class="footer-list">
+          <ul>
+            <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About
+                Oracle</a> </li>
+            <li> <a href="https://www.oracle.com/us/corporate/contact/index.html"
+
+                target="_blank">Contact Us</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal
+                Notices</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms
+                of Use</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your
+                Privacy Rights</a> </li>
+            <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright
+                © 2019, Oracle and/or its affiliates. All rights reserved.</a></li>
+          </ul>
+        </footer>
+      </div>
+      <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+    </div>
+    <!-- OBE Dialog Box code 10/15/2018 -->
+    <!-- DO NOT ALTER THE CODE BELOW   -->
+    <div id="lpModal" class="modal">
+      <!-- Modal hdr and body -->
+      <div id="obe_dialog" class="modal-content">
+        <div class="modal-header"> <a href="#" class="close"> <span class="close">×</span>
+          </a>
+          <h1>Associated Learning Paths</h1>
+        </div>
+        <div id="dialog-content"> </div>
+        <div id="dialog-close" class="closeBtn"> <a href="#" class="close2">
+            <p class="close2"> <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span> </p>
+          </a> </div>
+      </div>
+    </div>
+    <!-- END OBE Dialog Box code -->
+  </body>
+</html>

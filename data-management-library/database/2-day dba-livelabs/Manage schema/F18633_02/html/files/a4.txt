@@ -1,0 +1,6 @@
+This screenshot shows the Connections tab and the SQL worksheet.
+Under the Connections pane, there are three nodes.
+Connections
+Oracle NoSQL Connections
+Cloud Connections
+Under Connections, there is one connection called system.

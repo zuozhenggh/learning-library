@@ -1,0 +1,2 @@
+This screenshot shows the Indexes tab of the EMPLOYEES table.
+The 2nd row has the newly created index - SALARY_IDX.

@@ -1,0 +1,1 @@
+This screenshot shows a portion of the Initialization Parameters page. The Current tab is active and the Set Parameter button is being clicked.

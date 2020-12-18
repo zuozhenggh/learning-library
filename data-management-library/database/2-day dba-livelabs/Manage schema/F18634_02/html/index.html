@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Part number: F18634-02 -->
+    <!-- Published date: March 2019 -->
+    <!-- Template date: October 15, 2018 -->
+    <!-- Put the content ID of this OBE between the empty quotation marks for 'content' below -->
+    <meta name="contentid" content="26514">
+    <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
+    <!-- Use an imperative verb in the title. -->
+    <title>Manage Tables Using SQL Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="description" content="This tutorial shows you how to view and manage tables using SQL Developer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/obe-lite.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery.tocify.jd.js"></script>
+    <script src="js/leftnav.js"></script>
+    <link rel="stylesheet" href="css/single-source.css">
+    <script src="js/singlesource.js"></script>
+    <script>
+$(function () {
+addOption("opt-release-19c", "19c");
+addOption("opt-release-18c", "18c");
+
+singleSource();
+});
+</script> 
+  </head>
+  <body>
+    <header>
+      <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com"
+
+          class="oracle-logo"> <img src="img/oracle_doc_logo.png" alt="Oracle Documentation"
+
+            style="max-width: none;" height="22" width="236"></a> </div>
+    </header>
+    <!--end header-->
+    <div id="content">
+      <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+      <!-- Use an imperative verb in the title. -->
+      <h1><img src="img/obe_tag.png" alt="Oracle by Example branding" align="middle">Manage
+        Tables Using SQL Developer</h1>
+      <div class="w1024" style="clear:both; position:relative; margin-top:40px;">
+        <div class="navbackwide border-right"><!-- --></div>
+        <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+        <div id="sidebar"><!-- -->
+          <div class="left-nav-tut"><!-- -->
+            <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+            <div id="navbar" class="left-nav-w"><!-- -->
+              <div id="toc" class="tocify"><!-- --></div>
+            </div>
+          </div>
+        </div>
+        <div id="bookContainer">
+          <article>
+            <section>
+              <h2><img src="img/32_begin.png" alt="section 0" class="num_circ" height="32"
+
+                  width="32">Before You Begin</h2>
+               <p><strong>Select the Oracle Database release:</strong> <span id="dropdown"></span></p>
+              <p>This 15-minute tutorial shows you how to view table definitions
+                and table data. You also learn to create a new table and modify
+                it.</p>
+              <h3>Background</h3>
+              <p>A schema is a collection of database objects. A schema is owned
+                by a database user and shares the same name as the user. Schema
+                objects are logical structures created by users. Some objects,
+                such as tables or indexes, hold data. Other objects, such as
+                views or synonyms, consist of a definition only.</p>
+              <h3>What Do You Need?</h3>
+              <ul>
+                <li>Oracle Database <span class="opt-release-18c">18c</span><span
+
+                    class="opt-release-19c">19c</span></li>
+                <li>SQL Developer 19.1</li>
+                <li>Installed the sample schemas in the pluggable database</li>
+                <li>Download the <a href="files/load_po.csv">load_po.csv</a>
+                  file.</li>
+              </ul>
+            </section>
+            <!-- ========================================================================================================================= -->
+            <section>
+              <hr>
+              <h2 id="section_1" role="button" style="text-align: left;"><img src="img/32_1.png"
+
+                  alt="section 1" class="num_circ" height="32" width="32">View
+                Tables</h2>
+              <ol>
+                <li>Expand the <span style="font-weight: bold;">system</span>
+                  node in Oracle SQL Developer.
+                  <figure><img src="img/a1.png" alt="system connection"> <figcaption><a
+
+                        href="files/a1.txt">Description of the illustration a1</a></figcaption>
+                  </figure>
+                </li>
+                <li>Expand the <span style="font-weight: bold;">Other Users</span>
+                  node and then expand the <span style="font-weight: bold;">HR</span>
+                  node.
+                  <figure><img src="img/a2.png" alt="other users"> <figcaption><a
+
+                        href="files/a2.txt">Description of the illustration a2</a></figcaption>
+                  </figure>
+                </li>
+                <li>Expand the Tables (Filtered) node and select the <span style="font-weight: bold;">EMPLOYEES</span>
+                  table. Detailed information about the table is displayed in
+                  the object pane. The <span style="font-weight: bold;">Columns</span>
+                  tab displays the column names and definitions.
+                  <figure><img src="img/a3.png" alt="Employees table"> <figcaption><a
+
+                        href="files/a3.txt">Description of the illustration a3</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="more_info" role="button" style="text-align: left;"><img src="img/32_2.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">View
+                Table Data</h2>
+              <ol>
+                <li>Ensure that the <span style="font-weight: bold;">EMPLOYEES</span>
+                  table is selected in the Connections pane. Click the <span style="font-weight: bold;">Data</span>
+                  tab to view the data stored in the table. The Data tab shows
+                  the rows stored in the <span style="font-weight: bold;">EMPLOYEES</span>
+                  table.</li>
+                <figure><img src="img/b1.png" alt="Employees Data tab"> <figcaption><a
+
+                      href="files/b1.txt">Description of the illustration b1</a></figcaption>
+                </figure>
+                <li>To sort the rows by last name, right-click the <span style="font-weight: bold;">LAST_NAME</span>
+                  column name and select <span style="font-weight: bold;">Sort</span>
+                  in the menu.</li>
+                <figure><img src="img/b2.png" alt="sort option is selected"> <figcaption><a
+
+                      href="files/b2.txt">Description of the illustration b2</a></figcaption>
+                </figure>
+                <li>To Select the <span style="font-weight: bold;">LAST_NAME</span>
+                  column and click the right-arrow to move it to the <span style="font-weight: bold;">Selected
+                    Columns</span> list. Click <span style="font-weight: bold;">OK</span>.
+                  <figure><img src="img/b3.png" alt="Sort Columns window"> <figcaption><a
+
+                        href="files/b3.txt">Description of the illustration b3</a></figcaption>
+                  </figure>
+                </li>
+                <li>The data is now displayed in sorted order.
+                  <figure><img src="img/b4.png" alt="employees table"> <figcaption><a
+
+                        href="files/b4.txt">Description of the illustration b4</a></figcaption>
+                  </figure>
+                  <p>Dismiss the EMPLOYEES and SYSTEM window.</p>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="more_info" role="button" style="text-align: left;"><img src="img/32_3.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">Create
+                a Table</h2>
+              <p>In this topic you create a new table in the APPUSER schema. You
+                created the APPUSER schema in the Administering User Accounts
+                and Security tutorial.</p>
+              <ol>
+                <li>Expand the <span style="font-weight: bold;">APPUSER</span>
+                  node in Oracle SQL Developer. Right-click the Tables node and
+                  select <span style="font-weight: bold;">New Table</span>.</li>
+                <figure><img src="img/c1.png" alt="new table"> <figcaption><a href="files/c1.txt">Description
+                      of the illustration c1</a></figcaption> </figure>
+                <li>Enter <span style="font-weight: bold;">PURCHASE_ORDERS</span>
+                  in the Name field. Select <span style="font-weight: bold;">Primary
+                    Key</span>. Enter <span style="font-weight: bold;">PO_NUMBER</span>
+                  in the Column Name field. Select <span style="font-weight: bold;">NUMBER</span>
+                  as the Data Type. Select<span style="font-weight: bold;"> Not
+                    Null</span>. Click <span style="font-weight: bold;">Add
+                    Column</span>.
+                  <figure><img src="img/c2.png" alt="create table wizard"> <figcaption><a
+
+                        href="files/c2.txt">Description of the illustration c2</a></figcaption>
+                  </figure>
+                </li>
+                <li>Enter <span style="font-weight: bold;">PO_DESCRIPTION</span>
+                  in the Column Name field. Select <span style="font-weight: bold;">VARCHAR2</span>
+                  as the type. Enter <span style="font-weight: bold;">200</span>
+                  in the Size field. Click <span style="font-weight: bold;">Add
+                    Column</span>.
+                  <figure><img src="img/c3.png" alt="create table"> <figcaption><a
+
+                        href="files/c3.txt">Description of the illustration c3</a></figcaption>
+                  </figure>
+                </li>
+                <li>Enter <span style="font-weight: bold;">PO_DATE</span> in
+                  the Column Name field. Select <span style="font-weight: bold;">DATE</span>
+                  for the type and select the <span style="font-weight: bold;">Not
+                    Null</span> column. Click <span style="font-weight: bold;">Add
+                    Column</span>.</li>
+                <li>Enter <span style="font-weight: bold;">PO_VENDOR </span>in
+                  the Column Name field. Select <span style="font-weight: bold;">NUMBER</span>
+                  as the type and select the<span style="font-weight: bold;">
+                    Not Null </span>column. Click <span style="font-weight: bold;">OK</span>.
+                  <figure><img src="img/c5.png" alt="create table wizard"> <figcaption><a
+
+                        href="files/c5.txt">Description of the illustration c5</a></figcaption>
+                  </figure>
+                </li>
+                <li>Expand the Tables node to view the <span style="font-weight: bold;">PURCHASE_ORDERS</span>
+                  table in the Tables list for the APPUSER user.</li>
+                <li>Click the <span style="font-weight: bold;">Columns</span>
+                  tab to view the column definitions of the <span style="font-weight: bold;">PURCHASE_ORDERS</span>
+                  table.
+                  <figure><img src="img/c7.png" alt="columns tab"> <figcaption><a
+
+                        href="files/c7.txt">Description of the illustration c7</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="more_info" role="button" style="text-align: left;"><img src="img/32_4.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">Add a
+                Column</h2>
+              <ol>
+                <li>Right-click the <span style="font-weight: bold;">PURCHASE_ORDERS</span>
+                  table and select Edit.
+                  <figure><img src="img/d1.png" alt="edit table option"> <figcaption><a
+
+                        href="files/d1.txt">Description of the illustration d1</a></figcaption>
+                  </figure>
+                </li>
+                <li>The Edit Table dialog box appears. Click the <span style="font-weight: bold;">plus
+                    sign </span>to add a column or press Alt+1. </li>
+                <li>Enter <span style="font-weight: bold;">PO_DATE_RECIEVED</span>
+                  in the Name field. Select <span style="font-weight: bold;">DATE</span>
+                  in the Type menu. Click the plus sign again or press ALT+1. </li>
+                <li>Enter <span style="font-weight: bold;">PO_REQUESTOR_NAME</span>
+                  in the Name field. Select <span style="font-weight: bold;">VARCHAR2</span>
+                  in the Type menu. Enter <span style="font-weight: bold;">40</span>
+                  in the Size field. Click <span style="font-weight: bold;">OK</span>.
+                  <figure><img src="img/d4.png" alt="edit table wizard"> <figcaption><a
+
+                        href="files/d4.txt">Description of the illustration d4</a></figcaption>
+                  </figure>
+                </li>
+                <li>The Columns tab shows the new columns.
+                  <figure><img src="img/d5.png" alt="purchase orders table"> <figcaption><a
+
+                        href="files/d5.txt">Description of the illustration d5</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="more_info" role="button" style="text-align: left;"><img src="img/32_5.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">Load
+                Data into a Table</h2>
+              <ol>
+                <li>Download the load_po.csv file.</li>
+                <li>Right-click the <span style="font-weight: bold;">APPUSER</span>
+                  user and select <span style="font-weight: bold;">Edit User</span>.
+                  <figure><img src="img/e2.png" alt="edit user"> <figcaption><a
+
+                        href="files/e2.txt">Description of the illustration e2</a></figcaption>
+                  </figure>
+                </li>
+                <li>On the Edit User window, click <span style="font-weight: bold;">Quotas</span>.
+                  Select <span style="font-weight: bold;">Unlimited</span> for
+                  the <span style="font-weight: bold;">APPTS</span> tablespace
+                  and click <span style="font-weight: bold;">Apply</span>. You
+                  will receive a prompt stating that the SQL command processed
+                  successfully, click<span style="font-weight: bold;"> OK</span>.
+                  The Edit User window closes automatically.
+                  <figure><img src="img/e3.png" alt="edit user window"> <figcaption><a
+
+                        href="files/a3.txt">Description of the illustration e3</a></figcaption>
+                  </figure>
+                </li>
+                <li>Expand Tables. Right-click the <span style="font-weight: bold;">PURCHASE_ORDERS</span>
+                  table and select <span style="font-weight: bold;">Import Data</span>.
+                  <figure><img src="img/e4.png" alt="Import Data"> <figcaption><a
+
+                        href="files/e4.txt">Description of the illustration e4</a></figcaption>
+                  </figure>
+                </li>
+                <li>Click Browse and select the load_po.csv file. Click Open.</li>
+                <li>Deselect Header. Ensure that Format is set to csv and UTF8
+                  is selected for Encoding. Select none for Left Enclosure.
+                  Click Next.
+                  <figure><img src="img/e6.png" alt="data import wizard"> <figcaption><a
+
+                        href="files/e6.txt">Description of the illustration e6</a></figcaption>
+                  </figure>
+                </li>
+                <li>Ensure that Import Method is set to Insert. Click Next.
+                  Click Next.
+                  <figure><img src="img/e7.png" alt="data import wizard"> <figcaption><a
+
+                        href="files/e7.txt">Description of the illustration e7</a></figcaption>
+                  </figure>
+                </li>
+                <li>Verify each column in the Source Data Columns list and its
+                  value in the Name field BEFORE clicking Next. After verifying
+                  all five columns, click Next. As shown in the screenshot, you
+                  may need to edit the Format of COLUMN5 to DD-MON-YYYY.
+                  <figure><img src="img/e8.jpg" alt="data import wizard"> <figcaption><a
+
+                        href="files/e8.txt">Description of the illustration e8</a></figcaption>
+                  </figure>
+                </li>
+                <li>Click Finish.You get a success message that the data is
+                  successfully imported. Click OK.</li>
+                <li>Select the PURCHASE_ORDERS table and click the Data tab to
+                  see the new rows.
+                  <figure><img src="img/e10.jpg" alt="Purchase_orders"> <figcaption><a
+
+                        href="files/e10.txt">Description of the illustration e10</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr> </article>
+        </div>
+        <br class="clearfloat">
+      </div>
+    </div>
+    <!--close main-->
+    <!--end content-->
+    <div class="footer-container ">
+      <div style="max-width: 994px; padding:10px 0 0 17px;">
+        <footer class="footer-list">
+          <ul>
+            <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About
+                Oracle</a> </li>
+            <li> <a href="https://www.oracle.com/us/corporate/contact/index.html"
+
+                target="_blank">Contact Us</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal
+                Notices</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms
+                of Use</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your
+                Privacy Rights</a> </li>
+            <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright
+                © 2019, Oracle and/or its affiliates. All rights reserved.</a></li>
+          </ul>
+        </footer>
+      </div>
+      <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+    </div>
+    <!-- OBE Dialog Box code 10/15/2018 -->
+    <!-- DO NOT ALTER THE CODE BELOW   -->
+    <div id="lpModal" class="modal">
+      <!-- Modal hdr and body -->
+      <div id="obe_dialog" class="modal-content">
+        <div class="modal-header"> <a href="#" class="close"> <span class="close">×</span>
+          </a>
+          <h1>Associated Learning Paths</h1>
+        </div>
+        <div id="dialog-content"> </div>
+        <div id="dialog-close" class="closeBtn"> <a href="#" class="close2">
+            <p class="close2"> <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span> </p>
+          </a> </div>
+      </div>
+    </div>
+    <!-- END OBE Dialog Box code -->
+  </body>
+</html>

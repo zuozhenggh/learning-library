@@ -1,0 +1,2 @@
+This screenshot shows the Clone PDB ORCLDB wizard - Storage tab. Use Oracle-Managed Files is enabled.
+There are four active buttons - Back, Show SQL, OK, and Cancel.

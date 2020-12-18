@@ -1,0 +1,2 @@
+This screenshot shows the Open PDB PDB2 wizard. Read Only is selected for Open As and Restricted option is enabled.
+There are three buttons - Show SQL, OK, and Cancel.

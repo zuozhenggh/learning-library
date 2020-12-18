@@ -1,0 +1,7 @@
+This screenshot shows the Configure Oracle-Managed Files wizard. The following values are set:
+- Parameter Name: db_create_file_dest
+- Scope: Memory(enabled), SPFile(enabled)
+- Deferred: (enabled)
+- Value: /u01/app/oracle/oradata
+- Comment: (null)
+There are three buttons - Show SQL, OK, and Cancel.

@@ -1,0 +1,10 @@
+This screenshot shows the Edit Table window. The Name is set to PURCHASE_ORDERS and the Columns tab is selected.
+The table shows 6 rows:
+Heading: PK, Name, Data Type, Size, Not Null, Default, Comment
+Row 1: PK(selected), PO_NUMBER, NUMBER, (null), (checked), (null), (null)
+Row 2: (unselected), PO_DESCRIPTION, VARCHAR2, 250, (unchecked), (null), (null)
+Row 3: (unselected), PO_DATE, DATE, (null), (checked), (null), (null)
+Row 4: (unselected), PO_VENDOR, NUMBER, (null), (checked), (null), (null)
+Row 5: (unselected), PO_DATE_RECEIVED, DATE, (null), (uchecked), (null), (null)
+Row 5: (unselected), PO_REQUESTOR_NAME, VARCHAR2, 40, (unchecked), (null), (null)
+There are seven active buttons - Data Type, Constraints, Indexes, Identity Column, Help, OK, and Cancel. The OK button is being clicked.

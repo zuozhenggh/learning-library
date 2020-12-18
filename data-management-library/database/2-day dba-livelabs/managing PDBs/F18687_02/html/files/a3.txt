@@ -1,0 +1,2 @@
+This screenshot shows the Close PDB PDB2 wizard. The Close Immediate option is enabled.
+There are three buttons - Show SQL, OK, and Cancel.

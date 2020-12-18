@@ -1,0 +1,8 @@
+This screenshot shows the Create View window.
+The Schema and Name is set to HR and KING_VIEW respectively.
+The SQL Query tab is selected. There are two buttons labeled as Revert and Test.
+In the SQL Query textbox, the following query is entered:
+SELECT *
+FROM hr.employees
+WHERE manager_id = 100
+There are four active buttons - Check Syntax, Help, OK, and Cancel. The OK button is being clicked

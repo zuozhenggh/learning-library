@@ -1,0 +1,10 @@
+This screenshot shows the Status section of the Containers page. The following values are set:
+Database
+- Up Time: 22 minutes
+- Type: CDB(1 PDBs)
+- Archive Log Enabled: Yes
+- Local Undo Enabled: Yes
+- Using Oracle-Managed Files: Yes
+Resource Limits
+- Active Resource Plan: None
+- Default PDB Directive: N/A

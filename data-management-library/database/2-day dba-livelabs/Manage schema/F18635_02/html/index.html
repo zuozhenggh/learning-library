@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Part number: F18635-02 -->
+    <!-- Published date: May 2019 -->
+    <!-- Template date: October 15, 2018 -->
+    <!-- Put the content ID of this OBE between the empty quotation marks for 'content' below -->
+    <meta name="contentid" content="26793">
+    <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
+    <!-- Use an imperative verb in the title. -->
+    <title>Manage Indexes and Views Using SQL Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="description" content="This tutorial shows how to manage Views and Indexes.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/obe-lite.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery.tocify.jd.js"></script>
+    <script src="js/leftnav.js"></script>
+    <link rel="stylesheet" href="css/single-source.css">
+    <script src="js/singlesource.js"></script>
+    <script>
+$(function () {
+addOption("opt-release-19c", "19c");
+addOption("opt-release-18c", "18c");
+
+singleSource();
+});
+</script> 
+  </head>
+  <body>
+    <header>
+      <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com"
+
+          class="oracle-logo"> <img src="img/oracle_doc_logo.png" alt="Oracle Documentation"
+
+            style="max-width: none;" height="22" width="236"></a> </div>
+    </header>
+    <!--end header-->
+    <div id="content">
+      <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+      <!-- Use an imperative verb in the title. -->
+      <h1><img src="img/obe_tag.png" alt="Oracle by Example branding" align="middle">Manage
+        Indexes and Views Using SQL Developer</h1>
+      <div class="w1024" style="clear:both; position:relative; margin-top:40px;">
+        <div class="navbackwide border-right"><!-- --></div>
+        <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+        <div id="sidebar"><!-- -->
+          <div class="left-nav-tut"><!-- -->
+            <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+            <div id="navbar" class="left-nav-w"><!-- -->
+              <div id="toc" class="tocify"><!-- --></div>
+            </div>
+          </div>
+        </div>
+        <div id="bookContainer">
+          <article>
+            <section>
+              <h2><img src="img/32_begin.png" alt="section 0" class="num_circ" height="32"
+
+                  width="32">Before You Begin</h2>
+              <p><strong>Select the Oracle Database release:</strong> <span id="dropdown"></span></p>
+              <p>This 15-minute tutorial shows you how to use SQL Developer to
+                manage indexes and views. </p>
+              <h3>Background</h3>
+              <p>A schema is a collection of database objects. A schema is owned
+                by a database user and shares the same name as the user. Schema
+                objects are logical structures created by users. Some objects,
+                such as tables or indexes, hold data. Other objects, such as
+                views or synonyms, consist of a definition only.</p>
+              <h3>What Do You Need?</h3>
+              <ul>
+                <li>Oracle Database <span class="opt-release-18c">18c</span><span
+
+                    class="opt-release-19c">19c</span></li>
+                <li>SQL Developer 19.1</li>
+                <li>Installed the sample schemas in the pluggable database</li>
+              </ul>
+            </section>
+            <!-- ========================================================================================================================= -->
+            <section>
+              <hr>
+              <h2 id="section_1" role="button" style="text-align: left;"><img src="img/32_1.png"
+
+                  alt="section 1" class="num_circ" height="32" width="32">View
+                Index</h2>
+              <p>This is an unnumbered paragraph before a procedure.</p>
+              <ol>
+                <li>Expand the HR user in the <span style="font-weight: bold;">Other
+                    Users</span> node. Expand <span style="font-weight: bold;">Indexes</span>.</li>
+                <li>Select <span style="font-weight: bold;">EMP_DEPARTMENT_IX</span>.
+                  <figure><img src="img/a2.png" alt="index"> <figcaption><a href="files/a2.txt">Description
+                        of the illustration a2</a></figcaption> </figure>
+                </li>
+                <li>Information about the index definition is displayed in the
+                  Columns tab. Click the <span style="font-weight: bold;">Details</span>
+                  tab to view additional information.
+                  <figure><img src="img/a3.png" alt="Index Columns"> <figcaption><a
+
+                        href="files/a3.txt">Description of the illustration a3</a></figcaption>
+                  </figure>
+                </li>
+                <li>The Details tab shows additional information about the index
+                  definition.</li>
+                <figure><img src="img/a4.png" alt="Index details"> <figcaption><a
+
+                      href="files/a4.txt">Description of the illustration a4</a></figcaption>
+                </figure>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="section_2" role="button" style="text-align: left;"><img src="img/32_2.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">Create
+                Indexes</h2>
+              <ol>
+                <li>Select the <span style="font-weight: bold;">HR</span> user
+                  in the Other Users list and expand the Tables entry.</li>
+                <li>Right-click the <span style="font-weight: bold;">Employees</span>
+                  table. Select <span style="font-weight: bold;">Index</span>
+                  in the menu and then select <span style="font-weight: bold;">Create
+                    Index</span>.
+                  <figure><img src="img/b2.png" alt="Create Index"> <figcaption><a
+
+                        href="files/b2.txt">Description of the illustration <span
+
+                          style="color: #145c93;">b2</span></a></figcaption> </figure>
+                </li>
+                <li>Enter <span style="font-weight: bold;">SALARY_IDX</span> in
+                  the Name field. Click the "<span style="font-weight: bold;">Add
+                    Index Expression</span>" icon and select <span style="font-weight: bold;">SALARY</span>
+                  in the "Expression" field. Click <span style="font-weight: bold;">OK</span>.
+                  <figure><img src="img/b3.png" alt="Create Index window"> <figcaption><a
+
+                        href="files/b3.txt">Description of the illustration b3</a></figcaption>
+                  </figure>
+                </li>
+                <li>Select <span style="font-weight: bold;">EMPLOYEES</span> in
+                  the Connections pane under Tables. </li>
+                <li>Select the Indexes tab on the <span style="font-weight: bold;">EMPLOYEES</span>
+                  page. Your new <span style="font-weight: bold;">SALARY_IDX</span>
+                  index is listed.
+                  <figure><img src="img/b5.png" alt="new index"> <figcaption><a
+
+                        href="files/b5.txt">Description of the illustration b5</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="section_3" role="button" style="text-align: left;"><img src="img/32_3.png"
+
+                  alt="section 3" class="num_circ" height="32" width="32">Display
+                Views</h2>
+              <ol>
+                <li>Expand <span style="font-weight: bold;">HR</span> under
+                  Other Users in the Connections pane and then expand Views.</li>
+                <li>Select the <span style="font-weight: bold;">EMP_DETAILS_VIEW</span>
+                  view.
+                  <figure><img src="img/c2.png" alt="view"> <figcaption><a href="files/c2.txt">Description
+                        of the illustration c2</a></figcaption> </figure>
+                </li>
+                <li>The Columns tab in the <span style="font-weight: bold;">EMP_DETAILS_VIEW</span>
+                  page displays the columns that are part of this view.
+                  <figure><img src="img/c3.png" alt="View Columns "> <figcaption><a
+
+                        href="files/c3.txt">Description of the illustration c3</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr>
+            <section>
+              <h2 id="section_4" role="button" style="text-align: left;"><img src="img/32_4.png"
+
+                  alt="section 4" class="num_circ" height="32" width="32">Create
+                a View</h2>
+              <p>In this example, you create a view named KING_VIEW, which
+                queries the HR.EMPLOYEES table. This view filters the table data
+                so that only employees who report directly to the manager named
+                King, whose employee ID is 100, are returned in queries.</p>
+              <ol>
+                <li>Expand the<span style="font-weight: bold;"> HR</span> user
+                  in the Connections pane. Right click <span style="font-weight: bold;">Views</span>
+                  and select <span style="font-weight: bold;">New View</span>.
+                  <figure><img src="img/d1.png" alt="New View"> <figcaption><a
+
+                        href="files/d1.txt">Description of the illustration d1</a></figcaption>
+                  </figure>
+                </li>
+                <li>Enter <span style="font-weight: bold;">KING_VIEW</span> in
+                  the Name field. Enter the following query in the SQL Query box
+                  and click<span style="font-weight: bold;"> OK</span>.
+                  <pre>SELECT * 
+FROM hr.employees
+WHERE manager_id = 100</pre>
+                  <figure><img src="img/d2.png" alt="Create View window"> <figcaption><a
+
+                        href="files/d2.txt">Description of the illustration <span
+
+                          style="color: #145c93;">d2</span></a></figcaption> </figure>
+                </li>
+                <li>The new view is listed under Views in the Connections pane.
+                  Select the <span style="font-weight: bold;">KING_VIEW</span>
+                  view.
+                  <figure><img src="img/d3.png" alt="King View"> <figcaption><a
+
+                        href="files/d3.txt">Description of the illustration d3</a></figcaption>
+                  </figure>
+                </li>
+                <li>The columns that are included in the view are displayed in
+                  the Columns tab. Click the <span style="font-weight: bold;">Data</span>
+                  tab.
+                  <figure><img src="img/d4.png" alt="King_View Columns Tab"> <figcaption><a
+
+                        href="files/d4.txt">Description of the illustration d4</a></figcaption>
+                  </figure>
+                </li>
+                <li>The rows that are retrieved when the view is queried are
+                  displayed in the Data tab.
+                  <figure><img src="img/d5.png" alt="King_View Data tab"> <figcaption><a
+
+                        href="files/d5.txt">Description of the illustration d5</a></figcaption>
+                  </figure>
+                </li>
+              </ol>
+            </section>
+            <hr> </article>
+        </div>
+        <br class="clearfloat">
+      </div>
+    </div>
+    <!--close main-->
+    <!--end content-->
+    <div class="footer-container ">
+      <div style="max-width: 994px; padding:10px 0 0 17px;">
+        <footer class="footer-list">
+          <ul>
+            <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About
+                Oracle</a> </li>
+            <li> <a href="https://www.oracle.com/us/corporate/contact/index.html"
+
+                target="_blank">Contact Us</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal
+                Notices</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms
+                of Use</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your
+                Privacy Rights</a> </li>
+            <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright
+                © 2019, Oracle and/or its affiliates. All rights reserved.</a></li>
+          </ul>
+        </footer>
+      </div>
+      <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+    </div>
+    <!-- OBE Dialog Box code 10/15/2018 -->
+    <!-- DO NOT ALTER THE CODE BELOW   -->
+    <div id="lpModal" class="modal">
+      <!-- Modal hdr and body -->
+      <div id="obe_dialog" class="modal-content">
+        <div class="modal-header"> <a href="#" class="close"> <span class="close">×</span>
+          </a>
+          <h1>Associated Learning Paths</h1>
+        </div>
+        <div id="dialog-content"> </div>
+        <div id="dialog-close" class="closeBtn"> <a href="#" class="close2">
+            <p class="close2"> <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span> </p>
+          </a> </div>
+      </div>
+    </div>
+    <!-- END OBE Dialog Box code -->
+  </body>
+</html>

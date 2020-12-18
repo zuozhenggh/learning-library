@@ -1,0 +1,1 @@
+This screenshot shows the Set Initialization Parameter window. The Parameter Name is open_cursors, Scope is Memory (checked) and SPFile (checked), Value is 400, and comment is null. The OK button is being clicked.

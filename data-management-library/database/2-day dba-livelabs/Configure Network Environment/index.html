@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Part number: F18599-03-->
+    <!-- Published date: May 2019 -->
+    <!-- Template date: October 15, 2018 -->
+    <!-- Put the content ID of this OBE between the empty quotation marks for 'content' below -->
+    <meta name="contentid" content="26470">
+    <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
+    <!-- Use an imperative verb in the title. -->
+    <title>Manage the Listener Using the Listener Control Utility </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="description" content="This tutorial introduces you to the Listener Control utility which enables you to administer the listener.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/obe-lite.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery.tocify.jd.js"></script>
+    <script src="js/leftnav.js"></script>
+    <link rel="stylesheet" href="css/copy-button.css">
+    <script src="js/copytoclipboard.js"></script>
+    <link rel="stylesheet" href="css/single-source.css">
+    <script src="js/singlesource.js"></script>
+    <script>
+$(function () {
+addOption("opt-release-19c", "19c");
+addOption("opt-release-18c", "18c");
+
+singleSource();
+});
+</script> </head>
+  <body>
+    <header>
+      <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com"
+
+          class="oracle-logo"> <img src="img/oracle_doc_logo.png" alt="Oracle Documentation"
+
+            style="max-width: none;" height="22" width="236"></a> </div>
+    </header>
+    <!--end header-->
+    <div id="content">
+      <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+      <!-- Use an imperative verb in the title. -->
+      <h1><img src="img/obe_tag.png" alt="Oracle by Example branding" align="middle">Manage
+        the Listener Using the Listener Control Utility </h1>
+      <div class="w1024" style="clear:both; position:relative; margin-top:40px;">
+        <div class="navbackwide border-right"><!-- --></div>
+        <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+        <div id="sidebar"><!-- -->
+          <div class="left-nav-tut"><!-- -->
+            <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+            <div id="navbar" class="left-nav-w"><!-- -->
+              <div id="toc" class="tocify"><!-- --></div>
+            </div>
+          </div>
+        </div>
+        <div id="bookContainer"> <br>
+          <br>
+          <article>
+            <section>
+              <h2><img src="img/32_begin.png" alt="section 0" class="num_circ" height="32"
+
+                  width="32">Before You Begin</h2>
+              <p>This 15mins tutorial introduces you to the listener control
+                utility which enables you to administer the listener.</p>
+              <p><strong>Select the Oracle Database release:</strong> <span id="dropdown"></span></p>
+              <h3>Background</h3>
+              <p>Oracle Net Listener is a process that runs on the database
+                server computer. It receives incoming client connection requests
+                and manages the request traffic. Listener configuration
+                information is stored in the listener.ora file and includes one
+                or more listening protocol addresses, information about
+                supported services, and parameters that control its run-time
+                behavior. The listener is configured during the creation of the
+                database. You can use the Listener Control Utility to administer
+                the listener after it is configured.</p>
+              <h3>What Do You Need?</h3>
+              <ul>
+                <li>&nbsp;Install Oracle Database <span class="opt-release-18c">18c</span><span
+
+                    class="opt-release-19c">19c</span></li>
+                <li>&nbsp;Create a Database</li>
+              </ul>
+            </section>
+            <!-- ========================================================================================================================= -->
+            <section>
+              <hr>
+              <h2 id="section_1" role="button" style="text-align: left;"><img src="img/32_1.png"
+
+                  alt="section 1" class="num_circ" height="32" width="32">View
+                the Listener Configuration</h2>
+              <p>Use the Listener Control utility <code>STATUS</code> command
+                to display basic status information about a listener, including
+                a summary of listener configuration settings, listening protocol
+                addresses, and a summary of services registered with the
+                listener. To execute the <code>STATUS</code> command, perform
+                the following steps:</p>
+              <ol>
+                <li><span>Open a terminal window and execute the <span class="_obe_file_or_directory"><strong>oraenv</strong></span>
+                    command to set the environment variables.</span>
+                  <pre class="allow-copy">$ <span><strong>. oraenv</strong></span>
+ORACLE_SID = [oracle] ? orcl
+The Oracle base has been set to /scratch/u01/app/oracle</pre>
+                </li>
+                <li>Execute the <strong>lsnrctl</strong> <strong>status</strong>
+                  command.
+                  <pre class="allow-copy">$<span><strong>lsnrctl status</strong></span></pre>
+                  <pre><span class="opt-release-18c">LSNRCTL for Linux: Version 18.0.0.0.0 - Production on 05-MAR-2019 01:52:41                                                                                                                           
+                                                                                                                                                                                                     
+Copyright (c) 1991, 2018, Oracle.  All rights reserved.                                                                                                                                              
+                                                                                                                                                                                                     
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)
+(HOST=host01.example.com)(PORT=1521)))                                                                                                         
+STATUS of the LISTENER                                                                                                                                                                               
+------------------------                                                                                                                                                                                       
+Alias                     LISTENER                                                                                                                                                                             
+Version                   TNSLSNR for Linux: Version 18.0.0.0.0 - Production                                                                                                                                   
+Start Date                03-MAR-2019 23:30:55                                                                                                                                                                 
+Uptime                    1 days 2 hr. 21 min. 45 sec                                                                                                                                                          
+Trace Level               off                                                                                                                                                                                  
+Security                  ON: Local OS Authentication                                                                                                                                                          
+SNMP                      OFF                                                                                                                                                                                  
+Listener Parameter File   /scratch/u01/app/oracle/product/18.0.0
+/dbhome_1/network
+/admin/listener.ora                                                                                                           
+Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr
+/slc12ftw/listener
+/alert/log.xml                                                                                                                 
+Listening Endpoints Summary...                                                                                                                                                                                 
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)
+  (HOST=host01.us.oracle.com)(PORT=1521)))                                                                                                                               
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))                                                                                                                                                      
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=host01.example.com)
+(PORT=5500))(Security=(my_wallet_directory=/scratch/u01/app
+/oracle/admin/orcl/xdb_wallet))
+(Presentation=HTTP)(Session=RAW))                
+Services Summary...
+Service "orcl.us.oracle.com" has 1 instance(s).
+  Instance "orcl", status READY, has 1 handler(s) for this service...
+Service "orclXDB.us.oracle.com" has 1 instance(s).
+  Instance "orcl", status READY, has 1 handler(s) for this service...
+The command completed successfully</span><span class="opt-release-19c">LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 01:09:40
+
+Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+Start Date                10-JUL-2019 01:32:04
+Uptime                    4 days 23 hr. 37 min. 36 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=host01.example.com)(PORT=5500))(Security=(my_wallet_directory=/scratch/u01/app/oracle/admin/orcl/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+Services Summary...                                                                                                                                                                                            
+Service "86b637b62fdf7a65e053f706e80a27ca.us.oracle.com" has 1 instance(s).                                                                                                                                    
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "8d50ba5e384412fbe053193ec40a5c2c.us.oracle.com" has 1 instance(s).                                                                                                                                    
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "orcl.us.oracle.com" has 1 instance(s).                                                                                                                                                                
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "orclXDB.us.oracle.com" has 1 instance(s).                                                                                                                                                             
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "orclpdb.us.oracle.com" has 1 instance(s).                                                                                                                                                             
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+The command completed successfully</span> </pre>
+                  <p><strong>Note:</strong> If the Pluggable Database(PDB) is
+                    configured, you will see a service for each PDB. </p>
+                  <section><br>
+                  </section>
+                </li>
+              </ol>
+            </section>
+            <section>
+              <hr>
+              <h2 id="section_1" role="button" style="text-align: left;"><img src="img/32_2.png"
+
+                  alt="section 2" class="num_circ" height="32" width="32">Start
+                the Listener</h2>
+              <p>The Oracle listener is set to start automatically whenever the
+                host is restarted. If a problem occurs in your system or you
+                have manually stopped the listener, you can restart it by using
+                the <code>lsnrctl start <code>command. </code></code></p>
+              <ol>
+                <li>For the purposes of this tutorial, stop the listener by
+                  executing the <strong>lsnrctl</strong> <strong>stop</strong>
+                  command.
+                  <pre class="allow-copy">$ <span><strong>lsnrctl stop</strong></span></pre>
+                  <pre><span class="opt-release-18c">LSNRCTL for Linux: Version 18.0.0.0.0 - Production on 07-MAR-2019 07:13:34
+
+Copyright (c) 1991, 2018, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)
+(PORT=1521)))
+The command completed successfully</span><span class="opt-release-19c">
+LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 02:58:16
+
+Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
+The command completed successfully</span></pre>
+                </li>
+                <li> Now that the listener is stopped, log in to SQL*Plus as the
+                  <strong>SYSTEM</strong> user using the <strong>orcl</strong>
+                  service name to determine whether you can still connect to the
+                  database.
+                  <pre class="allow-copy">$<span><strong> sqlplus system@orcl</strong>
+</span> 
+<span class="opt-release-18c">SQL*Plus: Release 18.0.0.0.0 Production on Mon Mar 07 07:14:15 2019
+
+Copyright (c) 1982, 2018, Oracle.  All rights reserved.
+
+Enter password: <strong>Enter password here</strong>
+ERROR:
+ORA-12541: TNS:no listener
+
+
+Enter user-name:</span><span class="opt-release-19c">SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jul 15 03:00:11 2019
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+Enter password: 
+ERROR:
+ORA-12541: TNS:no listener</span>
+</pre>
+                  <p>Exit the prompt by pressing <strong>Ctrl + C</strong>
+                    followed by <strong>Enter</strong>.</p>
+                </li>
+                <li> Restart the listener by using the <strong>lsnrctl</strong>
+                  <strong>start</strong> command.
+                  <pre class="allow-copy">$ <span><strong>lsnrctl start</strong></span></pre>
+                  <pre><span class="opt-release-18c">LSNRCTL for Linux: Version 18.0.0.0.0 - Production on 07-MAR-2019 01:10:17
+
+Copyright (c) 1991, 2018, Oracle.  All rights reserved.
+
+Starting /scratch/u01/app/oracle/product/18.0.0/dbhome_1/bin/tnslsnr: please wait...
+
+TNSLSNR for Linux: Version 18.0.0.0.0 - Production
+System parameter file is /scratch/u01/app/oracle/product/18.0.0/dbhome_1/network/admin/listener.ora
+Log messages written to /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 18.0.0.0.0 - Production
+Start Date                07-MAR-2019 01:10:17
+Uptime                    0 days 0 hr. 0 min. 0 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /scratch/u01/app/oracle/product/18.0.0/dbhome_1/network/admin/listener.ora
+Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+The listener supports no services
+The command completed successfully</span><span class="opt-release-19c">LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 03:01:00
+
+Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+
+Starting /scratch/u01/app/oracle/product/19.0.0/dbhome_1/bin/tnslsnr: please wait...
+
+TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+System parameter file is /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+Log messages written to /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+Start Date                15-JUL-2019 03:01:01
+Uptime                    0 days 0 hr. 0 min. 0 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+The listener supports no services
+The command completed successfully
+</span>
+</pre> </li>
+                <li> Check the listener status by executing the <strong>lsnrctl</strong>
+                  <strong>status</strong> command.
+                  <pre class="allow-copy">$ <span><strong>lsnrctl status</strong></span></pre>
+                  <pre><span class="opt-release-18c">LSNRCTL for Linux: Version 18.0.0.0.0 - Production on 05-MAR-2019 01:52:41                                                                                                                           
+                                                                                                                                                                                                     
+Copyright (c) 1991, 2018, Oracle.  All rights reserved.                                                                                                                                              
+                                                                                                                                                                                                     
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)
+(HOST=host01.example.com)(PORT=1521)))                                                                                                         
+STATUS of the LISTENER                                                                                                                                                                               
+------------------------                                                                                                                                                                                       
+Alias                     LISTENER                                                                                                                                                                             
+Version                   TNSLSNR for Linux: Version 18.0.0.0.0 - Production                                                                                                                                   
+Start Date                03-MAR-2019 23:30:55                                                                                                                                                                 
+Uptime                    1 days 2 hr. 21 min. 45 sec                                                                                                                                                          
+Trace Level               off                                                                                                                                                                                  
+Security                  ON: Local OS Authentication                                                                                                                                                          
+SNMP                      OFF                                                                                                                                                                                  
+Listener Parameter File   /scratch/u01/app/oracle/product/18.0.0
+/dbhome_1/network
+/admin/listener.ora                                                                                                           
+Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr
+/slc12ftw/listener
+/alert/log.xml                                                                                                                 
+Listening Endpoints Summary...                                                                                                                                                                                 
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)
+  (HOST=host01.us.oracle.com)(PORT=1521)))                                                                                                                               
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))                                                                                                                                                      
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=host01.example.com)
+(PORT=5500))(Security=(my_wallet_directory=/scratch/u01/app
+/oracle/admin/orcl/xdb_wallet))
+(Presentation=HTTP)(Session=RAW))                
+Services Summary...
+Service "orcl.us.oracle.com" has 1 instance(s).
+  Instance "orcl", status READY, has 1 handler(s) for this service...
+Service "orclXDB.us.oracle.com" has 1 instance(s).
+  Instance "orcl", status READY, has 1 handler(s) for this service...
+The command completed successfully</span><span class="opt-release-19c">LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 01:09:40
+
+Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+Start Date                10-JUL-2019 01:32:04
+Uptime                    4 days 23 hr. 37 min. 36 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=host01.example.com)(PORT=5500))(Security=(my_wallet_directory=/scratch/u01/app/oracle/admin/orcl/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+Services Summary...                                                                                                                                                                                            
+Service "86b637b62fdf7a65e053f706e80a27ca.us.oracle.com" has 1 instance(s).                                                                                                                                    
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "8d50ba5e384412fbe053193ec40a5c2c.us.oracle.com" has 1 instance(s).                                                                                                                                    
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "orcl.us.oracle.com" has 1 instance(s).                                                                                                                                                                
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "orclXDB.us.oracle.com" has 1 instance(s).                                                                                                                                                             
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+Service "orclpdb.us.oracle.com" has 1 instance(s).                                                                                                                                                             
+  Instance "orcl", status READY, has 1 handler(s) for this service...                                                                                                                                          
+The command completed successfully</span> </pre>
+                  <p><strong>Note:</strong> If the PDB is configured, you will
+                    see a service for each PDB.</p>
+                </li>
+                <li> Once again log in to SQL*Plus as the <strong>SYSTEM</strong>
+                  user to verify you can now connect to the database.
+                  <pre class="allow-copy">$ <span><strong>sqlplus system@orcl</strong></span></pre>
+                  <pre><span class="opt-release-18c">SQL*Plus: Release 18.0.0.0.0 Production on Mon Mar 07 07:14:15 2019
+
+Copyright (c) 1982, 2018, Oracle.  All rights reserved.
+
+Enter password: <strong>Enter password here</strong>
+Last Successful login time: Mon Jul 25 2016 07:31:56 +00:00
+
+Connected to:
+Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production
+Version 18.3.0.0.0</span><span class="opt-release-19c">SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jul 15 03:01:37 2019
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+Enter password: 
+Last Successful login time: Mon Jul 15 2019 03:01:34 -07:00
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0</span>
+
+
+SQL&gt;</pre>
+                </li>
+                <li> Log in to Enterprise Manager Database Express as the <strong>SYSTEM</strong>
+                  user to verify you can access the database.
+                   <figure class="opt-release-18c"><img alt="Enterprise Manager login page" src="img/a6.png"
+
+                      class="ScreenShot" id="em_db_home"><figcaption class="opt-release-18c"><a href="files/a6.txt">Description
+                        of this image</a></figcaption> </figure>
+                  <figure class="opt-release-19c"> <img alt="Enterprise Manager login page" src="img/c2.png"
+
+                      class="ScreenShot" id="em_db_home"><figcaption class="opt-release-19c"><a href="files/a6.txt">Description
+                        of this image</a></figcaption> </figure>
+                </li>
+                <li> The Database Home page is displayed. Log out of Enterprise
+                  Manager Database Express. </li>
+             </ol>
+            </section>
+            <hr> </article>
+        </div>
+        <br class="clearfloat">
+      </div>
+    </div>
+    <!--close main-->
+    <!--end content-->
+    <div class="footer-container ">
+      <div style="max-width: 994px; padding:10px 0 0 17px;">
+        <footer class="footer-list">
+          <ul>
+            <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About
+                Oracle</a> </li>
+            <li> <a href="https://www.oracle.com/us/corporate/contact/index.html"
+
+                target="_blank">Contact Us</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal
+                Notices</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms
+                of Use</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your
+                Privacy Rights</a> </li>
+            <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright
+                © 2019, Oracle and/or its affiliates. All rights reserved.</a></li>
+          </ul>
+        </footer>
+      </div>
+      <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+        </div>
+    <!-- OBE Dialog Box code 10/15/2018 -->
+    <!-- DO NOT ALTER THE CODE BELOW   -->
+    <div id="lpModal" class="modal">
+      <!-- Modal hdr and body -->
+      <div id="obe_dialog" class="modal-content">
+        <div class="modal-header"> <a href="#" class="close"> <span class="close">×</span>
+          </a>
+          <h1>Associated Learning Paths</h1>
+        </div>
+        <div id="dialog-content"> </div>
+        <div id="dialog-close" class="closeBtn"> <a href="#" class="close2">
+            <p class="close2"> <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span> </p>
+          </a> </div>
+      </div>
+    </div>
+    <!-- END OBE Dialog Box code -->
+  </body>
+</html>

@@ -1,0 +1,1 @@
+This screenshot shows the login page of the Enterprise Manager.

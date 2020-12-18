@@ -1,0 +1,10 @@
+This screenshot shows the Create Table window. The Schema and Name is set to APPUSER and PURCHASE_ORDERS respectively. The Advanced checkbox is unchecked.
+The Table tab is selected.
+There are four rows in the table:
+Heading: PK, Name, Data Type, Size, Not Null, Default, Comment
+Row 1: PK(selected), PO_NUMBER, NUMBER, (null), (checked), (null), (null)
+Row 2: (unselected), PO_DESCRIPTION, VARCHAR2, 200, (unchecked), (null), (null)
+Row 3: (unselected), PO_DATE, DATE, (null), (checked), (null), (null)
+Row 4: (unselected), PO_VENDOR, NUMBER, (null), (checked), (null), (null)
+There are three active buttons - Help, OK, and Cancel. The OK button is being clicked.
+

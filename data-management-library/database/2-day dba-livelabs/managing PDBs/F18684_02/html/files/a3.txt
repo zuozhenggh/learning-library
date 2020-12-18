@@ -1,0 +1,8 @@
+This screenshot shows the Create PDB From Seed wizard - General tab. The following values are set:
+- PDB Name: pdb1
+PDB Administrative User
+- Username: PDBADMIN
+- Password: (encrypted value)
+- Confirm Password: (encrypted value)
+- Grant DBA Role: (enabled)
+- There are four buttons: Show SQL, OK, Cancel, and Next.

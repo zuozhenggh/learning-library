@@ -1,0 +1,7 @@
+This screenshot shows the Clone PDB ORCLPDB wizard - General tab. The following values are set:
+- PDB Name: pdb2
+- Clone Method: Full Clone
+- Service Option: (enabled)
+- Source PDB Service: orclpdb
+- Destination PDB Service: pdb2
+There are four active buttons - Show SQL, OK, Cancel, and Next.

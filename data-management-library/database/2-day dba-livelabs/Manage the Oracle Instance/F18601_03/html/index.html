@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Part number: F18601-03 -->
+    <!-- Published date: May 2019 -->
+    <!-- Template date: October 15, 2018 -->
+    <!-- Put the content ID of this OBE between the empty quotation marks for 'content' below -->
+    <meta name="contentid" content="26495">
+    <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
+    <!-- Use an imperative verb in the title. -->
+    <title>View and Modify the Initialization Parameters</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="description" content="This tutorial shows how to view and modify initialization parameters.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/obe-lite.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery.tocify.jd.js"></script>
+    <script src="js/leftnav.js"></script>
+    <link rel="stylesheet" href="css/copy-button.css">
+    <script src="js/copytoclipboard.js"></script>
+    <link rel="stylesheet" href="css/single-source.css">
+    <script src="js/singlesource.js"></script>
+    <script>
+$(function () {
+addOption("opt-release-19c", "19c");
+addOption("opt-release-18c", "18c");
+
+singleSource();
+});</script>
+  </head>
+  <body>
+    <header>
+      <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com"
+
+          class="oracle-logo"> <img src="img/oracle_doc_logo.png" alt="Oracle Documentation"
+
+            style="max-width: none;" height="22" width="236"></a> </div>
+    </header>
+    <!--end header-->
+    <div id="content">
+      <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+      <!-- Use an imperative verb in the title. -->
+      <h1><img src="img/obe_tag.png" alt="Oracle by Example branding" align="middle">View
+        and Modify the Initialization Parameters</h1>
+      <div class="w1024" style="clear:both; position:relative; margin-top:40px;">
+        <div class="navbackwide border-right"><!-- --></div>
+        <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+        <div id="sidebar"><!-- -->
+          <div class="left-nav-tut"><!-- -->
+            <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+            <div id="navbar" class="left-nav-w"><!-- -->
+              <div id="toc" class="tocify"><!-- --></div>
+            </div>
+          </div>
+        </div>
+        <div id="bookContainer">
+          <article>
+            <section>
+              <h2><img src="img/32_begin.png" alt="section 0" class="num_circ" height="32"
+
+                  width="32">Before You Begin</h2>
+              <p>This 15-minute tutorial shows you how to view and modify
+                initialization parameters. </p>
+              <p><strong>Select the Oracle Database release:</strong> <span id="dropdown"></span></p>
+              <h3>Background</h3>
+              <p>An Oracle database system consists of an Oracle database and an
+                Oracle instance. An Oracle instance (also known as a database
+                instance) contains the set of Oracle Database background
+                processes that operate on the stored data and the shared
+                allocated memory that those processes use to do their work. In
+                this tutorial you learn how to manage your Oracle Database
+                instance.</p>
+              <h3>What Do You Need?</h3>
+              <ul>
+                <li>Oracle Database <span class="opt-release-18c">18c</span><span
+
+                    class="opt-release-19c">19c</span></li>
+              </ul>
+            </section>
+            <!-- ========================================================================================================================= -->
+            <section>
+              <hr>
+              <h2 id="section_1" role="button" style="text-align: left;"><img src="img/32_1.png"
+
+                  alt="section 1" class="num_circ" height="32" width="32">View
+                and Modify the Initialization Parameters</h2>
+              <p>The properties of an Oracle instance are specified using
+                instance initialization parameters. When the instance is
+                started, an initialization parameter file is read, and the
+                instance is configured accordingly. To view the values of the
+                initialization parameters by using Enterprise Manager Database
+                Express, perform the following steps:</p>
+              <ol>
+                <li>Open your browser and specify the URL for Enterprise Manager
+                  Database Express.
+                  <figure><img src="img/a1.jpg" alt="web browser"> <figcaption><a
+
+                        href="files/a1.txt">Description of the illustration a1</a></figcaption>
+                  </figure>
+                
+                <p class="opt-release-19c"><strong>Note:</strong>Starting with Oracle Database 19c,
+                    Oracle EM Express, the default management option for Oracle
+                    Database, is based on Java JET technology. Currently, only the Performance menu is available in the 19c JET version. Therefore, we
+                    are using the 18c Flash Oracle EM Express in our tutorials. Use the following
+                    command to revert to Flash Oracle EM Express: </p>
+                  <pre class="opt-release-19c">SQL&gt; @?/rdbms/admin/execemx emx</pre>
+                  <p class="opt-release-19c">To return to 19c JET Oracle EM Express, use the following
+                    command: </p>
+                <pre class="opt-release-19c">SQL&gt; @?/rdbms/admin/execemx omx</pre>
+                  <p></p></li>
+                <li> Log in to Enterprise Manager Database Express as the <span
+
+                    style="font-weight: bold;">SYSTEM</span> user.
+                  <figure><img src="img/a2.jpg" alt="Description of sample-image-1.png follows">
+                    <figcaption><a href="files/a2.txt">Description of the
+                        illustration a2</a></figcaption> </figure>
+                </li>
+                <li>In the Configuration menu, select <span style="font-weight: bold;">Initialization
+                    Parameters</span>.
+                  <figure><img src="img/a3.jpg" alt="Configuration"> <figcaption><a
+
+                        href="files/a3.txt">Description of the illustration a3</a></figcaption>
+                  </figure>
+                </li>
+                <li>The Initialization Parameters page is displayed. The Current
+                  tab shows the parameter values that are in use. Click the <span
+
+                    style="font-weight: bold;">SPFile</span> tab to view
+                  parameters in the server parameter file.
+                  <figure><img src="img/a4.jpg" alt="initialization Parameters">
+                    <figcaption><a href="files/a4.txt">Description of the
+                        illustration a4</a></figcaption> </figure>
+                </li>
+                <li>The SPFile tab of the Initialization Parameters page shows
+                  the parameter values in the server parameter file. The server
+                  parameter file is a binary file that can be written to and
+                  read by the database and is the recommended format for the
+                  initialization parameter file. Click <span style="font-weight: bold;">Current</span>
+                  to return to the Current tab.
+                  <figure><img src="img/a5.jpg" alt="spfile"> <figcaption><a href="files/a5.txt">Description
+                        of the illustration a5</a></figcaption> </figure>
+                </li>
+                <li>To change the value of OPEN_CURSORS, search for the
+                  initialization parameter by entering "<span style="font-weight: bold;">open</span>"
+                  in the search window.
+                  <figure><img src="img/a6.jpg" alt="open cursors"> <figcaption><a
+
+                        href="files/a6.txt">Description of the illustration a6</a></figcaption>
+                  </figure>
+                </li>
+                <li>Select <span style="font-weight: bold;">open_cursors</span>
+                  and click<span style="font-weight: bold;"> Set</span>.
+                  <figure><img src="img/a7.jpg" alt="edit open cursor"> <figcaption><a
+
+                        href="files/a7.txt">Description of the illustration a7</a></figcaption>
+                  </figure>
+                </li>
+                <li>Enter <span style="font-weight: bold;">400</span> in the
+                  Value field and click <span style="font-weight: bold;">OK</span>.
+                  <figure><img src="img/a8.jpg" alt="enter value"> <figcaption><a
+
+                        href="files/a8.txt">Description of the illustration a8</a></figcaption>
+                  </figure>
+                </li>
+                <li>Click <span style="font-weight: bold;">OK</span> in the
+                  Confirmation window.
+                  <figure><img src="img/a9.jpg" alt="confirmation window"> <figcaption><a
+
+                        href="files/a9.txt">Description of the illustration a9</a></figcaption>
+                  </figure>
+                </li>
+                <li>The Current tab shows that the updated value of open_cursors
+                  as 400 in the server parameter file. When the instance is
+                  restarted the new value will be used. <br>
+                  <figure><img src="img/a10.png" alt="updated value"> <figcaption><a
+
+                        href="files/a10.txt">Description of the illustration a10</a></figcaption>
+                  </figure>
+                </li>
+                <li>Enter<strong> db_files</strong> in the search window to
+                  search for the db_files initialization parameter.
+                  <figure><img src="img/a12.jpg" alt="search db_files"> <figcaption><a
+
+                        href="files/a11.txt">Description of the illustration a11</a></figcaption>
+                  </figure>
+                </li>
+                <li><span>Select <strong>db_files</strong></span> and click <strong>Set</strong>.
+                  <figure><img src="img/a13.jpg" alt="select db_files"> <figcaption><a
+
+                        href="files/a12.txt">Description of the illustration a12</a></figcaption>
+                  </figure>
+                </li>
+                <li>Note that the only scope for this initialization parameter
+                  file is SPFile. This is a static initialization parameter and
+                  the value in the running instance cannot be changed. You must
+                  restart the instance for the new value to take affect. Enter <span
+
+                    style="font-weight: bold;">250</span> in the Value field and
+                  click <strong>OK</strong>.
+                  <figure><img src="img/a14.jpg" alt="update db_file"> <figcaption><a
+
+                        href="files/a13.txt">Description of the illustration a13</a></figcaption>
+                  </figure>
+                </li>
+                <li>Click <strong>OK</strong> to confirm the change.
+                  <figure><img src="img/a15.jpg" alt="Description of sample-image-1.png follows">
+                    <figcaption><a href="files/a14.txt">Description of the
+                        illustration a14</a></figcaption> </figure>
+                </li>
+                <li>Note that the value for db_files for the running instance is
+                  still set to 200. Click the <strong>SPFile</strong> tab.
+                  <figure><img src="img/a16.jpg" alt="click SPFile"> <figcaption><a
+
+                        href="files/sample-image-1.txt">Description of the
+                        illustration a15</a></figcaption> </figure>
+                </li>
+                <li>The db_files value in the server parameter file is set to
+                  250. When the instance is restarted the new value of 250 will
+                  be used.
+                  <figure><img src="img/a16.png" alt="SPFile parameter"> <figcaption><a
+
+                        href="files/a16.txt">Description of the illustration a16</a></figcaption>
+                  </figure>
+                </li>
+                <li>Click <strong>ORCL</strong> to return to the Database Home
+                  page. </li>
+              </ol>
+            </section>
+            <hr></article>
+        </div>
+      </div>
+    </div>
+    <!--close main-->
+    <!--end content-->
+    <div class="footer-container ">
+      <div style="max-width: 994px; padding:10px 0 0 17px;">
+        <footer class="footer-list">
+          <ul>
+            <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About
+                Oracle</a> </li>
+            <li> <a href="https://www.oracle.com/us/corporate/contact/index.html"
+
+                target="_blank">Contact Us</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal
+                Notices</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms
+                of Use</a> </li>
+            <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your
+                Privacy Rights</a> </li>
+            <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright
+                © 2019, Oracle and/or its affiliates. All rights reserved.</a></li>
+          </ul>
+        </footer>
+      </div>
+      <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+    </div>
+    <!-- OBE Dialog Box code 10/15/2018 -->
+    <!-- DO NOT ALTER THE CODE BELOW   -->
+    <div id="lpModal" class="modal">
+      <!-- Modal hdr and body -->
+      <div id="obe_dialog" class="modal-content">
+        <div class="modal-header"> <a href="#" class="close"> <span class="close">×</span>
+          </a>
+          <h1>Associated Learning Paths</h1>
+        </div>
+        <div id="dialog-content"> </div>
+        <div id="dialog-close" class="closeBtn"> <a href="#" class="close2">
+            <p class="close2"> <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span> </p>
+          </a> </div>
+      </div>
+    </div>
+    <!-- END OBE Dialog Box code -->
+  </body>
+</html>

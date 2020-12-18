@@ -1,0 +1,1 @@
+This screenshot shows a portion of the Initialization Parameters page. The Current tab is active and the search field contains the value open. The search results are displayed.

@@ -1,0 +1,1 @@
+This screenshot shows the Top Containers section of the Containers page. There are two rows with Container Names - ORCLPDB and PDB2. The Open Mode shows the down arrow icon (in red).
