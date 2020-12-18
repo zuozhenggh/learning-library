@@ -33,7 +33,7 @@
           }
           ,
           {
-              "title": "Lab 5: How to Repair Data ",
+              "title": "Lab 5: Repair Jobs and Generate SQL Files ",
               "description": "This lab walks you through the steps to repair jobs and data.",
               "filename": "./../../ggv-repair-data/ggv-repair-data.md"
             }
