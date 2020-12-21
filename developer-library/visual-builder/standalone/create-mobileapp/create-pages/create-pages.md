@@ -1,197 +1,116 @@
-# Create Pages for Business Objects
-## Introduction
+# Create Pages for a Business Object in an Oracle Visual Builder Mobile Application
 
-This lab shows you how to create web pages to display the business objects you created in the previous tutorial, _Create a Web Application in Oracle Visual Builder_, and how to create new instances of the business objects.
+## Before You Begin
 
-Estimated Lab Time:  15 minutes
+This 10-minute tutorial shows you how to create pages to display data from the business object you created in the previous tutorial and to create new instances of the business object.
 
 ### Background
 
-In Oracle Visual Builder, you create web pages by dragging and dropping components. You can use a Quick Start to specify how to display your business objects in a table. A table component offers several Quick Starts that add buttons and pages to create, view, edit, and delete data in the business objects.
+In Oracle Visual Builder, you create pages in your mobile application by dragging and dropping components. You can use Quick Starts to quickly create pages to display, create, edit, and delete data.
 
-In this tutorial, you'll create a page to display departments and another page to display employees. You'll add a **Create** button to each page to allow you to create a new instance of the business object. The button is associated with an _event_, and the event sets off an _action chain_, which is a sequence of actions that the application executes. The Quick Starts create complex action chains automatically. In the tutorial after this one, you'll create very simple action chains yourself.
+### What Do You Need?
 
-As a refresher, here's the Location, Department, and Employee business objects you created in the previous tutorial.
+-   Access to the Visual Applications user interface of Oracle Visual Builder
+-   A supported browser
+-   Completion of the previous tutorial
 
-![](./images/vbcscp_dbdiagram.png)
+## Use the main-start Page to Display Departments
 
-## **STEP 1 **: Use the main-start Page to Display Departments
+These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created in the previous tutorial.
 
-These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
+1.  Click the **Mobile Applications** ![Mobile Applications icon](img/vbcscp_mob_mob_icon.png "Mobile Applications icon") tab.
+2.  Expand the **hrmobileapp**, **Flows**, and **main** nodes, then click **main-start**.
 
-1.  Click the **Web Applications** ![Web Applications icon](./images/vbcscp_webapp_icon.png) tab in the Navigator.
-2.  Expand the **Flows** and **main** nodes if necessary, then click **main-start**, the page that was automatically created for your web application. You're viewing the Page Designer, with the Components palette visible.
+    ![Description
+    of vbcscp_mob_dd_s2.png follows](./img/vbcscp_mob_dd_s2.png)
 
-    You may want to click the **Web Applications** tab to close the Web Apps pane and create more room. You may also want to widen your browser window.
+    You're viewing the Page Designer, showing the Components palette. You can click the **Mobile Applications** tab to hide the Mobile Apps pane and create more room for the Page Designer. You may also want to widen your browser window.
 
-3.  In the Components palette, locate the **Heading** component under Common and drag it onto the page.
+3.  In the Components palette, scroll down to Collection and drag a **List View** component onto the Content Placeholder section in the page.
+4.  In the Property Inspector, click **Add Data** to open the Add Data Quick Start.
 
-    ![](./images/vbcscp_dd_s3.png)
+    ![Description
+    of vbcscp_mob_dd_s4.png follows](./img/vbcscp_mob_dd_s4.png)
 
-4.  In the Heading Property Inspector, enter `Departments` in the **Text** field. (If you don't see the Property Inspector on the right, click the **Properties** tab.)
+5.  On the Locate Data page of the Quick Start, select the **Department** business object, then click **Next**. (Depending on your Visual Builder instance, you may or may not see Process Objects.)
 
-    ![](./images/vbcscp_dd_s4.png)
+    ![Description
+    of vbcscp_mob_dd_s5.png follows](./img/vbcscp_mob_dd_s5.png)
 
-    After you enter text in the field, click anywhere else in the UI to see the text appear on the page.
+6.  On the Select Template page, select the label - value pairs template, and click **Next**.
 
-5.  In the Components palette, scroll down to **Collection** and drag a **Table** component onto the page below the heading.
+    ![Description
+    of vbcscp_mob_dd_s6.png follows](./img/vbcscp_mob_dd_s6.png)
 
-    You'll use this table to display three fields from the department business object: the id, name, and location.
+7.  On the Bind Data page, under **item\[i\]**, select the **id**, **name**, and **location** items. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./img/vbcscp_handle_icon.png) to reorder the columns as desired. Click ** Next**.
 
-6.  Click **Add Data** in the Property Inspector to open the Add Data Quick Start.  
+    ![Description
+    of vbcscp_mob_dd_s7.png follows](./img/vbcscp_mob_dd_s7.png)
 
-    ![](./images/vbcscp_dd_s6.png)
+8.  On the Define Query page, click **Finish**.  
 
-7.  On the Locate Data page of the Quick Start, select the **Department** business object, then click **Next**.  
+    The empty list view component is displayed with a message that there are no items to display.
 
-    ![](./images/vbcscp_dd_s7.png)
 
-8.  On the Bind Data page, under **item\[i\]**, select the **id** and **name** check boxes (in that order).
+## Add a Create Page for the Department Business Object
 
-    ![](./images/vbcscp_dd_s8.png)
+A Create page allows you to create data instances.
 
-9.  Expand the **locationObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name** to enable the location name to appear in the table. Click **Next**.
+1.  If necessary, click the **List View** component on the page, then click **Quick Start** to display the Quick Start menu again.
+2.  Click **Add Create Page**.
+3.  On the Select Endpoint page, select the **Department** business object if necessary, then click **Next**.
 
-    ![](./images/vbcscp_dd_s9.png)
+    ![Description
+    of vbcscp_mob_cpd_s3.png follows](./img/vbcscp_mob_cpd_s3.png)
 
-10.  On the Define Query page, click **Finish**.  
+4.  On the Page Detail page, under Endpoint Structure, select the **location** check box. The **name** check box is already selected, because **name** is a required field. These are the only fields the user needs to specify.
+5.  Change the value in the **Button label** field to `Create`. Leave the other values set to their defaults. Click **Finish**.
 
-    A Departments table with three empty columns is displayed on the main-start page. Notice that the second Name column (which maps to the location name field) shows simply as Name.
+    ![Description
+    of vbcscp_mob_cpd_s5.png follows](./img/vbcscp_mob_cpd_s5.png)
 
-11.  To make the location name column descriptive, click the **Data** tab. Under **Table Columns**, click the ![Column Detail icon](./images/vbcscp_columndetail_icon.png) **Column Detail** arrow next to **Name _(locationObject)_**.  
+    A **+** button appears on the main-start page. Click the **Mobile Applications** tab to view the main-create-department page created in the **main** page flow. You may want to click the **Components** tab to close the components palette and make room for your view.
 
-    ![](./images/vbcscp_dd_s11.png)
+    ![Description
+    of vbcscp_mob_cpd_s5_result.png follows](./img/vbcscp_mob_cpd_s5_result.png)
 
-12.  In the **Columns, Header Text** field, change `Name` to `Location`, then click ![Back to Table icon](./images/vbcscp_backtotable_icon.png) **Table** to return to the main **Data** tab.  
+6.  Click the **main-create-department** page to open it in the Page Designer.
+7.  In the Page Designer toolbar, click **Live** to make the form active.
+8.  Enter `Administration` in the **Name** field, and enter `Floor 1` in the **Location** field. Click **Save**.
 
-    ![](./images/vbcscp_dd_s12.png)
+    ![Description
+    of vbcscp_mob_cpd_s8.png follows](./img/vbcscp_mob_cpd_s8.png)
 
-    The main-start page now has a table with three columns: Id, Name, and Location. You won't see any information in your table because we are yet to import data for the Department business object.
+    Oracle Visual Builder places you in the **main** page flow of your application, where you can see that the main-start page points to the main-create-department page.
 
+    ![Description
+    of vbcscp_mob_cpd_s8_result.png follows](./img/vbcscp_mob_cpd_s8_result.png)
 
-## **STEP 2**: Add a Create Page for the Department Business Object
+9.  Open the **main-start** page either by clicking the page name in the Navigator or by clicking the tab above the canvas area to see the List View component with the list view item you created. If you don't see it, click **Reload page** ![Reload page icon](img/vbcscp_mob_reload_icon.png).
 
-A Create page allows you to populate your table with data by creating new instances of a business object.
+    ![Description
+    of vbcscp_mob_cpd_s9.png follows](./img/vbcscp_mob_cpd_s9.png)
 
-1.  Select the table if necessary, click the **Quick Start** tab, then click **Add Create Page**.
-2.  On the Select Endpoint page, select the **Department** business object, if necessary, and click **Next**.
-3.  On the Page Detail page, under Endpoint Structure, select the **location** check box (the **name** check box is already selected, because name is a required field). These are the only fields the user needs to specify.
-4.  Change the **Button label** field to `Create`. Leave the other values set to their defaults. Click **Finish**.
+10.  Click **Design** to return to Design view.
 
-    ![](./images/vbcscp_cpd_s4.png)
+## Change the Name of the main-start Page
 
-    A **Create** button appears in a **Toolbar** component above the table on the main-start page. (Click next to the button to see the Toolbar component.) Click the **Web Applications** tab to see the main-create-department page created in the pages list under **Flows** and **main**.
+It makes sense at this point to change the name of the main-start page to main-departments.
 
-    ![](./images/vbcscp_cpd_s4_result.png)
+1.  In the Navigator, right-click the **main-start** page and select **Rename**.
 
-5.  Click the **main-create-department** page in the Navigator to open it in the Page Designer.
+    ![Description
+    of vbcscp_mob_cpn_s1.png follows](./img/vbcscp_mob_cpn_s1.png)
 
-    The page created by the Quick Start has a form for you to enter the fields you specified. It also has two buttons.
+2.  In the Rename dialog box, change `start` to `departments` in the **ID** field and click **Rename**. 
+3.  In the Navigator, click the **main-departments** page to go to that page again.
+4.  Although you have changed its name, the main-departments page continues to be the page where your application starts when you run it. To find out why, click the **Source View** ![Source View icon](./img/vbcscp_mob_sourceview_icon.png) tab and expand the **mobileApps**, **hrmobileapp**, **flows**, and **main** nodes. Then click **main-flow.json** to open it.
 
-6.  In the Page Designer toolbar, click **Live** to make the form active. Click **Properties** to make room for the form.
-
-    To indicate that you are in Live view, the **Live** button now has a green background, and a green line appears around the page.
-
-7.  Enter `Administration` in the **Name** field, and select **Floor 1** from the **Location** drop-down list.
-
-    ![](./images/vbcscp_cpd_s7.png)
-
-    Click **Save**. A message appears briefly, and Oracle Visual Builder places you in the main page flow of your application, where you can see that the main-start page points to the main-create-department page. The arrow means that you can navigate from one page to the other.
-
-    ![](./images/vbcscp_cpd_s7_result.png)
-
-    By convention, a page name has its flow name as a prefix. This simple application uses only the main flow. More complex applications can have more than one flow.
-
-8.  Open the **main-start** page (you can either click the tab above the page canvas or click the page in the Navigator), then click **Reload page** ![Reload page icon](./images/vbcscp_reload_icon.png), if necessary, to see the table row you created.
-
-    ![](./images/vbcscp_cpd_s8.png)
-
-9.  Click **Design** to return to Design view.
-
-## **STEP 3**: Add a Page to Display Employees
-
-In this step, you'll create a page to display employees, similar to the one you created for departments.
-
-1.  In the Web Apps tree, under **hrwebapp** and **Flows**, click **+** (Create Page) next to the **main** node.
-
-    ![](./images/vbcscp_cpe_s1.png)
-
-2.  In the Create Page dialog box, enter `employees` in the **Page ID** field after the `main-` prefix and click **Create**. The main-employees page opens in the Page Designer.
-
-    ![](./images/vbcscp_cpe_s2.png)
-
-3.  In the Components palette, locate the **Heading** component under Common and drag it onto the page.
-4.  Click the **Properties** tab and in the Heading Property Inspector, enter `Employees` in the **Text** field.
-5.  In the Components palette, scroll down to Collection and drag a **Table** component onto the page.
-6.  Click **Add Data**.
-7.  On the Locate Data page, select the **Employee** business object and click **Next**.
-8.  On the Bind Data page, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
-
-    ![](./images/vbcscp_cpe_s8.png)
-
-9.  Expand the **departmentObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name**, then click **Next**.
-
-    ![](./images/vbcscp_cpe_s9.png)
-
-10.  On the Define Query page, click **Finish**.
-
-    An empty Employees table is displayed.
-
-11.  To make the second Name column descriptive, click the **Data** tab. Under **Table Columns**, click the ![Column Detail icon](./images/vbcscp_columndetail_icon.png) **Column Detail** arrow next to **Name _(departmentObject)_**.
-
-    ![](./images/vbcscp_cpe_s11.png)
-
-12.  In **Columns, Header Text** field, change `Name` to `Department`, then click ![Back to Table icon](./images/vbcscp_backtotable_icon.png) **Table** to return to the main **Data** tab.
-
-## **STEP 4**: Add a Create Page for the Employee Business Object
-
-1.  Click the **Quick Start** tab, then click **Add Create Page**.
-2.  On the Select Endpoint page, select the **Employee** business object, if necessary, and click **Next**.
-3.  On the Page Detail page, under Endpoint Structure, select the **hireDate**, **email**, and **department** check boxes (**name** is already selected, because it's a required field).
-4.  Change the **Button label** field to `Create`. Leave the other values set to their defaults. Click **Finish**.
-
-    ![](./images/vbcscp_cpc_s4.png)
-
-    A **Create** button appears above the table, and the main-create-employee page appears in the pages list.
-
-5.  In the pages list, click the **main-create-employee** page to open it in the Page Designer.
-6.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Property Inspector, set the **Max Columns** value to **2**. The fields now appear in two columns.
-7.  Click **Live** to make the form active. To hide the Property Inspector and make more room, click **Properties**. Enter `Leslie Smith` in the **Name** field. Select today's date from the **Hire Date** calendar, and enter `lsmith@example.com` in the **Email** field. Select `Administration` (the only choice) from the **Department** drop-down list. (You can use other data if you wish, except for the department, because you have only one department.) Click **Save**.  
-
-    Oracle Visual Builder briefly displays a message and then places you in the main page flow of your application. As with the departments pages, you can navigate from the main-employees page to the main-create-employee page. There is no connection between the Employee page flow and the Department page flow, however.
-
-    ![](./images/vbcscp_cpc_s7_result.png)
-
-8.  Return to the main-employees page. (You can double-click the page tile in the page flow, in addition to using other navigation mechanisms.) If necessary, click **Reload page** ![Reload page icon](./images/vbcscp_reload_icon.png) to display the table with the row you created.
-9.  Click **Code** to view HTML code for the main-employees page. You can see the code for the heading, the toolbar, and the table within `div` elements. You could edit this code to create a customized user interface. The components and classes all begin with `oj-`, indicating that they are Oracle JavaScript Extension Toolkit (JET) components.  
-
-    ![](./images/vbcscp_cpc_s9.png)
-
-10.  Click **Design** to return to the main-employees page, then click **Structure** to view the page's component structure.
-
-    ![](./images/vbcscp_cpc_s10.png)
-
-11.  Click **Structure** again to close the structure view.
-
-## **STEP 5**: Change the Name of the main-start Page
-
-It makes sense at this point to change the name of the main-start page to main-departments, to match the name of the main-employees page.
-
-1.  In the Web Apps pane of the Navigator, right-click the **main-start** page and select **Rename**.
-
-    ![](./images/vbcscp_cpn_s1.png)
-
-2.  In the Rename dialog box, replace `start` with `departments` in the **ID** field and click **Rename**. Click the **main** node. The Page Flow page shows the renamed page along with the others.
-
-    ![](./images/vbcscp_cpn_s2.png)
-
-3.  Double-click **main-departments** to go to that page again.
-4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click the **Source View** ![Source View icon](./images/vbcscp_sourceview_icon.png) tab and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
-
-    ![](./images/vbcscp_cpn_s4.png)
-
-    You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
-
+    ![Description
+    of vbcscp_mob_cpn_s4.png follows](./img/vbcscp_mob_cpn_s4.png)
+
+    You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the mobile application flow.
+    
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 

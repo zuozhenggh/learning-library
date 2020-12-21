@@ -1,229 +1,79 @@
-# Create a Web Application  
+# Create a Build to Install a Mobile Application on Android Devices
 
-## Introduction
+## Before You Begin
 
-This lab shows you how to use Oracle Visual Builder to create a basic web application and populate it with business objects.
-
-Estimated Lab Time:  15 minutes
+This 10-minute tutorial shows you how to define a build configuration to install a mobile application on Android devices. 
 
 ### Background
 
-Oracle Visual Builder is a development tool for creating web and mobile applications by dragging and dropping components on a page. These components depend on a _business object_ for their data. A business object is just a resource -- like a purchase order or invoice -- that has fields to hold the data for your application. A business object is similar to database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your web application accesses the business objects through their REST endpoints.
+Before you can stage or publish a mobile application, you'll need to create a build configuration that defines deployment information for the Android platform. In this tutorial, you'll define application settings and a build configuration, you'll then use these settings to build the mobile application for installation on Android devices in a later tutorial.
 
-In this tutorial, you'll create the business objects shown here:
+### What Do You Need?
 
-![Description
-of vbcsca_dbdiagram.png follows](./images/vbcsca_dbdiagram.png)
+-   Access to the Visual Applications user interface of Oracle Visual Builder
+-   A supported browser
+-   Completion of the previous tutorials
 
-![](./images/vbcsca_dbdiagram.png " ")
+## Create a Keystore for Signing the App
 
-Once you have your business objects, you'll use them to build a very simple Human Resources application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
+Your mobile application must be signed before it can be deployed to an Android device. Android does not require a certificate authority; an application can instead be self-signed.
 
-**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating applications are the same, no matter what form your data takes.
+To sign your mobile application, you must have a key. If you do not have a key, you can create one using the keytool utility.
 
-## **STEP 1**: Create a Web Application
+The following example shows how to create a keystore with a single key that is valid for 10,000 days. As described in the _Sign Your App_ document, available on the Android Developers website, the keytool prompts you to provide passwords for the keystore and key, and to provide the Distinguished Name fields for your key before it generates the keystore. Complete all the prompts and the created keystore is saved in the specified directory.
 
-The first thing we'll do is create the web application itself. Later, we'll construct the business objects we need so we can populate the app with data.
+`keytool -genkeypair -v -keystore c:\mykeystore\releasesigning.keystore -alias releaseKeyAlias -keyalg RSA -keysize 2048 -validity 10000`
 
-1.  In the web browser, log in to Oracle Visual Builder.
-    -   If you don't have any applications, the landing page appears. Click **+ New Application**.
+If you do not want to create a key, right-click [this sample keystore file](./files/vbcsdoc.keystore "Sample Keystore file") and download it to your file system to use in this tutorial. Here are the credentials for the keystore file.
 
-        ![](./images/vbcsca_cra_s1a.png " ")
+-   **Keystore Password**: `vbcsdoc_ks_pass`
+-   **Key alias**: `vbcsdoc_ksalias`
+-   **Key password**: `vbcsdoc_ks_pass`
 
-    -   If you have one or more current applications, the Visual Applications page shows a list of applications. Click **New**.
+## Configure Application Settings
 
-        ![](./images/vbcsca_cra_s1b.png)
+These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
 
-2.  In the Create Application dialog box, enter:
+1.  In the Navigator, click the **Mobile Applications![Mobile Applications icon](img/vbcsia_mob_mob_icon.png "Mobile Applications icon")**  tab.
+2.  Click the **hrmobileapp** node and click the **Settings** tab.
+3.  In the General tab, review the Application Settings. Revise values that are displayed to the users (as suggested in the following examples):
 
-    -   **Application Name**: `HR Application`
-    -   **Description**: `Tutorial application`
+-   **App Name**: Accept the default value or specify an alternative value for the app name. This value specifies the name that is displayed when the app is installed on a mobile device.
+-   **URL Scheme:** Accept the default value. This value specifies the URL scheme for the app.
+-   **Package name / Bundle ID Default:** Accept the default value. This value specifies the package name for the app. To avoid naming conflicts, Android uses reverse package names, such as _com.company.application_. For more information, refer to the Android Developers website.
+-   **Lock Portrait Mode:** Accept the default value to render the application in Portrait mode on the mobile device. Deselecting the check box renders the mobile application in both Landscape and Portrait mode.
 
-    The **Application ID** text field is automatically populated as you type based on the **Application Name**. The **Application Template** field is set to Empty Application.
+    ![Application Settings pane](img/vbcsia_mob_gen_s3.png "Application Settings pane")
 
-3.  Click **Finish**.
 
-    The application is created and opens on the Welcome page.
+## Define a Build Configuration
 
-    ![](./images/vbcsca_cra_s3.png)
+A build configuration includes deployment configuration and specifies if the build is to be deployed in the debug or release mode.
 
-    The Welcome page contains a set of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts.
+1.  Click the **Build Configurations** tab and select **Android** in the + Configuration drop-down list.
 
-    In the toolbar, the `DEV` and `1.0` tags next to the application name indicate the status (development) and the version.
+    ![Build Configurations tab](img/vbcsia_mob_bp_s1.png "Android option in New Configuration list")
 
-4.  We want to create a web app, so under **Create Apps**, click **Web Apps**.
+2.  In the Android Build Configuration dialog box, enter:
 
-    The Navigator opens in the Web Applications pane. On the far left side are tabs for **Mobile Applications**, **Web Applications**, **Service Connections**, **Business Objects**, **Components**, **Processes**, and **Source View**.
+    -   **Configuration Name:** Enter the configuration name, for example, `MyAndroidBuildConfiguration`.  
 
-5.  Click **+ Web Application** (or click the **+** sign at the top of the pane).
+    -   **Build Type:** Set the build type to **Debug**. Options are **Debug** or **Release**.
+    -   **Assigned in the following application profiles**: Accept the default application profile (Base configuration) that Visual Builder provides. You could also create your own application profile.
+    -   **App ID:** Enter a unique ID for the application, for example, you could enter `default.android.hrmobileapp`. Each application deployed to an Android device has a unique ID, one that cannot start with a numeric value or contain spaces.  
 
-    ![](./images/vbcsca_cra_s5.png)
+    -   **Version Name:** Accept the default value for the application's release version number. This is the release version of the application code that is displayed to the user. For example, enter `2.0.0` if this is the second version of your application. The value you enter appears in application information dialogs when you deploy the application to a device.
+    -   **Version Code:** Accept the default value for the version code. This is an integer value that represents the version of the application code, which is checked programmatically by other applications for upgrades or downgrades. The minimum and default value is 1. You can select any value and increment it by 1 for each successive release. 
+    -   **Keystore:** Drag and drop (or browse to and select) the keystore file containing the private key used for signing the application for distribution. Use the provided sample keystore file, `vbcsdoc.keystore`.
+    -   **Keystore Password:** Enter the password for the keystore. This password allows access to the physical file. If using the sample keystore file, enter `vbcsdoc_ks_pass`.
+    -   **Key Alias:** Enter an alias for the key. This is the value set for the _keytool's -alias_ argument. Only the first eight characters of the alias are used. If using the sample keystore file, enter `vbcsdoc_ksalias`.
+    -   **Key Password:** Enter the password for the key. This password allows access to the key (identified by the alias) within the keystore. If using the sample keystore file, enter `vbcsdoc_ks_pass`.
 
-6.  In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under **General Information**. (You can specify uppercase as well as lowercase characters in the application name, but the name  
-    is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and then click **Create**.
+    ![Android Build Configuration dialog](img/vbcsia_mob_bp_s2.png "Android Build Configuration dialog")
 
-    The application opens on the main-start page. This is the default name assigned to the first page in your application.
+3.  Click **Save Configuration**. The new build configuration is displayed on the Build Configurations page.
 
-7.  Expand the **hrwebapp** node to view the web application structure, and expand the **Flows** and **main** nodes to view the main-start page, which is automatically created for you.  
-
-    ![](./images/vbcsca_cra_s7.png)
-
-    By default, the page opens in the Page Designer, showing the Components and the Structure tabs. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, a structural view of your components will show in the Structure view.
-
-    On the far right is the Properties tab, which lets you view or edit a component's properties in the Property Inspector. When the entire page is selected, the Property Inspector shows the Page view, where you choose a preferred page layout. (You can click the Properties tab to hide the Property Inspector.)
-
-
-## **STEP 2**: Import a Location Business Object from a File
-
-In this step, you'll create the Location business object and then import data for it.
-
-1.  Click the **Business Objects** ![Business Objects icon](./images/vbcsca_bo_icon.png) tab in the Navigator.
-2.  Click the **\+ Business Object** button.
-3.  In the New Business Object dialog box, enter `Location` in the **Label** field and click **Create**. `Location` is also filled in automatically as the **Name** value. When you create a business object, specify the singular form of the noun.
-4.  Click the **Fields** tab.
-
-    Every business object you create has five default fields: an id, plus fields that provide information on who created and updated the object and when.
-
-    ![](./images/vbcsca_imp_s4.png)
-
-5.  Click **\+ Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
-6.  In the pop-up box, enter:
-
-    -   **Label**: `Name`
-    -   **Field Name**: `name` (automatically populated)
-    -   **Type**: **String** ![String](./images/vbcsca_textfield_icon.png) (selected by default)
-
-    Click **Create Field**.
-
-    ![](./images/vbcsca_imp_s6.png)
-
-7.  In the Property Inspector, select the **Required** check box under **Constraints**.
-
-    ![](./images/vbcsca_imp_s7.png)
-
-    A check mark is displayed in the **Required** column for the **Name** field.
-
-8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wg-SYyBho4igTK7Q7VRCJvDCadxWLueBiG33POhb7zTHQxtVU5JokCrXQGZ0C2fs/n/c4u03/b/solutions-library/o/Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
-9.  In the Navigator's Business Object panel, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**.
-
-    ![](./images/vbcsca_imp_s9.png)
-
-    The Data Manager is what you use to import data from a variety of sources.
-
-10.  Click **Import from File**.
-
-    ![](./images/vbcsca_imp_s10.png)
-
-11.  In the Import Data dialog box, click the import box, select `Location.csv`, and click **Import**. When the import succeeds, click **Close**.
-
-    ![](./images/vbcsca_imp_s11.png)
-
-12.  In the Business Objects pane, click **Location**, then click the **Data** tab to view the locations.  
-
-    ![](./images/vbcsca_imp_s12.png)
-
-    In the next step, we'll associate these locations with the departments that are located on these floors.
-
-
-## **STEP 3**: Create a Department Business Object
-
-1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
-
-    ![](./images/vbcsca_cdb_s1.png)
-
-2.  In the New Business Object dialog box, enter `Department` in the **Label** field and click **Create**. `Department` is also filled in automatically as the **Name** value.
-3.  Click the **Fields** tab, then click **\+ Field**.
-4.  In the pop-up box, enter:
-
-    -   **Label**: `Name`
-    -   **Field Name**: `name` (automatically populated)
-    -   **Type**: **String** ![String icon](./images/vbcsca_textfield_icon.png) (selected by default)
-
-    Click **Create Field**.
-
-5.  In the Property Inspector for the **Name** field, select the **Required** check box under **Constraints**.
-
-    A check mark is displayed in the **Required** column for the **Name** field.
-
-6.  Click **\+ Field** again, then enter or select:
-
-    -   **Label**: `Location`
-    -   **Field Name**: `location` (automatically populated)
-    -   **Type**: **Reference** ![Reference icon](./images/vbcsca_referencefield_icon.png)
-    -   **Referenced Business Object**: **Location**
-    -   **Display Field**: **Name** (automatically populated)
-
-    The default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down.
-
-    Click **Create Field**.
-
-7.  ![](./images/vbcsca_cdb_s6.png)
-
-    A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll specify its Location (one of the floors). The Display Field indicates that the Name field will be displayed, not the Id.
-
-
-## **STEP 4**: Create an Employee Business Object
-
-In this step, we'll create the last business object we need, the Employee object, which contains the employee's name and identifying data. In this case, the Employee has a Reference field that refers to the Department.
-
-1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
-2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the **Name** value.
-3.  Click the **Fields** tab, then click **\+ Field**.
-4.  In the pop-up box, enter:
-
-    -   **Label**: `Name`
-    -   **Field Name**: `name` (automatically populated)
-    -   **Type**: **String** ![String icon](./images/vbcsca_textfield_icon.png) (selected by default)
-
-    Click **Create Field**.
-
-5.  In the Property Inspector for the Name field, select the **Required** check box under **Constraints**.
-6.  Click **\+ Field** again, then enter or select:
-
-    -   **Label**: `Department`
-    -   **Field Name**: `department` (automatically populated)
-    -   **Type**: **Reference** ![Reference icon](./images/vbcsca_referencefield_icon.png)
-    -   **Referenced Business Object**: **Department**
-    -   **Display Field**: **Name** (automatically populated)
-
-    Click **Create Field**.
-
-7.  Click **\+ Field** again, then enter or select:
-
-    -   **Label**: `Hire Date`
-    -   **Field Name**: `hireDate` (automatically populated)
-    -   **Type**: **Date** ![Date icon](./images/vbcsca_datefield_icon.png)
-
-    Click **Create Field**.
-
-8.  Click **\+ Field** again, then enter or select:
-
-    -   **Label**: `Email`
-    -   **Field Name**: `email` (automatically populated)
-    -   **Type**: **Email** ![Email icon](./images/vbcsca_email_icon.png)
-
-    Click **Create Field**. In the property editor, the Format is set to Email.
-
-9.  Click the **Endpoints** tab and view the Resource APIs and REST endpoints created for the Employee business object. Because Employee refers to Department, you can see endpoints for both objects if you expand the departmentObject node. Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then minimize it again.  
-
-    ![](./images/vbcsca_cde_s9.png)
-
-    If you click an endpoint, an endpoint viewer allows you to perform operations on the endpoints. For example, you can test requests and view responses with specified parameter values:
-
-    ![](./images/vbcsca_cde_s9_result.png)
-
-10.  In the Business Objects pane of the Navigator, click the **Diagrams** tab, then click the **\+ Business Object Diagram** button.
-
-    ![](./images/vbcsca_cde_s11.png)
-
-11.  In the Create Business Object Diagram dialog box, enter `HRDiagram` in the **Diagram name** field and click **Create**.
-12.  In the Property Inspector, click **Select All** to see the three business objects you created and their relationships.
-
-    ![](./images/vbcsca_cde_s12.png)
-
-    The diagram looks just like the graphic in the Before You Begin section.
-
-    So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in a later tutorial.
+![Android build confirguration created](img/vbcsia_mob_bp_result.png "Android build confirguration created")
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan

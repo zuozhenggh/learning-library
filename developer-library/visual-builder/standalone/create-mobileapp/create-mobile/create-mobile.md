@@ -1,88 +1,92 @@
-# Add Navigation and Data to Your Web App
+# Create a Mobile Application in Oracle Visual Builder
 
-## Introduction
+## Before You Begin
 
-This lab shows you how to create navigation buttons in a web application, and how to add data to your application.
-
-Estimated Lab Time: 10 minutes
+This 10-minute tutorial shows you how to create a basic mobile application in Oracle Visual Builder and populate it with data from a business object.
 
 ### Background
 
-In Oracle Visual Builder, you can create buttons for a web page, then specify the actions that are performed when you click the buttons. An *action chain* is a sequence of actions. You can use and customize predefined actions or define your own. Here, you'll create buttons that navigate between the Departments page and the Employees page in your application.
+Oracle Visual Builder is a development tool for creating web and mobile applications that lets you create an application by dragging and dropping components onto a page. It also allows you to manipulate the application and your business objects through the underlying source code, to create types and variables, to access REST endpoints, and to create action chains.
 
-You can also populate your business objects by importing data from a file. You did this for the Location business object in the first tutorial, and you'll do the same for the Department and Employee business objects here.
+You’ll create a business object and a mobile application that you'll later use to display, edit, and delete data about departments. You’ll also create build configurations that enable Oracle Visual Builder to build mobile applications for Android and iOS.
 
-## **STEP 1**: Create an Action Chain to Navigate from the Departments Page to the Employees Page
+![Business Objects schema diagram](./img/vbmca_dbdiagram.png)
 
-1.  In the HR Application, click the **Web Applications** ![Web Applications icon](./images/vbcsnd_webapp_icon.png) tab in the Navigator, and click **main-departments** under the **Flows** and **main** nodes. If necessary, click the **Page Designer** tab.
-2.  If necessary, click **Components** in the Page Designer to open the Components palette. Then, drag a **Button** from the **Common** components to the **Toolbar**, to the right of the **Create** button.
+### What Do You Need?
 
-    ![](./images/vbcsnd_cse_s2.png)
+-   Access to Oracle Visual Builder
 
-3.  Click **Properties**, then in the **General** tab of the button's Property Inspector, change the **Text** field to `Display Employees`.
-4.  Click the **Events** tab for the button, then click the **\+ New Event** button. From the menu, select **Quick Start: 'ojAction'**, the default action for a button click.
+    This tutorial does not provide access to a Visual Builder instance. Talk to your administrator to get the URL of a Visual Builder instance as well as user credentials to access the instance.
 
-    ![](./images/vbcsnd_cse_s4.png)
+-   A supported browser
 
-    An action chain with the ID **ButtonActionChain** is created. It contains only the **Start** action.
+## Create a Mobile Application
 
-5.  Drag the **Navigate** action from the **Navigation** section of the Actions palette to the **+** sign pointed to by the **Start** action.
-6.  In the **Navigate** Property Inspector, select **main-employees** from the **Target** drop-down list.
+1.  In the web browser, sign in to Oracle Visual Builder.
 
-    ![](./images/vbcsnd_cse_s6.png)
+-   If you have no current applications, the landing page appears. Click **\+ New  Application.**
+-   If you have one or more current applications, the Visual Applications page appears. Click **New.**
 
-    The action now has the label `Navigate main-employees`.
+3.  In the Create Application dialog box, enter `HR Application` in the **Application Name** field and `Tutorial application` in the **Description** field. 
 
-7.  Click **Preview** ![Preview icon](./images/vbcsnd_run_icon.png) in the header to test the pages and navigation. The application opens in another browser tab. Click **Create** and add another department (`IT` on `Floor 2`, for example), then click **Save**. A success message is displayed briefly.
-8.  Click **Display Employees Page**, then click **Create**. Add another employee, specifying the new department, and click **Save**. You'll notice there's no way to get back to the main-departments page from the main-employees page. Close the browser tab.
+    The **Application ID** text field is automatically populated based on the value that you enter in the **Application Name** field.
 
-## **STEP 2**: Create an Action Chain to Navigate from the Employees Page to the Departments Page
+4.  Make sure the **Empty Application** template is selected in the Application template list, and click **Finish**.
 
-1.  In the Web Apps pane of the Navigator, click **main-employees** under the **Flows** and **main** nodes. If necessary, click **Reload page** ![Reload page icon](./images/vbcsnd_refresh_icon.png) to display the new employee you created.
-2.  In the Components palette, locate the **Common** components and drag a **Button** component into the **Toolbar**, to the right of the **Create** button.
-3.  In the Property Inspector, change the **Text** field to `Display Departments`.
-4.  Click the **Events** tab for the button, then click the **+ New Event** button and select **Quick Start: 'ojAction'**.
+    The new application opens in the Welcome screen. The `DEV` and `1.0` tags next to the application name indicate the status (development) and the version.
 
-    Another empty action chain with the ID **ButtonActionChain** is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
+    ![Description
+    of vbmca_cra_04.png follows](./img/vbmca_cra_04.png)
 
-5.  Move the **Navigate** action from the **Navigation** section of the Actions palette to the **+** sign pointed to by the **Start** action.
-6.  In the **Navigate** Property Inspector, select **main-departments** from the **Target** drop-down list.
+5.  Click **Mobile Apps** and click **\+ Mobile Application** in the Mobile Apps tab that opens.
+6.  In the General Information screen of the Create Mobile Application wizard, enter `hrmobileapp` in the **Application Name** field, select **None** as the navigation style, and click **Next.**
 
-    The action now has the label `Navigate main-departments`.
+    ![Description
+    of vbmca_cra_05.png follows](./img/vbmca_cra_05.png)
 
-7.  Click **Preview** ![Preview icon](./images/vbcsnd_run_icon.png) to test the pages and navigation. The application opens in another browser tab. Make sure you can get to the main-departments page from the main-employees page. Close the browser tab.
-8.  Click **main**, and then click the **Page Flow** tab to view the modified page flow for the web application. You can now navigate between the main-departments and main-employees pages.
+7.  In the Page Template – main page of the Create Mobile Application wizard, select **Custom** and click **Create**.
 
-    ![](./images/vbcsnd_cpc_s9.png)
+    Oracle Visual Builder creates the mobile application and opens the main-start page in the Page Designer.
+
+8.  Click **Page Title**, then click the **Properties** tab and enter `Departments` as the page title in the Mobile Page Template's Property Inspector.
+
+    ![Description
+    of vbmca_cra_07.png follows](./img/vbmca_cra_07.png)
 
 
-## **STEP 3**: Import Data for the Business Objects
+## Create a Department Business Object
 
-Instead of using the Data Manager to import data, this time you'll use each business object's **Data** tab to do the same thing.
+1.  Click the **Business Objects** ![Create](./img/vbmca_bo_icon.png) tab.
+2.  Click **\+ Business Object**.
+3.  In the New Business Object window, enter `Department` in the **Label** field and click **Create**.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lhJcJDCHfpvqrjLICvPbQMojBuo2NshPYvF26nE7vLnsHfqs_UFGV1pt8gVM96DY/n/c4u03/b/solutions-library/o/Department.csv) and save the `Department.csv` file. The file contains six departments for the application.
-2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/97_FG5dsJaRTB_FwNYUg_lHokXY4r2IgQgDhiDOARX62krgriYcsFcDL25q1NSbV/n/c4u03/b/solutions-library/o/Employee.csv) and save the `Employee.csv` file. The file contains nine employees for the application.
-3.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcsnd_bo_icon.png) tab, then click the **Objects** tab.
-4.  Click **Department**, then click the **Data** tab. The business objects you created are displayed.
-5.  Click **Import from File** ![Import from File icon](./images/vbcsnd_import_icon_transp.png).
-6.  In the Import Data dialog box, select the **Replace** option for **Row Handling** if it's not already selected. Then click the upload box, browse, select the `Department.csv` file, and click **Import**.
-7.  Click **Close** after the file has been successfully imported. Six departments are displayed in the table.
+    The **Name** field is automatically populated based on the value that you enter in the **Label** field. When you create a business object label, use the singular form of the name.
 
-    ![](./images/vbcsnd_imp_s7.png)
+    ![Description
+    of vbmca_cdb_03.png follows](./img/vbmca_cdb_03.png)
 
-8.  Click **Employee** under Business Objects, then click the **Data** tab.
-9.  Click **Import from File** ![Import from File icon](./images/vbcsnd_import_icon_transp.png).
-10.  In the Import Data dialog box, select the **Replace** option for **Row Handling** if it's not already selected. Then click the upload box, browse, select the `Employee.csv` file, and click **Import**.
-11.  Click **Close** after the file has been successfully imported. Nine employees are displayed in the table.
+4.  Click the **Fields** tab, then click **\+ Field.**
 
-    ![](./images/vbcsnd_imp_s11.png)
+    ![Description
+    of vbmca_cdb_04.png follows](./img/vbmca_cdb_04.png)
 
-## Acknowledgements
-**Author** - Sheryl Manoharan
+5.  In the New Field window, enter `Name` in the **Label** field, and click **Create Field**.
 
-**Last Updated** - December 2020
+    The **name** value is automatically populated in the **Field Name** field, and **String** ![String](./img/vbmca_textfield_icon.png) is selected by default in the **Type** field.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+    ![Description
+    of vbmca_cdb_05.png follows](./img/vbmca_cdb_05.png)
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+6.  In the Property Inspector for the **Name** field, select the **Required** check box under **Constraints.**
+
+    ![Description
+    of vbmca_cdb_06.png follows](./img/vbmca_cdb_06.png)
+
+7.  Click **\+ Field** again. In the New Field window, enter `Location` in the **Label** field, and click **Create Field**.
+
+    The **location** value is automatically populated in the **Field Name** field, and **String** ![String](./img/vbmca_textfield_icon.png) is selected by default in the **Type** field.
+
+8.  Click the **Endpoints** tab and view the REST endpoints created for the Department business object.
+
+    ![Description
+    of vbmca_cde_s9.png follows](./img/vbmca_cde_s9.png)
