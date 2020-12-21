@@ -1,8 +1,10 @@
 # Build a Mobile Application for Installation on Android and iOS Devices
 
-## Before You Begin
+## Introduction
 
-This 10-minute tutorial shows you how to build a mobile application for installation on Android and iOS devices. 
+This tutorial shows you how to build a mobile application for installation on Android and iOS devices. 
+
+### Estimated Lab Time:  10 minutes
 
 ### Background
 
@@ -10,28 +12,22 @@ After you define build configurations that define deployment information for the
 
 In this tutorial, you'll build a mobile application to generate QR codes and installation files for both the Android and iOS platforms. The steps to build a mobile application for installation on any one platform (either Android or iOS) are identical, except that a QR code and an installation file are generated only for the specified platform.
 
-### What Do You Need?
-
--   Access to the Visual Applications user interface of Oracle Visual Builder
--   A supported browser
--   Completion of the previous tutorials
-
-## Build a Mobile Application
+## **STEP 1**: Build a Mobile Application
 
 After you create the build configuration for both Android and iOS, you can build the installation files (APK for an Android device and IPA for an iOS device) to install the mobile application on those devices.  
 
-1.  Click **Preview** ![Run icon](img/vbcsio_mob_run_icon.png "Run icon") to run the app on a new tab in the browser.
+1.  Click **Preview** ![](images/vbcsio_mob_run_icon.png "Run icon") to run the app on a new tab in the browser.
 
-    ![Running hrmobileapp](img/vbcsio_mob_install_s1.png "Running hrmobileapp")
+    ![](images/vbcsio_mob_install_s1.png "Running hrmobileapp")
 
 2.  Click **Build my App**.
 3.  In the Stage Application dialog box, select **Stage application with a clean database** and click **Stage**.
 
-    ![Stage Application dialog box](img/vbcsio_mob_install_s3.png "Stage Application dialog box")
+    ![](images/vbcsio_mob_install_s3.png "Stage Application dialog box")
 
     When the build is complete, the QR code and the **Download** link are displayed.
 
-    ![QR code and Download link](img/vbcsio_mob_install_s3b.png "QR code and Download link")
+    ![](images/vbcsio_mob_install_s3b.png "QR code and Download link")
 
 4.  Download the installation file for each platform:
     -   Select **iOS** in the drop-down list, then scan the QR code to download the installation file onto the iOS device, or use the **Download** link to download the IPA file to your file system.
