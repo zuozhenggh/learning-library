@@ -1,1 +1,0 @@
-This screenshot shows a portion of the Initialization Parameters page. The SPFile tab is active and the Current Page is being clicked.

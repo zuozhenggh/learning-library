@@ -1,4 +1,0 @@
-This screenshot shows the Create PDB From Seed - Storage tab. The following values are set:
-- Use Oracle-Managed Files: (enabled)
-- Storage Unlimited: (enabled)
-There are four active buttons: Back, Show SQL, OK, and Cancel.

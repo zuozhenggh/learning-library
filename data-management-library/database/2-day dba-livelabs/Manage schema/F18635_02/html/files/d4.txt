@@ -1,2 +1,0 @@
-This screenshot shows the Columns tab of the KING_VIEW page. The Data tab is being clicked.
-The screenshot shows 11 column names starting from COMMISSION_PCT to LAST_NAME.

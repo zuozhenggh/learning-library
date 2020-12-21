@@ -1,1 +1,0 @@
-This screenshot shows the Data tab of the EMPLOYEES page. The LAST_NAME column heading is right-clicked and Sort is being selected from the context menu.

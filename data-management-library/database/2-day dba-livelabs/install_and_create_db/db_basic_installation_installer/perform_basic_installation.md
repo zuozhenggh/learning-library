@@ -4,7 +4,6 @@ This Lab walks you through the steps to install Oracle container database using 
 Estimated Lab Time: 10 minutes
 
 
-
 ## **STEP 1**: Install Container Database(including PDB)
 
 1. Log on to your computer as a member of the administrative group that is authorized to install Oracle Database software and create a database.

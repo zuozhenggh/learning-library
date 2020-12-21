@@ -1,3 +1,0 @@
-This screenshot shows the Plug PDB wizard - General tab.
-The Metadata File value is entered. The Reuse PDB name from Metadata File and Reuse source datafile location from Metadata File is enabled.
-There are four buttons - Show SQL, OK, Cancel, and Next.

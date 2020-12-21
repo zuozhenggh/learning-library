@@ -1,2 +1,0 @@
-This screenshot shows the Close All PDBs wizard. The Close Immediate option is enabled.
-There are three buttons - Show SQL, OK, and Cancel.

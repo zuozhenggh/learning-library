@@ -1,1 +1,0 @@
-This screenshot shows the Connections pane. The Views node under HR is expanded and the EMP_DETAILS_VIEW node is selected.

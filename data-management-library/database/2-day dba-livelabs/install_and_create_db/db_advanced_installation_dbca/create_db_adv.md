@@ -3,15 +3,6 @@ This Lab walks you through the steps to install Oracle container database using 
 
 Estimated Lab Time: 10 minutes
 
-### Objectives
-
-    Create an HA Hadoop cluster using BDS and OCI.
-    Monitor the cluster creation.
-
-### What Do You Need?
-
-This lab assumes that you have successfully completed Lab 1: Setup the BDS Environment in the Contents menu.
-
 ## **STEP 1**: Create a Container Database
 
 1. Log on to your computer as a member of the administrative group that is authorized to install Oracle Database software and create a database.

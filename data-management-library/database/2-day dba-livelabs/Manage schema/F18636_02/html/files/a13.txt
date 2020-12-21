@@ -1,1 +1,0 @@
-This screenshot shows the Invalid Objects page. The ADD_PO_HISTORY Object_Name is selected and right-clicked. In the context menu, the Compile button is being clicked.

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
+  "workshoptitle": "Install and Create Oracle Database 21c",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -11,12 +11,12 @@
             "filename": "../../introduction/intro.md"
         },
         {
-            "title": "Lab 1: Install and Create Database",
+            "title": "Lab 1: Perform Basic Installation for Container Database",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../db_basic_installation_installer/perform_basic_installation.md"
         },
         {
-            "title": "Lab 2: Install and Create Database",
+            "title": "Lab 2: Perform Advanced Installation for Container Database",
             "filename": "../../db_advanced_installation_installer/perform_advanced_installation.md"
         },
         {
@@ -28,6 +28,6 @@
             "filename": "../../db_advanced_installation_dbca/create_db_adv.md"
         }
 
-    
+
     ]
 }

@@ -1,1 +1,0 @@
-This screenshot shows the Unplug PDB PDB2 wizard. There are three buttons - Show SQL, OK, and Cancel.

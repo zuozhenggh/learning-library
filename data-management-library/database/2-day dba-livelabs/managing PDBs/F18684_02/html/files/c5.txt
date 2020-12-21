@@ -1,1 +1,0 @@
-This screenshot shows the Plug PDB - General tab. The Use Oracle-Managed Files and Storage Unlimited option is enabled. There are four active buttons - Back, ,Show SQL, OK, and Cancel.

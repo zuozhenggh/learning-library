@@ -1,7 +1,0 @@
-This screenshot shows the Columns tab of the PURCHASE_ORDERS page. It displays 6 columns:
-PO_NUMBER
-PO_DESCRIPTION
-PO_DATE
-PO_VENDOR
-PO_DATE_RECEIVED
-PO_REQUESTOR_NAME

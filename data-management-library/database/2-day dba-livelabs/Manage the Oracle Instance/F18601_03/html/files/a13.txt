@@ -1,1 +1,0 @@
-This screenshot shows the Set Initialization Parameter window. The Parameter Name is db_files, Scope is SPFile, Value is 250, and Comment is null. The OK button is being clicked.

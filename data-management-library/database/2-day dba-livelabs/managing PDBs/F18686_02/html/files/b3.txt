@@ -1,3 +1,0 @@
-This screenshot shows the Open All PDBs wizard.
-Read Write is selected for Open As and Restricted is disabled.
-There are three buttons - Show SQL, OK, and Cancel.

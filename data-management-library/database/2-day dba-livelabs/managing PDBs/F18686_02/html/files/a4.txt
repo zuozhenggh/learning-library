@@ -1,1 +1,0 @@
-This screenshot shows the PDB2 entry in the Top Containers section of the Containers page. The Open mode shows an up arrow icon (in blue).

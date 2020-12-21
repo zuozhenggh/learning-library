@@ -1,5 +1,0 @@
-This screenshot shows the Enter Bind Values window. There are three fields:
-Name: Owner
-(checked) NULL
-Value: (null)
-There are three buttons - Help, Apply, and Cancel. The Apply button is being clicked.
