@@ -2,17 +2,21 @@
 
 ## Introduction
 
-cx\_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions. See the homepage for a feature list.
-
-cx\_Oracle 7 has been tested with Python versions 3.5 through 3.8. You can use cx\_Oracle with Oracle Database 11.2, 12c, 18c and 19c client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2. Older versions of cx\_Oracle may work with older versions of Python.
-
-Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
-
-### Overview
-
 This tutorial is an introduction to using Python with Oracle Database. It contains beginner and advanced material. Sections can be done in any order. Choose the content that interests you and your skill level.
 
 Follow the steps in this document. The **tutorial** directory has scripts to run and modify. The **tutorial/solutions** directory has scripts with the suggested code changes.
+
+Estimated Lab Time: 60 minutes
+
+### Overview
+
+cx_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions.
+
+cx_Oracle 8 has been tested with Python versions 3.6 through 3.9. Older versions of cx_Oracle may be used with previous Python releases. You can use cx_Oracle with Oracle 11.2, 12, 18, 19 and 21 client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2.
+
+cx\_Oracle 8 is available.
+
+Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
 
 ### Objectives
 
@@ -123,7 +127,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
 cx\_Oracle is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
-1.  Install the `cx_Oracle` module using python3 and pip for the oracle user. If your terminal disconnected and you are opc again, enter the command `sudo su - oracle` to switch back to the `oracle` user.
+1.  Install the `cx_Oracle` module using python3 and pip for the oracle user. If your terminal disconnected and you are opc again, enter the command `sudo su - oracle` to switch back to the `oracle` user. The **pip** command will install cx_Oracle8.
 
     ````
     <copy>
@@ -582,7 +586,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     With DRCP: ![](./images/python_pool.png "Without DRCP ")
 
-    DRCP is useful when the database host machine does not have enough memory to handled the number of database server processes required. However, if database host memory is large enough, then the default, 'dedicated' server process model is generally recommended. If DRCP is enabled, it is best used in conjunction with cx\_Oracle middle-tier connection pooling.
+    DRCP is useful when the database host machine does not have enough memory to handle the number of database server processes required. However, if database host memory is large enough, then the default, 'dedicated' server process model is generally recommended. If DRCP is enabled, it is best used in conjunction with cx\_Oracle middle-tier connection pooling.
 
     Batch scripts doing long running jobs should generally use dedicated connections. Both dedicated and DRCP servers can be used in the same database for different applications.
 
