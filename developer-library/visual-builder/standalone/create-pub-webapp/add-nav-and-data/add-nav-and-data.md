@@ -76,3 +76,13 @@ Instead of using the Data Manager to import data, this time you'll use each busi
 11.  Click **Close** after the file has been successfully imported. Nine employees are displayed in the table.
 
     ![](./images/vbcsnd_imp_s11.png)
+
+## Acknowledgements
+**Author** - Sheryl Manoharan
+
+**Last Updated** - December 2020
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
