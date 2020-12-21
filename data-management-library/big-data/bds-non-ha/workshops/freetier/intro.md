@@ -2,7 +2,7 @@
 
 The labs in this workshop walk you through all the steps to get started using **Oracle Big Data Service (BDS)**.
 
-Estimated Workshop Time: 5 hours
+Estimated Workshop Time: 6 hours
 
 ## What is Oracle Big Data Service?
 Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
