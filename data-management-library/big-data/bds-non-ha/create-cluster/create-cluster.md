@@ -4,6 +4,8 @@
 
 In this lab, you will learn how to create a simple non-Highly-Available (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS). This will be a small testing cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
+Estimated Lab Time: 60 minutes
+
 ### Objectives
 
 * Create a simple non-HA Hadoop cluster using BDS and OCI.
@@ -30,6 +32,7 @@ Your simple non-HA cluster will have the following profile:
   + **Storage Size:** **150 GB** block storage for the Master, Utility, and Worker nodes.
 
   ![](./images/cluster-layout.png " ")
+
 
   **Note:**    
   VM Standard Shapes offer the most flexibility. For example, you can increase the storage capacity for each node. For better performance and scalability, change the preceding specifications appropriately. Consider **DenseIO** shapes and **Bare Metal** shapes. **DenseIO** shapes are designed for large databases, big data workloads, and applications that require high-performance local storage. They include direct locally-attached NVMe-based SSDs. See [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense) in the Oracle Cloud Infrastructure documentation.

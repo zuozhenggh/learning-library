@@ -7,6 +7,8 @@ In this lab, you will learn how to delete the resources that you created in this
 **Note:**    
 If you are using a **Free Trial** account to run this workshop, Oracle recommends that you at least delete the BDS cluster that you created when you complete the workshop, to avoid unnecessary charges.
 
+Estimated Lab Time: 45 minutes
+
 ### Objectives
 
 * Delete your **`training-cluster`** Big Data Service Cluster.
@@ -14,7 +16,7 @@ If you are using a **Free Trial** account to run this workshop, Oracle recommend
 
 ### What Do You Need?
 
-This lab assumes that you have successfully completed all the labs listed in the **Contents** menu.
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 **Note:**     
 If you want to list the resources in your **`training-compartment`**, you can use the **Compartment Explorer** page. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Governance > Compartment Explorer**. On the **Compartment Explorer** page, in the **Search Compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.

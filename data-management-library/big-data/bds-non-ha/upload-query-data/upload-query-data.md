@@ -6,6 +6,8 @@ In this lab, you will download and run two sets of scripts. First, you will down
 
 **Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of the content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
 
+Estimated Lab Time: 45 minutes
+
 ### Objectives
 
 * Download the HDFS and object storage scripts from a public bucket in Object Storage. The scripts are required to set up your environment and to download the dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the **`training`** Administrator user's local working directory and to your OCI Cloud Shell directory.
@@ -15,7 +17,14 @@ In this lab, you will download and run two sets of scripts. First, you will down
 
 
 ### What Do You Need?
-+ This lab assumes that you have successfully completed all the labs in the **Contents** menu.
++ This lab assumes that you have successfully completed the following labs in the **Contents** menu:
+    + **Lab 1: Setup the BDS Environment**
+    + **Lab 2: Create a BDS Hadoop Cluster**
+    + **Lab 3: Add Oracle Cloud SQL to the Cluster**
+    + **Lab 4: Access a BDS Node Using a Public IP Address**
+    + **Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster**
+    + **Lab 6: Create a Hadoop Administrator User**
+
 + Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
 
 ## **STEP 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
@@ -160,12 +169,10 @@ To view the complete data files that are available, navigate to [Citibike System
 
     ![](./images/script-completed.png " ")
 
-8. Navigate to the local **`Downloads`** directory to display the downloaded trip data, stations, and weather data files.
+8. Navigate to the local **`Downloads`** directory, and then use the `ls -l` command to display the downloaded trips, stations, and weather data files.
 
     ```
-    $ <copy>ls -l</copy>
     $ <copy>cd Downloads</copy>
-    $ <copy>ls -ls</copy>
     ```
 
     ![](./images/data-downloaded.png " ")
@@ -194,6 +201,7 @@ To view the complete data files that are available, navigate to [Citibike System
     $ <copy>hadoop fs -ls /data/stations</copy>
     $ <copy>hadoop fs -ls /data/weather</copy>
     ```
+    **Note:** Hit the **[Enter]** key on your keyboard to execute the last command above.
 
     ![](./images/hdfs-directories.png " ")
 
@@ -302,7 +310,7 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/saving-os.png " ")
 
-7. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. You will run this script to download the dataset to your local working directory. You will then upload this data to a new object in a new bucket. Press the **`[Enter]`** key to run the command.
+7. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. You will run this script to download the dataset to your local working directory. You will then upload this data to a new object in a new bucket. Press the **[Enter]** key to run the command.
 
     ```
     <b>$</b> <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/download-all-objstore.sh

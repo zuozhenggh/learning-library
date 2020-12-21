@@ -19,6 +19,8 @@ Before you can access CM and Hue on the utility node using a web browser, you mu
 
 In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster utility nodes, and then you will pass that information to the **`oci network`** command that you will use to map the private IP addresses of the utility nodes to two new public IP addresses. Finally, you learn how to edit an existing public IP address.
 
+Estimated Lab Time: 45 minutes
+
 ### Objectives
 
 * Gather information about the cluster.
