@@ -1,37 +1,17 @@
 # Configure Database and GoldenGate Users 
 
 ## Introduction
-Contents
 
-Introduction
-Disclaimer
-Oracle GoldenGate for Microservices Workshop Architecture 
+In this lab we will setup the required database and GoldeGate replication users.
 
 *Estimated Lab Time*:  60 minutes
-#### Lab Architecture
+
+### Lab Architecture
 ![](./images/ggmicroservicesarchitecture.png " ")
 
 ### Objectives
 
-KEY FEATURES
-
-Non-invasive, real-time transactional data streaming
-
-- Secured, reliable and fault-tolerant data delivery 
-- Easy to install, configure and maintain 
-- Streams real-time changed data 
-- Easily extensible and flexible to stream changed data to other relational targets
-
-KEY BENEFITS
-
-- Improve IT productivity in integrating with data management systems 
-- Use real-time data in big data analytics for more timely and reliable insight 
-- Improve operations and customer experience with enhanced business insight 
-- Minimize overhead on - source systems to maintain high performance
-
-Oracle GoldenGate Classic provides optimized and high performance delivery.
-
-Oracle GoldenGate Classic real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
+Understanding how to prepare and setup an Oracle Database for replication and define users for replication. Users are created using scripts that populate the multitenanant environment with required Oracle Users while applying aliases to be used by GoldenGate. The Databases used in this lab are identified using the SOE schema in source and targets.
 
 ### Prerequisites
 This lab assumes you have:
@@ -49,30 +29,16 @@ In this lab we will setup GoldenGate Microservices
 
 1. Open a terminal session.
 
-![](./images/terminal3.png " ")
+    ![](./images/terminal3.png " ")
 
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-2. In the open Terminal Window, start SQL*Plus.
-
-```
-<copy>lsnrctl start</copy>
-```
-
-```
-<copy>sqlplus /as sysdba</copy>
-```
-
-```
-<copy>startup</copy>
-```
-
-![](./images/z1.png " ")
 
 
-3. Enable the database for GoldenGate replication.
+
+2. Enable the database for GoldenGate replication.
 
 ```
 <copy>alter system set enable_goldengate_replication=true scope=both;</copy>
@@ -80,16 +46,16 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/z2.png " ")
 
-4.	Enable Archive Log on the database.This will require you to shut down the database and restart it.
+3.	Enable Archive Log on the database.This will require you to shut down the database and restart it.
 
-5. Shutdown the database.
+4. Shutdown the database.
 
 ```
 <copy>shutdown immediate;</copy>
 ```
 ![](./images/z3.png " ")
 
-6. Start the database up in mount mode.
+5. Start the database up in mount mode.
 
 ```
 <copy>startup mount;</copy>
@@ -97,14 +63,14 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/z4.png " ")
 
-7. Change database into Archive Log mode.
+6. Change database into Archive Log mode.
 
 ```
 <copy>alter database archivelog;</copy>
 ```
 ![](./images/z5.png " ")
 
-8. Open the database.
+7. Open the database.
 
 ```
 <copy>alter database open;</copy>
@@ -112,21 +78,25 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/z6.png " ")
 
-9.	Open the Pluggable Database
+8.	Open the Pluggable Database
 ```
 <copy>alter pluggable database all open read write;</copy>
 ```
-10. Enable Minimal Supplemental Logging for the database.  Additionally, enable Force Logging then switch the log file.
+9. Enable Minimal Supplemental Logging for the database.  Additionally, enable Force Logging then switch the log file.
 
 ```
-<copy>alter database add supplemental log data;
-alter database force logging;
-alter system switch logfile;</copy>
+<copy>alter database add supplemental log data;</copy>
+```
+```
+<copy>alter database force logging;</copy>
+```
+```
+<copy>alter system switch logfile;</copy>
 ```
 
 ## **STEP 2:** Create the GoldenGate users needed at the Container Database and Pluggable Database Layers
 
-1. From SQL*Plus run the following SQL statements to create thcreate e Common User within the Container Database (CDB).
+1. From SQL*Plus run the following SQL statements to create the Common User within the Container Database (CDB).
 
 ```
 <copy> create user c##ggate identified by ggate quota unlimited on USERS account unlock;
@@ -160,9 +130,7 @@ You may now *proceed to the next lab*.
 
 ## Learn More
 
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
-
-* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
+* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020

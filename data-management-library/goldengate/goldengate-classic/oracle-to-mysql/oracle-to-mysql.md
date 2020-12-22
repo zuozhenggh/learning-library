@@ -59,7 +59,7 @@ Open a terminal session
 ````
 <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
 ````
-1. **Oracle:**
+1. Oracle source
 ````
 <copy>sudo su - oracle</copy>
 ````
@@ -79,27 +79,27 @@ Open a terminal session
 <copy>ADD CHECKPOINTTABLE ggadmin.ggchkpoint</copy>
 ````
 
-2. **MySQL:**
+2. MySQL target
 
 checkpointtable ggadmin.ggchkpoint
 
 1. Set the WALLETLOCATION parameter to the disk location in step 1.
 
-**For Oracle:**
+For Oracle Source replication
 
 ````
 <copy>WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet</copy>
 ````
 
-**For MySQL:**
+MySQL target apply
 
 ````
 <copy>WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet</copy>
 ````
 
-2. Save and close the files.
+1. Save and close the files.
 
-3. Start the GoldenGate Software Command Interpreter in both windows.
+2. Start the GoldenGate Software Command Interpreter in both windows.
 
 ````
 <copy./ggsci</copy>
