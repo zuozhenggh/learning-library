@@ -2,7 +2,7 @@
   "workshoptitle": "Getting Started with Oracle Big Data Service (non-HA)",
     "tutorials": [
       {
-         "title": "Prerequisites",
+         "title": "Get Started with Oracle Cloud",
          "description": "Get a Free Trial",
          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
       },
