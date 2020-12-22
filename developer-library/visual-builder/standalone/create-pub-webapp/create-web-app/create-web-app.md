@@ -30,7 +30,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
         ![](./images/vbcsca_cra_s1a.png " ")
 
-    -   If you have one or more current applications, the Visual Applications page shows a list of applications. Click **New**.
+    -   If you have one or more current applications, the Visual Applications page shows you a list of them. Click **New**.
 
         ![](./images/vbcsca_cra_s1b.png)
 
@@ -39,7 +39,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
     -   **Application Name**: `HR Application`
     -   **Description**: `Tutorial application`
 
-    The **Application ID** text field is automatically populated as you type based on the **Application Name**. The **Application Template** field is set to Empty Application.
+    The **Application ID** text field is automatically populated as you type, based on the Application Name. The **Application Template** field is set to Empty Application.
 
 3.  Click **Finish**.
 
@@ -47,7 +47,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![](./images/vbcsca_cra_s3.png)
 
-    The Welcome page contains a set of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts.
+    The Welcome page contains sets of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts.
 
     In the toolbar, the `DEV` and `1.0` tags next to the application name indicate the status (development) and the version.
 
@@ -82,7 +82,7 @@ In this step, you'll create the Location business object and then import data fo
 3.  In the New Business Object dialog box, enter `Location` in the **Label** field and click **Create**. `Location` is also filled in automatically as the **Name** value. When you create a business object, specify the singular form of the noun.
 4.  Click the **Fields** tab.
 
-    Every business object you create has five default fields: an id, plus fields that provide information on who created and updated the object and when.
+    Every business object you create has five default fields: an ID, plus fields that provide information on who created and updated the object and when.
 
     ![](./images/vbcsca_imp_s4.png)
 
@@ -101,7 +101,7 @@ In this step, you'll create the Location business object and then import data fo
 
     ![](./images/vbcsca_imp_s7.png)
 
-    A check mark is displayed in the **Required** column for the **Name** field.
+    You can see that there's now a check mark in the **Required** column for the **Name** field.
 
 8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wg-SYyBho4igTK7Q7VRCJvDCadxWLueBiG33POhb7zTHQxtVU5JokCrXQGZ0C2fs/n/c4u03/b/solutions-library/o/Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
 9.  In the Navigator's Business Object panel, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**.
@@ -226,7 +226,7 @@ In this step, we'll create the last business object we need, the Employee object
     So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in a later tutorial.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+**Author** - Sheryl Manoharan, Visual Builder User Assistance
 
 **Last Updated** - December 2020
 

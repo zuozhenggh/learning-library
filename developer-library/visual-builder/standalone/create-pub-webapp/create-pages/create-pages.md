@@ -193,7 +193,7 @@ It makes sense at this point to change the name of the main-start page to main-d
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+**Author** - Sheryl Manoharan, Visual Builder User Assistance
 
 **Last Updated** - December 2020
 

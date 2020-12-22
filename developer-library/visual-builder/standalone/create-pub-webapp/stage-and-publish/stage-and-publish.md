@@ -94,7 +94,7 @@ After you have successfully tested the staged application, you can publish it an
 6.  If you want to, click the user menu in the top-right corner and select **Sign Out** from the menu. After you've published an application, you will no longer be able to make changes to it. Instead, create a new version of it and edit that.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+**Author** - Sheryl Manoharan, Visual Builder User Assistance
 
 **Last Updated** - December 2020
 

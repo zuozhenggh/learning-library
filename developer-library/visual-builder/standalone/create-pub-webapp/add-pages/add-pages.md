@@ -122,7 +122,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 9.  Close the browser tab.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+**Author** - Sheryl Manoharan, Visual Builder User Assistance
 
 **Last Updated** - December 2020
 

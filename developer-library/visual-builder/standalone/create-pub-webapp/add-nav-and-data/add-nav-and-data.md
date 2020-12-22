@@ -78,7 +78,7 @@ Instead of using the Data Manager to import data, this time you'll use each busi
     ![](./images/vbcsnd_imp_s11.png)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+**Author** - Sheryl Manoharan, Visual Builder User Assistance
 
 **Last Updated** - December 2020
 
