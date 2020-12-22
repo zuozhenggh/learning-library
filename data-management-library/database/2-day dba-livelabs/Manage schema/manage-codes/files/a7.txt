@@ -1,0 +1,2 @@
+This screenshot shows the Reports pane.
+The ALL objects pane under Data Dictionary Reports is expanded and Invalid Objects is selected.

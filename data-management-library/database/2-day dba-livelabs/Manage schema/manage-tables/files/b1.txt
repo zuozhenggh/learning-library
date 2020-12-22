@@ -1,0 +1,1 @@
+This screenshot shows the Data tab of the EMPLOYEES page. The first 10 rows of data is displayed starting from EMPLOYEE_ID 100 to 109.

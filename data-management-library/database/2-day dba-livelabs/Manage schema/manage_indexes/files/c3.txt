@@ -1,0 +1,2 @@
+This screenshot shows the Columns tab of the EMP_DETAILS_VIEW page.
+It shows 16 rows of data starting from EMPLOYEE_ID to REGION_NAME.

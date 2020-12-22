@@ -1,0 +1,2 @@
+This screenshot shows the Data Import Wizard - Step 2 (Data Preview) window.
+Import Method is set to Insert and Next button is being clicked.

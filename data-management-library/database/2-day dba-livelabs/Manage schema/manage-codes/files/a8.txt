@@ -1,0 +1,2 @@
+This screenshot shows the Select Connection window. The Connection is set to system. There are five buttons - Add (+), Edit (pencil), Help, OK, and Cancel. The Add button is being clicked.
+

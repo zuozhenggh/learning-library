@@ -1,0 +1,1 @@
+This screenshot shows a part of the Connections pane. The Views node under HR is expanded and the KING_VIEW view is selected.

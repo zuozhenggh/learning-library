@@ -1,0 +1,1 @@
+This screenshot shows a part of the Connections pane. The APPUSER node is right-clicked and Edit User is being clicked.

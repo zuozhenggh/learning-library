@@ -1,0 +1,2 @@
+Enter the description here.This screenshot shows the Connections pane and the Data tab of the PURCHASE_ORDERS page.
+In the Connections pane, PURCHASE_ORDERS (under APPUSER, Tables (Filtered)) is selected.

@@ -1,8 +1,8 @@
 {
     "tutorials": [
         {
-            "title": "Enter lab title here",
-            "description": "This lab walks you through the steps to...",
+            "title": "Manage the Listener Using the Listener Control Utility ",
+            "description": "This lab walks you through the steps to administer the listener.",
             "filename": "content.md"
         }
     ]

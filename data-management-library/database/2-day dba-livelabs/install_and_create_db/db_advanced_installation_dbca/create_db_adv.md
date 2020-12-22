@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 This Lab walks you through the steps to install Oracle container database using Oracle Universal Installer (OUI).
 
 Estimated Lab Time: 10 minutes

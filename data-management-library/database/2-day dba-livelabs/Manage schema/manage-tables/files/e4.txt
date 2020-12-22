@@ -1,0 +1,1 @@
+This screenshot shows a part of the Connections pane. The Tables (Filtered) node under the APPUSER node is expanded. The PURCHASE_ORDERS node is right-clicked and Import Data is being clicked in the context menu.

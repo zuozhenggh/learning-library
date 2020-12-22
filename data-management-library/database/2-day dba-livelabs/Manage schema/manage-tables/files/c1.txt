@@ -1,0 +1,1 @@
+This screenshot shows the Connections pane. The Tables (filtered) node under APPUSER is right-clicked and the New Table option is selected from the context menu.

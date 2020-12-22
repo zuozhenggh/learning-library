@@ -1,0 +1,16 @@
+This screenshot shows the Sort Columns window. The following columns appear under Available Columns:
+EMPLOYEE_ID
+FIRST_NAME
+EMAIL
+PHONE_NUMBER
+HIRE_DATE
+JOB_ID
+SALARY
+COMMISSION_PCT
+MANAGER_ID
+DEPARTMENT_ID
+There are four arrow buttons - >, >>, <, and <<.
+Under Selected Columns there is one column called LAST_NAME (asc).
+The Ascending radio button is selected.
+Descending, Nulls First and Nulls Last are unchecked.
+Additionally, there are six more buttons - Delete, Delete All, Select, Help, OK, and Cancel. The OK button is being clicked.

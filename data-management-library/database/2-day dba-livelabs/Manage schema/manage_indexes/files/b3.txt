@@ -1,0 +1,10 @@
+This screenshot shows the Create Index window.
+The Schema and Name is set to HR and SALARY_IDX respectively.
+The Definition tab is selected. Under the Definition tab, there are three fields:
+Table Schema: HR
+Table: EMPLOYEES
+Index Type: <Not Specified>
+The Expressions section contains two buttons (+ and x) and a table with two columns and 1 rows.
+Expression: SALARY
+Order: <Not Specified>
+There are three active buttons: Help, OK, and Cancel. The OK button is being clicked.

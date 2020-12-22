@@ -11,7 +11,7 @@ The characteristics of the two types of installation are:
 **Note**: The non-container architecture was deprecated in Oracle Database 12c. It is desupported in Oracle Database 21c. Oracle Universal Installer can no longer be used to create non-CDB Oracle Database instances.
 
 
-### About Product/Technology
+## Background
 
 The Oracle Universal Installer (OUI) is a graphical user interface utility that enables you to install new Oracle Database software on your machine. During the installation process, you are given the opportunity to create a database. If you select database creation, OUI does installation of software first followed by automatic invocation of Oracle Database Configuration Assistant (DBCA) to guide you through the process of creating and configuring a database. If you choose to only install the database software using OUI, then you must run DBCA manually after the installation to create and configure the database.
 
