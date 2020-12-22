@@ -3,8 +3,10 @@
 ## Introduction
 
 This lab is intended to give you familiarity with how to configure GG for database to database replication transformations. GoldenGate is Non-invasive, real-time transactional data streaming
-Secured, reliable and fault-tolerant data delivery. It is easy to install, configure and maintain real-time changed data
-Easily extensible and flexible to stream transformed data to other relational targets
+secured, reliable and fault-tolerant in data delivery. It is easy to install, configure and maintain real-time changed data.
+It is easily extensible and flexible to stream transformed data to other relational targets
+
+*Estimated Lab Time*:  60 minutes
 
 ### Lab Architecture
 
@@ -18,8 +20,6 @@ Lab  – Active - Active Replication
 Lab  – High Availability / Disaster Recovery
 
 Lab  - Transformations using GoldenGate Microservices
-
-*Estimated Lab Time*:  60 minutes
 
 ### Objectives
 
@@ -40,7 +40,7 @@ In this lab we will setup GoldenGate Microservices Transformations
 
 ## **STEP 1:** Configuration for Microservices Lab
 
-Open a terminal session
+1. Open a terminal session
 
 ![](./images/terminal3.png " ")
 
@@ -55,12 +55,12 @@ UPDATE Data:
 ```
 <copy>sqlplus ggate/ggate@oggoow19</copy>
 ```
-1.	Alter Customer Table: 
+2.	Alter Customer Table: 
 
 ```
 <copy>ALTER TABLE SOE.CUSTOMERS  ADD (CUSTOMER_NAME VARCHAR2(40) );</copy>
 ```
-2.	Create Table 
+3.	Create Table 
 
 ```
 <copy>CREATE TABLE "SOE"."LOGON_AUDIT" 
@@ -95,13 +95,13 @@ COLMAP (USEDEFAULTS, CUST_EMAIL = P_MAIL.desc_param,CUSTOMER_NAME
 ```
 ![](./images/i2.png " ")
 
-2.	Open Terminal and SQLPLUS into Target Database (OGGOOW191).Create a required Stored procedure under GGATE users. This will be used in the SQLEXEC call in the mapping statement. 
+2.	Open Terminal and SQLPLUS into Target Database (OGGOOW191).Create a required stored procedure under GGATE users. This will be used in the SQLEXEC call in the mapping statement. 
 
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
 ```
 
-4.	Run the following:
+3.	Run the following:
 
 ```
 <copy>CREATE  OR REPLACE FUNCTION F_MAIL(CODE_PARAM IN VARCHAR2)  
@@ -123,9 +123,9 @@ COLMAP (USEDEFAULTS, CUST_EMAIL = P_MAIL.desc_param,CUSTOMER_NAME
 	  	 /</copy>
 ```
 
-6.	stop and start the replicat at target deployment (Boston)
+4.	Stop and start the replicat at target deployment (Boston).
 
-7.	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transaction on the table CUSTOMER . 
+5.	Open Terminal and SQLPLUS into Source Database (OGGOOW19) and do the transaction on the table CUSTOMER . 
 
 ```
 <copy>sqlplus ggate/ggate@oggoow19</copy>
@@ -145,7 +145,9 @@ CUSTOMER_ID=570;
 commit;</copy>
 ```
 
-8.	Check the Target tables is stored procedure was executed for static masking of the emails. Open Terminal and SQLPLUS into Target Database (OGGOOW191). Excute “select CUSTEMAIL from soe.customers where customerID between 562 and 570;” in SQLPLUS. 
+6.	Check the Target tables is stored procedure was executed for static masking of the emails. Open the Terminal and SQLPLUS into Target Database (OGGOOW191). Execute “select CUSTEMAIL from soe.customers where customerID between 562 and 570;” in SQLPLUS. 
+ OR 
+6. Check the static masking of the emails on Target tables soe.customers. Open Terminal and SQLPLUS Target Database (OGGOOW191).
 
 ```
 <copy>sqlplus ggate/ggate@oggoow191</copy>
@@ -165,7 +167,7 @@ commit;</copy>
  COLMAP (USEDEFAULTS,&  host=@GETENV('GGENVIRONMENT','HOSTNAME'),&  gg_group=@GETENV ('GGENVIRONMENT','GROUPNAME'),&  osuser=@GETENV ('GGENVIRONMENT','OSUSERNAME'),&  domain=@GETENV ('GGENVIRONMENT','DOMAINNAME'),&  ba_ind=@GETENV ('GGHEADER','BEFOREAFTERINDICATOR'),&  commit=@GETENV ('GGHEADER','COMMITTIMESTAMP'),&  pos=@GETENV ('GGHEADER','LOGPOSITION'),&  rba=@GETENV ('GGHEADER','LOGRBA'),&  tablename=@GETENV ('GGHEADER','TABLENAME'),&  optype=@GETENV ('GGHEADER','OPTYPE'));</copy>
  ```
 
- 2.	stop and start the IREP 
+ 2.	Stop and start the IREP 
  3.	Open the terminal and log into SQLPLUS to do transaction on source DB 
 (OGGOOW191) in table LOGON 
 
@@ -190,7 +192,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Madhu Kumar S. Data Integration, December 2020
 * **Contributors** - Brian Elliott
-* **Last Updated By/Date** - Brian Elliott December 2020
+* **Last Updated By/Date** - Brian Elliott,December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
