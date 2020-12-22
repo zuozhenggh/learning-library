@@ -1,30 +1,37 @@
 # GoldenGate Microservices Active-Active 
 
 ## Introduction
-This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availability / Disaster Recovery using Active-Active Technology
+This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availability / Disaster Recovery using Active-Active Technology.
+Since we have already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
 
 *Estimated Lab Time*:  60 minutes
 
 ### Lab Architecture
-![](./images/ggmicroservicesarchitecture.png " ")
+  ![](./images/ggmicroservicesarchitecture.png " ")
 
-## Introduction
-
-Since we’ve already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
-
-## Objectives
+### Objectives
 
 - Rapid Deployment using:
   - OGGCA silent deployment scripts (remove and recreate deployments).
   - REST API to setup bi-directional GoldenGate replication between two databases.
   - SQL Scripts to setup up auto conflict detection and resolution in the database.
 
-## Required Artifacts
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Configure GoldenGate
+
+### Required Artifacts
 
 - Browser to check the deployment.
 - Swingbench to apply transactions.
 
-## **STEP 1**:Start Swingbench to generate transactions
+## **STEP 1**: Swingbench to generate transactions
 
 ```
 <copy>cd /home/oracle/Desktop/Scripts/HOL/Lab8 </copy>
@@ -43,7 +50,7 @@ Since we’ve already done multiple labs, this one will take what we used so far
 
 **Active – Active**
 
-## **STEP 2**:Creation of Alias for Boston GG User 
+## **STEP 2**: Creation of Alias for Boston GG User 
 
 ```
 <copy>cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
@@ -185,7 +192,7 @@ cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
 
 ## **STEP 12**: Generate Load through Swingbench 
 
-In this step we’ll use a script to invoke Swingbench to apply data to both databases at the same time and then check them using the Performance Metric Service.
+In this step we will use a script to invoke Swingbench to apply data to both the databases at the same time and then check them using the Performance Metric Service.
 
 
 ```
@@ -207,9 +214,11 @@ cd /home/oracle/Desktop/Scripts/HOL/Lab8</copy>
  
 ![](./images/h26.png " ")
 
-***Boston:***
+**Boston:**
  
-https://<your ip address>/Boston/pmsrvr 
+```
+<copy>https://<your ip address>/Boston/pmsrvr </copy> 
+```
 
 ![](./images/h27.png " ")
 

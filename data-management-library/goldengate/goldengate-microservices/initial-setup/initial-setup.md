@@ -35,9 +35,6 @@ In this lab we will setup GoldenGate Microservices
 <copy>sudo su - oracle</copy>
 ````
 
-
-
-
 2. Enable the database for GoldenGate replication.
 
 ```
@@ -63,7 +60,7 @@ In this lab we will setup GoldenGate Microservices
 
 ![](./images/z4.png " ")
 
-6. Change database into Archive Log mode.
+6. Change the database into Archive Log mode.
 
 ```
 <copy>alter database archivelog;</copy>
@@ -135,7 +132,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Zia Khan
-* **Last Updated By/Date** - Brian Elliott, November 2020
+* **Last Updated By/Date** - Brian Elliott, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
