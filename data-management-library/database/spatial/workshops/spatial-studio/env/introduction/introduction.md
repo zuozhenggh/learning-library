@@ -2,36 +2,47 @@
 
 ## About Oracle Spatial Studio
 
-Oracle’s mission is to help people see data in new ways, discover insights, and unlock endless possibilities. Spatial analysis is about understanding complex interactions based on geographic relationships – answering questions based on where people, assets, and resources are located. Spatial insights enable you to provide better customer service, optimize your workforce, locate retail and distribution centers, evaluate sales and marketing campaigns, and more. With Oracle’s spatial offerings, developers, database professionals, and analysts leverage a comprehensive suite of spatial data management, analytics, and visualization tools to integrate spatial analysis and mapping into applications and workflows. 
+ Oracle Spatial Studio (Spatial Studio) provides no-code access to the spatial capabilitieis of Oracle Database. While these capabilities have historically required coding and/or use of 3rd party tools, Spatial Studio allows business users to create and share spatial analysis and interactive web maps using self-service GUIs. 
 
-The spatial capabilitieis of Oracle Database have historically required coding and/or use of 3rd party tools.   
+  ![img alt text](./images/spatial-studio.png)
 
+Spatial Studio operates on spatial data in Oracle Database, meaning tables and views that include Oracle's geometry data type. This data be be pre-existing spatial data or non-spatial data which is prepared using Spatial Studio to add geometries based on attributes. The end user features of Spatial Studio can be summarized as follows:
 
+  **Access and prepare spatial data**
+  - Access spatal/non-spatial data in Oracle Database
+  - Load data from common formats
+  - Prepare non-spatial data by geocoding addresses or indexing lat/lon columns
+  - Pre-cache large datasets
 
+  **Analyze and visualize spatial data**
+  - Drag-and-drop map visualizations
+  - Data driven styling
+  - Perform spatial analyses
+  - Share results
 
-  ![img alt text](./images/spatial-platform.png)
+Spatial Studio also provides integration features for developers and configuration options for application administrators, which are outside the scope of this intro workshop.
 
-For more information please visit [https://oracle.com/goto/spatial] (https://oracle.com/goto/spatial)
+For more information please visit [https://oracle.com/goto/spatialstudio] (https://oracle.com/goto/spatialstudio)
 
-Estimated Workshop Time: 60 minutes
+Estimated Workshop Time: xx minutes
 
 ### Workshop Overview
 
-In this workshop you will create and configure spatial data and perform some basic spatial queries.  The scenario involves WAREHOUSES, BRANCHES, and a COASTAL\_ZONE. The WAREHOUSES and BRANCHES are points, and the COASTAL\_ZONE is a polygon. You will create and configure these spatial tables, and then perform spatial queries to identify items on proximity and containment.
+In this workshop you will analyze spatial relationships between traffic accidents, police stations, and police station service areas. You will begin by loading data from common formats, prepare..., and ....
 
 
 ### Prerequisites
 
-- This workshop requires access to an Oracle Database and SQL client (i.e., SQL Developer, SQL Developer Web, SQL*Plus). 
-- If you already have access to these, then following this Introduction you may skip to the section Create Sample Data. 
-- Otherwise you should proceed to sections Oracle Cloud Account, Autonomous Database, and SQL Developer Web.
+- This workshop requires access to ...... 
+- If you already have access to these, then following this Introduction you may skip to the section ..... 
+- Otherwise you should proceed to sections ......
 - No previous experience with Oracle Spatial is required.
 
 
 ## Acknowledgements
 
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Last Updated By/Date** - Kamryn Vinson, November 2020
+* **Last Updated By/Date** - 
 
 
 ## Need Help?

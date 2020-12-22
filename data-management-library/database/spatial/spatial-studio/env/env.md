@@ -10,7 +10,7 @@ Estimated Lab Time: n minutes
 
 ### About Product/Technology
 
-Spatial Studio is a JEE application and is packaged in several ways:
+Spatial Studio is a JEE application and is packaged as:
 
 Quick Start
 
@@ -19,11 +19,6 @@ Quick Start
 - Simply unzip and run
 - Jetty is open source, so no JEE server license requirement
 
-Tomcat war file
-
-- Spatial Studio as war file optimized for Tomcat deployment
-- Supports production use cases
-- Tomcat is open source, so no JEE server license requirement
 
 WebLogic ear file
 

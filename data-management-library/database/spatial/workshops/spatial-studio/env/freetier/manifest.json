@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Introduction to Oracle Spatial",
+    "workshoptitle": "Introduction to Oracle Spatial Studio",
     "tutorials": [
       {
         "title": "Prerequisites",
@@ -14,19 +14,13 @@
         "title": "Lab 1: Autonomous Database",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
     },
-
       {
-        "title": "Lab 2: SQL Developer Web",
-        "description": "SQL Developer Web",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-sqldevweb/adb-sqldevweb.md"
-    },
-      {
-        "title": "Lab 3: Create Sample Spatial Data",
-        "filename": "../../../intro/create-sample-data/create-sample-data.md"
+        "title": "Lab 2: Deploy Spatial Studio",
+        "filename": " "
     },
     {
-      "title": "Lab 4: Run Spatial Queries",
-      "filename": "../../../intro/run-spatial-queries/run-spatial-queries.md"
+      "title": "Lab 3: Load Data",
+      "filename": "../../../../spatial-studio/intro/load-data/load-data.md"
   }
     ]
 }
