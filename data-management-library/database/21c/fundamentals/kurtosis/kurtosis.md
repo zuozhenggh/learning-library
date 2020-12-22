@@ -24,7 +24,7 @@ In this lab, you will:
      ```
 
      $ <copy>cd /home/oracle/labs/M104784GC10</copy>
-     $ <copy>sqlplus system@PDB1</copy>
+     $ <copy>sqlplus system@PDB21</copy>
 
      Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
@@ -356,8 +356,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -45,7 +45,7 @@ This lab assumes you have:
       <copy>cd $DBSEC_LABS/priv-analysis</copy>
       ````
 
-3. Start by ensuring the user has the `CAPTURE_ADMIN` role and creating the PA Capture
+3. Start by ensuring the user has the "`CAPTURE_ADMIN`" role and creating the Privilege Analysis capture
 
       ````
       <copy>./pa_create_capture.sh</copy>
