@@ -243,8 +243,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     </copy>
     ```
 2. In the namelist.input file we need to edit the contents to reflect our geographic area/domain and our date and interval.  
-
-    **Please change all the values to your liking based on your experiment**.  
+**Please change all the values to your liking based on your experiment**.  
     - `run_days`: Run time in days.
     - `run_hours`: Run time in hours. **Note**: if it is more than 1 day, you may use both run_days and run_hours or just run_hours. e.g. if the total run length is 36 hrs, you may set run_days = 1, and run_hours = 12, or run_days = 0, and run_hours = 36.
     - `run_minutes`: Run time in minutes.
