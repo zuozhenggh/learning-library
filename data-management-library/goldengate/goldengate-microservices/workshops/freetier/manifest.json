@@ -30,27 +30,27 @@
     },
 
     {
-      "title": "GG Initial Setup",
+      "title": "Initialize Environment",
       "description": "GG Initial Setup",
       "filename": "../../initial-setup/initial-setup.md"
     },
 
      {
-      "title": "Create Replication",
+      "title": "Create One-Way Replication",
       "description": "GG Replication",
       "filename": "../../create-replication/create-replication.md"
     },
-  
+
     {
-      "title": "HA/DR Replication",
+      "title": "Create HA/DR Replication",
       "description": "Hign Availability / Disaster Recovery Replication",
       "filename": "../../ha-dr/ha-dr.md"
     },
     {
       "title": "Transformations",
       "description": "Transformations",
-      "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
+      "filename": "../../transformations/transformations.md"
     }
-   
+
   ]
 }
