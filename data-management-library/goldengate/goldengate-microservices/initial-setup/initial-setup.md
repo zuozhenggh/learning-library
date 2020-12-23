@@ -30,7 +30,7 @@ This lab assumes you have:
 
 2. First login as “*opc*” using your SSH Private Key
 
-3. Then sudo to “*oracle*”. E.g.
+3. Then sudo to “*oracle*”.
 
     ```
     <copy>sudo su - oracle</copy>

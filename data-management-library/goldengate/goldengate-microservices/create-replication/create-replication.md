@@ -69,21 +69,19 @@ Deployments provide a siloed approach to splitting replication environments betw
     sh ./create_deployment.sh <Deployment Name> <Admin Password> <SMPort> <ASPort> <DSPort> <RSPort> <PMSPort> <PMSPortUDP>
     ```
 
-Each of the parameters will be used to replace items in the response file and build the Deployment and associated services. Each of the command line parameters corresponds to the following:
-    - Deployment Name: Name of the deployment to be created  
-    - Admin Password: Password used by the Security Role user for the ServiceManager  
-    - SMPort: Port number of the ServiceManager (16000)  
-    - ASPort: Port number of the Administration Service (16001)  
-    - DSPort: Port number of the Distribution Service (16002)  
-    - RSPort: Port number of the Receiver Service (16003)  
-    - PMSPort: Port number of the Performance Metric Service (16004)  
-    - PMSPortUDP: UDP port number for Performance Metric Service NoSQL Database connection (16005)
-
-5.	Run the script using the following parameter values, to create the Atlanta Deployment:
-
-    ![](./images/g4.png " ")
+    Each of the parameters will be used to replace items in the response file and build the Deployment and associated services. Each of the command line parameters corresponds to the following:
+      - Deployment Name: Name of the deployment to be created  
+      - Admin Password: Password used by the Security Role user for the ServiceManager  
+      - SMPort: Port number of the ServiceManager (16000)  
+      - ASPort: Port number of the Administration Service (16001)  
+      - DSPort: Port number of the Distribution Service (16002)  
+      - RSPort: Port number of the Receiver Service (16003)  
+      - PMSPort: Port number of the Performance Metric Service (16004)  
+      - PMSPortUDP: UDP port number for Performance Metric Service NoSQL Database connection (16005)
 
     ***Atlanta deployment creation***  
+
+5.	Run the script using the following parameter values, to create the Atlanta Deployment:
 
     ```
     <copy>sh ./create_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005</copy>
