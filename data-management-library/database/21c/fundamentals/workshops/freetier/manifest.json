@@ -17,33 +17,17 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 2: Create a Virtual Cloud Network",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-virtual-cloud-network/create-virtual-cloud-network.md"
+            "title": "Lab 2: Create a DBCS VM Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-oci-vm-db/create-oci-vm-db-vcn.md"
         },
         {
-            "title": "Lab 3: Create an OCI VM Database",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-oci-vm-db/create-oci-vm-db.md"
-        },
-        {
-            "title": "Lab 4: 21C Setup",
+            "title": "Lab 3: 21C Setup",
             "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Upgrades and Migration",
-            "filename": "../../introduction/intro-upgrades.md"
-        }, 
-        {
-            "title": "Lab: AutoUpgrade",
-            "filename": "../../autoupgrade/autoupgrade.md"
-        },
-        {
-            "title": "Lab: Autoupgrade - Non-CDB to PDB",
-            "filename": "../../autoupgrade-non-cdb/autoupgrade-non-cdb.md"
         },
         {
             "title": "Application Development",
             "filename": "../../introduction/intro-appdev.md"
-        }, 
+        },
         {
             "title": "Lab: New Set Operators",
             "filename": "../../set-operators/set-operators.md"
@@ -57,13 +41,9 @@
             "filename": "../../sql-macro/sql-macro.md"
         },
         {
-            "title": "Lab: Searching Text/JSON in In-Memory",
-            "filename": "../../search-text/search-text.md"
-        },
-        {
             "title": "Big Data and DW",
             "filename": "../../introduction/intro-bigdata-dw.md"
-        }, 
+        },
         {
             "title": "Lab: Bitwise Aggregate Functions",
             "filename": "../../bitwise-agg/bitwise-agg.md"
@@ -87,10 +67,6 @@
         {
             "title": "Performance and HA",
             "filename": "../../introduction/intro-perf-ha.md"
-        }, 
-        {
-            "title": "Lab: PDB Point-in-Time Recovery",
-            "filename": "../../flashback-pdbs/flashback-pdbs.md"
         },
         {
             "title": "Lab: Automatic Zone Maps",
@@ -101,37 +77,21 @@
             "filename": "../../securefile-lobs/securefile-lobs.md"
         },
         {
-            "title": "Lab: Automatic In-Memory",
-            "filename": "../../auto-in-mem/auto-in-mem.md"
-        },
-        {
-            "title": "Lab: In-Memory Hybrid Scans",
-            "filename": "../../im-hybrid-scans/im-hybrid-scans.md"
-        },
-        {
-            "title": "Lab: Synchronizing Apps in App PDBs",
-            "filename": "../../sync-app-pdbs/sync-app-pdbs.md"
-        },
-        {
             "title": "Lab: MAX_IDLE_BLOCKER_TIME Parameter",
             "filename": "../../max-idle-blocker/max-idle-blocker.md"
         },
         {
             "title": "Database Utilties",
             "filename": "../../introduction/intro-dbutilities.md"
-        }, 
+        },
         {
             "title": "Lab: Data Pump Checksums",
             "filename": "../../data-pump-validity/data-pump-validity.md"
         },
         {
-            "title": "Lab: Data Pump Includes & Excludes",
-            "filename": "../../data-pump-incl-excl/data-pump-incl-excl.md"
-        }, 
-        {
             "title": "Lab: Data Pump Transportable Tbsp",
             "filename": "../../data-pump-tts/data-pump-tts.md"
-        },           
+        },
         {
             "title": "Lab: Data Pump Index Compression",
             "filename": "../../data-pump-index-comp/data-pump-index-comp.md"
@@ -139,10 +99,10 @@
         {
             "title": "Security ",
             "filename": "../../introduction/intro-security.md"
-        }, 
+        },
         {
             "title": "Lab: Blockchain Tables & Rows",
-            "filename": "../../blockchain-tables/blockchain-tables.md"
+            "filename": "../../blockchain-table/blockchain-table.md"
         },
         {
             "title": "Lab: Tablespace Encryption Algorithm",
@@ -153,41 +113,12 @@
             "filename": "../../realms/realms.md"
         },
         {
-            "title": "Lab: Uninstall DB Vault",
-            "filename": "../../dbv-uninstall/dbv-uninstall.md"
-        },
-        {
-            "title": "Lab: Install DB Vault",
-            "filename": "../../dbv-install/dbv-install.md"
-        },
-        {
             "title": "Authentication and Administration",
             "filename": "../../introduction/intro-admin.md"
-        }, 
+        },
         {
             "title": "Lab: Upgraded Password File Case Sensitivity",
             "filename": "../../upgraded-pwd/upgraded-pwd.md"
-        },
-        {
-            "title": "Lab: Password Length Enforcement",
-            "filename": "../../enforce-min-pwd/enforce-min-pwd.md"
-        },
-        {
-            "title": "Audit",
-            "filename": "../../introduction/intro-audit.md"
-        }, 
-        {
-            "title": "Lab: Unified Audit Policies for STIG",
-            "filename": "../../audit-stig-compl/audit-stig-compl.md"
-        },
-        {
-            "title": "Lab: SYSLOG Destination for Audit Policies",
-            "filename": "../../common-audit-dest/common-audit-dest.md"
-        },
-        {
-            "title": "Lab: Unified Audit Policies",
-            "filename": "../../unified-audit-policies/unified-audit-policies.md"
         }
-        
     ]
 }
