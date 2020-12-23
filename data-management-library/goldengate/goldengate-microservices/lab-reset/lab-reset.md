@@ -20,7 +20,6 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
-    - Lab: Configure GoldenGate
 
 ## **STEP 1**: Remove Deployments.
 
@@ -28,7 +27,7 @@ This lab assumes you have:
 
     ![](./images/terminal3.png " ")
 
-                       
+
 
 2.  From the Terminal window in the VNC Console, navigate to the Reset directory under ~/OGG181_WHKSHP.
 

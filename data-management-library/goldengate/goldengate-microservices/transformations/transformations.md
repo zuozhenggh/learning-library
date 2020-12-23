@@ -161,7 +161,7 @@ In this step we will mask the email ID field extracted at the source and replace
     <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
     ```
 
-2. Update REPLICAT IREP parameters by adding the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command :
+2. Update IREP Replicat parameters by adding the attributes to map the Environment Variables to the audit table. Add the following after *useridalias command :
 
     ```
     <copy>
@@ -169,7 +169,7 @@ In this step we will mask the email ID field extracted at the source and replace
     </copy>
     ```
 
- 2.	Restart the IREP
+ 2.	Restart IREP Replicat
 
  3.	From your SQLPLUS session connected to the source database (OGGOOW19) and add a few records to `soe.logon`
 
