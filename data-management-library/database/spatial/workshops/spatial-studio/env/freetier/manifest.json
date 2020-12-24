@@ -21,6 +21,10 @@
     {
       "title": "Lab 3: Load Data",
       "filename": "../../../../spatial-studio/intro/load-data/load-data.md"
+  },
+  {
+      "title": "Lab 4: Create Project",
+      "filename": "../../../../spatial-studio/intro/create-project/create-project.md"
   }
     ]
 }
