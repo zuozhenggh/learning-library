@@ -3,9 +3,9 @@
 
 This 15-minute lab walks you through the steps to connecting Oracle DataSource for Apache Hadoop(OD4H) on Big Data Service to Autonomous Data Warehouse(ADW).
 
-### About Product/Technology
+### Background
 
-You can access Hadoop from Autonomous Data Warehouse using Oracle DataSource For Apache Hadoop on Big Data Service. OD4H does not require creating a new table. You can start working with OD4H using the following steps:
+You can access Hadoop from Autonomous Data Warehouse using Oracle DataSource for Apache Hadoop on Big Data Service. OD4H does not require creating a new table. You can start working with OD4H using the following steps:
 
 * Create a new Oracle table, or, reuse an existing table.
 * Create the Hive DDL for creating the external table referencing the Oracle Table.
@@ -13,7 +13,7 @@ You can access Hadoop from Autonomous Data Warehouse using Oracle DataSource For
 
 External Tables allow you to define Java classes to access external database and present it as a native hive table.
 
-###Objectives
+### Objectives
 
 In this lab, you will:
 
@@ -22,7 +22,7 @@ In this lab, you will:
 * Create and Query a Hive External Table Using the Autonomous Data Warehouse Table.
 
 
-### Prerequsites
+### Prerequisites
 
 * Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console.
 * Big Data Service Cluster
@@ -40,10 +40,15 @@ OD4H is already installed on BDS nodes when you provision BDS. It is available u
     <copy>
     export OD4H_HOME=/opt/oracle/od4h/jlib
     export HADOOP_CLASSPATH=$OD4H_HOME/osh.jar:$OD4H_HOME/ojdbc8.jar:$OD4H_HOME/ucp.jar:$OD4H_HOME/osdt_cert.jar:$OD4H_HOME/oraclepki.jar:$OD4H_HOME/osdt_core.jar:$OD4H_HOME/orai18n.jar
+    </copy>
+    ```
+    **Note**: Ensure that `ucp.jar`, `ojdbc8.jar` and `osh.jar` are present in the Hive CLASSPATH for using OD4H.
+
+    ```
+    <copy>
     export classpath= $OD4H_HOME/osh.jar:$OD4H_HOME/ojdbc8.jar:$OD4H_HOME/ucp.jar:$OD4H_HOME/osdt_cert.jar:$OD4H_HOME/oraclepki.jar:$OD4H_HOME/osdt_core.jar:$OD4H_HOME/orai18n.jar
     </copy>
     ```
-Note: Ensure that ucp.jar, ojdbc8.jar and osh.jar are present in the Hive CLASSPATH, for using OD4H.
 
 ## **STEP 2**: Download Autonomous Data Warehouse Cloud Credentials
 
@@ -72,12 +77,11 @@ To download client credentials, do the following from Oracle Cloud Infrastructur
 
    ![password.png](images/password.png "password.png")
 
-   **Note:** This password protects the downloaded Client Credentials wallet. This wallet is not the same as the Transparent Data Encryption (TDE) wallet for the database; therefore, use a different password to protect the Client Credentials wallet.
+   **Note**: This password protects the downloaded Client Credentials wallet. This wallet is not the same as the Transparent Data Encryption (TDE) wallet for the database; therefore, use a different password to protect the Client Credentials wallet.
 
-7. Click **Download** to save the client security credentials zip file.
-   By default the filename is: Wallet_databasename.zip. You can save this file as any filename you want. You must protect this file to prevent unauthorized database access.
+7. Click **Download** to save the client security credentials zip file. By default the filename is: Wallet_databasename.zip. You can save this file as any filename you want. You must protect this   file to prevent unauthorized database access.
 
-8. Unzip cloud credential zip under a local directory where the OS user has access; example `/home/oracle/wallet`.
+8. Unzip the cloud credential zip file under a local directory where the OS user has access. For example `/home/oracle/wallet`.
 
    The zip file includes the following:
 
@@ -89,36 +93,38 @@ To download client credentials, do the following from Oracle Cloud Infrastructur
 
     * `ojdbc.properties`: Contains the wallet related connection property required for JDBC connection. This should be in the same path as `tnsnames.ora`.
 
-9. Edit sqlnet.ora and make sure the **WALLET_LOCATION** parameter points to a valid directory where the wallet is located. An absolute path is needed.
-   Example of sqlnet.ora: Assumeming SSL Wallet zip was unzipped under `/home/oracle/wallet`.
+9. Edit the `sqlnet.ora` file and enter the **WALLET_LOCATION** parameter pointing to a valid directory where the wallet is located.
 
      ```
      WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/oracle/wallet")))
      SSL_SERVER_DN_MATCH=yes
+
      ```
 
-10. Make sure the `ojdbc.properties` file has been configured to use Oracle Wallet, as follows (i.e., anything related to JKS commented out)
+10. Make sure the `ojdbc.properties` file has been configured to use Oracle Wallet (i.e., anything related to JKS commented out).
 
-    ```
-    <copy>oracle.net.wallet_location=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=${TNS_ADMIN})))
-    #javax.net.ssl.trustStore=${TNS_ADMIN}/truststore.jks
-    #javax.net.ssl.trustStorePassword=<password_from_console>
-    #javax.net.ssl.keyStore=${TNS_ADMIN}/keystore.jks
-    #javax.net.ssl.keyStorePassword=<password_from_console>
-    </copy>
-    ```
-11.  Your ADW cloud services (e.g., myadwsvc) has several levels of priority including High, Medium and Low; the tnsnames.ora file from the downloaded client credentials contains the full description of these services. In this following OD4H string, enter the priority level as "high" and target Oracle database table name as `EmployeeData`.
+      ```
+      <copy>
+      oracle.net.wallet_location=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=${TNS_ADMIN})))
+      #javax.net.ssl.trustStore=${TNS_ADMIN}/truststore.jks
+      #javax.net.ssl.trustStorePassword=<password_from_console>
+      #javax.net.ssl.keyStore=${TNS_ADMIN}/keystore.jks
+      #javax.net.ssl.keyStorePassword=<password_from_console>
+      </copy>
+      ```
+11.  Your ADW cloud services (e.g., myadwsvc) has several levels of priority including High, Medium and Low; the `tnsnames.ora` file from the downloaded client credentials contains the full description of these services. In this following OD4H string, enter the priority level as "high" and target Oracle database table name as `EmployeeData`.
 
     **Note:** Pick the priority level corresponding to your requirement, from the `tnsnames.ora` i.e., `myadwsvc_high` or `myadwsvc_low` or `myadwsvc_medium`.
 
-      ```
+       ```
       <copy>
       'mapreduce.jdbc.url' = 'jdbc:oracle:thin:/@myadwsvc_high',
       'mapreduce.jdbc.username' = '**********',
       'mapreduce.jdbc.password' = '**********',
       'mapreduce.jdbc.input.table.name' = 'Oracle_Table_Name',
       'oracle.hcat.osh.authentication' = 'ORACLE_WALLET',
-      'oracle.net.tns_admin' = '/home/oracle/wallet';</copy>
+      'oracle.net.tns_admin' = '/home/oracle/wallet';
+      </copy>
       ```    
 
 ## **STEP 3**: Create an OD4H User and EMPLOYEEDATA Table on Autonomous Data Warehouse

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Install and Create Oracle Database 21c",
+  "workshoptitle": "Manage Schema Objects",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -11,21 +11,21 @@
             "filename": "../../introduction/intro.md"
         },
         {
-            "title": "Lab 1: Perform Basic Installation for Container Database",
+            "title": "Lab 1: Create a Database Connection Using SQL Developer",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../db_basic_installation_installer/perform_basic_installation.md"
+            "filename": "../../create-conn/create_conn.md"
         },
         {
-            "title": "Lab 2: Perform Advanced Installation for Container Database",
-            "filename": "../../db_advanced_installation_installer/perform_advanced_installation.md"
+            "title": "Lab 2: Manage Tables Using SQL Developer",
+            "filename": "../../manage-tables/manage_tables.md"
         },
         {
-            "title": "Lab 3: Create a Container Database Using DBCA (Typical Mode)",
-            "filename": "../../db_basic_installation_dbca/create_db.md"
+            "title": "Lab 3: Manage Indexes and Views Using SQL Developer",
+            "filename": "../../manage-indexes/manage_ind.md"
         },
         {
-            "title": "Lab 4: Create a Container Database Using DBCA (Advanced Mode)",
-            "filename": "../../db_advanced_installation_dbca/create_db_adv.md"
+            "title": "Lab 4: Manage Program Code Stored in the Database",
+            "filename": "../../manage-codes/code.md"
         }
 
 
