@@ -18,7 +18,7 @@ Watch the following two videos for more information. The first is an introductio
 ### Objectives
 
 In this workshop you will:
-* Connect to your autonomous database using **Graph Stud
+* Connect to your autonomous database using **Graph Studio**
 * Quickly create a graph from scratch using PGQL (a graph query language)
 * Load graphs into memory for analysis
 * Create a notebook

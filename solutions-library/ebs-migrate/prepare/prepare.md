@@ -140,7 +140,7 @@ These directories will hold:
 
     ![](./images/8.png " ")
 
-## **STEP 3:** Enable SSH on all Requred Nodes
+## **STEP 3:** Enable SSH on all Required Nodes
 
 All nodes must have SSH enabled. 
 
