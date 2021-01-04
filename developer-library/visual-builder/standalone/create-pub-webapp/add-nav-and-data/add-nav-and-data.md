@@ -78,9 +78,8 @@ Instead of using the Data Manager to import data, this time you'll use each busi
     ![](./images/vbcsnd_imp_s11.png)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan, Visual Builder User Assistance
-
-**Last Updated** - December 2020
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
+* **Last Updated By** - December 2020
 
 ## Need Help?
 Submit feedback or ask for help using our [Visual Builder Support Forum](https://cloudcustomerconnect.oracle.com/resources/e610f4723c/summary). Click the **Log In** button and login using your Oracle Account. Click the **Post a new topic** button to start a new discussion, or search for an answer using keywords.  Please include your workshop name and lab name, and include screenshots and attach files if needed. Here's your chance to engage directly with the author of the workshop!

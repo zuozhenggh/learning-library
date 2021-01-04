@@ -1,4 +1,4 @@
-# Create a Web Application  
+# Create a Web Application
 
 ## Introduction
 
@@ -226,9 +226,9 @@ In this step, we'll create the last business object we need, the Employee object
     So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in a later tutorial.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - December 2020
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
+* **Last Updated By** - December 2020
 
 ## Need Help?
 Submit feedback or ask for help using our [Visual Builder Support Forum](https://cloudcustomerconnect.oracle.com/resources/e610f4723c/summary). Click the **Log In** button and login using your Oracle Account. Click the **Post a new topic** button to the right to start a new discussion, or search for an answer using keywords.  Please include your workshop name and lab name, and include screenshots and attach files if needed.  Here's your chance to engage directly with the author of the workshop!

@@ -15,7 +15,7 @@ As a refresher, here's the Location, Department, and Employee business objects y
 
 ![](./images/vbcscp_dbdiagram.png)
 
-## **STEP 1 **: Use the main-start Page to Display Departments
+## **STEP 1**: Use the main-start Page to Display Departments
 
 These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
 
@@ -193,9 +193,8 @@ It makes sense at this point to change the name of the main-start page to main-d
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan, Visual Builder User Assistance
-
-**Last Updated** - December 2020
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
+* **Last Updated By** - December 2020
 
 ## Need Help?
 Submit feedback or ask for help using our [Visual Builder Support Forum](https://cloudcustomerconnect.oracle.com/resources/e610f4723c/summary). Click the **Log In** button and login using your Oracle Account. Click the **Post a new topic** button to the right to start a new discussion, or search for an answer using keywords.  Please include your workshop name and lab name, and include screenshots and attach files if needed.  Here's your chance to engage directly with the author of the workshop!
