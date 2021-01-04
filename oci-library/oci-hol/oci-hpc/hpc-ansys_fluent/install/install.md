@@ -1,6 +1,7 @@
-# Installing ANSYS Fluent
+# Install ANSYS Fluent
 
 ## Introduction
+
 In this lab, you will install ANSYS Fluent.
 
 Estimated Lab Time: 25 minutes
@@ -12,8 +13,9 @@ Estimated Lab Time: 25 minutes
 1. There are a couple of libraries that need to be added to the Oracle Linux image on all the compute nodes.
 
     ```
+    <copy>
     sudo yum -y install libGLU libXrender.x86_64 libXtst.x86_64 motif-2.3.4-14.el7_5.x86_64 mesa-libGLU-9.0.0-4.el7 x86_64  mesa-libGLU mesa-libGL motif axel fontconfig freetype freetype-devel fontconfig-devel libXext libXrender-devel.x86_64 libXrender.x86_64 mesa-libGL.x86_64
-
+    </copy>
     ```
 
 ## **STEP 2**: Download the binaries

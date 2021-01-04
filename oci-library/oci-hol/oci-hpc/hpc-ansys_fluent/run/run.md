@@ -1,11 +1,11 @@
-# Running STAR-CCM+
+# Run ANSYS Fluent
 
 ## Introduction
 In this lab, you will Run ANSYS Fluent.
 
 Estimated Lab Time: 10 minutes
 
-## Running ANSYS Fluent
+## **STEP 1:** Running ANSYS Fluent
 Running Fluent is pretty straightforward: You can either start the GUI if you have a VNC session started with
 
 ```
@@ -37,7 +37,7 @@ fluentbench.pl -ssh -noloadchk -casdat=$modelname -t$N -cnf=machinefile -mpi=int
 Intel is the prefered MPI for ANSYS Fluent on OCI.
 
 
-## Benchmark Example
+## **STEP 2:** Benchmark Example
 
 Performances of Fluent are often measured using the Formula 1 benchmark with 140 Millions cells. The next graph is showing how using more nodes impact the runtime, with a scaling really close to 100%. RDMA network only start to differentiate versus regular TCP runs if the Cells / Core ratio starts to go down. Here is a comparison with AWS C5n HPC machines.
 
