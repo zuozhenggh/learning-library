@@ -81,14 +81,14 @@ This lab assumes you have:
     ```
     ![](./images/h6.png " ")
 
-2. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
+4. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
 
     ```
     <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
     ```
     ![](./images/h7.png " ")
 
-4. Add Schema Trandata for Boston schema SOE
+5. Add Schema Trandata for Boston schema SOE
 
     ```
     <copy>./add_SchemaTrandata_182.sh Welcome1 17001</copy>
@@ -98,7 +98,7 @@ This lab assumes you have:
 
     ![](./images/h9.png " ")
 
-5. Add Extract to Boston Deployment
+6. Add Extract to Boston Deployment
 
     ```
     <copy>./add_Extract2.sh Welcome1 17001 EXTSOE1  </copy>
@@ -106,7 +106,7 @@ This lab assumes you have:
 
     ![](./images/h10.png " ")
 
-6. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
+7. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
 
     ```
     <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
@@ -114,7 +114,7 @@ This lab assumes you have:
 
     ![](./images/h11.png " ")
 
-7. Add Distribution path from Boston to connect to Atlanta
+8. Add Distribution path from Boston to connect to Atlanta
 
     ```
     <copy>./add_DistroPath2.sh Welcome1 17002 SOE2SOE1 bb 16003 ba</copy>
@@ -188,25 +188,23 @@ This lab assumes you have:
 
     ![](./images/h23.png " ")
 
-    ![](./images/h24.png " ")
-
 
 ## **STEP 3**: Generate Load with Swingbench
 
 In this step we will use a script to invoke Swingbench to apply data to the source (Atlanta) and target (Boston) databases at the same time and then validate performance using the Performance Metric Service.
 
-1. As user *oracle* from the SSH terminal session, navigate to `~/Desktop/Scripts/HOL/Lab8` and start Swingbench utility
+1. As user *oracle* from the SSH terminal session, navigate to `~/Desktop/Scripts/HOL/Lab9` and start Swingbench utility
 
      ```
     <copy>
-    cd ~/Desktop/Scripts/HOL/Lab8
+    cd ~/Desktop/Scripts/HOL/Lab9
     ./start_swingbench.sh
     </copy>
     ```
 
     ![](./images/h25.png " ")
 
-6. Go to the browser tab session of the Performance Metrics Server for *Atlanta* Deployment and validate
+2. Go to the browser tab session of the Performance Metrics Server for *Atlanta* Deployment and select "*IREP1 > Database Statistics*" to validate
 
     ```
     <copy>https://<Your Public IP Address>/Atlanta/pmsrvr</copy>
@@ -214,7 +212,7 @@ In this step we will use a script to invoke Swingbench to apply data to the sour
 
     ![](./images/h26.png " ")
 
-6. Go to the browser tab session of the Performance Metrics Server for *Boston* Deployment and validate
+3. Go to the browser tab session of the Performance Metrics Server for *Boston* Deployment and select "*IREP > Database Statistics*" to validate
 
     ```
     <copy>https://<Your Public IP Address>/Boston/pmsrvr </copy>

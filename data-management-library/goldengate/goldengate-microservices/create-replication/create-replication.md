@@ -86,6 +86,7 @@ Deployments provide a siloed approach to splitting replication environments betw
     ```
     <copy>sh ./create_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005</copy>
     ```
+    ![](./images/g4.png " ")
 
 6.	Return to the browser and refresh the ServiceManager page. You should have one (1) new Deployment called Atlanta, with four (4) services listed.
 
@@ -131,10 +132,6 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 
     ![](./images/g8.png " ")
 
-    If this is the first time you access this address, you will need to click through some security exceptions page as it is using a self-signed certificate. Once you get to the page, you will see below website.
-
-    ![](./images/g9.png " ")
-
 3.	Upon completion, return to your web browser. You should be able to access the ServiceManager page by only using the URL without a port number.
 
     ```
@@ -161,7 +158,7 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
     <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
     ```
 
-    ![](./images/g10.png " ")
+    ![](./images/g10-1.png " ")
 
 ## **STEP 3:** Create Credentials and Add Trandata
 The scripts provided and executed in this step are meant to speed up the lab process. If you are interested in creating credentials and adding schematrandata from the portal or AdminClient, access the Administration Service (adminsrvr) and navigate go to `Context Menu -> Configuration -> Credentials -> click on the plus ( + )` sign.
@@ -206,8 +203,6 @@ In this step we will manually execute each step from the SSH terminal session.
     ```
     <copy>sh ./add_SchemaTrandata.sh Welcome1 16001</copy>
     ```
-
-    ![](./images/a15.png " ")
 
     ![](./images/g12.png " ")
 
@@ -265,13 +260,13 @@ In this step we will manually execute each step from the SSH terminal session.
 
     Proceed below to add Replicat
 
-4. Change directory to `~/Desktop/Scripts/HOL/Lab7`
+5. Change directory to `~/Desktop/Scripts/HOL/Lab7`
 
     ```
     <copy>cd ~/Desktop/Scripts/HOL/Lab7 </copy>
     ```
 
-5. 	Create Credentials and alias for the target database User
+6. 	Create Credentials and alias for the target database User
 
     ```
     <copy>sh ./create_credential_GGAlias.sh Welcome1 17001 ggate@oggoow191 ggate </copy>
@@ -285,7 +280,7 @@ In this step we will manually execute each step from the SSH terminal session.
 
     ![](./images/g18.png " ")
 
-6. 	Create Checkpoint Table
+7. 	Create Checkpoint Table
 
     ```
     <copy>
@@ -298,7 +293,7 @@ In this step we will manually execute each step from the SSH terminal session.
     ![](./images/g20.png " ")
 
 
-7. 	Create Replicat on Boston
+8. 	Create Replicat on Boston
 
     ```
     <copy>sh ./add_Replicat.sh Welcome1 17001 IREP  </copy>
@@ -308,7 +303,7 @@ In this step we will manually execute each step from the SSH terminal session.
 
     ![](./images/g22.png " ")
 
-8. Start Extract, Distribution and Replicat
+9. Start Extract, Distribution and Replicat
 
     ```
     <copy> cd ~/Desktop/Scripts/HOL/Lab8</copy>

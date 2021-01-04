@@ -34,7 +34,7 @@ In this lab we will setup GoldenGate Microservices Transformations
 ## **STEP 1:** Configuration
 The picture below represent the summary of the transformations we will be performing in this labs
 
-    ![](./images/c1.png " ")
+  ![](./images/c1.png " ")
 
 1. From the SSH terminal session as user *oracle* connecting to your VM instance, launch SQLPLUS and connect as `gate/gate`
 

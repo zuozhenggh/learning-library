@@ -46,6 +46,8 @@ This lab assumes you have:
     </copy>
     ```
 
+    ![](./images/run-startup-init.png " ")
+
     In the interest of time and for ease of execution, all prerequisite tasks to prepare the database for GoldenGate replication have already been performed on your VM instance. This includes:
       - Enabling Archive Log Mode
       - Enabling Supplemental Logging
