@@ -8,6 +8,18 @@ Follow the steps in this document. The **tutorial** directory has scripts to run
 
 Estimated Lab Time: 60 minutes
 
+### Objectives
+
+In this workshop, you will:
+
+- Generate SSH Keys
+- Setup compute instance
+- Use Python and the Oracle Database and do Python Programming
+
+### Prerequisites
+
+- Have a Free Trial or an existing Oracle Cloud account
+
 ### Acknowledgements
 
 * **Author** - Christopher Jones, Anthony Tuininga

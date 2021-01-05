@@ -26,9 +26,9 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup using Marketplace Image
+* Login to Oracle Cloud
+* Generate SSH Key
+* Environment Setup using Marketplace Image
 
 ## **STEP 1:** Install Python
 
