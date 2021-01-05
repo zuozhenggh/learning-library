@@ -1,6 +1,6 @@
-# Workshop Introduction and Overview #
+# Introduction
 
-## Introduction
+## About this Workshop
 
 This tutorial is an introduction to using Python with Oracle Database. It contains beginner and advanced material. Sections can be done in any order. Choose the content that interests you and your skill level.
 
