@@ -21,38 +21,26 @@ KEY BENEFITS
 - Improve operations and customer experience with enhanced business insight
 - Minimize overhead on source systems to maintain high performance
 
-Oracle GoldenGate Microservices provides optimized and high performance delivery.Designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.  
+Oracle GoldenGate Microservices provides optimized and high performance delivery. Designed to demonstrate how Oracle GoldenGate 19c Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces.  All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.  
 
 Oracle GoldenGate Microservices real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
 ### Objectives
-The objectives of the labs is to familiarize you with the process to create data repication objects that will allow you to replicate data realtime using GoldenGate Microservices while levergaring RestfulAPIs.
+The objectives of the labs is to familiarize you with the process to create data replication objects that will allow you to replicate data real-time using GoldenGate Microservices while leveraging Restful APIs.
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * A general understanding of database and data replication concepts using Oracle GoldenGate
 
-### Lab Overview
-
-LAB: CREATING DEPLOYMENTS  
-LAB: CONFIGURE REVERSE PROXY  
-LAB: CREATE CREDENTIALS  
-LAB: ADD EXTRACT AND DISTRIBUTION PATHS  
-LAB: INSTANTIATION  
-LAB: CREATE THE REPLICAT  
-LAB: GENERATE DATA LOAD  
-LAB: HA/DR USING GG ACTIVE-ACTIVE  
-LAB: TRANSFORMATIONS USING MICROSERVICES  
-
 ### Passwords
 
 The passwords for all accounts are:
 
-```Database Accounts (sys/system, etc..): Welcome1```  
-```GoldenGate Users (c##ggate, ggate): ggate```  
-```GoldenGate Admin(oggadmin): Welcome_1```  
-```Unix Account (Oracle): ggDemo123#!```  
-
+```
+Database Accounts (sys/system, etc..): Welcome1
+GoldenGate Users (c##ggate, ggate): ggate
+GoldenGate Admin(oggadmin): Welcome1
+```  
 
 ## Learn More
 
@@ -60,9 +48,9 @@ The passwords for all accounts are:
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, November 2020
-* **Contributors** -Zia Khan
-* **Last Updated By/Date** - Brian Elliott, November 2020
-\
+* **Contributors** -Zia Khan, Meghana Banka, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+
 You may now *proceed to the next lab*.
 
 ## Need Help?
