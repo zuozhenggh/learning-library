@@ -1,4 +1,4 @@
-# Repair Ou-of-Sync Jobs and Generate SQL Files
+# Repair Out-of-Sync Jobs and Generate SQL Files
 
 ## Introduction
 From the Finished Jobs page, you can select the out-of-sync comparisons for repair. Jobs, groups, and compare pairs can be selected for repair.
@@ -50,7 +50,7 @@ To begin with, ensure that you have completed Lab 4.
     + Avinash Yadagere, Principal Member Technical Staff, Oracle GoldenGate Development
     + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
-* **Last Updated By/Date:** Anuradha Chepuri, December 2020
+* **Last Updated By/Date:** Anuradha Chepuri, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*. Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.

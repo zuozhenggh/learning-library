@@ -183,7 +183,7 @@ To deploy agents:
       + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
       + Apeksha Polnaya, Senior Manager, Software Development, GoldenGate Development
 
-* **Last Updated By/Date:** Anuradha Chepuri, December 2020
+* **Last Updated By/Date:** Anuradha Chepuri, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

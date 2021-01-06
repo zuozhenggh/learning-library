@@ -44,7 +44,7 @@ Use these links to get more information about Oracle GoldenGate and Oracle Golde
     + Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
 
 
-* **Last Updated By/Date:** Anuradha Chepuri, December 2020
+* **Last Updated By/Date:** Anuradha Chepuri, January 2021
 
 ## What's Next?
 **You are all set to begin the labs! Click Lab 1: Install and Configure Oracle GoldenGate Veridata in the Contents menu**.
