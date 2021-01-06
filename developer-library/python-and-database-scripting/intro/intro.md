@@ -6,7 +6,7 @@ This tutorial is an introduction to using Python with Oracle Database. It contai
 
 Follow the steps in this document. The **tutorial** directory has scripts to run and modify. The **tutorial/solutions** directory has scripts with the suggested code changes.
 
-Estimated Lab Time: 60 minutes
+Estimated Workshop Time: 60 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ In this workshop, you will:
 
 - Have a Free Trial or an existing Oracle Cloud account
 
-### Acknowledgements
+## Acknowledgements
 
 * **Author** - Christopher Jones, Anthony Tuininga
 * **Contributors** - Jaden McElvey, Technical Lead, Oracle LiveLabs Interns
