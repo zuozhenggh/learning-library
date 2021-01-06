@@ -580,7 +580,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Database Resident Connection Pooling allows multiple Python processes on multiple machines to share a small pool of database server processes.
 
-    Below left is a diagram without DRCP. Every application connection has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a precreated pool of servers and return them when they are not in use.
+    Below left is a diagram without DRCP. Every application connection has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a pre-created pool of servers and return them when they are not in use.
 
     Without DRCP: ![](./images/python_nopool.png "Without DRCP " )
 
