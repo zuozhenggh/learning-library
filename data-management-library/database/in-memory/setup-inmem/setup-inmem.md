@@ -28,7 +28,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/vzecPQygDUUDW_aq2HP-3cOYSKW6FrszSA11AM1qtLYYr0hCSFZ9ndJB_xCn5xHw/n/c4u03/b/labfiles/o/multiscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/HHDcZVcYLzrexbQymlN6Laak0DwWtDrd3lTAOu1gmJTK37uSOB_-4AD-VwNePJvR/n/c4u03/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     </copy>
