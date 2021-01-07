@@ -224,7 +224,7 @@
         {
             "title": "Lab 29: Autonomous Data Guard",
             "description": "Customer managed keys using OCI Vault Service",
-            "filename": "./../adb-kms/adb-kms.md"
+            "filename": "./../adb-data-guard/adb-data-guard.md"
         },
         {
             "title": "Appendix",
