@@ -64,8 +64,13 @@ We begin by ....
 
 10. You will next use the remaining point style option, Symbol, for the POLICE\_POINTS layer. Turn on the POLICE\_POINTS layer and turn off the other 2 layers in the map by clicking on the visibility controls (i.e., blue eyeball icons.)  Then click the hamburger icon for POLICE\_POINTS and select Settings. 
 
-    Change Render Style to Symbol and then click inside the Image text box to open the Symbol selection dialog. Select "marker-11" and update the opacity to 90% and Size factor to 0.6. You can of course pick your own values for these if you prefer.  Then click the Back link tio return to the Layers List.
+    Change Render Style to Symbol and then click inside the Image text box to open the Symbol selection dialog. Select "marker-11" and update the opacity to 90% and Size factor to 0.6. You can of course pick your own values for these if you prefer.  Then click the Back link to return to the Layers List.
  ![Image alt text](images/apply-styling-13.png)
+
+11. 
+
+
+
 
 Please proceed to the next Lab.
 

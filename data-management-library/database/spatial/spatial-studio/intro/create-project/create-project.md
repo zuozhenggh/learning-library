@@ -55,19 +55,25 @@ We begin by creating a new empty Project and ...
 2. As you did previously with ACCIDENTS, drag and drop the POLICE\_POINTS Dataset from the Data Elements panel onto the, click the POLICE\_POINT layer's hamburger menu and select Settings. Update Radius, Color, Opacity. Then click the Back button at the top of the Layers panel.
  ![Image alt text](images/create-proj-8.png)
 
-3. As Layers are added to the map, they are rendered on top of the existing Layers. Therefore POLICE\_POINTS are currently on top of ACCIDENTS. To reorder  the layers such that POLICE\_POINTS are underneath ACCIDENTS, move the mouse over POLICE\_POINTS in the Larer's list, click and hold (you'll see the cursor change to cross-hair), and drag under ACCIDENTS. 
+3. As Layers are added to the map, they are rendered on top of the existing Layers. Therefore POLICE\_POINTS are currently on top of ACCIDENTS. To reorder  the layers such that POLICE\_POINTS are underneath ACCIDENTS, move the mouse over POLICE\_POINTS in the Layer's list, click and hold (you'll see the cursor change to cross-hair), and drag under ACCIDENTS. 
  ![Image alt text](images/create-proj-9.png)
  
 4. Drag and drop the POLICE\_BOUNDS Dataset onto the map. As you did with POLICE\_POINTS, re-order the layers so that POLICE\_BOUNDS are at the bottom (i.e., rendered beneath the other layers). We now have our 3 datasets added as map layers in our project.
+
+  Note: Individual layers may be turned off/on by clicking the blue eyeball icon next to the layer name.
+  
  ![Image alt text](images/create-proj-10.png)  
+
+5. Click the POLICE\_BOUNDS layer's hamburger menu and select Settings. Update Color and Opacity for the Fill and Outline. Observe that using a white outline reduces the cluttered effect of a darker outline.
+ ![Image alt text](images/create-proj-11.png)   
 
 ## **STEP 3:** Save Project 
     
-1. Individual layers may be turned off/on by clicking the blue eyeball icon next to the layer name. Click the Save button at the top right to save the Project and supply a name, for example "LiveLabs Spatial Intro".
- ![Image alt text](images/create-proj-11.png)
+1. Click the Save button at the top right to save the Project and supply a name, for example "LiveLabs Spatial Intro".
+ ![Image alt text](images/create-proj-12.png)
 
 2. Navigate to the projects page from the left navigation bar and observe our Project now listed.
- ![Image alt text](images/create-proj-12.png)
+ ![Image alt text](images/create-proj-13.png)
 
 Please proceed to the next Lab.
 
