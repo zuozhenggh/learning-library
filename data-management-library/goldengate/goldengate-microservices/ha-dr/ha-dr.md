@@ -179,8 +179,7 @@ This lab assumes you have:
 
     ![](./images/h22.png " ")
 
-
-12. Start GoldenGate Processes
+13. Start GoldenGate Processes
 
     ```
     <copy>./start_replication.sh Welcome1 17001 EXTSOE1 17002 SOE2SOE1 16001 IREP1</copy>
