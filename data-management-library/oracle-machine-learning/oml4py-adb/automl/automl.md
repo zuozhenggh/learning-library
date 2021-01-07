@@ -1,4 +1,4 @@
-# Visualize Your Data
+# Use AutoML
 
 ## Introduction
 
@@ -6,7 +6,7 @@
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
+### About AutoML
 Enter background information here..
 
 ### Objectives

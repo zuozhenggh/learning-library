@@ -1,4 +1,4 @@
-# Setup the Environment
+# Embedded Python Execution
 
 ## Introduction
 
@@ -6,7 +6,7 @@
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
+### About Embedded Python Execution
 Enter background information here..
 
 ### Objectives

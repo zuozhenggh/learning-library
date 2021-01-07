@@ -1,4 +1,4 @@
-# Query Your Data
+# Datastore and Script Repository
 
 ## Introduction
 

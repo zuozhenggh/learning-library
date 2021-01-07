@@ -1,4 +1,4 @@
-# Provision an Instance
+# Data Selection and Manipulation
 
 ## Introduction
 
@@ -6,7 +6,7 @@
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
+### About Data Selection and Manipulation
 Enter background information here..
 
 ### Objectives

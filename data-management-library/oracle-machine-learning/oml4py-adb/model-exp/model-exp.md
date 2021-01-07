@@ -1,4 +1,4 @@
-# Query Your Data
+# Use Model Explainability
 
 ## Introduction
 
@@ -6,7 +6,7 @@
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
+### About Model Explainability
 Enter background information here..
 
 ### Objectives
