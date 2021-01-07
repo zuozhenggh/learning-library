@@ -1,5 +1,10 @@
 # Run ANSYS Fluent
 
+## Introduction
+In this lab, you will Run ANSYS Fluent.
+
+Estimated Lab Time: 10 minutes
+
 ## Objectives
 
 In this final lab, we will walk you through the different steps for running the ANSYS Fluent Software on OCI, and later showcase the Fluent software performance on OCI using a benchmark example.
@@ -9,11 +14,6 @@ In this final lab, we will walk you through the different steps for running the 
 * Some understanding of cloud and database terms is helpful
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
-
-## Introduction
-In this lab, you will Run ANSYS Fluent.
-
-Estimated Lab Time: 10 minutes
 
 ## **STEP 1:** Running ANSYS Fluent
 1. Running Fluent is pretty straightforward: You can either start the GUI if you have a VNC session started with

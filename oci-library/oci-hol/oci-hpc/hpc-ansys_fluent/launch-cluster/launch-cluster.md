@@ -1,5 +1,14 @@
 # Launch HPC Cluster Network
 
+## Introduction
+
+There are many ways to launch an HPC Cluster Network, this solutions guide will cover two different methods:
+
+* Via Marketplace
+* Manually Depending on your OS, you will want to go with a specific method. If the HPC Cluster Network marketplace image or our OCI HPC CN Terraform scripts are used, this is for Oracle Linux 7 only. If you want to use CentOS, Ubuntu or another OS, manual configuration is required.
+
+Estimated Lab Time: 30 minutes
+
 ## Objectives
 
 In this lab, we will walk you through the different steps required to launch a High Performance Computing(HPC) Cluster Network on OCI.  
@@ -9,15 +18,6 @@ In this lab, we will walk you through the different steps required to launch a H
 * Some understanding of cloud and database terms is helpful
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
-
-## Introduction
-
-There are many ways to launch an HPC Cluster Network, this solutions guide will cover two different methods:
-
-* Via Marketplace
-* Manually Depending on your OS, you will want to go with a specific method. If the HPC Cluster Network marketplace image or our OCI HPC CN Terraform scripts are used, this is for Oracle Linux 7 only. If you want to use CentOS, Ubuntu or another OS, manual configuration is required.
-
-Estimated Lab Time: 30 minutes
 
 ## **OPTION 1**: Creation of Cluster Network through Marketplace
 

@@ -1,5 +1,11 @@
 # Install ANSYS Fluent
 
+## Introduction
+
+In this lab, you will install ANSYS Fluent.
+
+Estimated Lab Time: 25 minutes
+
 ## Objectives
 
 In this lab, we will walk you through the different steps on how to install the ANSYS Fluent Software (including it's specific libraries and binaries) on OCI.
@@ -9,12 +15,6 @@ In this lab, we will walk you through the different steps on how to install the 
 * Some understanding of cloud and database terms is helpful
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
-
-## Introduction
-
-In this lab, you will install ANSYS Fluent.
-
-Estimated Lab Time: 25 minutes
 
 ## **STEP 1**: Adding specific libraries
 
