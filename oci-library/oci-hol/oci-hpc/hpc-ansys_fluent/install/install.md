@@ -1,5 +1,15 @@
 # Install ANSYS Fluent
 
+## Objectives
+
+In this lab, we will walk you through the different steps on how to install the ANSYS Fluent Software (including it's specific libraries and binaries) on OCI.
+
+## Prerequisites
+
+* Some understanding of cloud and database terms is helpful
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
 ## Introduction
 
 In this lab, you will install ANSYS Fluent.
@@ -23,7 +33,9 @@ Estimated Lab Time: 25 minutes
 You can download the FLUENT installer from the ANSYS website and push it to your machine using scp.
 
 ```
-    scp /path/own/machine/FLUID_version.zip opc@1.1.1.1:/home/opc/
+<copy>
+scp /path/own/machine/FLUID_version.zip opc@1.1.1.1:/home/opc/
+</copy>    
 ```
 
 Another possibility is to upload the installer into object storage.
@@ -35,35 +47,42 @@ Another possibility is to upload the installer into object storage.
 5. In the bucket, select upload object and specify the path of the installer.
 6. Select the 3 dots on the right-hand side of the installer object and select Create Pre-Authenticated Request
 7. If you lose the URL, you cannot get it back, but you can regenerate a new Pre-Authenticated Request
-
-Download the installer form object storage with
+8. Download the installer form object storage with
 
 ```
-    wget PAR_URL
+<copy>
+wget PAR_URL
+</copy>
 ```
 
-Untar or unzip the installer depending on your version
+9. Untar or unzip the installer depending on your version
+
 ```
-    tar -xf installer.tgz
-    unzip installer.tgz
+<copy>
+tar -xf installer.tgz
+unzip installer.tgz
+</copy>
 ```
 ## **STEP 3**: Install
 
-Launch the installer on a shared location. By default, an HPC cluster has a NFS-share or a Gluster-share mounted on all the compute nodes. Add the IP address to access the license server.
-
-
-```
-    mkdir /mnt/nfs-share/install/fluent
-    sudo ./INSTALL -silent -install_dir "/mnt/nfs-share/install/fluent" -fluent -licserverinfo 2325:1055:IP
-```
-
-There is a known problem when running the ANSYS installer that it can hang. When you see RSS is disabled, feel free to exit using CTRL-C
-
-Finally, you can add fluent to your path like this
+1. Launch the installer on a shared location. By default, an HPC cluster has a NFS-share or a Gluster-share mounted on all the compute nodes. Add the IP address to access the license server.
 
 ```
-    export PATH=$SHARE_DIR/applications/ansys_inc/v$VERS/fluent/bin:$PATH
-    echo export PATH=$SHARE_DIR/applications/ansys_inc/v$VERS/fluent/bin:'$PATH' | sudo tee /etc/profile.d/ansys.sh
+<copy>
+mkdir /mnt/nfs-share/install/fluent
+sudo ./INSTALL -silent -install_dir "/mnt/nfs-share/install/fluent" -fluent -licserverinfo 2325:1055:IP
+</copy>    
+```
+
+**NOTE: There is a known problem when running the ANSYS installer that it can hang. When you see RSS is disabled, feel free to exit using CTRL-C**
+
+2. Finally, you can add fluent to your path like this
+
+```
+<copy> 
+export PATH=$SHARE_DIR/applications/ansys_inc/v$VERS/fluent/bin:$PATH
+echo export PATH=$SHARE_DIR/applications/ansys_inc/v$VERS/fluent/bin:'$PATH' | sudo tee /etc/profile.d/ansys.sh
+</copy> 
 ```
 
 

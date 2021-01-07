@@ -1,5 +1,15 @@
 # Access your VNC
 
+## Objectives
+
+In this lab, we will walk you through how to access your Virtual Network Computing instance on OCI. 
+
+## Prerequisites
+
+* Some understanding of cloud and database terms is helpful
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
 ## Introduction
 
 In this lab, you will access your VNC.

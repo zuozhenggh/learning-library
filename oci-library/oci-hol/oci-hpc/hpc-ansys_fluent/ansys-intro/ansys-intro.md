@@ -1,5 +1,16 @@
 # ANSYS Fluent Introduction
 
+## Objectives
+
+In this lab, we provide an overview about the ANSYS Fluent Software, and briefly talk about it's various use cases and applications that span across multiple industries. 
+
+## Prerequisites
+
+* Some understanding of cloud and database terms is helpful
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
+
 ## Introduction
 
 Fluent software contains the broad, physical modeling capabilities needed to model flow, turbulence, heat transfer and reactions for industrial applications. These range from air flow over an aircraft wing to combustion in a furnace, from bubble columns to oil platforms, from blood flow to semiconductor manufacturing and from clean room design to wastewater treatment plants. Fluent spans an expansive range, including special models, with capabilities to model in-cylinder combustion, aero-acoustics, turbomachinery and multiphase systems. Ansys Fluent Website
