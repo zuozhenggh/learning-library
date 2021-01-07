@@ -39,14 +39,12 @@ In this lab, you will:
     Version 21.1.0.0.0
 
     SQL>
-
     ```
 
 2. Create the mandatory root profile. The mandatory root profile acts as an always-on user profile. Mandatory profile limits are enforced in addition to the existing limits from the profile which the user is assigned to. This creates a union effect in the sense that the password complexity verification script of the mandatory profile will be executed before the password complexity script from the profile of the user account if any.
 
 
     ```
-
     SQL> <copy>COL resource_name FORMAT A30</copy>
 
     SQL> <copy>COL limit FORMAT A30</copy>
@@ -103,32 +101,31 @@ In this lab, you will:
     18 rows selected.
 
     SQL>
-
     ```
 
 ## **STEP 2:** Set the `MANDATORY_USER_PROFILE` initialization parameter  
 
-  ```
+1. Set the initialization parameter
+    ```
+    SQL> <copy>ALTER SYSTEM SET mandatory_user_profile=C##PROF_MIN_PASS_LEN;</copy>
 
-  SQL> <copy>ALTER SYSTEM SET mandatory_user_profile=C##PROF_MIN_PASS_LEN;</copy>
+    System altered.
 
-  System altered.
+    SQL> <copy>SHOW PARAMETER mandatory_user_profile</copy>
 
-  SQL> <copy>SHOW PARAMETER mandatory_user_profile</copy>
+    NAME                                 TYPE        VALUE
+    ------------------------------------ ----------- ------------------------------
+    mandatory_user_profile               string      C##PROF_MIN_PASS_LEN
+    SQL>
 
-  NAME                                 TYPE        VALUE
-  ------------------------------------ ----------- ------------------------------
-  mandatory_user_profile               string      C##PROF_MIN_PASS_LEN
-  SQL>
-
-  ```
-*The password verify function of the mandatory profile is envisioned to be always enforced from the `CDB$ROOT` which means that the password resource limit is always fetched and executed from the `CDB$ROOT` and enforced on the PDBs in the entire CDB depending on the `MANDATORY_USER_PROFILE` initialization parameter.*
+    ```
+    *The password verify function of the mandatory profile is envisioned to be always enforced from the `CDB$ROOT` which means that the password resource limit is always fetched and executed from the `CDB$ROOT` and enforced on the PDBs in the entire CDB depending on the `MANDATORY_USER_PROFILE` initialization parameter.*
 
 ## **STEP 3:** Replace the password verification functio`n` to enforce the minimum password length.
 
-```
-
-SQL> <copy>CREATE OR REPLACE FUNCTION ora12c_stig_verify_function
+1. Replace the verification function
+    ```
+    SQL> <copy>CREATE OR REPLACE FUNCTION ora12c_stig_verify_function
               ( username VARCHAR2, password VARCHAR2, old_password VARCHAR2)
               RETURN BOOLEAN
               IS
@@ -142,19 +139,17 @@ SQL> <copy>CREATE OR REPLACE FUNCTION ora12c_stig_verify_function
                END;
                /</copy>
 
-Function created.
+    Function created.
 
-SQL>
+    SQL>
 
-```
+    ```
 
 ## **STEP 4:** Test
 
 1. Create a new user `JOHN` in `PDB21`.
 
-
     ```
-
     SQL> <copy>CONNECT system@PDB21</copy>
 
     Enter password: <i>Welcome123##</i>
@@ -171,13 +166,17 @@ SQL>
 
     ERROR at line 1:
 
-    ORA-28219: password verification failed for <copy>mandatory profile</copy>
+    ORA-28219: password verification failed for mandatory profile
 
-    ORA-20000: <copy>password length less than 10 characters</copy>
+    ORA-20000: password length less than 10 characters
+    ```
+    ```
 
     SQL> <copy>CREATE USER john IDENTIFIED BY password123;</copy>
 
     User created.
+    ```
+    ```
 
     SQL> <copy>DROP USER john CASCADE;</copy>
 
@@ -191,10 +190,8 @@ SQL>
 
 1. Drop the mandatory profile in the root.
 
-
     ```
-
-    SQL> <copy>CONNECT / AS SYSDBA</copy>
+    SQL> <copy>CONNECT sys@cdb21 AS SYSDBA</copy>
 
     Connected.
     ```
@@ -209,6 +206,8 @@ SQL>
     ERROR at line 1:
 
     ORA-02381: cannot drop C##PROF_MIN_PASS_LEN profile
+    ```
+    ```
 
     SQL> <copy>!oerr ora 2381</copy>
 
@@ -230,7 +229,7 @@ SQL>
 
     //  *Action: If you are trying to drop the PUBLIC_DEFAULT profile, try dropping
 
-    //           it during migration mode. <copy>If you are trying to drop a mandatory
+    //           it during migration mode. If you are trying to drop a mandatory
 
     //           profile, check the MANDATORY_USER_PROFILE system parameter setting
 
@@ -238,20 +237,19 @@ SQL>
 
     //           and retry the operation after resetting the MANDATORY_USER_PROFILE
 
-    //           system parameter by executing ALTER SYSTEM RESET DDL statement.</copy>
+    //           system parameter by executing ALTER SYSTEM RESET DDL statement.
 
     SQL>
-
     ```
 
 2. Reset the `MANDATORY_USER_PROFILE` initialization parameter first.
 
-
     ```
-
     SQL> <copy>ALTER SYSTEM RESET mandatory_user_profile;</copy>
 
     System altered.
+    ```
+    ```
 
     SQL> <copy>SHOW PARAMETER mandatory_user_profile</copy>
 
@@ -260,6 +258,8 @@ SQL>
     ------------------------------------ ----------- ------------------------------
 
     mandatory_user_profile               string      C##PROF_MIN_PASS_LEN
+    ```
+    ```
 
     SQL> <copy>DROP PROFILE c##prof_min_pass_len;</copy>
 
@@ -271,45 +271,22 @@ SQL>
 
     ORA-02381: cannot drop C##PROF_MIN_PASS_LEN profile
 
-    SQL>
-
+    SQL><copy>exit;</copy>
     ```
 
 3. Restart the instance.
 
-
+    ```
+    <copy>/home/oracle/labs/M104784GC10/wallet.sh</copy>
     ```
 
-    SQL> <copy>SHUTDOWN IMMEDIATE</copy>
+4. Connect to the instance and remove the profile
+    ```
+    SQL> <copy>sqlplus sys@cdb21 AS SYSDBA</copy>
 
-    Database closed.
-
-    Database dismounted.
-
-    ORACLE instance shut down.
-
-    SQL> <copy>STARTUP</copy>
-
-    ORACLE instance started.
-
-    Total System Global Area 1426060208 bytes
-
-    Fixed Size                  9687984 bytes
-
-    Variable Size             419430400 bytes
-
-    Database Buffers          989855744 bytes
-
-    Redo Buffers                7086080 bytes
-
-    Database mounted.
-
-    Database opened.
-
-    SQL> <copy>ALTER PLUGGABLE DATABASE pdb21 OPEN;</copy>
-
-    Pluggable database altered.
-
+    Connected.
+    ```
+    ```
     SQL> <copy>SHOW PARAMETER mandatory_user_profile</copy>
 
     NAME                                 TYPE        VALUE
@@ -317,6 +294,8 @@ SQL>
     ------------------------------------ ----------- ------------------------------
 
     mandatory_user_profile               string
+    ```
+    ```
 
     SQL> <copy>DROP PROFILE c##prof_min_pass_len;</copy>
 
