@@ -6,7 +6,7 @@ This lab will show how the application can be scaled at the application and data
 ![](images/architecture.png " ")
 
 ### Objectives
--   Install the k6 load testing tool
+-   Install a load testing tool
 -   Start the external load balancer for the order-helidon microservice
 -   Test the performance of the existing deployment and identify the point at which performance begins to degrade
 -   Scale the application tier to improve performance and identify the point at which further application tier scaling does not help
@@ -16,9 +16,9 @@ This lab will show how the application can be scaled at the application and data
 
 This lab assumes that you have already completed labs 1 through 4.
 
-## **STEP 1**:  Install the k6 load testing tool and start an external load balancer for the Order service
+## **STEP 1**:  Install a load testing tool and start an external load balancer for the Order service
 
-1. Install the k6 tool (takes less than a second).
+1. Install a load testing tool, for example here is how to install the k6 tool (takes less than a second).
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
