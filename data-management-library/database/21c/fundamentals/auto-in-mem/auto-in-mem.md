@@ -138,40 +138,18 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     SQL> <copy>ALTER SYSTEM SET INMEMORY_AUTOMATIC_LEVEL=HIGH SCOPE=SPFILE;</copy>
     System altered.
 
-    SQL> <copy>SHUTDOWN IMMEDIATE</copy>
-    Database closed.
-    Database dismounted.
-    ORACLE instance shut down.
-
-    SQL> <copy>STARTUP</copy>
-    ORACLE instance started.
-
-    Total System Global Area  851442944 bytes
-    Fixed Size                  9571584 bytes
-    Variable Size             440401920 bytes
-    Database Buffers          276824064 bytes
-    Redo Buffers                7204864 bytes
-    In-Memory Area            117440512 bytes
-    Database mounted.
-    Database opened.
+    SQL> <copy>exit;</copy>
     ```
     ```
-    <copy>ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY WElcome123## container=all;</copy>
-    ```
-    ```
-
-    SQL> <copy>ALTER PLUGGABLE DATABASE ALL OPEN;</copy>
-    Pluggable database altered.
-
-    SQL>
+    <copy>cd /home/oracle/labs/M104784GC10</copy>
+    <copy>/home/oracle/labs/M104784GC10/wallet.sh</copy>
     ```
 
 2. Query the data dictionary to determine whether `HR` tables are specified as `INMEMORY`.
 
 
     ```
-
-    SQl> <copy>CONNECT sys@PDB21 AS SYSDBA</copy>
+    SQl> <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
 
     Enter password: <b><i>WElcome123##</i></b>
 
@@ -242,16 +220,11 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
 
     System altered.
 
-    SQL> <copy>SHUTDOWN IMMEDIATE</copy>
-
-    Pluggable Database closed.
-
-    SQL> <copy>STARTUP</copy>
-
-    Pluggable Database opened.
-
-    SQL>
-
+    SQL> <copy>exit;</copy>
+    ```
+    ```
+    <copy>cd /home/oracle/labs/M104784GC10</copy>
+    <copy>/home/oracle/labs/M104784GC10/wallet.sh</copy>
     ```
 
 ## **STEP 4:** Test
@@ -259,6 +232,13 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
 1. Wait one minute to observe the `HR` tables to be automatically assigned the `INMEMORY` attribute.
 
 
+    ```
+    SQl> <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
+
+    Enter password: <b><i>WElcome123##</i></b>
+
+    Connected.
+    ```
     ```
 
     SQL> <copy>SELECT table_name, inmemory, inmemory_compression
@@ -472,8 +452,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

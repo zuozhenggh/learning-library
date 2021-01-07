@@ -28,7 +28,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/vzecPQygDUUDW_aq2HP-3cOYSKW6FrszSA11AM1qtLYYr0hCSFZ9ndJB_xCn5xHw/n/c4u03/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     </copy>
@@ -253,6 +253,7 @@ You may now proceed to the next lab.
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
+- **Lab Expiry Date** - January 31, 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
