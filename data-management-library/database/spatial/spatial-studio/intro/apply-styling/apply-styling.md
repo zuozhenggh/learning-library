@@ -25,42 +25,47 @@ In this lab, you will:
 As described in the workshop introduction, ......
 
 
-## **STEP 1:** Create New project
+## **STEP 1:** Explore Point Style Options
 
-We begin by creating a new empty Project and adding Datasets. We then create a basic map with some data-driven styling.
+We begin by ....
 
-1. From the left-panel menu, navigate to the Projects page and click Create Project.
-![Image alt text](images/create-proj-1.png)
+1. From the left-panel menu, navigate to the Projects page. Click on hamburder icon for Livelabs Spatial Intro and select Open. 
+![Image alt text](images/apply-styling-1.png)
 
-2. Click the "+" icon to Add a Dataset.
-![Image alt text](images/create-proj-2.png)
+2. You can collapse the Data Elements panel to have more screen space for our map. Hover over the right edge of the Data Elements panel and click the grey left arrow.
+ ![Image alt text](images/apply-styling-2.png)
+  This collapses the Data Elements panel. The panel can be re-expanded by clicking on the grey right arrow. 
+ ![Image alt text](images/apply-styling-3.png)
 
-3. Select Accidents and click OK.
-![Image alt text](images/create-proj-3.png)
+3. To focus on the ACCIDENTS layer, turn off the 2 police layers in the map by clicking on the visibility controls (i.e., blue eyeball icons.) 
+  ![Image alt text](images/apply-styling-4.png)
 
-4. Drag and drop Accidents onto the map.
-![Image alt text](images/create-proj-4.png)
+4. As you did in the previous lab, click the hamburger icon for ACCIDENTS and select Settings. Point layers, such as ACCIDENTS, can be rendered using various render styles. Each render style has its own settings.  Change the render style from Circle (the default) to Cluster.
+  ![Image alt text](images/apply-styling-5.png)
 
-5. Observe the map pan and zoom to the area of the data. In the Layers List panel, click the hamburger icon for Accidents and select Settings.
-![Image alt text](images/create-proj-5.png)
+5. The map now displays ACCIDENTS using circles to represent numerous points clustered in areas. The cluster circle size is based on the number of points clustered in each area. You can experiment with the color and the style of the text labels representing the number of points in each cluster.
+  ![Image alt text](images/apply-styling-6.png)
+   Observe that as you zoom in (rotate mouse wheel) the clusters explode into smaller clusters, and vice verse as you zoom out.
+  ![Image alt text](images/apply-styling-7.png)
 
-6. From here we control the layer display and interactivity settings. We will experiment with these cpabilities in a later section. For the moment, just update the layer's Radius (size), Color, and Opacity and then click the Back link.
- ![Image alt text](images/create-proj-6.png)
+6. Change the Render Style from Cluster to Heat Map. The map now renders ACCIDENTS with continuous colors based on the concentration of points. Hot colors represent  concentration of points, and cool colors represent sparcity of points. A key parameter of the Heatmap style is Radius, which controls the distance around each point for defining a concentration. The default Radius is so large that the initial heatmap just shows point contrations along the roads, which is not very helpful.
+  ![Image alt text](images/apply-styling-8.png)
+  To focus our Heatmap on more localized contrations, reduce the Radius from the default to 10 and observe a more localized view of point concenrtations.
+  ![Image alt text](images/apply-styling-9.png)
 
-7. Next we add our 2 police Datasets to the Project.  Click the + icon at the top of the Data Elements panel, select Add Dataset, and use shift-enter to select both police Datasets and click OK.
- ![Image alt text](images/create-proj-7.png)
+7. Change the Render Style from Heat Map to Circle. When using the Circle render style, both the radius and color can be controlled by data values. Pull down the Color menu and select "Based on data".
+  ![Image alt text](images/apply-styling-10.png)
 
-8. As you did previously with ACCIDENTS, drag and drop the POLICE\_POINTS Dataset from the Data Elements panel onto the, click the POLICE\_POINT layer's hamburger menu and select Settings. Update Radius, Color, Opacity. Then click the Back button at the top of the Layers panel.
- ![Image alt text](images/create-proj-8.png)
+ 8. You now select the column to use for controlling styling. Select the coloumn NR_VEHICLES (i.e., number of vehicles involved in the accident) and observe the ACCIDENTS become color-coded. You can accept the other default values and then click the Back link at the top of the Style details panel.
+  ![Image alt text](images/apply-styling-11.png)
 
-9. As Layers are added to the map, they are rendered on top of the existing Layers. Therefore POLICE\_POINTS are currently on top of ACCIDENTS. To reorder  the layers such that POLICE\_POINTS are underneath ACCIDENTS, move the mouse over POLICE\_POINTS in the Larer's list, click and hold (you'll see the cursor change to cross-hair), and drag under ACCIDENTS. 
- ![Image alt text](images/create-proj-9.png)
- 
-10. Drag and drop the POLICE\_BOUNDS Dataset onto the map. As you did with POLICE\_POINTS, re-order the layers so that POLICE\_BOUNDS are at the bottom (i.e., rendered beneath the other layers). We now have our 3 datasets added as map layers in our project.  Individual layers may be turned off/on by clicking the blue eyeball icon next to the layer name. Click the Save button at the top right to save the Project and supply a name, for example "LiveLabs Spatial Intro".
- ![Image alt text](images/create-proj-10.png)
+ 9. Now that we have assigned colors based on data values, finalize the style by setting the radius to 3 and opacity to 90%. Also, update the stroke (i.e., outline) width to 0.5, color to grey, and opacity to 90%. You can of course pick your own values for these if you prefer. Then click the Back link to return to the Layers List.
+  ![Image alt text](images/apply-styling-12.png)
 
-11. Navigate to the projects page from the left navigation bar and observe our Project now listed.
- ![Image alt text](images/create-proj-11.png)
+10. You will next use the remaining point style option, Symbol, for the POLICE\_POINTS layer. Turn on the POLICE\_POINTS layer and turn off the other 2 layers in the map by clicking on the visibility controls (i.e., blue eyeball icons.)  Then click the hamburger icon for POLICE\_POINTS and select Settings. 
+
+    Change Render Style to Symbol and then click inside the Image text box to open the Symbol selection dialog. Select "marker-11" and update the opacity to 90% and Size factor to 0.6. You can of course pick your own values for these if you prefer.  Then click the Back link tio return to the Layers List.
+ ![Image alt text](images/apply-styling-13.png)
 
 Please proceed to the next Lab.
 

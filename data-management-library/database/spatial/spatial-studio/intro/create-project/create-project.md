@@ -25,7 +25,7 @@ In this lab, you will:
 As described in the workshop introduction, ......
 
 
-## **STEP 1:** Create Project and Add Dataset
+## **STEP 1:** Create Project
 
 We begin by creating a new empty Project and ...
 
@@ -38,18 +38,16 @@ We begin by creating a new empty Project and ...
 3. Select Accidents and click OK.
 ![Image alt text](images/create-proj-3.png)
 
-## **STEP 2:** Create Map layer
-
-1. Drag and drop the ACCIDENTS Dataset onto the map. This creates a map Layer.
+4. Drag and drop the ACCIDENTS Dataset onto the map. This creates a map Layer.
 ![Image alt text](images/create-proj-4.png)
 
-2. Observe the map pan and zoom to the area of the data. In the Layers List panel, click the hamburger icon for Accidents and select Settings.
+5. Observe the map pan and zoom to the area of the data. In the Layers List panel, click the hamburger icon for Accidents and select Settings.
 ![Image alt text](images/create-proj-5.png)
 
-3. From here we control the layer display and interactivity settings. We will experiment with these cpabilities in a later section. For the moment, just update the layer's Radius (size), Color, and Opacity and then click the Back link.
+6. From here we control the layer display and interactivity settings. We will experiment with these cpabilities in a later section. For the moment, just update the layer's Radius (size), Color, and Opacity and then click the Back link.
  ![Image alt text](images/create-proj-6.png)
 
-## **STEP 3:** Add Addional Datasets
+## **STEP 2:** Add Datasets
 
 1. Next we add our 2 police Datasets to the Project.  Click the + icon at the top of the Data Elements panel, select Add Dataset, and use shift-enter to select both police Datasets and click OK.
  ![Image alt text](images/create-proj-7.png)
@@ -63,7 +61,7 @@ We begin by creating a new empty Project and ...
 4. Drag and drop the POLICE\_BOUNDS Dataset onto the map. As you did with POLICE\_POINTS, re-order the layers so that POLICE\_BOUNDS are at the bottom (i.e., rendered beneath the other layers). We now have our 3 datasets added as map layers in our project.
  ![Image alt text](images/create-proj-10.png)  
 
-## **STEP 4:** Save Project 
+## **STEP 3:** Save Project 
     
 1. Individual layers may be turned off/on by clicking the blue eyeball icon next to the layer name. Click the Save button at the top right to save the Project and supply a name, for example "LiveLabs Spatial Intro".
  ![Image alt text](images/create-proj-11.png)
