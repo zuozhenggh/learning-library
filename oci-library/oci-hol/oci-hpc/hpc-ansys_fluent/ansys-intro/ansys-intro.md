@@ -8,6 +8,17 @@ This Runbook will take you through the process of deploying an ANSYS Fluent clus
 
 ![](images/fluent_image.jpeg " ")
 
+## Objectives
+
+In this lab, we provide an overview about the ANSYS Fluent Software, and briefly talk about it's various use cases and applications that span across multiple industries. 
+
+## Prerequisites
+
+* Some understanding of cloud and database terms is helpful
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
+
 ## Acknowledgements
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca, Samrat Khosla
