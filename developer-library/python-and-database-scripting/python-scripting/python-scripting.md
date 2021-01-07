@@ -1,4 +1,4 @@
-# Python Programming
+# Python and Oracle Database: Scripting for the Future
 
 ## Introduction
 
@@ -8,11 +8,11 @@ Follow the steps in this document. The **tutorial** directory has scripts to run
 
 Estimated Lab Time: 60 minutes
 
-### Overview
+### About cx\_Oracle Python extension
 
-cx_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions.
+cx\_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions.
 
-cx_Oracle 8 has been tested with Python versions 3.6 through 3.9. Older versions of cx_Oracle may be used with previous Python releases. You can use cx_Oracle with Oracle 11.2, 12, 18, 19 and 21 client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2.
+cx\_Oracle 8 has been tested with Python versions 3.6 through 3.9. Older versions of cx\_Oracle may be used with previous Python releases. You can use cx\_Oracle with Oracle 11.2, 12, 18, 19 and 21 client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2.
 
 cx\_Oracle 8 is available.
 
@@ -26,11 +26,11 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup using Marketplace Image
+* Login to Oracle Cloud
+* Generate SSH Key
+* Environment Setup using Marketplace Image
 
-## **Step 1:** Install Python
+## **STEP 1:** Install Python
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
@@ -60,7 +60,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![](./images/p_installPython.jpg " ")
 
-## **Step 2:** Add a Sample Schema in your Database
+## **STEP 2:** Add a Sample Schema in your Database
 
 1.  Switch to the `oracle` user using the sudo command.
 
@@ -123,7 +123,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
     </copy>
     ````
 
-## **Step 3:** Install Python Oracle Module and Connect to a Database
+## **STEP 3:** Install Python Oracle Module and Connect to a Database
 
 cx\_Oracle is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
@@ -169,7 +169,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 
     ![](./images/p_python-3.png " ")
 
-## **Step 4:** The Python Interpreter
+## **STEP 4:** The Python Interpreter
 
 There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
@@ -225,7 +225,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-2.png " " )
 
-## **Step 5:** Connect to the Oracle Database
+## **STEP 5:** Connect to the Oracle Database
 
 1.  Review the connection credentials.
 
@@ -470,7 +470,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Any cx\_Oracle installation can connect to older and newer Oracle Database versions. By checking the Oracle Database and client versions numbers, the application can make use of the best Oracle features available.
 
-## **Step 6:** Connection Pooling
+## **STEP 6:** Connection Pooling
 
 1.  Connection pooling
 
@@ -580,7 +580,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Database Resident Connection Pooling allows multiple Python processes on multiple machines to share a small pool of database server processes.
 
-    Below left is a diagram without DRCP. Every application connection has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a precreated pool of servers and return them when they are not in use.
+    Below left is a diagram without DRCP. Every application connection has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a pre-created pool of servers and return them when they are not in use.
 
     Without DRCP: ![](./images/python_nopool.png "Without DRCP " )
 
@@ -712,7 +712,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     and add calls to **time.sleep(1)** in the code, for example in the query loop. Then look at the way the threads execute. Use **drcp\_query.sql** to monitor the pool's behavior.
 
-## **Step 7:** Fetching Data
+## **STEP 7:** Fetching Data
 
 1. A simple query
 
@@ -970,7 +970,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     The default value of arraysize for cx\_Oracle is 100. If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
 
-## **Step 8:** Binding Data
+## **STEP 8:** Binding Data
 
 Bind variables enable you to re-execute statements with new data values, without the overhead of reparsing the statement. Bind variables improve code reusability, and can reduce the risk of SQL injection attacks.
 
@@ -1335,7 +1335,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     The gettype() and newobject() methods can also be used to bind PL/SQL Records and Collections.
 
-## **Step 9:** PL/SQL
+## **STEP 9:** PL/SQL
 
 PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
 
@@ -1448,7 +1448,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
     246
     ````
 
-## **Step 10:** Type Handlers
+## **STEP 10:** Type Handlers
 
 1.  Basic output type handler
 
@@ -1716,7 +1716,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
 
     ![](./images/step10.3-typeinput.png " ")
 
-## **Step 11:** LOBs
+## **STEP 11:** LOBs
 
 Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes.
 
@@ -1812,7 +1812,7 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     </copy>
     ````
 
-## **Step 12:** Rowfactory functions
+## **STEP 12:** Rowfactory functions
 
 Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects.
 
@@ -1885,7 +1885,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     ![](./images/step12.1-rowfactory.png " ")
 
-## **Step 13:** Subclassing Connections and Cursors
+## **STEP 13:** Subclassing Connections and Cursors
 
 1. Subclassing connections
 
@@ -1977,7 +1977,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     </copy>
     ````
 
-## **Step 14:** Advanced Queueing
+## **STEP 14:** Advanced Queueing
 
 1. Message passing with Oracle Advanced Queuing
 
@@ -2095,7 +2095,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     If you are stuck, look in the **solutions** directory at the aq-dequeue.py, aq-enqueue.py and aq-queuestart.py files.
 
-## **Step 15:** Simple Oracle Document Access (SODA)
+## **STEP 15:** Simple Oracle Document Access (SODA)
 
 Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database using a set of NoSQL-style cx\_Oracle methods. By default, documents are JSON strings. SODA APIs exist in many languages.
 
