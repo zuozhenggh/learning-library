@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Oracle Machine Learning for Python on Autonomous Database",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -9,32 +9,32 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "./introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Getting Started with OML4Py",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "./get-started/get-started.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Select and manipulate data using the Transparency Layer",
+            "filename": "./data-slct-mnpn/data-slct-mnpn.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Use Datastores to store Python objects",
+            "filename": "./dstore-script-repo/dstore-script-repo.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Run user-defined functions using Embedded Python Execution",
+            "filename": "./embd-python/embd-python.md"
         },
         {
-            "title": "Lab 5: Analyze Data",
-            "filename": "../../analyze/analyze.md"
+            "title": "Lab 5: Use AutoML",
+            "filename": "./automl/automl.md"
         },
         {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
+            "title": "Lab 6: Rank attribute importance using Model Explainability feature",
+            "filename": "./model-exp/model-exp.md"
         }
     ]
 }
