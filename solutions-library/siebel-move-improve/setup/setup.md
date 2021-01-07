@@ -7,8 +7,6 @@ In this lab, the recently provisioned OCI Trial tenancy will be set up for the S
 
 Estimated Lab Time: 20 minutes
 
-  [](youtube:zNKxJjkq0Pw)
-
 ### Objectives
 
 To set up the OCI tenancy, in this lab, you will:
@@ -150,7 +148,7 @@ In this lab, OCI has been set up for the networking required to be able to acces
   - Chris Wegenek, Cloud Engineering
   - Naresh Sanodariya, Cloud Engineering
 * **Contributors** -  Arunkumar Ravichandran, Cloud Engineering
-* **Last Updated By/Date** - JB Anderson, Cloud Engineering, Dec 2020
+* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, Jan 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

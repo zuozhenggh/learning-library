@@ -6,9 +6,6 @@ In this exercise, you will create your Siebel application by setting up the Sieb
 
 Estimated Lab Time: 1 hour 15 minutes
 
-
-[](youtube:zNKxJjkq0Pw)
-
 ### Objectives
 
 To deploy the Siebel Instance, in this lab, you will:
@@ -84,7 +81,7 @@ Generating Jenkins URL
 
 2.	Add the port 8080 preceded with a colon and paste the URL in a browser window to open the Jenkins application like this "<public IP address>:port number"
 
-    For example, you would type: 129.146.162.164:8080 into you browser search bar
+    For example, you would type: 111.111.111.11:8080 into you browser search bar
 
     **Note:** If your instance was created recently you may not be able to access the Jenkins URL right away, it may take an additional 5 min before you can complete this step
 
@@ -133,7 +130,7 @@ https://<public IP address>:4430/siebel/app/<industry>/enu
 
 For example, if you selected Sales, your application URL for Sales industry  could be the following.
 
-    https://129.146.101.23:4430/siebel/app/sales/enu
+    https://111.111.111.11:4430/siebel/app/sales/enu
 
 **NOTE:** Make sure your url has ***"https"*** and not ***"http"*** at the beginning of it otherwise you will not obtain access
 
@@ -178,7 +175,7 @@ In this lab you launched an instance of Siebel from the OCI marketplace, deploye
   - Chris Wegenek, Cloud Engineering
   - Naresh Sanodariya, Cloud Engineering
 * **Contributors** -  Arunkumar Ravichandran, Cloud Engineering
-* **Last Updated By/Date** - JB Anderson, Cloud Engineering, Dec 2020
+* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, Jan 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
