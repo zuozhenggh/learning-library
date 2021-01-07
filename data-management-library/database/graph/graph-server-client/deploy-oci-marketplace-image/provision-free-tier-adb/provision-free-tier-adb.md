@@ -67,7 +67,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
     - __Transaction Processing__ - For this lab, choose __Transaction Processing__ as the workload type.
     - __Data Warehouse__ - Alternately, you could have chosen Data Warehouse as the workload type.
 
-    ![](images/basic_info_workload_type.png " ")
+    ![](images/basic_info_workload_type.jpg)
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
@@ -85,7 +85,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
     - __Auto scaling__ - For this lab, keep auto scaling should be **disabled**.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
 
-    ![](images/atp-choose-cpu-storage.png " ")
+    ![](images/atp-choose-cpu-storage.jpg)
 
 7. Create administrator credentials:
 
