@@ -8,9 +8,7 @@ Typically, a load balancer is used to spread workloads across multiple mirrored 
 
 When you complete this lab, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number used by the service. (Each service listens on a specific port.) For example, if the IP address of the load balancer is `198.51.100`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://198.51.100:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://198.51.100:8889`.
 
-One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. <!--SSL is a protocol used to ensure privacy, authentication, and data security in internet communications.--> SSL encrypts and decrypts transmitted data, ensures that the sender and receiver of data are who they claim to be, and signs the data to verify its integrity.  In this workshop, you'll implement end-to-end SSL, so that the load balancer will accept SSL encrypted traffic from clients and will encrypt traffic to the cluster.
-
-SSL uses digital *certificates* and *keys* to implement its security features. For highest security on a production system, you should obtain certificates from a trusted SSL certificate authority like IdenTrust or DigiCert. However, Big Data Service includes self-signed certificate and key files which you can use for learning and testing. ("Self-signed" means that the certificates are not guaranteed by a trusted certificate authority.) The instructions in this workshop tell you how to use the self-signed certificate and key included with the cluster.
+One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. SSL encrypts and decrypts transmitted data, ensures that the sender and receiver of data are who they claim to be, and signs the data to verify its integrity.  In this workshop, you'll implement end-to-end SSL, so that the load balancer will accept SSL encrypted traffic from clients and will encrypt traffic to the cluster.
 
 Estimated workshop Time: 90 minutes, if you've already created the environment and cluster, as explained in "What Do You Need?", below.
 
@@ -22,14 +20,14 @@ In this workshop, you will:
 
 * Configure the load balancer to function as a front end for connecting to Cloudera Manager, Hue, and Big Data Studio on the cluster.
 
-* Implement end-to-end SSL encryption for the load balancer by using the self-signed SSL certificates included with the cluster.
+* Implement end-to-end SSL encryption for the load balancer by using the self-signed SSL certificates included with the cluster. SSL is a protocol used to ensure privacy, authentication, and data security in internet communications.
 
 More specifically, you will:
 
 | STEP  | Task |
 | --- | --- |
 | 1 | Gather information you'll need for subsequent steps in this lab: <br/><br/> - the SSH file associated with your cluster<br/> - the private IP address of the first utility node in the cluster<br/> - the public IP address of the first utility node in the cluster |
-| 2 | Download the unsigned SSL certificate and key files from the first utility node of your cluster.  |
+| 2 | Download the SSL certificate and key files from the first utility node of your cluster.  <br/><br/>SSL uses digital certificates and keys to encrypt and decrypt transmitted data, to ensure that the sender and receiver of data are who they claim to be, and to sign the data to verify its integrity. For highest security on a production system, you should obtain certificates from a trusted SSL certificate authority like IdenTrust or DigiCert. However, Big Data Service includes self-signed certificate and key files which you can use for learning and testing. ("Self-signed" means that the certificates are not guaranteed by a trusted certificate authority.) |
 | 3 | a. Create the load balancer. <br/><br/>b. Create a backend set for Cloudera Manager. A backend set routes incoming traffic to the specified target(s), checks health of the server, and optionally uses SSL to encrypt traffic. You'll complete the configuration of this backend set in STEP 5. <br/><br/>c. Create a listener for Cloudera Manager. A listener is an entity that checks for incoming traffic on the load balancer's IP address. You'll complete the configuration of this backend set in STEP 11. |
 | 4 | Create a certificate bundle from the SSL certificate and key you downloaded from your cluster in STEP 2. You'll apply this bundle to the backend sets and listeners you create in this lab, to implement SSL for the load balancer. |
 | 5 | Complete the configuration of the backend set you created in step 3. You'll apply the certificate bundle you created in STEP 4 here. |
