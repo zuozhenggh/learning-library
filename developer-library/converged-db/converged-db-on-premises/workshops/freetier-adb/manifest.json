@@ -31,7 +31,7 @@
       "filename": "../../json/json.md"
     },
     {
-      "title": "Lab 5: SODA",
+      "title": "Lab 5: SODA - coming soon",
       "description": "SODA Lab",
       "filename": "../../json/json.md"
     },
@@ -56,12 +56,12 @@
       "filename": "../../crossdatatype/crossdatatype.md"
     },
     {
-      "title": "Lab 7: XML",
+      "title": "Lab 10: XML",
       "description": "XML Lab",
       "filename": "../../xml/xml.md"
     },
     {
-      "title": "Lab 10: ORDS as Microservices",
+      "title": "Lab 11: ORDS as Microservices",
       "description": "Labs that leverage data types across schemas",
       "filename": "../../ords/ords.md"
     }
