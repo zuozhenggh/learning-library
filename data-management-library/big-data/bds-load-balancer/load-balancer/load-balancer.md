@@ -2,39 +2,55 @@
 
 ## Introduction
 
-In this lab, you'll create a load balancer to be used as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your non-highly-available (non-HA) Big Data Service
+In this lab, you'll create a load balancer that can be used as a front end for securely accessing Cloudera Manager, Hue, and Oracle Data Studio on your non-highly-available (non-HA) Big Data Service cluster.
 
-Typically, a load balancer is used to spread workloads across multiple mirrored servers (nodes), to optimize resource usage and to ensure high-availability (HA). However, in this lab you'll use a load balancer to direct traffic to multiple ports on a single server (that is, a single Big Data Service node). Cloudera Manager, Hue, and Data Studio all run on the first utility node of a non-HA cluster, and the load balancer you create in this lab will handle traffic on that node. <!--In an HA cluster, the services are divided between the first and second utility nodes.-->
+Typically, a load balancer is used to spread workloads across multiple mirrored servers (for example, cluster nodes), to optimize resource usage and to ensure high-availability (HA). However, in this lab you'll use a load balancer to direct traffic to multiple ports on a single Big Data Service node. <!--Cloudera Manager, Hue, and Data Studio all run on the first utility node of a non-HA cluster, and the load balancer you create in this lab will handle traffic on that node.--> <!--In an HA cluster, the services are divided between the first and second utility nodes.-->
 
-When you complete this lab, you'll be able to open the consoles for those services by using the IP address (or hostname) of the load balancer, plus the port number used by the service. (Each service listens on a specific port.) For example, if the IP address of the load balancer is `10.2.0.2`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://10.2.0.2:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://10.2.0.2:8889`.
+When you complete this lab, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number used by the service. (Each service listens on a specific port.) For example, if the IP address of the load balancer is `198.51.100`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://198.51.100:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://198.51.100:8889`.
 
 One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. <!--SSL is a protocol used to ensure privacy, authentication, and data security in internet communications.--> SSL encrypts and decrypts transmitted data, ensures that the sender and receiver of data are who they claim to be, and signs the data to verify its integrity.  In this workshop, you'll implement end-to-end SSL, so that the load balancer will accept SSL encrypted traffic from clients and will encrypt traffic to the cluster.
 
-SSL uses *certificates* and *keys* to implement its security features. For highest security on a production system, you should obtain them from a trusted SSL certificate authority like IdenTrust or DigiCert. However, Big Data Service includes self-signed certificates and keys which you can use for learning and testing. ("Self-signed" means that the certificates are not guaranteed by a trusted certificate authority.) The instructions in this workshop tell you how to use the self-signed certificate and key included with the cluster.
+SSL uses digital *certificates* and *keys* to implement its security features. For highest security on a production system, you should obtain certificates from a trusted SSL certificate authority like IdenTrust or DigiCert. However, Big Data Service includes self-signed certificate and key files which you can use for learning and testing. ("Self-signed" means that the certificates are not guaranteed by a trusted certificate authority.) The instructions in this workshop tell you how to use the self-signed certificate and key included with the cluster.
 
-Estimated workshop Time: 90 minutes, if you have already created the environment and cluster, as explained in "What Do You Need?", below.
+Estimated workshop Time: 90 minutes, if you've already created the environment and cluster, as explained in "What Do You Need?", below.
 
 ### Objectives
 
 In this workshop, you will:
 
-<!-- * Create an Oracle Cloud Infrastructure load balancer for an existing Big Data Service HA  cluster.-->
-
 * Create an Oracle Cloud Infrastructure load balancer for an existing non-HA Big Data Service cluster.
 
 * Configure the load balancer to function as a front end for connecting to Cloudera Manager, Hue, and Big Data Studio on the cluster.
 
-* Implement end-to-end SSL encryption for the load balancer. You'll use the self-signed SSL certificates that are included with the cluster.
+* Implement end-to-end SSL encryption for the load balancer by using the self-signed SSL certificates included with the cluster.
 
 More specifically, you will:
 
+| STEP  | Task |
+| --- | --- |
+| 1 | Gather information you'll need for subsequent steps in this lab: <br/><br/> - the SSH file associated with your cluster<br/> - the private IP address of the first utility node in the cluster<br/> - the public IP address of the first utility node in the cluster |
+| 2 | Download the unsigned SSL certificate and key files from the first utility node of your cluster.  |
+| 3 | a. Create the load balancer. <br/><br/>b. Create a backend set for Cloudera Manager. A backend set routes incoming traffic to the specified target(s), checks health of the server, and optionally uses SSL to encrypt traffic. You'll complete the configuration of this backend set in STEP 5. <br/><br/>c. Create a listener for Cloudera Manager. A listener is an entity that checks for incoming traffic on the load balancer's IP address. You'll complete the configuration of this backend set in STEP 11. |
+| 4 | Create a certificate bundle from the SSL certificate and key you downloaded from your cluster in STEP 2. You'll apply this bundle to the backend sets and listeners you create in this lab, to implement SSL for the load balancer. |
+| 5 | Complete the configuration of the backend set you created in step 3. You'll apply the certificate bundle you created in STEP 4 here. |
+| 6 | Create and configure the backend set for Hue. |
+| 7 | Create and configure the backend set for Oracle Data Studio. |
+| 8 | Add a backend server to the backend set you created for Cloudera Manager in STEP 3. A backend set is a compute instance that generates content in reply to incoming TCP or HTTP traffic. For this load balancer, the backend server is the first utility node of your cluster, where Cloudera Manager, Hue, and Data Studio run. |
+| 9 | Add the backend server for Hue.|
+| 10 | Add the backend server for Data Studio. |
+| 11 | Complete the configuration of the listener for Cloudera Manager, which you created in STEP 3.  You'll apply the certificate bundle you created in STEP 4 here. |
+| 12 | Create and configure a listener for Hue. |
+| 13 | Create and configure a listener for Big Data Studio. |
+| 14 | Access Cloudera Manager, Hue, and Data Studio by using the IP address assigned to the load balancer (plus the ports on which those services listen.) |
+
+<!--
 * Create the load balancer. You'll also create the ***backend set*** for Cloudera Manager when you're performing the initial steps to create the load balancer. The backend set routes incoming traffic.
 
 * Configure the backend set for Cloudera Manager and then create and configure backend sets for Hue and Data Studio.
 
 * Add a single ***backend server*** to each backend set. A backend server is the server that processes the request. For this load balancer, it's first utility node of the cluster.
 
-* Create a ***listener*** for each service. A listener checks for incoming traffic on the load balancer's IP address (including protocol, port number, and SSL settings).
+* Create a ***listener*** for each service. A listener checks for incoming traffic on the load balancer's IP address (including protocol, port number, and SSL settings). -->
 
 **Note:** If you want to create a load balancer for an HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (HA Cluster)](https://bgelernt.github.io/learning-library/data-management-library/big-data/bds-load-balancer-ha/workshops/freetier/?qa=true?lab=use-load-balancer-access-services-on-big/?qa=true&lab=use-load-balancer-access-services-on-big) workshop.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
@@ -82,7 +98,7 @@ Gather the following information before you start:
 
 ## **STEP 2:** Copy SSL Certificates from the Cluster
 
-In this step, you'll obtain the self-signed SSL certificates that were automatically created with your cluster. They're located in the `/opt/cloudera/security/x509` directory of each node.
+In this step, you'll obtain a self-signed SSL certificate and key that were automatically created with your cluster. They're located in the `/opt/cloudera/security/x509` directory of the first utility node.
 
 You'll copy the following certificate and key from the first utility node:
 
@@ -107,12 +123,12 @@ To copy the files:
     For example, for these conditions:
     * You're entering commands from your `C:\Users\MYHOME` Directory
     * Your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`
-    * The accessible IP address of the first utility node of your cluster is `10.2.0.101`
+    * The accessible IP address of the first utility node of your cluster is `192.0.2.101`
 
-    Enter:
+    enter:
 
       ```
-    PS C:\Users\MYHOME\&gt; <copy>ssh -i bds/ssh/my-ssh-key opc@10.2.0.101</copy>
+    PS C:\Users\MYHOME\&gt; <copy>ssh -i bds/ssh/my-ssh-key opc@192.0.2.101</copy>
     Last login: Tue Nov 10 17:59:41 2020 from some-host
     [opc@myclustun0 ~]$
 
@@ -166,13 +182,13 @@ To copy the files:
     * You want to copy the file to your `C:\Users\MYHOME\bds\ssl-files\` directory
     * You want to rename the file to `first-util-node-cert.pem`
 
-    Then enter:
+    enter:
 
       ```
-    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem bds/ssl-files/first-util-node-cert.pem</copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@192.0.2.101:/opt/cloudera/security/x509/node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem bds/ssl-files/first-util-node-cert.pem</copy>
       ```
 
-      Notice that the IP address is for the first utility node. In this example, it's  `10.2.0.101`.
+      Notice that the IP address is for the first utility node. In this example, it's  `192.0.2.101`.
 
 8. Copy the SSL key file (named `node.hue.key`) for the first utility node to the ``<target>`` location. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
 
@@ -183,7 +199,7 @@ To copy the files:
       For example:
 
       ```
-    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node.hue.key bds/ssl-files/first-util-node.key</copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@192.0.2.101:/opt/cloudera/security/x509/node.hue.key bds/ssl-files/first-util-node.key</copy>
       ```
 
 9. List your downloaded files to make sure the files were downloaded appropriately, for example:
@@ -249,13 +265,13 @@ To copy the files:
 
         * **Port:** Enter **7183**, which is the port on which Cloudera Manager listens.
 
-        * **Interval in ms (Optional):** You can accept the default.
+        * **Interval in ms (Optional):** You can accept the default or change the value to suit your needs.
 
-        * **Timeout in ms (Optional):** You can accept the default.
+        * **Timeout in ms (Optional):** You can accept the default or change the value to suit your needs.
 
-        * **Number of Retries (Optional):** You can accept the default.
+        * **Number of Retries (Optional):** You can accept the default or change the value to suit your needs.
 
-        * **Status Code (Optional):** You can accept the default.
+        * **Status Code (Optional):** You can accept the default or change the value to suit your needs.
 
         * **URL Path (URI):** Keep the default forward slash (**/**).
 
@@ -415,7 +431,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address**: Enter the private IP address of the first utility node of your cluster; for example, `10.2.0.101`.
+    * **IP Address**: Enter the private IP address of the first utility node of your cluster; for example, `192.0.2.101`.
 
       * **Port:** Enter **`7183`**, which is the port on which Cloudera Manager listens.
 
@@ -436,7 +452,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address:** Enter the private IP address of the first utility node; for example, **`10.2.0.101`**.
+    * **IP Address:** Enter the private IP address of the first utility node; for example, **`192.0.2.101`**.
 
     * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
@@ -454,7 +470,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address:** Enter the private IP address of the first utility node; for example, `10.2.0.101`.
+    * **IP Address:** Enter the private IP address of the first utility node; for example, `192.0.2.101`.
 
     * **Port:** Enter **`30000`**, for the port where Big Data Studio listens.
 

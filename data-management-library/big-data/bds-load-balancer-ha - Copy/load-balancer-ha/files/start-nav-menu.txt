@@ -1,0 +1,9 @@
+This image shows the Oracle Cloud Infrastructure console navigation menu.  
+
+It contains:
+- Core Infrastructure (header)
+- Compute 
+
+to be completed...
+
+
