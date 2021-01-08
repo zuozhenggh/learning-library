@@ -6,13 +6,14 @@ In this lab, you will access your VNC.
 
 Estimated Lab Time: 10 minutes
 
-## Objectives
+### Objectives
 
-In this lab, we will walk you through how to access your Virtual Network Computing instance on OCI. 
+In this lab:
+* We will walk you through how to access your Virtual Network Computing instance on OCI
 
-## Prerequisites
+### Prerequisites
 
-* Some understanding of cloud and database terms is helpful
+* Complete Lab 5 : Configure Visualization
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
