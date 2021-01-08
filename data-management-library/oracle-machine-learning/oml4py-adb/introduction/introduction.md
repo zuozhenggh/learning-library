@@ -1,13 +1,21 @@
 # Introduction
 
 ## About this Workshop
+Python is a major programming language used for data science and machine learning. OML4Py is a new feature on Oracle Autonomous Database that provides Python users access to powerful in-database functionality supporting data scientists for both scalability, performance, and ease of solution deployment.
 
-This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
+In this hands-on lab, experience Oracle Machine Learning for Python on Oracle Autonomous Database. OML4Py supports scalable in-database data exploration and preparation using native Python syntax, invocation of in-database algorithms for model building and scoring, and embedded execution of user-defined Python functions from Python or REST APIs. OML4Py also includes the AutoML interface for automated algorithms and feature selection, and hyperparameter tuning. Join us for this tour of OML4Py.
 
-Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+### Why is this Workshop Needed
+Python is a major programming language used for data science and machine learning. OML4Py is a new feature on Autonomous Database that provides Python users access to powerful in-database functionality supporting data scientists. It is essential Oracle provide adequate training content to introduce users to this technology and support the OML Data Scientist Certification Exam.
+### What Products and Technologies are used?
+ADB, OML Notebooks, OML4Py
+
+Estimated Lab Time: 240 minutes. This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
 ### About Product/Technology
-Enter background information here....
+Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous Database, that includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). By using Oracle Machine Learning Notebooks, you can run Python functions on data for data exploration and preparation while leveraging Oracle Database as a high-performance computing environment. Oracle Machine Learning Notebooks is available through Autonomous Data Warehouse (ADW) , Autonomous Transaction Processing (ATP) and Autonomous JSON Database (AJD) services.
+
+Oracle Machine Learning for Python (OML4Py) makes the open source Python scripting language and environment ready for the enterprise and big data. Designed for problems involving both large and small volumes of data, Oracle Machine Learning for Python integrates Python with Oracle Autonomous Database, including its powerful in-database machine learning algorithms, and enables deployment of Python code.
 
 *You may add an option video, using this format: [](youtube:YouTube video id)*
 
@@ -17,19 +25,20 @@ Enter background information here....
 
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
 
-In this lab, you will:
-* Provision
-* Setup
-* Data Load
-* Query
-* Analyze
-* Visualize
+This lab highlights the following features of OML4Py ::
+* Connect to an Autonomous Database from a Python session
+* Select and manipulate data using the Transparency Layer
+* Use Datastores to store Python objects
+* Run user-defined functions using Embedded Python Execution
+* Rank attribute importance using Model Explainability feature
+
 
 ### Prerequisites
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+To complete this lab, you need the following account credentials and assets:
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Oracle Cloud Infrastructure Console login credentials and tenancy name
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
 *This is the "fold" - below items are collapsed by default*

@@ -2,42 +2,41 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to
+* Create an OML user
+* Access OML Notebooks
+* Create a Zeppelin Notebook
+* Connect to the Python Interpreter
+* Verify Connection to the Autonomous Database  
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 60 minutes
 
 ### About Product/Technology
 Enter background information here..
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+In this lab, you will learn how to:
+* Create an OML user
+* Access OML Notebooks
+* Create a Zeppelin Notebook
+* Connect to the Python Interpreter
+* Verify Connection to the Autonomous Database
 
 ### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
 
-Step 1 opening paragraph.
+## **STEP 1**: Create an OML User
 
-1. Sub step 1
+An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
+**Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface. To create a user account:
 
-  To create a link to local file you want the reader to download, use this format:
-
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+1. Sign in to your OCI account, click the hamgurger on the left to open the left navigation pane, and click **Autonomous Data Warehouse.**
+![Autonomous Data Warehouse option](images/adw.png "Autonomous Data Warehouse")
 
 2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
 
@@ -53,7 +52,7 @@ Step 1 opening paragraph.
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** title
+## **STEP 2:** Access Oracle Machine Learning Notebooks
 
 1. Sub step 1
 
@@ -84,6 +83,16 @@ Step 1 opening paragraph.
   	```
     <copy>ssh -i <ssh-key-file></copy>
     ```
+## **STEP 3:** Create a Zeppelin Notebook
+
+    1. Sub step 1
+
+
+
+    2. You can also include bulleted lists - make sure to indent 4 spaces:
+
+        - List item 1
+        - List item 2
 
 *At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).
