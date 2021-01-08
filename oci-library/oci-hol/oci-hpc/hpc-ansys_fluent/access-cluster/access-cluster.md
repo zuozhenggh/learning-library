@@ -6,13 +6,14 @@ In this lab, you will access your cluster.
 
 Estimated Lab Time: 10 minutes
 
-## Objectives
+### Objectives
 
-In this lab, we will demonstrate how to access your High Performance Computing(HPC) Cluster Network on OCI.  
+In this lab:
+* We will demonstrate how to access your High Performance Computing(HPC) Cluster Network on OCI
 
-## Prerequisites
+### Prerequisites
 
-* Some understanding of cloud and database terms is helpful
+* Complete Lab 3 : Launch HPC cluster
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
