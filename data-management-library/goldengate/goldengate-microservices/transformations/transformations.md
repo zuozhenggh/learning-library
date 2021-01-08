@@ -69,7 +69,7 @@ In this lab we will setup GoldenGate Microservices Transformations
 
     ![](./images/i02.png " ")
 
-## **STEP 2:** Concatenating the source `m` columns into target single `n` columns
+## **STEP 2:** Concatenating the source *m* columns into target single *n* columns
 The picture below represent the summary of the transformations we will be performing in this step
 
   ![](./images/c1.png " ")
