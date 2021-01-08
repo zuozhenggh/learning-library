@@ -25,7 +25,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 80             | NGINX Proxy                           |
+| 443            | NGINX Proxy (https)                   |
 | 16000          | GGMA Admin Server                     |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
