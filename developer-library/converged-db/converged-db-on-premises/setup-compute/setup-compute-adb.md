@@ -12,8 +12,7 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Objectives
 -   Create Compute + ADB + Networking Resource Manager Stack
--   Connect to compute instance, SQL Developer
--   Create auth token
+-   Connect to Compute instance
 
 ### Prerequisites
 This lab assumes you have:

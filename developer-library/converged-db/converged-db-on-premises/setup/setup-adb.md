@@ -6,11 +6,10 @@ In the previous lab you created a compute instance (running the eShop applicatio
 *Estimated time:* 40 Minutes
 
 ### Objectives
-- Create Oracle Wallet 
-- Create Auth Token
+- Create auth token and Oracle Wallet 
 - Login to SQL Developer
 - Load AJD Instance with eShop data
-- Connect application to AJD
+- Connect application to ADB
 
 ### Prerequisites
 - Lab: Generate SSH Keys
@@ -77,18 +76,21 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 ## **STEP 4:**  Load AJD Instance
 1. If you aren't already logged into Oracle Cloud please do so and restart Oracle Cloud Shell
 2. In the cloud shell prompt execute the wget command to download the load script and execute it.  
-3. Substitute yourinstance name with *your adb instance name* and append _high to the name (e.g convgdb_high)
-   
+3. Substitute yourinstance name with *your adb instance name* (e.g convgdb_high) and the password you used
+*NOTE: The load-ajd.sh script is in the setup directory, it will be loaded to object store when in production.  Still being tested - Kay*
       ````
+      <copy>
       cd $HOME
       pwd
       wget load-ajd.sh
-      load-ajd.sh yourinstancename
+      load-ajd.sh</copy> <<yourinstancename>> WElcome123##
       ````
 4.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1950 rows.
 
       ````
+      <copy>
       select count(*) from orders;
+      /copy>
       ````
 
 
