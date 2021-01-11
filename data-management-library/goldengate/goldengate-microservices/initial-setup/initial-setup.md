@@ -3,7 +3,7 @@
 ## Introduction
 In this lab we will setup the required database and GoldenGate replication users.
 
-*Estimated Lab Time*:  60 minutes
+*Estimated Lab Time*:  10 minutes
 
 ### Lab Architecture
 ![](./images/ggmicroservicesarchitecture.png " ")

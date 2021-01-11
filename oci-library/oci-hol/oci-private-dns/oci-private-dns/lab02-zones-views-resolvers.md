@@ -48,13 +48,13 @@ For DNS Management:
 
 1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://console.us-phoenix-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oegentil/learning-library/raw/master/oci-library/oci-hol/oci-private-dns/oci-private-dns/privatedns.zip)
 
-2. Acept the Terms of use, chane the compartment to you want to use, and change the name (optional)
-3. Enter the required information for the stack, and click **Next**
-4. Review the Stack and click **Create**
+2. Acept the Terms of use, chane the compartment to you want to use, and change the name (optional).
+3. Enter the required information for the stack, and click **Next**.
+4. Review the Stack and click **Create**.
 5. Click **Plan** under **Terraform Actions**.
-6. Click **Plan** in the Plan window
+6. Click **Plan** in the Plan window.
 7. Upon Completion (RMJ big button will turn green), click  **Stack Details** and then click **Apply** under **Terraform Actions**.
-8. Click **Apply** in the Apply window
+8. Click **Apply** in the Apply window.
 
 
 ## **Step 4:** Create hubzone.com Custom Private Zone
