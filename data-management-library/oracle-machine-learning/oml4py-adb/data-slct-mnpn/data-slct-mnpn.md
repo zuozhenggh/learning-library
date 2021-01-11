@@ -172,10 +172,8 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
 
 2. In this step, you use the `append ()` function to append an `oml.Float` series object to another, and then append an oml.DataFrame object to another.
 
-**Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
-
-Run the following script:
-
+    **Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
+    
     ```
 
     %python
