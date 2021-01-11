@@ -175,7 +175,6 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
     **Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
     
     ```
-
     %python
 
     x = MY_DF[['id', 'val']]
@@ -186,11 +185,8 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
 
     x.append(y)
     ```
-
     ![Image alt text](images/using_append.png "Using append function")
     It creates two new proxy objects with corresponding subset of columns, prints the data type for each column, and then appends the data frame object Y (containing columns num and ch) to X (containing columns id and val).
-
-
 ### Step 4.2: Combine Columns by Using the concat method
 
 Use the `concat` method to combine columns from one data frame proxy object with those of another. The `auto_name` argument of the `concat` method controls whether to call automatic name conflict resolution if one or more column names are duplicates in the two data frames. You can also explicitly rename columns by passing in a dictionary that maps strings to objects, as discussed below.
