@@ -1,96 +1,98 @@
-# Use Model Explainability
+# Rank attribute importance using Model Explainability feature
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to the steps to use the Model Explainability feature. You will learn how to use this feature, run the **GlobalFeatureImportance** to explain and interpret machine learning models.
 
-Estimated Lab Time: n minutes
+
+Estimated Lab Time: 30 minutes
 
 ### About Model Explainability
-Enter background information here..
+Machine Learning Explainability (MLX) is the process of explaining and interpreting machine learning models. The oml.mlx Python module supports the ability to help better understand a model's behavior and how it ranks predictors when making predictions. MLX currently provides model-agnostic explanations for classification and regression tasks where explanations treat the ML model as a black-box, instead of using properties from the model to guide the explanation.
+
+The **GlobalFeatureImportance** explainer object is the interface to the MLX permutation importance explainer. The global feature importance explainer identifies the most important features for a given model and data set. The explainer is model-agnostic and currently supports tabular classification and regression data set with both numerical and categorical features.
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Import the **GlobalFeatureImportance** explainer
+* Load the data set into the database
+* Split the data set into train and test variables
+* Train an SVM model
+* Create the MLX Global Feature Importance explainer `gfi`
+* Run the explainer `gfi.explain` to generate the global feature importance for the test data
+
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 1**: Import and run the GlobalFeatureImportance explainer
 
-## **STEP 1**: title
+To use the GlobalFeatureImportance explainer to explain and interpret machine learning models:
 
-Step 1 opening paragraph.
+1. Run the following script to import the oml module, Pandas, Numpy packages, GlobalFeatureImportance explainer and load the data set into the database. The script also adds a unique Case ID column.
 
-1. Sub step 1
+  ```
+  import oml
+  from oml.mlx import GlobalFeatureImportance
+  import pandas as pd
+  import numpy as np
+  from sklearn import datasets
 
-  To create a link to local file you want the reader to download, use this format:
+  iris_ds = datasets.load_iris()
+  iris_data = iris_ds.data.astype(float)
+  X = pd.DataFrame(iris_data, columns=iris_ds.feature_names)
+  y = pd.DataFrame(iris_ds.target, columns=['TARGET'])
+  row_id = pd.DataFrame(np.arange(iris_data.shape[0]),
+  columns=['CASE_ID'])
+  df = oml.create(pd.concat([X, y, row_id], axis=1), table='Iris')
+  ```
+2. Split the data set into train and test variables.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
-
-    ![Image alt text](images/sample1.png "Image title")
-
-3. Ordered list item 3 with the same image but no link to the text description below.
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. One example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
+  ```
+  train, test = df.split(ratio=(0.8, 0.2), hash_cols='CASE_ID', seed=32)
+  X, y = train.drop('SPECIES'), train['SPECIES']
+  X_test, y_test = test.drop('SPECIES'), test['SPECIES']
   ```
 
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
+3. Train an SVM model.
+
+    ```
+    model = oml.algo.svm(ODMS_RANDOM_SEED=32).fit(X, y, case_id='CASE_ID')
+    "SVM accuracy score = {:.2f}".format(model.score(X_test, y_test))
+    ```
+
+4. Create the MLX Global Feature Importance explainer gfi, using the `f1_weighted` metric.
+    ```
+    gfi = GlobalFeatureImportance(mining_function='classification',
+                              score_metric='f1_weighted',
+                              random_state=32, parallel=4)
+    ```
+
+5. Run the explainer gfi.explain to generate the global feature importance for the test data:
+    ```
+    explanation = gfi.explain(model, X_test, y_test,
+      case_id='CASE_ID', n_iter=10)
+      explanation
+    ```  
+   The explainer returns the following explanation:
+
+   ```
+   Global Feature Importance:
+   [0] petal length (cm): Value: 0.3462, Error: 0.0824
+   [1] petal width (cm): Value: 0.2417, Error: 0.0687
+   [2] sepal width (cm): Value: 0.0926, Error: 0.0452
+   [3] sepal length (cm): Value: 0.0253, Error: 0.0152
+   ```
+
+
+## **Try it yourself:** Build a model and compare
+Build an in-db RandomForest model and compare the RF model's attribute importance ranking with that from MLX.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)

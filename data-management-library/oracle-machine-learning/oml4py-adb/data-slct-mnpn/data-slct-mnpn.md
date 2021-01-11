@@ -173,7 +173,7 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
 2. In this step, you use the `append ()` function to append an `oml.Float` series object to another, and then append an oml.DataFrame object to another.
 
     **Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
-    
+
     ```
     %python
 
@@ -265,7 +265,7 @@ Use the `merge` method to join data from two objects.
   ![Image alt text](images/left_outer_join.png "Concatenate with renaming")
   This example performs a left outer join on the first four rows.  
 
-### Try it Yourself: Use the MY_DF daraframe to craete a script for "Right outer join"
+### **Try it Yourself:** Use the MY_DF daraframe to craete a script for "Right outer join"
 
 
 ### Step 4.4: Drop rows and columns from a data set
