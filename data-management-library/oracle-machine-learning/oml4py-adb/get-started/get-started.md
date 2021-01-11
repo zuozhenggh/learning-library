@@ -99,7 +99,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 3. In the **Name** field, provide a name for the notebook.
 4. In the **Comments** field, enter comments, if any.
 5. In the **Connections** field, select a connection in the drop-down list. By default, the `Global` connection group is assigned.
-6.  Click **OK.** The notebook is created and it opens in the notebook editor.
+6. Click **OK.** The notebook is created and it opens in the notebook editor.
 
 **Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
 

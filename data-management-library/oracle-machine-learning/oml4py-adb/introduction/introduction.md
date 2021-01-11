@@ -17,13 +17,7 @@ Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous 
 
 Oracle Machine Learning for Python (OML4Py) makes the open source Python scripting language and environment ready for the enterprise and big data. Designed for problems involving both large and small volumes of data, Oracle Machine Learning for Python integrates Python with Oracle Autonomous Database, including its powerful in-database machine learning algorithms, and enables deployment of Python code.
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
-
 ### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
 
 This lab highlights the following features of OML4Py ::
 * Connect to an Autonomous Database from a Python session
@@ -35,22 +29,17 @@ This lab highlights the following features of OML4Py ::
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 To complete this lab, you need the following account credentials and assets:
 
 * Oracle Cloud Infrastructure Console login credentials and tenancy name
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
-
 In general, the Introduction does not have Steps.
 
-*At the conclusion of the lab add this statement: Note how you can link to whatever lab follows by using #next as the target*
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
