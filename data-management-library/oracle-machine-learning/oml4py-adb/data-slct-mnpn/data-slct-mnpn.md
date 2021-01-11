@@ -139,13 +139,11 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
 ## **STEP 4:** Use proxy objects to manipulate database data
 
 You can join data from `oml.DataFrame` objects that represent database tables by using the `append`, `concat`, and `merge` methods.
+  * The `append` method appends or adds the other OML data object of the same class to this data object.
+  * The `concat` method combines the current OML data object with the other data objects column-wise.
+  * The `merge` method joins data sets.
 
-    * The `append` method appends or adds the other OML data object of the same class to this data object.
-    * The `concat` method combines the current OML data object with the other data objects column-wise.
-    * The `merge` method joins data sets.
-
-These steps show how to use these methods
-
+These steps show how to use these methods.
 
 ### Step 4.1: Use the append () function
 
@@ -174,11 +172,12 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
 
 2. In this step, you use the `append ()` function to append an `oml.Float` series object to another, and then append an oml.DataFrame object to another.
 
-**Note:** An oml.Float is numeric series data class that represents a single column of NUMBER, BINARY_DOUBLE, or BINARY_FLOAT database data types.
+**Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
 
 Run the following script:
 
     ```
+
     %python
 
     x = MY_DF[['id', 'val']]
@@ -277,7 +276,7 @@ Use the `merge` method to join data from two objects.
 
 ### Step 4.4: Drop rows and columns from a data set
 
-In preparing data for analysis, a typical step is to transform data by dropping some values. You can filter out data that are not needed by using the drop, drop_duplicates, and dropna methods. Use the oml.drop function to delete a persistent database table. Use the del statement to remove an oml.DataFrame proxy object and its associated temporary table.
+In preparing data for analysis, a typical step is to transform data by dropping some values. You can filter out data that are not needed by using the `drop`, `drop_duplicates`, and `dropna` methods. Use the `oml.drop` function to delete a persistent database table. Use the del statement to remove an oml.DataFrame proxy object and its associated temporary table.
 
 **Note:** `del` does not delete a persistent table.
 
@@ -328,7 +327,7 @@ To work with the drop functionality, you first create a demo data table `MY_DF2.
 
   ![Image alt text](images/drop_rows_with_missing_col_vals.png "Drop rows with missing column values")
 
-5. Use the drop_duplicates() function to drop duplicate rows:
+5. Use the `drop_duplicates()` function to drop duplicate rows:
 
   ```
   %python
@@ -453,79 +452,176 @@ The following tasks are covered in this lab:
 
 ## Try it yourself: Split the digit data set into four even samples of 25% each
 
-## **STEP 6:** Use the crosstab and pivot_table functions
+## **STEP 6:** Use the crosstab and pivot_table functions on a DataFrame proxy object
 
-1. Sub step 1
+This step shows how to use the crosstab method to perform cross-column analysis of an oml.DataFrame object and the `pivot_table` method to convert an oml.DataFrame to a spreadsheet style pivot table.
 
+Cross-tabulation is a statistical technique that finds an interdependent relationship between two columns of values. The `crosstab` method computes a cross-tabulation of two or more columns. By default, it computes a frequency table for the columns unless a column and an aggregation function have been passed to it.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+The `pivot_table` method converts a data set into a pivot table. Due to the database 1000 column limit, pivot tables with more than 1000 columns are automatically truncated to display the categories with the most entries for each column value.
 
-      - List item 1
-      - List item 2
-
-3. Code examples
+1. Create a temporary table `MY_DF4` using a demo data set. This data set reports on the speed and accuracy for a given task characterized by hand used (left or right) and gender (male, female, or not specified).
 
     ```
-    Adding code examples
-    Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-    <copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    %python
+
+    my_df4 = pd.DataFrame({
+        'GENDER': ['M', 'M', 'F', 'M', 'F', 'M', 'F', 'F', None, 'F', 'M', 'F'],
+        'HAND': ['L', 'R', 'R', 'L', 'R', None, 'L', 'R', 'R', 'R', 'R', 'R'],
+        'SPEED': [40.5, 30.4, 60.8, 51.2, 54, 29.3, 34.1, 39.6, 46.4, 12, 25.3, 37.5],
+        'ACCURACY': [.92, .94, .87, .9, .85, .97, .96, .93, .89, .84, .91, .95]
+        })
+
+    MY_DF4 = oml.push(my_df4)
     ```
 
-4. Code examples that include variables
+  ![Image alt text](images/My_DF4_table.png "Create MY_DF4 table")
+
+2. Use the `crosstab` function to find the categories that the most entries belonged to. This example shows how to use the `crosstab` function to find the count of gender, and right-handed and left-handed persons in descending order in the MY_DF4 dataframe.  
+
+    ```
+    %python
+
+    MY_DF4.crosstab('GENDER', 'HAND').sort_values('count', ascending=False)
+    ```  
+
+      ![Image alt text](images/my_df4_crosstab.png "Script to find categories of entries")
+
+3. Use the `crosstab` function to find the ratio of entries with different hand values for each gender and across entries in the `MY_DF4` dataframe.
+
+    ```
+    %python
+
+    MY_DF4.crosstab('GENDER', 'HAND', pivot = True, margins = True, normalize = 0)
+    ```
+
+    ![Image alt text](images/my_df4_hand_vals.png "Crosstab function to find ratio of entries")
+
+4. Use the `pivot_table` function to find the mean speed across all gender and hand combinations in the `MY_DF4` dataframe.
 
   	```
-    <copy>ssh -i <ssh-key-file></copy>
+    %python
+
+    MY_DF4.pivot_table('GENDER', 'HAND', 'SPEED')
+    ```
+    ![Image alt text](images/find_mean_speed.png "Pivot table function to find mean speed")
+
+5. Use `pivot_table` function to find the maximum and minimum speed for every gender and hand combination and across all combinations in the `MY_DF4` dataframe:
+
+    ```
+    %python
+
+    MY_DF4.pivot_table('GENDER', 'HAND', 'SPEED',
+                    aggfunc = [oml.DataFrame.max, oml.DataFrame.min],
+                    margins = True)
     ```
 
-
+    ![Image alt text](images/max_min_speed.png "Pivot table function to find minimum and maximum speed")
 
 ## **STEP 7**: Use the oml.boxplot and oml.hist functions
 
-Step 1 opening paragraph.
+OML4Py provides functions for rendering graphical displays of data. The `oml.boxplot` and `oml.hist` functions compute the statistics necessary to generate box and whisker plots or histograms in-database for scalability and performance. OML4Py uses the `matplotlib` library to render the output.
 
-1. Sub step 1
+This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions using the wine data set. The statistics supporting these plots are computed in-database, so transfer of data or client side memory limitations are avoided.
+1. Import the `matplotlib` library and wine data set from sklearn. Run the following script:
 
-  To create a link to local file you want the reader to download, use this format:
+  ```
+  %python
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+  import matplotlib.pyplot as plt
+  from sklearn.datasets import load_wine
 
-  ![Image alt text](images/sample1.png "Image title")
+  wine = load_wine()
+  wine_data = pd.DataFrame(wine.data, columns = wine.feature_names)
+  WINE = oml.push(wine_data)
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+  oml.graphics.boxplot(WINE[:,8:12], showmeans=True,
+                      meanline=True, patch_artist=True,
+                      labels=WINE.columns[8:12])
+    plt.title('Distribution of Wine Attributes')
+    plt.show()
+  ```
 
-  ![Image alt text](images/sample1.png)
+  ![Image alt text](images/boxplot.png "Box Plot depicting distribution of wine attributes")
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
-5. One example with bold **text**.
+2. Run the following script to render the data in a histogram:
 
-  If you add another paragraph, add 3 spaces before the line.
+    ```
+    %python
 
+    oml.graphics.hist(WINE['proline'], bins=10, color='red',
+                      linestyle='solid', edgecolor='black')
+    plt.title('Proline content in Wine')
+    plt.xlabel('proline content')
+    plt.ylabel('# of wine instances')
+    plt.show()
+    ```
+  ![Image alt text](images/histogram.png "Histogram of Proline content in wine")
 
 ## **STEP 8**: Manage and Explore Data Using Transparency Layer Functions
 
-Step 1 opening paragraph.
+With the transparency layer classes, you can convert selected Python objects to Oracle Autonomous Database (ADB) objects and also call a range of familiar Python functions that are overloaded to run the corresponding SQL on tables in the database.
+  * `oml.create:` Creates a table in the database schema from a Python data set.
+  * `oml_object.pull:` Creates a local Python object that contains a copy of data referenced by the `oml` object.
+  * `oml.push:` Pushes data from a Python session into an object in a database schema.
+  * `oml.sync:` Creates a DataFrame proxy object in Python that represents a database table or view.
+  * `oml.dir:` Return the names of `oml` objects in the Python session workspace.
+  * `oml.drop:` Drops a persistent database table or view.
 
-1. Sub step 1
+### **Step 8.1**: Create a database table using oml.push with a Pandas DataFrame object
 
-   To create a link to local file you want the reader to download, use this format:
+In this step, you learn the following:
+  * Load the iris data set and combine target and predictors into a single DataFrame, which matches the form the data would have as a database table.
+  * Load this Pandas DataFrame into the database using the `oml.push` function. This function creates a temporary table and returns a proxy object that you will assign to the variable IRIS_TMP.
+    **Note:** These temporary tables are automatically deleted when the database connection is terminated unless saved in a datastore.
+  * You then call standard functions like shape, columns, and head, to explore the data.
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+1. To create a Pandas DataFrame and load into the database, run the following script:
+    ```
+    %python
 
-  ![Image alt text](images/sample1.png "Image title")
+    from sklearn.datasets import load_iris
+    from sklearn import linear_model
+    import pandas as pd
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+    iris = load_iris()
+    x = pd.DataFrame(iris.data,
+      columns = ["SEPAL_LENGTH", "SEPAL_WIDTH", "PETAL_LENGTH", "PETAL_WIDTH"])
+      y = pd.DataFrame(list(map(lambda x: {0:'setosa', 1: 'versicolor', 2:'virginica'}[x], iris.target)),
+      columns = ['SPECIES'])
+      iris_df = pd.concat([x,y], axis=1)
 
-   ![Image alt text](images/sample1.png)
+    IRIS_TMP = oml.push(iris_df)
+      print("Shape:",IRIS_TMP.shape)
+      print("Columns:",IRIS_TMP.columns)
+    IRIS_TMP.head(4)
+    ```
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
-5. One example with bold **text**.
 
-  If you add another paragraph, add 3 spaces before the line.
 
-*At the conclusion of the lab add this statement:*
+### **Step 8.2**: Create a persistent database table using oml.create
+
+This example shows how to create a persistent table using the `oml.create` function.  This table is now accessible both within OML4Py but also directly from SQL.
+
+Use the function `z.show` to automatically pull the desired data to Python for display in the notebook. By doing this, you can also use the built-in Zeppelin visualization options such as bar, pie, area, line, and scatter plots.
+
+1. To create a persistent database table by using `oml.create` function, run the following:
+
+    ```
+    %python
+    try:
+        oml.drop(table="IRIS")
+    except:
+        pass
+
+    IRIS = oml.create(iris_df, table="IRIS")
+    print("Shape:",IRIS.shape)
+    z.show(IRIS.head(10))
+   ```
+   ![Image alt text](images/oml_create_table.png "oml_create function to create table")
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
