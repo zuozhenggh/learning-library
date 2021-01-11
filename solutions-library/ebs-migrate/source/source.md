@@ -134,7 +134,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
     d. **Choose Fault Domain:** leave unchecked
 
-    e. **Image:** `Oracle E-Business Suite 12.2.9 Demo Install Image`  (leave unchanged)
+    e. **Image:** `Oracle E-Business Suite 12.2.8 Demo Install Image`  (leave unchanged)
 
     f. **Shape:** click **Change Shape** and select the following if not already selected:
 
