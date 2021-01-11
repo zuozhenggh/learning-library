@@ -1,0 +1,9 @@
+{
+    "workshoptitle": "Working with NoSQL Databases in Oracle Cloud Infrastructure",
+    "tutorials": [
+        {
+            "title": "Lab: Working with NoSQL Databases in Oracle Cloud Infrastructure",
+            "filename": "./../../lab/lab.md"
+        }
+    ]
+}
