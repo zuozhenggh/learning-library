@@ -19,6 +19,7 @@ In this lab, you will be guided through the following steps:
 - Create Virtual Cloud Network
 - Create a MySQL DB System.
 - Create Client Virtual Machine
+- Configure Private Subnet for MySQL port
 - Connect to MySQL Database
 - Clean up the resources
 
@@ -177,7 +178,7 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
    When you are done return to the next line (STEP 5: #8) .
 
 8.  Add SSH Keys: Select CHOOSE SSH KEY FILES and browse to select the
-SSH public key, which was created earlier. (In this example it is id_rsa).
+    SSH public key, which was created earlier. (In this example it is id_rsa).
 
     ![COMPUTE](./images/05compute06.png " ")
 
@@ -189,7 +190,36 @@ SSH public key, which was created earlier. (In this example it is id_rsa).
     Save the Public IP Address under Primary VNIC Information on the Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
-## **STEP 6:** Connect to MySQL Database
+
+## **STEP 6:** Configure Private Subnet for MySQL port
+1.	In the Console, on the Navigation Menu, under Core Infrastructure, click on Networking -> Virtual Cloud Networks.
+    ![COMPUTE](./images/03vcn07.png " ")
+    
+2.	On Virtual Cloud Networks MDS_Sandbox 
+    Compartment  click on the VCN Name. 
+
+    Note: On the example, the VCN Name is MDS_VCN. 
+            ![COMPUTE](./images/03vcn08.png " ")
+
+3.	On the Virtual Cloud Network Details page, under Resources, click on Security Lists (2).
+        ![COMPUTE](./images/03vcn09.png " ")
+
+4.	On Security Lists in <Compartment Name> Compartment, click on Security List for Private Subnet-MDS_VCN.
+
+    ![COMPUTE](./images/03vcn10.png " ")
+
+
+5.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click on Add Ingress Rules.
+    ![COMPUTE](./images/03vcn11.png " ")
+
+6.	On Add Ingress Rule, add an Ingress Rule with Source CIDR 0.0.0.0/0 and Destination Port Name 3306 and click on Add Ingress Rule.
+    ![COMPUTE](./images/03vcn12.png " ")
+
+7.	On Security List for Private Subnet-MDS_VCN page, the new Ingress Rules will be shown under the Ingress Rules List
+    ![COMPUTE](./images/03vcn13.png " ")
+
+
+## **STEP 7:** Connect to MySQL Database
 
 1. If you are a Linux or Mac user go to STEP 6: #2
 
@@ -253,7 +283,7 @@ SSH public key, which was created earlier. (In this example it is id_rsa).
 
     ![Connect](./images/06workbench02.png " ")
 
-## **STEP 7:** Clean up the resources
+## **STEP 8:** Clean up the resources
 
 1. Delete the MySQL DB System.
     ![Clean](./images/07clean01.png " ")
