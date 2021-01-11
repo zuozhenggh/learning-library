@@ -27,8 +27,12 @@
       "filename": "../../../../spatial-studio/intro/create-project/create-project.md"
   },
   {
-      "title": "Lab 5: Explore Styling",
+      "title": "Lab 5: Explore Point Styling",
       "filename": "../../../../spatial-studio/intro/apply-styling/apply-styling.md"
+  },
+  {
+      "title": "Lab 5: Explore Layer Interactions",
+      "filename": "../../../../spatial-studio/intro/apply-interactions/apply-interactions.md"
   }
     ]
 }
