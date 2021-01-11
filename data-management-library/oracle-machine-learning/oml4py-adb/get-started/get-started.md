@@ -91,7 +91,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
     This opens the Oracle Machine Learning Notebooks home page.    
 
-## **STEP 3:** Create a Zeppelin Notebook
+## **STEP 3:** Create a Notebook
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization and collaboration. To create a notebook:
 1. In the Oracle Machine Learning home page, click **Notebooks.** The Notebooks page opens.
