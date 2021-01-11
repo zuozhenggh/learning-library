@@ -13,7 +13,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s3vHAmu3qehcDwtf05Ird7vDadEl3qquxXsGqDn-fG2C4xl2A8F_JOxIefNKZ7ER/n/orasenatdpltsecitom02/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip-)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [ggma-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JX8hrs75mnqH1ZFZoJ5JgQvD9qZQRKf-KFsQ_K7JsyKWt-rbXDgHLS_uVl-nDQZ2/n/natdsecurity/b/stack/o/ggma-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -25,7 +25,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 80             | NGINX Proxy                           |
+| 443            | NGINX Proxy (https)                   |
 | 16000          | GGMA Admin Server                     |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
@@ -46,7 +46,7 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Madhu Kumar, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

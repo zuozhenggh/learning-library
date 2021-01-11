@@ -64,15 +64,15 @@ In this lab, you will:
     ````
     <copy>
     cd /home/oracle
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/7FE0DNdK_WA4ccccNRxid_6RQX2g7vvxMTwDuaTQDXED9Gyl9CCdGqS4lIiVvycx/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs_12_18_20.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/T7yu3eenKXcawscF6LsDIcedxU5rFcaskysryZNbRkG2G5ZyfrTvdUQwFRTJITUj/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
     </copy>
     ````
 
-6.  Unzip Cloud\_21c\_labs.zip
+6.  Unzip Cloud\_21c\_Labs.zip
 
     ```
     <copy>
-    unzip Cloud_21c_Labs_12_18_20.zip
+    unzip Cloud_21c_Labs.zip
     </copy>
     ```
 
@@ -100,6 +100,7 @@ In this lab, you will:
     /home/oracle/labs/M104784GC10/create_CDB21.sh
     </copy>
     ```
+
 2. Set your environment. At the prompt type in `CDB21`
 
     ```
