@@ -28,8 +28,6 @@ In this lab, you will learn how to:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
-
-
 ## **STEP 1**: Create an OML User
 
 An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
@@ -96,19 +94,14 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 ## **STEP 3:** Create a Zeppelin Notebook
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization and collaboration. To create a notebook:
+1. In the Oracle Machine Learning home page, click **Notebooks.** The Notebooks page opens.
+2. In the Notebooks page, click **Create.** The Create Notebook window appears.
+3. In the **Name** field, provide a name for the notebook.
+4. In the **Comments** field, enter comments, if any.
+5. In the **Connections** field, select a connection in the drop-down list. By default, the `Global` connection group is assigned.
+6.  Click **OK.** The notebook is created and it opens in the notebook editor.
 
-    1. In the Oracle Machine Learning home page, click **Notebooks.** The Notebooks page opens.
-
-    2. In the Notebooks page, click **Create.** The Create Notebook window appears.
-
-    3. In the **Name** field, provide a name for the notebook.
-
-    4. In the **Comments** field, enter comments, if any
-    5. In the **Connections** field, select a connection in the drop-down list. By default, the `Global` connection group is assigned.
-    6. Click **OK.** The notebook is created and it opens in the notebook editor.
-
-
-    **Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
+**Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
 
 ### **Step 3.1** Connect to the Python Interpreter
 
@@ -135,6 +128,10 @@ The available interpreter bindings are:
    You are now ready to run Python scripts in your notebook.
 
 3. To use OML4Py module, you must import the oml module. Type the following Python command to import the   oml module, and click the run icon. Alternatively, you can press Shift+Enter keys to run the notebook.   
+
+    `import oml`
+
+    ![Image alt text](images/import_oml.png)
 
 ### **Step 3.2** Verify Connection to the Autonomous Database    
 
