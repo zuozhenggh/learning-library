@@ -1,35 +1,61 @@
-# Rank attribute importance using Model Explainability feature
+# Use in-database Algorithms and models
+
+
 
 ## Introduction
 
-This lab walks you through the steps to the steps to use the Model Explainability feature. You will learn how to use this feature, run the **GlobalFeatureImportance** to explain and interpret machine learning models.
 
 
-Estimated Lab Time: 30 minutes
 
-### About Model Explainability
-Machine Learning Explainability (MLX) is the process of explaining and interpreting machine learning models. The oml.mlx Python module supports the ability to help better understand a model's behavior and how it ranks predictors when making predictions. MLX currently provides model-agnostic explanations for classification and regression tasks where explanations treat the ML model as a black-box, instead of using properties from the model to guide the explanation.
+Estimated Lab Time: 120 minutes
 
-The **GlobalFeatureImportance** explainer object is the interface to the MLX permutation importance explainer. The global feature importance explainer identifies the most important features for a given model and data set. The explainer is model-agnostic and currently supports tabular classification and regression data set with both numerical and categorical features.
+### About in-database algorithms and models
+
 
 ### Objectives
 
 In this lab, you will:
-* Import the **GlobalFeatureImportance** explainer
-* Load the data set into the database
-* Split the data set into train and test variables
-* Train an SVM model
-* Create the MLX Global Feature Importance explainer `gfi`
-* Run the explainer `gfi.explain` to generate the global feature importance for the test data
+*
+*
+* 
+
+
+
+
+
+
 
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Import and run the GlobalFeatureImportance explainer
+## **STEP 1**: Use Regression
 
-To use the GlobalFeatureImportance explainer to explain and interpret machine learning models:
+
+
+## **STEP 2**: Use Clustering
+
+
+
+## **STEP 3**: Work with partitioned models
+
+
+## **STEP 4**: Import and run the GlobalFeatureImportance explainer
+
+Machine Learning Explainability (MLX) is the process of explaining and interpreting machine learning models. The oml.mlx Python module supports the ability to help better understand a model's behavior and how it ranks predictors when making predictions. MLX currently provides model-agnostic explanations for classification and regression tasks where explanations treat the ML model as a black-box, instead of using properties from the model to guide the explanation.
+
+The **GlobalFeatureImportance** explainer object is the interface to the MLX permutation importance explainer. The global feature importance explainer identifies the most important features for a given model and data set. The explainer is model-agnostic and currently supports tabular classification and regression data set with both numerical and categorical features.
+
+This step walks you through the steps to the steps to use the Model Explainability feature. You will learn how to use this feature, run the **GlobalFeatureImportance** to explain and interpret machine learning models.
+
+In this step, you will:
+* Import the **GlobalFeatureImportance** explainer
+* Load the data set into the database
+* Split the data set into train and test variables
+* Train an SVM model
+* Create the MLX Global Feature Importance explainer `gfi`
+* Run the explainer `gfi.explain` to generate the global feature importance for the test data
 
 1. Run the following script to import the oml module, Pandas, Numpy packages, GlobalFeatureImportance explainer and load the data set into the database. The script also adds a unique Case ID column.
 

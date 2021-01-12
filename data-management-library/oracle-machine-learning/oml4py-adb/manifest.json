@@ -21,20 +21,20 @@
             "filename": "./data-slct-mnpn/data-slct-mnpn.md"
         },
         {
-            "title": "Lab 3: Use Datastores to store Python objects",
+            "title": "Lab 3: Use in-database algorithms and models",
+            "filename": "./in-db-algo-models/in-db-algo-models.md"
+        },
+		 {
+            "title": "Lab 4: Use Datastores to store Python objects",
             "filename": "./dstore-script-repo/dstore-script-repo.md"
         },
         {
-            "title": "Lab 4: Run user-defined functions using Embedded Python Execution",
+            "title": "Lab 5: Run user-defined functions using Embedded Python Execution",
             "filename": "./embd-python/embd-python.md"
         },
         {
-            "title": "Lab 5: Use AutoML",
+            "title": "Lab 6: Use AutoML",
             "filename": "./automl/automl.md"
         },
-        {
-            "title": "Lab 6: Rank attribute importance using Model Explainability feature",
-            "filename": "./model-exp/model-exp.md"
-        }
     ]
 }
