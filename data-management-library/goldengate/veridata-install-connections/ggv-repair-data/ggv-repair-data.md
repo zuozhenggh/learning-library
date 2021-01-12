@@ -12,10 +12,10 @@ You can also look at these SQL Statements before the Oracle GoldenGate Veridata 
 ### What Do You Need?
 
 + **Oracle GoldenGate Veridata installed**
-+ **Groups and Compare Pairs have been created as described in Lab 4**
-+ **Jobs have been created and executed as described in Lab 4**
++ **Groups and Compare Pairs have been created as described in Lab 3**
++ **Jobs have been created and executed as described in Lab 3**
 
-To begin with, ensure that you have completed Lab 4.
+To begin with, ensure that you have completed Lab 3.
 ## **STEP 1:** Repair Out-of-Sync Jobs
   To repair out-of-sync jobs:
   1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for generating SQL statements.
@@ -47,7 +47,7 @@ To begin with, ensure that you have completed Lab 4.
 * **Author:**
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Reviewed by:**
-    + Avinash Yadagere, Principal Member Technical Staff, Oracle GoldenGate Development
+    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
     + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
 * **Last Updated By/Date:** Anuradha Chepuri, January 2021

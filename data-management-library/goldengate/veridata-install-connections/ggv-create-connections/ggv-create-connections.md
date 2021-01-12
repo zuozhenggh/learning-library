@@ -48,7 +48,7 @@ To create connections:
 * **Author:**
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Reviewed by:**
-    + Avinash Yadagere, Principal Member Technical Staff, Oracle GoldenGate Development
+    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
     + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
 * **Last Updated By/Date:** Anuradha Chepuri, January 2021

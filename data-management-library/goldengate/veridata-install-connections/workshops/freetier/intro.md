@@ -9,7 +9,6 @@ Oracle GoldenGate Veridata compares a source (original, or trusted) set of data 
 ## Workshop Objectives
   - Install Oracle GoldenGate Veridata
   - Create Datasource Connections for source and target databases.
-  - Connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.
   - Create Groups, Compare Pairs, and jobs.
   - Run jobs.
   - Repair data and generate SQL files.
@@ -18,10 +17,9 @@ Oracle GoldenGate Veridata compares a source (original, or trusted) set of data 
 ## Lab Breakdown
   - **Lab 1:** Install and Configure Oracle GoldenGate Veridata
   - **Lab 2:** Create Datasource Connections
-  - **Lab 3:** Connect the Oracle GoldenGate Veridata Agent to Autonomous Data Warehouse
-  - **Lab 4:** Create Groups, Compare Pairs, and Jobs
-  - **Lab 5:** Repair Out-of-Sync Jobs and Generate SQL Files
-  - **Lab 6:** View Reports
+  - **Lab 3:** Create Groups, Compare Pairs, and Jobs
+  - **Lab 4:** Repair Out-of-Sync Jobs and Generate SQL Files
+  - **Lab 5:** View Reports
 
 
 ## Workshop Prerequisites
