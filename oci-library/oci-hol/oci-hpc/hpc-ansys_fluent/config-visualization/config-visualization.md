@@ -6,10 +6,23 @@ HPC workloads often require visualization tools for scheduling, monitoring or an
 
 Estimated Lab Time: 25 minutes
 
+### Objectives
+
+In this lab:
+* We will walk you through how to create and configure a GPU visualization node using TurboVNC and OpenGL
+
+### Prerequisites
+
+* Familiarity with Visualization Tools
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
 ## **STEP 1**: Setting up a VNC on your Bastion
 
-By default, the only access to the Oracle Linux machine is through SSH in a console mode. If you want to see the graphical interface, you will need to set up a VNC connection. The following script will work for the default user opc. The password for the vnc session is set as "HPC_oci1" but it can be edited in the next set of commands. If you are not currently connected to the headnode via SSH, please do so as these commands need to be run on the headnode.
-```
+1. By default, the only access to the Oracle Linux machine is through SSH in a console mode. If you want to see the graphical interface, you will need to set up a VNC connection. The following script will work for the default user opc. The password for the vnc session is set as "HPC_oci1" but it can be edited in the next set of commands. If you are not currently connected to the headnode via SSH, please do so as these commands need to be run on the headnode.
+
+    ```
+    <copy>
     sudo yum -y groupinstall "Server with GUI"
     sudo yum -y install tigervnc-server mesa-libGL
     sudo systemctl set-default graphical.target
@@ -23,7 +36,8 @@ By default, the only access to the Oracle Linux machine is through SSH in a cons
     chmod 600 /home/opc/.vnc/passwd
     sudo systemctl start vncserver@:1.service
     sudo systemctl enable vncserver@:1.service
-```
+    </copy>
+    ```
 
 ## **STEP 2**: Add a GPU Instance
 
@@ -45,51 +59,69 @@ The below steps are taken Using OpenGL to Enhance GPU Use cases on OCI - refer t
 4. Install X Window System, a display manager (GNOME/GDM), and a desktop environment (MATE):
      
      ```
+    <copy>
     sudo yum groupinstall "X Window System"
     sudo yum install gdm
     sudo yum groupinstall "MATE Desktop"    
+    </copy>
     ```
 5. Install VNC server and VirtualGL. Note that VirtualGL is an open source toolkit that lets any Linux or Unix console run OpenGL applications with full hardware acceleration.
    
-     ```
+    ```
+    <copy>
     sudo yum install https://downloads.sourceforge.net/project/virtualgl/2.6.3/VirtualGL-2.6.3.x86_64.rpm
     sudo yum install https://downloads.sourceforge.net/project/turbovnc/2.2.4/turbovnc-2.2.4.x86_64.rpm    
+    </copy>
     ```
 6. Configure the X server to enable GPU sharing for virtual sessions. Run the following commands:
     
-     ```
+    ```
+    <copy>
     sudo nvidia-xconfig --use-display-device=none --busid="PCI:4:0:0"
+    </copy>
     ```
 7. Configure the X server to enable GPU sharing for virtual sessions. Run the following commands:
     
     ```
+    <copy>
     sudo vglserver_config -config -s -f -t
+    </copy>
     ```
 8. To avoid being locked out when the screen saver launches, set the local user password to something you can use later:
     
     ```
+    <copy>
     sudo passwd opc
+    </copy>
     ```
 9. Change your VNC password to something you can use for logging on:
     
     ```
+    <copy>
     vncpasswd
+    </copy>
     ```
 10. Restart the X Server:
     
     ```
+    <copy>
     kill $(pgrep Xvnc)
     vncserver
+    </copy>
     ```
 11. Enable and Start GDM:
     
     ```
+    <copy>
     systemctl enable gdm --now
+    </copy>
     ```
 12. Launch the VNC server:
     
     ```
+    <copy>
     /opt/TurboVNC/bin/vncserver -wm mate-session
+    </copy>
     ```
 13. If you want to access the VNC server directly without SSH forwarding, ensure that your security list allows connections on port 5901/tcp.
     * In the Console, navigate to Networking then Virtual Cloud Networks.
@@ -106,9 +138,11 @@ Note: The standard VNC port is 5900 plus a display number (for example, 5901 for
 
 14. Allow access in local firewall settings, as follows:
    
-   ```
+    ```
+    <copy>
     sudo firewall-cmd --zone=public --permanent --add-port=5901/tcp
     sudo firewall-cmd --reload
+    </copy>
     ```
 15. Open TurboVNC or TigerVNC client. Enter the IP address connection as :1
 
