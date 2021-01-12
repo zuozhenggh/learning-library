@@ -59,6 +59,7 @@ To use OML4Py, first import the package `oml`. Also import the pandas package fo
   ```  
 
 ## **STEP 2:** Create Pandas DataFrames and load them into Autonomous Database
+
 In this step, you will work with three data set - IRIS data set, Diabetes data set, and Boston data set. Here, you will learn how to:
 
 * Load these three data sets and for each combine the target and predictors into a single DataFrame
@@ -120,6 +121,7 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
     ![Image alt text](images/create_boston_table.png "Create the Boston table")
 
 ## **STEP 3:** Save Python objects to datastore
+
 In this step, you will save the actual Iris data set and the temporary BOSTON proxy object to a datastore named `ds_pydata`, overwriting if the named datastore already exists.
 
 **Note:** You can store actual data objects in a datastore, but large data objects should remain as database tables for performance and scalability.
@@ -150,13 +152,9 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
    oml.ds.dir()
    ```
   ![Image alt text](images/iris_df_in_ds.png "Save Iris DataFrame in a Datastore ")
-4. Code examples that include variables
-
-  	```
-    <copy>ssh -i <ssh-key-file></copy>
-    ```
 
 ## **STEP 4:** Save model ojects in a datastore
+
 This step illustrates how to store other types of objects in datastores. For this, you will create regression models using sklearn and OML4Py.
 
 1. Run the following script to build two regression models - `regr1` and `regr2`. The `regr1` uses the open  source function `LinearRegression()` and the `regr2` uses the OML function `oml.glm()`.
@@ -198,6 +196,7 @@ This step illustrates how to store other types of objects in datastores. For thi
   ![Image alt text](images/grant_read_priv.png "Grant read privilege to all users")    
 
 ## **STEP 5:**  Load datastore objects into memory
+
 In this step, you load all Python objects from a datastore to the global workspace and sort the result by name. Notice that they have the name specified in the dictionary when saved.
 
 1. Run the following script to load the datastore `ds_pydata` into memory:
@@ -266,6 +265,7 @@ This step shows how to view/describe the content of a datastore. This example co
   The script returns the description of three proxy objects - `iris`, `oml_boston`, and `oml_diabetes`. It lists the class, size, length, row and column count for each object.     
 
 ## **STEP 8:** Manage datastore privileges
+
 This step shows how to revoke read privilege, show datastores to which the read privilege has been granted, and again grant read privilege to a user.
 
 1. Run the following script to revoke the read privilege from every user:
@@ -292,191 +292,24 @@ This step shows how to revoke read privilege, show datastores to which the read 
 
 ## **STEP 9:** Delete Datastore Content
 
-1. Sub step 1
+This step shows how to use the `oml.ds.delete` function to delete datastores or datastore content.
 
+1. Run the following script to delete datastore content:
 
+  ```
+  %python
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+  oml.ds.delete(name="ds_pydata", objs=["iris", "oml_boston"])
 
-                  - List item 1
-                  - List item 2
+  oml.ds.delete(name="ds_pydata")
 
-3. Code examples
+  oml.ds.delete(name="_pymodel", regex_match=True)
 
-                  ```
-                  Adding code examples
-                	Indentation is important for the code example to appear inside the step
-                  Multiple lines of code
-                	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-                  ```
+  oml.ds.dir()
+  ```
+  ![Image alt text](images/delete_datastore.png "Delete Datastore")
 
-4. Code examples that include variables
-
-              	```
-                <copy>ssh -i <ssh-key-file></copy>
-                ```
-
-
-## **STEP 10:** title
-
-                1. Sub step 1
-
-
-
-                2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-                    - List item 1
-                    - List item 2
-
-                3. Code examples
-
-                    ```
-                    Adding code examples
-                  	Indentation is important for the code example to appear inside the step
-                    Multiple lines of code
-                  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-                    ```
-
-                4. Code examples that include variables
-
-                	```
-                  <copy>ssh -i <ssh-key-file></copy>
-                  ```
-
-## **STEP 11:** title
-
-                  1. Sub step 1
-
-
-
-                  2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-                      - List item 1
-                      - List item 2
-
-                  3. Code examples
-
-                      ```
-                      Adding code examples
-                    	Indentation is important for the code example to appear inside the step
-                      Multiple lines of code
-                    	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-                      ```
-
-                  4. Code examples that include variables
-
-                  	```
-                    <copy>ssh -i <ssh-key-file></copy>
-                    ```
-
-
-## **STEP 12:** title
-
-1. Sub step 1
-
-
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-                        - List item 1
-                        - List item 2
-
-3. Code examples
-
-                        ```
-                        Adding code examples
-                      	Indentation is important for the code example to appear inside the step
-                        Multiple lines of code
-                      	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-                        ```
-
-
-## **STEP 13:** title
-
-                        1. Sub step 1
-
-
-
-                        2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-                            - List item 1
-                            - List item 2
-
-                        3. Code examples
-
-                            ```
-                            Adding code examples
-                          	Indentation is important for the code example to appear inside the step
-                            Multiple lines of code
-                          	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-                            ```
-
-                        4. Code examples that include variables
-
-                        	```
-                          <copy>ssh -i <ssh-key-file></copy>
-                          ```                
-
-
-## **STEP 14:** title
-
-                          1. Sub step 1
-
-
-
-                          2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-                              - List item 1
-                              - List item 2
-
-                          3. Code examples
-
-                              ```
-                              Adding code examples
-                            	Indentation is important for the code example to appear inside the step
-                              Multiple lines of code
-                            	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-                              ```
-
-                          4. Code examples that include variables
-
-                          	```
-                            <copy>ssh -i <ssh-key-file></copy>
-                            ```
-
-## **STEP 15:** title
-
-                            1. Sub step 1
-
-
-
-                            2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-                                - List item 1
-                                - List item 2
-
-                            3. Code examples
-
-                                ```
-                                Adding code examples
-                              	Indentation is important for the code example to appear inside the step
-                                Multiple lines of code
-                              	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-                                ```
-
-                            4. Code examples that include variables
-
-                            	```
-                              <copy>ssh -i <ssh-key-file></copy>
-                              ```
-
-
-
-
-
-
-
-
+  The script first deletes the contents of datastore `ds_pydata`, and then deletes the datastore itself. It also deletes the datastore `ds_pymodel` using pattern matching.
 
 ## Learn More
 
