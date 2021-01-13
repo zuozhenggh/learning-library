@@ -35,7 +35,7 @@ First we have to upload the data that's required for our model. In this case, th
 
 ### 1. Download the training dataset
 
-Download the [training dataset](files/MLTD2_german_credit_applications.csv) with historical credit information.
+Download the [training dataset](files/MLTD2-german-credit-applications.csv) with historical credit information.
 
 Click on the link, then use the "Raw" button and then right click "Save As". **Make sure to save these with extension CSV.** Some browsers try to convert this to Excel format, which is incorrect.
 
@@ -45,7 +45,7 @@ We will try to capture the knowledge that this person applies to assessing credi
 
 ### 2. Upload the dataset into Oracle Analytics Cloud
 
-The first task to do is to upload the MLTD2_german_credit_applicants.csv dataset provided to you into Oracle Analytics Cloud. In OAC, on the top left corner click on the menu icon and Click on "Data".
+The first task to do is to upload the MLTD2-german-credit-applicants.csv dataset provided to you into Oracle Analytics Cloud. In OAC, on the top left corner click on the menu icon and Click on "Data".
 
 ![](images/img2.jpg)
 
@@ -109,7 +109,7 @@ In Oracle Analytics, this is done by creating a so-called "Data Flow". A "Data F
 ![](images/img26.jpg)
 ![](images/img28.jpg)
 
-- Every Data Flow starts with a dataset. Select the dataset that we uploaded earlier (‘MLTD2_german_credit_applicants’) and select "Add".
+- Every Data Flow starts with a dataset. Select the dataset that we uploaded earlier (‘MLTD2-german-credit-applicants’) and select "Add".
 ![](images/img29.jpg)
 
 - During Data Exploration we found that we want to keep all attributes for training. However, the identifier "recid" does not have any values, so let's remove it.  Use "remove selected" next to this column to remove it.
@@ -126,10 +126,10 @@ In Oracle Analytics, this is done by creating a so-called "Data Flow". A "Data F
 ![](images/img46.jpg)
 ![](images/img47.jpg)
 
-- You see that a "Save Model" node was automatically created. Click it and set ""MLTD2_trained_german_credit_LR30" as the model name.
+- You see that a "Save Model" node was automatically created. Click it and set ""MLTD2-trained-german-credit-LR30" as the model name.
 ![](images/img50.jpg)
 
-- Now, save the Data Flow. Click on ‘Save’ and choose "MLTD2_train_german_credit_DF".
+- Now, save the Data Flow. Click on ‘Save’ and choose "MLTD2-train-german-credit-DF".
 ![](images/img36.jpg)
 
 - Next, we can finally execute the Data Flow. Effectively this will train the model. Click on "Run Data Flow" (top right). This could take up to 10 minutes, depending on the speed of your PC. A message will appear saying that the data flow was run successfully.
@@ -150,9 +150,9 @@ Now that you have built the model, you need to assess how good it is and decide 
 
 We have a file with new credit applications that we would like to assess. Instead of doing this the manual (HUMAN) way, we'll use our freshly trained model.
 
-- Download the new applications [here](files/MLTD2_german_credit_new_applications.csv). Click on the link, then use the "Raw" button and then right click "Save As". **Make sure to save these with extension CSV.** Some browsers try to convert this to Excel format, which is incorrect.
+- Download the new applications [here](files/MLTD2-german-credit-new-applications.csv). Click on the link, then use the "Raw" button and then right click "Save As". **Make sure to save these with extension CSV.** Some browsers try to convert this to Excel format, which is incorrect.
 
-- Again, create a new dataset, and set the "Treat As" for attribute "recid" to "attribute". The dataset should be named "MLTD2_german_credit_NEW_applications".
+- Again, create a new dataset, and set the "Treat As" for attribute "recid" to "attribute". The dataset should be named "MLTD2-german-credit-NEW-applications".
 ![](images/newupload.png)
 
 - You'll notice that this dataset does -not- have the class column yet. In fact, that is what we will predict now. Create a new Data Flow to score the new dataset.

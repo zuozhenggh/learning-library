@@ -24,7 +24,7 @@ This video will cover the theory behind Neural Networks.
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 * OCI Data Science service with dependencies (see prerequisites in workshop menu)
 
-## **Lab Introduction**
+## **Understanding the dataset and the architecture of the model**
 
 We will use the MNIST (Modified National Institute of Standards and Technology database) dataset for this, a real classic in Machine Learning. This dataset consists of thousands of images, each image representing a handwritten digit. All images have been labelled with the corresponding digit.
 ![digit labels](images/labeled.png)

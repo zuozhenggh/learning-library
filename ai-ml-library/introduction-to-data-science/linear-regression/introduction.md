@@ -34,7 +34,7 @@ Download the dataset with the house prices and characteristics.
 
 Click on the link, then use the `"Raw"` button and then right click `"Save As"`. Make sure to save these with extension `CSV`. Some browsers try to convert this to Excel format, which is incorrect.
 
-Review the datasets. The column names are explained [here](files/data_description.txt). This document also explains the possible list-of-values for categorical attributes.
+Review the datasets. The column names are explained [here](files/data-description.txt). This document also explains the possible list-of-values for categorical attributes.
 
 ## **STEP 2:** Prepare your notebook
 
@@ -169,7 +169,7 @@ alldata.select_dtypes(exclude=np.number).columns.tolist()
 alldata.select_dtypes(exclude=[np.number])
 ```
 
-`Conclusion`: There are many input features that we could potentially use. Some of these columns are self explanatory, others not so much. To understand what each column mean, have a look at [data_scription.txt](./data/data_description.txt) for background.
+`Conclusion`: There are many input features that we could potentially use. Some of these columns are self explanatory, others not so much. To understand what each column mean, have a look at [data_scription.txt](./data/data-description.txt) for background.
 
 ### 6. Which columns would we select intuitively?
 
@@ -612,11 +612,11 @@ In this case, we've already prepared the notebook that you will run.
 
 Download the notebook here.
 
-- Download the [AutoML and Model Evaluation notebook](files/lab100_bonus_1.ipynb). Click on the link, then use the `"Raw"` button and then right click `"Save As"`. Make sure to save these with extension `ipynb`. Some browsers try to convert this to Txt format, which is incorrect.
+- Download the [AutoML and Model Evaluation notebook](files/lab100-bonus-1.ipynb). Click on the link, then use the `"Raw"` button and then right click `"Save As"`. Make sure to save these with extension `ipynb`. Some browsers try to convert this to Txt format, which is incorrect.
 
 - Upload the notebook to OCI Data Science by dragging it to the left panel.
 
-![Upload Notebook](images/upload_notebook.png)
+![Upload Notebook](images/uploadnotebook.png)
 
 - Open the Notebook that you've just uploaded.
 - Go through each of the cells and run them one by one.
