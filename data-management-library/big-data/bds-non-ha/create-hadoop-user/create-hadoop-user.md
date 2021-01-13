@@ -13,8 +13,7 @@ Estimated Lab Time: 45 minutes
 ### Objectives
 
 * Map the private IP address of the first master node to a public IP address.
-* Connect to the cluster's first master node using Putty.
-* Create a new Kerberos principal.
+* Connect to the cluster's first master node using PuTTY.
 * Create a new Linux administrator user.
 * Access HDFS using the newly created user.
 * Add the new user to Hue.
