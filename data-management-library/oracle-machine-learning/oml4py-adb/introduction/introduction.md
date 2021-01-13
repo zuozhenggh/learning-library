@@ -19,7 +19,7 @@ Oracle Machine Learning for Python (OML4Py) makes the open source Python scripti
 
 ### Objectives
 
-This lab highlights the following features of OML4Py ::
+This lab highlights the following features of OML4Py:
 * Connect to an Autonomous Database from a Python session
 * Select and manipulate data using the Transparency Layer
 * Use Datastores to store Python objects

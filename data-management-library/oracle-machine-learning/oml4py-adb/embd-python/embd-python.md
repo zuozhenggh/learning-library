@@ -159,7 +159,8 @@ Again, we create this script in the Python script repository and then invoke it 
 
 4. The index_apply function allows the same function to be invoked a specified number of times. The first argument to the user-defined function is an index number for the function execution. For example, if the “times” argument is 10, each function invocation will receive a distinct value between 1 and 10. This can be used, e.g., for selecting behavior within the function or setting a random seed for Monte Carlo analysis.
 
-### Try it Yourself: Use the `group_apply` function to count the number of each species in the data set.
+## **Try it yourself**
+Use the `group_apply` function to count the number of each species in the data set.
 
 ## **STEP 5:** Return Multiple Images from Embedded Python Execution
 This step shows how to create a function `RandomRedDots` that creates a simple DataFrame and generates two plots of random red dots. You create a function named `RandomRedDots` in the Python Script Repository, and then run the native Python function.
@@ -189,7 +190,8 @@ As expected, you get both plots.
     ![Image alt text](images/sample1.png "Image title")
 
 
-### Try it yourself: Create a single plot composed of two subplots
+## **Try it yourself**
+Create a single plot composed of two subplots
 
 **Hint:** This approach is somewhat simpler, but yields only a single image. Generating two images may be desired when using the SQL API so that each image is returned as a separate row.  
 
@@ -198,9 +200,10 @@ As expected, you get both plots.
 
 
 
-### Try it yourself: Load a function stored in the Python Script Repository in the Python client engine, view its source, and then call the function.
+## **Try it yourself**
+Load a function stored in the Python Script Repository in the Python client engine, view its source, and then call the function.
 
-**Hint:** You may use the function RandomRedDots2
+**Hint:** You may use the function `RandomRedDots2`
 
 ## **STEP 6:** Use the Python Script Repository
 Step 6 to 15, you will work with Python Script Repository.
@@ -293,12 +296,11 @@ In this step, you will perform the following:
 
 
 
-*At the conclusion of the lab add this statement:*
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)

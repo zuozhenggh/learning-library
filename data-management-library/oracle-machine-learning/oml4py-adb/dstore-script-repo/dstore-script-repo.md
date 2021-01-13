@@ -47,16 +47,16 @@ To use OML4Py, first import the package `oml`. Also import the pandas package fo
 
 1. Run the following script. The script imports the `oml` module and the `Pandas` package.
 
-  ```
-  %python
+    ```
+    %python
 
-  import pandas as pd
-  import oml
+    import pandas as pd
+    import oml
 
-  pd.set_option('display.max_rows', 500)
-  pd.set_option('display.max_columns', 500)
-  pd.set_option('display.width', 1000)
-  ```  
+    pd.set_option('display.max_rows', 500)
+    pd.set_option('display.max_columns', 500)
+    pd.set_option('display.width', 1000)
+    ```  
 
 ## **STEP 2:** Create Pandas DataFrames and load them into Autonomous Database
 
@@ -68,28 +68,28 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
 
 1. Run the following script to create the Iris table:
 
-   ```
-   %python
+     ```
+     <copy>%python
 
-   from sklearn import datasets
-   from sklearn import linear_model
-   import pandas as pd
+     from sklearn import datasets
+     from sklearn import linear_model
+     import pandas as pd
 
-   iris = datasets.load_iris()
-   x = pd.DataFrame(iris.data, columns = ['SEPAL_LENGTH','SEPAL_WIDTH',
-   'PETAL_LENGTH','PETAL_WIDTH'])
-   y = pd.DataFrame(list(map(lambda x: {0: 'setosa', 1: 'versicolor',
-   2:'virginica'}[x], iris.target)), columns = ['SPECIES'])
+     iris = datasets.load_iris()
+     x = pd.DataFrame(iris.data, columns = ['SEPAL_LENGTH','SEPAL_WIDTH',
+     'PETAL_LENGTH','PETAL_WIDTH'])
+     y = pd.DataFrame(list(map(lambda x: {0: 'setosa', 1: 'versicolor',
+     2:'virginica'}[x], iris.target)), columns = ['SPECIES'])
 
-   try:
-      oml.drop(table='IRIS')
-   except:
-      pass
+     try:
+        oml.drop(table='IRIS')
+     except:
+        pass
 
-  IRIS = oml.create(pd.concat([x, y], axis=1), table = 'IRIS')
-  iris = pd.concat([x, y], axis=1)
-  print(IRIS.columns)
-   ```
+    IRIS = oml.create(pd.concat([x, y], axis=1), table = 'IRIS')
+    iris = pd.concat([x, y], axis=1)
+    print(IRIS.columns)</copy>
+     ```
   ![Image alt text](images/create_iris_table.png "Create the Iris table")
 
 2. Run the following script to create the Diabetes table:
