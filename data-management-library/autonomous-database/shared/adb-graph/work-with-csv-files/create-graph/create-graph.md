@@ -1,4 +1,4 @@
-# Autonomous Graph Database: Create a graph using PGQL CREATE PROPERTY GRAPH statement
+# Graph Studio: Create a graph using PGQL CREATE PROPERTY GRAPH statement
 
 ## Introduction
 
@@ -77,7 +77,7 @@ CREATE PROPERTY GRAPH bank_graph
     VERTEX TABLES (
         BANK_ACCOUNTS as ACCOUNTS 
         KEY (ACCT_ID) 
-        LABELS ACCOUNTS
+        LABEL ACCOUNTS
         PROPERTIES (ACCT_ID, NAME)
     )
     EDGE TABLES (

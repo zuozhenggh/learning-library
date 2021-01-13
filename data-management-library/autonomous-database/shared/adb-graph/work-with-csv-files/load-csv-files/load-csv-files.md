@@ -1,4 +1,4 @@
-# Autonomous Graph Database: Load data from CSV files into tables
+# Graph Studio: Load data from CSV files into tables
 
 ## Introduction
 
