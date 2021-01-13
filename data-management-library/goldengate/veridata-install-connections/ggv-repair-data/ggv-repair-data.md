@@ -20,7 +20,9 @@ To begin with, ensure that you have completed Lab 3.
   To repair out-of-sync jobs:
   1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for generating SQL statements.
   2. From the table under **Finished Jobs**, click the **Out-Of-Sync** link for the selected Job.
-  3. Click **Repair**.
+    ![](./images/1-select-out-of-sync-link.png " ")
+  3. Click **Run Repair**.
+    ![](./images/2-click-run-repair.png " ")
   The out-of-sync records for the selected job are repaired.
     ![](./images/5-repaired-data.png " ")
 
