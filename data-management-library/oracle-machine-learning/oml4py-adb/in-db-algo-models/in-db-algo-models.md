@@ -321,7 +321,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     ![Image alt text](images/global_stats.png "Global statistics for partitioned sub-models")
 
-5. Run the following script to materialize the test dataset.
+5. Run the following script to materialize the test dataset. The `materialize` method pushes the contents represented by an OML proxy object (a view, a table and so on) into a table in Oracle Database.
     ```
     <copy>%python
 
