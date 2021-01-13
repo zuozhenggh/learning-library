@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-This workshop covers the basics needed to create and provision a Siebel Evironment using OCI.
+This workshop covers the basics needed to create and provision a Siebel Environment using OCI.
 
 After completing this workshop you should have a better understanding of OCI as well as the ability to create and access a Siebel environment that you created as well as view all of the components that were created during the lab to make that possible. After the completion of the lab you will teardown, or destroy, all created components.
 
-Estimated Lab Time: 1 hour and 45 minutes 
+Estimated Lab Time: 1 hour and 45 minutes
 
 Notes:
 
@@ -41,13 +41,13 @@ This workshop uses the following components:
 ### Objectives
 
 In this lab, you will:
-* Create a Sub-Compartment 
+* Create a Sub-Compartment
 * Create Virtual Cloud Network (VCN)
-* Provison a Siebel Marketplace image 
+* Provison a Siebel Marketplace image
 * Establish Security List Rules for Siebel Instance
 * Use Jenkins to deploy an instance of Siebel
 * Access Siebel CRM application
-* TErminate and teardown all of the resources that you have created 
+* TErminate and teardown all of the resources that you have created
 
 ### Prerequisites
 

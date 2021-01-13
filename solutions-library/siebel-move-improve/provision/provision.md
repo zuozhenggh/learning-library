@@ -1,6 +1,6 @@
 # Provisioning the Siebel Application
 
-## About this Workshop
+## Introduction
 
 In this exercise, you will create your Siebel application by setting up the Siebel Marketplace image and then use Jenkins to deploy an instance of Siebel.
 
@@ -14,6 +14,10 @@ To deploy the Siebel Instance, in this lab, you will:
 *   Generate a Jenkins URL
 *   Deploy and access Siebel instance
 
+### Prerequisites
+* A user with 'manage' access to Networking and Compute, compartment, and marketplace access
+* SSH key
+* VCN setup from the previous lab
 
 ## **STEP 1**: Launching Instance of Siebel from Marketplace
 
@@ -68,16 +72,14 @@ To deploy the Siebel Instance, in this lab, you will:
 ## **STEP 2**: Deploying the Siebel Application
 
 After you have created the instance, you have to generate two URLs:
-
 *	Jenkins URL: To deploy Siebel application
-
 *	Application domain URL: To create Siebel industry specific application
 
 Generating Jenkins URL
 
 1.	Copy the Public IP Address from your previously created Instance
 
-![Copy the public IP adress of the instance you created ](./images/2.1.png " ")
+  ![Copy the public IP adress of the instance you created ](./images/2.1.png " ")
 
 2.	Add the port 8080 preceded with a colon and paste the URL in a browser window to open the Jenkins application like this "<public IP address>:port number"
 
@@ -87,10 +89,9 @@ Generating Jenkins URL
 
 3. Once you arrive at the Jenkins site you will enter the information as follows
 
-    USERNAME AND PASSWORD :  siebel/oracle
+  USERNAME AND PASSWORD :  siebel/oracle
 
-
-    ![After reaching the site enter the username siebel, and password oracle. All lowercase](./images/2.3.png " ")
+  ![After reaching the site enter the username siebel, and password oracle. All lowercase](./images/2.3.png " ")
 
 4. After you have logged in you will see the Jenkins Home Screen. Select the ***SiebelDeploy*** option from the list
 
@@ -118,45 +119,47 @@ Generating Jenkins URL
 
 ## **STEP 3**: Generating application domain URL
 
-You can create the application URL using the port 4430, that you opened in the previous lab, and the industry you selected while deployment
+Generating the Application domain URL
 
-**NOTE:** For this step you Google Chrome may not allow you to access the site, we recommend using an alternative such as Firefox for this step
+1. You can create the application URL using the port 4430, that you opened in the previous lab, and the industry you selected while deployment
 
-The url you will need to type into your browser's search bar should look like this:
+  **NOTE:** For this step you Google Chrome may not allow you to access the site, we recommend using an alternative such as Firefox for this step
 
-```
+  The url you will need to type into your browser's search bar should look like this:
+
+  ```
 https://<public IP address>:4430/siebel/app/<industry>/enu
 ```
 
-For example, if you selected Sales, your application URL for Sales industry  could be the following.
+  For example, if you selected Sales, your application URL for Sales industry  could be the following.
 
     https://111.111.111.11:4430/siebel/app/sales/enu
 
-**NOTE:** Make sure your url has ***"https"*** and not ***"http"*** at the beginning of it otherwise you will not obtain access
+    **NOTE:** Make sure your url has ***"https"*** and not ***"http"*** at the beginning of it otherwise you will not obtain access
 
-![Type the appropriate url into the firefox searchbar](./images/blast.png " ")
+    ![Type the appropriate url into the firefox searchbar](./images/blast.png " ")
 
-When accessing the url you may come across a "Potential Security Risk" warning message
+2. When accessing the url you may come across a "Potential Security Risk" warning message
 
-![Click the advanced button on this warning screen](./images/bblast.png " ")
+    ![Click the advanced button on this warning screen](./images/bblast.png " ")
 
-Since this is the url and IP address that you created, you know that it is safe and that you can safely bypass the warning
+    Since this is the url and IP address that you created, you know that it is safe and that you can safely bypass the warning
 
-You can do this on Firefox by first clicking the ***Advanced Settings*** button and then clicking ***Accept Risk and Continue*** button
+    You can do this on Firefox by first clicking the ***Advanced Settings*** button and then clicking ***Accept Risk and Continue*** button
 
-![Click the accept the risk and continue button](./images/aclast.png " ")
+    ![Click the accept the risk and continue button](./images/aclast.png " ")
 
-Now you should see the proper site where you can log in with the default Siebel credentials
+3. Now you should see the proper site where you can log in with the default Siebel credentials
 
-USERNAME AND PASSWORD :    SADMIN/Welcome1
+  USERNAME AND PASSWORD :    SADMIN/Welcome1
 
-![On this login screen enter the default Siebel credentials, username SADMIN andd the password Welcome1](./images/last.png " ")
+  ![On this login screen enter the default Siebel credentials, username SADMIN andd the password Welcome1](./images/last.png " ")
 
-Please also note that the application URL will be specific to the Industry you select for deployment, for example, the URL could be:
+  Please also note that the application URL will be specific to the Industry you select for deployment, for example, the URL could be:
 
-For Service - https://"your ip address":4430/siebel/app/callcenter/enu
+  For Service - https://"your ip address":4430/siebel/app/callcenter/enu
 
-For Siebel Management Console (SMC) - https://"your ip address":4430/siebel/smc
+  For Siebel Management Console (SMC) - https://"your ip address":4430/siebel/smc
 
 # Extension to provision
 Verify Siebel version on home screen
