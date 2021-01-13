@@ -52,15 +52,15 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
   ![](./images/add-cloud-sql-menu-option.png " ")  
 
 2. In the **Add Cloud SQL** dialog box, provide the following information:
-    + **QUERY SERVER NODE SHAPE CONFIGURATION:** Select **`VM.Standard2.4`**.
-    + **QUERY SERVER NODE BLOCK STORAGE (IN GB):** Enter **`1000`**.
-    + **CLUSTER ADMIN PASSWORD:** Enter your cluster administration password that you chose when you created the cluster such as **`Training123`**.
+    + **Query Server Node Shape:** Select **`VM.Standard2.4`**.
+    + **Query Server Node Block Storage (IN GB):** Enter **`1000`**.
+    + **Cluster Admin Password:** Enter your cluster administration password that you chose when you created the cluster such as **`Training123`**.
 
   ![](./images/add-cloud-sql.png " ")  
 
     **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D).
 
-3. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`8`** instead of **`7`**.
+3. Click **Add**. The **Clusters** page is re-displayed. The state of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`8`** instead of **`7`**.
 
     ![](./images/updating-cluster.png " ")  
 

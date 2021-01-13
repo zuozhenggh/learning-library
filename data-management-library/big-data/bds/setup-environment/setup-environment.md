@@ -110,7 +110,7 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
 
    ![](./images/create-group-dialog-box.png " ")
 
-5. The **Group Details** page for the new **training-bds-admin-group** is displayed. In the **Group Members** section, click **Add User** to Group.
+5. The **Group Details** page for the new **training-bds-admin-group** is displayed. In the **Group Members** section, click **Add User to Group**.
 
   ![](./images/add-user-group.png " ")
 
@@ -205,7 +205,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
 
 ## **STEP 6:** Create a Virtual Cloud Network (VCN)
-In this step of the lab, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
+In this step, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
 
 1. In the **Oracle Cloud Console** Home page, click the **Navigation** menu, and then navigate to **Networking > Virtual Cloud Networks**.
 
@@ -247,7 +247,7 @@ In this step of the lab, you will create a new Virtual Cloud Network (VCN) that 
 
    ![](./images/vcn-created.png " ")
 
-8. You can click **View Virtual Cloud Network** to view the details of the new VCN network.
+8. Click **View Virtual Cloud Network** to view the details of your new VCN network.
 
    ![](./images/view-vcn.png " ")
 

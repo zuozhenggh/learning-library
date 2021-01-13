@@ -121,7 +121,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
 1. To view the cluster's details, click **`training-cluster`** in the **Name** column to display the **Cluster Details** page.
 
-   ![](./images/cluster-name-link.png " ")
+   ![](./images/status-creating.png " ")
 
    The **Cluster Information** tab displays the cluster's general and network information.
 
@@ -165,7 +165,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
     ![](./images/breadcrumb.png " ")  
 
-7. Once the **`training-cluster`** cluster is created successfully, the status changes to **Active**.   
+7. Once the **`training-cluster`** cluster is created successfully, the state changes to **Active**.   
 
   ![](./images/cluster-active.png " ")  
 
@@ -196,11 +196,9 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
      ![](./images/click-traininmn0.png " ")
 
-6. In the **Node Details** page, scroll-down to the **Node Metrics** section. It displays the following charts: CPU Utilization, Memory Utilization, Network Bytes In, Network Bytes Out, and Disk Utilization. You can hover over any chart to get additional details.
+6. In the **Node Details** page, scroll-down to the **Node Metrics** section. This section is displayed at the bottom of the **Node Details** page **only after** the cluster is successfully provisioned. It displays the following charts: **CPU Utilization**, **Memory Utilization**, **Network Bytes In**, **Network Bytes Out**, and **Disk Utilization**. You can hover over any chart to get additional details.
 
       ![](./images/traininmn0-metrics.png " ")  
-
-     **Note:** The **Node Metrics** section is displayed at the bottom of the **Node Details** page **only after** the cluster is provisioned.
 
 
 7. Click the **Cluster Details** link in the breadcrumbs at the top of the page to re-display the **Cluster Details** page.
