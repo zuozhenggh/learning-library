@@ -1,0 +1,30 @@
+# Graph and Machine Learning
+
+## Introduction
+
+You will learn about the relationship between Graph and Machine Learning.
+
+Time: 25 minutes
+
+### Objectives
+
+In this video, you will:
+* Learn what Graph technology is and where it's used
+* Learn about graph algorithms
+* Learn about how Graph can complement Machine Learning in various ways
+
+### Video
+
+[](youtube:emKJNmNaPDo)
+
+Congratulations on completing the workshop!
+
+## Next steps
+Please reach out to the workshop contributors to ask any questions or discuss your Data Science/Machine Learning projects:
+
+* **Contributors** Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
