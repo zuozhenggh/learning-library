@@ -25,15 +25,23 @@ Additionally, you will identify those employees who are at greatest risk for lea
 
 ### Prerequisites ###
 
-Login to Oracle Analytics Server
+This Lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+- Login to Oracle Analytics Server (url? User-id and paasword)
+- The following files are required to complete Lab 3:
+    - Attrition training.xlsx 
+    - Employee analysis.dva
   
-Access to the following files:  
- * Attrition training.xlsx  
- * Employee analysis.dva
+
 
 
 ## **STEP** 1: Using Machine Learning to Accelerate Root Cause Analysis
-In this exercise we are going to import a data set containing a number of employee records wi various attributes that record employee experience, performance, and incentive.  The data is historical in nature and includes a data element that identifies whether the employee has left the organization.  
+In this exercise we are going to import a data set containing a number of employee records with various attributes that record employee experience, performance, and incentive.  The data is historical in nature and includes a data element that identifies whether the employee has left the organization.  
 
 Note the attrition column, a binary indicator.  Each employee record contains either a “yes” or a “no” response. 
 
@@ -95,7 +103,7 @@ Explain is used to generate insights via a combination of natural language proce
 12. The fourth insight category illustrates the anomalies of our attrition attribute.The anomaly designator indicates combinations of each distinct value of attrition against all columns in the dataset to identify top outliers.  
 ![](./images/hr15.png " ")    
     It visualizes the actual value, expected value and highlights the places where actual and expected value do not match.
-13. select the following charts from the tabs in Explain:  
+13. Select the following charts from the tabs in Explain:  
     
     **Basic facts**: Attrition pie chart, YearsAtCompany by Attrition  
 

@@ -20,11 +20,18 @@ In this lab, you will explore the following features and capabilities
 
 ### Prerequisites
 
-Login to Oracle Analytics Server (url? User id and pw)
-The following files are required to complete Lab 2:
-- inventory.xlsx
-- vendor payments.xlsx
-- JRC Americas Group.jpg
+This Lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+- Login to Oracle Analytics Server (url? User-id and paasword)
+- The following files are required to complete Lab 2:
+    - inventory.xlsx
+    - vendor payments.xlsx
+    - JRC Americas Group.jpg
 
 
 ## **STEP 1:** Data Visualization and Mash Ups
