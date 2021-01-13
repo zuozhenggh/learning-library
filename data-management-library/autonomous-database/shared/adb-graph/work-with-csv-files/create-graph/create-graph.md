@@ -65,7 +65,9 @@ Learn how to
 
   ![](./images/18-modeler-suggested-model.png " ")    
 
-  We will replace the CREATE PROPERTY GRAPH statement with an updated definition.
+  We will replace the default incorrect CREATE PROPERTY GRAPH statement with an updated definition.  
+
+  ![](images/18b-incorrect-ddl.png " ")
 
 4.  Click the Source tab to bring up the existing statement and the edit dialog.  
   ![](./images/19-modeler-correct-ddl.png " ")   
