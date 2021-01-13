@@ -50,54 +50,97 @@ Step 6 to 15, you will work with Python Script Repository.
 
 1. Import `oml` module.
 
-  ```
-  %python
+    ```
+    <copy>%python
 
-  import oml
+    import oml
 
-  import warnings
-  warnings.filterwarnings('ignore')
-  ```  
-  ![Image alt text](images/sample1.png "Image title")
+    import warnings
+    warnings.filterwarnings('ignore')</copy>
+    ```  
+2. Run the following script to create a table `IRIS` using the iris data set:
+    ```
+    <copy>%python
 
-2. Create a table using IRIS data set:
+    from sklearn.datasets import load_iris
+    from sklearn import linear_model
+    import pandas as pd
 
-    ![Image alt text](images/sample1.png "Image title")
+    iris = load_iris()
+    x = pd.DataFrame(iris.data,
+    columns = ["SEPAL_LENGTH", "SEPAL_WIDTH", "PETAL_LENGTH", "PETAL_WIDTH"])
+    y = pd.DataFrame(list(map(lambda x: {0:'setosa', 1: 'versicolor', 2:'virginica'}[x], iris.target)),
+    columns = ['SPECIES'])
+    iris_df = pd.concat([x,y], axis=1)
 
+    try:
+      oml.drop(table="IRIS")
+    except:
+      pass
+    IRIS = oml.create(iris_df, table="IRIS")
+    IRIS.head(4)</copy>
+    ```
 
-## **STEP 2:** Build and Score a Linear Model from sklearn Directly in Python
+    ![Image alt text](images/iris_table.png "Iris table")
+
+## **STEP 2:** Build and Score a Linear Model from sklearn in Python
 In this step, you will validate your Python script, validate the user-defined function before invoking the embedded Python APIs.  You will also build a linear regression model LinearRegression.
 
-1. Run the following script to import the model linear_model from sklearn.
-
-
-
-2. Run the script to predict the petal width using the predict function:
-
+1. Run the following script to import the model `linear_model` from sklearn.
     ```
-    Adding code examples
-    Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-    <copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    <copy>%python
+
+    from sklearn import linear_model
+
+    lm = linear_model.LinearRegression()
+    X = iris_df[["PETAL_WIDTH"]]
+    y = iris_df[["PETAL_LENGTH"]]
+    mod = lm.fit(X, y)
+    print("Model:",mod)</copy>
     ```
-    ![Image alt text](images/sample1.png "Image title")
+    ![Image alt text](images/LinearRegression_model.png "Model")
+
+2. Run the script to predict the petal width using the `predict` function:
+    ```
+    <copy>%python
+
+    pred = mod.predict(iris_df[["PETAL_WIDTH"]])
+    pred[0:10]</copy>
+    ```
+    ![Image alt text](images/model_prediction.png "Prediction of petal width")
 
 3. Run the following script to assess model quality using mean squared error and R^2:
-
     ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    <copy>%python
+
+    from sklearn.metrics import mean_squared_error, r2_score
+
+    print('Coefficients: \n', mod.coef_)
+    print("Mean squared error: %.2f"
+    % mean_squared_error(iris_df[["PETAL_LENGTH"]], pred))
+
+    print('Variance score (1 is perfect prediction): %.2f' % r2_score(iris_df[["PETAL_LENGTH"]], pred))</copy>
     ```
-    ![Image alt text](images/sample1.png "Image title")
+    ![Image alt text](images/coeff_sqe.png "Coefficients and mean square error computation")
 
-4. Generate a scatterplot of the data along with a plot of the regression line.
+4. Run the following script to generate a scatterplot of the data along with a plot of the regression line:
+    ```
+    <copy>%python
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-  ![Image alt text](images/sample1.png "Image title")
+    import matplotlib.pyplot as plt
+
+    plt.scatter(iris_df.loc[:,"PETAL_WIDTH"], iris_df.loc[:,"PETAL_LENGTH"])
+    plt.plot(iris_df[["PETAL_WIDTH"]], pred, color='blue', linewidth=3)
+    plt.grid(True)
+    plt.title('Prediction of Petal Length')
+    #plt.xticks(()) # Disable ticks
+    #plt.yticks(())
+    plt.xlabel('Petal Width')
+    plt.ylabel('Petal Length')
+
+    plt.show()</copy>
+    ```
+   ![Image alt text](images/scatterplot_iris.png "Prediction of petal length and petal width")
 
 ## **STEP 3:** Build the model using Embedded Python Execution
 In this step, you will build the same linear model, but using the embedded Python execution Python engines under control of the Autonomous Database environment. You will perform the following tasks:
@@ -107,49 +150,170 @@ In this step, you will build the same linear model, but using the embedded Pytho
   **Note:**  The embedded Python execution can return images as well as structured content in the Python API. In the SQL API, as you'll see in another script, you choose between structured data, images, or XML output. Run this function to ensure it returns what is expected; - in this case, it is both an image and a model.
 
 
-### Define the user-defined function build_lm_1    
+### Define the user-defined function `build_lm_1`    
 
 1. Run the script to define the user-defined function `build_lm_1`:   
+    ```
+    <copy>%python
 
+    def build_lm_1(dat):
+      import oml
+      from sklearn import linear_model
+      import matplotlib.pyplot as plt
 
-  ![Image alt text](images/sample1.png "Image title")
+      lm = linear_model.LinearRegression()
+      X = dat[["PETAL_WIDTH"]]
+      y = dat[["PETAL_LENGTH"]]
+      mod = lm.fit(X, y)
 
+      pred = mod.predict(dat[["PETAL_WIDTH"]])
+      plt.scatter(dat.loc[:,"PETAL_WIDTH"], dat.loc[:,"PETAL_LENGTH"])
+      plt.plot(dat[["PETAL_WIDTH"]], pred, color='blue', linewidth=3)
+      plt.grid(True)
+      plt.title('Prediction of Petal Length')
+
+      plt.xlabel('Petal Width')
+      plt.ylabel('Petal Length')
+      plt.show()
+      return mod</copy>
+      ```
 2. Run this script to plot the model `build_lm_1` against the data points:
+    ```
+    <copy>%python
 
-
+    build_lm_1(iris_df)</copy>
+    ```
+    ![Image alt text](images/petal_length_prediction.png "Petal length prediction")
 ### Use the table_apply Function
 
 3. Use the `table_apply` function: The table_apply function takes the proxy object IRIS as input data and loads that data to the user-defined function as a pandas DataFrame. The user-defined function is passed as a Python string. You see that the model comes back as an OML object, which you can pull to the client and see that it's the linear model.
+    ```
+    %python
 
+    build_lm_1 = """def build_lm_1(dat):
+        import oml
+        from sklearn import linear_model
+        import matplotlib.pyplot as plt
 
+        lm = linear_model.LinearRegression()
+        X = dat[["PETAL_WIDTH"]]
+        y = dat[["PETAL_LENGTH"]]
+        mod = lm.fit(X, y)
+
+        pred = mod.predict(dat[["PETAL_WIDTH"]])
+        plt.scatter(dat.loc[:,"PETAL_WIDTH"], dat.loc[:,"PETAL_LENGTH"])
+        plt.plot(dat[["PETAL_WIDTH"]], pred, color='blue', linewidth=3)
+        plt.grid(True)
+        plt.title('Prediction of Petal Length')
+
+        plt.xlabel('Petal Width')
+        plt.ylabel('Petal Length')
+        plt.show()
+        return mod"""
+    ```
 4. By invoking `table_apply`, a Python engine is spawned and the user-defined function `build_lm_1` is invoked on that engine with the data referenced by IRIS being passed in as a pandas DataFrame. Part of the return value is the image, which is automatically displayed.
+    ```
+    <copy>%python
 
+    mod = oml.table_apply(data=IRIS, func = build_lm_1)</copy>
+    ```
+    ![Image alt text](images/table_apply_output.png "Petal length prediction")
+
+5. Run the following script to print the object, model, type and coefficient.
+    ```
+    <copy>%python
+
+    print("Object:",mod)
+    print("Model:",mod)
+    print("Type:",type(mod))
+    print("Coefficient", mod.coef_)</copy>
+    ```
+    ![Image alt text](images/print.png "Print model details")
 
 ### Use the row_apply Function
-5. Use the embedded python execution function `row_apply` to run a user-defined function on chunks of rows, which is useful to perform scoring in parallel for native Python models. In this step, define the user-defined function `score_lm_1` to make predictions (score data) using the data set and model passed in as arguments. It returns the predictions as a DataFrame object.
+6. Use the embedded python execution function `row_apply` to run a user-defined function on chunks of rows, which is useful to perform scoring in parallel for native Python models. In this step, define the user-defined function `score_lm_1` to make predictions (score data) using the data set and model passed in as arguments. It returns the predictions as a DataFrame object.
+    ```
+    <copy>%python
 
+    def score_lm_1(dat, model):
+      import pandas as pd
+      from sklearn import linear_model
+      pred = model.predict(dat[["PETAL_WIDTH"]])
+      return pd.concat([dat[['SPECIES', 'PETAL_LENGTH']],
+      pd.DataFrame(pred, columns=['PRED_PETAL_LENGTH'])], axis=1)</copy>
+    ```
+7. Use the `row_apply` to call this user-defined function and return a single DataFrame proxy object as the result. The `row_apply` function takes as arguments the proxy object `IRIS`, that we want 10 rows scored at a time (resulting in 15 function calls), the user-defined function, the linear model object, and that we want the result to be returned as a single table by specifying the table definition.
+    ```
+    <copy>%python
 
-
-6. Use the `row_apply` to invoke this user-defined function and return a single DataFrame proxy object as the result. The `row_apply` function takes as arguments the proxy object IRIS, that we want 10 rows scored at a time (resulting in 15 function invocations), the user-defined function, the linear model object, and that we want the result to be returned as a single table by specifying the table definition.
-
-
+    res = oml.row_apply(IRIS, rows=10, func=score_lm_1, model=mod,
+    func_value=pd.DataFrame([('a', 1, 1)],
+    columns=['SPECIES', 'PETAL_LENGTH', 'PRED_PETAL_LENGTH']))
+    res.head()</copy>
+    ```
+    ![Image alt text](images/row_apply.png "Output of row_apply function")
 ## **STEP 4:** Build One Model per Species using Group_Apply Function
 This step shows how to use the `oml.group_apply` function for model building. The `oml.group_apply` function passes the `oml.DataFrame` specified by the data argument to the user-defined function as its first argument. The index argument to `oml.group_apply` specifies the columns of `oml.DataFrame` by which the database groups the data for processing by the user-defined Python function. The `oml.group_apply` function can use data-parallel execution, in which one or more Python engines perform the same Python function on different groups of data.
 
 In this step, you build three models, one specific to each species and return them as a dictionary.
 
 1. Run the following script to build three models, one each for the species - Versicolor, Setosa, and Virginica. Here, you use the `oml.group_apply` function to invoke the user-defined function `build_lm_g` three times (one for each species) using two Python engines (parallel=2)
+    ```
+    <copy>%python
 
-    ![Image alt text](images/sample1.png "Image title")
+    def build_lm_g(dat):
+      import oml
+      from sklearn import linear_model
+      lm = linear_model.LinearRegression()
+      X = dat[["PETAL_WIDTH"]]
+      y = dat[["PETAL_LENGTH"]]
+      mod = lm.fit(X, y)
+      return mod
+
+    mod = oml.group_apply(IRIS[:,["PETAL_LENGTH","PETAL_WIDTH","SPECIES"]],
+      index=oml.DataFrame(IRIS['SPECIES']),
+      func=build_lm_g,
+      parallel=2)
+
+    print("Type:",type(mod))
+    mod</copy>
+    ```
+    ![Image alt text](images/model_group_apply.png "Models build using group_apply function")
 
 
 2. Change the user-defined function to save the models in a datastore. The datastore allows storing Python objects in the database under the provided name. The object assumes the name it is assigned in Python, here “mod_” and the corresponding Species value.
+    ```
+    <copy>%python
 
+    def build_lm_2(dat, dsname):
+      import oml
+      from sklearn import linear_model
+      lm = linear_model.LinearRegression()
+      X = dat[["PETAL_WIDTH"]]
+      y = dat[["PETAL_LENGTH"]]
+      lm.fit(X, y)
+      name = "mod_" + dat.loc[dat.index[0],'SPECIES']
+      oml.ds.save(objs = {name: lm}, name=dsname, append=True)
+      return name</copy>
+    ```
 3. Run the following script to print the outcome, which contains a dictionary of three elements each assigned the model object name.
+    ```
+    <copy>%python
 
+    try:
+      oml.ds.delete('ds-1')
+    except:
+      print("Datastore not found")
 
+    res = oml.group_apply(IRIS[:,["PETAL_LENGTH","PETAL_WIDTH","SPECIES"]],
+      index=oml.DataFrame(IRIS['SPECIES']),
+      func=build_lm_2, dsname="ds-1")
 
-**Note:** If the datastore exists, then delete it so that the group_apply function completes successfully. The group_apply function takes the data, the index parameter that specifies the column or columns to partition on, the user-defined function, and that we wish to automatically connect to the database from the Python engine. Connecting to the database is necessary when using the datastore functionality.    
+    print("Outcome:",res)</copy>
+    ```
+    ![Image alt text](images/print_outcome.png "Print outcome")
+
+**Note:** If the datastore exists, then delete it so that the `group_apply` function completes successfully. The `group_apply` function takes the data, the index parameter that specifies the column or columns to partition on, the user-defined function, and that we wish to automatically connect to the database from the Python engine. Connecting to the database is necessary when using the datastore functionality.    
 
 Here, the model object names are `mod_versicolor`, `mod_virginica`, and `mod_setosa`.
 When you load the datastore, you get the three models loaded into the client Python engine, assigned to their respective variables.
@@ -157,7 +321,25 @@ When you load the datastore, you get the three models loaded into the client Pyt
 
 Again, we create this script in the Python script repository and then invoke it by name using `table_apply`. We then pull the model to the client and view its type.
 
-4. The index_apply function allows the same function to be invoked a specified number of times. The first argument to the user-defined function is an index number for the function execution. For example, if the “times” argument is 10, each function invocation will receive a distinct value between 1 and 10. This can be used, e.g., for selecting behavior within the function or setting a random seed for Monte Carlo analysis.
+### Call a function N times
+4. The `index_apply` function allows the same function to be called a specified number of times. The first argument to the user-defined function is an index number for the function execution. For example, if the `times` argument is `10`, each function call will receive a distinct value between 1 and 10. This can be used, for instance, for selecting behavior within the function or setting a random seed for Monte Carlo analysis.
+    ```
+    <copy>%python
+
+    def compute_random_mean(index):
+        import numpy as np
+        import scipy
+        from statistics import mean
+        np.random.seed(index)
+        res = np.random.random((100,1))*10
+        return mean(res[1])
+
+    print("Test: ", compute_random_mean(3))
+
+    res = oml.index_apply(times=12, func=compute_random_mean)
+    res</copy>
+    ```
+    ![Image alt text](images/index_apply.png "Use index_apply to call function n times")
 
 ## **Try it yourself**
 Use the `group_apply` function to count the number of each species in the data set.
