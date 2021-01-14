@@ -9,13 +9,17 @@ You use Node.js and Express to create the REST API backend. After you install an
 1. Create the application folder:
 
 ```bash
-$ mkdir tasks-app && cd tasks-app
+<copy>
+mkdir tasks-app && cd tasks-app
+</copy>
 ```
 
 2. Initialize the project:
 
 ```
-$ npm init -y
+<copy>
+npm init -y
+</copy>
 ```
 
 >This command creates a minimal package.json file.
@@ -54,12 +58,14 @@ The following table shows the list of endpoints we want to implement in the API.
 To create a task in the NoSQL table, use the `put` method on the NoSQLClient client. Here's a snippet for creating a task in the table: 
 
 ```javascript
+<copy>
 const result = await client.put("tasks", {
           id: 1,
           title: "My first task",
           description: "This is my first task",
           completed: false,
       });
+</copy>
 ```
 
 The result object contains the response details (capacity consumed) and a property called `success`, which indicates whether the put was successful. Here's an example of the response from the `put` method:
@@ -73,7 +79,9 @@ The result object contains the response details (capacity consumed) and a proper
 To read data from the table, you can use SQL statements and the `query` method. Here's an example that shows how to get all tasks from the table:
 
 ```javascript
+<copy>
 const result = await client.query(`SELECT * FROM tasks`);
+</copy>
 ```
 
 The `rows` property on the result object contains all results from the query.
@@ -86,7 +94,9 @@ To delete a single task from the table, you can use the `delete` method and prov
 Here's an example of deleting a task with its ID set to 1:
 
 ```javascript
+<copy>
 const result = await client.delete("tasks", { id: 1 });
+</copy>
 ```
 
 Like when inserting data, the delete result object contains the success and consumed capacity:
