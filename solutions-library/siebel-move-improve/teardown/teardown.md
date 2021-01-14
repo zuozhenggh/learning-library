@@ -30,11 +30,11 @@ Estimated Lab Time: 15 minutes
 
     Now click on the three dots to the right of your Siebel instance and then select **Terminate**.
 
-    ![Use the small dropdown menu and click terminate](./images/Terminate_instance.png " ")
+    ![Use the small dropdown menu and click terminate](./images/terminate_instance.png " ")
 
     Once the image has finished terminating you will see its state change to terminated.
 
-    ![Status should be terminated as shown](./images/Terminated_instance_evidence.png " ")
+    ![Status should be terminated as shown](./images/terminated_instance_evidence.png " ")
 
 ## **STEP 2:** Terminating the VCN
 
@@ -56,7 +56,7 @@ Estimated Lab Time: 15 minutes
 
     **Note:** It may take a moment for all of the resources to load.
 
-    ![Terminate vcn menu](./images/Terminate_confirm.png " ")
+    ![Terminate vcn menu](./images/terminate_confirm.png " ")
 
     After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
 
