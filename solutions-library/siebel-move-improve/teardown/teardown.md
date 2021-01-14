@@ -22,7 +22,7 @@ Estimated Lab Time: 15 minutes
 
     ![Use the dropdown menu located in the upper lefthand corner to select instances](./images/dropdown_compute_instance.png " ")
 
-3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected. 
+3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected.
 
     ![List scope compartment portion](./images/correct_compartment.png " ")
 
@@ -30,18 +30,18 @@ Estimated Lab Time: 15 minutes
 
     Now click on the three dots to the right of your Siebel instance and then select **Terminate**.
 
-    ![Use the small dropdown menu and click terminate](./images/terminate_instance.png " ")
+    ![Use the small dropdown menu and click terminate](./images/Terminate_instance.png " ")
 
     Once the image has finished terminating you will see its state change to terminated.
 
-    ![Status should be terminated as shown](./images/terminated_instance_evidence.png " ")
+    ![Status should be terminated as shown](./images/Terminated_instance_evidence.png " ")
 
 ## **STEP 2:** Terminating the VCN
 
 1. Use the dropdown menu located in the upper lefthand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
     ![Navigate to compartments using the dropdown menu](./images/dropdown_networking_vcn.png " ")
 
-2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected. 
+2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected.
     ![](./images/correct_compartment.png " ")
 
 3. You shoud now be able to se the VCN that you created in the "Setup" lab.
@@ -56,11 +56,11 @@ Estimated Lab Time: 15 minutes
 
     **Note:** It may take a moment for all of the resources to load.
 
-    ![Terminate vcn menu](./images/terminate_confirm.png " ")
+    ![Terminate vcn menu](./images/Terminate_confirm.png " ")
 
     After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
 
-## **STEP 3:** Deleting the Siebel Compartment 
+## **STEP 3:** Deleting the Siebel Compartment
 
 1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity** then **Compartments**.
 
