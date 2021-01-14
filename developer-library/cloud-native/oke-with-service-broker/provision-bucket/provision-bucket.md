@@ -44,25 +44,26 @@ In this lab you will:
 
 1. Edit the file called `create-bucket.yaml` and replace the mention `CHANGE_COMPARTMENT_OCID_HERE` with the **compartment OCID** of the compartment where you deployed the OKE cluster, and the `CHANGE_NAMESPACE_HERE` with the name of the namespace of your ***OCI tenancy*** (not to confuse with the kubernetes namespace).
 
-     You can find this information with the CLI with the command
+     You can find this information with the CLI using the command:
 
-        ```bash
-        <copy>
-        oci os ns get
-        </copy>
-        ```
+    ```bash
+    <copy>
+    oci os ns get
+    </copy>
+    ```
 
-        which returns:
-        ```json
-        {
-        "data": "YOUR_TENANCY_NAMESPACE"
-        }
-        ```
+    which returns:
+
+    ```json
+    {
+    "data": "YOUR_TENANCY_NAMESPACE"
+    }
+    ```
 
 
-    ***Note: the bucket name needs to be unique across the OCI compartment, even if you deploy on different kubernetes namespaces.
+    ***Note: the bucket name needs to be unique across the OCI compartment, even if you deploy on different kubernetes namespaces.***
 
-    If you're running this as part of a workshop with multiple users, make sure you modify the name of the bucket to make it unique by replacing the name `testbucket` with your unique name both in the `create-bucket.yaml` and `pre-auth.yaml` files***
+    If you're running this as part of a workshop with multiple users, make sure you modify the name of the bucket to make it unique by replacing the name `testbucket` with your unique name both in the `create-bucket.yaml` and `pre-auth.yaml` files.
 
 
 ## **STEP 3:** Deploy
@@ -110,9 +111,9 @@ In this lab you will:
 
 3. You can also check in the OCI console under **Core -> Object Storage** in the compartment where you provisioned and you should see the bucket named `testbucket` (or the unique name you gave it)
 
-## **STEP 5:** Check the content of the secret
+## **STEP 5:** Look at the content of the secret
 
-1. Check the content of the secret by running:
+1. You can look at the content of the secret by running:
 
     ```bash
     <copy>
@@ -120,7 +121,7 @@ In this lab you will:
     </copy>
     ```
 
-    Which should return:
+    which should return:
 
     ```yaml
     apiVersion: v1
@@ -170,7 +171,7 @@ In this lab you will:
 
     When mounting the secret as a variable in a pod, this value will be decoded for you.
 
-    To decode the content of the field, you can do:
+    To observe the decoded content of the field, you can do:
 
     ```bash
     echo <field content> | base64 -d
@@ -182,13 +183,13 @@ In this lab you will:
     echo L3AvcXVoMGhTY205a0ltREhnRFZJZXZ4R3lnTzZOdWVjZ1lyZVQ5dDF5dTF5RjJrSFVzS1hzNkdvQzJaczJodS1OUy9uL3lvdV90ZW5hbmN5X25hbWVzcGFjZS9iL3Rlc3RidWNrZXQvby8K | base64 -d
     ```
 
-    Which returns:
+    which returns:
 
     ```bash
     /p/quh0hScm9kImDHgDVIevxGygO6NuecgYreT9t1yu1yF2kHUsKXs6GoC2Zs2hu-NS/n/you_tenancy_namespace/b/testbucket/o/
     ```
 
-    Note that this is the endpoint without the region namespace. You need to prefix it with the regional endpoint to reach the bucket, for example:
+    Note that this is the endpoint without the region namespace. You will need to prefix it with the regional endpoint to reach the bucket, for example:
     
     ```
     https://objectstorage.us-ashburn-1.oraclecloud.com/
@@ -292,7 +293,7 @@ In this lab you will:
     </copy>
     ```
 
-7. In the OCI console, check the object was created in the bucket.
+7. In the OCI console, check that the object was created in the bucket.
 
 ## **STEP 7:** Clean up
 
@@ -304,7 +305,7 @@ In this lab you will:
 
     However, the Pre-Authorized request giving access to the bucket to write does not allow listing or deleting objects, and this needs to be done with the CLI or through the OCI console.
 
-2. To undeploy, and terminate the ATP instance, delete the kubernetes instances
+2. To undeploy, and delete the storage bucket instance, delete the kubernetes instances
 
     ```bash
     <copy>
