@@ -22,14 +22,10 @@ In this lab, you will:
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
-    - Lab: Environment Setup
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Item no 2 with url - [URL Text](https://www.oracle.com).
 
+*This is the "fold" - below items are collapsed by default*
 
 ## **STEP 1**: title
 

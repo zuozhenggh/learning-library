@@ -8,15 +8,7 @@ During the workshop, you leveraged two of our extension options.
 
 This lab explores the Oracle Analytics Library and provides access to additional extension. 
 
-### Prerequisites
 
-This Lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
-    - Lab: Environment Setup
 
 ## **STEP 1:** Add Custom Visualization Plugin
 1. **DO NOT PERFORM THESE STEPS. THEY HAVE ALREADY BEEN DONE FOR YOU. THIS IS JUST FOR REFERENCE**.
