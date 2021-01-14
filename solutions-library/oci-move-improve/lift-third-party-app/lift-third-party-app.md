@@ -7,7 +7,7 @@ This lab walks you through the steps to capture an image of an existing, on-prem
 [Video 3](https://video.oracle.com/detail/video/6164386994001/lab-100-provisioning-a-vm-with-a-custom-image?autoStart=true&q=ocimoveimprove)
 [Video 4](https://video.oracle.com/detail/video/6164388506001/lab-100-accessing-the-cloud-native-application-instance?autoStart=true&q=ocimoveimprove)
 
-Estimated Lab Time:  3 hour - 
+Estimated Lab Time:  3 hour -
 
 ### Objectives
 * Create a cloud-compatible VMDK file
@@ -21,11 +21,11 @@ Estimated Lab Time:  3 hour -
 * Preinstalled Ubuntu Virtual Image (Will be provided to you during workshop from OraDocs repository)
 * VNC Viewer
 
-### Administrative Note
-Part 1 of Lab100 is optional. This section outlines how to configure an On-Premises e-Commerce application and capture a snapshot of it in the form of a .ova file which is converted to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Part 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JPnFpTHgLX9vNwc6KtkXIkXAFFM65sOHfzooM8AJfDk/n/orasenatdecanational01/b/osCommerceTest/o/osCommerceDemo-disk001.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
+### Administrative Notes
+Part 1 of Lab100 is optional. This section outlines how to configure an On-Premises e-Commerce application and capture a snapshot of it in the form of a .ova file which is converted to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Part 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/br_U1hSKSpS9Jm0coo8rqjZ981LGRBYl16EkkqmeeeVB7qd0pFdUapTyTe3RPL1b/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo-disk001.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
 
 ## **Step 1:** Download VirtualBox and Import Ubuntu Instance
-1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/P2EwRTj2PxXxG52U8XrFCeLZsb_P9wha2RDef5bYz9E/n/orasenatdecanational01/b/OsCommerce_ova_file/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
+1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NKU3FVrAJIsqJ9M2UMOytPtVdBdP3PkylExMd0aoGfEfTtspTnCNIqUP8hxl9fPt/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
 
     ![](./images/1.png "")
 
