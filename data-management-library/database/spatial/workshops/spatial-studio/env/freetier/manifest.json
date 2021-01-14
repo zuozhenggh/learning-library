@@ -14,10 +14,10 @@
         "title": "Lab 1: Autonomous Database",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
     },
-      {
-        "title": "Lab 2: Deploy Spatial Studio",
-        "filename": " "
-    },
+    {
+      "title": "Lab 2: Provision Spatial Studio",
+      "filename": "../../../../spatial-studio/env/env-marketplace/env-marketplace.md"
+  },
     {
       "title": "Lab 3: Load Data",
       "filename": "../../../../spatial-studio/intro/load-data/load-data.md"
