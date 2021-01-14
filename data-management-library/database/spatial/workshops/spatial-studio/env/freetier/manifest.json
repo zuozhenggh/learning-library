@@ -15,23 +15,26 @@
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
     },
     {
-      "title": "Lab 2: Provision Spatial Studio",
+      "title": "Lab 2: Spatial Studio Repo Schema",
+      "filename": "../../../../spatial-studio/env/repo-schema/repo-schema.md"
+  },    {
+      "title": "Lab 3: Provision Spatial Studio",
       "filename": "../../../../spatial-studio/env/env-marketplace/env-marketplace.md"
-  },
+},
     {
-      "title": "Lab 3: Load Data",
+      "title": "Lab 4: Load Data",
       "filename": "../../../../spatial-studio/intro/load-data/load-data.md"
   },
   {
-      "title": "Lab 4: Create Project",
+      "title": "Lab 5: Create Project",
       "filename": "../../../../spatial-studio/intro/create-project/create-project.md"
   },
   {
-      "title": "Lab 5: Explore Point Styling",
+      "title": "Lab 6: Explore Point Styling",
       "filename": "../../../../spatial-studio/intro/apply-styling/apply-styling.md"
   },
   {
-      "title": "Lab 5: Explore Layer Interactions",
+      "title": "Lab 7: Explore Layer Interactions",
       "filename": "../../../../spatial-studio/intro/apply-interactions/apply-interactions.md"
   }
     ]

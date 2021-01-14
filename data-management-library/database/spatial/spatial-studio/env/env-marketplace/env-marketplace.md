@@ -57,16 +57,67 @@ Opening paragraph...
 
   ![Image alt text](images/env-marketplace-6.png "Image title")
 
-4. For networking, you have the option to automatically create a new VCN or an existing one. Select the Compartment for creating a new VCN or searching for existing VCNs. The image below shows an example using Create New VCN. If you do not have other existing VCNs then the remaining defaults can be left as is. If you do have other existing VCNs then update the CIDR values to avoid conflict. Scroll down to the SSH Key section.
+4. For networking, you have the option to automatically create a new VCN or an existing one. Select the Compartment for creating a new VCN or searching for existing VCNs. The image below shows an example using Create New VCN. If you do not have other existing VCNs then the remaining defaults can be left as is. If you do have other existing VCNs then update the CIDR values to avoid conflict. Scroll down to the SSH Keys section.
 
   ![Image alt text](images/env-marketplace-7.png "Image title")
 
-5. For 
+5. Loading a SSH public key enables access to Spatial Studio's file system for administrative purposes. The dialog has links to general SSH connection documentation. Submit your SSH public key by browsing to the key file or copy-pasting the key string. If you load you SSH public key from a file, the key file name will be displayed as shown in the image below. Click Next.
 
   ![Image alt text](images/env-marketplace-8.png "Image title")
 
+6. Review the summary of your entries. If corrections are needed then click Back. Otherwise click Create to start the deployment process. You will be redirected to a Job Details page for the deployment.  
 
-*At the conclusion of the lab add this statement:*
+![Image alt text](images/env-marketplace-9.png "Image title")
+
+## **STEP 3:** Monitor Deployment Progress
+
+Opening paragraph...
+
+1. The Logs section at the bottom of the Job Details page will show progress. It will initially display a spinner while setting up for deployment. 
+
+  ![Image alt text](images/env-marketplace-10.png "Image title")
+
+After a couple minutes you will see log information.
+
+  ![Image alt text](images/env-marketplace-11.png "Image title")
+
+2. Scroll down to the bottom of the logs section. When complete you will see Apply Complete! followed by instance details. The last item listed is the Spatial Studio public URL. Copy this URL and paste into a browser.
+
+  ![Image alt text](images/env-marketplace-12.png "Image title")
+
+## **STEP 4:** Open Spatial Studio
+
+Opening paragraph...
+
+1. Opening the Spatial Studio public URL will first display a browser warning related to privacy and security. The specific warning depends on your platform and browser. This is not a Spatial Studio issue; it is generic to  access of web sites that do not have a signed HTTPS certificate. Loading and configuring a signed certificate removes this warning. However the process of loading certificates in Jetty is beyond the scope of this workshop. 
+
+  ![Image alt text](images/env-marketplace-13.png "Image title")
+
+   Click the link to contine to the website.
+
+2. Enter the Spatial Studio admin user name (default is studio_admin) and the password you entered in the Step 2 (Create Stack wizard, item 3). Then click Sign In.
+
+  ![Image alt text](images/env-marketplace-14.png "Image title")
+
+3. On the first login to a Spatial Studio instance, you are prompted for connection information for the database schema to use as the Spatial Studio's metadata repository. This is the database schema used for all of Spatial Studio's metadata and can also be used by Spatial Studio admin users for storing other data. You may use a traditional or Autonomous Oracle Database. This example uses the schema we created in Lab 2 so select Oracle Autonomous Dataabse and click Next.
+
+  ![Image alt text](images/env-marketplace-15.png "Image title")  
+
+4. For Autonomous Database, browse or drag-and-drop the Cloud Wallet zip file. After loading, the wallet file name will be listed as Selected Wallet. Click OK.
+
+  ![Image alt text](images/env-marketplace-16.png "Image title")  
+
+5. Enter the user name and password defined in Lab 2 and the service. Medium service level is appropriate for this workshop. Click OK.
+
+  ![Image alt text](images/env-marketplace-17.png "Image title")  
+
+6. Wait for a few moments while Spatial Studio makes its initial connection to the schema and creates several metadata tables. When finished, Spatial Studio will open with Getting Started information.
+
+  ![Image alt text](images/env-marketplace-18.png "Image title")  
+
+
+Oracle Spatial Studio is now provisioned. 
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
