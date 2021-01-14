@@ -305,7 +305,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     vi ~/.bashrc  
         export LIBDIR=/home/ubuntu/WRF/libs  
         export LD_LIBRARY_PATH=$LIBDIR/netcdf/lib:$LD_LIBRARY_PATH   
-        export PATH=$LIBDIR/mpich/bin:$PATHh
+        export PATH=$LIBDIR/mpich/bin:$PATH
     source ~/.bashrc
     </copy>
     ```
