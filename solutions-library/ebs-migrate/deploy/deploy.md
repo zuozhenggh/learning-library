@@ -9,7 +9,7 @@ In this section, you will provision a new E-Business Suite Environment from the 
 ### **Objectives**
 
 In this lab, you will:
-
+ 
 * Provision an EBS instance in Cloud Manager from a backup
 
 ### **Prerequisites**
