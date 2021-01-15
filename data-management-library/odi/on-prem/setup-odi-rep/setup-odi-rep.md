@@ -183,7 +183,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
   ![](./images/odi_models_2.png " ")      
 
-Congratulations!  Now you have the environment to run the ODI labs. You many now proceed to the next lab.
+Congratulations!  Now you have the environment to run the ODI labs. You may proceed to the next lab.
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)
