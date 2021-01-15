@@ -2,18 +2,18 @@
 
 ## About This Workshop
 
-This workshop covers how to load data in CSV files into the database and introduces key graph data modeling and analysis concepts and the interactive Graph Studio for working with graphs in an Autonomous Database.
+This workshop covers how to load data in CSV files into the database and introduces key graph data modeling and analysis concepts and the interactive Graph Studio for working with graphs in an Autonomous Database. It shows you how to use graph queries to find circular payments, i.e. potentially fraudulent transactions. You will load data from CSV files containing (artificial) Account and Transaction information. Then create a graph and finally query it and visualize the results.
 
 Estimated Workshop Time: 45 minutes
 
-### About Autonomous Graph 
-Oracle Autonomous Database contains features that enable it to function as a scalable property graph database. They automate the creation of graph models and in-memory graphs from database tables. They  include notebooks and developer APIs for executing graph queries using PGQL, a SQL-like graph query language, and nearly 60 built-in graph algorithms, and offer dozens of visualizations including native graph visualization.
+### About Graph Studio
+Oracle Autonomous Database contains features that enable it to function as a scalable property graph database. They automate the creation of graph models and in-memory graphs from database tables. They include notebooks and developer APIs for executing graph queries using PGQL, a SQL-like graph query language, and nearly 60 built-in graph algorithms, and offer dozens of visualizations including native graph visualization.
 
-Watch the following two videos for more information on Autonomous Graph. The first is an introduction to property graphs and their use cases. The second is a tour of the Graph Studio interface. 
+Watch the following two videos for more information on Graph Studio. The first is an introduction to property graphs and their use cases. The second is a tour of the Graph Studio interface. 
 
 [](youtube:eCd-969hrak)   Simply Graph Analytics with Autonomous Database   
 
-[](youtube:S6Q-IJcBkU0)   Autonomous Graph Database: A tour of the Graph Studio interface
+[](youtube:S6Q-IJcBkU0)   Autonomous Database: A tour of the Graph Studio interface
 
 ### Objectives
 
@@ -28,7 +28,7 @@ In this workshop you will:
 ### Prerequisites
 * Oracle Cloud Account
 * Provisioned ADB-Shared instance
-* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Autonomous Graph Database workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)
+* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)
   
 
 ## Acknowledgements
