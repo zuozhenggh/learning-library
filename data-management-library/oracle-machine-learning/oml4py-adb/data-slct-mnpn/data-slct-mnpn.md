@@ -2,13 +2,18 @@
 
 ## Introduction
 
-This lab shows how to use OML4Py methods to work with data and to perform exploratory analysis of the data. In this lab, you'll learn to use to select and manipulate data using the transparency layer.  
+This lab shows how to use the transparency layer classes to work with data and to perform exploratory analysis of the data.
 
-
-Estimated Lab Time: 60 minutes
+Estimated Lab Time: 15 minutes
 
 ### About Data Selection and Manipulation
-Enter background information here..
+The transparency layer classes allows you to convert select Python objects to Oracle Autonomous Database (ADB) objects and also call a range of familiar Python functions that are overloaded to call the corresponding SQL on tables in the
+database.
+The OML4Py transparency layer does the following:
+* Contains functions that convert Python `pandas.DataFrame` objects to database tables
+* Overloads Python functions, translating their functionality into SQL
+* Leverages proxy objects for database data
+* Uses familiar Python syntax to manipulate database data
 
 ### Objectives
 
@@ -19,53 +24,52 @@ In this lab, you will:
   * Use the `append` function
   * Use the `concat` function
   * Use the `split` and `KFold` function
-  * Use the crosstab and pivot_table functions on a DataFrame
-
+  * Use the crosstab and `pivot_table` functions on a DataFrame
 
 ## **STEP 1**: Import libraries supporting OML4Py and create data table
 
-To use OML4Py, you must first import the oml module and the Pandas library.
+To use OML4Py, you must first import the `oml` module and the Pandas library.
 
-1. Run the following commands to import the oml and Pandas library:
+1. Run the following commands to import the `oml` and Pandas library:
 
-   ```
-   %python
+     ```
+     <copy>%python
 
-   import warnings
-   warnings.filterwarnings('ignore')
+     import warnings
+     warnings.filterwarnings('ignore')
 
-   import pandas as pd
-   import oml
+     import pandas as pd
+     import oml
 
-   pd.set_option('display.max_rows', 500)
-   pd.set_option('display.max_columns', 50
-   pd.set_option('display.width', 1000)
-   ```
-   ![Image alt text](images/omp_lib_display_options.png "Import libraries and Set display options")
-2. Create a temporary table IRIS_TMP for the IRIS data using oml.push function:
+     pd.set_option('display.max_rows', 500)
+     pd.set_option('display.max_columns', 50
+     pd.set_option('display.width', 1000)</copy>
+     ```
+     ![Image alt text](images/omp_lib_display_options.png "Import libraries and Set display options")
+2. Create a temporary table IRIS_TMP for the IRIS data using `oml.push` function:
 
-   ```
-   %python
+     ```
+     <copy>%python
 
-   from sklearn.datasets import load_iris
-   import pandas as pd
+     from sklearn.datasets import load_iris
+     import pandas as pd
 
-   iris = load_iris()
+     iris = load_iris()
 
-   x = pd.DataFrame(iris.data, columns = ['SEPAL_LENGTH','SEPAL_WIDTH', 'PETAL_LENGTH','PETAL_WIDTH'])
-   y = pd.DataFrame(list(map(lambda x: {0: 'setosa', 1: 'versicolor', 2:'virginica'}[x], iris.target)),
-   columns = ['SPECIES'])
-   z = pd.concat([x, y], axis=1)
+     x = pd.DataFrame(iris.data, columns = ['SEPAL_LENGTH','SEPAL_WIDTH', 'PETAL_LENGTH','PETAL_WIDTH'])
+     y = pd.DataFrame(list(map(lambda x: {0: 'setosa', 1: 'versicolor', 2:'virginica'}[x], iris.target)),
+     columns = ['SPECIES'])
+     z = pd.concat([x, y], axis=1)
 
-   IRIS_TMP = oml.push(z)
-   ```
-   ![Image alt text](images/temp_table_iris_data.png "Temporary Table for Iris Data")
+     IRIS_TMP = oml.push(z)</copy>
+     ```
+     ![Image alt text](images/temp_table_iris_data.png "Temporary Table for Iris Data")
 
 ## **STEP 2:** Select Table Columns using Proxy Object IRIS_TMP
 
 1. Run the following script to select specific columns by name and return the first three records with the specified column names.
     ```
-    %python
+    <copy>%python
 
     IRIS_projected1 = IRIS_TMP[:, ["SEPAL_LENGTH", "PETAL_LENGTH"]]
     IRIS_projected1.head(3)
@@ -105,7 +109,6 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
     ["SEPAL_LENGTH", "PETAL_LENGTH"]]
     print("Length: ", len(IRIS_filtered1))
     IRIS_filtered1.head(3)
-
     ```
     ![Image alt text](images/simple_row_selection.png "Simple row selection")
     The script returns the rows with petal length less than 1.5.
@@ -196,13 +199,13 @@ Use the `concat` method to combine columns from one data frame proxy object with
 1. Use the `concat` function to create two oml.DataFrame objects and combine the objects column-wise:
 
   ```
-  %python
+  <copy>%python
 
   from collections import OrderedDict
 
   x = MY_DF[['id', 'val']]  
   y = MY_DF[['num', 'ch']]
-  x.concat(y)
+  x.concat(y)</copy>
   ```
   ![Image alt text](images/column_wise_concat.png "Column wise concatenation")
   **Note:** The command automatically prints the result. When there is a single result to show, print command is not needed.
@@ -216,10 +219,10 @@ Use the `concat` method to combine columns from one data frame proxy object with
 3. Concatenate object x with multiple objects and turn on automatic name conflict resolution. In this example, `auto_name=True` controls whether to call automatic name conflict resolution if one or more column names are duplicates in the two data frames:
 
   ```
-  %python
+  <copy>%python
 
   z = MY_DF[:,'id']
-  x.concat([z, w, y], auto_name=True)
+  x.concat([z, w, y], auto_name=True)</copy>
   ```
 
   ![Image alt text](images/concat_columns_name_reso.png "Concatenate columns with name resolution")
@@ -227,9 +230,9 @@ Use the `concat` method to combine columns from one data frame proxy object with
 4. Run the following script to concatenate multiple OML data objects and perform customized renaming:
 
     ```
-    %python
+    <copy>%python
 
-    x.concat(OrderedDict([('ID',z), ('round(exp(2*num))',w), ('New_',y)]))
+    x.concat(OrderedDict([('ID',z), ('round(exp(2*num))',w), ('New_',y)]))</copy>
     ```
 
   ![Image alt text](images/concat_with_renaming.png "Concatenate with renaming")
@@ -242,13 +245,13 @@ Use the `merge` method to join data from two objects.
 1. Run the following script to merge or join different columns from the MY_DF table:
 
     ```
-    %python
+    <copy>%python
 
     x = MY_DF[['id', 'val']]  
     y = MY_DF[['num', 'ch']]
 
     z = x.merge(y)
-    z
+    z</copy>
     ```
 
   ![Image alt text](images/cross_join.png "Cross join")
@@ -257,9 +260,9 @@ Use the `merge` method to join data from two objects.
 2. Run the following script to perform a left outer join using the `merge` method.
 
   ```
-  %python
+  <copy>%python
 
-  x.head(4).merge(other=MY_DF[['id', 'num']], on="id", suffixes=['.l','.r'])
+  x.head(4).merge(other=MY_DF[['id', 'num']], on="id", suffixes=['.l','.r'])</copy>
   ```
 
   ![Image alt text](images/left_outer_join.png "Concatenate with renaming")
@@ -279,7 +282,7 @@ To work with the drop functionality, you first create a demo data table `MY_DF2.
 1. Run the following script to create the table `MY_DF2` from Pandas dataframe:
 
   ```
-  %python
+  <copy>%python
 
   my_df2 = pd.DataFrame({'numeric': [1, 1.4, -4, -4, 5.432, None, None],
   'string1' : [None, None, 'a', 'a', 'a', 'b', None],
@@ -287,16 +290,16 @@ To work with the drop functionality, you first create a demo data table `MY_DF2.
   MY_DF2 = oml.push(my_df2, dbtypes = {'numeric': 'BINARY_DOUBLE',
   'string1':'CHAR(1)',
   'string2':'CHAR(1)'})
-  MY_DF2
+  MY_DF2</copy>
   ```
   ![Image alt text](images/my_df2_table.png "Create MY_DF2 Table")
 
 2. Run the script to drop rows with any missing values:
 
   ```
-  %python
+  <copy>%python
 
-  MY_DF2.dropna(how='any')
+  MY_DF2.dropna(how='any')</copy>
   ```
 
   ![Image alt text](images/drop_rows_missing_vals.png "Drop rows with any missing values")
@@ -304,9 +307,9 @@ To work with the drop functionality, you first create a demo data table `MY_DF2.
 3. Run the following script to drop rows with missing numeric values:
 
   ```
-  %python
+  <copy>%python
 
-  MY_DF2.dropna(how='any', subset=['numeric'])
+  MY_DF2.dropna(how='any', subset=['numeric'])</copy>
   ```
 
   ![Image alt text](images/drop_missing_num_vals.png "Drop rows with missing numeric values")
@@ -314,9 +317,9 @@ To work with the drop functionality, you first create a demo data table `MY_DF2.
 4. Run the following script to drop rows where all columns values are missing:
 
   ```
-  %python
+  <copy>%python
 
-  MY_DF2.dropna(how='all')
+  MY_DF2.dropna(how='all')</copy>
   ```
 
   ![Image alt text](images/drop_rows_with_missing_col_vals.png "Drop rows with missing column values")
@@ -324,18 +327,18 @@ To work with the drop functionality, you first create a demo data table `MY_DF2.
 5. Use the `drop_duplicates()` function to drop duplicate rows:
 
   ```
-  %python
+  <copy>%python
 
-  MY_DF2.drop_duplicates()
+  MY_DF2.drop_duplicates()<?copy>
   ```
   ![Image alt text](images/drop_duplicate_rows.png "Drop duplicate rows")
 
 6. Run the following script to drop a specific column:
 
   ```
-  %python
+  <copy>%python
 
-  MY_DF2.drop('string2')
+  MY_DF2.drop('string2')</copy>
   ```
   ![Image alt text](images/drop_specific_col.png "Drop specific columns")
 
@@ -356,7 +359,7 @@ The following tasks are covered in this lab:
 1. First, create a table using the digits data set.
 
     ```
-    %python
+    <copy>%python
 
     import pandas as pd
     from sklearn.datasets import load_digits
@@ -370,7 +373,7 @@ The following tasks are covered in this lab:
           name = 'target')],
           axis = 1)
     DIGITS = oml.push(pd_digits)
-    print("Shape: ", DIGITS.shape)
+    print("Shape: ", DIGITS.shape)</copy>
     ```
 
     ![Image alt text](images/load_digits.png "Digits table")
@@ -378,10 +381,10 @@ The following tasks are covered in this lab:
 2. Run the following script to split the data set into samples of 20% and 80% size.
 
     ```
-    %python
+    <copy>%python
 
     splits = DIGITS.split(ratio=(.2, .8), use_hash = False)
-    print("Split lengths: ", [len(split) for split in splits])
+    print("Split lengths: ", [len(split) for split in splits])</copy>
     ```
 
     ![Image alt text](images/80_20_data_split.png "Data Split into 80 20 ratio")
@@ -389,10 +392,10 @@ The following tasks are covered in this lab:
 3. Run the following script to perform stratified sampling on the column `target`. In this example, the column in which you perform stratified sampling is `target`.
 
     ```
-    %python
+    <copy>%python
 
     splits = DIGITS.split(strata_cols=['target'])
-    print("Split lengths: ", [split.shape for split in splits])
+    print("Split lengths: ", [split.shape for split in splits])</copy>
     ```
 
     ![Image alt text](images/stratified_sampling.png "Stratified Sampling")
@@ -400,11 +403,11 @@ The following tasks are covered in this lab:
 4. Verify that the stratified sampling generates splits in which all of the different categories of digits (digits 0~9) are present in each split
 
   	 ```
-     %python
+     <copy>%python
 
      print("Verify values: ", [split['target'].drop_duplicates().sort_values().pull()
 
-     for split in splits])
+     for split in splits])</copy>
      ```
 
      ![Image alt text](images/verify_stratified_sampling.png "Verify stratified sampling")
@@ -413,10 +416,10 @@ The following tasks are covered in this lab:
 5. Compute hash on the target column.
 
     ```
-    %python
+    <copy>%python
 
     splits = DIGITS.split(hash_cols=['target'])
-    print("Split lengths: ", [split.shape for split in splits])
+    print("Split lengths: ", [split.shape for split in splits])</copy>
     ```
 
     ![Image alt text](images/compute_hash.png "Compute hash on column `target`")
@@ -424,10 +427,10 @@ The following tasks are covered in this lab:
 6. Verify that the different categories of digits (digits 0~9) are present in only one of the splits generated by hashing on the category column:
 
     ```
-    %python
+    <copy>%python
 
     print("Verify values: ", [split['target'].drop_duplicates().sort_values().pull()
-    for split in splits])
+    for split in splits])</copy>
     ```
 
     ![Image alt text](images/verify_hash.png "Verify hash")
@@ -435,11 +438,11 @@ The following tasks are covered in this lab:
 7. Split the data randomly into 4 consecutive folds using the `KFold` function.
 
     ```
-    %python
+    <copy>%python
 
     folds = DIGITS.KFold(n_splits=4)
 
-    print("Split lengths: ", [(len(fold[0]), len(fold[1])) for fold in folds])
+    print("Split lengths: ", [(len(fold[0]), len(fold[1])) for fold in folds])</copy>
     ```
 
     ![Image alt text](images/random_data_split.png "Random data split into 4 consecutive folds")
@@ -457,7 +460,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
 1. Create a temporary table `MY_DF4` using a demo data set. This data set reports on the speed and accuracy for a given task characterized by hand used (left or right) and gender (male, female, or not specified).
 
     ```
-    %python
+    <copy>%python
 
     my_df4 = pd.DataFrame({
         'GENDER': ['M', 'M', 'F', 'M', 'F', 'M', 'F', 'F', None, 'F', 'M', 'F'],
@@ -466,7 +469,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
         'ACCURACY': [.92, .94, .87, .9, .85, .97, .96, .93, .89, .84, .91, .95]
         })
 
-    MY_DF4 = oml.push(my_df4)
+    MY_DF4 = oml.push(my_df4)</copy>
     ```
 
   ![Image alt text](images/My_DF4_table.png "Create MY_DF4 table")
@@ -474,9 +477,9 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
 2. Use the `crosstab` function to find the categories that the most entries belonged to. This example shows how to use the `crosstab` function to find the count of gender, and right-handed and left-handed persons in descending order in the MY_DF4 dataframe.  
 
     ```
-    %python
+    <copy>%python
 
-    MY_DF4.crosstab('GENDER', 'HAND').sort_values('count', ascending=False)
+    MY_DF4.crosstab('GENDER', 'HAND').sort_values('count', ascending=False)</copy>
     ```  
 
       ![Image alt text](images/my_df4_crosstab.png "Script to find categories of entries")
@@ -484,9 +487,9 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
 3. Use the `crosstab` function to find the ratio of entries with different hand values for each gender and across entries in the `MY_DF4` dataframe.
 
     ```
-    %python
+    <copy>%python
 
-    MY_DF4.crosstab('GENDER', 'HAND', pivot = True, margins = True, normalize = 0)
+    MY_DF4.crosstab('GENDER', 'HAND', pivot = True, margins = True, normalize = 0)</copy>
     ```
 
     ![Image alt text](images/my_df4_hand_vals.png "Crosstab function to find ratio of entries")
@@ -494,20 +497,20 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
 4. Use the `pivot_table` function to find the mean speed across all gender and hand combinations in the `MY_DF4` dataframe.
 
   	```
-    %python
+    <copy>%python
 
-    MY_DF4.pivot_table('GENDER', 'HAND', 'SPEED')
+    MY_DF4.pivot_table('GENDER', 'HAND', 'SPEED')</copy>
     ```
     ![Image alt text](images/find_mean_speed.png "Pivot table function to find mean speed")
 
 5. Use `pivot_table` function to find the maximum and minimum speed for every gender and hand combination and across all combinations in the `MY_DF4` dataframe:
 
     ```
-    %python
+    <copy>%python
 
     MY_DF4.pivot_table('GENDER', 'HAND', 'SPEED',
                     aggfunc = [oml.DataFrame.max, oml.DataFrame.min],
-                    margins = True)
+                    margins = True)</copy>
     ```
 
     ![Image alt text](images/max_min_speed.png "Pivot table function to find minimum and maximum speed")
@@ -520,7 +523,7 @@ This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions usin
 1. Import the `matplotlib` library and wine data set from sklearn. Run the following script:
 
   ```
-  %python
+  <copy>%python
 
   import matplotlib.pyplot as plt
   from sklearn.datasets import load_wine
@@ -533,7 +536,7 @@ This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions usin
                       meanline=True, patch_artist=True,
                       labels=WINE.columns[8:12])
     plt.title('Distribution of Wine Attributes')
-    plt.show()
+    plt.show()</copy>
   ```
 
   ![Image alt text](images/boxplot.png "Box Plot depicting distribution of wine attributes")
@@ -542,14 +545,14 @@ This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions usin
 2. Run the following script to render the data in a histogram:
 
     ```
-    %python
+    <copy>%python
 
     oml.graphics.hist(WINE['proline'], bins=10, color='red',
                       linestyle='solid', edgecolor='black')
     plt.title('Proline content in Wine')
     plt.xlabel('proline content')
     plt.ylabel('# of wine instances')
-    plt.show()
+    plt.show()</copy>
     ```
   ![Image alt text](images/histogram.png "Histogram of Proline content in wine")
 
@@ -573,7 +576,7 @@ In this step, you learn the following:
 
 1. To create a Pandas DataFrame and load into the database, run the following script:
     ```
-    %python
+    <copy>%python
 
     from sklearn.datasets import load_iris
     from sklearn import linear_model
@@ -589,11 +592,8 @@ In this step, you learn the following:
     IRIS_TMP = oml.push(iris_df)
       print("Shape:",IRIS_TMP.shape)
       print("Columns:",IRIS_TMP.columns)
-    IRIS_TMP.head(4)
+    IRIS_TMP.head(4)</copy>
     ```
-
-
-
 
 ### **Step 8.2**: Create a persistent database table using oml.create
 
@@ -604,7 +604,7 @@ Use the function `z.show` to automatically pull the desired data to Python for d
 1. To create a persistent database table by using `oml.create` function, run the following:
 
     ```
-    %python
+    <copy>%python
     try:
         oml.drop(table="IRIS")
     except:
@@ -612,15 +612,13 @@ Use the function `z.show` to automatically pull the desired data to Python for d
 
     IRIS = oml.create(iris_df, table="IRIS")
     print("Shape:",IRIS.shape)
-    z.show(IRIS.head(10))
+    z.show(IRIS.head(10))</copy>
    ```
    ![Image alt text](images/oml_create_table.png "oml_create function to create table")
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)

@@ -7,7 +7,7 @@ This lab highlights a few of the machine learning algorithms available in OML4Py
 
 
 
-Estimated Lab Time: 120 minutes
+Estimated Lab Time: 15 minutes
 
 ### About in-database algorithms and models
 Oracle Machine Learning for Python (OML4Py) makes the open source Python scripting language and environment ready for the enterprise and big data. Designed for problems involving both large and small data volumes, OML4Py integrates Python with Oracle Autonomous Database, allowing users to run Python commands and scripts for statistical, machine learning, and visualization analyses on database tables and views using Python syntax. Many familiar Python functions are overloaded that translate Python behavior into SQL for running in-database, as well as new automatic machine learning capabilities.

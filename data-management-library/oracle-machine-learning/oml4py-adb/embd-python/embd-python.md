@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to use OML4Py Embedded Python Execution functions. You will also learn about the Script repository.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 20 minutes
 
 ### About Embedded Python Execution
 Embedded Python Execution enables you to run user-defined Python functions in Python engines spawned in the Autonomous Database environment. These engines run alongside an OML Notebooks Python interpreter session.
@@ -350,35 +350,101 @@ This step shows how to create a function `RandomRedDots` that creates a simple D
 **Note:** To know about **Python Script Repository**, go to step 6 in this lab.
 
 1. Run the following script to import the python packages - Numpy, Pandas, and Matplotlib; define and create the function `RandomRedDots`:
+    ```
+    <copy>%python
 
+    RandomRedDots = """def RandomRedDots (num_dots_1 = 100, num_dots_2 = 10):
+      import numpy as np
+      import pandas as pd
+      import matplotlib.pyplot as plt
+
+      d = {'id': range(1,10), 'val': [x/100 for x in range(1,10)]}
+      df = pd.DataFrame(data=d)
+      plt.scatter(range(0,num_dots_1), np.random.rand(100),c='r')
+      plt.title("Random Red Dots")
+      plt.show()
+      plt.scatter(range(0,num_dots_2), np.random.rand(10),c='r')
+      plt.title("Random Red Dots")
+      plt.show()
+      return df"""
+
+
+    oml.script.create("RandomRedDots", func=RandomRedDots, is_global=True, overwrite=True)
+
+    print(RandomRedDots)</copy>
+    ```
+    ![Image alt text](images/randomreddots_def.png "RandomRedDot Definition")
 
 2. Use the `oml.do_eval` function to call the function `RandomRedDots` that you created in step 1:
+    ```
+    <copy>%python
 
+    res = oml.do_eval(func="RandomRedDots")
+    print("Type: ", type(res))
 
+    res</copy>
+    ```
+    The function returns the following:
+    ![Image alt text](images/randomreddots.png "RandomRedDots")
 
-3. Call the RandomRedDots function from the REST API with graphicsFlag to true:
+3. Create separate figure objects, add subplots, and then create the scatter plot. You will then store this in the script repository as `RandomRedDots2` and call the function to see the results.
+    ```
+    <copy>%python
 
+    RandomRedDots2 = """def RandomRedDots2 (num_dots_1 = 100, num_dots_2 = 10):
+      import numpy as np
+      import pandas as pd
+      import matplotlib.pyplot as plt
 
+      d = {'id': range(1,10), 'val': [x/100 for x in range(1,10)]}
+      df = pd.DataFrame(data=d)
+      fig = plt.figure(1)
+      ax = fig.add_subplot(111)
+      ax.scatter(range(0,num_dots_1), np.random.rand(num_dots_1),c='r')
+      fig.suptitle("Random Red Dots")
 
-4. Create separate figure objects, add subplots, and then create the scatter plot. You will then store this in the script repository as `RandomRedDots2` and call the function to see the results.
+      fig2 = plt.figure(2)
+      ax2 = fig2.add_subplot(111)
+      ax2.scatter(range(0,num_dots_2), np.random.rand(num_dots_2),c='r')
+      fig2.suptitle("Random Red Dots")
+      return df"""
+
+    oml.script.create("RandomRedDots2", func=RandomRedDots2, is_global=True, overwrite=True)
+
+    print(RandomRedDots2)</copy>
+    ```
 As expected, you get both plots.
 **Note:** When you call `RandomRedDots2` using embedded Python execution, you will get both plots as shown in the result.
 
+    ![Image alt text](images/randomreddots.png "RandomRedDots")
 
 
 5. Use the `oml.do_eval` function to call the function `RandomRedDots2`:
+    ```
+    <copy>%python
 
+    res = oml.do_eval(func="RandomRedDots2", num_dots_1 = 600, num_dots_2 = 200)
+    type(res)</copy>
+    ```
 
-    ![Image alt text](images/sample1.png "Image title")
+    ![Image alt text](images/randomreddots2.png "Image title")
 
+    ![Image alt text](images/randomreddots2a.png "Image title")
 
+6.  Run the following script to return only the structured contents as an OML Dataframe, which keeps the result in the database - returning a proxy object to the result. You pull the results to the notebook explicitly to display it locally.
+    ```
+    <copy>%python
+
+    import pandas as pd
+
+    res = oml.do_eval(func=RandomRedDots, func_value=pd.DataFrame({"id":[0],"val":[0]}))
+    type(res)</copy>
+    ```
+    ![Image alt text](images/randomreddots_l.png "Image title")
 ## **Try it yourself**
 Create a single plot composed of two subplots
 
 **Hint:** This approach is somewhat simpler, but yields only a single image. Generating two images may be desired when using the SQL API so that each image is returned as a separate row.  
-
-6. Run the following script to return only the structured contents as an OML Dataframe, which keeps the result in the database - returning a proxy object to the result. You pull the results to the notebook explicitly to display it locally.   
-
 
 
 
@@ -401,45 +467,137 @@ OML4Py stores named user-defined functions called scripts in the script reposito
 
 To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
-1. Run the script to load the iris data set
+1. First, run the script to load the iris data set and save it to a temporary table `IRIS_2`:
+    ```
+    <copy>%python
 
-    ![Image alt text](images/sample1.png "Image title")
+    iris = datasets.load_iris()
+    x = pd.DataFrame(iris.data, columns = ['SEPAL_LENGTH','SEPAL_WIDTH',
+    'PETAL_LENGTH','PETAL_WIDTH'])
+    y = pd.DataFrame(list(map(lambda x: {0: 'setosa', 1: 'versicolor', 2:'virginica'}[x], iris.target)),
+    columns = ['SPECIES'])
 
+    IRIS2 = oml.push(pd.concat([x, y], axis=1))</copy>
+    ```
 2. Define the function `build_lm1`:
+    ```
+    <copy>%python
 
+    def build_lm1(dat):
+      from sklearn import linear_model
+      regr = linear_model.LinearRegression()
+      import pandas as pd
+      dat = pd.get_dummies(dat, drop_first=True)
+      X = dat[["SEPAL_WIDTH", "PETAL_LENGTH", "PETAL_WIDTH",
+      "SPECIES_versicolor", "SPECIES_virginica"]]
+      y = dat[["SEPAL_LENGTH"]]
+      regr.fit(X, y)
+      return regr</copy>
+    ```
 
 3. Define the function as a string:
-   **Note:** To store a user-defined function in the script repository, it must be presented as a string.
 
+   **Note:** To store a user-defined function in the script repository, it must be presented as a string.
+    ```
+    <copy>%python
+
+    build_lm_str = """def build_lm_str(dat):
+      from sklearn import linear_model
+      regr = linear_model.LinearRegression()
+      import pandas as pd
+      dat = pd.get_dummies(dat, drop_first=True)
+      X = dat[["SEPAL_WIDTH", "PETAL_LENGTH", "PETAL_WIDTH",
+      "SPECIES_versicolor", "SPECIES_virginica"]]
+      y = dat[["SEPAL_LENGTH"]]
+      regr.fit(X, y)
+      return regr"""</copy>
+    ```
 
 4. To view the string that you just created, run the following command:
+    ```
+    <copy>%python
 
-
+    print(build_lm_str)</copy>
+    ```
+    ![Image alt text](images/print_function.png "Print build_lm_str function")
 
 
 ## **STEP 7:** Create Scripts in Repository
 In this step, you will use the function `oml.script.create` to create a script `MyLM_function2`.
 
 1. Run the `oml.script.drop` function first to check if a script by the name `MyLM_function2` exists, and drop it if it exists. Then use the `oml.script.create` function to create the script `MyLM_function2`:
+    ```
+    <copy>%python
 
-    ![Image alt text](images/sample1.png "Image title")
+    try:
+      oml.script.drop("MyLM_function2")
+    except:
+      pass
+
+    oml.script.create("MyLM_function2", func=build_lm_str, overwrite=True)</copy>
+    ```
 
 2. Run the `oml.script.dir` to list the scripts available only to the current user:
+    ```
+    <copy>%python
 
+    oml.script.dir(sctype='user')</copy>
+    ```
+    The script returns the following information as shown in the screenshot:
+
+    ![Image alt text](images/list_script.png "List scripts available to the current user")
 
 3. Use the `oml.grant` function to grant read privilege to the `MyLM_function2` script to the user OMLUSER2.
+    ```
+    <copy>%python
 
+    oml.grant(name="MyLM_function2", typ="pyqscript", user="OMLUSER2")</copy>
+    ```
+    **Note:** `typ` is a parameter that specifies either ‘datastore’ or ‘pyqscript’ to grant
+the read privilege. ‘pyqscript’ requires Embedded Python.
 
 4. Use the `oml.script.dir` function to list the scripts to which read privilege has been granted:
+    ```
+    <copy>%python
 
+    oml.script.dir(sctype="grant")</copy>
+    ```
 
-5. Run the `oml.script.load` to load the named function into the Python engine for use as a typical Python function.
+    The script list the following informaiton, as shown in the screenshot:
+    ![Image alt text](images/list_script_with_read_priv.png "List scripts with read privilege")
+5. Run the `oml.script.load` to load the function `MyLM_function2` from the script repository into a Python session.
+    ```
+    <copy>%python
 
+    import inspect
 
+    MyLM_function2 = oml.script.load("MyLM_function2")
+    MyLM_function2.get_source()
+
+    print(str(MyLM_function2))
+    print(MyLM_function2.get_source().read())</copy>
+    ```
+    ![Image alt text](images/load_function.png "Load function")
 
 
 ## **STEP 8:** Call function using Embedded Python execution
 
+
+1. Use the `oml.script_create` function to save the callable function object as a script:
+    ```
+    <copy>%python
+
+    loaded_str = MyLM_function2.get_source().read()
+    type(loaded_str)</copy>
+    ```
+
+2. xxx
+    ```
+    <copy>%python
+
+    oml.ds.save(objs={"loaded_str":loaded_str}, name="namedpystrfunc", overwrite=True)
+    oml.ds.describe("namedpystrfunc")</copy>
+    ```
 
 
 ## **STEP 9:** Store a function as a global  function
@@ -448,21 +606,57 @@ A global function is one that can be accessed by any user.
 In this step, you will define and save a global function `build_lm3`. You will then call that function `build_lm3` to build another model.
 
 1. Define and save the function `build_lm3`:
+    ```
+    <copy>%python
 
+    build_lm3 = """def build_lm3(dat):
+      from sklearn import linear_model
+      regr = linear_model.LinearRegression()
+      X = dat[["PETAL_WIDTH"]]
+      y = dat[["PETAL_LENGTH"]]
+      regr.fit(X, y)
+      return regr"""</copy>
+    ```
 
-2. Call the function `build_lm3` to build the model:
+2. Call the function `build_lm3` to build the model or model `MyGlobalML_function`:
+    ```
+    <copy>%python
 
+    oml.script.create("MyGlobalLM_function", func=build_lm3, is_global=True, overwrite=True)</copy>
+    ```
+3. Use the Embedded Python Execution function `table_apply` to run the user-defined function `MyGlobalML_function`:
+    ```
+    <copy>%python
 
-3.
+    res = oml.table_apply(IRIS, func="MyGlobalLM_function",
+    oml_input_type="pandas.DataFrame")
+    res</copy>
+    ```
 
 
 ## **STEP 10:** Load Functions from the Script Repository
-In this step, you will load the MyLM_function1 and `MyGlobalLM_function` scripts, and build the models to the local Python session. For MYLM, build the model on the IRIS data set and pull the coefficients. For GlobalMYLM, build and display the model.
-1.
+In this step, you will load the `MyLM_function1` and `MyGlobalLM_function` scripts, and build the models to the local Python session. For MYLM, build the model on the IRIS data set and pull the coefficients. For GlobalMYLM, build and display the model.
+1. Use the script oml.script.load to
+    ```
+    <copy>%python
 
+    MYLM = oml.script.load(name="MyLM_function2")
+    GlobalMYLM = oml.script.load(name="MyGlobalLM_function")
+
+    iris_local = IRIS.pull()
+
+    lm_model1 = MYLM(iris_local)
+    lm_model2 = GlobalMYLM(iris_local)
+
+    print("Model1 Type: ", lm_model1)
+    print("Model1 Coefficients: ", lm_model1.coef_)</copy>
+    ```
 2. Use the function `oml.script.dir` to list all the available scripts:
+    ```
+    <copy>%python
 
-3.
+    oml.script.dir(sctype="all")</copy>
+    ```    
 
 ## **STEP 11:** Drop scripts from the Script Repository
 In this step, you will perform the following:
@@ -473,9 +667,14 @@ In this step, you will perform the following:
 
 **Note:** You can make the script either private or global. A global script is available to any user. A private script is available only to the owner or to users to whom the owner of the script has granted the read privilege.
 
-1. Run the following script to drop the private `script MyLM_function2`, drop the global script `MyGlobalML_function`, and then list the available scripts:
+1. Run the following script to drop the private script `MyLM_function2`, drop the global script `MyGlobalML_function`, and then list the available scripts:
+    ```
+    <copy>%python
 
-
+    oml.script.drop("MyLM_function2")
+    oml.script.drop("MyGlobalLM_function", is_global=True)
+    oml.script.dir(sctype="all")</copy>
+    ```
 
 
 

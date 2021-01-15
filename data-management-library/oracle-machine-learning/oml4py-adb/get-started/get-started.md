@@ -9,10 +9,12 @@ This lab walks you through the steps to
 * Connect to the Python Interpreter
 * Verify Connection to the Autonomous Database  
 
-Estimated Lab Time: 60 minutes
+Estimated Lab Time: 15 minutes
 
 ### About Product/Technology
-Enter background information here..
+Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous Database, that includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). By using Oracle Machine Learning Notebooks, you can run Python functions on data for data exploration and preparation while leveraging Oracle Database as a high-performance computing environment. Oracle Machine Learning Notebooks is available through Autonomous Data Warehouse (ADW) , Autonomous Transaction Processing (ATP) and Autonomous JSON Database (AJD) services.
+
+Oracle Machine Learning for Python (OML4Py) makes the open source Python scripting language and environment ready for the enterprise and big data. Designed for problems involving both large and small volumes of data, Oracle Machine Learning for Python integrates Python with Oracle Autonomous Database, including its powerful in-database machine learning algorithms, and enables deployment of Python code.
 
 ### Objectives
 
@@ -26,7 +28,7 @@ In this lab, you will learn how to:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+
 
 ## **STEP 1**: Create an OML User
 
@@ -108,21 +110,21 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 To run Python commands in a notebook, you must first connect to the Python interpreter. This occurs as a result of running your first `%python` paragraph. To use OML4Py, you must import the `oml` module, which automatically establishes a connection to your database.
 In an Oracle Machine Learning notebook, you can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python. This example shows you how to:
 
-    * Connect to a Python interpreter to run Python commands in a notebook
-    * Import the Python modules - oml, pandas, numpy, and matplotlib
-    * Check if the oml module is connected to the database
+* Connect to a Python interpreter to run Python commands in a notebook
+* Import the Python modules - oml, pandas, numpy, and matplotlib
+* Check if the oml module is connected to the database
 
 **Note:** `z` is a reserved keyword and must not be used as a variable in `%python` paragraphs in Oracle Machine Learning Notebooks. You will see `z.show()` used in the examples to display Python object and proxy object content.
 
 1. Open the notebook and click the interpreter bindings icon. View the available interpreter bindings.  The "low" priority binding runs operations serially (no parallelism). You can drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. Those highlighted in blue are active. Click to toggle to inactive.
 
-![Image alt text](images/interpreter_bindings.png)
+    ![Image alt text](images/interpreter_bindings.png)
 
-The available interpreter bindings are:
-    * `%sql` - To call the SQL interpreter and run SQL statements
-    * `%script` - To call and run PL/SQL scripts
-    * `%md` - To call the Markdown interpreter and generate static html from Markdown plain text
-    * `%python` - To call the Python interpreter and run Python scripts
+    The available interpreter bindings are:
+    - `%sql` - To call the SQL interpreter and run SQL statements
+    - `%script` - To call and run PL/SQL scripts
+    - `%md` - To call the Markdown interpreter and generate static html from Markdown plain text
+    - `%python` - To call the Python interpreter and run Python scripts
 
 2. To connect to the Python interpreter, type `%python` at the top of a new paragraph in your notebook.
    You are now ready to run Python scripts in your notebook.
