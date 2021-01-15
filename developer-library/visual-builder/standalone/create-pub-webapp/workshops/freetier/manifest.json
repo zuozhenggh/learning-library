@@ -12,23 +12,27 @@
                 "filename": "../../introduction/introduction.md"
         },
     {
-            "title": "Lab 1: Create a Web Application",
+            "title": "Lab 1: Spin Up an Instance of Visual Builder",
+            "filename": "../../create-web-app/spin-up-vb.md"
+        },
+    {
+            "title": "Lab 2: Create a Web Application",
             "filename": "../../create-web-app/create-web-app.md"
         },
 		{
-            "title": "Lab 2: Create Pages for Business Objects",
+            "title": "Lab 3: Create Pages for Business Objects",
             "filename": "../../create-pages/create-pages.md"
         },
 		{
-            "title": "Lab 3: Add Navigation and Data to Your Web App",
+            "title": "Lab 4: Add Navigation and Data to Your Web App",
             "filename": "../../add-nav-and-data/add-nav-and-data.md"
         },
 		{
-            "title": "Lab 4: Add Pages for Working with Data",
+            "title": "Lab 5: Add Pages for Working with Data",
             "filename": "../../add-pages/add-pages.md"
         },
     {
-            "title": "Lab 5: Stage and Publish",
+            "title": "Lab 6: Stage and Publish",
             "filename": "../../stage-and-publish/stage-and-publish.md"
         }
     ]
