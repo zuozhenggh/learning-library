@@ -9,13 +9,13 @@ There are many ways to launch an HPC Cluster Network, this solutions guide will 
 
 Estimated Lab Time: 30 minutes
 
-## Objectives
+### Objectives
 
-In this lab, we will walk you through the different steps required to launch a High Performance Computing(HPC) Cluster Network on OCI.  
+In this lab:
+* We will walk you through the different steps required to launch a High Performance Computing(HPC) Cluster Network on OCI  
 
-## Prerequisites
+### Prerequisites
 
-* Some understanding of cloud and database terms is helpful
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 

@@ -6,13 +6,14 @@ HPC workloads often require visualization tools for scheduling, monitoring or an
 
 Estimated Lab Time: 25 minutes
 
-## Objectives
+### Objectives
 
-In this lab, we will walk you through how to create and configure a GPU visualization node using TurboVNC and OpenGL.
+In this lab:
+* We will walk you through how to create and configure a GPU visualization node using TurboVNC and OpenGL
 
-## Prerequisites
+### Prerequisites
 
-* Some understanding of cloud and database terms is helpful
+* Familiarity with Visualization Tools
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
