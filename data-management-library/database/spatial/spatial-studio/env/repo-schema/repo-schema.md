@@ -26,20 +26,26 @@ In this lab, you will:
 
 Step 1 opening paragraph.
 
-1. Log into your Oracle Cloud, click the main hamburger menu, and select  Marketplace > Applications
+1. Create Spatial Studio repository schema. The schema can have any name, but for consistency with other labs we use the name **studio_repo**.
+    ```
+   <copy>CREATE USER studio_repo
+   IDENTIFIED BY <password goes here>;</copy>
+    ```
+
+2. Assign default tablespace to Spatial Studio repository schema. If using Autonomous Database you can use tablespace name **data**. 
+   
+    ```
+   <copy>ALTER USER studio_repo
+   DEFAULT TABLESPACE <tablespace name here>;</copy>
+    ```
+
 
     ![Image alt text](images/env-marketplace-1.png "Image title")
 
-2. Search for Spatial Studio and then click on the Oracle Spatial Studio app
-
-   ![Image alt text](images/env-marketplace-2.png "Image title")
-
-3. Review the Usage Instructions, then accept the terms and conditions and  click Launch Stack
-
-   ![Image alt text](images/env-marketplace-3.png "Image title")
 
 
 
+ 
 
 
 

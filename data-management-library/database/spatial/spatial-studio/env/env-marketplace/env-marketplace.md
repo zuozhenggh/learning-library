@@ -118,6 +118,8 @@ Opening paragraph...
 
 Oracle Spatial Studio is now provisioned. 
 
+In order to deprovision Spatial Studio......
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
