@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G0b79dLclzxjZa_txLAqGi2EXS5zmqyjIltpLeVGfSXaKCn07lIDBWSJm0UqldHF/n/natdsecurity/b/stack/o/converged-db-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [odi-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/g9o9Bd0HWgL7u_jcH38L43JQsFBD2YNkxZTx-axVnks1OrDMy-vxwtIR4M4OaiBt/n/natdsecurity/b/stack/o/odi-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -27,16 +27,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 1521           | Database Listener                     |
-| 3000           | Node JS Application                   |
-| 3001           | Node JS Application                   |
-| 3003           | Node JS Application                   |
-| 7007           | Graph UI                              |
-| 7101           | WebLogic Admin Console                |
-| 7102           | WebLogic Admin Console                |
 | 8080           | Tomcat (Guacamole)                    |
-| 9090           | ORDS                                  |
-| 9502           | OAS Presentation service              |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
@@ -57,7 +48,7 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
