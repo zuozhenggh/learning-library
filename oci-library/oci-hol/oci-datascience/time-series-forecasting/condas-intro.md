@@ -16,25 +16,35 @@ In this lab, you will:
 
 * A foundational understanding of Python
 
-## Launching Environment Explorer
+## Launching `Environment Explorer`
 
-After you log into OCI Data Science and create a Notebook, go to File and select New Launcher.
+1.  After you log into OCI Data Science and create a Notebook, go to `File` and select `New Launcher`.
 
   ![](./../time-series-forecasting/images/new_launcher.png " ")
 
-Click on the Environment Explorer.
+2.  Click on `Environment Explorer`
 
   ![](./../time-series-forecasting/images/environment_explorer.png " ")
 
-When you click on the Environment Explorer, you will see each Explorer tab allowing you to filter on either the Data Science, Installed, or Published Conda environments.  The Data Science Conda Environments tab shows a list of pre-built conda environments you can install.  We offer several pre-built condas tailored for specific use cases such as general machine learning and data exploration.
+## Downloading a Pre-built Conda Environment
+
+3.  Choose from a list of conda environments
+
+When you click on `Environment Explorer`, you will see each Explorer tab allowing you to filter on either the Data Science, Installed, or Published Conda environments.  The Data Science Conda Environments tab shows a list of pre-built conda environments you can install.  We offer several pre-built condas tailored for specific use cases such as general machine learning and data exploration.
 
   ![](./../time-series-forecasting/images/conda_environment_explorer.png " ")
 
-## Downloading a Pre-built Conda Environments
+4.  Install a pre-built conda environment
+
+When you have decided on which conda environment to install, click `Install`, copy and execute the command in a terminal window.
 
 ![](./../time-series-forecasting/images/download_ml_conda_instructions.png " ")
 
 ## Selecting Conda Environment for Notebook session
+
+5.  Choose the installed conda environment for notebook
+
+When you start a new notebook, go to the top right corner to select the conda environment you would like to use for the notebook session.
 
 ![](./../time-series-forecasting/images/pick_conda_environ_for_notebook.png " ")
 
