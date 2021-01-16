@@ -16,7 +16,7 @@ In this lab, you will:
 
 * A foundational understanding of Python
 
-## Launching `Environment Explorer`
+## Launching Environment Explorer
 
 1.  After you log into OCI Data Science and create a Notebook, go to `File` and select `New Launcher`.
 
@@ -26,7 +26,7 @@ In this lab, you will:
 
   ![](./../time-series-forecasting/images/environment_explorer.png " ")
 
-## Downloading a Pre-built Conda Environment
+## Downloading a pre-built conda environment
 
 3.  Choose from a list of conda environments
 
@@ -42,15 +42,11 @@ When you have decided on which conda environment to install, click `Install`, co
 
 ## Selecting Conda Environment for Notebook session
 
-5.  Choose the installed conda environment for notebook
+5.  Choose an installed conda environment for notebook
 
 When you start a new notebook, go to the top right corner to select the conda environment you would like to use for the notebook session.
 
 ![](./../time-series-forecasting/images/pick_conda_environ_for_notebook.png " ")
-
-![](./../time-series-forecasting/images/select_conda_kernel.png " ")
-
-
 
 You can *proceed to the next lab*.
 
