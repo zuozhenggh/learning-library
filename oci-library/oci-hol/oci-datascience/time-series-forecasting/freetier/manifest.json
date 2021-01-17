@@ -27,14 +27,14 @@
             "filename": "./../../common/notebook-setup-free-tier.md"
         },
         {
-            "title": "Lab 4: Accelerated Data Science SDK",
-            "description": "Introduction to the Accelerated Data Science SDK.",
-            "filename": "./../../common/ads-intro.md"
+            "title": "Lab 4: Conda Environments",
+            "description": "Introduction to conda environments.",
+            "filename": "./../condas-intro.md"
         },
         {
-            "title": "Lab 5: Binary Classification Model",
-            "description": "Learn about ADS using a binary classification model.",
-            "filename": "./../binary-classification-attrition.md"
+            "title": "Lab 5: Time Series Forecasting Models",
+            "description": "Learn how to build time series forecasting models.",
+            "filename": "./../time-series.md"
         },
         {
             "title": "Lab 6: Shutting Down a Notebook Session",
