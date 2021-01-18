@@ -48,9 +48,12 @@ Similarly, you can create any number of compare pairs for other tables.
 Use the **Pattern Mapping** tab to map numerous source and target objects at once by using:
 
 * An exact name match (for example TAB1=TAB1).
-* A SQL percent (%) wildcard (for example, %_Table) or an asterisk (*) wildcard to map differently named source and targets whose naming conventions support wildcarding.
+* A SQL percent (%) wildcard (for example, %_Table)
+* An asterisk (GoldenGate *) wildcard to map differently named source and targets whose naming conventions support wildcarding.
+
 To create compare pairs on the **Pattern Mapping** tab:
 1. In the **Compare Pair Configuration** page, click **Pattern Mapping**.
+    ![](./images/9a-click-pattern-mapping-tab.png " ")
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**.
 3. Under **Pattern Compare Pair Mapping**, select a **Table Mapping Method**. You can select any of the following:
     * **Map Source and Target Tables Using Exact Names**: Let's select this option here:
@@ -66,6 +69,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 ## **STEP 4**: Create a Job for the Compare Pair Group
   To create a job:
 1. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Job Configuration** page.
+    ![](./images/1a-select-job-configuration.png " ")
 2. Click **New** to display the **New Job Assistant** page.
 3. Enter a **Name** and **Description** for the new job, click **Next**.
     ![](./images/12-new-job-create-job.png " ")
@@ -78,6 +82,7 @@ A new job is created for the compare pair.
 ## **STEP 5**: Execute the Job
 To execute a job:
 1. From the left navigation pane, click **Run/Execute Job** to display the **Run configuration** page.
+    [](./images/15a-run-job-run-configuration-page.png " ")
 2. Select the job you just created from the **Job** drop-down list and click **Run Job**.
     ![](./images/15-run-job.png " ")
 3. From the left navigation pane, click **Running Jobs** to display the status of the jobs that are running.
