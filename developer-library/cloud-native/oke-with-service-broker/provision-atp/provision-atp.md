@@ -12,7 +12,9 @@ In this lab you will:
 
 - Configure an ATP instance and binding to deploy on kubernetes
 - Use kubectl to deploy the instance and provision the DB
-- leanr how to tear down the ATP database instance when you are done
+- learn how to tear down the ATP database instance when you are done
+
+Note: This provisions an ATP database with a public endpoint. It is currently not possible to provision the database in a private subnet via OCI Service Broker.
 
 ## **STEP 1:** Get the template manifests for ATP
 
@@ -152,7 +154,7 @@ You can verify the wallet is now accessible inside the demo app container by loo
     </copy>
     ```
 
-    Now you know how to get the credentials for a dynamically provisioned ATP database, you can build your own app conecting to the DB.
+    Now you know how to get the credentials for a dynamically provisioned ATP database, you can build your own app connecting to the DB.
 
 ## **STEP 5:** Clean up
 
