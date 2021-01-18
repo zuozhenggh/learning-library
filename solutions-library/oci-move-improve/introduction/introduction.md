@@ -1,7 +1,7 @@
 # OCI Move and Improve Workshop
 
 ## Introduction
-This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The workshop will also walk you through the process of making the application highly-avaiworkshople in the case of disaster scenarios by leveraging Oracle's DNS services for traffic steering. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data.
+This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The workshop will also walk you through the process of making the application highly-available. The workshop also focus how to handle the case of disaster scenarios by leveraging Oracle's DNS services for traffic steering. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data.
 
 For a technical overview of the workshop, watch the following video below.
 [](youtube:KuT6DksQpKc)
@@ -17,25 +17,25 @@ Oracle offers a complete portfolio of products, services, and differentiated cap
 ### Objectives
 * Provision custom compute with OSCommerce Image
 * Provision underlying infrastructure such as networking, security lists etc
-* Make application Highly Avaiworkshople with Traffic Steering Policies and Active Failover
-* Provision Oracle Analytics Cloud instace, Oracle Integration Cloud instance, and Autonomous Data Warehouse Instance
+* Make application Highly Available with Traffic Steering Policies and Active Failover
+* Provision Oracle Analytics Cloud instance, Oracle Integration Cloud instance, and Autonomous Data Warehouse Instance
 * Pull data from MySQL database into Oracle Autonomous Data Warehouse
 * Perform Analytics with Oracle Analytics Cloud
 
 ### Prerequisites
 * An Oracle Paid or LiveLabs Cloud account.
-* A cloud tenancy where you have the resources avaiworkshople to provision an ADW instance with 2 OCPUs, an OAC instance with 2 OCPUs, and an ODA instance.
+* A cloud tenancy where you have the resources available to provision an ADW instance with 2 OCPUs, an OAC instance with 2 OCPUs, and an ODA instance.
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 
 ## Appendix:  Workshop Assumptions
 *Note:* This workshop is intended to be a comprehensive full cloud showcase. As such, it is assumed a user going through this workshop will be provisioning resources and creating users from scratch. If you decide to use existing infrastructure or resources, be aware and keep note of your namings so resources don't overlap and conflict.
 
-*Note:* Additionally, as much as possible, do not stray away from the naming conventions used for resources in this worshop. You may run into errors if you do.
+*Note:* Additionally, as much as possible, do not stray away from the naming conventions used for resources in this workshop. You may run into errors if you do.
 
 ## Acknowledgements
 * **Author** - Akinade Oladipupo, Saurabh Salunkhe, Mitsu Mehta, Ken Keil
 * **Adapted for Cloud by** -  Akinade Oladipupo, Saurabh Salunkhe, Mitsu Mehta, Ken Keil
-* **Last Updated By/Date** - Kay Malcolm, August 2020
+* **Last Updated By/Date** - Rajsagar Rawool, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

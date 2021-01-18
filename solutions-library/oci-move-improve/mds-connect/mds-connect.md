@@ -78,9 +78,9 @@ Estimated Lab Time: 1 hour
 OSCommerce Web Application - [Link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YWohpF3cmZuDi2LWL056VHnNvlNTu37JaGMhM8oqenS_95gf2WBWfUCylfFY2jI_/n/orasenatdpltintegration03/b/workshop/o/oscommerce.zip)
 
 Configure FileZilla connection to connect to your primary instance as below. And drag and drop oscommerce.zip file to the primary instance.
-    ![](./images/8.png "")
+![](./images/8.png "")
 
-    ![](./images/9.png "")
+![](./images/9.png "")
 
 3. Run this command to delete old oscommerce application code and replace with the recent code. Copy the oscommerce zip file to /var/www/html folder after clearing the old contents.
     ```
@@ -102,20 +102,20 @@ Configure FileZilla connection to connect to your primary instance as below. And
     ```
     ![](./images/11.png "")
 
-Update following parameters:
-define('HTTP_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
-define('HTTPS_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
-define('DB_SERVER', '');  # IP address of MDS
-define('DB_SERVER_USERNAME', ''); # username of MDS
-define('DB_SERVER_PASSWORD', ''); # password of MDS
+### Update following parameters:
+* define('HTTP_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
+* define('HTTPS_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
+* define('DB_SERVER', '');  # IP address of MDS
+* define('DB_SERVER_USERNAME', ''); # username of MDS
+* define('DB_SERVER_PASSWORD', ''); # password of MDS
 
 Save the file and proceed to next steps.
 
 5. Make sure the apache configuration 000-default.conf file is updated as below.
 
-#ServerAdmin webmaster@localhost
-DocumentRoot /var/www/html/catalog
-DirectoryIndex index.php
+* #ServerAdmin webmaster@localhost
+* DocumentRoot /var/www/html/catalog
+* DirectoryIndex index.php
 
     ```
     cd /etc/apache2/sites-available/
