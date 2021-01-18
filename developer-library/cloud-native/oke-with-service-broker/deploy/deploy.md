@@ -124,7 +124,7 @@ For this lab you will need to have installed the required software:
 
     - If you wish to encrypt kubernetes secrets at rest, you can provide an encryption key OCID for `secrets_encryption_key_ocid`
 
-    You need to have created a **Vault** and an **Encryption Key** to use this feature, otherwise keep the value `null`
+        You need to have created a **Vault** and an **Encryption Key** to use this feature, otherwise keep the value `null`
     
 ## **STEP 4:** Initialize the terraform repository
 
@@ -240,17 +240,17 @@ If the deployment went smoothly, you should not see errors in the terraform log,
 
 ## **Step 7:** Access the Kubernetes dashboard
 
-To access the Kubernetes dashboard, run the helper script:
+    To access the Kubernetes dashboard, run the helper script:
 
-```bash
-<copy>
-./access_k8s_dashboard.sh
-</copy>
-```
+    ```bash
+    <copy>
+    ./access_k8s_dashboard.sh
+    </copy>
+    ```
 
-The script will display a token, setup kubeproxy and open the browser to the Kubernetes dashboard page.
+    The script will display a token, setup kubeproxy and open the browser to the Kubernetes dashboard page.
 
-Copy the token from the script output and paste it at the login prompt, and you can then navigate to the various resources.
+    Copy the token from the script output and paste it at the login prompt, and you can then navigate to the various resources.
 
 You may proceed to the next lab.
 

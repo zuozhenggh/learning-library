@@ -14,7 +14,7 @@ In this lab you will:
 
 ## **STEP 1:** Tearing down the cluster
 
-1. Before tearing down infrastructure, it is recommended to undeploy the kubernetes objects. The terraform will attempt to destroy all kubernetes objects but some artifacxts may be left behind if it is not able to deprovision some resources (like buckets that are not empty)
+1. Before tearing down infrastructure, it is recommended to undeploy the kubernetes objects. The terraform will attempt to destroy all kubernetes objects but some artifacts may be left behind if it is not able to deprovision some resources (like buckets that are not empty)
 
 2. To tear down the Kubernetes cluster, use:
 

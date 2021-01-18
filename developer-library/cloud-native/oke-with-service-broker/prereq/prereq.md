@@ -59,7 +59,7 @@ In this lab you will:
     ```bash
     Private key written to: /home/oracle/.oci/oci_api_key.pem
     Fingerprint: 21:d4:f1:a0:55:a5:c2:ce:e2:c6:88:4f:bf:2f:f3:af
-    Config written to /home/oracle/.oci/config
+    Config written to ~/.oci/config
     ```
 
 
@@ -71,9 +71,11 @@ In this lab you will:
 
     ```
     <copy>
-    cat /home/oracle/.oci/oci_api_key_public.pem
+    cat ~/.oci/oci_api_key_public.pem
     </copy>
     ```
+
+    or open the file with your prefered editor
 
     and copy the full printed output to clipboard
 
@@ -96,7 +98,7 @@ In this lab you will:
     </copy>
     ```
 
-    This command should output the namespace of your tenancy (usually the name of the tenancy)
+    This command should output the namespace of your tenancy (usually the name of the tenancy or a randomized string)
 
     ```
     {
@@ -104,6 +106,7 @@ In this lab you will:
     }
     ```
 
+    Make a note of this name for later.
 
 ## **STEP 2:** Install `kubectl`
 

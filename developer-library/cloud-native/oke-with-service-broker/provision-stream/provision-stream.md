@@ -34,7 +34,7 @@ In this lab you will:
 
     - The `create-oss-binding.yaml` creates a binding to retrieve credentials providing access to the stream.
 
-    - OCI Service Broker will then create a secret named `test-stream-binding` containing the access the stream
+    - OCI Service Broker will then create a secret named `test-stream-binding` containing the access to the stream
 
 
 ## **STEP 2:** Edit the manifests
@@ -99,9 +99,9 @@ In this lab you will:
 
 3. You can also check in the OCI console under **Solution and Platforms -> Analytics -> Streaming** in the compartment where you provisioned and you should see the stream named `teststream` (or the unique name you gave it)
 
-## **STEP 5:** Check the content of the secret
+## **STEP 5:** Look at the content of the secret
 
-1. Check the content of the secret by running:
+1. You can view the content of the secret by running:
 
     ```bash
     <copy>
@@ -109,7 +109,7 @@ In this lab you will:
     </copy>
     ```
 
-    Which should return:
+    which should return:
 
     ```yaml
     apiVersion: v1
@@ -285,7 +285,7 @@ In this lab you will:
 
 ## **STEP 7:** Clean up
 
-1. To undeploy, and terminate the ATP instance, delete the kubernetes instances
+1. To undeploy, and terminate the stream instance, delete the kubernetes instances
 
     ```bash
     <copy>

@@ -183,7 +183,7 @@ In this step we will manually execute each step from the SSH terminal session.
 3. From a browser session to the Administration Service of your deployment as user *oggadmin*, validate the results.
 
     ```
-    URL: <copy> https://<Your VM Public IP Address>/<deployment>/adminsrvr </copy>
+    URL: <copy> https://<Your VM Public IP Address>/atlanta/adminsrvr </copy>
     ```
 
     ```
