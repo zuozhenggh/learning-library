@@ -56,12 +56,12 @@ The following is a summary of the steps that are covered in this lab along with 
 1. **Local explanations**: ``local_explainer = explainer.local_explanation()``
 1. **Feature important**: ``global_explainer.feature_importance_summary()`` and ``global_explainer.compute_feature_importance()``
 
-## **STEP 3:** Setting up the Conda
+## **STEP 3:** Install a Conda Package
 
 A conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
 
 1. Open a terminal window by clicking on **File**, **New** and then **Terminal**
-1. Run the command `odsc conda install -s mlcpuv1`
+1. Run the command: `odsc conda install -s mlcpuv1`
 1. You will receive a prompt related to what version number you want. Press `Enter` to select the default.
 
 
