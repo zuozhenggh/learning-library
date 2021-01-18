@@ -38,8 +38,6 @@ If you already have a VCN setup, please visit the appendix to see how to optiona
 
 5.  Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
-
 6. Enter the following information:
 
       - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
@@ -49,7 +47,7 @@ If you already have a VCN setup, please visit the appendix to see how to optiona
      ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 7.  Click **Next**.
 
-  ![](./images/em-create-stack-2.png " ")
+  ![](./images/em-create-stack-1.png " ")
 
 8. Enter or select the following:
     - **Instance Count:** Accept the default, **1**, unless you intend to create more for a team for instance
@@ -57,18 +55,25 @@ If you already have a VCN setup, please visit the appendix to see how to optiona
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
     ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+
+    ![](./images/create-stack.png " ")
+
 9. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
     - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+  ![](./images/em-create-stack-2.png " ")
+
+
 10. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
-
-  ![](./images/standardshape.png " ")
+    - **Instance Shape:** Select **VM.Standard.E2.4** (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
 11. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
     - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
+
+  ![](./images/standardshape.png " ")
+
 
 12. Click **Next**.
 13. Review and click **Create**.
@@ -98,17 +103,15 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
   ![](./images/em-stack-apply-results-0.png " ")
 
-  ![](./images/em-stack-apply-results-1.png " ")
-
   ![](./images/em-stack-apply-results-2.png " ")
 
   ![](./images/em-stack-apply-results-3.png " ")
 
-3.  Congratulations, your environment is created!  Click on the Application Information tab to get additional information about what you have just done.
+3.  Congratulations, your environment is created!  Click **Outputs**. Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
+
 
   ![](./images/app-info.png " ")
 
-4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
 
 ## **STEP 3**: Verify connection to your instance
 
@@ -123,25 +126,31 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
   ![](./images/em-cloudshell.png " ")
 
-2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
+
+  ![](./images/em-select-instance.png " ")
+  ![](./images/em-click-instance.png " ")
+
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/em-cloudshell-ssh.png " ")
 
 6.  When prompted, answer **yes** to continue connecting.
+    ![](./images/em-cloudshell-ssh.png " ")
+
 7.  Exit the instance 
    
     ````
     exit
     ````
+  ![](./images/em-cloudshell-exit-ssh.png " ")
 
 You may now [proceed to the next lab](#next).
 
-## Appendix:  Teraform and Resource Manager
+## Appendix:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
@@ -258,7 +267,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
@@ -274,7 +283,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+* **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
