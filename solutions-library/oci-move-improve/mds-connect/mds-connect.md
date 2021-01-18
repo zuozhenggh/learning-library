@@ -88,29 +88,58 @@ Configure FileZilla connection to connect to your primary instance as below. And
 
     ![](./images/9.png "")
 
-3. Run this command to delete old oscommerce application code and replace with the recent code.
+3. Run this command to delete old oscommerce application code and replace with the recent code. Copy the oscommerce zip file to /var/www/html folder after clearing the old contents.
     ```
     <copy>
     cd /var/www/
-
+    sudo rm -r html/
+    sudo mkdir html
+    sudo chmod 777 html/
+    cd html/
+    mv /home/oscommerce/oscommerce.zip .
+    ls
+    unzip oscommerce.zip
     </copy>
     ```
+    ![](./images/10.png "")    
 
-4. After running the command you will also be asked to answer prompts within the terminal window. Enter the following below where the password is the one you just set:
+4. Now you would need to update the configure.php file of oscommerce application to point to MDS Database. Run the following command in the terminal.
     ```
-    Enter current password for root (enter for none): Type Root Password
-
-    Change The Root Password? **N**
-
-    Remove Anonymous Users? **Y**
-
-    Disallow Root Login Remotely? **Y**
-
-    Remove test database and access to it? **Y**
-
-    Reload Privilege Tables now? **Y**
+    <copy>
+    cd /var/www/html/catalog/includes
+    sudo nano configure.php
+    <copy>
     ```
+    ![](./images/11.png "")
 
+Update following parameters:
+define('HTTP_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
+define('HTTPS_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
+define('DB_SERVER', '');  # IP address of MDS
+define('DB_SERVER_USERNAME', ''); # username of MDS
+define('DB_SERVER_PASSWORD', ''); # password of MDS
+
+Save the file and proceed to next steps.
+
+5. Make sure the apache configuration 000-default.conf file is updated as below.
+
+#ServerAdmin webmaster@localhost
+DocumentRoot /var/www/html/catalog
+DirectoryIndex index.php
+
+    ```
+    <copy>
+    cd /etc/apache2/sites-available/
+    sudo nano 000-default.conf
+    cd /etc/apache2/sites-enabled
+    sudo nano 000-default.conf
+    <copy>
+    ```
+    ![](./images/12.png "")
+
+6. Run the following command in the terminal to restart your apache server. Goto the browser and open the IP address. You would see oscommerce website up and running as below.
+
+        ![](./images/13.png "")
 
 ## Learn More
 * To learn about connecting to MDS on OCI [link](https://docs.oracle.com/en-us/iaas/mysql-database/doc/connecting-db-system.html)
