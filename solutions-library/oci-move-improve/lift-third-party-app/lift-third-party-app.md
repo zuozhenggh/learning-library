@@ -7,7 +7,7 @@ This lab walks you through the steps to capture an image of an existing, on-prem
 [Video 3](https://video.oracle.com/detail/video/6164386994001/lab-100-provisioning-a-vm-with-a-custom-image?autoStart=true&q=ocimoveimprove)
 [Video 4](https://video.oracle.com/detail/video/6164388506001/lab-100-accessing-the-cloud-native-application-instance?autoStart=true&q=ocimoveimprove)
 
-Estimated Lab Time:  3 hour -
+Estimated Lab Time: 3 hour
 
 ### Objectives
 * Create a cloud-compatible VMDK file
