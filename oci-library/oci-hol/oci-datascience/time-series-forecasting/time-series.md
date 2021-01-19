@@ -42,11 +42,23 @@ conda activate /home/datascience/conda/mlcpuv1
 conda install -c conda-forge fbprophet
 ```
 
-5.  After you have set up your conda environment, start a new notebook. Go to the top right corner to select the General Machine Learning CPU for the notebook session.
+5.  After you have set up your conda environment, when you start a new notebook, go to the top right corner and select the General Machine Learning CPU for the notebook session.
 
   ![](./../time-series-forecasting/images/environment_explorer.png " ")
 
-## **STEP 2:** Download Time Series Forecasting Lab from Object Storage
+## **STEP 2:** Download Time Series Forecasting JupyterLab Notebook from Object Storage
+
+1.  To access the time series forecasting JupyterLab notebook, first open a new terminal window.  Copy and paste the following command in the terminal window and press “Enter”. The command will download a notebook file time-series-hol.ipynb.
+
+```
+cd /home/datascience/conda/notebooks/mlcpuv1
+mkdir demo
+cd demo 
+curl -L -o time-series-hol.ipynb https://bit.ly/2KsORJk
+```
+2.  Navigate to the directory /home/datascience/conda/notebooks/mlcpuv1/demo to find the time series notebook time-series-hol.ipynb
+
+3.  Go through the notebook.  This notebook shows how to build a time series model along with exercise you can do.
 
 ## References
 
