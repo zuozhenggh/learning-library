@@ -16,7 +16,7 @@ If you just created a new Cloud account following the instructions in Prerequisi
 
 ![](./images/hamburger.png)
 
-2.  Using the scroll bar on the left, scroll down until you see Platform Services.  Hover over it, then click Visual Builder: 
+2.  Using the scroll bar on the left, scroll down until you see Platform Services.  Hover over it, then click Visual Builder:
 
     ![](./images/platform.png)
 
@@ -29,7 +29,9 @@ If you just created a new Cloud account following the instructions in Prerequisi
 
     ![](./images/detail.png)
 
-5.  Wait until the status changes from "Creating service ..."  to  .  When this happens, you can click the instance name on the Instances tab and move on to the Introduction.
+5. On the Confirmation page, click Create.  
+
+6.  Wait until the status changes from "Creating service ..."  to  .  When this happens, you can click the instance name on the Instances tab and move on to the Introduction.
 
     ![](./images/status.png)
 
