@@ -54,8 +54,8 @@ You can *proceed to the next lab*.
 
 For more information, please refer to our:
 
-[Documentation] (https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
-[Blog on Conda Environments Feature in OCI Data Science] (https://blogs.oracle.com/datascience/conda-environment-data-science)
+* **Documentationr**: [Documentation](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
+* **Blog**: [Blog on Conda Environments Feature in OCI Data Science](https://blogs.oracle.com/datascience/conda-environment-data-science)
 
 ## Acknowledgements
 
