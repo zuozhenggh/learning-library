@@ -44,7 +44,7 @@ conda install -c conda-forge fbprophet
 
 5.  After you have set up your conda environment, when you start a new notebook, go to the top right corner and select the General Machine Learning CPU for the notebook session.
 
-  ![](./../time-series-forecasting/images/environment_explorer.png " ")
+  ![](./../time-series-forecasting/images/pick_conda_environ_for_notebook.png " ")
 
 ## **STEP 2:** Download Time Series Forecasting JupyterLab Notebook from Object Storage
 
@@ -64,9 +64,9 @@ curl -L -o time-series-hol.ipynb https://bit.ly/2KsORJk
 
 For more information, please refer to our:
 
-[Documentation] (https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
-[Statsmodels Dcoumentation] (https://www.statsmodels.org/stable/index.html)
-[fb Prophet Documentation] (https://facebook.github.io/prophet/)
+* [Documentation] (https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
+* [Statsmodels Dcoumentation] (https://www.statsmodels.org/stable/index.html)
+* [fb Prophet Documentation] (https://facebook.github.io/prophet/)
 
 ## Acknowledgements
 
