@@ -1,14 +1,13 @@
-# WRF Setup, Installation, and Run
+# WRF Setup, Installation, and Run on HPC Cluster
 
 ## Introduction
-This lab is going to discuss and guide you through how to set up and run WRF on OCI infrastructure. This guide is intended to show you how to transform a vanilla Ubuntu image into an environment where you will be able to run experiments and run weather simulations. I'll also provide a custom image just incase you want to run WRF without learning how to set it up.
-
-[WRF Custom Image](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lRqMYYN5VTdSgBz9f8nv7Tz5mzMGMqr7wlN2Y_q6g6GHmTdc9GX8lokgmTui81BA/n/hpc_limited_availability/b/Demo_Materials/o/WRF_DEMOV2)
+This lab is going to discuss and guide you through how to set up and run a WRF cluster on OCI infrastructure. This guide is intended to show you how to create a two node HPC cluster to setup environment where you will be able to run experiments and weather simulations.
 
 Estimated Lab Time:  90 minutes
 
 ### Objectives
 In this lab, you will learn about:
+* Deploying a two node HPC Cluster
 * Downloading dependencies and WRF/WPS
 * Compiling libraries for WRF/WPS
 * Compiling WRF and WPS
@@ -19,79 +18,38 @@ In this lab, you will learn about:
 ### Prerequisites
 
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account
-- Access to an Unbuntu 18.04 CPU instance as covered in labs 1 and 2  
-- Note for this lab we will be using a **VM.Standard2.16 shape**. You can use a smaller shape if you desire.
+- An Oracle Trial or Paid Cloud account  
+- Note for this lab we will be using two **BM.HPC2.36** nodes for our cluster and a VM.Standard2.4 for our Bastion.
 
-There are a number of technologies and dependencies that will be used to go over this lab and get WRF up and running. Feel free to use the following links to become more familiar with the technology. 
-The technologies used in this lab are:
-* [Intel Processor based OCI shape](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard)
-* [Ubuntu 18.04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes)
-* [gfortran 7.5.0](https://gcc.gnu.org/onlinedocs/gcc-7.5.0/gfortran.pdf)
-* [cpp](https://www.geeksforgeeks.org/cpp-command-in-linux-with-examples/)
-* [gcc](https://gcc.gnu.org/onlinedocs/gcc-3.3.6/gcc/G_002b_002b-and-GCC.html)
-* [csh](https://www.computerhope.com/unix/ucsh.htm#:~:text=csh%20is%20a%20command%20language,and%20a%20C%2Dlike%20syntax.)
-* [Perl](https://www.perl.org/about.html)
-* [g++](https://www.geeksforgeeks.org/compiling-with-g-plus-plus/)
-* [make](https://www.gnu.org/software/make/)
-* [NETCDF](https://www.unidata.ucar.edu/software/netcdf/) 4.1.2
-* [LIBPNG](http://www.libpng.org/pub/png/libpng.html) 1.6
-* [ZLIB](https://zlib.net/) 1.2.11
-* [JASPER](http://ftp.oregonstate.edu/.2/lfs-website/blfs/view/svn/general/jasper.html) 1.900.1
-* [MPICH](https://www.mpich.org/) 3.3.2 (for parallism)
-* [WRF-4.1.5](https://github.com/wrf-model/WRF/releases/tag/v4.1.5)
-* [WPS-4.1](https://github.com/wrf-model/WPS/releases/tag/v4.1)
-* [ncview](http://meteora.ucsd.edu/~pierce/ncview_home_page.html)
-* [m4](https://www.gnu.org/software/m4/m4.html)
-* [htop](https://htop.dev/)
-* [tigerVNC](https://tigervnc.org/)
-* [pv dialog](https://www.geeksforgeeks.org/pv-command-in-linux-with-examples/)
-* [Midnight Comander](https://midnight-commander.org/) (Optional) 
+## **STEP 1**: Setup HPC Infrastructure
+
+1. Use the navigation menu on the left and navigate to **Solutions and Platform** Marketplace > Applications.
+2. In the searchbar type HPC, then press your ENTER/Return key.
+3. In the All Applications section, choose HPC Cluster. and then launch the stack. It should should look this:  
+![Screenshot of HPC Image](images/HPC-Cluster-Image.png)  
+Then launch the stack in the appropriate compartment.
+![Screenshot of HPC Stack](images/HPC-Cluster-Stack.png)
+4. In the create stack menu, give a name and description as appropriate then click next.
+5. Choose an AD and paste in your SSH key.
+6. For the Bastion choose the same AD as the cluster and choose the **VM.Standard.2.4** shape.
 
 
-## **STEP 1**: Setup Gnome Desktop
+## **STEP 2**: Setup Gnome Desktop
 
-1. There are a number of different desktop technologies you can use, but this guide will go over setting up and congifuring Gnome desktop as it is the default for Ubuntu. The following steps will download, install, and configure Gnome Desktop for our Ubuntu 18.04 instance.
+1. There are a number of different desktop technologies you can use, but this guide will go over setting up and congifuring Gnome desktop as it is the default for Oracle Linux. The following steps will download, install, and configure Gnome Desktop for our Oracle Linux 7 Bastion instance.
     ```
-    sudo apt update
-    sudo apt upgrade -y
-    sudo reboot # Wait about 60 seconds before proceeding
-    sudo apt install xserver-xorg-core -y
-    sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer -y
-    sudo apt install ubuntu-gnome-desktop -y
-    sudo systemctl start gdm
-    sudo systemctl enable gdm
+    sudo su
+    yum groupinstall "server with gui"
+    Y
+    exit
+    sudo yum install tigervnc-server
+    Y
     vncserver # DO NOT MAKE READ ONLY and password should be no greater than 8 characters
-    vncserver -kill :*
-    ```    
-2.	vi ~/.vnc/xstartup  
-    **Please enter in the following:**
     ```
-    #!/bin/sh  
-    [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup  
-    [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources  
-    vncconfig -iconic &  
-    dbus-launch --exit-with-session gnome-session &  
-    ```
-    **To exit, simply press esc, then shift: followed by wq enter** 
-
-    It should should look this:  
-    ![Screenshot of vim editor](images/vnc-vi.png)
-
-3. Make the xstartup file executable and then run the vnc server.
-    ```
-    sudo chmod +x ~/.vnc/xstartup
-    vncserver -geometry 1440x900
-    ```
-## **STEP 2**: Connecting to the Gnome Desktop
-
-We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our instance.
-
-1. Open a local terminal
-    
-    Run the following command with information pertaining to your instance: ssh -L 5901:localhost:5901 ubuntu@IPADDRESS
-![Screenshot of ssh](images/ssh.png)
-2. Open TigerVNC Viewer
+2. Open a local terminal  
+    Run the following command with information pertaining to your instance: ssh -L 5901:localhost:5901 opc@IPADDRESS
+    ![Screenshot of SSH](images/ssh.png)
+3. Open TigerVNC Viewer
 
     Type `localhost:1` in the VNC Server: section  
     Then click connect  
@@ -101,36 +59,23 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     ![Screenshot of VNC authentication](images/vncauth.png)    
 
 4. You will finally be presented with a gnome desktop and you should continue working from here.  
-![Screenshot of Gnome Desktop](images/gnomedesktop.png)
+![Screenshot of Gnome Desktop](images/gnomedesktop.png)    
 
-## **STEP 3**: Configuring Ubuntu
+## **STEP 3**: Configuring Oracle Linux
 1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Activities on the top left, then click show applications. Search for and open a terminal. Perform the following in the terminal.
-    
     ```
-    sudo apt install gfortran -y   
-    # Verify install with command: which gfortran    
-    # Should return a path: /usr/bin/gfortran  
-    sudo apt install cpp    
-    # Verify install with command: which cpp    
-    # Should return a path: /usr/bin/cpp  
-    sudo apt install gcc    
-    # Verify install with command: which gcc    
-    # Should return a path: /usr/bin/gcc  
-    sudo apt install g++ -y  
-    sudo apt install make  
-    sudo apt install csh  
-    sudo apt install perl  
-    sudo apt-get install m4  
-    sudo apt install htop  
-    sudo apt install mc -y    
-    sudo apt install ncview -y   
-    ```  
+    sudo yum update -y
+    sudo yum install tcsh -y
+    sudo yum install ncview -y
+    sudo yum install mc -y
+    ```
+
 ## **STEP 4**: Downloading and Compiling libraries for WRF
 Now that we have installed most dependencies we will need for WRF, lets begin to compile the libraries WRF needs to function.
-
 ### **4.1**: Creating folder structure and downloading libraries
 1. Enter in the following commands in the remote terminal to begin setting up the required folder structure.
     ```
+    cd /mnt/nfs-share
     mkdir WRF
     cd WRF
     mkdir downloads
@@ -147,7 +92,7 @@ Now that we have installed most dependencies we will need for WRF, lets begin to
 3. Insteading of unziping the files one by one, lets use a **loop** to do it for us then go back to our WRF directory.  
     ```
     for i in *.gz ; do tar -xzf $i ; done
-    cd ~/WRF  
+    cd /mnt/nfs-share/WRF  
     ```
 4. Now that we are back into the WRF directory, lets set up the folder structure for our libraries for WRF. WE will also create an environmental variable to reference the library path to be used later in the guide.
     ```
@@ -155,14 +100,14 @@ Now that we have installed most dependencies we will need for WRF, lets begin to
     cd libs  
     mkdir netcdf  
     mkdir mpich  
-    mkdir grib2 (this will be used for the jasper, libpng, and zlib libraries)  
-    export LIBDIR=~/WRF/libs
+    mkdir grib2 # (this will be used for the jasper, libpng, and zlib libraries)  
+    export LIBDIR=/mnt/nfs-share/WRF/libs
     ```
 ### **4.2**: Compiling grib2 library
 The grib2 library is actually a compilation of three separate libraries, specifically, zlib, jasper, and libpng.
 1. Compiling Zlib
     ``` 
-    cd ~/WRF/downloads
+    cd /mnt/nfs-share/WRF/downloads
     cd zlib-1.2.11
     ./configure --prefix=$LIBDIR/grib2
     make
@@ -170,7 +115,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ```   
 2. Compiling libpng
     ```
-    cd ~/WRF/downloads
+    cd /mnt/nfs-share/WRF/downloads
     cd libpng-1.6.37/
     ./configure --prefix=$LIBDIR/grib2 LDFLAGS="-L$LIBDIR/grib2/lib" CPPFLAGS="-I$LIBDIR/grib2/include"
     make
@@ -178,7 +123,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ```
 3. Compiling jasper
     ```
-    cd ~/WRF/downloads
+    cd /mnt/nfs-share/WRF/downloads
     cd jasper-1.900.1/
     ./configure --prefix=$LIBDIR/grib2
     make
@@ -188,7 +133,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 ### **4.3**: Compiling Netcdf and Mpich libraries
 1. Compiling netcdf library
     ```
-    cd ~/WRF/downloads
+    cd /mnt/nfs-share/WRF/downloads
     cd netcdf-4.1.2/
     ./configure --prefix=$LIBDIR/netcdf --disable-dap --disable-netcdf-4
     make
@@ -197,7 +142,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 
 2. Compiling mpich library
     ```
-    cd ~/WRF/downloads
+    cd /mnt/nfs-share/WRF/downloads
     cd mpich-3.3.2/
     ./configure --prefix=$LIBDIR/mpich
     make
@@ -205,20 +150,19 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ```
 
 ## **STEP 5**: Compiling WRF & WPS
-1. Now that we have set up the folder structure for the libraries, we can begin to download and compile WRF and WPS. The following code block will download and place the programs in the appropriate locations.
-    
+1. Now that we have set up the folder structure for the libraries, we can begin to download and compile WRF and WPS. The following code block will download and place the programs in the appropriate locations.     
     ```
-    cd ~/WRF/downloads
+    cd /mnt/nfs-share/WRF/downloads
     wget https://github.com/wrf-model/WRF/archive/v4.1.5.tar.gz
     wget https://github.com/wrf-model/WPS/archive/v4.1.tar.gz
     for i in *.gz ; do tar -xzf $i ; done
-    mv WRF-4.1.5/ ~/WRF/
-    mv WPS-4.1/ ~/WRF/
+    mv WRF-4.1.5/ /mnt/nfs-share/WRF/
+    mv WPS-4.1/ /mnt/nfs-share/WRF/
     ```
 2. Before we can compile WRF we need to set up some environment variables so that the program can find and use the libraries we have compiled to function.
     
     ```
-    cd .. or /home/ubuntu/WRF/downloads
+    cd .. or /mnt/nfs-share/WRF/downloads
     cd WRF-4.1.5/
     export NETCDF=$LIBDIR/netcdf
     export PATH=$LIBDIR/mpich/bin:$PATH
@@ -235,8 +179,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     34 (dmpar)
     1
     vi ~/.bashrc  
-        export LIBDIR=/home/ubuntu/WRF/libs  
-        export LD_LIBRARY_PATH=$LIBDIR/netcdf/lib:$LD_LIBRARY_PATH   
+        export LIBDIR=/mnt/nfs-share/WRF/libs  
+        export LD_LIBRARY_PATH=$LIBDIR/netcdf/lib:$LIBDIR/grib2/lib   
         export PATH=$LIBDIR/mpich/bin:$PATH
     source ~/.bashrc
     ```
@@ -252,8 +196,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 4. Now that WRF has been compiled we need to compile WPS. WRF must be compiled first. Here we choose option 3 because we are using the a Linux operating system (Ubuntu) on x86 infrastructure (OCI VM.Standard2.16) along with the gfortran compiler.  
    
     ```
-    cd /home/ubuntu/WRF/WPS-4.1
-    export WRF_DIR=/home/ubuntu/WRF/WRF-4.1.5/
+    cd /mnt/nfs-share/WRF/WPS-4.1
+    export WRF_DIR=/mnt/nfs-share/WRF/WRF-4.1.5/
     ./configure
     3
     ./compile
@@ -261,13 +205,12 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 5. Now that WPS is compiled, we need to download the data that we will use to simulate the geography of the world. We will create a new folder to house this information. It takes a while to uncompress since we are using the reccommended high resolution files, so we are using PV dialog to generate a progress bar for us.  
     
     ```
-    cd /home/ubuntu/WRF
+    cd /mnt/nfs-share/WRF/
     mkdir GEOG
     cd GEOG
     wget https://www2.mmm.ucar.edu/wrf/src/wps_files/geog_high_res_mandatory.tar.gz  
-    sudo apt-get install pv dialog -y
-    (pv -n geog_high_res_mandatory.tar.gz| tar xzf - -C . ) \
-    2>&1 | dialog --gauge "Extracting file..." 6 50
+    sudo yum install pv
+    tar xzf geog_high_res_mandatory.tar.gz
     ```
 6. Now that we have downloaded and extracted the geography data we need move some files around to the correct location and delete some additional files we don't need. We will use midnight commander for this, but you can just use terminal comands if you like. The following after mc will be using the Midnight Commander interface, so **`DO NOT`** `copy the following entire code block into terminal`.
     ```
@@ -283,11 +226,11 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     F8    #This deletes the highlighted file
     ENTER #This will confirm the choice
     F10 #This is used to exit Midnight commander
-    ```
+    ```  
 
 7. We need to adjust the namelist.wps file to zero in on a location of choice. I will be a small grid (10,000 x 10,000 meters) with Woburn Massachusetts USA as the centerpoint.  
     ```
-    cd /home/ubuntu/WRF/WPS-4.1
+    cd /mnt/nfs-share/WRF/WPS-4.1
     vi namelist.wps
     ```  
     **Please change all the values below to your liking based on your experiment**.
@@ -340,7 +283,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
         truelat1  =  42.48,  
         truelat2  =  42.48,  
         stand_lon = -71.15,  
-        geog_data_path = '/home/ubuntu/WRF/GEOG/'  
+        geog_data_path = '/mnt/nfs-share/WRF/GEOG/'  
         /  
     ```
     **To exit, simply press esc, then shift: followed by wq enter**  
@@ -365,7 +308,7 @@ Don’t actually download anything. We will create a script for that. We are goi
 10. Lets navigate to the correct directory and create our script to download data.
     
     ```
-    cd ~/WRF
+    cd /mnt/nfs-share/WRF
     mkdir scripts
     mkdir GFS
     cd scripts
@@ -375,13 +318,13 @@ Don’t actually download anything. We will create a script for that. We are goi
     ```
     #!/bin/bash  
 
-    inputdir=/home/ubuntu/WRF/GFS  
+    inputdir=/mnt/nfs-share/WRF/GFS  
     rm -rf $inputdir  
     mkdir $inputdir  
 
-    year=2020  
-    month=11  
-    day=20  
+    year=2021  
+    month=01  
+    day=15  
     cycle=00  
 
     for ((i=000; i<=006; i+=3))  
@@ -410,7 +353,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     ```
     cd ~/WRF/WPS-4.1
     ln -s ungrib/Variable_Tables/Vtable.GFS ./Vtable
-    ./link_grib.csh ~/WRF/GFS/
+    ./link_grib.csh /mnt/nfs-share/WRF/GFS/
     vi namelist.wps  
     ```
     
@@ -440,13 +383,13 @@ Don’t actually download anything. We will create a script for that. We are goi
     ```
     ncview met_em.d01.2020-11-20_00\:00\:00.nc
     ```
-    ![Screenshot of ncview](images/nc2.png)
+    ![Screenshot of ncview](images/nc2.png)  
 
 ## **STEP 6**: Running Real and WRF
 1. We have downloded data to represent a geographic location and we have added meteorological data to it; its finally time to run WRF using real data.
 
     ```
-    cd ~/WRF/WRF-4.1.5
+    cd /mnt/nfs-share/WRF/WRF-4.1.5
     cd run
     ln -s ../../WPS-4.1/met_em* .
     vi namelist.input
@@ -572,7 +515,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     ```
     **To exit, simply press esc, then shift: followed by wq enter**  
 
-3. Now we can finally run real.exe and wrf.exe. This program takes a while to run. To help speed this up, we will use MPI to run the programs on multiple cores of our shape. Remember this guide was written using a VM.Standard2.16 shape, so we will run real.exe on 2 cores.
+3. Now we can finally run real.exe and wrf.exe. This program takes a while to run. To help speed this up, we will use MPI to run the programs on multiple cores and nodes of our HPC cluster. Remember this guide was written using a VM.Standard2.4 shape for the bastion server, so we will run real.exe on 2 cores.
 
     ```
     cat /proc/cpuinfo #To get cpu infor (use if you forgot your OCI shape).
@@ -591,7 +534,7 @@ Don’t actually download anything. We will create a script for that. We are goi
 5. We have our input, now lets use it to generate a prediction.
 
     ```
-    mpirun -n 10 ./wrf.exe #This will run on 10 cores
+    mpirun -np 48 -hosts Node1 IP ADDRESS, Node2 IP Address ./wrf.exe #This will run on 48 cores on two nodes with ipaddesses of 172.15.1.2 and 172.16.1.3
     tail -F rsl.out.0000 #can be used to check for errors and progress. 
     ```
 6. We can check our prediction with the following:
@@ -602,11 +545,8 @@ Don’t actually download anything. We will create a script for that. We are goi
     ![Screenshot of ncview](images/nc5.png)  
     From our prediction you can see that some changes have occured when we look at the same area six hours later. There are many variables to explore, so have fun.
 
-    With this you have learned how to set up and configure WRF to run weather predictions with real data.
-    I'll set up a smaller guide on what to do to change up the experiment with new data.
-
-    You may proceed to the next lab to learn what to do to change up the experiment with new data.
-
+    With this you have learned how to set up and configure WRF to run weather predictions with real data on an HPC Cluster. There are many variables and configurations to explore, so have fun.
+    
 ## Acknowledgements
 * **Author** - Brian Bennett, Solution Engineer, Big Compute
 * **Last Updated By/Date** - Brian Bennett, Big Compute, December 2020
