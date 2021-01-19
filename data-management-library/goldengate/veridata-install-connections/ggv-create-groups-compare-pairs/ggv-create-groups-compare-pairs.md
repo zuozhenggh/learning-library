@@ -62,6 +62,7 @@ To create compare pairs on the **Pattern Mapping** tab:
         ![](./images/8-pattern-mapping-pair-mapping-option2.png " ")
     * **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**
         ![](./images/10-pattern-mapping-pair-mapping-option3.png " ")
+        
 4. Click **Generate Mappings**. The control moves to the **Preview** tab.
 5. Click **Save** save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
