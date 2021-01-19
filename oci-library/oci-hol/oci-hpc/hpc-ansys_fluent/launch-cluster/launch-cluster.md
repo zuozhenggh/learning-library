@@ -9,6 +9,16 @@ There are many ways to launch an HPC Cluster Network, this solutions guide will 
 
 Estimated Lab Time: 30 minutes
 
+### Objectives
+
+In this lab:
+* We will walk you through the different steps required to launch a High Performance Computing(HPC) Cluster Network on OCI  
+
+### Prerequisites
+
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
 ## **OPTION 1**: Creation of Cluster Network through Marketplace
 
 Marketplace holds applications and images that can be deployed with our infrastructure. For customers that want to use Oracle Linux, an HPC Cluster Network image is available and can be launched from directly within marketplace. We suggest launching the [CFD Ready Cluster](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/75645211) that will contain librairies needed for CFD.
