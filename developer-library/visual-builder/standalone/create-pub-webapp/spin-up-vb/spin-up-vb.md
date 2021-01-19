@@ -1,10 +1,10 @@
-# Stage and Publish an Oracle Visual Builder Web Application
+# Create an Instance of Oracle Visual Builder  
 
 ## Introduction
 
-This tutorial shows you how to stage and publish a web application.
+This tutorial shows you how to create an instance of Visual Builder in your Cloud account.
 
-Estimated Lab Time:  10 minutes
+Estimated Lab Time:  5 minutes
 
 ### Background
 
