@@ -7,7 +7,7 @@ Autonomous Data Warehouse - Shared Infrastructure (ADW) or Autonomous Transactio
 
 The following video shows the steps you will execute in this lab.
 
-[](youtube:4BTSg2u1Pa0) Autonomous Graph Database: Load CSV Files.
+[](youtube:F_3xe18kWoo) Graph Studio: Load CSV Files.
 
 
 
