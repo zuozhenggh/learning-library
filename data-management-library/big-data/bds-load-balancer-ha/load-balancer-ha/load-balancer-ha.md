@@ -2,103 +2,131 @@
 
 ## Introduction
 
-In this lab, you'll create a load balancer to be used as a front end for accessing Cloudera Manager, Hue, and Oracle Data Studio on your highly-available (HA) Big Data Service cluster..
+In this lab, you'll create a load balancer that can be used as a front end for securely accessing Cloudera Manager, Hue, and Oracle Data Studio on your highly-available (HA) Big Data Service cluster.
 
-When you've completed the lab, you'll be able to open the consoles for those services by using the IP address (or hostname) of the load balancer, plus the port number used by the service. (Each service listens on a specific port.) For example, if the IP address of the load balancer is `10.2.0.2`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://10.2.0.2:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://10.2.0.2:8889`.
+Typically, a load balancer is used to spread workloads across multiple mirrored servers (for example, cluster nodes), to optimize resource usage and to ensure high-availability (HA). However, in this lab you'll use a load balancer to direct traffic to multiple ports on just two Big Data Service nodes. <!--Cloudera Manager, Hue, and Data Studio all run on the first utility node of a non-HA cluster, and the load balancer you create in this lab will handle traffic on that node.--> <!--In an HA cluster, the services are divided between the first and second utility nodes.-->
 
-Typically, a load balancer is used  to spread workloads across multiple mirrored servers, to optimize resource usage and to ensure high-availability. However, this lab tells you how to use a load balancer to direct traffic to specific services running specific servers (that is, Big Data Service nodes). Cloudera Manager runs on the first utility node of a non-HA cluster, and Hue and Data Studio run on the second utility node. The load balancer you create in this lab handles traffic on both nodes. (In a non-HA cluster, all three services run on the first utility node.)
+One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. SSL uses digital certificates and keys to encrypt and decrypt transmitted data, to ensure the identities of the sender and the receiver of data, and to sign the data to verify its integrity.  In this workshop, you'll implement end-to-end SSL, which means that the load balancer will accept SSL encrypted traffic from clients and encrypt traffic to the cluster.
 
-One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. <!--SSL is a protocol used to ensure privacy, authentication, and data security in internet communications.--> SSL encrypts and decrypts transmitted data, ensures that the sender and receiver of data are who they claim to be, and signs the data to verify its integrity.  In this lab, you'll implement end-to-end SSL, so the load balancer will accept SSL encrypted traffic from clients and encrypt traffic to the cluster.
+When you complete this lab, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number on which each service listens (regardless of cluster node). For example, if the IP address of the load balancer is `203.0.113.1`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://203.0.113.1:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://203.0.113.1:8889`.
 
-SSL uses *certificates* and *keys* to implement its security features. For highest security on a production system, you should obtain them from a trusted SSL certificate authority like IdenTrust or DigiCert. However, Big Data Service includes self-signed certificates and keys which you can use for learning and testing. The instructions in this lab tell you how to use those included files.
 
-Estimated Lab Time: 75 minutes
+Estimated workshop Time: 90 minutes, if you've already created the environment and cluster, as explained in [What Do You Need?](#whatdoyouneed), below.
 
 ### Objectives
 
-In this lab, you will:
+In this workshop, you will:
 
-* Create an Oracle Cloud Infrastructure load balancer for an existing Big Data Service HA cluster..
-
-<!-- * Create an Oracle Cloud Infrastructure load balancer for an existing non-HA Big Data Service cluster.-->
+* Create an Oracle Cloud Infrastructure load balancer for an existing HA Big Data Service cluster.
 
 * Configure the load balancer to function as a front end for connecting to Cloudera Manager, Hue, and Big Data Studio on the cluster.
 
-* Implement end-to-end SSL encryption for the load balancer. You'll use the self-signed SSL certificates that are included with the cluster.
+* Implement end-to-end SSL encryption for the load balancer by using the self-signed SSL certificates included with the cluster. <!--SSL is a protocol used to ensure privacy, authentication, and data security in internet communications.-->
 
-**Note:** If you want to create a load balancer for an non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://bgelernt.github.io/learning-library/data-management-library/big-data/bds-load-balancer/workshops/freetier/?qa=true?lab=use-load-balancer-access-services-on-big/?qa=true&lab=use-load-balancer-access-services-on-big) lab.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
+More specifically, you will:
+
+| STEP  | Task |
+| --- | --- |
+| [1](#STEP1:GatherInformation) | Gather information you'll need for subsequent steps in this lab: <br/> - the **SSH file** associated with your cluster<br/> - the **private IP address** of the **first** utility node in the cluster<br/> - the **private IP address** of the **second** utility node in the cluster<br/> - the **public IP address** of the **first** utility node in the cluster<br/> - the **public IP address** of the **second** utility node in the cluster |
+| [2](#STEP2:CopySSLCertificatesfromtheCluster) | Download the **SSL certificate** and **key** files from the first utility node of your cluster and from the second utility node of the cluster.  <br/><br/>**Note:** For highest security on a production system, you should obtain certificates from a trusted SSL certificate authority like IdenTrust or DigiCert. However, Big Data Service includes certificate and key files which you can use for learning and testing. (The certificates are self-signed, which means that the certificates aren't issued by a trusted certificate authority.) |
+| [3](#STEP3:CreatetheLoadBalancer) | a. Create the **load balancer**. <br/><br/>b. Create a **backend set** for Cloudera Manager. A backend set routes incoming traffic to the specified target(s), checks the health of the server, and optionally uses SSL to encrypt traffic. You'll complete the configuration of this backend set in STEP 5. <br/><br/>c. Create a **listener** for Cloudera Manager. A listener is an entity that checks for incoming traffic on the load balancer's IP address. You'll complete the configuration of this backend set in STEP 11. |
+| [4](#STEP4:CreateaCertificateBundle) | Create **certificate bundles** from the SSL certificates and keys you downloaded from your cluster in STEP 2. <br/><br/>You'll create one bundle with the files downloaded from the first utility node (for Cloudera Manager) and another bundle with the files downloaded from the second utility node (for Hue and Data Studio). In later steps, you'll apply these bundles to the backend sets and listeners you create in this lab, to implement SSL for the load balancer. |
+| [5](#STEP5:ConfiguretheBackendSetforClouderaManager) | Complete the configuration of the **backend set** you created in step 3, for Cloudera Manager. You'll apply the first certificate bundle you created in STEP 4 here. |
+| [6](#STEP6:CreateaBackendSetforHue) | Create and configure the **backend set** for Hue. |
+| [7](#STEP7:CreateaBackendSetforBigDataStudio) | Create and configure the **backend set** for Oracle Data Studio. |
+| [8](#STEP8:AddaBackendServerforClouderaManager) | Add a **backend server** to the backend set you created for Cloudera Manager in STEP 3. <br/><br/>Backend servers receive incoming TCP or HTTP traffic and generate content in reply. For this load balancer, you'll use two backend servers: the first utility node of your cluster (where Cloudera Manager runs) and the second utility node (where Hue and Data Server run). |
+| [9](#STEP9:AddaBackendServerforHue) | Add the **backend server** for Hue.|
+| [10](#STEP10:AddaBackendServerforBigDataStudio) | Add the **backend server** for Data Studio. |
+| [11](#STEP11:ConfiguretheListenerforClouderaManager) | Complete the configuration of the **listener** for Cloudera Manager, which you created in STEP 3.  You'll apply the second certificate bundle you created in STEP 4 here. |
+| [12](#STEP12:CreateaListenerforHue) | Create and configure a **listener** for Hue. |
+| [13](#STEP13:CreateaListenerforBigDataStudio) | Create and configure a **listener** for Big Data Studio. |
+| [14](#STEP14:AccesstheCluster) | Access Cloudera Manager, Hue, and Data Studio by using the IP address assigned to the load balancer, appended by the port number for the service. |
+
+**Note:** If you want to create a load balancer for a non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://bgelernt.github.io/learning-library/data-management-library/big-data/bds-load-balancer-ha/workshops/freetier/?qa=true?lab=use-load-balancer-access-services-on-big/?qa=true&lab=use-load-balancer-access-services-on-big) workshop <!--{{REPLACE WITH REAL IP ADDRESS}}-->.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
 ### What Do You Need?
 
-* This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> **Get Started with Oracle Cloud** lab in the **Contents** menu. <!-- FIND OUT ABOUT RENAMING THAT TO "GET STARTED WITH ORACLE CLOUD"-->
+* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> **Get Started with Oracle Cloud** lab in the **Contents** menu. <!-- FIND OUT ABOUT RENAMING THAT TO "GET STARTED WITH ORACLE CLOUD"-->
 
-* Any operating system command shell containing Secure Shell (SSH) and Secure Copy (SCP). This lab assumes you're using a recent installation of Windows, such as Windows 10, which includes Windows PowerShell, `ssh`, and `scp`.
+* Any operating system command shell containing **Secure Shell (SSH)** and **Secure Copy (SCP)**. You can also use the open source PuTTY network file transfer application. See PuTTY documentation for instructions.
 
-    * An **Oracle Cloud Infrastructure environment** with a **Virtual Cloud Network (VCN)**, a **public subnet**, appropriate **security rules**, and a **Big Data Service non-HA cluster**. The fastest way to set up the environment for this lab is to complete the  [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service)  workshop. Specifically, you must complete the following labs in that workshop:
+  This workshop assumes you're using a recent installation of Windows, such as Windows 10, which includes Windows PowerShell, `ssh`, and `scp`.  
 
-      * **Lab 1: Set Up Your BDS Environment**
-      * **Lab 2: Create a BDS Hadoop Cluster**
-      * **Lab 4: Access a BDS Node Using a Public IP Address**
+  * An **Oracle Cloud Infrastructure environment** with a **Virtual Cloud Network (VCN)**, a **public subnet**, the appropriate **security rules** for creating a load balancer, and a **Big Data Service HA cluster**. The fastest way to set up the environment for this workshop is to complete the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service)  workshop. You can complete the entire workshop if you want, but you must complete at least the following labs:
 
-    Once you've completed those labs, you can start with **STEP 1: Gather Information**, below.
+    * **Lab 1: Set Up Your BDS Environment**
+    * **Lab 2: Create a BDS Hadoop Cluster**
+    * **Lab 4: Access a BDS Node Using a Public IP Address**
 
-If you choose not to complete the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop as described above, you must create and configure:
+    Once you've completed those labs, you can start with [STEP 1: Gather Information](#STEP1:GatherInformation), below.
 
-* An **Oracle Big Data Service HA cluster** running in a **VCN** with an internet gateway and a public regional subnet (for a public load balancer).  See [Set Up Oracle Cloud Infrastructure for Oracle Big Data Service](https://docs-uat.us.oracle.com/en/cloud/paas/big-data-service/user/set-oracle-cloud-infrastructure-oracle-big-data-service.html) and [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
+If you choose **not** to complete the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, you must create and configure:
+
+* A **HA Oracle Big Data Service cluster** running in a **VCN** with an internet gateway and a public regional subnet (for a public load balancer). See [Set Up Oracle Cloud Infrastructure for Oracle Big Data Service](https://docs-uat.us.oracle.com/en/cloud/paas/big-data-service/user/set-oracle-cloud-infrastructure-oracle-big-data-service.html) and [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
 
 * **Security rules** that allow incoming traffic on the ports where services run in the cluster: Cloudera Manager (port 7183), Hue (port 8889), and Big Data Studio (port 30000). See [Create Ingress Rules \(Open Ports\)](https://docs.oracle.com/en/cloud/paas/big-data-service/user/define-security-rules.html#GUID-CE7BE686-4047-4DAA-BCE7-3B46BABC321F) in *Using Big Data Service*.
 
-* **Administrative access** to manage load balancers.  See "Let network admins manage load balancers" in [Common Policies](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm)<!--  in the Oracle Cloud Infrastructure documentation-->.
+* **Administrative access** to manage load balancers.  See "Let network admins manage load balancers" in [Common Policies](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm) in the Oracle Cloud Infrastructure documentation.
 
-* An **SSH key pair**. The key pair must include the private key that was associated with the cluster when it was created. In the steps below, the sample key pair files are named `my-ssh-key` (the private key) and `my-ssh-key.pub` (the public key used when the cluster was created). See [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Oracle Big Data Service* and [Creating a Key Pair](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair)<!--  in the Oracle Cloud Infrastructure documentation-->.
+* An **SSH key pair**. The SSH key pair must include the private key that was associated with the cluster when it was created. <!-- In the steps below, the sample key pair files are named `my-ssh-key` (the private key) and `my-ssh-key.pub` (the public key). See [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Oracle Big Data Service* and [Creating a Key Pair](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) in the Oracle Cloud Infrastructure documentation.--> Se [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
 
-* **Access to the cluster file system** (via SSH). You must be able to connect directly to the first and second utility nodes in your cluster. To do this, prior to creating a load balancer, you must set up your environment to allow that access. For example you can use Oracle FastConnect or Oracle IpSec VPN, you can set up a bastion host, or you can map private IPs to public IP addresses. See  [Establish Connections to Nodes with Private IP Addresses](https://docs.oracle.com/en/cloud/paas/big-data-service/user/establish-connections-nodes-private-ip-addresses.html) in *Using Big Data Service*.
+* **Access to the cluster file system** (via SSH). You must be able to connect directly to the first utility node in your cluster. To do this, prior to creating a load balancer, you must set up your environment to allow that access. For example you can use Oracle FastConnect or Oracle IpSec VPN, you can set up a bastion host, or you can map private IPs to public IP addresses. See  [Establish Connections to Nodes with Private IP Addresses](https://docs.oracle.com/en/cloud/paas/big-data-service/user/establish-connections-nodes-private-ip-addresses.html) in *Using Big Data Service*.
 
 
 ## **STEP 1:** Gather Information
 
 Gather the following information before you start:
 
-
-   | Information | Where To Find It |
+  | Information | Where To Find It |
 | :--- | :--- |
-| SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br><br>In the examples shown in this lab, the SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key that was associated with the cluster when it was created). In the examples below, the private key is located in `C:\Users\MYHOME\bds\ssh\`.|
-| Target location for downloading SSL files | A location on your local computer for saving downloaded SSL files. You'll retrieve these files later, when you create the load balancer.|
-|IP Addresses of the first and second utility nodes |The accessible IP address of the first utility node, which is where Cloudera Manager runs, and the accessible IP address of the second utility node, where Hue and Big Data Studio run. <br><br>If you followed the steps in the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, these are the public IP addresses that you mapped to the nodes' private IP addresses. <br><br>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.|
+| SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br/><br/>In the examples shown in this workshop, the example SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key that was associated with the cluster when it was created). In the examples below, the private key is located in `C:\Users\MYHOME\bds\ssh\`. |
+|Private IP address of the first utility node |The private IP address assigned to the first utility node when it was created. <br/><br/> Find this address in the **Node Information** box on the **Big Data > Clusters > Cluster Details > Nodes > Node Details** page for the first utility node of your cluster.<br/><br/>In the example shown in this workshop, the private IP address is `198.51.100.0`. Your IP address will be different. |
+|Private IP address of the second utility node |The private IP address assigned to the second utility node when it was created. <br/><br/> Find this address in the **Node Information** box on the **Big Data > Clusters > Cluster Details > Nodes > Node Details** page for the second utility node of your cluster.<br/><br/>In the example shown in this workshop, the private IP address is `198.51.100.1`. Your IP address will be different. |
+|Public IP address of the first utility node |The public IP address of the first utility node. <br/><br/>If you followed the steps in the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, this is the public IP address that you mapped to the first utility node's private IP address. <br/><br/>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions. Note that IP addresses available via these solutions aren't reachable from the public internet. However, for convenience, they are called "public" in this lab.<br/><br/>In the example shown in this workshop, the public IP address of the first utility node is `192.0.2.0`. Your IP address will be different.|
+|Public IP address of the second utility node |The public IP address of the second utility node. <br/><br/>If you followed the steps in the [Getting Started with Oracle Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, this is the public IP address that you mapped to the second utility node's private IP address. <br/><br/>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.<br/><br/>In the example shown in this workshop, the public IP address of the second utility node is `192.0.2.1`. Your IP address will be different.|
+
+
 
 ## **STEP 2:** Copy SSL Certificates from the Cluster
 
-In this step, you'll obtain the self-signed SSL certificates that were automatically created with your cluster.
+In this step, you'll obtain self-signed SSL certificates and keys that are included in your cluster. They're located in the `/opt/cloudera/security/x509` directories of the first and second utility nodes.
 
-You'll copy the following certificate and key from the _first_ utility node:
+You'll copy the following certificates and keys:
+* From the first utility node:
 
-  * `/opt/cloudera/security/x509/`_&lt;first\_utility\_node\_certificate&gt;_`.pem`
+    * `/opt/cloudera/security/x509/`_&lt;first\_utility\_node\_certificate&gt;_`.pem`
 
-  * `/opt/cloudera/security/x509/node.hue.key`
+    * `/opt/cloudera/security/x509/node.hue.key`
 
-And you'll copy the following certificate and key from the _second_ utility node:
+* From the second utility node:
 
-  * `/opt/cloudera/security/x509/`_&lt;second\_utility\_node\_certificate&gt;_`.pem`
+    * `/opt/cloudera/security/x509/`_&lt;second\_utility\_node\_certificate&gt;_`.pem`
 
-  * `/opt/cloudera/security/x509/node.hue.key`
+    * `/opt/cloudera/security/x509/node.hue.key`
 
 To copy the files:
 
 1. On the Windows taskbar, right-click the Windows **Start** button and select **Windows PowerShell**.
 
-  ![](./images/launch-powershell.png "Launch powershell")
+    <!--![](./images/launch-powershell.png "Launch Powershell")-->
+    ![](./images/launch-powershell.png "")
 
-  **Note:** If you use a Virtual Private Network (VPN), you may need to disconnect from VPN before using PowerShell to connect to your cluster. Re-establish your VPN connection when you move on to **STEP 3: Create the Load Balancer,** below.
+    **Note:** If you use a Virtual Private Network (VPN), you may need to disconnect from VPN before using PowerShell to connect to your cluster. Re-establish your VPN connection when you move on to **STEP 3: Create the Load Balancer,** below.
 
 2. In PowerShell, use `ssh` with your private key to connect to the first utility node:
 
+    ```
+    PS C:\Users\MYHOME\&gt; <copy>ssh -i &lt;private-ssh-key&gt; opc@&lt;first-util-node-ip&gt;</copy>
       ```
-    PS C:\Users\MYHOME\> <copy>ssh -i <private-ssh-key> opc@<first-util-node-ip></copy>
-      ```
-    For example, if you're working from `C:\Users\MYHOME`, your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`, and the accessible IP address of the first utility node of your cluster is `10.2.0.101`, enter:
+    For example, for these conditions:
+    * You're entering commands from your `C:\Users\MYHOME` Directory
+    * Your private key file `my-ssh-key` is in `C:\Users\MYHOME\bds\ssh`
+    * The public IP address of the first utility node of your cluster is `192.0.2.0`
+
+    enter:
 
       ```
-    PS C:\Users\MYHOME\> <copy>ssh -i ./bds/ssh/my-ssh-key opc@10.2.0.101</copy>
+    PS C:\Users\MYHOME\&gt; <copy>ssh -i bds/ssh/my-ssh-key opc@192.0.2.0</copy>
     Last login: Tue Nov 10 17:59:41 2020 from some-host
     [opc@myclustun0 ~]$
 
@@ -109,116 +137,130 @@ To copy the files:
 3. At the Linux prompt, list the contents of ``/opt/cloudera/security/x509/``, which is the directory that contains the SSL files on the node. For example:
 
       ```
-    [opc@myclustun0 ~]$ <copy>ls /opt/cloudera/security/x509/</copy>
+    [opc@myclustun0 ~]$ <copy>ls -1 /opt/cloudera/security/x509/</copy>
     agents.pem
     hostname.key
     hostname.pem
     hue.pem
     node_myclustmn0.sub12345678901.myclustevcn.oraclevcn.com.pem
-    node_myclustmn1.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem
-    node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustwn0.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustwn1.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustwn2.sub12345678901.myclustevcn.oraclevcn.com.pem
     node.cert
     node.hue.key
     node.key
-    ssl.cacerts.pem
-    ssl.private.key
       ```
 
-4. Copy and save the file *names* of the PEM files for the first and second utility nodes. You can identify them by looking at the first part of the names, where ``<cluster>`` is the first seven letters of the cluster name and `un0` and `un1` identify the nodes. For example, in a cluster named `mycluster`:
+  4. Copy and save the file *names* of the PEM files for the first and second utility nodes. You can identify them by looking at the first parts of the names, where ``<cluster>`` is the first seven letters of the cluster name, `un0` identifies the first utility node, and  `un1` identifies the second utility node. For example, in a cluster named `mycluster`, the first utility node is:
 
-    * `node_myclust`**`un0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem` (first utility node)
-    * `node_myclust`**`un1`**`.sub12345678901.myclustevcn.oraclevcn.com.pem` (second utility node)
+    `node_`**`myclustun0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
+
+      ![](./images/ls-opt-etc-x509-2.png "")
 
     You'll use these names in the following steps, when you issue commands to download the files.
 
 5. At the Linux prompt, type `exit` to disconnect from the cluster.
 
-6. Remain in PowerShell, and use the `scp` command to copy the SSL certificate from the first utility node  (`node0`) to a ``<target>`` location on your computer. For convenience later, copy the file to an easily recognizable name, with a `.pem` filename extension:
+6. Remain in PowerShell. For convenience later, create a directory for saving the SSL file. For example, if you have a `bds` directory under your home directory, you can create the `ssl-files` directory under it:
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename></copy>
-      ```
-
-      For example, if you're in your `C:\Users\MYHOME` directory, you want to copy the file to your `C:\Users\MYHOME\bds\ssl\` directory, and you want to rename the file to `first-util-node-cert.pem`, enter the following:
+    PS C:\Users\MYHOME\&gt; <copy>mkdir bds/ssl-files</copy>
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/first-util-node-cert.pem</copy>
-      ```
 
-      Notice that the IP address is for the first utility node. In this example, it's  `10.2.0.101`.
-
-7. Copy the SSL certificate from the second utility node (`node1`):  
+7. Use the `scp` command to copy the SSL certificate from the first utility node  (`node0`) to a `<target>` location on your computer, for example the `ssl-files` directory you just created. For convenience later, copy the file to an easily recognizable name, with a `.pem` filename extension:
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/<ssl-cert-file-name> <target-dir/filename> </copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i &lt;ssh-private-key&gt; opc@&lt;first-util-node-ip-address&gt;:/opt/cloudera/security/x509/&lt;ssl-cert-file-name&gt; &lt;target-dir/filename&gt;</copy>
       ```
 
-      For example:
+    For example, for these conditions:
+    * You're entering command from your `C:\Users\MYHOME` directory
+    * You want to copy the file to your `C:\Users\MYHOME\bds\ssl-files\` directory
+    * You want to rename the file to `first-util-node-cert.pem`
+
+    enter:
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem ./bds/ssl-files/second-util-node-cert.pem</copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@192.0.2.0:/opt/cloudera/security/x509/node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem bds/ssl-files/first-util-node-cert.pem</copy>
       ```
 
-      Notice that the IP address is for the second utility node. In this example, it's  `10.2.0.102`.
+      Notice that the IP address is for the first utility node. In this example, it's  `192.0.2.0`.
 
-      **Note** You could have copied both certificate files from either the first or second utility nodes, because the SSL certificate files for all the nodes are stored on all the nodes. However, in the next two steps, you must copy the key file for the first utility node from the first utility node and the key file for the second utility node from the second utility node.
-
-8. Copy the SSL key file (named `node.hue.key`) for the first utility node to a ``<target>`` location on your computer. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
+8. Copy the SSL key file (named `node.hue.key`) for the first utility node to the ``<target>`` location. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<first-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i &lt;ssh-private-key&gt; opc@&lt;first-util-node-ip-address&gt;:/opt/cloudera/security/x509/node.hue.key &lt;target-dir/filename&gt;</copy>
       ```
 
       For example:
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.101:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/first-util-node.key</copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@198.51.100.0:/opt/cloudera/security/x509/node.hue.key bds/ssl-files/first-util-node.key</copy>
+      ```
+9. Use the `scp` command to copy the SSL certificate from the **second** utility node  (`node1`) to a `<target>` location on your computer, for example the `ssl-files` directory. Copy the file to an easily recognizable name, with a `.pem` filename extension:
+
+      ```
+    PS C:\Users\MYHOME\&gt; <copy>scp -i &lt;ssh-private-key&gt; opc@&lt;first-util-node-ip-address&gt;:/opt/cloudera/security/x509/&lt;ssl-cert-file-name&gt; &lt;target-dir/filename&gt;</copy>
       ```
 
-9. Copy the SSL key file  (also named `node.hue.key`) for the second utility node:  
+    For example, for these conditions:
+    * You're entering command from your `C:\Users\MYHOME` directory
+    * You want to copy the file to your `C:\Users\MYHOME\bds\ssl-files\` directory
+    * You want to rename the file to `second-util-node-cert.pem`
+
+    enter:
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i <ssh-private-key> opc@<second-util-node-ip-address>:/opt/cloudera/security/x509/node.hue.key <target-dir/filename></copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@192.0.2.1:/opt/cloudera/security/x509/node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem bds/ssl-files/first-util-node-cert.pem</copy>
+      ```
+
+      Notice that the IP address is for the second utility node. In this example, it's  `192.0.2.1`.
+
+10. Copy the SSL key file (named `node.hue.key`) for the second utility node to the ``<target>`` location. For convenience later, copy the file to an easily recognizable name, with a `.key` filename extension.  
+
+      ```
+    PS C:\Users\MYHOME\&gt; <copy>scp -i &lt;ssh-private-key&gt; opc@&lt;first-util-node-ip-address&gt;:/opt/cloudera/security/x509/node.hue.key &lt;target-dir/filename&gt;</copy>
       ```
 
       For example:
 
       ```
-    PS C:\Users\MYHOME\> <copy>scp -i ./bds/my-ssh-key opc@10.2.0.102:/opt/cloudera/security/x509/node.hue.key ./bds/ssl-files/second-util-node.key</copy>
+    PS C:\Users\MYHOME\&gt; <copy>scp -i bds/my-ssh-key opc@198.51.100.1:/opt/cloudera/security/x509/node.hue.key bds/ssl-files/second-util-node.key</copy>
       ```
-
-      Notice that the IP address is for the second utility node. In this example, it's `10.2.0.102`.
-
-10. List your downloaded files to make sure the files were downloaded appropriately, for example:
+11. List your downloaded files to make sure the files were downloaded appropriately, for example:
 
       ```
-    PS C:\Users\MYHOME\> <copy>ls</copy> ./bds/ssl-files
+    PS C:\Users\MYHOME\&gt; <copy>ls</copy> bds/ssl-files
 
     Directory: C:\Users\MYHOME\ssl-files
 
     Mode      LastWriteTime            Length Name
     ----      -------------  ------    ----
-    -a----    11/17/2020     9:21 AM   1285 first-util-node-cert.pem
+    -a----    11/17/2020     9:26 AM   1285 first-util-node-cert.pem
     -a----    11/17/2020     9:30 AM   1675 first-util-node.key
-    -a----    11/17/2020     9:32 AM   1285 second-util-node-cert.pem
-    -a----    11/17/2020     9:32 AM   1675 second-util-node.key   
+    -a----    11/17/2020     9:35 AM   1285 second-util-node-cert.pem
+    -a----    11/17/2020     9:40 AM   1675 second-util-node.key
       ```
 
-11. Close Windows PowerShell.
+10. Close Windows PowerShell.
 
 ## **STEP 3:** Create the Load Balancer
 
-1. On the Oracle Cloud Console banner at the top of the page, open the navigation menu ![Navigation menu](./images/nav-button.png). Under **Core Infrastructure**, point to **Networking**, and then click **Load Balancers**.
+1.   **Note:** If you use VPN to connect to Oracle Cloud, and you disconnected from VPN to perform STEP 2, above, reconnect to VPN before continuing.
 
-    ![](./images/start-nav-menu.png "Open Load Balancer")
+  Sign in to the **Oracle Cloud Console** as an administrator. See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm).
 
-2. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster. Then click **Create Load Balancer**.
+2. On the banner at the top of the page, click the navigation menu ![Navigation menu](./images/nav-button.png) to open it. Under **Core Infrastructure**, point to **Networking**, and then click **Load Balancers**.
 
-    ![](./images/start-create-load-balancer.png "Start Create Load Balancer")
+    <!--![](./images/start-nav-menu.png "Open Load Balancer")-->
+    ![](./images/start-nav-menu.png "")
+
+2. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster, and then click **Create Load Balancer**.
+
+    <!--![](./images/start-create-load-balancer.png "Start Create Load Balancer")-->
+    ![](./images/start-create-load-balancer.png "")
 
 3. On the **Add Details** page of the **Create Load Balancer** wizard, enter the following information:
 
@@ -226,7 +268,7 @@ To copy the files:
 
     * **Choose Visibility Type:** Click **Public** to create a load balancer that will be accessible from the public internet.
 
-    * **Assign a public IP address** Click **Ephemeral IP Address** to have an ephemeral IP address assigned to the load balancer. When the load balancer is deleted, this IP address will return to the pool of available IP addresses in the tenancy.
+    * **Assign a public IP address:** Click **Ephemeral IP Address** to have an ephemeral IP address assigned to the load balancer. An ephemeral IP address is an IP address that doesn't persist beyond the life of the resource. When the load balancer is deleted, this IP address will return to the pool of available IP addresses in the tenancy.
 
     * **Choose Total Bandwidth:** Accept the default **Small**.
 
@@ -236,7 +278,8 @@ To copy the files:
 
      * **Use network security groups to control traffic:** Leave this box unchecked.
 
-    ![](./images/create-lb-add-details.png "Create load balancer - Add details")
+    <!--![](./images/create-lb-add-details.png "Create load balancer - Add details")-->
+    ![](./images/create-lb-add-details.png "")
 
 4. Click **Next**.
 
@@ -252,79 +295,115 @@ To copy the files:
 
         * **Port:** Enter **7183**, which is the port on which Cloudera Manager listens.
 
+        * **Interval in ms (Optional):** You can accept the default or change the value to suit your needs.
+
+        * **Timeout in ms (Optional):** You can accept the default or change the value to suit your needs.
+
+        * **Number of Retries (Optional):** You can accept the default or change the value to suit your needs.
+
+        * **Status Code (Optional):** You can accept the default or change the value to suit your needs.
+
         * **URL Path (URI):** Keep the default forward slash (**/**).
 
         * **Use SSL:** Leave this box unchecked. You'll configure SSL for this backend set later.
 
-        ![](./images/create-lb-add-backends.png "Create load balancer - Add backends")
+        <!--![](./images/create-lb-add-backends.png "Create load balancer - Add backends")-->
+        ![](./images/create-lb-add-backends.png "")
+
+    **Note:** When the load balancer is created, it will include this backend set for Cloudera Manager. The name of the load balancer will be something like **bs\_lb\_&lt;date-timestamp&gt;**; for example, **bs\_lb\_2020-1117-1226**. You can't change this name.
 
 6. Click **Next**.
 
 7. On the **Configure Listener** page of the wizard, enter the following information:
 
-    * **Listener Name:** Enter a name for the listener for Cloudera Manager; for example, **`cm-listener`**.
+    * **Listener Name:** Enter a name for the listener for Cloudera Manager; for example, `cm-listener`.
 
     * **Specify the type of traffic your listener handles:** Select **HTTP**. You'll change this to HTTPS later.
 
-    * **Specify the Port Your Listener Monitors for Ingress Traffic**: Enter **7183**.
+    * **Specify the port your listener monitors for ingress traffic**: Enter **7183**.
 
-    ![](./images/create-lb-add-listener.png "Create load balancer - Add listener")
+    <!--![](./images/create-lb-add-listener.png "Create load balancer - Add listener")-->
+    ![](./images/create-lb-add-listener.png "")
 
-8. Click **Submit**. When the large load balancer status icon at the top of the **Load Balancer Details** page is green and says "Active," you can continue with the steps below. It may take a few minutes to create the load balancer.
+8. Click **Submit**. When the large load balancer status icon at the top of the **Load Balancer Details** page turns from orange to green and the label is "Active," you can continue with the steps below. It may take a few minutes to create the load balancer.
 
-  ![](./images/lb-status-large-icon.png "Load balancer status icon")
+  <!--![](./images/lb-status-large-icon.png "Load balancer status icon")-->
+  ![](./images/lb-status-large-icon.png "")
 
 ## **STEP 4:** Create Certificate Bundles
 
-In this step, you'll create certificate bundles with the SSL certificate and key files that you downloaded in **STEP 2: Copy SSL Certificates from the Cluster**. You'll create one bundle for the first utility node and one for the second utility node. You'll use these later to configure SSL for backend sets and listeners.  
+In this step, you'll create two certificate bundles with the SSL certificate and key files that you downloaded in **STEP 2: Copy SSL Certificates from the Cluster**. You'll use them later to configure SSL for backend sets and listeners.  
 
 1. On the left side of the **Load Balancer Details** page, under **Resources**, click **Certificates** and then click **Add Certificate**.
 
-  ![](./images/resources-certs-add-certs.png "Add certificates")
+    <!--![](./images/resources-certs-add-certs.png "Add certificates")-->
+    ![](./images/resources-certs-add-certs.png "")
 
 2. On the **Add Certificate** page, enter the following information:
 
     * **Certificate Name:** Enter `first-util-node-cert-bundle` (or a name of your choice).
 
-    * **SSL Certificate:** In the **SSL Certificates** box, click the **select one** link, find and select the SSL certificate you downloaded from the first utility node; for example, `first-util-node-cert.pem` in `C:\Users\MYHOME\bds\ssl-files`, and click **Open**.
+    * **SSL Certificate:** In the **SSL Certificates** box, click the **select one** link, find and select the SSL certificate you downloaded from the **first** utility node; for example, `first-util-node-cert.pem` in `C:\Users\MYHOME\bds\ssl-files`, and click **Open**.
 
-      **Note:** If you don't see all your `.pem` and `.key` files in the directory where you saved them in **STEP 2: Copy SSL Certificates from the Cluster**, above, make sure that all files types are displayed in the Windows **File Upload** dialog box by selecting **All Files (\*.\*)** from the list above the **Open** button.
+        ![](./images/select-one.png "")
 
-      ![](./images/choose-file-type.png "Choose file type list")
+      **Note:** If you don't see your `.pem` and `.key` files in the directory where you saved them in **STEP 2: Copy SSL Certificates from the Cluster**, above, make sure that all files types are displayed in the Windows **File Upload** dialog box by selecting **All Files (\*.\*)** from the list above the **Open** button.
+
+      <!--![](./images/choose-file-type.png "Choose file type list")-->
+      ![](./images/choose-file-type.png "")
 
     * **Specify CA Certificate:** Check this box, and then click the **select one** link to add the same file that you just added for **SSL Certificate**, above; for example, `first-util-node-cert.pem`.
 
     * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the first utility node; for example, `first-util-node.key`.
 
-    ![](./images/add-cert.png "Add certification page ")
+    <!--![](./images/add-cert.png "Add certification page ")-->
+    ![](./images/add-cert.png "")
 
 3. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
 
-    ![](./images/cert-list.png "Certificates table")
+    <!--![](./images/cert-list.png "Certificates table")-->
+    ![](./images/cert-list.png "")
 
     **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (first) utility node.
 
-4. Remain on the **Certificates** page. Click **Add Certificate** again, and then on the **Add Certificate** page, enter the following information:
+4. Remain on the **Load Balancer Details > Certificates** page, and click **Add Certificate**.
+
+    <!--![](./images/resources-certs-add-certs.png "Add certificates")-->
+    ![](./images/resources-certs-add-certs.png "")
+
+5. On the **Add Certificate** page, enter the following information:
 
     * **Certificate Name:** Enter `second-util-node-cert-bundle` (or a name of your choice).
 
-    * **SSL Certificate:** In the **SSL Certificates** box, click the **select one** link, find and select the SSL certificate you downloaded from the second utility node; for example, `second-util-node-cert.pem`, and click **Open**.
+    * **SSL Certificate:** In the **SSL Certificates** box, click the **select one** link, find and select the SSL certificate you downloaded from the **second** utility node; for example, `second-util-node-cert.pem` in `C:\Users\MYHOME\bds\ssl-files`, and click **Open**.
 
-    * **Specify CA Certificate:** Check this box, and then add the same file that you just added for **SSL Certificate**, above.
+        ![](./images/select-one.png "")
 
-    * **Specify Private Key**: Check this box, click the **select one** link, find and select the SSL key you downloaded from the second utility node; for example, `second-util-node.key`, and click **Open**.
+    * **Specify CA Certificate:** Check this box, and then click the **select one** link to add the same file that you just added for **SSL Certificate**, above; for example, `second-util-node-cert.pem`.
 
-5. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table.
+    * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the second utility node; for example, `second-util-node.key`.
+
+    <!--![](./images/add-cert.png "Add certification page ")-->
+    ![](./images/add-cert.png "")
+
+6. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
+
+    <!--![](./images/cert-list.png "Certificates table")-->
+    ![](./images/cert-list.png "")
+
+    **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (second) utility node.
+
 
 ## **STEP 5:** Configure the Backend Set for Cloudera Manager
 
-1. On the left side of the **Certificates** page, under **Resources**, click **Backend Sets**. The backend set you created in **STEP 3: Create the Load Balancer** is displayed in the **Backend Sets** table, with a name like **`bs_lb_<date-timestamp>`**; for example, **bs\_lb\_2020-1117-1226**. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing this backend set, and select **Edit**.
+1. On the left side of the **Certificates** page, under **Resources**, click **Backend Sets**. The backend set you created for Cloudera Manager in [STEP 3: Create the Load Balancer](#STEP3:CreatetheLoadBalancer) is displayed in the **Backend Sets** table, with a name like **`bs_lb_<date-timestamp>`**; for example, **bs\_lb\_2020-1117-1226**. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing this backend set, and select **Edit**.
 
-    ![](./images/edit-cm-backend-set.png "Edit CM backend set")
+    <!--![](./images/edit-cm-backend-set.png "Edit CM backend set")-->
+    ![](./images/edit-cm-backend-set.png "")
 
 3. On the **Edit Backend Set** page, enter the following information.
 
-    * **Name:** Read only. This name was created for you by the wizard.
+    * **Name:** This read-only field shows the name that was created for you by the wizard, for example, **bs\_lb\_2020-1117-1226**.
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
@@ -336,12 +415,13 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **Session Persistence:** Accept the default **Disable Session Persistence**.
 
-    ![](./images/edit-backend-set.png "Edit backend set page")
+    <!--![](./images/edit-backend-set.png "Edit backend set page")-->
+    ![](./images/edit-backend-set.png "")
 
-4. Click **Update Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. When complete, a cipher suite name is added to the **Cipher Suite** field for the backend set. It may take a few moments.
+4. Click **Update Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. When complete, a cipher suite name is added to the **Cipher Suite** field for the backend set. It may take a few moments for the name to appear.
 
-
-    ![](./images/cipher-suite.png "Cipher suite field")
+    <!-- ![](./images/cipher-suite.png "Cipher suite field")-->
+    ![](./images/cipher-suite.png "")
 
 ## **STEP 6:** Create a Backend Set for Hue
 
@@ -351,7 +431,7 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example, **second-util-node-cert-bundle**.
+    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Check this box.
 
@@ -365,7 +445,9 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
         * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
-    ![](./images/create-backend-set.png "Create backend set page")
+    <!-- ![](./images/create-backend-set.png "Create backend set page")-->
+    ![](./images/create-backend-set.png "")
+
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
 
@@ -377,7 +459,7 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
-    * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**.
+    * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **first-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Check this box.
 
@@ -401,19 +483,21 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
 2. On the left side of the **Backend Set Details** page, under **Resources**, click **Backends**.
 
-  ![](./images/resources-backends.png "Backends link")
+    <!--![](./images/resources-backends.png "Backends link")-->
+    ![](./images/resources-backends.png "")
 
 3. On the **Backends** page, click **Add Backends**, and then enter the following information on the **Add Backends** page:
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address**: Enter the private IP address of the first utility node of your cluster; for example, `10.2.0.101`.
+    * **IP Address**: Enter the private IP address of the first utility node of your cluster; for example, `198.51.100.0`.
 
       * **Port:** Enter **`7183`**, which is the port on which Cloudera Manager listens.
 
       * **Weight:** Accept the default value **1**.
 
-    ![](./images/add-backend-cm.png "Add backend server page")
+    <!--![](./images/add-backend-cm.png "Add backend server page")-->
+    ![](./images/add-backend-cm.png "")
 
 4. Click **Add**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend server to be added to the **Backends** table.
 
@@ -427,7 +511,7 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address:** Enter the private IP address of the second utility node; for example, **`10.2.0.102`**.
+    * **IP Address:** Enter the private IP address of the **second** utility node; for example, **`198.51.100.1`**.
 
     * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
@@ -445,7 +529,7 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address:** Enter the private IP address of the second utility node; for example, `10.2.0.102`.
+    * **IP Address:** Enter the private IP address of the second utility node; for example, `198.51.100.1`.
 
     * **Port:** Enter **`30000`**, for the port where Big Data Studio listens.
 
@@ -473,7 +557,8 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **Backend Set:** From the list, select the backend set you created for Cloudera Manager; for example, **bs\_lb\_2020-0928-1136**.  (This should be set already, because you selected it in **STEP 3: Create the Load Balancer**. Remember, the wizard assigned this name when you created the load balancer.)
 
-    ![](./images/edit-listener-cm.png "Edit listener page")
+    <!--![](./images/edit-listener-cm.png "Edit listener page")-->
+    ![](./images/edit-listener-cm.png "")
 
 4. Click **Update Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be updated in the **Listeners** table, so that **Use SSL** is **Yes**.
 
@@ -487,11 +572,12 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example,  **second-util-node-cert-bundle**.
+    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **second-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 
     * **Backend Set:** From the list, select the backend set you created for Hue in **STEP 6: Create a Backend Set for Hue**; for example, **hue-backend-set**.
+
 
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
@@ -505,7 +591,7 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
     * **Port:** Enter **30000**, which is the port on which Big Data Studio listens.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the second utility node; for example, **second-util-node-cert-bundle**.
+    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **second-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 
@@ -515,13 +601,6 @@ In this step, you'll create certificate bundles with the SSL certificate and key
 
 ## **STEP 14:** Access the Cluster
 
-<!-- It may take a few minutes for the backend sets and listeners to be ready to receive requests.
-
-On the left side of the page, under **Resources**, click **Backend Sets**. In the **Backend Sets** table, check the status in the **Health** column. When the status for all the backend sets are **OK**, you can use the load balancer.
-
-**Tip:** If it's taking a long time for the health check, consider shortening the interval. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing a backend set, and select **Update Heath Check**. Change **Interval in Ms** to **1000** (the minimum interval) and **Timeout in Ms** to **500**. Repeat for each backend set. You can change the settings later if you want the health checks to be performed less often.
--->
-
 It may take a few minutes for the backend sets and listeners to be ready to receive requests. To open the services included in this load balancer:
 
 1. Find the IP address or the hostname used for your load balancer.
@@ -530,13 +609,14 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 
       Find the IP address in the **Load Balancer Information** panel at the top of the load balancer pages.
 
-      ![](./images/load-balancer-info.png "Load Balancer Information")
+      <!--![](./images/load-balancer-info.png "Load Balancer Information")-->
+      ![](./images/load-balancer-info.png "")
 
     * **DNS hostname**
 
       (DNS hostname is optional.) After the load balancer is created and it's been given an IP address, you or another administrator must add a DNS entry to your DNS name servers, to resolve your desired hostname (for example, `bds-frontend.mycompany.com`) to the public IP address of the load balancer. Then, the services registered in the load balancer will be accessible by using that hostname; for example, `bds-frontend.mycompany.com:7183` for Cloudera Manager.
 
-      For information about using DNS in Oracle Cloud Infrastructure, see [Overview of the DNS Service](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm)<!--  in the Oracle Cloud Infrastructure documentation-->.
+      For information about using DNS in Oracle Cloud Infrastructure, see [Overview of the DNS Service](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm) in the Oracle Cloud Infrastructure documentation.
 
 2. In a web browser, enter the address as follows:
 
@@ -548,7 +628,8 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 
     * `https://`*`<load-balancer-ip>`*`:7183`
 
-      ![](./images/cm-url.png "Address bar")
+      <!--![](./images/cm-url.png "Address bar")-->
+      ![](./images/cm-url.png "")
 
       * `https://`*`<hostname>`*`:7183`
 
@@ -560,7 +641,7 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
       * `https://`*`<load-balancer-ip>`*`:30000`
       * `https://`*`<hostname>`*`:30000`
 
-**This concludes this lab. <!-- Please proceed to the next lab in the Contents menu.-->**
+**This concludes this workshop. <!-- Please proceed to the next lab in the Contents menu.-->**
 
 ## Want to Learn More?
 
@@ -572,8 +653,52 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 
 ## Acknowledgements
 
-* **Last Updated Date:** December 2020
+* **Last Updated Date:** January 2021
 
-## See an issue?
 
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name, lab* and *step* in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
+<!--
+reserved text
+
+To view your reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > Public IPs**. The  reserved public IP address is displayed in the **Reserved Public IPs** list.
+-->
+<!--  You could choose instead to select **Private** to create a load balancer that will be accessible only from your private network, but for simplicity these instructions describe how to create a public load balancer.-->
+
+
+
+
+
+<!--
+
+As part of that load balancer, you'll create a ***backend set*** for each service (Cloudera Manager, Hue, and Data Studio), add a single ***backend server*** to each backend set, and create a ***listener*** for each service.
+
+  * A backend set routes incoming traffic.
+
+  * A backend server is the server that processes the request. For this load balancer, the  first utility node of the cluster is the backend server.
+
+  *
+
+ Specifically, you'll do the following:
+
+| In this step...                                      | You will do this... |
+|- - - |- - -|
+| [STEP 1: Gather Information](#STEP1:GatherInformation)                         | Gather the information you need to create the load balancer. |  
+| [STEP 2: Copy SSL Certificates from the Cluster](#STEP2:CopySSLCertificatesfromtheCluster)                         | Copy an SSL certificate and key from the cluster to use with the load balancer |  
+| [STEP 3: STEP 3: Create the Load Balancer](#STEP3:STEP3:CreatetheLoadBalancer)                         | Create the load balancer and create a backend set for Cloudera Manager |  
+| [STEP 4: Create a Certificate Bundle](#STEP4:CreateaCertificateBundle)                         | Blah blah |  
+| [STEP 5: Configure the Backend Set for Cloudera Manager](#STEP5:ConfiguretheBackendSetforClouderaManager)                         | Blah blah |  
+| [STEP 6: Create a Backend Set for Hue](#STEP6:CreateaBackendSetforHue)                         | Blah blah |  
+| [STEP 7: Create a Backend Set for Big Data Studio](#STEP7:CreateaBackendSetforBigDataStudio)                         | Blah blah |  
+| [STEP 8: Add a Backend Server for Cloudera Manager](#STEP8:AddaBackendServerforClouderaManager)                         | Blah blah |  
+| [STEP 9: Add a Backend Server for Hue](#STEP9:AddaBackendServerforHue)                         | Blah blah |  
+| [STEP 10: Add a Backend Server for Big Data Studio](#STEP10:AddaBackendServerforBigDataStudio)                         | Blah blah |  
+| [STEP 11: Configure the Listener for Cloudera Manager](#STEP11:ConfiguretheListenerforClouderaManager)                         | Blah blah |  
+| [STEP 12: Create a Listener for Hue](#STEP12:CreateaListenerforHue)                         | Blah blah |  
+| [STEP 13: Create a Listener for Big Data Studio](#STEP13:CreateaListenerforBigDataStudio)                         | Blah blah |  
+| [STEP 14: Access the Cluster](#STEP14:AccesstheCluster)                         | Blah blah |  
+-->
