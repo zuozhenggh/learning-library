@@ -52,7 +52,7 @@ This lab assumes you have:
 
     ![](images/weblogic_2.png)
 
-1.  If you see EDQ server and Admin server are running, you are good to proceed further.
+6.  If you see EDQ server and Admin server are running, you are good to proceed further.
 
     ![](images/weblogic_3.png)
 
@@ -72,9 +72,9 @@ This lab assumes you have:
    </copy>
     ````
      
-This script will approximately take 5-10 minutes to start the Node Manager, Weblogic and EDQ Services.
+    This script will approximately take 5-10 minutes to start the Node Manager, Weblogic and EDQ Services.
 
-Please login into weblogic console and check if all the EDQ services are up and running after 5 minutes.
+    Please login into weblogic console and check if all the EDQ services are up and running after 5 minutes.
 
 
 ## **STEP 2**: Start EDQ Director and Create new project in EDQ
