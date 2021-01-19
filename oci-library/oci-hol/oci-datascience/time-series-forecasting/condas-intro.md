@@ -6,6 +6,8 @@ When you log into OCI Data Science, you will be able to to pick and choose which
 
 A conda environment is somewhere between a Docker image and a Python virtual environment. It allows users to run processes in isolated environments with different packages and different package versions installed.   In addition, it can manage different versions of Python that are not installed system-wide and support package installation of Python, R, Node.js and Java.  For many ML and AI use cases, conda environments offer the right level of isolation and flexibility.
 
+*Estimated Lab Time*: 15 minutes
+
 ### Objectives
 
 In this lab, you will:
@@ -16,7 +18,7 @@ In this lab, you will:
 
 * A foundational understanding of Python
 
-## Launching Environment Explorer
+## **STEP 1:** Launching Environment Explorer
 
 1.  After you log into OCI Data Science and create a Notebook, go to `File` and select `New Launcher`.
 
@@ -26,15 +28,15 @@ In this lab, you will:
 
   ![](./../time-series-forecasting/images/environment_explorer.png " ")
 
-## Downloading a pre-built conda environment
+## **STEP 2:** Downloading a pre-built Conda Environment
 
-3.  Choose from a list of conda environments
+1.  Choose from a list of conda environments
 
 When you click on `Environment Explorer`, you will see each Explorer tab allowing you to filter on either the Data Science, Installed, or Published Conda environments.  The Data Science Conda Environments tab shows a list of pre-built conda environments you can install.  We offer several pre-built condas tailored for specific use cases such as general machine learning and data exploration.
 
   ![](./../time-series-forecasting/images/conda_environment_explorer.png " ")
 
-4.  Install a pre-built conda environment
+2.  Install a pre-built conda environment
 
 When you have decided on which conda environment to install, click `Install`, copy and execute the command in a terminal window.
 
@@ -42,7 +44,7 @@ When you have decided on which conda environment to install, click `Install`, co
 
 ## Selecting Conda Environment for Notebook session
 
-5.  Choose an installed conda environment for notebook
+3.  Choose an installed conda environment for notebook
 
 When you start a new notebook, go to the top right corner to select the conda environment you would like to use for the notebook session.
 
@@ -54,7 +56,7 @@ You can *proceed to the next lab*.
 
 For more information, please refer to our:
 
-* **Service Documentation**: https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm
+* **Service Documentation**:https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm
 * **Blog**: https://blogs.oracle.com/datascience/conda-environment-data-science
 
 ## Acknowledgements

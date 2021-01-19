@@ -64,9 +64,9 @@ curl -L -o time-series-hol.ipynb https://bit.ly/2KsORJk
 
 For more information, please refer to our:
 
-* [Documentation] (https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
-* [Statsmodels Dcoumentation] (https://www.statsmodels.org/stable/index.html)
-* [fb Prophet Documentation] (https://facebook.github.io/prophet/)
+* **Service Documentation**: (https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
+* **Statsmodels Documentation** (https://www.statsmodels.org/stable/index.html)
+* **Prophet Documentation** (https://facebook.github.io/prophet/)
 
 ## Acknowledgements
 
