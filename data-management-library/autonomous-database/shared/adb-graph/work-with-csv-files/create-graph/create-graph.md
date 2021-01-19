@@ -1,4 +1,4 @@
-# Autonomous Graph Database: Create a graph using PGQL CREATE PROPERTY GRAPH statement
+# Graph Studio: Create a graph using PGQL CREATE PROPERTY GRAPH statement
 
 ## Introduction
 
@@ -6,7 +6,7 @@ In this lab you will create a graph from the `bank_accounts` and `bank_txns` tab
 
 The following video shows the steps you will execute in this lab.
 
-[](youtube:oQAR5icMh34) Autonomous Graph Database: Create a graph.
+[](youtube:5g9i9HA_cn0) Graph Studio: Create a graph.
 
 Estimated Lab Time: 15 minutes. 
 
@@ -65,7 +65,9 @@ Learn how to
 
   ![](./images/18-modeler-suggested-model.png " ")    
 
-  We will replace the CREATE PROPERTY GRAPH statement with an updated definition.
+  We will replace the default incorrect CREATE PROPERTY GRAPH statement with an updated definition.  
+
+  ![](images/18b-incorrect-ddl.png " ")
 
 4.  Click the Source tab to bring up the existing statement and the edit dialog.  
   ![](./images/19-modeler-correct-ddl.png " ")   
@@ -77,7 +79,7 @@ CREATE PROPERTY GRAPH bank_graph
     VERTEX TABLES (
         BANK_ACCOUNTS as ACCOUNTS 
         KEY (ACCT_ID) 
-        LABELS ACCOUNTS
+        LABEL ACCOUNTS
         PROPERTIES (ACCT_ID, NAME)
     )
     EDGE TABLES (

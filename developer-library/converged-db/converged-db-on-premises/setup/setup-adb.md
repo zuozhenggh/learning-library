@@ -78,6 +78,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 2. In the cloud shell prompt execute the wget command to download the load script and execute it.  
 3. Substitute yourinstance name with *your adb instance name* (e.g convgdb_high) and the password you used
 *NOTE: The load-ajd.sh script is in the setup directory, it will be loaded to object store when in production.  Still being tested - Kay*
+
       ````
       <copy>
       cd $HOME
