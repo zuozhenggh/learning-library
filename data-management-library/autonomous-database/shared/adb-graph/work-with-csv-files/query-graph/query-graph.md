@@ -6,7 +6,7 @@ In this lab you will query the newly create graph (i.e. `bank_graph`) in PGQL pa
 
 The following video shows the steps you will execute in this lab.
 
-TBD "video link" Graph Studio: Query a graph.
+[](youtube:DLRlnw-NI1g) Graph Studio: Query a graph.
 
 Estimated Lab Time: 15 minutes. 
 
@@ -56,7 +56,7 @@ Click the Play, or Run, icon to execute this paragraph.
 
 ![](images/26-md-paragraph.png " ")   
 
-Then click the Gear (settings) icon to turn off the Code listing and only display the result.   
+Then click the Eye (visibility) icon to turn off the Code listing and only display the result.   
 
 ![](images/27-md-paragraph-turn-off-code-listing.png " ")  
 
@@ -201,7 +201,7 @@ The Getting Started notebook folder also contains a tutorial on PGQL.
    %pgql-pgx
    /* Show all the transfers in 5-hop circular payment chains starting from acct 934 */
    select a, t1, i1, t2, i2, t3, i3, t4, i4, t5 
-   from match (a)-[t1]->(i1)-[t2]->(i2)-[t3]->(i3)-[t4]->i4-[t5]->(a) on bank_graph
+   from match (a)-[t1]->(i1)-[t2]->(i2)-[t3]->(i3)-[t4]->(i4)-[t5]->(a) on bank_graph
    where a.acct_id=934
    </copy>
    ```
