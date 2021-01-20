@@ -2,29 +2,24 @@
 
 ## Introduction
 
-This lab walks though the process of provisioning Spatial Studio using the Oracle Cloud Cloud Marketplace.  The Markplace is ....
-
+This lab walks though the process of provisioning Oracle Spatial Studio (Spatial Studio) using the Oracle Cloud Marketplace.  The Oracle Cloud Markplace provides apps and services provided by Oracle and 3rd parties. Details are available [here](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/index.html).
 
 Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
 
 ### Objectives
 
 In this lab, you will:
-* .......
+* Install Spatial Studio from the Oracle Cloud Marketplace
+* Perform initial launch of Spatial Studio and set repository schema
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+* Repository schema created (Lab 3).
 
-*This is the "fold" - below items are collapsed by default*
+<!-- *This is the "fold" - below items are collapsed by default* -->
 
 ## **STEP 1**: Select Spatial Studio from Marketplace
-
-Step 1 opening paragraph.
 
 1. Log into your Oracle Cloud, click the main hamburger menu, and select  Marketplace > Applications
 
@@ -40,8 +35,6 @@ Step 1 opening paragraph.
 
 
 ## **STEP 2:** Create Stack Wizard
-
-Opening paragraph...
 
 1. Optionally enter a custom name and description for the app. Then select the Compartment to use for the deployment and click Next
 
@@ -71,8 +64,6 @@ Opening paragraph...
 
 ## **STEP 3:** Monitor Deployment Progress
 
-Opening paragraph...
-
 1. The Logs section at the bottom of the Job Details page will show progress. It will initially display a spinner while setting up for deployment. 
 
   ![Image alt text](images/env-marketplace-10.png "Image title")
@@ -85,15 +76,15 @@ After a couple minutes you will see log information.
 
   ![Image alt text](images/env-marketplace-12.png "Image title")
 
-## **STEP 4:** Open Spatial Studio
+## **STEP 4:** First-Time Login
 
-Opening paragraph...
-
-1. Opening the Spatial Studio public URL will first display a browser warning related to privacy and security. The specific warning depends on your platform and browser. This is not a Spatial Studio issue; it is generic to  access of web sites that do not have a signed HTTPS certificate. Loading and configuring a signed certificate removes this warning. However the process of loading certificates in Jetty is beyond the scope of this workshop. 
+1. Opening the Spatial Studio public URL for the first time will display a browser warning related to privacy and security. The specific warning depends on your platform and browser. 
 
   ![Image alt text](images/env-marketplace-13.png "Image title")
 
-   Click the link to contine to the website.
+  This is not a Spatial Studio issue; it is generic to  access of web sites that do not have a signed HTTPS certificate. Loading and configuring a signed certificate removes this warning. However the process of loading certificates in Jetty is beyond the scope of this workshop. 
+
+  Click the link to contine to the website.
 
 2. Enter the Spatial Studio admin user name (default is studio_admin) and the password you entered in the Step 2 (Create Stack wizard, item 3). Then click Sign In.
 
@@ -118,9 +109,33 @@ Opening paragraph...
 
 Oracle Spatial Studio is now provisioned. 
 
-In order to deprovision Spatial Studio......
+## **STEP 5**: Deprovision Spatial Studio
 
-You may now [proceed to the next lab](#next).
+The following are steps to remove the Spatial Studio app and repository schema. If you would like to fully remove Spatial Studio proceed with the following.
+
+1. Navigate to Resources > Stack
+
+    ![Image alt text](images/env-marketplace-19.png "Image title")
+
+2. Choose the Compartment and Name used in STEP 2. In the example shown below, a compartment named sandbox and Stack named Oracle Spatial Studio was used.
+
+    ![Image alt text](images/env-marketplace-20.png "Image title")
+
+3. Select Terraform Actions > Destroy
+
+    ![Image alt text](images/env-marketplace-21.png "Image title")
+
+  You will be prompted to confirm. This will remove the Compute and Network artifacts created by the Marketplace deployment.
+
+4. After removing the Spatial Studio app, your repository schema remains in place. 
+   To remove the repository schema, connect to the database as **admin** as done in Lab 3 and run the following. 
+
+   ```
+   <copy>DROP USER studio_repo CASCADE;</copy>
+   ```
+
+
+This concludes the Workshop. You may now proceed to the the workshop ...
 
 ## Learn More
 

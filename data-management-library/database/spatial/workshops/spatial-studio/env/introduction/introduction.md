@@ -2,7 +2,7 @@
 
 ## About Oracle Spatial Studio
 
- Oracle Spatial Studio (Spatial Studio) provides no-code access to the spatial capabilitieis of Oracle Database. While these capabilities have historically required coding and/or use of 3rd party tools, Spatial Studio allows business users to create and share spatial analysis and interactive web maps using self-service GUIs. 
+ Oracle Spatial Studio (Spatial Studio) provides no-code access to the spatial capabilities of Oracle Database. While these capabilities have historically required coding and/or use of 3rd party tools, Spatial Studio allows business users to create and share spatial analysis and interactive web maps using self-service GUIs. 
 
   ![img alt text](./images/spatial-studio.png)
 
@@ -28,14 +28,14 @@ Estimated Workshop Time: xx minutes
 
 ### Workshop Overview
 
-In this workshop you will analyze spatial relationships between traffic accidents, police stations, and police station service areas. You will begin by loading data from common formats, prepare..., and ....
+In this workshop you will provision Spatial Studio from the OCI Cloud Marketplace and prepare a schema in Autonomous Database to be used as Spatial Studio's metadata repository.
 
 
 ### Prerequisites
 
-- This workshop requires access to ...... 
-- If you already have access to these, then following this Introduction you may skip to the section ..... 
-- Otherwise you should proceed to sections ......
+- This workshop requires an Oracle Autonomous Database, SQL Developer Web (or other SQL client), and access to the OCI Cloud Marketplace. 
+- If you already have access to these, then following this Introduction you may skip to the Lab 3. 
+- Otherwise you should proceed to Lab 1.
 - No previous experience with Oracle Spatial is required.
 
 

@@ -2,31 +2,23 @@
 
 ## Introduction
 
-This lab walks though ....
-
+This lab walks though the creation of the database schema to be used for Spatial Studio's metadata repository. This is the schema that will store the work you do in Spatial Studio, such as the definitions of Datasets, Analyses, and Projects. 
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
 
-### Objectives
-
-In this lab, you will:
-* .......
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Access to database SQL Developer Web or desktop Oracle client (SQL Developer, SQL*Plus, SQLcl).
+* Access to database SQL Developer Web. You can also use a desktop Oracle client (SQL Developer, SQL*Plus, SQLcl).
 
-*This is the "fold" - below items are collapsed by default*
+<!-- *This is the "fold" - below items are collapsed by default*  -->
 
 ## **STEP 1**: Create Repo Schema
 
-opening paragraph
 
-1. Connect to the database to be used for the the Spatial Studio repository. If you are using Autonomous Database, then connect as the **admin** user. otherwise connect as a user with the DBA role.
+1. Connect to the Autonomous database to be used for the the Spatial Studio repository as the **admin** user
 
 2. Create Spatial Studio repository schema. The schema can have any name, but for consistency with other labs we use the name **studio_repo**
     ```
@@ -34,31 +26,21 @@ opening paragraph
    IDENTIFIED BY <password goes here>;</copy>
     ```
 
-3. Assign default tablespace to Spatial Studio repository schema.  If using Autonomous Database you can use tablespace name **DATA** 
+3. Assign default tablespace to Spatial Studio repository schema.  With Autonomous Database you can use tablespace name **data** 
    
     ```
    <copy>ALTER USER studio_repo
-   DEFAULT TABLESPACE <tablespace name here>;</copy>
+   DEFAULT TABLESPACE data;</copy>
     ```
 
 4. Assign tablespace quota to Spatial Studio repository schema. Spatial Studio's metadata occupies a very small amount of storage. So the quota primarily accomodates business data stored in the repo schema. For this lab, a quota value of **250M** is fine. You can also set the value to **unlimited** if you will experiment with other datasets.
    
     ```
    <copy>ALTER USER studio_repo
-   QUOTA <quota value> ON <tablespace name here>;</copy>
+   QUOTA <quota value> ON data;</copy>
     ```
 
 5. Confirm that you can connect to the database using the Spatial Studio repository database username/password.
-
-    ![Image alt text](images/env-marketplace-1.png "Image title")
-
-
-
-
- 
-
-
-
 
 
 You may now [proceed to the next lab](#next).

@@ -5,12 +5,25 @@
         "title": "Prerequisites",
         "description": "Login to Oracle Cloud",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },     {
+      "title": "Introduction",
+      "filename": "../introduction/introduction.md"
     },
+    {
+      "title": "Lab 1: Autonomous Database",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+  },
+
+    {
+      "title": "Lab 2: SQL Developer Web",
+      "description": "SQL Developer Web",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-sqldevweb/adb-sqldevweb.md"
+  },
     {
       "title": "Lab 3: Spatial Studio Repo Schema",
       "filename": "../../../../spatial-studio/env/repo-schema/repo-schema.md"
   },    {
-      "title": "Lab 4: Provision Spatial Studio",
+      "title": "Lab 4: Spatial Studio App",
       "filename": "../../../../spatial-studio/env/env-marketplace/env-marketplace.md"
 }
     ]
