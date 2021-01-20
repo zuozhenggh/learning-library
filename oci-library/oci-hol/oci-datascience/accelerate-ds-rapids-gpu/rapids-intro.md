@@ -2,7 +2,7 @@
 
 ## Data Science Service and NVIDIA RAPIDS
 
-Oracle Cloud Infrastructure (OCI) Data Science is a fully managed service for data science teams to build, train, manage, and deploy machine learning models on Oracle Cloud Infrastructure.
+[Oracle Cloud Infrastructure (OCI) Data Science](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm) is a fully managed service for data science teams to build, train, manage, and deploy machine learning models on Oracle Cloud Infrastructure.
 
 The Data Science Service:
 * Provides data scientists with a collaborative, project-driven workspace.
@@ -12,7 +12,7 @@ The Data Science Service:
 * Helps data scientists concentrate on methodology and domain expertise to deliver more models to production.
 
 In this workshop you create a project and a notebook session in the Data Science service. The notebook session runs on a VM that hosts an NVIDIA GPU. In the notebook session
-you install the NVIDIA RAPIDS 0.16 conda environment and run two notebooks introducing you to the `cuDF` and `cuML` libraries. The `cuDF` library provide powerful functionalities to
+you install the [NVIDIA RAPIDS](https://rapids.ai/) 0.16 conda environment and run two notebooks introducing you to the `cuDF` and `cuML` libraries. The `cuDF` library provide powerful functionalities to
 speed up data frame manipulations on a GPU while `cuML` provides a comprehensive series of machine learning algorithms that can be trained on a GPU.
 
 Estimated Workshop Time: 2 hours
