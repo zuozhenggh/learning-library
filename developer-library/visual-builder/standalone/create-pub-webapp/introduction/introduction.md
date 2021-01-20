@@ -19,8 +19,6 @@ In this workshop, you'll learn how to create a new application, add some pages, 
 
 ### What Do You Need?
 
-
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * A Chrome browser
 

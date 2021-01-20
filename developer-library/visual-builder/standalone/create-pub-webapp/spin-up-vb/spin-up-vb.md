@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial shows you how to create an instance of Visual Builder in your Cloud account.
+This lab walks you through the process of creating an instance of Visual Builder, assuming you don't already one available to you.  If you do, you can skip this lab and move on to the next one.
 
 Estimated Lab Time:  5 minutes
 
@@ -16,25 +16,26 @@ If you just created a new Cloud account following the instructions in Prerequisi
 
 ![](./images/hamburger.png)
 
-2.  Using the scroll bar on the left, scroll down until you see Platform Services.  Hover over it, then click Visual Builder:
+2.  Using the scroll bar on the left, scroll down until you see **Platform Services**.  Hover over it, then click **Visual Builder**:
 
     ![](./images/platform.png)
 
-3.  On the Instances tab, click Create Instance:
+3.  On the Instances tab, click **Create Instance**:
 
     ![](./images/create_instance.png)
 
 
-4.  On the Create Instance page, fill in the information required.  Give your instance a unique name, one that is unlikely to be chosen by another user.  Be sure to select the Region nearest to your location.  Click Next.
+4.  On the Create Instance page, fill in the information required.  Give your instance a unique name, one that is unlikely to be chosen by another user.  Be sure to select the Region nearest to your location.  Click **Next**.
 
     ![](./images/detail.png)
 
-5. On the Confirmation page, click Create.  
+When the instance has finished provisioning, you'll receive an email.  
 
-6.  Wait until the status changes from "Creating service ..."  to  .  When this happens, you can click the instance name on the Instances tab and move on to the Introduction.
+5. From the menu on the Instances page, click **Open Visual Builder Home Page**.
 
-    ![](./images/status.png)
+  ![](./images/open.png)
 
+  You're now in Visual Builder and can move on to the next lab.
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan, Visual Builder User Assistance
