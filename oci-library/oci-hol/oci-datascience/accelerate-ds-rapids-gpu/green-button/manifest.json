@@ -4,7 +4,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to the Data Science Service",
-            "filename": "./../../common/odsc-intro.md"
+            "filename": "./../rapids-intro.md"
         },
         {
             "title": "Lab 1: Create a Project",
