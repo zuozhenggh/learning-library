@@ -143,7 +143,9 @@ To copy the files:
     hostname.pem
     hue.pem
     node_myclustmn0.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustmn1.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustun0.sub12345678901.myclustevcn.oraclevcn.com.pem
+    node_myclustun1.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustwn0.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustwn1.sub12345678901.myclustevcn.oraclevcn.com.pem
     node_myclustwn2.sub12345678901.myclustevcn.oraclevcn.com.pem
@@ -156,7 +158,11 @@ To copy the files:
 
     `node_`**`myclustun0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
 
-      ![](./images/ls-opt-etc-x509-2.png "")
+    And the second utility node is:
+
+      `node_`**`myclustun1`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
+
+      ![](./images/ls-opt-etc-x509-3.png "")
 
     You'll use these names in the following steps, when you issue commands to download the files.
 
@@ -337,7 +343,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 1. On the left side of the **Load Balancer Details** page, under **Resources**, click **Certificates** and then click **Add Certificate**.
 
     <!--![](./images/resources-certs-add-certs.png "Add certificates")-->
-    ![](./images/resources-certs-add-certs.png "")
+    ![](./images/resources-certs-add-certs-0.png "")
 
 2. On the **Add Certificate** page, enter the following information:
 
@@ -366,10 +372,10 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (first) utility node.
 
-4. Remain on the **Load Balancer Details > Certificates** page, and click **Add Certificate**.
+4. Remain on the **Load Balancer Details > Certificates** page, and click **Add Certificate** again.
 
     <!--![](./images/resources-certs-add-certs.png "Add certificates")-->
-    ![](./images/resources-certs-add-certs.png "")
+    ![](./images/resources-certs-add-certs-1.png "")
 
 5. On the **Add Certificate** page, enter the following information:
 
@@ -384,12 +390,12 @@ In this step, you'll create two certificate bundles with the SSL certificate and
     * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the second utility node; for example, `second-util-node.key`.
 
     <!--![](./images/add-cert.png "Add certification page ")-->
-    ![](./images/add-cert.png "")
+    ![](./images/add-cert-2.png "")
 
 6. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
 
     <!--![](./images/cert-list.png "Certificates table")-->
-    ![](./images/cert-list.png "")
+    ![](./images/cert-list-2.png "")
 
     **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (second) utility node.
 
@@ -431,7 +437,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
+    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the ***second*** utility node; for example, **second-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Check this box.
 
@@ -446,7 +452,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
         * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
     <!-- ![](./images/create-backend-set.png "Create backend set page")-->
-    ![](./images/create-backend-set.png "")
+    ![](./images/create-backend-set-ha-hue.png "")
 
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
@@ -459,7 +465,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
-    * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **first-util-node-cert-bundle**.
+    * **Use SSL:** Select this box, then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the ***second*** utility node; for example,  **second-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Check this box.
 
@@ -497,7 +503,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
       * **Weight:** Accept the default value **1**.
 
     <!--![](./images/add-backend-cm.png "Add backend server page")-->
-    ![](./images/add-backend-cm.png "")
+    ![](./images/add-backend-cm-ha.png "")
 
 4. Click **Add**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend server to be added to the **Backends** table.
 
@@ -572,7 +578,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **second-util-node-cert-bundle**.
+    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the ***second*** utility node; for example,  **second-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 
@@ -591,7 +597,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Port:** Enter **30000**, which is the port on which Big Data Studio listens.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example,  **second-util-node-cert-bundle**.
+    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the ***second*** utility node; for example,  **second-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 

@@ -378,7 +378,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
         * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
     <!-- ![](./images/create-backend-set.png "Create backend set page")-->
-    ![](./images/create-backend-set.png "")
+    ![](./images/create-backend-set-hue.png "")
 
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
@@ -422,7 +422,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address**: Enter the private IP address of the first utility node of your cluster; for example, `192.0.2.101`.
+    * **IP Address**: Enter the private IP address of the first utility node of your cluster; for example, `198.51.100.0`.
 
       * **Port:** Enter **`7183`**, which is the port on which Cloudera Manager listens.
 
@@ -443,7 +443,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address:** Enter the private IP address of the first utility node; for example, **`192.0.2.101`**.
+    * **IP Address:** Enter the private IP address of the first utility node; for example, **`198.51.100.0`**.
 
     * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
@@ -461,7 +461,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **IP Addresses:** Select this option at the top of the page, so you can enter a specific IP address.
 
-    * **IP Address:** Enter the private IP address of the first utility node; for example, `192.0.2.101`.
+    * **IP Address:** Enter the private IP address of the first utility node; for example, `198.51.100.0`.
 
     * **Port:** Enter **`30000`**, for the port where Big Data Studio listens.
 
