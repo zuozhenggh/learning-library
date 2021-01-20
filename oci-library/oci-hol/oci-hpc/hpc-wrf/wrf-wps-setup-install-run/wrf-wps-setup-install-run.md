@@ -277,7 +277,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     F6    #This will move the files to the GEOG directory
     ENTER #This will confirm the choice
     F10   #This is used to exit Midnight commander
-    sudo rm -r GEOG   #This will delete the additional GEOG folder.
+    sudo rm -r WPS_GEOG   #This will delete the additional GEOG folder.
     mc    #Opens Midnight Commander
     Highlight *._WPS_GEOG
     F8    #This deletes the highlighted file

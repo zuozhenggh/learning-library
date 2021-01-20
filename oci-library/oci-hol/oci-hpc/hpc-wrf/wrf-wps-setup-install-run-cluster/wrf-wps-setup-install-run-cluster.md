@@ -63,14 +63,6 @@ This lab assumes you have:
     sudo yum update -y
     sudo yum upgrade -y
     sudo yum group install "Development Tools" -y
-    
-    sudo yum install gfortran *
-    sudo yum install gcc-gfortran *
-    sudo yum install gcc-c++ -y *
-    sudo yum install gcc -y *
-    sudo yum install tcsh -y *
-    sudo yum install perl *
-    sudo yum install m4 *
     sudo yum install ncview -y
     sudo yum install mc -y
     ```
@@ -214,7 +206,6 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     mkdir GEOG
     cd GEOG
     wget https://www2.mmm.ucar.edu/wrf/src/wps_files/geog_high_res_mandatory.tar.gz  
-    sudo yum install pv *
     tar xzf geog_high_res_mandatory.tar.gz
     ```
 6. Now that we have downloaded and extracted the geography data we need move some files around to the correct location and delete some additional files we don't need. We will use midnight commander for this, but you can just use terminal comands if you like. The following after mc will be using the Midnight Commander interface, so **`DO NOT`** `copy the following entire code block into terminal`.
@@ -307,7 +298,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 
     1. In a web browser navigate to  https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/
     2. Click the link with the latest date (ex gfs.20201120/ as today is November 20th, 2020) 
-    3.	Choose 00  
+    3. Choose 00  
 Don’t actually download anything. We will create a script for that. We are going the lower resolution for an easier to handle datasize for this lab so 0p50 instead of 0p25. Use 0p25 if you have additional storage and want higher resolution/more reliable data. Need to download the number of files for the amount of time you want to run. Each file is one hour of data at given interval. EX if you want to run for six hours you need gfs.t00z.pgrb2.0p50.f000, gfs.t00z.pgrb2.0p50.f003, and gfs.t00z.pgrb2.0p50.f006. 0p25 is in one hour steps and 0p50 is in 3 hour steps. For tutorial we will use only 6 hours worth of data. Feel free to use more as you become more comfortable using WRF later on.
 
 10. Lets navigate to the correct directory and create our script to download data.
@@ -431,7 +422,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     run_seconds                         = 0,
     start_year                          = 2021, 2000, 2000,
     start_month                         = 01,   01,   01,
-    start_day                           = 20,   24,   24,
+    start_day                           = 15,   24,   24,
     start_hour                          = 00,   12,   12,
     end_year                            = 2021, 2000, 2000,
     end_month                           = 01,   01,   01,
