@@ -1,4 +1,4 @@
-# Monitoring your Application with Oracle Management Cloud
+# Lab 5: Monitoring your Application with Oracle Management Cloud
 
 ## Introduction
 This lab will walk you through the process on how to install an agent onto an existing application on the cloud. First, you will download the agent, then move it to your virtual machine with the app from Lab 100, and unzip it. After we confirm the agent is monitoring the application, we will then utilize entity discovery to better monitor the MySQL database in the environment.
@@ -12,23 +12,21 @@ This lab will walk you through the process on how to install an agent onto an ex
 * The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [CyberDuck](https://cyberduck.io/)
-* A compute image with the third party application from Lab 100 installed
+* A compute image with the third party application from Lab 1 installed
 
-Estimated time to complete this lab is 75 minutes
+Estimated Lab Time: 2 hour
 
-### Additional Resources
-* [OMC Documentation](https://docs.oracle.com/en/cloud/paas/management-cloud/index.html)
+## **Part 1:** Downloading the Agent from Oracle Management Cloud
 
-## Part 1. Downloading the Agent from Oracle Management Cloud
+### **Step 1: Navigate to the Agents Page**
 
-### **Step 1:** Navigate to the Agents Page
 Open Oracle Management Cloud and on the menu on the left hand side of your screen, click "Administration -> Agents" to get to the agents page.
 
 Once here, click the hamburger menu on the top right hand side of the screen and click the download agent button.
 
  ![](./images/1.png "")
 
-### **Step 2:** Download the agent
+### **Step 2: Download the agent**
 For agent type, select "Cloud Agent" and for your operating system choose "Linux (64 Bit)"
 
 Download the "Cloud Agent - Linux (64-bit)" file and save it to your computer.
@@ -39,13 +37,13 @@ Download the "Cloud Agent - Linux (64-bit)" file and save it to your computer.
 
 ![](./images/3.png "")
 
-## Part 2: Moving and Unzipping the Agent
+## **Part 2:** Moving and Unzipping the Agent
 
-### **Step 1:** Installing Cyberduck
+### **Step 1: Installing Cyberduck** 
 
  Download the appropriate version of [Cyberduck](https://cyberduck.io/download/) for your system.
 
-### **Step 2:**Connecting to your Application
+### **Step 2: Connecting to your Application**
 
 Open Cyberduck. If prompted to “Set Cyberduck as default application for FTP and SFTP locations” click cancel.
 
@@ -67,7 +65,7 @@ Once connected, you should see the home directory for oscommerce. Simply drag yo
 
 ![](./images/5.png "")
 
-### **Step 3:** Unzipping the Agent
+### **Step 3: Unzipping the Agent**
 
 Open your terminal and type ```cd .ssh``` to change to your ssh directory.
 
@@ -136,7 +134,7 @@ From here, you can check the status of your agent by typing:
 
 ![](./images/10.png "")
 
-### **Step 4:** Confirming the Agent is Running
+### **Step 4: Confirming the Agent is Running**
 Open OMC and navigate to agents by accessing the menu on the left hand side of your screen and clicking Administration -> Agents.
 
 At the bar at the top, click Cloud Agents, and you should see your Virtual Box Agent up and running.
@@ -145,9 +143,9 @@ To monitor your agent, click the hamburger menu on the right hand side of the ag
 
 ![](./images/11.png "")
 
-## Part 3: Discovering MySQL
+## **Part 3:** Discovering MySQL
 
-### **Step 1:** Configuring MySQL
+### **Step 1: Configuring MySQL**
 
 SSH into your instance if you aren't already there.
 
@@ -221,7 +219,8 @@ Once here, we need to scroll down and find 'bind-address'. The value needs to be
 
 Press Control + X to exit, when prompted to save, type 'Y', and then press enter to confirm.
 
-###Step 2: Agent Discovery
+
+### **Step 2: Agent Discovery**
 
 Navigate to Administration -> Discovery
 
@@ -253,7 +252,7 @@ Wait a minute for the entity to be discovered. After a few moments, you should s
 
 ![](./images/19.png "")
 
-###Step 3: Creating Dashboards
+### **Step 3: Creating Dashboards**
 
 Now that our agent is installed on the instance, and we have successfully discovered the MySQL Database, it's time to create some useful visualizations and dashboards.
 
@@ -311,14 +310,16 @@ Click on the widget you just created on the right to add it to the dashboard. Cl
 
 Congrats! You've just created a functional dashboard monitoring your MySQL database!
 
+## Learn More
+* [OMC Documentation](https://docs.oracle.com/en/cloud/paas/management-cloud/index.html)
 
 ## Acknowledgements
 * **Author** -  Ken Keil
-* **Adapted for Cloud by** -  Ken Keil
-* **Last Updated By/Date** - Saurabh Salunkhe, September 2020
+* **Last Updated By/Date** - Rajsagar Rawool, January 2021
 
+## Need Help ?
+If you are doing this module as part of an instructor led lab then please just ask the instructor.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+If you are working through this module self guided then please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one

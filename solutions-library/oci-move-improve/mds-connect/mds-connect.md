@@ -1,16 +1,16 @@
-# Connecting your application with MDS (MySQL Database Cloud Service) on OCI
+# Lab 3: Connecting your application with MDS (MySQL Database Cloud Service) on OCI
 
 ## Introduction
-This lab walks you through the steps on how to create MDS instance on OCI and how to migrate your database from your OSCommerce App MySQL to MDS on OCI. The lab will also focus on how to connect your OSCommerce application with MDS.
+This lab walks you through the steps on how to create MDS instance on OCI and how to migrate your database from your E-Commerce App MySQL to MDS on OCI. The lab will also focus on how to connect your E-Commerce application with MDS.
 
 Estimated Lab Time: 1 hour
 
 ### Objectives
 * Create a MDS (MySQL Database Cloud Service)
-* Migrate OSCommerce MySQL Database to MDS
-* Connect your OSCommerce App with MDS
+* Migrate E-Commerce MySQL Database to MDS
+* Connect your E-Commerce App with MDS
 
-## **Step 1:** Create MDS Instance on OCI
+## **Part 1:** Create MDS Instance on OCI
 1. Please login to OCI Console and click MySQL > DB Systems. And click Create MySQL DB System.
 
     ![](./images/1.png "")
@@ -27,9 +27,9 @@ Estimated Lab Time: 1 hour
 
     ![](./images/4.png "")
 
-## **Step 2:** Migrating Database to MDS
+## **Part 2:** Migrating Database to MDS
 
-1. Please ssh in your primary instance. Run the following command in the terminal.
+1. Please ssh in your secondary instance. Run the following command in the terminal.
 
     ```
     mkdir mysql
@@ -72,7 +72,7 @@ Estimated Lab Time: 1 hour
     mysql> exit;
     ```
 
-## **Step 3:** Connecting your OSCommerce App with MDS
+## **Part 3:** Connecting your E-Commerce App with MDS
 
 1. Please download the oscommerce App code to your laptop and move the zip contents to your primary instance using FileZilla tool. You can download filezilla from [here](https://filezilla-project.org/)
 OSCommerce Web Application - [Link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YWohpF3cmZuDi2LWL056VHnNvlNTu37JaGMhM8oqenS_95gf2WBWfUCylfFY2jI_/n/orasenatdpltintegration03/b/workshop/o/oscommerce.zip)
@@ -135,11 +135,11 @@ Save the file and proceed to next steps.
 
 ## Acknowledgements
 * **Author** - Rajsagar Rawool
-* **Adapted for Cloud by** -  Rajsagar Rawool
 * **Last Updated By/Date** - Rajsagar Rawool, January 2021
 
+## Need Help ?
+If you are doing this module as part of an instructor led lab then please just ask the instructor.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+If you are working through this module self guided then please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one

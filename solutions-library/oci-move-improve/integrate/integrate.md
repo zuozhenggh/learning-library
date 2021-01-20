@@ -1,4 +1,4 @@
-# Integrate Oracle Cloud Platform services with your app.
+# Lab 4: Integrate Oracle Cloud Platform services with your app
 
 ## Introduction
 This lab walks you through the steps to integrate your third party app with Oracle Cloud PaaS. First, we will connect MySQL database and then Oracle Autonomous Data warehouse to Oracle Integration Cloud. After both the connections has been established, we will migrate the data from MySQL database to Oracle Autonomous Datawarehouse(ADW). Lastly, we will connect Oracle Analytics Cloud service to Oracle Autonomous Data warehouse to perform some analytics. For a technical video that walks through this portion of the lab, please see the below link:<br>
@@ -15,20 +15,16 @@ This lab walks you through the steps to integrate your third party app with Orac
 
 ### Required Artifacts
 
-* Complete Lab 100 and 200
+* Complete Lab 1 and 2
 * Access to Oracle Integration Cloud Service
 * Access to Oracle Autonomous Data Warehouse
 * Access to Oracle Analytics Cloud Service
 
-Estimated time to complete this lab is two hours.
+Estimated Lab Time: 2 hour
 
-### Additional Resources
-* To learn about Oracle Integration Cloud Service, check out this [link](https://docs.oracle.com/en/cloud/paas/integration-cloud/index.html)
-* To learn about Autonomous Database, see the following [link](https://www.oracle.com/database/autonomous-database.html)
+## **Part 1:** Establish connections in Oracle Integration Cloud
 
-## Part 1. Establish connections in Oracle Integration Cloud
-
-### **Step 1:** Establish connection from MySQL to Oracle Integration Cloud
+**Step 1: Install OIC Connectivity Agent on MySQL**
 
 Before moving forward, if you have been provided a wallet file, a username, and password to an ADW or ATP, please keep this information handy and continue to the next step. Otherwise, read the step below:
 
@@ -104,6 +100,7 @@ nohup java -jar connectivityagent.jar
 
 ![](./images/Agent_4.png "")
 
+**Step 2: Establish Connections Between MySQL and OIC**
 
 In the Oracle Integration Cloud home page, click on the Menu icon in the top left and click on Integration.
 
@@ -149,7 +146,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
 
 ![](./images/5.png "")
 
-### **Step 2:** Establish connection from Oracle Autonomous Database and Oracle Integration Cloud
+**Step 3: Establish connection from Oracle ADB and OIC**
 
 Creating a connection between an Oracle Autonomous Database and Oracle Integration Cloud is a very similar process to creating a connection between our MySQL database and OIC.
 
@@ -161,7 +158,7 @@ In the next window, you will need to provide your Oracle Database wallet file, a
 
 ![](./images/7.png "")
 
-### **Step 3:** Establish an integration between the ADW and MySQL connections
+**Step 4: Establish an integration between the ADW and MySQL connections**
 
 Now that we have both connections made in Oracle Integration Cloud for our MySQL and Autonomous Database, we will need to establish an integration for both to communicate with each other.
 
@@ -283,9 +280,9 @@ Once you click on Activate, the slider should now be moved to the right and be h
 
 ![](./images/24.png "")
 
-## Part 2. Connect your app to Oracle Analytics Cloud
+## **Part 2:** Connect your app to Oracle Analytics Cloud
 
-### **Step 1:** Create an OAC Instance
+**Step 1: Create an OAC Instance**
 
 Go to cloud.oracle.com, click the Sign In icon to sign in with your Oracle Cloud account. From here, click on Sign in to Cloud
 
@@ -326,7 +323,7 @@ Once you click Create, you will be redirected to the first dashboard that lists 
 
 ![](./images/33.png "")
 
-### **Step 2:** Access your new OAC Instance
+**Step 2: Access your new OAC Instance**
 
 Make sure you are on the dashboard for Oracle Analytics cloud. Click on the Hamburger icon on the same line as the instance you recently made. Click on Oracle Analytics Cloud URL. You will then be redirected to the main page for your OAC Instance
 
@@ -338,7 +335,7 @@ When redirected, your page should look similar to the picture below. If you get 
 
 Note: If your page is not loading properly, or you are unable to access this page, disable any AdBlock extensions or programs that are running in the background, and refresh the page.
 
-### **Step 3:** Connect an ADW/ATP Instance to OAC
+**Step 3: Connect an ADW/ATP Instance to OAC**
 
 To connect an ADW instance to OAC, from the dashboard, click on Create. A new window will open, where you will need to select what type of database you are using. In this example, we picked Oracle ADW.
 
@@ -355,13 +352,17 @@ To see if your connection to your ADW/ATP instance was successful, go back to th
 
 ![](./images/39.png "")
 
+## Learn More
+* To learn about Oracle Integration Cloud Service, check out this [link](https://docs.oracle.com/en/cloud/paas/integration-cloud/index.html)
+* To learn about Autonomous Database, see the following [link](https://www.oracle.com/database/autonomous-database.html)
+
 ## Acknowledgements
 * **Author** - Mitsu Mehta, Saurabh Salunkhe
-* **Adapted for Cloud by** -  Mitsu Mehta, Saurabh Salunkhe
-* **Last Updated By/Date** - Saurabh Salunkhe, September 2020
+* **Last Updated By/Date** - Rajsagar Rawool, January 2021
 
+## Need Help ?
+If you are doing this module as part of an instructor led lab then please just ask the instructor.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+If you are working through this module self guided then please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one

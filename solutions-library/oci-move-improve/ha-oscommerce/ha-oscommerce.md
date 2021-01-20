@@ -1,16 +1,16 @@
-# Lab 200: High Availability for the OsCommerce instance
+# Lab 2: High Availability for the OsCommerce instance
 
 ## Introduction
-Below, we have a demo of how you can setup disaster recovery for your app in Oracle Cloud leveraging different availability domains (or across regions). One of the key principles of designing high availability solutions is to avoid single point of failure.
- We will deploy Compute instances that perform the same tasks in multiple availability domains. You can use the custom image you used for primary compute instance to deploy secondary compute instance in a different Availability domain. This design removes a single point of failure by introducing redundancy. The following diagram illustrates how we can achieve high availability.
+Below, we have a demo of how you can setup disaster recovery for your app in Oracle Cloud leveraging different availability domains (or across regions). One of the key principles of designing high availability solutions is to avoid single point of failure. We will deploy Compute instances that perform the same tasks in multiple availability domains. You can use the custom image you used for primary compute instance to deploy secondary compute instance in a different Availability domain. This design removes a single point of failure by introducing redundancy. The following diagram illustrates how we can achieve high availability.
 
 ![](./images/1.png "")
 
-For technical videos that walk through this portion of the lab, please see the links below:<br>
-[Video 1](https://video.oracle.com/detail/video/6164388509001/lab-200-creating-a-secondary-application-instance?autoStart=true&q=ocimoveimprove)<br>
-[Video 2](https://video.oracle.com/detail/video/6164412367001/lab-200-rsync-part-1?autoStart=true&q=ocimoveimprove)<br>
-[Video 3](https://video.oracle.com/detail/video/6163747278001/lab-200-rsync-part-2?autoStart=true&q=ocimoveimprove)<br>
-[Video 4](https://video.oracle.com/detail/video/6164412913001/lab-200-creating-a-failover-policy?autoStart=true&q=ocimoveimprove)
+For technical videos that walk through this portion of the lab, please see the links below:
+
+* [Creating Secondary Application](https://video.oracle.com/detail/video/6164388509001/lab-200-creating-a-secondary-application-instance?autoStart=true&q=ocimoveimprove)
+* [RSync 1](https://video.oracle.com/detail/video/6164412367001/lab-200-rsync-part-1?autoStart=true&q=ocimoveimprove)
+* [RSync 2](https://video.oracle.com/detail/video/6163747278001/lab-200-rsync-part-2?autoStart=true&q=ocimoveimprove)
+* [Creating Failover policy](https://video.oracle.com/detail/video/6164412913001/lab-200-creating-a-failover-policy?autoStart=true&q=ocimoveimprove)
 
 ### Objectives
 
@@ -24,211 +24,222 @@ For technical videos that walk through this portion of the lab, please see the l
 * Make sure you have setup ssh access from local to both the servers and from primary server to secondary server and vice-versa (More information in the lab below)
 * A Domain name (To demonstrate failover)
 
-Estimated time to complete this lab is three hours.
+Estimated Lab Time: 2 hour
+## **Part 1:** Transfer Files And Synchronize Servers
 
-### Additional Resources
-* To learn about provisioning Networks and Network Security check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+**Step 1: Installing rsync utility on primary and secondary compute instances**
 
-* To learn about Oracle's DNS and Traffic Management check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/EdgeServices/overview.htm)
+1. Run the following command on primary compute instance.
+    ```
+    <copy>
+    sudo apt-get install rsync
+    </copy>
+    ```
 
+2. Repeat the same for secondary compute instance.
 
-## Part 1. Transfer and synchronize webserver files and database files between primary instance and secondary instance.
+**Step 2: Securely copy your private ssh key to primary compute OR Generate new ssh key pair**
 
-### **Step 1:** Installing rsync utility on primary and secondary compute instances
-
-Run the following command on primary compute instance.
-
-```
-sudo apt-get install rsync
-```
-Repeat the same for secondary compute instance.
-
-### **Step 2:** Secure copy your private ssh key to primary compute OR Generate new ssh key pair
-
-As written in the pre-reqs, we will require to setup ssh access from primary server to secondary server and vice-versa. If you want to use the same ssh keys as the one you are using to ssh into oscommerce compute, you can scp the private key file from local to primary oscommerce instance by using the following:
-
+1. As written in the pre-reqs, we will require to setup ssh access from primary server to secondary server and vice-versa. If you want to use the same ssh keys as the one you are using to ssh into oscommerce compute, you can scp the private key file from local to primary oscommerce instance by using the following:
 Run the following command in your local terminal
 
-```
-scp id_rsa oscommerce@your-ip-address:/home/oscommerce/.ssh/
-```
+    ```
+    scp id_rsa oscommerce@your-ip-address:/home/oscommerce/.ssh/
+    ```
 
 Note: scp command is included in mac/linux, so need to download anything. Howevever, if you are using Windows, install PuTTy which includes PSCP or you can also use [WinSCP](https://winscp.net/eng/index.php)
 
 ![](./images/2.png "")
 
-If you want to use new ssh keys, use Method 2 - Create new keys
+2. If you want to use new ssh keys, use Method 2 - Create new keys. And on each server run
 
-On each server run:
-
-```
-ssh-keygen
-```
+    ```
+    <copy>
+    ssh-keygen
+    </copy>
+    ```
 
 Hit enter. You'll have two files:
 
 .ssh/id_rsa & .ssh/id_rsa.pub
 
-On Server A, cat and copy to clipboard the public key:
+3. On Server A, cat and copy to clipboard the public key:
 
-```
-cat ~/.ssh/id_rsa.pub
-```
+    ```
+    <copy>
+    cat ~/.ssh/id_rsa.pub
+    </copy>
+    ```
 
-select and copy to your clipboard
+4. ssh into Server B, and append the contents of that to the it's authorized_keys file:
 
-ssh into Server B, and append the contents of that to the it's authorized_keys file:
+    ```
+    <copy>
+    cat >> ~/.ssh/authorized_keys
+    </copy>
+    ```
 
-```
-cat >> ~/.ssh/authorized_keys
-```
+5. Paste your clipboard contents.
 
-Paste your clipboard contents.
+**Step 3: Replicate web server files and database files**
 
-### **Step 3:** Replicate web server files and database files
+1. Our web server files are located at /var/www/html. In order to demonstrate replication of web server files from primary server to secondary server, lets delete all the web server files from secondary server and then set up a replication from primary server using rsync.
 
-Our web server files are located at /var/www/html. In order to demonstrate replication of web server files from primary server to secondary server, lets delete all the web server files from secondary server and then set up a replication from primary server using rsync.
+2. On secondary server, run the following command.
+    ```
+    <copy>
+    sudo rm -rf /var/www/html
+    </copy>
+    ```
 
-On secondary server, run the following command.
+3. This will delete all the web server files from secondary server. Now, go to /var/www folder and create an empty folder:
 
-```
-sudo rm -rf /var/www/html
-```
+    ```
+    <copy>
+    sudo mkdir html
+    </copy>
+    ```
 
-This will delete all the web server files from secondary server. Now, go to /var/www folder and create an empty folder:
+4. Now give the following permissions to the folder:
 
-```
-sudo mkdir html
-```
+    ```
+    <copy>
+    sudo chmod 777 /var/www/html/
+    </copy>
+    ```
 
-Now give the following permissions to the folder:
-
-```
-sudo chmod 777 /var/www/html/
-```
-
-Please note: For the purpose of this lab, we are using chmod 777, however setting up 777 permissions is not recommended for production environments. Here, we are using it to quickly demonstrate replication and failover.
+5. Please note: For the purpose of this lab, we are using chmod 777, however setting up 777 permissions is not recommended for production environments. Here, we are using it to quickly demonstrate replication and failover.
 
 
-![](./images/3.png "")
+    ![](./images/3.png "")
 
-Now, we will perform the rsync command from primary server to secondary server to replicate the files. Run the following command on server 1 (primary). The ip address below is for the secondary server.
+6. Now, we will perform the rsync command from primary server to secondary server to replicate the files. Run the following command on server 1 (primary). The ip address below is for the secondary server.
 
-```
-rsync -r /var/www/html/ oscommerce@secondary-sercer-ip:/var/www/html/
-```
+    ```
+    <copy>
+    rsync -r /var/www/html/ oscommerce@secondary-sercer-ip:/var/www/html/
+    </copy>
+    ```
 
-If you go to secondary server, you can see the following files in the /var/www/html directory
+7. If you go to secondary server, you can see the following files in the /var/www/html directory
 
-![](./images/4.png "")
+    ![](./images/4.png "")
 
 We have successfully replicated the web server files. Similarly, we can replicate the mysql files as well. We can do this in many ways:
 * Using rsync as above
 * Using mysql dump utility
 
 
-### **Step 4:** Replicate mysql database files
+**Step 4: Replicate mysql database files**
 
-Run the following command on primary and backup server:
+1. Run the following command on primary and backup server:
 
-```
-sudo nano /etc/my.cnf
-```
+    ```
+    <copy>
+    sudo nano /etc/my.cnf
+    </copy>
+    ```
+
+2. If the above command does not work, try the following command.
+
+    ```
+    <copy>
+    sudo nano /etc/mysql/my.cnf
+    </copy>
+    ```
+
+3. Comment out the line which says
+
+    ```
+    <copy>
+    bind-address = 127.0.0.1
+    </copy>
+    ```
+
+    ![](./images/5.png "")
 
 
-If the above command does not work, try the following command.
+4. Restart mysql
 
-```
-sudo nano /etc/mysql/my.cnf
-```
+    ```
+    <copy>
+    sudo service mysql restart
+    </copy>
+    ```
 
+5. In order for our database in our secondary server to communicate to the database in the primary server, do the following in the primary server- Go to mysql terminal by typing:
 
-Comment out the line which says
+    ```
+    <copy>
+    mysql -u root -p
+    </copy>
+    ```
 
-```
-bind-address = 127.0.0.1
-```
+6. On mysql terminal, run the following commands:
 
-![](./images/5.png "")
+    ```
+    CREATE USER 'root'@'ip_address' IDENTIFIED BY 'some_pass';
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
 
-
-Restart mysql
-
-```
-sudo service mysql restart
-```
-
-In order for our database in our secondary server to communicate to the database in the primary server, do the following in the primary server- Go to mysql terminal by typing:
-
-```
-mysql -u root -p
-```
-
-On mysql terminal, run the following commands:
-
-```
-CREATE USER 'root'@'ip_address' IDENTIFIED BY 'some_pass';
-```
-
-```
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
-```
+    ```
 
 **Note: ip_address is the ip address of the secondary server**
 
-Now, go to the secondary server:
+7. Now, go to the secondary server. Delete the oscommerce database and create an empty oscommerce database as follows:
 
-Delete the oscommerce database and create an empty oscommerce database as follows:
+    ![](./images/5a.png "")
 
-![](./images/5a.png "")
+8. Now run the following command to replicate the database
 
-Now run the following command to replicate the database
-
-Note: Run this command in  secondary server terminal (not in mysql terminal)
+**Note: Run this command in  secondary server terminal**
 
 ```
- mysqldump --host=1.2.3.4 --user=MYDBUSER -pMYDBPASSWORD --add-drop-table --no-create-db --skip-lock-tables MYDBNAME | mysql --user=MYDBUSER -pMYDBPASSWORD MYDBNAME
- ```
-
-In my case, the command looked like this:
-
-```
-mysqldump --host=150.136.116.169 -P 3306 --user=root -poscommerce --add-drop-table --no-create-db --skip-lock-tables oscommerce | mysql --user=root -poscommerce oscommerce
+    mysqldump --host=1.2.3.4 --user=MYDBUSER -pMYDBPASSWORD --add-drop-table --no-create-db --skip-lock-tables MYDBNAME | mysql --user=MYDBUSER -pMYDBPASSWORD MYDBNAME
 ```
 
-Note: Here, the host ip address should be the ip address of the primary server since we are replicating from primary to secondary server.
+9. In my case, the command looked like this:
+
+    ```
+    mysqldump --host=150.136.116.169 -P 3306 --user=root -poscommerce --add-drop-table --no-create-db --skip-lock-tables oscommerce | mysql --user=root -poscommerce oscommerce
+    ```
+
+**Note: Here, the host ip address should be the ip address of the primary server since we are replicating from primary to secondary server.**
 
 ![](./images/6.png "")
 
-Check if the database tables are replicated properly by using the following:
+10. Check if the database tables are replicated properly by using the following:
 
-![](./images/5b.png "")
+    ![](./images/5b.png "")
 
 Note this particular mysqldump command does not create a dump file, but rather migrates all tables of the specified database from source to the target thereby keeping the source and target database consistent.
 
-For production environments, you can run it as a cronjob. Run ‘crontab -e’, then add your mysqldump command:
+11. For production environments, you can run it as a cronjob. Run ‘crontab -e’, then add your mysqldump command:
 
-```
-0 0 * * * mysqldump...
-```
+    ```
+    0 0 * * * mysqldump...
+    ```
 
-Thus, we have the webserver files as well as the database files in a secondary server safe and with latest updates. Furthermore, we can setup cron jobs for automation rather than running the rsync and mysqldump commands manually every time.
+12. Thus, we have the webserver files as well as the database files in a secondary server safe and with latest updates. Furthermore, we can setup cron jobs for automation rather than running the rsync and mysqldump commands manually every time.
 
-## Part 2. Configure DNS failover
+## **Part 2:** Configure DNS failover
 At this point of time, our primary server and secondary server are in sync. Lets proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover like using keepalived, using load balancers and using DNS Traffic Management Steering policies in OCI. For the purpose of this lab, we will use the DNS Traffic Management Steering Policy in Oracle Cloud Infrastructure.
 
-### **Step 1:** Make your application accessible from your ip address
+**Step 1: Make your application accessible from your ip address**
 
 ssh into your primary compute instance
 
 ```
+<copy>
 ssh oscommerce@<public ip-add>
+</copy>
 ```
 
 Edit Apache config file.
 
 ```
+<copy>
 sudo nano /etc/apache2/sites-available/000-default.conf
+</copy>
 ```
 
 Change from ```"DocumentRoot /var/www/html" ```to ```"DocumentRoot /var/www/html/catalog"```
@@ -257,9 +268,9 @@ sudo service apache2 restart
 
 Now, if you hit your public ip address in the browser, you should be able to see your app running.
 
-### If you already have your DNS Zone within Oracle Cloud Infrastructure, Skip step 2 and step 3
+If you already have your DNS Zone within Oracle Cloud Infrastructure, Skip step 2 and step 3
 
-### **Step 2:** Export DNS zone file
+**Step 2: Export DNS zone file**
 
 **Prequisite**
 
@@ -278,7 +289,8 @@ Export the resource record. This file would be exported as a .txt file. Store in
 
 ![](./images/11.png "")
 
-### **Step 3:** Create Zone on Oracle Cloud infrastructure
+**Step 3: Create Zone on Oracle Cloud infrastructure**
+
 In this step, you will create a zone. A zone holds the trusted DNS records that will reside on Oracle Cloud Infrastructure’s nameservers.
 
 Navigate back to OCI console to create a zone using the exported file
@@ -294,12 +306,10 @@ Navigate into the zone you just created
 
 ![](./images/14.png "")
 
-To make your Oracle Cloud Infrastructure hosted zone accessible through the internet, you must delegate your domain with your domain's registrar. to do that:
-
+To make your Oracle Cloud Infrastructure hosted zone accessible through the internet, you must delegate your domain with your domain's registrar. to do that,
 Open the navigation menu. Under Core Infrastructure, go to Networking and click DNS Zone Management. Click the Zone Name for the zone you want to delegate.
 
 Use the Type sort filter to locate the NS records for your zone.
-
 Note the name servers. You can use the noted name servers to change your domain's DNS delegation. Refer to your registrar's documentation for instructions.
 
 ![](./images/15.png "")
@@ -309,7 +319,7 @@ I’m using google-domain in this case. Add name servers to your domain name ser
 ![](./images/16.png "")
 
 
-### **Step 4:** Add an "A" record to DNS zone
+**Step 4: Add an "A" record to DNS zone**
 
 There are many record types you can add to your zone, depending on your goals for the zone and its DNS management. For this Lab, we would add an “A” record. For more information about record types refer [Supported Resource Records](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Tasks/managingdnszones.htm)
 
@@ -339,7 +349,7 @@ In the confirmation dialog box, click Publish Changes.
 
 ![](./images/43.png "")
 
-### **Step 5:** Create a failover traffic steering policy on OCI console
+**Step 5: Create a failover traffic steering policy on OCI console**
 
 Traffic Management Steering Policies enables you to configure policies to serve intelligent responses to DNS queries, meaning different answers (endpoints) may be served for the query depending on the logic you define in the policy. Traffic Management Steering Policies can account for health of answers to provide failover capabilities
 
@@ -362,7 +372,7 @@ Pool Priority: Failover priority rules specify the priority of answers that are 
 
 ![](./images/22.png "")
 
-Create Health Check.
+**Step 6: Create Health Check**
 
 A health check is a test to confirm the availability of backend servers. A health check can be a request or a connection attempt
 
@@ -407,13 +417,18 @@ However, if you go to your domain name - public1.oscommercesite.com, your websit
 
 Thus we can set up disaster recovery for your app in OCI easily and avoid single point of failure.
 
+## Learn More
+* To learn about provisioning Networks and Network Security check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+
+* To learn about Oracle's DNS and Traffic Management check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/EdgeServices/overview.htm)
+
 ## Acknowledgements
-* **Author** - Oladipupo Akinade, Saurabh Salunkhe
-* **Adapted for Cloud by** -  Saurabh Salunkhe, Oladipupo Akinade
-* **Last Updated By/Date** - Saurabh Salunkhe, September 2020
+* **Author** - Rajsagar Rawool, Oladipupo Akinade, Saurabh Salunkhe
+* **Last Updated By/Date** - Rajsagar Rawool, January 2021
 
+## Need Help ?
+If you are doing this module as part of an instructor led lab then please just ask the instructor.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+If you are working through this module self guided then please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one
