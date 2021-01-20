@@ -64,13 +64,13 @@ This lab assumes you have:
     sudo yum upgrade -y
     sudo yum group install "Development Tools" -y
     
-    sudo yum install gfortran
-    sudo yum install gcc-gfortran
-    sudo yum install gcc-c++ -y
-    sudo yum install gcc -y
-    sudo yum install tcsh -y
-    sudo yum install perl
-    sudo yum install m4
+    sudo yum install gfortran *
+    sudo yum install gcc-gfortran *
+    sudo yum install gcc-c++ -y *
+    sudo yum install gcc -y *
+    sudo yum install tcsh -y *
+    sudo yum install perl *
+    sudo yum install m4 *
     sudo yum install ncview -y
     sudo yum install mc -y
     ```
@@ -214,7 +214,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     mkdir GEOG
     cd GEOG
     wget https://www2.mmm.ucar.edu/wrf/src/wps_files/geog_high_res_mandatory.tar.gz  
-    sudo yum install pv
+    sudo yum install pv *
     tar xzf geog_high_res_mandatory.tar.gz
     ```
 6. Now that we have downloaded and extracted the geography data we need move some files around to the correct location and delete some additional files we don't need. We will use midnight commander for this, but you can just use terminal comands if you like. The following after mc will be using the Midnight Commander interface, so **`DO NOT`** `copy the following entire code block into terminal`.
@@ -225,7 +225,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     F6    #This will move the files to the GEOG directory
     ENTER #This will confirm the choice
     F10   #This is used to exit Midnight commander
-    sudo rm -r GEOG   #This will delete the additional GEOG folder.
+    sudo rm -r WPS_GEOG   #This will delete the additional GEOG folder.
     mc    #Opens Midnight Commander
     Highlight *._WPS_GEOG
     F8    #This deletes the highlighted file
@@ -356,7 +356,7 @@ Don’t actually download anything. We will create a script for that. We are goi
 
     **Configure:**
     ```
-    cd ~/WRF/WPS-4.1
+    cd /mnt/nfs-share/WRF/WPS-4.1
     ln -s ungrib/Variable_Tables/Vtable.GFS ./Vtable
     ./link_grib.csh /mnt/nfs-share/WRF/GFS/
     vi namelist.wps  
@@ -370,8 +370,8 @@ Don’t actually download anything. We will create a script for that. We are goi
     &share  
     wrf_core = 'ARW',  
     max_dom = 1,  
-    start_date = '2020-11-20_00:00:00',         # start time  
-    end_date   = '2020-11-20_06:00:00',         #6 hours later than start time  
+    start_date = '2021-01-15_00:00:00',         # start time  
+    end_date   = '2021-01-15_06:00:00',         #6 hours later than start time  
     interval_seconds = 10800                    #3 hours worth of seconds interval between steps  
     io_form_geogrid = 2,  
     / 
@@ -429,13 +429,13 @@ Don’t actually download anything. We will create a script for that. We are goi
     run_hours                           = 6,
     run_minutes                         = 0,
     run_seconds                         = 0,
-    start_year                          = 2020, 2000, 2000,
-    start_month                         = 11,   01,   01,
+    start_year                          = 2021, 2000, 2000,
+    start_month                         = 01,   01,   01,
     start_day                           = 20,   24,   24,
     start_hour                          = 00,   12,   12,
-    end_year                            = 2020, 2000, 2000,
-    end_month                           = 11,   01,   01,
-    end_day                             = 20,   25,   25,
+    end_year                            = 2021, 2000, 2000,
+    end_month                           = 01,   01,   01,
+    end_day                             = 15,   25,   25,
     end_hour                            = 06,   12,   12,
     interval_seconds                    = 10800
     input_from_file                     = .true.,.true.,.true.,
@@ -539,7 +539,7 @@ Don’t actually download anything. We will create a script for that. We are goi
 5. We have our input, now lets use it to generate a prediction.
 
     ```
-    mpirun -np 48 -hosts Node1 IP ADDRESS, Node2 IP Address ./wrf.exe #This will run on 48 cores on two nodes with ipaddesses of 172.15.1.2 and 172.16.1.3
+    mpirun -np 48 -hosts 172.16.1.2,172.16.1.3 ./wrf.exe #This will run on 48 cores on two nodes with ipaddesses of 172.16.1.2 and 172.16.1.3
     tail -F rsl.out.0000 #can be used to check for errors and progress. 
     ```
 6. We can check our prediction with the following:
