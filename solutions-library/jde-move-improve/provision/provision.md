@@ -1,4 +1,4 @@
-# Lab 2: Creating a Trial Edition Instance in OCI
+# Creating a Trial Edition Instance in OCI
 
 ## Introduction
 
@@ -7,7 +7,8 @@ In this lab, a JDE Trial Edition will be created in OCI. The JDE Trial Edition w
 Estimated Lab Time: 40 minutes
 
 ### About Product/Technology
-The process includes creating the JDE Trial Edition environment, setting up a bridge to connect to the JDE Trial Edition, ensuring the configurations are correct for the JDE Trial Edition, and finally getting the IP addresses of the JDE consoles in order to access them in your web browser. 
+
+The process includes creating the JDE Trial Edition environment, setting up a bridge to connect to the JDE Trial Edition, ensuring the configurations are correct for the JDE Trial Edition, and finally getting the IP addresses of the JDE consoles in order to access them in your web browser.
 
 
 ### Objectives
@@ -31,43 +32,43 @@ To deploy JDE Trial Edition, in this lab, you will:
 Create an instance in OCI that is based off the JDE Trial Edition image
 
 1.	If not already done, sign in to OCI tenancy.
-On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation*** Menu Button in the upper-left corner and select ***Marketplace***.
+On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation*** Menu Button in the upper-left corner and hover over ***Marketplace*** and select ***Applications***.
     ![](./images/marketplace.png " ")
 
 2.  Locate the Oracle JD Edwards image tile for ***JD Edwards EnterpriseOne Trial Edition*** (you might have to search for it; there could be several images out there) and click the tile
     ![](./images/jde-trial-edition-image.png " ")
 
-3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.4.3 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right
-    ![](./images/launch-button.png " ")
+3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.5.0 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right 
+    ![](./images/launch-instance.png " ")
 
 4.  Next, define the instance with the following options: 
 
     * Instance Name: jdetrial
-        ![](./images/instance-name.png " ")
+    ![](./images/instance-name.png " ")
 
     * Operating System or Image Source: leave ***JD Edwards EnterpriseOne Trial Edition*** selected.
-        ![](./images/operating-system.png " ")
+    ![](./images/operating-system.png " ")
 
     * If the following is not visible on your screen, click on ***Show Shape***, ***Network and Storage Options***.  Depending on the region selected, there might be one or more availability domains.   Select Availability Domain: ***AD1*** (if since AD available) or ***AD3*** (if multiple ADs available).
-        ![](./images/availability-domain.png " ")
+    ![](./images/availability-domain.png " ")
 
     * Instance Shape: click on ***Change Shape***
-        ![](./images/change-shape.png " ")
+    ![](./images/change-shape.png " ")
 
     * Select ***Virtual Machine***, then select a shape.  For the purposes of this lab, select either an ***Intel Skylake VM.Standard2.2*** shape, or under the Specialty and Legacy series, select the ***VM.Standard.E2.2*** shape.
-        ![](./images/vm-shape.png " ")
+    ![](./images/vm-shape.png " ")
 
     * Configure Networking: This will be populated by default, but review and confirm the VCN, compartment, and subnet.  Ensure that the ***Assign a public IP address*** radio button is selected.
-        ![](./images/public-ip.png " ")
+    ![](./images/public-ip.png " ")
 
     * Configure Boot Volume: The default boot size of 100GB will be sufficient for this lab.
-        ![](./images/boot-size.png " ")
+    ![](./images/boot-size.png " ")
 
     * Add SSH key: Select the ***Choose SSH Key file*** radio button.  Browse to select the public SSH key file you created earlier (LAB 1, Step 2: Generate a Secure Shell (SSH) Key Pair) by navigating to the location where the SSH files are stored.  Alternatively, drag and drop the .pub file to the window.
-        ![](./images/ssh-upload.png " ")
+    ![](./images/ssh-upload.png " ")
 
     * Click the ***Create*** button.
-        ![](./images/create-button.png " ")
+    ![](./images/create-button.png " ")
 
 5.  After a few minutes, the instance will be running and ready.  Copy and take note of the **Public IP address** under the ***Instance Access*** section, which is required to connect to the instance – in this example, it is 129.213.43.190.
     ![](./images/finished-instance.png " ")

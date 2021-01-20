@@ -8,7 +8,7 @@ The workshop will also demonstrate how to deploy JD Edwards EnterpriseOne Releas
 
 Upon completion of this lab, you will have a working deployment of JD Edwards EnterpriseOne Trial Edition with Tools Release 9.2 and Applications Release 9.2 on a fully functional suite of interconnected virtual machine.You can use it to verify functionality and to investigate proofs of concept.
 
-**Duration:** 2 hours (additional time may be needed for first-time users)
+Estimated Lab Time: 2 hours (additional time may be needed for first-time users)
 
 ### About the Product/Technology
 
@@ -25,7 +25,8 @@ This single image is built using an Oracle Linux VM instance containing these JD
 * Application Development Framework (ADF) Server
   
 
-### **Objectives**
+### Objectives
+
 In this lab, you will:
 * Request and Obtain a Trial OCI Subscription
 * Generate SSH Key for OCI Connection
@@ -42,10 +43,11 @@ In this lab, you will:
 * Mobile Phone. Oracle will send you an SMS based text message for verification purposes
 * ***For Windows users only:***  A Windows SSH utility is required to generate SSH key pairs on the client machine and to connect to the Linux based server using Secure Shell (SSH). We suggest either you either download and install the PuTTY tool (http://www.putty.org), or Git BASH (https://gitforwindows.org/).  Installation instructions are included in this document.
 
+## Summary
 
 ### JDE Trial Edition on Oracle Cloud Infrastructure Overview
 
-JD Edwards EnterpriseOne is a comprehensive suite of integrated global business applications. The machine image provided by Oracle allows organizations to create a trial instance of JD Edwards EnterpriseOne Release 9.2 in the Oracle Compute Cloud.  This 'All-in-One' Demo/Sandbox image enables customers to explore new functionality in JD Edwards EnterpriseOne Applications Release 9.2 & Tools Release 9.2.4.3 without installing JD Edwards EnterpriseOne in their data centers. New functionality may include:
+JD Edwards EnterpriseOne is a comprehensive suite of integrated global business applications. The machine image provided by Oracle allows organizations to create a trial instance of JD Edwards EnterpriseOne Release 9.2 in the Oracle Compute Cloud. This 'All-in-One' Demo/Sandbox image enables customers to explore new functionality in JD Edwards EnterpriseOne Applications Release 9.2, Update 4 & Tools Release 9.2.5.0 without installing JD Edwards EnterpriseOne in their data centers. New functionality may include:
 
 * New industry modules
 * One View Financial Statements
@@ -62,16 +64,14 @@ JD Edwards EnterpriseOne is a comprehensive suite of integrated global business 
 * You must have sufficient resources in Oracle Cloud Infrastructure to install and run JD Edwards EnterpriseOne Trial Edition. 
 * Minimum Shape: VMStandard2.2 (2 OCPUs and 30 GB memory)
   Recommended Shape: VMStandard2.4 (4 OCPUs and 30 GB memory)
-* Boot Volume Storage of 100 GB
+* Boot Volume Storage of 120 GB
 
-
-## Summary
 At this point, you are ready to start creating instances in Oracle Cloud Infrastructure.
 
 You may now proceed to the next lab.
 
-
 ## Acknowledgements
+
 * **Author:** AJ Kurzman, Cloud Engineering
 * **Contributors:**
     * Jeff Kalowes, Principal JDE Specialist
@@ -80,7 +80,6 @@ You may now proceed to the next lab.
     * William Masdon, Cloud Engineering
     * Chris Wegenek, Cloud Engineering 
 * **Last Updated By/Date:** AJ Kurzman, Cloud Engineering, 11/18/2020
-
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

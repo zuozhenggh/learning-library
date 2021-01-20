@@ -1,5 +1,4 @@
-# Lab 1: Set Up OCI for JDE Trial Edition Deployment 
-
+# Set Up OCI for JDE Trial Edition Deployment
 
 ## Introduction
 
@@ -10,7 +9,8 @@ In this lab, the recently provisioned OCI Trial tenancy will be set up for JDE T
 Estimated Lab Time: 10 minutes
 
 ### About Product/Technology
- A compartment will be created to organize your tenancy. A compartment is essentially a folder within the Oracle Cloud Infrastructure (OCI) console. A Virtual Cloud Network will then be created. The Oracle virtual cloud networks (VCNs) provide customizable and private cloud networks on Oracle Cloud Infrastructure (OCI). Lastly, security list rules for JDE, which are virtual firewall to control traffic at the packet level, will be created.
+
+A compartment will be created to organize your tenancy. A compartment is essentially a folder within the Oracle Cloud Infrastructure (OCI) console. A Virtual Cloud Network will then be created. The Oracle virtual cloud networks (VCNs) provide customizable and private cloud networks on Oracle Cloud Infrastructure (OCI). Lastly, security list rules for JDE, which are virtual firewall to control traffic at the packet level, will be created.
 
 ### Objectives
 
@@ -19,10 +19,9 @@ To set up the OCI tenancy, in this lab, you will:
 *   Create a Virtual Cloud Network (VCN)
 *   Establish Security List Rules for JDE
 
-### Prerequisites 
+### Prerequisites
 
 To have the greatest success in completing this lab make sure you meet the following criteria:
-* You have completed Lab 1 
 * You have a general knowledge of OCI and its web interface
 
 ## **STEP 1**: Generate an SSH Key Pair
@@ -33,18 +32,21 @@ In this section you will generate a Secure Shell (SSH) key pair that you will us
 
 ### FOR MAC/LINUX
 
-Generate ssh-keys for your machine if you don’t have one. If an id_rsa and id_rsa.pub key pair is present, they can be reused. By default, these are stored in ~/.ssh folder. 
+1. Generate ssh-keys for your machine if you don’t have one. If an id\_rsa and id\_rsa.pub key pair is present, they can be reused. By default, these are stored in ~/.ssh folder. 
 
-Enter the following command if you are using MAC or Linux Desktop:  
+2. Enter the following command if you are using MAC or Linux Desktop:  
 
-    
+    ```
     # ssh-keygen
+    ```
 
-Make sure permissions are restricted, sometimes ssh will fail if private keys have permissive permissions. Enter the following to ensure this.
+3. Make sure permissions are restricted, sometimes ssh will fail if private keys have permissive permissions. Enter the following to ensure this.
 
+    ```
     # chmod 0700 ~/.ssh  
     # chmod 0600 ~/.ssh/id_rsa  
     # chmod 0644 ~/.ssh/id_rsa.pub
+    ```
 
 ### FOR WINDOWS
 
@@ -57,7 +59,6 @@ There are many tools available for Windows users to create SSH key pairs and con
 2.  Open Git Bash by either checking the ***Launch Git Bash*** option in the installer ***OR*** by navigating to it from the Windows Start Menu:
      ![](./images/lab1-gitsetup.png " ")
      ![](./images/lab1-gitbash.png " ")
-     
 
 3.  Generate ssh-keys by the command ssh-keygen in Git Bash and then simply hit “Enter” for all steps:
 
@@ -150,7 +151,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     TestDriveVCN     (or any other unique name for the VCN)
 
     * **COMPARTMENT:**
-        TestDrive        (or any other compartment previously created)
+    TestDrive        (or any other compartment previously created)
 
     * **VCN CIDR BLOCK:**
     10.0.0.0/16
@@ -163,7 +164,7 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     * **USE DNS HOSTNAMES IN THIS VCN:**
     Make sure this is checked
-        ![](./images/dns-hostname.png " ")
+    ![](./images/dns-hostname.png " ")
 
 4.  Then, scroll down to the bottom and click the ***Next*** button.
 
@@ -189,22 +190,17 @@ With the VCN in place, define the open inbound and outbound ports that will be a
 3.	On Default Security List, under Resources, click the ***Add Ingress Rules*** button.
     ![](./images/ingress-rules.png " ")
 
-4.  Set five new ingress rules with the following properties:
-    
-    | STATELESS | SOURCE TYPE | SOURCE CIDR | IP PROTOCOL | SOURCE PORT RANGE | DEST PORT |
+4.  Set a new ingress rule with the following properties:
+    *   **STATELESS**: unchecked
+    *   **SOURCE TYPE**: CIDR
+    *   **SOURCE CIDR**: 0.0.0.0/0
+    *   **IP PROTOCOL**: TCP
+    *   **SOURCE PORT RANGE**: All
+    *   **DESTINATION PORT RANGE**: 443,7005-7006,7072,7077,9703,9705,8080
+    *   **DEESCRIPTION**: JDE Trial
 
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 443 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 7000-7006 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 7072-7077 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 8080 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 9703-9705 |
-
-    **NOTE:** Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
-        ![](./images/ingress-details.png " ")
+    Click the ***Add Ingress Rules***  button when complete. 
+        ![](./images/ingress-rule-details.png " ")
 
     These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 

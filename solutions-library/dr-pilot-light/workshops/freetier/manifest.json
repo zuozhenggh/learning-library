@@ -13,15 +13,15 @@
         },
         {
             "title": "Lab 1: Setup your Environment",
-            "filename": "../../setup/lab-1.md"
+            "filename": "../../setup/setup.md"
         },
         {
             "title": "Lab 2: Configure Failover & Recovery Backups",
-            "filename": "../../configure/lab-2.md"
+            "filename": "../../configure/configure.md"
         },
         {
             "title": "Lab 3: Simulate Disaster",
-            "filename": "../../simulate/lab-3.md"
+            "filename": "../../simulate/simulate.md"
         }
       ]
 }

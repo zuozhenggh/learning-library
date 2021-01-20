@@ -1,6 +1,6 @@
 # Welcome
 
-[![](common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
+[![](common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs)
 ---
 <<<<<<< HEAD
 # Build, test and deploy applications on Oracle's Cloud! #
