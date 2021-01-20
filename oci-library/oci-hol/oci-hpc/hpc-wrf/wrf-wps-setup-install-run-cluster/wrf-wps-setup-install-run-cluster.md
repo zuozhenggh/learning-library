@@ -25,23 +25,19 @@ This lab assumes you have:
 
 1. Use the navigation menu on the left and navigate to **Solutions and Platform** Marketplace > Applications.
 2. In the searchbar type HPC, then press your ENTER/Return key.
-3. In the All Applications section, choose HPC Cluster. and then launch the stack. It should should look this:  
-![Screenshot of HPC Image](images/HPC-Cluster-Image.png)  
-Then launch the stack in the appropriate compartment.
-![Screenshot of HPC Stack](images/HPC-Cluster-Stack.png)
+3. In the All Applications section, choose HPC Cluster. and then launch the stack. It should should look the image on the left followed by the image on the right.  
+![Screenshot of HPC Image](images/hpc2.png) 
 4. In the create stack menu, give a name and description as appropriate then click next.
-5. Choose an AD and paste in your SSH key.
-6. For the Bastion choose the same AD as the cluster and choose the **VM.Standard.2.4** shape.
-
+5. Choose an AD, paste in your SSH key and leave the CONFIGURE NFS SHARE box checked.
+6. For the Bastion choose the same AD as the cluster and choose the **VM.Standard.2.4** shape, then click NEXT.
+7. At the review screen, double check all the information you have entered, then click create.
 
 ## **STEP 2**: Setup Gnome Desktop
 
 1. There are a number of different desktop technologies you can use, but this guide will go over setting up and congifuring Gnome desktop as it is the default for Oracle Linux. The following steps will download, install, and configure Gnome Desktop for our Oracle Linux 7 Bastion instance.
     ```
-    sudo su
-    yum groupinstall "server with gui"
+    sudo yum groupinstall "server with gui"
     Y
-    exit
     sudo yum install tigervnc-server
     Y
     vncserver # DO NOT MAKE READ ONLY and password should be no greater than 8 characters
@@ -65,7 +61,16 @@ Then launch the stack in the appropriate compartment.
 1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Activities on the top left, then click show applications. Search for and open a terminal. Perform the following in the terminal.
     ```
     sudo yum update -y
+    sudo yum upgrade -y
+    sudo yum group install "Development Tools" -y
+    
+    sudo yum install gfortran
+    sudo yum install gcc-gfortran
+    sudo yum install gcc-c++ -y
+    sudo yum install gcc -y
     sudo yum install tcsh -y
+    sudo yum install perl
+    sudo yum install m4
     sudo yum install ncview -y
     sudo yum install mc -y
     ```
@@ -162,7 +167,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 2. Before we can compile WRF we need to set up some environment variables so that the program can find and use the libraries we have compiled to function.
     
     ```
-    cd .. or /mnt/nfs-share/WRF/downloads
+    cd .. or /mnt/nfs-share/WRF
     cd WRF-4.1.5/
     export NETCDF=$LIBDIR/netcdf
     export PATH=$LIBDIR/mpich/bin:$PATH

@@ -218,7 +218,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 2. Before we can compile WRF we need to set up some environment variables so that the program can find and use the libraries we have compiled to function.
     
     ```
-    cd .. or /home/ubuntu/WRF/downloads
+    cd .. or /home/ubuntu/WRF
     cd WRF-4.1.5/
     export NETCDF=$LIBDIR/netcdf
     export PATH=$LIBDIR/mpich/bin:$PATH
