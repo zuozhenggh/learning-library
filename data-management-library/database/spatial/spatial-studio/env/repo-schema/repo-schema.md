@@ -18,27 +18,37 @@ In this lab, you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+* Access to database SQL Developer Web or desktop Oracle client (SQL Developer, SQL*Plus, SQLcl).
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: Select Spatial Studio from Marketplace
+## **STEP 1**: Create Repo Schema
 
-Step 1 opening paragraph.
+opening paragraph
 
-1. Create Spatial Studio repository schema. The schema can have any name, but for consistency with other labs we use the name **studio_repo**.
+1. Connect to the database to be used for the the Spatial Studio repository. If you are using Autonomous Database, then connect as the **admin** user. otherwise connect as a user with the DBA role.
+
+2. Create Spatial Studio repository schema. The schema can have any name, but for consistency with other labs we use the name **studio_repo**
     ```
    <copy>CREATE USER studio_repo
    IDENTIFIED BY <password goes here>;</copy>
     ```
 
-2. Assign default tablespace to Spatial Studio repository schema. If using Autonomous Database you can use tablespace name **data**. 
+3. Assign default tablespace to Spatial Studio repository schema.  If using Autonomous Database you can use tablespace name **DATA** 
    
     ```
    <copy>ALTER USER studio_repo
    DEFAULT TABLESPACE <tablespace name here>;</copy>
     ```
 
+4. Assign tablespace quota to Spatial Studio repository schema. Spatial Studio's metadata occupies a very small amount of storage. So the quota primarily accomodates business data stored in the repo schema. For this lab, a quota value of **250M** is fine. You can also set the value to **unlimited** if you will experiment with other datasets.
+   
+    ```
+   <copy>ALTER USER studio_repo
+   QUOTA <quota value> ON <tablespace name here>;</copy>
+    ```
+
+5. Confirm that you can connect to the database using the Spatial Studio repository database username/password.
 
     ![Image alt text](images/env-marketplace-1.png "Image title")
 
