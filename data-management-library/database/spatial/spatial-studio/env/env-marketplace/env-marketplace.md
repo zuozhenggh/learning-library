@@ -107,7 +107,10 @@ In this lab, you will:
   ![Image alt text](images/env-marketplace-18.png "Image title")  
 
 
-Oracle Spatial Studio is now provisioned. 
+Oracle Spatial Studio is now provisioned.  
+
+The following Lab provides steps to tear down Spatial studio when no longer needed.
+
 
 ## **STEP 5**: Deprovision Spatial Studio
 
@@ -134,8 +137,6 @@ Oracle Spatial Studio is now provisioned.
    <copy>DROP USER studio_repo CASCADE;</copy>
    ```
 
-
-This concludes the Workshop. You may now proceed to the the workshop ...
 
 ## Learn More
 
