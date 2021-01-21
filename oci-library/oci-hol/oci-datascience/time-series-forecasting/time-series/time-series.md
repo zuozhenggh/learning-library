@@ -4,7 +4,7 @@
 
 Time series is a series of data points ordered by time.  Time series analysis and modeling have a wide range of industry applications from finance, retail to transportation.   In time series modeling, the goal is to create a model that describes the pattern of the data as it changes over time.  
 
-In this lab, we are going to demonstrate how to create time series models in the OCI Data Science platform.  We are going to use the I-94 traffic data set (https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume) which contains hourly traffic volume on the Interstate 94 Westbound traffic taken by the Minnesota Department of Transportation station 301 which is approximately midway between Minneapolis and St. Paul. We are going to build a model to predict the traffic volume at a given time.
+In this lab, we are going to demonstrate how to create time series models in the OCI Data Science platform.  We are going to use the [I-94 traffic data set](https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume) which contains hourly traffic volume on the Interstate 94 Westbound traffic taken by the Minnesota Department of Transportation station 301 which is approximately midway between Minneapolis and St. Paul. We are going to build a model to predict the traffic volume at a given time.
 
 *Estimated Lab Time*: 60 minutes
 
@@ -21,13 +21,13 @@ This lab assumes that you have:
 * A Data Science notebook session
 * A working knowledge of Python
 
-## **STEP 1:** Set up conda environment
+## **STEP 1:** Set up Conda Environment
 
 1.  After you log into OCI Data Science and create a notebook, go to `File` and select `New Launcher`.  You will see the `Environment Explorer`. When you click on `Environment Explorer`, you will see each Explorer tab allowing you to filter on either the Data Science, Installed, or Published Conda environments.  The Data Science Conda Environments tab shows a list of pre-built conda environments you can install.
 
     ![](./../time-series-forecasting/images/conda_environment_explorer.png " ")
 
-2.  For this lab, we are going to use the General Machine Learning for CPUs conda.  Thhis conda comes with several open source libraries for building machine learning models including Scikit-learn and Statsmodels.  Scroll throgh the list of pre-built conda environments to find it.
+2.  For this lab, we are going to use the General Machine Learning for CPUs conda.  This conda comes with several open source libraries for building machine learning models including Scikit-learn and Statsmodels.  Scroll through the list of pre-built conda environments to find it.
 
     ![](./../time-series-forecasting/images/general_machine_learning_conda.png " ")
 
@@ -69,9 +69,9 @@ This lab assumes that you have:
 
 For more information, please refer to our:
 
-* **Service Documentation**: (https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
-* **Statsmodels Documentation** (https://www.statsmodels.org/stable/index.html)
-* **Prophet Documentation** (https://facebook.github.io/prophet/)
+* [Service Documentation](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
+* [Statsmodels Documentation](https://www.statsmodels.org/stable/index.html)
+* [Prophet Documentation](https://facebook.github.io/prophet/)
 
 ## Acknowledgements
 
@@ -81,6 +81,6 @@ For more information, please refer to our:
 
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/data-science). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
