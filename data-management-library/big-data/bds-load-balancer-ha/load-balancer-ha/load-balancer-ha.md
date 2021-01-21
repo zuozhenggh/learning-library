@@ -41,7 +41,7 @@ More specifically, you will:
 | [13](#STEP13:CreateaListenerforBigDataStudio) | Create and configure a ***listener*** for Big Data Studio. |
 | [14](#STEP14:AccesstheCluster) | Access Cloudera Manager, Hue, and Data Studio by using the IP address assigned to the load balancer, appended by the port number for the service. |
 
-**Note:** If you want to create a load balancer for a non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://bgelernt.github.io/learning-library/data-management-library/big-data/bds-load-balancer-ha/workshops/freetier/?qa=true?lab=use-load-balancer-access-services-on-big/?qa=true&lab=use-load-balancer-access-services-on-big) workshop <!--{{REPLACE WITH REAL IP ADDRESS}}-->.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
+**Note:** If you want to create a load balancer for a non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-load-balancer/workshops/freetier/?lab=use-load-balancer-access-services-on-big) workshop.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
 ### What Do You Need?
 
