@@ -45,7 +45,7 @@ More specifically, you will:
 
 ### What Do You Need?
 
-* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page. <!-- FIND OUT ABOUT RENAMING THAT TO "GET STARTED WITH ORACLE CLOUD"-->
+* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page. 
 
 * Any operating system command shell containing **Secure Shell (SSH)** and **Secure Copy (SCP)**. You can also use the open source PuTTY network file transfer application. See PuTTY documentation for instructions.
 
