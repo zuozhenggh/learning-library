@@ -24,7 +24,7 @@ Estimated Lab Time: 2 hour
 
 ## **Part 1:** Establish connections in Oracle Integration Cloud
 
-**Step 1: Install OIC Connectivity Agent on MySQL**
+### **Step 1: Install OIC Connectivity Agent on MySQL**
 
 Before moving forward, if you have been provided a wallet file, a username, and password to an ADW or ATP, please keep this information handy and continue to the next step. Otherwise, read the step below:
 
@@ -100,7 +100,7 @@ nohup java -jar connectivityagent.jar
 
 ![](./images/Agent_4.png "")
 
-**Step 2: Establish Connections Between MySQL and OIC**
+### **Step 2: Establish Connections Between MySQL and OIC**
 
 In the Oracle Integration Cloud home page, click on the Menu icon in the top left and click on Integration.
 
@@ -146,7 +146,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
 
 ![](./images/5.png "")
 
-**Step 3: Establish connection from Oracle ADB and OIC**
+### **Step 3: Establish connection from Oracle ADB and OIC**
 
 Creating a connection between an Oracle Autonomous Database and Oracle Integration Cloud is a very similar process to creating a connection between our MySQL database and OIC.
 
@@ -158,7 +158,7 @@ In the next window, you will need to provide your Oracle Database wallet file, a
 
 ![](./images/7.png "")
 
-**Step 4: Establish an integration between the ADW and MySQL connections**
+### **Step 4: Establish an integration between the ADW and MySQL connections**
 
 Now that we have both connections made in Oracle Integration Cloud for our MySQL and Autonomous Database, we will need to establish an integration for both to communicate with each other.
 
@@ -282,7 +282,7 @@ Once you click on Activate, the slider should now be moved to the right and be h
 
 ## **Part 2:** Connect your app to Oracle Analytics Cloud
 
-**Step 1: Create an OAC Instance**
+### **Step 1: Create an OAC Instance**
 
 Go to cloud.oracle.com, click the Sign In icon to sign in with your Oracle Cloud account. From here, click on Sign in to Cloud
 
@@ -323,7 +323,7 @@ Once you click Create, you will be redirected to the first dashboard that lists 
 
 ![](./images/33.png "")
 
-**Step 2: Access your new OAC Instance**
+### **Step 2: Access your new OAC Instance**
 
 Make sure you are on the dashboard for Oracle Analytics cloud. Click on the Hamburger icon on the same line as the instance you recently made. Click on Oracle Analytics Cloud URL. You will then be redirected to the main page for your OAC Instance
 
@@ -335,7 +335,7 @@ When redirected, your page should look similar to the picture below. If you get 
 
 Note: If your page is not loading properly, or you are unable to access this page, disable any AdBlock extensions or programs that are running in the background, and refresh the page.
 
-**Step 3: Connect an ADW/ATP Instance to OAC**
+### **Step 3: Connect an ADW/ATP Instance to OAC**
 
 To connect an ADW instance to OAC, from the dashboard, click on Create. A new window will open, where you will need to select what type of database you are using. In this example, we picked Oracle ADW.
 

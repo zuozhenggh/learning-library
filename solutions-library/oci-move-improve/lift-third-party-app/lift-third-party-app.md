@@ -25,7 +25,7 @@ Estimated Lab Time: 2 hour
 Part 1 of Lab 1 is optional. This section outlines how to configure an On-Premises e-Commerce application and capture a snapshot of it in the form of a .ova file which is converted to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Part 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/br_U1hSKSpS9Jm0coo8rqjZ981LGRBYl16EkkqmeeeVB7qd0pFdUapTyTe3RPL1b/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo-disk001.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
 
 ## **Part 1:** Configuration of e-Commerce application
-**Step 1: Download VirtualBox and Import Ubuntu Instance**
+### **Step 1: Download VirtualBox and Import Ubuntu Instance**
 1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nrjxMMpCyJEt_2_4QFEOmVQR04RRqCrdIWgD6UqIkPUI4GkS8B1B2WY9fqufO_Ix/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
 
     ![](./images/1.png "")
@@ -48,13 +48,13 @@ Part 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ![](./images/6.png "")
 
-**Step 2: LAMP Stack Prereqs**
+### **Step 2: LAMP Stack Prereqs**
 
 The LAMP stack stands for Linux, Apache, MySQL, PHP and SSH. In this section we will verify your internet connection.
 
 Before installing any of the packages on the Ubuntu image on VirtualBox, make sure that you are connected to the public internet. Shut down the virtual machine, then disable/turn off any VPN applications/programs, then start up the Ubuntu Virtual machine. This will allow the Ubuntu Virtual Machine to download and install Linux packages.
 
-**Step 3: Install MySQL5**
+### **Step 3: Install MySQL5**
 
 1. Run this terminal(ctrl+atl+T) command to install MySQL:
     ```
@@ -87,7 +87,7 @@ Before installing any of the packages on the Ubuntu image on VirtualBox, make su
     Reload Privilege Tables now? **Y**
     ```
 
-**Step 4: Install Apache2**
+### **Step 4: Install Apache2**
 
 1. Run this command within the terminal on the VirtualBox environment:
 
@@ -100,7 +100,7 @@ Before installing any of the packages on the Ubuntu image on VirtualBox, make su
 2. If you direct your browser to localhost you will see the Apache2 placeholder page.
     ![](./images/7.png " ")
 
-**Step 5: Install PHP5**
+### **Step 5: Install PHP5**
 
 1. Install PHP5 and Apache PHP5 modules with the command below:
 
@@ -126,7 +126,7 @@ Before installing any of the packages on the Ubuntu image on VirtualBox, make su
     </copy>
     ```
 
-**Step 6: Configure osCommerce Database and User**
+### **Step 6: Configure osCommerce Database and User**
 
 1. Log on to the database as an administrator using the terminal within the VirtualBox environment:
     ```
@@ -160,7 +160,7 @@ Before installing any of the packages on the Ubuntu image on VirtualBox, make su
 
 5. Exit with Control + C
 
-**Step 7: Configure Ubuntu for SSH Connections**
+### **Step 7: Configure Ubuntu for SSH Connections**
 
 1. Setup SSH:
 
@@ -193,7 +193,7 @@ Before installing any of the packages on the Ubuntu image on VirtualBox, make su
 
     ![](./images/8.png "")
 
-**Step 8: OSCommerce Setup**
+### **Step 8: OSCommerce Setup**
 
 1. Make a temporary folder named “tmp” where you will download osCommerce to. Download the zip and extract:
 
@@ -244,13 +244,12 @@ Before installing any of the packages on the Ubuntu image on VirtualBox, make su
     sudo chmod 644 /var/www/html/catalog/admin/includes/configure.php
     ```
 
-**Step 9: Configure osCommerce for End User Use**
+### **Step 9: Configure osCommerce for End User Use**
 Type localhost/catalog/admin in the address bar of the firefox browser you had open earlier. You'll need to log in with the admin username and password that you entered when setting up your osCommerce Online Store Settings. After logging in you will be redirected to a page that looks similar to the second photo below.
-
     ![](./images/13.png "")
     ![](./images/14.png "")
 
-**Step 10: Create a New Manufacturer, Category & Product**
+### **Step 10: Create a New Manufacturer, Category & Product**
 
 1. When logged in, click on “Catalog” on the right-hand menu and click on “Manufacturers”. On the next page, click on “Insert” and proceed to enter “Oracle” as the Manufacturer Name and upload an image of the Oracle logo (you can download one by using the firefox browser and saving it locally).  Click save when complete. You will then see Oracle as a listed Manufacturer with the image you uploaded.
 
@@ -268,7 +267,7 @@ Type localhost/catalog/admin in the address bar of the firefox browser you had o
 
     ![](./images/18.png "")
 
-**Step 11: Export .Ova File From VirtualBox & Extract VMDK**
+### **Step 11: Export .Ova File From VirtualBox & Extract VMDK**
 
 1. From VirtualBox, shut down the osCommerce image (quitting out will also do this). Export the appliance from VirtualBox. Copy as seen in the image and set the file location for the .ova export. Keep in mind of the directory you are exporting to. Export will take about 5 minutes.
 
@@ -289,7 +288,7 @@ Type localhost/catalog/admin in the address bar of the firefox browser you had o
 
 ## **Part 2:** Bringing Snapshot to the Cloud
 
-**Step 1: Create a Virtual Cloud Network (VCN)**
+### **Step 1: Create a Virtual Cloud Network (VCN)**
 
 **Note: If you so choose it may make sense to organize resources in a dedicated “OSCommerce” compartment. This is at the customer’s discretion, but if so choose Identity->Compartments->Create Compartment. This will be the compartment where all resources for the lab will be housed.**
 
@@ -308,7 +307,7 @@ Type localhost/catalog/admin in the address bar of the firefox browser you had o
 
 ![](./images/24.png "")
 
-**Step 2: Security List Config**
+### **Step 2: Security List Config**
 
 1. It's vitally important that we lock down this application as malicious third parties will exploit open ports if not configured correctly. In this instance we need to set security list ingress and egress rules to control the types of traffic allowed in and out of the subnet and OSCommerce instance. Specifically:
 * Allow Port 22 for SSH and 443 for HTTPS
@@ -321,21 +320,19 @@ Type localhost/catalog/admin in the address bar of the firefox browser you had o
     ![](./images/Ingress.png "")
     ![](./images/26.png "")
 
-**Step 3: Create Object Storage Bucket**
+### **Step 3: Create Object Storage Bucket**
 
 From the top left hamburger menu, expand the list and find “Object Storage.” Select Object
 Storage from the secondary list and choose "create bucket." Enter a name for the bucket and click create Bucket with default settings for storage tier and encryption.
-
     ![](./images/27.png "")
     ![](./images/28.png "")
     ![](./images/29.png "")
 
-**Step 4: Upload VMDK File to Bucket & Create PAR**
+### **Step 4: Upload VMDK File to Bucket & Create PAR**
 
 1. Select the bucket you created and then click the blue bottom within Objects named “Upload Objects.” Click “select files” and then locate the .vmdk file created previously from the unzipped .ova.
 
 **Note: This step can take a significant amount of time depending on your internet speed. In rare instances upload has taken over an hour, but typically this is much quicker.**
-
     ![](./images/30.png "")
     ![](./images/31.png "")
 
@@ -350,7 +347,7 @@ Storage from the secondary list and choose "create bucket." Enter a name for the
 
 ## **Part 3:** Create Custom Image and Instance
 
-**Step 1: Import the image**
+### **Step 1: Import the image**
 
 1. From the top left hamburger menu, locate “Compute” and select “Custom Images” from the
 drop down.Click the blue button and select "Import Image"
@@ -362,7 +359,7 @@ drop down.Click the blue button and select "Import Image"
 
     ![](./images/37.png "")
 
-**Step 2: Create Instance with Custom Image** 
+### **Step 2: Create Instance with Custom Image** 
 
 1. Click "Compute" -> "Instances." Click “Create Instance”, then “Change Image Source”, then “Custom Images”, and select the osCommerce custom image.
 
@@ -392,7 +389,7 @@ drop down.Click the blue button and select "Import Image"
     </copy>
     ```
 
-**Step 3: Connect to Instance and Validate that it's Online**
+### **Step 3: Connect to Instance and Validate that it's Online**
 
 1. After the instance has been created, open terminal on your local machine and run this command to connect via SSH:
     ```
@@ -401,7 +398,7 @@ drop down.Click the blue button and select "Import Image"
 
 2. Where < private_key_name > is the key linked to the instance and the public IP address can be pulled from the OCI console. The default password is *oscommerce*.
 
-**Step 4: Confirm Customized OsCommerce App is Running**
+### **Step 4: Confirm Customized OsCommerce App is Running**
 
 1. Open Firefox and enter in instance's IP Address.
 2. If you see a similar window as shown in the photo below, you have successfully completed this lab!
