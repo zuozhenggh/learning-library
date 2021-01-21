@@ -109,10 +109,10 @@ In this lab, you will:
 
 Oracle Spatial Studio is now provisioned.  
 
-The following Lab provides steps to tear down Spatial studio when no longer needed.
+The following Lab provides steps to tear down Spatial Studio when no longer needed.
 
 
-## **STEP 5**: Deprovision Spatial Studio
+## **STEP 5**: Deprovision Spatial Studio When No Longer Needed
 
  If you would like to fully remove Spatial Studio proceed with the following.
 
