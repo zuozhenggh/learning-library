@@ -33,21 +33,21 @@ Use the Listener Control utility <code>STATUS</code> command to display basic st
     $lsnrctl status
     ```
     ```
-    LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 01:09:40
+    LSNRCTL for Linux: Version 21.0.0.0.0 - Production on 9-12-2020 01:09:40
 
-      Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+      Copyright (c) 1991, 2020, Oracle.  All rights reserved.
 
       Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
       STATUS of the LISTENER
       ------------------------
       Alias                     LISTENER
-      Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
-      Start Date                10-JUL-2019 01:32:04
+      Version                   TNSLSNR for Linux: Version 21.0.0.0.0 - Production
+      Start Date                10-Dec-2020 01:32:04
       Uptime                    4 days 23 hr. 37 min. 36 sec
       Trace Level               off
       Security                  ON: Local OS Authentication
       SNMP                      OFF
-      Listener Parameter File   /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+      Listener Parameter File   /scratch/u01/app/oracle/product/21.0.0/dbhome_1/network/admin/listener.ora
       Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
       Listening Endpoints Summary...
         (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
@@ -79,9 +79,10 @@ The Oracle listener is set to start automatically whenever the host is restarted
      ```
 
     ```
-    LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 02:58:16
+    ```
+    LSNRCTL for Linux: Version 21.0.0.0.0 - Production on 9-12-2020 01:09:40
 
-    Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+    Copyright (c) 1991, 2020, Oracle.  All rights reserved.
 
     Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
     The command completed successfully
@@ -93,10 +94,11 @@ The Oracle listener is set to start automatically whenever the host is restarted
 
     ```
     sqlplus system@orcl
-    SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jul 15 03:00:11 2019
-    Version 19.3.0.0.0
 
-    Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+    SQL*Plus: Release 21.0.0.0.0 - Production on 9-12-2020 01:09:40
+    Version 21.1.0.0.0
+
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
     Enter password:
     ERROR:
@@ -112,14 +114,14 @@ The Oracle listener is set to start automatically whenever the host is restarted
 
     ```
   ```
-  LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 03:01:00
+  LSNRCTL for Linux: Version 21.0.0.0.0 - Production on 9-12-2020 01:09:40
 
-    Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+    Copyright (c) 1991, 2020, Oracle.  All rights reserved.
 
     Starting /scratch/u01/app/oracle/product/19.0.0/dbhome_1/bin/tnslsnr: please wait...
 
-    TNSLSNR for Linux: Version 19.0.0.0.0 - Production
-    System parameter file is /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+    TNSLSNR for Linux: Version 21.0.0.0.0 - Production
+    System parameter file is /scratch/u01/app/oracle/product/21.0.0/dbhome_1/network/admin/listener.ora
     Log messages written to /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
     Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
     Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
@@ -128,13 +130,13 @@ The Oracle listener is set to start automatically whenever the host is restarted
     STATUS of the LISTENER
     ------------------------
     Alias                     LISTENER
-    Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
-    Start Date                15-JUL-2019 03:01:01
+    Version                   TNSLSNR for Linux: Version 21.0.0.0.0 - Production
+    Start Date                9-12-2020 01:09:40
     Uptime                    0 days 0 hr. 0 min. 0 sec
     Trace Level               off
     Security                  ON: Local OS Authentication
     SNMP                      OFF
-    Listener Parameter File   /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+    Listener Parameter File   /scratch/u01/app/oracle/product/21.0.0/dbhome_1/network/admin/listener.ora
     Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
     Listening Endpoints Summary...
       (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
@@ -151,21 +153,21 @@ The Oracle listener is set to start automatically whenever the host is restarted
 
        ```
        ```
-       LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 15-JUL-2019 01:09:40
+       LSNRCTL for Linux: Version 21.0.0.0.0 - Production on 9-12-2020 01:09:40
 
-      Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+      Copyright (c) 1991, 2020, Oracle.  All rights reserved.
 
       Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host01.example.com)(PORT=1521)))
       STATUS of the LISTENER
       ------------------------
       Alias                     LISTENER
-      Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
-      Start Date                10-JUL-2019 01:32:04
+      Version                   TNSLSNR for Linux: Version 21.0.0.0.0 - Production
+      Start Date                9-12-2020 01:09:40
       Uptime                    4 days 23 hr. 37 min. 36 sec
       Trace Level               off
       Security                  ON: Local OS Authentication
       SNMP                      OFF
-      Listener Parameter File   /scratch/u01/app/oracle/product/19.0.0/dbhome_1/network/admin/listener.ora
+      Listener Parameter File   /scratch/u01/app/oracle/product/21.0.0/dbhome_1/network/admin/listener.ora
       Listener Log File         /scratch/u01/app/oracle/diag/tnslsnr/host01/listener/alert/log.xml
       Listening Endpoints Summary...
         (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=host01.example.com)(PORT=1521)))
@@ -194,16 +196,16 @@ Note: If the PDB is configured, you will see a service for each PDB.
      ```
 
     ```
-    SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jul 15 03:01:37 2019 Version 19.3.0.0.0
+    SQL*Plus: Release 21.0.0.0.0 - Production on 9-12-2020 01:09:40
 
-    Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
     Enter password:
     Last Successful login time: Mon Jul 15 2019 03:01:34 -07:00
 
     Connected to:
-    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.3.0.0.0
+    Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+    Version 21.1.0.0.0
 
 
     SQL>
