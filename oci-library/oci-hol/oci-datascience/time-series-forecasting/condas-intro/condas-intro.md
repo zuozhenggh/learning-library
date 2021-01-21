@@ -42,9 +42,9 @@ In this lab, you will:
 
     ![](./../time-series-forecasting/images/download_ml_conda_instructions.png " ")
 
-## Selecting Conda Environment for Notebook session
+## **STEP 3:** Selecting Conda Environment for Notebook session
 
-3.  Choose an installed conda environment for notebook
+1.  Choose an installed conda environment for notebook
 
     When you start a new notebook, go to the top right corner to select the conda environment you would like to use for the notebook session.
 
@@ -56,8 +56,8 @@ You can *proceed to the next lab*.
 
 For more information, please refer to our:
 
-* **Service Documentation**:https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm
-* **Blog**: https://blogs.oracle.com/datascience/conda-environment-data-science
+* [Service Documentation](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
+* [Blog](https://blogs.oracle.com/datascience/conda-environment-data-science)
 
 ## Acknowledgements
 
@@ -66,6 +66,6 @@ For more information, please refer to our:
     * [Wendy Yip](https://www.linkedin.com/in/wendy-yip-a3990610/), Data Scientist, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/data-science). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
