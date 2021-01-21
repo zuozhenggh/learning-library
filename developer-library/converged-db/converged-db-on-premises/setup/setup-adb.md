@@ -50,11 +50,12 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       <copy>
        oci iam auth-token create --description ConvergedDB --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
       ````
-5.  Copy the token somewhere safe, you will need it for the next step.
+5.  Identify the line in the output that starts with "token".
+6.  Copy the value for the token somewhere safe, you will need it for the next step.
 
 
 ## **STEP 3:** Connect to SQL Developer and Create Credentials
-1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous JSON Database**
+1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
 2.  Click on the **Display Name**, *cvgadbnn*
 3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browser will open up
 4.  Login with the *admin* user and the password that you wrote down in the previous lab.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
@@ -66,25 +67,25 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       DBMS_CLOUD.create_credential(
         credential_name => 'DEF_CRED_NAME',
         username => 'admin',
-        password => '************REPLACE THIS*****************'
+        password => '************REPLACE THIS WITH TOKEN VALUE*****************'
       );
     end;
     /
     </copy>
     ````
 
-## **STEP 4:**  Load AJD Instance
-1. If you aren't already logged into Oracle Cloud please do so and restart Oracle Cloud Shell
+## **STEP 4:**  Load ATP Instance
+1. Go back to your cloud shell and start the cloud shell if it isn't already running
 2. In the cloud shell prompt execute the wget command to download the load script and execute it.  
 3. Substitute yourinstance name with *your adb instance name* (e.g convgdb_high) and the password you used
-*NOTE: The load-ajd.sh script is in the setup directory, it will be loaded to object store when in production.  Still being tested - Kay*
+*NOTE: The load-atp.sh script is in the setup directory, it will be loaded to object store when in production.  Still being tested - Kay*
 
       ````
       <copy>
       cd $HOME
       pwd
-      wget load-ajd.sh
-      load-ajd.sh</copy> <<yourinstancename>> WElcome123##
+      wget load-atp.sh
+      load-atp.sh</copy> <<yourinstancename>> WElcome123##
       ````
 4.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1950 rows.
 
