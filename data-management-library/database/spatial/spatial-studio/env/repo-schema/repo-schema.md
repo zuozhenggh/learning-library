@@ -64,6 +64,24 @@ TO  studio_repo
 
 The studio_repo schema is now ready to be used as your Spatial Studio repository.
 
+## **STEP 4**: Download Wallet   
+
+   A Wallet is required for Spatial Studio to connect to the Autonomous Database repo schema we have created. We will use the Wallet in the next Lab.
+
+
+1. Navigate to your Autonomous Database and select View Details
+
+   ![Image alt text](images/repo-schema-1.png "Image title")
+
+2.  Select the DB Connection tab
+   ![Image alt text](images/repo-schema-2.png "Image title")
+
+3.  Click Download Wallet
+   ![Image alt text](images/repo-schema-3.png "Image title")
+   You will be prompted to enter a password for the Wallet file. The Wallet is a single zip file.
+
+4. Save the Wallet file to a convenient location. You will need this file in the next Lab.
+
 You may now [proceed to the next lab](#next).
 
 

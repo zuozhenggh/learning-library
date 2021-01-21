@@ -36,7 +36,7 @@ In this lab, you will:
 
 ## **STEP 2:** Create Stack Wizard
 
-1. Optionally enter a custom name and description for the app. Then select the Compartment to use for the deployment and click Next
+1. Optionally enter a custom name and description for the deployment stack. Then select the Compartment to use for the deployment and click Next
 
   ![Image alt text](images/env-marketplace-4.png "Image title")
 
@@ -46,7 +46,7 @@ In this lab, you will:
  
   ![Image alt text](images/env-marketplace-5.png "Image title")
 
-3. Optionally change the HTTPS port and  Spatial Studio admin user name from the defaults. For Spatial Studio Admin authentication, you have the option to use OCI Vault Secrets or a password. The image below shows an example using a password. For production deployments you are encouraged to use OCI Vault Secrets. Scroll down to the the section on Configuring Networking.
+3. Optionally change the HTTPS port and Spatial Studio admin user name from the defaults. (The user name entered here is for the Spatial Studio app and is distinct from the database user name created in Lab 3.)  For Spatial Studio Admin authentication, you have the option to use OCI Vault Secrets or a password. The image below shows an example using a password. For production deployments you are encouraged to use OCI Vault Secrets. Scroll down to the the section on Configuring Networking.
 
   ![Image alt text](images/env-marketplace-6.png "Image title")
 
@@ -60,7 +60,7 @@ In this lab, you will:
 
 6. Review the summary of your entries. If corrections are needed then click Back. Otherwise click Create to start the deployment process. You will be redirected to a Job Details page for the deployment.  
 
-![Image alt text](images/env-marketplace-9.png "Image title")
+   ![Image alt text](images/env-marketplace-9.png "Image title")
 
 ## **STEP 3:** Monitor Deployment Progress
 
@@ -68,7 +68,7 @@ In this lab, you will:
 
   ![Image alt text](images/env-marketplace-10.png "Image title")
 
-After a couple minutes you will see log information.
+   After a couple minutes you will see log information.
 
   ![Image alt text](images/env-marketplace-11.png "Image title")
 
@@ -90,11 +90,11 @@ After a couple minutes you will see log information.
 
   ![Image alt text](images/env-marketplace-14.png "Image title")
 
-3. On the first login to a Spatial Studio instance, you are prompted for connection information for the database schema to use as the Spatial Studio's metadata repository. This is the database schema used for all of Spatial Studio's metadata and can also be used by Spatial Studio admin users for storing other data. You may use a traditional or Autonomous Oracle Database. This example uses the schema we created in Lab 2 so select Oracle Autonomous Dataabse and click Next.
+3. On the first login to a Spatial Studio instance, you are prompted for connection information for the database schema to use as the Spatial Studio's metadata repository. This is the database schema used for all of Spatial Studio's metadata and can also be used by Spatial Studio admin users for storing other data. You will use the schema created in Lab 3 so select Oracle Autonomous Database and click Next.
 
   ![Image alt text](images/env-marketplace-15.png "Image title")  
 
-4. For Autonomous Database, browse or drag-and-drop the Cloud Wallet zip file. After loading, the wallet file name will be listed as Selected Wallet. Click OK.
+4. Browse to (or or drag-and-drop) the Wallet file saved in Lab 3. After loading, the wallet file name will be listed as Selected Wallet. Click OK.
 
   ![Image alt text](images/env-marketplace-16.png "Image title")  
 
@@ -111,7 +111,7 @@ Oracle Spatial Studio is now provisioned.
 
 ## **STEP 5**: Deprovision Spatial Studio
 
-The following are steps to remove the Spatial Studio app and repository schema. If you would like to fully remove Spatial Studio proceed with the following.
+ If you would like to fully remove Spatial Studio proceed with the following.
 
 1. Navigate to Resources > Stack
 
