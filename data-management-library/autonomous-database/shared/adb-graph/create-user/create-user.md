@@ -31,26 +31,30 @@ Learn how to
 
     ![](./images/login.png " ")
 
-2. Click on the `+ Create User` icon:
+2. Click the navigation menu, expand the `Administration` sub-menu and click on `Database Users`. 
+   
+   ![](./images/db-actions-admin-user.png " ")
+   
+3. Click on the `+ Create User` icon:
 
     ![](./images/create-user-icon.png " ")
 
-3. Enter the required details, i.e. user name and passwrod. Turn on the **Graph Enable** radio button.
+4. Enter the required details, i.e. user name and passwrod. Turn on the **Graph Enable** radio button.
    
     ![](./images/enter-user-info.png " ")
 
-4. Click the `Granted Roles` tab
+5. Click the `Granted Roles` tab
    
    ![](./images/granted-roles.png " ")
 
-5. Scroll down and enable the CONSOLE_DEVELOPER role. Click both the `Granted` and `Default` checkboxes for that role.  
+6. Scroll down and enable the CONSOLE_DEVELOPER role. Click both the `Granted` and `Default` checkboxes for that role.  
    Also grant CONNECT and RESOURCE roles.
 
    ![](./images/console-developer.png " ")  
 
    **Note:** The `CONSOLE_DEVELOPER` role is only needed during the *Limited Availability* period.  
 
-6. Click the `Create User` button at the bottom of the panel to create the user with the specified credentials.
+7. Click the `Create User` button at the bottom of the panel to create the user with the specified credentials.
    
    ![](./images/create-user.png " ")  
 
@@ -58,7 +62,7 @@ Learn how to
 
    ![](./images/user-created.png " ")  
    
-7. Now allocate a desired table space quota to the newly created user. Open the SQL page and issue the alter command.  
+8. Now allocate a desired table space quota to the newly created user. Open the SQL page and issue the alter command.  
    For example, 
    `ALTER USER GRAPHUSER QUOTA 100G ON DATA;`   
    will allocate a quota of 100 Gigabytes for the user `GRAPHUSER` in the tablespace named `DATA`.  
