@@ -1,5 +1,5 @@
 {
-  "workshoptitle":"Converged functionality of Oracle Autonomous Database",  
+  "workshoptitle":"Converged functionality of Oracle Autonomous Database",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -31,9 +31,9 @@
       "filename": "../../json/json.md"
     },
     {
-      "title": "Lab 5: SODA - coming soon",
+      "title": "Lab 5: SODA",
       "description": "SODA Lab",
-      "filename": "../../json/json.md"
+      "filename": "../../soda/soda.md"
     },
     {
       "title": "Lab 6: NODE.JS",
