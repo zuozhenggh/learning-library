@@ -25,9 +25,9 @@ This lab assumes you have:
     - Lab: Data Auditing
     - Lab: Data Standardization
 
-    
+
 ## **STEP 1:**  Export Cleansed Data
-We will create a job that runs data through the process we just created.This job can be called from an ODI package to automate the Data Quality project. 
+We will create a job that runs data through the process we just created.This job can be called from an ODI package to automate the Data Quality project.
 1.	The first step is direct EDQ to export the output file. Navigate to the “Project Browser” on the left side of the screen and right-click on "Clean Customers” under the “Staged Data” category (expand the “Staged Data” category if you do not see it). Right click on it and select “Export Staged Data…”.
 
     ![](images/image1200_108.png)
@@ -83,10 +83,13 @@ Now, this job can be executed from ODI (or) you can schedule this job to run per
 
 Congratulations !!! You have completed all the EDQ labs.
 
+## Learn More
+- [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
+
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Narayanan Ramakrishnan, NA Technology, December 2020
+* **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
