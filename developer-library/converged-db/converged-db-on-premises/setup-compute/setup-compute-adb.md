@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running the Converged Database marketplace image, Autonomous Database and a Virtual Cloud Network (VCN).
 
-The compute image has two docker images running the eShop application.  The docker images will connect to an autonomous database.  You will connect to the compute instance and import all the data needed for eShop into ADB.  For this workshop we will use the Autonomous JSON Database (AJD).
+The compute image has two docker images running the eShop application.  The docker images will connect to an autonomous database.  You will connect to the compute instance and import all the data needed for eShop into ADB.  For this workshop we will use the Autonomous Transaction Processing Database (ATP).
 
 *Estimated Lab Time:* 15 minutes
 
