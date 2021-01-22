@@ -6,6 +6,8 @@ In this lab, you will download and run two sets of scripts. First, you will down
 
 **Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of the content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
 
+Estimated Lab Time: 45 minutes
+
 ### Objectives
 
 * Download the HDFS and object storage scripts from a public bucket in Object Storage. The scripts are required to set up your environment and to download the dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the **`training`** Administrator user's local working directory and to your OCI Cloud Shell directory.
@@ -15,7 +17,14 @@ In this lab, you will download and run two sets of scripts. First, you will down
 
 
 ### What Do You Need?
-+ This lab assumes that you have successfully completed all the labs in the **Contents** menu.
++ This lab assumes that you have successfully completed the following labs in the **Contents** menu:
+    + **Lab 1: Setup the BDS Environment**
+    + **Lab 2: Create a BDS Hadoop Cluster**
+    + **Lab 3: Add Oracle Cloud SQL to the Cluster**
+    + **Lab 4: Access a BDS Node Using a Public IP Address**
+    + **Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster**
+    + **Lab 6: Create a Hadoop Administrator User**
+
 + Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
 
 ## **STEP 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
@@ -160,12 +169,10 @@ To view the complete data files that are available, navigate to [Citibike System
 
     ![](./images/script-completed.png " ")
 
-8. Navigate to the local **`Downloads`** directory to display the downloaded trip data, stations, and weather data files.
+8. Navigate to the local **`Downloads`** directory, and then use the `ls -l` command to display the downloaded trips, stations, and weather data files.
 
     ```
-    $ <copy>ls -l</copy>
     $ <copy>cd Downloads</copy>
-    $ <copy>ls -ls</copy>
     ```
 
     ![](./images/data-downloaded.png " ")
@@ -194,6 +201,7 @@ To view the complete data files that are available, navigate to [Citibike System
     $ <copy>hadoop fs -ls /data/stations</copy>
     $ <copy>hadoop fs -ls /data/weather</copy>
     ```
+    **Note:** Hit the **[Enter]** key on your keyboard to execute the last command above.
 
     ![](./images/hdfs-directories.png " ")
 
@@ -230,18 +238,20 @@ In this step, you log into Hue as the **`training`** administrator user and quer
 
   ![](./images/hue-login-page.png " ")
 
-  The **Hue Editor** page is displayed. Note the **`bikes`** and **`weather`** Hive databases that were created when you ran the scripts in the previous step in this lab.
+  The **Hue Editor** page is displayed. In addition to the **`default`** Hive database, note the **`bikes`** and **`weather`** Hive databases that were created when you ran the scripts in the previous step.
 
   ![](./images/hue-home-page.png " ")
 
-4. Copy the following query that ranks the top 10 most popular start stations, paste it in the Query section in Hue, and then click **Execute** ![](./images/execute-icon.png).
+  **Note:** if the **`bikes`** and **`weather`** Hive databases are not displayed in the list of available databases, click **Refresh** ![](./images/refresh-icon.png).
+
+4. Copy the following query that ranks the top 10 most popular start stations, paste it in the Query section in Hue, and then click **Execute** ![](./images/execute-icon.png). You can also select the **`bikes`** database from the the **Database** drop-down list although that is not needed in the following query as we prefixed the table name with the database name, **`bikes.trips`**, in the `from` clause.
 
     ```
     <copy>select start_station_name, value,
        rank() over (order by value desc) as ranking
     from (
     select start_station_name, count(*) as value
-    from trips
+    from bikes.trips
     group by start_station_name
   ) as t
 limit 10;</copy>
@@ -302,7 +312,7 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/saving-os.png " ")
 
-7. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. You will run this script to download the dataset to your local working directory. You will then upload this data to a new object in a new bucket. Press the **`[Enter]`** key to run the command.
+7. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. You will run this script to download the dataset to your local working directory. You will then upload this data to a new object in a new bucket. Press the **[Enter]** key to run the command.
 
     ```
     <b>$</b> <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/oraclebigdatadb/b/workshop-data/o/bds-livelabs/download-all-objstore.sh
@@ -377,12 +387,12 @@ In this step, you will download two scripts that will set up your Object Storage
 ## Acknowledgements
 
 * **Author:**
-    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Reviewer:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, December 2020
+* **Last Updated By/Date:** Lauran Serhal, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

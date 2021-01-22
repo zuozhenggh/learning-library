@@ -51,7 +51,7 @@ This lab assumes you have:
 
    ![](./images/dr-001.png " ")
 
-4. Create the redaction policy `PROTECT_EMPLOYEES` for the `DEMO_HR_EMPLOYEES` table to (`FULL`) redact data on column `SIN` for all queries (`Expression "1=1"`)
+4. Create the redaction policy `PROTECT_EMPLOYEES` for the `DEMO_HR_EMPLOYEES` table to (**FULL**) redact data on column **SIN** for all queries (**Expression "1=1"**)
 
       ````
       <copy>./dr_redact_for_all.sh</copy>
@@ -69,7 +69,7 @@ This lab assumes you have:
 
 ## **STEP 2**: Contextualize an existing Data Redaction policy
 
-1. Now, modify the redaction policy to only redact non-Glassfish queries (`Expression with "Rule Set"`)
+1. Now, modify the redaction policy to only redact non-Glassfish queries (**Expression with "Rule Set"**)
 
       ````
       <copy>./dr_redact_nonapp_queries.sh</copy>
@@ -77,7 +77,7 @@ This lab assumes you have:
 
    ![](./images/dr-004.png " ")
 
-2. Add additional columns (`SSN` and `NINO`) to the redaction policy
+2. Add additional columns (**SSN** and **NINO**) to the redaction policy
 
       ````
       <copy>./dr_add_redacted_columns.sh</copy>

@@ -13,12 +13,12 @@ Watch the following two videos for more information. The first is an introductio
 
 [](youtube:eCd-969hrak)   Simply Graph Analytics with Autonomous Database   
 
-[](youtube:S6Q-IJcBkU0)   Autonomous Graph Database: A tour of the Graph Studio interface
+[](youtube:S6Q-IJcBkU0)   Autonomous Database: A tour of the Graph Studio interface
 
 ### Objectives
 
 In this workshop you will:
-* Connect to your autonomous database using **Graph Stud
+* Connect to your autonomous database using **Graph Studio**
 * Quickly create a graph from scratch using PGQL (a graph query language)
 * Load graphs into memory for analysis
 * Create a notebook
