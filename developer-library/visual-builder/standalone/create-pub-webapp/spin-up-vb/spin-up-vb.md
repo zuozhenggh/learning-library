@@ -14,7 +14,7 @@ If you just created a new Cloud account following the instructions in Prerequisi
 
 1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
 
-![](./images/hamburger.png)
+    ![](./images/hamburger.png)
 
 2.  Using the scroll bar on the left, scroll down until you see **Platform Services**.  Hover over it, then click **Visual Builder**:
 
@@ -29,7 +29,7 @@ If you just created a new Cloud account following the instructions in Prerequisi
 
     ![](./images/detail.png)
 
-When the instance has finished provisioning, you'll receive an email.  
+    When the instance has finished provisioning, you'll receive an email.  
 
 5. From the menu on the Instances page, click **Open Visual Builder Home Page**.
 
