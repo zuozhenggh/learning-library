@@ -57,9 +57,12 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 ## **STEP 3:** Connect to SQL Developer and Create Credentials
 1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
 2.  Click on the **Display Name**, *cvgadbnn*
-3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browser will open up
-4.  Login with the *admin* user and the password that you wrote down in the previous lab.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
-5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
+3.  Click on the More Actions drop down to change the admin password
+4.  Select **Admin Password**
+5.  Enter the value *WElcome123##*, this will be the password you use for the rest of the workshop for your ATP instance, jot it down
+6.  Click on the **Tools** tab, select **SQL Developer Web**, a new browser will open up
+7.  Login with the *admin* user and the password *WElcome123##* 
+8.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
    
     ````
     <copy>
@@ -76,23 +79,34 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
 ## **STEP 4:**  Load ATP Instance
 1. Go back to your cloud shell and start the cloud shell if it isn't already running
-2. In the cloud shell prompt execute the wget command to download the load script and execute it.  
-3. Substitute yourinstance name with *your adb instance name* (e.g convgdb_high) and the password you used
-*NOTE: The load-atp.sh script is in the setup directory, it will be loaded to object store when in production.  Still being tested - Kay*
+2. Enter the command below to login to your compute instance.    
+
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+3. In the cloud shell prompt execute the wget command to download the load script and execute it.  
+4. Substitute yourinstance name with *your adb instance name* (e.g convgdb_high) and the password you used
 
       ````
       <copy>
       cd $HOME
       pwd
-      wget load-atp.sh
-      load-atp.sh</copy> <<yourinstancename>> WElcome123##
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/X312bI3U-DsOUoKgeFt8bt5U7nLOEpEbKg4cBQjljGDTChLIr__YJD6ab6SlChHP/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/load-atp.sh
+      </copy>
       ````
-4.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1950 rows.
+
+5.   Run the load script passing in two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application.  This script runs as the opc user.  
+   
+      ``` 
+      load-atp.sh WElcome123## <ENTER ATP NAME> 
+      ```
+6.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1 row.
 
       ````
       <copy>
-      select count(*) from orders;
-      /copy>
+      sqlplus admin/WElcome123##@$INSTANCEHIGH
+      select count(*) from appnodejs.orders;
+      </copy>
       ````
 
 
@@ -102,18 +116,19 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ````
       <copy>cd /u01/script
-      wget env_setup_script_adb.sh
-      ./env_setup_script_adb.sh</copy>
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhR11qr6u9pFy3Ct7o5IaQorX7-xbz1WW64QN09jkCV-z2mPmn6vozwcRslSAYwg/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/env_script_setup_atp.sh
+      chmod +x env_script_setup_atp.sh
+      ./env_script_setup_atp.sh</copy>
       ````
-   ![](./images/setup-script.png " ")
+   ![](./images/app-available.png " ")
 
-You now have a docker container running the eShop application and all the data across multiple modalities, JSON, Analytical data, XML, Spatial and Graph.  A true converged database.
+You now have a docker container running the eShop application and all the data in an autonomous across multiple modalities, JSON, Analytical data, XML, Spatial and Graph in an autonomous database.  A true converged database.
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors** - Kay Malcolm, Ashish Kumar
-* **Contributors** - Ashish Kumar, Yaisah Granillo
+* **Contributors** - Ashish Kumar, Madhu Rao, Yaisah Granillo
 * **Last Updated By/Date** - Kay Malcolm, January 2021
 
 ## Need Help?
