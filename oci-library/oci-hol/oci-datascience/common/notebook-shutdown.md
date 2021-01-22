@@ -58,7 +58,7 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 1. Click **Terminate** to confirm the termination. The status changes to **Deleting** and then **Deleted**.
     ![](./../speed-up-ds-with-the-ads-sdk/images/terminate2.png)
 
-Congratulations, you have successfully completed the workshop!
+**Congratulations, you have successfully completed the workshop!**
 
 ## Acknowledgements
 
@@ -67,6 +67,6 @@ Congratulations, you have successfully completed the workshop!
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/data-science). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
