@@ -72,7 +72,7 @@ A Cloud Administrator has complete control over all of the BDS resources in the 
 
 Create a new Administrator group that will have full access rights to the new **`training-compartment`** as follows:
 
-1. In the **Oracle Cloud Console** page, click the **Navigation** menu.
+1. On the **Oracle Cloud Console** page, click the **Navigation** menu.
 
 2. Under **Governance and Administration**, select **Identity > Users**.
 
@@ -98,7 +98,7 @@ Create a new Administrator group that will have full access rights to the new **
 
 Create a BDS group whose members will be granted permissions to manage the BDS cluster life cycle.
 
-1. In the **Oracle Cloud Console** page, click the **Navigation** menu.
+1. On the **Oracle Cloud Console** page, click the **Navigation** menu.
 
 2. Under **Governance and Administration**, select **Identity > Groups**.
 
@@ -207,7 +207,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 ## **STEP 6:** Create a Virtual Cloud Network (VCN)
 In this step, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
 
-1. In the **Oracle Cloud Console** Home page, click the **Navigation** menu, and then navigate to **Networking > Virtual Cloud Networks**.
+1. On the **Oracle Cloud Console** Home page, click the **Navigation** menu, and then navigate to **Networking > Virtual Cloud Networks**.
 
    ![](./images/navigate-to-vcn-page.png " ")
 

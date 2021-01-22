@@ -244,18 +244,20 @@ In this step, you log into Hue as the **`training`** administrator user and quer
 
   ![](./images/hue-login-page.png " ")
 
-  The **Hue Editor** page is displayed. Note the **`bikes`** and **`weather`** Hive databases that were created when you ran the scripts in the previous step in this lab.
+  The **Hue Editor** page is displayed. In addition to the **`default`** Hive database, note the **`bikes`** and **`weather`** Hive databases that were created when you ran the scripts in the previous step.
 
   ![](./images/hue-home-page.png " ")
 
-4. Copy the following query that ranks the top 10 most popular start stations, paste it in the Query section in Hue, and then click **Execute** ![](./images/execute-icon.png).
+  **Note:** if the **`bikes`** and **`weather`** Hive databases are not displayed in the list of available databases, click **Refresh** ![](./images/refresh-icon.png).
+
+4. Copy the following query that ranks the top 10 most popular start stations, paste it in the Query section in Hue, and then click **Execute** ![](./images/execute-icon.png). You can also select the **`bikes`** database from the the **Database** drop-down list although that is not needed in the following query as we prefixed the table name with the database name, **`bikes.trips`**, in the `from` clause.
 
     ```
     <copy>select start_station_name, value,
        rank() over (order by value desc) as ranking
     from (
     select start_station_name, count(*) as value
-    from trips
+    from bikes.trips
     group by start_station_name
   ) as t
 limit 10;</copy>
