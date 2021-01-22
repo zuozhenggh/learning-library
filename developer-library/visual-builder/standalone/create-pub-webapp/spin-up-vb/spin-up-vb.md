@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the process of creating an instance of Visual Builder, assuming you don't already one available to you.  If you do, you can skip this lab and move on to the next one.
+This lab walks you through the process of creating an instance of Visual Builder, assuming you don't already have one available to you.  If you do, you can skip this lab and move on to the next one.
 
 Estimated Lab Time:  5 minutes
 
 ### Background
 
-If you just created a new Cloud account following the instructions in Prerequisites, you must wait at least 30 minutes before you attempt to create an instance of Visual Builder.  If you already had an account, you don't need to wait.  Either way, make sure you've signed into the Oracle Cloud before proceeding.
+If you just created a new Cloud account following the instructions in Prerequisites, you must wait at least 30 minutes before you attempt to create an instance of Visual Builder.  If you already had a Cloud account, you don't need to wait.  Either way, make sure you've signed into the Oracle Cloud before proceeding.
 
 ## **STEP 1**: Create an Instance of Visual Builder
 
