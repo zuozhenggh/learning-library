@@ -1,4 +1,4 @@
-# Lab 100: Linear Regression (using OCI Data Science service)
+# Lab: Linear Regression (using OCI Data Science service)
 
 ## Introduction
 
@@ -6,7 +6,11 @@ This lab will guide you through a practical example of how to train and apply a 
 
 There are many applications of regression in business. The main use cases are around forecasting and optimization. For example, predicting future demand for products, estimating the optimal price for a product and fine-tuning manufacturing and delivery processes. In other words, the principles that you learn with this exercise are applicable to those business scenarios as well.
 
-Time: 90 minutes (video 8 minutes, exercise +/- 80 minutes)
+This video will cover additional theory that you require to be able to do the exercise.
+
+[](youtube:y_GpyF-y1xw)
+
+Estimated lab time: 90 minutes (video 8 minutes, exercise +/- 80 minutes)
 
 ### Objectives
 
@@ -14,12 +18,6 @@ In this lab you will:
 * Become familiar with Data Exploration, Data Preparation, Model training and Evaluation techniques.
 * Become familiar with Python and its popular ML libraries, in particular Scikit Learn.
 * Become familiar with the OCI Data Science service.
-
-### Video
-
-This video will cover additional theory that you require to be able to do the exercise.
-
-[](youtube:y_GpyF-y1xw)
 
 ### Prerequisites
 
@@ -621,8 +619,11 @@ Download the notebook here.
 - Open the Notebook that you've just uploaded.
 - Go through each of the cells and run them one by one.
 
-## Next
 [Proceed to the next section](#next).
+
+## Acknowledgements
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

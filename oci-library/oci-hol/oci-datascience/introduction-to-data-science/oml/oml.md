@@ -1,4 +1,4 @@
-# Lab 400: In-database ML (using Autonomous Database)
+# Lab: In-database ML (using Autonomous Database)
 
 ## Introduction
 
@@ -6,7 +6,10 @@ In this lab you create an in-database ML model and operationalize it with an APE
 
 As this example we will apply machine learning on a sales scenario, in this case we will predict which customers are most likely to buy a certain product.
 
-Time: 50 minutes (video 8 minutes, exercise +/- 40 minutes)
+Estimated lab time: 50 minutes (video 8 minutes, exercise +/- 40 minutes)
+
+This video will cover the theory behind Neural Networks.
+[](youtube:xiUmxdqJ5rA)
 
 ### Objectives
 
@@ -14,11 +17,6 @@ In this lab you will:
 * Become familiar with in-database machine learning, in particular OML4SQL.
 * Understand how APEX can be used to operationalize ML models.
 * Get familiar with the business value of identifying customers that are likely to buy a certain product.
-
-### Video
-
-This video will cover the theory behind Neural Networks.
-[](youtube:xiUmxdqJ5rA)
 
 ### Prerequisites
 
@@ -29,29 +27,30 @@ This video will cover the theory behind Neural Networks.
 
 The following assumes that you've already provisioned an Autonomous Transaction Processing instance (see prerequisites).
 
-- Go to the details of the autonomous database and open the Service Console.
+### 1. Open Service Console
 
+Go to the details of the autonomous database and open the Service Console. 
 ![](images/open-service-console.png)
 
-- Select "Development".
-
+### 2. Open Development
+Select "Development". 
 ![](images/development.png)
 
-- There's a section called "Oracle Application Express". Click on "Open APEX".
+###3. Open APEX
+There's a section called "Oracle Application Express". Click on "Open APEX".
 
-- You will see the login page fof APEX Administration Services. Use the ADMIN password that you entered when you provisioned ATP.
+###4. Log in
 
-![](images/open-apex-2.png)
+You will see the login page fof APEX Administration Services. Use the ADMIN password that you entered when you provisioned ATP. ![](images/open-apex-2.png)
 
-- Follow the instructions to create a new workspace.
+###5. Create a new workspace
+Follow the instructions to create a new workspace. ![](images/create-workspace-01.png)
 
-![](images/create-workspace-01.png)
-
-- The workspace (and database user) -must be- named "WORKSHOPATP" (there is some hardcoding in the installation scripts to use this schema name). Keep a note of the password as you will need it later.
-
-![](images/create-workspace-02.png)
+The workspace (and database user) -must be- named "WORKSHOPATP" (there is some hardcoding in the installation scripts to use this schema name). Keep a note of the password as you will need it later. ![](images/create-workspace-02.png)
 
 ## **STEP 2:** Import the APEX application
+
+### 1. Download prepared application
 
 First download the application that we will install. You can find it [here](files/f100.sql).
 
@@ -59,42 +58,50 @@ To download it first click the link, then click the Raw button of GIT and then R
 ![](images/download-button.png)
 ![](images/save-as.png)
 
-- If you're in APEX, then first __Log out__. You can do this by clicking on the icon of your user (top right), then choose "Sign Out".
+### 2. Logout from APEX if required
+If you're in APEX, then first __Log out__. You can do this by clicking on the icon of your user (top right), then choose "Sign Out".
 
-- Now login to the workspace that we created earlier.
+### 3. Log in to the new workspace
+Now login to the workspace that we created earlier.
 
 Workspace name: WORKSHOPATP, User name: WORKSHOPATP, use the password that you entered when you created the workspace.
 
 ![](images/open-workspace.png)
 
-- Import the example APEX application.
-  Go to "App Builder", then "Import".
+### 4. Start the import wizard
+Import the example APEX application. Go to "App Builder", then "Import".
 
 ![](images/app-builder.png)![](images/l100-01-import-01.png)
 
-- Select the file that you downloaded earlier, then "Import", "Next" and "Install Application".
+Select the file that you downloaded earlier, then "Import", "Next" and "Install Application".
 
 ![](images/import-02.png)
 
-- On the dialog for supporting objects, choose "Next", then "Install". You should now see the following:
+On the dialog for supporting objects, choose "Next", then "Install". You should now see the following:
 
 ![](images/import-04.png)
 
 ## **STEP 3:** Review the APEX application (situation before ML)
 
+### 1. Start the application that you just imported
+
 Open the existing application by clicking on "Run Application".
 
 ![](images/run-app.png)
 
-- Login using the password that you used when creating the workspace.
+### 2. Login
+
+Login using the password that you used when creating the workspace.
 
 ![](images/login.png)
 
-- You see the Customer Service Application, with a list of customers.
+### 3. Review the application
+
+You see the Customer Service Application, with a list of customers.
 
 ![](images/customer-list.png)
 
-- Our goal is to upsell something to these customers. We want to alert our employee whenever he/she has a customer on the screen that is a good candidate for a particular product that we're trying to sell.
+Our goal is to upsell something to these customers. We want to alert our employee whenever he/she has a customer on the screen that is a good candidate for a particular product that we're trying to sell.
 In practice this means that we want to add a column on this screen that shows whether it's a good idea to try to upsell to this customer.
 This will be the topic for the rest of the exercise.
 
@@ -105,35 +112,49 @@ This will be the topic for the rest of the exercise.
 We will develop the machine learning model using Zeppelin, which comes included in the autonomous database. Zeppelin is a web-based notebook environment that allows us to analyse and experiment with data. In our case we will be using it to build a machine learning model.
 First we will set up a user for Zeppelin.
 
-- Go to the Service Console of ATP.
+### 1. Open the Service Console
+
+Go to the Service Console of ATP.
 
 ![](images/open-service-console.png)
 
-- Next, select "Administration" and "Manage ML Users".
+### 2. Go to Administration
+
+Select "Administration" and "Manage ML Users".
 
 ![](images/manage-ml-users.png)
 
-- Create a user called "MLUSER1".
+### 3. Create a new user
+
+Create a user called "MLUSER1".
 
 ![](images/create-ml-user.png)
 
-- Go back to the Service Console, then Development, then Oracle Machine Learning Notebooks.
+### 4. Open the Machine Learning Notebooks
+
+Go back to the Service Console, then Development, then Oracle Machine Learning Notebooks.
 
 ![](images/open-notebook.png)
 
-- Sign in with the new user MLUSER1.
+### 5. Sign in
+
+Sign in with the new user MLUSER1.
 
 ![](images/sign-in-mluser.png)
 
-- Navigate around to get familiar with the ML pages. Click on "Examples".
+### 6. Review examples
+
+Navigate around to get familiar with the ML pages. Click on "Examples".
 
 ![](images/examples.png)
 
-- Note the various ML notebook examples. Feel free to review some of these. We will be creating a new ML notebook in this lab.
+Note the various ML notebook examples. Feel free to review some of these. We will be creating a new ML notebook in this lab.
 
 ![](images/examples-2.png)
 
-- Click on the upper left icon to bring back the menu.  Then select "Notebooks" and "Create". Name the new notebook "Predict Y Box Games".
+### 7. Create a new notebook
+
+Click on the upper left icon to bring back the menu.  Then select "Notebooks" and "Create". Name the new notebook "Predict Y Box Games".
 
 ![](images/create-notebook.png)
 
@@ -141,7 +162,9 @@ First we will set up a user for Zeppelin.
 
 In this case we will build a model by letting it learn from existing customers.
 
-- Review the following table with customer information that we'll use as input data for the model:
+### 1. Review the input data
+
+Review the following table with customer information that we'll use as input data for the model:
 
 ```
 SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS
@@ -157,7 +180,9 @@ For example, the level of education might be an influencing factor for Y Box Gam
 
 The *magic* of machine learning is that it will find out exactly what the relationships are between these variables and our target variable, Y Box Games.
 
-- Split the input data into two sets: 60% for training and 40% for testing.
+### 2. Split the input data into test and training
+
+Split the input data into two sets: 60% for training and 40% for testing.
 
 ```
 CREATE TABLE N1_TRAIN_DATA AS SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS SAMPLE (60) SEED (1);
@@ -169,7 +194,9 @@ CREATE TABLE N1_TEST_DATA AS SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS MINUS S
 
 ![](images/split-dataset.png)
 
-- The model will contain the defintion of the relationship between the driving attributes and the target attribute (Y Box Games).
+### 3. Prepare for training with a parameters table
+
+The model will contain the defintion of the relationship between the driving attributes and the target attribute (Y Box Games).
 Creating those relationships is done during the training phase.
 Defining a model requires several parameters. We first store those parameters in a table. This table can have any name.
 In our case the only parameter is the type of algorithm, in this case a decision tree model.
@@ -186,7 +213,9 @@ INSERT INTO N1_BUILD_SETTINGS (SETTING_NAME, SETTING_VALUE) VALUES ('ALGO_NAME',
 
 ![](images/create-hyper-parameters-table.png)
 
-- Now we are ready to create and train the model.
+### 4. Execute the training process
+
+Now we are ready to create and train the model.
 Run the following PL/SQL to do this.
 
 ```
@@ -214,9 +243,13 @@ This is where the test set, that we created earlier, comes in handy. Since the t
 We will verify the performance by letting our model predict Y Box Games for those same records.
 This will allow us to verify if the predicted value of Y Box Games is the same as the actual value.
 
+### 1. Create a placeholder column
+
 First, create a new placeholder column in the test set that will hold the predicted value.
 
 `ALTER TABLE N1_TEST_DATA ADD Y_BOX_GAMES_PRED NUMBER(1);`
+
+### 2. Run the prediction
 
 Next, actually make the prediction.
 
@@ -228,13 +261,17 @@ UPDATE N1_TEST_DATA SET Y_BOX_GAMES_PRED = PREDICTION(N1_CLASS_MODEL USING *);
 
 You see that this uses special SQL syntax. The above means that we want to predict the value using model ```N1_CLASS_MODEL``` and all of the driving columns in the dataset will be used.
 
-- Let's see the result:
+### 3. Review the results
+
+Let's see the result:
 
 ```
 SELECT CUST_ID, Y_BOX_GAMES, Y_BOX_GAMES_PRED FROM N1_TEST_DATA;
 ```
 
 ![](images/review-predicted-values.png)
+
+### 4. Verify accuracy of the prediction
 
 - Let's see in what percentage of cases our prediction is correct.
 
@@ -247,7 +284,9 @@ SELECT TO_CHAR(((SELECT COUNT(*) FROM N1_TEST_DATA WHERE Y_BOX_GAMES = Y_BOX_GAM
 
 The result is an accuracy of about 90%.
 
-- We can look into this number in more detail with a [confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix).
+### 4. Review the confusion matrix to understand model performance
+
+We can look into this number in more detail with a [confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix).
 
 This can easily be created by grouping on the two Y Box Games columns.
 
@@ -288,6 +327,8 @@ Now let's tie it all together and go back to the APEX application.
 
 Remember, we want to show a recommendation to our employee when the customer he's speaking to it a likely candidate to buy Y Box Games.
 
+### 1. Grant the APEX application access to the schema with the predictions
+
 For the APEX application (schema WORKSHOPATP) to be able to access the prediction results, we have to give it access to the machine learning schema (MLUSER1).
 
 ```
@@ -296,23 +337,31 @@ grant select on cust_prediction to workshopatp;
 
 ![](images/give-access-pred-table-mluser1-to-workshopatp.png)
 
-- Open APEX. You can do this from Service Console of the database, then Development, then APEX.
+### 2. Open APEX
+
+Open APEX. You can do this from Service Console of the database, then Development, then APEX.
 
 ![](images/openapex2.png)
 
-- Login to the workspace that we created earlier.
+### 3. Login to the workspace with the application
+
+Login to the workspace that we created earlier.
 
 Workspace name: WORKSHOPATP, User name: WORKSHOPATP, use the password that you entered when you created the workspace.
 
-- Open the "Customer Service App" application for editing.
+### 4. Open the application
+
+Open the "Customer Service App" application for editing.
 
 ![](images/app-builder.png)
 
 ![](images/edit-app.png)
 
-- Edit the Customers page.
+### 5. Open the Customers page for editing
 
 ![](images/select-customers-page.png)
+
+### 6. Find out which view we need to update
 
 Find out what view is being used to show the customer information.
 
@@ -320,15 +369,21 @@ Find out what view is being used to show the customer information.
 
 You see that the data comes from the CUSTOMER_V view.
 
-- We are going to edit the definition of this view to add a column that contains our recommendation.
+### 7. Open the view
+
+We are going to edit the definition of this view to add a column that contains our recommendation.
 
 Find the view in APEX. Open the SQL Workshop, then Object Browser, and then our view.
 
  ![](images/open-customer-v.png)
 
+### 8. Review the current view definition
+
 Have a look at the view definition. It basically selects all its values from the SH.CUSTOMERS table.
 
-- We will extend the view by adding a "RECOMMENDATION" column to it.
+### 9. Download the new view definition (already prepared for you)
+
+We will extend the view by adding a "RECOMMENDATION" column to it.
 
 Open the new view definition from [here](files/customers-v-new-SQL.sql).
 
@@ -336,13 +391,17 @@ Open the new view definition from [here](files/customers-v-new-SQL.sql).
 
 Note how this SQL will add a column "Recommendation", and it will be a text that explains whether the employee should try to upsell Y Box Games to this customer. In addition, the recommendation will only be added when the probability of an upsell is high enough.
 
+### 10. Overwrite the view definition
+
 Open the SQL Workshop and execute the SQL script to overwrite the view with the new definition.
 
 ![](images/run-sql.png)
 
 Paste in the SQL that you have just downloaded. Execute it. You should see "View created" at the bottom of the page.
 
-- Go back to the APEX application and edit the Customers page. Choose Customers section in Content body. Add the "RECOMMENDATION" column in the select statement at the right.
+### 11. Modify the APEX application to add the new column
+
+Go back to the APEX application and edit the Customers page. Choose Customers section in Content body. Add the "RECOMMENDATION" column in the select statement at the right.
 **Don't forget the comma just after the previous column.**
 Then Save the page.
 
@@ -352,14 +411,16 @@ Then Save the page.
 
 ## **STEP 8:** Review the ML-enabled APEX application
 
-Run the APEX application
+### 1. Run the APEX application again
 
-- In the main screen you see that for most customers it's not recommended to try to upsell Y Box Games.
+In the main screen you see that for most customers it's not recommended to try to upsell Y Box Games.
 It's unlikely that these customers will be interested.
 
 ![](images/recommendations-usually-empty.png)
 
-- Now look for a customer with first name "Connor" and last name "Clark".
+### 2. Look for a customer and verify whether they're interested in the offer
+
+Now look for a customer with first name "Connor" and last name "Clark".
 Note that in this case we see a recommendation to try to upsell Y Box Games, because the customer is very likely to be interested in this offer.
 
 ![](images/interested-customer.png)![](images/lab200-recommendation.png)
@@ -371,8 +432,11 @@ In this case an employee receives very valuable advise on which customer to try 
 
 Congratulations on completing this lab!
 
-## Next
 [Proceed to the next section](#next).
+
+## Acknowledgements
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

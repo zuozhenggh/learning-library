@@ -1,10 +1,14 @@
-# Lab 200: Neural Networks (using OCI Data Science service)
+# Lab: Neural Networks (using OCI Data Science service)
 
 ## Introduction
 
 In this lab we will build a Neural Network to recognize handwritten digits. We will cover the required theory behind Neural Networks first, after which you will go on and put the theory into practice using the OCI Data Science service.
 
-Time: 60 minutes (video 30 minutes, exercise +/- 30 minutes)
+Estimated lab time: 60 minutes (video 30 minutes, exercise +/- 30 minutes)
+
+This video will cover the theory behind Neural Networks.
+
+[](youtube:jp5QVjbJbOo)
 
 ### Objectives
 
@@ -14,17 +18,12 @@ In this lab you will:
 * Learn the basics of constructing a Neural Network with Keras and Tensorflow.
 * Learn how to visualize images with the matlib library.
 
-### Video
-
-This video will cover the theory behind Neural Networks.
-[](youtube:jp5QVjbJbOo)
-
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 * OCI Data Science service with dependencies (see prerequisites in workshop menu)
 
-## **Understanding the dataset and the architecture of the model**
+## **STEP 1:** Understanding the dataset and the architecture of the model
 
 We will use the MNIST (Modified National Institute of Standards and Technology database) dataset for this, a real classic in Machine Learning. This dataset consists of thousands of images, each image representing a handwritten digit. All images have been labelled with the corresponding digit.
 ![digit labels](images/labeled.png)
@@ -37,7 +36,7 @@ Have a look at the architecture that we will build.
 
 ![NN Architecture](images/nnarchitecture.png)
 
-## **STEP 1:** Install additional Python library idx2numpy
+## **STEP 2:** Install additional Python library idx2numpy
 
 In this lab we will require a Python library that by default is not installed in Data Science, called `"idx2numpy"`. The source images are in IDX format, but we need a native array format for our Neural Network. This library takes care of the conversion from IDX to native array format.
 
@@ -56,7 +55,7 @@ pip install idx2numpy
 ```
 ![install idx2numpy output](images/installidx2numpy.png)
 
-## **STEP 2:** Downloading and unpacking the data
+## **STEP 3:** Downloading and unpacking the data
 
 ### 1. Create a new Jupyter notebook.
 
@@ -88,7 +87,7 @@ This should execute without errors.
 
 Note that all the files should be available in your root folder in the Data Science notebook.
 
-## **STEP 3:** Data Access and Exploration
+## **STEP 4:** Data Access and Exploration
 
 ### 1. Load the data into memory
 
@@ -181,7 +180,7 @@ plt.imshow(x_train[5], cmap='Greys')
 
 Indeed, we can see that this is a two.
 
-## **STEP 4:** Data Preparation
+## **STEP 5:** Data Preparation
 
 The Neural Network that we want to build will have an input layer of 784 neurons. See also the architecture picture above. Each of the neurons will represent one pixel in the input image.
 
@@ -226,7 +225,7 @@ x_train[5]
 
 You now see that there are no rows anymore in the array (it's 1D now), and that the values are between 0.0 and 1.0.
 
-## **STEP 5:** Model build and training
+## **STEP 6:** Model build and training
 
 ### 1. Doublecheck the shapes
 
@@ -279,7 +278,7 @@ Notice that the input for the model training is the training images (`x_train`) 
 
 If you installed your Notebook on shape `VM.Standard.E2.2`, the training process will take about 2 minutes.
 
-## **STEP 6:** Model build and training
+## **STEP 7:** Check model accuracy
 
 ### 1. Check the accuracy of the last epoch.
 
@@ -332,8 +331,11 @@ This is the actual accuracy of the model. In other words, the model is able to i
 
 Congratulations on completing this lab!
 
-## Next
 [Proceed to the next section](#next).
+
+## Acknowledgements
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

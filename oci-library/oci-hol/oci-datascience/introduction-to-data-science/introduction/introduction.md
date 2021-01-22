@@ -14,7 +14,7 @@ The target audience are people without previous Data Science experience that wou
 - Database experts that would like to create ML models for data that's stored in databases.
 - Other (IT) professionals with technical affinity.
 
-Estimated Workshop Time: 300 minutes (this includes all the labs in this workshop)
+Estimated workshop time: 300 minutes (this includes all the labs in this workshop)
 
 ### Objectives
 
@@ -36,8 +36,7 @@ In this workshop you will:
 [Proceed to the next section](#next).
 
 ## Acknowledgements
-* **Author** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital
-* **Contributors** Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
 * **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
 ## Need Help?

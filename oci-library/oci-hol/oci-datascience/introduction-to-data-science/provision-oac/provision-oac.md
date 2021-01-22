@@ -6,7 +6,7 @@ You will provision Oracle Analytics Cloud.
 
 This is only necessary if you plan to do "Lab 300: ML for Business Users".
 
-Time: +/- 30 minutes
+Estimated lab time: +/- 30 minutes
 
 ## **STEP 1:** Open the provisioning screen
 
@@ -38,8 +38,11 @@ Click Next.
 Click "Create". The status changes to "Creating...". Provisioning can take up to 30min.
 ![](images/oac8.png)
 
-## Next
 [Proceed to the next section](#next).
+
+## Acknowledgements
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

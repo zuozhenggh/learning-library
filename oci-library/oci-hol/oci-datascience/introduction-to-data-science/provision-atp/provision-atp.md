@@ -6,7 +6,7 @@ You will provision an Oracle Transaction Processing database.
 
 This is only required if you want to do Lab 400 'In-database ML (Oracle Machine Learning)'.
 
-Time: +/- 5 minutes
+Estimated lab time: +/- 5 minutes
 
 ## **STEPS**
 
@@ -48,8 +48,11 @@ Time: +/- 5 minutes
 
 This process typically completes within about 5 minutes, after which you will see the status "AVAILABLE".
 
-## Next
 [Proceed to the next section](#next).
+
+## Acknowledgements
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -1,0 +1,61 @@
+{
+    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "An Oracle Cloud tenancy is required for all labs in this workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Introduction to Data Science",
+            "description": "Introduction video on data science and machine learning concepts.",
+            "filename": "../../introduction-to-data-science/introduction-to-data-science.md"
+        },
+        {
+            "title": "Oracle Products overview",
+            "description": "High level overview of Oracle Cloud and products related to data science and machine learning.",
+            "filename": "../../product-overview/product-overview.md"
+        },
+        {
+            "title": "Provision OCI Data Science",
+            "description": "This is only required if you want to do Labs 100 and/or 200.",
+            "filename": "../../provision-ocidatascience/provision-ocidatascience.md"
+        },
+        {
+            "title": "Provision Oracle Analytics Cloud",
+            "description": "This is only required if you want to do Lab 300 'ML for Business Users (Oracle Analytics Cloud)'.",
+            "filename": "../../provision-oac/provision-oac.md"
+        },
+        {
+            "title": "Provision Autonomous Transaction Processing",
+            "description": "This is only required if you want to do Lab 400 'In-database ML (Oracle Machine Learning)'.",
+            "filename": "../../provision-atp/provision-atp.md"
+        },
+        {
+            "title": "Linear Regression (OCI Data Science)",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../linear-regression/linear-regression.md"
+        },
+        {
+            "title": "Neural Networks (OCI Data Science)",
+            "filename": "../../neural-networks/neural-networks.md"
+        },
+        {
+            "title": "ML for Business Users (Oracle Analytics Cloud)",
+            "filename": "../../ml-oac/ml-oac.md"
+        },
+        {
+            "title": "In-database ML (Oracle Machine Learning)",
+            "filename": "../../oml/oml.md"
+        },
+        {
+            "title": "Graph and ML",
+            "filename": "../../graph/graph.md"
+        }
+    ]
+}

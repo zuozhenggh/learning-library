@@ -4,7 +4,9 @@
 
 You will learn about the relationship between Graph and Machine Learning.
 
-Time: 25 minutes
+Estimated lab time: 25 minutes
+
+[](youtube:emKJNmNaPDo)
 
 ### Objectives
 
@@ -12,10 +14,6 @@ In this video, you will:
 * Learn what Graph technology is and where it's used
 * Learn about graph algorithms
 * Learn about how Graph can complement Machine Learning in various ways
-
-### Video
-
-[](youtube:emKJNmNaPDo)
 
 Congratulations on completing the workshop!
 
