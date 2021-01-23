@@ -1,7 +1,7 @@
 # Data Standardization
 
 ## Introduction
-This lab describes how to implement data standardization and enhancement rules in Enterprise Data Quality. 
+This lab describes how to implement data standardization and enhancement rules in Enterprise Data Quality.
 
 *Estimated Lab Time* - 30 minutes
 
@@ -38,7 +38,7 @@ This lab assumes you have:
 4.	Return to the “Tool Palette” on the right side of the screen and find the “Normalize Whitespace” processor under the “Transformation” category.
 
     **Note**: You can always use the search box on the bottom of the “Tool Palette” to help you find the processor you are looking for.
-    
+
 5.	Connect the “Reader” to the “Normalize Whitespace” processor. The Normalize Whitespace Dialog Box appears on screen. Click on “Select All” icon and click “OK”.
 
     ![](./images/image1200_90.png " ")
@@ -50,11 +50,11 @@ This lab assumes you have:
 
     ![](./images/image1200_91.png " ")
 
-2.	Connect “Normalize Whitespace” processor to “Country from City” processor. In the “Country from City” dialog box, expand the "City" field from the “Available Attributes” to observe the extra metadata value(s) created by the “Normalize Whitespace” processor. Double-click on “City” (the “City” to the right of the blue arrow) to add “City” to the “Field to Match”. Next, click the “Options” tab at the top of the dialog box. 
+2.	Connect “Normalize Whitespace” processor to “Country from City” processor. In the “Country from City” dialog box, expand the "City" field from the “Available Attributes” to observe the extra metadata value(s) created by the “Normalize Whitespace” processor. Double-click on “City” (the “City” to the right of the blue arrow) to add “City” to the “Field to Match”. Next, click the “Options” tab at the top of the dialog box.
 
     ![](./images/image1200_92.png " ")
 
-3.	Click the “Browse” button within the “Value Map” section to select the reference data we will use. 
+3.	Click the “Browse” button within the “Value Map” section to select the reference data we will use.
 
     ![](./images/image1200_93.png " ")
 
@@ -68,7 +68,7 @@ This lab assumes you have:
 
 6.	Click the “Run” icon to start the process.
 
-7.	You will notice several unenhanced results, but we are not done yet! Feel free to drill down on the “Enhanced” and “Unenhanced” values (Result Browser panel) to glance at what this processor did. 
+7.	You will notice several unenhanced results, but we are not done yet! Feel free to drill down on the “Enhanced” and “Unenhanced” values (Result Browser panel) to glance at what this processor did.
 
     ![](./images/image1200_96.png " ")
 
@@ -82,7 +82,7 @@ This lab assumes you have:
 
     **Note**: If you want, you could select the original 'country' value from the source data. By default, EDQ will take the most recent field conversion as the input attribute (e.g. it will take fullname.whitespacenormalized and not the original fullname field from the source data).
 
-3.	Click the “Browse” button on the “Replacements” row. 
+3.	Click the “Browse” button on the “Replacements” row.
 
     ![](./images/image1200_98.png " ")
 
@@ -125,7 +125,7 @@ This lab assumes you have:
     ![](./images/image1200_105.png " ")
 
 4.	Double click on “Best Country” and rename it to “Country”.
- 
+
     ![](./images/image1200_106.png " ")
 
 5.	Click “Next” to accept the default configuration of creating the staged data set.
@@ -141,15 +141,17 @@ This lab assumes you have:
 
 Now, you can see the standardized data in the Result Browser by clicking on Writer component.
 
-You may now *proceed to the next lab*. 
+You may now *proceed to the next lab*.
+
+## Learn More
+- [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
 
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Narayanan Ramakrishnan, NA Technology, December 2020
+* **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
