@@ -49,7 +49,7 @@ The password to all the schemas is *Oracle_4U*.
 
 3.  At the login screen, enter *appxml* and *Oracle_4U*.
 
-## **STEP 3**: XML Query
+## **STEP 2**: XML Query
 
 1. Execute a query to select the XML documents
 
@@ -97,7 +97,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/xml_step3_search.png " ")
 
-## **STEP 4**: Insert XML records
+## **STEP 3**: Insert XML records
 
 1. Issue the query below to count the number rows we have currently and then do a insert
 
@@ -124,7 +124,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/xml_s4_p3.png " ")
 
-## **STEP 5**: Update XML table
+## **STEP 4**: Update XML table
 
 --Ashish, can you download the update.sql file and put it in the object store?  Then delete the lines marked delete
 1. Download the update.sql script from the object store. 
@@ -147,7 +147,7 @@ http://objectstore url
 
     ![](./images/xml_s5_p2.png " ")
 
-## **Appendix**: Sample XML Queries
+## **STEP 5**: Sample XML Queries
 
 1. Get the list of customers and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
