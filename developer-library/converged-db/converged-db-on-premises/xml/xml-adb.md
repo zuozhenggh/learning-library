@@ -97,7 +97,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/xml_step3_search.png " ")
 
-## **STEP 4**: Insert XML record.
+## **STEP 4**: Insert XML records
 
 1. Issue the query below to count the number rows we have currently and then do a insert
 
@@ -147,7 +147,7 @@ http://objectstore url
 
     ![](./images/xml_s5_p2.png " ")
 
-## **STEP 6**: Example Queries
+## **Appendix**: Sample XML Queries
 
 1. Get the list of customers and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
