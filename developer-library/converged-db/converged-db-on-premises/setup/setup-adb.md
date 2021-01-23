@@ -130,7 +130,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors** - Kay Malcolm, Ashish Kumar
-* **Contributors** - Ashish Kumar, Madhu Rao, Yaisah Granillo
+* **Contributors** - Ashish Kumar, Madhu Rao, Yaisah Granillo, Kay Malcolm
 * **Last Updated By/Date** - Kay Malcolm, January 2021
 
 ## Need Help?

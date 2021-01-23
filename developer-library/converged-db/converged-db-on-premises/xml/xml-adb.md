@@ -1,26 +1,20 @@
 # Oracle XML
 
 ## Introduction
-There are several steps within this lab.
--  The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
--  The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
--  The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document. The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database.
-
--  The last step you will look at various sample queries and functions within XML.
+There are two main parts to this lab.
+- **Connect to SQL Developer Web** - You will use SQL Developer Web, one of the tools that comes preinstalled with Autonomous Database
+- **Query XML Data** - Query XML data using XQuery. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. You can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
+- **Insert and Update XML Data** - You can update XML content or replace either the entire contents of a document or only particular parts of a document. The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database.
 
 *Estimated Lab Time:* 15 Minutes
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
-    - Lab: Environment Setup
-    - Lab: Initialize Environment
-
-***Note:***  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
+    - Lab: Setup Compute and ADB
+    - Lab: Load Data and Start Application
 
 ### About Oracle XML
 
@@ -42,65 +36,22 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## **STEP 1**: Connect to SQL Developer Web
 
-1. Open a terminal window and sudo to the user **oracle**
+In the previous section, the load script ran commands to grant the appjson user privileges and setup SQL Developer Web using Rest Services (ORDS).  See the appendix for more details on how to set up a user to connect with SQL Developer Web.
 
-    ```
-    <copy>
-    sudo su - oracle
-    </copy>
-    ```
+The password to all the schemas is *Oracle_4U*.
 
-2. Navigate to the xml directory.
+1. Enter the URL for SQL Developer or start it again from the Tools tab on your ADB window.  Do not login.
+2. Replace the admin portion of the URL with *appxml*
 
-    ```
-    <copy>
-    cd /u01/workshop/xml
-    </copy>
-    ```
+    ![](./images/sqldevurl.png " ")  
 
- 3. Set your environment.
-
-    ```
-    <copy>
-    . oraenv
-    </copy>
-    ```
-
-4. When prompted paste the following:
-
-    ```
-    <copy>
-    convergedcdb
-    </copy>
-    ```
-
-5. Open SQLPlus as the user appjson
-
-    ```
-    <copy>
-    sqlplus appxml/Oracle_4U@JXLPDB
-    </copy>
-    ```
-
-## **STEP 2**: Connect to SQL Developer
-
-1. Make a connection to SQL Developer. Use the details as below and click on connect.
-
-  - **Name**: XML
-  - **Username**: appxml
-  - **Password**: `Oracle_4U`
-  - **Hostname**: PUBLIC-IP
-  - **Port**: 1521
-  - **Service name**: JXLPDB
-
-
-    ![](./images/xml_sql_developer.png " ")
+3.  At the login screen, enter *appxml* and *Oracle_4U*.
 
 ## **STEP 3**: XML Query
 
-1. Getting the number of XML documents.
+1. Execute a query to select the XML documents
 
     ```
     <copy>
@@ -110,7 +61,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_s3_p1.png " ")
 
-2. Retrieving the content of an XML document-using pseudocolumn OBJECT_VALUE
+2. Retrieve the content of an XML document using the pseudocolumn OBJECT_VALUE
 
     ```
     <copy>
@@ -121,7 +72,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_m2a.png " ")
 
-3. Accessing text node value
+3. Access the text node value
 
     ```
     <copy>
@@ -135,7 +86,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ![](./images/xml_query_meth4a.png " ")
 
 
-4. Searching XML document
+4. Search the XML document
 
     ```
     <copy>
@@ -148,7 +99,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
 ## **STEP 4**: Insert XML record.
 
-1. Let's take a count of the rows we have currently and then do a insert.
+1. Issue the query below to count the number rows we have currently and then do a insert
 
     ```
     <copy>
@@ -158,42 +109,14 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
      ![](./images/xml_s4_p1.png " ")
 
-
-2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
-3. Set your oracle environment and connect to PDB as **oracle** user.
-
-    ```
-    <copy>
-    . oraenv
-    </copy>
-    ```
-    ```
-    <copy>
-    convergedcdb
-    </copy>
-    ```
-    ```
-    <copy>
-    cd /u01/workshop/xml
-    </copy>
-    ```
-    ```
-    <copy>
-    sqlplus appxml/Oracle_4U@JXLPDB
-    </copy>
-    ```
-
-    ![](./images/xml_input2a.png " ")
-
-    ```
-    <copy>
-    @insert.sql
-    </copy>
-    ```
-
-    ![](./images/xml_input3a.png " ")
-
-4. Verify XML record post insert
+--Ashish, can you download the insert.sql file and put it in the object store?  Then delete the lines marked delete
+2. Download the insert.sql script from the object store. 
+    ````
+    http://objectstore url
+    ````
+3. Paste the contents of insert.sql and press play to run the script 
+4. DELETE The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
+5. Verify XML record post insert
 
     ```
     <copy>select t.object_value.getclobval() from purchaseorder t;</copy>
@@ -203,44 +126,18 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
 ## **STEP 5**: Update XML table
 
-1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
+--Ashish, can you download the update.sql file and put it in the object store?  Then delete the lines marked delete
+1. Download the update.sql script from the object store. 
+
+````
+http://objectstore url
+````
+
+2. Paste the contents of update.sql and press play to run the script 
+3. DELETE The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
 
-2. Set your oracle environment and connect to PDB as **oracle** user.
-
-    ```
-    <copy>
-    . oraenv
-    </copy>
-    ```
-
-    ```
-    <copy>
-    convergedcdb
-    </copy>
-    ```
-    ```
-    <copy>
-    cd /u01/workshop/xml
-    </copy>
-    ```
-    ```
-    <copy>
-    sqlplus appxml/Oracle_4U@JXLPDB
-    </copy>
-    ```
-
-    ![](./images/xml_input2a.png " ")
-
-    ```
-    <copy>
-    @update.sql
-    </copy>
-    ```
-
-    ![](./images/xml_s5_p1.png " ")
-
-3. Below is the select query to check if user is updated.
+4. Below is the select query to check if user is updated.
 
     ```
     <copy>
@@ -252,7 +149,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
 ## **STEP 6**: Example Queries
 
-1. Get the list of the customer and their purchased information from a geo graphical location.  
+1. Get the list of customers and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
 
     ```
@@ -277,7 +174,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_step_6_q2.png " ")
 
-3. Listing the product description those unit price matches to ‘$xx’.  
+3. List the product description those unit prices matches to ‘$xx’.  
     **XMLSERIALIZE** is a SQL/XML operator that you can use to convert an XML type to a character type.
 
     ```
@@ -356,7 +253,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Last Updated By/Date** - Kay Malcolm, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

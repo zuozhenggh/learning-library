@@ -78,7 +78,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     </copy>
     ````
 
-    If you are unsure of the full directory name and path,  you can cut-and-paste this from the output of the *pwd* operation.
+4. If you are unsure of the full directory name and path,  you can cut-and-paste this from the output of the *pwd* operation.
 
     Edit the contents of the *sqlnet.ora* file
 
@@ -97,7 +97,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
 
 
 
-4. Change directory back to your base Directory
+5. Change directory back to your base Directory
 
     ````
     <copy>
@@ -105,7 +105,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     </copy>
     ````
 
-5. For our next step we will create a file to store our connection information.  We will then use this file with any additional python programs moving forward,  placing our connection settings in a separate file makes our database connections much more seamless to use.  
+6. For our next step we will create a file to store our connection information.  We will then use this file with any additional python programs moving forward,  placing our connection settings in a separate file makes our database connections much more seamless to use.  
 
     Create a file called *myConnection.py* and enter the following lines:
 
@@ -513,15 +513,15 @@ In this section you will connect to the Oracle database you provisioned in your 
 <!-- *At the conclusion of the lab add this statement:* -->
 You may now [proceed to the next lab](#next).
 
-## Want to learn more
+## Learn More
 - [Oracle Online documentation for SODA ](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda.html)
 - [Blog: How to Use JSON, SODA, Python and Oracle Autonomous JSON DB](https://seanstacey.org/part-1-using-json-soda-and-python-with-oracle-database-and-autonomous-json-database/2020/10/)
 
 ## Acknowledgements
 
-* **Author** - Sean Stacey
-* **Contributors** -
-* **Last Updated By/Date** -
+* **Author** - Sean Stacey, Database Product Management, PTS
+* **Contributors** - Sean Stacey
+* **Last Updated By/Date** - Kay Malcolm, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/soda). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

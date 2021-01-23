@@ -282,7 +282,7 @@ If you have other compute instances you are not using, you can go to those insta
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+* **Contributors** - Kay Malcolm, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
