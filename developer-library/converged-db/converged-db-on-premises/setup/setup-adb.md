@@ -1,7 +1,7 @@
 # Load ADB and Start Application
 
 ## Introduction
-In the previous lab you created a compute instance (running the eShop application on docker), and an AJD instance to run your application on.  In this lab you will run a script to import data from Object Store into your Autonomous JSON Database (AJD) using Oracle Data Pump.  Your data was previously in various other types of databases.  In this lab we will show you how to centralize your data onto one database that your application can read from.
+In the previous lab you created a compute instance (running the eShop application on docker), and an ATP instance to run your application on.  In this lab you will run a script to import data from Object Store into your Autonomous Database using Oracle Data Pump.  Your data was previously in various other types of databases.  In this lab we will show you how to centralize your data onto one database that your application can read from.
 
 *Estimated time:* 40 Minutes
 
@@ -77,7 +77,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     </copy>
     ````
 
-## **STEP 4:**  Load ATP Instance
+## **STEP 4:**  Load ATP Instance with Application Schemas
 1. Go back to your cloud shell and start the cloud shell if it isn't already running
 2. Enter the command below to login to your compute instance.    
 
@@ -95,12 +95,12 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       </copy>
       ````
 
-5.   Run the load script passing in two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application.  This script runs as the opc user.  
+5.   Run the load script passing in two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  
    
       ``` 
       load-atp.sh WElcome123## <ENTER ATP NAME> 
       ```
-6.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1 row.
+6.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1 row.  
 
       ````
       <copy>
@@ -108,11 +108,11 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       select count(*) from appnodejs.orders;
       </copy>
       ````
+7. Copy the URL for SQL Developer Web onto a notepad.
 
+## **STEP 5:**  Connect Docker Instance to ATP
 
-## **STEP 5:**  Connect Docker Instance to AJD
-
-1.  Run the script env\_setup\_script\_adb.sh, this will download the docker application from OKE (Oracle Kubernetes engine) start the eshop application. This script could take 2-5 minutes to run.
+1.  Run the script env\_setup\_script\_adb.sh, this will download the docker application from OKE (Oracle Kubernetes engine) start the eshop application. This script will take 2-5 minutes to run.
 
       ````
       <copy>cd /u01/script
@@ -122,7 +122,9 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
    ![](./images/app-available.png " ")
 
-You now have a docker container running the eShop application and all the data in an autonomous across multiple modalities, JSON, Analytical data, XML, Spatial and Graph in an autonomous database.  A true converged database.
+2.  Verify that your two applications are now in ONLINE status.
+
+You now have a docker container running the eShop application and all the data in multiple schemas in an autonomous database across multiple modalities, JSON, Analytical data, XML, Spatial and Graph in an autonomous database.  A true converged database.
 
 You may now [proceed to the next lab](#next).
 
