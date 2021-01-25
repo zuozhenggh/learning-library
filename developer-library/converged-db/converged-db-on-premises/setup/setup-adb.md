@@ -19,48 +19,66 @@ In the previous lab you created a compute instance (running the eShop applicatio
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Before starting this section make sure you have exited out of your compute instance and are back in your cloudshell home.  
-2.  With the autononous\_database\_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
+2.  With the autonomous\_database\_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
    
       ````
       <copy>
       oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
       ````
+      ![](./images/generate-wallet.png " ")
 3.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
 4.  Click the list command below to verify the *converged-wallet.zip* was created
    
       ````
       ls
       ````
+      ![](./images/wallet-created.png " ")
+
 5.  Transfer this wallet file to your application compute instance.  Replace the instance below with your instance 
 
     ````
     sftp -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address> <<< $'mput converged-wallet*' 
     ````
-
+      ![](./images/converged-wallet.png " ")
 
 ## **STEP 2:** Create Auth Token
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Click on the person icon in the upper right corner.
 2.  Select **User Settings**
+      ![](./images/select-user.png " ")
+
 3.  Under the **User Information** tab, click the **Copy** button to copy your User OCID.
+      ![](./images/copy-user-ocid.png " ")
+
 4.  Create your auth token using the command below substituting your actual *user id* for the userid below.
    
       ````
       <copy>
        oci iam auth-token create --description ConvergedDB --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
       ````
+      ![](./images/token.png " ")
+
 5.  Identify the line in the output that starts with "token".
 6.  Copy the value for the token somewhere safe, you will need it for the next step.
 
 
 ## **STEP 3:** Connect to SQL Developer and Create Credentials
 1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
-2.  Click on the **Display Name**, *cvgadbnn*
+      ![](./images/select-atp.png " ")
+
+2.  Click on the **Display Name**.
+      ![](./images/display-name.png " ")
+
 3.  Click on the More Actions drop down to change the admin password
+
 4.  Select **Admin Password**
+      ![](./images/admin-password.png " ")
+
 5.  Enter the value *WElcome123##*, this will be the password you use for the rest of the workshop for your ATP instance, jot it down
 6.  Click on the **Tools** tab, select **SQL Developer Web**, a new browser will open up
+      ![](./images/sql.png " ")
+
 7.  Login with the *admin* user and the password *WElcome123##* 
 8.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
    
@@ -76,6 +94,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     /
     </copy>
     ````
+    ![](./images/sql-run.png " ")
 
 ## **STEP 4:**  Load ATP Instance with Application Schemas
 1. Go back to your cloud shell and start the cloud shell if it isn't already running
@@ -84,8 +103,10 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
+      ![](./images/ssh.png " ")
+
 3. In the cloud shell prompt execute the wget command to download the load script and execute it.  
-4. Substitute yourinstance name with *your adb instance name* (e.g convgdb_high) and the password you used
+4. Substitute your instance name with *your adb instance name* (e.g convgdb_high) and the password you used
 
       ````
       <copy>
@@ -98,8 +119,11 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 5.   Run the load script passing in two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  
    
       ``` 
-      load-atp.sh WElcome123## <ENTER ATP NAME> 
+      chmod +x load-atp.sh
+      ./load-atp.sh WElcome123## <ENTER ATP NAME> 
       ```
+      ![](./images/load-atp.png " ")
+
 6.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1 row.  
 
       ````
