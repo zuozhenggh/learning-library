@@ -1,4 +1,4 @@
-# Lab 3: Connecting your application with MDS (MySQL Database Cloud Service) on OCI
+# Connecting your application with MDS (MySQL Database Cloud Service) on OCI
 
 ## Introduction
 This lab walks you through the steps on how to create MDS instance on OCI and how to migrate your database from your E-Commerce App MySQL to MDS on OCI. The lab will also focus on how to connect your E-Commerce application with MDS.
@@ -10,7 +10,11 @@ Estimated Lab Time: 1 hour
 * Migrate E-Commerce MySQL Database to MDS
 * Connect your E-Commerce App with MDS
 
-## **Part 1:** Create MDS Instance on OCI
+### Prerequisites
+* Complete Lab 1 and 2
+* Access to MySQL Database
+
+## **Step 1:** Create MDS Instance on OCI
 1. Please login to OCI Console and click MySQL > DB Systems. And click Create MySQL DB System.
 
     ![](./images/1.png "")
@@ -27,7 +31,7 @@ Estimated Lab Time: 1 hour
 
     ![](./images/4.png "")
 
-## **Part 2:** Migrating Database to MDS
+## **Step 2:** Migrating Database to MDS
 
 1. Please ssh in your secondary instance. Run the following command in the terminal.
 
@@ -72,62 +76,29 @@ Estimated Lab Time: 1 hour
     mysql> exit;
     ```
 
-## **Part 3:** Connecting your E-Commerce App with MDS
+## **Step 3:** Connecting your E-Commerce App with MDS
 
-1. Please download the oscommerce App code to your laptop and move the zip contents to your primary instance using FileZilla tool. You can download filezilla from [here](https://filezilla-project.org/)
-OSCommerce Web Application - [Link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YWohpF3cmZuDi2LWL056VHnNvlNTu37JaGMhM8oqenS_95gf2WBWfUCylfFY2jI_/n/orasenatdpltintegration03/b/workshop/o/oscommerce.zip)
-
-Configure FileZilla connection to connect to your primary instance as below. And drag and drop oscommerce.zip file to the primary instance.
-![](./images/8.png "")
-
-![](./images/9.png "")
-
-3. Run this command to delete old oscommerce application code and replace with the recent code. Copy the oscommerce zip file to /var/www/html folder after clearing the old contents.
-    ```
-    cd /var/www/
-    sudo rm -r html/
-    sudo mkdir html
-    sudo chmod 777 html/
-    cd html/
-    mv /home/oscommerce/oscommerce.zip .
-    ls
-    unzip oscommerce.zip
-    ```
-    ![](./images/10.png "")    
-
-4. Now you would need to update the configure.php file of oscommerce application to point to MDS Database. Run the following command in the terminal.
+1. Now you would need to update the configure.php file of oscommerce application to point to MDS Database. Run the following command in the terminal.
     ```
     cd /var/www/html/catalog/includes
     sudo nano configure.php
     ```
     ![](./images/11.png "")
 
-### Update following parameters:
-* define('HTTP_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
-* define('HTTPS_SERVER', '<primary_instance_ip_address>'); # eg - http://193.122.148.68/
-* define('DB_SERVER', '');  # IP address of MDS
-* define('DB_SERVER_USERNAME', ''); # username of MDS
-* define('DB_SERVER_PASSWORD', ''); # password of MDS
-
-Save the file and proceed to next steps.
-
-5. Make sure the apache configuration 000-default.conf file is updated as below.
-
-* #ServerAdmin webmaster@localhost
-* DocumentRoot /var/www/html/catalog
-* DirectoryIndex index.php
-
+2. Update following parameters:
     ```
-    cd /etc/apache2/sites-available/
-    sudo nano 000-default.conf
-    cd /etc/apache2/sites-enabled
-    sudo nano 000-default.conf
+    define('DB_SERVER', '');  # IP address of MDS
+    define('DB_SERVER_USERNAME', ''); # username of MDS
+    define('DB_SERVER_PASSWORD', ''); # password of MDS
     ```
-    ![](./images/12.png "")
 
-6. Run the following command in the terminal to restart your apache server. Goto the browser and open the IP address. You would see oscommerce website up and running as below.
+3. Save the file and proceed to next steps.
+
+4. Goto the browser and open the IP address. You would see oscommerce website up and running as below. Now the E-Commerce application is connected to MDS Database.
 
     ![](./images/13.png "")
+
+5. Congrats! You've successfully connected your E-Commerce application with MDS.
 
 ## Learn More
 * To learn about connecting to MDS on OCI [link](https://docs.oracle.com/en-us/iaas/mysql-database/doc/connecting-db-system.html)
