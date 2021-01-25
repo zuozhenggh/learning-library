@@ -519,7 +519,7 @@ In this section you will connect to the Oracle database you provisioned in your 
 <!-- *At the conclusion of the lab add this statement:* -->
 You may now [proceed to the next lab](#next).
 
-## Want to learn more
+## Learn More
 - [Oracle Online documentation for SODA ](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda.html)
 - [Blog: How to Use JSON, SODA, Python and Oracle Autonomous JSON DB](https://seanstacey.org/part-1-using-json-soda-and-python-with-oracle-database-and-autonomous-json-database/2020/10/)
 

@@ -1117,7 +1117,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
     ![](./images/ordslab3.39.png " ")
 
 
-## Want to learn more
+## Learn More
 - [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
 
 ## Acknowledgements
