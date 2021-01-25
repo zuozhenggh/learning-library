@@ -40,12 +40,7 @@
       "filename": "../../soda/soda-adb.md"
     },
     {
-      "title": "Lab 7: NodeJS",
-      "description": "NodeJS Lab",
-      "filename": "../../nodejs/nodejs.md"
-    },
-    {
-      "title": "Lab 8: XML",
+      "title": "Lab 7: XML",
       "description": "XML Lab",
       "filename": "../../xml/xml-adb.md"
     }
