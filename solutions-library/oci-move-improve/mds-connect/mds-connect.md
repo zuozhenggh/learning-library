@@ -14,7 +14,7 @@ Estimated Lab Time: 1 hour
 * Complete Lab 1 and 2
 * Access to MySQL Database
 
-## **Step 1:** Create MDS Instance on OCI
+## **STEP 1:** Create MDS Instance on OCI
 1. Please login to OCI Console and click MySQL > DB Systems. And click Create MySQL DB System.
 
     ![](./images/1.png "")
@@ -31,13 +31,19 @@ Estimated Lab Time: 1 hour
 
     ![](./images/4.png "")
 
-## **Step 2:** Migrating Database to MDS
+## **STEP 2:** Migrating Database to MDS
 
 1. Please ssh in your secondary instance. Run the following command in the terminal.
 
     ```
+    <copy>
     mkdir mysql
+    </copy>
+    ```
+    ```
+    <copy>
     cd mkdir
+    </copy>
     ```
 
 2. Use below command to extract oscommerce database from OSCommerce MySQL instance using mysql client.
@@ -73,15 +79,23 @@ Estimated Lab Time: 1 hour
 5. Run below command to exit from MDS. And then proceed to next step.
 
     ```
+    <copy>
     mysql> exit;
+    </copy>
     ```
 
-## **Step 3:** Connecting your E-Commerce App with MDS
+## **STEP 3:** Connecting your E-Commerce App with MDS
 
 1. Now you would need to update the configure.php file of oscommerce application to point to MDS Database. Run the following command in the terminal.
     ```
+    <copy>
     cd /var/www/html/catalog/includes
+    </copy>
+    ```
+    ```
+    <copy>
     sudo nano configure.php
+    </copy>
     ```
     ![](./images/11.png "")
 
