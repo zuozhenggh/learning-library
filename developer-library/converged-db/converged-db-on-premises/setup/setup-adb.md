@@ -3,7 +3,7 @@
 ## Introduction
 In the previous lab you created a compute instance (running the eShop application on docker), and an ATP instance to run your application on.  In this lab you will run a script to import data from Object Store into your Autonomous Database using Oracle Data Pump.  Your data was previously in various other types of databases.  In this lab we will show you how to centralize your data onto one database that your application can read from.
 
-*Estimated time:* 40 Minutes
+*Estimated time:* 20 Minutes
 
 ### Objectives
 - Create auth token and Oracle Wallet 
