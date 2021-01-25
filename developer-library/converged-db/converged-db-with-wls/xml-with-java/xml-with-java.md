@@ -277,7 +277,7 @@ You may now *proceed to the next lab*.
 - You may not find any values in the drop down while trying to access XML data using this tool if XML data insertion is not complete.
 - If your xml is not valid, the record will not be inserted.
 
-## Want to learn more
+## Learn More
 - [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
 
