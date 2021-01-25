@@ -51,7 +51,7 @@ Learn how to
 
 4. Enter your ADW/ATP account credentials into the login screen:
 
-    ![](./images/login.png " ")
+    ![](./images/graph-studio-login.png " ")
 
 5. Then click the "Sign In" button.
 
@@ -72,9 +72,9 @@ Learn how to
 
     ```
     <copy>
-    DROP PROPERTY GRAPH my_first_graph  
+    DROP PROPERTY GRAPH my_first_graph ; 
 
-    CREATE PROPERTY GRAPH my_first_graph
+    CREATE PROPERTY GRAPH my_first_graph ;
 
     INSERT INTO my_first_graph
         VERTEX austin LABELS (City) PROPERTIES (austin.name = 'Austin', austin.population = 964254),

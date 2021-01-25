@@ -97,7 +97,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
 ## **STEP 1**: Connect to Graph Server and Client
 
-**The graph server has already been setup for you. For more information on the graph server setup see the "Want to learn more section" of this lab.**
+**The graph server has already been setup for you. For more information on the graph server setup see the "Learn More section" of this lab.**
 
 1. For connecting to graph server, open a terminal and execute below steps as oracle user.
 
@@ -535,7 +535,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     </copy>
     ```
 
-## Want to learn more
+## Learn More
 - [Oracle Graph](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 
