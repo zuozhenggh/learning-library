@@ -29,6 +29,8 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     e.g: http://111.888.111.888:9502/dv/ui
     ```
 
+    ***Note:*** While application processes are automatically started upon instance boot up, it takes approximately 15 minutes for this URL to become active after all processes have fully started. Should this URL remain inactive after 15 minutes, refer to **STEP 3** below for manual start.
+
 2. Provide login credentials
 
     ```
