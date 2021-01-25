@@ -9,6 +9,10 @@ The database schema for Spatial Studio's repository can technically have any nam
 Estimated Lab Time: 5 minutes
 
 
+### Objectives
+
+* Learn how to create schema for Spatial Studio metadata repository
+* Learn how to download Wallet for database connection 
 
 ### Prerequisites
 
@@ -22,7 +26,7 @@ Estimated Lab Time: 5 minutes
 
 1. In SQL Developer Web, connect to the Autonomous database to be used for the Spatial Studio repository as the **admin** user
 
-2. Create the schema for the Spatial Studio repository. The schema can have any name, but for consistency with other labs we use the name **studio_repo**. Password requirements for Oracle Autonomous Database is [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-72DFAF2A-C4C3-4FAC-A75B-846CC6EDBA3F). Make note of the pasword you select, as we will use it in later steps.
+2. Create the schema for the Spatial Studio repository. The schema can have any name, but for consistency with other labs we use the name **studio_repo**. Password requirements for Oracle Autonomous Database is [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-72DFAF2A-C4C3-4FAC-A75B-846CC6EDBA3F). Make note of the password you select, as we will use it in later steps.
    
     ```
    <copy>CREATE USER studio_repo
@@ -38,7 +42,7 @@ Estimated Lab Time: 5 minutes
    DEFAULT TABLESPACE data;</copy>
     ```
 
-2. Assign tablespace quota to Spatial Studio repository schema. Spatial Studio's metadata occupies a very small amount of storage. So the quota primarily accomodates business data stored in the repo schema. For this lab, a quota value of **250M** is fine. You can also set the value to **unlimited** if you will experiment with other datasets.
+2. Assign tablespace quota to Spatial Studio repository schema. Spatial Studio's metadata occupies a very small amount of storage. So the quota primarily accommodates business data stored in the repo schema. For this lab, a quota value of **250M** is fine. You can also set the value to **unlimited** if you will experiment with other datasets.
    
     ```
    <copy>ALTER USER studio_repo
@@ -49,20 +53,20 @@ Estimated Lab Time: 5 minutes
 
 1. Grant the following permissions to the Spatial Studio repository schema user
 
-```
-<copy>
-GRANT CONNECT,
-      CREATE SESSION,
-      CREATE TABLE,
-      CREATE VIEW,
-      CREATE SEQUENCE,
-      CREATE PROCEDURE,
-      CREATE SYNONYM,
-      CREATE TYPE,
-      CREATE TRIGGER
-TO  studio_repo
-</copy>
-```
+      ```
+      <copy>
+      GRANT CONNECT,
+            CREATE SESSION,
+            CREATE TABLE,
+            CREATE VIEW,
+            CREATE SEQUENCE,
+            CREATE PROCEDURE,
+            CREATE SYNONYM,
+            CREATE TYPE,
+            CREATE TRIGGER
+      TO  studio_repo
+      </copy>
+      ```
 
 The studio_repo schema is now ready to be used as your Spatial Studio repository.
 

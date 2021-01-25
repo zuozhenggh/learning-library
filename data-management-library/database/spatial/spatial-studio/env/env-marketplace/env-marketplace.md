@@ -2,15 +2,15 @@
 
 ## Introduction
 
-This lab walks though the process of provisioning Oracle Spatial Studio (Spatial Studio) using the Oracle Cloud Marketplace.  The Oracle Cloud Markplace provides apps and services provided by Oracle and 3rd parties. Details are available [here](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/index.html).
+This lab walks though the process of provisioning Oracle Spatial Studio (Spatial Studio) using the Oracle Cloud Marketplace.  The Oracle Cloud Marketplace provides apps and services provided by Oracle and 3rd parties. Details are available [here](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/index.html).
 
 Estimated Lab Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Install Spatial Studio from the Oracle Cloud Marketplace
-* Perform initial launch of Spatial Studio and set repository schema
+* Learn how to install Spatial Studio from the Oracle Cloud Marketplace
+* Learn how to set Spatial Studio repository schema on initial launch 
 
 ### Prerequisites
 
@@ -150,9 +150,9 @@ The following Lab provides steps to tear down Spatial Studio when no longer need
 4. After removing the Spatial Studio app, your repository schema remains in place. 
    To remove the repository schema, connect to the database as **admin** as done in Lab 3 and run the following. 
 
-   ```
-   <copy>DROP USER studio_repo CASCADE;</copy>
-   ```
+      ```
+      <copy>DROP USER studio_repo CASCADE;</copy>
+      ```
 
 
 ## Learn More
