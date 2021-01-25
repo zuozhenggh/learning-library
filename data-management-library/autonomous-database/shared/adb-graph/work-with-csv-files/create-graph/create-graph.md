@@ -6,7 +6,7 @@ In this lab you will create a graph from the `bank_accounts` and `bank_txns` tab
 
 The following video shows the steps you will execute in this lab.
 
-[](youtube:oQAR5icMh34) Autonomous Graph Database: Create a graph.
+[](youtube:5g9i9HA_cn0) Graph Studio: Create a graph.
 
 Estimated Lab Time: 15 minutes. 
 
