@@ -57,7 +57,7 @@ This lab assumes that you have:
     cd /home/datascience/conda/notebooks/mlcpuv1
     mkdir demo
     cd demo 
-    curl -L -o time-series-hol.ipynb https://bit.ly/2KsORJk
+    curl -L -o time-series-hol.ipynb https://bit.ly/3c92tVF
     ```
 2.  Navigate to the directory /home/datascience/conda/notebooks/mlcpuv1/demo to find the time series notebook time-series-hol.ipynb
 
