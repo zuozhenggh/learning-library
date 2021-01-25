@@ -32,9 +32,9 @@ Estimated Lab Time: 2 hour
 
     ![](./images/2.png "")
 
-**Take note of your tenant name and OMC URL, you will need these later.**
+2. Take note of your tenant name and OMC URL, you will need these later.
 
-![](./images/3.png "")
+    ![](./images/3.png "")
 
 ## **Step 2:** Moving and Unzipping the Agent
 
@@ -242,53 +242,53 @@ Estimated Lab Time: 2 hour
 
 ### **Creating Dashboards**
 
-10. Now that our agent is installed on the instance, and we have successfully discovered the MySQL Database, it's time to create some useful visualizations and dashboards.
+1. Now that our agent is installed on the instance, and we have successfully discovered the MySQL Database, it's time to create some useful visualizations and dashboards.
 
-11. First, head back over to OMC, and on the hamburger menu on the left hand side of the screen, click 'Data Explorer'
+2. First, head back over to OMC, and on the hamburger menu on the left hand side of the screen, click 'Data Explorer'
 
-12. On the top of the screen is a bar called the context bar. This will change what entity we are looking to create visualizations on. Always be mindful of what is in the context bar, and the time period on the right of it.
+3. On the top of the screen is a bar called the context bar. This will change what entity we are looking to create visualizations on. Always be mindful of what is in the context bar, and the time period on the right of it.
 
-13. On the context bar, type in
+4. On the context bar, type in
     ```MySQL```
     and select the MySQL Discovery with the matching name to the one you just created.
 
     ![](./images/20.png "")
 
-14. Now that we're here, let's create a widget that will monitor our CPU Utilization and our Memory Usage. First, we need to clear out everything in the Visualize panel by clicking the small x on each of the filters. For the graph type, select line chart from the drop down under the visualize panel.
+5. Now that we're here, let's create a widget that will monitor our CPU Utilization and our Memory Usage. First, we need to clear out everything in the Visualize panel by clicking the small x on each of the filters. For the graph type, select line chart from the drop down under the visualize panel.
 
     ![](./images/21.png "")
 
-15. From the data panel on the left, search for the attribute ```CPU Utilization``` under the tab labeled 'CPU'. Drag and drop this over to the Y-Axis. Your X-axis should now automatically populate with 'Time (Automatic Day)'
+6. From the data panel on the left, search for the attribute ```CPU Utilization``` under the tab labeled 'CPU'. Drag and drop this over to the Y-Axis. Your X-axis should now automatically populate with 'Time (Automatic Day)'
 
-16. Do the same thing for Memory Usage. Under the search bar, type in ```Memory``` and scroll down to find the Physical Memory tab, and drag over 'Memory Usage' to the Y-Axis as well.
+7. Do the same thing for Memory Usage. Under the search bar, type in ```Memory``` and scroll down to find the Physical Memory tab, and drag over 'Memory Usage' to the Y-Axis as well.
 
     ![](./images/22.png "")
 
     ![](./images/23.png "")
 
-17. Don't worry if your graphs look boring or uneventful now. The agent has only just begun collecting data on MySQL, so there's not much to display right now.
+8. Don't worry if your graphs look boring or uneventful now. The agent has only just begun collecting data on MySQL, so there's not much to display right now.
 
-18. This is a great tool to use to create custom, useful dashboards to help provide you with a quick overview of the health of your application.
+9. This is a great tool to use to create custom, useful dashboards to help provide you with a quick overview of the health of your application.
 
-19. Let's now go ahead and save this by clicking the save button at the top of the screen. Be sure to give it a name you will be able to remember.
+10. Let's now go ahead and save this by clicking the save button at the top of the screen. Be sure to give it a name you will be able to remember.
 
-10. Navigate over to the Dashboards page from the menu on the left hand side of your screen.
+11. Navigate over to the Dashboards page from the menu on the left hand side of your screen.
 
-11. Click 'Create' at the top of the page.
+12. Click 'Create' at the top of the page.
 
     ![](./images/24.png "")
 
-12. Once here, at the top of the page, click the edit button. A panel will appear on the right hand side of the screen.
+13. Once here, at the top of the page, click the edit button. A panel will appear on the right hand side of the screen.
 
-13. Search for the widget you just created.
+14. Search for the widget you just created.
 
     ![](./images/25.png "")
 
-14. Click on the widget you just created on the right to add it to the dashboard. Click done editing.
+15. Click on the widget you just created on the right to add it to the dashboard. Click done editing.
 
     ![](./images/26.png "")
 
-15. Congrats! You've just created a functional dashboard monitoring your MySQL database!
+16. Congrats! You've just created a functional dashboard monitoring your MySQL database!
 
 ## Learn More
 * [OMC Documentation](https://docs.oracle.com/en/cloud/paas/management-cloud/index.html)
