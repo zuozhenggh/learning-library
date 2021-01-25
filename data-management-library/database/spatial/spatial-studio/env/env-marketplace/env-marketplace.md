@@ -1,10 +1,10 @@
-# Provision Spatial Studio using Cloud Marketplace
+# Install Spatial Studio
 
 ## Introduction
 
 This lab walks though the process of provisioning Oracle Spatial Studio (Spatial Studio) using the Oracle Cloud Marketplace.  The Oracle Cloud Markplace provides apps and services provided by Oracle and 3rd parties. Details are available [here](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/index.html).
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -40,21 +40,38 @@ In this lab, you will:
 
   ![Image alt text](images/env-marketplace-4.png "Image title")
 
-2. Select Availability Domain and Shape for the Compute Instance.  In the image below, I have selected the Micro shape but you should select the shape appropriate for your scenario. Details on compute shapes are [here](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm). Then scroll down.
-   
-   Note: In an upcoming step will have the choice to create a new VCN (Virtual Cloud Network) or use an existing one. If you will be using an existing VCN, then select the Availability Domain of that VCN here. If you will not use an exising VCN, then select any Availability Domain.
- 
+2. Select Availability Domain and Shape for the Compute Instance.   
+
+  *  Details on compute shapes are [here](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm)
+  *  Check for quota availability of your desired Shape in Availabilty Domains
+    *  This is particularly important when using an Always Free shape.
+    *  In the OCI Console, navigate to Governance > Limits, Quotas, and Usage
+    *  For Service select Compute and for Scope select an Availability Domain. Confirm availability of your desired Shape. Change the Availability Domain selection if necessary to identify available quota.
+
+  ![Image alt text](images/env-marketplace-4-1.png "Image title")
+
+  Make selections.
+
   ![Image alt text](images/env-marketplace-5.png "Image title")
 
-3. Optionally change the HTTPS port and Spatial Studio admin user name from the defaults. (The user name entered here is for the Spatial Studio app and is distinct from the database user name created in Lab 3.)  For Spatial Studio Admin authentication, you have the option to use OCI Vault Secrets or a password. The image below shows an example using a password. For production deployments you are encouraged to use OCI Vault Secrets. Scroll down to the the section on Configuring Networking.
+  Then scroll down.
+
+3. Optionally change the HTTPS port and Spatial Studio admin user name from the defaults. For Spatial Studio Admin authentication, you have the option to use OCI Vault Secrets or a password. The image below shows an example using a password. For production deployments you are encouraged to use OCI Vault Secrets. Scroll down to the the section on Configuring Networking.
+   
+   Note: By default the Spatial Studio admin user name is **studio\_admin**. This is an Spatial Studio application user and is distinct from the database user name (studio\_repo) created in Lab 3 for the repository schema.
+  
 
   ![Image alt text](images/env-marketplace-6.png "Image title")
 
-4. For networking, you have the option to automatically create a new VCN or an existing one. Select the Compartment for creating a new VCN or searching for existing VCNs. The image below shows an example using Create New VCN. If you do not have other existing VCNs then the remaining defaults can be left as is. If you do have other existing VCNs then update the CIDR values to avoid conflict. Scroll down to the SSH Keys section.
+4. For networking, you have the option to automatically create a new VCN or an existing one. Select the Compartment for creating a new VCN or searching for existing VCNs. 
+   
+   The image below shows an example using Create New VCN. To use an existing VCN it must be in the same Availability Domain as selected above in Step 2. If you do not have other existing VCNs then the remaining defaults can be left as is. If you do have other existing VCNs then update the CIDR values to avoid conflict. 
 
   ![Image alt text](images/env-marketplace-7.png "Image title")
 
-5. Loading a SSH public key enables access to Spatial Studio's file system for administrative purposes. The dialog has links to general SSH connection documentation. Submit your SSH public key by browsing to the key file or copy-pasting the key string. If you load you SSH public key from a file, the key file name will be displayed as shown in the image below. Click Next.
+  Scroll down to the SSH Keys section.
+
+1. Loading a SSH public key enables access to Spatial Studio's file system for administrative purposes. The dialog has links to general SSH connection documentation. Submit your SSH public key by browsing to the key file or copy-pasting the key string. If you load you SSH public key from a file, the key file name will be displayed as shown in the image below. Click Next.
 
   ![Image alt text](images/env-marketplace-8.png "Image title")
 
@@ -112,7 +129,7 @@ Oracle Spatial Studio is now provisioned.
 The following Lab provides steps to tear down Spatial Studio when no longer needed.
 
 
-## **STEP 5**: Deprovision Spatial Studio When No Longer Needed
+## **STEP 5**: Uninstall Spatial Studio
 
  If you would like to fully remove Spatial Studio proceed with the following.
 
@@ -139,17 +156,11 @@ The following Lab provides steps to tear down Spatial Studio when no longer need
 
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Spatial Studio product page](https://oracle.com/goto/spatialstudio)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - David Lapp, Database Product Management
 * **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -1,10 +1,12 @@
-# Provision Spatial Studio using Cloud Marketplace
+# Database User for Spatial Studio Repository
 
 ## Introduction
 
 This lab walks though the creation of the database schema to be used for Spatial Studio's metadata repository. This is the schema that will store the work you do in Spatial Studio, such as the definitions of Datasets, Analyses, and Projects. 
 
-Estimated Lab Time: n minutes
+The database schema for Spatial Studio's repository can technically have any name. For consistency with other Spatial Studio workshops, we name the user user name **studio\_repo**.  Note that this is a database user name and is distinct from Spatial Studio application user names such as the default Spatial Studio administrator user name (studio_admin) created when we install the Spatial Studio app itself. 
+
+Estimated Lab Time: 5 minutes
 
 
 
@@ -70,14 +72,17 @@ The studio_repo schema is now ready to be used as your Spatial Studio repository
 
 
 1. Navigate to your Autonomous Database and select View Details
+   
+   ![Image alt text](images/repo-schema-1.png "Image title")  
 
-   ![Image alt text](images/repo-schema-1.png "Image title")
+2. Select the DB Connection tab
+   
+   ![Image alt text](images/repo-schema-2.png "Image title")  
 
-2.  Select the DB Connection tab
-   ![Image alt text](images/repo-schema-2.png "Image title")
+3. Click Download Wallet
+   ..
+   ![Image alt text](images/repo-schema-3.png "Image title")  
 
-3.  Click Download Wallet
-   ![Image alt text](images/repo-schema-3.png "Image title")
    You will be prompted to enter a password for the Wallet file. The Wallet is a single zip file.
 
 4. Save the Wallet file to a convenient location. You will need this file in the next Lab.
@@ -87,9 +92,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management
-* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

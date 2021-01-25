@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Provision Oracle Spatial Studio",
+    "workshoptitle": "Install Oracle Spatial Studio from Cloud Marketplace",
     "tutorials": [
       {
         "title": "Prerequisites",
@@ -20,10 +20,10 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-sqldevweb/adb-sqldevweb.md"
   },
     {
-      "title": "Lab 3: Spatial Studio Repo Schema",
+      "title": "Lab 3: Database User for Spatial Studio Repository",
       "filename": "../../../../spatial-studio/env/repo-schema/repo-schema.md"
   },    {
-      "title": "Lab 4: Spatial Studio App",
+      "title": "Lab 4: Install Spatial Studio",
       "filename": "../../../../spatial-studio/env/env-marketplace/env-marketplace.md"
 }
     ]
