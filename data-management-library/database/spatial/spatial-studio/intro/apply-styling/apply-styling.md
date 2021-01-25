@@ -82,7 +82,7 @@ We begin by ....
 11. Click the back link and turn on all 3 layers, and then click the Save button to save our project with the style changes.
  ![Image alt text](images/apply-styling-14.png)
 
-12. Return to the Project page and observe the thumnail is updated with changes.
+12. Return to the Project page and observe the thumbnail is updated with changes.
  ![Image alt text](images/apply-styling-15.png)
 
 Please proceed to the next Lab.

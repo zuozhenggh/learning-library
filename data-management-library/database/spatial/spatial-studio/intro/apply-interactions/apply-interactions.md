@@ -3,10 +3,7 @@
 
 ## Introduction
 
-This lab walks you through configuring interactions for map layers in Spatial Studio.
-
-descr ...
-
+This lab walks you through configuring interactivity for map layers in Spatial Studio. Interactivity refers to the behavior when you click or hover on item in a map. Spatial Studio allows you to control this behavior for each lasyer in a map. 
 
 Estimated Lab Time: xx minutes
 
