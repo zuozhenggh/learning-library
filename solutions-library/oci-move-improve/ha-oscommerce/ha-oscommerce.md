@@ -125,9 +125,9 @@ Run the following command in your local terminal
 
     ![](./images/4.png "")
 
-We have successfully replicated the web server files. Similarly, we can replicate the mysql files as well. We can do this in many ways:
-* Using rsync as above
-* Using mysql dump utility
+    We have successfully replicated the web server files. Similarly, we can replicate the mysql files as well. We can do this in many ways:
+        * Using rsync as above
+        * Using mysql dump utility
 
 
 ### **Replicate mysql database files**
@@ -289,10 +289,9 @@ At this point of time, our primary server and secondary server are in sync. Lets
 
     We recommend you to watch the below videos in order to get an idea about OCI DNS and how failover works.
 
-* [What is DNS?](https://www.youtube.com/watch?v=SnMumcIE1aw)
-* [DNS overview & Demo](https://www.youtube.com/watch?v=dfKeDh79HdQ)
-
-* Note: DNS will take few mins to an hour to make changes
+    * [What is DNS?](https://www.youtube.com/watch?v=SnMumcIE1aw)
+    * [DNS overview & Demo](https://www.youtube.com/watch?v=dfKeDh79HdQ)
+    * Note: DNS will take few mins to an hour to make changes
 
 8. Export the resource record. This file would be exported as a .txt file. Store in a secure location, we would need the file later in the lab.
     ![](./images/10.png "")
@@ -358,7 +357,7 @@ Note the name servers. You can use the noted name servers to change your domain'
 
     ![](./images/18.png "")
 
-There are other options here so make sure to select “failover”
+    There are other options here so make sure to select “failover”
 
 22. Failover policies allow you to prioritize the order in which you want answers served in a policy (for example, Primary and Secondary). Oracle Cloud Infrastructure Health Checks are leveraged to determine the health of answers in the policy. If the Primary Answer is determined to be unhealthy, DNS traffic will automatically be steered to the Secondary Answer.
 

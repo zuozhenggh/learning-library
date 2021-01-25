@@ -40,33 +40,33 @@ Estimated Lab Time: 2 hour
 
 ### **Installing Cyberduck** 
 
- Download the appropriate version of [Cyberduck](https://cyberduck.io/download/) for your system.
+1. Download the appropriate version of [Cyberduck](https://cyberduck.io/download/) for your system.
 
 ### **Connecting to your Application**
 
-1. Open Cyberduck. If prompted to “Set Cyberduck as default application for FTP and SFTP locations” click cancel.
+2. Open Cyberduck. If prompted to “Set Cyberduck as default application for FTP and SFTP locations” click cancel.
 
-2. Click the button of the globe with the + sign. In the dropdown menu at the top, change it to SFTP (SSH File Transfer Protocol).
+3. Click the button of the globe with the + sign. In the dropdown menu at the top, change it to SFTP (SSH File Transfer Protocol).
 
-3. For your server, navigate to your OSCommerce Compute Instance, and copy the public IP Address.
+4. For your server, navigate to your OSCommerce Compute Instance, and copy the public IP Address.
 
     ![](./images/13.png "")
 
-4. Username and password should both be "oscommerce" by default. For SSH Private Key, simply select your private key from the drop down menu, then click connect.
+5. Username and password should both be "oscommerce" by default. For SSH Private Key, simply select your private key from the drop down menu, then click connect.
 
     ![](./images/4.png "")
 
-5. Allow any unknown finger prints.
+6. Allow any unknown finger prints.
 
-6. Once connected, you should see the home directory for oscommerce. Simply drag your downloaded cloudagent_linux zip file into the home directory. Please note, **the file must still be zipped.**
+7. Once connected, you should see the home directory for oscommerce. Simply drag your downloaded cloudagent_linux zip file into the home directory. Please note, **the file must still be zipped.**
 
     ![](./images/5.png "")
 
 ### **Unzipping the Agent**
 
-7. Open your terminal and type ```cd .ssh``` to change to your ssh directory.
+8. Open your terminal and type ```cd .ssh``` to change to your ssh directory.
 
-8. Once here connect to your oscommerce instance by typing the following command. Replace ‘&lt;YourPublicIPHere&gt;’ with the public IP on your instance
+9. Once here connect to your oscommerce instance by typing the following command. Replace ‘&lt;YourPublicIPHere&gt;’ with the public IP on your instance
 
     ```
     <copy>
@@ -74,11 +74,11 @@ Estimated Lab Time: 2 hour
     </copy>
     ```
 
-9. If told the authenticity of the host can’t be established, type yes to continue. You then will need to enter your password. By default this is oscommerce.
+10. If told the authenticity of the host can’t be established, type yes to continue. You then will need to enter your password. By default this is oscommerce.
 
     ![](./images/6.png "")
 
-10. Type the command ```ls``` to confirm the cloudagent_linux zip file is still there. Unzip the file by typing:
+11. Type the command ```ls``` to confirm the cloudagent_linux zip file is still there. Unzip the file by typing:
 
     ```
     <copy>
@@ -86,15 +86,15 @@ Estimated Lab Time: 2 hour
     </copy>
     ```
 
-11. Note: Your file name may appear slightly different. For a shortcut, type in ‘unzip cloudagent’ then press tab to auto complete to the correct file name.
+12. Note: Your file name may appear slightly different. For a shortcut, type in ‘unzip cloudagent’ then press tab to auto complete to the correct file name.
 
     ![](./images/7.png "")
 
-12. If you type ```ls``` again, you should see some additional files in your directory. The "agent.rsp" file is the one we’re currently interested in.
+13. If you type ```ls``` again, you should see some additional files in your directory. The "agent.rsp" file is the one we’re currently interested in.
 
-13. Use your favorite text editor to open the file. In this case, I’m using the command ```nano agent.rsp```
+14. Use your favorite text editor to open the file. In this case, I’m using the command ```nano agent.rsp```
 
-14. Fill in the tenant name with the details your wrote down in Part 1 Step 2. For the registration key use:
+15. Fill in the tenant name with the details your wrote down in Part 1 Step 2. For the registration key use:
 
     ```
     <copy>
@@ -109,13 +109,13 @@ Estimated Lab Time: 2 hour
     </copy>
     ```
 
-15. And finally, populate the OMC_URL with the url saved in Part 1 Step 2.
+16. And finally, populate the OMC_URL with the url saved in Part 1 Step 2.
 
     ![](./images/8.png "")
 
-16. Save any changes and exit out. In our case, we type Control + X to exit, type Y to save, then enter.
+17. Save any changes and exit out. In our case, we type Control + X to exit, type Y to save, then enter.
 
-17. Next, we’ll execute one of the scripts, by typing:
+18. Next, we’ll execute one of the scripts, by typing:
     
     ```
     <copy>
@@ -125,7 +125,7 @@ Estimated Lab Time: 2 hour
 
     ![](./images/9.png "")
 
-18. To check if this complete properly, change to the bin directory by typing:
+19. To check if this complete properly, change to the bin directory by typing:
 
     ```
     <copy>
@@ -133,7 +133,7 @@ Estimated Lab Time: 2 hour
     </copy>
     ```
 
-19. From here, you can check the status of your agent by typing:
+20. From here, you can check the status of your agent by typing:
 
     ```
     <copy>
@@ -145,11 +145,11 @@ Estimated Lab Time: 2 hour
 
 ### **Confirming the Agent is Running**
 
-20. Open OMC and navigate to agents by accessing the menu on the left hand side of your screen and clicking Administration -> Agents.
+21. Open OMC and navigate to agents by accessing the menu on the left hand side of your screen and clicking Administration -> Agents.
 
-21. At the bar at the top, click Cloud Agents, and you should see your Virtual Box Agent up and running.
+22. At the bar at the top, click Cloud Agents, and you should see your Virtual Box Agent up and running.
 
-22. To monitor your agent, click the hamburger menu on the right hand side of the agent and click "view in monitoring"
+23. To monitor your agent, click the hamburger menu on the right hand side of the agent and click "view in monitoring"
 
     ![](./images/11.png "")
 
