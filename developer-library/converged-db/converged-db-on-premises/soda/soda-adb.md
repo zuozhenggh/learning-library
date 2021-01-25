@@ -4,12 +4,17 @@
 
 In this lab you will be introduced to using the Oracle SODA APIs for Python. But you should be aware that SODA is also available for Java, REST, C and Node.js.  
 
-
 *Estimated Lab Time:* 30 Minutes
 
-### **About Oracle SODA**
-
-
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Setup Compute and ADB
+    - Lab: Load Data and Start Application
+  
+### About Oracle SODA
 So what is exactly is SODA? it’s best described as follows (taken from the Oracle documentation):
 
 “Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents (in particular JSON) in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.”
@@ -19,7 +24,7 @@ Oracle SODA documentation [link](https://docs.oracle.com/en/database/oracle/simp
 For more information see the [overview](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda.html#GUID-BE42F8D3-B86B-43B4-B2A3-5760A4DF79FB) in the Oracle Documentation
 
 
-**SODA Terminology**
+#### SODA Terminology
 
 Common terms that are used in this lab:
 
@@ -32,17 +37,6 @@ Common terms that are used in this lab:
 The Document model is completely schema-less.  In the Schema-less approach to creating a collection, your code can create a collection without requiring any metadata definition or DDL (Data Definition Language). Furthermore, it is possible to insert a document in a pre-created collection that does not match any previously inserted documents (or Schema Evolution).
 
 One last thing about SODA. It is important to understand that SODA is NOT mandatory when working with JSON and the Oracle Database. However SODA provides a simple solution to bridging the programing gap between the NOSQL model and the relational model.
-
-
-### Prerequisites
-This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-     - Lab :  Generate SSH Keys
-     - Lab :  Setup Compute and Autonomous DB
-     - Lab :  Load Data and Start Application
-     - Lab :  JSON
-
 
 ## **STEP 1**: Connect to your Database from Python
 
@@ -84,7 +78,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     </copy>
     ````
 
-    If you are unsure of the full directory name and path,  you can cut-and-paste this from the output of the *pwd* operation.
+4. If you are unsure of the full directory name and path,  you can cut-and-paste this from the output of the *pwd* operation.
 
     Edit the contents of the *sqlnet.ora* file
 
@@ -103,7 +97,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
 
 
 
-4. Change directory back to your base Directory
+5. Change directory back to your base Directory
 
     ````
     <copy>
@@ -111,7 +105,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     </copy>
     ````
 
-5. For our next step we will create a file to store our connection information.  We will then use this file with any additional python programs moving forward,  placing our connection settings in a separate file makes our database connections much more seamless to use.  
+6. For our next step we will create a file to store our connection information.  We will then use this file with any additional python programs moving forward,  placing our connection settings in a separate file makes our database connections much more seamless to use.  
 
     Create a file called *myConnection.py* and enter the following lines:
 
@@ -525,9 +519,9 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Sean Stacey
-* **Contributors** -
-* **Last Updated By/Date** -
+* **Author** - Sean Stacey, Database Product Management, PTS
+* **Contributors** - Sean Stacey
+* **Last Updated By/Date** - Kay Malcolm, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/soda). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
