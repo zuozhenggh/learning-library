@@ -156,6 +156,7 @@ If you encountered any issues during the lab, follow the steps below to resolve 
 - Limits Exceeded
 - Invalid public key
 - Flex Shape Not Found
+- Permission Denied during Login
 
 ### Issue 1: Invalid public key
 ![](images/invalid-ssh-key.png  " ")
