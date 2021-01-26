@@ -182,7 +182,7 @@ Now that we have installed most dependencies we will need for WRF, lets begin to
     </copy>
     ```
 ### Compiling grib2 library
-The grib2 library is actually a compilation of three separate libraries, specifically, zlib, jasper, and libpng.
+The grib2 library is actually a compilation of three separate libraries, specifically, zlib, jasper, and libpng.  
 5. Compiling Zlib
     
     ```
