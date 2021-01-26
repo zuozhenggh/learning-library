@@ -46,7 +46,7 @@ In this lab, you:
 1. (Optional) Add tags to the notebook session by selecting a tag namespace, then entering the key and the value. You can add more tags to the compartment by clicking **+Additional Tags**, see [Working with Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm#workingtags).
 1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE.**.
 1. Click **Create**.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/create-ns.png)
+    ![](./../accelerate-ds-rapids-gpu/images/gpu-notebook-modal.png)
 
     While the notebook session is being created, you can navigate away from the current page.
     ![](./../speed-up-ds-with-the-ads-sdk/images/creating-ns.png)
