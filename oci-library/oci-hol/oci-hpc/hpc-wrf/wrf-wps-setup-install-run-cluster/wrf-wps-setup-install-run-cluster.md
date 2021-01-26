@@ -57,7 +57,7 @@ This lab assumes you have:
 ![Screenshot of Gnome Desktop](images/gnomedesktop.png)    
 
 ## **STEP 3**: Configuring Oracle Linux
-1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Activities on the top left, then click show applications. Search for and open a terminal. Perform the following in the terminal.
+1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Applications on the top left, click system tools, then click Terminal. Perform the following in the terminal.
     ```
     sudo yum update -y
     sudo yum upgrade -y
