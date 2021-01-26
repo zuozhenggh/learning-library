@@ -46,7 +46,6 @@ This lab assumes you have:
     Run the following command with information pertaining to your instance: ssh -L 5901:localhost:5901 opc@IPADDRESS
     ![Screenshot of SSH](images/ssh.png)
 3. Open TigerVNC Viewer
-
     Type `localhost:1` in the VNC Server: section  
     Then click connect  
     ![Screenshot of TigerVNC Viewer](images/tigervnc.png)
@@ -190,7 +189,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ./wrf.exe
     ./real.exe
     ```
-4. Now that WRF has been compiled we need to compile WPS. WRF must be compiled first. Here we choose option 3 because we are using the a Linux operating system (Ubuntu) on x86 infrastructure (OCI VM.Standard2.16) along with the gfortran compiler.  
+4. Now that WRF has been compiled we need to compile WPS. WRF must be compiled first. Here we choose option 3 because we are using the a Linux operating system (Oracle Linux) on x86 infrastructure (OCI BM.HPC2.36) along with the gfortran compiler.  
    
     ```
     cd /mnt/nfs-share/WRF/WPS-4.1
@@ -288,7 +287,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 8. Now that we have put in the information for our geographic area of interest (This guide uses Woburn MA USA as the centerpoint) lets use ncview to verify we have the correct location after runing the geogrid program.
     ```
     ./geogrid.exe
-    ncview geo_em.d01.nc
+    sudo ncview geo_em.d01.nc
     ``` 
     Use the 2d var to check landmask to verify location. If satisfied with image then we are done creating domain.
 
@@ -297,7 +296,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 9. After setting up our geographic area or domain. We now need to obtain meteorological data to overlay on to the domain.
 
     1. In a web browser navigate to  https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/
-    2. Click the link with the latest date (ex gfs.20201120/ as today is November 20th, 2020) 
+    2. Click the link with the latest date (ex gfs.20200115/ as today is January 20th, 2021) 
     3. Choose 00  
 Don’t actually download anything. We will create a script for that. We are going the lower resolution for an easier to handle datasize for this lab so 0p50 instead of 0p25. Use 0p25 if you have additional storage and want higher resolution/more reliable data. Need to download the number of files for the amount of time you want to run. Each file is one hour of data at given interval. EX if you want to run for six hours you need gfs.t00z.pgrb2.0p50.f000, gfs.t00z.pgrb2.0p50.f003, and gfs.t00z.pgrb2.0p50.f006. 0p25 is in one hour steps and 0p50 is in 3 hour steps. For tutorial we will use only 6 hours worth of data. Feel free to use more as you become more comfortable using WRF later on.
 
@@ -320,7 +319,7 @@ Don’t actually download anything. We will create a script for that. We are goi
 
     year=2021  
     month=01  
-    day=15  
+    day=20  
     cycle=00  
 
     for ((i=000; i<=006; i+=3))  
@@ -335,7 +334,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     done  
     ```
     **To exit, simply press esc, then shift: followed by wq enter**   
-    **This script will download SIX hours of data for the date 11/20/20 at the 0p50 resolution. Please adjust to fit your needs.**  
+    **This script will download SIX hours of data for the date 01/15/21 at the 0p50 resolution. Please adjust to fit your needs.**  
 
 12. The following commands make the script executable and run it to download the data:
    
@@ -361,8 +360,8 @@ Don’t actually download anything. We will create a script for that. We are goi
     &share  
     wrf_core = 'ARW',  
     max_dom = 1,  
-    start_date = '2021-01-15_00:00:00',         # start time  
-    end_date   = '2021-01-15_06:00:00',         #6 hours later than start time  
+    start_date = '2021-01-20_00:00:00',         # start time  
+    end_date   = '2021-01-20_06:00:00',         #6 hours later than start time  
     interval_seconds = 10800                    #3 hours worth of seconds interval between steps  
     io_form_geogrid = 2,  
     / 
@@ -377,7 +376,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     ```
 14. We can look at the results by using ncview and looking at skintemp to see the value of the data we downloaded.
     ```
-    ncview met_em.d01.2020-11-20_00\:00\:00.nc
+    sudo ncview met_em.d01.2021-01-20_00:00:00.nc 
     ```
     ![Screenshot of ncview](images/nc2.png)  
 
@@ -422,11 +421,11 @@ Don’t actually download anything. We will create a script for that. We are goi
     run_seconds                         = 0,
     start_year                          = 2021, 2000, 2000,
     start_month                         = 01,   01,   01,
-    start_day                           = 15,   24,   24,
+    start_day                           = 20,   24,   24,
     start_hour                          = 00,   12,   12,
     end_year                            = 2021, 2000, 2000,
     end_month                           = 01,   01,   01,
-    end_day                             = 15,   25,   25,
+    end_day                             = 20,   25,   25,
     end_hour                            = 06,   12,   12,
     interval_seconds                    = 10800
     input_from_file                     = .true.,.true.,.true.,
@@ -521,31 +520,31 @@ Don’t actually download anything. We will create a script for that. We are goi
 
 4. Lets use ncview to get a look at our input file.
     ```
-    ncview wrfinput_d01
+    sudo ncview wrfinput_d01
     ```
     Here you can see the temperature at two meters for the target area.
-    ![Screenshot of ncview](images/nc4.png)  
+    ![Screenshot of ncview](images/nc3.png)  
     
 
 5. We have our input, now lets use it to generate a prediction.
 
     ```
-    mpirun -np 48 -hosts 172.16.1.2,172.16.1.3 ./wrf.exe #This will run on 48 cores on two nodes with ipaddesses of 172.16.1.2 and 172.16.1.3
+    mpirun -np 72 -hosts 172.16.1.2,172.16.1.3 ./wrf.exe #This will run on 72 cores on two nodes with ipaddesses of 172.16.1.2 and 172.16.1.3
     tail -F rsl.out.0000 #can be used to check for errors and progress. 
     ```
 6. We can check our prediction with the following:
     ```
-    ncview wrfout_d01_2020-11-20_06\:00\:00 
+    sudo ncview wrfout_d01_2020-11-20_06\:00\:00 
     ```
 
-    ![Screenshot of ncview](images/nc5.png)  
+    ![Screenshot of ncview](images/nc4.png)  
     From our prediction you can see that some changes have occured when we look at the same area six hours later. There are many variables to explore, so have fun.
 
     With this you have learned how to set up and configure WRF to run weather predictions with real data on an HPC Cluster. There are many variables and configurations to explore, so have fun.
     
 ## Acknowledgements
 * **Author** - Brian Bennett, Solution Engineer, Big Compute
-* **Last Updated By/Date** - Brian Bennett, Big Compute, December 2020
+* **Last Updated By/Date** - Brian Bennett, Big Compute, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
