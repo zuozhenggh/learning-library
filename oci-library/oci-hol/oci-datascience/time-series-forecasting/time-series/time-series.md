@@ -25,17 +25,17 @@ This lab assumes that you have:
 
 1.  After you log into OCI Data Science and create a notebook, go to `File` and select `New Launcher`.  You will see the `Environment Explorer`. When you click on `Environment Explorer`, you will see each Explorer tab allowing you to filter on either the Data Science, Installed, or Published Conda environments.  The Data Science Conda Environments tab shows a list of pre-built conda environments you can install.
 
-    ![](./../time-series-forecasting/images/conda_environment_explorer.png " ")
+    ![](../images/conda_environment_explorer.png " ")
 
 2.  For this lab, we are going to use the General Machine Learning for CPUs conda.  This conda comes with several open source libraries for building machine learning models including Scikit-learn and Statsmodels.  Scroll through the list of pre-built conda environments to find it.
 
-    ![](./../time-series-forecasting/images/general_machine_learning_conda.png " ")
+    ![](../images/general_machine_learning_conda.png " ")
 
 3.  Click on `Install`.  Copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
 
-    ![](./../time-series-forecasting/images/install_general_machine_learning_conda.png " ")
+    ![](../images/install_general_machine_learning_conda.png " ")
 
-    ![](./../time-series-forecasting/images/open_terminal.png " ")
+    ![](../images/open_terminal.png " ")
 
 4.  We have to install fb Prophet in this conda because it is not included.  Open a new terminal.  In the terminal, you want to activate the General Machine Learning conda and install Facebook Prophet there.  Please use the command below.  Note:  Each of the conda environment is denoted by a "slug".  For the General Machine Learning CPUs Conda, the slug is "mlcpuv1."
 
@@ -46,7 +46,7 @@ This lab assumes that you have:
 
 5.  After you have set up your conda environment, when you start a new notebook, go to the top right corner and select the General Machine Learning CPU conda for the notebook session.
 
-    ![](./../time-series-forecasting/images/pick_conda_environ_for_notebook.png " ")
+    ![](../images/pick_conda_environ_for_notebook.png " ")
 
 ## **STEP 2:** Download Time Series Forecasting JupyterLab Notebook from Object Storage
 
