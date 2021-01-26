@@ -50,12 +50,13 @@ In the previous section, the load script ran commands to grant the appjson user 
 
 The password to all the schemas is *Oracle_4U*.
 
-1. Enter the URL for SQL Developer or start it again from the Tools tab on your ADB window.  Do not login.
-2. Replace the admin portion of the URL with appjson
+1. Go back to your SQL Developer Web window
+2. If you are no longer logged in, navigate to your ATP home page and click **Tools**
+3. Replace the admin portion of the URL with *appjson*
 
     ![](./images/sqldevurl.png " ")  
 
-3.  At the login screen, enter *appjson* and *Oracle_4U*.
+4.  At the login screen, enter *appjson* and *Oracle_4U*.
 
 ## **STEP 2**: Insert a record
 
