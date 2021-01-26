@@ -23,7 +23,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Setup HPC Infrastructure
 
-1. Use the navigation menu on the left and navigate to **Solutions and Platform** Marketplace > Applications.
+1. Use the navigation menu on the left and navigate to **Solutions and Platform** > Marketplace > Applications.
 2. In the searchbar type HPC, then press your ENTER/Return key.
 3. In the All Applications section, choose HPC Cluster. and then launch the stack. It should should look the image on the left followed by the image on the right.  
 ![Screenshot of HPC Image](images/hpc2.png) 
