@@ -92,13 +92,16 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       cd $HOME
       pwd
       wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/X312bI3U-DsOUoKgeFt8bt5U7nLOEpEbKg4cBQjljGDTChLIr__YJD6ab6SlChHP/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/load-atp.sh
+      chmod +x load-atp.sh
       </copy>
       ````
 
 5.   Run the load script passing in two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  
    
       ``` 
-      load-atp.sh WElcome123## <ENTER ATP NAME> 
+      <copy>
+      ./load-atp.sh WElcome123## cvgad01
+      </copy>
       ```
 6.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1 row.  
 
@@ -122,7 +125,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
    ![](./images/app-available.png " ")
 
-2.  Verify that your two applications are now in ONLINE status.
+2.  Verify that your two applications in your docker container are now in ONLINE status.
 
 You now have a docker container running the eShop application and all the data in multiple schemas in an autonomous database across multiple modalities, JSON, Analytical data, XML, Spatial and Graph in an autonomous database.  A true converged database.
 
