@@ -266,8 +266,6 @@ At this point of time, our primary server and secondary server are in sync. Lets
 
     ![](./images/configure.png "")
 
-    ![](./images/8.png "")
-
     Restart the server using the command
 
     ```
