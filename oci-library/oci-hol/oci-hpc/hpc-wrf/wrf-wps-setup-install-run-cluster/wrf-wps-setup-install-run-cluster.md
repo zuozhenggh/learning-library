@@ -296,7 +296,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 9. After setting up our geographic area or domain. We now need to obtain meteorological data to overlay on to the domain.
 
     1. In a web browser navigate to  https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/
-    2. Click the link with the latest date (ex gfs.20200115/ as today is January 20th, 2021) 
+    2. Click the link with the latest date (ex gfs.20210120/ as today is January 20th, 2021) 
     3. Choose 00  
 Don’t actually download anything. We will create a script for that. We are going the lower resolution for an easier to handle datasize for this lab so 0p50 instead of 0p25. Use 0p25 if you have additional storage and want higher resolution/more reliable data. Need to download the number of files for the amount of time you want to run. Each file is one hour of data at given interval. EX if you want to run for six hours you need gfs.t00z.pgrb2.0p50.f000, gfs.t00z.pgrb2.0p50.f003, and gfs.t00z.pgrb2.0p50.f006. 0p25 is in one hour steps and 0p50 is in 3 hour steps. For tutorial we will use only 6 hours worth of data. Feel free to use more as you become more comfortable using WRF later on.
 
@@ -334,7 +334,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     done  
     ```
     **To exit, simply press esc, then shift: followed by wq enter**   
-    **This script will download SIX hours of data for the date 01/15/21 at the 0p50 resolution. Please adjust to fit your needs.**  
+    **This script will download SIX hours of data for the date 01/20/21 at the 0p50 resolution. Please adjust to fit your needs.**  
 
 12. The following commands make the script executable and run it to download the data:
    
