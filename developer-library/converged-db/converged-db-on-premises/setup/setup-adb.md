@@ -3,7 +3,7 @@
 ## Introduction
 In the previous lab you created a compute instance (running the eShop application on docker), and an ATP instance to run your application on.  In this lab you will run a script to import data from Object Store into your Autonomous Database using Oracle Data Pump.  Your data was previously in various other types of databases.  In this lab we will show you how to centralize your data onto one database that your application can read from.
 
-*Estimated time:* 40 Minutes
+*Estimated time:* 20 Minutes
 
 ### Objectives
 - Create auth token and Oracle Wallet 
@@ -119,8 +119,10 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 5.   Run the load script passing in two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  
    
       ``` 
+      <copy> 
       chmod +x load-atp.sh
       ./load-atp.sh WElcome123## <ENTER ATP NAME> 
+      </copy>
       ```
       ![](./images/load-atp.png " ")
 
@@ -146,7 +148,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
    ![](./images/app-available.png " ")
 
-2.  Verify that your two applications are now in ONLINE status.
+2.  Verify that your two applications in your docker container are now in ONLINE status.
 
 You now have a docker container running the eShop application and all the data in multiple schemas in an autonomous database across multiple modalities, JSON, Analytical data, XML, Spatial and Graph in an autonomous database.  A true converged database.
 
@@ -155,7 +157,7 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Authors** - Kay Malcolm, Ashish Kumar
 * **Contributors** - Ashish Kumar, Madhu Rao, Yaisah Granillo, Kay Malcolm
-* **Last Updated By/Date** - Kay Malcolm, January 2021
+* **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/converged-database). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
