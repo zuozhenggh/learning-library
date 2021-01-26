@@ -32,7 +32,7 @@
         {
             "title": "Lab 5: WRF/WPS Install, Setup and Run on HPC Cluster",
             "description": "Guide on setting up, configuring, and running WRF on two node HPC cluster on OCI",
-            "filename": "../../wrf-change-experiments/wrf-wps-setup-install-run-cluster.md"
+            "filename": "../../wrf-wps-setup-install-run-cluster/wrf-wps-setup-install-run-cluster.md"
         }
     ]
 }
