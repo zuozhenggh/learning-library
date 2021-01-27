@@ -48,6 +48,7 @@ The password to all the schemas is *Oracle_4U*.
     ![](./images/sqldevurl.png " ")  
 
 3.  At the login screen, enter *appxml* and *Oracle_4U*.
+    ![](./images/appxml-signin.png " ") 
 
 ## **STEP 2**: XML Query
 
@@ -109,14 +110,14 @@ The password to all the schemas is *Oracle_4U*.
 
      ![](./images/xml_s4_p1.png " ")
 
---Ashish, can you download the insert.sql file and put it in the object store?  Then delete the lines marked delete
-2. Download the insert.sql script from the object store. 
-    ````
-    http://objectstore url
-    ````
-3. Paste the contents of insert.sql and press play to run the script 
-4. DELETE The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
-5. Verify XML record post insert
+
+2. Click the link to download the insert.sql script from the object store. [Objectstore](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-kQ88-JKc9t246bayH2JeVaLSSaxOyE0i4Npb4TxCW2XdSNPQPvmsQDza-gw5STU/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/Workshop_xml_script_atp.zip)
+    
+3. Unzip the downloaded folder and paste the contents of **insert.sql** and press play to run the script. 
+   
+    ![](./images/insertsql.png " ")
+
+4. Verify XML record post insert
 
     ```
     <copy>select t.object_value.getclobval() from purchaseorder t;</copy>
@@ -126,18 +127,13 @@ The password to all the schemas is *Oracle_4U*.
 
 ## **STEP 4**: Update XML table
 
---Ashish, can you download the update.sql file and put it in the object store?  Then delete the lines marked delete
-1. Download the update.sql script from the object store. 
+1. Click the link to download the update.sql script from the object store. [Objectstore](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-kQ88-JKc9t246bayH2JeVaLSSaxOyE0i4Npb4TxCW2XdSNPQPvmsQDza-gw5STU/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/Workshop_xml_script_atp.zip)
 
-````
-http://objectstore url
-````
+2. Unzip the downloaded folder and paste the contents of **update.sql** and press play to run the script. 
 
-2. Paste the contents of update.sql and press play to run the script 
-3. DELETE The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
-  The script is called as **update.sql**. You can run this connecting to the SQL prompt.
+    ![](./images/updatesql.png " ")
 
-4. Below is the select query to check if user is updated.
+3. Below is the select query to check if user is updated.
 
     ```
     <copy>

@@ -54,9 +54,10 @@ The password to all the schemas is *Oracle_4U*.
 2. If you are no longer logged in, navigate to your ATP home page and click **Tools**
 3. Replace the admin portion of the URL with *appjson*
 
-    ![](./images/sqldevurl.png " ")  
+    ![](./images/appjson.png " ")  
 
 4.  At the login screen, enter *appjson* and *Oracle_4U*.
+  ![](./images/appjson-signin.png " ") 
 
 ## **STEP 2**: Insert a record
 
@@ -352,25 +353,25 @@ For this , we will create two views next
 
 1.  To connect to SQL Developer Web with a user other than the admin user grant the following priveleges to the user.
    
-````
-grant dwrole to appjson;
-alter user appjson quota unlimited on data;
-````
+    ````
+    grant dwrole to appjson;
+    alter user appjson quota unlimited on data;
+    ````
 2.  Execute the ords enable schema command to build a URL for the user to use to log into.
 
-````
-BEGIN
-   ORDS_ADMIN.ENABLE_SCHEMA(
-     p_enabled => TRUE,
-     p_schema => 'appjson',
-     p_url_mapping_type => 'BASE_PATH',
-     p_url_mapping_pattern => 'appjson',
-     p_auto_rest_auth => TRUE
-   );
-   COMMIT;
-END;
-/
-````
+    ````
+    BEGIN
+      ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'appjson',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'appjson',
+        p_auto_rest_auth => TRUE
+      );
+      COMMIT;
+    END;
+    /
+    ````
 3.  Replace the admin url with the schema url defined in p_url_mapping_pattern.
 
     ![](./images/sqldevurl.png " ")  

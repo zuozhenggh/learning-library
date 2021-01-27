@@ -51,6 +51,11 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     python3 --version
     </copy>
     ````
+    ````
+    <copy>
+    ls
+    </copy>
+    ````
 
     *Note*: You should still have the cloud wallet file (*converged-wallet.zip*) that you generated in the lab: Load Data and Start Application  
 
