@@ -25,7 +25,7 @@ In this lab, you will:
 ### Prerequisites
 
 * Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console.
-* Big Data Service Cluster
+* Big Data Service cluster
 * Autonomous Data Warehouse Service
 
 OD4H is already installed on BDS nodes when you provision BDS. It is available under `/opt/oracle/od4h/jlib`.
