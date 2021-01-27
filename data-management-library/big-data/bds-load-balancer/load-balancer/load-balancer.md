@@ -213,13 +213,13 @@ To copy the files:
 
 2. On the banner at the top of the page, click the navigation menu ![Navigation menu](./images/nav-button.png) to open it. Under **Core Infrastructure**, point to **Networking**, and then click **Load Balancers**.
 
-text file test:
+  text file test:
 
-  ![](./images/start-nav-menu.png "Open the Load Balancer")
+    ![](./images/start-nav-menu.png "Open the Load Balancer")
 
-alt text test:
+  alt text test:
 
-  ![Open Load Balancer](./images/start-nav-menu.png "")
+    ![Open Load Balancer](./images/start-nav-menu.png "")
 
 2. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster, and then click **Create Load Balancer**.
 
