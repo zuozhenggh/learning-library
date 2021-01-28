@@ -1,5 +1,9 @@
 {
     "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
+                "sample.json":"../../data-load/files/sample.json",
+                "step2.md":"../../data-load/files/step2.md"},
+    "support": "https://community.oracle.com/tech/developers/categories/autonomous-database-shared",
     "tutorials": [
         {
             "title": "Prerequisites",

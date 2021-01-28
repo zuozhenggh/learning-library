@@ -14,7 +14,7 @@ You need to add a link from your Oracle Help Center (OHC) page to a lab hosted o
 
 This lab assumes that you have successfully completed the previous labs in the **Contents** menu on the right.
 
-## **STEP 1:** Create an Oracle Learning Library Content Entry for the Lab
+## **Step 1:** Create an Oracle Learning Library Content Entry for the Lab
 Every GitHub-hosted lab that will be accessed from the Oracle Help Center must be registered as a content entry in the Oracle Learning Library (OLL).
 You must have OLL administrator privileges to view and edit content entries in OLL.
 1. Log in to the [OLL Home page] (https://apexapps.oracle.com/pls/apex/f?p=44785:1) using your Oracle SSO credentials.
@@ -28,7 +28,7 @@ You must have OLL administrator privileges to view and edit content entries in O
     ![](./images/content-entry-link.png " ")
     * **Type**: Select **OBE**. (Older labs were called Oracle By Example or tutorials.)
 
-## **STEP 2:** Create the Target URL for a Lab
+## **Step 2:** Create the Target URL for a Lab
 
 1. Log in to the [OLL Home page] (https://apexapps.oracle.com/pls/apex/f?p=44785:1) using your Oracle SSO credentials.
 2. From your **User ID** drop-down, click **Administration**.
@@ -51,7 +51,7 @@ To add a link to a lab from an OHC Tutorials page:
     [](./images/ohc-section-topics.png " ")
 5. Click **Topics** and then click **Create Topic**.
 
-6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**STEP 2:** Create the Target URL for a Lab".
+6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**Step 2:** Create the Target URL for a Lab".
 
 **This concludes this lab.**
 
