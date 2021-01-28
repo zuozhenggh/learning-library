@@ -26,7 +26,7 @@ In this lab you will:
 ### Prerequisites
 -	An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-You may proceed to the next lab.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)

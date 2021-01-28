@@ -27,7 +27,7 @@
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
-    },
+    }, 
     {
       "title": "Lab 4: Initialize Environment",
       "description": "Initialize Environment Lab",

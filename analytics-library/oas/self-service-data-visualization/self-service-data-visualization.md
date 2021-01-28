@@ -21,8 +21,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (Free Tier and Paid Account only)
+    - Lab: Prepare Setup (Free Tier and Paid Account only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -300,7 +300,7 @@ Oracle Analytics provides users choice and flexibility with deployment.  Users c
 2. Download the “Circle Pack” and “Calendar Heatmap” extensions.
    ![](./images/uscve2.png " ")
 
-You may proceed to the next lab.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)

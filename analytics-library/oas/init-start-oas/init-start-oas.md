@@ -14,8 +14,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (Free Tier and Paid Account only)
+    - Lab: Prepare Setup (Free Tier and Paid Account only)
     - Lab: Environment Setup
 
 ## **STEP 1:** Login to Oracle Analytics Server UI
@@ -100,7 +100,7 @@ Your workshop instance is configured to automatically start all processes needed
     <copy>sudo systemctl stop oas</copy>
     ```
 
-You may proceed to the next lab.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn more
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)

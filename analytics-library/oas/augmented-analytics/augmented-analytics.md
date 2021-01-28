@@ -18,8 +18,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (Free Tier and Paid Account only)
+    - Lab: Prepare Setup (Free Tier and Paid Account only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -323,7 +323,7 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     ![](./images/hr2_30.png " ")
 
-Congratulations! You have completed the workshop.
+**This concludes this lab.**
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
