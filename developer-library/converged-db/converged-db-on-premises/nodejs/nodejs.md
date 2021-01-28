@@ -144,7 +144,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     ![](./images/postman_after_update.png " ")
 
-## Want to learn more
+## Learn More
  - [Node-js](https://nodejs.org/en/)
  - [Node-js for Oracle Linux](https://yum.oracle.com/oracle-linux-nodejs.html)  
  - [Node-js Driver](https://oracle.github.io/node-oracledb/)
