@@ -87,6 +87,8 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ![](./images/sql.png " ")
 
 4.  Login with the *admin* user and the password *WElcome123##* 
+      ![](./images/sql-signin.png " ")
+
 5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
    
     ````

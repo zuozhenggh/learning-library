@@ -3,7 +3,7 @@
 ## Introduction
 This lab walks you through the steps of setting up the environment for Spatial lab. You can connect to the Oracle Database instance using any client of your choice. In this lab, you will connect using Oracle SQL Developer.
 
-*Estimated Lab Time:* 30 Minutes
+*Estimated Lab Time:* 15 Minutes
 
 ### Prerequisites
 This lab assumes you have:
@@ -91,13 +91,22 @@ Notice that each has a column of type SDO\_GEOMETRY to store location.
     ```
     <copy>
      EXECUTE SDO_UTIL.INSERT_SDO_GEOM_METADATA (sys_context('userenv','current_user'), -
-     'CUSTOMERS', 'CUST_GEO_LOCATION', -  SDO_DIM_ARRAY(SDO_DIM_ELEMENT('X',-180, 180, 0.05), - SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),-  4326);
+'CUSTOMERS', 'CUST_GEO_LOCATION', -
+ SDO_DIM_ARRAY(SDO_DIM_ELEMENT('X',-180, 180, 0.05), -
+               SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),-
+ 4326);
 
      EXECUTE SDO_UTIL.INSERT_SDO_GEOM_METADATA (sys_context('userenv','current_user'), -
-     'WAREHOUSES', 'WH_GEO_LOCATION', - SDO_DIM_ARRAY(SDO_DIM_ELEMENT('X',-180, 180, 0.05), - SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),-  4326);
+'WAREHOUSES', 'WH_GEO_LOCATION', -
+ SDO_DIM_ARRAY(SDO_DIM_ELEMENT('X',-180, 180, 0.05), -
+               SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),-
+ 4326);
 
      Insert into user_sdo_geom_metadata values (
-       'WAREHOUSES_DTP','GEOMETRY',MDSYS.SDO_DIM_ARRAY(MDSYS.SDO_DIM_ELEMENT('X', -180, 180, 0.05), MDSYS.SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),4326);
+'WAREHOUSES_DTP','GEOMETRY',
+MDSYS.SDO_DIM_ARRAY(MDSYS.SDO_DIM_ELEMENT('X', -180, 180, 0.05),
+                   MDSYS.SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),
+4326);
     </copy>
     ```
 
@@ -277,7 +286,7 @@ The elements of the constructor are:
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
-* **Last Updated By/Date** - Kay Malcolm, January 2021
+* **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
