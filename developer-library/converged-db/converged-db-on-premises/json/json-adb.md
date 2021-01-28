@@ -8,6 +8,9 @@ There are three main parts to this lab.
 
 *Estimated Lab Time:* 20 Minutes
 
+Watch the video below for an overview of Lab 4: JSON
+[](youtube:y7v7vsCFS5g)
+
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -37,8 +40,6 @@ Oracle database provides a comprehensive implementation of SQL, for both analyti
 JSON documents can be stored using a VARCHAR2, CLOB, or BLOB column. An IS JSON SQL constraint ensures that the column contains only valid JSON documents, allowing the database to understand that the column is being used as a container for JSON documents.
 
 Oracle’s JSON capabilities are focused on providing full support for schemaless development and document-based storage. Developers are free to change the structure of their JSON documents as necessary. With the addition of JSON support, Oracle Database delivers the same degree of flexibility as a NoSQL JSON document store.
-
-  [](youtube:oiOCp23T1ZU)
 
 The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,. This listing illustrates what a JSON payload looks like:
 
@@ -438,6 +439,7 @@ For this , we will create two views next
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 - [ORDS](https://www.oracle.com/database/technologies/appdev/rest.html)
 - [SQL Developer Web on ADB Blog](https://blogs.oracle.com/developers/sql-developer-web-now-available-for-oracle-autonomous-database)
+- To learn more, watch this video on JSON: [](youtube:oiOCp23T1ZU)
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
