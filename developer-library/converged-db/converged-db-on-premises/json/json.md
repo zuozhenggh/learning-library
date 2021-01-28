@@ -453,7 +453,7 @@ For this , we will create two views next
 
     ![](./images/json_fun_5b.png " ")  
 
-## Want to learn more
+## Learn More
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
 ## Acknowledgements

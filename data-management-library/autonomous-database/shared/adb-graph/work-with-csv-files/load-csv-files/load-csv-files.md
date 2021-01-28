@@ -44,58 +44,65 @@ Learn how to
     - Click on Create User
     - Turn on the REST-enable and Graph-enable buttons
 
-## **Step 3**: Download the sample datasets from the ObjectStore
+## **STEP 3**: Download the sample datasets from the ObjectStore
 
-1. Use `wget` or `curl` to download the sample data, i.e. CSV files, to you computer. Or copy and paste the url for the zip archive, i.e.  https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip in your browser.
+1. Use `wget` or `curl` to download the sample data, i.e. CSV files, to you computer. Or copy and paste the url in your browser for the zip archive, i.e.  
 
-A sample `curl` request is:
-`curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip`
+    ```
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    ```
+
+    A sample `curl` request is:
+    ```
+    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    ```
 
 2. Unzip the archive into a local directory such as ~/downloads.
 
-## **Step 4**: Upload using SQLDeveloperWeb
+## **STEP 4**: Upload using SQLDeveloperWeb
 
-Click on the Data tab in the SQLDeveloperWeb worksheet. Then click on `Select Files`.
+1. Click on the Data tab in the SQLDeveloperWeb worksheet. Then click on `Select Files`.
 
-![](./images/03-upload-first-file.png)
+   ![](./images/03-upload-first-file.png)
 
-3. Navigate to the correct folder (e.g. ~/downloads) and select the bank_account.csv file.
+2. Navigate to the correct folder (e.g. ~/downloads) and select the bank_account.csv file.
 ![](./images/04-choose-accts-file.png)
 
-4. Preview the data then click `Next`.
+3. Preview the data then click `Next`.
 ![](./images/05-preview-accts-file.png)
 
-5. Modify the properties as follows:
-- Change the column type for `ACCT_ID` to `NUMBER`.
-- Click the PK checkbox to indicate that it is a primary key.
+4. Modify the properties as follows:
+    - Change the column type for `ACCT_ID` to `NUMBER`.
+    - Click the PK checkbox to indicate that it is a primary key.
 
-![](./images/06-accts-edit-properties.png)
+   ![](./images/06-accts-edit-properties.png)
 
-6. Click `Next` to view the generated DDL. Then click `Finish` to create the table and load the data. 
+5. Click `Next` to view the generated DDL. Then click `Finish` to create the table and load the data. 
    ![](./images/07-accts-view-ddl.png)
    
    Note: If you see an error message that the SDW$ERR$_BANK_ACCOUNTS$ table could not be created then check that the user has adequate quota for the tablespace name `DATA` or whichever tablesapce the user has privileges on.
 
-7. Once the file is loaded you should see the table in the list on the left.
+6. Once the file is loaded you should see the table in the list on the left.
    ![](./images/08-accts-loaded.png)
 
-8. Now repeat the process for the second file, i.e. bank_txns.csv. 
+7. Now repeat the process for the second file, i.e. bank_txns.csv. 
    
    ![](./images/09-upload-second-file.png)
 
-9. Navigate to the correct folder (e.g. ~/downloads) and select the bank_txns.csv file.  
+8. Navigate to the correct folder (e.g. ~/downloads) and select the bank_txns.csv file.  
    ![](./images/10-choose-txns-file.png)
 
-10. Edit the proeprties as follows:
+9. Edit the proeprties as follows:
     - Change the data type for `FROM_ACCT_ID`, `TO_ACCT_ID`, and `AMOUNT` to `NUMBER`.
     - Change the length for `DESCRIPTION` to 128.
     - Check the `PK` checkbox for each of `FROM_ACCT_ID`, `TO_ACCT_ID`, and `AMOUNT` to indicate that these columns form the composite primary key.  
-    ![](./images/11-txns-edit-properties.png)
+   
+   ![](./images/11-txns-edit-properties.png)
   
-11. Click `Next` to view the generated DDL. Then click `Finish` to create the table and load the data.  
+10. Click `Next` to view the generated DDL. Then click `Finish` to create the table and load the data.  
    ![](./images/12-txns-ddl.png)
 
-12. Once the file is loaded you should see the table in the list on the left.  
+11. Once the file is loaded you should see the table in the list on the left.  
    ![](./images/13-txns-loaded.png)
 
 
