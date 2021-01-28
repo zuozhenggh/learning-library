@@ -23,9 +23,9 @@ Automates failure detection, failover, and repair.
 
 - Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
 
-Watch our short video that explains Lab 1 - Provisioning your Autonomous Database instance & Lab 2 - Provisioning your Oracle Analytics Cloud instance in detail:
+Watch our short video that explains Lab 1 - Provisioning your Autonomous Database instance:
 
-[](youtube:rpKwrm-7eCk)
+[](youtube:IfWJhnodAxk)
 
 Estimated Lab Time: 15 minutes
 
