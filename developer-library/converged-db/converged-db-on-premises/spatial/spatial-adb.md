@@ -5,6 +5,9 @@ This lab walks you through the steps of setting up the environment for Spatial l
 
 *Estimated Lab Time:* 15 Minutes
 
+Watch the video below for an overview of Lab 5: Spatial
+[](youtube:bYQUs6m954I)
+
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
