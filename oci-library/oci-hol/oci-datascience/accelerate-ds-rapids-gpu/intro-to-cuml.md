@@ -37,23 +37,23 @@ This lab assumes that you have:
 
   ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-terminal-button.png)
 
-1. The next step is to pull a notebook file in your notebook session. There are two ways to do this:
+2. The next step is to pull a notebook file in your notebook session. There are two ways to do this:
 
-   - Copy and paste the following command in the terminal window and press "Enter".
+      - Copy and paste the following command in the terminal window and press "Enter".
 
-     ``curl -L -o intro_to_clustering.ipynb https://bit.ly/3ir4Cx9``
+      ``curl -L -o intro_to_clustering.ipynb https://bit.ly/3ir4Cx9``
 
-     The new notebook will be named `intro_to_clustering.ipynb`.
+      The new notebook will be named `intro_to_clustering.ipynb`.
 
-   - Alternatively, you can click on this link:
+      - Alternatively, you can click on this link:
 
-     [https://bit.ly/3ir4Cx9](https://bit.ly/3ir4Cx9)
+      [https://bit.ly/3ir4Cx9](https://bit.ly/3ir4Cx9)
 
-     and download the file to your local machine. Simply drag-and-drop the file in the JupyterLab file browser window to the left.
+      and download the file to your local machine. Simply drag-and-drop the file in the JupyterLab file browser window to the left.
 
-     ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-file-browser.png)
+      ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-file-browser.png)
 
-1. Confirm that the notebook is available in your notebook session. The notebook file should appear in the file browser.
+3. Confirm that the notebook is available in your notebook session. The notebook file should appear in the file browser.
 
    ![](./../accelerate-ds-rapids-gpu/images/cuml-file-in-file-browser.png)
 
@@ -66,7 +66,7 @@ This lab assumes that you have:
 1. Ensure that the notebook is running in the right JupyterLab kernel. Verify this by looking at the kernel button located in the top right corner of your notebook tab.
    The kernel should be `rapidsgpuv1` which corresponds to the slug name of the RAPIDS conda environment.
 
-   ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-cuml-kernel-check.png)
+   ![](./../accelerate-ds-rapids-gpu/images/jupyter-cuml-kernel-check.png)
 
    If the kernel name differs from `rapidsgpuv1`, switch the kernel by clicking on the kernel name (red box in the previous screenshot). You can pick a kernel from the list shown in the modal window.
 
@@ -115,8 +115,6 @@ This lab assumes that you have:
 1. Throughout the notebook, useful instructions and additional links are provided. Feel free to execute one cell at a time or all of them at once. We also included a table of content at the top of the notebook to help you navigate through the notebook. cuML is a powerful library with an API that is very similar to `scikit-learn`.
 
 
-## **STEP 4:** Next Steps
-
 **Congratulations! You have successfully completed the lab**
 
 You may now *proceed to the next lab*.
@@ -132,6 +130,7 @@ You may now *proceed to the next lab*.
     * [Jean-Rene Gauthier](https://www.linkedin.com/in/jr-gauthier/), Sr. Principal Product Data Scientist, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/data-science). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
