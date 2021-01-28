@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (Free Tier and Paid Account only)
     - Lab: Environment Setup
 
-## **STEP 1:** Login to Oracle Analytics Server UI
+## **Step 1:** Login to Oracle Analytics Server UI
 This lab has been designed to be executed end-to-end with any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 ### UI Access
@@ -29,7 +29,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     e.g: http://111.888.111.888:9502/dv/ui
     ```
 
-    ***Note:*** While application processes are automatically started upon instance boot up, it takes approximately 15 minutes for this URL to become active after all processes have fully started. Should this URL remain inactive after 15 minutes, refer to **STEP 3** below for manual start.
+    ***Note:*** While application processes are automatically started upon instance boot up, it takes approximately 15 minutes for this URL to become active after all processes have fully started. Should this URL remain inactive after 15 minutes, refer to **Step 3** below for manual start.
 
 2. Provide login credentials
 
@@ -62,14 +62,14 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 2:** Download and Stage Workshop Artifacts
+## **Step 2:** Download and Stage Workshop Artifacts
 In order to run this workshop, you will need a set of files that have been conveniently packaged for you. Proceed as indicated below.
 
 1. Download [OAS_Workshop.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6_WvdYP8HOSRFYJpU2958aV8WpEq2sDaqZUP4dJdFlz2NvBPIdlRg8uHyDC0WMyA/n/natdsecurity/b/labs-files/o/OAS_Workshop.zip) and save to a staging area on your laptop or workstation.
 
 2. Uncompress the ZIP archive
 
-## **STEP 3:** Managing DB and OAS processes (optional)
+## **Step 3:** Managing DB and OAS processes (optional)
 Your workshop instance is configured to automatically start all processes needed for the labs. Should you need to stop/start these processes, proceed as shown below as user *opc* from your SSH terminal session
 
 ### DB Startup/Shutdown
