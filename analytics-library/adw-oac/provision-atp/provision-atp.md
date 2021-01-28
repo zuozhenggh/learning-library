@@ -25,7 +25,7 @@ Automates failure detection, failover, and repair.
 
 Watch our short video that explains Lab 1 - Provisioning your Autonomous Database instance:
 
-[](youtube:fWJhnodAxk)
+[](youtube:IfWJhnodAxk)
 
 Estimated Lab Time: 15 minutes
 
