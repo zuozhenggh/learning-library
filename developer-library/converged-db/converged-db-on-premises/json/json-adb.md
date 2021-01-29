@@ -8,6 +8,9 @@ There are three main parts to this lab.
 
 *Estimated Lab Time:* 20 Minutes
 
+Watch the video below for an overview of Lab 4: JSON
+[](youtube:y7v7vsCFS5g)
+
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -38,8 +41,6 @@ JSON documents can be stored using a VARCHAR2, CLOB, or BLOB column. An IS JSON 
 
 Oracle’s JSON capabilities are focused on providing full support for schemaless development and document-based storage. Developers are free to change the structure of their JSON documents as necessary. With the addition of JSON support, Oracle Database delivers the same degree of flexibility as a NoSQL JSON document store.
 
-  [](youtube:oiOCp23T1ZU)
-
 The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,. This listing illustrates what a JSON payload looks like:
 
   ![](./images/json_intro.png " ")
@@ -54,9 +55,10 @@ The password to all the schemas is *Oracle_4U*.
 2. If you are no longer logged in, navigate to your ATP home page and click **Tools**
 3. Replace the admin portion of the URL with *appjson*
 
-    ![](./images/sqldevurl.png " ")  
+    ![](./images/appjson.png " ")  
 
 4.  At the login screen, enter *appjson* and *Oracle_4U*.
+  ![](./images/appjson-signin.png " ") 
 
 ## **STEP 2**: Insert a record
 
@@ -352,25 +354,25 @@ For this , we will create two views next
 
 1.  To connect to SQL Developer Web with a user other than the admin user grant the following priveleges to the user.
    
-````
-grant dwrole to appjson;
-alter user appjson quota unlimited on data;
-````
+    ````
+    grant dwrole to appjson;
+    alter user appjson quota unlimited on data;
+    ````
 2.  Execute the ords enable schema command to build a URL for the user to use to log into.
 
-````
-BEGIN
-   ORDS_ADMIN.ENABLE_SCHEMA(
-     p_enabled => TRUE,
-     p_schema => 'appjson',
-     p_url_mapping_type => 'BASE_PATH',
-     p_url_mapping_pattern => 'appjson',
-     p_auto_rest_auth => TRUE
-   );
-   COMMIT;
-END;
-/
-````
+    ````
+    BEGIN
+      ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'appjson',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'appjson',
+        p_auto_rest_auth => TRUE
+      );
+      COMMIT;
+    END;
+    /
+    ````
 3.  Replace the admin url with the schema url defined in p_url_mapping_pattern.
 
     ![](./images/sqldevurl.png " ")  
@@ -437,6 +439,7 @@ END;
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 - [ORDS](https://www.oracle.com/database/technologies/appdev/rest.html)
 - [SQL Developer Web on ADB Blog](https://blogs.oracle.com/developers/sql-developer-web-now-available-for-oracle-autonomous-database)
+- To learn more, watch this video on JSON: [](youtube:oiOCp23T1ZU)
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope

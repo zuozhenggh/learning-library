@@ -5,6 +5,9 @@ In the previous lab you created a compute instance (running the eShop applicatio
 
 *Estimated time:* 20 Minutes
 
+Watch the video below for an overview of Lab 3: Load ADB and Start Application
+[](youtube:S3jL1y-ZAbc)
+
 ### Objectives
 - Create auth token and Oracle Wallet 
 - Login to SQL Developer
@@ -19,7 +22,16 @@ In the previous lab you created a compute instance (running the eShop applicatio
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Before starting this section make sure you have exited out of your compute instance and are back in your cloudshell home.  
-2.  With the autonomous\_database\_ocid that is listed in Resource Manager -> Stacks -> Stack Details -> Outputs, create the Oracle Wallet. You will be setting the wallet password to the same value as the ADB admin password for ease of use.  This is not a recommended practice and just used for the purposes of this lab.  *WElcome123##*.   Fill in the autonomous database ocid that is listed in the output section of your terraform.
+
+      If you did not copy your autonomous\_database\_ocid, select **Resource Manager** > **Stacks** and select your stack.
+      ![](./images/em-nav-to-orm.png " ")
+      ![](./images/select-stack.png " ")
+
+      Select your apply job and select **Outputs**. 
+      ![](./images/select-apply.png " ")
+      ![](./images/outputs.png " ")
+
+2.  Use your autonomous\_database\_ocid to create the Oracle Wallet. You will be setting the wallet password to the same value as the ADB admin password for ease of use. This is not a recommended practice and just used for the purposes of this lab. *WElcome123##*. Fill in the autonomous database ocid that is listed in the output section of your terraform.
    
       ````
       <copy>
@@ -31,7 +43,6 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
 3.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
 
-      ![](./images/generate-wallet.png " ")
 4.  Enter the list command in your cloudshell below to verify the *converged-wallet.zip* was created
    
       ````
@@ -79,6 +90,8 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ![](./images/sql.png " ")
 
 4.  Login with the *admin* user and the password *WElcome123##* 
+      ![](./images/sql-signin.png " ")
+
 5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
    
     ````
@@ -115,6 +128,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       unzip ../converged-wallet*
       </copy>
       ````
+      ![](./images/sudo.png " ")
 
 4. Make sure you are the *oracle* user, run the next command to set your oracle environment.  If you are not, run the sudo su - oracle command to become oracle.  When prompted enter *convergedcdb*
 
@@ -122,6 +136,8 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       <copy>. oraenv</copy>
       ORACLE_SID = [oracle] ? convergedcdb
       ````
+
+      ![](./images/oraenv.png " ")
    
 5. Substitute your instance name with *your adb instance name* (e.g convgdb_high) and the password you used
 
@@ -154,10 +170,14 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       select count(*) from appnodejs.orders;
       </copy>
       ````
+      ![](./images/export-tns.png " ")
+
 9. Exit the sql prompt
+
     ````
     exit
     ````
+    ![](./images/exit.png " ")
 
 ## **STEP 5:**  Connect Docker Instance to ATP
 
