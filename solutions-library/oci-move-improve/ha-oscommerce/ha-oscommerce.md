@@ -213,7 +213,7 @@ Run the following command in your local terminal
     </copy>
     ```
 
-    **Note: Here, the host ip address should be the ip address of the primary server since we are replicating from primary to secondary server.**
+    **Note: Here, the host ip address should be the ip address of the primary server since you are replicating from primary to secondary server.**
 
     ![](./images/6.png "")
 
@@ -226,7 +226,7 @@ Run the following command in your local terminal
 26. Thus, you have the webserver files as well as the database files in a secondary server safe and with latest updates. Furthermore, you can setup cron jobs for automation rather than running the rsync and mysqldump commands manually every time.
 
 ## **STEP 2:** Configure Load Balancer
-At this point of time, our primary server and secondary server are in sync. Lets proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover like using keepalived, using load balancers and using DNS Traffic Management Steering policies in OCI. For the purpose of this lab, we will use the Load Balancer service which provides automated traffic distribution 
+At this point of time, our primary server and secondary server are in sync. Lets proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover like using keepalived, using load balancers and using DNS Traffic Management Steering policies in OCI. For the purpose of this lab, you will use the Load Balancer service which provides automated traffic distribution 
 
 ### **Make your application accessible from your ip address**
 
@@ -279,12 +279,12 @@ At this point of time, our primary server and secondary server are in sync. Lets
 2. To create a load balancer, please goto Networking >> Load Balancer as shown below. 
     ![](./images/imageR3.png "")
 
-3. Click Create Load Balancer and give name to your load balancer. Select visibility as public and assign Ephemeral IP Address. Also select dynamic shape of 10mbps. Please select the VCN we created for the workshop and a regional public subnet. Kindly refer below.
+3. Click Create Load Balancer and give name to your load balancer. Select visibility as public and assign Ephemeral IP Address. Also select dynamic shape of 10mbps. Please select the VCN you have created for the workshop and a regional public subnet. Kindly refer below.
     ![](./images/imageR4.png "")
 
     **Note:** It is recommended to have load balancer in different public regional subnet than your compute instance's subnet.
 
-4. A load balancer will distribute the traffic according to the selected policy. For this lab, please select Weighted Round Robin. Keep everything default.
+4. A load balancer will distribute the traffic according to the selected policy. For this lab, please select Weighted Round Robin. Keep everything default. To learn more about load balancer policies, refer [here](https://docs.oracle.com/en-us/iaas/Content/Balance/Reference/lbpolicies.htm)
     ![](./images/imageR5.png "")
 
 5. Please name your load balancer listener and select HTTP as type of traffic your listener will handle.
@@ -323,7 +323,7 @@ At this point of time, our primary server and secondary server are in sync. Lets
     * [DNS overview & Demo](https://www.youtube.com/watch?v=dfKeDh79HdQ)
     * Note: DNS will take few mins to an hour to make changes
 
-2. Export the resource record. This file would be exported as a .txt file. Store in a secure location, we would need the file later in the lab.
+2. Export the resource record. This file would be exported as a .txt file. Store in a secure location, you would need the file later in the lab.
     ![](./images/10.png "")
     ![](./images/11.png "")
 
@@ -448,6 +448,8 @@ Pool Priority: Failover priority rules specify the priority of answers that are 
 
 ## Learn More
 * To learn about provisioning Networks and Network Security check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+
+* To learn about Oracle's Load Balancer check out this [link](https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
 
 * To learn about Oracle's DNS and Traffic Management check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/EdgeServices/overview.htm)
 

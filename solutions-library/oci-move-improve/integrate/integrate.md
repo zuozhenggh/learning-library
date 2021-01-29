@@ -322,7 +322,7 @@ Previous button. Once confirmed, click on Create
 
 	![](./images/32.png "")
 
-9. Once you click Create, you will be redirected to the first dashboard that lists all instances. As you can see, since we just began provisioning our instance, the current status says: Creating service. Once your instance is ready to be used, you will receive an email to the email address you provided when creating the instance.
+9. Once you click Create, you will be redirected to the first dashboard that lists all instances. As you can see, since you just began provisioning our instance, the current status says: Creating service. Once your instance is ready to be used, you will receive an email to the email address you provided when creating the instance.
 
 	![](./images/33.png "")
 

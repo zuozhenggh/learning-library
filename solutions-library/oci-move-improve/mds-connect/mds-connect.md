@@ -33,7 +33,7 @@ Estimated Lab Time: 1 hour
 
 ## **STEP 2:** Migrating Database to MDS
 
-1. Please ssh in your secondary instance. Run the following command in the terminal.
+1. Please ssh in your primary instance. Run the following command in the terminal.
 
     ```
     <copy>
@@ -112,7 +112,7 @@ Estimated Lab Time: 1 hour
 
     ![](./images/13.png "")
 
-5. Congrats! You've successfully connected your E-Commerce application with MDS.
+5. Congrats! You've successfully connected your primary instance of E-Commerce application with MDS. You can repeat the lab for your secondary instance.
 
 ## Learn More
 * To learn about connecting to MDS on OCI [link](https://docs.oracle.com/en-us/iaas/mysql-database/doc/connecting-db-system.html)
