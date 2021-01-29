@@ -96,10 +96,24 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 You may now [proceed to the next lab](#next).
 
+## **Rate this Workshop**
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](images/rate-this-workshop.png " ")
+
+
 ## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Last Updated By/Date** - John Peach, Kamryn Vinson, Database Product Management, November 2020
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
+- **Last Updated By** - Kay Malcolm, January 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
