@@ -1,4 +1,0 @@
-This screenshot shows the Invalid Objects page. It shows 1 invalid object with the following details:
-Owner: APPUSER
-Object_Type: Procedure
-Object_Name: ADD_PO_HISTORY

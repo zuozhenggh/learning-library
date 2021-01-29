@@ -1,9 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Manage the Listener Using the Listener Control Utility ",
-            "description": "This lab walks you through the steps to administer the listener.",
-            "filename": "content.md"
-        }
-    ]
-}

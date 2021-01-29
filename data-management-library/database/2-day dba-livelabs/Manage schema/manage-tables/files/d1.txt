@@ -1,1 +1,0 @@
-This screenshot shows a part of the Connections pane. The APPUSER node and the Tables (Filtered) node under APPUSER is expanded. The PURCHASE_ORDERS node under Tables (Filtered) is right-clicked and Edit is being clicked in the context menu.

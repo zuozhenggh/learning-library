@@ -1,3 +1,0 @@
-This screenshot shows the Connections pane and the ADD_PO_HISTORY page.
-In the Connections pane, the Procedure node under APPUSER is selected and the ADD_PO_HISTORY procedure is clicked.
-In the ADD_PO_HISTORY page, the query for creating or replacing procedure is entered.

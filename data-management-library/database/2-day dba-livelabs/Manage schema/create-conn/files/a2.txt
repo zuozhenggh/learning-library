@@ -1,2 +1,0 @@
-This screenshot shows the SQL Developer Connections pane.
-The Connections node is right clicked and New Connections is being clicked.

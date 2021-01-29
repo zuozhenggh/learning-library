@@ -1,3 +1,0 @@
-This screenshot shows the Connections pane and the PURCHASE_ORDERS page.
-In the Connections pane, the PURCHASE_ORDERS table is selected under APPUSER, Tables (filtered).
-The Columns tab is selected in the PURCHASE_ORDERS page.

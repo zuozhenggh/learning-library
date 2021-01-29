@@ -1,2 +1,0 @@
-This screenshot shows the Details tab of the EMP_DEPARTMENT_IX page. It shows 10 records of the Details tab namely:
-CREATED, LAST_DDL_TIME, OWNER, INDEX_NAME, INDEX_TYPE, TABLE_OWNER, TABLE_NAME, TABLE_TYPE, UNIQUENESS, and COMPRESSION.

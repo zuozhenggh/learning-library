@@ -1,5 +1,0 @@
-This screenshot shows the Columns tab of the EMP_DEPARTMENT_IX page. The Details tab is being clicked.
-The screenshot shows 1 record with the following values:
-INDEX_OWNER: HR
-INDEX_NAME: EMP_DEPARTMENT_IX
-TABLE_OWNER: HR
