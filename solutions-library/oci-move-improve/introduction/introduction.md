@@ -31,7 +31,7 @@ Oracle offers a complete portfolio of products, services, and differentiated cap
 ## Appendix:  Workshop Assumptions
 *Note:* Please note below :
 * This workshop is intended to be a comprehensive full cloud showcase. As such, it is assumed a user going through this workshop will be provisioning resources and creating users from scratch. If you decide to use existing infrastructure or resources, be aware and keep note of your namings so resources don't overlap and conflict.
-* This workshop is not intended to be used as the only mean to lift and shift on-prem third party application to OCI. It's sole purpose is to make you aware of OCI Services involved in lift and shift of Lamp Stack Application to Oracle Cloud.
+* This workshop is not intended to be used as the only means / best-practice to lift and shift on-prem third party application to OCI. It's sole purpose is to make you aware of OCI Services involved in lift and shift of Lamp Stack Application to Oracle Cloud.
 * For simplicity, this workshop focuses on migration of VMDK file to OCI. However in real world scenario's you would need to migrate the code of your Application to OCI and configure Server along with the required libraries to make your application up and running.
 
 *Note:* Additionally, as much as possible, do not stray away from the naming conventions used for resources in this workshop. You may run into errors if you do.
