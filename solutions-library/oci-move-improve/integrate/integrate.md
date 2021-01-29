@@ -1,7 +1,7 @@
 # Integrate Oracle Cloud Platform services with your app
 
 ## Introduction
-This lab walks you through the steps to integrate your third party app with Oracle Cloud PaaS. First, we will connect MySQL database and then Oracle Autonomous Data warehouse to Oracle Integration Cloud. After both the connections has been established, we will migrate the data from MySQL database to Oracle Autonomous Datawarehouse(ADW). Lastly, we will connect Oracle Analytics Cloud service to Oracle Autonomous Data warehouse to perform some analytics. For a technical video that walks through this portion of the lab, please see the below link:<br>
+This lab walks you through the steps to integrate your third party app with Oracle Cloud PaaS. First, you will connect MySQL database and then Oracle Autonomous Data warehouse to Oracle Integration Cloud. After both the connections has been established, you will migrate the data from MySQL database to Oracle Autonomous Datawarehouse(ADW). Lastly, you will connect Oracle Analytics Cloud service to Oracle Autonomous Data warehouse to perform some analytics. For a technical video that walks through this portion of the lab, please see the below link:<br>
 [Video](https://video.oracle.com/detail/video/6164371972001/lab-300-oic-adw-and-oac?autoStart=true&q=ocimoveimprove)
 
 ### Objectives
@@ -30,9 +30,9 @@ Estimated Lab Time: 2 hour
 
 2. If you do not have this information, please follow the lab guide (Part 1 and Part 2) here [link](https://github.com/oracle/learning-library/blob/master/workshops/erp-adw-oac/LabGuide100ProvisionAnADWDatabase.md). Once you complete making an ADW or ATP instance, please download the Wallet file from the console. [More info](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
-3. Here, we will establish a connection between our MySQL Database and Oracle Integration Cloud. An Oracle Integration Cloud instance will be provided to you. If you do not have an Oracle Integration Cloud instance, follow instructions from [here](https://docs.cloud.oracle.com/en-us/iaas/integration/doc/creating-oracle-integration-instance.html) and create one.
+3. Here, you will establish a connection between our MySQL Database and Oracle Integration Cloud. An Oracle Integration Cloud instance will be provided to you. If you do not have an Oracle Integration Cloud instance, follow instructions from [here](https://docs.cloud.oracle.com/en-us/iaas/integration/doc/creating-oracle-integration-instance.html) and create one.
 
-4. For this lab, we will also need an OIC agent in order to perform connections to web app's database. Make one by following the instructions below:
+4. For this lab, you will also need an OIC agent in order to perform connections to web app's database. Make one by following the instructions below:
 
 5. Login to your OIC instance. In the left navigation pane, click Integrations, then click Agents.
 
@@ -122,7 +122,7 @@ Estimated Lab Time: 2 hour
 
 	![](./images/3.png "")
 
-20. On this page, name your connection. In this lab, we used “MySQL_osCommerce”. You can optionally add a description to this connection. For the role, make sure that “Trigger and Invoke” is enabled.
+20. On this page, name your connection. In this lab, you used “MySQL_osCommerce”. You can optionally add a description to this connection. For the role, make sure that “Trigger and Invoke” is enabled.
 
 	![](./images/4.png "")
 
@@ -134,9 +134,9 @@ Estimated Lab Time: 2 hour
 
 	Port: Use port 3306 since this is a MySQL database
 
-	Database Name: oscommerce. This is the database name we used in Step 2
+	Database Name: oscommerce. This is the database name you used in Lab 2
 
-	Username & Password: Use the credentials that you used in Step 2
+	Username & Password: Use the credentials that you used in Lab 2
 	```
 
 22. Agent Group: In the Oracle Integration Cloud instance, there will be an Agent Group preconfigured for you. Select that one. If there is no agent, follow the steps from this [link](https://docs.oracle.com/en/cloud/paas/integration-cloud/integrations-user/agent-download-and-installation.html#GUID-72491B67-7445-4B52-94FA-CEC8488E0F4A) to install a new agent.
@@ -173,7 +173,7 @@ Here, ip address is the ip address of your agent
 
 ### **Establish an integration between the ADW and MySQL connections**
 
-28. Now that we have both connections made in Oracle Integration Cloud for our MySQL and Autonomous Database, we will need to establish an integration for both to communicate with each other. Before making connection, we have to ensure the target database table exists in ADW. For that follow the instructions here:
+28. Now that you have both connections made in Oracle Integration Cloud for our MySQL and Autonomous Database, you will need to establish an integration for both to communicate with each other. Before making connection, you have to ensure the target database table exists in ADW. For that follow the instructions here:
 
 29. On your ADW console home page, click service console
 
@@ -220,12 +220,12 @@ and click on the Select button.
 
 	![](./images/9.png "")
 
-35. For your new integration, give it a name of your choosing. In this lab, we chose MySQL_to_ADW_OIC.
+35. For your new integration, give it a name of your choosing. In this lab, chose MySQL_to_ADW_OIC.
 
 	![](./images/10.png "")
 
 36. After clicking on create, you will be presented with a scheduled operation map. Click on the
-plus icon and search for the MySQL connection that we made earlier.
+plus icon and search for the MySQL connection that you made earlier.
 
 	![](./images/11.png "")
 
@@ -233,7 +233,7 @@ plus icon and search for the MySQL connection that we made earlier.
 
 	![](./images/12.png "")
 
-38. Under Schema, select osCommerce”. Next, you will need to select which tables you would like to pull information from. In this lab, we selected the “Products” table. When you have selected what table you would like to use, click on the > icon in the middle and it will add your selected table to the Selected list box. Then, click on Import Tables. Once that is complete, click on “Next”, as well as on the next window that shows up.
+38. Under Schema, select osCommerce”. Next, you will need to select which tables you would like to pull information from. In this lab, you can selecte the “Products” table. When you have selected what table you would like to use, click on the > icon in the middle and it will add your selected table to the Selected list box. Then, click on Import Tables. Once that is complete, click on “Next”, as well as on the next window that shows up.
 
 	![](./images/13.png "")
 
@@ -242,7 +242,7 @@ Click “Done” if all information is correct.
 
 	![](./images/14.png "")
 
-40. After completing the first step in the Orchestration, you will see the MySQL endpoint on the map. Between the MySQL source and the stop icon, you will click on the plus icon and search for the ADW connection we made previously.
+40. After completing the first step in the Orchestration, you will see the MySQL endpoint on the map. Between the MySQL source and the stop icon, you will click on the plus icon and search for the ADW connection you made previously.
 
 	![](./images/15.png "")
 
@@ -257,7 +257,7 @@ Click “Done” if all information is correct.
 
 	![](./images/17.png "")
 
-44. After clicking done, you will be brought back to the orchestration map. Click on “Make to Destination”, and then click on the pencil icon. Here, we will map the columns from the Products table in our MySQL database to the columns from the Products table in the ADW instance we have.
+44. After clicking done, you will be brought back to the orchestration map. Click on “Make to Destination”, and then click on the pencil icon. Here, you will map the columns from the Products table in our MySQL database to the columns from the Products table in the ADW instance you have.
 
 	![](./images/18.png "")
 
@@ -340,7 +340,7 @@ Previous button. Once confirmed, click on Create
 
 ### **Connect an ADW/ATP Instance to OAC**
 
-13. To connect an ADW instance to OAC, from the dashboard, click on Create. A new window will open, where you will need to select what type of database you are using. In this example, we picked Oracle ADW.
+13. To connect an ADW instance to OAC, from the dashboard, click on Create. A new window will open, where you will need to select what type of database you are using. In this example, you picked Oracle ADW.
 
 	![](./images/36.png "")
 

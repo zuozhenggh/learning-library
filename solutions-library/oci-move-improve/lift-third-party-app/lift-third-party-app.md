@@ -24,7 +24,7 @@ Estimated Lab Time: 2 hour
 ### Administrative Notes
 Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premises E-Commerce application and capture a snapshot of it in the form of a .ova file which is converted to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Step 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RESn-5QglIRk9KsiNt2Wgg6n38YvS0lPgfVuSAjhL5TEREREj3QGLR1RTXvSdS_5/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo-disk002.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
 
-## **STEP 1:** Configuration of E-Commerce application
+## **STEP 1:** Configuration of E-Commerce application [Optional]
 ### **Download VirtualBox and Import Ubuntu Instance**
 1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nrjxMMpCyJEt_2_4QFEOmVQR04RRqCrdIWgD6UqIkPUI4GkS8B1B2WY9fqufO_Ix/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
 
@@ -38,11 +38,11 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ![](./images/3.png "")
 
-4. Once complete, you will see the osCommerceDemo virtual box listed. Hit the Green Start Arrow and you will be prompted with a login screen with username *oscommerce*. the Default password is *oscommerce*. Once logged in you may or may not be prompted to update to Ubuntu 16.04.6. Click on “Don’t Upgrade”. You have now successfully imported Ubuntu to VirtualBox that we will now use to initialize our osCommerce application.
+4. Once complete, you will see the osCommerceDemo virtual box listed. Hit the Green Start Arrow and you will be prompted with a login screen with username *oscommerce*. the Default password is *oscommerce*. Once logged in you may or may not be prompted to update to Ubuntu 16.04.6. Click on “Don’t Upgrade”. You have now successfully imported Ubuntu to VirtualBox that you will now use to initialize your osCommerce application.
 
     ![](./images/4.png "")
 
-5. If you you would like to increase the desktop view of the VirtualBox, click on the Gear icon on the top right of the Ubuntu instance. When the System Settings window opens, click on Displays. From here click on your preferred resolution and click apply. The resolution will then change. Click on “Keep This Configuration” to save changes. This will give you more screen space in case the default 800x600 (4:3) resolution was too small.
+5. If you would like to increase the desktop view of the VirtualBox, click on the Gear icon on the top right of the Ubuntu instance. When the System Settings window opens, click on Displays. From here click on your preferred resolution and click apply. The resolution will then change. Click on “Keep This Configuration” to save changes. This will give you more screen space in case the default 800x600 (4:3) resolution was too small.
 
     ![](./images/5.png "")
 
@@ -50,7 +50,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
 ### **LAMP Stack Prereqs**
 
-6. The LAMP stack stands for Linux, Apache, MySQL, PHP and SSH. In this section we will verify your internet connection.
+6. The LAMP stack stands for Linux, Apache, MySQL, PHP and SSH. In this section you need to verify your internet connection.
 
 7. Before installing any of the packages on the Ubuntu image on VirtualBox, make sure that you are connected to the public internet. Shut down the virtual machine, then disable/turn off any VPN applications/programs, then start up the Ubuntu Virtual machine. This will allow the Ubuntu Virtual Machine to download and install Linux packages.
 
@@ -63,7 +63,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     </copy>
     ```
 
-9. You will be asked to provide a password for the MySQL “root” user – this password is valid for the user root@localhost as well as root@server1.example.com, so we don't have to specify a MySQL root password manually later on. NOTE: Write this password down. You will need it for multiple parts of the lab going forward.
+9. You will be asked to provide a password for the MySQL “root” user – this password is valid for the user root@localhost as well as root@server1.example.com, so you don't have to specify a MySQL root password manually later on. NOTE: Write this password down. You will need it for multiple parts of the lab going forward.
 
 10. Run this command to complete the installation:
     ```
@@ -143,7 +143,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     </copy>
     ```
 
-19. Create a database user named oscommerceuser . Replace "type password here" with a password of your choice. In this example we used *oscommerce*  as our password for the sake of simplicity. Regardless of what you choose it is highly recommended that you **copy down your password** as you will need it for other portions of the lab. Please manually typing the following commands due to the formatting of apostraphes.
+19. Create a database user named oscommerceuser . Replace "type password here" with a password of your choice. In this example use *oscommerce*  as our password for the sake of simplicity. Regardless of what you choose it is highly recommended that you **copy down your password** as you will need it for other portions of the lab. Please manually typing the following commands due to the formatting of apostraphes.
 
     ```
     <copy>
@@ -238,7 +238,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     </copy>
     ```
 
-27. Next, run the commands below to copy osCommerce content to the default root directory for Apache2. You can choose to customize Apache2 root directory, but for this post, we’re going to use the default location which is at /var/www/html
+27. Next, run the commands below to copy osCommerce content to the default root directory for Apache2. You can choose to customize Apache2 root directory, here you can use the default location which is at /var/www/html
 
     ```
     <copy>
@@ -269,7 +269,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     </copy>
     ```
 
-29. Open firefox and navigate to localhost/catalog. You should see the setup wizard; all steps in this installation need to be completed before we can move on. Follow screenshots below to make sure settings are consistent.
+29. Open firefox and navigate to localhost/catalog. You should see the setup wizard; all steps in this installation need to be completed before you move forward. Follow screenshots below to make sure settings are consistent.
 
     ![](./images/9.png "")
 
@@ -281,7 +281,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ![](./images/11.png "")
 
-32. Finally, set the OSCommerce online store settings info. We recommend that you make a note of the administrator username and password for later reference.
+32. Finally, set the OSCommerce online store settings info. Please make a note of the administrator username and password for later reference.
 
     ![](./images/12.png "")
 
@@ -319,7 +319,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ![](./images/16.png "")
 
-37. Go to “Categories/Products” then “Hardware”, click ‘Oracle Hardware’, then click ‘New Product’, and fill out the fields. Download an image, from the browser, of the product and save it to the pictures folder, to then attach to the new product. We selected ‘Oracle Exadata’ as our product.
+37. Go to “Categories/Products” then “Hardware”, click ‘Oracle Hardware’, then click ‘New Product’, and fill out the fields. Download an image, from the browser, of the product and save it to the pictures folder, to then attach to the new product. You can select ‘Oracle Exadata’ as our product.
 
     ![](./images/17.png "")
 
@@ -363,19 +363,19 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ![](./images/23.png "")
 
-4. Select the option “Create Virtual Cloud Network Plus Related Resources.” This will generate the required resources for a publicly accessible subnet including default route tables, internet gateways, and security lists. All pre-generated resources will be displayed, e.g. “Create Internet Gateway.” Be choosing the related resources option we minimize additional config. If this option is not available you will need to create an internet gateway and a route table that sends all traffic to the IGW.
+4. Select the option “Create Virtual Cloud Network Plus Related Resources.” This will generate the required resources for a publicly accessible subnet including default route tables, internet gateways, and security lists. All pre-generated resources will be displayed, e.g. “Create Internet Gateway.” By choosing the related resources option you will minimize additional config. If this option is not available you will need to create an internet gateway and a route table that sends all traffic to the IGW.
 
     ![](./images/24.png "")
 
 ### **Security List Config**
 
-5. It's vitally important that we lock down this application as malicious third parties will exploit open ports if not configured correctly. In this instance we need to set security list ingress and egress rules to control the types of traffic allowed in and out of the subnet and OSCommerce instance. Specifically:
+5. It's vitally important that you lock down this application as malicious third parties will exploit open ports if not configured correctly. In this instance you need to set security list ingress and egress rules to control the types of traffic allowed in and out of the subnet and OSCommerce instance. Specifically:
     * Allow Port 22 for SSH and 443 for HTTPS
     * Allow port 3306 for
     * Alow port 80 for http
     * Allow Port 5901 for VNC
 
-6. For production instances **never** open up all traffic via 0.0.0.0/0 on a given port. This will make your application extremely vulnerable to third party attackers. In this lab we will do this for the sake of easy configuration but it is highly recommended that after the lab you lock these ports down.
+6. For production instances **never** open up all traffic via 0.0.0.0/0 on a given port. This will make your application extremely vulnerable to third party attackers. In this lab you will do this for the sake of easy configuration but it is highly recommended that after the lab you lock these ports down.
 
     ![](./images/Ingress.png "")
     ![](./images/26.png "")
@@ -502,7 +502,7 @@ drop down.Click the blue button and select "Import Image"
 ### **Confirm Customized OsCommerce App is Running**
 
 15. Open Firefox and enter in instance's IP Address.
-16. If you see a similar window as shown in the photo below, you have successfully completed this lab! In the next lab, we will make changes to the apache configuration file to resolve the broken url's issue.
+16. If you see a similar window as shown in the photo below, you have successfully completed this lab! In the next lab, you will make changes to the apache configuration file to resolve the broken url's issue.
 
     ![](./images/imageR1.png "")
 

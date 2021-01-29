@@ -1,7 +1,7 @@
 # OCI Move and Improve Workshop
 
 ## Introduction
-This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The workshop will also walk you through the process of making the application highly-available. Later you will learn how to handle the case of disaster scenarios by leveraging Oracle's DNS services for traffic steering. The workshop also focuses on how to connect your eCommerce application to MDS (MySQL Database Service) on OCI. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data.
+This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The workshop will also walk you through the process of making the application highly-available. Later you will learn how to handle the case of high availablility by leveraging Oracle's Load Balancer and DNS services for traffic steering. The workshop also focuses on how to connect your eCommerce application to MDS (MySQL Database Service) on OCI. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data.
 
 For a technical overview of the workshop, watch the following video below.
 [](youtube:KuT6DksQpKc)
@@ -29,7 +29,10 @@ Oracle offers a complete portfolio of products, services, and differentiated cap
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 
 ## Appendix:  Workshop Assumptions
-*Note:* This workshop is intended to be a comprehensive full cloud showcase. As such, it is assumed a user going through this workshop will be provisioning resources and creating users from scratch. If you decide to use existing infrastructure or resources, be aware and keep note of your namings so resources don't overlap and conflict.
+*Note:* Please note below :
+* This workshop is intended to be a comprehensive full cloud showcase. As such, it is assumed a user going through this workshop will be provisioning resources and creating users from scratch. If you decide to use existing infrastructure or resources, be aware and keep note of your namings so resources don't overlap and conflict.
+* This workshop is not intended to be used as the only mean to lift and shift on-prem third party application to OCI. It's sole purpose is to make you aware of OCI Services involved in lift and shift of Lamp Stack Application to Oracle Cloud.
+* For simplicity, this workshop focuses on migration of VMDK file to OCI. However in real world scenario's you would need to migrate the code of your Application to OCI and configure Server along with the required libraries to make your application up and running.
 
 *Note:* Additionally, as much as possible, do not stray away from the naming conventions used for resources in this workshop. You may run into errors if you do.
 

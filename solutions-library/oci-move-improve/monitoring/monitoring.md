@@ -1,7 +1,7 @@
 # Monitoring your Application with Oracle Management Cloud
 
 ## Introduction
-This lab will walk you through the process on how to install an agent onto an existing application on the cloud. First, you will download the agent, then move it to your virtual machine with the app from Lab 100, and unzip it. After we confirm the agent is monitoring the application, we will then utilize entity discovery to better monitor the MySQL database in the environment.
+This lab will walk you through the process on how to install an agent onto an existing application on the cloud. First, you will download the agent, then move it to your virtual machine with the app from Lab 100, and unzip it. After you have confirm the agent is monitoring the application, you will then utilize entity discovery to better monitor the MySQL database in the environment.
 
 ### Objectives
 * Learn how to install, move and unzip cloud agents
@@ -90,7 +90,7 @@ Estimated Lab Time: 2 hour
 
     ![](./images/7.png "")
 
-13. If you type ```ls``` again, you should see some additional files in your directory. The "agent.rsp" file is the one we’re currently interested in.
+13. If you type ```ls``` again, you should see some additional files in your directory. The "agent.rsp" file is the one you are currently interested in.
 
 14. Use your favorite text editor to open the file. In this case, I’m using the command ```nano agent.rsp```
 
@@ -113,9 +113,9 @@ Estimated Lab Time: 2 hour
 
     ![](./images/8.png "")
 
-17. Save any changes and exit out. In our case, we type Control + X to exit, type Y to save, then enter.
+17. Save any changes and exit out. In this case, you can type Control + X to exit, type Y to save, then enter.
 
-18. Next, we’ll execute one of the scripts, by typing:
+18. Next, you’ll execute one of the scripts, by typing:
     
     ```
     <copy>
@@ -165,7 +165,7 @@ Estimated Lab Time: 2 hour
 
     ![](./images/12.png "")
 
-4. Once here, we need to create a user for OMC to use, and give it the appropriate permissions.
+4. Once here, you need to create a user for OMC to use, and give it the appropriate permissions.
 
 5. To create the user, type the command:
 
@@ -189,9 +189,9 @@ Estimated Lab Time: 2 hour
 
 8. Type 'exit' to exit mysql.
 
-9. Next, we need to update the config file for MySQL to allow for outside connections.
+9. Next, you need to update the config file for MySQL to allow for outside connections.
 
-10. First, we need to change to the root directory.
+10. First, you need to change to the root directory.
 
     Type the command:
     ```
@@ -213,13 +213,13 @@ Estimated Lab Time: 2 hour
 
     ![](./images/14.png "")
 
-12. Next, we need to navigate to the MySQL folder, which is inside of etc.
+12. Next, you need to navigate to the MySQL folder, which is inside of etc.
 
     Type the command
     ```cd etc/mysql/```
     to change to this directory.
 
-13. If we do an ```ls``` here, we should be able to see the my.cnf file.
+13. If you do an ```ls``` here, you should be able to see the my.cnf file.
 
     ![](./images/15.png "")
 
@@ -231,7 +231,7 @@ Estimated Lab Time: 2 hour
     </copy>
     ```
 
-15. Once here, we need to scroll down and find 'bind-address'. The value needs to be changed here to 0.0.0.0 to allow all connections.
+15. Once here, you need to scroll down and find 'bind-address'. The value needs to be changed here to 0.0.0.0 to allow all connections.
 
     ![](./images/16.png "")
 
@@ -268,11 +268,11 @@ Estimated Lab Time: 2 hour
 
 ### **Creating Dashboards**
 
-26. Now that our agent is installed on the instance, and we have successfully discovered the MySQL Database, it's time to create some useful visualizations and dashboards.
+26. Now that our agent is installed on the instance, and you have successfully discovered the MySQL Database, it's time to create some useful visualizations and dashboards.
 
 27. First, head back over to OMC, and on the hamburger menu on the left hand side of the screen, click 'Data Explorer'
 
-28. On the top of the screen is a bar called the context bar. This will change what entity we are looking to create visualizations on. Always be mindful of what is in the context bar, and the time period on the right of it.
+28. On the top of the screen is a bar called the context bar. This will change what entity you are looking to create visualizations on. Always be mindful of what is in the context bar, and the time period on the right of it.
 
 29. On the context bar, type in
     ```MySQL```
@@ -280,7 +280,7 @@ Estimated Lab Time: 2 hour
 
     ![](./images/20.png "")
 
-30. Now that we're here, let's create a widget that will monitor our CPU Utilization and our Memory Usage. First, we need to clear out everything in the Visualize panel by clicking the small x on each of the filters. For the graph type, select line chart from the drop down under the visualize panel.
+30. Now that you are here, let's create a widget that will monitor our CPU Utilization and our Memory Usage. First, you need to clear out everything in the Visualize panel by clicking the small x on each of the filters. For the graph type, select line chart from the drop down under the visualize panel.
 
     ![](./images/21.png "")
 

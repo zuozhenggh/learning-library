@@ -23,7 +23,7 @@ Estimated Lab Time: 1 hour
 
     ![](./images/2.png "")
 
-3. Now enter the credentials for MDS Instance. Please select the same VCN and public subnet we created in previous lab. And click Next.
+3. Now enter the credentials for MDS Instance. Please select the same VCN and public subnet you created in previous lab. And click Next.
 
     ![](./images/3.png "")
 
