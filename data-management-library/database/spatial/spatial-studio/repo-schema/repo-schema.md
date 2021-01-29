@@ -96,7 +96,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management
-* **Last Updated By/Date** - David Lapp, January 2021
+* **Last Updated By/Date** - David Lapp, Database Product Management, January 2021
 
 
 ## Need Help?

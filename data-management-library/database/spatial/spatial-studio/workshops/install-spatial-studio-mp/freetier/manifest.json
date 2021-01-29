@@ -21,10 +21,10 @@
   },
     {
       "title": "Lab 3: Database User for Spatial Studio Repository",
-      "filename": "../../../../spatial-studio/env/repo-schema/repo-schema.md"
+      "filename": "../../../repo-schema/repo-schema.md"
   },    {
       "title": "Lab 4: Install Spatial Studio",
-      "filename": "../../../../spatial-studio/env/env-marketplace/env-marketplace.md"
+      "filename": "../../../env-mp/env-mp.md"
 }
     ]
 }
