@@ -37,7 +37,7 @@ In this lab, you:
 
 1. Select the compartment that you want to contain the notebook session.
 1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
-1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. In this lab, it is suggested a VM.Standard2.4 or larger is used.
+1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, select a VM.Standard2.4.
 1. Enter the block volume in GB. The suggested size is 100 Gb or larger. 
 1. Select the VCN compartment that contains the VCN that you want to use. 
 1. Select the VCN to use.
@@ -72,7 +72,7 @@ Once the notebook session has been created the notebook session page shows the n
 
 1. If the notebook is in an **Inactive** state, then:
     1. Click **Activate** to open the **Activate Notebook Session** dialog with the configuration from the last time the notebook session was activated or created.
-    1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. In this lab, it is suggested a VM.Standard2.4 or larger is used.
+    1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, select a VM.Standard2.4.
     1. Enter the block volume in GB. The suggested size is 100 Gb or larger. The size of the block storage can be increased, but not decreased. 
     1. Select the VCN compartment that contains the VCN that you want to use. 
     1. Select the VCN to use.
