@@ -23,35 +23,33 @@ Learn how to create a graph from relational data sources by:
 
     ```
     <copy>
-    opgpy -b http://localhost:7007 --username customer_360
+    opgpy -b https://localhost:7007 --username customer_360
     </copy>
     ```
 
     You should see the following if the client shell starts up successfully.
 
     ```
-    enter password for user graph_dev (press Enter for no password):    <-- input "Welcome1"
-    
-    Oracle Graph Client Shell 20.4.0
+    enter password for user customer_360 (press Enter for no password):
+    Oracle Graph Client Shell 21.1.0
     >>>
     ```
 
 ## **STEP 2:** Create the graph
 
-1. Set up the create property graph statement.
+1. Set up the create property graph statement, which creates the graph from the existing tables.
 
     ```    
-    // create the graph from the existing tables
     <copy>
     statement = '''
     CREATE PROPERTY GRAPH customer_360
       VERTEX TABLES (
         customer
-          PROPERTIES (type, name, age, location, gender, student)
+          PROPERTIES (id, type, name, age, location, gender, student)
       , account
-          PROPERTIES (type, account_no, balance)
+          PROPERTIES (id, type, account_no, balance)
       , merchant
-          PROPERTIES (type, name)
+          PROPERTIES (id, type, name)
      )
      EDGE TABLES (
         owned_by
@@ -77,8 +75,6 @@ Learn how to create a graph from relational data sources by:
     '''
     </copy>
     ```
-
-    ![](images/create_graph_1.png)
 
 2. Now execute the PGQL DDL to create the graph.
 
