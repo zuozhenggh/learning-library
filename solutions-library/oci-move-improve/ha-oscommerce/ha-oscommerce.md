@@ -1,7 +1,7 @@
 # High Availability for the E-Commerce instance
 
 ## Introduction
-In this lab, you will learn how you can setup disaster recovery for your app in Oracle Cloud leveraging different availability domains (or across regions). One of the key principles of designing high availability solutions is to avoid single point of failure. you will deploy Compute instances that perform the same tasks in multiple availability domains. You can use the custom image you used for primary compute instance to deploy secondary compute instance in a different Availability domain. This design removes a single point of failure by introducing redundancy. The following diagram illustrates how you can achieve high availability.
+In this lab, you will learn how you can setup disaster recovery for your app in Oracle Cloud leveraging different availability domains (or across regions). One of the fundamental principles of designing high availability solutions is to avoid a single point of failure. You will deploy Compute instances that perform the same tasks in multiple availability domains. You can use the custom image you used for the primary compute instance to deploy a secondary compute instance in a different Availability domain. This design removes a single point of failure by introducing redundancy. The following diagram illustrates how you can achieve high availability.
     ![](./images/1.png "")
 
 For technical videos that walk through this portion of the lab, please see the links below:
@@ -13,15 +13,15 @@ For technical videos that walk through this portion of the lab, please see the l
 
 ### Objectives
 
-* Learn how to leverage Oracle Cloud infrastructure to create a high available and disaster recovery solution for your applications.
-* Learn how to replicate your primary server to secondary server using Rsync, mysqldump utility.
+* Learn how to leverage Oracle Cloud infrastructure to create a highly available and disaster recovery solution for your applications.
+* Learn how to replicate your primary server to a secondary server using Rsync, mysqldump utility.
 * Learn how to provision and configure Load Balancer and setup backend servers.
 * Learn how to configure DNS Failover with Traffic Management Steering policy
 
 
 ### Prerequisites
-* 2 OsCommerce compute servers (You already have primary oscommerce compute instance. Spin up a secondary compute instance from your oscommerce custom image into a different Availability domain than the AD where your primary compute reside)
-* Make sure you have setup ssh access from local to both the servers and from primary server to secondary server and vice-versa (More information in the lab below)
+* 2 OsCommerce compute servers (You already have a primary OsCommerce compute instance. Spin up a secondary compute instance from your OsCommerce custom image into a different Availability domain than the AD where your primary compute reside)
+* Make sure you have setup ssh access from local to both the servers and from the primary server to secondary server and vice-versa (More information in the lab below)
 * A Domain name (To demonstrate failover)
 
 Estimated Lab Time: 2 hour
@@ -29,18 +29,18 @@ Estimated Lab Time: 2 hour
 
 ### **Installing rsync utility on primary and secondary compute instances**
 
-1. Run the following command on primary compute instance.
+1. Run the following command on the primary compute instance.
     ```
     <copy>
     sudo apt-get install rsync
     </copy>
     ```
 
-2. Repeat the same for secondary compute instance.
+2. Repeat the same for the secondary compute instance.
 
 ### **Securely copy your private ssh key to primary compute OR Generate new ssh key pair**
 
-3. As written in the pre-reqs, you will require to setup ssh access from primary server to secondary server and vice-versa. If you want to use the same ssh keys as the one you are using to ssh into oscommerce compute, you can scp the private key file from local to primary oscommerce instance by using the following:
+3. As written in the prereqs, you will require to setup ssh access from the primary server to the secondary server and vice-versa. If you want to use the same ssh keys as the one you are using to ssh into OsCommerce compute, you can scp the private key file from local to primary oscommerce instance by using the following:
 Run the following command in your local terminal
 
     ```
@@ -49,7 +49,7 @@ Run the following command in your local terminal
     </copy>
     ```
 
-    Note: scp command is included in mac/linux, so need to download anything. Howevever, if you are using Windows, install PuTTy which includes PSCP or you can also use [WinSCP](https://winscp.net/eng/index.php)
+    Note: scp command is included in mac/Linux, so need to download anything. However, if you are using Windows, install PuTTy, which includes PSCP, or you can also use [WinSCP](https://winscp.net/eng/index.php)
     ![](./images/2.png "")
 
 4. If you want to use new ssh keys, use Method 2 - Create new keys. And on each server run
@@ -84,9 +84,9 @@ Run the following command in your local terminal
 
 ### **Replicate web server files and database files**
 
-8. Our web server files are located at /var/www/html. In order to demonstrate replication of web server files from primary server to secondary server, lets delete all the web server files from secondary server and then set up a replication from primary server using rsync.
+8. Our web server files are located at /var/www/html. To demonstrate replication of web server files from primary server to secondary server, let's delete all the webserver files from the secondary server and then set up replication from the primary server using rsync.
 
-9. On secondary server, run the following command.
+9. On the secondary server, run the following command.
     ```
     <copy>
     sudo rm -rf /var/www/html
@@ -109,12 +109,12 @@ Run the following command in your local terminal
     </copy>
     ```
 
-12. Please note: For the purpose of this lab, you can are use chmod 777, however setting up 777 permissions is not recommended for production environments. The intention here is to quickly demonstrate replication and failover.
+12. Please note: For this lab, you can use chmod 777; however, setting up 777 permissions is not recommended for production environments. The intention here is to demonstrate replication and failover quickly.
 
 
     ![](./images/3.png "")
 
-13. Now, you will perform the rsync command from primary server to secondary server to replicate the files. Run the following command on server 1 (primary). The ip address below is for the secondary server.
+13. Now, you will perform the rsync command from primary server to secondary server to replicate the files. Run the following command on server 1 (primary). The IP address below is for the secondary server.
 
     ```
     <copy>
@@ -122,13 +122,13 @@ Run the following command in your local terminal
     </copy>
     ```
 
-14. If you go to secondary server, you can see the following files in the /var/www/html directory
+14. If you go to the secondary server, you can see the following files in the /var/www/html directory
 
     ![](./images/4.png "")
 
-    You have successfully replicated the web server files. Similarly, you can replicate the mysql files as well. You can do this in many ways:
+    You have successfully replicated the webserver files. Similarly, you can replicate the MySQL files as well. You can do this in many ways:
         * Using rsync as above
-        * Using mysql dump utility
+        * Using mysqldump utility
 
 
 ### **Replicate mysql database files**
@@ -160,7 +160,7 @@ Run the following command in your local terminal
     ![](./images/5.png "")
 
 
-18. Restart mysql
+18. Restart MySQL
 
     ```
     <copy>
@@ -168,7 +168,7 @@ Run the following command in your local terminal
     </copy>
     ```
 
-19. In order for our database in our secondary server to communicate to the database in the primary server, do the following in the primary server- Go to mysql terminal by typing:
+19. For our database in our secondary server to communicate to the database in the primary server, do the following in the primary server- Go to MySQL terminal by typing:
 
     ```
     <copy>
@@ -176,9 +176,9 @@ Run the following command in your local terminal
     </copy>
     ```
 
-20. On mysql terminal, run the following commands:
+20. On MySQL terminal, run the following commands:
 
-    **Note: ip_address is the ip address of the secondary server**
+    **Note: ip_address is the IP address of the secondary server**
 
     ```
     <copy>
@@ -191,7 +191,7 @@ Run the following command in your local terminal
     </copy>
     ```
 
-21. Now, go to the secondary server. Delete the oscommerce database and create an empty oscommerce database as follows:
+21. Now, go to the secondary server. Delete the OsCommerce database and create an empty oscommerce database as follows:
 
     ![](./images/5a.png "")
 
@@ -213,7 +213,7 @@ Run the following command in your local terminal
     </copy>
     ```
 
-    **Note: Here, the host ip address should be the ip address of the primary server since you are replicating from primary to secondary server.**
+    **Note: Here, the host IP address should be the IP address of the primary server since you are replicating from the primary to the secondary server.**
 
     ![](./images/6.png "")
 
@@ -221,14 +221,14 @@ Run the following command in your local terminal
 
     ![](./images/5b.png "")
 
-    Note this particular mysqldump command does not create a dump file, but rather migrates all tables of the specified database from source to the target thereby keeping the source and target database consistent.
+    Note this particular mysqldump command does not create a dump file but rather migrates all the specified database tables from source to the target, thereby keeping the source and target database consistent.
 
-26. Thus, you have the webserver files as well as the database files in a secondary server safe and with latest updates. Furthermore, you can setup cron jobs for automation rather than running the rsync and mysqldump commands manually every time.
+26. Thus, you have the webserver files and the database files in a secondary server safe and with the latest updates. Furthermore, you can setup cron jobs for automation rather than running the rsync and mysqldump commands manually every time.
 
 ## **STEP 2:** Configure Load Balancer
-At this point of time, our primary server and secondary server are in sync. Lets proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover like using keepalived, using load balancers and using DNS Traffic Management Steering policies in OCI. For the purpose of this lab, you will use the Load Balancer service which provides automated traffic distribution 
+At this point, our primary server and secondary server are in sync. Let's proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover, like using keepalived, using load balancers, and using DNS Traffic Management Steering policies in OCI. For this lab, you will use the Load Balancer service, which provides automated traffic distribution. 
 
-### **Make your application accessible from your ip address**
+### **Make your application accessible from your IP address**
 
 1. ssh into your primary compute instance
 
@@ -269,55 +269,55 @@ At this point of time, our primary server and secondary server are in sync. Lets
     </copy>
     ```
 
-5. Now, if you hit your public ip address in the browser, you should be able to see your app running.
+5. Now, if you hit your public IP address in the browser, you should be able to see your app running.
     ![](./images/imageR2.png "")
 
 ### **Create Load Balancer**
 
-1. The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address, and provisioned bandwidth.
+1. The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address and provisioned bandwidth.
 
 2. To create a load balancer, please goto Networking >> Load Balancer as shown below. 
     ![](./images/imageR3.png "")
 
-3. Click Create Load Balancer and give name to your load balancer. Select visibility as public and assign Ephemeral IP Address. Also select dynamic shape of 10mbps. Please select the VCN you have created for the workshop and a regional public subnet. Kindly refer below.
+3. Click Create Load Balancer and give your name to your load balancer. Select visibility as public and assign an Ephemeral IP Address. Also, select a dynamic shape of 10mbps. Please select the VCN you have created for the workshop and a regional public subnet. Kindly refer below.
     ![](./images/imageR4.png "")
 
-    **Note:** It is recommended to have load balancer in different public regional subnet than your compute instance's subnet.
+    **Note:** It is recommended to have the load balancer in a different public regional subnet than your compute instance's subnet.
 
 4. A load balancer will distribute the traffic according to the selected policy. For this lab, please select Weighted Round Robin. Keep everything default. To learn more about load balancer policies, refer [here](https://docs.oracle.com/en-us/iaas/Content/Balance/Reference/lbpolicies.htm)
     ![](./images/imageR5.png "")
 
-5. Please name your load balancer listener and select HTTP as type of traffic your listener will handle.
+5. Please name your load balancer listener and select HTTP as the type of traffic your listener will handle.
     ![](./images/imageR6.png "")
 
-6. Click Submit and this will create your load balancer.
+6. Click Submit, and this will create your load balancer.
 
-7. Open your load balancer. Under resources you will find option to add backend sets. Please click your Backend Sets.
+7. Open your load balancer. Under resources, you will find the option to add backend sets. Please click your Backend Sets.
     ![](./images/imageR7.png "")
 
 8. Click Add Backends. Here you can select your two compute VM's you created in earlier steps. And select the default security list for each of the compute VM's.
     ![](./images/imageR8.png "")
 
-9. It will take few minutes, to setup the backend servers. After few minutes refresh your browser, you will be able to see backend health as OK. Overall Health as OK. Please check below.
+9. It will take few minutes to setup the backend servers. After few minutes refresh your browser, you will be able to see backend health as OK. Overall Health as OK. Please check below.
     ![](./images/imageR9.png "")
 
-10. Now grab your Load Balancer IP Address and open the ip address on browser. You will be able to see your E-Commerce web page. Let's test the load balancer.
+10. Now grab your Load Balancer IP Address and open the IP address on the browser. You will be able to see your E-Commerce web page. Let's test the load balancer.
     ![](./images/imageR10.png "")
     ![](./images/imageR11.png "")    
 
-11. Now, you can go back to compute console and stop your primary Compute Instance. Once your compute instance has stopped. Please check your load balancer ip address on browser. It will still open the E-Commerce website as the load balancer will automatically redirect you to secondary server. This way you can achieve high availability even when one of the compute node is down.
+11. Now, you can go back to compute console and stop your primary Compute Instance. Once your compute instance has stopped. Please check your load balancer IP address on the browser. It will still open the E-Commerce website as the load balancer will automatically redirect you to the secondary server. This way, you can achieve high availability even when one of the compute nodes is down.
 
-11. Congratulations, you have successfully configured Load Balancer. Next Step is optional. It will explore how to use DNS and Traffic Management Steering Policy.
+11. Congratulations, you have successfully configured Load Balancer. The next step is optional. It will explore how to use DNS and Traffic Management Steering Policy.
 
 ## **STEP 3:** Configure DNS failover [Optional]
 
 ### **Export DNS zone file**
 
-**Prequisites**
+**Prerequisites**
 
-1. For this section of a lab, you will need a domain name. There are many domain name registrars like GoDaddy, NameCheap or Google, where you will be able to purchase domain names for about $2-3. You can Google as the domain name registrar for this lab. Any domain name should work for this exercise.
+1. For this section of a lab, you will need a domain name. There are many domain name registrars like GoDaddy, NameCheap, or Google, where you will be able to purchase domain names for about $2-3. You can Google as the domain name registrar for this lab. Any domain name should work for this exercise.
 
-    Please watch below videos in order to get an idea about OCI DNS and how failover works.
+    Please watch the following videos to get an idea about OCI DNS and how failover works.
 
     * [What is DNS?](https://www.youtube.com/watch?v=SnMumcIE1aw)
     * [DNS overview & Demo](https://www.youtube.com/watch?v=dfKeDh79HdQ)
@@ -329,10 +329,10 @@ At this point of time, our primary server and secondary server are in sync. Lets
 
 ### **Create Zone on Oracle Cloud infrastructure**
 
-3. In this step, you will create a zone. A zone holds the trusted DNS records that will reside on Oracle Cloud Infrastructure’s nameservers. Navigate back to OCI console to create a zone using the exported file
+3. In this step, you will create a zone. A zone holds the trusted DNS records that will reside on Oracle Cloud Infrastructure's nameservers. Navigate back to the OCI console to create a zone using the exported file
     ![](./images/12.png "")
 
-4. Import file and create zone  
+4. Import file and create a zone  
 Import - Drag and drop, select, or paste a valid zone file into the Import Zone File window. The zone is imported as a primary zone.
 
     ![](./images/13.png "")
@@ -349,16 +349,16 @@ Note the name servers. You can use the noted name servers to change your domain'
 
     ![](./images/15.png "")
 
-8. I’m using google-domain in this case. Add name servers to your domain name server’s management console as shown below
+8. I'm using google-domain in this case. Add name servers to your domain name server's management console, as shown below
 
     ![](./images/16.png "")
 
 
 ### **Add an "A" record to DNS zone**
 
-9. There are many record types you can add to your zone, depending on your goals for the zone and its DNS management. For this Lab, you would add an “A” record. For more information about record types refer [Supported Resource Records](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Tasks/managingdnszones.htm)
+9. You can add many record types to your zone, depending on your goals for the zone and its DNS management. For this Lab, you would add an "A" record. For more information about record types, refer to [Supported Resource Records](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Tasks/managingdnszones.htm)
 
-10. Navigate back to Oracle cloud console, open the navigation menu. Under Core Infrastructure, go to Networking and click DNS Zone Management.
+10. Navigate back to the Oracle cloud console, open the navigation menu. Under Core Infrastructure, go to Networking and click DNS Zone Management.
 
     ![](./images/12.png "")
 
@@ -368,7 +368,7 @@ Note the name servers. You can use the noted name servers to change your domain'
 
     ![](./images/40.png "")
 
-12. In the Add Record dialog box, select a record type from the drop-down list, and then enter the information for the record. Under address, enter the public address of your primary server. Note the "NAME" box, this where you would create a sub-domain name that would be used later in this lab. Click Submit.
+12. In the Add Record dialog box, select a record type from the drop-down list, and then enter the record's information. Under address, enter the public address of your primary server. Note the "NAME" box, where you would create a sub-domain name that would be used later in this lab. Click Submit.
     ![](./images/41.png "")
 
 13. Once your records have been added, click Publish Changes.
@@ -381,24 +381,24 @@ Note the name servers. You can use the noted name servers to change your domain'
 
 ### **Create a failover traffic steering policy on OCI console**
 
-15. Traffic Management Steering Policies enables you to configure policies to serve intelligent responses to DNS queries, meaning different answers (endpoints) may be served for the query depending on the logic you define in the policy. Traffic Management Steering Policies can account for health of answers to provide failover capabilities
+15. Traffic Management Steering Policies enable you to configure policies to serve intelligent responses to DNS queries, meaning different answers (endpoints) may be served for the query depending on the logic you define in the policy. Traffic Management Steering Policies can account for the health of the responses to provide failover capabilities
 
     ![](./images/17.png "")
 
     ![](./images/18.png "")
 
-    There are other options here so make sure to select “failover”
+    There are other options here, so make sure to select "failover."
 
-16. Failover policies allow you to prioritize the order in which you want answers served in a policy (for example, Primary and Secondary). Oracle Cloud Infrastructure Health Checks are leveraged to determine the health of answers in the policy. If the Primary Answer is determined to be unhealthy, DNS traffic will automatically be steered to the Secondary Answer.
+16. Failover policies allow you to prioritize the order you want answers to be served in a policy (for example, Primary and Secondary). Oracle Cloud Infrastructure Health Checks are leveraged to determine the health of responses in the policy. If the Primary Answer is determined to be unhealthy, DNS traffic will automatically be steered to the Secondary Answer.
 
     ![](./images/19.png "")
 
-17. Configure the answer pools by filling in the name and public ip address of the OsCommerce compute instance. In my case I have a pool of 2 compute instances
+17. Configure the answer pools by filling in the OsCommerce compute instance's name and public IP address. In my case, I have a pool of 2 compute instances
 
     ![](./images/20.png "")
 
 18. Set the priority of the pools you created in the previous step
-Pool Priority: Failover priority rules specify the priority of answers that are served in a policy. If the primary answer is unavailable, traffic is steered to the next answer in the list.
+Pool Priority: Failover priority rules specify the priority of answers that are served in a policy. If the primary response is unavailable, traffic is steered to the next answer in the list.
 
     ![](./images/22.png "")
 
@@ -406,31 +406,31 @@ Pool Priority: Failover priority rules specify the priority of answers that are 
 
 19. A health check is a test to confirm the availability of backend servers. A health check can be a request or a connection attempt. In the Create Health Check dialog box, enter the following:
 * Health Check Name: The name used for the health check. Avoid entering confidential information.
-* Interval: Select the period of time between health checks of the target.
+* Interval: Select the interval between health checks of the target.
 * Protocol: The network protocol used to interact with your endpoint, such as HTTP protocol, which initializes an HTTP handshake with your endpoint.
 * Port: The port for the monitor to look for a connection. The default is port 80 for HTTP. For HTTPS, use port 443.
-* Path: The specific path on the target to be monitored.
+* Path: The specific path on the monitored target.
 * Method: Select the HTTP method used for the health check.
 * Timeout: Select the maximum time to wait for a reply before marking the health check as failed.
     ![](./images/23.png "")
 
 ### **Create Health Check**
 
-20. Attach the sub-domain name you create earlier to the policy
+20. Attach the sub-domain name you created earlier to the policy
 
     ![](./images/24.png "")
 
-21. Once you've created traffic management steering policy, Click on overview.make sure health status are "Healthy"
+21. Once you've created a traffic management steering policy, Click on the overview. Make sure the health status is "Healthy".
 
     ![](./images/44.png "")
 
-22. With a  web browser, access the oscommerce application using the sub-domain name
+22. With a  web browser, access the OsCommerce application using the sub-domain name
 
     Example: "public1.oscommercesite.com"
 
-    Test the failover mechanism by stopping apache2 service on the master node (primary server)
+    Test the failover mechanism by stopping the apache2 service on the master node (primary server)
 
-23. Login into the master node and stop apache service
+23. Login into the master node and stop the apache service
 
     ```
     <copy>
@@ -440,26 +440,26 @@ Pool Priority: Failover priority rules specify the priority of answers that are 
 
     ![](./images/45.png "")
 
-24. Check the failover policy overview, the master node’s heath-check status should have changed from “healthy” to “unhealthy “
+24. Check the failover policy overview; the master node's health-check status should have changed from "healthy" to "unhealthy".
 
     ![](./images/25.png "")
 
-25. However, if you go to your domain name - public1.oscommercesite.com, your website should still be running (after 30 seconds) since you configured a failover. Thus you can set up disaster recovery for your app in OCI easily and avoid single point of failure.
+25. However, if you go to your domain name - public1.oscommercesite.com, your website should still be running (after 30 seconds) since you configured a failover. Thus, you can easily set up disaster recovery for your app in OCI and avoid a single point of failure.
 
 ## Learn More
-* To learn about provisioning Networks and Network Security check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+* To learn about provisioning Networks and Network Security, check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 
-* To learn about Oracle's Load Balancer check out this [link](https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
+* To learn about Oracle's Load Balancer, check out this [link](https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
 
-* To learn about Oracle's DNS and Traffic Management check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/EdgeServices/overview.htm)
+* To learn about Oracle's DNS and Traffic Management, check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/EdgeServices/overview.htm)
 
 ## Acknowledgements
 * **Author** - Rajsagar Rawool, Oladipupo Akinade, Saurabh Salunkhe
 * **Last Updated By/Date** - Rajsagar Rawool, January 2021
 
-## Need Help ?
-If you are doing this module as part of an instructor led lab then please just ask the instructor.
+## Need Help?
+If you are doing this module as part of an instructor-led lab, take advantage and ask the instructor.
 
-If you are working through this module self guided then please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+If you are working through this module self-guided, please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please mention your workshop name and lab name.  Please also have screenshots and attach files when appropriate.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one
