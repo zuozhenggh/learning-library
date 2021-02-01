@@ -1,132 +1,132 @@
-# Provisioning Autonomous Database (ADW and ATP)
+# Oracle Autonomous Database のプロビジョニング(ADW と ATP)
 
 ## Introduction
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ADW instance and connect to the database using Oracle SQL Developer Web.
+このラボでは、OracleCloudでOracleAutonomous Database（Autonomous Data Warehouse [ADW]およびAutonomousTransaction Processing [ATP]）の使用を開始する手順について説明します。新しいADWインスタンスをプロビジョニングし、Oracle SQL DeveloperWebを使用してデータベースに接続します。
 
-*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
+*注意点：このラボではADWを使用していますが、ATPデータベースを作成して接続する手順は同じです。*
 
-Estimated time: 5 minutes
+推定時間：5分
 
-### Objectives
+### 目的
 
--   Learn how to provision a new Autonomous Database
+-   自律型データベースをプロビジョニングする方法を学ぶ
 
-### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the left.  In this lab, you will provision an ADB database instance using the cloud console.
+### 前提条件
+-　次のラボでは、<a href="https://www.oracle.com/cloud/free/" target="\_blank"> OracleCloudアカウント</a>が必要です。独自のクラウドアカウント、トライアルで取得したクラウドアカウント、無料利用枠アカウント、LiveLabsアカウント、またはオラクルのインストラクターから詳細が提供されたトレーニングアカウントを使用できます。
+-　このラボは、左側の[コンテンツ]メニューに表示される　**前提条件**ラボを完了していることを前提としています。このラボでは、クラウドコンソールを使用してADBデータベースインスタンスをプロビジョニングします。
 
-### Video Preview
+### ビデオプレビュー
 
-Watch a video demonstration of provisioning a new Autonomous Transaction Processing:
+自律型トランザクション処理のプロビジョニングのビデオデモをご覧ください:
 
 [](youtube:Q6hxMaAPghI)
 
-*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
+*注意点：このビデオのインターフェースは、表示されるインターフェースとは異なる場合があります。更新された情報については、以下の手順を参照してください。*
 
-## **STEP 1**: Choosing ADW or ATP from the Services Menu
+## **STEP 1**: サービスメニューからADWまたはATPを選択する
 
-1. Login to the Oracle Cloud, as shown in the previous lab.
-2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
+1. 前のラボで示したように、OracleCloudにログインします。
+2. ログインすると、利用可能なすべてのサービスを確認できるクラウドサービスダッシュボードが表示されます。左上のナビゲーションメニューをクリックして、トップレベルのナビゲーションの選択肢を表示します。
 
-    __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
+    __提示:__ ダッシュボードの　__クイック・アクション__　セクションで、Autonomous DataWarehouseまたはAutonomousTransactionProcessingサービスに直接アクセスすることもできます.
 
     ![Oracle home page.](./images/Picture100-36.png " ")
 
-3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database, so click **Autonomous Data Warehouse**.
+3. 次の手順は、Autonomous DataWarehouseまたはAutonomousTransactionProcessingのいずれにも同様に適用されます。このラボでは、Autonomous Data Warehouseデータベースのプロビジョニングについて説明しているので、** Autonomous Data Warehouse **　をクリックします
 
     ![Click Autonomous Data Warehouse.](images/LabGuide1-39fb4a5b.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
+4. Autonomous Data Warehouseインスタンスを表示するには、ワークロードタイプが　__データ・ウェアハウス__　または　__All__　であることを確認してください。 __リスト範囲__　ドロップダウンメニューを使用して、コンパートメントを選択します。 LiveLabs環境を使用している場合は、環境によって提供されるコンパートメントを必ず選択してください
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 
-   *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
+   *注意点：ManagedCompartmentforPaaSコンパートメントはOracle Platform Servicesで使用されるOracleのデフォルトであるため、使用しないでください。*
 
-5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
+5. このコンソールは、データベースがまだ存在しないことを示しています。データベースの長いリストがある場合は、データベースの　**状態**（使用可能、停止、終了など）でリストをフィルタリングできます。 __ワークロード・タイプ__　で並べ替えることもできます。ここでは、__データウェアハウス__　ワークロードタイプが選択されています.
 
     ![Autonomous Databases console.](./images/Compartment.png " ")
 
-6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
+6. 無料トライアルまたはAlwaysFreeアカウントを使用していて、Always Freeリソースを使用する場合は、AlwaysFreeリソースが利用可能な地域にいる必要があります。ページの右上隅に、現在のデフォルトの**リージョン**が表示されます
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
-## **STEP 2**: Creating the ADB instance
+## **STEP 2**: ADBインスタンスの作成
 
-1. Click **Create Autonomous Database** to start the instance creation process.
+1.  **Autonomous Databaseの作成** をクリックして、インスタンス作成プロセスを開始します
 
     ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
 
-2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
-3. Provide basic information for the autonomous database:
+2.  これにより、インスタンスの構成を指定する　__Autonomous Databaseの作成__　画面が表示されます。
+3. 自律データベースの基本情報を提供します:
 
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __ADWFINANCE__.
+    -　__コンパートメントを選択します__　-ドロップダウンリストからデータベースのコンパートメントを選択します。
+    -　__表示名__ -表示用にデータベースの覚えやすい名前を入力します。このラボでは、__ ADW FinanceMart__を使用します。
+    -　__データベース名__ -文字で始まる文字と数字のみを使用します。最大長は14文字です。 （アンダースコアは最初はサポートされていません。）このラボでは、__ ADWFINANCE__を使用します
 
     ![Enter the required details.](./images/Picture100-26.png " ")
 
-4. Choose a workload type. Select the workload type for your database from the choices:
+4. ワークロードタイプを選択します。選択肢からデータベースのワークロードタイプを選択します:
 
-    - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
-    - __Transaction Processing__ - Alternatively, you could have chosen Transaction Processing as the workload type.
+    - __データ・ウェアハウス__ - このラボでは、ワークロードタイプとして __データウェアハウス__ を選択します。
+    - __トランザクション処理__ - または、ワークロードタイプとしてトランザクション処理を選択することもできます。
 
     ![Choose a workload type.](./images/Picture100-26b.png " ")
 
-5. Choose a deployment type. Select the deployment type for your database from the choices:
+5. デプロイメント・タイプを選択します。選択肢からデータベースのデプロイメントタイプを選択します:
 
-    - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-    - __Dedicated Infrastructure__ - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
+    - __共有インフラストラクチャ__ - このラボでは、展開タイプとして __共有インフラストラクチャ__ を選択します.
+    - __専用インフラストラクチャ__ - または、展開タイプとして専用インフラストラクチャを選択することもできます。
 
     ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
 
-6. Configure the database:
+6. データベースを構成します:
 
-    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    - __Choose database version__ - Select a database version from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __2 CPUs__. Or, if you choose an Always Free database, it comes with 1 CPU.
-    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
-    - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
-    - __New Database Preview__ - If a checkbox is available to preview a new database version, do NOT select it.
+    - __Always Free__ -クラウドアカウントがAlwaysFreeアカウントの場合、このオプションを選択して、AlwaysFreeの自律型データベースを作成できます。常に無料のデータベースには、1つのCPUと20GBのストレージが付属しています。このラボでは、AlwaysFreeをオフのままにしておくことをお勧めします。
+    - __データベースバージョンの選択__ -使用可能なバージョンからデータベースバージョンを選択します。
+    - __OCPU数__ -サービスのCPUの数。このラボでは、__ 2CPU__を指定します。または、Always Freeデータベースを選択した場合は、CPUが1つ付属しています。
+    - __ストレージ（TB）__ -ストレージ容量をテラバイト単位で選択します。このラボでは、ストレージの__1TB__を指定します。または、Always Freeデータベースを選択した場合は、20GBのストレージが付属しています。
+    - __自動スケーリング__-このラボでは、自動スケーリングを有効にして、システムがワークロードの需要を満たすために最大3倍のCPUおよびIOリソースを自動的に使用できるようにします。
+    - __新しいデータベースプレビュー__ -新しいデータベースバージョンをプレビューするためのチェックボックスが使用可能な場合は、それを選択しないでください。
 
-    *Note: You cannot scale up/down an Always Free autonomous database.*
+    *注意点：AlwaysFree自律データベースをスケールアップ/スケールダウンすることはできません。*
 
     ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
 
-7. Create administrator credentials:
+7. 管理者の資格情報を作成します:
 
-    - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
-    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-    - The password cannot contain the username.
-    - The password cannot contain the double quote (") character.
-    - The password must be different from the last 4 passwords used.
-    - The password must not be the same password that is set less than 24 hours ago.
-    - Re-enter the password to confirm it. Make a note of this password.
+    - __パスワード および パスワードの確認__ - サービスインスタンスのADMINユーザーのパスワードを指定します。パスワードは次の要件を満たしている必要があります:
+    -　パスワードは12〜30文字の長さで、少なくとも1つの大文字、1つの小文字、および1つの数字を含める必要があります。
+    -　パスワードにユーザー名を含めることはできません。
+    -　パスワードに二重引用符（ "）文字を含めることはできません。
+    -　パスワードは、最後に使用した4つのパスワードとは異なる必要があります。
+    -　パスワードは、24時間以内に設定されたものと同じであってはなりません。
+    -　パスワードを再入力して確認します。このパスワードをメモします。
 
     ![Enter password and confirm password.](./images/Picture100-26d.png " ")
-8. Choose network access:
-    - For this lab, accept the default, "Allow secure access from everywhere".
-    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
+8. ネットワークアクセスを選択します:
+    -　このラボでは、デフォルトの「どこからでも安全なアクセスを許可する」を受け入れます。
+    -　プライベートエンドポイントが必要な場合は、指定したVCNからのトラフィックのみを許可します-すべてのパブリックIPまたはVCNからのデータベースへのアクセスがブロックされている場合は、[ネットワークアクセスの選択]領域で[仮想クラウドネットワーク]を選択します。
+    -　ネットワークアクセス制御リスト（ACL）を設定することにより、自律データベースへのアクセスを制御および制限できます。 IPアドレス、CIDRブロック、仮想クラウドネットワーク、仮想クラウドネットワークOCIDの4つのIP表記タイプから選択できます
 
     ![Choose the network access.](./images/Picture100-26e.png " ")
 
-9. Choose a license type. For this lab, choose __License Included__. The two license types are:
+9. ライセンスタイプを選択します。このラボでは、__ライセンス込み__　を選択します。 2つのライセンスタイプは次のとおりです:
 
-    - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
-    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+    - __ライセンス持込み(BYOL)__ - Select this type when your organization has existing database licenses.
+    - __ライセンス込み__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-10. Click __Create Autonomous Database__.
+10. __Autonomous Databaseの作成__　をクリックします。
 
     ![Click Create Autonomous Database.](./images/Picture100-27.png " ")
 
-11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+11.  インスタンスがプロビジョニングを開始します。数分で、状態はプロビジョニングから利用可能に変わります。この時点で、Autonomous DataWarehouseデータベースを使用する準備が整いました。名前、データベースバージョン、OCPU数、ストレージサイズなど、インスタンスの詳細をここで確認してください。
 
     ![Database instance homepage.](./images/Picture100-32.png " ")
 
-Please *proceed to the next lab*.
+*次のラボに進んでください*。
 
-## Want to Learn More?
+## 詳細を知りたいですか?
 
 Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
 
