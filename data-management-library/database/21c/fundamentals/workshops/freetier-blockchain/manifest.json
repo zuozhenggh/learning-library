@@ -21,8 +21,12 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-oci-vm-db/create-oci-vm-db-vcn.md"
         },
         {
-            "title": "Lab 3: Blockchain Tables & Rows",
-            "filename": "../../blockchain-tables/blockchain-tables.md"
+            "title": "Lab 3: 21C Setup",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab: Blockchain Tables & Rows",
+            "filename": "../../blockchain-table/blockchain-table.md"
         }
         
     ]
