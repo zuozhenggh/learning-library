@@ -26,7 +26,7 @@ You have several development interfaces available, including:
 * PL/SQL API
 
 ## **Step 1**: Create a user for Application Development
-First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List.\
+First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List.
 
     ![](../images/SDW-1.png)
 
