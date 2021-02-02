@@ -27,11 +27,9 @@ You have several development interfaces available, including:
 
 ## **Step 1**: Create a user for Application Development
 First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List.
-
     ![](../images/SDW-1.png)
 
 Now, click the Create User button on the left side of the page. This will slide out the Create User panel. 
-
     ![](../images/SDW-2.png)
 
 Start by entering a user name. Let's use GARY as the username. Next we need to enter a password. The password must be complex enough to pass the password profile set by the database. The rules are as follows:
