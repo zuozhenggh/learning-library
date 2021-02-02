@@ -62,23 +62,23 @@ On the bottom of the worksheet, in the Script Output, you should see that the us
 ![](../images/SDW-6.png)
 
 
-2. Run the statements from SQL Developer Web by copying in to the Worksheet and clicking the **Run Script** button.
-    ![](../images/SQLDevWeb-3.png)
+## **Step 2**: Load data into the database
 
-The **Script Output** tab at the bottom of the screen shows the result of the SQL commands
-    ![](../images/SQLDevWeb-4.png)
+We need to load some data into the database so that we can create some REST services upon those tables and data. To do this, we need to login as our newly created user. Start by clicking the Admin user dropdown menu in the upper right, then selecting Sign Out.
 
-3. Next you will need to login to SQL Developer Web as your new user, `THOR`. Go to SQL Developer Web and copy the URL. The URL should look similar to the text below. **IDENTIFIER** will be your unique system-assigned identifier. **DBNAME** is the name of your database. **REGION** is your account region.
+![](../images/SDW-7.png)
 
-    ````
-    https://IDENTIFIER-DBNAME.adb.REGION.oraclecloudapps.com/ords/admin/_sdw/?nav=worksheet
-    ````
+On the page the follows, click Sign In
 
-    In this url replace the text `admin` with the text `got`. Paste this new URL into a new tab. You will be asked to login. Your **Username** will be thor and your **Password** will be `Mjolnir123NotAGoodPasswd`.
-    ````
-    <copy>Mjolnir123NotAGoodPasswd</copy>
-    ````
-    ![](../images/SQLDevWeb-1b.png)
+![](../images/SDW-8.png)
+
+On the next page, enter gary as the username and click Next
+
+![](../images/SDW-9.png)
+
+And on the final page, enter the password you used when you created the user and click Sign In. This will bring you back to the SQL Worksheet but as the user we created.
+
+![](../images/SDW-10.png)
 
 ## **Step 2**: Build a simple GET handler
 
