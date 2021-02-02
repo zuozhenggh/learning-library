@@ -1,2 +1,0 @@
-This image shows the Windows Classic Start Menu open above the task bar. "Windows Powershell" is selected.
-
