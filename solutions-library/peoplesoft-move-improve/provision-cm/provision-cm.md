@@ -262,7 +262,7 @@ SSH key pair required to access Cloud Manager instance was created in Step 1 of 
     ssh -f -C -q -N -i <private_key_path_and_name> -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
     </copy>
     ``` 
-    *Example:* ssh -f -C -q -N -i id_rsa -L 2222:<CM_private_ip>:22 opc@XXX.XXX.XXX.XXX
+    *Example:* ssh -f -C -q -N -i id_rsa -L 2222:10.X.X.X:22 opc@XXX.XXX.XXX.XXX
 
     Now, let's connect through SSH. Again, be sure to replace the private key path
 
