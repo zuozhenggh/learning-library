@@ -26,6 +26,20 @@ You have several development interfaces available, including:
 * PL/SQL API
 
 ## **Step 1**: Create a user for Application Development
+First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List.
+    ![](../images/SDW-1.png)
+
+Now, click the Create User button on the left side of the page. This will slide out the Create User panel. Start by entering a user name. Let's use GARY as the username. Next we need to enter a password. The password must be complex enough to pass the password profile set by the database. The rules are as follows:
+    ![](../images/SDW-2.png)
+
+Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
+
+Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look simiar to the folowing image:
+    ![](../images/SDW-3.png)
+
+Once you are ready, click the Create User button on the bottom of the panel to create the database user.
+
+
 It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
 1. Create a USER who will build your applications
