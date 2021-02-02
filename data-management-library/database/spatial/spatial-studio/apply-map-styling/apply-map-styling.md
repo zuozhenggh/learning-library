@@ -1,35 +1,26 @@
-# Load Data
+# Apply Map Styling
 
 
 ## Introduction
 
-This lab walks you through configuring styling point layers in Spatial Studio.
-
-descr ...
-
+Spatial Studio allows you to customize the "look and feel" of your map layers by assigning rendering styles, color schemes and transparency. In this lab you explore some of these styling capabilities.
 
 Estimated Lab Time: xx minutes
 
-
-### About ...
-
-
 ### Objectives
 
-In this lab, you will:
-* ...
-* ...
+* Understanding of rendering styles
+* Understanding of data-driven styling
+* Learn how to use color schemes
 
 ### Prerequisites
 
-As described in the workshop introduction, ......
+* Successfully complete Lab 2: Create Project
 
 
 ## **STEP 1:** Navigate to styling
 
-We begin by ....
-
-1. From the left-panel menu, navigate to the Projects page. Click on hamburger icon for Livelabs Spatial Intro and select Open. 
+1. From the left-panel menu, navigate to the Projects page. Click on hamburger icon for Livelabs Spatial Intro and select **Open**. 
 ![Image alt text](images/apply-styling-1.png)
 
 2. You can collapse the Data Elements panel to have more screen space for our map. Hover over the right edge of the Data Elements panel and click the grey left arrow.
@@ -54,49 +45,47 @@ We begin by ....
 
 ## **STEP 3:** Apply heatmap style 
 
-6. Change the Render Style from Cluster to Heat Map. The map now renders ACCIDENTS with continuous colors based on the concentration of points. Hot colors represent  concentration of points, and cool colors represent sparcity of points. A key parameter of the Heatmap style is Radius, which controls the distance around each point for defining a concentration. The default Radius is so large that the initial heatmap just shows point contrations along the roads, which is not very helpful.
+6. Change the Render Style from Cluster to Heatmap. The map now renders ACCIDENTS with continuous colors based on the concentration of points. Hot colors represent  concentration of points, and cool colors represent sparcity of points. A key parameter of the Heatmap style is Radius, which controls the distance around each point for defining a concentration. The default Radius is so large that the initial heatmap just shows point contrations along the roads, which is not very helpful.
   ![Image alt text](images/apply-styling-8.png)
   To focus our Heatmap on more localized contrations, reduce the Radius from the default to 10 and observe a more localized view of point concenrtations.
   ![Image alt text](images/apply-styling-9.png)
 
-## **STEP 4:** Apply data-driven circle style 
+## **STEP 4:** Apply data-driven style 
 
-7. Change the Render Style from Heat Map to Circle. When using the Circle render style, both the radius and color can be controlled by data values. Pull down the Color menu and select "Based on data".
+7. Change the Render Style from Heatmap to Circle. When using the Circle render style, both the radius and color can be controlled by data values. Pull down the Color menu and select "Based on data".
   ![Image alt text](images/apply-styling-10.png)
 
- 8. You now select the column to use for controlling styling. Select the coloumn NR_VEHICLES (i.e., number of vehicles involved in the accident) and observe the ACCIDENTS become color-coded. You can accept the other default values and then click the Back link at the top of the Style details panel.
+ 8. You now select the column to use for controlling styling. Select the coloumn NR_VEHICLES (i.e., number of vehicles involved in the accident) and observe the ACCIDENTS become color-coded. You can accept the other default values and then click the **Back** link at the top of the Style details panel.
   ![Image alt text](images/apply-styling-11.png)
 
- 9. Now that we have assigned colors based on data values, finalize the style by setting the radius to 3 and opacity to 90%. Also, update the stroke (i.e., outline) width to 0.5, color to grey, and opacity to 90%. You can of course pick your own values for these if you prefer. Then click the Back link to return to the Layers List.
+ 9. Now that you have assigned colors based on data values, finalize the style by setting the Radius to 3 and Opacity to 90%. Also, update the Stroke (i.e., outline) values: set Width to 0.5, Color to grey, and Opacity to 90%. You can of course pick your own values for these if you prefer. Then click the **Back** link to return to the Layers List.
   ![Image alt text](images/apply-styling-12.png)
 
 ## **STEP 5:** Apply symbol style 
 
 10. You will next use the remaining point style option, Symbol, for the POLICE\_POINTS layer. Turn on the POLICE\_POINTS layer and turn off the other 2 layers in the map by clicking on the visibility controls (i.e., blue eyeball icons.)  Then click the hamburger icon for POLICE\_POINTS and select Settings. 
 
-    Change Render Style to Symbol and then click inside the Image text box to open the Symbol selection dialog. Select "marker-11" and update the opacity to 90% and Size factor to 0.6. You can of course pick your own values for these if you prefer.  Then click the Back link to return to the Layers List.
+    Change Render Style to Symbol and then click inside the Image text box to open the Symbol selection dialog. Select **marker-11** and update the Opacity to 90% and Size factor to 0.6. You can of course pick your own values for these if you prefer.  Then click the **Back** link to return to the Layers List.
  ![Image alt text](images/apply-styling-13.png)
 
 ## **STEP 6:** Save changes
 
-11. Click the back link and turn on all 3 layers, and then click the Save button to save our project with the style changes.
+11. Click the **Back** link and turn on all 3 layers, and then click the **Save** button to save our project with the style changes.
  ![Image alt text](images/apply-styling-14.png)
 
 12. Return to the Project page and observe the thumbnail is updated with changes.
  ![Image alt text](images/apply-styling-15.png)
 
-Please proceed to the next Lab.
-
+You may now [proceed to the next lab](#next).
 
 
 ## Learn More
 * [Spatial Studio product portal] (https://oracle.com/goto/spatialstudio)
-* 
 
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Last Updated By/Date** 
+* **Last Updated By/Date** - David Lapp, Database Product Management, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-spatial). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
