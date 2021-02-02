@@ -76,9 +76,19 @@ On the next page, enter gary as the username and click Next
 
 ![](../images/SDW-9.png)
 
-And on the final page, enter the password you used when you created the user and click Sign In. This will bring you back to the SQL Worksheet but as the user we created.
+And on the final page, enter the password you used when you created the user and click Sign In.
 
 ![](../images/SDW-10.png)
+
+This will bring you back to Database Actions but as the user we created.
+
+![](../images/SDW-11.png)
+
+Here, on the overview page, click the SQL tile.
+
+![](../images/SDW-12.png)
+
+
 
 ## **Step 2**: Build a simple GET handler
 
