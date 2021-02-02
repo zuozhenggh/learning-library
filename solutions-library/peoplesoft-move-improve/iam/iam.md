@@ -1,4 +1,4 @@
-# Lab 1: Creating Identity and Access Management (IAM) Resources
+# Creating Identity and Access Management (IAM) Resources
 
 ## Introduction
 This lab walks you through the steps to prepare your Orace Cloud Infrastructure Tenancy

@@ -1,4 +1,4 @@
-# Lab 7: Creating Environment in PeopleSoft
+# Creating Environment in PeopleSoft
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Lab 4: Reviewing and Updating a Topology
+# Reviewing and Updating a Topology
 
 ## Introduction
 

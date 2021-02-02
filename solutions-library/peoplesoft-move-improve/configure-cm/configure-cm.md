@@ -1,4 +1,4 @@
-# Lab 3: Configuring Cloud Manager Settings
+# Configuring Cloud Manager Settings
 
 ## Introduction
 This lab will guide you on how to configure the system and infrastructure settings on Cloud Manager

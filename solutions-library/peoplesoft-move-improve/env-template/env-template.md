@@ -1,4 +1,4 @@
-# Lab 6: Creating New Environment Template
+# Creating New Environment Template
 
 ## Introduction
 

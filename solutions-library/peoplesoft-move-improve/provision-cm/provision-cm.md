@@ -1,4 +1,4 @@
-# Lab 2: Provisioning Cloud Manager from Resource Manager 
+# Provisioning Cloud Manager from Resource Manager 
 
 ## Introduction
 Resource Manager is an Oracle Cloud Infrastructure service that helps you install, configure, and manage resources. Resource Manager uses Terraform (which is part of the service) to codify your infrastructure in declarative configuration files, which allows you to review and edit, version, persist, reuse, and share them across teams. You can then use Resource Manager to provision Oracle Cloud Infrastructure resources using your Terraform configurations.
