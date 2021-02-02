@@ -26,7 +26,7 @@ You have several development interfaces available, including:
 * PL/SQL API
 
 ## **Step 1**: Create a user for Application Development
-First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List.
+First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
 ![](../images/SDW-1.png)
 
@@ -45,33 +45,22 @@ Once we enter the password twice, ensure the REST Enable button is on. This will
 
 Once you are ready, click the Create User button on the bottom of the panel to create the database user.
 
+We next need to give this new user some space to create objects and data. For this, we need to go back to the SQL worksheet and run a simple statement. To get back to the SQL Worksheet, again click the Database Actions menu in the upper left and select SQL in the Development List.
 
-It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
+![](../images/SDW-4.png)
 
-1. Create a USER who will build your applications
-
+On the SQL Canvas, copy and paste the following statement:
     ````
-    <copy>
-    CREATE USER thor IDENTIFIED BY Mjolnir123NotAGoodPasswd;
-
-    GRANT CONNECT, resource TO thor;
-
-    ALTER USER thor QUOTA UNLIMITED ON DATA; -- this part is important if you want to do INSERTs
-
-    BEGIN -- this part is so you can login as THOR via SQL Developer Web
-    ords_admin.enable_schema (
-        p_enabled               => TRUE,
-        p_schema                => 'THOR',
-        p_url_mapping_type      => 'BASE_PATH',
-        p_url_mapping_pattern   => 'got', -- this flag says, use 'got' in the URIs for THOR
-        p_auto_rest_auth        => TRUE   -- this flag says, don't expose my REST APIs
-    );
-    COMMIT;
-    END;
-    /
-    </copy>
+    <copy>alter user gary quota unlimited on data;</copy>
     ````
-    `p_url_mapping_pattern` acts as a schema-alias (so schema names are not exposed) and will be used in URIs where the username would normally appear
+Once copied on the canvas, click the run botton on the worksheet toolbar.
+
+![](../images/SDW-5.png)
+
+On the bottom of the worksheet, in the Script Output, you should see that the user Gary has been altered and the quota granted.
+
+![](../images/SDW-6.png)
+
 
 2. Run the statements from SQL Developer Web by copying in to the Worksheet and clicking the **Run Script** button.
     ![](../images/SQLDevWeb-3.png)
