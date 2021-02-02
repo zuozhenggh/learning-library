@@ -51,13 +51,13 @@ Following sections provide Oracle documentation links that will guide you throug
 
 ##  **STEP 1**: Upgrading Oracle Unified Directory (OUD)
 You can update an Oracle Unified Directory directory service to the latest version without a service interruption. It also describes how to update an individual directory server instance and provides considerations for Oracle Unified Directory Services Manager on Oracle Weblogic Server.  
-- First review the Prerequisites and considerations for upgrading IUM
+- First review the Prerequisites and considerations for upgrading OUD
     - [Updating the Oracle Unified Directory Software](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-FFEACD0B-4A7E-4B22-A5A0-0D96DD0D76EE)
 - You can upgrade all Oracle Unified Directory server instances that are associated with a specific ORACLE_HOME directory.
     - [Upgrading an Existing Oracle Unified Directory Server Instance](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-506B9DAC-2FDB-47C9-8E00-CC1F99215E81)
 - If any step in the upgrade process fails, then terminate the upgrade process and restore the environment to its original state using the backup files you created
 - Oracle Unified Directory provides several command-line utilities to tune the server and to configure the various options for the Java Virtual Machine (JVM), Java, and database cache.
-    - [Configure OUM](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/configuring-jvm-java-and-database-cache-options-oracle-unified-directory.html#GUID-CB679A74-AC86-436F-AFB1-8717CFC55911)
+    - [Configure OUD](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/configuring-jvm-java-and-database-cache-options-oracle-unified-directory.html#GUID-CB679A74-AC86-436F-AFB1-8717CFC55911)
 
 ##  **STEP 2**: Upgrading Oracle Identity Manager (OIM)
 
