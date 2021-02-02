@@ -90,6 +90,9 @@ Here, on the overview page, click the SQL tile.
 
 
 
+
+############################################################################################
+
 ## **Step 2**: Build a simple GET handler
 
 1. You should be logged in as THOR. The window should say THOR(not admin) in the top right. Using the SQL Developer worsheet create a test table by pasting the following text and clicking the run script button.
