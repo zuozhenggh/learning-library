@@ -33,9 +33,9 @@ Now, click the Create User button on the left side of the page. This will slide 
     ![](../images/SDW-2.png)
 
 Start by entering a user name. Let's use GARY as the username. Next we need to enter a password. The password must be complex enough to pass the password profile set by the database. The rules are as follows:
-<p><span style="color:red">
+
 Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
-</span></p>
+
 
 Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look simiar to the folowing image:
     ![](../images/SDW-3.png)
