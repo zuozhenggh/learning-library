@@ -187,13 +187,15 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
 12. Give **Network Name** as **OCIHOLVCN**
 
-13. Clear the option **Create Private Subnets**
+13. Select the option **Create Private Subnets**
 
-14. Clear the option **Create Subnets for Peoplesoft Components**
+14. Select the option **Create Subnets for Peoplesoft Components**
 
-15. Clear the option for **Create a Jump Host**
+15. Select the option for **Create a Jump Host**
 
-    ![](./images/vcndetail.png "")
+    Using the drop-down, select an Availability Domain for the Jump Host
+
+    ![](./images/jumphost.png "")
 
 16. Click **Next**. Review the configuration variables, and then click **Create**.  
 
@@ -229,55 +231,17 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
     On the job details page, click on **Logs** under **Resources**. 
 
-    Scroll at the bottom and make a note of **CM\_public\_ip** and **CM\_http\_url** in your notepad. (Wait for a while if you can't see this information)
+    Scroll at the bottom and copy/paste the following lines to your notepad. (Wait for a while if you can't see this information)
 
-    ![](./images/output.png "")
+    ![](./images/output2.png "")
 
     NOTE: If you don't have admin access in your laptop, before proceeding with Step 6, please follow the 
     **Windows VM Compute Lab:** (This is after Additional Labs, after Lab 7).
 
     ![](./images/wlab.png "")
 
-## **STEP 6**: Set up hosts file in your local machine
 
-Below are the steps for both Windows (step 1) and Mac (step 2). Make sure you have admin access in your local machine. If not, please follow the lab Windows Conpute Instance (See above screenshot). 
-
-1.	Windows: Add an entry to ``C:\Windows\System32\drivers\etc\hosts`` entry on your laptop/workstation as shown below. Use the hostname value for attribute **CM\_http\_url** (you have copied **CM\_http\_url** and **CM\_public\_ip** in your notepad). (Hostname is everything after **http://** and before **:8000**, in my case it is **psftcm.sub09220136550.ociholvcn.oraclevcn.com**. Check your **CM\_http\_url** from above step and modify it as per). 
-
-	I.	Open Windows Search “Notepad”. Right Click on **Notepad** and open as Administrator.
-
-	![](./images/14.png "")
-
-	II.	Go to **File** > **Open** > **C:\Windows\System32\drivers\etc\hosts**, and append below entry
-
-	```
-	<CM_public_ip>  <Hostname of CM_http_url>
-	```
-	Example: 
-
-	```
-	129.213.145.213  labcm.cm.labnet.oraclevcn.com
-	```
-2.	Mac: Add an entry to /private/etc/hosts entry on your laptop/workstation. Use the hostname value for attribute **CM\_http\_url** (you have copied **CM\_http\_url** and **CM\_public\_ip** in your notepad). (Hostname is everything after **http://** and before **:8000**, in my case it is **psftcm.sub09220136550.ociholvcn.oraclevcn.com**. Check your **CM\_http\_url** from the above step and modify it as per)
-
-	I.	Open Terminal and type 
-    ```
-    <copy>
-    sudo vi /private/etc/hosts
-    </copy>
-    ```
-    It will ask you for password, it's your laptop password. 
-    Press **i** on your keyboard. This will take you to the insert mode and now you can edit the file.
-
-    If you already have contents in the file, append the following at the end of the file:
-    ```
-    CM_public_ip  Hostname of CM_http_url
-    ```
-    ![](./images/host.png "")
-
-    To quit from the vi editor, press escape, then **:wq** and press enter.
-
-## **STEP 7**: Accessing Cloud Manager using SSH
+## **STEP 6**: Accessing Cloud Manager using SSH
 
 SSH key pair required to access Cloud Manager instance was created in Step 1 of Lab 2. 
 
@@ -285,19 +249,31 @@ SSH key pair required to access Cloud Manager instance was created in Step 1 of 
 
 1.	Launch terminal or Git Bash and navigate to the keys folder. 
 
-2.	Retrieve the **Cloud Manager IP address**.  It was provided as output when the stack was applied.
+2.	Retrieve the **Cloud Manager variables** you copied to your Notepad
 
-    ![](./images/16.png "")
+3.	Create an SSH tunnel and connection
 
-3.	Navigate to the folder where you have created the keys. SSH into the Cloud Manager instance using the below command. Be sure to replace the CM_public_ip address
+    In your terminal or GitBash, navigate to the folder where you have created the keys. SSH into the Cloud Manager instance using the below command. Be sure to replace the path to the private key, private IP address, and the Jump Host puplic IP. It should be the same as this command.
+    
+    ![](./images/outputssh.png "")
 
     ```
     <copy>
-    ssh -i id_rsa opc@<CM_public_ip>
+    ssh -f -C -q -N -i <private_key_path_and_name> -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
+    </copy>
+    ``` 
+    *Example:* ssh -f -C -q -N -i id_rsa -L 2222:<CM_private_ip>:22 opc@XXX.XXX.XXX.XXX
+
+    Now, let's connect through SSH. Again, be sure to replace the private key path
+
+    ```
+    <copy>
+    ssh –p 2222 opc@localhost -i <private_key_path_and_name> 
     </copy>
     ```
 
-## **STEP 8**: Monitoring Cloud Manager
+    *Example:* ssh –p 2222 opc@localhost -i id_rsa
+## **STEP 7**: Monitoring Cloud Manager
 
 1. SSH into Cloud Manager instance to check status of the deployment.  Monitor Cloud Manager bootstrap installation using the below command.
 
@@ -325,11 +301,41 @@ SSH key pair required to access Cloud Manager instance was created in Step 1 of 
     NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
 
-## **STEP 9**: Access Cloud Manager
+## **STEP 8**: Set up SOCKS Proxy to Access Cloud Manager in Browser
 
-1. Launch a browser in your local machine to access your **Cloud Manager PIA URL** (``CM_http_url``) 
+1. Launch Firefox and navigate to Network Settings in Preferences
 
-2. To login, use the username **CLADM** and password as **Psft1234**.
+    ![](./images/foxpref.png "")
+
+2. Make the following changes to configure Proxy access to the internet.
+
+    * Toggle Manual Proxy Configuration
+    * SOCKS host: localhost and Port: 8123
+    * Toggle SOCKS v5
+    * Select both Proxy DNS when using SOCKS v5 and Enable DNS over HTTPS
+
+    Click OK
+
+
+    ![](./images/firefox.png "")
+
+3.  Launch terminal or Git Bash and navigate to the keys folder. Run the following command to create the SOCKS proxy making sure to replace the private key path and Jump Host Public IP.
+
+    **NOTE**: Make sure you are off VPN. 
+
+    We are modifying this command by adding the path to our key:
+    ![](./images/outputproxy.png "")
+
+    ```
+    <copy>    
+    ssh -D 8123 -f -C -q -N -i <private_key_path_and_name> opc@<jump_host_public_IP>
+    </copy>
+    ```
+    *Example:* ssh -D 8123 -f -C -q -N -i id_rsa opc@XXX.XXX.XXX.XXX 
+
+4. Enter your **Cloud Manager PIA URL** (``CM_http_url``) in Firefox
+
+5. To login, use the username **CLADM** and password as **Psft1234**.
     ```
     <copy>CLADM</copy>
     ```
@@ -337,6 +343,7 @@ SSH key pair required to access Cloud Manager instance was created in Step 1 of 
     <copy>Psft1234</copy>
 
     ```
+     ![](./images/login.png "")
     
 
 You may now proceed to the next lab.

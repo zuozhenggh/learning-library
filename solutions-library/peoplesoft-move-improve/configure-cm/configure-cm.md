@@ -46,12 +46,12 @@ My Oracle Support (MOS) account credentials.
 1.	Navigate to Infrastructure Settings on the left and update Operating System Images.     
     For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list (see the screenshot below).
 
-    For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.cloud.oracle.com/en-us/iaas/images/image/146ab34c-064a-4255-b5ea-e26bbfa6591d/).
+    For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.oracle.com/en-us/iaas/images/image/943bdefa-8858-4b37-98e0-fd710c4aea1e/).
 
     For example, in this lab, we selected our Availability Domain to be us-ashburn-1 so our OCID is:    
-    **ocid1.image.oc1.iad.aaaaaaaahobtltelwdrzm6sd3nn6j7fsb3bwinq2ggmpcnsgdvhihnz2mhga**
+    **ocid1.image.oc1.iad.aaaaaaaa74rl4tzxblzk2sqm43k62srh6bv4hbxkkewlbyar6ximerilowyq**
  
-    ![](./images/image.png "")
+    ![](./images/newImage.png "")
 
 2.	Click **Save** to save the configuration. 
 
