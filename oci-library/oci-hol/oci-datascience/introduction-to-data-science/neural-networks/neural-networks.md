@@ -21,7 +21,7 @@ In this lab you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
-* OCI Data Science service with dependencies (see prerequisites in workshop menu)
+* OCI Data Science service with dependencies (see previous lab)
 
 ## **STEP 1:** Understanding the dataset and the architecture of the model
 

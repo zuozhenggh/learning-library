@@ -10,7 +10,7 @@ In addition, there's a set of featured called "Augmented analytics" in this plat
 
 In this lab you will use Oracle Analytics Cloud to build a ML model that assess Credit Risk. In this particular case, this task was performed by an employee before. Our aim is to automates the credit assessment using a ML model.
 
-Estimated lab time: 50 minutes (video 10 minutes, exercise +/- 40 minutes)
+Estimated lab time: 80 minutes (video 10 minutes, provisioning 30 minutes, exercise 40 minutes)
 
 This video will cover the theory behind Neural Networks.
 [](youtube:ywstbYbIlPg)
@@ -25,9 +25,42 @@ In this lab you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
-* Oracle Analytics Cloud (see prerequisites in workshop menu)
 
-## **STEP 1:** Data preparation
+## **STEP 1:** Provision Oracle Analytics Cloud
+
+You will provision Oracle Analytics Cloud.
+
+### 1. Open the provisioning screen
+
+Click the "hamburger" menu on the top left.
+
+![](images/oac1.png)
+
+Select Analytics from the menu.
+
+![](images/oac2.png)
+
+Choose a compartment.
+
+![](images/oac3.png)
+
+### 2. Configure OAC and start provisioning
+
+Choose to create a new OAC instance.
+
+In the configuration screen, do the following:
+- Instance name: Any name you choose
+- Feature Set: Enterprise Analytics
+- OCPU: 2
+- Network access: Public
+- License type: "Subscribe to a new Analytics Cloud...".
+
+Click Next.
+
+Click "Create". The status changes to "Creating...". Provisioning can take up to 30min.
+![](images/oac8.png)
+
+## **STEP 2:** Data preparation
 
 First we have to upload the data that's required for our model. In this case, the dataset with historical credit assessments is mostly ready to go, without requiring any changes.
 
@@ -63,7 +96,7 @@ By default Oracle Analytics incorrectly treats the "recid" column as a measure. 
 Oracle Analytics records all changes you make in a script. This allows it to easily repeat the process in case data is reloaded. For now, apply the script that has been created by clicking "Apply Script". This makes the change to recid effective.
 ![](images/img7.jpg)
 
-## **STEP 2:** Data exploration
+## **STEP 3:** Data exploration
 
 As you know, this phase in the Data Science process is for us to get to know our data, identify which columns are useful, detect any problems with the data, et cetera.
 
@@ -111,7 +144,7 @@ Save the results of the Data Exploration. Give it a logical name.
 
 At the is point you are doing with the investigation of the dataset and move on the next task
 
-## **STEP 3:** Train the model
+## **STEP 4:** Train the model
 
 Our goal is to build a model that can correctly assess the credit of an application for a loan with either "Good" or "Bad".
 In Oracle Analytics, this is done by creating a so-called "Data Flow". A "Data Flow" specifies the source of the data for the training, any data transformations, and a step for the actual model training.
@@ -155,7 +188,7 @@ You see that a "Save Model" node was automatically created. Click it and set ""M
 Next, we can finally execute the Data Flow. Effectively this will train the model. Click on "Run Data Flow" (top right). This could take up to 10 minutes, depending on the speed of your PC. A message will appear saying that the data flow was run successfully.
 ![](images/img38.jpg)
 
-## **STEP 4:** Evaluate the model
+## **STEP 5:** Evaluate the model
 
 Now that you have built the model, you need to assess how good it is and decide if you are happy with it. Oracle Analytics Cloud machine learning provides quality metrics to allow you to evaluate how good the trained models are.
 
@@ -170,7 +203,7 @@ First, locate the trained machine model by going to the "Machine Learning" menu 
 Go to "Quality" tab to see the quality metrics associated with your model. You can see that the model doesn't predict all cases correctly. You can play with the hyperparameters to improve these results and find the best trade off for your case.
 ![](images/img51.jpg)
 
-## **STEP 5:** Make predictions (apply the model)
+## **STEP 6:** Make predictions (apply the model)
 
 We have a file with new credit applications that we would like to assess. Instead of doing this the manual (HUMAN) way, we'll use our freshly trained model.
 
@@ -217,9 +250,9 @@ Save the Data Flow. Name it "Apply Credit Assessment DF".
 Run the new Data Flow. This typically takes a few minutes depending on the speed of your PC.
 ![](images/runapply.png)
 
-## **STEP 6:** Verify the predictions
+## **STEP 7:** Verify the predictions
 
-Our goal is to visualize the results of the prediction. The prediction Data Flow will have created a new dataset called "Scored New Applications", as we specified. 
+Our goal is to visualize the results of the prediction. The prediction Data Flow will have created a new dataset called "Scored New Applications", as we specified.
 
 ### 1. Create a new project
 

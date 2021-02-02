@@ -33,6 +33,18 @@ In this workshop you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Additional prerequisites (cloud services) are mentioned per lab
 
+## Introduction to Data Science
+
+In this video you  will learn the theory behind Data Science and Machine Learning that you'll need to do the labs. It covers important concepts, the Data Science process and Machine Learning principles.
+
+[](youtube:aN9jYva3B3M)
+
+## Product Overview
+
+You will be introduced to Oracle Cloud and gain a high level overview of the products involved in Data Science and Machine Learning. You will learn at a high level about OCI Data Science, Oracle Machine Learning, "Bring Your Own" images on OCI and Oracle Analytics Cloud.
+
+[](youtube:lnsqix1UdpQ)
+
 [Proceed to the next section](#next).
 
 ## Acknowledgements

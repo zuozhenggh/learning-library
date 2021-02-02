@@ -23,17 +23,63 @@ In this lab you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 * An Autonomous Transaction Processing instance (see prerequisites in workshop menu)
 
-## **STEP 1:** Prepare the APEX workspace
+## **STEP 1:** Provision Autonomous Transaction Processing
+
+### 1. On the left hand menu, choose Autonomous Transaction Processing.
+
+![](./images/go-to-atp.png)
+
+### 2. Start the creation wizard
+
+Choose to create a new instance. Choose a specific compartment first, or keep using the root compartment.
+
+![](./images/create-atp-01.png)
+
+### 3. Choose any name for the database, in this case "WORKSHOP".
+
+![](./images/create-atp-02.png)
+
+### 4. Choose the Transaction Processing option
+
+This will optimize the database for daily transactional processing.
+
+![](./images/create-atp-03.png)
+
+### 5. Choose the Shared Infrastructure deployment type.
+
+![](./images/create-atp-serverless.png)
+
+### 6. Choose other options
+
+In order to have an equal performance over all of the ATP instances of all the workshop participants, we recommend that you keep the Always Free option turned off, keep defaults for OCPU (1) and storage (1 TB). __Disable__ Auto Scaling.
+
+![](./images/create-atp-autoscalingoff.png)
+
+### 7. Set the admin password.
+
+*Make a note of this as you will need it.*
+
+![](./images/create-atp-password.png)
+
+### 8. Create the database
+
+Keep defaults for "Access Type" and "License Type".
+
+![](./images/create-atp-05.png)
+
+This process typically completes within about 5 minutes, after which you will see the status "AVAILABLE".
+
+## **STEP 2:** Prepare the APEX workspace
 
 The following assumes that you've already provisioned an Autonomous Transaction Processing instance (see prerequisites).
 
 ### 1. Open Service Console
 
-Go to the details of the autonomous database and open the Service Console. 
+Go to the details of the autonomous database and open the Service Console.
 ![](images/open-service-console.png)
 
 ### 2. Open Development
-Select "Development". 
+Select "Development".
 ![](images/development.png)
 
 ###3. Open APEX
@@ -48,7 +94,7 @@ Follow the instructions to create a new workspace. ![](images/create-workspace-0
 
 The workspace (and database user) -must be- named "WORKSHOPATP" (there is some hardcoding in the installation scripts to use this schema name). Keep a note of the password as you will need it later. ![](images/create-workspace-02.png)
 
-## **STEP 2:** Import the APEX application
+## **STEP 3:** Import the APEX application
 
 ### 1. Download prepared application
 
@@ -81,7 +127,7 @@ On the dialog for supporting objects, choose "Next", then "Install". You should 
 
 ![](images/import-04.png)
 
-## **STEP 3:** Review the APEX application (situation before ML)
+## **STEP 4:** Review the APEX application (situation before ML)
 
 ### 1. Start the application that you just imported
 
@@ -107,7 +153,7 @@ This will be the topic for the rest of the exercise.
 
 ![](images/customer-details-with-goal.png)
 
-## **STEP 4:** Create an Oracle Machine Learning user
+## **STEP 5:** Create an Oracle Machine Learning user
 
 We will develop the machine learning model using Zeppelin, which comes included in the autonomous database. Zeppelin is a web-based notebook environment that allows us to analyse and experiment with data. In our case we will be using it to build a machine learning model.
 First we will set up a user for Zeppelin.
@@ -158,7 +204,7 @@ Click on the upper left icon to bring back the menu.  Then select "Notebooks" an
 
 ![](images/create-notebook.png)
 
-## **STEP 4:** Build the machine learning model with Zeppelin
+## **STEP 6:** Build the machine learning model with Zeppelin
 
 In this case we will build a model by letting it learn from existing customers.
 
@@ -236,7 +282,7 @@ The result:
 
 ![](images/create-model.png)
 
-## **STEP 5:** Validate the results and the quality of the model
+## **STEP 7:** Validate the results and the quality of the model
 
 We would like to know in what percentage of the cases, the model makes a correct prediction of Y Box Games ownership.
 This is where the test set, that we created earlier, comes in handy. Since the test set contains real customers, we know whether they actually own Y Box Games.
@@ -299,7 +345,7 @@ FROM N1_TEST_DATA GROUP BY Y_BOX_GAMES, Y_BOX_GAMES_PRED ORDER BY 1, 2;
 
 We see, from top to bottom: 1. The true negatives, 2. The false positives, 3. The false negatives and 4. The true positives.
 
-## **STEP 6:** Run the prediction
+## **STEP 8:** Run the prediction
 
 So far we've built and validated the model.
 You can basically run the prediction in two ways:
@@ -321,7 +367,7 @@ CREATE TABLE CUST_PREDICTION AS
 
 Note that we could go a step further and schedule this prediction, but this is not part of the workshop today.
 
-## **STEP 7:** Integrate the result into the APEX application
+## **STEP 9:** Integrate the result into the APEX application
 
 Now let's tie it all together and go back to the APEX application.
 
@@ -409,7 +455,7 @@ Then Save the page.
 
 ![](images/save-page.png)
 
-## **STEP 8:** Review the ML-enabled APEX application
+## **STEP 10:** Review the ML-enabled APEX application
 
 ### 1. Run the APEX application again
 
@@ -425,7 +471,7 @@ Note that in this case we see a recommendation to try to upsell Y Box Games, bec
 
 ![](images/interested-customer.png)![](images/lab200-recommendation.png)
 
-## **STEP 9:** Conclusion
+## **STEP 11:** Conclusion
 
 One added column in an application might not look like much, but the value to the business can be significant.
 In this case an employee receives very valuable advise on which customer to try to upsell a product to and he/she can use that to be more effective.

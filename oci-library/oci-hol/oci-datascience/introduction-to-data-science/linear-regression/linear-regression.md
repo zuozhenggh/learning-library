@@ -22,9 +22,91 @@ In this lab you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
-* OCI Data Science service with dependencies (see prerequisites in workshop menu)
 
-## **STEP 1:** Upload House Sales Data
+## **STEP 1:** Provision OCI Data Science
+
+This guide shows how to use the Resource Manager to provision the service using Resource Manager. This process is mostly automated. However, if you prefer a step-by-step manual approach to control every aspect of the provisioning, please follow the following instructions instead: [manual provisioning steps](https://docs.cloud.oracle.com/en-us/iaas/data-science/data-science-tutorial/tutorial/get-started.htm#concept_tpd_33q_zkb).
+
+### 1. In your Oracle Cloud console, open the menu.
+![](./images/openmenu.png)
+
+### 2. Select Resource Manager -> Stacks.
+
+![](./images/resourcemanager.png)
+
+### 3. Click the "Create Stack" button.
+
+![](./images/createstackbutton.png)
+
+### 4. Choose "Sample Solution" and click the button "Select Solution".
+
+![](./images/newimage1.png)
+
+### 5. Check the "Data Science" solution and click "Select Solution".
+
+![](./images/newimage2.png)
+
+### 6. Choose a compartment that you've created or use Root.
+
+![](./images/newimage3.png)
+
+### 7. Click "Next".
+
+![](./images/newimage4.png)
+
+### 8. Configure the Project and Notebook Session
+
+Select "Create a Project and Notebook Session".
+
+We recommend you choose VM.Standard2.8 (*not* VM.Standard.*E*2.8) as the shape. This is a high performance shape, which will be especially useful when we run AutoML later on.
+
+![](./images/newimage5b.png)
+
+### 9. Disable the option "Enable Vault Support".
+
+![](./images/newimage6.png)
+
+### 10. Disable the option "Provision Functions and API Gateway".
+
+![](./images/disablefunctions.png)
+
+### 11. Click "Next".
+
+![](./images/newimage7.png)
+
+### 12. Click "Create".
+
+![](./images/create.png)
+
+### 13. Run the job
+
+Go to "Terraform Actions" and choose "Apply".
+
+![](./images/applytf.png)
+
+### 14. Click Apply once more to confirm the submission of the job.
+
+Provisioning should take about 20 minutes after which the status of the Job should become "Succeeded".
+
+## **STEP 2:** Open the OCI Data Science notebook
+
+### 1. Open OCI Data Science projects console
+
+![](./images/open-projects.png)
+
+### 2. Open the project that was provisioned
+
+The name of the project may be different than shown here in the screenshot.
+
+![](./images/open-project.png)
+
+### 3. Open the notebook that was provisioned
+
+The name of the notebook may be different than shown here in the screenshot.
+
+![](./images/open-notebook.png)
+
+## **STEP 3:** Upload House Sales Data
 
 Download the dataset with the house prices and characteristics.
 
@@ -34,7 +116,7 @@ Click on the link, then use the `"Raw"` button and then right click `"Save As"`.
 
 Review the datasets. The column names are explained [here](files/data-description.txt). This document also explains the possible list-of-values for categorical attributes.
 
-## **STEP 2:** Prepare your notebook
+## **STEP 4:** Prepare your notebook
 
 ### 1. Open the notebook (in OCI) that you created in the prerequisites
 
@@ -50,7 +132,7 @@ Review the datasets. The column names are explained [here](files/data-descriptio
 
   ![Create Notebook](images/createjupyternotebook.png)
 
-## **STEP 3:** Data Exploration
+## **STEP 5:** Data Exploration
 
 The goals of this are to:
 
@@ -341,7 +423,7 @@ fig = plot.figure()
 
 `Conclusion`: This deviates from the Normal Distribution. You see that it is left skewed. The regression algorithms that we will use later on has problems with such a distribution. We will have to address this problem.
 
-## **STEP 4:** Data Preparation
+## **STEP 6:** Data Preparation
 
 During Data Exploration, we have realized that several changes must be made to the dataset. Data Preparation is a logical result of Data Exploration; we will now take action based on the insights that we gained earlier.
 
@@ -446,7 +528,7 @@ X.head()
 
 `Conclusion`: For example, see the `SaleType` column that has been converted into `SaleType_ConLw`, `SaleType_New`, et cetera. The dataset now only has numerical values.
 
-## **STEP 5:** Building the model
+## **STEP 7:** Building the model
 
 We will build a simple Linear Regression model. We will use the Scikit-Learn library for this.
 
@@ -476,7 +558,7 @@ lr = linear_model.LinearRegression()
 model = lr.fit(X_train, y_train)
 ```
 
-## **STEP 6:** Verifying the performance of the model
+## **STEP 8:** Verifying the performance of the model
 
 How accurate is our model? We will use the Test dataset for this.
 
@@ -518,7 +600,7 @@ RMSE by itself is not easy to interpret, but it can be used to compare different
 print('RMSE: ', mean_squared_error(y_test, y_predicted))
 ```
 
-## **STEP 7:** Single house SalesPrice prediction
+## **STEP 9:** Single house SalesPrice prediction
 
 Let's use now the model and try to predict the SalesPrice for a house. From the given test set we would get the data from one house, to see how this works and to have this as reference example later if you want to deploy the model and use it as REST Services for example.
 
