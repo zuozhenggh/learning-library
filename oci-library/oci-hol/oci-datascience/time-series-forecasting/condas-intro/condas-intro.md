@@ -22,11 +22,11 @@ In this lab, you will:
 
 1.  After you log into OCI Data Science and create a Notebook, go to `File` and select `New Launcher`.
 
-    ![](./../time-series-forecasting/images/new_launcher.png " ")
+    ![](../images/new_launcher.png " ")
 
 2.  Click on `Environment Explorer`
 
-    ![](./../time-series-forecasting/images/environment_explorer.png " ")
+    ![](../images/environment_explorer.png " ")
 
 ## **STEP 2:** Downloading a pre-built Conda Environment
 
@@ -34,13 +34,13 @@ In this lab, you will:
 
     When you click on `Environment Explorer`, you will see each Explorer tab allowing you to filter on either the Data Science, Installed, or Published Conda environments.  The Data Science Conda Environments tab shows a list of pre-built conda environments you can install.  We offer several pre-built condas tailored for specific use cases such as general machine learning and data exploration.
 
-    ![](./../time-series-forecasting/images/conda_environment_explorer.png " ")
+    ![](../images/conda_environment_explorer.png " ")
 
 2.  Install a pre-built conda environment
 
     When you have decided on which conda environment to install, click `Install`, copy and execute the command in a terminal window.
 
-    ![](./../time-series-forecasting/images/download_ml_conda_instructions.png " ")
+    ![](../images/download_ml_conda_instructions.png " ")
 
 ## **STEP 3:** Selecting Conda Environment for Notebook session
 
@@ -48,7 +48,7 @@ In this lab, you will:
 
     When you start a new notebook, go to the top right corner to select the conda environment you would like to use for the notebook session.
 
-    ![](./../time-series-forecasting/images/pick_conda_environ_for_notebook.png " ")
+    ![](../images/pick_conda_environ_for_notebook.png " ")
 
 You can *proceed to the next lab*.
 

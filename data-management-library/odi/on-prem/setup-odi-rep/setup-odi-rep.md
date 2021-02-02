@@ -41,11 +41,20 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
   ![](./images/guacamole-login.png " ")
 
-  *Note*: There is an underscore `_` character at the end of the password.
+  *Note:* There is an underscore `_` character at the end of the password.
 
-3. To launch *ODI Studio*, *Firefox* browser or a *Terminal* client, click on respective icon on the desktop
+3. Click on the *Terminal* Desktop icon to open a terminal session
 
   ![](./images/guacamole-landing.png " ")
+
+
+4. In the terminal window, run the following initialize and start *ODI Studio* (one-time only)
+
+    ```
+    <copy>/home/oracle/Oracle/Middleware/Oracle_Home/odi/studio/odi.sh -clean -initialize &</copy>
+    ```
+
+  *Note:* If you close *ODI Studio* and need to re-open it, simply click on the desktop icon as show above or re-run the same script with *"-clean -initialize"*. The command above is to be executed one-time only otherwise the client will be re-initialized and any cache saved since your initial run will de discarded.
 
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.

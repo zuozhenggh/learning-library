@@ -19,7 +19,6 @@ The workshop uses a hybrid cloud architecture, a web application running in dock
 - Lab: JSON
 - Lab: Spatial
 - Lab: SODA
-- Lab: NodeJS
 - Lab: XML
 
 You will also use Oracle SQL Developer Web to help execute the programs associated with the lab. 

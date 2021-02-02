@@ -51,6 +51,11 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     python3 --version
     </copy>
     ````
+    ````
+    <copy>
+    ls
+    </copy>
+    ````
 
     *Note*: You should still have the cloud wallet file (*converged-wallet.zip*) that you generated in the lab: Load Data and Start Application  
 
@@ -69,6 +74,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
 
 
 3. Next we need to modify the *sqlnet.ora* file located in the wallet directory to include the location of the wallet contents.
+    If you are unsure of the full directory name and path,  you can cut-and-paste this from the output of the *pwd* operation.
 
     ````
     <copy>
@@ -78,9 +84,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     </copy>
     ````
 
-4. If you are unsure of the full directory name and path,  you can cut-and-paste this from the output of the *pwd* operation.
-
-    Edit the contents of the *sqlnet.ora* file
+4. Edit the contents of the *sqlnet.ora* file
 
     ````
     <copy>
@@ -119,7 +123,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     # Password
     psswd="<your admin password>"
     # Data Source Name
-    dsn= "cvgadbnn_tp"
+    dsn= "cvgad01_tp"
     </copy>
     ````
 
@@ -364,13 +368,18 @@ Now that your environment is configured and you can connect to database from Pyt
 
 In this section you will connect to the Oracle database you provisioned in your previous lab. This is the database environment that you configured your Python programs to connect to.
 
-1. Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous JSON Database**
+1. Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
+    ![](./images/select-atp.png " ")
 
-2. Click on the **Display Name,** *cvgadbnn*
+2. Click on the **Display Name,**
+
+    ![](./images/display-name.png " ")
 
 3. Click on the **Tools** tab, select **SQL Developer Web**, a new browser will open up
 
-    To keep things simple we will be using the *admin* user and the password that you wrote down in the previous lab.
+    ![](./images/sql.png " ")
+
+    Login with the *admin* user and the password *WElcome123##* 
 
 
 4. In the first part of this lab you created a collection in python called "sodacollection".  This object did not previously exist in the database, but the first SODA insert operation created this automatically for you.
