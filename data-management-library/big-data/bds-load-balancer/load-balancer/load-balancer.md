@@ -146,7 +146,7 @@ To copy the files:
 
     `node_`**`myclustun0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
 
-      ![](./images/ls-opt-etc-x509-2.png "")
+      ![](./images/ls-opt-etc-x509-1.png "")
 
     You'll use this name in the following steps, when you issue commands to download the files.
 
@@ -213,13 +213,8 @@ To copy the files:
 
 2. On the banner at the top of the page, click the navigation menu ![Navigation menu](./images/nav-button.png) to open it. Under **Core Infrastructure**, point to **Networking**, and then click **Load Balancers**.
 
-  text file test:
-
-    ![](./images/start-nav-menu.png "Open the Load Balancer")
-
-  alt text test:
-
-    ![Open Load Balancer](./images/start-nav-menu.png "")
+    <!-- ![](./images/start-nav-menu.png "Open the Load Balancer")-->
+    ![](./images/start-nav-menu.png "")
 
 2. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster, and then click **Create Load Balancer**.
 
@@ -300,7 +295,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
 1. On the left side of the **Load Balancer Details** page, under **Resources**, click **Certificates** and then click **Add Certificate**.
 
-    <!--![](./images/resources-certs-add-certs.png "Add certificates")-->
+    <!--![](./images/resources-certs-add-certs-0.png "Add certificates")-->
     ![](./images/resources-certs-add-certs-0.png "")
 
 2. On the **Add Certificate** page, enter the following information:
@@ -320,13 +315,13 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the first utility node; for example, `first-util-node.key`.
 
-    <!--![](./images/add-cert.png "Add certification page ")-->
-    ![](./images/add-cert.png "")
+    <!--![](./images/add-cert-1.png "Add certification page ")-->
+    ![](./images/add-cert-1.png "")
 
 3. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
 
-    <!--![](./images/cert-list.png "Certificates table")-->
-    ![](./images/cert-list.png "")
+    <!--![](./images/cert-list-1.png "Certificates table")-->
+    ![](./images/cert-list-1.png "")
 
     **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (first) utility node.
 
