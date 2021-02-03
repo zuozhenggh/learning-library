@@ -29,13 +29,9 @@
             "filename": "../../data-pump-validity/data-pump-validity.md"
         },
         {
-            "title": "Lab: Data Pump Includes & Excludes",
-            "filename": "../../data-pump-incl-excl/data-pump-incl-excl.md"
-        }, 
-        {
             "title": "Lab: Data Pump Transportable Tbsp",
             "filename": "../../data-pump-tts/data-pump-tts.md"
-        },           
+        },
         {
             "title": "Lab: Data Pump Index Compression",
             "filename": "../../data-pump-index-comp/data-pump-index-comp.md"
