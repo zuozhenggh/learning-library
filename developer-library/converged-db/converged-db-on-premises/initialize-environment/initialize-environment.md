@@ -61,7 +61,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 1**: Starting Database And OAS Services
+## **STEP 1**: Start Database and Retail Application
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script
@@ -89,7 +89,7 @@ You may now *proceed to the next lab*.
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/converged-database). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
