@@ -4,7 +4,7 @@
 
 This chapter describes how to work with audit tools in Enterprise Data Quality. The demonstration environment includes several examples on EDQ Audit tools.
 
-*Estimated Lab Time* - 15 minutes
+*Estimated Lab Time*: 15 minutes
 
 ### Objectives
 In this chapter you will explore the below features in EDQ:

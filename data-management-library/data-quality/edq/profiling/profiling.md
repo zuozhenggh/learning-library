@@ -4,7 +4,7 @@
 
 Data profiling is a process of understanding the data in EDQ. The first step in improving the quality of your data is to understand it. You have data but is it good data? EDQ allows to quickly assess, find, investigate and understand anomalies regarding data content, standardization, relationships and duplication among others.
 
-*Estimated Lab Time* - 30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 * Work with Quickstats Profiler - A Bird's-eye view of the data

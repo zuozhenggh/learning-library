@@ -3,7 +3,7 @@
 ## Introduction
 This lab describes how to implement data standardization and enhancement rules in Enterprise Data Quality.
 
-*Estimated Lab Time* - 30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 You will be working on the below EDQ components in this lab.

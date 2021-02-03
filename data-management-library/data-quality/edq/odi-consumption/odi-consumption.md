@@ -4,7 +4,7 @@
 
 This lab describes how to work with jobs in Oracle EDQ. You will work on exporting the data from EDQ using jobs. Once the data is exported, the data can be used for ODI consumption.
 
-*Estimated Lab Time* - 15 minutes
+*Estimated Lab Time*: 15 minutes
 
 ### Objectives
 This lab includes the following sections:

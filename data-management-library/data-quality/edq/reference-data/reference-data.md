@@ -4,7 +4,7 @@
 
 This lab describes how to work with reference data in Enterprise Data Quality. The demonstration environment includes importing and creating a reference data.
 
-*Estimated Lab Time* - 15 minutes
+*Estimated Lab Time*: 15 minutes
 
 ### Objectives
 In this lab you will learn the following:

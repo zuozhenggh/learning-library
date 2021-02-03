@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to access your EDQ instance and create a new project.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 * Access an EDQ Instance through Apache Guacamole
