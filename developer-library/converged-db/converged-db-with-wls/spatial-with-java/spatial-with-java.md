@@ -270,7 +270,7 @@ To summarize, you created a table to store Spatial data-type, performed CRUD ope
 
 You may now *proceed to the next lab*.
 
-## Want to learn more
+## Learn More
 - [Spatial](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
 
 ## Acknowledgements

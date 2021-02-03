@@ -10,7 +10,7 @@ This lab will show you how to access an EDQ instance using Apache Guacamole and 
 * Start EDQ Director
 * Create New Project
 * Create a Data Store and a Snapshot in EDQ
-  
+
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -20,21 +20,71 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
+
+## **STEP 0**: Running your Lab
+### Access the graphical desktop
+For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+
+1. Launch your browser to the following URL
+
+    ```
+    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    ```
+
+2. Provide login credentials
+
+    ```
+    Username: <copy>oracle</copy>
+    ```
+    ```
+    Password: <copy>Guac.LiveLabs_</copy>
+    ```
+
+  ![](./images/guacamole-login.png " ")
+
+  *Note*: There is an underscore `_` character at the end of the password.
+
+3. To launch *ODI Studio*, *Firefox* browser or a *Terminal* client, click on respective icon on the desktop
+
+  ![](./images/guacamole-landing.png " ")
+
+### Login to Host using SSH Key based authentication
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
+
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - OS User – “*oracle*”.
+
+1. First login as “*opc*” using your SSH Private Key
+
+2. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
+
 ## **STEP 1**: Access an EDQ instance through Apache Guacamole
 
 1. Obtain the Apache Guacamole URL, credentials from the instructor and login into it using any browser.
 
     ![](./images/guacamole.png " ")
 2. Select "edqvnc" option after you login into the Guacamole.
-   
+
     ![](./images/edq_config_1.png " ")
+
+
+
+2. From the same remote desktop session, Click on the "*Firefox*" icon to launch the browser.
+
+    ![](./images/guacamole-landing-odi-studio.png " ")    
 
 3. Go to Applications -> Favorites -> Firefox.
 
     ![](./images/browser_1.png " ")    
 
 4. Go to weblogic console and provide the login credentials.
-   
+
    **URL:** http://localhost:7001/console
 
     ````
@@ -46,13 +96,13 @@ This lab assumes you have:
 
     ![](images/weblogic_1.png)
 
-    **Note:** If weblogic console is not working, run edq\_start\_up.sh script. This script will take 5 minutes to execute.
+    **Note:** If weblogic console is not working, run *edq\_start\_up.sh* script. This script will take 5 minutes to execute.
 
 5.	In the login page, click on servers.
 
     ![](images/weblogic_2.png)
 
-1.  If you see EDQ server and Admin server are running, you are good to proceed further.
+6.  If you see EDQ server and Admin server are running, you are good to proceed further.
 
     ![](images/weblogic_3.png)
 
@@ -64,17 +114,17 @@ This lab assumes you have:
     ![](images/open_terminal.png)
 
 2. Sudo to oracle user and run the edq\_start\_up.sh script to start the EDQ application.
-   
+
     ````
    <copy>
     sudo su - oracle
     sh /home/oracle/scripts/edq_start_up.sh
    </copy>
     ````
-     
-This script will approximately take 5-10 minutes to start the Node Manager, Weblogic and EDQ Services.
 
-Please login into weblogic console and check if all the EDQ services are up and running after 5 minutes.
+    This script will approximately take 5-10 minutes to start the Node Manager, Weblogic and EDQ Services.
+
+    Please login into weblogic console and check if all the EDQ services are up and running after 5 minutes.
 
 
 ## **STEP 2**: Start EDQ Director and Create new project in EDQ
@@ -145,7 +195,7 @@ Now that we have created a project, the next step is creating a Data Store. A Da
     Name type: Service
     User name: EDQ_SRC
     Password: oraedq
-    Schema: 
+    Schema:
    </copy>
     ````
 
@@ -207,10 +257,13 @@ After a short delay, the Results Browser panel is populated. Taking the Snapshot
 
 Congratulations!  You may now *proceed to the next lab*.   
 
+## Learn More
+- [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
+
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Narayanan Ramakrishnan, NA Technology, December 2020
+* **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
