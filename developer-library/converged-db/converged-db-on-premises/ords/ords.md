@@ -804,6 +804,7 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
     WHERE  xmlexists('/PurchaseOrder[PONumber/text()=$PONumber]' passing object_value,
     :id AS "PONumber" );
     commit;
+    END;
     </copy>
     ```
    ![](./images/ordslab2.37.png " ")
