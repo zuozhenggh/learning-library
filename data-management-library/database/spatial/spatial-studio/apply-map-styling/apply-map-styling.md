@@ -72,7 +72,6 @@ Estimated Lab Time: xx minutes
 
 ## **STEP 6:** Apply interactivity
 
-
 15. Click on then hamburger icon for the layer POLICE\_BOUNDS and select **Settings**. Then click on the **Interaction** tab.  The first type of interactivity we configure for a layer is the ability to select an item(s). Selections are used for analyses, for example where we want to identify the items contained within a selected region. By default the selectable option is off. Click in a POLICE\_BOUNDS region and observe the nothing is selected. Then turn on **Allow selection**, click inside a POLICE\_BOUNDS regions and observe the selection highlighted. 
 
    ![Image alt text](images/apply-interactions-1.png)
@@ -86,7 +85,7 @@ Estimated Lab Time: xx minutes
    ![Image alt text](images/apply-interactions-3.png)
 
 
-## **STEP 6:** Save changes
+## **STEP 7:** Save changes
 
 11. Click the **Back** link and then click the **Save** button to save our project with the style changes.
  ![Image alt text](images/apply-styling-14.png)
