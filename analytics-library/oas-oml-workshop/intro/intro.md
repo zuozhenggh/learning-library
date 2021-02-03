@@ -2,26 +2,26 @@
 
 ## About this Workshop
 
-Oracle Analytics Server is a comprehensive enterprise analytics solution that empowers you to ask any question – of any data – in any environment – on any device.
+Today’s workshop is designed to illustrates how organizations can blend the capabilities found in both of these offerings to uncover value across the entire data lifecycle in a way that holistically meets the needs of both citizen & professional data scientists. 
 
-This workshop illustrates how organizations worldwide rely on Oracle to manage their data and uncover value across the entire data lifecycle: creating and blending data, self-service data discovery and visual analysis, securely collaborating and sharing analysis across teams, and leveraging embedded augmented analytics and machine learning capabilities to deliver deeper insight.
 
 
 ### About Product/Technology
-Oracle Analytics Server helps organizations discover deep, unique insights from their data through augmented analytics.  Streamline data access and data preparation with machine learning. Provide self-service analytics enabling users to build compelling visual stories and to confidently make highly informed decisions.
+Oracle Analytics Server (OAS) is a comprehensive enterprise analytics solution that empowers you to ask any question – of any data – in any environment – on any device.   The extensive augmented analytic capabilities surfaced throughout the product truly differentiate it from other analytic offerings.  These augmented analytics are designed to enable and support the needs of “citizen” data scientists.
 
-  [](youtube:Dk9vLite0MA)
+Oracle Converged Database affords native support for all modern data types as well as supporting the latest development paradigms from a singular product. Most customers think of the Oracle database as a traditional relational database, but recent releases also offer support for:
+•	Spatial data to support location awareness, 
+•	JSON for document stores, 
+•	IoT for device integration,
+•	In-Memory technologies for real-time analytic
+•	Machine Learning 
+
+What a great many customers don’t realize is these capabilities are now included free with every Oracle database license.   The Machine Learning capabilities within the Oracle Database are designed to enable and support the more robust and demanding needs of “professional” data scientists.
+
+ 
 
 ### Objectives
 
-The workshop illustrates how organizations worldwide rely on Oracle to manage their data and uncover value across the entire data lifecycle: creating and blending data, self-service data visualization and analysis, securely collaborating and sharing analysis across teams, and leveraging embedded augmented analytics and machine learning capabilities to deliver the fastest time to insight across all of your data
-In this lab you will:
-  -	Review the key features of self-service analytics
-  -	Tell a story regarding what is happening at JTC America’s Group
-  -	Explore a variety of intuitive and interactive visualization charts and create visualizations
-  -	Leverage augmented analytics capabilities to accelerate root cause analysis
-  -	Leverage machine learning algorithms to predict attrition
-  -	Explore custom visual extensions in the Oracle Analytics Library
 
 
 ### Prerequisites
@@ -33,8 +33,7 @@ In this lab you will:
 
 ## Learn More
 
-* [https://www.oracle.com/business-analytics/analytics-server.html](https://www.oracle.com/business-analytics/analytics-server.html)
-* [https://www.oracle.com/business-analytics](https://www.oracle.com/business-analytics)
+
 
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology

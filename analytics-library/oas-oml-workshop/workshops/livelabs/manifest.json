@@ -17,19 +17,14 @@
       "filename": "../../oas-setup/oas-setup.md"
     },
     {
-      "title": "Lab 2: Self-Service Data Visualization for Finance",
-      "description": "Self-Service Data Visualization for Finance Lab",
-      "filename": "../../self-service-data-visualization-for-finance/self-service-data-visualization-for-finance.md"
+      "title": "Lab 2: OAS Augmented Analytics and Data Visulization",
+      "description": "OAS Augmented Analytics and Data Visulization",
+      "filename": "../../oas-augmented-analytics/oas-augmented-analytics-dv.md"
     },
     {
       "title": "Lab 3: Augmented Analytics for HR",
       "description": "Augmented Analytics",
-      "filename": "../../augmented-analytics-for-hr/augmented-analytics-for-hr.md"
-    },
-    {
-      "title": "Lab 4: Uploading a Custom Visual Extension (optional)",
-      "description": "Uploading a Custom Visual Extension (optional)",
-      "filename": "../../uploading-a-custom-visual-extension/uploading-a-custom-visual-extension.md"
+      "filename": "../../machine-learning-oracle-database/machine-learning-oracle-database.md"
     }
   ]
 }
