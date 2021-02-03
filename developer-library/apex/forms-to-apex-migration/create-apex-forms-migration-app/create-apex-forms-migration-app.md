@@ -13,7 +13,6 @@ Estimated Lab Time: 5 minutes
 ### Objectives
 
 * Create the Schema for Oracle APEX application
-* Create Migration Project
 
 
 ### Prerequisites
@@ -44,26 +43,6 @@ In order to start the conversion process, the database objects associated with y
 
 4. **Run** the script to create the schema objects for customer and orders form ![](images/scripts_run.png " ")
 
-## **STEP 3**: **Create Conversion Project**
-
-Create a conversion project by running Create Migration Project Wizard and loading the application metadata extracted from Forms to XML.
-
-1. From the Apex workspace click on **Oracle Forms Migration** on the bottom right corner of the screen
-![](images/forms_migration.png " ")
-
-2. Click on **Create Project** to import XML files that is generated from Forms files.
-![](images/create_migration_project.png " ")
-
-3. Enter **Project Name**, Choose ``DEMO`` schema and the XML file that is derived from fmb and click Next.
-
-4. Click **Create** to start building the project
-![](images/create_migration_project2.png " ")
-
-5. You can see the count of objects that is available in the forms. Just click on the **File name** to see list of objects and the properties attached to it.
-![](images/uploaded_forms.png " ")
-
-6. Click on **customers_fmb.xml** you can see the details of Blocks, Triggers, List of Values etc from the Customer Form. You can compare with the form builder to make sure all of the objects from forms are being accounted in APEX.
-![](images/customers_fmb.png " ")
 
 
 ## **Summary**
@@ -76,7 +55,7 @@ You may now *proceed to the next lab*.
 
   - **Author** -  Vanitha Subramanyam, Senior Solution Architect
   - **Contributors** - Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
-  - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
+  - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
 ## Need Help?
   Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
