@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Spatial Studio allows you to customize the "look and feel" of your map layers by assigning rendering styles, color schemes and transparency. In this lab you explore some of these styling capabilities.
+Spatial Studio allows you to customize the "look and feel" (rendering styles, color schemes transparency) and interactivity of your map layers by assigning. In this lab you explore some of these styling and interactivity features.
 
 Estimated Lab Time: xx minutes
 
@@ -12,6 +12,7 @@ Estimated Lab Time: xx minutes
 * Understanding of rendering styles
 * Understanding of data-driven styling
 * Learn how to use color schemes
+* Learn how to configure interactivity of map layers
 
 ### Prerequisites
 
@@ -68,13 +69,33 @@ Estimated Lab Time: xx minutes
     Change Render Style to Symbol and then click inside the Image text box to open the Symbol selection dialog. Select **marker-11** and update the Opacity to 90% and Size factor to 0.6. You can of course pick your own values for these if you prefer.  Then click the **Back** link to return to the Layers List.
  ![Image alt text](images/apply-styling-13.png)
 
+
+## **STEP 6:** Apply interactivity
+
+
+15. Click on then hamburger icon for the layer POLICE\_BOUNDS and select **Settings**. Then click on the **Interaction** tab.  The first type of interactivity we configure for a layer is the ability to select an item(s). Selections are used for analyses, for example where we want to identify the items contained within a selected region. By default the selectable option is off. Click in a POLICE\_BOUNDS region and observe the nothing is selected. Then turn on **Allow selection**, click inside a POLICE\_BOUNDS regions and observe the selection highlighted. 
+
+   ![Image alt text](images/apply-interactions-1.png)
+
+16. Next you configure tooltips, i.e., a popup displayed when hovering on an item. By default tooltips are disabled. Hover over a POLICE_BOUNDS region and observe nothing happens. Then turn on **Show tooltip**, select a tooltip column , hover your mouse over a region, and observe the tooltip.
+
+   ![Image alt text](images/apply-interactions-2.png)
+
+ 17. Finally you configure Info Window, i.e., a popup displayed when clicking on an item. By default this option is off. Click in a POLICE_BOUNDS region and observe no info window is displayed. Then turn on **Show info window**, select column(s) to show, click inside a POLICE\_BOUNDS regions and observe the info window displayed.
+   
+   ![Image alt text](images/apply-interactions-3.png)
+
+
 ## **STEP 6:** Save changes
 
-11. Click the **Back** link and turn on all 3 layers, and then click the **Save** button to save our project with the style changes.
+11. Click the **Back** link and then click the **Save** button to save our project with the style changes.
  ![Image alt text](images/apply-styling-14.png)
 
 12. Return to the Project page and observe the thumbnail is updated with changes.
  ![Image alt text](images/apply-styling-15.png)
+
+14. Click on the hamburger icon for the project and select **Open** (or click the project thumbnail) to return to the project.
+
 
 You may now [proceed to the next lab](#next).
 
