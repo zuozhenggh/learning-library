@@ -95,13 +95,15 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
 ## **STEP 4:** Configure Local Hosts File and Log in to Oracle E-Business Suite
 
-1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to **Networking** > **Load Balancers**.
+1. Click the Cloud Manager Environment: "ebsholenv1"
 
-  ![](./images/lbs.png " ")
+  ![](./images/selectenv.png " ")
 
-2. On the Load Balancers page, you will find a load balancer named **ebsholenv1-lbaas**. Obtain the public IP address of this load balancer and record this in your ``key-data.txt`` file.
+2. Then click the arrow next to **Zone: oneclickdemo**
 
-  ![](./images/lb-addy.png " ")
+  1. Note the IP address listed at **Web Entry IP:**
+
+  ![](./images/envpage.png " ")
 
 3. Edit the local hosts file on your laptop and add an entry.
 
@@ -151,7 +153,9 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
 4. Log in to Oracle E-Business Suite:
 
-  a. Click [here] (https://ebsholenv1.example.com/OA_HTML/AppsLocalLogin.jsp) to navigate to the URL in your browser.
+  a. From the Cloud Manager environment page. Click the link following **Login Page:**
+
+    ![](./images/envpage-2.png " ")
 
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.)
 

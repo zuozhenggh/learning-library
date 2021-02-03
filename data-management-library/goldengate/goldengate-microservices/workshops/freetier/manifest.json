@@ -29,24 +29,24 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: GG Initial Setup",
+      "title": "Lab 4: Initialize Environment",
       "description": "GG Initial Setup",
       "filename": "../../initial-setup/initial-setup.md"
     },
     {
-      "title": "Lab 5: Create Replication",
+      "title": "Lab 5: Create One-Way Replication",
       "description": "GG Replication",
       "filename": "../../create-replication/create-replication.md"
     },
     {
-      "title": "Lab 7: HA/DR Replication",
+      "title": "Lab 6: Create HA/DR Replication",
       "description": "Hign Availability / Disaster Recovery Replication",
       "filename": "../../ha-dr/ha-dr.md"
     },
     {
-      "title": "Lab 8: Transformations Using GoldenGate Microservices",
-      "description": "Transformations using GoldenGate Microservices ",
-      "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
+      "title": "Lab 7: Transformations",
+      "description": "Transformations",
+      "filename": "../../transformations/transformations.md"
     }
   ]
 }

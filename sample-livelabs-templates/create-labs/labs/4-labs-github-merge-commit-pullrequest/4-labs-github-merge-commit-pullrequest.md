@@ -18,7 +18,7 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 
 This lab assumes that you have successfully completed **Lab 4: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
 
-## **STEP 1:** Commit your Changes in your Clone
+## **Step 1:** Commit your Changes in your Clone
 When you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone, and then push those changes from your clone to your fork. Then these changes get saved to your forked learning-library repository.
 
 To commit your changes:
@@ -33,7 +33,7 @@ To commit your changes:
 
   ![](./images/git-hub-commit-push-origin.png " ")
 
-## **STEP 2:** Set Up GitHub Pages for your Fork to Test your Content
+## **Step 2:** Set Up GitHub Pages for your Fork to Test your Content
 
 After you upload the content from your clone to your fork, request your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL of your forked repository).
 
@@ -58,14 +58,14 @@ To publish your GitHub Pages site:
   This may take a few hours to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
-## **STEP 3:** Sharing your Workshop for Review
+## **Step 3:** Sharing your Workshop for Review
 After you have successfully set up your GitHub pages, you can share your workshop for review.
 To share and view your workshop:
 1. In the browser, enter the URL of your GitHub Pages [https://achepuri.github.io/learning-library/](https://achepuri.github.io/learning-library/).
 2. Append the URL with the details of your workshop.
     The complete URL will look similar to this: [https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/), which can be shared for review.
 
-## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
+## **Step 4**: Create a Pull Request to Upload Your Content to the Master Repository
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 

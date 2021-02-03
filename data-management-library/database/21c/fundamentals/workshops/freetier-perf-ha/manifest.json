@@ -25,10 +25,6 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab: PDB Point-in-Time Recovery",
-            "filename": "../../flashback-pdbs/flashback-pdbs.md"
-        },
-        {
             "title": "Lab: Automatic Zone Maps",
             "filename": "../../auto-zone-maps/auto-zone-maps.md"
         },
