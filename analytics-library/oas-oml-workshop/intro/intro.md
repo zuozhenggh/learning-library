@@ -9,11 +9,11 @@ Thiss workshop is designed to illustrates how organizations can blend the capabi
 Oracle Analytics Server (OAS) is a comprehensive enterprise analytics solution that empowers you to ask any question – of any data – in any environment – on any device.   The extensive augmented analytic capabilities surfaced throughout the product truly differentiate it from other analytic offerings.  These augmented analytics are designed to enable and support the needs of “citizen” data scientists.
 
 Oracle Converged Database affords native support for all modern data types as well as supporting the latest development paradigms from a singular product. Most customers think of the Oracle database as a traditional relational database, but recent releases also offer support for:
-* Spatial data to support location awareness, 
-* JSON for document stores, 
-* IoT for device integration,
-* In-Memory technologies for real-time analytic
-* Machine Learning 
+* Spatial data to support location awareness  
+* JSON for document stores  
+* IoT for device integration  
+* In-Memory technologies for real-time analytic  
+* Machine Learning   
 
 What a great many customers don’t realize is these capabilities are now included free with every Oracle database license.   The Machine Learning capabilities within the Oracle Database are designed to enable and support the more robust and demanding needs of **professional** data scientists.
 
