@@ -12,6 +12,42 @@ In such situations, a professional data scientist may wish to leverage the more 
 
 ### Prerequisites ###
 
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (Free Tier and Paid Account only)
+    - Lab: Prepare Setup (Free Tier and Paid Account only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+
+The following files are required to complete this lab.
+
+DATA TO BE IMPORTED IN ORACLE DB:
+- Employee_Attrition.csv file 
+- Employee_Data.csv file 
+
+WORKFLOW TO BE IMPORTED IN ORACLE DB:
+- Employee Attriton.xml 
+
+SQL Files:
+- Step01_Employee_Attrition.sql
+- Step02_Attrit_AttribImport.sql 
+- Step03_Attrit_AttribImport_Result.sql 
+- Step04_SplitDataToTrainTestModels.sql  
+- Step05_GLM_Model.sql 
+- Step05_NB_Model.sql 
+- Step05_SVM_Model2.sql 
+- Step06_CumulativeGainsTbl.sql 
+- Step06_CumulativeGains_Results.sql 
+- Step07_NewEmpToPredictl.sql 
+- Step08_PredictAttrition.sql
+
+DVA FILE:
+- EmployeeAttrition_OML.dva 
+
+
+
 ## Exercise 1: Using Data Miner GUI to Train, Test and Evaluate a Machine Learning Model
 
 In this step we’ll show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
