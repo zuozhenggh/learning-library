@@ -42,7 +42,7 @@ Feel free to share this LiveLabs workshop with your colleagues on social media
 ## Acknowledgements
 - **Authors** - Abhinav Srivastava, Yaisah Granillo, Kay Malcolm, Matthew O'Keefe
 - **Workshop Owners** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K., Robbie Ruppel, David Start, Paul Sonderegger
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K., Robbie Ruppel, David Start, Paul Sonderegger, Kamryn Vinson
 - **Last Updated By** - Kay Malcolm, January 2021
 
 ## Need Help?
