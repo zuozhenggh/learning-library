@@ -61,10 +61,11 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     </copy>
     ```
 
-    Navigate to the Remote Clone directory
+    Change to the Oracle user (if not already) and navigate to the Remote Clone directory
 
     ```
     <copy>
+    sudo su - oracle
     cd /u01/install/APPS/stage/31254259/RemoteClone
     </copy>
     ```
