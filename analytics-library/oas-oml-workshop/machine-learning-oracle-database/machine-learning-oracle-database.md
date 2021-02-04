@@ -220,7 +220,7 @@ In this step we’ll implement essentially that exact workflow using a series of
 ![](./images/ml3.10.png " ")
 
 ## Want to learn more
- 
+- 
 
 
 ## Acknowledgements

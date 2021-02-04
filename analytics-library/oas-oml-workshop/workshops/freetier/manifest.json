@@ -12,7 +12,7 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Lab 1: Start Oracle Analytics Server",
+      "title": "Lab 1: Environment Setup",
       "description": "Connect to Schema",
       "filename": "../../oas-setup/oas-setup.md"
     },
