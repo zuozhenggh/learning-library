@@ -33,8 +33,7 @@ This lab assumes you have:
 - The following files are required to complete this lab.
     - DATA TO BE IMPORTED IN ORACLE DB:
          - Employee_Attrition.xlsx file 
-         - Employee_Data.csv file 
-
+         
      - DVA File:
          - Employee+Analysis.dva 
 
