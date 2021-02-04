@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "Modern Data Warehouse",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Modern Data Warehouse Hands-On Workshop Overview",
+      "filename": "introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Provision ODI, ADW & OCI",
+      "description": "Provisioning, Data Integrator, Autonomous Data Warehouse, Analytics Cloud and other required components for the architecture pattern",
+      "filename": "provision-odi-adw-oac/provision-odi-adw-oac.md" 
+    },
+    {
+      "title": "Lab 2: Connect to ODI",
+      "description": "Connect to ODI using VNC Viewer",
+      "filename": "connect-to-odi/connect-to-odi.md"
+    },
+    {
+      "title": "Lab 3: Create and Connect to ODI Repository and Prepare the EBS Data Source",
+      "description": "Create and connect to work repository and prepare data source",
+      "filename": "create-odi-repo-prep-data/create-odi-repo-prep-data.md"
+    },
+    {
+      "title": "Lab 4: Configure Integration and Load Data from EBS into ADW using ODI",
+      "description": "Configure and run integration",
+      "filename": "configure-integration/configure-integration.md"
+    },
+    {
+      "title": "Lab 5: Perform Analysis",
+      "description": "Upload and analyze dashboards",
+      "filename": "perform-analysis/perform-analysis.md"
+    }
+  ]
+}
+
