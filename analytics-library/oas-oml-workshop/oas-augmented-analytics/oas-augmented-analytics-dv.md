@@ -485,7 +485,10 @@ Select a person from the pivot table, right click and select the new action for 
  
 
 ## Want to learn more
-  
+* [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
+* [https://www.oracle.com/business-analytics/analytics-server.html](https://www.oracle.com/business-analytics/analytics-server.html)
+* [https://www.oracle.com/business-analytics](https://www.oracle.com/business-analytics)
+
 
 
 ## Acknowledgements

@@ -14,28 +14,19 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G0b79dLclzxjZa_txLAqGi2EXS5zmqyjIltpLeVGfSXaKCn07lIDBWSJm0UqldHF/n/natdsecurity/b/stack/o/converged-db-mkplc-freetier.zip)
+## **Step 1**: Download Oracle Resource Manager (ORM) stack zip file
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [oas-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YDUrvikh-qFK03FcjbB8XxTMRZ9LBCwrXzbria6S9y40rb_xTFBVgjGW4Fx8WCco/n/natdsecurity/b/stack/o/oas-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
 We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Step 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next step as indicated below to update your existing VCN with the required Egress rules.
 
-## **STEP 2**: Adding Security Rules to an Existing VCN   
+## **Step 2**: Adding Security Rules to an Existing VCN   
 This workshop requires a certain number of ports to be available, a requirement that can be met by using the default ORM stack execution that creates a dedicated VCN. In order to use an existing VCN the following ports should be added to Egress rules
 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 1521           | Database Listener                     |
-| 3000           | Node JS Application                   |
-| 3001           | Node JS Application                   |
-| 3003           | Node JS Application                   |
-| 7007           | Graph UI                              |
-| 7101           | WebLogic Admin Console                |
-| 7102           | WebLogic Admin Console                |
-| 8080           | Tomcat (Guacamole)                    |
-| 9090           | ORDS                                  |
 | 9502           | OAS Presentation service              |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
@@ -48,16 +39,18 @@ This workshop requires a certain number of ports to be available, a requirement 
     - Destination Port Range: *Refer to above table*
 7.  Click the Add Ingress Rules button
 
-## **STEP 3**: Setup Compute   
+## **Step 3**: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
+**This concludes this lab. You may now [proceed to the next lab](#next).**
+
 ## Acknowledgements
 
-* **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, November 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

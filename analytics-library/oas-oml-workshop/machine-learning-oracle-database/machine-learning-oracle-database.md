@@ -6,9 +6,11 @@ OAS offers a handful of native ML algorithms that work fine against reasonably s
 
 In such situations, a professional data scientist may wish to leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses. OML not only affords you the ability to leverage more algorithms, but because it is able to leverage the advanced parallel processing capabilities of the Oracle database you can work with significantly larger, more complex data sets. A final advantage of doing such work in an Oracle database is that once trained your machine learning algorithms can be quickly and readily operationalized via simple SQL statements. This is a far easier and more approachable mechanism than say trying to teaching all of your application developers languages such as Python and R.
 
-*Estimated Lab Time*: 
+*Estimated Lab Time:  45 minutes*
 
 ### Objectives ###
+
+In this lab, you will play the role of a data scientist assisting the HR Analyst within your organization. The analyst has asked you to assist in evaluating what ML algorithms are best suited to understanding and preventing unwanted attrition in order to decrease the rate of attrition and identify potential strategies to mitigate risk.   Additionally, you will identify employees still with the organization who are at greatest risk for leaving.
 
 ### Prerequisites ###
 
@@ -220,7 +222,13 @@ In this step we’ll implement essentially that exact workflow using a series of
 ![](./images/ml3.10.png " ")
 
 ## Want to learn more
-
+  
+* [https://blogs.oracle.com/machinelearning](https://blogs.oracle.com/machinelearning/)
+* [Oracle Machine Learning Overview: from Oracle Data Professional to Oracle Data Scientist in 6 Weeks!](https://www.youtube.com/watch?v=jFBMhOapGL8&feature=youtu.be&t=1)
+* [Learn How to Use Oracle Data Miner UI in 45 Minutes](https://blogs.oracle.com/machinelearning/learn-how-to-use-oracle-data-miner-ui-in-45-minutes)
+* [OML Getting Started Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/omlug/get-started-oracle-machine-learning.html)
+* [Oracle Machine Learning for R Learning Path](https://apexapps.oracle.com/pls/apex/f?p=44785:24:9589340370727:PRODUCT:NO::P24_CONTENT_ID,P24_PREV_PAGE,P24_PROD_SECTION_GRP_ID:8984,141,)
+* [Partner Built Tutorial On YouTube](https://www.youtube.com/playlist?list=PL99-DcFspRUq8VbbgXe2lQ559VDr7BSCr)
 
 
 ## Acknowledgements
