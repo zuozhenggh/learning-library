@@ -28,11 +28,11 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
 1. Go to your Cloud Console. Navigate to the **Marketplace** tab and enter "Graph Server and Client" in the serach bar. Click on the Oracle Graph Server and Client stack.
 
-  ![](images/OCIMarketplaceFindGraphServer.png)
+    ![](images/OCIMarketplaceFindGraphServer.jpg)
 
 2. Select the stack and then review the System Requirements and Usage Instructions. Then select the latest version and choose a compartment and click on `Launch Stack`.
 
-  ![](images/GSC204LaunchStack.png)
+    ![](images/GSC211LaunchStack.jpg)
 
 3. Most of the defaults are perfect for our purposes. However, you will need to choose, or provide the following:
     - Select a VM shape. Choose an Always Free eligible shape (i.e. `VM.Standard.E2.1.Micro`).
@@ -41,9 +41,10 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
     - Select a subnet compartment and subnet.
     - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you will have uploaded and unzipped the wallet, e.g. `jdbc:oracle:thin:@atpgraph_low?TNS_ADMIN=/etc/oracle/graph/wallets`
 
-  ***Note: This JDBC URL is stored in a configuration which can be updated later if necessary.***
+    ***Note: This JDBC URL is stored in a configuration which can be updated later if necessary.***
 
-  ![](images/ConfigureStackVariables_Sombrero203.png)
+    ![](images/ConfigureStackVariables_211_1.jpg)
+    ![](images/ConfigureStackVariables_211_2.jpg)
 
 4. Click `Next` to initiate the Resource Manager Job for the stack. The job will take 2-3 minutes to complete.
 
@@ -55,15 +56,15 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     Once the job has successfully completed the status will change from "In Progess" to "Succeeded".
 
-    ![](images/RMJobCompleted_Sombrero203.png)
+    ![](images/RMJobCompleted_211.jpg)
 
-    ***NOTE:*** *On completion please make a note of public IP address, so that you can SSH into the running instance later in this lab, and the graph viz and PGX URLs.*
+    ***NOTE:*** *On completion please make a note of `public_ip` and `graphviz_public_url`, so that you can SSH into the running instance and access the graph viz later in this lab.*
 
 5. The next set of steps are post-install setup and configuration on the newly created compute where the Graph Server was deployed.
 
 6. Add an Ingress Rule for port 7007 (needed later for the Graph Server).
 
-   Using the menu, under **Networking**, click on **Virtual Cloud Networks**.
+    Using the menu, under **Networking**, click on **Virtual Cloud Networks**.
 
     ![Click on the VCN](https://oracle.github.io/learning-library/oci-library/L100-LAB/Compute_Services/media/vcn1.png)
 
@@ -74,9 +75,9 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![Click on Security Lists](https://oracle.github.io/learning-library/oci-library/L100-LAB/Compute_Services/media/vcn2.png)
 
-   Click on the **Default Security List** link.
+    Click on the **Default Security List** link.
 
-   Here you need to open port 7007. Click on **Add Ingress Rules** and add the following values as shown below:
+    Here you need to open port 7007. Click on **Add Ingress Rules** and add the following values as shown below:
 
     - **Source Type:** CIDR
     - **Source CIDR:** 0.0.0.0/0 (This setting is for testing only. Please replace to the IP address of the client machines for actual use.)
@@ -146,46 +147,54 @@ The steps are as follows:
 
 ## **STEP 3:**  Copy ADB Wallet to the Linux Compute
 
-1. On your desktop or laptop (i.e. your machine), do not close your old Terminal window. We'll assume the ADB wallet was downloaded to ~/Downloads.
-
-    ![](images/download_folder.png)
+1. On your desktop or laptop (i.e. your machine), we'll assume the ADB wallet was downloaded to ~/Downloads.
 
     Open a new Terminal, navigate to the folder where you created your SSH Keys, and enter the following command:
 
     ```
-    ## copy the wallet. Once again modify with correct values for your setup.
-    <copy>scp -i <private_key> ~/Downloads/<ADB_Wallet>.zip opc@<public_ip_for_compute>:/etc/oracle/graph/wallets</copy>
+    <copy>
+    scp -i <private_key> ~/Downloads/<ADB_Wallet>.zip opc@<public_ip_for_compute>:/etc/oracle/graph/wallets
+    </copy>
     ```
 
-    ![](images/copy_wallet.png)
+    Example:
+    ```
+    scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@150.136.103.215:/etc/oracle/graph/wallets
+    ```
 
 ## **STEP 4:** Unzip ADB Wallet
 
-1.  Now go back to the Terminal window which is connected (via SSH) to the compute instance as `opc`.
+1.  Now connect to the compute instance (via SSH) as `opc` user.
+
+    ```
+    scp -i <private_key> opc@<public_ip_for_compute>
+    ```
+
+    Example:
+    ```
+    scp -i key.pem opc@150.136.103.215
+    ```
 
     Unzip the ADB wallet to the `/etc/oracle/graph/wallets/` directory.
 
     ```
     <copy>
     cd /etc/oracle/graph/wallets/
-    unzip <ADB_Wallet>.zip
+    unzip Wallet_ATPGRAPH.zip
     chgrp oraclegraph *
     </copy>
     ```
 
     The above is just one way of achieving the desired result, i.e. giving the `oraclegraph` user access to the ADB wallet. There are alternative methods.
 
-2. Check that you used the right service name in the JDBC URL you entered when configuring the OCI stack.
-
-   It can be updated if necessary.
+2. Check that you used the right service name in the JDBC URL you entered when configuring the OCI stack. It can be updated if necessary.
 
     ```
-    ## open the tnsnames and get the service name you will use later.
     <copy>cat /etc/oracle/graph/wallets/tnsnames.ora</copy>
     ```
 
-    ```
-    ## you will see something similar to
+    You will see something similar to:
+    ``` 
     atpgraph_low =
         (description=
             (address=
@@ -218,7 +227,7 @@ You may now proceed to the next lab.
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management.
-* **Last Updated By/Date** - Ryota Yamanaka, December 2020
+* **Last Updated By/Date** - Ryota Yamanaka, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

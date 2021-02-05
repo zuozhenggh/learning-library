@@ -42,35 +42,26 @@ Learn how to create a graph from relational data sources by:
     ```    
     <copy>
     statement = '''
-    CREATE PROPERTY GRAPH customer_360
+    CREATE PROPERTY GRAPH "customer_360"
       VERTEX TABLES (
         customer
-          PROPERTIES (id, type, name, age, location, gender, student)
       , account
-          PROPERTIES (id, type, account_no, balance)
       , merchant
-          PROPERTIES (id, type, name)
-     )
-     EDGE TABLES (
-        owned_by
-          SOURCE KEY(from_id) REFERENCES account
-          DESTINATION KEY(to_id) REFERENCES customer
+      )
+      EDGE TABLES (
+        account
+          SOURCE KEY(id) REFERENCES account
+          DESTINATION KEY(customer_id) REFERENCES customer
           LABEL owned_by
-          PROPERTIES (since)
       , parent_of
-          SOURCE KEY(from_id) REFERENCES customer
-          DESTINATION KEY(to_id) REFERENCES customer
-          LABEL parent_of
+          SOURCE KEY(customer_id_parent) REFERENCES customer
+          DESTINATION KEY(customer_id_child) REFERENCES customer
       , purchased
-          SOURCE KEY(from_id) REFERENCES account
-          DESTINATION KEY(to_id) REFERENCES merchant
-          LABEL purchased
-          PROPERTIES (amount)
+          SOURCE KEY(account_id) REFERENCES account
+          DESTINATION KEY(merchant_id) REFERENCES merchant
       , transfer
-          SOURCE KEY(from_id) REFERENCES account
-          DESTINATION KEY(to_id) REFERENCES account
-          LABEL transfer
-          PROPERTIES (amount, date)
+          SOURCE KEY(account_id_from) REFERENCES account
+          DESTINATION KEY(account_id_to) REFERENCES account
       )
     '''
     </copy>
@@ -105,43 +96,43 @@ Check that the graph was created. Copy, paste, and run the following statements 
     graph = session.get_graph("customer_360")
     graph
     </copy>
-    PgxGraph(name: customer_360, v: 180, e: 835, directed: True, memory(Mb): 0)
+    PgxGraph(name: customer_360, v: 15, e: 24, directed: True, memory(Mb): 0)
     ```
 
 2. Run some PGQL queries.
 
     ```
-    // what are the edge labels i.e. categories of edges
+    // what are the edge labels
     <copy>
     graph.query_pgql("""
-      select distinct label(e) from customer_360 match ()-[e]->()
+      SELECT DISTINCT LABEL(e) FROM customer_360 MATCH ()-[e]->()
     """).print()
     </copy>
     ```
     
     ```
-    // what are the vertex types i.e. values of the property named "type"
+    // what are the vertex labels
     <copy>
     graph.query_pgql("""
-      select distinct v.type from customer_360 match (v)-[e]->()
+      SELECT DISTINCT LABEL(v) FROM customer_360 MATCH (v)
     """).print()
     </copy>
     ```
 
     ```
-    // how many vertices with each type/category
+    // how many vertices with each label
     <copy>
     graph.query_pgql("""
-      select count(distinct v), v.type from customer_360 match (v) group by v.type
+      SELECT COUNT(v), LABEL(v) FROM customer_360 MATCH (v) GROUP BY LABEL(v)
     """).print()
     </copy>
     ```
 
     ```
-    // how many edges with each label/category
+    // how many edges with each label
     <copy>
     graph.query_pgql("""
-      select count(e), label(e) from customer_360 match ()-[e]->() group by label(e)
+      SELECT COUNT(e), LABEL(e) FROM customer_360 MATCH ()-[e]->() GROUP BY LABEL(e)
     """).print()
     </copy>
     ```
@@ -154,7 +145,7 @@ You may now proceed to the next lab (query and analyse the graph in JShell.
 
 - **Author** - Jayant Sharma, Product Manager, Spatial and Graph
 - **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management
-- **Last Updated By/Date** - Ryota Yamanaka, December 2020
+- **Last Updated By/Date** - Ryota Yamanaka, Feburary 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
