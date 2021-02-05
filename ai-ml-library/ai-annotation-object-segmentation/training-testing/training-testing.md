@@ -19,7 +19,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Download the Scripts
 
-1. [The training and testing scripts can be downloaded here.](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Me4VsLIUHWzJ-GJ1C5_1dTuMwzDNWQbubhP0lJwqxdsOWpwiBoAUe0HFxHzx_w_Y/n/c4u03/b/ai-ml-library/o/jblau-ai-object-detection.zip) 
+1. View and download the [training](https://gist.github.com/Justin-Blau/1288e4e1ff25482b764133ae8da591f8) and [testing](https://gist.github.com/Justin-Blau/74f2511d72752624e1b7144bca8a4f0a) scripts.
 
 2. Download the zip file and put it in the `coco-annotation` directory on the instance and extract the contents. This should be the same directory where the `datasets` directory is located. The scripts are configured to look for the `datasets` directory in the location where they reside.
 
