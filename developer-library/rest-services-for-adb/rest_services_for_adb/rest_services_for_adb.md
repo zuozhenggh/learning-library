@@ -120,7 +120,7 @@ The Upload Data into New Table model will appear.
 
 We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
 
-[May 2018 Earth Quakes](../demodata/may2018.csv)
+[May 2018 Earthquakes](../demodata/may2018.csv)
 
 Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
@@ -130,8 +130,47 @@ The model will then give you a preview of what the data will look like in an Ora
 
 ![](../images/SDW-20.png)
 
+On the following step of the data loading modal, we can see the name of the table we are going to create as well as the column and data types for the table.
 
+![](../images/SDW-21.png)
 
+Let's edit a few of these columns. First, we want to take the TIME column and make it a TIMESTAMP type. Do this by selecting TIMESTAMP from the Column Type dropdown.
+
+![](../images/SDW-22.png)
+
+Next, we need to set the timestamp format so that we can load it into the database. Just to the right of the Column Type you will find a Format Mask column. (You may need to use the horizontal scroll bar to see the column to the right)
+
+Enter the following into that column:
+
+YYYY-MM-DD"T"HH24:MI:SS.FF3"Z"
+
+You can check the image below for guidance.
+
+![](../images/SDW-23.png)
+
+Next, we are going to change the LATITUDE, LONGITUDE, DEPTH and MAG columns to NUMBER column Types. Again, use the Column Type dropdown select list to choose NUMBER for each of them. We also need to set the SCALE of each of these columns so that we retain the values to the right of the decimal point.
+
+Set the scale to 7 for LATITUDE, 7 for LONGITUDE, 3 for DEPTH, and 3 for MAG.
+
+![](../images/SDW-24.png)
+
+Click Next on the bottom right of the modal when done.
+
+On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
+
+![](../images/SDW-25.png)
+
+When you are done taking a look, click the Finish button in the lower right of the modal.
+
+![](../images/SDW-26.png)
+
+The Data Loader will now process the file by creating a table and loading the CSV file data into that table. 
+
+![](../images/SDW-27.png)
+
+Once its done, you will see a row in the Data Loading tab that indicates how many rows were uploaded, if any failed and the table name.
+
+![](../images/SDW-28.png)
 
 ############################################################################################
 
