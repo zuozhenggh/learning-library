@@ -81,7 +81,7 @@ We will be walking through series of steps on how to create Customer Summary Rep
 
     Creating Customer Modal Form takes care of **Data Block** conversion and **Items** from Forms to APEX
 
-## **STEP 3**:Create List of Values in Oracle APEX page
+## **STEP 3**:Create List of Values in Oracle Customer Form APEX page
 
 
 1. From the App Builder Home Page, Click on **Migrations**
@@ -235,7 +235,45 @@ That completes the List of Values section of the Migration.
   11. Click on the tree node will open the **Customer Modal Form**
         ![](images/customer-modal-form.png " ")
 
+
   Great Job !! You have successfully completed transforming the **Customer** Form to **Interactive Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
+
+## **STEP 7**:Additional Enhancements to Customer Form
+
+We can enhance the customer form in APEX page to utilize the user friendly features in APEX.
+
+### Create the **Static LOV** for *Credit Rating*
+
+1. Go to your Application Home Page, Click on **Shared Components** and Click on **List of Values**
+  ![](images/apex_lov.png " ")
+
+2. Click on Create and choose **Source** as **From Scratch** and Click next
+  ![](images/lov_step1.png " ")
+
+3. Enter the name **CREDIT_RATING_LOV** and Choose **Static** for the list of value type
+   ![](images/static-lov-1.png " ")
+
+4. Enter the values for Display and Return value as outlined
+  ![](images/static-lov-2.png " ")
+
+5. Attach to the **Credit Rating ID** field in the Customer Form
+  ![](images/credit-rating-lov.png " ")
+
+### Customize the Order and Display of columns in the Customer form
+When you create a form using the wizard, it automatically creates an item for each column in the table. Depending on the column type, it creates a Text Field, Textarea, Date Picker or Number Field item.
+
+Once the page is created, you can go to the page and make the changes you need. Select a different type of element, edit the label and more.
+
+1. You can make more than one column to show in the same row by toggling the **Start New Row**
+  ![](images/new-column.png " ")
+
+2. You can organize items by dragging and drop them.
+  ![](images/drag-drop.png " ")
+
+3. Once you finish customizing, when you run the customer form you will see the customized form
+  ![](images/customer-form.png " ")
+
+### Master/Detail Page for Orders/Item
 
 
 
