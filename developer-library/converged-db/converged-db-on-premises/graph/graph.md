@@ -16,10 +16,35 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-### Overview of Oracle Graph
+### About Oracle Graph
+
+**Oracle Graph Server and Client**
+
+It is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server and Client includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.
+
+Oracle Graph Client: A zip file containing Oracle Graph Client.
+
+Oracle Graph Server: An rpm file containing an easy to deploy Oracle Graph Server.
+
+For installing the Graph server, the prerequisites are:
+-	Oracle Linux 6 or 7 x64 or a similar Linux distribution such as RedHat
+-	Oracle JDK 8
+
+For installing the Graph client, the prerequisites are:
+-	A Unix-based operation system (such as Linux) or macOS or Microsoft Windows
+-	Oracle JDK 11
+
+**Interactive Graph Shell**
+
+Both the Oracle Graph server and client packages contain an interactive command-line application for interacting with all the Java APIs of the product, locally or on remote computers.
+
+This interactive graph shell dynamically interprets command-line inputs from the user, executes them by invoking the underlying functionality, and can print results or process them further.
+
+This graph shell is implemented on top of the Java Shell tool (JShell).
+
+The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --`base_url` command-line option) and creates a PGX session.
 
 Oracle’s converged, multi-model database natively supports graphs and delivers high performance, scalable graph data management, query, and analytics for enterprise applications. State-of-the-art graph features are available along with functionality required for enterprise grade applications: fine-grained security, high availability, easy manageability, and integration with other data in an application.
-
 
 Oracle’s mission is to help people see data in new ways, discover insights, and unlock endless possibilities.  Graph analysis is about understanding relationships and connections in data, and detecting patterns that identify new insights. With Oracle’s Graph offerings developers can use a comprehensive suite of graph query and analytics tools to integrate graphs into applications on enterprise grade data management infrastructure.
 
@@ -49,8 +74,6 @@ Here is are two videos that talk more about Oracle Graph.
 
 [](youtube:-DYVgYJPbQA)
 [](youtube:zfefKdNfAY4)
-
-### Introduction to Property Graph
 
 **What Are Property Graphs?**
 
@@ -95,7 +118,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 []  indicates an edge variable
 ```
 
-## **STEP 1**: Connect to Graph Server and Client
+## **Step 1**: Connect to Graph Server and Client
 
 **The graph server has already been setup for you. For more information on the graph server setup see the "Learn More section" of this lab.**
 
@@ -131,7 +154,7 @@ Below screenshot is an example how Connection to a PGX server using Jshell looks
     </copy>
     ```
 
-## **STEP 2**: Create Graph
+## **Step 2**: Create Graph
 
 **For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. The SQL has been provided as reference.**
 
@@ -220,7 +243,7 @@ The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) a
     Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
     ```
 
-## **STEP 3**: Querying graph using PGQL
+## **Step 3**: Querying graph using PGQL
 
 1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
@@ -315,7 +338,7 @@ The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) a
 
     ![](./images/IMGG15.PNG " ")
 
-## **STEP 4**: Load the graph into memory and publish it.
+## **Step 4**: Load the graph into memory and publish it.
 
 1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
 
@@ -376,7 +399,7 @@ The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) a
 
     ![](./images/IMGG21.PNG " ")
 
-## **STEP 5**: Visualize the Graph
+## **Step 5**: Visualize the Graph
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
@@ -539,31 +562,22 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 - [Oracle Graph](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 
-**Oracle Graph Server and Client**
 
-It is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server and Client includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
-Oracle Graph Client: A zip file containing Oracle Graph Client.
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
 
-Oracle Graph Server: An rpm file containing an easy to deploy Oracle Graph Server.
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
 
-For installing the Graph server, the prerequisites are:
--	Oracle Linux 6 or 7 x64 or a similar Linux distribution such as RedHat
--	Oracle JDK 8
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
 
-For installing the Graph client, the prerequisites are:
--	A Unix-based operation system (such as Linux) or macOS or Microsoft Windows
--	Oracle JDK 11
+3.  Click **Rate this workshop**
 
-**Interactive Graph Shell**
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
 
-Both the Oracle Graph server and client packages contain an interactive command-line application for interacting with all the Java APIs of the product, locally or on remote computers.
-
-This interactive graph shell dynamically interprets command-line inputs from the user, executes them by invoking the underlying functionality, and can print results or process them further.
-
-This graph shell is implemented on top of the Java Shell tool (JShell).
-
-The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --base_url command-line option) and creates a PGX session.
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
