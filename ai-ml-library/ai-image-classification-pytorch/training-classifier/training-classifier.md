@@ -262,7 +262,7 @@ for i in range(10):
 
 For this example, we can dive a little deeper than just the overall accuracy. The above code prints out the accuracy for each category and can provide some insight as to where the model may be getting confused.
 
-This covers the main points of training deep learning computer vision models. [Click here to view and download the code](https://gist.github.com/Justin-Blau/e34911e3c7ec85d05f8317d41403e9a6) The next step is to accellerate the computational workload with a GPU.
+This covers the main points of training deep learning computer vision models. [Click here to view and download the code](https://gist.github.com/Justin-Blau/55696dbd9c4209b443c14cf99e1b87e5) The next step is to accellerate the computational workload with a GPU.
 
 You may proceed to the next lab.
 
