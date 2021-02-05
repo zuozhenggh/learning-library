@@ -114,6 +114,7 @@ Start by clicking the Data Loading area; the center of the gray dotted-line box.
 
 ![](../images/SDW-17.png)
 
+
 ############################################################################################
 
 ## **Step 2**: Build a simple GET handler
