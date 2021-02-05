@@ -33,7 +33,7 @@ There are a number of methods to set up a python environment to run PyTorch. You
 4. Exit the terminal and open a new terminal after installation, which ensures that conda is activated. Optional: create a specific environment for PyTorch by running the command `conda create --name pytorch python=3.6` and then enabling the environment by running `conda activate pytorch`
 5. [Install PyTorch](https://pytorch.org/) through conda `conda install pytorch torchvision cudatoolkit=10.2 -c pytorch`
 
-[Click here to view and download the code](https://gist.github.com/Justin-Blau/e34911e3c7ec85d05f8317d41403e9a6)
+[Click here to view and download the code](https://gist.github.com/Justin-Blau/55696dbd9c4209b443c14cf99e1b87e5)
 
 ## **STEP 2**: CIFAR10 and DataLoader
 
