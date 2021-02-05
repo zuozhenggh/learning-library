@@ -114,6 +114,24 @@ Start by clicking the Data Loading area; the center of the gray dotted-line box.
 
 ![](../images/SDW-17.png)
 
+The Upload Data into New Table model will appear.
+
+![](../images/SDW-18.png)
+
+We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
+
+[May 2018 Earth Quakes](../demodata/may2018.csv)
+
+Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
+
+![](../images/SDW-19.png)
+
+The model will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
+
+![](../images/SDW-20.png)
+
+
+
 
 ############################################################################################
 
