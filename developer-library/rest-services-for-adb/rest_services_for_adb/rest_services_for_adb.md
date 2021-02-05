@@ -64,7 +64,11 @@ On the bottom of the worksheet, in the Script Output, you should see that the us
 
 ## **Step 2**: Load data into the database
 
-We need to load some data into the database so that we can create some REST services upon those tables and data. To do this, we need to login as our newly created user. Start by clicking the Admin user dropdown menu in the upper right, then selecting Sign Out.
+We need to load some data into the database so that we can create some REST services upon those tables and data. To do this, we need to login as our newly created user. We have two ways to switch users.
+
+**User Changing Method 1:**
+
+The first method requires us to sign out and back in. Start by clicking the Admin user dropdown menu in the upper right, then selecting Sign Out.
 
 ![](../images/SDW-7.png)
 
@@ -84,17 +88,31 @@ This will bring you back to Database Actions but as the user we created.
 
 ![](../images/SDW-11.png)
 
-Here, on the overview page, click the SQL tile.
+**User Changing Method 2:**
+
+As the Admin user, in the upper left of the page, click the Database Actions Menu. In the Administration List, select Database Users; just as we did previously when creating Gary.
 
 ![](../images/SDW-12.png)
 
-We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
+Find Gary's user title and click the open-in-new-tab icon ![](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
 
 ![](../images/SDW-13.png)
 
-Start by clicking the Data Loading area; the center of the gray dotted-line box.
+Enter Gary as the Username and then his password in the password field. Then click Sign in.
 
 ![](../images/SDW-14.png)
+
+In either login method, we end up on the overview page. Now click the SQL tile.
+
+![](../images/SDW-15.png)
+
+We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
+
+![](../images/SDW-16.png)
+
+Start by clicking the Data Loading area; the center of the gray dotted-line box.
+
+![](../images/SDW-17.png)
 
 ############################################################################################
 
