@@ -221,6 +221,16 @@ In this step we’ll implement essentially that exact workflow using a series of
 10. Looking at the **OML\_PredictAttrition** data set we can view the query that dynamically calls the attrition\_model\_SVM algorithm to generate a **ATTRITTION\_PREDICTION** column indicating if that employee is likely to leave as well as a  **ATTRITION\_PREDICTION\_PCT** indicating how confident we are in that prediction. 
 ![](./images/ml3.10.png " ")
 
+
+**This concludes this lab.**
+
+With this, you have learned that OAS affords end users the ability to perform augmented analytics readily and easily on their own without requiring the assistance from a data scientist.  Examples include the ability to readily explain any metric or attribute, adding a forecast, trendline, or identify outliers /clusters in your data with a single click, data prep recommendations that significantly improve your data for analysis, natural language processing when interacting with data and the ability to create data flows that train and apply ML models are all included in OAS.    
+
+Oracle’s converged database Machine Learning (OML) capabilities enable end users to work with data scientists inside your organization to enhance and extend the OAS capabilities.  OML affords access to more models as well as more sophisticated algorithms including R scripts and these enhanced capabilities are now included for free in your database license.   Oracle Converged Database enables you to build and train models using significantly more data and attributes than is possible using OAS alone.  
+
+Finally, the more sophisticated data models your data science team crafts in OML can quickly and readily be surfaced via OAS (or any other application) using a few SQL statements.  This is because all aspects of OML can be wrapped in a series of SQL statements, making it extremely fast and easy to operationalize the models you build
+
+
 ## Want to learn more
   
 * [https://blogs.oracle.com/machinelearning](https://blogs.oracle.com/machinelearning/)
