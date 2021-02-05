@@ -9,7 +9,7 @@
     {
       "title": "Introduction",
       "description": "About the New features for Developers Workshop",
-      "filename": "../../intro/intro.md"
+      "filename": "../../intro/intro-adb.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
@@ -17,37 +17,32 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
     },
     {
-      "title": "Lab 2: Setup Compute Instance",
+      "title": "Lab 2: Verify Setup of Compute Instance",
       "description": "Verify Setup of compute instance",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
     },
     {
       "title": "Lab 3: Load Data and Start Application",
       "description": "Connect to Schema",
-      "filename": "../../setup/setup-adb.md"
+      "filename": "../../setup/setup-adb-livelabs.md"
     },   {
       "title": "Lab 4: JSON",
       "description": "JSON Lab",
-      "filename": "../../json/json-adb.md"
+      "filename": "../../json/json-adb-livelabs.md"
     }, {
       "title": "Lab 5: Spatial",
       "description": "Spatial Lab",
-      "filename": "../../spatial/spatial-adb.md"
+      "filename": "../../spatial/spatial-adb-livelabs.md"
     },
     {
       "title": "Lab 6: SODA",
       "description": "SODA Lab",
-      "filename": "../../soda/soda-adb.md"
-    },
-    {
-      "title": "Lab 7: NodeJS",
-      "description": "NodeJS Lab",
-      "filename": "../../soda/nodejs.md"
+      "filename": "../../soda/soda-adb-livelabs.md"
     },
     {
       "title": "Lab 8: XML",
       "description": "XML Lab",
-      "filename": "../../xml/xml-adb.md"
+      "filename": "../../xml/xml-adb-livelabs.md"
     }
   ]
 }
