@@ -89,7 +89,11 @@ Here, on the overview page, click the SQL tile.
 ![](../images/SDW-12.png)
 
 
+We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
 
+![](../images/SDW-13.png)
+
+Start by clicking the Data Loading area; the center of the gray dotted-line box.
 
 ############################################################################################
 
