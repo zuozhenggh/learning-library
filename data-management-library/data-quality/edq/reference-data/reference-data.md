@@ -46,11 +46,10 @@ We will take advantage of the results generated while we were profiling the data
 
     ![](./images/image1200_58.png " ")
 
-6.	Provide the following information:
+6.	Provide the following information and click “Finish”:
     - Name: Valid Genders
     - Description: Valid Genders
 
-    then click “Finish”.
 
     ![](./images/image1200_59.png " ")
 
@@ -93,10 +92,10 @@ Now, we will copy reference data previously created into our project, which will
 1. We will use Examples.dxi package which is located in below path.
 
     ```
-    <copy>
-    Path: /home/opc/Dxi_Files
-    File Name: Examples.dxi
-    </copy>
+    Path: <copy>/home/oracle/Downloads</copy>
+    ```
+    ```
+    File Name: <copy>Examples.dxi</copy>
     ```
 
 2. Click on "File" in Director and select "Open Package File...". Browse to the appropriate directory and select the examples.dxi file.

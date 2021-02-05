@@ -124,8 +124,12 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 7.	Provide the following information:
 
-    - **Name**: Exploring Customer Data
-    - **Description**: Data Quality Project to Profile, Standardize, Match and Merge customer data
+    ```
+    Name: <copy>Exploring Customer Data</copy>
+    ```
+    ```
+    Description: <copy>Data Quality Project to Profile, Standardize, Match and Merge customer data</copy>
+    ```
 
 8.	Click on “Next >” button located at the bottom right corner.
 
@@ -152,15 +156,13 @@ Now that we have created a project, the next step is creating a Data Store. A Da
 
 5.	Provide the following data:
     ```
-   <copy>
     Database host: localhost
     Port: 1521
-    Database name: orcl.us.oracle.com
+    Database name: orcl
     Name type: Service
     User name: EDQ_SRC
     Password: oraedq
     Schema:
-   </copy>
     ```
 
 6.	Click on “Test…” button located on the bottom right corner.
@@ -173,8 +175,13 @@ Now that we have created a project, the next step is creating a Data Store. A Da
 
 8.	Click on “Next > ” button located on the bottom right corner.
 9.	Provide the following information as given below.
-    - **Name**: Connection to Oracle Database
-    - **Description**: Connection to US Custom Data
+    ```
+    Name: <copy>Connection to Oracle Database</copy>
+    ```
+    ```
+    Description: <copy>Connection to US Custom Data</copy>
+    ```
+
 10.	Click on “Finish” button located on the bottom right corner.
 
     ![](./images/image1200_16.png)
@@ -208,8 +215,12 @@ Now that we have created a project, the next step is creating a Data Store. A Da
     ![](./images/image1200_23.png)
 
 18.	Provide the following data:
-    - **Name**: US Customer Data
-    - **Description**: Connection to Oracle `Database.US_CUSTOMERS`
+    ```
+    Name: <copy>US Customer Data</copy>
+    ```
+    ```
+    Description: <copy>Connection to Oracle Database.US_CUSTOMERS</copy>
+    ```
 
 19.	Verify that checkbox “Run Now?” is checked and click on “Finish”.
 
