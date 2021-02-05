@@ -33,7 +33,7 @@ There are a number of methods to set up a python environment to run PyTorch. You
 4. Exit the terminal and open a new terminal after installation, which ensures that conda is activated. Optional: create a specific environment for PyTorch by running the command `conda create --name pytorch python=3.6` and then enabling the environment by running `conda activate pytorch`
 5. [Install PyTorch](https://pytorch.org/) through conda `conda install pytorch torchvision cudatoolkit=10.2 -c pytorch`
 
-[Click here to download the full code example](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6Z0fLjfKUUIytz0uXeDpi0Uotu68sWLsqJoYxDwKVfzjBN23ifPvyFCJE6R9Cp09/n/c4u03/b/ai-ml-library/o/jblau-image-classification-pytorch.zip)
+[Click here to view and download the code](https://gist.github.com/Justin-Blau/e34911e3c7ec85d05f8317d41403e9a6)
 
 ## **STEP 2**: CIFAR10 and DataLoader
 
@@ -262,7 +262,7 @@ for i in range(10):
 
 For this example, we can dive a little deeper than just the overall accuracy. The above code prints out the accuracy for each category and can provide some insight as to where the model may be getting confused.
 
-This covers the main points of training deep learning computer vision models. [Click here to download the full code example](files/image-classification-pytorch.py) The next step is to accellerate the computational workload with a GPU.
+This covers the main points of training deep learning computer vision models. [Click here to view and download the code](https://gist.github.com/Justin-Blau/e34911e3c7ec85d05f8317d41403e9a6) The next step is to accellerate the computational workload with a GPU.
 
 You may proceed to the next lab.
 
