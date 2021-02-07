@@ -203,6 +203,7 @@ Thats it! Your table is REST enabled. Open a new browser window or tab and enter
 ![](../images/SDW-35.png)
 
 
+
 ############################################################################################
 
 ## **Step 2**: Build a simple GET handler
