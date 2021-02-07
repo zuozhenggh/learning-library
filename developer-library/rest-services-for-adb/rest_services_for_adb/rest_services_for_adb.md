@@ -176,23 +176,31 @@ Once its done, you will see a row in the Data Loading tab that indicates how man
 
 ![](../images/SDW-29.png)
 
+We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
+
+![](../images/SDW-30.png)
+
+In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
+
+![](../images/SDW-31.png)
+
 ## **Step 3:**Auto-REST enable a table
 
 REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
-![](../images/SDW-30.png)
+![](../images/SDW-32.png)
 
 Right click on the table name and select REST in the pop up menu then Enable.
 
-![](../images/SDW-31.png)
+![](../images/SDW-33.png)
 
 The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
-![](../images/SDW-32.png)
+![](../images/SDW-34.png)
 
 Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
-![](../images/SDW-33.png)
+![](../images/SDW-35.png)
 
 
 ############################################################################################
