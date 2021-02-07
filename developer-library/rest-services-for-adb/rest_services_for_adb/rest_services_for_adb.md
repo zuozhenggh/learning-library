@@ -146,7 +146,7 @@ Next, we need to set the timestamp format so that we can load it into the databa
 
 Enter the following into that column:
 
-YYYY-MM-DD"T"HH24:MI:SS.FF3"Z"
+**YYYY-MM-DD"T"HH24:MI:SS.FF3"Z"**
 
 You can check the image below for guidance.
 
@@ -175,6 +175,25 @@ The Data Loader will now process the file by creating a table and loading the CS
 Once its done, you will see a row in the Data Loading tab that indicates how many rows were uploaded, if any failed and the table name.
 
 ![](../images/SDW-29.png)
+
+## **Step 3:**Auto-REST enable a table
+
+REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
+
+![](../images/SDW-30.png)
+
+Right click on the table name and select REST in the pop up menu then Enable.
+
+![](../images/SDW-31.png)
+
+The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
+
+![](../images/SDW-32.png)
+
+Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
+
+![](../images/SDW-33.png)
+
 
 ############################################################################################
 
