@@ -79,7 +79,7 @@ DROP TABLE transfer;
 </copy>
 ```
 
-![](images/ADB_SDW_C360_DropTables.png)
+![](images/drop-table.jpg)
 
 ## **STEP 3:** Create and populate the `ACCOUNT` table
 
