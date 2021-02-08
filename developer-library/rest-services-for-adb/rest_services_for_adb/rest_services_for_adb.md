@@ -181,7 +181,7 @@ We can take a look at our newly created table and the data in it by using the na
 ![](../images/SDW-30.png)
 
 xxx
-<img src="../images/SDW-30.png" width="100px">
+<img src="../images/SDW-30.png" width="250px">
 xxx
 
 
