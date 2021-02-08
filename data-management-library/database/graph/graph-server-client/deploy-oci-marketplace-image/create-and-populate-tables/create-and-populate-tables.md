@@ -6,7 +6,7 @@ In this lab, you are going to log in as user `CUSTOMER_360`. You will learn how 
 
 You will create 7 tables (customer, account, merchant, owned_by, purchased, transfer, parent_of). The entity-relationship diagram for these tables is shown below.
 
-![ER Diagram of tables](images/c360_erDiagram.png)
+![](images/c360_erDiagram.png)
 
 Estimated time: 7 minutes
 
@@ -21,17 +21,17 @@ Estimated time: 7 minutes
 
 ## **STEP 1:** Log in to SQL Developer Web
 
-1. Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
+Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
 
-    ![](images/admin_url.png)
+![](images/admin_url.jpg)
 
-2. Login as `CUSTOMER_360` using the password you entered when creating the user.
+Login as `CUSTOMER_360` using the password you entered when creating the user.
 
-    *Note: Use the password you choose in Step 1.2 in Lab 4.*
+*Note: Use the password you choose in Step 1.2 in Lab 4.*
 
-    ![](images/ADB_SDW_LoginAsC360.png)
+![](images/login-c360.png)
 
-    ![](images/ADB_SDW_ConnectedAsC360.png)
+![](images/sdw-c360.jpg)
 
 ### Troubleshooting
 
@@ -79,7 +79,7 @@ DROP TABLE transfer;
 </copy>
 ```
 
-![Drop existing tables](images/ADB_SDW_C360_DropTables.png)
+![](images/ADB_SDW_C360_DropTables.png)
 
 ## **STEP 3:** Create and populate the `ACCOUNT` table
 
@@ -106,7 +106,7 @@ COMMIT;
 </copy>
 ```
 
-![Create Account table](images/ADB_SDW_C360_CreateAccountTable.png)
+![](images/ADB_SDW_C360_CreateAccountTable.png)
 
 ## **STEP 4:** Create and populate the `CUSTOMER` table
 
@@ -133,8 +133,6 @@ COMMIT;
 </copy>
 ```
 
-![Create Customer table](images/ADB_SDW_C360_CreateCustomerTable.png)
-
 ## **STEP 5:** Create and populate the `MERCHANT` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
@@ -157,8 +155,6 @@ COMMIT;
 </copy>
 ```
 
-![Create Merchant table](images/ADB_SDW_C360_CreateMerchantTable.png)
-
 ## **STEP 7:** Create and populate the `PARENT_OF` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
@@ -175,8 +171,6 @@ INSERT INTO parent_of VALUES (103,104);
 COMMIT;
 </copy>
 ```
-
-![Create parent_of table](images/ADB_SDW_C360_CreateParentOfTable.png)
 
 ## **STEP 8:** Create and populate the `PURCHASED` table
 
@@ -207,8 +201,6 @@ COMMIT;
 </copy>
 ```
 
-![Create purcahsed table](images/ADB_SDW_C360_CreatePurchasedTable.png)
-
 ## **STEP 9:** Create and populate the `TRANSFER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
@@ -237,8 +229,6 @@ INSERT INTO transfer VALUES (100008,202,201,300,'2018-10-10');
 COMMIT;
 </copy>
 ```
-
-![Create transfer table](images/ADB_SDW_C360_CreateTransferTable.png)
 
 You may now proceed to the next lab.
 
