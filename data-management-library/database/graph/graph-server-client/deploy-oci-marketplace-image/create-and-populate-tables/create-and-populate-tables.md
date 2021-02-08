@@ -106,7 +106,7 @@ COMMIT;
 </copy>
 ```
 
-![](images/ADB_SDW_C360_CreateAccountTable.png)
+![](images/create-table.jpg)
 
 ## **STEP 4:** Create and populate the `CUSTOMER` table
 
@@ -204,8 +204,6 @@ COMMIT;
 ## **STEP 9:** Create and populate the `TRANSFER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
-
-The quotes are needed since DATE is a reserved word.
 
 ```
 <copy>
