@@ -4,7 +4,7 @@
 
 Data profiling is a process of understanding the data in EDQ. The first step in improving the quality of your data is to understand it. You have data but is it good data? EDQ allows to quickly assess, find, investigate and understand anomalies regarding data content, standardization, relationships and duplication among others.
 
-*Estimated Lab Time* - 30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 * Work with Quickstats Profiler - A Bird's-eye view of the data
@@ -202,6 +202,20 @@ This lab assumes you have:
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020

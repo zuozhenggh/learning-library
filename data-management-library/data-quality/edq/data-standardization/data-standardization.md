@@ -3,7 +3,7 @@
 ## Introduction
 This lab describes how to implement data standardization and enhancement rules in Enterprise Data Quality.
 
-*Estimated Lab Time* - 30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 You will be working on the below EDQ components in this lab.
@@ -141,15 +141,24 @@ This lab assumes you have:
 
 Now, you can see the standardized data in the Result Browser by clicking on Writer component.
 
-You may now *proceed to the next lab*.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
 
-## Acknowledgements
-* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

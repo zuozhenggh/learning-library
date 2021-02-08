@@ -68,7 +68,7 @@ This lab assumes you have:
      - Lab :  Create Compute instance
      - Lab :  Environment setup
 
-## **STEP 1**: Start ORDS in standalone mode
+## **Step 1**: Start ORDS in standalone mode
 
 1. The script (`env_setup_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
@@ -83,7 +83,7 @@ This lab assumes you have:
   ![](./images/ords_lab1_snap5.png " ")
 
 
-## **STEP 2**: Create RESTful Services for JSON data
+## **Step 2**: Create RESTful Services for JSON data
 
    `AutoREST Enable a Schema and its JSON Table`
 
@@ -473,7 +473,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
     ```
     ![](./images/ordsl50.png " ")
 
-## **STEP 3**: Create RESTful Services for XML data
+## **Step 3**: Create RESTful Services for XML data
 
 `AutoREST Enable a Schema and its XML Table`
 
@@ -826,7 +826,7 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
     ```
    ![](./images/ordslab2.39.png " ")
 
-## **STEP 4**: Create RESTful Services for Spatial data
+## **Step 4**: Create RESTful Services for Spatial data
 
 `AutoREST Enable a Schema and its Spatial Table`
 
@@ -1135,8 +1135,24 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
     ![](./images/ordslab3.39.png " ")
 
 
+**This concludes this lab.**
+
 ## Learn More
 - [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 

@@ -5,7 +5,7 @@ This workshop will help you get started with Oracle Enterprise Data Quality (EDQ
 ## About Oracle Enterprise Data Quality
 Oracle Enterprise Data Quality provides a comprehensive data quality management environment, used to understand, improve, protect and govern data quality. The software facilitates best practice Master Data Management, Data Governance, Data Integration, Business Intelligence and data migration initiatives, as well as providing integrated data quality in CRM and other applications and cloud services.
 
-*Estimated Workshop Time* -  4 Hours
+*Estimated Lab Time*: 3 Hours
 
   ![](./images/edq_architecture.png " ")
 
