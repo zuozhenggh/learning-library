@@ -188,11 +188,11 @@ In the slider that has come out from the right of the page, we can look at the d
 
 REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
-<img src="../images/SDW-32.png" width="250px">
+<img src="../images/SDW-32.png" width="300px">
 
 Right click on the table name and select REST in the pop up menu then Enable.
 
-<img src="../images/SDW-33.png" width="250px">
+<img src="../images/SDW-33.png" width="400px">
 
 The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
@@ -201,6 +201,10 @@ The REST Enable Object slider will appear from the right side of the page. We ar
 Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
 ![](../images/SDW-35.png)
+
+You can also see a plug icon ![](../images/plug-icon.png) next to the table to indicate it is REST enabled.
+
+![](../images/SDW-36.png)
 
 play with the endpoint using cURL and pass a variable
 
