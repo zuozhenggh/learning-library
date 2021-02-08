@@ -12,9 +12,6 @@ Oracle Visual Builder is a development tool for creating web and mobile applicat
 
 In this tutorial, you'll create the business objects shown here:
 
-![Description
-of vbcsca_dbdiagram.png follows](./images/vbcsca_dbdiagram.png)
-
 ![](./images/vbcsca_dbdiagram.png " ")
 
 Once you have your business objects, you'll use them to build a very simple Human Resources application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
