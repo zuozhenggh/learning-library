@@ -9,6 +9,7 @@ Estimate time: 30-45 minutes
 ### Objectives
 - Enable a user for REST access
 - Publish a RESTful service for a database table
+- Secure the REST service
 
 ### Required Artifacts
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
