@@ -178,10 +178,10 @@ Once its done, you will see a row in the Data Loading tab that indicates how man
 
 We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
-![](../images/SDW-30.png| width=50)
+![](../images/SDW-30.png)
 
 xxx
-<img src="./images/SDW-30.png" width="100px">
+<img src="../images/SDW-30.png" width="100px">
 xxx
 
 
