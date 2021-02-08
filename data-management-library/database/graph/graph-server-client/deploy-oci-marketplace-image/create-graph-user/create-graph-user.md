@@ -104,29 +104,29 @@ Estimated time: 3 minutes
 
 Now create the `CUSTOMER_360` user. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
 
-    Note: Replace **<specify_a_password>** with a valid password string after copying and pasting the text below but **before executing** it in SQL Developer Web.
+Note: Replace **<specify_a_password>** with a valid password string after copying and pasting the text below but **before executing** it in SQL Developer Web.
 
-    ```
-    <copy>
-    CREATE USER customer_360 
-    IDENTIFIED BY <specify_a_password> 
-    DEFAULT TABLESPACE data 
-    TEMPORARY TABLESPACE temp 
-    QUOTA UNLIMITED ON data;  
+```
+<copy>
+CREATE USER customer_360 
+IDENTIFIED BY <specify_a_password> 
+DEFAULT TABLESPACE data 
+TEMPORARY TABLESPACE temp 
+QUOTA UNLIMITED ON data;
 
-    GRANT create session, create table, create view TO customer_360;
-    -- The following additional privileges are necessary for two-tier architecture (= PGQL-on-RDBMS)
-    -- GRANT ALTER SESSION, CREATE PROCEDURE, CREATE TYPE, CREATE SEQUENCE, CREATE TRIGGER TO customer_360;
-    
-    GRANT graph_developer TO customer_360;
-    </copy>
-    ```
+GRANT create session, create table, create view TO customer_360;
+-- The following additional privileges are necessary for two-tier architecture (= PGQL-on-RDBMS)
+-- GRANT ALTER SESSION, CREATE PROCEDURE, CREATE TYPE, CREATE SEQUENCE, CREATE TRIGGER TO customer_360;
 
-    ![](images/ADB_SDW_CreateUser_C360.png)
+GRANT graph_developer TO customer_360;
+</copy>
+```
 
-    *Notes:* 
-    - *The `IDENTIFIED BY` clause specifies the password (i.e whatever you replaced <specify_a_password> with)*
-    - *The Graph Server uses database authentication ([details](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/using-inmemory-analyst-oracle-database.html)). The user needs at least the graph_developer role.*
+![](images/ADB_SDW_CreateUser_C360.jpg)
+
+*Notes:* 
+- *The `IDENTIFIED BY` clause specifies the password (i.e whatever you replaced <specify_a_password> with)*
+- *The Graph Server uses database authentication ([details](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/using-inmemory-analyst-oracle-database.html)). The user needs at least the graph_developer role.*
 
 ## **STEP 3:** Enable SQL Developer Web for the new user
 
