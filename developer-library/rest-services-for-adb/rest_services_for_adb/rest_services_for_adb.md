@@ -258,9 +258,71 @@ click the Roles tab on the top of the Create OAuth Client slider
 
 ![](../images/SDW-48.png)
 
+Now, use the shuttle to move the Role **oracle.dbtools.role.autorest.GARY.MAY2018** over to the right side, then click the Create button on the lower right. Moving the Role says that we want all REST services with this role to be secure and by using the auto REST feature, the service has created a role for us and all the endpoints we have used in this lab.
+
+![](../images/SDW-49.png)
+
+We now have an OAuth Client we can secure our REST service with.
+
+![](../images/SDW-50.png)
+
+Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![](../images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
+
+![](../images/SDW-51.png)
+
+The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![](../images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
+
+![](../images/SDW-52.png)
+
+Time to secure the REST service. Using the tab bar on the top of the page, select AutoREST.
+
+![](../images/SDW-53.png)
+
+Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![](../images/three-dot-pop.png) on the MAY2018 title and select Edit.
+
+![](../images/SDW-54.png)
+
+In the REST Enable Object slider, click the Require Authentication toggle button, then click Save in the lower right of the slider. That's it, the service it now secure.
+
+![](../images/SDW-55.png)
+
+We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![](../images/three-dot-pop.png) and select Get Curl.
+
+![](../images/SDW-56.png)
+
+We are going to use the GET Single curl command just as we did before. Start by clicking on Get Single, enter **hv70116556** in the ID field and click the Next button on the lower right of the slide out.
+
+![](../images/SDW-39.png)
+
+On the following page of the slider, we can see the curl command now contains some header information:
+
+**--header 'Authorization: Bearer <VALUE>'**
+
+![](../images/SDW-57.png)
+
+
+and if we run the original curl command using the OCI Cloud Shell without this information, we get Unauthorized:
+
+````
+> curl --location \
+'https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556'
+
+{
+    "code": "Unauthorized",
+    "message": "Unauthorized",
+    "type": "tag:oracle.com,2020:error/Unauthorized",
+    "instance": "tag:oracle.com,2020:ecid/c755a84b26f02aba9ce630f831ee721c"
+}
+````
+Take the token text we previously copied and replace <VALUE> in the curl command with that text. Then run the curl command using the OCI Cloud Shell:
+
+![](../images/SDW-58.png)
+
+We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
+
 
 ## Conclusion
-In this lab, you had an opportunity to get an introduction to REST services.
+In this lab, you had an opportunity to get an introduction to REST services using an easy to follow User Interface. REST enable your tables and database objects in minutes with zero code.
 
 ## **Acknowledgements**
 
