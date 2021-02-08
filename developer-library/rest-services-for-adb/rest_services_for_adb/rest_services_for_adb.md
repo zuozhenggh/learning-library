@@ -178,7 +178,7 @@ Once its done, you will see a row in the Data Loading tab that indicates how man
 
 We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
-![](../images/SDW-30.png)
+![](../images/SDW-30.png =250x)
 
 In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
