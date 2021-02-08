@@ -39,7 +39,7 @@ Start by entering a user name. Let's use GARY as the username. Next we need to e
 Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
 
 
-Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look simiar to the folowing image:
+Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look similar to the following image:
 
 ![](../images/SDW-3.png)
 
@@ -53,7 +53,7 @@ On the SQL Canvas, copy and paste the following statement:
     ````
     <copy>alter user gary quota unlimited on data;</copy>
     ````
-Once copied on the canvas, click the run botton on the worksheet toolbar.
+Once copied on the canvas, click the run button on the worksheet toolbar.
 
 ![](../images/SDW-5.png)
 
@@ -178,12 +178,7 @@ Once its done, you will see a row in the Data Loading tab that indicates how man
 
 We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
-![](../images/SDW-30.png)
-
-xxx
 <img src="../images/SDW-30.png" width="250px">
-xxx
-
 
 In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
@@ -193,11 +188,11 @@ In the slider that has come out from the right of the page, we can look at the d
 
 REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
-![](../images/SDW-32.png)
+<img src="../images/SDW-32.png" width="250px">
 
 Right click on the table name and select REST in the pop up menu then Enable.
 
-![](../images/SDW-33.png)
+<img src="../images/SDW-33.png" width="250px">
 
 The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
