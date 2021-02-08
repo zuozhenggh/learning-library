@@ -49,7 +49,7 @@ Each circular icon represents a Stage in the workflow. A series of stages consti
 
 1. In the workflow region click on the left most stage VendingMachineStream and make sure it has been highlighted with the color blue.
 
-2. This is the IoT Vending Machine Pipeline made up of 13 separate stages. Stay on the first stage *VendingMachineStream* with Live Output paused and understand the fields that are shown in the Live Output.
+2. This is the IoT Vending Machine Pipeline made up of 13 separate stages. Stay on the first stage VendingMachineStream with Live Output paused and understand the fields that are shown in the Live Output.  In this Lab the pipeline has already been created for you.  Follow the steps to understand how this pipeline was created.  You do not need to make any changes to the pipeline here.
 
  ![](./images/openvmmpipelinepauseit.png " ")
 
@@ -75,20 +75,21 @@ As you can see this stage joins the two previous stages by their `Machine_ID` an
 
   ![](./images/getvmdetails.png " ")
 
-3. We create the GetVendingMachineDetails by highlighting the VendingMachine Stage and with a right click.
+3. Notice that we created the GetVendingMachineDetails by highlighting the VendingMachine Stage and then did a right click.
 
-4. We then select Add a Stage and then a Query.
+4. We then selected Add a Stage and then a Query.  Again in this lab just follow the steps without actually creating a new stage.
 
   ![](./images/addquerystage.png " ")
 
-5. Name the Query *GetVendingMachineDetails* and add a description.
+5. We then named this Query GetVendingMachineDetails and added a description.
 
   ![](./images/ggvmd_querystage.png " ")
 
 6. Once the Stage has been created we edited it in the top right pane joining the two sources using Add a Source and select the Machine Details and adding the Correlation Conditions. You will get a chance to create various
 stages in the next lab.
 
-7. Click on the Visualizations tab. In this tab we can see the location of the vending machines with an arrow indicating its location within a geonarea. We were able to create this with the Geo Spatial type of graph from the drop down menu.
+7. If the stream is paused click 'Resume' then click on the Visualizations tab. In this tab we can see the location of the vending machines with an arrow indicating its location within a geographic area. We were able to create this with the Geo Spatial type of graph from the drop down menu.
+
 
    ![](./images/getvmmdetailsvisual.png " ")
 
@@ -99,10 +100,10 @@ stages in the next lab.
 2. After adding the stage as a query stage with name and description we clicked on the *fx* icon in the middle right part of the screen and filled out the formula:
 
     ```
-    <copy>=0.8*max_inventory</copy>
+    =0.8*max_inventory
     ```
 
-3. Then click the checkmark to the left of the formula.
+3. We then clicked the checkmark to the left of the formula.
 
   ![](./images/addformula.png " ")
 
@@ -114,24 +115,22 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 
 1. Click on the *ReplenishRules* stage and Pause the data stream to learn this stage. This is a Rule Stage where we get to define a rule setting Replenish to Yes if Inventory level is less than 80% of maximum inventory level.  Effectively we are setting a Replenish flag based on a minimum amount of inventory in each machine.
 
-2. Notice the difference between the *Match All* and *Match Any* is the same as *And* and a *Or* condition in a query.
-
-    ![](./images/replenishrules.png " ")
+2. Notice the *or* condition in this query which indicates that the dondition *Match Any* is selected.
 
     ![](./images/replenishrules2.png " ")
 
 ## **STEP 7**: Create ReplenishOnly Stage
 
 1. Click on the *ReplenishOnly* stage and Pause the stream. This is another Query Stage in which we take the data from the last stage and apply a filter to it.  
-2. In the Filters tab we added a condition that only includes Replenish conditions that are set to Yes, because we are only interested in data from machines that require replenishment.
+2. Click on the Filters tab and notice that we added a condition that only includes Replenish conditions that are set to Yes, because we are only interested in data from machines that require replenishment.
 
     ```
-    <copy>Replenish equals (case sensitive) Yes</copy>
+    Replenish equals (case sensitive) Yes
     ```
 ## **STEP 8**: Create ReplenishAlert Stage
 
 1. Now click on the *ReplenishAlert* stage and Pause.
-2. In this stage we are adding a target stage that we have defined for a kafka topic replenishAlerts
+2. In this stage we are adding a target stage that we have defined for a kafka topic replenishAlert.
 
    ![](./images/replenishTarget.png " ")
 
@@ -143,12 +142,14 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 
 1. Click on the *ReplenishStats* stage and Pause the stream. In this alternate last stage we would like to keep track of the number of machines that are set to Replenish by city and by `business_name`.
 
-2. We then add a Query Group -Stream stage where we add two summaries with the COUNT of all Replenish and then do a *Group by* city and another summary with *Group by* `business_name`
+2. This is a Query Group - Stream stage.  Notice that we have added two summaries.  Click on the ReplenishCountByCity and see the summary with the COUNT of all Replenish and then a *Group by* city and then a second summary with *Group by* `business_name`
+
 
     ![](./images/replenishstats.png " ")
 
 3. Click on the *Visualizations* tab and see the statistics in a pie chart for each group by.
-4. Here we click on Add A Visualization and select what type of chart we would like to create. Then fill out what we require to use for Measure and Group.  In the next lab you will get to create visualizations for a new scenario
+4. Here we have clicked on Add A Visualization and selected what type of chart we would like to create.  Then filled out what we require to use for Measure and Group. In the next lab you will get to create visualizations for a new scenario.
+
 
     ![](./images/replenishvisual.png " ")
 
@@ -160,13 +161,13 @@ The next stage is in a parallel branch of the pipeline where we are interested t
 2. Click on the *Filters* tab and see the query condition:
 
     ```
-    <copy>ErrorCode not equals 0</copy>
+    ErrorCode not equals 0
     ```
 
 ## **STEP 11**: Create ErrorStats Stage
 
 1. Click on the *ErrorStats* stage and Pause the stream. This is a Query-Group Stream  stage where we like to get some statistics on number of malfunctioning machines by description and also by what city they occur in.
-2. First we add a summary with COUNT of ErrorCode and then Group by ErrorDescription.  Next we add another summary with COUNT of ErrorCode and then Group by city
+2. This stage was created by adding a summary with COUNT of ErrorCode and then Group by ErrorDescription. Next we added another summary with COUNT of ErrorCode and then Group by city.
 
     ![](./images/errorstats.png " ")
 
@@ -178,22 +179,24 @@ The next stage is in a parallel branch of the pipeline where we are interested t
 2. Here we would like to isolate machines that are not cooling well by setting this query condition.Click on the *Filters* to see the query condition:
 
     ```
-    <copy>Temp_Level greater than 40</copy>
+    Temp_Level greater than 40
     ```
 
 ## **STEP 13**: Create NotifyMaintenance Stage
 
 1. Click on the *NotifyMaintenance* stage and Pause the stream. In this last stage we are sending the streaming data to a pre-defined Kafka topic for maintenance purposes.  
-2. Once again, we need to map the streaming data Output Stream Property values to the kafka topic with Target Property values.  We could  also create the topics in this stage as opposed to using a predefined topic.
+2. Once again, we have mapped the streaming data Output Stream Property values to the kafka topic with Target Property values. We could have also created the topics in this stage as opposed to using a predefined topic.
+
 
 ## **STEP 14**: Create AverageTempMalfunction Stage
 
 1. Finally click on the *AverageTempMalfunction* stage and Pause.  
-2. In this stage we are interested in the Average temperature of malfunctioning machines, so we defined a query stage and added *Summaries* with the AVG - `Temp_Level` of all the machines and then Group by the type of machine which is identified by the  `Machine_ID`.
+2. In this stage we are interested in the Average temperature of malfunctioning machines, so we defined a query stage and added *Summaries* with the AVG - `Temp_Level` of all the machines and then Group by the type of machine which is identified by the `Machine_ID`.  Click on the *AvgTemp* to see the summary.
 
     ![](./images/avgtempmalfunction.png " ")
 
-3. Click on this tab to view the bar chart for the average temperature of all machines that malfunctioned by type.
+3. Click on the Visualizations tab to view the bar chart for the average temperature of all machines that malfunctioned by type.
+4. Clik on *Done* to exit the pipeline.
 
 *You may now proceed to the next lab*.
 
