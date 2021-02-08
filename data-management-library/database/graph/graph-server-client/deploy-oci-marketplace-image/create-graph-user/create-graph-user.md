@@ -153,7 +153,7 @@ END;
 </copy>
 ```
 
-![Enable SQL Developer Web for Customer_360](images/ADB_SDW_EnableLoginFor_C360.png " ")
+![](images/ADB_SDW_EnableLoginFor_C360.jpg)
 
 The URL for SQL Developer Web for the `CUSTOMER_360` user will have `customer_360` in place of `admin` in it. Save the URL for the next step.
 
