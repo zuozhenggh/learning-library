@@ -235,7 +235,7 @@ This will open a console where you can run the curl command.
 ![](../images/SDW-43.png)
 
 
-## **Step 4:**Securing the REST endpoint
+## **Step 4**:Securing the REST endpoint
 
 
 
