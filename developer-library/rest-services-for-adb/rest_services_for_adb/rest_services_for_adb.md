@@ -202,6 +202,12 @@ Thats it! Your table is REST enabled. Open a new browser window or tab and enter
 
 ![](../images/SDW-35.png)
 
+play with the endpoint using cURL and pass a variable
+
+## **Step 4:**Securing the REST endpoint
+
+
+
 
 
 ############################################################################################
