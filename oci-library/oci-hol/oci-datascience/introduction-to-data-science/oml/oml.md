@@ -214,11 +214,11 @@ In this lab you will:
 
    Review the following table with customer information that we'll use as input data for the model:
 
-```
-<copy>
-SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS
-</copy>
-```
+    ```
+    <copy>
+    SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS
+    </copy>
+    ```
 
 2. View the result
 
@@ -234,17 +234,17 @@ SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS
 
    Split the input data into two sets: 60% for training and 40% for testing.
 
-```
-<copy>
-CREATE TABLE N1_TRAIN_DATA AS SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS SAMPLE (60) SEED (1);
-</copy>
-```
+    ```
+    <copy>
+    CREATE TABLE N1_TRAIN_DATA AS SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS SAMPLE (60) SEED (1);
+    </copy>
+    ```
 
-```
-<copy>
-CREATE TABLE N1_TEST_DATA AS SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS MINUS SELECT * FROM N1_TRAIN_DATA;
-</copy>
-```
+    ```
+    <copy>
+    CREATE TABLE N1_TEST_DATA AS SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS MINUS SELECT * FROM N1_TRAIN_DATA;
+    </copy>
+    ```
 
 4. Prepare for training with a parameters table
 
@@ -255,17 +255,17 @@ CREATE TABLE N1_TEST_DATA AS SELECT * FROM SH.SUPPLEMENTARY_DEMOGRAPHICS MINUS S
 
    Enter the following SQL to create the parameters table.
 
-```
-<copy>
-CREATE TABLE N1_BUILD_SETTINGS (SETTING_NAME VARCHAR2(30), SETTING_VALUE VARCHAR2(4000));
-</copy>
-```
+    ```
+    <copy>
+    CREATE TABLE N1_BUILD_SETTINGS (SETTING_NAME VARCHAR2(30), SETTING_VALUE VARCHAR2(4000));
+    </copy>
+    ```
 
-```
-<copy>
-INSERT INTO N1_BUILD_SETTINGS (SETTING_NAME, SETTING_VALUE) VALUES ('ALGO_NAME', 'ALGO_DECISION_TREE');
-</copy>
-```
+    ```
+    <copy>
+    INSERT INTO N1_BUILD_SETTINGS (SETTING_NAME, SETTING_VALUE) VALUES ('ALGO_NAME', 'ALGO_DECISION_TREE');
+    </copy>
+    ```
 
 5. Execute the training process
 
@@ -280,16 +280,15 @@ INSERT INTO N1_BUILD_SETTINGS (SETTING_NAME, SETTING_VALUE) VALUES ('ALGO_NAME',
    * The name of the column that uniquely identifies each row in the training data. In this case the customer ID.
    * Lastly, the name of the hyperparameters table. In this case it only contains a parameter with the type of model (decision tree).
 
-```
-<copy>
-%script
-CALL DBMS_DATA_MINING.CREATE_MODEL('N1_CLASS_MODEL', 'CLASSIFICATION',
-  'N1_TRAIN_DATA', 'CUST_ID', 'Y_BOX_GAMES', 'N1_BUILD_SETTINGS');
-</copy>
-```
+    ```
+    <copy>
+    %script
+    CALL DBMS_DATA_MINING.CREATE_MODEL('N1_CLASS_MODEL', 'CLASSIFICATION',
+      'N1_TRAIN_DATA', 'CUST_ID', 'Y_BOX_GAMES', 'N1_BUILD_SETTINGS');
+    </copy>
+    ```
 
-6. Check the result
-   The result:
+   Check the result
 
    ![](images/create-model.png)
 
@@ -304,11 +303,11 @@ CALL DBMS_DATA_MINING.CREATE_MODEL('N1_CLASS_MODEL', 'CLASSIFICATION',
 
    First, create a new placeholder column in the test set that will hold the predicted value.
 
-```
-<copy>
-ALTER TABLE N1_TEST_DATA ADD Y_BOX_GAMES_PRED NUMBER(1);
-</copy>
-```
+    ```
+    <copy>
+    ALTER TABLE N1_TEST_DATA ADD Y_BOX_GAMES_PRED NUMBER(1);
+    </copy>
+    ```
 
 2. Run the prediction
 
@@ -316,19 +315,19 @@ ALTER TABLE N1_TEST_DATA ADD Y_BOX_GAMES_PRED NUMBER(1);
 
    You see that this uses special SQL syntax. The above means that we want to predict the value using model ```N1_CLASS_MODEL``` and all of the driving columns in the dataset will be used.
 
-```  
-<copy>
-UPDATE N1_TEST_DATA SET Y_BOX_GAMES_PRED = PREDICTION(N1_CLASS_MODEL USING *);
-</copy>
-```
+    ```  
+    <copy>
+    UPDATE N1_TEST_DATA SET Y_BOX_GAMES_PRED = PREDICTION(N1_CLASS_MODEL USING *);
+    </copy>
+    ```
 
 3. View the result
 
-```
-<copy>
-SELECT CUST_ID, Y_BOX_GAMES, Y_BOX_GAMES_PRED FROM N1_TEST_DATA;
-</copy>
-```
+    ```
+    <copy>
+    SELECT CUST_ID, Y_BOX_GAMES, Y_BOX_GAMES_PRED FROM N1_TEST_DATA;
+    </copy>
+    ```
 
    ![](images/review-predicted-values.png)
 
@@ -338,12 +337,12 @@ SELECT CUST_ID, Y_BOX_GAMES, Y_BOX_GAMES_PRED FROM N1_TEST_DATA;
 
    The result is an accuracy of about 90%.
 
-```
-<copy>
-SELECT TO_CHAR(((SELECT COUNT(*) FROM N1_TEST_DATA WHERE Y_BOX_GAMES = Y_BOX_GAMES_PRED)
-                / (SELECT COUNT(*) FROM N1_TEST_DATA)) * 100, '999.99') CORRECT_PRED_PERCENTAGE FROM DUAL;
-</copy>
-```
+    ```
+    <copy>
+    SELECT TO_CHAR(((SELECT COUNT(*) FROM N1_TEST_DATA WHERE Y_BOX_GAMES = Y_BOX_GAMES_PRED)
+                    / (SELECT COUNT(*) FROM N1_TEST_DATA)) * 100, '999.99') CORRECT_PRED_PERCENTAGE FROM DUAL;
+    </copy>
+    ```
 
 5. Review the confusion matrix to understand model performance
 
@@ -353,12 +352,12 @@ SELECT TO_CHAR(((SELECT COUNT(*) FROM N1_TEST_DATA WHERE Y_BOX_GAMES = Y_BOX_GAM
 
    You will see, from top to bottom: 1. The true negatives, 2. The false positives, 3. The false negatives and 4. The true positives.
 
-```
-<copy>
-SELECT Y_BOX_GAMES, Y_BOX_GAMES_PRED, COUNT(*)
-FROM N1_TEST_DATA GROUP BY Y_BOX_GAMES, Y_BOX_GAMES_PRED ORDER BY 1, 2;
-</copy>
-```
+    ```
+    <copy>
+    SELECT Y_BOX_GAMES, Y_BOX_GAMES_PRED, COUNT(*)
+    FROM N1_TEST_DATA GROUP BY Y_BOX_GAMES, Y_BOX_GAMES_PRED ORDER BY 1, 2;
+    </copy>
+    ```
 
 ## **STEP 8:** Run the prediction
 
@@ -370,14 +369,14 @@ FROM N1_TEST_DATA GROUP BY Y_BOX_GAMES, Y_BOX_GAMES_PRED ORDER BY 1, 2;
 
    We select all the customers that don't have Y Box Games yet, then predict whether they are likely to be interested in a purchase.
 
-```
-<copy>
-CREATE TABLE CUST_PREDICTION AS
-  SELECT CUST_ID, PREDICTION(N1_CLASS_MODEL USING *) PREDICTION,
-  PREDICTION_PROBABILITY(N1_CLASS_MODEL USING *) PRED_PROBABILITY
-  FROM SH.SUPPLEMENTARY_DEMOGRAPHICS WHERE Y_BOX_GAMES = 0;
-</copy>
-```
+    ```
+    <copy>
+    CREATE TABLE CUST_PREDICTION AS
+      SELECT CUST_ID, PREDICTION(N1_CLASS_MODEL USING *) PREDICTION,
+      PREDICTION_PROBABILITY(N1_CLASS_MODEL USING *) PRED_PROBABILITY
+      FROM SH.SUPPLEMENTARY_DEMOGRAPHICS WHERE Y_BOX_GAMES = 0;
+    </copy>
+    ```
 
 ## **STEP 9:** Integrate the result into the APEX application
 
@@ -389,11 +388,11 @@ Remember, we want to show a recommendation to our employee when the customer he'
 
    For the APEX application (schema WORKSHOPATP) to be able to access the prediction results, we have to give it access to the machine learning schema (MLUSER1).
 
-```
-<copy>
-grant select on cust_prediction to workshopatp;
-</copy>
-```
+    ```
+    <copy>
+    grant select on cust_prediction to workshopatp;
+    </copy>
+    ```
 
 2. Open APEX
 

@@ -55,11 +55,11 @@ In this lab you will:
 
    PIP is a command line tool to install Python packages. Copy the following command into the terminal.
 
-```bash
-<copy>
-pip install idx2numpy
-</copy>
-```
+    ```bash
+    <copy>
+    pip install idx2numpy
+    </copy>
+    ```
 
 ## **STEP 3:** Downloading and unpacking the data
 
@@ -69,27 +69,27 @@ pip install idx2numpy
 
 2. Download the MNIST data
 
-```bash
-<copy>
-!wget http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
-!wget http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
-!wget http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
-!wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
-</copy>
-```
+    ```bash
+    <copy>
+    !wget http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+    !wget http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+    !wget http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+    !wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+    </copy>
+    ```
 
 3. Unzip
 
    This will make all the files available in your root folder in the Data Science notebook.
 
-```bash
-<copy>
-!gunzip train-images-idx3-ubyte.gz
-!gunzip train-labels-idx1-ubyte.gz
-!gunzip t10k-images-idx3-ubyte.gz
-!gunzip t10k-labels-idx1-ubyte.gz
-</copy>
-```
+    ```bash
+    <copy>
+    !gunzip train-images-idx3-ubyte.gz
+    !gunzip train-labels-idx1-ubyte.gz
+    !gunzip t10k-images-idx3-ubyte.gz
+    !gunzip t10k-labels-idx1-ubyte.gz
+    </copy>
+    ```
 
 ## **STEP 4:** Data Access and Exploration
 
@@ -99,28 +99,28 @@ pip install idx2numpy
 
    ![run script](images/runscript.png)
 
-```python
-<copy>
-%matplotlib inline
-import idx2numpy
-import numpy as np
-trainfile = 'train-images-idx3-ubyte'
-trainfilelabels = 'train-labels-idx1-ubyte'
-testfile = 't10k-images-idx3-ubyte'
-testfilelabels = 't10k-labels-idx1-ubyte'
-x_train = idx2numpy.convert_from_file(trainfile)
-y_train = idx2numpy.convert_from_file(trainfilelabels)
-x_test = idx2numpy.convert_from_file(testfile)
-y_test = idx2numpy.convert_from_file(testfilelabels)
-</copy>
-```
+    ```python
+    <copy>
+    %matplotlib inline
+    import idx2numpy
+    import numpy as np
+    trainfile = 'train-images-idx3-ubyte'
+    trainfilelabels = 'train-labels-idx1-ubyte'
+    testfile = 't10k-images-idx3-ubyte'
+    testfilelabels = 't10k-labels-idx1-ubyte'
+    x_train = idx2numpy.convert_from_file(trainfile)
+    y_train = idx2numpy.convert_from_file(trainfilelabels)
+    x_test = idx2numpy.convert_from_file(testfile)
+    y_test = idx2numpy.convert_from_file(testfilelabels)
+    </copy>
+    ```
 
 2. Inspect the datasets
 
    In the previous lab we had to split the data into train and test ourselves. Notice that in this lab the split has already been done for us.
 
-   * `x_train` are the images. You could see every pixel as an input feature.
-   * `y_train` are the labels of the image. This is a one-dimensional array with the digits as assigned by a person (0 to 9).
+   `x_train` are the images. You could see every pixel as an input feature.
+   `y_train` are the labels of the image. This is a one-dimensional array with the digits as assigned by a person (0 to 9).
 
    Equally, `x_train` and `y_train` are the images and corresponding labels for the test set.  
 
@@ -130,52 +130,53 @@ y_test = idx2numpy.convert_from_file(testfilelabels)
 
    The following shows that the training data set has `60000` images. The other values indicate the dimensions of the image: 28x28 pixels.
 
-```python
-<copy>
-x_train.shape
-</copy>
-```
+    ```python
+    <copy>
+    x_train.shape
+    </copy>
+    ```
 
 4. What is the shape of the labels for training?
 
    The following shows that we have a list of 60000 entries. Each entry indicates the digit for the image (a value from 0 to 9).
 
-```python
-<copy>
-y_train.shape
-</copy>
-```
+    ```python
+    <copy>
+    y_train.shape
+    </copy>
+    ```
 
 5. Let's do the same for the test images.
 
    This will tell us that there are 10000 images for validation.
 
-```python
-<copy>
-x_test.shape
-</copy>
-```
+    ```python
+    <copy>
+    x_test.shape
+    </copy>
+    ```
 
 6. And let's doublecheck the labels of the test images.
 
    This will show that the images are labeled with the corresponding digit.
 
-```python
-<copy>
-y_test.shape
-</copy>
-```
+    ```python
+    <copy>
+    y_test.shape
+    </copy>
+    ```
+
 7. How does one particular image actually look like?
 
    Let's display one of the training images at random, in this case the one with index 5 (of 60000).
 
    You can more or less see a shape of a digit show up. We'll show it as an actual image a bit later on.
 
-```python
-<copy>
-x_train[5]
-</copy>
-```
+    ```python
+    <copy>
+    x_train[5]
+    </copy>
+    ```
 
 8. What is the label for this particular image?
 
@@ -183,24 +184,24 @@ x_train[5]
 
    According to the labels, this is an image of the digit 2.
 
-```python
-<copy>
-y_train[5]
-</copy>
-```
+    ```python
+    <copy>
+    y_train[5]
+    </copy>
+    ```
 
 9. Display the data as an image
 
-   Let's verify this by displaying the data as an image. We will use the matplotlib library to do so.
+  Let's verify this by displaying the data as an image. We will use the matplotlib library to do so.
 
-```python
-<copy>
-import matplotlib.pyplot as plt
-plt.imshow(x_train[5], cmap='Greys')
-</copy>
-```
+    ```python
+    <copy>
+    import matplotlib.pyplot as plt
+    plt.imshow(x_train[5], cmap='Greys')
+    </copy>
+    ```
 
-Indeed, we can see that this is a two.
+  Indeed, we can see that this is a two.
 
 ## **STEP 5:** Data Preparation
 
@@ -214,33 +215,33 @@ Indeed, we can see that this is a two.
 
    Flatten the array of each image into a 784 array. Do this for train and test.
 
-```python
-<copy>
-x_train = x_train.reshape(x_train.shape[0], 784)
-x_test = x_test.reshape(x_test.shape[0], 784)
-</copy>
-```
+    ```python
+    <copy>
+    x_train = x_train.reshape(x_train.shape[0], 784)
+    x_test = x_test.reshape(x_test.shape[0], 784)
+    </copy>
+    ```
 
 2. Check the results
 
    Let's check that this conversion was successful by checking the new shape of the training set.
 
-```python
-<copy>
-x_train.shape
-</copy>
-```
+    ```python
+    <copy>
+    x_train.shape
+    </copy>
+    ```
 
 3. Scale the values of the pixels from 0-255 to 0.0-1.0.
 
-```python
-<copy>
-x_train = x_train.astype('float32')
-x_test = x_test.astype('float32')
-x_train /= 255
-x_test /= 255
-</copy>
-```
+    ```python
+    <copy>
+    x_train = x_train.astype('float32')
+    x_test = x_test.astype('float32')
+    x_train /= 255
+    x_test /= 255
+    </copy>
+    ```
 
 4. Check the results
 
@@ -248,11 +249,11 @@ Let's check the result by again displaying our example digit at index 5.
 
 You will see that there are no rows anymore in the array (it's 1D now), and that the values are between 0.0 and 1.0.
 
-```python
-<copy>
-x_train[5]
-</copy>
-```
+    ```python
+    <copy>
+    x_train[5]
+    </copy>
+    ```
 
 ## **STEP 6:** Model build and training
 
@@ -262,13 +263,13 @@ x_train[5]
 
    You should see `x_train shape: (60000, 784)`, Number of images in x_train 60000, Number of images in x_test 10000.
 
-```python
-<copy>
-print('x_train shape:', x_train.shape)
-print('Number of images in x_train', x_train.shape[0])
-print('Number of images in x_test', x_test.shape[0])
-</copy>
-```
+    ```python
+    <copy>
+    print('x_train shape:', x_train.shape)
+    print('Number of images in x_train', x_train.shape[0])
+    print('Number of images in x_test', x_test.shape[0])
+    </copy>
+    ```
 
 2. Construct the model
 
@@ -278,17 +279,17 @@ print('Number of images in x_test', x_test.shape[0])
 
    Notice how in the first `model.add` we have to specify both the input shape (784 neurons) and the first hidden layer (16 neurons).
 
-```python
-<copy>
-import tensorflow as tf
-from keras.models import Sequential
-from keras.layers import Dense
-model = Sequential()
-model.add(Dense(16, input_shape=(784, ), activation=tf.nn.relu))
-model.add(Dense(16, activation=tf.nn.relu))
-model.add(Dense(10, activation=tf.nn.softmax))
-</copy>
-```
+    ```python
+    <copy>
+    import tensorflow as tf
+    from keras.models import Sequential
+    from keras.layers import Dense
+    model = Sequential()
+    model.add(Dense(16, input_shape=(784, ), activation=tf.nn.relu))
+    model.add(Dense(16, activation=tf.nn.relu))
+    model.add(Dense(10, activation=tf.nn.softmax))
+    </copy>
+    ```
 
 3. Train the model
 
@@ -302,14 +303,14 @@ model.add(Dense(10, activation=tf.nn.softmax))
    * `optimizer` is a function used to minimize the loss. To do so we need to adjust the waits in the forward and the backpropagation. The optimizer is the function that would be used in that process.
    * `metrics` is a function that is used to judge the performance of the model. You can specify one or more metrics. It is similar to the loss function but the result is not used when training the model. You could use as metric any of the loss functions available in Keras.
 
-```python
-<copy>
-model.compile(optimizer='adam',
-              loss='sparse_categorical_crossentropy',
-              metrics=['accuracy'])
-model.fit(x=x_train, y=y_train, epochs=10)
-</copy>
-```
+    ```python
+    <copy>
+    model.compile(optimizer='adam',
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
+    model.fit(x=x_train, y=y_train, epochs=10)
+    </copy>
+    ```
 
 ## **STEP 7:** Check model accuracy
 
@@ -325,44 +326,42 @@ model.fit(x=x_train, y=y_train, epochs=10)
 
    You will see this is a 9.
 
-```python
-<copy>
-plt.imshow(x_test[99].reshape(28, 28),cmap='Greys')
-</copy>
-```
+    ```python
+    <copy>
+    plt.imshow(x_test[99].reshape(28, 28),cmap='Greys')
+    </copy>
+    ```
 
 3. What is the official label for this digit?
 
    You will see this is labelled as a 9 as well.
 
-```python
-<copy>
-y_test[99]
-</copy>
-```
+    ```python
+    <copy>
+    y_test[99]
+    </copy>
+    ```
 
 4. Is our model able to correctly classify it as a 9?
 
    The argmax function returns the output neuron that has the highest value. In this case this correctly predicts a 9.
 
-```python
-<copy>
-predict = model.predict(x_test[99].reshape(1,784))
-print(predict.argmax())
-</copy>
-```
+    ```python
+    <copy>
+    predict = model.predict(x_test[99].reshape(1,784))
+    print(predict.argmax())
+    </copy>
+    ```
 
 5. Numerical verification of the model
 
-   We can use model.evaluate to calculate the accuracy of prediction on the entire testset. This will do two things:
-   * Run the prediction on the 10000 images in the testset.
-   * Compare the predicted digits with the actual labels, and calculate an accuracy.
+  We can use model.evaluate to calculate the accuracy of prediction on the entire testset. This will run the prediction on the 10000 images in the testset and compare the predicted digits with the actual labels, and calculate an accuracy.
 
-```python
-<copy>
-model.evaluate(x_test, y_test)
-</copy>
-```
+    ```python
+    <copy>
+    model.evaluate(x_test, y_test)
+    </copy>
+    ```
 
 6. Conclusion of numerical verification
 

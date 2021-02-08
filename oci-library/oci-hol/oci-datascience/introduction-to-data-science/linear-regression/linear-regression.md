@@ -150,23 +150,23 @@ This guide shows how to use the Resource Manager to provision the service using 
 
    Press the copy button on the fragment below.
 
-```python
-<copy>
-import pandas as pd
-import matplotlib.pyplot as plot
-import seaborn as sns
-import numpy as np
-from scipy.stats import norm
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn import linear_model
-from sklearn.metrics import mean_squared_error
-from scipy import stats
-import warnings
-warnings.filterwarnings('ignore')
-%matplotlib inline
-</copy>
-```
+    ```python
+    <copy>
+    import pandas as pd
+    import matplotlib.pyplot as plot
+    import seaborn as sns
+    import numpy as np
+    from scipy.stats import norm
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.model_selection import train_test_split
+    from sklearn import linear_model
+    from sklearn.metrics import mean_squared_error
+    from scipy import stats
+    import warnings
+    warnings.filterwarnings('ignore')
+    %matplotlib inline
+    </copy>
+    ```
 
 3. Paste the code into the Notebook and run it
 
@@ -178,11 +178,11 @@ warnings.filterwarnings('ignore')
 
    We'll split this into train and test later. All these type of data operations are handled by the Pandas library (named `"pd"` here)
 
-```python
-<copy>
-alldata = pd.read_csv('./housesales.csv')
-</copy>
-```
+    ```python
+    <copy>
+    alldata = pd.read_csv('./housesales.csv')
+    </copy>
+    ```
 
 5. Check how much data we have
 
@@ -190,11 +190,11 @@ alldata = pd.read_csv('./housesales.csv')
 
    The following code shows that there are 1460 rows, which at first sight looks like a good enough to train an initial model. The data is not extensive enough for production use but would help establish a good baseline. We also see that there are 80 input features that we can potentially use to predict our target variable.
 
-```python
-<copy>
-alldata.shape
-</copy>
-```
+    ```python
+    <copy>
+    alldata.shape
+    </copy>
+    ```
 
 6. Review the target attribute: `SalePrice`
 
@@ -202,30 +202,30 @@ alldata.shape
 
    First, let's display some values. The `[:10]` selects only the first 10 rows.
 
-```python
-<copy>
-alldata['SalePrice'][:10]
-</copy>
-```
+    ```python
+    <copy>
+    alldata['SalePrice'][:10]
+    </copy>
+    ```
 
 7. Let's check if there are any empty values
 
-```python
-<copy>
-alldata['SalePrice'].isnull().sum()
-</copy>
-```
+    ```python
+    <copy>
+    alldata['SalePrice'].isnull().sum()
+    </copy>
+    ```
 
 8. Let's check the price range:
 
-```python
-<copy>
-minPrice = alldata['SalePrice'].min()
-maxPrice = alldata['SalePrice'].max()
+    ```python
+    <copy>
+    minPrice = alldata['SalePrice'].min()
+    maxPrice = alldata['SalePrice'].max()
 
-print('Min Sales Price (%d) - Max Sales Price (%d)' % (minPrice,maxPrice))
-</copy>
-```
+    print('Min Sales Price (%d) - Max Sales Price (%d)' % (minPrice,maxPrice))
+    </copy>
+    ```
 
 9. What can we conclude from the above?
 
@@ -235,11 +235,11 @@ print('Min Sales Price (%d) - Max Sales Price (%d)' % (minPrice,maxPrice))
 
    Let's start by listing all the columns.
 
-```python
-<copy>
-alldata.columns
-</copy>
-```
+    ```python
+    <copy>
+    alldata.columns
+    </copy>
+    ```
 
 11. Separate the columns into numerical and categorical
 
@@ -247,39 +247,39 @@ alldata.columns
 
    Let's get a list of all numeric features first.
 
-```python
-<copy>
-alldata.select_dtypes(include=np.number).columns.tolist()
-</copy>
-```
+    ```python
+    <copy>
+    alldata.select_dtypes(include=np.number).columns.tolist()
+    </copy>
+    ```
 
 12. Show a sample of numerical columns
 
    Now that we see the numeric columns we could also show a sample to get some impression about the data.
 
-```python
-<copy>
-alldata.select_dtypes(include=[np.number])
-</copy>
-```
+    ```python
+    <copy>
+    alldata.select_dtypes(include=[np.number])
+    </copy>
+    ```
 
 13. Show a list of categorical columns
 
    We could do the same for all categorical variables, notice this time we use the property `exclude` in the `select_dtypes` function...
 
-```python
-<copy>
-alldata.select_dtypes(exclude=np.number).columns.tolist()
-</copy>
-```
+    ```python
+    <copy>
+    alldata.select_dtypes(exclude=np.number).columns.tolist()
+    </copy>
+    ```
 
 14. Show a sample of categorical variables
 
-```python
-<copy>
-alldata.select_dtypes(exclude=[np.number])
-</copy>
-```
+    ```python
+    <copy>
+    alldata.select_dtypes(exclude=[np.number])
+    </copy>
+    ```
 
 15. What can we conclude about the columns?
    There are many input features that we could potentially use. Some of these columns are self explanatory, others not so much. To understand what each column mean, have a look at [data_scription.txt](./data/data-description.txt) for background.
@@ -305,26 +305,26 @@ alldata.select_dtypes(exclude=[np.number])
    Let's test our theories that these input features are correlated with Sale Price. We'll start with the numerical variables first: `GrLivArea`, `TotalBsmtSF`, `OverallQual` and `YearBuilt`.
    Because all of these are numerical continuous attributes, we can use scatter plots here.
 
-```python
-<copy>
-plot.scatter(alldata.GrLivArea, alldata.SalePrice)
-plot.xlabel("GrLivArea")
-plot.ylabel("SalePrice")
-plot.show()
-plot.scatter(alldata.TotalBsmtSF, alldata.SalePrice)
-plot.xlabel("TotalBsmtSF")
-plot.ylabel("SalePrice")
-plot.show()
-plot.scatter(alldata.OverallQual, alldata.SalePrice)
-plot.xlabel("OverallQual")
-plot.ylabel("SalePrice")
-plot.show()
-plot.scatter(alldata.YearBuilt, alldata.SalePrice)
-plot.xlabel("YearBuilt")
-plot.ylabel("SalePrice")
-plot.show()
-<copy>
-```
+    ```python
+    <copy>
+    plot.scatter(alldata.GrLivArea, alldata.SalePrice)
+    plot.xlabel("GrLivArea")
+    plot.ylabel("SalePrice")
+    plot.show()
+    plot.scatter(alldata.TotalBsmtSF, alldata.SalePrice)
+    plot.xlabel("TotalBsmtSF")
+    plot.ylabel("SalePrice")
+    plot.show()
+    plot.scatter(alldata.OverallQual, alldata.SalePrice)
+    plot.xlabel("OverallQual")
+    plot.ylabel("SalePrice")
+    plot.show()
+    plot.scatter(alldata.YearBuilt, alldata.SalePrice)
+    plot.xlabel("YearBuilt")
+    plot.ylabel("SalePrice")
+    plot.show()
+    <copy>
+    ```
 
 18. What can we conclude from this plot?
 
@@ -341,15 +341,15 @@ plot.show()
 
    This attribute contains the type of property (`A=Agriculture`, `C=Commercial`, `RH=Residential High Density`, et cetera). Correlation between a categorical and a continuous attribute (SalePrice) can be visualized as a boxplot.
 
-```python
-<copy>
-var = 'MSZoning'
-data = pd.concat([alldata['SalePrice'], alldata[var]], axis=1)
-f, ax = plot.subplots(figsize=(10, 7))
-fig = sns.boxplot(x=var, y="SalePrice", data=data)
-fig.axis(ymin=0, ymax=800000)
-</copy>
-```
+    ```python
+    <copy>
+    var = 'MSZoning'
+    data = pd.concat([alldata['SalePrice'], alldata[var]], axis=1)
+    f, ax = plot.subplots(figsize=(10, 7))
+    fig = sns.boxplot(x=var, y="SalePrice", data=data)
+    fig.axis(ymin=0, ymax=800000)
+    </copy>
+    ```
 
 20. What can we conclude from the MSZoning plot?
 
@@ -359,15 +359,15 @@ fig.axis(ymin=0, ymax=800000)
 
    Let's explore also the relationship of the Neighborhood to the price. We can plot the data using the same technique.
 
-```python
-<copy>
-var = 'Neighborhood'
-data = pd.concat([alldata['SalePrice'], alldata[var]], axis=1)
-f, ax = plot.subplots(figsize=(30, 10))
-fig = sns.boxplot(x=var, y="SalePrice", data=data)
-fig.axis(ymin=0, ymax=800000)
-</copy>
-```
+    ```python
+    <copy>
+    var = 'Neighborhood'
+    data = pd.concat([alldata['SalePrice'], alldata[var]], axis=1)
+    f, ax = plot.subplots(figsize=(30, 10))
+    fig = sns.boxplot(x=var, y="SalePrice", data=data)
+    fig.axis(ymin=0, ymax=800000)
+    </copy>
+    ```
 
 22. What can we conclude from the Neighborhood plot?
 
@@ -377,13 +377,13 @@ fig.axis(ymin=0, ymax=800000)
 
    It becomes clear that manually investigating all of the attributes this way is very time consuming. Therefore, let's take a more systematic approach. Ideally, we would like to see the correlation between all input attributes and the target `SalePrice`.
 
-```python
-<copy>
-corr = alldata.corr(method='spearman')
-corr.sort_values(["SalePrice"], ascending = False, inplace = True)
-corr.SalePrice
-</copy>
-```
+    ```python
+    <copy>
+    corr = alldata.corr(method='spearman')
+    corr.sort_values(["SalePrice"], ascending = False, inplace = True)
+    corr.SalePrice
+    </copy>
+    ```
 
 24. What conclusion can we draw from the correlation plot?
 
@@ -405,15 +405,15 @@ corr.SalePrice
 
    Of the top correlated attributes, two are related to the garage(s) of the house. It appears that GarageArea and GarageCars are very similar types of information. This phenomenon is called `colinearity`. Let's test if GarageArea and GarageCars are correlated.
 
-```python
-<copy>
-var = 'GarageCars'
-data = pd.concat([alldata['GarageArea'], alldata[var]], axis=1)
-f, ax = plot.subplots(figsize=(8, 6))
-fig = sns.boxplot(x=var, y="GarageArea", data=data)
-fig.axis(ymin=0, ymax=1500);
-</copy>
-```
+    ```python
+    <copy>
+    var = 'GarageCars'
+    data = pd.concat([alldata['GarageArea'], alldata[var]], axis=1)
+    f, ax = plot.subplots(figsize=(8, 6))
+    fig = sns.boxplot(x=var, y="GarageArea", data=data)
+    fig.axis(ymin=0, ymax=1500);
+    </copy>
+    ```
 
 26. What conclusion can we draw from the colinearity plot?
 
@@ -423,13 +423,13 @@ fig.axis(ymin=0, ymax=1500);
 
    To do this, we would have the check the correlation between all attributes (!) There's a visualization that can help us do this: `The Correlation Matrix Heatmap`
 
-```python
-<copy>
-corrmat = alldata.corr()
-f, ax = plot.subplots(figsize=(15, 15))
-sns.heatmap(corrmat, vmax=.8, square=True);
-</copy>
-```
+    ```python
+    <copy>
+    corrmat = alldata.corr()
+    f, ax = plot.subplots(figsize=(15, 15))
+    sns.heatmap(corrmat, vmax=.8, square=True);
+    </copy>
+    ```
 
 28. How do we interpret this chart?
 
@@ -445,14 +445,14 @@ sns.heatmap(corrmat, vmax=.8, square=True);
 
    Check how many Empty values each column has, and compute the percentage of the total number of rows.
 
-```python
-<copy>
-total = alldata.isnull().sum().sort_values(ascending=False)
-percent = (alldata.isnull().sum()/alldata.isnull().count()).sort_values(ascending=False)
-missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
-missing_data.head(20)
-</copy>
-```
+    ```python
+    <copy>
+    total = alldata.isnull().sum().sort_values(ascending=False)
+    percent = (alldata.isnull().sum()/alldata.isnull().count()).sort_values(ascending=False)
+    missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
+    missing_data.head(20)
+    </copy>
+    ```
 
 30. Conclusions on missing data
 
@@ -477,12 +477,12 @@ missing_data.head(20)
 
    It's important that the target variable follows Normal Probability distribution. If it does not, this will negatively impact the model's performance. We can check for this using a histogram, and including a normal probability plot. The Seaborn library does this for us.
 
-```python
-<copy>
-sns.distplot(alldata['SalePrice'], fit=norm);
-fig = plot.figure()
-</copy>
-```
+    ```python
+    <copy>
+    sns.distplot(alldata['SalePrice'], fit=norm);
+    fig = plot.figure()
+    </copy>
+    ```
 
 33. What conclusion can we draw from the Target variable plot?
 
@@ -499,18 +499,18 @@ During Data Exploration, we have realized that several changes must be made to t
    We want to replace the missing values of `PoolQC`, `MiscFeature`, `Alley`, `Fence` and `FireplaceQu` with `"NA"`.
    We will replace missing values of `LotFrontage` with the mean of the existing values. Let's do this:
 
-```python
-<copy>
-alldata = alldata.fillna({"PoolQC": "NA"})
-alldata = alldata.fillna({"MiscFeature": "NA"})
-alldata = alldata.fillna({"Alley": "NA"})
-alldata = alldata.fillna({"Fence": "NA"})
-alldata = alldata.fillna({"FireplaceQu": "NA"})
-meanlot = alldata['LotFrontage'].mean()
-alldata = alldata.fillna({"LotFrontage": meanlot})
-alldata = alldata.dropna()
-</copy>
-```
+    ```python
+    <copy>
+    alldata = alldata.fillna({"PoolQC": "NA"})
+    alldata = alldata.fillna({"MiscFeature": "NA"})
+    alldata = alldata.fillna({"Alley": "NA"})
+    alldata = alldata.fillna({"Fence": "NA"})
+    alldata = alldata.fillna({"FireplaceQu": "NA"})
+    meanlot = alldata['LotFrontage'].mean()
+    alldata = alldata.fillna({"LotFrontage": meanlot})
+    alldata = alldata.dropna()
+    </copy>
+    ```
 
 2. Handling Outliers
 
@@ -518,26 +518,26 @@ alldata = alldata.dropna()
 
    Show the IDs of the houses with the highest GrLivArea.
 
-```python
-<copy>
-alldata.sort_values(by = 'GrLivArea', ascending = False)[:2]
-</copy>
-```
+    ```python
+    <copy>
+    alldata.sort_values(by = 'GrLivArea', ascending = False)[:2]
+    </copy>
+    ```
 
 3. Remove the Outliers
 
   Also plot the chart again to check that the outliers have disappeared.
 
-```python
-<copy>
-alldata = alldata.drop(alldata[alldata['Id'] == 1299].index)
-alldata = alldata.drop(alldata[alldata['Id'] == 524].index)
-plot.scatter(alldata.GrLivArea, alldata.SalePrice)
-plot.xlabel("GrLivArea")
-plot.ylabel("SalePrice")
-plot.show()
-</copy>
-```
+    ```python
+    <copy>
+    alldata = alldata.drop(alldata[alldata['Id'] == 1299].index)
+    alldata = alldata.drop(alldata[alldata['Id'] == 524].index)
+    plot.scatter(alldata.GrLivArea, alldata.SalePrice)
+    plot.xlabel("GrLivArea")
+    plot.ylabel("SalePrice")
+    plot.show()
+    </copy>
+    ```
 
 4. Handling the skewed distribution of the Target variable
 
@@ -545,37 +545,37 @@ plot.show()
 
    After this the sales price will follow a normal distribution. We will use the newly created `y` variable later to fit our model.
 
-```python
-<copy>
-y = np.log(alldata['SalePrice'])
-sns.distplot(y, fit=norm)
-fig = plot.figure()
-</copy>
-```
+    ```python
+    <copy>
+    y = np.log(alldata['SalePrice'])
+    sns.distplot(y, fit=norm)
+    fig = plot.figure()
+    </copy>
+    ```
 
 5. Removing irrelevant features
 
    In any case we will remove the ID column, which does not carry any predictive value. We will also remove the attributes that showed very low correlation with `SalePrice` during Data Exploration. Note that this is a fairly brute approach, but it is again sufficient for our exercise. After the first model build, you could start addining back some of the features and observe if the model will generalize better.
 
-```python
-<copy>
-alldata.drop("Id", axis = 1, inplace = True)
-alldata.drop("BsmtFullBath", axis = 1, inplace = True)
-alldata.drop("BsmtUnfSF", axis = 1, inplace = True)
-alldata.drop("ScreenPorch", axis = 1, inplace = True)
-alldata.drop("MoSold", axis = 1, inplace = True)
-alldata.drop("3SsnPorch", axis = 1, inplace = True)
-alldata.drop("PoolArea", axis = 1, inplace = True)
-alldata.drop("MSSubClass", axis = 1, inplace = True)
-alldata.drop("YrSold", axis = 1, inplace = True)
-alldata.drop("BsmtFinSF2", axis = 1, inplace = True)
-alldata.drop("MiscVal", axis = 1, inplace = True)
-alldata.drop("LowQualFinSF", axis = 1, inplace = True)
-alldata.drop("OverallCond", axis = 1, inplace = True)
-alldata.drop("KitchenAbvGr", axis = 1, inplace = True)
-alldata.drop("EnclosedPorch", axis = 1, inplace = True)
-</copy>
-```
+    ```python
+    <copy>
+    alldata.drop("Id", axis = 1, inplace = True)
+    alldata.drop("BsmtFullBath", axis = 1, inplace = True)
+    alldata.drop("BsmtUnfSF", axis = 1, inplace = True)
+    alldata.drop("ScreenPorch", axis = 1, inplace = True)
+    alldata.drop("MoSold", axis = 1, inplace = True)
+    alldata.drop("3SsnPorch", axis = 1, inplace = True)
+    alldata.drop("PoolArea", axis = 1, inplace = True)
+    alldata.drop("MSSubClass", axis = 1, inplace = True)
+    alldata.drop("YrSold", axis = 1, inplace = True)
+    alldata.drop("BsmtFinSF2", axis = 1, inplace = True)
+    alldata.drop("MiscVal", axis = 1, inplace = True)
+    alldata.drop("LowQualFinSF", axis = 1, inplace = True)
+    alldata.drop("OverallCond", axis = 1, inplace = True)
+    alldata.drop("KitchenAbvGr", axis = 1, inplace = True)
+    alldata.drop("EnclosedPorch", axis = 1, inplace = True)
+    </copy>
+    ```
 
 6. Separating Target and Input Features
 
@@ -586,11 +586,11 @@ alldata.drop("EnclosedPorch", axis = 1, inplace = True)
 
    Get all the data with the exception of the `SalePrice`:
 
-```python
-<copy>
-X = alldata.drop(['SalePrice'], axis=1)
-</copy>
-```
+    ```python
+    <copy>
+    X = alldata.drop(['SalePrice'], axis=1)
+    </copy>
+    ```
 
 7. Convert categorical values to numbers
 
@@ -600,12 +600,12 @@ X = alldata.drop(['SalePrice'], axis=1)
 
    You will see that after this the `SaleType` column has been converted into `SaleType_ConLw`, `SaleType_New`, et cetera. The dataset now only has numerical values.
 
-```python
-<copy>
-X = pd.get_dummies(X)
-X.head()
-</copy>
-```
+    ```python
+    <copy>
+    X = pd.get_dummies(X)
+    X.head()
+    </copy>
+    ```
 
 ## **STEP 7:** Building the model
 
@@ -623,22 +623,22 @@ X.head()
    `y_train`: The target of the training dataset.
    `y_train`: The target of the test dataset.
 
-```python
-<copy>
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=63, test_size=.20)
-</copy>
-```
+    ```python
+    <copy>
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=63, test_size=.20)
+    </copy>
+    ```
 
 2. Build the model
 
    Now we're ready to build the model (on the training data only). Building the model is also called "fitting".
 
-```python
-<copy>
-lr = linear_model.LinearRegression()
-model = lr.fit(X_train, y_train)
-</copy>
-```
+    ```python
+    <copy>
+    lr = linear_model.LinearRegression()
+    model = lr.fit(X_train, y_train)
+    </copy>
+    ```
 
 ## **STEP 8:** Verifying the performance of the model
 
@@ -646,11 +646,11 @@ model = lr.fit(X_train, y_train)
 
 1. Apply the predictions on the Test dataset
 
-```python
-<copy>
-y_predicted = model.predict(X_test)
-</copy>
-```
+    ```python
+    <copy>
+    y_predicted = model.predict(X_test)
+    </copy>
+    ```
 
 2. An intuitive, visual approach to verification
 
@@ -663,16 +663,16 @@ y_predicted = model.predict(X_test)
 
    In ideal circumstances we'd like to see the predictions falling on the line of actual values. This would mean that Predicted and Actual Sale Prices are the same.
 
-```python
-<copy>
-plot.scatter(y_predicted, y_test)
-plot.xlabel('Predicted Sale Price')
-plot.ylabel('Actual Sale Price')
-plot.title('Comparing Predicted and Actual Sale Prices')
-plot.plot(range(11, 15), range(11, 15), color="red")
-plot.show()
-</copy>
-```
+    ```python
+    <copy>
+    plot.scatter(y_predicted, y_test)
+    plot.xlabel('Predicted Sale Price')
+    plot.ylabel('Actual Sale Price')
+    plot.title('Comparing Predicted and Actual Sale Prices')
+    plot.plot(range(11, 15), range(11, 15), color="red")
+    plot.show()
+    </copy>
+    ```
 
 3. A measurable approach to verification
 
@@ -682,11 +682,11 @@ plot.show()
 
    RMSE by itself is not easy to interpret, but it can be used to compare different versions of a model, to see whether a change you've made has resulted in an improvement. Scikit-Learn has a function to calculate RMSE.
 
-```python
-<copy>
-print('RMSE: ', mean_squared_error(y_test, y_predicted))
-</copy>
-```
+    ```python
+    <copy>
+    print('RMSE: ', mean_squared_error(y_test, y_predicted))
+    </copy>
+    ```
 
 ## **STEP 9:** Single house SalesPrice prediction
 
@@ -694,12 +694,12 @@ print('RMSE: ', mean_squared_error(y_test, y_predicted))
 
 1. Select one record of house data from the test set and see how it looks in JSON format:
 
-```python
-<copy>
-r = X_test.iloc[2]
-r.to_json()
-</copy>
-```
+    ```python
+    <copy>
+    r = X_test.iloc[2]
+    r.to_json()
+    </copy>
+    ```
 
 2. Verify the record
 
@@ -711,36 +711,36 @@ r.to_json()
 
    Let's get the data into a form that would allow us to store it as array. If you execute following in your notebook:
 
-```python
-<copy>
-r.to_csv(index=False, line_terminator=',')
-</copy>
-```
+    ```python
+    <copy>
+    r.to_csv(index=False, line_terminator=',')
+    </copy>
+    ```
 
 4. Check the resulting array
 
-<p>
-'67.0,10656.0,8.0,2006.0,2007.0,274.0,0.0,1638.0,1646.0,0.0,1646.0,0.0,2.0,0.0,3.0,6.0,1.0,2007.0,3.0,870.0,192.0,80.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,'
-</p>
+    <p>
+    '67.0,10656.0,8.0,2006.0,2007.0,274.0,0.0,1638.0,1646.0,0.0,1646.0,0.0,2.0,0.0,3.0,6.0,1.0,2007.0,3.0,870.0,192.0,80.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,'
+    </p>
 
 5. Create a new variable with that data
 
   Notice that we are removing the last comma `(,)` from the array.
 
-```python
-<copy>
-input = [[67.0,10656.0,8.0,2006.0,2007.0,274.0,0.0,1638.0,1646.0,0.0,1646.0,0.0,2.0,0.0,3.0,6.0,1.0,2007.0,3.0,870.0,192.0,80.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0]]
-</copy>
-```
+    ```python
+    <copy>
+    input = [[67.0,10656.0,8.0,2006.0,2007.0,274.0,0.0,1638.0,1646.0,0.0,1646.0,0.0,2.0,0.0,3.0,6.0,1.0,2007.0,3.0,870.0,192.0,80.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0]]
+    </copy>
+    ```
 
 6. Make prediction on single house
 
-```python
-<copy>
-s_predicted = model.predict(input)
-s_predicted
-</copy>
-```
+    ```python
+    <copy>
+    s_predicted = model.predict(input)
+    s_predicted
+    </copy>
+    ```
 
 7. Check the resulting prediction
 
@@ -752,30 +752,30 @@ array([12.42384482])
 
 8. Convert house price back to normal range
 
-You would notice that the price is strange, it shows a number that doesn't seem to be a normal house Sales Price. If you remember we scaled the SalePrice by using `np.log(SalePrice)` to get the prices in smaller range and help the algorithm generalize and learn better. To get the real price now we need to revert back this scale. To do so we have to use `np.exp(PredictedSalePrice)`, example:
+  You would notice that the price is strange, it shows a number that doesn't seem to be a normal house Sales Price. If you remember we scaled the SalePrice by using `np.log(SalePrice)` to get the prices in smaller range and help the algorithm generalize and learn better. To get the real price now we need to revert back this scale. To do so we have to use `np.exp(PredictedSalePrice)`, example:
 
-```python
-<copy>
-np.exp(12.42384482)
-</copy>
-```
+    ```python
+    <copy>
+    np.exp(12.42384482)
+    </copy>
+    ```
 
 9. Check the result of the conversion
 
-```console
-248660.7558014956
-```
+    ```console
+    248660.7558014956
+    ```
 
 10. Predict directly from test set array
 
    In case you want to save yourself all this steps and execute the model directly against a house data in the test set, you could also access it directly from the test set array. Notice we used the third house data from the test set:
 
-```python
-<copy>
-single_predicted = model.predict(X_test[2:3])
-single_predicted
-</copy>
-```
+    ```python
+    <copy>
+    single_predicted = model.predict(X_test[2:3])
+    single_predicted
+    </copy>
+    ```
 
 ## Bonus: Train the model using AutoML
 
