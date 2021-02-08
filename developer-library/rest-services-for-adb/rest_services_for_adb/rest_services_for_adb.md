@@ -206,7 +206,34 @@ You can also see a plug icon ![](../images/plug-icon.png) next to the table to i
 
 ![](../images/SDW-36.png)
 
-play with the endpoint using cURL and pass a variable
+We can work with the REST endpoints by using cURL commands that the SQL Worksheet can provide to us. To get to these endpoints, again right click the table name as we did in the previous step, select REST, then cURL Command.
+
+![](../images/SDW-37.png)
+
+On the right of the page, we see the cURL for the table MAY2018 side out.
+
+![](../images/SDW-38.png)
+
+Here we can work with the various REST endpoints. GET ALL is the URL we tried out in the browser previously. Let's take a look at getting a single row. Click on GET Single and you will see a form field for the ID column. Enter **hv70116556** and click the Next button on the lower right of the slide out.
+
+![](../images/SDW-39.png)
+
+We now have the REST endpoint for getting a single record.
+
+![](../images/SDW-40.png)
+
+You can grab the URL and put it into a browser window,
+
+![](../images/SDW-41.png)
+
+or you can copy the curl command and run it where curl is available. If you are unsure if you have curl installed locally or do not want to install it, we can use the OCI cloud shell. While logged into the OCI console, you can click the Cloud Shell icon in the upper right of the page.
+
+![](../images/SDW-42.png)
+
+This will open a console where you can run the curl command.
+
+![](../images/SDW-43.png)
+
 
 ## **Step 4:**Securing the REST endpoint
 
