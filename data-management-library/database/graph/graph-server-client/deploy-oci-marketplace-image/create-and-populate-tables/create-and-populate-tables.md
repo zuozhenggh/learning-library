@@ -6,7 +6,7 @@ In this lab, you are going to log in as user `CUSTOMER_360`. You will learn how 
 
 You will create 7 tables (customer, account, merchant, owned_by, purchased, transfer, parent_of). The entity-relationship diagram for these tables is shown below.
 
-![](images/c360_erDiagram.png)
+![](images/er-diagram.jpg)
 
 Estimated time: 7 minutes
 
