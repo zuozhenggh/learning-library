@@ -184,7 +184,7 @@ In the slider that has come out from the right of the page, we can look at the d
 
 ![](../images/SDW-31.png)
 
-## **Step 3:**Auto-REST enable a table
+## **Step**3: Auto-REST enable a table
 
 REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
@@ -234,10 +234,23 @@ This will open a console where you can run the curl command.
 
 ![](../images/SDW-43.png)
 
+The cURL for the table MAY2018 side out also will help you construct REST endpoints for update, delete and insert actions.
 
-## **Step 4**:Securing the REST endpoint
+## **Step 4**: Securing the REST endpoint
 
+So we have a REST enabled table ready to be used by our applications but we need to ensure not just anyone can use them; we need to secure them. To do this, let's use the Database Actions menu in the upper left of the page and choose REST.
 
+![](../images/SDW-44.png)
+
+The REST pages let you create REST endpoints just as we did with the auto REST option. Here, we want to select the Security Tab on the top of the page and then select OAuth Clients.
+
+![](../images/SDW-45.png)
+
+To create our OAuth client we will secure our REST endpoints with, click the Create OAuth Client button in the upper right of the page.
+
+![](../images/SDW-46.png)
+
+The Create OAuth Client slider will come out. 
 
 
 
