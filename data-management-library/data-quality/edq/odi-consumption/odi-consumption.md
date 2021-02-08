@@ -16,18 +16,18 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Access and Configure EDQ
+    - Lab: Initialize Environment
     - Lab: Data Profiling
     - Lab: Reference Data
     - Lab: Data Auditing
     - Lab: Data Standardization
 
 
-## **STEP 1:**  Export Cleansed Data
-We will create a job that runs data through the process we just created.This job can be called from an ODI package to automate the Data Quality project.
+## **Step 1:**  Export Cleansed Data
+We will create a job that runs data through the process we just created. This job can be called from an ODI package to automate the Data Quality project.
 1.	The first step is direct EDQ to export the output file. Navigate to the “Project Browser” on the left side of the screen and right-click on "Clean Customers” under the “Staged Data” category (expand the “Staged Data” category if you do not see it). Right click on it and select “Export Staged Data…”.
 
     ![](images/image1200_108.png)
@@ -52,8 +52,7 @@ We will create a job that runs data through the process we just created.This job
 
     ![](images/image1200_113.png)
 
-
-## **STEP 2:** EDQ Jobs
+## **Step 2:** EDQ Jobs
 
 1.	We now need to create a job that could be invoked externally. Navigate to the “Project Browser”, and select the “Jobs” category, right-click on it and select “New Job…”.
 
@@ -67,7 +66,7 @@ We will create a job that runs data through the process we just created.This job
 
     ![](images/image1200_116.png)
 
-4.	Click the   icon in the “Tool Palette” to display the “Snapshots” and drag the “US\_Customer\_Data” snapshot onto the canvas.
+4.	Click the   icon in the “Tool Palette” to display the “Snapshots” and drag the “`US_Customer_Data`” snapshot onto the canvas.
 
 5.	Next, click the   icon in the “Tool Palette” to display the “Processes” and drag the “Clean Data” process onto the canvas.
 
@@ -81,7 +80,7 @@ We will create a job that runs data through the process we just created.This job
 
 Now, this job can be executed from ODI (or) you can schedule this job to run periodically.
 
-Congratulations !!! You have completed all the EDQ labs.
+**This concludes this lab.**
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
@@ -92,6 +91,6 @@ Congratulations !!! You have completed all the EDQ labs.
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

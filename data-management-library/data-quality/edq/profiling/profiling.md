@@ -16,12 +16,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Access and Configure EDQ
+    - Lab: Initialize Environment
 
-## **STEP 1**: Quickstats Profiler
+## **Step 1**: Quickstats Profiler
 1.	In the Project Browser, right-click on “Processes” under your project, then select “New Process”.
 
     ![](./images/image1200_25.png " ")
@@ -39,6 +39,7 @@ This lab assumes you have:
 4.	Provide the following information:
     - **Name**: Profiling – Understanding your Data
     - **Description**: Understanding US CUSTOMERS Data
+
 5.	Click on “Finish” button.
 
     ![](./images/image1200_28.png " ")
@@ -77,7 +78,8 @@ This lab assumes you have:
 
     ![](./images/image1200_35.png " ")
 
-  The “Quickstats Profiler” provides fundamental quality metrics for the selected attributes. It highlights:
+    The “Quickstats Profiler” provides fundamental quality metrics for the selected attributes. It highlights:
+
     - Candidate key columns
     - Completeness and missing data
     - Duplication
@@ -105,7 +107,7 @@ This lab assumes you have:
 
 17.	Click the “Back” icon in the "Results Browser" panel as many times as needed to return to the results of the “Quickstats Profiler”.
 
-## **STEP 2**: Frequency Profiler
+## **Step 2**: Frequency Profiler
 1.	In the "Tool Palette" find the “Frequency Profiler” processor.
 
     ![](./images/image1200_40.png " ")
@@ -154,7 +156,7 @@ This lab assumes you have:
 
     By now, you will surely see that this dataset needs some fine tuning to make it usable for accurate analytics. For instance, 19.5% of the gender values above are blank.
 
-## **STEP 3**: Record Completeness Profiler
+## **Step 3**: Record Completeness Profiler
 
 1.	Now, Let’s explore record completeness profiler. In the “Profiling Tool Palette" find “Record Completeness” processor and “Record Duplication” processor. Drag and drop each processor to the "Project Canvas".
 
@@ -196,7 +198,7 @@ This lab assumes you have:
 
     While we can continue to add Profilers to further investigate the data, perhaps it is best to move on to explore the next family of EDQ Processors: Audit – which will help us check and standardize the data.
 
-You may now *proceed to the next lab*.  
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
@@ -207,6 +209,6 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

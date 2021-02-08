@@ -17,14 +17,14 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Access and Configure EDQ
+    - Lab: Initialize Environment
     - Lab: Data Profiling
     - Lab: Reference Data
 
-## **STEP 1:** No Data Check
+## **Step 1:** No Data Check
 
 ### Auditing Data
 
@@ -67,7 +67,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 **Note**: If desired, we can continue to develop this process using one or more of the end point output data stream triangles from the Processor by choosing “Data”, “No Data” or “All".
 
-## **STEP 2**: Pattern Check
+## **Step 2**: Pattern Check
 
 1.	Now, find the “Pattern Check” processor in the Tool Palette. Drag and drop it into the canvas and rename it to “Zip Code in Right Format” by double clicking on processor.
 
@@ -97,7 +97,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
     Notice that there are 5362 Valid Records and 76 Invalid Records. That is, there are 76 records that fail the rule, that is they do not match the patterns `“NNNNN”` or `“NNNNNpNNNN”`.
 
-## **STEP 3**: List Check
+## **Step 3**: List Check
 
 1.	Return to the "Tool Palette" and find the “List Check” processor. Drag and drop it onto the "Project Canvas".
 
@@ -121,7 +121,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 We now have a better understanding of our data and its issues. Next step is to create a process that will fix those issues.
 
-You may now *proceed to the next lab*.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
@@ -132,6 +132,6 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -16,14 +16,14 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Access and Configure EDQ
+    - Lab: Initialize Environment
     - Lab: Data Profiling
 
 
-## **STEP 1**:  Generate Reference Data
+## **Step 1**:  Generate Reference Data
 
 ### Generate Reference Data
 
@@ -60,7 +60,7 @@ We will take advantage of the results generated while we were profiling the data
 
 8.	Next, we will need to create Reference Data for the valid types of ZIP codes. To easily create this reference data, we will use the results of the "Pattern Profiler"; click the "Pattern Profiler" processor and view the results in "Results Browser" panel.
 
-    **Note**: "N" signifies a number, "p" signifies punctuation, "a" signifies an alpha character, and "_" signifies a space.
+    **Note**: "N" signifies a number, "p" signifies punctuation, "a" signifies an alpha character, and `"_"` signifies a space.
 
     ![](./images/image1200_61.png " ")
 
@@ -76,10 +76,9 @@ We will take advantage of the results generated while we were profiling the data
 
     ![](./images/image1200_64.png " ")
 
-12.	Provide the following information:
+12.	Provide the following information and click “Finish”:
     - Name: Valid Zip Patterns
     - Description: Valid Zip Patterns
-then click “Finish”.
 
     ![](./images/image1200_65.png " ")
 
@@ -88,17 +87,17 @@ then click “Finish”.
     ![](./images/image1200_66.png " ")
 
 
-## **STEP 2**: Copy Reference Data
+## **Step 2**: Copy Reference Data
 Now, we will copy reference data previously created into our project, which will be used in further labs.
 
 1. We will use Examples.dxi package which is located in below path.
 
-    ````
-   <copy>
+    ```
+    <copy>
     Path: /home/opc/Dxi_Files
     File Name: Examples.dxi
-   </copy>
-    ````
+    </copy>
+    ```
 
 2. Click on "File" in Director and select "Open Package File...". Browse to the appropriate directory and select the examples.dxi file.
 
@@ -132,7 +131,7 @@ Now, we will copy reference data previously created into our project, which will
 
 This Completes your lab on reference data. Let's use this reference data in our next lab.
 
-You may now *proceed to the next lab*.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
@@ -143,6 +142,6 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

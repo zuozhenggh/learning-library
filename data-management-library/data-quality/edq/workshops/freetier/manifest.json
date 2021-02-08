@@ -29,8 +29,8 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Access EDQ Instance and Create Project",
-      "description": "Access EDQ Instance and Create Project",
+      "title": "Lab 4: Initialize Environment",
+      "description": "Initialize Environment",
       "filename": "../../setup-edq-rep/setup-edq-rep.md"
     },
     {
