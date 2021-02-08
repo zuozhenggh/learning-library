@@ -29,7 +29,7 @@ Login as `CUSTOMER_360` using the password you entered when creating the user.
 
 *Note: Use the password you choose in Step 1.2 in Lab 4.*
 
-![](images/login-c360.png)
+![](images/login-c360.jpg)
 
 ![](images/sdw-c360.jpg)
 
