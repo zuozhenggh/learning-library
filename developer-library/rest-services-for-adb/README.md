@@ -13,7 +13,8 @@ Watch the video below for a comprehensive overview of REST and how ORDS provides
 ### Objectives
 
 -   Enable a user for REST access
--   Publlish a RESTful service for a database table
+-   Publish a RESTful service for a database table
+-   Secure your REST endpoints
 
 ### Required Artifacts
 
@@ -27,7 +28,7 @@ This lab assumes you have completed the following labs:
 
 # Developing RESTful Services in Autonomous Database
 
-In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code all within a single UI.
+In this lab you will use the browser-based SQL and REST workshop tools, connect to your Autonomous Database and REST enable a table. You will then secure that REST endpoint all within a single UI.
 
 ## **Step 1:**Connect to your Autonomous Database using SQL Developer Web
 
@@ -37,9 +38,7 @@ In this lab you will use the SQL Developer Web browser-based tool, connect to yo
 
 ## **Step 4:**Auto-REST enable a table
 
-## **Step 5:**Build a set of REST interfaces on a table 
-
-## **Step 6:**Register an OAUTH Client application
+## **Step 5**: Securing the REST endpoint
 
 ## Conclusion
  In this lab, you had an opportunity to get an introduction to REST services.
