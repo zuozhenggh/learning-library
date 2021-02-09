@@ -49,7 +49,7 @@ Estimated Lab Time: xx minutes
 1. Next you add your 2 police Datasets to the Project.  Click the **+** icon at the top of the Data Elements panel, select **Add Dataset**, use shift-enter to select both police Datasets and click **OK**.
  ![Image alt text](images/create-proj-7.png)
 
-2. As you did previously with ACCIDENTS, drag and drop the POLICE\_POINTS Dataset from the Data Elements panel onto the, click the POLICE\_POINT layer's hamburger menu and select Settings. Update Radius, Color, Opacity. Then click the **Back** button at the top of the Layers panel.
+2. As you did previously with ACCIDENTS, drag and drop the POLICE\_POINTS Dataset from the Data Elements panel onto the, click the POLICE\_POINT layer's hamburger menu and select Settings. Update Radius, Color, Opacity. Then click the **Back** link at the top of the Layers panel.
  ![Image alt text](images/create-proj-8.png)
 
 3. As Layers are added to the map, they are rendered on top of the existing Layers. Therefore POLICE\_POINTS are currently on top of ACCIDENTS. To reorder  the layers such that POLICE\_POINTS are underneath ACCIDENTS, move the mouse over POLICE\_POINTS in the Layer's list, click and hold (you'll see the cursor change to cross-hair), and drag under ACCIDENTS. 
@@ -64,7 +64,7 @@ Estimated Lab Time: xx minutes
 5. Click the POLICE\_BOUNDS layer's hamburger menu and select Settings. Update Color and Opacity for the Fill and Outline. Observe that using a white outline reduces the cluttered effect of a darker outline.
  ![Image alt text](images/create-proj-11.png)   
 
- Click the **Back** button at the top of the Layer Settings panel to return to the Layers List.
+ Click the **Back** link at the top of the Layer Settings panel to return to the Layers List.
 
 
 ## **STEP 3:** Add Visualizations
