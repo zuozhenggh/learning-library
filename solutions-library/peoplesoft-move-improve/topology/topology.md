@@ -32,13 +32,13 @@ In this case, select **VM.Standard2.1** or **VM.Standard2.2**.
 
     ![](./images/topology.png "")
 
-3.	Delete the Windows node from the topology. Click **Delete** on the page shown below and save the topology. 
+3.	Repeat these steps for the Windows node.
 
-    ![](./images/3.png "")
+    ![](./images/winNode.png "")
 
-4.	When you are ready, click **Save**. The topology should now look as shown below.
+4.	When you have something like this, click **Save**. 
 
-    ![](./images/4.png "")
+    ![](./images/topology2node.png "")
 
 You may now proceed to the next lab.
 

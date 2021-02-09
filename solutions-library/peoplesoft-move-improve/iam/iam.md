@@ -236,9 +236,9 @@ Set a **Temporary Password** for the newly created User. After the user is creat
 
     This time, you will sign in using the local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
 
-7. Enter the username **User01** and password that you copied to your naotepad.
+7. Enter the username **User01** and password that you copied to your notepad.
 
-    ![](./images/signin.png "")
+    ![](./images/newSignin.png "")
 
     ```
     Note: Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture.
@@ -248,7 +248,7 @@ Set a **Temporary Password** for the newly created User. After the user is creat
     ```
     <copy>Psft@1234</copy>
     ```
-    ![](./images/17.png "")
+    ![](./images/changePassword.png "")
 
 
     You are now logged in as local user: **User01**
