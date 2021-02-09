@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **STEP 0**: Running your Lab
+## **Step 0**: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -61,7 +61,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 1**: Start Database and Retail Application
+## **Step 1**: Start Database and Application
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script
@@ -79,11 +79,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     </copy>
     ```
 
-This will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run
+This will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
 
-Check for the "Finished starting servers" status before proceeding next.
-
-You may now *proceed to the next lab*.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Acknowledgements
 

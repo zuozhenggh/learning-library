@@ -4,7 +4,7 @@
 
 This lab describes how to work with reference data in Enterprise Data Quality. The demonstration environment includes importing and creating a reference data.
 
-*Estimated Lab Time* - 15 minutes
+*Estimated Lab Time*: 15 minutes
 
 ### Objectives
 In this lab you will learn the following:
@@ -46,11 +46,10 @@ We will take advantage of the results generated while we were profiling the data
 
     ![](./images/image1200_58.png " ")
 
-6.	Provide the following information:
+6.	Provide the following information and click “Finish”:
     - Name: Valid Genders
     - Description: Valid Genders
 
-    then click “Finish”.
 
     ![](./images/image1200_59.png " ")
 
@@ -93,10 +92,10 @@ Now, we will copy reference data previously created into our project, which will
 1. We will use Examples.dxi package which is located in below path.
 
     ```
-    <copy>
-    Path: /home/opc/Dxi_Files
-    File Name: Examples.dxi
-    </copy>
+    Path: <copy>/home/oracle/Downloads</copy>
+    ```
+    ```
+    File Name: <copy>Examples.dxi</copy>
     ```
 
 2. Click on "File" in Director and select "Open Package File...". Browse to the appropriate directory and select the examples.dxi file.
@@ -135,6 +134,21 @@ This Completes your lab on reference data. Let's use this reference data in our 
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
+
 
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
