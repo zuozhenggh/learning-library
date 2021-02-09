@@ -6,15 +6,15 @@ This lab will walk you through creating a REST service using Oracle REST Data Se
 
 This lab consists of:
 
-## **Step 1:**Connect to your Autonomous Database using SQL Developer Web
+**Step 1: Connect to your Autonomous Database using SQL Developer Web**
 
-## **Step 2:**Create a user for Application development
+**Step 2: Create a user for Application development**
 
-## **Step 3:**Load data into the database
+**Step 3: Load data into the database**
 
-## **Step 4:**Auto-REST enable a table
+**Step 4: Auto-REST enable a table**
 
-## **Step 5**: Securing the REST endpoint
+**Step 5: Securing the REST endpoint**
 
 
 ## **About Oracle REST Data Services**
