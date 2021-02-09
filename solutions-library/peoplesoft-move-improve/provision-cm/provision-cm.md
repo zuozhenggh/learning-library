@@ -356,7 +356,7 @@ You may now proceed to the next lab.
 **Created By/Date**   
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
 * **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
 * **Lab Expiry Date** - June 30, 2021 
 
 ## Need Help?
