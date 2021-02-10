@@ -99,7 +99,7 @@ In Step 1 of this lab we will Setup Logging Analytics Service
 
       v. Add the following rule:
 
-        `All {resource.type = 'managementagent', resource.compartment.id = '<Compartment OCID of ebshol_compartment>'}`
+        All {resource.type = 'managementagent', resource.compartment.id = '<Compartment OCID of ebshol_compartment>'}
 
       Note: Fill in the Compartment OCID with the OCID of the ebshol compartment.
 
@@ -255,7 +255,7 @@ In this Step we will Ingest Flow Logs and Install Management Agents to our insta
 
   c. Click **Create Key** below 
   
-    i. Name the key `ebs_agentkey`
+    i. Name the key `ebs_agent_key`
 
     ii. Select our `ebshol_compartment`
 
@@ -266,6 +266,22 @@ In this Step we will Ingest Flow Logs and Install Management Agents to our insta
     v. Click `Download Key to File`
 
   ![](./images/keydownload.png " ")
+
+    vi. Once you have Downloaded the key file, we need to edit it
+
+    vii. open the `ebs_agent_key.txt` file
+
+    Add agent name
+      - AgentDisplayName
+
+    Add Password
+      - CredentialWalletPassword
+
+    Uncomment the Service Plugins
+      - Service.plugin.dbaas.download=true
+      - Service.plugin.dbaas.download=true
+
+  ![](./images/editkey.png " ")
 
   d. We now need to copy our `oracle.mgmt_agent.rpm` and `ebs_agent_key.txt` to our Cloud Manager Instance.
 
