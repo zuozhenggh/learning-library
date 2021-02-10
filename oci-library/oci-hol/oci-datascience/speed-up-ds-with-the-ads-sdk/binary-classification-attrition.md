@@ -60,9 +60,10 @@ The following is a summary of the steps that are covered in this lab along with 
 
 A conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
 
-1. Open a terminal window by clicking on **File**, **New** and then **Terminal**
+1. Open a terminal window by clicking on **File**, **New** and then **Terminal**.
 1. Run the command: `odsc conda install -s mlcpuv1`
 1. You will receive a prompt related to what version number you want. Press `Enter` to select the default.
+1. Wait for the conda package to be installed.
 
 
 ## **STEP 4:** Binary Classification Model

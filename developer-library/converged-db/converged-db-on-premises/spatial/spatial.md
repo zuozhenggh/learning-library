@@ -42,7 +42,7 @@ We will be using three tables – CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP.
 
 Each table stores location using Oracle's native spatial data type, SDO\_GEOMETRY. A location can be stored as a point in an SDO\_GEOMETRY column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface—for example, -63.13631, 52.485426.
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## **Step 1**: Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**
 
     ```
@@ -75,7 +75,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     </copy>
     ```
 
-## **STEP 2**: Connect to SQL Developer
+## **Step 2**: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -88,7 +88,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
     ![](./images/spatial_sql_developer.png " ")
 
-## **STEP 3**: Example Queries
+## **Step 3**: Example Queries
 
 Note: See [Reference: Setting Up Spatial](#Reference:SettingUpSpatial) to see the SQL executed in advance.
 
@@ -295,6 +295,21 @@ The elements of the constructor are:
     INDEXTYPE IS "MDSYS"."SPATIAL_INDEX" ;
     </copy>
     ```
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
+
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope

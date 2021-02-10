@@ -221,7 +221,7 @@ To summarize, you have performed Create, Update, Retrieve and Delete functions o
 
 You may now *proceed to the next lab*.
 
-## Want to learn more
+## Learn More
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 - [REST-JSON using JDeveloper](https://docs.oracle.com/cd/E53569_01/tutorials/tut_jdev_maf_json/tut_jdev_maf_json.html)
 

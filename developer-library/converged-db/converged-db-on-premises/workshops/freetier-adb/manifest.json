@@ -1,5 +1,5 @@
 {
-  "workshoptitle":"Converged functionality of Oracle Autonomous Database",  
+  "workshoptitle":"Converged functionality of Oracle Autonomous Database",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -28,42 +28,21 @@
     },   {
       "title": "Lab 4: JSON",
       "description": "JSON Lab",
-      "filename": "../../json/json.md"
-    },
-    {
-      "title": "Lab 5: SODA - coming soon",
-      "description": "SODA Lab",
-      "filename": "../../json/json.md"
-    },
-    {
-      "title": "Lab 6: NODE.JS",
-      "description": "NODE.JS Lab",
-      "filename": "../../nodejs/nodejs.md"
-    },
-    {
-      "title": "Lab 7: Spatial",
+      "filename": "../../json/json-adb.md"
+    }, {
+      "title": "Lab 5: Spatial",
       "description": "Spatial Lab",
-      "filename": "../../spatial/spatial.md"
+      "filename": "../../spatial/spatial-adb.md"
     },
     {
-      "title": "Lab 8: Graph",
-      "description": "Graph Lab",
-      "filename": "../../graph/graph.md"
+      "title": "Lab 6: SODA",
+      "description": "SODA Lab",
+      "filename": "../../soda/soda-adb.md"
     },
     {
-      "title": "Lab 9: Multiple Data Types",
-      "description": "Labs that leverage data types across schemas",
-      "filename": "../../crossdatatype/crossdatatype.md"
-    },
-    {
-      "title": "Lab 10: XML",
+      "title": "Lab 7: XML",
       "description": "XML Lab",
-      "filename": "../../xml/xml.md"
-    },
-    {
-      "title": "Lab 11: ORDS as Microservices",
-      "description": "Labs that leverage data types across schemas",
-      "filename": "../../ords/ords.md"
+      "filename": "../../xml/xml-adb.md"
     }
   ]
 }
