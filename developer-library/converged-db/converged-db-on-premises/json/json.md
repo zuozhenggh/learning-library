@@ -1,6 +1,6 @@
 # Oracle JSON
 
-## Introduction
+## Introduction 
 There are three main parts to this lab.
 - **Connect to SQL Developer** - you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer.
 - **Insert and Update JSON Data** - You can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function `json_mergepatch` to update specific portions of a JSON document.
