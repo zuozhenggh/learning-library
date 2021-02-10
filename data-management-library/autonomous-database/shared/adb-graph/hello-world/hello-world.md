@@ -185,6 +185,13 @@ Learn how to
 
     ![](./images/first-notebook-pgx-get-graph.png " ")
 
+
+**Note: Some users have encountered an issue when copying and pasting the `%md` and `%java-pgx` code above.** If you see an error message `"Invalid Parameter. No interpreter with the name 'java-pgx' is currently registered to the server."` then delete the text, or the paragraph, and manually enter the same text and re-execute the paragraph.   
+The following screenshot shows the error message some, but not all, have encountered.  
+    ![](./images/no-interpreter-found-error.png " ")
+
+  
+
 4. Modify the paragraph to run a graph algorithm. For example:
 
     ```
@@ -199,7 +206,7 @@ Learn how to
 
     ![](./images/first-notebook-pgx-count-triangles.png " ")
 
-5. Add a paragraph and enter the following code. This will be a PGQL paragraph since it starts with the line `%pgql-pgx`. 
+6. Add a paragraph and enter the following code. This will be a PGQL paragraph since it starts with the line `%pgql-pgx`. 
 
     ```
     <copy>
@@ -221,13 +228,13 @@ Learn how to
 
     ![](./images/first-notebook-pgql-settings.png " ") 
 
-9.  Navigate to the **Visualization** tab and select **NAME** as the label to render next to the vertices:
+10.  Navigate to the **Visualization** tab and select **NAME** as the label to render next to the vertices:
 
     ![](./images/first-notebook-pgql-viz-label.png " ")    
 
     You now see the name next to each vertex, which will help you better understand the visualization. There are lots of other options to help you make sense of the graph. Feel free to play around with the settings as you like.
 
-11. Add another paragraph with the following query and execute it.
+11.  Add another paragraph with the following query and execute it.
 
     ```
     <copy>
@@ -238,7 +245,7 @@ Learn how to
 
     ![](./images/first-notebook-population-query.png)
 
-12. Change the output to be a pie chart.
+12.  Change the output to be a pie chart.
 
     ![](./images/first-notebook-population-as-pie-chart.png " ")   
 
