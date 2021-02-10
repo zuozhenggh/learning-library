@@ -16,7 +16,7 @@ In this tutorial, you'll create the business objects shown here:
 
 Once you have your business objects, you'll use them to build a very simple Human Resources application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
-**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating applications are the same, no matter what form your data takes.
+**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services. The basic principles of creating applications are the same, no matter what form your data takes.
 
 ## **STEP 1**: Create a Web Application
 
@@ -69,7 +69,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
     In the Web Apps pane, expand the **hrwebapp** node to view the web application structure, then expand the **Flows** and **main** nodes to view the main-start page.
 
 
-## **STEP 2**: Import a Location Business Object from a File
+## **STEP 2**: Create a Location Business Object and Import Data from a File
 
 In this step, you'll create the Location business object and then import data for it.
 

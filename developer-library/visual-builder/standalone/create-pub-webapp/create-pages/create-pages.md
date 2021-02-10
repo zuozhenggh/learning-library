@@ -182,7 +182,7 @@ It makes sense at this point to change the name of the main-start page to main-d
     ![](./images/vbcscp_cpn_s2.png)
 
 3.  Double-click **main-departments** to go to that page again.
-4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click the **Source View** ![Source View icon](./images/vbcscp_sourceview_icon.png) tab and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
+4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click **Source View** ![Source View icon](./images/vbcscp_sourceview_icon.png) in the Navigator and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
 
     ![](./images/vbcscp_cpn_s4.png)
 
