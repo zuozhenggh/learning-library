@@ -19,127 +19,132 @@ Learn how to create a graph from relational data sources by:
 
 ## **STEP 1:** Start the Python client
 
-3. Then start a client shell instance that connects to the server
+Start a client shell instance that connects to the server
 
-    ```
-    <copy>
-    opgpy -b https://localhost:7007 --username customer_360
-    </copy>
-    ```
+```
+<copy>
+opgpy -b https://localhost:7007 --username customer_360
+</copy>
+```
 
-    You should see the following if the client shell starts up successfully.
+You should see the following if the client shell starts up successfully.
 
-    ```
-    enter password for user customer_360 (press Enter for no password):
-    Oracle Graph Client Shell 21.1.0
-    >>>
-    ```
+```
+enter password for user customer_360 (press Enter for no password):
+Oracle Graph Client Shell 21.1.0
+>>>
+```
 
 ## **STEP 2:** Create the graph
 
-1. Set up the create property graph statement, which creates the graph from the existing tables.
+Set up the create property graph statement, which creates the graph from the existing tables.
 
-    ```    
-    <copy>
-    statement = '''
-    CREATE PROPERTY GRAPH "customer_360"
-      VERTEX TABLES (
-        customer
-      , account
-      , merchant
-      )
-      EDGE TABLES (
-        account
-          SOURCE KEY(id) REFERENCES account
-          DESTINATION KEY(customer_id) REFERENCES customer
-          LABEL owned_by
-      , parent_of
-          SOURCE KEY(customer_id_parent) REFERENCES customer
-          DESTINATION KEY(customer_id_child) REFERENCES customer
-      , purchased
-          SOURCE KEY(account_id) REFERENCES account
-          DESTINATION KEY(merchant_id) REFERENCES merchant
-      , transfer
-          SOURCE KEY(account_id_from) REFERENCES account
-          DESTINATION KEY(account_id_to) REFERENCES account
-      )
-    '''
-    </copy>
-    ```
+```    
+<copy>
+statement = '''
+CREATE PROPERTY GRAPH "customer_360"
+  VERTEX TABLES (
+    customer
+  , account
+  , merchant
+  )
+  EDGE TABLES (
+    account
+      SOURCE KEY(id) REFERENCES account
+      DESTINATION KEY(customer_id) REFERENCES customer
+      LABEL owned_by
+  , parent_of
+      SOURCE KEY(customer_id_parent) REFERENCES customer
+      DESTINATION KEY(customer_id_child) REFERENCES customer
+  , purchased
+      SOURCE KEY(account_id) REFERENCES account
+      DESTINATION KEY(merchant_id) REFERENCES merchant
+  , transfer
+      SOURCE KEY(account_id_from) REFERENCES account
+      DESTINATION KEY(account_id_to) REFERENCES account
+  )
+'''
+</copy>
+```
 
-2. Now execute the PGQL DDL to create the graph.
+Now execute the PGQL DDL to create the graph.
 
-    ```
-    // drop when this graph exists first
-    <copy>
-    graph.destroy()
-    </copy>
-    ```
+```
+// drop when this graph exists first
+<copy>
+graph.destroy()
+</copy>
+```
 
-    ```
-    // Now create the graph 
-    <copy>
-    session.prepare_pgql(statement).execute()
-    </copy>
-    ```
+```
+// Now create the graph 
+<copy>
+session.prepare_pgql(statement).execute()
+</copy>
+```
 
-    ![](images/create_graph_2.png)
+The expected result is:
+```
+False
+```
 
 ## **STEP 3:** Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the Python shell.
 
-1. Attach the graph to check that the graph was created.
+Attach the graph to check that the graph was created.
+```
+<copy>
+graph = session.get_graph("customer_360")
+graph
+</copy>
+```
 
-    ```
-    <copy>
-    graph = session.get_graph("customer_360")
-    graph
-    </copy>
-    PgxGraph(name: customer_360, v: 15, e: 24, directed: True, memory(Mb): 0)
-    ```
+```
+PgxGraph(name: customer_360, v: 15, e: 24, directed: True, memory(Mb): 0)
+```
 
-2. Run some PGQL queries.
+Run some PGQL queries.
 
-    ```
-    // what are the edge labels
-    <copy>
-    graph.query_pgql("""
-      SELECT DISTINCT LABEL(e) FROM customer_360 MATCH ()-[e]->()
-    """).print()
-    </copy>
-    ```
-    
-    ```
-    // what are the vertex labels
-    <copy>
-    graph.query_pgql("""
-      SELECT DISTINCT LABEL(v) FROM customer_360 MATCH (v)
-    """).print()
-    </copy>
-    ```
+The list of the vertex labels:
+```
+<copy>
+graph.query_pgql("""
+  SELECT DISTINCT LABEL(v) FROM MATCH (v)
+""").print()
+</copy>
+```
 
-    ```
-    // how many vertices with each label
-    <copy>
-    graph.query_pgql("""
-      SELECT COUNT(v), LABEL(v) FROM customer_360 MATCH (v) GROUP BY LABEL(v)
-    """).print()
-    </copy>
-    ```
+How many vertices with each label:
+```
+<copy>
+graph.query_pgql("""
+  SELECT COUNT(v), LABEL(v) FROM MATCH (v) GROUP BY LABEL(v)
+""").print()
+</copy>
+```
 
-    ```
-    // how many edges with each label
-    <copy>
-    graph.query_pgql("""
-      SELECT COUNT(e), LABEL(e) FROM customer_360 MATCH ()-[e]->() GROUP BY LABEL(e)
-    """).print()
-    </copy>
-    ```
+The list of the edge labels:
+```
+<copy>
+graph.query_pgql("""
+  SELECT DISTINCT LABEL(e) FROM MATCH ()-[e]->()
+""").print()
+</copy>
+```
 
-    ![](images/check_graph.png)
+How many edges with each label:
+```
+<copy>
+graph.query_pgql("""
+  SELECT COUNT(e), LABEL(e) FROM MATCH ()-[e]->() GROUP BY LABEL(e)
+""").print()
+</copy>
+```
 
-You may now proceed to the next lab (query and analyse the graph in JShell.
+![](images/check_graph.png)
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
