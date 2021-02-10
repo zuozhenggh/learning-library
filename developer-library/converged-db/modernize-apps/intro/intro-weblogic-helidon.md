@@ -31,7 +31,7 @@ The REST framework for Helidon SE is the Helidon WebServer. It’s built on top 
     * Lab: Prepare Setup (Free Tier and Paid Tenants only)
     * Lab: Environment Setup
 
-## Want to learn more
+## Learn More
 * [Helidon](https://helidon.io/#/)
 * [WebLogic](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/index.html)
 

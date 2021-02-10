@@ -28,6 +28,11 @@
             "title": "Lab 4: Changing Experiment Data with WRF",
             "description": "Modifying guide from previous lab to choose new locations and times to run WRF simulations",
             "filename": "../../wrf-change-experiments/wrf-change-experiments.md"
+        },
+        {
+            "title": "Lab 5: WRF/WPS Install, Setup and Run on HPC Cluster",
+            "description": "Guide on setting up, configuring, and running WRF on two node HPC cluster on OCI",
+            "filename": "../../wrf-wps-setup-install-run-cluster/wrf-wps-setup-install-run-cluster.md"
         }
     ]
 }

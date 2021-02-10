@@ -53,6 +53,24 @@ Step 1 opening paragraph.
 
    If you add another paragraph, add 3 spaces before the line.
 
+6. This is an example of manual control over image sizes:
+
+  No image sizing applied: `![](images/pic2.png)`
+
+  ![](images/pic2.png)
+
+  50% of the width and use auto height: `![](images/pic2.png =50%x*)`
+
+  ![](images/pic2.png =50%x*)
+
+  absolute width and height (500 pixel by 200 pixels): `![](./images/pic2.png =500x200)`
+
+  ![](./images/pic2.png =500x200)
+
+  50% for both width and height:  `![](./images/pic2.png =50%x50%)`
+
+  ![](./images/pic2.png =50%x50%)
+
 ## **STEP 2:** title
 
 1. Sub step 1

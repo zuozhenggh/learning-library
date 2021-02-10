@@ -34,14 +34,14 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 5: NODE.JS",
-      "description": "NODE.JS Lab",
-      "filename": "../../nodejs/nodejs.md"
-    },
-    {
-      "title": "Lab 6: JSON",
+      "title": "Lab 5: JSON",
       "description": "JSON Lab",
       "filename": "../../json/json.md"
+    },
+    {
+      "title": "Lab 6: NODE.JS",
+      "description": "NODE.JS Lab",
+      "filename": "../../nodejs/nodejs.md"
     },
     {
       "title": "Lab 7: XML",

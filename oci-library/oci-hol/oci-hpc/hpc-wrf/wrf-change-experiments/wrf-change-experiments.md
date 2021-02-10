@@ -23,8 +23,10 @@ This lab assumes you have:
     They can be changed with the following commands in the remote terminal:
 
         ```
+        <copy>
         sudo passwd ubuntu
-        sudo vncpasswd 
+        sudo vncpasswd
+        </copy> 
         ```
 
 
@@ -72,7 +74,9 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     - `truelat2`: A real value specifying the second true latitude for the Lambert conformal conic projection.   
     - `stand_lon`: A real value specifying the longitude that is parallel with the y-axis in the Lambert conformal and polar stereographic projections. For the regular latitude-longitude projection, this value gives the rotation about the earth's geographic poles.    
     - `geog_data_path`: A character string giving the path, either relative or absolute, to the directory where the geographical data directories may be found.
+    
     ```
+    <copy>
     &share  
     wrf_core = 'ARW',  
     max_dom = 1,  
@@ -112,6 +116,7 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     stand_lon = -87.62,  
     geog_data_path = '~/WRF/GEOG/'  
     /  
+    </copy>
     ```
     **To exit, simply press esc, then shift: followed by wq enter**  
     **All of these changes are for a geographic area with Houston TX as the epicenter.**  
@@ -138,6 +143,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 `Don’t actually download anything.` We will create a script for that. We are going the lower resolution for an easier to handle datasize for this lab so 0p50 instead of 0p25. Use 0p25 if you have additional storage and want higher resolution/more reliable data. Need to download the number of files for the amount of time you want to run. Each file is one hour of data at given interval. EX if you want to run for six hours you need gfs.t00z.pgrb2.0p50.f000, gfs.t00z.pgrb2.0p50.f003, and gfs.t00z.pgrb2.0p50.f006. 0p25 is in one hour steps and 0p50 is in 3 hour steps. For tutorial we will use only 6 hours worth of data. Feel free to use more as you become more comfortable using WRF later on.
 
 4. Lets navigate to the correct directory and edit pre-created script to download data.
+    
     ```
     <copy>
     cd ~/WRF
@@ -147,7 +153,9 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     ```
     The script will be the following:  
     You just need to edit the `year`, `month`, and `day` for the data you wish to download.  
+    
     ```
+    <copy>
     #!/bin/bash  
 
     inputdir=/home/ubuntu/WRF/GFS  
@@ -168,7 +176,8 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
             url=${server}/${directory}/${file}  
             echo $url  
             wget -O ${inputdir}/${file} ${url}  
-    done  
+    done
+    </copy>  
     ```
     **To exit, simply press esc, then shift: followed by wq enter**   
     **This script will download SIX hours of data for the date 12/09/20 at the 0p50 resolution. Please adjust to fit your needs.**  
@@ -184,22 +193,23 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
 6. Now that we have downloaded our data, lets go through the process of overlaying it over our domain. We will use ungrib and metgrid to accomplish this.  We will break this up into two sections: a configure  and a run section.
 
     **Configure:**
+    
     ```
     <copy>
     cd ~/WRF/WPS-4.1
     rm ./Vtable
     ln -s ungrib/Variable_Tables/Vtable.GFS ./Vtable
     ./link_grib.csh ~/WRF/GFS/
-    vi namelist.wps  
-    </copy>
+    vi namelist.wps 
+    </copy> 
     ```
-
     **Please change all the values below based on the files you downloaded**.  
     - `start_date` in the form: Year-Month-Day_hour:minute:second  
     - `end_date`  in the form: Year-Month-Day_hour:minute:second  
     - `interval seconds`: The integer number of seconds between time-varying meteorological input files. No default value.
         
     ```
+    <copy>
     &share  
     wrf_core = 'ARW',  
     max_dom = 1,  
@@ -208,11 +218,13 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     interval_seconds = 10800                    #3 hours worth of seconds interval between steps  
     io_form_geogrid = 2,  
     /
+    </copy>
     ```
 
     **To exit, simply press esc, then shift: followed by wq enter**  
 
     **Run:**
+    
     ```
     <copy>
     ./ungrib.exe
@@ -264,6 +276,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     - `dy`: grid length in y-direction (in meters).
 
     ```
+    <copy>
     &time_control
     run_days                            = 0,
     run_hours                           = 6,
@@ -357,6 +370,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     nio_tasks_per_group = 0,
     nio_groups = 1,
     /
+    </copy>
     ```
     **To exit, simply press esc, then shift: followed by wq enter**  
 
@@ -371,6 +385,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     ```
 
 4. We can look at the results by using ncview and looking at T2 to see the value of the data downloaded.
+   
     ```
     <copy>
     ncview wrfinput_d01
@@ -388,15 +403,14 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     tail -F rsl.out.0000 #can be used to check for errors and progress.
     </copy>
     ```
-
 6. We can look at the results of our prediction with ncview with the following:
+
     ```
     <copy>
     ncview wrfout_d01_2020-11-20_06\:00\:00 
     </copy>
     ```
     ![Screenshot of ncview](images/nc24.png)  
-
 From our prediction you can see that some changes have occured when we look at the same area six hours later. There are many variables to explore, so have fun.
 
 ## Acknowledgements
@@ -404,6 +418,6 @@ From our prediction you can see that some changes have occured when we look at t
 * **Last Updated By/Date** - Brian Bennett, Big Compute, December 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
