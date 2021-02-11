@@ -25,16 +25,14 @@ In this lab, you will:
 
 ## **STEP 1**: Generating Keys
 
-**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
+**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skil to Step 1.6: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
 
 **Option B:** If you would like to generate your own keys, continue here:
 1. Ensure Git Bash is installed on your laptop/workstation.
 
 2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4siaoXfcndYoTXRI9y7evzGbNLgCcLt1YjMpb76eW87EAVGoGJCkzFxWk1S-EMn8/n/c4u03/b/solutions-library/o/make_keys.sh)
 
-3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded.
-
-    If the file was downloaded in the Downloads folder, you can type the following command (If your file was downloaded in a different folder, replace downloads with the name of the folder it was downloaded into.):
+3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded. For example, if the file was downloaded in the Downloads folder, you can type the following command:
 
     ```
     <copy>
@@ -237,37 +235,31 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
 ## **STEP 6**: Accessing Cloud Manager using SSH
 
-SSH key pair  (id_rsa & id_rsa.pub) are required to access Cloud Manager instance was created in Step 1 of Lab 2. 
+SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) are required to access Cloud Manager instance was created in Step 1 of Lab 2. 
 
 **NOTE**: Make sure you are off VPN.
 
-1.	Launch terminal or Git Bash and navigate to the keys folder. 
-
-2.	Retrieve the **Cloud Manager Output Variables** you just copied to your Notepad
-
-3.	Create an SSH tunnel and connection
-
-    In your terminal or GitBash, navigate to the folder where you have created the keys. 
-    We will modifying the sample command for ssh tunnel by adding the name of our private key (or the complete path if you are not in the proper directory).
-    For this, we will need the private key name (id_rsa) and the Jump Host public IP found in your outputs.
+1.	Retrieve the **Cloud Manager Output Variables** you just copied to your Notepad. We will need them.
     
-    ![](./images/outputssh.png "")
+2.  Launch terminal or Git Bash and navigate to the keys folder. 
+For example: ```cd ~/Downloads/keys ```
 
+3.	Once you're in the directory, create an SSH tunnel using this command: (Be sure to replace the **CM private IP** and the **Jump Host public IP** from the variables in your Notepad.)
+   
     ```
     <copy>
-    ssh -f -C -q -N -i <private_key_path_and_name> -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
+    ssh -f -C -q -N -i id_rsa -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
     </copy>
     ``` 
-    *Example:* ssh -f -C -q -N -i id_rsa -L 2222:10.X.X.X:22 opc@XXX.XXX.XXX.XXX
+    *Example:* ``` ssh -f -C -q -N -i id_rsa -L 2222:10.X.X.X:22 opc@XXX.XXX.XXX.XXX```
 
-    Now, let's connect through SSH. Again, be sure to replace the private key name or path. 
+4. Now, let's connect through SSH. Run this command in the keys directory as well.
 
     ```
     <copy>
-    ssh –p 2222 opc@localhost -i <private_key_path_and_name> 
+    ssh –p 2222 opc@localhost -i id_rsa
     </copy>
     ```
-    *Example:* ssh –p 2222 opc@localhost -i id_rsa
 
 ## **STEP 7**: Monitoring Cloud Manager
 
@@ -279,7 +271,7 @@ SSH key pair  (id_rsa & id_rsa.pub) are required to access Cloud Manager instanc
     </copy>
     ```
 
-    ![](./images/18.png "")
+    ![](./images/tail.png "")
 
 2. While Cloud Manager is being installed, review **Associated Resources** for the list of all resources created by automation.
 
@@ -291,22 +283,24 @@ SSH key pair  (id_rsa & id_rsa.pub) are required to access Cloud Manager instanc
 
 		The PeopleSoft Environment Setup Process Ended.
 		CM installed successfully
-		Cloud Manager PIA URL: http://labcm.cm.labnet.oraclevcn.com:8000 
-		Cloud Manager PIA SSL URL: https://labcm.cm.labnet.oraclevcn.com:8443
+		Cloud Manager PIA URL: http://psftcm.cm.ociholvcn.oraclevcn.com:8000 
+		Cloud Manager PIA SSL URL: https://psftcm.cm.ociholvcn.oraclevcn.com:8443
 
-    Once you see this, run the following command.
+    Once you see this, run the following command*
     ```
     <copy>
     curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/9dk-sxzyoCcjaSfY4Br06tmoYtg5-ItF3FpsLHYrWTDAE_bK7-45d86q5yThRjNc/n/intpsftengt/b/release/o/patch_cm_pi11.sh | bash
     </copy>
     ```
 
-    NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
+    *NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
 
 ## **STEP 8**: Set up SOCKS Proxy to Access Cloud Manager in Browser
 
-1. Launch Firefox and navigate to Network Settings in Preferences
+**NOTE**: Make sure you are off VPN. 
+
+1. Launch Firefox and navigate to **Network Settings** in Preferences
 
     ![](./images/foxpref.png "")
 
@@ -322,19 +316,14 @@ SSH key pair  (id_rsa & id_rsa.pub) are required to access Cloud Manager instanc
 
     ![](./images/firefox.png "")
 
-3.  Launch terminal or Git Bash and navigate to the keys folder. Run the following command to create the SOCKS proxy making sure to replace the private key path and Jump Host Public IP.
-
-    **NOTE**: Make sure you are off VPN. 
-
-    We are modifying this command by adding the path to our key:
-    ![](./images/outputproxy.png "")
+3.  Launch terminal or Git Bash and navigate to the keys folder. Run the following command to create the SOCKS proxy making sure to replace the **Jump Host Public IP**.
 
     ```
     <copy>    
-    ssh -D 8123 -f -C -q -N -i <private_key_path_and_name> opc@<jump_host_public_IP>
+    ssh -D 8123 -f -C -q -N -i id_rsa opc@<jump_host_public_IP>
     </copy>
     ```
-    *Example:* ssh -D 8123 -f -C -q -N -i id_rsa opc@XXX.XXX.XXX.XXX 
+    *Example:* ``` ssh -D 8123 -f -C -q -N -i id_rsa opc@XXX.XXX.XXX.XXX ```
 
 4. Enter your **Cloud Manager PIA URL** (``CM_http_url``) in Firefox
 

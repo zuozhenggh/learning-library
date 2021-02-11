@@ -44,20 +44,27 @@ In this lab, you will:
   ![](./images/e3.png "")
 
   Leave the rest as default. You can also expand all sections under Environment Attributes. 
+4. Now, expand **Environment Attributes -> PeopleSoftClient -> Credentials**
 
-4. Scroll up and click Done on the top right to begin the environment creation process. 
+  | PeopleSoft Client | Credentials
+  | --------- | -----------
+  | Windows Administrator Password | Psft1234567#
+
+  ![](./images/winenvpass.png "")
+
+5. Scroll up and click Done on the top right to begin the environment creation process. 
 
   ![](./images/e4.png "")
 
-5. Accept the license. 
+6. Accept the license. 
 
   ![](./images/e5.png "")
 
-6. Refresh the page and click on the arrow button -> Details.
+7. Refresh the page and click on the arrow button -> Details.
 
   ![](./images/e6.png "")
 
-7. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
+8. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
 
   ![](./images/cl.png "")
 
@@ -65,11 +72,11 @@ In this lab, you will:
 
     ![](./images/pts.png "")
 
-8. Once environment creation is completed, you can click on arrow button -> Deploy to start provisioning.
+9. Once environment creation is completed, you can click on arrow button -> Deploy to start provisioning.
 
   ![](./images/e9.png "")
 
-9. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
+10. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
 
   ![](./images/e10.png "")
 
@@ -77,7 +84,9 @@ In this lab, you will:
 
     ![](./images/pts.png "")
 
-10. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
+11. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
+
+  Cloning is a popular feature for Cloud Manager. Trial accounts don't have enough resources to accomodate a cloned environment. Please switch to a paid account for that feature.
 
   ![](./images/e11.png "")
 
@@ -99,8 +108,6 @@ In this lab, you will:
   This option is only available for DBaaS environments.
 
     • **Backup and Restore**: Select this option to backup or restore an environment.
-
-  NOTE: You can also login to your application by adding it's IP addess and host name in hosts file.
 
   Login credential: 
 

@@ -25,14 +25,14 @@ In this lab you will:
 
 1.	Navigate to **Dashboard** > **Topology** > **PUM Fulltier** topology. This topology will be used to create a new environment. 
 
-    ![](./images/1.png "")
+    ![](./images/tophome.png "")
 
-2.	Review the nodes and update the Shapes.  Click **Full Tier** node and select a shape that is available in your AD 2. (Click on the down arrow to see the shapes) 
-In this case, select **VM.Standard2.1** or **VM.Standard2.2**. 
+2.  Review the nodes and update the Shapes. Click **Full Tier** node and select **VM.Standard2.1** 
 
-    ![](./images/topology.png "")
+    ![](./images/linnode.png "")
 
-3.	Repeat these steps for the Windows node.
+    Click **Done**
+3.	Repeat these steps for the Windows node. Click **PeopleSoftClient** node and select **VM.Standard2.1** 
 
     ![](./images/winNode.png "")
 

@@ -44,11 +44,11 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
 3.	Enter the name of your tenancy (aka your account name, NOT your user name), then click on the **Next** button.
 
-    ![](./images/2.png " ")
+    ![](./images/tenancy.png " ")
 
 4.	Oracle Cloud Infrastructure is integrated with Identity Cloud Services. You will see a screen validating your Identity Provider. Click **Continue**. Enter your username and password and click **Sign In**. 
 
-    ![](./images/signin1.png " ") 
+    ![](./images/continue.png " ") 
 
     ![](./images/3.png " ")
 
@@ -236,7 +236,7 @@ Set a **Temporary Password** for the newly created User. After the user is creat
 
     This time, you will sign in using the local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
 
-7. Enter the username **User01** and password that you copied to your notepad.
+7. Click the arrow to expand OCI Direct Sign-In. Here, enter the username **User01** and the password that you copied to your notepad.
 
     ![](./images/newSignin.png "")
 
