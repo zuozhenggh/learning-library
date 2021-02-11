@@ -23,33 +23,43 @@ This lab assumes you have:
 
 ### About Oracle JSON
 
-JSON (JavaScript Object Notation) is a syntax for storing and exchanging data. When exchanging data between a browser and a server, the data can only be text.
+- JSON (JavaScript Object Notation) is a syntax for storing and exchanging data. When exchanging data between a browser and a server, the data can only be text.
 
-JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server. We can also convert any JSON received from the server into JavaScript objects.
+- JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server. We can also convert any JSON received from the server into JavaScript objects.
 
-This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
+- This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
 
 **JSON with Oracle Database**
 
-JSON data can be used in Oracle Databases in similar ways. Unlike relational data, it can be stored, indexed, and queried without any need for a schema that defines the data. Oracle Database supports JSON natively with relational database features, including transactions, indexing, declarative querying, and views.
+- Oracle Database supports JSON natively with relational database features, including transactions, indexing, declarative querying, and views.
+- It's likely we want to send and receive JSON documents to and from and our database, and store them in tables. 
+- Oracle Database has a huge amount of functionality that makes this easy.
+- Oracle database provides a comprehensive implementation of SQL, for both analytics and batch processing.
+
+<!-- JSON data can be used in Oracle Databases in similar ways. Unlike relational data, it can be stored, indexed, and queried without any need for a schema that defines the data. Oracle Database supports JSON natively with relational database features, including transactions, indexing, declarative querying, and views.
 
 It's likely we want to send and receive JSON documents to and from and our database, and store them in tables. Oracle Database has a huge amount of functionality that makes this easy.
 
-Oracle database provides a comprehensive implementation of SQL, for both analytics and batch processing. JSON held in the Oracle Database can be directly accessed via SQL, without the need to convert it into an intermediary form. JSON collections can be joined to other JSON collections or to relational tables using standard SQL queries.
+Oracle database provides a comprehensive implementation of SQL, for both analytics and batch processing. JSON held in the Oracle Database can be directly accessed via SQL, without the need to convert it into an intermediary form. JSON collections can be joined to other JSON collections or to relational tables using standard SQL queries. -->
 
 **Storing and Managing JSON Documents**
+- JSON documents can be stored using a **VARCHAR2**, **CLOB**, or **BLOB** column.
+- Oracle’s JSON capabilities are focused on providing full support for schemaless development and document-based storage and delivers the flexibility as a NoSQL JSON document store.
 
-JSON documents can be stored using a VARCHAR2, CLOB, or BLOB column. An IS JSON SQL constraint ensures that the column contains only valid JSON documents, allowing the database to understand that the column is being used as a container for JSON documents.
+<!-- JSON documents can be stored using a VARCHAR2, CLOB, or BLOB column. An IS JSON SQL constraint ensures that the column contains only valid JSON documents, allowing the database to understand that the column is being used as a container for JSON documents.
 
-Oracle’s JSON capabilities are focused on providing full support for schemaless development and document-based storage. Developers are free to change the structure of their JSON documents as necessary. With the addition of JSON support, Oracle Database delivers the same degree of flexibility as a NoSQL JSON document store.
+Oracle’s JSON capabilities are focused on providing full support for schemaless development and document-based storage. Developers are free to change the structure of their JSON documents as necessary. With the addition of JSON support, Oracle Database delivers the same degree of flexibility as a NoSQL JSON document store. -->
 
   [](youtube:oiOCp23T1ZU)
 
-The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,. This listing illustrates what a JSON payload looks like:
+- JSON documents is a simple text format, which is relatively easy to read and inspect with the naked eye.
+- At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,.
 
+This listing illustrates what a JSON payload looks like:  
+<!-- The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,. This listing illustrates what a JSON payload looks like: -->
   ![](./images/json_intro.png " ")
 
-## **Step 1**: Connect to the Pluggable Database (PDB)
+## **STEP 1**: Connect to the Pluggable Database (PDB)
 
 1. Open a terminal window and sudo to the user **oracle**
 
@@ -91,7 +101,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     </copy>
     ```
 
-## **Step 2**: Connect to SQL Developer
+## **STEP 2**: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
   - **Name**: JSON
@@ -103,7 +113,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
     ![](./images/sql_developer_json.png " ")
 
-## **Step 3**: Loading JSON Documents into the database  
+<!-- ## **STEP 3**: Loading JSON Documents into the database  
 
 **Only for Step 3 the SQL statements have already been run. The SQL has been provided as reference.**
 
@@ -161,9 +171,9 @@ The first thing to realize about JSON is that it remains a simple text format, w
     /
     commit
     /
-    ```
+    ``` -->
 
-## **Step 4**: Insert a record.
+## **STEP 3**: Insert a record.
 
 1. Take a count of the rows in the JSON table
 
@@ -225,7 +235,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
     ![](./images/json.png " ")
 
-## **Step 5**: Update a Table.
+## **STEP 4**: Update a Table.
 1. We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
 
 2. Copy the following update statement and substitute the ID you saved from the previous step in where it says `ID_copied_from_previous_step`. Run the statement.
@@ -245,7 +255,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
     ![](./images/json_lab7_6.png " ")
 
-## **Step 6**: Example Queries
+## **STEP 5**: Example Queries
 1. Let's look at customers who ordered products from a specific location. The Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
     ```
@@ -452,6 +462,66 @@ For this , we will create two views next
     ```
 
     ![](./images/json_fun_5b.png " ")  
+
+## **Appendix :** Loading JSON Documents into the database  
+
+**The SQL statements have already been run. The SQL has been provided as reference.**
+
+1. We will create a directory which will point to the location where JSON dump file is stored.
+
+    ```
+    create or replace directory ORDER_ENTRY as '/u01/workshop/dump';
+    ```
+
+2. This statement creates a very simple table, `PURCHASE_ORDER`. The table has a column `PO_DOCUMENT` of type CLOB. The IS JSON constraint is applied to the column `PO_DOCUMENT`, ensuring that the column can store only well formed JSON documents. In Oracle there is no dedicated JSON data type. JSON documents are stored in the database using standard Oracle data types such as VARCHAR2, CLOB and BLOB. In order to ensure that the content of the column is valid JSON data, a new constraint IS JSON, is provided that can be applied to a column. This constraint returns TRUE if the content of the column is well-formed, valid JSON and FALSE otherwise. This first statement in this module creates a table which will be used to contain JSON documents.
+
+    ```
+    create table PURCHASE_ORDER
+    (
+    ID RAW(16) NOT NULL,
+    DATE_LOADED  TIMESTAMP(6) WITH TIME ZONE,
+    PO_DOCUMENT CLOB CHECK (PO_DOCUMENT IS JSON)
+    )
+    /
+    ```
+
+3. This statement creates a simple external table that can read JSON documents from a dump file generated by a typical No-SQL style database. In this case, the documents are contained in the file PurchaseOrders.dmp. The SQL directory object ORDER_ENTRY points to the folder containing the dump file, and also points to the database’s trace folder which will contain any ‘log’ or ‘bad’ files generated when the table is processed.
+
+    ```
+    CREATE TABLE PURCHASE_EXT(
+    JSON_DOCUMENT CLOB
+    )
+    ORGANIZATION EXTERNAL(
+    TYPE ORACLE_LOADER
+    DEFAULT DIRECTORY ORDER_ENTRY
+    ACCESS PARAMETERS (
+    RECORDS DELIMITED BY 0x'0A'
+    DISABLE_DIRECTORY_LINK_CHECK  
+    BADFILE ORDER_ENTRY: 'PURCHASE_EXT.bad'
+    LOGFILE ORDER_ENTRY: 'PURCHASE_EXT.log'
+    FIELDS(
+    JSON_DOCUMENT CHAR(5000)
+    )
+    )
+    LOCATION (
+     ORDER_ENTRY:'PurchaseOrders.dmp'
+    )
+    )
+    PARALLEL
+    REJECT LIMIT UNLIMITED
+    ```
+
+4. The following statement copies the JSON documents from the dump file into the PURCHASE_ORDER table.
+
+    ```
+    insert into PURCHASE_ORDER
+    select SYS_GUID(), SYSTIMESTAMP, JSON_DOCUMENT
+    from PURCHASE_EXT
+    where JSON_DOCUMENT IS JSON
+    /
+    commit
+    /
+    ```
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 

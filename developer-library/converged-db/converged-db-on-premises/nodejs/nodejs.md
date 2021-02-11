@@ -26,7 +26,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
  [](youtube:zQtRwTOwisI)
 
-**Why Node.js?**
+<!-- **Why Node.js?**
 
   Node.js uses asynchronous programming!
 -	A common task for a web server can be to open a file on the server and return the content to the client.
@@ -46,9 +46,9 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 **Download Node.js**
 
-   The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html).
+   The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html). -->
 
-## **Step 1**:  Verify Application
+## **STEP 1**:  Verify Application
 
 1. Open up a web browser and visit the Application URL indicated in your terminal.    
 
@@ -64,7 +64,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     ![](./images/application_home_pageupdated.png " ")
 
-## **Step 2**: Download Postman
+## **STEP 2**: Launch Postman
 
 1. Click on *Postman* icon on the desktop to launch it.
 
@@ -102,7 +102,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     ![](./images/postman_return.png " ")
 
-## **Step 3**: Using HTTP GET method.
+## **STEP 3**: Using HTTP GET method.
 
 1. Open a new tab
 
@@ -125,7 +125,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     ![](./images/nodejs-postman5a.png " ")
 
-## **Step 4**: Using HTTP POST Method
+## **STEP 4**: Using HTTP POST Method
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL
 
     ```

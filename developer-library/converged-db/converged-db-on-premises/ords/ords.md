@@ -27,11 +27,8 @@ As part of this lab , ORDS is pre-installed and ready for use. Check this [link]
 Representational State Transfer (REST) is a style of software architecture for distributed hypermedia systems such as the World Wide Web. A service is described as RESTful when it conforms to the tenets of REST.  RESTful Service has the following characteristics:
 
 •	Data is modeled as a set of resources. Resources are identified by URIs.
-
 •	A small, uniform set of operations are used to manipulate resources (for example, GET, POST, PUT, DELETE).
-
 •	A resource can have multiple representations (for example, a blog might have a HTML representation and a RSS representation).
-
 •	Services are stateless and since it is likely that the client will want to access related resources, these should be identified in the representation returned, typically by providing hypertext links.
 
 
@@ -68,7 +65,7 @@ This lab assumes you have:
      - Lab :  Create Compute instance
      - Lab :  Environment setup
 
-## **Step 1**: Start ORDS in standalone mode
+## **STEP 1**: Start ORDS in standalone mode
 
 1. The script (`env_setup_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
@@ -83,7 +80,7 @@ This lab assumes you have:
   ![](./images/ords_lab1_snap5.png " ")
 
 
-## **Step 2**: Create RESTful Services for JSON data
+## **STEP 2**: Create RESTful Services for JSON data
 
    `AutoREST Enable a Schema and its JSON Table`
 
@@ -473,7 +470,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
     ```
     ![](./images/ordsl50.png " ")
 
-## **Step 3**: Create RESTful Services for XML data
+## **STEP 3**: Create RESTful Services for XML data
 
 `AutoREST Enable a Schema and its XML Table`
 
@@ -826,7 +823,7 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
     ```
    ![](./images/ordslab2.39.png " ")
 
-## **Step 4**: Create RESTful Services for Spatial data
+## **STEP 4**: Create RESTful Services for Spatial data
 
 `AutoREST Enable a Schema and its Spatial Table`
 
