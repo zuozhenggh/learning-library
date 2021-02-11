@@ -16,7 +16,7 @@ In this tutorial, you'll create the business objects shown here:
 
 Once you have your business objects, you'll use them to build a very simple Human Resources application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
-**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services. The basic principles of creating applications are the same, no matter what form your data takes.
+**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
 
 ## **STEP 1**: Create a Web Application
 
@@ -25,7 +25,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 1.  In the web browser, log in to Oracle Visual Builder.
     -   If you don't have any applications, the landing page appears. Click **+ New Application**.
 
-        ![](./images/vbcsca_cra_s1a.png " ")
+        ![](./images/vbcsca_cra_s1a.png)
 
     -   If you have one or more current applications, the Visual Applications page shows you a list of them. Click **New**.
 
