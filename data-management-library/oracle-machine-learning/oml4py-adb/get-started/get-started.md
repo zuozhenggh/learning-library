@@ -6,8 +6,12 @@ This lab walks you through the steps to
 * Create an OML user
 * Access OML Notebooks
 * Create a Zeppelin Notebook
+* Familiarize with the Zeppelin Notebook toolbar
+* Familiarize with the Zeppelin Notebook interpreter bindings
+* Familiarize with the Zeppelin Notebook interpreters
 * Connect to the Python Interpreter
-* Verify Connection to the Autonomous Database  
+* Verify Connection to the Autonomous Database
+* View help files  
 
 Estimated Lab Time: 15 minutes
 
@@ -93,7 +97,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
     This opens the Oracle Machine Learning Notebooks home page.    
 
-## **STEP 3:** Create a Notebook
+## **STEP 3:** Create a Zeppelin Notebook
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization and collaboration. To create a notebook:
 1. In the Oracle Machine Learning home page, click **Notebooks.** The Notebooks page opens.
@@ -105,14 +109,39 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 **Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
 
-### **Step 3.1** Connect to the Python Interpreter
+### **Step 3.1** Familiarize with the Zeppelin Notebook toolbar
+The Zeppelin notebook toolbar contains buttons to run code in paragraphs, for configuration settings, and display options.
+
+For example, it displays the current status and the number of users connected to the notebook. It also contains a menu item for keyboard shortcuts and options to show or hide the markdown editor and paragraph output. Additional settings are shown in the illustration here.
+    ![Image alt text](images/notebook_toolbar.png)
+
+### **Step 3.2** Familiarize with the OML Notebook interpreter bindings
+Oracle Machine Learning notebooks contain an internal list of bindings to fetch data from the database or another data source, such as Oracle Cloud Object Storage. For this lab, we set the interpreter binding to connect to the ADW database and run queries.
+
+Click the interpreter bindings icon in the upper right-corner of the Notebook to view the list of available interpreter bindings.
+  ![Image alt text](images/interpreter_bindings.png)
+
+The default service is low. Click to bind or unbind an interpreter. Drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. The first interpeter on the list becomes the default. Those highlighted in blue are active.
+
+### **Step 3.3** Familiarize with the Zeppelin interpreters
+An interpreter is a plug-in that allows you to use a specific data processing language in your Oracle Machine Learning notebook. You can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python.
+
+You create different paragraphs with different interpreters based on the code you want to run in the paragraphs. The interpreter is set at the top of the paragraph.
+The available interpreters are:
+
+  - `%sql` - To call the SQL interpreter and run SQL statements
+  - `%script` - To call and run PL/SQL scripts
+  - `%md` - To call the Markdown interpreter and generate static html from Markdown plain text
+  - `%python` - To call the Python interpreter and run Python scripts
+
+## **Step 4** Connect to the Python Interpreter
 
 To run Python commands in a notebook, you must first connect to the Python interpreter. This occurs as a result of running your first `%python` paragraph. To use OML4Py, you must import the `oml` module, which automatically establishes a connection to your database.
 In an Oracle Machine Learning notebook, you can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python. This example shows you how to:
 
 * Connect to a Python interpreter to run Python commands in a notebook
 * Import the Python modules - oml, pandas, numpy, and matplotlib
-* Check if the oml module is connected to the database
+* Check if the `oml` module is connected to the database
 
 **Note:** `z` is a reserved keyword and must not be used as a variable in `%python` paragraphs in Oracle Machine Learning Notebooks. You will see `z.show()` used in the examples to display Python object and proxy object content.
 
@@ -135,7 +164,7 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
     ![Image alt text](images/import_oml.png)
 
-### **Step 3.2** Verify Connection to the Autonomous Database    
+## **Step 5** Verify Connection to the Autonomous Database    
 
 1. To verify if the oml module is connected to the Autonomous Database, type:
 
@@ -144,6 +173,21 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
    Once your notebook is connected, the command returns TRUE. The notebook is now connected to the Python interpreter, and you are ready to run python commands in your notebook.         
 
+
+## **Step 6** View Help Files    
+The Python help function is used to display the documentation of packages, modules, functions, classes, and keywords. The help function has the following syntax:
+
+    `help([object])`
+
+For example,
+  - To view the help files for the `oml.create` function, type:
+
+    `%python
+    help(oml.create)`
+  - To view the help files for `oml` package, type:
+
+    `%python
+    help(oml)`
 
 You may now [proceed to the next lab](#next).
 
