@@ -70,7 +70,7 @@ Estimated Lab Time: 15 minutes
 
     [We have selected 'Always Free Tier On'. To learn more about this option check the following link](https://www.oracle.com/uk/cloud/free/#always-free).
 
-    ![ADB Creation Details](./images/lab100_3.png)
+    ![ADB Creation Details](./images/lab100_3_2.png)
 
     > **Choose Database version:** 19c
     >
