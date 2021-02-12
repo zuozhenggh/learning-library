@@ -134,6 +134,7 @@ In this step we’ll implement essentially that exact workflow using a series of
 
 1. In SQL Developer, from the top menu bar choose File, then select open. Now, navigate to the SQL files for this lab and find "AttritionSQL\Step01\_Employee\_Attrition.sql".
 ![](./images/ml2.1.png " ")
+
 2. Open the file "Step01\_Employee\_Attrition.sql" and run the statement using the 1st  icon (Run Statement) on the tool bar or by pressing _CTRL + Enter_.   
 ![](./images/ml2.2.png " ")
    
