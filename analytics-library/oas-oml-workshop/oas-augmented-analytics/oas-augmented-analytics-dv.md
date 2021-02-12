@@ -11,7 +11,7 @@ There are also a set of pre-built machine learning algorithms which can be used 
 As well as the pre-built options available in the user interface, you can also call custom advanced analytics or machine learning scripts either using Evaluate Script function from within your self-service projects or by adding custom scripts as part of your Data Flow when preparing data.
 
 
-*Estimated Lab Time:* 30 Minutes.
+*Estimated Lab Time: 30 Minutes*
 
 ### Objectives ###
 This exercise will introduce you to the capability to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
