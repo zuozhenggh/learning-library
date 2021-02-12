@@ -24,9 +24,6 @@ Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are ad
 - [Enterprise Manager](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
 - [Multitenant Lifecycle Management](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)
 
-## ADB Certification
-**Autonomous Database Cloud Specialist Certification** - [Learn More](https://education.oracle.com/oracle-autonomous-database-cloud-2019-certified-specialist/trackp_OADB19)
-
 ## Videos
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
