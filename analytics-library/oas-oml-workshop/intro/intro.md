@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Thiss workshop is designed to illustrates how organizations can blend the capabilities found in both of these offerings to uncover value across the entire data lifecycle in a way that holistically meets the needs of both **citizen & professional** data scientists. 
+Thiss workshop is designed to illustrate how organizations can blend the capabilities found in both of these offerings to uncover value across the entire data lifecycle in a way that holistically meets the needs of both **citizen & professional** data scientists. 
 
 
 ### About Product/Technology
