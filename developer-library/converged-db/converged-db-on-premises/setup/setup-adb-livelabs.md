@@ -22,14 +22,14 @@ Watch the video below for an overview of Lab 3: Load ADB and Start Application
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Before starting this section make sure you have exited out of your compute instance and are back in your cloudshell home.  
+   
+      ````
+      exit
+      ````
+      ![](./images/em-cloudshell-exit-ssh.png " ")
 
-      If you did not copy your autonomous\_database\_ocid, select **Resource Manager** > **Stacks** and select your stack.
-      ![](./images/em-nav-to-orm.png " ")
-      ![](./images/select-stack.png " ")
-
-      Select your apply job and select **Outputs**. 
-      ![](./images/select-apply.png " ")
-      ![](./images/outputs.png " ")
+2. Select the hamburger menu and **Autonomous Transaction Processing**.
+      ![](./images/select-atp.png " ")
 
 2.  Use your autonomous\_database\_ocid to create the Oracle Wallet. You will be setting the wallet password to the same value as the ADB admin password for ease of use. This is not a recommended practice and just used for the purposes of this lab. *WElcome123##*. Fill in the autonomous database ocid that is listed in the output section of your terraform.
    
