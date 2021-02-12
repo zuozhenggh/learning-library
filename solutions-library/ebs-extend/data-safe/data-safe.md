@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the setup of Data Safe on a private database provisioned by the EBS Cloud Manager. You will be configuring network settings and creat8hg a user on the database with the appropriate permissions to setup a connnection to Data Safe. Then the lab provides a short walkthrough of the features of Data Safe. 
+This lab walks you through the setup of Data Safe on a private database provisioned by the EBS Cloud Manager. You will be configuring network settings and creating a user on the database with the appropriate permissions to setup a connnection to Data Safe. Then the lab provides a short walkthrough of the features of Data Safe. 
 
 This lab assumes you have completed the **Lift and Shift On-Premises EBS to OCI Workshop** found [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668). It also assumes you have created an EBS environment through advanced provisioning with a Virtual Machine Database System. 
 
