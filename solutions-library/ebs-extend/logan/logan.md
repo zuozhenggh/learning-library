@@ -253,145 +253,219 @@ In this Step we will Ingest Flow Logs and Install Management Agents to our insta
 
     b. Click and download **Agent for LINUX** 
 
-  c. Click **Create Key** below 
+    c. Click **Create Key** below 
   
-    i. Name the key `ebs_agent_key`
+      i. Name the key `ebs_agent_key`
 
-    ii. Select our `ebshol_compartment`
+      ii. Select our `ebshol_compartment`
 
-    iii. Click **Create**
+      iii. Click **Create**
 
-    iv. on the right click the three dots in the row of our agent key we just created.
+      iv. on the right click the three dots in the row of our agent key we just created.
 
-    v. Click `Download Key to File`
+      v. Click `Download Key to File`
 
-  ![](./images/keydownload.png " ")
+    ![](./images/keydownload.png " ")
 
-    vi. Once you have Downloaded the key file, we need to edit it
+      vi. Once you have Downloaded the key file, we need to edit it
 
-    vii. open the `ebs_agent_key.txt` file
+      vii. open the `ebs_agent_key.txt` file
 
-    Add agent name
-      - AgentDisplayName
+      Add agent name
+        - AgentDisplayName
 
-    Add Password
-      - CredentialWalletPassword
+      Add Password
+        - CredentialWalletPassword
 
-    Uncomment the Service Plugins
-      - Service.plugin.dbaas.download=true
-      - Service.plugin.dbaas.download=true
+      Uncomment the Service Plugins
+        - Service.plugin.dbaas.download=true
+        - Service.plugin.dbaas.download=true
 
-  ![](./images/editkey.png " ")
+    ![](./images/editkey.png " ")
 
-  d. We now need to copy our `oracle.mgmt_agent.rpm` and `ebs_agent_key.txt` to our Cloud Manager Instance.
+    d. We now need to copy our `oracle.mgmt_agent.rpm` and `ebs_agent_key.txt` to our Cloud Manager Instance.
 
-  e. Verify an SSH connection to our `ebshol_ebscm` instance
+    e. Verify an SSH connection to our `ebshol_ebscm` instance
 
-    i. Navigate to Compute and find your `ebshol_ebscm` and note the Public IP
+      i. Navigate to Compute and find your `ebshol_ebscm` and note the Public IP
 
-    ii. From your terminal SSH to the Cloud Manager
+      ii. From your terminal SSH to the Cloud Manager
 
-    ```
-    ssh opc@<public_ip_of_cloud_manager>
-    ```
+      ```
+      ssh opc@<public_ip_of_cloud_manager>
+      ```
 
-    iii. After verifying you can connect via ssh exit
+      iii. After verifying you can connect via ssh exit
 
-  ![](./images/sshverify.png " ")
+    ![](./images/sshverify.png " ")
 
-  f. Secure Copy your management agent and .txt file to cloud manager
+    f. Secure Copy your management agent and .txt file to cloud manager
 
-    ``` 
-    scp ~/Downloads/oracle.mgmt_agent.rpm opc@<public_ip_of_cloud_manager>:~ 
-    ```
+      ``` 
+      scp ~/Downloads/oracle.mgmt_agent.rpm opc@<public_ip_of_cloud_manager>:~ 
+      ```
 
-    ```
-    scp ~/Downloads/ebs_agent_key.txt opc@<public_ip_of_cloud_manager>:/tmp
-    ```
+      ```
+      scp ~/Downloads/ebs_agent_key.txt opc@<public_ip_of_cloud_manager>:/tmp
+      ```
 
-    ```
-    ssh opc@<public_ip_of_cloud_manager>
-    ```
+      ```
+      ssh opc@<public_ip_of_cloud_manager>
+      ```
 
-    iv. Type ls to verify your .txt and .rpm file are in your home directory
+      i. Type ls to verify your .txt and .rpm file are in your home directory
 
-  g. Install Java
+    g. Install Java
   
-    ```
-    <copy>
-    sudo yum install java
-    </copy>
-    ```
+      ```
+      <copy>
+      sudo yum install java
+      </copy>
+      ```
 
-  h. Move agent file to /u01/install/APPS
+    h. Edit permissions on the `ebs_agent_key.txt` file
 
-    ```
-    <copy>
-    sudo mv oracle.mgmt_agent.rpm /u01/install/APPS
-    </copy>
-    ```
+      ```
+      <copy>
+      cd /tmp
+      sudo chmod 755 ebs_agent_key.txt
+      </copy>
+      ```
 
-  i. Edit permissions on the `ebs_agent_key.txt` file
+    i. Go back to home directory and run management agent
 
-  ```
-  <copy>
-  sudo su - oracle
-  cd /tmp
-  sudo chmod 755 ebs_agent_key.txt
-  </copy>
-  ```
-
-  k. Go back to Oracle Home and run management agent
-
-  ```
-  <copy>
-  cd ~
-  sudo rpm -ivh oracle.mgmt_agent.rpm
-  </copy>
-  ```
+      ```
+      <copy>
+      cd ~
+      sudo rpm -ivh oracle.mgmt_agent.rpm
+      </copy>
+      ```
 
     Note: If successful your terminal should see this response ending with Agent install successful
 
-  ![](./images/installsuccess.png " ")
+    ![](./images/installsuccess.png " ")
 
-  l. Setup and the management agent with info from Install Key
+    j. Setup and the management agent with info from Install Key
 
-  ```
-  <copy>
-  sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=/tmp/ebs_agent_key.txt
-  </copy>
-  ```
+      ```
+      <copy>
+      sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=/tmp/ebs_agent_key.txt
+      </copy>
+      ```
 
-  ![](./images/startagent.png " ")
+    ![](./images/startagent.png " ")
 
-  m. Now to install our agent on the other instances built with our cloud manager we will move the `ebs_agent_key.txt` to our Oracle Home Directory
+    k. Now to install our agent on the other instances built with our cloud manager we will move the `ebs_agent_key.txt` and oracle mgmt agent to our Oracle Home Directory
 
-  ```
-  <copy>
-  sudo mv /tmp/ebs_agent_key.txt ~
-  </copy>
-  ```
+      ```
+      <copy>
+      sudo mv /tmp/ebs_agent_key.txt /u01/install/APPS
+      sudo mv oracle.mgmt_agent.rpm /u01/install/APPS
+      sudo su - oracle
+      </copy>
+      ```
 
-  n. Now scp your management agent and key file to each of the other instances via their private IP address.
+    l. From the Oracle user on the cloud manager you can connect to your other instances using ssh. Now scp your management agent and key file to each of the other instances via their private IP address.
 
-  ```
-  scp oracle.mgmt_agent.rpm <privateIPofebsinstance>:~
-  scp ebs_agent_key.txt opc@<privateIPofebsinstance>:/tmp
-  ```
+      ```
+      scp oracle.mgmt_agent.rpm opc@<privateIPofebsinstance>:~
+      scp ebs_agent_key.txt opc@<privateIPofebsinstance>:/tmp
+      ssh opc@<privateIPofebsinstance>
+      ```
 
-  o. Once the files are on the new instance you will repeat the steps starting from 'g.' on each instance.
+    m. Go to the /tmp folder and using vi, edit the `ebs_agent_key.txt` file and change the name to refer to the server. We will use the same .txt file. 
+  
+    n. Once you edited the `ebs_agent_key.txt` file you can repeat the steps for install starting from `g.` to `j.` on each instance you want to monitor then exit to repeat. 
 
     Note: You can also follow the recommended procedure of deleting your key file from your instance one the agent has been installed and is configured properly 
     
-  ```
-  $ rm /tmp/ebs_agent_key.txt
-  ```
+      ```
+      $ rm /tmp/ebs_agent_key.txt
+      ```
 
-**Note:** If you have other instances not created with the cloud manager follow the same steps to add the agent and key file to those instances and install.
+  **Note:** If you have other instances not created with the cloud manager follow the same steps to add the agent and key file to those instances and install.
 
-## **STEP 3:** Create Entities and associate Log Sources
+## **STEP 3:** Create Entities Log Groups and associate Log Sources
+
+Now that we have our agents installed and our flow logs going to logging analytics we will now create entities and associate these entities with log sources
+
+  1. Create Entities
+
+  **Note:** Our entities for our flow logs are automatically setup. In this step we will focus on our Entities and Log Sources from the agents installs. 
+
+    a. We will create an entity for host logs and ebs logs for each of the agent installations. As you did in the previous step repeat the following steps for each of the servers you installed a management agent.
+
+    b. Navigate to Logging Analytics - Administration and click on **Entities**
+
+    c. From here you can see the Entities that already have been created. Click **Create Entity**
+
+    (example is for our first EBS Cloud Manager agent)
+
+      i. For host logs: 
+
+        - Create an Entity with Entity Type: `Host(Linux)`
+        - Name: `EBS CM Host`
+        - Management Agent: ebscmagent
+      Click **Create**
+
+      ii. For ebs concurrent processing logs:
+
+        - Create an Entity with Entity Type: `EBS Concurrent Processing Node`
+        - Name: `EBS CM CPN`
+        - Management Agent: ebscmagent
+        - Properties
+          omc_ebs_applcsf: /u01/install/APPS/fs_ne/inst/ebsdb_apps/
+          omc_ebs_appllog: /logs/appl/conc/log
+
+  2. Create Host Log Group and EBS CPN Log Group
+
+    a. Navigate to Logging Analytics - Administration - Log Groups
+
+    b. Click **Create Log Group**
+
+      Name it `Host Log Group` and click **Create**
+
+      Repeat and name the other group `EBS CPN Log Group`
+
+  3. Associate Log sources
+  
+    Now that you have your entities go to Logging Analytics - Administration - Log Sources
+
+    For Host Logs:
+
+    a. Type in `linux` in the search bar
+
+    b. Click on `Linux Secure Logs`
+
+    c. Click Add
+
+    d. Click the box in the left to associate for all your Host Entities
+
+    e. Select `Host Log Group`
+
+    f. Repeat for the following Log Sources: 
+
+    For EBS logs:
+
+    a. Type in `ebs` in the search bar
+
+    b. Click on `EBS Concurrent Manager Logs`
+
+    c. Click Add
+
+    d. Click the box in the left to associate for all your EBS CPN entities
+
+    e. Select `CPN Log Group`
+
+    f. Repeat for the following Log Sources: 
+
+  4. Now that you have completed these steps you can go to the Log Explorer and view flow logs, ebs logs, host logs, and audit logs. In the next step we will create visualizations and dashboards based off this data.
+
+  Note: If you have other logs you are looking to ingest find the respective log source and entity type and location of the log source and you can create the entity and the associate the respective log source with this same process.
 
 ## **STEP 4:** Visualize Data in Log Explorer and Create Dashboards
+
+In this Step we will familiarize ourselves with the visualization tool `Log Explorer` and build dashboard.
 
 You may now [proceed to the next lab](#next).
 
