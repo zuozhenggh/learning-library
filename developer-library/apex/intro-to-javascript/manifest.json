@@ -2,12 +2,12 @@
   "workshoptitle": "JavaScript for APEX Developers",
   "tutorials": [
     {
-      "title": "Lab Introduction and Setup",
-      "filename": "0-lab-intro-and-setup/content.md"
+      "title": "Introduction",
+      "filename": "0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
     },
     {
-      "title": "Lab 1: Create an APEX Workspace",
-      "filename": "create-apex-workspace/create-apex-workspace.md"
+      "title": "Lab 1: Sign up for an APEX Workspace",
+      "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
     },
     {
 
