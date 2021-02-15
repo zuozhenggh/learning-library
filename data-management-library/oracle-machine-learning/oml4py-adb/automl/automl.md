@@ -29,167 +29,142 @@ In this lab, you will:
 
 
 
-1. Run the following script to import `oml` module, Pandas package, `automl` and set the display options:
+1. Run the following script to import `oml` module, Pandas package, and `automl`module.
     ```
-    <copy>%python
-
-    import warnings
-    warnings.filterwarnings('ignore')
+    %python
 
     import pandas as pd
     import oml
     from oml import automl
-
-    pd.set_option('display.max_rows', 500)
-    pd.set_option('display.max_columns', 500)
-    pd.set_option('display.width', 1000)</copy>  
     ```
 
-
-2. Create data set as Pandas DataFrame and load into ADB. In this example, you load the wine data set, combining target and predictors into a single DataFrame that matches the form the data would have as a database table. These DataFrame objects can then be loaded into Oracle Database using the create function.
+2. Use the `oml.sync` function to create an OML Dataframe as a proxy for the database table WINE.
     ```
-    <copy>%python
+    %python
 
-    from sklearn.datasets import load_wine
-
-    wine = load_wine()
-    x = pd.DataFrame(wine.data, columns = wine["feature_names"])
-    y = pd.DataFrame(list(map(lambda x: {0:'class_0', 1: 'class_1', 2:'class_2'}[x], wine.target)),
-    columns = ['target'])
-
-    wine_df = pd.concat([x,y], axis=1)
-
-    try:
-      oml.drop(table="WINE")
-    except:
-      pass
-
-    WINE = oml.create(wine_df, table="WINE")
-
+    WINE = oml.sync("OMLUSER", table = "WINE")
     print(WINE.shape)
-    print(WINE.dtypes)</copy>
+    print(WINE.dtypes)
     ```
-
-    ![Image alt text](images/load_wine_data.png "Load wine data set")
+    ![Image alt text](images/oml_sync_wine.png "Wine table")
 
 ## **STEP 2:** Automatic Algorithm Selection
-
+In this step, you prepare the wine data set by separating predictors from the target as conventional for Python model building. This produces two new proxy objects that will be used in AutoML functions.
 1. Run the following script to prepare the wine data set:
     ```
-    <copy>%python
+    %python
 
-    WINE_X_cl,WINE_y_cl = WINE.drop('target'), WINE['target']</copy>
+    WINE_X_cl,WINE_y_cl = WINE.drop('target'), WINE['target']
     ```
 
-2. Run the following script to compute classification algorithm ranking for the wine data set:
+2. Run the following script to select the top classification algorithms for predicting the WINE data target. It displays the top ranked algorithms and their accuracy.
     ```
-    <copy>%python
+    %python
 
-    as_wine_cl = automl.AlgorithmSelection(mining_function='classification',
-    score_metric='accuracy', parallel=2)
+    as_wine_cl = automl.AlgorithmSelection(mining_function='classification', score_metric='accuracy', parallel=2)
 
     wine_alg_ranking_cl = as_wine_cl.select(WINE_X_cl, WINE_y_cl, k=4)
 
     print("Ranked algorithms:\n", wine_alg_ranking_cl)
 
     selected_wine_alg_cl = next(iter(dict(wine_alg_ranking_cl).keys()))
-    print("Best algorithm: ", selected_wine_alg_cl)</copy>
+    print("Best algorithm: ", selected_wine_alg_cl)
     ```
     ![Image alt text](images/compute_algo_ranking_wine.png "Computation of algorithm ranking for wine data set")
 
-    The script returns the SVM Gaussian, SVM Linear, Neural Network and Random Forest. Among these, SVM Gaussian is ranked first.
+    The script returns the SVM Gaussian, SVM Linear, Neural Network and Random Forest. Among these, SVM Gaussian is ranked first, and we will use that in subsequent AutoML function calls.
 
 ## **STEP 3:** Automatic Feature Selection
-In this step, you determine the features that best support the selected algorithm. You first define a FeatureSelection object with score metric accuracy.  You also invoke reduce function to specify the desired algorithm determined above and the train and test data set proxy objects.
+In this step, you determine the features that best support the selected algorithm. First define a FeatureSelection object with score metric accuracy. Then call the `reduce` function and specify the desired algorithm, in this case, as determined above and stored in the variable `selected_wine_alg_cl`. Also specify the train and test OML DataFrame proxy objects.
 
 You see the set of selected columns.
 
-1. Run the following script to define the Feature Selection object `fs_wine_cl`:
+1. Run the following script to define the Feature Selection object `fs_wine_cl` and call the `reduce` function with the selected algorithms and WINE proxy objects.:
     ```
-    <copy>%python
+    %python
 
-    fs_wine_cl = automl.FeatureSelection(mining_function = 'classification',
-    score_metric = 'accuracy', parallel=2)
+    fs_wine_cl = automl.FeatureSelection(mining_function = 'classification', score_metric = 'accuracy', parallel=2)
 
-    selected_wine_features_cl = fs_wine_cl.reduce(selected_wine_alg_cl,
-    WINE_X_cl, WINE_y_cl)
+    selected_wine_features_cl = fs_wine_cl.reduce(selected_wine_alg_cl, WINE_X_cl, WINE_y_cl)
 
     WINE_X_reduced_cl = WINE_X_cl[:,selected_wine_features_cl]
 
     print("Selected columns:", WINE_X_reduced_cl.columns)
     print("Number of columns:")
-    "{} reduced to {}".format(len(WINE_X_cl.columns), len(selected_wine_features_cl))</copy>
+    "{} reduced to {}".format(len(WINE_X_cl.columns), len(selected_wine_features_cl))
     ```
     ![Image alt text](images/define_feature_selection_obj.png "Define Feature Selection object for wine")
 
 
 ## **Try it Yourself**
-Try other algorithms, such as svm_linear, to see if different columns are selected.
+Try other algorithms, such as `svm_linear` or `rf` in the first argument of the reduce function see if different columns are selected.
 
 ## **STEP 4:** Automatic Model Tuning
 At this point, you are ready to build and tune the models you want to use.
 
 First, you define a `ModelTuning` object for classification.
-Then, you invoke `tune` to produce the tuned model using the algorithms selected above and the reduced column data.
+Then, call `tune` to produce the tuned model using the algorithms selected above and the reduced data features.
 
-The result of model tuning is a dictionary with the 'best model' and 'all evals', which contains a list of all hyperparameter choices tried and their corresponding score
+Model tuning returns a dictionary with the best model and the evaluation results of the other models tried. This also contains a list of the hyperparameter choices tried and their corresponding score.
 
-1. Run the following script to define the model tuning object `my_wine_cl` for classification.  
+1. Run the following script to define the model tuning object `my_wine_cl` for classification and call `tune`.
     ```
-    <copy>%python
+    %python
 
     mt_wine_cl = automl.ModelTuning(mining_function = 'classification', parallel=2)
+    mt_wine_cl.tune
 
     results_cl = mt_wine_cl.tune(selected_wine_alg_cl, WINE_X_reduced_cl, WINE_y_cl)
+
     tuned_model_cl = results_cl['best_model']
-    tuned_model_cl</copy>
+    tuned_model_cl
     ```
     ![Image alt text](images/define_model_tuning_obj.png "Define Model Tuning object for wine")
 
-2. Run the following script to specify a custom search space to explore for model building using the `param_space` argument to the tune function. With this specification, model tuning will narrow the set of important hyperparameter values. We use parameters for the Random Forest algorithm for classification:
+2. Run the following script to list the hyperparameters and their values tried for the top two models, along with the corresponding model's score metric value.
     ```
-    <copy>%python
+    %python
+
+    hyper_results_cl = results_cl['all_evals']
+
+    print(*hyper_results_cl[:2], sep='\n')
+    ```
+    ![Image alt text](images/hyperparameter_list.png "Hyperparameter list and their values")
+
+3. Run the following script to specify a custom search space to explore for model building using the `param_space` argument to the `tune` function. With this specification, model tuning will narrow the set of important hyperparameter values.
+    ```
+    %python
 
     search_space={'RFOR_SAMPLING_RATIO': {'type': 'continuous', 'range': [0.05, 0.5]},
-    'RFOR_NUM_TREES': {'type': 'discrete', 'range': [50, 55]},
-    'TREE_IMPURITY_METRIC': {'type': 'categorical',
-    'range': ['TREE_IMPURITY_ENTROPY', 'TREE_IMPURITY_GINI']},}
+                  'RFOR_NUM_TREES': {'type': 'discrete', 'range': [50, 55]},
+                  'TREE_IMPURITY_METRIC': {'type': 'categorical',
+                  'range': ['TREE_IMPURITY_ENTROPY', 'TREE_IMPURITY_GINI']},}
 
-    at_wine2_cl = automl.ModelTuning(mining_function='classification',
-    score_metric='f1_macro', parallel=2)
+    at_wine2_cl = automl.ModelTuning(mining_function='classification', score_metric='f1_macro', parallel=2)
 
-    results2_cl = at_wine2_cl.tune('rf', WINE_X_cl, WINE_y_cl,
-    param_space=search_space)
+    results2_cl = at_wine2_cl.tune('rf', WINE_X_cl, WINE_y_cl, param_space=search_space)
 
     score2_cl, params2_cl = results2_cl['all_evals'][0]
     "{:.2}".format(score2_cl)
 
     tuned_model2_cl = results2_cl['best_model']
-    tuned_model2_cl</copy>
+    tuned_model2_cl
     ```
     ![Image alt text](images/custom_search_space.png "Specify custom search space")
 
 ## **STEP 5:** Automatic Model Selection
 As a short cut, you may choose to go directly to model selection on the training data. Model Selection automatically selects the best algorithm (using Algorithm Selection) from the set of supported algorithms, then builds, tunes, and returns the model.
 
-1. Run the following script to select the best model for the wine data set:
+1. Run the following script to define a ModelSelection object and call `select` for automatically building the best model on the wine data.  select the best model for the wine data set:
     ```
-    <copy>%python
+    %python
 
     ms_wine = automl.ModelSelection(mining_function = 'classification', parallel=2)
 
     best_model = ms_wine.select(WINE_X_cl, WINE_y_cl, k=1, cv=2)
-    best_model</copy>
+    best_model
     ```
     ![Image alt text](images/best_model.png "Selection of best model")
-
-
-## **Try it yourself**
-**Hint:**
-* Using the wine data set, prepare the data set with target  `alcohol`.
-* Use AutoML to select a regression algorithm using the `r2` score metric,
-* Then do feature selection followed by model tuning.
-* Finally, view the model object.
 
 
 Congratulations! You have completed this workshop!
