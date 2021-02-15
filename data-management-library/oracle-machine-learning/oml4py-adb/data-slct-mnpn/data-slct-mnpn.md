@@ -25,7 +25,7 @@ In this lab, you will:
   * Use the `append` function
   * Use the `concat` function
   * Use the `split` and `KFold` function
-  * Use the crosstab and `pivot_table` functions on a DataFrame
+  * Use the `crosstab` and `pivot_table` functions on a DataFrame
 
 ## **STEP 1**: Import libraries and create OML DataFrame proxy object
 
