@@ -4,7 +4,23 @@
 
 This lab walks you through the steps to start the Docker and Node.js Retail application. You will connect to a Node.js running in a Docker container on an Oracle Cloud Compute instance. While you can connect the Oracle Database instance using any client of your choice, in this lab you will connect using Oracle SQL Developer.
 
-*Estimated Lab Time:* 20 Minutes
+Estimated Lab Time: 20 Minutes
+
+### About Oracle Node.js
+
+Node.js is an open-source and cross-platform JavaScript runtime environment. It runs the V8 JavaScript engine, outside of the browser. This allows Node.js to be very performant.
+A Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm. When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
+
+[](youtube:zQtRwTOwisI)
+
+### Objectives
+<!-- 
+*List objectives for the lab - if this is the intro lab, list objectives for the workshop* -->
+In this lab, you will:
+* Verify the Node.js Application on any Browser.
+* POST and GET the data from Oracle Database by using postman through Node.js Module.
+* Understand the concept of Node.js with oracle Database.
+
 
 ### Prerequisites
 This lab assumes you have:
@@ -16,15 +32,11 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-### About Oracle Node.js
 
-Node.js is an open-source and cross-platform JavaScript runtime environment. It runs the V8 JavaScript engine, outside of the browser. This allows Node.js to be very performant.
+<!-- 
+When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back. -->
 
-A Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
 
-When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
-
- [](youtube:zQtRwTOwisI)
 
 <!-- **Why Node.js?**
 

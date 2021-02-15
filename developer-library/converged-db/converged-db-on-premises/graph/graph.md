@@ -4,7 +4,21 @@
 
 This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. In the rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
-*Estimated Lab Time:* 30 Minutes
+Estimated Lab Time: 30 Minutes
+
+### About Oracle Graph
+A graph database is a specialized, single-purpose platform for creating and manipulating graphs. Graphs contain nodes, edges, and properties, all of which are used to represent and store data in a way that relational databases are not equipped to do.
+Graph analytics is another commonly used term, and it refers specifically to the process of analyzing data in a graph format using data points as nodes and relationships as edges. Graph analytics requires a database that can support graph formats; this could be a dedicated graph database, or a multi-model database that supports multiple data models, including graph.
+
+Note: Learn More About Graph [Click here](#LearnMore)
+[](youtube:-DYVgYJPbQA)
+[](youtube:zfefKdNfAY4)
+
+### Objectives
+In this lab, you will:
+* Setup the environment for property graph. 
+* Connect the Graph Server and Client to access the Spatial Data from Oracle Database by using PGQL Query.
+* Learn More about the Graph query, PGQL Query, Graph server and client.
 
 ### Prerequisites
 This lab assumes you have:
@@ -16,9 +30,8 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-### About Oracle Graph
 
-**Oracle Graph Server and Client**
+<!-- **Oracle Graph Server and Client**
 
 It is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server and Client includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.
 
@@ -116,12 +129,11 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 ->  an outgoing edge from source to destination
 <-  an incoming edge from destination to source
 []  indicates an edge variable
-```
+``` -->
 
-## **Step 1**: Connect to Graph Server and Client
+## **STEP 1**: Connect to Graph Server and Client
 
-**The graph server has already been setup for you. For more information on the graph server setup see the "Learn More section" of this lab.**
-
+The graph server has already been setup for you. For more information on the graph server setup see the "Learn More section" of this lab.
 1. For connecting to graph server, open a terminal and execute below steps as oracle user.
 
     ```
@@ -154,96 +166,13 @@ Below screenshot is an example how Connection to a PGX server using Jshell looks
     </copy>
     ```
 
-## **Step 2**: Create Graph
+## **STEP 2**: Create Graph
 
-**For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. The SQL has been provided as reference.**
+For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. 
+If you want to learn more about the Create Graph [Click here](#Appendix1:CreateGraph)
 
-1. We have created the views for the use of orders and order_items as multiple edge tables using below commands.
 
-    ```
-    Create or replace view co_edge as select * from orders;
-    Create or replace view oc_edge as select * from orders;
-    Create or replace view os_edge as select * from orders;
-    Create or replace view so_edge as select * from orders;
-    Create or replace view op_edge as select * from order_items;
-    Create or replace view po_edge as select * from order_items;
-    ```
-
-    ![](./images/IMGG6.PNG " ")
-
-2. We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
-
-    ```
-    CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
-    VERTEX TABLES (
-    customers KEY (CUSTOMER_ID) LABEL CUSTOMERS
-    PROPERTIES(CUSTOMER_ID, EMAIL_ADDRESS, FULL_NAME),
-    products KEY (PRODUCT_ID) LABEL PRODUCTS
-    PROPERTIES (PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE),
-    orders KEY (ORDER_ID) LABEL ORDERS
-    PROPERTIES (ORDER_ID, ORDER_DATETIME, ORDER_STATUS),
-    stores KEY (STORE_ID) LABEL STORES
-    PROPERTIES (STORE_ID, STORE_NAME, WEB_ADDRESS, PHYSICAL_ADDRESS,
-      LATITUDE, LONGITUDE)
-      )
-      EDGE TABLES (
-    co_edge
-      SOURCE KEY (CUSTOMER_ID) REFERENCES customers
-      DESTINATION KEY (ORDER_ID) REFERENCES orders
-      LABEL CUSTOMER_ORDERED
-      NO PROPERTIES,
-    oc_edge
-      SOURCE KEY (ORDER_ID) REFERENCES orders
-      DESTINATION KEY (CUSTOMER_ID) REFERENCES customers
-      LABEL ORDERED_BY
-      NO PROPERTIES,
-    os_edge
-      SOURCE KEY (ORDER_ID) REFERENCES orders
-      DESTINATION KEY (STORE_ID) REFERENCES stores
-      LABEL ORDERED_FROM_STORE
-      NO PROPERTIES,
-    so_edge
-      SOURCE KEY (STORE_ID) REFERENCES stores
-      DESTINATION KEY (ORDER_ID) REFERENCES orders
-      LABEL STORE_GOT_ORDER
-      NO PROPERTIES,
-    op_edge
-      SOURCE KEY (ORDER_ID) REFERENCES orders
-      DESTINATION KEY (PRODUCT_ID) REFERENCES products
-      LABEL ORDER_HAS_PRODUCT
-      PROPERTIES (LINE_ITEM_ID, UNIT_PRICE, QUANTITY),
-    po_edge
-      SOURCE KEY (PRODUCT_ID) REFERENCES products
-      DESTINATION KEY (ORDER_ID) REFERENCES orders
-      LABEL PRODUCT_IN_ORDER
-      PROPERTIES (LINE_ITEM_ID)
-      )
-    ```
-
-3. The above PQGL query is saved as sql file (CreatePropertyGraph.sql) and stored in path `/u01/graph` and is run at jshell prompt.
-
-    ```
-    <copy>
-    pgql.prepareStatement(Files.readString(Paths.get("/u01/graph/CreatePropertyGraph.sql"))).execute();
-    </copy>
-    ```
-
-4. The Graph Server kit includes the necessary components (a server application and JShell client) that will execute the above CREATE PROPERTY GRAPH statement and create the graph representation.
-
-The graph itself is stored in a set of tables named
-
-  ![](./images/g7.png " ")
-
-  ![](./images/IMGG7.PNG " ")
-The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) and edges (`OE SAMPLE GRAPHGE$`).
-
-5. Create a convenience function which prepares, executes, and prints the result of a PGQL statement
-
-    ```
-    Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
-    ```
-
-## **Step 3**: Querying graph using PGQL
+## **STEP 3**: Querying Graph using PGQL
 
 1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
@@ -338,7 +267,7 @@ The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) a
 
     ![](./images/IMGG15.PNG " ")
 
-## **Step 4**: Load the graph into memory and publish it.
+## **STEP 4**: Load the Graph into memory and publish it.
 
 1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
 
@@ -399,7 +328,7 @@ The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) a
 
     ![](./images/IMGG21.PNG " ")
 
-## **Step 5**: Visualize the Graph
+## **STEP 5**: Visualize the Graph
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
@@ -557,13 +486,194 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     graph.destroy();
     </copy>
     ```
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
+## **Appendix**: Create Graph
+
+1. We have created the views for the use of orders and order_items as multiple edge tables using below commands.
+
+    ```
+    Create or replace view co_edge as select * from orders;
+    Create or replace view oc_edge as select * from orders;
+    Create or replace view os_edge as select * from orders;
+    Create or replace view so_edge as select * from orders;
+    Create or replace view op_edge as select * from order_items;
+    Create or replace view po_edge as select * from order_items;
+    ```
+
+    ![](./images/IMGG6.PNG " ")
+
+2. We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
+
+    ```
+    CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
+    VERTEX TABLES (
+    customers KEY (CUSTOMER_ID) LABEL CUSTOMERS
+    PROPERTIES(CUSTOMER_ID, EMAIL_ADDRESS, FULL_NAME),
+    products KEY (PRODUCT_ID) LABEL PRODUCTS
+    PROPERTIES (PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE),
+    orders KEY (ORDER_ID) LABEL ORDERS
+    PROPERTIES (ORDER_ID, ORDER_DATETIME, ORDER_STATUS),
+    stores KEY (STORE_ID) LABEL STORES
+    PROPERTIES (STORE_ID, STORE_NAME, WEB_ADDRESS, PHYSICAL_ADDRESS,
+      LATITUDE, LONGITUDE)
+      )
+      EDGE TABLES (
+    co_edge
+      SOURCE KEY (CUSTOMER_ID) REFERENCES customers
+      DESTINATION KEY (ORDER_ID) REFERENCES orders
+      LABEL CUSTOMER_ORDERED
+      NO PROPERTIES,
+    oc_edge
+      SOURCE KEY (ORDER_ID) REFERENCES orders
+      DESTINATION KEY (CUSTOMER_ID) REFERENCES customers
+      LABEL ORDERED_BY
+      NO PROPERTIES,
+    os_edge
+      SOURCE KEY (ORDER_ID) REFERENCES orders
+      DESTINATION KEY (STORE_ID) REFERENCES stores
+      LABEL ORDERED_FROM_STORE
+      NO PROPERTIES,
+    so_edge
+      SOURCE KEY (STORE_ID) REFERENCES stores
+      DESTINATION KEY (ORDER_ID) REFERENCES orders
+      LABEL STORE_GOT_ORDER
+      NO PROPERTIES,
+    op_edge
+      SOURCE KEY (ORDER_ID) REFERENCES orders
+      DESTINATION KEY (PRODUCT_ID) REFERENCES products
+      LABEL ORDER_HAS_PRODUCT
+      PROPERTIES (LINE_ITEM_ID, UNIT_PRICE, QUANTITY),
+    po_edge
+      SOURCE KEY (PRODUCT_ID) REFERENCES products
+      DESTINATION KEY (ORDER_ID) REFERENCES orders
+      LABEL PRODUCT_IN_ORDER
+      PROPERTIES (LINE_ITEM_ID)
+      )
+    ```
+
+3. The above PQGL query is saved as sql file (CreatePropertyGraph.sql) and stored in path `/u01/graph` and is run at jshell prompt.
+
+    ```
+    <copy>
+    pgql.prepareStatement(Files.readString(Paths.get("/u01/graph/CreatePropertyGraph.sql"))).execute();
+    </copy>
+    ```
+
+4. The Graph Server kit includes the necessary components (a server application and JShell client) that will execute the above CREATE PROPERTY GRAPH statement and create the graph representation.
+
+The graph itself is stored in a set of tables named
+
+  ![](./images/g7.png " ")
+
+  ![](./images/IMGG7.PNG " ")
+The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) and edges (`OE SAMPLE GRAPHGE$`).
+
+5. Create a convenience function which prepares, executes, and prints the result of a PGQL statement
+
+    ```
+    Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
+    ```
 ## Learn More
+**Oracle Graph Server and Client**
+
+It is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server and Client includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.
+
+Oracle Graph Client: A zip file containing Oracle Graph Client.
+
+Oracle Graph Server: An rpm file containing an easy to deploy Oracle Graph Server.
+
+For installing the Graph server, the prerequisites are:
+-	Oracle Linux 6 or 7 x64 or a similar Linux distribution such as RedHat
+-	Oracle JDK 8
+
+For installing the Graph client, the prerequisites are:
+-	A Unix-based operation system (such as Linux) or macOS or Microsoft Windows
+-	Oracle JDK 11
+
+**Interactive Graph Shell**
+
+Both the Oracle Graph server and client packages contain an interactive command-line application for interacting with all the Java APIs of the product, locally or on remote computers.
+
+This interactive graph shell dynamically interprets command-line inputs from the user, executes them by invoking the underlying functionality, and can print results or process them further.
+
+This graph shell is implemented on top of the Java Shell tool (JShell).
+
+The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --`base_url` command-line option) and creates a PGX session.
+
+Oracle’s converged, multi-model database natively supports graphs and delivers high performance, scalable graph data management, query, and analytics for enterprise applications. State-of-the-art graph features are available along with functionality required for enterprise grade applications: fine-grained security, high availability, easy manageability, and integration with other data in an application.
+
+Oracle’s mission is to help people see data in new ways, discover insights, and unlock endless possibilities.  Graph analysis is about understanding relationships and connections in data, and detecting patterns that identify new insights. With Oracle’s Graph offerings developers can use a comprehensive suite of graph query and analytics tools to integrate graphs into applications on enterprise grade data management infrastructure.
+
+**For example,** graph algorithms can identify what individual or item is most connected to others in social networks or business processes.  They can identify communities, anomalies, common patterns, and paths that connect individuals or related transactions.
+Every Oracle Database now includes both property graph and RDF graph data models as well as algorithms, query languages, and visualization tools.
+
+**Property Graph database includes:**
+
+- PGX in-memory graph engine
+- PGQL graph query language
+- 50+ Graph algorithms
+- Support for graph visualization
+
+Customers use Property Graphs in fraud analytics, vulnerability analysis, recommendation systems, and more.
+
+**RDF Graph database includes:**
+
+- SPARQL graph query language
+- Java APIs via open source Apache Jena
+- W3C standards support for semantic data, ontologies and inferencing
+- RDF Graph views of relational tables
+
+Customers use RDF Graphs in linked data and data sharing applications in pharma, publishing, public sector and more.
+This workbook provides an overview of Oracle Graph support for property graph features.
+
+**What Are Property Graphs?**
+
+A property graph consists of a set of objects or vertices, and a set of arrows or edges connecting the objects. Vertices and edges can have multiple properties, which are represented as key-value pairs.
+
+**Each vertex has a unique identifier and can have:**
+
+- A set of outgoing edges
+- A set of incoming edges
+- A collection of properties
+
+**Each edge has a unique identifier and can have:**
+
+- An outgoing vertex
+- An incoming vertex
+- A text label that describes the relationship between the two vertices
+- A collection of properties
+
+The following figure illustrates a very simple property graph with two vertices and one edge. The two vertices have identifiers 1 and 2. Both vertices have properties name and age. The edge is from the outgoing vertex 1 to the incoming vertex 2. The edge has a text label knows and a property type identifying the type of relationship between vertices 1 and 2.
+
+![](./images/IMGG1.PNG " ")
+
+Figure: Simple Property Graph Example
+
+**A very brief note on PGQL**
+
+The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.2](pgql-land.org/spec/1.2) are the best reference for details and examples. For the purposes of this lab, however, here are minimal basics.
+
+The general structure of a PGQL query is
+
+```
+SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
+```
+
+PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.
+
+```
+()  indicates a vertex variable
+-   an undirected edge, as in (source)-(dest)
+->  an outgoing edge from source to destination
+<-  an incoming edge from destination to source
+[]  indicates an edge variable
+```
 - [Oracle Graph](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+<!-- **This concludes this lab. You may now [proceed to the next lab](#next).** -->
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
