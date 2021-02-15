@@ -1,12 +1,12 @@
 # Oracle Cross Datatype
 
 ## Introduction
-Cross datatype Lab is designed to show the functionality of Cross Datatype.
+Cross datatype lab is designed to showcase the functionality of multi datatype like json, xml and spatial and how all of them can be used same like relational data format.
 
-This lab will show you how to use cross data functions.
+<!-- This lab will show you how to use cross data functions.
 - JSON with Relational
 - XML with Relational
-- JSON with Spatial
+- JSON with Spatial -->
 
 Estimated Lab Time: 20 Minutes
 
