@@ -145,7 +145,7 @@ graph.query_pgql("""
     <copy>
     graph2.query_pgql("""
         SELECT a.account_no, a.pagerank
-        MATCH (a)
+        FROM MATCH (a)
         ORDER BY a.pagerank DESC
     """).print()
     </copy>

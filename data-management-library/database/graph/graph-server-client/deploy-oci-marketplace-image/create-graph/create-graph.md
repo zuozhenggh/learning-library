@@ -144,6 +144,30 @@ graph.query_pgql("""
 
 ![](images/check_graph.png)
 
+## **STEP 4:** Publish the graph (optional)
+
+The newly created graph is "private" by default, which is accessable only from the current session. To access the graph from the new sessions in future, you can "publish" the graph.
+
+Firstly, login to SQL Developer Web as `admin` user, and add the permission to publish graphs to `customer_360` user. 
+```
+GRANT PGX_SESSION_ADD_PUBLISHED_GRAPH TO customer_360;
+```
+
+Close and connect to the Pyhton shell (to reflect the permission change), create the graph again, and publish it.
+```
+<copy>
+graph.publish()
+</copy>
+```
+
+Next time when you connect, you can access the graph on-memory, without re-creating it again.
+```
+<copy>
+graph = session.get_graph("customer_360")
+graph
+</copy>
+```
+
 You may now proceed to the next lab.
 
 ## Acknowledgements
