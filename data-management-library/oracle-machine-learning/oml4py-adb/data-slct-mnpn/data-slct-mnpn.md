@@ -4,7 +4,7 @@
 
 This lab shows how to use the transparency layer classes to work with data and to perform exploratory analysis of the data.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### About Transparency Layer, Data Selection and Manipulation
 The transparency layer classes allows you to convert select Python objects to Oracle Autonomous Database (ADB) objects and also call a range of familiar Python functions that are overloaded to call the corresponding SQL on tables in the
@@ -18,7 +18,7 @@ The OML4Py transparency layer supports functions that interact with database dat
 
 ### Objectives
 
-In this lab, you will:
+In this lab, you will learn how to:
   * Use the `oml.push` function to create a temporary table
   * Work with table rows and columns using proxy objects
   * Work with `pandas.DataFrame` object
@@ -31,17 +31,17 @@ In this lab, you will:
 
 To use OML4Py, you must first import the `oml` module and the Pandas library to support OML4Py data manipulation and analysis, data exploration and preparation.
 
-1. Run the following commands to import the `oml` package, the Pandas library and set the display options:
+1. Run the following scripts to import the `oml` package, the Pandas library and set the display options:
 
      ```
-     <copy>%python
+     %python
 
      import pandas as pd
      import oml
 
      pd.set_option('display.max_rows', 500)
      pd.set_option('display.max_columns', 50
-     pd.set_option('display.width', 1000)</copy>
+     pd.set_option('display.width', 1000)
      ```
      ![Image alt text](images/omp_lib_display_options.png "Import libraries and Set display options")
 2. Here, you load the IRIS data and combine the target and predictors into a single DataFrame, which matches the form the data would have as a database table. You use the `oml.push` function to load this Pandas DataFrame into the database, which creates a temporary table and returns a proxy object that you assign to IRIS_TMP.
@@ -50,7 +50,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
   In OML notebooks, you use the zeppelin-context `z.show` method to display Python objects and proxy object content. Display the first few rows of IRIS_TMP using `z.show` for displaying DataFrame results in the Zeppelin viewer.
 
      ```
-     <copy>%python
+     %python
 
      from sklearn.datasets import load_iris
      import pandas as pd
@@ -63,13 +63,13 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
      iris_df = pd.concat([x, y], axis=1)
      IRIS_TMP = oml.push(iris_df)
 
-     z.show(IRIS_TMP.head())</copy>
+     z.show(IRIS_TMP.head())
      ```
 
 
      ![Image alt text](images/temp_table_iris_data.png "Temporary Table for Iris Data")   
 
- 2. Run the following command to list all the transparency layer functions:
+ 2. Run the following script to list all the transparency layer functions:
 
     ```
     %python
@@ -191,7 +191,7 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
     ![Image alt text](images/create_my_df_table.png "Create MY_DF table")
     The script creates the table MY_DF.
 
-2. In this step, you use the `append ()` function to append an `oml.Float` series object to another, and then append an `oml.DataFrame` object to another.
+2. In this step, you use the `append()` function to append an `oml.Float` series object to another, and then append an `oml.DataFrame` object to another.
 
     **Note:** An `oml.Float` is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
 
@@ -228,10 +228,9 @@ Use the `concat` method to combine columns from one data frame proxy object with
 
 
   ![Image alt text](images/column_wise_concat.png "Column wise concatenation")
-  **Note:** The command automatically prints the result. When there is a single result to show, print command is not needed.
+  **Note:** The script automatically prints the result. When there is a single result to show, print command is not needed.
 
-2.This step shows how to create an `oml.Float` object with the rounded exponential of two times the values in the `num` column of the `oml_frame` object, and then concatenate it with the `oml.DataFrame` object `y` using a new column name.
-
+2. This step shows how to create an `oml.Float` object with the rounded exponential of two times the values in the `num` column of the `oml_frame` object, and then concatenate it with the `oml.DataFrame` object `y` using a new column name.
     ```
     %python
 
@@ -245,12 +244,12 @@ Use the `concat` method to combine columns from one data frame proxy object with
 
 3. Concatenate object x with multiple objects and turn on automatic name conflict resolution. In this example, `auto_name=True` controls whether to call automatic name conflict resolution if one or more column names are duplicates in the two data frames:
 
-  ```
-  <copy>%python
+    ```
+    %python
 
-  z = MY_DF[:,'id']
-  x.concat([z, w, y], auto_name=True)</copy>
-  ```
+    z = MY_DF[:,'id']
+    x.concat([z, w, y], auto_name=True)
+    ```
 
   ![Image alt text](images/concat_columns_name_reso.png "Concatenate columns with name resolution")
 
@@ -258,7 +257,7 @@ Use the `concat` method to combine columns from one data frame proxy object with
 4. Run the following script to concatenate multiple OML data objects and perform customized renaming. Here, you add the word `New` to the duplicate columns and use `OrderedDict` to preserve the order in which the objects are added.
 
     ```
-    <copy>%python
+    %python
 
     x.concat(OrderedDict([('ID',iris_df2), ('round(exp(2*num))',w), ('New_',y)]))
     ```
@@ -335,41 +334,41 @@ To work with the drop function, first create a demo data table `MY_DF2.`
 
 3. Run the following script to drop rows with missing numeric values:
 
-  ```
-  %python
+    ```
+    %python
 
-  MY_DF2.dropna(how='any', subset=['numeric'])
-  ```
+    MY_DF2.dropna(how='any', subset=['numeric'])
+    ```
 
-  ![Image alt text](images/drop_missing_num_vals.png "Drop rows with missing numeric values")
+    ![Image alt text](images/drop_missing_num_vals.png "Drop rows with missing numeric values")
 
 4. Run the following script to drop rows where all columns values are missing:
 
-  ```
-  %python
+    ```
+    %python
 
-  MY_DF2.dropna(how='all')
-  ```
+    MY_DF2.dropna(how='all')
+    ```
 
-  ![Image alt text](images/drop_rows_with_missing_col_vals.png "Drop rows with missing column values")
+    ![Image alt text](images/drop_rows_with_missing_col_vals.png "Drop rows with missing column values")
 
 5. Use the `drop_duplicates()` function to drop duplicate rows:
 
-  ```
-  %python
+    ```
+    %python
 
-  MY_DF2.drop_duplicates()
-  ```
-  ![Image alt text](images/drop_duplicate_rows.png "Drop duplicate rows")
+    MY_DF2.drop_duplicates()
+    ```
+    ![Image alt text](images/drop_duplicate_rows.png "Drop duplicate rows")
 
 6. Run the following script to drop a specific column:
 
-  ```
-  %python
+    ```
+    %python
 
-  MY_DF2.drop('string2')
-  ```
-  ![Image alt text](images/drop_specific_col.png "Drop specific columns")
+    MY_DF2.drop('string2')
+    ```
+    ![Image alt text](images/drop_specific_col.png "Drop specific columns")
 
 ## **STEP 5:** Use the split and KFold functions
 
@@ -536,19 +535,19 @@ OML4Py provides functions for rendering graphical displays of data. The `oml.box
 This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions using the wine data set. The statistics supporting these plots are computed in-database, so transfer of data or client side memory limitations are avoided.
 1. Import the `matplotlib` library and wine data set from sklearn. Run the following script:
 
-  ```
-  %python
+    ```
+    %python
 
-  import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt
 
-  WINE = oml.sync("OMLUSER", table = "WINE")
+    WINE = oml.sync("OMLUSER", table = "WINE")
 
-  oml.graphics.boxplot(WINE[:,8:12], showmeans=True, meanline=True, patch_artist=True, labels=WINE.columns[8:12])
-  plt.title('Distribution of Wine Attributes')
-  plt.show()
-  ```
+    oml.graphics.boxplot(WINE[:,8:12], showmeans=True, meanline=True, patch_artist=True, labels=WINE.columns[8:12])
+    plt.title('Distribution of Wine Attributes')
+    plt.show()
+    ```
 
-  ![Image alt text](images/boxplot.png "Box Plot depicting distribution of wine attributes")
+    ![Image alt text](images/boxplot.png "Box Plot depicting distribution of wine attributes")
 
 
 2. Run the following script to render the data in a histogram:
@@ -620,7 +619,7 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
     ```
     ![Image alt text](images/oml_cursor_function.png "oml_cursor_function")
 
-2. To close the cursor, run the `cr.close` command:
+2. To close the cursor, run `cr.close`.
 
     ```
     %python
@@ -660,14 +659,15 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Transparency Layer Functions](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-oml4py.html#GUID-2AD97DE9-B43F-4B0B-8269-C6DFB47576A9)
+* [Prepare and Explore Data](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/prepare-and-explore-data.html#GUID-10C55FA5-2F98-4B52-9C56-4EA43E62D786)
+* [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Moitreyee Hazarika, Principal User Assistance Developer
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
+* **Last Updated By/Date** - Moitreyee Hazarika, February 2021
+* **Workshop (or Lab) Expiry Date**
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

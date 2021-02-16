@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to use OML4Py Embedded Python Execution functions. You will also learn about the Script repository.
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 30 minutes
 
 ### About Embedded Python Execution
 Embedded Python Execution enables you to run user-defined Python functions in Python engines spawned in the Autonomous Database environment. These engines run alongside an OML Notebooks Python interpreter session.
@@ -15,7 +15,7 @@ The OML4Py Embedded Python Execution functions are:
 * `oml.group_apply` - Partitions a database table by the values in one or more columns and runs the provided user-defined Python function on each partition.
 * `oml.index_apply` - Calls a Python function multiple times, passing in a unique index of the invocation to the user-defined function.
 * `oml.row_apply` - Partitions a database table into sets of rows and runs the provided user-defined Python function on the data in each set.
-* `oml.table_apply` - calls a Python function on data in the database as a single pandas.DataFrame in a single Python engine.
+* `oml.table_apply` - Calls a Python function on data in the database as a single pandas.DataFrame in a single Python engine.
 
 **Note:** Embedded Python Execution functions are also available through the Oracle Machine Learning for Python REST API for Embedded Python Execution.
 
@@ -29,7 +29,7 @@ OML4Py stores named user-defined functions called scripts in the script reposito
 * `oml.grant` - Grants read privilege permission to another user to a datastore or script owned by the current user.
 * `oml.revoke` - Revokes the read privilege permission that was granted to another user to a datastore or script owned by the current user.
 
-To illustrate using the Python Script Repository, you will define a function build_lm1 that will fit a regression model. Using this function, you will then create a script named MyLM_function.
+To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
 ### Objectives
 
@@ -40,7 +40,6 @@ In this lab, you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
 
 ## **STEP 1**: Import OML4Py and supporting libraries and Create Data Table
@@ -455,7 +454,7 @@ OML4Py stores named user-defined functions called scripts in the script reposito
 
 To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
-1. To store a user-defined function in the script repository, it must be presented as a named string. Run the followng script to define the function as a string, `build_lm_str`. **Note** the use of triple quotes to enable formatting.
+1. To store a user-defined function in the script repository, it must be presented as a named string. Run the following script to define the function as a string, `build_lm_str`. **Note** the use of triple quotes to enable formatting.
     ```
     %python
 
@@ -479,21 +478,19 @@ To illustrate using the Python Script Repository, you will define a function `bu
     ![Image alt text](images/view_build_lm_str.png "View String")
 
 ## **STEP 7:** Create Scripts in Repository
-In this step, you will use the function `oml.script.create` to create a script `MyLM_function2`.
+In this step, you will use the function `oml.script.create` to create a script `MyLM_function`.
 
-1. Run the `oml.script.drop` function first to check if a script by the name `MyLM_function2` exists, and drop it if it exists. Then use the `oml.script.create` function to create the script `MyLM_function2`. Note that we have the overwrite argument set to True in case the function already exists.
+1. Run the `oml.script.drop` script first to check if a script by the name `MyLM_function` exists, and drop it if it exists. Then use the `oml.script.create` script to create the script `MyLM_function`. Note that we have the `overwrite` argument set to `True` in case the function already exists.
     ```
-    %python
-
     try:
-      oml.script.drop("MyLM_function2")
+      oml.script.drop("MyLM_function")
     except:
       pass
 
-    oml.script.create("MyLM_function2", func=build_lm_str, overwrite=True)
+    oml.script.create("MyLM_function", func=build_lm_str, overwrite=True)
     ```
 
-2. Run the `oml.script.dir` to list the scripts to which the read privilege has been granted, and where `sctype` is set to `grant`.
+2. Run the `oml.script.dir` script to list the scripts to which the read privilege has been granted, and where `sctype` is set to `grant`.
     ```
     %python
 
@@ -503,7 +500,7 @@ In this step, you will use the function `oml.script.create` to create a script `
 
     ![Image alt text](images/list_script.png "List scripts available to the current user")
 
-3. Run the following script to load the named function into the Python engine for use as a typical Python function using  `oml.script.load`.
+3. Run the following script to load the named function `MyLM_function` into the Python engine for use as a typical Python function using  `oml.script.load`.
     ```
     %python
 
@@ -516,41 +513,43 @@ In this step, you will use the function `oml.script.create` to create a script `
     print(MyLM_function.get_source().read())
     ```
     ![Image alt text](images/load_function.png "Load function")
-4. Extract the function text string from the function object and use this to save in the script repository using oml.script_create.
+4. Extract the function text string from the function object and use this to save in the script repository using `oml.script_create`.
     ```
     %python
 
     loaded_str = MyLM_function.get_source().read()
     type(loaded_str)
     ```
-5. Run the script to
+5. Run the script `oml.script.create` to create a test function `MyTEST_function`:
     ```
     %python
 
     oml.script.create("MyTEST_function", func=loaded_str, overwrite=True)
     ```
-6. Use the function oml.script.dir to list all the available scripts.
+6. Use `oml.script.dir` to list all the available scripts.
 
     ```
     %python
 
     oml.script.dir(sctype="all")
     ```
-7. Invoke table_apply on build_lm_str and loaded_str. Recall that these strings represent the same function - build_lm_str was saved to the script repository after assigning the function to a string object. loaded_str is the string representation of the function extracted using get_source().read().
+    ![Image alt text](images/list_scripts.png "List all scripts")
+
+7. Call the `table_apply` on `build_lm_str` and `loaded_str` functions. Note that these strings represent the same function `build_lm_str` that was saved to the script repository after assigning the function to a string object. The `loaded_str` is the string representation of the function extracted using `get_source().read()`.
     ```
     %python
 
     mod1 = oml.table_apply(data=IRIS, func = build_lm_str)
     mod1.coef_
     ```
-Run the same for
+Run the same function on `loaded_str`:
     ```
     %python
 
     mod2 = oml.table_apply(data=IRIS, func = loaded_str)
     mod2.coef_
     ```
-
+![Image alt text](images/list_scripts.png "List all scripts")
 
 
 ## **STEP 9:** Store a function as a global  function
@@ -611,15 +610,15 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
+* [Embedded Python Execution](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/embedded-python-execution.html#GUID-4FF75B48-6135-4219-A663-AFFBC0F4E9B6)
+* [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Moitreyee Hazarika, Principal User Assistance Developer
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
+* **Last Updated By/Date** - Moitreyee Hazarika, February 2021
+* **Workshop (or Lab) Expiry Date**
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

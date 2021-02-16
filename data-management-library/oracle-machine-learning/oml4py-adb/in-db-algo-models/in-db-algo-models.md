@@ -14,16 +14,11 @@ Oracle Machine Learning for Python (OML4Py) makes the open source Python scripti
 
 ### Objectives
 
-In this lab, you will:
-*
-*
-*
-
-
-
-
-
-
+In this lab, you will learn how to:
+* Predict numerical values using multiple regression
+* Work with Clustering using K-means
+* Work with Partitioned Models
+* Use the Model Explainability feature to rank attributes
 
 
 ### Prerequisites
@@ -32,7 +27,7 @@ In this lab, you will:
 
 ## **STEP 1**: Import libraries
 
-1. Run the following commands to import the `oml` package, the python packages - Pandas, Numpy, and matplotlib:
+1. Run the following script to import the `oml` package, the python packages - Pandas, Numpy, and matplotlib:
 
     ```
     import pandas as pd
@@ -46,7 +41,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
 **Note:** All processing occurs inside Oracle Autonomous Database.
 
-1. Run the following commands to prepare the dataset combining the `CUSTOMERS` table from the `SH` schema with the `SUPPLEMENTARY_DEMOGRAPHICS` table.
+1. Run the following script to prepare the dataset combining the `CUSTOMERS` table from the `SH` schema with the `SUPPLEMENTARY_DEMOGRAPHICS` table.
 
     **Note:** Here, it shows how to use the query specification with `oml.sync` and how to select the columns you want to include. However, you could also have used `oml.sync` on the `CUSTOMERS` and `SUPPLEMENTARY_DEMOGRAPHICS` tables and perform column filtering in Python prior to the merge.
 
@@ -118,7 +113,7 @@ This step shows how to predict numerical values using multiple regression. Given
     ```
 
     ![Image alt text](images/model_coeff.png "View model coefficients")
-7. Run the following commands to make predictions using the test data and display the results:
+7. Run the following script to make predictions using the test data and display the results:
 
     ```
     %python
@@ -161,7 +156,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.show()  
     ```
     ![Image alt text](images/yrs_residence_predicted_matplotlib.png "Predicted Values and Actual Values")
-10. Run the following commands to plot the residuals using matplotlib.
+10. Run the following script to plot the residuals using matplotlib.
 
     ```
     %python
@@ -197,7 +192,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
 ## **STEP 3**: Work with Clustering using K-Means
 OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Autonomous Database.
 
-1. Run the following commands to build a k-Means clustering model with 3 clusters. You do the following in this step:
+1. Run the following script to build a k-Means clustering model with 3 clusters. You do the following in this step:
 
     * Drop the model `CUST_CLUSTER_MODEL` if it exists.
     * Specify the number of iterations for building the cluster tree using the `KMNS_ITERATIONS` setting and the K-Means random seed generator using the `KMNS_RANDOM_SEED` setting. `KMNS_ITERATIONS` specifies the number of times the algorithm should iterate over the training data before it finalizes the selection of centroids. You can adjust this parameter to balance accuracy against training time. The `KMNS_RANDOM_SEED` value is used for cluster initialization and can have a significant effect on cluster selection.
@@ -294,7 +289,7 @@ OML4Py enables automatically building an ensemble model comprised of multiple su
 
 In this lab, we build an SVM model to predict the number of years a customer resides at their residence but partitioned on customer gender. The model is then used to predict the target, then predict the target with prediction details.
 
-1. Run the following commands to create test and train data sets and drop missing values.
+1. Run the following script to create test and train data sets and drop missing values.
     ```
     %python
 
@@ -325,7 +320,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
 
     ![Image alt text](images/svm_partitioned_regression_model.png "Partitioned model")        
 
-3. Run the following commands to predict on the test set and display prediction result. Note the use of the top level model only.
+3. Run the following script to predict on the test set and display prediction result. Note the use of the top level model only.
     ```
     %python
 
@@ -464,17 +459,19 @@ In this step, you will:
 
 Build an in-db RandomForest model and compare the RF model's attribute importance ranking with that from MLX.
 
+You may now [proceed to the next lab](#next).
+
 ## Learn More
 
+* [About Machine Learning Classes and Algorithms](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-machine-learning-algorithms.html#GUID-00F8AF8F-6652-4161-BEEF-E737A68FB53C)
+* [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Moitreyee Hazarika, Principal User Assistance Developer
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
+* **Last Updated By/Date** - Moitreyee Hazarika, February 2021
+* **Workshop (or Lab) Expiry Date**
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

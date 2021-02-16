@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to
+This lab walks you through the steps to:
 * Create an OML user
 * Access OML Notebooks
 * Create a Zeppelin Notebook
@@ -26,20 +26,23 @@ In this lab, you will learn how to:
 * Create an OML user
 * Access OML Notebooks
 * Create a Zeppelin Notebook
+* Familiarize with the Zeppelin Notebook toolbar
+* Familiarize with the Zeppelin Notebook interpreter bindings
+* Familiarize with the Zeppelin Notebook interpreters
 * Connect to the Python Interpreter
 * Verify Connection to the Autonomous Database
+* View help files
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
 
 ## **STEP 1**: Create an OML User
 
 An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
 **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface. To create a user account:
 
-1. Sign in to your OCI account, click the hamgurger on the left to open the left navigation pane, and click **Autonomous Data Warehouse.**
+1. Sign in to your OCI account, click the hamburger on the left to open the left navigation pane, and click **Autonomous Data Warehouse.**
     ![Autonomous Data Warehouse option](images/adw.png "Autonomous Data Warehouse")
 
 2. Click on an Autonomous Database instance.
@@ -134,7 +137,7 @@ The available interpreters are:
   - `%md` - To call the Markdown interpreter and generate static html from Markdown plain text
   - `%python` - To call the Python interpreter and run Python scripts
 
-## **Step 4** Connect to the Python Interpreter
+## **STEP 4:** Connect to the Python Interpreter
 
 To run Python commands in a notebook, you must first connect to the Python interpreter. This occurs as a result of running your first `%python` paragraph. To use OML4Py, you must import the `oml` module, which automatically establishes a connection to your database.
 In an Oracle Machine Learning notebook, you can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python. This example shows you how to:
@@ -164,7 +167,7 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
     ![Image alt text](images/import_oml.png)
 
-## **Step 5** Verify Connection to the Autonomous Database    
+## **STEP 5:** Verify Connection to the Autonomous Database    
 
 1. To verify if the oml module is connected to the Autonomous Database, type:
 
@@ -174,33 +177,39 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
    Once your notebook is connected, the command returns TRUE. The notebook is now connected to the Python interpreter, and you are ready to run python commands in your notebook.         
 
 
-## **Step 6** View Help Files    
+## **STEP 6:** View Help Files    
 The Python help function is used to display the documentation of packages, modules, functions, classes, and keywords. The help function has the following syntax:
-
-    `help([object])`
+    ```
+    help([object])
+    ```
 
 For example,
   - To view the help files for the `oml.create` function, type:
+    ```
+    %python
+    help(oml.create)
+    ```
 
-    `%python
-    help(oml.create)`
   - To view the help files for `oml` package, type:
 
-    `%python
-    help(oml)`
+    ```
+    %python
+    help(oml)
+    ```  
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Get Started with Oracle Machine Learning for Python](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/get-started-with-oml4py.html#GUID-B45A76E6-CE48-4E49-B803-D25CA44B09ED)
+* [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
+
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Moitreyee Hazarika, Principal User Assistance Developer
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
+* **Last Updated By/Date** - Moitreyee Hazarika, February 2021
+* **Workshop (or Lab) Expiry Date**
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
