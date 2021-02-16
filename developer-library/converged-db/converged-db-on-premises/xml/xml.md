@@ -14,15 +14,16 @@ This lab will cover three main topics. The Connect to SQL Developer Web will use
 
 <!-- -  The last step you will look at various sample queries and functions within XML. -->
 
-Estimated Lab Time: 15 Minutes
+*Estimated Lab Time*: 15 Minutes
 
 ### About Oracle XML
 XML(Extensible Markup Language) is used to store and transport data. XML data is known as self-describing or self-defining, meaning that the structure of the data is embedded with the data, thus when the data arrives there is no need to pre-build the structure to store the data; it is dynamically understood within the XML.
 The basic building block of an XML document is an element, defined by tags. An element has a beginning and an ending tag. All elements in an XML document are contained in an outermost element known as the root element.
 XML can also support nested elements, or elements within elements. This ability allows XML to support hierarchical structures. 
 
-Note: Learn More About XML [Click here](#LearnMore)
 [](youtube:lGQvxPCYR2c)
+
+For More Details About Oracle XML [Click here](#Appendix1:LearnMoreaboutOracleXML)
 
 ### Objectives
 In this lab, you will:
@@ -356,8 +357,7 @@ This lab assumes you have:
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
-## Learn More
-
+## **Appendix 1**: Learn More about Oracle XML
 ### **XML with Oracle Database**
 
 - Oracle XML DB is a high-performance, native XML storage and retrieval technology that is delivered as a part of all versions of Oracle Database.
@@ -369,7 +369,9 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 For example, XML documents can be very simple, such as the following:
 ![](./images/xml_snapa.png " ")
 
-- [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adxdb/index.html)
+## Learn More
+
+- Oracle XML Document ([XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adxdb/index.html))
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.

@@ -8,7 +8,7 @@ Cross datatype lab is designed to showcase the functionality of multi datatype l
 - XML with Relational
 - JSON with Spatial -->
 
-Estimated Lab Time: 20 Minutes
+*Estimated Lab Time*: 20 Minutes
 
 ### About Oracle Cross Datatype
 

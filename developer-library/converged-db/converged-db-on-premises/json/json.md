@@ -1,13 +1,13 @@
 # Oracle JSON
 
-## Introduction 
+## Introduction   
 JSON is a syntax for storing and exchanging data. In this lab you will be covering three main areas. The Connect to SQL Developer will setup the environment for JSON lab. The Insert and Update JSON Data which will use standard database APIs to insert or update JSON data. Lastly, Query JSON Documents using SQL where you will see improvements in the simplicity of querying JSON documents using SQL.
 <!-- There are three main parts to this lab.
 - **Connect to SQL Developer** - you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer.
 - **Insert and Update JSON Data** - You can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function `json_mergepatch` to update specific portions of a JSON document.
 - **Query JSON Documents using SQL** - You will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON_EXISTS, `JSON_VALUE` and other functions can utilize a materialized view created over a query that contains a `JSON_TABLE` function. -->
 
-Estimated Lab Time: 20 Minutes
+*Estimated Lab Time*: 20 Minutes
 
 ### About Oracle JSON
 
@@ -15,8 +15,9 @@ JSON (JavaScript Object Notation) is a syntax for storing and exchanging data. W
 JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server. We can also convert any JSON received from the server into JavaScript objects.
 This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
 
-Note: Learn More About JSON [Click here](#LearnMore)
 [](youtube:oiOCp23T1ZU)
+
+For More Details About Oracle JSON [Click here](#Appendix2:LearnMoreaboutOracleJSON)
 
 ### Objectives
 In this lab, you will:
@@ -472,7 +473,7 @@ For this , we will create two views next
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
-## **Appendix**: Loading JSON Documents into the database  
+## **Appendix 1**: Loading JSON Documents into the database  
 
 **The SQL statements have already been run. The SQL has been provided as reference.**
 
@@ -534,9 +535,7 @@ For this , we will create two views next
 
 <!-- **This concludes this lab. You may now [proceed to the next lab](#next).** -->
 
-<!-- ## **Appendix 2**: Product Details -->
-
-## Learn More
+## **Appendix 2**: Learn More about Oracle JSON
 
 **JSON with Oracle Database**
 
@@ -570,7 +569,10 @@ The first thing to realize about JSON is that it remains a simple text format, w
 This listing illustrates what a JSON payload looks like:
   ![](./images/json_intro.png " ")
 
-- [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
+
+## Learn More
+
+- Oracle JSON Document ([JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html))
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.

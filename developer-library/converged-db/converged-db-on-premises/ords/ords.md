@@ -5,15 +5,15 @@
 This lab walks you through the steps of creating RESTful Services for `JSON`, `XML` and `Spatial` data using Oracle REST data services. As part of this lab, `ORDS is pre-installed` and you will walk through the steps of rest enabling schema and its tables.
 Also later in the steps you will perform activities like `retrieving data`, `inserting data`, `updating data` and `deleting data` using `GET`, `POST`, `PUT` and `DELETE` methods respectively.
 
-Estimated Lab Time: 30 Minutes
+*Estimated Lab Time*: 30 Minutes
 
 ### **About Oracle ORDS**
 
 ORDS is a Java application that enables developers with SQL and database skills to develop REST APIs for the Oracle Database, the Oracle Database 12c JSON Document store, and the Oracle NoSQL Database. Any application developer can use these APIs from any language environment, without installing and maintaining client drivers, in the same way they access other external services using the most widely used API technology: REST.
 
-Note: Learn More About ORDS [Click here](#LearnMore)
-
 ![](./images/ords1.png " ")
+
+For More Details About ORDS [Click here](#Appendix:LearnMoreaboutORDS)
 
 <!-- **Install ORDS using SQL Developer**
 
@@ -1140,7 +1140,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 
 **This concludes this lab.**
 
-## Learn More
+## **Appendix**: Learn More about ORDS
 **Install ORDS using SQL Developer**
 
 Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use [SQL Developer](https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html) to install the ORDS version or install ORDS standalone.
@@ -1180,8 +1180,11 @@ Common terms that are used throughout this lab:
 	3. `PUT` : Update an existing resource.
 	4. `DELETE` : Remove a resource.
 
-- [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
-- [blog](https://www.oracle.com/tools/technologies/faq-rest-data-services.html) post
+
+## Learn More
+
+- [ORDS Document](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
+- [ORDS Blog post](https://www.oracle.com/tools/technologies/faq-rest-data-services.html)
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.

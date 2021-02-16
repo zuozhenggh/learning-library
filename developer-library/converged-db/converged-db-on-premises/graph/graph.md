@@ -4,15 +4,15 @@
 
 This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. In the rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
-Estimated Lab Time: 30 Minutes
+*Estimated Lab Time*: 30 Minutes
 
 ### About Oracle Graph
 A graph database is a specialized, single-purpose platform for creating and manipulating graphs. Graphs contain nodes, edges, and properties, all of which are used to represent and store data in a way that relational databases are not equipped to do.
 Graph analytics is another commonly used term, and it refers specifically to the process of analyzing data in a graph format using data points as nodes and relationships as edges. Graph analytics requires a database that can support graph formats; this could be a dedicated graph database, or a multi-model database that supports multiple data models, including graph.
 
-Note: Learn More About Graph [Click here](#LearnMore)
 [](youtube:-DYVgYJPbQA)
-[](youtube:zfefKdNfAY4)
+
+For More Details About Oracle Graph [Click here](#Appendix2:LearnMoreaboutOracleGraph)
 
 ### Objectives
 In this lab, you will:
@@ -488,7 +488,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     ```
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
-## **Appendix**: Create Graph
+## **Appendix 1**: Create Graph
 
 1. We have created the views for the use of orders and order_items as multiple edge tables using below commands.
 
@@ -574,10 +574,12 @@ The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) a
     ```
     Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
     ```
-## Learn More
+## **Appendix 2**: Learn More about Oracle Graph
 **Oracle Graph Server and Client**
 
 It is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server and Client includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.
+
+[](youtube:zfefKdNfAY4)
 
 Oracle Graph Client: A zip file containing Oracle Graph Client.
 
@@ -669,6 +671,8 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 <-  an incoming edge from destination to source
 []  indicates an edge variable
 ```
+## Learn More
+
 - [Oracle Graph](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 

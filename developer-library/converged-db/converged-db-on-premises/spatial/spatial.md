@@ -3,14 +3,15 @@
 ## Introduction
 This lab walks you through the steps of setting up the environment for Spatial lab. You can connect to the Oracle Database instance using any client of your choice. In this lab, you will connect using Oracle SQL Developer.
 
-Estimated Lab Time: 30 Minutes
+*Estimated Lab Time*: 30 Minutes
 
 ### About Oracle SPATIAL
 
 Oracle Spatial is an integrated set of functions, procedures, data types, and data models that support spatial analytics. The spatial features enable spatial data to be stored, accessed, and analyzed quickly and efficiently in an Oracle database. It is designed to make spatial data management easier and more natural to users of location-enabled applications and geographic information system (GIS) applications. Once spatial data is stored in an Oracle database, it can be easily manipulated, retrieved, and related to all other data stored in the database.
 
-Note: Learn More About JSON [Click here](#Appendix:ProductDetailsandSettingUpSpatialEnvironment)
 [](youtube:Q2jm93Rm95g)
+
+For More Details About Oracle Spatial [Click here](#Appendix:ProductDetailsandSettingUpSpatialEnvironment)
 
 ### Objectives
 In this lab, you will:
