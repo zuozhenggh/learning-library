@@ -1,7 +1,7 @@
 # Oracle JSON
 
 ## Introduction 
-JSON is a syntax for storing and exchanging data.In this lab you will be covering three main areas. The **Connect to SQL Developer** will setup the environment for JSON lab. The next topic is  **Insert and Update JSON Data** which uses standard database APIs to insert or update JSON data. Lastly, **Query JSON Documents using SQL** where you will see improvements in the simplicity of querying JSON documents using SQL.
+JSON is a syntax for storing and exchanging data. In this lab you will be covering three main areas. The Connect to SQL Developer will setup the environment for JSON lab. The Insert and Update JSON Data which will use standard database APIs to insert or update JSON data. Lastly, Query JSON Documents using SQL where you will see improvements in the simplicity of querying JSON documents using SQL.
 <!-- There are three main parts to this lab.
 - **Connect to SQL Developer** - you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer.
 - **Insert and Update JSON Data** - You can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function `json_mergepatch` to update specific portions of a JSON document.
@@ -21,7 +21,7 @@ Note: Learn More About JSON [Click here](#LearnMore)
 ### Objectives
 In this lab, you will:
 * Setup the environment for JSON lab. 
-* Connect the oracle SQL developer to Insert and Update the JSON Data into Oracle Database by using JSON Function.
+* Connect the Oracle SQL developer to Insert and Update the JSON Data into Oracle Database by using JSON Function.
 * Learn about the JSON functions.
 
 ### Prerequisites
@@ -279,7 +279,7 @@ This listing illustrates what a JSON payload looks like:   -->
 
     ![](./images/json_s6_p1.png " ")
 
-2. Find all customers who purchased an items tagged with a specific UPC. The `JSON_EXISTS` operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression. The `JSON_EXISTS` operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. `JSON_EXISTS` provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression. The UPC, Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.
+2. Find all customers who purchased items tagged with a specific UPC. The `JSON_EXISTS` operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression. The `JSON_EXISTS` operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. `JSON_EXISTS` provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression. The UPC, Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.
 
     ```
     <copy>
@@ -291,7 +291,7 @@ This listing illustrates what a JSON payload looks like:   -->
 
     ![](./images/count_po_document.png " ")
 
-3. Find the customers who all are purchased a specific products based on PONumber
+3. Find the customers who purchased a specific products based on PONumber.
 
     ```
     <copy>
@@ -324,7 +324,7 @@ This listing illustrates what a JSON payload looks like:   -->
     ![](./images/specific_product1.png " ")
 
 
-4. Find the customers who all are purchased a specific products based on the description of the product. The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
+4. Find the customers who purchased a specific products based on the description of the product. The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
 
     ```
     <copy>

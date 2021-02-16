@@ -1,7 +1,7 @@
 # Oracle XML
 
 ## Introduction
-This lab will cover three main topics. The **Connect to SQL Developer Web** will use SQL Developer Web, which is one of the tools that comes preinstalled with Autonomous Database. The **Query XML Data** uses XQuery which is a  general and expressive language, that combines the power of expression and computation with the strengths of SQL. The  **Insert and Update XML Data**updates XML content or replaces either the entire contents of a document or only particular parts of a document. 
+This lab will cover three main topics. The Connect to SQL Developer Web will use SQL Developer Web, which is one of the tools that comes preinstalled with Autonomous Database. The Query XML Data uses XQuery which is a  general and expressive language, that combines the power of expression and computation with the strengths of SQL. The Insert and Update XML Data updates XML content or replaces either the entire contents of a document or only particular parts of a document. 
 <!-- There are several steps within this lab. -->
 
 <!-- - **Connect to SQL Developer Web** - You will use SQL Developer Web, one of the tools that comes preinstalled with Autonomous Database
@@ -164,7 +164,7 @@ This lab assumes you have:
 
 
 2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
-3. Set your oracle environment and connect to PDB as **oracle** user.
+3. Set your Oracle environment and connect to PDB as **oracle** user.
 
     ```
     <copy>
@@ -210,7 +210,7 @@ This lab assumes you have:
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
 
-2. Set your oracle environment and connect to PDB as **oracle** user.
+2. Set your Oracle environment and connect to PDB as **oracle** user.
 
     ```
     <copy>

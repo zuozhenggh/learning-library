@@ -154,7 +154,7 @@ The graph server has already been setup for you. For more information on the gra
     ./02_graph_client.sh
     </copy>
     ```
-Below screenshot is an example how Connection to a PGX server using Jshell looks like
+The below screenshot is an example of what a Connection to a PGX server using Jshell looks like
 
     ![](./images/IMGG4.PNG " ")
 
@@ -169,7 +169,7 @@ Below screenshot is an example how Connection to a PGX server using Jshell looks
 ## **STEP 2**: Create Graph
 
 For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. 
-If you want to learn more about the Create Graph [Click here](#Appendix1:CreateGraph)
+If you want to learn more about the Create Graph [Click here](#Appendix:CreateGraph)
 
 
 ## **STEP 3**: Querying Graph using PGQL
@@ -225,7 +225,7 @@ If you want to learn more about the Create Graph [Click here](#Appendix1:CreateG
 
     ![](./images/IMGG12.PNG " ")
 
-6. What did people buy from the Online Store. Return first 50 results.
+6. What did people buy from the Online Store. Return the first 50 results of what the people purchased.
 
     ```
     <copy>
@@ -236,7 +236,7 @@ If you want to learn more about the Create Graph [Click here](#Appendix1:CreateG
 
     ![](./images/IMGG13.PNG " ")
 
-7. Who bought how much of product with id 19?
+7. The amount of product purchased by using Id 19 and by whom.
 
     ```
     <copy>
@@ -338,7 +338,7 @@ The principal points of entry for the GraphViz application are the query editor 
 When you start GraphViz, the graph list will be populated with the graphs loaded in the graph server. To run queries against a graph, select that graph. The query lets you write PGQL queries that can be visualized. (PGQL is the SQL-like query language supported by GraphViz.)
 Once the query is ready and the desired graph is selected, click Run to execute the query.
 
-1. **This statement shows what products did customer 202 buy from which store(s)?**
+1. This statement shows what products did customer 202 buy from which store(s)?
 
     ```
     <copy>
@@ -356,10 +356,10 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
     ![](./images/IMGG23.PNG " ")
 
-    **The result should look like as below:**
+    The result should look like as below:
     ![](./images/IMGG23a.PNG " ")
 
-4. **Here we look at which customers placed orders from store with id 1 (the Online store) displaying the first 100 results**
+4. Here we look at which customers placed orders from store with id 1 (the Online store) displaying the first 100 results
 
     ```
     <copy>
@@ -424,7 +424,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     ![](./images/IMGG32.PNG " ")
 
 
-24. **The following statement will look at what products did customer buy?**
+24. The following statement will look at what products did customer buy?
 
     ```
     <copy>
@@ -453,7 +453,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     ![](./images/IMGG35.PNG " ")
 
 
-29. **This statement will show Which customers bought product with id 44 and will display 100 results per page**
+29. This statement will show Which customers bought product with id 44 and will display 100 results per page.
 
     ```
     <copy>
@@ -467,7 +467,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     ![](./images/IMGG36.PNG " ")
 
 
-30. **Now let's look at which customers bought product with id 44 displaying 100 results per page**
+30. Now let's look at which customers bought product with id 44 displaying 100 results per page
 
     ```
     <copy>
