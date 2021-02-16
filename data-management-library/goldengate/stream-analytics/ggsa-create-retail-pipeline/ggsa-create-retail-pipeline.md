@@ -110,7 +110,8 @@ Now that we have the order history we would like to enrich this data with the cu
 
     ![](./images/getcustomerdetails3.png " ")
 
-5. Pick Match Any condition because we would like to use an OR condition.  For each field pick the appropriate value from the drop down shown in the Example below.  
+5. Pick *Match Any* condition because we would like to use an *OR* condition. Click on *Add a Condition* and for each field pick the appropriate value from the drop down shown in the Example below.
+  
 
     ![](./images/getcustomerdetails4.png " ")
 
@@ -126,13 +127,13 @@ Now that we have the order history we would like to enrich this data with the cu
 
     Example:
     ```
-    <copy>Custid equals after_CUSTOMER_ID</copy>
+    Custid equals after_CUSTOMER_ID
     ```
 
     OR
 
     ```
-    <copy>Custid equals before_CUSTOMER_ID</copy>
+    Custid equals before_CUSTOMER_ID
     ```
 
 8. At any time during design of a pipeline you can click on Done button on the top left to exit the pipeline and get back to the catalog.  All your changes will be saved.
@@ -174,7 +175,7 @@ In the next stage we are only interested in customers that are located in our ca
 
 In the this stage we would like to retrieve the product details from local database for those products that the customers have purchased by joining two sources.
 
-1. Right mouse click on the end stream and Add a Stage.
+1. Right mouse click on the end stream and Add a Query Stage.
 2. Name the new stage *GetProductDetails* with the appropriate description.  
 3. In the top right hand pane you should see the new stage and the type of stream you are using
 
@@ -194,24 +195,30 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 
     ![](./images/expressionfx.png " ")
 
-2. Click on the (Sigma) button and add a new field as a String.  
+2. In the Expression Builder type in 'BRONZE', then click on the (Sigma) button and then click on the checkmark in that order.  
+    ```
+    <copy>BRONZE</copy>
+    ```
 
     ![](./images/expressionsigma.png " ")
 
 3. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it CustomerType.  
 
-    ![](./images/newaddedfields.png " ")
+    
 
 4. Use *`(fx)`* again and add a new field as a numerical value.  
 5. For a numerical value make sure to begin the expression with `=` sign. You can give it default value like `=0`.  
 
     ![](./images/discountoffered.png " ")
 
-6. Rename the new Calc column to DiscountOffered using the right mouse click.
+6. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it to DiscountOffered.
+   
+   ![](./images/newaddedfields.png " ")
+
 7. Now right click on the GetProductDetails stage and add a Rule Stage
 
 8. Name the new rule stage *SegmentCustomers* with the appropriate description.
-9.  In the Rules tab add the following three rules:
+9.  In the Rules tab add the following three rules, each time clicking on the *+ Add a Rule*:
 
     - *GoldCustomers:*
 
@@ -219,16 +226,56 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 
 If they have purchased ELECTRONICS AND the storesales (*Match All*) greater than $50 AND storesales  lower than or equal $900
 Then offer them a $5 discount as DiscountOffered and set the CustomerType to *GOLD*
+Category:
+
+    ```
+    <copy>ELECTRONICS</copy>
+    ```
+Discount:
+
+    ```
+    <copy>5</copy>
+    ```
+Segment:
+
+    ```
+    <copy>GOLD</copy>
+    ```
 
     - *DiamondCustomers:*
 
-If they have purchased both ELECTRONICS AND FURNITURE between $900 AND $1500
+If they have purchased both FURNITURE and spent between $900 AND $1500
 Then offer them a $10 discount as DiscountOffered and set the CustomerType to *Diamond*
+Category:
+
+    ```
+    <copy>FURNITURE</copy>
+    ```
+Discount:
+
+    ```
+    <copy>10</copy>
+    ```
+Segment:
+
+    ```
+    <copy>Diamond</copy>
+    ```
 
     - *PlatinumCustomers:*
 
 If they have purchased any product and spent more than $1500
 Then offer them a $25 discount as DiscountOffered and set the CustomerType to *Platinum*
+Discount:
+
+    ```
+    <copy>25</copy>
+    ```
+Segment:
+
+    ```
+    <copy>Platinum</copy>
+    ```
 
 Note that all other customers are automatically segmented as *BRONZE*.
 
@@ -253,7 +300,7 @@ After we have segmented the customers we need to Filter out all the customers th
     ![](./images/rtrvenuesummariesrename.png " ")
 
 5. Finally Add a Group by with the CustomerType.
-6. Click on the Visualizations tab and name it to *RevenueByCustomerSegment*.  
+6. Click on the *Visualizations* tab, select *Bar* chart and name it to *RevenueByCustomerSegment*.  
 7. Add the Visualizations with Bar type with X Axis as the CustomerType and Y Axis as the RevByCustomerType.  
 8. Once you have created the bar chart you should see the streaming data as bar chart.
 
@@ -308,17 +355,26 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 1. From the GetCustomer stage add a new Query Stage.
 2. Name the new stage *FilterLikelyBuyers*.
 
-3. Add a description: Removes customers who are unlikely to redeem the offer.
-4. Click Save.
-In this stage we are only interested in customers that are likely to take advantage of the offer by querying for all the customers whose RedeemPrediction equals (case sensitive) 1.  
-5. Click on the Filters tab and Add a Filter.
+3. Add a description: Removes customers who are unlikely to redeem the offer.  Click Save.
+
+4. In the lower right hand corner of the screen click on Columns:
+   
+   ![](./images/selectcolumns.png " ")
+
+5. In the Columns window click on the left double arrows to deselect all the columns.  Then click on the right single arrow to individually select the columns shown.  Click Save.
+ 
+   ![](./images/selectedcolumns.png " ")
+
+6. In this stage we are only interested in customers that are likely to take advantage of the offer by querying for all the customers whose RedeemPrediction equals (case sensitive) 1.
+  
+7. Click on the *Filters* tab and Add a Filter.
 
     ![](./images/filterlikelybuyers.png " ")
 
 ## **STEP 11:** Create PersistPredictionsToKafka Stage
 
 In the last stage we are interested in sending the data to a Kafka Target by mapping the topic params to the stream parameters.  Again the topic could be created before the pipeline is built or as the stage is being created.
-1. Create a new Target Stage.
+1. Right click on the FilterLikelyBuyers stage and create a new Target Stage.
 2. Name the new target stage *PersistPredictionsToKafka*.
 3. Add description: Persists predictions to Kafka. Could also be persisted to database.
 4. Click Save.
@@ -334,18 +390,22 @@ Create a parallel stage to group the likely buyers by type and by zip code.
 2. Name the new stage *LikelyBuyersByTypeAndZip*.
 3. Add description: Likely buyers by customer type and zip code.
 4. Click Save.
-5. Click on the Groups tab and Add a Summary with condition Count_of_RedeemPrediction.  
+5. Click on the *Groups* tab and *Add a Group* then *Add a Summary* with condition Count_of_RedeemPrediction.  
 
     ![](./images/likelybuyersbytypeandzip.png " ")
 
 6. Again the column should be renamed to *LikelyBuyersByCustomerType*.  
 7. Now Add a GroupBy and select CustomerType.
 
-8. Repeat the same steps and Add a Summary with condition Count_of_RedeemPrediction but this time rename it to *LikelyBuyersByZipCode*.
+8. Repeat the same steps and *Add a Group* then *Add a Summary* with condition Count_of_RedeemPrediction but this time rename it to *LikelyBuyersByZipCode*.
 
     ![](./images/likelybuyersbytypeandzipgroups.png " ")
 
-9.  Click on the Visualizations tab and create a Pie chart for the LikelyBuyersByCustomerType and a Bar chart for the LikelyBuyersByZipCode.
+9.  Click on the Visualizations tab and create a Pie chart for the LikelyBuyersByCustomerType:
+    
+    ![](./images/createpiechartfortypes.png " ")
+
+10. Repeat the same step and create a Bar chart for the LikelyBuyersByZipCode.
 
     ![](./images/likelybuyersbytypeandzipvisual.png " ")
 
