@@ -6,7 +6,7 @@ The results of the analyses done in the previous labs can easily be visualized u
 
 Estimated time: 5 minutes
 
-The following video provides an overview of the visualization component.
+The following video provides an overview of the Graph Visualization component (= GraphViz).
 
 [](youtube:zfefKdNfAY4)
 
@@ -16,11 +16,11 @@ The following video provides an overview of the visualization component.
 
 ### Prerequisites
 
-- This lab assumes you have successfully completed Lab - Graph Query and Analysis with Python and published the graph. It also assumes the Graph Visualization component is up and running on the compute instance on `public_ip_for_compute:7007/ui`. We will use the Graph Visualization component to explore the graph and run some PGQL queries.
+- This lab assumes you have successfully completed Lab - Graph Query and Analysis with Python and published the graph. It also assumes the GraphViz is up and running on the compute instance on `public_ip_for_compute:7007/ui`. We will use the GraphViz to explore the graph and run some PGQL queries.
 
 ## **STEP 1:** Setup
 
-1. Open the Graph Viz at `https://<public_ip_for_compute>:7007/ui`. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
+1. Open the GraphViz at `https://<public_ip_for_compute>:7007/ui`. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
 
     You should see a screen similar to the screenshot below. Enter the username (`customer_360`) and password you entered when createing the user in SQL Developer Web.
 
@@ -28,7 +28,7 @@ The following video provides an overview of the visualization component.
 
 ## **STEP 2:** Modify query
 
-1. Modify the query to get the first 50 rows, i.e. change LIMIT 100 to LIMIT 5, and click Run.
+1. Modify the query to get the first 5 rows, i.e. change `LIMIT 100` to `LIMIT 5`, and click Run.
 
     You should see a graph similar to the screenshot below.
 
@@ -36,7 +36,7 @@ The following video provides an overview of the visualization component.
 
 ## **STEP 3:** Add highlights
 
-Now let's add some labels and other visual context. These are known as highlights. Click [here](https://github.com/oracle/learning-library/blob/master/data-management-library/database/graph/graph-server-client/deploy-oci-marketplace-image/visualize-graphs/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
+Now let's add some labels and other visual context. These are known as highlights. Click [here](./highlights.json.zip) to download the `highlights.json` zip file. Unzip the file and note where it is unzipped.
 
 1. Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder and choose the file named `highlights.json` and click Open to load that.
 
@@ -56,12 +56,12 @@ Now let's add some labels and other visual context. These are known as highlight
 
     ```
     SELECT <select list>
-    FROM <graph_name>
+    FROM <graph_name>      (Please omit the graph name here, as it is selected from the GraphViz UI)
     MATCH <graph_pattern>
     WHERE <condition>
     ```
 
-    PGQL provides a specific construct known as the *MATCH* clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.  
+    PGQL provides a specific construct known as the `MATCH` clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.  
     - `(v)` indicates a vertex variable `v`   
     - `-` indicates an undirected edge, as in (source)-(dest)  
     - `->` an outgoing edge from source to destination  
@@ -83,7 +83,7 @@ Now let's add some labels and other visual context. These are known as highlight
     </copy>
     ```
 
-    In the first `MATCH` clause above, `(a)` indicates the source vertex and `(a1)` the destination, while `[t1:transfer]` is the edge connecting them. The `:transfer` specifies that the `t1` edge has the label `TRANSFER`. The comma (',') between the two patterns is an AND condition.
+    In the first `MATCH` clause above, `(a)` indicates the source vertex and `(a1)` the destination, while `[t1:transfer]` is the edge connecting them. The `:transfer` specifies that the `t1` edge has the label `TRANSFER`. The comma (`,`) between the two patterns is an AND condition.
 
 3. Copy and paste the query into the PGQL Graph Query text input box of the GraphViz application. Click Run.
 
