@@ -102,28 +102,29 @@ We need to load some data into the database so that we can create some REST serv
 
 **Loading Data**
 
-We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
+1. We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
+
     ![](../images/SDW-16.png)
 
-1. Start by clicking the Data Loading area; the center of the gray dotted-line box.
+2. Start by clicking the Data Loading area; the center of the gray dotted-line box.
 
     ![](../images/SDW-17.png)
 
-2. The Upload Data into New Table model will appear.
+3. The Upload Data into New Table model will appear.
 
     ![](../images/SDW-18.png)
 
-3. We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
+4. We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
 
     **(right-click and download the file with the following link)**
 
     [May 2018 Earthquakes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/tKIZjBqerdxe-PkpUv5cELZaMRcUIYu1LVe2EqPez8A5of0XTih2eLdVGGV0t1on/n/c4u03/b/developer-library/o/may2018.csv)
 
-4. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
+5. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
     ![](../images/SDW-19.png)
 
-5. The model will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
+6. The model will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
 
     ![](../images/SDW-20.png)
 
@@ -131,15 +132,15 @@ We are now ready to load data into the database. For this task, we will use the 
 
     ![](../images/SDW-21.png)
 
-6. Let's edit a few of these columns. We need a Primary Key for our table. Here, we can use the ID column. Just click the PK checkbox for the ID row.
+7. Let's edit a few of these columns. We need a Primary Key for our table. Here, we can use the ID column. Just click the PK checkbox for the ID row.
 
     ![](../images/SDW-22.png)
 
-7. Next, we want to take the TIME column and make it a TIMESTAMP type. Do this by selecting TIMESTAMP from the Column Type dropdown.
+8. Next, we want to take the TIME column and make it a TIMESTAMP type. Do this by selecting TIMESTAMP from the Column Type dropdown.
 
     ![](../images/SDW-23.png)
 
-8. Next, we need to set the timestamp format so that we can load it into the database. Just to the right of the Column Type you will find a Format Mask column. (You may need to use the horizontal scroll bar to see the column to the right)
+9. Next, we need to set the timestamp format so that we can load it into the database. Just to the right of the Column Type you will find a Format Mask column. (You may need to use the horizontal scroll bar to see the column to the right)
 
     Enter the following into that column:
 
@@ -149,19 +150,19 @@ We are now ready to load data into the database. For this task, we will use the 
 
     ![](../images/SDW-24.png)
 
-9. Next, we are going to change the LATITUDE, LONGITUDE, DEPTH and MAG columns to NUMBER column Types. Again, use the Column Type dropdown select list to choose NUMBER for each of them. We also need to set the SCALE of each of these columns so that we retain the values to the right of the decimal point.
+10. Next, we are going to change the LATITUDE, LONGITUDE, DEPTH and MAG columns to NUMBER column Types. Again, use the Column Type dropdown select list to choose NUMBER for each of them. We also need to set the SCALE of each of these columns so that we retain the values to the right of the decimal point.
 
     Set the scale to 7 for LATITUDE, 7 for LONGITUDE, 3 for DEPTH, and 3 for MAG.
 
     ![](../images/SDW-25.png)
 
-10. Click Next on the bottom right of the modal when done.
+11. Click Next on the bottom right of the modal when done.
 
     On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
 
     ![](../images/SDW-26.png)
 
-11. When you are done taking a look, click the Finish button in the lower right of the modal.
+12. When you are done taking a look, click the Finish button in the lower right of the modal.
 
     ![](../images/SDW-27.png)
 
@@ -173,7 +174,7 @@ We are now ready to load data into the database. For this task, we will use the 
 
     ![](../images/SDW-29.png)
 
-12. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
+13. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
     <img src="../images/SDW-30.png" width="250px">
 
