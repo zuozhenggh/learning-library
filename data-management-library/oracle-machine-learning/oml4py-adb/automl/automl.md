@@ -11,7 +11,7 @@ AutoML (Automatic Machine Learning) provides built-in data science expertise abo
 
 ### Objectives
 
-In this lab, you will:
+In this lab, you will learn how to:
 * Create data set (wine data) as Pandas DataFrame and load into ADB
 * Use `automl.AlgorithmSelection` to automatically rank the best algorithms from the set of supported Oracle Machine Learning algorithms
 * Use `automl.FeatureSelection` to quickly identify the most relevant feature subsets for a training data set and an Oracle Machine Learning algorithm
@@ -20,9 +20,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
 
 
 ## **STEP 1**: Import libraries supporting OML4Py

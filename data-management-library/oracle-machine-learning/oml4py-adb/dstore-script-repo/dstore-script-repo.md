@@ -1,4 +1,4 @@
-# Use Datastores to store Python objects 
+# Use Datastores to store Python objects
 
 ## Introduction
 
@@ -30,7 +30,7 @@ In this lab, you will learn how to:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+
 
 ## **STEP 1**: Import libraries supporting OML4Py and create data table
 
