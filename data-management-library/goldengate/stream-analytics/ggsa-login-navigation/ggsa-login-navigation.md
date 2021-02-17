@@ -28,7 +28,7 @@ This lab assumes you have:
 1. Launch your browser to the following URL
 
     ```
-    URL: <copy>http://[your instance public-ip address]/osa</copy>
+    URL: <copy>https://[your instance public-ip address]/osa</copy>
     ```
 
 2. Provide login credentials
@@ -57,8 +57,8 @@ This lab assumes you have:
 
 2. Click on the About menu item and make sure the current version of the product is showing as
 
-    - GoldenGate Stream Analytics Version19.1.0.0.3
-    - Java Version1.8.0_131
+    - GoldenGate Stream Analytics Version19.1.0.0.5
+    - Java Version1.8.0_281
     - Superset Version0.17.0
 
     ![](./images/version.png " ")
@@ -70,7 +70,7 @@ This lab assumes you have:
 
     ![](./images/systemsetdropdown.png " ")
 
-2. Verify all the connections to ZooKeeper and Spark are set as below.
+2. Verify all the connections to Kafka and Spark are set as below.
 
     ![](./images/systemsettings.png " ")
 
@@ -195,7 +195,8 @@ References are typically database tables that might be used to enrich a stream o
 
 ## **STEP 11**: Review Targets
 
-A `Target` is a destination environment downstream that is usually used when we are finished with analysis. They are typically of types: JMS, database, REST, Kafka and Coherence.
+A `Target` is a destination environment downstream that is usually used when we are finished with analysis. In this version the following targets are supported: AWS S3, Coherence, Database Table, Elastic Search, HBase, HDFS, Hive, Ignite Cache, JMS, Kafka, MongoDB, NFS, Notification, Object Storage and REST.
+
 
 1. On the left nav bar make sure Targets are checked only. On the main screen only NotifyMaintenance and ReplenishAlert targets should be visible. Click on the NotifyMaintenance. Do NOT edit any sections at this time.
 
@@ -215,9 +216,8 @@ A `Target` is a destination environment downstream that is usually used when we 
 
     ![](./images/edittarget3.png " ")
 
-6. In the next page click on 'X' and exit.
 
-7. Click on the ReplenishAlert target and repeat all the steps the same as NotifyMaintenance target. Do not make any changes to these targets. This target should have (about 12 fields).
+6. Click on the ReplenishAlert target and repeat all the steps the same as NotifyMaintenance target. Do not make any changes to these targets. This target should have (about 12 fields).
 
 *You may now proceed to the next lab*.
 
