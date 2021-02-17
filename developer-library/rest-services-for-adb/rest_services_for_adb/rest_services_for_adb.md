@@ -324,6 +324,7 @@ https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/ma
 
     ![](../images/SDW-58.png)
 
+
 ## Conclusion
 In this lab, you had an opportunity to get an introduction to REST services using an easy to follow User Interface. REST enable your tables and database objects in minutes with zero code.
 
