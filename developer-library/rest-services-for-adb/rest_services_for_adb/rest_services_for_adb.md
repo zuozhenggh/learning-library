@@ -103,7 +103,6 @@ We need to load some data into the database so that we can create some REST serv
 **Loading Data**
 
 We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
-
     ![](../images/SDW-16.png)
 
 1. Start by clicking the Data Loading area; the center of the gray dotted-line box.
@@ -194,7 +193,7 @@ We are now ready to load data into the database. For this task, we will use the 
 
     The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
-    <img src="../images/SDW-34.png" width="400px">
+    <img src="../images/SDW-34.png" width="700px">
 
 3. Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
