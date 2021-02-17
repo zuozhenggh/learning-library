@@ -2,45 +2,33 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
-
-### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
-
-In the previous section you did fixed plans with SQL Plan Management. But lets see what else could be done and ask the SQL Tuning Advisor (STA).
+In the previous section you fixed plans with SQL Plan Management. But lets see what else could be done and ask the SQL Tuning Advisor (STA).
 
 You’ll pass the SQL Tuning Set from the “Load” exercise where you captured the HammerDB workload directly from Cursor Cache to the SQL Tuning Advisor and check the results.
 Analyze the SQL Tuning Set and generate recommendations
 
-A complete script is provided: sta_cc.sql.
-It will:
+A complete script is provided: sta_cc.sql.  
 
-    Generate a tuning task with the SQL Tuning Set STS_CaptureCursorCache
-    Run a tuning task where the SQL Tuning Advisor simulates the execution
-    Generate a result report in TEXT format
-    Generate statements to implement the findings
+Estimated Lab Time: n minutes
+
+### About SQL Tuning Advisor
+SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.
+
+You can submit one or more SQL statements as input to the advisor and receive advice or recommendations for how to tune the statements, along with a rationale and expected benefit.
+
+
+### Objectives
+In this lab, you will:
+* Generate a tuning task with the SQL Tuning Set STS_CaptureCursorCache
+* Run a tuning task where the SQL Tuning Advisor simulates the execution
+* Generate a result report in TEXT format
+* Generate statements to implement the findings
+
+### Prerequisites
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Item no 2 with url - [URL Text](https://www.oracle.com).
+
+## **STEP 1**: Generate a Tuning Task
 
 . upgr19
 cd /home/oracle/scripts
@@ -172,10 +160,9 @@ You may now [proceed to the next lab](#next).
 * [SQL Tuning Advisor](https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/sql-tuning-advisor.html#GUID-8E1A39CB-A491-4254-8B31-9B1DF7B52AA1)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Carlos Sierra
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
