@@ -19,8 +19,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Brown Buttons* only)
+    - Lab: Prepare Setup (*Brown Buttons* only)
     - Lab: Environment Setup
 
 ## **Step 1**: Log-in
