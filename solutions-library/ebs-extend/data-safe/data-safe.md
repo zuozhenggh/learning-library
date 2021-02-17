@@ -195,6 +195,52 @@ Congratulations! You have successfully registered a database with Data Safe. You
 
 ## **STEP 4:** Monitor your Target Database on the Data Safe Console
 
+In this step, we will access the data on the target database we registered. 
+
+1. In the Data Safe Console, go to the **Home** tab. 
+
+2. Click on **Security Asssessment** and select your target database. Click **Assess Now** to run an assessment. Once the report has been generated, you can click on **Set Baseline** to establish a baseline that will be compared to future assessments or **View Report** to see the results of the assessment. You can also select your database and click **Schedule Periodic Assessment** to setup a regularly run security assessment. 
+
+3. Now, click on **User Assessment** on the left panel. From here select your database and click **Assess**. Here you can also view a report by clicking **View Report** once the assessment completes. 
+
+4. Next we will run a Data Discovery job to create a Sensitive Data Model of all the sensitive data in the database. Note: this should only be done on non-production databases. 
+
+  a. Click on **Data Discovery** on the left panel and select your target database. Click **Continue**.
+
+  b. Select **Create** for Sensitive Data Model and provide a name for the model, if desired. 
+
+  c. Leave **Show and save sample data?** unchecked. Select the compartment where you would like to store this model. Click **Continue**. 
+
+  d. Select the schemas on which you would like to run the discovery job. Click **Continue**. 
+
+  e. Select the sensitive data types which you would like to discovery and then click **Continue**. The job will now run and create a Sensitive Data Model. Once this job has finished, you can click **Continue**. 
+
+  f. This page will show the results from the data discovery job. You may click **Back** to reconfigure the job and run it again. If satisfied, you can click **Report** to save the model. 
+
+5. The next job we can run is for Data Masking. This is mask the sensitive data that you discovered in the last step. Note: this should only be done on non-production databases. 
+
+  a. Click on **Data Masking** on the left panel and select your target database. Click **Continue**. 
+
+  b. Select **Create** for Masking Policy and provide a name for the policy, if desired. 
+
+  c. You can either click **Create** for the Sensitive Data Model to create a new model like we did in the last step, or you can click **Pick from Library** to select a saved model that you have already created. 
+
+  d. Leave **Show and save sample data?** unchecked. Select the compartment where you would like to store this policy. Click **Continue**.
+
+  e. If you are creating a new Sensitive Data Model, you will follow similar steps to the last step.
+
+  f. 
+
+6. Lastly, we will configure a target for Activity Auditing. This will allow us to audit certain activities performed on the target database. 
+
+  a. Click on **Activity Auditing** on the left panel and select your target databse. Click **Continue**. 
+
+  b. Select your target and click **Retrieve** to obtain the valid Audit Policies for your target. Click **Continue**. 
+
+  c. On the Review and Provision Audit and Alert Policies page, click on the target database name. This will open a window that allows you to customize which audit and alert policies you would like to enable. Select the desired policies and click **Provision**. Then click **Continue**. 
+
+  d. 
+
 
 ## Learn More
 
