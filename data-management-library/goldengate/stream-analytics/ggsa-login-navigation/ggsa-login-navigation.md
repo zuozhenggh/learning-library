@@ -1,4 +1,4 @@
-# UI Navigation
+# Initialize Environment
 
 ## Introduction
 In this lab you are going to login to GGSA and get familiar with the menu and navigation in the home and catalog pages. You will then create a new user and set credentials for that user. You are also going to import an example use case for IoT in order to get familiar with various resources
@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **STEP 1**: Log-in
+## **Step 1**: Log-in
 
 1. Launch your browser to the following URL
 
@@ -42,15 +42,11 @@ This lab assumes you have:
 
     ![](./images/login.png " ")
 
-2. You should see the home page
+3. You should see the home page
 
     ![](./images/home.png " ")
 
-3. Click on (*`X`*) to ignore the error below if shown
-
-    ![](./images/ignore-error-first-login.png " ")
-
-## **STEP 2**: Check Version
+## **Step 2**: Check Version
 1. Click on the drop-down menu in the upper right-hand corner of the screen.
 
     ![](./images/about.png " ")
@@ -65,7 +61,7 @@ This lab assumes you have:
 
 3. Click Done.
 
-## **STEP 3**: Review System Settings
+## **Step 3**: Review System Settings
 1. Again, click on the drop-down menu in the upper right-hand corner of the screen but this time click on System Settings
 
     ![](./images/systemsetdropdown.png " ")
@@ -74,7 +70,7 @@ This lab assumes you have:
 
     ![](./images/systemsettings.png " ")
 
-## **STEP 4**: Perform User Management
+## **Step 4**: Perform User Management
 1. Click on the User Management in the navigation bar to the left and **Add User**:
 
     `osauser/osauser`
@@ -83,7 +79,7 @@ This lab assumes you have:
 
     ![](./images/addUser.png " ")
 
-## **STEP 5**: Review Catalog
+## **Step 5**: Review Catalog
 
 1. Click on the Catalog menu on the top right-hand corner of the home page:
 
@@ -95,7 +91,7 @@ This lab assumes you have:
 
 2. Navigate back to the Home page again.
 
-## **STEP 6**: Check out Import
+## **Step 6**: Check out Import
 
 1. Click on Import in Distributed Intelligence for IOT region and see the message that it was imported Successfully.
 
@@ -109,7 +105,7 @@ This lab assumes you have:
 
     ![](./images/resourcesimported.png " ")
 
-## **STEP 7**: View "Show Me (Nav Bar)"
+## **Step 7**: View "Show Me (Nav Bar)"
 
 1. Click on the box next to the Catalog and then click on *View All* on the left Show Me nav bar to hide all the resources. All the resources in the Show Me nav bar should now be unchecked and you should see 0 of 0 Resources in the main page
 
@@ -119,7 +115,7 @@ This lab assumes you have:
 We can now check individual resource types and only see them listed in
 the main page.
 
-## **STEP 8**: View Connections
+## **Step 8**: View Connections
 
 1. Click on the Connections on the left nav bar and verify that only two types of connections are visible.
 
@@ -147,7 +143,7 @@ the main page.
 
     ![](./images/editKafkaConnection.png " ")
 
-## **STEP 9**: Review Streams
+## **Step 9**: Review Streams
 
 1. In the left nav bar uncheck the Connections resource and check Streams instead and verify that only VendingMachineStream is visible.
 
@@ -171,7 +167,7 @@ the main page.
 
     ![](./images/vmEditStream3.png " ")
 
-## **STEP 10**: Review References
+## **Step 10**: Review References
 
 References are typically database tables that might be used to enrich a stream of data.
 
@@ -193,7 +189,7 @@ References are typically database tables that might be used to enrich a stream o
 
 5. In the next page click on 'X' and exit.
 
-## **STEP 11**: Review Targets
+## **Step 11**: Review Targets
 
 A `Target` is a destination environment downstream that is usually used when we are finished with analysis. In this version the following targets are supported: AWS S3, Coherence, Database Table, Elastic Search, HBase, HDFS, Hive, Ignite Cache, JMS, Kafka, MongoDB, NFS, Notification, Object Storage and REST.
 
@@ -219,16 +215,30 @@ A `Target` is a destination environment downstream that is usually used when we 
 
 6. Click on the ReplenishAlert target and repeat all the steps the same as NotifyMaintenance target. Do not make any changes to these targets. This target should have (about 12 fields).
 
-*You may now proceed to the next lab*.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on any of the **Brown Buttons** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
