@@ -1,12 +1,12 @@
-# Datastore and Script Repository
+# Use Datastores to store Python objects 
 
 ## Introduction
 
-This lab walks you through the steps to ...
+This lab walks you through the steps to use and work with datastores.
 
 Estimated Lab Time: 20 minutes
 
-### About Datastore and Script Repository
+### About Datastore
 **Datastores** exist in the user’s Oracle Database schema. A datastore, and the objects it contains, persist in the database until explicitly deleted. By using a datastore, you can store Python objects in a named datastore entry. This named datastore can then be used in subsequent Python sessions, and even be made available to other users or programs by granting/revoking read permissions.
 
 Python objects, including OML4Py proxy objects, exist for the duration of the current Python session unless you explicitly save them. You can save one or more Python objects, including OML proxy objects, to a named datastore and then load those objects in a later Python session. This is also useful when using embedded Python execution.
@@ -16,23 +16,16 @@ By using a datastore, you can:
 * Easily pass multiple and non-scalar arguments to Python functions for use in embedded Python execution from Python, REST, and SQL  API. **Note:** SQL and REST APIs support passing scale values, such as datastore name or numeric values, only.
 * List available datastores and explore datastore contents
 
-**Script Repository:**
-
-With the script repository, you can:
-* Create and store user-defined Python functions as scripts in Oracle Database
-* Grant or revoke the read/run privilege to a script
-* List available scripts
-* Load a script function into the Python environment
-* Drop a script from the script repository
-
-You can make scripts either private or global. A private script is available only to the owner. A global script is available to any user. For private scripts, the owner of the script may grant the read privilege to other users or revoke that privilege.
-
 ### Objectives
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+In this lab, you will learn how to:
+* Move objects between datastore and a Python sessions
+* Save Python objects in a datastore
+* Save model objects in a datastore
+* Load datastore objects into memory
+* View datastore and its details
+* Manage datastore privileges
+* Delete datastores
 
 ### Prerequisites
 
