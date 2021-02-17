@@ -56,38 +56,7 @@ In this Step, you will create and set up your GitHub account.
 5. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
     ![](./images/git-2-factor-authentication.png " ")
 
-## **Step 4:** Add Your GitHub Account to Oracle Organization
-You must request membership to the Oracle GitHub Organization (OGHO). After your membership is approved, your GitHub account is added to the Oracle organization.
-
-1. Send a membership request from your Oracle email address to `opensource_ww_grp@oracle.com`.
-
-    * **Subject**: **[New Contributor] @your-github-username**
-    * Provide proof (screenshot) that you have added @oracle.com email to your GitHub account:
-    ![](./images/get-started-git-hub-profile-proof.png " ")
-    * Provide proof (screenshot) that you have 2-Factor authentication enabled for your GitHub account
-      ![](./images/get-started-git-hub-2FA-proof.png " ")
-      * Specify which project you will be working on and in what capacity (contributor, maintainer, etc)
-2. Await the invitation from them. Note that you will receive an email only if your account follows the guidelines mentioned in Step 1.
-3. Accept the invitation that you receive or go to the organization page you requested membership for, and accept the invitation at the top of the page.
-
-## **Step 5:** Publicize your Membership
-
-1. In the top right corner of [GitHub Profile Settings](https://github.com/settings/profile), click your profile photo, then click **Your profile**.
-  ![](./images/git-get-started-profile.png " ")
-
-2. On the left side of your profile page, under **Personal Settings**, click **Organizations** to display the **Organizations** page and then click the icon for your organization.
-    ![](./images/git-get-started-profile-second.png " ")
-
-3. Under your organization name, click **People**.
-4. Locate your username in the list of members. If the list is large, then you can search for your username in the search box.
-5. In the menu to the right of your username, choose **Public** as the new visibility option:
-    ![](./images/git-get-started-public-profile.png " ")
-
-6. Send an email to `github_info_ww_grp@oracle.com` that you have made your membership public. Now you are an official member of the main Oracle Organization on GitHub (OGHO).
-
-  **Note**: If you don't make your membership public, then you will be removed from the organization within 30-days of the initial request to be added.
-
-## **Step 6:** Install GitHub Desktop
+## **Step 4:** Install GitHub Desktop
 The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow. It is much easier than using Git command line.
 
 To setup the GitHub Development Environment and install **GitHub Desktop**:
@@ -107,7 +76,7 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
     You are now logged in to **GitHub Desktop**.
     ![](./images/get-started-git-hub-desktop.png " ")
 
-## **Step 7:** Fork the learning-library Repository on Your GitHub Account
+## **Step 5:** Fork the learning-library Repository on Your GitHub Account
   We create workshops and labs in the **learning-library** repository of the **oracle** project. You must fork the learning-library repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked repository and you can edit its contents without affecting the parent repository.
 
   For example, if a user named achepuri forks the learning-library repository in the oracle project, a duplicate repository [achepuri/learning-library](https://github.com/achepuri/learning-library) is created.
@@ -124,7 +93,7 @@ In the following example, user achepuri has forked the **learning-library** repo
 
 In the next Step, you will clone this forked repository.
 
-## **Step 8:** Clone the Forked Repository
+## **Step 6:** Clone the Forked Repository
 A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as **Atom** editor, and use the **GitHub Desktop** client to keep track of your changes without having to be online.
 
 To clone the forked repository:
