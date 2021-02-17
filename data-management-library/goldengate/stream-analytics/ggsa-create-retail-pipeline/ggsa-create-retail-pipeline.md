@@ -30,11 +30,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Brown Buttons* only)
+    - Lab: Prepare Setup (*Brown Buttons* only)
     - Lab: Environment Setup
+    - Lab: Initialize Environment
 
-## **STEP 0:** Import Resources
+## **Step 1:** Import Resources
 
 1. Click on the Home page and Import the Retail example
 
@@ -78,7 +79,7 @@ You need to create a pipeline that includes about 17 stages and resources.  Befo
     - **LikelyBuyersByZipCode:** Visualization that we will use for this lab
     - **LikelyBuyersByCustomerType:** Visualization that we will use for this lab
 
-## **STEP 1:** Create Pipeline
+## **Step 2:** Create Pipeline
 
 1. Start by selecting Pipeline from the Create New Item drop down in the Catalog page.  Make sure you select the appropriate Stream for this pipeline.  Name the pipeline *RetailPromotions*.
 
@@ -92,7 +93,7 @@ You need to create a pipeline that includes about 17 stages and resources.  Befo
 
 Now that we have the order history we would like to enrich this data with the customer details from the database.  
 
-## **STEP 2:** Create GetCustomerDetails Stage
+## **Step 3:** Create GetCustomerDetails Stage
 
 1. Right click on the OrderStream and add a Query Stage.  
 
@@ -111,7 +112,7 @@ Now that we have the order history we would like to enrich this data with the cu
     ![](./images/getcustomerdetails3.png " ")
 
 5. Pick *Match Any* condition because we would like to use an *OR* condition. Click on *Add a Condition* and for each field pick the appropriate value from the drop down shown in the Example below.
-  
+
 
     ![](./images/getcustomerdetails4.png " ")
 
@@ -138,7 +139,7 @@ Now that we have the order history we would like to enrich this data with the cu
 
 8. At any time during design of a pipeline you can click on Done button on the top left to exit the pipeline and get back to the catalog.  All your changes will be saved.
 
-## **STEP 3:** Create GetLatLongFromZipCode Stage
+## **Step 4:** Create GetLatLongFromZipCode Stage
 
 In this stage we would like to map a customer’s zip code to an actual latitude and longitude.
 
@@ -150,7 +151,7 @@ In this stage we would like to map a customer’s zip code to an actual latitude
 
     ![](./images/getlatlongfromzipcode.png " ")
 
-## **STEP 4:** Create FilterCustomers Stage
+## **Step 5:** Create FilterCustomers Stage
 
 In the next stage we are only interested in customers that are located in our campaign regions and filter out everyone else.
 
@@ -171,7 +172,7 @@ In the next stage we are only interested in customers that are located in our ca
 
     ![](./images/geofiltervisual.png " ")
 
-## **STEP 5:** Create GetProductDetails Stage
+## **Step 6:** Create GetProductDetails Stage
 
 In the this stage we would like to retrieve the product details from local database for those products that the customers have purchased by joining two sources.
 
@@ -187,7 +188,7 @@ In the this stage we would like to retrieve the product details from local datab
 
     ![](./images/getproductdetails2.png " ")
 
-## **STEP 6:** Create SegmentCustomers Stage
+## **Step 7:** Create SegmentCustomers Stage
 
 Now we would like to add a Rule Stage to segment our customers based on what they have spent on their previous purchases by adding two additional fields based on rules defined below.
 
@@ -204,7 +205,7 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 
 3. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it CustomerType.  
 
-    
+
 
 4. Use *`(fx)`* again and add a new field as a numerical value.  
 5. For a numerical value make sure to begin the expression with `=` sign. You can give it default value like `=0`.  
@@ -212,7 +213,7 @@ Now we would like to add a Rule Stage to segment our customers based on what the
     ![](./images/discountoffered.png " ")
 
 6. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it to DiscountOffered.
-   
+
    ![](./images/newaddedfields.png " ")
 
 7. Now right click on the GetProductDetails stage and add a Rule Stage
@@ -224,19 +225,21 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 
     ![](./images/goldcustomers.png " ")
 
-If they have purchased ELECTRONICS AND the storesales (*Match All*) greater than $50 AND storesales  lower than or equal $900
-Then offer them a $5 discount as DiscountOffered and set the CustomerType to *GOLD*
-Category:
+    If they have purchased ELECTRONICS AND the storesales (*Match All*) greater than $50 AND storesales  lower than or equal $900 Then offer them a $5 discount as DiscountOffered and set the CustomerType to *GOLD*
+
+      - Category:
 
     ```
     <copy>ELECTRONICS</copy>
     ```
-Discount:
+
+      - Discount:
 
     ```
     <copy>5</copy>
     ```
-Segment:
+
+      - Segment:
 
     ```
     <copy>GOLD</copy>
@@ -244,19 +247,21 @@ Segment:
 
     - *DiamondCustomers:*
 
-If they have purchased both FURNITURE and spent between $900 AND $1500
-Then offer them a $10 discount as DiscountOffered and set the CustomerType to *Diamond*
-Category:
+    If they have purchased both FURNITURE and spent between $900 AND $1500 Then offer them a $10 discount as DiscountOffered and set the CustomerType to *Diamond*
+
+      - Category:
 
     ```
     <copy>FURNITURE</copy>
     ```
-Discount:
+
+      - Discount:
 
     ```
     <copy>10</copy>
     ```
-Segment:
+
+      - Segment:
 
     ```
     <copy>Diamond</copy>
@@ -264,24 +269,25 @@ Segment:
 
     - *PlatinumCustomers:*
 
-If they have purchased any product and spent more than $1500
-Then offer them a $25 discount as DiscountOffered and set the CustomerType to *Platinum*
-Discount:
+    If they have purchased any product and spent more than $1500 Then offer them a $25 discount as DiscountOffered and set the CustomerType to *Platinum*
+
+      - Discount:
 
     ```
     <copy>25</copy>
     ```
-Segment:
+
+      - Segment:
 
     ```
     <copy>Platinum</copy>
     ```
 
-Note that all other customers are automatically segmented as *BRONZE*.
+    *Note* that all other customers are automatically segmented as *BRONZE*.
 
-We are going to use the data from this stage in two ways which is why we are going to create two branches out from this stage.  In the first branch we will do some analysis on the revenue generated by customer types, i.e. the revenue amount generated by each segment.
+    We are going to use the data from this stage in two ways which is why we are going to create two branches out from this stage.  In the first branch we will do some analysis on the revenue generated by customer types, i.e. the revenue amount generated by each segment.
 
-## **STEP 7:** Create RealtimeRevenue Stage
+## **Step 8:** Create RealtimeRevenue Stage
 After we have segmented the customers we need to Filter out all the customers that don’t generate any revenue.  
 
 1. Begin by adding a Query Stage to the SegmentCustomers stage and name it *RealtimeRevenue*.  
@@ -308,7 +314,7 @@ After we have segmented the customers we need to Filter out all the customers th
 
 Now we are going to create a parallel branch at the SegmentCustomers stage.  We are going to create this parallel branch to make predictions whether the customer is likely to redeem the offer based on their WebSales and StoreSales and the amount of Avgdiscount that is being offered.  
 
-## **STEP 8:** Create PredictBuyNoBuy Stage
+## **Step 9:** Create PredictBuyNoBuy Stage
 
 1. Begin by creating a new Scoring stage by right clicking on the SegmentCustomers stage.  
 
@@ -327,7 +333,7 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 
 9.  See them streaming in the Live Output region at the bottom of the screen.
 
-## **STEP 9:** Create GetCustomer Stage
+## **Step 10:** Create GetCustomer Stage
 
 1. Once again and from the SegmentCustomers stage we also like to define a parallel stage (to the PredictBuyNoBuy stage) so that we have access to the data in the previous stage by creating a query stage.  
 2. Right click on the SegmentCustomers stage and create a new query stage.  
@@ -338,11 +344,13 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 7. Now run the following queries or Correlation Conditions:
 
     ```
+    <copy>
     Storesales_1 equals STORESALES**
     AND
     Websales_1 equals WEBSALES
     AND
     Avgdiscount_1 equals AVGDISCOUNT
+    </copy>
     ```
 
 8. Be sure to select Now and not Unspecified.
@@ -350,7 +358,7 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 
     ![](./images/getcustomer.png " ")
 
-## **STEP 10:** Create FilterLikelyBuyers Stage
+## **Step 11:** Create FilterLikelyBuyers Stage
 
 1. From the GetCustomer stage add a new Query Stage.
 2. Name the new stage *FilterLikelyBuyers*.
@@ -358,20 +366,20 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 3. Add a description: Removes customers who are unlikely to redeem the offer.  Click Save.
 
 4. In the lower right hand corner of the screen click on Columns:
-   
+
    ![](./images/selectcolumns.png " ")
 
 5. In the Columns window click on the left double arrows to deselect all the columns.  Then click on the right single arrow to individually select the columns shown.  Click Save.
- 
+
    ![](./images/selectedcolumns.png " ")
 
 6. In this stage we are only interested in customers that are likely to take advantage of the offer by querying for all the customers whose RedeemPrediction equals (case sensitive) 1.
-  
+
 7. Click on the *Filters* tab and Add a Filter.
 
     ![](./images/filterlikelybuyers.png " ")
 
-## **STEP 11:** Create PersistPredictionsToKafka Stage
+## **Step 12:** Create PersistPredictionsToKafka Stage
 
 In the last stage we are interested in sending the data to a Kafka Target by mapping the topic params to the stream parameters.  Again the topic could be created before the pipeline is built or as the stage is being created.
 1. Right click on the FilterLikelyBuyers stage and create a new Target Stage.
@@ -382,7 +390,7 @@ In the last stage we are interested in sending the data to a Kafka Target by map
 
     ![](./images/predicttokafka.png " ")
 
-## **STEP 12:** Create LikelyBuyersByTypeAndZip Stage
+## **Step 13:** Create LikelyBuyersByTypeAndZip Stage
 
 Create a parallel stage to group the likely buyers by type and by zip code.
 
@@ -402,23 +410,37 @@ Create a parallel stage to group the likely buyers by type and by zip code.
     ![](./images/likelybuyersbytypeandzipgroups.png " ")
 
 9.  Click on the Visualizations tab and create a Pie chart for the LikelyBuyersByCustomerType:
-    
+
     ![](./images/createpiechartfortypes.png " ")
 
 10. Repeat the same step and create a Bar chart for the LikelyBuyersByZipCode.
 
     ![](./images/likelybuyersbytypeandzipvisual.png " ")
 
-*You may now proceed to the next lab*.
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on any of the **Brown Buttons** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
