@@ -320,7 +320,7 @@ https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/ma
 --header 'Authorization: Bearer yuNINeg1uqHIivqDDgJnfQ' 
 ````
 
-    We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
+16. We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
 
     ![](../images/SDW-58.png)
 
