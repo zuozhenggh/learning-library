@@ -102,7 +102,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![](../images/SDW-15.png)
 
-    If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.
+**If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
 2. We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
 
@@ -238,7 +238,7 @@ We need to load some data into the database so that we can create some REST serv
 
 ## **Step 4**: Securing the REST Endpoint
 
-    If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.
+**If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
 1. So, we have a REST enabled table ready to be used by our applications but we need to ensure not just anyone can use it; we need to secure access to the table. To do this, let's use the Database Actions menu in the upper left of the page and choose REST.
 
