@@ -120,10 +120,8 @@ The Upload Data into New Table model will appear.
 ![](../images/SDW-18.png)
 
 We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
-<div>
-<a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/tKIZjBqerdxe-PkpUv5cELZaMRcUIYu1LVe2EqPez8A5of0XTih2eLdVGGV0t1on/n/c4u03/b/developer-library/o/may2018.csv" target="_blank">May 2018 Earthquakes</a>
-</div>
 
+(right-click and download the file with the following link)
 [May 2018 Earthquakes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/tKIZjBqerdxe-PkpUv5cELZaMRcUIYu1LVe2EqPez8A5of0XTih2eLdVGGV0t1on/n/c4u03/b/developer-library/o/may2018.csv)
 
 Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
