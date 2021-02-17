@@ -315,8 +315,9 @@ We need to load some data into the database so that we can create some REST serv
 15. Take the token text we previously copied and replace <VALUE> in the curl command with that text. Then run the curl command using the OCI Cloud Shell:
 
 ````
-> curl --location 'https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556' --header 'Authorization: Bearer yuNINeg1uqHIivqDDgJnfQ' 
-
+> curl --location '\
+https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556' \
+--header 'Authorization: Bearer yuNINeg1uqHIivqDDgJnfQ' 
 ````
 
     We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
