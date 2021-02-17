@@ -15,7 +15,15 @@ Estimated Lab Time: 120 minutes
 ### Objectives
 
 In this lab, you will:
-* Provision
+* Setup your Upgrade Compute Instance in the Cloud
+* Load the database
+* Capture and Preserve SQL
+* Perform Auto Upgrade tasks
+* Run an AWR Diff Report
+* Analyze SQL
+* Tune and manage SQL Plans
+* Perform upgrades using the plugin method
+* and more. . .
 
 
 ### Prerequisites
