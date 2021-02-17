@@ -4,147 +4,143 @@
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
 
-Estimate time: 30-45 minutes
+Estimated Lab Time: 30-45 minutes
 
 ### Objectives
 - Enable a user for REST access
 - Publish a RESTful service for a database table
 - Secure the REST service
 
-### Required Artifacts
+### Prerequisites
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-### Prerequisites
 This workshop assumes you have completed the following labs:
 * [Login to Oracle Cloud](?lab=lab-1-login-oracle-cloud)
 * [Provision an Autonomous Database](?lab=lab-2-provision-autonomous-database)
 * [Connect to ADB with SQL Dev Web](?lab=lab-3-connect-adb-sql-dev-web)
 
-### Developing RESTful Services in Autonomous Database
-You have several development interfaces available, including:
-* SQL Developer - Web or Desktop
-* APEX
-* PL/SQL API
+## **STEP 1**: Create a user for Application Development
+1. First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
-## **Step 1**: Create a user for Application Development
-First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
+    ![](../images/SDW-1.png)
 
-![](../images/SDW-1.png)
+2. Now, click the Create User button on the left side of the page. This will slide out the Create User panel.
 
-Now, click the Create User button on the left side of the page. This will slide out the Create User panel.
+    ![](../images/SDW-2.png)
 
-![](../images/SDW-2.png)
-
-Start by entering a user name. Let's use GARY as the username. Next we need to enter a password. The password must be complex enough to pass the password profile set by the database. The rules are as follows:
+3. Start by entering a user name. Let's use GARY as the username. Next we need to enter a password. The password must be complex enough to pass the password profile set by the database. The rules are as follows:
 
 Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
 
 
-Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look similar to the following image:
+4. Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look similar to the following image:
 
-![](../images/SDW-3.png)
+    ![](../images/SDW-3.png)
 
 Once you are ready, click the Create User button on the bottom of the panel to create the database user.
 
-We next need to give this new user some space to create objects and data. For this, we need to go back to the SQL worksheet and run a simple statement. To get back to the SQL Worksheet, again click the Database Actions menu in the upper left and select SQL in the Development List.
+5. We next need to give this new user some space to create objects and data. For this, we need to go back to the SQL worksheet and run a simple statement. To get back to the SQL Worksheet, again click the Database Actions menu in the upper left and select SQL in the Development List.
 
-![](../images/SDW-4.png)
+    ![](../images/SDW-4.png)
 
-On the SQL Canvas, copy and paste the following statement:
+6. On the SQL Canvas, copy and paste the following statement:
     ````
     <copy>alter user gary quota unlimited on data;</copy>
     ````
 Once copied on the canvas, click the run button on the worksheet toolbar.
 
-![](../images/SDW-5.png)
+    ![](../images/SDW-5.png)
 
-On the bottom of the worksheet, in the Script Output, you should see that the user Gary has been altered and the quota granted.
+7. On the bottom of the worksheet, in the Script Output, you should see that the user Gary has been altered and the quota granted.
 
-![](../images/SDW-6.png)
+    ![](../images/SDW-6.png)
 
 
-## **Step 2**: Load data into the database
+## **STEP 2**: Load data into the database
 
 We need to load some data into the database so that we can create some REST services upon those tables and data. To do this, we need to login as our newly created user. We have two ways to switch users.
 
 **User Changing Method 1:**
 
-The first method requires us to sign out and back in. Start by clicking the Admin user dropdown menu in the upper right, then selecting Sign Out.
+1. The first method requires us to sign out and back in. Start by clicking the Admin user dropdown menu in the upper right, then selecting Sign Out.
 
-![](../images/SDW-7.png)
+    ![](../images/SDW-7.png)
 
-On the page the follows, click Sign In
+2. On the page the follows, click Sign In
 
-![](../images/SDW-8.png)
+    ![](../images/SDW-8.png)
 
-On the next page, enter gary as the username and click Next
+3. On the next page, enter gary as the username and click Next
 
-![](../images/SDW-9.png)
+    ![](../images/SDW-9.png)
 
-And on the final page, enter the password you used when you created the user and click Sign In.
+4. And on the final page, enter the password you used when you created the user and click Sign In.
 
-![](../images/SDW-10.png)
+    ![](../images/SDW-10.png)
 
 This will bring you back to Database Actions but as the user we created.
 
-![](../images/SDW-11.png)
+    ![](../images/SDW-11.png)
 
 **User Changing Method 2:**
 
-As the Admin user, in the upper left of the page, click the Database Actions Menu. In the Administration List, select Database Users; just as we did previously when creating Gary.
+1. As the Admin user, in the upper left of the page, click the Database Actions Menu. In the Administration List, select Database Users; just as we did previously when creating Gary.
 
-![](../images/SDW-12.png)
+    ![](../images/SDW-12.png)
 
-Find Gary's user title and click the open-in-new-tab icon ![](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
+2. Find Gary's user title and click the open-in-new-tab icon ![](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
 
-![](../images/SDW-13.png)
+    ![](../images/SDW-13.png)
 
-Enter Gary as the Username and then his password in the password field. Then click Sign in.
+3. Enter Gary as the Username and then his password in the password field. Then click Sign in.
 
-![](../images/SDW-14.png)
+    ![](../images/SDW-14.png)
 
-In either login method, we end up on the overview page. Now click the SQL tile.
+4. In either login method, we end up on the overview page. Now click the SQL tile.
 
-![](../images/SDW-15.png)
+    ![](../images/SDW-15.png)
+
+**Loading Data**
 
 We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
 
-![](../images/SDW-16.png)
+    ![](../images/SDW-16.png)
 
-Start by clicking the Data Loading area; the center of the gray dotted-line box.
+1. Start by clicking the Data Loading area; the center of the gray dotted-line box.
 
-![](../images/SDW-17.png)
+    ![](../images/SDW-17.png)
 
-The Upload Data into New Table model will appear.
+2. The Upload Data into New Table model will appear.
 
-![](../images/SDW-18.png)
+    ![](../images/SDW-18.png)
 
-We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
+3. We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
 
-(right-click and download the file with the following link)
+**(right-click and download the file with the following link)**
+
 [May 2018 Earthquakes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/tKIZjBqerdxe-PkpUv5cELZaMRcUIYu1LVe2EqPez8A5of0XTih2eLdVGGV0t1on/n/c4u03/b/developer-library/o/may2018.csv)
 
-Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
+4. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
-![](../images/SDW-19.png)
+    ![](../images/SDW-19.png)
 
-The model will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
+5. The model will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
 
-![](../images/SDW-20.png)
+    ![](../images/SDW-20.png)
 
 On the following step of the data loading modal, we can see the name of the table we are going to create as well as the column and data types for the table.
 
-![](../images/SDW-21.png)
+    ![](../images/SDW-21.png)
 
-Let's edit a few of these columns. We need a Primary Key for our table. Here, we can use the ID column. Just click the PK checkbox for the ID row.
+6. Let's edit a few of these columns. We need a Primary Key for our table. Here, we can use the ID column. Just click the PK checkbox for the ID row.
 
-![](../images/SDW-22.png)
+    ![](../images/SDW-22.png)
 
-Next, we want to take the TIME column and make it a TIMESTAMP type. Do this by selecting TIMESTAMP from the Column Type dropdown.
+7. Next, we want to take the TIME column and make it a TIMESTAMP type. Do this by selecting TIMESTAMP from the Column Type dropdown.
 
-![](../images/SDW-23.png)
+    ![](../images/SDW-23.png)
 
-Next, we need to set the timestamp format so that we can load it into the database. Just to the right of the Column Type you will find a Format Mask column. (You may need to use the horizontal scroll bar to see the column to the right)
+8. Next, we need to set the timestamp format so that we can load it into the database. Just to the right of the Column Type you will find a Format Mask column. (You may need to use the horizontal scroll bar to see the column to the right)
 
 Enter the following into that column:
 
@@ -152,41 +148,41 @@ Enter the following into that column:
 
 You can check the image below for guidance.
 
-![](../images/SDW-24.png)
+    ![](../images/SDW-24.png)
 
-Next, we are going to change the LATITUDE, LONGITUDE, DEPTH and MAG columns to NUMBER column Types. Again, use the Column Type dropdown select list to choose NUMBER for each of them. We also need to set the SCALE of each of these columns so that we retain the values to the right of the decimal point.
+9. Next, we are going to change the LATITUDE, LONGITUDE, DEPTH and MAG columns to NUMBER column Types. Again, use the Column Type dropdown select list to choose NUMBER for each of them. We also need to set the SCALE of each of these columns so that we retain the values to the right of the decimal point.
 
 Set the scale to 7 for LATITUDE, 7 for LONGITUDE, 3 for DEPTH, and 3 for MAG.
 
-![](../images/SDW-25.png)
+    ![](../images/SDW-25.png)
 
-Click Next on the bottom right of the modal when done.
+10. Click Next on the bottom right of the modal when done.
 
 On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
 
-![](../images/SDW-26.png)
+    ![](../images/SDW-26.png)
 
-When you are done taking a look, click the Finish button in the lower right of the modal.
+11. When you are done taking a look, click the Finish button in the lower right of the modal.
 
-![](../images/SDW-27.png)
+    ![](../images/SDW-27.png)
 
 The Data Loader will now process the file by creating a table and loading the CSV file data into that table. 
 
-![](../images/SDW-28.png)
+    ![](../images/SDW-28.png)
 
 Once its done, you will see a row in the Data Loading tab that indicates how many rows were uploaded, if any failed and the table name.
 
-![](../images/SDW-29.png)
+    ![](../images/SDW-29.png)
 
-We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
+12. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
-<img src="../images/SDW-30.png" width="250px">
+    <img src="../images/SDW-30.png" width="250px">
 
 In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
-![](../images/SDW-31.png)
+    ![](../images/SDW-31.png)
 
-## **Step**3: Auto-REST enable a table
+## **STEP3: Auto-REST enable a table**
 
 REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
