@@ -76,7 +76,7 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
     You are now logged in to **GitHub Desktop**.
     ![](./images/get-started-git-hub-desktop.png " ")
 
-## **Step 6:** Fork the learning-library Repository on Your GitHub Account
+## **Step 5:** Fork the learning-library Repository on Your GitHub Account
   We create workshops and labs in the **learning-library** repository of the **oracle** project. You must fork the learning-library repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked repository and you can edit its contents without affecting the parent repository.
 
   For example, if a user named achepuri forks the learning-library repository in the oracle project, a duplicate repository [achepuri/learning-library](https://github.com/achepuri/learning-library) is created.
@@ -93,7 +93,7 @@ In the following example, user achepuri has forked the **learning-library** repo
 
 In the next Step, you will clone this forked repository.
 
-## **Step 5:** Clone the Forked Repository
+## **Step 6:** Clone the Forked Repository
 A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as **Atom** editor, and use the **GitHub Desktop** client to keep track of your changes without having to be online.
 
 To clone the forked repository:
