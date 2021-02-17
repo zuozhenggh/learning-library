@@ -124,7 +124,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![](../images/SDW-19.png)
 
-7. The model will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
+7. The modal will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
 
     ![](../images/SDW-20.png)
 
