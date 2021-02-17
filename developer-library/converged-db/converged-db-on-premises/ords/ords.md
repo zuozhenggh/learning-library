@@ -13,7 +13,7 @@ ORDS is a Java application that enables developers with SQL and database skills 
 
 ![](./images/ords1.png " ")
 
-For More Details About ORDS [Click here](#Appendix:LearnMoreaboutORDS)
+For More Details About ORDS [Click here](#Appendix:MoreaboutORDS)
 
 <!-- **Install ORDS using SQL Developer**
 
@@ -1140,7 +1140,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 
 **This concludes this lab.**
 
-## **Appendix**: Learn More about ORDS
+## **Appendix**: More about ORDS
 **Install ORDS using SQL Developer**
 
 Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use [SQL Developer](https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html) to install the ORDS version or install ORDS standalone.

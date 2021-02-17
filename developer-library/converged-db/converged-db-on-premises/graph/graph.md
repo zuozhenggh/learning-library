@@ -12,7 +12,7 @@ Graph analytics is another commonly used term, and it refers specifically to the
 
 [](youtube:-DYVgYJPbQA)
 
-For More Details About Oracle Graph [Click here](#Appendix2:LearnMoreaboutOracleGraph)
+For More Details About Oracle Graph [Click here](#Appendix2:MoreaboutOracleGraph)
 
 ### Objectives
 In this lab, you will:
@@ -169,7 +169,7 @@ The below screenshot is an example of what a Connection to a PGX server using Js
 ## **STEP 2**: Create Graph
 
 For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. 
-If you want to learn more about the Create Graph [Click here](#Appendix:CreateGraph)
+If you want to learn more about the Create Graph [Click here](#Appendix1:CreateGraph)
 
 
 ## **STEP 3**: Querying Graph using PGQL
@@ -574,7 +574,7 @@ The important ones are the ones that store the vertices (`OE SAMPLE GRAPHVT$`) a
     ```
     Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
     ```
-## **Appendix 2**: Learn More about Oracle Graph
+## **Appendix 2**: More about Oracle Graph
 **Oracle Graph Server and Client**
 
 It is a software package for use with the Property Graph feature of Oracle Database. Oracle Graph Server and Client includes the high speed in-memory analytics server (PGX) and client libraries required for graph applications.

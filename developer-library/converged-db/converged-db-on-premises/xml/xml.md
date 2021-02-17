@@ -23,7 +23,7 @@ XML can also support nested elements, or elements within elements. This ability 
 
 [](youtube:lGQvxPCYR2c)
 
-For More Details About Oracle XML [Click here](#Appendix1:LearnMoreaboutOracleXML)
+For More Details About Oracle XML [Click here](#Appendix1:MoreaboutOracleXML)
 
 ### Objectives
 In this lab, you will:
@@ -357,7 +357,7 @@ This lab assumes you have:
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
-## **Appendix 1**: Learn More about Oracle XML
+## **Appendix 1**: More about Oracle XML
 ### **XML with Oracle Database**
 
 - Oracle XML DB is a high-performance, native XML storage and retrieval technology that is delivered as a part of all versions of Oracle Database.

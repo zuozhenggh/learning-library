@@ -17,7 +17,7 @@ This way we can work with the data as JavaScript objects, with no complicated pa
 
 [](youtube:oiOCp23T1ZU)
 
-For More Details About Oracle JSON [Click here](#Appendix2:LearnMoreaboutOracleJSON)
+For More Details About Oracle JSON [Click here](#Appendix2:MoreaboutOracleJSON)
 
 ### Objectives
 In this lab, you will:
@@ -535,7 +535,7 @@ For this , we will create two views next
 
 <!-- **This concludes this lab. You may now [proceed to the next lab](#next).** -->
 
-## **Appendix 2**: Learn More about Oracle JSON
+## **Appendix 2**: More about Oracle JSON
 
 **JSON with Oracle Database**
 
