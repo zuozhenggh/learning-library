@@ -35,20 +35,20 @@
             "title": "Lab 5: AutoUpgrade",
             "filename": "../../upgrade/upgrade-to-19c.md"
         }, {
-            "title": "Lab 5: AWR Diff Report",
-            "filename": "../../upgrade/awr-diff.md"
+            "title": "Lab 5: AWR Compare Report",
+            "filename": "../../awr-compare/awr-compare.md"
         },
         {
             "title": "Lab 6: SQL Performance Analyzer",
-            "filename": "../../upgrade/sql-perf-analyzer.md"
+            "filename": "../../sql/sql-perf-analyzer.md"
         },
         {
             "title": "Lab 7: SQL Plan Management",
-            "filename": "../../upgrade/sql-plan-mgmt.md"
+            "filename": "../../sql/sql-plan-mgmt.md"
         },
         {
             "title": "Lab 8: SQL Tuning Advisor",
-            "filename": "../../upgrade/sql-tuning-advisor.md"
+            "filename": "../../sql/sql-tuning-advisor.md"
         },
         {
             "title": "Lab 9: Plugin UPGR into CDB2",

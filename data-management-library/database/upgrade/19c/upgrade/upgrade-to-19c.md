@@ -20,23 +20,21 @@ In this lab, you will:
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
-
 ## **STEP 1**: Preparation
 
-The only task you’ll have to do when using the AutoUpgrade: You need to prepare a config file for the database(s).
-The environment variable $OH19 is created only for your convenience. It points always to the Oracle 19c Home.
+1.  The only task you’ll have to do when using the AutoUpgrade: You need to prepare a config file for the database(s).
+2. The environment variable $OH19 is created only for your convenience. It points always to the Oracle 19c Home.
 
-    ````
+    ```
+    <copy>
     . upgr
     java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file 
     config
-     ````
+    </copy>
+    ```
 
 This tells you that the sample file has been created at:
 
@@ -56,7 +54,7 @@ Open the file /home/oracle/sample_config.cfg in your preferred editor (text or g
     kwrite /home/oracle/scripts/sample_config.cfg &
 
 Adjust the following things:
-Generated standard config.cfg 	Make the following adjustments:
+3. Generated standard config.cfg 	Make the following adjustments:
 
     ````
     # Global configurations
@@ -106,7 +104,8 @@ Then save the file and name it as UPGR.cfg in /home/oracle/scripts.
 If you saved it under its original name, sample_config.cfg, rename it as shown below:
 
 mv /home/oracle/scripts/sample_config.cfg /home/oracle/scripts/UPGR.cfg
-2. ANALYZE Phase
+
+## **STEP 2**: ANALYZE Phase
 
 It is best practice to run AutoUpgrade in analyze mode at first. Once the analyze phase is passed without issues, the database can be upgraded automatically (the below command is a one-line command!).
 

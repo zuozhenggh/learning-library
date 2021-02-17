@@ -87,7 +87,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Mike Dietrich, Database Product Management
-* **Contributors** -  Roy Swonger, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
 * **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
