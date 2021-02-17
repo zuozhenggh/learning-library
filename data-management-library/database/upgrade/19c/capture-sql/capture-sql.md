@@ -1,17 +1,27 @@
-# Query Your Data
+# Capture and Preserve SQL
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab you will capture and preserve SQL statements and information as well as the AWR. We’ll use this collection later on following a performance stability method guideline.
+
+![](./images/capturesql.png " ")
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+### About SQL Tuning Sets
+A SQL tuning set (STS) is a database object that you can use as input to tuning tools. The database stores SQL tuning sets in a database-provided schema. An STS includes:
+
+- A set of SQL statements
+- Associated execution context, such as user schema, application module name and action, list of bind values, and the environment for SQL compilation of the cursor
+- Associated basic execution statistics, such as elapsed time, CPU time, buffer gets, disk reads, rows processed, cursor fetches, the number of executions, the number of complete executions, optimizer cost, and the command type
+- Associated execution plans and row source statistics for each SQL statement (optional)
+
+An STS allows you to transport SQL between databases.  You can export SQL tuning sets from one database to another, enabling transfer of SQL workloads between databases for remote performance diagnostics and tuning. When suboptimally performing SQL statements occur on a production database, developers may not want to investigate and tune directly on the production database. The DBA can transport the problematic SQL statements to a test database where the developers can safely analyze and tune them.
+
+![](./images/sqltuningset.png " ")
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
 In this lab, you will:
 * Objective 1
@@ -20,44 +30,47 @@ In this lab, you will:
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
+## **STEP 1**: Collect Statements from AWR
 
 In order to collect SQL Statements directly from AWR (Automatic Workload Repository) you’ll call a SQL script which:
+- Creates a SQL Tuning Set (STS)
+- Populates the STS with SQL information stored in AWR
 
-    Creates a SQL Tuning Set (STS)
-    Populates the STS with SQL information stored in AWR
+1.  Login to Oracle Cloud
+2.  Run the script stored in /home/oracle/scripts:
 
-The script is stored in /home/oracle/scripts:
-
+    ````
+    <copy>
     capture_awr.sql
+    </copy>
+    ````
 
-In your open SQL*plus session connected to UPGR run:
+3. In your open SQL*plus session connected to UPGR run the statement below.  The number of statements in SQL Tuning Set “STS_CaptureAWR” will be displayed.
 
-@/home/oracle/scripts/capture_awr.sql
 
-The number of statements in SQL Tuning Set “STS_CaptureAWR” will be displayed.
-Collect Statements from Cursor Cache
+    ````
+    <copy>
+    @/home/oracle/scripts/capture_awr.sql
+    </copy>
+    ````
+
+## **STEP 2**: Collect Statements from Cursor Cache
 
 You can also collect statements directly from the Cursor Cache. This is more resource intense but helpful in case of OLTP applications. Be careful when you poll the cursor cache too frequently.
 
 This procedure:
 
-    Creates a SQL Tuning Set (STS)
-    Populates the STS with SQL statements/information from the cursor cache
-    It will poll the cursor cache for 240 seconds every 10 seconds
+- Creates a SQL Tuning Set (STS)
+- Populates the STS with SQL statements/information from the cursor cache
+- It will poll the cursor cache for 240 seconds every 10 seconds
 
 The script is stored in /home/oracle/scripts:
 
     capture_cc.sql
 
-You have used it already when you ran HammerDB before.
+You used it already when you ran HammerDB in the earlier lab.
 Hence, no need to run it again.
 
 @/home/oracle/scripts/capture_cc.sql —don’t run it again!!!
@@ -67,41 +80,50 @@ The number of statements in SQL Tuning Set “STS_CaptureCursorCache” will be 
 But now check, how many statements you’ve collected in each SQL Tuning Set:
 
 select name, owner, statement_count from dba_sqlset;
-Export AWR
+
+## **STEP 2**: Optional - Export AWR
 
 Especially when you migrate databases, exporting and preserving the AWR is important. When you upgrade, the AWR will stay in the database. This exercise is only done for protection but not necessary for the flow of the lab.
 
-Export the AWR with:
+1. Export the AWR by running the sql stored in your Oracle home.
 
-@?/rdbms/admin/awrextr.sql
+    ````
+    <copy>
+    @?/rdbms/admin/awrextr.sql
+    </copy>
+    ````
 
-Databases in this Workload Repository schema
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ````
+    Databases in this Workload Repository schema
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   DB Id     DB Name	  Host
------------- ------------ ------------
-* 72245725   UPGR	  localhost.lo
-			  caldomain
-
-
-The default database id is the local one: '72245725'.  To use this
-database id, press  to continue, otherwise enter an alternative.
-
-Enter value for dbid:
-
-Hit RETURN.
-
-Using 72245725 for Database ID
+    DB Id     DB Name	  Host
+    ------------ ------------ ------------
+    * 72245725   UPGR	  localhost.lo
+                caldomain
 
 
-Specify the number of days of snapshots to choose from
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Entering the number of days (n) will result in the most recent
-(n) days of snapshots being listed.  Pressing  without
-specifying a number lists all completed snapshots.
+    The default database id is the local one: '72245725'.  To use this
+    database id, press  to continue, otherwise enter an alternative.
+
+    Enter value for dbid:
+    ````
+
+2. Hit RETURN.
+
+    ````
+    Using 72245725 for Database ID
 
 
-Enter value for num_days:
+    Specify the number of days of snapshots to choose from
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Entering the number of days (n) will result in the most recent
+    (n) days of snapshots being listed.  Pressing  without
+    specifying a number lists all completed snapshots.
+
+
+    Enter value for num_days:
+    ````
 
 Type: 2
 Hit RETURN.
