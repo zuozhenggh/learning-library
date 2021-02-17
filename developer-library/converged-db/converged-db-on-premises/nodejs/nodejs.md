@@ -1,24 +1,18 @@
 # Oracle Node.js
 
 ## Introduction
-
 This lab walks you through the steps to start the Docker and Node.js Retail application. You will connect to a Node.js running in a Docker container on an Oracle Cloud Compute instance. While you can connect the Oracle Database instance using any client of your choice, in this lab you will connect using Oracle SQL Developer.
 
 *Estimated Lab Time*: 20 Minutes
 
 ### About Oracle Node.js
-
 Node.js is an open-source and cross-platform JavaScript runtime environment. It runs the V8 JavaScript engine, outside of the browser. This allows Node.js to be very performant. Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
-
-<!-- When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back. -->
 
 [](youtube:zQtRwTOwisI)
 
 For More Details about Node.js with Oracle Database [Click here](#LearnMore)
 
 ### Objectives
-<!-- 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop* -->
 In this lab, you will:
 * Verify the Node.js Application on any Browser.
 * POST and GET the data from Oracle Database by using postman through Node.js Module.
@@ -34,34 +28,6 @@ This lab assumes you have:
     - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
-
-
-<!-- 
-When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back. -->
-
-
-
-<!-- **Why Node.js?**
-
-  Node.js uses asynchronous programming!
--	A common task for a web server can be to open a file on the server and return the content to the client.
--	how Node.js handles a file request:
-	     Sends the task to the computer's file system.
-         Ready to handle the next request.
-         When the file system has opened and read the file, the server returns the content to the client.
-
--	Node.js eliminates the waiting, and simply continues with the next request.
--	Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.
-
-**What can Node.js do?**
--	Node.js can generate dynamic page content
--	Node.js can create, open, read, write, delete, and close files on the server
--	Node.js can collect form data
--	Node.js can add, delete, modify data in your database
-
-**Download Node.js**
-
-   The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html). -->
 
 ## **STEP 1**:  Verify Application
 

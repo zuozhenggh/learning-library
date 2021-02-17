@@ -2,17 +2,6 @@
 
 ## Introduction
 This lab will cover three main topics. The Connect to SQL Developer Web will use SQL Developer Web, which is one of the tools that comes preinstalled with Autonomous Database. The Query XML Data uses XQuery which is a  general and expressive language, that combines the power of expression and computation with the strengths of SQL. The Insert and Update XML Data updates XML content or replaces either the entire contents of a document or only particular parts of a document. 
-<!-- There are several steps within this lab. -->
-
-<!-- - **Connect to SQL Developer Web** - You will use SQL Developer Web, one of the tools that comes preinstalled with Autonomous Database
-- **Query XML Data** - Query XML data using XQuery. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. You can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
-- **Insert and Update XML Data** - You can update XML content or replace either the entire contents of a document or only particular parts of a document. The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database. -->
-
-<!-- -  The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
--  The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
--  The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document. The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database. -->
-
-<!-- -  The last step you will look at various sample queries and functions within XML. -->
 
 *Estimated Lab Time*: 15 Minutes
 
@@ -44,8 +33,6 @@ This lab assumes you have:
 
 ***Note:***  All scripts for this lab are stored in the **/u01/workshop/xml** folder and run as the oracle user.
 
-
-<!-- Element names describe the content of the element, and the structure describes the relationship between the elements. -->
 
 ## **STEP 1**: Connect to the Pluggable Database (PDB)
 
