@@ -323,7 +323,6 @@ We need to load some data into the database so that we can create some REST serv
 myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556"},{"rel":"edit","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.
 oraclecloudapps.com/ords/gary/may2018/hv70116556"},{"rel":"describedby","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/
 metadata-catalog/may2018/item"},{"rel":"collection","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/"}]}
-
 ````
 
     ![](../images/SDW-58.png)
