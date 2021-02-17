@@ -47,7 +47,7 @@ This workshop assumes you have completed the following labs:
     ````
     <copy>alter user gary quota unlimited on data;</copy>
     ````
-Once copied on the canvas, click the run button on the worksheet toolbar.
+    Once copied on the canvas, click the run button on the worksheet toolbar.
 
     ![](../images/SDW-5.png)
 
@@ -78,7 +78,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![](../images/SDW-10.png)
 
-This will bring you back to Database Actions but as the user we created.
+    This will bring you back to Database Actions but as the user we created.
 
     ![](../images/SDW-11.png)
 
@@ -116,9 +116,9 @@ We are now ready to load data into the database. For this task, we will use the 
 
 3. We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
 
-**(right-click and download the file with the following link)**
+    **(right-click and download the file with the following link)**
 
-[May 2018 Earthquakes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/tKIZjBqerdxe-PkpUv5cELZaMRcUIYu1LVe2EqPez8A5of0XTih2eLdVGGV0t1on/n/c4u03/b/developer-library/o/may2018.csv)
+    [May 2018 Earthquakes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/tKIZjBqerdxe-PkpUv5cELZaMRcUIYu1LVe2EqPez8A5of0XTih2eLdVGGV0t1on/n/c4u03/b/developer-library/o/may2018.csv)
 
 4. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
@@ -128,7 +128,7 @@ We are now ready to load data into the database. For this task, we will use the 
 
     ![](../images/SDW-20.png)
 
-On the following step of the data loading modal, we can see the name of the table we are going to create as well as the column and data types for the table.
+    On the following step of the data loading modal, we can see the name of the table we are going to create as well as the column and data types for the table.
 
     ![](../images/SDW-21.png)
 
@@ -142,11 +142,11 @@ On the following step of the data loading modal, we can see the name of the tabl
 
 8. Next, we need to set the timestamp format so that we can load it into the database. Just to the right of the Column Type you will find a Format Mask column. (You may need to use the horizontal scroll bar to see the column to the right)
 
-Enter the following into that column:
+    Enter the following into that column:
 
-**YYYY-MM-DD"T"HH24:MI:SS.FF3"Z"**
+    **YYYY-MM-DD"T"HH24:MI:SS.FF3"Z"**
 
-You can check the image below for guidance.
+    You can check the image below for guidance.
 
     ![](../images/SDW-24.png)
 
@@ -158,7 +158,7 @@ Set the scale to 7 for LATITUDE, 7 for LONGITUDE, 3 for DEPTH, and 3 for MAG.
 
 10. Click Next on the bottom right of the modal when done.
 
-On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
+    On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
 
     ![](../images/SDW-26.png)
 
@@ -166,11 +166,11 @@ On the last step of the modal, we can see the DDL (Data Definition Language) for
 
     ![](../images/SDW-27.png)
 
-The Data Loader will now process the file by creating a table and loading the CSV file data into that table. 
+    The Data Loader will now process the file by creating a table and loading the CSV file data into that table. 
 
     ![](../images/SDW-28.png)
 
-Once its done, you will see a row in the Data Loading tab that indicates how many rows were uploaded, if any failed and the table name.
+    Once its done, you will see a row in the Data Loading tab that indicates how many rows were uploaded, if any failed and the table name.
 
     ![](../images/SDW-29.png)
 
@@ -178,7 +178,7 @@ Once its done, you will see a row in the Data Loading tab that indicates how man
 
     <img src="../images/SDW-30.png" width="250px">
 
-In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
+    In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
     ![](../images/SDW-31.png)
 
