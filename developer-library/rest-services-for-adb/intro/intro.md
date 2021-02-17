@@ -18,11 +18,11 @@ Watch the video below for a comprehensive overview of REST and how ORDS provides
 
 ### Objectives
 
--Connect to your Autonomous Database using SQL Developer Web
--Create a user for Application development
--Load data into the database
--Auto-REST enable a table
--Securing the REST endpoint
+- Connect to your Autonomous Database using SQL Developer Web
+- Create a user for Application development
+- Load data into the database
+- Auto-REST enable a table
+- Securing the REST endpoint
 
 ### Prerequisites
 This workshop assumes you have completed the following labs:
