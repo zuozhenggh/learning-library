@@ -184,55 +184,55 @@ We are now ready to load data into the database. For this task, we will use the 
 
 ## **STEP3: Auto-REST enable a table**
 
-REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
+1. REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
-<img src="../images/SDW-32.png" width="300px">
+    <img src="../images/SDW-32.png" width="300px">
 
-Right click on the table name and select REST in the pop up menu then Enable.
+2. Right click on the table name and select REST in the pop up menu then Enable.
 
-<img src="../images/SDW-33.png" width="400px">
+    <img src="../images/SDW-33.png" width="400px">
 
-The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
+    The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
-![](../images/SDW-34.png)
+    <img src="../images/SDW-34.png" width="400px">
 
-Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
+3. Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
-![](../images/SDW-35.png)
+    ![](../images/SDW-35.png)
 
-You can also see a plug icon ![](../images/plug-icon.png) next to the table to indicate it is REST enabled.
+    You can also see a plug icon ![](../images/plug-icon.png) next to the table to indicate it is REST enabled.
 
-![](../images/SDW-36.png)
+    ![](../images/SDW-36.png)
 
-We can work with the REST endpoints by using cURL commands that the SQL Worksheet can provide to us. To get to these endpoints, again right click the table name as we did in the previous step, select REST, then cURL Command.
+4. We can work with the REST endpoints by using cURL commands that the SQL Worksheet can provide to us. To get to these endpoints, again right click the table name as we did in the previous step, select REST, then cURL Command.
 
-![](../images/SDW-37.png)
+    ![](../images/SDW-37.png)
 
-On the right of the page, we see the cURL for the table MAY2018 side out.
+    On the right of the page, we see the cURL for the table MAY2018 side out.
 
-![](../images/SDW-38.png)
+    ![](../images/SDW-38.png)
 
-Here we can work with the various REST endpoints. GET ALL is the URL we tried out in the browser previously. Let's take a look at getting a single row. Click on GET Single and you will see a form field for the ID column. Enter **hv70116556** and click the Next button on the lower right of the slide out.
+5. Here we can work with the various REST endpoints. GET ALL is the URL we tried out in the browser previously. Let's take a look at getting a single row. Click on GET Single and you will see a form field for the ID column. Enter **hv70116556** and click the Next button on the lower right of the slide out.
 
-![](../images/SDW-39.png)
+    ![](../images/SDW-39.png)
 
-We now have the REST endpoint for getting a single record.
+    We now have the REST endpoint for getting a single record.
 
-![](../images/SDW-40.png)
+    ![](../images/SDW-40.png)
 
-You can grab the URL and put it into a browser window,
+6. You can grab the URL and put it into a browser window,
 
-![](../images/SDW-41.png)
+    ![](../images/SDW-41.png)
 
-or you can copy the curl command and run it where curl is available. If you are unsure if you have curl installed locally or do not want to install it, we can use the OCI cloud shell. While logged into the OCI console, you can click the Cloud Shell icon in the upper right of the page.
+    or you can copy the curl command and run it where curl is available. If you are unsure if you have curl installed locally or do not want to install it, we can use the OCI cloud shell. While logged into the OCI console, you can click the Cloud Shell icon in the upper right of the page.
 
-![](../images/SDW-42.png)
+    ![](../images/SDW-42.png)
 
-This will open a console where you can run the curl command.
+    This will open a console where you can run the curl command.
 
-![](../images/SDW-43.png)
+    ![](../images/SDW-43.png)
 
-The cURL for the table MAY2018 side out also will help you construct REST endpoints for update, delete and insert actions.
+    The cURL for the table MAY2018 side out also will help you construct REST endpoints for update, delete and insert actions.
 
 ## **Step 4**: Securing the REST endpoint
 
