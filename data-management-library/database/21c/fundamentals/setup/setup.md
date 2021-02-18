@@ -28,7 +28,7 @@ In this lab, you will:
 2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    $ <copy>ssh -i <<sshkeyname>> opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
     [opc@tmdb1 ~]$
