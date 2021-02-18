@@ -292,13 +292,13 @@ These classification rules are generated when we train a model using training da
 
 
 1. In the home page, click on create and select  **Data Flow**.
-    ![](./images/OMLP01.png " ") 
+   ![](./images/OMLP01.png " ") 
 
 2. Select the data we were analyzing > “**Attrition Training**.” and click on **Add**.
-    ![](./images/OMLP02.png " ")
+   ![](./images/OMLP02.png " ")
 
 3. The selected data set will be added as a source for our data flow.
-    ![](./images/OMLP03.png " ") 
+   ![](./images/OMLP03.png " ") 
 
 4. In the last example we saw that there is attrition in our department and there appears to be some drivers identified using the explain function.
 
