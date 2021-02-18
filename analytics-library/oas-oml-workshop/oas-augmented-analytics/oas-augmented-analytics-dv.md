@@ -295,7 +295,7 @@ These classification rules are generated when we train a model using training da
 ![](./images/OMLP01.png " ") 
 
 2. Select the data we were analyzing > “**Attrition Training**.” and click on **Add**.
-![](./images/OMLP02.png " ")
+![](./images/OMLP02.PNG " ")
 
 3. The selected data set will be added as a source for our data flow.
 ![](./images/OMLP03.png " ") 
