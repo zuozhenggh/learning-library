@@ -107,7 +107,7 @@ We will be leveraging the data visualization machine learning features to genera
    There are various categories of semantic types such as geographic locations identified by city names, a specific pattern such as a credit card number or email address, a specific data type such as a date, or a recurring pattern in the data such as a hyphenated phrase.
 
    A set of column transformation “Recommendations” will be displayed on a pane to the right.   
- ![](./images/OML06.png " ") 
+![](./images/OML06.png " ") 
 
 5. During the data profiling a column with data that has **Social Security Numbers (SSN)** was detected and recommendations on what to do with this column are presented.
    
@@ -115,8 +115,8 @@ We will be leveraging the data visualization machine learning features to genera
 
    Select the “<” to return to the rest of the recommendation suggestions.
 
-  ![](./images/OML07.png " ") 
-  ![](./images/OML08.png " ") 
+![](./images/OML07.png " ") 
+![](./images/OML08.png " ") 
 
 6.  On the left-hand pane notice that the transformation and enrichment operations are displayed.
     Select “**Apply Script**”. Then select the “**Visualize**” tab.
@@ -127,7 +127,7 @@ We will be leveraging the data visualization machine learning features to genera
    
    Select **Attrition** and Right Click and Select **Explain Attrition**.
 
-  ![](./images/OML10.png " ") 
+![](./images/OML10.png " ") 
 
 8.  This will generate an Explain window with insights on the attrition column divided into  4 categories as shown.
 
@@ -191,7 +191,7 @@ Before selecting **add selected** be sure to select the following charts:
 
    **•	JobRole**
 
-   ![](./images/OML17.png " ")  
+![](./images/OML17.png " ")  
 
 
 14.  We can do further explain functions on other attributes in our project data set, and for each column we explain and generate visualizations for a new explain canvas tab will be added to the project
@@ -207,12 +207,12 @@ Highlight the following charts from the explain education dialogue box:
    **•	Education anomalies chart by JobRole**  
 
     
-  ![](./images/OML18.png " ") 
+![](./images/OML18.png " ") 
 15. Select ‘**Add Selected**’ to the project.
     Add a new canvas to the project and we will continue building up the analysis.
     Before going further, save the project in the shared folder as ‘**Attrition Analysis**’
 
- ![](./images/OML19.png " ") 
+![](./images/OML19.png " ") 
 
 16. We are going to further explore the data we have in this project now.
 
@@ -249,7 +249,7 @@ Let’s use the in-built advanced analytics features to see if we can see why th
 ![](./images/OML23.png " ") 
 
 20. Select the **“x”** to remove your BI Ask elements.
-    ![](./images/OML24.png " ")
+![](./images/OML24.png " ")
 
 Select the following items from the data elements pane
 
@@ -292,13 +292,13 @@ These classification rules are generated when we train a model using training da
 
 
 1. In the home page, click on create and select  **Data Flow**.
-   ![](./images/OMLP01.png " ") 
+![](./images/OMLP01.png " ") 
 
 2. Select the data we were analyzing > “**Attrition Training**.” and click on **Add**.
-   ![](./images/OMLP02.png " ")
+![](./images/OMLP02.png " ")
 
 3. The selected data set will be added as a source for our data flow.
-   ![](./images/OMLP03.png " ") 
+![](./images/OMLP03.png " ") 
 
 4. In the last example we saw that there is attrition in our department and there appears to be some drivers identified using the explain function.
 
@@ -326,21 +326,21 @@ Make sure positive class is ‘**Yes**’ and leave the other options as the def
 
 
 8. Save the flow as ‘**Attrition Train Model – Naïve Bayes**’.
-    ![](./images/OMLP08.png " ") 
+![](./images/OMLP08.png " ") 
 
 
 9. **Run** the data flow once it has saved. Wait for the training to complete.
-    ![](./images/OMLP09.png " ") 
+![](./images/OMLP09.png " ") 
 
 
 10. Go to the **Machine Learning** tab and we can see we have our new classification model.
-    ![](./images/OMLP10.png " ") 
+![](./images/OMLP10.png " ") 
 
 
 11. We can inspect the validity of our Machine Learning model.
 
 Right Click and select **Inspect**.
-    ![](./images/OMLP11.png " ") 
+![](./images/OMLP11.png " ") 
 
 
 12. What we want to do is take a new, current, data set for current employees in order to apply the model and generate some predictions on whether they are likely to leave the organization.
