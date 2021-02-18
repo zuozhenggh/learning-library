@@ -1,6 +1,6 @@
 # Overview                                
 
-The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet, create groups and compare pairs, create groups, configure compare pairs, create and execute jobs, view reports, repair data, and generate SQL files.
+The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, create groups, configure compare pairs, create and execute jobs, view reports, repair data, and generate SQL files.
 
 ## What is Oracle GoldenGate Veridata?
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
@@ -24,15 +24,16 @@ Oracle GoldenGate Veridata compares a source (original, or trusted) set of data 
 
 ## Workshop Prerequisites
   * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
+  * Prior knowledge of Database basic concepts
 
 
 ## Want to Learn More?
 
-Use these links to get more information about Oracle GoldenGate and Oracle GoldenGate Veridata:
+Use these links to get more information about Oracle GoldenGate Veridata:
 
 * [Using Oracle GoldenGate Veridata](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/intro-veridata.html#GUID-5E0D122D-913C-4307-97FB-DF815409FB14)
 * [Administering Oracle GoldenGate Veridata](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdad/introduction-oracle-goldengate-veridata.html#GUID-E34C2B1C-AA1D-4F62-BBB5-05AB6A913B40)
-* [Oracle GoldenGate Documentation](https://docs.oracle.com/en/middleware/goldengate/core/index.html)
+
 
 ## Acknowledgements
 
@@ -40,9 +41,10 @@ Use these links to get more information about Oracle GoldenGate and Oracle Golde
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Reviewed by:**
     + Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
+    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
 
 
-* **Last Updated By/Date:** Anuradha Chepuri, January 2021
+* **Last Updated By/Date:** Anuradha Chepuri, March 2021
 
 ## What's Next?
 **You are all set to begin the labs! Click Lab 1: Install and Configure Oracle GoldenGate Veridata in the Contents menu**.
