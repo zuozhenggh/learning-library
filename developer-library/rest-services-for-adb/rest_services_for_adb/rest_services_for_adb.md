@@ -88,7 +88,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Database Actions Menu, Administration then Users](./images/sdw-12.png)
 
-2. Find Gary's user title and click the open-in-new-tab icon ![](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
+2. Find Gary's user title and click the open-in-new-tab icon ![open-in-new-tab icon](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
 
     ![GARY the user's Details Tile, click the open-in-new-tab icon](./images/sdw-13.png)
 
@@ -196,43 +196,43 @@ We need to load some data into the database so that we can create some REST serv
 
     The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
-    <img src="./images/sdw-34.png" width="700px">
+    <img src="./images/sdw-34.png" width="700px" alt="The REST Enable Object Slider, view the Preview URL">
 
 3. Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
-    ![](./images/sdw-35.png)
+    ![Open a new browser window or tab and enter that URL we copied in the previous step](./images/sdw-35.png)
 
-    You can also see a plug icon ![](../images/plug-icon.png) next to the table to indicate it is REST enabled.
+    You can also see a plug icon ![plug icon](../images/plug-icon.png) next to the table to indicate it is REST enabled.
 
-    ![](./images/sdw-36.png)
+    ![Plug Icon Next to table in navigator](./images/sdw-36.png)
 
 4. We can work with the REST endpoints by using cURL commands that the SQL Worksheet can provide to us. To get to these endpoints, again right click the table name as we did in the previous step, select REST, then cURL Command.
 
-    ![](./images/sdw-37.png)
+    ![right click the table name in the navigator, select REST, then cURL Command](./images/sdw-37.png)
 
-    On the right of the page, we see the cURL for the table MAY2018 side out.
+    On the right of the page, we see the cURL for the table MAY2018 side out panel.
 
-    ![](./images/sdw-38.png)
+    ![the cURL for the table MAY2018 side out panel](./images/sdw-38.png)
 
 5. Here we can work with the various REST endpoints. GET ALL is the URL we tried out in the browser previously. Let's take a look at getting a single row. Click on GET Single and you will see a form field for the ID column. Enter **hv70116556** and click the Next button on the lower right of the slide out.
 
-    ![](./images/sdw-39.png)
+    ![Click the GET Single item, then enter the value. Now Click Next on the bottom right](./images/sdw-39.png)
 
     We now have the REST endpoint for getting a single record.
 
-    ![](./images/sdw-40.png)
+    ![REST endpoint for getting a single record](./images/sdw-40.png)
 
 6. You can grab the URL and put it into a browser window,
 
-    ![](./images/sdw-41.png)
+    ![REST endpoint for getting a single record in a browser](./images/sdw-41.png)
 
     or you can copy the curl command and run it where curl is available. If you are unsure if you have curl installed locally or do not want to install it, we can use the OCI cloud shell. While logged into the OCI console, you can click the Cloud Shell icon in the upper right of the page.
 
-    ![](./images/sdw-42.png)
+    ![In the OCI Web Console, click the Cloud Shell icon in the upper right of the page](./images/sdw-42.png)
 
     This will open a console where you can run the curl command.
 
-    ![](./images/sdw-43.png)
+    ![Cloud Shell on bottom of the OCI Console web page](./images/sdw-43.png)
 
     The cURL for the table MAY2018 side out also will help you construct REST endpoints for update, delete and insert actions.
 
@@ -242,65 +242,65 @@ We need to load some data into the database so that we can create some REST serv
 
 1. So, we have a REST enabled table ready to be used by our applications but we need to ensure not just anyone can use it; we need to secure access to the table. To do this, let's use the Database Actions menu in the upper left of the page and choose REST.
 
-    ![](./images/sdw-44.png)
+    ![Database Actions Menu, Development then REST](./images/sdw-44.png)
 
 2. The REST pages let you create REST endpoints just as we did with the auto REST option. Here, we want to select the Security Tab on the top of the page and then select OAuth Clients.
 
-    ![](./images/sdw-45.png)
+    ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/sdw-45.png)
 
 3. To create our OAuth client, we will secure our REST endpoints with, click the Create OAuth Client button in the upper right of the page.
 
-    ![](./images/sdw-46.png)
+    ![Click the Create OAuth Client button](./images/sdw-46.png)
 
 4. The Create OAuth Client slider will come out on the right of the page. In this form we first need to name our OAuth Client. We can name it **garysec**. Next we can give it a description; anything will do here. The follow field, support URI, is where a client will be taken upon an authorization error or failure. Finally, we need an support email for contacting someone. Once your form looks similar to the image below:
 
-    ![](./images/sdw-47.png)
+    ![The OAuth Client Slide Out Panel](./images/sdw-47.png)
 
 5. Click the Roles tab on the top of the Create OAuth Client slider
 
-    ![](./images/sdw-48.png)
+    ![Click the Roles tab on the top of the Create OAuth Client slider](./images/sdw-48.png)
 
 6. Now, use the shuttle to move the Role **oracle.dbtools.role.autorest.GARY.MAY2018** over to the right side, then click the Create button on the lower right. Moving the Role says that we want all REST services with this role to be secure and by using the auto REST feature, the service has created a role for us and all the endpoints we have used in this lab.
 
-    ![](./images/sdw-49.png)
+    ![use the shuttle to move the Role over to the right side, then click the Create button](./images/sdw-49.png)
 
     We now have an OAuth Client we can secure our REST service with.
 
-    ![](./images/sdw-50.png)
+    ![Created OAuth Client Details Tile](./images/sdw-50.png)
 
-7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![](../images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
+7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
 
-    ![](./images/sdw-51.png)
+    ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/sdw-51.png)
 
-8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![](../images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
+8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![copy icon](../images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
 
-    ![](./images/sdw-52.png)
+    ![Click the copy icon to save the Token Text](./images/sdw-52.png)
 
 9. Time to secure the REST service. Using the tab bar on the top of the page, select AutoREST.
 
-    ![](./images/sdw-53.png)
+    ![Use the tab bar on the top of the page, select AutoREST](./images/sdw-53.png)
 
-10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![](../images/three-dot-pop.png) on the MAY2018 title and select Edit.
+10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) on the MAY2018 title and select Edit.
 
-    ![](./images/sdw-54.png)
+    ![Click the pop out menu icon on the MAY2018 title and select Edit](./images/sdw-54.png)
 
 11. In the REST Enable Object slider, click the Require Authentication toggle button, then click Save in the lower right of the slider. That's it, the service it now secure.
 
-    ![](./images/sdw-55.png)
+    ![click the Require Authentication toggle button then click Save in the lower right of the slider](./images/sdw-55.png)
 
-12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![](../images/three-dot-pop.png) and select Get Curl.
+12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) and select Get Curl.
 
-    ![](./images/sdw-56.png)
+    ![Use the pop out menu icon and select Get Curl](./images/sdw-56.png)
 
 13. We are going to use the GET Single curl command just as we did before. Start by clicking on Get Single, enter **hv70116556** in the ID field and click the Next button on the lower right of the slide out.
 
-    ![](./images/sdw-39.png)
+    ![clicking on Get Single, enter the above value in the ID field and click the Next button on the lower right of the slide out](./images/sdw-39.png)
 
 14. On the following page of the slider, we can see the curl command now contains some header information:
 
     **--header 'Authorization: Bearer VALUE'**
 
-    ![](./images/sdw-57.png)
+    ![curl command now contains some header information](./images/sdw-57.png)
 
     and if we run the original curl command using the OCI Cloud Shell without this information, we get Unauthorized:
 
@@ -326,7 +326,7 @@ https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/ma
 
 16. We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
 
-    ![](./images/sdw-58.png)
+    ![authenticated REST endpoint](./images/sdw-58.png)
 
 ## Conclusion
 In this lab, you had an opportunity to get an introduction to REST services using an easy to follow User Interface. REST enable your tables and database objects in minutes with zero code.
