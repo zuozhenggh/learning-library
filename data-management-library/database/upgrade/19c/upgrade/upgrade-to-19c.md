@@ -3,14 +3,16 @@
 ## Introduction
 In this part of the Lab you will upgrade the UPGR database from Oracle 11.2.0.4 to Oracle 19c. You can find detailed steps including the output for a Multitenant upgrade [here](https://mikedietrichde.com/2018/06/18/upgrade-oracle-12-2-0-1-to-oracle-database-18c-on-premises/) for your information only in case you can’t complete the lab here.
 
-You will use the AutoUpgrade and upgrade your UPGR database unattended.
+You will use the AutoUpgrade and upgrade your UPGR database unattended.  The Oracle Database AutoUpgrade utility is a new tiny little command line tool which allows you to upgrade your databases in an unattended way. I call it the Hands-Free Upgrade. The new AutoUpgrade utility in Oracle 19c idea of the tool is to run the prechecks against multiple databases, fix 99% of the potential issues, set a restore point in case something goes wrong – and then upgrade your databases. And of course, do the postupgrade, recompilation and time zone adjustment.
+
+The only thing you need to provide is a config file in text format.
 
 Estimated Lab Time: n minutes
 
 ### About AutoUpgrade
-The Oracle Database AutoUpgrade utility is a new tiny little command line tool which allows you to upgrade your databases in an unattended way. I call it the Hands-Free Upgrade. TThe new AutoUpgrade utility in Oracle 19che idea of the tool is to run the prechecks against multiple databases, fix 99% of the potential issues, set a restore point in case something goes wrong – and then upgrade your databases. And of course, do the postupgrade, recompilation and time zone adjustment.
+The AutoUpgrade utility identifies issues before upgrades, performs pre- and postupgrade actions, deploys upgrades, performs postupgrade actions, and starts the upgraded Oracle Database.
 
-The only thing you need to provide is a config file in text format.
+The AutoUpgrade utility is designed to automate the upgrade process, both before starting upgrades, during upgrade deployments, and during postupgrade checks and configuration migration. You use AutoUpgrade after you have downloaded binaries for the new Oracle Database release, and set up new release Oracle homes. When you use AutoUpgrade, you can upgrade multiple Oracle Database deployments at the same time, using a single configuration file, customized as needed for each database deployment.
 
 ### Objectives
 In this lab, you will:

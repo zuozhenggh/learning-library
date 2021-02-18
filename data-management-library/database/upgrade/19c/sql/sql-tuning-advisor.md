@@ -1,8 +1,10 @@
-# Query Your Data
+# SQL Tuning Advisor
 
 ## Introduction
 
 In the previous section you fixed plans with SQL Plan Management. But lets see what else could be done and ask the SQL Tuning Advisor (STA).
+
+![](./images/sql-tuning-advisor.png " ")
 
 You’ll pass the SQL Tuning Set from the “Load” exercise where you captured the HammerDB workload directly from Cursor Cache to the SQL Tuning Advisor and check the results.
 Analyze the SQL Tuning Set and generate recommendations
@@ -15,7 +17,6 @@ Estimated Lab Time: n minutes
 SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.
 
 You can submit one or more SQL statements as input to the advisor and receive advice or recommendations for how to tune the statements, along with a rationale and expected benefit.
-
 
 ### Objectives
 In this lab, you will:

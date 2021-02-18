@@ -1,49 +1,57 @@
-# Query Your Data
+# Plugin UPGR into CDB2
 
 ## Introduction
-
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
-
-### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
 
 In this part of the Hands-On Lab you will now plugin UPGR into CDB2.
 
 We could have done this with AutpUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
 
-CDB2 is a Multitenant Container database.
-And UPGR will be converted into a PDB, and then become a pluggable database.
+CDB2 is a Multitenant Container database. UPGR will be converted into a PDB, and then become a pluggable database.
 
 The key is, that – in order to plugin a non-CDB such as the UPGR database – it has to be upgraded first to the same release as the CDB it gets plugged into.
-Index
 
-    1. Preparation UPGR as non-CDB
-    2. Compatibility check
-    3. Plugin Operation
+Estimated Lab Time: n minutes
 
-1. Preparation UPGR as non-CDB
+### About Oracle Multitenant
+The multitenant architecture enables an Oracle database to function as a multitenant container database (CDB).
+
+![](./images/containers.png " ")
+
+A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs. 
+
+Every CDB has the following containers:
+
+Exactly one CDB root container 
+
+- The CDB root is a collection of schemas, schema objects, and nonschema objects to which all PDBs belong .
+
+Exactly one system container
+
+- The system container includes the root CDB and all PDBs in the CDB. Thus, the system container is the logical container for the CDB itself.
+
+Zero or more application containers
+
+- An application container consists of exactly one application root, and the PDBs plugged in to this root. 
+
+Zero or more user-created PDBs
+
+- A PDB contains the data and code required for a specific set of features (see "PDBs"). A PDB belongs to exactly zero or one application container. If a PDB belongs to an application container, then it is an application PDB. 
+
+Exactly one seed PDB
+
+- The seed PDB is a system-supplied template that the CDB can use to create new PDBs. The seed PDB is named PDB$SEED. You cannot add or modify objects in PDB$SEED.
+
+### Objectives
+
+In this lab, you will:
+* Preparation UPGR as non-CDB
+* Compatibility check
+* Plugin Operation
+
+### Prerequisites
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+## **STEP 1**: Preparation UPGR as non-CDB
 
 Switch to the UPGR database in 18c environment:
 
@@ -68,7 +76,8 @@ Switch to CDB2:
 
 . cdb2
 sqlplus / as sysdba
-2. Compatibility check
+
+## **STEP 2**: Compatibility check
 
 Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO.
 
@@ -88,7 +97,8 @@ If the result is “NO” (and it is NO very often), then don’t be in panic.
 Check for TYPE='ERROR' in PDB_PLUG_IN_VIOLATIONS.
 
 In this case, the result should be “YES“.
-3. Plugin Operation
+
+## **STEP 3**: Plugin Operation
 
 Plugin UPGR with its new name PDB1 – from this point there’s no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
 
@@ -148,16 +158,12 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Multitenant Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/introduction-to-the-multitenant-architecture.html#GUID-267F7D12-D33F-4AC9-AA45-E9CD671B6F22)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Carlos Sierra
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

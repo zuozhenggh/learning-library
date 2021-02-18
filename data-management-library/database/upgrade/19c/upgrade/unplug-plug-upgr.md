@@ -1,43 +1,33 @@
-# Query Your Data
+# Unplug - Plug - Upgrade
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab you will now unplug an Oracle 12.2.0.1 pluggable database (PDB) from CDB1 and plug it into 19c’s CDB2, including all the necessary steps.
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+### About Unplug Plug Upgrade
+You can upgrade PDBs by unplugging a PDB from an earlier release CDB, plugging it into a later release CDB, and then upgrading that PDB to the later release.
+
+CDBs can contain zero, one, or more pluggable databases (PDBs). After you install a new Oracle Database release, or after you upgrade the CDB (CDB$ROOT), you can upgrade one or more PDB without upgrading all of the PDBs on the CDB.
+
+![](./images/unplug-plug-upgrade.png " ")
+
+1. Unplug PDBs from one source Oracle Database 12.2 CDB (CDB1, with pdba and pdbb) and plug them into a new release target CDB (CDB3).
+2. Unplug PDBs from multiple source CDBs (Oracle Database 12.2 on CDB1, pdba and pdbb), and Oracle Database 18c, CDB2, pdbc and pdbd), and plug them into a new release target CDB (CDB3).
+
 
 ### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Preparation work in CDB1
+* Preupgrade.jar and Unplug
+* Plugin
+* Upgrade
 
 ### Prerequisites
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
-
-In this part of the Hands-On Lab you will now unplug an Oracle 12.2.0.1 pluggable database (PDB) from CDB1 and plug it into 19c’s CDB2, including all the necessary steps.
-Index
-
-    1. Preparation work in CDB1
-    2. Preupgrade.jar and Unplug
-    3. Plugin
-    4. Upgrade
-
-1. Preparation work in CDB1
+## **STEP 1**: Preparation work in CDB1
 
 The PDB3 we will use in this part of the lab is created already in CDB1 – but you need to startup CDB1 and PDB3.
 
@@ -48,7 +38,8 @@ startup
 alter pluggable database pdb3 open;
 show pdbs
 exit
-2. Preupgrade.jar and Unplug
+
+## **STEP 2**: Preupgrade.jar and Unplug
 
 Run the preupgrade.jar but only on container PDB3
 
@@ -76,7 +67,8 @@ Unplugging into a *.pdp does create a zip archive including all necessary files.
 
 shutdown immediate
 exit
-3. Plugin
+
+## **STEP 3**: Plugin
 
 In this step you’ll plugin PDB3 into CDB2.
 
@@ -123,7 +115,8 @@ Plugin the PDB3, the open it in UPGRADE mode:
 create pluggable database pdb3 using '/home/oracle/pdb3.pdb' file_name_convert=('/home/oracle', '/u02/oradata/CDB2/pdb3');
 alter pluggable database PDB3 open upgrade;
 exit
-4. Upgrade PDB3
+
+## **STEP 4**: Upgrade PDB3
 
 As final action, as a PDB has its own data dictionary, you need to upgrade PDB3 now.
 
@@ -155,16 +148,13 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Unplugging, Plugging and Upgrading a PDB to a new CDB](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiJsZX9yfPuAhWAGFkFHeisAIYQFjAAegQIARAD&url=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fdatabase%2Foracle%2Foracle-database%2F19%2Fspupu%2Funplugging-plugging-and-upgrading-pdb-new-cdb.pdf&usg=AOvVaw1LWOFvD1Ma7o5gdt7k0kbw)
+* [Upgrading Multitenant Using Unplug-Plug](https://docs.oracle.com/en/database/oracle/oracle-database/19/spupu/upgrade-multitenant-architecture-sequentially.html#GUID-8F9AAFA1-690D-4F70-8448-E66D765AF136)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

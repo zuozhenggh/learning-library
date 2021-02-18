@@ -1,51 +1,37 @@
-# Query Your Data
+# Transportable Export/Import
 
 ## Introduction
-
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
-
-### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
 
 In this part of the Hands-On Lab you will migrate the FTEX database directly into a PDB2 using Full Transportable Export/Import, an extension of Transportable Tablespaces where Data Pump takes over the manual work you’ve had to with plain TTS. It works cross-platform and cross-Endianness with at least an Oracle 11.2.0.3 source database.
 
 In the case of the lab, you will move an Oracle 11.2.0.4 database, FTEX, directly into an 19c PDB2 which is part of CDB2.
 
 It is important to mention that this feature works cross-platform and cross-Endianness!
-Index
 
-    1. Create a new PDB2
-    2. Prepare FTEX
-    3. Migrate FTEX into PDB2
-    4. Migration to Oracle Cloud or Cloud Machine
+Estimated Lab Time: n minutes
 
-1. Create a new PDB2
+### About Transportable Export/Import
+You can use full transportable export/import to upgrade a database from an Oracle Database 11g Release 2 (11.2.0.3) or later to Oracle Database 19c.
+
+To do so, install Oracle Database 19c and create an empty database. Next, use full transportable export/import to transport the Oracle Database 11g Release 2 (11.2.0.3) or later database into the Oracle Database 19c database.
+
+### Objectives
+
+In this lab, you will:
+* Create a new PDB2
+* Prepare FTEX
+* Migrate FTEX into PDB2
+* Migration to Oracle Cloud or Cloud Machine
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+## **STEP 1**: Create a new PDB2
 
 At first, as with every other Transportable Tablespace migration, we need to create a database – or in our case, a PDB – as target as first.
 
-Login to CDB2 and create a new PDB:
+1. Login to CDB2 and create a new PDB:
 
 . cdb2
 sqlplus / as sysdba
@@ -66,7 +52,8 @@ create public database link SOURCEDB connect to system identified by oracle usin
 exit
 
 We will use the database link to allow Data Pump pulling all information via the database link. The task can be done without the database link but then two operations are necessary, an expdp and an impdp.
-2. Prepare FTEX
+
+## **STEP 2**: Prepare FTEX
 
 Before we can transport anything, we need to prepare the FTEX database.
 
@@ -123,7 +110,8 @@ exit
 
 Note:
 You have to switch into the 19c environment to do this. If you’ll execute the same “show” commands from the 11.2 SQL*Plus, you will receive errors.
-4. Migration to Oracle Cloud or Cloud Machine
+
+## **STEP 4**: Migration to Oracle Cloud or Cloud Machine
 
 This feature can be used of course to migrate to the Oracle Cloud or ExaCC machines. See a real-time video here:
 How to migrate an entire database with Full Transportable Export/import to the Oracle DBCS Cloud
@@ -132,16 +120,13 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Transportable Whitepaper](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjS_Z6SyPPuAhXxdM0KHV55AcoQFjADegQIARAD&url=https%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fdatabase%2Fenterprise-edition%2Ffull-transportable-wp-18c-4394831.pdf&usg=AOvVaw3ya8bunmf1sanswdy5rDUL)
+* [Transportable Export/Import](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/transporting-data.html#GUID-FA4AAD15-5305-45A9-9644-DB7D7DCD30D2)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

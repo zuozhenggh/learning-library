@@ -1,31 +1,26 @@
-# Query Your Data
+# Fallback Strategies
 
 ## Introduction
 
-In the Fallback Strategies part of our Hands-On Lab you will explore different Fallback Strategies. For this exercise you will use the FTEX database, an Oracle 11.2.0.4 database.
+In the Fallback Strategies part of our LiveLab you will explore different Fallback Strategies. For this exercise you will use the FTEX database, an Oracle 11.2.0.4 database.
 
 We divide the Fallback Strategies for database upgrades basically in two areas:
+- Protection for issues during upgrade
+- Protection for issues after upgrade
 
-    Protection for issues during upgrade
-    Protection for issues after upgrade
+In each lab you will be able to try two different fallback techniques.
 
-In each section you will be able to try two different fallback techniques.
+Estimated Lab Time: n minutes
 
-Generally it is very important to take some considerations.
-Considerations
+### About Fallback Strategies
 
-HOL 19c Fallback Strategies
+![](./images/fallback.png " ")
 
-You’ll have to protect your environment for issues during, but also after the upgrade. And of course you’ll have to consider and maintain the Service Level Agreements about fallback requirements in seconds, minutes, hours or days. In addition it is very important to be aware that some of the fallback strategies won’t allow to change COMPATIBLE. This means, you will need extra downtime to change COMPATIBLE afterwards as it requires a restart of the database(s).
+You will have to protect your environment for issues during, but also after the upgrade. And of course you’ll have to consider and maintain the Service Level Agreements about fallback requirements in seconds, minutes, hours or days. In addition it is very important to be aware that some of the fallback strategies won’t allow to change COMPATIBLE. This means, you will need extra downtime to change COMPATIBLE afterwards as it requires a restart of the database(s).
 
 The minimum COMPATIBLE setting in Oracle Database 19c is “11.0.0“. Keep COMPATIBLE at 3 digits. The default COMPATIBLE setting in Oracle Database 19c is “19.0.0".
 
 We won’t cover RMAN Online Backups as we assume that everybody is doing RMAN backups anyways. And we won’t cover Oracle GoldenGate as this would go beyond the lab possibilities. We may add this in a later stage.
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
 
 ### Objectives
 
@@ -45,16 +40,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
-
-Protection for issues during upgradeHOL 19c - Fallback - Issues During the Upgrade
-
-In this part you’ll use two techniques to protect your database for issues happening during the upgrade. Or simply, if you’d like to test multiple times.
-
-You will evaluate two options: Partial Offline Backups and Guaranteed Restore Points.
-
-HOL 19c - Fallback - Issues During the Upgrade
-1. Partial Offline Backup
+## **STEP 1**:  Partial Offline Backup
 
 A partial offline backup is used for protection against failures during the upgrade or for testing purposes to avoid the restoration of an entire database environment. You can change the COMPATIBLE parameter if you want with this technique. But don’t do it in the lab now as you’ll use two techniques in parallel.
 
@@ -177,7 +163,7 @@ Now you completed the first exercise.
 
 You can watch the video as well:
 
-2. Flashback to a Guaranteed Restore Point
+## **STEP 2**: Flashback to a Guaranteed Restore Point
 
 By far the best and most simple technique to protect your databases are Guaranteed Restore Points. But it can only used when the following requirements are all met:
 
@@ -283,92 +269,7 @@ You successfully completed the second part of the Fallback Strategies lab.
 Finally you may please watch the Youtube video as well:
 
 
-Protection for issues after upgrade
-HOL 19c - Fallback - Issues After Upgrade
 
-In this part you’ll use again two techniques to protect your database, but this time for issues happening after the upgrade. You can call this also “Downgrade“.
-1. Downgrade with a Full Database Export and Import
-HOL 19c - Fallback - Issues After Upgrade
-
-For this part you’ll just start the export from the 19c database after upgrading.
-
-    Run the full database export:
-    .
-
-    . ftex19
-    sqlplus / as sysdba
-
-    insert into SYSTEM.TRACKING_TAB values (4,'full export downgrade');
-    commit;
-    select * from TRACKING_TAB;
-    exit
-
-    expdp system/oracle DIRECTORY=EXP18 DUMPFILE=down.dmp LOGFILE=down.log VERSION=12.2 FULL=Y REUSE_DUMPFILES=Y EXCLUDE=STATISTICS LOGTIME=ALL
-
-    The important part is that the VERSION parameter tells Data Pump to create an export in the format a database of “VERSION” will understand.
-    In this case you will downgrade into a 12.2 Pluggable Database. You need to create the PDB first.
-    .
-
-    . cdb1
-    sqlplus / as sysdba
-
-    startup
-    create pluggable database PDB3 admin user adm identified by adm file_name_convert=('pdbseed','pdb3');
-    alter pluggable database PDB3 open;
-    create directory IMP18 as '/home/oracle/IMP';
-    grant read, write on directory IMP18 to public;
-    exit
-
-    impdp system/oracle@PDB3 DIRECTORY=IMP18 DUMPFILE=down.dmp LOGFILE=impdown.log LOGTIME=ALL
-
-This was a quick exercise. Of course it would take longer the more data and objects your database contains. Especially LOB data types can be crucial.
-2. Downgrade with the downgrade scripts
-
-HOL 19c - Fallback - Issues After Upgrade
-
-In this final exercise you’ll use a powerful technique, the database downgrade with downgrade scripts.
-
-    Set a marker in the database
-    .
-
-    . ftex19
-    sqlplus / as sysdba
-
-    insert into SYSTEM.TRACKING_TAB values (5,'database downgrade');
-    commit;
-    Run the downgrade script
-    .
-
-    shutdown immediate
-    startup downgrade
-    set echo on termout on serveroutput on timing on
-    spool /home/oracle/logs/downgrade.log
-    @?/rdbms/admin/catdwgrd.sql
-    shutdown immediate
-    exit
-    Switch to the source environment and start he bootstrap reload script
-    .
-
-    . ftex
-    sqlplus / as sysdba
-
-    startup upgrade
-    set echo on termout on timing on
-    spool /home/oracle/logs/relod.log
-    @?/rdbms/admin/catrelod.sql
-    shutdown immediate
-    Final steps and checks
-    .
-
-    startup
-    @?/rdbms/admin/utlrp.sql
-    select * from TRACKING_TAB;
-    select count(*) from DBA_OBJECTS where STATUS=’INVALID’;
-    select COMP_ID, STATUS from DBA_REGISTRY order by COMP_ID;
-
-    The downgrade should have removed the XDB component as well. Did it?
-
-You can watch an entire database downgrade in this short video as well:
 
 
 You may now [proceed to the next lab](#next).

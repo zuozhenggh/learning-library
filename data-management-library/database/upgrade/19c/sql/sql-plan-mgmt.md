@@ -8,6 +8,8 @@ The SQL Performance Analyzer reports showed overall good results for the run in 
 
 But still you could now try to fix a specific plan which has been changed. Or just write down all plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Lets see if the result is good. Or if it may be better to allow the optimizer to find newer paths.
 
+![](./images/sql-plan-mgmt.png " ")
+
 In this exercise we use scripts written by Carlos Sierra.
 
 Estimated Lab Time: n minutes
