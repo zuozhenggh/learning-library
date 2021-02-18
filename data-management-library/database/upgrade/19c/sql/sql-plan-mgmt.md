@@ -1,44 +1,50 @@
-# Query Your Data
+# SQL Plan Management
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
-
-### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
-
 In the previous section you did find slow SQL statements with the SQL Performance Analyzer. Now we can use SQL Plan Management to fix the plans. The question is: Is this always necessary and useful?
-
-HOL 19c SQL Plan Management
 
 The SQL Performance Analyzer reports showed overall good results for the run in Oracle 19c.
 
 But still you could now try to fix a specific plan which has been changed. Or just write down all plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Lets see if the result is good. Or if it may be better to allow the optimizer to find newer paths.
-Fix a single statement
+
+![](./images/sql-plan-mgmt.png " ")
 
 In this exercise we use scripts written by Carlos Sierra.
+
+Estimated Lab Time: n minutes
+
+### About SQL Plan Management
+SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans. 
+
+SQL plan management uses a mechanism called a SQL plan baseline, which is a set of accepted plans that the optimizer is allowed to use for a SQL statement.
+
+In this context, a plan includes all plan-related information (for example, SQL plan identifier, set of hints, bind values, and optimizer environment) that the optimizer needs to reproduce an execution plan. The baseline is implemented as a set of plan rows and the outlines required to reproduce the plan. An outline is a set of optimizer hints used to force a specific plan.
+
+The main components of SQL plan management are as follows:
+
+Plan capture
+- This component stores relevant information about plans for a set of SQL statements.
+
+Plan selection
+- This component is the detection by the optimizer of plan changes based on stored plan history, and the use of SQL plan baselines to select appropriate plans to avoid potential performance regressions.
+
+Plan evolution
+- This component is the process of adding new plans to existing SQL plan baselines, either manually or automatically. In the typical use case, the database accepts a plan into the plan baseline only after verifying that the plan performs well.
+
+
+### Objectives
+
+In this lab, you will:
+* Fix A Single Statement
+* Fix All Statements
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+
+## **STEP 1**: Fix A Single Statement
 
 Will fix this plan now.
 
@@ -83,7 +89,8 @@ SQL_HANDLE                     PLAN_NAME                      ENA ACC
 SQL_59a879455619c567           SQL_PLAN_5ma3t8pb1mjb766511f85 YES YES
 
 If you like to dig deeper “Why this plan has changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
-Fix all statements
+
+## **STEP 2**: Fix all statements
 
 Now we pin down all possible statements collected in the SQL Tuning Set STS_CaptureCursorCache – and verify with SQL Performance Analyzer again the effect.
 
@@ -169,10 +176,9 @@ You may now [proceed to the next lab](#next).
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Carlos Sierra
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

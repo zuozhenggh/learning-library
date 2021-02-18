@@ -1,52 +1,36 @@
-# Query Your Data
+# AutoUpgrade - Part 2
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+You did the AutoUpgrade in a previous lab.  In this OPTIONAL lab you will upgrade the two other databases
+
+You can upgrade Oracle 11.2.0.4 databases and newer to:
+- Oracle 12.2.0.1 with Release Update January 2019 or newer
+- Oracle 18.5.0 or newer
+- Oracle 19.5.0 or newer
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+### About AutoUpgrade
+The AutoUpgrade utility identifies issues before upgrades, performs pre- and postupgrade actions, deploys upgrades, performs postupgrade actions, and starts the upgraded Oracle Database.
+
+The AutoUpgrade utility is designed to automate the upgrade process, both before starting upgrades, during upgrade deployments, and during postupgrade checks and configuration migration. You use AutoUpgrade after you have downloaded binaries for the new Oracle Database release, and set up new release Oracle homes. When you use AutoUpgrade, you can upgrade multiple Oracle Database deployments at the same time, using a single configuration file, customized as needed for each database deployment.
+
+With the January 2019 Release Updates (DBJAN2019RU) and later updates, AutoUpgrade support is available for Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes. For both Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes, you must download the AutoUpgrade kit from My Oracle Support Document 2485457.1. 
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Preparation
+* Generate and edit the config file
+* Analyze Mode
+* Deploy Mode
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
-
-You did use the AutoUpgrade already. So this exercise is OPTIONAL.
-
-In this OPTIONAL part of the lab you will upgrade two other databases
-
-You can upgrade Oracle 11.2.0.4 databases and newer to:
-
-    Oracle 12.2.0.1 with Release Update January 2019 or newer
-    Oracle 18.5.0 or newer
-    Oracle 19.5.0 or newer
-
-Index
-
-    1. Preparation
-    2. Generate and edit the config file
-    3. Analyze Mode
-    4. Deploy Mode
-
-1. Preparation
+## **STEP 1**: Preparation
 
 The database DB12 needs to be started at first.
 
@@ -55,7 +39,8 @@ sqlplus / as sysdba
 
 startup
 exit
-2. Generate and edit the config file
+
+## **STEP 2**: Generate and edit the config file
 
 java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file config
 
@@ -65,49 +50,49 @@ Created sample configuration file /home/oracle/scripts/sample_config.cfg
 
 Open the file /home/oracle/scripts/sample_config.cfg in your preferred editor and adjust the following things:
 Generated config.cfg 	Make the following adjustments:
+    ````
+    #Global configurations
+    #Autoupgrade's global directory, ...
+    #temp files created and other ...
+    #send here
+    global.autoupg_log_dir=/default/...
 
-#Global configurations
-#Autoupgrade's global directory, ...
-#temp files created and other ...
-#send here
-global.autoupg_log_dir=/default/...
+    #
+    # Database number 1 
+    #
+    upg1.dbname=employee
+    upg1.start_time=NOW
+    upg1.source_home=/u01/...
+    upg1.target_home=/u01/...
+    upg1.sid=emp
+    upg1.log_dir=/scratch/auto
+    upg1.upgrade_node=node1
+    upg1.target_version=19.1
+    #upg1.run_utlrp=yes
+    #upg1.timezone_upg=yes
 
-#
-# Database number 1 
-#
-upg1.dbname=employee
-upg1.start_time=NOW
-upg1.source_home=/u01/...
-upg1.target_home=/u01/...
-upg1.sid=emp
-upg1.log_dir=/scratch/auto
-upg1.upgrade_node=node1
-upg1.target_version=19.1
-#upg1.run_utlrp=yes
-#upg1.timezone_upg=yes
+        
 
-	
-
-#Global configurations
-#Autoupgrade's global directory, ...
-#temp files created and other ...
-#send here
-global.autoupg_log_dir=/home/oracle/logs
+    #Global configurations
+    #Autoupgrade's global directory, ...
+    #temp files created and other ...
+    #send here
+    global.autoupg_log_dir=/home/oracle/logs
 
 
-#
-# Database number 1 
-#
-upg1.dbname=DB12
-upg1.start_time=NOW
-upg1.source_home=/u01/app/oracle/product/12.2.0.1
-upg1.target_home=/u01/app/oracle/product/19
-upg1.sid=DB12
-upg1.log_dir=/home/oracle/logs
-upg1.upgrade_node=localhost
-upg1.target_version=19
-upg1.restoration=no
-
+    #
+    # Database number 1 
+    #
+    upg1.dbname=DB12
+    upg1.start_time=NOW
+    upg1.source_home=/u01/app/oracle/product/12.2.0.1
+    upg1.target_home=/u01/app/oracle/product/19
+    upg1.sid=DB12
+    upg1.log_dir=/home/oracle/logs
+    upg1.upgrade_node=localhost
+    upg1.target_version=19
+    upg1.restoration=no
+    ````
 Then save the file as config.cfg to /home/oracle/scripts.
 
 If you don’t want to edit the file by yourself, there’s a config file for DB12 stored already:
@@ -115,7 +100,7 @@ If you don’t want to edit the file by yourself, there’s a config file for DB
 /home/oracle/scripts/DB12.cfg
 
 Just ensure that you adjust the below calls to call DB12.cfg instead of config.cfg.
-3. Analyze
+## **STEP 3**: Analyze
 
 You could run the autoupgrade directly, but it is best practice to run an analyze at first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
 
@@ -140,7 +125,7 @@ Jobs pending                   [0]
 Job 100 FOR DB12
 
 The database can be upgraded automatically.
-4. Deploy mode
+## **STEP 4**: Deploy mode
 
 When you initiate the upgrade now with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 
@@ -213,16 +198,15 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [AutoUpgrade Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/upgrd/about-oracle-database-autoupgrade.html#GUID-3FCFB2A6-4617-4783-828A-41BD635FC88C)
+* * [MOS Note: 2485457.1 Auto Upgrade Tool](https://support.oracle.com/epmos/faces/DocumentDisplay?id=2485457.1)
+* [Using AutoUpgrade for Oracle Database Upgrades](https://docs.oracle.com/en/database/oracle/oracle-database/19/upgrd/using-autoupgrade-oracle-database-upgrades.html#GUID-71883C8C-7A34-4E93-8955-040CB04F2109)
+* [AutoUpgrade Blog](https://mikedietrichde.com/2019/04/29/the-new-autoupgrade-utility-in-oracle-19c/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

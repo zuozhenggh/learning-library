@@ -1,91 +1,85 @@
-# Query Your Data
+# AWR Compare Periods Report
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which had roughly the same load and duration.
+
+![](./images/awr-compare.png " ")
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+### Comparing Database Performance Over Time
+Performance degradation of the database occurs when your database was performing optimally in the past, but has over time gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time. 
+
+An AWR Compare Periods report, on the other hand, shows the difference between two periods in time (or two AWR reports, which equates to four snapshots). Using AWR Compare Periods reports helps you to identify detailed performance attributes and configuration settings that differ between two time periods:  before upgrade and after upgrade.
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Generate Load
+* Create an AWR Diff report
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
+## **STEP 1**: Generate Load
 
-n this part of the lab you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which had roughly the same load and duration.
+1.  Login to Oracle Cloud.  Run the command below.
 
-Index
+	````
+	. upgr19
+	cd /home/oracle/scripts
+	sqlplus / as sysdba
+	````
 
-    1. Generate Load
-    2. AWR Diff Report
+2. At first, create an AWR snapshot BEFOREload, then AFTERload, and note down the snapshot numbers again.
 
-1. Generate Load
+	````
+	<copy>
+	@/home/oracle/scripts/snap.sql
+	</copy>
+	````
 
-. upgr19
-cd /home/oracle/scripts
-sqlplus / as sysdba
+3.  NOTE down the snapshot number.
 
-At first, create an AWR snapshot BEFOREload, then AFTERload, and note down the snapshot numbers again.
+4. Now run the HammerDB load again as you did in the Generate Load lab
 
-@/home/oracle/scripts/snap.sql
+5. Once finished, create another AWR snapshot.
 
-Please NOTE down the snapshot number.
+	````
+	@/home/oracle/scripts/snap.sql
+	````
 
-Now run the HammerDB load again as you did in:
-https://mikedietrichde.com/hands-on-lab/hol-19c-load/
+6. Please NOTE down the snapshot number.
 
-=> =>
-
-=>
-
- 
-
- 
-
- 
-
-Once finished, create another AWR snapshot.
-
-@/home/oracle/scripts/snap.sql
-
-Please NOTE down the snapshot number.
-AWR Diff Report
+## **STEP 2**: AWR Diff Report
 
 In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a snapshot period AFTER upgrade.
 
-Call the AWR Diff script:
+1. Call the AWR Diff script
 
-@?/rdbms/admin/awrddrpt.sql
+	````
+	@?/rdbms/admin/awrddrpt.sql
+	````
 
-And then interactively:
+2. And then interactively:
 
-SQL> @?/rdbms/admin/awrddrpt.sql
+	````
+	SQL> <copy> @?/rdbms/admin/awrddrpt.sql </copy>
+	````
 
-Specify the Report Type
-~~~~~~~~~~~~~~~~~~~~~~~
-Would you like an HTML report, or a plain text report?
-Enter 'html' for an HTML report, or 'text' for plain text
-Defaults to 'html'
-Enter value for report_type:
+	````
+	Specify the Report Type
+	~~~~~~~~~~~~~~~~~~~~~~~
+	Would you like an HTML report, or a plain text report?
+	Enter 'html' for an HTML report, or 'text' for plain text
+	Defaults to 'html'
+	Enter value for report_type:
+	````
 
-Hit RETURN
+3. Hit RETURN
 
 Instances in this Workload Repository schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,7 +145,7 @@ Instances in this Workload Repository schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   DB Id      Inst Num	DB Name      Instance	  Host
 ------------ ---------- ---------    ----------   ------
-* 72245725	 1	UPGR	     UPGR	  localhost.lo
+ 72245725	 1	UPGR	     UPGR	  localhost.lo
 
 
 
@@ -231,16 +225,12 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Comparing Database Performance Over Time](https://docs.oracle.com/en/database/oracle/oracle-database/19/tgdba/comparing-database-performance-over-time.html#GUID-BEDBF986-1A69-459A-90F5-350B8A407516)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

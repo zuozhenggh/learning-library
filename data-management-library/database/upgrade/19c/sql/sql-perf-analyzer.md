@@ -1,17 +1,27 @@
-# Query Your Data
+# SQL Performance Analyer
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this section of the Hands-On Lab you will use the SQL Performance Analyzer (SPA) which is part of Real Application Testing (RAT). You will compare statements collected before upgrade to a simulation of these statements after upgrade. You will use the SQL Tuning Sets collected earlier in the lab.
+
+![](./images/spa.png " ")
+
+You have collected SQL statements from the first load of HammerDB earlier in this lab into two SQL Tuning Sets:
+
+    STS_CaptureAWR
+    STS_CaptureCursorCache
+
+You will “test execute” now the statements of one of the SQL Tuning Sets (you can do both if time allows) and generate a comparison report.
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+### SQL Performance Analyzer
+You can run SQL Performance Analyzer on a production system or a test system that closely resembles the production system. Testing a system change on a production system will impact the system's throughput because SQL Performance Analyzer must execute the SQL statements that you are testing. Any global changes made on the system to test the performance effect may also affect other users of the system. If the system change does not impact many sessions or SQL statements, then running SQL Performance Analyzer on the production system may be acceptable. However, for systemwide changes—such as a database upgrade—using a production system is not recommended.
+
+![](./images/spa-2.png " ")
+
 
 ### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
 In this lab, you will:
 * Objective 1
@@ -20,25 +30,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*This is the "fold" - below items are collapsed by default*
-
-## **STEP 1**: title
-
-In this section of the Hands-On Lab you will use the SQL Performance Analyzer (SPA) which is part of Real Application Testing (RAT). You will compare statements collected before upgrade to a simulation of these statements after upgrade. You will use the SQL Tuning Sets collected earlier in the lab.
-
-SQL Performance Analyzer
-
-You have collected SQL statements from the first load of HammerDB earlier in this lab into two SQL Tuning Sets:
-
-    STS_CaptureAWR
-    STS_CaptureCursorCache
-
-You will “test execute” now the statements of one of the SQL Tuning Sets (you can do both if time allows) and generate a comparison report.
+## **STEP 1**: Check Statements
 
 At first, check how many statements you collected in the SQL Tuning Sets:
 
@@ -131,16 +125,12 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [SQL Performance Analyzer](https://docs.oracle.com/en/database/oracle/oracle-database/19/ratug/introduction-to-sql-performance-analyzer.html#GUID-860FC707-B281-4D81-8B43-1E3857194A72)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

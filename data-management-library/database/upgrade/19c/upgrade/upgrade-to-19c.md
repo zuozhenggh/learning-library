@@ -1,50 +1,42 @@
-# Query Your Data
+# AutoUpgrade
 
 ## Introduction
+In this part of the Lab you will upgrade the UPGR database from Oracle 11.2.0.4 to Oracle 19c. You can find detailed steps including the output for a Multitenant upgrade [here](https://mikedietrichde.com/2018/06/18/upgrade-oracle-12-2-0-1-to-oracle-database-18c-on-premises/) for your information only in case you can’t complete the lab here.
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+You will use the AutoUpgrade and upgrade your UPGR database unattended.  The Oracle Database AutoUpgrade utility is a new tiny little command line tool which allows you to upgrade your databases in an unattended way. I call it the Hands-Free Upgrade. The new AutoUpgrade utility in Oracle 19c idea of the tool is to run the prechecks against multiple databases, fix 99% of the potential issues, set a restore point in case something goes wrong – and then upgrade your databases. And of course, do the postupgrade, recompilation and time zone adjustment.
+
+The only thing you need to provide is a config file in text format.
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+### About AutoUpgrade
+The AutoUpgrade utility identifies issues before upgrades, performs pre- and postupgrade actions, deploys upgrades, performs postupgrade actions, and starts the upgraded Oracle Database.
+
+The AutoUpgrade utility is designed to automate the upgrade process, both before starting upgrades, during upgrade deployments, and during postupgrade checks and configuration migration. You use AutoUpgrade after you have downloaded binaries for the new Oracle Database release, and set up new release Oracle homes. When you use AutoUpgrade, you can upgrade multiple Oracle Database deployments at the same time, using a single configuration file, customized as needed for each database deployment.
 
 ### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Prepare your environment
+* Analyze
+* Deploy
 
 ### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 1**: Preparation
 
-## **STEP 1**: title
+1.  The only task you’ll have to do when using the AutoUpgrade: You need to prepare a config file for the database(s).
+2. The environment variable $OH19 is created only for your convenience. It points always to the Oracle 19c Home.
 
-n this part of the Lab you will upgrade the UPGR database from Oracle 11.2.0.4 to Oracle 19c. You can find detailed steps including the output for a Multitenant upgrade here for your information only in case you can’t complete the lab here.
-
-In earlier version of the lab we did ask you to do a manual command line upgrade. This time you will use the AutoUpgrade and upgrade your UPGR database unattended.
-Index
-
-    1. Preparation
-    2. ANALYZE Phase
-    3. DEPLOY Phase
-
-1. Preparation
-
-The only task you’ll have to do when using the AutoUpgrade: You need to prepare a config file for the database(s).
-The environment variable $OH19 is created only for your convenience. It points always to the Oracle 19c Home.
-
-. upgr
-java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file config
+    ```
+    <copy>
+    . upgr
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file 
+    config
+    </copy>
+    ```
 
 This tells you that the sample file has been created at:
 
@@ -64,55 +56,58 @@ Open the file /home/oracle/sample_config.cfg in your preferred editor (text or g
     kwrite /home/oracle/scripts/sample_config.cfg &
 
 Adjust the following things:
-Generated standard config.cfg 	Make the following adjustments:
+3. Generated standard config.cfg 	Make the following adjustments:
 
-#Global configurations
-#Autoupgrade's global directory, ...
-#temp files created and other ...
-#send here
-global.autoupg_log_dir=/default/...
+    ````
+    # Global configurations
+    #Autoupgrade's global directory, ...
+    #temp files created and other ...
+    #send here
+    global.autoupg_log_dir=/default/...
 
-#
-# Database number 1 
-#
-upg1.dbname=employee
-upg1.start_time=NOW
-upg1.source_home=/u01/...
-upg1.target_home=/u01/...
-upg1.sid=emp
-upg1.log_dir=/scratch/auto
-upg1.upgrade_node=hol1.localdomain
-upg1.target_version=19
-#upg1.run_utlrp=yes
-#upg1.timezone_upg=yes
+    #
+    # Database number 1 
+    #
+    upg1.dbname=employee
+    upg1.start_time=NOW
+    upg1.source_home=/u01/...
+    upg1.target_home=/u01/...
+    upg1.sid=emp
+    upg1.log_dir=/scratch/auto
+    upg1.upgrade_node=hol1.localdomain
+    upg1.target_version=19
+    #upg1.run_utlrp=yes
+    #upg1.timezone_upg=yes
 
-	
+        
 
-#Global configurations
-#Autoupgrade's global directory, ...
-#temp files created and other ...
-#send here
-global.autoupg_log_dir=/home/oracle/upg_logs
+    #Global configurations
+    #Autoupgrade's global directory, ...
+    #temp files created and other ...
+    #send here
+    global.autoupg_log_dir=/home/oracle/upg_logs
 
-#
-# Database number 1 
-# 
-upg1.dbname=UPGR
-upg1.start_time=NOW
-upg1.source_home=/u01/app/oracle/product/11.2.0.4
-upg1.target_home=/u01/app/oracle/product/19
-upg1.sid=UPGR
-upg1.log_dir=/home/oracle/logs
-upg1.upgrade_node=localhost
-upg1.target_version=19
-upg1.restoration=no
+    #
+    # Database number 1 
+    # 
+    upg1.dbname=UPGR
+    upg1.start_time=NOW
+    upg1.source_home=/u01/app/oracle/product/11.2.0.4
+    upg1.target_home=/u01/app/oracle/product/19
+    upg1.sid=UPGR
+    upg1.log_dir=/home/oracle/logs
+    upg1.upgrade_node=localhost
+    upg1.target_version=19
+    upg1.restoration=no
 
+    ````
 Then save the file and name it as UPGR.cfg in /home/oracle/scripts.
 
 If you saved it under its original name, sample_config.cfg, rename it as shown below:
 
 mv /home/oracle/scripts/sample_config.cfg /home/oracle/scripts/UPGR.cfg
-2. ANALYZE Phase
+
+## **STEP 2**: ANALYZE Phase
 
 It is best practice to run AutoUpgrade in analyze mode at first. Once the analyze phase is passed without issues, the database can be upgraded automatically (the below command is a one-line command!).
 
@@ -303,17 +298,15 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [MOS Note: 2485457.1 Auto Upgrade Tool](https://support.oracle.com/epmos/faces/DocumentDisplay?id=2485457.1)
+* [Using AutoUpgrade for Oracle Database Upgrades](https://docs.oracle.com/en/database/oracle/oracle-database/19/upgrd/using-autoupgrade-oracle-database-upgrades.html#GUID-71883C8C-7A34-4E93-8955-040CB04F2109)
+* [AutoUpgrade Blog](https://mikedietrichde.com/2019/04/29/the-new-autoupgrade-utility-in-oracle-19c/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Database Product Management
+* **Last Updated By/Date** - Kay Malcolm, February 2021
+  
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
