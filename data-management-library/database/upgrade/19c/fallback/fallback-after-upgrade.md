@@ -16,6 +16,7 @@ The minimum COMPATIBLE setting in Oracle Database 19c is “11.0.0“. Keep COMP
 
 We won’t cover RMAN Online Backups as we assume that everybody is doing RMAN backups anyways. And we won’t cover Oracle GoldenGate as this would go beyond the lab possibilities. We may add this in a later stage.
 
+### Objectives
 In this lab, you will:
 * Objective 1
 * Objective 2
