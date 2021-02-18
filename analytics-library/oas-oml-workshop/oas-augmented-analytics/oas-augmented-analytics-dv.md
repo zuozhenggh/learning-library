@@ -298,6 +298,7 @@ These classification rules are generated when we train a model using training da
 ![](./images/OMLP02.PNG " ")
 
 3. The selected data set will be added as a source for our data flow.
+
 ![](./images/OMLP03.png " ") 
 
 4. In the last example we saw that there is attrition in our department and there appears to be some drivers identified using the explain function.
