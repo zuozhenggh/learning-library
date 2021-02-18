@@ -90,8 +90,17 @@ In this step you identify accidents inside a selected police region.
    You can use your mouse wheel to zoom into the area of results. In the image below the ACCIDENTS layer is turned off to focus on the analysis result.
 
    ![Image alt text](images/spatial-analysis-11.png "Image title")  
-
+   
+ 5.  Before moving on to the next analysis, zoom to the full extent of your data by opening the hamburger menu for the POLICE\_BOUNDS layer and selecting **Zoom to layer** and remove the containment analysis from the map. 
+   
 ## **STEP 3**: Join by Containment
+
+Here you join Datasets by a spatial relationship. In this case, you join ACCIDENTS to POLICE\_BOUNDS based on containment. You may think of this as enriching or tagging each accident with the police region that contains it. 
+
+1. ...
+
+   ![Image alt text](images/spatial-analysis-12.png "Image title")
+
 
 
 ## **STEP 4**: Summarize Items by Region
