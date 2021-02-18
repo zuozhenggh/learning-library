@@ -22,11 +22,11 @@ This workshop assumes you have completed the following labs:
 ## **STEP 1**: Create a user for Application Development
 1. First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
-    ![](../images/SDW-1.png)
+    ![](/images/sdw-1.png)
 
 2. Now, click the Create User button on the left side of the page. This will slide out the Create User panel.
 
-    ![](../images/SDW-2.png)
+    ![](/images/sdw-2.png)
 
 3. Start by entering a user name. Let's use GARY as the username. Next we need to enter a password. The password must be complex enough to pass the password profile set by the database. The rules are as follows:
 
@@ -35,13 +35,13 @@ This workshop assumes you have completed the following labs:
 
     Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look similar to the following image:
 
-    ![](../images/SDW-3.png)
+    ![](/images/sdw-3.png)
 
 4. Once you are ready, click the Create User button on the bottom of the panel to create the database user.
 
 5. We next need to give this new user some space to create objects and data. For this, we need to go back to the SQL worksheet and run a simple statement. To get back to the SQL Worksheet, again click the Database Actions menu in the upper left and select SQL in the Development List.
 
-    ![](../images/SDW-4.png)
+    ![](/images/sdw-4.png)
 
 6. On the SQL Canvas, copy and paste the following statement:
     ````
@@ -49,11 +49,11 @@ This workshop assumes you have completed the following labs:
     ````
     Once copied on the canvas, click the run button on the worksheet toolbar.
 
-    ![](../images/SDW-5.png)
+    ![](/images/sdw-5.png)
 
 7. On the bottom of the worksheet, in the Script Output, you should see that the user Gary has been altered and the quota granted.
 
-    ![](../images/SDW-6.png)
+    ![](/images/sdw-6.png)
 
 
 ## **STEP 2**: Load data into the Database
@@ -64,57 +64,57 @@ We need to load some data into the database so that we can create some REST serv
 
 1. The first method requires us to sign out and back in. Start by clicking the Admin user dropdown menu in the upper right, then selecting Sign Out.
 
-    ![](../images/SDW-7.png)
+    ![](/images/sdw-7.png)
 
 2. On the page the follows, click Sign In
 
-    ![](../images/SDW-8.png)
+    ![](/images/sdw-8.png)
 
 3. On the next page, enter gary as the username and click Next
 
-    ![](../images/SDW-9.png)
+    ![](/images/sdw-9.png)
 
 4. And on the final page, enter the password you used when you created the user and click Sign In.
 
-    ![](../images/SDW-10.png)
+    ![](/images/sdw-10.png)
 
     This will bring you back to Database Actions but as the user we created.
 
-    ![](../images/SDW-11.png)
+    ![](/images/sdw-11.png)
 
 **User Changing Method 2:**
 
 1. As the Admin user, in the upper left of the page, click the Database Actions Menu. In the Administration List, select Database Users; just as we did previously when creating Gary.
 
-    ![](../images/SDW-12.png)
+    ![](/images/sdw-12.png)
 
 2. Find Gary's user title and click the open-in-new-tab icon ![](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
 
-    ![](../images/SDW-13.png)
+    ![](/images/sdw-13.png)
 
 3. Enter Gary as the Username and then his password in the password field. Then click Sign in.
 
-    ![](../images/SDW-14.png)
+    ![](/images/sdw-14.png)
 
 **Loading Data**
 
 1. In either login method, we end up on the overview page. Now click the SQL tile.
 
-    ![](../images/SDW-15.png)
+    ![](/images/sdw-15.png)
 
 **If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
 2. We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
 
-    ![](../images/SDW-16.png)
+    ![](/images/sdw-16.png)
 
 3. Start by clicking the Data Loading area; the center of the gray dotted-line box.
 
-    ![](../images/SDW-17.png)
+    ![](/images/sdw-17.png)
 
 4. The Upload Data into New Table model will appear.
 
-    ![](../images/SDW-18.png)
+    ![](/images/sdw-18.png)
 
 5. We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
 
@@ -124,23 +124,23 @@ We need to load some data into the database so that we can create some REST serv
 
 6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
-    ![](../images/SDW-19.png)
+    ![](/images/sdw-19.png)
 
 7. The modal will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
 
-    ![](../images/SDW-20.png)
+    ![](/images/sdw-20.png)
 
     On the following step of the data loading modal, we can see the name of the table we are going to create as well as the column and data types for the table.
 
-    ![](../images/SDW-21.png)
+    ![](/images/sdw-21.png)
 
 8. Let's edit a few of these columns. We need a Primary Key for our table. Here, we can use the ID column. Just click the PK checkbox for the ID row.
 
-    ![](../images/SDW-22.png)
+    ![](/images/sdw-22.png)
 
 9. Next, we want to take the TIME column and make it a TIMESTAMP type. Do this by selecting TIMESTAMP from the Column Type dropdown.
 
-    ![](../images/SDW-23.png)
+    ![](/images/sdw-23.png)
 
 10. Next, we need to set the timestamp format so that we can load it into the database. Just to the right of the Column Type you will find a Format Mask column. (You may need to use the horizontal scroll bar to see the column to the right)
 
@@ -150,89 +150,89 @@ We need to load some data into the database so that we can create some REST serv
 
     You can check the image below for guidance.
 
-    ![](../images/SDW-24.png)
+    ![](/images/sdw-24.png)
 
 11. Next, we are going to change the LATITUDE, LONGITUDE, DEPTH and MAG columns to NUMBER column Types. Again, use the Column Type dropdown select list to choose NUMBER for each of them. We also need to set the SCALE of each of these columns so that we retain the values to the right of the decimal point.
 
     Set the scale to 7 for LATITUDE, 7 for LONGITUDE, 3 for DEPTH, and 3 for MAG.
 
-    ![](../images/SDW-25.png)
+    ![](/images/sdw-25.png)
 
 12. Click Next on the bottom right of the modal when done.
 
     On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
 
-    ![](../images/SDW-26.png)
+    ![](/images/sdw-26.png)
 
 13. When you are done taking a look, click the Finish button in the lower right of the modal.
 
-    ![](../images/SDW-27.png)
+    ![](/images/sdw-27.png)
 
     The Data Loader will now process the file by creating a table and loading the CSV file data into that table. 
 
-    ![](../images/SDW-28.png)
+    ![](/images/sdw-28.png)
 
     Once its done, you will see a row in the Data Loading tab that indicates how many rows were uploaded, if any failed and the table name.
 
-    ![](../images/SDW-29.png)
+    ![](/images/sdw-29.png)
 
 14. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
-    <img src="../images/SDW-30.png" width="250px">
+    <img src="/images/sdw-30.png" width="250px">
 
     In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
-    ![](../images/SDW-31.png)
+    ![](/images/sdw-31.png)
 
 ## **STEP 3: Auto-REST Enable a Table**
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
-    <img src="../images/SDW-32.png" width="300px">
+    <img src="/images/sdw-32.png" width="300px">
 
 2. Right click on the table name and select REST in the pop up menu then Enable.
 
-    <img src="../images/SDW-33.png" width="400px">
+    <img src="/images/sdw-33.png" width="400px">
 
     The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
-    <img src="../images/SDW-34.png" width="700px">
+    <img src="/images/sdw-34.png" width="700px">
 
 3. Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
-    ![](../images/SDW-35.png)
+    ![](/images/sdw-35.png)
 
     You can also see a plug icon ![](../images/plug-icon.png) next to the table to indicate it is REST enabled.
 
-    ![](../images/SDW-36.png)
+    ![](/images/sdw-36.png)
 
 4. We can work with the REST endpoints by using cURL commands that the SQL Worksheet can provide to us. To get to these endpoints, again right click the table name as we did in the previous step, select REST, then cURL Command.
 
-    ![](../images/SDW-37.png)
+    ![](/images/sdw-37.png)
 
     On the right of the page, we see the cURL for the table MAY2018 side out.
 
-    ![](../images/SDW-38.png)
+    ![](/images/sdw-38.png)
 
 5. Here we can work with the various REST endpoints. GET ALL is the URL we tried out in the browser previously. Let's take a look at getting a single row. Click on GET Single and you will see a form field for the ID column. Enter **hv70116556** and click the Next button on the lower right of the slide out.
 
-    ![](../images/SDW-39.png)
+    ![](/images/sdw-39.png)
 
     We now have the REST endpoint for getting a single record.
 
-    ![](../images/SDW-40.png)
+    ![](/images/sdw-40.png)
 
 6. You can grab the URL and put it into a browser window,
 
-    ![](../images/SDW-41.png)
+    ![](/images/sdw-41.png)
 
     or you can copy the curl command and run it where curl is available. If you are unsure if you have curl installed locally or do not want to install it, we can use the OCI cloud shell. While logged into the OCI console, you can click the Cloud Shell icon in the upper right of the page.
 
-    ![](../images/SDW-42.png)
+    ![](/images/sdw-42.png)
 
     This will open a console where you can run the curl command.
 
-    ![](../images/SDW-43.png)
+    ![](/images/sdw-43.png)
 
     The cURL for the table MAY2018 side out also will help you construct REST endpoints for update, delete and insert actions.
 
@@ -242,65 +242,65 @@ We need to load some data into the database so that we can create some REST serv
 
 1. So, we have a REST enabled table ready to be used by our applications but we need to ensure not just anyone can use it; we need to secure access to the table. To do this, let's use the Database Actions menu in the upper left of the page and choose REST.
 
-    ![](../images/SDW-44.png)
+    ![](/images/sdw-44.png)
 
 2. The REST pages let you create REST endpoints just as we did with the auto REST option. Here, we want to select the Security Tab on the top of the page and then select OAuth Clients.
 
-    ![](../images/SDW-45.png)
+    ![](/images/sdw-45.png)
 
 3. To create our OAuth client, we will secure our REST endpoints with, click the Create OAuth Client button in the upper right of the page.
 
-    ![](../images/SDW-46.png)
+    ![](/images/sdw-46.png)
 
 4. The Create OAuth Client slider will come out on the right of the page. In this form we first need to name our OAuth Client. We can name it **garysec**. Next we can give it a description; anything will do here. The follow field, support URI, is where a client will be taken upon an authorization error or failure. Finally, we need an support email for contacting someone. Once your form looks similar to the image below:
 
-    ![](../images/SDW-47.png)
+    ![](/images/sdw-47.png)
 
 5. Click the Roles tab on the top of the Create OAuth Client slider
 
-    ![](../images/SDW-48.png)
+    ![](/images/sdw-48.png)
 
 6. Now, use the shuttle to move the Role **oracle.dbtools.role.autorest.GARY.MAY2018** over to the right side, then click the Create button on the lower right. Moving the Role says that we want all REST services with this role to be secure and by using the auto REST feature, the service has created a role for us and all the endpoints we have used in this lab.
 
-    ![](../images/SDW-49.png)
+    ![](/images/sdw-49.png)
 
     We now have an OAuth Client we can secure our REST service with.
 
-    ![](../images/SDW-50.png)
+    ![](/images/sdw-50.png)
 
 7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![](../images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
 
-    ![](../images/SDW-51.png)
+    ![](/images/sdw-51.png)
 
 8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![](../images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
 
-    ![](../images/SDW-52.png)
+    ![](/images/sdw-52.png)
 
 9. Time to secure the REST service. Using the tab bar on the top of the page, select AutoREST.
 
-    ![](../images/SDW-53.png)
+    ![](/images/sdw-53.png)
 
 10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![](../images/three-dot-pop.png) on the MAY2018 title and select Edit.
 
-    ![](../images/SDW-54.png)
+    ![](/images/sdw-54.png)
 
 11. In the REST Enable Object slider, click the Require Authentication toggle button, then click Save in the lower right of the slider. That's it, the service it now secure.
 
-    ![](../images/SDW-55.png)
+    ![](/images/sdw-55.png)
 
 12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![](../images/three-dot-pop.png) and select Get Curl.
 
-    ![](../images/SDW-56.png)
+    ![](/images/sdw-56.png)
 
 13. We are going to use the GET Single curl command just as we did before. Start by clicking on Get Single, enter **hv70116556** in the ID field and click the Next button on the lower right of the slide out.
 
-    ![](../images/SDW-39.png)
+    ![](/images/sdw-39.png)
 
 14. On the following page of the slider, we can see the curl command now contains some header information:
 
     **--header 'Authorization: Bearer VALUE'**
 
-    ![](../images/SDW-57.png)
+    ![](/images/sdw-57.png)
 
     and if we run the original curl command using the OCI Cloud Shell without this information, we get Unauthorized:
 
@@ -326,7 +326,7 @@ https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/ma
 
 16. We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
 
-    ![](../images/SDW-58.png)
+    ![](/images/sdw-58.png)
 
 ## Conclusion
 In this lab, you had an opportunity to get an introduction to REST services using an easy to follow User Interface. REST enable your tables and database objects in minutes with zero code.
