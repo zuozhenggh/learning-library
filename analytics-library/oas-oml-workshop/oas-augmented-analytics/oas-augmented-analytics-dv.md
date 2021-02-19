@@ -292,7 +292,9 @@ These classification rules are generated when we train a model using training da
 
 
 1. In the home page, click on create and select  **Data Flow**.  
-![](./images/OMLP01.png " ") 
+   ![](./images/OMLP01.png " ") 
+
+
 
 2. Select the data we were analyzing > “**Attrition Training**.” and click on **Add**.
 ![](./images/OMLP02.png " ")
