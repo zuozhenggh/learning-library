@@ -20,6 +20,9 @@ What a great many customers don’t realize is these capabilities are now includ
  
 
 ### Objectives
+This lab will introduce you to the capability OAS to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.In lab5 you will play the role of an HR Analyst.  The VP of HR has noticed an increasing rate of attrition.  As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk. Additionally, you will identify those employees who are at greatest risk for leaving.
+
+And in lab6, you will play the role of a data scientist assisting the HR Analyst within your organization. The analyst has asked you to assist in evaluating what ML algorithms are best suited to understanding and preventing unwanted attrition in order to decrease the rate of attrition and identify potential strategies to mitigate risk.   Additionally, you will identify employees still with the organization who are at greatest risk for leaving.
 
 
 
@@ -31,6 +34,15 @@ What a great many customers don’t realize is these capabilities are now includ
 
 
 ## Learn More
+* [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
+* [https://www.oracle.com/business-analytics/analytics-server.html](https://www.oracle.com/business-analytics/analytics-server.html)
+* [https://www.oracle.com/business-analytics](https://www.oracle.com/business-analytics)
+* [https://blogs.oracle.com/machinelearning](https://blogs.oracle.com/machinelearning/)
+* [Oracle Machine Learning Overview: from Oracle Data Professional to Oracle Data Scientist in 6 Weeks!](https://www.youtube.com/watch?v=jFBMhOapGL8&feature=youtu.be&t=1)
+* [Learn How to Use Oracle Data Miner UI in 45 Minutes](https://blogs.oracle.com/machinelearning/learn-how-to-use-oracle-data-miner-ui-in-45-minutes)
+* [OML Getting Started Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/omlug/get-started-oracle-machine-learning.html)
+* [Oracle Machine Learning for R Learning Path](https://apexapps.oracle.com/pls/apex/f?p=44785:24:9589340370727:PRODUCT:NO::P24_CONTENT_ID,P24_PREV_PAGE,P24_PROD_SECTION_GRP_ID:8984,141,)
+* [Partner Built Tutorial On YouTube](https://www.youtube.com/playlist?list=PL99-DcFspRUq8VbbgXe2lQ559VDr7BSCr)
 
 
 
