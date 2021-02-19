@@ -236,8 +236,9 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
     ![](./images/wlab.png "")
 
+Depending on your workstation, choose Step 6 (for Mac) or 7 (for Windows)
 
-## **STEP 6**: Accessing Cloud Manager using SSH
+## **STEP 6**: FOR MAC USERS- Accessing Cloud Manager using SSH (for Mac)
 
 SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was created in Step 1 of Lab 2. 
 
@@ -264,8 +265,14 @@ For example: ```cd ~/Downloads/keys ```
     ssh –p 2222 opc@localhost -i id_rsa
     </copy>
     ```
+## **STEP 7**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH (for Windows)
+Reminder of Prerequisites: Putty, Git Bash, and Firefox. Please download those if you haven't already.
 
-## **STEP 7**: Monitoring Cloud Manager
+-PuttyGenKey convert to .ppk file
+-Putty SSH 
+
+
+## **STEP 8**: Monitoring Cloud Manager
 
 1. SSH into Cloud Manager instance to check status of the deployment.  Monitor Cloud Manager bootstrap installation using the below command.
 
@@ -300,7 +307,7 @@ For example: ```cd ~/Downloads/keys ```
     *NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
 
-## **STEP 8**: Set up SOCKS Proxy to Access Cloud Manager in Browser
+## **STEP 9**: Set up SOCKS Proxy to Access Cloud Manager in Browser
 
 **NOTE**: Make sure you are off VPN. 
 
