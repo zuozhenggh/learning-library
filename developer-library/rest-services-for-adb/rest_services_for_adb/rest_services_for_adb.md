@@ -178,7 +178,7 @@ We need to load some data into the database so that we can create some REST serv
 
 14. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
-    <img src="./images/sdw-30.png" width="250px" alt="Using the navigator on the left of the SQL Worksheet, we can see out new table">
+    ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/sdw-30.png)
 
     In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
@@ -188,15 +188,15 @@ We need to load some data into the database so that we can create some REST serv
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
-    <img src="./images/sdw-32.png" width="300px" alt="Using the navigator on the left of the SQL Worksheet, find the MAY2018 Table">
+    ![Using the navigator on the left of the SQL Worksheet, find the MAY2018 Table](./images/sdw-32.png)
 
 2. Right click on the table name and select REST in the pop up menu then Enable.
 
-    <img src="./images/sdw-33.png" width="400px" alt="Right click on the table name and select REST in the pop up menu then Enable">
+    ![Right click on the table name and select REST in the pop up menu then Enable](./images/sdw-33.png)
 
     The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
-    <img src="./images/sdw-34.png" width="700px" alt="The REST Enable Object Slider, view the Preview URL">
+    ![The REST Enable Object Slider, view the Preview URL](./images/sdw-34.png)
 
 3. Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
