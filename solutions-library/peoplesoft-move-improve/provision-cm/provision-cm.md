@@ -20,7 +20,7 @@ In this lab, you will:
     * User
     * Password
     * Tenant
-- Admin privileges on your local machine.
+- Admin privileges on your local machine or Windows instance on Cloud.
 
 
 ## **STEP 1**: Generating Keys
@@ -239,7 +239,7 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
 ## **STEP 6**: Accessing Cloud Manager using SSH
 
-SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) are required to access Cloud Manager instance was created in Step 1 of Lab 2. 
+SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was created in Step 1 of Lab 2. 
 
 **NOTE**: Make sure you are off VPN.
 
@@ -304,11 +304,15 @@ For example: ```cd ~/Downloads/keys ```
 
 **NOTE**: Make sure you are off VPN. 
 
-1. Launch Firefox and navigate to **Network Settings** in Preferences
+1. Launch Firefox and go to **Preferences** by clicking the gear in the top right
+
+    ![](./images/firefoxpref.png "")
+
+2. Scroll down to the bottom to navigate to **Network Settings**
 
     ![](./images/foxpref.png "")
 
-2. Make the following changes to configure Proxy access to the internet.
+3. Make the following changes to configure Proxy access to the internet.
 
     * Toggle Manual Proxy Configuration
     * SOCKS host: localhost and Port: 8123
@@ -320,7 +324,7 @@ For example: ```cd ~/Downloads/keys ```
 
     ![](./images/firefox.png "")
 
-3.  Launch terminal or Git Bash and navigate to the keys folder. Run the following command to create the SOCKS proxy making sure to replace the **Jump Host Public IP**.
+4.  Launch terminal or Git Bash and navigate to the keys folder. Run the following command to create the SOCKS proxy making sure to replace the **Jump Host Public IP**.
 
     ```
     <copy>    
@@ -329,9 +333,9 @@ For example: ```cd ~/Downloads/keys ```
     ```
     *Example:* ``` ssh -D 8123 -f -C -q -N -i id_rsa opc@XXX.XXX.XXX.XXX ```
 
-4. Enter your **Cloud Manager PIA URL** (``CM_http_url``) in Firefox
+5. Enter your **Cloud Manager PIA URL** (``CM_http_url``) in Firefox
 
-5. To login, use the username **CLADM** and password as **Psft1234**.
+6. To login, use the username **CLADM** and password as **Psft1234**.
     ```
     <copy>CLADM</copy>
     ```
