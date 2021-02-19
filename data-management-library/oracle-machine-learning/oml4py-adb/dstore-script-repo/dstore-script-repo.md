@@ -13,7 +13,7 @@ Python objects, including OML4Py proxy objects, exist for the duration of the cu
 By using a datastore, you can:
 * Save OML4Py and other Python objects for use across Python sessions
 * Grant or revoke read privilege access to a datastore or its objects to one or more users. You can restore the saved objects in another Python session.
-* Easily pass multiple and non-scalar arguments to Python functions for use in embedded Python execution from Python, REST, and SQL  API. **Note:** SQL and REST APIs support passing scale values, such as datastore name or numeric values, only.
+* Easily pass multiple and non-scalar arguments to Python functions for use in embedded Python execution from Python, REST, and SQL  API. **Note:** SQL and REST APIs support passing scalar values, such as datastore name or numeric values, only.
 * List available datastores and explore datastore contents
 
 ### Objectives

@@ -3,7 +3,7 @@
 
 
 ## Introduction
-This lab highlights a few of the machine learning algorithms available in OML4Py: Generalized Linear Models, K-Means Clustering, partitioned models, and model explainability.
+This lab highlights a few of the machine learning algorithms and features available in OML4Py: Generalized Linear Models, K-Means Clustering, partitioned models, and model explainability.
 
 
 

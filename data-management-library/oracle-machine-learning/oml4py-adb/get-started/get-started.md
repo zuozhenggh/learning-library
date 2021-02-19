@@ -167,14 +167,15 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
     ![Image alt text](images/import_oml.png)
 
-## **STEP 5:** Verify Connection to the Autonomous Database    
+## **STEP 5:** Verify Connection to the Autonomous Database  
+Using the default interpreter bindings, OML Notebooks automatically establishes a database connection for the notebook.  
 
-1. To verify if the oml module is connected to the Autonomous Database, type:
+1. To verify the Python interpreter has established a database connection through the `oml` module, run the command:
 
    `oml.isconnected()`
    ![Image alt text](images/oml_connected.png)
 
-   Once your notebook is connected, the command returns TRUE. The notebook is now connected to the Python interpreter, and you are ready to run python commands in your notebook.         
+  Once your notebook is connected, the command returns `True`.         
 
 
 ## **STEP 6:** View Help Files    

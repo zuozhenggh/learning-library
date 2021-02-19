@@ -7,16 +7,16 @@ This lab walks you through the steps to use the AutoML functionality.
 Estimated Lab Time: 15 minutes
 
 ### About AutoML
-AutoML (Automatic Machine Learning) provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.
+AutoML (Automated Machine Learning) provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.
 
 ### Objectives
 
 In this lab, you will learn how to:
 * Create data set (wine data) as Pandas DataFrame and load into ADB
-* Use `automl.AlgorithmSelection` to automatically rank the best algorithms from the set of supported Oracle Machine Learning algorithms
-* Use `automl.FeatureSelection` to quickly identify the most relevant feature subsets for a training data set and an Oracle Machine Learning algorithm
-* Use `automl.ModelTuning` to tune the hyperparameters for the specified classification or regression algorithm and training data
-* Use `automl.ModelSelection` to automatically select the best Oracle Machine Learning algorithm, and then tune that algorithm
+* Use `automl.AlgorithmSelection` to rank the in-database algorithms by predicted score metric for classification or regression problems
+* Use `automl.FeatureSelection` to quickly identify the most relevant feature subsets for the provided training data set and an in-database algorithm
+* Use `automl.ModelTuning` to tune the hyperparameters for the specified algorithm and training data
+* Use `automl.ModelSelection` to select the top in-database algorithm, and then tune the corresponding model
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ In this lab, you will learn how to:
     ```
     ![Image alt text](images/oml_sync_wine.png "Wine table")
 
-## **STEP 2:** Automatic Algorithm Selection
+## **STEP 2:** Automated Algorithm Selection
 In this step, you prepare the wine data set by separating predictors from the target as conventional for Python model building. This produces two new proxy objects that will be used in AutoML functions.
 1. Run the following script to prepare the wine data set:
     ```
@@ -70,7 +70,7 @@ In this step, you prepare the wine data set by separating predictors from the ta
 
     The script returns the SVM Gaussian, SVM Linear, Neural Network and Random Forest. Among these, SVM Gaussian is ranked first, and we will use that in subsequent AutoML function calls.
 
-## **STEP 3:** Automatic Feature Selection
+## **STEP 3:** Automated Feature Selection
 In this step, you determine the features that best support the selected algorithm. First define a FeatureSelection object with score metric accuracy. Then call the `reduce` function and specify the desired algorithm, in this case, as determined above and stored in the variable `selected_wine_alg_cl`. Also specify the train and test OML DataFrame proxy objects.
 
 You see the set of selected columns.
@@ -95,7 +95,7 @@ You see the set of selected columns.
 ## **Try it Yourself**
 Try other algorithms, such as `svm_linear` or `rf` in the first argument of the reduce function see if different columns are selected.
 
-## **STEP 4:** Automatic Model Tuning
+## **STEP 4:** Automated Model Tuning
 At this point, you are ready to build and tune the models you want to use.
 
 First, you define a `ModelTuning` object for classification.
@@ -148,7 +148,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
     ```
     ![Image alt text](images/custom_search_space.png "Specify custom search space")
 
-## **STEP 5:** Automatic Model Selection
+## **STEP 5:** Automated Model Selection
 As a short cut, you may choose to go directly to model selection on the training data. Model Selection automatically selects the best algorithm (using Algorithm Selection) from the set of supported algorithms, then builds, tunes, and returns the model.
 
 1. Run the following script to define a ModelSelection object and call `select` for automatically building the best model on the wine data.  select the best model for the wine data set:
@@ -167,7 +167,7 @@ Congratulations! You have completed this workshop!
 
 ## Learn More
 
-* [Automatic Machine Learning](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/automatic-machine-learning.html#GUID-4B240E7A-1A8B-43B6-99A5-7FF86330805A)
+* [Automated Machine Learning](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/automatic-machine-learning.html#GUID-4B240E7A-1A8B-43B6-99A5-7FF86330805A)
 * [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
 

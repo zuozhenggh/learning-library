@@ -247,8 +247,8 @@ Use the `concat` method to combine columns from one data frame proxy object with
     ```
     %python
 
-    z = MY_DF[:,'id']
-    x.concat([z, w, y], auto_name=True)
+    MY_DF2 = MY_DF[:,'id']
+    x.concat([MY_DF2, w, y], auto_name=True)
     ```
 
   ![Image alt text](images/concat_columns_name_reso.png "Concatenate columns with name resolution")
@@ -259,7 +259,7 @@ Use the `concat` method to combine columns from one data frame proxy object with
     ```
     %python
 
-    x.concat(OrderedDict([('ID',iris_df2), ('round(exp(2*num))',w), ('New_',y)]))
+    x.concat(OrderedDict([('ID',MY_DF2), ('round(exp(2*num))',w), ('New_',y)]))
     ```
 
   ![Image alt text](images/concat_with_renaming.png "Concatenate with renaming")
