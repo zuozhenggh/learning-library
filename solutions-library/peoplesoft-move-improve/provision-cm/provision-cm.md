@@ -232,7 +232,7 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
     ![](./images/output2.png "")
 
     NOTE: If you don't have admin access in your laptop, before proceeding with Step 6, please follow the 
-    **Windows VM Compute Lab:** (This is after Additional Labs, after Lab 7).
+    **Windows VM Compute Lab:** 
 
     ![](./images/wlab.png "")
 

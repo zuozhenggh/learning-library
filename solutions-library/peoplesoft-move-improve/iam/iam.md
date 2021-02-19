@@ -69,17 +69,13 @@ Please check that you have the required resources in Availability Domains 1, 2 A
 2. Using the dropdowns, make the following selections:
     * Service: **Compute** 
     * Scope:  **US-ASHBURN-AD-1** 
-    * 
+    * Resource: **Cores for Standard2 based VM and BM Instances**
 
-    ![](./images/scope.png " ")
+    Make sure you have 2 cores Available in the chart below. Repeat by changing Scope to **US-ASHBURN-AD-2** AND **US-ASHBURN-AD-3** for a toal of 6 cores.
 
-3. Scroll down the list, and you will see all the resources available and usage. For example, in the below case, all my available resources are used.
+    ![](./images/newScope.png " ")
 
-    ![](./images/available.png " ")
-
-    **NOTE**: You will need 2 instances. Make sure you have at least 1 of each of the below marked resource (it doesn't need to be in same availability domain):
-
-    ![](./images/resource.png " ")
+**Note**: If you do not have any for Standard2 based VM and BM Instances, try selecting **Cores for Standard1 based VM and BM Instances** for the Resource instead.
 
 ## **STEP 3:** Creating a Demo Compartment
 **Compartments Overview:**
