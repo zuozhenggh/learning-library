@@ -60,13 +60,16 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
 During the workshop, you might face problems related to service limits. 
 
-Please check if you have enough resource availability in your Availability Domain or change the Availability Domain to 1/2/3 as per the resource availability. 
+Please check that you have the required resources in Availability Domains 1, 2 AND 3.
 
 1. To check the service limit, navigate to the three-line menu on the top left and click on **Governance -> Limits, Quotas, and Usage**.
 
     ![](./images/slimit.png " ")
 
-2. Click on **Scope** and select AD-1 or AD-2 or AD-3 depending on which availability domain you want to see the service limit. 
+2. Using the dropdowns, make the following selections:
+    * Service: **Compute** 
+    * Scope:  **US-ASHBURN-AD-1** 
+    * 
 
     ![](./images/scope.png " ")
 

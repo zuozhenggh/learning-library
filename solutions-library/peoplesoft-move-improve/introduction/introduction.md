@@ -38,9 +38,8 @@ In this lab, you will:
 * My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
 * User should have their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
 * User has access to a workstation/laptop with the following installed:
-  - If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win  
-
-  - A web browser to connect to OCI web console and Cloud Manager PIA – Firefox or Chrome recommended.
+    * If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win  
+    * A web browser to connect to OCI web console and Cloud Manager PIA – Firefox or Chrome recommended.
 
 ## Appendix
 

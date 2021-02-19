@@ -25,7 +25,7 @@ In this lab, you will:
 
 ## **STEP 1**: Generating Keys
 
-**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skil to Step 1.6: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
+**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 2: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
 
 **Option B:** If you would like to generate your own keys, continue here:
 1. Ensure Git Bash is installed on your laptop/workstation.
@@ -78,6 +78,10 @@ In this lab, you will:
     ![](./images/apikeypub.png "")
 
 ## **STEP 2**: Setting API Keys for User01
+
+Verify you have the following 4 keys: 
+* **API Signing keys**: ``api_key`` and ``api_key.pub``
+* **SSH key pair**: ``id_rsa`` and ``id_rsa.pub``
 
 1. Copy the contents of api_key.pub key (the one you have created through the script) as follows: 
     - Right click on the api_key.pub and open with a text editor as shown below. 
@@ -151,7 +155,7 @@ The Create Stack, Configure Variables page includes a list of the parameters nee
 
 3. Select the **storage volume size in GBs** for the secondary block volume for the Cloud Manager instance. We will set it as **200 GBs**.
 
-4. For SSH public key, enter content of your ``id_rsa.pub`` key (the one you created with the script) in a single line, with no line feeds or spaces.
+4. For SSH public key, enter the contents of your ``id_rsa.pub`` from your keys folder in a single line, with no line feeds or spaces.
 
 5. Enter your **User OCID** (you have copied this in your notepad in Step 3) in a single line, with no line feeds or spaces.
 
