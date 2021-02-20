@@ -1142,7 +1142,7 @@ Common terms that are used throughout this lab:
 
 ## Learn More
 
-- [ORDS Document](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
+- [ORDS Documentation](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
 - [ORDS Blog post](https://www.oracle.com/tools/technologies/faq-rest-data-services.html)
 
 ## Rate this Workshop

@@ -8,6 +8,10 @@ We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute 
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
+Watch the video below for an overview of the lab.
+[](youtube:oq2Hk1Yy9Cg)
+
+
 ## Oracle Cloud Shell
 
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
