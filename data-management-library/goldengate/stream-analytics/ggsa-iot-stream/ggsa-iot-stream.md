@@ -123,7 +123,7 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 ## **Step 7**: Create ReplenishOnly Stage
 
 1. Click on the *ReplenishOnly* stage and Pause the stream. This is another Query Stage in which we take the data from the last stage and apply a filter to it.  
-2. Click on the *Filters* tab and notice that we added a condition that only includes Replenish conditions that are set to Yes, because we are only interested in data from machines that require replenishment.
+2. Click on the *`Filters`* tab and notice that we added a condition that only includes Replenish conditions that are set to Yes, because we are only interested in data from machines that require replenishment.
 
     ```
     Replenish equals (case sensitive) Yes
@@ -143,7 +143,7 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 
 1. Click on the *ReplenishStats* stage and Pause the stream. In this alternate last stage we would like to keep track of the number of machines that are set to Replenish by city and by `business_name`.
 
-2. This is a Query Group - Stream stage.  Click on the *Groups* tab and notice that we have added two summaries.  Click on the *ReplenishCountByCity* and see the summary with the COUNT of all Replenish and then a *Group by* city and then a second summary with *Group by* `business_name`
+2. This is a Query Group - Stream stage.  Click on the *`Groups`* tab and notice that we have added two summaries.  Click on the *ReplenishCountByCity* and see the summary with the COUNT of all Replenish and then a *Group by* city and then a second summary with *Group by* `business_name`
 
 
     ![](./images/replenishstats.png " ")
@@ -159,7 +159,7 @@ The next stage is in a parallel branch of the pipeline where we are interested t
 ## **Step 10**: Create ErrorsInVMs Stage
 
 1. Click on the *ErrorsInVMS* stage and Pause.  In this stage we would like to filter out all machines that are working correctly because they do not require any maintenance.  
-2. Click on the *Filters* tab and see the query condition:
+2. Click on the *`Filters`* tab and see the query condition:
 
     ```
     ErrorCode not equals 0
@@ -173,12 +173,12 @@ The next stage is in a parallel branch of the pipeline where we are interested t
 
     ![](./images/errorstats.png " ")
 
-4. Click on the Visualization tab to see the bar char for the error stats by type and city.
+4. Click on the *`Visualization`* tab to see the bar char for the error stats by type and city.
 
 ## **Step 12**: Create NotCooling Stage
 
 1. Click on the *NotCooling* stage in the parallel branch and Pause.  
-2. Here we would like to isolate machines that are not cooling well by setting this query condition.Click on the *Filters* tab on the right to see the query condition:
+2. Here we would like to isolate machines that are not cooling well by setting this query condition.Click on the *`Filters`* tab on the right to see the query condition:
 
     ```
     Temp_Level greater than 40
@@ -197,7 +197,7 @@ The next stage is in a parallel branch of the pipeline where we are interested t
 
     ![](./images/avgtempmalfunction.png " ")
 
-3. Click on the *Visualizations* tab to view the bar chart for the average temperature of all machines that malfunctioned by type.
+3. Click on the *`Visualizations`* tab to view the bar chart for the average temperature of all machines that malfunctioned by type.
 4. Clik on *Done* to exit the pipeline.
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
