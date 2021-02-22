@@ -5,6 +5,9 @@ This lab will show you how to connect to your DB System.
 
 Estimated Lab Time:  5 minutes 
 
+Watch the video below for an overview of Lab 1: Build a DB System
+[](youtube:tRo33KktXt0)
+
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
