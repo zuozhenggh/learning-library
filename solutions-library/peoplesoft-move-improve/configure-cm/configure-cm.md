@@ -63,7 +63,7 @@ My Oracle Support (MOS) account credentials.
 
     ![](./images/3.png "")
 
-2.	Click **Create**.  This action will create a file server in a few minutes. Please wait until the file server status shows ‘**FSS Configured**’, and then the system will be ready for downloads. 
+2.	Click **Create**.  This action will create a file server in a few minutes. Please wait until the file server status shows ‘**FSS Configured**' which you can see by clicking **More Info**, and then the system will be ready for downloads. 
 
 You may now proceed to the next lab.
 

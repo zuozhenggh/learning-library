@@ -350,13 +350,6 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 		Cloud Manager PIA URL: http://psftcm.cm.ociholvcn.oraclevcn.com:8000 
 		Cloud Manager PIA SSL URL: https://psftcm.cm.ociholvcn.oraclevcn.com:8443
 
-    Once you see this, run the following command*
-    ```
-    <copy>
-    curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/9dk-sxzyoCcjaSfY4Br06tmoYtg5-ItF3FpsLHYrWTDAE_bK7-45d86q5yThRjNc/n/intpsftengt/b/release/o/patch_cm_pi11.sh | bash
-    </copy>
-    ```
-
     *NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
 

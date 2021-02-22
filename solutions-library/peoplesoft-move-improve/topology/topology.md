@@ -23,22 +23,31 @@ In this lab you will:
 
 ## **STEP 1**: Defining a Topology
 
-1.	Navigate to **Dashboard** > **Topology** > **PUM Fulltier** topology. This topology will be used to create a new environment. 
+1.	Navigate to **Dashboard** > **Topology**.
+    Click the radio button next to **PUM Fulltier** and then click **Clone**
+    ![](./images/clonetop1.png "")
 
-    ![](./images/tophome.png "")
+    Give the cloned Topology a name: **Fulltier** and click **Clone**
+    ![](./images/clonetop2.png "")
+2. Now let's edit the Topogy we just created. 
+    Click **Fulltier**
+    ![](./images/editFull.png "")
 
-2.  Review the nodes and update the Shapes. Click **Full Tier** node and select **VM.Standard2.1** 
+    You should see 2 Nodes like this:
+    ![](./images/nodes2.png "")
 
-    ![](./images/linnode.png "")
+3.  Click **Full Tier** under Environment Type and select **VM.Standard2.1** 
 
-    Click **Done**
-3.	Repeat these steps for the Windows node. Click **PeopleSoftClient** node and select **VM.Standard2.1** 
+    ![](./images/lintop.png "")
 
-    ![](./images/winNode.png "")
+    Click **Done**.
+
+    Now, let's edit the other node. Click **PeopleSoft Client** and then **Delete** this node.
+    ![](./images/winNodeDelete.png "")
 
 4.	When you have something like this, click **Save**. 
 
-    ![](./images/topology2node.png "")
+    ![](./images/justlinux.png "")
 
 You may now proceed to the next lab.
 
