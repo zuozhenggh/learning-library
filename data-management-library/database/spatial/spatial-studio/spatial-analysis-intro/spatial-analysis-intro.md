@@ -101,26 +101,44 @@ Here you join Datasets based on a spatial relationship. You will join ACCIDENTS 
 
    ![Image alt text](images/spatial-analysis-12.png "Image title")
 
-1. In the Spatial Join dialog, enter a name for the result, for example ACCIDENTS\_JOIN\_POLICE\_BOUNDS. For the additional entries, you are joining items in ACCIDENTS based on the spatial relationship Inside to items in POLICE\_BOUNDS.    This operation will result in a new Dataset containing ACCIDENTS enriched with the unique id of the POLICE\_BOUNDS region containing each item. The unique id (i.e., key column) for POLICE\_BOUNDS is COMPNT\_NM, therefore we expect to see that column in the result. Click **Run**.
+2. In the Spatial Join dialog, enter the name ACCIDENTS\_JOIN\_POLICE\_BOUNDS for the result. For the additional entries, you are joining items in ACCIDENTS based on the spatial relationship Inside to items in POLICE\_BOUNDS. This operation will result in a new Dataset containing ACCIDENTS enriched with the unique id of the POLICE\_BOUNDS region containing each item. The unique id (i.e., key column) for POLICE\_BOUNDS is COMPNT\_NM, therefore we expect to see that column in the result. Click **Run**.
 
      **Note:** The Advanced option allows you to include all columns from the secondary Dataset (POLICE\_BOUNDS in this case) in the result, instead of just the unique id.
 
    ![Image alt text](images/spatial-analysis-13.png "Image title")
    
-2. The result is listed under Analyses in the Data Elements panel. Expand the result to see its columns; all original columns from ACCIDENTS, plus COMPNT\_NM as expected.
+3. The result is listed under Analyses in the Data Elements panel. Expand the result to see its columns; all original columns from ACCIDENTS, plus COMPNT\_NM (i.e., police region name) as expected.
 
    ![Image alt text](images/spatial-analysis-14.png "Image title")
 
-3. x
+4. Drag and drop the analysis ACCIDENTS\_JOIN\_POLICE\_BOUNDS into the map. In the Layers List, click the hamburger icon for the ACCIDENTS\_JOIN\_POLICE\_BOUNDS layer and select Settings to set Style as desired and enable Interaction. For Interaction, enable an Info Window including the column COMPNT\_NM. Click on a crash item in the map and observe the COMPNT\_NM (i.e., police region name) in the info window.
 
    ![Image alt text](images/spatial-analysis-15.png "Image title")
 
-   ![Image alt text](images/spatial-analysis-16.png "Image title")
+   You now have augmented the crash data with the police region name per item. The results could be used for further analysis is Spatial Studio or accessed by other tools and applications such as Oracle Analytics Cloud for broader analytics.
 
-   ![Image alt text](images/spatial-analysis-17.png "Image title")
 
 ## **STEP 4**: Summarize Items by Region
 
+In the previous step, you augmented crash items with police region. In this step, you do the inverse: you augment police regions with a summary of crash info. 
+
+1. Click on the hamburger menu for the POLICE\_BOUNDS layer in the Layers List and select Spatial Analysis. Select the **Analytics** tab and then the tile **Summarize by Region**  
+
+   ![Image alt text](images/spatial-analysis-16.png "Image title")
+
+2. In the Summarize by region dialog you can leave default results dataset name, POLICE\_BOUNDS SUMMARIZE. Enter the other items in the dialog: for each item in POLICE\_BOUNDS you are summarizing ACCIDENTS based on Count. Enter NUM_ACCIDENTS as the summary colum name to be added. Click **Run**.
+
+   **Note:** In addition to Count, you can also summarize numeric attributes with this analysis, for example using Average. 
+
+   ![Image alt text](images/spatial-analysis-17.png "Image title")
+
+3. Drag the result, POLICE\_BOUNDS SUMMARIZE, onto the map. In the Layers List click the hamburger menu for  POLICE\_BOUNDS SUMMARIZE and select Settings.  Under Style, change Color to **Based on data**.
+
+   ![Image alt text](images/spatial-analysis-18.png "Image title")
+
+4. ...
+
+   ![Image alt text](images/spatial-analysis-19.png "Image title")  
 
 ## **STEP 5**: Identify Nearest Items
 
