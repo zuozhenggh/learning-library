@@ -805,7 +805,7 @@ updateDomain.sh completed successfully (exit code = 0)
 
 2. In Firefox you will see the self-certificate warning as below:
 
-    <img src="./images/self-cert-warning.png" width="100%">
+    ![](./images/self-cert-warning.png)
 
     Click **Advanced...** and then **Accept the Risk and Continue**
 
@@ -813,14 +813,14 @@ updateDomain.sh completed successfully (exit code = 0)
 
 4. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
 
-  <img src="./images/oci-deployments.png" width="100%">
+  ![](./images/oci-deployments.png)
 
 5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioning, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
     Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
 
-  <img src="./images/oci-simpledb-app.png" width="100%">
+  ![](./images/oci-simpledb-app.png)
 
 You may proceed to the next lab.
 
@@ -830,6 +830,6 @@ You may proceed to the next lab.
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

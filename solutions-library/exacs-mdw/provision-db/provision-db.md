@@ -4,6 +4,8 @@
 
 This lab walks you through the steps to get started using the Oracle Exadata Cloud Service Database on Oracle Exadata Cloud Service. In this lab, you will provision a new database.
 
+Estimated Lab Time: 30 minutes.
+
 ### Objectives
 
 As a database user, DBA or application developer,
@@ -15,7 +17,7 @@ As a database user, DBA or application developer,
 
 * An Oracle Cloud Infrastructure account with a pre-provisioned Exadata Infrastructure
 
-## **Step 1:** Create an Exadata Cloud Service Database
+## **STEP 1:** Create an Exadata Cloud Service Database
 
 1. Login to your OCI account as a database user.
 
@@ -98,5 +100,7 @@ You may proceed to the next lab.
 - **Author** - Tejus Subrahmanya, Phani Turlapati, Abdul Rafae, Sathis Muniyasamy, Sravya Ganugapati, Padma Natarajan, Aubrey Patsika, Jacob Harless
 - **Last Updated By/Date** - Jess Rein - Cloud Engineer, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

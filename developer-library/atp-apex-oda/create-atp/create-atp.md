@@ -26,6 +26,10 @@ This workshop walks you through the steps to get started using the **Oracle Auto
 
 - Perfect for Developers!
 
+Watch our short video that explains Lab 1 - Create Autonomous Database and Lab 2 - Create APEX workshop and REST API:
+
+[](youtube:S9WPR0N0f2E)
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives
@@ -49,7 +53,7 @@ Estimated Lab Time: 15 minutes
 
 2. Make sure you select **Transaction Processing** and **Shared Infrastructure**.
 
-    ![ATP Creation](./images/atp_creation_1.png)
+    ![ATP Creation](./images/atp_creation_1_2.png)
 
 3. You can select **Always Free** configuration to start enjoying your Free Autonomous Database. You will have visible the **Always Free** logo next to the name of your database:
 

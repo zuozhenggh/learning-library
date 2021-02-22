@@ -135,6 +135,8 @@ We have now connected to our database. The next step will be to load data into t
  * [TaxExpenses Data file](files/Tax_Expenses.xlsx),
  * [TopDeal Data file](files/Top_Deal.xlsx).
 
+Note: You can also download the files, replace the sample data with your organization data in the same templates and load that into the database to see all the visualizations with your data in the next workshop.
+
 You may proceed to the next lab.
 
 ## Learn More
