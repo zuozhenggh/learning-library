@@ -141,7 +141,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
     - Method: - POST  
     - URL:   
     ```
-    <copy>http://localhost:3001/products/13</copy>
+    <copy>http://localhost:3001/updateProduct/13</copy>
     ```
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
