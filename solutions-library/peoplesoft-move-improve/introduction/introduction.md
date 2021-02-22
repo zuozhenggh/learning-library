@@ -26,20 +26,21 @@ In this lab, you will:
 * Create Identity and Access Management (IAM) Resources (Lab 1) 
 * Provision the Peoplesoft Cloud Manager using Marketplace (Lab 2)
 * Configure Cloud Manager Settings (Lab 3)
-* Review and Update a Topology (Lab 4)
-* Subscribe to PeopleSoft Channels (Lab 5)
+* Subscribe to PeopleSoft Channels (Lab 4)
+* Review and Update a Topology (Lab 5)
 * Create a New Environment Template (Lab 6)
 * Create Environment in PeopleSoft (Lab 7)
 
 
 
 ### Prerequisites
-* User already has a tenancy with Administrator user access. (Please complete "Prerequisites" section)
+* User already has a tenancy with Administrator user access. If not, please reach out to us during the session so that we can help you to create windows instance. 
 * My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
 * User should have their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
 * User has access to a workstation/laptop with the following installed:
-    * If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win  
-    * A web browser to connect to OCI web console and Cloud Manager PIA – Firefox or Chrome recommended.
+    * If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win. Please also download Putty from the following site: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html. In the Package Files section, click on an installer depending on 32/64 bits.
+    * Firefox to connect to Cloud Manager PIA.
+    * A different web browser (i.e. Chrome) to connect to OCI web console. 
 
 ## Appendix
 
