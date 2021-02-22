@@ -23,9 +23,9 @@ In this lab, you will:
 
   ![](./images/e1.png "")
 
-2. 	Provide a unique Environment Name - **MYPUMENV**. Select the Template that was created in previous section – **MYPUM**. Click **yes** for **Pause after infra creation**.  
+2. 	Provide a unique Environment Name - **WorkshopEnvironment** . Select the Template that was created in previous section – **TestWorkshop**. Click **yes** for **Pause after infra creation**.  
 
-  ![](./images/e2.png "")
+  ![](./images/workshop.png "")
 
 3. Go to **Environment Attributes -> Region and Availability Domains -> Credentials**
 
@@ -44,27 +44,20 @@ In this lab, you will:
   ![](./images/e3.png "")
 
   Leave the rest as default. You can also expand all sections under Environment Attributes. 
-4. Now, expand **Environment Attributes -> PeopleSoftClient -> Credentials**
 
-  | PeopleSoft Client | Credentials
-  | --------- | -----------
-  | Windows Administrator Password | Psft1234567#
-
-  ![](./images/winenvpass.png "")
-
-5. Scroll up and click Done on the top right to begin the environment creation process. 
+4. Scroll up and click Done on the top right to begin the environment creation process. 
 
   ![](./images/e4.png "")
 
-6. Accept the license. 
+5. Accept the license. 
 
   ![](./images/e5.png "")
 
-7. Refresh the page and click on the arrow button -> Details.
+6. Refresh the page and click on the arrow button -> Details.
 
-  ![](./images/e6.png "")
+  ![](./images/create1.png "")
 
-8. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
+7. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
 
   ![](./images/cl.png "")
 
@@ -72,19 +65,19 @@ In this lab, you will:
 
     ![](./images/pts.png "")
 
-9. Once environment creation is completed, you can click on arrow button -> Deploy to start provisioning.
+8. Once environment creation is completed, you can click on arrow button -> Deploy to start provisioning.
 
-  ![](./images/e9.png "")
+  ![](./images/create2.png "")
 
-10. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
+9. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
 
   ![](./images/e10.png "")
 
   You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
 
-    ![](./images/pts.png "")
+    ![](./images/pts2.png "")
 
-11. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
+10. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
 
   Cloning is a popular feature for Cloud Manager. Trial accounts don't have enough resources to accomodate a cloned environment. Please switch to a paid account for that feature.
 

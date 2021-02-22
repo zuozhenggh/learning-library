@@ -30,22 +30,22 @@ Navigate to Cloud Manager Dashboard -> **Environment Template**.
   Click **Add New Template** button.
 
 1. On the General Details page, provide the values below: 
-    * Give your environment a unique **Name** such as **MYPUM** 
-    * For **Description**, we'll use **Test a PUM image**
+    * Give your environment a unique **Name** such as **TestWorkshop** 
+    * For **Description**, we'll use **Workshop Test environment**
     * Click on the **Search Icon**. Do NOT type anything. If your DPK was downloaded properly, it should appear in the Search Results. If you can't see it yet, please wait and refresh the page after awhile. Since we subscribed to the HCM channel in the previous lab, we see **PEOPLESOFT HCM UPDATE IMAGE 9.2.037 - NATIVE OS** (see 2nd screenshot below).
 
-  ![](./images/mypum.png "")
+  ![](./images/Template2.png "")
 
   ![](./images/lookup.png "")
 
   Click **Next**.
 
 2. On the Select Topology page: 
-    * Click on the **Search Icon** to search for a topology and select **PUM Fulltier** topology. 
-    * Expand the **Custom Attributes** section and select **PUM Fulltier** again in the dropdown. 
+    * Click on the **Search Icon** to search for a topology and select **Fulltier** topology. 
+    * Expand the **Custom Attributes** section and select **Fulltier** again in the dropdown. 
     * Click on **Edit Custom Attributes**
 
-  ![](./images/fulltiertop1.png "")
+  ![](./images/topology3.png "")
 
     * Expand the **Region and Availability Domains** section and select the following from the corresponding dropdowns:
 
@@ -53,7 +53,7 @@ Navigate to Cloud Manager Dashboard -> **Environment Template**.
 
     * Expand the **Full Tier** -> **General Settings** and make the following 2 changes:
       - Database Operator Id: **PS** 
-      - Database Name: **PYPUMDB**
+      - Database Name: **MYPUMDB**
 
   ![](./images/s7.png "")
 
@@ -61,9 +61,6 @@ Navigate to Cloud Manager Dashboard -> **Environment Template**.
 
   ![](./images/cm.png "")
 
-    * Scroll to the bottom and expand **PeopleSoft Client** -> **Subnet Settings**
-    * Select **win** for the subnet
-  ![](./images/winSubnet.png "")
 
   Click **Next**
 
