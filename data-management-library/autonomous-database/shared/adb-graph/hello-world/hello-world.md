@@ -49,7 +49,8 @@ Learn how to
 
     in your browser. You can find the [region identifier for all regions here](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 
-4. Enter your ADW/ATP account credentials into the login screen:
+4. Enter the ADW/ATP account credentials or the Graph-enabled user (e.g. `GRAPHUSER`) into the login screen.   
+   Do **not** use `ADMIN`.
 
     ![](./images/graph-studio-login.png " ")
 
@@ -243,7 +244,7 @@ analyst.countTriangles(graph, true)
     </copy>
     ```
 
-    ![](./images/first-notebook-population-query.png)
+    ![](./images/first-notebook-population-query.png " ")
 
 12.  Change the output to be a pie chart.
 
