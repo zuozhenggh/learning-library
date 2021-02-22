@@ -88,7 +88,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Database Actions Menu, Administration then Users](./images/sdw-12.png)
 
-2. Find Gary's user title and click the open-in-new-tab icon ![open-in-new-tab icon](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
+2. Find Gary's user title and click the open-in-new-tab icon ![open-in-new-tab icon](./images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
 
     ![GARY the user's Details Tile, click the open-in-new-tab icon](./images/sdw-13.png)
 
@@ -202,7 +202,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Open a new browser window or tab and enter that URL we copied in the previous step](./images/sdw-35.png)
 
-    You can also see a plug icon ![plug icon](../images/plug-icon.png) next to the table to indicate it is REST enabled.
+    You can also see a plug icon ![plug icon](./images/plug-icon.png) next to the table to indicate it is REST enabled.
 
     ![Plug Icon Next to table in navigator](./images/sdw-36.png)
 
@@ -268,11 +268,11 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Created OAuth Client Details Tile](./images/sdw-50.png)
 
-7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
+7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
 
     ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/sdw-51.png)
 
-8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![copy icon](../images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
+8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
 
     ![Click the copy icon to save the Token Text](./images/sdw-52.png)
 
@@ -280,7 +280,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Use the tab bar on the top of the page, select AutoREST](./images/sdw-53.png)
 
-10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) on the MAY2018 title and select Edit.
+10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on the MAY2018 title and select Edit.
 
     ![Click the pop out menu icon on the MAY2018 title and select Edit](./images/sdw-54.png)
 
@@ -288,7 +288,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![click the Require Authentication toggle button then click Save in the lower right of the slider](./images/sdw-55.png)
 
-12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) and select Get Curl.
+12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) and select Get Curl.
 
     ![Use the pop out menu icon and select Get Curl](./images/sdw-56.png)
 
