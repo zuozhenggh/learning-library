@@ -60,19 +60,20 @@ In this lab, you will:
 
   ![](./images/pwin6.png "")
 
-Click Connect.
-Enter the default password you noted from the instance details page.
+	Click Connect.
+	Enter the default password you noted from the instance details page.
 
-**Steps for Mac machine**: Depending on the software, these steps might differ. Click on + sign and select Desktop or Add PC. Enter the Public IP address. Give Username as opc and password that you copied previously.
+	**Steps for Mac machine**: Depending on the software, these steps might differ. Click on + sign and select Desktop or Add PC. Enter the Public IP address. Give Username as opc and password that you copied previously.
 
   ![](./images/gi1.png "")
 
 3. Click Yes on the security message, which mentions that the identity of the remote computer cannot be verified.
 
-4. Change the password to: 
-  ```
-  <copy>Psft@12345678</copy>
-  ```
+4. Change the password to:
+
+	```
+	<copy>Psft@12345678</copy>
+	```
 
 You may proceed to the next lab.
 
