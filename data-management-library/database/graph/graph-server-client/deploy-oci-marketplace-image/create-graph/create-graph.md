@@ -100,9 +100,7 @@ Attach the graph to check that the graph was created.
 graph = session.get_graph("customer_360")
 graph
 </copy>
-```
 
-```
 PgxGraph(name: customer_360, v: 15, e: 24, directed: True, memory(Mb): 0)
 ```
 
@@ -115,6 +113,14 @@ graph.query_pgql("""
   SELECT DISTINCT LABEL(v) FROM MATCH (v)
 """).print()
 </copy>
+
++----------+
+| LABEL(v) |
++----------+
+| ACCOUNT  |
+| CUSTOMER |
+| MERCHANT |
++----------+
 ```
 
 How many vertices with each label:
@@ -124,6 +130,14 @@ graph.query_pgql("""
   SELECT COUNT(v), LABEL(v) FROM MATCH (v) GROUP BY LABEL(v)
 """).print()
 </copy>
+
++---------------------+
+| COUNT(v) | LABEL(v) |
++---------------------+
+| 5        | MERCHANT |
+| 6        | ACCOUNT  |
+| 4        | CUSTOMER |
++---------------------+
 ```
 
 The list of the edge labels:
@@ -133,6 +147,15 @@ graph.query_pgql("""
   SELECT DISTINCT LABEL(e) FROM MATCH ()-[e]->()
 """).print()
 </copy>
+
++-----------+
+| LABEL(e)  |
++-----------+
+| OWNED_BY  |
+| PARENT_OF |
+| PURCHASED |
+| TRANSFER  |
++-----------+
 ```
 
 How many edges with each label:
@@ -142,9 +165,16 @@ graph.query_pgql("""
   SELECT COUNT(e), LABEL(e) FROM MATCH ()-[e]->() GROUP BY LABEL(e)
 """).print()
 </copy>
-```
 
-![](images/check_graph.png)
++----------------------+
+| COUNT(e) | LABEL(e)  |
++----------------------+
+| 4        | OWNED_BY  |
+| 8        | TRANSFER  |
+| 1        | PARENT_OF |
+| 11       | PURCHASED |
++----------------------+
+```
 
 ## **STEP 4:** Publish the graph (optional)
 
