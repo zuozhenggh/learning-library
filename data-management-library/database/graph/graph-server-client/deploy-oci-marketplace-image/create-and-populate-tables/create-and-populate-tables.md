@@ -21,13 +21,13 @@ Estimated time: 7 minutes
 
 ## **STEP 1:** Log in to SQL Developer Web
 
-Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
+Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `customer_360`.
 
 ![](images/admin_url.jpg)
 
 Login as `CUSTOMER_360` using the password you entered when creating the user.
 
-*Note: Use the password you choose in Step 1.2 in Lab 4.*
+*Note: Use the password you choose in Step 2 in Lab 4.*
 
 ![](images/login-c360.jpg)
 
@@ -116,7 +116,6 @@ Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 <copy>
 CREATE TABLE customer (
   id NUMBER NOT NULL,
-  type VARCHAR2(20),
   name VARCHAR2(20),
   age NUMBER,
   location VARCHAR2(20),
@@ -125,10 +124,10 @@ CREATE TABLE customer (
 , CONSTRAINT customer_pk PRIMARY KEY (id)
 );
 
-INSERT INTO customer VALUES (101,'customer','John',10,'Boston',NULL,NULL);
-INSERT INTO customer VALUES (102,'customer','Mary',NULL,NULL,'F',NULL);
-INSERT INTO customer VALUES (103,'customer','Jill',NULL,'Boston',NULL,NULL);
-INSERT INTO customer VALUES (104,'customer','Todd',NULL,NULL,NULL,'true');
+INSERT INTO customer VALUES (101,'John',10,'Boston',NULL,NULL);
+INSERT INTO customer VALUES (102,'Mary',NULL,NULL,'F',NULL);
+INSERT INTO customer VALUES (103,'Jill',NULL,'Boston',NULL,NULL);
+INSERT INTO customer VALUES (104,'Todd',NULL,NULL,NULL,'true');
 COMMIT;
 </copy>
 ```
@@ -141,16 +140,15 @@ Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 <copy>
 CREATE TABLE merchant (
   id NUMBER NOT NULL
-, type VARCHAR2(20)
 , name VARCHAR2(20)
 , CONSTRAINT merchant_pk PRIMARY KEY (id)
 );
 
-INSERT INTO merchant VALUES (301,'merchant','Apple Store');
-INSERT INTO merchant VALUES (302,'merchant','PC Paradise');
-INSERT INTO merchant VALUES (303,'merchant','Kindle Store');
-INSERT INTO merchant VALUES (304,'merchant','Asia Books');
-INSERT INTO merchant VALUES (305,'merchant','ABC Travel');
+INSERT INTO merchant VALUES (301,'Apple Store');
+INSERT INTO merchant VALUES (302,'PC Paradise');
+INSERT INTO merchant VALUES (303,'Kindle Store');
+INSERT INTO merchant VALUES (304,'Asia Books');
+INSERT INTO merchant VALUES (305,'ABC Travel');
 COMMIT;
 </copy>
 ```

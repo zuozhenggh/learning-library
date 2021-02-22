@@ -20,31 +20,31 @@ The following video provides an overview of the Graph Visualization component (=
 
 ## **STEP 1:** Setup
 
-1. Open the GraphViz at `https://<public_ip_for_compute>:7007/ui`. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
+Open the GraphViz at `https://<public_ip_for_compute>:7007/ui`. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
 
-    You should see a screen similar to the screenshot below. Enter the username (`customer_360`) and password you entered when createing the user in SQL Developer Web.
+You should see a screen similar to the screenshot below. Enter the username (`customer_360`) and password you entered when createing the user in SQL Developer Web.
 
-    ![](images/ADB_GViz_Login.png)
+![](images/ADB_GViz_Login.png)
 
 ## **STEP 2:** Modify query
 
-1. Modify the query to get the first 5 rows, i.e. change `LIMIT 100` to `LIMIT 5`, and click Run.
+Modify the query to get the first 5 rows, i.e. change `LIMIT 100` to `LIMIT 5`, and click Run.
 
-    You should see a graph similar to the screenshot below.
+You should see a graph similar to the screenshot below.
 
-    ![](images/show-5-elements.jpg)
+![](images/show-5-elements.jpg)
 
 ## **STEP 3:** Add highlights
 
-Now let's add some labels and other visual context. These are known as highlights. Click [here](./highlights.json.zip) to download the `highlights.json` zip file. Unzip the file and note where it is unzipped.
+Now let's add some labels and other visual context. These are known as highlights. To downloade a sample highlight configuration JSON file, click [here](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/deploy-oci-marketplace-image/visualize-graphs/highlights.json) and save this file as `highlights.json` from the browser menu.
 
-1. Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder and choose the file named `highlights.json` and click Open to load that.
+Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder and choose the file and click Open to load that.
 
-    ![](images/GraphVizLoadHighlights.png)
+![](images/GraphVizLoadHighlights.png)
 
-    The graph should now look like
+The graph should now look like
 
-    ![](images/GraphVizWithHighlights.png)
+![](images/GraphVizWithHighlights.png)
 
 ## **STEP 4:** Pattern matching with PGQL
 

@@ -159,7 +159,7 @@ The steps are as follows:
 
     Example:
     ```
-    scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@150.136.103.215:/etc/oracle/graph/wallets
+    scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@203.0.113.14:/etc/oracle/graph/wallets
     ```
 
 ## **STEP 4:** Unzip ADB Wallet
@@ -172,7 +172,7 @@ The steps are as follows:
 
     Example:
     ```
-    scp -i key.pem opc@150.136.103.215
+    scp -i key.pem opc@203.0.113.14
     ```
 
     Unzip the ADB wallet to the `/etc/oracle/graph/wallets/` directory.
