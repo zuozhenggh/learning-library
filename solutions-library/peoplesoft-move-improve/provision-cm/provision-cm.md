@@ -238,7 +238,7 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
 Depending on your workstation, choose Step 6 (for Mac) or 7 (for Windows)
 
-## **STEP 6**: FOR MAC USERS- Accessing Cloud Manager using SSH (for Mac)
+## **STEP 6**: FOR MAC USERS- Accessing Cloud Manager using SSH 
 
 SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was created in Step 1 of Lab 2. 
 
@@ -265,11 +265,64 @@ For example: ```cd ~/Downloads/keys ```
     ssh –p 2222 opc@localhost -i id_rsa
     </copy>
     ```
-## **STEP 7**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH (for Windows)
-Reminder of Prerequisites: Putty, Git Bash, and Firefox. Please download those if you haven't already.
+## **STEP 7**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
+Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those if you haven't already.
 
--PuttyGenKey convert to .ppk file
--Putty SSH 
+1. Open up PuTTYgen. Click **Conversions** --> **Import key**. 
+    ![](./images/puttykey.png "")
+
+    Now, select the ```id_rsa``` key from Step 1 of Lab 2, and click **Open**
+
+    ![](./images/puttyloadkey.png "")
+
+    Click **Save private key**.
+
+    ![](./images/puttysaveprivatekey.png "")
+
+    Now, rename the file to ```id_rsa_ppk``` and click **Save**.
+
+    ![](./images/puttyrename.png "")
+
+2. Open up PuTTY and create a **Session** by filling in the following fields:
+    * Host Name: **`<`jumphost`_`public`_`ip`>`** (get this value from the Outputs you copied in your Notepad)
+    * Port: **22**
+    * Saved Sessions: **CMtunnel**
+
+    Click **Save**
+
+    ![](./images/puttysession.png "")
+3. Under SSH --> **Tunnels**, fill in:
+    * Source Port: **2222**
+    * Destination: **`<`cm`_`private`_`ip`>`:22** 
+
+    Click **Add** and you should see an entry added in the forwarded ports box like the one here in blue:
+    ![](./images/puttytunnel.png "")
+
+4. Under SSH --> **Auth**, Click **Browse**. 
+    ![](./images/puttybrowse.png "")
+    Select the ```id_rsa_ppk``` file we just created above. Click **Open**
+    ![](./images/puttyppk.png "")
+5. Go back to **Session**. Click **Save** and then **Open**.
+     ![](./images/puttysession2.png "")
+    A dialog box will pop up with a Security Alert. Go ahead and click **Yes** to add this key.
+    ![](./images/puttyyes.png "")
+    In the window, login as: **opc**.
+    If you see this, you've successfully connected to the jumphost.
+    ![](./images/puttyjhconnect.png "")
+
+6. Now open up GitBash. Navigate to the folder in which your keys are located. Type in this command:
+
+    ```
+    <copy>
+    ssh -p 2222 opc@localhost -i id_rsa
+    </copy>
+    ```
+    
+    If you see something like this, you are now connected to Cloud Manager.
+
+    ![](./images/puttycmconnect.png "")
+
+
 
 
 ## **STEP 8**: Monitoring Cloud Manager
@@ -311,7 +364,7 @@ Reminder of Prerequisites: Putty, Git Bash, and Firefox. Please download those i
 
 **NOTE**: Make sure you are off VPN. 
 
-1. Launch Firefox and go to **Preferences** by clicking the gear in the top right
+1. Launch Firefox and go to **Preferences** by clicking the gear in the top right. (If you don't see the gear, open up a new tab)
 
     ![](./images/firefoxpref.png "")
 
