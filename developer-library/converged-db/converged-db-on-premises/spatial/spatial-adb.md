@@ -5,7 +5,7 @@ This lab walks you through the steps of setting up the environment for Spatial l
 
 *Estimated Lab Time:* 15 Minutes
 
-Watch the video below for an overview of Lab 5: Spatial
+Watch the video below for an overview of the Spatial lab
 [](youtube:bYQUs6m954I)
 
 ### Prerequisites

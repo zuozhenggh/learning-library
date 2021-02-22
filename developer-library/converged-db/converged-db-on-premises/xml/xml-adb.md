@@ -8,7 +8,7 @@ There are two main parts to this lab.
 
 *Estimated Lab Time:* 15 Minutes
 
-Watch the video below for an overview of Lab 7: XML
+Watch the video below for an overview of the XML lab
 [](youtube:rczR5ezf1jw)
 
 ### Prerequisites

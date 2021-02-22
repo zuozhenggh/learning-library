@@ -5,7 +5,7 @@ In the previous lab you created a compute instance (running the eShop applicatio
 
 *Estimated time:* 20 Minutes
 
-Watch the video below for an overview of Lab 3: Load ADB and Start Application
+Watch the video below for an overview of the Load ADB and Start Application lab
 [](youtube:S3jL1y-ZAbc)
 
 ### Objectives

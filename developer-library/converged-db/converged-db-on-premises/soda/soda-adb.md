@@ -6,7 +6,7 @@ In this lab you will be introduced to using the Oracle SODA APIs for Python. But
 
 *Estimated Lab Time:* 30 Minutes
 
-Watch the video below for an overview of Lab 6: SODA
+Watch the video below for an overview of the SODA lab
 [](youtube:uHaxtbmFEjk)
 
 
