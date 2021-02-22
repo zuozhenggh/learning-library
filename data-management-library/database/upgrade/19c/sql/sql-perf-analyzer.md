@@ -20,13 +20,10 @@ You can run SQL Performance Analyzer on a production system or a test system tha
 
 ![](./images/spa-2.png " ")
 
-
 ### Objectives
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Check Statements
 
 ### Prerequisites
 
@@ -34,90 +31,93 @@ In this lab, you will:
 
 ## **STEP 1**: Check Statements
 
-At first, check how many statements you collected in the SQL Tuning Sets:
+1. At first, check how many statements you collected in the SQL Tuning Sets:
 
-. upgr19
-cd /home/oracle/scripts
-sqlplus / as sysdba
+    ````
+    . upgr19
+    cd /home/oracle/scripts
+    sqlplus / as sysdba
+    ````
 
-Run this query:
+2. Run this query:
 
-select count(*), sqlset_name from dba_sqlset_statements group by sqlset_name order by 2;
+    ````
+    select count(*), sqlset_name from dba_sqlset_statements group by sqlset_name order by 2;
+    ````
 
-Then start a completely scripted SQL Performance Analyzer run. It will:
+3. Then start a completely scripted SQL Performance Analyzer run. It will:
+- Convert the information from STS_CaptureAWR into the right format
+- Simulate the execution of all statements in STS_CaptureAWR
+- Compare before/after
+- Report on the results – in this case based on CPU_TIME and ELAPSED_TIME
 
-    Convert the information from STS_CaptureAWR into the right format
-    Simulate the execution of all statements in STS_CaptureAWR
-    Compare before/after
-    Report on the results – in this case based on CPU_TIME and ELAPSED_TIME
-    There are more metrics available. See an overview here.
+There are more metrics available. See an overview here.
 
-You will do two simulations using different comparison metrics for both, CPU_TIME and ELAPSED_TIME.
+4. You will do two simulations using different comparison metrics for both, CPU_TIME and ELAPSED_TIME.  Start the an initial run for CPU_TIME with the script:
 
-Start the an initial run for CPU_TIME with the script:
+    ````
+    @/home/oracle/scripts/spa_cpu.sql
+    ````
 
-@/home/oracle/scripts/spa_cpu.sql
+5. Afterwards generate the HTML Report containing the results:
+   
+    ````
+    @/home/oracle/scripts/spa_report_cpu.sql
+    ````
+6. Then repeat this for ELAPSED_TIME:
 
-Afterwards generate the HTML Report containing the results:
+    ````
+    @/home/oracle/scripts/spa_elapsed.sql
+    ````
 
-@/home/oracle/scripts/spa_report_cpu.sql
+7. Finally generate the HTML Report containing the results:
 
-Then repeat this for ELAPSED_TIME:
+    ````
+    @/home/oracle/scripts/spa_report_elapsed.sql
+    exit
+    ````
 
-@/home/oracle/scripts/spa_elapsed.sql
+8. There will be now two html files in /home/oracle/scripts. Open them with Firefox:
 
-Finally generate the HTML Report containing the results:
-
-@/home/oracle/scripts/spa_report_elapsed.sql
-exit
-
-There will be now two html files in /home/oracle/scripts. Open them with Firefox:
-
-cd /home/oracle/scripts
-firefox compare_spa_* &
-
-First of all, see the different comparison metrics in the report’s header:
-
- 
-
+    ````
+    cd /home/oracle/scripts
+    firefox compare_spa_* &
+    ````
+9. First of all, see the different comparison metrics in the report’s header:
 *** This screenshot is just an example – you may see a very different report ***
 
-You may recognize regressed statements and statements with plan changes (rightmost column):
+10. You may recognize regressed statements and statements with plan changes (rightmost column).  But you may recognize also that the statements NOT marked in GREEN have been improved drastically, too.  Why are they not marked GREEN, too? The reason is the THRESHOLD of 2% I set:
 
-But you may recognize also that the statements NOT marked in GREEN have been improved drastically, too.
+11. You can change this value in the script /home/oracle/scripts/spa_elapsed.sql:
 
-Why are they not marked GREEN, too? The reason is the THRESHOLD of 2% I set:
-
-You can change this value in the script /home/oracle/scripts/spa_elapsed.sql:
-
- 
-
-The statement in the screen shot is slightly better than before measured.
-
-Now click on the first statement, 7m5h0wf6stq0q, and check the plan differences:
-
-Scroll down to the two plans, BEFORE and AFTER:
+12. The statement in the screen shot is slightly better than before measured.  Now click on the first statement, 7m5h0wf6stq0q, and check the plan differences.  Scroll down to the two plans, BEFORE and AFTER:
 
 “BATCHED” access means that the database retrieves a few row ids from the index, and then attempts to access rows in block order to improve the clustering and reduce the number of times that the database must access a block. This makes it run faster.
 
 Feel free to check other examples in the report, too.
 
-But this demonstrates that it is not always a good advice to deny plan changes as part of an upgrade. I repeated the ELAPSED run but set:
+13. But this demonstrates that it is not always a good advice to deny plan changes as part of an upgrade. I repeated the ELAPSED run but set:
 
-alter session set optimizer_features_enable=’11.2.0.4′;
-@/home/oracle/scripts/spa_elapsed.sql
+    ````
+    alter session set optimizer_features_enable=’11.2.0.4′;
+    @/home/oracle/scripts/spa_elapsed.sql
+    ````
 
-Then I regenerate the HTML Report containing the results:
+14. Then I regenerate the HTML Report containing the results:
 
-@/home/oracle/scripts/spa_report_elapsed.sql
-exit
+     ````
+    @/home/oracle/scripts/spa_report_elapsed.sql
+    exit
+    ````
 
-And I open it with Firefox:
+15. And I open it with Firefox:
 
-cd /home/oracle/scripts
-firefox compare_spa_* &
+    ````
+    cd /home/oracle/scripts
+    firefox compare_spa_* &
+    ````
 
-Now there is no plane change, there is still an improvement as 19c seems to do something different internally. But we basically “lost” the improvement partially be using old optimizer parametrization.
+16. Now there is no plane change, there is still an improvement as 19c seems to do something different internally. But we basically “lost” the improvement partially be using old optimizer parametrization.
 
 The idea of such SPA runs is to accept the better plans and identify and cure the ones which are misbehaving.
 

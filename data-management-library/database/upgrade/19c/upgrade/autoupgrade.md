@@ -32,24 +32,25 @@ In this lab, you will:
 
 ## **STEP 1**: Preparation
 
-The database DB12 needs to be started at first.
+1. The database DB12 needs to be started at first.
 
-. db12
-sqlplus / as sysdba
+  ````
+    . db12
+    sqlplus / as sysdba
 
-startup
-exit
+    startup
+    exit
+  ````
 
 ## **STEP 2**: Generate and edit the config file
 
-java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file config
+1. Run the command below.
+   
+    ````
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file config
+    ````
 
-This will create a sample config file. You will need to edit it – and then pass it to the AutoUpgrade utility.
-
-Created sample configuration file /home/oracle/scripts/sample_config.cfg
-
-Open the file /home/oracle/scripts/sample_config.cfg in your preferred editor and adjust the following things:
-Generated config.cfg 	Make the following adjustments:
+2. This will create a sample config file. You will need to edit it – and then pass it to the AutoUpgrade utility.  Created sample configuration file /home/oracle/scripts/sample_config.cfg.  Open the file /home/oracle/scripts/sample_config.cfg in your preferred editor and adjust the following things.  Generated config.cfg, make the following adjustments:
     ````
     #Global configurations
     #Autoupgrade's global directory, ...
@@ -93,57 +94,68 @@ Generated config.cfg 	Make the following adjustments:
     upg1.target_version=19
     upg1.restoration=no
     ````
-Then save the file as config.cfg to /home/oracle/scripts.
+3. Then save the file as config.cfg to /home/oracle/scripts.  If you don’t want to edit the file by yourself, there’s a config file for DB12 stored already:
 
-If you don’t want to edit the file by yourself, there’s a config file for DB12 stored already:
-
-/home/oracle/scripts/DB12.cfg
+  ````
+    /home/oracle/scripts/DB12.cfg
+  ````
 
 Just ensure that you adjust the below calls to call DB12.cfg instead of config.cfg.
+
 ## **STEP 3**: Analyze
 
-You could run the autoupgrade directly, but it is best practice to run an analyze at first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
+1. You could run the autoupgrade directly, but it is best practice to run an analyze at first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
 
-java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/config.cfg -mode analyze
+  ````
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/config.cfg -mode analyze
+  ````
 
-You will see this output:
+2. You will see this output:
 
-Autoupgrade tool launched with default options
-+--------------------------------+
-| Starting AutoUpgrade execution |
-+--------------------------------+
-1 databases will be analyzed
-Type 'help' to list console commands
-upg> Job 100 completed
-------------------- Final Summary --------------------
-Number of databases            [ 1 ]
+  ````
+    Autoupgrade tool launched with default options
+    +--------------------------------+
+    | Starting AutoUpgrade execution |
+    +--------------------------------+
+    1 databases will be analyzed
+    Type 'help' to list console commands
+    upg> Job 100 completed
+    ------------------- Final Summary --------------------
+    Number of databases            [ 1 ]
 
-Jobs finished successfully     [1]
-Jobs failed                    [0]
-Jobs pending                   [0]
-------------- JOBS FINISHED SUCCESSFULLY -------------
-Job 100 FOR DB12
+    Jobs finished successfully     [1]
+    Jobs failed                    [0]
+    Jobs pending                   [0]
+    ------------- JOBS FINISHED SUCCESSFULLY -------------
+    Job 100 FOR DB12
 
-The database can be upgraded automatically.
+    The database can be upgraded automatically.
+  ````
+
 ## **STEP 4**: Deploy mode
 
-When you initiate the upgrade now with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
+1. When you initiate the upgrade now with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 
-java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/config.cfg -mode deploy
+  ````
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/config.cfg -mode deploy
+  ````
 
-You will see this output:
+2. You will see this output:
 
-Autoupgrade tool launched with default options
-+--------------------------------+
-| Starting AutoUpgrade execution |
-+--------------------------------+
-1 databases will be processed
-Type 'help' to list console commands
-upg>
+  ````
+    Autoupgrade tool launched with default options
+    +--------------------------------+
+    | Starting AutoUpgrade execution |
+    +--------------------------------+
+    1 databases will be processed
+    Type 'help' to list console commands
+    upg>
 
-At this point you can monitor the upgrade now – enlarge the xterm’s width a bit to see no line wraps.
-The most important commands are:
+  ````
 
+3. At this point you can monitor the upgrade now – enlarge the xterm’s width a bit to see no line wraps.  The most important commands are:
+
+  ````
     lsj – this lists the job number and overview information about each active job
 
         upg> lsj
@@ -154,52 +166,52 @@ The most important commands are:
         +----+-------+---------+---------+-------+--------------+--------+--------+-------+
 
     status -job <number> – this gives you more information about a specific job
+  ````
 
-You can also monitor the logs in /home/oracle/logs/DB12/101. In the ./dbupgrade subdirectory you will find the usual upgrade logs of each worker.
+4. You can also monitor the logs in /home/oracle/logs/DB12/101. In the ./dbupgrade subdirectory you will find the usual upgrade logs of each worker.  Depending on your hardware, the upgrade will take 20-45 minutes. You don’t have to wait for the next step but instead can progress with Plugin UPGR into CDB2.  Execute the lsj command a while later:
 
-Depending on your hardware, the upgrade will take 20-45 minutes. You don’t have to wait for the next step but instead can progress with Plugin UPGR into CDB2.
+  ````
+    upg> lsj
+    +----+-------+---------+---------+-------+--------------+--------+--------+------------+
+    |Job#|DB_NAME|    STAGE|OPERATION| STATUS|    START_TIME|END_TIME| UPDATED|     MESSAGE|
+    +----+-------+---------+---------+-------+--------------+--------+--------+------------+
+    | 101|   DB12|DBUPGRADE|EXECUTING|RUNNING|19/05/12 21:44|     N/A|21:59:10|39%Upgraded |
+    +----+-------+---------+---------+-------+--------------+--------+--------+------------+
+  ````
 
-Execute the lsj command a while later:
+5. The AutoUpgrade utility will complete also the recompilation, the time zone change and update password file, spfile and /etc/oratab.  The final output will look like this:
 
-upg> lsj
-+----+-------+---------+---------+-------+--------------+--------+--------+------------+
-|Job#|DB_NAME|    STAGE|OPERATION| STATUS|    START_TIME|END_TIME| UPDATED|     MESSAGE|
-+----+-------+---------+---------+-------+--------------+--------+--------+------------+
-| 101|   DB12|DBUPGRADE|EXECUTING|RUNNING|19/05/12 21:44|     N/A|21:59:10|39%Upgraded |
-+----+-------+---------+---------+-------+--------------+--------+--------+------------+
+  ````
+    upg> Job 101 completed
+    ------------------- Final Summary --------------------
+    Number of databases            [ 1 ]
 
-The AutoUpgrade utility will complete also the recompilation, the time zone change and update password file, spfile and /etc/oratab.
+    Jobs finished successfully     [1]
+    Jobs failed                    [0]
+    Jobs pending                   [0]
+    ------------- JOBS FINISHED SUCCESSFULLY -------------
+    Job 101 FOR DB12
 
-The final output will look like this:
+    Compatible Change
+  ````
 
-upg> Job 101 completed
-------------------- Final Summary --------------------
-Number of databases            [ 1 ]
+6. As a final step, as the upgrade completed successfully, you should adjust the COMPATIBLE parameter. It does not affect the Optimizer behavior:
 
-Jobs finished successfully     [1]
-Jobs failed                    [0]
-Jobs pending                   [0]
-------------- JOBS FINISHED SUCCESSFULLY -------------
-Job 101 FOR DB12
+   ````
+    alter system set COMPATIBLE='19.0.0' scope=spfile;
+    shutdown immediate
+    startup
+    exit
+  ````
 
-Compatible Change
-
-As a final step, as the upgrade completed successfully, you should adjust the COMPATIBLE parameter. It does not affect the Optimizer behavior:
-
-alter system set COMPATIBLE='19.0.0' scope=spfile;
-shutdown immediate
-startup
-exit
-
-Congratulations – you upgraded the DB12 database successfully with the new AutoUpgrade to Oracle 19c.
-
+7. Congratulations – you upgraded the DB12 database successfully with the new AutoUpgrade to Oracle 19c.
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
 * [AutoUpgrade Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/upgrd/about-oracle-database-autoupgrade.html#GUID-3FCFB2A6-4617-4783-828A-41BD635FC88C)
-* * [MOS Note: 2485457.1 Auto Upgrade Tool](https://support.oracle.com/epmos/faces/DocumentDisplay?id=2485457.1)
+* [MOS Note: 2485457.1 Auto Upgrade Tool](https://support.oracle.com/epmos/faces/DocumentDisplay?id=2485457.1)
 * [Using AutoUpgrade for Oracle Database Upgrades](https://docs.oracle.com/en/database/oracle/oracle-database/19/upgrd/using-autoupgrade-oracle-database-upgrades.html#GUID-71883C8C-7A34-4E93-8955-040CB04F2109)
 * [AutoUpgrade Blog](https://mikedietrichde.com/2019/04/29/the-new-autoupgrade-utility-in-oracle-19c/)
 

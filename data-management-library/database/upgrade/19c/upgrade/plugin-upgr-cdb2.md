@@ -53,54 +53,61 @@ In this lab, you will:
 
 ## **STEP 1**: Preparation UPGR as non-CDB
 
-Switch to the UPGR database in 18c environment:
+1. Switch to the UPGR database in 18c environment:
 
-. upgr19
-sqlplus / as sysdba
+    ````
+    . upgr19
+    sqlplus / as sysdba
+    ````
 
-Shutdown UPGR and start it up read only:
+2. Shutdown UPGR and start it up read only:
 
-shutdown immediate
-startup open read only;
+    ````
+    shutdown immediate
+    startup open read only;
+    ````
 
-Create the XML manifest file describing UPGR’s layout and information:
+3. Create the XML manifest file describing UPGR’s layout and information:
 
-exec DBMS_PDB.DESCRIBE('/home/oracle/pdb1.xml');
+    ````
+    exec DBMS_PDB.DESCRIBE('/home/oracle/pdb1.xml');
+    ````
 
-Shutdown UPGR:
+4. Shutdown UPGR:
 
-shutdown immediate
-exit
+    ````
+    shutdown immediate
+    exit
+    ````
 
-Switch to CDB2:
+5. Switch to CDB2:
 
-. cdb2
-sqlplus / as sysdba
+    ````
+    . cdb2
+    sqlplus / as sysdba
+    ````
 
 ## **STEP 2**: Compatibility check
 
-Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO.
+1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO.  Compatibility check.
 
-Compatibility check:
+    ````
+    set serveroutput on
 
-set serveroutput on
+    DECLARE
+    compatible CONSTANT VARCHAR2(3) := CASE DBMS_PDB.CHECK_PLUG_COMPATIBILITY( pdb_descr_file => '/home/oracle/pdb1.xml', pdb_name => 'PDB1') WHEN TRUE THEN 'YES' ELSE 'NO'
+    END;
+    BEGIN
+    DBMS_OUTPUT.PUT_LINE('Is the future PDB compatible? ==> ' || compatible);
+    END;
+    /
+    ````
 
-DECLARE
-compatible CONSTANT VARCHAR2(3) := CASE DBMS_PDB.CHECK_PLUG_COMPATIBILITY( pdb_descr_file => '/home/oracle/pdb1.xml', pdb_name => 'PDB1') WHEN TRUE THEN 'YES' ELSE 'NO'
-END;
-BEGIN
-DBMS_OUTPUT.PUT_LINE('Is the future PDB compatible? ==> ' || compatible);
-END;
-/
-
-If the result is “NO” (and it is NO very often), then don’t be in panic.
-Check for TYPE='ERROR' in PDB_PLUG_IN_VIOLATIONS.
-
-In this case, the result should be “YES“.
+2. If the result is “NO” (and it is NO very often), then don’t be in panic. Check for TYPE='ERROR' in PDB_PLUG_IN_VIOLATIONS. n this case, the result should be “YES“.
 
 ## **STEP 3**: Plugin Operation
 
-Plugin UPGR with its new name PDB1 – from this point there’s no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
+1. Plugin UPGR with its new name PDB1 – from this point there’s no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
 
 Please use the proposed naming as the FILE_NAME_CONVERT parameter and TNS setup have been done already.
 Use the NOCOPY option for this lab to avoid additional copy time and disk space consumption. The show pdbs command will display you all existing PDBs in this CDB2.
@@ -110,49 +117,59 @@ show pdbs
 
 As you couldn’t do a compatibility check beforehand, you’ll open the PDB now and you will recognize that it opens only with errors.
 
-alter pluggable database PDB1 open;
+    ````
+    alter pluggable database PDB1 open;
 
-Find out what the issue is:
+    Find out what the issue is:
 
-column message format a50
-column status format a9
-column type format a9
-column con_id format 9
+    column message format a50
+    column status format a9
+    column type format a9
+    column con_id format 9
 
-select con_id, type, message, status from PDB_PLUG_IN_VIOLATIONS
-where status<>'RESOLVED' order by time;
+    select con_id, type, message, status from PDB_PLUG_IN_VIOLATIONS
+    where status<>'RESOLVED' order by time;
+    ````
 
-As you can see, a lot of the reported issues aren’t really issues. This is a known issue. Only in the case you see ERROR in the first column you need to solve it.
+2. As you can see, a lot of the reported issues aren’t really issues. This is a known issue. Only in the case you see ERROR in the first column you need to solve it.  The only real ERROR says:
 
-The only real ERROR says:
+    ````
+    PDB plugged in is a non-CDB, requires noncdb_to_pdb.sql be run.
+    ````
 
-PDB plugged in is a non-CDB, requires noncdb_to_pdb.sql be run.
+3. Kick off this sanity script to adjust UPGR and make it a “real” pluggable database PDB1 with noncdb_to_pdb.sql. Runtime will vary between 10-20 minutes. Take a break while it is running. The forced recompilation takes quite a bit.
 
-Kick off this sanity script to adjust UPGR and make it a “real” pluggable database PDB1 with noncdb_to_pdb.sql. Runtime will vary between 10-20 minutes. Take a break while it is running. The forced recompilation takes quite a bit.
+    ````
+    alter session set container=PDB1;
+    @?/rdbms/admin/noncdb_to_pdb.sql
+    ````
 
-alter session set container=PDB1;
-@?/rdbms/admin/noncdb_to_pdb.sql
+4. Now SAVE STATE. This ensures, that PDB1 will be opened automatically whenever you restart CDB2. Before you must restart the PDB as otherwise it opens only in RESTRICTED mode.
 
-Now SAVE STATE. This ensures, that PDB1 will be opened automatically whenever you restart CDB2. Before you must restart the PDB as otherwise it opens only in RESTRICTED mode.
+    ````
+    shutdown
+    startup
+    alter pluggable database PDB1 save state;
+    alter session set container=CDB$ROOT;
+    show pdbs
+    exit
+    ````
 
-shutdown
-startup
-alter pluggable database PDB1 save state;
-alter session set container=CDB$ROOT;
-show pdbs
-exit
+5. Try to connect directly to PDB1 – notice that you can’t just connect without specifying the service name as PDB1 is not visible on the OS level.
 
-Try to connect directly to PDB1 – notice that you can’t just connect without specifying the service name as PDB1 is not visible on the OS level.
+    ````
+    sqlplus "sys/oracle@pdb1 as sysdba"
 
-sqlplus "sys/oracle@pdb1 as sysdba"
+    exit
+    ````
 
-exit
+6. As alternative you could also use the EZconnect (speak: Easy Connect)
 
-As alternative you could also use the EZconnect (speak: Easy Connect)
+    ````
+    sqlplus "sys/oracle@//localhost:1521/pdb1 as sysdba"
 
-sqlplus "sys/oracle@//localhost:1521/pdb1 as sysdba"
-
-exit
+    exit
+    ````
 
 You may now [proceed to the next lab](#next).
 
@@ -161,7 +178,7 @@ You may now [proceed to the next lab](#next).
 * [Multitenant Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/introduction-to-the-multitenant-architecture.html#GUID-267F7D12-D33F-4AC9-AA45-E9CD671B6F22)
 
 ## Acknowledgements
-* **Author** - Mike Dietrich, Carlos Sierra
+* **Author** - Mike Dietrich
 * **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
 * **Last Updated By/Date** - Kay Malcolm, February 2021
 
