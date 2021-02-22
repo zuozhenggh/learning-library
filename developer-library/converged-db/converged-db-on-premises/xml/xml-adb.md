@@ -8,6 +8,9 @@ There are two main parts to this lab.
 
 *Estimated Lab Time:* 15 Minutes
 
+Watch the video below for an overview of Lab 7: XML
+[](youtube:rczR5ezf1jw)
+
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
