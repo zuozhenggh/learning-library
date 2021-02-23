@@ -282,9 +282,9 @@ This exercise explores how self-service machine learning models are available an
 
 It’s worth noting this type of work may be more efficiently off-loaded to the Oracle Database where it’s possible to handle significantly more data, many more attributes and to evaluate & leverage more machine learning algorithms than one might wish to attempt using OAS.  In fact, the current roadmap for OAS calls for a transparent mechanism which will effectively and transparently offload a majority of machine learning processing to the Oracle Database.
 
- We are now going to extend our analysis by seeing how we can predict whether an employee is likely to leave the organization.
+We are now going to extend our analysis by seeing how we can predict whether an employee is likely to leave the organization.
 
- For this we will be using a **Binary Classification** model.
+For this we will be using a **Binary Classification** model.
 
 Binary classification is a technique of classifying elements of a given dataset into two groups on the basis of classification rules for example Employee Attrition Prediction, i.e. whether the employee is expected to Leave or Not Leave.
 
@@ -453,7 +453,7 @@ After making modifications, click on **Apply Script**.
 
 **•	Pivot Table of EmployeeNumber, First Name, Last Name, PredictionConfidence, PredictedValue**
 
-![](./images/OMLP28.png " ")
+ ![](./images/OMLP28.png " ")
 
 29. Save the project as **Attrition Prediction**.
 ![](./images/OMLP29.png " ")
