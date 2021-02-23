@@ -67,7 +67,7 @@ CREATE PROPERTY GRAPH "customer_360"
 </copy>
 ```
 
-For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that **all colums of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties)**. For `owned_by` edge, the properties are not given (with `NO PROPERTIES` keyword) since the the properties are already hold by the account vertices. 
+For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that **all columns of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties)**. For `owned_by` edge, the properties are not given (with `NO PROPERTIES` keyword) since the the properties are already hold by the account vertices. 
 
 Now execute the PGQL DDL to create the graph.
 
