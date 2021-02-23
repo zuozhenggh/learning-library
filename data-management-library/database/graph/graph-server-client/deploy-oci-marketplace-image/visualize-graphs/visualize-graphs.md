@@ -36,7 +36,7 @@ You should see a graph similar to the screenshot below.
 
 ## **STEP 3:** Add highlights
 
-Now let's add some labels and other visual context. These are known as highlights. To downloade a sample highlight configuration JSON file, click [here](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/deploy-oci-marketplace-image/visualize-graphs/highlights.json) and save this file as `highlights.json` from the browser menu.
+Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wQFPfdrO-aGGUwxBXSQDX2DzjFueYlgUZ40YoXLrP6x0bqIZrgpSBpyHEo3Q-i33/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download the `highlights.json` zip file. Unzip the file and note where it is unzipped.
 
 Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder and choose the file and click Open to load that.
 

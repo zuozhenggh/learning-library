@@ -52,7 +52,7 @@ CREATE PROPERTY GRAPH "customer_360"
     account
       SOURCE KEY(id) REFERENCES account
       DESTINATION KEY(customer_id) REFERENCES customer
-      LABEL owned_by
+      LABEL owned_by NO PROPERTIES
   , parent_of
       SOURCE KEY(customer_id_parent) REFERENCES customer
       DESTINATION KEY(customer_id_child) REFERENCES customer
@@ -67,7 +67,7 @@ CREATE PROPERTY GRAPH "customer_360"
 </copy>
 ```
 
-For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that all colums of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties). 
+For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that **all colums of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties)**. For `owned_by` edge, the properties are not given (with `NO PROPERTIES` keyword) since the the properties are already hold by the account vertices. 
 
 Now execute the PGQL DDL to create the graph.
 
