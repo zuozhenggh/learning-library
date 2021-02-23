@@ -9,7 +9,7 @@ Enormous gains in technical efficiency are enabled by a shared technical infrast
 
 Watch the video below for an overview of Oracle Multitenant.
 
-[](youtube:I7cygRKBbI8)
+[](youtube:4mUwjBfztfU)
 
 ### Containers and Pluggable Databases
 
