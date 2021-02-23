@@ -59,7 +59,7 @@ To complete this lab, you need to have the following:
 -- inserted and committed at 3:40 PM (8:40 PM UTC)
 <copy>insert into refreshclonetests (testcol) values ('Is this great?');
 commit;</copy>
-  ```
+```
 
   ![ALT text is not available for this image](images/2676056294.png)
 
