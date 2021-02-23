@@ -47,6 +47,8 @@ This step is only necessary if your database is private. Since it is highly reco
 
 1. From the naviagtion menu on OCI, go to **Data Safe** and then click on **Private Endpoints**. 
 
+    ![](./images/1.png " ")
+
 2. Click **Create Private Endpoint**.
 
   a. **Name:** ``EBSPrivateEndpoint``
@@ -61,19 +63,37 @@ This step is only necessary if your database is private. Since it is highly reco
 
   e. Once the endpoint has finished creating, copy its private IP into a text file for later reference. 
 
+    ![](./images/2.png " ")
+
+3. Open Security List rules to allow traffic between the endpoint and the database. Go to **Networking** > **Virtual Cloud Networks** and select the ``ebshol_vcn`` that was created as a part of the EBS to OCI lab. 
+
+  a. Navigate to the subnet that contains the database (most likely ``ebshol_db_subnet``). Modify its Security list.
+
+  b. Create an Ingress Rule that allows TCP traffic from the Private Endpoint's private IP address to port 1521. 
+
+  c. Create an Egress Rule that allows TCP traffic from the database's private IP address to port 1521. 
+
+    ![](./images/2-1.png " ")
+
 ## **STEP 3:** Create a User for Data Safe on the Target Database
 
 In this step, we will create a database user and grant them privileges which will allow them to be used as the Data Safe user. Before we can create the user, we must download a file from the Data Safe console that will give the created user the roles necessary to act as a Data Safe user. 
 
 1. Access the Data Safe console by going to **Data Safe** under the Navigation menu and then selecting the **Service Console** button.
 
+    ![](./images/3.png " ")
+
 2. Click on the **Targets** tab at the top. 
 
   a. Click **Register**.
 
+    ![](./images/4.png " ")
+
   b. Click **Download Privilege Script** and save the file to your local computer.
 
     This will download the .sql file that we will run on the database later to give privileges to our user. 
+
+    ![](./images/5.png " ")
 
 3. Login to your Cloud Manager using ssh and its public IP address.
 
@@ -115,6 +135,8 @@ In this step, we will create a database user and grant them privileges which wil
         alter session set container="<pdb-name>";
         </copy>
 
+    ![](./images/6.png " ")
+
   Make sure the pdb's name is in quotation marks. If you are unsure of the pdb name, enter the following command into sqlplus. 
 
         <copy>
@@ -137,6 +159,8 @@ In this step, we will create a database user and grant them privileges which wil
         TEMPORARY TABLESPACE TEMP;
         </copy>
 
+    ![](./images/7.png " ")
+
 10. Grant permissions to this user. 
 
         <copy>
@@ -149,11 +173,17 @@ In this step, we will create a database user and grant them privileges which wil
         @datasafe_privileges.sql DATASAFE_ADMIN GRANT ALL
         </copy>
 
-12. Lastly run this command and write down its output in a text file under "Database Service Name" for later reference. 
+    ![](./images/8.png " ")
+
+12. Lastly run this command in sqlplus on the pdb (you may have to rerun the commands in step 6 and 7 to do so) and write down its output in a text file under "Database Service Name" for later reference. 
 
         <copy>
-        SELECT sys_context(‘userenv’,’service_name’) FROM dual;
+        select sys_context('userenv','service_name') from dual;
         </copy>
+
+    ![](./images/6.png " ")
+
+    ![](./images/9.png " ")
 
 
 ## **STEP 4:** Register the Target Database on the Data Safe Console
@@ -161,6 +191,8 @@ In this step, we will create a database user and grant them privileges which wil
 1. Login to the Data Safe Service Console from OCI. 
 
   a. Navigate from the menu to Data Safe and click on the **Service Console** button. 
+
+    ![](./images/3.png " ")
 
 2. Click the **Targets** tab at the top. 
 
@@ -190,32 +222,50 @@ In this step, we will create a database user and grant them privileges which wil
 
 5. Once the connection has been verified, click **Register Target**. 
 
+    ![](./images/10.png " ")
+
 Congratulations! You have successfully registered a database with Data Safe. You can now go to the **Home** tab on Data Safe and begin running asssessments to gain additional insight into your EBS data. 
 
 
 ## **STEP 4:** Monitor your Target Database on the Data Safe Console
 
-In this step, we will access the data on the target database we registered. 
+In this step, we will access the data on the target database we registered. Security and User Assessments will give us snapshots into the current security of the database. Data Discovery allows us to run jobs that discover potentially sensitive data on the database while Data Masking would mask the sensitive data (only for use on a non-production database). Activity Auditing allows users to view activity and data manipulation on the dataabse. 
 
 1. In the Data Safe Console, go to the **Home** tab. 
 
 2. Click on **Security Asssessment** and select your target database. Click **Assess Now** to run an assessment. Once the report has been generated, you can click on **Set Baseline** to establish a baseline that will be compared to future assessments or **View Report** to see the results of the assessment. You can also select your database and click **Schedule Periodic Assessment** to setup a regularly run security assessment. 
 
+    ![](./images/11.png " ")
+
 3. Now, click on **User Assessment** on the left panel. From here select your database and click **Assess**. Here you can also view a report by clicking **View Report** once the assessment completes. 
 
-4. Next we will run a Data Discovery job to create a Sensitive Data Model of all the sensitive data in the database. Note: this should only be done on non-production databases. 
+    ![](./images/12.png " ")
+
+4. Next we will run a Data Discovery job to create a Sensitive Data Model of all the sensitive data in the database. 
 
   a. Click on **Data Discovery** on the left panel and select your target database. Click **Continue**.
+
+    ![](./images/13.png " ")
 
   b. Select **Create** for Sensitive Data Model and provide a name for the model, if desired. 
 
   c. Leave **Show and save sample data?** unchecked. Select the compartment where you would like to store this model. Click **Continue**. 
 
+    ![](./images/14.png " ")
+
   d. Select the schemas on which you would like to run the discovery job. Click **Continue**. 
+
+    ![](./images/15.png " ")
 
   e. Select the sensitive data types which you would like to discovery and then click **Continue**. The job will now run and create a Sensitive Data Model. Once this job has finished, you can click **Continue**. 
 
-  f. This page will show the results from the data discovery job. You may click **Back** to reconfigure the job and run it again. If satisfied, you can click **Report** to save the model. 
+    ![](./images/16.png " ")
+
+    ![](./images/17.png " ")
+
+  f. This page will show the results from the data discovery job. You may click **Back** to reconfigure the job and run it again. If satisfied, you can click **Report** to save and view the model. 
+
+    ![](./images/18.png " ")
 
 5. The next job we can run is for Data Masking. This is mask the sensitive data that you discovered in the last step. Note: this should only be done on non-production databases. 
 
@@ -227,7 +277,7 @@ In this step, we will access the data on the target database we registered.
 
   d. Leave **Show and save sample data?** unchecked. Select the compartment where you would like to store this policy. Click **Continue**.
 
-  e. If you are creating a new Sensitive Data Model, you will follow similar steps to the last step.
+  e. If you are creating a new Sensitive Data Model, you will follow similar steps to the last step. If you are picking from a library (e.g. the model you created in the previous step), you will select your model from a list available in the Data Safe Console. 
 
   f. 
 
@@ -235,11 +285,23 @@ In this step, we will access the data on the target database we registered.
 
   a. Click on **Activity Auditing** on the left panel and select your target databse. Click **Continue**. 
 
-  b. Select your target and click **Retrieve** to obtain the valid Audit Policies for your target. Click **Continue**. 
+    ![](./images/20.png " ")
+
+  b. Select your target and click **Retrieve** to obtain the valid Audit Policies for your target. Wait for the Audit Policies to be retrieved, then click **Continue**. 
+
+    ![](./images/21.png " ")
 
   c. On the Review and Provision Audit and Alert Policies page, click on the target database name. This will open a window that allows you to customize which audit and alert policies you would like to enable. Select the desired policies and click **Provision**. Then click **Continue**. 
 
-  d. 
+    ![](./images/22.png " ")
+
+    ![](./images/23.png " ")
+
+    ![](./images/24.png " ")
+
+  d. On the Start Audit Collection page, we will designate from what date we would like to collect audit data. Having selected your target database, click on the calendar icon and select a date to designate as the start of the audit collection. From there, you can click **Start** to begin the audit collection process. 
+
+    ![](./images/25.png " ")
 
 
 ## Learn More
