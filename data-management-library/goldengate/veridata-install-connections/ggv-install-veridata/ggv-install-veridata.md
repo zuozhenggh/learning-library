@@ -62,9 +62,8 @@ To install and configure Oracle GoldenGate Veridata:
     ![](./images/17VeridataInstall_InstallComplete_Screen9.png " ")
 
 ## **STEP 4**: Apply a Patch
-  **Assumptions**
-
-    * The `ORACLE_HOME` environment variable is set to the directory where you have installed Oracle GoldenGate Veridata.
+**Assumptions**:
+* The `ORACLE_HOME` environment variable is set to the directory where you have installed Oracle GoldenGate Veridata.
 
 To apply a patch on an Oracle GoldenGate Veridata release:
 1. Go to [Oracle Support](https://mosemp.us.oracle.com/epmos/faces/index.jspx?_afrLoop=174795690219928&_afrWindowMode=0&_adf.ctrl-state=1bogh2ruei_94) and download the required Patch and extract the zip file to a location. This location will be referred to as `PATCH_TOP` in the subsequent steps.
