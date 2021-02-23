@@ -4,6 +4,9 @@
 
 Before you get started, you will need an Oracle Cloud account. This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
 
+Watch this video to create your free trial account on Oracle cloud.
+[](youtube:nClCXAfqvzs)
+
 ### Existing Cloud Accounts
 
 If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
@@ -24,7 +27,7 @@ If you already have a cloud account, skip to **STEP 2**.
 1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
 
 2.  You will be presented with a registration page.
-       ![](images/cloud-infrastructure.png " ")
+    ![](images/cloud-infrastructure.png " ")
 
 3.  Enter the following information to create your Oracle Cloud Free Tier account.
     * Choose your **Country**
@@ -41,7 +44,7 @@ If you already have a cloud account, skip to **STEP 2**.
        * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up.
        * Click **Continue**
 
-       ![](images/account-info.png " ")
+    ![](images/account-info.png " ")
 
 6.  Enter your Address information.  Click **Continue**.
 
@@ -49,15 +52,15 @@ If you already have a cloud account, skip to **STEP 2**.
 
 7.  Choose your country and enter a mobile number.
 
-       ![](images/free-tier-address-2.png " ")
+    ![](images/free-tier-address-2.png " ")
 
 8. Review and accept the agreement by clicking the check box. Click the **Start my free trial** button.
 
-       ![](images/free-tier-agreement.png " ")
+    ![](images/free-tier-agreement.png " ")
 
 9. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
 
-       ![](images/account-provisioned.png " ")
+    ![](images/account-provisioned.png " ")
 
 ## **STEP 2**: Sign in to Your Account
 
