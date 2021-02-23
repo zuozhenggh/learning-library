@@ -7,7 +7,7 @@ The compute image has two docker images running the eShop application.  The dock
 
 *Estimated Lab Time:* 15 minutes
 
-Watch the video below for an overview of Lab 2: Setup Compute and Autonomous DB
+Watch the video below for an overview of the Setup Compute and Autonomous DB lab
 [](youtube:mAUXpP-ekWY)
 
 ### About Terraform and Oracle Cloud Resource Manager

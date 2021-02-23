@@ -1,11 +1,16 @@
 {
-  "workshoptitle": "Creating Labs and Workshops",
+  "workshoptitle": "LiveLabs Step by Step",
     "tutorials": [
       {
-            "title": "Introduction to Labs and Workshops",
+            "title": "Introduction",
             "description": "This lab provides an overview of the workshops and labs (livelabs).",
             "filename": "./intro.md"
-        }
+        },
+        {
+              "title": "LiveLabs FAQ",
+              "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
+              "filename": "./../../livelabs-faq/livelabs-faq.md"
+          }
         ,
         {
               "title": "Lab 1: Get Started with Git and Set up the Environment",
@@ -32,10 +37,10 @@
           }
           ,
           {
-                "title": "Lab 5:  Add GitHub Hosted Labs and Workshop to OHC",
+                "title": "Optional Lab 5:  Add GitHub Hosted Labs and Workshop to OHC",
                 "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
                 "filename": "./../../5-labs-add-git-hub-hosted-tutorials-to-ohc/5-labs-add-git-hub-hosted-tutorials-to-ohc.md"
-            }
+            } 
 
 
              ]

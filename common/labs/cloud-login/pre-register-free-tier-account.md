@@ -1,4 +1,4 @@
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
