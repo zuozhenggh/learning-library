@@ -63,11 +63,13 @@ To install and configure Oracle GoldenGate Veridata:
 
 ## **STEP 4**: Apply a Patch
   **Assumptions**
-  * OPatch directory is included in the PATH variable on the host computer.
+    * The `ORACLE_HOME` environment variable to the directory where you have installed Oracle GoldenGate Veridata.
 
 To apply a patch on an Oracle GoldenGate Veridata release:
-1. Go to Oracle Support and download the required Patch and extract the zip file.
-2. Go to `ORACLE_HOME/OPatch` directory and run the command: `opatch apply /opt/patches/15941858`. In this example, 15941858 is the patch number.
+1. Go to [Oracle Support](https://mosemp.us.oracle.com/epmos/faces/index.jspx?_afrLoop=174795690219928&_afrWindowMode=0&_adf.ctrl-state=1bogh2ruei_94) and download the required Patch and extract the zip file to a location. This location will be referred to as `PATCH_TOP` in the subsequent steps.
+2. Set your current directory to the directory where the patch is located.
+3. In the command prompt, run the following command: `cd PATCH_TOP/32436110`. In this example, 32436110 is the patch number.
+4. Run OPatch to apply the patch: `opatch apply`.
 
 ## **STEP 5**: Configure RCU
 The Repository Creation Utility (RCU) presumes that you have already installed a compatible database to house the repository. This example assumes that it is an Oracle 19c Database.
