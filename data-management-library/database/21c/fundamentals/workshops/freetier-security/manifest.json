@@ -26,7 +26,7 @@
         },
         {
             "title": "Lab: Blockchain Tables & Rows",
-            "filename": "../../blockchain-tables/blockchain-tables.md"
+            "filename": "../../blockchain-table/blockchain-table.md"
         },
         {
             "title": "Lab: Tablespace Encryption Algorithm",
@@ -37,17 +37,9 @@
             "filename": "../../realms/realms.md"
         },
         {
-            "title": "Lab: Uninstall DB Vault",
-            "filename": "../../dbv-uninstall/dbv-uninstall.md"
-        },
-        {
-            "title": "Lab: Install DB Vault",
-            "filename": "../../dbv-install/dbv-install.md"
-        },
-        {
             "title": "Authentication and Administration",
-            "filename": "../../inroduction/intro-admin.md"
-        }, 
+            "filename": "../../introduction/intro-admin.md"
+        },
         {
             "title": "Lab: Upgraded Password File Case Sensitivity",
             "filename": "../../upgraded-pwd/upgraded-pwd.md"
@@ -55,23 +47,6 @@
         {
             "title": "Lab: Password Length Enforcement",
             "filename": "../../enforce-min-pwd/enforce-min-pwd.md"
-        },
-        {
-            "title": "Audit",
-            "filename": "../../inroduction/intro-audit.md"
-        },
-        {
-            "title": "Lab: Unified Audit Policies",
-            "filename": "../../unified-audit-policies/unified-audit-policies.md"
-        }, 
-        {
-            "title": "Lab: Unified Audit Policies for STIG",
-            "filename": "../../audit-stig-compl/audit-stig-compl.md"
-        },
-        {
-            "title": "Lab: SYSLOG Destination for Audit Policies",
-            "filename": "../../common-audit-dest/common-audit-dest.md"
         }
-        
     ]
 }

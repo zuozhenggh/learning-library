@@ -68,14 +68,7 @@ The technologies used in this lab are:
     </copy>
     ```
 
-2.	Run the command:
-
-    ```
-    <copy>
-    vi ~/.vnc/xstartup
-    </copy>
-    ```
-
+2.	vi ~/.vnc/xstartup  
     **Please enter in the following:**
 
     ```
@@ -148,13 +141,11 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     sudo apt install ncview -y   
     </copy>
     ```
-
 ## **STEP 4**: Downloading and Compiling libraries for WRF
 
 Now that we have installed most dependencies we will need for WRF, lets begin to compile the libraries WRF needs to function.
 
 ### Creating folder structure and downloading libraries
-
 1. Enter in the following commands in the remote terminal to begin setting up the required folder structure.
 
     ```
@@ -165,7 +156,6 @@ Now that we have installed most dependencies we will need for WRF, lets begin to
     cd downloads
     </copy>
     ```
-
 2. In the downloads directory lets download all the libraries we need with the following commands.
 
     ```
@@ -177,7 +167,6 @@ Now that we have installed most dependencies we will need for WRF, lets begin to
     curl -O https://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz
     </copy>
     ```
-
 3. Insteading of unziping the files one by one, lets use a **loop** to do it for us then go back to our WRF directory.
 
     ```
@@ -199,25 +188,22 @@ Now that we have installed most dependencies we will need for WRF, lets begin to
     export LIBDIR=~/WRF/libs
     </copy>
     ```
-
 ### Compiling grib2 library
+The grib2 library is actually a compilation of three separate libraries, specifically, zlib, jasper, and libpng.  
 
-The grib2 library is actually a compilation of three separate libraries, specifically, zlib, jasper, and libpng.
-
-1. Compiling Zlib
-
-    ``` 
-    <copy>
+5. Compiling Zlib
+    
+    ```
+    <copy> 
     cd ~/WRF/downloads
     cd zlib-1.2.11
     ./configure --prefix=$LIBDIR/grib2
     make
     make install
     </copy>
-    ```
-
-2. Compiling libpng
-
+    ```   
+6. Compiling libpng
+    
     ```
     <copy>
     cd ~/WRF/downloads
@@ -227,8 +213,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     make install
     </copy>
     ```
-
-3. Compiling jasper
+7. Compiling jasper
 
     ```
     <copy>
@@ -240,7 +225,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     </copy>
     ```
 
-4. Compiling netcdf library
+### Compiling Netcdf and Mpich libraries
+8. Compiling netcdf library
 
     ```
     <copy>
@@ -252,8 +238,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     </copy>
     ```
 
-5. Compiling mpich library
-
+9. Compiling mpich library
+    
     ```
     <copy>
     cd ~/WRF/downloads
@@ -283,7 +269,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 
     ```
     <copy>
-    cd .. or /home/ubuntu/WRF/downloads
+    cd .. or /home/ubuntu/WRF
     cd WRF-4.1.5/
     export NETCDF=$LIBDIR/netcdf
     export PATH=$LIBDIR/mpich/bin:$PATH
@@ -337,7 +323,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     <copy>
     cd /home/ubuntu/WRF
     mkdir GEOG
-    cd GEOG/
+    cd GEOG
     wget https://www2.mmm.ucar.edu/wrf/src/wps_files/geog_high_res_mandatory.tar.gz  
     sudo apt-get install pv dialog -y
     (pv -n geog_high_res_mandatory.tar.gz| tar xzf - -C . ) \
@@ -354,7 +340,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     F6    #This will move the files to the GEOG directory
     ENTER #This will confirm the choice
     F10   #This is used to exit Midnight commander
-    sudo rm -r GEOG   #This will delete the additional GEOG folder.
+    sudo rm -r WPS_GEOG   #This will delete the additional GEOG folder.
     mc    #Opens Midnight Commander
     Highlight *._WPS_GEOG
     F8    #This deletes the highlighted file
@@ -370,7 +356,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     cd /home/ubuntu/WRF/WPS-4.1
     vi namelist.wps
     </copy>
-    ```
+    ```  
 
     **Please change all the values below to your liking based on your experiment**.
     - `max_dom`: An integer specifying the total number of domains, including the parent domain, in the simulation. Default value is 1.  
@@ -386,6 +372,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     - `geog_data_path`: A character string giving the path, either relative or absolute, to the directory where the geographical data directories may be found.
 
     ```
+    <copy>
         &share  
         wrf_core = 'ARW',  
         max_dom = 1,  
@@ -424,7 +411,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
         truelat2  =  42.48,  
         stand_lon = -71.15,  
         geog_data_path = '/home/ubuntu/WRF/GEOG/'  
-        /  
+        /
+    </copy>      
     ```
     **To exit, simply press esc, then shift: followed by wq enter**  
     **All of these changes are for a geographic area with Woburn MA as the epicenter.**  
@@ -437,7 +425,6 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ncview geo_em.d01.nc
     </copy>
     ```
-
     Use the 2d var to check landmask to verify location. If satisfied with image then we are done creating domain.
 
     ![Screenshot of ncview](images/nc1.png)
@@ -461,10 +448,10 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     vi download_gfs.sh
     </copy>
     ```
-
-11. The script will be the following:
+11. The script will be the following:  
 
     ```
+    <copy>
     #!/bin/bash  
 
     inputdir=/home/ubuntu/WRF/GFS  
@@ -485,7 +472,8 @@ The grib2 library is actually a compilation of three separate libraries, specifi
             url=${server}/${directory}/${file}  
             echo $url  
             wget -O ${inputdir}/${file} ${url}  
-    done  
+    done
+    </copy>  
     ```
 
     **To exit, simply press esc, then shift: followed by wq enter**   
@@ -519,6 +507,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     - `interval seconds`: The integer number of seconds between time-varying meteorological input files. No default value.
 
     ```
+    <copy>
     &share  
     wrf_core = 'ARW',  
     max_dom = 1,  
@@ -526,11 +515,13 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     end_date   = '2020-11-20_06:00:00',         #6 hours later than start time  
     interval_seconds = 10800                    #3 hours worth of seconds interval between steps  
     io_form_geogrid = 2,  
-    / 
+    /
+    </copy> 
     ``` 
     **To exit, simply press esc, then shift: followed by wq enter**  
 
     **Run:**
+    
     ```
     <copy>
     ./ungrib.exe
@@ -587,6 +578,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     - `w_damping`: vertical velocity damping flag (for operational use). Set to 1.
 
     ```
+    <copy>
     &time_control
     run_days                            = 0,
     run_hours                           = 6,
@@ -680,6 +672,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     nio_tasks_per_group = 0,
     nio_groups = 1,
     /
+    </copy>
     ```
 
     **To exit, simply press esc, then shift: followed by wq enter**  
@@ -716,11 +709,11 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ```
 
 6. We can check our prediction with the following:
-
+    
     ```
     <copy>
-    ncview wrfout_d01_2020-11-20_06\:00\:00 
-    </copy>
+    ncview wrfout_d01_2020-11-20_06\:00\:00
+    </copy> 
     ```
 
     ![Screenshot of ncview](images/nc5.png)  
@@ -737,7 +730,6 @@ The grib2 library is actually a compilation of three separate libraries, specifi
 * **Last Updated By/Date** - Brian Bennett, Big Compute, December 2020
 
 ## Need Help?
-
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
