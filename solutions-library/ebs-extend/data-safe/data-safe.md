@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the setup of Data Safe on a private database provisioned by the EBS Cloud Manager. You will be configuring network settings and creating a user on the database with the appropriate permissions to setup a connnection to Data Safe. Then the lab provides a short walkthrough of the features of Data Safe. 
+This lab walks you through the setup of Data Safe on a private database provisioned by the EBS Cloud Manager. You will be configuring network settings and creating a user on the database with the appropriate permissions to setup a connection to Data Safe. Then the lab provides a short walkthrough of the features of Data Safe. 
 
 This lab assumes you have completed the **Lift and Shift On-Premises EBS to OCI Workshop** found [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668). It also assumes you have created an EBS environment through advanced provisioning with a Virtual Machine Database System. 
 
@@ -13,7 +13,7 @@ Estimated Lab Time: 30 minutes
 In this lab, you will:
 * Enable Data Safe on your tenancy
 * Set up a private endpoint for Data Safe
-* Create a Data Safe user on the target datbase with the correct permissions
+* Create a Data Safe user on the target database with the correct permissions
 * Add the database as a target to the Data Safe console 
 * Monitor the target database on the Data Safe Console
 
@@ -21,7 +21,7 @@ In this lab, you will:
 
 * A tenancy admin user
 * A paid Oracle Cloud Infrastructure tenancy (not available for Free Tier or Always Free tenancies)
-* An advanved-provisioned EBS instance from Cloud Manager with a Virtual Machine Database System.  
+* An advanced-provisioned EBS instance from Cloud Manager with a Virtual Machine Database System.  
 * A text file with the following values: 
     - The private IP address of the database to be targeted on Data Safe
     - The public IP address of the EBS Cloud Manager
@@ -45,7 +45,7 @@ This step is not necessary if Data Safe is already been used in you tenancy and 
 
 This step is only necessary if your database is private. Since it is highly recommended to make your EBS databases private, this step should be followed. If for demo purposes the database had been left public, you may skip this step. 
 
-1. From the naviagtion menu on OCI, go to **Data Safe** and then click on **Private Endpoints**. 
+1. From the navigation menu on OCI, go to **Data Safe** and then click on **Private Endpoints**. 
 
     ![](./images/1.png " ")
 
@@ -224,16 +224,16 @@ In this step, we will create a database user and grant them privileges which wil
 
     ![](./images/10.png " ")
 
-Congratulations! You have successfully registered a database with Data Safe. You can now go to the **Home** tab on Data Safe and begin running asssessments to gain additional insight into your EBS data. 
+Congratulations! You have successfully registered a database with Data Safe. You can now go to the **Home** tab on Data Safe and begin running assessments to gain additional insight into your EBS data. 
 
 
 ## **STEP 4:** Monitor your Target Database on the Data Safe Console
 
-In this step, we will access the data on the target database we registered. Security and User Assessments will give us snapshots into the current security of the database. Data Discovery allows us to run jobs that discover potentially sensitive data on the database while Data Masking would mask the sensitive data (only for use on a non-production database). Activity Auditing allows users to view activity and data manipulation on the dataabse. 
+In this step, we will access the data on the target database we registered. Security and User Assessments will give us snapshots into the current security of the database. Data Discovery allows us to run jobs that discover potentially sensitive data on the database while Data Masking would mask the sensitive data (only for use on a non-production database). Activity Auditing allows users to view activity and data manipulation on the database. 
 
 1. In the Data Safe Console, go to the **Home** tab. 
 
-2. Click on **Security Asssessment** and select your target database. Click **Assess Now** to run an assessment. Once the report has been generated, you can click on **Set Baseline** to establish a baseline that will be compared to future assessments or **View Report** to see the results of the assessment. You can also select your database and click **Schedule Periodic Assessment** to setup a regularly run security assessment. 
+2. Click on **Security Assessment** and select your target database. Click **Assess Now** to run an assessment. Once the report has been generated, you can click on **Set Baseline** to establish a baseline that will be compared to future assessments or **View Report** to see the results of the assessment. You can also select your database and click **Schedule Periodic Assessment** to setup a regularly run security assessment. 
 
     ![](./images/11.png " ")
 
@@ -283,7 +283,7 @@ In this step, we will access the data on the target database we registered. Secu
 
 6. Lastly, we will configure a target for Activity Auditing. This will allow us to audit certain activities performed on the target database. 
 
-  a. Click on **Activity Auditing** on the left panel and select your target databse. Click **Continue**. 
+  a. Click on **Activity Auditing** on the left panel and select your target database. Click **Continue**. 
 
     ![](./images/20.png " ")
 
