@@ -252,7 +252,7 @@ Before logging in, first note down your IP addresses.
 2. You can also log in to the **Public IP Address of node2**
 
     ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node1>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node2>
     ````
     ![](./images/em-mac-linux-ssh-login.png " ")
 

@@ -7,19 +7,18 @@ In this lab you will use the SQL Developer Web browser-based tool, connect to yo
 Estimated Lab Time: 30-45 minutes
 
 ### Objectives
+
 - Enable a user for REST access
 - Publish a RESTful service for a database table
 - Secure the REST service
 
 ### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-This workshop assumes you have completed the following labs:
-* [Login to Oracle Cloud](?lab=lab-1-login-oracle-cloud)
-* [Provision an Autonomous Database](?lab=lab-2-provision-autonomous-database)
-* [Connect to ADB with SQL Dev Web](?lab=lab-3-connect-adb-sql-dev-web)
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 
 ## **STEP 1**: Create a user for Application Development
+
 1. First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
     ![Database Actions Menu, Administration then Users](./images/sdw-1.png)
@@ -184,7 +183,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 3: Auto-REST Enable a Table**
+## **STEP 3:** Auto-REST Enable a Table
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
@@ -236,7 +235,7 @@ We need to load some data into the database so that we can create some REST serv
 
     The cURL for the table MAY2018 side out also will help you construct REST endpoints for update, delete and insert actions.
 
-## **Step 4**: Securing the REST Endpoint
+## **STEP 4**: Securing the REST Endpoint
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -304,9 +303,9 @@ We need to load some data into the database so that we can create some REST serv
 
     and if we run the original curl command using the OCI Cloud Shell without this information, we get Unauthorized:
 
-````
-> curl --location \
-'https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556'
+    ````
+    > curl --location \
+    'https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556'
 
     {
         "code": "Unauthorized",
@@ -314,39 +313,41 @@ We need to load some data into the database so that we can create some REST serv
         "type": "tag:oracle.com,2020:error/Unauthorized",
         "instance": "tag:oracle.com,2020:ecid/c755a84b26f02aba9ce630f831ee721c"
     }
-````
+    ````
 
 15. Take the token text we previously copied and replace <VALUE> in the curl command with that text. Then run the curl command using the OCI Cloud Shell:
 
-````
-> curl --location '\
-https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556' \
---header 'Authorization: Bearer yuNINeg1uqHIivqDDgJnfQ' 
-````
+    ````
+    > curl --location '\
+    https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556' \
+    --header 'Authorization: Bearer yuNINeg1uqHIivqDDgJnfQ' 
+    ````
 
 16. We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
 
-````
-{"id":"hv70116556","time":"2018-05-04T22:32:54.650Z","latitude":19.3181667,"longitude":-154.9996667,"depth":5.81,
-"mag":6.9,"magtype":"mw","nst":"63","gap":"210","dmin":"0.11","rms":"0.11","net":"hv","updated":"2020-08-15T02:55:22.135Z",
-"place":"19km SSW of Leilani Estates, Hawaii","type":"earthquake","horizontalerror":"0.52","deptherror":"0.31",
-"magerror":null,"magnst":"10","status":"reviewed","locationsource":"hv","magsource":"hv","links":[{"rel":"self",
-"href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556"},{"rel":"edit",
-"href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556"},
-{"rel":"describedby","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/metadata-catalog/may2018/item"},
-{"rel":"collection","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/"}]}
-````
+    ````
+    {"id":"hv70116556","time":"2018-05-04T22:32:54.650Z","latitude":19.3181667,"longitude":-154.9996667,"depth":5.81,
+    "mag":6.9,"magtype":"mw","nst":"63","gap":"210","dmin":"0.11","rms":"0.11","net":"hv","updated":"2020-08-15T02:55:22.135Z",
+    "place":"19km SSW of Leilani Estates, Hawaii","type":"earthquake","horizontalerror":"0.52","deptherror":"0.31",
+    "magerror":null,"magnst":"10","status":"reviewed","locationsource":"hv","magsource":"hv","links":[{"rel":"self",
+    "href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556"},{"rel":"edit",
+    "href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556"},
+    {"rel":"describedby","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/metadata-catalog/may2018/item"},
+    {"rel":"collection","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/"}]}
+    ````
 
 ## Conclusion
+
 In this lab, you had an opportunity to get an introduction to REST services using an easy to follow User Interface. REST enable your tables and database objects in minutes with zero code.
 
-## **Acknowledgements**
+## Acknowledgements
 
- - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
- - **Last Updated By/Date** - February 2021
- - **Workshop Expiry Date** - February 2022
+- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
+- **Last Updated By/Date** - February 2021
+- **Workshop Expiry Date** - February 2022
 
- ## Need Help?
+## Need Help?
+
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
