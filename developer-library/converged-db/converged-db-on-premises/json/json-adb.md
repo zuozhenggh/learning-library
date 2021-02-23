@@ -373,7 +373,7 @@ For this , we will create two views next
     END;
     /
     ````
-3.  Replace the admin url with the schema url defined in p_url_mapping_pattern.
+3.  Replace the admin url with the schema url defined in p\_url\_mapping\_pattern.
 
     ![](./images/sqldevurl.png " ")  
 
