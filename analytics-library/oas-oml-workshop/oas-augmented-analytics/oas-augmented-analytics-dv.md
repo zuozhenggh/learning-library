@@ -291,8 +291,9 @@ Binary classification is a technique of classifying elements of a given dataset 
 These classification rules are generated when we train a model using training dataset which contains information about the employees and whether the employee has left the company or not.
 
 
-1. In the home page, click on create and select  **Data Flow**.  
-   ![](./images/OMLP01.png " ") 
+1. In the home page, click on create and select  **Data Flow**.
+![](./images/OMLP01.png " ") 
+ 
 
 
 
