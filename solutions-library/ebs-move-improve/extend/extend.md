@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-This 3-part workshop is an extension of previous workshop. It showcases the use of enabling OCI services: DataSafe and Logging Analytics to extend your EBS environment
+This 2-part workshop is an extension of previous workshop. It showcases the use of enabling OCI services: DataSafe and Logging Analytics to extend your EBS environment
 
 Estimated Workshop Time: 1.5 hours
 
@@ -38,8 +38,6 @@ This workshop uses the following components:
 
 * DataSafe Service from OCI
 
-* Oracle Integration Cloud from OCI
-
 * Virtual Cloud Network and related resources.
     - User-generated using Resource Manager and provided Terraform script.
 
@@ -55,7 +53,6 @@ Figure W-1:
 In this lab, you will:
 * Enable DataSafe
 * Enable Logging Analytics
-* Enable Oracle Integration Cloud
 
 ### **Prerequisites**
 
