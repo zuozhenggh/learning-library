@@ -24,9 +24,7 @@ Notes:
 
 * Next we will enable Logging Analytics to monitor and manage our technological footprint
 
-This workshop uses the following components:
-
-* Trial accounts (one per attendee).
+This workshop uses the following components: 
 
 * Logging Analytics Service from OCI
 
@@ -36,6 +34,12 @@ This workshop uses the following components:
     - User-generated using Resource Manager and provided Terraform script.
 
 * Oracle E-Business Suite Cloud Manager and created EBS instances
+
+### Workshop Architecture
+
+* We will build on top of the architecture created in the EBS Lift and Shift On-Premises EBS to OCI as seen in Figure W-1 below
+
+![](./images/architecture.png " ")
 
 ### Objectives
 
