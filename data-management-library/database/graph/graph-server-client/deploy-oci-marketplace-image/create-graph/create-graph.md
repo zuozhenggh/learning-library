@@ -52,7 +52,7 @@ CREATE PROPERTY GRAPH "customer_360"
     account
       SOURCE KEY(id) REFERENCES account
       DESTINATION KEY(customer_id) REFERENCES customer
-      LABEL owned_by NO PROPERTIES
+      LABEL owned_by PROPERTIES (id)
   , parent_of
       SOURCE KEY(customer_id_parent) REFERENCES customer
       DESTINATION KEY(customer_id_child) REFERENCES customer
@@ -67,27 +67,16 @@ CREATE PROPERTY GRAPH "customer_360"
 </copy>
 ```
 
-For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that **all columns of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties)**. For `owned_by` edge, the properties are not given (with `NO PROPERTIES` keyword) since the the properties are already hold by the account vertices. 
+For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that **all columns of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties)**. For `owned_by` edge, only `id` property is given with `PROPERTIES` keyword for edge ID generation purpose, and the other properties are not given, because they are already hold by the account vertices. 
 
 Now execute the PGQL DDL to create the graph.
 
 ```
-// drop when this graph exists first
-<copy>
-graph.destroy()
-</copy>
-```
-
-```
-// Now create the graph 
 <copy>
 session.prepare_pgql(statement).execute()
 </copy>
-```
 
-The expected result is:
-```
-False
+False   // This is the expected result
 ```
 
 ## **STEP 3:** Check the newly created graph
@@ -188,6 +177,11 @@ GRANT PGX_SESSION_ADD_PUBLISHED_GRAPH TO customer_360;
 Exit the Python shell and re-connect to pick up the updated permissions, then create the graph again and publish it.
 ```
 <copy>
+opgpy -b https://localhost:7007 --username customer_360
+</copy>
+```
+```
+<copy>
 graph.publish()
 </copy>
 ```
@@ -196,7 +190,6 @@ Next time you connect you can access the graph in-memory without re-loading it, 
 ```
 <copy>
 graph = session.get_graph("customer_360")
-graph
 </copy>
 ```
 

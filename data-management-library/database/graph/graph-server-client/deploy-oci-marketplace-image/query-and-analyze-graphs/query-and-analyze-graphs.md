@@ -22,7 +22,7 @@ Estimated Lab Time: 10 minutes
 
 ## **STEP 1:** Get the Graph on Memory
 
-Assuming that the `customer_360` graph is already loaded onto the memory in the previous Lab, the graph can be attached with this command. If the graph is not public, you can access the graph only via the same session which loaded the graph.
+Assuming that the `customer_360` graph is already loaded onto the memory in the previous Lab, the graph can be attached with this command. If the graph is published, you can also access the graph from the new sessions.
 
 ```
 <copy>
