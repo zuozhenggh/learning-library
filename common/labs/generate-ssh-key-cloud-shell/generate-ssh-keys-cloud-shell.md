@@ -8,6 +8,10 @@ We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute 
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
+Watch the video below for an overview of the lab.
+[](youtube:oq2Hk1Yy9Cg)
+
+
 ## Oracle Cloud Shell
 
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
@@ -71,6 +75,5 @@ You may now [proceed to the next lab](#next).
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

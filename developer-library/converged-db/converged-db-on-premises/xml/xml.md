@@ -1,14 +1,25 @@
 # Oracle XML
 
 ## Introduction
-There are several steps within this lab.
--  The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
--  The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
--  The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document. The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database.
+This lab will cover three main topics. The Connect to SQL Developer Web will use SQL Developer Web, which is one of the tools that comes preinstalled with Autonomous Database. The Query XML Data uses XQuery which is a  general and expressive language, that combines the power of expression and computation with the strengths of SQL. The Insert and Update XML Data updates XML content or replaces either the entire contents of a document or only particular parts of a document. 
 
--  The last step you will look at various sample queries and functions within XML.
+*Estimated Lab Time*: 15 Minutes
 
-*Estimated Lab Time:* 15 Minutes
+### About Oracle XML
+XML(Extensible Markup Language) is used to store and transport data. XML data is known as self-describing or self-defining, meaning that the structure of the data is embedded with the data, thus when the data arrives there is no need to pre-build the structure to store the data; it is dynamically understood within the XML.
+The basic building block of an XML document is an element, defined by tags. An element has a beginning and an ending tag. All elements in an XML document are contained in an outermost element known as the root element.
+XML can also support nested elements, or elements within elements. This ability allows XML to support hierarchical structures. 
+
+[](youtube:lGQvxPCYR2c)
+
+For More Details About Oracle XML [Click here](#Appendix1:MoreaboutOracleXML)
+
+### Objectives
+In this lab, you will:
+* Setup the environment for XML lab. 
+* Connect the oracle SQL developer to Insert and Update the XML Data into Oracle Database by using XML Function.
+* Learn about the XML functions.
+
 
 ### Prerequisites
 This lab assumes you have:
@@ -20,29 +31,10 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-***Note:***  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
+***Note:***  All scripts for this lab are stored in the **/u01/workshop/xml** folder and run as the oracle user.
 
-### About Oracle XML
 
-XML(Extensible Markup Language) is used to store and transport data. XML data is known as self-describing or self-defining, meaning that the structure of the data is embedded with the data, thus when the data arrives there is no need to pre-build the structure to store the data; it is dynamically understood within the XML.
-
-The basic building block of an XML document is an element, defined by tags. An element has a beginning and an ending tag. All elements in an XML document are contained in an outermost element known as the root element. XML can also support nested elements, or elements within elements. This ability allows XML to support hierarchical structures. Element names describe the content of the element, and the structure describes the relationship between the elements.
-
-For example, XML documents can be very simple, such as the following:
-
- ![](./images/xml_snapa.png " ")
-
-### XML with Oracle Database
-
-Oracle XML DB is a high-performance, native XML storage and retrieval technology that is delivered as a part of all versions of Oracle Database.
-
-Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric development techniques to be used to publish XML directly from relational data stored in Oracle Database.XML is an extremely popular way to persist and exchange business critical information.
-
- [](youtube:lGQvxPCYR2c)
-
-Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
-
-## **Step 1**: Connect to the Pluggable Database (PDB)
+## **STEP 1**: Connect to the Pluggable Database (PDB)
 
 1. Open a terminal window and sudo to the user **oracle**
 
@@ -84,7 +76,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     </copy>
     ```
 
-## **Step 2**: Connect to SQL Developer
+## **STEP 2**: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -98,7 +90,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_sql_developer.png " ")
 
-## **Step 3**: XML Query
+## **STEP 3**: XML Query
 
 1. Getting the number of XML documents.
 
@@ -146,7 +138,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_step3_search.png " ")
 
-## **Step 4**: Insert XML record.
+## **STEP 4**: Insert XML record.
 
 1. Let's take a count of the rows we have currently and then do a insert.
 
@@ -160,7 +152,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
 
 2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
-3. Set your oracle environment and connect to PDB as **oracle** user.
+3. Set your Oracle environment and connect to PDB as **oracle** user.
 
     ```
     <copy>
@@ -201,12 +193,12 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_s4_p3.png " ")
 
-## **Step 5**: Update XML table
+## **STEP 5**: Update XML table
 
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
 
-2. Set your oracle environment and connect to PDB as **oracle** user.
+2. Set your Oracle environment and connect to PDB as **oracle** user.
 
     ```
     <copy>
@@ -250,7 +242,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_s5_p2.png " ")
 
-## **Step 6**: Example Queries
+## **STEP 6**: Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
@@ -352,8 +344,21 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
+## **Appendix 1**: More about Oracle XML
+### **XML with Oracle Database**
+
+- Oracle XML DB is a high-performance, native XML storage and retrieval technology that is delivered as a part of all versions of Oracle Database.
+- Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric development techniques to be used to publish XML directly from relational data stored in Oracle Database.
+- XML is an extremely popular way to persist and exchange business critical information.
+
+Oracle XML DB allows an organization to manage XML content in the same way that will manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
+
+For example, XML documents can be very simple, such as the following:
+![](./images/xml_snapa.png " ")
+
 ## Learn More
-- [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adxdb/index.html)
+
+- Oracle XML Documentation ([XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adxdb/index.html))
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.

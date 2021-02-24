@@ -1,7 +1,7 @@
-# Add GitHub Hosted Labs and Workshops to OHC
+# OPTIONAL - Add GitHub Hosted Labs and Workshops to OHC
 
 ## Introduction
-You need to add a link from your Oracle Help Center (OHC) page to a lab hosted on an Oracle GitHub repository. This lab details how to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.
+DB User Assistance Team ONLY - You need to add a link from your Oracle Help Center (OHC) page to a lab hosted on an Oracle GitHub repository. This lab details how to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.
 
 ### Objectives
 * Create an OLL content entry for your lab.

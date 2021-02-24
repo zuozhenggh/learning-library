@@ -1,13 +1,22 @@
 # Oracle Cross Datatype
 
 ## Introduction
+Cross datatype lab is designed to showcase the functionality of multi datatype like json, xml and spatial and how all of them can be used same like relational data format.
 
-This lab will show you how to use cross data functions.
-- JSON with Relational
-- XML with Relational
-- JSON with Spatial
+*Estimated Lab Time*: 20 Minutes
 
-*Estimated Lab Time:* 20 Minutes
+### About Oracle Cross Datatype
+
+JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
+
+### Objectives
+In this lab, you will:
+* Setup the environment for Cross Datatype lab. 
+* Connect the oracle SQL developer to access the JSON, XML, Spatial data in Relational formate by using different type of function.
+* Learn about how to use Cross data function :
+    - JSON with Relational
+    - XML with Relational 
+    - JSON with Spatial
 
 ### Prerequisites
 This lab assumes you have:
@@ -19,14 +28,8 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-### About Oracle Cross Datatype
 
-JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
-
-The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
-
-
-## **Step 1**: Connect to the Pluggable Database (PDB)
+## **STEP 1**: Connect to the Pluggable Database (PDB)
 
 1. As oracle user set oracle Environment and connect to the PDB.
 
@@ -48,7 +51,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     </copy>
     ```
 
-## **Step 2**: Connect to SQL Developer
+## **STEP 2**: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -63,7 +66,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     ![](./images/cross_sql_developer.png " ")
 
 
-## **Step 3**: JSON with Relational
+## **STEP 3**: JSON with Relational
 
 **JSON_TABLE** creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
 
@@ -111,7 +114,7 @@ Below are the examples using **JSON_TABLE**.
     ```
     ![](./images/cd3.png)
 
-## **Step 4**: XML with Relational
+## **STEP 4**: XML with Relational
 
 **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -137,7 +140,7 @@ Below are the examples using **XMLTABLE**
 
     ![](./images/cd11.png)
 
-## **Step 5**: JSON with Spatial
+## **STEP 5**: JSON with Spatial
 
 GeoJSON Objects: Geometry, Feature, Feature Collection
 GeoJSON uses JSON objects that represent various geometrical entities and combinations of these together with user-defined properties.
