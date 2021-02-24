@@ -299,9 +299,15 @@ In this step, we will access the data on the target database we registered. Secu
 
     ![](./images/24.png " ")
 
-  d. On the Start Audit Collection page, we will designate from what date we would like to collect audit data. Having selected your target database, click on the calendar icon and select a date to designate as the start of the audit collection. From there, you can click **Start** to begin the audit collection process. 
+  d. On the Start Audit Collection page, we will designate from what date we would like to collect audit data. Having selected your target database, click on the calendar icon and select a date to designate as the start of the audit collection. From there, you can click **Start** to begin the audit collection process. After the process begins, you can click **Done**. 
 
     ![](./images/25.png " ")
+
+  e. You can view the Activity Audit reports by clicking on the **Reports** tab and selecting a subcategory under **Activity Auditing**. 
+
+    ![](./images/26.png " ")
+
+  Congratulations! You have successfully set up and used Data Safe for EBS on OCI. 
 
 
 ## Learn More
