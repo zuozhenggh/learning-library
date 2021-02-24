@@ -6,17 +6,15 @@ This lab walks you through the steps to create an Extract and a Replicat in the 
 
 Estimated Lab Time: 10 minutes
 
-### About Product/Technology
-Extract definition
-
-Replicat definition
+### About Extracts and Replicats
+An Extract is a process that extracts, or captures, data from a source database. A Replicat is a process that delivers data to a target database.
 
 ### Objectives
 
 In this lab, you will:
 * Log in to the Oracle GoldenGate deployment console
-* Create and run an Extract
-* Create and run a Replicat
+* Add and run an Extract
+* Add and run a Replicat
 
 ## **STEP 1**: Log in to the Oracle GoldenGate deployment console
 
@@ -32,7 +30,7 @@ In this lab, you will:
 
     ![OCI GoldenGate Deployment Console Sign In](images/01-04-ggs-console-signin.png)
 
-## **STEP 2:** Create and Run an Extract
+## **STEP 2:** Add and Run an Extract
 
 1. On the GoldenGate Deployment Console dashboard, click the plus (+) icon for Extracts.
 
@@ -74,7 +72,7 @@ In this lab, you will:
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## **STEP 3**: Create and Run the Replicat
+## **STEP 3**: Add and Run the Replicat
 
 1. On the GoldenGate Deployment Console dashboard, click the plus (+) icon for Replicats.
 
@@ -110,10 +108,8 @@ In this lab, you created and ran an Extract and Replicat. You may now [proceed t
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Creating an Extract](https://docs.oracle.com/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
+* [Creating a Replicat](https://docs.oracle.com/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-063CCFD9-81E0-4FEC-AFCC-3C9D9D3B8953)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

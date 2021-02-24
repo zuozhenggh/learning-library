@@ -74,8 +74,7 @@ The source and target databases appear in the list of Registered Databases. You 
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Managing Database Registrations](https://docs-uat.us.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
