@@ -22,15 +22,6 @@ Oracle Cloud Infrastructure Logging Analytics is a machine learning-based cloud 
 * An Oracle Cloud Environment
 * EBS Cloud Manager, EBS 1-Click and Advanced Provisioned Instance, Network - All setup in previous labs
 
-### Options
-
-Steps 1 and 2 can be completed via automation. To automate the Setup of OCI Logging Analytics and ingestion of logs to the service follow the steps found in **Step 0** Once done skip to **Step 3**
-For manual installation follow steps outlined in **Step 1** and **Step 2**
-
-## **Step 0**: Automate Setup and Ingestion for Logging Analytics
-
-Here we will automate setting up Logging Analytics and Ingesting Logs. Once completed go to **Step 3**
-
 ## **STEP 1**: Setup Logging Analytics Service
 
 In Step 1 of this lab we will Setup Logging Analytics Service
@@ -395,27 +386,35 @@ Now that we have our agents installed and our flow logs going to logging analyti
 
     a. We will create an entity for host logs and ebs logs for each of the agent installations. As you did in the previous step repeat the following steps for each of the servers you installed a management agent.
 
+    ![](./images/adminscreen.png " ")
+
     b. Navigate to Logging Analytics - Administration and click on **Entities**
 
     c. From here you can see the Entities that already have been created. Click **Create Entity**
+
+    ![](./images/entities.png " ")
 
     (example is for our first EBS Cloud Manager agent)
 
       i. For host logs: 
 
         - Create an Entity with Entity Type: `Host(Linux)`
-        - Name: `EBS CM Host`
+        - Name: EBS CM Host
         - Management Agent: ebscmagent
       Click **Create**
 
+    ![](./images/createcmhost.png " ")
+
       ii. For ebs concurrent processing logs:
 
-        - Create an Entity with Entity Type: `EBS Concurrent Processing Node`
-        - Name: `EBS CM CPN`
+        - Create an Entity with Entity Type: EBS Concurrent Processing Node
+        - Name: EBS CM CPN
         - Management Agent: ebscmagent
         - Properties
           omc_ebs_applcsf: /u01/install/APPS/fs_ne/inst/ebsdb_apps/
           omc_ebs_appllog: /logs/appl/conc/log
+
+    ![](./images/createcpn.png " ")
 
   2. Create Host Log Group and EBS CPN Log Group
 
@@ -427,13 +426,17 @@ Now that we have our agents installed and our flow logs going to logging analyti
 
       Repeat and name the other group `EBS CPN Log Group`
 
+    ![](./images/loggroups.png " ")
+
   3. Associate Log sources
   
-    Now that you have your entities go to Logging Analytics - Administration - Log Sources
+    Now that you have your entities go to Logging Analytics - Administration - Sources
 
     For Host Logs:
 
-    a. Type in `linux` in the search bar
+    a. Type in `linux` in the search bar on the right
+    
+    ![](./images/linuxsearch.png " ")
 
     b. Click on `Linux Secure Logs`
 
@@ -441,13 +444,17 @@ Now that we have our agents installed and our flow logs going to logging analyti
 
     d. Click the box in the left to associate for all your Host Entities
 
-    e. Select `Host Log Group`
+    e. Select `Host Log Group` Click Save and Deploy
 
-    f. Repeat for the following Log Sources: 
+    ![](./images/associatesources.png " ")
+
+    f. Repeat for the following Log Sources: Linux Syslog Logs, Linux YUM Logs, Linux Audit logs, Linux Cron Logs, Ksplice Logs
 
     For EBS logs:
 
     a. Type in `ebs` in the search bar
+
+    ![](./images/ebssearch.png " ")
 
     b. Click on `EBS Concurrent Manager Logs`
 
@@ -455,9 +462,11 @@ Now that we have our agents installed and our flow logs going to logging analyti
 
     d. Click the box in the left to associate for all your EBS CPN entities
 
-    e. Select `CPN Log Group`
+    e. Select `CPN Log Group` Click Save and Deploy
 
-    f. Repeat for the following Log Sources: 
+    ![](./images/associatecpnsource.png " ")
+
+    f. Repeat for the following Log Sources: EBS Concurrent Request Logs, EBS Conflict Resolution Manager Log, EBS Internal Concurrent Manager log, EBS Transaction Manager Logs
 
   4. Now that you have completed these steps you can go to the Log Explorer and view flow logs, ebs logs, host logs, and audit logs. In the next step we will create visualizations and dashboards based off this data.
 
@@ -467,6 +476,67 @@ Now that we have our agents installed and our flow logs going to logging analyti
 
 In this Step we will familiarize ourselves with the visualization tool `Log Explorer` and build dashboard.
 
+Navigate to Logging Analytics - Log Explorer
+
+Your screen will look similar to this, with a pie chart showing an overview of the different logs that you have ingested. Likely your VCN Flow Logs will dominate your pie chart.
+
+  ![](./images/piechart.png " ")
+
+  1. The Log explorer is broken down into four main sections. 
+
+    a. The first being the Query Search. You can filter through and analyze your logs based off of regex that define your search. As you change your fields and visualizations you will see these changes in the graph and the query search bar.
+
+    ![](./images/piechart1.png " ")
+
+    b. The second being the Fields panel on the left. Here you can choose what fields you want to use for grouping, filtering, and exploring your log data. You can drag your fields into the visualization panel or click on the three dots to the right of the field name to filter or pin the field.
+
+    ![](./images/fields.png " ")
+
+    c. The third is the Visualizations panel that you can select what kind of graph you would like to use for your widget as well as drag and drop fields into the proper axis.
+
+    ![](./images/visualizations.png " ")
+
+    d. Lastly the main part of the log explorer is where you can see the data in a visual. These are called widgets. 
+
+  2. Once you have used the log explorer and have created a widget you like you can then create a dashboard
+
+    a. From the log explorer go to Actions in the top right and Click **Save As**
+
+    b. Provide  a Search Name: `logs cluster` and Description
+
+    c. Select Add to a dashboard
+
+    d. Select New Dashboard
+
+    e. make sure the compartment being used is our ebshol_compartment 
+
+    f. Give the Dashboard a name: `EBS Dashboard` and Description
+
+    ![](./images/savesearch.png " ")
+
+    g. Click **Save**
+
+  3. Now Navigate to Logging Analytics - Dashboards
+
+    a. You will see your EBS Dashboard. Click into it
+
+    b. You will now see your visualization as the lone widget. Click **Edit** on the far right
+
+    c. From the edit you can add additional widgets as well as change the size of your widget.
+
+    ![](./images/editdash.png " ")
+
+    d. As you create more widgets based off of queries or built using the fields and visualization panels you can add them from the right side by dragging the widget into the dashboard and placing as you see fit. Allowing you to customize your dashboard to your preference.
+
+  4. To complete this lab please navigate back to the log explorer and input the following queries and save them as their given names. 
+
+  You can now go to your dashboard and add these widgets to your EBS Dashboard
+
+  Another option is to create a Networking/Security Dashboard with your networking queries in addition to your ebs dashboard where you can filter your EBS/host log metrics in the EBS Dashboard and Network and Audit information in the Networking/Security Dashboard. You can add this dashboard by clicking Create Dashboard, naming it and saving.
+
+This will now complete the Logging Analytics portion of this lab.
+
+For more information on how to create widgets to understand your data refer to [visualize data using charts and controls](https://docs.oracle.com/en-us/iaas/logging-analytics/doc/visualize-data-using-charts-and-controls.html#GUID-93988D5B-9717-4F63-8362-16B08BC3E020)
 You may now [proceed to the next lab](#next).
 
 ## Learn More
