@@ -293,15 +293,11 @@ These classification rules are generated when we train a model using training da
 
 1. In the home page, click on create and select  **Data Flow**.
 ![](./images/OMLP01.png " ") 
- 
-
-
 
 2. Select the data we were analyzing > “**Attrition Training**.” and click on **Add**.
 ![](./images/OMLP02.png " ")
 
-3. The selected data set will be added as a source for our data flow.
-
+1. The selected data set will be added as a source for our data flow.
 ![](./images/OMLP03.png " ") 
 
 4. In the last example we saw that there is attrition in our department and there appears to be some drivers identified using the explain function.
@@ -309,19 +305,16 @@ These classification rules are generated when we train a model using training da
 What we want to do now is build and train a machine learning model in order for us to be able to predict whether someone is likely to leave the organization.
 
 Select the ‘**plus icon**’ on the source data and select ‘**Train Binary Classifier**’
-
 ![](./images/OMLP04.png " ") 
 
 5. We need to select which binary classification model we want to use.
 
 Select ‘**Naïve Bayes for Classification**’ and click OK.
-
 ![](./images/OMLP05.png " ") 
 
 
 6. Select the ‘**Attrition**’ attribute as the target column for the model.
 Make sure positive class is ‘**Yes**’ and leave the other options as the default settings
-
 ![](./images/OMLP06.png " ") 
 
 
@@ -351,45 +344,33 @@ Right Click and select **Inspect**.
 
 
 In order to do this we go back to the Home page and select ‘**Create’/ ‘import**’ in the **Page Menu** (hamburger) to import a project previously created which analyzes the current employees of our organization.
-
-
 ![](./images/OMLP12.png " ")
 
 13. Import the “**Employee_Analysis.dva**” file.
-
-
 ![](./images/OMLP13.png " ")
 
 14. Enter the password “**Admin123**”.
-
 ![](./images/OMLP14.png " ")
 
 15. Find and open the project named Employee Analysis.
 Here we have an existing project for the 470 employees in our organization.
 
 We’re going to apply our new classification to this data set which we imported with this project.
-
-
 ![](./images/OMLP15.png " ")
 
 16. Go to the **Home** page and create a new **Data Flow**.
-
 ![](./images/OMLP16.png " ")
 
 17. Select the new data set **Attrition Predict**.
-
 ![](./images/OMLP17.png " ")
 
 18. Click on **plus icon** to add a new node to the data flow.
-
 ![](./images/OMLP18.png " ")
 
 19. Select the **Apply Model** Node.
-
 ![](./images/OMLP19.png " ")
 
 20. Select our Machine Learning Model **'attrition predict'**  and click OK
-
 ![](./images/OMLP20.png " ")
 
 21. Our apply model node will have 3 sections.  
@@ -403,35 +384,25 @@ Applying the model will enrich our employee data set adding a predicted value an
 **Inputs** - these are the input columns for the apply model.  
    
 The apply model will try to automatically map the input dataset column names to the column names in the model.
-
-
-
 ![](./images/OMLP21.png " ")
 
 22. Click on  the **plus icon (+)** and select the **Save Data** node.
-
 ![](./images/OMLP22.png " ")
 
 23. Give it the name **attrition Predicted Dat**.
 
 **Note:** we can run this data flow to an existing database if we like. For now, keep if as the default data set storage.
-
-
 ![](./images/OMLP23.png " ")
 
 24. Save the data flow under the name **attrition Prediction**.
-
 ![](./images/OMLP24.png " ")
 
 25. Once the data flow is saved **Run** the data flow.
 
 This will produce a new data set which appends the predicted values to our existing Attrition Apply data set.
-
-
 ![](./images/OMLP25.png " ")
 
 26. Go to the **Data** tab and select the new data set **Attrition Predicted Data**.
-
 ![](./images/OMLP26.png " ")
 
 27. Some of the measures may be stored as attributes.
@@ -453,8 +424,7 @@ After making modifications, click on **Apply Script**.
 **•	Pie chart of EmployeeCount by JobRole and Department**  
 
 **•	Pivot Table of EmployeeNumber, First Name, Last Name, PredictionConfidence, PredictedValue**
-
- ![](./images/OMLP28.png " ")
+![](./images/OMLP28.png " ")
 
 29. Save the project as **Attrition Prediction**.
 ![](./images/OMLP29.png " ")
@@ -469,7 +439,6 @@ Click on the **hamburger** at the top right select **Data Actions**.
 Give it the name **Existing Employees Analysis**.
 
 And select type as **Analytics Link**.
-
 ![](./images/OMLP31.png " ")
 
 32. On the Target option, select **Select from Catalog**.
@@ -481,7 +450,6 @@ And select type as **Analytics Link**.
 34. Now we can use the data action to navigate between projects.
 
 Select a person from the pivot table, right click and select the new action for **Existing Employees Analysis**.
-
 ![](./images/OMLP34.png " ")
 
 35. This will take you to the project for existing employees filtered for the employee you highlighted.
