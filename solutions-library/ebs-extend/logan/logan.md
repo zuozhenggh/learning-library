@@ -61,12 +61,6 @@ In Step 1 of this lab we will Setup Logging Analytics Service
     ![](./images/adduser.png " ")
 
       vi.  You can now close this page and go back to your OCI Console
-      
-## **Step 2 (Optional)**: Automate Setup and Ingestion for Logging Analytics
-
-Here we can automate setting up Logging Analytics and Ingesting Logs. This is optional, if you would like to install manually skip this step. After completing **Step 2** you can skip to **Step 5**
-
-## **STEP 3:** Navigate OCI to Finish Setting up Logging Analytics Service
 
     c. From the OCI Console Navigate to Identity - Groups
 
@@ -160,7 +154,7 @@ allow service loganalytics to {VNIC_READ} in tenancy
     
 
 
-## **STEP 4:** Ingest Logs into Logging Analytics
+## **STEP 2:** Ingest Logs into Logging Analytics
 
 In this Step we will Ingest Flow Logs and Install Management Agents to our instances
 
@@ -384,7 +378,7 @@ In this Step we will Ingest Flow Logs and Install Management Agents to our insta
 
   **Note:** If you have other instances not created with the cloud manager follow the same steps to add the agent and key file to those instances and install.
 
-## **STEP 5:** Create Entities Log Groups and associate Log Sources
+## **STEP 3:** Create Entities Log Groups and associate Log Sources
 
 Now that we have our agents installed and our flow logs going to logging analytics we will now create entities and associate these entities with log sources
 
@@ -480,7 +474,7 @@ Now that we have our agents installed and our flow logs going to logging analyti
 
   Note: If you have other logs you are looking to ingest find the respective log source and entity type and location of the log source and you can create the entity and the associate the respective log source with this same process.
 
-## **STEP 5:** Visualize Data in Log Explorer and Create Dashboards
+## **STEP 4:** Visualize Data in Log Explorer and Create Dashboards
 
 In this Step we will familiarize ourselves with the visualization tool `Log Explorer` and build dashboard.
 
