@@ -133,10 +133,10 @@ Stopping or starting a database instance, or a database service will generate a 
     ````
     ![](./images/fan-step2-num3.png " ")
 
-4. If your callout was written correctly and had the appropriate execute permissions, a file named racnode1_events.log should be visible in the /tmp directory
+4. If your callout was written correctly and had the appropriate execute permissions, a file named hostname_events.log should be visible in the /tmp directory
     ````
     <copy>
-    ls -altr /tmp/racnode*.log
+    ls -altr /tmp/<hostname>*.log
     </copy>
     ````
 
@@ -146,7 +146,7 @@ Stopping or starting a database instance, or a database service will generate a 
 
     ````
     <copy>
-    cat /tmp/racnode*.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````
 
@@ -180,7 +180,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     # define AWK
     AWK=/bin/awk
     # Define a log file to see results
-    FAN_LOGFILE=/tmp/`hostname -s`_callout2.log
+    FAN_LOGFILE=/tmp/`hostname -s`.log
     # Event type is handled differently
     NOTIFY_EVENTTYPE=$1
     for ARGS in $*; do
@@ -230,14 +230,14 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
 
     ````
     <copy>
-    cat /tmp/racnode1_callout2.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````  
 4. Examine the entry created in the log file generated in /tmp on node2:
 
     ````
     <copy>
-    cat /tmp/racnode2_callout2.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````
 5. Cause a DATABASE UP event to be generated:
