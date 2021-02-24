@@ -54,7 +54,7 @@
         {
             "title": "Lab 9: PL/SQL Packages",
             "description": "This lab walks you through the use of UTL packages in a cluster",
-            "filename": "../../sql/utl_file_test.md.md"
+            "filename": "../../sql/utl_file_test.md"
         }
     ]
 }

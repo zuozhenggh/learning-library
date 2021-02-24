@@ -7,6 +7,9 @@ This lab will show you how to setup your database schemas for the subsequent lab
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
+
+Watch the video below for an overview of the Install Sample Schema lab
+[](youtube:UDuY0uWc_Hc)
   
 ## **STEP**: Install Sample Data
 

@@ -8,6 +8,9 @@ FAN is configured and runs automatically when you install Oracle Grid Infrastruc
 
 Estimated Lab Time: 20 Minutes
 
+Watch the video below for an overview of the Fast Application Notification lab
+[](youtube:RICjcyFk3SE)
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
