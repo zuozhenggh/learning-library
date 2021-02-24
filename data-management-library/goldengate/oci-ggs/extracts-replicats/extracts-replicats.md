@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create an Extract and a Replicat in the Oracle GoldenGate deployment console.
+This lab walks you through the steps to create an Extract and a Replicat in the Oracle GoldenGate Deployment Console.
 
 Estimated Lab Time: 10 minutes
 
@@ -18,9 +18,9 @@ In this lab, you will:
 
 ## **STEP 1**: Log in to the Oracle GoldenGate deployment console
 
-1. Log in to Oracle Cloud Infrastructure and navigate to the GoldenGate service using the Console navigation menu.
+1. Log in to Oracle Cloud Infrastructure and navigate to the **GoldenGate** service using the Console navigation menu.
 
-2. From the list on the Deployments page, select a **GGSDeployment**.
+2. On the Deployments page, select a **GGSDeployment**.
 
 3. On the Deployment Details page, click **Launch Console**.
 
@@ -30,9 +30,11 @@ In this lab, you will:
 
     ![OCI GoldenGate Deployment Console Sign In](images/01-04-ggs-console-signin.png)
 
+    You're brought to the OCI GoldenGate Deployment Console Home page after successfully signing in.
+
 ## **STEP 2:** Add and Run an Extract
 
-1. On the GoldenGate Deployment Console dashboard, click the plus (+) icon for Extracts.
+1. On the GoldenGate Deployment Console Home page, click the plus (+) icon for Extracts.
 
     ![Click Add Extract](images/02-02-ggs-add-extract.png)
 
@@ -74,7 +76,7 @@ In this lab, you will:
 
 ## **STEP 3**: Add and Run the Replicat
 
-1. On the GoldenGate Deployment Console dashboard, click the plus (+) icon for Replicats.
+1. On the GoldenGate Deployment Console Home page, click the plus (+) icon for Replicats.
 
     ![Click Add Replicat](images/03-01-ggs-add-replicat.png)
 

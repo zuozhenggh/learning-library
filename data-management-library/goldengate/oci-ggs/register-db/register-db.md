@@ -14,7 +14,7 @@ In this lab, you will register source and target databases for Oracle GoldenGate
 
 ## **STEP 1**: Register the Source Database
 
-First, follow the steps below to register the source Oracle Database.
+First, follow the steps below to register the source Oracle Autonomous Transaction Processing Database.
 
 1. Click **Registered Databases**.
 
@@ -24,25 +24,17 @@ First, follow the steps below to register the source Oracle Database.
 
     ![Click Register Database](images/01-02-ggs-registerdb.png "Click Register Database")
 
-3. In the Register Database panel, for Name and Alias, enter **SourceCDB**.
+3. In the Register Database panel, for Name and Alias, enter **SourceATP**.
 
 4. From the Compartment dropdown, select **UA_USER**.
 
 5. Click **Select Database**.
 
-6. From the Database Type dropdown, select **Database (Bare Metal, VM, Exadata)**.
+6. From the Database Type dropdown, select **Autonomous Database**.
 
-7. For Database System in <Compartment_Name>, click **Change Compartment**, select **UACompartment**, and then select **UA_DBSYSTEM** from the dropdown. Some fields are autopopulated based on your selection.
+7. For **Autonomous Database in UA\_USER**, click **Change Compartment**, select **UACompartment**, and then select **Workshop ATP** from the dropdown. Some fields are autopopulated based on your selection.
 
-8. For Database Username, enter **C##GGADMIN_UAUSER**.
-
-9. For Database Password, enter **#OracleWelcome1**.
-
-10. Select **Network Connectivity via Private Endpoint**.
-
-11. For Subnet, click **Change Compartment**, select **UACompartment**, and then select **Public Subnet-VCNWithInternet**.
-
-11. Click **Register**.
+8. Click **Register**.
 
     ![Source Database details](images/01_01_12_regSourceDB.png)
 
@@ -58,13 +50,7 @@ Now, follow the steps below to register the target Autonomous Database.
 
 4. Click **Select Database**.
 
-5. For **Database Type**, click **Change Compartment**, select **UACompartment**, and then select **ADWTarget** from the dropdown.
-
-6. Enter the fully-qualified database name for **Database FQDN**.
-
-7. Enter the **Database Username** and corresponding **Database Password**.
-
-8. Select **Publicly Available** option selected.
+5. For **Autonomous Database in UA\_USER**, click **Change Compartment**, select **UACompartment**, and then select **Workshop ADW** from the dropdown. Some fields are autopopulated based on your selection.
 
 10. Click **Register**.
 

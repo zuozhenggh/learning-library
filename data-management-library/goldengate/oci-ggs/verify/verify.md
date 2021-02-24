@@ -1,4 +1,4 @@
-# Verify Access to Databases
+# Verify Access to Source and Target Databases
 
 ## Introduction
 
@@ -15,7 +15,7 @@ This lab uses an Oracle Autonomous Transaction Processing database as its source
 In this lab, you will verify the source and target database connection details by accessing the Database Actions SQL page of each database.
 
 
-## **STEP 1**: Verify the source Autonomous Transaction Processing details
+## **STEP 1**: Verify the source Autonomous Transaction Processing connection details
 
 1. Log in to the [Oracle Cloud Infrastructure Console](https://login.us-phoenix-1.oraclecloud.com/) with your username and password.
 
@@ -25,13 +25,15 @@ In this lab, you will verify the source and target database connection details b
 
 4. In the list of databases, select **Workshop ATP**.
 
-5. On the Workshop ATP Database Details page, click **Tools**, and then click **Open SQL Developer Web**.
+5. On the Workshop ATP Database Details page, click **Tools**, and then under **Database Actions**, click **Open Database Actions**.
 
-6. On the Oracle Databse Actions log in screen, enter **SRC\_UA\_USER** for Username, and **OracleWelcome1** for the Password, and then click **Sign in**.
+6. On the Oracle Database Actions log in screen, enter **SRC\_UA\_USER** for Username, and **OracleWelcome1** for the Password, and then click **Sign in**.
+
+7. On the Database Actions page, click **SQL**.
 
    If you can access the SQL Page successfully, then you can proceed to the next section.
 
-## **STEP 2:** Verify the target Autonomous Data Warehouse details
+## **STEP 2:** Verify the target Autonomous Data Warehouse connection details
 
 1. In the Console navigation menu, under **Oracle Database**, select **Autonomous Data Warehouse**.
 
@@ -39,9 +41,11 @@ In this lab, you will verify the source and target database connection details b
 
 3. In the list of databases, select **Workshop ADW**.
 
-4. On the Workshop ADW Database Details page, click **Tools**, and then click **Open SQL Developer Web**.
+4. On the Workshop ADW Database Details page, click **Tools**, and then under **Database Actions**, click **Open Database Actions**.
 
 5. On the Oracle Databse Actions log in screen, enter **SRC\_UA\_USER** for Username, and **OracleWelcome1** for the Password, and then click **Sign in**.
+
+6. On the Database Actions page, click **SQL**.
 
    If you can access the SQL Page successfully, then you can [proceed to the next lab](#next).
 

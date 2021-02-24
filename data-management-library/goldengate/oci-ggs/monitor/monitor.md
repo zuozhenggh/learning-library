@@ -6,7 +6,7 @@ This lab walks you through the steps to monitor the Extract and Replicat process
 
 Estimated Lab Time: 2 minutes
 
-### About Product/Technology
+### About Monitoring Performance
 Monitoring the performance of your GoldenGate instance ensures that your data replication processes are running smoothly and efficiently. You can monitor performance in both the GoldenGate deployment console as well as in the Oracle Cloud Infrastructure Console on the Deployment Details page.
 
 ### Objectives

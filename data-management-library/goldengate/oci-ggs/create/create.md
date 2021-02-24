@@ -7,7 +7,7 @@ This lab walks you through the steps to create an Oracle Cloud Infrastructure Go
 Estimated Lab Time: 2 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate Deployments
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. You can stop and start GoldenGate deployments, resulting in the stopping and starting of billing and metering. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage Extracts and Replicats.
+A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage Extracts and Replicats.
 
 ### Objectives
 
@@ -91,8 +91,7 @@ In this lab, you created an OCI Deployment and reviewed its Deployment details. 
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Managing Deployments](https://docs.oracle.com//cloud/paas/goldengate-service/using/deployments.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
