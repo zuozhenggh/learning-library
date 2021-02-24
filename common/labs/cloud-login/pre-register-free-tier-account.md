@@ -1,4 +1,4 @@
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
@@ -51,7 +51,7 @@ If you already have a cloud account, skip to **STEP 2**.
 5.  Enter your Address information.  Click **Continue**.
           ![](images/free-tier-address.png " ")
 
-6.  Choose your country and enter a mobile member for verification.   Click the **Text me a code** button.
+6.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
 
        ![](images/free-tier-address-2.png " ")
 
