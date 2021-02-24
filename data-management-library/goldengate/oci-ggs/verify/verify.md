@@ -1,0 +1,56 @@
+# Verify Access to Databases
+
+## Introduction
+
+This lab walks you through the steps to verify that you can access the source and target databases.
+
+Estimated Lab Time: 2 minutes
+
+### About the source and target databases
+
+This lab uses an Oracle Autonomous Transaction Processing database as its source and an Oracle Autonomous Database Warehouse for its target. Follow the steps in this lab to verify the connection details.
+
+### Objectives
+
+In this lab, you will verify the source and target database connection details by accessing the Database Actions SQL page of each database.
+
+
+## **STEP 1**: Verify the source Autonomous Transaction Processing details
+
+1. Log in to the [Oracle Cloud Infrastructure Console](https://login.us-phoenix-1.oraclecloud.com/) with your username and password.
+
+2. In the Console navigation menu, under **Oracle Database**, select **Autonomous Transaction Processing**.
+
+3. Under List Scope, select **Compartment_Workshop** from the **Compartment** dropdown.
+
+4. In the list of databases, select **Workshop ATP**.
+
+5. On the Workshop ATP Database Details page, click **Tools**, and then click **Open SQL Developer Web**.
+
+6. On the Oracle Databse Actions log in screen, enter **SRC\_UA\_USER** for Username, and **OracleWelcome1** for the Password, and then click **Sign in**.
+
+   If you can access the SQL Page successfully, then you can proceed to the next section.
+
+## **STEP 2:** Verify the target Autonomous Data Warehouse details
+
+1. In the Console navigation menu, under **Oracle Database**, select **Autonomous Data Warehouse**.
+
+2. Under List Scope, if **Compartment_Workshop** is not already selected, select it from the **Compartment** dropdown.
+
+3. In the list of databases, select **Workshop ADW**.
+
+4. On the Workshop ADW Database Details page, click **Tools**, and then click **Open SQL Developer Web**.
+
+5. On the Oracle Databse Actions log in screen, enter **SRC\_UA\_USER** for Username, and **OracleWelcome1** for the Password, and then click **Sign in**.
+
+   If you can access the SQL Page successfully, then you can [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Contributors** -  Denis Gray, Database Product Management
+* **Last Updated By/Date** - February 2021
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
