@@ -227,7 +227,7 @@ In this step, we will create a database user and grant them privileges which wil
 Congratulations! You have successfully registered a database with Data Safe. You can now go to the **Home** tab on Data Safe and begin running assessments to gain additional insight into your EBS data. 
 
 
-## **STEP 4:** Monitor your Target Database on the Data Safe Console
+## **STEP 5:** Monitor your Target Database on the Data Safe Console
 
 In this step, we will access the data on the target database we registered. Security and User Assessments will give us snapshots into the current security of the database. Data Discovery allows us to run jobs that discover potentially sensitive data on the database while Data Masking would mask the sensitive data (only for use on a non-production database). Activity Auditing allows users to view activity and data manipulation on the database. 
 
