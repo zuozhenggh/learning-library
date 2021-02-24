@@ -2,7 +2,9 @@
 
 ## About this workshop
 
-This 2-part workshop is an extension of previous workshop. It showcases the use of enabling OCI services: DataSafe and Logging Analytics to extend your EBS environment
+This 2-part workshop is an extension of previous workshop. It showcases the use of enabling OCI services: DataSafe and Logging Analytics to extend your EBS environment.
+
+In order to complete this lab you will need the resources created in the [Lift and Shift On-Premises EBS to OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668)
 
 Estimated Workshop Time: 1.5 hours
 
@@ -43,7 +45,8 @@ In this lab, you will:
 
 ### **Prerequisites**
 
-* DataSafe requires advanced Provisioned EBS instance, 
+* Complete Workshop: [Lift and Shift On-Premises EBS to OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668)
+* DataSafe requires Advanced Provisioned EBS instance, 
 * Logging analytics requires ssh accessable instances and service connector
 
 **From the previous labs:**
