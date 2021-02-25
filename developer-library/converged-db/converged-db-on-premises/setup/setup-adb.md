@@ -5,7 +5,7 @@ In the previous lab you created a compute instance (running the eShop applicatio
 
 *Estimated time:* 20 Minutes
 
-Watch the video below for an overview of Lab 3: Load ADB and Start Application
+Watch the video below for an overview of the Load ADB and Start Application lab
 [](youtube:S3jL1y-ZAbc)
 
 ### Objectives
@@ -203,6 +203,5 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/converged-database). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

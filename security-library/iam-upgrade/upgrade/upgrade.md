@@ -51,23 +51,47 @@ Following sections provide Oracle documentation links that will guide you throug
 
 ##  **STEP 1**: Upgrading Oracle Unified Directory (OUD)
 You can update an Oracle Unified Directory directory service to the latest version without a service interruption. It also describes how to update an individual directory server instance and provides considerations for Oracle Unified Directory Services Manager on Oracle Weblogic Server.  
-- [Updating the Oracle Unified Directory Software](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-FFEACD0B-4A7E-4B22-A5A0-0D96DD0D76EE)
+- First review the Prerequisites and considerations for upgrading OUD
+    - [Updating the Oracle Unified Directory Software](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-FFEACD0B-4A7E-4B22-A5A0-0D96DD0D76EE)
+- You can upgrade all Oracle Unified Directory server instances that are associated with a specific ORACLE_HOME directory.
+    - [Upgrading an Existing Oracle Unified Directory Server Instance](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-506B9DAC-2FDB-47C9-8E00-CC1F99215E81)
+- If any step in the upgrade process fails, then terminate the upgrade process and restore the environment to its original state using the backup files you created
+- Oracle Unified Directory provides several command-line utilities to tune the server and to configure the various options for the Java Virtual Machine (JVM), Java, and database cache.
+    - [Configure OUD](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/configuring-jvm-java-and-database-cache-options-oracle-unified-directory.html#GUID-CB679A74-AC86-436F-AFB1-8717CFC55911)
 
 ##  **STEP 2**: Upgrading Oracle Identity Manager (OIM)
 
-- [Upgrading Oracle Identity Manager Document](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/iamup/upgrading-oracle-identity-manager.pdf)
-- [About the Basic 12c Upgrade Process Flow](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/asmas/planning-upgrade-oracle-fusion-middleware-12c.html#GUID-1B86A825-0448-4245-BEA4-0019AEE8AB54)
-- [Upgrading Oracle Identity Manager Single Node Environments](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.3/iamup/upgrading-oracle-identity-manager-single-node-environments.html#GUID-5A172DD8-6C47-491C-BEA7-B01A3ED838D6)
+Before you begin, review all introductory information to understand the standard upgrade topologies and upgrade paths for Oracle Identity Manager 12c (12.2.1.3.0). The product Oracle Identity Manager is referred to as Oracle Identity Manager (OIM) and Oracle Identity Governance (OIG) interchangeably in the guide. To identify potential issues with the upgrade, Oracle recommends that you run a readiness check before you start the upgrade process. Be aware that the readiness check may not be able to discover all potential issues with your upgrade. An upgrade may still fail, even if the readiness check reports success.
+
+- Review the upgrade process for upgrading OIM
+    - [Upgrading Oracle Identity Manager Document](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/iamup/upgrading-oracle-identity-manager.pdf)
+- Review the starting points for OIM Upgrade
+    - [Starting Points](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.3/iamup/introduction-upgrading-oracle-identity-and-access-management-12c.html#GUID-DB254BA6-1858-45F7-B8EC-0D1D247348DD)
+- Follow the instructions to perform in-place upgrade of a single node environment
+    - [Upgrading Oracle Identity Manager Single Node Environments](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.3/iamup/upgrading-oracle-identity-manager-single-node-environments.html#GUID-5A172DD8-6C47-491C-BEA7-B01A3ED838D6)
 
 ##  **STEP 3**: Upgrading Oracle Access Manager (OAM)
-- [Introduction to Upgrading Oracle Access Manager](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/oamup/introduction-upgrading-oracle-identity-and-access-management-12c.html#GUID-71B1B82A-A869-42FB-AC79-210C4B3C4CF2)
-- [Pre-Upgrade Requirements](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/oamup/upgrade-requirements.html#GUID-5ADFC514-7092-4D69-9B4F-D6637579C02E)
-- [In-Place Upgrade of Oracle Access Manager](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/oamup/place-upgrade-oracle-access-manager.html)
+
+Oracle Access Management provides innovative new services that complement traditional access management capabilities.It not only provides Web SSO with MFA, coarse grained authorization and session management but also provides standard SAML Federation and OAuth capabilities to enable secure access to external cloud and mobile applications. It can be easily integrated with the Oracle Identity Cloud Service to support hybrid access management capabilities that can help customers to seamlessly protect on-premise and cloud applications and workloads.
+
+The following steps will guide you through the OAM 11g upgrade to 12c.
+
+- Review the basics of OAM Upgrade
+    - [Introduction to Upgrading Oracle Access Manager](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/oamup/introduction-upgrading-oracle-identity-and-access-management-12c.html#GUID-71B1B82A-A869-42FB-AC79-210C4B3C4CF2)
+- Review and Verify pre-upgrade Requirements
+    - [Pre-Upgrade Requirements](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/oamup/upgrade-requirements.html#GUID-5ADFC514-7092-4D69-9B4F-D6637579C02E)
+- Upgrade the single-node OAM instance to 12c using these steps
+    - [In-Place Upgrade of Single Node Oracle Access Manager](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/oamup/upgrading-oracle-access-manager-single-node-environments.html#GUID-2E216D22-A2F6-4D68-ACB6-17A015E8991E)
 
 ##  **STEP 4**: Upgrading Oracle HTTP Server (OHS)
-- [Introduction to Upgrading Oracle HTTP Server](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/ohsup/introduction-upgrading-oracle-http-server-12c-12.2.1.2.html#GUID-AAF9C05E-E5C0-4E01-BA68-069C04ADC48F)
-- [Preparing to Upgrade Oracle HTTP Server](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/ohsup/preparing-upgrade-oracle-http-server.html#GUID-A8CE118C-2949-4C46-85F9-2D2B523B0A61)
-- [Upgrading Oracle HTTP Server](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/ohsup/upgrading-oracle-http-server-11g-12c.html)
+Oracle HTTP Server is the Web server component for Oracle Fusion Middleware. It provides a listener for Oracle WebLogic Server and the framework for hosting static pages, dynamic pages, and applications over the Web. Before you begin, review all introductory information to understand the standard upgrade topologies and upgrade paths for Oracle HTTP Server 12c (12.2.1.3.0)
+
+- Review the starting points and upgrade restrictions
+    - [Introduction to Upgrading Oracle HTTP Server](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/ohsup/introduction-upgrading-oracle-http-server-12c-12.2.1.2.html#GUID-AAF9C05E-E5C0-4E01-BA68-069C04ADC48F)
+- Review Pre-Upgrade checklist and verify the Requirements
+    - [Preparing to Upgrade Oracle HTTP Server](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/ohsup/preparing-upgrade-oracle-http-server.html#GUID-A8CE118C-2949-4C46-85F9-2D2B523B0A61)
+- Review the standalone OHS upgrade process, upgrade considerations, and install OHS 12c
+    - [Upgrading Oracle HTTP Server](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/ohsup/upgrading-oracle-http-server-11g-12c.html)
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
