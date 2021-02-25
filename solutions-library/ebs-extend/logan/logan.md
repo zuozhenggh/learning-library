@@ -695,11 +695,6 @@ Your screen will look similar to this, with a pie chart showing an overview of t
 This will now complete the Logging Analytics portion of this lab.
 
 For more information on how to create widgets to understand your data refer to [visualize data using charts and controls](https://docs.oracle.com/en-us/iaas/logging-analytics/doc/visualize-data-using-charts-and-controls.html#GUID-93988D5B-9717-4F63-8362-16B08BC3E020)
-You may now [proceed to the next lab](#next).
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 ## Acknowledgements
 * **Author** - Quintin Hill, Cloud Engineering, Packaged Applications
