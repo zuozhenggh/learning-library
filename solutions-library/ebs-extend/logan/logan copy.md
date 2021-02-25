@@ -22,7 +22,7 @@ Oracle Cloud Infrastructure Logging Analytics is a machine learning-based cloud 
 * An Oracle Cloud Environment
 * EBS Cloud Manager, EBS 1-Click and Advanced Provisioned Instance, Network - All setup in previous labs
 
-## **STEP 1**: Onboard Logging Analytics Service
+## **STEP 1**: Setup Logging Analytics Service
 
 In Step 1 of this lab we will Setup Logging Analytics Service
 
@@ -38,9 +38,7 @@ In Step 1 of this lab we will Setup Logging Analytics Service
 
     c. Click **Continue**
 
-2. (Optional) You can also use existing user groups. 
-    
-    Create Logging Analytics Group Logging Analytics Super Admins
+2. Create Logging Analytics Group Logging Analytics Super Admins
 
     a. Navigate to Identity - Federation - OracleIdentityCloudService
 
@@ -113,28 +111,6 @@ In Step 1 of this lab we will Setup Logging Analytics Service
       ii. In the policy builder click **Customize(Advanced)** 
 
       iii. Paste the following Policies into the Policy Builder as shown below
-
-      To create policies for your administrator to use OCI Logging Analytics create the below
-
-      ```
-      <copy>
-allow service loganalytics to READ loganalytics-features-family in tenancy
-allow service loganalytics to read buckets in tenancy
-allow service loganalytics to read objects in tenancy
-allow service loganalytics to manage cloudevents-rules in tenancy
-allow service loganalytics to inspect compartments in tenancy
-allow service loganalytics to use tag-namespaces in tenancy where all {target.tag-namespace.name = /oracle-tags /}
-allow group Administrators to MANAGE loganalytics-resources-family in tenancy
-allow group Administrators to MANAGE management-dashboard-family in tenancy
-allow dynamic-group ManagementAgentAdmins to MANAGE management-agents in tenancy
-allow dynamic-group ManagementAgentAdmins to USE metrics in tenancy
-allow dynamic-group ManagementAgentAdmins to {LOG_ANALYTICS_LOG_GROUP_UPLOAD_LOGS} in tenancy
-allow dynamic-group ManagementAgentAdmins to USE loganalytics-collection-warning in tenancy
-allow service loganalytics to {VNIC_READ} in tenancy
-      </copy>
-      ```
-
-      iv. If you want to use the Logging Analytics Super Admin Group use these policies:
 
       ```
       <copy>
@@ -406,8 +382,6 @@ In this Step we will Ingest Flow Logs and Install Management Agents to our insta
 
 Now that we have our agents installed and our flow logs going to logging analytics we will now create entities and associate these entities with log sources
 
-**Here you can create Entities and Log Sources for the entities that you want to monitor. We recommend you start with one Entity to understand the flow and then repeat the rest**
-
   1. Create Entities
 
   **Note:** Our entities for our flow logs are automatically setup. In this step we will focus on our Entities and Log Sources from the agents installs. 
@@ -506,33 +480,23 @@ In this Step we will familiarize ourselves with the visualization tool `Log Expl
 
 Navigate to Logging Analytics - Log Explorer
 
-The corresponding query will be shown captioned below each image
-
 Your screen will look similar to this, with a pie chart showing an overview of the different logs that you have ingested. Likely your VCN Flow Logs will dominate your pie chart.
 
   ![](./images/piechart.png " ")
 
   1. The Log explorer is broken down into four main sections. 
 
-    a. The first being the Query Search. You can filter through and analyze your logs based off of regex that define your search. As you change your fields and visualizations you will see these changes in the graph and the query search bar. If you ever want to return to the initial dashboard go to **Actions** and click **Create New**
+    a. The first being the Query Search. You can filter through and analyze your logs based off of regex that define your search. As you change your fields and visualizations you will see these changes in the graph and the query search bar.
 
     ![](./images/piechart1.png " ")
-
-    ```* | stats count as logrecords by 'Log Source' | sort -logrecords```
 
     b. The second being the Fields panel on the left. Here you can choose what fields you want to use for grouping, filtering, and exploring your log data. You can drag your fields into the visualization panel or click on the three dots to the right of the field name to filter or pin the field.
 
     ![](./images/fields.png " ")
 
-    ```* | stats count as logrecords by 'Log Source' | sort -logrecords```
-
     c. The third is the Visualizations panel that you can select what kind of graph you would like to use for your widget as well as drag and drop fields into the proper axis.
 
-    **Click the cluster visualization to see how this will change your widget**
-
     ![](./images/visualizations.png " ")
-
-    ```* | cluster```
 
     d. Lastly the main part of the log explorer is where you can see the data in a visual. These are called widgets. 
 
@@ -566,127 +530,7 @@ Your screen will look similar to this, with a pie chart showing an overview of t
 
     d. As you create more widgets based off of queries or built using the fields and visualization panels you can add them from the right side by dragging the widget into the dashboard and placing as you see fit. Allowing you to customize your dashboard to your preference.
 
-  4. To complete this lab please navigate back to the log explorer.
-
-  5. Analyze your VCN Flow Logs
-  
-  We will now walk through a flow to understand our logs and create some common widgets. Corresponding query will be shown captioned below each image
-
-    a. First lets look at the logs we have ingested based on Entity Type
-
-    b. Remove the `Log Source` from Group by and drag `Entity` from the fields panel
-
-    c. Hit Apply
-
-    d. You now have a widget showing your logs by Entity 
-
-    ![](./images/logsbyentity.png " ")
-
-    ```* | stats count as logrecords by Entity | sort -logrecords```
-
-    e. This isn't too readable so lets change the visualization type.
-
-    f. click the down arrow next to `Pie` and select the `Histogram` or `TreeMap` to see breakdowns of this data in different graphs.
-
-    ![](./images/histogram.png " ")
-
-    ```* | timestats count as logrecords by Entity | sort -logrecords```
-
-    ![](./images/treemap.png " ")
-
-    ```* | stats count as logrecords by Entity | sort -logrecords```
-
-    g. Lets look at the histogram: ```* | timestats count as logrecords by Entity | sort -logrecords```
-
-    ![](./images/histogram.png " ")
-
-    h. Let's drill deeper.
-
-      i. Select Entity Type in the fields panel and select `OCI VCN Virtual Network Interface Card`
-
-    ![](./images/vcnhistogram.png " ")
-
-    ```'Entity Type' = 'OCI VCN Virtual Network Interface Card' | timestats count as logrecords by Entity | sort -logrecords```
-
-      ii. We see about the same graph as before as most of our logs are Network Flow logs right now. 
-
-      iii. Now select `ebsadvancedapp01`
-
-      iv. Now we see the logs strictly for ebsadvancedapp01 subnet.
-
-      ![](./images/ebsadvancedapp01.png " ")
-
-      ```Entity = ebsadvancedapp01 | timestats count as logrecords by Entity | sort -logrecords```
-
-      v. Lets scroll down and expand one of the logs. By clicking the arrow next to Log Source in the Original Log Content. You can now see the values that have been parsed from your logs.
-
-      vi. You can expand this at the bottom right of this entry.
-
-    ![](./images/expandlogcontent.png " ")
-
-      vii. Now if you click on the value shown by Source IP you will now filter your logs that have this source IP.
-
-    i. Now go to the top clear your query and just type `reject` to find all the logs with a rejection on your network.
-
-    ![](./images/reject.png " ")
-
-    ```reject | timestats count```
-    
-    **Note: You can type `failed` or `error` instead of `reject` to see if there are any logs of this type that show up.**
-
-    j. Now you can play in the log explorer and become more familiar with the tool
-
-## **STEP 5:** Example Queries
-
-  1. Sample Audit Queries
-
-    a. 'Log Source' = 'OCI Audit Logs' and Status not in ('null') | link Status, 'User Name', Event, Method | stats unique('User Name'), unique(Status), unique(Method), unique(Event), unique(Method) | classify topcount = 300 'Group Duration', Status
-
-    ![](./images/ocianomalus.png " ")
-
-    - Name: OCI Audit Anomalus Status Calls
-
-    b. ‘Log Source’ = ‘OCI Audit Logs’ and ‘Availability Domain’ != ‘null’ and Method != ‘null’ | stats count(Method) by Method, ‘Availability Domain’
-
-    c. 'Log Source' = 'OCI Audit Logs' and Event != 'null' and Method != 'null' | stats count by Event | sort -Count
-
-    d. 'Log Source' = 'OCI Audit Logs' and 'OCI Resource Name' not in ('null') and Method != 'null' | stats count(Method) by Method, 'OCI Resource Name'
-
-    e. ‘Log Source’ = ‘OCI Audit Logs’ and ‘User Name’ != ‘null’ | timestats count as logrecords by ‘User Name’ | sort -logrecords
-
-    f. 'Log Source' = 'OCI Audit Logs' and Event != 'null' and Method != 'null' | stats count(Method) by Method, 'User Name'
-
-    g. ‘Log Source’ = ‘OCI Audit Logs’ and ‘User Name’ not in (‘null’, cloudguard) and ‘OCI Resource Name’ != null | stats count by ‘User Name’, ‘OCI Resource Name’
-
-  2. Sample VCN Queries
-
-    a. ‘Entity Type’ = ‘OCI VCN Virtual Network Interface Card’ and ‘Log Source’ = ‘OCI VCN Flow Unified Schema Logs’ | stats count by Entity
-
-    b. ‘Entity Type’ = ‘OCI VCN Virtual Network Interface Card’ and ‘Log Source’ = ‘OCI VCN Flow Unified Schema Logs’ | eval vol = ‘Content Size Out’ / (1024 * 1024) | stats sum(vol) as ‘Egress (Mb)’ by ‘OCI Subnet OCID’
-
-    c. 'Entity Type' = 'OCI VCN Virtual Network Interface Card' and 'Log Source' = 'OCI VCN Flow Unified Schema Logs' | timestats count by 'OCI Subnet OCID'
-
-    d. ‘Entity Type’ = ‘OCI VCN Virtual Network Interface Card’ and ‘Log Source’ = ‘OCI VCN Flow Unified Schema Logs’ | stats count as logrecords by Entity
-
-    e. 'Entity Type' = 'OCI VCN Virtual Network Interface Card' and 'Log Source' = 'OCI VCN Flow Unified Schema Logs' | timestats avg('Packets In') by 'OCI Subnet OCID'
-
-    f. ‘Entity Type’ = ‘OCI VCN Virtual Network Interface Card’ and ‘Log Source’ = ‘OCI VCN Flow Unified Schema Logs’ | eval vol = ‘Content Size Out’ / (1024 * 1024) | timestats perhour(‘Packets In’) as ‘Packet Rate (per hr)’ by ‘OCI Subnet OCID’
-
-  3. Sample Instance Queries
-
-    a. ‘Log Source’ = ‘Linux Secure Logs’ and Service = sudo | stats count by ‘User Name (Originating)’
-
-    b. ‘Entity Type’ = ‘Host (Linux)’ and (‘invalid user’ or ‘user unknown’) | stats count”
-
-    c. ‘Entity Type’ = ‘Host (Linux)’ and ‘User Name’ != null and ‘User Authentication Method’ = publickey | timestats count by Entity
-
-    d. ‘Entity Type’ = ‘Host (Linux)’ | stats count as ‘Log Entries’ by ‘Log Source’ | top limit = 10 ‘Log Entries’
-
-    e. ‘Entity Type’ = ‘Host (Linux)’ and ‘User Name’ != null and ‘Host IP Address (Client)’ != null | stats count by ‘Host IP Address (Client)’, ‘User Name’
-
-    f. ‘Entity Type’ = ‘Host (Linux)’ | stats count as ‘Log Entries’ by Service | top limit = 10 ‘Log Entries’
-
-    g. ‘Entity Type’ = ‘Host (Linux)’ and not (‘invalid user’ or ‘user unknown’) | stats count
+  4. To complete this lab please navigate back to the log explorer and input the following queries and save them as their given names. 
 
   You can now go to your dashboard and add these widgets to your EBS Dashboard
 
