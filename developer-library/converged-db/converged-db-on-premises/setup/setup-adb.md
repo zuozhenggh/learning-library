@@ -139,7 +139,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ![](./images/oraenv.png " ")
    
-5. Substitute your instance name with *your adb instance name* (e.g convgdb_high) and the password you used
+5. Run the wget command to download the load_atp.sh script from object storage.
 
       ````
       <copy>
