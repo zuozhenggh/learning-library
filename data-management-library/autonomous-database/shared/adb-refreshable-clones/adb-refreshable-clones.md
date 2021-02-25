@@ -47,7 +47,7 @@ To complete this lab, you need to have the following:
 
 ## STEP 1: Create a Table in the Source Database
 
-1. Navigate to your existing **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab. (Alternatively, create a new database as your source.) Insert a line of data into this source database before you clone it, by opening a SQL Developer Web (SDW) worksheet via the **Tools** tab in the Autonomous Database Details page of the OCI console. Connect to SDW as the user named **admin** with the password you created for the admin user in the Getting Started lab.
+1. Navigate to your existing **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab. (Alternatively, create a new database as your source.) Insert a line of data into this source database before you clone it, by opening a Database Actions worksheet via the **Tools** tab in the Autonomous Database Details page of the OCI console. Connect to Database Actions as the user named **admin** with the password you created for the admin user in the Getting Started lab. On the Database Actions page, under the **Development** heading, click **SQL**.
 
   ![ALT text is not available for this image](images/2676055911.png)
 
@@ -56,7 +56,6 @@ To complete this lab, you need to have the following:
 ```
 <copy>create table refreshclonetests (testcol varchar(255));</copy>
 
--- inserted and committed at 3:40 PM (8:40 PM UTC)
 <copy>insert into refreshclonetests (testcol) values ('Is this great?');
 commit;</copy>
 ```
@@ -84,14 +83,14 @@ Now that you have created a table in the source database and populated it with a
 4. Once the clone is provisioned, you can see useful clone information on the OCI console, including the **source database** that the clone is attached to, and the **refresh point** timestamp of the source from which the clone was refreshed.
   ![ALT text is not available for this image](images/2676058014.png)
 
-5. Open SQL Developer Web from the **refreshable clone's** OCI console<ins>,</ins> and query the database. It shows the table **refreshclonetests **that you created in the source, with the single row of data that you inserted.
+5. Open a Database Actions SQL worksheet from the **refreshable clone's** OCI console<ins>,</ins> and query the database. It shows the table **refreshclonetests **that you created in the source, with the single row of data that you inserted.
   ![ALT text is not available for this image](images/2676058068.png)
 
 ## STEP 3: Insert Additional Data into the Source Database
 
 You have proven that the refreshable clone contains the source database's table with one row of data. Now add a second row of data to the source, and see how to refresh the clone to pick up that second row.
 
-1. Switch back to the **source database's**  SQL Developer Web worksheet. (This will be the **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab, or another database you are using as the source.)  Insert and commit an additional row into the source database. You now have 2 rows in the source but only a single row in the refreshable clone. Make note of the time when you inserted the second row.
+1. Switch back to the **source database's**  Database Actions SQL worksheet. (This will be the **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab, or another database you are using as the source.)  Insert and commit an additional row into the source database. You now have 2 rows in the source but only a single row in the refreshable clone. Make note of the time when you inserted the second row.
 
 ```
 <copy>insert into refreshclonetests (testcol) values ('You can refresh whenever you need!');
@@ -122,7 +121,7 @@ Now see how easy it is to refresh the clone with the new data you just added to 
 4. Once the refresh is completed, you can see exactly what timestamp of the source the clone has been refreshed to in the clone's Database Details page.
   ![ALT text is not available for this image](images/2694886610.png)
 
-5. In the clone's SQL Developer Web worksheet, you can now run a SELECT query on the **refreshclonetests** table and instead of a single row, you now see both rows of data from the source! The data in the clone has been seamlessly updated to reflect that which is in the source.
+5. In the clone's Database Actions SQL worksheet, you can now run a SELECT query on the **refreshclonetests** table and instead of a single row, you now see both rows of data from the source! The data in the clone has been seamlessly updated to reflect that which is in the source.
 
 ```
 <copy>select * from refreshclonetests;</copy>
