@@ -15,7 +15,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 ## **STEP 1**: Add an Edit Page for the Department Business Object
 
 1.  In the HR Application, click the **Web Applications** ![Web Applications icon](./images/vbcsmd_webapp_icon.png) tab, go to the **main-departments** page, then click the **Table** component in the **Page Designer** tab. If necessary, click **Reload page** ![Reload page icon](./images/vbcsmd_refresh_icon.png) to view the departments. Click the **Components** tab to make room to view the page.
-2.  Click the **Quick Start** tab in the Property Inspector to display the Quick Start menu, then click **Add Edit Page**.
+2.  In the Table's Properties pane, click the **Quick Start** tab to display the Quick Start menu, then click **Add Edit Page**.
 
     ![](./images/vbcsmd_aep_s2.png)
 
@@ -36,7 +36,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 
 4.  Click **Live**, select a row, then click the **Department Detail** button to open the main-department-detail page.
 5.  Click **Design** to return to Design view.
-6.  Click the **Input Text** field for the second **Name** label to open the Input Text Property Inspector. In the **General** tab, change the **Label Hint** value to `Location`.
+6.  Click the **Input Text** field for the second **Name** label to open the Input Text's Properties pane. In the **General** tab, change the **Label Hint** value to `Location`.
 
 ## **STEP 3**: Add a Delete Button for the Department Business Object
 
@@ -70,7 +70,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 ## **STEP 5**: Add an Edit Page for the Employee Business Object
 
 1.  Go to the **main-employees** page, click the **Table** component in the **Page Designer** tab.
-2.  In the Property Inspector, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
+2.  In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 3.  On the Select Read Endpoint page, select the **Employee** business object, if necessary, and click **Next**.
 4.  On the Select Update Endpoint page, select the **Employee** business object, if necessary, and click **Next**.
 5.  On the Page Details page, select **hireDate**, **email**, and **department** under Endpoint Structure (**name** is already selected), and then click **Finish**.
@@ -79,7 +79,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 
 6.  Click **Live**, select a row, and click the **Edit Employee** button to open the main-edit-employee page.
 7.  Click **Design** to go to Design view.
-8.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Property Inspector, set the **Max Columns** value to **2**. The fields now appear in two columns.
+8.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Properties pane, set the **Max Columns** value to **2**. The fields now appear in two columns.
 
 ## **STEP 6**: Add Detail and Delete Pages for the Employee Business Object
 
@@ -97,8 +97,8 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 
 7.  Click **Live**, select a row, and click the **Employee Detail** button to open the main-employee-detail page.
 8.  Click the **Design** button.
-9.  Click the **Input Text** component for the second **Name** label to open the Input Text Property Inspector. Change the **Label Hint** value to `Department`.
-10.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the property inspector, set the **Max Columns** value to **2**.
+9.  Click the **Input Text** component for the second **Name** label to open the Input Text's Properties pane. Change the **Label Hint** value to `Department`.
+10.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Properties pane, set the **Max Columns** value to **2**.
 
 ## **STEP 7**: Test Your New Employee Pages
 
@@ -123,7 +123,7 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - December 2020
+* **Last Updated By** - February 2021
 
 ## Need Help?
 Submit feedback or ask for help using our [Visual Builder Support Forum](https://cloudcustomerconnect.oracle.com/resources/e610f4723c/summary). Click the **Log In** button and login using your Oracle Account. Click the **Post a new topic** button to the right to start a new discussion, or search for an answer using keywords.  Please include your workshop name and lab name, and include screenshots and attach files if needed.  Here's your chance to engage directly with the author of the workshop!
