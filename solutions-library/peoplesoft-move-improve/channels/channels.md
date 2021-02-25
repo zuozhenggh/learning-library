@@ -1,4 +1,4 @@
-# Lab 5: Subscribing to PeopleSoft Download Channels
+# Subscribing to PeopleSoft Download Channels
 
 ## Introduction
 Cloud Manager is delivered with channels for PeopleSoft applications, which are available after you complete the installation and configuration. An administrator can subscribe to multiple channels and download all necessary PIs (PeopleSoft Update Images) and PRPs (PeopleSoft Release Patchset) that the organization needs.
@@ -33,7 +33,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
 * **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, November 2020
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
 
 
 ## Need Help?

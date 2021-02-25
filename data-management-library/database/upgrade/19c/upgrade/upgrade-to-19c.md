@@ -38,25 +38,24 @@ In this lab, you will:
     </copy>
     ```
 
-This tells you that the sample file has been created at:
+3. This tells you that the sample file has been created at:
 
-Created sample configuration file /home/oracle/scripts/sample_config.cfg
+4. Created sample configuration file /home/oracle/scripts/sample_config.cfg
 
 You will need to edit it – and then pass it to the AutoUpgrade utility.
 
-Created sample configuration file /home/oracle/sample_config.cfg
+5. Open the file /home/oracle/sample_config.cfg in your preferred editor (text or graph mode)
 
-Open the file /home/oracle/sample_config.cfg in your preferred editor (text or graph mode)
-
+    ````
     Text mode:
 
     vi /home/oracle/scripts/sample_config.cfg
     Graphical mode:
 
     kwrite /home/oracle/scripts/sample_config.cfg &
+    ````
 
-Adjust the following things:
-3. Generated standard config.cfg 	Make the following adjustments:
+6. Generated standard config.cfg 	Make the following adjustments:
 
     ````
     # Global configurations
@@ -101,95 +100,106 @@ Adjust the following things:
     upg1.restoration=no
 
     ````
-Then save the file and name it as UPGR.cfg in /home/oracle/scripts.
 
-If you saved it under its original name, sample_config.cfg, rename it as shown below:
+7. Save the file and name it as UPGR.cfg in /home/oracle/scripts.  If you saved it under its original name, sample_config.cfg, rename it as shown below:
 
-mv /home/oracle/scripts/sample_config.cfg /home/oracle/scripts/UPGR.cfg
+    ````
+    mv /home/oracle/scripts/sample_config.cfg /home/oracle/scripts/UPGR.cfg
+    ````
 
 ## **STEP 2**: ANALYZE Phase
 
-It is best practice to run AutoUpgrade in analyze mode at first. Once the analyze phase is passed without issues, the database can be upgraded automatically (the below command is a one-line command!).
+1. It is best practice to run AutoUpgrade in analyze mode at first. Once the analyze phase is passed without issues, the database can be upgraded automatically (the below command is a one-line command!).
 
-. upgr
-java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/UPGR.cfg -mode analyze
+    ````
+    . upgr
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/UPGR.cfg -mode analyze
 
-You will see this output:
+    You will see this output:
 
-Autoupgrade tool launched with default options
-+--------------------------------+
-| Starting AutoUpgrade execution |
-+--------------------------------+
-1 databases will be analyzed
-Type 'help' to list console commands
-upg>
+    Autoupgrade tool launched with default options
+    +--------------------------------+
+    | Starting AutoUpgrade execution |
+    +--------------------------------+
+    1 databases will be analyzed
+    Type 'help' to list console commands
+    upg>
+    ````
 
-You can monitor the analyze phase in the upg> job console with:
+2. You can monitor the analyze phase in the upg> job console with:
 
-lsj
+    ````
+    lsj
 
-status -job 100
+    status -job 100
 
-Shortly after, the console will reply:
+    Shortly after, the console will reply:
 
-upg> Job 100 completed
+    upg> Job 100 completed
 
-------------------- Final Summary --------------------
-Number of databases            [ 1 ]
+    ------------------- Final Summary --------------------
+    Number of databases            [ 1 ]
 
-Jobs finished successfully     [1]
-Jobs failed                    [0]
-Jobs pending                   [0]
-------------- JOBS FINISHED SUCCESSFULLY -------------
-Job 100 FOR UPGR
+    Jobs finished successfully     [1]
+    Jobs failed                    [0]
+    Jobs pending                   [0]
+    ------------- JOBS FINISHED SUCCESSFULLY -------------
+    Job 100 FOR UPGR
 
-The database can be upgraded automatically.
-3. Upgrade
+    The database can be upgraded automatically.
+    ````
 
-When you initiate the upgrade with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
+## **STEP 3*: Upgrade
 
-java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/UPGR.cfg -mode deploy
+1. When you initiate the upgrade with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 
-You will see this output:
+    ````
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/UPGR.cfg -mode deploy
+    ````
 
-Autoupgrade tool launched with default options
-+--------------------------------+
-| Starting AutoUpgrade execution |
-+--------------------------------+
-1 databases will be processed
-Type 'help' to list console commands
-upg>
+2. You will see this output:
 
-At this point you can monitor the upgrade now – enlarge the xterm‘s width a bit to see no line wraps.
+    ````
+    Autoupgrade tool launched with default options
+    +--------------------------------+
+    | Starting AutoUpgrade execution |
+    +--------------------------------+
+    1 databases will be processed
+    Type 'help' to list console commands
+    upg>
+    ````
 
-Type help on the upg> job console to see an overview of available commands.
+3. At this point you can monitor the upgrade now – enlarge the xterm‘s width a bit to see no line wraps.  Type help on the upg> job console to see an overview of available commands.
 
-help
+    ````
+    help
 
-upg> help
-exit                          // To close and exit
-help                          // Displays help
-lsj [(-r|-f|-p|-e) | -n ]     // list jobs by status up to n elements.
-	-f Filter by finished jobs.
-	-r Filter by running jobs.
-	-e Filter by jobs with errors.
-	-p Filter by jobs being prepared.
-	-n  Display up to n jobs.
-lsr                           // Displays the restoration queue
-lsa                           // Displays the abort queue
-tasks                         // Displays the tasks running
-clear                         // Clears the terminal
-resume -job                   // Restarts a previous job that was running
-status [-job  [-long]]        // Lists all the jobs or a specific job
-restore -job                  // Restores the database to its state prior to the upgrade
-restore all_failed            // Restores all failed jobs to their previous states prior to the upgrade
-logs                          // Displays all the log locations
-abort -job                    // Aborts the specified job
-h[ist]                        // Displays the command line history
-/[]                           // Executes the command specified from the history. The default is the last command
+    upg> help
+    exit                          // To close and exit
+    help                          // Displays help
+    lsj [(-r|-f|-p|-e) | -n ]     // list jobs by status up to n elements.
+        -f Filter by finished jobs.
+        -r Filter by running jobs.
+        -e Filter by jobs with errors.
+        -p Filter by jobs being prepared.
+        -n  Display up to n jobs.
+    lsr                           // Displays the restoration queue
+    lsa                           // Displays the abort queue
+    tasks                         // Displays the tasks running
+    clear                         // Clears the terminal
+    resume -job                   // Restarts a previous job that was running
+    status [-job  [-long]]        // Lists all the jobs or a specific job
+    restore -job                  // Restores the database to its state prior to the upgrade
+    restore all_failed            // Restores all failed jobs to their previous states prior to the upgrade
+    logs                          // Displays all the log locations
+    abort -job                    // Aborts the specified job
+    h[ist]                        // Displays the command line history
+    /[]                           // Executes the command specified from the history. The default is the last command
+    ````
 
-The most important commands are:
+4. The most important commands are:
 
+    ````
         lsj – this lists the job number and overview information about each active job.
         Please note that the job number has now changed for the -mode deploy run.
 
@@ -204,8 +214,11 @@ The most important commands are:
     Total jobs 2
 
     status -job <number> – this gives you more information about a specific job.
-    It displays you also where the log files are located.
+    ````
 
+5. It displays you also where the log files are located.
+
+    ````
         status -job 101
 
         upg> status -job 101
@@ -244,52 +257,63 @@ The most important commands are:
 
         Error Details:
         None
+    ````
 
-    logs – displays the logs folder
+6. logs – displays the logs folder
 
-        logs
+    ````
+    logs
 
-        Autoupgrade logs folder [/home/oracle/upg_logs/cfgtoollogs/upgrade/auto/config_files]
-        logs folder [UPGR][/home/oracle/upg_logs/UPGR]
-        Please open a second xterm tab and go to the logs folder.
+    Autoupgrade logs folder [/home/oracle/upg_logs/cfgtoollogs/upgrade/auto/config_files]
+    logs folder [UPGR][/home/oracle/upg_logs/UPGR]
+    ````
 
-        cd /home/oracle/upg_logs/UPGR/101
+7. Please open a second xterm tab and go to the logs folder.
 
-        Explore the subdirectories, especially /home/oracle/upg_logs/UPGR/101 and below.
-        Check the /home/oracle/upg_logs/UPGR/101/prechecks subdirectory. It contains an HTML file with the preupgrade check overview:
+    ````
+    cd /home/oracle/upg_logs/UPGR/101
+    ````
 
-        cd prechecks
-        firefox upgr_preupgrade.html &
+8. Explore the subdirectories, especially /home/oracle/upg_logs/UPGR/101 and below. Check the /home/oracle/upg_logs/UPGR/101/prechecks subdirectory. It contains an HTML file with the preupgrade check overview:
 
-        Check also the preupgrade.log within the same directory:
+    ````
+    cd prechecks
+    firefox upgr_preupgrade.html &
+    ````
+9. Check also the preupgrade.log within the same directory:
 
-        more upgr_preupgrade.log
-        Now change the directoy and see whether the dbupgrade directory has been created. This usually takes up to 4 minutes until the prechecks and fixups have been completed. You will find the 4 upgrade worker’s logs in cd /home/oracle/upg_logs/UPGR/101/dbupgrade.These 4 subdirectories get created before dbupgrade:
+    ````
+    more upgr_preupgrade.log
+    ````
 
-        prechecks
-        prefixups
-        preupgrade
-        drain
+10. Now change the directoy and see whether the dbupgrade directory has been created. This usually takes up to 4 minutes until the prechecks and fixups have been completed. You will find the 4 upgrade worker’s logs in cd /home/oracle/upg_logs/UPGR/101/dbupgrade.These 4 subdirectories get created before dbupgrade:
 
-        You can tail -f especially the main worker’s (ending with 0) log to display the upgrade progress.
+    ````
+    prechecks
+    prefixups
+    preupgrade
+    drain
+    ````
 
-        cd ../dbupgrade
-        tail -f catupgrd*0.log
+11. You can tail -f especially the main worker’s (ending with 0) log to display the upgrade progress.
+    ````
+    cd ../dbupgrade
+    tail -f catupgrd*0.log
+    ````
 
-        Interrupt the tail command with CTRL+C.
+7. Interrupt the tail command with CTRL+C. Depending on the hardware, the upgrade will take about 25-35 minutes. You don’t have to wait but instead we will do some exercises now with the AutoUpgrade tool. The upgrade will take between 20-40 minutes to complete.
 
-Depending on the hardware, the upgrade will take about 25-35 minutes. You don’t have to wait but instead we will do some exercises now with the AutoUpgrade tool.
-The upgrade will take between 20-40 minutes to complete.
+    ````
+    upg> Job 101 completed
+    ------------------- Final Summary --------------------
+    Number of databases            [ 1 ]
 
-upg> Job 101 completed
-------------------- Final Summary --------------------
-Number of databases            [ 1 ]
-
-Jobs finished successfully     [1]
-Jobs failed                    [0]
-Jobs pending                   [0]
-------------- JOBS FINISHED SUCCESSFULLY -------------
-Job 101 FOR UPGR
+    Jobs finished successfully     [1]
+    Jobs failed                    [0]
+    Jobs pending                   [0]
+    ------------- JOBS FINISHED SUCCESSFULLY -------------
+    Job 101 FOR UPGR
+    ````
 
 Congratulations – you upgraded the UPGR database successfully from Oracle 11.2.0.4 to Oracle 19c.
 

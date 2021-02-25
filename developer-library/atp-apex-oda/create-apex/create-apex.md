@@ -83,9 +83,9 @@ Use Cases:
 
 2. Write on the left panel the following table definition:
 
-    ```bash
-    tasks
-        text
+    ```
+    <copy>tasks
+        text</copy>
     ```
     
 3. Click **Generate SQL**.
@@ -135,7 +135,7 @@ We are going to mock some data to use it later with your Custom Component.
     To follow the same example we have created:
 
     ```
-    Get concert tickets
+    <copy>Get concert tickets</copy>
     ```
 
     ![Object Browser Data](./images/apex_object_insert_row_1.png)
@@ -145,7 +145,7 @@ We are going to mock some data to use it later with your Custom Component.
     To follow the same example we have created:
 
     ```
-    Buy bread
+    <copy>Buy bread</copy>
     ```
 
     ![Object Browser Data](./images/apex_object_insert_row_2.png)
@@ -193,7 +193,7 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     ![](./images/apex_rest_module_create_template.png)
 
-1. Fill **URI Template** with `tasks/` and click **Create Template**:
+1. Fill **URL Template** with `tasks/` and click **Create Template**:
 
     ![](./images/apex_rest_template_create.png)
 
@@ -209,10 +209,10 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     ![](./images/apex_rest_handler_create_get.png)
 
-10. On the **Source** area we are going to run the SQL select to fetch the data form the schema:
+10. On the **Source** area (No comments area) we are going to run the SQL select to fetch the data form the schema:
 
-    ```sql
-    select * from tasks
+    ```
+    <copy>select * from tasks</copy>
     ```
 
     > NOTE: please, don't use "`;`" at the end of the SQL statement.

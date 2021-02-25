@@ -28,7 +28,7 @@ This workshop uses the following components:
 
 * Logging Analytics Service from OCI
 
-* DataSafe Service from OCI
+* Data Safe Service from OCI
 
 * Virtual Cloud Network and related resources.
     - User-generated using Resource Manager and provided Terraform script.
@@ -44,7 +44,7 @@ This workshop uses the following components:
 ### Objectives
 
 In this lab, you will:
-* Enable DataSafe
+* Enable Data Safe
 * Enable Logging Analytics
 
 ### **Prerequisites**

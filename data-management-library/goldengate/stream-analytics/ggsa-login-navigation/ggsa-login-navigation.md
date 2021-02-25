@@ -53,7 +53,7 @@ This lab assumes you have:
 
 2. Click on the About menu item and make sure the current version of the product is showing as
 
-    - GoldenGate Stream Analytics Version19.1.0.0.5
+    - GoldenGate Stream Analytics Version19.1.0.0.6
     - Java Version1.8.0_281
     - Superset Version0.17.0
 
@@ -75,9 +75,9 @@ This lab assumes you have:
 
     `osauser/osauser`
 
-2. Confirm the password and then click on Create, verify that the new user got created and Save.
+2. Confirm the password and then click on Create, verify that the new user got created and Save.  Click on `(X)` to get out of System Settings.
 
-    ![](./images/addUser.png " ")
+    ![](./images/adduser.png " ")
 
 ## **Step 5**: Review Catalog
 
@@ -119,7 +119,7 @@ the main page.
 
 1. Click on the Connections on the left nav bar and verify that only two types of connections are visible.
 
-    ![](./images/twoConnections.png " ")
+    ![](./images/twoconnections.png " ")
 
 2. Click on the LocalMySQLDB connection. This is a connection to the local MySQL database. We are going to use this connection later in the lab. Verify that it is the Connection Type of Generic Database then click Next.
 
@@ -133,7 +133,7 @@ the main page.
 
 4. Then click on Test connection and make sure the connection is successful. Click on the Cancel button. Do not save this connection here.
 
-    ![](./images/testDBConnection.png " ")
+    ![](./images/testdbconnection.png " ")
 
 5. Now click on the LocalKafka connection. This is a different type of a connection to the local Kafka environment. We are going to use this connection and the topics later in the lab. Verify that it is the Connection Type of Kafka then click Next.
 
@@ -141,7 +141,7 @@ the main page.
 
 6. You should see the Edit Connection screen for Type:Kafka. Verify that Zookeepers is running in the local server localhost. Zookeepers are the servers that are going to manage our local Kafka environments; in this case just one node in the local environment. Leave all the other settings as default and click on Test connection and make sure the connection is Successful. Click on Cancel button. Do not save this kafka connection.
 
-    ![](./images/editKafkaConnection.png " ")
+    ![](./images/editkafkaconnection.png " ")
 
 ## **Step 9**: Review Streams
 
@@ -155,9 +155,9 @@ the main page.
 
 4. Click on the Edit to the right of Source Type Parameters: File. Verify the file format as CSV and that the Loop flag is turned on. Click Next.
 
-    ![](./images/vmStreamDetails.png " ")
+    ![](./images/vmstreamdetails.png " ")
 
-    ![](./images/vmEditStream1.png " ")
+    ![](./images/vmeditstream1.png " ")
 
 5. Verify the settings in the Data Format screen then click Next
 
@@ -165,7 +165,7 @@ the main page.
 
 6. In the Shape page Infer Shape should be selected which means that the fields and types are inferred from the source csv file. Verify the field name and types then click Cancel then close `(X)` out the following screen.
 
-    ![](./images/vmEditStream3.png " ")
+    ![](./images/vmeditstream3.png " ")
 
 ## **Step 10**: Review References
 
@@ -177,17 +177,17 @@ References are typically database tables that might be used to enrich a stream o
 
 2. Click on the MachineDetails. Verify that all the param settings then click on Edit to the right of Source Type Parameters: Database Table. Do NOT edit any sections at this time.
 
-    [](./images/editMachineDetails1.png " ")
+    [](./images/editmachinedetails1.png " ")
 
 3. In the Source Details note that Connection is set to LocalMySQLDB as we saw earlier in the lab. Click Next.
 
-    ![](./images/editMachineDetails2.png " ")
+    ![](./images/editmachinedetails2.png " ")
 
 4. In the Shape page notice that all the table columns and their types,(i.e. shape) are all set correctly. Do not save, click Cancel.
 
     ![](./images/editmachinedetails3.png " ")
 
-5. In the next page click on 'X' and exit.
+5. In the next page click on `(X)` and exit.
 
 ## **Step 11**: Review Targets
 
@@ -196,13 +196,13 @@ A `Target` is a destination environment downstream that is usually used when we 
 
 1. On the left nav bar make sure Targets are checked only. On the main screen only NotifyMaintenance and ReplenishAlert targets should be visible. Click on the NotifyMaintenance. Do NOT edit any sections at this time.
 
-    ![](./images/targetsVisible.png " ")
+    ![](./images/targetsvisible.png " ")
 
 2. In the Type Properties page make sure the target name and type are set correctly as NotifyMaintenance and Kafka and click Next.
 
-    ![](./images/editTarget1.png " ")
+    ![](./images/edittarget1.png " ")
 
-3. In the Target Details page notice the Connection is set to LocalKafka as we saw earlier with the Topic name as HighTempMachines. Make sure the Data Format for this topic is set JSON. Notice there are other data formats like csv and avro.
+3. In the Target Details page notice the Connection is set to LocalKafka as we saw earlier with the Topic name as HighTempMachines. Make sure the Data Format for this topic is set JSON. Notice there are other data formats like csv and avro.  Click Next.
 
     ![](./images/edittarget2.png " ")
 

@@ -49,9 +49,9 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 ## **STEP 2**: Run Stack Apply Job
 
-1. Click the **Terraform Actions** drop down.
+1. Click the **Terraform Actions** drop down. Select **Apply**
     ![Create a stack](images/workshop-007.png " ")
-2. Choose **Apply**
+2. Select **Apply**
     ![Create a stack](images/workshop-008.png " ")
 3. Resource Manager will begin creating the components needed for this workshop.
     ![Create a stack](images/workshop-009.png " ")
@@ -90,8 +90,10 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ````
 
     *Note: The angle brackets <> should not appear in your code.*
-    ![Create a stack](images/workshop-013.png " ")      
 5.  When prompted, answer **yes** to continue connecting.
+
+    ![Create a stack](images/workshop-013.png " ")      
+
 6.  Continue to the *next Step* on the left hand menu.
 
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 

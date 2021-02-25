@@ -462,7 +462,7 @@ This listing illustrates what a JSON payload looks like:
 
 ## Learn More
 
-- Oracle JSON Document ([JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html))
+- Oracle JSON Documentation ([JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html))
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
