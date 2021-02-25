@@ -49,10 +49,12 @@ In this lab, you will:
 5. Once finished, create another AWR snapshot.
 
 	````
+	<copy>
 	@/home/oracle/scripts/snap.sql
+	</copy>
 	````
 
-6. Please NOTE down the snapshot number.
+1. Please NOTE down the snapshot number.
 
 ## **STEP 2**: AWR Diff Report
 
@@ -61,7 +63,9 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 1. Call the AWR Diff script
 
 	````
+	<copy>	
 	@?/rdbms/admin/awrddrpt.sql
+	</copy>
 	````
 
 2. And then interactively:
@@ -79,147 +83,144 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Enter value for report_type:
 	````
 
-3. Hit RETURN
+3. Click **RETURN** 
 
-Instances in this Workload Repository schema
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  DB Id      Inst Num	DB Name      Instance	  Host
------------- ---------- ---------    ----------   ------
-* 72245725	 1	UPGR	     UPGR	  localhost.lo
+	````
+	Instances in this Workload Repository schema
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	DB Id      Inst Num	DB Name      Instance	  Host
+	------------ ---------- ---------    ----------   ------
+	* 72245725	 1	UPGR	     UPGR	  localhost.lo
 
-Database Id and Instance Number for the First Pair of Snapshots
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Using	72245725 for Database Id for the first pair of snapshots
-Using	       1 for Instance Number for the first pair of snapshots
-
-
-Specify the number of days of snapshots to choose from
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Entering the number of days (n) will result in the most recent
-(n) days of snapshots being listed.  Pressing  without
-specifying a number lists all completed snapshots.
+	Database Id and Instance Number for the First Pair of Snapshots
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Using	72245725 for Database Id for the first pair of snapshots
+	Using	       1 for Instance Number for the first pair of snapshots
 
 
-Enter value for num_days:
-
-Type: 2
-Hit RETURN
-
-Now you need to define the first snapshot interval – please fill in the snapshot IDs you have noted down during the first HammerDB run:
-
-Enter value for num_days: 2
-
-Listing the last 2 days of Completed Snapshots
-Instance     DB Name	  Snap Id	Snap Started	Snap Level
------------- ------------ ---------- ------------------ ----------
-
-UPGR	     UPGR		110  20 Feb 2020 22:12	  1
-				111  20 Feb 2020 22:39	  1
-				112  20 Feb 2020 22:40	  1
-				113  21 Feb 2020 00:05	  1
-				114  21 Feb 2020 00:15	  1
+	Specify the number of days of snapshots to choose from
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Entering the number of days (n) will result in the most recent
+	(n) days of snapshots being listed.  Pressing  without
+	specifying a number lists all completed snapshots.
 
 
-Specify the First Pair of Begin and End Snapshot Ids
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Enter value for begin_snap:
+	Enter value for num_days:
+	````
 
-Type: 110 <== Your actual snapshot ID may be different – please check your notes!
-Hit RETURN
+4.  Type: **2** and click **RETURN** 
 
-  110
-First Begin Snapshot Id specified: 110
+5. Now you need to define the first snapshot interval – please fill in the snapshot IDs you noted down during the first HammerDB run.
+   
+	````
+	Enter value for num_days: 2
 
-Enter value for end_snap: 111
-First End   Snapshot Id specified:
+	Listing the last 2 days of Completed Snapshots
+	Instance     DB Name	  Snap Id	Snap Started	Snap Level
+	------------ ------------ ---------- ------------------ ----------
 
-Type: 111 <== Your actual snapshot ID may be different – please check your notes!
-Hit RETURN
-
- 111
-
-
-
-
-Instances in this Workload Repository schema
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  DB Id      Inst Num	DB Name      Instance	  Host
------------- ---------- ---------    ----------   ------
- 72245725	 1	UPGR	     UPGR	  localhost.lo
+	UPGR	     UPGR		110  20 Feb 2020 22:12	  1
+					111  20 Feb 2020 22:39	  1
+					112  20 Feb 2020 22:40	  1
+					113  21 Feb 2020 00:05	  1
+					114  21 Feb 2020 00:15	  1
 
 
+	Specify the First Pair of Begin and End Snapshot Ids
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Enter value for begin_snap:
+	````
+
+6. Type: 110 <== Your actual snapshot ID may be different – please check your notes!  Hit RETURN.
+
+	````
+	110
+	First Begin Snapshot Id specified: 110
+
+	Enter value for end_snap: 111
+	First End   Snapshot Id specified:
+
+	Type: 111 <== Your actual snapshot ID may be different – please check your notes!
+	Hit RETURN
+	 111
+	````
+
+	````
+	Instances in this Workload Repository schema
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	DB Id      Inst Num	DB Name      Instance	  Host
+	------------ ---------- ---------    ----------   ------
+	72245725	 1	UPGR	     UPGR	  localhost.lo
+
+	Database Id and Instance Number for the Second Pair of Snapshots
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Using	72245725 for Database Id for the second pair of snapshots
+	Using	       1 for Instance Number for the second pair of snapshots
 
 
-Database Id and Instance Number for the Second Pair of Snapshots
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Using	72245725 for Database Id for the second pair of snapshots
-Using	       1 for Instance Number for the second pair of snapshots
-
-
-Specify the number of days of snapshots to choose from
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Entering the number of days (n) will result in the most recent
-(n) days of snapshots being listed.  Pressing  without
-specifying a number lists all completed snapshots.
+	Specify the number of days of snapshots to choose from
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Entering the number of days (n) will result in the most recent
+	(n) days of snapshots being listed.  Pressing  without
+	specifying a number lists all completed snapshots.
 
 
-Enter value for num_days2:
+	Enter value for num_days2:
 
-Type: 2
-Hit RETURN
+7. Type: 2.  Hit RETURN
+	````
+	2
 
-2
-
-Listing the last day's Completed Snapshots
-UPGR	     UPGR		110  20 Feb 2020 22:12	  1
-				111  20 Feb 2020 22:39	  1
-				112  20 Feb 2020 22:40	  1
-				113  21 Feb 2020 00:05	  1
-				114  21 Feb 2020 00:15	  1
-
-
-Specify the Second Pair of Begin and End Snapshot Ids
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Enter value for begin_snap2:
-
-Type: 113 <== Your actual snapshot ID may be different – please check your notes!
-Hit RETURN
-
- 113
-
-Enter value for end_snap2:
-
-Type: 114 <== Your actual snapshot ID may be different – please check your notes!
-Hit RETURN
-
- 114
+	Listing the last day's Completed Snapshots
+	UPGR	     UPGR		110  20 Feb 2020 22:12	  1
+					111  20 Feb 2020 22:39	  1
+					112  20 Feb 2020 22:40	  1
+					113  21 Feb 2020 00:05	  1
+					114  21 Feb 2020 00:15	  1
 
 
+	Specify the Second Pair of Begin and End Snapshot Ids
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Enter value for begin_snap2:
+	````
 
-Specify the Report Name
-~~~~~~~~~~~~~~~~~~~~~~~
-The default report file name is awrdiff_1_110_1_113.html	To use this name,
-press  to continue, otherwise enter an alternative.
+	````
+	Type: 113 <== Your actual snapshot ID may be different – please check your notes!
+	Hit RETURN
 
-Enter value for report_name:
+	113
 
-Enter awrdiff and hit RETURN
+	Enter value for end_snap2:
 
-<<< Wait until the HTML output has been generated >>>
+	Type: 114 <== Your actual snapshot ID may be different – please check your notes!
+	Hit RETURN
 
-exit
+	114
+	````
 
-In your xterm start Mozilla Firefox with the awr diff report:
+	````
+	Specify the Report Name
+	~~~~~~~~~~~~~~~~~~~~~~~
+	The default report file name is awrdiff_1_110_1_113.html	To use this name,
+	press  to continue, otherwise enter an alternative.
 
-firefox /home/oracle/scripts/awrdiff*.html &
+	Enter value for report_name:
 
-Compare things such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run.
+	````
+8. Enter awrdiff and hit RETURN. Wait until the HTML output has been generated 
 
-Browse also through the SQL statistics and see if you find remarkable differences between the two runs.
+	````
+	exit
+	````
 
-Overall, you won’t see any significant differences. The purpose of this lab exercise is simply that you recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
+9. In your xterm start Mozilla Firefox with the awr diff report:
 
+	````
+	firefox /home/oracle/scripts/awrdiff*.html &
+	````
+
+10. Compare things such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run.  Browse also through the SQL statistics and see if you find remarkable differences between the two runs.  Overall, you won’t see any significant differences. The purpose of this lab exercise is simply that you recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
 
 You may now [proceed to the next lab](#next).
 

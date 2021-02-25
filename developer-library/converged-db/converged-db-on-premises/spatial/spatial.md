@@ -40,7 +40,15 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Set your environment.
+2. Navigate to the spatial directory.
+
+    ```
+    <copy>
+    cd /u01/workshop/spatial
+    </copy>
+    ```
+
+3. Set your environment.
 
     ```
     <copy>
@@ -48,7 +56,7 @@ This lab assumes you have:
     </copy>
     ```
 
-3. When prompted paste the following:
+4. When prompted paste the following:
 
     ```
     <copy>
@@ -56,7 +64,7 @@ This lab assumes you have:
     </copy>
     ```
 
-4. Open SQLPlus as the user appjson
+5. Open SQLPlus as the user appjson
 
     ```
     <copy>

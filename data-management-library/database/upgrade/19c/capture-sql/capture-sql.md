@@ -21,12 +21,10 @@ An STS allows you to transport SQL between databases.  You can export SQL tuning
 ![](./images/sqltuningset.png " ")
 
 ### Objectives
-
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Collect Statements from AWR
+* Collect Statements from Cursor Cache
+* Optional - Export AWR
 
 ### Prerequisites
 
@@ -81,7 +79,7 @@ But now check, how many statements you’ve collected in each SQL Tuning Set:
 
 select name, owner, statement_count from dba_sqlset;
 
-## **STEP 2**: Optional - Export AWR
+## **STEP 3**: Optional - Export AWR
 
 Especially when you migrate databases, exporting and preserving the AWR is important. When you upgrade, the AWR will stay in the database. This exercise is only done for protection but not necessary for the flow of the lab.
 
@@ -125,105 +123,110 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     Enter value for num_days:
     ````
 
-Type: 2
-Hit RETURN.
+3. Type: 2. Hit RETURN.
 
-Enter value for num_days: 2
+    ````
+    Enter value for num_days: 2
 
-Listing the last 2 days of Completed Snapshots
+    Listing the last 2 days of Completed Snapshots
 
-DB Name        Snap Id	  Snap Started
------------- --------- ------------------
-UPGR		   110 20 Feb 2020 22:12
-		   111 20 Feb 2020 22:39
-		   112 20 Feb 2020 22:40
-
-
-Specify the Begin and End Snapshot Ids
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Enter value for begin_snap:
-
-Type: 110 <= Your snapshot number may be different
-Hit RETURN.
-
-Specify the Begin and End Snapshot Ids
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Enter value for begin_snap: 110
-Begin Snapshot Id specified: 110
-
-Enter value for end_snap:
-
-Type: 112 <= Your snapshot number may be different
-Hit RETURN.
-
-End   Snapshot Id specified: 112
+    DB Name        Snap Id	  Snap Started
+    ------------ --------- ------------------
+    UPGR		   110 20 Feb 2020 22:12
+            111 20 Feb 2020 22:39
+            112 20 Feb 2020 22:40
 
 
-Specify the Directory Name
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Specify the Begin and End Snapshot Ids
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Enter value for begin_snap:
+    ````
+
+4. Type: 110 <= Your snapshot number may be different.  Hit RETURN.
+
+    ````
+    Specify the Begin and End Snapshot Ids
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Enter value for begin_snap: 110
+    Begin Snapshot Id specified: 110
+
+    Enter value for end_snap:
+    ````
+
+5. Type: 112 <= Your snapshot number may be different.  Hit RETURN.
+
+    ````
+    End   Snapshot Id specified: 112
+
+    Specify the Directory Name
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Directory Name		       Directory Path
+    ------------------------------ -------------------------------------------------
+    DATA_PUMP_DIR		       /u01/app/oracle/admin/UPGR/dpdump/
+    ORACLE_OCM_CONFIG_DIR	       /u01/app/oracle/product/11.2.0.4/ccr/hosts/localhost.localdomain/state
+    ORACLE_OCM_CONFIG_DIR2	       /u01/app/oracle/product/11.2.0.4/ccr/state
+    PREUPGRADE_DIR		       /u01/app/oracle/cfgtoollogs/UPGR/preupgrade
+    XMLDIR			       /u01/app/oracle/product/11.2.0.4/rdbms/xml
 
 
-Directory Name		       Directory Path
------------------------------- -------------------------------------------------
-DATA_PUMP_DIR		       /u01/app/oracle/admin/UPGR/dpdump/
-ORACLE_OCM_CONFIG_DIR	       /u01/app/oracle/product/11.2.0.4/ccr/hosts/localhost.localdomain/state
-ORACLE_OCM_CONFIG_DIR2	       /u01/app/oracle/product/11.2.0.4/ccr/state
-PREUPGRADE_DIR		       /u01/app/oracle/cfgtoollogs/UPGR/preupgrade
-XMLDIR			       /u01/app/oracle/product/11.2.0.4/rdbms/xml
 
+    Choose a Directory Name from the above list (case-sensitive).
 
+    Enter value for directory_name:
+    ````
 
-Choose a Directory Name from the above list (case-sensitive).
+6. Type: DATA_PUMP_DIR.  Hit RETURN
 
-Enter value for directory_name:
+    ````
+    Enter value for directory_name: DATA_PUMP_DIR
 
-Type: DATA_PUMP_DIR
-Hit RETURN
+    Using the dump directory: DATA_PUMP_DIR
 
-Enter value for directory_name: DATA_PUMP_DIR
+    Specify the Name of the Extract Dump File
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    The prefix for the default dump file name is awrdat_64_71.
+    To use this name, press  to continue, otherwise enter
+    an alternative.
 
-Using the dump directory: DATA_PUMP_DIR
+    Enter value for file_name:
 
-Specify the Name of the Extract Dump File
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The prefix for the default dump file name is awrdat_64_71.
-To use this name, press  to continue, otherwise enter
-an alternative.
+    Hit RETURN
+    ````
 
-Enter value for file_name:
+    ````    
+    Using the dump file prefix: awrdat_64_71
+    |
+    | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    |  The AWR extract dump file will be located
+    |  in the following directory/file:
+    |   /u01/app/oracle/product/UPGR/dpdump/
+    |   awrdat_110_112.dmp
+    | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    |
+    |  *** AWR Extract Started ...
+    |
+    |  This operation will take a few moments. The
+    |  progress of the AWR extract operation can be
+    |  monitored in the following directory/file:
+    |   /u01/app/oracle/product/UPGR/dpdump/
+    |   awrdat_110_112.log 
+    | End of AWR Extract
 
-Hit RETURN
+    This will take now a few minutes.
+    ````
 
-Using the dump file prefix: awrdat_64_71
-|
-| ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-|  The AWR extract dump file will be located
-|  in the following directory/file:
-|   /u01/app/oracle/product/UPGR/dpdump/
-|   awrdat_110_112.dmp
-| ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-|
-|  *** AWR Extract Started ...
-|
-|  This operation will take a few moments. The
-|  progress of the AWR extract operation can be
-|  monitored in the following directory/file:
-|   /u01/app/oracle/product/UPGR/dpdump/
-|   awrdat_110_112.log 
-| End of AWR Extract
+7. Exit from SQL*Plus
 
-This will take now a few minutes.
-
-Exit from SQL*Plus:
-
-exit
+    ````
+    exit
+    ````
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
 * [SQL Tuning Sets](https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/managing-sql-tuning-sets.html#GUID-DD136837-9921-4C73-ABB8-9F1DC22542C5)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Mike Dietrich, Database Product Management

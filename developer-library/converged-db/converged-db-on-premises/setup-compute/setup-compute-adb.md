@@ -7,7 +7,7 @@ The compute image has two docker images running the eShop application.  The dock
 
 *Estimated Lab Time:* 15 minutes
 
-Watch the video below for an overview of Lab 2: Setup Compute and Autonomous DB
+Watch the video below for an overview of the Setup Compute and Autonomous DB lab
 [](youtube:mAUXpP-ekWY)
 
 ### About Terraform and Oracle Cloud Resource Manager
@@ -21,6 +21,7 @@ For more information about Terraform and Resource Manager, please see the append
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
+- Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
 
 ## **STEP 1**: Create Stack:  Compute + ADB + Networking
 
@@ -282,6 +283,5 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

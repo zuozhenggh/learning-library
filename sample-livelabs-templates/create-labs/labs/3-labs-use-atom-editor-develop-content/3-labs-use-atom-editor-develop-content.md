@@ -129,7 +129,7 @@ In this example, your project folder **labs** contains 5 labs and a workshop. Yo
 
 ## Want to Learn More?
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
-
+[LiveLabs Markdown Template Features](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+Features)
 ## Acknowledgements
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
