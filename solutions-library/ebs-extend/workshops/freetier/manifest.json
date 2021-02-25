@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Extend EBS on OCI Workshop",
+    "workshoptitle": "Extend EBS on OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -11,7 +11,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: DataSafe",
+            "title": "Lab 1: Data Safe",
             "filename": "../../data-safe/data-safe.md"
         },
         {

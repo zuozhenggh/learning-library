@@ -28,8 +28,6 @@ Notes:
 
 * Next we will enable Logging Analytics to monitor and manage our technological footprint
 
-* Last we will set up an OIC instance and connect with API Manager
-
 This workshop uses the following components:
 
 * Trial accounts (one per attendee).
