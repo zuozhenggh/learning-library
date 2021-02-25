@@ -8,14 +8,14 @@ This tutorial shows you how to use the Quick Starts provided with Oracle Visual 
 
 ### Background
 
-Oracle Visual Builder provides Quick Starts that facilitate the page creation task in building your mobile application. Quick Starts facilitate the creation of pages to display, create, edit, and delete data. You can invoke the Quick Start you want to use when you select the appropriate component in the page. Typically, this is a List View component when you develop a mobile application.
+Oracle Visual Builder provides Quick Starts that create pages to help you quickly build your mobile application. Quick Starts facilitate the creation of pages to display, create, edit, and delete data. You can invoke the Quick Start you want to use when you select the appropriate component in the page. Typically, this is a List View component when you develop a mobile application.
 
 ## **STEP 1**: Add a Detail Page for the Department Business Object
 
 1.  In the HR Application, click the **Mobile Applications** ![Mobile Applications](./images/vbmda_mobapp_icon.png) tab in the Navigator.
 2.  If necessary, expand the **flows** and **main** nodes, then click **main-departments**.
 3.  In the Page Designer, click the **Structure** tab and select **List View**.
-4.  In the List View Property Inspector, click the **Quick Start** tab, then click **Add Detail Page**.
+4.  In the Properties pane, click the **Quick Start** tab, then click **Add Detail Page**.
 5.  On the Select Endpoint page, select **Department** under Business Objects if necessary and click **Next**.
 
     ![](./images/vbmda_detailep.png)
@@ -38,11 +38,11 @@ Oracle Visual Builder provides Quick Starts that facilitate the page creation ta
 3.  On the Select Read Endpoint and Select Update Endpoint pages of the Quick Start, select **Department** under Business Objects.
 4.  On the Page Details page, select **location** under Endpoint Structure (**name** is already selected), and click **Finish**.
 5.  Click the **main-department-detail** page.
-6.  In the Components palette, locate the **Common** components and drag a **Button** component to the right of the Department Detail page title, until you see the pop-up with the available slots. Drop the button in the **Right Side** slot. The Button component appears to the right of Department Detail in the Page Designer.
+6.  Click the **Components** tab, then drag a **Button** component to the right of the Department Detail page title, until you see the pop-up with the available slots. Drop the button in the **Right Side** slot. The Button component appears to the right of Department Detail in the Page Designer.
 
     ![](./images/vbmda_deptdetail.png)
 
-7.  On the **General** tab of the Button Property Inspector, enter `Edit` in the **Text** field.
+7.  On the **General** tab of the Button's Properties pane, enter `Edit` in the **Text** field.
 8.  Click the **Events** tab for the button, click **\+ New Event,** and then select **Quick Start: 'ojAction'** from the menu.
 
     ![](./images/vbmda_cse_s4.png)
@@ -69,7 +69,7 @@ Oracle Visual Builder provides Quick Starts that facilitate the page creation ta
 1.  Go to the main-departments page, and if necessary click the **List View** component in the **Structure** view.
 2.  In the Quick Start menu, click **Add Delete Action**.
 3.  On the Select Endpoint page of the Quick Start, select **Department** under Business Objects and click **Finish**.
-4.  In the Property Inspector, click the **General** tab. Under **Swipe Actions**, drag the handle for the **Delete** action from **Right Side end** to **Left Side start**.
+4.  In the Properties pane, click the **General** tab. Under **Swipe Actions**, drag the handle for the **Delete** action from **Right Side end** to **Left Side start**.
 
     ![](./images/vbmda_swipe_pi.png)
 
@@ -90,19 +90,19 @@ Oracle Visual Builder provides Quick Starts that facilitate the page creation ta
     A confirmation message is displayed, and the application navigates back to the Department Detail page. The change that you just made appears in the Department Detail page.
 
 5.  To return to the Departments page, click the Back icon ![](./images/vbmda_backbutton.png).
-6.  If you have a touch screen environment, swipe from the left edge of the screen to the right. A **Delete** button appears.
+6.  If you have a touch screen environment, swipe from the left edge of the screen to the right . A **Delete** button appears.
 
-When you click **Delete** in a desktop browser environment that does not have a touch screen, the action is ignored. When you tap **Delete** on a device with a touch screen, the swiped list item is deleted.
+    When you click **Delete** in a desktop browser environment that does not have a touch screen, the action is ignored. When you tap **Delete** on a device with a touch screen, the swiped list item is deleted.
 
-![](./images/vbmda_swipe_rt.png)
+    ![](./images/vbmda_swipe_rt.png)
 
-9.  Swipe from the right edge of the screen to the left. An **Edit** button appears. As with the **Delete** button, the swipe action requires a touch screen environment to function. 
-10.  Close the tab or window.
+7.  Swipe from the right edge of the screen to the left. An **Edit** button appears. As with the **Delete** button, the swipe action requires a touch screen environment to function. 
+8.  Close the tab or window.
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - December 2020
+**Last Updated** - February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
