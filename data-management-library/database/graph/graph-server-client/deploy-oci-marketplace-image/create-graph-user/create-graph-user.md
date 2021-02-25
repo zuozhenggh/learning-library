@@ -26,24 +26,27 @@ Estimated time: 3 minutes
 
     In Autonomous Database Details page, click **Service Console**. Make sure your brower allow pop-up windows.
 
-    ![](images/ADB_console.png)
+    ![](images/adb-console.jpg)
 
     Choose Development from the list on the left, then click the **SQL Developer Web**.
 
     ![](images/ADB_ConsoleDevTab.png)
 
-    Enter `ADMIN` as Username, and the enter the password you set up at Lab 2 Step 2, Section 7.
+    Enter `ADMIN` as Username and go next.
 
-    ![](images/login.png)
+    ![](images/login-1.jpg)
+
+    Input the password (you set up at Lab 2 Step 2, Section 7) and sign in.
+
+    ![](images/login-2.jpg)
   
-    Login as the `ADMIN` user. 
+    Logged in as the `ADMIN` user. 
 
-    ![](images/ADB_SQLDevWebHome.png)
+    ![](images/ADB_SQLDevWebHome.jpg)
 
 2. Now create the roles required for the graph feature. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
 
     Create the roles required by the graph server.
-
     ```
     <copy>
     DECLARE
@@ -85,8 +88,7 @@ Estimated time: 3 minutes
     </copy>
     ```
 
-    Assign default permissions to the roles GRAPH_DEVELOPER and GRAPH_ADMINISTRATOR to group multiple permissions together.
-
+    Assign the default permissions to the roles, `GRAPH_DEVELOPER` and `GRAPH_ADMINISTRATOR`, to group multiple permissions together.
     ```
     <copy>
     GRANT PGX_SESSION_CREATE TO GRAPH_ADMINISTRATOR;
@@ -122,7 +124,7 @@ GRANT graph_developer TO customer_360;
 </copy>
 ```
 
-![](images/ADB_SDW_CreateUser_C360.jpg)
+![](images/create-user.jpg)
 
 *Notes:* 
 - *The `IDENTIFIED BY` clause specifies the password (i.e whatever you replaced <specify_a_password> with)*
@@ -130,32 +132,23 @@ GRANT graph_developer TO customer_360;
 
 ## **STEP 3:** Enable SQL Developer Web for the new user
 
-Now provide SQL Developer Web access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA)
-  for details.
+Now provide SQL Developer Web access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA) for details.
 
-First clear the previous text in the SQL Worksheet.
+Open the main menu and click "Database Users".
 
-Copy and paste the following text into the SQL Worksheet and run it.
+![](images/database-users.jpg)
 
-```
-<copy>
-BEGIN
-  ORDS_ADMIN.ENABLE_SCHEMA(
-    p_enabled => TRUE,
-    p_schema => 'CUSTOMER_360',
-    p_url_mapping_type => 'BASE_PATH',
-    p_url_mapping_pattern => 'customer_360',
-    p_auto_rest_auth => TRUE
-  );
-  COMMIT;
-END;
-/
-</copy>
-```
+Open the menu for the user and click "Enable REST".
 
-![](images/ADB_SDW_EnableLoginFor_C360.jpg)
+![](images/enable-rest-1.jpg)
+
+Click "REST Enable User" to apply the change.
+
+![](images/enable-rest-2.jpg)
 
 The URL for SQL Developer Web for the `CUSTOMER_360` user will have `customer_360` in place of `admin` in it. Save the URL for the next step.
+
+![](images/login-c360.jpg)
 
 For details, see the ["Provide SQL Developer Web Access to Database Users"](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA) section in the documentation.
 
@@ -165,7 +158,7 @@ You may now proceed to the next lab.
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
 * **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management.
-* **Last Updated By/Date** - Ryota Yamanaka, January 2021
+* **Last Updated By/Date** - Ryota Yamanaka, Feburary 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
