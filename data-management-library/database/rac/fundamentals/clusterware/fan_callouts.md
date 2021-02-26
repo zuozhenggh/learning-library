@@ -8,6 +8,9 @@ FAN is configured and runs automatically when you install Oracle Grid Infrastruc
 
 Estimated Lab Time: 20 Minutes
 
+Watch the video below for an overview of the Fast Application Notification lab
+[](youtube:RICjcyFk3SE)
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -133,10 +136,10 @@ Stopping or starting a database instance, or a database service will generate a 
     ````
     ![](./images/fan-step2-num3.png " ")
 
-4. If your callout was written correctly and had the appropriate execute permissions, a file named racnode1_events.log should be visible in the /tmp directory
+4. If your callout was written correctly and had the appropriate execute permissions, a file named hostname_events.log should be visible in the /tmp directory
     ````
     <copy>
-    ls -altr /tmp/racnode*.log
+    ls -altr /tmp/<hostname>*.log
     </copy>
     ````
 
@@ -146,7 +149,7 @@ Stopping or starting a database instance, or a database service will generate a 
 
     ````
     <copy>
-    cat /tmp/racnode*.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````
 
@@ -180,7 +183,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     # define AWK
     AWK=/bin/awk
     # Define a log file to see results
-    FAN_LOGFILE=/tmp/`hostname -s`_callout2.log
+    FAN_LOGFILE=/tmp/`hostname -s`.log
     # Event type is handled differently
     NOTIFY_EVENTTYPE=$1
     for ARGS in $*; do
@@ -230,14 +233,14 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
 
     ````
     <copy>
-    cat /tmp/racnode1_callout2.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````  
 4. Examine the entry created in the log file generated in /tmp on node2:
 
     ````
     <copy>
-    cat /tmp/racnode2_callout2.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````
 5. Cause a DATABASE UP event to be generated:
@@ -420,6 +423,5 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date** - Kay Malcolm, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

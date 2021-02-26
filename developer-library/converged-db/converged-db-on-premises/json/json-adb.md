@@ -8,7 +8,7 @@ There are three main parts to this lab.
 
 *Estimated Lab Time:* 20 Minutes
 
-Watch the video below for an overview of Lab 4: JSON
+Watch the video below for an overview of the JSON lab
 [](youtube:y7v7vsCFS5g)
 
 ### Prerequisites
@@ -373,7 +373,7 @@ For this , we will create two views next
     END;
     /
     ````
-3.  Replace the admin url with the schema url defined in p_url_mapping_pattern.
+3.  Replace the admin url with the schema url defined in p\_url\_mapping\_pattern.
 
     ![](./images/sqldevurl.png " ")  
 
@@ -448,6 +448,5 @@ For this , we will create two views next
 
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
