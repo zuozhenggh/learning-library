@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Provisioning an Autonomous Database",
+  "workshoptitle": "自律データベースのプロビジョニング",
     "tutorials": [
         {
             "title": "Introduction",
@@ -12,8 +12,8 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Provision an ADW Instance",
-            "description": "Provision a new ADW instance and connect to the database",
+            "title": "Lab 1: ADWインスタンスの作成",
+            "description": "ADWインスタンスをプロビジョニングし、データベースに接続します",
             "filename": "./../../../ja-jp-adb-provision/adb-provision.md"
         }
     ]

@@ -5,7 +5,7 @@ In the previous lab you created a compute instance (running the eShop applicatio
 
 *Estimated time:* 20 Minutes
 
-Watch the video below for an overview of Lab 3: Load ADB and Start Application
+Watch the video below for an overview of the Load ADB and Start Application lab
 [](youtube:S3jL1y-ZAbc)
 
 ### Objectives
@@ -139,7 +139,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ![](./images/oraenv.png " ")
    
-5. Substitute your instance name with *your adb instance name* (e.g convgdb_high) and the password you used
+5. Run the wget command to download the load_atp.sh script from object storage.
 
       ````
       <copy>
@@ -185,7 +185,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ````
       <copy>cd /u01/script
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhR11qr6u9pFy3Ct7o5IaQorX7-xbz1WW64QN09jkCV-z2mPmn6vozwcRslSAYwg/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/env_script_setup_atp.sh
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9__SPAwP9dcj7afYX4uhbyGf3-7Wv4iD-ypyxcShp0X88EffrT5myM1_S3jvsjtO/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/env_script_setup_atp.sh
       chmod +x env_script_setup_atp.sh
       ./env_script_setup_atp.sh</copy>
       ````
@@ -203,6 +203,5 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/converged-database). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

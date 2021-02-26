@@ -1,13 +1,22 @@
 # Oracle Cross Datatype
 
 ## Introduction
+Cross datatype lab is designed to showcase the functionality of multi datatype like json, xml and spatial and how all of them can be used same like relational data format.
 
-This lab will show you how to use cross data functions.
-- JSON with Relational
-- XML with Relational
-- JSON with Spatial
+*Estimated Lab Time*: 20 Minutes
 
-*Estimated Lab Time:* 20 Minutes
+### About Oracle Cross Datatype
+
+JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
+
+### Objectives
+In this lab, you will:
+* Setup the environment for Cross Datatype lab. 
+* Connect the oracle SQL developer to access the JSON, XML, Spatial data in Relational formate by using different type of function.
+* Learn about how to use Cross data function :
+    - JSON with Relational
+    - XML with Relational 
+    - JSON with Spatial
 
 ### Prerequisites
 This lab assumes you have:
@@ -18,12 +27,6 @@ This lab assumes you have:
     - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
-
-### About Oracle Cross Datatype
-
-JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
-
-The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
 
 ## **STEP 1**: Connect to the Pluggable Database (PDB)
@@ -157,6 +160,21 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
     ```
     ![](./images/cd15.png)
 
+**This concludes this lab. You may now [proceed to the next lab](#next).**
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
