@@ -22,7 +22,7 @@
       "filename": "../../create-odi-repo-prep-data/create-odi-repo-prep-data.md"
     },
     {
-      "title": "Lab 4: Configure Integration and Load Data from EBS into ADW using ODI",
+      "title": "Lab 4: Configure Integration and Load Data from Source into ADW using ODI",
       "description": "Configure and run integration",
       "filename": "../../configure-integration/configure-integration.md"
     },

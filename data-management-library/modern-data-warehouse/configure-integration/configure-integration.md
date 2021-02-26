@@ -1,4 +1,4 @@
-# Configure Integration and load data from EBS into ADW using ODI
+# Configure Integration and load data from EBS-emulating Database into ADW using ODI
 
 ## Introduction
 

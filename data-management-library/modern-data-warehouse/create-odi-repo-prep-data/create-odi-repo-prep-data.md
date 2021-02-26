@@ -2,14 +2,14 @@
 
 ## Introduction
 
-In this lab, you will create and connect to an ODI work repository and prepare the E-Business Suite data source in ODI. If you do not have access to an EBS environment or have access but not the appropriate permissions to create staging tables, then you can use an Autonomous database to simulate the EBS database.
+In this lab, you will create and connect to an ODI work repository and prepare the E-Business Suite data source in ODI. We will be using an Autonomous database to emulate EBS. If you have access to an EBS environment, please feel free to bring in data from there.
 
 Estimated Lab Time: 40 minutes
 
 ### Objectives
 
 - Create and connect to master and work repositories in ODI. 
-- Load Data into EBS database or an ADW emulating the EBS database.
+- Load Data into ADW emulating the EBS database.
 
 ### Prerequisites
 
@@ -58,7 +58,7 @@ If you are using an Autonomous Database to emulate the EBS database, please foll
 
 8. Download the wallet file for the database as shown in step 3 of Lab 1. 
         
-## STEP 2: Creating Tables in EBS Database
+## STEP 2: Creating Tables in EBS-emulating Database
 
 1. Use SQL Developer to connect to your EBS database or Autonomous Database, provisioned in Step 1. Instructions for connecting to an Autonomous Database via SQL Developer can be found [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-sql-dev182.html#GUID-14217939-3E8F-4782-BFF2-021199A908FD).
 

@@ -51,45 +51,35 @@ Estimated Lab Time: 30 minutes
 
 ## STEP 2: Provision the Stack
 
-1. In the navigation menu, scroll down to the **Solutions and Platform** section. Under **Resource Manager**, select **Stacks**.
+1. On the OCI architecture centre's page for [Departmental data warehousing - an EBS integration](https://docs.oracle.com/en/solutions/oci-ebs-analysis/index.html#GUID-A8644D8A-54F2-4015-90F1-7727C68E40CD), click on **Deploy to Oracle Cloud** under the **deploy** section. This should take you to the OCI login screen. Log in to OCI, as usual.
 
     ![](./images/1.13.png " ")
-
-2. Click on the **Create Stack** button.
-
+    
     ![](./images/1.14.png " ")
 
-3. Select the **Sample Solution** radio button. Then, click on the **Select Solution** button.
-
-    ![](./images/1.15.png " ")
-
-4. In the side menu that opens up, choose the **Architecture** tab, check the **Name of ODI-ADW-OAC** solution and hit the **Select Solution** button.
-
-    ![](./images/1.16.png " ")
-
-5. Provide a name to the stack and hit **Next**.
+2. On the next screen, provide a name to the stack and hit **Next**.
 
     ![](./images/1.17.png " ")
 
-6. On the **Configure Variables** screen, choose the compartment you used in the previous screen, enter the passwords you wish to use for ADW, ODI database, VNC connection to the ODI compute instance, ODI database schema and the previously downloaded IDCS access token. Under optional configuration, choose VM.Standard2.4 as the instance shape.
+3. On the **Configure Variables** screen, choose the compartment you used in the previous screen, enter the passwords you wish to use for ADW, ODI database, VNC connection to the ODI compute instance, ODI database schema and the previously downloaded IDCS access token. Under optional configuration, choose VM.Standard2.4 as the instance shape.
 
     ![](./images/1.18.png " ")
 
     ![](./images/1.19.png " ")
 
-7. Enter an appropriate display name and database name for the ADW instance. We also recommend checking the **Auto Scaling** box to enable auto-scaling of the database. Enabling this is optional, but recommended. You can leave everything else, as it is.
+4. Enter an appropriate display name and database name for the ADW instance. We also recommend checking the **Auto Scaling** box to enable auto-scaling of the database. Enabling this is optional, but recommended. You can leave everything else, as it is.
 
     ![](./images/1.20.png " ")
     
-8. Scroll down and provide a name for the analytics instance. Now, hit **Next**.
+5. Scroll down and provide a name for the analytics instance. Now, hit **Next**.
 
     ![](./images/1.21.png " ")
 
-9. Review all the details and click on the **Create** button.
+6. Review all the details and click on the **Create** button.
 
     ![](./images/1.22.png " ")
     
-10. Now that the stack has been created, click on **Terraform Actions** and select **Apply**. In the iframe that pops-up, click on **Apply**, again.
+7. Now that the stack has been created, click on **Terraform Actions** and select **Apply**. In the iframe that pops-up, click on **Apply**, again.
 
     ![](./images/1.23.png " ")
     
@@ -103,13 +93,13 @@ Estimated Lab Time: 30 minutes
     
 ![](./images/1.27.png " ")
 
-11. If everything goes to plan, the status of the job will change to **SUCCEEDED** and you will see the following message at the bottom of the logs.
+8. If everything goes to plan, the status of the job will change to **SUCCEEDED** and you will see the following message at the bottom of the logs.
 
     ![](./images/1.28.png " ")
     
     ![](./images/1.29.png " ")
 
-12. On the same page, you will find **Outputs** and **Associated Resources** under the **Resources** menu. Click on **Outputs**. Make a note of all the outputs marked in red in the image below. You will need all of them in the coming labs. Also copy the ssh\_private\_key and save it in a file. You will need the file to ssh into both, the bastion and the ODI instance. Save this key as **odi\_adw\_oac** in a folder named **odi-adw-oac**.
+9. On the same page, you will find **Outputs** and **Associated Resources** under the **Resources** menu. Click on **Outputs**. Make a note of all the outputs marked in red in the image below. You will need all of them in the coming labs. Also copy the ssh\_private\_key and save it in a file. You will need the file to ssh into both, the bastion and the ODI instance. Save this key as **odi\_adw\_oac** in a folder named **odi-adw-oac**.
 
     ![](./images/1.30.png " ")
     
