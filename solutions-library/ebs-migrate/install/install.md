@@ -37,9 +37,10 @@ Download the Backup Module from My Oracle Support to the backup module server.
     </copy>
     ```
 
-2. Change to the stage directory.
+2. Change to the Oracle user and then go to the stage directory.
 
         <copy>
+        sudo su - oracle
         cd /u01/install/APPS/stage
         </copy>
 
