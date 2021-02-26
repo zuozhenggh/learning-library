@@ -1,218 +1,223 @@
-# GoldenGate Microservices Active-Active 
+# GoldenGate Microservices Active-Active
 
 ## Introduction
-This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availability / Disaster Recovery using Active-Active Technology
+This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availability / Disaster Recovery using Active-Active Technology.
+Since we have already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
 
 *Estimated Lab Time*:  60 minutes
 
 ### Lab Architecture
-![](./images/ggmicroservicesarchitecture.png " ")
+  ![](./images/ggmicroservicesarchitecture.png " ")
 
-## Introduction
-
-Since we’ve already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
-
-## Objectives
+### Objectives
 
 - Rapid Deployment using:
   - OGGCA silent deployment scripts (remove and recreate deployments).
   - REST API to setup bi-directional GoldenGate replication between two databases.
   - SQL Scripts to setup up auto conflict detection and resolution in the database.
 
-## Required Artifacts
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Create One-Way Replication
 
-- Browser to check the deployment.
-- Swingbench to apply transactions.
+## **STEP 1**:Generate Transactions with Swingbench
 
-## **STEP 1**:Start Swingbench to generate transactions
+1. As user *oracle* from the SSH terminal session, navigate to `~/Desktop/Scripts/HOL/Lab8` and start Swingbench utility
 
-```
-<copy>cd /home/oracle/Desktop/Scripts/HOL/Lab8 </copy>
-```
-```
-<copy>./start_swingbench.sh</copy>
-```
-![](./images/h1.png " ")
+     ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab8
+    ./start_swingbench.sh
+    </copy>
+    ```
 
-```
-<copy>https://<your ip address>/Boston/pmsrvr</copy>
-```
-![](./images/h2.png " ")
+    ![](./images/h1.png " ")
 
-![](./images/h3.png " ")
+2. Open a browser tab session to the Performance Metrics Server for *Boston* Deployment
 
-**Active – Active**
+    ```
+    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    ```
 
-## **STEP 2**:Creation of Alias for Boston GG User 
+    ![](./images/h2.png " ")
 
-```
-<copy>cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
-```
-```
-<copy>./create_credential_GGAlias.sh Welcome1 17001 c##ggate@orcl ggate SGGATE2</copy>
-```
-![](./images/h4.png " ")
+3. Click on *IREP* Replicat to view detailed live performance metrics
 
-```
-<copy>https://<your ip address>/Atlanta/adminsrvr</copy>
-```
-![](./images/h5.png " ")
+    ![](./images/h3.png " ")
 
-```
-<copy>cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
-```
-```
-<copy>./create_credential_Protcol.sh Welcome1 17001 oggadmin Welcome1 WSTARGET2</copy>
-```
-![](./images/h6.png " ")
+## **STEP 2**: Configure Active-Active Replication
 
-```
-<copy>https://<your ip address>/Boston/adminsrvr</copy>
-```
-![](./images/h7.png " ")
+1. Navigate to `~/Desktop/Scripts/HOL/Lab9` and create credentials and alias for Boston GG User
 
+    ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab9/Build
+    ./create_credential_GGAlias.sh Welcome1 17001 c##ggate@orcl ggate SGGATE2</copy>
+    ```
 
-## **STEP 3**: Trandata for Boston schema SOE 
+    ![](./images/h4.png " ")
 
-```
-<copy> 
-cd /home/oracle/Desktop/Scripts/HOL/Lab9/Build</copy>
-```
-```
-<copy>./add_SchemaTrandata_182.sh Welcome1 17001</copy>
-```
-![](./images/h8.png " ")
+2. Go to the browser tab session of the Admin Server for *Atlanta* Deployment and validate
 
-![](./images/h9.png " ")
+    ```
+    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    ```
+    ![](./images/h5.png " ")
 
-## **STEP 4**: Add Extract to Boston Deployment 
+3. Navigate to `~/Desktop/Scripts/HOL/Lab9/Build` and run `create_credential_Protcol.sh`
 
-```
-<copy>./add_Extract2.sh Welcome1 17001 EXTSOE1  </copy>
-```
-![](./images/h10.png " ")
+    ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab9/Build
+    ./create_credential_Protcol.sh Welcome1 17001 oggadmin Welcome1 WSTARGET2
+    </copy>
+    ```
+    ![](./images/h6.png " ")
 
-```
-<copy>https://<your ip address>/Boston/adminsrvr</copy>
-```
+4. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
 
-![](./images/h11.png " ")
+    ```
+    <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
+    ```
+    ![](./images/h7.png " ")
 
-## **STEP 5**: Distribution Path Creation 
+5. Add Schema Trandata for Boston schema SOE
 
-```
-<copy>./add_DistroPath2.sh Welcome1 17002 SOE2SOE1 bb 16003 ba</copy>
-```
+    ```
+    <copy>./add_SchemaTrandata_182.sh Welcome1 17001</copy>
+    ```
 
-![](./images/h12.png " ")
+    ![](./images/h8.png " ")
 
-```
-<copy>https://<your ip address>/Boston/distsrvr</copy>
-```
+    ![](./images/h9.png " ")
 
-![](./images/h13.png " ")
+6. Add Extract to Boston Deployment
 
-## **STEP 6**: Distribution path from Boston to connect to Atlanta 
+    ```
+    <copy>./add_Extract2.sh Welcome1 17001 EXTSOE1  </copy>
+    ```
 
-```
-<copy>./add_DistroPath2.sh Welcome1 17002 SOE2SOE1 bb 16003 ba</copy>
-```
+    ![](./images/h10.png " ")
 
-![](./images/h14.png " ")
+7. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
 
-```
-<copy>https://<your ip address>/Boston/distsrvr</copy>
-```
-![](./images/h15.png " ")
+    ```
+    <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
+    ```
 
-## **STEP 7**: Alias Creation 
-```
-<copy>./create_credential_GGAlias.sh Welcome1 16001 ggate@oggoow19 ggate TGGATE1</copy>
-```
-![](./images/h16.png " ")
+    ![](./images/h11.png " ")
 
-```
-<copy>https://<your ip address>/Atlanta/adminsrvr</copy>
-```
-![](./images/h17.png " ")
+8. Add Distribution path from Boston to connect to Atlanta
 
+    ```
+    <copy>./add_DistroPath2.sh Welcome1 17002 SOE2SOE1 bb 16003 ba</copy>
+    ```
 
-## **STEP 8**: Checkpoint Creation 
+    ![](./images/h14.png " ")
 
-```
-<copy>./add_CheckpointTable.sh Welcome1 16001 OracleGoldenGate.TGGATE1</copy>
-```
-![](./images/h18.png " ")
+    ```
+    <copy>https://<Your Public IP Address>/Boston/distsrvr</copy>
+    ```
 
-```
-<copy>https://<your ip address>/Atlanta/adminsrvr</copy>
-```
-![](./images/h19.png " ")
+    ![](./images/h15.png " ")
 
-## **STEP 9**: Replicat Creation on Atlanta
+9. Create Alias
 
-```
-<copy>./add_Replicat1.sh Welcome1 16001 IREP1</copy>
-```
-![](./images/h20.png " ")
+    ```
+    <copy>./create_credential_GGAlias.sh Welcome1 16001 ggate@oggoow19 ggate TGGATE1</copy>
+    ```
 
-```
-<copy>https://<your ip address>/Atlanta/adminsrvr</copy>
-```
-![](./images/h21.png " ")
+    ![](./images/h16.png " ")
 
-## **STEP 10**: Auto CDR setup 
+    ```
+    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    ```
 
-```
-<copy>cd /home/oracle/Desktop/Scripts/HOL/Lab9</copy>
-```
-```
-<copy>./setup_autocdr.sh</copy>
-```
-![](./images/h22.png " ")
+    ![](./images/h17.png " ")
 
+10. Create Checkpoint Table
 
-## **STEP 11**: Start GoldenGate Process 
+    ```
+    <copy>./add_CheckpointTable.sh Welcome1 16001 OracleGoldenGate.TGGATE1</copy>
+    ```
 
-```
-<copy>./start_replication.sh Welcome1 17001 EXTSOE1 17002 SOE2SOE1 16001 IREP1</copy>
-```
+    ![](./images/h18.png " ")
 
-![](./images/h23.png " ")
+    ```
+    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    ```
 
-![](./images/h24.png " ")
+    ![](./images/h19.png " ")
 
+11. Create Replicat at Atlanta
 
-## **STEP 12**: Generate Load through Swingbench 
+    ```
+    <copy>./add_Replicat1.sh Welcome1 16001 IREP1</copy>
+    ```
+    ![](./images/h20.png " ")
 
-In this step we’ll use a script to invoke Swingbench to apply data to both databases at the same time and then check them using the Performance Metric Service.
+    ```
+    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    ```
+    ![](./images/h21.png " ")
+
+12. Setup Auto CDR
+
+    ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab9
+    ./setup_autocdr.sh
+    </copy>
+    ```
+
+    ![](./images/h22.png " ")
+
+13. Start GoldenGate Processes
+
+    ```
+    <copy>./start_replication.sh Welcome1 17001 EXTSOE1 17002 SOE2SOE1 16001 IREP1</copy>
+    ```
+
+    ![](./images/h23.png " ")
 
 
-```
-<copy> 
-cd /home/oracle/Desktop/Scripts/HOL/Lab8</copy>
-```
+## **STEP 3**: Generate Load with Swingbench
 
-```
-<copy>start_swingbench.sh</copy>
-```
+In this step we will use a script to invoke Swingbench to apply data to the source (Atlanta) and target (Boston) databases at the same time and then validate performance using the Performance Metric Service.
 
-![](./images/h25.png " ")
+1. As user *oracle* from the SSH terminal session, navigate to `~/Desktop/Scripts/HOL/Lab9` and start Swingbench utility
 
-**Atlanta:**
- 
-```
-<copy>https://<your ip address>/Atlanta/pmsrvr</copy>
-```
- 
-![](./images/h26.png " ")
+     ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab9
+    ./start_swingbench.sh
+    </copy>
+    ```
 
-***Boston:***
- 
-https://<your ip address>/Boston/pmsrvr 
+    ![](./images/h25.png " ")
 
-![](./images/h27.png " ")
+2. Go to the browser tab session of the Performance Metrics Server for *Atlanta* Deployment and select "*IREP1 > Database Statistics*" to validate
 
+    ```
+    <copy>https://<Your Public IP Address>/Atlanta/pmsrvr</copy>
+    ```
+
+    ![](./images/h26.png " ")
+
+3. Go to the browser tab session of the Performance Metrics Server for *Boston* Deployment and select "*IREP > Database Statistics*" to validate
+
+    ```
+    <copy>https://<Your Public IP Address>/Boston/pmsrvr </copy>
+    ```
+
+    ![](./images/h27.png " ")
 
 You may now *proceed to the next lab*
 
@@ -222,8 +227,8 @@ You may now *proceed to the next lab*
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S., Data Integration, December 2020
-* **Contributors** - Brian Elliott
-* **Last Updated By/Date** - Brian Elliott, December 2020
+* **Contributors** - Brian Elliott, Meghana Banka, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

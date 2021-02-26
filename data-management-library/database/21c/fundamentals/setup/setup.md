@@ -28,7 +28,7 @@ In this lab, you will:
 2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    $ <copy>ssh -i <<sshkeyname>> opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
     [opc@tmdb1 ~]$
@@ -64,15 +64,15 @@ In this lab, you will:
     ````
     <copy>
     cd /home/oracle
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/7FE0DNdK_WA4ccccNRxid_6RQX2g7vvxMTwDuaTQDXED9Gyl9CCdGqS4lIiVvycx/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs_12_18_20.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/JfyNtfOG2TKVaSL_WhM5cZytuua4EfJh71je5CuxF4CH0DWFSVvEDoEitpmfT6Gg/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
     </copy>
     ````
 
-6.  Unzip Cloud\_21c\_labs.zip
+6.  Unzip Cloud\_21c\_Labs.zip
 
     ```
     <copy>
-    unzip Cloud_21c_Labs_12_18_20.zip
+    unzip Cloud_21c_Labs.zip
     </copy>
     ```
 
@@ -100,6 +100,7 @@ In this lab, you will:
     /home/oracle/labs/M104784GC10/create_CDB21.sh
     </copy>
     ```
+
 2. Set your environment. At the prompt type in `CDB21`
 
     ```

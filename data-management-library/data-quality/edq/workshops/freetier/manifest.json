@@ -7,7 +7,7 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
-      "title": "Introduction to EDQ",
+      "title": "Introduction",
       "description": "Introduction to EDQ",
       "filename": "../../introduction/introduction.md"
     },
@@ -29,34 +29,34 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Access EDQ Instance and Create Project",
-      "description": "Access EDQ Instance and Create Project",
+      "title": "Lab 4: Initialize Environment",
+      "description": "Initialize Environment",
       "filename": "../../setup-edq-rep/setup-edq-rep.md"
     },
     {
       "title": "Lab 5: Data Profiling",
       "description": "Data Profiling",
-      "filename": "../../edq-profiling/edq-profiling.md"
+      "filename": "../../profiling/profiling.md"
     },
     {
       "title": "Lab 6: Reference Data",
       "description": "Reference Data",
-      "filename": "../../edq-reference-data/edq-reference-data.md"
+      "filename": "../../reference-data/reference-data.md"
     },
     {
       "title": "Lab 7: Data Auditing",
       "description": "Data Auditing",
-      "filename": "../../edq-audit-tools/edq-audit-tools.md"
+      "filename": "../../audit-tools/audit-tools.md"
     },
     {
       "title": "Lab 8: Data Standardization and Enhancement",
       "description": "Data Standardization and Enhancement",
-      "filename": "../../edq-data-standardization/edq-data-standardization.md"
+      "filename": "../../data-standardization/data-standardization.md"
     },
     {
       "title": "Lab 9: Prepare EDQ Process for ODI Consumption",
       "description": "Prepare EDQ Process for ODI Consumption",
-      "filename": "../../edq-odi-consumption/edq-odi-consumption.md"
+      "filename": "../../odi-consumption/odi-consumption.md"
     }
   ]
 }
