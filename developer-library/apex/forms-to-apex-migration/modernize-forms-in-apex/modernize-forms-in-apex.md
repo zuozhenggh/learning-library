@@ -1,7 +1,7 @@
-# Modernizing Customer Oracle Form to Oracle APEX Page
+# Modernizing Oracle Form to Oracle APEX
 
 ## Introduction
-In this lab, You will learn how to create the apex application and learn how to modernize the Customer Form.  The objective is to show you the options for these sample forms and then you can get an idea to modernize your own Forms Application.
+In this lab, You will learn how to create the apex application and learn how to modernize the Customer Form and Order Form.  The objective is to show you the options for these sample forms and then you can get an idea to modernize your own Forms Application.
 
 Depending on your requirements you can take advantage of this modernization to update also the business rules, not just the screens. Because this is not a trivial process, so it's the right moment to review the business logic and check what you need to update or remove.
 
@@ -13,6 +13,7 @@ Estimated Lab Time: 30 minutes
 
 * Creating an Oracle APEX application
 * Modernize the Customer Form from Oracle Forms in Oracle APEX.
+* Modernize the Order Form from Oracle Forms in Oracle APEX.
 
 
 ### Prerequisites
@@ -64,8 +65,11 @@ We will be walking through series of steps on how to create Customer Summary Rep
 8. You will see the Page Created Successfully , you will see 2 pages created
     ![](images/success_form.png " ")
 
+   Wait until the page gets created, the page can take little time to get created, do not click on the **Create** more than once , it can result in unique constraint violation error. 
+
 9. When you run the Page, you will be able to see Report with all the customers listed and you can edit or create new customer from the Report page
     ![](images/interactive_report.png " ")
+
 
 10. **Customer Form** works in the similar way as **Forms Data Block**.
     If you want to manage the create/update operation from the **Interactive Reports** Page you can make the **Customer Form** to be a modal page.
@@ -236,7 +240,7 @@ That completes the List of Values section of the Migration.
         ![](images/customer-modal-form.png " ")
 
 
-  Great Job !! You have successfully completed transforming the **Customer** Form to **Interactive Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
+  Great Job !! You have successfully completed transforming the **Customer** Form to **Faceted Search Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
 
 ## **STEP 7**:Additional Enhancements to Customer Form
 
@@ -273,7 +277,6 @@ Once the page is created, you can go to the page and make the changes you need. 
 3. Once you finish customizing, when you run the customer form you will see the customized form
   ![](images/customer-form.png " ")
 
-### Master/Detail Page for Orders/Item
 
 
 
@@ -281,7 +284,7 @@ Once the page is created, you can go to the page and make the changes you need. 
 
  - **Author** -  Vanitha Subramanyam, Senior Solution Architect
  - **Contributors** -Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
- - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
+ - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
