@@ -102,7 +102,7 @@ When working with embedded Python execution, a typical workflow is:
     ```
     ![Image alt text](images/LinearRegression_model.png "Model")
 
-2. Run the script to predict the petal width using the `predict` function:
+2. Run the script to predict the petal length using the `predict` function:
     ```
     %python
 

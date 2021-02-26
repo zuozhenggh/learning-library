@@ -118,19 +118,19 @@ This step shows how to predict numerical values using multiple regression. Given
     ```
     %python
 
-    RES_DF = glm_mod.predict(TEST.drop('YRS_RESIDENCE'), supplemental_cols = TEST)
+    RES_DF = glm_mod.predict(TEST.drop('TEST_X'), supplemental_cols = TEST)
 
-    z.show(RES_DF[['PREDICTION', 'YRS_RESIDENCE'] + RES_DF.columns])
+    z.show(RES_DF[['PREDICTION', 'TEST_X'] + RES_DF.columns])
     ```
 
     ![Image alt text](images/prediction.png "Prediction")
-In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `YRS_RESIDENCE` columns respectively, as shown in the screenshot.
+In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `TEST_X` columns respectively, as shown in the screenshot.
 
 8. Run the following command to plot the predicted versus the actual years of residence. Click **Settings** to see how the plot was specified.
     ```
     %python
 
-    z.show(RES_DF[['YRS_RESIDENCE', 'PREDICTION']])
+    z.show(RES_DF[['TEST_X', 'PREDICTION']])
     ```
     ![Image alt text](images/view_predicted_actual_values.png "Predicted and Actual Values")
 
@@ -143,7 +143,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
 
 
     x = RES_DF[['PREDICTION']].pull()
-    y = RES_DF[['YRS_RESIDENCE']].pull()
+    y = RES_DF[['TEST_X']].pull()
     n = len(x)
     refx = np.linspace(0, 15,n)
     plt.plot(refx, refx, '.')
@@ -165,7 +165,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.figure(figsize=[9,7])
 
     x = np.matrix(RES_DF[['PREDICTION']].pull())
-    y = np.matrix(RES_DF[['YRS_RESIDENCE']].pull())
+    y = np.matrix(RES_DF[['TEST_X']].pull())
     plt.plot(x, y-x, '.')
 
     plt.hlines(y=0, xmin=0, xmax=15, colors='black', linestyles='solid', alpha=0.8)
@@ -183,9 +183,9 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     ```
     %python
 
-    print(((RES_DF['YRS_RESIDENCE'] - RES_DF['PREDICTION']) ** 2).mean() ** .5)
+    print(((RES_DF['TEST_X'] - RES_DF['PREDICTION']) ** 2).mean() ** .5)
 
-    print(glm_mod.score(TEST.drop('YRS_RESIDENCE'), TEST[:,['YRS_RESIDENCE']]))
+    print(glm_mod.score(TEST.drop('TEST_X'), TEST[:,['TEST_X']]))
     ```
 
     ![Image alt text](images/rmse_calculation.png "RMSE Calculation ")
