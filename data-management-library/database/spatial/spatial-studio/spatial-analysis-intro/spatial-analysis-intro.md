@@ -126,23 +126,63 @@ In the previous step, you augmented crash items with police region. In this step
 
    ![Image alt text](images/spatial-analysis-16.png "Image title")
 
-2. In the Summarize by region dialog you can leave default results dataset name, POLICE\_BOUNDS SUMMARIZE. Enter the other items in the dialog: for each item in POLICE\_BOUNDS you are summarizing ACCIDENTS based on Count. Enter NUM_ACCIDENTS as the summary colum name to be added. Click **Run**.
+2. In the Summarize by region dialog you can leave default results dataset name, POLICE\_BOUNDS SUMMARIZE. Enter the other items in the dialog: for each item in POLICE\_BOUNDS you are summarizing ACCIDENTS based on Count. Enter NUM_ACCIDENTS as the column to be added with accidents counts. Click **Run**.
 
    **Note:** In addition to Count, you can also summarize numeric attributes with this analysis, for example using Average. 
 
    ![Image alt text](images/spatial-analysis-17.png "Image title")
 
-3. Drag the result, POLICE\_BOUNDS SUMMARIZE, onto the map. In the Layers List click the hamburger menu for  POLICE\_BOUNDS SUMMARIZE and select Settings.  Under Style, change Color to **Based on data**.
+3. Drag the result, POLICE\_BOUNDS SUMMARIZE, onto the map. Then in the Layers List click the hamburger menu for  POLICE\_BOUNDS SUMMARIZE and select Settings.  Under Style, change Color to **Based on data**.
 
    ![Image alt text](images/spatial-analysis-18.png "Image title")
 
-4. ...
+4. For column, select NUM\_ACCIDENTS. Update the values with 1, 5, 10, 15, 20. Enter each value in any cell, as they will be automatically sorted in the value list. Once the values are entered, click the edit icon to Set palette and select a color palette. Observe the map display police regions color coded by the number of accidents according to your value and palette entries.
 
    ![Image alt text](images/spatial-analysis-19.png "Image title")  
 
+   On your own, feel free to add a info window or tooltip with accident counts when clicking or hovering over a police region.  As you did in Lab 2/Step 3, you can also add a Table view and drag in POLICE\_BOUNDS SUMMARIZE to view the info in tabular form.
+
 ## **STEP 5**: Identify Nearest Items
 
-You may now [proceed to the next lab](#next).
+In this step, you determine the nearest accident to each police station. The result contains each police station augmented with the id and and distance to the nearest accident.  The analysis also provides an option include all columns for the nearest item instead of just the id and distance.
+
+1. Click on the hamburger menu for the POLICE\_POINTS layer in the Layers List and select Spatial Analysis. Select the **Analytics** tab and then click the tile **Nearest per item**.
+
+   ![Image alt text](images/spatial-analysis-20.png "Image title")  
+
+2. In the Nearest per item dialog, name the result POLICE\_POINTS WITH NEAREST ACCIDENT (or a name of your choosing). For each item in POLICE\_POINTS you are finding the nearest item in ACCIDENTS. Expand the Advanced section. Enable the options to Include distance in the result. For the distance column enter DISTANCE\_TO\_ACCIDENT (or a name of your choosing) and select a distance unit. Then click **Run**.
+
+   ![Image alt text](images/spatial-analysis-21.png "Image title")  
+
+3. In the Layers list, turn off the POLICE\_POINTS layer. Drag the POLICE\_POINTS WITH NEAREST ACCIDENT analysis onto the map.
+
+   ![Image alt text](images/spatial-analysis-22.png "Image title")  
+
+4. Go to Settings for the POLICE\_POINTS WITH NEAREST ACCIDENT layer and set a Style of your choosing. Then go to the Interaction tab and enable an Info window. Select columns of your choosing, including the the columns added by this analysis: ACCIDENT\_ID and DISTANCE\_TO\_ACCIDENT. Click on a POLICE\_POINTS item and observe the info window displays the ID and distance to the nearest item in ACCIDENTS. 
+
+   ![Image alt text](images/spatial-analysis-23.png "Image title")  
+
+   On your own, feel free to now style police stations based on distance to the nearest accident, using colors or size. 
+
+   Finally, save your project to preserve your changes.
+
+
+## **STEP 6**: Access SQL code and GeoJSON endpoint [Optional]
+
+  This optional step is for developers interested in accessing results programmatically. Spatial Studio allows you to see the SQL code for spatial analyses and provides a web endpoint that returns results as GeoJSON. This info is available in Dataset Properties and is accessed either in a Project or from the Datasets page. You will access the info from within you Project.
+  
+  1. In the Data Elements panel, click the hamburger menu for the one of your analysis, for example **ACCIDENTS INSIDE** and select **Properties**
+  
+   ![Image alt text](images/spatial-analysis-24.png "Image title")  
+
+  2. Observe the sections with SQL code and the GeoJSON endpoint. 
+
+   ![Image alt text](images/spatial-analysis-25.png "Image title")    
+
+    On your own, paste the GeoJSON endpoint into a browser and observe your results returned as GeoJSON. Similarly, you may copy and paste the SQL code into SQL Developer Web to run the analysis directly. 
+
+
+This concludes the Intro to Oracle Spatial Studio workshop. 
 
 
 ## Acknowledgements
