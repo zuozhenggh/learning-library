@@ -1,8 +1,23 @@
 # Architecture
 
+## Introduction
+
 The architecture for this runbook is as follow, we have one small machine (bastion) that you will connect into. The compute nodes will be on a separate private network linked with RDMA RoCE v2 networking. The bastion will be accesible through SSH from anyone with the key (or VNC if you decide to enable it). Compute nodes will only be accessible through the bastion inside the network. This is made possible with 1 Virtual Cloud Network with 2 subnets, one public and one private.
 
-## Baseline Infrastructure 
+### Objectives
+
+In this lab:
+* Talk about the different OCI components and services you will need in order to run ANSYS Fluent on OCI
+* Briefly describe the acrhitecture of this setup
+
+### Prerequisites
+
+* Some understanding of cloud and database terms is helpful
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
+
+## Baseline Infrastructure
 
 Cluster Networks are supported in the following regions. In each case, we recommend using the baseline reference architecture and then adjusting it, as required, to meet your specific requirements:
 
@@ -29,10 +44,7 @@ The above baseline infrastructure provides the following specifications:
     * 36 cores per node
     * 384 GB memory per node
 
-
-
 ## Optional Infrastructure
-
 
 ### **Storage** ###
 
@@ -42,9 +54,8 @@ On top of the NVME SSD storage that comes with the HPC shape, you can also attac
 
 You can create a visualizer node, such as a GPU VM or BM machine, depending on your requirements. This visualizer node can be your bastion host or else it can be separate. Depending on the security requirements for the workload, the visualizer node can be placed in the private or public subnet.
 
-
-
 ## Acknowledgements
+
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca, Samrat Khosla
 * **Last Updated By/Date** - Samrat Khosla, October 2020

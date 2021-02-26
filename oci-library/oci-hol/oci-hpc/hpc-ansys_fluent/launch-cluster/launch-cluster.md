@@ -9,6 +9,16 @@ There are many ways to launch an HPC Cluster Network, this solutions guide will 
 
 Estimated Lab Time: 30 minutes
 
+### Objectives
+
+In this lab:
+* We will walk you through the different steps required to launch a High Performance Computing(HPC) Cluster Network on OCI  
+
+### Prerequisites
+
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* Familiarity with networking is helpful
+
 ## **OPTION 1**: Creation of Cluster Network through Marketplace
 
 Marketplace holds applications and images that can be deployed with our infrastructure. For customers that want to use Oracle Linux, an HPC Cluster Network image is available and can be launched from directly within marketplace. We suggest launching the [CFD Ready Cluster](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/75645211) that will contain librairies needed for CFD.
@@ -29,14 +39,14 @@ Marketplace holds applications and images that can be deployed with our infrastr
     * Type in the number of Compute instances for the cluster
     * Uncheck Install OpenFOAM
     * If you need more than 6TB of Shared disk space, check GlusterFS and select how many servers you would  need. (6TB per server)
+
 5. Click Create.
+
 6. Navigate to Terraform Actions then click Apply. This will launch the CN provisioning.
 
     ![](images/apply.png " ")
 
 7. Wait until the job shows ‘Succeeded’ then navigate to Outputs to obtain the bastion and compute node private IP’s.
-
-
 
 ## **OPTION 2**: Creation of Cluster Network through Manual Configuration
 
@@ -63,23 +73,29 @@ Marketplace holds applications and images that can be deployed with our infrastr
 14. Launch the cluster network.
 15. While it is loading, create another instance under Main Menu, Compute and Instances.
 16. Put it in the public subnet that was just created, using your public key and shape should be VM.Standard2.1 or similar. This will be the bastion that we will use to connect to the cluster.
-17. SCP the key to the cluster on the bastion at /home/opc/.ssh/cluster_key and copy it also to /home/opc/.ssh/id_rsa
+17. SCP the key to the cluster on the bastion at /home/opc/.ssh/cluster\_key and copy it also to /home/opc/.ssh/id\_rsa
 18. Install the Provisioning Tool on the bastion via the following command:
     
     ```
+    <copy>
     sudo rpm -Uvh https://objectstorage.us-ashburn-1.oraclecloud.com/n/hpc/b/rpms/o/oci-hpc-provision-20190905-63.7.2.x86_64.rpm
+    </copy>
     ```
 19. Navigate to Compute then Instance Pools in the Console and collect all the IP addresses for the cluster network pool. Or use this command on the bastion if you have nothing else running on your private subnet.
 
     ```
+    <copy>
     for i in `nmap -sL Private_Subnet_CIDR | grep "Nmap scan report for" | grep ")" | awk '{print $6}'`;do echo ${i:1:-1} >> /tmp/ips; done
+    </copy>
     ```
 
 20. Install the Provisioning Tool via the following command:
 
     ```
+    <copy>
     ips=`cat /tmp/ips`
     /opt/oci-hpc/setup-tools/cluster-provision/hpc_provision_cluster_nodes.sh -p -i /home/opc/.ssh/id_rsa $ips
+    </copy>
     ```
     
 ## Acknowledgements

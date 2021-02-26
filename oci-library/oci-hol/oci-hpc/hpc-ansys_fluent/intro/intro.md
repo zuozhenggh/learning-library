@@ -1,6 +1,6 @@
 # Introduction
 
-## Introduction
+## About this Workshop
 
 High Performance Computing is changing product development and research enabling customers to solve complex problems faster. This means fewer prototypes, accelerates testing, and decreases time to market. Oracle offers on-demand HPC infrastructure, suitable for any HPC workload, based on the most advanced compute, storage, networking, and software technologies. You get all this at a fraction of the cost of building it yourself and avoid capacity utilization issues.
 
@@ -31,13 +31,12 @@ Currently, a single BM per compute node is supported. It allows root access for 
 ### Objectives
 
 In this lab, you will:
-* Launch HPC Cluster Network
-* Access your cluster 
-* Configure Visualization
-* Access your VNC
-* Install ANSYS Fluent
-* Run ANSYS Fluent
-
+- Launch a High Performance Compute Cluster Network in the Oracle Cloud Infrastructure
+- Access your cluster using your bastion's public IP adresss
+- Create and configure Visualization Tools for your simulation using GPU Visualization node
+- Access your VNC by connecting through an SSH tunnel
+- Install ANSYS Fluent on your instance by adding all the required libraries and binary files
+- Run ANSYS Fluent
 
 ### Prerequisites
 
@@ -45,22 +44,11 @@ In this lab, you will:
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
-## About this Workshop
-
-- Launch a High Performance Compute Cluster Network in the Oracle Cloud Infrastructure
-- Access your cluster using your bastion's public IP adresss
-- Create and configure Visualization Tools for your simulation using GPU Visualization node
-- Access your VNC by connecting through an SSH tunnel
-- Install ANSYS Fluent on your instance by adding all the required libraries and binary files
-- Run ANSYS Fluent 
-
-
-
 ## Acknowledgements
+
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca, Samrat Khosla
 * **Last Updated By/Date** - Samrat Khosla, October 2020
-
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

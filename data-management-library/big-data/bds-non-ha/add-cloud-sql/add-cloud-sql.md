@@ -4,6 +4,8 @@
 
 In this lab, you will learn how to maintain the new cluster that you created in the previous lab. You will also learn how to add Oracle Cloud SQL to your cluster.
 
+Estimated Lab Time: 15 minutes
+
 ### Objectives
 
 * Maintain your cluster.
@@ -11,7 +13,7 @@ In this lab, you will learn how to maintain the new cluster that you created in 
 
 ### What Do You Need?
 
-This lab assumes that you have successfully completed the following labs in the **Contents** menu on the right:
+This lab assumes that you have successfully completed the following labs in the **Contents** menu:
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 
@@ -96,10 +98,10 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 ## Acknowledgements
 
 * **Authors:**
-    + Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, December 2020
+* **Last Updated By/Date:** Lauran Serhal, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

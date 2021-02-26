@@ -83,7 +83,7 @@ Estimated Time: 30-45 minutes
 1. Next, download the Terraform sample code. Enter the following command into the cloud shell.
 
     ```
-    curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/A_T1LbPB5CdUsSJIRJY7ZfFljxQwhsFlAQ9J-8ls-4FduMEB3OYfRXqTugLXVh94/n/ociobenablement/b/hol-labs/o/terraform-demo.zip -o terraform-demo.zip
+    curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/XXL2U0n_53VH8Rl9s3M0okgSRgxI41o9lcTkuk-cB5hA7L9tOma0YKKC54Btl0g9/n/ociobenablement/b/hol-labs/o/terraform-demo.zip -o terraform-demo.zip
     ```
 
     This will download the sample terraform zip file.

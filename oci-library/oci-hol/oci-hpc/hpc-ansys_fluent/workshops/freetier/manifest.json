@@ -8,47 +8,45 @@
         {
             "title": "Introduction",
             "description": "Brief Introduction on Oracle HPC",
-            "filename": "../../intro/intro.md"   
+            "filename": "../../intro/intro.md"
         },
         {
-            "title": "ANSYS Fluent Introduction",
+            "title": "Lab 1: ANSYS Fluent Introduction",
             "description": "Introduction to the software",
-            "filename": "../../ansys-intro/ansys.md"      
+            "filename": "../../ansys-intro/ansys-intro.md"
         },
         {
-            "title": "Architecture",
+            "title": "Lab 2: Architecture",
             "filename": "../../architecture/architecture.md"
         },
         {
-            "title": "Launch HPC Cluster Network",
+            "title": "Lab 3: Launch HPC Cluster Network",
             "description": "Steps to launch HPC Cluster Network",
-            "filename": "../../launch-cluster/launch-cluster.md"        
+            "filename": "../../launch-cluster/launch-cluster.md"
         },
         {
-            "title": "Access your Cluster",
+            "title": "Lab 4: Access your Cluster",
             "description": "Steps to access the cluster",
             "filename": "../../access-cluster/access-cluster.md"
-            
         },
-        {         
-            "title": "Configure Visualization",
+        {
+            "title": "Lab 5: Configure Visualization",
             "description": "Setup and configure Visualization Tools",
             "filename": "../../config-visualization/config-visualization.md"
         },
         {
-            "title": "Access your VNC",
+            "title": "Lab 6: Access your VNC",
             "description": "Steps to access VNC",
             "filename": "../../access-VNC/access-VNC.md"
         },
         {
-            "title": "Install ANSYS Fluent",
+            "title": "Lab 7: Install ANSYS Fluent",
             "filename": "../../install/install.md"
         },
         {
-            "title": "Run ANSYS Fluent",
+            "title": "Lab 8: Run ANSYS Fluent",
             "filename": "../../run/run.md"
         }
-        
     ]
 }
 

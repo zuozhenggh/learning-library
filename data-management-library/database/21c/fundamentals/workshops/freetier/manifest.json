@@ -77,6 +77,18 @@
             "filename": "../../securefile-lobs/securefile-lobs.md"
         },
         {
+            "title": "Lab: Automatic In-Memory",
+            "filename": "../../auto-in-mem/auto-in-mem.md"
+        },
+        {
+            "title": "Lab: In-Memory Hybrid Scans",
+            "filename": "../../im-hybrid-scans/im-hybrid-scans.md"
+        },
+        {
+            "title": "Lab: Synchronizing Apps in App PDBs",
+            "filename": "../../sync-app-pdbs/sync-app-pdbs.md"
+        },
+        {
             "title": "Lab: MAX_IDLE_BLOCKER_TIME Parameter",
             "filename": "../../max-idle-blocker/max-idle-blocker.md"
         },
@@ -119,6 +131,10 @@
         {
             "title": "Lab: Upgraded Password File Case Sensitivity",
             "filename": "../../upgraded-pwd/upgraded-pwd.md"
+        },
+        {
+            "title": "Lab: Password Length Enforcement",
+            "filename": "../../enforce-min-pwd/enforce-min-pwd.md"
         }
     ]
 }
