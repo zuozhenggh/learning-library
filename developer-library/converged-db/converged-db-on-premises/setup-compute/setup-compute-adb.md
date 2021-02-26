@@ -21,7 +21,6 @@ For more information about Terraform and Resource Manager, please see the append
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
-- Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
 
 ## **STEP 1**: Create Stack:  Compute + ADB + Networking
 
@@ -284,4 +283,4 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 ## Need Help?
 
-Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
