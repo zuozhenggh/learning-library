@@ -22,7 +22,7 @@ Estimated Lab Time: 15 minutes
 - ADW Wallet File.
 - VNC Viewer or any similar application.
 
-## STEP 1: SSH into Bastion Node, connect to ODI instance and secure copy ADW wallet file onto it
+## **STEP 1:** SSH into Bastion Node, connect to ODI instance and secure copy ADW wallet file onto it
 
 1. Open a Terminal and alter the permissions of the private key file to make it read-only for the current user. Assuming the key file is saved as odi\_adw\_oac in a folder named odi-adw-oac in the current working directory, run the following command:
 
@@ -58,7 +58,7 @@ Estimated Lab Time: 15 minutes
 
         sudo mv Wallet_<datawarehouse_name>.zip /home/oracle/Desktop/
     
-## STEP 2: Access ODI Studio
+## **STEP 2:** Access ODI Studio
 
 1. Start VNC Viewer on your local machine. Since, we have a tunnel from the local machine to the ODI node, we will use the IP **localhost:1** as the URL.  **Enter** or click on **Connect** depending on the application you are using.
 
@@ -100,5 +100,7 @@ You may now proceed to Lab 3.
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
 - **Last Updated By/Date** - Yash Lamba, January 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

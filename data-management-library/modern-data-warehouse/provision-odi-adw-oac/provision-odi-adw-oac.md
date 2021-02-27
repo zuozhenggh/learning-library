@@ -15,7 +15,7 @@ Estimated Lab Time: 30 minutes
 - IDCS Access Token to provision an analytics instance as part of the stack.
 - Necessary permissions and quota to provision the stack in a compartment.
 
-## STEP 1: Obtain IDCS Access Token
+## **STEP 1:** Obtain IDCS Access Token
 
 1. Login to the OCI console and go to the navigation menu using the menu button in the top left.
 
@@ -49,7 +49,7 @@ Estimated Lab Time: 30 minutes
 
 8. You may now close the Identity Cloud Service Console.
 
-## STEP 2: Provision the Stack
+## **STEP 2:** Provision the Stack
 
 1. On the OCI architecture centre's page for [Departmental data warehousing - an EBS integration](https://docs.oracle.com/en/solutions/oci-ebs-analysis/index.html#GUID-A8644D8A-54F2-4015-90F1-7727C68E40CD), click on **Deploy to Oracle Cloud** under the **deploy** section. This should take you to the OCI login screen. Log in to OCI, as usual.
 
@@ -105,7 +105,7 @@ Estimated Lab Time: 30 minutes
     
 **Note**: You may use any names for the files and folders. We will be using the names that we mentioned above.
 
-## STEP 3: Download Autonomous Data Warehouse wallet file
+## **STEP 3:** Download Autonomous Data Warehouse wallet file
 
 1. Go to the **Associated Resources** tab to get the links to the provisioned resources.
 
@@ -133,5 +133,7 @@ You may now proceed to Lab 2.
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
 - **Last Updated By/Date** - Yash Lamba, January 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

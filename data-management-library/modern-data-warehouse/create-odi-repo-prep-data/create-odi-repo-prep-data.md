@@ -24,7 +24,7 @@ Estimated Lab Time: 40 minutes
 
 Note: Please download the above file before continuing. Normally, while working with EBS, you would write sql queries to fetch and combine records from different modules of the application and then create temporary tables with that data to perform any analysis. The script above will create the temporary tables that you need for the rest of the labs.
 
-## STEP 1: Provision Autonomous Data Warehouse (Optional)
+## **STEP 1:** Provision Autonomous Data Warehouse (Optional)
 
 If you are using an Autonomous Database to emulate the EBS database, please follow Step 1, else proceed to Step 2.
 
@@ -58,7 +58,7 @@ If you are using an Autonomous Database to emulate the EBS database, please foll
 
 8. Download the wallet file for the database as shown in step 3 of Lab 1. 
         
-## STEP 2: Creating Tables in EBS-emulating Database
+## **STEP 2:** Creating Tables in EBS-emulating Database
 
 1. Use SQL Developer to connect to your EBS database or Autonomous Database, provisioned in Step 1. Instructions for connecting to an Autonomous Database via SQL Developer can be found [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-sql-dev182.html#GUID-14217939-3E8F-4782-BFF2-021199A908FD).
 
@@ -66,7 +66,7 @@ If you are using an Autonomous Database to emulate the EBS database, please foll
 
 3. The following tables should be visible: COST, COUNTRY\_FORECAST, PPM\_BUDGET\_VS\_ACTUAL, PPM\_ROLLED\_UP, STEEL\_TARIFF, STEEL\_TOTAL\_COST\_FORECAST.
     
-## STEP 3: Create Empty Target Tables and ODI Schema in Autonomous Data Warehouse
+## **STEP 3:** Create Empty Target Tables and ODI Schema in Autonomous Data Warehouse
 
 1. Connect to the Autonomous Data Warehouse that we created as part of the ODI-ADW-OAC stack as the ADMIN user via SQL Developer. We downloaded the wallet to the local machine in the previous lab.
 
@@ -92,7 +92,7 @@ If you are using an Autonomous Database to emulate the EBS database, please foll
     
 4. Connect to the ADW instance, again, but this time as the EBS user and execute the 'ModernDW\_Schema.sql' script to create empty target tables for our integration under the EBS schema. 
    
-## STEP 4: Creating ODI Master Repository
+## **STEP 4:** Creating ODI Master Repository
 
 In order to use ODI, we need to create a master and work repository. For this, we are going to use the Autonomous Data Warehouse that was spun up as part of the stack.
 
@@ -128,7 +128,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
     
     ![](./images/3.16.png " ")
 
-## STEP 5: Connect to Master Repository
+## **STEP 5:** Connect to Master Repository
 
 1. Click on **Connect To Repository** and click on the **+** sign in the login prompt to create a new login. 
     
@@ -150,7 +150,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
     
     ![](./images/3.22.png " ")
     
-## STEP 6: Create a Work Repository
+## **STEP 6:** Create a Work Repository
 
 1. Click on the **Topology** tab. Expand the repositories section. Under the master repository, you will find Work Repositories. Right click and select **New Work Repository**.
 
@@ -176,7 +176,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
 
 ![](./images/3.31.png " ")
 
-## STEP 7: Connect to the Work Repository
+## **STEP 7:** Connect to the Work Repository
 
 1. Select the **Designer** tab and then disconnect from the master repository.
     
@@ -198,5 +198,7 @@ You may now proceed to Lab 4.
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
 - **Last Updated By/Date** - Yash Lamba, January 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
