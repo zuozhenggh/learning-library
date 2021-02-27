@@ -44,9 +44,48 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1.  After you login, click on the **Create a VM instance** button in the **Quick Actions** section.
 
-![](images/click-create-vm-instance.png " ")
+    ![](images/click-create-vm-instance.png " ")
 
 Alternatively, you can click on the service menu on the top left and then on **Compute** -> **Instances**. A new page opens up with a blue **Create Instance** button on which you click on.
+
+2. Fill in the name for your compute instance.
+
+   ![](images/fill-in-name.png " ")
+
+3. Select your compartment from the drop-down list.
+
+   ![](images/select-compartment.png " ")
+
+4. Before you select the availability domain, check under **Governance** -> **Limits, Quotas and Usage**, in which availability domain of your selected region you have GPU instances available.
+   Select the availability domain, in which the compute instance will be provisioned.
+
+   ![](images/select-AD.png " ")
+
+5. Click on the **Change image** button.
+
+   ![](images/change-image.png " ")
+
+   Select the image you want to use for your compute instance and click on the **Select Image** button. We will select Ubuntu 18.04 which is recommended by Faceswap.
+
+   ![](images/select-image.png " ")
+
+6. Click on the **Change Shape** button.
+
+   ![](images/change-shape.png " ")
+
+   Select **Virtual Machine** and **Specialty and Legacy**. There you will find the GPU instance and the **Always Free** VM.Standard.E2.1.Micro shape (in case you are not owning a PAYG account to run GPU instances).
+
+   ![](images/select-VM-SL.png " ")
+
+   Select the GPU instance you want to provision, read and check the box _I have reviewed and accept the following documents: Oracle and Nvidia terms of use_ and click on the **Select shape** button. In our case, it is the VM.GPU2.1 based on the P100 (NVIDIA Pascal GPU architecture) with 1 GPU. You can request service limits for virtual and bare metal machines based on V100 (NVIDIA Volta GPU architecture) and A100 (NVIDIA Ampere GPU architecture).
+
+   ![](images/select-GPU.png " ")
+
+   7. In case you have already created a VCN in your compartment, you select the VCN and subnet you want to place your compute instance in. If not, you can click on **Create new virtual cloud network**, select a name and compartment for your VCN and a name for your public subnet. You can keep the default CIDR block or adjust it.
+      You can choose to assign a public IP address to your instance.
+      Assigning a public IP address makes this instance accessible from the internet. If you're not sure whether you need a public IP address, you can always assign one later.
+
+   ![](images/create-vcn.png " ")
 
 ## **Acknowledgements**
 
