@@ -18,7 +18,7 @@ Estimated Workshop Time: 60 minutes
 * Automatic In-Memory
 * In-Memory Hybrid Scans
 * Synchronizing Apps in App PDBs
-* MAX_IDLE_BLOCKER_TIME Parameter
+* MAX\_IDLE\_BLOCKER\_TIME Parameter
 
 ### Prerequisites
 
