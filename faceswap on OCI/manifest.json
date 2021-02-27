@@ -14,9 +14,9 @@
         }
         ,
         {
-              "title": "Lab 1: Launch GPU instance on OCI",
-              "description": "This lab walks you through the required and optional steps to launch a GPU instance on Oracle Cloud Infrastructure.",
-              "filename": "./Lab 1/Launch GPU instance on OCI.md"
+              "title": "Lab 1: Create SSH keys",
+              "description": "This lab walks you through the steps to create SSH keys that you will need to connect to your compute instance.",
+              "filename": "./Lab 1 - Create SSH keys/Lab 1 - Create SSH keys.md"
         }
         ,
         {
