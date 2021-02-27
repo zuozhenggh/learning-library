@@ -15,14 +15,14 @@
         ,
         {
               "title": "Lab 1: Create SSH keys",
-              "description": "This lab walks you through the steps to create SSH keys that you will need to connect to your compute instance.",
+              "description": "This lab walks you through the required and optional steps to create SSH keys that you will need to connect to your compute instance.",
               "filename": "./Lab 1 - Create SSH keys/Lab 1 - Create SSH keys.md"
         }
         ,
         {
-              "title": "Lab 2: Install Faceswap",
-              "description": "This lab you through the required and optional steps to install Faceswap (incl. upating the NVIDIA drivers).",
-              "filename": "./Lab 2/Install Faceswap.md"
+              "title": "Lab 2: Lab 2 - Provision a GPU instance",
+              "description": "This lab you through the required and optional steps to launch a GPU instance on OCI .",
+              "filename": "./Lab 2 - Provision a GPU instance/Lab 2 - Provision a GPU instance.md"
         }
         ,
         {
