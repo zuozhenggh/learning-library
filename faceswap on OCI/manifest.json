@@ -20,7 +20,7 @@
         }
         ,
         {
-              "title": "Lab 2: Lab 2 - Provision a GPU instance",
+              "title": "Lab 2: Provision a GPU instance",
               "description": "This lab you through the required and optional steps to launch a GPU instance on OCI .",
               "filename": "./Lab2/Lab 2 - Provision a GPU instance.md"
         }
