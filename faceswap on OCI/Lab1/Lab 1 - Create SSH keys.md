@@ -12,7 +12,7 @@ _IMPORTANT: If the SSH key is not created correctly, you will not be able to con
 
 If you are creating an SSH Key for a workshop that will be running _inside a LiveLabs tenancy_, do not select Oracle Cloud Shell. Select the options that correspond to the OS running on your local laptop. You will be pasting your key into the LiveLabs reservation page so that we can pre-create your instance for you.
 
-![](/images/livelabs-reservation.png " ")
+![](images/livelabs-reservation.png " ")
 
 ## Option 1: Oracle Cloud Shell
 
@@ -20,11 +20,11 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
-    ![](/images/cloudshellopen.png " ")
+    ![](images/cloudshellopen.png " ")
 
-    ![](/images/cloudshellsetup.png " ")
+    ![](images/cloudshellsetup.png " ")
 
-    ![](/images/cloudshell.png " ")
+    ![](images/cloudshell.png " ")
 
 2.  Once the cloud shell has started, enter the following command. Choose the key name you can remember. This will be the keyname you will use to connect to any compute instances you create. Press Enter twice for no passphrase.
 
@@ -42,7 +42,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     _Note: The angle brackets <<>> should not appear in your code._
 
-    ![](/images/cloudshell-ssh-keygen.png " ")
+    ![](images/cloudshell-ssh-keygen.png " ")
 
 3.  Examine the two files that you just created.
 
@@ -50,7 +50,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     <copy>ls</copy>
     ```
 
-    ![](/images/examine-cloudshell-keys.png " ")
+    ![](images/examine-cloudshell-keys.png " ")
 
     Note in the output that there are two files, a _private key:_ `<<sshkeyname>>` and a _public key:_ `<<sshkeyname>>.pub`. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
