@@ -40,6 +40,14 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
    ![](images/oci-console-home-page.png " ")
 
+## **Step 2:** Launch a GPU instance
+
+1.  After you login, click on the **Create a VM instance** button in the **Quick Actions** section.
+
+![](images/click-create-vm-instance.png " ")
+
+Alternatively, you can click on the service menu on the top left and then on **Compute** -> **Instances**. A new page opens up with a blue **Create Instance** button on which you click on.
+
 ## **Acknowledgements**
 
 - **Created By/Date** - Maria Patelkou, HPC Solution Architect, Oracle Proposal to Production programme, March 2021
