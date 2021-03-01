@@ -41,9 +41,9 @@ This lab assumes you have:
 
     ![](./images/importretail.png " ")
 
-2.  Make sure all the resources have all been imported.  We will be using them for this lab.
+2.  Navigate to the Catalog page and make sure all the resources have been imported.  We will be using them for this lab.
 3.  Click on the Retail Sample tag link next to any of the resources.  
-4.  See that the grey menu bar on top includes Retail Sample and that there are 10 of 15 Resources visible in the main page
+4.  See that the grey menu bar on top includes Retail Sample and that there are 15 Resources visible in the main page
 
     ![](./images/verifyimportedretail.png " ")
 
@@ -83,11 +83,17 @@ You need to create a pipeline that includes about 17 stages and resources.  Befo
 
 1. Start by selecting Pipeline from the Create New Item drop down in the Catalog page.  Make sure you select the appropriate Stream for this pipeline.  Name the pipeline *RetailPromotions*.
 
+
     ![](./images/createnewpipeline.png " ")
 
-    ![](./images/retailpromotionsname.png " ")
+2. Add a new tag called Lab3 next the existing tag:
 
-2. Once you have created the pipeline you should see stream of data coming from the OrderStream in the Live Output:
+    ```
+    <copy>Lab3</copy>
+
+ ![](./images/retailpromotionsname.png " ")
+
+3. Once you have created the pipeline you should see stream of data coming from the OrderStream in the Live Output:
 
     ![](./images/orderstreamstage.png " ")
 
@@ -95,7 +101,7 @@ Now that we have the order history we would like to enrich this data with the cu
 
 ## **Step 3:** Create GetCustomerDetails Stage
 
-1. Right click on the OrderStream and add a Query Stage.  
+1. Right click on the *OrderStream* and add a Query Stage.  
 
    ![](./images/orderstreamstage2.png " ")
 
@@ -137,13 +143,13 @@ Now that we have the order history we would like to enrich this data with the cu
     Custid equals before_CUSTOMER_ID
     ```
 
-8. At any time during design of a pipeline you can click on Done button on the top left to exit the pipeline and get back to the catalog.  All your changes will be saved.
+8. At any time during design of a pipeline you can click on *Done* button on the top left to exit the pipeline and get back to the catalog.  All your changes will be saved.
 
 ## **Step 4:** Create GetLatLongFromZipCode Stage
 
 In this stage we would like to map a customer’s zip code to an actual latitude and longitude.
 
-1. Right click on the GetCustomerDetails in the stream and Add a Stage (a query stage) and name it *GetLatLongFromZipCode*.  
+1. Right click on the *GetCustomerDetails* in the stream and Add a Stage (a query stage) and name it *GetLatLongFromZipCode*.  
 2. In the top right hand pane you should see the new stage and the type of stream you are using.
 3. Click on Add a Source and select a source from the drop down.
 
@@ -155,20 +161,20 @@ In this stage we would like to map a customer’s zip code to an actual latitude
 
 In the next stage we are only interested in customers that are located in our campaign regions and filter out everyone else.
 
-1. Right click on your stream and Add a Stage.  In this step your stage is NOT a Query stage.  Instead we are looking for a Pattern of type Spatial that selects customers based on a Geo Filter.  
+1. Right click on the *GetLatLongFromZipCode* and Add a Stage.  In this step your stage is NOT a Query stage.  Instead we are looking for a Pattern of type Spatial that selects customers based on a Geo Filter.  
 
     ![](./images/geofilterpattern.png " ")
 
 2. Name your stage *FilterCustomers* and add the appropriate description.  
 
 3. In the top right hand pane you should see the new stage.  
-4. Provide the correct resource from the drop down and map the associated parameters from the stream, namely LAT, LNG and for Object Key pick name using the + sign. The Coordinate System parameter is fixed and cannot be changed.  
+4. Provide the correct resource from the drop down. For Geo Fence the drop down should be *CampaignRegions* and for the rest map the associated parameters from the stream, namely *LAT*, *LNG* and for Object Key pick *name* using the + sign. The Coordinate System parameter is fixed and cannot be changed.  
 
     ![](./images/filtercustomers.png " ")
 
 5. Observe that the data now starts streaming in with this Geo Filter.  
-6. After setting up the Parameters click on the Visualizations tab and see the Geo Filter that we are interested in for our campaign.  
-7. Also, notice the arrows indicating the customers location.
+6. After setting up the Parameters click on the *`Visualizations`* tab and see the Geo Filter that we are interested in for our campaign.  
+7. Also, notice the arrows indicating the customers current location, live.
 
     ![](./images/geofiltervisual.png " ")
 
@@ -203,7 +209,7 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 
     ![](./images/expressionsigma.png " ")
 
-3. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it CustomerType.  
+3. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it *CustomerType*.  
 
 
 
@@ -212,14 +218,14 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 
     ![](./images/discountoffered.png " ")
 
-6. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it to DiscountOffered.
+6. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it to *DiscountOffered*.
 
    ![](./images/newaddedfields.png " ")
 
 7. Now right click on the GetProductDetails stage and add a Rule Stage
 
 8. Name the new rule stage *SegmentCustomers* with the appropriate description.
-9.  In the Rules tab add the following three rules, each time clicking on the *+ Add a Rule*:
+9.  In the *`Rules`* tab add *Rule Name* and *Description* and click on *Done*, then create the if-then condition accordingly.  Based on that condition use *+ Add Action* to set the *CustomerType* and *DiscountOffered*.  We need to add the following three rules, each time clicking on the *+ Add a Rule*:
 
     - *GoldCustomers:*
 
@@ -247,7 +253,7 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 
     - *DiamondCustomers:*
 
-    If they have purchased both FURNITURE and spent between $900 AND $1500 Then offer them a $10 discount as DiscountOffered and set the CustomerType to *Diamond*
+    If they have purchased FURNITURE and spent between $900 AND $1500 Then offer them a $10 discount as DiscountOffered and set the CustomerType to *Diamond*
 
       - Category:
 
@@ -283,21 +289,21 @@ Now we would like to add a Rule Stage to segment our customers based on what the
     <copy>Platinum</copy>
     ```
 
-    *Note* that all other customers are automatically segmented as *BRONZE*.
+    In the Live Output pane verify that the Customer Types and Discount Offers data is streaming. *Note* that all other customers are automatically segmented as *BRONZE*.
 
     We are going to use the data from this stage in two ways which is why we are going to create two branches out from this stage.  In the first branch we will do some analysis on the revenue generated by customer types, i.e. the revenue amount generated by each segment.
 
 ## **Step 8:** Create RealtimeRevenue Stage
 After we have segmented the customers we need to Filter out all the customers that don’t generate any revenue.  
 
-1. Begin by adding a Query Stage to the SegmentCustomers stage and name it *RealtimeRevenue*.  
+1. Begin by adding a Query Stage to the *SegmentCustomers* stage and name it *RealtimeRevenue*.  
 2. Use the *`Filters`* tab to query for:
 
   ```
   after_REVENUE is not null
   ```
 
-3. Then in the Summaries tab add a summary and do a SUM of all *`after_REVENUE`* to create a new field.
+3. Then in the *`Summaries`* tab add a summary and do a SUM of all *`after_REVENUE`* to create a new field.
 
     ![](./images/rtrvenuesummaries.png " ")
 
@@ -306,17 +312,23 @@ After we have segmented the customers we need to Filter out all the customers th
     ![](./images/rtrvenuesummariesrename.png " ")
 
 5. Finally Add a Group by with the CustomerType.
-6. Click on the *Visualizations* tab, select *Bar* chart and name it to *RevenueByCustomerSegment*.  
+6. Click on the *`Visualizations`* tab, select *Bar* chart and name it to *RevenueByCustomerSegmentLab3*.  
 7. Add the Visualizations with Bar type with X Axis as the CustomerType and Y Axis as the RevByCustomerType.  
 8. Once you have created the bar chart you should see the streaming data as bar chart.
 
     ![](./images/revenuebycustomersegment.png " ")
 
-Now we are going to create a parallel branch at the SegmentCustomers stage.  We are going to create this parallel branch to make predictions whether the customer is likely to redeem the offer based on their WebSales and StoreSales and the amount of Avgdiscount that is being offered.  
+## **Step 9:** Create LogRTRevenue Stage
 
-## **Step 9:** Create PredictBuyNoBuy Stage
+1. Right click on the *RealtimeRevenue*  Stage and create a target stage.  Name this stage *LogRTRevenue* and add description.  In the details pane select RealtimeRevenueByCustomerType from the drop down and map the Target properties to the Output Stream properties if not already done for you.
 
-1. Begin by creating a new Scoring stage by right clicking on the SegmentCustomers stage.  
+   ![](./images/logrtrevenue.png " ")
+
+Now we are going to create a parallel branch at the *SegmentCustomers* stage.  We are going to create this parallel branch to make predictions whether the customer is likely to redeem the offer based on their WebSales and StoreSales and the amount of Avgdiscount that is being offered.  
+
+## **Step 10:** Create PredictBuyNoBuy Stage
+
+1. Begin by creating a new Scoring stage by right clicking on the *SegmentCustomers* stage.  
 
     ![](./images/scoring.png " ")
 
@@ -333,10 +345,10 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 
 9.  See them streaming in the Live Output region at the bottom of the screen.
 
-## **Step 10:** Create GetCustomer Stage
+## **Step 11:** Create GetCustomer Stage
 
-1. Once again and from the SegmentCustomers stage we also like to define a parallel stage (to the PredictBuyNoBuy stage) so that we have access to the data in the previous stage by creating a query stage.  
-2. Right click on the SegmentCustomers stage and create a new query stage.  
+1. Once again and from the *SegmentCustomers* stage we also like to define a parallel stage (to the *PredictBuyNoBuy* stage) so that we have access to the data in the previous stage by creating a query stage.  
+2. Right click on the *SegmentCustomers* stage and create a new query stage.  
 3. Name the new stage *GetCustomer*
 4. Add description: Correlates with previous stage to get back customer details.
 5. Click Save.
@@ -358,9 +370,9 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 
     ![](./images/getcustomer.png " ")
 
-## **Step 11:** Create FilterLikelyBuyers Stage
+## **Step 12:** Create FilterLikelyBuyers Stage
 
-1. From the GetCustomer stage add a new Query Stage.
+1. From the *GetCustomer* stage add a new Query Stage.
 2. Name the new stage *FilterLikelyBuyers*.
 
 3. Add a description: Removes customers who are unlikely to redeem the offer.  Click Save.
@@ -375,14 +387,14 @@ Now we are going to create a parallel branch at the SegmentCustomers stage.  We 
 
 6. In this stage we are only interested in customers that are likely to take advantage of the offer by querying for all the customers whose RedeemPrediction equals (case sensitive) 1.
 
-7. Click on the *Filters* tab and Add a Filter.
+7. Click on the *`Filters`* tab and Add a Filter.
 
     ![](./images/filterlikelybuyers.png " ")
 
-## **Step 12:** Create PersistPredictionsToKafka Stage
+## **Step 13:** Create PersistPredictionsToKafka Stage
 
 In the last stage we are interested in sending the data to a Kafka Target by mapping the topic params to the stream parameters.  Again the topic could be created before the pipeline is built or as the stage is being created.
-1. Right click on the FilterLikelyBuyers stage and create a new Target Stage.
+1. Right click on the *FilterLikelyBuyers* stage and create a new Target Stage.
 2. Name the new target stage *PersistPredictionsToKafka*.
 3. Add description: Persists predictions to Kafka. Could also be persisted to database.
 4. Click Save.
@@ -390,7 +402,7 @@ In the last stage we are interested in sending the data to a Kafka Target by map
 
     ![](./images/predicttokafka.png " ")
 
-## **Step 13:** Create LikelyBuyersByTypeAndZip Stage
+## **Step 14:** Create LikelyBuyersByTypeAndZip Stage
 
 Create a parallel stage to group the likely buyers by type and by zip code.
 
@@ -398,18 +410,18 @@ Create a parallel stage to group the likely buyers by type and by zip code.
 2. Name the new stage *LikelyBuyersByTypeAndZip*.
 3. Add description: Likely buyers by customer type and zip code.
 4. Click Save.
-5. Click on the *Groups* tab and *Add a Group* then *Add a Summary* with condition Count_of_RedeemPrediction.  
+5. Click on the *`Groups`* tab and *Add a Group* then *Add a Summary* with condition Count_of_RedeemPrediction.  
 
     ![](./images/likelybuyersbytypeandzip.png " ")
 
 6. Again the column should be renamed to *LikelyBuyersByCustomerType*.  
 7. Now Add a GroupBy and select CustomerType.
 
-8. Repeat the same steps and *Add a Group* then *Add a Summary* with condition Count_of_RedeemPrediction but this time rename it to *LikelyBuyersByZipCode*.
+8. Repeat the same steps and *Add a Group* then *Add a Summary* with condition Count_of_RedeemPrediction but this time rename it to *LikelyBuyersByZipCode* and *Group by* zip.
 
     ![](./images/likelybuyersbytypeandzipgroups.png " ")
 
-9.  Click on the Visualizations tab and create a Pie chart for the LikelyBuyersByCustomerType:
+9.  Click on the *`Visualizations`* tab and create a Pie chart for the LikelyBuyersByCustomerType:
 
     ![](./images/createpiechartfortypes.png " ")
 
