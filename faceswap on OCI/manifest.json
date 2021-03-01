@@ -26,9 +26,9 @@
         }
         ,
         {
-              "title": "Lab 3: Run Faceswap",
-              "description": "This lab you through the required and optional steps to run Faceswap (extract data, train & convert model, generate deepfake) .",
-              "filename": "./Lab3/Run Faceswap.md"
+              "title": "Lab 3: Set up and access Ubuntu instance through VNC",
+              "description": "This lab will walk through the required steps to set up and access your Ubuntu instance through a VNC client (here: TigerVNC)..",
+              "filename": "./Lab3/Set up and access through VNC.md"
         }
 
              ]
