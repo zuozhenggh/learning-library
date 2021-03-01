@@ -17,6 +17,6 @@ Autonomous Databaseの概要については、以下の動画をご覧くださ�
 
 ## Need Help?
 
-フィードバックやご質問は、[LiveLabsサポートフォーラム](https://community.oracle.com/tech/developers/categories/autonomous-database-shared)を使用してください。**Log In**をクリックして、Oracleアカウントを使用してログインしてください。左側の**Ask A Question**ボタンをクリックして、新しいディスカッションを開始するか、質問をします。ワークショップ名とラボ名を記入してください。また、スクリーンショットやファイルを添付することもできます。ワークショップの作成者と直接やりとりすることができます。*注:英語のみ対応*
+フィードバックやご質問は、[LiveLabsサポートフォーラム](https://community.oracle.com/tech/developers/categories/autonomous-database-shared)を使用してください。**Log In**をクリックして、Oracleアカウントを使用してログインしてください。左側の**Ask A Question**ボタンをクリックして、新しいディスカッションを開始するか、質問をします。ワークショップ名とラボ名を記入してください。また、スクリーンショットやファイルを添付することもできます。ワークショップの作成者と直接やりとりすることができます。<br> *注:英語のみ対応*
 
 オラクル・アカウントをお持ちでない場合は、[ここ](https://profile.oracle.com/myprofile/account/create-account.jspx)をクリックして作成してください。
