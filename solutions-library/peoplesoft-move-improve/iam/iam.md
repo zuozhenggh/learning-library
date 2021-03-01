@@ -1,7 +1,6 @@
-# Lab 1: Creating Identity and Access Management (IAM) Resources
+# Creating Identity and Access Management (IAM) Resources
 
 ## Introduction
-
 This lab walks you through the steps to prepare your Orace Cloud Infrastructure Tenancy
 
 Estimated Lab Time: 20 minutes
@@ -25,13 +24,13 @@ In this lab, you will:
 
 ### Prerequisites
 
-1.	Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
+* Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 
-2. 	To sign in to the Console, you need the following: 
+* To sign in to the Console, you need the following: 
 
-    1. Tenant, User name and Password
-    2. URL for the Console: [https://oracle.com] (https://oracle.com)
-    3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
+    - Tenant, User name and Password
+    - URL for the Console: [https://oracle.com] (https://oracle.com)
+    - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
@@ -45,11 +44,11 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
 3.	Enter the name of your tenancy (aka your account name, NOT your user name), then click on the **Next** button.
 
-    ![](./images/2.png " ")
+    ![](./images/tenancy.png " ")
 
 4.	Oracle Cloud Infrastructure is integrated with Identity Cloud Services. You will see a screen validating your Identity Provider. Click **Continue**. Enter your username and password and click **Sign In**. 
 
-    ![](./images/signin1.png " ") 
+    ![](./images/continue.png " ") 
 
     ![](./images/3.png " ")
 
@@ -61,23 +60,22 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
 During the workshop, you might face problems related to service limits. 
 
-Please check if you have enough resource availability in your Availability Domain or change the Availability Domain to 1/2/3 as per the resource availability. 
+Please check that you have the required resources in Availability Domains 1, 2 AND 3.
 
 1. To check the service limit, navigate to the three-line menu on the top left and click on **Governance -> Limits, Quotas, and Usage**.
 
     ![](./images/slimit.png " ")
 
-2. Click on **Scope** and select AD-1 or AD-2 or AD-3 depending on which availability domain you want to see the service limit. 
+2. Using the dropdowns, make the following selections:
+    * Service: **Compute** 
+    * Scope:  **US-ASHBURN-AD-1** 
+    * Resource: **Cores for Standard2 based VM and BM Instances**
 
-    ![](./images/scope.png " ")
+    Make sure you have 2 cores Available in the chart below. Repeat by changing Scope to **US-ASHBURN-AD-2** AND **US-ASHBURN-AD-3** for a toal of 6 cores.
 
-3. Scroll down the list, and you will see all the resources available and usage. For example, in the below case, all my available resources are used.
+    ![](./images/newScope.png " ")
 
-    ![](./images/available.png " ")
-
-**NOTE**: You will need 2 instances. Make sure you have at least 1 of each of the below marked resource (it doesn't need to be in same availability domain):
-
-![](./images/resource.png " ")
+**Note**: If you do not have any for Standard2 based VM and BM Instances, try selecting **Cores for Standard1 based VM and BM Instances** for the Resource instead.
 
 ## **STEP 3:** Creating a Demo Compartment
 **Compartments Overview:**
@@ -237,9 +235,9 @@ Set a **Temporary Password** for the newly created User. After the user is creat
 
     This time, you will sign in using the local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
 
-7. Enter the username **User01** and password that you copied to your naotepad.
+7. Click the arrow to expand OCI Direct Sign-In. Here, enter the username **User01** and the password that you copied to your notepad.
 
-    ![](./images/signin.png "")
+    ![](./images/newSignin.png "")
 
     ```
     Note: Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture.
@@ -249,7 +247,7 @@ Set a **Temporary Password** for the newly created User. After the user is creat
     ```
     <copy>Psft@1234</copy>
     ```
-    ![](./images/17.png "")
+    ![](./images/changePassword.png "")
 
 
     You are now logged in as local user: **User01**
@@ -258,13 +256,12 @@ You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
-
-* **Last Updated By/Date** 
-- Sara Lipowsky, Cloud Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

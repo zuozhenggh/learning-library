@@ -1,4 +1,4 @@
-# Lab 3: Configuring Cloud Manager Settings
+# Configuring Cloud Manager Settings
 
 ## Introduction
 This lab will guide you on how to configure the system and infrastructure settings on Cloud Manager
@@ -15,9 +15,9 @@ In this lab, you will:
 * Create a Mount Target for a File System
 
 ### Prerequisites
-1. My Oracle Support (MOS) account credentials.
-    - User ID
-    - Password
+My Oracle Support (MOS) account credentials.
+* User ID
+* Password
 
 ## **STEP 1**: Uploading SSH public keys
 
@@ -37,7 +37,7 @@ In this lab, you will:
 
 1.	Navigate to **Cloud Manager Dashboard** > **Cloud Manager Settings** > **Cloud Manager Settings**.
 
-2.	Update **My Oracle Support (MOS) Credentials**. These credentials are the same as the username and password you enter when you access http://support.oracle.com. Please make sure that you have an account and you can access http://support.oracle.com, this is required to download DPKs and PRPs automatically. Once you have entered your **User ID** and **Password**, click **Save Settings** at the top of the page.
+2.	Update **My Oracle Support (MOS) Credentials**. These credentials are the same as the username and password you enter when you access http://support.oracle.com. Please make sure that you have an account and you can access [website](http://support.oracle.com), this is required to download DPKs and PRPs automatically. Once you have entered your **User ID** and **Password**, click **Save Settings** at the top of the page.
 
     ![](./images/1.png "")
     
@@ -46,12 +46,12 @@ In this lab, you will:
 1.	Navigate to Infrastructure Settings on the left and update Operating System Images.     
     For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list (see the screenshot below).
 
-    For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.cloud.oracle.com/en-us/iaas/images/image/146ab34c-064a-4255-b5ea-e26bbfa6591d/).
+    For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.oracle.com/en-us/iaas/images/image/943bdefa-8858-4b37-98e0-fd710c4aea1e/).
 
     For example, in this lab, we selected our Availability Domain to be us-ashburn-1 so our OCID is:    
-    **ocid1.image.oc1.iad.aaaaaaaahobtltelwdrzm6sd3nn6j7fsb3bwinq2ggmpcnsgdvhihnz2mhga**
+    **ocid1.image.oc1.iad.aaaaaaaa74rl4tzxblzk2sqm43k62srh6bv4hbxkkewlbyar6ximerilowyq**
  
-    ![](./images/image.png "")
+    ![](./images/newImage.png "")
 
 2.	Click **Save** to save the configuration. 
 
@@ -63,19 +63,16 @@ In this lab, you will:
 
     ![](./images/3.png "")
 
-2.	Click **Create**.  This action will create a file server in a few minutes. Please wait until the file server status shows ‘**FSS Configured**’, and then the system will be ready for downloads. 
+2.	Click **Create**.  This action will create a file server in a few minutes. Please wait until the file server status shows ‘**FSS Configured**' which you can see by clicking **More Info**, and then the system will be ready for downloads. 
 
 You may now proceed to the next lab.
 
 ## Acknowledgements
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
 
-**Created By/Date**   
-- Rich Konopka, Peoplesoft Specialist, October 2020  
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020  
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-**Last Updated By/Date**    
-- Sara Lipowsky, Cloud Solutions Engineer, October 2020  
-
-## See an issue?
-
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab** and **step** in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.  
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

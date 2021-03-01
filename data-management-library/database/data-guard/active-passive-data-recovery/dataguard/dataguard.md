@@ -22,7 +22,7 @@ In this lab, you will:
 * Access to an Oracle cloud account
 * Familiarity with Oracle database
 
-## **STEP 1:** Provisioning the Primary database.
+## **STEP 1:** Provisioning the Primary Database
 
 1. Spin up a database using Oracle Cloud Infrastructure to serve as the "Primary" database
 
@@ -60,7 +60,7 @@ In this lab, you will:
 
   ![](./screenshots/dg-screenshots/1-9.png)
 
-## **STEP 2:** Creating a Data Guard association.
+## **STEP 2:** Creating a Data Guard Association
 
 1. Now that our database is provisioned and available, let's click on the database system name.
 
@@ -80,7 +80,7 @@ In this lab, you will:
 
   ![](./screenshots/dg-screenshots/2-5.png)
 
-## **STEP 3:** Connecting to databases & testing Data Guard build.
+## **STEP 3:** Connecting to Databases & Testing Data Guard Build
 
 1. After the standby database has provisioned, we will need the IP address of the instance to connect to.
 
@@ -105,16 +105,16 @@ In this lab, you will:
 
 4. On **BOTH** servers, enter the following commands:
 
-  ```
-  $ sudo su - oracle     // Changes the user to oracle.
-  $ sqlplus / as sysdba  // Connects to the database.
-  ```
+    ```
+    $ sudo su - oracle     // Changes the user to oracle.
+    $ sqlplus / as sysdba  // Connects to the database.
+    ```
 
 5. After you are connected to the database, run the following query to verify both database roles. (_Note: run on **BOTH** databases_.)
 
-  ```
-  SQL> select name, database_role, open_mode from v$database;
-  ```
+    ```
+    SQL> select name, database_role, open_mode from v$database;
+    ```
 
   Primary:
 
@@ -126,22 +126,22 @@ In this lab, you will:
 
 6. Now we can test if Data Guard is working correctly. On the **Primary** database, we will create a table and insert some data into it. (_Note: copying and pasting from this lab may not work due to formatting. Please type the commands manually_.)
 
-  ```
-  SQL> create table employees(first_name varchar2(50));
-  SQL> insert into employees values ('thomas');
-  SQL> commit;
-  ```
+    ```
+    SQL> create table employees(first_name varchar2(50));
+    SQL> insert into employees values ('thomas');
+    SQL> commit;
+    ```
 
   ![](./screenshots/dg-screenshots/3-8.png)
 
 7. Now go to the **Standby** database and query the table that you just created on the primary database. (_Note: it may take a few minutes for the table to appear_.)
 
-  ```
-  SQL> select * from employees;
-  ```
+    ```
+    SQL> select * from employees;
+    ```
   ![](./screenshots/dg-screenshots/3-9.png)
 
-## **STEP 4:** Performing a Data Guard switchover. 
+## **STEP 4:** Performing a Data Guard Switchover 
 
 Data Guard switchovers are performed for events that are planned. The primary and standby databases reverse roles so that the needed measures can be performed on the respective database.
 
@@ -169,13 +169,13 @@ Data Guard switchovers are performed for events that are planned. The primary an
 
 6. Connect to the database and check its role to verify.
 
-  ```
-  $ select name, database_role, open_mode from v$database;
-  ```
+    ```
+    $ select name, database_role, open_mode from v$database;
+    ```
 
   ![](./screenshots/dg-screenshots/4-7.png)
 
-## **STEP 5:** Performing a Data Guard failover.
+## **STEP 5:** Performing a Data Guard Failover
 
 Data Guard failovers are used for unforeseen disasters or downtime that is not planned. Data Guard will failover to the standby database from the primary in the event of any disaster or unplanned downtime. 
 
@@ -197,9 +197,9 @@ Data Guard failovers are used for unforeseen disasters or downtime that is not p
 
 5. Log into the **STANDBY DATABASE** server to verify that the database role has been changed to **Primary**. 
 
-  ```
-  $ select name, database_role, open_mode from v$database;
-  ```
+    ```
+    $ select name, database_role, open_mode from v$database;
+    ```
 
   ![](./screenshots/dg-screenshots/5-5.png)
 
@@ -233,7 +233,7 @@ You are finished with all of the labs!
 * **Last Updated By** - Mark Vong, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

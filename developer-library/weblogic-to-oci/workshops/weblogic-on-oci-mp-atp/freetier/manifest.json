@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Migrate a WebLogic domain to Oracle Cloud Infrastructure",
+    "workshoptitle": "Migrate WebLogic Server to OCI with Autonomous Database",
     "tutorials": [
         {
             "title": "Prerequisites",

@@ -18,7 +18,7 @@ Estimated time: 10 minutes
 
 ## **STEP 1**: List any helm releases that may have been installed
 
-1. To get a beter look at all the installed Helm Charts by using the **helm list** command.
+1. To get a better look at all the installed Helm Charts by using the **helm list** command.
 
     ````shell
     <copy>

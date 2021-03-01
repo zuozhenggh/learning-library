@@ -8,9 +8,9 @@ Estimated Lab Time: 1 Hour.
 
 ### Objectives
 
-* Learn how to connect a desktop analytics tool to the powerful Autonomous Database
+* Learn how to connect a Analytics tool to the powerful Autonomous Database
 * Learn how to connect to the database using SQL Developer
-* Learn how to create a data visualization with Oracle Analytics Desktop
+* Learn how to create a data visualization with Oracle Analytics
 
 ### Prerequisites
 

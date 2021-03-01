@@ -124,6 +124,29 @@ Now you are ready to move on to Step 3.
     etcd-0               Healthy   {"health":"true"}
     ````
 
+1. Check the version of your kubectl client and kubernetes server with `kubectl`.
+
+    ````shell
+    <copy>
+    kubectl version
+    </copy>
+    ````
+
+1. Get the nodes and check if they are _Ready_ with `kubectl`.
+
+    ````shell
+    <copy>
+    kubectl get nodes
+    </copy>
+    ````
+
+    ````shell
+   NAME        STATUS   ROLES   AGE   VERSION
+   10.0.10.2   Ready    node    1m    v1.17.9
+   10.0.10.3   Ready    node    1m    v1.17.9
+   10.0.10.4   Ready    node    1m    v1.17.9
+    ````
+
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
