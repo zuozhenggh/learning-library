@@ -74,34 +74,43 @@ Oracle Universal Creditsを使用したOracle Cloudアカウントなど、す�
 
 Oracle Cloudからサインアウトした場合は、以下の手順を使用してサインインし直してください。
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and click the **View Accounts** button.
+1. [cloud.oracle.com](https://cloud.oracle.com)にアクセスして、クラウド・アカウント名を入力し、**「次へ」** をクリックします。これは、前のセクションでアカウントを作成する際に選択した名前です。メールアドレスではありません。名前を忘れてしまった場合は、確認メールを参照してください。
 
-    ![](images/cloud-oracle.png " ")
+    ![](images/ja-jp-cloud-oracle.png " ")
 
-2. Click **Sign in to Cloud**.
-
-    ![](images/signin-to-cloud.png " ")
-
-3. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+2. *"Oracle Cloud Infrastructure Direct Sign-In"* の後の矢印を展開すると、ログイン入力フィールドが表示されます。
 
     ![](images/cloud-login-tenant.png " ")
 
-4. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+3. クラウド アカウントの資格情報を入力し、**「Sign In」** をクリックします。ユーザー名はメールアドレスです。パスワードは、アカウントにサインアップしたときに選択したものです。
 
     ![](images/oci-signin.png " ")
 
-5. You are now signed in to Oracle Cloud!
+4. これでOracle Cloudにサインインしました！
 
-    ![](images/oci-console-home-page.png " ")
+    ![](images/ja-jp-oci-console-home-page.png " ")
 
-You may now [proceed to the next lab](#next).
+「次のラボ」(#next)に進んでください。
+
+## **Rate this Workshop**
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](images/rate-this-workshop.png " ")
+
 
 ## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Last Updated By/Date** - John Peach, Kamryn Vinson, Database Product Management, November 2020
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **Last Updated By** - Rene Fontcha, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
