@@ -10,7 +10,6 @@ In this lab, we will walk through the required steps to provision a GPU instance
 
 - Login to Oracle Cloud
 - Provision a GPU instance on OCI
-- Access your GPU instance through SSH
 
 ### What Do You Need?
 
@@ -66,7 +65,7 @@ Alternatively, you can click on the service menu on the top left and then on **C
 
    ![](images/change-image.PNG " ")
 
-   Select the image you want to use for your compute instance and click on the **Select Image** button. We will select Ubuntu 18.04 which is recommended by Faceswap.
+   Select the image you want to use for your compute instance and click on the **Select Image** button. We will select Ubuntu 18.04 which is recommended by Faceswap, but any other Linux distribution and Windows operating system is supported and will work as well.
 
    ![](images/select-image.PNG " ")
 
@@ -100,12 +99,6 @@ Alternatively, you can click on the service menu on the top left and then on **C
 After a couple of minutes, your GPU compute instance will change its status to **RUNNING**
 
 ![](images/instance-running.PNG " ")
-
-## **Step 2:** Access the GPU instance through SSH
-
-We would like to refer to **Lab 1 - Create SSH keys** for the different options to
-
-1.
 
 ## **Acknowledgements**
 
