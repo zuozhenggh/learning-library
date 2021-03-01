@@ -112,7 +112,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     ```
 
     Make a note of all the passwords
-3.   All the installation details of software installed, ORACLE_HOME, ORACLE_SID, MIDDLEWARE_HOME, FORMS_PATH
+3.   All the installation details of software installed, ORACLE\_HOME, ORACLE\_SID, MIDDLEWARE\_HOME, FORMS\_PATH
     can be found in readme file under Desktop folder
 
     ```
@@ -196,10 +196,11 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 6. Create a tunnel for VNC through SSH,
    if you have MAC ,
 
-          In a terminal window , issue the following command, with your public IP address at the end. This will create the SSH tunnel for you to use for VNC.
-          ```
-          ssh -N -L 5901:127.0.0.1:5901 -i ~/<privatekey> opc@<publicIP>
-          ```
+    In a terminal window , issue the following command, with your public IP address at the end. This will create the SSH tunnel for you to use for VNC.
+
+    ```
+    ssh -N -L 5901:127.0.0.1:5901 -i ~/<privatekey> opc@<publicIP>
+    ```
    if you have Windows,
 
       You can create SSH tunnels using the PuTTY SSH client.
