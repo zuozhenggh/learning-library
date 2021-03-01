@@ -1,4 +1,4 @@
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
@@ -51,7 +51,7 @@ If you already have a cloud account, skip to **STEP 2**.
 5.  Enter your Address information.  Click **Continue**.
           ![](images/free-tier-address.png " ")
 
-6.  Choose your country and enter a mobile member for verification.   Click the **Text me a code** button.
+6.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
 
        ![](images/free-tier-address-2.png " ")
 
@@ -112,6 +112,5 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 - **Last Updated By** - Rene Fontcha, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

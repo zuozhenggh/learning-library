@@ -104,7 +104,7 @@ To create a Pull Request:
 
   ![](./images/git-hub-branch-browser-create-pull-request.png " ")
 
-3. Enter the title for the pull request, leave a comment (optional) and then click **Create pull request**.
+3. Enter the title for the pull request and include your LWMS ID (you can find that by visiting the [LWMS](http://bit.ly/oraclelivelabs)) in the title and then click **Create pull request**.
     ![](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
 
