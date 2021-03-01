@@ -21,9 +21,11 @@ This lab assumes you have completed the following labs:
 - Connect and Provision ADB
 - Create a Machine Learning Model
 
-## **Step 1:** Import the APEX Application
+## **Step 1:** Run the APEX Application
 
+<if type="freetier">
 1. Download the pre-built APEX application from [here](files/f100.sql).
+</if>
 
 2. On the browser tab with your ADW instance, click on the Tools tab and select **Open APEX**.
 
@@ -33,6 +35,7 @@ This lab assumes you have completed the following labs:
 
     ![](images/sign-in-apex.png)
 
+<if type="freetier">
 4. On the Welcome screen click **Create Workspace**.
 
     ![](images/welcome-apex.png)
@@ -44,11 +47,13 @@ This lab assumes you have completed the following labs:
 6. Sign out of the admin view and into your workspace by clicking on **OMLAPP**.
 
     ![](images/signout-apex-admin.png)
+</if>
 
-7. Sign into the **OMLAPP** workspace. Click the **Remember workspace name and username** checkbox to save yourself time in the future.
+7. Sign into the **OMLAPP** workspace <if type="livelabs">using the password `AAbbcc123456`</if>. Click the **Remember workspace name and username** checkbox to save yourself time in the future.
 
     ![](images/sign-in-apex-omlapp.png)
 
+<if type="freetier">
 8. On the Welcome Screen, click **Set APEX Account Password**, enter an e-mail address, scroll down and enter a password you'll remember, then click **Apply Changes**.
 
     ![](images/set-apex-passwd.png)
@@ -57,10 +62,13 @@ This lab assumes you have completed the following labs:
 
     ![](images/enter-apex-passwd.png)
 
+</if>
+
 9. Click **App Builder**.
 
     ![](images/app-builder.png)
 
+<if type="freetier">
 10. Click **Import**.
 
     ![](images/import-app.png)
@@ -81,11 +89,20 @@ This lab assumes you have completed the following labs:
 
     ![](images/run-app.png)
 
+</if>
+<if type="livelabs">
+1. Hover over Suspicious Claim and click the Run button.
+
+    ![](images/run-suspicious-claims.png)
+
+</if>
+
 15. Sign in using your password for OMLUSER.
 
     ![](images/sign-in-app.png)
 
     ![](images/suspicious_claim.png)
+
 
 ## **Step 2:** Use the APEX application to make decisions
 
