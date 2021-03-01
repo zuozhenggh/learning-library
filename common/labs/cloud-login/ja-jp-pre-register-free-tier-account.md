@@ -31,7 +31,7 @@ Oracle Universal Creditsを使用したOracle Cloudアカウントなど、す�
     * **氏名**と**メールアドレス**
 
 4. 有効なメールアドレスを入力したら、 **電子メールの検証** ボタンを選択します。ボタンを選択すると以下のような画面が表示されます。
-    ボタンを選択すると以下のような画面が表示されます:
+    ボタンを選択すると以下のような画面が表示されます: 
        ![](images/ja-jp-verify-email.png " ")
 
 5. 電子メールを確認します。受信トレイにオラクルからのアカウント検証メールが表示されます。メールは以下のような内容になります:
@@ -41,30 +41,30 @@ Oracle Universal Creditsを使用したOracle Cloudアカウントなど、す�
 
 7. 以下の情報を入力してOracle Cloud Free Tierアカウントを作成します。
        * **パスワード**
-       * **会社名**
-       * **クラウド・アカウント名** 入力に基づいて自動的に生成されますが、新しい値を入力することで変更できます。入力した内容を覚えておいてください。この名前は後でサインインする際に必要になります。
+       *  **会社名**
+       *  **クラウド・アカウント名** 入力に基づいて自動的に生成されますが、新しい値を入力することで変更できます。入力した内容を覚えておいてください。この名前は後でサインインする際に必要になります。
        * **ホーム・リージョン**  ホーム・リージョンはサインアップ後に変更することはできません。
-       * **「続行」**をクリック
+       * **続行**をクリック
        ![](images/ja-jp-account-info.png " ")
 
 
-8.  住所情報を入力します。**「続行」**をクリックしてください。
+8.  住所情報を入力します。**続行**をクリックしてください。
           ![](images/ja-jp-free-tier-address.png " ")
 
-9.  国を選択し、確認のために携帯電話番号を入力します。**「Text me a code」**ボタンをクリックします。
+9.  国を選択し、確認のために携帯電話番号を入力します。**Text me a code**ボタンをクリックします。
 
        ![](images/ja-jp-free-tier-address-2.png " ")
 
-10. コードを受け取ったら、コードを入力して **「コードの確認」**をクリックします。
+10. コードを受け取ったら、コードを入力して **コードの確認**をクリックします。
        ![](images/ja-jp-free-tier-address-4.png " ")
 
-11. **「支払い検証方法の追加」**ボタンをクリックします。
+11. **支払い検証方法の追加**ボタンをクリックします。
        ![](images/ja-jp-free-tier-payment-1.png " ")  
 
-12.  確認方法を選択します。この場合は **「Credit Card」**ボタンをクリックします。お客様の情報とお支払い内容を入力します。*注：これは無料のクレジットプロモーションアカウントです。アカウントのアップグレードを選択しない限り、課金されることはありません。*
+12.  確認方法を選択します。この場合は **Credit Card**ボタンをクリックします。お客様の情報とお支払い内容を入力します。*注：これは無料のクレジットプロモーションアカウントです。アカウントのアップグレードを選択しない限り、課金されることはありません。*
        ![](images/ja-jp-free-tier-payment-2.png " ")
 
-13. お支払いの確認が完了したら チェックボックスをクリックして、「同意」の内容を確認し、同意します。**「無料トライアルの開始」**ボタンをクリックします。
+13. お支払いの確認が完了したら チェックボックスをクリックして、「同意」の内容を確認し、同意します。**無料トライアルの開始**ボタンをクリックします。
        ![](images/ja-jp-free-tier-agreement.png " ")
 
 14. あなたのアカウントはプロビジョニング中となり、数秒で利用可能になります。準備ができたら、自動的にサインイン・ページに移動します。また、オラクルから2通のメールが届きます。1つは、プロビジョニングが進行中であることを最初に通知するメールです。もう1通は、プロビジョニングが完了したことを通知するメールです。こちらが最終通知のコピーです:
@@ -74,7 +74,7 @@ Oracle Universal Creditsを使用したOracle Cloudアカウントなど、す�
 
 Oracle Cloudからサインアウトした場合は、以下の手順を使用してサインインし直してください。
 
-1. [cloud.oracle.com](https://cloud.oracle.com)にアクセスして、クラウド・アカウント名を入力し、**「次へ」** をクリックします。これは、前のセクションでアカウントを作成する際に選択した名前です。メールアドレスではありません。名前を忘れてしまった場合は、確認メールを参照してください。
+1. [cloud.oracle.com](https://cloud.oracle.com)にアクセスして、クラウド・アカウント名を入力し、**次へ** をクリックします。これは、前のセクションでアカウントを作成する際に選択した名前です。メールアドレスではありません。名前を忘れてしまった場合は、確認メールを参照してください。
 
     ![](images/ja-jp-cloud-oracle.png " ")
 
@@ -82,7 +82,7 @@ Oracle Cloudからサインアウトした場合は、以下の手順を使用�
 
     ![](images/cloud-login-tenant.png " ")
 
-3. クラウド アカウントの資格情報を入力し、**「Sign In」** をクリックします。ユーザー名はメールアドレスです。パスワードは、アカウントにサインアップしたときに選択したものです。
+3. クラウド アカウントの資格情報を入力し、**Sign In** をクリックします。ユーザー名はメールアドレスです。パスワードは、アカウントにサインアップしたときに選択したものです。
 
     ![](images/oci-signin.png " ")
 
@@ -90,27 +90,27 @@ Oracle Cloudからサインアウトした場合は、以下の手順を使用�
 
     ![](images/ja-jp-oci-console-home-page.png " ")
 
-「次のラボ」(#next)に進んでください。
+[次のラボ](#next)に進んでください。
 
-## **Rate this Workshop**
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+## **このワークショップを評価する**
+ワークショップが終わったら、このワークショップを評価をお願いします。私たちはこのフィードバックを頼りに、LiveLabsカタログを改善し、より良いものにしていきます。評価を提出するには、以下の手順に従ってください。
 
-1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
+1.  LiveLabsの**ワークショップのホームページ**に戻り、「Launch」ボタンをクリックしてください。
+2.  **茶色のボタン**をクリックして、ワークショップに再アクセスしてください。  
 
     ![](images/workshop-homepage-2.png " ")
 
-3.  Click **Rate this workshop**
+3. **Rate this workshop**をクリックしてこのワークショップを評価してください。
 
     ![](images/rate-this-workshop.png " ")
 
 
 ## **Acknowledgements**
 
-- **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
-- **Last Updated By** - Rene Fontcha, February 2021
+- **作成者・日時** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
+- **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **最終更新日** - Rene Fontcha, February 2021
 
 ## Need Help?
 
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
+フィードバックやご質問はlivelabs-help-db_us@oracle.com までメールをお送りください。ワークショップ名とラボ名を必ず明記してください。また、スクリーンショットやファイルを添付することもできます。*注:英語のみ対応*
