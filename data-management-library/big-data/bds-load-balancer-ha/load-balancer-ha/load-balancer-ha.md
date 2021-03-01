@@ -45,7 +45,7 @@ More specifically, you will:
 
 ### What Do You Need?
 
-* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page. <!-- FIND OUT ABOUT RENAMING THAT TO "GET STARTED WITH ORACLE CLOUD"-->
+* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page.
 
 * Any operating system command shell containing **Secure Shell (SSH)** and **Secure Copy (SCP)**. You can also use the open source PuTTY network file transfer application. See PuTTY documentation for instructions.
 
@@ -161,7 +161,7 @@ To copy the files:
 
       `node_`**`myclustun1`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
 
-      ![](./images/ls-opt-etc-x509-3.png "")
+      ![](./images/ls-opt-etc-x509-2.png "")
 
     You'll use these names in the following steps, when you issue commands to download the files.
 
@@ -361,13 +361,13 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the first utility node; for example, `first-util-node.key`.
 
-    <!--![](./images/add-cert.png "Add certification page ")-->
-    ![](./images/add-cert.png "")
+    <!--![](./images/add-cert-1.png "Add certification page ")-->
+    ![](./images/add-cert-1.png "")
 
 3. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
 
-    <!--![](./images/cert-list.png "Certificates table")-->
-    ![](./images/cert-list.png "")
+    <!--![](./images/cert-list-1.png "Certificates table")-->
+    ![](./images/cert-list-1.png "")
 
     **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (first) utility node.
 
@@ -388,12 +388,12 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the ***second*** utility node; for example, `second-util-node.key`.
 
-    <!--![](./images/add-cert.png "Add certification page ")-->
+    <!--![](./images/add-cert-2.png "Add certification page ")-->
     ![](./images/add-cert-2.png "")
 
 6. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
 
-    <!--![](./images/cert-list.png "Certificates table")-->
+    <!--![](./images/cert-list-2.png "Certificates table")-->
     ![](./images/cert-list-2.png "")
 
     **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (second) utility node.
@@ -450,7 +450,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
         * **Port:** Enter **`8889`**, which is the port on which Hue listens.
 
-    <!-- ![](./images/create-backend-set.png "Create backend set page")-->
+    <!-- ![](./images/create-backend-set-ha-hue.png "Create backend set page")-->
     ![](./images/create-backend-set-ha-hue.png "")
 
 

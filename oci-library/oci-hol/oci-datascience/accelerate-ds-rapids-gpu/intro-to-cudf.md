@@ -34,23 +34,23 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
   ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-terminal-button.png)
 
-1. The next step is to pull a notebook file in your notebook session. There are two ways to do this:
+2. The next step is to pull a notebook file in your notebook session. There are two ways to do this:
 
-   - Copy and paste the following command in the terminal window and press "Enter".
+      - Copy and paste the following command in the terminal window and press "Enter".
 
-     ``curl -L -o intro_to_cudf.ipynb https://bit.ly/3bzCwhO``
+      ``curl -L -o intro_to_cudf.ipynb https://bit.ly/3bzCwhO``
 
-     The new notebook will be named `intro_to_cudf.ipynb`.
+      The new notebook will be named `intro_to_cudf.ipynb`.
 
-   - Alternatively, you can click on this link:
+      - Alternatively, you can click on this link:
 
-     [https://bit.ly/3bzCwhO](https://bit.ly/3bzCwhO)
+      [https://bit.ly/3bzCwhO](https://bit.ly/3bzCwhO)
 
-     and download the file to your local machine. Simply drag-and-drop the file in the JupyterLab file browser window to the left.
+      and download the file to your local machine. Simply drag-and-drop the file in the JupyterLab file browser window to the left.
 
-     ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-file-browser.png)
+      ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-file-browser.png)
 
-1. Confirm that the notebook is available in your notebook session. The notebook file should appear in the file browser.
+3. Confirm that the notebook is available in your notebook session. The notebook file should appear in the file browser.
 
    ![](./../accelerate-ds-rapids-gpu/images/file-in-file-browser.png)
 
@@ -61,7 +61,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
    ![](./../accelerate-ds-rapids-gpu/images/open-notebook-tab.png)
 
-1. Ensure that the notebook is running in the right JupyterLab kernel. Verify this by looking at the kernel button located in the top right corner of your notebook tab.
+2. Ensure that the notebook is running in the right JupyterLab kernel. Verify this by looking at the kernel button located in the top right corner of your notebook tab.
    The kernel should be `rapidsgpuv1` which corresponds to the slug name of the RAPIDS conda environment.
 
    ![](./../accelerate-ds-rapids-gpu/images/jupyterlab-kernel-check.png)
@@ -72,7 +72,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
    You should be all set now to run the notebook. Before running the notebook, you can optionally open `gpustat` and `htop` in terminal windows to monitor Python processes running on GPUs and CPUs respectively.
 
-1. **(Optional)** I would recommend that you monitor the GPU usage while running the various RAPIDS commands by using the [utility tool `gpustat`](https://github.com/wookayin/gpustat). `gpustat` works with NVIDIA GPUs and provide a simpler interface to `nvidia-smi`.
+3. **(Optional)** I would recommend that you monitor the GPU usage while running the various RAPIDS commands by using the [utility tool `gpustat`](https://github.com/wookayin/gpustat). `gpustat` works with NVIDIA GPUs and provide a simpler interface to `nvidia-smi`.
    Launch a new terminal window and drag the newly created terminal window **tab** toward the bottom of your JupyterLab browser window. Adjust the height of the terminal window. You should end up with something similar to what is in this screenshot:
 
    ![](./../accelerate-ds-rapids-gpu/images/gpustat-terminal-window.png)
@@ -83,7 +83,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
    This command will refresh `gpustat` metrics every 3 seconds.
 
-1. **(Optional)** To monitor the CPU processes I recommend that you run `htop` in a separate terminal window. Launch a new terminal window, drag the new terminal window tab towards the bottom of your JupyterLab browser window. Move the tab to the right of the gpustat terminal window such that the two terminal windows are side-by-side at the bottom of the JupyterLab browser window. You should end up with something similar to this:
+4. **(Optional)** To monitor the CPU processes I recommend that you run `htop` in a separate terminal window. Launch a new terminal window, drag the new terminal window tab towards the bottom of your JupyterLab browser window. Move the tab to the right of the gpustat terminal window such that the two terminal windows are side-by-side at the bottom of the JupyterLab browser window. You should end up with something similar to this:
 
   ![](./../accelerate-ds-rapids-gpu/images/htop-terminal-window.png)
 
@@ -106,13 +106,12 @@ There is a menu across the top of the screen. For this lab, the most interesting
     ![](./../speed-up-ds-with-the-ads-sdk/images/finished-cell.png)
 
 
-1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
+2. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
     ![](./../speed-up-ds-with-the-ads-sdk/images/restart-kernel.png)
     ![](./../speed-up-ds-with-the-ads-sdk/images/restart.png)
 
-1. Throughout the notebook, useful instructions and additional links are provided to various sections of the cuDF documentation. Feel free to execute one cell at a time or all of them at once. We also included a table of content at the top of the notebook to help you navigate through the notebook. cuDF is a powerful library with an API that is very similar to Pandas and Dask. In the section "Comparisons with Pandas" we included a few simple performance comparisons between Pandas and cuDF. These comparisons include simple commands like loading a csv file, sorting a column, or performing simple data aggregations.
+3. Throughout the notebook, useful instructions and additional links are provided to various sections of the cuDF documentation. Feel free to execute one cell at a time or all of them at once. We also included a table of content at the top of the notebook to help you navigate through the notebook. cuDF is a powerful library with an API that is very similar to Pandas and Dask. In the section "Comparisons with Pandas" we included a few simple performance comparisons between Pandas and cuDF. These comparisons include simple commands like loading a csv file, sorting a column, or performing simple data aggregations.
 
-## **STEP 4:** Next Steps
 
 **Congratulations! You have successfully completed the lab**
 
@@ -129,6 +128,6 @@ You may now *proceed to the next lab*.
     * [Jean-Rene Gauthier](https://www.linkedin.com/in/jr-gauthier/), Sr. Principal Product Data Scientist, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/data-science). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
