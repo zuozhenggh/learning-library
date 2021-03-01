@@ -113,7 +113,7 @@ To summarize, you replaced the business logic to retrieve JSON data-type from co
 
 You have successfully completed *Converged Database for WebLogic Developer* workshop
 
-## Want to learn more
+## Learn More
 - [ORDS](https://www.oracle.com/in/database/technologies/appdev/rest.html)
 - [Consuming a Database-Bound RESTful Web Service](https://docs.oracle.com/cd/E53569_01/tutorials/tut_rest_ws/tut_rest_ws.html)
 

@@ -27,7 +27,7 @@ Estimated Workshop Time: 90 minutes
     As a **Windows user** you need to type on the **Windows Search** Icon:
 
     ```
-    cmd
+    <copy>cmd</copy>
     ```
 
     and select **Command Prompt**.
@@ -71,16 +71,16 @@ We are going to **install** Node.js, if you have done this you can skip this ste
 
     Check if the installation went **well**. Open a Command Prompt, or Terminal in Linux and MacOS and run the following commands:
 
-    ```bash
-    node -v
+    ```
+    <copy>node -v</copy>
     ```
 
-    ```bash
-    npm -v
+    ```
+    <copy>npm -v</copy>
     ```
 
-    ```bash
-    npx @oracle/bots-node-sdk -v
+    ```
+    <copy>npx @oracle/bots-node-sdk -v</copy>
     ```
 
     Like this:

@@ -29,8 +29,8 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Login and Navigation",
-      "description": "Login and Navigation",
+      "title": "Lab 3: Initialize Environment",
+      "description": "Initialize Environment",
       "filename": "../../ggsa-login-navigation/ggsa-login-navigation.md"
     },
     {
@@ -47,11 +47,6 @@
       "title": "Lab 7: Publishing Dashboards Import/Export",
       "description": "Publishing Dashboards Import/Export",
       "filename": "../../ggsa-publishing-export/ggsa-publishing-export.md"
-    },
-    {
-      "title": "Appendix",
-      "description": "Appendix",
-      "filename": "../../appendix/appendix.md"
     }
   ]
 }

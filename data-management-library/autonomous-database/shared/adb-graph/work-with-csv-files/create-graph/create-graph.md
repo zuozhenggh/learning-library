@@ -73,25 +73,25 @@ Learn how to
   ![](./images/19-modeler-correct-ddl.png " ")   
 
   Replace the existing statement with the following one which specifies that `BANK_ACCOUNTS` is a vertex table and `BANK_TXNS` is an edge table.  
-```
-<copy>
-CREATE PROPERTY GRAPH bank_graph
-    VERTEX TABLES (
-        BANK_ACCOUNTS as ACCOUNTS 
-        KEY (ACCT_ID) 
-        LABEL ACCOUNTS
-        PROPERTIES (ACCT_ID, NAME)
-    )
-    EDGE TABLES (
-        BANK_TXNS 
-        KEY (FROM_ACCT_ID, TO_ACCT_ID, AMOUNT)
-        SOURCE KEY (FROM_ACCT_ID) REFERENCES ACCOUNTS
-        DESTINATION KEY (TO_ACCT_ID) REFERENCES ACCOUNTS
-        LABEL TRANSFERS
-        PROPERTIES (FROM_ACCT_ID, TO_ACCT_ID, DESCRIPTION, AMOUNT)
-    )
-</copy>
-```
+    ```
+    <copy>
+    CREATE PROPERTY GRAPH bank_graph
+        VERTEX TABLES (
+            BANK_ACCOUNTS as ACCOUNTS 
+            KEY (ACCT_ID) 
+            LABEL ACCOUNTS
+            PROPERTIES (ACCT_ID, NAME)
+        )
+        EDGE TABLES (
+            BANK_TXNS 
+            KEY (FROM_ACCT_ID, TO_ACCT_ID, AMOUNT)
+            SOURCE KEY (FROM_ACCT_ID) REFERENCES ACCOUNTS
+            DESTINATION KEY (TO_ACCT_ID) REFERENCES ACCOUNTS
+            LABEL TRANSFERS
+            PROPERTIES (FROM_ACCT_ID, TO_ACCT_ID, DESCRIPTION, AMOUNT)
+        )
+    </copy>
+    ```
 
 5. Click the Save (floppy disk icon) to commit the changes. Then click the Designer tab to confirm that the model now has a vertex table and en edge table.  
   ![](./images/20-modeler-fix-txn-label.png " ")  
