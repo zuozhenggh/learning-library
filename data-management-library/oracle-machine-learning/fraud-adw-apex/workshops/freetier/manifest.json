@@ -1,5 +1,5 @@
 {
-  "workshoptitle":"Oracle Machine Learning with Autonomous Database",
+  "workshoptitle":"Predicting Auto Claim Fraud with Oracle Machine Learning",
   "tutorials": [
       {
         "title": "Introduction",
@@ -17,11 +17,13 @@
       },
       {
         "title": "Lab 2: Create Machine Learning Model",
+        "type": "freetier",
         "description": "Explore Zeppelin notebooks and create a ML model on customer credit data set.",
         "filename":  "../../create-ml-model/create-ml-model.md"
       },
       {
         "title": "Lab 3: Using Prediction in an Application",
+        "type": "freetier",
         "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
         "filename": "../../integrate-with-app/integrate-with-app.md"
       }

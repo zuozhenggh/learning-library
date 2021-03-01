@@ -171,7 +171,7 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
-- **Last Updated By/Date** - Tom McGinn, Product Manager, Database Product Management, February 2021
+- **Last Updated By/Date** - Tom McGinn, Product Manager, Database Product Management, March 2021
 
 ## Need Help?
 Please submit an e-mail to **livelabs-help-db_us@oracle.com**. Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

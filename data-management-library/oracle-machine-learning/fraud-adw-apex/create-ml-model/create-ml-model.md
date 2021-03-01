@@ -30,7 +30,7 @@ This lab assumes you have completed the following labs:
 
 We have built the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the file you can download. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook*. Executing the steps takes only a few minutes.
 
-1. From the tab on your browser with your ADW instance, in the Tools tab, select **Open Oracle ML Administration** and (if required) login with the admin credentials.
+1. From the tab on your browser with your ADW instance, in the Tools tab, select **Open Oracle ML Administration** and (if required) login with the admin credentials. <if type="livelabs">Your admin password is the password you copied from the Launch page.</if>
 
     ![](images/adw-open-ml-user-admin.png)
 
@@ -40,7 +40,7 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](images/oml-user-homebutton.png)
 
-3. Sign in with the omluser using the password you created.
+3. Sign in with the omluser using the password <if type="freetier">you created</if><if type="livelabs">`AAbbcc123456`</if>.
 
     ![](images/signin-to-oml.png)
 
@@ -118,38 +118,12 @@ This step discusses the result of each portion of the notebook.
 
     ![](images/unsuper-6.png)
 
-## **Step 4:** Run the Supervised notebook
-
-1. Click on the menu icon in the upper left corner and select Notebooks.
-
-    ![](images/menu.png)
-
-    ![](images/open-notebooks-menu.png)
-
-2. Click **Auto Insurance Claims - Supervised Learning** to open the notebook, and set the bindings and run the notebook.
-
-    ![](images/super-notebook.png)
-
-3. This Notebook uses labeled data to build models that better target known insurance claims fraud.
-
-    ![](images/super-1.png)
-
-4. As with the unsupervised model, we graph our data understanding, split the model, identify influential attributes, and build supervised classification models.
-
-    ![](images/super-2.png)
-
-    ![](images/super-3.png)
-
-    ![](images/super-4.png)
-
-    ![](images/super-5.png)
-
 Please proceed to the next lab.
 
 ## Acknowledgements
 
 - **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
-- **Last Updated By/Date** - Tom McGinn, Product Manager, DB Product Management, February 2021
+- **Last Updated By/Date** - Tom McGinn, Product Manager, DB Product Management, March 2021
 
 ## Need Help?
 Please submit an e-mail to **livelabs-help-db_us@oracle.com**. Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
