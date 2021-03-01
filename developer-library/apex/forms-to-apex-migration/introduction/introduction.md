@@ -10,6 +10,7 @@ Estimated Lab Time: 90 minutes
 
 
 ### Objectives
+
 * Generate SSH Key
 * Setup VCN
 * Setup Oracle Forms and convert the sample Forms to XML
@@ -19,9 +20,10 @@ Estimated Lab Time: 90 minutes
 * Modernize the Customer Form
 
 *Note: This lab assumes you are using Oracle APEX 20.2.*
-*If you are a Oracle Forms developer and have  experience with Oracle Forms then you can skip <b>Setup Oracle Forms and convert the sample Forms to XML section<b>*
+*If you are a Oracle Forms developer and have  experience with Oracle Forms then you can skip **Setup Oracle Forms and convert the sample Forms to XML section.**
 
 ### Prerequisites
+
 - Sign Up for Free Trial/Login to Oracle Cloud
 
 

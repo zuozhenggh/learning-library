@@ -156,15 +156,15 @@ That completes the List of Values section of the Migration.
 7. **CONFIRM_ALERT** is handled by Page setting , Change the **Warn on unsaved changes** to **Page Default**
     ![](images/confirm-revert-alert.png " ")
 
-## **STEP 4**: Migrate Program Units from Forms to APEX  
+## **STEP 5**: Migrate Program Units from Forms to APEX  
     
-- **Program Units** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
+1. **Program Units** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-## **STEP 5**: Migrate Triggers from Forms to APEX  
+## **STEP 6**: Migrate Triggers from Forms to APEX  
 
-- **Triggers** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
+1. **Triggers** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-## **STEP 6**: Recreate Forms Tree Structure Triggers from Forms to APEX  
+## **STEP 7**: Recreate Forms Tree Structure Triggers from Forms to APEX  
 
 - **Customer Form** in the Oracle Forms Service was represented in a **Tree** Structure , You can easily recreate the tree structure in APEX.
 
@@ -247,7 +247,7 @@ That completes the List of Values section of the Migration.
 
   Great Job !! You have successfully completed transforming the **Customer** Form to **Faceted Search Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
 
-## **STEP 7**:Additional Enhancements to Customer Form
+## **STEP 8**: Additional Enhancements to Customer Form
 
 We can enhance the customer form in APEX page to utilize the user friendly features in APEX.
 
