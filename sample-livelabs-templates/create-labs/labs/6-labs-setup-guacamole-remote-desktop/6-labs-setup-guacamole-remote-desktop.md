@@ -1,4 +1,4 @@
-# Setup Guacamole Remote Desktop
+# OPTIONAL - Setup Guacamole Remote Desktop
 
 ## Introduction
 This lab will show you how to deploy and Configure a self-contained Guacamole Instance with VNC on the same host for remote desktop access.
@@ -10,9 +10,9 @@ This lab will show you how to deploy and Configure a self-contained Guacamole In
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Enterprise Linux (OEL) 7 that meets requirement for marketplace publishing
+- An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **STEP 1**: Deploy Guacamole
+## **Step 1**: Deploy Guacamole
 1.  As root, create script */tmp/guac-1.sh* to perform the first set of tasks.
 
     ```
@@ -271,7 +271,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Configure Desktop   
+## **Step 2**: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings some settings to ensure a better user experience.
 
 1. Launch your browser to the following URL
@@ -314,7 +314,7 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
     ![](./images/desktop-display-1.png " ")
     ![](./images/desktop-display-2.png " ")
 
-## **STEP 3**: Add Applications to Desktop   
+## **Step 3**: Add Applications to Desktop   
 For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut of *FireFox* browser.
 
 1. On the desktop from the previous setup, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *FireFox*
