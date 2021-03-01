@@ -10,6 +10,7 @@ In this lab, we will walk through the required steps to provision a GPU instance
 
 - Login to Oracle Cloud
 - Provision a GPU instance on OCI
+- Access your GPU instance through SSH
 
 ### What Do You Need?
 
@@ -91,6 +92,20 @@ Alternatively, you can click on the service menu on the top left and then on **C
    Note, that if you don't provide SSH keys, you will not be able to connect to the instance using SSH.
 
    ![](images/add-SSH.PNG " ")
+
+9. The final step is specifying your boot volume size, choosing whether or not to make use of in-transit encryption and how to manage the encryption keys. You can go with the default boot volume size which is 46.6 GB for Linux syxtems, or increase it to a maximum of 32 TB. You may leave all boxes unchecked, and click on **Create** (to finalize the compute instance creation).
+
+![](images/boot-volume.PNG " ")
+
+After a couple of minutes, your GPU compute instance will change its status to **RUNNING**
+
+![](images/instance-running.PNG " ")
+
+## **Step 2:** Access the GPU instance through SSH
+
+We would like to refer to **Lab 1 - Create SSH keys** for the different options to
+
+1.
 
 ## **Acknowledgements**
 
