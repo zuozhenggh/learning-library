@@ -81,16 +81,16 @@ Alternatively, you can click on the service menu on the top left and then on **C
 
    ![](images/select-GPU.PNG " ")
 
-   7. In case you have already created a VCN in your compartment, you select the VCN and subnet you want to place your compute instance in. If not, you can click on **Create new virtual cloud network**, select a name and compartment for your VCN and a name for your public subnet. You can keep the default CIDR block or adjust it.
-      You can choose to assign a public IP address to your instance.
-      Assigning a public IP address makes this instance accessible from the internet. If you're not sure whether you need a public IP address, you can always assign one later.
+7. In case you have already created a VCN in your compartment, you select the VCN and subnet you want to place your compute instance in. If not, you can click on **Create new virtual cloud network**, select a name and compartment for your VCN and a name for your public subnet. You can keep the default CIDR block or adjust it.
+   You can choose to assign a public IP address to your instance.
+   Assigning a public IP address makes this instance accessible from the internet. If you're not sure whether you need a public IP address, you can always assign one later.
 
    ![](images/create-vcn.PNG " ")
 
-   8. In case you want to make use of the SSH public & private key pair that you have created in _Lab 1 - Create SSH keys_, you can either click on **Choose public keys files** and select the SSH public key file(s) or click on **Paste public keys** and paste the SSH public key(s) in the field. You can as well genereate a SSH public and private key on OCI and save it to your local machine.
-      Note, that if you don't provide SSH keys, you will not be able to connect to the instance using SSH.
+8. In case you want to make use of the SSH public & private key pair that you have created in _Lab 1 - Create SSH keys_, you can either click on **Choose public keys files** and select the SSH public key file(s) or click on **Paste public keys** and paste the SSH public key(s) in the field. You can as well genereate a SSH public and private key on OCI and save it to your local machine.
+   Note, that if you don't provide SSH keys, you will not be able to connect to the instance using SSH.
 
-      ![](images/add-SSH.PNG " ")
+   ![](images/add-SSH.PNG " ")
 
 ## **Acknowledgements**
 
