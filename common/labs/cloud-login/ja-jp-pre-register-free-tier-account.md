@@ -6,13 +6,12 @@
 
 ### 既存のクラウドアカウント
 
- [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html)を使用したOracle Cloudアカウントなど、すでにOracle Cloudアカウントをお持ちの場合は、ステップ2に進んで、お持ちのクラウド・テナントにサインインしてください。
+ [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html)を使用したOracle Cloudアカウントなど、すでにOracle Cloudアカウントをお持ちの場合は、**ステップ2**に進んで、お持ちのクラウド・テナントにサインインしてください。
 
 ### 一度のサインアップで2種類の無料サービス
 
-Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップすることで、多数のAlways Freeサービスと、対象となるすべてのOracle Cloud Infrastructureサービスで最大30日間使用できるUS$300の無料クレジットが付いたFree Trialを提供します。Always Freeサービスは、期間無制限でご利用いただけます。Free Trialサービスは、300米ドルの無料クレジットが消費されるまで、または30日間の有効期限が切れるまでご利用いただけます。Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップすることで、多数のAlways Freeサービスと、対象となるすべてのOracle Cloud Infrastructureサービスで最大30日間使用できるUS$300の無料クレジットが付いたFree Trialを提供します。Always Freeサービスは、期間無制限でご利用いただけます。Free Trialサービスは、300米ドルの無料クレジットが消費されるまで、または30日間の有効期限が切れるまでご利用いただけます。Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップすることで、多数のAlways Freeサービスと、対象となるすべてのOracle Cloud Infrastructureサービスで最大30日間使用できるUS$300の無料クレジットが付いたFree Trialを提供します。Always Freeサービスは、期間無制限でご利用いただけます。Free Trialサービスは、300米ドルの無料クレジットが消費されるまで、または30日間の有効期限が切れるまでご利用いただけます。
-
-![](images/freetrial.png " ")
+Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップすることで、多数のAlways Freeサービスと、対象となるすべてのOracle Cloud Infrastructureサービスで最大30日間使用できるUS$300の無料クレジットが付いたFree Trialを提供します。Always Freeサービスは、期間無制限でご利用いただけます。Free Trialサービスは、300米ドルの無料クレジットが消費されるまで、または30日間の有効期限が切れるまでご利用いただけます<br>
+![](images/ja-jp-freetrial.png " ")
 
 ### 必要なもの
 
@@ -21,10 +20,10 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
 
 ## **STEP 1**: Free Trialアカウントの作成
 
-Oracle Universal Creditsを使用したOracle Cloudアカウントなど、すでにOracle Cloudアカウントをお持ちの場合は、 **STEP 2**に進んで、お持ちのクラウド・テナントにサインインしてください
+すでにクラウドアカウントをお持ちの方は、**STEP2**へお進みください。
 
-1. Webブラウザを開いて、 [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en)にアクセスします
-2.  登録ページを表示します.
+1. Webブラウザを開いて、 [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en)のOracle Cloudアカウント登録フォームにアクセスします。
+2.  登録ページが表示されます.
        ![](images/ja-jp-cloud-infrastructure.png " ")
 3.  次の情報を入力して、Oracle Cloud Free Tierアカウントを作成します。
     *  **国**
@@ -39,12 +38,12 @@ Oracle Universal Creditsを使用したOracle Cloudアカウントなど、す�
 
 6. （可能であれば）リンクを選択するか、リンクをコピーしてブラウザに貼り付けます。
 
-7. 以下の情報を入力してOracle Cloud Free Tierアカウントを作成します。<br>
-       * **パスワード**
-       *  **会社名**
-       *  **クラウド・アカウント名** 入力に基づいて自動的に生成されますが、新しい値を入力することで変更できます。入力した内容を覚えておいてください。この名前は後でサインインする際に必要になります。
-       * **ホーム・リージョン**  ホーム・リージョンはサインアップ後に変更することはできません。
-       * **続行**をクリック
+7. 以下の情報を入力してOracle Cloud Free Tierアカウントを作成します
+* **パスワード**
+*  **会社名**
+*  **クラウド・アカウント名** 入力に基づいて自動的に生成されますが、新しい値を入力することで変更できます。入力した内容を覚えておいてください。この名前は後でサインインする際に必要になります。
+* **ホーム・リージョン**  ホーム・リージョンはサインアップ後に変更することはできません。
+* **続行**をクリック
        ![](images/ja-jp-account-info.png " ")
 
 
@@ -74,7 +73,7 @@ Oracle Universal Creditsを使用したOracle Cloudアカウントなど、す�
 
 Oracle Cloudからサインアウトした場合は、以下の手順を使用してサインインし直してください。
 
-1. [cloud.oracle.com](https://cloud.oracle.com)にアクセスして、クラウド・アカウント名を入力し、**次へ** をクリックします。これは、前のセクションでアカウントを作成する際に選択した名前です。メールアドレスではありません。名前を忘れてしまった場合は、確認メールを参照してください。
+1. [cloud.oracle.com](https://cloud.oracle.com)にアクセスして、クラウド・アカウント名を入力し、**Next** をクリックします。これは、前のセクションでアカウントを作成する際に選択した名前です。メールアドレスではありません。名前を忘れてしまった場合は、確認メールを参照してください。
 
     ![](images/ja-jp-cloud-oracle.png " ")
 
