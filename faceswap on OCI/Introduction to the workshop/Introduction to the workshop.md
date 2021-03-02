@@ -2,9 +2,9 @@
 
 ## What you will learn in this workshop
 
-In this workshop you will learn how to run the deepfake application [Faceswap](https://faceswap.dev/) on a GPU virtual machine on the Oracle Cloud Infrastructure. We will cover all steps from the provisioning and the preparation of the instance to utilize the GPU cores to running the faceswap model Python script to the extraction of the faces, training the model and the conversion of the swapped face in a video.
+In this workshop you will learn how to run the deepfake application [Faceswap](https://faceswap.dev/) on a GPU virtual machine on the Oracle Cloud Infrastructure. We will cover all steps from the provisioning and the preparation of the instance to utilize the GPU cores to run the Python script (Faceswap GAN) for the extraction of the faces, training the GAN and the conversion of the swapped face in a video.
 
-Estimated workshop time: 120 minutes (excl. AI/Faceswap model training time)
+Estimated workshop time: 120 minutes (excl. training time of the GAN)
 
 ## What is deepfake
 

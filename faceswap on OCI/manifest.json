@@ -27,8 +27,14 @@
         ,
         {
               "title": "Lab 3: Set up and access Ubuntu instance through VNC",
-              "description": "This lab will walk through the required steps to set up and access your Ubuntu instance through a VNC client (here: TigerVNC)..",
+              "description": "This lab will walk through the required steps to set up and access your Ubuntu instance through a VNC client (here: TigerVNC).",
               "filename": "./Lab3/Set up and access through VNC.md"
+        }
+        ,
+        {
+              "title": "Lab 4: Prepare GPU support for Tensorflow",
+              "description": "This lab will walk through the required steps to install the drivers and libraries for Tensorflow GPU support.",
+              "filename": "./Lab4/Prepare GPU support for Tensorflow.md"
         }
 
              ]

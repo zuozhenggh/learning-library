@@ -110,7 +110,7 @@ Type **:wq** - to save and exit.
 
 You can connect to remote desktop using a VNC client (e.g. TigerVNC) and SSH tunneling.
 
-1.  Create a SSH tunnel to VNC server using the following command (where private-key is your private OpenSSH key and public_ip the private IP address from your Ubuntu compute instance):
+1.  Create a SSH tunnel to the VNC server using the following command (where private-key is your private OpenSSH key and public_ip the private IP address from your Ubuntu compute instance):
 
 ```
 <copy>ssh -i private-key ubuntu@public_ip -C -L 5901:127.0.0.1:5901</copy>
