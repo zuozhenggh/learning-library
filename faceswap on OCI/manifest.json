@@ -20,13 +20,13 @@
         }
         ,
         {
-              "title": "Lab 2: Provision a GPU instance",
+              "title": "Lab 2: Provision GPU instance",
               "description": "This lab you through the required and optional steps to launch a GPU instance on OCI .",
               "filename": "./Lab2/Lab 2 - Provision a GPU instance.md"
         }
         ,
         {
-              "title": "Lab 3: Set up and access Ubuntu instance through VNC",
+              "title": "Lab 3: Set up and access through VNC",
               "description": "This lab will walk through the required steps to set up and access your Ubuntu instance through a VNC client (here: TigerVNC).",
               "filename": "./Lab3/Set up and access through VNC.md"
         }

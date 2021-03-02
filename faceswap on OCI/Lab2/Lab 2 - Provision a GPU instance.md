@@ -65,7 +65,7 @@ Alternatively, you can click on the service menu on the top left and then on **C
 
    ![](images/change-image.PNG " ")
 
-   Select the image you want to use for your compute instance and click on the **Select Image** button. We will select Ubuntu 18.04 which is recommended by Faceswap, but any other Linux distribution and Windows operating system is supported and will work as well.
+   Select the image you want to use for your compute instance and click on the **Select Image** button. We will select Ubuntu 18.04 which is recommended by Faceswap, but any other Linux distribution and Windows operating system might work as well.
 
    ![](images/select-image.PNG " ")
 
