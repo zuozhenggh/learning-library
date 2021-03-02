@@ -564,7 +564,7 @@ let main = function() {
 
     /* Add the Go to forum link in the footer (DBDOC-2459 and DBDOC-2496) */
     let addGoToForumLink = function(support) {
-        const support_text = "Go to forum"
+        const support_text = "Go to forum";
         if (support !== undefined) {
             // the Need Help? URL is taken from the manifest file (key is support)
             let need_help = $(document.createElement('li')).append($(document.createElement('a')).attr({'href': support, 'target': '_blank'}).text(support_text));
@@ -575,7 +575,7 @@ let main = function() {
     /* Add the Need Help link in the header (DBDOC-2459 and DBDOC-2496) */
     let addNeedHelpLink = function(help, wtitle) {
         const subject = "Question about workshop: " + wtitle;
-        const help_text = "Need help? Send us an email."
+        const help_text = "Need help? Send us an email.";
         if (help !== undefined) {
             // the Need Help? URL is taken from the manifest file (key is help)
             let need_help = $(document.createElement('a')).attr(
