@@ -36,6 +36,18 @@
               "description": "This lab will walk through the required steps to install the drivers and libraries for Tensorflow GPU support.",
               "filename": "./Lab4/Prepare GPU support for Tensorflow.md"
         }
+        ,
+        {
+              "title": "Lab 5: Install Faceswap",
+              "description": "This lab will walk through the required steps to install Faceswap on your GPU instance.",
+              "filename": "./Lab5/Install Faceswap.md"
+        }
+        ,
+        {
+              "title": "Lab 6: Run Faceswap (terminal and GUI)",
+              "description": "This lab will walk through the required steps to run Faceswap on your GPU instance (terminal and GUI).",
+              "filename": "./Lab6/Run Faceswap.md"
+        }
 
              ]
   }
