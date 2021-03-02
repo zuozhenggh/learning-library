@@ -51,18 +51,18 @@ Before you Begin with Data Flow lab, you must have:
 
       ```
       <copy>
-      ALLOW GROUP dataflow-admin TO READ buckets IN <TENANCY>
+      ALLOW GROUP dataflow-admin TO READ buckets IN TENANCY
       </copy>
       ```
 
       ```
       <copy>
-      ALLOW GROUP dataflow-admin TO MANAGE dataflow-family IN <TENANCY>
+      ALLOW GROUP dataflow-admin TO MANAGE dataflow-family IN TENANCY
       </copy>
       ```
       ```
       <copy>
-      ALLOW GROUP dataflow-admin TO MANAGE objects IN <TENANCY> WHERE ALL
+      ALLOW GROUP dataflow-admin TO MANAGE objects IN TENANCY WHERE ALL
           {target.bucket.name='dataflow-logs', any {request.permission='OBJECT_CREATE',
           request.permission='OBJECT_INSPECT'}}
       </copy>
@@ -72,17 +72,17 @@ Before you Begin with Data Flow lab, you must have:
 
       ```
       <copy>
-      ALLOW GROUP dataflow-users TO READ buckets IN <TENANCY>
+      ALLOW GROUP dataflow-users TO READ buckets IN TENANCY
       </copy>
       ```
       ```
       <copy>
-      ALLOW GROUP dataflow-users TO USE dataflow-family IN <TENANCY>
+      ALLOW GROUP dataflow-users TO USE dataflow-family IN TENANCY
       </copy>
       ```
       ```
       <copy>
-      ALLOW GROUP dataflow-users TO MANAGE dataflow-family IN <TENANCY> WHERE ANY {request.user.id = target.user.id, request.permission = 'DATAFLOW_APPLICATION_CREATE', request.permission = 'DATAFLOW_RUN_CREATE'}
+      ALLOW GROUP dataflow-users TO MANAGE dataflow-family IN TENANCY WHERE ANY {request.user.id = target.user.id, request.permission = 'DATAFLOW_APPLICATION_CREATE', request.permission = 'DATAFLOW_RUN_CREATE'}
       </copy>
       ```
       *Note: Replace <tenancy> with the name of your tenancy*
@@ -117,6 +117,6 @@ For example, with a Java or Scala application, let’s suppose a developer at `e
 - **Last Updated By/Date** -
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Data flow). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/DataFlow). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

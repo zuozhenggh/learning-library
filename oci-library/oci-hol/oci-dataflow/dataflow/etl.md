@@ -18,19 +18,17 @@ The data is provided in CSV format and your first step is to convert this data t
 
 * Lab 0 to setup Data Flow.
 
-* From the Console, click the hamburger menu to display the list of available services.
+* From the Console, click the hamburger menu to display the list of available services. Select Data Flow and click `Applications`
 
-  ![](../images/access_dataflow_ui1.png " ")
-
-  Select Data Flow and click `Applications`
-
-  ![](../images/access_dataflow_ui2.png " ")
 * Basic understanding of Java
 
 
 ## **STEP 1**: Create Java Application
 
 1. Navigate to the Data Flow service in the Console by expanding the hamburger menu on the top left and scrolling to the bottom
+
+*Note: If you get an error about missing logs or warehouse bucket, see these setup instructions in Lab 0*   
+
 
 2. Highlight Data Flow, then select **Applications**. Choose a compartment where you want your Data Flow applications to be created. Finally, click **Create Application**.  
 
