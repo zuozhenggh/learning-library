@@ -8,17 +8,24 @@ In this lab, you will map the private IP address of the **first master node** to
 
 **Note:** This lab assumes that your cluster has been created as secure and highly available. If you did not create a secure and HA-cluster, then there is no need to create the Kerberos user.
 
+Estimated Lab Time: 45 minutes
+
 ### Objectives
 
 * Map the private IP address of the first master node to a public IP address.
-* Connect to the cluster's first master node using Putty.
-* Create a new Kerberos principal.
+* Connect to the cluster's first master node using PuTTY.
 * Create a new Linux administrator user.
 * Access HDFS using the newly created user.
 * Add the new user to Hue.
 
 ### What Do You Need?
-This lab assumes that you have successfully completed all the labs in the **Contents** menu.
+This lab assumes that you have successfully completed the following labs in the **Contents** menu:
+
++ **Lab 1: Setup the BDS Environment**
++ **Lab 2: Create a BDS Hadoop Cluster**
++ **Lab 3: Add Oracle Cloud SQL to the Cluster**
++ **Lab 4: Access a BDS Node Using a Public IP Address**
++ **Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster**
 
 ## **STEP 1:** Gather Information About the Cluster
 
@@ -111,13 +118,13 @@ _If you are already connected to your cluster's first master node using the Open
 
 1. To SSH into your cluster using your Windows PuTTYgen generated SSH key pair, start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 
-  + **Host Name (or IP address):** **`opc@master-node-0-ip-address`**.    
-    **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
-  + **Port:** **`22`**.
-  + **Connection type:** **`SSH`**.   
-  + **Saved Sessions:** A description of this ssh connection such as `ssh to traininmn0 on BDS cluster`.
+    + **Host Name (or IP address):** **`opc@master-node-0-ip-address`**.    
+      **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
+    + **Port:** **`22`**.
+    + **Connection type:** **`SSH`**.   
+    + **Saved Sessions:** A description of this ssh connection such as `ssh to traininmn0 on  BDS cluster`.
 
-   ![](./images/putty-configuration-session.png " ")
+    ![](./images/putty-configuration-session.png " ")
 
 2. In the **Category** pane, expand **Connection**, expand **SSH**, and then click **Auth**. In the **Options controlling SSH authentication** section, in the **Private key file for authentication** section, click **Browse**. In the **Select private key file** window, select your **_private key_** that is associated with your cluster's **_public key_** that you used when your created your BDS cluster.    
 
@@ -294,10 +301,10 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 ## Acknowledgements
 
 * **Author:**
-    * Lauran Serhal, User Assistance Developer, Oracle Database and Big Data User Assistance
+    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, December 2020
+* **Last Updated By/Date:** Lauran Serhal, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

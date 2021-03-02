@@ -16,9 +16,30 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 * GitHub Desktop client
 
 
-This lab assumes that you have successfully completed **Lab 4: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
+This lab assumes that you have successfully completed **Lab 3: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
 
-## **STEP 1:** Commit your Changes in your Clone
+## **Step 1:** Get Latest Updates from Production
+
+Before you develop you should ensure you have the latest content from production to ensure you are developing off the latest code set.
+
+1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is perform the following steps to sync.  This should be done before you commit.
+
+  ![](./images/git-hub-sync-behind.png " ")
+
+2. Start your **GitHub Desktop** client.  Go to **Branch** -> **Merge into Current Branch**.
+
+  ![](./images/git-hub-merge-branch.png " ")
+
+3. Select the branch upstream/master (there may be a number of branches, search until you see *upstream/master*). Press the **merge upstream/master into master** button.
+   
+  ![](./images/git-hub-merge-branch-2.png " ")
+
+4. Press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![](./images/git-hub-merge-ahead.png " ")
+
+
+## **Step 2:** Commit your Changes in your Clone
 When you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone, and then push those changes from your clone to your fork. Then these changes get saved to your forked learning-library repository.
 
 To commit your changes:
@@ -33,7 +54,8 @@ To commit your changes:
 
   ![](./images/git-hub-commit-push-origin.png " ")
 
-## **STEP 2:** Set Up GitHub Pages for your Fork to Test your Content
+
+## **Step 3:** Set Up GitHub Pages for your Fork to Test your Content
 
 After you upload the content from your clone to your fork, request your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL of your forked repository).
 
@@ -58,16 +80,18 @@ To publish your GitHub Pages site:
   This may take a few hours to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
-## **STEP 3:** Sharing your Workshop for Review
+## **Step 4:** Sharing your Workshop for Review
 After you have successfully set up your GitHub pages, you can share your workshop for review.
 To share and view your workshop:
 1. In the browser, enter the URL of your GitHub Pages [https://achepuri.github.io/learning-library/](https://achepuri.github.io/learning-library/).
 2. Append the URL with the details of your workshop.
     The complete URL will look similar to this: [https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/), which can be shared for review.
 
-## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
+## **Step 5**: Create a Pull Request to Upload Your Content to the Master Repository
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
+
+Note:  *Before executing a PR, make sure you have run Step 1 above and that your personal github repo on the web is not behind.*
 
 **Note**: The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
@@ -80,7 +104,7 @@ To create a Pull Request:
 
   ![](./images/git-hub-branch-browser-create-pull-request.png " ")
 
-3. Enter the title for the pull request, leave a comment (optional) and then click **Create pull request**.
+3. Enter the title for the pull request and include your LWMS ID (you can find that by visiting the [LWMS](http://bit.ly/oraclelivelabs)) in the title and then click **Create pull request**.
     ![](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
 
