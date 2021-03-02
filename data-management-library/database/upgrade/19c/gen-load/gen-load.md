@@ -34,9 +34,16 @@ In this lab, you will:
 ## **STEP 1**: Generate an AWR snapshot
 
 1. Login to the Oracle Cloud
-2. Start VNC
-3. Open an xterm by double-clicking on the TERMINAL icon
-4. Switch the environment to . upgr, change to /home/oracle/scripts and start SQL*Plus:
+2. Open an xterm by double-clicking on the TERMINAL icon and switch to the oracle user
+   ````
+   sudo su - oracle
+   ````
+
+   ````
+    [opc@hol19c ~]$ sudo su - oracle
+    Last login: Thu Feb 18 19:14:43 CET 2021
+    ````
+3. Switch the environment to . upgr, change to /home/oracle/scripts and start SQL*Plus:
 
     ````
     <copy>
@@ -45,8 +52,25 @@ In this lab, you will:
     sqlplus / as sysdba
     </copy>
     ````
+    ````
+    [oracle@instance-20210218-1258 ~]$ . upgr
+    [UPGR] oracle@instance-20210218-1258:~
+    $ cd /home/oracle/scripts
+    [UPGR] oracle@instance-20210218-1258:~/scripts
+    $ sqlplus / as sysdba
 
-5.  Execute snap.sql which generates an AWR snapshot.  Please NOTE down the snapshot number (e.g.: 110)
+    SQL*Plus: Release 11.2.0.4.0 Production on Mon Feb 22 22:28:33 2021
+
+    Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+    Connected to:
+    Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+    ````
+
+
+4.  Execute snap.sql which generates an AWR snapshot.  Please NOTE down the snapshot number (e.g.: 110)
 
     ````
     <copy>
@@ -54,14 +78,21 @@ In this lab, you will:
     @/home/oracle/scripts/snap.sql
     </copy>
     ````
-
-6. Don’t exit from the xterm. Leave SQL*Plus open.
+    ````
+    SQL> startup
+    ORA-01081: cannot start already-running ORACLE - shut it down first
+    SQL> @/home/oracle/scripts/snap.sql
+    ------------------------------------------
+    - AWR Snapshot with Snap-ID: 232 created. -
+    ------------------------------------------
+    ````
+5. Don’t exit from the xterm. Leave SQL*Plus open.
 
 ## **Step 2**: Start HammerDB
 
 1. Double-Click on the HammerDB icon on the desktop to start Hammer DB
 
-## **Step 2**: Load Driver Script and start Virtual Users
+## **Step 3**: Load Driver Script and start Virtual Users
 
 1. Click on the triangle “TPC-C“:
 2. Open the Driver Script setup with a Click:
@@ -69,12 +100,11 @@ In this lab, you will:
 4. This will populate the script window with the driver script (ignore the error messages in the script window):
 5. Click on Virtual Users.  Now Double-Click on Create – you should see then 3 Virtual Users being started below the script window:
 
-## **Step 3**: Capture SQL, Load Test and Monitor
+## **Step 4**: Capture SQL, Load Test and Monitor
 
 Please start the following script in your SQL*plus window. With this script you’ll capture now all SQL Statements directly from cursor cache while HammerDB is running and generating load on your database.
 
 1. Run the capture script. The capture is scheduled for 240 seconds. It polls the cache every 10 seconds.
-
    
     ````
     <copy>
@@ -93,7 +123,7 @@ Please start the following script in your SQL*plus window. With this script you�
 6. Finally Exit HammerDB:
 
  
-## **Step 4**: Generate another AWR snapshot
+## **Step 5**: Generate another AWR snapshot
 
 Please WAIT until the capture_cc.sql scripts returns control back to you – DON’T CTRL-C it!
 

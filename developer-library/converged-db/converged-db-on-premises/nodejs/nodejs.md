@@ -122,7 +122,7 @@ This lab assumes you have:
     - Method: - POST  
     - URL:   
     ```
-    <copy>http://localhost:3001/products/13</copy>
+    <copy>http://localhost:3001/updateProduct/13</copy>
     ```
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
