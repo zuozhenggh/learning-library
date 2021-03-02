@@ -31,11 +31,11 @@ This lab assumes you have completed the following labs:
 
     ![](images/adw-tools-open-apex.png)
 
-3. Enter the admin password <if type="freetier">you created for the database</if><if type="livelabs">`AAbbcc123456`</if>.
+<if type="freetier">
+3. Enter the admin password you created for the database.
 
     ![](images/sign-in-apex.png)
 
-<if type="freetier">
 4. On the Welcome screen click **Create Workspace**.
 
     ![](images/welcome-apex.png)
@@ -97,7 +97,7 @@ This lab assumes you have completed the following labs:
 
 </if>
 
-15. Sign in using your password for OMLUSER.
+15. Sign in using your password for OMLUSER<if type="livelabs"> (`AAbbcc123456`)</if>.
 
     ![](images/sign-in-app.png)
 
@@ -147,6 +147,10 @@ Finally, we'll build a new model using this "supervised" data to improve the mod
 2. Click **Auto Insurance Claims - Supervised Learning** to open the notebook, and set the bindings and run the notebook.
 
     ![](images/super-notebook.png)
+
+3. Note: if you see a **Error** in one of the Notebook sections, rerun the Notebook until the errors are cleared.
+
+    ![](images/notebook-error.png)
 
 3. This Notebook uses labeled data to build models that better target known insurance claims fraud.
 
