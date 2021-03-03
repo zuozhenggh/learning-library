@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Deploy an OKE cluster with OCI Service Broker",
+    "workshoptitle": "APEX development workflow",
     "tutorials": [
         {
             "title": "Prerequisites",
