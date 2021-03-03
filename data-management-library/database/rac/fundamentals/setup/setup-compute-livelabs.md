@@ -5,6 +5,9 @@ This lab will show you how to connect to your DB System.
 
 Estimated Lab Time:  5 minutes 
 
+Watch the video below for an overview of the Build a DB System lab
+[](youtube:tRo33KktXt0)
+
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
@@ -74,7 +77,7 @@ For more information about Terraform and Resource Manager, please see the append
 2. You can also log in to the **Public IP Address of node2**
 
     ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node1>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node2>
     ````
     ![](./images/em-mac-linux-ssh-login.png " ")
 

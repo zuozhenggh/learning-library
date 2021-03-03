@@ -6,7 +6,7 @@ In this lab you will be introduced to using the Oracle SODA APIs for Python. But
 
 *Estimated Lab Time:* 30 Minutes
 
-Watch the video below for an overview of Lab 6: SODA
+Watch the video below for an overview of the SODA lab
 [](youtube:uHaxtbmFEjk)
 
 
@@ -537,6 +537,5 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kay Malcolm, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/soda). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
