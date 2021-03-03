@@ -8,7 +8,7 @@ Oracle Database 19c is the *Long Term* Release for the Oracle Database 12c and 1
 
 Therefore in the interests of maintaining business continuity,  customers still running on prior releases (e.g. 11gR2, 12cR1, 12cR2, 18c) are encouraged to start planning their 19c upgrades before current support windows expire. BTW, always refer to [MOS note #742060.1](https://support.oracle.com/epmos/faces/DocumentDisplay?id=742060.1&displayIndex=1) for the latest status of Oracle Database releases and support coverage.
 
-Estimated Lab Time: 120 minutes 
+Estimated Lab Time: 120 minutes
 
   [](youtube:lOzL5irmuJo)
 
@@ -27,7 +27,6 @@ In this lab, you will:
 
 
 ### Prerequisites
-
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 
 ## About the Workshop
@@ -49,7 +48,7 @@ The workshop also contains also 5 different databases for running the various up
 - DB12 – 12.2.0.1 database (non-CDB)
 - CDB1 – 12.2.0.1 database (CDB)
 - CDB2 – 19.5.0 database (CDB)
-  
+
 ## Upgrade and Data Migration Methods and Processes
 
 ### Database Upgrade Assistant (DBUA)
@@ -91,6 +90,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
