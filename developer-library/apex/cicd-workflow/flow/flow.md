@@ -25,7 +25,7 @@ In this lab you will:
     </copy>
     ```
 
-    The application installed previously has ID 100, so we're provisding this ID here.
+    The application installed previously has ID 100, so we're providing this ID here.
 
     This will create a changelog of the schema and export the app.
 
