@@ -61,7 +61,7 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](images/import-notebook.png)
 
-6. Go to the directory where you downloaded and unzipped the files and import the **Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json** notebook.
+6. Go to the directory where you downloaded the files and import the **Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json** notebook.
 
     ![](images/import-unsuper-notebook.png)
 
@@ -75,21 +75,21 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](./images/unsuper-learning-notebook.png  " ")
 
-5.  Before you start working the **Auto Insurance Claims Fraud - Unsupervised Learning** you need to set the interpreter binging. Click on the gear icon.
+2.  Before you start working the **Auto Insurance Claims Fraud - Unsupervised Learning** you need to set the interpreter binging. Click on the gear icon.
 
     ![](./images/unsuper-learning-notebook-binding-1.png  " ")
 
-6.  Click the low and medium bindings to disable them and click **Save**.
+3.  Click the low and medium bindings to disable them and click **Save**.
 
     ![](./images/unsuper-learning-notebook-binding-2.png  " ")
 
-7.  Click on the **Run All Paragraphs** icon to run all paragraphs in the notebook, then click **OK**.
+4.  Click on the **Run All Paragraphs** icon to run all paragraphs in the notebook, then click **OK**.
 
     ![](./images/run-all.png  " ")
 
     ![](images/run-all-ok.png)
 
-8.  Click on the **Show/Hide the Output** icon to show the output and ensure that all the paragraphs are in **Finished** state.
+5.  Click on the **Show/Hide the Output** icon to show the output and ensure that all the paragraphs are in **Finished** state.
 
     ![](./images/show-hide-output-2.png  " ")
 

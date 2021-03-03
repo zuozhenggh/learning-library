@@ -48,7 +48,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
     ![](images/open-adw.png)
 
-6. Select the compartment assigned to you from the <left menu> and then click the ADW instance.
+6. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
 
     ![](images/select-compartment.png)
 
