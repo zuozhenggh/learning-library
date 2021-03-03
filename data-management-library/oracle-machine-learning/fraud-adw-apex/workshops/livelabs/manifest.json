@@ -1,5 +1,6 @@
 {
   "workshoptitle":"Predicting Auto Claim Fraud with Oracle Machine Learning",
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
   "tutorials": [
       {
         "title": "Prerequisites",
