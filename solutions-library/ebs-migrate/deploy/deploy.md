@@ -35,7 +35,7 @@ This step will take you through how to provision an E-Business Suite instance fr
 
     b. Click **Next**.
 
-4. Enter a name for the database and create a password for the database. Enter a hostname and domain name for the database tier. 
+4. Enter a name for the database and create a password for the database. Enter a hostname and domain name for the database tier.
 
     ![](./images/2.png " ")
 

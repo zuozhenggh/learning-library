@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this 30-minute tutorial, you will use an image hosted in Oracle Cloud Infrastructure (OCI) to provision an Oracle E-Business Suite 12.2.8 with Oracle Database 12.1.0.2 demonstration instance on a single virtual machine (VM) on OCI.
+In this 30-minute tutorial, you will use an image hosted in Oracle Cloud Infrastructure (OCI) to provision an Oracle E-Business Suite 12.2.10 with Oracle Database 12.1.0.2 demonstration instance on a single virtual machine (VM) on OCI.
 
-Create an Oracle Cloud Infrastructure Compute instance (virtual machine) containing the Release 12.2.8 database and application tiers from the provided image. Use this single-node Vision demonstration instance to evaluate and test standard Oracle E-Business Suite functionality, and demonstrate the standard business flows delivered with the applications. Also use it to become familiar with the technology components of Oracle E-Business Suite Release 12.2 and train your users.
+Create an Oracle Cloud Infrastructure Compute instance (virtual machine) containing the Release 12.2.10 database and application tiers from the provided image. Use this single-node Vision demonstration instance to evaluate and test standard Oracle E-Business Suite functionality, and demonstrate the standard business flows delivered with the applications. Also use it to become familiar with the technology components of Oracle E-Business Suite Release 12.2 and train your users.
 
-The Oracle E-Business Suite 12.2.8 Demo Install Image can be found in the OCI Console Marketplace and also in the OCI Oracle Images list in your tenancy. Instructions for the OCI Console Marketplace are provided in this document.
+The Oracle E-Business Suite 12.2.10 Demo Install Image can be found in the OCI Console Marketplace and also in the OCI Oracle Images list in your tenancy. Instructions for the OCI Console Marketplace are provided in this document.
 
 **Estimated Lab Time:** 30 minutes
 
@@ -109,7 +109,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
       - **Category:** `Packaged Application`
 
-    b. Click on **Oracle E-Business Suite 12.2.8 Demo Install Image**.
+    b. Click on **Oracle E-Business Suite 12.2.10 Demo Install Image**.
 
     ![](./images/7.png " ")
 
@@ -134,7 +134,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
     d. **Choose Fault Domain:** leave unchecked
 
-    e. **Image:** `Oracle E-Business Suite 12.2.8 Demo Install Image`  (leave unchanged)
+    e. **Image:** `Oracle E-Business Suite 12.2.10 Demo Install Image`  (leave unchanged)
 
     f. **Shape:** click **Change Shape** and select the following if not already selected:
 

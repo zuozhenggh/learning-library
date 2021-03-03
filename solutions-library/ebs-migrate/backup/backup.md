@@ -107,7 +107,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
 
     4. Enter the location of the context file on the database tier, including the complete file path.
 
-    5. Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.8 image from the OCI Marketplace**
+    5. Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.10 image from the OCI Marketplace**
 
     6. Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
 
