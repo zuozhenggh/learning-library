@@ -15,6 +15,12 @@ Estimated time: 45 - 60 minutes
     ````
 
 2. Then, login using the following commands:
+    ````
+    <copy>
+    sudo su - oracle
+    cd /home/oracle/labs/multitenant
+    </copy>
+    ````
 
     ````
     <copy>. oraenv</copy>
