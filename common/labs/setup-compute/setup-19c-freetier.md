@@ -44,7 +44,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
     ![Create a stack](images/workshop-004.png " ")
 10. Accept the network and click **Next**.
     ![Create a stack](images/workshop-005.png " ")
-11. Review the details and click **Next**.
+11. Review the details and click **Create**.
     ![Create a stack](images/workshop-006.png " ")
 
 ## **STEP 2**: Run Stack Apply Job
