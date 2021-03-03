@@ -358,3 +358,11 @@ This will create a VCN with the following components:
 
 9. From OCI services menu Click **Virtual Cloud Networks** under Networking, Locate your VCN , click the Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
     ![](images/RESERVEDIP_HOL0018.PNG " ")
+
+
+## Acknowledgements
+*Congratulations! You have successfully completed the lab.*
+
+- **Author** - Flavio Pereira, Larry Beausoleil
+- **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Last Updated By/Date** - Orlando Gentil, Feb 2021
