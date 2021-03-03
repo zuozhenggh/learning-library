@@ -45,6 +45,8 @@ To complete this lab, you need to have the following:
 
     - Alternatively, your own Autonomous Database instance
 
+**Note:**  This lab uses refreshable clones, which are not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy.
+
 ## STEP 1: Create a Table in the Source Database
 
 1. Navigate to your existing **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab. (Alternatively, create a new database as your source.) Insert a line of data into this source database before you clone it, by opening a Database Actions worksheet via the **Tools** tab in the Autonomous Database Details page of the OCI console. Connect to Database Actions as the user named **admin** with the password you created for the admin user in the Getting Started lab. On the Database Actions page, under the **Development** heading, click **SQL**.
