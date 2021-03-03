@@ -41,7 +41,7 @@ If you already have a cloud account, skip to **STEP 2**.
        * Choose a **Password**
        * Enter your **Company Name**
        * Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
-       * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up.
+       * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up. Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
        * Click **Continue**
 
     ![](images/account-info.png " ")
