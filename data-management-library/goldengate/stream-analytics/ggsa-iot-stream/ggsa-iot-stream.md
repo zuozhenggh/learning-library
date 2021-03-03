@@ -133,11 +133,11 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 1. Now click on the *ReplenishAlert* stage and Pause.
 2. In this stage we are adding a target stage that we have defined for a kafka topic replenishAlert.
 
-   ![](./images/replenishTarget.png " ")
+   ![](./images/replenishtarget.png " ")
 
 3. The fields in the topic have been predefined but we could have easily defined the necessary fields for our new target or even edited the existing target. Notice that in this stage we mapped the existing data from our stream Output Stream Property to the topic fields Target Property as appropriate
 
-    ![](./images/replenishTargetFields.png " ")
+    ![](./images/replenishtargetfields.png " ")
 
 ## **Step 9**: Create ReplenishStats Stage
 
