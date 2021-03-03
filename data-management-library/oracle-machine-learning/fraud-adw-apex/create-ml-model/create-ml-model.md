@@ -23,8 +23,13 @@ Estimated time: 20 - 30 minutes
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-- Login to Oracle Cloud/Sign Up for Free Tier Account
-- Connect and Provision ADB
+<if type="freetier">
+- Sign Up for Free Tier Account/Login to Oracle Cloud
+- Provision and Setup ADB
+</if>
+<if type="livelabs">
+- Launch the workshop (in the Introduction)
+</if>
 
 ## **Step 1:** Import ML Notebooks
 
@@ -48,13 +53,13 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](images/open-notebooks.png)
 
-5. Click on **Import**.
+5. Download the [Auto Insurance Claims Fraud - Unsupervised Learning.json](files/Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json?download=1) file.
+
+6. Download the [Auto Insurance Claims Fraud - Supervised Learning.json](files/Auto-Insurance-Claims-Fraud-Supervised-Learning.json?download=1) file.
+
+7. Click on **Import**.
 
     ![](images/import-notebook.png)
-
-6. Download the [Auto Insurance Claims Fraud - Unsupervised Learning.json](files/Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json?download=1) file.
-
-7. Download the [Auto Insurance Claims Fraud - Supervised Learning.json](files/Auto-Insurance-Claims-Fraud-Supervised-Learning.json?download=1) file.
 
 6. Go to the directory where you downloaded and unzipped the files and import the **Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json** notebook.
 
