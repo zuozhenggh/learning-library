@@ -60,6 +60,10 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
     *Note*: There is an underscore `_` character at the end of the password.
 
+3. Review the desktop. Important shortcuts have been placed on the desktop for your convenience.
+
+    ![](./images/guacamole-landing.png " ")
+
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
 
