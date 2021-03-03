@@ -23,8 +23,13 @@ Estimated time: 20 - 30 minutes
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-- Login to Oracle Cloud/Sign Up for Free Tier Account
-- Connect and Provision ADB
+<if type="freetier">
+- Sign Up for Free Tier Account/Login to Oracle Cloud
+- Provision and Setup ADB
+</if>
+<if type="livelabs">
+- Launch the workshop (in the Introduction)
+</if>
 
 ## **Step 1:** Import ML Notebooks
 
@@ -48,15 +53,15 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](images/open-notebooks.png)
 
-5. Click on **Import**.
+5. Download the [Auto Insurance Claims Fraud - Unsupervised Learning.json](files/Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json?download=1) file.
+
+6. Download the [Auto Insurance Claims Fraud - Supervised Learning.json](files/Auto-Insurance-Claims-Fraud-Supervised-Learning.json?download=1) file.
+
+7. Click on **Import**.
 
     ![](images/import-notebook.png)
 
-6. Download the [Auto Insurance Claims Fraud - Unsupervised Learning.json](files/Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json?download=1) file.
-
-7. Download the [Auto Insurance Claims Fraud - Supervised Learning.json](files/Auto-Insurance-Claims-Fraud-Supervised-Learning.json?download=1) file.
-
-6. Go to the directory where you downloaded and unzipped the files and import the **Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json** notebook.
+6. Go to the directory where you downloaded the files and import the **Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json** notebook.
 
     ![](images/import-unsuper-notebook.png)
 
@@ -70,21 +75,21 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](./images/unsuper-learning-notebook.png  " ")
 
-5.  Before you start working the **Auto Insurance Claims Fraud - Unsupervised Learning** you need to set the interpreter binging. Click on the gear icon.
+2.  Before you start working the **Auto Insurance Claims Fraud - Unsupervised Learning** you need to set the interpreter binging. Click on the gear icon.
 
     ![](./images/unsuper-learning-notebook-binding-1.png  " ")
 
-6.  Click the low and medium bindings to disable them and click **Save**.
+3.  Click the low and medium bindings to disable them and click **Save**.
 
     ![](./images/unsuper-learning-notebook-binding-2.png  " ")
 
-7.  Click on the **Run All Paragraphs** icon to run all paragraphs in the notebook, then click **OK**.
+4.  Click on the **Run All Paragraphs** icon to run all paragraphs in the notebook, then click **OK**.
 
     ![](./images/run-all.png  " ")
 
     ![](images/run-all-ok.png)
 
-8.  Click on the **Show/Hide the Output** icon to show the output and ensure that all the paragraphs are in **Finished** state.
+5.  Click on the **Show/Hide the Output** icon to show the output and ensure that all the paragraphs are in **Finished** state.
 
     ![](./images/show-hide-output-2.png  " ")
 
@@ -127,5 +132,3 @@ Please proceed to the next lab.
 
 ## Need Help?
 Please submit an e-mail to **livelabs-help-db_us@oracle.com**. Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
