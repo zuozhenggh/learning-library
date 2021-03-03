@@ -13,7 +13,7 @@ Estimated Time: 20 mins
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Login to Oracle Cloud/Sign Up for Free Tier
+* Sign Up for Free Tier/Login to Oracle Cloud
 
 *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
