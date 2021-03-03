@@ -1,4 +1,4 @@
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
@@ -43,7 +43,7 @@ If you already have a cloud account, skip to **STEP 2**.
        * Choose a **Password**
        * Enter your **Company Name**
        * Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
-       * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up.
+       * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up. Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
        * Click **Continue**
        ![](images/account-info.png " ")
 
@@ -51,7 +51,7 @@ If you already have a cloud account, skip to **STEP 2**.
 5.  Enter your Address information.  Click **Continue**.
           ![](images/free-tier-address.png " ")
 
-6.  Choose your country and enter a mobile member for verification.   Click the **Text me a code** button.
+6.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
 
        ![](images/free-tier-address-2.png " ")
 
@@ -74,23 +74,19 @@ If you already have a cloud account, skip to **STEP 2**.
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and click the **View Accounts** button.
+1. Go to [cloud.oracle.com](https://cloud.oracle.com) and Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
     ![](images/cloud-oracle.png " ")
 
-2. Click **Sign in to Cloud**.
-
-    ![](images/signin-to-cloud.png " ")
-
-3. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
 
     ![](images/cloud-login-tenant.png " ")
 
-4. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
     ![](images/oci-signin.png " ")
 
-5. You are now signed in to Oracle Cloud!
+4. You are now signed in to Oracle Cloud!
 
     ![](images/oci-console-home-page.png " ")
 
@@ -112,10 +108,9 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 ## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
-- **Last Updated By** - Kay Malcolm, January 2020
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **Last Updated By** - Rene Fontcha, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

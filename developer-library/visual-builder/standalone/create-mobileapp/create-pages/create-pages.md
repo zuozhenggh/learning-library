@@ -8,22 +8,27 @@ This tutorial shows you how to create pages to display data from the business ob
 
 ### Background
 
-In Oracle Visual Builder, you create pages in your mobile application by dragging and dropping components. You can use Quick Starts to quickly create pages to display, create, edit, and delete data.
+In Oracle Visual Builder, you create pages in your mobile application by dragging and dropping components. You can use Quick Starts to quickly create pages to display, create, edit, and delete your application's data.
+
+In this tutorial, we'll use Quick Starts to create a page that displays Departments and another that displays Employees. We'll also create pages that let users add a new department and a new employee - again using Quick Starts.
 
 
 ## **STEP 1**: Use the main-start Page to Display Departments
 
 These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created in the previous tutorial.
 
-1.  Click the **Mobile Applications** ![](images/vbcscp_mob_mob_icon.png "Mobile Applications icon") tab.
+1.  Click the **Mobile Applications** ![](images/vbcscp_mob_mob_icon.png) tab.
 2.  Expand the **hrmobileapp**, **Flows**, and **main** nodes, then click **main-start**.
 
     ![](./images/vbcscp_mob_dd_s2.png)
 
-    You're viewing the Page Designer, showing the Components palette. You can click the **Mobile Applications** tab to hide the Mobile Apps pane and create more room for the Page Designer. You may also want to widen your browser window.
+    You're viewing the Page Designer, where you'll use the Components and Structure tabs on the left to design your pages. You'll also use the Properties pane on the right to view and edit a component's properties.
 
-3.  In the Components palette, scroll down to Collection and drag a **List View** component onto the Content Placeholder section in the page.
-4.  In the Property Inspector, click **Add Data** to open the Add Data Quick Start.
+    Click the **Mobile Applications** tab on the left to hide the Mobile Apps pane and create more room for the Page Designer. You may also want to widen your browser window.
+
+3.  Click **Components**, scroll down to Collection in the Components palette, and drag a **List View** component to the page's Content Placeholder section.
+
+4.  In the Properties pane, click **Add Data** to open the Add Data Quick Start.
 
     ![](./images/vbcscp_mob_dd_s4.png)
 
@@ -31,11 +36,11 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
 
     ![](./images/vbcscp_mob_dd_s5.png)
 
-6.  On the Select Template page, select the label - value pairs template, and click **Next**.
+6.  On the Select List Item Template page, select the label - value pairs template, and click **Next**.
 
     ![](./images/vbcscp_mob_dd_s6.png)
 
-7.  On the Bind Data page, under **item\[i\]**, select the **id**, **name**, and **location** items. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![](./images/vbcscp_handle_icon.png) to reorder the columns as desired. Click ** Next**.
+7.  On the Bind Data page, under **item\[i\]**, select the **id**, **name**, and **location** items. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![](./images/vbcscp_handle_icon.png) to reorder the columns as desired. Click **Next**.
 
     ![](./images/vbcscp_mob_dd_s7.png)
 
@@ -46,7 +51,7 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
 
 ## **STEP 2**: Add a Create Page for the Department Business Object
 
-A Create page allows you to create data instances.
+A Create page allows you to create data instances. In this tutorial, you're setting up a Create page that lets your users create new departments.
 
 1.  If necessary, click the **List View** component on the page, then click **Quick Start** to display the Quick Start menu again.
 2.  Click **Add Create Page**.
@@ -59,7 +64,7 @@ A Create page allows you to create data instances.
 
     ![](./images/vbcscp_mob_cpd_s5.png)
 
-    A **+** button appears on the main-start page. Click the **Mobile Applications** tab to view the main-create-department page created in the **main** page flow. You may want to click the **Components** tab to close the components palette and make room for your view.
+    A **+** button appears on the main-start page. Click the **Mobile Applications** tab to view the main-create-department page created in the **main** page flow. You may want to click the **Components** tab to close the Components palette and make room for your view.
 
     ![](./images/vbcscp_mob_cpd_s5_result.png)
 
@@ -73,7 +78,7 @@ A Create page allows you to create data instances.
 
     ![](./images/vbcscp_mob_cpd_s8_result.png)
 
-9.  Open the **main-start** page either by clicking the page name in the Navigator or by clicking the tab above the canvas area to see the List View component with the list view item you created. If you don't see it, click **Reload page** ![](images/vbcscp_mob_reload_icon.png).
+9.  Open the **main-start** page either by clicking the page name in the Navigator or by clicking the tab above the canvas area to see the List View component with the new department  you created. If you don't see it, click **Reload page** ![](images/vbcscp_mob_reload_icon.png).
 
     ![](./images/vbcscp_mob_cpd_s9.png)
 
@@ -98,7 +103,7 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - December 2020
+**Last Updated** - February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

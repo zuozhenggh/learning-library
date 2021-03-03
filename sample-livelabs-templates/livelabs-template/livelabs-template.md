@@ -6,6 +6,27 @@
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the Steps to ...
 
+*You may add an option video, using this format: [](youtube:YouTube video id)*
+
+  [](youtube:zNKxJjkq0Pw)
+
+*Example of collapsed section - use these to include large blocks of text that are optional for the reader*
+
+<details><summary><b>What is Helidon?</b></summary>
+
+[Helidon](https://helidon.io) is an open source implementation of [Eclipse Microprofile](https://microprofile.io/) from Oracle. Through these labs we talk about Helidon, but it's key to remember that the work we're doing is applicable to *any* microprofile implementation, of which Helidon is one.
+
+Microprofile (and thus Helidon) are designed to be lighter weight than things like Java EE or Spring Boot, but also more standards based than Spring, so it has more stability from an API change perspective.
+
+Microprofile is built on other pre-existing standards, for example the `@GET` annotation is used by microprofile (Helidon uses it to indicate a method respond to a http GET request), but the annotation itself is actually a Java web services annotation that microprofile uses.
+
+This lab aims to introduce you to the major capabilities provided by the Helidon implementation of Microprofile. It does this in a number of stages, starting with core capabilities such as REST enabling a class and moving on to features such as building clients to talk to other REST services and how to use Helidon to quickly create service elements that support Cloud Native tools such as Kubernetes.
+
+We are using Helidon MP, this is an annotation based framework, where to utilize it you just place annotations (e.g. `@Path("/mypath"`) on a class or method. There is no need to modify the code beyond that. Helidon also comes in a variety called Helidon SE. The SE framework however requires you to actually make the Java method calls yourself, so you'd have to change your code. Helidon MP actually converts the annotations at runtime into calls to the Helidon SE Java API, so there is no need to change your logic. Helidon MP is also similar in style to frameworks like __Spring__ which are also annotation based, so we've chosen the MP version for these labs.
+
+</details>
+
+
 Estimated Lab Time: n minutes
 
 ### Background
@@ -142,7 +163,17 @@ In this lab, you will:
   ![](./images/pic2.png =50%x50%)
 
 
-This is an example of a segment of the Markdown file injected before rendering:
+4. Conditional content example (type="livelabs")
+
+    Select your compartment. <if type="livelabs">If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked,</if><if type="alwaysfree">Choose any compartment, select "Always Free",</if> and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
+
+    ![](images/atp-settings-1.png)
+    <if type="livelabs">![](images/atp-settings-2-notaf.png)</if>
+    <if type="alwaysfree">![](images/atp-settings-2.png)</if>
+    ![](images/atp-settings-3.png)
+
+
+5. This is an example of a segment of the Markdown file injected before rendering:
 
 [](include:injected-step.md)
 

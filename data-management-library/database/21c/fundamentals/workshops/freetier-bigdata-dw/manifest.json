@@ -23,8 +23,7 @@
         {
             "title": "Lab 3: 21C Setup",
             "filename": "../../setup/setup.md"
-        },
-        {
+        },{
             "title": "Lab: Bitwise Aggregate Functions",
             "filename": "../../bitwise-agg/bitwise-agg.md"
         },

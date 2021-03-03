@@ -36,7 +36,7 @@ Estimated Lab Time: 10 minutes
 5. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    $ <copy>ssh -i <<sshkeyname>> opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
     [opc@tmdb1 ~]$
@@ -75,6 +75,5 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

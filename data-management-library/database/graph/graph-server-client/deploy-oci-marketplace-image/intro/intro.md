@@ -8,7 +8,7 @@ Estimated Workshop Time: 1 hour
 
 ### About Oracle Property Graph?
 
-Oracle Database property graph supports and consists of graph storage, indexing, and search; a powerful in-memory analyst with 50 built-in, parallel analytic functions; a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
+Oracle Database property graph supports and consists of graph storage, indexing, and search; a powerful in-memory analyst with nearly 60 built-in, parallel analytic functions; a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
 
 Watch a short video that explains key features in Oracle Graph:
 

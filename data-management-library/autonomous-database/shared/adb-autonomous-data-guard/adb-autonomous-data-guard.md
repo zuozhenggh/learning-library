@@ -18,7 +18,8 @@ Estimated time: 15 minutes
 * This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 * Make sure you have completed the previous lab in the Contents menu on the right, **Provision Autonomous Database**, before you proceed with this lab.
 
-**Note:**  Autonomous Data Guard is not available with Oracle's Always Free databases. Please sign up for free trial credits or use your own tenancy to test this feature yourself.
+**Note:**  This lab uses Autonomous Data Guard, which is not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy.
+
 **Note:**  Autonomous Data Guard is available only in Autonomous Database instances 19c and above.
 
 ## Basic Disaster Recovery Terminology

@@ -16,18 +16,18 @@ In this tutorial, you'll build a mobile application to generate QR codes and ins
 
 After you create the build configuration for both Android and iOS, you can build the installation files (APK for an Android device and IPA for an iOS device) to install the mobile application on those devices.  
 
-1.  Click **Preview** ![](images/vbcsio_mob_run_icon.png "Run icon") to run the app on a new tab in the browser.
+1.  Click **Preview** ![](images/vbcsio_mob_run_icon.png) to run the app on a new tab in the browser.
 
-    ![](images/vbcsio_mob_install_s1.png "Running hrmobileapp")
+    ![](images/vbcsio_mob_install_s1.png)
 
 2.  Click **Build my App**.
-3.  In the Stage Application dialog box, select **Stage application with a clean database** and click **Stage**.
+3.  In the Stage Application dialog box, select **Populate Stage with Development data** and click **Stage**.
 
-    ![](images/vbcsio_mob_install_s3.png "Stage Application dialog box")
+    ![](images/vbcsio_mob_install_s3.png)
 
     When the build is complete, the QR code and the **Download** link are displayed.
 
-    ![](images/vbcsio_mob_install_s3b.png "QR code and Download link")
+    ![](images/vbcsio_mob_install_s3b.png)
 
 4.  Download the installation file for each platform:
     -   Select **iOS** in the drop-down list, then scan the QR code to download the installation file onto the iOS device, or use the **Download** link to download the IPA file to your file system.
@@ -37,7 +37,7 @@ After you create the build configuration for both Android and iOS, you can build
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - December 2020
+**Last Updated** - February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
