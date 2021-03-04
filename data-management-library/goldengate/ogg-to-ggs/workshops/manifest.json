@@ -1,0 +1,19 @@
+{
+    "workshoptitle": "Replicating Data Using Oracle Cloud Infrastructure GoldenGate",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate",
+            "description": "Use a self-signed certificate to create a trusted connection.",
+            "filename": "../create/create.md"
+        },
+        {
+            "title": "Lab 2: Create and run a distribution path on Oracle GoldenGate",
+            "filename": "../dp/dp.md"
+        }
+    ]
+}
