@@ -19,22 +19,29 @@ In this lab, you will create and run a path on the Distribution Server to send a
 
 2. Click **Add Path**.
 
-3. Complete the field as follows:
+3. On the Add Path page, for **Path Name**, enter a name for this Path. For example, **OGGtoGGS**.
 
-   * For **Path Name**, enter a name for this Path. For example, **OGGtoGGS**.
-   * For **Description**, describe the purpose of this Path.
-   * Enable **Reverse Proxy enabled?**.
-   * Enable **Use Basic Authentication**.
-   * For **Source Trail File**, enter the name of the OGG Trail file you're sending to OCI GoldenGate.
-   * For **Target Host**, enter the OCI GoldenGate hostname in the following format: **<domain>.deployment.goldengate.us-<region>-1.oci.oraclecloud.com:443**. You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window.
-   * For **Target Trail Name**, enter a two character name for the Trail file when it is received by OCI GoldenGate.
-   * For **Target Deployment Name**, enter the your OCI GoldenGate Deployment name.
-   * For **Target Domain**, enter the domain name you created on Oracle GoldenGate. For example, GGSNetwork.
-   * For **Target Alias**, enter the alias name you created on Oracle GoldenGate.
+4. For **Description**, describe the purpose of this Path.
 
-4. Click **Create**.
+5. Enable **Reverse Proxy enabled?**.
 
-5. Return to the Distribution Server Overview page, and then select **Start** from the Path's **Action** menu.
+6. Enable **Use Basic Authentication**.
+
+7. For **Source Trail File**, enter the name of the OGG Trail file you're sending to OCI GoldenGate.
+
+8. For **Target Host**, enter the OCI GoldenGate hostname in the following format: **\<domain\>.deployment.goldengate.us-\<region\>-1.oci.oraclecloud.com:443**. You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window.
+
+9. For **Target Trail Name**, enter a two character name for the Trail file when it is received by OCI GoldenGate.
+
+10. For **Target Deployment Name**, enter the your OCI GoldenGate Deployment name.
+
+11. For **Target Domain**, enter the domain name you created on Oracle GoldenGate. For example, GGSNetwork.
+
+12. For **Target Alias**, enter the alias name you created on Oracle GoldenGate.
+
+13. Click **Create**.
+
+14. Return to the Distribution Server Overview page, and then select **Start** from the Path's **Action** menu.
 
 In this lab, you created and ran a Path on your on premise Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
 
