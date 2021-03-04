@@ -16,7 +16,7 @@ The AutoUpgrade utility identifies issues before upgrades, performs pre- and pos
 
 The AutoUpgrade utility is designed to automate the upgrade process, both before starting upgrades, during upgrade deployments, and during postupgrade checks and configuration migration. You use AutoUpgrade after you have downloaded binaries for the new Oracle Database release, and set up new release Oracle homes. When you use AutoUpgrade, you can upgrade multiple Oracle Database deployments at the same time, using a single configuration file, customized as needed for each database deployment.
 
-With the January 2019 Release Updates (DBJAN2019RU) and later updates, AutoUpgrade support is available for Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes. For both Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes, you must download the AutoUpgrade kit from My Oracle Support Document 2485457.1. 
+With the January 2019 Release Updates (DBJAN2019RU) and later updates, AutoUpgrade support is available for Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes. For both Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes, you must download the AutoUpgrade kit from My Oracle Support Document 2485457.1.
 
 ### Objectives
 
@@ -27,8 +27,14 @@ In this lab, you will:
 * Deploy Mode
 
 ### Prerequisites
-
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+		- Lab: Initialize Environment
 
 ## **STEP 1**: Preparation
 
@@ -45,12 +51,12 @@ In this lab, you will:
 ## **STEP 2**: Generate and edit the config file
 
 1. Run the command below.
-   
+
     ````
     java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file config
     ````
 
-2. This will create a sample config file. You will need to edit it – and then pass it to the AutoUpgrade utility.  Created sample configuration file /home/oracle/scripts/sample_config.cfg.  Open the file /home/oracle/scripts/sample_config.cfg in your preferred editor and adjust the following things.  Generated config.cfg, make the following adjustments:
+2. This will create a sample config file. You will need to edit it – and then pass it to the AutoUpgrade utility.  Created sample configuration file `/home/oracle/scripts/sample_config.cfg`.  Open the file `/home/oracle/scripts/sample_config.cfg` in your preferred editor and adjust the following things.  Generated config.cfg, make the following adjustments:
     ````
     #Global configurations
     #Autoupgrade's global directory, ...
@@ -59,7 +65,7 @@ In this lab, you will:
     global.autoupg_log_dir=/default/...
 
     #
-    # Database number 1 
+    # Database number 1
     #
     upg1.dbname=employee
     upg1.start_time=NOW
@@ -72,7 +78,7 @@ In this lab, you will:
     #upg1.run_utlrp=yes
     #upg1.timezone_upg=yes
 
-        
+
 
     #Global configurations
     #Autoupgrade's global directory, ...
@@ -82,7 +88,7 @@ In this lab, you will:
 
 
     #
-    # Database number 1 
+    # Database number 1
     #
     upg1.dbname=DB12
     upg1.start_time=NOW
@@ -221,6 +227,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
