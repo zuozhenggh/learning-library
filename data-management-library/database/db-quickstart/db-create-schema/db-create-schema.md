@@ -302,7 +302,7 @@ In this section, you execute the `REVOKE` statement to revoke user and role syst
 
     `REVOKE CREATE SESSION FROM online_shoppe;`
 
-  ![](./images/revoke-connect.png " ")
+  ![](./images/revoke-create-session.png " ")
 
 2. Attempt to sign back in to SQL Developer Web as the **online_shoppe** user, by pasting into your browser the URL containing the alias that you used back in **Step 4: Log in to SQL Developer Web as the Database User and Create Tables**.
 
