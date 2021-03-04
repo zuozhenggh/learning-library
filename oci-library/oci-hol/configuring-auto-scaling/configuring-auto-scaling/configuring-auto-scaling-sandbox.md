@@ -323,45 +323,23 @@ Create Oracle Linux instance with Apache web server and configure an instance ba
 
 1. Switch to  OCI console window.
 
-2. Open the navigation menu. Under Core Infrastructure, select **Instaces Pools**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted. 
+2. Open the navigation menu. Under Core Infrastructure, select **Instaces Pools**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
-3. Open the navigation menu. Under Core Infrastructure, select **Instaces Configurations**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**
+3. Open the navigation menu. Under Core Infrastructure, select **AutoScaling Configurations**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
-4. Open the navigation menu. Under Core Infrastructure, select **Instaces**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Cehck the box **Permanently delete the attached boot volume** and click on **Terminate Instance**.
+4. Open the navigation menu. Under Core Infrastructure, select **Instaces Configurations**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**
 
-5. Open the navigation menu. Under Networking, select **Load Balancers**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
+5. Open the navigation menu. Under Core Infrastructure, select **Instaces**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Cehck the box **Permanently delete the attached boot volume** and click on **Terminate Instance**.
 
-6. Open the navigation menu. Under Networking, select **Virtual Cloud Networks**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
+6. Open the navigation menu. Under Networking, select **Load Balancers**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
+7. Open the navigation menu. Under Networking, select **Virtual Cloud Networks**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
-
-2. Open the navigation menu. Under Core Infrastructure, select **Instaces Pools**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Once it finish listing the resources, click **Terminat All**
-
- 
-3. Locate first compute instance, Click Action icon and then **Terminate**.
-    ![](images/RESERVEDIP_HOL0016.png " ")
-
-4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
-    ![](images/RESERVEDIP_HOL0017.png " ")
-
-5. In OCI console window from Instance Pool Details page, Click **Terminate** under **Action**. Provide Instance Pool name in the pop up dialog box and Click **Terminate**. This will delete the pool along with the compute instance and auto scale configuration.
-    ![](./images/Auto_Scaling_011.png " ")
-
-6. Navigate to **Instance Configurations** Under **Compute**. For your Instance Configuration, Click **Delete** under the three Vertical dots.
-    ![](./images/Auto_Scaling_012.png " ")
-
-7. Navigate to **AutoScaling Configurations** Under **Compute**. For your Instance Configuration, click **Delete**.
-
-8. From OCI services menu Click **Load Balancers** under Networking, locate your Load Balancer and click **Terminate** under the three Vertical dots.
-
-9. From OCI services menu Click **Virtual Cloud Networks** under Networking, Locate your VCN , click the Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
-    ![](images/RESERVEDIP_HOL0018.png " ")
-
+*Congratulations! You have successfully completed the lab.*
 
 ## Acknowledgements
-*Congratulations! You have successfully completed the lab.*
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Orlando Gentil, Feb 2021
+- **Last Updated By/Date** - Orlando Gentil, March 2021
 
