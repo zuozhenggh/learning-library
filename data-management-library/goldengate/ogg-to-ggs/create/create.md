@@ -113,7 +113,7 @@ A Certificate Export Wizard dialog displays **The export was successful**. You c
 
 4. When the Status is Stopped for both the Distribution and Receiver Servers, you can restart them by selecting **Start** in their respective **Action** menus.
 
-## **Step 5:** Add a Credential for Oracle GoldenGate to Connect to OCI goldengate
+## **STEP 5:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
 1. Launch the OCI GoldenGate Deployment Console, sign in, and then navigate to the Administration Server Administrator page.
 
@@ -133,9 +133,6 @@ A Certificate Export Wizard dialog displays **The export was successful**. You c
 
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
 
-## Learn More
-
-* [Managing Deployments](https://docs.oracle.com//cloud/paas/goldengate-service/using/deployments.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
