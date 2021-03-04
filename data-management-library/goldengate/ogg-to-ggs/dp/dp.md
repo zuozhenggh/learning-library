@@ -35,7 +35,7 @@ In this lab, you will create and run a path on the Distribution Server to send a
 
 10. For **Target Deployment Name**, enter the your OCI GoldenGate Deployment name.
 
-11. For **Target Domain**, enter the domain name you created on Oracle GoldenGate. For example, GGSNetwork.
+11. For **Target Domain**, enter the domain name you created on Oracle GoldenGate. For example, **GGSNetwork**.
 
 12. For **Target Alias**, enter the alias name you created on Oracle GoldenGate.
 
