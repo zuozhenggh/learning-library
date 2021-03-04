@@ -17,11 +17,11 @@ The multitenant architecture enables an Oracle database to function as a multite
 
 ![](./images/containers.png " ")
 
-A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs. 
+A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs.
 
 Every CDB has the following containers:
 
-Exactly one CDB root container 
+Exactly one CDB root container
 
 - The CDB root is a collection of schemas, schema objects, and nonschema objects to which all PDBs belong .
 
@@ -31,11 +31,11 @@ Exactly one system container
 
 Zero or more application containers
 
-- An application container consists of exactly one application root, and the PDBs plugged in to this root. 
+- An application container consists of exactly one application root, and the PDBs plugged in to this root.
 
 Zero or more user-created PDBs
 
-- A PDB contains the data and code required for a specific set of features (see "PDBs"). A PDB belongs to exactly zero or one application container. If a PDB belongs to an application container, then it is an application PDB. 
+- A PDB contains the data and code required for a specific set of features (see "PDBs"). A PDB belongs to exactly zero or one application container. If a PDB belongs to an application container, then it is an application PDB.
 
 Exactly one seed PDB
 
@@ -49,7 +49,14 @@ In this lab, you will:
 * Plugin Operation
 
 ### Prerequisites
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+		- Lab: Initialize Environment
 
 ## **STEP 1**: Preparation UPGR as non-CDB
 
@@ -183,6 +190,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

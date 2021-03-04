@@ -15,7 +15,7 @@ In this exercise we use scripts written by Carlos Sierra.
 Estimated Lab Time: n minutes
 
 ### About SQL Plan Management
-SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans. 
+SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.
 
 SQL plan management uses a mechanism called a SQL plan baseline, which is a set of accepted plans that the optimizer is allowed to use for a SQL statement.
 
@@ -40,9 +40,14 @@ In this lab, you will:
 * Fix All Statements
 
 ### Prerequisites
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+		- Lab: Initialize Environment
 
 ## **STEP 1**: Fix A Single Statement
 
@@ -53,7 +58,7 @@ In this lab, you will:
       cd /home/oracle/scripts
       sqlplus / as sysdba
     ````
-    
+
 2. Here we’ll use one of Carlos Sierra’s scripts: spb_create.sql:
 
     ````
@@ -75,9 +80,9 @@ In this lab, you will:
       The first plan is the better plan – found after upgrade. We will fix it now by accepting it as THE plan we’d like to be used for future executions of statement with SQL_ID: 7m5h0wf6stq0q
 
       Select up to 3 plans:
-      ````
       1st Plan Hash Value (req): 3642382161
       2nd Plan Hash Value (opt): 1075826057
+      ````
 
 4. Hit RETURN, RETURN and again RETURN.  Verify if the plans have been accepted:
 
@@ -181,6 +186,6 @@ SQL Plan Management with Oracle Database 12c Release 2
 * **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
