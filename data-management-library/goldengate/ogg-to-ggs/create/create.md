@@ -25,7 +25,6 @@ In this lab, you will:
 * Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
 
 ## **STEP 1**: Using Chrome to Download the Root Certificate
-The following steps guides you through the steps to download the root certificate using a Chrome browser. For steps to download the root certificate using FireFox, skip to Step 2.
 
 1. Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
 
@@ -55,29 +54,7 @@ The following steps guides you through the steps to download the root certificat
 
 A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
 
-## **STEP 2:** Using FireFox to Download the Root Certificate
-
-1. Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
-
-2. After you log in to the Console, open the navigation menu, and then under **Database Related Services**, select **GoldenGate**.
-
-   ![Select GoldenGate Deployments in Navigation menu](images/01-01-02.png "Access GoldenGate service")
-
-   You're brought to the **Deployments** page.
-
-   ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
-
-3. In your FireFox browser address bar, click the padlock icon.
-
-4. Next to Connection Secure, click **Show connection details**, and then click **More Information**.
-
-5. In the Page Info window, click **View Certificate**.
-
-   The Certificate details opens in a new browser tab.
-
-6. Click DigiCert Global Root CA.
-
-## **STEP 3:** Upload the certificate to the Oracle GoldenGate Wallet
+## **STEP 2:** Upload the certificate to the Oracle GoldenGate Wallet
 
 1. Open a terminal window. Using the command line, navigate to the Oracle GoldenGate install directory.
 
@@ -99,21 +76,17 @@ A Certificate Export Wizard dialog displays **The export was successful**. You c
    <copy>orapki wallet display -wallet</copy>
    ```
 
-## **STEP 4:** Restart the Oracle GoldenGate Distribution and Receiver Servers
+## **STEP 3:** Restart the Oracle GoldenGate Distribution and Receiver Servers
 
 1. Open the Oracle GoldenGate Service Manager in your web browser.
 
-    ![Launch Console](images/04-01-ggs-launchconsole.png)
-
 2. In the list of Services, locate the Distribution Server and then select Stop from its **Action** menu.
-
-    ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png)
 
 3. Repeat step 2 for the Receiver Server.
 
 4. When the Status is Stopped for both the Distribution and Receiver Servers, you can restart them by selecting **Start** in their respective **Action** menus.
 
-## **STEP 5:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
+## **STEP 4:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
 1. Launch the OCI GoldenGate Deployment Console, sign in, and then navigate to the Administration Server Administrator page.
 
