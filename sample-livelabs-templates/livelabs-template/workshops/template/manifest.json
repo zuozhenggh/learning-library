@@ -3,8 +3,8 @@
     "include": {"starter-file.sql":"../../livelabs-template/files/starter-file.sql",
                 "sample.json":"../../files/sample.json",
                 "injected-step.md":"../../files/injected-step.md"},
-    "support": "https://community.oracle.com/tech/developers/categories/autonomous-database-shared",
-    "tutorials": [
+      "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+      "tutorials": [
         {
             "title": "LiveLabs Complete Template",
             "description": "This is the complete template for LiveLabs content developers",
