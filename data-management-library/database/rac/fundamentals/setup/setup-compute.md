@@ -21,7 +21,7 @@ For more information about Terraform and Resource Manager, please see the append
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-- [dbsystemrac.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/Wg4n8mJxd9bwfANNP1cHyTT95-6R201K0Z2VwDRFKcURy0H9mQhIrjIf8UM5rljE/n/lrojildid9yx/b/labtest_bucket/o/dbsystemrac.zip)
+- [dbsystemrac.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/q4EkyKOgL7clSW9UbPkfAZEKtKsNmsNoOfFeNYZxndUxyNRhBzWxZbAuqXs05VHl/n/c4u03/b/data-management-library-files/o/dbsystemrac.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
