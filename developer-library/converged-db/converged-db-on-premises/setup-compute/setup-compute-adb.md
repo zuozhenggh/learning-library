@@ -144,8 +144,8 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 6.  When prompted, answer **yes** to continue connecting.
     ![](./images/em-cloudshell-ssh.png " ")
 
-7.  Exit the instance 
-   
+7.  Exit the instance
+
     ````
     exit
     ````
@@ -245,7 +245,7 @@ When logging in to your compute instance for the first time, you receive an erro
 4.  Click **Save Changes**
 5.  Click **Terraform Actions** -> **Apply**
 
-## Appendix: Terraform Plan 
+## Appendix: Terraform Plan
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 2*.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -284,4 +284,4 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 ## Need Help?
 
-Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

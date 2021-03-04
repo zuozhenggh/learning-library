@@ -43,7 +43,7 @@ If you already have a cloud account, skip to **STEP 2**.
        * Choose a **Password**
        * Enter your **Company Name**
        * Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
-       * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up.
+       * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up. Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
        * Click **Continue**
        ![](images/account-info.png " ")
 
@@ -113,4 +113,4 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 
 ## Need Help?
 
-Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
+Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

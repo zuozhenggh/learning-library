@@ -41,7 +41,7 @@ First, we are going to create an ADW Instance.
 
     ![](./images/006.png  " ")
 
-3.  Select **Compartment** by clicking on the drop-down list. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
+3.  Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
 
     ![](./images/007.png  " ")
 
