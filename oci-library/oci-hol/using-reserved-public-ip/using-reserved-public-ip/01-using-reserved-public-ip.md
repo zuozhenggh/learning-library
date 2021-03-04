@@ -176,7 +176,7 @@ Create an Oracle Linux instance and assign the IP after its creation.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Kamryn Vinson, August 2020
+- **Last Updated By/Date** - ORlando Gentil, March 2021
 
 ## Need Help?
 
