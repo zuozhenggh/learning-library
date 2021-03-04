@@ -1,7 +1,6 @@
 {
   "workshoptitle": "DB Security - Unified Auditing",
-  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
-	"tutorials": [
+  "tutorials": [
     {
       "title": "Prerequisites",
       "description": "Login to Oracle Cloud",
