@@ -85,7 +85,7 @@ Make sure you look around and feel familiar with the menus.
 
 ![ODA Menu](./images/oda_6.png)
 
-*Congratulations! You are ready to go to the next workshop!*
+*Congratulations! You are ready to go to the next lab!*
 
 ## **Acknowledgements**
 

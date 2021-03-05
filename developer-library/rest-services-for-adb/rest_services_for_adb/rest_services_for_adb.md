@@ -87,7 +87,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Database Actions Menu, Administration then Users](./images/sdw-12.png)
 
-2. Find Gary's user title and click the open-in-new-tab icon ![open-in-new-tab icon](../images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
+2. Find Gary's user title and click the open-in-new-tab icon ![open-in-new-tab icon](./images/open-in-new-tab.png) on the lower right to open a new browser tab/window with a login box.
 
     ![GARY the user's Details Tile, click the open-in-new-tab icon](./images/sdw-13.png)
 
@@ -177,9 +177,7 @@ We need to load some data into the database so that we can create some REST serv
 
 14. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
-    Using the navigator on the left of the SQL Worksheet, we can see out new table.
-    
-    ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/sdw-30.png " ")
+    ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/sdw-30.png)
 
     In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
@@ -189,23 +187,21 @@ We need to load some data into the database so that we can create some REST serv
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
-    ![Using the navigator on the left of the SQL Worksheet, find the MAY2018 Table](./images/sdw-32.png " ")
+    ![Using the navigator on the left of the SQL Worksheet, find the MAY2018 Table](./images/sdw-32.png)
 
 2. Right click on the table name and select REST in the pop up menu then Enable.
 
-    ![Right click on the table name and select REST in the pop up menu then Enable](./images/sdw-33.png " ")
+    ![Right click on the table name and select REST in the pop up menu then Enable](./images/sdw-33.png)
 
     The REST Enable Object slider will appear from the right side of the page. We are going to use the defaults for this page but take note and copy the Preview URL. This is the URL we will use to access the REST enabled table. When ready, click the Enable button in the lower right of the slider.
 
-    The REST Enable Object Slider, view the Preview URL.
-
-    ![The REST Enable Object Slider, view the Preview URL](./images/sdw-34.png " ")
+    ![The REST Enable Object Slider, view the Preview URL](./images/sdw-34.png)
 
 3. Thats it! Your table is REST enabled. Open a new browser window or tab and enter that URL we copied in the previous step. We will see our table data in JSON format via a REST service.
 
     ![Open a new browser window or tab and enter that URL we copied in the previous step](./images/sdw-35.png)
 
-    You can also see a plug icon ![plug icon](../images/plug-icon.png) next to the table to indicate it is REST enabled.
+    You can also see a plug icon ![plug icon](./images/plug-icon.png) next to the table to indicate it is REST enabled.
 
     ![Plug Icon Next to table in navigator](./images/sdw-36.png)
 
@@ -271,11 +267,11 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Created OAuth Client Details Tile](./images/sdw-50.png)
 
-7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
+7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
 
     ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/sdw-51.png)
 
-8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![copy icon](../images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
+8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
 
     ![Click the copy icon to save the Token Text](./images/sdw-52.png)
 
@@ -283,7 +279,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Use the tab bar on the top of the page, select AutoREST](./images/sdw-53.png)
 
-10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) on the MAY2018 title and select Edit.
+10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on the MAY2018 title and select Edit.
 
     ![Click the pop out menu icon on the MAY2018 title and select Edit](./images/sdw-54.png)
 
@@ -291,7 +287,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![click the Require Authentication toggle button then click Save in the lower right of the slider](./images/sdw-55.png)
 
-12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![pop out menu icon](../images/three-dot-pop.png) and select Get Curl.
+12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) and select Get Curl.
 
     ![Use the pop out menu icon and select Get Curl](./images/sdw-56.png)
 

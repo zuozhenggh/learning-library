@@ -300,14 +300,14 @@ In this section, you execute the `REVOKE` statement to revoke user and role syst
 
 1. You are signed in to SQL Developer Web as the **online\_shoppe** user. Sign out of SQL Developer Web. Sign back in to SQL Developer Web as the **admin** user and open SQL Developer Web. Revoke the `CONNECT` privilege for the ONLINE\_SHOPPE user.
 
-    `REVOKE CONNECT FROM online_shoppe;`
+    `REVOKE CREATE SESSION FROM online_shoppe;`
 
-  ![](./images/revoke-connect.png " ")
+  ![](./images/revoke-create-session.png " ")
 
 2. Attempt to sign back in to SQL Developer Web as the **online_shoppe** user, by pasting into your browser the URL containing the alias that you used back in **Step 4: Log in to SQL Developer Web as the Database User and Create Tables**.
 
   ![](./images/revoked-unauthorized.png " ")
-    You cannot sign in because you no longer have the `CONNECT` privilege.
+    You cannot sign in because you no longer have the `CREATE SESSION` privilege.
 
 ## Want to Learn More?
 
