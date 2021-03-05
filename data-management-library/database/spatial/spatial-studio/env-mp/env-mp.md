@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks though the process of provisioning Oracle Spatial Studio (Spatial Studio) using the Oracle Cloud Marketplace.  The Oracle Cloud Marketplace provides apps and services provided by Oracle and 3rd parties. Details are available [here](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/index.html).
+This lab walks though the process of provisioning Oracle Spatial Studio (Spatial Studio) using the Oracle Cloud Marketplace.  The Oracle Cloud Marketplace provides apps and services provided by Oracle and 3rd parties. Details are available [here](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/index.html). 
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -101,7 +101,7 @@ In this lab, you will:
 
   This is not a Spatial Studio issue; it is generic to  access of web sites that do not have a signed HTTPS certificate. Loading and configuring a signed certificate removes this warning. However the process of loading certificates in Jetty is beyond the scope of this workshop. 
 
-  Click the link to contine to the website.
+  Click the link to continue to the website.
 
 2. Enter the Spatial Studio admin user name (default is studio_admin) and the password you entered in the Step 2 (Create Stack wizard, item 3). Then click Sign In.
 
@@ -125,7 +125,7 @@ In this lab, you will:
 
 
 
-## **STEP 5**: Verify Installation
+## **STEP 5**: Load Data and Create a Map 
 
 To verify that Spatial Studio is operating properly, you will load, prepare, and visualize a small data sample. The data contains a list of museums including name and address. You will geocode the data and visualize the data on an interactive map.
 
@@ -197,9 +197,9 @@ To verify that Spatial Studio is operating properly, you will load, prepare, and
 
   ![Image alt text](images/verify-16.png "Image title") 
 
-Oracle Spatial Studio is now provisioned and verified. The following Lab provides steps to tear down Spatial Studio when no longer needed.
+Oracle Spatial Studio is now provisioned and tested. The following Lab provides steps to tear down Spatial Studio when no longer needed.
 
-## **STEP 6**: Uninstall Spatial Studio
+## **STEP 6**: Uninstall Spatial Studio (When No Longer Needed)
 
  **If you would like to fully remove your Marketplace deployment, proceed with the following.**
 
