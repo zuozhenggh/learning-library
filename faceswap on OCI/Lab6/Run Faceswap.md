@@ -2,21 +2,30 @@
 
 ## Introduction
 
-Before we can install and run Faceswap (train the GAN) on our GPU virtual machine running on Ubuntu on OCI, we have to make sure that we install the drivers & libraries to ensure the support of Tensorflow on the GPU and that we build the Tensorflow pip package from source.
-We will closely follow the Tensorflow documentation to [install the drivers & libraries for GPU support of Tensorflow](https://www.tensorflow.org/install/gpu) and to [build the TensorFlow pip package from source](https://www.tensorflow.org/install/source).
-
-**Note:** A PAYG account is required to provision GPU instances on OCI. If you are using the Oracle Free Tier or the Always Free offering and are planning to run Faceswap on the CPU(s), you can skip this lab and proceed to the next one.
+Now that we made sure that our GPU machine supports Tensorflow (see Lab 4), we can go ahead and run Faceswap. In the lab, you will learn to copy your training data to the compute instance, extract the faces from the training data, train the GAN with the extracted faces and to convert your video with the swapped face.
 
 ### Objectives
 
-- Install the drivers and libraries to ensure the support of Tensorflow on the GPU
-- Build the Tensorflow pip package from source and install it on Ubuntu
+- Copy your training data (photos or videos with the faces you want to swap) to the compute instance
+- [Extract](https://forum.faceswap.dev/viewtopic.php?f=25&t=27) the faces from the photos or videos
+- [Train](https://forum.faceswap.dev/viewtopic.php?f=27&t=146) the GAN with the extracted faces
+- [Convert](https://forum.faceswap.dev/viewtopic.php?f=24&t=1083) and swap face A in your source video with face B
 
 ### What Do You Need?
 
 - Complete Lab 1 to Lab 3
+- Complete Lab 4 to make sure that your GPU machine supports Tensorflow, otherwise the Faceswap GAN will not utilize the GPU
+- Complete Lab 5
 
-## **Step 1:** Install the drivers & libraries for GPU support of Tensorflow
+## **Step 1:** Copy your training data to the compute instance
+
+We will use WinSCP
+
+## **Step 2:** Extract the faces from the photos and videos
+
+## **Step 3:** Train the GAN
+
+## **Step 4:** Convert your video with the swapped face
 
 ## **Acknowledgements**
 

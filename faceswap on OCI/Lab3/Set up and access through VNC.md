@@ -26,7 +26,7 @@ In this lab, we will walk through the required steps to set up and access your U
    <copy>cd .ssh</copy>
 ```
 
-4. Enter the following command to access your Ubuntu compute instance where you need to substitute _private-key_ with your OpenSSH private key and _public_IP_ with the public IP address of your Ubuntu instance.
+4. Enter the following command to access your Ubuntu compute instance where you need to substitute _private-key_ with your OpenSSH private key and _public ip_ with the public IP address of your Ubuntu instance.
 
 ```
    <copy>ssh -i private-key ubuntu@public_ip</copy>
@@ -92,10 +92,10 @@ Press **A** to append text at the end and copy paste the above command.
 Switch to command mode by pressing the ESC key.
 Type **:wq** - to save and exit.
 
-8. Start VNC Server with display number [1], screen resolution [800×600] and color depth [24] by executing the following command.
+8. Start VNC Server by executing the following command.
 
 ```
-   <copy>vncserver :1 -geometry 800x600 -depth 24</copy>
+   <copy>vncserver :1</copy>
 ```
 
 ![](images/startvncserver.PNG " ")

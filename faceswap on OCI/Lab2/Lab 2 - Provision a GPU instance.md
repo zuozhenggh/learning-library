@@ -77,7 +77,7 @@ Alternatively, you can click on the service menu on the top left and then on **C
 
    ![](images/select-VM-SL.PNG " ")
 
-   Select the GPU instance you want to provision, read and check the box _I have reviewed and accept the following documents: Oracle and Nvidia terms of use_ and click on the **Select shape** button. In our case, it is the VM.GPU2.1 based on the P100 (NVIDIA Pascal GPU architecture) with 1 GPU. You can request service limits for virtual and bare metal machines based on V100 (NVIDIA Volta GPU architecture) and A100 (NVIDIA Ampere GPU architecture).
+   Select the GPU instance you want to provision, read & check the box _I have reviewed and accept the following documents: Oracle and Nvidia terms of use_ and click on the **Select shape** button. In our case, it is the VM.GPU2.1 based on the P100 (NVIDIA Pascal GPU architecture) with 1 GPU. You can request service limits for virtual and bare metal machines based on V100 (NVIDIA Volta GPU architecture) and A100 (NVIDIA Ampere GPU architecture) as well.
 
    ![](images/select-GPU.PNG " ")
 
