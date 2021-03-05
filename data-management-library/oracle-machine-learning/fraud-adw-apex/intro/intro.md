@@ -70,4 +70,4 @@ You may proceed to the next lab.
 - **Workshop Expiration Date** - March 2022
 
 ## Need Help?
-Please submit an e-mail to **livelabs-help-db_us@oracle.com**. Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
