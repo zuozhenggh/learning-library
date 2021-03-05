@@ -1,22 +1,23 @@
-# Configuring Auto Scaling
+
+# Use autoscale to adjust compute resources
 
 ## Introduction
 
-In this lab, we will build a load-balanced web application that can automatically scale out/in based on CPU utilization.  
+In this tutorial, you'll build a load-balanced web application that can automatically scale out/in based on CPU utilization.  
 
-We will create load balancer, compute instance, instance configuration, and then configure auto scaling. We will then verify auto scaling feature as configured threshold on CPU is crossed.
+In this tutorial, you'll create a load balancer, compute instance, instance configuration, and then configure auto-scaling. You'll then verify auto-scaling feature as a configured threshold on CPU is crossed.
 
-Autoscaling enables you to automatically adjust the number of compute instances in an instance pool based on performance metrics, such as CPU utilization. This helps you provide consistent performance for your end users during periods of high demand, and helps you reduce your costs during periods of low demand.
+Autoscaling enables you to automatically adjust the number of compute instances in an instance pool based on performance metrics, such as CPU utilization. This helps you provide consistent performance for your end-users during periods of high demand, and helps you reduce your costs during periods of low demand.
 
-You select a performance metric to monitor, and set thresholds that the performance metric must reach to trigger an autoscaling event. When system usage meets a threshold, autoscaling dynamically allocates resources in near-real time. As load increases, instances are automatically provisioned: the instance pool scales out. As load decreases, instances are automatically removed: the instance pool scales in.
+You select a performance metric to monitor and set thresholds that the performance metric must reach to trigger an autoscaling event. When system usage meets a threshold, autoscaling dynamically allocates resources in near-real time. As load increases, instances are automatically provisioned: the instance pool scales out. As load decreases, instances are automatically removed: the instance pool scales in.
 
 Autoscaling relies on performance metrics that are collected by the Monitoring service. These performance metrics are aggregated into one-minute time periods and then averaged across the instance pool. When three consecutive values (that is, the average metrics for three consecutive minutes) meet the threshold, an autoscaling event is triggered.
 
 A cooldown period between autoscaling events lets the system stabilize at the updated level. The cooldown period starts when the instance pool reaches a steady state. Autoscaling continues to evaluate performance metrics during the cooldown period. When the cooldown period ends, autoscaling adjusts the instance pool's size again if needed.
 
-*Note: OCI user interface is being updated, thus some screenshots in the instructions may be different than the actual UI*
+**Note**: Oracle Cloud Infrastructure (OCI) user interface is being updated, thus some screenshots in the instructions may be different than the actual UI
 
-## **STEP 1:** Create your VCN and subnets
+## Create your VCN and Subnets
 
 Set up a VCN to connect your Linux instance to the internet. You will configure all the components needed to create your virtual network.
 
@@ -30,14 +31,14 @@ Set up a VCN to connect your Linux instance to the internet. You will configure 
 
 4. Enter the following (descriptions are italicized. replace with the values for your scenario):
 
-* Name: *Enter a name for your cloud network*
-* COMPARTMENT: *select the desired compartment*
-* VCN CIDR BLOCK: *10.0.0.0/16*
-* PUBLIC SUBNET CIDR BLOCK: *10.0.0.0/24*
-* PRIVATE SUBNET CIDR BLOCK: *10.0.1.0/24*
-* DNS RESOLUTION: *checked*
+	* Name: *Enter a name for your cloud network*
+	* COMPARTMENT: *select the desired compartment*
+	* VCN CIDR BLOCK: *10.0.0.0/16*
+	* PUBLIC SUBNET CIDR BLOCK: *10.0.0.0/24*
+	* PRIVATE SUBNET CIDR BLOCK: *10.0.1.0/24*
+	* DNS RESOLUTION: *checked*
 
-Note: Notice the public and private subnets have different CIDR blocks.
+   **Note**: The public and private subnets have different CIDR blocks.
 
 4. Click Next. 
 
@@ -52,7 +53,7 @@ This will create a VCN with the following components:
 
 6. After the workflow completes, click on **View Virtual Cloud Networks** and you will be directed to the details page of the VCN you created.
 
-## **STEP 2:** Create Load Balancer and update Security List
+## Create Load Balancer and Update Security List
 
 1. Open the navigation menu. Under Core Infrastructure, go to Networking and click **Load Balancers**.
 
@@ -123,14 +124,15 @@ This will create a VCN with the following components:
       - Destination Port Range: Enter 80 (the listener port)
       - Description: Allow incoming HTTP connections 
 
-  ![](images-sandbox/security_list01.png)
+    ![](images-sandbox/security_list01.png " ")
 
 11. Click **Add Ingress Rules**.
 
 
-## **STEP 3:** Create Instance Pool and Auto Sacaling Configuration
+## Create Instance Pool and Configure Autoscaling 
 
-### Create Oracle Linux instance with Apache web server, create an instance configuration based on it. That will the foundation for the autoscaling configuration
+### Create Web Server and Configure an Instance 
+Create Oracle Linux instance with Apache web server and configure an instance based on webserver. This will be the foundation for the autoscaling configuration.
 
 1. Open the Oracle Cloud Infrastructure main menu.
 
@@ -161,7 +163,7 @@ This will create a VCN with the following components:
     
 8. In the **Add SSH keys** section:
 
-    If you don't have a SSH key pair: 
+    If you don't have an SSH key pair: 
     1. Select **Generate SSH key pair**.
     2. Click on **Save Private Key** and follow the browser propmpt to save the private key.
     3. Click on **Save Public Key** and follow the browser propmpt to save the public key.
@@ -186,7 +188,6 @@ This will create a VCN with the following components:
     - **Initialization Script**: Choose **Paste cloud-init script** and paste the below script. Cloud-init script will be executed at the first boot only to configure the instance.
 
     ```
-    <copy>
     #cloud-config
     yum_repos:
         epel-testing:
@@ -206,7 +207,6 @@ This will create a VCN with the following components:
     - [firewall-offline-cmd, --add-port=80/tcp]
     - [systemctl, start, httpd]
     - [systemctl, restart, firewalld]
-    </copy>
     ```
 
 11. Click **Create**.
@@ -249,7 +249,7 @@ This will create a VCN with the following components:
 
 19. Open the navigation menu. Under Core Infrastructure, select **Instace Pools** and click on the Instance Pool name.
 
-20. In Instance Pool details screen, click on the **More Actions** button, select **Create Autoscaling Configuration** and enter the following:
+20. In the Instance Pool details screen, click **More Actions**, select **Create Autoscaling Configuration** and enter the following:
 
     ![](images-sandbox/create_autoscaling_configuration01.png " ")
 
@@ -279,7 +279,7 @@ This will create a VCN with the following components:
 
 22. Click **Next**, revieww the information and click **Create**.
 
-## **STEP 4:** Test the setup
+## Test the setup
 
 1. In the load balancer details, look at the Public IP of the Load Balancer and open in the web browser.
 
@@ -295,9 +295,7 @@ This will create a VCN with the following components:
 4. Now start CPU stress, Enter command:
 
     ```
-    <copy>
     sudo stress --cpu 4 --timeout 350
-    </copy>
     ```
 
     *Spawn 4 workers spinning with a timeout of 350 seconds.*
@@ -321,48 +319,27 @@ This will create a VCN with the following components:
 
     *This is because our criteria of CPU utilization < 5 is met.*
 
-## **STEP 5:** Delete resources
+## Delete Resources
 
 1. Switch to  OCI console window.
 
-2. Open the navigation menu. Under Core Infrastructure, select **Instaces Pools**. At the far right, click in the three dots ![](images-sandbox/3dots.png) and select **Terminate**. Confirm when prompted. 
+2. Open the navigation menu. Under Core Infrastructure, select **Instaces Pools**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
-3. Open the navigation menu. Under Core Infrastructure, select **Instaces Configurations**. At the far right, click in the three dots ![](images-sandbox/3dots.png) and select **Terminate**
+3. Open the navigation menu. Under Core Infrastructure, select **AutoScaling Configurations**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
-4. Open the navigation menu. Under Core Infrastructure, select **Instaces**. At the far right, click in the three dots ![](images-sandbox/3dots.png) and select **Terminate**. Cehck the box **Permanently delete the attached boot volume** and click on **Terminate Instance**.
+4. Open the navigation menu. Under Core Infrastructure, select **Instaces Configurations**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**
 
-5. Open the navigation menu. Under Networking, select **Load Balancers**. At the far right, click in the three dots ![](images-sandbox/3dots.png) and select **Terminate**. Confirm when prompted.
+5. Open the navigation menu. Under Core Infrastructure, select **Instaces**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Cehck the box **Permanently delete the attached boot volume** and click on **Terminate Instance**.
 
-6. Open the navigation menu. Under Networking, select **Virtual Cloud Networks**. At the far right, click in the three dots ![](images-sandbox/3dots.png) and select **Terminate**. Confirm when prompted.
+6. Open the navigation menu. Under Networking, select **Load Balancers**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
+7. Open the navigation menu. Under Networking, select **Virtual Cloud Networks**. At the far right, click in the three dots ![](images-sandbox/3dots.png " ") and select **Terminate**. Confirm when prompted.
 
-
-2. Open the navigation menu. Under Core Infrastructure, select **Instaces Pools**. At the far right, click in the three dots ![](images-sandbox/3dots.png) and select **Terminate**. Once it finish listing the resources, click **Terminat All**
-
- 
-3. Locate first compute instance, Click Action icon and then **Terminate**.
-    ![](images/RESERVEDIP_HOL0016.PNG " ")
-
-4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
-    ![](images/RESERVEDIP_HOL0017.PNG " ")
-
-5. In OCI console window from Instance Pool Details page, Click **Terminate** under **Action**. Provide Instance Pool name in the pop up dialog box and Click **Terminate**. This will delete the pool along with the compute instance and auto scale configuration.
-    ![](./images/Auto_Scaling_011.PNG " ")
-
-6. Navigate to **Instance Configurations** Under **Compute**. For your Instance Configuration, Click **Delete** under the three Vertical dots.
-    ![](./images/Auto_Scaling_012.PNG " ")
-
-7. Navigate to **AutoScaling Configurations** Under **Compute**. For your Instance Configuration, click **Delete**.
-
-8. From OCI services menu Click **Load Balancers** under Networking, locate your Load Balancer and click **Terminate** under the three Vertical dots.
-
-9. From OCI services menu Click **Virtual Cloud Networks** under Networking, Locate your VCN , click the Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
-    ![](images/RESERVEDIP_HOL0018.PNG " ")
-
+*Congratulations! You have successfully completed the lab.*
 
 ## Acknowledgements
-*Congratulations! You have successfully completed the lab.*
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Orlando Gentil, Feb 2021
+- **Last Updated By/Date** - Orlando Gentil, March 2021
+

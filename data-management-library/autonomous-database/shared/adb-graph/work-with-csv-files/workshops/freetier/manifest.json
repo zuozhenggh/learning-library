@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Autonomous Graph Database: Load CSV files, create a graph, and query and visualize it",
-      "tutorials": [
+      "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
           {
               "title": "Prerequisites",
               "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",

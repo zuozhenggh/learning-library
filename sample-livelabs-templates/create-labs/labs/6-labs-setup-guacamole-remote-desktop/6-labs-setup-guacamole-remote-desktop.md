@@ -13,7 +13,16 @@ This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
 ## **Step 1**: Deploy Guacamole
-1.  As root, create script */tmp/guac-1.sh* to perform the first set of tasks.
+1.  As opc, run *sudo su -* to login as root
+
+    ```
+    <copy>
+    sudo su - || sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd; sudo su -
+
+    </copy>
+    ```
+
+2.  As root, create script */tmp/guac-1.sh* to perform the first set of tasks.
 
     ```
     <copy>
@@ -74,7 +83,7 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Create script */tmp/guac-2.sh* to perform the second set of tasks.
+3. Create script */tmp/guac-2.sh* to perform the second set of tasks.
 
     ```
     <copy>
@@ -108,7 +117,7 @@ This lab assumes you have:
     </copy>
     ```
 
-3. Create script */tmp/guac-3.sh* to perform the second set of tasks.
+4. Create script */tmp/guac-3.sh* to perform the second set of tasks.
 
     ```
     <copy>
@@ -133,7 +142,7 @@ This lab assumes you have:
     </copy>
     ```
 
-4. Verify that the *EPEL* Yum Repo is configured and enabled. i.e. contains the entry *enabled=1*. If not update it accordingly before proceeding with the next step
+5. Verify that the *EPEL* Yum Repo is configured and enabled. i.e. contains the entry *enabled=1*. If not update it accordingly before proceeding with the next step
 
     ```
     <copy>
@@ -143,7 +152,7 @@ This lab assumes you have:
 
     ![](./images/yum-epel-dev-repo.png " ")
 
-5. Run script *guac-1.sh* with the desired VNC user as the sole input parameter. e.g. *oracle*
+6. Run script *guac-1.sh* with the desired VNC user as the sole input parameter. e.g. *oracle*
 
     ```
     <copy>
@@ -152,7 +161,7 @@ This lab assumes you have:
     </copy>
     ```
 
-6.  Set password for VNC user.
+7.  Set password for VNC user.
 
     ```
     <copy>
@@ -160,7 +169,7 @@ This lab assumes you have:
     </copy>
     ```
 
-7. Provide password as prompted. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
+8. Provide password as prompted. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
 
     ```
     <copy>
@@ -168,7 +177,7 @@ This lab assumes you have:
     </copy>
     ```
 
-8. Su over to the VNC user account and enforce the password.  when prompted
+9. Su over to the VNC user account and enforce the password.  when prompted
 
     ```
     <copy>
@@ -177,7 +186,7 @@ This lab assumes you have:
     </copy>
     ```
 
-9. Provide the same password as you did above. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
+10. Provide the same password as you did above. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
 
     ```
     <copy>
@@ -185,7 +194,7 @@ This lab assumes you have:
     </copy>
     ```
 
-10. Stop the newly started VNC Server running on "**:1**" and exit (or *CTRL+D*) the session as vnc user to go back to *root*
+11. Stop the newly started VNC Server running on "**:1**" and exit (or *CTRL+D*) the session as vnc user to go back to *root*
 
     ```
     <copy>
@@ -194,7 +203,7 @@ This lab assumes you have:
     </copy>
     ```
 
-11. Start VNC Server using *systemctl*
+12. Start VNC Server using *systemctl*
 
     ```
     <copy>
@@ -203,7 +212,7 @@ This lab assumes you have:
     </copy>
     ```
 
-12. Run script *guac-2.sh* with the desired VNC user as the sole input parameter. e.g *oracle*
+13. Run script *guac-2.sh* with the desired VNC user as the sole input parameter. e.g *oracle*
 
     ```
     <copy>
@@ -212,7 +221,7 @@ This lab assumes you have:
     </copy>
     ```
 
-13. Create guacamole properties file *"/etc/guacamole/guacamole.properties"*
+14. Create guacamole properties file *"/etc/guacamole/guacamole.properties"*
 
     ```
     <copy>
@@ -226,7 +235,7 @@ This lab assumes you have:
     </copy>
     ```
 
-14. Create guacamole user mapping file *"/etc/guacamole/user-mapping.xml"*
+15. Create guacamole user mapping file *"/etc/guacamole/user-mapping.xml"*
 
     ```
     <copy>
@@ -255,7 +264,7 @@ This lab assumes you have:
     </copy>
     ```
 
-15.  Run script *guac-3.sh* to finalize
+16.  Run script *guac-3.sh* to finalize
 
     ```
     <copy>
@@ -263,7 +272,7 @@ This lab assumes you have:
     </copy>
     ```
 
-16. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
+17. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
 
     ```
     <copy>

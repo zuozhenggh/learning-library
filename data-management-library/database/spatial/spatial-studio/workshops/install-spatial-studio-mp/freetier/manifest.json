@@ -1,5 +1,6 @@
 {
     "workshoptitle": "Install Oracle Spatial Studio from Cloud Marketplace",
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
     "tutorials": [
       {
         "title": "Prerequisites",
