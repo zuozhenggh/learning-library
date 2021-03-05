@@ -1,6 +1,7 @@
 {
     "workshoptitle":"Autonomous Database Quickstart Workshop",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
         "title": "Introduction to ADB on Shared Infrastructure",
         "description": "Introduction to ADB on Shared Infrastructure",

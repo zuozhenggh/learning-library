@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Create a DBCS VM Database",
-   "tutorials": [
+   "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
       {
         "title": "Introduction",
         "filename": "introduction/intro.md"
