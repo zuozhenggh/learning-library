@@ -1,6 +1,7 @@
 {
   "workshoptitle": "JavaScript for APEX Developers",
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Introduction",
       "filename": "../../0-lab-intro-and-setup/intro.md"

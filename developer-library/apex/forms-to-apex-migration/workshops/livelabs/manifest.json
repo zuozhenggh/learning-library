@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Migration of Oracle Forms to Oracle APEX on ATP",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
           "title": "Prerequisites",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"

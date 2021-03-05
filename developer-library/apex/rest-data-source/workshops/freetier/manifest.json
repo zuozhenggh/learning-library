@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Building an App using REST Data Sources for Oracle Autonomous Cloud Services",
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Introduction",
       "filename": "../../0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"

@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Low Code Development with Oracle Autonomous Database",
     "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"help": "LIVELABS-HELP-DB_US@ORACLE.COM",
 	"tutorials": [
       {
           "title": "Prerequisites",
