@@ -104,6 +104,5 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 - **Created By/Date** - Anoosha Pilli, Product Manager, February 2021
 - **Last Updated By** - Anoosha Pilli, February 2021
 
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
+## Need Help?  
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

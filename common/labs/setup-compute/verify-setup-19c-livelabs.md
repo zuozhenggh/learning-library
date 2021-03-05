@@ -197,5 +197,5 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 - **Contributors** - Robert Pastijn, DB Product Management, PTS
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+## Need Help?  
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
