@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Get Started with Tables in Oracle NoSQL Database Cloud Service",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
           "title": "Prerequisites",
           "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",

@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Getting Started with Graph Studio",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Prerequisites",
             "description": "Prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts. ",

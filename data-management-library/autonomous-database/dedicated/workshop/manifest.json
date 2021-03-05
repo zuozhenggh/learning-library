@@ -1,6 +1,7 @@
 {
-  "workshoptitle": "Oracle Autonomous Database Dedicated Workshop",
-    "tutorials": [
+    "workshoptitle": "Oracle Autonomous Database Dedicated Workshop",
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Introduction to ADB Dedicated",
             "description": "Introduction to ADB Dedicated",
