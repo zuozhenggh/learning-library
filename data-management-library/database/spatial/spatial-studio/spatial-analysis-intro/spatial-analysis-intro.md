@@ -4,15 +4,31 @@
 
 Spatial Studio provides access to the spatial analysis features of Oracle Database without the need to write code. Simple user interfaces are provided for spatial analyses and all of the underlying database syntax is handled automatically behind the scenes. Spatial analysis operations in Spatial Studio are organized into categories:
 
-**Filter**  -  i.e., "Identify which items in a dataset are inside of a region?"
+**Filter** 
+* Containment:  "Which of my assets are located inside a hazard area?"
+* Proximity: "Which of our sites are within 5 miles of a projected storm path?" 
+* ... and others
 
-**Combine** - i.e., "Join 2 datasets based on a spatial relationship" 
+**Combine** 
+* Join by location: "Associate sales leads with sales territories based on containment." 
+* Merge items:  "Combine several counties into 1 sales territory"
+* ... and others
 
-**Transform** - i.e., "Generate a dataset containing the points in the middle of each region"
+**Transform** 
+* Buffer: "Create the shape that surrounds a fire perimeter by 10 miles."
+* Centroid: "Create points in the middle of each fire perimeter."
+* ... and others
 
-**Measure** - i.e., "What is the area of each region in my dataset?"
+**Measure**  
+* Area: "What are the areas of storm surge regions in square kilometers?"
+* Distance; "What is the minimum distance from each of our assets to a projected storm path?"  
+* ... and others
 
-**Analytics** - i.e., "How many items are inside of each region?" 
+**Analytics** 
+* Summarize by region: "What is the average age of buildings within each planning region?"
+* Nearest per item: "What is the nearest warehouse to each branch location, and how far is it?"
+* ... and others 
+
 
 In this lab you will explore several of these spatial analyses.
 

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Spatial Studio allows you to customize the "look and feel" (rendering styles, color schemes transparency) and interactivity of your map layers by assigning. In this lab you explore some of these styling and interactivity features.
+Spatial Studio allows you to customize the "look and feel" and interactivity of your map layers. Styling a map layer includes options such as color, transparency, and, in the case of points, markers. Styling may also be automatically controlled by data values ("data-driven styling"), such that color and/or marker size is based on data values. For example this allows you to render sales regions with colors based on revenue. Interactivity refers to what happens when a user clicks or hovers over an item in a map layer. This includes displaying a tooltip and/or opening a popup window with data values for the item. In this lab you explore some of these styling and interactivity features.
 
 Estimated Lab Time: xx minutes
 
