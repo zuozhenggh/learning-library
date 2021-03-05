@@ -125,14 +125,11 @@ In this lab, you will:
 
 
 
-
-
-
 ## **STEP 5**: Verify Installation
 
-To verify that Spatial; Studio is operating properly, you will load, prepare, and visualize a small data sample.
+To verify that Spatial Studio is operating properly, you will load, prepare, and visualize a small data sample. The data contains a list of museums including name and address. You will geocode the data and visualize the data on an interactive map.
 
-1. Click the tile to **Create Dataset**. You will not create a connection here since you can use the Spatial Studio repository connection for this verification.
+1. You will not create a connection here since you can use the Spatial Studio repository connection for this verification. Click the tile to **Create Dataset**. 
 
   ![Image alt text](images/verify-1.png "Image title")  
 
@@ -144,7 +141,7 @@ To verify that Spatial; Studio is operating properly, you will load, prepare, an
 
   ![Image alt text](images/verify-3.png "Image title") 
 
-4. When the upload is complete, the dataset will be listed with a warning icon indicating actions need to be taken. Click on the warning icon and then click the link **Go to Dataset Columns**.
+4. When the upload is complete, the dataset will be listed with a warning icon indicating actions need to be taken. Click on the warning icon and then click the link **Go to Dataset Columns** in order to assign a key column.
 
   ![Image alt text](images/verify-4.png "Image title")  
 
@@ -152,13 +149,13 @@ To verify that Spatial; Studio is operating properly, you will load, prepare, an
 
   ![Image alt text](images/verify-5.png "Image title") 
 
-   After you validate the key, click **Apply**.
+   After you validate the key, click **Apply**. 
 
-6. Again click the warning icon and then click the button to **Geocode Addresses**.
+6. Again click the warning icon and then click the button to **Geocode Addresses** to convert addresses to coordinate locations for map visualization.
 
   ![Image alt text](images/verify-7.png "Image title") 
 
-7. Accept the defaults and click **Apply**.  
+7. Observe that the ADDRESS and POSTAL\_CODE columns were automatically detected for use in geocoding. Accept the defaults and click **Apply**.  
 
   ![Image alt text](images/verify-8.png "Image title") 
 
@@ -204,7 +201,7 @@ Oracle Spatial Studio is now provisioned and verified. The following Lab provide
 
 ## **STEP 6**: Uninstall Spatial Studio
 
- If you would like to fully remove Spatial Studio proceed with the following.
+ **If you would like to fully remove your Marketplace deployment, proceed with the following.**
 
 1. Navigate to Resources > Stack
 
@@ -233,7 +230,7 @@ Oracle Spatial Studio is now provisioned and verified. The following Lab provide
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management
-* **Last Updated By/Date** - David Lapp, Database Product Management, January 2021
+* **Last Updated By/Date** - David Lapp, Database Product Management, March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
