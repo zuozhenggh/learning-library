@@ -124,12 +124,85 @@ In this lab, you will:
   ![Image alt text](images/env-marketplace-18.png "Image title")  
 
 
-Oracle Spatial Studio is now provisioned.  
-
-The following Lab provides steps to tear down Spatial Studio when no longer needed.
 
 
-## **STEP 5**: Uninstall Spatial Studio
+
+
+## **STEP 5**: Verify Installation
+
+To verify that Spatial; Studio is operating properly, you will load, prepare, and visualize a small data sample.
+
+1. Click the tile to **Create Dataset**. You will not create a connection here since you can use the Spatial Studio repository connection for this verification.
+
+  ![Image alt text](images/verify-1.png "Image title")  
+
+2. Download the data sample file [here](files/sf_area_museums.xlsx) and save to convenient location. Then drag and drop the file to the file upload tile.  You can also click on the file upload tile and navigate to the file.
+   
+  ![Image alt text](images/verify-2.png "Image title")  
+
+3.  In the data preview, set the upload Connection to SPATIAL\_STUDIO and set the data type for POSTAL_CODE to String. Then click **Submit**.
+
+  ![Image alt text](images/verify-3.png "Image title") 
+
+4. When the upload is complete, the dataset will be listed with a warning icon indicating actions need to be taken. Click on the warning icon and then click the link **Go to Dataset Columns**.
+
+  ![Image alt text](images/verify-4.png "Image title")  
+
+5. Select NAME as the key and then click **Validate key**. 
+
+  ![Image alt text](images/verify-5.png "Image title") 
+
+   After you validate the key, click **Apply**.
+
+6. Again click the warning icon and then click the button to **Geocode Addresses**.
+
+  ![Image alt text](images/verify-7.png "Image title") 
+
+7. Accept the defaults and click **Apply**.  
+
+  ![Image alt text](images/verify-8.png "Image title") 
+
+  When geocoding is complete you are returned to the Datasets page.
+
+8. Click on the action menu for the SF\_AREA\_MUSEUMS dataset and select **Create Project**.
+   
+  ![Image alt text](images/verify-9.png "Image title")  
+
+9. Click and drag the SF\_AREA\_MUSEUMS dataset and drop anywhere on the map.
+
+  ![Image alt text](images/verify-10.png "Image title") 
+
+  The SF\_AREA\_MUSEUMS dataset will be added as a map layer, and the map will pan and zoom to the area of the data.
+
+10. Click on the action menu for the SF\_AREA\_MUSEUMS layer and select **Settings**
+
+  ![Image alt text](images/verify-11.png "Image title")  
+
+11. Style the map layer by selecting a color and opacity of your choosing.
+
+  ![Image alt text](images/verify-12.png "Image title")  
+
+12. Click on the **Interaction** tab, enable **Show info window**, and select all columns. Then click on an item in the map to see an info window with the data values for the selected item.
+  
+  ![Image alt text](images/verify-13.png "Image title") 
+
+  This verifies that basic data preparation and visualization is functioning properly.
+ 
+13. Click on the left navigation panel button to return to the Datasets page. Select the option to **Discard Changes** since you do not need to preserve this test.
+    
+  ![Image alt text](images/verify-14.png "Image title")  
+
+14. With verification complete, you can delete the test Dataset and database table.  Click on the action menu for SF\_AREA\_MUSEUMS and select **Delete**
+
+  ![Image alt text](images/verify-15.png "Image title")   
+
+15. Select the option to delete the database table and click **OK**.
+
+  ![Image alt text](images/verify-16.png "Image title") 
+
+Oracle Spatial Studio is now provisioned and verified. The following Lab provides steps to tear down Spatial Studio when no longer needed.
+
+## **STEP 6**: Uninstall Spatial Studio
 
  If you would like to fully remove Spatial Studio proceed with the following.
 
