@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Database 21c New Features",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",

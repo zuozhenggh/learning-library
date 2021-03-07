@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Managing and Monitoring",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction",

@@ -36,7 +36,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
     ![](images/launch-page.png)
 
-3. On the login page, click the down arrow to use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
+3. On the login page, use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
 
     ![](images/login-console.png)
 
@@ -48,7 +48,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
     ![](images/open-adw.png)
 
-6. Select the compartment assigned to you from the <left menu> and then click the ADW instance.
+6. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
 
     ![](images/select-compartment.png)
 
@@ -70,6 +70,4 @@ You may proceed to the next lab.
 - **Workshop Expiration Date** - March 2022
 
 ## Need Help?
-Please submit an e-mail to **livelabs-help-db_us@oracle.com**. Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

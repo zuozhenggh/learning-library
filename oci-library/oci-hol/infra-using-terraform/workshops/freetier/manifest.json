@@ -1,5 +1,6 @@
 {
-  "workshoptitle": "Deploying Infrastructure using Terraform",
+    "workshoptitle": "Deploying Infrastructure using Terraform",
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
     "tutorials": [
         {
             "title": "Prerequisites",

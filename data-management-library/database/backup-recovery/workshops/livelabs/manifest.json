@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Database Backup Service to OCI",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Prerequisites",
             "description": "Login to Oracle Cloud",

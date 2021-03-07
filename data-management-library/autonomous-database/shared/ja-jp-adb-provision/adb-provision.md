@@ -105,7 +105,7 @@
 
     ![Enter password and confirm password.](./images/Picture100-26d.png " ")
 8. ネットワークアクセスを選択します:
-    -　このラボでは、デフォルトの「どこからでも安全なアクセスを許可する」を受け入れます。
+    -　このラボでは、デフォルトの「すべての場所からのセキュア・アクセスを許可」を受け入れます。
     -　プライベートエンドポイントが必要な場合は、指定したVCNからのトラフィックのみを許可します-すべてのパブリックIPまたはVCNからのデータベースへのアクセスがブロックされている場合は、[ネットワークアクセスの選択]領域で[仮想クラウドネットワーク]を選択します。
     -　ネットワークアクセス制御リスト（ACL）を設定することにより、自律データベースへのアクセスを制御および制限できます。 IPアドレス、CIDRブロック、仮想クラウドネットワーク、仮想クラウドネットワークOCIDの4つのIP表記タイプから選択できます
 
@@ -113,8 +113,8 @@
 
 9. ライセンスタイプを選択します。このラボでは、__ライセンス込み__　を選択します。 2つのライセンスタイプは次のとおりです:
 
-    - __ライセンス持込み(BYOL)__ - Select this type when your organization has existing database licenses.
-    - __ライセンス込み__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+    - __ライセンス持込み(BYOL)__ - 既存のデータベースライセンスがある場合は、このタイプを選択します。
+    - __ライセンス込み__ - 新しいデータベースソフトウェアライセンスとデータベースクラウドサービスをサブスクライブする場合は、このタイプを選択します。
 
 10. __Autonomous Databaseの作成__　をクリックします。
 
@@ -137,7 +137,5 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Richard Green, March 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## Need Help?  
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

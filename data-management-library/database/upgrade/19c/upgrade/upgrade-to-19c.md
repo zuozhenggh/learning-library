@@ -21,9 +21,14 @@ In this lab, you will:
 * Deploy
 
 ### Prerequisites
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+		- Lab: Initialize Environment
 
 ## **STEP 1**: Preparation
 
@@ -33,7 +38,7 @@ In this lab, you will:
     ```
     <copy>
     . upgr
-    java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file 
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file
     config
     </copy>
     ```
@@ -65,7 +70,7 @@ You will need to edit it – and then pass it to the AutoUpgrade utility.
     global.autoupg_log_dir=/default/...
 
     #
-    # Database number 1 
+    # Database number 1
     #
     upg1.dbname=employee
     upg1.start_time=NOW
@@ -78,7 +83,7 @@ You will need to edit it – and then pass it to the AutoUpgrade utility.
     #upg1.run_utlrp=yes
     #upg1.timezone_upg=yes
 
-        
+
 
     #Global configurations
     #Autoupgrade's global directory, ...
@@ -87,8 +92,8 @@ You will need to edit it – and then pass it to the AutoUpgrade utility.
     global.autoupg_log_dir=/home/oracle/upg_logs
 
     #
-    # Database number 1 
-    # 
+    # Database number 1
+    #
     upg1.dbname=UPGR
     upg1.start_time=NOW
     upg1.source_home=/u01/app/oracle/product/11.2.0.4
@@ -232,11 +237,11 @@ You will need to edit it – and then pass it to the AutoUpgrade utility.
         Operation:       EXECUTING
         Status:          RUNNING
         Pending stages:  6
-        Stage summary: 
-            SETUP             <1 min 
-            PREUPGRADE        <1 min 
-            PRECHECKS         <1 min 
-            GRP               <1 min 
+        Stage summary:
+            SETUP             <1 min
+            PREUPGRADE        <1 min
+            PRECHECKS         <1 min
+            GRP               <1 min
             PREFIXUPS         <1 min (IN PROGRESS)
 
         Job Logs Locations
@@ -330,8 +335,8 @@ You may now [proceed to the next lab](#next).
 * **Author** - Mike Dietrich, Database Product Management
 * **Contributors** -  Roy Swonger, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, February 2021
-  
+
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

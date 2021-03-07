@@ -1,6 +1,7 @@
 {
     "workshoptitle":"Hybrid Partitioning on Oracle Database 19c",  
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Prerequisites",
             "description": "Login to Oracle Cloud",
