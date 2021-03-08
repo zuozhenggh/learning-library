@@ -171,7 +171,7 @@ In this lab, you will:
 
     ````
 
-7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus using the password *WElcome123##*
 
     ````
 	  <copy>
@@ -187,7 +187,7 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-9. Test the connection to PDB21
+9. Test the connection to PDB21 using the same password used in the earlier step.
 
     ````
     <copy>
