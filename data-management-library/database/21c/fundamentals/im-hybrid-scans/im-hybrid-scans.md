@@ -99,7 +99,7 @@ The `IM_Hybrid_setup.sh` shell script configures the IM column store to 110M, cr
 
     ```
 
-## **Step 2:**  Populate the  in-memory table
+## **STEP 2:**  Populate the  in-memory table
 
 1. Connect to `PDB21` as `SYSTEM` and set formats for the queried columns.
 

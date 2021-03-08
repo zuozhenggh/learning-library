@@ -7,7 +7,7 @@ This section of the workshop highlights enhancements in Oracle Database 21c desi
 - Automatic In-Memory to automatically and dynamically create in-memory objects
 - In Memory Hybrid scans automatically chooses the optimal method to scan rows that contain both in memory and non-in memory columnar data. This can improve performance by orders of magnitude
 - Reducing the number of statements required to synchronize multiple applications in application PDBs
-- Terminate a blocking session by using the new initialization parameter MAX_IDLE_BLOCKER_TIME
+- Terminate a blocking session by using the new initialization parameter MAX\_IDLE\_BLOCKER\_TIME
 
 Estimated Workshop Time: 60 minutes
 
@@ -18,7 +18,7 @@ Estimated Workshop Time: 60 minutes
 * Automatic In-Memory
 * In-Memory Hybrid Scans
 * Synchronizing Apps in App PDBs
-* MAX_IDLE_BLOCKER_TIME Parameter
+* MAX\_IDLE\_BLOCKER\_TIME Parameter
 
 ### Prerequisites
 

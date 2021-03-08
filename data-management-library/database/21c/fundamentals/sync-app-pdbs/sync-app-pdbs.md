@@ -23,9 +23,7 @@ In this lab, you will:
 
 1. Install the `TOYS_APP` and the `SALES_TOYS_APP` applications in the `TOYS_ROOT` application container for both `ROBOTS` and `DOLLS` application PDBs. The script defines the application container, installs the two applications in the application container, and finally creates the two application PDBs in the application container.
 
-2. To be able to connect during the shell script execution to `TOYS_ROOT`, `ROBOTS` and `DOLLS`, create the entries in the `tnsnames.ora` file as explained in [practices environment](https://docs-uat.us.oracle.com/en/database/oracle/oracle-database/21/ftnew/practices-environment1.html#GUID-467FB8FF-C8CC-48A0-B39A-5F7E7B9A9CF8__GUID-08108F3C-C78A-45B7-8452-6985DF9EF1DD).
-
-3. Execute the shell script.
+2. Execute the shell script.
 
     ```
 
