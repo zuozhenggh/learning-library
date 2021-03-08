@@ -4,6 +4,8 @@
 
 In this lab, we will install Faceswap on our compute instance. We will closely follow the Faceswap documentation to [install Faceswap](https://forum.faceswap.dev/viewtopic.php?f=4&t=68).
 
+Estimated workshop time: 30 minutes
+
 **Note:** In case you are using a GPU instance, you can install an assortment of drivers and libraries in **step 1** that are required for the Tensorflow GPU support. The correct versions of Cuda/cuDNN need to be installed for the required version of Tensorflow. See the [tested build configurations](https://www.tensorflow.org/install/source#linux) to know which CUDA and cuDNN versions to use with respective TensorFlow releases. For tensorflow-2.4.0, we need to install CUDA 11.0.
 
 ### Objectives

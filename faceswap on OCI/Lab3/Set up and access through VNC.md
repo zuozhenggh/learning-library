@@ -4,6 +4,8 @@
 
 In this lab, we will walk through the required steps to set up and access your Ubuntu instance through a VNC client (here: TigerVNC).
 
+Estimated workshop time: 15 minutes
+
 ### Objectives
 
 - Connect to your compute instance through SSH

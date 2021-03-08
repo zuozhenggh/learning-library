@@ -4,6 +4,8 @@
 
 Now that we have prepared our compute instance (see Lab 4), we can go ahead and run Faceswap. In the lab, you will learn to copy your training data to the compute instance, extract the faces from the training data, train the GAN with the extracted faces and to convert your video with the swapped face.
 
+Estimated workshop time: 60 minutes (exluding model training)
+
 ### Objectives
 
 - Copy your training data (photos or videos with the faces you want to swap) to the compute instance
