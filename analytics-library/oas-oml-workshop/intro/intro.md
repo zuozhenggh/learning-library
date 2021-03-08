@@ -2,8 +2,9 @@
 
 ## About this Workshop
 
-Thiss workshop is designed to illustrate how organizations can blend the capabilities found in both of these offerings to uncover value across the entire data lifecycle in a way that holistically meets the needs of both **citizen & professional** data scientists. 
+This workshop is designed to illustrate how organizations can blend the capabilities found in both of these offerings to uncover value across the entire data lifecycle in a way that holistically meets the needs of both **citizen & professional** data scientists. 
 
+*Estimated Workshop Time:* 1 hour
 
 ### About Product/Technology
 Oracle Analytics Server (OAS) is a comprehensive enterprise analytics solution that empowers you to ask any question – of any data – in any environment – on any device.   The extensive augmented analytic capabilities surfaced throughout the product truly differentiate it from other analytic offerings.  These augmented analytics are designed to enable and support the needs of “citizen” data scientists.
@@ -15,21 +16,19 @@ Oracle Converged Database affords native support for all modern data types as we
 * In-Memory technologies for real-time analytic  
 * Machine Learning   
 
-What a great many customers don’t realize is these capabilities are now included free with every Oracle database license.   The Machine Learning capabilities within the Oracle Database are designed to enable and support the more robust and demanding needs of **professional** data scientists.
-
- 
+What many customers do not realize is that  these capabilities are now included free with every Oracle database license.The Machine Learning capabilities within the Oracle Database are designed to enable and support the more robust and demanding needs of **professional** data scientists.
 
 ### Objectives
-This lab will introduce you to the capability OAS to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.In lab5 you will play the role of an HR Analyst.  The VP of HR has noticed an increasing rate of attrition.  As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk. Additionally, you will identify those employees who are at greatest risk for leaving.
-
-And in lab6, you will play the role of a data scientist assisting the HR Analyst within your organization. The analyst has asked you to assist in evaluating what ML algorithms are best suited to understanding and preventing unwanted attrition in order to decrease the rate of attrition and identify potential strategies to mitigate risk.   Additionally, you will identify employees still with the organization who are at greatest risk for leaving.
-
-
+This workshop illustrates you how you can leverge embedded augmented analytics and machine learning capabilities of OAS to deliver the fastest time to insight across all of your data. Additionally, you will leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses.
+In this lab you will:
+* Leverage OAS capabilies to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
+* Learn Predictive Analytics in OAS to predict attrition rate of an organization.
+* Learn and use Oracle Machine Learning (OML) algorithms of oracle converged database.
 
 ### Prerequisites
 
  -	An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
- -	Provide Access to Oracle Analytics Server ? 
+ -	Provide Access to Oracle Analytics Server 
  -	Download collateral required in order to complete lab exercises.
 
 

@@ -1,5 +1,6 @@
 {
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Prerequisites: Sign up for an APEX Workspace",
       "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"

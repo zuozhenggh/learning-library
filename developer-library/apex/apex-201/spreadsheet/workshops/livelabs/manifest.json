@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Building an App from a Spreadsheet for Oracle Autonomous Cloud Service",
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
         "title": "Prerequisites",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"

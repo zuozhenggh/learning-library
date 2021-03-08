@@ -1,5 +1,6 @@
 {
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Introduction",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/0-lab-intro-and-setup/content.md"

@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Create SSH Keys and Login to Oracle Cloud",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Lab: Generate SSH Key Using Oracle Cloud Shell",
             "description": "Generate SSH Key",
