@@ -4,11 +4,13 @@
 
 This lab is all about getting your environment set up correctly. Here we will show you how to provision two different autonomous database instances, create a user, enable the schema for the user and load data into a table.
 
+Estimated lab time: 20 - 30 minutes
+
 ### About Oracle Machine Learning
 
 Simplifying greatly, you can split machine learning into two parts: the process of building and training a model so it is ready to work; putting that model to work in production systems, applications, and processes. In general, training a machine learning model takes significant computing resources. You should not run that kind of work in an existing data warehouse or data mart, without clearing it ahead of time because it’s possible that model training could use too many resources and impact SLAs. You definitely don’t want to build and train a model in any kind of critical transactional system for the same reason.
 
-For this Alpha Office scenario, we provision two different autonomous databases. The autonomous data warehouse is used to build and train your model. Think of it as a stand-in for your own data warehouse or data mart. Alternatively, given how easy it is to provision a data mart, think of this ADW as the best way for you to do machine learning without impacting anybody else in the organization. Setting up a dedicated data mart for machine learning maybe the right thing for you to do outside of this lab.
+For this Alpha Office scenario, we provision two different autonomous databases. The autonomous data warehouse is used to build and train your model. Think of it as a stand-in for your own data warehouse or data mart. Alternatively, given how easy it is to provision a data mart, think of this ADW as the best way for you to do machine learning without impacting anybody else in the organization. Setting up a dedicated data mart for machine learning may be the right thing for you to do outside of this lab.
 
 But it’s not just about training the model - you also have to deploy it, and there are some options. You could deploy a model into a data warehouse where it’s available for analytics. Or maybe you want to deploy it into a production transaction processing system so that you can score each new transaction. Either way, you are going to need to know how to export and import a model. So we show you that in this lab using two different databases.
 
@@ -19,7 +21,7 @@ What Alpha Office wants is to deploy this machine learning model in a production
 -   Learn how to provision an ADW instance
 -   Learn how to provision an ATP instance
 -   Create a user in ADW and grant privileges
-- Load data into a table
+-   Load data into a table
 
 ### Prerequisites
 
@@ -38,14 +40,13 @@ First, we are going to create an ADW Instance.
 
     ![](./images/choose-adw.png  " ")
 
-
 2.  Choose your **Compartment** by clicking on the drop-down list and then click **Create Autonomous Database**.
 
-    ![](./images/create-adw.png  " ")
+    ![](./images/create-adw2.png  " ")
 
 3.  Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
 
-    ![](./images/007.png  " ")
+    ![](./images/database-name.png  " ")
 
 4.  Under **Choose a workload type** and **Choose a deployment type**, select **Data Warehouse**, and **Shared Infrastructure** respectively.
 
@@ -79,11 +80,11 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
 2.  Choose your **Compartment** by clicking on the drop-down list and then click **Create Autonomous Database**.
 
-    ![](./images/015.png  " ")
+    ![](./images/atp-create.png  " ")
 
 3.  Select **Compartment**. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
 
-    ![](./images/016.png  " ")
+    ![](./images/display-name.png  " ")
 
 4.  Under **Choose a workload type** and **Choose a deployment type**, select **Transaction Processing**, and **Shared Infrastructure** respectively.
 
@@ -93,7 +94,7 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
     ![](./images/009.png  " ")
 
-6.  Add a password. Note the password down in a notepad, you will need it later in Lab 2.
+6.  Add a password. Note the password down in a notepad, you will need it later in labs.
 
     ![](./images/010.png  " ")
 
@@ -125,7 +126,7 @@ You now have created your first ATP instance.
 
     ![](./images/open-ml-admin.png " ")
 
-4. Sign in as **Username - admin** with the password you used when you created your Autonomous instance.
+4. Sign in as **Username - ADMIN** and with the password you used when you created your Autonomous instance.
 
     ![](./images/ml-login.png  " ")
 
@@ -133,14 +134,13 @@ You now have created your first ATP instance.
 
     ![](./images/create.png  " ")
 
-7. On the Create User form, enter **Username - ml\_user**, un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
+7. On the Create User form, enter **Username - ML\_USER**, an e-mail address (you can use admin@oracle.com), un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
 
     ![](./images/ml-user.png  " ")
 
-8. Notice that the **ML_USER** is created.
+8. Notice that the **ML\_USER** is created.
 
     ![](./images/ml-user-created.png " ")
-
 
 ## **STEP 4:** Grant Privileges to ML_USER to access Database Actions
 
@@ -172,7 +172,7 @@ You now have created your first ATP instance.
 
     ![](./images/click-x.png  " ")
 
-7.  By default, only the admin userid can use the SQL Developer Web. To enable ml\_user to use it, you need to enter the following and execute the procedure to grant SQL developer web access to ml\_user.
+7.  By default, only the ADMIN user can use the SQL Developer Web. To enable ML\_USER to use it, you need to enter the following and execute the procedure to grant SQL developer web access to ML\_USER.
 
     ````
     <copy>
@@ -193,7 +193,7 @@ You now have created your first ATP instance.
     ![](./images/grant-mluser-access.png " ")
     ![](./images/mluser-access-granted.png " ")
 
-8.  Grant storage privileges to ml\_user.
+8.  Grant storage privileges to ML\_USER.
 
     ````
     <copy>
@@ -203,7 +203,7 @@ You now have created your first ATP instance.
 
     ![](./images/storage-privileges.png " ")
 
-## **STEP 5:** Download Files to Use in Lab 2
+## **STEP 5:** Download the Necessary Files
 
 1.  Click the link below to download the install file.
 
@@ -215,11 +215,11 @@ You now have created your first ATP instance.
 
 ## **STEP 6**: Upload the data files to ML_USER
 
-1. On the tab with your ADW instance, and click on **Open Database Actions** under Tools.
+1. On the tab with your ADW instance, click on **Open Database Actions** under Tools.
 
     ![](./images/open-database-actions.png  " ")
 
-2. This time sign in as **ml\_user**. Provide the **Username - ml\_user** and click **Next**. Then provide the password for your ml\_user and click **Sign in**.
+2. This time sign in as **ML\_USER**. Provide the **Username - ML\_USER** and click **Next**. Then provide the password for your ML\_USER and click **Sign in**.
 
     ![](images/ml-user-next.png)
 
@@ -261,11 +261,11 @@ You now have created your first ATP instance.
 
     ![](./images/close.png  " ")
 
-10. The SQL Web Developer shows the table has been successfully created (and associated with ML_USER).
+10. The SQL Web Developer shows the table has been successfully created (and associated with ML\_USER).
 
     ![](images/tables-loaded.png)
 
-Please proceed to the next lab.
+[Please proceed to the next lab](#next).
 
 ## Acknowledgements
 
