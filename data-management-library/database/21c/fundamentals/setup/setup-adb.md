@@ -3,6 +3,8 @@
 ## Introduction
 In the previous lab you created an ADB instance.  In this lab you will connect to the ADB instance from Oracle Cloud Shell.
 
+*This lab is under construction*
+
 *Estimated time:* 20 Minutes
 
 ### Objectives
