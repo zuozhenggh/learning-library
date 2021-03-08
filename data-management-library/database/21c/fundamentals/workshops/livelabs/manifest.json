@@ -25,7 +25,8 @@
         },
         {
             "title": "Lab: New Set Operators",
-            "filename": "../../set-operators/set-operators.md"
+            "filename": "../../set-operators/set-operators.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Expressions in Init Parameters",
