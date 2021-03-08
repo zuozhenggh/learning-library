@@ -31,7 +31,7 @@ Key updates made in Database 21c are:
 * Auto machine learning with Python
 * Enhancements for sharding, database in-memory and graph analytics.
 
-With 21c, customers can
+With 21c <if type="21c">on Autonomous Database,</if> customers can:
 * Reduce IT cost and complexity
 * Unlock innovation
 * Develop powerful, data-driven applications
@@ -45,7 +45,7 @@ With 21c, customers can
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** - Kay Malcolm, David Start, Kamryn Vinson, Anoosha Pilli, Tom McGinn, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, November 2020
+* **Last Updated By/Date** - Kay Malcolm, March 2020
 
 ## Need Help?  
 Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
