@@ -1,7 +1,8 @@
 
 {
-  "workshoptitle": "Getting Started with Oracle Big Data Service (HA)",
-    "tutorials": [
+      "workshoptitle": "Getting Started with Oracle Big Data Service (HA)",
+      "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
       {
          "title": "Get Started with Oracle Cloud",
          "description": "Get a Free Trial",

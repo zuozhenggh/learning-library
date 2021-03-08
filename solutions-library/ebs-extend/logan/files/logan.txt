@@ -1,0 +1,8 @@
+### Options
+
+Steps 1 and 2 can be completed via automation. To automate the Setup of OCI Logging Analytics and ingestion of logs to the service follow the steps found in **Step 0** Once done skip to **Step 3**
+For manual installation follow steps outlined in **Step 1** and **Step 2**
+
+## **Step 0**: Automate Setup and Ingestion for Logging Analytics
+
+Here we will automate setting up Logging Analytics and Ingesting Logs. Once completed go to **Step 3**

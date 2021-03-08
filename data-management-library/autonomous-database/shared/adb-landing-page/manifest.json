@@ -1,5 +1,6 @@
 {
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Autonomous Database Workshops",
             "description": "Official Autonomous Database Workshops from the ADB Team",

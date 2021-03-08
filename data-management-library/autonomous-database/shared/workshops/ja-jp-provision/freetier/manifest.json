@@ -1,6 +1,7 @@
 {
     "workshoptitle": "自律データベースのプロビジョニング",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
       {
            "title": "Login to Oracle Cloud",
            "description": "Get a Free Trial",

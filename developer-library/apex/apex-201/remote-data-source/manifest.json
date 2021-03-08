@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Building an App using a Remote Data Source for Oracle Autonomous Cloud Services",
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Prerequisites",
       "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"

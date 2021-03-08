@@ -1,19 +1,19 @@
-# Oracle® Cloud Creating and Running Notebooks in Oracle Machine Learning
+# Oracle® Cloud Create and Run Notebooks in Oracle Machine Learning
 ## Before You Begin
 
-This lab shows you how to create a notebook and run it in Oracle Machine Learning.
+This lab shows you how to create a notebook and run it in Oracle Machine Learning Notebooks.
 
 This lab takes approximately 10 minutes to complete.
 
 ### Background
-Oracle Machine Learning Notebook is a web-based interface for data analysis, data discovery, and data visualization. Whenever a notebook is created, it must be defined with a specific Interpreter Settings specification. The notebook contains an internal list of bindings that determines the order of the interpreter bindings.
+Oracle Machine Learning Notebooks is a web-based interface for data analysis, data discovery, and data visualization. Whenever a notebook is created, it must be defined with a specific Interpreter Settings specification. The notebook contains an internal list of bindings that determines the order of the interpreter bindings.
 
 A notebook comprises paragraphs which is a notebook component where you can write SQL statements, run PL/SQL scripts, and run Python commands. A paragraph has an input section and an output section. In the input section, specify the interpreter to run along with the text. This information is sent to the interpreter to be executed. In the output section, the results of the interpreter are provided.
 
 ### What Do You Need?
 
-* Access to your Oracle Machine Learning account
-* A project created in your Oracle Machine Learning account, where the notebook will reside
+* Access to your Oracle Machine Learning Notebooks account
+* A project created in your Oracle Machine Learning Notebooks account, where the notebook will reside
 
 
 ## Create Your Notebook

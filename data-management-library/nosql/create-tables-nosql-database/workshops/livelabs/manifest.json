@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Get Started with Tables in Oracle NoSQL Database Cloud Service",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
           "title": "Prerequisites",
           "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
