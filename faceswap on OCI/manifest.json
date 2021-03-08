@@ -38,7 +38,7 @@
         }
         ,
         {
-              "title": "Lab 5: Run Faceswap (terminal and GUI)",
+              "title": "Lab 5: Run Faceswap",
               "description": "This lab will walk through the required and optional steps to run Faceswap on your compute instance (terminal and GUI).",
               "filename": "./Lab5/Run Faceswap.md"
         }

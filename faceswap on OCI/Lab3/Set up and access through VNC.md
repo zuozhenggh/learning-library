@@ -13,6 +13,8 @@ In this lab, we will walk through the required steps to set up and access your U
 ### What Do You Need?
 
 - Complete Lab 1 and Lab 2
+- [Add an ingress rule to the VCN security list](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm#Using) to allow TCP traffic for the ports port 5900+N where N is the display number (usually :0 for a physical display).
+  ![](images/vncseclist.PNG " ")
 
 ## **Step 1:** Connect to your compute instance through SSH
 
