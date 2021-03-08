@@ -222,23 +222,7 @@ If your training is finished, you can convert your video and swap face A in your
    <copy>ffmpeg -i personA_%6d.png -c:v libx264 -vf "fps=25,format=yuv420p" output.mp4</copy>
    ```
 
-10. Watch the output video.
-
-![](images/output.mp4 " ")
-
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="images/poster_image.PNG">
-    <source src="images/output.mp4" type="video/mp4">
-    <source src="images/output.ogg" type="video/ogg">
-    <source src="path/to/video.webm" type="video/webm">
-  </video>
-</figure>
-
-<video width="320" height="240" controls>
-  <source src="images/output.mp4" type="video/mp4">
-  <source src="images/output.ogg" type="video/ogg">
-  Your browser does not support the video tag.
-</video>
+10. Watch the [output video](https://www.youtube.com/watch?v=b-uKJ89QSnE)
 
 ## **Acknowledgements**
 
@@ -250,19 +234,3 @@ If your training is finished, you can convert your video and swap face A in your
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a _New Discussion_ or _Ask a Question_. Please include your workshop name and lab name. You can also include screenshots and attach files. Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
