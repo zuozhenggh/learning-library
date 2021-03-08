@@ -4,6 +4,8 @@
 
 This is the lab where you’re going to do the work of building and training a machine learning model that will help Alpha Office.
 
+Estimated lab time: 20 - 30 minutes
+
 ### Before You Begin
 
 Remember that we are trying to help Alpha Office predict the credit and payment suitability of their customers. We can use machine learning to help us here because we already have a set of customers with known credit and payment status. This is what we are going to use to train a model that will predict for new customers if their credit is suitable.
@@ -13,8 +15,6 @@ This lab uses a decision tree algorithm which is a classification technique. If 
 [](youtube:IkOz2rrB7hU)
 
 In this lab, you will use Apache Zeppelin notebooks to do this work. The lab will help you create a new notebook, and also import an existing one with all the code, descriptions, and examples that you need. You will then step through that notebook, examining the code, data, and visualizations and, most importantly, executing each step to populate the database.
-
-Estimated time: 20 - 30 minutes
 
 ### Objectives
 
@@ -30,7 +30,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 1:** Create ML Notebook
 
-1.  If you are not logged into Machine Learning User Administration as Admin user, log in to your cloud account, click the hamburger menu, select **Autonomous Data Warehouse** and navigate to your instance.
+1.  If you are not logged into Machine Learning User Administration as ADMIN user, log in to your cloud account, click the hamburger menu, select **Autonomous Data Warehouse** and navigate to your instance.
 
     ![](./images/choose-adw.png  " ")
 
@@ -50,7 +50,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/home-icon.png  " ")
 
-3.  Log in as **ml\_user** and provide the password you created in lab 1 for the ml\_user. Before you log in, you may wish to bookmark this page.
+3.  Log in as **ML\_USER** and provide the password you created in lab 1 for the ML\_USER. Before you log in, you may wish to bookmark this page.
 
     ![](./images/mluser-sign-in.png  " ")
 
@@ -94,7 +94,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
 3.  Click on the **gear** icon in the upper right. We must set the interpreter binding if we're going to connect to the ADW database and run queries. Be sure to select at least one of the **services** (High, Medium, or Low (or all)).
 
-    ![](./images/049.png  " ")
+    ![](./images/gear.png  " ")
 
     Zeppelin notebooks are composed of paragraphs that can contain formatted text, sql, and script (pl/sql). Notebooks can support a broad range of scripting languages (python, R, etc.), but we'll just be using these three. We create different paragraphs with different interpreters based on what we want to put in the paragraphs. The interpreter is set at the top of the paragraph:
     - %md - markdown language which is used for formatted text.
@@ -230,27 +230,23 @@ Adding content to a notebook is simple and fast. In this step, we have built the
 
     ![](./images/step4.4-023.png  " ")
 
-5.  Before you start working the **Targeting Customers That Complete All Payments** you need to set the interpreter binging. Click on the gear icon.
+6.  Before you start working the **Targeting Customers That Complete All Payments** you need to set the interpreter binging. Click on the gear icon.
 
     ![](./images/step4.5-024.png  " ")
 
-6.  Select the **orcl_high** interpreter, drag and drop it to reorder and then **Save**.
+7.  Select the **orcl_high** interpreter, drag and drop it to reorder and then **Save**.
 
-    ![](./images/025.png  " ")
+    ![](./images/gear2.png  " ")
 
-7.  Click on the **arrow** icon to run all paragraphs in the notebook.
+8.  Click on the **arrow** icon to run all paragraphs in the notebook.
 
     ![](./images/step4.7-026.png  " ")
 
     ![](./images/click-ok.png  " ")
 
-8.  Click on the **output** icon to show the output and ensure that all the paragraphs are in **Finished** state.
+9.  Click on the **output** icon to show the output and to view the code and the formatted text, click on **show editor** icon. Ensure that all the paragraphs are in **Finished** state and then click on **output** icon.
 
     ![](./images/step4.8-027.png  " ")
-
-    ![](./images/step4.8-028.png  " ")
-
-9.  To view the code and the formatted text, click on **show editor** icon and then on **output** icon.
 
     ![](./images/step4.9-029.png  " ")
 
@@ -288,7 +284,7 @@ The rest of this lab will be done interactively in the notebook. The following a
 
 ![](./images/038.png  " ")
 
-Please proceed to the next lab.
+[Please proceed to the next lab](#next).
 
 ## Acknowledgements
 

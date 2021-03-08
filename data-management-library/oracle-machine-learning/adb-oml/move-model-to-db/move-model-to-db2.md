@@ -4,6 +4,8 @@
 
 In lab 2, you created a machine learning model that can predict customer credit. Congratulations! But you’re not finished. It’s a good model, but models have to be deployed into production systems, they have to positively impact the business, and too many machine learning projects fail at this point. We are going to spend the next two labs making sure you deploy this model so that Alpha Office employees can use it in their day to day work.
 
+Estimated lab time: 20 - 30 minutes
+
 ### Before You Begin
 
 The first step is to move the model from where it was developed into a production transaction processing database where it will be accessible to the Client Service application. This lab will take you through that process.
@@ -12,21 +14,19 @@ Watch the brief demo on Introduction to Deploy the Machine Learning Model into A
 
 [](youtube:YUikH5-5n_o)
 
-Estimated time: 20 - 30 minutes
-
 ### Objectives
 
 In this lab, you will:
 
 - In ADW:
-    - Log in with ml_user and export the model to a temporary table.
+    - Log in with ML\_USER and export the model to a temporary table.
     - Download the credential wallet and upload it to object storage
 
 - In ATP:
-    - Create a new ml_user and grant that user access to the SQL Developer Web, and to storage.
+    - Create a new ML\_USER and grant that user access to the SQL Developer Web, and to storage.
     - Create a database link that will be used to copy (pull) export of the ml model from ADW to ATP.
     - Copy the model from ADW to ATP.
-    - Log in with ml_user and import the ml model.
+    - Log in with ML\_USER and import the ml model.
     - Create a virtual column on the table that applies the model to rows in the table.
 
 ### Prerequisites
@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 1:** Export the machine learning model
 
-1.  If you are not logged into Database Actions as ml\_user user, log in to your cloud account, click the hamburger menu, select **Autonomous Data Warehouse** and navigate to your instance.
+1.  If you are not logged into Database Actions as ML\_USER user, log in to your cloud account, click the hamburger menu, select **Autonomous Data Warehouse** and navigate to your instance.
 
     ![](./images/choose-adw.png  " ")
 
@@ -50,7 +50,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/open-database-actions.png  " ")
 
-3.  Provide the **Username - ml\_user** and click **Next**. Then provide the password for your ml\_user and click **Sign in**.
+3.  Provide the **Username - ML\_USER** and click **Next**. Then provide the password for your ML\_USER and click **Sign in**.
 
     ![](images/ml-user-next.png)
 
@@ -82,7 +82,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/ml-model-created.png  " ")
 
-7.  Export the ml model to this temporary table. The model will be stored in a binary large object.
+7.  Export the ML model to this temporary table. The model will be stored in a binary large object.
 
     ````
     <copy>
@@ -127,7 +127,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/atp-open-ml-admin.png " ")
 
-4. Sign in as **Username - admin** with the password you used when you created your Autonomous instance.
+4. Sign in as **Username - ADMIN** with the password you used when you created your Autonomous instance.
 
     ![](./images/atp-ml-admin-login.png  " ")
 
@@ -135,7 +135,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/atp-create.png  " ")
 
-7. On the Create User form, enter **Username - ml\_user**, un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
+7. On the Create User form, enter **Username - ML\_USER**, an e-mail address (you can use admin@oracle.com), un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
 
     ![](./images/atp-ml-user.png  " ")
 
@@ -173,7 +173,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/click-x.png  " ")
 
-7.  By default, only the admin userid can use the SQL Developer Web. To enable ml\_user to use it, you need to enter the following and execute the procedure to grant SQL developer web access to ml\_user.
+7.  By default, only the ADMIN user can use the SQL Developer Web. To enable ML\_USER to use it, you need to enter the following and execute the procedure to grant SQL developer web access to ML\_USER.
 
     ````
     <copy>
@@ -195,7 +195,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/mluser-access-granted.png " ")
 
-8.  Grant storage privileges to ml\_user.
+8.  Grant storage privileges to ML\_USER.
 
     ````
     <copy>
@@ -217,7 +217,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/service-console.png  " ")
 
-3.  Click on **Administration** and click **Download Client Credentials (Wallet)**.
+3.  Click on **Administration** and select **Download Client Credentials (Wallet)**.
 
     ![](./images/administration.png  " ")
 
@@ -297,7 +297,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/atp-open-database-actions.png  " ")
 
-3.  Provide the **Username - admin** and click **Next**. Then provide the password for your admin and click **Sign in**.
+3.  Provide the **Username - ADMIN** and click **Next**. Then provide the password for your ADMIN user and click **Sign in**.
 
     ![](images/ml-admin.png)
 
@@ -309,7 +309,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/atp-admin-sql-developer.png " ")
 
-5. With the admin userid in ATP SQL Developer Web, create a credential to copy your ADW wallet from Object Storage to the DATA\_PUMP\_DIR which will be used later in this step. Specify the credentials:
+5. With the ADMIN userid in ATP SQL Developer Web, create a credential to copy your ADW wallet from Object Storage to the DATA\_PUMP\_DIR which will be used later in this step. Specify the credentials:
 
     - Username: The username will be the OCI Username you noted earlier (which is not the same as your database username).
     - Password: The password will be the OCI Object Store Auth Token you just generated.
@@ -329,7 +329,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/adwc-credential.png  " ")
 
-6.  Create another credential for the ADW database. For the **Username - ADMIN**, create a **Password**. This is your database admin userid and password. This will be used in the following steps.
+6.  Create another credential for the ADW database. For the **Username - ADMIN**, create a **Password**. This is your database ADMIN userid and password. This will be used in the following steps.
 
     ````
     <copy>
@@ -401,7 +401,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
 ## **STEP 8:** Copy tables from ADW to ATP
 
-1.  First, copy the credit\_scoring\_100k table into ml\_user in ATP. Normally, this table would already exist in the production system. We could have loaded this table to ATP in lab 1 when we loaded the table into ADW. But, since we were going to create this database link, we can just copy it from ADW. Run the following statement to copy credit\_scoring\_100k table into ml\_user in ATP.
+1.  First, copy the credit\_scoring\_100k table into ML\_USER in ATP. Normally, this table would already exist in the production system. We could have loaded this table to ATP in lab 1 when we loaded the table into ADW. But, since we were going to create this database link, we can just copy it from ADW. Run the following statement to copy credit\_scoring\_100k table into ML\_USER in ATP.
 
     ````
     <copy>
@@ -421,15 +421,15 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/create-mluser-temp.png  " ")
 
-## **STEP 9:** Import the ml model
+## **STEP 9:** Import the ML model
 
-1.  Copy the SQL Developer URL from the browser and paste it in another tab. Change the user in the SQL Developer URL from admin to **ml\_user** and hit enter to log in as ml\_user. Copy the URL to a notepad - you will need it later.
+1.  Copy the SQL Developer URL from the browser and paste it in another tab. Change the user in the SQL Developer URL from ADMIN to **ML\_USER** and hit enter to log in as ML\_USER. Copy the URL to a notepad - you will need it later.
 
     ![](./images/replace-admin.png  " ")
 
     ![](./images/ml-user-replaced.png  " ")
 
-2.  Log in as ml_user, enter **Username - ml\_user** and **Password** you created for the ATP Instance.
+2.  Log in as ML\_USER, enter **Username - ML\_USER** and **Password** you created for the ATP Instance.
 
     ![](./images/mluser-signin.png  " ")
 
@@ -455,7 +455,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/import-model.png  " ")
 
-5.  Confirm the ml model was imported.
+5.  Confirm the ML model was imported.
 
     ````
     <copy>
@@ -521,7 +521,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/select-columns.png  " ")
 
-Please proceed to the next lab.
+[Please proceed to the next lab](#next).
 
 ## Acknowledgements
 

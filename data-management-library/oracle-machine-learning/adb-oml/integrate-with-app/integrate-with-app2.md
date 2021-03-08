@@ -4,6 +4,8 @@
 
 In Lab 2, you built a model and in Lab 3, you imported that model into a new database, representing a production system. Now we just need to integrate that model with existing applications and processes. It’s worth repeating that this is a critical step. Machine learning models aren’t delivering value until they are being actively used by the company in existing applications and processes.
 
+Estimated lab time: 20 - 30 minutes
+
 ### Before You Begin
 
 We will start this lab with some more setup, loading both data and an APEX application, the Alpha Office Customer Service application. Once those are ready we will show you three ways that you could deploy this model.
@@ -15,8 +17,6 @@ In the second scenario, we are going to process a large number of customers in b
 Finally, while APEX applications work well with Oracle Database, many organizations use a distributed development approach. If this is the case, then making a model available via a REST API endpoint is the way to go. We’ll show you how to do that as well.
 
 And when you’ve completed this lab, you are all done. You have set up two autonomous databases, built, trained, and deployed a machine learning model. We hope that you can take your new-found skills back to your organization. Are there some business problems that you might be able to help with? Are there existing data sets that colleagues are analyzing where machine learning might help? If you set up a free trial account to do this lab, then you can continue to use the free tier or your $300 of cloud credits to experiment further. And you can find more information at Oracle.com/machine-learning
-
-Estimated time: 20 - 30 minutes
 
 ### Objectives
 
@@ -48,7 +48,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/atp-open-database-actions.png  " ")
 
-3.  Provide the **Username - ML_USER** and click **Next**. Then provide the password for your ML\_USER and click **Sign in**.
+3.  Provide the **Username - ML\_USER** and click **Next**. Then provide the password for your ML\_USER and click **Sign in**.
 
     ![](images/atp-mluser-login.png)
 
@@ -157,7 +157,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/apex.png " ")
 
-3.  Enter your admin **Password** and click **Sign In to Administration**.
+3.  Enter your ADMIN **Password** and click **Sign In to Administration**.
 
     ![](./images/apex-password.png  " ")
 
@@ -171,7 +171,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/workspace-created.png  " ")
 
-6.  Click on Admin and then on **Sign out** to sign out of admin user.
+6.  Click on admin and then on **Sign out** to sign out of ADMIN user.
 
     ![](./images/sign-out.png  " ")
 
@@ -181,7 +181,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/mluser-apex-signin.png  " ")
 
-8.  You will be prompted to set the new application password for ml\_user. Click on **Set APEX Account Password**.
+8.  You will be prompted to set the new application password for ML\_USER. Click on **Set APEX Account Password**.
 
     ![](./images/set-apex-password.png  " ")
 
@@ -223,7 +223,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/run-app.png  " ")
 
-14. Log in as ml_user, enter **Username - ML\_USER** and **Password** you created for the ATP instance and then click on **Sign In**.
+14. Log in as ML\_USER, enter **Username - ML\_USER** and **Password** you created for the ATP instance and then click on **Sign In**.
 
     ![](./images/mluser-app-signin.png  " ")
 
