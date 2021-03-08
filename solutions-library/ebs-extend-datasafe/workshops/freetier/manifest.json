@@ -11,12 +11,16 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Data Safe",
-            "filename": "../../data-safe/data-safe.md"
+            "title": "Lab 1: Enable Data Safe",
+            "filename": "../../enable/enable.md"
         },
         {
-            "title": "Lab 2: Logging Analytics",
-            "filename": "../../logan/logan.md"
+            "title": "Lab 2: Configure the Target Database",
+            "filename": "../../database/database.md"
+        },
+        {
+            "title": "Lab 3: Monitor the Target Database on Data Safe",
+            "filename": "../../monitor/monitor.md"
         }
     ]
 }
