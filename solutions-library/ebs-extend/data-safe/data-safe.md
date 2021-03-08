@@ -271,17 +271,39 @@ In this step, we will access the data on the target database we registered. Secu
 
 5. The next job we can run is for Data Masking. This is mask the sensitive data that you discovered in the last step. Note: this should only be done on non-production databases. 
 
+  Note: There is a current issue with running Data Masking on EBS Databases. Please note that this is how the process would work; however, your Data Masking job may encounter errors. 
+
   a. Click on **Data Masking** on the left panel and select your target database. Click **Continue**. 
+
+    ![](./images/19-0.png " ")
 
   b. Select **Create** for Masking Policy and provide a name for the policy, if desired. 
 
   c. You can either click **Create** for the Sensitive Data Model to create a new model like we did in the last step, or you can click **Pick from Library** to select a saved model that you have already created. 
 
+    ![](./images/19-1.png " ")
+
   d. Leave **Show and save sample data?** unchecked. Select the compartment where you would like to store this policy. Click **Continue**.
 
-  e. If you are creating a new Sensitive Data Model, you will follow similar steps to the last step. If you are picking from a library (e.g. the model you created in the previous step), you will select your model from a list available in the Data Safe Console. 
+  e. If you are creating a new Sensitive Data Model, you will follow similar steps to the last step. If you are picking from a library (e.g. the model you created in the previous step), you will select your model from a list available in the Data Safe Console after clicking **Continue**. Select the model you wish and click **View SDM without update/verification** (since we just created it, we know it is verified and updated). Click **Continue**. Lastly click **Save and Continue** on the next page to finish the Sensitive Data Model creation/selection. 
 
-  f. 
+    ![](./images/19-2.png " ")
+
+    ![](./images/19-3.png " ")
+
+  f. After selecting or creating your Sensitive Data Model, you will define what entries you should mask with the Masking Policy. Select the appropriate data entries and click **Confirm Policy**. A pop out will ask whether or not you would like to skip validation before you begin masking the data. Since validation will occur while the data is being masked anyway, we will select **Yes**.  
+
+    ![](./images/19-4.png " ")
+
+    ![](./images/19-5.png " ")
+
+  g. The next page will ask you to select when the masking job should run. We will run the job **Right Now**. Click **Review** to continue. 
+
+    ![](./images/19-6.png " ")
+
+  h. On the Review and Submit page, confirm the entered data is correct and click **Submit** to begin the data masking job. The job will begin running and masking the selected data on the target database. You can monitor the job's progress on the resulting page, or under the **Jobs** tab. 
+
+    ![](./images/19-7.png " ")
 
 6. Lastly, we will configure a target for Activity Auditing. This will allow us to audit certain activities performed on the target database. 
 
