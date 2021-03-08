@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Creating an App based on Existing Tables for Oracle Autonomous Cloud Service",
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
         "title": "Prerequisites",
         "description": "Login to Oracle Cloud",

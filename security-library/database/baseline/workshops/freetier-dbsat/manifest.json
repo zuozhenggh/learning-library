@@ -1,6 +1,7 @@
 {
   "workshoptitle": "DB Security - Native Network Encryption",
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Prerequisites",
       "description": "Get a Free Trial",

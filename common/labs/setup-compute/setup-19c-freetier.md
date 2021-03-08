@@ -44,7 +44,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
     ![Create a stack](images/workshop-004.png " ")
 10. Accept the network and click **Next**.
     ![Create a stack](images/workshop-005.png " ")
-11. Review the details and click **Next**.
+11. Review the details and click **Create**.
     ![Create a stack](images/workshop-006.png " ")
 
 ## **STEP 2**: Run Stack Apply Job
@@ -326,5 +326,5 @@ Reload your browser
 - **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Jeffrey Malcolm Jr.
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+## Need Help?  
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

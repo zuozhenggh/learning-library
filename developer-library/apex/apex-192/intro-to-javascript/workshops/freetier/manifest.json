@@ -1,5 +1,6 @@
 {
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Prerequisites",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/create-apex-workspace/create-apex-workspace.md"

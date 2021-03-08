@@ -12,13 +12,20 @@ In this lab, you will:
 * Setup the environment
 
 ### Prerequisites
-
+<if type="dbcs">
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
+</if>
+<if type="21c">
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Lab: Provision ADB
+* Lab: Setup
+</if>
 
 
+<if type="dbcs">
 ## **STEP 1:** Use SQL Macro as a scalar expression
 
 1. Ensure that `PDB21` is opened. If it is not opened, open it first.
@@ -118,7 +125,22 @@ In this lab, you will:
     SQL>
 
     ```
+</if>    
+<if type="21c">
+## **STEP  1**: Login to SQL Developer Web on ADB
 
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing** 
+      ![](./images/select-atp.png " ")
+
+2.  Click on the **Display Name** to go to your ADB main page.
+      ![](./images/display-name.png " ")
+
+3.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](./images/sql.png " ")
+
+4.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+5.  Click on the SQL button.
+</if>
 5. Use the SQM to query the table and display the employees names doubled.
 
     ```
@@ -152,9 +174,7 @@ In this lab, you will:
     Bernstein                 BernsteinBernstein
 
     Bissot                    BissotBissot
-
     ...
-
     107 rows selected.
 
     SQL>
@@ -411,11 +431,9 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
+* **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
+* **Last Updated By/Date** -  Kay Malcolm, March 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## Need Help?  
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

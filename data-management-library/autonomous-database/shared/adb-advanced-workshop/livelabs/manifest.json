@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Analyzing your data with Autonomous Database",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
       {
           "title": "Introduction to ADB on Shared Infrastructure",
           "description": "Introduction to ADB on Shared Infrastructure",
@@ -60,7 +61,7 @@
             "title": "Lab 11: Disaster Recovery",
             "description": "Enable Autonomous Data Guard",
             "filename": "./../../adb-autonomous-data-guard/adb-autonomous-data-guard.md"
-        },
+        }, 
         {
             "title": "Lab 12: Getting Started with Machine Learning Notebooks",
             "description": "Using Oracle Machine Learning Notebooks",

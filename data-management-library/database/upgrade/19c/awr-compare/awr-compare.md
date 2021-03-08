@@ -9,7 +9,7 @@ In this lab you will create AWR diff reports. Those reports give you a first ind
 Estimated Lab Time: n minutes
 
 ### Comparing Database Performance Over Time
-Performance degradation of the database occurs when your database was performing optimally in the past, but has over time gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time. 
+Performance degradation of the database occurs when your database was performing optimally in the past, but has over time gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time.
 
 An AWR Compare Periods report, on the other hand, shows the difference between two periods in time (or two AWR reports, which equates to four snapshots). Using AWR Compare Periods reports helps you to identify detailed performance attributes and configuration settings that differ between two time periods:  before upgrade and after upgrade.
 
@@ -20,19 +20,24 @@ In this lab, you will:
 * Create an AWR Diff report
 
 ### Prerequisites
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+		- Lab: Initialize Environment
 
 ## **STEP 1**: Generate Load
 
 1.  Login to Oracle Cloud.  Run the command below.
 
-	````
-	. upgr19
-	cd /home/oracle/scripts
-	sqlplus / as sysdba
-	````
+		````
+		. upgr19
+		cd /home/oracle/scripts
+		sqlplus / as sysdba
+		````
 
 2. At first, create an AWR snapshot BEFOREload, then AFTERload, and note down the snapshot numbers again.
 
@@ -63,7 +68,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 1. Call the AWR Diff script
 
 	````
-	<copy>	
+	<copy>
 	@?/rdbms/admin/awrddrpt.sql
 	</copy>
 	````
@@ -83,7 +88,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Enter value for report_type:
 	````
 
-3. Click **RETURN** 
+3. Click **RETURN**
 
 	````
 	Instances in this Workload Repository schema
@@ -108,10 +113,10 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Enter value for num_days:
 	````
 
-4.  Type: **2** and click **RETURN** 
+4.  Type: **2** and click **RETURN**
 
 5. Now you need to define the first snapshot interval – please fill in the snapshot IDs you noted down during the first HammerDB run.
-   
+
 	````
 	Enter value for num_days: 2
 
@@ -167,8 +172,10 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 
 
 	Enter value for num_days2:
+	````
 
 7. Type: 2.  Hit RETURN
+
 	````
 	2
 
@@ -208,7 +215,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Enter value for report_name:
 
 	````
-8. Enter awrdiff and hit RETURN. Wait until the HTML output has been generated 
+8. Enter awrdiff and hit RETURN. Wait until the HTML output has been generated
 
 	````
 	exit
@@ -234,6 +241,6 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kay Malcolm, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -171,7 +171,7 @@ In this lab, you will:
 
     ````
 
-7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus using the password *WElcome123##*
 
     ````
 	  <copy>
@@ -187,7 +187,7 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-9. Test the connection to PDB21
+9. Test the connection to PDB21 using the same password used in the earlier step.
 
     ````
     <copy>
@@ -214,11 +214,9 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
+* **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
 * **Last Updated By/Date** -  David Start, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## Need Help?  
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
