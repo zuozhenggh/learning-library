@@ -30,7 +30,8 @@
         },
         {
             "title": "Lab: New Set Operators",
-            "filename": "../../set-operators/set-operators.md"
+            "filename": "../../set-operators/set-operators.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Expressions in Init Parameters",
@@ -38,7 +39,8 @@
         },
         {
             "title": "Lab: SQM Scalar and Table Expressions",
-            "filename": "../../sql-macro/sql-macro.md"
+            "filename": "../../sql-macro/sql-macro.md",
+            "type": "dbcs"
         },
         {
             "title": "Big Data and DW",

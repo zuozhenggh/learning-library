@@ -26,11 +26,13 @@
         },
         {
             "title": "Lab: New Set Operators",
-            "filename": "../../set-operators/set-operators.md"
+            "filename": "../../set-operators/set-operators.md",
+            "type": "21c"
         },
         {
             "title": "Lab: SQM Scalar and Table Expressions",
-            "filename": "../../sql-macro/sql-macro.md"
+            "filename": "../../sql-macro/sql-macro.md",
+            "type": "21c"
         },
         {
             "title": "Big Data and DW",
