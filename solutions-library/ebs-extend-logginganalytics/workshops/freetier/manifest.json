@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Extend EBS on OCI",
+    "workshoptitle": "Extend EBS with Logging Analytics",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -11,12 +11,24 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Data Safe",
-            "filename": "../../data-safe/data-safe.md"
+            "title": "Lab 1: Onboard Logging Analytics Service",
+            "filename": "../../onboard/onboard.md"
         },
         {
-            "title": "Lab 2: Logging Analytics",
-            "filename": "../../logan/logan.md"
+            "title": "Lab 2: Ingest Logs into Logging Analytics",
+            "filename": "../../ingest/ingest.md"
+        },
+        {
+            "title": "Lab 3: Create Entities and Log Groups / Associate Log Sources",
+            "filename": "../../entitiesgroupssources/entitiesgroupssources.md"
+        },
+        {
+            "title": "Lab 4: Visualize Data in Log Explorer and Create Dashboards",
+            "filename": "../../visualize/visualize.md"
+        },
+        {
+            "title": "Lab 5: Example Queries",
+            "filename": "../../samplequeries/samplequeries.md"
         }
     ]
 }

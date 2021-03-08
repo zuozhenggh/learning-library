@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-This 2-part workshop is an extension of previous workshop. It showcases the use of enabling OCI services: DataSafe and Logging Analytics to extend your EBS environment.
+This workshop is an extension of previous workshop. It showcases the use of enabling OCI Logging Analytics to extend your EBS environment.
 
 In order to complete this lab you will need the resources created in the [Lift and Shift On-Premises EBS to OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668)
 
@@ -20,15 +20,11 @@ Notes:
 
 ### Workshop Overview
 
-* Using the pre-existing EBS environment we will first connect OCI Datasafe for audit and mask sensitive datapoints
-
-* Next we will enable Logging Analytics to monitor and manage our technological footprint
+* We will enable Logging Analytics to monitor and manage our technological footprint
 
 This workshop uses the following components: 
 
 * Logging Analytics Service from OCI
-
-* Data Safe Service from OCI
 
 * Virtual Cloud Network and related resources.
     - User-generated using Resource Manager and provided Terraform script.
@@ -39,19 +35,17 @@ This workshop uses the following components:
 
 * We will build on top of the architecture created in the EBS Lift and Shift On-Premises EBS to OCI as seen in Figure W-1 below
 
-![](./images/architecture.png " ")
+![](./images/architecturela.png " ")
 
 ### Objectives
 
 In this lab, you will:
-* Enable Data Safe
-* Enable Logging Analytics
+* Set up and use OCI Logging Analytics
 
 ### **Prerequisites**
 
 * Complete Workshop: [Lift and Shift On-Premises EBS to OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668)
-* DataSafe requires Advanced Provisioned EBS instance, 
-* Logging analytics requires ssh accessable instances and service connector
+* Logging analytics requires ssh accessable instances, logging service, service connector, and logging analytics service
 
 **From the previous labs:**
 
@@ -59,9 +53,9 @@ In this lab, you will:
 
 ### Acknowledgements
 
-* **Author:** Quintin Hill, William Masdon, Cloud Engineering
-* **Contributors:** Santiago Bastidas, Product Management Director
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Feb 2021
+* **Author:** Quintin Hill, Cloud Engineering
+* **Contributors:** Kumar Varun, Product Management Logging Analytics
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Mar 2021
 
 ### Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
