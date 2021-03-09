@@ -26,7 +26,7 @@ JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON 
 The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## **Step 1**: Connect to the Pluggable Database (PDB)
 
 1. As oracle user set oracle Environment and connect to the PDB.
 
@@ -48,7 +48,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     </copy>
     ```
 
-## **STEP 2**: Connect to SQL Developer
+## **Step 2**: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -63,7 +63,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     ![](./images/cross_sql_developer.png " ")
 
 
-## **STEP 3**: JSON with Relational
+## **Step 3**: JSON with Relational
 
 **JSON_TABLE** creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
 
@@ -111,7 +111,7 @@ Below are the examples using **JSON_TABLE**.
     ```
     ![](./images/cd3.png)
 
-## **STEP 4**: XML with Relational
+## **Step 4**: XML with Relational
 
 **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -137,7 +137,7 @@ Below are the examples using **XMLTABLE**
 
     ![](./images/cd11.png)
 
-## **STEP 5**: JSON with Spatial
+## **Step 5**: JSON with Spatial
 
 GeoJSON Objects: Geometry, Feature, Feature Collection
 GeoJSON uses JSON objects that represent various geometrical entities and combinations of these together with user-defined properties.
@@ -157,6 +157,21 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
     ```
     ![](./images/cd15.png)
 
+**This concludes this lab. You may now [proceed to the next lab](#next).**
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope

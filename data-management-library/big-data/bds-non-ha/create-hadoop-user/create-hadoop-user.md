@@ -13,8 +13,7 @@ Estimated Lab Time: 45 minutes
 ### Objectives
 
 * Map the private IP address of the first master node to a public IP address.
-* Connect to the cluster's first master node using Putty.
-* Create a new Kerberos principal.
+* Connect to the cluster's first master node using PuTTY.
 * Create a new Linux administrator user.
 * Access HDFS using the newly created user.
 * Add the new user to Hue.
@@ -305,7 +304,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, December 2020
+* **Last Updated By/Date:** Lauran Serhal, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
