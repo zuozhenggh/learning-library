@@ -5,7 +5,9 @@ _site
  
 workshops/archive/journey1-self-service-bi/DVData/CitiBikeOffline.zip.001
 workshops/archive/journey1-self-service-bi/DVData/CitiBikeOffline.zip.002
-
+common/testing/bds
+common/testing/images
+common/testing/need-help-page.md
  
 .terraform
 *tfstate*
