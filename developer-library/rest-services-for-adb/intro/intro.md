@@ -32,8 +32,3 @@ Watch the video below for a comprehensive overview of REST and how ORDS provides
 
  - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Product Manager
  - **Last Updated By/Date** - February 2021
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
