@@ -63,7 +63,6 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     vi callout-log.sh
     </copy>
     ````
-    ![](./images/fan-step1-num8.png " ")
 
 9.  Type **i** to switch to insert mode.  Copy the following lines and paste it into the vi editor. Click **esc**, **:wq!** to save it.  
 
@@ -75,6 +74,7 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     echo $* " reported = "`date` >> ${FAN_LOGFILE} &
     </copy>
     ````
+    ![](./images/fan-step1-num8.png " ")
 
     This callout will, place an entry in the logfile (FAN_LOGFILE) with the time (date) the event was generated, whenever a FAN event is generated,
 
@@ -301,16 +301,24 @@ Download the FANWatcher utility
     ![](./images/fan-step4-num5.png " ")
     ![](./images/fan-step4-num5-1.png " ")
 
-6. Connect to sqlplus as **SYS**
+6. Run the hostname command
+
+    ````
+    <copy>
+    hostname
+    </copy>
+    ```` 
+
+7. Connect to sqlplus as **SYS**. Replace PutYourHostnameHere in the connect string with your hostname
    
     ````
     <copy>
-    /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutYourHostnameHere>/pdb1.pub.racdblab.oraclevcn.com as sysdba
     </copy>
     ```` 
     ![](./images/fan-step4-num6.png " ")
 
-7. Run the following commands to create a test user, password *W3lcom3#W3lcom##* and grant them the appropriate privileges
+8. Run the following commands to create a test user, password *W3lcom3#W3lcom##* and grant them the appropriate privileges
    
     ````
     <copy>
@@ -322,7 +330,7 @@ Download the FANWatcher utility
     ````
     ![](./images/fan-step4-num7.png " ")
 
-8. Edit the **fanWatcher.bash** script by entering the folloiwing **vi** command
+9. Edit the **fanWatcher.bash** script by entering the folloiwing **vi** command
 
     ````
     <copy>
@@ -331,7 +339,7 @@ Download the FANWatcher utility
     </copy>
     ````
 
-9.  Replace the **user**, **password**, and **URL** with the values you just created using the example shown the fanWatcher.bash script will look like:
+10.  Replace the **user**, **password**, and **URL** with the values you just created using the example shown the fanWatcher.bash script will look like:
 
     ````
     password=<<insert password>
@@ -353,7 +361,7 @@ Download the FANWatcher utility
 
     Note that the service name will be domain qualified (use the operating system utility **lsnrctl service** to confirm the service name registered with the listener).
 
-10. Run the **fanWatcher.bash** script
+11. Run the **fanWatcher.bash** script
 
     ````
     <copy>
@@ -369,24 +377,24 @@ Download the FANWatcher utility
 
     ![](./images/clusterware-5.png " ")
 
-11. Perform an action on another node that will generate a FAN event. Kill a SMON background process.  For example, on node2 in my system executing the command below will show the SMON process ids for ASM and my database.
+12. Perform an action on another node that will generate a FAN event. Kill a SMON background process.  For example, on node2 in my system executing the command below will show the SMON process ids for ASM and my database.
 
     ````
     <copy>
     ps -ef | grep smon
     </copy>
     ````
-12. Examine the process id. The process id in this example is 31138. Your process id will be a different number.
+13. Examine the process id. The process id in this example is 31138. Your process id will be a different number.
     ![](./images/fan-step4-num11.png " ")
 
-13. Kill the process using the command below.  Replacing the ##### with the actual numbers of your smon process.
+14. Kill the process using the command below.  Replacing the ##### with the actual numbers of your smon process.
 
     ````
     sudo kill -9 #####
     ````
     ![](./images/fan-step4-num13.png " ")
 
-14. Look at the output from the fanWatcher utility
+15. Look at the output from the fanWatcher utility
 
     ![](./images/clusterware-8.png " ")
 
