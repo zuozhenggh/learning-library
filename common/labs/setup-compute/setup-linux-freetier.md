@@ -191,5 +191,3 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Jaden McElvey, Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

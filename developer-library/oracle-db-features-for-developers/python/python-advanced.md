@@ -487,5 +487,3 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 - **Author** - Troy Anthony
 - **Last Updated By/Date** - Troy Anthony, April 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

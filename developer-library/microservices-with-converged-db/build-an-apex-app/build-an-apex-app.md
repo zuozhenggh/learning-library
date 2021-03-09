@@ -129,5 +129,3 @@ In this step, you will create a new APEX app based on a file that contains a sma
 
     ![](images/app-home-page.png)
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly. 

@@ -73,5 +73,3 @@ For more information about querying external data, see the documentation [Queryi
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Apoorva Srinivas, Senior Developer, December 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

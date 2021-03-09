@@ -272,6 +272,3 @@ You now have created your first ATP instance.
 - **Author** - Derrick Cameron, Leah Bracken (v2)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
 
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

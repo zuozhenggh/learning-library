@@ -214,5 +214,3 @@ We had migrated a sample HR schema in this lab. Let's connect to the ATPD (Targe
 - **Last Updated By/Date** - Jayshree Chatterjee, July 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
