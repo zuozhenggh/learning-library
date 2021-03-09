@@ -2,9 +2,7 @@
 
 ## Introduction
 
-This lab guides you through enabling Data Safe on OCI and creating a Private Endpoint to which we will connect our target database. 
-
-This lab assumes you have completed the **Lift and Shift On-Premises EBS to OCI Workshop** found [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668). It also assumes you have created an EBS environment through advanced provisioning with a Virtual Machine Database System. 
+This lab guides you through enabling Data Safe on OCI and creating a Private Endpoint to which we will connect our target database.  
 
 Estimated Lab Time: 10 minutes
 
@@ -19,10 +17,10 @@ In this lab, you will:
 
 * A tenancy admin user
 * A paid Oracle Cloud Infrastructure tenancy (not available for Free Tier or Always Free tenancies)
-* An advanced-provisioned EBS instance from Cloud Manager with a Virtual Machine Database System.  
+* A private Virtual Machine Database System 
 * A text file with the following values: 
     - The private IP address of the database to be targeted on Data Safe
-    - The public IP address of the EBS Cloud Manager
+    - (Optional) The public IP address of the bastion host you will use to connect to the database 
     - The OCID of the target database
 
 
@@ -47,13 +45,13 @@ This step is not necessary if Data Safe is already been used in you tenancy and 
 
 2. Click **Create Private Endpoint**.
 
-  a. **Name:** ``EBSPrivateEndpoint``
+  a. **Name:** ``DataSafePrivateEndpoint``
 
-  b. **Virtual Cloud Network**: ``ebshol_vcn`` (or whichever VCN that was created as part of the EBS to OCI lab)
+  b. **Virtual Cloud Network**: the VCN in which your target database resides
 
     Note: Make sure you have the correct compartment selected for the VCN to display. 
 
-  c. **Subnet:** ``ebshol_db_subnet`` (or whichever subnet that houses the database to which you're connecting to Data Safe)
+  c. **Subnet:** the subnet in which your target database resides
 
   d. Click **Create Private Endpoint**
 
@@ -63,9 +61,9 @@ This step is not necessary if Data Safe is already been used in you tenancy and 
 
 ## **STEP 3:** Configure the Security List rules
 
-1. Open Security List rules to allow traffic between the endpoint and the database. Go to **Networking** > **Virtual Cloud Networks** and select the ``ebshol_vcn`` that was created as a part of the EBS to OCI lab. 
+1. Open Security List rules to allow traffic between the endpoint and the database. Go to **Networking** > **Virtual Cloud Networks** and select the VCN in which your target database resides.
 
-  a. Navigate to the subnet that contains the database (most likely ``ebshol_db_subnet``). Modify its Security list.
+  a. Navigate to the subnet that contains the database. Modify its Security list.
 
   b. Create an Ingress Rule that allows TCP traffic from the Private Endpoint's private IP address to port 1521. 
 

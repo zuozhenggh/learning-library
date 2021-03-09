@@ -1,10 +1,8 @@
 # Configure the Target Database 
-
+ 
 ## Introduction
 
 This lab guides you through configuring the target database for use with Data Safe. We will be downloading a privilege script from Data Safe in order to create a user on the database that will act as the Data Safe Admin User. This user will have certain permissions outlined the in the downloaded privileges script. 
-
-This lab assumes you have completed the **Lift and Shift On-Premises EBS to OCI Workshop** found [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668). It also assumes you have created an EBS environment through advanced provisioning with a Virtual Machine Database System. 
 
 Estimated Lab Time: 15 minutes
 
@@ -18,10 +16,10 @@ In this lab, you will:
 
 * A tenancy admin user
 * A paid Oracle Cloud Infrastructure tenancy (not available for Free Tier or Always Free tenancies)
-* An advanced-provisioned EBS instance from Cloud Manager with a Virtual Machine Database System.  
+* A private Virtual Machine Database System 
 * A text file with the following values: 
     - The private IP address of the database to be targeted on Data Safe
-    - The public IP address of the EBS Cloud Manager
+    - (Optional) The public IP address of the bastion host you will use to connect to the database 
     - The OCID of the target database
 
 
@@ -45,13 +43,13 @@ First, we must download a file from the Data Safe console that will give the cre
 
     ![](./images/5.png " ")
 
-3. Login to your Cloud Manager using ssh and its public IP address.
+3. (Optional) Login to your Bastion Host using ssh and its public IP address if necessary to connect to your database.
 
         <copy>
-        ssh -i <private-ssh-key-filepath> opc@<Cloud-Manager-public-IP>
+        ssh -i <private-ssh-key-filepath> opc@<Bastion-Host-public-IP>
         </copy>
 
-4. Login to your database from the Cloud Manager using the database's private IP address. 
+4. Login to your database using the database's private IP address. 
 
         <copy>
         ssh <database-private-IP>
@@ -78,7 +76,7 @@ First, we must download a file from the Data Safe console that will give the cre
 
 In this step, we will create a database user and grant them privileges which will allow them to be used as the Data Safe admin user. 
 
-1. While still on the target database, connect to SQLPlus as the sysdba user. 
+1. While still on the target database, connect to SQLPlus as the sysdba user. Depending on your target database, you may need to run a file to set the environment. 
 
         <copy>
         sqlplus / as sysdba

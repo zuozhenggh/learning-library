@@ -1,10 +1,8 @@
 # Monitor the Target Database on Data Safe
 
-## Introduction
+## Introduction 
 
 This lab guides you through adding the target database to the Data Safe Console. The lab then walks you through a simple assessment of the database on Data Safe using its different functions. 
-
-This lab assumes you have completed the **Lift and Shift On-Premises EBS to OCI Workshop** found [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=672&clear=180&session=5980193088668). It also assumes you have created an EBS environment through advanced provisioning with a Virtual Machine Database System. 
 
 Estimated Lab Time: 30 minutes
 
@@ -20,10 +18,10 @@ In this lab, you will:
 
 * A tenancy admin user
 * A paid Oracle Cloud Infrastructure tenancy (not available for Free Tier or Always Free tenancies)
-* An advanced-provisioned EBS instance from Cloud Manager with a Virtual Machine Database System.  
+* A private Virtual Machine Database System 
 * A text file with the following values: 
     - The private IP address of the database to be targeted on Data Safe
-    - The public IP address of the EBS Cloud Manager
+    - (Optional) The public IP address of the bastion host you will use to connect to the database 
     - The OCID of the target database
 
 
@@ -39,7 +37,7 @@ In this lab, you will:
 
 3. Click **Register** and fill out the following details. 
 
-  a. **Target Name:** ``AdvancedEBSTarget``
+  a. **Target Name:** ``DataSafeTarget``
 
   b. **Target Type:** ``Oracle Cloud Database``
 
@@ -49,15 +47,19 @@ In this lab, you will:
 
   e. **Database with Private IP:** ``Yes``
 
-  f. **IP address:** private IP address of your database
+  f. **Private Endpoint:** select the private endpoint we created in Lab 1
 
-  g. **Port number:** ``1521``
+  g. **TCP/TLS:** select ``TCP``
 
-  h. **Database Service Number:** the value from the SQLPlus command we ran in Lab 2 - Step 2 - Part 7 
+  h. **IP address:** private IP address of your database
 
-  i. **Database User Name:** ``DATASAFE_ADMIN``
+  i. **Port number:** ``1521``
 
-  j. **Database Password:** the DATASAFE_ADMIN password you specified in part 9 of Step 3. 
+  j. **Database Service Number:** the value from the SQLPlus command we ran in Lab 2 - Step 2 - Part 7 
+
+  k. **Database User Name:** ``DATASAFE_ADMIN``
+
+  l. **Database Password:** the DATASAFE_ADMIN password you specified in part 9 of Step 3. 
 
 4. Click **Test Connection** to verify the connection information is correct. 
 
@@ -143,7 +145,7 @@ Activity Auditing allows users to view activity and data manipulation on the dat
 
     ![](./images/26.png " ")
 
-  Congratulations! You have successfully set up and used Data Safe for EBS on OCI. 
+  Congratulations! You have successfully set up and used Data Safe for your private Virtual Machine Database System on OCI. 
 
 
 ## Learn More
