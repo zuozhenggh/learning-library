@@ -27,12 +27,8 @@ In this lab, you will learn how to:
 * Manage datastore privileges
 * Delete datastores
 
-### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
-
-## **STEP 1**: Import libraries supporting OML4Py and create data table
+## **Step 1**: Import libraries supporting OML4Py and create data table
 
 To use OML4Py, first import the package `oml`. Also import the pandas package for pandas-specific functionality.
 
@@ -42,12 +38,13 @@ To use OML4Py, first import the package `oml`. Also import the pandas package fo
 
     ```
     %python
+    <copy>
 
     import pandas as pd
-    import oml
+    import oml</copy>
     ```  
 
-## **STEP 2:** Create Pandas DataFrames and load them into Autonomous Database
+## **Step 2:** Create Pandas DataFrames and load them into Autonomous Database
 
 In this step, you will work with three data set - IRIS data set, Diabetes data set, and Boston data set. Here, you will learn how to:
 
@@ -59,16 +56,18 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
 
      ```
      %python
+     <copy>
 
      IRIS = oml.sync("OMLUSER", view = "IRIS_VIEW")
 
-     print(IRIS.columns)
+     print(IRIS.columns)</copy>
      ```
   ![Image alt text](images/sync_iris_table.png "Sync IRIS table to an OML Dataframe proxy object")
 
 2. Run the following script to create the temporary Diabetes table:
      ```
      %python
+     <copy>
 
      from sklearn import datasets
      diabetes = datasets.load_diabetes()
@@ -76,7 +75,7 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
      y = pd.DataFrame(diabetes.target, columns=['disease_progression'])
 
      DIABETES_TMP = oml.push(pd.concat([x, y], axis=1))
-     print(DIABETES_TMP.columns)
+     print(DIABETES_TMP.columns)</copy>
      ```
      ![Image alt text](images/create_diabetes_table.png "Create the Diabetes table")  
 
@@ -85,17 +84,18 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
 
     ```
     %python
+    <copy>
 
     boston = datasets.load_boston()
     x = pd.DataFrame(boston.data, columns = boston.feature_names.tolist())
     y = pd.DataFrame(boston.target, columns = ['Value'])
 
     BOSTON_TMP = oml.push(pd.concat([x, y], axis=1))
-    print(BOSTON_TMP.columns)
+    print(BOSTON_TMP.columns)</copy>
     ```
     ![Image alt text](images/create_boston_table.png "Create the Boston table")
 
-## **STEP 3:** Save Python objects to datastore
+## **Step 3:** Save Python objects to datastore
 
 In this step, you will save the actual Iris data set and the temporary BOSTON proxy object to a datastore named `ds_pydata`, overwriting if the named datastore already exists.
 
@@ -107,10 +107,11 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
 
     ```
     %python
+    <copy>
 
     oml.ds.save(objs={'oml_iris':IRIS, 'oml_boston':BOSTON_TMP},
                 name="ds_pydata", description = "python datasets",
-                overwrite=True)
+                overwrite=True)</copy>
     ```
 2. Save the `DIABETES_TMP` tables into the database.
 
@@ -118,8 +119,9 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
 
     ```
     %python
+    <copy>
 
-    oml.ds.save(objs={'oml_diabetes':DIABETES_TMP}, name="ds_pydata", append=True)
+    oml.ds.save(objs={'oml_diabetes':DIABETES_TMP}, name="ds_pydata", append=True)</copy>
     ```
 
 
@@ -127,15 +129,16 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
 
      ```
      %python
+     <copy>
 
      oml.ds.save(objs={'iris':iris},
      name="ds_iris_data", description = "iris dataset", overwrite=True)
 
-     oml.ds.dir()
+     oml.ds.dir()</copy>
      ```
      ![Image alt text](images/iris_df_in_ds.png "Save Iris DataFrame in a Datastore ")
 
-## **STEP 4:** Save model objects in a datastore
+## **Step 4:** Save model objects in a datastore
 
 This step illustrates how to store other types of objects in datastores. For this, you will create regression models using sklearn and OML4Py.
 
@@ -145,6 +148,7 @@ This step illustrates how to store other types of objects in datastores. For thi
 
     ```
     %python
+    <copy>
 
     from sklearn import linear_model
 
@@ -154,7 +158,7 @@ This step illustrates how to store other types of objects in datastores. For thi
     regr2 = oml.glm("regression")
     X = BOSTON_TMP.drop('Value')
     y = BOSTON_TMP['Value']
-    regr2 = regr2.fit(X, y)
+    regr2 = regr2.fit(X, y)</copy>
     ```
 2. Run the following script to save the objects `regr1` and `regr2` to the datastore `ds_pymodels`, and allow the read privilege to be granted to them.
 
@@ -162,34 +166,37 @@ This step illustrates how to store other types of objects in datastores. For thi
 
     ```
     %python
+    <copy>
 
     oml.ds.save(objs={'regr1':regr1, 'regr2':regr2},
                 name="ds_pymodels", grantable=True,
                 overwrite=True)
 
-    oml.ds.dir()
+    oml.ds.dir()</copy>
     ```
     ![Image alt text](images/regr1_regr2.png "Save Objects to a Datastore")  
 3. Now grant the read privilege to all users by specifying `user=None`. Finally, list the datastores to which the read privilege has been granted.
 
     ```
     %python
+    <copy>
 
     oml.grant(name="ds_pymodels", typ="datastore", user=None)
 
-    oml.ds.dir(dstype="grant")
+    oml.ds.dir(dstype="grant")</copy>
     ```
     ![Image alt text](images/grant_read_priv.png "Grant read privilege to all users")    
 
-## **STEP 5:**  Load datastore objects into memory
+## **Step 5:**  Load datastore objects into memory
 
 In this step, you load all Python objects from a datastore to the global workspace and sort the result by name. Notice that they have the name specified in the dictionary when saved.
 
 1. Run the following script to load the datastore `ds_pydata` into memory:
     ```
     %python
+    <copy>
 
-    sorted(oml.ds.load(name="ds_pydata"))
+    sorted(oml.ds.load(name="ds_pydata"))</copy>
     ```  
 
     ![Image alt text](images/load_ds_into_memory.png "Load datastore ds_pydata into memory")      
@@ -200,8 +207,9 @@ In this step, you load all Python objects from a datastore to the global workspa
 
     ```
     %python
+    <copy>
 
-    oml.ds.load(name="ds_pymodels", objs=["regr2"], to_globals=True)
+    oml.ds.load(name="ds_pymodels", objs=["regr2"], to_globals=True)</copy>
     ```   
     ![Image alt text](images/load_regr2_gbl_ws.png "Load Python object into global workspace")
 
@@ -209,8 +217,9 @@ In this step, you load all Python objects from a datastore to the global workspa
 
     ```
     %python
+    <copy>
 
-    regr2
+    regr2</copy>
     ```
     ![Image alt text](images/view_model_details.png "View model details")
 4. Run the following script to load the named Python object `regr1`, from the datastore to the user's workspace.
@@ -219,20 +228,22 @@ In this step, you load all Python objects from a datastore to the global workspa
 
     ```
     %python
+    <copy>
 
-    oml.ds.load(name="ds_pymodels", objs=["regr1"], to_globals=False)
+    oml.ds.load(name="ds_pymodels", objs=["regr1"], to_globals=False)</copy>
     ```
   ![Image alt text](images/load_regr1_usr_ws.png "Load Python object into user's workspace")
 
-## **STEP 6:** View datastores and other details
+## **Step 6:** View datastores and other details
 
 This step shows how to work with datastores.
 
 1. Run the following script to get the list of datastore and a count of the objects in it:
     ```
     %python
+    <copy>
 
-    oml.ds.dir(dstype="all")[['owner', 'datastore_name', 'object_count']]
+    oml.ds.dir(dstype="all")[['owner', 'datastore_name', 'object_count']]</copy>
     ```
     ![Image alt text](images/list_datastores.png "List of Datastores and Count of Objects")
 
@@ -240,26 +251,28 @@ This step shows how to work with datastores.
 
     ```
     %python
+    <copy>
 
-    oml.ds.dir(dstype="grant")
+    oml.ds.dir(dstype="grant")</copy>
     ```
     ![Image alt text](images/datastore_with_read_priv.png "Load Python object into user's workspace")
 
-## **STEP 7:** View contents of a datastore
+## **Step 7:** View contents of a datastore
 
 This step shows how to view/describe the content of a datastore. This example shows the `ds_pydata` datastore. Notice that the three proxy objects are listed.
 
 1. Run the following script to list the content of a datastore:
     ```
     %python
+    <copy>
 
-    oml.ds.describe(name='ds_pydata')
+    oml.ds.describe(name='ds_pydata')</copy>
     ```  
     ![Image alt text](images/datastore_content.png "View Datastore Content")
 
   The script returns the description of three proxy objects - `iris`, `oml_boston`, and `oml_diabetes`. It lists the class, size, length, row and column count for each object.     
 
-## **STEP 8:** Manage datastore privileges
+## **Step 8:** Manage datastore privileges
 
 This step shows how to revoke read privilege, show datastores to which the read privilege has been granted, and again grant read privilege to a user.
 
@@ -267,10 +280,11 @@ This step shows how to revoke read privilege, show datastores to which the read 
 
     ```
     %python
+    <copy>
 
     oml.revoke(name="ds_pymodels", typ="datastore", user=None)
 
-    oml.ds.dir(dstype="grant")
+    oml.ds.dir(dstype="grant")</copy>
     ```
 
     ![Image alt text](images/revoke_priv.png "Revoke privilege")        
@@ -278,14 +292,15 @@ This step shows how to revoke read privilege, show datastores to which the read 
 
     ```
     %python
+    <copy>
 
     oml.grant(name="ds_pymodels", typ="datastore", user="OMLUSER")
 
-    oml.ds.dir(dstype="grant")
+    oml.ds.dir(dstype="grant")</copy>
     ```
     ![Image alt text](images/grant_priv.png "Grant privilege")        
 
-## **STEP 9:** Delete Datastore Content
+## **Step 9:** Delete Datastore Content
 
 This step shows how to use the `oml.ds.delete` function to delete datastores or datastore content.
 
@@ -293,6 +308,7 @@ This step shows how to use the `oml.ds.delete` function to delete datastores or 
 
     ```
     %python
+    <copy>
 
     oml.ds.delete(name="ds_pydata", objs=["IRIS", "oml_boston"])
 
@@ -300,7 +316,7 @@ This step shows how to use the `oml.ds.delete` function to delete datastores or 
 
     oml.ds.delete(name="_pymodels", regex_match=True)
 
-    oml.ds.dir()
+    oml.ds.dir()</copy>
     ```
     ![Image alt text](images/delete_datastore.png "Delete Datastore")
 
@@ -311,14 +327,7 @@ This step shows how to use the `oml.ds.delete` function to delete datastores or 
 * [About OML4Py Datastores](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-oml4py-datastores.html#GUID-9FFB5C75-F8DB-4947-844D-4771475A2B39)
 * [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
-
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, February 2021
-* **Workshop (or Lab) Expiry Date**
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date** - Tom McGinn, March 2021

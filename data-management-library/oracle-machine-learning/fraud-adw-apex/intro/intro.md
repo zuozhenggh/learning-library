@@ -54,7 +54,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
     ![](images/adw-instance.png)
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 </if>
 
