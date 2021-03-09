@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Database 21c New Features",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Prerequisites",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
@@ -24,7 +25,8 @@
         },
         {
             "title": "Lab: New Set Operators",
-            "filename": "../../set-operators/set-operators.md"
+            "filename": "../../set-operators/set-operators.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Expressions in Init Parameters",

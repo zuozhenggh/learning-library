@@ -36,7 +36,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
     ![](images/launch-page.png)
 
-3. On the login page, click the down arrow to use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
+3. On the login page, use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
 
     ![](images/login-console.png)
 

@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Oracle Autonomous Database Journey: Conclusion",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction",

@@ -110,7 +110,3 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
 - **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
 - **Last Updated By** - Rene Fontcha, February 2021
-
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
