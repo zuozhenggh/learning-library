@@ -254,35 +254,47 @@ Adding content to a notebook is simple and fast. In this step, we have built the
 
     ![](./images/step4.9-031.png  " ")
 
-The rest of this lab will be done interactively in the notebook. The following area just screenshots for your convenience.
+## **STEP 4:** About this Notebook
 
-## Screen Shots of ML Notebook
+The rest of this lab will be done interactively in the notebook. This step discusses the result of each portion of the notebook.
 
-![](./images/026.png  " ")
+1. This graph illustrates Good\_Credit customers who complete all their payments are hard to find.
 
-![](./images/027.png  " ")
+    ![](./images/nb3.png  " ")
 
-![](./images/028.png  " ")
+2. This section illustrates how we can graph our understanding of the data.
 
-![](./images/029.png  " ")
+    ![](./images/nb4.png  " ")
 
-![](./images/030.png  " ")
+    ![](./images/nb5.png  " ")
 
-![](./images/031.png  " ")
+3. Run the Attribute Importance to identify key variables that most influence the target attribute.
 
-![](./images/032.png  " ")
+    ![](./images/nb6.png  " ")
 
-![](./images/033.png  " ")
+4. Now, split the data into Train and Test data sets. Drop, then Build and Evaluate the Classification Model.
 
-![](./images/034.png  " ")
+    ![](./images/nb7.png  " ")
 
-![](./images/035.png  " ")
+5. Drop, build and evaluate multiple OML models for comparison.
 
-![](./images/036.png  " ")
+    ![](./images/nb8.png  " ")
 
-![](./images/037.png  " ")
+6. Join model outputs e.g. cumulative gains chart to view and assess model quality.
 
-![](./images/038.png  " ")
+    ![](./images/nb9.png  " ")
+
+7. Now, apply the model to make predictions.
+
+    ![](./images/nb10.png  " ")
+
+8. Apply the model to a single record to make a prediction.
+
+    ![](./images/nb11.png  " ")
+
+9. Verify the table or view.
+
+    ![](./images/nb12.png  " ")
 
 [Please proceed to the next lab](#next).
 
