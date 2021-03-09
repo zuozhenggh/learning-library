@@ -110,6 +110,3 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
 - **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
 - **Last Updated By** - Rene Fontcha, February 2021
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

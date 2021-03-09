@@ -30,6 +30,3 @@ Estimated time: 5 minutes
  - **Author** - Troy Anthony, Database Product Management, May 2020
  - **Contributors** - Oracle LiveLabs QA Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Ayden Smith, Intern)
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

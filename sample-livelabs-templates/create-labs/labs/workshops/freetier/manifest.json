@@ -1,6 +1,7 @@
 {
   "workshoptitle": "LiveLabs Step by Step",
-  "tutorials": [
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
     {
       "title": "Introduction",
       "description": "This lab provides an overview of the workshops and labs (livelabs).",
