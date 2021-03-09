@@ -10,7 +10,7 @@ One advantage of using a load balancer is that you can configure it to use the S
 
 When you complete this lab, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number on which each service listens (regardless of cluster node). For example, if the IP address of the load balancer is `203.0.113.1`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://203.0.113.1:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://203.0.113.1:8889`.
 
-Estimated lab time: 2 hours, if you've already created the environment and cluster, as explained in [Prerequisites?](#prerequisites), below.
+Estimated lab time: 2 hours, if you've already created the environment and cluster, as explained in [Prerequisites](#prerequisites), below.
 
 ### Objectives
 
@@ -43,7 +43,7 @@ More specifically, you will:
 
 **Note:** If you want to create a load balancer for a non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-load-balancer/workshops/freetier/?lab=use-load-balancer-access-services-on-big) workshop.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
-### Prerequisites?
+### Prerequisites
 
 * This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page.
 
