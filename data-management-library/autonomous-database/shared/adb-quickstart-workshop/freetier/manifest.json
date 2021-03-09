@@ -1,6 +1,7 @@
 {
     "workshoptitle":"Autonomous Database Quickstart Workshop",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
       {
          "title": "Prerequisites",
          "description": "Get a Free Trial",

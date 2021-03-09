@@ -36,6 +36,10 @@
             "filename": "../../migrate/migrate.md"
         },
         {
+            "title": "Optional (Advanced):  Extend EBS with OCI Services (DataSafe and Logging Analytics)",
+            "filename": "../../extend/extend.md"
+        },
+        {
             "title": "Next Steps:  Load and Optimize Data from EBS",
             "filename": "../../optimize-data/optimize-data.md"
         },

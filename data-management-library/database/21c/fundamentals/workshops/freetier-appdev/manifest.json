@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Database 21c - Application Development",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Prerequisites",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
@@ -25,7 +26,8 @@
             "filename": "../../setup/setup.md"
         },{
             "title": "Lab: New Set Operators",
-            "filename": "../../set-operators/set-operators.md"
+            "filename": "../../set-operators/set-operators.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Expressions in Init Parameters",
@@ -33,7 +35,8 @@
         },
         {
             "title": "Lab: SQM Scalar and Table Expressions",
-            "filename": "../../sql-macro/sql-macro.md"
+            "filename": "../../sql-macro/sql-macro.md",
+            "type": "dbcs"
         }
     ]
 }

@@ -1,7 +1,7 @@
 # Environment Setup
 
 ## Introduction
-This lab will show you how to access Oracle Analytics Server and obtain necessary workshop artifacts needed for executing the labs
+This lab will show you how to access Oracle Analytics Server and obtain the necessary workshop artifacts needed for executing the labs.
 
 *Estimated time:* 10 Minutes
 
