@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create an Oracle Cloud Infrastructure GoldenGate Deployment.
 
-Estimated Lab Time: 2 minutes
+Estimated Lab Time: 5 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate Deployments
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage Extracts and Replicats.
@@ -17,51 +17,49 @@ In this lab, you will:
 * Review the OCI GoldenGate deployment details
 * Access the OCI GoldenGate deployment console
 
-## **STEP 1**: Log in to the Console
+## **STEP 1**: Create a Deployment
 
-1. Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+*Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
-2. After you log in to the Console, open the navigation menu, and then under **Database Related Services**, select **GoldenGate**.
+1.  In the OCI Console, open the navigation menu, and then under **Database Related Services**, select **GoldenGate**.
 
-   ![Select GoldenGate Deployments in Navigation menu](images/01-01-02.png "Access GoldenGate service")
+    ![Select GoldenGate Deployments in Navigation menu](images/01-01-02.png "Access GoldenGate service")
 
-You're brought to the **Deployments** page.
+    You're brought to the **Deployments** page.
 
-   ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
+    ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
 
-## **STEP 2:** Create an OCI GoldenGate Deployment
+2.  On the Deployments page, click **Create Deployment**.
 
-1. On the Deployments page, click **Create Deployment**.
+    ![Click Create Deployment](images/01-02-01.png "Create a deployment")
 
-   ![Click Create Deployment](images/01-02-01.png "Create a deployment")
+3.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
-2. In the Create Deployment panel, enter **GGSDeployment** for Name.
+4.  From the Compartment dropdown, select a compartment.
 
-3. From the Compartment dropdown, select **UA_USER**.
+5.  For OCPU Count, enter **2**.
 
-4. For OCPU Count, enter **2**.
+6.  For Subnet, select **Public Subnet**.
 
-5. For Subnet, click **Change Compartment**, select **UACompartment**, and then select **Public Subnet - VCNWithInternet**.
+7.  For License type, select **Bring You Own License (BYOL)**.
 
-6. For License type, select **Bring You Own License (BYOL)**.
+8.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-7. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+    ![Create GoldenGate Deployment](images/02_07_ggs-createdeployment.png "Create GoldenGate Deployment")
 
-   ![Create GoldenGate Deployment](images/02_07_ggs-createdeployment.png "Create GoldenGate Deployment")
+9.  Click **Next**.
 
-8. Click **Next**.
+10. For GoldenGate Instance Name, enter **ogginstance**.
 
-9. For GoldenGate Instance Name, enter **ogginstance**.
+11. For Administrator Username, enter **oggadmin**.
 
-10. For Administrator Username, enter **oggadmin**.
+12. For Administrator Password, enter a password. Take note of this password.
 
-11. For Administrator Password, enter **oggadmin-A1**.
-
-12. Click **Create**.
+13. Click **Create**.
 
 You're brought to the Deployment Detail page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## **STEP 3:** Review the Deployment details
+## **STEP 2:** Review the Deployment details
 
 On the Deployment Details page, you can:
 
@@ -75,13 +73,13 @@ On the Deployment Details page, you can:
 
     ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
 
-## **STEP 4:** Launch the GoldenGate Deployment Console
+## **STEP 3:** Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 
     ![Launch Console](images/04-01-ggs-launchconsole.png)
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and **oggadmin-A1** for Password, and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
 
     ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png)
 
@@ -96,7 +94,7 @@ In this lab, you created an OCI Deployment and reviewed its Deployment details. 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - February 2021
+* **Last Updated By/Date** - March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

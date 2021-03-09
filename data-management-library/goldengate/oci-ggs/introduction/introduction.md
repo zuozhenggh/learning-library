@@ -14,9 +14,9 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 ### Objectives
 
 In this lab, you will:
-* Verify the source and target database connection details
+* Create the source and target databases
 * Create an Oracle Cloud Infrastructure GoldenGate Deployment
-* Register a Database
+* Register the source and target databases
 * Create an Extract and a Replicat
 * Monitor Extracts and Replicats
 
@@ -28,7 +28,7 @@ In this lab, you will:
 
 ### Lab Breakdown
 
-* Lab 1: Verify the Source and Target Database Connection Details
+* Lab 1: Create the Source and Target Autonomous Databases
 * Lab 2: Create the Oracle Cloud Infrastructure GoldenGate Deployment
 * Lab 2: Register Databases
 * Lab 3: Create and Run the Extract and Replicat
@@ -37,13 +37,12 @@ In this lab, you will:
 ## Learn More
 
 * [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/cloud/paas/goldengate-service/using/overview-goldengate.html)
-* [Oracle Cloud Infrastructure GoldenGate Service Overview video](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29278)
 * [Take an interactive tour of OCI GoldenGate](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29986)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - February 2021
+* **Last Updated By/Date** - March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

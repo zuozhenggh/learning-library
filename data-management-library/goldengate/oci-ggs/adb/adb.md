@@ -1,21 +1,24 @@
-# Verify Access to Source and Target Databases
+# Verify the Source and Target Autonomous Database Connection Details
 
 ## Introduction
 
-This lab walks you through the steps to verify that you can access the source and target databases.
+This lab walks you through the steps to create the source and target databases that you'll use for OCI GoldenGate.
 
-Estimated Lab Time: 2 minutes
+Estimated Lab Time: 20 minutes
 
 ### About the source and target databases
 
-This lab uses an Oracle Autonomous Transaction Processing database as its source and an Oracle Autonomous Database Warehouse for its target. Follow the steps in this lab to verify the connection details.
+This lab uses an Oracle Autonomous Transaction Processing database as its source and an Oracle Autonomous Database Warehouse for its target. Follow the steps in this lab to create these databases and their schemas.
 
 ### Objectives
 
-In this lab, you will verify the source and target database connection details by accessing the Database Actions SQL page of each database.
+In this lab, you will:
+
+* Create the source Autonomous Transaction Processing database and create its schema
+* Create the target Autonomous Data Warehouse database and its schema
 
 
-## **STEP 1**: Verify the source Autonomous Transaction Processing connection details
+## **STEP 1**: Create the Autonomous Transaction Processing instance
 
 1. Log in to the [Oracle Cloud Infrastructure Console](https://login.us-phoenix-1.oraclecloud.com/) with your username and password.
 

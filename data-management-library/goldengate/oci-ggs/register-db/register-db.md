@@ -14,7 +14,7 @@ In this lab, you will register source and target databases for Oracle GoldenGate
 
 ## **STEP 1**: Register the Source Database
 
-First, follow the steps below to register the source Oracle Autonomous Transaction Processing Database.
+First, follow the steps below to register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
 1. Click **Registered Databases**.
 
@@ -26,13 +26,13 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
 3. In the Register Database panel, for Name and Alias, enter **SourceATP**.
 
-4. From the Compartment dropdown, select **UA_USER**.
+4. From the Compartment dropdown, select a compartment.
 
 5. Click **Select Database**.
 
 6. From the Database Type dropdown, select **Autonomous Database**.
 
-7. For **Autonomous Database in UA\_USER**, click **Change Compartment**, select **UACompartment**, and then select **Workshop ATP** from the dropdown. Some fields are autopopulated based on your selection.
+7. For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ATP instance, and then select **ATPSource** from the dropdown. Some fields are autopopulated based on your selection.
 
 8. Click **Register**.
 
@@ -40,17 +40,17 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
 ## **STEP 2:** Register the Target Database
 
-Now, follow the steps below to register the target Autonomous Database.
+Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
 
 1. On the Registered Databases page, click **Register Database**.
 
-2. In the Register Database panel, enter **TargetADB** for Name and Alias.
+2. In the Register Database panel, enter **TargetADW** for Name and Alias.
 
-3. From the **Compartment** dropdown, select **UACompartment**.
+3. From the **Compartment** dropdown, select a compartment.
 
 4. Click **Select Database**.
 
-5. For **Autonomous Database in UA\_USER**, click **Change Compartment**, select **UACompartment**, and then select **Workshop ADW** from the dropdown. Some fields are autopopulated based on your selection.
+5. For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ADW instance, and then select **ADWTarget** from the dropdown. Some fields are autopopulated based on your selection.
 
 10. Click **Register**.
 
@@ -65,7 +65,7 @@ The source and target databases appear in the list of Registered Databases. You 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - February 2021
+* **Last Updated By/Date** - March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

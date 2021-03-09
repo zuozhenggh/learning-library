@@ -13,50 +13,79 @@ An Extract is a process that extracts, or captures, data from a source database.
 
 In this lab, you will:
 * Log in to the Oracle GoldenGate deployment console
+* Add transaction data and a checkpoint table
 * Add and run an Extract
 * Add and run a Replicat
 
 ## **STEP 1**: Log in to the Oracle GoldenGate deployment console
 
-1. Log in to Oracle Cloud Infrastructure and navigate to the **GoldenGate** service using the Console navigation menu.
+1.  Log in to Oracle Cloud Infrastructure and navigate to the **GoldenGate** service using the Console navigation menu.
 
-2. On the Deployments page, select a **GGSDeployment**.
+2.  On the Deployments page, select a **GGSDeployment**.
 
-3. On the Deployment Details page, click **Launch Console**.
+3.  On the Deployment Details page, click **Launch Console**.
 
     ![Click Launch Console](images/01-03-ggs-launchconsole.png)
 
-4. On the OCI GoldenGate Deployment Console sign in page, enter **oggadmin** for User Name and **oggadmin-A1** for Password, and then click **Sign In**.
+4.  On the OCI GoldenGate Deployment Console sign in page, enter **oggadmin** for User Name and the password you provided when you created the deployment, and then click **Sign In**.
 
     ![OCI GoldenGate Deployment Console Sign In](images/01-04-ggs-console-signin.png)
 
     You're brought to the OCI GoldenGate Deployment Console Home page after successfully signing in.
 
+## **STEP 2:** Add Transaction Data and a Checkpoint Table
+
+1.  Open the navigation menu and then click **Configuration**.
+
+    ![](images/02-01-nav-config.png)
+
+2.  Click **Connect to database SourceATP**.
+
+    ![](images/02-02-connect-source.png)
+
+3.  Next to **TRANDATA Information** click **Add TRANDATA**.
+
+    ![](images/02-03-trandata.png)
+
+4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**.
+
+5.  Click **Connect to database TargetADW**.
+
+    ![](images/02-05-connect-target.png)
+
+6.  Next to Checkpoint, click **Add Checkpoint**.
+
+    ![](images/02-06-add-checkpoint.png)
+
+7.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
+
+    ![](images/02-07-checktable.png)
+
 ## **STEP 2:** Add and Run an Extract
 
-1. On the GoldenGate Deployment Console Home page, click the plus (+) icon for Extracts.
+1.  On the GoldenGate Deployment Console Home page, click the plus (+) icon for Extracts.
 
     ![Click Add Extract](images/02-02-ggs-add-extract.png)
 
-2. On the Add Extract page, select **Integrated Extract**, and then click **Next**.
+2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
-3. For **Process Name**, enter UAEXT.
+3.  For **Process Name**, enter UAEXT.
 
-4. For **Trail Name**, enter E1.
+4.  For **Trail Name**, enter E1.
 
     ![Add Extract - Basic Information](images/02-04-ggs-basic-info.png)
 
-5. Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
+5.  Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
 
-6. For **Credential Alias**, select the **SourceATP**.
+6.  For **Credential Alias**, select the **SourceATP**.
 
     ![Add Extract - Source Database Credential](images/02-04-ggs-src-db-credential.png)
 
-7. Under Managed Options, enable **Critical to deployment health**.
+7.  Under Managed Options, enable **Critical to deployment health**.
 
-8. Click **Next**.
+8.  Click **Next**.
 
-9. On the Parameter File page, in the text area, add a new line and the following text:
+9.  On the Parameter File page, in the text area, add a new line and the following text:
 
     ```
     <copy>Table SRC_UA_USER.*;</copy>
@@ -76,31 +105,33 @@ In this lab, you will:
 
 ## **STEP 3**: Add and Run the Replicat
 
-1. On the GoldenGate Deployment Console Home page, click the plus (+) icon for Replicats.
+1.  On the GoldenGate Deployment Console Home page, click the plus (+) icon for Replicats.
 
     ![Click Add Replicat](images/03-01-ggs-add-replicat.png)
 
-2. On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
+2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
-3. On the Replicate Options page, for **Process Name**, enter **Rep**.
+3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
 
-4. For **Trail Name**, enter E1.
+4.  For **Trail Name**, enter E1.
 
-5. Under **Target Database Credential**, from the **Credential Alias**  dropdown, select **TargetADW**.
+5.  Under **Target Database Credential**, from the **Credential Alias**  dropdown, select **TargetADW**.
 
     ![Add Replicat - Basic Information](images/03-05-ggs-replicat-basicInfo.png)
 
-6. Under **Managed Options**, enable **Critical to deployment health**.
+6.  Under **Managed Options**, enable **Critical to deployment health**.
 
-7. Click **Next**.
+7.  Click **Next**.
 
-8. Click **Create**.
+8.  In the **Parameter File** text area, add **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
 
-9. In the breadcrumb, click **Overview**.
+8.  Click **Create**.
+
+9.  In the breadcrumb, click **Overview**.
 
     ![Click Overview](images/03-09-ggs-overview.png)
 
-10. In the Rep Replicat **Actions** menu, select **Start**.
+10. In the Rep Replicat **Action** menu, select **Start**.
 
     ![Replicat Actions Menu - Start](images/03-10-ggs-start-replicat.png)
 
@@ -116,7 +147,7 @@ In this lab, you created and ran an Extract and Replicat. You may now [proceed t
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - February 2021
+* **Last Updated By/Date** - March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
