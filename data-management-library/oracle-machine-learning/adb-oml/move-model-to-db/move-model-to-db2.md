@@ -405,7 +405,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ````
     <copy>
-    create table ml_user.credit_scoring_100k as select * from credit_scoring_100k@adwlink;
+    create table ml_user.credit_scoring_100k as select * from ml_user.credit_scoring_100k@adwlink;
     </copy>
     ````
 
