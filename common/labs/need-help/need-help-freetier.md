@@ -1,6 +1,20 @@
 # Need Help?                                  
+This page is designed to help you solve some common problems users face. **If you see your issue listed to the left or below, please expand the section and follow the relevant troubleshooting guide.**
 
-## Having Trouble?
+If you still find yourself stuck or would like to report an issue with the workshop, click the question mark icon in the upper left corner to contact the LiveLabs team directly.  
+
+![](images/help-button2.png)
+
+This will construct an e-mail in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. We ask that you do not change the subject line. Instead, include the description of your issue and any pertinent information in the contents on your e-mail.
+
+![](images/e-mail.png)
+
+## How To Format Your E-mail
+To provide the most effective support for you, we ask that you include the **Lab Number**, **Step Number**, and **Sub-Step Number** where you've encounter the issue. We also ask that you attach a **Screenshot** and **Any Troubleshooting Steps** you've tried so we can recreate the issue and provide a timely and accurate solution.
+
+![](images/problem-picture2.png)
+
+## Most Common Issue
 Double check that you are using the information and credentials provided to you in the lab banner. 
 
 ![](images/banner-info-highlight.png)
@@ -18,26 +32,15 @@ If you've forgotten your password, you can reset it to the default lab password 
 ## Can't Create An Oracle Database? Nothing In Your Compartment?
 Ensure that under "List Scope", you are selecting the compartment provided to you in the lab banner. If you can't find your compartment in the drop-down box, make sure you set your region to the one provided in the lab banner.
 
-![](images/compartment.png)
+![](images/compartment-select.png)
 
-## Connectivity Issues? Applications Hanging? Connected To A VPN?
-While connected to a VPN, some ports in your network may be closed to traffic. Tools like the Oracle Analytics Tool will often be unable to establish a connection with your database while connected to a VPN. Uploading data to a database may be jeopardized as well.
+## Connectivity Issues? Unable To Upload Data or Connect To The database?
+Are you connected to a **VPN**, **Corporate Network**, or behind a strict **Firewall**?
 
-Please disconnect from your VPN and try again.
+If any of these three conditions are true, some ports in your network may be closed to traffic. Uploading data through Database Actions in your web browser and applications like the Oracle Analytics Tool could be restricted and may appear to "Hang" or freeze. 
 
-## Still Need Help? 
-Still having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+Please disconnect from your VPN and try again if applicable.
 
-![](images/help-button.png)
+If you are connected to a corporate network, try switching to a public or a "clear" network if allowed.
 
-We would appreciate if you would include screenshots and detailed descriptions of any issues you're having so that we will be better able to assist you! 
-
-![](images/problem-picture2.png)
-
-## Acknowledgements
-
-* **Author:**
-    * Yunyidi Han, Database Product Manager Intern, Oracle Outbound Database Team
-* **Contributor:**
-    * Everyone!
-* **Last Updated By/Date:** Yunyidi Han, March 2021
+Alternatively, contact your IT Administrator to see if adding exceptions to your network or firewall would be viable.

@@ -11,7 +11,7 @@ Watch the video below for an overview of Lab 3: Load ADB and Start Application
 ### Objectives
 - Create auth token and Oracle Wallet 
 - Login to SQL Developer
-- Load AJD Instance with eShop data
+- Load ATP Instance with eShop data
 - Connect application to ADB
 
 ### Prerequisites
@@ -19,6 +19,10 @@ Watch the video below for an overview of Lab 3: Load ADB and Start Application
 - Lab: Verify Setup of Compute Instance
 
 ## **STEP 1:** Create Oracle Wallet
+Verify for ATP Instance created by LiveLabs Green Button by selecting the allocated compartment, region, and workload type ATP, This information is also available in LiveLabs My Reservation screen as seen in Lab 2
+
+![](./images/checkforatp.png " ")
+
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Before starting this section make sure you have exited out of your compute instance and are back in your cloudshell home.  
@@ -29,9 +33,12 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ![](./images/em-cloudshell-exit-ssh.png " ")
 
 2. Select the hamburger menu and **Autonomous Transaction Processing**.
-      ![](./images/select-atp.png " ")
 
-2.  Use your autonomous\_database\_ocid to create the Oracle Wallet. You will be setting the wallet password to the same value as the ADB admin password for ease of use. This is not a recommended practice and just used for the purposes of this lab. *WElcome123##*. Fill in the autonomous database ocid that is listed in the output section of your terraform.
+      Copy the OCID of Autonomous ATP by clicking on the Display Name link  
+
+      ![](./images/autonomous-atp-ocid.png " ")
+
+1.  Use your autonomous\_database\_ocid to create the Oracle Wallet. You will be setting the wallet password to the same value as the ADB admin password for ease of use. This is not a recommended practice and just used for the purposes of this lab. *WElcome123##*. Fill in the autonomous database ocid that is listed in the output section of your terraform.
    
       ````
       <copy>
@@ -39,18 +46,17 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
       ````
 
-      ![](./images/wallet.png " ")
+      ![](./images/generate-wallet2.png " ")
 
-3.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
+2.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
 
-4.  Enter the list command in your cloudshell below to verify the *converged-wallet.zip* was created
+3.  Enter the list command in your cloudshell below to verify the *converged-wallet.zip* was created
    
       ````
       ls
-      ````
-      ![](./images/wallet-created.png " ")
+      ```` 
 
-5.  Transfer this wallet file to your application compute instance.  Replace the instance below with your instance 
+4.  Transfer this wallet file to your application compute instance.  Replace the instance below with your instance 
 
     ````
     sftp -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address> <<< $'mput converged-wallet*' 
@@ -199,7 +205,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors** - Kay Malcolm, Ashish Kumar
-* **Contributors** - Ashish Kumar, Madhu Rao, Yaisah Granillo, Kay Malcolm
+* **Contributors** - Ashish Kumar, Madhusudhan Rao, Yaisah Granillo, Kay Malcolm
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
 ## Need Help?
