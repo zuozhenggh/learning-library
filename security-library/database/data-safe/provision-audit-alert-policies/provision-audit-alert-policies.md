@@ -25,8 +25,8 @@ To complete this lab, you need the following:
 
 ### Assumptions
 
-- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.
-- You completed the [Provision and Register and Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. <if type="paid">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="freetier">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="livelabs">If not, please scroll to the bottom of this page, click **Show login instructions**, and sign in.</if>
+<if type="paid">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="freetier">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="livelabs">- You completed the [Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if>
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
 
@@ -68,19 +68,19 @@ To complete this lab, you need the following:
 
     ![Review and Provision Audit and Alert Policies page with pre-enabled audit policies](images/review-and-provision-audit-and-alert-policies-page.png)
 
-6. In the **Edit Policies** dialog box, the **Audit Policies** tab shows that the following **Basic Auditing** and **Admin Activity Auditing** policies are selected by default. Oracle recommends that you create and enable (provision) these policies. They are not provisioned by default.
+6. In the **Edit Policies** dialog box, the **Audit Policies** tab shows that the following **Basic Auditing** and **Admin Activity Auditing** policies are selected by default to be provisioned. Oracle recommends that you create and enable (provision) these policies. They are not provisioned by default.
       - Critical Database Activity
       - Login Events
       - Database Schema Changes (DDL)
       - Admin Activity
 
-    ![Audit Policies tab in the Edit Policies dialog box](images/audit-policies-tab.png)
+    ![Audit Policies tab in the Edit Policies dialog box](images/edit-policies-dialog-box-top-half.png)
 
 7. Expand **Custom Policies**.
 
-    - If a custom policy is selected, it means that it is already created and enabled on your target database. There are two such policies: `EMPSEARCH_SELECT_USAGE_BY_PETE` and `EMP_RECORD_CHANGES`.
+    - If a custom policy is selected, it means that it is already created and enabled on your target database. There are two such policies in the sample data: `EMPSEARCH_SELECT_USAGE_BY_PETE` and `EMP_RECORD_CHANGES`.
 
-    - If a custom policy is not selected, it means that you can select it to enable it on your target database. There is one such policy: `APP_USER_NOT_APP_SERVER`.
+    - If a custom policy is not selected, it means that you can select it to enable it on your target database. There is one such policy available in the sample data: `APP_USER_NOT_APP_SERVER`.
 
     ![Custom policies](images/custom-audit-policies.png)
 
@@ -100,9 +100,9 @@ To complete this lab, you need the following:
 
     ![Oracle Pre-defined policies](images/oracle-predefined-policies.png)
 
-9. Notice that the **Center for Internet Security (CIS) Configuration** policy is created and enabled by default.
+9. Next to **Audit Compliance Standards**, notice that the **Center for Internet Security (CIS) Configuration** policy is created and enabled by default. The **Security Technical Implementation Guidelines (STIG)** policy is not provisioned by default.
 
-  ![Center for Internet Security (CIS) Configuration policy](images/cis-policy-enabled.png)
+  ![Audit compliance standards](images/audit-compliance-standards.png)
 
 10. Click the **Alert Policies** tab.
 
@@ -156,7 +156,7 @@ To complete this lab, you need the following:
 
 ## **STEP 3**: View details for an audit trail
 
-1. In the **Collection State** column on the **Audit Trails** page, click **COLLECTING** or **IDLE** if the audit data is collected.
+1. In the **Collection State** column on the **Audit Trails** page, click **COLLECTING** or **IDLE** (if the audit data is collected).
 
   ![Collection State column](images/idle.png)
 
@@ -164,7 +164,11 @@ To complete this lab, you need the following:
 
   ![Trail Log dialog box](images/trail-log-dialog-box.png)
 
+
+
 ## **STEP 4**: Enable a custom audit policy on your target database
+
+There is an audit policy named `APP_USER_NOT_APP_SERVER` in the sample data that is not yet enabled.
 
 1. Click the **Audit Policies** tab.
 
@@ -182,14 +186,14 @@ You may now proceed to the next lab.
 
 ## Learn More
 
-* [Activity Auditing Overview](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/activity-auditing-overview.html)
-* [Audit Policies](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/audit-policies.html)
-* [Create Activity Auditing Jobs](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/create-activity-auditing-jobs.html)
+* [Activity Auditing Overview](https://docs.oracle.com/en-us/iaas/data-safe/doc/activity-auditing-overview.html)
+* [Audit Policies](https://docs.oracle.com/en-us/iaas/data-safe/doc/audit-policies.html)
+* [Create Activity Auditing Jobs](https://docs.oracle.com/en-us/iaas/data-safe/doc/create-activity-auditing-jobs.html)
 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, December 14, 2020
+* **Last Updated By/Date** - Jody Glover, March 9, 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

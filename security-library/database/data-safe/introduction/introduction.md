@@ -8,7 +8,7 @@
 
 <if type="livelabs">The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, and assess the security of your database configurations and users.
 
-*At this time, a lab for discovering and masking sensitive data is not available in the LiveLabs tenancy.*</if>
+*At this time, the lab for discovering and masking sensitive data is not available in the LiveLabs tenancy.*</if>
 
 
 
@@ -42,7 +42,7 @@ Watch our short video that explains key features in Oracle Data Safe [here](http
 The following links provide more information about Oracle Data Safe:
 
 - [Oracle Data Safe website](https://www.oracle.com/database/technologies/security/data-safe.html)
-- [Oracle Data Safe documentation on Oracle Cloud Infrastructure](https://docs.cloud.oracle.com/en-us/iaas/data-safe/index.html)
+- [Oracle Data Safe documentation on Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/data-safe/index.html)
 - [Oracle Data Safe videos](https://docs.oracle.com/en/cloud/paas/data-safe/videos.html)
 - [Oracle Data Safe data sheet](https://www.oracle.com/a/tech/docs/dbsec/data-safe/ds-security-data-safe.pdf)
 - [Oracle Data Safe frequently asked questions](https://www.oracle.com/a/tech/docs/dbsec/data-safe/faq-security-data-safe.pdf)

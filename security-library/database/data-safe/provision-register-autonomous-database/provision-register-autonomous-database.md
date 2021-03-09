@@ -268,7 +268,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 4. Review the dashboard.
 
       - The dashboard lets you monitor several activities at once.
-      - There is a removable filter set on your database name so that the dashboard displays data for your database only.
+      - Above the dashboard, there is a removable filter set on your database name so that the dashboard displays data for your database only.
       - When you first sign in to the Oracle Data Safe Console, the Security Assessment and User Assessment charts in your dashboard are automatically populated.
 
 5. Click each top tab and review the content on the page.
@@ -335,7 +335,7 @@ You may now proceed to the next lab.
 
   - [Provision Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-provision.html#GUID-0B230036-0A05-4CA3-AF9D-97A255AE0C08)
   - [Loading Data with Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/load-data.html#GUID-1351807C-E3F7-4C6D-AF83-2AEEADE2F83E)
-  - [Target Database Registration](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/target-database-registration.html)
+  - [Target Database Registration](https://docs.oracle.com/en-us/iaas/data-safe/doc/target-database-registration.html)
 
 
 ## Acknowledgements
