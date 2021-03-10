@@ -33,6 +33,11 @@
         {
             "title": "Lab 6: Modernizing Customer Oracle Form to Oracle APEX Page",
             "filename":"../../developer-library/apex/forms-to-apex-migration-library/modernize-forms-in-apex/modernize-forms-in-apex.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

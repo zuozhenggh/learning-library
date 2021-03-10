@@ -289,5 +289,3 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kay Malcolm, Database Product Management, October 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

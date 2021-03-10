@@ -254,5 +254,3 @@ You now know how to utilize Quick SQL to build complex data structures, complete
 - **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

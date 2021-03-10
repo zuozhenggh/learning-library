@@ -94,6 +94,3 @@ This completes Lab 3. You now know how to utilize **apex\_data\_parser** and **a
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-

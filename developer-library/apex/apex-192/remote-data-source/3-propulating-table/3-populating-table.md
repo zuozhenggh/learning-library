@@ -93,6 +93,3 @@ This completes Module 3. You now know how to utilize **apex\_data\_parser** and 
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-

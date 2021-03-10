@@ -14,5 +14,3 @@ Watch the video below for an overview of Autonomous Database.  Afterwards, pleas
 - **Last Updated By/Date** - Kay Malcolm, October 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

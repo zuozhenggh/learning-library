@@ -17,5 +17,3 @@ Alternatively, you can follow the labs on this repo:
 
 *{Note: This lab assumes you are using Oracle APEX 20.1.}*
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

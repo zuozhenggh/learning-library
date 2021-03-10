@@ -65,5 +65,3 @@ If you still have an active reservation, you can also rate by going to My Reserv
 - **Contributors** - Kay Malcolm, Rene Fontcha, Kamryn Vinson, Anoosha Pilli
 - **Last Updated By/Date** - Anoosha Pilli, February 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

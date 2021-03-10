@@ -177,5 +177,3 @@ This completes Lab 5. In this lab you learnt how to create and modify a chart ad
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

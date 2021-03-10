@@ -206,5 +206,3 @@ After activation, the state of the Oracle Exadata infrastructure changes to **Ac
 - **Author** - Simon Law & Kris Bhanushali
 - **Last Updated By/Date** - Kris Bhanushali, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
