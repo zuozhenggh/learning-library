@@ -51,7 +51,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 - **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya,         Maniselvan K.
 - **Team** - North America Database Specialists.
-- **Last Updated By** - Kay Malcolm, Senior Director, Database Product Management
+- **Last Updated By** - Kay Malcolm, Database Product Management
 - **Expiration Date** - June 2021
 
 ## Need Help?
