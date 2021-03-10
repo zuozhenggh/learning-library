@@ -155,31 +155,20 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
 6. From the **COMPARTMENT** drop-down list, select the **root** compartment.
 
-7. In the **Policy Builder** section, do the following:
+7. In the **Policy Builder** section, click **Customize (Advanced)** to display the field instead of the Policy Builder.
 
-    a) From the **POLICY USE CASES** drop-down list, select **Compartment Management**.
+8. In the policy field, enter the following policy statements. Substitute {group name} and {compartment name} with your own values.
 
-    b) From the **COMMON POLICY TEMPLATES** drop-down list, select **Let compartment admins manage the compartment**.
+    ```
+    Allow group {group name} to manage all-resources in compartment {compartment name}
+    Allow group {group name} to use autonomous-database in compartment {compartment name}
+    ```
+    The first statement allows the user to create and manage an Autonomous Database in his or her own compartment. The second statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe. If you are providing an Autonomous Database for the user instead of the user creating one during the lab, you can swap out the first policy statement with the following statement:
 
-    c) From the **GROUPS** drop-down list, select the user group, for example, `dsg01`.
-
-    d) From the **LOCATIONS** drop-down list, select the user's compartment, for example, **dsc01**.
-
-    e) Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**. This statement allows the user to create and manage an Autonomous Database.
-
-
-8. Click **Create**.
-
-9. Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
-
-10. Click **+ Another Statement**.
-
-11. In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
-
-12. Click **Save Changes**.
-
-
-
+    ```
+    Allow group {group name} to manage data-safe in compartment {compartment name}
+    ```
+9. Click **Create**.
 
 
 
