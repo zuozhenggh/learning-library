@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance and a Virtual Cloud Network (VCN).
 
-*Estimated Lab Time:* 15 minutes
+*Estimated Lab Time*: 15 minutes
 
 ### Objectives
 - Download ORM stack
@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **Step 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [oas-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YDUrvikh-qFK03FcjbB8XxTMRZ9LBCwrXzbria6S9y40rb_xTFBVgjGW4Fx8WCco/n/natdsecurity/b/stack/o/oas-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [aa-oml-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JSipeWrHozz-Tr6ywW66gK5TgshrvnpZZMSG1hO67y5Ox5w8e8TvranjvOtO9NQ3/n/natdsecurity/b/stack/o/aa-oml-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -27,6 +27,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
+| 8080           | Guacamole                             |
 | 9502           | OAS Presentation service              |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
