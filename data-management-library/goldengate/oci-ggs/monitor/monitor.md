@@ -21,27 +21,37 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## **STEP 1**: Using the Performance Metrics Server
 
-1. In the GoldenGate deployment console, click **Performance Metrics Server**.
+1.  In the GoldenGate deployment console, click **Performance Metrics Server**.
 
-   Note: You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
+    ![](images/05-01-perf-serv.png)
 
-2. Select **UAEXT** to view its performance details.
+    ![](images/05-01-perf-serv-b.png)
 
-3. Click **Database Statistics**.
+    Note: You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
 
-   Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
+2.  Click the Extract to view its performance details.
 
-4. Repeat steps 1-3 to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
+    ![](images/05-02-ext.png)
+
+3.  Click **Database Statistics**.
+
+    ![](images/05-03-db-stats.png)
+
+    Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
+
+4.  Repeat steps 1-3 to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
 
 ## **STEP 2:** Viewing GoldenGate Metrics in the OCI Console
 
-1. On the OCI GoldenGate Deployments page, select **GGSDeployment**.
+1.  On the OCI GoldenGate Deployments page, select **GGSDeployment**.
 
-2. On the GGSDeployment Details page, scroll down to the **Metrics** section.
+2.  On the GGSDeployment Details page, scroll down to the **Metrics** section.
 
-3. Review the **DeploymentInboundLag** and **DeploymentOutboundLag** charts.
+    ![](images/05b-02-metrics.png)
 
-4. Refresh your view after 5 minutes to see updated metrics.
+3.  Review the **DeploymentInboundLag** and **DeploymentOutboundLag** charts.
+
+4.  Refresh your view after 5 minutes to see updated metrics.
 
 In this lab, you learned to monitor performance in the OCI GoldenGate Deployment Console and in the OCI Console.
 
