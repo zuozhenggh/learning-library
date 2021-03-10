@@ -1,13 +1,13 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 03-Mar-2021
+Last updated: 10-Mar-2021
 Version: 20.2.32
 Feature added: DBDOC-2494 - Apply syntax highlighting to code blocks
 */
 "use strict";
 var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/showdown.min.js";
-var highlight = "http://localhost/learning-library-test/common/redwood-hol/js/highlight.min.js";
+var highlight = "https://oracle.github.io/learning-library/common/redwood-hol/js/highlight.min.js";
 
 let main = function() {
     let manifestFileName = "manifest.json";
