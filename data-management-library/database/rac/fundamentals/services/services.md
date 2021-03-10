@@ -245,7 +245,7 @@ where you will see similar to:
 
     You should notice that an entry for this service is configured for each instance.
 
-1. Set your oracle environment and ddit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from). 
+1. Set your oracle environment and edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from). 
    
    ````
    . oraenv
@@ -376,10 +376,10 @@ where you will see similar to:
     ````
     <copy>
     RECSRV=(DESCRIPTION =
-   (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
-   (ADDRESS_LIST =(LOAD_BALANCE=on)
-      (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
-   (CONNECT_DATA=(SERVICE_NAME = testy.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)))
+     (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
+     (ADDRESS_LIST =(LOAD_BALANCE=on)
+     (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
+     (CONNECT_DATA=(SERVICE_NAME = testy.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)))
    </copy>
     ````
 

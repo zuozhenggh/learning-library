@@ -78,6 +78,7 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     ````
     <copy>
     declare fl utl_file.file_type;
+            data varchar2(200);
     begin
         fl := utl_file.fopen('ORAHOME','data.txt','r');
         utl_file.get_line(fl, data);
