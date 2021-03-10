@@ -96,19 +96,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ![](./images/check-pmon-up.png " ")
     ![](./images/check-db-service-up.png " ")
 
-2. Update SQLDeveloper connections
-
-    ```
-    <copy>
-    sed -i -e "s|hol|localhost|g" ~oracle/.sqldeveloper/*/*/connections.json
-    </copy>
-    ```
-
-3. Click on *SQLDeveloper* icon on the desktop to Launch
+2. Click on *SQLDeveloper* icon on the desktop to Launch
 
     ![](./images/sqldeveloper-1.png " ")
 
-4. On the connection panel on the left, click the *+* sign next to each of the following databases to confirm that you can connect.
+3. On the connection panel on the left, click the *+* sign next to each of the following databases to confirm that you can connect.
     - UPGR
     - FTEX
     - DB12

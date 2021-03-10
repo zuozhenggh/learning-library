@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to access Oracle Analytics Server and obtain the necessary workshop artifacts needed for executing the labs.
 
-*Estimated time:* 10 Minutes
+*Estimated Lab Time*: 10 Minutes
 
 ### Objectives
 - Validate that the environment has been initialized and is ready
@@ -14,14 +14,14 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (Free Tier and Paid Account only)
-    - Lab: Prepare Setup (Free Tier and Paid Account only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Login to Oracle Analytics Server UI
+## **STEP 1:** Environment Access
 This lab has been designed to be executed end-to-end with any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
-### UI Access
+### Login to Oracle Analytics Server UI
 1. Launch your browser to the following URL to access Oracle Analytics Server UI
 
     ```
@@ -45,6 +45,32 @@ This lab has been designed to be executed end-to-end with any modern browser on 
 3. The landing page is displayed
 
     ![](./images/oas-landing-page.png " ")
+
+### Access the graphical desktop (optional)
+For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+
+1. Launch your browser to the following URL
+
+    ```
+    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    ```
+
+2. Provide login credentials
+
+    ```
+    Username: <copy>oracle</copy>
+    ```
+    ```
+    Password: <copy>Guac.LiveLabs_</copy>
+    ```
+
+    ![](./images/guacamole-login.png " ")
+
+    *Note*: There is an underscore `_` character at the end of the password.
+
+3. To launch *Firefox* browser or a *Terminal* client, click on respective icon on the desktop
+
+    ![](./images/guacamole-landing.png " ")
 
 ### Login to Host using SSH Key based authentication (optional)
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
@@ -74,27 +100,39 @@ Your workshop instance is configured to automatically start all processes needed
 
 ### DB Startup/Shutdown
 
-1. Startup
+1. Check Current State
 
     ```
-    <copy>sudo systemctl start dbora</copy>
+    <copy>sudo systemctl status oracle-database</copy>
     ```
 
-2. Shutdown
+2. Startup
 
     ```
-    <copy>sudo systemctl stop dbora</copy>
+    <copy>sudo systemctl start oracle-database</copy>
+    ```
+
+3. Shutdown
+
+    ```
+    <copy>sudo systemctl stop  oracle-database</copy>
     ```
 
 ### OAS Startup/Shutdown
 
-1. Startup
+1. Check Current State
+
+    ```
+    <copy>sudo systemctl status oas</copy>
+    ```
+
+2. Startup
 
     ```
     <copy>sudo systemctl start oas</copy>
     ```
 
-2. Shutdown
+3. Shutdown
 
     ```
     <copy>sudo systemctl stop oas</copy>
@@ -110,7 +148,7 @@ Your workshop instance is configured to automatically start all processes needed
 ## Acknowledgements
 * **Authors** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 * **Contributors** - Diane Grace
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/converged-database). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
