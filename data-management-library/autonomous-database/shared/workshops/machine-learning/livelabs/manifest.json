@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Simple Introduction to Machine Learning Algorithms",
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction",

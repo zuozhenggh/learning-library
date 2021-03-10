@@ -1,5 +1,6 @@
 {
-    "tutorials": [
+    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+	"tutorials": [
         {
             "title": "Introduction",
             "filename":"../workshop-intro/intro.md"

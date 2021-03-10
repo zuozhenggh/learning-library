@@ -7,7 +7,7 @@ This lab walks you through the steps to demonstrate Oracle Clusterware’s fenci
 Estimated Lab Time: 20 Minutes
 
 Watch the video below for an overview of the Clusterware and Fencing lab
-[](youtube:bZxdL6Vqcs0)
+[](youtube:ok_OcxhsuQI)
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
