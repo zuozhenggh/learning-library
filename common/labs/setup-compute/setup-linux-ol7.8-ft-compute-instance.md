@@ -161,7 +161,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Director, DB Product Management
+- **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Jaden McElvey, Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
 - **Last Updated By/Date** - Anoosha Pilli, October 2020
 

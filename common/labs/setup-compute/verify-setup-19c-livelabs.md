@@ -193,7 +193,7 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Director, DB Product Management
+- **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Robert Pastijn, DB Product Management, PTS
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 

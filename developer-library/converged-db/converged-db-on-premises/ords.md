@@ -543,7 +543,7 @@ http://&lt;Instance_ip_address&gt:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 - **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
 - **Team** - North America Database Specialists.
-- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Last Updated By** - Kay Malcolm, Senior Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
 **Issues-**
