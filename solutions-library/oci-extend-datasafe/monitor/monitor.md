@@ -4,6 +4,8 @@
 
 This lab guides you through adding the target database to the Data Safe Console. The lab then walks you through a simple assessment of the database on Data Safe using its different functions. 
 
+Note: Please be aware that the screenshots in this lab follow the enabling of Data Safe for an EBS instance. This is not required and simply provides the walkthrough of a typical "installment" of Data Safe on a database. 
+
 Estimated Lab Time: 30 minutes
 
 ### Objectives

@@ -4,6 +4,8 @@
 
 This lab guides you through enabling Data Safe on OCI and creating a Private Endpoint to which we will connect our target database.  
 
+Note: Please be aware that the screenshots in this lab follow the enabling of Data Safe for an EBS instance. This is not required and simply provides the walkthrough of a typical "installment" of Data Safe on a database. 
+
 Estimated Lab Time: 10 minutes
 
 ### Objectives

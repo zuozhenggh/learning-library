@@ -4,6 +4,8 @@
 
 This lab guides you through configuring the target database for use with Data Safe. We will be downloading a privilege script from Data Safe in order to create a user on the database that will act as the Data Safe Admin User. This user will have certain permissions outlined the in the downloaded privileges script. 
 
+Note: Please be aware that the screenshots in this lab follow the enabling of Data Safe for an EBS instance. This is not required and simply provides the walkthrough of a typical "installment" of Data Safe on a database. 
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives
@@ -76,7 +78,7 @@ First, we must download a file from the Data Safe console that will give the cre
 
 In this step, we will create a database user and grant them privileges which will allow them to be used as the Data Safe admin user. 
 
-1. While still on the target database, connect to SQLPlus as the sysdba user. Depending on your target database, you may need to run a file to set the environment. 
+1. While still on the target database, connect to SQLPlus as the sysdba user. Depending on your target database, you may need to run a file to set the environment variables before you are able to execute the following command. 
 
         <copy>
         sqlplus / as sysdba
