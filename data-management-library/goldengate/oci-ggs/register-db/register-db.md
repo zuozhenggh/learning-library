@@ -12,6 +12,9 @@ Database Registrations capture source and target credential information. A datab
 ### Objectives
 In this lab, you will register source and target databases for Oracle GoldenGate deployments to use for the duration of this lab.
 
+### Prerequisites
+This lab assumes that you completed all preceding labs.
+
 ## **STEP 1**: Register the Source Database
 
 First, follow the steps below to register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
@@ -60,7 +63,7 @@ The source and target databases appear in the list of Registered Databases. You 
 
 ## Learn More
 
-* [Managing Database Registrations](https://docs-uat.us.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html)
+* [Managing Database Registrations](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

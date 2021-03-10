@@ -17,6 +17,10 @@ In this lab, you will:
 * Add and run an Extract
 * Add and run a Replicat
 
+### Prerequisites
+
+This lab assumes that you completed all preceding labs.
+
 ## **STEP 1**: Log in to the Oracle GoldenGate deployment console
 
 1.  Log in to Oracle Cloud Infrastructure and navigate to the **GoldenGate** service using the Console navigation menu.
@@ -141,8 +145,8 @@ In this lab, you created and ran an Extract and Replicat. You may now [proceed t
 
 ## Learn More
 
-* [Creating an Extract](https://docs.oracle.com/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
-* [Creating a Replicat](https://docs.oracle.com/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-063CCFD9-81E0-4FEC-AFCC-3C9D9D3B8953)
+* [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
+* [Creating a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-063CCFD9-81E0-4FEC-AFCC-3C9D9D3B8953)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

@@ -26,7 +26,7 @@ In this lab, you will:
 * Familiarity with Oracle GoldenGate is helpful, but not required
 * Familiarity with Oracle Cloud Infrastructure is helpful, but not required
 
-### Lab Breakdown
+## Lab Breakdown
 
 * Lab 1: Create the Source and Target Autonomous Databases
 * Lab 2: Create the Oracle Cloud Infrastructure GoldenGate Deployment

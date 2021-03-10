@@ -24,21 +24,21 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 1.  In the Console navigation menu, under **Core Infrastructure**, in the **Networking** submenu, select **Virtual Cloud Networks**
 
-    ![](./images/00-01-vcn.png)
+    ![Select Virtual Cloud Networks](./images/00-01-vcn.png)
 
 2.  Click **Start VCN Wizard**.
 
 3.  Select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
-    ![](./images/00-03-vcn-wizard.png)
+    ![Select VCN with Internet Connectivity](./images/00-03-vcn-wizard.png)
 
 4.  Enter a name for the VCN, select a compartment, and then click **Next**.
 
-    ![](./images/00-04.png)
+    ![Start VCN Wizard](./images/00-04.png)
 
 5.  Verify the configuration, and then click **Create**.
 
-    ![](./images/00-05.png)
+    ![Verify configuration](./images/00-05.png)
 
 6.  Select your VCN from the list, and then click **Create Subnet**.
 
@@ -56,41 +56,41 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 13. Click **Create Subnet**.
 
-    ![](./images/00-13.png)
+    ![Subnet details](./images/00-13.png)
 
 ## **STEP 2:** Create an ATP Instance
 
 1.  In the Console navigation menu, under **Oracle Database**, select **Autonomous Transaction Processing**.
 
-    ![](./images/01-01-atp.png)
+    ![Select Autonomous Transaction Processing](./images/01-01-atp.png)
 
 2.  Click **Create Autonomous Database**.
 
-    ![](./images/01-02-create-adb.png)
+    ![Create Autonomous Database](./images/01-02-create-adb.png)
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ATPSource** for **Display Name** and **Database Name**.
 
-    ![](./images/01-03-compartment.png)
+    ![Complete Database Information](./images/01-03-compartment.png)
 
 4.  Under **Choose a workload type**, select **Transaction Processing**.
 
-    ![](./images/01-04-workload.png)
+    ![Workload Type](./images/01-04-workload.png)
 
 5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
 
-    ![](./images/01-05-deployment.png)
+    ![Deployment Type](./images/01-05-deployment.png)
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
-    ![](./images/01-06-db.png)
+    ![Configure database](./images/01-06-db.png)
 
 7.  Add a password. Take note of the password, you will need it later in this lab.
 
-    ![](./images/01-07-pw.png)
+    ![Database user and password](./images/01-07-pw.png)
 
 8.  Under **Choose a license type**, select **License Included**.
 
-    ![](./images/01-08-license.png)
+    ![License Type](./images/01-08-license.png)
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
@@ -105,73 +105,73 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 3.  Back in the OCI Console, select your ATP instance from the Autonomous Databases list to view its details and access tools.
 
-    ![](./images/02-03-atp.png)
+    ![Select ATP database](./images/02-03-atp.png)
 
 4.  Click the **Tools** tab, and then click **Open Database Actions**.
 
-    ![](./images/02-04-tools.png)
+    ![Click Tools](./images/02-04-tools.png)
 
-    ![](./images/02-04-db-actions.png)
+    ![Click Open Database Actions](./images/02-04-db-actions.png)
 
 5.  Log in with the ADMIN user and password provided when you created the ATP instance.
 
-    ![](./images/02-05-login.png)
+    ![Log in to Database Actions](./images/02-05-login.png)
 
 6.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![](./images/02-06-db-actions.png)
+    ![Select SQL](./images/02-06-db-actions.png)
 
 7.  (Optional) Click **X** to close the Help dialog.
 
 8.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** paste it into the SQL Worksheet.
 
-    ![](./images/02-08-atp-sql.png)
+    ![Paste ATP User Set Up](./images/02-08-atp-sql.png)
 
 9.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
 10. Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
-    ![](./images/02-10-atp-schema.png)
+    ![Paste ATP User Seed](./images/02-10-atp-schema.png)
 
 11. Click **Run Script**. The Script Output tab displays confirmation messages.
 
 12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
-    ![](./images/02-11-verify.png)
+    ![Refresh Navigator tab](./images/02-11-verify.png)
 
 ## **STEP 4:** Create an ADW Instance
 
 1.  In the Console navigation menu, under **Oracle Database**, select **Autonomous Data Warehouse**.
 
-    ![](./images/03-01-adw.png)
+    ![Select Autonomous Data Warehouse](./images/03-01-adw.png)
 
 2.  Click **Create Autonomous Database**.
 
-    ![](./images/01-02-create-adb.png)
+    ![Create Autonomous Database](./images/01-02-create-adb.png)
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ADWTarget** for **Display Name** and **Database Name**.
 
-    ![](./images/01-03-compartment.png)
+    ![Complete Database information](./images/01-03-compartment.png)
 
 4.  Under **Choose a workload type**, select **Data Warehouse**.
 
-    ![](./images/01-04-workload.png)
+    ![Workload Type](./images/01-04-workload.png)
 
 5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
 
-    ![](./images/01-05-deployment.png)
+    ![Deployment Type](./images/01-05-deployment.png)
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
-    ![](./images/01-06-db.png)
+    ![ADW configuration](./images/01-06-db.png)
 
 7.  Add a password. Note the password down in a notepad, you will need it later in Lab 2.
 
-    ![](./images/01-07-pw.png)
+    ![Database user and password](./images/01-07-pw.png)
 
 8.  Under **Choose a license type**, select **License Included**.
 
-    ![](./images/01-08-license.png)
+    ![License Type](./images/01-08-license.png)
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
@@ -180,37 +180,37 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
 
-    ![](./images/04-01-adw.png)
+    ![Select ADW database](./images/04-01-adw.png)
 
 2.  Click the **Tools** tab, and then click **Open Database Actions**.
 
-    ![](./images/02-04-tools.png)
+    ![Click Tools](./images/02-04-tools.png)
 
-    ![](./images/02-04-db-actions.png)
+    ![Open Database Actions](./images/02-04-db-actions.png)
 
 3.  Log in with the ADMIN user and password provided when you created the ATP instance.
 
-    ![](./images/02-05-login.png)
+    ![Log in to Database Actions](./images/02-05-login.png)
 
 4.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![](./images/02-06-db-actions.png)
+    ![Select SQL](./images/02-06-db-actions.png)
 
 5.  Copy the SQL script from **OCIGGLL_OCIGGS_SETUP_USERS_ADW.sql** paste it into the SQL Worksheet.
 
-    ![](./images/04-05-adw.png)
+    ![Paste ADW User Set Up](./images/04-05-adw.png)
 
 6.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
 7.  Copy the SQL script from **OCIGGLL_OCIGGS_SRC_MIRROR_USER_SEED_DATA.sql** and paste it into a new SQL Worksheet.
 
-    ![](./images/04-07-adw-schema.png)
+    ![Paste ADW User Seed](./images/04-07-adw-schema.png)
 
 8.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
 9.  In the Navigator tab, look for the SRCMIRROR_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR_OCIGGLL.
 
-Please proceed to the next lab.
+Please proceed to the next [lab](#next).
 
 ## Acknowledgements
 

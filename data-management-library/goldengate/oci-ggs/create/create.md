@@ -17,6 +17,10 @@ In this lab, you will:
 * Review the OCI GoldenGate deployment details
 * Access the OCI GoldenGate deployment console
 
+### Prerequisites
+
+This lab assumes that you completed all preceding labs.
+
 ## **STEP 1**: Create a Deployment
 
 *Note that the compartment names in the screenshots may differ from values that appear in your environment.*
@@ -89,7 +93,7 @@ In this lab, you created an OCI Deployment and reviewed its Deployment details. 
 
 ## Learn More
 
-* [Managing Deployments](https://docs.oracle.com//cloud/paas/goldengate-service/using/deployments.html)
+* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
