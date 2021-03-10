@@ -1,4 +1,4 @@
-# Setup ATP Connectivity, Data, and Messaging
+# Setup database tables and AQ messaging
 
 ## Introduction
 
@@ -16,38 +16,7 @@ the ATP instances.
 * OKE cluster and the ATP databases created
 * Microservices code from GitHub (or zip) built and deployed
 
-## **STEP 1**: Create Secrets To Connect To ATP PDBs
-You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instances provisioned earlier.
-
-1.  Change directory into atp-secrets-setup.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/atp-secrets-setup</copy>
-    ```
-
-2.  Run `createAll.sh` and notice output creating secrets.
-
-    ```
-    <copy>./createAll.sh</copy>
-    ```
-
-  ![](images/createAll.png " ")
-
-3.  Execute `msdataworkshop` and notice secrets for order and inventory database and users.
-    ```
-    <copy>msdataworkshop</copy>
-    ```
-    ![](images/msdataworkshop_secrets.png " ")
-
-    If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace
-    ```
-    <copy>./deleteAll.sh</copy>
-    ```
-
-  ![](images/deleteAll.png " ")
-
-
-## **STEP 2**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
+## **STEP 1**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
 You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
 
 1.  First, let’s analyze the Kubernetes deployment YAML file: `atpaqadmin-deployment.yaml`.
@@ -111,7 +80,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 
   ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
 
-7.  Use the frontend LoadBalancer URL `http://<external-IP>:8080` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
+7.  Use the frontend LoadBalancer URL `https://<external-IP>:443` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
 
   ![](images/testdatasourcescreen.png " ")
 

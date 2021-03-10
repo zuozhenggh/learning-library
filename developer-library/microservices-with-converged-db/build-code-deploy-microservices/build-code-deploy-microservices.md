@@ -23,7 +23,7 @@ You will also clone a GitHub repository.
 1. Run `./addAndSourcePropertiesInBashrc.sh`
 
     ```
-    <copy>./addAndSourcePropertiesInBashrc.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION; ./addAndSourcePropertiesInBashrc.sh</copy>
     ```
 
 2. Source the `.bashrc` file with the following command.
@@ -32,7 +32,26 @@ You will also clone a GitHub repository.
     <copy>source ~/.bashrc</copy>
     ```
 
-## **STEP 2**: Build and push the Docker images
+## **STEP 2**: Configure the address of the Jaeger service
+
+1. Run `./setJaegerAddress.sh` and verify successful outcome.
+
+ It may be necessary to run this script multiple times if the Jaeger load balancer has not been provisioned yet.
+
+   ```
+   <copy>cd $MSDATAWORKSHOP_LOCATION; ./setJaegerAddress.sh</copy>
+   ```
+
+2. Source the `.bashrc` file with the following command.
+
+   ```
+      <copy>source ~/.bashrc</copy>
+   ```
+
+  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+
+
+## **STEP 3**: Build and push the Docker images
 
 1. Run the `build.sh` script to build and push the
     microservices images into the repository
@@ -56,50 +75,14 @@ You will also clone a GitHub repository.
 
   ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
 
-## **STEP 3**: Build deploy and access FrontEnd UI microservice
-
-1. Run `./setJaegerAddress.sh` and verify successful outcome.
-
- It may be necessary to run this script multiple times if the Jaeger load balancer has not been provisioned yet.
-
-   ```
-   <copy>./setJaegerAddress.sh</copy>
-   ```
-
-2. Source the `.bashrc` file with the following command.
-
-   ```
-      <copy>source ~/.bashrc</copy>
-   ```
-
-  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
-
-3.  Change directory into `/frontend-helidon` folder:
-
-    ```
-    <copy>cd ~/msdataworkshop-master/frontend-helidon</copy>
-    ```
-
-
-4.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
-
-    ```
-    <copy>./build.sh</copy>
-    ```
-
-  ![](images/807b7c494dab6ccb6864c60344ca7e0e.png " ")
-
-  After a couple of minutes, the image should have been successfully pushed into the repository.
-
-  ![](images/cb413dce71ae945decf19e468a94a89e.png " ")
-
+## **STEP 4**: Start the frontend-helidon service
 
 5.  Run the deploy script from the same directory
     as build. This will create a new pod and service for this image in the OKE
     cluster `msdataworkshop` namespace:
 
     ```
-    <copy>./deploy.sh</copy>
+    <copy>d $MSDATAWORKSHOP_LOCATION/frontend-helidon;./deploy.sh</copy>
     ```
 
    ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
@@ -131,11 +114,13 @@ You will also clone a GitHub repository.
 
 9. You are ready to access the frontend page. Open a new browser tab and enter the external IP and port URL:
 
-  `http://<EXTERNAL-IP>:8080`
+  `https://<EXTERNAL-IP>:443`
 
+  We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
+  
   ![](images/frontendhome.png " ")
 
-You may now proceed to the next lab.
+The may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon

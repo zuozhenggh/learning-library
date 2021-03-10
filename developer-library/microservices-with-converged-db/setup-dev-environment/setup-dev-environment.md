@@ -191,11 +191,43 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   ![](images/verifyOKEOutput.png " ")
 
 
-## **STEP 7**: Install GraalVM, Jaeger, and Frontend Loadbalancer
+## **STEP 7**: Create Secrets To Connect To ATP PDBs
+You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instances provisioned earlier.
+
+1.  Change directory into atp-secrets-setup.
+
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/atp-secrets-setup</copy>
+    ```
+
+2.  Run `createAll.sh` and notice output creating secrets.
+
+    ```
+    <copy>./createAll.sh</copy>
+    ```
+
+  ![](images/createAll.png " ")
+
+3.  Execute `msdataworkshop` and notice secrets for order and inventory database and users.
+    ```
+    <copy>msdataworkshop</copy>
+    ```
+    ![](images/msdataworkshop_secrets.png " ")
+
+    If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace, and then retry.
+    ```
+    <copy>./deleteAll.sh</copy>
+    ```
+
+  ![](images/deleteAll.png " ")
+
+
+
+## **STEP 8**: Install GraalVM, Jaeger, and Frontend Loadbalancer
 Run the `installGraalVMJaegerAndFrontendLB.sh` script to install both GraalVM and Jaeger.
 
  ```
- <copy>./installGraalVMJaegerAndFrontendLB.sh</copy>
+ <copy>cd $MSDATAWORKSHOP_LOCATION; ./installGraalVMJaegerAndFrontendLB.sh</copy>
  ```
 
 You may now proceed to the next lab.
