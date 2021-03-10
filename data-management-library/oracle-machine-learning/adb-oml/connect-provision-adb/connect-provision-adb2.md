@@ -6,6 +6,10 @@ This lab is all about getting your environment set up correctly. Here we will sh
 
 Estimated lab time: 20 - 30 minutes
 
+Watch this short video to preview how to provision and setup your environment.
+
+[](youtube:NP-svu6dXwI)
+
 ### About Oracle Machine Learning
 
 Simplifying greatly, you can split machine learning into two parts: the process of building and training a model so it is ready to work; putting that model to work in production systems, applications, and processes. In general, training a machine learning model takes significant computing resources. You should not run that kind of work in an existing data warehouse or data mart, without clearing it ahead of time because it’s possible that model training could use too many resources and impact SLAs. You definitely don’t want to build and train a model in any kind of critical transactional system for the same reason.

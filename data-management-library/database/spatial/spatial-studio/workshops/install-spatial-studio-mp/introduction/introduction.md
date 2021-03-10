@@ -5,7 +5,7 @@
 
 In this workshop you will provision Spatial Studio to the Oracle Cloud from the OCI Cloud Marketplace and prepare a schema in Autonomous Database to be used as Spatial Studio's metadata repository.
 
-Estimated Workshop Time: 45 minutes
+Estimated Workshop Time: 60 minutes
 
 ### About Oracle Spatial Studio
 
