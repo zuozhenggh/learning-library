@@ -6,6 +6,10 @@ This is the lab where you’re going to do the work of building and training a m
 
 Estimated lab time: 20 - 30 minutes
 
+Watch this short video to preview how to build a machine learning model.
+
+[](youtube:XO9WI2bJN5s)
+
 ### Before You Begin
 
 Remember that we are trying to help Alpha Office predict the credit and payment suitability of their customers. We can use machine learning to help us here because we already have a set of customers with known credit and payment status. This is what we are going to use to train a model that will predict for new customers if their credit is suitable.
@@ -54,27 +58,27 @@ This lab assumes you have completed the following labs:
 
     ![](./images/mluser-sign-in.png  " ")
 
-3.  Navigate around to get familiar with the ML pages. Click on **Examples**.
+4.  Navigate around to get familiar with the ML pages. Click on **Examples**.
 
     ![](./images/examples.png  " ")
 
-4.  Note the various ML notebook examples. Feel free to review some of these. We will be creating a new ML notebook in this lab. Click on the upper-left hamburger menu.
+5.  Note the various ML notebook examples. Feel free to review some of these. We will be creating a new ML notebook in this lab. Click on the upper-left hamburger menu.
 
     ![](./images/notebooks-menu.png  " ")
 
-5.  Click on the upper-left hamburger menu and select **Notebooks**.
+6.  Click on the upper-left hamburger menu and select **Notebooks**.
 
     ![](./images/choose-notebooks.png  " ")
 
-6.  We will create a notebook from the beginning, select **Create**.
+7.  We will create a notebook from the beginning, select **Create**.
 
     ![](./images/018.png  " ")
 
-7.  Enter **adwc_notebook** as the name, then click **OK**.
+8.  Enter **adwc_notebook** as the name, then click **OK**.
 
     ![](./images/019.png  " ")
 
-8. Now you can view the notebook created - **adwc_notebook**.
+9. Now you can view the notebook created - **adwc_notebook**.
 
     ![](./images/new-notebook.png " ")
 
