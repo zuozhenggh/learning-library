@@ -18,7 +18,7 @@ This lab assumes you have completed the following labs:
 
 *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
-In this section, you will provision an ADWC database, create an OML user account, and load the data required by the OML notebooks.
+In this section, you will provision a VCN and subnet, ATP and ADW instances, and load data to use with OCI GoldenGate.
 
 ## **STEP 1:** Create a VCN and subnet
 
