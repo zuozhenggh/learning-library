@@ -1,4 +1,4 @@
-# Create and Run Extracts and Replicats
+# Create and Run the Extract and Replicat
 
 ## Introduction
 
