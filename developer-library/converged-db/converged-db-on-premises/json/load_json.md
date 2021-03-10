@@ -117,7 +117,7 @@ The following statement copies the JSON documents from the dump file into the PU
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 - **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
-- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Last Updated By** - Kay Malcolm, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
 ## Need Help?

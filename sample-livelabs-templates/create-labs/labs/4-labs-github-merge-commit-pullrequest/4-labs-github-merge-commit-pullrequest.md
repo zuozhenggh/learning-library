@@ -77,7 +77,7 @@ To publish your GitHub Pages site:
 4. Under **Source**, select **master** (if it's not already selected) from the drop-down list.
 5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice.
 
-  This may take a few hours to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
+  This may take a few minutes to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
 ## **Step 4:** Sharing your Workshop for Review
@@ -117,6 +117,30 @@ To create a Pull Request:
     * If your pull request was approved, then the second email notifies you that your pull request was merged into the **upstream/master** repository.  
 
   Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
+
+## **Step 6**: Accessing your workshop in GitHub
+
+After your pull request is complete, wait a few minutes and perform the steps below.  
+
+1.  replace your GitHub pages site from Step 3 -> #5 with oracle.github.io.  This will take you to the full path of your workshop.  
+
+  ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
+
+2. This workshop for example is located in the link below.
+
+  https://github.com/oracle/learning-library/tree/master/sample-livelabs-templates/create-labs/labs/workshops/freetier
+
+3. The published version becomes: 
+
+  https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
+
+4.  Go into the LWMS (Oracle employees only - bit.ly/oraclelivelabs) and click edit your workshop.
+5.  Go to the row for your workshop and change your workshop status to at least *Moving to GitHub* *Note: If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.* 
+6.  Click on the ID for your workshop
+7.  On the edit page, scroll down and update the **Production GitHub URL** update it to the new oracle.github.io address you identified in step 3. 
+8.  Update your Development GithHub URL to your personal github pages address
+9.  When you are finished with your workshop, set your workshop status to **Self QA**.
+10. Questions?  Contact the email underneath Support Link.
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
