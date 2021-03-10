@@ -24,12 +24,9 @@ Estimated Lab Time: 30 minutes
 In this lab, you'll:
 
 <if type="paid">
-- Provision an Autonomous Transaction Processing (ATP) database</if>
-<if type="freetier">
-- Provision an Autonomous Transaction Processing (ATP) database</if>
-<if type="livelabs">
+- Provision an Autonomous Transaction Processing (ATP) database</if><if type="freetier">
+- Provision an Autonomous Transaction Processing (ATP) database</if><if type="livelabs">
 - Access your database in Oracle Cloud Infrastructure</if>
-
 - Register your database with Oracle Data Safe
 - Run a SQL script using Oracle Database Actions to load sample data into your database
 - Sign in to the Oracle Data Safe Console and view the list of registered target databases
@@ -56,6 +53,8 @@ If you are using the LiveLabs tenancy, you can skip this step because an Autonom
 2. In the **Filters** section on the left, make sure your workload type is **Transaction Processing** or **All** so that you can see your database listed after you create it.
 
 3. From the **Compartment** drop-down list, select your compartment.
+
+![Compartment dropdown list](images/create-ad.png)
 
 4. Click **Create Autonomous Database**.
 
@@ -217,7 +216,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 11. When the script is finished running, on the **Navigator** tab on the left, select the `HCM1` schema from the first drop-down list. In the second drop-down list, leave **Tables** selected.
 
-12. If you don't see `HCM1` listed, do the following:
+12. If you don't see `HCM1` listed, you need to sign out and sign in again:
 
   a) In the upper-right corner, from the `ADMIN` drop-down list, select **Sign Out**.
 
@@ -225,7 +224,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
   c) In the **Username** field, enter `ADMIN`, and then click **Next**.
 
-  d) In the **Password** field, enter your database password, and then click **Sign in**.
+  d) In the **Password** field, enter your initial Cloud account password, and then click **Sign in**.
 
   e) Under **Development**, click **SQL**.
 
@@ -264,6 +263,8 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
   ![Access Data Safe Console from Autonomous Database Details tab](images/access-data-safe-console-from-db-tab.png)
 
     A new **Oracle Data Safe | Home** tab is opened and you are presented with a dashboard. You can also view a list of new features with links to documentation as well as product announcements.
+
+    ![Initial dashboard](images/dashboard-initial.png)
 
 4. Review the dashboard.
 

@@ -20,8 +20,9 @@ To complete this lab, you need the following:
 
 - An Oracle Cloud account
 - Access to an Oracle Data Safe service
-- Access to an Autonomous Database, sample data for Oracle Data Safe loaded into the database, and the Activity Auditing feature enabled on your database
-- Oracle Data Safe privileges to use the Activity Auditing feature on your database
+- Access to an Autonomous Database and sample data for Oracle Data Safe loaded into the database
+- The Activity Auditing feature enabled on your database
+- Privilege to use the Activity Auditing feature in Oracle Data Safe
 
 ### Assumptions
 
@@ -34,7 +35,7 @@ To complete this lab, you need the following:
 
 2. If you are not signed in to the Oracle Data Safe Console, do the following:
 
-    a) Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console if needed.
+    a) Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console.
 
     b) From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
 
@@ -60,15 +61,15 @@ To complete this lab, you need the following:
 
 5. On the **Review and Provision Audit and Alert Policies** page, review the types of audit policies already enabled on your target database, and then click your target database name to provision more policies.
 
-    - The check mark under **Additional Policies** means that your target database has predefined audit policies enabled on it.
+    - The check mark under **Additional Policies** means that your target database has one or more predefined audit policies enabled on it.
 
-    - The check mark under **Compliance Standards** means that your target database has the **Center for Internet Security (CIS) Configuration** audit policy enabled on it.
+    - The check mark under **Compliance Standards** means that your target database has one or more compliance policies enabled on it; for example, the **Center for Internet Security (CIS) Configuration** audit policy.
 
     - Currently, there are no basic, admin activity, or user activity audit policies provisioned on your target database, nor are there any alert policies.
 
     ![Review and Provision Audit and Alert Policies page with pre-enabled audit policies](images/review-and-provision-audit-and-alert-policies-page.png)
 
-6. In the **Edit Policies** dialog box, the **Audit Policies** tab shows that the following **Basic Auditing** and **Admin Activity Auditing** policies are selected by default to be provisioned. Oracle recommends that you create and enable (provision) these policies. They are not provisioned by default.
+6. In the **Edit Policies** dialog box, the **Audit Policies** tab shows that the following **Basic Auditing** and **Admin Activity Auditing** policies are selected by default to be provisioned (meaning, created and enabled). Oracle recommends that you provision these policies. They are not provisioned by default.
       - Critical Database Activity
       - Login Events
       - Database Schema Changes (DDL)
@@ -78,9 +79,9 @@ To complete this lab, you need the following:
 
 7. Expand **Custom Policies**.
 
-    - If a custom policy is selected, it means that it is already created and enabled on your target database. There are two such policies in the sample data: `EMPSEARCH_SELECT_USAGE_BY_PETE` and `EMP_RECORD_CHANGES`.
+    - If a custom policy is selected, it means that it is already created and enabled on your target database. There are two such policies in your database: `EMPSEARCH_SELECT_USAGE_BY_PETE` and `EMP_RECORD_CHANGES`.
 
-    - If a custom policy is not selected, it means that you can select it to enable it on your target database. There is one such policy available in the sample data: `APP_USER_NOT_APP_SERVER`.
+    - If a custom policy is not selected, it means that it is created on your target database, but not yet enabled. There is one such policy in your database: `APP_USER_NOT_APP_SERVER`.
 
     ![Custom policies](images/custom-audit-policies.png)
 
@@ -125,7 +126,7 @@ To complete this lab, you need the following:
 
     - The audit trail location is automatically set to `UNIFIED_AUDIT_TRAIL`, which is the default audit trail for Autonomous Databases.
     - Audit collection is not yet started.
-    - The auto purge feature is not enabled by default. If you are using a Free Trial, the auto purge option is not displayed.
+    - The auto purge feature is not enabled by default. If you are signed in to Oracle Data Safe during a Free Trial, the auto purge option is not displayed.
     - You need to configure an audit collection start date.
 
   ![Start Audit Collection page](images/start-audit-collection-page.png)
@@ -168,11 +169,11 @@ To complete this lab, you need the following:
 
 ## **STEP 4**: Enable a custom audit policy on your target database
 
-There is an audit policy named `APP_USER_NOT_APP_SERVER` in the sample data that is not yet enabled.
+There is an audit policy named `APP_USER_NOT_APP_SERVER` in your database that is not yet enabled.
 
 1. Click the **Audit Policies** tab.
 
-2. On the **Review and Provision Audit and Alert Polices** page, click the name of your target database.
+2. On the **Audit and Alert Polices** page, click the name of your target database.
 
 3. In the **Edit Policies** dialog box, expand **Custom Policies**, select the `APP_USER_NOT_APP_SERVER` unified auditing policy to enable it, and then click **Provision**.
 
