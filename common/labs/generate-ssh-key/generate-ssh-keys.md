@@ -352,6 +352,6 @@ You may now [proceed to the next lab](#next) or paste it in the LiveLabs reserva
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, October 2020
-* **Workshop (or Lab) Expiry Date** - March 27, 2021
+* **Contributors** - Kay Malcolm, Tom McGinn, Kamryn Vinson, Anil Nair
+* **Last Updated By/Date** - Kamryn Vinson, Database Product Management, March 2021
 
