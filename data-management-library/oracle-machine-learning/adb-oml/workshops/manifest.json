@@ -1,5 +1,6 @@
 {
-  "workshoptitle":"Oracle Machine Learning with Autonomous Database",  
+  "workshoptitle":"Oracle Machine Learning with Autonomous Database",
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",  
   "tutorials": [
       {
         "title": "Introduction",
@@ -8,19 +9,19 @@
         "filename": "../intro/intro.md"
       },
       {         
-        "title": "Sign Up for Free Trial",
+        "title": "Getting Started",
         "description": "Register for Free Tier Account",
         "partnumber": "Ennnnn_01",
         "publisheddate": "03/10/2020",
         "contentid": "12nnnn",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
-    {
-      "title": "Lab 1:  Provision ADB",
-      "description": "Introduction",
-      "publisheddate": "3/24/2020",
-      "filename": "../connect-provision-adb/connect-provision-adb.md"
-    },
+      },
+      {
+        "title": "Lab 1:  Provision ADB",
+        "description": "Introduction",
+        "publisheddate": "3/24/2020",
+        "filename": "../connect-provision-adb/connect-provision-adb.md"
+      },
       {
         "title": "Lab 2: Create Machine Learning Model",
         "description": "Explore Zeppelin notebooks and create a ML model on customer credit data set.",
@@ -38,6 +39,11 @@
         "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
         "publisheddate": "3/24/2020",
         "filename": "../integrate-with-app/integrate-with-app.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
       }
     ]
 }
