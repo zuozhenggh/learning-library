@@ -36,7 +36,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 1:** Export the machine learning model
 
-1.  If you are not logged into Database Actions as ML\_USER user, log in to your cloud account, click the hamburger menu, select **Autonomous Data Warehouse** and navigate to your instance.
+1.  If you are not logged into Database Actions as ML\_USER user, log in to your cloud account, click the hamburger menu, select **Autonomous Data Warehouse**, choose your compartment and navigate to your instance.
 
     ![](./images/choose-adw.png  " ")
 
@@ -111,7 +111,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 2:** Create ML User in ATP
 
-1.  From the hamburger menu, select **Autonomous Transaction Processing** and navigate to your ATP instance.
+1.  From the hamburger menu, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
     ![](./images/choose-atp.png " ")
 
@@ -125,7 +125,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/atp-open-ml-admin.png " ")
 
-4. Sign in as **Username - ADMIN** with the password you used when you created your Autonomous instance.
+4. Sign in as **Username - ADMIN** and with the **Password - WELcome__1234** created for your Autonomous instance.
 
     ![](./images/atp-ml-admin-login.png  " ")
 
@@ -143,7 +143,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 3:** Grant Privileges to ML_USER to access Database Actions
 
-1.  From the hamburger menu, select **Autonomous Transaction Processing** and navigate to your ATP instance.
+1.  From the hamburger menu, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
     ![](./images/choose-atp.png " ")
 
@@ -157,7 +157,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/atp-open-database-actions.png  " ")
 
-4. On the Database Actions login page, log in with your ATP credentials, provide the **Username - ADMIN** and click **Next**. Then provide the <if type="freetier">**Password** you created for the Autonomous instance.</if><if type="livelabs">password **WELcome__1234**</if> and click **Sign in**.
+4. On the Database Actions login page, log in with your ATP credentials, provide the **Username - ADMIN** and click **Next**. Then provide the **Password - WELcome__1234** created for the Autonomous instance and click **Sign in**.
 
     ![](./images/ml-admin.png " ")
 
@@ -283,7 +283,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
 ## **STEP 7:** Copy Machine Learning Models between ADW and ATP
 
-1.  From the hamburger menu, select **Autonomous Transaction Processing** and navigate to your ATP instance.
+1.  From the hamburger menu, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
     ![](./images/choose-atp.png " ")
 
@@ -295,7 +295,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/atp-open-database-actions.png  " ")
 
-3.  Provide the **Username - ADMIN** and click **Next**. Then provide the password for your ADMIN user and click **Sign in**.
+3.  Provide the **Username - ADMIN** and click **Next**. Then provide the password for your ADMIN user - **Password - WELcome__1234** and click **Sign in**.
 
     ![](images/ml-admin.png)
 
@@ -327,7 +327,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/adwc-credential.png  " ")
 
-6.  Create another credential for the ADW database. For the **Username - ADMIN**, create a **Password**. This is your database ADMIN userid and password. This will be used in the following steps.
+6.  Create another credential for the ADW database. For the **Username - ADMIN**, provide the autonomous database instance **Password - WELcome__1234**. This is your database ADMIN userid and password. This will be used in the following steps.
 
     ````
     <copy>
@@ -403,7 +403,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ````
     <copy>
-    create table ml_user.credit_scoring_100k as select * from ml_user.credit_scoring_100k@adwlink;
+    create table ml_user.credit_scoring_100k as select * from credit_scoring_100k@adwlink;
     </copy>
     ````
 
