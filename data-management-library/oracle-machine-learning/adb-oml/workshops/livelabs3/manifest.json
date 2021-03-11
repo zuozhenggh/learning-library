@@ -1,5 +1,6 @@
 {
   "workshoptitle":"Oracle Machine Learning with Autonomous Database",
+  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
   "tutorials": [
       {
         "title": "Prerequisites",
