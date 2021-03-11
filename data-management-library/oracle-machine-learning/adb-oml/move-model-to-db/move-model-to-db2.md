@@ -301,7 +301,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](images/ml-admin-password.png)
 
-4. From the Database Actions menu, choose **SQl**.
+4. From the Database Actions menu, choose **SQL**.
 
     ![](./images/atp-sql.png " ")
 
