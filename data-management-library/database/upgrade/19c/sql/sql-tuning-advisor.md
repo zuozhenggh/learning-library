@@ -40,11 +40,11 @@ This lab assumes you have:
 1. Execute the script
 
   ````
-. upgr19
-cd /home/oracle/scripts
-sqlplus / as sysdba
+  . upgr19
+  cd /home/oracle/scripts
+  sqlplus / as sysdba
 
-@/home/oracle/scripts/sta_cc.sql
+  @/home/oracle/scripts/sta_cc.sql
   ````
 
 2. It will take 30 seconds – check the output by scrolling up.  At first, the findings, here I display just the first two findings for a COUNT statement on the CUSTOMER table:
