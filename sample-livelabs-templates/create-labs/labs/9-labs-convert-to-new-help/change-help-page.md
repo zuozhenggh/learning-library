@@ -63,7 +63,7 @@ The database team's help pages can be found below. We recommend you have seperat
 
     ![](images/need-help-insert.png)
 
-***TIP: Follow #2-5 previous step! Doing this concurrently with Step 1 will save some time. Don't forget your can check the filepath of the manifest file in the consolidated search results.***
+***TIP: Follow #2-5 in the previous step! Doing this concurrently with Step 1 will save some time. Don't forget your can check the filepath of the manifest file in the consolidated search results.***
 
 ![](images/search-path.png)
 
