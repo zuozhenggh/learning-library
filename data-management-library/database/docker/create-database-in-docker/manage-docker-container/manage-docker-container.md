@@ -82,7 +82,3 @@ Congratulations! You have completed this workshop. Oracle has also provided buil
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

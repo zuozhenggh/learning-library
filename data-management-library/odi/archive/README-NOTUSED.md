@@ -25,5 +25,4 @@ This lab assumes you have completed the following labs:
  - **Author** - Jayant Mahato, July 2020
  - **Last Updated By/Date** - Troy Anthony, June 25 2020
 
- ## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+ 

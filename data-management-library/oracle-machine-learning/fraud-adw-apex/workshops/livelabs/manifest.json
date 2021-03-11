@@ -23,6 +23,11 @@
         "type": "livelabs",
         "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
         "filename": "../../integrate-with-app/integrate-with-app.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
       }
     ]
 }

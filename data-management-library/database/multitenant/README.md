@@ -32,5 +32,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Multitenant PDBs for Microservices and Clouds](https://www.youtube.com/watch?v=JdfATqdXuRc)
 - [The Hidden Data Economy](https://www.youtube.com/watch?v=CP3pwAwNepU)
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

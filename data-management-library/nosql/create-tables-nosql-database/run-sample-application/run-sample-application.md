@@ -140,5 +140,3 @@ Oracle NoSQL Database also supports Python, Node.js and Go. This application acc
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, September 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
