@@ -26,6 +26,8 @@ Insert the line before "tutorials", don't forget the comma afterwards!
 ### **TIP**
 If you've set up your workspace on VSC to only list workshop your team is responsible for, you can do a simple "search in folder" to easily access a list of all manifests in your workshops!
 
+![](images/find-in-folder.png)
+
 1. Box 1: type in "tutorials": [, which every workshop manifest has in order to display the array of labs, you can get a list of all the instances it found. Which happens to be 1 in every manifest file.
 ````
     <copy>"tutorials": [ </copy>
