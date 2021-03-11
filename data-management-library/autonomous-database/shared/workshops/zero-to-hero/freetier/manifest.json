@@ -1,0 +1,26 @@
+{
+    "workshoptitle": "Introduction to Database Tools",
+    "tutorials": [
+
+        {
+          "title": "Getting Started",
+          "description": "Getting an OCI Account",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+          "title": "Provisioning an ADW Instance",
+          "description": "Provisioning an Autonomous Database Instance",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 1: Creating a Database User",
+            "description": "Intro to MovieStream and Creating a Database User",
+            "filename": "./../getting-started/getting-started.md"
+        },
+        {
+            "title": "Lab 2: Using Autonomous Database Tools",
+            "description": "Using Autonomous Database Tools",
+            "filename": "./../using-adb-tools/using-adb-tools.md"
+        }
+    ]
+}
