@@ -43,6 +43,3 @@ In this workshop you will:
 - **Last Updated By/Date** - Anoosha Pilli, March 2021
 - **Workshop Expiration Date** - March 31, 2022
 
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

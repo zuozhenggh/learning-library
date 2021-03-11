@@ -68,7 +68,7 @@ At this point, it's assumed that the test instance created in the previous lab h
     ![](./images/create-listing-3.png " ")
     ![](./images/create-listing-4.png " ")
 
-4. Click on *"Click to upload an icon"*, select the correct file from your local drive, and *"Upload"*
+4. Download and save [LiveLabs icon](https://cloudmarketplace.oracle.com/marketplace/content?contentId=95549453) to your local drive, then Click on *"Click to upload an icon"*, select the downloaded file, and click *"Upload"*
 
     ![](./images/create-listing-icon-1.png " ")
     ![](./images/create-listing-icon-2.png " ")

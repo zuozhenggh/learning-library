@@ -180,7 +180,7 @@ Estimated Lab Time: 20 Minutes
     ````
     ![](./images/sqlplus-node2.png " ")
 
-4. Create the following SEQUENCES on *both* **node 1** and **node 2**
+4. Create the following SEQUENCES on *one* **node 1** 
    
     ````
     <copy>

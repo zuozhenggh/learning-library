@@ -28,7 +28,3 @@ Access them in [LiveLabs](http://bit.ly/golivelabs).
 
 Coming soon ...
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
--- Oracle Database Product Management

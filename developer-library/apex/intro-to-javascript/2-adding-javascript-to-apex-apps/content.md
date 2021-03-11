@@ -282,5 +282,3 @@ This completes Lab 2. At this point, you should have a solid understanding of th
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

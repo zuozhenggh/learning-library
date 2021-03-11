@@ -239,5 +239,3 @@ This completes Lab 5. You now know how to add additional pages to your applicati
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

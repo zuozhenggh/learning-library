@@ -45,6 +45,3 @@ You may proceed to the next lab.
 - **Contributors** - Arabella Yao, Dylan McLeod, Jaden McElvey, LiveLabs QA
 - **Last Updated By/Date** - Jaden McElvey, LiveLabs QA, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
