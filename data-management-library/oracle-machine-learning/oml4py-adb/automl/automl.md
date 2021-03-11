@@ -18,44 +18,39 @@ In this lab, you will learn how to:
 * Use `automl.ModelTuning` to tune the hyperparameters for the specified algorithm and training data
 * Use `automl.ModelSelection` to select the top in-database algorithm, and then tune the corresponding model
 
-### Prerequisites
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
-
-## **STEP 1**: Import libraries supporting OML4Py
+## **Step 1**: Import libraries supporting OML4Py
 
 1. Run the following script to import `oml` module, Pandas package, and `automl`module.
     ```
-    %python
+    <copy>%python
 
     import pandas as pd
     import oml
-    from oml import automl
+    from oml import automl</copy>
     ```
 
 2. Use the `oml.sync` function to create an OML Dataframe as a proxy for the database table WINE.
     ```
-    %python
+    <copy>%python
 
     WINE = oml.sync("OMLUSER", table = "WINE")
     print(WINE.shape)
-    print(WINE.dtypes)
+    print(WINE.dtypes)</copy>
     ```
-    ![Image alt text](images/oml_sync_wine.png "Wine table")
+    ![](images/oml_sync_wine.png)
 
-## **STEP 2:** Automated Algorithm Selection
+## **Step 2:** Automated Algorithm Selection
 In this step, you prepare the wine data set by separating predictors from the target as conventional for Python model building. This produces two new proxy objects that will be used in AutoML functions.
 1. Run the following script to prepare the wine data set:
     ```
-    %python
+    <copy>%python
 
-    WINE_X_cl,WINE_y_cl = WINE.drop('target'), WINE['target']
+    WINE_X_cl,WINE_y_cl = WINE.drop('target'), WINE['target']</copy>
     ```
 
 2. Run the following script to select the top classification algorithms for predicting the WINE data target. It displays the top ranked algorithms and their accuracy.
     ```
-    %python
+    <copy>%python
 
     as_wine_cl = automl.AlgorithmSelection(mining_function='classification', score_metric='accuracy', parallel=2)
 
@@ -64,20 +59,20 @@ In this step, you prepare the wine data set by separating predictors from the ta
     print("Ranked algorithms:\n", wine_alg_ranking_cl)
 
     selected_wine_alg_cl = next(iter(dict(wine_alg_ranking_cl).keys()))
-    print("Best algorithm: ", selected_wine_alg_cl)
+    print("Best algorithm: ", selected_wine_alg_cl)</copy>
     ```
-    ![Image alt text](images/compute_algo_ranking_wine.png "Computation of algorithm ranking for wine data set")
+    ![](images/compute_algo_ranking_wine.png)
 
     The script returns the SVM Gaussian, SVM Linear, Neural Network and Random Forest. Among these, SVM Gaussian is ranked first, and we will use that in subsequent AutoML function calls.
 
-## **STEP 3:** Automated Feature Selection
+## **Step 3:** Automated Feature Selection
 In this step, you determine the features that best support the selected algorithm. First define a FeatureSelection object with score metric accuracy. Then call the `reduce` function and specify the desired algorithm, in this case, as determined above and stored in the variable `selected_wine_alg_cl`. Also specify the train and test OML DataFrame proxy objects.
 
 You see the set of selected columns.
 
 1. Run the following script to define the Feature Selection object `fs_wine_cl` and call the `reduce` function with the selected algorithms and WINE proxy objects.:
     ```
-    %python
+    <copy>%python
 
     fs_wine_cl = automl.FeatureSelection(mining_function = 'classification', score_metric = 'accuracy', parallel=2)
 
@@ -87,15 +82,15 @@ You see the set of selected columns.
 
     print("Selected columns:", WINE_X_reduced_cl.columns)
     print("Number of columns:")
-    "{} reduced to {}".format(len(WINE_X_cl.columns), len(selected_wine_features_cl))
+    "{} reduced to {}".format(len(WINE_X_cl.columns), len(selected_wine_features_cl))</copy>
     ```
-    ![Image alt text](images/define_feature_selection_obj.png "Define Feature Selection object for wine")
+    ![](images/define_feature_selection_obj.png)
 
 
 ## **Try it Yourself**
 Try other algorithms, such as `svm_linear` or `rf` in the first argument of the reduce function see if different columns are selected.
 
-## **STEP 4:** Automated Model Tuning
+## **Step 4:** Automated Model Tuning
 At this point, you are ready to build and tune the models you want to use.
 
 First, you define a `ModelTuning` object for classification.
@@ -105,7 +100,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
 
 1. Run the following script to define the model tuning object `my_wine_cl` for classification and call `tune`.
     ```
-    %python
+    <copy>%python
 
     mt_wine_cl = automl.ModelTuning(mining_function = 'classification', parallel=2)
     mt_wine_cl.tune
@@ -113,23 +108,23 @@ Model tuning returns a dictionary with the best model and the evaluation results
     results_cl = mt_wine_cl.tune(selected_wine_alg_cl, WINE_X_reduced_cl, WINE_y_cl)
 
     tuned_model_cl = results_cl['best_model']
-    tuned_model_cl
+    tuned_model_cl</copy>
     ```
-    ![Image alt text](images/define_model_tuning_obj.png "Define Model Tuning object for wine")
+    ![](images/define_model_tuning_obj.png)
 
 2. Run the following script to list the hyperparameters and their values tried for the top two models, along with the corresponding model's score metric value.
     ```
-    %python
+    <copy>%python
 
     hyper_results_cl = results_cl['all_evals']
 
-    print(*hyper_results_cl[:2], sep='\n')
+    print(*hyper_results_cl[:2], sep='\n')</copy>
     ```
-    ![Image alt text](images/hyperparameter_list.png "Hyperparameter list and their values")
+    ![](images/hyperparameter_list.png)
 
 3. Run the following script to specify a custom search space to explore for model building using the `param_space` argument to the `tune` function. With this specification, model tuning will narrow the set of important hyperparameter values.
     ```
-    %python
+    <copy>%python
 
     search_space={'RFOR_SAMPLING_RATIO': {'type': 'continuous', 'range': [0.05, 0.5]},
                   'RFOR_NUM_TREES': {'type': 'discrete', 'range': [50, 55]},
@@ -144,23 +139,23 @@ Model tuning returns a dictionary with the best model and the evaluation results
     "{:.2}".format(score2_cl)
 
     tuned_model2_cl = results2_cl['best_model']
-    tuned_model2_cl
+    tuned_model2_cl</copy>
     ```
-    ![Image alt text](images/custom_search_space.png "Specify custom search space")
+    ![](images/custom_search_space.png)
 
-## **STEP 5:** Automated Model Selection
+## **Step 5:** Automated Model Selection
 As a short cut, you may choose to go directly to model selection on the training data. Model Selection automatically selects the best algorithm (using Algorithm Selection) from the set of supported algorithms, then builds, tunes, and returns the model.
 
 1. Run the following script to define a ModelSelection object and call `select` for automatically building the best model on the wine data.  select the best model for the wine data set:
     ```
-    %python
+    <copy>%python
 
     ms_wine = automl.ModelSelection(mining_function = 'classification', parallel=2)
 
     best_model = ms_wine.select(WINE_X_cl, WINE_y_cl, k=1, cv=2)
-    best_model
+    best_model</copy>
     ```
-    ![Image alt text](images/best_model.png "Selection of best model")
+    ![](images/best_model.png)
 
 
 Congratulations! You have completed this workshop!
@@ -170,14 +165,7 @@ Congratulations! You have completed this workshop!
 * [Automated Machine Learning](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/automatic-machine-learning.html#GUID-4B240E7A-1A8B-43B6-99A5-7FF86330805A)
 * [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
-
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, February 2021
-* **Workshop (or Lab) Expiry Date**
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date** - Tom McGinn, March 2021
