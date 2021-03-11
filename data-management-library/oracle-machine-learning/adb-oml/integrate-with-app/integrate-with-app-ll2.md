@@ -38,7 +38,17 @@ This lab assumes you have completed the following labs:
 - Create a Machine Learning Model
 - Migrate ML Model to ATP
 
-## **STEP 1:** Prepare data for the lab in ATP
+## **STEP 1:** Download the Necessary Files
+
+1.  Click the link below to download the install file.
+
+    [install.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/adbml/o/install.zip)
+
+2.  Save the install.zip to a download directory and then unzip the file.
+
+    ![](./images/060.png  " ")
+
+## **STEP 2:** Prepare data for the lab in ATP
 
 1.  From the hamburger menu, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
@@ -147,7 +157,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/create-a-table.png  " ")
 
-## **STEP 2:** Import the APEX Application
+## **STEP 3:** Import the APEX Application
 
 1.  From the hamburger menu of Oracle cloud console, select **Autonomous Transaction Processing** and navigate to your ATP instance.
 
@@ -233,7 +243,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/alpha_office.png  " ")
 
-## **STEP 3:** Run the application and review on-the-fly prediction/scoring
+## **STEP 4:** Run the application and review on-the-fly prediction/scoring
 
 1.  On the Alpha Office homepgae, select **Customer Walk-in** from the menu.
 
@@ -303,7 +313,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/overall-profile.png  " ")
 
-## **STEP 4:** Expose the ml model as a REST end point so any application can call it
+## **STEP 5:** Expose the ml model as a REST end point so any application can call it
 
 1.  Select the **Home** button from the menu at the bottom of the screen. (Note: If you do not see the menu bar at the bottom of the page, switch to Oracle APEX tab which was opened earlier in the browser.)
 
@@ -341,7 +351,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/click-create-handler.png  " ")
 
-8.  Be sure to select **Method - GET** and **Source Type - Query One Row**, and enter the following SQL query in the worksheet and select **Create Handler**.
+9.  Be sure to select **Method - GET** and **Source Type - Query One Row**, and enter the following SQL query in the worksheet and select **Create Handler**.
 
     ````
     <copy>
@@ -351,7 +361,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/create-handler.png  " ")
 
-9.  Copy **Full URL** and paste it in your browser. Replace the parameters **:wealth - Rich** and **:income - 20000** respectively and hit enter. We are passing the wealth and income variables to the prediction model. Note these are just two of the many variables we could pass to the model (just add additional ones).
+10.  Copy **Full URL** and paste it in your browser. Replace the parameters **:wealth - Rich** and **:income - 20000** respectively and hit enter. We are passing the wealth and income variables to the prediction model. Note these are just two of the many variables we could pass to the model (just add additional ones).
 
     ![](./images/copy-url.png  " ")
 
@@ -365,3 +375,6 @@ This concludes this lab and this workshop.
 - **Contributors** - Anoosha Pilli, Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
 
+## Need Help?
+
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
