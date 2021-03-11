@@ -82,7 +82,7 @@ Copy the following commands into your terminal. These commands download the file
     </copy>
     ````
 
-    ![](./images/setup-num7.png " " )
+    ![](./images/setup-num9.png " " )
 
     *Note:* There may be some drop user errors, ignore them.  Please be patient as this script takes some time.
 
