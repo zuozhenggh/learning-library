@@ -58,11 +58,11 @@ An administrator creates a new user account and user credentials for Oracle Mach
 **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface. To create a user account:
 
 1. Sign in to your OCI account, click the hamburger on the left to open the left navigation pane, and click **Autonomous Data Warehouse.**
-    ![Autonomous Data Warehouse option](images/adw.png "Autonomous Data Warehouse")
+    ![Autonomous Data Warehouse option](images/adw.png)
 
 2. Click on an Autonomous Database instance.
 
-    ![Image alt text](images/adb_instance.png "ADB Instance")
+    ![Image alt text](images/adb_instance.png)
 
 3. On the Autonomous Database Details page, click **Service Console.**
 
@@ -119,10 +119,10 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 1. Sign in to your OCI account using your OCI credentials.
 
 2. Click Dashboard. Scroll down your dashboard and then click **Autonomous Data Warehouse.** Alternatively, you can click on the hamburger on the left and then click **Autonomous Data Warehouse.**
-    ![Autonomous Data Warehouse option](images/adw.png "Autonomous Data Warehouse")
+    ![Autonomous Data Warehouse option](images/adw.png)
 
 3. On the Autonomous Databases page, click the ADW instance that you created. In this example, it is MH120920.
-    ![Image alt text](images/adb_instance.png "ADB Instance")    
+    ![Image alt text](images/adb_instance.png)    
 
 4. The details of the ADW instance are displayed. Click **Service Console.**
     ![Image alt text](images/service_console.png)

@@ -37,7 +37,7 @@ In this lab, you will learn how to:
     print(WINE.shape)
     print(WINE.dtypes)</copy>
     ```
-    ![](images/oml_sync_wine.png "Wine table")
+    ![](images/oml_sync_wine.png)
 
 ## **Step 2:** Automated Algorithm Selection
 In this step, you prepare the wine data set by separating predictors from the target as conventional for Python model building. This produces two new proxy objects that will be used in AutoML functions.
@@ -61,7 +61,7 @@ In this step, you prepare the wine data set by separating predictors from the ta
     selected_wine_alg_cl = next(iter(dict(wine_alg_ranking_cl).keys()))
     print("Best algorithm: ", selected_wine_alg_cl)</copy>
     ```
-    ![](images/compute_algo_ranking_wine.png "Computation of algorithm ranking for wine data set")
+    ![](images/compute_algo_ranking_wine.png)
 
     The script returns the SVM Gaussian, SVM Linear, Neural Network and Random Forest. Among these, SVM Gaussian is ranked first, and we will use that in subsequent AutoML function calls.
 
@@ -84,7 +84,7 @@ You see the set of selected columns.
     print("Number of columns:")
     "{} reduced to {}".format(len(WINE_X_cl.columns), len(selected_wine_features_cl))</copy>
     ```
-    ![](images/define_feature_selection_obj.png "Define Feature Selection object for wine")
+    ![](images/define_feature_selection_obj.png)
 
 
 ## **Try it Yourself**
@@ -110,7 +110,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
     tuned_model_cl = results_cl['best_model']
     tuned_model_cl</copy>
     ```
-    ![](images/define_model_tuning_obj.png "Define Model Tuning object for wine")
+    ![](images/define_model_tuning_obj.png)
 
 2. Run the following script to list the hyperparameters and their values tried for the top two models, along with the corresponding model's score metric value.
     ```
@@ -120,7 +120,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
 
     print(*hyper_results_cl[:2], sep='\n')</copy>
     ```
-    ![](images/hyperparameter_list.png "Hyperparameter list and their values")
+    ![](images/hyperparameter_list.png)
 
 3. Run the following script to specify a custom search space to explore for model building using the `param_space` argument to the `tune` function. With this specification, model tuning will narrow the set of important hyperparameter values.
     ```
@@ -141,7 +141,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
     tuned_model2_cl = results2_cl['best_model']
     tuned_model2_cl</copy>
     ```
-    ![](images/custom_search_space.png "Specify custom search space")
+    ![](images/custom_search_space.png)
 
 ## **Step 5:** Automated Model Selection
 As a short cut, you may choose to go directly to model selection on the training data. Model Selection automatically selects the best algorithm (using Algorithm Selection) from the set of supported algorithms, then builds, tunes, and returns the model.
@@ -155,7 +155,7 @@ As a short cut, you may choose to go directly to model selection on the training
     best_model = ms_wine.select(WINE_X_cl, WINE_y_cl, k=1, cv=2)
     best_model</copy>
     ```
-    ![](images/best_model.png "Selection of best model")
+    ![](images/best_model.png)
 
 
 Congratulations! You have completed this workshop!

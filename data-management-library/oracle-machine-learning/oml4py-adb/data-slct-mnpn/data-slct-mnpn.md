@@ -43,7 +43,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
     pd.set_option('display.max_columns', 50)
     pd.set_option('display.width', 1000)</copy>
     ```
-     ![](images/omp_lib_display_options.png "Import libraries and Set display options")
+     ![](images/omp_lib_display_options.png)
 2. Here, you load the IRIS data and combine the target and predictors into a single DataFrame, which matches the form the data would have as a database table. You use the `oml.push` function to load this Pandas DataFrame into the database, which creates a temporary table and returns a proxy object that you assign to IRIS_TMP.
 
   Such temporary tables will be automatically deleted when the database connection is terminated unless saved in a datastore. You learn more about datastore in lab 4.
@@ -67,7 +67,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
     ```
 
 
-     ![](images/temp_table_iris_data.png "Temporary Table for Iris Data")   
+     ![](images/temp_table_iris_data.png)   
 
  2. Run the following script to list all the transparency layer functions:
 
@@ -79,7 +79,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
     res</copy>
     ```
 
-    ![](images/transparency_layer_functions.png "Transparency Layer Functions")   
+    ![](images/transparency_layer_functions.png)   
 
 ## **Step 2:** Select Table Columns using Proxy Object IRIS_TMP
 In this step, you will select the first three records for columns `SEPAL_LENGTH` and `PETAL_LENGTH` from the `IRIS_TMP` table.
@@ -92,7 +92,7 @@ In this step, you will select the first three records for columns `SEPAL_LENGTH`
     IRIS_projected1 = IRIS_TMP[:, ["SEPAL_LENGTH", "PETAL_LENGTH"]]
     IRIS_projected1.head(3)</copy>
     ```
-    ![](images/columns_by_name.png "Select specific columns by names")
+    ![](images/columns_by_name.png)
     The script returns the length of the petal and sepal from the IRIS_TMP table.
 
 2. Select the first four columns in `IRIS_TMP` using an index range. Note that Python uses `0` as a starting element for indexing. The starting element is the first column, `SEPAL_LENGTH`. The second element is the second column, `SEPAL_WIDTH`, and so on.
@@ -104,7 +104,7 @@ In this step, you will select the first three records for columns `SEPAL_LENGTH`
     IRIS_projected2.head(3)</copy>
     ```
 
-    ![](images/columns_by_index_range.png "Select specific columns by index range")
+    ![](images/columns_by_index_range.png)
     The script returns the columns by the specified index range.
 
 3. Run the following script to select columns by data type, specifying the data type as `oml.string`.  
@@ -116,7 +116,7 @@ In this step, you will select the first three records for columns `SEPAL_LENGTH`
     IRIS_projected3 = IRIS_TMP.select_types(include=[oml.String])
     IRIS_projected3.head(3)</copy>
     ```
-    ![](images/columns_by_data_type.png "Select specific columns by data type")
+    ![](images/columns_by_data_type.png)
     The script returns the SPECIES column.
 
 ## **Step 3:** Select Table Rows using Proxy Object IRIS_TMP
@@ -133,7 +133,7 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
     print("Length: ", len(IRIS_filtered1))
     IRIS_filtered1.head(3)</copy>
     ```
-    ![](images/simple_row_selection.png "Simple row selection")
+    ![](images/simple_row_selection.png)
     The script returns the rows with petal length less than 1.5.
 
 2. This step shows an example of a compound row selection using the `OR` filtering condition, denoted by the `|` symbol. Run the following scripts to select all rows in which `PETAL_LENGTH` is less than `1.5` OR `SEPAL_LENGTH` is equal to `5.8`:
@@ -146,7 +146,7 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
     print("Length: ", len(IRIS_filtered2))
     IRIS_filtered2.head(3)</copy>
     ```
-    ![](images/compound_row_selection.png "Compound_row_selection with OR")
+    ![](images/compound_row_selection.png)
     The script returns the rows where petal length is less than or equal to 5.0.
 
 3. This step shows an example of a compound row selection using `AND`, denoted by the `&` symbol. Run the following script to select all rows in which `PETAL_LENGTH` is less than 1.5 AND `SEPAL_LENGTH` is greater than 5.0:
@@ -160,7 +160,7 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
     print("Length: ", len(IRIS_filtered3))
     IRIS_filtered3.head(4)</copy>
     ```
-      ![](images/compound_row_selection_and.png "Compound_row_selection with AND")
+      ![](images/compound_row_selection_and.png)
       The script returns the rows where petal length is less than 1.5 and greater than 5.0.
 
 ## **Step 4:** Use Pandas DataFrame objects
@@ -196,7 +196,7 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
     num1.append(num2)</copy>
     ```
 
-    ![](images/create_my_df_table.png "Create MY_DF table")
+    ![](images/create_my_df_table.png)
     The script creates the table MY_DF.
 
 2. In this step, you use the `append()` function to append an `oml.Float` series object to another, and then append an `oml.DataFrame` object to another.
@@ -215,7 +215,7 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
 
     x.append(y)</copy>
     ```
-    ![](images/using_append.png "Using append function")
+    ![](images/using_append.png)
     It creates two new proxy objects with corresponding subset of columns, prints the data type for each column, and then appends the data frame object Y (containing columns num and ch) to X (containing columns id and val).
 ### Combine Columns by using the concat method
 
@@ -237,7 +237,7 @@ Use the `concat` method to combine columns from one data frame proxy object with
     ```
 
 
-  ![](images/column_wise_concat.png "Column wise concatenation")
+  ![](images/column_wise_concat.png)
   **Note:** The script automatically prints the result. When there is a single result to show, print command is not needed.
 
 2. This step shows how to create an `oml.Float` object with the rounded exponential of two times the values in the `num` column of the `oml_frame` object, and then concatenate it with the `oml.DataFrame` object `y` using a new column name.
@@ -251,7 +251,7 @@ Use the `concat` method to combine columns from one data frame proxy object with
 
   **Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
 
-  ![](images/concat_new_column.png "Concatenate new column")
+  ![](images/concat_new_column.png)
 
 3. Concatenate object x with multiple objects and turn on automatic name conflict resolution. In this example, `auto_name=True` controls whether to call automatic name conflict resolution if one or more column names are duplicates in the two data frames:
 
@@ -263,7 +263,7 @@ Use the `concat` method to combine columns from one data frame proxy object with
     x.concat([MY_DF2, w, y], auto_name=True)</copy>
     ```
 
-  ![](images/concat_columns_name_reso.png "Concatenate columns with name resolution")
+  ![](images/concat_columns_name_reso.png)
 
   **Note:** In this example, the `id` and `num` columns are duplicated.
 4. Run the following script to concatenate multiple OML data objects and perform customized renaming. Here, you add the word `New` to the duplicate columns and use `OrderedDict` to preserve the order in which the objects are added.
@@ -275,7 +275,7 @@ Use the `concat` method to combine columns from one data frame proxy object with
     x.concat(OrderedDict([('ID',MY_DF2), ('round(exp(2*num))',w), ('New_',y)]))</copy>
     ```
 
-  ![](images/concat_with_renaming.png "Concatenate with renaming")
+  ![](images/concat_with_renaming.png)
 
 
 ### Use the merge function
@@ -294,7 +294,7 @@ Use the `merge` function to join data from two objects. These examples demonstra
     xy</copy>
     ```
 
-  ![](images/cross_join.png "Cross join")
+  ![](images/cross_join.png)
 
 
 2. Run the following script to perform a left outer join on the first four rows of x with the `oml.DataFrame` object on the shared column id and apply the suffixes `.l` and `.r` to column names on the left and right side, respectively.
@@ -306,7 +306,7 @@ Use the `merge` function to join data from two objects. These examples demonstra
     x.head(4).merge(other=MY_DF[['id', 'num']], on="id", how='left', suffixes=['.l','.r'])</copy>
     ```
 
-  ![](images/left_outer_join.png "Concatenate with renaming")
+  ![](images/left_outer_join.png)
   This example performs a left outer join on the first four rows.  
 
 ### **Try it Yourself:** Use the merge function to perform a right outer join
@@ -337,7 +337,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
 
     MY_DF2</copy>
     ```
-  ![](images/my_df2_table.png "Create MY_DF2 Table")
+  ![](images/my_df2_table.png)
 
 2. Run the script to drop rows with any missing values:
 
@@ -348,7 +348,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
     MY_DF2.dropna(how='any')</copy>
     ```
 
-  ![](images/drop_rows_missing_vals.png "Drop rows with any missing values")
+  ![](images/drop_rows_missing_vals.png)
 
 3. Run the following script to drop rows with missing numeric values:
 
@@ -359,7 +359,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
     MY_DF2.dropna(how='any', subset=['numeric'])</copy>
     ```
 
-    ![](images/drop_missing_num_vals.png "Drop rows with missing numeric values")
+    ![](images/drop_missing_num_vals.png)
 
 4. Run the following script to drop rows where all columns values are missing:
 
@@ -370,7 +370,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
     MY_DF2.dropna(how='all')</copy>
     ```
 
-    ![](images/drop_rows_with_missing_col_vals.png "Drop rows with missing column values")
+    ![](images/drop_rows_with_missing_col_vals.png)
 
 5. Use the `drop_duplicates()` function to drop duplicate rows:
 
@@ -380,7 +380,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
 
     MY_DF2.drop_duplicates()</copy>
     ```
-    ![](images/drop_duplicate_rows.png "Drop duplicate rows")
+    ![](images/drop_duplicate_rows.png)
 
 6. Run the following script to drop a specific column:
 
@@ -390,7 +390,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
 
     MY_DF2.drop('string2')</copy>
     ```
-    ![](images/drop_specific_col.png "Drop specific columns")
+    ![](images/drop_specific_col.png)
 
 ## **Step 5:** Use the split and KFold functions
 
@@ -417,7 +417,7 @@ The following tasks are covered in this lab:
     print("Shape: ", DIGITS.shape)</copy>
     ```
 
-    ![](images/digits.png "Digits table")
+    ![](images/digits.png)
 
 2. Run the following script to split the data set into samples of 20% and 80% size.
 
@@ -429,7 +429,7 @@ The following tasks are covered in this lab:
     print("Split lengths: ", [len(split) for split in splits])</copy>
     ```
 
-    ![](images/80_20_data_split.png "Data Split into 80 20 ratio")
+    ![](images/80_20_data_split.png)
 
 3. Run the following script to perform stratified sampling on the column `target`. In this example, the column in which you perform stratified sampling is `target`. Stratified sampling divides the data into different groups based on shared characteristics prior to sampling, ensuring that members from each subgroup is included in the analysis.
 
@@ -441,7 +441,7 @@ The following tasks are covered in this lab:
     print("Split lengths: ", [split.shape for split in splits])</copy>
     ```
 
-    ![](images/stratified_sampling.png "Stratified Sampling")
+    ![](images/stratified_sampling.png)
 
 4. Verify that the stratified sampling generates splits in which all of the different categories of digits (digits 0-9) are present in each split
 
@@ -453,7 +453,7 @@ The following tasks are covered in this lab:
 
      ```
 
-     ![](images/verify_stratified_sampling.png "Verify stratified sampling")
+     ![](images/verify_stratified_sampling.png)
      Here we see that each digit is represented in the split result.
 
 5. Compute hash on the target column.
@@ -466,7 +466,7 @@ The following tasks are covered in this lab:
     print("Split lengths: ", [split.shape for split in splits])</copy>
     ```
 
-    ![](images/compute_hash.png "Compute hash on column `target`")
+    ![](images/compute_hash.png)
 
 6. Verify that the different categories of digits (digits 0-9) are present in only one of the splits generated by hashing on the category column:
 
@@ -478,7 +478,7 @@ The following tasks are covered in this lab:
     for split in splits])</copy>
     ```
 
-    ![](images/verify_hash.png "Verify hash")
+    ![](images/verify_hash.png)
 
 7. Split the data randomly into 4 consecutive folds using the `KFold` function.
 
@@ -492,7 +492,7 @@ The following tasks are covered in this lab:
     for fold in folds])</copy>
     ```
 
-    ![](images/random_data_split.png "Random data split into 4 consecutive folds")
+    ![](images/random_data_split.png)
 
 ### **Try it yourself**: Split the digit data set into four even samples of 25% each
 
@@ -517,7 +517,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
     MY_DF4 = oml.push(my_df4)</copy>
     ```
 
-  ![](images/My_DF4_table.png "Create MY_DF4 table")
+  ![](images/My_DF4_table.png)
 
 2. Use the `crosstab` function to find the categories that the most entries belonged to. This example shows how to use the `crosstab` function to find the count of gender, and right-handed and left-handed persons in descending order in the MY_DF4 dataframe.  
 
@@ -528,7 +528,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
     MY_DF4.crosstab('GENDER', 'HAND').sort_values('count', ascending=False)</copy>
     ```  
 
-      ![](images/my_df4_crosstab.png "Script to find categories of entries")
+      ![](images/my_df4_crosstab.png)
 
 3. Use the `crosstab` function to find the ratio of entries with different hand values for each gender and across entries in the `MY_DF4` dataframe.
 
@@ -539,7 +539,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
     MY_DF4.crosstab('GENDER', 'HAND', pivot = True, margins = True, normalize = 0)</copy>
     ```
 
-    ![](images/my_df4_hand_vals.png "Crosstab function to find ratio of entries")
+    ![](images/my_df4_hand_vals.png)
 
 4. Use the `pivot_table` function to find the mean speed across all gender and hand combinations in the `MY_DF4` dataframe.
 
@@ -549,7 +549,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
 
     MY_DF4.pivot_table('GENDER', 'HAND', 'SPEED')</copy>
     ```
-    ![](images/find_mean_speed.png "Pivot table function to find mean speed")
+    ![](images/find_mean_speed.png)
 
 5. Use `pivot_table` function to find the maximum and minimum speed for every gender and hand combination and across all combinations in the `MY_DF4` dataframe:
 
@@ -560,7 +560,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
     MY_DF4.pivot_table('GENDER', 'HAND', 'SPEED', aggfunc = [oml.DataFrame.max, oml.DataFrame.min], margins = True)</copy>
     ```
 
-    ![](images/max_min_speed.png "Pivot table function to find minimum and maximum speed")
+    ![](images/max_min_speed.png)
 
 ## **Step 7**: Use the oml.boxplot and oml.hist functions
 
@@ -582,7 +582,7 @@ This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions usin
     plt.show()</copy>
     ```
 
-    ![](images/boxplot.png "Box Plot depicting distribution of wine attributes")
+    ![](images/boxplot.png)
 
 
 2. Run the following script to render the data in a histogram:
@@ -598,7 +598,7 @@ This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions usin
     plt.show()</copy>
 
     ```
-  ![](images/histogram.png "Histogram of Proline content in wine")
+  ![](images/histogram.png)
 
 ## **Step 8**: Manage and Explore Data Using Transparency Layer Functions
 
@@ -623,7 +623,7 @@ Use the `z.show` function to automatically pull the desired data to Python for d
     %python
     <copy>
     try:
-    oml.drop(table="IRIS")
+       oml.drop(table="IRIS")
     except:
        pass
 
@@ -631,7 +631,7 @@ Use the `z.show` function to automatically pull the desired data to Python for d
     print("Shape:",IRIS.shape)
     z.show(IRIS.head(10))</copy>
     ```
-   ![](images/oml_create_table.png "oml_create function to create table")
+   ![](images/oml_create_table.png)
 
 2. Run the following script to view the persistent database table:
 
@@ -641,7 +641,7 @@ Use the `z.show` function to automatically pull the desired data to Python for d
 
     list(oml.sync(table=".*", regex_match=True).keys())</copy>
     ```
-    ![](images/view_persistent_table.png "View the persistent database table")
+    ![](images/view_persistent_table.png)
 
 ### Use other transparency layer functions
 The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML database connection. It can be used to execute queries against Oracle Database.
@@ -656,7 +656,7 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
     _ = cr.execute("select data_type from all_tab_columns where table_name ='IRIS'")
     cr.fetchall()</copy>
     ```
-    ![](images/oml_cursor_function.png "oml_cursor_function")
+    ![](images/oml_cursor_function.png)
 
 2. To close the cursor, run `cr.close`.
 
@@ -675,7 +675,7 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
     IRIS.shape</copy>
     ```
 
-    ![](images/shape_function.png "Shape function")
+    ![](images/shape_function.png)
 4. Use the transparency layer function `head()` to view the first three rows of the IRIS table.
 
     ```
@@ -685,7 +685,7 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
     IRIS.head(n=3)</copy>
     ```
 
-    ![](images/head_function.png "head_function")
+    ![](images/head_function.png)
 
 5. Use the transparency layer function `describe()` to calculate descriptive statistics that summarize the central tendency, dispersion, and shape of the IRIS table in each numeric column.
 
@@ -696,7 +696,7 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
     IRIS.describe()</copy>
     ```
 
-    ![](images/describe_function.png "describe function")
+    ![](images/describe_function.png)
 
 ## Learn More
 

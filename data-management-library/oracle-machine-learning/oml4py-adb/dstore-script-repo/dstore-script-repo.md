@@ -62,7 +62,7 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
 
      print(IRIS.columns)</copy>
      ```
-  ![Image alt text](images/sync_iris_table.png "Sync IRIS table to an OML Dataframe proxy object")
+  ![Image alt text](images/sync_iris_table.png)
 
 2. Run the following script to create the temporary Diabetes table:
      ```
@@ -77,7 +77,7 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
      DIABETES_TMP = oml.push(pd.concat([x, y], axis=1))
      print(DIABETES_TMP.columns)</copy>
      ```
-     ![Image alt text](images/create_diabetes_table.png "Create the Diabetes table")  
+     ![Image alt text](images/create_diabetes_table.png)  
 
 
 3. Run the following script to create the Boston table:
@@ -93,7 +93,7 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
     BOSTON_TMP = oml.push(pd.concat([x, y], axis=1))
     print(BOSTON_TMP.columns)</copy>
     ```
-    ![Image alt text](images/create_boston_table.png "Create the Boston table")
+    ![Image alt text](images/create_boston_table.png)
 
 ## **Step 3:** Save Python objects to datastore
 
@@ -136,7 +136,7 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
 
      oml.ds.dir()</copy>
      ```
-     ![Image alt text](images/iris_df_in_ds.png "Save Iris DataFrame in a Datastore ")
+     ![Image alt text](images/iris_df_in_ds.png)
 
 ## **Step 4:** Save model objects in a datastore
 
@@ -174,7 +174,7 @@ This step illustrates how to store other types of objects in datastores. For thi
 
     oml.ds.dir()</copy>
     ```
-    ![Image alt text](images/regr1_regr2.png "Save Objects to a Datastore")  
+    ![Image alt text](images/regr1_regr2.png)  
 3. Now grant the read privilege to all users by specifying `user=None`. Finally, list the datastores to which the read privilege has been granted.
 
     ```
@@ -185,7 +185,7 @@ This step illustrates how to store other types of objects in datastores. For thi
 
     oml.ds.dir(dstype="grant")</copy>
     ```
-    ![Image alt text](images/grant_read_priv.png "Grant read privilege to all users")    
+    ![Image alt text](images/grant_read_priv.png)    
 
 ## **Step 5:**  Load datastore objects into memory
 
@@ -199,7 +199,7 @@ In this step, you load all Python objects from a datastore to the global workspa
     sorted(oml.ds.load(name="ds_pydata"))</copy>
     ```  
 
-    ![Image alt text](images/load_ds_into_memory.png "Load datastore ds_pydata into memory")      
+    ![Image alt text](images/load_ds_into_memory.png)      
 
 2. Run the following script to load the named Python object `regr2` (regression model), from the datastore to the global workspace.
 
@@ -211,7 +211,7 @@ In this step, you load all Python objects from a datastore to the global workspa
 
     oml.ds.load(name="ds_pymodels", objs=["regr2"], to_globals=True)</copy>
     ```   
-    ![Image alt text](images/load_regr2_gbl_ws.png "Load Python object into global workspace")
+    ![Image alt text](images/load_regr2_gbl_ws.png)
 
 3. Run the following script to view the model details
 
@@ -221,7 +221,7 @@ In this step, you load all Python objects from a datastore to the global workspa
 
     regr2</copy>
     ```
-    ![Image alt text](images/view_model_details.png "View model details")
+    ![Image alt text](images/view_model_details.png)
 4. Run the following script to load the named Python object `regr1`, from the datastore to the user's workspace.
 
     **Note:** Using the boolean `to_globals` parameter, you can specify whether the objects are loaded to a global workspace or to a dictionary object. If the argument is `to_globals=True`, then `oml.ds.load` function loads the objects into the global workspace. If the argument is `to_globals=False`, then the function returns a dict object that contains pairs of object names and values.
@@ -232,7 +232,7 @@ In this step, you load all Python objects from a datastore to the global workspa
 
     oml.ds.load(name="ds_pymodels", objs=["regr1"], to_globals=False)</copy>
     ```
-  ![Image alt text](images/load_regr1_usr_ws.png "Load Python object into user's workspace")
+  ![Image alt text](images/load_regr1_usr_ws.png)
 
 ## **Step 6:** View datastores and other details
 
@@ -245,7 +245,7 @@ This step shows how to work with datastores.
 
     oml.ds.dir(dstype="all")[['owner', 'datastore_name', 'object_count']]</copy>
     ```
-    ![Image alt text](images/list_datastores.png "List of Datastores and Count of Objects")
+    ![Image alt text](images/list_datastores.png)
 
 2. Run the following script to list the datastores to which other users have been granted the read privilege:
 
@@ -255,7 +255,7 @@ This step shows how to work with datastores.
 
     oml.ds.dir(dstype="grant")</copy>
     ```
-    ![Image alt text](images/datastore_with_read_priv.png "Load Python object into user's workspace")
+    ![Image alt text](images/datastore_with_read_priv.png)
 
 ## **Step 7:** View contents of a datastore
 
@@ -268,7 +268,7 @@ This step shows how to view/describe the content of a datastore. This example sh
 
     oml.ds.describe(name='ds_pydata')</copy>
     ```  
-    ![Image alt text](images/datastore_content.png "View Datastore Content")
+    ![Image alt text](images/datastore_content.png)
 
   The script returns the description of three proxy objects - `iris`, `oml_boston`, and `oml_diabetes`. It lists the class, size, length, row and column count for each object.     
 
@@ -287,7 +287,7 @@ This step shows how to revoke read privilege, show datastores to which the read 
     oml.ds.dir(dstype="grant")</copy>
     ```
 
-    ![Image alt text](images/revoke_priv.png "Revoke privilege")        
+    ![Image alt text](images/revoke_priv.png)        
 2. Run the following script to grant read privilege to OMLUSER:
 
     ```
@@ -298,7 +298,7 @@ This step shows how to revoke read privilege, show datastores to which the read 
 
     oml.ds.dir(dstype="grant")</copy>
     ```
-    ![Image alt text](images/grant_priv.png "Grant privilege")        
+    ![Image alt text](images/grant_priv.png)        
 
 ## **Step 9:** Delete Datastore Content
 
@@ -318,7 +318,7 @@ This step shows how to use the `oml.ds.delete` function to delete datastores or 
 
     oml.ds.dir()</copy>
     ```
-    ![Image alt text](images/delete_datastore.png "Delete Datastore")
+    ![Image alt text](images/delete_datastore.png)
 
   The script first deletes the contents of datastore `ds_pydata`, and then deletes the datastore itself. It also deletes the datastore `ds_pymodel` using regular expression pattern matching.
 

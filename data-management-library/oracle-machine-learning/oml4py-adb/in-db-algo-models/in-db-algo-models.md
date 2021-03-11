@@ -53,7 +53,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     z.show(CUST_DF.head())</copy>
     ```
-    ![](images/cust_df_table.png "CUST_DF table")
+    ![](images/cust_df_table.png)
 
 3. Run the following script to randomly split and select the data into 60% for train and 40% for test.
 
@@ -90,7 +90,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     ```
 
-    ![](images/glm_regression.png "CUST_DF table")
+    ![](images/glm_regression.png)
 
 5. Run the following script to view model fit details to understand the key statistics of the model. Locate the values of Root Mean Square Error `ROOT_MEAN_SQ` and R-squared `R_SQ` from the output. RMSE and R-squared are used to evaluate baseline performance of the model.
     * RMSE is a measure of the differences between values predicted by a model and the values observed. A good model should have a low RMSE. But at the same time, a model with very low RMSE has the potential to overfit.
@@ -102,7 +102,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     z.show(glm_mod.fit_details)</copy>
     ```
-    ![](images/model_fit_details.png "View model fit details")
+    ![](images/model_fit_details.png)
 
 6. Run the following command to display and view the model coefficients:
 
@@ -113,7 +113,7 @@ This step shows how to predict numerical values using multiple regression. Given
     glm_mod.coef</copy>
     ```
 
-    ![](images/model_coeff.png "View model coefficients")
+    ![](images/model_coeff.png)
 7. Run the following script to make predictions using the test data and display the results:
 
     ```
@@ -124,7 +124,7 @@ This step shows how to predict numerical values using multiple regression. Given
     z.show(RES_DF[['PREDICTION', 'YRS_RESIDENCE'] + RES_DF.columns])</copy>
     ```
 
-    ![](images/prediction.png "Prediction")
+    ![](images/prediction.png)
 In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `TEST_X` columns respectively, as shown in the screenshot.
 
 8. Run the following command to plot the predicted versus the actual years of residence. Click **Settings** to see how the plot was specified.
@@ -134,7 +134,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
 
     z.show(RES_DF[['YRS_RESIDENCE', 'PREDICTION']])</copy>
     ```
-    ![](images/view_predicted_actual_values.png "Predicted and Actual Values")
+    ![](images/view_predicted_actual_values.png)
 
 9. Using matplotlib, plot the predicted and actual years of residence and visually compare it against the perfect fit line, `y=x`.  The plot indicates how far the prediction deviated from actual value, which is known as the prediction error. Ideally, the predictions will converge to the perfect fit line.
 
@@ -159,7 +159,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.grid(True)
     plt.show()</copy>
     ```
-    ![](images/yrs_residence_predicted_matplotlib.png "Predicted Values and Actual Values")
+    ![](images/yrs_residence_predicted_matplotlib.png)
 10. Run the following script to plot the residuals using matplotlib.
 
     ```
@@ -181,7 +181,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.show()</copy>
     ```
 
-    ![](images/residuals.png "Residuals")
+    ![](images/residuals.png)
 11. Run the following script to calculate the RMSE manually on the prediction results on the testing test and the R-  squared on the testing set using the score method.
     **Note:** Both the RMSE and R-squared calculations are similar to the values produced by `oml.glm`.
 
@@ -194,7 +194,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     print(glm_mod.score(TEST.drop('YRS_RESIDENCE'), TEST[:,['YRS_RESIDENCE']]))</copy>
     ```
 
-    ![](images/rmse_calculation.png "RMSE Calculation ")
+    ![](images/rmse_calculation.png)
 
 ## **Step 3**: Work with Clustering using K-Means
 OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Autonomous Database.
@@ -225,7 +225,7 @@ OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Exp
 
     km_mod</copy>
     ```
-    ![](images/kmeans_model_details.png "K-Means model details ")
+    ![](images/kmeans_model_details.png)
 
 3. To view the cluster details, run the following command. The command displays the cluster details for all clusters in the hierarchy with row counts and dispersion.
 The dispersion value is a measure of how compact or how spread out the data is within a cluster. The dispersion value is a number greater than 0.  The lower the dispersion value, the more compact the cluster, that is, the data points are closer to the centroid of the cluster. A larger dispersion value indicates that the data points are more disperse or spread out from the centroid.
@@ -237,7 +237,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(km_mod.clusters)</copy>
     ```
 
-    ![](images/kmeans_model_cluster.png "K-Means model cluster ")
+    ![](images/kmeans_model_cluster.png)
 
 4. Run the following script to display the taxonomy. The taxonomy shows the hierarchy of the child clusters in relationship to the parent clusters.
 
@@ -248,7 +248,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(km_mod.taxonomy)</copy>
     ```
     The script returns the following table
-    ![](images/taxonomy.png "Taxonomy")
+    ![](images/taxonomy.png)
 
 5. Run the following command to predict the cluster membership.  The `supplemental_cols` argument carries the target column to the output to retain the relationship between the predictions and their original preditor values. These predictors may include a case id, for example to join with other tables, or multiple (or all) columns of the scoring data. You should be aware that unlike Pandas DataFrames, which are explicitly ordered in memory, results from relational databases do not have a specific order unless explicitly specified by an `ORDER BY` clause. As such, you cannot rely on results to maintain the same order across different data sets (tables and DataFrame proxy objects).
 
@@ -267,7 +267,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(pred)</copy>
     ```
 
-    ![](images/view_pred.png "Prediction")
+    ![](images/view_pred.png)
 
 7. Run the following command to view the cluster results using a matplotlib scatterplot:
     ```
@@ -300,7 +300,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     plt.ylabel('CUST_YEAR_OF_BIRTH')
     plt.show()</copy>
     ```
-    ![](images/cluster_results_scatterplot.png "Cluster Results in a Scatterplot")
+    ![](images/cluster_results_scatterplot.png)
 
 ## **Step 4**: Work with Partitioned models
 OML4Py enables automatically building an ensemble model comprised of multiple sub-models, one for each data partition. Sub-models exist and are used as one model, which results in simplified scoring using the top-level model only. The proper sub-model is chosen by the system based on partition value(s) in the row of data to be scored. Partitioned models achieve potentially better accuracy through multiple targeted models.
@@ -338,7 +338,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     The script builds a SVM partitioned model. Scroll down the notebook paragraph for complete details of the model.
 
-    ![](images/svm_partitioned_regression_model.png "Partitioned model")        
+    ![](images/svm_partitioned_regression_model.png)        
 
 3. Run the following script to predict on the test set and display prediction result. Note the use of the top level model only.
 
@@ -352,7 +352,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     The script makes prediction based on the test data, and displays the result in a table, as shown in the screenshot. The predicted values are listed in the PREDICTION column in the table.
 
-    ![](images/pred_results_svm_model.png "Prediction results")
+    ![](images/pred_results_svm_model.png)
 
 4. Run the following command to show the model global statistics for each partitioned sub-model. The partition name column contains the values from the partition column. If multiple columns were specified, then there would be one column for each with corresponding value.
 
@@ -362,7 +362,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
 
     z.show(svm_mod.global_stats)</copy>
     ```
-    ![](images/global_stats.png "Global statistics for partitioned sub-models")
+    ![](images/global_stats.png)
 
 5. Run the following command to materialize the test dataset. The `materialize` method pushes the contents represented by an OML proxy object (a view, a table and so on) into a table in Oracle Database.
 Here, you materialize the data to table `TEST_DATA` so that it can be queried from SQL.
@@ -403,7 +403,7 @@ Here, you materialize the data to table `TEST_DATA` so that it can be queried fr
       OUTPRED</copy>
       ```
 
-      ![](images/scoring_details.png "Scoring and Prediction details")
+      ![](images/scoring_details.png)
 
 ## **Step 5**: Rank Attribute Importance using Model Explainability
 
@@ -464,7 +464,7 @@ In this step, you will:
     "SVM accuracy score = {:.2f}".format(model.score(X_test, y_test))</copy>
     ```
 
-    ![](images/svm_accuracy_score.png "SVM Accuracy score")
+    ![](images/svm_accuracy_score.png)
 
 4. Create the MLX Global Feature Importance explainer gfi, using the `f1_weighted` metric.
     ```
@@ -475,7 +475,7 @@ In this step, you will:
                               random_state=32, parallel=4)</copy>
     ```
 
-    ![](images/create_gfi.png "Global Feature Importance")
+    ![](images/create_gfi.png)
 5. Run the explainer `gfi.explain` to generate the global feature importance for the test data:
     ```
     %python
@@ -487,7 +487,7 @@ In this step, you will:
     ```  
    The explainer returns the following explanation, as shown in the screenshot:
 
-     ![](images/model_explanation.png "Model Explanation")
+     ![](images/model_explanation.png)
 
 ### **Try it yourself**
 
