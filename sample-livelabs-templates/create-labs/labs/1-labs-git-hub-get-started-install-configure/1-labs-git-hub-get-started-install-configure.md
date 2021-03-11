@@ -147,5 +147,4 @@ To clone the forked repository:
 
 * **Last Updated By/Date:** Madhusudhan Rao, February 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+

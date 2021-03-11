@@ -354,5 +354,3 @@ For ease of access to desktop applications provided on the instance and needed t
 * **Contributors** - - -
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
