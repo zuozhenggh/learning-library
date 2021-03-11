@@ -35,7 +35,7 @@ In this lab, you will learn how to:
 
     ![](images/login-console.png)
 
-4. Change your password by entering your existing password and entering a new password. Note: you can use your existing password as the new password also.
+4. Change your password by pasting the initial password in the **Current Password** field, **New Password** field and **Confirm Password** field.
 
     ![](images/change-password.png)
 
@@ -96,17 +96,17 @@ An administrator creates a new user account and user credentials for Oracle Mach
 You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
 
 <if type="livelabs">
-1. From the tab on your browser with your ADW instance, in the Tools tab, select **Open Oracle ML Administration** and (if required) login with the admin credentials. Your admin password is the password you copied from the Launch page.</if>
+1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** from the left.
 
-    ![](images/adw-open-ml-user-admin.png)
+    ![](images/service-console.png)
 
-    ![](images/oml-signin-admin.png)
+    ![](images/service-console-development.png)
 
-2. Click the home button to login in with the OMLUSER.
+2. Click **Oracle Machine Learning Notebooks**.
 
-    ![](images/oml-user-homebutton.png)
+    ![](images/open-oml-notebooks.png)
 
-3. Sign in with the omluser using the password `AAbbcc123456`.
+3. Sign in with the **omluser** using the password `AAbbcc123456`.
 
     ![](images/signin-to-oml.png)
 

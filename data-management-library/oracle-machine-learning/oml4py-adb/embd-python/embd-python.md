@@ -230,6 +230,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
     ![](images/table_apply_output.png "Petal length prediction")
 
 5. Run the following script to print the object, model, type and coefficient.
+
     ```
     %python
     <copy>
@@ -256,6 +257,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
     ```
 
 7. Use the `row_apply` to call this user-defined function and return a single DataFrame proxy object as the result. The `row_apply` function takes as arguments the proxy object `IRIS`, that we want 10 rows scored at a time (resulting in 15 function calls), the user-defined function, the linear model object, and that we want the result to be returned as a single table by specifying the table definition.
+
     ```
     %python
     <copy>
