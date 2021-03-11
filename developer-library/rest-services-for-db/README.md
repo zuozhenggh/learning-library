@@ -1,12 +1,14 @@
-# Choose your Own JSON Adventure: Relational or Document Store
-
+# RESTful Services for your Autonomous Database
 
 ## Introduction
-Did you know that the Oracle Database fully supports schema-less application development using the JSON data model? In addition, in the same database, that developers can use SQL over the same data for analytics or reporting?
+Oracle REST Data Services (ORDS) bridges HTTPS and your Oracle Database. A mid-tier Java application, ORDS provides a Database Management REST API, SQL Developer Web, a PL/SQL Gateway, SODA for REST, and the ability to publish RESTful Web Services for interacting with the data and stored procedures in your Oracle Database. 
 
-This workshop will provide a walkthrough on how the Oracle Database can not only store, index and have transactional consistency (ACID) with JSON documents, but how you can leverage all the power of the database for advanced security, application development and a whole suite of Simple Oracle Document Access (SODA) APIs. 
+The Java EE implementation offers increased functionality including a command line based configuration, enhanced security, file caching, and RESTful web services. Oracle REST Data Services also provides increased flexibility by supporting deployments using Oracle WebLogic Server, Apache Tomcat, and a standalone mode. Oracle REST Data Services further simplifies the deployment process because there is no Oracle home required, as connectivity is provided using an embedded JDBC driver.
 
-%%%%%%%%
+
+Watch the video below for a comprehensive overview of REST and how ORDS provides what you need to deliver RESTful Services for your Oracle Database.
+
+[](https://youtu.be/rvxTbTuUm5k)
 
 ### Objectives
 
