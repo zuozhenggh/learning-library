@@ -9,7 +9,7 @@ FAN is configured and runs automatically when you install Oracle Grid Infrastruc
 Estimated Lab Time: 30 Minutes
 
 Watch the video below for an overview of the Fast Application Notification lab
-[](youtube:RICjcyFk3SE)
+[](youtube:J54SS_49AXs)
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
@@ -295,7 +295,7 @@ Download the FANWatcher utility
 
     ![](./images/fan-step4-num3.png " ")
 
-4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lcom3\#W3lcom3\##**
+4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lc0m3\#W3lc0m3\#**
 
 5. Create the service and start it.
    
@@ -326,11 +326,11 @@ Download the FANWatcher utility
     ```` 
     ![](./images/fan-step4-num6.png " ")
 
-8. Run the following commands to create a test user, password *W3lcom3#W3lcom##* and grant them the appropriate privileges
+8. Run the following commands to create a test user, password *W3lc0m3#W3lc0m3#* and grant them the appropriate privileges
    
     ````
     <copy>
-    create user test_user identified by W3lcom3#W3lcom## default tablespace users temporary tablespace temp;
+    create user test_user identified by W3lc0m3#W3lc0m3# default tablespace users temporary tablespace temp;
     alter user test_user quota unlimited on users;
     grant connect, resource, create session to test_user;
     exit;
@@ -346,7 +346,7 @@ Download the FANWatcher utility
     </copy>
     ```` 
 
-10. Enter the following commands and edit the **fanWatcher.bash** script by entering the folloiwing **vi** command
+10. Enter the following commands and edit the **fanWatcher.bash** script by entering the following **vi** command
 
     ````
     <copy>

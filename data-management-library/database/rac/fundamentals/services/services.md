@@ -167,19 +167,33 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     **sqlplus user/password@//SCAN Address Name/service-name**
     ````
-5. Connect via sqlplus and replace the password with the password you chose for your cluster.
+
+5. To get the SCAN address run the following command
+
+    ````
+    <copy>
+    srvctl config scan
+    </copy>
+    ````  
+
+6. Connect via sqlplus and replace the scan address name and the password with the password you chose for your cluster.
    
     ````
-     sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
-    ````
+    <copy>
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<Node2HostName>/svctest.pub.racdblab.oraclevcn.com as sysdba
+    </copy>
+    ```` 
+
     ![](./images/lab6-step2-num5-2.png " ")
 
 
 6. Using a different cloud shell window (connected to either node) open a SQL*Plus connection as SYS to the PDB associated with this service
 
     ````
-    sqlplus sys/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
-    ````
+    <copy>
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutScanNameHere>/pdb1.pub.racdblab.oraclevcn.com as sysdba
+    </copy>
+    ```` 
     and run the following SQL statement
 
     ````
@@ -267,19 +281,52 @@ where you will see similar to:
     CLBTEST = (DESCRIPTION =
        (ADDRESS = (PROTOCOL = TCP)(HOST = racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT = 1521))
        (LOAD_BALANCE = no) (FAILOVER = yes)
-       (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com) ) )
+       (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = unisrv.pub.racdblab.oraclevcn.com) ) )
 
 
     CLBTEST-LOCAL = (DESCRIPTION =
         (LOAD_BALANCE = on) (FAILOVER = off)
-        (ADDRESS = (PROTOCOL = TCP)(HOST = racnode1)(PORT = 1521))
-        (ADDRESS = (PROTOCOL = TCP)(HOST = racnode2)(PORT = 1521))
-        (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)))
+        (ADDRESS = (PROTOCOL = TCP)(HOST = HostName1)(PORT = 1521))
+        (ADDRESS = (PROTOCOL = TCP)(HOST = HostName2)(PORT = 1521))
+        (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = unisrv.pub.racdblab.oraclevcn.com)))
     </copy>
     ````
 
     ![](./images/tnsnames-2.png " ")
 
+5. Run the command to get your scan name
+    ````
+    <copy>
+    srvctl config scan
+    </copy>
+    ````
+
+6. Run the nslookup command followed by your scan name
+
+    ````
+    <copy>
+    nslookup <PutScanNameHere>
+    </copy>
+    ````
+    ![](./images/nslookup.png " ")
+
+7. Run the ping command
+
+    ````
+    <copy>
+    ping <putScanNameHere> -c 2
+    </copy>
+    ````
+    ![](./images/ping.png " ")
+
+ 8. Use the CLBTEST alias to connect
+
+     ````
+    <copy>
+    $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST 
+    </copy>
+    ````
+   
 5. Create 10 connections using the alias CLBTEST and look at where the connections were established
 
     ````
@@ -379,7 +426,7 @@ where you will see similar to:
      (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
      (ADDRESS_LIST =(LOAD_BALANCE=on)
      (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
-     (CONNECT_DATA=(SERVICE_NAME = testy.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)))
+     (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
    </copy>
     ````
 
