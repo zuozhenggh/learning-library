@@ -1,8 +1,8 @@
 {
-    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+    "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
       },
         {
