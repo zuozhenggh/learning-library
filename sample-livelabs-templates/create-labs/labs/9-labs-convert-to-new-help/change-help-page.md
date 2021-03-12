@@ -37,11 +37,23 @@ This is the result we want. The button bring up a pre-populated email directed t
     ````
     ![](images/search-tutorials.png)
 
-4. Box 2: has options for search strictness, regular expressions, and replace all. We'll be using them later on to help delete the old "Need Help?" sections.
+4. Box 2: has options for search strictness, regular expressions, and replace all. We'll be using regex later on to help delete the old "Need Help?" sections.
 
 5. Box 3: click on each result will bring up the corresponding file (Box 4) for easy editing! Don't forget to save and double check your work!
     
+6. If you want to, you can use replace all to quickly and easily add your email support button string from #1. To do so, just add that string followed by the "tutorial": [ that you were searching for. 
 
+    ````
+        <copy>"help": "support-inbox-address@oracle.com",
+        "tutorials": [ </copy>
+    ````
+
+7. If you used replace all, I'd recommend you run another search with a loose top parameter to see if someone accidentally added two instances of the help button. Another team could have updated the manifest, you never know. 
+
+    ````
+        <copy>@oracle.com",
+        "help": "support-inbox-address@oracle.com",</copy>
+    ````
 
 
 ## **STEP 2:** Add Your "Need Help?" Lab Page to Every Workshop Using an Absolute Path 
