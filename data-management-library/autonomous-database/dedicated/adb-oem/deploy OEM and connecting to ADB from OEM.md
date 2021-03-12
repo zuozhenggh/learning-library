@@ -177,5 +177,3 @@ As a Database Administrator,
 - **Authors** - Navya M S & Padma Priya Natarajan
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

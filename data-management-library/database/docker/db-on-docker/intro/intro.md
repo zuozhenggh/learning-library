@@ -38,7 +38,3 @@ In the workshop, you will:
 * **Contributors** - Kay Malcolm, Director, Anoosha Pilli, Product Manager
 * **Last Updated By/Date** - Anoosha Pilli, Product Manager, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

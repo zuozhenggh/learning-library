@@ -30,5 +30,3 @@ In this lab you will:
  - **Author** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
  - **Last Updated By/Date** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

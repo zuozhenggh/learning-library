@@ -159,5 +159,3 @@ You may also setup your VPN server with multiple users. Follow the OpenVPN confi
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

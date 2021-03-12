@@ -107,5 +107,3 @@ For more information about Standby Databases, see the documentation  [About Stan
 * Authors - Vandanadevi Rajamani, Database User Assistance; Nilay Panchal, ADB Product Management
 * Last Updated By/Date -Vandanadevi Rajamani/November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

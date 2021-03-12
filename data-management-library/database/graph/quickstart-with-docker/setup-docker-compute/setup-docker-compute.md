@@ -215,5 +215,3 @@ You may now *proceed to the next lab*.
 * **Contributor** - Anoosha Pilli, Product Manager, Arabella Yao, Product Manager Intern, Database Management, June 2020
 * **Last Updated By/Date** - Anoosha Pilli, October 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

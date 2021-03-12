@@ -234,5 +234,3 @@ You may now proceed to the next lab.
 * **Contributors** - Thanks to Jenny Tsai and Arabella Yao for helpful, constructive feedback that improved this workshop.
 * **Last Updated By/Date** - Ryota Yamanaka, Product Manager, Spatial and Graph, January 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

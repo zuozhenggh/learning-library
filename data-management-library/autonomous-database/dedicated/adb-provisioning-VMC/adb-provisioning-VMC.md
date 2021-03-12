@@ -65,5 +65,3 @@ Once created, your Autonomous Exadata VM Cluster is ready to deploy Autonomous C
 - **Author** - Simon Law & Kris Bhanushali
 - **Last Updated By/Date** - Kris Bhanushali, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
