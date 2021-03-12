@@ -1,4 +1,6 @@
-# Need Help?                                  
+# Need Help?   
+
+## Introduction
 This page is designed to help you solve some common problems users face in this LiveLab. 
 
 If you still find yourself stuck or would like to report an issue with the workshop, click the question mark icon in the upper left corner to contact the LiveLabs team directly via email.  
@@ -7,12 +9,12 @@ If you still find yourself stuck or would like to report an issue with the works
 
 For more about constructing the email, click [here]().
 
-## Common Issues 
-- [Can't Login to Oracle Cloud]()
-- [Can't Create An Oracle Database? Nothing In Your Compartment?](#CantCreateAnOracleDatabase?NothingInYourCompartment?)
-- [Connectivity Issues? Unable To Upload Data or Connect To The database?]()
+### Common Issues Table of Contents
+  - [Can't Login to Oracle Cloud](#cant-login-to-oracle-cloud)
+  - [Can't Create An Oracle Database? Nothing In Your Compartment?](#cant-create-an-oracle-database-nothing-in-your-compartment)
+  - [Connectivity Issues? Unable To Upload Data or Connect To The database?](#connectivity-issues-unable-to-upload-data-or-connect-to-the-database)
 
-## **Rate This Workshop**
+### **Rate This Workshop**
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating. 
 
 1.  Go back to your **Workshop Homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
@@ -28,8 +30,8 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 If you still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 
-## How To Format Your E-mail
-This will construct an e-mail in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. We ask that you do not change the subject line. Instead, include the description of your issue and any pertinent information in the contents on your e-mail.
+## How To Format Your Support Email Request
+This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. We ask that you do not change the subject line. Instead, include the description of your issue and any pertinent information in the contents on your email.
 
 ![](images/e-mail.png)
 
