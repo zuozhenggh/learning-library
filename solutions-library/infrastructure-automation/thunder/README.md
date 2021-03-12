@@ -1,7 +1,7 @@
 # Oracle ISV Thunder Cloud Adoption Framework
 
 This crawl, walk, run framework leverages our experiences and best practices in assisting
-ISV organizations around the world adopting OCI. This project is open source and maintained by Oracle Corp. 
+ISV organizations around the world adopting OCI. This project is open source and maintained by Oracle Corp.
 
 In the span of a few days or hours, the code examples provided here establish an easy to understand path to gaining operational proficiency in OCI, including the vast majority components required to build and operate your software. Use as little or as much as you find useful here to shorten your time to market, we welcome the collaboration.
 

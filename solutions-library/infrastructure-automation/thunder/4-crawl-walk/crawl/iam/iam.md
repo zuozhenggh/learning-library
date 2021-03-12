@@ -1,4 +1,4 @@
-# Identity and Access Managment - __*Crawl*__ 
+# Identity and Access Managment - Crawl
 
 ## Introduction
 IAM is the terminology used in OCI to govern and control acccess to resources in your tenancy.
@@ -9,17 +9,17 @@ Users go into groups, policy defines what the groups can do.
 
 __*This is the foundation of the framework. Start Here.*__
 
-## IAM __*Crawl*__
+## IAM Crawl
 
 The artifacts below will be created with terraform automation:
- 
-* **5 groups place users into each based on their role** 
+
+* **5 groups place users into each based on their role**
     * Root_IAMAdminManagers - Super user (root) for creating Administrators and NetSecAdmins
     * User_IAMManagers - Allowed to manage all users __*excluding*__ Administrators and NetSecAdmins
     * Tenancy_NetSecAdmins - Network Security Administrators with control over ipsec components
     * Tenancy_ReadOnly - Read only access to all resources in Tenancy
-    * Sandbox_Engineer - Group able to perform Engineering activities on all resources limited to the sandbox compartment. 
-  
+    * Sandbox_Engineer - Group able to perform Engineering activities on all resources limited to the sandbox compartment.
+
 __*Add users to the Sandbox_Engineer group to experiment in the sandbox compartment.*__
 
 * **5 policies that define what each group can do**
