@@ -48,24 +48,15 @@ After the Oracle Data Safe environment is set up by your tenancy administrator, 
 
 3. When you're ready to sign in, click the **Sign in to your new user account** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
 
-
 4. Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud user name.
 
-
 5. In the **PASSWORD** field, enter the temporary password provided to you by your tenancy administrator.
-
 
 6. Click **Sign In**.
 
 7. If prompted by your browser to save the password, click **Never**.
 
-
-
 8. If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Save New Password**. After you sign in, the message **Email Activation Complete** is displayed.
-
-
-
-
 
 You are ready to begin the labs. Start with the [**Introduction**](?lab=introduction).
 
@@ -210,13 +201,13 @@ When you are done setting up the environment, email the user with the following 
 
 ## Learn More
 
-- [ Oracle Cloud Infrastructure documentation - Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm)
+- [ Oracle Cloud Infrastructure documentation - Signing In to the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm)
 
 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, December 14, 2020
+* **Last Updated By/Date** - Jody Glover, March 12, 2021
 
 
 ## Need Help?
