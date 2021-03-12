@@ -12,60 +12,18 @@ Why bother with creating all the infrastructure manually, or creating all the te
 Solutions in this framework are split between multiple examples containing both terraform and python automations.
 The examples are organized as follows:
 
-<table>
-  <tr>
-    <th width="200">Type</th>
-    <th width="400">Description</th>
-    <th width="400">Components</th>
-  </tr>
-  <tr>
-    <td><a href="?lab=lab-4-crawl-walk">Crawl</td>
-    <td>Independent examples for OCI's basic resources</td>
-    <td>adw_atp, dbaas, iam, instances, network</td>
-  </tr>
-  <tr>
-    <td><a href="?lab=lab-4-crawl-walk">Walk</td>
-    <td>Independent examples for OCI's advanced resources</td>
-    <td>dns, fss, instance-principal, load-balancer, object-storage</td>
-  </tr>
-  <tr>
-    <td><a href="?lab=lab-5-free-tier">Free Tier</td>
-    <td>Contains the always free components</td>
-    <td>1 Instance, 1 LB, 1 Network, 1 ATP, 1 Object Storage Bucket</td>
-  </tr>
-  <tr>
-    <td><a href="?lab=lab-6-enterprise-tier">Enterprise Tier</td>
-    <td>Starting point for all automations</td>
-    <td>Contains all crawl and walk terraform components</td>
-  </tr>
-  <tr>
-    <td><a href="?lab=lab-7-run-examples">Run</td>
-    <td>Different examples that may help you get proficient experience on OCI.</td>
-    <td>backup-restore, glusterfs, grafana, start-stop, asg, remote-peering, kms, waas, fss-redudancy</td>
-  </tr>
-  <tr>
-    <td><a href="?lab=lab-8-network-architectures">Network Architectures</td>
-    <td>Contains network architecture examples</td>
-    <td>N Tier Web App, SaaS Isolated/Shared</td>
-  </tr>
-    <tr>
-    <td><a href="?lab=lab-9-custom-images">Custom Images</td>
-    <td>Contains custom images examples</td>
-    <td>Packer OCI/Non-OCI builder images, move images from region 1 to region 2</td>
-  </tr>
-  </tr>
-    <tr>
-    <td><a href="?lab=lab-10-dev-tools">Developer Tools</td>
-    <td>Contains developer tools examples</td>
-    <td>OKE, API Gateway, Functions, Marketplace Instances</td>
-  </tr>
-  </tr>
-    <tr>
-    <td><a href="?lab=lab-11-ci-cd">CI CD</td>
-    <td>CI/CD Examples for Github and Gitlab</td>
-    <td>Packer, Ansible, Docker based solutions</td>
-  </tr>
-</table>
+
+| Type      | Description | Components    |
+| :----:       |    :----:   |   :----: |
+| Crawl      | Independent examples for OCI's basic resources       | adw_atp, dbaas, iam, instances, network  |
+| Walk      | Independent examples for OCI's advanced resources       | dns, fss, instance-principal, load-balancer, object-storage  |
+| Free Tier      | Contains the always free components       | 1 Instance, 1 LB, 1 Network, 1 ATP, 1 Object Storage Bucket  |
+| Enterprise Tier      | Starting point for all automations       | Contains all crawl and walk terraform components  |
+| Run      | Different examples that may help you get proficient experience on OCI.       | backup-restore, glusterfs, grafana, start-stop, asg, remote-peering, kms, waas, fss-redudancy  |
+| Network Architectures      | Contains network architecture examples       | N Tier Web App, SaaS Isolated/Shared  |
+| Custom Images      | Contains custom images examples       | Packer OCI/Non-OCI builder images, move images from region 1 to region 2  |
+| Developer Tools      | Contains developer tools examples       | OKE, API Gateway, Functions, Marketplace Instances  |
+| CI CD      | CI/CD Examples for Github and Gitlab | Packer, Ansible, Docker based solutions  |
 
 
 ## Acknowledgements
