@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Autonomous Database Quickstart Workshop",
-    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+    "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction",
@@ -8,7 +8,7 @@
             "filename": "./intro.md"
         },
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "description": "Get a Free Trial",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },

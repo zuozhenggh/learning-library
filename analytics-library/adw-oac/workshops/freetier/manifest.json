@@ -2,7 +2,7 @@
   "workshoptitle": "Setting up a Departmental Data Warehouse with ADW and OAC",
   "tutorials": [
     {
-      "title": "Prerequisites",
+      "title": "Getting Started",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
