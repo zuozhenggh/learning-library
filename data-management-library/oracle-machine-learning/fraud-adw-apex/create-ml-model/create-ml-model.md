@@ -123,7 +123,7 @@ This step discusses the result of each portion of the notebook.
 
     ![](images/unsuper-6.png)
 
-Please proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

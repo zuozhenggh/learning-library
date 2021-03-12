@@ -40,7 +40,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 1:** Prepare data for the lab in ATP
 
-1.  From the hamburger menu, select **Autonomous Transaction Processing** and navigate to your ATP instance.
+1.  From the hamburger menu, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
     ![](./images/choose-atp.png " ")
 
