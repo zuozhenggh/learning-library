@@ -47,6 +47,6 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, January 2021
- - **Last Updated By/Date** - Emmanuel Leroy, January 2021
+ - **Author** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
+ - **Last Updated By/Date** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
 
