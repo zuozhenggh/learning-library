@@ -31,11 +31,15 @@ If you still have an active reservation, you can also rate by going to My Reserv
 
 
 ## How To Format Your Support Email Request
-This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. We ask that you do not change the subject line. Instead, include the description of your issue and any pertinent information in the contents on your email.
+This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. Follow the steps below to contact us and get a quick resolution to your issue.
+
+1. Do not change the subject line. 
+2. Include the description of your issue and any pertinent information in the contents on your email.
 
 ![](images/e-mail.png)
 
-To provide the most effective support for you, we ask that you include the **Lab Number**, **Step Number**, and **Sub-Step Number** where you've encounter the issue. We also ask that you attach a **Screenshot** and **Any Troubleshooting Steps** you've tried so we can recreate the issue and provide a timely and accurate solution.
+3. Include the **Lab Number**, **Step Number**, and **Sub-Step Number** where you've encounter the issue. 
+4. Attach a **Screenshot** and **Any Troubleshooting Steps** you've tried so we can recreate the issue and provide a timely and accurate solution.
 
 ![](images/problem-picture2.png)
 
