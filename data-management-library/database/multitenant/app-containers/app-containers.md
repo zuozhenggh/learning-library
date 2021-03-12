@@ -2525,7 +2525,3 @@ The tasks you will accomplish in this step are:
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

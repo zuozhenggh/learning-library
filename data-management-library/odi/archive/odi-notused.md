@@ -183,5 +183,4 @@ ls -al ./admin/ORCL/dpdump/A24A0F23F87C284FE0537F00000AFF5C/EXPDAT01-05_51_33.DM
  - **Author** - Troy Anthony, Jeff Smith May 2020
  - **Last Updated By/Date** - Troy Anthony, May 28 2020
 
- ## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+ 

@@ -410,7 +410,7 @@ existing projects.
 
 Watch our short recap video that includes an outlook of other functionalities of **Oracle Autonomous Database (ADB)** and **Oracle Analytics Cloud (OAC)**:
 
-[](youtube:/vlojHIcqKBc)
+[](youtube:/Iz4lRgnql4o)
 
 *Congratulations! Well done!*
 

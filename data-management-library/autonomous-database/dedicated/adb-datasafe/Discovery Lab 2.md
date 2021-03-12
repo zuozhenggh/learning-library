@@ -140,5 +140,3 @@ You can manually update your sensitive data model while continuing to work in th
 - **Last Updated By/Date** - Kris Bhanushali, September 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

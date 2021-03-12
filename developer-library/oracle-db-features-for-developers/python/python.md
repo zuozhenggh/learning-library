@@ -524,5 +524,3 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 - **Contributors** - Anoosha Pilli, Dylan McLeod, Arabella Yao
 - **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

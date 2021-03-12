@@ -378,5 +378,3 @@ Watch this video to learn more about JSON in the Oracle Database.
 - **Contributors** - Beda Hammerschmidt (Architect), Nilay Panchal, Anoosha Pilli & Troy Anthony (Product Management), Dylan McLeod (LiveLabs QA Intern)
 - **Last Updated By/Date** - Nilay Panchal, DB Product Management, August 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

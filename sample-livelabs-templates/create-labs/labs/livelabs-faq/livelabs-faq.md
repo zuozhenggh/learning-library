@@ -242,5 +242,3 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 * **Reviewed by:** Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 * **Last Updated By/Date:** Kay Malcolm, February 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

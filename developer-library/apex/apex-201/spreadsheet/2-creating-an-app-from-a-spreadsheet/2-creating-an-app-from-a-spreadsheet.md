@@ -90,5 +90,3 @@ You now know how to create an application from a spreadsheet by either dragging 
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

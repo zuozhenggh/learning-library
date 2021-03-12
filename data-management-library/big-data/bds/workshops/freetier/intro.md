@@ -68,5 +68,3 @@ Use the following links to get more information about BDS and OCI:
     * Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, January 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

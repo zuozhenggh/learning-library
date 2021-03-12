@@ -479,5 +479,3 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 - **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
 - **Last Updated By/Date** - Jayant Sharma, October 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

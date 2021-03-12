@@ -110,7 +110,3 @@ Oracle Cloudからサインアウトした場合は、以下の手順を使用�
 - **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
 - **最終更新日** - Rene Fontcha, February 2021
 
-## Need Help?
-
-フィードバックやご質問はlivelabs-help-db_us@oracle.com までメールをお送りください。ワークショップ名とラボ名を必ず明記してください。また、スクリーンショットやファイルを添付することもできます。<br>
-*注:英語のみ対応*

@@ -133,5 +133,3 @@ The graph should now look like
 * **Last Updated By/Date** - Ryota Yamanaka, Feburary 2021
 * **Lab Expiry Date** - November 30, 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
