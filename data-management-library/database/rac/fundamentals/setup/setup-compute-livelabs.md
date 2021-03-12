@@ -24,9 +24,13 @@ For more information about Terraform and Resource Manager, please see the append
 ## **STEP 1**: Login to Oracle Cloud
 
 1.  Login to Oracle Cloud
-2.  Open up the hamburger menu in the left hand corner.  
+2.  Click on the down arrow next to Oracle Cloud Infrastructure Direct Sign in
+3.  Enter your username and password you were provided
+4.  Change the password if prompted
+5.  In the upper right corner select the region you were assigned
+6.  Open up the hamburger menu in the left hand corner.  
 
-3.  From the hamburger menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category. 
+7.  From the hamburger menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category. 
 
   ![](./images/setup-compute-1.png " ")
 
@@ -42,7 +46,7 @@ For more information about Terraform and Resource Manager, please see the append
 
   ![](./images/setup-compute-4.png " ")
 
-5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps.  We recommend you choose Oracle Cloud Shell for this series of workshops.
+5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private and Public Key to the cloud shell and set the proper permissions, otherwise, choose the platform that matches your local environment. 
 - [Step 2: Oracle Cloud Shell (RECOMMENDED)](#STEP5:OracleCloudShell)
 - [Step 3: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
 - [Step 4: Putty](#STEP7:WindowsusingPutty)
