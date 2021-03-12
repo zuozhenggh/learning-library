@@ -6,7 +6,7 @@ In this workshop you will explore the features of Spatial Studio for self-servic
 
 ![img alt text](./images/spatial-studio-project.png)
 
-Estimated Workshop Time: xx minutes
+Estimated Workshop Time: 2 hours
 
 
 ### About Oracle Spatial Studio

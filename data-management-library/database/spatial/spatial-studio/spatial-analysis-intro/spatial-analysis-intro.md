@@ -32,7 +32,7 @@ Spatial Studio provides access to the spatial analysis features of Oracle Databa
 
 In this lab you will explore several of these spatial analyses.
 
-Estimated Lab Time: xx minutes
+Estimated Lab Time: 45 minutes
 
 
 ### Objectives
@@ -166,7 +166,9 @@ In this step, you determine the nearest accident to each police station. The res
 
    ![Image alt text](images/spatial-analysis-20.png "Image title")  
 
-2. In the Nearest per item dialog, name the result POLICE\_POINTS WITH NEAREST ACCIDENT (or a name of your choosing). For each item in POLICE\_POINTS you are finding the nearest item in ACCIDENTS. Expand the Advanced section. Enable the options to Include distance in the result. For the distance column enter DISTANCE\_TO\_ACCIDENT (or a name of your choosing) and select a distance unit. Then click **Run**.
+2. In the Nearest per item dialog, name the result POLICE\_POINTS WITH NEAREST ACCIDENT (or a name of your choosing). For each item in POLICE\_POINTS you are finding the nearest item in ACCIDENTS. Expand the Advanced section. Enable the options to Include distance in the result. For the distance column name enter DISTANCE\_TO\_ACCIDENT (or a name of your choosing). Change the distance units to Kilometer (or another unit of your choosing).  
+      
+   Then click **Run**.
 
    ![Image alt text](images/spatial-analysis-21.png "Image title")  
 

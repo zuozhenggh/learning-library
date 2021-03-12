@@ -10,7 +10,7 @@ Users often need to incorporate data acquired from various sources. To support t
 In addition to loading spatial formats, Spatial Studio supports loading spreadsheets. In that case, additional preparation is needed to derive geometries from spatial attributes such as addresses ("address geocoding") and latitude/longitude coordinates ("coordinate indexing"). Those cases are not covered in this lab but will be the subject of a separate lab.
 
 
-Estimated Lab Time: xx minutes
+Estimated Lab Time: 15 minutes
 
 
 ### Objectives

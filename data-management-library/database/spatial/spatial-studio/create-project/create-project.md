@@ -5,7 +5,7 @@
 
 In Spatial Studio, a Project is where you visualize and analyze your data. Projects may be saved so that you can resume work, and they can be published so that you can share your results with others.  In this lab you create and save your first Project. 
 
-Estimated Lab Time: xx minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
