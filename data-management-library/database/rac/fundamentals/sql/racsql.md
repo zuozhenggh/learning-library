@@ -14,7 +14,7 @@ Estimated Lab Time: 10 Minutes
 - Lab: Services
 
 Watch the video below for an overview of the SQL and PL/SQL Sequences lab
-[](youtube:_PXCoV36M9E)
+[](youtube:x8UkHPBkwJo)
 
 ## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
@@ -171,7 +171,7 @@ Watch the video below for an overview of the SQL and PL/SQL Sequences lab
     ````
     <copy>
     sudo su - oracle
-    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutHostNameHere>:1521/pdb1.pub.racdblab.oraclevcn.com as sysdba
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutHostNameHere>:1521/unisrv.pub.racdblab.oraclevcn.com as sysdba
     </copy>
     ````
 3. Connect to **node 2** as the *opc* user and switch to the *oracle* user.  *Remember to replace the password as you did in Step 1.*
@@ -179,7 +179,7 @@ Watch the video below for an overview of the SQL and PL/SQL Sequences lab
     ````
     <copy>
     sudo su - oracle
-    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutHostNameHere>:1521/pdb1.pub.racdblab.oraclevcn.com as sysdba
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutHostNameHere>:1521/unisrv.pub.racdblab.oraclevcn.com as sysdba
     </copy>
     ````
     ![](./images/sqlplus-node2.png " ")
