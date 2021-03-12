@@ -17,7 +17,7 @@ This is the result we want. The button bring up a pre-populated email directed t
 
 ![](images/help-button2.png)
 
-1. To do this, just add the following string to the manifest.json file of the workshop. Customize the **email address** to point toward your team's dedicated support inbox. 
+1. To do this, just add the following string to the manifest.json file of the workshop. Customize the **email address** to point toward your team's dedicated support inbox. Make sure this address is in all lowercase to save your team from case sensitivity heartbreak in the future.
 
     ````
         <copy>"help": "support-inbox-address@oracle.com", </copy>
