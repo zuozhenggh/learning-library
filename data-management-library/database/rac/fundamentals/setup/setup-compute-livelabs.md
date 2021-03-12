@@ -46,7 +46,7 @@ For more information about Terraform and Resource Manager, please see the append
 
   ![](./images/setup-compute-4.png " ")
 
-5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps.  We recommend you choose Oracle Cloud Shell for this series of workshops.
+5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private and Public Key to the cloud shell and set the proper permissions.
 - [Step 2: Oracle Cloud Shell (RECOMMENDED)](#STEP5:OracleCloudShell)
 - [Step 3: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
 - [Step 4: Putty](#STEP7:WindowsusingPutty)
