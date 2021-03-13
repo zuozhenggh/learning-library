@@ -162,12 +162,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 ## **STEP 5**: Create ATP databases
 
-  Run the `createATPPDBs.sh` script providing the ocid for the DB users followed by the ocid for the FrontEnd microservice user
+  Run the `createATPPDBs.sh` script providing the Vault Secret ocids (created and noted in **Step 4**) for the DB users followed by the ocid for the FrontEnd microservice user
 
   ```
-  <copy>./createATPPDBs.sh</copy>
+  <copy>./createATPPDBs.sh <REPLACE WITH VAULT SECRET OCID FOR DB USER> <REPLACE WITH VAULT SECRET OCID FOR FRONTEND USER AUTH></copy>
   ```
-
 
    Notice creation of the ORDERDB and INVENTORYDB PDBs.
 
