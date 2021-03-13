@@ -107,11 +107,39 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 ## **STEP 4**: Create OCI Vault Secrets for the ATP PDB users and FrontEnd microservice authentication
 
-1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Dynamic Groups**.
+1. Open up the hamburger menu in the top-left corner of the Console and select **Security > Vault**.
+
+     ![](images/vaultmenu.png " ")
+     
+2. Click **Create Vault** , specify a name and click **Create**.
+
+   ![](images/masterencryptionkeys.png " ")
+   
+   Click the link for the vault you just created.
+   
+   COPY THE OCID FOR THE VAULT AND NOTE IT FOR LATER USE.
+ 
+3. Click **Master Encryption Key** , click **Create Key**, enter a name, and click **Create Key**
+   
+      ![](images/createmasterencryptionkey.png " ")
+        
+3. Click **Secrets** , click **Create Secret*, enter a name, and password (in the **Secret Contents** field) for the database users you will create later and click **Create Secret**
+   
+      ![](images/createsecret.png " ")
+      
+   COPY THE OCID OF THIS DB PASSWORD SECRET AND NOTE IT FOR LATER USE.
+        
+4. Repeat the process to create a secret for the FrontEnd microservice authentication
+   
+     ![](images/createfrontendauthpwsecret.png " ")
+        
+   COPY THE OCID OF THIS FRONTEND MICROSERVICE AUTH PASSWORD SECRET AND NOTE IT FOR LATER USE.
+   
+5. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Dynamic Groups**.
 
      ![](images/dynamicgroupmenu.png " ")
 
-2. Click **Create Dynamic Group** , specify a name, and the following matching rule providing your compartment ocid
+6. Click **Create Dynamic Group** , specify a name, add the following matching rule providing your compartment ocid
 
      `All {instance.compartment.id = 'ocid1.compartment.oc1..aaaaaaaaaaaputyourcompartmentidhereaaaaaaaaaaaai3sa'}`
      
@@ -119,39 +147,17 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
      ![](images/createdynamicgroup.png " ")
      
-3. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Policies**:
+7. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Policies**:
 
      ![](images/policymenu.png " ")
      
-4. Click **Create Policy** specify a name and the following matching rule providing your compartment ocid
+8. Click **Create Policy** specify a name and the following matching rule providing your compartment and vault ocids
    
-     ![](images/policypage.png " ")
+   `Allow dynamic-group yourdynamicgroupname to manage secret-family in compartment id ocid1.compartment.oc1..yourcompartmentid where target.vault.id = 'ocid1.vault.oc1.phx.yourvaultid'`
+  
+     ![](images/createpolicy.png " ")
      
-5. Open up the hamburger menu in the top-left corner of the Console and select **Security > Vault**:
-
-     ![](images/vaultmenu.png " ")
-     
-6. Click **Create Vault** , specify a name and the following matching rule providing your compartment ocid
-   
-        `All {instance.compartment.id = 'ocid1.compartment.oc1..aaaaaaaaaaaputyourcompartmentidhereaaaaaaaaaaaai3sa'}`
-        
-        and click **Create**.
-   
-        ![](images/createdynamicgroup.png " ")
-        
-7. Click **Master Encryption Key** , click create key, enter a name, and click create
-   
-        ![](images/createmasterencryptionkeys.png " ")
-        
-        ![](images/masterencryptionkeys.png " ")
-        
-7. Click **Secrets** , clikc create secret enter a name, and click create
-   
-        ![](images/createsecret.png " ")
-        
-7. Repeat the process to create a secret for the FrontEnd microservice authentication
-   
-        ![](images/createfrontndauthpwsecret.png " ")
+    and click **Create**
      
 
 ## **STEP 5**: Create ATP databases
