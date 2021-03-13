@@ -28,16 +28,16 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
     ```
-    <copy>cd ~ ; curl -sL https://tinyurl.com/y2a7c3ld --output master.zip ; unzip master.zip ; rm master.zip</copy>
+    <copy>cd ~ ; curl -sL https://tinyurl.com/u6z68edu --output datadriven-master.zip ; unzip datadriven-master.zip; rm datadriven-master.zip</copy>
     ```
 
   You should now see `msdataworkshop-master` in your root directory
 
 
-2. Change directory into the msdataworkshop-master directory:
+2. Change directory into the cd datadriven-master/grabdish directory:
 
     ```
-    <copy>cd msdataworkshop-master</copy>
+    <copy>cd cd datadriven-master/grabdish</copy>
     ```
 
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
@@ -105,9 +105,58 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
     _There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step._
 
-## **STEP 4**: Create ATP databases
+## **STEP 4**: Create OCI Vault Secrets for the ATP PDB users and FrontEnd microservice authentication
 
-  Run the `createATPPDBs.sh` script.
+1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Dynamic Groups**.
+
+     ![](images/dynamicgroupmenu.png " ")
+
+2. Click **Create Dynamic Group** , specify a name, and the following matching rule providing your compartment ocid
+
+     `All {instance.compartment.id = 'ocid1.compartment.oc1..aaaaaaaaaaaputyourcompartmentidhereaaaaaaaaaaaai3sa'}`
+     
+     and click **Create**.
+
+     ![](images/createdynamicgroup.png " ")
+     
+3. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Policies**:
+
+     ![](images/policymenu.png " ")
+     
+4. Click **Create Policy** specify a name and the following matching rule providing your compartment ocid
+   
+     ![](images/policypage.png " ")
+     
+5. Open up the hamburger menu in the top-left corner of the Console and select **Security > Vault**:
+
+     ![](images/vaultmenu.png " ")
+     
+6. Click **Create Vault** , specify a name and the following matching rule providing your compartment ocid
+   
+        `All {instance.compartment.id = 'ocid1.compartment.oc1..aaaaaaaaaaaputyourcompartmentidhereaaaaaaaaaaaai3sa'}`
+        
+        and click **Create**.
+   
+        ![](images/createdynamicgroup.png " ")
+        
+7. Click **Master Encryption Key** , click create key, enter a name, and click create
+   
+        ![](images/createmasterencryptionkeys.png " ")
+        
+        ![](images/masterencryptionkeys.png " ")
+        
+7. Click **Secrets** , clikc create secret enter a name, and click create
+   
+        ![](images/createsecret.png " ")
+        
+7. Repeat the process to create a secret for the FrontEnd microservice authentication
+   
+        ![](images/createfrontndauthpwsecret.png " ")
+     
+
+## **STEP 5**: Create ATP databases
+
+  Run the `createATPPDBs.sh` script providing the ocid for the DB users followed by the ocid for the FrontEnd microservice user
 
   ```
   <copy>./createATPPDBs.sh</copy>
