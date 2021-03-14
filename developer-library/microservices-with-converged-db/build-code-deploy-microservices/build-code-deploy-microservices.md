@@ -117,7 +117,7 @@ You will also clone a GitHub repository.
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
 8. Check that the load balancer service is running, and write down the external IP
-    address and port.
+    address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
@@ -129,9 +129,19 @@ You will also clone a GitHub repository.
 
   ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
-9. You are ready to access the frontend page. Open a new browser tab and enter the external IP and port URL:
+9. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
 
-  `http://<EXTERNAL-IP>:8080`
+  `https://<EXTERNAL-IP>`
+
+  Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
+  
+  You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the on created and stored in a vault secret in Lab 1 Step 4.
+  
+  ![](images/frontendauthlogin.png " ")
+  
+  You should then see the Front End home page. You've now deployed and accessed your first microservice of the lab!
+  
+  Note that links on Front End will not work yet as they access microservices that will be created and deployed in subsequent labs.
 
   ![](images/frontendhome.png " ")
 
