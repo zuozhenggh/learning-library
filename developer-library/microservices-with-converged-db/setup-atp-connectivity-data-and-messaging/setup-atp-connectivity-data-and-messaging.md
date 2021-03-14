@@ -82,19 +82,10 @@ You will run a script that will download the connection information (wallet, tns
 
   ![](images/createAll.png " ")
 
-3.  Execute `msdataworkshop` and notice secrets for order and inventory database and users.
+3.  Execute `msdataworkshop` and notice secrets for order and inventory wallets.
     ```
     <copy>msdataworkshop</copy>
     ```
-    ![](images/msdataworkshop_secrets.png " ")
-
-    If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace
-    ```
-    <copy>./deleteAll.sh</copy>
-    ```
-
-  ![](images/deleteAll.png " ")
-
 
 ## **STEP 3**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
 You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
