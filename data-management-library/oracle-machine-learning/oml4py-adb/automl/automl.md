@@ -22,7 +22,8 @@ In this lab, you will learn how to:
 
 1. Run the following script to import `oml` module, Pandas package, and `automl`module.
     ```
-    <copy>%python
+    %python
+    <copy
 
     import pandas as pd
     import oml
@@ -31,7 +32,8 @@ In this lab, you will learn how to:
 
 2. Use the `oml.sync` function to create an OML Dataframe as a proxy for the database table WINE.
     ```
-    <copy>%python
+    %python
+    <copy
 
     WINE = oml.sync("OMLUSER", table = "WINE")
     print(WINE.shape)
@@ -43,14 +45,16 @@ In this lab, you will learn how to:
 In this step, you prepare the wine data set by separating predictors from the target as conventional for Python model building. This produces two new proxy objects that will be used in AutoML functions.
 1. Run the following script to prepare the wine data set:
     ```
-    <copy>%python
+    %python
+    <copy
 
     WINE_X_cl,WINE_y_cl = WINE.drop('target'), WINE['target']</copy>
     ```
 
 2. Run the following script to select the top classification algorithms for predicting the WINE data target. It displays the top ranked algorithms and their accuracy.
     ```
-    <copy>%python
+    %python
+    <copy
 
     as_wine_cl = automl.AlgorithmSelection(mining_function='classification', score_metric='accuracy', parallel=2)
 
@@ -72,7 +76,8 @@ You see the set of selected columns.
 
 1. Run the following script to define the Feature Selection object `fs_wine_cl` and call the `reduce` function with the selected algorithms and WINE proxy objects.:
     ```
-    <copy>%python
+    %python
+    <copy
 
     fs_wine_cl = automl.FeatureSelection(mining_function = 'classification', score_metric = 'accuracy', parallel=2)
 
@@ -100,7 +105,8 @@ Model tuning returns a dictionary with the best model and the evaluation results
 
 1. Run the following script to define the model tuning object `my_wine_cl` for classification and call `tune`.
     ```
-    <copy>%python
+    %python
+    <copy
 
     mt_wine_cl = automl.ModelTuning(mining_function = 'classification', parallel=2)
     mt_wine_cl.tune
@@ -114,7 +120,8 @@ Model tuning returns a dictionary with the best model and the evaluation results
 
 2. Run the following script to list the hyperparameters and their values tried for the top two models, along with the corresponding model's score metric value.
     ```
-    <copy>%python
+    %python
+    <copy
 
     hyper_results_cl = results_cl['all_evals']
 
@@ -124,7 +131,8 @@ Model tuning returns a dictionary with the best model and the evaluation results
 
 3. Run the following script to specify a custom search space to explore for model building using the `param_space` argument to the `tune` function. With this specification, model tuning will narrow the set of important hyperparameter values.
     ```
-    <copy>%python
+    %python
+    <copy
 
     search_space={'RFOR_SAMPLING_RATIO': {'type': 'continuous', 'range': [0.05, 0.5]},
                   'RFOR_NUM_TREES': {'type': 'discrete', 'range': [50, 55]},
@@ -148,7 +156,8 @@ As a short cut, you may choose to go directly to model selection on the training
 
 1. Run the following script to define a ModelSelection object and call `select` for automatically building the best model on the wine data.  select the best model for the wine data set:
     ```
-    <copy>%python
+    %python
+    <copy
 
     ms_wine = automl.ModelSelection(mining_function = 'classification', parallel=2)
 
