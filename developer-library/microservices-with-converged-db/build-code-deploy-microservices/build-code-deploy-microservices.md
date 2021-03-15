@@ -26,12 +26,6 @@ You will also clone a GitHub repository.
     <copy>./addAndSourcePropertiesInBashrc.sh</copy>
     ```
 
-2. Source the `.bashrc` file with the following command.
-
-    ```
-    <copy>source ~/.bashrc</copy>
-    ```
-
 ## **STEP 2**: Build and push the Docker images
 
 1. Run the `build.sh` script to build and push the
@@ -43,7 +37,7 @@ You will also clone a GitHub repository.
 
   ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
 
-  In a couple of minutes, you should have successfully built and pushed all the images into the OCIR repository.
+  In a few minutes, you should have successfully built and pushed all the images into the OCIR repository.
 
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
