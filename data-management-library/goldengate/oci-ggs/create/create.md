@@ -61,7 +61,7 @@ This lab assumes that you completed all preceding labs.
 
 13. Click **Create**.
 
-You're brought to the Deployment Detail page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 ## **STEP 2:** Review the Deployment details
 

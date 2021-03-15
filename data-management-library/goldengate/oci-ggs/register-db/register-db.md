@@ -19,25 +19,25 @@ This lab assumes that you completed all preceding labs.
 
 First, follow the steps below to register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
-1. Click **Registered Databases**.
+1.  Click **Registered Databases**.
 
     ![Click Registered Databases](images/01-01-ggs-registerdb.png "Click Registered Databases")
 
-2. Click **Register Database**.
+2.  Click **Register Database**.
 
     ![Click Register Database](images/01-02-ggs-registerdb.png "Click Register Database")
 
-3. In the Register Database panel, for Name and Alias, enter **SourceATP**.
+3.  In the Register Database panel, for Name and Alias, enter **SourceATP**.
 
-4. From the Compartment dropdown, select a compartment.
+4.  From the Compartment dropdown, select a compartment.
 
-5. Click **Select Database**.
+5.  Click **Select Database**.
 
-6. From the Database Type dropdown, select **Autonomous Database**.
+6.  From the Database Type dropdown, select **Autonomous Database**.
 
-7. For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ATP instance, and then select **ATPSource** from the dropdown. Some fields are autopopulated based on your selection.
+7.  For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ATP instance, and then select **ATPSource** from the dropdown. Some fields are autopopulated based on your selection.
 
-8. Click **Register**.
+8.  Enter the database's password in the Password field, and then click **Register**.
 
     ![Source Database details](images/01_01_12_regSourceDB.png)
 
@@ -55,7 +55,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 5. For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ADW instance, and then select **ADWTarget** from the dropdown. Some fields are autopopulated based on your selection.
 
-10. Click **Register**.
+6. Enter the database's password in the Password field, and then click **Register**.
 
     ![Target Database details](images/02_10-ggs-regDB_target.png)
 
