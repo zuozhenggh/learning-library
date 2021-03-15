@@ -1,6 +1,7 @@
 {
   "workshoptitle": "LiveLabs Step by Step",
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
     {
       "title": "Introduction",
       "description": "This lab provides an overview of the workshops and labs (livelabs).",
@@ -50,6 +51,16 @@
       "title": "Optional Lab 8: Publish Custom Compute Image to OCI Marketplace",
       "description": "This lab will show you how to create an OCI marketplace compute based artifact from your custom image, and use it to create a private listing on marketplace exclusively dedicated to your LiveLabs workshop.",
       "filename": "./../../8-labs-publish-custom-image-to-marketplace/8-labs-publish-custom-image-to-marketplace.md"
+    },
+    {
+      "title": "Optional Lab 9: Converting to Need Help Lab Workshop Template",
+      "description": "This lab will show you how to comply with the new Need Help standard",
+      "filename": "./../../9-labs-convert-to-new-help/change-help-page.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

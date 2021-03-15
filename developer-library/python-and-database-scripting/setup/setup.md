@@ -18,5 +18,3 @@ Please proceed to the next lab.
 - **Authors/Contributors** - Troy Anthony
 - **Last Updated By/Date** - Troy Anthony, June 2020
 
-## Need Help?
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -181,5 +181,3 @@ This concludes this lab and this workshop.
 - **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
 - **Last Updated By/Date** - Tom McGinn, Product Manager, DB Product Management, March 2021
 
-## Need Help?
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

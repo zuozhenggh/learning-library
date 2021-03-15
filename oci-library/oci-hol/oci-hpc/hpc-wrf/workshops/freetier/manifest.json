@@ -2,7 +2,7 @@
   "workshoptitle": "Getting Started with Weather Prediction using WRF",
     "tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "description": "Get a Free Trial",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },

@@ -92,5 +92,3 @@ Please **proceed to the next lab** to learn how to create and analyze graphs in 
 * **Author** - Jayant Sharma, Product Development
 * **Last Updated By/Date** - Jayant Sharma, Nov 2020
   
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

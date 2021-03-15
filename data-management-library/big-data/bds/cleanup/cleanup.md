@@ -173,5 +173,3 @@ To delete a VCN, it must first be empty and have no related resources or attache
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
 * **Last Updated By/Date:** Lauran Serhal, January 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -182,5 +182,3 @@ This view shows all auto indexing activities incuding statements used for index 
 - **Contributors** - Kris Bhanushali, Govardhanan Ramachandran
 - **Last Updated By/Date** - Kris Bhanushali, May 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

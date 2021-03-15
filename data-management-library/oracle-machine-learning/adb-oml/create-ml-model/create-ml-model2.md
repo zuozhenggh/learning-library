@@ -6,6 +6,10 @@ This is the lab where you’re going to do the work of building and training a m
 
 Estimated lab time: 20 - 30 minutes
 
+Watch this short video to preview how to build a machine learning model.
+
+[](youtube:XO9WI2bJN5s)
+
 ### Before You Begin
 
 Remember that we are trying to help Alpha Office predict the credit and payment suitability of their customers. We can use machine learning to help us here because we already have a set of customers with known credit and payment status. This is what we are going to use to train a model that will predict for new customers if their credit is suitable.
@@ -54,27 +58,27 @@ This lab assumes you have completed the following labs:
 
     ![](./images/mluser-sign-in.png  " ")
 
-3.  Navigate around to get familiar with the ML pages. Click on **Examples**.
+4.  Navigate around to get familiar with the ML pages. Click on **Examples**.
 
     ![](./images/examples.png  " ")
 
-4.  Note the various ML notebook examples. Feel free to review some of these. We will be creating a new ML notebook in this lab. Click on the upper-left hamburger menu.
+5.  Note the various ML notebook examples. Feel free to review some of these. We will be creating a new ML notebook in this lab. Click on the upper-left hamburger menu.
 
     ![](./images/notebooks-menu.png  " ")
 
-5.  Click on the upper-left hamburger menu and select **Notebooks**.
+6.  Click on the upper-left hamburger menu and select **Notebooks**.
 
     ![](./images/choose-notebooks.png  " ")
 
-6.  We will create a notebook from the beginning, select **Create**.
+7.  We will create a notebook from the beginning, select **Create**.
 
     ![](./images/018.png  " ")
 
-7.  Enter **adwc_notebook** as the name, then click **OK**.
+8.  Enter **adwc_notebook** as the name, then click **OK**.
 
     ![](./images/019.png  " ")
 
-8. Now you can view the notebook created - **adwc_notebook**.
+9. Now you can view the notebook created - **adwc_notebook**.
 
     ![](./images/new-notebook.png " ")
 
@@ -254,35 +258,47 @@ Adding content to a notebook is simple and fast. In this step, we have built the
 
     ![](./images/step4.9-031.png  " ")
 
-The rest of this lab will be done interactively in the notebook. The following area just screenshots for your convenience.
+## **STEP 4:** About this Notebook
 
-## Screen Shots of ML Notebook
+The rest of this lab will be done interactively in the notebook. This step discusses the result of each portion of the notebook.
 
-![](./images/026.png  " ")
+1. This graph illustrates Good\_Credit customers who complete all their payments are hard to find.
 
-![](./images/027.png  " ")
+    ![](./images/nb3.png  " ")
 
-![](./images/028.png  " ")
+2. This section illustrates how we can graph our understanding of the data.
 
-![](./images/029.png  " ")
+    ![](./images/nb4.png  " ")
 
-![](./images/030.png  " ")
+    ![](./images/nb5.png  " ")
 
-![](./images/031.png  " ")
+3. Run the Attribute Importance to identify key variables that most influence the target attribute.
 
-![](./images/032.png  " ")
+    ![](./images/nb6.png  " ")
 
-![](./images/033.png  " ")
+4. Now, split the data into Train and Test data sets. Drop, then Build and Evaluate the Classification Model.
 
-![](./images/034.png  " ")
+    ![](./images/nb7.png  " ")
 
-![](./images/035.png  " ")
+5. Drop, build and evaluate multiple OML models for comparison.
 
-![](./images/036.png  " ")
+    ![](./images/nb8.png  " ")
 
-![](./images/037.png  " ")
+6. Join model outputs e.g. cumulative gains chart to view and assess model quality.
 
-![](./images/038.png  " ")
+    ![](./images/nb9.png  " ")
+
+7. Now, apply the model to make predictions.
+
+    ![](./images/nb10.png  " ")
+
+8. Apply the model to a single record to make a prediction.
+
+    ![](./images/nb11.png  " ")
+
+9. Verify the table or view.
+
+    ![](./images/nb12.png  " ")
 
 [Please proceed to the next lab](#next).
 
@@ -292,8 +308,4 @@ The rest of this lab will be done interactively in the notebook. The following a
 - **Contributors** - Anoosha Pilli, Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
 
-
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
 

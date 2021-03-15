@@ -36,5 +36,3 @@ This workshop comprises various aspects of Data Security. So follow the given se
 - A registered target database in Oracle Data Safe with sample audit data and the password for the SYS user account. 
 - [Enable Oracle Data Safe](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/enable-oracle-data-safe.html#GUID-1293621D-A6C6-448C-AD97-38B90A9473F0)
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

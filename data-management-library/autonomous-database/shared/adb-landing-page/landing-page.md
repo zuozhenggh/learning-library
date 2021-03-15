@@ -18,5 +18,3 @@ The following workshops require an <a href="https://www.oracle.com/cloud/free/" 
 - Use Oracle Analytics Desktop (OAD) to visualize your data in ADB
 - Use Oracle Machine Learning (OML) to try your hand at predictive analytics
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

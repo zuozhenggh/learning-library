@@ -1,15 +1,15 @@
 {
     "workshoptitle": "RAC Fundamentals",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
-        {
-            "title": "Prerequisites",
-            "description": "Get a Free Trial",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-        },
          {
             "title": "Introduction",
             "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
             "filename": "../../intro/intro.md"
+        },{
+            "title": "Getting Started",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Lab 1: Build a DB System",
@@ -42,19 +42,9 @@
             "filename": "../../sql/racsql.md"
         },
         {
-            "title": "Lab 7: Parallel Execution ",
-            "description": "This lab illustrates parallel execution.",
-            "filename": "../../sql/parallelexecution.md"
-        },
-        {
-            "title": "Lab 8: Oracle Scheduler",
-            "description": "This lab walks you through the use of Oracle Scheduler in a RAC database.",
-            "filename": "../../sql/scheduler.md"
-        },
-        {
-            "title": "Lab 9: PL/SQL Packages",
-            "description": "This lab walks you through the use of UTL packages in a cluster",
-            "filename": "../../sql/utl_file_test.md"
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
