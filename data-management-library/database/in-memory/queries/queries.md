@@ -177,7 +177,3 @@ These significant performance improvements are possible because of Oracle’s un
 - **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.  

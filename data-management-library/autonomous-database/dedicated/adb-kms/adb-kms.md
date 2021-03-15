@@ -128,5 +128,3 @@ ADB Key rotation option is under **More Action** drop down button on the databas
 - **Last Updated By/Date** -  September 22nd, 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

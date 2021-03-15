@@ -33,9 +33,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Upgrading to Oracle Database 19c](https://www.youtube.com/watch?v=lOzL5irmuJo)
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
--- Oracle Database Product Management

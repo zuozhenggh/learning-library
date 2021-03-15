@@ -290,7 +290,3 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 27, 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

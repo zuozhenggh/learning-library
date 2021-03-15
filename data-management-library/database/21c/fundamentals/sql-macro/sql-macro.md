@@ -9,7 +9,9 @@ Estimated Lab Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
-* Setup the environment
+<if type="21c">* Login to SQL Developer Web as the HR user
+* Run queries using SQL Macros</if>
+<if type="dbcs">* Run queries on HR data using SQL Macros</if>
 
 ### Prerequisites
 <if type="dbcs">
@@ -127,21 +129,24 @@ In this lab, you will:
     ```
 </if>    
 <if type="21c">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## **STEP  1**: Login to SQL Developer Web as HR User on ADB
 
-1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing** 
-      ![](./images/select-atp.png " ")
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD)
+      ![](../set-operators/images/21c-home-adb.png " ")
 
-2.  Click on the **Display Name** to go to your ADB main page.
-      ![](./images/display-name.png " ")
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](../set-operators/images/21c-adb.png " ")
 
-3.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
-      ![](./images/sql.png " ")
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](../set-operators/images/tools.png " ")
 
-4.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
-5.  Click on the SQL button.
+5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+6.  Click on the **SQL** button.
+7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
+8.  Enter the username *hr* and password *WElcome123##*
 </if>
-5. Use the SQM to query the table and display the employees names doubled.
+9. Use the SQM to query the table and display the employees names doubled.
 
     ```
 
@@ -150,9 +155,7 @@ In this lab, you will:
     SQL> <copy>SELECT last_name, concat_self(last_name,2) FROM hr.employees;</copy>
 
     LAST_NAME                 CONCAT_SELF(LAST_NAME,2)
-
     ------------------------- ----------------------------------------
-
     Abel                      AbelAbel
 
     Ande                      AndeAnde
@@ -181,7 +184,7 @@ In this lab, you will:
 
     ```
 
-6. Use the SQM to query the table and display the employees names tripled.
+2. Use the SQM to query the table and display the employees names tripled.
 
     ```
 
@@ -433,7 +436,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, March 2020
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+* **Last Updated By/Date** -  Kay Malcolm, March 

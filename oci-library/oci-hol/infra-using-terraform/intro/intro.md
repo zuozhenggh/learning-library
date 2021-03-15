@@ -15,5 +15,3 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 - **Last Updated By/Date** - Kamryn Vinson, August 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

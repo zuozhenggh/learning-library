@@ -261,12 +261,6 @@ Because many of the masking formats use random formulas, your results are probab
 - **Last Updated By/Date** - Kris Bhanushali, September 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-
-
-
 
 
 

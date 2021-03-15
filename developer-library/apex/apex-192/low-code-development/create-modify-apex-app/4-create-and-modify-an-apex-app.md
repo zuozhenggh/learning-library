@@ -242,5 +242,3 @@ You have completed the lab, well done! At this point you should have a basic und
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

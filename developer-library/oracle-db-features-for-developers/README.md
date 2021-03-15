@@ -28,7 +28,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Developers Channel](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g)
 - [Oracle Product Management](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
--- Oracle Database Product Management

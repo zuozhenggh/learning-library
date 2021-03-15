@@ -232,5 +232,3 @@ Oracle Spatial Studio is now provisioned and tested. The following Lab provides 
 * **Author** - David Lapp, Database Product Management
 * **Last Updated By/Date** - David Lapp, Database Product Management, March 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

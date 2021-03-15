@@ -247,5 +247,3 @@ You many proceed to the next lab.
 - **Contributors** - Srivishnu Gullapalli
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

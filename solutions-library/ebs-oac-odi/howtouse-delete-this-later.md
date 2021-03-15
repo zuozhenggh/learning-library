@@ -76,7 +76,3 @@ This [APEX Workshop](https://oracle.github.io/learning-library/developer-library
 
 Copy the following section.  Replace the general support link with the support link for your workshop category.  We have a number of pre-created forums, click edit on your workshop to see if your workshop fits into any of the existing forums.  If not, submit a comment on your workshop to request to have one added.
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

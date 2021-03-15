@@ -23,5 +23,3 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 - **Contributors** - Troy Anthony, Kay Malcolm, Arabella Yao, Dylan McLeod
 - **Last Updated By/Date** - Arabella Yao, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

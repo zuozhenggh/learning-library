@@ -73,5 +73,4 @@ The following flow chart shows the process that your need to follow to set up th
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 * **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+

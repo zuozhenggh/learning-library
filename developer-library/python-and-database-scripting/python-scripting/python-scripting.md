@@ -2216,5 +2216,3 @@ An additional lab on using Python with is available in the New Features for Deve
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
 * **Last Updated By/Date** - Troy Anthony, DB Product Management, December 2020
 
-## Need Help?
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -287,5 +287,3 @@ Oracle Database provides a native spatial index for high performance spatial ope
 * **Author** - David Lapp, Database Product Management, Oracle
 * **Last Updated By/Date** - Kamryn Vinson, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

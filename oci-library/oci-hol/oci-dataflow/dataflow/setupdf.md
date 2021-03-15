@@ -108,6 +108,7 @@ For example, with a Java or Scala application, let’s suppose a developer at `e
       oci://production_code@examplecorp/logcrunch.jar
      </copy>
      ```  
+*Please proceed to the next lab*     
 
 ## Acknowledgements
 

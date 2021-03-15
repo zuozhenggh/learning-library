@@ -144,5 +144,3 @@ Choose your language of choice, keyboard layout, privacy setting for Location Se
 - **Author** - Troy Anthony, DB Product Management
 - **Last Updated By/Date** - Troy Anthony, May 21 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
