@@ -29,7 +29,7 @@ Estimated Lab Time: 15 minutes
 
 You begin by loading a set of traffic accident data from a GeoJSON file. The data are  are ficticous and were generated for random locations along roadways in South Africa.. 
 
-1. Download GeoJSON file to a convenient location: <a href="files/accidents.geojson" download>  accidents.geojson  </a>
+1. Download GeoJSON file to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/I5d1FAqOt_6pFfusz9acATvw3tnsvTZcXOCJtBE1O_YnSWNdfqRBmgj5wyn6H4IE/n/c4u03/b/data-management-library-files/o/accidents.geojson">  accidents.geojson  </a>
 
 2. In Spatial Studio, from the left panel menu navigate to the Datasets page, click **Create Dataset**, and drag-and-drop accidents.geojson. You can also click on the upload region and navigate to select the file.
 ![Image alt text](images/load-data-1.png)
@@ -49,7 +49,7 @@ Observe the ACCIDENTS dataset now listed with no warnings, meaning that is prepa
 ## **STEP 2:** Load Police Station data
 Next you load South African Police Servce (SAPS) Stations and Station Boundaries from Shapefiles stored in a single zip file. 
 
-1. Download zip file containing Shapefiles to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/UqtQ-IJyh-S6VT8KLBGUttO2Y4Np1dky9cQ60U41d7-aQNCtyBdYO31aad_kZmOQ/n/oradbclouducm/b/spatial-livelabs/o/SAPS_police.zip" download>SAPS_police.zip</a>  
+1. Download zip file containing Shapefiles to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/_PGrBeLxMChOWAym329rmCpmFz7U63wtnLrKJpzqA0n2azNqhjSnGzYUVfLYSFT9/n/c4u03/b/data-management-library-files/o/SAPS_police.zip"> SAPS_police.zip </a>  
 
 2. Navigate to the Datasets page, click **Create Dataset**, and drag-and-drop SAPS_police.zip  Spatial Studio will extract the Shapefiles from the zip file and process them individually. 
 ![Image alt text](images/load-data-6.png)
@@ -79,6 +79,7 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
 * **Last Updated By/Date** - David Lapp, Database Product Management, February 2021
+* **Lab Expiry** - March 31, 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-spatial). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
