@@ -247,20 +247,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ```
 
 
-## **STEP 6**: Access OKE from the Cloud Shell
-
-1. Run `./verifyOKEAndCreateKubeConfig.sh`
-
- ```
- <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
- ```
-
-2. Notice `/.kube/config` is created for the cluster and the `msdataworkshop` namespace is also created.
-
-  ![](images/verifyOKEOutput.png " ")
-
-
-## **STEP 7**: Install GraalVM, Jaeger, and Frontend Loadbalancer
+## **STEP 6**: Install GraalVM, Jaeger, and Frontend Loadbalancer
 Run the `installGraalVMJaegerAndFrontendLB.sh` script to install both GraalVM and Jaeger.
 
  ```
