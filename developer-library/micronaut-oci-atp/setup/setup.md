@@ -24,7 +24,7 @@ In this lab you will:
 
     ```
     <copy>
-    wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
+    wget -O setup.sh https://objectstorage.us-ashburn-1.oraclecloud.com/p/qf2omeWDSGOoNsUaGDF8TeJ9Ib_c8o1b-EWE5BQO6vc4-OAC4xMlvVn2EfPHSeBL/n/cloudnative-devrel/b/micronaut-hol/o/setup.sh
     chmod +x setup.sh
     ./setup.sh
     </copy>
@@ -33,7 +33,7 @@ In this lab you will:
 
 ![Setup Script](images/setup_input.png)
 
-The script will produce several snippets of output to be used to build, run and deploy.
+The script will produce several snippets of output to be used to build, run and deploy later in the lab.
 
 ## **STEP 2**: Download and Configure Wallet Locally
 
@@ -87,3 +87,7 @@ You may now *proceed to the next lab*.
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-java-cloud-applications-with-micronaut-and-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
