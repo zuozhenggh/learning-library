@@ -74,10 +74,10 @@ You will also clone a GitHub repository.
 
   ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
-3.  Change directory into `/frontend-helidon` folder:
+3.  Change directory into `frontend-helidon` folder:
 
     ```
-    <copy>cd ~/msdataworkshop-master/frontend-helidon</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
     ```
 
 

@@ -60,13 +60,13 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
     ![](images/20-compartment-ocid.png " ")
 
-4. Go back into your cloud shell and verify you are in the `~/msdataworkshop-master` directory.
+4. Go back into your cloud shell and verify you are in the `~/microservices-datadriven/grabdish` directory.
 
 5. Run `./setCompartmentId.sh <COMPARTMENT_OCID> <REGION_ID>` where your `<COMPARTMENT_OCID>` and `<REGION_ID>` values are set as arguments.
 
   For example:
 
-   `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`
+   `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere us-ashburn-1`
 
 5.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left
         corner of the Console and go to **Developer Services > Kubernetes Clusters**.
@@ -96,14 +96,28 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
       ![](images/32-close-cluster-create.png " ")
 
-11. Once launched it should usually take around 5-10 minutes for the cluster to be
+11. Once launched it should usually take just a few minutes for the cluster to be
     fully provisioned and the Cluster Status should show Active.
 
       ![](images/33-click-cluster-name.png " ")
 
       ![](images/34-copy-cluster-id.png " ")
 
-    _There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step._
+    Click on the link for the cluster you've just created to see the detail page.
+    
+      ![](images/clusterdetailpage.png " ")
+
+    Click the **Access Cluster** button.
+    
+      ![](images/accessyourclustercopylink.png " ")
+
+    Click on the link to copy the oci command.
+    
+      ![](images/kubeconfigcreateoutput.png " ")
+
+    Return the Cloud Shell, paste and run the command to add the ~/.kube/config needed to access the kubernetes cluster.
+    
+      ![](images/kubeconfigcommandline.png " ")
 
 ## **STEP 4**: Create OCI Vault Secrets for the ATP PDB users and FrontEnd microservice authentication
 
@@ -123,7 +137,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
    
       ![](images/createmasterencryptionkey.png " ")
         
-3. Click **Secrets** , click **Create Secret*, enter a name, and password (in the **Secret Contents** field) for the database users you will create later and click **Create Secret**
+3. Click **Secrets** , click **Create Secret**, enter a name, and password (in the **Secret Contents** field) for the database users you will create later and click **Create Secret**
    
       ![](images/createsecret.png " ")
       
@@ -141,7 +155,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 6. Click **Create Dynamic Group** , specify a name, add the following matching rule providing your compartment ocid
 
-     `All {instance.compartment.id = 'ocid1.compartment.oc1..aaaaaaaaaaaputyourcompartmentidhereaaaaaaaaaaaai3sa'}`
+     `All {instance.compartment.id = 'ocid1.compartment.oc1..aaaaaaaaaaaputyourcompartmentidhere'}`
      
      and click **Create**.
 
@@ -168,10 +182,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
   <copy>./createATPPDBs.sh <REPLACE WITH VAULT SECRET OCID FOR DB USER> <REPLACE WITH VAULT SECRET OCID FOR FRONTEND USER AUTH></copy>
   ```
 
-   Notice creation of the ORDERDB and INVENTORYDB PDBs.
+   Notice creation of the ORDERDB and INVENTORYDB PDBs and Frontend Auth secret.
 
+   ![](images/createpdboutput1.png " ")
 
-   ![](images/createATPPDBoutput.png " ")
+   ![](images/createpdboutput2.png " ")
 
    _OCIDs for the PDBs are stored and will be used later to create kubernetes secrets that microservices will use to access them._
 
