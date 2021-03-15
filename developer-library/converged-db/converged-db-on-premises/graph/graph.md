@@ -336,7 +336,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
 25. Add highlights on edges for Order items that had Quantity > 1 and unit_Price > 25
 
-26. Click on settings-> Highlights-> New Highlights -> Select Apply To Edge
+26. Click on settings-> Highlights-> New Highlights. Select Filter By Edges and Apply to Edge (i.e. the conditions apply to edges).
 
 27. Add two conditions
 
@@ -377,7 +377,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
     ![](./images/IMGG37.PNG " ")
 
-31. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph
+31. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the below statement at JSHELL prompt to delete the in-memory graph.
 
     ```
     <copy>
