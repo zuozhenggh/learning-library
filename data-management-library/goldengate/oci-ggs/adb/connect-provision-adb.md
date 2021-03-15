@@ -40,23 +40,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
     ![Verify configuration](./images/00-05.png)
 
-6.  Select your VCN from the list, and then click **Create Subnet**.
-
-7.  Enter a name for the subnet and select a compartment.
-
-8.  Under **Subnet Type**, select **Regional**.
-
-9.  For **CIDR Block**, enter **10.0.0.0/24**.
-
-10. For **Route Table**, select **Default Route Table**.
-
-11. Under **Subnet Access**, select **Public Subnet**.
-
-12. For DHCP Options, select **Default DHCP Options**.
-
-13. Click **Create Subnet**.
-
-    ![Subnet details](./images/00-13.png)
+You can click View VCN Details and see both a Public and Private subnet were created.
 
 ## **STEP 2:** Create an ATP Instance
 
