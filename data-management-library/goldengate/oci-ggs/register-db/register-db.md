@@ -41,25 +41,53 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
     ![Source Database details](images/01_01_12_regSourceDB.png)
 
-## **STEP 2:** Register the Target Database
+## **STEP 2:** Enable the ggadmin user for the Source Database
+
+Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
+
+1.  In the Console navigation menu, under **Oracle Databases**, select **Autonomous Transaction Processing**.
+
+2.  From the list of databases, select **ATPSource**.
+
+3.  On the ATPSource Database Details page, click **Tools**, and then click **Open Database Actions**.
+
+4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment.
+
+5.  Under **Administration**, click **Database Users**.
+
+6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+
+    ![GGADMIN user](images/02-06-locked.png)
+
+7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+
+    ![Edit user](images/02-07-edit.png)
+
+Note that the user icon changes from a blue padlock to a green checkmark.
+
+## **STEP 3:** Register the Target Database and enable the ggadmin user
 
 Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
 
-1. On the Registered Databases page, click **Register Database**.
+1.  On the Registered Databases page, click **Register Database**.
 
-2. In the Register Database panel, enter **TargetADW** for Name and Alias.
+2.  In the Register Database panel, enter **TargetADW** for Name and Alias.
 
-3. From the **Compartment** dropdown, select a compartment.
+3.  From the **Compartment** dropdown, select a compartment.
 
-4. Click **Select Database**.
+4.  Click **Select Database**.
 
-5. For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ADW instance, and then select **ADWTarget** from the dropdown. Some fields are autopopulated based on your selection.
+5.  For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ADW instance, and then select **ADWTarget** from the dropdown. Some fields are autopopulated based on your selection.
 
-6. Enter the database's password in the Password field, and then click **Register**.
+6.  Enter the database's password in the Password field, and then click **Register**.
 
     ![Target Database details](images/02_10-ggs-regDB_target.png)
 
-The source and target databases appear in the list of Registered Databases. You may now [proceed to the next lab](#next).
+    The source and target databases appear in the list of Registered Databases.
+
+7.  Repeat the instructions under STEP 2 to enable the ggadmin user on the TargetADW database.
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

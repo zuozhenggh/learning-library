@@ -92,7 +92,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 9.  On the Parameter File page, in the text area, add a new line and the following text:
 
     ```
-    <copy>Table SRC_UA_USER.*;</copy>
+    <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
 10. Click **Create**.
