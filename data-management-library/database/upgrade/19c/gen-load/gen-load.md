@@ -61,7 +61,7 @@ In this lab, you will:
 
 1. Double-Click on the HammerDB icon on the desktop to start Hammer DB
 
-## **Step 2**: Load Driver Script and start Virtual Users
+## **Step 3**: Load Driver Script and start Virtual Users
 
 1. Click on the triangle “TPC-C“:
 2. Open the Driver Script setup with a Click:
@@ -69,7 +69,7 @@ In this lab, you will:
 4. This will populate the script window with the driver script (ignore the error messages in the script window):
 5. Click on Virtual Users.  Now Double-Click on Create – you should see then 3 Virtual Users being started below the script window:
 
-## **Step 3**: Capture SQL, Load Test and Monitor
+## **Step 4**: Capture SQL, Load Test and Monitor
 
 Please start the following script in your SQL*plus window. With this script you’ll capture now all SQL Statements directly from cursor cache while HammerDB is running and generating load on your database.
 
@@ -93,7 +93,7 @@ Please start the following script in your SQL*plus window. With this script you�
 6. Finally Exit HammerDB:
 
  
-## **Step 4**: Generate another AWR snapshot
+## **Step 5**: Generate another AWR snapshot
 
 Please WAIT until the capture_cc.sql scripts returns control back to you – DON’T CTRL-C it!
 

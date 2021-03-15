@@ -8,7 +8,7 @@ There are three main parts to this lab.
 
 *Estimated Lab Time:* 20 Minutes
 
-Watch the video below for an overview of Lab 4: JSON
+Watch the video below for an overview of the JSON lab
 [](youtube:y7v7vsCFS5g)
 
 ### Prerequisites

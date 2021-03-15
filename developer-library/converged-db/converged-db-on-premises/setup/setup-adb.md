@@ -5,7 +5,7 @@ In the previous lab you created a compute instance (running the eShop applicatio
 
 *Estimated time:* 20 Minutes
 
-Watch the video below for an overview of Lab 3: Load ADB and Start Application
+Watch the video below for an overview of the Load ADB and Start Application lab
 [](youtube:S3jL1y-ZAbc)
 
 ### Objectives
@@ -185,7 +185,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ````
       <copy>cd /u01/script
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhR11qr6u9pFy3Ct7o5IaQorX7-xbz1WW64QN09jkCV-z2mPmn6vozwcRslSAYwg/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/env_script_setup_atp.sh
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9__SPAwP9dcj7afYX4uhbyGf3-7Wv4iD-ypyxcShp0X88EffrT5myM1_S3jvsjtO/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/env_script_setup_atp.sh
       chmod +x env_script_setup_atp.sh
       ./env_script_setup_atp.sh</copy>
       ````
