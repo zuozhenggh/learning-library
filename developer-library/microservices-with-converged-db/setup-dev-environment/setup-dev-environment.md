@@ -28,16 +28,16 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
     ```
-    <copy>cd ~ ; curl -sL https://tinyurl.com/u6z68edu --output datadriven-master.zip ; unzip datadriven-master.zip; rm datadriven-master.zip</copy>
+    <copy>cd ~ ; git clone https://github.com/oracle/microservices-datadriven.git</copy>
     ```
 
-  You should now see `msdataworkshop-master` in your root directory
+  You should now see `microservices-datadriven` in your root directory
 
 
-2. Change directory into the cd datadriven-master/grabdish directory:
+2. Change directory into the cd microservices-datadriven/grabdish directory:
 
     ```
-    <copy>cd cd datadriven-master/grabdish</copy>
+    <copy>cd microservices-datadriven/grabdish</copy>
     ```
 
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
