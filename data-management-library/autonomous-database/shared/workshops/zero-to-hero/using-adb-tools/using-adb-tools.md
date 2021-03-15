@@ -72,7 +72,7 @@ You have seen two different ways of navigating to the Database Actions home page
 
 You've taken a brief tour of the **Database Actions** home page, with its card interface and ready access to documentation and other useful resources. The next step is to use the data loading tools to help you create your quarterly sales reports.
 
-## STEP 2 - Loading Quarterly Sales Data for Analysis
+## STEP 2 - Loading Data
 
 ### MovieStream Critics Corner: Data Load
 
