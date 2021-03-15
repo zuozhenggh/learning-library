@@ -54,6 +54,32 @@ In this lab, you will:
 
 <!-- Images -->
 
+11. Syntax highlighting examples
+
+    ```sql
+    <copy>select * from employees;</copy>
+    ```
+
+    ```java
+    <copy>class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }</copy>
+    ```
+
+    ```
+    class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }
+    ```
+
+    ```sh
+    $ <copy>sudo service ssh status</copy>
+    ```
+
 1. Standard method to include an image.
 
     ![](images/sample1.png)
@@ -106,6 +132,8 @@ In this lab, you will:
   	```
     <copy>ssh -i <ssh-key-file></copy>
     ```
+
+
 
 ## **Step 2:** Optional Advanced features
 
