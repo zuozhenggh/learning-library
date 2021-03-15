@@ -2,7 +2,7 @@
 In this lab we will see how Active Data Guard Automatic Block media recovery works.
 
 Block corruptions are a common source of database outages. A database block is
-corrupted when its content has changed from what Oracle Database expects to find. If
+corrupted when its cont-ent has changed from what Oracle Database expects to find. If
 not prevented or repaired, block corruption can bring down the database and possibly
 result in the loss of key business data.
 
@@ -16,11 +16,11 @@ In this lab we will introduce a block corruption in the database and see Active 
 
 First download the 3 sql scripts we will need in this Lab.
 
-[01_abmr.sql](./scripts/01_abmr.sql)
+[01-abmr.sql](./scripts/01-abmr.sql)
 
-[02_abmr.sql](./scripts/02_abmr.sql)
+[02-abmr.sql](./scripts/02-abmr.sql)
 
-[03_abmr.sql](./scripts/03_abmr.sql)
+[03-abmr.sql](./scripts/03-abmr.sql)
 
 
 Also find back the ssh keys which were created in Lab 1 and Lab 2 in order to connect to the hosts where the primary and standby database are located. 
@@ -78,7 +78,7 @@ Repeat these steps on the standby consoles.
 
 ## Step 1: Setup the environment
 
-In the SQL Plus console from the primary database, run the 01_abmr.sql script. 
+In the SQL Plus console from the primary database, run the 01-abmr.sql script. 
 You can open this script and copy/paste this or copy it over to the host, just as you prefer.
 
 This script will create a tablespace, adds a table in it and inserts a row. This will also return the rowid. Take a note of this number as you will need it in step 2, the step that will introduce corruption.
@@ -89,7 +89,7 @@ SQL> show con_name
 CON_NAME
 ------------------------------
 MYPDB
-SQL> @01_abmr.sql
+SQL> @01-abmr.sql
 SQL> set feed on;
 SQL> Col owner format a20;
 SQL> var rid varchar2(25);
@@ -151,11 +151,11 @@ SQL>
 In this example, you will need to remember the number 15.
 
 ## Step 2: Corrupt the datafile
-In the same session, execute script 02_abmr.sql.
+In the same session, execute script 02-abmr.sql.
 This script will ask for a number. This is the number from the first step and this will be used to corrupt the datafile which the first script has created. 
 
 ````
-SQL> @02_abmr.sql
+SQL> @02-abmr.sql
 SQL> host dd conv=notrunc bs=1 count=2 if=/dev/zero of=/home/oracle/corruptiontest01.dbf seek=$((&block_id*8192+16))
 Enter value for block_id: 15
 2+0 records in
@@ -172,14 +172,14 @@ At this point, we have a corrupt datafile, but the database is not aware of it y
 
 By accessing the table, Oracle will need to read the data. This demo database is not very active, so it will be necessary to flush the caches before we access the table. That way, the data needs to be read from disk. This data is corrupt and without any error returned to the user, Active Data Guard will repair the corrupt block before returning the query result. 
 
-Use the script 03_abmr.sql for this. 
+Use the script 03-abmr.sql for this. 
 
 Monitor the alertlogs closely while executing this step.
 
 In the sqlplus window we will see this
 
 ````
-SQL> @03_abmr.sql
+SQL> @03-abmr.sql
 SQL> alter system flush buffer_cache;
 
 System altered.

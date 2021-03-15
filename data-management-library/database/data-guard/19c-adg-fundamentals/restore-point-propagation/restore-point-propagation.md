@@ -2,7 +2,7 @@
 
 In this lab we will use the 19c new feature which is called the Restore point propagation.
 
-![](./images/01_dg_primary_restore_point_propagation.gif)
+![](./images/01-dg-primary-restore-point-propagation.gif)
 
 Oracle 19c supports automatic restore point propagation from the primary database to the standby database.
 

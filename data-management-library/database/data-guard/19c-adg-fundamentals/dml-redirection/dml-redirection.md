@@ -12,7 +12,7 @@ In this lab we will enable the 19c New Feature Active Data Guard DML Redirection
 
 Oracle Active Data Guard 19c DML Redirection is a new feature which allows you to perform occasional DML Against a read only standby database. 
 
-![](./images/dml_redirect.jpeg)
+![](./images/dml-redirect.jpeg)
 
 The DML Redirection process breaks down in 5 steps:
 
@@ -149,4 +149,4 @@ Then on the primary database, verify if the row is visible as well.
 
 
 ## Summary
-You have now succesfully used Active Data Guard DML Redirection.
+You have now succesfully used Active Data Guard DML Redirection.-
