@@ -2,7 +2,7 @@
     "workshoptitle": "Deploying MySQL InnoDB Cluster on OCI with Terraform",
     "tutorials": [
         {         
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "description": "Login to Oracle Cloud",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",

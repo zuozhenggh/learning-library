@@ -5,12 +5,12 @@
 All of the examples from crawl and walk work on the same principle.
 In both of these folders there are independent examples for different OCI Components.
 
-## Code Walkthrough 
+## Code Walkthrough
 After setting up the **provider.auto.tfvars**, you will have to check out the **terraform.tfvars** files for each of the examples in crawl and walk.
 In all of these examples, there will be some external dependencies, that you will have to fill in.
 
 The network example, will have a dependency to a compartment resource.
-In the below examples, there are 2 vcns created **hur1** and **hur2** in a compartment called **sandbox** which already existed before running this code. 
+In the below examples, there are 2 vcns created **hur1** and **hur2** in a compartment called **sandbox** which already existed before running this code.
 
 ```
 compartment_ids = {
@@ -81,9 +81,10 @@ Some of these independent examples will have more than one external variable, bu
 
 There are examples for both **crawl** and **walk** phases. Each component will have its own section on how to run the code, and you will find it at the end of the lab.
 
-### Crawl 
+### Crawl
 
-Crawl consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/examples/crawl/crawl-workshop/index.html?lab=lab-1-crawl-intro)
+Crawl consists of different components. In order to access the labs you can [click here](./crawl-workshop/index.html)
+
 The available components in crawl are:
 - IAM
 - Network
@@ -93,7 +94,7 @@ The available components in crawl are:
 
 ### Walk
 
-Walk consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/examples/walk/walk-workshop/index.html?lab=lab-1-walk-intro)
+Walk consists of different components. In order to access the labs you can [click here](./walk-workshop/index.html)
 
 
 The available components in walk are:

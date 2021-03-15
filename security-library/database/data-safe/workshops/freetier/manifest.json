@@ -2,7 +2,7 @@
   "workshoptitle": "Oracle Data Safe Fundamentals",
     "tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "description": "Prerequisites to run the Oracle Data Safe workshop in your own tenancy.",
           "filename": "./prerequisites.md"
         },

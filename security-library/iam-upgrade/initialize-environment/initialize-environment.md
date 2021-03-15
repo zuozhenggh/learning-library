@@ -45,6 +45,27 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
     ![](./images/guacamole-landing.png " ")
 
+### Enable Copy/Paste from local to remote desktop (Guacamole clipboard)
+During the execution of your labs you may need to copy text from your local PC/Mac to the Guacamole remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
+
+1. From your remote desktop session, enter CTRL+ALT+SHIFT (*Windows*) or CTRL+CMD+SHIT (*Mac*)
+
+2. Select *Text Input*
+
+    ![](./images/guacamole-clipboard-1.png " ")
+
+3. Notice the black Text Input field added at the bottom of your screen after you made the selection in the previous step. This is the field to paste any text copied from your local environment.
+
+    ![](./images/guacamole-clipboard-2.png " ")
+
+4. Test copy/pasting the text below. Prior to pasting ensure that the cursor has been placed at the location where the intended text is to be pasted, then right-click inside the black *Text Input* field and paste it
+
+    ```
+    <copy>echo "This text was copied from my local desktop on to my remote session"</copy>
+    ```
+
+    ![](./images/guacamole-clipboard-3.png " ")
+
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
 
@@ -64,14 +85,14 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Validate the environment
 1. As user *oracle* from any of the sessions started above, verify that the DB listener and all databases are up and running.
 
-    The host is preconfigured to automatically start the database and database listener.
-
     ```
     <copy>
     systemctl status oracle-database
     </copy>
     ```
     ![](./images/check-db-service-up.png " ")
+
+    ***Note***: The host is preconfigured to automatically start the database and database listener.
 
 2. Review environment details
 
@@ -113,8 +134,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
     ***Note:*** This will take between 20-30 minutes.
 
-2. Launch *Firefox* from the remote desktop session and test the base installation.
-    Oracle Identity Manager Admin Console:
+2. Launch *Firefox* from the remote desktop session and test the base installation by accessing the Identity Manager Admin Console:
 
     ```
     URL: <copy>http://wsidmhost.idm.oracle.com:7778/oim</copy>
@@ -169,8 +189,5 @@ Use these links to get more information about Oracle Identity and Access Managem
 * **Contributors** -  Eric Pollard, Rene Fontcha  
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
 
-
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Please submit feedback or ask for help by sending an email to [livelabs-help-iam_us@oracle.com](livelabs-help-iam_us@oracle.com). Please make sure to include your workshop name and lab name. You can also include screenshots and attach files.

@@ -2,7 +2,7 @@
     "workshoptitle": "Picking a Good Wine Using ADW, OML and OAC",
     "tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "description": "Prerequisites",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
