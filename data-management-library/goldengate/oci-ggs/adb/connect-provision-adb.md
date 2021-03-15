@@ -123,6 +123,12 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Refresh Navigator tab](./images/02-11-verify.png)
 
+13. To enable supplemental logging, run the following command:
+
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+
 ## **STEP 4:** Create an ADW Instance
 
 1.  In the Console navigation menu, under **Oracle Database**, select **Autonomous Data Warehouse**.

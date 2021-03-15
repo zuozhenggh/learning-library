@@ -53,17 +53,23 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**.
 
-5.  Click **Connect to database TargetADW**.
+5.  To verify, you can enter **SRC\_OCIGGLL** into the Search field and click **Search**.
+
+    ![](images/01-05-trandata.png)
+
+6.  Click **Connect to database TargetADW**.
 
     ![](images/02-05-connect-target.png)
 
-6.  Next to Checkpoint, click **Add Checkpoint**.
+7.  Next to Checkpoint, click **Add Checkpoint**.
 
     ![](images/02-06-add-checkpoint.png)
 
-7.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
+8.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
 
     ![](images/02-07-checktable.png)
+
+To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
 ## **STEP 2:** Add and Run an Extract
 
@@ -95,11 +101,9 @@ This lab assumes that you completed all preceding labs, and your deployment is i
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
-10. Click **Create**.
+10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
-11. In the breadcrumb, click **Overview**.
-
-12. In the UAEXT **Actions** menu, select **Start**.
+11. In the UAEXT **Actions** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
     ![Start Extract](images/02-12-ggs-start-extract.png)
 
@@ -117,9 +121,13 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
 
-4.  For **Trail Name**, enter E1.
+4.  For **Credential Domain**, select **OracleGoldenGate**.
 
-5.  Under **Target Database Credential**, from the **Credential Alias**  dropdown, select **TargetADW**.
+5.  For **Credential Alias**, select **TargetADW**.
+
+6.  For **Trail Name**, enter E1.
+
+7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
 
     ![Add Replicat - Basic Information](images/03-05-ggs-replicat-basicInfo.png)
 
@@ -127,13 +135,11 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 7.  Click **Next**.
 
-8.  In the **Parameter File** text area, add **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+8.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
 
-8.  Click **Create**.
+    ![Add Replicat - Parameter File](images/03-08-param-file.png)
 
-9.  In the breadcrumb, click **Overview**.
-
-    ![Click Overview](images/03-09-ggs-overview.png)
+9.  Click **Create**.
 
 10. In the Rep Replicat **Action** menu, select **Start**.
 
