@@ -28,7 +28,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 ### Lab Timing (Estimated)
 
-| **Step No.** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Step No.** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |--------|-----------------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1**  | SQL Performance Analyzer - API                              | 15 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities using API PLSQL mode.                                                                        | **Scenario:**    You've been asked to validate SQL performance before upgrade Database from 18.3 to 19.3. How each SQLs in the application's workload (Order Entry) performs in new 19.3 upgrade.                                                                                                                                                                                                                                           |
 | **2**  | SQL Performance Analyzer - EM UI       | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities using Enterprise Manager UI.                                                 | **Scenario:**    You've been asked to validate SQL performance before upgrade Database from 18.3 to 19.3. How each SQLs in the application's workload (Sales History) performs in new 19.3 upgrade.                                                                                                                                                                                                                                                                                                                                                  |
@@ -628,7 +628,7 @@ This concludes the Database Replay lab activity.
 
     ![](images/emratlab4step1.png " ")
 
-2.  Import pre-existed Sales History Workload and labe 3 SOE capture into a consolidation capture to EM
+2.  Import pre-existed Sales History Workload and lab's 3 SOE capture into a consolidation capture to EM
     - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
     - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
     - In Database Replay page, Captured Workload tab **click** on **Import**
@@ -653,103 +653,54 @@ This concludes the Database Replay lab activity.
 
     ![](images/emratlab4step2e.png " ")
 
-3.  Select SPA\_STAT\_SETUP and **Click** the **Submit** button
+3.  Running Consolidation Replay for Sales History Workload and lab's 3 SOE capture
+    - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
+    - **Click Create** in Replay Tasks tab  
 
-    ![](images/emspasetup.png " ")
+    ![](images/emratlab4step3a.png " ")
 
-4. Select OS Command in the Create library Job drop down list **Click** Go
+    - **Enter Name and Description**  in Create Task
+    - **Click Add** in Workloads
+    - **Pick Lab3SalesOE** Workload and
+    - **Click Add** in Workloads
+    - **Pick SH** Workload  
 
-    ![](images/a04978f5e6e7d3e03d34685c7212f413.jpg " ")
+    ![](images/emratlab4step3b.png " ")
 
-5. **Click** the **Submit** button
+    - **Check** Create a new replay for this replay task
+    - **Enter Name**
+    - **Pick db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for  Database Target
 
-    ![](images/spasubmit.png " ")
+    ![](images/emratlab4step3c.png " ")
 
-6. The job then runs and completes
+    - **Click** Preprocess Workload
 
-    ![](images/emspajobconfirm.png " ")
+    ![](images/emratlab4step3d.png " ")
 
-7. The job is now running. Continue with configuring SPA Quick Check. Navigate to ***Databases >> Targets >> Databases***
+    - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential
 
-    ![](images/baa21e15a952e1b090944051c919d47e.jpg " ")
+    ![](images/emratlab4step3e.png " ")
 
-8. Expand the *sales.subnet.vcn.oraclevcn.com* database. **Click** on *sales.subnet.vcn.oraclevcn.com\_HR* pluggable database.
+    - **Check** Specify a file path
+    - **/home/oracle/scripts/CAPTURE/lab4con** as Consolidated Replay Directory
 
-    ![](images/6273897d2614da4d3babab73299d5bc5.jpg " ")
+    ![](images/emratlab4step3f.png " ")
 
-9. In ***sales.subnet.vcn.oraclevcn.com\_HR*** database Navigate to ***Performance >> SQL >> SQL Performance Analyzer Quick Check Setup***
+    -
 
-    ![](images/52d28e53edc6e12a26eefd6df1487d20.jpg " ")
 
-10.  This is the page where you configure SPA Quick Check. Make sure that the selected SQL Tuning Set includes as many SQL statements as possible. If the application has specific workloads that are executed during End of Month, End of Year or even certain period during the day, then make sure to collect the workload in separate SQL Tuning Sets and merge them into a “Total Workload Tuning set”
 
-11. In this example we are working with a SQL Tuning Set called PENDING\_STATS\_WKLD. Select: SQL Tuning Set: PENDING\_STATS\_WKLD. Select “Comparison Metric”: Buffer Gets **Click** Save.
+````
 
-    ![](images/dd8e59451bf9d2de14f07592d390da6a.jpg " ")
+alter system set sga_max_size=6291456000 scope=spfile;
+alter system set sga_target=6186598400  scope=spfile;
+alter system set pga_aggregate_target=2988m  scope=spfile;
 
-12.  Navigate ***Performance >> SQL >> Optimizer Statistics***
+````
 
-      ![](images/4e82b571a46f839223bca1f879643bb0.jpg " ")
 
-13.  **Click** “Gather”
-
-      ![](images/1e54f21d483e95189477069278b54053.jpg " ")
-
-14.  Select “Schema”. Check “Validate the impact of statistics on…..” **Click**  “Next”
-
-      ![](images/1d4b3ee3678078564de13336896fbe34.jpg " ")
-
-15.  **Click**  “Add”
-
-      ![](images/07c9dde006c7bc0a1fc804ef62f5cd5a.jpg " ")
-
-16.  **Click**  “Search”. **Select:** STAT1, STAT2 **Click**  “OK”
-
-      ![](images/5f8e1b0229f48747aa96998dbbe0aa87.jpg " ")
-
-17.  **Click**  “Next”
-
-      ![](images/47d4db96f2a225723e405f06171d2c7d.jpg " ")
-
-18.  **Click**  “Next”
-
-      ![](images/a4faddf1878e9f72df40f1bde4e54bdf.jpg " ")
-
-19.  **Click**  “Submit”
-
-      ![](images/d2c4f87d66682e3ecbb6b9c62e639281.jpg " ")
-
-20. In the confirmation section on top, click on the SQL Performance Analyzer Task that was started. If you accidentally closed or lost this page, navigate to **DB Target** , then **Performance Menu** ,  then **SQL Performance Analyzer Home** , then **Select** the latest SPA task you just created at the bottom of the page.
-
-    ![](images/24fee673a5a32b19e55b92dae376c233.jpg " ")
-
-21. You now have now a running SQL Performance Analyzer task. Wait until its Last Run Status is Completed. **Click**  on “Name”
-
-    ![](images/d7b97d687f8d9a904ed2e7ee68f5da89.jpg " ")
-
-22.  As you can see there have been four SQL trials executed. The first two have identified SQL statements with plan changes. In the last two trials it is only statements with plan changes that have been executed. This will reduce the amount of time and resources used in a production system. **Click** on the eyeglasses icon for the second report.
-
-      ![](images/e74bda3508f98dbfb69f1e9e196d9c01.jpg " ")
-
-23.  As we can see the majority of our statements had unchanged performance. We have a significant improvement but most important to notice is that we have no regression. If there had been regression then we have the ability to tune the regressed statement or use SQL Plan Baselines to remediate the identified regressions. Note you can also use SQL Tuning Advisor to remediate regressions by implementing SQL Profile recommendations
-
-      ![](images/2d5e94962e6a26f9d9442e09870cde04.jpg " ")
-
-24.  Since this application has used stale statistics for a long period, then it would be good to have new statistics implemented. **Click** on “Publish Object Statistics”
-
-      ![](images/bfd46716f39ec820e1c9c0c9982d5218.jpg " ")
-
-25. We can now change statistics for all tables where we have pending statistics. For the scope of this exercise we will only change statistics for schema STAT1. **Click** the Checkbox for schema STAT1 **Click** Publish
-
-    ![](images/1d3a02d5d46d720eefbe226143471f2c.jpg " ")
-
-26. **Click** “Yes”
-
-    ![](images/a8dc3af7bcf1c5b473e4f0037dd722a4.jpg " ")
-
-    ![](images/e75f7e6b78aafd328d6b57f505245622.jpg " ")
-
-You have now learned how to work with SPA. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
+You have now learned how to work with Real Application Testing. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
