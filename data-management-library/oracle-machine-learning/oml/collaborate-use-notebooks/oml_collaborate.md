@@ -1,7 +1,7 @@
-# Oracle® Cloud Collaborating in Oracle Machine Learning
+# Oracle® Cloud Collaborate in Oracle Machine Learning Notebooks
 ## Before You Begin
 
-This lab shows you how to two or more users can collaborate and share SQL notebooks with other Oracle Machine Learning Notebook users.
+This lab shows you how to two or more users can collaborate and share SQL notebooks with other Oracle Machine Learning Notebooks users.
 
 This lab takes approximately 15 minutes to complete.
 

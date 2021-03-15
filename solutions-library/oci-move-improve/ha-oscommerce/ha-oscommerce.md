@@ -14,7 +14,7 @@ For technical videos that walk through this portion of the lab, please see the l
 ### Objectives
 
 * Learn how to leverage Oracle Cloud infrastructure to create a highly available and disaster recovery solution for your applications.
-* Learn how to replicate your primary server to a secondary server using Rsync, mysqldump utility.
+* Learn how to replicate your primary server to a secondary server using Rsync.
 * Learn how to provision and configure Load Balancer and setup backend servers.
 * Learn how to configure DNS Failover with Traffic Management Steering policy
 
@@ -126,22 +126,9 @@ Run the following command in your local terminal
 
     ![](./images/4.png "")
 
-    You have successfully replicated the webserver files. Similarly, you can replicate the MySQL files as well. You can do this in many ways:
-        * Using rsync as above
-        * Using mysqldump utility
-
-
 ### **Replicate mysql database files**
 
-15. Run the following command on primary and backup server:
-
-    ```
-    <copy>
-    sudo nano /etc/my.cnf
-    </copy>
-    ```
-
-16. If the above command does not work, try the following command.
+15. Run the following command on primary server:
 
     ```
     <copy>
@@ -168,65 +155,8 @@ Run the following command in your local terminal
     </copy>
     ```
 
-19. For our database in our secondary server to communicate to the database in the primary server, do the following in the primary server- Go to MySQL terminal by typing:
-
-    ```
-    <copy>
-    mysql -u root -p
-    </copy>
-    ```
-
-20. On MySQL terminal, run the following commands:
-
-    **Note: ip_address is the IP address of the secondary server**
-
-    ```
-    <copy>
-    CREATE USER 'root'@'ip_address' IDENTIFIED BY 'some_pass';
-    </copy>
-    ```
-    ```
-    <copy>
-    GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
-    </copy>
-    ```
-
-21. Now, go to the secondary server. Delete the OsCommerce database and create an empty oscommerce database as follows:
-
-    ![](./images/5a.png "")
-
-22. Now run the following command to replicate the database
-
-    **Note: Run this command in  secondary server terminal**
-
-    ```
-    <copy>
-        mysqldump --host=1.2.3.4 --user=MYDBUSER -pMYDBPASSWORD --add-drop-table --no-create-db --skip-lock-tables MYDBNAME | mysql --user=MYDBUSER -pMYDBPASSWORD MYDBNAME
-    </copy>
-    ```
-
-23. In my case, the command looked like this:
-
-    ```
-    <copy>
-    mysqldump --host=150.136.116.169 -P 3306 --user=root -poscommerce --add-drop-table --no-create-db --skip-lock-tables oscommerce | mysql --user=root -poscommerce oscommerce
-    </copy>
-    ```
-
-    **Note: Here, the host IP address should be the IP address of the primary server since you are replicating from the primary to the secondary server.**
-
-    ![](./images/6.png "")
-
-24. Check if the database tables are replicated properly by using the following:
-
-    ![](./images/5b.png "")
-
-    Note this particular mysqldump command does not create a dump file but rather migrates all the specified database tables from source to the target, thereby keeping the source and target database consistent.
-
-26. Thus, you have the webserver files and the database files in a secondary server safe and with the latest updates. Furthermore, you can setup cron jobs for automation rather than running the rsync and mysqldump commands manually every time.
-
 ## **STEP 2:** Configure Load Balancer
-At this point, our primary server and secondary server are in sync. Let's proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover, like using keepalived, using load balancers, and using DNS Traffic Management Steering policies in OCI. For this lab, you will use the Load Balancer service, which provides automated traffic distribution. 
+Let's proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover, like using keepalived, using load balancers, and using DNS Traffic Management Steering policies in OCI. For this lab, you will use the Load Balancer service, which provides automated traffic distribution. 
 
 ### **Make your application accessible from your IP address**
 
@@ -238,7 +168,7 @@ At this point, our primary server and secondary server are in sync. Let's procee
     </copy>
     ```
 
-2. Edit Apache config file.
+2. Edit Apache config file. Change from ```"DocumentRoot /var/www/html" ``` to ```"DocumentRoot /var/www/html/catalog"``` 
 
     ```
     <copy>
@@ -246,20 +176,19 @@ At this point, our primary server and secondary server are in sync. Let's procee
     </copy>
     ```
 
-3. Change from ```"DocumentRoot /var/www/html" ``` to ```"DocumentRoot /var/www/html/catalog"``` and add ```"DocumentRoot /var/www/html" ```
     ![](./images/imageR1.png "")
+
+3. Replace localhost with your primary ip address remove /catalog from ```HTTP_PATH```, ```HTTP_COOKIE_PATH```
 
     ```
     <copy>
-    sudo nano /var/www/html/catalog/includes/configure.php
+    sudo nano /var/www/html/catalog/includes/OSC/Sites/Shop/site_conf.php
     </copy>
     ```
 
-4. Replace localhost with your primary ip address remove /catalog from ```HTTP_COOKIE_PATH```, ```HTTPS_COOKIE_PATH```, ```DIR_WS_HTTP_CATALOG``` and ```DIR_WS_HTTPS_CATALOG```
-
     Example
 
-    ![](./images/configure.png "")
+    ![](./images/imageR12.png "")
 
     Restart the server using the command
 
@@ -269,45 +198,47 @@ At this point, our primary server and secondary server are in sync. Let's procee
     </copy>
     ```
 
-5. Now, if you hit your public IP address in the browser, you should be able to see your app running.
+4. Now, if you hit your public IP address in the browser, you should be able to see your app running.
     ![](./images/imageR2.png "")
+
+5. Repeat the procedure for your secondary server too. So you will have two servers up and running in two different AD's. In next part you will create loadbalancer and route traffic between the two servers.
 
 ### **Create Load Balancer**
 
-1. The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address and provisioned bandwidth.
+6. The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address and provisioned bandwidth.
 
-2. To create a load balancer, please goto Networking >> Load Balancer as shown below. 
+7. To create a load balancer, please goto Networking >> Load Balancer as shown below. 
     ![](./images/imageR3.png "")
 
-3. Click Create Load Balancer and give your name to your load balancer. Select visibility as public and assign an Ephemeral IP Address. Also, select a dynamic shape of 10mbps. Please select the VCN you have created for the workshop and a regional public subnet. Kindly refer below.
+8. Click Create Load Balancer and give your name to your load balancer. Select visibility as public and assign an Ephemeral IP Address. Also, select a dynamic shape of 10mbps. Please select the VCN you have created for the workshop and a regional public subnet. Kindly refer below.
     ![](./images/imageR4.png "")
 
     **Note:** It is recommended to have the load balancer in a different public regional subnet than your compute instance's subnet.
 
-4. A load balancer will distribute the traffic according to the selected policy. For this lab, please select Weighted Round Robin. Keep everything default. To learn more about load balancer policies, refer [here](https://docs.oracle.com/en-us/iaas/Content/Balance/Reference/lbpolicies.htm)
+9. A load balancer will distribute the traffic according to the selected policy. For this lab, please select Weighted Round Robin. Keep everything default. To learn more about load balancer policies, refer [here](https://docs.oracle.com/en-us/iaas/Content/Balance/Reference/lbpolicies.htm)
     ![](./images/imageR5.png "")
 
-5. Please name your load balancer listener and select HTTP as the type of traffic your listener will handle.
+10. Please name your load balancer listener and select HTTP as the type of traffic your listener will handle.
     ![](./images/imageR6.png "")
 
-6. Click Submit, and this will create your load balancer.
+11. Click Submit, and this will create your load balancer.
 
-7. Open your load balancer. Under resources, you will find the option to add backend sets. Please click your Backend Sets.
+12. Open your load balancer. Under resources, you will find the option to add backend sets. Please click your Backend Sets.
     ![](./images/imageR7.png "")
 
-8. Click Add Backends. Here you can select your two compute VM's you created in earlier steps. And select the default security list for each of the compute VM's.
+13. Click Add Backends. Here you can select your two compute VM's you created in earlier steps. And select the default security list for each of the compute VM's.
     ![](./images/imageR8.png "")
 
-9. It will take few minutes to setup the backend servers. After few minutes refresh your browser, you will be able to see backend health as OK. Overall Health as OK. Please check below.
+14. It will take few minutes to setup the backend servers. After few minutes refresh your browser, you will be able to see backend health as OK. Overall Health as OK. Please check below.
     ![](./images/imageR9.png "")
 
-10. Now grab your Load Balancer IP Address and open the IP address on the browser. You will be able to see your E-Commerce web page. Let's test the load balancer.
+15. Now grab your Load Balancer IP Address and open the IP address on the browser. You will be able to see your E-Commerce web page. Let's test the load balancer.
     ![](./images/imageR10.png "")
-    ![](./images/imageR11.png "")    
+    ![](./images/imageR2.png "")
 
-11. Now, you can go back to compute console and stop your primary Compute Instance. Once your compute instance has stopped. Please check your load balancer IP address on the browser. It will still open the E-Commerce website as the load balancer will automatically redirect you to the secondary server. This way, you can achieve high availability even when one of the compute nodes is down.
+16. Now, you can go back to compute console and stop your primary Compute Instance. Once your compute instance has stopped. Please check your load balancer IP address on the browser. It will still open the E-Commerce website as the load balancer will automatically redirect you to the secondary server. This way, you can achieve high availability even when one of the compute nodes is down.
 
-11. Congratulations, you have successfully configured Load Balancer. The next step is optional. It will explore how to use DNS and Traffic Management Steering Policy.
+17. Congratulations, you have successfully configured Load Balancer. The next step is optional. It will explore how to use DNS and Traffic Management Steering Policy.
 
 ## **STEP 3:** Configure DNS failover [Optional]
 
