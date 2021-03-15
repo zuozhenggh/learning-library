@@ -19,7 +19,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes that you completed all preceding labs.
+This lab assumes that you completed all preceding labs, and your deployment is in the Active state.
 
 ## **STEP 1**: Log in to the Oracle GoldenGate deployment console
 
