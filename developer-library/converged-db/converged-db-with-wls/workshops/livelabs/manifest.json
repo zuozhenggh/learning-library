@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Converged Database with WebLogic for Developers",
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
       "title": "Getting Started",
       "description": "Login to Oracle Cloud",

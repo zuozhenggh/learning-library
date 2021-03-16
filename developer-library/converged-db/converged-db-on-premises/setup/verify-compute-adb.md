@@ -101,6 +101,3 @@ There may be several reasons why you can't login to the instance.  Here are some
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Madhusudhan Rao, Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
