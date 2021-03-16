@@ -91,9 +91,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 2:** Download and Stage Workshop Artifacts
 In order to run this workshop, you will need a set of files that have been conveniently packaged for you. Proceed as indicated below.
 
-1. Download [OAS_Workshop.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6_WvdYP8HOSRFYJpU2958aV8WpEq2sDaqZUP4dJdFlz2NvBPIdlRg8uHyDC0WMyA/n/natdsecurity/b/labs-files/o/OAS_Workshop.zip) and save to a staging area on your laptop or workstation.
+1. Download [`OAS_OML_Workshop_LabFiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/upY4mzN1N2Oq3PrWIr_PaaAw5hLK3XesrlIehHBFqvobSJTKF309EnZSuLUTlXFt/n/natdsecurity/b/labs-files/o/OAS_OML_Workshop_LabFiles.zip) and save to a staging area on your laptop or workstation.
 
 2. Uncompress the ZIP archive
+
+  ***Note***: If you are running the labs exclusively from the remote desktop session, the content of *`OAS_OML_Workshop_LabFiles.zip`* is already unpacked and staged at *`/opt/oracle/stage/OAS_OML_Workshop_LabFiles`/*
 
 ## **STEP 3:** Managing DB and OAS processes (optional)
 Your workshop instance is configured to automatically start all processes needed for the labs. Should you need to stop/start these processes, proceed as shown below as user *opc* from your SSH terminal session
