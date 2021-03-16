@@ -17,6 +17,11 @@
         {
             "title": "Lab 3: Using Ansible with OCI modules to manage infrastructure",
             "filename": "./../../../ansible-with-oci-modules/ansible-with-oci-modules.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
