@@ -194,7 +194,7 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
     ![](images/sales-by-category.png)
 
-5.  Navigate to the Page Designer for page 16 and drill down on the **Attributes** of the **Sales by Category** region. Scroll down through the properties until you come to **JavaScript Initialization Code**, then copy the following function to that field.
+5.  Navigate to the Page Designer for page 16 and select the **Sales by Category** region. Click **Attributes** tab on the Property Editor on the right side of the Page Designer. Scroll down through the properties until you come to **JavaScript Initialization Code**, then copy the following function to that field.
 
     ```
     <copy>

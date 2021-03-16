@@ -1,9 +1,9 @@
 {
   "workshoptitle": "Creating an App based on Existing Tables for Oracle Autonomous Cloud Service",
-  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+  "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
     {
-        "title": "Prerequisites",
+        "title": "Getting Started",
         "description": "Login to Oracle Cloud",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
     },

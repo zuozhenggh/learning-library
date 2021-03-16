@@ -104,8 +104,3 @@ UTL\_FILE provides file access both on the client side and on the server side. W
 * **Authors** - Troy Anthony, Anil Nair
 * **Contributors** - Kay Malcolm
 * **Last Updated By/Date** - Kay Malcolm, October 2020
-
-## Need Help?
-
-
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
