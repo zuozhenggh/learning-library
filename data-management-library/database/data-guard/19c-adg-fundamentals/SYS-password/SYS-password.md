@@ -22,11 +22,11 @@ Overview
 
 At the bottom click on the HOLDG database.
 
-![](./images/SYS_01.png)
+![](./images/SYS-01.png)
 
 Find the drop down wich lists **More Actions** and click on **Manage Passwords**.
 
-![](./images/SYS_02.png)
+![](./images/SYS-02.png)
 
 Enter the new SYS password. Keep in mind that the Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. The special characters must be _, #, or -.
 
@@ -34,17 +34,17 @@ As the password for this lab, use: **WelC0me1##**
 
 And click **Apply**
 
-![](./images/SYS_03.png)
+![](./images/SYS-03.png)
 
 ## Verify 
 
 Using SQL Developer, try to log in to the database as the SYS user. This will fail if you previously stored the password. The tool prompts you for the new password. 
 
-![](./images/SYS_04.png)
+![](./images/SYS-04.png)
 
 When you specify the new password, the connection succeeds.
 
-![](./images/SYS_05.png)
+![](./images/SYS-05.png)
 
 
 ## Summary
