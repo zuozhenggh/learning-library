@@ -63,42 +63,58 @@ This lab assumes you have:
 1. Switch to the UPGR database in 18c environment:
 
     ````
+    <copy>
     . upgr19
     sqlplus / as sysdba
+    </copy>
     ````
+    ![](./images/plugin_upgr_1.png " ")
 
 2. Shutdown UPGR and start it up read only:
 
     ````
+    <copy>
     shutdown immediate
     startup open read only;
+    </copy>
     ````
+    ![](./images/plugin_upgr_2.png " ")
 
 3. Create the XML manifest file describing UPGR’s layout and information:
 
     ````
+    <copy>
     exec DBMS_PDB.DESCRIBE('/home/oracle/pdb1.xml');
+    </copy>
     ````
+    ![](./images/plugin_upgr_3.png " ")
 
 4. Shutdown UPGR:
 
     ````
+    <copy>
     shutdown immediate
     exit
+    </copy>
     ````
+    ![](./images/plugin_upgr_4.png " ")
 
 5. Switch to CDB2:
 
     ````
+    <copy>
     . cdb2
     sqlplus / as sysdba
+    </copy>
     ````
+    ![](./images/plugin_upgr_5.png " ")
 
 ## **STEP 2**: Compatibility check
 
 1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO.  Compatibility check.
 
     ````
+    <copy>
     set serveroutput on
 
     DECLARE
@@ -108,27 +124,41 @@ This lab assumes you have:
     DBMS_OUTPUT.PUT_LINE('Is the future PDB compatible? ==> ' || compatible);
     END;
     /
+    </copy>
     ````
+    ![](./images/plugin_upgr_6.png " ")
 
-2. If the result is “NO” (and it is NO very often), then don’t be in panic. Check for TYPE='ERROR' in PDB_PLUG_IN_VIOLATIONS. n this case, the result should be “YES“.
+2. If the result is “NO” (and it is NO very often), then don’t be in panic. Check for TYPE='ERROR' in PDB\_PLUG\_IN\_VIOLATIONS. n this case, the result should be “YES“.
 
 ## **STEP 3**: Plugin Operation
 
 1. Plugin UPGR with its new name PDB1 – from this point there’s no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
 
-Please use the proposed naming as the FILE_NAME_CONVERT parameter and TNS setup have been done already.
-Use the NOCOPY option for this lab to avoid additional copy time and disk space consumption. The show pdbs command will display you all existing PDBs in this CDB2.
+    Please use the proposed naming as the FILE\_NAME\_CONVERT parameter and TNS setup have been done already.
+    Use the NOCOPY option for this lab to avoid additional copy time and disk space consumption. The show pdbs command will display you all existing PDBs in this CDB2.
 
-create pluggable database PDB1 using '/home/oracle/pdb1.xml' nocopy tempfile reuse;
-show pdbs
-
-As you couldn’t do a compatibility check beforehand, you’ll open the PDB now and you will recognize that it opens only with errors.
+    ![](./images/plugin_upgr_7.png " ")
 
     ````
+    <copy>
+    create pluggable database PDB1 using '/home/oracle/pdb1.xml' nocopy tempfile reuse;
+    show pdbs;
+    </copy>
+    ````
+    ![](./images/plugin_upgr_10.png " ")
+
+    As you couldn’t do a compatibility check beforehand, you’ll open the PDB now and you will recognize that it opens only with errors.
+
+    ````
+    <copy>
     alter pluggable database PDB1 open;
-
-    Find out what the issue is:
-
+    </copy>
+    ````
+    ![](./images/plugin_upgr_11.png " ")
+    
+    To find the above issue
+    ````
+    <copy>
     column message format a50
     column status format a9
     column type format a9
@@ -136,47 +166,57 @@ As you couldn’t do a compatibility check beforehand, you’ll open the PDB now
 
     select con_id, type, message, status from PDB_PLUG_IN_VIOLATIONS
     where status<>'RESOLVED' order by time;
+    </copy>
     ````
+    ![](./images/plugin_upgr_12.png " ")
 
 2. As you can see, a lot of the reported issues aren’t really issues. This is a known issue. Only in the case you see ERROR in the first column you need to solve it.  The only real ERROR says:
 
-    ````
-    PDB plugged in is a non-CDB, requires noncdb_to_pdb.sql be run.
-    ````
-
-3. Kick off this sanity script to adjust UPGR and make it a “real” pluggable database PDB1 with noncdb_to_pdb.sql. Runtime will vary between 10-20 minutes. Take a break while it is running. The forced recompilation takes quite a bit.
+    **PDB plugged in is a non-CDB, requires noncdb\_to\_pdb.sql be run.**
+    
+3. Kick off this sanity script to adjust UPGR and make it a “real” pluggable database PDB1 with noncdb\_to\_pdb.sql. Runtime will vary between 10-20 minutes. Take a break while it is running. The forced recompilation takes quite a bit.
 
     ````
+    <copy>
     alter session set container=PDB1;
     @?/rdbms/admin/noncdb_to_pdb.sql
+    </copy>
     ````
+    ![](./images/plugin_upgr_13.png " ")
 
 4. Now SAVE STATE. This ensures, that PDB1 will be opened automatically whenever you restart CDB2. Before you must restart the PDB as otherwise it opens only in RESTRICTED mode.
 
     ````
+    <copy>
     shutdown
     startup
     alter pluggable database PDB1 save state;
     alter session set container=CDB$ROOT;
     show pdbs
     exit
+    </copy>
     ````
+    ![](./images/plugin_upgr_14.png " ")
 
 5. Try to connect directly to PDB1 – notice that you can’t just connect without specifying the service name as PDB1 is not visible on the OS level.
 
     ````
+    <copy>
     sqlplus "sys/oracle@pdb1 as sysdba"
-
     exit
+    </copy>
     ````
+    ![](./images/plugin_upgr_15.png " ")
 
 6. As alternative you could also use the EZconnect (speak: Easy Connect)
 
     ````
+    <copy>
     sqlplus "sys/oracle@//localhost:1521/pdb1 as sysdba"
-
     exit
+    </copy>
     ````
+    ![](./images/plugin_upgr_16.png " ")
 
 You may now [proceed to the next lab](#next).
 

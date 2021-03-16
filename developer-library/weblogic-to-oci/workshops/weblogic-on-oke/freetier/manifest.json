@@ -1,5 +1,6 @@
 {
     "workshoptitle": "Migrate WebLogic to WebLogic on OKE",
+    "help": "livelabs-help-weblogic_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -64,6 +65,11 @@
             "publisheddate": "07/30/2020",
             "filename": "../../../tear-down/tear-down.md",
             "type": "dbcs"
+        },
+        {
+            "title": "Need Help?",
+            "publisheddate": "10/06/2020",
+            "filename": "../../../need-help/need-help.md"
         }
      ]
 }

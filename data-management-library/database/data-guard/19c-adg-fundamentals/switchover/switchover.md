@@ -26,7 +26,7 @@ Please make sure to complete Lab 3 before starting this Lab.
 
 Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally. 
 
-![](./images/Switchover_01.png)
+![](./images/Switchover-01.png)
 
 
 Verify the roles with the following query:
@@ -37,7 +37,7 @@ Select name, db_unique_name, database_role from v$database;
 
 Enter this query in both panes and click the run button to see the result.
 
-![](./images/Switchover_02.png)
+![](./images/Switchover-02.png)
 
 We can conclude that the Database in AD1 is the primary database and the database in AD2 is the Standby database.
 
@@ -51,23 +51,23 @@ Overview
 -> DB Systems
 
 Select **ADGHOLAD1**
-![](./images/Switchover_03.png)
+![](./images/Switchover-03.png)
 
 Click on the name **DGHOL** and in the next screen scroll down immediately and click on **Data Guard Associations**
 
-![](./images/Switchover_04.png)
+![](./images/Switchover-04.png)
 
 Click on the 3 dots on the right, and click **Switchover**
-![](./images/Switchover_05.png)
+![](./images/Switchover-05.png)
 
 This is a DBA responsability, so the tooling asks the password. Enter the SYS password from the Primary database and click **OK** then the role transition starts.
-![](./images/Switchover_06.png)
+![](./images/Switchover-06.png)
 
 At this point, the lifecycle state will be updating and the role transition happens in the background.
-![](./images/Switchover_07.png)
+![](./images/Switchover-07.png)
 
 After some time the role transition finished and the state is Available again. 
-![](./images/Switchover_08.png)
+![](./images/Switchover-08.png)
 
 
 ## Verify the database roles in the database
@@ -80,7 +80,7 @@ Select name, db_unique_name, database_role from v$database;
 
 Enter this query in both panes and click the run button to see the result.
 
-![](./images/Switchover_09.png)
+![](./images/Switchover-09.png)
 
 We can conclude that the Database in AD2 is the primary database and the database in AD1 is the Standby database.
 
