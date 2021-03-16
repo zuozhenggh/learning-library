@@ -1,6 +1,7 @@
 {
   "workshoptitle": "DB Security - Database Vault",
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
       "title": "Getting Started",
       "description": "Get a Free Trial",

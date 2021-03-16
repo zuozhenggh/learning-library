@@ -2,6 +2,8 @@
 
 ## Introduction
 
+[](youtube:fkKxokdf7I0)
+
 This page will walk you through implementing a common help lab page and help button.
 
 ![](images/help-tab-goal.png)
@@ -11,6 +13,9 @@ Converting to the help lab pages will allow you to only have to edit 1 or 2 Mark
 Implementing the help button will allow users to quickly construct an email pre-filled to direct toward the given address, as well as a pre-filled subject line that describes the workshop they are sending the email from.
 
 ## **STEP 1:** Adding a Help Button
+
+[](youtube:grvsGwSkylg)
+
 ***NOTE: You will want to do this concurrently with Step 2 to save time!***
 
 This is the result we want. The button bring up a pre-populated email directed toward your support inbox.
@@ -57,6 +62,9 @@ This is the result we want. The button bring up a pre-populated email directed t
 
 
 ## **STEP 2:** Add Your "Need Help?" Lab Page to Every Workshop Using an Absolute Path 
+
+[](youtube:YXXzJmYBs1g)
+
 ***NOTE: This assumes you have already created a Markdown file your team has decided to use to add to every one of your team's workshops. This file, or multiple files if your team decides to create different files for "freetier" and "livelabs", needs to be merged to Oracle's learning library in order to get the absolute path to add to each manifest (unless you want the path to point to another repository). Navigate to this page on github and click raw to get the url for your absolute path.***
 
 ![](images/raw3.png)
@@ -80,6 +88,8 @@ The database team's help pages can be found below. We recommend you have seperat
 ![](images/search-path.png)
 
 ## **STEP 3:** Deleting Instances of the Old "Need Help?" Sections in Every Markdown
+
+[](youtube:_N3CHyrJxMk)
 
 This sounds like an arduous task, but we can simplify it a lot by using the "search in folder" function mentioned in previous steps in conjunction with regular expressions and replace all!
 

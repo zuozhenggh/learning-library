@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Modernize Enterprise Apps",
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
       "title": "Getting Started",
       "description": "Login to Oracle Cloud",
