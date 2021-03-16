@@ -34,6 +34,11 @@
           "title": "Lab 5: Object Storage",
           "type": "livelabs",
           "filename": "../../../object-storage/os/object-storage.md"
+      },
+      {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
       }
     ]
 }
