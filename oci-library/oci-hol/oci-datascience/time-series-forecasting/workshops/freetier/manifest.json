@@ -1,15 +1,16 @@
 {
       "workshoptitle": "Time Series Forecasting with fb Prophet",
-      "tutorials": [
-        {
-            "title": "Getting Started",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
+      "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction to the Data Science Service",
             "filename": "../../../common/odsc-intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Configure the Data Science Service",

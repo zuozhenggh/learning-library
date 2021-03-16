@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Picking a Good Wine Using ADW, OML and OAC",
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Prerequisites",

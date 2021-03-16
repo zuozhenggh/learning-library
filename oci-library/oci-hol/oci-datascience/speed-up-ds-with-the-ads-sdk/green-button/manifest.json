@@ -1,6 +1,7 @@
 {
       "workshoptitle": "Speed Up Data Science with the Accelerated Data Science SDK",
-      "tutorials": [
+      "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction to the Data Science Service",

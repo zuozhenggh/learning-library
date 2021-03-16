@@ -1,5 +1,6 @@
 {
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {         
             "title": "Introduction to Consolidation of Databases",
             "description": "Introduction to Consolidation of Databases",

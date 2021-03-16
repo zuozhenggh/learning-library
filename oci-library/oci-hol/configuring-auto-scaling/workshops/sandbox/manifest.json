@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Configuring Auto Scaling",
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "filename": "./../../intro/intro-sandbox.md"

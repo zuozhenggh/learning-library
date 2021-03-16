@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Getting Started with Oracle Cloud Infrastructure Data Flow",
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
       {
           "title": "Getting Started",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
