@@ -321,7 +321,7 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
 5. Press the **three dots** to the right of table DAYS and select **Expand**. Repeat this for the other three dimension tables. You should see the star schema laid out as follows:
   ![ALT text is not available for this image](images/2879071210.png)
 
-###Refining Your Hierarchies
+### Refining Your Hierarchies
 
 6. Select **Hierarchies** from the list on the left of the screen and click the three dots to the right of the row for hierarchy **CONTINENT**.
   ![ALT text is not available for this image](images/2879071211.png)
@@ -332,43 +332,43 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
 8. This is a great head start, but a better term to use for this hierarchy would be geography. Override the default **Hierarchy Name, Caption and Description** for this hierarchy with the word **Geography** as shown below. Then click **Save**. 
   ![ALT text is not available for this image](images/2879071213.png)
 
-9. DAY\_NUM\_USA looks a little odd. Click the three dots to the right of that hierarchy and select **Edit**. 
-  ![ALT text is not available for this image](images/2879071214.png)
-  This is simply a day-of-week hierarchy, but now we'll see the value of the table that the sales analyst had set up in a previous analysis. Sorting days alphabetically is not particularly helpful. What's preferable is to sort by the day number of week. Conventions for day numbers vary across the world and the DAYS table supports both the European and the North American conventions. We'll use the North American convention for this exercise. 
+9. Hierarchy DAY\_NUM\_USA looks a little odd. Let's clean that up:
 
-    - Remove the DAY\_NUM\_USA level by selecting that level and pressing the minus button above the hierarchy list.
-    - Access the Edit Hierarchy dialog by pressing the vertical dot button for the DAY\_NUM\_USA hierarchy and choosing Edit.
-    - Replace Hierarchy Name DAY\_NUM\_USA with “DAY”.
-    - Replace Caption and Description with “Day”.
-    - For the DAY level, change Sort By to DAY\_NUM\_USA.
-    - Click **Save**.
+    - Click the three dots to the right of that hierarchy and select **Edit**. 
+    - Change *Hierarchy Name* to "DAY".
+    - Change *Caption* and *Description* to "Day".
+  ![ALT text is not available for this image](images/2879071214.png)
+
+10. This is simply a day-of-week hierarchy, but now you'll see the value of the table that the sales analyst had set up in a previous analysis. Sorting days alphabetically is not particularly helpful. What's preferable is to sort by the day number of week. Conventions for day numbers vary across the world and the DAYS table supports both the European and the North American conventions. You'll use the North American convention for this exercise. 
+
+    - Remove the DAY\_NUM\_USA *level* by selecting that level and pressing the minus button above the hierarchy list.
   ![ALT text is not available for this image](images/2879071215.png)
 
-10. Next, change the Sort By to DAY\_NUM\_USA. Then click **Save**. 
+11. Next, change the Sort By to DAY\_NUM\_USA. Then click **Save**. 
   ![ALT text is not available for this image](images/2879071216.png)
 
-11. Similarly, change the MONTH dimension as follows:
+12. Similarly, change the MONTH dimension as follows:
   ![ALT text is not available for this image](images/2879071217.png)
 
 ### Working With Measures
 
-12. Now select **Measures**, the last item on the list on the left of the screen. Notice that Auto-Business Model has identified SALES and PURCHASES as candidate Measures from the Fact table (because these are numeric columns).
+13. Now select **Measures**, the last item on the list on the left of the screen. Notice that Auto-Business Model has identified SALES and PURCHASES as candidate Measures from the Fact table (because these are numeric columns).
 
     a. Measure SALES is a dollar amount.
 
     b. Measure PURCHASES is a tally of the number of purchases made.
 
-13. The default aggregation expression for the measures is SUM. Other expressions could be selected, but for the purposes of this workshop, SUM is the appropriate value to select in both cases.
+14. The default aggregation expression for the measures is SUM. Other expressions could be selected, but for the purposes of this workshop, SUM is the appropriate value to select in both cases.
   ![ALT text is not available for this image](images/2879071218.png)
 
-14. Press **Create** and then **Yes** in the confirmation dialog. After a few seconds the Business Model is successfully created, and represented by a card at the bottom of the screen.
+15. Press **Create** and then **Yes** in the confirmation dialog. After a few seconds the Business Model is successfully created, and represented by a card at the bottom of the screen.
 
-15. Press the three dots on the top right of the card and select **Show DDL** from the list that appears. 
+16. Press the three dots on the top right of the card and select **Show DDL** from the list that appears. 
   ![ALT text is not available for this image](images/2879071207.png)
 
-16. Experienced users of Oracle Database will note that the Business Model is implemented in the database as an Analytic View. Experienced or not, it's nice to know that you didn't have to type any of that DDL! Click **Close** to return to the Business Model screen, click the **three dots** on the Business Model's card again and this time select **Analyze** from the list that appears. Notice that there are three tabs across the top of the Analyze Business Model screen.
+17. Experienced users of Oracle Database will note that the Business Model is implemented in the database as an Analytic View. Experienced or not, it's nice to know that you didn't have to type any of that DDL! Click **Close** to return to the Business Model screen, click the **three dots** on the Business Model's card again and this time select **Analyze** from the list that appears. Notice that there are three tabs across the top of the Analyze Business Model screen.
 
-17. In the Hierarchies tab:
+18. In the Hierarchies tab:
 
     a. Change the layout for hierarchy Geography to be **All **by selecting that value from the pick list.
 
@@ -376,18 +376,18 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
 
     c. Change the layout of FORM_FACTOR to **Row**.
 
-18. In the Measures tab:
+19. In the Measures tab:
 
     a. Deselect measure **SALES**.
 
     b. Select measure **PURCHASES**.
 
-19. Then click on the **Data** tab at the top of the dialog box. You should see a data summary similar to this. (It may be necessary to widen the dialog to see the full width of displayed data.)
+20. Then click on the **Data** tab at the top of the dialog box. You should see a data summary similar to this. (It may be necessary to widen the dialog to see the full width of displayed data.)
   ![ALT text is not available for this image](images/2879071208.png)
 
-20. Having completed this step, you now have a Business Model over table MOVIE\_SALES\_2020Q2. This features hierarchies, measures (including aggregation expressions), and provides a preview pane in which to view the data and do some rudimentary analysis. Press **OK** to return to the Business Model page. Shortly you'll return to the Autonomous Database Home Page, but first let's explore some of the various navigation techniques availably throughout the tool suite. 
+21. Having completed this step, you now have a Business Model over table MOVIE\_SALES\_2020Q2. This features hierarchies, measures (including aggregation expressions), and provides a preview pane in which to view the data and do some rudimentary analysis. Press **OK** to return to the Business Model page. Shortly you'll return to the Autonomous Database Home Page, but first let's explore some of the various navigation techniques availably throughout the tool suite. 
 
-21. From the three-dot menu of the Business Model card, there are options to navigate directly to Insights and Catalog for this Business Model. (You'll use these tools in subsequent sections of this workshop.)
+22. From the three-dot menu of the Business Model card, there are options to navigate directly to Insights and Catalog for this Business Model. (You'll use these tools in subsequent sections of this workshop.)
 
 
     a. From the **hamburger menu** on the top left of the screen, you can navigate directly to any of the Built-In tools.
