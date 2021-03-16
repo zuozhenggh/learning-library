@@ -112,12 +112,12 @@ As you can see a table called `OWNER` and a table called `PET` were created.
     package example.atp.domain;
 
     import io.micronaut.core.annotation.Creator;
+    import io.micronaut.core.annotation.Nullable;
     import io.micronaut.data.annotation.AutoPopulated;
     import io.micronaut.data.annotation.Id;
     import io.micronaut.data.annotation.MappedEntity;
     import io.micronaut.data.annotation.Relation;
 
-    import javax.annotation.Nullable;
     import java.util.UUID;
 
     @MappedEntity
@@ -464,23 +464,51 @@ To execute your tests make sure you have set the `TNS_ADMIN` environment variabl
 <copy>
 export TNS_ADMIN=[Your absolute path to wallet]
 export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
+</copy>
+```
+
+Then if you are using Gradle use the `test` task to execute your tests:
+
+```bash
+<copy>
 ./gradlew test
+</copy>
+```
+
+Alternatively if you chose Maven use the `test` goal:
+
+```bash
+<copy>
+./mvnw test
 </copy>
 ```
 
 ## **STEP 6**: Run the Micronaut application locally
 
-To run the application locally and test against the Autonomous Database that was setup in the previous labs. Make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab and then execute `./gradlew run -t`:
+To run the application locally and test against the Autonomous Database that was setup in the previous labs. Make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab:
 
 ```bash
 <copy>
 export TNS_ADMIN=[Your absolute path to wallet]
 export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
-./gradlew run -t
 </copy>
  ```
 
-Note that the `-t` argument is optional and activates continuous build such that if you make changes to your application it will be automatically restarted.
+Then if you are using Gradle using the `run` task to start the application:
+
+```bash
+<copy>
+./gradlew run
+</copy>
+ ```
+
+Alternatively if you are using Maven use the `mn:run` goal:
+
+```bash
+<copy>
+./mvnw mn:run
+</copy>
+ ```
 
 You can now access [http://localhost:8080/pets](http://localhost:8080/pets) for the `/pet` endpoint and [http://localhost:8080/owners](http://localhost:8080/owners) for the `/owners` endpoint. For example:
 

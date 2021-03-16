@@ -9,16 +9,25 @@ Estimated Lab Time: 5 minutes
 ### Objectives
 
 In this lab, you will:
-* Setup the environment
+<if type="21c">* Login to SQL Developer Web as the Order Entry (OE) user
+* Run queries using the new 21c operators EXCEPT and INTERSECT </if>
+<if type="dbcs">* Run queries on Order Entry data using the new 21c operators EXCEPT and INTERSECT</if>
 
 ### Prerequisites
-
+<if type="dbcs">
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
+</if>
+<if type="21c">
 
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Lab: Provision ADB
+* Lab: Setup
+</if>
 
+<if type="dbcs">
 ## **STEP  1**: Set up the environment
 
 In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables.sh` shell script. The shell script creates and loads the `OE.INVENTORIES`, `OE.ORDERS` and `OE.ORDER_ITEMS` tables.
@@ -47,41 +56,62 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 	$
 
 	```
+</if>
+<if type="21c">
+## **STEP  1**: Login to SQL Developer Web on ADB
+
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD)
+      ![](./images/21c-home-adb.png " ")
+
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](./images/21c-adb.png " ")
+
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](./images/tools.png " ")
+
+5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+6.  Click on the **SQL** button.
+7.  Change the word *admin* in the URL to *oe*.  You will be logging in to the admin schema
+8.  Enter the username *oe* and password *WElcome123##*
+</if>
 
 ## **STEP  2**: Test the set operator with the `EXCEPT` clause
 
+<if type="dbcs">
+
 1. Connect to `PDB21` as `OE`.
 
-
 	```
-
 	$ <copy>sqlplus oe@PDB21</copy>
-
 	Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
 	Enter password: <b><i>WElcome123##</i></b>
-
 	Last Successful login time: Mon Mar 16 2020 11:32:00 +00:00
-
 	Connected to:
-
 	SQL>
-
 	```
+</if>
+<if type="21c">
+For the subsequent sections you will be pasting sql into the SQL worksheet and pressing the green play button or Ctrl+Enter to execute the highlighted statement.  You can also run this in the terminal by logging in to sqlplus as oe/WElcome123##@db21c_high.
 
+1. Click the admin drop down and scroll down and choose the OE schema.  Note that there are 3 tables that you setup in the previous lab.  Enter the following sql queries to explore set operators.
+</if>
 2. Count in both tables, `INVENTORIES` and `ORDER_ITEMS`, respectively the number of products available in the inventory and the number of products that customers ordered.  Start with the `INVENTORIES` table.
 
 
 	```
-
 	SQL> <copy>SELECT count(distinct product_id) FROM inventories;</copy>
 
+	<if type="21c">
+	```
+    ![](images/select-product.png)
+	</if>
+	<if type="dbcs">
 	COUNT(PRODUCT_ID)
-
 	-----------------
-
 				208
 	```
+	</if>
 
 3. Run a count in the `ORDER_ITEMS` table.  Note the difference.
 
@@ -89,15 +119,17 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 
 	SQL> <copy>SELECT count(distinct product_id) FROM order_items;</copy>
 
-	COUNT(PRODUCT_ID)
-
-	-----------------
-
-				185
-
-	SQL>
-
+	<if type="21c">
 	```
+    ![](images/select-product.png)
+	</if>
+	<if type="dbcs">	
+	COUNT(PRODUCT_ID)
+	-----------------
+				185
+	SQL>
+	```
+	</if>
 
 4. How many products are in the inventory that were never ordered? Use the `EXCEPT` operator to retrieve only unique rows returned by the first query but not by the second.
 
@@ -110,9 +142,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 			SELECT product_id FROM order_items);</copy>
 
 	COUNT(*)
-
 	----------
-
 		84
 
 	SQL>
@@ -131,7 +161,6 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 		</copy>
 
 	COUNT(*)
-
 	----------
 
 		61
@@ -262,11 +291,7 @@ The result shows all rows in the `INVENTORIES` table that contain products that 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
+* **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
 * **Last Updated By/Date** -  David Start, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -133,11 +133,11 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 1. Now click on the *ReplenishAlert* stage and Pause.
 2. In this stage we are adding a target stage that we have defined for a kafka topic replenishAlert.
 
-   ![](./images/replenishTarget.png " ")
+   ![](./images/replenishtarget.png " ")
 
 3. The fields in the topic have been predefined but we could have easily defined the necessary fields for our new target or even edited the existing target. Notice that in this stage we mapped the existing data from our stream Output Stream Property to the topic fields Target Property as appropriate
 
-    ![](./images/replenishTargetFields.png " ")
+    ![](./images/replenishtargetfields.png " ")
 
 ## **Step 9**: Create ReplenishStats Stage
 
@@ -225,7 +225,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
