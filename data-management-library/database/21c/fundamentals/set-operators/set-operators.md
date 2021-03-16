@@ -1,10 +1,18 @@
 # New Set Operators
 
 ## Introduction
+This lab introduces new operators, parameters, expressions and SQL Macros available in the latest release of Oracle Database, 21c. Oracle 21c introduces three new operators, EXCEPT, EXCEPT ALL and INTEREST ALL. The SQL set operators now support all keywords as defined in ANSI SQL. The new operator EXCEPT [ALL] is functionally equivalent to MINUS [ALL]. The operators MINUS and INTERSECT now support the keyword ALL.
+
+Set operators are nothing new to the Oracle Database.  They join the following SQL set operators introduced prior to 21c.
+- UNION
+- UNION ALL
+- INTERSECT
+- MINUS
+- ORDER BY
 
 This lab shows how to use the new set operators, EXCEPT, EXCEPT ALL and INTERSECT ALL.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -32,7 +40,13 @@ In this lab, you will:
 
 In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables.sh` shell script. The shell script creates and loads the `OE.INVENTORIES`, `OE.ORDERS` and `OE.ORDER_ITEMS` tables.
 
-1.  Change to the lab directory and run the shell script to setup the tables
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the 21c instance in DB Systems.  Switch to the oracle user.
+	````
+	ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address
+	sudo su - oracle
+	````
+
+2.  Change to the lab directory and run the shell script to setup the tables
 
 	```
 
@@ -60,7 +74,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 <if type="21c">
 ## **STEP  1**: Login to SQL Developer Web on ADB
 
-1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD)
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](./images/21c-home-adb.png " ")
 
 2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
@@ -162,8 +176,7 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 
 	COUNT(*)
 	----------
-
-		61
+    61
 
 	SQL>
 
@@ -174,7 +187,6 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 1. Would the usage of ALL in the set operator defined in a query in a previous step mean anything? Run the SQL statement using the *EXCEPT ALL* operator.
 
 	```
-
 	SQL> <copy>SELECT product_id FROM inventories
 		EXCEPT ALL
 		SELECT product_id FROM order_items;</copy>
@@ -184,15 +196,6 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 		1729
 		1729
 		1729
-		1729
-		1729
-		1729
-		1733
-		1733
-		1733
-		1733
-		1733
-		1733
 		1733
 		1733
 		1733
@@ -293,5 +296,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
+* **Last Updated By/Date** -  Kay Malcolm, March 2020
 
