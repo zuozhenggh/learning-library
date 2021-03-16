@@ -4,7 +4,7 @@
 
 In this lab, we will walk through the required steps to provision a GPU instance on OCI with Ubuntu running on it.
 
-**Note:** A PAYG account is required to provision GPU instances on OCI. If you are using the Oracle Free Tier that consists of the Always Free offering and a 30-day free trial, you can make use of the VM.Standard.E2.1.Micro (included in the Always Free Offering) and all available VM and BMs instances (included in the 30-Day trial).
+**Note:** A PAYG account is required to provision GPU instances on OCI. If you are using the Oracle 30-day free trial, you can make use all available VM and BMs instances.
 
 Estimated workshop time: 15 minutes
 
