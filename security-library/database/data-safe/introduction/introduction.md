@@ -8,7 +8,7 @@
 
 <if type="livelabs">The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, and assess the security of your database configurations and users.
 
-*At this time, the lab for discovering and masking sensitive data is not available in the LiveLabs tenancy.*</if>
+*If you want to try the sensitive data discovery and data masking lab, please use the "Free Trial Workshop" or "Run the LiveLab on Your Own Tenancy" version of this workshop.*</if>
 
 
 
