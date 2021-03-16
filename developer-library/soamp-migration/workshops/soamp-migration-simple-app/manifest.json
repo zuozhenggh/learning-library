@@ -1,5 +1,7 @@
 
 {
+    "workshoptitle": "Migrate a SOA domain to Oracle Cloud Infrastructure",
+    "help": "livelabs-help-weblogic_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -49,6 +51,11 @@
             "title": "Lab 6: Tear down the environment",
             "publisheddate": "10/07/2020",
             "filename": "../../tear-down/tear-down.md"
+        },
+        {
+            "title": "Need Help?",
+            "publisheddate": "10/06/2020",
+            "filename": "../../../weblogic-to-oci/need-help/need-help.md"
         }
      ]
 }
