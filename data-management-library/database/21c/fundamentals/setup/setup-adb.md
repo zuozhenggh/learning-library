@@ -88,13 +88,12 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
    
       ``` 
       <copy> 
-
       ./load-21c.sh WElcome123## db21c 2>&1 > load-21c.out</copy>
      
       ```
-5.  As the script is running, you will note several failures on the DBA role. The DBA role is not available in Autonomous Database, the DWROLE is used instead. This error is expected. 
+5.  As the script is running, you will note failures on the DBA role. The DBA role is not available in Autonomous Database, the DWROLE is used instead. This error is expected. 
    
-6.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. You should get 1 row.  
+6.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. 
 
       ````
       <copy>

@@ -1,6 +1,11 @@
 # Using SQM Scalar and Table Expressions
 
 ## Introduction
+SQL Macros is a new, simpler way to encapsulate complex processing logic directly within SQL. SQL Macros allow developers to encapsulate complex processing within a new structure called a "macro" which can then be used within SQL statement. Essentially there two types of SQL Macros: SCALAR and TABLE.  SCALAR expressions can be used in SELECT list, WHERE/HAVING, GROUP BY/ORDER BY clauses.  TABLE expressions are used in a FROM-clause.
+
+You can create SQL Macros (SQM) to factor out common SQL expressions and statements into reusable, parameterized constructs that can be used in other SQL statements. SQL macros can either be scalar expressions, typically used in SELECT lists, WHERE, GROUP BY and HAVING clauses, to encapsulate calculations and business logic or can be table expressions, typically used in a FROM clause.
+
+SQL Macros have an important advantage over ordinary PL/SQL functions in that they make the reusable SQL code completely transparent to the optimizer – and that brings big benefits! It makes it possible for the optimizer to transform the original code for efficient execution because the underlying query inside the macro function can be merged into outer query. That means there is no context switching between PL/SQL and SQL and the query inside the macro function is now executed under same snapshot as outer query. So we get both simplicity and faster execution.
 
 This lab shows how to use SQL Macro as scalar and table expressions.
 
@@ -30,24 +35,26 @@ In this lab, you will:
 <if type="dbcs">
 ## **STEP 1:** Use SQL Macro as a scalar expression
 
-1. Ensure that `PDB21` is opened. If it is not opened, open it first.
+
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the 21c instance in DB Systems.  Switch to the oracle user.
+	````
+	ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address
+	sudo su - oracle
+	````
+    
+2. Ensure that `PDB21` is opened. If it is not opened, open it first.
 
 
     ```
-
     $ <copy>sqlplus / AS SYSDBA</copy>
-
     Connected.
-
     SQL> <copy>ALTER PLUGGABLE DATABASE pdb21 OPEN;</copy>
-
     Pluggable Database opened.
-
     SQL>
 
     ```
 
-2. In case the wallet was closed, open the wallet in the CDB root and all PDBs because in this practice you are going to insert data.
+3. In case the wallet was closed, open the wallet in the CDB root and all PDBs because in this practice you are going to insert data.
 
     ```
 
@@ -131,7 +138,7 @@ In this lab, you will:
 <if type="21c">
 ## **STEP  1**: Login to SQL Developer Web as HR User on ADB
 
-1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD)
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](../set-operators/images/21c-home-adb.png " ")
 
 2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
@@ -433,7 +440,11 @@ In this lab, you will:
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+- [SQL Macros - LiveSQL](https://livesql.oracle.com/apex/livesql/file/tutorial_KQNYERE8ZF07EZMRR6KJ0RNIR.html)
+- [SQL Macros on ADB](https://blogs.oracle.com/datawarehousing/sql-macros-have-arrived-in-autonomous-database)
+
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, March 
+* **Last Updated By/Date** -  Kay Malcolm, March 2020
