@@ -4,7 +4,7 @@
 
 In this lab, you'll create a load balancer that can be used as a front end for securely accessing Cloudera Manager, Hue, and Oracle Data Studio on your non-highly-available (non-HA) Big Data Service cluster.
 
-Typically, a load balancer is used to spread workloads across multiple mirrored servers (for example, cluster nodes), to optimize resource usage and to ensure high-availability (HA). However, in this lab you'll use a load balancer to direct traffic to multiple ports on a single Big Data Service node. <!-- Cloudera Manager, Hue, and Data Studio all run on the first utility node of a non-HA cluster, and the load balancer you create in this lab will handle traffic on that node.--> <!--In an HA cluster, the services are divided between the first and second utility nodes.-->
+Typically, a load balancer is used to spread workloads across multiple mirrored servers (for example, cluster nodes), to optimize resource usage and to ensure high-availability (HA). However, in this lab you'll use a load balancer to direct traffic to multiple ports on a single Big Data Service node.
 
 One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. SSL uses digital certificates and keys to encrypt and decrypt transmitted data, to ensure the identities of the sender and the receiver of data, and to sign the data to verify its integrity.  In this workshop, you'll implement end-to-end SSL, which means that the load balancer will accept SSL encrypted traffic from clients and encrypt traffic to the cluster.
 
@@ -21,7 +21,7 @@ In this workshop, you will:
 
 * Configure the load balancer to function as a front end for connecting to Cloudera Manager, Hue, and Big Data Studio on the cluster.
 
-* Implement end-to-end SSL encryption for the load balancer by using the self-signed SSL certificates included with the cluster. <!--SSL is a protocol used to ensure privacy, authentication, and data security in internet communications.-->
+* Implement end-to-end SSL encryption for the load balancer by using the self-signed SSL certificates included with the cluster.
 
 More specifically, you will:
 
@@ -46,7 +46,7 @@ More specifically, you will:
 
 ### Prerequisites
 
-* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the <!-- Prerequisites--> [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page. <!-- FIND OUT ABOUT RENAMING THAT TO "GET STARTED WITH ORACLE CLOUD"-->
+* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page.
 
 * Any operating system command shell containing **Secure Shell (SSH)** and **Secure Copy (SCP)**. You can also use the open source PuTTY network file transfer application. See PuTTY documentation for instructions.
 
@@ -68,7 +68,7 @@ If you choose ***not*** to complete the [Getting Started with Oracle Big Data Se
 
 * **Administrative access** to manage load balancers.  See "Let network admins manage load balancers" in [Common Policies](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm) in the Oracle Cloud Infrastructure documentation.
 
-* An **SSH key pair**. The SSH key pair must include the private key that was associated with the cluster when it was created. <!-- In the steps below, the sample key pair files are named `my-ssh-key` (the private key) and `my-ssh-key.pub` (the public key). See [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Oracle Big Data Service* and [Creating a Key Pair](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) in the Oracle Cloud Infrastructure documentation.--> Se [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
+* An **SSH key pair**. The SSH key pair must include the private key that was associated with the cluster when it was created. See [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
 
 * **Access to the cluster file system** (via SSH). You must be able to connect directly to the first utility node of your cluster. To do this, prior to creating a load balancer, you must set up your environment to allow that access. For example you can use Oracle FastConnect or Oracle IpSec VPN, you can set up a bastion host, or you can map private IPs to public IP addresses. See  [Establish Connections to Nodes with Private IP Addresses](https://docs.oracle.com/en/cloud/paas/big-data-service/user/establish-connections-nodes-private-ip-addresses.html) in *Using Big Data Service*.
 
@@ -573,7 +573,7 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
       * `https://`*`<load-balancer-ip-address>`*`:30000`
       * `https://`*`<hostname>`*`:30000`
 
-**This concludes this workshop. <!-- Please proceed to the next lab in the Contents menu.-->**
+**This concludes this workshop.**
 
 ## Want to Learn More?
 
