@@ -89,7 +89,7 @@ You will also clone a GitHub repository.
 
 
 5.  Run the deploy script from the same directory
-    as build. This will create a new pod and service for this image in the OKE
+    as build. This will create the deployment and pod for this image in the OKE
     cluster `msdataworkshop` namespace:
 
     ```
