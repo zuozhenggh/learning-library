@@ -77,14 +77,14 @@ This lab assumes you have:
     ````
     <copy>
     alter pluggable database PDB3 open;
-    create directory IMP18 as '/home/oracle/IMP';
-    grant read, write on directory IMP18 to public;
+    create directory IMP19 as '/home/oracle/IMP';
+    grant read, write on directory IMP19 to public;
     exit
     </copy>
     ````
     ````
     <copy>
-    impdp system/oracle@PDB3 DIRECTORY=IMP18 DUMPFILE=down.dmp LOGFILE=impdown.log LOGTIME=ALL
+    impdp system/oracle@PDB3 DIRECTORY=IMP19 DUMPFILE=down.dmp LOGFILE=impdown.log LOGTIME=ALL
     </copy>
     ````
 
