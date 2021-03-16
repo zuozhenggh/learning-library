@@ -3,6 +3,19 @@
 ## Introduction
 This lab introduces the suite of data tools built into the Oracle Autonomous Data Warehouse.
 
+Estimated Lab Time: 1 hour, 15 minutes
+
+### Objectives
+- Familiarize with the suite of built-in database tools of the Oracle Autonomous Data warehouse
+- Load data
+- Learn how to use the Data Transforms tool to correct data errors
+- Create a business model
+- Generate data insights
+- Use the Catalog tool
+
+### Prerequisites
+- This lab requires completion of the previous labs in the Contents menu on the left.
+
 ## STEP 1 - Overview of Built-In Data Tools Suite
 
 <p style="text-align: left;">**PREPARING QUARTERLY SALES ANALYSIS**
@@ -22,7 +35,6 @@ Autonomous Data Warehouse comes with a built-in suite of tools that can help you
 In this section of the workshop, you are going to work through some common data warehouse requirements and scenarios that you will frequently run into when working on your own projects:
 
 1. Loading and inspecting data to see if there are any obvious errors
-
 2. Transforming data to correct errors in the original data set
 3. Creating a business model (also known as a semantic model) over your data set
 4. Running the Data Insights tool to identify anomalies and outliers in your data set
@@ -81,6 +93,13 @@ You've taken a brief tour of the **Database Actions** home page, with its card i
 ### Overview
 
 In this section you are going to explore how to load spreadsheets stored on your local computer and combine that data with another data set which is stored in the Oracle Object Store. As you load these various data files you are going to discover that some of your data is not correctly formatted. Sometimes it can be very hard to spot issues hidden within a data set but as you will see, Autonomous Data Warehouse has unique tools to help you spot the typical data errors you find in most data warehouse projects.
+
+#### Video Preview
+
+Watch a video demonstration of the Data Load tool of Autonomous Database:
+
+[] (youtube:SJUw4wIvkS4)
+*Note: Interfaces in this video may look different from the interfaces you will see.*
 
 ### Launching Your Data Load Workflow
 
@@ -268,7 +287,16 @@ You will correct these data problems in the next step of the workshop. 
 
 ### Overview
 
-In this section of the lab, you'll correct the data errors identified in the previous section of the lab. In a future version of this lab, we’ll show you how to do this using drag-and-drop techniques via the Data Transforms Tool. That’s something to look forward to.
+In this section of the lab, you'll correct the data errors identified in the previous section of the lab. In a future version of this lab, we’ll show you how to do this using drag-and-drop techniques via the Data Transforms Tool.
+
+#### Video Preview
+
+Watch a video demonstration of the Data Transforms tool of Autonomous Database:
+
+[] (youtube:Xg5VK_R4-IM)
+*Note: Interfaces in this video may look different from the interfaces you will see.*
+
+That’s something to look forward to, but is not currently covered in this lab.
 
 ### Using SQL 
 
@@ -302,6 +330,13 @@ As an alternative to using the Data Transforms Tool, you can perform the necessa
 ### Overview
 
 You can only go so far looking at raw data. Before long you want a semantic model on top of it. That's where our Business Model tool comes in. We've made it simple to build sophisticated models on your data, by identifying dimensions, hierarchies and measures - with a nice clean way of saying how to aggregate - sum, average or whatever. But wait, there's more. We make it fast, too! Simple SQL written against the business model is re-written to ensure optimal data access, and because we know about the hierarchical structure of the data, we can pre-aggregate the totals and sub-totals you want, before you've even told us you want them! 
+
+#### Video Preview
+
+Watch a video demonstration of the Business Model tool of Autonomous Database:
+
+[] (youtube:i2na8dmE_Xc)
+*Note: Interfaces in this video may look different from the interfaces you will see.*
 
 In this section of the workshop, you'll create a Business Model over table MOVIE\_SALES\_2020Q2.
 
@@ -407,6 +442,13 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
 
 If the sales analyst's job can be likened to looking for a needle in a haystack, the Data Insights tool can be thought of as an electromagnet. Swing it over the haystack and turn on the power. Anything made of ferrous metals will be pulled on to the electromagnet. There may be all sorts of junk here -  rusty old nails and screws and nuts and bolts - but there are going to be a few needles as well. It's far easier to pick the needles out of these few bits of metal than go rummaging around in all that hay - especially if you have hay fever! That's more or less how our Insights tool works, as you shall see in this section of the workshop.
 
+#### Video Preview
+
+Watch a video demonstration of the Data Insights tool of Autonomous Database:
+
+[] (youtube:pLaZnCQk3Vs)
+*Note: Interfaces in this video may look different from the interfaces you will see.*
+
 ### Generating New Insights
 
 1. From the Autonomous Database **Tools** home page, click the **Insights** card. If this is the first time you've accessed this tool (or any other in the Built-In Tool Suite), you'll see a series of tool tips to show you how to use it.
@@ -460,6 +502,13 @@ Historically, data analysts would pore over data sets, slicing and dicing, looki
 ### MovieStream Critics Corner: Catalog
 
 *True fans of period dramas on MovieStream study [Burke’s Peerage](https://www.burkespeerage.com/) in their spare time. They know that impeccable lineage is a non-negotiable quality in a suitable love-match for an aristocrat. They are just as keenly aware that a clear line of succession is an essential consideration. The untimely demise of a principal character could have profound implications for the continuity of a great family’s line. These people will have an instinctive appreciation for Autonomous Database’s Catalog tool, which shows both Lineage and Impact Analysis clearly for any entity in the system, be it a table, view, business model or whatever.*
+
+#### Video Preview
+
+Watch a video demonstration of the Catalog tool of Autonomous Database:
+
+[] (youtube:qi7HxiVyfOc)
+*Note: Interfaces in this video may look different from the interfaces you will see.*
 
 Data is capital and the built-in Catalog tool allows you to maximize its value. Data Lineage and Impact Analysis are now at your fingertips in this integrated tool, which you explore in this part of the workshop.
 

@@ -5,6 +5,16 @@
 
 In this lab, you will create a database user.
 
+Estimated Lab Time: 10 minutes
+
+### Objectives
+- Create the database user that you will use in the next lab
+- Update the user's profile to grant access to load and store data
+- Log in as the user
+
+### Prerequisites
+- This lab requires completion of the previous lab in the Contents menu on the left.
+
 ## STEP 1 - Creating New Database Users
 
 When you create a new data warehouse you automatically get an account called ADMIN that is your super administrator user. In the real world, you will definitely want to keep your data warehouse data completely separate from the administration processes. Therefore, you will need to know how to create separate new users and grant them access to your data warehouse. This section will guide you through this process using the &quot;New User&quot; wizard within the SQL Worksheet (one of the built-in tools in Autonomous Data Warehouse).
