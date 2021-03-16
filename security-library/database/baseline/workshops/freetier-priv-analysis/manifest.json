@@ -1,7 +1,7 @@
 {
   "workshoptitle": "DB Security - Privilege Analysis",
   "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
     {
       "title": "Introduction",
       "description": "Understand the architecture of this workshop and what it can do",

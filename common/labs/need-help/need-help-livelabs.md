@@ -30,7 +30,7 @@ When you are finished please don't forget to rate this workshop!  We rely on thi
 If you still have an active reservation, you can also rate by going to **My Reservations** -> **Launch Workshop**.
 
 
-## How To Format Your Support Email Request
+## How to Format Your Support Email Request
 This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. Follow the steps below to contact us and get a quick resolution to your issue.
 
 1. Do not change the subject line. 
@@ -56,12 +56,12 @@ This will construct an email in your default mail application that is auto popul
 
     ![](images/reset-password.png)
 
-## Can't Create An Oracle Database? Nothing In Your Compartment?
+## Can't Create an Oracle Database? Nothing in Your Compartment?
 1. Ensure that under "List Scope", you are selecting the compartment provided to you in the lab banner. 2. If you can't find your compartment in the drop-down box, make sure you *set your region* to the one provided in the lab banner.
 
     ![](images/compartment-select.png)
 
-## Connectivity Issues? Unable To Upload Data or Connect To The database?
+## Connectivity Issues? Unable to Upload Data or Connect to the Database?
 Are you connected to a **VPN**, **Corporate Network**, or behind a strict **Firewall**?
 
 If any of these three conditions are true, some ports in your network may be closed to traffic. Uploading data through Database Actions in your web browser and applications like the Oracle Analytics Tool could be restricted and may appear to "Hang" or freeze. 

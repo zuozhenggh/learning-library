@@ -84,8 +84,8 @@ In this lab, you will:
 
 6. You can also include bulleted lists - make sure to indent 4 spaces:
 
-   - List item 1
-   - List item 2
+    - List item 1
+    - List item 2
 
 7. Inline monospaced font is done with a single back ticks, for example `this is code`.
 
@@ -106,6 +106,37 @@ In this lab, you will:
   	```
     <copy>ssh -i <ssh-key-file></copy>
     ```
+
+11. Syntax highlighting examples
+
+    ```
+    <copy>select * from employees;</copy>
+    ```
+
+    ```
+    <copy>class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }</copy>
+    ```
+
+    ```
+    <copy>{  
+        "employee": {  
+            "name":       "sonoo",   
+            "salary":      56000,   
+            "married":    true  
+        }  
+    }</copy>
+    ```
+
+    ```
+    <copy># This program prints Hello, world!
+
+    print('Hello, world!')</copy>
+    ```
+
 
 ## **Step 2:** Optional Advanced features
 

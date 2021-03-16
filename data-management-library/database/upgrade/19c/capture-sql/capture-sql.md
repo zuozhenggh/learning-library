@@ -42,23 +42,17 @@ In order to collect SQL Statements directly from AWR (Automatic Workload Reposit
 - Creates a SQL Tuning Set (STS)
 - Populates the STS with SQL information stored in AWR
 
-1.  Login to Oracle Cloud
-2.  Run the script stored in /home/oracle/scripts:
-
-    ````
-    <copy>
+1.  Run the script stored in /home/oracle/scripts:
     capture_awr.sql
-    </copy>
-    ````
 
-3. In your open SQL*plus session connected to UPGR run the statement below.  The number of statements in SQL Tuning Set “STS_CaptureAWR” will be displayed.
-
+2. In your open SQL*plus session connected to UPGR run the statement below.  The number of statements in SQL Tuning Set “STS_CaptureAWR” will be displayed.
 
     ````
     <copy>
     @/home/oracle/scripts/capture_awr.sql
     </copy>
     ````
+    ![](./images/upgrade_19c_10.png " ")
 
 ## **STEP 2**: Collect Statements from Cursor Cache
 
@@ -71,7 +65,6 @@ This procedure:
 - It will poll the cursor cache for 240 seconds every 10 seconds
 
 The script is stored in /home/oracle/scripts:
-
     capture_cc.sql
 
 You used it already when you ran HammerDB in the earlier lab.
@@ -82,8 +75,13 @@ Hence, no need to run it again.
 The number of statements in SQL Tuning Set “STS_CaptureCursorCache” will be displayed.
 
 But now check, how many statements you’ve collected in each SQL Tuning Set:
-
+````
+<copy>
 select name, owner, statement_count from dba_sqlset;
+</copy>
+````
+![](./images/sqlset.png " ")
+
 
 ## **STEP 3**: Optional - Export AWR
 
@@ -97,7 +95,7 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     </copy>
     ````
 
-    ````
+    <!-- ````
     Databases in this Workload Repository schema
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -111,11 +109,12 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     database id, press  to continue, otherwise enter an alternative.
 
     Enter value for dbid:
-    ````
+    ```` -->
+    ![](./images/upgrade_19c_11.png " ")
 
 2. Hit RETURN.
 
-    ````
+    <!-- ````
     Using 72245725 for Database ID
 
 
@@ -127,10 +126,12 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
 
 
     Enter value for num_days:
-    ````
+    ```` -->
+    ![](./images/upgrade_19c_12.png " ")
 
 3. Type: 2. Hit RETURN.
-
+   ![](./images/snapday2.png " ")
+<!-- 
     ````
     Enter value for num_days: 2
 
@@ -146,22 +147,24 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     Specify the Begin and End Snapshot Ids
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Enter value for begin_snap:
-    ````
+    ```` -->
 
-4. Type: 110 <= Your snapshot number may be different.  Hit RETURN.
 
-    ````
+1. Type: 150 <= Your snapshot number may be different.  Hit RETURN.
+
+    <!-- ````
     Specify the Begin and End Snapshot Ids
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Enter value for begin_snap: 110
     Begin Snapshot Id specified: 110
 
     Enter value for end_snap:
-    ````
+    ```` -->
+    ![](./images/snapid.png " ")
 
-5. Type: 112 <= Your snapshot number may be different.  Hit RETURN.
+2. Type: 154 <= Your snapshot number may be different.  Hit RETURN.
 
-    ````
+    <!-- ````
     End   Snapshot Id specified: 112
 
     Specify the Directory Name
@@ -180,11 +183,12 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     Choose a Directory Name from the above list (case-sensitive).
 
     Enter value for directory_name:
-    ````
+    ```` -->
+    ![](./images/upgrade_19c_15.png " ")
 
-6. Type: DATA_PUMP_DIR.  Hit RETURN
+3. Type: DATA\_PUMP\_DIR.  Hit RETURN
 
-    ````
+    <!-- ````
     Enter value for directory_name: DATA_PUMP_DIR
 
     Using the dump directory: DATA_PUMP_DIR
@@ -195,12 +199,11 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     To use this name, press  to continue, otherwise enter
     an alternative.
 
-    Enter value for file_name:
+    
+    ```` -->
+    
 
-    Hit RETURN
-    ````
-
-    ````    
+    <!-- ````    
     Using the dump file prefix: awrdat_64_71
     |
     | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,15 +220,22 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     |  monitored in the following directory/file:
     |   /u01/app/oracle/product/UPGR/dpdump/
     |   awrdat_110_112.log
-    | End of AWR Extract
+    | End of AWR Extract -->
 
+    
+    <!-- ```` -->
+    ![](./images/upgrade_19c_16.png " ")
+    Enter value for file_name:
+    Hit RETURN
+    ![](./images/upgrade_19c_17.png " ")
     This will take now a few minutes.
-    ````
 
-7. Exit from SQL*Plus
+4. Exit from SQL*Plus
 
     ````
+    <copy>
     exit
+    <copy>
     ````
 
 You may now [proceed to the next lab](#next).

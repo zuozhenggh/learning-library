@@ -1,5 +1,6 @@
 {
   "workshoptitle": "Oracle Data Safe",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",

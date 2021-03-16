@@ -1,6 +1,7 @@
 {
   "workshoptitle":"Converged functionality of Oracle Autonomous Database",
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction",
