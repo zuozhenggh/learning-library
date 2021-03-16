@@ -27,7 +27,7 @@ Please make sure to complete Lab 3 before starting this Lab.
 
 Using SQL Developer, you can drag and drop the panes so that they are next to eachother or shown split horizontally. 
 
-![](./images/Failover_01.png)
+![](./images/Failover-01.png)
 
 
 Verify the roles with following Query:
@@ -38,7 +38,7 @@ Select name, db_unique_name, database_role from v$database;
 
 Enter this query in both panes and click the run button to see the result.
 
-![](./images/Failover_02.png)
+![](./images/Failover-02.png)
 
 We can conclude that the Database in AD2 is the primary database and the database in AD1 is the Standby database.
 
@@ -52,23 +52,23 @@ Overview
 -> DB Systems
 
 Select **ADGHOLAD1**
-![](./images/Failover_03.png)
+![](./images/Failover-03.png)
 
 Click on the name **DGHOL** and in the next screen scroll down immediately and click on **Data Guard Associations**
 
-![](./images/Failover_04.png)
+![](./images/Failover-04.png)
 
 Click on the 3 dots on the right, and click **Failover**
-![](./images/Failover_05.png)
+![](./images/Failover-05.png)
 
 This is a DBA responsability, so the tooling asks the password. Enter the SYS password from the Primary database and click **OK** then the role transition starts.
-![](./images/Failover_06.png)
+![](./images/Failover-06.png)
 
 At this point, the lifecycle state will be updating and the role transition happens in the background.
-![](./images/Failover_07.png)
+![](./images/Failover-07.png)
 
 After some time the role transition finished and the state is Available again. 
-![](./images/Failover_08.png)
+![](./images/Failover-08.png)
 
 ## Reinstate the old primary, the new standby
 
@@ -83,23 +83,23 @@ Overview
 And select ADGHOLAD1.
 Then scroll down and click on HOLDG database.
 
-![](./images/Failover_09.png)
+![](./images/Failover-09.png)
 
 This brings you to the Database details. Scroll down on the page and click on **Data Guard Associations**.
  
-![](./images/Failover_10.png)
+![](./images/Failover-10.png)
 
 Click on the 3 dots on the right, and click **Reinstate**
-![](./images/Failover_11.png)
+![](./images/Failover-11.png)
 
 This is a DBA responsability, so the tooling asks the password. Enter the SYS password from the Primary database and click **OK** then the reinstate starts.
-![](./images/Failover_12.png)
+![](./images/Failover-12.png)
 
 At this point, the lifecycle state will be updating and the reinstate happens in the background.
-![](./images/Failover_13.png)
+![](./images/Failover-13.png)
 
 After some time the role transition finished and the state is Available again. 
-![](./images/Failover_14.png)
+![](./images/Failover-14.png)
 
 
 ## Verify the database roles in the database
@@ -112,7 +112,7 @@ Select name, db_unique_name, database_role from v$database;
 
 Enter this query in both panes and click the run button to see the result.
 
-![](./images/Failover_15.png)
+![](./images/Failover-15.png)
 
 We can conclude that the Database in AD2 is the primary database and the database in AD1 is the Standby database.
 
