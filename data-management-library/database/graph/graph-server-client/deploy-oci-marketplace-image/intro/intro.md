@@ -31,5 +31,3 @@ In this workshop you will:
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management.
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -239,6 +239,3 @@ This completes Lab 2. You now know how to utilize Quick SQL to build complex dat
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-

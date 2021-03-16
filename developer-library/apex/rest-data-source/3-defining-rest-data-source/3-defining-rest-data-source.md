@@ -119,5 +119,3 @@ This completes Lab 3. You now know how to define a REST Data Source within an ap
  - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Innovation Architect, Product Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

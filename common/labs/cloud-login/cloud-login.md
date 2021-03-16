@@ -48,5 +48,3 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
 - **Last Updated By** - Rene Fontcha, February 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

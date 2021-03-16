@@ -52,5 +52,3 @@ That's it. Simply scroll down to the bottom and hit the blue 'Create Autonomous 
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -233,5 +233,3 @@ If you want to change a page's name after you create an application, the process
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

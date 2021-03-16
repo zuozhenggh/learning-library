@@ -2,17 +2,15 @@
 
 ## Introduction
 
-In lab 2, you created a machine learning model that can predict customer credit. Congratulations! But you’re not finished. It’s a good model, but models have to be deployed into production systems, they have to positively impact the business, and too many machine learning projects fail at this point. We are going to spend the next two labs making sure you deploy this model so that Alpha Office employees can use it in their day to day work.
-
-Estimated lab time: 20 - 30 minutes
-
-### Before You Begin
+In the previous lab, you created a machine learning model that can predict customer credit. Congratulations! But you’re not finished. It’s a good model, but models have to be deployed into production systems, they have to positively impact the business, and too many machine learning projects fail at this point. We are going to spend the next two labs making sure you deploy this model so that Alpha Office employees can use it in their day to day work.
 
 The first step is to move the model from where it was developed into a production transaction processing database where it will be accessible to the Client Service application. This lab will take you through that process.
 
-Watch the brief demo on Introduction to Deploy the Machine Learning Model into ATP.
+Estimated lab time: 20 - 30 minutes
 
-[](youtube:YUikH5-5n_o)
+Watch this short video to preview how to deploy the machine learning model into ATP.
+
+[](youtube:_BTSjFzUV_g)
 
 ### Objectives
 
@@ -303,7 +301,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](images/ml-admin-password.png)
 
-4. From the Database Actions menu, choose **SQl**.
+4. From the Database Actions menu, choose **SQL**.
 
     ![](./images/atp-sql.png " ")
 
@@ -405,7 +403,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ````
     <copy>
-    create table ml_user.credit_scoring_100k as select * from credit_scoring_100k@adwlink;
+    create table ml_user.credit_scoring_100k as select * from ml_user.credit_scoring_100k@adwlink;
     </copy>
     ````
 
@@ -423,7 +421,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
 ## **STEP 9:** Import the ML model
 
-1.  Copy the SQL Developer URL from the browser and paste it in another tab. Change the user in the SQL Developer URL from ADMIN to **ML\_USER** and hit enter to log in as ML\_USER. Copy the URL to a notepad - you will need it later.
+1.  Copy the SQL Developer URL from the browser and paste it in another tab. Change the user in the SQL Developer URL from ADMIN to **ml\_user** and hit enter to log in as ML\_USER. Copy the URL to a notepad - you will need it later.
 
     ![](./images/replace-admin.png  " ")
 
@@ -530,6 +528,3 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
 
 
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -2,7 +2,7 @@
     "workshoptitle": "Get Started with Oracle Cloud Infrastructure Core Services",
     "tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "description": "Login to Oracle Cloud",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
       },

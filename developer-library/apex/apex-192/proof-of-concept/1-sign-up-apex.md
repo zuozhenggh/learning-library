@@ -144,5 +144,3 @@ This completes the lab setup. At this point, you know how to create an APEX Work
 
 Go to Module 2 of this lab by clicking the navigation menu icon, in the upper-left corner of the header.
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

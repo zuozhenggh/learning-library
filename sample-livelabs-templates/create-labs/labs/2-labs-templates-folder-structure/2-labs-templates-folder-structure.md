@@ -47,5 +47,4 @@ The following image shows a folder structure of the "Getting Started with Oracle
 
 * **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+

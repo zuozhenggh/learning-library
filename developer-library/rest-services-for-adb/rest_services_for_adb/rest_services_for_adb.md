@@ -345,8 +345,3 @@ In this lab, you had an opportunity to get an introduction to REST services usin
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
 - **Last Updated By/Date** - February 2021
 - **Workshop Expiry Date** - February 2022
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
