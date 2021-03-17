@@ -1,17 +1,15 @@
 {
     "workshoptitle": "19c Active Data Guard Fundamentals",
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
-        {
-            "title": "Introduction",
-            "description":"Workhop Overview",
-            "publisheddate": "26/02/2021",
-            "filename":"../../introduction/introduction.md"
-        },
+    "tutorials": [
         {
             "title": "Getting Started",
             "description": "Login to Oracle Cloud",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },{
+            "title": "Introduction",
+            "description":"Workhop Overview",
+            "publisheddate": "26/02/2021",
+            "filename":"../../introduction/introduction.md"
         },
         {
             "title": "Lab 1: Connecting to the Database ",

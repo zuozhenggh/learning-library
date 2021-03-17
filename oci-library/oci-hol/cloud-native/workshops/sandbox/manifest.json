@@ -1,7 +1,6 @@
 {
     "workshoptitle": "Introduction to Cloud Native",
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {
             "title": "Introduction",
             "filename": "../../intro/intro-sandbox.md"

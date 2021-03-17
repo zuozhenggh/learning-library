@@ -1,17 +1,15 @@
 {
   "workshoptitle": "Getting Started with Oracle Big Data Service (non-HA)",
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
+      {
+         "title": "Get Started with Oracle Cloud",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
       {
             "title": "Introduction to Oracle Big Data Service (BDS)",
             "description": "Introduction to Oracle Big Data Service",
             "filename": "./intro.md"
-      }
-      ,
-      {
-            "title": "Getting Started",
-            "description": "Get a Free Trial",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
       }
       ,
       {

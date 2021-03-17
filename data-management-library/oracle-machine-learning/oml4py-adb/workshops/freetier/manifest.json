@@ -1,13 +1,13 @@
 {
     "workshoptitle": "Oracle Machine Learning for Python on Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {
             "title": "Introduction",
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {

@@ -1,7 +1,6 @@
 {
   "workshoptitle": "Launch Your First MySQL Database Service System",
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {
             "title": "Getting Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",

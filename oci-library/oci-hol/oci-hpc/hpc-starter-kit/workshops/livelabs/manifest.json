@@ -1,7 +1,6 @@
 {
   "workshoptitle": "High Performance Compute - Siemens STAR-CCM+",
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {
             "title": "Getting Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",

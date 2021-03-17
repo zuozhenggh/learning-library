@@ -1,6 +1,5 @@
 {
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
       {
           "title": "Getting Started",
           "description": "Login to Oracle Cloud",

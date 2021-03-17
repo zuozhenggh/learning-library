@@ -1,6 +1,5 @@
 {
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {         
             "title": "Introduction and Overview",
             "description": "Introduction to Multitenant Workshop",

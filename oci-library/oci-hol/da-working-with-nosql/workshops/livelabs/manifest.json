@@ -1,7 +1,6 @@
 {
     "workshoptitle": "Working with NoSQL Databases in Oracle Cloud Infrastructure",
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {
             "title": "Getting Started",
             "description": "Generate SSH Keys",

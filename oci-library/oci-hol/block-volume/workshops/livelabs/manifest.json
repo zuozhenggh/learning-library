@@ -1,7 +1,6 @@
 {
       "workshoptitle": "Create and Attach a Block Volume Service",
-    "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
       {
           "title": "Getting Started",
           "description": "Login to Oracle Cloud",

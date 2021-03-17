@@ -1,7 +1,7 @@
 {
     "workshoptitle": "App Continuity",
     "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
          {
             "title": "Introduction",
             "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
