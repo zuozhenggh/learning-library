@@ -1,6 +1,6 @@
-# Creation of the primary Database
+# Creation of the Primary Database
 
-In this lab we will setup will create the primary database.
+In this lab, we will create the primary database.
 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
