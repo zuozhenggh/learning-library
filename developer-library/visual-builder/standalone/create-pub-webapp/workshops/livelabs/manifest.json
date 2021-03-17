@@ -1,6 +1,7 @@
 {
   "workshoptitle": "The Title of the Workshop is defined in the manifest",
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [	
         {
             "title": "Getting Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
