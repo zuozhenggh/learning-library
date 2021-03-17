@@ -20,6 +20,18 @@ In this workshop you will create a `tasks` table, REST enabling it, and make the
 
 Estimated Lab Time: 15 minutes
 
+### Objectives
+
+In this lab, you will:
+- Create APEX workspace
+- Create a table with Quick SQL
+- Insert rows into the table
+- REST enabling the database object
+
+### Prerequisites
+
+- This lab assumes you have provisioned your ATP
+
 ## **STEP 1**: Create APEX Workspace
 
 1. In this part of the workshop we are creating an APEX workspace. From the Autonomous Database Home page go to **Tools** section and select **Oracle Application Express** area.
@@ -86,7 +98,7 @@ Use Cases:
     <copy>tasks
         text</copy>
     ```
-    
+
 3. Click **Generate SQL**.
 
     ![Generate SQL](./images/apex_generate_sql.png)
@@ -226,7 +238,6 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     ![](./images/apex_rest_handler_create_success.png)
 
-
 ## It works
 
 We will use the full URL for testing on the browser to verify the GET Handler works. Go to your favorite browser and paste the URL you copied.
@@ -249,7 +260,7 @@ How many items do you see? You should have as many tasks as you created before i
 
 You may now [proceed to the next lab](#next).
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March

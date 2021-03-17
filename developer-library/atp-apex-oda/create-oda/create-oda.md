@@ -34,6 +34,15 @@ Watch our short video that explains Lab 3 - Create Oracle Digital Assistant, Lab
 
 Estimated Lab Time: 15 minutes
 
+### Objectives
+
+In this lab, you will:
+-  Create and explore your Digital Assistant instance
+
+### Prerequisites
+
+- This lab assumes you have logged into your to Oracle Cloud account.
+
 ## **STEP 1**: Create a Digital Assistant instance
 
 **Create** a Digital Assistant instance to start working with bots. You can find advance set up steps on the [official documentation](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-7E4F1CE5-FB40-45DF-B0F0-949289F5E184).
@@ -86,9 +95,9 @@ Make sure you look around and feel familiar with the menus.
 
 ![ODA Menu](./images/oda_6_new.png)
 
-*Congratulations! You are ready to go to the next lab!*
+You may now [proceed to the next lab](#next).
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March

@@ -20,6 +20,17 @@ You can package related **Custom Components** together.
 
 Estimated Lab Time: 20 minutes
 
+### Objectives
+
+In this lab, you will:
+- Verify if Node.js is installed on cloud shell
+- Create a custom component to integrate with backend services
+- Deploy the custom component
+
+### Prerequisites
+
+- This lab assumes you have created the application and enabled the REST API
+
 ## **STEP 1:** Verify if Node.js installed
 
 In order to walk through this lab you need to develop the integration with **REST API**. You need [Node.js](https://nodejs.org/en/) for that.
@@ -234,7 +245,7 @@ Ready to create your **Custom Component** scaffolding.
 
 You may now [proceed to the next lab](#next).
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March

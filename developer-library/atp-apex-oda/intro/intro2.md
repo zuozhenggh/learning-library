@@ -16,11 +16,11 @@ Estimated Workshop Time: 90 minutes
 
 ### Prerequisites
 
-- This lab assumes you have logged into your to Oracle Cloud account
+- This lab assumes you have logged into your to Oracle Cloud account.
 
 You may now [proceed to the next lab](#next).
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March

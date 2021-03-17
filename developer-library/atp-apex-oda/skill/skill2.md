@@ -22,6 +22,18 @@ Go to **Digital Assistant Dashboard** as we did on **Lab 3**. As a reminder chec
 
 Estimated Lab Time: 20 minutes
 
+### Objectives
+
+In this lab, you will:
+- Build your first skill
+- Import the custom component
+- Create intents
+- Integrate your custom component with the intents
+
+### Prerequisites
+
+- This lab assumes you have successfully completed all the previous labs
+
 ## **STEP 1**: Build your first Skill
 
 In this workshop, we're starting from scratch. So the first thing you'll do is **create** a new skill.
@@ -74,7 +86,6 @@ Import Custom Component is very simple.
 7. **Make sure** the `Status` is `Ready`. You see all the **information** on this page like in this screenshot.
 
     ![Create Skill](./images/cc_import_6.png)
-
 
 ## **STEP 3**: Create intents
 
@@ -199,11 +210,11 @@ Congratulations! Well done!
 
 Continue to Next Steps for more information!
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March
-- **Last Updated By/Date** - Kamryn Vinson, October 2020
+- **Last Updated By/Date** - Anoosha Pilli, March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
