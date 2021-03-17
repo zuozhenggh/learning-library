@@ -29,7 +29,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 Please make sure to complete Lab 3 before starting this Lab.
 
 
-## Create a common user
+## **STEP 1**: Create a common user
 
 DML redirection for user tables, cannot be done using the SYS user. 
 When you try to run a DML statement, it will fail with:  
@@ -38,37 +38,37 @@ When you try to run a DML statement, it will fail with:
 
 So we will create a common user in the Database to learn about this feature. 
 
-Using SQL Developer, open the connection to the primary database, which should now be running in AD1.
+1. Using SQL Developer, open the connection to the primary database, which should now be running in AD1.
 
-This can be checked by following query:
+    This can be checked by following query:
 
-````
-Select name, db_unique_name, database_role from v$database;
-````
-![](./images/DML01.png)
+    ````
+    Select name, db_unique_name, database_role from v$database;
+    ````
+    ![](./images/DML01.png)
 
-Then use following query to create a common user in all the pdbs. 
+2. Then use following query to create a common user in all the pdbs. 
 
-````
-create user C##HOLUSER identified by "WelC0me2##" container = all;
-````
+    ````
+    create user C##HOLUSER identified by "WelC0me2##" container = all;
+    ````
 
-Grant this user the minimum privileges required to perform its duties. In a production environment, evaluate carefully the rights common users need. This is just for demonstration purposes that we give this user all the rights possible. For this lab and ease of things, we grant powerful role to the user.
+3. Grant this user the minimum privileges required to perform its duties. In a production environment, evaluate carefully the rights common users need. This is just for demonstration purposes that we give this user all the rights possible. For this lab and ease of things, we grant powerful role to the user.
 
-````
-grant connect,resource, dba to C##HOLUSER;
-````
+    ````
+    grant connect,resource, dba to C##HOLUSER;
+    ````
 
-and verify with this query if the user has been created correctly:
+4. Verify with this query if the user has been created correctly:
 
-````
-select username from dba_users where username like '%HOL%';
-````
-![](./images/DML02.png)
+    ````
+    select username from dba_users where username like '%HOL%';
+    ````
+    ![](./images/DML02.png)
 
 
 
-## Enable the system for ADG DML Redirect
+## **STEP 2**: Enable the system for ADG DML Redirect
 
 Automatic redirection of DML operations to the primary can be configured at the system level or the session level. The session level setting overrides the system level setting.
 
@@ -90,63 +90,68 @@ alter system set adg_redirect_dml=true scope=both;
 At this point, the databases are enabled for Active Data Guard DML redirection.
 
 
-## Create a table
+## **STEP 3**: Create a table
 
-To create a table in the common users's schema, it is necessary to create a connection as the common user. This can be done the same way as described in Lab 3. Instead of specifying the username SYS and role SYSDBA, you now specify C##HOLUSER and leave the role default. 
+1. To create a table in the common users's schema, it is necessary to create a connection as the common user. This can be done the same way as described in Lab 3. Instead of specifying the username SYS and role SYSDBA, you now specify C##HOLUSER and leave the role default. 
 
-![](./images/DML04.png)
+    ![](./images/DML04.png)
 
-Do the same for the connection to the standby database.
+2. Do the same for the connection to the standby database.
 
-![](./images/DML05.png)
+    ![](./images/DML05.png)
 
-Then log on to both sessions. One on standby, one on primary. 
-You could layout SQL Developer like this
+3. Then log on to both sessions. One on standby, one on primary. 
+    You could layout SQL Developer like this
 
-![](./images/DML06.png)
+    ![](./images/DML06.png)
 
-In the pane with the C##HOLUSER connection, first check if a DML table exists.
+4. In the pane with the C##HOLUSER connection, first check if a DML table exists.
 
-````
-desc DMLTable
-````
+    ````
+    desc DMLTable
+    ````
 
-Also verify this on the standby
+5. Also verify this on the standby
 
-````
-desc DMLTable
-````
+    ````
+    desc DMLTable
+    ````
 
-It is expected this one does not exist. 
-![](./images/DML07.png)
+6. It is expected this one does not exist. 
+    ![](./images/DML07.png)
 
-So on the primary create this table. 
+7. So on the primary create this table. 
 
-````
-create table DMLTable (id number);
-````
+    ````
+    create table DMLTable (id number);
+    ````
 
-and describe this again on the standby with the `desc DMLTable` command.
+8. Describe this again on the standby with the `desc DMLTable` command.
 
-![](./images/DML08.png)
-
-
-## Use DML Redirection
-
-On the standby database try to insert a row in this table with following SQL Statement
-
-````
-insert into DMLTable(id) values (1);
-````
-
-and of course do not forget to `commit;`.
-
-![](./images/DML09.png)
-
-Then on the primary database, verify if the row is visible as well.
-
-![](./images/DML10.png)
+    ![](./images/DML08.png)
 
 
-## Summary
-You have now succesfully used Active Data Guard DML Redirection.-
+## **STEP 4**: Use DML Redirection
+
+1. On the standby database try to insert a row in this table with following SQL Statement
+
+    ````
+    insert into DMLTable(id) values (1);
+    ````
+
+2. and of course do not forget to `commit;`.
+
+    ![](./images/DML09.png)
+
+3. Then on the primary database, verify if the row is visible as well.
+
+    ![](./images/DML10.png)
+
+
+You have now successfully used Active Data Guard DML Redirection. You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+
+- **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
+- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Last Updated By/Date** -  Kamryn Vinson, March 2021

@@ -72,6 +72,28 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
     ![](./images/guacamole-landing.png " ")
 
+### Enable Copy/Paste from local to remote desktop (Guacamole clipboard)
+During the execution of your labs you may need to copy text from your local PC/Mac to the Guacamole remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
+
+1. From your remote desktop session, enter CTRL+ALT+SHIFT (*Windows*) or CTRL+CMD+SHIT (*Mac*)
+
+2. Select *Text Input*
+
+    ![](./images/guacamole-clipboard-1.png " ")
+
+3. Notice the black Text Input field added at the bottom of your screen after you made the selection in the previous step. This is the field to paste any text copied from your local environment.
+
+    ![](./images/guacamole-clipboard-2.png " ")
+
+4. Test copy/pasting the text below. Prior to pasting ensure that the cursor has been placed at the location where the intended text is to be pasted, then right-click inside the black *Text Input* field and paste it
+
+    ```
+    <copy>echo "This text was copied from my local desktop on to my remote session"</copy>
+    ```
+
+    ![](./images/guacamole-clipboard-3.png " ")
+
+
 ### Login to Host using SSH Key based authentication (optional)
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
 
@@ -88,12 +110,14 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 2:** Download and Stage Workshop Artifacts
-In order to run this workshop, you will need a set of files that have been conveniently packaged for you. Proceed as indicated below.
+## **STEP 2:** Download and Stage Workshop Artifacts (optional)
+We recommend running this workshop end-to-end from the remote desktop session for all tasks requiring either *SQL Developer* or *Web browser*. Should you elect to use these tools locally on your PC/Mac then proceed as indicated below.
 
-1. Download [OAS_Workshop.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6_WvdYP8HOSRFYJpU2958aV8WpEq2sDaqZUP4dJdFlz2NvBPIdlRg8uHyDC0WMyA/n/natdsecurity/b/labs-files/o/OAS_Workshop.zip) and save to a staging area on your laptop or workstation.
+1. Download [`OAS_OML_Workshop_LabFiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/upY4mzN1N2Oq3PrWIr_PaaAw5hLK3XesrlIehHBFqvobSJTKF309EnZSuLUTlXFt/n/natdsecurity/b/labs-files/o/OAS_OML_Workshop_LabFiles.zip) and save to a staging area on your laptop or workstation.
 
 2. Uncompress the ZIP archive
+
+  ***Note***: If you are running the labs exclusively from the remote desktop session as recommended, the content of *`OAS_OML_Workshop_LabFiles.zip`* is already unpacked and staged at *`/opt/oracle/stage/OAS_OML_Workshop_LabFiles`/*
 
 ## **STEP 3:** Managing DB and OAS processes (optional)
 Your workshop instance is configured to automatically start all processes needed for the labs. Should you need to stop/start these processes, proceed as shown below as user *opc* from your SSH terminal session

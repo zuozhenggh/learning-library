@@ -98,13 +98,13 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 ## **STEP 2**: Verify order and inventory activity of GrabDish store
 
-1.   Open the frontend microservices home page.
-  If you need the URL, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
+1.   Open the frontend microservices home page from the previous lab.
+  If you need the URL again, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
     ```
     <copy>services</copy>
     ```
 
-     ![](images/frontend_lb.png " ")
+     ![](images/frontendservicekubectloutput.png " ")
 
 2. Click **Transactional** under **Labs**.
 
@@ -200,7 +200,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
 5. Click **Set Liveness to False** . This will cause the Helidon Health Check to report false for liveness which will result in OKE restarting the pod/microservice
 
-   ![](images/lastcontainerstarttime1.png " ")
+   ![](images/setlivenesstofalse.png " ")
 
 6. Click **Get Last Container Start Time**.
    It will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
