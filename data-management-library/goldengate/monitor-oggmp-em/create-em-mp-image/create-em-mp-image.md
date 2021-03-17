@@ -30,18 +30,18 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
       * **Service Manager Port**
         [](./images/4.png " ")
   5. Click **OK** again to display the **Setup Discovery** page and click **Discover Now**.
-      [](./images/5SelectEMAgent.png " ")
+        ![](./images/5SelectEMAgent.png " ")
 
-      The targets are discovered and the control is now back on the **Targets on Host** page. Notice that the number of targets discovered under the **Discovered Targets** column.
+      The targets are discovered and the control is now back on the **Targets on Host** page. Notice  the change in the number of targets discovered under the **Discovered Targets** column.
 
-      [](./images/6DiscoveredTargets.png " ")
+        ![](./images/6DiscoveredTargets.png " ")
   6. Click the number under **Discovered Targets**  
 
 ## Want to Learn More?
 * [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/index.html)
 * [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/oracle-goldengate-classic-oracle.html#GUID-8D2728DA-9A05-439F-B2D4-4CFF8D70236D)
-
-
+* [A Simple Guide to Oracle GoldenGate Enterprise Manager Plug-in -Blog](https://blogs.oracle.com/dataintegration/a-simple-guide-to-oracle-goldengate-enterprise-manager-plug-in)
+* [New Route to Discovery in Oracle GoldenGate Enterprise Manager Plug-in 13.4.2](https://blogs.oracle.com/dataintegration/new-route-to-discovery-in-oracle-goldengate-enterprise-manager-plug-in)
 ## Acknowledgements
 
 * **Author:**
