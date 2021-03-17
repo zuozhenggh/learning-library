@@ -11,11 +11,6 @@
         {
             "title": "Lab 2: Deploying and configuring Autonomous Data Warehouse",
             "filename": "./../../../autonomous-data-warehouse/autonomous-data-warehouse.md"
-        },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

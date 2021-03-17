@@ -16,11 +16,6 @@
         {
             "title": "Lab 2: Creating a Compute Instance using Custom Image",
             "filename": "./../../using-custom-image/using-custom-image.md"
-        },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

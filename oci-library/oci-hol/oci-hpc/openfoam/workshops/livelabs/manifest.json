@@ -21,11 +21,6 @@
         {
             "title": "Lab 3: Run OpenFoam Projects on Standard VM on OCI",
             "filename": "../../openfoam-vm/openfoam-vm.md"
-        },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

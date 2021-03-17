@@ -35,11 +35,6 @@
         {
             "title": "Lab 5: Access your GPU Node",
             "filename": "../../access-gpu/access-gpu.md"
-        },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
         
     ]
