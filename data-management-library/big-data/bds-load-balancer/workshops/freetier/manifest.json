@@ -11,5 +11,6 @@
           "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
           "filename": "./../../load-balancer/load-balancer.md"
       }
-    ]
+
+           ]
 }
