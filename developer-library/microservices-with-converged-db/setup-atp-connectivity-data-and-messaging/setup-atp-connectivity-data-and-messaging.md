@@ -83,6 +83,7 @@ You will run a script that will download the connection information (wallet, tns
   ![](images/createAll.png " ")
 
 3.  Execute `msdataworkshop` and notice secrets for order and inventory wallets.
+
     ```
     <copy>msdataworkshop</copy>
     ```
