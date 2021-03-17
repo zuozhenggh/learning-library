@@ -1,38 +1,45 @@
-# View Reports
+# Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Marketplace Instance
 
 ## Introduction
-A comparison report is generated for each job, group, and compare pair that is finished being processed. It contains summary details about out-of-sync row counts, the number of records processed, performance statistics, errors, and so forth.
 
-The comparison report tells you how extensive an out-of-sync problem is. It also provides performance statistics and, optionally, column details. The comparison report can be viewed by any user role.
+
+
 ### What Do You Need?
 
-+ **Oracle GoldenGate Veridata installed**
-+ **Groups and Compare Pairs have been created as described in Lab 4**
-+ **Jobs have been created and executed as described in Lab 4**
++ **You have gone through the Introduction Lab and Prerequisites**
 
-## **STEP 1:** View a Report
 
-  To view a report:
-1. From the left navigation pane, click **Reports** to display the Report Selection page.
-    ![](./images/1-reports-selection.png " ")
-2. Select one of the following options under **Report Period**: (Optional Step)
-    * **View Most Recent Comparison Run**: Selects the most recent report for each job that exists.
-    * **View Last**: Selects reports that were created within the last <n> Days, Hours or Minutes.
-    * **View From**: Selects reports that were created within a specific date range, with the option to include the time of day. Enter the From and To Date and Time in the format that is accepted by the client machine that is running Oracle GoldenGate Veridata Web User Interface.
-3. If you want to select reports based on Jobs, Groups, Compare Pairs, or even Report Names, enter the details and click **Apply Filter** (Optional Step):
-    * **Job Like**: Retrieves reports for jobs whose names contain a string that matches the one you enter.
-    * **Group Like**: Retrieves reports for groups whose names contain a string that matches the one you enter.
-    * **Compare Pair Like**: Retrieves reports for compare pairs whose names contain a string that matches the one you enter.
-    * **Show Report Names Like**: Retrieves reports whose file names contain a string that match the one you enter.
-4. Select the Report from **Existing Reports**.
-      ![](./images/2-reports-selection-view.png " ")
-5. Click **View** to display the **Report View**.
-      ![](./images/3-reports-view-download-option.png " ")
-6. Click **Download this Report** in case you want to download and save the report for a future reference.  
+**STEP 1**: Open all the Oracle GoldenGate Services Port from the OCI Console
+
+**STEP 2:** Open all the Proxy port on Oracle GoldenGate Microservices Marketplace Instance
+
+**STEP 3:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
+After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate Instances on the OCI UI:
+  To discover Oracle GoldenGate Microservices instances:
+  1. Click **Set up**, select **Add Target**, and click **Configure Auto Discovery**.
+      ![](./images/1.png " ")
+  2. On the **Targets on Host** tab, select the Enterprise Manager instance, and click **Discovery Modules** to display the **Discovery Modules** page.
+      ![](./images/2SelectEMinstance.png " ")
+  3. Click Oracle GoldenGate Microservices and then click **Edit Parameters** to display the **Edit Parameters** dialog box.
+      ![](./images/3.png " ")
+  4. Enter the following details and click **OK**:
+
+      * **Service Manager Hostname**
+      * **Service Manager Username**
+      * **Service Manager Password**
+      * **Service Manager Port**
+        [](./images/4.png " ")
+  5. Click **OK** again to display the **Setup Discovery** page and click **Discover Now**.
+      [](./images/5SelectEMAgent.png " ")
+
+      The targets are discovered and the control is now back on the **Targets on Host** page. Notice that the number of targets discovered under the **Discovered Targets** column.
+
+      [](./images/6DiscoveredTargets.png " ")
+  6. Click the number under **Discovered Targets**  
 
 ## Want to Learn More?
-* [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
-* [Comparision Report](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-8E57CC45-33E3-4068-8B19-47E222F70BF1)
+* [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/index.html)
+* [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/oracle-goldengate-classic-oracle.html#GUID-8D2728DA-9A05-439F-B2D4-4CFF8D70236D)
 
 
 ## Acknowledgements
@@ -41,7 +48,7 @@ The comparison report tells you how extensive an out-of-sync problem is. It also
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Reviewed by:**
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-    + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
+    + Sarvanan Vetrivel, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
 * **Last Updated By/Date:** Anuradha Chepuri, March 2021
 
