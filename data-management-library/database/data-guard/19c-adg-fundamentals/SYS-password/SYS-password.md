@@ -13,6 +13,19 @@ Doing this right is important. When you change the SYS password in a Data Guard 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
+### Objectives
+- Change the SYS password
+- Log in to the database as the SYS user
+
+### Prerequisites
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab: Connect to the Database
+- Lab: Perform a switchover
+- Lab: Perform a failover
+- Lab: Enable Active Data Guard DML Redirection
+- Lab: Automatic block media recovery
+- Lab: Restore point propagation
+
 ## **STEP 1**: Change the SYS password
 
 1. Navigate to the HOLDG primary database following 

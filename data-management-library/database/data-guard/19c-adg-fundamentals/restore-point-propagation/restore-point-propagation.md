@@ -15,6 +15,19 @@ To accommodate this, the `v$restore_point` view was updated with a `REPLICATED` 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
+### Objectives
+- Create a restore point in the primary database
+- Check the restore points
+- Drop the restore point in the primary database
+
+### Prerequisites
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab: Connect to the Database
+- Lab: Perform a switchover
+- Lab: Perform a failover
+- Lab: Enable Active Data Guard DML Redirection
+- Lab: Automatic block media recovery
+
 ## **STEP 1**: Create a restore point in the primary
 
 1. Download the 2 textfiles with the sql commands.
