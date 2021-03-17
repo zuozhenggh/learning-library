@@ -1,4 +1,6 @@
 # Automatic Block Media Recovery
+
+## Introduction
 In this lab we will see how Active Data Guard Automatic Block media recovery works.
 
 Block corruptions are a common source of database outages. A database block is
@@ -12,7 +14,12 @@ In this lab we will introduce a block corruption in the database and see Active 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
-## Preparation
+### Objectives
+- Setup your environment
+- Corrupt the datafile
+- Access the table
+
+### Prerequisites
 
 First download the 3 sql scripts we will need in this Lab.
 
@@ -23,7 +30,7 @@ First download the 3 sql scripts we will need in this Lab.
 [03-abmr.sql](./scripts/03-abmr.sql)
 
 
-Also find back the ssh keys which were created in Lab 1 and Lab 2 in order to connect to the hosts where the primary and standby database are located. 
+Also find your ssh keys which were created earlier in order to connect to the hosts where the primary and standby database are located. 
 
 We need 4 sessions
 

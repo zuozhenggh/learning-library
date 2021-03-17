@@ -1,5 +1,6 @@
 # Performing a Failover
 
+## Introduction
 In this lab, we will be performing a failover operation.
 
 Oracle Data Guard helps you change the role of databases between primary and standby using either a switchover or failover operation.
@@ -11,7 +12,7 @@ A failover is a role transition in which one of the standby databases is transit
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
 
-## Performing a Failover
+### Performing a Failover
 
 A switchover is always started from the primary database, where a failover is initiated from the standby database. 
 The difference between a switchover and a failover is that a switchover is a graceful operation where a failover is only needed when the primary database is broken beyond repair or that repair would take too long. 
@@ -20,8 +21,15 @@ We will use SQL Developer to connect to the Database System.You can run this too
 
 You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html) 
 
-Please make sure to complete Lab 3 before starting this Lab.
 
+### Objectives
+- Verify the database roles in the database
+- Perform a failover
+
+### Prerequisites
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab: Connect to the Database
+- Lab: Perform a switchover
 
 ## **STEP 1**: Verify the database roles in the database
 
