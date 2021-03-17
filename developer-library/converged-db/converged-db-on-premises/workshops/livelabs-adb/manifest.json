@@ -1,8 +1,9 @@
 {  
-  "workshoptitle":"Oracle Converged Database for Developers",  
-  "tutorials": [
+  "workshoptitle":"Converged functionality of Oracle Autonomous Database",  
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
-      "title": "Prerequisites",
+      "title": "Getting Started",
       "description": "Login to Oracle Cloud",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
     },
@@ -19,7 +20,7 @@
     {
       "title": "Lab 2: Verify Setup of Compute Instance",
       "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+      "filename": "../../setup/verify-compute-adb.md"
     },
     {
       "title": "Lab 3: Load Data and Start Application",

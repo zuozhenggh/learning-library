@@ -40,7 +40,15 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Set your environment.
+2. Navigate to the spatial directory.
+
+    ```
+    <copy>
+    cd /u01/workshop/spatial
+    </copy>
+    ```
+
+3. Set your environment.
 
     ```
     <copy>
@@ -48,7 +56,7 @@ This lab assumes you have:
     </copy>
     ```
 
-3. When prompted paste the following:
+4. When prompted paste the following:
 
     ```
     <copy>
@@ -56,7 +64,7 @@ This lab assumes you have:
     </copy>
     ```
 
-4. Open SQLPlus as the user appjson
+5. Open SQLPlus as the user appjson
 
     ```
     <copy>
@@ -320,7 +328,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

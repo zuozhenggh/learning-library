@@ -21,7 +21,7 @@ For more information about Terraform and Resource Manager, please see the append
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-- [dbsystemrac.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/Wg4n8mJxd9bwfANNP1cHyTT95-6R201K0Z2VwDRFKcURy0H9mQhIrjIf8UM5rljE/n/lrojildid9yx/b/labtest_bucket/o/dbsystemrac.zip)
+- [dbsystemrac.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/q4EkyKOgL7clSW9UbPkfAZEKtKsNmsNoOfFeNYZxndUxyNRhBzWxZbAuqXs05VHl/n/c4u03/b/data-management-library-files/o/dbsystemrac.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
@@ -403,8 +403,3 @@ If you have other compute instances you are not using, you can go to those insta
 * **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -42,7 +42,7 @@ Estimated Lab Time: 15 minutes
 
     ![ODA Menu](./images/oda_1.png)
 
-2. Click on **Create** Digital Assistant Instance button:
+2. Click on **Create Digital Assistant Instance** button:
 
     ![ODA Menu](./images/oda_2.png)
 
@@ -85,7 +85,7 @@ Make sure you look around and feel familiar with the menus.
 
 ![ODA Menu](./images/oda_6.png)
 
-*Congratulations! You are ready to go to the next workshop!*
+*Congratulations! You are ready to go to the next lab!*
 
 ## **Acknowledgements**
 

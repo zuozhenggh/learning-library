@@ -64,14 +64,14 @@ A Dashboard is an analytic feature that allows visualization of the pipeline onc
 5. Also, tag the dashboard with Retail Sample and Lab 3 tags.  
 6. Click Next.
 
-    ![](./images/newDashboard.png " ")
+    ![](./images/newdashboard.png " ")
 
 7. Keep the defaults and Save the dashboard.  
 8. Notice that the new dashboard is now visible in the Catalog page.
 9.  Click on the new RevenueByCustomerSegmentLab3.
 10. Click on the *`Edit Dashboard`* button on the top right hand corner.
 
-    ![](./images/editDashboard.png " ")
+    ![](./images/editdashboard.png " ")
 
 11. The button is now changed to *`Switch to View Mode`*.  
 12. On the *`Actions`* dropdown click on the *`Add Visualizations`*.
@@ -82,7 +82,7 @@ A Dashboard is an analytic feature that allows visualization of the pipeline onc
 14. Check the RevenueByCustomerSegementLab3 visualization
 15. Click on the Add Visualizations button.
 
-    ![](./images/addVisualization.png " ")
+    ![](./images/addvisualization.png " ")
 
 16. Notice that the new dashboard is running and streaming data is displayed as a bar chart.
 
@@ -127,7 +127,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

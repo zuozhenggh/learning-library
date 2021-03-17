@@ -1,5 +1,6 @@
 {
   "workshoptitle": "Building Java Cloud Applications with Micronaut and OCI",
+  "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -34,8 +35,8 @@
             "filename": "../../micronaut/micronaut.md"
         },
         {
-            "title": "Lab 6: Call a Helidon Service",
-            "filename": "../../helidon/helidon.md"
+            "title": "Lab 6: Build a GraalVM Native Image",
+            "filename": "../../graalvm/nativeimage.md"
         },
         {
             "title": "Lab 7: Deploy the Micronaut Application",
@@ -44,6 +45,11 @@
         {
             "title": "Lab 8: Terminate and Destroy the OCI Resources",
             "filename": "../../destroy/destroy.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

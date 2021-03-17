@@ -7,13 +7,13 @@ Estimated Lab Time:  15 minutes
 
 ### Background
 
-In Oracle Visual Builder, you create web pages by dragging and dropping components. You can use a Quick Start to specify how to display your business objects in a table. A table component offers several Quick Starts that add buttons and pages to create, view, edit, and delete data in the business objects.
-
-In this tutorial, you'll create a page to display departments and another page to display employees. You'll add a **Create** button to each page to allow you to create a new instance of the business object. The button is associated with an _event_, and the event sets off an _action chain_, which is a sequence of actions that the application executes. The Quick Starts create complex action chains automatically. In the tutorial after this one, you'll create very simple action chains yourself.
-
-As a refresher, here's the Location, Department, and Employee business objects you created in the previous tutorial.
+In the previous tutorial, you created three business objects to hold your application's data. As a refresher, here's the Location, Department, and Employee business objects you created  previously:
 
 ![](./images/vbcscp_dbdiagram.png)
+
+In this tutorial, you'll create web pages that display the data from these business objects in tables. Quick Starts help you specify how to display business object data. A table component offers several Quick Starts that add buttons and pages to create, view, edit, and delete business object data.
+
+In this tutorial, you'll create one page to display departments and another to display employees. You'll also add a **Create** button to each page to let your users create a new department or a new employee (in other words, to create a new instance of the business object).  The button is associated with an _event_, and the event sets off an _action chain_, which is a sequence of actions that the application executes.
 
 ## **STEP 1**: Use the main-start Page to Display Departments
 
@@ -28,17 +28,13 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
 
     ![](./images/vbcscp_dd_s3.png)
 
-4.  In the Heading Property Inspector, enter `Departments` in the **Text** field. (If you don't see the Property Inspector on the right, click the **Properties** tab.)
+4.  Click **Properties** to open the Heading's Properties pane, then enter `Departments` in the **Text** field.
 
     ![](./images/vbcscp_dd_s4.png)
 
-    After you enter text in the field, click anywhere else in the UI to see the text appear on the page.
+5.  In the Components palette, scroll down to **Collection** and drag a **Table** component onto the page below the heading. You'll use this table to display three fields from the department business object: the id, name, and location.
 
-5.  In the Components palette, scroll down to **Collection** and drag a **Table** component onto the page below the heading.
-
-    You'll use this table to display three fields from the department business object: the id, name, and location.
-
-6.  Click **Add Data** in the Property Inspector to open the Add Data Quick Start.  
+6.  In the Properties pane, click **Add Data** to open the Add Data Quick Start.  
 
     ![](./images/vbcscp_dd_s6.png)
 
@@ -58,7 +54,7 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
 
     A Departments table with three empty columns is displayed on the main-start page. Notice that the second Name column (which maps to the location name field) shows simply as Name.
 
-11.  To make the location name column descriptive, click the **Data** tab. Under **Table Columns**, click the ![Column Detail icon](./images/vbcscp_columndetail_icon.png) **Column Detail** arrow next to **Name _(locationObject)_**.  
+11.  To make the location name column descriptive, click the **Data** tab. Under **Table Columns**, click the ![Column Detail icon](./images/vbcscp_columndetail_icon.png) **Column Detail** arrow next to **Name (locationObject)**.  
 
     ![](./images/vbcscp_dd_s11.png)
 
@@ -116,12 +112,12 @@ In this step, you'll create a page to display employees, similar to the one you 
 
     ![](./images/vbcscp_cpe_s1.png)
 
-2.  In the Create Page dialog box, enter `employees` in the **Page ID** field after the `main-` prefix and click **Create**. The main-employees page opens in the Page Designer.
+2.  In the Create Page dialog box, enter `employees` in the **Page ID** field after `main-` and click **Create**. The main-employees page opens in the Page Designer.
 
     ![](./images/vbcscp_cpe_s2.png)
 
 3.  In the Components palette, locate the **Heading** component under Common and drag it onto the page.
-4.  Click the **Properties** tab and in the Heading Property Inspector, enter `Employees` in the **Text** field.
+4.  Click the **Properties** tab, then in the Properties pane, enter `Employees` in the **Text** field.
 5.  In the Components palette, scroll down to Collection and drag a **Table** component onto the page.
 6.  Click **Add Data**.
 7.  On the Locate Data page, select the **Employee** business object and click **Next**.
@@ -137,7 +133,7 @@ In this step, you'll create a page to display employees, similar to the one you 
 
     An empty Employees table is displayed.
 
-11.  To make the second Name column descriptive, click the **Data** tab. Under **Table Columns**, click the ![Column Detail icon](./images/vbcscp_columndetail_icon.png) **Column Detail** arrow next to **Name _(departmentObject)_**.
+11.  To make the second Name column descriptive, click the **Data** tab. Under **Table Columns**, click the ![Column Detail icon](./images/vbcscp_columndetail_icon.png) **Column Detail** arrow next to **Name (departmentObject)**.
 
     ![](./images/vbcscp_cpe_s11.png)
 
@@ -155,8 +151,8 @@ In this step, you'll create a page to display employees, similar to the one you 
     A **Create** button appears above the table, and the main-create-employee page appears in the pages list.
 
 5.  In the pages list, click the **main-create-employee** page to open it in the Page Designer.
-6.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Property Inspector, set the **Max Columns** value to **2**. The fields now appear in two columns.
-7.  Click **Live** to make the form active. To hide the Property Inspector and make more room, click **Properties**. Enter `Leslie Smith` in the **Name** field. Select today's date from the **Hire Date** calendar, and enter `lsmith@example.com` in the **Email** field. Select `Administration` (the only choice) from the **Department** drop-down list. (You can use other data if you wish, except for the department, because you have only one department.) Click **Save**.  
+6.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
+7.  Click **Live** to make the form active. To hide the Properties pane and make more room, click **Properties**. Enter `Leslie Smith` in the **Name** field. Select today's date from the **Hire Date** calendar, and enter `lsmith@example.com` in the **Email** field. Select `Administration` (the only choice) from the **Department** drop-down list. (You can use other data if you wish, except for the department, because you have only one department.) Click **Save**.  
 
     Oracle Visual Builder briefly displays a message and then places you in the main page flow of your application. As with the departments pages, you can navigate from the main-employees page to the main-create-employee page. There is no connection between the Employee page flow and the Department page flow, however.
 
@@ -186,7 +182,7 @@ It makes sense at this point to change the name of the main-start page to main-d
     ![](./images/vbcscp_cpn_s2.png)
 
 3.  Double-click **main-departments** to go to that page again.
-4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click the **Source View** ![Source View icon](./images/vbcscp_sourceview_icon.png) tab and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
+4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click **Source View** ![Source View icon](./images/vbcscp_sourceview_icon.png) in the Navigator and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
 
     ![](./images/vbcscp_cpn_s4.png)
 
@@ -194,7 +190,7 @@ It makes sense at this point to change the name of the main-start page to main-d
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - December 2020
+* **Last Updated By** - February 2021
 
 ## Need Help?
 Submit feedback or ask for help using our [Visual Builder Support Forum](https://cloudcustomerconnect.oracle.com/resources/e610f4723c/summary). Click the **Log In** button and login using your Oracle Account. Click the **Post a new topic** button to the right to start a new discussion, or search for an answer using keywords.  Please include your workshop name and lab name, and include screenshots and attach files if needed.  Here's your chance to engage directly with the author of the workshop!

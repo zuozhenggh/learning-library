@@ -17,29 +17,28 @@ You’ll create a business object and a mobile application that you'll later use
 
 1.  In the web browser, sign in to Oracle Visual Builder.
 
--   If you have no current applications, the landing page appears. Click **\+ New  Application.**
--   If you have one or more current applications, the Visual Applications page appears. Click **New.**
+    -   If you have no current applications, the landing page appears. Click **\+ New  Application.**
+    -   If you have one or more current applications, the Visual Applications page appears. Click **New.**
 
-3.  In the Create Application dialog box, enter `HR Application` in the **Application Name** field and `Tutorial application` in the **Description** field. 
+2.  In the Create Application dialog box, enter `HR Application` in the **Application Name** field and `Tutorial application` in the **Description** field. 
 
-    The **Application ID** text field is automatically populated based on the value that you enter in the **Application Name** field.
-
-4.  Make sure the **Empty Application** template is selected in the Application template list, and click **Finish**.
+    The **Application ID** text field is automatically populated based on the value that you enter in the **Application Name** field. Make sure the **Empty Application** template is selected in the Application template list, then click **Finish**.
 
     The new application opens in the Welcome screen. The `DEV` and `1.0` tags next to the application name indicate the status (development) and the version.
 
     ![](./images/vbmca_cra_04.png)
 
-5.  Click **Mobile Apps** and click **\+ Mobile Application** in the Mobile Apps tab that opens.
-6.  In the General Information screen of the Create Mobile Application wizard, enter `hrmobileapp` in the **Application Name** field, select **None** as the navigation style, and click **Next.**
+4.  Click **Mobile Apps** and click **\+ Mobile Application** in the Mobile Apps tab.
+
+5.  In the General Information screen of the Create Mobile Application wizard, enter `hrmobileapp` in the **Application Name** field, select **None** as the navigation style, and click **Next.**
 
     ![](./images/vbmca_cra_05.png)
 
-7.  In the Page Template – main page of the Create Mobile Application wizard, select **Custom** and click **Create**.
+6.  In the Page Template – main page of the Create Mobile Application wizard, select **Custom** and click **Create**.
 
     Oracle Visual Builder creates the mobile application and opens the main-start page in the Page Designer.
 
-8.  Click **Page Title**, then click the **Properties** tab and enter `Departments` as the page title in the Mobile Page Template's Property Inspector.
+7.  Click **Page Title**, then enter `Departments` as the page title in the Properties pane on the right.
 
     ![](./images/vbmca_cra_07.png)
 
@@ -58,17 +57,17 @@ You’ll create a business object and a mobile application that you'll later use
 
     ![](./images/vbmca_cdb_04.png)
 
-5.  In the New Field window, enter `Name` in the **Label** field, and click **Create Field**.
+5.  In the pop-up box, enter `Name` in the **Label** field.
 
-    The **name** value is automatically populated in the **Field Name** field, and **String** ![](./images/vbmca_textfield_icon.png) is selected by default in the **Type** field.
+    The **name** value is automatically populated in the **Field Name** field, and **String** ![](./images/vbmca_textfield_icon.png) is selected by default in the **Type** field. Click **Create Field**.
 
     ![](./images/vbmca_cdb_05.png)
 
-6.  In the Property Inspector for the **Name** field, select the **Required** check box under **Constraints.**
+6.  In the Name field's Properties pane, select the **Required** check box under **Constraints.**
 
     ![](./images/vbmca_cdb_06.png)
 
-7.  Click **\+ Field** again. In the New Field window, enter `Location` in the **Label** field, and click **Create Field**.
+7.  Click **\+ Field** again. In the pop-up window, enter `Location` in the **Label** field, and click **Create Field**.
 
     The **location** value is automatically populated in the **Field Name** field, and **String** ![](./images/vbmca_textfield_icon.png) is selected by default in the **Type** field.
 
@@ -79,7 +78,7 @@ You’ll create a business object and a mobile application that you'll later use
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - December 2020
+**Last Updated** - February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
