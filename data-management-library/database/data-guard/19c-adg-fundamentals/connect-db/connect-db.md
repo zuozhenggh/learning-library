@@ -1,6 +1,6 @@
 # Connection to the Databases
 
-In this lab we will set up will create the standby database.
+In this lab, we will create the standby database.
 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
@@ -15,106 +15,112 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 
 When you first opened SQL Developer, the screen looks like this:
 
-![](./images/DB_connection_02.png)
+![](./images/DB-connection-02.png)
 
-## Create the Connection to the primary ##
+## **STEP 1**: Create the Connection to the primary
 
-First we need to know the service name from the primary Database and also the IP address it listens to. 
+First, we need to know the service name from the primary Database and the IP address it listens to. 
 
-To get that information, navigate to the Overview
+1. To get that information, navigate to the Overview
 -> Bare Metal, VM and Exadata
 -> DB Systems
 -> DB System Details
 -> Database Details
 
-![](./images/DB_connection_01.png)
+    ![](./images/DB-connection-01.png)
 
-There you click the **DB Connection** button and the Database Connection information window opens.
+2. There you click the **DB Connection** button and the Database Connection information window opens.
 
-![](./images/DB_connection_03.png)
+    ![](./images/DB-connection-03.png)
 
-Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
+3. Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
 
-The second thing we need to know to connect to the database is the IP Addres from the host it is running on.
+The second thing we need to connect to the database is the IP Address from the host it is running on.
 
-To get that information, navigate to the Overview
+4. To get that information, navigate to the Overview
 -> Bare Metal, VM and Exadata
 -> DB Systems (Select the **ADGHOLAD1** DB System)
 -> DB System Details
 
-Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
+5. Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
 The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
 
-![](./images/DB_connection_04.png)
+    ![](./images/DB-connection-04.png)
 
 Then we go back to SQL Developer.
 
-To add the connection, click the **Green Plus icon** at the top left.
+6. To add the connection, click the **Green Plus icon** at the top left.
 The wizard opens.
 
-To add the connection, use following information:
+7. To add the connection, use following information:
 
-* Name: sys@ADGHOLAD1
-* Username: sys
-* Role: SYSDBA
-* Hostname: The Public IP Address you found in the step above
-* Service name: The service name you found in the step above (the part after the / (slash)).
+    * Name: sys@ADGHOLAD1
+    * Username: sys
+    * Role: SYSDBA
+    * Hostname: The Public IP Address you found in the step above
+    * Service name: The service name you found in the step above (the part after the / (slash)).
 
-![](./images/DB_connection_05.png)
+    ![](./images/DB-connection-05.png)
 
-Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click thet **Connect** button.
+8. Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
 
-![](./images/DB_connection_06.png)
+    ![](./images/DB-connection-06.png)
 
 
-## Create the Connection to the Standby ##
+## **STEP 2**: Create the Connection to the Standby
 
-First we need to know the service name from the standby Database and also the IP address it listens to. 
+First, we need to know the service name from the standby Database and the IP address it listens to. 
 
-To get that information, navigate to the Overview
+1. To get that information, navigate to the Overview
 -> Bare Metal, VM and Exadata
 -> DB Systems  (Select the **ADGHOLAD2** DB System)
 -> DB System Details
 -> Database Details
 
-![](./images/DB_connection_07.png)
+    ![](./images/DB-connection-07.png)
 
-There you click the **DB Connection** button and the Database Connection information window opens.
+2. There you click the **DB Connection** button and the Database Connection information window opens.
 
-![](./images/DB_connection_08.png)
+    ![](./images/DB-connection-08.png)
 
-Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
+3. Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
 
-The second thing we need to know to connect to the database is the IP Addres from the host it is running on.
+The second thing we need to connect to the database is the IP Address from the host it is running on.
 
-To get that information, navigate to the Overview
+4. To get that information, navigate to the Overview
 -> Bare Metal, VM and Exadata
 -> DB Systems
 -> DB System Details
 
-Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
+5. Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
 The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
 
-![](./images/DB_connection_09.png)
+    ![](./images/DB-connection-09.png)
 
 Then we go back to SQL Developer.
 
-To add the connection, click the **Green Plus icon** at the top left.
+6. To add the connection, click the **Green Plus icon** at the top left.
 The wizard opens.
 
-To add the connection, use following information:
+7. To add the connection, use following information:
 
-* Name: sys@ADGHOLAD2
-* Username: sys
-* Role: SYSDBA
-* Hostname: The Public IP Address you found in the step above
-* Service name: The service name you found in the step above (the part after the / (slash)).
+    * Name: sys@ADGHOLAD2
+    * Username: sys
+    * Role: SYSDBA
+    * Hostname: The Public IP Address you found in the step above
+    * Service name: The service name you found in the step above (the part after the / (slash)).
 
-![](./images/DB_connection_10.png)
+    ![](./images/DB-connection-10.png)
 
-Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click thet **Connect** button.
+8. Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
 
-![](./images/DB_connection_11.png)
+    ![](./images/DB-connection-11.png)
 
-## Summary
-You have now successfully created a database connection to the primary and the standby database.
+
+You have now successfully created a database connection to the primary and the standby database. You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+
+- **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
+- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Last Updated By/Date** -  Kamryn Vinson, March 2021

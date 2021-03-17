@@ -3,7 +3,7 @@
     "include": {"define_channels_local_table": "../../data-load/files/define_channels_local_table.sql",
                 "load_data": "../../data-load/files/load_data.sql",
                 "query_tables": "../../data-load/files/query_tables.sql"},
-    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+    "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction",

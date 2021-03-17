@@ -1,4 +1,6 @@
-# Change The passwords
+# Change the Passwords
+
+## Introduction
 
 In this lab we will use the cloud interface to change the passwords.
 
@@ -11,41 +13,47 @@ Doing this right is important. When you change the SYS password in a Data Guard 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
-## Change the SYS password
+## **STEP 1**: Change the SYS password
 
-Navigate to the HOLDG primary database following 
+1. Navigate to the HOLDG primary database following 
 
-Overview
--> Bare Metal, VM and Exadata
--> DB Systems (choose ADGHOLAD1)
--> DB System Details
+    Overview
+    -> Bare Metal, VM and Exadata
+    -> DB Systems (choose ADGHOLAD1)
+    -> DB System Details
 
-At the bottom click on the HOLDG database.
+2. At the bottom click on the HOLDG database.
 
-![](./images/SYS_01.png)
+    ![](./images/SYS-01.png)
 
-Find the drop down wich lists **More Actions** and click on **Manage Passwords**.
+3. Find the drop down which lists **More Actions** and click on **Manage Passwords**.
 
-![](./images/SYS_02.png)
+    ![](./images/SYS-02.png)
 
-Enter the new SYS password. Keep in mind that the Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. The special characters must be _, #, or -.
+4. Enter the new SYS password. Keep in mind that the Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. The special characters must be _, #, or -.
 
-As the password for this lab, use: **WelC0me1##**
+    As the password for this lab, use: **WelC0me1##**
 
-And click **Apply**
+    And click **Apply**
 
-![](./images/SYS_03.png)
+    ![](./images/SYS-03.png)
 
-## Verify 
+## **STEP 2**: Verify 
 
-Using SQL Developer, try to log in to the database as the SYS user. This will fail if you previously stored the password. The tool prompts you for the new password. 
+1. Using SQL Developer, try to log in to the database as the SYS user. This will fail if you previously stored the password. The tool prompts you for the new password. 
 
-![](./images/SYS_04.png)
+    ![](./images/SYS-04.png)
 
-When you specify the new password, the connection succeeds.
+2. When you specify the new password, the connection succeeds.
 
-![](./images/SYS_05.png)
+    ![](./images/SYS-05.png)
 
 
-## Summary
-You have now succesfully changed the SYS password.
+You have now successfully changed the SYS password. You may now [proceed to the next lab](#next).
+
+
+## Acknowledgements
+
+- **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
+- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Last Updated By/Date** -  Kamryn Vinson, March 2021

@@ -2,7 +2,7 @@
   "workshoptitle": "Oracle Analytics Server-Augmented Analytics & Oracle Converged Database-Machine Learning",
   "tutorials": [
     {
-      "title": "Prerequisites",
+      "title": "Getting Started",
       "description": "Login to Oracle Cloud",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
