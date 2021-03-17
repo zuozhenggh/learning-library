@@ -60,5 +60,3 @@ This completes Lab 5. You now know how to remove and reposition regions. [Click 
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

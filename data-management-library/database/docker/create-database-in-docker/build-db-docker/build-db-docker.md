@@ -202,7 +202,3 @@ Choose the environment where you created your SSH Key.
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
 * **Lab Expiry Date** - November 30, 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

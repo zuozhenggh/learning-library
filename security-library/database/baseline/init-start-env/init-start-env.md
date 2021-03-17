@@ -55,5 +55,3 @@ Once it's started, check that all necessary labs resources are operational
 - **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
 - **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

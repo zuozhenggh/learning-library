@@ -2,15 +2,19 @@
 
 ## About this Workshop
 
-This workdshop will walk you through a typical flow to develop an APEX application and promote it from a dev environment to production (or test or staging environment), using version control to keep track of application code changes as well as schema migrations.
+This workshop shows a scenario on how to achieve CI/CD in Oracle APEX.
 
-The process takes advantage of Liquibase which is integrated in the SQLcl command line tool, as well as git and APEX specific app management functionalities.
+This shows the flow to develop an APEX application and promote it from a dev environment to production (or test or staging environment), using version control to keep track of application code changes as well as schema migrations.
+
+The process takes advantage of terraform to deploy the infrastructure, Liquibase which is integrated in the SQLcl command line tool, as well as git and APEX specific app management functionalities.
+
+![](./images/apex-wf.png)
 
 Estimated Lab Time: 45min
 
 ### Objectives
 
-*Learn how to setup an environment and process to develop amnd deploy APEX application across several environments*
+*Learn how to setup an environment and process to develop and deploy APEX application across several environments*
 
 In this workshop, you will:
 - Get a repository template with scripts to implement a CI/CD type workflow.
@@ -43,8 +47,6 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, January 2021
- - **Last Updated By/Date** - Emmanuel Leroy, January 2021
+ - **Author** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
+ - **Last Updated By/Date** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

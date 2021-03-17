@@ -179,5 +179,3 @@ You now know how _end-users_ can define custom reports using Interactive Reports
  - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

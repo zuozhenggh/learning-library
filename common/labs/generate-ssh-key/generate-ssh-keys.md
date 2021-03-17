@@ -355,5 +355,3 @@ You may now [proceed to the next lab](#next) or paste it in the LiveLabs reserva
 * **Contributors** - Kay Malcolm, Tom McGinn, Kamryn Vinson, Anil Nair
 * **Last Updated By/Date** - Kamryn Vinson, Database Product Management, March 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

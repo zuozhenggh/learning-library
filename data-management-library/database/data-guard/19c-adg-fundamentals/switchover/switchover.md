@@ -1,4 +1,7 @@
-# Performing a switchover
+# Performing a Switchover
+
+## Introduction
+In this lab, we will be performing a switchover operation.
 
 Oracle Data Guard helps you change the role of databases between primary and standby using either a switchover or failover operation.
 
@@ -10,80 +13,92 @@ A failover is a role transition in which one of the standby databases is transit
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
 
-## Performing a switchover
+### Performing a switchover
 
 A switchover is always started from the primary database, where a failover is initiated from the standby database. 
 The difference between a switchover and a failover is that a switchover is a graceful operation where a failover is only needed when the primary database is broken beyond repair or that repair would take too long. 
 
-We will use SQL Developer to connect to the Database System.You can run this tool from any desktop that has network connectivity to the Database System.
+We will use SQL Developer to connect to the Database System. You can run this tool from any desktop that has network connectivity to the Database System.
 
 You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html) 
 
-Please make sure to complete Lab 3 before starting this Lab.
+
+### Objectives
+- Verify the database roles in the database
+- Perform a switchover
+
+### Prerequisites
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab: Connect to the Database
 
 
-## Verify the database roles in the database
+## **STEP 1**: Verify the database roles in the database
 
-Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally. 
+1. Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally. 
 
-![](./images/Switchover_01.png)
+    ![](./images/Switchover-01.png)
 
 
-Verify the roles with the following query:
+2. Verify the roles with the following query:
 
-````
-Select name, db_unique_name, database_role from v$database;
-````
+    ````
+    Select name, db_unique_name, database_role from v$database;
+    ````
 
-Enter this query in both panes and click the run button to see the result.
+3. Enter this query in both panes and click the run button to see the result.
 
-![](./images/Switchover_02.png)
+    ![](./images/Switchover-02.png)
 
 We can conclude that the Database in AD1 is the primary database and the database in AD2 is the Standby database.
 
 
-## Perform the role transition
+## **STEP 2**: Perform the role transition
 
-In the OCI console, navigate to the DB System Details of the ADGHOLAD1 database and scroll down to the Databases section.
+1. In the OCI console, navigate to the DB System Details of the ADGHOLAD1 database and scroll down to the Databases section.
 
-Overview
--> Bare Metal, VM and Exadata
--> DB Systems
+    Overview
+    -> Bare Metal, VM and Exadata
+    -> DB Systems
 
-Select **ADGHOLAD1**
-![](./images/Switchover_03.png)
+2. Select **ADGHOLAD1**
+    ![](./images/Switchover-03.png)
 
-Click on the name **DGHOL** and in the next screen scroll down immediately and click on **Data Guard Associations**
+3. Click on the name **DGHOL** and in the next screen scroll down immediately and click on **Data Guard Associations**
 
-![](./images/Switchover_04.png)
+    ![](./images/Switchover-04.png)
 
-Click on the 3 dots on the right, and click **Switchover**
-![](./images/Switchover_05.png)
+4. Click on the 3 dots on the right, and click **Switchover**
+    ![](./images/Switchover-05.png)
 
-This is a DBA responsability, so the tooling asks the password. Enter the SYS password from the Primary database and click **OK** then the role transition starts.
-![](./images/Switchover_06.png)
+5. This is a DBA responsibility, so the tooling asks the password. Enter the SYS password from the Primary database and click **OK** then the role transition starts.
+    ![](./images/Switchover-06.png)
 
-At this point, the lifecycle state will be updating and the role transition happens in the background.
-![](./images/Switchover_07.png)
+6. At this point, the lifecycle state will be updating and the role transition happens in the background.
+    ![](./images/Switchover-07.png)
 
-After some time the role transition finished and the state is Available again. 
-![](./images/Switchover_08.png)
+7. After some time the role transition finished and the state is Available again. 
+    ![](./images/Switchover-08.png)
 
 
-## Verify the database roles in the database
+## **STEP 3**: Verify the database roles in the database
 
-Using SQL Developer, verify the roles again with following Query:
+1. Using SQL Developer, verify the roles again with following Query:
 
-````
-Select name, db_unique_name, database_role from v$database;
-````
+    ````
+    Select name, db_unique_name, database_role from v$database;
+    ````
 
-Enter this query in both panes and click the run button to see the result.
+2. Enter this query in both panes and click the run button to see the result.
 
-![](./images/Switchover_09.png)
+    ![](./images/Switchover-09.png)
 
 We can conclude that the Database in AD2 is the primary database and the database in AD1 is the Standby database.
 
+You have now successfully performed a graceful role transition. You may now [proceed to the next lab](#next).
 
-## Summary
-You have now succesfully performed a gracefull role transition.
+
+## Acknowledgements
+
+- **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
+- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Last Updated By/Date** -  Kamryn Vinson, March 2021

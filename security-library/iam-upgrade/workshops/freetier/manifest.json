@@ -2,7 +2,7 @@
   "workshoptitle": "IAM 11g to 12c In-Place Upgrade Workshop",
   "tutorials": [
     {
-      "title": "Prerequisites",
+      "title": "Getting Started",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {

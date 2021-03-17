@@ -93,5 +93,3 @@ This completes this lab. You now know how to create an application from a spread
 * **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
