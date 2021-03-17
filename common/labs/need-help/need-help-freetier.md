@@ -7,7 +7,7 @@ If you still find yourself stuck or would like to report an issue with the works
 
 ![](images/help-button2.png)
 
-For more about constructing the email, click [here]().
+For more about constructing the email, click [here](#HowtoFormatYourSupportEmailRequest).
 
 ### Common Issues Table of Contents
   - [Can't Login to Oracle Cloud](#cant-login-to-oracle-cloud)
