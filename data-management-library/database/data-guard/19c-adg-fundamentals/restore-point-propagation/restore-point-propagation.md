@@ -1,5 +1,6 @@
-# Restore point propagation
+# Restore Point Propagation
 
+## Introduction
 In this lab we will use the 19c new feature which is called the Restore point propagation.
 
 ![](./images/01-dg-primary-restore-point-propagation.gif)
@@ -14,57 +15,63 @@ To accommodate this, the `v$restore_point` view was updated with a `REPLICATED` 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
-## Create a restore point in the primary
+## **STEP 1**: Create a restore point in the primary
 
-Download the 2 textfiles with the sql commands.
+1. Download the 2 textfiles with the sql commands.
 
-[For the primary
-](./images/primary.txt)
+    [For the primary
+    ](./images/primary.txt)
 
-[For the standby
-](./images/standby.txt)
+    [For the standby
+    ](./images/standby.txt)
 
-As the SYS user connection, first check the restore points with following query
+2. As the SYS user connection, first check the restore points with the following query
 
-````
-select name,replicated,guarantee_flashback_database from v$restore_point;
-````
+    ````
+    select name,replicated,guarantee_flashback_database from v$restore_point;
+    ````
 
-Do the same on the standby database.
+3. Do the same on the standby database.
 
-![](./images/RP01.png)
+    ![](./images/RP01.png)
 
-Next create a restore point in the primary database
-![](./images/RP02.png)
+4. Next, create a restore point in the primary database
+    ![](./images/RP02.png)
 
-check the restore points with following query
+5. Check the restore points with following query
 
-````
-select name,replicated,guarantee_flashback_database from v$restore_point;
-````
+    ````
+    select name,replicated,guarantee_flashback_database from v$restore_point;
+    ````
 
-Do the same on the standby database.
-![](./images/RP03.png)
+6. Do the same on the standby database.
+    ![](./images/RP03.png)
 
 The restore point drop is now replicated to the standby and has been suffixed with `_PRIMARY` and the replicated column on the primary indicates this has been performed.
 
-## Drop the restore point
+## **STEP 2**: Drop the restore point
 
-Next drop the restore point in the primary database with following query 
-````
-drop restore point testrp;
-````
+1. Next, drop the restore point in the primary database with following query 
+    ````
+    drop restore point testrp;
+    ````
 
-![](./images/RP04.png)
+    ![](./images/RP04.png)
 
-Check the restore points with following query
+2. Check the restore points with following query
 
-````
-select name,replicated,guarantee_flashback_database from v$restore_point;
-````
+    ````
+    select name,replicated,guarantee_flashback_database from v$restore_point;
+    ````
 
-Do the same on the standby database.
-![](./images/RP05.png)
+3. Do the same on the standby database.
+    ![](./images/RP05.png)
 
-## Summary
-You have now succesfully used Active Data Guard Restore point propagation.
+You have now successfully used Active Data Guard Restore point propagation. You may now [proceed to the next lab](#next).
+
+
+## Acknowledgements
+
+- **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
+- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Last Updated By/Date** -  Kamryn Vinson, March 2021

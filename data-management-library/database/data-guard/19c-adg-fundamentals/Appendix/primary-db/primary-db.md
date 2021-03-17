@@ -9,7 +9,7 @@ In this lab we will setup will create the primary database.
 ## Create the primary database
 
 To create the primary database we need to follow a wizard. 
-Navigate in the hamburger menu at the left top to **Bare Metal, VM and Exadata**
+Click the hamburger menu at the top left then select **Bare Metal, VM and Exadata**
 
 ![](./images/menu-dbcs.png)
 

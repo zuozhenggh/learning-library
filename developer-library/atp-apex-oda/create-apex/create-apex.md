@@ -209,7 +209,7 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     ![](./images/apex_rest_handler_create_get.png)
 
-10. On the **Source** area (No comments area) we are going to run the SQL select to fetch the data form the schema:
+10. On the **Source** area (Not comments area) we are going to run the SQL select to fetch the data form the schema:
 
     ```
     <copy>select * from tasks</copy>
