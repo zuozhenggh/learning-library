@@ -1,21 +1,29 @@
 # Connection to the Databases
 
+## Introduction
 In this lab, we will create the standby database.
 
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
 
 
-## Connection to the Databases
+### Connection to the Databases
 
 We will use SQL Developer to connect to our new database system with a primary and a standby database. 
 You can run this tool from any desktop that has network connectivity to the database system.
 
 You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html) 
 
-When you first opened SQL Developer, the screen looks like this:
+When you first open SQL Developer, the screen looks like this:
 
 ![](./images/DB-connection-02.png)
+
+### Objectives
+- Create a database connection to the primary database
+- Create a database connection to the standby database
+
+### Prerequisites
+- An Oracle LiveLabs or Paid Oracle Cloud account
 
 ## **STEP 1**: Create the Connection to the primary
 
