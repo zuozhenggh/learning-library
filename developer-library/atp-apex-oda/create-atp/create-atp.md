@@ -86,7 +86,7 @@ Estimated Lab Time: 15 minutes
 
     ![Always Free Logo](./images/always_free_logo.png)
 
-*You can proceed to the next lab…*
+You may now [proceed to the next lab](#next).
 
 ## **Acknowledgements**
 
