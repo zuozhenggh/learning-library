@@ -409,8 +409,3 @@ The rest of this lab will be done interactively in the notebook. This step discu
 - **Author** - Derrick Cameron
 - **Contributors** - Anoosha Pilli, Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
-
-
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
