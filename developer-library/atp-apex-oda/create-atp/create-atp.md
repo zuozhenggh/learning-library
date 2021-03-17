@@ -33,7 +33,13 @@ Watch our short video that explains Lab 1 - Create Autonomous Database and Lab 2
 Estimated Lab Time: 15 minutes
 
 ### Objectives
+
+In this lab, you will:
 - Create an Autonomous Database with the latest features of Oracle Databases
+
+### Prerequisites
+
+- This lab assumes you have logged into your to Oracle Cloud account.
 
 ## **STEP 1**: Create a new Autonomous Transaction Processing
 
@@ -86,9 +92,9 @@ Estimated Lab Time: 15 minutes
 
     ![Always Free Logo](./images/always_free_logo.png)
 
-*You can proceed to the next lab…*
+You may now [proceed to the next lab](#next).
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March
