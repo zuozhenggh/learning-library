@@ -117,7 +117,7 @@ You will also clone a GitHub repository.
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
-  ![](images/ce67dfe171836b79a14533f479039ff5.png " ")
+  ![](images/frontendservicekubectloutput.png " ")
 
   Alternatively, you can execute the `services` shortcut command.
 
