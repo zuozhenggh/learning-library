@@ -137,6 +137,15 @@ In this lab, you will:
     print('Hello, world!')</copy>
     ```
 
+12. You may want to turn highlighting off, to do so, use `nohighlight`:
+
+    ```nohighlight
+    <copy>class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }</copy>
+    ```
 
 ## **Step 2:** Optional Advanced features
 
