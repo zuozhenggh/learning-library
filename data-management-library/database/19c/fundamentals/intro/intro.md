@@ -1,44 +1,23 @@
-# Introduction 
+# Introduction
 
-## Oracle Multitenant
-From the point of view of an application, the pluggable database (PDB) is the database, in which applications run unchanged. PDBs can be very rapidly provisioned and a pluggable database is a portable database, which makes it very easy to move around, perhaps for load balancing or migration to the Cloud.
+## **About Oracle Database 19c** ##
 
-Many PDBs can be plugged into a single Multitenant Container Database (CDB). From the point of view of a Database Administrator (DBA), the CDB is the database. Common operations are performed at the level of the CDB enabling the DBA to manage many as one for operations such as upgrade, configuration of high availability, taking backups; but we retain granular control when appropriate. This ability to manage many as one enables tremendous gains in operational efficiency.
+Oracle Database 19c provides the most advanced SQL engine on the planet. It complies with the latest ISO SQL standard, making it not only the most comprehensive database but also the most open one. It supports highly sophisticated analytics alongside and with no impact on OLTP workloads, eliminating the need to develop and orchestrate complex, fragile, and inconsistent data movement between different specialized data stores. Oracle’s SQL engine ships with integrated machine learning algorithms and allows developers to easily apply them on the data directly, hence moving the computation to the data—rather than having to pull the data out of the database and perform the calculation within the application. Using this capability, developers can create real-time prediction models directly on the data itself and act on insights more quickly and easily than ever before.
 
-Enormous gains in technical efficiency are enabled by a shared technical infrastructure. There’s a single set of background processes and a single, global memory area – the SGA – shared by all the PDBs. The result is that with this architecture we can consolidate more applications per server.
+[](youtube:LcsPSJrZDrI)
 
-Watch the video below for an overview of Oracle Multitenant.
+Oracle Database 19c supports fully consistent data with ACID transaction guarantees and consistent queries. This greatly simplifies application development compared to NoSQL stores. Native JSON support makes up a cornerstone for flexible schema support and Internet of Things (IoT)workloads, enabling developers to simply load JSON documents into the database natively and analyze them later on, with the full power of Oracle SQL. Oracle’s PL/SQL engine is yet another powerful tool for bringing computations to the data and providing an easy and standardized interface to them via simple SQL function or procedure calls. Interfaces such as REST allow for easy communication and integration with Oracle Database. These can be created automatically on top of tables, as well as stored procedures, giving developers the flexibility on how and what data to expose to consuming services.
 
-[](youtube:4mUwjBfztfU)
+Extend this with the move to autonomy provided by Oracle Autonomous Database, a self-driving, self-securing, and self-repairing approach where the database itself decides on the steps to perform for the best of the user's workload or data. Machine learning algorithms are used to help the database to decide how to tune a workload, how to secure the data, and how to take countermeasures to preserve the agreed-on SLA levels.
 
-### Containers and Pluggable Databases
+With the Oracle Autonomous Database, developers can fully concentrate on the applications they write and the business’s requirements, rather than having to think about the data tier. And to make this even easier the Oracle Autonomous Database environment can be provisioned in minutes with a few simple clicks or an API call to the Oracle Cloud.
 
-A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs.
+### Prerequisites
+* Oracle Cloud Account - Free Tier, Paid or LiveLabs
 
-A container is either a PDB or the root. The root container is a collection of schemas, schema objects, and nonschema objects to which all PDBs belong.
 
-Every CDB has the following containers:
-- Exactly one root
-- Exactly one seed PDB
-- User-created PDBs
-
-### Diagram of CDBs and PDBs
-
-The following figure shows a CDB with four containers: the root, seed, and two PDBs. Each PDB has its own dedicated application. A different PDB administrator manages each PDB. A common user exists across a CDB with a single identity. In this example, common user SYS can manage the root and every PDB. At the physical level, this CDB has a database instance and database files, just as a non-CDB does.
-
-![](./images/arch.png " ") 
-
-## More Information on Multitenant
-
-Seven Sources of Savings for Companies with Multitenant
-<a href="https://www.youtube.com/watch?v=beB8_jS7Vh0&list=PLdtXkK5KBY55xRePeQfgTOK6rYScVsMcN">![](./images/sevensources.png " ") </a>
-
-Oracle Database Product Management Videos on Multitenant
-<a href="https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ/search?query=multitenant">![](./images/youtube.png " ") </a>
-
-## Acknowledgements
-
-- **Authors/Contributors** - Patrick Wheeler, David Start, Vijay Balebail, Kay Malcolm
-- **Last Updated By/Date** - Kay Malcolm, March 2020
-- **Workshop Expiration Date** - March 31, 2021
+## **Acknowledgements**
+- **Authors** -  Jody Glover, Madhusudhan Rao
+- **Contributors** - Madhusudhan Rao
+- **Last Updated By/Date** - Kay Malcolm, March 2021
 

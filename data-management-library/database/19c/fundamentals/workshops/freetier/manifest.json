@@ -27,9 +27,9 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
         },
         {
-            "title": "Lab 3: Clone, Plug and Drop",
-            "description": "Clone, Plug and Drop Pluggable Databases",
-            "filename": "./../../clone-plug-drop/clone-plug-drop.md"
+            "title": "Lab 3: Start Labs Here",
+            "description": "Duplicate this folder and rename based on lab name",
+            "filename": "./../../analyze/analyze.md"
         },
         {
             "title": "Need Help?",
