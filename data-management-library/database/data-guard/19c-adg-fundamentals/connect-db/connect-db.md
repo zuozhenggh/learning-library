@@ -1,11 +1,7 @@
-# Connection to the Databases
+# Connect to the Database
 
 ## Introduction
 In this lab, we will create the standby database.
-
-
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
-
 
 ### Connection to the Databases
 
@@ -18,12 +14,14 @@ When you first open SQL Developer, the screen looks like this:
 
 ![](./images/DB-connection-02.png)
 
+Estimated Lab Time: 20 Minutes
+
 ### Objectives
 - Create a database connection to the primary database
 - Create a database connection to the standby database
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 
 ## **STEP 1**: Create the Connection to the primary
 
@@ -130,5 +128,5 @@ You have now successfully created a database connection to the primary and the s
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
