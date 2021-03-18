@@ -392,6 +392,15 @@ These steps will walk through the initial configuration of the source EBS instan
 
       ![](./images/26.png " ")
 
+  Note: If you cannot access the webpage of the EBS environment, you may need to open the firewall on the instance for port 8000. Run the following commands on the instance as the opc user to do so. 
+
+    ```
+    <copy>
+    sudo firewall-cmd --zone=public --permanent --add-port=8000/tcp
+    sudo firewall-cmd --reload
+    </copy>
+    ```
+
 11. Acknowledge the secure configuration recommendations.
 
   Access to the environment will be restricted until the system administrator configures or acknowledges the secure configuration recommendations.
