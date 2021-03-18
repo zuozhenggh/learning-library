@@ -180,7 +180,7 @@ Time to **integrate** your **Custom Component with the Intent** `ListTasks` crea
     > The **result** should be something like this:
     > ![View Logs](./images/service_log.png)
 
-## It works
+## **STEP 5:** Add a new item and test
 
 To see how we **request** against the **database**, we can **add** a new item.
 
@@ -190,7 +190,7 @@ To see how we **request** against the **database**, we can **add** a new item.
 
 2. Select **TASKS** table on the left of the APEX page and **click** the tab **Data**, then click **Insert Row**:
 
-    ![Object Browser Data](./images/apex_object_data_inser_new.png)
+    ![Object Browser Data](./images/object_data_inser_new.png)
 
 3. **Add** a new **Text** like `New item!` and **click** **Create**:
 
@@ -198,7 +198,7 @@ To see how we **request** against the **database**, we can **add** a new item.
 
 4. **Confirm** the row has been created:
 
-    ![Object Browser Data](./images/apex_object_data_insert_row_created.png)
+    ![Object Browser Data](./images/object_data_insert_row_created.png)
 
 5. **Run** the chat again but before **reset** the previous **conversation**.
 
