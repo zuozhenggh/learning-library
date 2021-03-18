@@ -9,15 +9,17 @@ This lab describes how to open the Oracle GoldenGate Services ports from the Ora
 + **You have gone through the Introduction Lab and Prerequisites**
 
 
-**STEP 1**: Open all the Oracle GoldenGate Services Port from the OCI Console
-Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console. If the Administration, Distribution, and Receiver server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
+**STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console and the Proxy ports on Oracle GoldenGate Microservices Marketplace Instance
 
-To open all the Oracle GoldenGate services port from the OCI console:
+Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console. If the Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
 
+To open the ports:
+1. Start an instance of Oracle GoldenGate (Microservices) Marketplace.
+2. In this instance, run the following command to expose the Admin Server, Receiver Server, and Distribution server ports:
+sudo firewall-cmd --list-ports
+sudo firewall-cmd --add-port=9000/tcp
 
-**STEP 2:** Open all the Proxy ports on Oracle GoldenGate Microservices Marketplace Instance
-
-**STEP 3:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
+**STEP 2:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
 After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate Instances on the OCI UI:
   To discover Oracle GoldenGate Microservices instances:
   1. Click **Set up**, select **Add Target**, and click **Configure Auto Discovery**.
