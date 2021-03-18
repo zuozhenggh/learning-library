@@ -1,7 +1,7 @@
-# Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Marketplace Instance
+# Monitor the Oracle GoldenGate Marketplace Instance on Oracle Enterprise Manager
 
 ## Introduction
-
+This lab describes how to open the Oracle GoldenGate Services ports from the Oracle Cloud Infrastructure (OCI) console, open the proxy ports on Oracle GoldenGate Microservices Marketplace instance, and discover and monitor the Oracle GoldenGate instances on Oracle Enterprise Manager on Marketplace.
 
 
 ### What Do You Need?
@@ -11,7 +11,7 @@
 
 **STEP 1**: Open all the Oracle GoldenGate Services Port from the OCI Console
 
-**STEP 2:** Open all the Proxy port on Oracle GoldenGate Microservices Marketplace Instance
+**STEP 2:** Open all the Proxy ports on Oracle GoldenGate Microservices Marketplace Instance
 
 **STEP 3:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
 After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate Instances on the OCI UI:
@@ -35,7 +35,19 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
       The targets are discovered and the control is now back on the **Targets on Host** page. Notice  the change in the number of targets discovered under the **Discovered Targets** column.
 
         ![](./images/6DiscoveredTargets.png " ")
-  6. Click the number under **Discovered Targets**  
+  6. Click the number under **Discovered Targets**  to display the **Auto Discovery Results** page,
+        ![](./images/7.png " ")
+  7. Click **Promote** to display the **Custom Promotion for GoldenGate Targets**.
+        ![](./images/8.png " ")
+
+  8.  Click **Yes** in the **Confirmation** dialog box to manage agents.
+          ![](./images/9.png " ")
+
+  9. Click **Submit** in the **Manage EM Agents for OGG instance** page
+          ![](./images/10.png " ")
+  10. Click **OK** in the **Information** dialog box.
+          ![](./images/11.png " ")
+    The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.        
 
 ## Want to Learn More?
 * [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/index.html)
