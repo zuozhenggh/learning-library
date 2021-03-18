@@ -1,13 +1,11 @@
 # Enable Active Data Guard DML Redirection
 
 ## Introduction
-In this lab we will enable the 19c New Feature Active Data Guard DML Redirection.
+In this lab, we will enable the 19c New Feature Active Data Guard DML Redirection.
 
 ![](./images/adg-redirect-5305796.gif)
 
-
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
-
+Estimated Lab Time: 20 Minutes
 
 ### Enable Active Data Guard DML Redirection
 
@@ -34,7 +32,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Use Active Data Guard DML Redirection
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 - Lab: Connect to the Database
 - Lab: Perform a switchover
 - Lab: Perform a failover
@@ -163,5 +161,5 @@ You have now successfully used Active Data Guard DML Redirection. You may now [p
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
