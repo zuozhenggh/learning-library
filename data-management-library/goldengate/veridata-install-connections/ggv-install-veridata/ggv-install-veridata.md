@@ -61,15 +61,26 @@ To install and configure Oracle GoldenGate Veridata:
 10. Click **Next** to continue to the **Installation Complete** screen. Note that the **Next Steps** that are required to run the Repository Creation Utility (RCU) and then run the Configuration Wizard, are mentioned in the **Installation Complete** screen.
     ![](./images/17VeridataInstall_InstallComplete_Screen9.png " ")
 
-## **STEP 4**: Apply a Patch
+## **STEP 4**: Apply a Patch (Optional Step)
+This is an optional step. You can skip this step if you do not want to apply a patch.
+
+You need to apply a patch on the current release of Oracle GoldenGate Veridata only if you want to avail any or all of the following benefits:
+  * new functionalities embedded in the latest patch
+  * corrected problems or bug fixes (known issues or limitations that existed in the previous release or patch have been corrected)
+  * enhancements over existing functionalities
+
 **Assumptions**:
 * The `ORACLE_HOME` environment variable is set to the directory where you have installed Oracle GoldenGate Veridata.
+
+**Prerequisites**:
+*  Ensure that all the servers and agents have been stopped.
 
 To apply a patch on an Oracle GoldenGate Veridata release:
 1. Go to [Oracle Support](https://mosemp.us.oracle.com/epmos/faces/index.jspx?_afrLoop=174795690219928&_afrWindowMode=0&_adf.ctrl-state=1bogh2ruei_94) and download the required Patch and extract the zip file to a location. This location will be referred to as `PATCH_TOP` in the subsequent steps.
 2. Set your current directory to the directory where the patch is located.
 3. In the command prompt, run the following command: `cd PATCH_TOP/32436110`. In this example, 32436110 is the patch number.
-4. Run OPatch to apply the patch: `opatch apply`.
+4. Run OPatch to apply the patch: `opatch apply`. This replaces the binaries of the main release.
+5. Run the following command to verify whether or not the patch has been successfully applied: `opatch lsinventory`.
 
 ## **STEP 5**: Configure RCU
 The Repository Creation Utility (RCU) presumes that you have already installed a compatible database to house the repository. This example assumes that it is an Oracle 19c Database.
@@ -183,5 +194,3 @@ To deploy agents:
 
 
 * **Last Updated By/Date:** Anuradha Chepuri, March 2021
-
-

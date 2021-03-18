@@ -15,9 +15,9 @@ Before you begin to discover the Oracle GoldenGate instances, you need to open a
 
 To open the ports:
 1. Start an instance of Oracle GoldenGate (Microservices) Marketplace.
-2. In this instance, run the following command to expose the Admin Server, Receiver Server, and Distribution server ports:
-sudo firewall-cmd --list-ports
-sudo firewall-cmd --add-port=9000/tcp
+2. In this instance, run the following command to expose the Service Manager, Administration Server, Receiver Server,  Distribution Server, and Performace Metrics Server ports:
+    <pre>sudo firewall-cmd --list-ports
+    sudo firewall-cmd --add-port=9000/tcp</pre>
 
 **STEP 2:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
 After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate Instances on the OCI UI:
@@ -53,8 +53,12 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
           ![](./images/10.png " ")
   10. Click **OK** in the **Information** dialog box.
           ![](./images/11.png " ")
-    The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.        
 
+  11. Click **Submit** in the **Manage Agents** page.
+          ![](./images/12.png " ")
+
+  The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.
+  [](youtube:N28CsAr5kjw)
 ## Want to Learn More?
 * [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/index.html)
 * [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/oracle-goldengate-classic-oracle.html#GUID-8D2728DA-9A05-439F-B2D4-4CFF8D70236D)
