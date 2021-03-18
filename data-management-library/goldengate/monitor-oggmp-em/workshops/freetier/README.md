@@ -1,22 +1,18 @@
-# Welcome to the Oracle GoldenGate Veridata Hands-on Workshop!
+# Welcome to the workshop on how to Monitor the Oracle GoldenGate Marketplace Instance on Oracle Enterprise Manager!
 
-The **Getting Started to Oracle GoldenGate Veridata Workshop** is a series of step-by-step labs that guide you through the process of installing and configuring Oracle GoldenGate Veridata. You'll also explore how to create connections, connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet, create groups and compare pairs, create groups, configure compare pairs, create and execute jobs, view reports,
+This workshop contains a LiveLab, which describes how to open the Oracle GoldenGate Services ports from the Oracle Cloud Infrastructure (OCI) console, open the proxy ports on Oracle GoldenGate Microservices Marketplace instance, and discover and monitor the Oracle GoldenGate instances on Oracle Enterprise Manager on Marketplace.
 
 ## Access the Labs Using Our Web Interface
 
-**[Click here](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier)** to use our easy to navigate HTML format.
+**[Click here](https://oracle.github.io/learning-library/data-management-library/goldengate/monitor-oggmp-em/workshops/freetier)** to use our easy to navigate HTML format.
 
 
 ## Access the Labs on the Repo
 
 Alternatively, you can follow the individual workshop labs on this repo:
 
-- [Introduction to Oracle GoldenGate Veridata](../workshops/freetier/intro.md)
-- [Install and Configure Oracle GoldenGate Veridata ](../ggv-install-veridata/ggv-install-veridata.md)
-- [Create Connections](../ggv-create-connections/ggv-create-connections.md)
-- [Connect the Oracle GoldenGate Veridata Agent to Autonomous Data Warehouse](../ggv-adw-atp/ggv-adw-atp.md)
-- [Create Groups, Compare Pairs, Jobs, and Run Jobs](../ggv-create-groups-compare-pairs/ggv-create-groups-compare-pairs.md)
-- [View Reports](../ggv-reports/ggv-reports.md)
+- [Introduction](../workshops/freetier/intro.md)
+- [Monitor the Oracle GoldenGate Marketplace Instance on Oracle Enterprise Manager](../create-em-mp-image/create-em-mp-image.md)
 
 <!-- Keep this content -->
 ## Oracle Cloud Account

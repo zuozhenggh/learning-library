@@ -10,6 +10,10 @@ This lab describes how to open the Oracle GoldenGate Services ports from the Ora
 
 
 **STEP 1**: Open all the Oracle GoldenGate Services Port from the OCI Console
+Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console. If the Administration, Distribution, and Receiver server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
+
+To open all the Oracle GoldenGate services port from the OCI console:
+
 
 **STEP 2:** Open all the Proxy ports on Oracle GoldenGate Microservices Marketplace Instance
 
@@ -33,8 +37,8 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
         ![](./images/5SelectEMAgent.png " ")
 
       The targets are discovered and the control is now back on the **Targets on Host** page. Notice  the change in the number of targets discovered under the **Discovered Targets** column.
-
         ![](./images/6DiscoveredTargets.png " ")
+
   6. Click the number under **Discovered Targets**  to display the **Auto Discovery Results** page,
         ![](./images/7.png " ")
   7. Click **Promote** to display the **Custom Promotion for GoldenGate Targets**.

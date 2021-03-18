@@ -1,13 +1,13 @@
 # Overview                                
 
-The labs in this workshop walk you through all the steps to install Oracle GoldenGate Enteprise Manager Plug-in on Marketplace and monitor the Oracle GoldenGate Marketplace Instance using the EM Marketplace Instance.
+The lab in this workshop walks you through all the steps to install Oracle GoldenGate Enteprise Manager Plug-in on Marketplace and monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager Marketplace Instance.
 
-## What is
+Oracle GoldenGate on Oracle Cloud Marketplace (referred to as Oracle GoldenGate Marketplace in this workshop) is the cloud-based version of Oracle GoldenGate and provides the same benefits, scalability, security, and robustness that you can rely on for enterprise replication.
 
-
+Oracle Enterprise Manager (EM) 13c is also available as an application on Oracle Cloud Marketplace. The application can be used to monitor and manage on-premises or cloud resources, such as Oracle GoldenGate Marketplace (Microservices) targets/instances.
 
 ## Workshop Objectives
-  - Monitor the OGG Marketplace Instance using the EM Marketplace Instance
+  - Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager Marketplace Instance
 
 ## Lab Breakdown
     - **Lab 1:** Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Marketplace Instance.
@@ -33,14 +33,13 @@ Use these links to get more information about Oracle GoldenGate Enterprise Manag
 * **Author:**
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Reviewed by:**
-    + Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
 
 
 * **Last Updated By/Date:** Anuradha Chepuri, April 2021
 
 ## What's Next?
-**You are all set to begin the labs! Click Lab 1: Install and Configure Oracle GoldenGate Veridata in the Contents menu**.
+**You are all set to begin the labs! Click Lab 1:Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager**.
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
