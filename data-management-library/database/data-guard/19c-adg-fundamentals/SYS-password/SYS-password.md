@@ -2,23 +2,22 @@
 
 ## Introduction
 
-In this lab we will use the cloud interface to change the passwords.
+In this lab, we will use the cloud interface to change the passwords.
 
 In a cloud environment it is important to use the provided cloud tooling as much as possible. It is possible to maintain your own passwords, however this can break the automation in the cloud interface. 
 
-This lab will show on how to correctly change the SYS password in a Data Guard environment.
+This lab will show you how to correctly change the SYS password in a Data Guard environment.
 
 Doing this right is important. When you change the SYS password in a Data Guard environment, Data Guard will propagate password changes for the SYS user to the standby database.
 
-
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
+Estimated Lab Time: 5 Minutes
 
 ### Objectives
 - Change the SYS password
 - Log in to the database as the SYS user
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 - Lab: Connect to the Database
 - Lab: Perform a switchover
 - Lab: Perform a failover
@@ -68,5 +67,5 @@ You have now successfully changed the SYS password. You may now [proceed to the 
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
