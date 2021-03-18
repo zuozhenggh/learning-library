@@ -31,11 +31,11 @@ This lab assumes you have completed the following labs:
 
     ![](images/adw-tools-open-apex.png)
 
-3. Enter the admin password <if type="freetier">you created for the database</if><if type="livelabs">`AAbbcc123456`</if>.
+<if type="freetier">
+3. Enter the admin password you created for the database.
 
     ![](images/sign-in-apex.png)
 
-<if type="freetier">
 4. On the Welcome screen click **Create Workspace**.
 
     ![](images/welcome-apex.png)
@@ -97,7 +97,7 @@ This lab assumes you have completed the following labs:
 
 </if>
 
-15. Sign in using your password for OMLUSER.
+15. Sign in using your password for OMLUSER<if type="livelabs"> (`AAbbcc123456`)</if>.
 
     ![](images/sign-in-app.png)
 
@@ -118,9 +118,9 @@ In this step, the experienced Claims Adjuster will focus on the most suspicious 
 
     ![](images/suspicious-claim-facets-60.png)
 
-    Note that the first row of the table illustrates that this claim seems unusual and could be suspicious, because it is a Honda that is 5 years old, and yet the claimed worth is more than $69,000.
+    Note that the claim from policy number 14485 illustrates that this claim seems unusual and could be suspicious, because it is a Honda that is 5 years old, and yet the claimed worth is more than $69,000.
 
-3. Using the application, the claims adjuster can use their judgement to flag a claim. For example, by selecting the record and editing the Fraud Found value, the adjuster can flag the claim.
+3. Using the application, the claims adjuster can use their judgement to flag a claim. For example, by selecting the record and editing the Fraud Found value, the adjuster can flag the claim. Click the **Auto Claim Report** tab, then select the **Edit icon** for the claim from Policy number 1.
 
     ![](images/flag-fraud-1.png)
 
@@ -130,9 +130,11 @@ In this step, the experienced Claims Adjuster will focus on the most suspicious 
 
     ![](images/flag-fraud-3.png)
 
-5. The claim against policy 1 is now set to Fraud Found = Yes.
+5. The claim from policy number 1 is now set to **Fraudfound = Yes**.
 
     ![](images/flag-fraud-4.png)
+
+6. Keep this browser tab open, as we'll use again.
 
 ## **Step 3:** Build a supervised learning classification model
 
@@ -144,9 +146,13 @@ Finally, we'll build a new model using this "supervised" data to improve the mod
 
     ![](images/open-notebooks-menu.png)
 
-2. Click **Auto Insurance Claims - Supervised Learning** to open the notebook, and set the bindings and run the notebook.
+2. Click **Auto Insurance Claims - Supervised Learning** to open the notebook, and set the bindings the same way you set them for the unsupervised notebook and run the notebook.
 
     ![](images/super-notebook.png)
+
+3. Note: if you see a **Error** in one of the Notebook sections, rerun the Notebook until the errors are cleared.
+
+    ![](images/notebook-error.png)
 
 3. This Notebook uses labeled data to build models that better target known insurance claims fraud.
 
@@ -175,5 +181,3 @@ This concludes this lab and this workshop.
 - **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
 - **Last Updated By/Date** - Tom McGinn, Product Manager, DB Product Management, March 2021
 
-## Need Help?
-Please submit an e-mail to **livelabs-help-db_us@oracle.com**. Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

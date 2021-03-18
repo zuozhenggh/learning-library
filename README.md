@@ -7,14 +7,16 @@ LiveLabs is the place to explore Oracle's products and services using workshops 
 ### How do I get started?
 Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are added weekly, please visit frequently for new content.
 
-[![](./common/images/livelabs.png)](http://bit.ly/golivelabs)
+[![](./common/images/livelabs-homepage-march.png)](http://bit.ly/golivelabs)
 
 ## **Developer** Featured Workshops
-- [Oracle's Converged Database](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
+- [Oracle's Converged Database - Autonomous Edition](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=776)
+- [Oracle's Converged Database - On Premises Edition](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
 - [Building Java Cloud Applications with Micronaut and OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
 - [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=637)
 - [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631)
 - [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
+- [Datbase 21c on DB Systems](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=737)
 - [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
 - [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
 - [Create a Docker registry in OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=590)
@@ -44,7 +46,7 @@ Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are ad
 Pull requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.  To get your workshop featured on this page, please contact Kay Malcolm or Tom McGinn.
 
 ## License
-Copyright (c) 2014, 2020 Oracle and/or its affiliates
+Copyright (c) 2014, 2021 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
 See [LICENSE](LICENSE.md) for details.
 

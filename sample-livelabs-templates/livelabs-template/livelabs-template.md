@@ -84,8 +84,8 @@ In this lab, you will:
 
 6. You can also include bulleted lists - make sure to indent 4 spaces:
 
-   - List item 1
-   - List item 2
+    - List item 1
+    - List item 2
 
 7. Inline monospaced font is done with a single back ticks, for example `this is code`.
 
@@ -105,6 +105,46 @@ In this lab, you will:
 
   	```
     <copy>ssh -i <ssh-key-file></copy>
+    ```
+
+11. Syntax highlighting examples
+
+    ```
+    <copy>select * from employees;</copy>
+    ```
+
+    ```
+    <copy>class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }</copy>
+    ```
+
+    ```
+    <copy>{  
+        "employee": {  
+            "name":       "sonoo",   
+            "salary":      56000,   
+            "married":    true  
+        }  
+    }</copy>
+    ```
+
+    ```
+    <copy># This program prints Hello, world!
+
+    print('Hello, world!')</copy>
+    ```
+
+12. You may want to turn highlighting off, to do so, use `nohighlight`:
+
+    ```nohighlight
+    <copy>class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }</copy>
     ```
 
 ## **Step 2:** Optional Advanced features
@@ -192,11 +232,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-## Need Help?  
-<!-- optional: you can define a single support URL for a workshop in the manifest, for example:
-"support": "https://community.oracle.com/tech/developers/categories/livelabsdiscussions",
--->
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

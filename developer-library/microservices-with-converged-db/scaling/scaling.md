@@ -3,7 +3,6 @@
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
-![](images/architecture.png " ")
 
 ### Objectives
 -   Install a load testing tool
@@ -169,5 +168,3 @@ This lab assumes that you have already completed labs 1 through 4.
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-## Need Help?
-Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request. 

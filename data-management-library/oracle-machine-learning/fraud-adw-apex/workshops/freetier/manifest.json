@@ -1,5 +1,6 @@
 {
   "workshoptitle":"Predicting Auto Claim Fraud with Oracle Machine Learning",
+  "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
       {
         "title": "Introduction",
@@ -26,6 +27,11 @@
         "type": "freetier",
         "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
         "filename": "../../integrate-with-app/integrate-with-app.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
       }
     ]
 }

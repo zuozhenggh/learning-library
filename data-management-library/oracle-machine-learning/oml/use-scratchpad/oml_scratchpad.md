@@ -1,7 +1,7 @@
-# Oracle® Cloud Using the Scratchpad
+# Oracle® Cloud Use the Scratchpad In Oracle Machine Learning Notebooks
 ## Before You Begin
 
-This lab shows you how to use the Scratchpad in Oracle Machine Learning.
+This lab shows you how to use the Scratchpad in Oracle Machine Learning Notebooks.
 
 This lab takes approximately 10 minutes to complete.
 
