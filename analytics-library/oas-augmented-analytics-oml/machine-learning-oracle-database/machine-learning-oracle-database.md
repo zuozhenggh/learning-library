@@ -54,38 +54,46 @@ This lab assumes you have:
 
 In this step we will show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
 
-1. Login to SQL Developer via Guacamole by entering the URL provided by your instructor.
+1. From your Guacamole remote desktop session, click on *SQL Developer* to launch it.
   ![](./images/ml1.1.png " ")
-2. Set up a new connection to the Oracle database using the "`biworkshop_nn_`" userid assigned you by the instructor.
 
-  Click on Test to verify that the connection works.
-  ![](./images/ml1.2.png " ")
-3. Open the newly created connection, right click on "Tables" and import the "Employee\_Attrition.csv" file.
+2. Expand *biworkshopuser01* to open a connection, Right-Click on *Tables*, then select *Import Data*
 
-  Accept all defaults but name the table **EMPLOYEE_ATTRITON** when prompted
-  ![](./images/ml1.3.png " ")
+  ![](./images/sqldev.1a.png " ")
+
+3. Click *Browse* and go to *`/opt/oracle/stage/OAS_OML_Workshop_LabFiles`/*, select the file  *"`Employee_Attrition.csv`"*, and click *Open*.
+
+  Accept all defaults but name the table **EMPLOYEE_ATTRITION** when prompted
+  ![](./images/sqldev.1b.png " ")
+
 4. Scroll down the list of tables to locate your newly imported table, then Select the table and click on the Data tab to verify your data was properly imported.  
 
   This is a file of employees we will use to train our machine learning models containing employees who have left the organization as well as some who have not.
   ![](./images/ml1.4.png " ")
-5. Open the newly created connection, right click on Tables and import the "Employee\_Data.csv" file.  
+
+5. Repeat step (2 and 3) above but this time select the file *"`Employee_Data.csv`"*, and click *Open* to import/create table *EMPLOYEE_DATA*
 
   Accept all defaults but name the table **EMPLOYEE_DATA** when prompted.
   ![](./images/ml1.5.png " ")
+
 6. Scroll down the list of tables to locate your newly imported table, then Select the table and click on the Data tab to verify your data was properly imported.  
 
   This is a file of employees still with the organization that we will run through our trained Machine Learning model in order to predict which employees are most likely to leave.
   ![](./images/ml1.6.png " ")
 
-7. Using SQL Data Miner, create a "New Project" and name it **Employee Attrition**.
+7. Select *Data Miner* tab, Right-Click on *biworkshopuser01* connection, select "*New Project*" and name it *Employee Attrition*.
+
   ![](./images/ml1.7.png " ")
 
-8. Right click on the new Employee Attrition project you created and select "Import Workflow".
+8. Right click on the new *Employee Attrition* project you created and select "*Import Workflow*".
 
-  Now navigate to the lab file "Employee Attriton.xml" and Open it.  
+  ![](./images/ml1.8.png " ")
+
+  Now navigate to the lab files staging area, select "Employee Attriton.xml" and click *Open*.  
 
   Accept the defaults and import the workflow.
-  ![](./images/ml1.8.png " ")
+
+  ![](./images/ml1.8b.png " ")
 
 9.  Right click on the "EMPLOYEE\_ATTRITION" data source node then select "View Data".
   ![](./images/ml1.9.png " ")

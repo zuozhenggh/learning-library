@@ -31,9 +31,9 @@
       "filename": "../../3-working-with-the-dom-and-jquery/content.md"
     },
     {
-		"title": "Need Help?",
-		"description": "Solutions to Common Problems and Directions for Receiving Live Help",
-		"filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
-	}
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+    }
   ]
 }
