@@ -10,6 +10,7 @@ Estimated Lab Time: 75 minutes
 
 * Create a simple non-HA Hadoop cluster using BDS and OCI.
 * Monitor the cluster creation.
+* Review the locations of the various services in the new cluster.
 
 ### What Do You Need?
 <if type="livelabs">
@@ -79,7 +80,7 @@ Create the cluster as follows:
 
    <if type="freetier">
 
-   4. On the **Clusters** page, click **Create Cluster**.
+5. On the **Clusters** page, click **Create Cluster**.
 
      ![](./images/clusters-page.png " ")
 
@@ -99,7 +100,7 @@ Create the cluster as follows:
 
 7. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
-    * **Choose Instance Type:** **`Virtual Machine`**.
+    * **Choose Instance Type:** **``Virtual Machine``**.
     * **Choose Master/Utility Node Shape:** **`VM.Standard2.4`**.
     * **Block Storage size per Master/Utility Node (in GB):** **`150 GB`**.
     * **Nunmber of Master & Utility Nodes** _Read-Only_ **:** Since you are creating a non-HA cluster, this field shows **2** nodes: **1** Master node and **1** Utility node.
