@@ -141,13 +141,13 @@ Time to **integrate** your **Custom Component with the Intent** `ListTasks` crea
 
 2. **Copy** the `YAML` content from <a href="./files/flow.yml" target="\_blank">here</a> and paste it into the canvas.
 
-    The **Flows** section should look like this one:
+     The **Flows** section should look like this one:
 
-    ![Flows 3](./images/flows_3_2.png)
+    ![Flows 3](./images/flows_3_3.png)
 
-3. **Make sure** the syntax is correct. **Click** on the `Validate` button. **Be sure** that you get the **correct validation message** on the top of the page as you can see on the image below:
+3. **Make sure** the syntax is correct. **Click** on the `Validate` button. You will get a warning message **We have identified some issues that might cause problems with the my tasks skill. Open the logger window to see more details.** on the top of the page as you can see on the image below. You can explore the warning on **View validation results** section to learn. We can proceed with next steps.
 
-    ![Flows 4](./images/flows_4_2.png)
+    ![Flows 4](./images/flows_4_3.png)
 
 4. Click **Train** button to run the **Machine Learning Algorithm**.
 
