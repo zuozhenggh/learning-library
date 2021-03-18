@@ -20,6 +20,9 @@ You can package related **Custom Components** together.
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for an overview of the Implement Custom Component lab
+[](youtube:O60fHyRYzcg)
+
 ### Objectives
 
 In this lab, you will:
@@ -232,7 +235,7 @@ Ready to create your **Custom Component** scaffolding.
     Run the command in `tasks-cc` folder in Oracle cloud shell to upload the `task-cc-1.0.0.tgz` file to your bucket in object storage.
 
     ```
-    <copy>oci os object put -ns namespace -bn bucket-name --file task-cc-1.0.0.tgz</copy>
+    <copy>oci os object put -ns namespace -bn bucket-name --file tasks-cc-1.0.0.tgz</copy>
     ```
 
     ![Upload object](./images/upload-object.png)

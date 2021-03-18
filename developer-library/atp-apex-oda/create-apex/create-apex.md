@@ -20,6 +20,9 @@ In this workshop you will create a `tasks` table, REST enabling it, and make the
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for an overview of the Create Application and REST API lab
+[](youtube:3C-MJ6NvjnE)
+
 ### Objectives
 
 In this lab, you will:
