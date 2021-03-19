@@ -53,7 +53,7 @@
             "title": "Lab 7: Change the SYS password",
             "description":"Change the SYS password",
             "publisheddate": "26/02/2021",
-            "filename":"../../sys-password/sys-password.md"
+            "filename":"../../sys-passwords/sys-passwords.md"
         },  {
             "title": "Appendix 1: Creation of the primary Database",
             "description":"Setup the 19c Primary Database",
