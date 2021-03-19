@@ -1,18 +1,36 @@
-# Active Data Guard 19c 
+# 19c Active Data Guard Fundamentals
 
 ## Introduction
 
-**19c Database** is the current version that Oracle promotes to customers and partners as the version to upgrade to. Oracle 19c is the long term support version and will be supported for at least 4 years after the initial release. After this, Extended support and Sustaining support will be available.
+Oracle Data Guard provides a comprehensive set of services that create, maintain, manage, and monitor one or more standby databases to enable production Oracle databases to survive disasters and data corruptions. Oracle Data Guard maintains these standby databases as copies of the production database. Then, if the production database becomes unavailable because of a planned or an unplanned outage, Oracle Data Guard can switch any standby database to the production role, minimizing the downtime associated with the outage. Oracle Data Guard can be used with traditional backup, restoration, and cluster techniques to provide a high level of data protection and data availability. Oracle Data Guard transport services are also used by other Oracle features such as Oracle Streams and Oracle GoldenGate for efficient and reliable transmission of redo from a source database to one or more remote destinations.
 
-This hands-on workshop focuses on **Creating Active Data Guard 19c in Oracle Cloud Infrastructure using DBCS**.
+Oracle (Active) Data Guard capabilities in Oracle Database 19c further enhance its strategic objective
+of preventing data loss, providing high availability, eliminating risk, and increasing return on investment
+by enabling highly functional active disaster recovery systems that are simple to deploy and manage.
+It accomplishes this by providing the management, monitoring, and automation software infrastructure
+to create and maintain one or more synchronized standby databases that protect Oracle data from
+failures, data corruption, human error, and disasters
+
+This workshop focuses on **Creating Active Data Guard 19c in Oracle Cloud Infrastructure using DBCS**.
+
+![](./images/architecture-overview.png)
+
+Estimated Workshop Time: 2 Hours
+
+### Workshop Objectives
+- Create the primary database
+- Create the standby database
+- Connect to the database
+- Perform a switchover
+- Perform a failover
+- Enable Active Data Guard DML Redirection
+- Automatic block media recovery
+- Restore point propagation
+- Change the SYS password
 
 ### Prerequisites
+- Oracle Cloud Account - Free Tier, Paid or LiveLabs 
 
-- Access to 
-	- Oracle Cloud Infrastructure 
-    	- Provided by the instructor for instructor-led workshops
-    	- A HOL version is being created to run stand-alone without instructor
-- Access to a laptop or a desktop 
 
 ## Disclaimer 
 The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
@@ -21,4 +39,5 @@ The following is intended to outline our general product direction. It is intend
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Special thanks to** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
+- **Last Updated By/Date** -  Kamryn Vinson, March 2021

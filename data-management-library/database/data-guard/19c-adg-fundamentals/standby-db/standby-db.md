@@ -1,16 +1,23 @@
-# Creation of the Standby Database
+# Create the Standby Database
 
 ## Introduction
 In this lab, we will create the standby database.
 
+A standby database is a transactionally consistent copy of the primary database.
 
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
+Using a backup copy of the primary database, you can create up to thirty standby databases and incorporate them into an Oracle Data Guard configuration. Oracle Data Guard automatically maintains each standby database by transmitting redo data from the primary database and then applying the redo to the standby database.
+
+Similar to a primary database, a standby database can be either a single-instance Oracle database or an Oracle RAC database.
+
+![](./images/standby.png)
+
+Estimated Lab Time: 10 Minutes
 
 ### Objectives
 -   Create the standby database
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- - An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 - Lab: Create the primary database
 
 ## **STEP**: Create the Standby database
@@ -42,7 +49,7 @@ To create the primary database we need to follow a wizard.
     ![](./images/Create-stby-DB-04.png)
 
 6. Enter the Primary Database password.
-    Remember that it was set to **WelC0me2##**
+    Remember that it was set to **W3lc0m3\#W3lc0m3\#**
     ![](./images/Create-stby-DB-05.png)
 
 7. Then click **Enable Data Guard**.
@@ -70,5 +77,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
