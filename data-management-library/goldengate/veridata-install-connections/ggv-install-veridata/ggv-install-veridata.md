@@ -71,16 +71,16 @@ You need to apply a patch on the current release of Oracle GoldenGate Veridata o
 
 **Assumptions**:
 * The `ORACLE_HOME` environment variable is set to the directory where you have installed Oracle GoldenGate Veridata.
+* The OPatch location `$ORACLE_HOME/OPatch` is added to the environment variable.
 
 **Prerequisites**:
 *  Ensure that all the servers and agents have been stopped.
 
 To apply a patch on an Oracle GoldenGate Veridata release:
 1. Go to [Oracle Support](https://mosemp.us.oracle.com/epmos/faces/index.jspx?_afrLoop=174795690219928&_afrWindowMode=0&_adf.ctrl-state=1bogh2ruei_94) and download the required Patch and extract the zip file to a location. This location will be referred to as `PATCH_TOP` in the subsequent steps.
-2. Set your current directory to the directory where the patch is located.
-3. In the command prompt, run the following command: `cd PATCH_TOP/32436110`. In this example, 32436110 is the patch number.
-4. Run OPatch to apply the patch: `opatch apply`. This replaces the binaries of the main release.
-5. Run the following command to verify whether or not the patch has been successfully applied: `opatch lsinventory`.
+2. Set your current directory to the directory where the patch is located. In the command prompt, run the following command: `cd PATCH_TOP/32436110`. In this example, 32436110 is the patch number.
+3. Run `opatch apply` to replace the binaries of the main release with the patch binaries. After the patch is successfully applied, the 'OPatch succeeded' message is displayed.
+4. Run `opatch lsinventory` to verify the version/patch ID of the applied patch.
 
 ## **STEP 5**: Configure RCU
 The Repository Creation Utility (RCU) presumes that you have already installed a compatible database to house the repository. This example assumes that it is an Oracle 19c Database.
