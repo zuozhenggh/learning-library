@@ -79,7 +79,7 @@ You need to apply a patch on the current release of Oracle GoldenGate Veridata o
 To apply a patch on an Oracle GoldenGate Veridata release:
 1. Go to [Oracle Support](https://mosemp.us.oracle.com/epmos/faces/index.jspx?_afrLoop=174795690219928&_afrWindowMode=0&_adf.ctrl-state=1bogh2ruei_94) and download the required Patch and extract the zip file to a location. This location will be referred to as `PATCH_TOP` in the subsequent steps.
 2. Set your current directory to the directory where the patch is located. In the command prompt, run the following command: `cd PATCH_TOP/32436110`. In this example, 32436110 is the patch number.
-3. Run `opatch apply` to replace the binaries of the main release with the patch binaries. After the patch is successfully applied, the 'OPatch succeeded' message is displayed.
+3. Run `opatch apply` to replace the binaries of the main release with the patch binaries. After the patch is successfully applied, the **OPatch succeeded** message is displayed.
 4. Run `opatch lsinventory` to verify the version/patch ID of the applied patch.
 
 ## **STEP 5**: Configure RCU
