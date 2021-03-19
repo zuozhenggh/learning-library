@@ -34,8 +34,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
 1. Run the following scripts to import the `oml` package, the Pandas library and set the display options:
 
     ```
-    %python
-    <copy>
+    <copy>%python
     import pandas as pd
     import oml
 
@@ -301,7 +300,7 @@ Use the `merge` function to join data from two objects. These examples demonstra
 
     ```
     %python
-      <copy>
+    <copy>
 
     x.head(4).merge(other=MY_DF[['id', 'num']], on="id", how='left', suffixes=['.l','.r'])</copy>
     ```
@@ -445,13 +444,11 @@ The following tasks are covered in this lab:
 
 4. Verify that the stratified sampling generates splits in which all of the different categories of digits (digits 0-9) are present in each split
 
-  	 ```
-     %python
+  	```
+    %python
     <copy>
-
-     print("Verify values: ", [split['target'].drop_duplicates().sort_values().pull() for split in splits])</copy>
-
-     ```
+    print("Verify values: ", [split['target'].drop_duplicates().sort_values().pull() for split in splits])</copy>
+    ```
 
      ![](images/verify_stratified_sampling.png)
      Here we see that each digit is represented in the split result.
