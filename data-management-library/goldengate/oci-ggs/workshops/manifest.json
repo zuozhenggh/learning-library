@@ -12,7 +12,7 @@
             "filename": "../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Set Up the Envrionment",
+            "title": "Lab 1: Set Up the Environment",
             "description": "Provision Autonomous Databases to use as the source and target.",
             "filename": "../adb/connect-provision-adb.md"
         },
