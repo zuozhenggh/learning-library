@@ -1,11 +1,7 @@
-# Connection to the Databases
+# Connect to the Database
 
 ## Introduction
 In this lab, we will create the standby database.
-
-
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
-
 
 ### Connection to the Databases
 
@@ -16,14 +12,16 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 
 When you first open SQL Developer, the screen looks like this:
 
-![](./images/DB-connection-02.png)
+![](./images/db-connection-02.png)
+
+Estimated Lab Time: 20 Minutes
 
 ### Objectives
 - Create a database connection to the primary database
 - Create a database connection to the standby database
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 
 ## **STEP 1**: Create the Connection to the primary
 
@@ -35,11 +33,11 @@ First, we need to know the service name from the primary Database and the IP add
 -> DB System Details
 -> Database Details
 
-    ![](./images/DB-connection-01.png)
+    ![](./images/db-connection-01.png)
 
 2. There you click the **DB Connection** button and the Database Connection information window opens.
 
-    ![](./images/DB-connection-03.png)
+    ![](./images/db-connection-03.png)
 
 3. Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
 
@@ -53,7 +51,7 @@ The second thing we need to connect to the database is the IP Address from the h
 5. Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
 The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
 
-    ![](./images/DB-connection-04.png)
+    ![](./images/db-connection-04.png)
 
 Then we go back to SQL Developer.
 
@@ -68,11 +66,11 @@ The wizard opens.
     * Hostname: The Public IP Address you found in the step above
     * Service name: The service name you found in the step above (the part after the / (slash)).
 
-    ![](./images/DB-connection-05.png)
+    ![](./images/db-connection-05.png)
 
 8. Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
 
-    ![](./images/DB-connection-06.png)
+    ![](./images/db-connection-06.png)
 
 
 ## **STEP 2**: Create the Connection to the Standby
@@ -85,11 +83,11 @@ First, we need to know the service name from the standby Database and the IP add
 -> DB System Details
 -> Database Details
 
-    ![](./images/DB-connection-07.png)
+    ![](./images/db-connection-07.png)
 
 2. There you click the **DB Connection** button and the Database Connection information window opens.
 
-    ![](./images/DB-connection-08.png)
+    ![](./images/db-connection-08.png)
 
 3. Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
 
@@ -103,7 +101,7 @@ The second thing we need to connect to the database is the IP Address from the h
 5. Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
 The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
 
-    ![](./images/DB-connection-09.png)
+    ![](./images/db-connection-09.png)
 
 Then we go back to SQL Developer.
 
@@ -118,11 +116,11 @@ The wizard opens.
     * Hostname: The Public IP Address you found in the step above
     * Service name: The service name you found in the step above (the part after the / (slash)).
 
-    ![](./images/DB-connection-10.png)
+    ![](./images/db-connection-10.png)
 
 8. Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
 
-    ![](./images/DB-connection-11.png)
+    ![](./images/db-connection-11.png)
 
 
 You have now successfully created a database connection to the primary and the standby database. You may now [proceed to the next lab](#next).
@@ -130,5 +128,5 @@ You have now successfully created a database connection to the primary and the s
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021

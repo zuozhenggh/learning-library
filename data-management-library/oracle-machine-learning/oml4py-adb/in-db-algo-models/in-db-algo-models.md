@@ -21,12 +21,15 @@ In this lab, you will learn how to:
 1. Run the following script to import the `oml` package, the python packages - Pandas, Numpy, and matplotlib:
 
     ```
-    %python
-    <copy>
+    <copy>%python
     import pandas as pd
     import numpy as np
     import matplotlib.pyplot as plt
-    import oml</copy>
+    import oml
+
+    pd.set_option('display.max_rows', 500)
+    pd.set_option('display.max_columns', 50)
+    pd.set_option('display.width', 1000)</copy>
     ```
 
 ## **Step 2**: Work with Regression using GLM
@@ -121,13 +124,13 @@ This step shows how to predict numerical values using multiple regression. Given
     <copy>
     RES_DF = glm_mod.predict(TEST.drop('YRS_RESIDENCE'), supplemental_cols = TEST['YRS_RESIDENCE'])
 
-    z.show(RES_DF[['PREDICTION', 'YRS_RESIDENCE'] + RES_DF.columns])</copy>
+    z.show(RES_DF[['PREDICTION', 'YRS_RESIDENCE']])</copy>
     ```
 
     ![](images/prediction.png)
-In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `TEST_X` columns respectively, as shown in the screenshot.
+In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `YRS_RESIDENCE` columns respectively, as shown in the screenshot.
 
-8. Run the following command to plot the predicted versus the actual years of residence. Click **Settings** to see how the plot was specified.
+8. Run the following command to plot the predicted versus the actual years of residence and then click the **Scatter Chart** icon to see the visualization. Click **Settings** to see how the plot was specified.
     ```
     %python
     <copy>
@@ -284,13 +287,14 @@ The dispersion value is a measure of how compact or how spread out the data is w
     handles = []
     labs = []
     colors = ['r', 'b', 'g']
+    
     for i, c in enumerate(clusters):
         xc = pred_df[pred_df['CLUSTER_ID'] == c]['YRS_RESIDENCE'].values
         yc = pred_df[pred_df['CLUSTER_ID'] == c]['CUST_YEAR_OF_BIRTH'].values
-
         h = ax.scatter(xc, yc, color= colors[i])
         handles.append(h)
         labs.append('CLUSTER' + str(c))
+
     ax.legend(handles, labs)
     plt.title('K-Means Clustering')
 

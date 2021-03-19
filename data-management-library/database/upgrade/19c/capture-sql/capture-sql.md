@@ -43,6 +43,7 @@ In order to collect SQL Statements directly from AWR (Automatic Workload Reposit
 - Populates the STS with SQL information stored in AWR
 
 1.  Run the script stored in /home/oracle/scripts:
+    
     capture_awr.sql
 
 2. In your open SQL*plus session connected to UPGR run the statement below.  The number of statements in SQL Tuning Set “STS_CaptureAWR” will be displayed.
@@ -58,29 +59,24 @@ In order to collect SQL Statements directly from AWR (Automatic Workload Reposit
 
 You can also collect statements directly from the Cursor Cache. This is more resource intense but helpful in case of OLTP applications. Be careful when you poll the cursor cache too frequently.
 
-This procedure:
+1. This procedure:
+   - Creates a SQL Tuning Set (STS)
+   - Populates the STS with SQL statements/information from the cursor cache
+   - It will poll the cursor cache for 240 seconds every 10 seconds
 
-- Creates a SQL Tuning Set (STS)
-- Populates the STS with SQL statements/information from the cursor cache
-- It will poll the cursor cache for 240 seconds every 10 seconds
+2. The script is stored in /home/oracle/scripts:
+        capture_cc.sql
 
-The script is stored in /home/oracle/scripts:
-    capture_cc.sql
+    You used it already when you ran HammerDB in the earlier lab. Hence, no need to run it again. @/home/oracle/scripts/capture_cc.sql — don’t run it again!!!
 
-You used it already when you ran HammerDB in the earlier lab.
-Hence, no need to run it again.
-
-@/home/oracle/scripts/capture_cc.sql —don’t run it again!!!
-
-The number of statements in SQL Tuning Set “STS_CaptureCursorCache” will be displayed.
-
-But now check, how many statements you’ve collected in each SQL Tuning Set:
-````
-<copy>
-select name, owner, statement_count from dba_sqlset;
-</copy>
-````
-![](./images/sqlset.png " ")
+3. The number of statements in SQL Tuning Set “STS_CaptureCursorCache” will be displayed. But now check, how many statements you’ve collected in each SQL Tuning Set.
+    
+    ````
+    <copy>
+    select name, owner, statement_count from dba_sqlset;
+    </copy>
+    ````
+    ![](./images/sqlset.png " ")
 
 
 ## **STEP 3**: Optional - Export AWR
@@ -94,148 +90,35 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     @?/rdbms/admin/awrextr.sql
     </copy>
     ````
-
-    <!-- ````
-    Databases in this Workload Repository schema
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    DB Id     DB Name	  Host
-    ------------ ------------ ------------
-    * 72245725   UPGR	  localhost.lo
-                caldomain
-
-
-    The default database id is the local one: '72245725'.  To use this
-    database id, press  to continue, otherwise enter an alternative.
-
-    Enter value for dbid:
-    ```` -->
     ![](./images/upgrade_19c_11.png " ")
 
-2. Hit RETURN.
-
-    <!-- ````
-    Using 72245725 for Database ID
-
-
-    Specify the number of days of snapshots to choose from
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Entering the number of days (n) will result in the most recent
-    (n) days of snapshots being listed.  Pressing  without
-    specifying a number lists all completed snapshots.
-
-
-    Enter value for num_days:
-    ```` -->
+2. Hit **RETURN**.
+    
     ![](./images/upgrade_19c_12.png " ")
 
-3. Type: 2. Hit RETURN.
+3. Type: 2 and Hit **RETURN**.
    ![](./images/snapday2.png " ")
-<!-- 
-    ````
-    Enter value for num_days: 2
 
-    Listing the last 2 days of Completed Snapshots
-
-    DB Name        Snap Id	  Snap Started
-    ------------ --------- ------------------
-    UPGR		   110 20 Feb 2020 22:12
-            111 20 Feb 2020 22:39
-            112 20 Feb 2020 22:40
-
-
-    Specify the Begin and End Snapshot Ids
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Enter value for begin_snap:
-    ```` -->
-
-
-1. Type: 150 <= Your snapshot number may be different.  Hit RETURN.
-
-    <!-- ````
-    Specify the Begin and End Snapshot Ids
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Enter value for begin_snap: 110
-    Begin Snapshot Id specified: 110
-
-    Enter value for end_snap:
-    ```` -->
     ![](./images/snapid.png " ")
 
-2. Type: 154 <= Your snapshot number may be different.  Hit RETURN.
+4. Type: 154 <= Your snapshot number may be different.  Hit RETURN.
 
-    <!-- ````
-    End   Snapshot Id specified: 112
-
-    Specify the Directory Name
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    Directory Name		       Directory Path
-    ------------------------------ -------------------------------------------------
-    DATA_PUMP_DIR		       /u01/app/oracle/admin/UPGR/dpdump/
-    ORACLE_OCM_CONFIG_DIR	       /u01/app/oracle/product/11.2.0.4/ccr/hosts/localhost.localdomain/state
-    ORACLE_OCM_CONFIG_DIR2	       /u01/app/oracle/product/11.2.0.4/ccr/state
-    PREUPGRADE_DIR		       /u01/app/oracle/cfgtoollogs/UPGR/preupgrade
-    XMLDIR			       /u01/app/oracle/product/11.2.0.4/rdbms/xml
-
-
-
-    Choose a Directory Name from the above list (case-sensitive).
-
-    Enter value for directory_name:
-    ```` -->
     ![](./images/upgrade_19c_15.png " ")
 
-3. Type: DATA\_PUMP\_DIR.  Hit RETURN
+5. Type: DATA\_PUMP\_DIR.  Hit RETURN
 
-    <!-- ````
-    Enter value for directory_name: DATA_PUMP_DIR
-
-    Using the dump directory: DATA_PUMP_DIR
-
-    Specify the Name of the Extract Dump File
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    The prefix for the default dump file name is awrdat_64_71.
-    To use this name, press  to continue, otherwise enter
-    an alternative.
-
-    
-    ```` -->
-    
-
-    <!-- ````    
-    Using the dump file prefix: awrdat_64_71
-    |
-    | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    |  The AWR extract dump file will be located
-    |  in the following directory/file:
-    |   /u01/app/oracle/product/UPGR/dpdump/
-    |   awrdat_110_112.dmp
-    | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    |
-    |  *** AWR Extract Started ...
-    |
-    |  This operation will take a few moments. The
-    |  progress of the AWR extract operation can be
-    |  monitored in the following directory/file:
-    |   /u01/app/oracle/product/UPGR/dpdump/
-    |   awrdat_110_112.log
-    | End of AWR Extract -->
-
-    
-    <!-- ```` -->
     ![](./images/upgrade_19c_16.png " ")
     Enter value for file_name:
-    Hit RETURN
+    Hit **RETURN**
     ![](./images/upgrade_19c_17.png " ")
     This will take now a few minutes.
 
-4. Exit from SQL*Plus
-
+6. Exit from SQL*Plus.
+    
     ````
     <copy>
     exit
-    <copy>
+    </copy>
     ````
 
 You may now [proceed to the next lab](#next).
@@ -248,8 +131,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Mike Dietrich, Database Product Management
 * **Contributors** -  Roy Swonger, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, February 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

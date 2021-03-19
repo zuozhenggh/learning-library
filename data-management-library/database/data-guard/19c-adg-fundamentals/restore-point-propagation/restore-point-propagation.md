@@ -1,7 +1,7 @@
 # Restore Point Propagation
 
 ## Introduction
-In this lab we will use the 19c new feature which is called the Restore point propagation.
+In this lab, we will use the 19c new feature which is called the Restore point propagation.
 
 ![](./images/01-dg-primary-restore-point-propagation.gif)
 
@@ -13,7 +13,7 @@ To avoid this, we are now forwarding the restore points automatically, that in c
 
 To accommodate this, the `v$restore_point` view was updated with a `REPLICATED` column and the restore point name is suffixed with `_PRIMARY`.
 
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
+Estimated Lab Time: 10 Minutes
 
 ### Objectives
 - Create a restore point in the primary database
@@ -21,7 +21,7 @@ To accommodate this, the `v$restore_point` view was updated with a `REPLICATED` 
 - Drop the restore point in the primary database
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 - Lab: Connect to the Database
 - Lab: Perform a switchover
 - Lab: Perform a failover
@@ -46,10 +46,10 @@ To accommodate this, the `v$restore_point` view was updated with a `REPLICATED` 
 
 3. Do the same on the standby database.
 
-    ![](./images/RP01.png)
+    ![](./images/rp01.png)
 
 4. Next, create a restore point in the primary database
-    ![](./images/RP02.png)
+    ![](./images/rp02.png)
 
 5. Check the restore points with following query
 
@@ -58,7 +58,7 @@ To accommodate this, the `v$restore_point` view was updated with a `REPLICATED` 
     ````
 
 6. Do the same on the standby database.
-    ![](./images/RP03.png)
+    ![](./images/rp03.png)
 
 The restore point drop is now replicated to the standby and has been suffixed with `_PRIMARY` and the replicated column on the primary indicates this has been performed.
 
@@ -69,7 +69,7 @@ The restore point drop is now replicated to the standby and has been suffixed wi
     drop restore point testrp;
     ````
 
-    ![](./images/RP04.png)
+    ![](./images/rp04.png)
 
 2. Check the restore points with following query
 
@@ -78,7 +78,7 @@ The restore point drop is now replicated to the standby and has been suffixed wi
     ````
 
 3. Do the same on the standby database.
-    ![](./images/RP05.png)
+    ![](./images/rp05.png)
 
 You have now successfully used Active Data Guard Restore point propagation. You may now [proceed to the next lab](#next).
 
@@ -86,5 +86,5 @@ You have now successfully used Active Data Guard Restore point propagation. You 
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
