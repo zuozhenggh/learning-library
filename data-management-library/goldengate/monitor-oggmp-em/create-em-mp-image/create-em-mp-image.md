@@ -8,7 +8,6 @@ This lab describes how to open the Oracle GoldenGate Services ports from the Ora
 
 + **You have gone through the Introduction Lab and Prerequisites**
 
-
 **STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console and the Proxy ports on Oracle GoldenGate Microservices Marketplace Instance
 
 Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console. If the Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
