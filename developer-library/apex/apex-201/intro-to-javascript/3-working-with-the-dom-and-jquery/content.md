@@ -149,5 +149,3 @@ This completes Lab 3. At this point, you should have a good idea of how to use j
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

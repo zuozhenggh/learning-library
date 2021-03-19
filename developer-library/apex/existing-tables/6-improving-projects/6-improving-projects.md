@@ -92,8 +92,8 @@ Now to link this new page to the Project Cards page.
     In the Property Editor (right pane), update the following properties:
     - **Type:** - select Full Card
     - Click **Link > Target**
-    - In the Link Builder, **Page** - enter 10
-    - Under **Set Items**, **Name** - enter P10_ID and for **Value** - enter &ID.
+    - In the Link Builder, **Page** - enter **10**
+    - Under **Set Items**, Enter **P10_ID** for **Name** and enter **&ID.** for **Value**
 
     ![](images/enhance-projects-cards-link-edit-form.png " ")
 
@@ -239,5 +239,3 @@ This completes Lab 5. You now know how to add additional pages to your applicati
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

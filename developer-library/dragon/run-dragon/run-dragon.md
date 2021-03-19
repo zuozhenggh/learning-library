@@ -318,5 +318,3 @@ Congratulations! You have completed the very first DRAGON Stack workshop!
 
 ![DRAGON Stack logo](./images/dragon-logo.png)
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -167,5 +167,3 @@ You may now connect to your autonomous database using a SQL client and validate 
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

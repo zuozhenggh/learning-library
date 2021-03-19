@@ -10,13 +10,19 @@ In this lab, you will:
 * Setup the environment
 
 ### Prerequisites
-
+<if type="dbcs">
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
+</if>
+<if type="21c">
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Lab: Provision ADB
+* Lab: Setup
+</if>
 
-
+<if type="dbcs">
 ## **STEP 1:** Set up the environment
 
 The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` the user `REPORT`, grants `REPORT` the `CREATE SESSION`, `CREATE TABLE` and `UNLIMITED TABLESPACE` privileges, and finally creates the table `TRADES` including rows.
@@ -104,25 +110,43 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     $
 
     ```
+</if>
+<if type="21c">
+## **STEP  1**: Login to SQL Developer Web on ADB
+
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
+      ![](../set-operators/images/21c-home-adb.png " ")
+
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](../set-operators/images/21c-adb.png " ")
+
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](../set-operators/images/tools.png " ")
+
+5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+6.  Click on the **SQL** button.
+7.  Change the word *admin* in the URL to *report*.  You will be logging in to the admin schema
+8.  Enter the username *report* and password *WElcome123##*
+</if>
 
 ## **STEP 2:** Experiment the usage of the `GROUPS` clause of the window frame
 
 1. Display the rows of `REPORT.TRADES` in `PDB20`. Using `ROWS`, the user specifies the window frame extent by counting rows forward or backward from the current row. `ROWS` allows any number of sort keys, of any ordered data types. This can be advantageous, because counting rows is oblivious to any “holes” in the values that are sorted. On the other hand, counting rows from the current row can be non-deterministic when there are multiple rows that are identical in the sort keys, causing an arbitrary cutoff between two rows that have the same values in the sort keys. Using `RANGE`, the user specifies an offset. There must be precisely one sort key, and its declared type must be amenable to addition and subtraction (i.e., numeric,datetime or interval). This avoids the non-determinism of arbitrarily cutting between two adjacent rows with the same value, but it can only be used with a single sort key of an additive type. SQL:2011 standard includes a third way of specifying the window frame extent, using the keyword `GROUPS`. Like `ROWS`, a `GROUPS` window can have any number of sort keys, of any ordered types. Like `RANGE`, a `GROUPS` window does not make cutoffs between adjacent rows with the same values in the sort keys. Thus, `GROUPS` combines some of the features of both `ROWS` and `RANGE`.
 
-
+<if type="dbcs">
     ```
-
     $ <copy>sqlplus report@PDB21</copy>
-
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Enter password: <b><i>WElcome123##</i></b>
-
     Connected to:
     ```
     ```
     SQL> <copy>SET PAGES 100</copy>
-
+</if>
+<if type="21c">
+    ```
+</if>
     SQL> <copy>SELECT * FROM trades;</copy>
 
           ACNO        TID TDAY      TTYP     AMOUNT TICK
@@ -159,7 +183,7 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
 
     ```
 
-2. Compute the total amount over the last five days on which account number 123 performed a “buy”. To answer this query, you can group the data by trade day, compute the sum of amount on each trade day, and then use a `ROWS` window to add up the last five trade days.
+1. Compute the total amount over the last five days on which account number 123 performed a “buy”. To answer this query, you can group the data by trade day, compute the sum of amount on each trade day, and then use a `ROWS` window to add up the last five trade days.
 
 
     ```
@@ -505,7 +529,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
+* **Last Updated By/Date** -  Kay Malcolm, March 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -26,12 +26,6 @@ You will also clone a GitHub repository.
     <copy>./addAndSourcePropertiesInBashrc.sh</copy>
     ```
 
-2. Source the `.bashrc` file with the following command.
-
-    ```
-    <copy>source ~/.bashrc</copy>
-    ```
-
 ## **STEP 2**: Build and push the Docker images
 
 1. Run the `build.sh` script to build and push the
@@ -43,7 +37,7 @@ You will also clone a GitHub repository.
 
   ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
 
-  In a couple of minutes, you should have successfully built and pushed all the images into the OCIR repository.
+  In a few minutes, you should have successfully built and pushed all the images into the OCIR repository.
 
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
@@ -74,10 +68,10 @@ You will also clone a GitHub repository.
 
   ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
-3.  Change directory into `/frontend-helidon` folder:
+3.  Change directory into `frontend-helidon` folder:
 
     ```
-    <copy>cd ~/msdataworkshop-master/frontend-helidon</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
     ```
 
 
@@ -95,7 +89,7 @@ You will also clone a GitHub repository.
 
 
 5.  Run the deploy script from the same directory
-    as build. This will create a new pod and service for this image in the OKE
+    as build. This will create the deployment and pod for this image in the OKE
     cluster `msdataworkshop` namespace:
 
     ```
@@ -117,21 +111,31 @@ You will also clone a GitHub repository.
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
 8. Check that the load balancer service is running, and write down the external IP
-    address and port.
+    address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
-  ![](images/ce67dfe171836b79a14533f479039ff5.png " ")
+  ![](images/frontendservicekubectloutput.png " ")
 
   Alternatively, you can execute the `services` shortcut command.
 
   ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
-9. You are ready to access the frontend page. Open a new browser tab and enter the external IP and port URL:
+9. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
 
-  `http://<EXTERNAL-IP>:8080`
+  `https://<EXTERNAL-IP>`
+
+  Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
+  
+  You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the on created and stored in a vault secret in Lab 1 Step 4.
+  
+  ![](images/frontendauthlogin.png " ")
+  
+  You should then see the Front End home page. You've now deployed and accessed your first microservice of the lab!
+  
+  Note that links on Front End will not work yet as they access microservices that will be created and deployed in subsequent labs.
 
   ![](images/frontendhome.png " ")
 
@@ -144,5 +148,3 @@ You may now proceed to the next lab.
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

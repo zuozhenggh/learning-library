@@ -141,7 +141,7 @@ The Tasks Calendar page shows numerous tasks; however, there is no way to direct
 5. In the Link Builder dialog, enter the following:
     - Target > Page - select **7**
     - Set Items > Name - select **P7_ID**
-    - Set Items > Value - select **ID** (Returns **&ID**)
+    - Set Items > Value - select **ID** (Returns **&ID.**)
     - Clear / Reset > Clear Cache - enter **7**
 
 6. Click **OK**
@@ -197,5 +197,3 @@ This completes Lab 7 and the workshop. You now know how to create a Shared Compo
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

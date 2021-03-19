@@ -17,15 +17,24 @@ Oracle Database 21c enables SQL, REST and API transactions across all types of d
 * Enhancements for sharding, database in-memory and graph analytics.
 * APEX updates including automatic faceted search, one-click remote deployment and more.
 
-With 21c, customers can
+With 21c <if type="21c">on the Oracle Autonomous Database</if>, customers can
 * Reduce IT cost and complexity
 * Unlock innovation
 * Develop powerful, data-driven applications
 
-### Prerequisites
+Watch the video below to see how Oracle Database 21c enables a data-driven future.
 
+[](youtube:recR8UR13o8)
+
+### Prerequisites
+<if type="dbcs">
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Working knowledge of vi
+</if>
+<if type="21c">
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Working knowledge of SQL
+</if>
 
 You may now [proceed to the next lab](#next).
 
@@ -33,11 +42,13 @@ You may now [proceed to the next lab](#next).
 
 * [Oracle Database Blog](http://blogs.oracle.com/database)
 * [Introducing Oracle Database 21c](https://blogs.oracle.com/database/introducing-oracle-database-21c)
+<if type="21c">
+* [LiveLabs - Autonomous Database Quick Start](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=582)
+* [Oracle Autonomous Database Documentation](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
+</if>
 
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** - Kay Malcolm, David Start, Kamryn Vinson, Anoosha Pilli, Tom McGinn, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, December 2020
+* **Last Updated By/Date** - Kay Malcolm, March 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

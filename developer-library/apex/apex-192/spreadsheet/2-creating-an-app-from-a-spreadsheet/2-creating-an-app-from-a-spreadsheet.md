@@ -116,6 +116,3 @@ If you want to change a page's name after you create an application, the process
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-

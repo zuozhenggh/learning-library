@@ -165,5 +165,3 @@ You have now successfully completed all labs in this workshop.
 - **Contributor** - Ryota Yamanaka, Product Manager, Oracle Spatial and Graph
 * **Last Updated By/Date** - Maqsood Alam, Oct 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

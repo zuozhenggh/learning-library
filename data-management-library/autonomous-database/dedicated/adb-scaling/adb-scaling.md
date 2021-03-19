@@ -79,5 +79,3 @@ Now, lets scale the autonomous database you created in previous labs from 1 OCPU
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

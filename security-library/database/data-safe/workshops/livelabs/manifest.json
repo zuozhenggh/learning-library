@@ -1,8 +1,9 @@
 {
   "workshoptitle": "Oracle Data Safe Fundamentals",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "description": "Prerequisites to run the Oracle Data Safe workshop in the LiveLabs tenancy.",
           "filename": "./prerequisites.md"
         },

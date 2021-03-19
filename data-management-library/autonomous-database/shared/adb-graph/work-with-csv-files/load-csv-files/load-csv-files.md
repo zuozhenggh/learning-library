@@ -113,5 +113,3 @@ Please **proceed to the next lab** to create a graph from these tables.
 * **Contributors** -  Jayant Sharma, Product Management
 * **Last Updated By/Date** - Jayant Sharma, Jan 2021
   
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -336,7 +336,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
 25. Add highlights on edges for Order items that had Quantity > 1 and unit_Price > 25
 
-26. Click on settings-> Highlights-> New Highlights -> Select Apply To Edge
+26. Click on settings-> Highlights-> New Highlights. Select Filter By Edges and Apply to Edge (i.e. the conditions apply to edges).
 
 27. Add two conditions
 
@@ -377,7 +377,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
     ![](./images/IMGG37.PNG " ")
 
-31. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph
+31. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the below statement at JSHELL prompt to delete the in-memory graph.
 
     ```
     <copy>
@@ -596,7 +596,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

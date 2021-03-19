@@ -16,14 +16,6 @@ Estimated time: 5 minutes
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the left.  In this lab, you will provision an ADB database instance using the cloud console.
 
-### Video Preview
-
-Watch a video demonstration of provisioning a new Autonomous Transaction Processing:
-
-[](youtube:Q6hxMaAPghI)
-
-*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
-
 ## **STEP 1**: Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.

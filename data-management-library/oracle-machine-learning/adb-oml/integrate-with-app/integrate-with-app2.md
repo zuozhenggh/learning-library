@@ -40,7 +40,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 1:** Prepare data for the lab in ATP
 
-1.  From the hamburger menu, select **Autonomous Transaction Processing** and navigate to your ATP instance.
+1.  From the hamburger menu, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
     ![](./images/choose-atp.png " ")
 
@@ -365,6 +365,3 @@ This concludes this lab and this workshop.
 - **Contributors** - Anoosha Pilli, Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
 
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

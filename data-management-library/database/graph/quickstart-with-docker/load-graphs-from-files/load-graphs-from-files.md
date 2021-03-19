@@ -528,5 +528,3 @@ You may now proceed to the next lab.
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 * **Lab Expiry Date** - November 30, 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

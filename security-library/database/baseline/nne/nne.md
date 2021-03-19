@@ -208,5 +208,3 @@ Technical Documentation: [Oracle Native Network Encryption 19c](https://docs.ora
 - **Contributors** - Gian Sartor, Rene Fontcha
 - **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -47,5 +47,3 @@ With 21c <if type="21c">on Autonomous Database,</if> customers can:
 * **Contributors** - Kay Malcolm, David Start, Kamryn Vinson, Anoosha Pilli, Tom McGinn, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, March 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

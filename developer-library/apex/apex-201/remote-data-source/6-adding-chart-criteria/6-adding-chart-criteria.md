@@ -128,5 +128,3 @@ This completes Lab 6 and the workshop. In this lab you learned how to create ite
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -26,6 +26,8 @@ Watch our short video that explains key features in Oracle Big Data Service:
 - Access a BDS utility node using a public IP address.
 - Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both CM and Hue.
 - Map the private IP address of the first master node in your cluster to a new public IP address to make this node publicly available on the internet and create a Hadoop Administrator user.
+- Upload data to Hadoop Distributed File System and Object Storage.
+- Clean up all of the resources that you created in this workshop (optional).
 
 ## Lab Breakdown
 - **Lab 1:** Set Up the BDS Environment
@@ -63,7 +65,7 @@ Use these links to get more information about BDS and OCI:
 * **Authors:**
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, October 2020
+* **Last Updated By/Date:** Lauran Serhal, March 2021
 
 
 ## Need Help?

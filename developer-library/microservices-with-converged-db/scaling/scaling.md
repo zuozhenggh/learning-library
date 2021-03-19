@@ -3,7 +3,6 @@
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
-![](images/architecture.png " ")
 
 ### Objectives
 -   Install a load testing tool
@@ -169,5 +168,3 @@ This lab assumes that you have already completed labs 1 through 4.
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly. 
