@@ -1,7 +1,7 @@
 # Automatic Block Media Recovery
 
 ## Introduction
-In this lab we will see how Active Data Guard Automatic Block media recovery works.
+In this lab, we will see how Active Data Guard Automatic Block media recovery works.
 
 Block corruptions are a common source of database outages. A database block is
 corrupted when its cont-ent has changed from what Oracle Database expects to find. If
@@ -12,7 +12,7 @@ Data Guard maintains a copy of your data in a standby database that is continuou
 
 In this lab we will introduce a block corruption in the database and see Active Data Guard repairing it.
 
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
+Estimated Lab Time: 10 Minutes
 
 ### Objectives
 - Setup your environment
@@ -264,5 +264,5 @@ You have now seen Active Data Guard Automatic Block media recovery working. You 
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021

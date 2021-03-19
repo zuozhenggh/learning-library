@@ -1,16 +1,23 @@
-# Creation of the Primary Database
+# Create the Primary Database
 
 ## Introduction 
 In this lab, we will create the primary database.
 
+An Oracle Data Guard configuration contains one production database, also referred to as the primary database, that functions in the primary role.
 
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
+The primary database is the database that is accessed by most of your applications.
+
+The primary database can be either a single-instance Oracle database or an Oracle Real Application Clusters (Oracle RAC) database.
+
+![](./images/primary.png)
+
+Estimated Lab Time: 10 Minutes
 
 ### Objectives
 -   Create the primary database
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 
 ## **STEP**: Create the primary database
 
@@ -26,7 +33,7 @@ To create the primary database we need to follow a wizard.
 
 3. Verify that at the top, you have selected the correct compartment that you have been assigned to.
 4. Then you can start to fill in the required information. This Workshop can be run in any region with 3 Availability domains. 
-Use following information to enter in the wizard.
+Use the following information to enter in the wizard.
 
     * Name of the DB System: 	**ADGHOLAD1**
     * Select the first AD in the region you are located.
@@ -76,7 +83,7 @@ Use following information to enter in the wizard.
 
     ![](./images/Create-dbcs-prim-07.png)
 
-14. As the password use: **WelC0me2##**
+14. As the password use: **W3lc0m3\#W3lc0m3\#**
 
     ![](./images/Create-dbcs-prim-08.png)
 
@@ -103,5 +110,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021

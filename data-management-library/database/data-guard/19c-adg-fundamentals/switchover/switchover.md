@@ -1,4 +1,4 @@
-# Performing a Switchover
+# Perform a Switchover
 
 ## Introduction
 In this lab, we will be performing a switchover operation.
@@ -9,9 +9,7 @@ A switchover is a role reversal between the primary database and one of its stan
 
 A failover is a role transition in which one of the standby databases is transitioned to the primary role after the primary database (all instances in the case of an Oracle RAC database) fails or has become unreachable. A failover may or may not result in data loss depending on the protection mode in effect at the time of the failover.
 
-
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
-
+Estimated Lab Time: 10 Minutes
 
 ### Performing a switchover
 
@@ -28,7 +26,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Perform a switchover
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
 - Lab: Connect to the Database
 
 
@@ -100,5 +98,5 @@ You have now successfully performed a graceful role transition. You may now [pro
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
