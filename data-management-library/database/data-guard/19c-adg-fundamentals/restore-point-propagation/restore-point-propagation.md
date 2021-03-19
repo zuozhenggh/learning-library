@@ -46,10 +46,10 @@ Estimated Lab Time: 10 Minutes
 
 3. Do the same on the standby database.
 
-    ![](./images/RP01.png)
+    ![](./images/rp01.png)
 
 4. Next, create a restore point in the primary database
-    ![](./images/RP02.png)
+    ![](./images/rp02.png)
 
 5. Check the restore points with following query
 
@@ -58,7 +58,7 @@ Estimated Lab Time: 10 Minutes
     ````
 
 6. Do the same on the standby database.
-    ![](./images/RP03.png)
+    ![](./images/rp03.png)
 
 The restore point drop is now replicated to the standby and has been suffixed with `_PRIMARY` and the replicated column on the primary indicates this has been performed.
 
@@ -69,7 +69,7 @@ The restore point drop is now replicated to the standby and has been suffixed wi
     drop restore point testrp;
     ````
 
-    ![](./images/RP04.png)
+    ![](./images/rp04.png)
 
 2. Check the restore points with following query
 
@@ -78,7 +78,7 @@ The restore point drop is now replicated to the standby and has been suffixed wi
     ````
 
 3. Do the same on the standby database.
-    ![](./images/RP05.png)
+    ![](./images/rp05.png)
 
 You have now successfully used Active Data Guard Restore point propagation. You may now [proceed to the next lab](#next).
 
