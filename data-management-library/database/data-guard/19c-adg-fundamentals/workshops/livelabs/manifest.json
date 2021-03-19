@@ -1,5 +1,6 @@
 {
     "workshoptitle": "19c Active Data Guard Fundamentals",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -64,6 +65,11 @@
             "description":"Setup the standby Database",
             "publisheddate": "26/02/2021",
             "filename":"../../standby-db/standby-db.md"
+        },
+        {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
