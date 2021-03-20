@@ -20,7 +20,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 </if>
-<if type="21c">
+<if type="atp">
 * An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
 * Lab: Provision ADB
 * Lab: Setup
@@ -45,7 +45,7 @@ In this lab, you will:
     ```
 </if>
 
-<if type="21c">
+<if type="atp">
 ## **STEP  1**: Login to SQL Developer Web on ADB
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.

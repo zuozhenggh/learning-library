@@ -14,7 +14,7 @@ Estimated Lab Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
-<if type="21c">* Login to SQL Developer Web as the HR user
+<if type="atp">* Login to SQL Developer Web as the HR user
 * Run queries using SQL Macros</if>
 <if type="dbcs">* Run queries on HR data using SQL Macros</if>
 
@@ -25,7 +25,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 </if>
-<if type="21c">
+<if type="atp">
 * An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
 * Lab: Provision ADB
 * Lab: Setup
@@ -135,8 +135,10 @@ In this lab, you will:
 
     ```
 </if>    
-<if type="21c">
+<if type="atp">
 ## **STEP  1**: Login to SQL Developer Web as HR User on ADB
+
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](../set-operators/images/21c-home-adb.png " ")
@@ -152,8 +154,18 @@ In this lab, you will:
 6.  Click on the **SQL** button.
 7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
 8.  Enter the username *hr* and password *WElcome123##*
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1.  Open up Cloud Shell below if it isn't already open
+2.  Connect to the OE user using sqlplus by entering the commands below.
+    ```
+	conn hr/WElcome123##@adb1_high
+	```
 </if>
-9. Use the SQM to query the table and display the employees names doubled.
+
+## **STEP  2**: Explore SQL Macros
+
+1. Use the SQM to query the table and display the employees names doubled.
 
     ```
 
@@ -432,7 +444,10 @@ In this lab, you will:
     UPDATE_JOB_HISTORY                    TRIGGER
 
     7 rows selected.
+    ```
+13. Exit SQL*Plus.
 
+    ```
     SQL> <copy>EXIT</copy>
     $
 
