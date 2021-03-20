@@ -176,7 +176,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 
 ## **STEP 3:** Reinstate the Previous Primary Database
 
-1. Connect o the cloud side(the previous primary), replace `ORCL_nrt1d4` with your previous primary db unique name. Shutdown the database and startup mount before reinstating. 
+1. Connect to the cloud side(the previous primary), replace `ORCL_nrt1d4` with your previous primary db unique name. Shutdown the database and startup mount before reinstating. 
 
     ```
     DGMGRL> <copy>connect sys/Ora_DB4U@orcl_nrt1d4</copy>
