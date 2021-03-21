@@ -6,23 +6,6 @@ In this lab we will migrate a postgresql database to an Autonomous database in O
 
 *Estimated Lab Time*: 1.5 hours
 
-## About GoldenGate for PostgreSQL
-
-## About GoldenGate Microservices
-
-## About Terraform 
-
-
-**Architecture Overview**
-
-- Virtual Cloud Network: we will create a VCN with public sub network and internet access to avoid complexity.
-- Source Postgreqsql database: we will create a Postgresql database server in a Virtual Machine, acts as our source on-premise databas.
-- Goldengate for non-Oracle deployment: we will create a Goldengate classic for Postgresql which will extract data from source and ships trails to cloud.
-- Goldengate Microservices deployment: we will create a Microservices environment for Autonomous database which applies trails from source to target autonomous database.
-- Target Autonomous database: we will provision Oracle Autonomous database acts as our target database.
-
-![](/files/architecture.png)
-
 ### Objectives
 
 In this workshop you will :
@@ -30,14 +13,46 @@ In this workshop you will :
 * Benefit from OCI terraform provider
 * Explore OCI compute service
 * Migrate PostgreSQL database to Autonomous Transaction Processing database
+* Explore Autonomous Database and its capabilities
 
-**This concludes this lab. You may now [proceed to prerequisites step](#next).**
+**Architecture Overview**
+
+- Virtual Cloud Network: we will create a VCN with public sub network and internet access to avoid complexity.
+- Source Postgreqsql database: we will create a Postgresql database server in a Virtual Machine, acts as our source on-premise database.
+- Goldengate for non-Oracle deployment: we will create a Goldengate classic for Postgresql which will extract data from source and ships trails to cloud.
+- Goldengate Microservices deployment: we will create a Microservices environment for Autonomous database which applies trails from source to target autonomous database.
+- Target Autonomous database: we will provision Oracle Autonomous database acts as our target database.
+
+![](/files/architecture.png)
+
+All of these mentioned resources are going to to be deployed in Oracle Cloud infrastructure using Terraform. It is not necessary to have prior knowledge of Terraform scripting, all you need to do is follow every steps exactly as it described.
+
+## About GoldenGate for PostgreSQL
+
+Oracle GoldenGate on Marketplace contains pre-configured Oracle GoldenGate for Non-Oracle for PostgreSQL. 
+
+Oracle GoldenGate is a comprehensive software package for real-time data integration and replication in database environments. The product enables high availability solutions, real-time data integration, transactional change data capture, data replication, and basic transformations between operational and analytical enterprise systems. Oracle GoldenGate brings extreme performance with simplified configuration and management, tighter integration with Oracle Database, support for cloud environments, expanded heterogeneity, and enhanced security. 
+
+## About GoldenGate Microservices
+
+Oracle GoldenGate is the industry’s premier replication tool and this replication platform supports a wide range of Oracle and other heterogeneous platforms. The addition of the Microservices Architecture allows this premier replication tool to scale out to the cloud and provide a secure, flexible and scalable replication platform.
+
+By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. With Oracle GoldenGate Microservices on Marketplace, you can deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
+
+## About Terraform 
+
+Terraform is an open source tool that allows you to programmatically manage, version, and persist infrastructure through the "infrastructure-as-code" model. Terraform configurations codify your infrastructure in declarative files that contain the steps required to provision your infrastructure and maintain its state. You can share these files among team members, treat them as code, edit, review, and version them.
+
+Terraform uses providers to interface between the Terraform engine and the supported cloud platform. The Oracle Cloud Infrastructure (OCI) Terraform provider is a component that connects Terraform to the OCI services that you want to manage. 
 
 
+**This concludes introduction. You may now [proceed to prerequisites step](#next).**
 
 ## Learn More
 
-* 
+* [Terraform OCI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraform.htm)
+* [Oracle Goldengate]()
+* [Oracle Autonomous Database]()
 
 ## Acknowledgements
 

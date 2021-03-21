@@ -1,6 +1,16 @@
+# LAB 1
+
 ## Introduction
 
+The first lab is the most important lab of all, in fact in this step we will create all of our resources:
 
+- Virtual Cloud Network
+- Source Postgreqsql database
+- Goldengate for non-Oracle deployment
+- Goldengate Microservices deployment
+- Target Autonomous database
+
+![](/files/architecture.png)
 
 ### Prerequisites
 
@@ -9,6 +19,12 @@
 ## Objectives
 
 In this first lab, we will prepare our work environment and create our lab resources using Terraform script.
+In case if you are running this lab in your existing tenancy, **make sure** you have following compute quotas and resources available to use:
+
+1. ATP for Target database - 1 OCPU, 1 TB storage
+2. Virtual Machine for Source Database - VM.StandardE2.1
+3. Virtual Machine for Goldengate Postgresql - VM.Standard2.1  
+4. Virtual Machine for Goldengate Microservices - VM.Standard2.1
 
 ## **Step 1**: Clone lab repository
 
@@ -60,6 +76,7 @@ terraform apply --auto-approve
 Make a copy of your output results in your notepad also for later use.
 
 ![](/files/1.git_1.PNG)
+
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 

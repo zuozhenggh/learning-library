@@ -1,3 +1,9 @@
+# LAB 4
+
+## Introduction
+
+Final lab of this workshop will guide you how to setup simple migration to ATP using Goldengate Microservices. By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. With Oracle GoldenGate Microservices on Marketplace, you can deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
+
 ## Objectives
 
 In this final step of workshop, we will configure replication process in Microservices and apply captured changes from source database to our target Autonomous database. This is final lab.

@@ -1,6 +1,9 @@
-# Introduction
+# LAB 3
+
+## Introduction
 
 With Oracle GoldenGate Classic for PosgreSQL, you can perform initial loads and capture transactional data from supported PostgreSQL versions and replicate the data to a PostgreSQL database or other supported Oracle GoldenGate targets, such as an Oracle Database. 
+
 
 ## Objectives
 

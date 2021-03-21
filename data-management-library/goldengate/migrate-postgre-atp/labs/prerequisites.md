@@ -1,9 +1,9 @@
 # Prerequisites 
 
 ## Introduction
+
 In this step, we will show you how to prepare your work environment in Oracle Cloud Infrastructure. We will use cloud-shell as our terminal which is console based, web terminal built in OCI console. It is good to use this terminal, in case you are behind corporate VPN, in case you don't have stable network connection.
 To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
-
 
 ### Assumptions
 - You have successfully done ** Getting Started ** lab

@@ -1,3 +1,9 @@
+# LAB 2
+
+## Introduction
+
+We so far created all of necessary resources using terraform in OCI. It is now time to prepare Target Database, ATP. 
+
 ## Objectives
 
 We need to create our target tables for our GG migration and enable GGADMIN for replication to Autonomous database.
