@@ -74,6 +74,8 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 <if type="21c">
 ## **STEP  1**: Login to SQL Developer Web on ADB
 
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to Step 1B.
+
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](./images/21c-home-adb.png " ")
 
@@ -89,6 +91,13 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 7.  Change the word *admin* in the URL to *oe*.  You will be logging in to the admin schema
 8.  Enter the username *oe* and password *WElcome123##*
 </if>
+
+## **STEP  1**: Login to ADB using SQL Plus
+1.  Open up Cloud Shell if it isn't already open
+2.  Connect to the OE user using sqlplus by entering the commands below.
+    ```
+	conn oe/WElcome123##@db21c_high
+	```
 
 ## **STEP  2**: Test the set operator with the `EXCEPT` clause
 

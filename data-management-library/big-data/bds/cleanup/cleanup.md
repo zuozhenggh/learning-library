@@ -154,7 +154,6 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
     ![](./images/delete-compartment.png " ")
 
-
 **This concludes this lab and the workshop.**
 
 ## Want to Learn More?
