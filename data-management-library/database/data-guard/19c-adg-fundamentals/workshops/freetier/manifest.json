@@ -1,5 +1,6 @@
 {
     "workshoptitle": "19c Active Data Guard Fundamentals",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -64,7 +65,7 @@
             "title": "Lab 9: Change the SYS password",
             "description":"Change the SYS password",
             "publisheddate": "26/02/2021",
-            "filename":"../../sys-password/sys-password.md"
+            "filename":"../../sys-passwords/sys-passwords.md"
         },
         {
             "title": "Need Help?",

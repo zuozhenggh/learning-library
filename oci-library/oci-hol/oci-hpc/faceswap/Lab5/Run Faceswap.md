@@ -185,7 +185,7 @@ If your training is finished, you can convert your video and swap face A in your
 
 1. In the Faceswap GUI, select the **Convert** tab.
 
-2. In the **Data** field, you see the **Input Dir** where you select the directory select the directory where your input video is located with the person from who you want to swap the face. In our case, the input video is stored under _/faceswap/src/personA_
+2. In the **Data** field, you see the **Input Dir** where you select the directory where your input video is located with the person from who you want to swap the face. In our case, the input video is stored under _/faceswap/src/personA_
 
 3. Click on the folder button next to **Output Dir**. Choose the folder, where the output video will be saved. You can call the directory e.g. _/faceswap/outputvideo_ and click on **OK**.
 
