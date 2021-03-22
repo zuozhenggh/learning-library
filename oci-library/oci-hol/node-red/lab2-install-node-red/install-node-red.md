@@ -1,104 +1,78 @@
-# Query Your Data
+# Installing Node-RED
 
 ## Introduction
+This lab describes how to install Node-RED on Oracle Autonomous Linux.
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: n minutes
-
-### About Product/Technology
-Enter background information here..
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Install Node.js
+* Install Git
+* Install Grunt-cli
+* Install Node-RED
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+* Access to a compute instance running Oracle Autonomous Linux
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+## **STEP 1**: Installing Node.js
 
-*This is the "fold" - below items are collapsed by default*
+First, we need to install Node.js. Make sure you are connected to the compute instance via SSH. To configure the Node.js and the Oracle Instant Client repository:
 
-## **STEP 1**: title
+`sudo yum install -y oracle-nodejs-release-el7 oracle-release-el7`
 
-Step 1 opening paragraph.
+To install the latest Node.js:
 
-1. Sub step 1
+`sudo yum install nodejs`
 
-  To create a link to local file you want the reader to download, use this format:
+## **STEP 2**: Installing Git
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+Git is required in order to clone the latest Node-RED repository. To install Git run:
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+`sudo yum install git`
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+## **STEP 3**: Install grunt-cli
 
-    ![Image alt text](images/sample1.png "Image title")
+To install the grunt-cli module globally:
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+`sudo npm install -g grunt-cli`
 
-    ![Image alt text](images/sample1.png)
+## **STEP 4**: Install Node-RED
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+### Clone the source repository
+Now it is time to install Node-RED. Start by cloning the Node-RED source repository from Github:
 
-5. One example with bold **text**.
+`git clone https://github.com/node-red/node-red.git`
 
-   If you add another paragraph, add 3 spaces before the line.
+This will create the `node-red` directory. Change into the `node-red` directory and continue with the next step.
 
-## **STEP 2:** title
+## **STEP 5**: Install the dependencies
 
-1. Sub step 1
+Next we want to install any dependencies. 
 
-  Use tables sparingly:
+`npm install`
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+## **STEP 6**: Building Node-RED
+Finally, we can build the application. To build Node-RED:
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+`grunt build`
 
-    - List item 1
-    - List item 2
+You are done with the installation of Node-RED. Before we run Node-RED, we want to first update the Network Security List in OCI and the 
+`iptables` of the OAL installatio. 
 
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Node.js for Oracle Linux](https://yum.oracle.com/oracle-linux-nodejs.html#InstallingNodeOnOL7)
+* [Node-RED](https://nodered.org/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Kevin Lazarz, Program Manager, TE Hub
+* **Last Updated By/Date** - Kevin Lazarz, Program Manager, TE Hub March 2021
+
 
 
