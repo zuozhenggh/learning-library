@@ -31,7 +31,8 @@ All of these mentioned resources are going to to be deployed in Oracle Cloud inf
 
 Oracle GoldenGate on Marketplace contains pre-configured Oracle GoldenGate for Non-Oracle for PostgreSQL. 
 
-Oracle GoldenGate is a comprehensive software package for real-time data integration and replication in database environments. The product enables high availability solutions, real-time data integration, transactional change data capture, data replication, and basic transformations between operational and analytical enterprise systems. Oracle GoldenGate brings extreme performance with simplified configuration and management, tighter integration with Oracle Database, support for cloud environments, expanded heterogeneity, and enhanced security. 
+Oracle GoldenGate is a comprehensive software package for real-time data integration and replication in database environments. The product enables high availability solutions, real-time data integration, transactional change data capture, data replication, and basic transformations between operational and analytical enterprise systems. 
+Oracle GoldenGate brings extreme performance with simplified configuration and management, tighter integration with Oracle Database, support for cloud environments, expanded heterogeneity, and enhanced security. 
 
 ## About GoldenGate Microservices
 
@@ -56,8 +57,6 @@ Terraform uses providers to interface between the Terraform engine and the suppo
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir, Solution Engineer
-* **Contributors** - John Craig, Patrick Agreiter
-* **Last Updated By/Date** -
-
-
+* **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
+* **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
+* **Last Updated By/Date** - 3/22/2021

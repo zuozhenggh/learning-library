@@ -67,6 +67,6 @@ We successfully enabled GGADMIN in our target Autonomous Database and created ta
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir, Solution Engineer
-* **Contributors** - John Craig, Patrick Agreiter
-* **Last Updated By/Date** -
+* **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
+* **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
+* **Last Updated By/Date** - 3/22/2021

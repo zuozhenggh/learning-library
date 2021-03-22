@@ -166,7 +166,7 @@ Here is summary of resources which was created by Terraform script and used in o
 - Goldengate PostgreSQL instance
 - Goldengate Microservices instance
 
-3. [Autonomous Database offerings ](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
+3. [Autonomous Database offerings](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 - Target ATP
 
 4. [Oracle Cloud Marketplace](https://docs.oracle.com/en-us/iaas/Content/Marketplace/Concepts/marketoverview.htm)
@@ -176,6 +176,6 @@ Here is summary of resources which was created by Terraform script and used in o
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir, Solution Engineer
-* **Contributors** - John Craig, Patrick Agreiter
-* **Last Updated By/Date** -
+* **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
+* **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
+* **Last Updated By/Date** - 3/22/2021
