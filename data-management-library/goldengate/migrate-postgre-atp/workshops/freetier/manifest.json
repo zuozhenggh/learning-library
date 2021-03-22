@@ -10,12 +10,12 @@
     {
       "title": "Introduction",
       "description": "Introduction",
-      "filename": "../../introduction/introduction.md"
+      "filename": "../../labs/introduction.md"
     },
     {
       "title": "Prerequisites",
       "description": "Prepare your work environment",
-      "filename": "../../introduction/prerequisites.md"
+      "filename": "../../labs/prerequisites.md"
     },
     {
       "title": "Lab 1: Environment Setup",
