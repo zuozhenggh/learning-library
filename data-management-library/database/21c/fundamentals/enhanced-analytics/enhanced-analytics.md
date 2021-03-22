@@ -7,7 +7,15 @@ Estimated Lab Time: 15 minutes
 
 ### Objectives
 In this lab, you will:
+<if type="dbcs">
 * Setup the environment
+</if>
+<if type="atp">
+* Login to SQL Developer Web on ADB
+</if>
+* Experiment with the usage of the `GROUPS` clause of the window frame
+* Experiment with the usage of the `EXCLUDE` clause of the window frame
+* Experiment the usage of the `GROUPS` and `EXCLUDE` clauses of the window frame
 
 ### Prerequisites
 <if type="dbcs">
@@ -16,7 +24,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 </if>
-<if type="21c">
+<if type="atp">
 * An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
 * Lab: Provision ADB
 * Lab: Setup
@@ -111,11 +119,13 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
 
     ```
 </if>
-<if type="21c">
+<if type="atp">
 ## **STEP  1**: Login to SQL Developer Web on ADB
 
-1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
-      ![](../set-operators/images/21c-home-adb.png " ")
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
+
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to #7 of this section.
+    ![](../set-operators/images/21c-home-adb.png " ")
 
 2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
 3.  Click on the **Display Name** to go to your ADB main page.
@@ -124,13 +134,22 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
 4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
       ![](../set-operators/images/tools.png " ")
 
-5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+5.  Enter the username *report* and password *WElcome123##*
 6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *report*.  You will be logging in to the admin schema
-8.  Enter the username *report* and password *WElcome123##*
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the REPORT user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn report/WElcome123##@adb1_high
+	```
 </if>
 
-## **STEP 2:** Experiment the usage of the `GROUPS` clause of the window frame
+## **STEP 2:** Experiment with the usage of the `GROUPS` clause of the window frame
 
 1. Display the rows of `REPORT.TRADES` in `PDB20`. Using `ROWS`, the user specifies the window frame extent by counting rows forward or backward from the current row. `ROWS` allows any number of sort keys, of any ordered data types. This can be advantageous, because counting rows is oblivious to any “holes” in the values that are sorted. On the other hand, counting rows from the current row can be non-deterministic when there are multiple rows that are identical in the sort keys, causing an arbitrary cutoff between two rows that have the same values in the sort keys. Using `RANGE`, the user specifies an offset. There must be precisely one sort key, and its declared type must be amenable to addition and subtraction (i.e., numeric,datetime or interval). This avoids the non-determinism of arbitrarily cutting between two adjacent rows with the same value, but it can only be used with a single sort key of an additive type. SQL:2011 standard includes a third way of specifying the window frame extent, using the keyword `GROUPS`. Like `ROWS`, a `GROUPS` window can have any number of sort keys, of any ordered types. Like `RANGE`, a `GROUPS` window does not make cutoffs between adjacent rows with the same values in the sort keys. Thus, `GROUPS` combines some of the features of both `ROWS` and `RANGE`.
 
@@ -144,7 +163,7 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     ```
     SQL> <copy>SET PAGES 100</copy>
 </if>
-<if type="21c">
+<if type="atp">
     ```
 </if>
     SQL> <copy>SELECT * FROM trades;</copy>
@@ -305,8 +324,9 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
 
   Notice that the syntax avoids the need for a nested grouped query and a join with `TRADES` as it was the case in the previous step.
 
-## **STEP 3:** Experiment the usage of the `EXCLUDE` clause of the window frame
+## **STEP 3:** Experiment with the usage of the `EXCLUDE` clause of the window frame
 
+<if type="dbcs">
 1. Execute the `/home/oracle/labs/M104784GC10/create_T_table.sql` SQL script.
 
 
@@ -359,6 +379,26 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     SQL>
 
     ```
+</if>
+
+<if type="atp">
+1.  Paste the following script into your sql worksheet and press **Run as script** button to run.
+
+    ```
+    <copy>
+    CREATE TABLE t (v NUMBER);
+    INSERT INTO t VALUES (1);
+    INSERT INTO t VALUES (1);
+    INSERT INTO t VALUES (3);
+    INSERT INTO t VALUES (5);
+    INSERT INTO t VALUES (5);
+    INSERT INTO t VALUES (5);
+    INSERT INTO t VALUES (6);
+    </copy>
+    ```
+
+    ![](./images/create-table.png " ")
+</if>
 
 2. Display the rows of table `T`.
 
@@ -368,21 +408,13 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     SQL> <copy>SELECT * FROM t;</copy>
 
             V
-
     ----------
-
             1
-
             1
-
             3
-
             5
-
             5
-
             5
-
             6
 
     7 rows selected.
@@ -390,9 +422,11 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     SQL>
 
     ```
+<if type="atp">
+    ![](./images/select-from-v.png " ")
+</if>
 
-3. Use the `EXCLUDE` options for window frame exclusion with `ROWS`. If `EXCLUDE CURRENT ROW` is specified and the current row is still a member of the window frame, then remove the current row from the window frame. If `EXCLUDE GROUP` is specified, then remove the current row and any peers of the current row from the window frame. If `EXCLUDE TIES` is specified, then remove any rows other than the current row that are peers of the current row from the window frame. If the current row is already removed from the window frame, then it remains removed from the window frame. If `EXCLUDE NO OTHERS` is specified (this is the default), then no additional rows are removed from the window frame by this rule.
-
+3. Use the `EXCLUDE` options for window frame exclusion with `ROWS`. If `EXCLUDE CURRENT ROW` is specified and the current row is still a member of the window frame, then remove the current row from the window frame. If `EXCLUDE GROUP` is specified, then remove the current row and any peers of the current row from the window frame. 
 
     ```
 
@@ -405,25 +439,23 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
                 WINDOW o AS (ORDER BY v);</copy>
 
                 V CURRENT_ROW  THE_GROUP       TIES  NO_OTHERS
-
     ---------- ----------- ---------- ---------- ----------
-
             1           1                     1          2
-
             1           4          3          4          5
-
             3           6          6          9          9
-
             5           8          3          8         13
-
             5          10                     5         15
-
             5          11          6         11         16
-
             6           5          5         11         11
 
     7 rows selected.
+    ```
+<if type="atp">
+    ![](./images/exclude-current-row.png " ")
+</if>
 
+4. If `EXCLUDE TIES` is specified, then remove any rows other than the current row that are peers of the current row from the window frame. If the current row is already removed from the window frame, then it remains removed from the window frame. If `EXCLUDE NO OTHERS` is specified (this is the default), then no additional rows are removed from the window frame by this rule.
+    ```
     SQL> <copy>SELECT v,
                         sum(v) OVER (o ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING EXCLUDE CURRENT ROW) AS current_row,
                         sum(v) OVER (o ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING EXCLUDE GROUP) AS the_group,
@@ -433,21 +465,13 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
                 WINDOW o AS (ORDER BY v);</copy>
 
             V CURRENT_ROW  THE_GROUP       TIES  NO_OTHERS
-
     ---------- ----------- ---------- ---------- ----------
-
             1           4          3          4          5
-
             1           9          8          9         10
-
             3          12         12         15         15
-
             5          14          4          9         19
-
             5          19          9         14         24
-
             5          16          6         11         21
-
             6          10         10         16         16
 
     7 rows selected.
@@ -455,7 +479,9 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     SQL>
 
     ```
-
+<if type="atp">
+    ![](./images/exclude-current-ties.png " ")
+</if>
 4. Use the `EXCLUDE` options for window frame exclusion with `RANGE`.
 
 
@@ -472,19 +498,12 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
             V CURRENT_ROW  THE_GROUP       TIES  NO_OTHERS
 
     ---------- ----------- ---------- ---------- ----------
-
             1           1                     1          2
-
             1           1                     1          2
-
             3                                 3          3
-
             5          16          6         11         21
-
             5          16          6         11         21
-
             5          16          6         11         21
-
             6          15         15         21         21
 
     7 rows selected.
@@ -492,6 +511,9 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     SQL>
 
     ```
+<if type="atp">
+    ![](./images/exclude-current-ties.png " ")
+</if>
 
 ## **STEP 4:** Experiment the usage of the `GROUPS` and `EXCLUDE` clauses of the window frame
 
@@ -518,11 +540,23 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
             6          15         15         21         21
 
     7 rows selected.
+    ```
+<if type="dbcs">
+2. Exit from the sql prompt
 
+    ```
     SQL> <copy>EXIT</copy>
     $
 
     ```
+</if>
+<if type="atp">
+2. In the upper left corner, click the down arrow, scroll down and select **Sign Out**.
+
+    ![](./images/exit.png " ")
+
+</if>
+
 
 You may now [proceed to the next lab](#next).
 

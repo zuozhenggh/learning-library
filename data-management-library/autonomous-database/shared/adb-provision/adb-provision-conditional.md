@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will provision a new ATP instance and connect to the database using Oracle SQL Developer Web.
+This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will provision a new <if type="atp">ATP</if><if type="adw">ADW</if> instance and connect to the database using Oracle SQL Developer Web.
 
-*Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
+*Note: While this lab uses <if type="atp">ATP</if> <if type="adw">ADW</if>, the steps are identical for creating and connecting to any other kind of ADB database.*
 
 Estimated time: 5 minutes
 
@@ -16,7 +16,7 @@ Estimated time: 5 minutes
 
 ### Video Preview
 
-Watch a video demonstration of provisioning a new Autonomous Transaction Processing instance:
+Watch a video demonstration of provisioning a new <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if> instance:
 
 [](youtube:Q6hxMaAPghI)
 
@@ -27,21 +27,21 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-    __Note:__ You can also directly access your Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
+    __Note:__ You can also directly access your <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>   service in the __Quick Actions__ section of the dashboard.
 
     ![Oracle home page.](./images/Picture100-36.png " ")
 
-3. The following steps apply similarly to either Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Transaction Processing database, so click **Autonomous Transaction Processing**.
+3. The following steps apply similarly to either <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>  . This lab shows provisioning of an <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>   database, so click **<if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>  **.
 
-    ![Click Autonomous Transaction Processing.](images/LabGuide1-39fb4a5b.png " ")
+    ![Click ADB.](images/LabGuide1-39fb4a5b.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Transaction Processing instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
+4. Make sure your workload type is __Data Warehouse__ or __All__ to see your <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if> instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 
    *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
 
-5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
+5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __<if type="atp">Transaction</if> <if type="adw">Data Warehouse</if>__ workload type is selected.
 
     ![Autonomous Databases console.](./images/Compartment.png " ")
 
@@ -59,8 +59,8 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 3. Provide basic information for the autonomous database:
 
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
-    - __Display Name__ - *db21c*
-    - __Database Name__ - *db21c*
+    - __Display Name__ - *adb1*
+    - __Database Name__ - *adb1*
 
     ![Enter the required details.](./images/Picture100-26.png " ")
 
@@ -78,11 +78,14 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 6. Configure the database:
 
     - __Always Free__ - An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    - __Choose database version__ - 21c
+    - __Choose database version__ - <if type="atp">21c</if><if type="adw">19c</if>
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
-
-    ![Choose the remaining parameters.](./images/21c-alwaysfree.png " ")
+    <if type="atp">
+    * Note 2: 21c is only available with Always Free*
+     
+    ![Choose the remaining parameters.](./images/21c-alwaysfree.png " ")</if>
+    
 
 7. Create administrator credentials:
 
@@ -107,7 +110,7 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![Click Create Autonomous Database.](./images/Picture100-27.png " ")
 
-11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if> database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](./images/Picture100-32.png " ")
 
@@ -115,11 +118,11 @@ Please *proceed to the next lab*.
 
 ## Want to Learn More?
 
-Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Database.
+- [ADB Typical Workflow](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3)
 
 ## **Acknowledgements**
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern), Kay Malcolm, Richard Green
+- **Contributors** - Jeffrey Malcolm Jr, Arabella Yao, Kay Malcolm, Richard Green
 - **Last Updated By/Date** - Kay Malcolm, March 2020
