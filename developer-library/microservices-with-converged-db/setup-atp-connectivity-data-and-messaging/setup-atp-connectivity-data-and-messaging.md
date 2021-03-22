@@ -80,8 +80,6 @@ You will run a script that will download the connection information (wallet, tns
     <copy>./createAll.sh https://objectstorage.us-phoenix-1.oraclecloud.com/REPLACE_WITH_YOUR_PREAUTH_LINK/Wallet_ORDERDB.zip</copy>
     ```
 
-  ![](images/createAll.png " ")
-
 3.  Execute `msdataworkshop` and notice secrets for order and inventory wallets.
 
     ```
