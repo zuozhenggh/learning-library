@@ -74,24 +74,30 @@ You will also clone a GitHub repository.
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
     ```
 
+4. Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
+
+    ```
+    <copy>./build.sh</copy>
+    ```
+
   ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
 
-  In a couple of minutes, you should have successfully built and pushed all the images into the OCIR repository.
+  After a couple of minutes, the image should have been successfully built and pushed all the images into the OCIR repository.
 
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
-2.  Go to the Console, click the hamburger menu in the top-left corner and open
+5.  Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
-3. Mark all the images as public (**Actions** > **Change to Public**):
+6. Mark all the images as public (**Actions** > **Change to Public**):
 
   ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
 
 ## **STEP 4**: Start the frontend-helidon service
 
-5.  Run the deploy script from the same directory
+1.  Run the deploy script from the same directory
     as build. This will create the deployment and pod for this image in the OKE
     cluster `msdataworkshop` namespace:
 
@@ -101,7 +107,7 @@ You will also clone a GitHub repository.
 
    ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
 
-7.  Once successfully created, check that the frontend pod is running:
+2.  Once successfully created, check that the frontend pod is running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -113,7 +119,7 @@ You will also clone a GitHub repository.
 
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
-8. Check that the load balancer service is running, and write down the external IP
+3. Check that the load balancer service is running, and write down the external IP
     address.
 
     ```
@@ -126,7 +132,7 @@ You will also clone a GitHub repository.
 
   ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
-9. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
+4. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
 
   `https://<EXTERNAL-IP>`
 
@@ -144,7 +150,7 @@ You will also clone a GitHub repository.
   
   ![](images/frontendhome.png " ")
 
-The may now proceed to the next lab.
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
