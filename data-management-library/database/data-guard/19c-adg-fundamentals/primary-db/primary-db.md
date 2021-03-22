@@ -83,7 +83,7 @@ Use the following information to enter in the wizard.
 
     ![](./images/create-dbcs-prim-07.png)
 
-14. As the password use: **W3lc0m3\#W3lc0m3\#**
+14. As the password use: **WElcome123##**
 
     ![](./images/create-dbcs-prim-08.png)
 

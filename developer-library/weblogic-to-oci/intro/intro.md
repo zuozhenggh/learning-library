@@ -54,6 +54,12 @@ Allow group MyGroup to manage all-resources in compartment MyCompartment
 </copy>
 ```
 
+
+**Important note:**
+
+*This lab uses the WebLogic version 12.2.1.4 stack with a non-JRF domain. It is similar with version 12.2.1.3, however WebLogic version 10.3.6 requires a JRF domain by default, which requires a database as a backend. The ONLY database versions compatible with WebLogic 10.3.6 on OCI are database version 11.2.0.4 and 12.1.0.2. Note that database 11.2.0.4 requires the Oracle Grid Infrastructure when provisioning, or it will not be visible as an option when selecting the database image version.*
+
+
 You may proceed to the next lab.
 
 ## Acknowledgements
