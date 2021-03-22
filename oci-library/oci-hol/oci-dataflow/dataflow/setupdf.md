@@ -33,7 +33,7 @@ Before you Begin with Data Flow lab, you must have:
      * A bucket to store the logs (both standard out and standard err) for every application run.Create a standard storage tier bucket called `dataflow-logs` in the Object Store service. The location of the bucket must follow the pattern:
 
        ```
-       <copy>oci://oci://dataflow-logs@<Object_Store_Namespace>/</copy>
+       <copy>oci://dataflow-logs@<Object_Store_Namespace>/</copy>
        ```
 
      * A data warehouse bucket for Spark SQL applications. Create a standard storage tier bucket called `dataflow-warehouse` in the Object Store service. The location of the warehouse must follow the pattern:
