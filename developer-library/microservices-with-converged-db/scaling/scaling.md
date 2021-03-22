@@ -30,7 +30,7 @@ This lab assumes that you have already completed labs 1 through 4.
 2. Start an external load balancer for the order service.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext_order_service.yaml -n msdataworkshop</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
     ```
 
     Repeatedly view the ext-order LoadBalancer service.  Make note of the external IP address.
