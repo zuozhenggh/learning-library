@@ -78,7 +78,7 @@ This is something you'd need if you'd want continuous replication and migration.
 
 	![](/images/micro_ggadmin_4.png)
 
-Checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is a best practice to enable the checkpoint table for the target system.
+	Checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is a best practice to enable the checkpoint table for the target system.
 
 4. Now let's go back to **Overview** page from here.
 
