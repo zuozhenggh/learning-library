@@ -1,25 +1,26 @@
 {
   "workshoptitle": "Extend your application with advanced chat-bots",
+  "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
-    {
-      "title": "Getting Started",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
     {
       "title": "Introduction",
       "filename": "../../intro/intro2.md"
     },
     {
+      "title": "Getting Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
       "title": "Lab 1: Create Autonomous Database",
-      "filename": "../../create-atp/create-atp.md"
+      "filename": "../../create-atp/create-atp2.md"
     },
     {
       "title": "Lab 2: Create APEX workshop and REST API",
-      "filename": "../../create-apex/create-apex.md"
+      "filename": "../../create-apex/create-apex2.md"
     },
     {
       "title": "Lab 3: Create Oracle Digital Assistant",
-      "filename": "../../create-oda/create-oda.md"
+      "filename": "../../create-oda/create-oda2.md"
     },
     {
       "title": "Lab 4: Implement Custom Component",
@@ -32,6 +33,11 @@
     {
       "title": "Next Steps",
       "filename": "../../next/next.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

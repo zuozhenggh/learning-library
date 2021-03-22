@@ -12,6 +12,9 @@ As part of this process, you will:
 - **Import** your Custom Component (the `tgz` file you generated with `npm pack`)
 - **Create** two intents: `Greeting` and `ListTasks`
 
+Watch the video below for an overview of the Create Digital Assistant Skill lab
+[](youtube:NSM_z3fZx_A)
+
 We have to access to **Digital Assistant** section in the **Oracle Cloud Dashboard**.
 
 ![ODA Menu](./images/oda_lab5_1.png)
@@ -48,7 +51,7 @@ In this workshop, we're starting from scratch. So the first thing you'll do is *
 
 3. **Fill** the information like in the image and click **Create** button:
 
-    ![Create Skill](./images/skill_2.png)
+    ![Create Skill](./images/cc_import_1_new.png)
 
 ## **STEP 2**: Import the Custom Component
 
@@ -56,7 +59,7 @@ Import Custom Component is very simple.
 
 1. **Go** to the **Components** view ![Components](./images/components-icon.png) on the left menu. Select `+ Service`.
 
-    ![Create Skill](./images/cc_import_1_new.png)
+    ![Components View](./images/components-view.png)
 
     The web form to **upload** the file will **show up**.
     We will fill out all the information of this web form.
@@ -141,13 +144,13 @@ Time to **integrate** your **Custom Component with the Intent** `ListTasks` crea
 
 2. **Copy** the `YAML` content from <a href="./files/flow.yml" target="\_blank">here</a> and paste it into the canvas.
 
-    The **Flows** section should look like this one:
+     The **Flows** section should look like this one:
 
-    ![Flows 3](./images/flows_3_2.png)
+    ![Flows 3](./images/flows_3_3.png)
 
-3. **Make sure** the syntax is correct. **Click** on the `Validate` button. **Be sure** that you get the **correct validation message** on the top of the page as you can see on the image below:
+3. **Make sure** the syntax is correct. **Click** on the `Validate` button. You will get a warning message **We have identified some issues that might cause problems with the my tasks skill. Open the logger window to see more details.** on the top of the page as you can see on the image below. You can explore the warning on **View validation results** section to learn. We can proceed with next steps.
 
-    ![Flows 4](./images/flows_4_2.png)
+    ![Flows 4](./images/flows_4_3.png)
 
 4. Click **Train** button to run the **Machine Learning Algorithm**.
 
@@ -180,7 +183,7 @@ Time to **integrate** your **Custom Component with the Intent** `ListTasks` crea
     > The **result** should be something like this:
     > ![View Logs](./images/service_log.png)
 
-## It works
+## **STEP 5:** Add a new item and test
 
 To see how we **request** against the **database**, we can **add** a new item.
 
@@ -190,7 +193,7 @@ To see how we **request** against the **database**, we can **add** a new item.
 
 2. Select **TASKS** table on the left of the APEX page and **click** the tab **Data**, then click **Insert Row**:
 
-    ![Object Browser Data](./images/apex_object_data_inser_new.png)
+    ![Object Browser Data](./images/object_data_inser_new.png)
 
 3. **Add** a new **Text** like `New item!` and **click** **Create**:
 
@@ -198,7 +201,7 @@ To see how we **request** against the **database**, we can **add** a new item.
 
 4. **Confirm** the row has been created:
 
-    ![Object Browser Data](./images/apex_object_data_insert_row_created.png)
+    ![Object Browser Data](./images/object_data_insert_row_created.png)
 
 5. **Run** the chat again but before **reset** the previous **conversation**.
 
@@ -215,8 +218,3 @@ Continue to Next Steps for more information!
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Anoosha Pilli, March 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -119,7 +119,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     sqlplus / as sysdba
     </copy>
     ```
-    ![](./images/Upgrade_19c_1.png " ")
+    ![](./images/upgrade_19c_1.png " ")
 
 2.  Execute snap.sql which generates an AWR snapshot.  Please NOTE down the snapshot number (e.g.: 110)
 
@@ -128,12 +128,12 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     @/home/oracle/scripts/snap.sql
     </copy>
     ```
-    ![](./images/Upgrade_19c_2.png " ")
+    ![](./images/upgrade_19c_2.png " ")
 
 3. Don’t exit from the terminal or SSH session. Keep SQL*Plus open.
 
 4. On the remote desktop session, Double-Click on the *HammerDB* icon on the desktop to Launch it
-    ![](./images/Upgrade_19c_3.png " ")
+    ![](./images/upgrade_19c_3.png " ")
 
 ## **Step 3**: Load Driver Script and start Virtual Users
 
@@ -142,7 +142,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 3. Then Double-Click on the Load option.
 4. This will populate the script window with the driver script (ignore the error messages in the script window):
 5. Click on Virtual Users.  Now Double-Click on Create – you should see then 3 Virtual Users being started below the script window:
-   ![](./images/Upgrade_19c_4.png " ")
+   ![](./images/upgrade_19c_4.png " ")
 
 ## **Step 4**: Capture SQL, Load Test and Monitor
 
@@ -155,16 +155,16 @@ Please start the following script in your SQL*plus window. With this script you�
     @/home/oracle/scripts/capture_cc.sql
     </copy>
     ```
-    ![](./images/Upgrade_19c_5.png " ")
+    ![](./images/upgrade_19c_5.png " ")
 
 2. Start TPC-C Load Test and Monitor the progress by double clicking on the Run icon:
-    ![](./images/Upgrade_19c_6.png " ")
+    ![](./images/upgrade_19c_6.png " ")
 
 3. Click on the Graph / Transaction Counter icon in the top menu icon bar. You’ll see that the script window changes now waiting for data.
 
 4. It takes a few seconds, then you’ll see the performance charts and the transactions-per-minute (tpm). The load run usually takes 2-3 minutes until it completes:
-    ![](./images/Upgrade_19c_7.png " ")
-    ![](./images/Upgrade_19c_8.png " ")
+    ![](./images/upgrade_19c_7.png " ")
+    ![](./images/upgrade_19c_8.png " ")
 
 5. Note the Complete=1 per Virtual User underneath the graph.  We will use this load only to generate some statements.
 
@@ -182,7 +182,7 @@ Please WAIT until the capture_cc.sql scripts returns control back to you – DON
     @/home/oracle/scripts/snap.sql
     </copy>
     ```
-    ![](./images/Upgrade_19c_9.png " ")
+    ![](./images/upgrade_19c_9.png " ")
 
 ## Appendix 1: Additional Information on HammerDB
 

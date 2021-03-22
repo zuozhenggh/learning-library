@@ -188,7 +188,7 @@ This lab assumes you have:
     The database can be upgraded automatically.
     ```` -->
 
-## **STEP 3*: Upgrade
+## **STEP 3**: Upgrade
 
 1. When you initiate the upgrade with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 

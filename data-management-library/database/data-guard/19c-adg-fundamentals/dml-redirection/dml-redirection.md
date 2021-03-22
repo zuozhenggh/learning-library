@@ -32,10 +32,10 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Use Active Data Guard DML Redirection
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
-- Lab: Connect to the Database
-- Lab: Perform a switchover
-- Lab: Perform a failover
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab 3: Connect to the Database
+- Lab 4: Perform a switchover
+- Lab 5: Perform a failover
 
 ## **STEP 1**: Create a common user
 
@@ -53,7 +53,7 @@ So we will create a common user in the Database to learn about this feature.
     ````
     Select name, db_unique_name, database_role from v$database;
     ````
-    ![](./images/DML01.png)
+    ![](./images/dml01.png)
 
 2. Then use following query to create a common user in all the pdbs. 
 
@@ -72,7 +72,7 @@ So we will create a common user in the Database to learn about this feature.
     ````
     select username from dba_users where username like '%HOL%';
     ````
-    ![](./images/DML02.png)
+    ![](./images/dml02.png)
 
 
 
@@ -93,7 +93,7 @@ You can use following alter system command to enable this parameter.
 ````
 alter system set adg_redirect_dml=true scope=both;
 ````
-![](./images/DML03.png)
+![](./images/dml03.png)
 
 At this point, the databases are enabled for Active Data Guard DML redirection.
 
@@ -102,16 +102,16 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 
 1. To create a table in the common users's schema, it is necessary to create a connection as the common user. This can be done the same way as described in Lab 3. Instead of specifying the username SYS and role SYSDBA, you now specify C##HOLUSER and leave the role default. 
 
-    ![](./images/DML04.png)
+    ![](./images/dml04.png)
 
 2. Do the same for the connection to the standby database.
 
-    ![](./images/DML05.png)
+    ![](./images/dml05.png)
 
 3. Then log on to both sessions. One on standby, one on primary. 
     You could layout SQL Developer like this
 
-    ![](./images/DML06.png)
+    ![](./images/dml06.png)
 
 4. In the pane with the C##HOLUSER connection, first check if a DML table exists.
 
@@ -126,7 +126,7 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
     ````
 
 6. It is expected this one does not exist. 
-    ![](./images/DML07.png)
+    ![](./images/dml07.png)
 
 7. So on the primary create this table. 
 
@@ -136,7 +136,7 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 
 8. Describe this again on the standby with the `desc DMLTable` command.
 
-    ![](./images/DML08.png)
+    ![](./images/dml08.png)
 
 
 ## **STEP 4**: Use DML Redirection
@@ -149,11 +149,11 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 
 2. and of course do not forget to `commit;`.
 
-    ![](./images/DML09.png)
+    ![](./images/dml09.png)
 
 3. Then on the primary database, verify if the row is visible as well.
 
-    ![](./images/DML10.png)
+    ![](./images/dml10.png)
 
 
 You have now successfully used Active Data Guard DML Redirection. You may now [proceed to the next lab](#next).

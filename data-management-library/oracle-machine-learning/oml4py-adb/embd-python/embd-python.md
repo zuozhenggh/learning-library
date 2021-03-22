@@ -44,8 +44,7 @@ Step 6 to 15, you will work with Python Script Repository.
 
 1. Import the `oml` module.
     ```
-    %python
-    <copy>
+    <copy>%python
 
     import oml</copy>
     ```
@@ -375,29 +374,26 @@ This step shows how to create a function `RandomRedDots` that creates a simple D
 
     ```
     %python
-    <copy>
-
-    RandomRedDots = """def RandomRedDots (num_dots_1 = 100, num_dots_2 = 10):
+    <copy>RandomRedDots = """def RandomRedDots (num_dots_1 = 100, num_dots_2 = 10):
       import numpy as np
       import pandas as pd
       import matplotlib.pyplot as plt
 
       d = {'id': range(1,10), 'val': [x/100 for x in range(1,10)]}
       df = pd.DataFrame(data=d)
+
+      plt.figure(1)
       plt.scatter(range(0,num_dots_1), np.random.rand(100),c='r')
       plt.title("Random Red Dots")
-      plt.show()
+
+      plt.figure(2)  
       plt.scatter(range(0,num_dots_2), np.random.rand(10),c='r')
       plt.title("Random Red Dots")
-      plt.show()
       return df"""
-
-
+    
     oml.script.create("RandomRedDots", func=RandomRedDots, is_global=True, overwrite=True)
-
     print(RandomRedDots)</copy>
     ```
-
     ![](images/randomreddots_def.png)
 
 2. Use the `oml.do_eval` function to call the function `RandomRedDots` that you created in step 1:
@@ -405,7 +401,7 @@ This step shows how to create a function `RandomRedDots` that creates a simple D
     %python
     <copy>
 
-    res = oml.do_eval(func="RandomRedDots")
+    res = oml.do_eval(func="RandomRedDots", graphics = True)
     print("Type: ", type(res))
 
     res</copy>
@@ -443,7 +439,7 @@ Run the following script to define the `RandomRedDots2` function that generates 
     ```
     **Note:** When you call `RandomRedDots2` using embedded Python execution, you will get both plots as shown in the result.
 
-    ![](images/randomreddots.png)
+    ![](images/randomreddots_2.png)
 
 
 5. Use the `oml.do_eval` function to call the function `RandomRedDots2`. Here, you are specifying arguments to `do_eval` for `num_dots_1` and `num_dots_2`. These are specified as you would any other argument to `do_eval`. This applies to the other embedded Python functions as well.
@@ -451,13 +447,13 @@ Run the following script to define the `RandomRedDots2` function that generates 
     %python
     <copy>
 
-    res = oml.do_eval(func="RandomRedDots2", num_dots_1 = 600, num_dots_2 = 200)
-    type(res)</copy>
+    res = oml.do_eval(func="RandomRedDots2", graphics = True, num_dots_1 = 600, num_dots_2 = 200)
+    print("Type: ", type(res))
+
+    res</copy>
     ```
 
     ![](images/randomreddots2.png)
-
-    ![](images/randomreddots2a.png)
 
 
 ## **Step 6:** Use the Python Script Repository
@@ -475,6 +471,7 @@ OML4Py stores named user-defined functions called scripts in the script reposito
 To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
 1. To store a user-defined function in the script repository, it must be presented as a named string. Run the following script to define the function as a string, `build_lm_str`. **Note** the use of triple quotes to enable formatting.
+
     ```
     %python
     <copy>
@@ -549,6 +546,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     loaded_str = MyLM_function.get_source().read()
     type(loaded_str)</copy>
     ```
+    ![](images/type_loaded_str.png)
 5. Run the script `oml.script.create` to create a test function `MyTEST_function`:
 
     ```
@@ -576,6 +574,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     mod1 = oml.table_apply(data=IRIS, func = build_lm_str)
     mod1.coef_</copy>
     ```
+    ![](images/mod1_coef.png)
 
     Run the same function on `loaded_str`:
 
@@ -586,7 +585,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     mod2 = oml.table_apply(data=IRIS, func = loaded_str)
     mod2.coef_</copy>
     ```
-    ![](images/list_scripts.png)
+    ![](images/mod2_coef.png)
 
 ## **Step 8:** Store a function as a global  function
 
@@ -627,6 +626,7 @@ In this step, you will define and save a global function `build_lm3`. You will t
     print(res)
     print(res.coef_)</copy>
     ```
+    ![](images/res_coef.png)
 
 ## **Step 9:** Drop scripts from the Script Repository
 In this step, you will perform the following:
@@ -658,4 +658,4 @@ In this step, you will perform the following:
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021

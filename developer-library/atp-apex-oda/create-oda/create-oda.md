@@ -32,7 +32,10 @@ Watch our short video that explains Lab 3 - Create Oracle Digital Assistant, Lab
 
 [](youtube:kdvjXTMC-PI)
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 10 minutes
+
+Watch the video below for an overview of the Create Oracle Digital Assistant lab
+[](youtube:-5m8CB3J9fs)
 
 ### Objectives
 
@@ -103,7 +106,3 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Anoosha Pilli, March 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

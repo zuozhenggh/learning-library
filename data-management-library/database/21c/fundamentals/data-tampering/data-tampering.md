@@ -7,16 +7,32 @@ Estimated Lab Time: 15 minutes
 
 ### Objectives
 In this lab, you will:
-* Setup the environment
+<if type="dbcs">
+  * Setup the environment
+  * Examine data before tampering
+  * Examine data after tampering
+</if>
+<if type="atp">
+  * Login to SQL Developer Web on ADB
+  * Examine data before tampering
+  * Examine data after tampering
+</if>
+
 
 ### Prerequisites
-
+<if type="dbcs">
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
+</if>
+<if type="atp">
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Lab: Provision ADB
+* Lab: Setup
+</if>
 
-
+<if type="dbcs">
 ## **STEP 1:** Set up the environment
 
 1. Execute the `/home/oracle/labs/M104784GC10/setup_SH_tables.sh` shell script to create and load `SH.SALES` and `SH.TIMES` tables.
@@ -110,12 +126,38 @@ In this lab, you will:
     SQL>
 
     ```
+</if>
+<if type="atp">
+## **STEP  1**: Login to SQL Developer Web on ADB
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
+
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
+      ![](../set-operators/images/21c-home-adb.png " ")
+
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](../set-operators/images/21c-adb.png " ")
+
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](../set-operators/images/tools.png " ")
+
+5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+6.  Enter the username *admin* and password *WElcome123##*
+7.  Click on the **SQL** button.
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1.  Open up Cloud Shell below if it isn't already open
+2.  Connect to the OE user using sqlplus by entering the commands below.
+    ```
+	conn admin/WElcome123##@adb1_high
+	```
+</if>
 
 ## **STEP 2:** Examine data before tampering
 
 1. At the end of each month and fiscal period, for legislative reasons, there is an audit table that stores what was sold. Verify the amount sold at the end of fiscal year 1998.
 
-
+<if type="dbcs">
     ```
 
     $ <copy>sqlplus system@PDB21</copy>
@@ -125,63 +167,70 @@ In this lab, you will:
     ```  
     SQL> <copy>SET PAGES 100</copy>
 
-    SQL> <copy>SELECT amount_sold FROM sh.sales s
-              JOIN sh.times t ON (s.time_id = t.time_id)
-              WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
+    SQL> <copy>
+        SELECT amount_sold FROM sh.sales s
+        JOIN sh.times t ON (s.time_id = t.time_id)
+        WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
-          AMOUNT_SOLD
-
+    AMOUNT_SOLD
     -----------
-
           22.99
-
           44.99
-
           7.99
-
         149.99
-
     ...
-
           11.99
-
           44.99
-
           49.99
-
           11.99
-
           44.99
-
           27.99
-
-        149.99
-
+         149.99
           44.99
-
     12400 rows selected.
-
     SQL>
+    ```
+</if>
+<if type="atp">
 
     ```
+<copy>SELECT amount_sold FROM sh.sales s
+      JOIN sh.times t ON (s.time_id = t.time_id)
+      WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
+    ```
+</if>
 
 2. Before storing the data for auditing, note the `CHECKSUM` value. This will help you ensure that no one is tampering with old sales.
 
     ```
 
-      SQL> <copy>SELECT CHECKSUM(amount_sold) FROM sh.sales s
-                JOIN sh.times t ON (s.time_id = t.time_id)
-                WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
+      SQL> <copy>
+      SELECT CHECKSUM(amount_sold) FROM sh.sales s
+      JOIN sh.times t ON (s.time_id = t.time_id)
+      WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
       CHECKSUM(AMOUNT_SOLD)
-
       ---------------------
-
                     793409
 
       SQL>
 
     ```
+<if type="atp">
+      ![](./images/checksum.png " ")
+
+3. If you aren't logged into the cloud, log back in
+4. Open up Cloud Shell 
+5. Connect to the ADMIN user using sqlplus by entering the commands below.
+
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	  conn admin/WElcome123##@adb1_high
+    UPDATE sh.sales SET amount_sold = amount_sold*2 WHERE time_id='30-NOV-98';
+
+	  ```
+</if>
 
 3.  Meanwhile in another terminal session, called SH session, someone executes a batch that updates the amount sold.
 
@@ -272,9 +321,7 @@ In this lab, you will:
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
     CHECKSUM(AMOUNT_SOLD)
-
     ---------------------
-
                   835564
 
     SQL>
@@ -293,9 +340,7 @@ In this lab, you will:
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
     QUANTITY_SOLD
-
     -------------
-
                 1
 
     SQL>
@@ -312,9 +357,7 @@ In this lab, you will:
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
     CHECKSUM(QUANTITY_SOLD)
-
     -----------------------
-
                           0
 
     SQL>
@@ -334,9 +377,7 @@ In this lab, you will:
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
     CHECKSUM(DISTINCTQUANTITY_SOLD)
-
     -------------------------------
-
                             863352
 
     SQL>
