@@ -49,7 +49,7 @@ To create the primary database we need to follow a wizard.
     ![](./images/create-stby-db-04.png)
 
 6. Enter the Primary Database password.
-    Remember that it was set to **W3lc0m3\#W3lc0m3\#**
+    Remember that it was set to **WElcome123##**
     ![](./images/create-stby-db-05.png)
 
 7. Then click **Enable Data Guard**.

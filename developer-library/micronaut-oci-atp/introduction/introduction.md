@@ -21,7 +21,7 @@ and Oracle Cloud to connected to an Oracle Database.
 - Lab 1: Generate SSH Keys
 - Lab 2: Provision OCI Resources (OCI VM, VCN and Autonomous Database)
 - Lab 3: Setup your environment
-- Lab 4: Create and new Micronaut Application
+- Lab 4: Create a new Micronaut Application
 - Lab 5: Build an app with Micronaut and Micronaut Data
 - Lab 6: Building a Native Image with GraalVM
 - Lab 7: Deploy your app on an Oracle Cloud VM
