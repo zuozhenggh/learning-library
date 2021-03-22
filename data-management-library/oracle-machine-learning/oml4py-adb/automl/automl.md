@@ -20,7 +20,7 @@ In this lab, you will learn how to:
 
 ## **Step 1**: Import libraries supporting OML4Py
 
-1. Run the following script to import `oml` module, Pandas package, and `automl`module.
+1. Run the following script to import `oml` module, Pandas package, and `automl` module.
     ```
     <copy>%python
 
@@ -177,4 +177,4 @@ Congratulations! You have completed this workshop!
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
