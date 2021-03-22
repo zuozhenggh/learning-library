@@ -11,13 +11,13 @@ The primary database can be either a single-instance Oracle database or an Oracl
 
 ![](./images/primary.png)
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 45 Minutes
 
 ### Objectives
 -   Create the primary database
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
+- An Oracle LiveLabs or Paid Oracle Cloud account
 
 ## **STEP**: Create the primary database
 
