@@ -7,7 +7,7 @@ Oracle Data Guard provides a comprehensive set of services that create, maintain
 Oracle (Active) Data Guard capabilities in Oracle Database 19c further enhance its strategic objectiveof preventing data loss, p roviding high availability, eliminating risk, and increasing return on investment by enabling highly functional active disaster recovery systems that are simple to deploy and manage.
 It accomplishes this by providing the management, monitoring, and automation software infrastructure to create and maintain one or more synchronized standby databases that protect Oracle data from failures, data corruption, human error, and disasters
 
-This workshop focuses on **Creating Active Data Guard 19c in Oracle Cloud Infrastructure using DBCS**.
+This workshop focuses on **Creating Active Data Guard 19c in Oracle Cloud Infrastructure using DB Systems**.
 
 ![](./images/architecture-overview.png)
 
@@ -35,5 +35,5 @@ The following is intended to outline our general product direction. It is intend
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management
+- **Contributors** - Robert Pastijn, Kamryn Vinson
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
