@@ -1,84 +1,86 @@
 # Consolidate Workloads to Autonomous Database using MV2ADB
+
 ## Introduction
+
 Move to Autonomous Database (MV2ADB) is a tool, which migrates data from an "on premises" database to Autonomous Database Cloud utilizing Oracle Data Pump. Data Pump lets you Import your data into Autonomous Database using Data Pump Dump Files which are residing on Oracle Cloud Infrastructure Object Storage.
 The MV2ADB tool is able to automatically take a data pump export, push it to OCI Object Storage, then it automatically imports it into the Autonomous Database using Data Pump in one command.
 *Note: For using mv2adb for migration from source DB to ADB, the source DB should be at lower version than Autonomous Database.*
 
 
 ![](./screenshots/consolidation.jpg)
-
+***This picture says highly restricted... EDIT***
 
 ### Objectives
-As a **root** user
+
+As a **root** user, you will: 
 1. Establish connectivity from source database instances to Target instance.
 2. Install and configure MV2ADB tool on source databases.
 3. Run the MV2ADB config script to migrate the databases from Source to Target.
 
-### Required Artifacts
+### Prerequisites
+
+Required Artifacts: 
 - A pre-provisioned dedicated autonomous database instance.
 - Two pre-provisioned Source databases, one 19c and one 11g.
 - ADB Wallet downloaded on your local machine.
 - A pre-generated Auth Token from the console.
 
 
-## STEP 1: Downloading ADB wallet to your local machine
+## **STEP 1**: Downloading ADB Wallet to Your Local Machine
+
+***Probably add a few steps here to be consistent with other WS***
+1. Navigate to your Autonomous Database and click on **DB Connection**.
+
+  ![](./screenshots/download_wallet_1.png)
+
+2. Click **Download Wallet**.
+
+  ![](./screenshots/download_wallet_2.png)
+
+3. Create a password for the wallet, you will need to remember this for later.
+
+  ![](./screenshots/download_wallet_3.png)
+
+4. Click **Download**.
+
+  ![](./screenshots/download_wallet_4.png)
 
 
-- Navigate to your Autonomous Database and click on “DB Connection”.
+## **STEP 2**: Generating an Auth Token and Creating a Bucket
 
-![](./screenshots/download_wallet_1.png)
+1. Click on your **Profile** in the top right, and then click your **Username**.
 
-- Click "Download Wallet"
+  ![](./screenshots/authtoken_1.png)
 
-![](./screenshots/download_wallet_2.png)
+2. Click on **Auth Token**, and click **Generate**.
 
-- Create a password for the wallet.
+  ![](./screenshots/authtoken_2.png)
+  *Note: Copy your Auth Token to a notepad, as you cannot see it once you close the window.*
 
-![](./screenshots/download_wallet_3.png)
-
--  Click "Download"
-
-![](./screenshots/download_wallet_4.png)
+  ***ADD PIC HERE FOR THE TOKEN GENERATION***
 
 
-## STEP 2: Generating an Auth Token and creating a bucket
-##### Generating an Auth Token
-- Click on your profile, then click your username
+3.  Click on the **Menu** in top left and select **Object Storage**.
 
-![](./screenshots/authtoken_1.png)
+  ![](./screenshots/object_storage.png)
 
-- Click on Auth Token, and click Generate
+4. Verify you are in the correct **Compartment** and click **Create Bucket**.
 
-![](./screenshots/authtoken_2.png)
-*Note: Copy your Auth Token to a notepad, as you cannot see it once you close the window.*
+  ![](./screenshots/create_bucket.png)
 
+5. Enter a **name** for your bucket, then hit **Create Bucket** again.
 
-##### Creating a Bucket
-
-- Login to your tenancy.
-- Click on the menu in top left.
-- Select Object Storage.
-
-![](./screenshots/object_storage.png)
-
-- Verify you are in the right compartment.
-- Click "Create Bucket".
-
-![](./screenshots/create_bucket.png)
-
-- Enter a name for your bucket, then hit Create Bucket again.
-
-![](./screenshots/final_create_button.png)
-*Take note of your region, bucket name, and tenancy name for later.*
+  ![](./screenshots/final_create_button.png)
+  *Take note of your region, bucket name, and tenancy name for later.*
 
 
-## STEP 3: Installing Instance Client on the Source database instances
+## **STEP 3**: Installing Instance Client on the Source Database Instances
 
-- Navigate [here](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) to find the links for the most recent instant client.
-- Copy the file links of the following Instant Client packages by right clicking and selecting "Copy Link Address". Paste each one on your preferred text editor.
-  - Basic Package (ZIP)
-  - SQL*Plus Package (ZIP)
-  - Tools Package (ZIP)
+1. Navigate [here](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) to find the links for the most recent instant client.
+  * Copy the file links of the following Instant Client packages by right clicking and selecting "Copy Link Address". Paste each one on your preferred text editor.
+    1. Basic Package (ZIP)
+    2. SQL*Plus Package (ZIP)
+    3. Tools Package (ZIP)
 
   ![](./screenshots/copy_link_wget.png)
 
@@ -126,7 +128,7 @@ ls -lrta
 
 
 
-## STEP 4: Transferring the ADB wallet on your local machine to both Source database instances
+## **STEP 4**: Transferring the ADB wallet on your local machine to both Source database instances
 - Using your preferred sftp client, connect to both Source database instances as opc user.
 - Navigate to the /tmp/ folder on both Source database instances via the sftp client
 - Upload the ADB wallet from your local machine to both Source database instances.
@@ -141,7 +143,7 @@ unzip Wallet_T19.zip
 ![](./screenshots/wallet_unzip.png)
 
 
-## STEP 5: Verifying both Source database instances can connect to the ADB database
+## **STEP 5**: Verifying both Source database instances can connect to the ADB database
 - View the connect string via the tnsnames.ora from the ADB wallet on both Source database instances.
 ```
 cd /root/instantclient_19_8/network/admin
@@ -173,7 +175,7 @@ cd /root/instantclient_19_8
 
 
 
-## STEP 6: Download and Install MV2ADB on both Source database instances.
+## **STEP 6**: Download and Install MV2ADB on both Source database instances.
 - On your local machine, download the MV2ADB rpm file [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4). Platform specific rpm can be downloaded under the History Tab.
 
   ![](./screenshots/MOS_history.png)
@@ -199,7 +201,7 @@ ls -lrta /opt/mv2adb
 
 
 
-## STEP 7: Encrypt passwords of both Source database instances, Target database, and Auth Token.
+## **STEP 7**: Encrypt passwords of both Source database instances, Target database, and Auth Token.
 - Encrypt the following passwords using the “mv2adb encpass” command, and save the values to a safe location (Eg: Notepad). Run the command for each password you would like to encrypt.
   - Both Source database SYS passwords.
   - ADMIN password of the Target database.
@@ -214,7 +216,7 @@ cd /opt/mv2adb
 
 
 
-## STEP 8: Configure the MV2ADB Script on both source database instances
+## **STEP 8**: Configure the MV2ADB Script on both source database instances
 - Backup the existing configuration file on both Source database instances.
 ```
 cd /opt/mv2adb/conf/
@@ -340,7 +342,7 @@ show con_name
 ![](./screenshots/comp_config.png)
 
 
-## STEP 9: Run the MV2ADB migration script on both Source database instances
+## **STEP 9**: Run the MV2ADB migration script on both Source database instances
 The migration script will export from your source databases, then import into your Autonomous database using data pump. For more information, refer to the official steps from my Oracle support (MOS) [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4).
 
 - As root user on both source database instances, run the script in AUTO mode.
@@ -352,7 +354,7 @@ cd /opt/mv2adb
 ![](./screenshots/autorun_1.png)
 
 
-## STEP 10: Validate the Data Migration
+## **STEP 10**: Validate the Data Migration
 - On both source database instances, run the mv2adb report.
 ```
 cd /opt/mv2adb
