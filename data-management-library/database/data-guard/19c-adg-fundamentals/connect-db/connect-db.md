@@ -15,7 +15,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 
 When you first opened SQL Developer, the screen looks like this:
 
-![](./images/DB_connection_02.png)
+![](./images/DB-connection-02.png)
 
 ## Create the Connection to the primary ##
 
@@ -27,11 +27,11 @@ To get that information, navigate to the Overview
 -> DB System Details
 -> Database Details
 
-![](./images/DB_connection_01.png)
+![](./images/DB-connection-01.png)
 
 There you click the **DB Connection** button and the Database Connection information window opens.
 
-![](./images/DB_connection_03.png)
+![](./images/DB-connection-03.png)
 
 Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
 
@@ -45,7 +45,7 @@ To get that information, navigate to the Overview
 Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
 The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
 
-![](./images/DB_connection_04.png)
+![](./images/DB-connection-04.png)
 
 Then we go back to SQL Developer.
 
@@ -60,11 +60,11 @@ To add the connection, use following information:
 * Hostname: The Public IP Address you found in the step above
 * Service name: The service name you found in the step above (the part after the / (slash)).
 
-![](./images/DB_connection_05.png)
+![](./images/DB-connection-05.png)
 
 Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click thet **Connect** button.
 
-![](./images/DB_connection_06.png)
+![](./images/DB-connection-06.png)
 
 
 ## Create the Connection to the Standby ##
@@ -77,11 +77,11 @@ To get that information, navigate to the Overview
 -> DB System Details
 -> Database Details
 
-![](./images/DB_connection_07.png)
+![](./images/DB-connection-07.png)
 
 There you click the **DB Connection** button and the Database Connection information window opens.
 
-![](./images/DB_connection_08.png)
+![](./images/DB-connection-08.png)
 
 Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
 
@@ -95,7 +95,7 @@ To get that information, navigate to the Overview
 Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
 The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
 
-![](./images/DB_connection_09.png)
+![](./images/DB-connection-09.png)
 
 Then we go back to SQL Developer.
 
@@ -110,11 +110,11 @@ To add the connection, use following information:
 * Hostname: The Public IP Address you found in the step above
 * Service name: The service name you found in the step above (the part after the / (slash)).
 
-![](./images/DB_connection_10.png)
+![](./images/DB-connection-10.png)
 
 Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click thet **Connect** button.
 
-![](./images/DB_connection_11.png)
+![](./images/DB-connection-11.png)
 
 ## Summary
-You have now successfully created a database connection to the primary and the standby database.
+You have now successfully created a database connection to the primary and the standby database.-
