@@ -23,15 +23,15 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 
 ## **Step 1**: Login to Oracle Cloud Infrastructure 
 
-Let's prepare our work directory. We will use Cloud Shell in OCI web console, which is simple and sophisticated cloud terminal for the most of your need. It is located right top corner of OCI web console
+1. Let's prepare our work directory. We will use Cloud Shell in OCI web console, which is simple and sophisticated cloud terminal for the most of your need. It is located right top corner of OCI web console
 
-	![](./images/0.Prep_0.PNG)
+	![](/images/0.Prep_0.PNG)
 
 ## **Step 2**: Generate SSH keys 
 
-Once cloud shell environment is ready, issue below commands:
+1. Once cloud shell environment is ready, issue below commands:
 
-```
+	```
 	<copy>
 	ssh-keygen -t rsa -N "" -b 2048 -f ~/.ssh/oci
 	openssl genrsa -out ~/.ssh/oci_api_key.pem 2048
@@ -39,10 +39,11 @@ Once cloud shell environment is ready, issue below commands:
 	openssl rsa -pubout -outform DER -in ~/.ssh/oci_api_key.pem | openssl md5 -c | awk '{print $2}' > ~/.ssh/oci_api_key.fingerprint
 	cat ~/.ssh/oci_api_key_public.pem
 	</copy>
-```
+	```
+
 and copy your public pem file content.
 
-	![](./images/0.Prep_1.PNG)
+	![](/images/0.Prep_1.PNG)
 
 ## **Step 3**: Add public API keys to your user
 
@@ -58,16 +59,14 @@ and copy your public pem file content.
 
 1. In your notepad, modify following lines:
 
-```
-	<copy>
+	```
 	export TF_VAR_compartment_ocid="your-tenancy-value-goes-here"
 	export TF_VAR_fingerprint="your-fingerprint-value-goes-here"
 	export TF_VAR_private_key_path="~/.ssh/oci_api_key.pem"
 	export TF_VAR_region="your-region-value-goes-here"
 	export TF_VAR_tenancy_ocid="your-tenancy-value-goes-here"
 	export TF_VAR_user_ocid="your-user-value-goes-here"
-	</copy>
-```
+	```
 
 _**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID.
 
@@ -79,7 +78,7 @@ _**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use you
 
 _**NOTE:** Editing a file uses **vi** editor, if you never used it before here is little instruction. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit.*
 
-	![](./images/0.Prep_4.PNG)
+	![](/images/0.Prep_4.PNG)
 
 3. Once you've set these values **exit** from cloud-shell terminal by clicking on exit "X" button on right top corner, then again re-open cloud-shell terminal.
 

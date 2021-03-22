@@ -12,7 +12,7 @@ The first lab is the most important lab of all, in fact in this step we will cre
 
 *Estimated lab time*: 10 minutes
 
-![](/files/architecture.png)
+	![](/images/architecture.png)
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 ## **Step 1**: Clone lab repository
 
-Let's begin our lab. First we'll make a copy of lab repository and go to cloned directory. In your cloud-shell web terminal, issue below commands.
+1. Let's begin our lab. First we'll make a copy of lab repository and go to cloned directory. In your cloud-shell web terminal, issue below commands.
 
 	```
 	git clone https://github.com/hol-workshop/migrate_to_atp.git
@@ -57,9 +57,9 @@ Let's begin our lab. First we'll make a copy of lab repository and go to cloned 
 
 	**`vi terraform.tfvars`**
 
-_**NOTE:**This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*
+_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*
 
-Good practice is, always keep it in your side notepad,
+3. Good practice is, always keep it in your side notepad,
 
 ## **Step 3**: Terraform 
 
@@ -77,7 +77,7 @@ Good practice is, always keep it in your side notepad,
 	terraform apply --auto-approve
 	``` 
 
-Make a copy of your output results in your notepad also for later use.
+3. Make a copy of your output results in your notepad also for later use.
 
 	![](/images/1.git_1.PNG)
 

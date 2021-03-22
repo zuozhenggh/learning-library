@@ -149,13 +149,14 @@ Let's begin to create the first extract process, which is continuous replication
 
 	```register extract exttar```
 
-![](/images/gg_pg_exttar_0.png)
+	![](/images/gg_pg_exttar_0.png)
 
 2. Then edit extract configuration with **`edit params exttar`**. 
 
 	![](/images/gg_pg_exttar_1.png)
 
 3. Insert below as your exttar parameter:
+
 	```
 	EXTRACT exttar
 	SOURCEDB PostgreSQL USERID postgres PASSWORD postgres
@@ -166,6 +167,7 @@ Let's begin to create the first extract process, which is continuous replication
 	TABLE public."PaymentData";
 	TABLE public."ParkingData";
 	```
+	
 and save!
 
 _**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit and press **:wq** keys then **hit enter** for save & quit._
@@ -243,7 +245,6 @@ _**NOTE**:Editing uses **vi** editor, so you have to press **i** for editing the
 5. Confirm everything is correct then start this extract by issuing below command:
  
 	```start extdmp```
-
 
 	![](/images/gg_pg_extdmp_3.png)
 
