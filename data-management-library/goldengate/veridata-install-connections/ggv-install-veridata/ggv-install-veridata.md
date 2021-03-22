@@ -187,7 +187,7 @@ To deploy agents:
 ## Acknowledgements
 
 * **Authors:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate Documentation
+    + Anuradha Chepuri, Principal User Assitance Developer, Oracle GoldenGate Documentation
 * **Reviewed by:**
       + Sukin Varghese, Senior Member of Technical staff, Database Testing
       + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
