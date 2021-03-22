@@ -22,7 +22,7 @@ In this final step of workshop, we will configure replication process in Microse
 
 	![](/images/oggadmin.png)
 
-Good practice is to keep it in your notepad. 
+2. Good practice is to keep it in your notepad. 
 
 ## **Step 3**: Login to Microservices web console
 
@@ -60,9 +60,9 @@ This is something you'd need if you'd want continuous replication and migration.
 
 ## **Step 7**: Update password and test connection
 
-1. Provide the password ` GG##lab12345 ` and verify it. This is your ggadmin password, which we provided in lab 3. 
+1. Provide the password `GG##lab12345` and verify it. This is your ggadmin password, which we provided in lab 3. 
 
-**NOTE: if you specified different password, please use that password**
+_**NOTE**: if you specified different password, please use that password
 
 	![](/images/micro_ggadmin_2.png)
 
@@ -149,7 +149,7 @@ Congratulations! You have completed this workshop!
 
 You successfully migrated Postgresql database to Autonomous Database in Oracle Cloud Infrastructure.
 
-### Summary
+## Summary
 
 Here is summary of resources which was created by Terraform script and used in our workshop.
 
@@ -169,6 +169,18 @@ Here is summary of resources which was created by Terraform script and used in o
 - Goldengate non-oracle deployment 
 - Goldengate Microservices deployment
 
+## **Rate this Workshop**
+
+Don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](/images/rate-this-workshop.png " ")
 
 ## Acknowledgements
 

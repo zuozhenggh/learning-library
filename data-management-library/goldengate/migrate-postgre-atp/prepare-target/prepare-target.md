@@ -29,7 +29,7 @@ We need to create our target tables for our GG migration and enable GGADMIN for 
 
 ## **Step 2**: Create target tables
 
-1. Let's create our target tables for migration. Please download target table creation script **[from here](./files/CreateTables.sql)**.  Open this file link and choose **RAW** then save it as CreateTables.sql file. Make sure to save these with correct extension **.sql** not txt!
+1. Let's create our target tables for migration. Please download target table creation script **[from here](./files/CreateTables.sql)**. Make sure to save these with correct extension **.sql** not txt!
 
 2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop in the worksheet area. Then run create statements.
 

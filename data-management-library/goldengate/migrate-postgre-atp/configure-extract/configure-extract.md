@@ -292,13 +292,11 @@ However, we are not yet loaded our static data directly from source objects to t
 
 _**NOTE**:Editing uses **vi** editor, so you have to press **i** for editing the file, when you are done press **:wq** then **hit enter** for save & quit._
 
-4. After that add your initial load process:
+4. After that add your initial load process. Extract process extracts a current set of static data directly from the source objects in preparation for an initial load to another database. SOURCEISTABLE type does not use checkpoints.
 
 	```
 	add extract init, sourceistable
 	```
-	
-Extract process extracts a current set of static data directly from the source objects in preparation for an initial load to another database. SOURCEISTABLE type does not use checkpoints. 
 
 	![](/images/gg_pg_initload_2.png)
 
@@ -326,18 +324,6 @@ It is good way to investigate your Goldengate process result. I can see some goo
 
 **This concludes this lab. You may now [proceed to the last lab](#next).**
 
-## **Rate this Workshop**
-
-Don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-    ![](/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-    ![](/images/rate-this-workshop.png " ")
 
 ## Acknowledgements
 
