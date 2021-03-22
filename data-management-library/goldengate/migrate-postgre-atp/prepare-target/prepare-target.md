@@ -4,6 +4,8 @@
 
 We so far created all of necessary resources using terraform in OCI. It is now time to prepare Target Database, ATP. 
 
+*Estimated lab time*: 10 minutes
+
 ### Objectives
 
 We need to create our target tables for our GG migration and enable GGADMIN for replication to Autonomous database.

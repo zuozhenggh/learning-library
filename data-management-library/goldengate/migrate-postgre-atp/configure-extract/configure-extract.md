@@ -4,6 +4,8 @@
 
 With Oracle GoldenGate Classic for PosgreSQL, you can perform initial loads and capture transactional data from supported PostgreSQL versions and replicate the data to a PostgreSQL database or other supported Oracle GoldenGate targets, such as an Oracle Database. 
 
+*Estimated lab time*: 30 minutes
+
 ### Objectives
 
 We had created source database and pre-loaded with some sample data in it during lab-1 using terraform script. 

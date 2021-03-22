@@ -6,8 +6,7 @@ Welcome to migrate to autonomous database workshop.
 
 In this workshop we will migrate a postgresql database to an Autonomous database in Oracle Cloud Infrastructure. We will use Oracle Goldengate for migration steps, and all of our services will be hosted in OCI for this workshop purpose. This workshop has 4 steps. 
 
-*Estimated workshop Time*: 1 hour
-
+*Estimated workshop Time*: 1.5 hour
 
 ### About GoldenGate for PostgreSQL
 
@@ -27,7 +26,6 @@ By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replicatio
 Terraform is an open source tool that allows you to programmatically manage, version, and persist infrastructure through the "infrastructure-as-code" model. Terraform configurations codify your infrastructure in declarative files that contain the steps required to provision your infrastructure and maintain its state. You can share these files among team members, treat them as code, edit, review, and version them.
 
 Terraform uses providers to interface between the Terraform engine and the supported cloud platform. The Oracle Cloud Infrastructure (OCI) Terraform provider is a component that connects Terraform to the OCI services that you want to manage. 
-
 
 ### Objectives
 
@@ -55,7 +53,6 @@ All of these mentioned resources are going to to be deployed in Oracle Cloud inf
 * The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor, or can be obtained through **Getting Started** steps.
 * A Cloud tenancy where you have the resources available  to provision what mentioned in Architecture Overview.
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
-
 
 **This concludes introduction. You may now [proceed to next step](#next).**
 

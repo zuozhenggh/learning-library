@@ -10,6 +10,8 @@ The first lab is the most important lab of all, in fact in this step we will cre
 - Goldengate Microservices deployment
 - Target Autonomous database
 
+*Estimated lab time*: 10 minutes
+
 ![](/files/architecture.png)
 
 ### Prerequisites
