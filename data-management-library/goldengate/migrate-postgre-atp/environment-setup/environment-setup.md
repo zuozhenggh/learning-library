@@ -1,4 +1,4 @@
-# Lab 1: Environment Setup
+# Environment Setup
 
 ## Introduction
 
@@ -14,7 +14,7 @@ The first lab is the most important lab of all, in fact in this step we will cre
 
 ### Prerequisites
 
-- You have successfully finished **Prerequisites** lab
+* You have successfully finished **Prerequisites** lab
 
 ### Objectives
 
@@ -30,52 +30,54 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 Let's begin our lab. First we'll make a copy of lab repository and go to cloned directory. In your cloud-shell web terminal, issue below commands.
 
-```
-git clone https://github.com/hol-workshop/migrate_to_atp.git
+	```
+	git clone https://github.com/hol-workshop/migrate_to_atp.git
 
-cd migrate_to_atp
-```
+	cd migrate_to_atp
+	```
 
-![](/images/1.Git.PNG)
+	![](/images/1.Git.PNG)
 
 ## **Step 2**: Create terraform.tfvars file
 
-Now we need to create a file to help terraform understanding your environment. Let's modify following parameters in your notepad and copy it.
+1. Now we need to create a file to help terraform understanding your environment. Let's modify following parameters in your notepad and copy it.
 
-```
-tenancy_ocid  = "your_tenancy_value_here"
-ssh_public_key  = "~/.ssh/oci.pub"
-region = "your-region-value here"
-compartment_ocid = "your-tenancy-value_here"
-```
+	```
+	<copy>
+	tenancy_ocid  = "your_tenancy_value_here"
+	ssh_public_key  = "~/.ssh/oci.pub"
+	region = "your-region-value here"
+	compartment_ocid = "your-tenancy-value_here"
+	</copy>
+	```
 
-Enter below command in your current working `migrate_to_atp` directory:
+2. Enter below command in your current working `migrate_to_atp` directory:
 
-**`vi terraform.tfvars`**
+	**`vi terraform.tfvars`**
 
 _**NOTE:**This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*
 
 Good practice is, always keep it in your side notepad,
 
-## **Step 3**: Let's terraform 
+## **Step 3**: Terraform 
 
-Now, time to play terraform. Run below command to download necessary terraform files from OCI provider.
+1. It is time to initialize terraform. Run below command to download necessary terraform files from OCI provider.
 
-```
-terraform init
-```
+	```
+	terraform init
+	```
 
-Plan and apply steps shouldn't ask any input from you. If it asks you to provide such as compartment_ocid, then again check previous files.
+2. Plan and apply steps shouldn't ask any input from you. If it asks you to provide such as compartment_ocid, then again check previous files.
 
-```
-terraform plan
+	```
+	terraform plan
 
-terraform apply --auto-approve
-``` 
+	terraform apply --auto-approve
+	``` 
 
 Make a copy of your output results in your notepad also for later use.
 
-![](/images/1.git_1.PNG)
+	![](/images/1.git_1.PNG)
 
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
@@ -84,4 +86,4 @@ Make a copy of your output results in your notepad also for later use.
 
 * **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
 * **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
-* **Last Updated By/Date** - 3/22/2021
+* **Last Updated By/Date** - Bilegt Bat-Ochir 3/22/2021
