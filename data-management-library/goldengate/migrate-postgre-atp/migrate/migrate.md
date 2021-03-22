@@ -12,7 +12,7 @@ In this final step of workshop, we will configure replication process in Microse
 
 ### Prerequisites
 
-* This lab assumes that you completed all preceding labs, and your deployments are created.
+* This lab assumes that you completed all preceding labs, and ready to migrate to ATP.
 
 ## **Step 1**:	Access to Goldengate Microservices instance
 

@@ -20,7 +20,7 @@ In this lab 3, we will configure extract processes in Oracle Goldengate classic 
 
 ### Prerequisites
 
-* This lab assumes that you completed all preceding labs, and ready to migrate.
+* This lab assumes that you completed all preceding labs.
 
 ## **Step 1**: Connect to your Microservices instance and configure Firewall
 
