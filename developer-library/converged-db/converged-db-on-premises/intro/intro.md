@@ -12,6 +12,9 @@ You don't need to manage and maintain multiple systems or worry about having to 
 ### Objectives
 In this workshop, you will gain first-hand experience of using data types beyond relational data - JSON, XML, Spatial and Graph.
 
+**Workshop Architecture**
+![](images/Architecture_converged.png " ")
+
 Once you complete your setup, the next four labs in this workshop cover these individual data types, and the final lab consists of multi-model examples:
 
 - Lab : NODE.JS

@@ -32,6 +32,9 @@ Watch our short video that explains Lab 1 - Create Autonomous Database and Lab 2
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for an overview of the Create Autonomous Database lab
+[](youtube:tNBDb47sNmc)
+
 ### Objectives
 
 In this lab, you will:
