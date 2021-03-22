@@ -12,8 +12,6 @@ The first lab is the most important lab of all, in fact in this step we will cre
 
 *Estimated lab time*: 10 minutes
 
-	![](/images/architecture.png)
-
 ### Prerequisites
 
 * You have successfully finished **Prerequisites** lab
@@ -27,6 +25,8 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 2. Virtual Machine for Source Database - VM.StandardE2.1
 3. Virtual Machine for Goldengate Postgresql - VM.Standard2.1  
 4. Virtual Machine for Goldengate Microservices - VM.Standard2.1
+
+	![](/images/architecture.png)
 
 ## **Step 1**: Clone lab repository
 
@@ -57,7 +57,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 	**`vi terraform.tfvars`**
 
-_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*
+	_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*_
 
 3. Good practice is, always keep it in your side notepad,
 

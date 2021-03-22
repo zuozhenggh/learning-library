@@ -42,7 +42,6 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 	```
 
 and copy your public pem file content.
-
 	![](/images/0.Prep_1.PNG)
 
 ## **Step 3**: Add public API keys to your user
@@ -60,23 +59,24 @@ and copy your public pem file content.
 1. In your notepad, modify following lines:
 
 	```
+	<copy>
 	export TF_VAR_compartment_ocid="your-tenancy-value-goes-here"
 	export TF_VAR_fingerprint="your-fingerprint-value-goes-here"
 	export TF_VAR_private_key_path="~/.ssh/oci_api_key.pem"
 	export TF_VAR_region="your-region-value-goes-here"
 	export TF_VAR_tenancy_ocid="your-tenancy-value-goes-here"
 	export TF_VAR_user_ocid="your-user-value-goes-here"
+	</copy>
 	```
 
-_**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID.
+_**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
 
 2. After you modified above using your values, we need to add these lines to your ".bash_profile". Go to cloud-shell terminal and issue:
 
 	```
 	vi ~/.bash_profile
 	```
-
-_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is little instruction. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit.*
+_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is little instruction. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit._
 
 	![](/images/0.Prep_4.PNG)
 
