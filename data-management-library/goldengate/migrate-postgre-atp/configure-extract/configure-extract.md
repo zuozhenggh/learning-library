@@ -140,10 +140,9 @@ The following commands are used to enable supplemental logging at table level.
 
 ## **Step 9**: Registering a EXTTAR
 
-	Oracle GoldenGate needs to register the extract with the database replication slot, before adding extract process in Goldengate. 
-	_**Ensure that you are connected to SourceDB using the DBLOGIN command.**_
+Oracle GoldenGate needs to register the extract with the database replication slot, before adding extract process in Goldengate. _**Ensure that you are connected to SourceDB using the DBLOGIN command.**_
 
-	Let's begin to create the first extract process, which is continuous replication in usual migration and replication project scenario.
+Let's begin to create the first extract process, which is continuous replication in usual migration and replication project scenario.
 
 
 1. First register your extract: 
@@ -199,10 +198,10 @@ The following commands are used to enable supplemental logging at table level.
 
 ## **Step 10**: Registering a EXTDMP
 
-	Oracle GoldenGate needs to register the extract with the database replication slot, before adding extract process in Goldengate. 
-	_**Ensure that you are connected to SourceDB using the DBLOGIN command.**_
+Oracle GoldenGate needs to register the extract with the database replication slot, before adding extract process in Goldengate. 
+_**Ensure that you are connected to SourceDB using the DBLOGIN command.**_
 
-	Now changes are being captured from source database and we need to send that to GG microservices, in order to apply at target database. Therefore we need another process, which acts as extract but sends existing trail files to GG microservices.
+Now changes are being captured from source database and we need to send that to GG microservices, in order to apply at target database. Therefore we need another process, which acts as extract but sends existing trail files to GG microservices.
 
 1. Again, register your extdmp extract:
 
@@ -214,7 +213,7 @@ The following commands are used to enable supplemental logging at table level.
 
 	![](/images/gg_pg_extdmp_1.png)
 
-3. Insert below as your extdmp parameter, and **make sure** you must change _**ip_address**_ with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
+3. Insert below as your extdmp parameter, and **make sure** you must change _**ip address**_ with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
 
 	```
 	EXTRACT extdmp
@@ -259,9 +258,8 @@ The following commands are used to enable supplemental logging at table level.
 
 ## **Step 11**: Registering a INITLOAD
 
-	Up to now, we created 2 extract processes which are now capturing changes and shipping to Goldengate Microservices instance.
-
-	However, we are not yet loaded our static data directly from source objects to target database. This specific process is called Initial-load. Steps are similar to the previous extract processes
+Up to now, we created 2 extract processes which are now capturing changes and shipping to Goldengate Microservices instance.
+However, we are not yet loaded our static data directly from source objects to target database. This specific process is called Initial-load. Steps are similar to the previous extract processes
 
 1. Again register your initload 
 
@@ -275,7 +273,7 @@ The following commands are used to enable supplemental logging at table level.
 
 	![](/images/gg_pg_initload_1.png)
 
-3. Insert below as your initial load parameter, and **make sure** you must change _**ip_address**_ with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
+3. Insert below as your initial load parameter, and **make sure** you must change _**ip address**_ with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
 
 	```
 	EXTRACT init

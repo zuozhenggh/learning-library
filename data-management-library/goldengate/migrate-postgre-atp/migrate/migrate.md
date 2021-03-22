@@ -44,7 +44,7 @@ In this final step of workshop, we will configure replication process in Microse
 
 	![](/images/gg_oggadmin_1.png)
 
-This is something you'd need if you'd want continuous replication and migration. 
+	This is something you'd need if you'd want continuous replication and migration. 
 
 ## **Step 5**: Open Target Administration server
 
