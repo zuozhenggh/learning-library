@@ -1,4 +1,4 @@
-# Setup database tables and AQ messaging
+# Setup ATP Connectivity, Data, and Messaging
 
 ## Introduction
 
