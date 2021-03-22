@@ -54,13 +54,13 @@ There should have **5** tables created after script execution.
 
 	```
 	select * from v$parameter where name = 'enable_goldengate_replication';
-	``` 
+	```
 
 3. If value is FALSE, then modify the parameter,this is only applicable to older ATP version.:
 
 	```
 	alter system set enable_goldengate_replication = true scope=both;
-	``` 
+	```
 
 	![](/images/sql_dev_4.png)
 

@@ -69,14 +69,15 @@ and copy your public pem file content.
 	</copy>
 	```
 
-_**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
+	_**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
 
 2. After you modified above using your values, we need to add these lines to your ".bash_profile". Go to cloud-shell terminal and issue:
 
 	```
 	vi ~/.bash_profile
 	```
-_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is little instruction. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit._
+
+	_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is little instruction. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit._
 
 	![](/images/0.Prep_4.PNG)
 

@@ -60,10 +60,8 @@ This is something you'd need if you'd want continuous replication and migration.
 
 ## **Step 7**: Update password and test connection
 
-1. Provide the password `GG##lab12345` and verify it. This is your ggadmin password, which we provided in lab 3. 
+1. Provide the password `GG##lab12345` and verify it. This is your ggadmin password, which we provided in lab 3.
 
-_**NOTE**: if you specified different password, please use that password_
-	
 	![](/images/micro_ggadmin_2.png)
 
 2. After that click on **Log in** database icon.

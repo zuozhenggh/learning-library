@@ -75,7 +75,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 	terraform plan
 
 	terraform apply --auto-approve
-	``` 
+	```
 
 3. Make a copy of your output results in your notepad also for later use.
 

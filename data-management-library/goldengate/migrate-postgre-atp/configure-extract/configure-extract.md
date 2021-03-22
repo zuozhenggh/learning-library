@@ -90,7 +90,7 @@ In this lab 3, we will configure extract processes in Oracle Goldengate classic 
 	```
 	PORT 7809
 	```
-_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit and press **:wq** keys then **hit enter** for save & quit._
+	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit and press **:wq** keys then **hit enter** for save & quit._
 
 ## **Step 6**: Start Goldengate Manager
 
@@ -123,14 +123,11 @@ The following commands are used to enable supplemental logging at table level.
 	```
 	<copy>
 	add trandata public."Countries"
-
 	add trandata public."Cities"
-
 	add trandata public."Parkings"
-
 	add trandata public."ParkingData"
-
 	add trandata public."PaymentData"
+	
 	</copy>
 	```
 
@@ -155,7 +152,7 @@ Let's begin to create the first extract process, which is continuous replication
 
 	![](/images/gg_pg_exttar_1.png)
 
-3. Insert below as your exttar parameter:
+3. Insert below as your exttar parameter and save:
 
 	```
 	EXTRACT exttar
@@ -167,8 +164,7 @@ Let's begin to create the first extract process, which is continuous replication
 	TABLE public."PaymentData";
 	TABLE public."ParkingData";
 	```
-	
-and save!
+
 
 _**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit and press **:wq** keys then **hit enter** for save & quit._
 
@@ -243,7 +239,7 @@ _**NOTE**:Editing uses **vi** editor, so you have to press **i** for editing the
 	![](/images/gg_pg_extdmp_2.png)
 
 5. Confirm everything is correct then start this extract by issuing below command:
- 
+
 	```start extdmp```
 
 	![](/images/gg_pg_extdmp_3.png)
@@ -253,7 +249,7 @@ _**NOTE**:Editing uses **vi** editor, so you have to press **i** for editing the
 	![](/images/gg_pg_extdmp.png)
 
 EXTTAR process is capturing your changes at your source database, however it is going nowhere rather than being kept at Goldengate instance.
- 
+
 EXTDMP process is then pumping captured trail files to Goldengate Microservices instance. We will check if this is working properly in Lab-4.
 These two processes were preparation for change synchronization.
 
