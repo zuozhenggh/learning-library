@@ -82,7 +82,7 @@ You will also clone a GitHub repository.
 
   ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
 
-  After a couple of minutes, the image should have been successfully built and pushed all the images into the OCIR repository.
+  After a couple of minutes, the image should have been successfully built and pushed into the OCIR repository.
 
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
