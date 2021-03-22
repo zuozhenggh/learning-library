@@ -23,9 +23,8 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/7-open-cloud-shell.png " ")
 
-## **STEP 2**: Download workshop source code
-1. To work with application code, you need to download a GitHub repository using
-    the following curl and unzip command. The workshop assumes this is done from your root directory.
+## **STEP 2**: Make a clone of the workshop source code
+1. To work with application code, you need to make a clone from the GitHub repository using the following command. The workshop assumes this is done from your root directory.
 
     ```
     <copy>cd ~ ; git clone https://github.com/oracle/microservices-datadriven.git</copy>

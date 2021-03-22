@@ -20,10 +20,10 @@ You will also clone a GitHub repository.
 
 ## **STEP 1**: Set values for workshop in the environment
 
-1. Run `./addAndSourcePropertiesInBashrc.sh`
+1. Run `source addAndSourcePropertiesInBashrc.sh`
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION; ./addAndSourcePropertiesInBashrc.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
     ```
 
 ## **STEP 2**: Build and push the Docker images
