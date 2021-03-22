@@ -323,6 +323,19 @@ It is good way to investigate your Goldengate process result. I can see some goo
 
 **This concludes this lab. You may now [proceed to the last lab](#next).**
 
+## **Rate this Workshop**
+
+Don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](/images/rate-this-workshop.png " ")
+
 ## Acknowledgements
 
 * **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
