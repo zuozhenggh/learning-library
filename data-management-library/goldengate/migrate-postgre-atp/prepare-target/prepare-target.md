@@ -39,7 +39,7 @@ We need to create our target tables for our GG migration and enable GGADMIN for 
 
 	![](/images/sql_dev_2.png)
 
-There should have **5** tables created after script execution.
+	There should have **5** tables created after script execution.
 
 
 ## **Step 3**: Enable GGADMIN 
@@ -68,7 +68,7 @@ There should have **5** tables created after script execution.
 
 	![](/images/sql_dev_4.png)
 
-We successfully enabled GGADMIN in our target Autonomous Database and created target table structures. 
+	We successfully enabled GGADMIN in our target Autonomous Database and created target table structures. 
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
