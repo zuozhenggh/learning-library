@@ -47,7 +47,7 @@ alter user ggadmin identified by "GG##lab12345" account unlock;
 
 ![](/files/sql_dev_3.png)
 
-Let's check whether the parameter enable_goldengate_replicaton is set to true. 
+Let's check whether the parameter "enable_goldengate_replicaton" is set to true. 
 ```
 select * from v$parameter where name = 'enable_goldengate_replication';
 ``` 
@@ -57,7 +57,7 @@ If value is FALSE, then modify the parameter:
 ```
 alter system set enable_goldengate_replication = true scope=both;
 ``` 
-to enable_goldengate_replicaton, check results. This is only applicable to older Autonomous database version.
+to "enable_goldengate_replicaton", check results. This is only applicable to older Autonomous database version.
 
 ![](/files/sql_dev_4.png)
 
