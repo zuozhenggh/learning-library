@@ -18,6 +18,10 @@ In this lab 3, we will configure extract processes in Oracle Goldengate classic 
 
 	![](/images/general.gif)
 
+### Prerequisites
+
+* This lab assumes that you completed all preceding labs, and ready to migrate.
+
 ## **Step 1**: Connect to your Microservices instance and configure Firewall
 
 1. We need to enable network access to Microservices from our Classic deployment. Without adding ports to Microservices' firewall would cause you failure in next steps. Let's make console connection to microservice, copy ip address of `OGG_Microservices_Public_ip` from your note and connect using:

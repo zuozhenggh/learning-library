@@ -7,6 +7,12 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 
 *Estimated lab time*: 10 minutes
 
+### Objectives
+
+-   Create SSH keys in cloud-shell environment
+-   Configure API keys for your cloud user
+-	Modify bash profile to interact with terraform 
+
 ### Assumptions
 
 * The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor, or can be obtained through **Getting Started** steps.
@@ -14,12 +20,6 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 * Your cloud account user must have required IAM (Identity and Access Management) policy or admin user.
 * Successfully logged in to your cloud tenancy, if not please [login](https://www.oracle.com/cloud/sign-in.html) to your cloud account.
-
-### Objectives
-
--   Create SSH keys in cloud-shell environment
--   Configure API keys for your cloud user
--	Modify bash profile to interact with terraform 
 
 ## **Step 1**: Login to Oracle Cloud Infrastructure 
 

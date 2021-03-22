@@ -45,7 +45,7 @@ All of these mentioned resources are going to to be deployed in Oracle Cloud inf
 ### Prerequisites
 
 * The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor, or can be obtained through **Getting Started** steps.
-* A Cloud tenancy where you have the resources available  to provision what mentioned in Architecture Overview.
+* A Cloud tenancy where you have the resources available to provision what mentioned in Architecture Overview.
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 
 **This concludes introduction. You may now [proceed to next step](#next).**

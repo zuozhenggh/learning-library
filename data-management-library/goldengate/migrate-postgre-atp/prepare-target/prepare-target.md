@@ -10,6 +10,10 @@ We so far created all of necessary resources using terraform in OCI. It is now t
 
 We need to create our target tables for our GG migration and enable GGADMIN for replication to Autonomous database.
 
+### Prerequisites
+
+* This lab assumes that you completed all preceding labs.
+
 ## **Step 1**: Open SQL developer web 
 
 1. Go to top left hamburger icon, navigate to **Autonomous Transaction Processing** and click on **HOL Target ATP** database.

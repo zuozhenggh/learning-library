@@ -12,10 +12,6 @@ The first lab is the most important lab of all, in fact in this step we will cre
 
 *Estimated lab time*: 10 minutes
 
-### Prerequisites
-
-* You have successfully finished **Prerequisites** lab
-
 ### Objectives
 
 In this first lab, we will prepare our work environment and create our lab resources using Terraform script.
@@ -27,6 +23,10 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 4. Virtual Machine for Goldengate Microservices - VM.Standard2.1
 
 	![](/images/architecture.png)
+
+### Prerequisites
+
+* Successfully completed **Prerequisites** lab and ready to continue
 
 ## **Step 1**: Clone lab repository
 

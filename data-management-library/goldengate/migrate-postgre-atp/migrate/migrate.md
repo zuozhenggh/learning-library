@@ -10,6 +10,10 @@ Final lab of this workshop will guide you how to setup simple migration to ATP u
 
 In this final step of workshop, we will configure replication process in Microservices and apply captured changes from source database to our target Autonomous database. This is final lab.
 
+### Prerequisites
+
+* This lab assumes that you completed all preceding labs, and your deployments are created.
+
 ## **Step 1**:	Access to Goldengate Microservices instance
 
 1. After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make console connection to microservice, copy ip address of `OGG_Microservices_Public_ip` from your note and connect using:
