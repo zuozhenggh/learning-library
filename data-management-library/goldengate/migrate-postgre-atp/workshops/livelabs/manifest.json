@@ -10,32 +10,32 @@
     {
       "title": "Introduction",
       "description": "Introduction",
-      "filename": "../../labs/introduction.md"
+      "filename": "../../introduction/introduction.md"
     },
     {
       "title": "Prerequisites",
       "description": "Prepare your work environment",
-      "filename": "../../labs/prerequisites.md"
+      "filename": "../../prerequisites/prerequisites.md"
     },
     {
       "title": "Lab 1: Environment Setup",
       "description": "How to create the workshop environment and connect to it using clone github in cloud-shell",
-      "filename": "../../labs/lab1.md"
+      "filename": "../../environment-setup/environment-setup.md"
     },
     {
       "title": "Lab 2: Prepare Target ATP",
       "description": "How to provision the workshop environment and connect to it",
-      "filename": "../../labs/lab2.md"
+      "filename": "../../prepare-target/prepare-target.md"
     },
     {
       "title": "Lab 3: Configure extract processes",
       "description": "Create and configure extract processes at source",
-      "filename": "../../labs/lab3.md"
+      "filename": "../../configure-extract/configure-extract.md"
     },
     {
       "title": "Lab 4: Migrate to ATP",
       "description": "Migrate your source database tables to target ATP",
-      "filename": "../../labs/lab4.md"
+      "filename": "../../migrate/migrate.md"
     }
   ]
 }

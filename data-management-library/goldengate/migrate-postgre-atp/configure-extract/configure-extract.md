@@ -1,4 +1,4 @@
-# LAB 3
+# Lab 3: Configure extract processes
 
 ## Introduction
 

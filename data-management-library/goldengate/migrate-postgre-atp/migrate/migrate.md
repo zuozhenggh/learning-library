@@ -1,4 +1,4 @@
-# LAB 4
+# Lab 4: Migrate to ATP
 
 ## Introduction
 
