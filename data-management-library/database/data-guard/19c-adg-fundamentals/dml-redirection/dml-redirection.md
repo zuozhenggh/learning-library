@@ -32,10 +32,10 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Use Active Data Guard DML Redirection
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
-- Lab: Connect to the Database
-- Lab: Perform a switchover
-- Lab: Perform a failover
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab 3: Connect to the Database
+- Lab 4: Perform a switchover
+- Lab 5: Perform a failover
 
 ## **STEP 1**: Create a common user
 
