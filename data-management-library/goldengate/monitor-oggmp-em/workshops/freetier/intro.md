@@ -32,9 +32,10 @@ Use these links to get more information about Oracle GoldenGate Enterprise Manag
 ## Acknowledgements
 
 * **Author:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+    + Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate User Assistance
 * **Reviewed by:**
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
+    + Vetrivel Saravanan, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
 
 * **Last Updated By/Date:** Anuradha Chepuri, April 2021

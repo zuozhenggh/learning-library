@@ -16,7 +16,7 @@ To open the ports:
 1. Start an instance of Oracle GoldenGate (Microservices) Marketplace.
 2. In this instance, run the following command to expose the Service Manager, Administration Server, Receiver Server,  Distribution Server, and Performace Metrics Server ports:
     <pre>sudo firewall-cmd --list-ports
-    sudo firewall-cmd --add-port=9000/tcp</pre>
+    sudo firewall-cmd --add-port=*<OGG Process port number>*/tcp</pre>
 
 **STEP 2:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
 After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate Instances on the OCI UI:
