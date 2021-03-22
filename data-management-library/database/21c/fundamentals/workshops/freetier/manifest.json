@@ -64,11 +64,13 @@
         },
         {
             "title": "Lab: Measuring Asymmetry in Data",
-            "filename": "../../skewness/skewness.md"
+            "filename": "../../skewness/skewness.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Measuring Tailedness of Data",
-            "filename": "../../kurtosis/kurtosis.md"
+            "filename": "../../kurtosis/kurtosis.md",
+            "type": "dbcs"
         },
         {
             "title": "Performance and HA",
@@ -80,7 +82,8 @@
         },
         {
             "title": "Lab: SecureFile LOBs",
-            "filename": "../../securefile-lobs/securefile-lobs.md"
+            "filename": "../../securefile-lobs/securefile-lobs.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Automatic In-Memory",

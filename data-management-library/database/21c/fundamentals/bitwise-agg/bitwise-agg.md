@@ -27,7 +27,7 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **STEP 1:** Test the bitwise AND function
+## **STEP 1:** Login to database
 
 1. Login to the instance using ssh
 2. Switch to the oracle user
@@ -48,6 +48,8 @@ In this lab, you will:
 <if type="atp">
 ## **STEP  1**: Login to SQL Developer Web on ADB
 
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
+
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](../set-operators/images/21c-home-adb.png " ")
 
@@ -60,10 +62,23 @@ In this lab, you will:
 
 5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
 6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *oe*.  You will be logging in to the admin schema
-8.  Enter the username *oe* and password *WElcome123##*
+7.  Enter the username *hr* and password *WElcome123##*
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the HR user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn hr/WElcome123##@adb1_high
+	```
 </if>
-4.  A bitwise AND is a binary operation that takes two equal-length binary representations and performs the logical AND operation on each pair of the corresponding bits. If both bits in the compared position are 1, the bit in the resulting binary representation is 1, otherwise, the result is 0. Apply the `BIT_AND_AGG` function on two numbers. The bit pattern for the values used in the examples below are 01 for 1, 10 for 2, and 11 for 3.
+
+## **STEP 2:** Test the bitwise AND function
+
+1.  A bitwise AND is a binary operation that takes two equal-length binary representations and performs the logical AND operation on each pair of the corresponding bits. If both bits in the compared position are 1, the bit in the resulting binary representation is 1, otherwise, the result is 0. Apply the `BIT_AND_AGG` function on two numbers. The bit pattern for the values used in the examples below are 01 for 1, 10 for 2, and 11 for 3.
 
     ```
     SQL> <copy>
@@ -111,11 +126,20 @@ A bitwise XOR is a binary operation that takes two bit patterns of equal length 
     ---------------
                   1
 
-    SQL> <copy>EXIT</copy>
-    $
-
+    SQL> 
     ```
 
+<if type="dbcs">
+2.  Exit SQL*Plus
+
+    ```
+    <copy>EXIT</copy>
+    ```
+</if> 
+<if type="atp">
+2.  Click on the down arrow in the upper left corner of the SQL Developer Web, click **Sign Out**
+</if>
+    
 You may now [proceed to the next lab](#next).
 
 

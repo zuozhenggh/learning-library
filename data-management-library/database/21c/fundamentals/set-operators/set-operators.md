@@ -93,9 +93,13 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 </if>
 
 ## **STEP  1B**: Login to ADB using SQL Plus
-1.  Open up Cloud Shell below if it isn't already open
-2.  Connect to the OE user using sqlplus by entering the commands below.
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the OE user using sqlplus by entering the commands below.
+   
     ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
 	conn oe/WElcome123##@adb1_high
 	```
 

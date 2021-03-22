@@ -5,6 +5,13 @@ This lab shows how to use the `KURTOSIS_POP` and `KURTOSIS_SAMP` aggregate funct
 
 Estimated Lab Time: 10 minutes
 
+### About Kurtosis
+When you approach the distribution of data for the first time, it’s often helpful to pull out summary statistics to understand the domain of the data.
+
+Mean and variance are certainly helpful for understanding the scope of a dataset, but to understand the shape of the data we often turn to generating the histogram and manually evaluating the curve of the distribution.
+
+Two additional summary statistics, skew and kurtosis, are a good next step for evaluating the shape of a distribution. ​We will explore skewness in this lab.
+
 ### Objectives
 In this lab, you will:
 <if type="dbcs">
@@ -82,6 +89,7 @@ In this lab, you will:
 </if>
 <if type="atp">
 ## **STEP  1**: Login to SQL Developer Web on ADB
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](../set-operators/images/21c-home-adb.png " ")
@@ -96,7 +104,18 @@ In this lab, you will:
 5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
 6.  Click on the **SQL** button.
 7.  Change the word *admin* in the URL to *report*.  You will be logging in to the admin schema
-8.  Enter the username *report* and password *WElcome123##*
+8.  Enter the username *sh* and password *WElcome123##*
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the SH user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn sh/WElcome123##@adb1_high
+	```
 </if>
 
 ## **STEP 2:** Examine the kurtosis of the distribution
@@ -383,6 +402,8 @@ In this lab, you will:
 
 You may now [proceed to the next lab](#next).
 
+## References 
+[Skewness Kurtosis Blog](https://www.sisense.com/blog/understanding-outliers-with-skew-and-kurtosis/)
 
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
