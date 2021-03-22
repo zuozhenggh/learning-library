@@ -49,11 +49,11 @@ region = "your-region-value here"
 compartment_ocid = "your-tenancy-value_here"
 ```
 
-Enter below command in your current working migrate_to_atp directory:
+Enter below command in your current working `migrate_to_atp` directory:
 
 **`vi terraform.tfvars`**
 
-*This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*
+_**NOTE:**This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*
 
 Good practice is, always keep it in your side notepad,
 

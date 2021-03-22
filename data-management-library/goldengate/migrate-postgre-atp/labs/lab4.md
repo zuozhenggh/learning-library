@@ -10,7 +10,7 @@ In this final step of workshop, we will configure replication process in Microse
 
 ## **Step 1**:	Access to Goldengate Microservices instance
 
-After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make console connection to microservice, copy ip address of "OGG_Microservices_Public_ip" from your note and connect using:
+After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make console connection to microservice, copy ip address of `OGG_Microservices_Public_ip` from your note and connect using:
 
 **`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
@@ -24,7 +24,7 @@ Good practice is to keep it in your notepad.
 
 ## **Step 3**: Login to Microservices web console
 
-Now, open your web browser and point to "https://your_microservices_ip_address". Provide oggadmin in username and password which you copied, then log in.
+Now, open your web browser and point to `https://your_microservices_ip_address`. Provide oggadmin in username and password which you copied, then log in.
 
 ![](/files/gg_oggadmin.png)
 
