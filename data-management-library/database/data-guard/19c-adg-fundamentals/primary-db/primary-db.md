@@ -11,13 +11,13 @@ The primary database can be either a single-instance Oracle database or an Oracl
 
 ![](./images/primary.png)
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 45 Minutes
 
 ### Objectives
 -   Create the primary database
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
+- An Oracle LiveLabs or Paid Oracle Cloud account
 
 ## **STEP**: Create the primary database
 
@@ -83,7 +83,7 @@ Use the following information to enter in the wizard.
 
     ![](./images/create-dbcs-prim-07.png)
 
-14. As the password use: **W3lc0m3\#W3lc0m3\#**
+14. As the password use: **WElcome123##**
 
     ![](./images/create-dbcs-prim-08.png)
 
@@ -110,5 +110,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management
+- **Contributors** - Robert Pastijn, Kamryn Vinson
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
