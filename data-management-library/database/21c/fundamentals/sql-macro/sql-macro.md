@@ -14,8 +14,10 @@ Estimated Lab Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
-<if type="21c">* Login to SQL Developer Web as the HR user
-* Run queries using SQL Macros</if>
+<if type="atp">
+* Login to SQL Developer Web as the HR user
+* Run queries using SQL Macros
+* </if>
 <if type="dbcs">* Run queries on HR data using SQL Macros</if>
 
 ### Prerequisites
@@ -25,7 +27,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 </if>
-<if type="21c">
+<if type="atp">
 * An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
 * Lab: Provision ADB
 * Lab: Setup
@@ -134,26 +136,24 @@ In this lab, you will:
     SQL>
 
     ```
-</if>    
-<if type="21c">
-## **STEP  1**: Login to SQL Developer Web as HR User on ADB
-
-1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
-      ![](../set-operators/images/21c-home-adb.png " ")
-
-2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
-3.  Click on the **Display Name** to go to your ADB main page.
-      ![](../set-operators/images/21c-adb.png " ")
-
-4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
-      ![](../set-operators/images/tools.png " ")
-
-5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
-6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
-8.  Enter the username *hr* and password *WElcome123##*
+</if>  
+  
+<if type="atp">
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the HR user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn hr/WElcome123##@adb1_high
+	```
 </if>
-9. Use the SQM to query the table and display the employees names doubled.
+
+## **STEP  2**: Explore SQL Macros
+
+1. Use the SQM to query the table and display the employees names doubled.
 
     ```
 
@@ -239,8 +239,22 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Use SQL Macro as a table expression
+## **STEP 3:** Use SQL Macro as a table expression
 
+1.  Login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
+      ![](../set-operators/images/21c-home-adb.png " ")
+
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](../set-operators/images/21c-adb.png " ")
+
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](../set-operators/images/tools.png " ")
+
+5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+6.  Click on the **SQL** button.
+7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
+8.  Enter the username *hr* and password *WElcome123##*
 1. The first usage of an SQL macro as a table expression shows how to use the SQM to implement a polymorphic view.
 
 
@@ -387,6 +401,7 @@ In this lab, you will:
 
     ```
 
+<if type="dbcs">
 11. Re-execute the query using the SQM.
 
     ```
@@ -413,7 +428,6 @@ In this lab, you will:
     SQL>
 
     ```
-
 12. Use the `USER_PROCEDURES` view to display the new values of the `SQL_MACRO` column.
 
     ```
@@ -432,11 +446,48 @@ In this lab, you will:
     UPDATE_JOB_HISTORY                    TRIGGER
 
     7 rows selected.
+    ```
+13. Exit SQL*Plus.
 
+    ```
     SQL> <copy>EXIT</copy>
     $
 
     ```
+</if>
+<if type="atp">
+11. Re-execute the query using the SQM.
+
+    ```
+    SQL> <copy>SELECT * FROM budget_per_job('ST_CLERK') WHERE department_id = 50;</copy>
+
+    DEPARTMENT_ID     BUDGET
+    ------------- ----------
+               50      55700
+    SQL>
+
+    ```
+12. Use the `USER_PROCEDURES` view to display the new values of the `SQL_MACRO` column.
+
+    ```
+    SQL> <copy>SELECT object_name, sql_macro, object_type FROM user_procedures;</copy>
+
+    OBJECT_NAME                    SQL_MA OBJECT_TYPE
+    ------------------------------ ------ -------------
+    CONCAT_SELF                    SCALAR FUNCTION
+    SECURE_DML                     NULL   PROCEDURE
+    ADD_JOB_HISTORY                NULL   PROCEDURE
+    BUDGET                         TABLE  FUNCTION
+    BUDGET_PER_JOB                 TABLE  FUNCTION
+    SECURE_EMPLOYEES                      TRIGGER
+    UPDATE_JOB_HISTORY                    TRIGGER
+
+    7 rows selected.
+    ```
+</if>
+
+
+
 
 You may now [proceed to the next lab](#next).
 
