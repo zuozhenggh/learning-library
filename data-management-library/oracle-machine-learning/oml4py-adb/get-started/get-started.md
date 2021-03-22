@@ -77,7 +77,7 @@ An administrator creates a new user account and user credentials for Oracle Mach
     ![Image alt text](images/create_option.png)
 7. In the Create User page, enter the following details to create the user:
     ![Image alt text](images/create_user_page.png)
-    - **Username:** Enter a username for the account. Using the username, the user will log in to an Oracle Machine Learning instance.
+    - **Username:** Enter a username for the account (for example: `omluser`). Using the username, the user will log in to an Oracle Machine Learning instance.
     - **First Name:** Enter the first name of the user.
     - **Last Name:**  Enter the first name of the user.
     - **Email Address:** Enter the email ID of the user.

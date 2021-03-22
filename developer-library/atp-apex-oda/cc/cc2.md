@@ -20,6 +20,9 @@ You can package related **Custom Components** together.
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for an overview of the Implement Custom Component lab
+[](youtube:O60fHyRYzcg)
+
 ### Objectives
 
 In this lab, you will:
@@ -229,15 +232,15 @@ Ready to create your **Custom Component** scaffolding.
 
 6. In the below command, replace the `namespace` and `bucket-name` with the namespace and the bucket name details copied earlier.
 
-    Run the command in `tasks-cc` folder in Oracle cloud shell to upload the `task-cc-1.0.0.tgz` file to your bucket in object storage.
+    Run the command in `tasks-cc` folder in Oracle cloud shell to upload the `tasks-cc-1.0.0.tgz` file to your bucket in object storage.
 
     ```
-    <copy>oci os object put -ns namespace -bn bucket-name --file task-cc-1.0.0.tgz</copy>
+    <copy>oci os object put -ns namespace -bn bucket-name --file tasks-cc-1.0.0.tgz</copy>
     ```
 
     ![Upload object](./images/upload-object.png)
 
-7. Navigate back to your bucket to view the uploaded object - `task-cc-1.0.0.tgz`.
+7. Navigate back to your bucket to view the uploaded object - `tasks-cc-1.0.0.tgz`.
 
     Click on ellipse on the right corner of the object and click **Download** to download the object on to your machine.
 
@@ -250,8 +253,3 @@ You may now [proceed to the next lab](#next).
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Anoosha Pilli, March 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -27,20 +27,20 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
    
 5.  Locate the **OCID** (Oracle Cloud ID) you will need that in a few minutes. 
 
+      ![](./images/locate-ocid.png " ")
+
 6.  Use your autonomous\_database\_ocid to create the Oracle Wallet. You will be setting the wallet password to the same value as the ADB admin password for ease of use: *WElcome123##* Note: This is not a recommended practice and just used for the purposes of this lab. 
 7.  Copy the command below and paste it into Cloud Shell.  Do not hit enter yet.  
 
       ````
       <copy>
       cd ~
-      oci db autonomous-database generate-wallet --password WElcome123## --file 21c-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
+      oci db autonomous-database generate-wallet --password WElcome123## --file 21c-wallet.zip --autonomous-database-id  </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
       ````
 
       ![](./images/wallet.png " ")
 
 8.  Press copy to copy the OCID from Step 5 and fill in the autonomous database ocid that is listed in the output section of your terraform.  Click enter
-   
-
 
 9.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
 
@@ -64,7 +64,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
    
       ````
       <copy>
-       oci iam auth-token create --description db21c --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
+       oci iam auth-token create --description adb1 --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
       ````
       ![](./images/token.png " ")
 
@@ -81,17 +81,18 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       <copy>
       cd $HOME
       pwd
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G-3O894R-xUdJ9uf-keoHUZ3YTaNWIuhPry9sRKFmvEhhf503MbRXAxlA3-bSMxQ/n/idma9bvgdlpn/b/db21c-adb/o/load-21c.sh
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G-3O894R-xUdJ9uf-keoHUZ3YTaNWIuhPry9sRKFmvEhhf503MbRXAxlA3-bSMxQ/n/idma9bvgdlpn/b/adb1-adb/o/load-21c.sh
       chmod +x load-21c.sh
       </copy>
       ````
 
-3.   Run the load script passing in the arguments from your notepad.  two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  Your ATP name should be the name of your ADB instance.  In the example below we used *db21c*.  This load script takes approximately 3 minutes to run. 
-   
+3.   Run the load script passing in the arguments from your notepad.  two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  Your ATP name should be the name of your ADB instance.  In the example below we used *adb1*.  This load script takes approximately 3 minutes to run.  *Note : If you use a different ADB name, replace adb1 with your adb instance name*
+
       ``` 
       <copy> 
-      ./load-21c.sh WElcome123## db21c 2>&1 > load-21c.out</copy>
+      ./load-21c.sh WElcome123## adb1 2>&1 > load-21c.out</copy>
       ```
+
       ![](./images/load21c-1.png " ")
 
 4.  As the script is running, you will note failures on the DBA role. The DBA role is not available in Autonomous Database, the DWROLE is used instead. This error is expected. 
@@ -101,7 +102,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ````
       <copy>
-      sqlplus admin/WElcome123##@db21c_high
+      sqlplus admin/WElcome123##@adb1_high
       select count(*) from oe.order_items;
       </copy>
       ````
