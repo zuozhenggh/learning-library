@@ -110,5 +110,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management
+- **Contributors** - Robert Pastijn, Kamryn Vinson
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021
