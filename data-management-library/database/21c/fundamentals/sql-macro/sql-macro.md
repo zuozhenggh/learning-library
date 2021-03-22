@@ -240,7 +240,7 @@ In this lab, you will:
     ```
 
 ## **STEP 3:** Use SQL Macro as a table expression
-
+<if type="atp">
 1.  Login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](../set-operators/images/21c-home-adb.png " ")
 
@@ -255,6 +255,7 @@ In this lab, you will:
 6.  Click on the **SQL** button.
 7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
 8.  Enter the username *hr* and password *WElcome123##*
+</if>
 1. The first usage of an SQL macro as a table expression shows how to use the SQM to implement a polymorphic view.
 
 
