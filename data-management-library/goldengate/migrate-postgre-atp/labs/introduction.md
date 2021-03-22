@@ -4,7 +4,7 @@ Welcome to migrate to autonomous database lab.
 
 In this lab we will migrate a postgresql database to an Autonomous database in Oracle Cloud Infrastructure. We will use Oracle Goldengate for migration steps, and all of our services will be hosted in OCI for this lab purpose. This lab has 4 steps. 
 
-*Estimated Lab Time*: 1.5 hours
+*Estimated Lab Time*: 1 hour
 
 ### Objectives
 
@@ -26,6 +26,8 @@ In this workshop you will :
 ![](/files/architecture.png)
 
 All of these mentioned resources are going to to be deployed in Oracle Cloud infrastructure using Terraform. It is not necessary to have prior knowledge of Terraform scripting, all you need to do is follow every steps exactly as it described.
+
+
 
 ## About GoldenGate for PostgreSQL
 
@@ -52,8 +54,8 @@ Terraform uses providers to interface between the Terraform engine and the suppo
 ## Learn More
 
 * [Terraform OCI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraform.htm)
-* [Oracle Goldengate]()
-* [Oracle Autonomous Database]()
+* [Oracle Goldengate](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/using-oracle-goldengate-microservices-oracle-cloud-marketplace.html)
+* [Oracle Autonomous Database](https://docs.oracle.com/solutions/?q=autonomous&cType=reference-architectures&sort=date-desc&lang=en)
 
 ## Acknowledgements
 
