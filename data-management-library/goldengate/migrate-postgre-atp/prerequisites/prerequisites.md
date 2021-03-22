@@ -54,7 +54,7 @@ and copy your public pem file content.
 
 	![](/images/0.Prep_3.PNG)
 
-## **Step 4**: Modify bash_profile in your cloud shell
+## **Step 4**: Modify bash profile in your cloud shell
 
 1. In your notepad, modify following lines:
 
