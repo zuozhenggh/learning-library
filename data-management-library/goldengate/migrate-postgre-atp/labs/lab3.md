@@ -17,10 +17,10 @@ In this lab 3, we will configure extract processes in Oracle Goldengate classic 
 
 ![](/files/general.gif)
 
-## **Step 1**: Connect to your Microservices instance
+## **Step 1**: Connect to your Microservices instance and configure Firewall
 
 We need to enable network access to Microservices from our Classic deployment. Without adding ports to Microservices' firewall would cause you failure in next steps.
-Let's make console connection to microservice, copy ip address of OGG_Microservices_Public_ip and connect using:
+Let's make console connection to microservice, copy ip address of "OGG_Microservices_Public_ip" from your note and connect using:
 
 **`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
@@ -46,7 +46,7 @@ Exit from this instance with command **`exit`** and go back to your cloud-shell.
 
 ## **Step 2**: Access to Goldengate classic instance
 
-Oracle GoldenGate Classic for Non-Oracle (PostgreSQL) allows you to quickly access the GoldenGate Service Command Interface (GGCSI) and is preconfigured with a running Manager process. Copy ip address of OGG_PGSQL_Public_ip and connect using:
+Oracle GoldenGate Classic for Non-Oracle (PostgreSQL) allows you to quickly access the GoldenGate Service Command Interface (GGCSI) and is preconfigured with a running Manager process. Copy ip address of "OGG_PGSQL_Public_ip" from your note and connect using:
 
 **`ssh opc@your_ogg_pgsql_ip_address -i ~/.ssh/oci`**
 
@@ -214,7 +214,7 @@ Now changes are being captured from source database and we need to send that to 
 
 ![](/files/gg_pg_extdmp_1.png)
 
-Insert below as your extdmp parameter, but **make sure** you change **ip_address** with your GG Microservice's IP Address!
+Insert below as your extdmp parameter, but **make sure** you change **ip_address** with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
 
 ```
 EXTRACT extdmp
@@ -276,7 +276,7 @@ However, we are not yet loaded our static data directly from source objects to t
 
 ![](/files/gg_pg_initload_1.png)
 
-Insert below as your initial load parameter, but **make sure** you change **ip_address** with your GG Microservice's IP Address!
+Insert below as your initial load parameter, but **make sure** you change **ip_address** with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
 
 ```
 EXTRACT init

@@ -14,7 +14,7 @@ The first lab is the most important lab of all, in fact in this step we will cre
 
 ### Prerequisites
 
-- You have successfully finished ** Prerequisites ** lab
+- You have successfully finished **Prerequisites** lab
 
 ## Objectives
 
@@ -28,7 +28,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 ## **Step 1**: Clone lab repository
 
-Let's begin our lab. First we'll make a copy of lab repository and go to cloned directory.
+Let's begin our lab. First we'll make a copy of lab repository and go to cloned directory. In your cloud-shell web terminal, issue below commands.
 
 ```
 git clone https://github.com/hol-workshop/migrate_to_atp.git

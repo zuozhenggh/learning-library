@@ -10,7 +10,7 @@ In this final step of workshop, we will configure replication process in Microse
 
 ## **Step 1**:	Access to Goldengate Microservices instance
 
-After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make console connection to microservice, copy ip address of OGG_Microservices_Public_ip and connect using:
+After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make console connection to microservice, copy ip address of "OGG_Microservices_Public_ip" from your note and connect using:
 
 **`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
@@ -24,7 +24,7 @@ Good practice is to keep it in your notepad.
 
 ## **Step 3**: Login to Microservices web console
 
-Now, open your web browser and point to https://your_microservices_ip_address. Provide oggadmin in username and credentials, then log in
+Now, open your web browser and point to "https://your_microservices_ip_address". Provide oggadmin in username and password which you copied, then log in.
 
 ![](/files/gg_oggadmin.png)
 
@@ -52,13 +52,14 @@ You should be seeing empty Extracts and Replicats dashboard. Let's add some Auto
 
 ![](/files/micro_ggadmin_0.png)
 
-It will open OGGADMIN Security and you will see we already have a connection to **HOL Target ATP** database. However, you still need to add password here. Click on a pencil icon to alter credentials.
+It will open OGGADMIN Security and you will see we already have a connection to **HOL Target ATP** database. However, you still need to add password here. Click on a pencil icon to **alter credentials**.
 
 ![](/files/micro_ggadmin_1.png)
 
 ## **Step 7**: Update password and test connection
 
-Provide password ` GG##lab12345 ` and verify it. This is your ggadmin password, which we provided in lab 3. 
+Provide the password ` GG##lab12345 ` and verify it. This is your ggadmin password, which we provided in lab 3. 
+
 **NOTE: if you specified different password, please use that password**
 
 ![](/files/micro_ggadmin_2.png)
@@ -99,7 +100,7 @@ In the **Credential Alias**, choose **hol_tp** from drop down, which is our pre-
 
 ![](/files/micro_initload_2_2.png)
 
-After that go below to find Trail Name and edit to **il**. We defined this in our extract parameter, so it cannot be just a random name.
+After that go below to find Trail Name, add **il** as trail name, because we defined this in our extract parameter, so it cannot be just a random name.
 
 ![](/files/micro_initload_2_3.png)
 
