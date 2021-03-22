@@ -12,7 +12,7 @@ Data Guard maintains a copy of your data in a standby database that is continuou
 
 In this lab we will introduce a block corruption in the database and see Active Data Guard repairing it.
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 30 Minutes
 
 ### Objectives
 - Setup your environment
@@ -20,11 +20,11 @@ Estimated Lab Time: 10 Minutes
 - Access the table
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
-- Lab: Connect to the Database
-- Lab: Perform a switchover
-- Lab: Perform a failover
-- Lab: Enable Active Data Guard DML Redirection
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab 3: Connect to the Database
+- Lab 4: Perform a switchover
+- Lab 5: Perform a failover
+- Lab 6: Enable Active Data Guard DML Redirection
 
 ## **STEP 1**: Set the environment
 
