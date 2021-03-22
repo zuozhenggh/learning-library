@@ -6,26 +6,20 @@ Welcome to migrate to autonomous database workshop.
 
 In this workshop we will migrate a postgresql database to an Autonomous database in Oracle Cloud Infrastructure. We will use Oracle Goldengate for migration steps, and all of our services will be hosted in OCI for this workshop purpose. This workshop has 4 steps. 
 
-*Estimated workshop Time*: 1.5 hour
+*Estimated total Workshop Time*: 1.5 hours
 
 ### About GoldenGate for PostgreSQL
 
-Oracle GoldenGate on Marketplace contains pre-configured Oracle GoldenGate for Non-Oracle for PostgreSQL. 
-
-Oracle GoldenGate is a comprehensive software package for real-time data integration and replication in database environments. The product enables high availability solutions, real-time data integration, transactional change data capture, data replication, and basic transformations between operational and analytical enterprise systems. 
-Oracle GoldenGate brings extreme performance with simplified configuration and management, tighter integration with Oracle Database, support for cloud environments, expanded heterogeneity, and enhanced security. 
+Oracle GoldenGate on Marketplace contains pre-configured Oracle GoldenGate for Non-Oracle for PostgreSQL. We will use it for our extract data processes from source PostgreSQL.
 
 ### About GoldenGate Microservices
 
-Oracle GoldenGate is the industry’s premier replication tool and this replication platform supports a wide range of Oracle and other heterogeneous platforms. The addition of the Microservices Architecture allows this premier replication tool to scale out to the cloud and provide a secure, flexible and scalable replication platform.
-
-By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. With Oracle GoldenGate Microservices on Marketplace, you can deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
+Oracle GoldenGate Microservices Architecture allows this premier replication tool to scale out to the cloud and provide a secure, flexible and scalable replication platform. It has very clear and easy to manage both extract and replicate processes from on-premises to cloud, and cloud to cloud. We will use it to replicate our extracted data in target Autonomous Database.
 
 ### About Terraform 
 
-Terraform is an open source tool that allows you to programmatically manage, version, and persist infrastructure through the "infrastructure-as-code" model. Terraform configurations codify your infrastructure in declarative files that contain the steps required to provision your infrastructure and maintain its state. You can share these files among team members, treat them as code, edit, review, and version them.
-
-Terraform uses providers to interface between the Terraform engine and the supported cloud platform. The Oracle Cloud Infrastructure (OCI) Terraform provider is a component that connects Terraform to the OCI services that you want to manage. 
+Terraform is an open source tool that allows you to programmatically manage, version, and persist infrastructure through the "infrastructure-as-code" model.
+The Oracle Cloud Infrastructure (OCI) Terraform provider is a component that connects Terraform to the OCI services that you want to manage. We will use it as our infrastructure orchestration to deploy all necessary resources.
 
 ### Objectives
 

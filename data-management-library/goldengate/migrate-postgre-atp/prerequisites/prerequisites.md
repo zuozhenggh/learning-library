@@ -29,19 +29,21 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 
 ## **Step 2**: Generate SSH keys 
 
-1. Once cloud shell environment is ready, issue below commands:
+1. Once cloud shell environment is ready, issue below commands, it will create a ssh key files and api signing keys:
 
 	```
-	<copy>
 	ssh-keygen -t rsa -N "" -b 2048 -f ~/.ssh/oci
 	openssl genrsa -out ~/.ssh/oci_api_key.pem 2048
 	openssl rsa -pubout -in ~/.ssh/oci_api_key.pem -out ~/.ssh/oci_api_key_public.pem
 	openssl rsa -pubout -outform DER -in ~/.ssh/oci_api_key.pem | openssl md5 -c | awk '{print $2}' > ~/.ssh/oci_api_key.fingerprint
-	cat ~/.ssh/oci_api_key_public.pem
-	</copy>
 	```
 
-and copy your public pem file content.
+2. Copy your public pem file content:
+
+	```
+	cat ~/.ssh/oci_api_key_public.pem
+	```
+
 	![](/images/0.Prep_1.PNG)
 
 ## **Step 3**: Add public API keys to your user
@@ -68,7 +70,6 @@ and copy your public pem file content.
 	export TF_VAR_user_ocid="your-user-value-goes-here"
 	</copy>
 	```
-
 	_**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
 
 2. After you modified above using your values, we need to add these lines to your ".bash_profile". Go to cloud-shell terminal and issue:
