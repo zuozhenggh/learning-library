@@ -48,7 +48,6 @@ In this lab 3, we will configure extract processes in Oracle Goldengate classic 
 
 3. Exit from this instance with command **`exit`** and go back to your cloud-shell.
 
-
 ## **Step 2**: Access to Goldengate classic instance
 
 1. Oracle GoldenGate Classic for Non-Oracle (PostgreSQL) allows you to quickly access the GoldenGate Service Command Interface (GGCSI) and is preconfigured with a running Manager process. Copy ip address of `OGG_PGSQL_Public_ip` from your note and connect using:
@@ -123,7 +122,6 @@ In this lab 3, we will configure extract processes in Oracle Goldengate classic 
 1. After logging to the source database, you must enable supplemental logging on the source schema for change data capture. 
 The following commands are used to enable supplemental logging at table level.
 
-
 	```
 	<copy>
 	add trandata public."Countries"
@@ -137,13 +135,9 @@ The following commands are used to enable supplemental logging at table level.
 
 	![](/images/gg_pg_trandata.png)
 
-
 ## **Step 9**: Registering a EXTTAR
 
-Oracle GoldenGate needs to register the extract with the database replication slot, before adding extract process in Goldengate. _**Ensure that you are connected to SourceDB using the DBLOGIN command.**_
-
-Let's begin to create the first extract process, which is continuous replication in usual migration and replication project scenario.
-
+Oracle GoldenGate needs to register an extract with the database replication slot, before adding extract process in Goldengate. Let's begin to create the first extract process, which is continuous replication in usual migration and replication project scenario. _**Ensure that you are connected to SourceDB using the DBLOGIN command **_ before doing next steps.
 
 1. First register your extract: 
 
@@ -198,10 +192,7 @@ Let's begin to create the first extract process, which is continuous replication
 
 ## **Step 10**: Registering a EXTDMP
 
-Oracle GoldenGate needs to register the extract with the database replication slot, before adding extract process in Goldengate. 
-_**Ensure that you are connected to SourceDB using the DBLOGIN command.**_
-
-Now changes are being captured from source database and we need to send that to GG microservices, in order to apply at target database. Therefore we need another process, which acts as extract but sends existing trail files to GG microservices.
+Now changes are being captured from source database and we need to send that to GG microservices, in order to apply at target database. Therefore we need another process, which acts as extract but sends existing trail files to GG microservices. _**Ensure that you are connected to source database using the DBLOGIN command.**_ before doing next steps.
 
 1. Again, register your extdmp extract:
 
@@ -258,8 +249,7 @@ Now changes are being captured from source database and we need to send that to 
 
 ## **Step 11**: Registering a INITLOAD
 
-Up to now, we created 2 extract processes which are now capturing changes and shipping to Goldengate Microservices instance.
-However, we are not yet loaded our static data directly from source objects to target database. This specific process is called Initial-load. Steps are similar to the previous extract processes
+Up to now, we created 2 extract processes which are now capturing changes and shipping to Goldengate Microservices instance. However, we are not yet loaded our static data directly from source objects to target database. This specific process is called Initial-load. Steps are similar to the previous extract processes. _**Ensure that you are connected to source database using the DBLOGIN command**_ before doing next steps.
 
 1. Again register your initload 
 
@@ -303,7 +293,7 @@ However, we are not yet loaded our static data directly from source objects to t
 
 	![](/images/gg_pg_initload_3.png)
 
-6. You can see status of this special type of extract process with **`info init`. **
+6. You can see status of this special type of extract process with **`info init`**.
 
 	![](/images/gg_pg_initload.png)
 
