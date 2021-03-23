@@ -54,6 +54,7 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
           ![](./images/11.png " ")
 
   11. Click **Submit** in the **Manage Agents** page.
+          ![](./images/8.png " ")
           ![](./images/12.png " ")
 
     The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.
