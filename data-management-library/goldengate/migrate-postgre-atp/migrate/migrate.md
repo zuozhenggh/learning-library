@@ -82,6 +82,8 @@ In the final lab of the workshop, we will configure the replication process in M
 
 4. Now let's go back to **Overview** page from here.
 
+	![](/images/micro_ggadmin_5.png)
+
 ## **Step 9**: Add replication process
 
 1. The apply process for replication, also known as Replicat, is very easy and simple to configure. There are four types of Replicats supported by the Oracle GoldenGate Microservices. On the overview page, go to Replicat part and click on **+** to create our replicat process.

@@ -30,7 +30,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 4. In the **DEVELOPMENT** section, click on **SQL**. 
 
-	![](/images/sql_dev_3.png)
+	![](/images/sql_dev_5.png)
 
 ## **Step 2**: Create Target Tables
 
@@ -42,7 +42,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 	There should be **5** tables created after script execution.
 	
-	![](/images/sql_dev_4.png)
+	![](/images/sql_dev_6.png)
 
 ## **Step 3**: Enable GGADMIN 
 
