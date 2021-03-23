@@ -48,19 +48,18 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
   8.  Click **Yes** in the **Confirmation** dialog box to manage agents.
           ![](./images/9.png " ")
 
-  9. Click **Submit** in the **Manage EM Agents for OGG instance** page
+  9. Click **Submit** in the **Manage EM Agents for OGG instance** page.
           ![](./images/10.png " ")
   10. Click **OK** in the **Information** dialog box.
           ![](./images/11.png " ")
 
   11. Click **Submit** in the **Manage Agents** page.
-
-          ![](./images/12click_submit_manage_agent.png " ")
+        ![](./images/12click_submit_manage_agent.png " ")
 
     The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.
 
   12. Click **OGG Home** to view the discovered targets.
-      ![](./images/13.png " ")
+        ![](./images/13.png " ")
 
   Watch this video if you want to know more about Discovering Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager.
       [](youtube:KAfmbzGDe9E)
@@ -78,7 +77,7 @@ To set the Monitoring credentials:
       ![](./images/14.png " ")
 
   3. In the **Oracle GoldenGate Service Manager Monitoring Credentials** page, select the target and click **Set Credentials** to display the **Edit monitoring credentials** dialog box.
-      ![](./images/14a.png " ")
+      ![](./images/11.png " ")
 
   4. Enter the monitoring credentials details and click **OK**.
       ![](./images/15.png " ")
