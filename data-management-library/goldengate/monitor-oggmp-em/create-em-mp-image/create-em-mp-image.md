@@ -59,7 +59,7 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
     The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.
 
   12. Click **OGG Home** to view the discovered targets.
-          ![](./images/13.png " ")
+      ![](./images/13.png " ")
 
   Watch this video if you want to know more about Discovering Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager.
       [](youtube:KAfmbzGDe9E)
@@ -77,24 +77,19 @@ To set the Monitoring credentials:
       ![](./images/14.png " ")
 
   3. In the **Oracle GoldenGate Service Manager Monitoring Credentials** page, select the target and click **Set Credentials** to display the **Edit monitoring credentials** dialog box.
-
       ![](./images/14a.png " ")
 
   4. Enter the monitoring credentials details and click **OK**.
-
       ![](./images/15.png " ")
 
       The credentials are set successfully and this Information is indicated on the screen.
   5. Click **Targets** and select **GoldenGate**.
-
       ![](./images/16.png " ")
 
   6. Notice the status has changed for the targets.
-
       ![](./images/18.png " ")
 
   7. Select a target and notice that the **Start** and **Stop** buttons are activated for the target.
-
       ![](./images/19.png " ")
 
 The monitoring credentials are successfully set and you can monitor the instance, view the logs, configuration files, and GGSER files, and also start or stop the instance.                                         
