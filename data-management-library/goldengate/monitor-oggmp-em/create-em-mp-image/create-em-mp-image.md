@@ -77,7 +77,7 @@ To set the Monitoring credentials:
       ![](./images/14.png " ")
 
   3. In the **Oracle GoldenGate Service Manager Monitoring Credentials** page, select the target and click **Set Credentials** to display the **Edit monitoring credentials** dialog box.
-      ![](./images/11.png " ")
+      ![](./images/14a.png " ")
 
   4. Enter the monitoring credentials details and click **OK**.
       ![](./images/15.png " ")
