@@ -506,4 +506,4 @@ Build an in-db RandomForest model and compare the RF model's attribute importanc
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021

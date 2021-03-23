@@ -48,7 +48,7 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
     ```
     <copy>
-    curl https://launch.micronaut.io/example-atp.zip\?features\=oracle,data-jdbc -o example-atp.zip
+    curl https://launch.micronaut.io/example-atp.zip\?javaVersion\=JDK_8\&features\=oracle,data-jdbc -o example-atp.zip
     unzip example-atp.zip -d example-atp
     cd example-atp
     </copy>

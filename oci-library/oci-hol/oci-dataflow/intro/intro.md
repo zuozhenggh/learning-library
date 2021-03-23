@@ -26,17 +26,6 @@ Here’s why Data Flow is better than running your own Spark clusters, or other 
 - It has consolidated control. Data Flow gives you a consolidated view of all Spark applications, who is running them and how much they consume. Do you want to know which applications are writing the most data and who is running them? Simply sort by the Data Written column. Is a job running for too long? Anyone with the right IAM permissions can see the job and stop it.
 
 
-Watch the video below for a quick overview of Oracle Data Flow.
-
-
-<figure class="video_container">
-  <iframe src="https://secure.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=6144471608001&secure=true" frameborder="0" allowfullscreen="true" width="50%" height ="200%"> </iframe>
-</figure>
-
-
-
-
-
 ## Additional Recommended Resources
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
