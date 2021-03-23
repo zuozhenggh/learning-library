@@ -1,19 +1,23 @@
 # Getting started in Oracle Cloud Infrastructure
 
-## Let's start!
+## Introduction
 
 During this workshop you will work in a shared tenancy. Your instructor will provide information regarding your login
 credential.
 
-### Connecting to the OCI Console
+Estimated Lab Time: 10 minutes
 
-Please go to https://www.oci-workshop.com/login and select the correct region for your workshop. This link will take you to the login page of the cloud tenancy you will use during this workshop.
+### Objectives
+* Succesfully login to OCI
+* Explorer the OCI Console
+
+## **Step 1**: Log in to OCI and explorer OCI Console
+
+Please go to [oci-workshop.com](https://www.oci-workshop.com/login) and select the correct region for your workshop. This link will take you to the login page of the cloud tenancy you will use during this workshop.
 
 ![](images/oci-login.png " ")
 
 Your instructor will provide you with your User Name and Password. Accept the term of service and you will be directed to the main OCI Console page.
-
-### The OCI Menu Bar
 
 At the top of the OCI Console page you will see the main menu bar.
 

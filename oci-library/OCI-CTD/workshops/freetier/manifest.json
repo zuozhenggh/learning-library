@@ -8,26 +8,26 @@
         },
         {
             "title": "Lab 1: Getting Access OCI Console",
-            "filename": "./../../access-oci-console/intro.md"
+            "filename": "./../../lab1-access-oci-console/intro.md"
         },
         {
             "title": "Lab 2: Create Your Own Compartment",
-            "filename": "./../../create-compartment/create-compartment.md",
+            "filename": "./../../lab2-create-compartment/create-compartment.md",
             "type": "livelabs"
         },
         {
             "title": "Lab 3: Create a Virtual Cloud Network",
-            "filename": "./../../create-vcn/create-vcn.md",
+            "filename": "./../../lab3-create-vcn/create-vcn.md",
             "type": "livelabs"
         },
         {
             "title": "Lab 4: Create Linux based Compute VM",
-            "filename": "./../../create-vm-and-webserver/create-linux-vm.md",
+            "filename": "./../../lab4-create-vm-and-webserver/create-linux-vm.md",
             "type": "livelabs"
         },
         {
             "title": "Lab 5: Create Windows based Compute VM",
-            "filename": "./../../create-windows-vm/create-windows-vm.md",
+            "filename": "./../../lab5-create-windows-vm/create-windows-vm.md",
             "type": "livelabs"
         },
         {

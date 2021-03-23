@@ -1,13 +1,19 @@
 # Creating a Windows based Compute VM
 
----
+## Introduction
+In this lab, you will leanr how to create Windos-based compute instance and hwo to login via RDP to the Windows server. Furthermore, configure a Network Security Group so that port 3389 (RDP) is allowed and connect to you Windows Instance using a Remote Desktop client.
 
-**Mission:**
-Create a new Instance using a Windows based image. Configure a Network Security Group so that port 3389 (RDP) is allowed and connect to you Windows Instance using a Remote Desktop client
+Estimated time: 30 minutes
 
----
+### Objectives
+* Create a Windows compute instance
+* Create Network Security group 
 
-## Create Windows Instance
+### Prerequisites
+* A VCN must exist
+
+
+## **Step 1**: Create Windows Instance
 
 Using the _hamburger menu_ navigate to _Compute -> Instances_ and click on the [create instance].
 This time create the instance based on a Windows Image (you can choose any Windows instance).
@@ -19,7 +25,7 @@ Again, ensure your Instance is using the correct VCN and is connected to the Pub
 
 Click the _create_ button and the Instance creation process will start. This will take a few minutes. While waiting for the instance to be up and running, you can configure a Network Security Group that will configure RDP access.
 
-## Create a Network Security Group
+## **Step 2**: Create a Network Security Group
 
 Using the _hamburger menu_ navigate to your VCN, by going to _Networking -> Virtual Cloud Networks_ and click on the name of your VCN.
 On the left toolbar menu you will find the section _Network Security Group_. Click on this section and create a new Network Security Group.

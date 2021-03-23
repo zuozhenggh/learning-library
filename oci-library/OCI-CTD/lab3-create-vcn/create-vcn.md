@@ -1,13 +1,19 @@
 # Create a Virtual Cloud Network (VCN)
 
----
+## Introduction
+This lab shows how to create your first VCN.
 
-**Mission:** Create a Virtual Cloud Network in your Compartment, that has as least one subnet with Internet connectivity.
+Estimated time: 15 minutes
 
----
-<br>
+### Objectives
 
-### Virtual Cloud Network
+* Create a Virtual Cloud Network in your Compartment, that has as least one subnet with Internet connectivity.
+
+### Prerequisities
+
+* Make sure to have your own compartment created
+
+## **Step 1**: Navigate to Virtual Cloud Networks Section
 
 Using the top _Hamburger menu_ navigate to the _Networking -> Virtual Cloud Networks_ section. On the left toolbar you will see a Compartment explorer. Make sure it is set to your newly created compartment.
 Use the [+] to expand the Workshop compartment.
@@ -15,7 +21,7 @@ If you do not see your newly created compartment, you want to refresh / reload y
 
 ![](images/compartment-explorer.png " ")
 
-### Creating a VCN
+## **Step 2** Creating a VCN
 
 You have 2 options on how to create your VCN. If this is your first time, it is
 **recommended** to use the Wizard. The Wizard can automatically create the VCN with Subnets for you and also ensure there is an Internet Gateway configured with the correct routing tables for the public subnet.

@@ -1,15 +1,20 @@
 # Create Linux based Compute VM with Web Server
 
----
+## Introduction
+In this lab, you wil learn how to provision a compute instance. Furthermoe, you will install a web server on the provisioned VM.
+You will also learn how to update the Network Security Lists in order to allow incoming traffic.
 
-**Mission:**
-Create an Ubuntu Linux based virtual machine with a web server running in it and also ensure you can connect to it from the public Internet.
+Estimated time: 45 minutes
 
----
+### Objectives
+* Install compute instance with Ubuntu 18.04
+* Install web server 
+* Update Network Security List
 
-<br>
+### Prerequisites
+* You must have a VCN provisioned
 
-## Create the VM
+## **Step 1**: Create the VM
 
 ### Create a Standard2.1 Virtual Machine
 
@@ -30,7 +35,7 @@ Click on the _Change Shape_ button and find the _VMstandard2.1_ shape. You can f
 
 Check that the network configuration for this instance is set to your VCN and the **PUBLIC SUBNET!**.
 
-## Working with SSH Keys
+## **Step 2**: Working with SSH Keys
 
 ### Using SSH Keys
 
@@ -94,7 +99,7 @@ To use PuTTY – you will need to use the PuTTY SSH key format. This format is n
 ---
 
 
-## Installing the Webserver components
+## **Step 3**: Installing the Webserver components
 
 Now that you are logged in to your Ubuntu Instance, issue the following 3 commands:
 
@@ -109,7 +114,7 @@ This will automatically install all the web server (Apache) components and setup
 If you try to open your local web browser to the public ip address of your instance, you will notice that it does not connect yet. This is because by **default no traffic other than ssh is allowed**.
 
 
-## Configure the Network Security List
+## **Step 4**: Configure the Network Security List
 
 Using the _hamburger menu_, navigate to your Virtual Cloud Network via _Networking -> Virtual Cloud Networks_ and then click on the name of your Virtual Cloud Network.
 In the left toolbar menu, you will see the option _Security Lists_. Click on that to navigate to the Security Lists for your VCN.
