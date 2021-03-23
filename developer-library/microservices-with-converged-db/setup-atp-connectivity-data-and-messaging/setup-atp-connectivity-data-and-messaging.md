@@ -80,8 +80,6 @@ You will run a script that will download the connection information (wallet, tns
     <copy>./createAll.sh https://objectstorage.us-phoenix-1.oraclecloud.com/REPLACE_WITH_YOUR_PREAUTH_LINK/Wallet_ORDERDB.zip</copy>
     ```
 
-  ![](images/createAll.png " ")
-
 3.  Execute `msdataworkshop` and notice secrets for order and inventory wallets.
 
     ```
@@ -152,7 +150,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 
   ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
 
-7.  Use the frontend LoadBalancer URL `http://<external-IP>:8080` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
+7.  Use the frontend LoadBalancer URL `https://<external-IP>:443` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
 
   ![](images/testdatasourcescreen.png " ")
 
