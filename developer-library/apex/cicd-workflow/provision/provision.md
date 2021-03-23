@@ -123,7 +123,7 @@ In this lab you will:
     }
     ```
 
-    This creates 2 databases, and 4 environments: dev, tst, and stg are on the APEX_DEV database and prd is on the APEX_PRD database
+    This creates 2 databases, and 4 environments: dev, tst, and stg are on the APEX\_DEV database and prd is on the APEX\_PRD database
 
     Feel free to configure these are you need for your own environment. In this workshop we will use these defaults.
     
@@ -135,6 +135,9 @@ In this lab you will:
 
     ```bash
     <copy>
+    # go back to the root folder
+    cd ..
+    # run
     make init
     </copy>
     ```
@@ -183,7 +186,7 @@ In this lab you will:
     test                           Test (WIP)
     ```
 
-    Many of these functions are sub-function of the main functions describes here, giving you more granularity to manipulate specific objects.
+    Many of these functions are sub-function of the main functions described here, giving you more granularity to manipulate specific objects.
 
     The main commands we will use are:
 
@@ -195,9 +198,9 @@ In this lab you will:
 
 2. With this tool, you can create additional environments, by creating new workspaces and/or schemas.
 
-  Remember that DB change tracking is per SCHEMA, and application change tracking is per application, so if you decide to create multiple applications in the same schema, make sure the applications are always deployed together otherwise one app schema changes may cause issues in the other. 
+  *Remember that DB change tracking is per SCHEMA, and application change tracking is per application, so if you decide to create multiple applications in the same schema, make sure the applications are always deployed together otherwise one app schema changes may cause issues in the other app.*
 
-  The preferred way to use multiple applications is to create a schema per application, and then aggregates those schemas into grouping by workspace.
+  The preferred way to use multiple applications is to create a schema per application, and then grouping those schemas into a workspace.
 
 
 You may proceed to the next lab.
