@@ -56,7 +56,7 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
   11. Click **Submit** in the **Manage Agents** page.
           ![](./images/12.png " ")
 
-          The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.
+    The Oracle GoldenGate Microservices instance is now discovered and is ready to be monitored on the Enterprise Manager Marketplace instance.
 
   12. Click **OGG Home** to view the discovered targets.
           ![](./images/13.png " ")
