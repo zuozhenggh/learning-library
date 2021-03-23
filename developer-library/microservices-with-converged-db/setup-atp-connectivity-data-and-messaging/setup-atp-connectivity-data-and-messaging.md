@@ -150,7 +150,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 
   ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
 
-7.  Use the frontend LoadBalancer URL `http://<external-IP>:8080` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
+7.  Use the frontend LoadBalancer URL `https://<external-IP>:443` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
 
   ![](images/testdatasourcescreen.png " ")
 
