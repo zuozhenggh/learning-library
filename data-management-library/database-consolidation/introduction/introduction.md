@@ -41,6 +41,7 @@ a single Container Database, with a single backup, single disaster recovery conf
 In this lab, you will:
 
 * Use MV2ABD to consolidate databases on ADB
+***TO AUTHOR: What about the ones below, in progress/complete/delete? I've copied the relevant files to the broken paths in your manifest.json, but they don't seem to be suited for the workshop***
 * Use Goldengate to Consolidate databases on ADB / DBCS / EXADATA
 * Use Data Pump to Consolidate databases on ADB / DBCS / EXADATA
 

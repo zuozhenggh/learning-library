@@ -1,12 +1,12 @@
 # Consolidate Workloads to Autonomous Database using MV2ADB
-
+***TO AUTHOR: All images have been copied and pathed to the "images" folder, do not use the "screenshots" folder, it's only there to preserve content from before this template update in case you need to change-back or reference (same with intro-old.md and mv2abd-old.md)***
 ## Introduction
 
 Move to Autonomous Database (MV2ADB) is a tool, which migrates data from an "on premises" database to Autonomous Database Cloud utilizing Oracle Data Pump. Data Pump lets you Import your data into Autonomous Database using Data Pump Dump Files which are residing on Oracle Cloud Infrastructure Object Storage.
 The MV2ADB tool is able to automatically take a data pump export, push it to OCI Object Storage, then it automatically imports it into the Autonomous Database using Data Pump in one command.
 *Note: For using mv2adb for migration from source DB to ADB, the source DB should be at lower version than Autonomous Database.*
 
-![](./screenshots/consolidation.jpg)
+![](./images/consolidation.jpg)
 
 ***TO AUTHOR: This picture says highly restricted... EDIT***
 
@@ -31,30 +31,30 @@ Required Artifacts:
 ***Probably add a few steps here to be consistent with other WS***
 1. Navigate to your Autonomous Database and click on **DB Connection**.
 
-  ![](./screenshots/download_wallet_1.png)
+  ![](./images/download_wallet_1.png)
 
 2. Click **Download Wallet**.
 
-  ![](./screenshots/download_wallet_2.png)
+  ![](./images/download_wallet_2.png)
 
 3. Create a password for the wallet, you will need to remember this for later.
 
-  ![](./screenshots/download_wallet_3.png)
+  ![](./images/download_wallet_3.png)
 
 4. Click **Download**.
 
-  ![](./screenshots/download_wallet_4.png)
+  ![](./images/download_wallet_4.png)
 
 
 ## **STEP 2**: Generating an Auth Token and Creating a Bucket
 
 1. Click on your **Profile** in the top right, and then click your **Username**.
 
-  ![](./screenshots/authtoken_1.png)
+  ![](./images/authtoken_1.png)
 
 2. Click on **Auth Token**, and click **Generate**.
 
-  ![](./screenshots/authtoken_2.png)
+  ![](./images/authtoken_2.png)
   *Note: Copy your Auth Token to a notepad, as you cannot see it once you close the window.*
 
   ***ADD PIC HERE FOR THE TOKEN GENERATION***
@@ -62,15 +62,15 @@ Required Artifacts:
 
 3.  Click on the **Menu** in top left and select **Object Storage**.
 
-  ![](./screenshots/object_storage.png)
+  ![](./images/object_storage.png)
 
 4. Verify you are in the correct **Compartment** and click **Create Bucket**.
 
-  ![](./screenshots/create_bucket.png)
+  ![](./images/create_bucket.png)
 
 5. Enter a **Name** for your bucket, then hit **Create Bucket** again.
 
-  ![](./screenshots/final_create_button.png)
+  ![](./images/final_create_button.png)
   *Take note of your region, bucket name, and tenancy name for later.*
 
 
@@ -81,7 +81,7 @@ Required Artifacts:
     - SQL*Plus Package (ZIP)
     - Tools Package (ZIP)
   
-  ![](./screenshots/copy_link_wget.png)
+  ![](./images/copy_link_wget.png)
 
 2. Add "wget" in front of each copied link.
     
@@ -127,7 +127,7 @@ Required Artifacts:
     ls -lrta</copy>
     ```
 
-  ![](./screenshots/sql_imp_exp_unzip.png)
+  ![](./images/sql_imp_exp_unzip.png)
 
 ## **STEP 4**: Transferring the ADB Wallet on Your Local Machine to Both Source Database Instances
 
@@ -150,7 +150,7 @@ Required Artifacts:
     unzip Wallet_T19.zip</copy>
     ```
 
-  ![](./screenshots/wallet_unzip.png)
+  ![](./images/wallet_unzip.png)
 
 ## **STEP 5**: Verifying Both Source Database Instances Can Connect to the ADB Database
 
@@ -161,7 +161,7 @@ Required Artifacts:
     cat tnsnames.ora</copy>
     ```
 
-  ![](./screenshots/tnsnames_cat.png)
+  ![](./images/tnsnames_cat.png)
   
   *Note: Both 11g and 19c Source databases are being consolidated into one ADB database, so the connect string will be the same for both Source database instances.*
 
@@ -173,7 +173,7 @@ Required Artifacts:
     export PATH="$ORACLE_HOME:$PATH"</copy>
     ```
 
-  ![](./screenshots/param_export.png)
+  ![](./images/param_export.png)
 
   *Note: The ORACLE_HOME path may vary depending on your instant client version*
 
@@ -187,13 +187,13 @@ Required Artifacts:
     ./sqlplus ADMIN/DATABASEPASSWORD@t19_high</copy>
     ```
 
-  ![](./screenshots/sqlplus_connectivity.png)
+  ![](./images/sqlplus_connectivity.png)
 
 ## **STEP 6**: Download and Install MV2ADB on Both Source Database Instances.
 
 1. On your local machine, download the MV2ADB rpm file [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4). Platform specific rpm can be downloaded under the History Tab.
 
-  ![](./screenshots/MOS_history.png)
+  ![](./images/MOS_history.png)
 
 2. Using your preferred sftp client, connect to both Source database instances as opc user.
 
@@ -211,7 +211,7 @@ Required Artifacts:
     <copy>rpm -i mv2adb-2.0.1-114.el6.x86_64.rpm</copy>
     ```
 
-  ![](./screenshots/rpm_install_mv2adb.png)
+  ![](./images/rpm_install_mv2adb.png)
 
 8. Verify installation was successful on both Source database instances.
   
@@ -219,7 +219,7 @@ Required Artifacts:
     <copy>ls -lrta /opt/mv2adb</copy>
     ```
   
-  ![](./screenshots/mv2adb_verify.png)
+  ![](./images/mv2adb_verify.png)
 
 ## **STEP 7**: Encrypt Passwords of Both Source Database Instances, Target Database, and Auth Token.
 
@@ -234,7 +234,7 @@ Required Artifacts:
     ./mv2adb.bin encpass</copy>
     ```
 
-  ![](./screenshots/enc_pass.png)
+  ![](./images/enc_pass.png)
 
   *Note: If you get an error saying it cannot find the command, you may have to run the mv2adb.bin without any parameters to first initialize it! (./mv2adb.bin)*
 
@@ -281,6 +281,7 @@ Required Artifacts:
     ```
 
 ***TO AUTHOR: Everything below this in Section 8 is a bit messy, strongly consider separating this into another step, or grouping them with emphasized titles so it's easier to read... but stay consistent in whatever approach you use (3/4/5 hashtag header, 2 space indent on content, - or # for sections etc)***
+***TO AUTHOR: Please stay consistent with the use of capitalization and punctuation for each header/content type, this minor detail can make or break the polished feel.***
 
 ### Unused parameters that need to be commented out.
   
@@ -307,8 +308,8 @@ Hostname
 . oraenv
 lsnrctl status
 ```
-  ![](./screenshots/19clistener.png)
-  ![](./screenshots/11glistener.png)
+  ![](./images/19clistener.png)
+  ![](./images/11glistener.png)
 
 
 Service Name for **databases running 11g**
@@ -318,7 +319,7 @@ Service Name for **databases running 11g**
 ```
 cat $ORACLE_HOME/network/admin/tnsnames.ora
 ```
-![](./screenshots/11gtnsnames.png)
+![](./images/11gtnsnames.png)
 
 
 Service Name for **19c databases or any container databases above version 12**
@@ -331,7 +332,7 @@ show pdbs
 exit
 lsnrctl status
 ```
-![](./screenshots/19cservicename.png)
+![](./images/19cservicename.png)
 
 
 Verifying DB_CONSTRING
@@ -343,14 +344,14 @@ sqlplus SYS/DATABASEPASSWORD@//HOSTNAME/SERVICENAME as sysdba
 ```
 sqlplus SYS/WElcome_123#@//10.9.1.34/Trg11_iad1ft.sub02201203420.autonomouscmpvc.oraclevcn.com as sysdba
 ```
-![](./screenshots/11gsql.png)
+![](./images/11gsql.png)
 
 19c example
 ```
 sqlplus SYS/WElcome_123#@//10.9.1.33/trg.sub02201203420.autonomouscmpvc.oraclevcn.com as sysdba
 show con_name
 ```
-![](./screenshots/19csql.png)
+![](./images/19csql.png)
 
 
 ##### ADB_NAME
@@ -373,7 +374,7 @@ show con_name
 - This is the **ENCRYPTED** Auth Token.
 
 #### Example of completed configuration file
-![](./screenshots/comp_config.png)
+![](./images/comp_config.png)
 
 
 ## **STEP 9**: Run the MV2ADB Migration Script on Both Source Database Instances
@@ -387,59 +388,63 @@ The migration script will export from your source databases, then import into yo
     ./mv2adb.bin auto -conf /opt/mv2adb/conf/DBNAME.mv2adb.cfg</copy>
     ```
 
-  ![](./screenshots/mv2adb_run.png)
+  ![](./images/mv2adb_run.png)
 
-  ![](./screenshots/autorun_1.png)
+  ![](./images/autorun_1.png)
 
 ## **STEP 10**: Validate the Data Migration
 
-- On both source database instances, run the mv2adb report.
-```
-cd /opt/mv2adb
-./mv2adb.bin report -conf conf/DBNAME.mv2adb.cfg
-```
+  1. On both source database instances, run the mv2adb report.
 
-- 11g database example (MARKET SCHEMA)
-![](./screenshots/report_11_MARKET.png)
+    ```
+    <copy>cd /opt/mv2adb
+    ./mv2adb.bin report -conf conf/DBNAME.mv2adb.cfg</copy>
+    ```
 
-- 19c database example (HR SCHEMA)
-![](./screenshots/report_19_HR.png)
+  2. 11g database example (MARKET SCHEMA).
+
+    ![](./images/report_11_MARKET.png)
+
+  3. 19c database example (HR SCHEMA).
+
+    ![](./images/report_19_HR.png)
 
 ## Troubleshooting Common Issues
-**Dump File errors**
+**Dump File Errors**
 - Make sure to clear out the dump file directory after each failed iteration.
-```
-rm /home/oracle/dpump/*
-```
-![](./screenshots/cleardpumpdir.png)
+  
+    ```
+    <copy>rm /home/oracle/dpump/*</copy>
+    ```
+  ![](./images/cleardpumpdir.png)
 
   *Note: Validate the rm command is being ran on the DUMP_PATH parameter.*
 
-**Account Locked error**
+**Account Locked Error**
 - Switch to Oracle user, set environment (.oraenv), sqlplus, and unlock.
 - The following commands will display all users that are locked, and how to unlock a user.
-```
-sqlplus / as sysdba
-SELECT username, account_status, created, lock_date, expiry_date FROM dba_users WHERE account_status != 'OPEN';
-ALTER USER username ACCOUNT UNLOCK
-```
+    
+    ```
+    <copy>sqlplus / as sysdba
+    SELECT username, account_status, created, lock_date, expiry_date FROM dba_users WHERE account_status != 'OPEN';
+    ALTER USER username ACCOUNT UNLOCK</copy>
+    ```
 
 **Cannot Open Logfile**
 - Change directory group from root:root to oracle:oninstall, and change permissions.
-```
-chown oracle:oinstall /home/oracle/dpump
-chmod -R 660 /home/oracle/dpump
-```
-![](./screenshots/cannotopenlogfile.png)
-
+    ```
+    <copy>chown oracle:oinstall /home/oracle/dpump
+    chmod -R 660 /home/oracle/dpump</copy>
+    ```
+  ![](./images/cannotopenlogfile.png)
 
 **Getting an unreasonable amount of errors**
 - Verify the config file has the FULL=Y parameter commented out.
 
-  ![](./screenshots/full=y.png)
+  ![](./images/full=y.png)
 
 ## Acknowledgements
 *Great Work! You have successfully migrated two source database schemas (HR for 19c, and MARKET for 11g) into one ADB database.*
 
-- **Author** - Noah Horner & Humza Meraj
-- **Last Updated By/Date** - Noah Horner & Humza Meraj October 7th, 2020.
+* **Author** - Noah Horner & Humza Meraj
+* **Last Updated By/Date** - Didi Han, Database Product Management, March 2021
