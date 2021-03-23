@@ -2,20 +2,20 @@
 
 ## Introduction
 
-The first lab is the most important lab of all, in fact in this step we will create all of our resources:
+This first lab is very important and where we will create all of our resources:
 
 - Virtual Cloud Network
 - Source Postgreqsql database
+- Target Autonomous database
 - Goldengate for non-Oracle deployment
 - Goldengate Microservices deployment
-- Target Autonomous database
 
 *Estimated lab time*: 10 minutes
 
 ### Objectives
 
-In this first lab, we will prepare our work environment and create our lab resources using Terraform script.
-In case if you are running this lab in your existing tenancy, **make sure** you have the following compute quotas and resources available to use:
+In this first lab, we will prepare our work environment and create our lab resources using a Terraform script.
+If you are running this lab in your existing tenancy, **make sure** you have the following compute quotas and resources available to use:
 
 1. ATP for Target database - 1 OCPU, 1 TB storage
 2. Virtual Machine for Source Database - VM.StandardE2.1
@@ -42,7 +42,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 ## **Step 2**: Create terraform.tfvars file
 
-1. Now we need to create a file to help terraform understanding your environment. Let's modify the following parameters in your notepad and copy them.
+1. Now we need to create a file to help terraform understand your environment. Let's modify the following parameters in your notepad and copy them.
 
 	```
 	<copy>
@@ -53,13 +53,13 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 	</copy>
 	```
 
-2. Enter below command in your current working `migrate_to_atp` directory:
+2. Enter the below command in your current working `migrate_to_atp` directory:
 
 	**`vi terraform.tfvars`**
 
 	_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*_
 
-3. Good practice is, always keep it in your side notepad,
+3. Good practice is, always keep it in your side notepad.
 
 ## **Step 3**: Terraform 
 
@@ -69,7 +69,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 	terraform init
 	```
 
-2. Plan and apply steps shouldn't ask for any input from you. If it asks you to provide such as compartment_ocid, then again check previous files.
+2. Plan and apply steps should not ask for any input from you. If it asks you to provide, for example; _**compartment_ocid**_ , then check previous steps.
 
 	```
 	terraform plan
@@ -77,10 +77,9 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 	terraform apply --auto-approve
 	```
 
-3. Make a copy of your output results in your notepad also for later use.
+3. Make a copy of your output results in your notepad for later use.
 
 	![](/images/1.git_1.PNG)
-
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 

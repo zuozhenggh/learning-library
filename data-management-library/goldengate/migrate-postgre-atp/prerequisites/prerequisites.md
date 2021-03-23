@@ -2,8 +2,7 @@
 
 ## Introduction
 
-In this step, we will show you how to prepare your work environment in Oracle Cloud Infrastructure. We will use cloud-shell as our terminal which is a web-based, terminal built-in OCI console. It is good to use this terminal, in case you are behind corporate VPN, in case you don't have a stable network connection.
-To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
+In this step, we will show you how to prepare your work environment in Oracle Cloud Infrastructure. We will use cloud-shell which is a web-based terminal built into OCI console. To use the Cloud Shell machine, your tenancy administrator must grant your the required IAM (Identity and Access Management) policy.
 
 *Estimated lab time*: 10 minutes
 
@@ -16,20 +15,20 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 ### Assumptions
 
 * The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor or can be obtained through **Getting Started** steps.
-* A Cloud tenancy where you have the resources available to provision what mentioned in Architecture Overview.
+* A Cloud tenancy where you have the resources available to provision what is listed in the Architecture Overview.
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 * Your cloud account user must have the required IAM (Identity and Access Management) policy or admin user.
 * Successfully logged in to your cloud tenancy, if not please [login](https://www.oracle.com/cloud/sign-in.html) to your cloud account.
 
 ## **Step 1**: Login to Oracle Cloud Infrastructure 
 
-1. Let's prepare our work directory. We will use Cloud Shell in the OCI web console, which is a simple and sophisticated cloud terminal for most of your need. It is located right top corner of the OCI web console
+1. Let's prepare our work directory. We will use Cloud Shell, it is located at the top right corner of the OCI web console
 
 	![](/images/0.Prep_0.PNG)
 
 ## **Step 2**: Generate SSH keys 
 
-1. Once cloud shell environment is ready, issue below commands, it will create a ssh key files and api signing keys:
+1. Once the cloud shell environment is ready, issue the below commands. This will create the ssh key files and the api signing keys:
 
 	```
 	ssh-keygen -t rsa -N "" -b 2048 -f ~/.ssh/oci
@@ -38,7 +37,7 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 	openssl rsa -pubout -outform DER -in ~/.ssh/oci_api_key.pem | openssl md5 -c | awk '{print $2}' > ~/.ssh/oci_api_key.fingerprint
 	```
 
-2. Copy your public pem file content:
+2. Copy your public _**pem**_ file content:
 
 	```
 	cat ~/.ssh/oci_api_key_public.pem
@@ -48,17 +47,17 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 
 ## **Step 3**: Add public API keys to your user
 
-1. Click on the right top corner of your OCI web console, and click on your **profile**. Then navigate to **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied public pem key** there and click on the **Add** button.
+1. Click on the top right corner of your OCI web console and click on your **profile**. Then navigate to the **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied public pem key** there and click on the **Add** button.
 
 	![](/images/0.Prep_2.PNG)
 
-2. A small confirmation will show after you added an API key. **Copy** those values and open a notepad and keep them for a moment. We will modify them.
+2. A small confirmation will show after you added an API key. **Copy** these values and open a notepad to keep these for a later use.
 
 	![](/images/0.Prep_3.PNG)
 
 ## **Step 4**: Modify bash profile in your cloud shell
 
-1. In your notepad, modify following lines:
+1. In your notepad, copy the below lines and add related values from previous step. For example: `export TF_VAR_user_ocid="ocid1.user.oc1..."`
 
 	```
 	<copy>
@@ -72,22 +71,22 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 	```
 	_**NOTE:** if you are an experienced OCI user, I'd highly suggest you use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
 
-2. After you modified above using your values, we need to add these lines to your ".bash_profile". Go to cloud-shell terminal and issue:
+2. After you modified the above using your values, we now need to add these lines to your ".bash_profile". In the cloud-shell terminal issue below:
 
 	```
 	vi ~/.bash_profile
 	```
 
-	_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is little instruction. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit._
+	_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is a tip. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit._
 
 	![](/images/0.Prep_4.PNG)
 
-3. Once you've set these values **exit** from cloud-shell terminal by clicking on exit "X" button on right top corner, then again re-open cloud-shell terminal.
+3. Once you've set these values, **exit** from the cloud-shell terminal by clicking on exit "X" button on top right corner, then re-open the cloud-shell terminal to continue.
 
 	![](/images/0.Prep_0.PNG)
 
-Now your terminal knows your parameters and you'll not get any error in the next lab. **REMEMBER**, you must close cloud-shell and re-open!
-You've done with prerequisites.
+Now your terminal knows your parameters and you'll not get any error in the next lab. **REMEMBER**, you must close the cloud-shell and re-open it!
+You've now completed the prerequisites.
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 

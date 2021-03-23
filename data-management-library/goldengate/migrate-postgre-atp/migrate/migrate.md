@@ -2,21 +2,21 @@
 
 ## Introduction
 
-The final lab of this workshop will guide you on how to set up simple migration to ATP using Goldengate Microservices. By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. With Oracle GoldenGate Microservices on Marketplace, you can deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
+The final lab of this workshop will guide you on how to set up a simple migration to ATP using Goldengate Microservices. By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. This will allow you to deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
 
 *Estimated lab time*: 30 minutes
 
 ### Objectives
 
-In this final step of the workshop, we will configure the replication process in Microservices and apply captured changes from the source database to our target Autonomous database. This is the last lab.
+In the final lab of the workshop, we will configure the replication process in Microservices and apply captured changes from the source database to our target Autonomous Database.
 
 ### Prerequisites
 
 * This lab assumes that you completed all preceding labs, and ready to migrate to ATP.
 
-## **Step 1**:	Access to Goldengate Microservices instance
+## **Step 1**:	Access to Goldengate Microservices Instance
 
-1. After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make a console connection to microservice, copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
+1. After successful creating three extract processes, now it is time to explore your GG Microservices server. Let's make a console connection to Microservice. Copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
 
 	**`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
@@ -28,7 +28,7 @@ In this final step of the workshop, we will configure the replication process in
 
 2. Good practice is to keep it in your notepad. 
 
-## **Step 3**: Login to Microservices web console
+## **Step 3**: Login to Microservices Web Console
 
 1. Open your web browser and point to `https://your_microservices_ip_address`. Provide oggadmin in username and password which you copied, then log in.
 
@@ -36,25 +36,25 @@ In this final step of the workshop, we will configure the replication process in
 
 ## **Step 4**: Open Target Receiver server
 
-1. Then click on Target Receiver server's port **9023**, it will redirect you to a new tab, provide your credentials again for username **oggadmin**.
+1. Then click on Target Receiver server's port **9023**, it will redirect you to a new tab. Provide your credentials again for username **oggadmin**.
 
 	![](/images/gg_oggadmin_0.png)
 
-2. You should be seeing something like this, what it means that your extdmp is pumping some trail files to your Microservices.
+2. You should be seeing something like the below image. This means that your extdmp is pumping captured trail files to your Microservices.
 
 	![](/images/gg_oggadmin_1.png)
 
-	This is something you'd need if you'd want continuous replication and migration. 
+	This is something you will need if you want continuous replication and migration. 
 
 ## **Step 5**: Open Target Administration server
 
-1. In this lab scope, we will only migrate to ATP with help of initload. Click on Target Receiver server port **9021**, it will redirect you to new tab, provide your credentials again for username **oggadmin**.
+1. In this lab scope, we will only migrate to ATP with help of initload. Click on Target Receiver server port **9021**, it will redirect you to new tab. Provide your credentials again for username **oggadmin**.
 
 	![](/images/micro_oggadmin_0.png)
 
 ## **Step 6**: Modify Goldengate credentials
 
-1. You should be seeing empty Extracts and Replicats dashboard. Let's add some Autonomous Database credentials at first. Open hamburger menu on the top-left corner, choose **Configuration**
+1. You should be seeing the empty Extracts and Replicats dashboard. Let's add Autonomous Database credentials. Open the hamburger menu on the top-left corner, choose **Configuration**
 
 	![](/images/micro_ggadmin_0.png)
 
@@ -74,21 +74,21 @@ In this final step of the workshop, we will configure the replication process in
 
 ## **Step 8**: Add checkpoint table
 
-3. Scroll to **Checkpoint** part and click on **+** icon, then provide `ggadmin.chkpt` and **SUBMIT**. 
+3. Scroll down to the **Checkpoint** and click on **+** icon, then provide `ggadmin.chkpt` and **SUBMIT**. 
 
 	![](/images/micro_ggadmin_4.png)
 
-	The checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is a best practice to enable the checkpoint table for the target system.
+	The checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is best practice to enable the checkpoint table for the target system.
 
 4. Now let's go back to **Overview** page from here.
 
 ## **Step 9**: Add replication process
 
-1. The apply process for replication, also known as Replicat, is very easy and simple to configure. There are five types of Replicats supported by the Oracle GoldenGate Microservices. On the overview page, go to Replicat part and click on **+** to create our replicat process.
+1. The apply process for replication, also known as Replicat, is very easy and simple to configure. There are four types of Replicats supported by the Oracle GoldenGate Microservices. On the overview page, go to Replicat part and click on **+** to create our replicat process.
 
 	![](/images/micro_initload_0.png)
 
-2. We will choose **Nonintegrated Replicat** for initial load, click **Next**. In non-integrated mode, the Replicat process uses standard SQL to apply data directly to the target tables. In our case, the number of records in the source database is small and we don't need to run in parallel apply, therefore it will suffice.
+2. We will choose **Non-Integrated Replicat** for initial load, click **Next**. In non-integrated mode, the Replicat process uses standard SQL to apply data directly to the target tables. In our case, the number of records in the source database is small and we don't need to run in parallel, therefore it will suffice.
 
 	![](/images/micro_initload_1.png)
 
@@ -98,25 +98,25 @@ In this final step of the workshop, we will configure the replication process in
 
 	![](/images/micro_initload_2_1.png)
 
-2. Then click on **Credentials Domain** drop-down list. There is only one credential at the moment, choose the available option for you. In the **Credential Alias**, choose **hol_tp** from the drop-down, which is our pre-created connection group to target ATP. 
+2. Then click on the **Credentials Domain** drop-down list. There is only one credential at the moment, choose the available option for you. In the **Credential Alias**, choose **hol_tp** from the drop-down, which is the pre-created connection group to target ATP. 
 
 	![](/images/micro_initload_2_2.png)
 
-3. After that go below to find Trail Name, add **il** as trail name, because we defined this in our extract parameter, so it cannot be just a random name.
+3. Scroll below and find "Trail Name", add **il** as trail name, because we defined this in our extract parameter, so it _**cannot**_ be a random name.
 
 	![](/images/micro_initload_2_3.png)
 
-4. Also provide **/u02/trails** in "Trail Subdirectory" and choose a **Checkpoint Table** from drop-down list. It is **GGADMIN.CHKPT** in our case.
+4. Also provide **/u02/trails** in the "Trail Subdirectory" and choose a **Checkpoint Table** from the drop-down list. It is **GGADMIN.CHKPT** in our case.
 
 5. Review everything then click **Next**
 
 ## **Step 11**: Edit parameter file
 
-1. Microservices has created some draft parameter file for your convenience, let's edit to our need.
+1. Microservices has created a draft parameter file for your convenience, let's edit to our need.
 
 	![](/images/micro_initload_3_1.png)
 
-2. Erase existing and paste below configuration 
+2. Erase existing and paste below configuration:
 
 	```
 	<copy>
@@ -139,11 +139,11 @@ In this final step of the workshop, we will configure the replication process in
 
 ## **Step 12**: Check INITLOAD status
 
-1. In the overview dashboard, now you should be seeing successful running INITLOAD replication. Click on **Action** button choose **Details**.
+1. In the overview dashboard, you should now be seeing the running INITLOAD replication. Click on **Action** button, choose **Details**.
 
 	![](/images/micro_initload.png)
 	
-2. You can see the details of the running replicat process. In the statistics tab, you'd see some changes right away. Because this is the Initial load you will not see any update there, but in continuous replication case, we see totally different numbers.
+2. You can see the details of the running replicat process. In the statistics tab, you can see some changes right away. 
 
 	![](/images/micro_initload_5.png)
 

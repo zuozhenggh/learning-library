@@ -1,16 +1,14 @@
-# Migrate PostgreSQL to Oracle Autonomous database workshop
+# Migrate PostgreSQL to Oracle Autonomous Database Workshop
 
 ## Introduction
 
-Welcome to migrate to autonomous database workshop.
-
-In this workshop, we will migrate a PostgreSQL database to an Autonomous database in Oracle Cloud Infrastructure. We will use Oracle Goldengate for migration and designed resources in OCI for this workshop purpose. This workshop consists of 4 labs. 
+In this workshop, we will migrate a PostgreSQL database to an Autonomous Database in Oracle Cloud Infrastructure. Purpose of this workshop we will use Oracle Goldengate for the migration and designated resources in Oracle Cloud Infrastructure. This workshop consists of 4 labs. 
 
 *Estimated total Workshop Time*: 1.5 hours
 
 ### About GoldenGate for PostgreSQL
 
-Oracle GoldenGate on Marketplace contains pre-configured Oracle GoldenGate for Non-Oracle for PostgreSQL. We will use it for our extract data processes from source PostgreSQL.
+Oracle GoldenGate on Marketplace contains pre-configured Oracle GoldenGate for Non-Oracle for PostgreSQL. We will use it for our extract data processes from a source PostgreSQL database.
 
 ### About GoldenGate Microservices
 
@@ -33,14 +31,14 @@ In this workshop you will :
 **Architecture Overview**
 
 - Virtual Cloud Network: we will create a VCN with a public sub-network and internet access to avoid complexity.
-- Source Postgreqsql database: we will create a Postgresql database server in a Virtual Machine, which acts as our source on-premise database.
-- Goldengate for non-Oracle deployment: we will create a Goldengate classic for Postgresql to extract data from the source and ships trails to the cloud.
-- Goldengate Microservices deployment: we will create a Microservices environment for an Autonomous database that applies trails from source to target autonomous database.
-- Target Autonomous database: we will provision Oracle Autonomous database acts as our target database.
+- Source PostgreSQL database: we will create a PostgreSQL database in a Virtual Machine, which acts as our source on-premise database.
+- Target Autonomous database: we will provision Oracle Autonomous Database to act as our target database.
+- Goldengate for non-Oracle deployment: we will create a Goldengate classic for PostgreSQL to extract data from the source and ships trail files to the cloud.
+- Goldengate Microservices deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
 
 	![](/images/architecture.png)
 
-All of these mentioned resources are going to be deployed in Oracle Cloud infrastructure using Terraform. It is not necessary to have prior knowledge of Terraform scripting. All you need to do is follow every step exactly as described.
+All of the above resources are going to be deployed in Oracle Cloud Infrastructure using Terraform. It is not necessary to have prior knowledge of Terraform scripting. All you need to do is follow every step exactly as described.
 
 ### Prerequisites
 

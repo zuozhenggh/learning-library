@@ -2,13 +2,13 @@
 
 ## Introduction
 
-We so far created all of the necessary resources using terraform in OCI. It is now time to prepare Target Database, ATP. 
+Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, ATP. 
 
 *Estimated lab time*: 10 minutes
 
 ### Objectives
 
-We need to create our target tables for our GG migration and enable GGADMIN for replication to the Autonomous Database.
+We need to create our target tables for our GoldenGate migration and enable GGADMIN for replication to the Autonomous Database.
 
 ### Prerequisites
 
@@ -24,27 +24,29 @@ We need to create our target tables for our GG migration and enable GGADMIN for 
 
 	![](/images/2.atp_1.PNG)
 
-3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter the password, which is in terraform output. Go and copy, then paste here.
+3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter the password, which is in the terraform output. Go and copy, then paste here.
 
 	![](/images/sql_dev_1.png)
 
 4. In the **DEVELOPMENT** section, click on **SQL**. 
 
+	![](/images/sql_dev_3.png)
 
-## **Step 2**: Create target tables
+## **Step 2**: Create Target Tables
 
-1. Let's create our target tables for migration. Please download target table creation script **[from here](./files/CreateTables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
+1. Let's create our target tables for migration. Please download the target table creation script **[from here](./files/CreateTables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
 
 2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop it in the worksheet area. Then run create statements.
 
 	![](/images/sql_dev_2.png)
 
-	There should have **5** tables created after script execution.
-
+	There should be **5** tables created after script execution.
+	
+	![](/images/sql_dev_4.png)
 
 ## **Step 3**: Enable GGADMIN 
 
-1. Now let's unlock and change the password for the pre-created Oracle GoldenGate user (ggadmin) in Autonomous Database. Enable GGADMIN by running following query:
+1. Now let's unlock and change the password for Oracle GoldenGate user (ggadmin) in the Autonomous Database. Enable GGADMIN by running the following query:
 
 	```
 	<copy>
@@ -60,7 +62,7 @@ We need to create our target tables for our GG migration and enable GGADMIN for 
 	select * from v$parameter where name = 'enable_goldengate_replication';
 	```
 
-3. If value is FALSE, then modify the parameter,this is only applicable to older ATP version.:
+3. If value is FALSE, then modify the parameter, this is only applicable to an older ATP version.:
 
 	```
 	alter system set enable_goldengate_replication = true scope=both;
