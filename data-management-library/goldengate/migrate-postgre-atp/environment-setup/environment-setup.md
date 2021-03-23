@@ -15,7 +15,7 @@ The first lab is the most important lab of all, in fact in this step we will cre
 ### Objectives
 
 In this first lab, we will prepare our work environment and create our lab resources using Terraform script.
-In case if you are running this lab in your existing tenancy, **make sure** you have following compute quotas and resources available to use:
+In case if you are running this lab in your existing tenancy, **make sure** you have the following compute quotas and resources available to use:
 
 1. ATP for Target database - 1 OCPU, 1 TB storage
 2. Virtual Machine for Source Database - VM.StandardE2.1
@@ -30,7 +30,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 ## **Step 1**: Clone lab repository
 
-1. Let's begin our lab. First we'll make a copy of lab repository and go to cloned directory. In your cloud-shell web terminal, issue below commands.
+1. Let's begin our lab. First, we'll make a copy of the lab repository and go to the cloned directory. In your cloud-shell web terminal, issue the below commands.
 
 	```
 	git clone https://github.com/hol-workshop/migrate_to_atp.git
@@ -42,7 +42,7 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 ## **Step 2**: Create terraform.tfvars file
 
-1. Now we need to create a file to help terraform understanding your environment. Let's modify following parameters in your notepad and copy it.
+1. Now we need to create a file to help terraform understanding your environment. Let's modify the following parameters in your notepad and copy them.
 
 	```
 	<copy>
@@ -63,13 +63,13 @@ In case if you are running this lab in your existing tenancy, **make sure** you 
 
 ## **Step 3**: Terraform 
 
-1. It is time to initialize terraform. Run below command to download necessary terraform files from OCI provider.
+1. It is time to initialize terraform. Run the below command to download necessary terraform files from the OCI provider.
 
 	```
 	terraform init
 	```
 
-2. Plan and apply steps shouldn't ask any input from you. If it asks you to provide such as compartment_ocid, then again check previous files.
+2. Plan and apply steps shouldn't ask for any input from you. If it asks you to provide such as compartment_ocid, then again check previous files.
 
 	```
 	terraform plan

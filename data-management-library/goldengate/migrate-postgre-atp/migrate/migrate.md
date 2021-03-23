@@ -2,13 +2,13 @@
 
 ## Introduction
 
-Final lab of this workshop will guide you how to setup simple migration to ATP using Goldengate Microservices. By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. With Oracle GoldenGate Microservices on Marketplace, you can deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
+The final lab of this workshop will guide you on how to set up simple migration to ATP using Goldengate Microservices. By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. With Oracle GoldenGate Microservices on Marketplace, you can deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
 
 *Estimated lab time*: 30 minutes
 
 ### Objectives
 
-In this final step of workshop, we will configure replication process in Microservices and apply captured changes from source database to our target Autonomous database. This is final lab.
+In this final step of the workshop, we will configure the replication process in Microservices and apply captured changes from the source database to our target Autonomous database. This is the last lab.
 
 ### Prerequisites
 
@@ -16,13 +16,13 @@ In this final step of workshop, we will configure replication process in Microse
 
 ## **Step 1**:	Access to Goldengate Microservices instance
 
-1. After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make console connection to microservice, copy ip address of `OGG_Microservices_Public_ip` from your note and connect using:
+1. After successful creating extract processes, now it is time to explore your GG Microservices server. Let's make a console connection to microservice, copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
 
 	**`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
 ## **Step 2**: Retrieve Goldengate Microservices’ admin password
 
-1. Once you are in issue following **`cat ogg-credentials.json`**, and copy credential value from output
+1. Once you are in, issue following **`cat ogg-credentials.json`**, and copy a credential value from the output.
 
 	![](/images/oggadmin.png)
 
@@ -36,7 +36,7 @@ In this final step of workshop, we will configure replication process in Microse
 
 ## **Step 4**: Open Target Receiver server
 
-1. Then click on Target Receiver server's port **9023**, it will redirect you to new tab, provide your credentials again for username **oggadmin**.
+1. Then click on Target Receiver server's port **9023**, it will redirect you to a new tab, provide your credentials again for username **oggadmin**.
 
 	![](/images/gg_oggadmin_0.png)
 
@@ -54,11 +54,11 @@ In this final step of workshop, we will configure replication process in Microse
 
 ## **Step 6**: Modify Goldengate credentials
 
-1. You should be seeing empty Extracts and Replicats dashboard. Let's add some Autonomous Database credentials at first. Open hamburger menu on left top corner, choose **Configuration**
+1. You should be seeing empty Extracts and Replicats dashboard. Let's add some Autonomous Database credentials at first. Open hamburger menu on the top-left corner, choose **Configuration**
 
 	![](/images/micro_ggadmin_0.png)
 
-2. It will open OGGADMIN Security and you will see we already have a connection to **HOL Target ATP** database. However, you still need to add password here. Click on a pencil icon to **alter credentials**.
+2. It will open OGGADMIN Security and you will see we already have a connection to **HOL Target ATP** database. However, you still need to add a password here. Click on a pencil icon to **alter credentials**.
 
 	![](/images/micro_ggadmin_1.png)
 
@@ -78,27 +78,27 @@ In this final step of workshop, we will configure replication process in Microse
 
 	![](/images/micro_ggadmin_4.png)
 
-	Checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is a best practice to enable the checkpoint table for the target system.
+	The checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is a best practice to enable the checkpoint table for the target system.
 
 4. Now let's go back to **Overview** page from here.
 
 ## **Step 9**: Add replication process
 
-1. The apply process for replication, also known as Replicat, is very easy and simple to configure. There are five types of Replicats supported by the Oracle GoldenGate Microservices. In overview page, go to Replicat part and click on **+** to create our replicat process.
+1. The apply process for replication, also known as Replicat, is very easy and simple to configure. There are five types of Replicats supported by the Oracle GoldenGate Microservices. On the overview page, go to Replicat part and click on **+** to create our replicat process.
 
 	![](/images/micro_initload_0.png)
 
-2. We will choose **Nonintegrated Replicat** for initial load, click **Next**. In non-integrated mode, the Replicat process uses standard SQL to apply data directly to the target tables. In our case, number of records in source database is small and we don't need to run in parallel apply, therefore it will suffice.
+2. We will choose **Nonintegrated Replicat** for initial load, click **Next**. In non-integrated mode, the Replicat process uses standard SQL to apply data directly to the target tables. In our case, the number of records in the source database is small and we don't need to run in parallel apply, therefore it will suffice.
 
 	![](/images/micro_initload_1.png)
 
 ## **Step 10**: Modify replication parameters
 
-1. Provide your name for replicat process, for example **initload**, process name has to be unique and 8 characters long. It is better if you give some meaningful names to identify them later on. Let's name it as **initload**, because this is currently our initial load process.
+1. Provide your name for the replicat process, for example, **initload**, the process name has to be unique and 8 characters long. It is better if you give some meaningful names to identify them later on. Let's name it as **initload**, because this is currently our initial load process.
 
 	![](/images/micro_initload_2_1.png)
 
-2. Then click on **Credentials Domain** drop-down list. There is only one credential at the moment, choose the available option for you. In the **Credential Alias**, choose **hol_tp** from drop down, which is our pre-created connection group to target ATP. 
+2. Then click on **Credentials Domain** drop-down list. There is only one credential at the moment, choose the available option for you. In the **Credential Alias**, choose **hol_tp** from the drop-down, which is our pre-created connection group to target ATP. 
 
 	![](/images/micro_initload_2_2.png)
 
@@ -139,21 +139,21 @@ In this final step of workshop, we will configure replication process in Microse
 
 ## **Step 12**: Check INITLOAD status
 
-1. In overview dashboard, now you should be seeing successful running INITLOAD replication. Click on **Action** button choose **Details**.
+1. In the overview dashboard, now you should be seeing successful running INITLOAD replication. Click on **Action** button choose **Details**.
 
 	![](/images/micro_initload.png)
 	
-2. You can see details of running replicat process. In statistics tab, you'd see some changes right away. Because this is Initial load you will not see any update there, but in continuous replication case we see totally different numbers.
+2. You can see the details of the running replicat process. In the statistics tab, you'd see some changes right away. Because this is the Initial load you will not see any update there, but in continuous replication case, we see totally different numbers.
 
 	![](/images/micro_initload_5.png)
 
 Congratulations! You have completed this workshop! 
 
-You successfully migrated Postgresql database to Autonomous Database in Oracle Cloud Infrastructure.
+You successfully migrated PostgreSQL database to Autonomous Database in Oracle Cloud Infrastructure.
 
 ## Summary
 
-Here is summary of resources which was created by Terraform script and used in our workshop.
+Here is a summary of resources which was created by Terraform script and used in our workshop.
 
 1. [Virtual Cloud Network](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs.htm)
 - Public Subnet, Internet Gateway

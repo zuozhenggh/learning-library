@@ -2,13 +2,13 @@
 
 ## Introduction
 
-We so far created all of necessary resources using terraform in OCI. It is now time to prepare Target Database, ATP. 
+We so far created all of the necessary resources using terraform in OCI. It is now time to prepare Target Database, ATP. 
 
 *Estimated lab time*: 10 minutes
 
 ### Objectives
 
-We need to create our target tables for our GG migration and enable GGADMIN for replication to Autonomous database.
+We need to create our target tables for our GG migration and enable GGADMIN for replication to the Autonomous Database.
 
 ### Prerequisites
 
@@ -16,15 +16,15 @@ We need to create our target tables for our GG migration and enable GGADMIN for 
 
 ## **Step 1**: Open SQL developer web 
 
-1. Go to top left hamburger icon, navigate to **Autonomous Transaction Processing** and click on **HOL Target ATP** database.
+1. Go to the top-left hamburger icon, navigate to **Autonomous Transaction Processing** and click on **HOL Target ATP** database.
 
 	![](/images/2.atp.PNG)
 
-2. In **Tools** tab, where you will see **Database Actions**, click on **Open Database Actions**. You may need to enable pop-up your browser if it doesn't open anything.
+2. In **Tools** tab, where you will see **Database Actions**, click on **Open Database Actions**. You may need to enable a pop-up in your browser if it doesn't open anything.
 
 	![](/images/2.atp_1.PNG)
 
-3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter password, which is in terraform output. Go and copy, then paste here.
+3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter the password, which is in terraform output. Go and copy, then paste here.
 
 	![](/images/sql_dev_1.png)
 
@@ -33,9 +33,9 @@ We need to create our target tables for our GG migration and enable GGADMIN for 
 
 ## **Step 2**: Create target tables
 
-1. Let's create our target tables for migration. Please download target table creation script **[from here](./files/CreateTables.sql)**. Make sure to save these with correct extension **.sql** not txt!
+1. Let's create our target tables for migration. Please download target table creation script **[from here](./files/CreateTables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
 
-2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop in the worksheet area. Then run create statements.
+2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop it in the worksheet area. Then run create statements.
 
 	![](/images/sql_dev_2.png)
 

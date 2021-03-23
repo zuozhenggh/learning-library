@@ -2,28 +2,28 @@
 
 ## Introduction
 
-In this step, we will show you how to prepare your work environment in Oracle Cloud Infrastructure. We will use cloud-shell as our terminal which is console based, web terminal built in OCI console. It is good to use this terminal, in case you are behind corporate VPN, in case you don't have stable network connection.
+In this step, we will show you how to prepare your work environment in Oracle Cloud Infrastructure. We will use cloud-shell as our terminal which is a web-based, terminal built-in OCI console. It is good to use this terminal, in case you are behind corporate VPN, in case you don't have a stable network connection.
 To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
 
 *Estimated lab time*: 10 minutes
 
 ### Objectives
 
--   Create SSH keys in cloud-shell environment
+-   Create SSH keys in a cloud-shell environment
 -   Configure API keys for your cloud user
 -	Modify bash profile to interact with terraform 
 
 ### Assumptions
 
-* The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor, or can be obtained through **Getting Started** steps.
-* A Cloud tenancy where you have the resources available  to provision what mentioned in Architecture Overview.
+* The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor or can be obtained through **Getting Started** steps.
+* A Cloud tenancy where you have the resources available to provision what mentioned in Architecture Overview.
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
-* Your cloud account user must have required IAM (Identity and Access Management) policy or admin user.
+* Your cloud account user must have the required IAM (Identity and Access Management) policy or admin user.
 * Successfully logged in to your cloud tenancy, if not please [login](https://www.oracle.com/cloud/sign-in.html) to your cloud account.
 
 ## **Step 1**: Login to Oracle Cloud Infrastructure 
 
-1. Let's prepare our work directory. We will use Cloud Shell in OCI web console, which is simple and sophisticated cloud terminal for the most of your need. It is located right top corner of OCI web console
+1. Let's prepare our work directory. We will use Cloud Shell in the OCI web console, which is a simple and sophisticated cloud terminal for most of your need. It is located right top corner of the OCI web console
 
 	![](/images/0.Prep_0.PNG)
 
@@ -48,7 +48,7 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 
 ## **Step 3**: Add public API keys to your user
 
-1. Click on right top corner of your OCI web console, and click on your **profile**. Then navigate to **API Keys** from left pane and click on **Add API Key** button. A small pop-up will appear and you need to choose "Paste Public Key" radiobutton. Paste your **copied public pem key** there and click on **Add** button.
+1. Click on the right top corner of your OCI web console, and click on your **profile**. Then navigate to **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied public pem key** there and click on the **Add** button.
 
 	![](/images/0.Prep_2.PNG)
 
@@ -70,7 +70,7 @@ To use the Cloud Shell machine, your tenancy administrator must grant the requir
 	export TF_VAR_user_ocid="your-user-value-goes-here"
 	</copy>
 	```
-	_**NOTE:** if you are an experienced OCI user, I'd highly suggest you to use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
+	_**NOTE:** if you are an experienced OCI user, I'd highly suggest you use your own compartment to isolate all resources. To do so, provide your compartment OCID in `TF_VAR_compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
 
 2. After you modified above using your values, we need to add these lines to your ".bash_profile". Go to cloud-shell terminal and issue:
 
