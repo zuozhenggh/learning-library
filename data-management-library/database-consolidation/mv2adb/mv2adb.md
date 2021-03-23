@@ -6,24 +6,24 @@ Move to Autonomous Database (MV2ADB) is a tool, which migrates data from an "on 
 The MV2ADB tool is able to automatically take a data pump export, push it to OCI Object Storage, then it automatically imports it into the Autonomous Database using Data Pump in one command.
 *Note: For using mv2adb for migration from source DB to ADB, the source DB should be at lower version than Autonomous Database.*
 
-
 ![](./screenshots/consolidation.jpg)
-***This picture says highly restricted... EDIT***
+
+***TO AUTHOR: This picture says highly restricted... EDIT***
 
 ### Objectives
 
 As a **root** user, you will: 
-1. Establish connectivity from source database instances to Target instance.
-2. Install and configure MV2ADB tool on source databases.
-3. Run the MV2ADB config script to migrate the databases from Source to Target.
+* Establish connectivity from source database instances to Target instance.
+* Install and configure MV2ADB tool on source databases.
+* Run the MV2ADB config script to migrate the databases from Source to Target.
 
 ### Prerequisites
 
 Required Artifacts: 
-- A pre-provisioned dedicated autonomous database instance.
-- Two pre-provisioned Source databases, one 19c and one 11g.
-- ADB Wallet downloaded on your local machine.
-- A pre-generated Auth Token from the console.
+  1. A pre-provisioned dedicated autonomous database instance.
+  2. Two pre-provisioned Source databases, one 19c and one 11g.
+  3. ADB Wallet downloaded on your local machine.
+  4. A pre-generated Auth Token from the console.
 
 
 ## **STEP 1**: Downloading ADB Wallet to Your Local Machine
@@ -68,7 +68,7 @@ Required Artifacts:
 
   ![](./screenshots/create_bucket.png)
 
-5. Enter a **name** for your bucket, then hit **Create Bucket** again.
+5. Enter a **Name** for your bucket, then hit **Create Bucket** again.
 
   ![](./screenshots/final_create_button.png)
   *Take note of your region, bucket name, and tenancy name for later.*
@@ -76,190 +76,224 @@ Required Artifacts:
 
 ## **STEP 3**: Installing Instance Client on the Source Database Instances
 
-1. Navigate [here](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) to find the links for the most recent instant client.
-  * Copy the file links of the following Instant Client packages by right clicking and selecting "Copy Link Address". Paste each one on your preferred text editor.
-    1. Basic Package (ZIP)
-    2. SQL*Plus Package (ZIP)
-    3. Tools Package (ZIP)
-
+1. Navigate [here](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) to find the links for the most recent instant client. Copy the file links of the following Instant Client packages by right clicking and selecting "Copy Link Address". Paste each one on your preferred text editor.
+    - Basic Package (ZIP)
+    - SQL*Plus Package (ZIP)
+    - Tools Package (ZIP)
+  
   ![](./screenshots/copy_link_wget.png)
 
-
-- Add "wget" in front of each copied link.
-  ```
-  wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
-  wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip
-  wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-tools-linux.x64-19.8.0.0.0dbru.zip
-  ```
-
-
-
-- Connect to both Source database instances, and switch to the ***root*** user.
-```
-ssh -i <private-key> opc@PublicIP
-sudo su - root
-```
+2. Add "wget" in front of each copied link.
+    
+    ```
+    <copy>wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
+    wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip
+    wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-tools-linux.x64-19.8.0.0.0dbru.zip</copy>
+    ```
 
 
+
+3. Connect to both Source database instances, and switch to the ***root*** user.
+  
+    ```
+    <copy>ssh -i <private-key> opc@PublicIP
+    sudo su - root</copy>
+    ```
 <!-- HUMZA DONE !-->
-- Run the "wget" commands that were created above on the root home directory on both Source database instances.
-```
-wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
-wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip
-wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-tools-linux.x64-19.8.0.0.0dbru.zip
-```
+4. Run the "wget" commands that were created above on the root home directory on both Source database instances.
+
+    ```
+    <copy>wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
+    wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip
+    wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-tools-linux.x64-19.8.0.0.0dbru.zip</copy>
+    ```
 
 
-- Unzip the files on both Source database instances.
-```
-unzip -o instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
-unzip -o instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip
-unzip -o instantclient-tools-linux.x64-19.8.0.0.0dbru.zip
-```
+5. Unzip the files on both Source database instances.
+    
+    ```
+    <copy>unzip -o instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
+    unzip -o instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip
+    unzip -o instantclient-tools-linux.x64-19.8.0.0.0dbru.zip</copy>
+    ```
 
 
-- Navigate inside the directory named instantclient_yourversion on both Source database instances.
-- Verify you have sqlplus, expdp, and impdp inside the directory on both Source database instances.
-```
-cd instantclient_19_8
-ls -lrta
-```
-![](./screenshots/sql_imp_exp_unzip.png)
+6. Navigate inside the directory named instantclient_yourversion on both Source database instances.
 
+7. Verify you have sqlplus, expdp, and impdp inside the directory on both Source database instances.
 
+    ```
+    <copy>cd instantclient_19_8
+    ls -lrta</copy>
+    ```
 
-## **STEP 4**: Transferring the ADB wallet on your local machine to both Source database instances
-- Using your preferred sftp client, connect to both Source database instances as opc user.
-- Navigate to the /tmp/ folder on both Source database instances via the sftp client
-- Upload the ADB wallet from your local machine to both Source database instances.
-- Exit the sftp client on your local machine.
-- On both Source database instances, connect as root and navigate to /root/instantclient_yourversion/network/admin.
-- Move the ADB wallet from the /tmp/ directory to the /root/instantclient_yourversion/network/admin/ directory on both Source database instances.
-- Unzip the ADB wallet inside the directory on both Source database instances.
-```
-mv /tmp/Wallet_T19.zip /root/instantclient_19_8/network/admin/
-unzip Wallet_T19.zip
-```
-![](./screenshots/wallet_unzip.png)
+  ![](./screenshots/sql_imp_exp_unzip.png)
 
+## **STEP 4**: Transferring the ADB Wallet on Your Local Machine to Both Source Database Instances
 
-## **STEP 5**: Verifying both Source database instances can connect to the ADB database
-- View the connect string via the tnsnames.ora from the ADB wallet on both Source database instances.
-```
-cd /root/instantclient_19_8/network/admin
-cat tnsnames.ora
-```
-![](./screenshots/tnsnames_cat.png)
+1. Using your preferred sftp client, connect to both Source database instances as opc user.
+
+2. Navigate to the /tmp/ folder on both Source database instances via the sftp client.
+
+3. Upload the ADB wallet from your local machine to both Source database instances.
+
+4. Exit the sftp client on your local machine.
+
+5. On both Source database instances, connect as root and navigate to /root/instantclient_yourversion/network/admin.
+
+6. Move the ADB wallet from the /tmp/ directory to the /root/instantclient_yourversion/network/admin/ directory on both Source database instances.
+
+7. Unzip the ADB wallet inside the directory on both Source database instances.
+
+    ```
+    <copy>mv /tmp/Wallet_T19.zip /root/instantclient_19_8/network/admin/
+    unzip Wallet_T19.zip</copy>
+    ```
+
+  ![](./screenshots/wallet_unzip.png)
+
+## **STEP 5**: Verifying Both Source Database Instances Can Connect to the ADB Database
+
+1. View the connect string via the tnsnames.ora from the ADB wallet on both Source database instances.
+    
+    ```
+    <copy>cd /root/instantclient_19_8/network/admin
+    cat tnsnames.ora</copy>
+    ```
+
+  ![](./screenshots/tnsnames_cat.png)
+  
   *Note: Both 11g and 19c Source databases are being consolidated into one ADB database, so the connect string will be the same for both Source database instances.*
 
+2. Export instant client paths on both Source database instances.
+    
+    ```
+    <copy>export ORACLE_HOME=/root/instantclient_19_8
+    export LD_LIBRARY_PATH="$ORACLE_HOME"
+    export PATH="$ORACLE_HOME:$PATH"</copy>
+    ```
+
+  ![](./screenshots/param_export.png)
+
+  *Note: The ORACLE_HOME path may vary depending on your instant client version*
 
 
-- Export instant client paths on both Source database instances.
-```
-export ORACLE_HOME=/root/instantclient_19_8
-export LD_LIBRARY_PATH="$ORACLE_HOME"
-export PATH="$ORACLE_HOME:$PATH"
-```
-![](./screenshots/param_export.png)
+3. Navigate to the base instant client directory on both Source database instances.
 
- *Note: The ORACLE_HOME path may vary depending on your instant client version*
+4. Test connectivity to the Target database from both Source database instances.
+  
+    ```
+    <copy>cd /root/instantclient_19_8
+    ./sqlplus ADMIN/DATABASEPASSWORD@t19_high</copy>
+    ```
 
+  ![](./screenshots/sqlplus_connectivity.png)
 
-- Navigate to the base instant client directory on both Source database instances.
-- Test connectivity to the Target database from both Source database instances.
-```
-cd /root/instantclient_19_8
-./sqlplus ADMIN/DATABASEPASSWORD@t19_high
-```
-![](./screenshots/sqlplus_connectivity.png)
+## **STEP 6**: Download and Install MV2ADB on Both Source Database Instances.
 
-
-
-## **STEP 6**: Download and Install MV2ADB on both Source database instances.
-- On your local machine, download the MV2ADB rpm file [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4). Platform specific rpm can be downloaded under the History Tab.
+1. On your local machine, download the MV2ADB rpm file [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4). Platform specific rpm can be downloaded under the History Tab.
 
   ![](./screenshots/MOS_history.png)
 
+2. Using your preferred sftp client, connect to both Source database instances as opc user.
 
-- Using your preferred sftp client, connect to both Source database instances as opc user.
-- Navigate to the /tmp/ folder on both Source database instances via the sftp client.
-- Upload the MV2ADB rpm file from your local machine to both Source database instances.
-- Exit the sftp client on your local machine.
-- Connect as root and navigate to /tmp/ on both Source database instances.
-- Install the RPM on both Source database instances.
-```
-rpm -i mv2adb-2.0.1-114.el6.x86_64.rpm
-```
-![](./screenshots/rpm_install_mv2adb.png)
+3. Navigate to the /tmp/ folder on both Source database instances via the sftp client.
 
+4. Upload the MV2ADB rpm file from your local machine to both Source database instances.
 
-- Verify installation was successful on both Source database instances.
-```
-ls -lrta /opt/mv2adb
-```
-![](./screenshots/mv2adb_verify.png)
+5. Exit the sftp client on your local machine.
 
+6. Connect as root and navigate to /tmp/ on both Source database instances.
 
+7. Install the RPM on both Source database instances.
 
-## **STEP 7**: Encrypt passwords of both Source database instances, Target database, and Auth Token.
-- Encrypt the following passwords using the “mv2adb encpass” command, and save the values to a safe location (Eg: Notepad). Run the command for each password you would like to encrypt.
-  - Both Source database SYS passwords.
-  - ADMIN password of the Target database.
-  - Auth Token.
-```
-cd /opt/mv2adb
-./mv2adb.bin encpass
-```
-![](./screenshots/enc_pass.png)
+    ```
+    <copy>rpm -i mv2adb-2.0.1-114.el6.x86_64.rpm</copy>
+    ```
+
+  ![](./screenshots/rpm_install_mv2adb.png)
+
+8. Verify installation was successful on both Source database instances.
+  
+    ```
+    <copy>ls -lrta /opt/mv2adb</copy>
+    ```
+  
+  ![](./screenshots/mv2adb_verify.png)
+
+## **STEP 7**: Encrypt Passwords of Both Source Database Instances, Target Database, and Auth Token.
+
+1.  Encrypt the following passwords using the “mv2adb encpass” command, and save the values to a safe location (Eg: Notepad). Run the command for each password you would like to encrypt.
+
+  * Both Source database SYS passwords.
+  * ADMIN password of the Target database.
+  * Auth Token.
+    
+    ```
+    <copy>cd /opt/mv2adb
+    ./mv2adb.bin encpass</copy>
+    ```
+
+  ![](./screenshots/enc_pass.png)
 
   *Note: If you get an error saying it cannot find the command, you may have to run the mv2adb.bin without any parameters to first initialize it! (./mv2adb.bin)*
 
+## **STEP 8**: Configure the MV2ADB Script on Both Source Database Instances
 
+1. Backup the existing configuration file on both Source database instances.
+  
+    ```
+    <copy>cd /opt/mv2adb/conf/
+    cp DBNAME.mv2adb.cfg BKP_DBNAME.mv2adb.cfg</copy>
+    ```
 
-## **STEP 8**: Configure the MV2ADB Script on both source database instances
-- Backup the existing configuration file on both Source database instances.
-```
-cd /opt/mv2adb/conf/
-cp DBNAME.mv2adb.cfg BKP_DBNAME.mv2adb.cfg
-```
+2. The following parameters need to be edited in the config file on both Source database instances.
 
+3. Edit the config file by running VI on the config file on both Source database instances.
 
-- The following parameters need to be edited in the config file on both Source database instances.
-- Edit the config file by running VI on the config file on both Source database instances.
-- When using vi, you enable editing by pressing the "i" key.
-- To disable editing, press the "escape" key.
-- To save, when editing is disabled, press the ":" key followed by "x" and then press "enter".
-```
-vi /opt/mv2adb/conf/DBNAME.mv2adb.cfg
-```
-```
-DB_CONSTRING =//<hostname>/<servicename of DB>
-SYSTEM_DB_PASSWORD=<enc_password>
-SCHEMAS=<schemas to be migrated>
-REMAP=<Source tablespace>:<Target tablespace>
-DUMP_NAME=<name for your dump file>
-DUMP_PATH=<path to store your dump file>
-DUMP_FILES=<full path of dump file>
-OHOME=<Oracle Home Path>
-ICHOME=<Instant Client Path>
-ADB_NAME=
-ADB_PASSWORD=
-ADB_CFILE=
-OCI_REGION=
-OCI_NAMESPACE=
-OCI_BUCKET=
-OCI_ID=
-OCI_PASSWORD=  
-```
-- Unused parameters that need to be commented out.
-- To comment, add a # as the first character of the line.
-```
-#DBV_USER=
-#FULL=Y
-#EXCLUDE=
-#ADB_CORES=
-#ADB_TARGET=  
-```
+4. When using vi, you enable editing by pressing the "i" key.
+
+5. To disable editing, press the "escape" key.
+
+6. To save, when editing is disabled, press the ":" key followed by "x" and then press "enter".
+    ```
+    <copy>vi /opt/mv2adb/conf/DBNAME.mv2adb.cfg</copy>
+    ```
+
+    ```
+    <copy>DB_CONSTRING =//<hostname>/<servicename of DB>
+    SYSTEM_DB_PASSWORD=<enc_password>
+    SCHEMAS=<schemas to be migrated>
+    REMAP=<Source tablespace>:<Target tablespace>
+    DUMP_NAME=<name for your dump file>
+    DUMP_PATH=<path to store your dump file>
+    DUMP_FILES=<full path of dump file>
+    OHOME=<Oracle Home Path>
+    ICHOME=<Instant Client Path>
+    ADB_NAME=
+    ADB_PASSWORD=
+    ADB_CFILE=
+    OCI_REGION=
+    OCI_NAMESPACE=
+    OCI_BUCKET=
+    OCI_ID=
+    OCI_PASSWORD=</copy>  
+    ```
+
+***TO AUTHOR: Everything below this in Section 8 is a bit messy, strongly consider separating this into another step, or grouping them with emphasized titles so it's easier to read... but stay consistent in whatever approach you use (3/4/5 hashtag header, 2 space indent on content, - or # for sections etc)***
+
+### Unused parameters that need to be commented out.
+  
+  - To comment, add a # as the first character of the line.
+    
+    ```
+    <copy>#DBV_USER=
+    #FULL=Y
+    #EXCLUDE=
+    #ADB_CORES=
+    #ADB_TARGET=
+    </copy>  
+    ```
 
 ### Finding parameters
 
@@ -342,19 +376,23 @@ show con_name
 ![](./screenshots/comp_config.png)
 
 
-## **STEP 9**: Run the MV2ADB migration script on both Source database instances
+## **STEP 9**: Run the MV2ADB Migration Script on Both Source Database Instances
+
 The migration script will export from your source databases, then import into your Autonomous database using data pump. For more information, refer to the official steps from my Oracle support (MOS) [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4).
 
-- As root user on both source database instances, run the script in AUTO mode.
-```
-cd /opt/mv2adb
-./mv2adb.bin auto -conf /opt/mv2adb/conf/DBNAME.mv2adb.cfg
-```
-![](./screenshots/mv2adb_run.png)
-![](./screenshots/autorun_1.png)
+1.  As root user on both source database instances, run the script in AUTO mode.
+  
+    ```
+    <copy>cd /opt/mv2adb
+    ./mv2adb.bin auto -conf /opt/mv2adb/conf/DBNAME.mv2adb.cfg</copy>
+    ```
 
+  ![](./screenshots/mv2adb_run.png)
+
+  ![](./screenshots/autorun_1.png)
 
 ## **STEP 10**: Validate the Data Migration
+
 - On both source database instances, run the mv2adb report.
 ```
 cd /opt/mv2adb
