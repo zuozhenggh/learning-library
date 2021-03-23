@@ -18,12 +18,16 @@ You will also clone a GitHub repository.
 * The OKE cluster and the ATP databases that you created in Lab 1
 
 
-## **STEP 1**: Set values for workshop in the environment
+## **STEP 1**: Set values for workshop in the environment and source ~/.bashrc
 
 1. Run `./addAndSourcePropertiesInBashrc.sh`
 
     ```
     <copy>./addAndSourcePropertiesInBashrc.sh</copy>
+    ```
+
+    ```
+    <copy>source ~/.bashrc</copy>
     ```
 
 ## **STEP 2**: Build and push the Docker images
