@@ -12,7 +12,7 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 -   Configure API keys for your cloud user
 -	Modify bash profile to interact with terraform 
 
-### Assumptions
+### Prerequisites
 
 * The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor or can be obtained through **Getting Started** steps.
 * A Cloud tenancy where you have the resources available to provision what is listed in the Architecture Overview.
@@ -20,7 +20,7 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 * Your cloud account user must have the required IAM (Identity and Access Management) policy or admin user.
 * Successfully logged in to your cloud tenancy, if not please [login](https://www.oracle.com/cloud/sign-in.html) to your cloud account.
 
-## **Step 1**: Login to Oracle Cloud Infrastructure 
+## **Step 1**: Open Cloud-Shell
 
 1. Let's prepare our work directory. We will use Cloud Shell, it is located at the top right corner of the OCI web console
 
@@ -28,7 +28,7 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 
 ## **Step 2**: Generate SSH keys 
 
-1. Once the cloud shell environment is ready, issue the below commands. This will create the ssh key files and the api signing keys:
+1. Once the cloud shell environment is ready, issue the below 4 lines of commands. This will create the ssh key files and the api signing keys:
 
 	```
 	ssh-keygen -t rsa -N "" -b 2048 -f ~/.ssh/oci
@@ -45,7 +45,7 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 
 	![](/images/0.Prep_1.PNG)
 
-## **Step 3**: Add public API keys to your user
+## **Step 3**: Add Public API keys
 
 1. Click on the top right corner of your OCI web console and click on your **profile**. Then navigate to the **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied public pem key** there and click on the **Add** button.
 
@@ -55,7 +55,7 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 
 	![](/images/0.Prep_3.PNG)
 
-## **Step 4**: Modify bash profile in your cloud shell
+## **Step 4**: Modify Bash Profile
 
 1. In your notepad, copy the below lines and add related values from previous step. For example: `export TF_VAR_user_ocid="ocid1.user.oc1..."`
 

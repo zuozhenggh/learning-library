@@ -14,7 +14,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 * This lab assumes that you completed all preceding labs.
 
-## **Step 1**: Open SQL developer web 
+## **Step 1**: Open SQL Developer Web 
 
 1. Go to the top-left hamburger icon, navigate to **Autonomous Transaction Processing** and click on **HOL Target ATP** database.
 

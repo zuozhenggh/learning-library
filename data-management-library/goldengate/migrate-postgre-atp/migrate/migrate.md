@@ -14,19 +14,19 @@ In the final lab of the workshop, we will configure the replication process in M
 
 * This lab assumes that you completed all preceding labs, and ready to migrate to ATP.
 
-## **Step 1**:	Access to Goldengate Microservices Instance
+## **Step 1**: Access to Goldengate Microservices Instance
 
 1. After successful creating three extract processes, now it is time to explore your GG Microservices server. Let's make a console connection to Microservice. Copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
 
 	**`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
-## **Step 2**: Retrieve Goldengate Microservices’ admin password
+## **Step 2**: Retrieve Admin Password
 
-1. Once you are in, issue following **`cat ogg-credentials.json`**, and copy a credential value from the output.
+1. Administrator user credentials of GoldenGate Microservices Web console is already created for you. Once you are in the instance, issue following **`cat ogg-credentials.json`**, and copy a credential value from the output.
 
 	![](/images/oggadmin.png)
 
-2. Good practice is to keep it in your notepad. 
+2. Good practice is to keep it in your notepad. You will use it very often in the next steps.
 
 ## **Step 3**: Login to Microservices Web Console
 
@@ -34,7 +34,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 	![](/images/gg_oggadmin.png)
 
-## **Step 4**: Open Target Receiver server
+## **Step 4**: Open Target Receiver Server
 
 1. Then click on Target Receiver server's port **9023**, it will redirect you to a new tab. Provide your credentials again for username **oggadmin**.
 
@@ -46,13 +46,13 @@ In the final lab of the workshop, we will configure the replication process in M
 
 	This is something you will need if you want continuous replication and migration. 
 
-## **Step 5**: Open Target Administration server
+## **Step 5**: Open Target Administration Server
 
 1. In this lab scope, we will only migrate to ATP with help of initload. Click on Target Receiver server port **9021**, it will redirect you to new tab. Provide your credentials again for username **oggadmin**.
 
 	![](/images/micro_oggadmin_0.png)
 
-## **Step 6**: Modify Goldengate credentials
+## **Step 6**: Modify Goldengate Credentials
 
 1. You should be seeing the empty Extracts and Replicats dashboard. Let's add Autonomous Database credentials. Open the hamburger menu on the top-left corner, choose **Configuration**
 
@@ -62,7 +62,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 	![](/images/micro_ggadmin_1.png)
 
-## **Step 7**: Update password and test connection
+## **Step 7**: Update Password and Check Connection
 
 1. Provide the password `GG##lab12345` and verify it. This is your ggadmin password, which we provided in lab 3.
 
@@ -72,7 +72,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 	![](/images/micro_ggadmin_3.png)
 
-## **Step 8**: Add checkpoint table
+## **Step 8**: Add Checkpoint Table
 
 3. Scroll down to the **Checkpoint** and click on **+** icon, then provide `ggadmin.chkpt` and **SUBMIT**. 
 
@@ -84,7 +84,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 	![](/images/micro_ggadmin_5.png)
 
-## **Step 9**: Add replication process
+## **Step 9**: Add Replication Process
 
 1. The apply process for replication, also known as Replicat, is very easy and simple to configure. There are four types of Replicats supported by the Oracle GoldenGate Microservices. On the overview page, go to Replicat part and click on **+** to create our replicat process.
 
@@ -94,7 +94,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 	![](/images/micro_initload_1.png)
 
-## **Step 10**: Modify replication parameters
+## **Step 10**: Modify Replication Parameters
 
 1. Provide your name for the replicat process, for example, **initload**, the process name has to be unique and 8 characters long. It is better if you give some meaningful names to identify them later on. Let's name it as **initload**, because this is currently our initial load process.
 
@@ -112,7 +112,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 5. Review everything then click **Next**
 
-## **Step 11**: Edit parameter file
+## **Step 11**: Edit Parameter File
 
 1. Microservices has created a draft parameter file for your convenience, let's edit to our need.
 
@@ -139,7 +139,7 @@ In the final lab of the workshop, we will configure the replication process in M
 	![](/images/micro_initload_4.png)
 
 
-## **Step 12**: Check INITLOAD status
+## **Step 12**: Check Replication Status
 
 1. In the overview dashboard, you should now be seeing the running INITLOAD replication. Click on **Action** button, choose **Details**.
 

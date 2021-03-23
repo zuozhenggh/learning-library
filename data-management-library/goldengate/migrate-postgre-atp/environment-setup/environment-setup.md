@@ -28,7 +28,7 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 
 * Successfully completed **Prerequisites** lab and ready to continue
 
-## **Step 1**: Clone lab repository
+## **Step 1**: Clone Lab Repository
 
 1. Let's begin our lab. First, we'll make a copy of the lab repository and go to the cloned directory. In your cloud-shell web terminal, issue the below commands.
 
@@ -40,7 +40,7 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 
 	![](/images/1.Git.PNG)
 
-## **Step 2**: Create terraform.tfvars file
+## **Step 2**: Create Terraform Variables
 
 1. Now we need to create a file to help terraform understand your environment. Let's modify the following parameters in your notepad and copy them.
 
@@ -69,7 +69,7 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 	terraform init
 	```
 
-2. Plan and apply steps should not ask for any input from you. If it asks you to provide, for example; _**compartment_ocid**_ , then check previous steps.
+2. Plan and apply steps should not ask for any input from you. If it asks you to provide, for example; _**`compartment_ocid`**_ , then check previous steps.
 
 	```
 	terraform plan

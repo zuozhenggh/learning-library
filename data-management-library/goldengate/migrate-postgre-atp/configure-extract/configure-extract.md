@@ -22,9 +22,9 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 * This lab assumes that you completed all preceding labs.
 
-## **Step 1**: Connect to your Microservices Instance and configure Firewall
+## **Step 1**: Connect to Microservices Instance
 
-1. We need to enable network access to Microservices from our Classic deployment. Without adding the ports to the Microservices' firewall, it would cause failure in the next step. Let's make a console connection to the Microservices instance, copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
+1. We need to enable network access to Microservices from our Goldengate Classic instance. Without adding the ports to the Microservices' firewall, it would cause failure in the next step. Let's make a console connection to the Microservices instance, copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
 
 	**`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
@@ -72,7 +72,7 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 	![](/images/gg_pg_config_2.gif)
 
-## **Step 4**: Create Goldengate work directories 
+## **Step 4**: Create Goldengate Directories 
 
 1. We need to create our work directories in GoldenGate before we start working. The below command creates the default directories within the Oracle GoldenGate home directory. When you are in GGSCI console, run the below command to create your directories.
 
