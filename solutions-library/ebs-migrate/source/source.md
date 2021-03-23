@@ -392,7 +392,7 @@ These steps will walk through the initial configuration of the source EBS instan
 
       ![](./images/26.png " ")
 
-  Note: If you cannot access the webpage of the EBS environment, you may need to open the firewall on the instance for port 8000. Run the following commands on the instance as the opc user to do so. 
+  Note: If you cannot access the webpage of the EBS environment, you may need to open the firewall on the instance for port 8000. Try accessing the EBS application, and if you cannot reach the webpage, run the following commands on the instance as the opc user (You may need enter 'exit' two times to get back to the opc user). 
 
     ```
     <copy>
