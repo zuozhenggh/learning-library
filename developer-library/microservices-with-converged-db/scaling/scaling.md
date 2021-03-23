@@ -3,7 +3,6 @@
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
-![](images/architecture.png " ")
 
 ### Objectives
 -   Install a load testing tool
@@ -20,18 +19,24 @@ This lab assumes that you have already completed labs 1 through 4.
 
 1. Install a load testing tool.  
 
-    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool (takes less than a second).
+    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
     
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
-    ```
+   ``` 
+   <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
+   ```
 
    ![](images/install-k6.png " ")
+
+   (Alternatively) To install artillery:
+
+   ``` 
+   <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; npm install artillery@1.6</copy>
+   ```
 
 2. Start an external load balancer for the order service.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext_order_service.yaml -n msdataworkshop</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
     ```
 
     Repeatedly view the ext-order LoadBalancer service.  Make note of the external IP address.
@@ -62,6 +67,12 @@ This lab assumes that you have already completed labs 1 through 4.
 
     ![](images/perf1replica.png " ")
 
+    (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
+
 2. Scale to 2 service replicas.
 
     ```
@@ -89,6 +100,13 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/perf2replica.png " ")
 
+   (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
+
+
 4. Scale to 3 Replicas.
 
     ```
@@ -115,6 +133,12 @@ This lab assumes that you have already completed labs 1 through 4.
   Note the median response time for the requests and the request rate.  Note how the response time is still degraded and the request rate has not improved significantly.
 
    ![](images/perf3replica.png " ")
+
+   (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
 
 ## **STEP 3**: Load test and scale the database tier
 
@@ -144,6 +168,12 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/perf3replica2dbocpu.png " ")
 
+   (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
+
 ## **STEP 4**: Scale down the application and database tiers
 
 1. To scale the Order DB ATP database down to 1 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
@@ -169,5 +199,3 @@ This lab assumes that you have already completed labs 1 through 4.
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-## Need Help?
-Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request. 

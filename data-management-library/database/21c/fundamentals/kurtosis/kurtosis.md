@@ -5,18 +5,36 @@ This lab shows how to use the `KURTOSIS_POP` and `KURTOSIS_SAMP` aggregate funct
 
 Estimated Lab Time: 10 minutes
 
+### About Kurtosis
+When you approach the distribution of data for the first time, it’s often helpful to pull out summary statistics to understand the domain of the data.
+
+Mean and variance are certainly helpful for understanding the scope of a dataset, but to understand the shape of the data we often turn to generating the histogram and manually evaluating the curve of the distribution.
+
+Two additional summary statistics, skew and kurtosis, are a good next step for evaluating the shape of a distribution. ​We will explore skewness in this lab.
+
 ### Objectives
 In this lab, you will:
+<if type="dbcs">
 * Setup the environment
+</if>
+<if type="atp">
+* Examine the kurtosis of the distribution
+* Examine the kurtosis of the distribution after data evolution
 
 ### Prerequisites
-
+<if type="dbcs">
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
+</if>
+<if type="atp">
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Lab: Provision ADB
+* Lab: Setup
+</if>
 
-
+<if type="dbcs">
 ## **STEP 1:** Set up the environment
 
 1. Connect to `PDB1` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with data.
@@ -68,6 +86,37 @@ In this lab, you will:
      SQL>
 
      ```
+</if>
+<if type="atp">
+## **STEP  1**: Login to SQL Developer Web on ADB
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
+
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
+      ![](../set-operators/images/21c-home-adb.png " ")
+
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](../set-operators/images/21c-adb.png " ")
+
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](../set-operators/images/tools.png " ")
+
+5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+6.  Click on the **SQL** button.
+7.  Change the word *admin* in the URL to *report*.  You will be logging in to the admin schema
+8.  Enter the username *sh* and password *WElcome123##*
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the SH user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn sh/WElcome123##@adb1_high
+	```
+</if>
 
 ## **STEP 2:** Examine the kurtosis of the distribution
 
@@ -353,13 +402,11 @@ In this lab, you will:
 
 You may now [proceed to the next lab](#next).
 
+## References 
+[Skewness Kurtosis Blog](https://www.sisense.com/blog/understanding-outliers-with-skew-and-kurtosis/)
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
+* **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
 * **Last Updated By/Date** -  David Start, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

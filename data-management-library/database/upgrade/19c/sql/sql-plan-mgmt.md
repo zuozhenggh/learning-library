@@ -15,7 +15,7 @@ In this exercise we use scripts written by Carlos Sierra.
 Estimated Lab Time: n minutes
 
 ### About SQL Plan Management
-SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans. 
+SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.
 
 SQL plan management uses a mechanism called a SQL plan baseline, which is a set of accepted plans that the optimizer is allowed to use for a SQL statement.
 
@@ -40,29 +40,41 @@ In this lab, you will:
 * Fix All Statements
 
 ### Prerequisites
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+		- Lab: Initialize Environment
 
 ## **STEP 1**: Fix A Single Statement
 
 1. Run the statements below.
-
-    ````
+      ````
+      <copy>
       . upgr19
       cd /home/oracle/scripts
       sqlplus / as sysdba
-    ````
-    
+      </copy>
+      ````
+      ![](./images/fix_a_1.png " ")
+
 2. Here we’ll use one of Carlos Sierra’s scripts: spb_create.sql:
 
-    ````
+      ````
+      <copy>
       @/home/oracle/scripts/spb_create.sql
-    ````
+      </copy>
+      ````
+      ![](./images/fix_a_2.png " ")
 
-3. The script asks you for the SQL_ID first.  Type in: 7m5h0wf6stq0q.  Then it will display the potential plans:
+3. The script asks you for the SQL_ID first.  Type in: **7m5h0wf6stq0q**.  Then it will display the potential plans:
+      ![](./images/fix_a_3.png " ")
+      ![](./images/fix_a_4.png " ")
 
-    ````
+    <!-- ````
       PLANS PERFORMANCE
       ~~~~~~~~~~~~~~~~~
 
@@ -75,20 +87,24 @@ In this lab, you will:
       The first plan is the better plan – found after upgrade. We will fix it now by accepting it as THE plan we’d like to be used for future executions of statement with SQL_ID: 7m5h0wf6stq0q
 
       Select up to 3 plans:
-      ````
       1st Plan Hash Value (req): 3642382161
       2nd Plan Hash Value (opt): 1075826057
+      ```` -->
 
 4. Hit RETURN, RETURN and again RETURN.  Verify if the plans have been accepted:
 
       ````
+      <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
+      </copy>
+      ````
+      ![](./images/fix_a_6.png " ")
 
-      SQL_HANDLE                     PLAN_NAME                      ENA ACC
+      <!-- SQL_HANDLE                     PLAN_NAME                      ENA ACC
       —————————— —————————— — —
       SQL_59a879455619c567           SQL_PLAN_5ma3t8pb1mjb766511f85 YES YES
 
-      ````
+      ```` -->
 If you like to dig deeper “Why this plan has changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
 
 ## **STEP 2**: Fix all statements
@@ -98,15 +114,22 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
 1. Use spm_load_all.sql:
 
       ````
+      <copy>
       @/home/oracle/scripts/spm_load_all.sql
+      </copy>
       ````
+      ![](./images/fix_a_7.png " ")
 
 2. Check what has happened:
 
       ````
+      <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
+      </copy>
+      ````
+      ![](./images/fix_a_8.png " ")
 
-      SQL_HANDLE           PLAN_NAME                      ENA ACC
+      <!-- SQL_HANDLE           PLAN_NAME                      ENA ACC
       ——————– —————————— — —
       SQL_0c79b6d2c87ca446 SQL_PLAN_0sydqub47t926ee6188f4 YES YES
       SQL_1465e6eba9245647 SQL_PLAN_18tg6xfnk8pk7f4091add YES YES
@@ -138,29 +161,36 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
       SQL_f59c951fdf367160 SQL_PLAN_gb74p3zgmcwb0872680f9 YES YES
       SQL_f7db40080b18fe6a SQL_PLAN_ggqu0105jjzma6d5a2ea5 YES YES
       SQL_fc5efaa8ffabe508 SQL_PLAN_gsrrup3zurt88e90e4d55 YES YES
-      ````
+      ```` -->
 
 3. You ACCEPTED all previous plans from before the upgrade and added them to the SQL Plan Baseline.  Once you “fixed” the plans, use the SQL Performance Analyzer to verify the plans and the performance.
 
       ````
+      <copy>
       @/home/oracle/scripts/spa_cpu.sql
       @/home/oracle/scripts/spa_report_cpu.sql
+      </copy>
+      ````
+      ````
+      <copy>
       @/home/oracle/scripts/spa_elapsed.sql
       @/home/oracle/scripts/spa_report_elapsed.sql
+      </copy>
       ````
 
 4. Compare the two resulting reports again – and compare them to the two examples from the previous run.
+      ![](./images/sql_per_5.png " ")
 
-Do you recognize that fixing all statements resulted in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c was better!
-This is one of the reasons why you should test your plans instead of just “fixing them to behave as before”.
+      Do you recognize that fixing all statements resulted in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c was better!
+      This is one of the reasons why you should test your plans instead of just “fixing them to behave as before”.
 
-What is the outcome?
-Allow the new release to find new, sometimes better plans. Even though your most critical statements should be stable at first, you should allow changes to benefit from better performance.
+      What is the outcome?
+      Allow the new release to find new, sometimes better plans. Even though your most critical statements should be stable at first, you should allow changes to benefit from better performance.
 
-The idea of testing is that you identify the really bad statements and plans, and fix them. But not all of them.
+      The idea of testing is that you identify the really bad statements and plans, and fix them. But not all of them.
 
 
-Carlos Sierra: Plan Stability
+      Carlos Sierra: Plan Stability
 
 You may now [proceed to the next lab](#next).
 
@@ -179,8 +209,3 @@ SQL Plan Management with Oracle Database 12c Release 2
 * **Author** - Mike Dietrich, Carlos Sierra
 * **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
 * **Last Updated By/Date** - Kay Malcolm, February 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
