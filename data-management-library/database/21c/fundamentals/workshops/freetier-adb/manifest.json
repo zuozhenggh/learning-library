@@ -6,7 +6,7 @@
             "title": "Introduction",
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
             "filename": "../../introduction/introduction.md",
-            "type": "21c"
+            "type": "atp"
         },
         {
             "title": "Getting Started",
@@ -15,7 +15,8 @@
         },
         {
             "title": "Lab 1: Provision ADB",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md",
+            "type": "atp"
         },
         {
             "title": "Lab 2: Setup",
@@ -24,22 +25,42 @@
         {
             "title": "Lab 3: New Set Operators",
             "filename": "../../set-operators/set-operators.md",
-            "type": "21c"
+            "type": "atp"
         },
         {
             "title": "Lab 4: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md",
-            "type": "21c"
+            "type": "atp"
         },
         {
             "title": "Lab 5: Bitwise Aggregate Functions",
             "filename": "../../bitwise-agg/bitwise-agg.md",
-            "type": "21c"
+            "type": "atp"
         },
         {
             "title": "Lab 6: Enhanced Analytic Functions",
             "filename": "../../enhanced-analytics/enhanced-analytics.md",
-            "type": "21c"
+            "type": "atp"
+        },
+        {
+            "title": "Lab 7: Detecting Data Tampering",
+            "filename": "../../data-tampering/data-tampering.md",
+            "type": "atp"
+        },
+        {
+            "title": "Lab 8: Measuring Asymmetry in Data",
+            "filename": "../../skewness/skewness.md",
+            "type": "atp"
+        },
+        {
+            "title": "Lab 9: Measuring Tailedness of Data",
+            "filename": "../../kurtosis/kurtosis.md",
+            "type": "atp"
+        },
+        {
+            "title": "Lab 10: SecureFile LOBs",
+            "filename": "../../securefile-lobs/securefile-lobs.md",
+             "type": "atp"
         },
         {
             "title": "Need Help?",

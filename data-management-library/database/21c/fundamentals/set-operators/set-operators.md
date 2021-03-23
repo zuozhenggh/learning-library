@@ -17,7 +17,7 @@ Estimated Lab Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-<if type="21c">* Login to SQL Developer Web as the Order Entry (OE) user
+<if type="atp">* Login to SQL Developer Web as the Order Entry (OE) user
 * Run queries using the new 21c operators EXCEPT and INTERSECT </if>
 <if type="dbcs">* Run queries on Order Entry data using the new 21c operators EXCEPT and INTERSECT</if>
 
@@ -28,7 +28,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 </if>
-<if type="21c">
+<if type="atp">
 
 * An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
 * Lab: Provision ADB
@@ -71,8 +71,10 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 
 	```
 </if>
-<if type="21c">
+<if type="atp">
 ## **STEP  1**: Login to SQL Developer Web on ADB
+
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](./images/21c-home-adb.png " ")
@@ -90,6 +92,17 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 8.  Enter the username *oe* and password *WElcome123##*
 </if>
 
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the OE user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn oe/WElcome123##@adb1_high
+	```
+
 ## **STEP  2**: Test the set operator with the `EXCEPT` clause
 
 <if type="dbcs">
@@ -105,8 +118,8 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 	SQL>
 	```
 </if>
-<if type="21c">
-For the subsequent sections you will be pasting sql into the SQL worksheet and pressing the green play button or Ctrl+Enter to execute the highlighted statement.  You can also run this in the terminal by logging in to sqlplus as oe/WElcome123##@db21c_high.
+<if type="atp">
+For the subsequent sections you will be pasting sql into the SQL worksheet and pressing the green play button or Ctrl+Enter to execute the highlighted statement.  You can also run this in the terminal by logging in to sqlplus as oe/WElcome123##@adb1_high.
 
 1. Click the admin drop down and scroll down and choose the OE schema.  Note that there are 3 tables that you setup in the previous lab.  Enter the following sql queries to explore set operators.
 </if>
@@ -116,7 +129,7 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 	```
 	SQL> <copy>SELECT count(distinct product_id) FROM inventories;</copy>
 
-	<if type="21c">
+	<if type="atp">
 	```
     ![](images/select-product.png)
 	</if>
@@ -133,7 +146,7 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 
 	SQL> <copy>SELECT count(distinct product_id) FROM order_items;</copy>
 
-	<if type="21c">
+	<if type="atp">
 	```
     ![](images/select-product.png)
 	</if>

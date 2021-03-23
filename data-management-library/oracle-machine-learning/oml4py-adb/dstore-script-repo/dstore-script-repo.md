@@ -37,9 +37,8 @@ To use OML4Py, first import the package `oml`. Also import the pandas package fo
 1. Run the following commands to imports the `oml` module and the `Pandas` package. Import the Pandas package work with oml DataFrames.
 
     ```
-    %python
-    <copy>
-
+    <copy>%python
+    
     import pandas as pd
     import oml</copy>
     ```  
@@ -54,29 +53,28 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
 
 1. Run the following command to sync the IRIS table in the OMLUSER schema to an OML DataFrame proxy object:
 
-     ```
-     %python
-     <copy>
+    ```
+    %python
+    <copy>
+    IRIS = oml.sync("OMLUSER", view = "IRIS_VIEW")
 
-     IRIS = oml.sync("OMLUSER", view = "IRIS_VIEW")
-
-     print(IRIS.columns)</copy>
-     ```
+    print(IRIS.columns)</copy>
+    ```
   ![Image alt text](images/sync_iris_table.png)
 
 2. Run the following script to create the temporary Diabetes table:
-     ```
-     %python
-     <copy>
+    ```
+    %python
+    <copy>
 
-     from sklearn import datasets
-     diabetes = datasets.load_diabetes()
-     x = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
-     y = pd.DataFrame(diabetes.target, columns=['disease_progression'])
+    from sklearn import datasets
+    diabetes = datasets.load_diabetes()
+    x = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
+    y = pd.DataFrame(diabetes.target, columns=['disease_progression'])
 
-     DIABETES_TMP = oml.push(pd.concat([x, y], axis=1))
-     print(DIABETES_TMP.columns)</copy>
-     ```
+    DIABETES_TMP = oml.push(pd.concat([x, y], axis=1))
+    print(DIABETES_TMP.columns)</copy>
+    ```
      ![Image alt text](images/create_diabetes_table.png)  
 
 
@@ -127,15 +125,15 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
 
 3. Save the `IRIS` table to a new datastore, and then list the datastores. Notice that you see the datastore name, the number of objects in the datastore, the size in bytes consumed, when the datastore was create/updated, and any description provided by the user. The two datastores `ds_iris_data` and `ds_pydata` are present, with the latter containing the three objects you added.
 
-     ```
-     %python
-     <copy>
+    ```
+    %python
+    <copy>
 
-     oml.ds.save(objs={'iris':iris},
-     name="ds_iris_data", description = "iris dataset", overwrite=True)
+    oml.ds.save(objs={'iris':IRIS},
+    name="ds_iris_data", description = "iris dataset", overwrite=True)
 
-     oml.ds.dir()</copy>
-     ```
+    oml.ds.dir()</copy>
+    ```
      ![Image alt text](images/iris_df_in_ds.png)
 
 ## **Step 4:** Save model objects in a datastore
@@ -210,7 +208,8 @@ In this step, you load all Python objects from a datastore to the global workspa
     <copy>
 
     oml.ds.load(name="ds_pymodels", objs=["regr2"], to_globals=True)</copy>
-    ```   
+    ```
+
     ![Image alt text](images/load_regr2_gbl_ws.png)
 
 3. Run the following script to view the model details
@@ -267,7 +266,8 @@ This step shows how to view/describe the content of a datastore. This example sh
     <copy>
 
     oml.ds.describe(name='ds_pydata')</copy>
-    ```  
+    ```
+
     ![Image alt text](images/datastore_content.png)
 
   The script returns the description of three proxy objects - `iris`, `oml_boston`, and `oml_diabetes`. It lists the class, size, length, row and column count for each object.     
@@ -288,13 +288,13 @@ This step shows how to revoke read privilege, show datastores to which the read 
     ```
 
     ![Image alt text](images/revoke_priv.png)        
-2. Run the following script to grant read privilege to OMLUSER:
+2. Run the following script to grant read privilege to `OMLUSER2`:
 
     ```
     %python
     <copy>
 
-    oml.grant(name="ds_pymodels", typ="datastore", user="OMLUSER")
+    oml.grant(name="ds_pymodels", typ="datastore", user="OMLUSER2")
 
     oml.ds.dir(dstype="grant")</copy>
     ```
@@ -330,4 +330,4 @@ This step shows how to use the `oml.ds.delete` function to delete datastores or 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021

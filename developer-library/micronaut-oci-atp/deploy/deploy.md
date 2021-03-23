@@ -4,7 +4,7 @@
 
 This lab takes you through deploying the Micronaut application to an OCI VM.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -66,7 +66,7 @@ In this lab you will:
     # run on VM to start Micronaut application
     export DATASOURCES_DEFAULT_PASSWORD=[Your atp_wallet_password]
     export TNS_ADMIN=/tmp/wallet
-    java -jar /app/application.jar
+    java -jar /home/opc/application.jar
     </copy>
     ```
 
@@ -108,8 +108,3 @@ You may now *proceed to the next lab*.
 - **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-java-cloud-applications-with-micronaut-and-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

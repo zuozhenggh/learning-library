@@ -31,7 +31,7 @@ Key updates made in Database 21c are:
 * Auto machine learning with Python
 * Enhancements for sharding, database in-memory and graph analytics.
 
-With 21c <if type="21c">on Autonomous Database,</if> customers can:
+With 21c <if type="atp">on Autonomous Database,</if> customers can:
 * Reduce IT cost and complexity
 * Unlock innovation
 * Develop powerful, data-driven applications

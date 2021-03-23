@@ -1,10 +1,11 @@
 {
     "workshoptitle": "19c Active Data Guard Fundamentals",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
             "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Introduction",
@@ -52,7 +53,7 @@
             "title": "Lab 7: Change the SYS password",
             "description":"Change the SYS password",
             "publisheddate": "26/02/2021",
-            "filename":"../../sys-password/sys-password.md"
+            "filename":"../../sys-passwords/sys-passwords.md"
         },  {
             "title": "Appendix 1: Creation of the primary Database",
             "description":"Setup the 19c Primary Database",
@@ -64,6 +65,11 @@
             "description":"Setup the standby Database",
             "publisheddate": "26/02/2021",
             "filename":"../../standby-db/standby-db.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
