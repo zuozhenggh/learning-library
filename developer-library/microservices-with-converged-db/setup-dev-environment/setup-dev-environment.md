@@ -137,7 +137,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
    
       ![](images/createmasterencryptionkey.png " ")
         
-3. Click **Secrets** , click **Create Secret**, enter a name, and password (in the **Secret Contents** field) for the database users you will create later and click **Create Secret**
+3. Click **Secrets** , click **Create Secret**, enter a name, description, encryption key (created in previous step), leave the default **Plain-Text** Secret Type Template, and provide a DB password (in the **Secret Contents** field) for the database users you will create later and click **Create Secret**
    
       ![](images/createsecret.png " ")
       

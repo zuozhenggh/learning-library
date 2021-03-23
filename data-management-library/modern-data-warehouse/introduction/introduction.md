@@ -6,7 +6,7 @@
 
 Lines of business, typically, don't have timely or efficient access to data and information. Analysts gather the data manually, work with it on an individual basis, and then share files through emails or file servers. With Oracle Autonomous Data Warehouse (ADW) and Oracle Analytics Cloud (OAC), you can load and optimize data from Oracle E-Business Suite (EBS) and other sources into a centralized data warehouse for analysis, so departments can gain actionable insights.
 
-This workshop uses Oracle Data Integrator (ODI) to load data from a database emulating EBS into an ADW and will guide you through the process. Thereafter, you will learn how to connect ADW to OAC and import a prebuilt sample analysis with refined data into OAC. If you have access to an EBS environment, please feel free to use your own data from EBS to create visualisations.
+This workshop uses Oracle Data Integrator (ODI) to load data from a database emulating EBS into an ADW and will guide you through the process. Thereafter, you will learn how to connect ADW to OAC and import a prebuilt sample analysis with refined data into OAC. If you have access to an EBS environment, please feel free to use your own data from EBS to create visualizations.
 
 Estimated workshop time: 2 hours
 
