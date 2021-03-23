@@ -23,9 +23,8 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/7-open-cloud-shell.png " ")
 
-## **STEP 2**: Download workshop source code
-1. To work with application code, you need to download a GitHub repository using
-    the following curl and unzip command. The workshop assumes this is done from your root directory.
+## **STEP 2**: Make a clone of the workshop source code
+1. To work with application code, you need to make a clone from the GitHub repository using the following command. The workshop assumes this is done from your root directory.
 
     ```
     <copy>cd ~ ; git clone https://github.com/oracle/microservices-datadriven.git</copy>
@@ -251,7 +250,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 Run the `installGraalVMJaegerAndFrontendLB.sh` script to install both GraalVM and Jaeger.
 
  ```
- <copy>./installGraalVMJaegerAndFrontendLB.sh</copy>
+ <copy>cd $MSDATAWORKSHOP_LOCATION; ./installGraalVMJaegerAndFrontendLB.sh</copy>
  ```
 
 You may now proceed to the next lab.

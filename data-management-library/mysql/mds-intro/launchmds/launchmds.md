@@ -30,7 +30,7 @@ In this lab, you will be guided through the following steps:
 
 ## **STEP 1**: Create Compartment
 
-You must have an OCI tenancy subscribed to the US East (Ashburn) region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
+You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
 
 1. On the Navigation Menu, under Governance and Administration, select Identity -> Compartments.
 
