@@ -140,11 +140,17 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 
 1. First register your extract: 
 
-	```register extract exttar```
+	```
+	register extract exttar
+	```
 
 	![](/images/gg_pg_exttar_0.png)
 
-2. Then edit extract configuration with **`edit params exttar`**. 
+2. Then edit extract configuration with:
+
+	```
+	edit params exttar
+	```
 
 	![](/images/gg_pg_exttar_1.png)
 
@@ -174,8 +180,10 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 	![](/images/gg_pg_exttar_2.png)
 
 5. Confirm everything is correct then start this extract by issuing the below command:
- 
-	```start exttar```
+
+	```
+	start exttar
+	```
 
 	![](/images/gg_pg_exttar_3.png)
 
@@ -195,11 +203,17 @@ Now changes are being captured from the source database and we need to send them
 
 1. Again, register your extdmp extract:
 
-	```register extract extdmp```
+	```
+	register extract extdmp
+	```
 
 	![](/images/gg_pg_extdmp_0.png)
 
-2. Then edit extract configuration with **`edit params extdmp`** similar to previous step.
+2. Similar to previous step, edit extract configuration with the below:
+
+	```
+	edit params extdmp
+	```
 
 	![](/images/gg_pg_extdmp_1.png)
 
@@ -231,7 +245,9 @@ Now changes are being captured from the source database and we need to send them
 
 5. Confirm everything is correct then start this extract by issuing below command:
 
-	```start extdmp```
+	```
+	start extdmp
+	```
 
 	![](/images/gg_pg_extdmp_3.png)
 
@@ -250,15 +266,19 @@ Now changes are being captured from the source database and we need to send them
 
 Up to now, we created 2 extract processes that are now capturing changes and shipping to the Goldengate Microservices instance. However, we have not yet loaded our static data directly from our source objects to a target database. This specific process is called Initial-load. Steps are similar to the previous extract processes. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
 
-1. Again register your initload 
+1. Register your initial load:
 
-	```register extract init``` 
+	```
+	register extract init
+	```
 
 	![](/images/gg_pg_initload_0.png)
 
 2. To edit initial load configuration, issue below:
 
-	```edit params init```
+	```
+	edit params init
+	```
 
 	![](/images/gg_pg_initload_1.png)
 
@@ -288,7 +308,9 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 
 5. Confirm everything is correct then start the initial load by issuing the below command: 
 
-	```start init```
+	```
+	start init
+	```
 
 	![](/images/gg_pg_initload_3.png)
 
