@@ -288,13 +288,13 @@ This step shows how to revoke read privilege, show datastores to which the read 
     ```
 
     ![Image alt text](images/revoke_priv.png)        
-2. Run the following script to grant read privilege to ADMIN:
+2. Run the following script to grant read privilege to `OMLUSER2`:
 
     ```
     %python
     <copy>
 
-    oml.grant(name="ds_pymodels", typ="datastore", user="ADMIN")
+    oml.grant(name="ds_pymodels", typ="datastore", user="OMLUSER2")
 
     oml.ds.dir(dstype="grant")</copy>
     ```
@@ -330,4 +330,4 @@ This step shows how to use the `oml.ds.delete` function to delete datastores or 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
