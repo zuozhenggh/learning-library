@@ -88,7 +88,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is a tip. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit._
+	_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is a tip. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **esc** button and press **:wq** keys then hit enter for save & quit._
 
 	![](/images/0.Prep_4.PNG)
 

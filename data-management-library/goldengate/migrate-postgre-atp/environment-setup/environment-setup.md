@@ -24,6 +24,10 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 
 	![](/images/architecture.png)
 
+For a technical overview of this lab step, please watch the following video:
+
+[](youtube:LWcwzXPw9ZU)
+
 ### Prerequisites
 
 * Successfully completed **Prerequisites** lab and ready to continue
@@ -63,7 +67,7 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 	</copy>
 	```
 
-	_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*_
+	_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **esc** button and press **:wq** keys, then hit enter for save & quit.*_
 
 3. Good practice is, always keep it in your side notepad.
 
@@ -86,8 +90,7 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 	terraform apply --auto-approve
 	</copy>
 	```
-
-	Depending on the quota limit you have in your tenancy you can choose from any VM Standard Compute shapes, AMD shapes or Flex Shapes. Please visit the Appendix: Troubleshooting for instructions on checking your quota.
+	If you see an error **Service limits exceeded** in output, please visit the Appendix section for instructions to correct the issue.
 	
 3. Make a copy of your output results in your notepad for later use.
 
@@ -99,6 +102,8 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 	
 If you see **Service Limits Exceeded** issues when running _**terraform apply**_ command, follow the steps below to resolve them.
 When creating a stack, you must have the available quotas for your tenancy and your compartment. 
+
+Depending on the quota limit you have in your tenancy you can choose from any VM Standard Compute shapes, AMD shapes or Flex Shapes. 
 
 This lab uses the following compute types but not limited to:
 

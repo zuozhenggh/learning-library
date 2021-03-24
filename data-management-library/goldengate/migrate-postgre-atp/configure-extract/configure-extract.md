@@ -112,7 +112,7 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 	PORT 7809
 	</copy>
 	```
-	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit and press **:wq** keys then **hit enter** for save & quit._
+	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit. When you are done editing press **esc** button and press **:wq** keys, then **hit enter** for save & quit._
 
 ## **Step 6**: Start Goldengate Manager
 
@@ -199,7 +199,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 	</copy>
 	```
 
-	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit and press **:wq** keys then **hit enter** for save & quit._
+	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit. When you are done editing press **esc** button and press **:wq** keys, then **hit enter** for save & quit._
 
 4. To create your extract process issue below commands.
 
@@ -277,7 +277,7 @@ Now changes are being captured from the source database and we need to send them
 	</copy>
 	```
 
-	_**NOTE**: Editing uses **vi** editor, so you have to press **i** for editing the file, when you are done press **:wq** then **hit enter** for save & quit._
+	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit. When you are done editing press **esc** button and press **:wq** keys, then **hit enter** for save & quit._
 
 4. To create your extract process, issue the below commands.
 
@@ -356,7 +356,7 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 	</copy>
 	```
 
-	_**NOTE**: Editing uses **vi** editor, so you have to press **i** for editing the file, when you are done press **:wq** then **hit enter** for save & quit._
+	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit. When you are done editing press **esc** button and press **:wq** keys, then **hit enter** for save & quit._
 
 4. After that add your initial load process. The extract process captures a current set of static data directly from the source objects in preparation for an initial load to another database. SOURCEISTABLE type does not use checkpoints.
 
