@@ -101,10 +101,8 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
       ![](../set-operators/images/tools.png " ")
 
-5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
-6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *report*.  You will be logging in to the admin schema
-8.  Enter the username *sh* and password *WElcome123##*
+5.  Click on the **SQL** button.
+6.  Enter the username *hr* and password *WElcome123##*
 
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
@@ -114,7 +112,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
-	conn sh/WElcome123##@adb1_high
+	conn hr/WElcome123##@adb1_high
 	```
 </if>
 
