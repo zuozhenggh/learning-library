@@ -76,7 +76,7 @@ To configure the Micronaut application to work with Autonomous Database open the
           nThreads: 75
     datasources:
       default:
-        url: jdbc:oracle:thin:@mnociatp_high?tnsAdmin=/tmp/wallet
+        url: jdbc:oracle:thin:@mnociatp_high?tns_admin=/tmp/wallet
         driverClassName: oracle.jdbc.OracleDriver
         username: mnocidemo
         password: XXXXXXXX
