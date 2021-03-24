@@ -22,7 +22,8 @@ and Oracle Cloud to connected to an Oracle Database.
 - Lab 2: Create a new Micronaut Application (15 minutes)
 - Lab 3: Build an app with Micronaut and Micronaut Data (30 minutes)
 - Lab 4: Building a Native Image with GraalVM (20 minutes)
-- Lab 5: Terminate and Destroy OCI Resources (5 minutes)
+- Lab 5: Deploy to a Oracle Cloud VM (Optional)
+- Lab 6: Terminate and Destroy OCI Resources (Optional)
 
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account

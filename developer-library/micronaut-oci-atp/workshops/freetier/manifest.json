@@ -30,7 +30,11 @@
             "filename": "../../graalvm/nativeimage.md"
         },        
         {
-            "title": "Lab 5: Terminate and Destroy the OCI Resources",
+            "title": "Lab 5: Deploy to Oracle Cloud (Optional)",
+            "filename": "../../deploy/deploy.md"
+        },        
+        {
+            "title": "Lab 6: Terminate and Destroy the OCI Resources (Optional)",
             "filename": "../../destroy/destroy.md"
         },
         {
