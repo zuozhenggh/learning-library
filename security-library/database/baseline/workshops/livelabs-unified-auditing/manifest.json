@@ -1,6 +1,6 @@
 {
-  "workshoptitle": "DB Security - Unified Auditing",
-  "help": "livelabs-help-db_us@oracle.com",
+    "workshoptitle": "DB Security - Unified Auditing",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
     {
       "title": "Getting Started",

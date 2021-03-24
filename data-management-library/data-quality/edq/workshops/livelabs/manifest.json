@@ -1,6 +1,6 @@
 {
-  "workshoptitle": "Oracle Enterprise Data Quality",
-  "help": "livelabs-help-db_us@oracle.com",
+    "workshoptitle": "Oracle Enterprise Data Quality",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
     {
       "title": "Getting Started",
@@ -46,6 +46,11 @@
       "title": "Lab 7: Prepare EDQ Process for ODI Consumption",
       "description": "Prepare EDQ Process for ODI Consumption",
       "filename": "../../odi-consumption/odi-consumption.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
