@@ -13,37 +13,24 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Generate SSH Keys",
-            "description": "Generate SSH Key",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
-        },
-        {
-            "title": "Lab 2: Provision the OCI Resources",
-            "description": "Provision the OCI resources",
+            "title": "Lab 1: Setup Oracle Autonomous Database",
+            "description": "Setup Autonomous Database",
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 3: Setup Your Environment",
-            "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 4: Create the Micronaut Application",
+            "title": "Lab 2: Create the Micronaut Application",
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 5: Build the Micronaut Application",
+            "title": "Lab 3: Build the Micronaut Application",
             "filename": "../../micronaut/micronaut.md"
         },
         {
-            "title": "Lab 6: Build a GraalVM Native Image",
+            "title": "Lab 4: Build a GraalVM Native Image",
             "filename": "../../graalvm/nativeimage.md"
-        },
+        },        
         {
-            "title": "Lab 7: Deploy the Micronaut Application",
-            "filename": "../../deploy/deploy.md"
-        },
-        {
-            "title": "Lab 8: Terminate and Destroy the OCI Resources",
+            "title": "Lab 5: Terminate and Destroy the OCI Resources",
             "filename": "../../destroy/destroy.md"
         },
         {

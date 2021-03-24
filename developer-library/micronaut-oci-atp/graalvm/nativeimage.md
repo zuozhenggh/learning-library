@@ -3,7 +3,7 @@
 ## Introduction
 In this lab you will learn how to turn your application into a native executable with GraalVM Native Image.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
