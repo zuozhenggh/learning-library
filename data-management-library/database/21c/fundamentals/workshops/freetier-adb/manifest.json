@@ -61,6 +61,14 @@
             "title": "Lab 10: SecureFile LOBs",
             "filename": "../../securefile-lobs/securefile-lobs.md",
              "type": "atp"
+        }, 
+        {
+            "title": "Lab 10: JSON",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/adb-json/json-adb.md"
+        },
+        {
+            "title": "Lab 11: Advanced JSON",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/adb-json/json-adb-advanced.md"
         },
         {
             "title": "Need Help?",

@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will provision a new <if type="atp">ATP</if><if type="adw">ADW</if> instance and connect to the database using Oracle SQL Developer Web.
 
-*Note: While this lab uses <if type="atp">ATP</if> <if type="adw">ADW</if>, the steps are identical for creating and connecting to any other kind of ADB database.*
+*Note: While this lab uses <if type="atp">ATP</if><if type="adw">ADW</if>, the steps are identical for creating and connecting to any other kind of ADB database.*
 
 Estimated time: 5 minutes
 
@@ -31,7 +31,7 @@ Watch a video demonstration of provisioning a new <if type="atp">Autonomous Tran
 
     ![Oracle home page.](./images/Picture100-36.png " ")
 
-3. The following steps apply similarly to either <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>  . This lab shows provisioning of an <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>   database, so click **<if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>  **.
+3. The following steps apply similarly to either <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>  . This lab shows provisioning of an <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>   database, so click <if type="atp">**Autonomous Transaction Processing**</if><if type="adw">**Autonomous Data Warehouse**</if>.
 
     ![Click ADB.](images/LabGuide1-39fb4a5b.png " ")
 
@@ -111,8 +111,12 @@ Watch a video demonstration of provisioning a new <if type="atp">Autonomous Tran
     ![Click Create Autonomous Database.](./images/Picture100-27.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if> database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
-
+<if type="adw">
     ![Database instance homepage.](./images/Picture100-32.png " ")
+</if>
+<if type="atp">
+    ![Database instance homepage.](./images/adb-provisioning.png " ")
+</if>
 
 Please *proceed to the next lab*.
 
