@@ -36,25 +36,31 @@ In this lab you will:
 
     ```
     <copy>
-      mn create-app example-atp --features oracle,data-jdbc
+      mn create-app example-atp --jdk 11 --features oracle,data-jdbc
     cd example-atp
     </copy>
     ```
 
 
-Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool, however you can add `--build maven` if you prefer Maven.
+> **NOTE:** By default Micronaut will use the [Gradle](https://gradle.org/) build tool, however you can add `--build maven` if you prefer Maven.
 
 2. If you do not have the Micronaut CLI installed and are running on Linux or OS X you can alternatively `curl` and `unzip`:
 
     ```
     <copy>
-    curl https://launch.micronaut.io/example-atp.zip\?javaVersion\=JDK_8\&features\=oracle,data-jdbc -o example-atp.zip
+    curl https://launch.micronaut.io/example-atp.zip\?javaVersion\=JDK_11\&features\=oracle,data-jdbc -o example-atp.zip
     unzip example-atp.zip -d example-atp
     cd example-atp
     </copy>
     ```
 
-3. If none of these options are viable you can also navigate to [Micronaut Launch](https://micronaut.io/launch/) in a browser and click the `Features` button and select the `oracle` and `data-jdbc` features then click `Generate` which will produce a zip you can download and unzip.
+3. If none of these options are viable you can also navigate to [Micronaut Launch](https://micronaut.io/launch/) in a browser and perform the following steps:
+
+* Click the `Features` button and select the `oracle` and `data-jdbc` features
+* Choose JDK 11 as the Java version.
+* Then click `Generate` -> `Download Zip` which will produce a zip you can download and unzip locally with the created application.
+
+![Create with Launch](images/launch.png)
 
 ## **STEP 2**: Configure the Micronaut Application
 
@@ -63,7 +69,7 @@ To configure the Micronaut application to work with Autonomous Database open the
     <copy>
     micronaut:
       application:
-        name: exampleAtp
+        name: example-atp
       executors:
         io:
           type: fixed
