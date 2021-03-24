@@ -26,9 +26,11 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 1. We need to enable network access to Microservices from our Goldengate Classic instance. Without adding the ports to the Microservices' firewall, it would cause failure in the next step. Let's make a console connection to the Microservices instance, copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
 
-	**`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
+	```
+	ssh opc@your_microservice_ip_address -i ~/.ssh/oci
+	```
 
-2. Once you are there run the below commands, which will add the necessary ports:
+2. Once you are there run the below commands, which will add the necessary ports.
 
 	```
 	<copy>
@@ -52,7 +54,9 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 1. Oracle GoldenGate Classic for Non-Oracle (PostgreSQL) allows you to quickly access the GoldenGate Service Command Interface (GGCSI) and is preconfigured with a running Manager process. Copy the IP address of `OGG_PGSQL_Public_ip` from your note and connect using:
 
-	**`ssh opc@your_ogg_pgsql_ip_address -i ~/.ssh/oci`**
+	```
+	ssh opc@your_ogg_pgsql_ip_address -i ~/.ssh/oci
+	```
 
 ## **Step 3**: Run GGSCI 
 
@@ -99,7 +103,9 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 1. Now start Goldengate manager process by issuing the below command:
 
-	```START MGR```
+	```
+	START MGR
+	```
 
 2. You can check manager status by issuing **`INFO MGR`** command.
 
@@ -109,7 +115,9 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 1. Run the following command to log into the database from Goldengate instance:
 
-	**```DBLOGIN sourcedb PostgreSQL USERID postgres PASSWORD postgres```**
+	```
+	DBLOGIN sourcedb PostgreSQL USERID postgres PASSWORD postgres
+	```
 
 2. You should be able to see below information saying *Successfully Logged into database*
 

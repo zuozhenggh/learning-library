@@ -22,7 +22,11 @@ In the final lab of the workshop, we will configure the replication process in M
 
 ## **Step 2**: Retrieve Admin Password
 
-1. Administrator user credentials of GoldenGate Microservices Web console is already created for you. Once you are in the instance, issue following **`cat ogg-credentials.json`**, and copy a credential value from the output.
+1. Administrator user credentials of GoldenGate Microservices Web console is already created for you. Once you are in the instance, issue following and copy a credential value from the output.
+
+	```
+	cat ogg-credentials.json
+	```
 
 	![](/images/oggadmin.png)
 

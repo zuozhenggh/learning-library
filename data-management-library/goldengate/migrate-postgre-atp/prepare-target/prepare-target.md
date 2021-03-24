@@ -46,7 +46,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 ## **Step 3**: Enable GGADMIN 
 
-1. Now let's unlock and change the password for Oracle GoldenGate user (ggadmin) in the Autonomous Database. Enable GGADMIN by running the following query:
+1. Now let's unlock and change the password for Oracle GoldenGate user (ggadmin) in the Autonomous Database. Enable GGADMIN by running the following query.
 
 	```
 	<copy>
@@ -62,7 +62,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 	select * from v$parameter where name = 'enable_goldengate_replication';
 	```
 
-3. If value is FALSE, then modify the parameter, this is only applicable to an older ATP version.:
+3. If value is FALSE, then modify the parameter, this is only applicable to an older ATP version.
 
 	```
 	alter system set enable_goldengate_replication = true scope=both;

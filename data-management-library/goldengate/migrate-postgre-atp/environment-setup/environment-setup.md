@@ -55,7 +55,9 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 
 2. Enter the below command in your current working `migrate_to_atp` directory:
 
-	**`vi terraform.tfvars`**
+	```
+	vi terraform.tfvars
+	```
 
 	_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*_
 
@@ -77,9 +79,37 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 	terraform apply --auto-approve
 	```
 
+	Depending on the quota limit you have in your tenancy you can choose from any VM Standard Compute shapes, AMD shapes or Flex Shapes. Please visit the Appendix: Troubleshooting for instructions on checking your quota.
+	
 3. Make a copy of your output results in your notepad for later use.
 
 	![](/images/1.git_1.PNG)
+
+## **Appendix**: Troubleshooting
+
+###	**Issue #1 Limits Exceeded or Quota reach**
+	
+	If you encountered any **Service Limits Exceeded** issues running _**terraform apply**_ command, follow the steps below to resolve them.
+	When creating a stack you must have available quotas for your tenancy and your compartment. This lab uses the following compute types:
+
+	- Virtual Machine for Source Database - **VM.StandardE2.1**
+	- Virtual Machine for Goldengate Postgresql - **VM.Standard2.1**
+	- Virtual Machine for Goldengate Microservices - **VM.Standard2.1**
+
+###	**Fix for Issue #1**
+
+	1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
+	2. Select Compute
+	3. Click Scope to change Availability Domain
+	4. Look for Standard2 based VM and Standard.E2 based VM, then check **Available** column numbers and sum up. All you need to have is at least **3** or more. If you have found correct capacity, please continue to the next step.
+	5. Go to `migrate_to_atp` folder in your cloud-shell and modify variables file with: **`vi vars.tf`**
+
+	![](/images/fix_1.png)
+
+	6. Fix above accordingly to your **Available** resources.
+	7. Go to **Step 3: Terraform**, and continue from substep **2**.
+	
+	However, if you are unable to resolve it using above fix, please skip to the **Need Help** section to submit your issue via our support forum.
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
