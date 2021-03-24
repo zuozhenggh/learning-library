@@ -24,7 +24,8 @@
         },
         {
             "title": "Lab 3: JSON",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/adb-json/json-adb.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/adb-json/json-adb.md",
+            "type": "21c"
         },
         {
             "title": "Lab 4: New Set Operators",

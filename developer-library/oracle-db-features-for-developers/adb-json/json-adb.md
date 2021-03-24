@@ -23,7 +23,7 @@ Estimated Lab Time: 20 minutes
 ### Prerequisites
 * An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
 * Lab: Provision ADB
-<if type='atp'>* Lab: Setup</if>
+<if type="21c">* Lab: Setup</if>
 
 ## **Step 1**:  Register for Geonames
 
