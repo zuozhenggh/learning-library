@@ -8,11 +8,12 @@ Estimated Lab Time: 5 minutes
 ### Objectives
 In this lab you will:
 * Terminate the Autonomous Database Instance used for this lab
+* Terminate the Oracle Cloud Compute Instance used for this lab
 
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
   
-## Stopping the Autonomous Database Instance 
+## **STEP 1**: Stopping the Autonomous Database Instance 
 
 To shutdown the Autonomous database instance follow these steps:
 
@@ -23,6 +24,18 @@ To shutdown the Autonomous database instance follow these steps:
 2. Enter the database name to confirm termination:
 
 ![Confirm Terminate](images/db2.png)
+
+## **STEP 2**: Terminating the Oracle Cloud Compute Instance
+
+To shutdown the Compute Instance instance follow these steps:
+
+1. On the "Instance Details" page click "More Actions" and then "Terminate"
+
+![Clicking Terminate](images/instance1.png)
+
+2. Click "Terminate Instance" to confirm termination:
+
+![Confirm Terminate](images/instance2.png)
 
 *Congratulations! You have successfully completed the lab.*
 
