@@ -13,7 +13,8 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 -	Modify bash profile to interact with terraform 
 
 For a technical overview of this lab step, please watch the following video:
-[]{youtube:g7FFyY9Kf2g}
+
+[](youtube:g7FFyY9Kf2g)
 
 
 ### Prerequisites
@@ -35,16 +36,20 @@ For a technical overview of this lab step, please watch the following video:
 1. Once the cloud shell environment is ready, issue the below 4 lines of commands. This will create the ssh key files and the api signing keys:
 
 	```
+	<copy>
 	ssh-keygen -t rsa -N "" -b 2048 -f ~/.ssh/oci
 	openssl genrsa -out ~/.ssh/oci_api_key.pem 2048
 	openssl rsa -pubout -in ~/.ssh/oci_api_key.pem -out ~/.ssh/oci_api_key_public.pem
 	openssl rsa -pubout -outform DER -in ~/.ssh/oci_api_key.pem | openssl md5 -c | awk '{print $2}' > ~/.ssh/oci_api_key.fingerprint
+	</copy>
 	```
 
 2. Copy your public _**pem**_ file content:
 
 	```
+	<copy>
 	cat ~/.ssh/oci_api_key_public.pem
+	</copy>
 	```
 
 	![](/images/0.Prep_1.PNG)
@@ -78,7 +83,9 @@ For a technical overview of this lab step, please watch the following video:
 2. After you modified the above using your values, we now need to add these lines to your ".bash_profile". In the cloud-shell terminal issue below:
 
 	```
+	<copy>
 	vi ~/.bash_profile
+	</copy>
 	```
 
 	_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is a tip. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **:wq** keys then hit enter for save & quit._

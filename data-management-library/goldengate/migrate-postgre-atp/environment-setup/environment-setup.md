@@ -33,9 +33,11 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 1. Let's begin our lab. First, we'll make a copy of the lab repository and go to the cloned directory. In your cloud-shell web terminal, issue the below commands.
 
 	```
+	<copy>
 	git clone https://github.com/hol-workshop/migrate_to_atp.git
 
 	cd migrate_to_atp
+	</copy>
 	```
 
 	![](/images/1.Git.PNG)
@@ -56,7 +58,9 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 2. Enter the below command in your current working `migrate_to_atp` directory:
 
 	```
+	<copy>
 	vi terraform.tfvars
+	</copy>
 	```
 
 	_**NOTE:** This will create a new file, you have to press **i** key to enable editing, then "shift+insert" to paste copied parameter. When you are done editing press **:wq** keys then hit enter for save & quit.*_
@@ -68,15 +72,19 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 1. It is time to initialize terraform. Run the below command to download necessary terraform files from the OCI provider.
 
 	```
+	<copy>
 	terraform init
+	</copy>
 	```
 
 2. Plan and apply steps should not ask for any input from you. If it asks you to provide, for example; _**`compartment_ocid`**_ , then check previous steps.
 
 	```
+	<copy>
 	terraform plan
 
 	terraform apply --auto-approve
+	</copy>
 	```
 
 	Depending on the quota limit you have in your tenancy you can choose from any VM Standard Compute shapes, AMD shapes or Flex Shapes. Please visit the Appendix: Troubleshooting for instructions on checking your quota.

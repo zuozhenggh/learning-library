@@ -25,7 +25,9 @@ In the final lab of the workshop, we will configure the replication process in M
 1. Administrator user credentials of GoldenGate Microservices Web console is already created for you. Once you are in the instance, issue following and copy a credential value from the output.
 
 	```
+	<copy>
 	cat ogg-credentials.json
+	</copy>
 	```
 
 	![](/images/oggadmin.png)
@@ -118,11 +120,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 ## **Step 11**: Edit Parameter File
 
-1. Microservices has created a draft parameter file for your convenience, let's edit to our need.
-
-	![](/images/micro_initload_3_1.png)
-
-2. Erase existing and paste below configuration:
+1. Microservices has created a draft parameter file for your convenience. Erase existing and paste below configuration:
 
 	```
 	<copy>
@@ -135,13 +133,12 @@ In the final lab of the workshop, we will configure the replication process in M
 	MAP public."PaymentData", TARGET admin.PaymentData;
 	</copy>
 	```
-
+	
 	![](/images/micro_initload_3_2.png)
 
 3. Make sure everything is correct until this stage. Click **Create and Run** to start our replicat.
 
 	![](/images/micro_initload_4.png)
-
 
 ## **Step 12**: Check Replication Status
 

@@ -59,13 +59,17 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 2. Let's check whether the parameter `enable_goldengate_replicaton` is set to true. 
 
 	```
+	<copy>
 	select * from v$parameter where name = 'enable_goldengate_replication';
+	</copy>
 	```
 
-3. If value is FALSE, then modify the parameter, this is only applicable to an older ATP version.
+3. If value is _**FALSE**_, then modify the parameter, else go to next step.
 
 	```
+	<copy>
 	alter system set enable_goldengate_replication = true scope=both;
+	</copy>
 	```
 
 	![](/images/sql_dev_4.png)
