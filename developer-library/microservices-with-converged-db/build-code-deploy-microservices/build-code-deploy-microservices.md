@@ -18,12 +18,16 @@ You will also clone a GitHub repository.
 * The OKE cluster and the ATP databases that you created in Lab 1
 
 
-## **STEP 1**: Set values for workshop in the environment
+## **STEP 1**: Set values for workshop in the environment and source ~/.bashrc
 
-1. Run `./addAndSourcePropertiesInBashrc.sh`
+1. Run `source addAndSourcePropertiesInBashrc.sh`
 
     ```
-    <copy>./addAndSourcePropertiesInBashrc.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
+    ```
+
+    ```
+    <copy>source ~/.bashrc</copy>
     ```
 
 ## **STEP 2**: Build and push the Docker images
@@ -57,7 +61,7 @@ You will also clone a GitHub repository.
  It may be necessary to run this script multiple times if the Jaeger load balancer has not been provisioned yet.
 
    ```
-   <copy>./setJaegerAddress.sh</copy>
+   <copy>cd $MSDATAWORKSHOP_LOCATION; ./setJaegerAddress.sh</copy>
    ```
 
 2. Source the `.bashrc` file with the following command.
@@ -74,31 +78,40 @@ You will also clone a GitHub repository.
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
     ```
 
-
-4.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
+4. Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
 
     ```
     <copy>./build.sh</copy>
     ```
 
-  ![](images/807b7c494dab6ccb6864c60344ca7e0e.png " ")
+  ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
 
-  After a couple of minutes, the image should have been successfully pushed into the repository.
+  After a couple of minutes, the image should have been successfully built and pushed into the OCIR repository.
 
-  ![](images/cb413dce71ae945decf19e468a94a89e.png " ")
+  ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
+5.  Go to the Console, click the hamburger menu in the top-left corner and open
+    **Developer Services > Container Registry**.
 
-5.  Run the deploy script from the same directory
+  ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
+
+6. Mark all the images as public (**Actions** > **Change to Public**):
+
+  ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
+
+## **STEP 4**: Start the frontend-helidon service
+
+1.  Run the deploy script from the same directory
     as build. This will create the deployment and pod for this image in the OKE
     cluster `msdataworkshop` namespace:
 
     ```
-    <copy>./deploy.sh</copy>
+    <copy>d $MSDATAWORKSHOP_LOCATION/frontend-helidon;./deploy.sh</copy>
     ```
 
    ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
 
-7.  Once successfully created, check that the frontend pod is running:
+2.  Once successfully created, check that the frontend pod is running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -110,7 +123,7 @@ You will also clone a GitHub repository.
 
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
-8. Check that the load balancer service is running, and write down the external IP
+3. Check that the load balancer service is running, and write down the external IP
     address.
 
     ```
@@ -123,7 +136,7 @@ You will also clone a GitHub repository.
 
   ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
-9. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
+4. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
 
   `https://<EXTERNAL-IP>`
 
@@ -137,6 +150,8 @@ You will also clone a GitHub repository.
   
   Note that links on Front End will not work yet as they access microservices that will be created and deployed in subsequent labs.
 
+  We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
+  
   ![](images/frontendhome.png " ")
 
 You may now proceed to the next lab.

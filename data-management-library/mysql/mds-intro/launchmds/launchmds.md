@@ -30,7 +30,7 @@ In this lab, you will be guided through the following steps:
 
 ## **STEP 1**: Create Compartment
 
-You must have an OCI tenancy subscribed to the US East (Ashburn) region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
+You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
 
 1. On the Navigation Menu, under Governance and Administration, select Identity -> Compartments.
 
@@ -415,8 +415,5 @@ When delete process is done **MDS_DB** will be set to Delete status.
 * **Contributors** -  Priscila Galvao, MySQL Solution Engineering
 * **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, March 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [MySQL Support Forum](https://community.oracle.com/tech/developers/categories/MySQL). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
