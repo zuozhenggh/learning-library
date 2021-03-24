@@ -87,29 +87,31 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 
 ## **Appendix**: Troubleshooting
 
-###	**Issue #1 Limits Exceeded or Quota reach**
+###	Issue #1 Service Limits Exceeded
 	
-	If you encountered any **Service Limits Exceeded** issues running _**terraform apply**_ command, follow the steps below to resolve them.
-	When creating a stack you must have available quotas for your tenancy and your compartment. This lab uses the following compute types:
+If you see **Service Limits Exceeded** issues when running _**terraform apply**_ command, follow the steps below to resolve them.
+When creating a stack you must have available quotas for your tenancy and your compartment. 
 
-	- Virtual Machine for Source Database - **VM.StandardE2.1**
-	- Virtual Machine for Goldengate Postgresql - **VM.Standard2.1**
-	- Virtual Machine for Goldengate Microservices - **VM.Standard2.1**
+This lab uses the following compute types but not limited to:
 
-###	**Fix for Issue #1**
+- Virtual Machine for Source Database - **VM.StandardE2.1**
+- Virtual Machine for Goldengate Postgresql - **VM.Standard2.1**
+- Virtual Machine for Goldengate Microservices - **VM.Standard2.1**
+
+#### Fix for Issue #1
 
 	1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 	2. Select Compute
 	3. Click Scope to change Availability Domain
-	4. Look for Standard2 based VM and Standard.E2 based VM, then check **Available** column numbers and sum up. All you need to have is at least **3** or more. If you have found correct capacity, please continue to the next step.
+	4. Look for "Standard2 based VM" and "Standard.E2 based VM", then check **Available** column numbers and sum  them up. All you need to have is at least **3** or more. If you have found correct available capacity, please continue to the next step.
 	5. Go to `migrate_to_atp` folder in your cloud-shell and modify variables file with: **`vi vars.tf`**
 
-	![](/images/fix_1.png)
+	![](/images/fix_1.png  " ")
 
-	6. Fix above accordingly to your **Available** resources.
-	7. Go to **Step 3: Terraform**, and continue from substep **2**.
+6. Fix above accordingly to your **Available** resources.
+7. Go to **Step 3: Terraform**, and continue from substep **2**.
 	
-	However, if you are unable to resolve it using above fix, please skip to the **Need Help** section to submit your issue via our support forum.
+However, if you are unable to resolve it using above fix, please skip to the **Need Help** section to submit your issue via our support forum.
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
