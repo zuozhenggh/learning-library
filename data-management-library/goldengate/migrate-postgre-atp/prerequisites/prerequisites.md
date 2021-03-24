@@ -12,6 +12,10 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 -   Configure API keys for your cloud user
 -	Modify bash profile to interact with terraform 
 
+For a technical overview of this lab step, please watch the following video:
+[]{youtube:g7FFyY9Kf2g}
+
+
 ### Prerequisites
 
 * The following workshop requires an Oracle Public Cloud Account that will either be supplied by your instructor or can be obtained through **Getting Started** steps.
