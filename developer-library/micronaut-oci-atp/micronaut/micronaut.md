@@ -454,7 +454,9 @@ Notice that `javax.transaction.Transactional` is declared on the method which en
 If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL logging:
 
 ```xml
+<copy>
 <logger name="io.micronaut.data.query" level="debug" />
+</copy>
 ```
 
 ## **STEP 5**: Run Integration Tests for the Micronaut Application

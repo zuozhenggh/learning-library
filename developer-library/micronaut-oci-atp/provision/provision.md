@@ -50,7 +50,7 @@ In this lab you will:
 
 ![Accessing the SQL console](images/db8.png)
 
-4. Within the workshop paste the following SQL which will create a schema user with a username of "mnocidemo" replacing the text XXXXXXXXX with a password of your choice:
+4. Within the worksheet paste the following SQL which will create a schema user with a username of "mnocidemo" replacing the text XXXXXXXXX with a password of your choice:
 
     ```
     <copy>

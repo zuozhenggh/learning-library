@@ -89,19 +89,11 @@ To configure the Micronaut application to work with Autonomous Database open the
 
 > **NOTE**: The password you enter should be the Schema user password not the Admin password for the Autonomous Database instance. 
 
-Delete the existing `src/main/resources/application-test.yml` file so that you can run tests against the Autonomous database instance.
-
-    <copy>
-    $ rm src/main/resources/application-test.yml
-    </copy>
-
 ## **STEP 3**: Configure Oracle Autonomous Database JDBC Drivers
 
 If you are using Gradle add the following dependencies to the `build.gradle` file in the root of your project inside the `dependencies` block:
 
     <copy>
-    runtimeOnly("io.micronaut.sql:micronaut-jdbc-hikari")
-    runtimeOnly("com.oracle.database.jdbc:ojdbc8")
     runtimeOnly("com.oracle.database.security:oraclepki:21.1.0.0")
     runtimeOnly("com.oracle.database.security:osdt_cert:21.1.0.0")
     runtimeOnly("com.oracle.database.security:osdt_core:21.1.0.0")
@@ -110,16 +102,6 @@ If you are using Gradle add the following dependencies to the `build.gradle` fil
 Alternatively if you are using Maven, add the following dependencies to your `pom.xml` inside the `<dependencies>` element:
 
     <copy>
-    <dependency>
-      <groupId>io.micronaut.sql</groupId>
-      <artifactId>micronaut-jdbc-hikari</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-        <groupId>com.oracle.database.jdbc</groupId>
-        <artifactId>ojdbc8</artifactId>
-        <scope>runtime</scope>
-    </dependency>
     <dependency>
         <groupId>com.oracle.database.security</groupId>
         <artifactId>oraclepki</artifactId>
@@ -170,7 +152,7 @@ To enable Flyway to run on startup, add the following configuration to your `app
           enabled: true
     </copy>
 
-In addition create a new file called `src/main/resources/application-test.yml` which will contain your test configuration and set Flyway to clean the schema when the application starts, to ensure tests run with fresh data:
+Replace the contents of the file `src/main/resources/application-test.yml` with the following entry for flyway which will contain your test configuration and set Flyway to clean the schema when the application starts, to ensure tests run with fresh data:
 
     <copy>
     flyway:
@@ -179,7 +161,7 @@ In addition create a new file called `src/main/resources/application-test.yml` w
           clean-schema: true
     </copy>
 
-> Note that in a real world scenario you would setup a separate database to run your tests against
+> **NOTE:** that in a real world scenario you would setup a separate database to run your tests against
 
 ## **STEP 5**: Defining a SQL Migration Script
 
