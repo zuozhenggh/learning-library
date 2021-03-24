@@ -19,18 +19,24 @@ This lab assumes that you have already completed labs 1 through 4.
 
 1. Install a load testing tool.  
 
-    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool (takes less than a second).
+    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
     
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
-    ```
+   ``` 
+   <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
+   ```
 
    ![](images/install-k6.png " ")
+
+   (Alternatively) To install artillery:
+
+   ``` 
+   <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; npm install artillery@1.6</copy>
+   ```
 
 2. Start an external load balancer for the order service.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext_order_service.yaml -n msdataworkshop</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
     ```
 
     Repeatedly view the ext-order LoadBalancer service.  Make note of the external IP address.
@@ -61,6 +67,12 @@ This lab assumes that you have already completed labs 1 through 4.
 
     ![](images/perf1replica.png " ")
 
+    (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
+
 2. Scale to 2 service replicas.
 
     ```
@@ -87,6 +99,13 @@ This lab assumes that you have already completed labs 1 through 4.
    Note the average response time for the requests.  Throughput has increased and response time has returned to normal.
 
    ![](images/perf2replica.png " ")
+
+   (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
+
 
 4. Scale to 3 Replicas.
 
@@ -115,6 +134,12 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/perf3replica.png " ")
 
+   (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
+
 ## **STEP 3**: Load test and scale the database tier
 
 1. To scale the Order DB ATP database to 2 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
@@ -142,6 +167,12 @@ This lab assumes that you have already completed labs 1 through 4.
    Note the request rate.  Throughput has increased.
 
    ![](images/perf3replica2dbocpu.png " ")
+
+   (Alternatively) Using artillery:
+    
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    ```
 
 ## **STEP 4**: Scale down the application and database tiers
 
