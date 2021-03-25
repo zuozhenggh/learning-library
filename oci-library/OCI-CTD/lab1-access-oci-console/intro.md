@@ -15,7 +15,7 @@ Estimated Lab Time: 10 minutes
 
 Please go to [oci-workshop.com](https://www.oci-workshop.com/login) and select the correct region for your workshop. This link will take you to the login page of the cloud tenancy you will use during this workshop.
 
-![](images/oci-login.png " ")
+![](images/oci-login.png)
 
 Your instructor will provide you with your User Name and Password. Accept the term of service and you will be directed to the main OCI Console page.
 
