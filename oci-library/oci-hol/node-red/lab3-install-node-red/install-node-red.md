@@ -3,7 +3,7 @@
 ## Introduction
 This lab describes how to install Node-RED on Oracle Autonomous Linux.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -50,7 +50,7 @@ This will create the `node-red` directory. Change into the `node-red` directory 
 
 ## **STEP 5**: Install the dependencies
 
-Next we want to install any dependencies. 
+Next we want to install any dependencies.
 
 `npm install`
 
@@ -59,8 +59,8 @@ Finally, we can build the application. To build Node-RED:
 
 `grunt build`
 
-You are done with the installation of Node-RED. Before we run Node-RED, we want to first update the Network Security List in OCI and the 
-`iptables` of the OAL installatio. 
+You are done with the installation of Node-RED. Before we run Node-RED, we want to first update the Network Security List in OCI and the
+`iptables` of the OAL installatio.
 
 You may now [proceed to the next lab](#next).
 
@@ -75,4 +75,3 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - Kevin Lazarz, Program Manager, TE Hub March 2021
 
 Test
-

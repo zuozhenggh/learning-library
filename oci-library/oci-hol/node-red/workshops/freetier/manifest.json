@@ -17,21 +17,26 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision a Virtual Cloud Network and an Oracle Autonomous Linux Instance",
+            "title": "Lab 1: Create SSH Keys",
+            "description": "Generate SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Provision a Virtual Cloud Network and an Oracle Autonomous Linux Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-ol7.8-ft-compute-instance.md"
         },
         {
-            "title": "Lab 2: Install Nod-RED",
-            "filename": "../../lab2-install-node-red/install-node-red.md"
+            "title": "Lab 3: Install Nod-RED",
+            "filename": "../../lab3-install-node-red/install-node-red.md"
         },
         {
-            "title": "Lab 3: Configure Network Security and Firewall",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 4: Configure Network Security and Firewall",
+            "filename": "../../lab4-configure-network/configure-network.md"
         },
         {
-            "title": "Lab 4: Start developing using Node-RED",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 5: Start developing using Node-RED",
+            "filename": "../../lab5-start-node-red/start-node-red.md"
         }
     ]
 }
