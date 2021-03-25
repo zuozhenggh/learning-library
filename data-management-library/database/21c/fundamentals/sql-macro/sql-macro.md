@@ -180,25 +180,15 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     LAST_NAME                 CONCAT_SELF(LAST_NAME,2)
     ------------------------- ----------------------------------------
     Abel                      AbelAbel
-
     Ande                      AndeAnde
-
     Atkinson                  AtkinsonAtkinson
-
     Austin                    AustinAustin
-
     Baer                      BaerBaer
-
     Baida                     BaidaBaida
-
     Banda                     BandaBanda
-
     Bates                     BatesBates
-
     Bell                      BellBell
-
     Bernstein                 BernsteinBernstein
-
     Bissot                    BissotBissot
     ...
     107 rows selected.
@@ -218,33 +208,19 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     LAST_NAME                 CONCAT_SELF(LAST_NAME,3)
 
     ------------------------- ----------------------------------------
-
     Abel                      AbelAbelAbel
-
     Ande                      AndeAndeAnde
-
     Atkinson                  AtkinsonAtkinsonAtkinson
-
     Austin                    AustinAustinAustin
-
     Baer                      BaerBaerBaer
-
     Baida                     BaidaBaidaBaida
-
     Banda                     BandaBandaBanda
-
     Bates                     BatesBatesBates
-
     Bell                      BellBellBell
-
     Bernstein                 BernsteinBernsteinBernstein
-
     Bissot                    BissotBissotBissot
-
     Bloom                     BloomBloomBloom
-
     Bull                      BullBullBull
-
     Cabrio                    CabrioCabrioCabrio
 
     ...
