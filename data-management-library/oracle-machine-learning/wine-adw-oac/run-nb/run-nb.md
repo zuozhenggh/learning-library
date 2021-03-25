@@ -1,7 +1,8 @@
-# Run the Machine Learning Notebook[Workshop Under Construction]
+# Import and Run the Machine Learning Notebook[Workshop Under Construction]
 
 ## Introduction
 
+Oracle machine learning notebook apache zeppelin comes with your Autonomous Data Warehouse. Once the data is in ADW, you can start using oracle machine learning notebooks to investigate the data and run machine learning models with it. In this lab, you will log in as OMLUSER to load and run the provided Oracle Machine Learning notebook.
 
 Estimated Lab Time: n minutes
 
@@ -50,11 +51,58 @@ In this lab, you will:
 ### Prerequisites
 
 * Provisioned ADW
-* Logged in as ML user and have uploaded the notebook.
+* Created a OMLUSER account
 
-## **STEP 1**: Business Problem, Methodogy
 
-1. In the Picking a Good Wine using OML notebook, click on run button to run the Notebook.
+## **STEP 1**: Upload Notebook to Oracle Machine Learning
+
+1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+
+    ![](./images/choose-adb.png " ")
+
+    ![](./images/choose-adb-adw.png " ")
+
+2.  Select **Tools** on the Autonomous Database Details page.
+
+    ![](./images/tools.png " ")
+
+3.  Select **Open Oracle ML User Administration** under the tools.
+
+    ![](./images/open-ml-admin.png " ")
+
+4. Sign in as **Username - ADMIN** and with the password you used when you created your Autonomous instance.
+
+    ![](./images/ml-login.png  " ")
+
+5.  Click the **Home Icon** in the top right corner.
+
+    ![](./images/oml-home.png  " ")
+
+6. Sign in as **Username - OMLUSER** and with the password you used when you created the OMLUSER account.
+
+    ![](./images/oml-user-login.png  " ")
+
+7.  We will be importing a **Picking Good Wines $30 Using Wine Reviews.json** ML notebook in this lab. Click [here]() to download the notebook. ***ADD LINK HERE***
+
+8. Click on the upper-left hamburger menu and select **Notebooks**.
+
+    ![](./images/nb-menu.png  " ")
+
+    ![](./images/notebooks.png  " ")
+
+9. Click on **Import** and upload the notebook downloaded earlier.
+
+    ![](./images/import.png " ")
+
+10. Once the notebook is uploaded, click on the **Picking Good Wines < $30 Using Wine Reviews** notebook to view.
+
+    ![](./images/import-2.png " ")
+
+    ![](./images/notebook.png " ")
+
+## **STEP 2**: Business Problem, Methodogy
+
+1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on run button to run the Notebook.
 
     ![](./images/run.png " ")
 
@@ -63,16 +111,18 @@ In this lab, you will:
     ![](./images/run-all-paragraphs.png " ")
 
 3. 
-![](./images/methodology.png  " ")
-![](./images/business-understanding.png)
 
-3. Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
+    ![](./images/methodology.png  " ")
+    ![](./images/business-understanding.png)
 
+4. Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
+
+***what is this***
 --> notebook data understanding image select * from..
 
-## **STEP 2:** Data Preparation
+## **STEP 3**: Data Preparation
 
-1. Before converting the description into a clob object, first, alter the table to add a points_bin column to the table
+1. Before converting the description into a clob object, first, alter the table to add a points_bin column to the table.
 
     ![](./images/add-points-bin-column.png " ")
 
@@ -80,7 +130,7 @@ In this lab, you will:
 
     ![](./images/populate.png " ")
 
-3. Divide the table to seggregate all of the wines to have points greater than 90 with a tag greater than 90 points and similarly less than 90 with the tag less than 90 points.
+3. Divide the table to segregate all of the wines to have points greater than 90 with a tag greater than 90 points and similarly less than 90 with the tag less than 90 points.
 
     Scroll right to the table to view the points_bin column with the tags .
 
@@ -88,11 +138,11 @@ In this lab, you will:
 
     ![](./images/populate-points.png " ")
 
-4. Then divide the table into trainer and test data set, to run or build our model on training data and then test model on tesing data.
+4. Then divide the table into trainer and test data set, to run or build our model on training data and then test model on testing data.
 
     ![](./images/train-test-data.png " ")
 
-5. We will be converting the description column from varchar2 to clob object by adding a new column, setting the previous description column to a new coloumn and then dropping the column. This is to use in Oracle text minning.
+5. We will be converting the description column from varchar2 to clob object by adding a new column, setting the previous description column to a new column and then dropping the old column. This is for use in Oracle text mining.
 
     ![](./images/description-to-clob.png " ")
 
@@ -112,33 +162,33 @@ In this lab, you will:
 
     ![](./images/test-data1.png " ")
 
-## **STEP 3:** Data Understanding
+## **STEP 4**: Data Understanding
 
-Now, let us understand how the data is distributed in our table to see how many reviews or how many wines in our data set, which wines are greater than 90 points and less than 90 points.
+Now, let us understand how the data is distributed in our table to see how many reviews or how many wines are in our data set, and which wines are greater than 90 points and less than 90 points.
 
 1. In the wine points ratings distribution, you can see that the lighter shade of blue are less than 90 points and darker shade of the blue are greater than 90 points.
 
     ![](./images/distribution.png " ")
 
-2.  If you hover over one of the bars in the graph it gives you the actual point and the total number of data that you have.
+2.  If you hover over one of the bars in the graph it gives you the actual point value and the total number of records that you have for that value.
 
-    In this example, when we hover over the 89 points bar we have about 96 records.
+    In this example, when we hover over the 89 points bar we have 96 records.
 
     ![](./images/hover.png " ")
 
-    Note that oracle machine notebooks by default uses zepplin graph to show a simple visualization that takes the top 1000 records. If the highly computational values are at the bottom of the database oracle machine notebook, the values may quite vary when compared to the accurate results.
+    Note that Oracle machine notebooks by default uses Zepplin graph to show a simple visualization that takes the top 1000 records. If the highly computational values are at the bottom of the database oracle machine notebook, the values may vary when compared to the actual results.
 
-3. Explore the data based on top 10 countries and display the count of wines. Note that US is leading followed by France and so on.
+3. Explore the data based on top 10 countries and display the count of wines. Note that the U.S. is leading, followed by France and so on.
 
     ![](./images/country.png " ")
 
-4. Apache zepplin notebook allows six different types of graphs - table, bar chart, pie chart, area chart, line chart and scatter chartto visualize.
+4. Apache Zepplin notebook allows six different types of graphs - table, bar chart, pie chart, area chart, line chart and scatter chart to visualize.
 
     Here we are comparing wines from Australia, California and Spain countries by regions using pie chart.
 
     ![](./images/pie-chart.png " ")
 
-5.  We are doing this as a classification problem but the model we created has a classification column which is greater than 90 points and less than 90 points which we don't need. Create a new table WineReviews130KTarget without the points attribute from WineReviews130K.
+5.  We are doing this as a classification problem but the model we created has a classification column which is greater than 90 points and less than 90 points, which we don't need. Create a new table WineReviews130KTarget without the points attribute from WineReviews130K.
 
     ![](./images/drop-points.png " ")
 
@@ -146,7 +196,7 @@ Now, let us understand how the data is distributed in our table to see how many 
 
     ![](./images/target-table.png " ")
 
-## **STEP 4:** Unstructured Data Preparation using Oracle Text
+## **STEP 5**: Unstructured Data Preparation using Oracle Text
 
 In order to use the reviews in the description column of the WineReviews130KTarget table in our machine model, we use oracle text to do mining of unstructured data. You can apply data mining techniques to text terms which are also called as text features or tokens. These text terms can be a group of words or words that have been extracted from text documents and their assigned numeric weights.
 
@@ -160,13 +210,13 @@ In order to use the reviews in the description column of the WineReviews130KTarg
 
     ![](./images/create-lexer.png " ")
 
-3. Create another preference for the basic wordlist and set the attributes for text mining.
+3. Create another preference for the basic word list and set the attributes for text mining.
 
     In this example, `mywordlist` is the name of `BASIC_WORDLIST` preference, with attributes set for language as english, score as 1, number of results as 5000.
 
     ![](./images/list-lexer.png " ")
 
-4. Drop an existng text policy for repeatability and create a new text policy for description for the lexer and wordlist preference that you just created.
+4. Drop an existing text policy for repeatability and create a new text policy for description for the lexer and word list preference that you just created.
 
     In this example, `my_policy` is the name of our policy for the `mylex` and `mywordlist`
 
@@ -174,7 +224,7 @@ In order to use the reviews in the description column of the WineReviews130KTarg
 
     ![](./images/create-policy.png " ")
 
-## **STEP 5:** Model Building
+## **STEP 6**: Model Building
 
 ### Build Attribute Importance Model
 
@@ -191,27 +241,27 @@ notice that we have our attribute importance ranked based on the ascending order
 
     Here specific words like palate, wine, aromas, acidity, finish, rich etc are the tokens from the table that influence the attributes to get a rich wine.
 
-    The attribute importance values are the coefficiensts that show how strong each individual word is.
+    The attribute importance values are the coefficients that show how strong each individual word is.
 
     In this example, PALATE is ranked 4 from description with coefficient value 0.0311229.
 
     ![](./images/rank.png " ")
 
-### Build Classificaiton Model
+### Build Classification Model
 
 As we built our attribute importance model, we will build a classification model using both structured and unstructured(wine\_reviews) data.
 
-3. Build a supervised learning classificaton model - "Wine\_CLASS\_MODEL\_SVM" that predicts good wine (GT\_90\_POINTS) using Oracle Machine Learning Support Vector Machine Algorithm.
+3. Build a supervised learning classification model - "Wine\_CLASS\_MODEL\_SVM" that predicts good wine (GT\_90\_POINTS) using Oracle Machine Learning Support Vector Machine Algorithm.
 
     ![](./images/svm-classification-model.png" ")
 
-## **STEP 6:** Model Evaluation
+## **STEP 7**: Model Evaluation
 
 Now that we have built a machine learning model, let's evaluate the model.
 
 1. We score the data by applying the model we just created - "Wine\_CLASS\_MODEL\_SVM" to the test data - "WINE\_TEST\_DATA" and the results are stored in - "Wine\_APPLY\_RESULT".
 
-    To see how good or bad the model is, we compute a lift chart using COMPUTE_LIFT to see how our model is performing against the RANDOM_GUESS.
+    To see how good or bad the model is, we compute a lift chart using COMPUTE\_LIFT to see how our model is performing against the RANDOM\_GUESS.
 
     ![](./images/evalute-model.png " ")
 
@@ -221,7 +271,7 @@ Now that we have built a machine learning model, let's evaluate the model.
 
     ![](./images/ml-model-output.png " ")
 
-## **STEP 7:** Model Deployment
+## **STEP 8**: Model Deployment
 
 Now let's apply the model to a specific data points.
 
@@ -229,7 +279,7 @@ Now let's apply the model to a specific data points.
 
     ![](./images/model-deployement.png " ")
 
-2. Focusing on the wines that have been predictied to be the good wines i.e., greater than 90 points and comparing them with the bad wines i.e., lower than 90 points, we are applying our model result on the actual dataset and then predicting it.
+2. Focusing on the wines that have been predicted to be the good wines i.e., greater than 90 points and comparing them with the bad wines i.e., lower than 90 points, we are applying our model result on the actual dataset and then predicting it.
 
     As we are applying the model, we get a prediction result of which wine falls into which category, it's probability of being greater than 90, shows the actual description and country along with few other parameters.
 
@@ -262,12 +312,7 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Author** - Charlie Berger & Siddesh Ujjni, Machine Learning
+* **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
+* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
+* **Workshop Expiry Date** - March 2022
