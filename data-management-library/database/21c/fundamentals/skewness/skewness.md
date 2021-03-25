@@ -99,32 +99,38 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
       ![](../set-operators/images/tools.png " ")
 
-5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
-6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
-8.  Enter the username *sh* and password *WElcome123##*
+6.  Enter the username *report* and password *WElcome123##*
+7.  Click on the **SQL** button.
+8.  Skip to Step 2.
 
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell 
-3. Connect to the SH user using sqlplus by entering the commands below.
+3. Connect to the *REPORT* user using sqlplus by entering the commands below.
    
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
-	conn sh/WElcome123##@adb1_high
+	conn report/WElcome123##@adb1_high
 	```
 </if>
 
 ## **STEP 2:** Examine skewed data
+<if type="dbcs">
+1.  Make some modifications to the display
 
-1. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other. With Skewness, you measure whether there is more data towards the left or the right end of the tail (positive/negative) or how close you are to a normal distribution (skewness = 0).
+	```
+	SQL> <copy>SET PAGES 100</copy>
+	```
+</if>
+<if type="atp">
+1.  If you aren't logged in to SQL Developer Web, login as the *REPORT* user.
+
+</if>
+2. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other. With Skewness, you measure whether there is more data towards the left or the right end of the tail (positive/negative) or how close you are to a normal distribution (skewness = 0).
 
 
 	```
-
-	SQL> <copy>SET PAGES 100</copy>
-
 	SQL> <copy>SELECT * FROM houses;</copy>
 
 		HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
@@ -174,7 +180,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 	```
 
-2. Display the result of population skewness prices (`SKEWNESS_POP`) and sample skewness prices (`SKEWNESS_SAMP`) for the three houses in the table.
+3. Display the result of population skewness prices (`SKEWNESS_POP`) and sample skewness prices (`SKEWNESS_SAMP`) for the three houses in the table.
 
 
 	```
@@ -225,11 +231,10 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 ## **STEP 3:** Examine skewed data after data evolution
 
+<if type="dbcs">
 1. Insert more rows in the table.
 
-
 	```
-
 	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
 
 	19 rows created.
@@ -249,7 +254,19 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	SQL> <copy>COMMIT;</copy>
 
 	Commit complete.
+	```
+</if>
+<if type="atp">
+1. Insert more rows in the table. 
 
+	```
+	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit
+
+3. Press the play button 3 more times to submit a totoal of 152 rows
+</if>
+2. Explore the skewness after the data has changed.
 	SQL> <copy>SELECT house, SKEWNESS_POP(price_big_city), SKEWNESS_POP(price_small_city) FROM houses
 		GROUP BY house ORDER BY 1;</copy>
 
@@ -338,6 +355,20 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
   The population skewness value is not different because the same exact rows were inserted.
 
+<if type="atp">
+3. Insert more rows in the table with a big data set for `HOUSE` number 1.
+
+	```
+	SQL> <copy>INSERT INTO houses (house, price_big_city, price_small_city)
+					SELECT house, price_big_city*0.5, price_small_city*0.1
+					FROM houses WHERE house=1;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit\
+
+3. Press the play button 4 more times to submit a totoal of 2304 rows
+</if>
+
+<if type="dbcs">
 3. Insert more rows in the table with a big data set for `HOUSE` number 1.
 
 
@@ -368,7 +399,12 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	SQL> <copy>COMMIT;</copy>
 
 	Commit complete.
+	```
+</if>
 
+4. Select and count the houses.
+   
+   ```
 	SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
 			HOUSE COUNT(HOUSE)
@@ -400,12 +436,21 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 			2   1.13841996     1.1602897     1.49637083      1.52511703
 
 			3            0             0     -.12735442      -.12980098
+	```
+<if type="atp">
+5. Click the down arrow in the upper right corner and **Sign Out** of the REPORT user.
+</if>
 
+<if type="dbcs">
+5.  Exit from the sql prompt
+
+	```
 	SQL> <copy>EXIT</copy>
 
 	$
 
 	```
+</if>
 
 You may now [proceed to the next lab](#next).
 
@@ -415,5 +460,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
+* **Last Updated By/Date** - Kay Malcolm, March 2020
 
