@@ -139,6 +139,34 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 **Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
 
+<details><summary>Familiarize with the Zeppelin Notebook toolbar</summary>
+The Zeppelin notebook toolbar contains buttons to run code in paragraphs, for configuration settings, and display options.
+
+For example, it displays the current status and the number of users connected to the notebook. It also contains a menu item for keyboard shortcuts and options to show or hide the markdown editor and paragraph output. Additional settings are shown in the illustration here.
+    ![](images/notebook_toolbar.png)
+</details>
+
+<details><summary>Familiarize with the OML Notebook interpreter bindings</summary>
+Oracle Machine Learning notebooks contain an internal list of bindings to fetch data from the database or another data source, such as Oracle Cloud Object Storage. For this lab, we set the interpreter binding to connect to the ADW database and run queries.
+
+Click the interpreter bindings icon in the upper right-corner of the Notebook to view the list of available interpreter bindings.
+  ![](images/interpreter_bindings.png)
+
+The default service is low. Click to bind or unbind an interpreter. Drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. The first interpreter on the list becomes the default. Those highlighted in blue are active.
+</details>
+
+<details><summary>Familiarize with the Zeppelin interpreters</summary>
+An interpreter is a plug-in that allows you to use a specific data processing language in your Oracle Machine Learning notebook. You can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python.
+
+You create different paragraphs with different interpreters based on the code you want to run in the paragraphs. The interpreter is set at the top of the paragraph.
+The available interpreters are:
+
+  - `%sql` - To call the SQL interpreter and run SQL statements
+  - `%script` - To call and run PL/SQL scripts
+  - `%md` - To call the Markdown interpreter and generate static html from Markdown plain text
+  - `%python` - To call the Python interpreter and run Python scripts
+</details><p/>
+
 ## **Step 4:** Connect to the Python Interpreter
 
 To run Python commands in a notebook, you must first connect to the Python interpreter. This occurs as a result of running your first `%python` paragraph. To use OML4Py, you must import the `oml` module, which automatically establishes a connection to your database.
