@@ -18,14 +18,12 @@ Micronaut also includes a persistence framework called Micronaut Data that preco
 This 2-hour lab walks you through the steps to use Micronaut, Micronaut Data
 and Oracle Cloud to connected to an Oracle Database.
 
-- Lab 1: Generate SSH Keys
-- Lab 2: Provision OCI Resources (OCI VM, VCN and Autonomous Database)
-- Lab 3: Setup your environment
-- Lab 4: Create a new Micronaut Application
-- Lab 5: Build an app with Micronaut and Micronaut Data
-- Lab 6: Building a Native Image with GraalVM
-- Lab 7: Deploy your app on an Oracle Cloud VM
-- Lab 8: Terminate and Destroy OCI Resources
+- Lab 1: Setup Oracle Autonomous Database(20 minutes)
+- Lab 2: Create a new Micronaut Application (15 minutes)
+- Lab 3: Build an app with Micronaut and Micronaut Data (30 minutes)
+- Lab 4: Building a Native Image with GraalVM (20 minutes)
+- Lab 5: Deploy to a Oracle Cloud VM (Optional)
+- Lab 6: Terminate and Destroy OCI Resources (Optional)
 
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account

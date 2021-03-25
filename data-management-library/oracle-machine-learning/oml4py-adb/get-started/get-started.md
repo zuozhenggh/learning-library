@@ -206,6 +206,12 @@ The prerequisite scripts have run successfully.
 
 </if>
 
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./lab1_get_started_livelabs.json?download=1)</if>.
+
+[](include:import)
+
 <if type="livelabs">## **Step 4:** Create a Zeppelin Notebook</if>
 <if type="freetier">## **Step 5:** Create a Zeppelin Notebook</if>
 
