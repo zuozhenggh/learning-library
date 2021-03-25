@@ -1,5 +1,6 @@
 {
     "workshoptitle": "Picking a Good Wine Using ADW, OML and OAC",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -31,6 +32,11 @@
         {
             "title": "Lab 6: Visualize Data",
             "filename": "../../visualize/visualize.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
