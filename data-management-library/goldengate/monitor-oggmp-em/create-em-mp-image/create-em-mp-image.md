@@ -19,7 +19,9 @@ To open the ports:
     sudo firewall-cmd --add-port=*<OGG Process port number>*/tcp</pre>
 
 **STEP 2:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
+
 After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate Instances on the OCI UI:
+
   To discover Oracle GoldenGate Microservices instances:
   1. Click **Setup**, select **Add Target**, and click **Configure Auto Discovery**.
       ![](./images/1.png " ")
@@ -65,9 +67,10 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
       [](youtube:KAfmbzGDe9E)
 
 **STEP 3:** Set Credentials to Oracle GoldenGate MA Marketplace Instances in Enterprise Manager Plug-in
+
 If you are an Enterprise Manager administrator, then you also have the option of storing credentials in a secure manner — as preferences or operation credentials. You can then use these credentials to perform different system management activities like real-time monitoring, patching, provisioning, and other target administrative operations.
 
-You need to set the Monitoring Credentials for an MA instance.
+You need to set the Credentials (Monitoring and Preferred Credentials) for an MA instance. It is required to set preferred credentials to Oracle GoldenGate Service manager target for Oracle GoldenGate Microservices instances in addition to monitoring credentials. While setting preferred credentials for a Microservices instance, you need to add only the host credential.
 
 To set the Monitoring credentials:
   1. Click **Setup**, select **Security**, and click **Monitoring Credentials** to display the **Monitoring Credentials** page.
@@ -92,7 +95,18 @@ To set the Monitoring credentials:
   7. Select a target and notice that the **Start** and **Stop** buttons are activated for the target.
       ![](./images/19.png " ")
 
-The monitoring credentials are successfully set and you can monitor the instance, view the logs, configuration files, and GGSER files, and also start or stop the instance.                                         
+      The monitoring credentials are successfully set and you can monitor the instance, view the logs, configuration files, and GGSERR files, and also start or stop the instance.                                         
+
+  8. Similarly, to set Preferred Credentials, click **Setup**, select **Security**, and click **Preferred Credentials** to display the **Preferred Credentials** page.
+  9. Select **Oracle GoldenGate** and click **Manage Preferred Credentials**.
+  10. Select the **Oracle GoldenGate Service Manager** Target Type.
+  11. Click **Manage Preferred Credentials** to display the **Oracle GoldenGate Service Manager Preferred Credentials** page.
+  12. Under **Default Preferred Credentials**, select **Host Credentials**, and click **Set** to display the **Select Named Credential** dialog box.
+  13. Click **New** to enter the UserName, Password, and Confirm Password.
+      ![](./images/20.png " ")
+  14. Click **Save** to save the new credentials.
+
+  The Preferred Credentials are set and an information that the Named credential association has been completed successfully is indicated on the screen.
 
 Watch this video if you want to know more about Setting Credentials for Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager.
       [](youtube:zFaX348_LiA)
