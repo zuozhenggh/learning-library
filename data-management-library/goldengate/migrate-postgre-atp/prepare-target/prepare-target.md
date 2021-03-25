@@ -12,7 +12,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 For a technical overview of this lab step, please watch the following video:
 
-	[](youtube:K89v3fprzpg)
+[](youtube:K89v3fprzpg)
 
 ### Prerequisites
 

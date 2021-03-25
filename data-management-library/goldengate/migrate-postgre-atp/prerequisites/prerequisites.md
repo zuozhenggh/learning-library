@@ -14,7 +14,7 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 
 For a technical overview of this lab step, please watch the following video:
 
-	[](youtube:g7FFyY9Kf2g)
+[](youtube:g7FFyY9Kf2g)
 
 
 ### Prerequisites

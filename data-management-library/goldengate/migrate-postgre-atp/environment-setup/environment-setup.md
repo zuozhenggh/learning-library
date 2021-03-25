@@ -26,7 +26,7 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 
 For a technical overview of this lab step, please watch the following video:
 
-	[](youtube:LWcwzXPw9ZU)
+[](youtube:LWcwzXPw9ZU)
 
 ### Prerequisites
 

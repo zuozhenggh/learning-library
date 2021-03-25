@@ -20,7 +20,7 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 For a technical overview of this lab step, please watch the following video:
 
-	[](youtube:weupxqyBVoU)
+[](youtube:weupxqyBVoU)
 
 ### Prerequisites
 
