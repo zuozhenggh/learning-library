@@ -23,27 +23,11 @@ In this lab, you will learn how to:
 
 *Note: it takes approximately 20 minutes to create your workshop environment.*
 
-1. After you receive the e-mail stating that your environment is ready, go back to the My Reservations page and click **Launch Workshop**.
-
-    ![](images/my-reservations.png)
-
-2. Make a mental note of the compartment name assigned to you. Click **Copy Password** to copy your initial password. Note that this is also the admin password for your Autonomous Data Warehouse instance, so save the password for later use. Then click **Launch Console**.
-
-    ![](images/launch-page.png)
-
-3. On the login page, use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
-
-    ![](images/login-console.png)
-
-4. Change your password by pasting the initial password in the **Current Password** field, **New Password** field and **Confirm Password** field.
-
-    ![](images/change-password.png)
-
-5. Click on the menu icon and then select Autonomous Data Warehouse from the menu.
+1. After you have logged in to your LiveLabs environment, click on the menu icon and then select Autonomous Data Warehouse from the menu.
 
     ![](images/open-adw.png)
 
-6. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
+2. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
 
     ![](images/select-compartment.png)
 
