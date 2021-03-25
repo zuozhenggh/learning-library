@@ -27,6 +27,12 @@ In this lab, you will learn how to:
   * Use the `split` and `KFold` function
   * Use the `crosstab` and `pivot_table` functions on a DataFrame
 
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click [here](./lab2_select_manipulate_data.json?download=1).
+
+[](include:import)
+
 ## **Step 1**: Import libraries and create OML DataFrame proxy object
 
 To use OML4Py, you must first import the `oml` module and the Pandas library to support OML4Py data manipulation and analysis, data exploration and preparation.
@@ -704,4 +710,4 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021

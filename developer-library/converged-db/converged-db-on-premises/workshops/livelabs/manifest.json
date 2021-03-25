@@ -1,6 +1,6 @@
 {
-  "workshoptitle":"Oracle Converged Database for Developers",
-  "help": "livelabs-help-db_us@oracle.com",
+    "workshoptitle":"Oracle Converged Database for Developers",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
     {
       "title": "Getting Started",

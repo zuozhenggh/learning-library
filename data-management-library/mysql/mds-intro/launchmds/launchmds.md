@@ -20,17 +20,17 @@ In this lab, you will be guided through the following steps:
 - Create a MySQL DB System.
 - Create Client Virtual Machine
 - Connect to MySQL Database
-- Start, stop, or reboot a MySQL Database
-- Clean up the resources
+- Start, stop, reboot, or delete a MySQL Database
 
 ### Prerequisites
 
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Some Experience with MySQL Shell
+- Complete Lab 1: Create Local SSH Key
 
 ## **STEP 1**: Create Compartment
 
-You must have an OCI tenancy subscribed to the US East (Ashburn) region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
+You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
 
 1. On the Navigation Menu, under Governance and Administration, select Identity -> Compartments.
 
@@ -219,6 +219,10 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
 
 ## **STEP 5:** Create Client Virtual Machine
 
+**Important:** If you have not already completed "Lab 1: Create Local SSH Key", please do so now. 
+
+When you are finished, return to this step.
+
 1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to the Console, menu Compute, Instances
     ![COMPUTE](./images/05compute01.png " ")
 
@@ -255,23 +259,27 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
 
 10.	The state Running indicates that the Virtual Machine is ready to use. 
 
-    Save the Public IP Address under Primary VNIC Information on the Instance page. 
+    **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
 ## **STEP 6:** Connect to MySQL Database
 
-1. If you are a Linux or Mac user go to STEP 6: #2
+1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
 
    If you are a Windows user click Start menu from your windows machine for Git which should include the Git Bash command.
 
-    Click on the Git Bash command. This will take you to the Git Bash terminal as shown below and continue to  STEP 6: #2. 
+    Click on the Git Bash command. This will take you to the Git Bash terminal as shown below 
+    
+    and continue to  STEP 6: #2. 
     ![Connect](./images/06connect0.png" ")
 
 2.  From a terminal window on your local system. Connect to the Compute Instance with the SSH command. 
 
-    Indicate the location of the private key you created earlier with **MDS_Client**. Enter the username opc and the Public IP Address.
+    Indicate the location of the private key you created earlier with **MDS_Client**. 
+    
+    Enter the username **opc** and the Public **IP Address**.
 
-    Note: The **MDS_Client**  shows the  Public IP Address as mentioned on Step 4: #9
+    Note: The **MDS_Client**  shows the  Public IP Address as mentioned on Step 5: #10
     
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**)
 
@@ -306,7 +314,27 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
 
     ![Connect](./images/06connect07.png " ")
 
-6. (Optional) At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
+6. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
+
+    Type the following command at the prompt:
+    
+    `\SQL`
+
+    ![Connect](./images/06connect13.png " ")
+
+    To display a list of databases, type the following command at the prompt:
+   
+    `SHOW DATABASES;`
+    
+    To display the database version, current_date, and user type the following command at the prompt:
+
+    `SELECT VERSION(), CURRENT_DATE, USER();`
+
+    To display MysQL user and host from user table type the following command at the prompt:
+    
+    `SELECT USER, HOST FROM mysql.user;`
+
+7. (Optional) At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
    In your pre installed MySQL Workbench, 
    
@@ -387,8 +415,5 @@ When delete process is done **MDS_DB** will be set to Delete status.
 * **Contributors** -  Priscila Galvao, MySQL Solution Engineering
 * **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, March 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [MySQL Support Forum](https://community.oracle.com/tech/developers/categories/MySQL). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
