@@ -25,10 +25,10 @@ Oracle Enterprise Manager (EM) 13c is also available as an application on Oracle
 
 Use these links to get more information about Oracle GoldenGate Enterprise Manager Plug-in:
 
-* [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.1/index.html)
-* [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.1/empug/setting-enterprise-manager-oracle-goldengate.html#GUID-E40A95CC-FD59-4AAC-BE67-D1945BEE8633)
+* [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/index.html)
+* [Discovering Oracle GoldenGate Targets](https://docs.us.oracle.com/en/middleware/goldengate/emplugin/13.4.2/empug/setting-enterprise-manager-oracle-goldengate.html#GUID-DC4F56DF-CB20-4F50-BF07-B9E42C5819BC)
 * [A Simple Guide to Oracle GoldenGate Enterprise Manager Plug-in -Blog](https://blogs.oracle.com/dataintegration/a-simple-guide-to-oracle-goldengate-enterprise-manager-plug-in)
-* [New Route to Discovery in Oracle GoldenGate Enterprise Manager Plug-in 13.4.2](https://blogs.oracle.com/dataintegration/new-route-to-discovery-in-oracle-goldengate-enterprise-manager-plug-in)
+* [New Route to Discovery in Oracle GoldenGate Enterprise Manager Plug-in 13.4.2.0.0](https://blogs.oracle.com/dataintegration/new-route-to-discovery-in-oracle-goldengate-enterprise-manager-plug-in)
 
 
 ## Acknowledgements
@@ -40,7 +40,7 @@ Use these links to get more information about Oracle GoldenGate Enterprise Manag
     + Vetrivel Saravanan, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
 
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Last Updated By/Date:** Anuradha Chepuri, March 2021
 
 ## What's Next?
 **You are all set to begin the labs! Click Lab 1:Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager**.

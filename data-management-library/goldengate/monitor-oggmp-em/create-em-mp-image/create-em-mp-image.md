@@ -66,11 +66,11 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
   Watch this video if you want to know more about Discovering Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager.
       [](youtube:KAfmbzGDe9E)
 
-**STEP 3:** Set Credentials to Oracle GoldenGate MA Marketplace Instances in Enterprise Manager Plug-in
+**STEP 3:** Set Monitoring Credentials to Oracle GoldenGate MA Marketplace Instances in Enterprise Manager Plug-in
 
 If you are an Enterprise Manager administrator, then you also have the option of storing credentials in a secure manner — as preferences or operation credentials. You can then use these credentials to perform different system management activities like real-time monitoring, patching, provisioning, and other target administrative operations.
 
-You need to set the Credentials (Monitoring and Preferred Credentials) for an MA instance. It is required to set preferred credentials to Oracle GoldenGate Service manager target for Oracle GoldenGate Microservices instances in addition to monitoring credentials. While setting preferred credentials for a Microservices instance, you need to add only the host credential.
+You need to set the credentials (Monitoring and Preferred Credentials) for an MA instance.
 
 To set the Monitoring credentials:
   1. Click **Setup**, select **Security**, and click **Monitoring Credentials** to display the **Monitoring Credentials** page.
@@ -97,14 +97,22 @@ To set the Monitoring credentials:
 
       The monitoring credentials are successfully set and you can monitor the instance, view the logs, configuration files, and GGSERR files, and also start or stop the instance.                                         
 
-  8. Similarly, to set Preferred Credentials, click **Setup**, select **Security**, and click **Preferred Credentials** to display the **Preferred Credentials** page.
-  9. Select **Oracle GoldenGate** and click **Manage Preferred Credentials**.
-  10. Select the **Oracle GoldenGate Service Manager** Target Type.
-  11. Click **Manage Preferred Credentials** to display the **Oracle GoldenGate Service Manager Preferred Credentials** page.
-  12. Under **Default Preferred Credentials**, select **Host Credentials**, and click **Set** to display the **Select Named Credential** dialog box.
-  13. Click **New** to enter the UserName, Password, and Confirm Password.
+  **STEP 4:** Set Preferred Credentials to Oracle GoldenGate MA Marketplace Instances in Enterprise Manager Plug-in
+
+  It is required to set preferred credentials to Oracle GoldenGate Service manager target for Oracle GoldenGate Microservices instances in addition to monitoring credentials. While setting preferred credentials for a Microservices instance, you need to add only the host credential.
+
+  **Note**: This is a mandatory step starting from Oracle GoldenGate Enterprise Manager Plug-in 13.4.2.0.0 onwards and is an optional step for earlier releases.
+
+  To set Preferred Credentials:
+
+  1. Click **Setup**, select **Security**, and click **Preferred Credentials** to display the **Preferred Credentials** page.
+  2. Select **Oracle GoldenGate** and click **Manage Preferred Credentials**.
+  3. Select the **Oracle GoldenGate Service Manager** Target Type.
+  4. Click **Manage Preferred Credentials** to display the **Oracle GoldenGate Service Manager Preferred Credentials** page.
+  5. Under **Default Preferred Credentials**, select **Host Credentials**, and click **Set** to display the **Select Named Credential** dialog box.
+  6. Click **New** to enter the UserName, Password, and Confirm Password.
       ![](./images/20.png " ")
-  14. Click **Save** to save the new credentials.
+  7. Click **Save** to save the new credentials.
 
   The Preferred Credentials are set and an information that the Named credential association has been completed successfully is indicated on the screen.
 
@@ -113,7 +121,7 @@ Watch this video if you want to know more about Setting Credentials for Oracle G
 
 ## Want to Learn More?
 * [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/index.html)
-* [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/oracle-goldengate-classic-oracle.html#GUID-8D2728DA-9A05-439F-B2D4-4CFF8D70236D)
+* [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/empug/setting-enterprise-manager-oracle-goldengate.html#GUID-DC4F56DF-CB20-4F50-BF07-B9E42C5819BC)
 * [A Simple Guide to Oracle GoldenGate Enterprise Manager Plug-in -Blog](https://blogs.oracle.com/dataintegration/a-simple-guide-to-oracle-goldengate-enterprise-manager-plug-in)
 * [New Route to Discovery in Oracle GoldenGate Enterprise Manager Plug-in 13.4.2](https://blogs.oracle.com/dataintegration/new-route-to-discovery-in-oracle-goldengate-enterprise-manager-plug-in)
 ## Acknowledgements
