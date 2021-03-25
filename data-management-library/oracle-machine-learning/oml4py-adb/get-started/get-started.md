@@ -46,21 +46,21 @@ An administrator creates a new user account and user credentials for Oracle Mach
 
 2. Click on an Autonomous Database instance.
 
-    ![Image alt text](images/adb_instance.png)
+    ![](images/adb_instance.png)
 
 3. On the Autonomous Database Details page, click **Service Console.**
 
-    ![Image alt text](images/service_console.png)
+    ![](images/service_console.png)
 
 4. On the Service Console click **Administration.**
-    ![Image alt text](images/administration.png)
+    ![](images/administration.png)
 
 5. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
-    ![Image alt text](images/manage_oml_users.png)
+    ![](images/manage_oml_users.png)
 6. Click **Create** on the Oracle Machine Learning User Administration page.
-    ![Image alt text](images/create_option.png)
+    ![](images/create_option.png)
 7. In the Create User page, enter the following details to create the user:
-    ![Image alt text](images/create_user_page.png)
+    ![](images/create_user_page.png)
     - **Username:** Enter a username for the account. Using the username, the user will log in to an Oracle Machine Learning instance.
     - **First Name:** Enter the first name of the user.
     - **Last Name:**  Enter the first name of the user.
@@ -106,19 +106,19 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
     ![Autonomous Data Warehouse option](images/adw.png)
 
 3. On the Autonomous Databases page, click the ADW instance that you created. In this example, it is MH120920.
-    ![Image alt text](images/adb_instance.png)    
+    ![](images/adb_instance.png)    
 
 4. The details of the ADW instance are displayed. Click **Service Console.**
-    ![Image alt text](images/service_console.png)
+    ![](images/service_console.png)
 
     From the Tools page, you can access SQL Developer Web and Oracle ML User Administration pages.
-    ![Image alt text](images/adw_tools.png)
+    ![](images/adw_tools.png)
 
 5. Click **Development** on the left navigation menu, and then click **Oracle Machine Learning Notebooks.**
-    ![Image alt text](images/dev_oml_notebooks.png)
+    ![](images/dev_oml_notebooks.png)
 
 6. On the Oracle Machine Learning Notebooks sign in page, enter your credentials and click **Sign in.**
-    ![Image alt text](images/oml_sign_in.png)
+    ![](images/oml_sign_in.png)
 
     This opens the Oracle Machine Learning Notebooks home page.    
 </if>
@@ -139,34 +139,6 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 **Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
 
-<details><summary>Familiarize with the Zeppelin Notebook toolbar</summary>
-The Zeppelin notebook toolbar contains buttons to run code in paragraphs, for configuration settings, and display options.
-
-For example, it displays the current status and the number of users connected to the notebook. It also contains a menu item for keyboard shortcuts and options to show or hide the markdown editor and paragraph output. Additional settings are shown in the illustration here.
-    ![Image alt text](images/notebook_toolbar.png)
-</details>
-
-<details><summary>Familiarize with the OML Notebook interpreter bindings</summary>
-Oracle Machine Learning notebooks contain an internal list of bindings to fetch data from the database or another data source, such as Oracle Cloud Object Storage. For this lab, we set the interpreter binding to connect to the ADW database and run queries.
-
-Click the interpreter bindings icon in the upper right-corner of the Notebook to view the list of available interpreter bindings.
-  ![Image alt text](images/interpreter_bindings.png)
-
-The default service is low. Click to bind or unbind an interpreter. Drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. The first interpreter on the list becomes the default. Those highlighted in blue are active.
-</details>
-
-<details><summary>Familiarize with the Zeppelin interpreters</summary>
-An interpreter is a plug-in that allows you to use a specific data processing language in your Oracle Machine Learning notebook. You can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python.
-
-You create different paragraphs with different interpreters based on the code you want to run in the paragraphs. The interpreter is set at the top of the paragraph.
-The available interpreters are:
-
-  - `%sql` - To call the SQL interpreter and run SQL statements
-  - `%script` - To call and run PL/SQL scripts
-  - `%md` - To call the Markdown interpreter and generate static html from Markdown plain text
-  - `%python` - To call the Python interpreter and run Python scripts
-</details><p/>
-
 ## **Step 4:** Connect to the Python Interpreter
 
 To run Python commands in a notebook, you must first connect to the Python interpreter. This occurs as a result of running your first `%python` paragraph. To use OML4Py, you must import the `oml` module, which automatically establishes a connection to your database.
@@ -180,7 +152,7 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
 1. Open the notebook and click the interpreter bindings icon. View the available interpreter bindings.  The "low" priority binding runs operations serially (no parallelism). You can drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. Those highlighted in blue are active. Click to toggle to inactive.
 
-    ![Image alt text](images/interpreter_bindings.png)
+    ![](images/interpreter_bindings.png)
 
     The available interpreter bindings are:
     - `%sql` - To call the SQL interpreter and run SQL statements
@@ -195,7 +167,7 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
     `import oml`
 
-    ![Image alt text](images/import_oml.png)
+    ![](images/import_oml.png)
 
 ## **Step 5:** Verify Connection to the Autonomous Database  
 Using the default interpreter bindings, OML Notebooks automatically establishes a database connection for the notebook.  
@@ -203,7 +175,7 @@ Using the default interpreter bindings, OML Notebooks automatically establishes 
 1. To verify the Python interpreter has established a database connection through the `oml` module, run the command:
 
    `oml.isconnected()`
-   ![Image alt text](images/oml_connected.png)
+   ![](images/oml_connected.png)
 
   Once your notebook is connected, the command returns `True`.         
 
