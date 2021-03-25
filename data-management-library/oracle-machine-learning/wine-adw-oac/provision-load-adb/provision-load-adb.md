@@ -201,11 +201,11 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](images/admin-url.png)
 
-    ![](images/omluser-url.png)
+    ![](images/omluser-url1.png)
 
 4. This time sign in as **OMLUSER**. Provide the **Username - OMLUSER** and the password for your OMLUSER and click **Sign in**.
 
-    ![](images/omluser-login.png)
+    ![](images/omluser-login1.png)
 
 5. Select **Data Load** from Database Actions menu.
 
@@ -233,7 +233,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
 10. Click on the hamburger menu and click on **Development**. From the database actions development menu, select **SQL**.
 
-    ![](images/upload-sql.png)
+    ![](images/upload-sql1.png)
 
 11. Click on the **X** in the popup to dismiss the Help.
 
