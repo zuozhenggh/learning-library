@@ -26,7 +26,7 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 
 For a technical overview of this lab step, please watch the following video:
 
-[](youtube:LWcwzXPw9ZU)
+	[](youtube:LWcwzXPw9ZU)
 
 ### Prerequisites
 
@@ -96,6 +96,8 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/1.git_1.PNG)
 
+**This concludes this lab. You may now [proceed to the next lab](#next).**
+
 ## **Appendix**: Troubleshooting
 
 ###	Issue #1 Service Limits Exceeded
@@ -125,8 +127,6 @@ This lab uses the following compute types but not limited to:
 7. Go to **Step 3: Terraform**, and continue from substep **2**.
 	
 However, if you are unable to resolve it using above fix, please skip to the **Need Help** section to submit your issue via our support forum.
-
-**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Acknowledgements
 

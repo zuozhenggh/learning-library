@@ -13,7 +13,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 For a technical overview of this lab step, please watch the following video:
 
-[](youtube:x7vX5r3Qzns)
+	[](youtube:x7vX5r3Qzns)
 
 ### Prerequisites
 
