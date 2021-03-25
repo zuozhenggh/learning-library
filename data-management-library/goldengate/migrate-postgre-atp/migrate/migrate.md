@@ -11,6 +11,10 @@ This will allow you to deploy Oracle GoldenGate in an off-box architecture, whic
 
 In the final lab of the workshop, we will configure the replication process in Microservices and apply captured changes from the source database to our target Autonomous Database.
 
+For a technical overview of this lab step, please watch the following video:
+
+[](youtube:x7vX5r3Qzns)
+
 ### Prerequisites
 
 * This lab assumes that you completed all preceding labs, and ready to migrate to ATP.
