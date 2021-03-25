@@ -1,7 +1,7 @@
 # Connect to the Database
 
 ## Introduction
-In this lab, we will create the standby database.
+In this lab, we will create the connection to primary & standby databases.
 
 ### Connection to the Databases
 
