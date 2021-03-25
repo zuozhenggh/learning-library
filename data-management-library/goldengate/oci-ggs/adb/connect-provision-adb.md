@@ -1,10 +1,10 @@
 # Set up the environment
 
-## Introduction ##
+## Introduction 
 
 This lab walks you through the steps to create the required resources you'll use for OCI GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
 
-Estimated Time: 20 mins
+Estimated Lab Time: 20 mins
 
 ### Objectives
 -  Learn to provision a VCN and subnet
@@ -208,5 +208,3 @@ Please proceed to the next [lab](#next).
 - **Last Updated** - March 2021
 - **PAR Expiration date** - March 31, 2022
 
-## Need Help?
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

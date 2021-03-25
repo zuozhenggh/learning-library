@@ -26,15 +26,18 @@
             "filename": "../../setup/setup.md"
         },{
             "title": "Lab: Bitwise Aggregate Functions",
-            "filename": "../../bitwise-agg/bitwise-agg.md"
+            "filename": "../../bitwise-agg/bitwise-agg.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Enhanced Analytic Functions",
-            "filename": "../../enhanced-analytics/enhanced-analytics.md"
+            "filename": "../../enhanced-analytics/enhanced-analytics.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Detecting Data Tampering",
-            "filename": "../../data-tampering/data-tampering.md"
+            "filename": "../../data-tampering/data-tampering.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Measuring Asymmetry in Data",

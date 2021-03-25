@@ -124,9 +124,3 @@ In a previous tutorial, you used a couple of the table quick starts. In this tut
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
 * **Last Updated By** - February 2021
-
-## Need Help?
-Submit feedback or ask for help using our [Visual Builder Support Forum](https://cloudcustomerconnect.oracle.com/resources/e610f4723c/summary). Click the **Log In** button and login using your Oracle Account. Click the **Post a new topic** button to the right to start a new discussion, or search for an answer using keywords.  Please include your workshop name and lab name, and include screenshots and attach files if needed.  Here's your chance to engage directly with the author of the workshop!
-
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
