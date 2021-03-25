@@ -10,6 +10,10 @@ Up to now we have created all of the necessary resources using Terraform in OCI.
 
 We need to create our target tables for our GoldenGate migration and enable GGADMIN for replication to the Autonomous Database.
 
+For a technical overview of this lab step, please watch the following video:
+
+[](youtube:K89v3fprzpg)
+
 ### Prerequisites
 
 * This lab assumes that you completed all preceding labs.
@@ -82,4 +86,4 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 * **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
 * **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
-* **Last Updated By/Date** - Bilegt Bat-Ochir 3/22/2021
+* **Last Updated By/Date** - Bilegt Bat-Ochir 3/24/2021

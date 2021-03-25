@@ -13,10 +13,14 @@ We have created a source database and pre-loaded it with some sample data during
 In this lab, we will configure _**three extract**_ processes within Oracle Goldengate classic deployment for PostgreSQL.
 
 -	An extract for **changed data capture**. Exttab process will start capturing changes and this will create some files called trails.
--	An extract for **sending those captured files** to GG Microservices. Extdmp will be pumping trail files.
+-	An extract for **sending those captured files** to Goldengate Microservices. Extdmp will be pumping trail files.
 -	An Initial-Load extract. While changes are being captured, the migration step needs a special type of extract and replicat process, this is cold data. Usually, after the initial load finishes, we will be applying the captured changed rows during the initial load.
 
 	![](/images/general.gif)
+
+For a technical overview of this lab step, please watch the following video:
+
+[](youtube:weupxqyBVoU)
 
 ### Prerequisites
 
@@ -75,7 +79,7 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 	</copy>
 	```
 
-2. Then run the below command to start GGSCI to start:
+2. Then run the below command to start GGSCI:
 
 	```
 	<copy>
@@ -162,9 +166,9 @@ In this lab, we will configure _**three extract**_ processes within Oracle Golde
 
 ## **Step 9**: Registering EXTTAR
 
-Oracle GoldenGate needs to register an extract with the database replication slot before adding the extract process. Let's begin to create the first extract process, which is continuous replication in the usual migration and replication project scenario. _**Ensure that you are connected to SourceDB using the DBLOGIN command **_ before doing the next steps.
+Oracle GoldenGate needs to register an extract with the database replication slot before adding the extract process. Let's begin to create the first extract process, which is continuous replication in the usual migration and replication project scenario. _**Ensure that you are connected to SourceDB using the DBLOGIN command**_ before doing the next steps.
 
-1. First register your extract.
+1. First register your extract:
 
 	```
 	<copy>
@@ -174,7 +178,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 
 	![](/images/gg_pg_exttar_0.png)
 
-2. Then edit extract configuration with the below.
+2. Then edit extract configuration with the below:
 
 	```
 	<copy>
@@ -201,7 +205,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 
 	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit. When you are done editing press **esc** button and press **:wq** keys, then **hit enter** for save & quit._
 
-4. To create your extract process issue below commands.
+4. To create your extract process issue below commands:
 
 	```
 	<copy>
@@ -217,7 +221,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 
 	![](/images/gg_pg_exttar_2.png)
 
-5. Confirm everything is correct then start this extract by issuing the below command.
+5. Confirm everything is correct then start the extract process.
 
 	```
 	<copy>
@@ -233,15 +237,11 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 
 	This process is capturing change data from your source database. As it was mentioned earlier, this is a necessary step for a continuous replication or a zero downtime migration project. 
 
-	Changes are now being captured live and at some point during this process you will need to do the initial load to your target database. As soon as the initial load process as finished and you have loaded to target database, you need to start applying the captured data.
-
-	Once you are satisfied with source and target databases data quality, you can do cut over and point your application connections to your target database.
-
 ## **Step 10**: Registering EXTDMP
 
-Now changes are being captured from the source database and we need to send them to GG microservices in order to apply to the target database. Therefore we need another process, which acts as an extract but sends existing trail files to GG microservices. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
+Now changes are being captured from the source database and we need to send them to GG microservices in order to apply to the target database. Therefore we need another process, which acts as an extract but sends existing trail files to GG microservices. This is also known as a pump process. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
 
-1. Again, register your extdmp extract.
+1. Again, register your pump "extdmp" extract.
 
 	```
 	<copy>
@@ -251,7 +251,7 @@ Now changes are being captured from the source database and we need to send them
 
 	![](/images/gg_pg_extdmp_0.png)
 
-2. Similar to previous step, edit extract configuration with the below.
+2. Similar to previous step, edit extract configuration with the below:
 
 	```
 	<copy>
@@ -261,7 +261,7 @@ Now changes are being captured from the source database and we need to send them
 
 	![](/images/gg_pg_extdmp_1.png)
 
-3. Insert below as your extdmp parameter, and **make sure** you must change _**ip address**_ with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
+3. Insert below as your extdmp parameter, and **make sure** you must change _**ip address**_ with your Goldengate Microservice's IP Address! Why? Because we will send extracted records to Microservice.
 
 	```
 	<copy>
@@ -309,11 +309,11 @@ Now changes are being captured from the source database and we need to send them
 
 	![](/images/gg_pg_extdmp.png)
 
-	EXTTAR process is capturing your changes at your source database, however, it is only locally kept in the Goldengate instance.
+	The **EXTTAR** process is capturing your changes at your source database, however, it was only kept locally in the Goldengate instance.
 
-	EXTDMP process is then pumping the captured trail files to Goldengate Microservices instance. 
+	Then we created the **EXTDMP** process, which is pumping the captured trail files to Goldengate Microservices instance. 
 	
-	We will check if this is working properly in the next lab. These two processes are preparation for change synchronization for continuous replication.
+	We will check them if working properly in the next lab. These two processes are preparation for change synchronization for continuous replication.
 
 
 ## **Step 11**: Registering INITLOAD
@@ -394,10 +394,10 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 
 	![](/images/gg_pg_initload_report.png)
 
-	This is a good way to investigate your Goldengate process result. You can see some statistics at the end of this report
+	This is a good way to investigate your Goldengate process result. You can see some statistics at the end of this report. 
+	As soon as the initial load process as finished and you have loaded to target database, you need to start applying the captured change data in your target database.
 
 **This concludes this lab. You may now [proceed to the last lab](#next).**
-
 
 ## Acknowledgements
 
