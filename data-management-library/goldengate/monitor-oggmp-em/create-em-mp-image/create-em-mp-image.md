@@ -117,23 +117,23 @@ To set the Monitoring credentials:
 
   **Note**: This is a mandatory step starting from Oracle GoldenGate Enterprise Manager Plug-in 13.4.2.0.0 onwards and is an optional step for earlier releases.
 
-  To set Preferred Credentials:
+    To set Preferred Credentials:
 
-  1. Click **Setup**, select **Security**, and click **Preferred Credentials** to display the **Preferred Credentials** page.
+    1. Click **Setup**, select **Security**, and click **Preferred Credentials** to display the **Preferred Credentials** page.
       ![](./images/21.png " ")
 
-  2. Select **Oracle GoldenGate Service Manager** and click **Manage Preferred Credentials**.
+    2. Select **Oracle GoldenGate Service Manager** and click **Manage Preferred Credentials**.
     to display the **Oracle GoldenGate Service Manager Preferred Credentials** page.
       ![](./images/22.png " ")
 
-  4. Under **Target Preferred Credentials**, select **Host Credentials**, and click **Set** to display the **Select Named Credential** dialog box.
+    3. Under **Target Preferred Credentials**, select **Host Credentials**, and click **Set** to display the **Select Named Credential** dialog box.
 
       ![](./images/23.png " ")
 
-  6. Click **New** to enter the UserName, Password, and Confirm Password.
+    4. Click **New** to enter the UserName, Password, and Confirm Password.
       ![](./images/24.png " ")
 
-  7. Click **Save** to save the new credentials.
+    5. Click **Save** to save the new credentials.
 
   The Preferred Credentials are set and an information that the Named credential association has been completed successfully is indicated on the screen.
 
