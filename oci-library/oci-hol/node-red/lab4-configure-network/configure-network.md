@@ -48,4 +48,8 @@ You can control the currently configured firewall rules for which incoming traff
 
 ![Firewall Public Zone Rule](images/firewall-public-rules.png " ")
 
-**Congratiulations!** You have finished this lab. Now lets start up Node-RED in the next lab.
+**Congratiulations!** You have finished this lab. Now lets start up Node-RED in [next lab](#next).
+
+## Acknowledgements
+* **Author** - Kevin Lazarz, Program Manager, TE Hub
+* **Last Updated By/Date** - Kevin Lazarz, Program Manager, TE Hub March 2021

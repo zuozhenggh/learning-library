@@ -37,3 +37,7 @@ To test your first flow, click the inject button next to th inject node. You sho
 ![Node-RED](images/node-red-test.png " ")
 
 **Congratulations!* You have successfully installed Node-RED and implemented you very first flow!
+
+## Acknowledgements
+* **Author** - Kevin Lazarz, Program Manager, TE Hub
+* **Last Updated By/Date** - Kevin Lazarz, Program Manager, TE Hub March 2021
