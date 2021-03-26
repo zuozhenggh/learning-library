@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle machine learning notebook apache zeppelin comes with your Autonomous Data Warehouse. Once the data is in ADW, you can start using oracle machine learning notebooks to investigate the data and run machine learning models with it. In this lab, you will log in as OMLUSER to load and run the provided Oracle Machine Learning notebook.
+Oracle Machine Learning notebook Apache Zeppelin comes with your Autonomous Data Warehouse. Once the data is in ADW, you can start using Oracle Machine Learning notebooks to investigate the data and run machine learning models with it. In this lab, you will log in as OMLUSER to load and run the provided Oracle Machine Learning notebook.
 
 Estimated Lab Time: n minutes
 
@@ -66,11 +66,11 @@ In this lab, you will:
 
     ![](./images/tools.png " ")
 
-3.  Select **Open Oracle ML User Administration** under the tools.
+3.  Select **Open Oracle ML User Administration** under the tools menu.
 
     ![](./images/open-ml-admin.png " ")
 
-4. Sign in as **Username - ADMIN** and with the password you used when you created your Autonomous instance.
+4. Sign in as **Username - ADMIN** with the password you used when you created your Autonomous Database instance.
 
     ![](./images/ml-login.png  " ")
 
@@ -176,7 +176,7 @@ Now, let us understand how the data is distributed in our table to see how many 
 
     ![](./images/hover.png " ")
 
-    Note that Oracle machine notebooks by default uses Zepplin graph to show a simple visualization that takes the top 1000 records. If the highly computational values are at the bottom of the database oracle machine notebook, the values may vary when compared to the actual results.
+    Note that Oracle Machine Learning notebooks by default uses Zepplin graph to show a simple visualization that takes the top 1000 records. If the highly computational values are at the bottom of the database Oracle Machine Learning notebook, the values may vary when compared to the actual results.
 
 3. Explore the data based on top 10 countries and display the count of wines. Note that the U.S. is leading, followed by France and so on.
 
@@ -198,27 +198,27 @@ Now, let us understand how the data is distributed in our table to see how many 
 
 ## **STEP 5**: Unstructured Data Preparation using Oracle Text
 
-In order to use the reviews in the description column of the WineReviews130KTarget table in our machine model, we use oracle text to do mining of unstructured data. You can apply data mining techniques to text terms which are also called as text features or tokens. These text terms can be a group of words or words that have been extracted from text documents and their assigned numeric weights.
+In order to use the reviews in the description column of the WineReviews130KTarget table in our machine model, we use Oracle text to do mining of unstructured data. You can apply data mining techniques to text terms which are also called text features or tokens. These text terms can be a group of words or words that have been extracted from text documents and their assigned numeric weights.
 
 1. Drop the existing Lexer preference for repeatability
 
     ![](./images/drop-lexer.png " ")
 
-2. Create a new lexer preference for text mining by specifying the name of the preference you want to create, the type of lexer preference you want from the types Oracle has and the set of attributes for your preference.
+2. Create a new Lexer preference for text mining by specifying the name of the preference you want to create, the type of Lexer preference you want from the types Oracle has and the set of attributes for your preference.
 
-    In this example, `mylex` is the name of the preference, `BASIC_LEXER` is the type of lexer preference and setting attributes as `index_themes`, `index_text`.
+    In this example, `mylex` is the name of the preference, `BASIC_LEXER` is the type of Lexer preference and setting attributes as `index_themes`, `index_text`.
 
     ![](./images/create-lexer.png " ")
 
 3. Create another preference for the basic word list and set the attributes for text mining.
 
-    In this example, `mywordlist` is the name of `BASIC_WORDLIST` preference, with attributes set for language as english, score as 1, number of results as 5000.
+    In this example, `mywordlist` is the name of the `BASIC_WORDLIST` preference, with attributes set for language as english, score as 1, number of results as 5000.
 
     ![](./images/list-lexer.png " ")
 
-4. Drop an existing text policy for repeatability and create a new text policy for description for the lexer and word list preference that you just created.
+4. Drop an existing text policy for repeatability and create a new text policy for description for the Lexer and word list preference that you just created.
 
-    In this example, `my_policy` is the name of our policy for the `mylex` and `mywordlist`
+    In this example, `my_policy` is the name of our policy for `mylex` and `mywordlist`
 
     ![](./images/drop-policy.png " ")
 
@@ -228,16 +228,17 @@ In order to use the reviews in the description column of the WineReviews130KTarg
 
 ### Build Attribute Importance Model
 
-Now, let's build attribute importance model using both structured and unstructured (wine reviews) data.
+Now, let's build an attribute importance model using both structured and unstructured (wine reviews) data.
 
-1. Give the `ALGO_NAME`. We're using a minimum descriptor length for doing the attribute importance. Then specify the text policy name  you created i.e , the maximum of features you want your model to use, the default value is 3000 which tells the maximum number of features to use from the document set.
+***sentence below is confusing***
+
+1. Give the `ALGO_NAME`. We're using a minimum descriptor length for attribute importance. Then specify the text policy name  you created i.e , the maximum of features you want your model to use, the default value is 3000 which defines the maximum number of features to use from the document set.
 
     Note that it just took 54 sec to show the actual words from the 130k records of unstructured text mining data.
 
     ![](./images/attribute-model.png " ")
 
-2. Once you run the attribute importance model,
-notice that we have our attribute importance ranked based on the ascending order of the rank i.e by price, province, variety etc.
+2. Once you run the attribute importance model, notice that we have our attribute importance ranked based on the ascending order of the rank i.e by price, province, variety etc.
 
     Here specific words like palate, wine, aromas, acidity, finish, rich etc are the tokens from the table that influence the attributes to get a rich wine.
 
@@ -249,7 +250,7 @@ notice that we have our attribute importance ranked based on the ascending order
 
 ### Build Classification Model
 
-As we built our attribute importance model, we will build a classification model using both structured and unstructured(wine\_reviews) data.
+As we built our attribute importance model, we will build a classification model using both structured and unstructured (wine\_reviews) data.
 
 3. Build a supervised learning classification model - "Wine\_CLASS\_MODEL\_SVM" that predicts good wine (GT\_90\_POINTS) using Oracle Machine Learning Support Vector Machine Algorithm.
 
@@ -273,7 +274,7 @@ Now that we have built a machine learning model, let's evaluate the model.
 
 ## **STEP 8**: Model Deployment
 
-Now let's apply the model to a specific data points.
+Now let's apply the model to specific data points.
 
 1. Explore the wines that are predicted to be good wines based on the classification we did i.e., greater than 90 points and less than 90 points. Each row in our test table displays the predicted result.
 
@@ -281,13 +282,13 @@ Now let's apply the model to a specific data points.
 
 2. Focusing on the wines that have been predicted to be the good wines i.e., greater than 90 points and comparing them with the bad wines i.e., lower than 90 points, we are applying our model result on the actual dataset and then predicting it.
 
-    As we are applying the model, we get a prediction result of which wine falls into which category, it's probability of being greater than 90, shows the actual description and country along with few other parameters.
+    As we are applying the model, we get a prediction result of: which wine falls into which category, it's probability of being greater than 90, the actual wine description and country along with a few other parameters.
 
-    For example, the first record in the screenshot, ID - 127518 shows the prediction to be greater than 90 points and has the probability - 0.905(approximately) which is greater then 90 points. Notice that the description for this record mentions all the characteristics of a good wine.
+    For example, the first record in the screenshot, ID - 127518 shows the prediction to be greater than 90 points and has the probability - 0.905 (approximately 90%) in which it is greater then 90 points. Notice that the description for this record mentions all the characteristics of a good wine.
 
     ![](./images/actual-data-result.png " ")
 
-3. As we wanted inexpensive wines, this graphs shows 1000 good wines that are less than $15 and their predictions greater than 90 points by countries based on our data set and model.
+3. As we wanted inexpensive wines, this graphs shows 1000 good wines that are less than $15 and with predictions of being greater than 90 points by countries, based on our data set and model.
 
     From the graph, notice that France has a good number of wines that are good as well as cheap and then US followed by Italy and Chile.
 
@@ -300,7 +301,7 @@ Now let's apply the model to a specific data points.
 
     ![](./images/remove-prediction-table.png " ")
 
-5. Create a new "WinePredictions" table in ADW to be accessed by Oracle Analytics Cloud and run our model on entire data set to get more visual insights.
+5. Create a new "WinePredictions" table in ADW to be accessed by Oracle Analytics Cloud and run our model on the entire data set to gain more visual insights.
 
     ![](./images/create-table-oac.png " ")
 

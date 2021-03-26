@@ -18,11 +18,7 @@
             "filename": "../../provision-load-adb/provision-load-adb.md"
         },
         {
-            "title": "Lab 2: Getting Started with Machine Learning Notebook",
-            "filename": "../../start-oml-nb/start-oml-nb.md"
-        },
-        {
-            "title": "Lab 3: Run the Notebook",
+            "title": "Lab 2: Import and Run the Machine Learning Notebook",
             "filename": "../../run-nb/run-nb.md"
         },
         {

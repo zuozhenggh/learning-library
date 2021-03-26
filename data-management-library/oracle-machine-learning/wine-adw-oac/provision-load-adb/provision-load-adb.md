@@ -95,7 +95,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/tools.png " ")
 
-3.  Select **Open Oracle ML User Administration** under the tools.
+3.  Select **Open Oracle ML User Administration** under the tools menu.
 
     ![](./images/open-ml-admin.png " ")
 
@@ -127,7 +127,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/tools.png " ")
 
-3. Select **Open Database Actions** under the tools.
+3. Select **Open Database Actions** under the tools menu.
 
     ![](./images/open-database-actions.png  " ")
 
