@@ -14,7 +14,7 @@ When you first open SQL Developer, the screen looks like this:
 
 ![](./images/sql-developer.png)
 
-Estimated Lab Time: 20 Minutes
+Estimated Lab Time: 30 Minutes
 
 ### Objectives
 - Create a database connection to the primary database

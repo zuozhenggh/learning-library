@@ -12,7 +12,7 @@ Data Guard maintains a copy of your data in a standby database that is continuou
 
 In this lab we will introduce a block corruption in the database and see Active Data Guard repairing it.
 
-Estimated Lab Time: 30 Minutes
+Estimated Lab Time: 40 Minutes
 
 ### Objectives
 - Setup your environment
