@@ -129,8 +129,7 @@ In this lab, you will:
           IS BEGIN
                 RETURN 'rpad(str, cnt * length(str), str)';
     END;
-    /</copy>
-
+    /</copy
     Function created.
 
     SQL>
@@ -139,6 +138,23 @@ In this lab, you will:
 </if>  
   
 <if type="atp">
+## **STEP  1**: Login to SQL Developer Web on ADB
+
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
+
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
+      ![](../set-operators/images/21c-home-adb.png " ")
+
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](../set-operators/images/21c-adb.png " ")
+
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](../set-operators/images/tools.png " ")
+
+5.  Click on the **SQL** button.
+6.  Enter the username *oe* and password *WElcome123##*
+   
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell 
@@ -164,25 +180,15 @@ In this lab, you will:
     LAST_NAME                 CONCAT_SELF(LAST_NAME,2)
     ------------------------- ----------------------------------------
     Abel                      AbelAbel
-
     Ande                      AndeAnde
-
     Atkinson                  AtkinsonAtkinson
-
     Austin                    AustinAustin
-
     Baer                      BaerBaer
-
     Baida                     BaidaBaida
-
     Banda                     BandaBanda
-
     Bates                     BatesBates
-
     Bell                      BellBell
-
     Bernstein                 BernsteinBernstein
-
     Bissot                    BissotBissot
     ...
     107 rows selected.
@@ -202,33 +208,19 @@ In this lab, you will:
     LAST_NAME                 CONCAT_SELF(LAST_NAME,3)
 
     ------------------------- ----------------------------------------
-
     Abel                      AbelAbelAbel
-
     Ande                      AndeAndeAnde
-
     Atkinson                  AtkinsonAtkinsonAtkinson
-
     Austin                    AustinAustinAustin
-
     Baer                      BaerBaerBaer
-
     Baida                     BaidaBaidaBaida
-
     Banda                     BandaBandaBanda
-
     Bates                     BatesBatesBates
-
     Bell                      BellBellBell
-
     Bernstein                 BernsteinBernsteinBernstein
-
     Bissot                    BissotBissotBissot
-
     Bloom                     BloomBloomBloom
-
     Bull                      BullBullBull
-
     Cabrio                    CabrioCabrioCabrio
 
     ...
@@ -240,7 +232,7 @@ In this lab, you will:
     ```
 
 ## **STEP 3:** Use SQL Macro as a table expression
-
+<if type="atp">
 1.  Login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](../set-operators/images/21c-home-adb.png " ")
 
@@ -255,6 +247,7 @@ In this lab, you will:
 6.  Click on the **SQL** button.
 7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
 8.  Enter the username *hr* and password *WElcome123##*
+</if>
 1. The first usage of an SQL macro as a table expression shows how to use the SQM to implement a polymorphic view.
 
 
