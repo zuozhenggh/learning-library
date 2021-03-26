@@ -19,7 +19,7 @@
         "filename": "./build-code-deploy-microservices/build-code-deploy-microservices.md"
       },
       {
-        "title": "Lab 3: Setup database connection secrets, tables, and AQ messaging",
+        "title": "Lab 3: Setup database connection secrets, tables and AQ messaging",
         "filename": "./setup-atp-connectivity-data-and-messaging/setup-atp-connectivity-data-and-messaging.md"
       },
       {

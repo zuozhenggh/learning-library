@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Upgrade to 19c",
   "support": "https://community.oracle.com/tech/developers/categories/database-19c",
+  "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Getting Started",
@@ -69,6 +70,11 @@
     {
       "title": "Lab 14: AutoUpgrade (Optional)",
       "filename": "../../upgrade/autoupgrade.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }

@@ -27,6 +27,12 @@ In this lab, you will learn how to:
   * Use the `split` and `KFold` function
   * Use the `crosstab` and `pivot_table` functions on a DataFrame
 
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab2_select_manipulate_data.json?download=1).
+
+[](include:import)
+
 ## **Step 1**: Import libraries and create OML DataFrame proxy object
 
 To use OML4Py, you must first import the `oml` module and the Pandas library to support OML4Py data manipulation and analysis, data exploration and preparation.
@@ -34,8 +40,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
 1. Run the following scripts to import the `oml` package, the Pandas library and set the display options:
 
     ```
-    %python
-    <copy>
+    <copy>%python
     import pandas as pd
     import oml
 
@@ -301,7 +306,7 @@ Use the `merge` function to join data from two objects. These examples demonstra
 
     ```
     %python
-      <copy>
+    <copy>
 
     x.head(4).merge(other=MY_DF[['id', 'num']], on="id", how='left', suffixes=['.l','.r'])</copy>
     ```
@@ -445,13 +450,11 @@ The following tasks are covered in this lab:
 
 4. Verify that the stratified sampling generates splits in which all of the different categories of digits (digits 0-9) are present in each split
 
-  	 ```
-     %python
+  	```
+    %python
     <copy>
-
-     print("Verify values: ", [split['target'].drop_duplicates().sort_values().pull() for split in splits])</copy>
-
-     ```
+    print("Verify values: ", [split['target'].drop_duplicates().sort_values().pull() for split in splits])</copy>
+    ```
 
      ![](images/verify_stratified_sampling.png)
      Here we see that each digit is represented in the split result.
@@ -707,4 +710,4 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021

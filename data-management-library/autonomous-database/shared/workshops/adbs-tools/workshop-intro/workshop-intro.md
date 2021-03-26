@@ -5,6 +5,8 @@
 
 The purpose of this workshop is to introduce you to the suite of data tools built into the Oracle Autonomous Data Warehouse. The workshop is designed to be used alongside your own cloud account (paid or Bring-Your-Own-License) or you can register and claim free trial credits which provides up to 3,300 hours of cloud time, and 2 TB of storage, which is more than enough time and storage space to run this workshop. 
 
+Estimated Workshop Duration: 1 hour, 40 minutes
+
 ### Who Should Use This Workshop?
 
 Everyone can benefit from doing the lab exercises in this workshop: technical experts (data warehouse architects to database administrators), business users who want to focus on extracting meaning and insight from their own data, along with data scientists who want to build machine learning models within the context of a data warehouse project.
@@ -18,7 +20,7 @@ The aim of this lab is to introduce you to the workshop's objectives and the bus
 
 ### What Do You Need To Get Started?
 
-Before you launch into this lab, you will need the following:
+Before you launch into this workshop, you will need the following:
 
 1. Basic knowledge of Oracle Cloud
 2. Basic level of understanding of SQL query language

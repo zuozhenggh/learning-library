@@ -1,6 +1,7 @@
 {
-  "workshoptitle": "Oracle GoldenGate Microservices",
-  "tutorials": [
+    "workshoptitle": "Oracle GoldenGate Microservices",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
       "title": "Getting Started",
       "description": "Login to Oracle Cloud",
@@ -40,6 +41,11 @@
       "title": "Lab 6: Transformations",
       "description": "Transformations",
       "filename": "../../transformations/transformations.md"
+    },
+    {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
