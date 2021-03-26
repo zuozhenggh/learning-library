@@ -1,10 +1,10 @@
-# Introduction[Workshop Under Construction]
+# Introduction
 
 ## About this Workshop
 
 In this workshop, you will explore how to pick a good wine for under $30 using Oracle Autonomous Database, Oracle Machine Learning and the Oracle Analytics Cloud with a simple use case.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 90 minutes
 
 Preview this video about picking a good inexpensive wine using Oracle Machine Learning.
 
@@ -59,4 +59,5 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Charlie Berger, Senior Director of Product Management, Data Mining and Advanced Analytics
 * **Contributors** -  Anoosha Pilli, Database Product Management
-* **Last Updated By/Date** - Anoosha Pilli, December 2020
+* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
+* **Workshop Expiry Date** - March 2022

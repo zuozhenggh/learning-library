@@ -1,22 +1,17 @@
-# Provision and Load Data into Autonomous Database Instance[Workshop Under Construction]
+# Provision and Load Data into an Autonomous Database Instance
 
 ## Introduction
 
-In this lab, you will provision the Oracle Autonomous Database, upload data file into Oracle Cloud Infrastructure(OCI) object storage, set up credentials, create table, load data into tables from files from OCI object storage files.
+In this lab, you will provision the Oracle Autonomous Database instance, create and grant privileges to a user in the Autonomous Database Instance, and load data into it. 
 
-*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
-
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
 - Provision an Autonomous Database instance
-- Upload files to the OCI Object Storage
-- Define object store credentials for your Autonomous Database instance
-- Setup SQL Developer Web to load data into an Autonomous Database table
-- Create tables in your database
-- Load data from the Object Store
+- Create and grant privileges to a user in Autonomous Database instance
+- Load data into Autonomous Database instance
 
 ### Prerequisites
 
@@ -28,7 +23,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
 [](youtube:UDwlTpbhPX0)
 
-## **STEP 1**: Provision an ADW instance
+## **STEP 1**: Provision an Autonomous Database Instance
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 
@@ -38,7 +33,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
 3. Once you are logged in, you can view the cloud services dashboard where all the services available to you. Click on hamburger menu, search for Autonomous Data Warehouse and select it.
 
-    **Note:** You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the **Quick Actions** section of the dashboard.
+    **Note:** You can also directly access your Autonomous Data Warehouse service in the **Quick Actions** section of the dashboard.
 
     ![](./images/choose-adb.png " ")
 
@@ -77,13 +72,13 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/create.png " ")
 
-9.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+9.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Database instance is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](./images/provision.png " ")
 
     ![Database instance homepage.](./images/provision-2.png " ")
 
-## **STEP 2:** Create ML User in ADW
+## **STEP 2:** Create OMLUSER in ADB Instance
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
 
@@ -115,9 +110,9 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/create-user-created.png " ")
 
-## **STEP 3**: Grant Privileges to OMLUSER to Access Database Actions
+## **STEP 3**: Grant OMLUSER privileges to ADB Actions
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
     ![](./images/choose-adb.png " ")
 
@@ -174,7 +169,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/storage-privileges.png " ")
 
-## **STEP 4**: Download the Necessary Files
+## **STEP 4**: Download the Necessary Data
 
 1.  Click the link below to download the Wine Reviews CSV file.
 
@@ -184,9 +179,9 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/download-csv.png  " ")
 
-## **STEP 5**: Upload the Data Files to OMLUSER
+## **STEP 5**: Upload the Data File to the ADB Instance
 
-1. On the tab with your ADW instance, click on **Open Database Actions** under Tools.
+1. On the tab with your ADB instance, click on **Open Database Actions** under Tools.
 
     ![](./images/open-database-actions.png  " ")
 
@@ -225,7 +220,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](images/upload-run2.png)
 
-9. Notice the *Status: Running(1/1)* while loading the data. The status will be updated to *Status: Completed(1/1)* once the data loading job is completed.
+9. Notice the *Status: Running(0/1)* while loading the data. The status will be updated to *Status: Completed(1/1)* once the data loading job is completed.
 
     ![](./images/upload-loading.png " ")
 
@@ -246,7 +241,6 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 [Please proceed to the next lab](#next).
 
 ## Acknowledgements
-
-* **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
-* **Last Updated By/Date** - Didi Han, March 2021
-* **Lab Expiry Date** - March 2022
+* **Author** - Anoosha Pilli & Didi Han, Database Product Management
+* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
+* **Workshop Expiry Date** - March 2022

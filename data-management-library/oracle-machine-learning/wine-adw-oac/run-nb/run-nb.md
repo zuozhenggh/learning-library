@@ -1,62 +1,39 @@
-# Import and Run the Machine Learning Notebook[Workshop Under Construction]
+# Import and Run the Machine Learning Notebook
 
 ## Introduction
 
-Oracle Machine Learning notebook Apache Zeppelin comes with your Autonomous Data Warehouse. Once the data is in ADW, you can start using Oracle Machine Learning notebooks to investigate the data and run machine learning models with it. In this lab, you will log in as OMLUSER to load and run the provided Oracle Machine Learning notebook.
+Oracle Machine Learning notebook Apache Zeppelin comes with your Autonomous Database. Once data is loaded into the Autonomous Database, you can start using Oracle Machine Learning notebooks to investigate the data and run machine learning models with it. In this lab, you will log in as OMLUSER and then import and run the Oracle Machine Learning notebook.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 15 minutes
 
 ### About Product/Technology
 
 With the classification techniques, the business problem defined here is a good model with
-- a good bottle of wine and a bad bottle of wine or not
-- not so good greater than 90 points less than 90 point
- so we're into the area of
+- Whether it is a good or bad bottle of wine
+- Good wine having a score of greater than 90 points
+- Bad wine having a score of less than 90 points
 
-The data that we are using is not a standard structured data i.e we have wine reviews like "Oh this wine has a very robust flavor!", "It smelt the aroma of cherries" and so on.
+The data that we are using is not a standard structured data set. For example, we have wine reviews saying "Oh this wine has a very robust flavor!", "It smelt the aroma of cherries" and so on.
 
-So we are using Oracle textmining to filter all the unstructured data stored in the database as a 
-(character large object).
-
-Using Machine Learning SQL Model Build & Model Prediction
-- Build machine learning (ML) model in ADW to predict good, inexpensive wines using in-Database OML algorithms
-
-    ```
-      BEGIN
-      DBMS_DATA_MINING.CREATE_MODEL(
-        model_name          => 'Wine_CLASS_MODEL',
-        mining_function     => dbms_data_mining.classification,
-        data_table_name     => 'Wine_TRAIN_DATA',
-        case_id_column_name => 'ID',
-        target_column_name  => 'POINTS_BIN',
-        settings_table_name => 'Wine_build_settings');
-    END;
-    /
-    ```
-
-- Apply ML model using SQL query to predict a likely good, inexpensive wine
-
-    ```
-    SELECT PREDICTION_PROBABILITY(Wine_CLASS_MODEL, 'GT_90_POINTS' 	   USING 25 as PRICE, 'MALBEC' as VARIETY, 'SPAIN' as COUNTRY)
-    FROM dual;
-    ```
+So we are using Oracle textmining to filter all the unstructured data stored in the database as a (character large object).
 
 ### Objectives
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Upload the provided OML notebook
+* Run the OML notebook
+* Explore the notebook features
 
 ### Prerequisites
 
-* Provisioned ADW
-* Created a OMLUSER account
+* Provisioned an ADB instance
+* Created an OMLUSER account
+* Uploaded data for the notebook to manipulate
 
 
 ## **STEP 1**: Upload Notebook to Oracle Machine Learning
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your Autonomous Database instance.
 
     ![](./images/choose-adb.png " ")
 
@@ -82,7 +59,7 @@ In this lab, you will:
 
     ![](./images/oml-user-login.png  " ")
 
-7.  We will be importing a **Picking Good Wines $30 Using Wine Reviews.json** ML notebook in this lab. Click [here]() to download the notebook. ***ADD LINK HERE***
+7.  We will be importing a **Picking Good Wines $30 Using Wine Reviews.json** ML notebook in this lab. Click [here]() to download the notebook. 
 
 8. Click on the upper-left hamburger menu and select **Notebooks**.
 
@@ -100,27 +77,28 @@ In this lab, you will:
 
     ![](./images/notebook.png " ")
 
-## **STEP 2**: Business Problem, Methodogy
+## **STEP 2**: Prepare and Run your Notebook
 
-1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on run button to run the Notebook.
+1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on the **gear** icon in the upper right. 
+
+    ![](./images/binding.png " ")
+
+2. We must set the interpreter binding if we're going to connect to the Autonomous Database instance and run queries. Ensure at least one of the bindings is selected, then click save.
+
+    ![](./images/binding2.png " ")
+
+3. Click on run button. 
 
     ![](./images/run.png " ")
 
-2. In the pop up click on **OK** to run the notebook.
+4. In the pop up click on **OK** to run the notebook. If any paragraphs have an error, click the **run** button for them individually until they are finished.
 
     ![](./images/run-all-paragraphs.png " ")
 
-3. 
+## **STEP 3**: Explore the Notebook
+Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
 
-    ![](./images/methodology.png  " ")
-    ![](./images/business-understanding.png)
-
-4. Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
-
-***what is this***
---> notebook data understanding image select * from..
-
-## **STEP 3**: Data Preparation
+![](./images/explore.png " ")
 
 1. Before converting the description into a clob object, first, alter the table to add a points_bin column to the table.
 
@@ -313,7 +291,7 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - Charlie Berger & Siddesh Ujjni, Machine Learning
+* **Author** - Charlie Berger & Dhvani Sheth, Data Mining and Advanced Analytics
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
 * **Workshop Expiry Date** - March 2022
