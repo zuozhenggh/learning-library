@@ -1,5 +1,6 @@
 {
     "workshoptitle": "Oracle WebLogic Server Kubernetes Operator",
+    "help": "livelabs-help-weblogic_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -37,6 +38,10 @@
         {
             "title": "Lab 7 (OPTIONAL): Assign WebLogic pods to nodes (a scenario simulating a cluster spanning 2 data centers)",
             "filename": "../../node-selector/node-selector.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/need-help/need-help.md"
         }
     ]
 }
