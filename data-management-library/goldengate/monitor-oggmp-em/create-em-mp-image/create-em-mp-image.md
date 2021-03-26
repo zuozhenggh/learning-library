@@ -56,7 +56,7 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
       The targets are discovered and the control is now back on the **Targets on Host** page. Notice  the change in the number of targets discovered under the **Discovered Targets** column.
         ![](./images/6DiscoveredTargets.png " ")
 
-  6. Click the number under **Discovered Targets**  to display the **Auto Discovery Results** page,
+  6. Click the number under **Discovered Targets**  to display the **Auto Discovery Results** page.
         ![](./images/7.png " ")
   7. Click **Promote** to display the **Custom Promotion for GoldenGate Targets**.
         ![](./images/8.png " ")
@@ -137,7 +137,7 @@ To set the Monitoring credentials:
 
   The Preferred Credentials are set and an information that the Named credential association has been completed successfully is indicated on the screen.
 
-Watch this video if you want to know more about Setting Credentials for Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager.
+Watch this video if you want to know more about Setting Credentials for Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager Plug-in 13.4.1.0.0 release.
       [](youtube:zFaX348_LiA)
 
 ## Want to Learn More?
