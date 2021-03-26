@@ -8,7 +8,7 @@ Estimated lab time: 20 - 30 minutes
 
 Watch this short video to preview how to build a machine learning model.
 
-[](youtube:XO9WI2bJN5s)
+[](youtube:_i7fT1YYybM)
 
 ### About Oracle Machine Learning
 
