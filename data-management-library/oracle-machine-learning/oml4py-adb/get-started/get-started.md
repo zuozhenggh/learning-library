@@ -188,7 +188,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
 This workshop uses tables and views which need to be created before proceeding with the workshop. To create these tables and views:
 
-1. Download the [Run Me First notebook](./lab0_run_me_first.json?download=1). This notebook contains the scripts for creating tables and views, and granting required access.
+1. Download the [Run Me First notebook](./../notebooks/lab0_run_me_first.json?download=1). This notebook contains the scripts for creating tables and views, and granting required access.
 
 2. In the Notebooks page click **Import** and select the `lab0_run_me_first.json` notebook file.
 
@@ -208,7 +208,7 @@ The prerequisite scripts have run successfully.
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./lab1_get_started_livelabs.json?download=1)</if>.
+To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./../notebooks/lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./../notebooks/lab1_get_started_livelabs.json?download=1)</if>.
 
 [](include:import)
 
