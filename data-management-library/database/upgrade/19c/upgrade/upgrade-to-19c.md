@@ -188,7 +188,7 @@ This lab assumes you have:
     The database can be upgraded automatically.
     ```` -->
 
-## **STEP 3*: Upgrade
+## **STEP 3**: Upgrade
 
 1. When you initiate the upgrade with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 
@@ -388,8 +388,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Mike Dietrich, Database Product Management
 * **Contributors** -  Roy Swonger, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, February 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

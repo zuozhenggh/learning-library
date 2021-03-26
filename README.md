@@ -16,8 +16,8 @@ Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are ad
 - [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=637)
 - [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631)
 - [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
-- [Datbase 21c on DB Systems](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=737)
-- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Database 21c on DB Systems](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=737)
+- [Database 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
 - [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
 - [Create a Docker registry in OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=590)
 

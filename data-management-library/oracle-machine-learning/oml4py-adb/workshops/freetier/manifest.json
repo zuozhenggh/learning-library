@@ -1,6 +1,9 @@
 {
     "workshoptitle": "Oracle Machine Learning for Python on Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "import": "./../../common/import_notebook.md"
+    },    
     "tutorials": [
         {
             "title": "Introduction",
@@ -12,7 +15,8 @@
         },
         {
             "title": "Lab 1: Getting Started with OML4Py",
-            "filename": "../../get-started/get-started.md"
+            "filename": "../../get-started/get-started.md",
+            "type": "freetier"
         },
         {
             "title": "Lab 2: Select and manipulate data using the Transparency Layer",
@@ -33,6 +37,11 @@
         {
             "title": "Lab 6: Use AutoML",
             "filename": "../../automl/automl.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

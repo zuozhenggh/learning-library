@@ -28,7 +28,7 @@ The next steps will download the files needed for the rest of the workshop and c
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/FgKQ9kI1q6pRZIu5DdVBtbCrUghrfS5jvgAXf8gu5hE3-5AdCZrqewP3pp1BVrPU/n/c4u03/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     </copy>

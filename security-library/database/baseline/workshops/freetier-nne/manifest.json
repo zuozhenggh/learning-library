@@ -1,6 +1,6 @@
 {
-  "workshoptitle": "DB Security - Native Network Encryption",
-  "help": "livelabs-help-db_us@oracle.com",
+    "workshoptitle": "DB Security - Native Network Encryption",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
     {
       "title": "Introduction",

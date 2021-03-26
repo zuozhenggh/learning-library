@@ -1,6 +1,7 @@
 {
-  "workshoptitle": "Launch Your First MySQL Database Service System",
-    "tutorials": [
+    "workshoptitle": "Launch Your First MySQL Database Service System",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
@@ -19,6 +20,11 @@
         {
             "title": "Lab 2: Launch Your First MySQL Database Service System",
             "filename": "../../launchmds/launchmds.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

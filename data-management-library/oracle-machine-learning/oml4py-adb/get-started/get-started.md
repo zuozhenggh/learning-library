@@ -1,14 +1,15 @@
 # Get Started with OML4Py on Autonomous Database
 
 ## Introduction
-This lab walks you through the steps to create a Zeppelin notebook and connect to the Pyhton interpreter.
+This lab walks you through the steps to create a Zeppelin notebook and connect to the Python interpreter.
 
 Estimated Lab Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will learn how to:
-* Create an OML user
+<if type="freetier">* Provision an autonomous database
+* Create an OML user</if>
 * Access OML Notebooks
 * Create a Zeppelin Notebook
 * Familiarize with the Zeppelin Notebook toolbar
@@ -18,8 +19,13 @@ In this lab, you will learn how to:
 * Verify Connection to the Autonomous Database
 * View help files
 
-<if type="livelabs">
-## **Step 1:** Launch the workshop
+<if type="freetier">### Prerequisites
+* Sign up for a free tier Oracle Cloud account.
+
+_Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time._
+</if>
+
+<if type="livelabs">## **Step 1:** Launch the workshop
 
 *Note: it takes approximately 20 minutes to create your workshop environment.*
 
@@ -35,33 +41,78 @@ In this lab, you will learn how to:
 
 </if>
 
-<if type="freetier">
-## **Step 1**: Create an OML User
+<if type="freetier">## **Step 1:** Provision an Autonomous Database
+
+To provision an Autonomous Database:
+
+1. Click the hamburger menu, search for **Autonomous Data Warehouse**, and click on it.
+
+    ![](images/create-adw.png)
+
+2. From the Oracle Cloud Infrastructure Console, on the Autonomous Database page choose your region and select a compartment.
+
+3. Click **Create Autonomous Database**.
+
+    ![](images/create-autonomous-db.png)
+
+4. Provide basic information for the Autonomous Database.
+
+    Enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.
+
+    ![](images/create-autonomous-db-1.png)
+
+5. For Workload Type, click **Data Warehouse**.
+
+6. For Deployment, select **Shared Infrastructure**.
+
+7. For Database configuration, select the following:
+
+    - **Choose database version:** Select the database version. The available database version is **19c**.
+    - **OCPU Count:** Enter 1. This is number of CPU cores for your database.
+    - **Storage (TB):** Specify the storage you wish to make available to your database, in terabytes. Enter 1 TB.
+    - **Auto Scaling:** By default auto scaling is enabled to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
+
+    ![](images/create-adw-config.png)
+
+8. For Administrator credentials, enter and re-confirm a password.
+
+9. For Network Access, select Allow Secure access from everywhere.
+
+    ![](images/create-adw-network.png)
+
+10. For License, select **License Included**.
+
+    ![](images/create-adw-license.png)
+
+11. Click **Create Autonomous Database**. The Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the hamburger menu to see a list of Autonomous Database in your console.
+
+12. Click the ADW instance you just created.
+
+    ![](images/adb_instance.png)
+</if>
+
+## **Step 2**: Create an OML User
 
 An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
 **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface. To create a user account:
 
-1. Sign in to your OCI account, click the hamburger on the left to open the left navigation pane, and click **Autonomous Data Warehouse.**
-    ![Autonomous Data Warehouse option](images/adw.png)
-
-2. Click on an Autonomous Database instance.
-
-    ![](images/adb_instance.png)
-
-3. On the Autonomous Database Details page, click **Service Console.**
+1. On the Autonomous Database Details page, click **Service Console.**
 
     ![](images/service_console.png)
 
-4. On the Service Console click **Administration.**
+2. On the Service Console click **Administration.**
     ![](images/administration.png)
 
-5. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
+3. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
     ![](images/manage_oml_users.png)
-6. Click **Create** on the Oracle Machine Learning User Administration page.
-    ![](images/create_option.png)
-7. In the Create User page, enter the following details to create the user:
+4. Click **Create** on the Oracle Machine Learning User Administration page.
+    <if type="freetier">![](images/create_option.png)</if>
+    <if type="livelabs">![](images/create_option_livelabs.png)</if>
+
+5. In the Create User page, enter the following details to create the user:
     ![](images/create_user_page.png)
-    - **Username:** Enter a username for the account. Using the username, the user will log in to an Oracle Machine Learning instance.
+    <if type="freetier">
+    - **Username:** Enter `omluser` for username. Using this username, the user will log in to an Oracle Machine Learning instance.
     - **First Name:** Enter the first name of the user.
     - **Last Name:**  Enter the first name of the user.
     - **Email Address:** Enter the email ID of the user.
@@ -71,15 +122,33 @@ An administrator creates a new user account and user credentials for Oracle Mach
     This option is disabled if you select the Generate password... option to auto generate a temporary password for the user.
     - **Confirm Password:** Enter a password to confirm the value that you entered in the Password field.
     By doing so, you create the password for the user. The user can change the password when first logging in.
-8. Click **Create.**    
+    </if>
+    <if type="livelabs">
+    - **Username:** Enter `omluser2` for username. You use this user later in the workshop to learn how to grant datastore access to a user.
+    - **Email Address:** Enter an email ID for the user.
+    - Untick the **Generate password and email account details to user. User will be required to reset the password on first sign in.** option.
+    You do not select this option, because you want to specify your own password. If you select this option, you need not enter values in the **Password** and **Confirm Password** fields; the fields are grayed out.
+    - **Password:** Enter `AAbbcc123456` for password.
+    - **Confirm Password:** Enter the same password again.
+    </if>
 
+6. Click **Create.**
+
+<if type="livelabs">
+    ![](images/omluser_2.png)
 </if>
 
-## **Step 2:** Access Oracle Machine Learning Notebooks
+<if type="freetier">
+7. Repeat step 5 and 6 to create `omluser2` user. You use this user later in the workshop to learn how to grant datastore access to a user.
+
+    ![](images/omluser_2.png)
+</if>
+
+
+## **Step 3:** Access Oracle Machine Learning Notebooks
 
 You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
 
-<if type="livelabs">
 1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** from the left.
 
     ![](images/service-console.png)
@@ -90,43 +159,48 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
     ![](images/open-oml-notebooks.png)
 
-3. Sign in with the **omluser** using the password `AAbbcc123456`.
+3. <if type="livelabs">Sign in with the **omluser** using the password `AAbbcc123456`.</if><if type="freetier">Enter your `omluser` credentials and click **Sign in.**</if>
 
     ![](images/signin-to-oml.png)
 
-4. Click on Notebooks from the Quick Actions menu.
+4. Click on **Notebooks** from the Quick Actions menu.
 
     ![](images/open-notebooks.png)
 
-</if>
-<if type="freetier">
-1. Sign in to your OCI account using your OCI credentials.
 
-2. Click Dashboard. Scroll down your dashboard and then click **Autonomous Data Warehouse.** Alternatively, you can click on the hamburger on the left and then click **Autonomous Data Warehouse.**
-    ![Autonomous Data Warehouse option](images/adw.png)
+<if type="freetier">## **Step 4:** Create Tables and Views, and Grant Access
 
-3. On the Autonomous Databases page, click the ADW instance that you created. In this example, it is MH120920.
-    ![](images/adb_instance.png)    
+This workshop uses tables and views which need to be created before proceeding with the workshop. To create these tables and views:
 
-4. The details of the ADW instance are displayed. Click **Service Console.**
-    ![](images/service_console.png)
+1. Download the [Run Me First notebook](./../notebooks/lab0_run_me_first.json?download=1). This notebook contains the scripts for creating tables and views, and granting required access.
 
-    From the Tools page, you can access SQL Developer Web and Oracle ML User Administration pages.
-    ![](images/adw_tools.png)
+2. In the Notebooks page click **Import** and select the `lab0_run_me_first.json` notebook file.
 
-5. Click **Development** on the left navigation menu, and then click **Oracle Machine Learning Notebooks.**
-    ![](images/dev_oml_notebooks.png)
+3. Click on the notebook to open it after it is successfully imported.
 
-6. On the Oracle Machine Learning Notebooks sign in page, enter your credentials and click **Sign in.**
-    ![](images/oml_sign_in.png)
+    ![](images/import-notebook.png)
 
-    This opens the Oracle Machine Learning Notebooks home page.    
+4. Click the **Run all paragraphs** ![](images/run-all-paragraphs.png =20x*) icon, and then click **OK** to confirm.
+
+5. Wait until all the paragraphs have finished running and you see your current time in the last paragraph.
+
+    ![](images/last-paragraph.png)
+
+The prerequisite scripts have run successfully.
+
 </if>
 
-## **Step 3:** Create a Zeppelin Notebook
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./../notebooks/lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./../notebooks/lab1_get_started_livelabs.json?download=1)</if>.
+
+[](include:import)
+
+<if type="livelabs">## **Step 4:** Create a Zeppelin Notebook</if>
+<if type="freetier">## **Step 5:** Create a Zeppelin Notebook</if>
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization and collaboration. To create a notebook:
-1. In the Notebooks page, click **Create.** The Create Notebook window appears.
+1. <if type="freetier">Click the hamburger menu, search for Notebooks, and click on it. </if>In the Notebooks page, click **Create.** The Create Notebook window appears.
 
     ![](images/create-notebook-1.png)
 
@@ -167,7 +241,8 @@ The available interpreters are:
   - `%python` - To call the Python interpreter and run Python scripts
 </details><p/>
 
-## **Step 4:** Connect to the Python Interpreter
+<if type="livelabs">## **Step 5:** Connect to the Python Interpreter</if>
+<if type="freetier">## **Step 6:** Connect to the Python Interpreter</if>
 
 To run Python commands in a notebook, you must first connect to the Python interpreter. This occurs as a result of running your first `%python` paragraph. To use OML4Py, you must import the `oml` module, which automatically establishes a connection to your database.
 In an Oracle Machine Learning notebook, you can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python. This example shows you how to:
@@ -193,22 +268,33 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
 3. To use OML4Py module, you must import the oml module. Type the following Python command to import the   oml module, and click the run icon. Alternatively, you can press Shift+Enter keys to run the notebook.   
 
-    `import oml`
+    ```
+    %python
+    <copy>import oml</copy>
+    ```
 
     ![](images/import_oml.png)
 
-## **Step 5:** Verify Connection to the Autonomous Database  
+<if type="livelabs">## **Step 6:** Verify Connection to the Autonomous Database</if>
+<if type="freetier">## **Step 7:** Verify Connection to the Autonomous Database</if>
+
 Using the default interpreter bindings, OML Notebooks automatically establishes a database connection for the notebook.  
 
 1. To verify the Python interpreter has established a database connection through the `oml` module, run the command:
 
-   `oml.isconnected()`
-   ![](images/oml_connected.png)
+    ```
+    %python
+    <copy>oml.isconnected()</copy>
+    ```
+    ![](images/oml_connected.png)
 
-  Once your notebook is connected, the command returns `True`.         
+    Once your notebook is connected, the command returns `True`.         
 
 
-## **Step 6:** View Help Files    
+<if type="livelabs">## **Step 7:** View Help Files</if>
+<if type="freetier">## **Step 8:** View Help Files</if>
+
+
 The Python help function is used to display the documentation of packages, modules, functions, classes, and keywords. The help function has the following syntax:
     ```
     help([object])
@@ -239,4 +325,4 @@ For example,
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn, March 2021
+* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021

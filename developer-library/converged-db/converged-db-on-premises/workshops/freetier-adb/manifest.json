@@ -1,12 +1,13 @@
 {
-  "workshoptitle":"Converged functionality of Oracle Autonomous Database",
-  "help": "livelabs-help-db_us@oracle.com",
+    "workshoptitle":"Converged functionality of Oracle Autonomous Database",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction",
       "filename": "../../intro/intro-adb.md"
-    },{
+    },
+    {
       "title": "Getting Started",
       "description": "Login to Oracle Cloud",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
@@ -43,6 +44,11 @@
       "title": "Lab 7: XML",
       "description": "XML Lab",
       "filename": "../../xml/xml-adb.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

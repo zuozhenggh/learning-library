@@ -33,7 +33,7 @@ Before you Begin with Data Flow lab, you must have:
      * A bucket to store the logs (both standard out and standard err) for every application run.Create a standard storage tier bucket called `dataflow-logs` in the Object Store service. The location of the bucket must follow the pattern:
 
        ```
-       <copy>oci://oci://dataflow-logs@<Object_Store_Namespace>/</copy>
+       <copy>oci://dataflow-logs@<Object_Store_Namespace>/</copy>
        ```
 
      * A data warehouse bucket for Spark SQL applications. Create a standard storage tier bucket called `dataflow-warehouse` in the Object Store service. The location of the warehouse must follow the pattern:
@@ -94,20 +94,6 @@ Before you Begin with Data Flow lab, you must have:
       ALLOW SERVICE dataflow TO READ objects IN tenancy WHERE target.bucket.name='dataflow-logs'
       </copy>
       ```
-3. **Importing an Apache Spark Application to the Oracle Cloud** : Your Spark applications need to be hosted in Oracle Cloud Infrastructure Object Storage before you can run them. You can upload your application to any bucket. The user running the application must have read access to all assets (including all related compartments, buckets and files) for the application to launch successfully.Once your application is imported to Oracle Cloud Infrastructure Object Store, you will later refer to it using a special URI:
-
-     ```
-     <copy>
-     oci://<bucket>@<tenancy>/<applicationfile>
-     </copy>
-     ```
-For example, with a Java or Scala application, let’s suppose a developer at `examplecorp` developed a Spark application called `logcrunch.jar` and uploaded it to a bucket called `production_code`. You can always determine the correct tenancy by clicking on the user profile icon in the top right of the console UI.The correct URI becomes:
-
-     ```
-     <copy>
-      oci://production_code@examplecorp/logcrunch.jar
-     </copy>
-     ```  
 *Please proceed to the next lab*     
 
 ## Acknowledgements
