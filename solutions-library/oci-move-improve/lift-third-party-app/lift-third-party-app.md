@@ -22,11 +22,11 @@ Estimated Lab Time: 2 hour
 * VNC Viewer
 
 ### Administrative Notes
-Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premises E-Commerce application and capture a snapshot in the form of a .ova file, and convert it to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Step 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RESn-5QglIRk9KsiNt2Wgg6n38YvS0lPgfVuSAjhL5TEREREj3QGLR1RTXvSdS_5/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo-disk002.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
+Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premises E-Commerce application and capture a snapshot in the form of a .ova file, and convert it to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Step 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FEBPspM96RVKRDzdnhbGbm3xlxazyLnK1TGhOGcFCOPDgEMcFJsT2fchnWyu7K94/n/orasenatdpltintegration03/b/workshop16/o/osCommerceDemo%201-disk001Ubuntu.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
 
 ## **STEP 1:** Configuration of E-Commerce application [Optional]
 ### **Download VirtualBox and Import Ubuntu Instance**
-1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nrjxMMpCyJEt_2_4QFEOmVQR04RRqCrdIWgD6UqIkPUI4GkS8B1B2WY9fqufO_Ix/n/orasenatdpltintegration03/b/workshop/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
+1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UOSAMIIZo-LhKlVvAaq7TJjeEyvVHK8Bahl6tLml-XWsEbCmHee2xYhrb2reWIXK/n/orasenatdpltintegration03/b/workshop16/o/osCommerceDemoUbuntu16.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
 
     ![](./images/1.png "")
 
@@ -38,9 +38,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ![](./images/3.png "")
 
-4. Once complete, you will see the osCommerceDemo virtual box listed. Hit the Green Start Arrow, and you will be prompted with a login screen with username *oscommerce*. The default password is *oscommerce*. Once logged in, you may or may not be prompted to update to Ubuntu 16.04.6. Click on “Don’t Upgrade.” You have now successfully imported Ubuntu to VirtualBox that you will now use to initialize your osCommerce application.
-
-    ![](./images/4.png "")
+4. Once complete, you will see the osCommerceDemo virtual box listed. Hit the Green Start Arrow, and you will be prompted with a login screen with username *oscommerce*. The default password is *oscommerce*. 
 
 5. If you would like to increase the desktop view of the VirtualBox, click on the Gear icon on the top right of the Ubuntu instance. When the System Settings window opens, click on Displays. From here, click on your preferred resolution and click apply. The resolution will then change. Click on “Keep This Configuration” to save changes. This will give you more screen space if the default 800x600 (4:3) resolution was too small.
 
@@ -100,23 +98,77 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 13. If you direct your browser to localhost, you will see the Apache2 placeholder page.
     ![](./images/7.png " ")
 
-### **Install PHP5**
+### **Install PHP 7.2**
 
-14. Install PHP5 and Apache PHP5 modules with the command below:
+14. Install PHP and Apache PHP modules with the command below:
 
     ```
     <copy>
-    sudo apt-get install php5 libapache2-mod-php5 php-mysql
+    sudo apt-get update
     </copy>
     ```
 
-15. If the above command doesn't work, use the following command
     ```
     <copy>
-    sudo apt-get install php5 libapache2-mod-php5 php5-mysql
+    sudo apt-get upgrade
     </copy>
     ```
 
+    ```
+    <copy>
+    sudo systemctl start apache2
+    </copy>
+    ```
+
+    ```
+    <copy>
+    sudo systemctl enable apache2
+    </copy>
+    ```
+
+    ```
+    <copy>
+    sudo apt-get install software-properties-common python-software-properties
+    </copy>
+    ```
+
+    ```
+    <copy>
+    sudo add-apt-repository -y ppa:ondrej/php
+    </copy>
+    ```
+
+    ```
+    <copy>
+    sudo apt-get update
+    </copy>
+    ```
+
+    ```
+    <copy>
+    sudo apt-get install php7.2 php7.2-cli php7.2-common
+    </copy>
+    ```
+
+15. After installing PHP, you would need to add mysql extension for php.
+
+    ```
+    <copy>
+    sudo apt-get install php7.2-mysqli
+    </copy>
+    ```
+
+    ```
+    <copy>
+    sudo phpenmod mysqli
+    </copy>
+    ```
+
+    ```
+    <copy>
+    sudo a2enmod php7.2
+    </copy>
+    ```
 
 16. Restart Apache:
 
@@ -147,7 +199,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ```
     <copy>
-    CREATE USER oscommerceuser@localhost IDENTIFIED BY 'type_password_here';
+    CREATE USER oscommerce@'%' IDENTIFIED WITH mysql_native_password BY 'type_password_here';
     </copy>
     ```
 
@@ -155,7 +207,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ```
     <copy>
-    GRANT ALL PRIVILEGES ON oscommerce.* TO oscommerceuser@localhost;
+    GRANT ALL PRIVILEGES ON oscommerce.* TO oscommerce@'%';
     </copy>
     ```
     ```
@@ -165,6 +217,11 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     ```
 
 21. Exit with Control + C
+    ```
+    <copy>
+    mysql> exit
+    </copy>
+    ```
 
 ### **Configure Ubuntu for SSH Connections**
 
@@ -211,7 +268,12 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     ```
     ```
     <copy>
-    sudo invoke-rc.d iptables-persistent save
+    sudo netfilter-persistent save
+    </copy>
+    ```
+    ```
+    <copy>
+    sudo netfilter-persistent reload
     </copy>
     ```
 
@@ -219,8 +281,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
 ### **OSCommerce Setup**
 
-26. Make a temporary folder named “tmp” where you will download osCommerce to download the zip and extract:
-    [OSCommerce Codes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/n2I8NQ6VZ4yVrGgcYrGY52NnrLp81gYcIQ86X6U58zvXbfu3dWc4gYBYkHYUbli6/n/orasenatdpltintegration03/b/workshop/o/oscommerceDemo.zip)
+26. Make a temporary folder named “tmp” where you will download osCommerce to download the zip and extract.
 
     ```
     <copy>
@@ -229,12 +290,12 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     ```
     ```
     <copy>
-    cd /tmp/ && wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/n2I8NQ6VZ4yVrGgcYrGY52NnrLp81gYcIQ86X6U58zvXbfu3dWc4gYBYkHYUbli6/n/orasenatdpltintegration03/b/workshop/o/oscommerceDemo.zip
+    cd /tmp/ && wget http://www.oscommerce.com/files/oscommerce-2.4.0.zip
     </copy>
     ```
     ```
     <copy>
-    unzip oscommerceDemo.zip
+    unzip oscommerce-2.4.0.zip
     </copy>
     ```
 
@@ -242,7 +303,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ```
     <copy>
-    sudo cp -rf oscommerce/* /var/www/html/
+    sudo cp -rf oscommerce-2.4.0/* /var/www/html/
     </copy>
     ```
 
@@ -250,7 +311,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ```
     <copy>
-    sudo chmod 777 /var/www/html/catalog/includes/configure.php
+    sudo chmod 777 /var/www/html/catalog/includes/OSC/Conf/global.php
     </copy>
     ```
     ```
@@ -271,17 +332,17 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
 29. Open Firefox and navigate to localhost/catalog. You should see the setup wizard; all steps in this installation need to be completed before moving forward. Follow the screenshots below to make sure settings are consistent.
 
-    ![](./images/9.png "")
+    ![](./images/imageR2.png "")
 
 30. Start the new installation and log in to the MySQL database using the credentials created earlier. If values differ from those in the screenshot, please make sure you enter them appropriately.
 
-    ![](./images/10.png "")
+    ![](./images/imageR3.png "")
 
 31. Set where the www address and web server root directory should be saved
 
     ![](./images/11.png "")
 
-32. Finally, set the OSCommerce online store settings info. Please make a note of the administrator username and password for later reference.
+32. Finally, set the OSCommerce online store settings info. Please make a note of the administrator username and password for later reference. You can access admin console at localhost/catalog/admin
 
     ![](./images/12.png "")
 
@@ -294,38 +355,19 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
     ```
     ```
     <copy>
-    sudo chmod 644 /var/www/html/catalog/includes/configure.php
+    sudo chmod 644 /var/www/html/catalog/includes/OSC/Conf/global.php
     </copy>
     ```
-    ```
-    <copy>
-    sudo chmod 644 /var/www/html/catalog/admin/includes/configure.php
-    </copy>
-    ```
-
+    
 ### **Configure OsCommerce for End User Use**
 
 34. In the address bar of the Firefox browser, enter localhost/catalog/admin. You'll need to log in with the admin username and password you entered when setting up your osCommerce Online Store Settings. After logging in, you will be redirected to a page that looks similar to the second photo below.
     ![](./images/13.png "")
     ![](./images/14.png "")
 
-### **Create a New Manufacturer, Category & Product**
+35. Navigate to localhost/catalog/index.php. This is what you should see as a final product:
 
-35. When logged in, click on “Catalog” on the right-hand menu and click on “Manufacturers.” On the next page, click on “Insert” and proceed to enter “Oracle” as the Manufacturer Name and upload an image of the Oracle logo (you can download one by using the firefox browser and saving it locally).  Click save when complete. You will then see Oracle as a listed Manufacturer with the image you uploaded.
-
-    ![](./images/15.png "")
-
-36. Go to “Categories/Products” then “Hardware,” click “New Category,” and name it ‘Oracle Hardware.’ Upload an image of the Oracle logo and click Save when complete.
-
-    ![](./images/16.png "")
-
-37. Go to “Categories/Products” then “Hardware,” click ‘Oracle Hardware,’ then click ‘New Product,’ and fill out the fields. Download an image from the product's browser, save it to the pictures folder, and attach it to the new product. You can select ‘Oracle Exadata’ as our product.
-
-    ![](./images/17.png "")
-
-38. Navigate to localhost/catalog/index.php. This is what you should see as a final product:
-
-    ![](./images/18.png "")
+    ![](./images/imageR4.png "")
 
 ### **Export .Ova File From VirtualBox & Extract VMDK**
 
@@ -486,13 +528,14 @@ dropdown. Click the blue button and select "Import Image."
     mkdir ~/.ssh
     </copy>
     ```
+
+14. Open the (authorizedkeys) file and past your public key. Make sure to save and exit. Change permissions on the file. Make sure you have the public key, to copy its contents to authorized_keys.
+
     ```
     <copy>
-    touch ~/.ssh/authorized_keys
+    sudo nano ~/.ssh/authorized_keys
     </copy>
     ```
-
-14. Open the authorized_keys file and past your public key. Make sure to save and exit. Change permissions on the file:
 
     ```
     <copy>

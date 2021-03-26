@@ -40,13 +40,9 @@ We will create a job that runs data through the process we just created. This jo
 
     ![](images/image1200_110.png " ")
 
-4.	Select “CLEAN_CUSTOMERS” table. Click on “Next”.
+4.	Select "Create New Table"  and provide the table name as “CLEAN_CUSTOMERS” table. Click on “Next”.
 
     ![](images/image1200_111.png " ")
-
-5.  Click Next on the screen.
-
-    ![](images/image1200_112.png " ")
 
 5.	You can leave the default name or assign a new one. For now we will use the default name. Make sure “Run now?” box is NOT checked. Click “Finish”.
 
@@ -66,7 +62,7 @@ We will create a job that runs data through the process we just created. This jo
 
     ![](images/image1200_116.png " ")
 
-4.	Click the   icon in the “Tool Palette” to display the “Snapshots” and drag the “`US_Customer_Data`” snapshot onto the canvas.
+4.	Click the   icon in the “Tool Palette” to display the “Snapshots” and drag the “`US Customer Data`” snapshot onto the canvas.
 
 5.	Next, click the   icon in the “Tool Palette” to display the “Processes” and drag the “Clean Data” process onto the canvas.
 
@@ -104,7 +100,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [sec-orcl-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LtODsAADe31TuKS1e7J4qDwqXKZ37C8oiv7W-hFSujfVHh_K0mEAqmHgl9v2XKqf/n/natdsecurity/b/stack/o/sec-orcl-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [iam11g-to12c-upgr-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_D_CarcfKNrxzTH0o4EpsyAmWcf9MiD51nIvGuHZdFC3p80fGcbJwD2NRz2bDbOj/n/natdsecurity/b/stack/o/iam11g-to12c-upgr-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -44,13 +44,15 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
+**This concludes this lab. You may now [proceed to the next lab](#next).**
+
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

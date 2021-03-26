@@ -173,11 +173,11 @@ This lab assumes you have:
     ![](./images/image1200_49.png " ")
 
 6.	Click the “Run” icon in the toolbar (top of the Project Canvas) to run the process.
-7.	Click on the “Record Completeness Profiler” processor to view the results in the Results Browser. You can see that only 294 of the customers have all 15 of 15 attributes filled. Click the "Show Additional Information" icon.
+7.	Click on the “Record Completeness Profiler” processor to view the results in the Results Browser. You can see that only 196 of the customers have all 17 of 17 attributes filled. Click the "Show Additional Information" icon.
 
     ![](./images/image1200_50.png " ")
 
-    Notice that those 294 complete records only make up 5.4% of the entire dataset.
+    Notice that those 196 complete records only make up 3.6% of the entire dataset.
 
     ![](./images/image1200_51.png " ")
 
@@ -190,7 +190,7 @@ This lab assumes you have:
     ![](./images/image1200_53.png " ")
 
 10.	Connect the “Record Duplication” processor to “Pattern Profiler” processor, the dialog applet will come up.
-11.	Click on “Zip” from “Available Attributes” section, then click the “Select” icon to move the attribute to the “Selected Attributes” section. Click "OK".
+11.	Click on “Cell” from “Available Attributes” section, then click the “Select” icon to move the attribute to the “Selected Attributes” section. Click "OK".
 
     ![](./images/image1200_54.png " ")
 
@@ -222,7 +222,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

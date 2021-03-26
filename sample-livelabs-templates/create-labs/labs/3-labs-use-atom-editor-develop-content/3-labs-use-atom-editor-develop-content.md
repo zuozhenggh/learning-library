@@ -78,10 +78,11 @@ Leverage the content from the **learning-library\sample-livelabs-templates\sampl
 **Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **Step 2**) on a regular basis whenever we are working on the markdown files.
 
 To create your lab and workshop content:
-1. Open your cloned repository using Windows Explorer.
-2. Create your project folder anywhere in your cloned repository. If a folder already exists  for the product you work on, then you can create your project folder within that.
-3. Go to **learning-library\sample-livelabs-templates\sample-workshop**. This has a few lab folders, such as **analyze**, **query** etc. Every lab folder contains the following: a **files** folder, an **images** folder, and the respective `.md` file.
-4. Copy any lab folder, such as the **query** folder to your project folder. In your project folder, rename the folder **query** and the respective `.md` file within it as per your requirement.  Based on the sample **query** folder, you can create and rename as many labs (folders) and the respective `.md` files as per your requirement.
+1. Submit your workshop to the [LiveLabs Workshop Management System](http://bit.ly/oraclelivelabs) BEFORE you begin development.  No github requests will be approved without an approved LWMS ID.
+2. Open your cloned repository using Windows Explorer.
+3. Create your project folder anywhere in your cloned repository. If a folder already exists  for the product you work on, then you can create your project folder within that.
+4. Go to **learning-library\sample-livelabs-templates\sample-workshop**. This has a few lab folders, such as **analyze**, **query** etc. Every lab folder contains the following: a **files** folder, an **images** folder, and the respective `.md` file.
+5. Copy any lab folder, such as the **query** folder to your project folder. In your project folder, rename the folder **query** and the respective `.md` file within it as per your requirement.  Based on the sample **query** folder, you can create and rename as many labs (folders) and the respective `.md` files as per your requirement.
 
   **Note**: The **files** folder within every sample lab folder is currently not required and is reserved for future use.
   ![](./images/lab-files-folder-currently-not-nedded.png " ")
@@ -105,8 +106,14 @@ To create your lab and workshop content:
 11. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your **workshops\freetier** folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
     ![](./images/use-atom-editor-readme-update.png " ")
 
-In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
+    In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
     ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
+
+12. For additional information on creating your labs and developing workshop content:
+
+* Click [here](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax) for a quick tour that demonstrates commonly used Markdown syntax and their HTML equivalents.
+
+* Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+Features) for a deeper dive into more robust Markdown Template features.
 
 ## **Step 5:** Preview Your Workshop and Labs Using atom-live-server
 
@@ -128,7 +135,7 @@ In this example, your project folder **labs** contains 5 labs and a workshop. Yo
 
 ## Want to Learn More?
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
-
+[LiveLabs Markdown Template Features](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+Features)
 ## Acknowledgements
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
@@ -139,9 +146,6 @@ In this example, your project folder **labs** contains 5 labs and a workshop. Yo
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Anuradha Chepuri, November 2020
+* **Last Updated By/Date:** Yunyidi Han, March 2021
 
-## Need Help?  
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

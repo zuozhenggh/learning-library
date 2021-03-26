@@ -9,7 +9,7 @@ Enormous gains in technical efficiency are enabled by a shared technical infrast
 
 Watch the video below for an overview of Oracle Multitenant.
 
-[](youtube:I7cygRKBbI8)
+[](youtube:4mUwjBfztfU)
 
 ### Containers and Pluggable Databases
 
@@ -42,7 +42,3 @@ Oracle Database Product Management Videos on Multitenant
 - **Last Updated By/Date** - Kay Malcolm, March 2020
 - **Workshop Expiration Date** - March 31, 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

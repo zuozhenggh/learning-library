@@ -1,10 +1,23 @@
 # Oracle Node.js
 
 ## Introduction
-
 This lab walks you through the steps to start the Docker and Node.js Retail application. You will connect to a Node.js running in a Docker container on an Oracle Cloud Compute instance. While you can connect the Oracle Database instance using any client of your choice, in this lab you will connect using Oracle SQL Developer.
 
-*Estimated Lab Time:* 20 Minutes
+*Estimated Lab Time*: 20 Minutes
+
+### About Oracle Node.js
+Node.js is an open-source and cross-platform JavaScript runtime environment. It runs the V8 JavaScript engine, outside of the browser. This allows Node.js to be very performant. Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
+
+[](youtube:zQtRwTOwisI)
+
+For More Details about Node.js with Oracle Database [Click here](#LearnMore)
+
+### Objectives
+In this lab, you will:
+* Verify the Node.js Application on any Browser.
+* POST and GET the data from Oracle Database by using postman through Node.js Module.
+* Understand the concept of Node.js with oracle Database.
+
 
 ### Prerequisites
 This lab assumes you have:
@@ -16,39 +29,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-### About Oracle Node.js
-
-Node.js is an open-source and cross-platform JavaScript runtime environment. It runs the V8 JavaScript engine, outside of the browser. This allows Node.js to be very performant.
-
-A Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
-
-When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
-
- [](youtube:zQtRwTOwisI)
-
-**Why Node.js?**
-
-  Node.js uses asynchronous programming!
--	A common task for a web server can be to open a file on the server and return the content to the client.
--	how Node.js handles a file request:
-	     Sends the task to the computer's file system.
-         Ready to handle the next request.
-         When the file system has opened and read the file, the server returns the content to the client.
-
--	Node.js eliminates the waiting, and simply continues with the next request.
--	Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.
-
-**What can Node.js do?**
--	Node.js can generate dynamic page content
--	Node.js can create, open, read, write, delete, and close files on the server
--	Node.js can collect form data
--	Node.js can add, delete, modify data in your database
-
-**Download Node.js**
-
-   The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html).
-
-## **Step 1**:  Verify Application
+## **STEP 1**:  Verify Application
 
 1. Open up a web browser and visit the Application URL indicated in your terminal.    
 
@@ -64,7 +45,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     ![](./images/application_home_pageupdated.png " ")
 
-## **Step 2**: Download Postman
+## **STEP 2**: Launch Postman
 
 1. Click on *Postman* icon on the desktop to launch it.
 
@@ -86,7 +67,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
     ```
     <copy>
     {
-      "pid": "488",
+      "pid": "490",
       "category": "Puma Shoe ",
       "title": "Puma-shoe Demo3",
       "details": "Puma-shoe-Original",
@@ -102,7 +83,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     ![](./images/postman_return.png " ")
 
-## **Step 3**: Using HTTP GET method.
+## **STEP 3**: Using HTTP GET method.
 
 1. Open a new tab
 
@@ -115,7 +96,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     - To get the specific product details by using PID enter URL:  
     ```
-    <copy>http://localhost:3001/products/31</copy>
+    <copy>http://localhost:3001/products/490</copy>
     ```
     - Click on the **Send** button, Postman return the HTTP 200 Ok which is a successful GET.
 
@@ -125,7 +106,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
     ![](./images/nodejs-postman5a.png " ")
 
-## **Step 4**: Using HTTP POST Method
+## **STEP 4**: Using HTTP POST Method
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL
 
     ```
@@ -141,7 +122,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
     - Method: - POST  
     - URL:   
     ```
-    <copy>http://localhost:3001/products/13</copy>
+    <copy>http://localhost:3001/updateProduct/13</copy>
     ```
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
@@ -187,7 +168,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

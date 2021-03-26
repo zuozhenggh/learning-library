@@ -41,7 +41,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/axp5T8m0cF0_p1N832Qo6ImwczP_V6bSQi9ABLti6Ug/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/VjasX-FQboFKG2QuIBUBxgnTmTDi3lhpvWiruDx_4znxOp6D7PqVySELcWQRwmWp/n/c4u03/b/labfiles/o/inmemoryscript.sh
     chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     </copy>
@@ -255,7 +255,3 @@ You may now proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
 - **Lab Expiry Date** - January 31, 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request. 
