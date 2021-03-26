@@ -29,27 +29,11 @@ _Note: You may see differences in account details (eg: Compartment Name is diffe
 
 *Note: it takes approximately 20 minutes to create your workshop environment.*
 
-1. After you receive the e-mail stating that your environment is ready, go back to the My Reservations page and click **Launch Workshop**.
-
-    ![](images/my-reservations.png)
-
-2. Make a mental note of the compartment name assigned to you. Click **Copy Password** to copy your initial password. Note that this is also the admin password for your Autonomous Data Warehouse instance, so save the password for later use. Then click **Launch Console**.
-
-    ![](images/launch-page.png)
-
-3. On the login page, use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
-
-    ![](images/login-console.png)
-
-4. Change your password by pasting the initial password in the **Current Password** field, **New Password** field and **Confirm Password** field.
-
-    ![](images/change-password.png)
-
-5. Click on the menu icon and then select Autonomous Data Warehouse from the menu.
+1. After you have logged in to your LiveLabs environment, click on the menu icon and then select Autonomous Data Warehouse from the menu.
 
     ![](images/open-adw.png)
 
-6. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
+2. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
 
     ![](images/select-compartment.png)
 
@@ -111,7 +95,7 @@ To provision an Autonomous Database:
 
 An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
 **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface. To create a user account:
-    
+
 1. On the Autonomous Database Details page, click **Service Console.**
 
     ![](images/service_console.png)
@@ -148,7 +132,7 @@ An administrator creates a new user account and user credentials for Oracle Mach
     - **Confirm Password:** Enter the same password again.
     </if>
 
-6. Click **Create.** 
+6. Click **Create.**
 
 <if type="livelabs">
     ![](images/omluser_2.png)
@@ -188,7 +172,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
 This workshop uses tables and views which need to be created before proceeding with the workshop. To create these tables and views:
 
-1. Download the [Run Me First notebook](./lab0_run_me_first.json?download=1). This notebook contains the scripts for creating tables and views, and granting required access.
+1. Download the [Run Me First notebook](./../notebooks/lab0_run_me_first.json?download=1). This notebook contains the scripts for creating tables and views, and granting required access.
 
 2. In the Notebooks page click **Import** and select the `lab0_run_me_first.json` notebook file.
 
@@ -208,7 +192,7 @@ The prerequisite scripts have run successfully.
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./lab1_get_started_livelabs.json?download=1)</if>.
+To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./../notebooks/lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./../notebooks/lab1_get_started_livelabs.json?download=1)</if>.
 
 [](include:import)
 

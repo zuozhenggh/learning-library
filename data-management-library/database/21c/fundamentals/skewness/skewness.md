@@ -135,45 +135,25 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 		HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
 	---------- -------------- ---------------- ---------
-
 			1         100000            10000 05-FEB-20
-
 			1         200000            15000 06-FEB-20
-
 			1         300000            25000 06-FEB-20
-
 			1         400000            28000 07-FEB-20
-
 			1         500000            30000 08-FEB-20
-
 			1         600000            32000 08-FEB-20
-
 			1         700000            35000 09-FEB-20
-
 			1         800000            38000 09-FEB-20
-
 			1         900000            40000 10-FEB-20
-
 			2        2000000          1000000 11-FEB-20
-
 			2         200000            20000 05-FEB-20
-
 			2         400000            35000 06-FEB-20
-
 			2         600000            55000 06-FEB-20
-
 			2         800000            48000 07-FEB-20
-
 			3         400000            40000 08-FEB-20
-
 			3         500000            42000 08-FEB-20
-
 			3         600000            45000 09-FEB-20
-
 			3         700000            48000 09-FEB-20
-
 			3         800000            49000 10-FEB-20
-
 	19 rows selected.
 
 	SQL>
@@ -188,39 +168,27 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
 		HOUSE COUNT(HOUSE)
-
 	---------- ------------
-
 			1            9
-
 			2            5
-
 			3            5
 
 	SQL> <copy>SELECT house, SKEWNESS_POP(price_big_city), SKEWNESS_POP(price_small_city) FROM houses
 				GROUP BY house;</copy>
 
 		HOUSE SKEWNESS_POP(PRICE_BIG_CITY) SKEWNESS_POP(PRICE_SMALL_CITY)
-
 	---------- ---------------------------- ------------------------------
-
 			1                            0                     -.66864012
-
 			2                   1.13841996                     1.49637083
-
 			3                            0                     -.12735442
 
 	SQL> <copy>SELECT house, SKEWNESS_SAMP(price_big_city), SKEWNESS_SAMP(price_small_city) FROM houses
 				GROUP BY house;</copy>
 
 		HOUSE SKEWNESS_SAMP(PRICE_BIG_CITY) SKEWNESS_SAMP(PRICE_SMALL_CITY)
-
 	---------- ----------------------------- -------------------------------
-
 			1                             0                      -.81051422
-
 			2                    1.69705627                      2.23065793
-
 			3                             0                      -.18984876
 
 	SQL>
@@ -236,19 +204,15 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 	```
 	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
-
 	19 rows created.
 
 	SQL> <copy>/</copy>
-
 	38 rows created.
 
 	SQL> <copy>/</copy>
-
 	76 rows created.
 
 	SQL> <copy>/</copy>
-
 	152 rows created.
 
 	SQL> <copy>COMMIT;</copy>
@@ -271,26 +235,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 		GROUP BY house ORDER BY 1;</copy>
 
 		HOUSE SKEWNESS_POP(PRICE_BIG_CITY) SKEWNESS_POP(PRICE_SMALL_CITY)
-
 	---------- ---------------------------- ------------------------------
-
 			1                            0                     -.66864012
-
 			2                   1.13841996                     1.49637083
-
 			3                            0                     -.12735442
 
 	SQL> <copy>SELECT house, SKEWNESS_SAMP(price_big_city), SKEWNESS_SAMP(price_small_city) FROM houses
 		GROUP BY house ORDER BY 1;</copy>
 
 		HOUSE SKEWNESS_SAMP(PRICE_BIG_CITY) SKEWNESS_SAMP(PRICE_SMALL_CITY)
-
 	---------- ----------------------------- -------------------------------
-
 			1                             0                      -.67569912
-
 			2                     1.1602897                      1.52511703
-
 			3                             0                      -.12980098
 
 	SQL>
@@ -313,13 +269,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 					GROUP BY house;</copy>
 
 		HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
 	---------- ------------ ------------- -------------- ---------------
-
 			1            0             0     -.66864012      -.81051422
-
 			2   1.13841996    1.69705627     1.49637083      2.23065793
-
 			3            0             0     -.12735442      -.18984876
 
 	SQL>
@@ -340,13 +292,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 					GROUP BY house;</copy>
 
 		HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
 	---------- ------------ ------------- -------------- ---------------
-
 			1            0             0     -.66864012      -.67569912
-
 			2   1.13841996     1.1602897     1.49637083      1.52511703
-
 			3            0             0     -.12735442      -.12980098
 
 	SQL>
@@ -377,27 +325,21 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	SQL> <copy>INSERT INTO houses (house, price_big_city, price_small_city)
 					SELECT house, price_big_city*0.5, price_small_city*0.1
 					FROM houses WHERE house=1;</copy>
-
 	144 rows created.
 
 	SQL> <copy>/</copy>
-
 	288 rows created.
 
 	SQL> <copy>/</copy>
-
 	576 rows created.
 
 	SQL> <copy>/</copy>
-
 	1152 rows created.
 
 	SQL> <copy>/</copy>
-
 	2304 rows created.
 
 	SQL> <copy>COMMIT;</copy>
-
 	Commit complete.
 	```
 </if>
