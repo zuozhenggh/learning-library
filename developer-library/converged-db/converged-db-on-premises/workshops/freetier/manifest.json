@@ -1,15 +1,16 @@
 {
-  "workshoptitle": "Oracle Converged Database for Developers",
-  "tutorials": [
-    {
-      "title": "Prerequisites",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
+    "workshoptitle": "Oracle Converged Database for Developers",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction",
       "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Getting Started",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
@@ -67,6 +68,11 @@
       "title": "Lab 11: ORDS as Microservices",
       "description": "Labs that leverage data types across schemas",
       "filename": "../../ords/ords.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

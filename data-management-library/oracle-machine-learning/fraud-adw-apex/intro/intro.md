@@ -36,7 +36,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
     ![](images/launch-page.png)
 
-3. On the login page, click the down arrow to use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
+3. On the login page, use the Oracle Cloud Infrastructure direct sign-in, paste the password and click **Sign In**.
 
     ![](images/login-console.png)
 
@@ -54,7 +54,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
     ![](images/adw-instance.png)
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 </if>
 
@@ -69,5 +69,3 @@ You may proceed to the next lab.
 - **Last Updated By/Date** - Tom McGinn, Database Product Management
 - **Workshop Expiration Date** - March 2022
 
-## Need Help?
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

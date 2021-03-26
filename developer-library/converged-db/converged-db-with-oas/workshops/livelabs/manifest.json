@@ -1,8 +1,9 @@
 {
-  "workshoptitle": "Converged Database with Oracle Analytics Server",
-  "tutorials": [
+    "workshoptitle": "Converged Database with Oracle Analytics Server",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
-      "title": "Prerequisites",
+      "title": "Getting Started",
       "description": "Login to Oracle Cloud",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
     },
@@ -44,6 +45,11 @@
       "description": "OAS Predictive Analytics",
       "publisheddate": "11/09/2020",
       "filename": "../../predictive-analytics/predictive-analytics.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
