@@ -12,6 +12,11 @@
         {
             "title": "Lab 2: Configuring Dynamic CPU Scaling in Autonomous Transaction Processing Service",
             "filename": "./../../atp-hol/atp-hol-sandbox.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

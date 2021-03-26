@@ -46,7 +46,11 @@
         {
             "title": "Lab 8: Run ANSYS Fluent",
             "filename": "../../run/run.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }
-

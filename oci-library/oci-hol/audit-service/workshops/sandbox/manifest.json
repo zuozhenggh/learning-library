@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Using OCI Audit Service",
+    "workshoptitle": "Using OCI Audit Service",
     "tutorials": [
         {
             "title": "Introduction",
@@ -8,6 +8,11 @@
         {
             "title": "Lab 1: Using OCI Audit Service",
             "filename": "./../../audit-service/audit-service-sandbox.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

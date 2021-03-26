@@ -7,6 +7,11 @@
         {
             "title": "Deploying and configuring Autonomous Data Warehouse",
             "filename": "./../../../autonomous-data-warehouse/autonomous-data-warehouse-sandbox.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

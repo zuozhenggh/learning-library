@@ -20,6 +20,11 @@
             "title": "Lab 3: Connect to NoSQL database using NoSQLClient",
             "description": "Connect to NoSQL database using NoSQLClient",
             "filename": "./../../lab/lab-3.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }
