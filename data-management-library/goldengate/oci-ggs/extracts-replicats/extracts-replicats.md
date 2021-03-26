@@ -21,6 +21,8 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs, and your deployment is in the Active state.
 
+*Note: If you encounter into an error when you run the Extract or Replicat, then you must delete and recreate the Extract or Replicat after you resolve the issue before trying again.*
+
 ## **STEP 1**: Log in to the Oracle GoldenGate deployment console
 
 1.  Log in to Oracle Cloud Infrastructure and navigate to the **GoldenGate** service using the Console navigation menu.

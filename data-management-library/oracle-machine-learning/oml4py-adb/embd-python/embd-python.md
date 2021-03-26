@@ -40,7 +40,7 @@ In this lab, you will:
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click [here](./lab5_embed_python.json?download=1).
+To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab5_embed_python.json?download=1).
 
 [](include:import)
 
