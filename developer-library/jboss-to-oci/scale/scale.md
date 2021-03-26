@@ -50,6 +50,15 @@ On your local machine where you ran the terraform
 
 4. The WildFly Domain controller will automatically deploy the application on the additional server.
 
+    If you didn't use Domain Mode, then you'll need to re-deploy the app on each WildFly node.
+
+5. You can check the new node was added to the domain in the WildFly console, under **Runtime** -> **Hosts**
+
+    ![](./images/3hosts.png =70%x*)
+
+6. You can also check the new node in the proxied browser on port 8080/SimpleDB to see the app deployed successfully.
+
+
 You're done!
 
 
