@@ -182,7 +182,7 @@ By default, when you register an Autonomous Database, you are automatically gran
 
 The `load-data-safe-sample-data_admin.sql` script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your database. After you run this script, all Oracle Data Safe features are enabled on your database. However, to use those features with Oracle Data Safe, you also require privileges in the Oracle Data Safe Console. <if type="paid">You have already granted the appropriate privileges on your compartment during the prerequisite setup.</if><if type="freetier">You have already granted the appropriate privileges on your compartment during the prerequisite setup.</if>
 
-<if type="livelabs">*At this time in the LiveLabs tenancy, you are granted privileges to use all features in Oracle Data Safe, except for Data Discovery and Data Masking.*</if>
+<if type="livelabs">*If you are working in the LiveLabs tenancy, you are granted privileges to use all features in Oracle Data Safe, except for Data Discovery and Data Masking.*</if>
 
 1. On the **Autonomous Database Details** page, click the **Tools** subtab.
 
