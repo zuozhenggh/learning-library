@@ -140,7 +140,7 @@ You now have created your first ATP instance.
 
 7. On the Create User form, enter **Username - ML\_USER**, an e-mail address (you can use admin@oracle.com), un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
 
-    ![](./images/ml-user.png  " ")
+    ![](./images/create-ml-user.png  " ")
 
 8. Notice that the **ML\_USER** is created.
 
