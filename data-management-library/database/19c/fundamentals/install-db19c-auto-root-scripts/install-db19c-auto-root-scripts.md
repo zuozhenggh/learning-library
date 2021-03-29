@@ -27,14 +27,14 @@ To complete this lab, you need to have the following:
 
 ### Assumptions
 
-- Assumption1
-- Assumption2
+- You downloaded the Oracle Database 19c installation software
+- You have access to the `root` user on your computer
 
 ## STEP 1: Stage the installation software on a directory on your computer
 
 1. Open a new terminal window on your computer.
 
-2. Log in to your server as the `root` user.
+2. Log in to your computer as the `root` user.
 
 3. Create a directory dedicated for the Oracle Database 19c software.
 
@@ -51,7 +51,7 @@ To complete this lab, you need to have the following:
     ```
     $ <copy>unzip /staging/db_home.zip</copy>
     ```
-6. Change to the u01 directory.
+6. Change to the `u01` directory.
 
     ```
     $ <copy>cd /u01</copy>
@@ -81,10 +81,10 @@ Install Oracle Database 19c using the Oracle Universal Installer and choose to a
 
 1. Log in to your computer as the `oracle` user.
 
-2. Change to the directory dedicated for the Oracle Database 19c installation software.
+2. Change to the directory dedicated to the Oracle Database 19c installation software.
 
     ```
-    $ <copy>d /u01/app/oracle/product/19.0.0/dbhome_2</copy>
+    $ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_2</copy>
     ```
 3. Start Oracle Universal Installer.
 
@@ -186,7 +186,7 @@ If you need to uninstall the database, follow the steps below. If you plan to co
     ```
     Do you want to continue (y - yes, n - no)? [n]: <copy>y</copy>
     ```
-7. Read the [deinstall_output.txt](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-install-oracle-database-with-automatic-root-scripts-execution/files/deinstall_output.txt) file to ensure that the software is uninstalled successfully.
+7. Review the [deinstall_output.txt](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-install-oracle-database-with-automatic-root-scripts-execution/files/deinstall_output.txt) file to ensure that the software is uninstalled successfully.
 
     ```
     Oracle Universal Installer cleanup was successful.
