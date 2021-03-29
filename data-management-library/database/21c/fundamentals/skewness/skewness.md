@@ -99,82 +99,68 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
       ![](../set-operators/images/tools.png " ")
 
-5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
-6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *hr*.  You will be logging in to the admin schema
-8.  Enter the username *sh* and password *WElcome123##*
+6.  Enter the username *report* and password *WElcome123##*
+7.  Click on the **SQL** button.
+8.  Skip to Step 2.
 
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell 
-3. Connect to the SH user using sqlplus by entering the commands below.
+3. Connect to the *REPORT* user using sqlplus by entering the commands below.
    
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
-	conn sh/WElcome123##@adb1_high
+	conn report/WElcome123##@adb1_high
 	```
 </if>
 
 ## **STEP 2:** Examine skewed data
+<if type="dbcs">
+1.  Make some modifications to the display
 
-1. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other. With Skewness, you measure whether there is more data towards the left or the right end of the tail (positive/negative) or how close you are to a normal distribution (skewness = 0).
+	```
+	SQL> <copy>SET PAGES 100</copy>
+	```
+</if>
+<if type="atp">
+1.  If you aren't logged in to SQL Developer Web, login as the *REPORT* user.
+
+</if>
+2. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other. With Skewness, you measure whether there is more data towards the left or the right end of the tail (positive/negative) or how close you are to a normal distribution (skewness = 0).
 
 
 	```
-
-	SQL> <copy>SET PAGES 100</copy>
-
 	SQL> <copy>SELECT * FROM houses;</copy>
 
 		HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
 	---------- -------------- ---------------- ---------
-
 			1         100000            10000 05-FEB-20
-
 			1         200000            15000 06-FEB-20
-
 			1         300000            25000 06-FEB-20
-
 			1         400000            28000 07-FEB-20
-
 			1         500000            30000 08-FEB-20
-
 			1         600000            32000 08-FEB-20
-
 			1         700000            35000 09-FEB-20
-
 			1         800000            38000 09-FEB-20
-
 			1         900000            40000 10-FEB-20
-
 			2        2000000          1000000 11-FEB-20
-
 			2         200000            20000 05-FEB-20
-
 			2         400000            35000 06-FEB-20
-
 			2         600000            55000 06-FEB-20
-
 			2         800000            48000 07-FEB-20
-
 			3         400000            40000 08-FEB-20
-
 			3         500000            42000 08-FEB-20
-
 			3         600000            45000 09-FEB-20
-
 			3         700000            48000 09-FEB-20
-
 			3         800000            49000 10-FEB-20
-
 	19 rows selected.
 
 	SQL>
 
 	```
 
-2. Display the result of population skewness prices (`SKEWNESS_POP`) and sample skewness prices (`SKEWNESS_SAMP`) for the three houses in the table.
+3. Display the result of population skewness prices (`SKEWNESS_POP`) and sample skewness prices (`SKEWNESS_SAMP`) for the three houses in the table.
 
 
 	```
@@ -182,39 +168,27 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
 		HOUSE COUNT(HOUSE)
-
 	---------- ------------
-
 			1            9
-
 			2            5
-
 			3            5
 
 	SQL> <copy>SELECT house, SKEWNESS_POP(price_big_city), SKEWNESS_POP(price_small_city) FROM houses
 				GROUP BY house;</copy>
 
 		HOUSE SKEWNESS_POP(PRICE_BIG_CITY) SKEWNESS_POP(PRICE_SMALL_CITY)
-
 	---------- ---------------------------- ------------------------------
-
 			1                            0                     -.66864012
-
 			2                   1.13841996                     1.49637083
-
 			3                            0                     -.12735442
 
 	SQL> <copy>SELECT house, SKEWNESS_SAMP(price_big_city), SKEWNESS_SAMP(price_small_city) FROM houses
 				GROUP BY house;</copy>
 
 		HOUSE SKEWNESS_SAMP(PRICE_BIG_CITY) SKEWNESS_SAMP(PRICE_SMALL_CITY)
-
 	---------- ----------------------------- -------------------------------
-
 			1                             0                      -.81051422
-
 			2                    1.69705627                      2.23065793
-
 			3                             0                      -.18984876
 
 	SQL>
@@ -225,55 +199,54 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 ## **STEP 3:** Examine skewed data after data evolution
 
+<if type="dbcs">
 1. Insert more rows in the table.
 
-
 	```
-
 	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
-
 	19 rows created.
 
 	SQL> <copy>/</copy>
-
 	38 rows created.
 
 	SQL> <copy>/</copy>
-
 	76 rows created.
 
 	SQL> <copy>/</copy>
-
 	152 rows created.
 
 	SQL> <copy>COMMIT;</copy>
 
 	Commit complete.
+	```
+</if>
+<if type="atp">
+1. Insert more rows in the table. 
 
+	```
+	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit
+
+3. Press the play button 3 more times to submit a totoal of 152 rows
+</if>
+2. Explore the skewness after the data has changed.
 	SQL> <copy>SELECT house, SKEWNESS_POP(price_big_city), SKEWNESS_POP(price_small_city) FROM houses
 		GROUP BY house ORDER BY 1;</copy>
 
 		HOUSE SKEWNESS_POP(PRICE_BIG_CITY) SKEWNESS_POP(PRICE_SMALL_CITY)
-
 	---------- ---------------------------- ------------------------------
-
 			1                            0                     -.66864012
-
 			2                   1.13841996                     1.49637083
-
 			3                            0                     -.12735442
 
 	SQL> <copy>SELECT house, SKEWNESS_SAMP(price_big_city), SKEWNESS_SAMP(price_small_city) FROM houses
 		GROUP BY house ORDER BY 1;</copy>
 
 		HOUSE SKEWNESS_SAMP(PRICE_BIG_CITY) SKEWNESS_SAMP(PRICE_SMALL_CITY)
-
 	---------- ----------------------------- -------------------------------
-
 			1                             0                      -.67569912
-
 			2                     1.1602897                      1.52511703
-
 			3                             0                      -.12980098
 
 	SQL>
@@ -296,13 +269,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 					GROUP BY house;</copy>
 
 		HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
 	---------- ------------ ------------- -------------- ---------------
-
 			1            0             0     -.66864012      -.81051422
-
 			2   1.13841996    1.69705627     1.49637083      2.23065793
-
 			3            0             0     -.12735442      -.18984876
 
 	SQL>
@@ -323,13 +292,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 					GROUP BY house;</copy>
 
 		HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
 	---------- ------------ ------------- -------------- ---------------
-
 			1            0             0     -.66864012      -.67569912
-
 			2   1.13841996     1.1602897     1.49637083      1.52511703
-
 			3            0             0     -.12735442      -.12980098
 
 	SQL>
@@ -338,6 +303,20 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
   The population skewness value is not different because the same exact rows were inserted.
 
+<if type="atp">
+3. Insert more rows in the table with a big data set for `HOUSE` number 1.
+
+	```
+	SQL> <copy>INSERT INTO houses (house, price_big_city, price_small_city)
+					SELECT house, price_big_city*0.5, price_small_city*0.1
+					FROM houses WHERE house=1;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit\
+
+3. Press the play button 4 more times to submit a totoal of 2304 rows
+</if>
+
+<if type="dbcs">
 3. Insert more rows in the table with a big data set for `HOUSE` number 1.
 
 
@@ -346,29 +325,28 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	SQL> <copy>INSERT INTO houses (house, price_big_city, price_small_city)
 					SELECT house, price_big_city*0.5, price_small_city*0.1
 					FROM houses WHERE house=1;</copy>
-
 	144 rows created.
 
 	SQL> <copy>/</copy>
-
 	288 rows created.
 
 	SQL> <copy>/</copy>
-
 	576 rows created.
 
 	SQL> <copy>/</copy>
-
 	1152 rows created.
 
 	SQL> <copy>/</copy>
-
 	2304 rows created.
 
 	SQL> <copy>COMMIT;</copy>
-
 	Commit complete.
+	```
+</if>
 
+4. Select and count the houses.
+   
+   ```
 	SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
 			HOUSE COUNT(HOUSE)
@@ -400,12 +378,21 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 			2   1.13841996     1.1602897     1.49637083      1.52511703
 
 			3            0             0     -.12735442      -.12980098
+	```
+<if type="atp">
+5. Click the down arrow in the upper right corner and **Sign Out** of the REPORT user.
+</if>
 
+<if type="dbcs">
+5.  Exit from the sql prompt
+
+	```
 	SQL> <copy>EXIT</copy>
 
 	$
 
 	```
+</if>
 
 You may now [proceed to the next lab](#next).
 
@@ -415,5 +402,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
+* **Last Updated By/Date** - Kay Malcolm, March 2020
 

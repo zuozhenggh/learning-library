@@ -100,37 +100,41 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
       ![](../set-operators/images/tools.png " ")
-
-5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
+5.  Enter the username *hr* and password *WElcome123##*
 6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *report*.  You will be logging in to the admin schema
-8.  Enter the username *sh* and password *WElcome123##*
+7.  Skip to [Step 2](#STEP2:Examinethekurtosisofthedistribution)
 
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell 
-3. Connect to the SH user using sqlplus by entering the commands below.
+3. Connect to the *HR* user using sqlplus by entering the commands below.
    
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
-	conn sh/WElcome123##@adb1_high
+	conn hr/WElcome123##@adb1_high
 	```
 </if>
 
 ## **STEP 2:** Examine the kurtosis of the distribution
+<if type="dbcs">
+1.  Make some modifications to the display
 
+	```
+	SQL> <copy>SET PAGES 100</copy>
+	```
+</if>
+<if type="atp">
+1.  If you aren't logged in to SQL Developer Web, login as the *REPORT* user.
+
+</if>
 1. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other.
 
 
      ```
-
-     SQL> <copy>SET PAGES 100</copy>
-
      SQL> <copy>SELECT * FROM houses;</copy>
 
           HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
-
      ---------- -------------- ---------------- ---------
 
                1         100000            10000 05-FEB-20
@@ -215,7 +219,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
   `PRICE_SMALL_CITY` has a higher kurtosis compared to `PRICE_BIG_CITY`. Observe whether there is more data in the tails or around the peak in `PRICE_SMALL_CITY` and in `PRICE_BIG_CITY`.
 
 ## **STEP 3:** Examine the kurtosis of the distribution after data evolution
-
+<if type="dbcs">
 1. Insert more rows in the table.
 
 
@@ -240,7 +244,22 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      SQL> <copy>COMMIT;</copy>
 
      Commit complete.
+     ```
+</if>
+<if type="atp">
+1. Insert more rows in the table. 
 
+	```
+	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit
+
+3. Press the play button 3 more times to submit a totoal of 152 rows
+</if>
+
+2.  Issue select statements to examine the kurtosis of the distribution now.
+
+     ```
      SQL> <copy>SELECT house, KURTOSIS_POP(price_big_city), KURTOSIS_POP(price_small_city) FROM houses
           GROUP BY house ORDER BY 1;</copy>
 
@@ -329,6 +348,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
   The population tailedness value is not different because the same exact rows were inserted.
 
+<if type="dbcs">
 3. Insert more rows in the table with a big data set for `HOUSE` number 1.
 
 
@@ -359,7 +379,23 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      SQL> <copy>COMMIT;</copy>
 
      Commit complete.
+     ```
+</if>
 
+<if type="atp">
+3. Insert more rows in the table with a big data set for `HOUSE` number 1.
+
+	```
+	SQL> <copy>INSERT INTO houses (house, price_big_city, price_small_city)
+                    SELECT house, price_big_city*0.5, price_small_city*0.1
+                    FROM houses WHERE house=1;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit\
+
+3. Press the play button 4 more times to submit a totoal of 2304 rows
+</if>
+
+2. Select and count the houses.
      SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
           HOUSE COUNT(HOUSE)
@@ -392,11 +428,22 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
                3         -1.3    -1.3061439     -1.5417881      -1.5637533
 
-     SQL> <copy>EXIT</copy>
-
-     $
 
      ```
+<if type="atp">
+5. Click the down arrow in the upper right corner and **Sign Out** of the HR user.
+</if>
+
+<if type="dbcs">
+5.  Exit from the sql prompt
+
+	```
+	SQL> <copy>EXIT</copy>
+
+	$
+
+	```
+</if>
 
   Now the tailedness of the data becomes positive for house number 1 which means that data is skewed to right. `PRICE_SMALL_CITY` has a much higher kurtosis compared to `PRICE_BIG_CITY`. This implies that in `PRICE_SMALL_CITY`, more of the variance is the result of many infrequent extreme deviations, whereas in `PRICE_BIG_CITY`, the variance is attributed to very frequent modestly sized deviations.
 
