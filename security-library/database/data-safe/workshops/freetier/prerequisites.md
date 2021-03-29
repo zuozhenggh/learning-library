@@ -1,5 +1,5 @@
 
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
