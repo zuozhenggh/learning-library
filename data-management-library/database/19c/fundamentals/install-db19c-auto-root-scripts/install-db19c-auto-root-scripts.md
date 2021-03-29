@@ -3,9 +3,10 @@
 
 ## Introduction
 
-Starting with Oracle Database 19c, the database installer, or setup wizard, provides options to set up permissions to run the root configuration scripts automatically, as required, during a database installation. You continue to have the option to run the root configuration scripts manually. Setting up permissions for root configuration scripts to run without user intervention can simplify database installation and help avoid inadvertent permission errors. This lab shows you how to install the Oracle Database 19c with automated root scripts execution.
+Starting with Oracle Database 19c, the Oracle Universal Installer includes the option to run configuration scripts automatically as the `root` user. You continue to have the option to run configuration scripts manually, which was the only option for Oracle Database 18c. Setting up permissions for configuration scripts to run without user intervention can simplify database installation and help avoid inadvertent permission errors.
 
-*In Oracle Database 18c, the installation of the Oracle Database software requires root scripts to be executed manually.*
+This lab shows you how to install Oracle Database 19c with the new option to run configuration scripts automatically. You also examine the response file, which is created during the installation.
+
 
 Estimated Lab Time: 15 minutes
 
@@ -13,7 +14,7 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you'll:
 
-- Prepare the directory
+- Stage the installation software on a directory on your computer
 - Install Oracle Database 19c
 - Review the response file
 - (optional) Uninstall Oracle Database 19c
@@ -29,9 +30,9 @@ To complete this lab, you need to have the following:
 - Assumption1
 - Assumption2
 
-## STEP 1: Prepare the directory
+## STEP 1: Stage the installation software on a directory on your computer
 
-1. Open a new terminal window on your server.
+1. Open a new terminal window on your computer.
 
 2. Log in to your server as the `root` user.
 
@@ -67,7 +68,7 @@ To complete this lab, you need to have the following:
     ```
     $ <copy>chgrp -R oinstall *</copy>
     ```
-9. Quit the root session.
+9. Quit the `root` session.
 
     ```
     $ <copy>exit</copy>
@@ -76,22 +77,20 @@ To complete this lab, you need to have the following:
 
 ## STEP 2: Install Oracle Database 19c
 
-Install the Oracle Database 19c using the Oracle Universal Installer and the automatic root scripts execution.
+Install Oracle Database 19c using the Oracle Universal Installer and choose to automatically run the configuration scripts during the installation.
 
-1. Log in to your server as `oracle`.
+1. Log in to your computer as the `oracle` user.
 
-2. Change to the directory dedicated for the Oracle Database 19c software.
+2. Change to the directory dedicated for the Oracle Database 19c installation software.
 
     ```
     $ <copy>d /u01/app/oracle/product/19.0.0/dbhome_2</copy>
     ```
-3. Launch `runInstaller`.
+3. Start Oracle Universal Installer.
 
     ```
     <copy>./runInstaller</copy>
     ```
-
-    The installer is displayed.
 
 4. On the **Select Configuration Option** page, select **Set Up Software Only**.
 
@@ -107,7 +106,7 @@ Install the Oracle Database 19c using the Oracle Universal Installer and the aut
 
 10. On the **Perform Prerequisite Checks** page, check **Ignore All** and click **Next**. If there is a warning message, choose **Yes**.
 
-11. On the **Summary** page, save the response file so that you can later observe how the `root` scripts automatic execution is recorded:
+11. On the **Summary** page, save the response file so that you can later review how the configuration scripts get automatically executed:
 
   a) Click **Save Response File**.  
 
@@ -115,30 +114,30 @@ Install the Oracle Database 19c using the Oracle Universal Installer and the aut
 
   c) Click **Save**.
 
-  d) Click **Install**.
+12. Click **Install** to begin installing the software.
 
-12. On the **Install Product** page, monitor the progress of the steps being executed.
+13. On the **Install Product** page, monitor the progress of the steps being executed.
 
-13. When the steps are finished, a dialog box is displayed asking if you want to continue and run configuration scripts as the privileged user you provided earlier. Click **Yes** to continue.
+14. When prompted to run the configuration scripts as the privileged user, click **Yes**.
 
   ![Installation message](images/install-message.png)
 
-14. On the **Finish** page, click **Close**. The installation is complete.
+14. On the **Finish** page, click **Close**. The installation is finished.
 
 
 ## STEP 3: Review the Response File
 
-1. Go to the directory where the response file is created.
+1. Change to the directory where the response file is created.
 
     ```
-    <copy>cd /tmp</copy>
+    $ <copy>cd /tmp</copy>
     ```
 2. Open the resulting response file named `db.rsp`.
 
     ```
-    <copy>cat db.rsp</copy>
+    $ <copy>cat db.rsp</copy>
     ```
-3. Read the information that is relevant for the feature.
+3. Review the information.
 
     ```
     oracle.install.db.rootconfig.executeRootScript=true
@@ -150,23 +149,24 @@ Install the Oracle Database 19c using the Oracle Universal Installer and the aut
     #   - SUDO
     #--------------------------------------------------------------------------------------
     oracle.install.db.rootconfig.configMethod=ROOT
+    ...
     ```
 
 ## STEP 4: Uninstall Oracle Database 19c (Optional)
 
-If you need to uninstall the database, follow the steps below. If you plan to continue on with the other labs in this workshop, do not uninstall the database.
+If you need to uninstall the database, follow the steps below. If you plan to continue on to the other labs in this workshop, do not uninstall the database.
 
 1. Change to the directory where the Oracle Database 19c software is installed.
 
     ```
-    <copy>cd /u01/app/oracle/product/19.0.0/dbhome_2/deinstall</copy>
+    $ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_2/deinstall</copy>
     ```
 2. Launch deinstall.
 
     ```
-    <copy>./deinstall</copy>
+    $ <copy>./deinstall</copy>
     ```
-3. For the first question, only press **Enter** because you did not create a database after the installation.
+3. For the first question, press **Enter** because you did not create a database after the installation.
 
     ```
     Specify the list of database names that are configured in this Oracle home []:
@@ -186,7 +186,7 @@ If you need to uninstall the database, follow the steps below. If you plan to co
     ```
     Do you want to continue (y - yes, n - no)? [n]: <copy>y</copy>
     ```
-7. Read the [deinstall_output.txt ](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-install-oracle-database-with-automatic-root-scripts-execution/files/deinstall_output.txt) file to ensure that the deinstallation completed successfully.
+7. Read the [deinstall_output.txt](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-install-oracle-database-with-automatic-root-scripts-execution/files/deinstall_output.txt) file to ensure that the software is uninstalled successfully.
 
     ```
     Oracle Universal Installer cleanup was successful.
@@ -198,7 +198,7 @@ If you need to uninstall the database, follow the steps below. If you plan to co
 8. Quit the session.
 
     ```
-    <copy>exit</copy>
+    $ <copy>exit</copy>
     ```
 
 ## Learn More
