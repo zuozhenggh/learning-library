@@ -95,7 +95,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 1. Open a new browser tab.
 
-2. Enter the URL [cloud.oracle.com](https://cloud.oracle.com).
+2. Access Oracle's website at [www.oracle.com](https://www.oracle.com).
 
 3. On the toolbar, click **View Accounts**, and then in the **Cloud Account** section, select **Sign in to Cloud**.
 
@@ -104,16 +104,16 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 4. Enter your **Cloud Account Name**, and then click **Next**. This is the name you chose while creating your account. It is not your email address. If you forget the name, please refer to the confirmation email.
 
-  ![Cloud Account Name page](images/349900292.png)
+  ![Section to enter your cloud account name](images/enter-cloud-account-name.png)
 
 
-5. In the **Oracle Cloud Infrastructure** section, enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+5. On the sign in page, click **Oracle Cloud Infrastructure Direct Sign-in** to expand it. Enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
-  ![SIGN IN page for Oracle Cloud Infrastructure](images/349900293.png)
+  ![SIGN IN page for Oracle Cloud Infrastructure](images/direct-signin.png)
 
-6. You are now signed in to the Oracle Cloud Infrastructure Console as a tenancy administrator. The landing page shows you a dashboard. In the upper-left corner, notice that there is a navigation menu (hamburger menu).
+6. You are now signed in to the Oracle Cloud Infrastructure Console as a tenancy administrator. The Get Started tab is displayed by default with options for quick actions. In the upper-left corner, there is a navigation menu (hamburger menu). On the right, you can view information about your account.
 
-  ![Oracle Cloud Infrastructure Console](images/349900294.png)
+  ![Get Started tab in the Oracle Cloud Infrastructure Console](images/get-started-tab-oci.png)
 
 
 
@@ -124,7 +124,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
    ![Select Home region](images/select-region.png)
 
-2. From the navigation menu, select **Data Safe**.
+2. From the navigation menu, select **Data Safe** (under Database Related Services).
 
    ![Select Data Safe from the Navigation menu](images/navigation-menu-select-data-safe.png)
 
@@ -164,7 +164,7 @@ You may now proceed to the next lab.
 
 ## Learn More
 
-- [Oracle Cloud Infrastructure documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/home.htm)
+- [Oracle Cloud Infrastructure documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)
 - [Try Oracle Cloud](https://www.oracle.com/cloud/free/)
 
 
@@ -173,7 +173,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, December 14, 2020
+* **Last Updated By/Date** - Jody Glover, March 12, 2021
 
 
 
