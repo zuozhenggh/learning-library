@@ -108,14 +108,14 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](./images/Picture100-26e.png " ")
 
-9. Choose a license type. For this lab, choose __License Included__. The two license types are:
+9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
 10. Click __Create Autonomous Database__.
 
-    ![](./images/Picture100-27.png " ")
+    ![](./images/Picture100-27-byol.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
@@ -133,8 +133,3 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Richard Green, March 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -113,7 +113,7 @@ To summarize, you replaced the business logic to retrieve JSON data-type from co
 
 You have successfully completed *Converged Database for WebLogic Developer* workshop
 
-## Want to learn more
+## Learn More
 - [ORDS](https://www.oracle.com/in/database/technologies/appdev/rest.html)
 - [Consuming a Database-Bound RESTful Web Service](https://docs.oracle.com/cd/E53569_01/tutorials/tut_rest_ws/tut_rest_ws.html)
 
@@ -123,7 +123,4 @@ You have successfully completed *Converged Database for WebLogic Developer* work
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

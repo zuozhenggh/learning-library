@@ -53,6 +53,24 @@ Step 1 opening paragraph.
 
    If you add another paragraph, add 3 spaces before the line.
 
+6. This is an example of manual control over image sizes:
+
+  No image sizing applied: `![](images/pic2.png)`
+
+  ![](images/pic2.png)
+
+  50% of the width and use auto height: `![](images/pic2.png =50%x*)`
+
+  ![](images/pic2.png =50%x*)
+
+  absolute width and height (500 pixel by 200 pixels): `![](./images/pic2.png =500x200)`
+
+  ![](./images/pic2.png =500x200)
+
+  50% for both width and height:  `![](./images/pic2.png =50%x50%)`
+
+  ![](./images/pic2.png =50%x50%)
+
 ## **STEP 2:** title
 
 1. Sub step 1
@@ -101,7 +119,4 @@ You may now [proceed to the next lab](#next).
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

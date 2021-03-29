@@ -5,18 +5,36 @@ This lab shows how to use the `KURTOSIS_POP` and `KURTOSIS_SAMP` aggregate funct
 
 Estimated Lab Time: 10 minutes
 
+### About Kurtosis
+When you approach the distribution of data for the first time, it’s often helpful to pull out summary statistics to understand the domain of the data.
+
+Mean and variance are certainly helpful for understanding the scope of a dataset, but to understand the shape of the data we often turn to generating the histogram and manually evaluating the curve of the distribution.
+
+Two additional summary statistics, skew and kurtosis, are a good next step for evaluating the shape of a distribution. ​We will explore skewness in this lab.
+
 ### Objectives
 In this lab, you will:
+<if type="dbcs">
 * Setup the environment
+</if>
+<if type="atp">
+* Examine the kurtosis of the distribution
+* Examine the kurtosis of the distribution after data evolution
 
 ### Prerequisites
-
+<if type="dbcs">
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Lab: SSH Keys
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
+</if>
+<if type="atp">
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Lab: Provision ADB
+* Lab: Setup
+</if>
 
-
+<if type="dbcs">
 ## **STEP 1:** Set up the environment
 
 1. Connect to `PDB1` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with data.
@@ -24,7 +42,7 @@ In this lab, you will:
      ```
 
      $ <copy>cd /home/oracle/labs/M104784GC10</copy>
-     $ <copy>sqlplus system@PDB1</copy>
+     $ <copy>sqlplus system@PDB21</copy>
 
      Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
@@ -68,20 +86,55 @@ In this lab, you will:
      SQL>
 
      ```
+</if>
+<if type="atp">
+## **STEP  1**: Login to SQL Developer Web on ADB
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
+
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
+      ![](../set-operators/images/21c-home-adb.png " ")
+
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](../set-operators/images/21c-adb.png " ")
+
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](../set-operators/images/tools.png " ")
+5.  Enter the username *hr* and password *WElcome123##*
+6.  Click on the **SQL** button.
+7.  Skip to [Step 2](#STEP2:Examinethekurtosisofthedistribution)
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the *HR* user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn hr/WElcome123##@adb1_high
+	```
+</if>
 
 ## **STEP 2:** Examine the kurtosis of the distribution
+<if type="dbcs">
+1.  Make some modifications to the display
 
+	```
+	SQL> <copy>SET PAGES 100</copy>
+	```
+</if>
+<if type="atp">
+1.  If you aren't logged in to SQL Developer Web, login as the *REPORT* user.
+
+</if>
 1. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other.
 
 
      ```
-
-     SQL> <copy>SET PAGES 100</copy>
-
      SQL> <copy>SELECT * FROM houses;</copy>
 
           HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
-
      ---------- -------------- ---------------- ---------
 
                1         100000            10000 05-FEB-20
@@ -166,7 +219,7 @@ In this lab, you will:
   `PRICE_SMALL_CITY` has a higher kurtosis compared to `PRICE_BIG_CITY`. Observe whether there is more data in the tails or around the peak in `PRICE_SMALL_CITY` and in `PRICE_BIG_CITY`.
 
 ## **STEP 3:** Examine the kurtosis of the distribution after data evolution
-
+<if type="dbcs">
 1. Insert more rows in the table.
 
 
@@ -191,7 +244,22 @@ In this lab, you will:
      SQL> <copy>COMMIT;</copy>
 
      Commit complete.
+     ```
+</if>
+<if type="atp">
+1. Insert more rows in the table. 
 
+	```
+	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit
+
+3. Press the play button 3 more times to submit a totoal of 152 rows
+</if>
+
+2.  Issue select statements to examine the kurtosis of the distribution now.
+
+     ```
      SQL> <copy>SELECT house, KURTOSIS_POP(price_big_city), KURTOSIS_POP(price_small_city) FROM houses
           GROUP BY house ORDER BY 1;</copy>
 
@@ -280,6 +348,7 @@ In this lab, you will:
 
   The population tailedness value is not different because the same exact rows were inserted.
 
+<if type="dbcs">
 3. Insert more rows in the table with a big data set for `HOUSE` number 1.
 
 
@@ -310,7 +379,23 @@ In this lab, you will:
      SQL> <copy>COMMIT;</copy>
 
      Commit complete.
+     ```
+</if>
 
+<if type="atp">
+3. Insert more rows in the table with a big data set for `HOUSE` number 1.
+
+	```
+	SQL> <copy>INSERT INTO houses (house, price_big_city, price_small_city)
+                    SELECT house, price_big_city*0.5, price_small_city*0.1
+                    FROM houses WHERE house=1;</copy>
+	```
+2. Press the play button in SQL Developer Web to submit\
+
+3. Press the play button 4 more times to submit a totoal of 2304 rows
+</if>
+
+2. Select and count the houses.
      SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
           HOUSE COUNT(HOUSE)
@@ -343,23 +428,32 @@ In this lab, you will:
 
                3         -1.3    -1.3061439     -1.5417881      -1.5637533
 
-     SQL> <copy>EXIT</copy>
-
-     $
 
      ```
+<if type="atp">
+5. Click the down arrow in the upper right corner and **Sign Out** of the HR user.
+</if>
+
+<if type="dbcs">
+5.  Exit from the sql prompt
+
+	```
+	SQL> <copy>EXIT</copy>
+
+	$
+
+	```
+</if>
 
   Now the tailedness of the data becomes positive for house number 1 which means that data is skewed to right. `PRICE_SMALL_CITY` has a much higher kurtosis compared to `PRICE_BIG_CITY`. This implies that in `PRICE_SMALL_CITY`, more of the variance is the result of many infrequent extreme deviations, whereas in `PRICE_BIG_CITY`, the variance is attributed to very frequent modestly sized deviations.
 
 You may now [proceed to the next lab](#next).
 
+## References 
+[Skewness Kurtosis Blog](https://www.sisense.com/blog/understanding-outliers-with-skew-and-kurtosis/)
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
-* **Contributors** -  Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, November 2020
+* **Author** - Donna Keesling, Database UA Team
+* **Contributors** -  David Start, Kay Malcolm, Database Product Management
+* **Last Updated By/Date** -  David Start, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

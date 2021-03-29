@@ -221,7 +221,7 @@ To summarize, you have performed Create, Update, Retrieve and Delete functions o
 
 You may now *proceed to the next lab*.
 
-## Want to learn more
+## Learn More
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 - [REST-JSON using JDeveloper](https://docs.oracle.com/cd/E53569_01/tutorials/tut_jdev_maf_json/tut_jdev_maf_json.html)
 
@@ -231,7 +231,4 @@ You may now *proceed to the next lab*.
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
