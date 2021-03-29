@@ -1,8 +1,9 @@
 {
   "workshoptitle": "Faceswap on OCI",
-    "tutorials": [
+    "help": "livelabs-help-hpc_us@oracle.com",
+	"tutorials": [
       {
-            "title": "Prerequesites",
+            "title": "Getting Started",
             "description": "This lab provides an overview of the steps to register a free tier account on OCI.",
             "filename": "../../Prerequesites/pre-register-free-tier-account.md"
         }
@@ -41,6 +42,11 @@
               "title": "Lab 5: Run Faceswap",
               "description": "This lab will walk through the required and optional steps to run Faceswap on your compute instance (terminal and GUI).",
               "filename": "../../Lab5/Run Faceswap.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
 
              ]

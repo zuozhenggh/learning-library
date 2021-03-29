@@ -50,11 +50,11 @@ You will provision Oracle Analytics Cloud.
 
    In the configuration screen, do the following:
 
-   Instance name: Any name you choose,
-   Feature Set: Enterprise Analytics,
-   OCPU: 2,
-   Network access: Public,
-   License type: "Subscribe to a new Analytics Cloud...".
+   - Instance name: Any name you choose
+   - Feature Set: Enterprise Analytics
+   - OCPU: 2
+   - Network access: Public
+   - License type: "License included..."
 
 3. Start provisioning
 
@@ -286,7 +286,7 @@ Congratulations on completing this lab!
 [Proceed to the next section](#next).
 
 ## Acknowledgements
-* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
 * **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
 ## Need Help?
