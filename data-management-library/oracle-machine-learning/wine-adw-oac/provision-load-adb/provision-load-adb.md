@@ -243,4 +243,3 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 ## Acknowledgements
 * **Author** - Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
-* **Workshop Expiry Date** - March 2022

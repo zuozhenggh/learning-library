@@ -15,7 +15,7 @@ With the classification techniques, the business problem defined here is a good 
 
 The data that we are using is not a standard structured data set. For example, we have wine reviews saying "Oh this wine has a very robust flavor!", "It smelt the aroma of cherries" and so on.
 
-So we are using Oracle textmining to filter all the unstructured data stored in the database as a (character large object).
+So we are using Oracle text mining to filter all the unstructured data stored in the database as a (character large object).
 
 ### Objectives
 
@@ -28,7 +28,7 @@ In this lab, you will:
 
 * Provisioned an ADB instance
 * Created an OMLUSER account
-* Uploaded data for the notebook to manipulate
+* Uploaded data for OMLUSER
 
 
 ## **STEP 1**: Upload Notebook to Oracle Machine Learning
@@ -294,4 +294,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Charlie Berger & Dhvani Sheth, Data Mining and Advanced Analytics
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
-* **Workshop Expiry Date** - March 2022
