@@ -11,8 +11,6 @@
 *If you want to try the sensitive data discovery and data masking lab, please use the "Free Trial Workshop" or "Run the LiveLab on Your Own Tenancy" version of this workshop.*</if>
 
 
-
-
 Estimated Workshop Time: 2 hours
 
 ## About Oracle Data Safe
