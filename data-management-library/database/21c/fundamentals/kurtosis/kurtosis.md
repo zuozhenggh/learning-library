@@ -136,43 +136,24 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
           HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
      ---------- -------------- ---------------- ---------
-
                1         100000            10000 05-FEB-20
-
                1         200000            15000 06-FEB-20
-
                1         300000            25000 06-FEB-20
-
                1         400000            28000 07-FEB-20
-
                1         500000            30000 08-FEB-20
-
                1         600000            32000 08-FEB-20
-
                1         700000            35000 09-FEB-20
-
                1         800000            38000 09-FEB-20
-
                1         900000            40000 10-FEB-20
-
                2        2000000          1000000 11-FEB-20
-
                2         200000            20000 05-FEB-20
-
                2         400000            35000 06-FEB-20
-
                2         600000            55000 06-FEB-20
-
                2         800000            48000 07-FEB-20
-
                3         400000            40000 08-FEB-20
-
                3         500000            42000 08-FEB-20
-
                3         600000            45000 09-FEB-20
-
                3         700000            48000 09-FEB-20
-
                3         800000            49000 10-FEB-20
 
      19 rows selected.
@@ -190,26 +171,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
           GROUP BY house;</copy>
 
           HOUSE KURTOSIS_POP(PRICE_BIG_CITY) KURTOSIS_POP(PRICE_SMALL_CITY)
-
      ---------- ---------------------------- ------------------------------
-
                1                        -1.23                      -.7058169
-
                2                        -.212                     .245200191
-
                3                         -1.3                     -1.5417881
 
      SQL> <copy>SELECT house, kurtosis_samp(price_big_city), kurtosis_samp(price_small_city) FROM houses
           GROUP BY house;</copy>
 
           HOUSE KURTOSIS_SAMP(PRICE_BIG_CITY) KURTOSIS_SAMP(PRICE_SMALL_CITY)
-
      ---------- ----------------------------- -------------------------------
-
                1                          -1.2                        -.201556
-
                2                         3.152                      4.98080076
-
                3                          -1.2                      -2.1671526
 
      SQL>
@@ -226,23 +199,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      ```
 
      SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
-
      19 rows created.
 
      SQL> <copy>/</copy>
-
      38 rows created.
 
      SQL> <copy>/</copy>
-
      76 rows created.
 
      SQL> <copy>/</copy>
-
      152 rows created.
 
      SQL> <copy>COMMIT;</copy>
-
      Commit complete.
      ```
 </if>
@@ -264,26 +232,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
           GROUP BY house ORDER BY 1;</copy>
 
           HOUSE KURTOSIS_POP(PRICE_BIG_CITY) KURTOSIS_POP(PRICE_SMALL_CITY)
-
      ---------- ---------------------------- ------------------------------
-
                1                        -1.23                      -.7058169
-
                2                        -.212                     .245200191
-
                3                         -1.3                     -1.5417881
 
      SQL> <copy>SELECT house, KURTOSIS_SAMP(price_big_city), KURTOSIS_SAMP(price_small_city) FROM houses
           GROUP BY house ORDER BY 1;</copy>
 
           HOUSE KURTOSIS_SAMP(PRICE_BIG_CITY) KURTOSIS_SAMP(PRICE_SMALL_CITY)
-
      ---------- ----------------------------- -------------------------------
-
                1                    -1.2309485                      -.68809876
-
                2                    -.14695105                      .340165838
-
                3                    -1.3061439                      -1.5637533
 
      SQL>
@@ -306,13 +266,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
                     GROUP BY house;</copy>
 
           HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
      ---------- ------------ ------------- -------------- ---------------
-
                1        -1.23          -1.2      -.7058169        -.201556
-
                2        -.212         3.152     .245200191      4.98080076
-
                3         -1.3          -1.2     -1.5417881      -2.1671526
 
      SQL>
@@ -333,13 +289,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
                     GROUP BY house;</copy>
 
           HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
      ---------- ------------ ------------- -------------- ---------------
-
                1        -1.23    -1.2309485      -.7058169      -.68809876
-
                2        -.212    -.14695105     .245200191      .340165838
-
                3         -1.3    -1.3061439     -1.5417881      -1.5637533
 
      SQL>
@@ -361,23 +313,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      144 rows created.
 
      SQL> <copy>/</copy>
-
      288 rows created.
 
      SQL> <copy>/</copy>
-
      576 rows created.
 
      SQL> <copy>/</copy>
-
      1152 rows created.
 
      SQL> <copy>/</copy>
-
      2304 rows created.
 
      SQL> <copy>COMMIT;</copy>
-
      Commit complete.
      ```
 </if>
@@ -399,13 +346,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
           HOUSE COUNT(HOUSE)
-
      ---------- ------------
-
                1         4608
-
                2           80
-
                3           80
 
 
@@ -419,13 +362,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
                     GROUP BY house;</copy>
 
           HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
      ---------- ------------ ------------- -------------- ---------------
-
                1   9.12746931    9.13868421     33.7452495      33.7831972
-
                2        -.212    -.14695105     .245200191      .340165838
-
                3         -1.3    -1.3061439     -1.5417881      -1.5637533
 
 
@@ -439,7 +378,6 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 	```
 	SQL> <copy>EXIT</copy>
-
 	$
 
 	```
