@@ -17,7 +17,7 @@ In this lab, you'll:
 - Stage the installation software on a directory on your computer
 - Install Oracle Database 19c
 - Review the response file
-- (optional) Uninstall Oracle Database 19c
+- Uninstall Oracle Database 19c (optional)
 
 ### Prerequisites
 
