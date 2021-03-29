@@ -1,6 +1,7 @@
 {
-    "workshoptitle": "Getting Started with Weather Prediction using WRF",
-    "tutorials": [
+  "workshoptitle": "Getting Started with Weather Prediction using WRF",
+    "help": "livelabs-help-hpc_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Get a Free Trial",
@@ -37,7 +38,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

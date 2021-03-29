@@ -193,3 +193,7 @@ All Done! This completes the demo for running OpenFoam application on an HPC clu
 * **Last Updated By/Date** - Harrison Dvoor, January 2021
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master

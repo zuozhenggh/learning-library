@@ -50,3 +50,7 @@ In this lab, you will:
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca, Samrat Khosla
 * **Last Updated By/Date** - Samrat Khosla, January 2021
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
