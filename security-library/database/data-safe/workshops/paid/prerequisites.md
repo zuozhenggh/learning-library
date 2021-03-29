@@ -199,6 +199,9 @@ When you are done setting up the environment, email the user with the following 
 - The user's compartment name.
 
 
+You may [now proceed to the next lab](#next).
+
+
 ## Learn More
 
 - [ Oracle Cloud Infrastructure documentation - Signing In to the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm)
@@ -207,7 +210,4 @@ When you are done setting up the environment, email the user with the following 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 12, 2021
-
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021
