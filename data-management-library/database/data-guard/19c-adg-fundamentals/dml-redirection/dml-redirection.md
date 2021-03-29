@@ -153,6 +153,10 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 
 3. Then on the primary database, verify if the row is visible as well.
 
+    ````
+    select * from DMLTable;
+    ````
+
     ![](./images/dml10.png)
 
 
