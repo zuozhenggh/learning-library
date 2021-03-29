@@ -1,5 +1,5 @@
 
-# Install Oracle Database 19c with Automated Root Scripts Execution
+# Install Oracle Database 19c with Automatic Configuration Script Execution
 
 ## Introduction
 
