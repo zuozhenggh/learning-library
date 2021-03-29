@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This lab shows you how to install the Oracle Database 19c with automated root scripts execution.
+Starting with Oracle Database 19c, the database installer, or setup wizard, provides options to set up permissions to run the root configuration scripts automatically, as required, during a database installation. You continue to have the option to run the root configuration scripts manually. Setting up permissions for root configuration scripts to run without user intervention can simplify database installation and help avoid inadvertent permission errors. This lab shows you how to install the Oracle Database 19c with automated root scripts execution.
 
 *In Oracle Database 18c, the installation of the Oracle Database software requires root scripts to be executed manually.*
 
@@ -31,32 +31,46 @@ To complete this lab, you need to have the following:
 
 ## STEP 1: Prepare the directory
 
-1. Log in to your server as root and create the directory dedicated for the Oracle Database 19c software.
+1. Open a new terminal window on your server.
+
+2. Log in to your server as the `root` user.
+
+3. Create a directory dedicated for the Oracle Database 19c software.
 
     ```
-    <copy>mkdir -p /u01/app/oracle/product/19.0.0/dbhome_2</copy>
+    $ <copy>mkdir -p /u01/app/oracle/product/19.0.0/dbhome_2</copy>
     ```
-2. Change to the directory.
+4. Change to the directory that you just created.
 
     ```
-    <copy>cd /u01/app/oracle/product/19.0.0/dbhome_2</copy>
+    $ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_2</copy>
     ```
-3. Unzip `db_home.zip` to the directory dedicated for the Oracle Database 19c installation.
+5. Unzip `db_home.zip` into the directory.
 
     ```
-    <copy>unzip /staging/db_home.zip </copy>
+    $ <copy>unzip /staging/db_home.zip</copy>
     ```
-4. Change the group and owner ownership of the directories where the files are unzipped.
+6. Change to the u01 directory.
 
     ```
-    <copy>cd /u01
-    chown -R oracle *
-    chgrp -R oinstall *</copy>
+    $ <copy>cd /u01</copy>
     ```
-5. Quit the root session.
+
+7. All files in Linux belong to an owner and a group. Set the owner of the unzipped files to `oracle`.
 
     ```
-    <copy>exit</copy>
+    $ <copy>chown -R oracle *</copy>
+    ```
+
+8. Set the group ownership of the unzipped files to `oinstall`.
+
+    ```
+    $ <copy>chgrp -R oinstall *</copy>
+    ```
+9. Quit the root session.
+
+    ```
+    $ <copy>exit</copy>
     ```
 
 
@@ -64,31 +78,36 @@ To complete this lab, you need to have the following:
 
 Install the Oracle Database 19c using the Oracle Universal Installer and the automatic root scripts execution.
 
-1. Log in to your server as `oracle` and go to the directory dedicated for the Oracle Database 19c software.
+1. Log in to your server as `oracle`.
+
+2. Change to the directory dedicated for the Oracle Database 19c software.
 
     ```
-    <copy>d /u01/app/oracle/product/19.0.0/dbhome_2</copy>
+    $ <copy>d /u01/app/oracle/product/19.0.0/dbhome_2</copy>
     ```
-2. Launch `runInstaller`.
+3. Launch `runInstaller`.
 
     ```
     <copy>./runInstaller</copy>
     ```
-3. On the **Select Configuration Option** page, select **Set Up Software Only**.
 
-4. On the **Select Database Installation Option** page, click **Next**.
+    The installer is displayed.
 
-5. On the **Select Database Edition** page, click **Next**.
+4. On the **Select Configuration Option** page, select **Set Up Software Only**.
 
-6. On the **Specify Installation Location** page, click **Next**.
+5. On the **Select Database Installation Option** page, click **Next**.
 
-7. On the **Privileged Operating System Groups** page, click **Next**.
+6. On the **Select Database Edition** page, click **Next**.
 
-8. On the **Root script execution configuration** page, check **Automatically run configuration scripts**, and provide the password for the `root` user. Click **Next**.
+7. On the **Specify Installation Location** page, click **Next**.
 
-9. On the **Perform Prerequisite Checks** page, check **Ignore All** and click **Next**. If there is a warning message, choose **Yes**.
+8. On the **Privileged Operating System Groups** page, click **Next**.
 
-10. On the **Summary** page, save the response file so that you can later observe how the `root` scripts automatic execution is recorded in the response file:
+9. On the **Root script execution configuration** page, check **Automatically run configuration scripts**, and provide the password for the `root` user. Click **Next**.
+
+10. On the **Perform Prerequisite Checks** page, check **Ignore All** and click **Next**. If there is a warning message, choose **Yes**.
+
+11. On the **Summary** page, save the response file so that you can later observe how the `root` scripts automatic execution is recorded:
 
   a) Click **Save Response File**.  
 
@@ -98,13 +117,13 @@ Install the Oracle Database 19c using the Oracle Universal Installer and the aut
 
   d) Click **Install**.
 
-11. On the **Install Product** page, monitor the progress of the steps being executed.
+12. On the **Install Product** page, monitor the progress of the steps being executed.
 
-12. When the steps are finished, a dialog box is displayed asking if you want to continue and run configuration scripts as the privileged user you provided earlier. Click **Yes** to continue.
+13. When the steps are finished, a dialog box is displayed asking if you want to continue and run configuration scripts as the privileged user you provided earlier. Click **Yes** to continue.
 
   ![Installation message](images/install-message.png)
 
-13. On the **Finish** page, click **Close**. The installation is complete.
+14. On the **Finish** page, click **Close**. The installation is complete.
 
 
 ## STEP 3: Review the Response File
