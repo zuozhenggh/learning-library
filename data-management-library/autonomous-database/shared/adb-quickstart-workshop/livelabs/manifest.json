@@ -18,8 +18,8 @@
           "filename": "./../../adb-provision/adb-provision-livelabs.md"
       },
       {
-          "title": "Lab 3: Working with Free Sample Data Sets",
-          "description": "Explore SQL Developer Web",
+          "title": "Lab 3: Explore SQL Worksheet",
+          "description": "Explore SQL Worksheet",
           "filename": "./../../adb-sqldevweb/adb-sqldevweb.md"
       },
       {
