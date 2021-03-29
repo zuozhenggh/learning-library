@@ -1,7 +1,7 @@
 # Monitor the Oracle GoldenGate Marketplace Instance on Oracle Enterprise Manager
 
 ## Introduction
-This lab describes how to Monitor the GoldenGate Marketplace Instance (Classic and Microservices) using the Oracle Enterprise Manager Marketplace Instance.
+This lab describes how to Monitor the GoldenGate Marketplace instance (Classic and Microservices) using the Oracle Enterprise Manager Marketplace instance.
 
 It describes how to open the Oracle GoldenGate Services ports from the Oracle Cloud Infrastructure (OCI) console, open the proxy ports on Oracle GoldenGate Microservices Marketplace instance, and discover and monitor the Oracle GoldenGate instances on Oracle Enterprise Manager on Marketplace.
 
@@ -9,32 +9,33 @@ It describes how to open the Oracle GoldenGate Services ports from the Oracle Cl
 
 + **You have gone through the Introduction Lab and Prerequisites**
 
-**STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console and the Proxy ports on Oracle GoldenGate Microservices Marketplace Instance
+**STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console and the Proxy ports on Oracle GoldenGate Microservices Marketplace instance
 
 Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console. If the Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
 
-You may choose to white-list the ports to Oracle Enterprise Manager Marketplace Instance. By doing this, no other instances will be able access the GoldenGate Marketplace Instance ports, hence making  secured.
+You may choose to white-list the ports to Oracle Enterprise Manager Marketplace instance. By doing this, no other instances will be able access the GoldenGate Marketplace instance ports, hence making  secured.
 
 To open the ports:
-1. Start an instance of Oracle GoldenGate (Microservices) Marketplace.
-2. Log-in to your Oracle GoldenGate Marketplace Instance using the private key that you have given while provisioning the Instance. See [Deploying Oracle GoldenGate Microservices on Oracle Cloud Marketplace](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/oracle-goldengate-microservices-oracle.html#GUID-EF6680D7-7571-41E7-BF2D-831BD79BCC15) to login to Oracle GoldenGate Marketplace.
-3. Create the default ingress rule (in the Network’s VCN) to open the Microservices Port (Administrator Server, Distribution, Receiver server, and Performance server) through OCI Cloud account. For example, open all the ports from 9000 through 9010 where all the Oracle GoldenGate Microservices services are running.
+1. Login to your Cloud account and access the Oracle GoldenGate Microservices instance. Start an instance of Oracle GoldenGate (Microservices) Marketplace.
+
+2. Create the default ingress rule (in the Network’s VCN) to open the Microservices Port (Administrator Server, Distribution Server, Receiver server, and Performance server) for Oracle GoldenGate Enterprise Manager Plug-in to access these services. You can open these ports through the OCI Cloud account’s Network section. For example, open all the ports from 9000 through 9010 where your Oracle GoldenGate Microservices services are running.
       ![](./images/20.png " ")
 For more information, see [Security Lists](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm#stateful).
 
-4. In this instance, run the following command to expose the Service Manager, Administration Server, Receiver Server, Distribution Server, and Performance Metrics Server ports:
+3. Log-in to your Oracle GoldenGate Marketplace instance using the private key that you have given while provisioning the instance. See [Deploying Oracle GoldenGate Microservices on Oracle Cloud Marketplace](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/oracle-goldengate-microservices-oracle.html#GUID-EF6680D7-7571-41E7-BF2D-831BD79BCC15) to login to Oracle GoldenGate Marketplace.
+4. In the Oracle GoldenGate Microservices instance, run the following command to expose the Service Manager, Administration Server, Receiver Server, Distribution Server, and Performance Metrics Server ports:
     <pre>sudo firewall-cmd --list-ports
     sudo firewall-cmd --add-port=*<OGG Process port number>*/tcp</pre>
 
-**Step 2**: Install Oracle GoldenGate Enterprise Manager Plug-in
+**STEP 2**: Install Oracle GoldenGate Enterprise Manager Plug-in
 
 1. Download Oracle GoldenGate Enterprise Manager Plug-in from [Oracle GoldenGate Downloads](https://www.oracle.com/in/middleware/technologies/goldengate-downloads.html).
 2. Copy the Oracle GoldenGate Enterprise Manager Plug-in to Oracle Marketplace on which, Enterprise Manager is installed.
 3. See [Deploying Oracle GoldenGate Enterprise Manager Plug-in](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/install/deploying-plug.html#GUID-D024EC6B-75A8-4333-BCEF-04B154614C6F) to install Oracle GoldenGate Enterprise Manager Plug-in.
 
-**STEP 3:** Discover Oracle GoldenGate Microservices Instances in Oracle Enterprise Manager on Marketplace
+**STEP 3:** Discover Oracle GoldenGate Microservices instances in Oracle Enterprise Manager on Marketplace
 
-After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate Instances on the Oracle Enterprise Manager Plug-in UI:
+After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate instances on the Oracle Enterprise Manager Plug-in UI:
 
   To discover Oracle GoldenGate Microservices instances:
   1. Click **Setup**, select **Add Target**, and click **Configure Auto Discovery**.
@@ -80,7 +81,7 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
   Watch this video if you want to know more about Discovering Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager.
       [](youtube:KAfmbzGDe9E)
 
-**STEP 4:** Set Monitoring Credentials to Oracle GoldenGate MA Marketplace Instances in Enterprise Manager Plug-in
+**STEP 4:** Set Monitoring Credentials to Oracle GoldenGate MA Marketplace s in Enterprise Manager Plug-in
 
 If you are an Enterprise Manager administrator, then you also have the option of storing credentials in a secure manner — as preferences or operation credentials. You can then use these credentials to perform different system management activities like real-time monitoring, patching, provisioning, and other target administrative operations.
 
@@ -111,7 +112,7 @@ To set the Monitoring credentials:
 
       The monitoring credentials are successfully set and you can monitor the instance, view the logs, configuration files, and GGSERR files, and also start or stop the instance.                                         
 
-  **STEP 4:** Set Preferred Credentials to Oracle GoldenGate MA Marketplace Instances in Enterprise Manager Plug-in
+  **STEP 4:** Set Preferred Credentials to Oracle GoldenGate MA Marketplace instances in Enterprise Manager Plug-in
 
   It is required to set preferred credentials to Oracle GoldenGate Service manager target for Oracle GoldenGate Microservices instances in addition to monitoring credentials. While setting preferred credentials for a Microservices instance, you need to add only the host credential.
 

@@ -1,13 +1,13 @@
 # Overview                                
 
-The lab in this workshop walks you through all the steps to install Oracle GoldenGate Enteprise Manager Plug-in on Marketplace and monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager Marketplace Instance.
+The lab in this workshop walks you through all the steps to install Oracle GoldenGate Enteprise Manager Plug-in on Marketplace and monitor the Oracle GoldenGate Marketplace instance using the Enterprise Manager Marketplace instance.
 
 Oracle GoldenGate on Oracle Cloud Marketplace (referred to as Oracle GoldenGate Marketplace in this workshop) is the cloud-based version of Oracle GoldenGate and provides the same benefits, scalability, security, and robustness that you can rely on for enterprise replication.
 
 Oracle Enterprise Manager (EM) 13c is also available as an application on Oracle Cloud Marketplace. The application can be used to monitor and manage on-premises or cloud resources, such as Oracle GoldenGate Marketplace (Microservices) targets/instances.
 
 ## Workshop Objectives
-  - Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager Marketplace Instance
+  - Monitor the Oracle GoldenGate Marketplace instance using the Enterprise Manager Marketplace instance
 
 ## Lab Breakdown
 
