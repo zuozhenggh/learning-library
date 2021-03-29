@@ -81,7 +81,7 @@ After you have created an Enterprise Manager instance on Marketplace, you can di
   Watch this video if you want to know more about Discovering Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager.
       [](youtube:KAfmbzGDe9E)
 
-**STEP 4:** Set Monitoring Credentials to Oracle GoldenGate MA Marketplace s in Enterprise Manager Plug-in
+**STEP 4:** Set Monitoring Credentials to Oracle GoldenGate MA Marketplace in Enterprise Manager Plug-in
 
 If you are an Enterprise Manager administrator, then you also have the option of storing credentials in a secure manner — as preferences or operation credentials. You can then use these credentials to perform different system management activities like real-time monitoring, patching, provisioning, and other target administrative operations.
 
@@ -112,7 +112,7 @@ To set the Monitoring credentials:
 
       The monitoring credentials are successfully set and you can monitor the instance, view the logs, configuration files, and GGSERR files, and also start or stop the instance.                                         
 
-  **STEP 4:** Set Preferred Credentials to Oracle GoldenGate MA Marketplace instances in Enterprise Manager Plug-in
+  **STEP 5:** Set Preferred Credentials to Oracle GoldenGate MA Marketplace instances in Enterprise Manager Plug-in
 
   It is required to set preferred credentials to Oracle GoldenGate Service manager target for Oracle GoldenGate Microservices instances in addition to monitoring credentials. While setting preferred credentials for a Microservices instance, you need to add only the host credential.
 
