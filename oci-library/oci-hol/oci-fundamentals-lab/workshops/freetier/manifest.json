@@ -1,6 +1,7 @@
 {
     "workshoptitle": "High Availability Applications Using Load Balancers",
-    "tutorials": [
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Login to Oracle Cloud",

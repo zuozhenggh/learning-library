@@ -1,7 +1,8 @@
 {
     "workshoptitle": "Deploying Infrastructure using Terraform",
     "help": "livelabs-help-db_us@oracle.com",
-    "tutorials": [
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "filename": "./../../intro/intro.md"

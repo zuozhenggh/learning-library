@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Time Series Forecasting with fb Prophet",
-    "tutorials": [
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Sign up for and log into the Oracle Cloud",

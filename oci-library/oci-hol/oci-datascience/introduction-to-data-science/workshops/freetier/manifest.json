@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Introduction to Data Science",
-    "tutorials": [
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "An Oracle Cloud tenancy is required for all labs in this workshop.",

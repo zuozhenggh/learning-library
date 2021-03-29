@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Dynamic Scaling Autonomous Transacation Processing Cloud Service",
-    "tutorials": [
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "filename": "../../intro/intro-sandbox.md"

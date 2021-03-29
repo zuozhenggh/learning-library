@@ -1,7 +1,8 @@
 {
     "workshoptitle": "Get Started with Oracle Cloud Infrastructure Core Services",
     "help": "livelabs-help-db_us@oracle.com",
-    "tutorials": [
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Login to Oracle Cloud",

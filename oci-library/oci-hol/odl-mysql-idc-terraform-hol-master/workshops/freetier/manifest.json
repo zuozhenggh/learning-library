@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Deploying MySQL InnoDB Cluster on OCI with Terraform",
-    "tutorials": [
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Login to Oracle Cloud",
