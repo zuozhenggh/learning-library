@@ -32,13 +32,13 @@ To complete this lab, you need to have the following:
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console. <if type="paid">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="freetier">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="livelabs">If not, please scroll to the bottom of this page, click **Show login instructions**, and sign in.</if>
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Getting Started](?lab=getting-started) page.
 
 - You completed the following labs in this workshop:
 
     <if type="paid">- [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous)</if>
     <if type="freetier">- [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous)</if>
-    <if type="livelabs">- [Register an Autonomous Database](?lab=lab-1-provision-register-autonomous)</if>
+    <if type="livelabs">- [Register an Autonomous Database](?lab=lab-1-register-autonomous-database)</if>
     - [Provision Audit and Alert Policies](?lab=lab-2-provision-audit-alert-policies)
 
 - The screenshots in this lab are taken from the LiveLabs environment with a database target named ATPPUOZY. Your data values will most likely be different than those shown in the screenshots.
@@ -306,9 +306,9 @@ You can use the User Assessment feature to identify user settings and user risks
 
   ![All Activity report with no data](images/LL-all-activity-report-no-data.png)
 
-<if type="freetier">You may now proceed to the next lab.</if>
-<if type="paid">You may now proceed to the next lab.</if>
-<if type="livelabs">Congratulations! You have completed the Oracle Data Safe Workshop.</if>
+<if type="freetier">You may now [proceed to the next lab](#next).</if>
+<if type="paid">You may now [proceed to the next lab](#next).</if>
+<if type="livelabs">Congratulations! You have completed the Oracle Data Safe Fundamentals workshop.</if>
 
 ## Learn More
 
@@ -318,7 +318,4 @@ You can use the User Assessment feature to identify user settings and user risks
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 9, 2021
-
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021

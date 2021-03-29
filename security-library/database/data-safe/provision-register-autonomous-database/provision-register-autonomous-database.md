@@ -41,12 +41,10 @@ To complete this lab, you need to have the following:
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console. <if type="paid">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="freetier">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="livelabs">If not, please scroll to the bottom of this page, click **Show login instructions**, and sign in.</if>
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Getting Started](?lab=getting-started) page.
 
 <if type="paid">
 ## **STEP 1**: Provision an Autonomous Transaction Processing database
-
-If you are using the LiveLabs tenancy, you can skip this step because an Autonomous Transaction Processing database is already created for you in your compartment.
 
 1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Autonomous Transaction Processing**.
 
@@ -99,7 +97,6 @@ If you are using the LiveLabs tenancy, you can skip this step because an Autonom
 <if type="freetier">
 ## **STEP 1**: Provision an Autonomous Transaction Processing database
 
-If you are using the LiveLabs tenancy, you can skip this step because an Autonomous Transaction Processing database is already created for you in your compartment.
 
 1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Autonomous Transaction Processing**.
 
@@ -166,7 +163,7 @@ The LiveLabs tenancy provides you with an Autonomous Transaction Processing data
 
 By default, when you register an Autonomous Database, you are automatically granted privileges in Oracle Data Safe to use the User Assessment, Security Assessment, and Activity Auditing features with your database. On your actual database, all Oracle Data Safe features are enabled by default, except Data Masking.
 
-1. On the **Autonomous Database Information** tab, under **Data Safe**, click **Register**.  <if type="paid">If there is no **Register** option, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. If you are the tenancy administrator, please enable Oracle Data Safe in your tenancy and region. Otherwise, please contact your tenancy administrator to gain access to an appropriate region.</if> <if type="freetier">If there is no **Register** option, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. As the tenancy administrator, please refer to the prerequisites to enable Oracle Data Safe in a region of your tenancy.</if><if type="livelabs">If there is no **Register** option, it is because Oracle Data Safe is not yet enabled in the region you have selected. Please email the LiveLabs team at LIVELABS-HELP-DB_US@ORACLE.COM for assistance.</if>
+1. On the **Autonomous Database Information** tab, under **Data Safe**, click **Register**.  <if type="paid">If there is no **Register** option, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. If you are the tenancy administrator, please enable Oracle Data Safe in your tenancy and region. Otherwise, please contact your tenancy administrator to gain access to an appropriate region.</if> <if type="freetier">If there is no **Register** option, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. As the tenancy administrator, please refer to the prerequisites to enable Oracle Data Safe in a region of your tenancy.</if><if type="livelabs">If there is no **Register** option, it is because Oracle Data Safe is not yet enabled in the region you have selected. For help, please click the **Need Help** button on the toolbar.</if>
 
      ![Register option for your database](images/register-database.png)
 
@@ -330,7 +327,7 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
 
     ![Registered Databases tab in OCI](images/access-data-safe-console-from-registered-databases-tab.png)
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -341,4 +338,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, December 14, 2020
+  * **Last Updated By/Date** - Jody Glover, March 29, 2021
