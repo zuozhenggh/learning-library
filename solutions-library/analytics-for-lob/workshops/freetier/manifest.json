@@ -1,5 +1,6 @@
 {
   "workshoptitle": "Oracle Analytics for LOB Workshop",
+  "help": "livelabs-help-analytics_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -45,6 +46,11 @@
             "title": "Lab 7: Essbase and Data Visualization",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-dv/essbase-dv.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
      ]
 }
