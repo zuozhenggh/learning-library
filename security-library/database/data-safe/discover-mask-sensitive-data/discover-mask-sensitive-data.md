@@ -23,12 +23,12 @@ To complete this lab, you need to have the following:
 - An Oracle Cloud account
 - Access to an Autonomous Database as the `ADMIN` user, sample data for Oracle Data Safe loaded into the database, and the Discovery and Masking features enabled on your database
 - Access to an Oracle Data Safe service
-- Privileges to use the Discovery and Masking features on your database
+- Privileges in the Oracle Data Safe Console to use the Discovery and Masking features on your database
 
 ### Assumptions
 
-- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.
-- You completed the [Provision and Register and Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Getting Started](?lab=getting-started) page.
+- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.
 - The target database name used in the example screenshots is ad01. Your data values will most likely be different.
 
 
@@ -294,7 +294,7 @@ The Data Masking wizard generates a masking policy for your target database base
   ![Masked EMPLOYEE data](images/masked-query-results.png)
 
 
-
+Congratulations! You have completed the Oracle Data Safe Fundamentals workshop.
 
 
 ## Learn More
@@ -304,7 +304,4 @@ The Data Masking wizard generates a masking policy for your target database base
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 9, 2021
-
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021

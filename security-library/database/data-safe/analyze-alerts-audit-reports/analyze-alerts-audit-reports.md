@@ -33,13 +33,13 @@ To complete this lab, you need to have the following:
 
 This lab assumes the following:
 
-- You are signed in to the Oracle Cloud Infrastructure Console. <if type="paid">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="freetier">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="livelabs">If not, please scroll to the bottom of this page, click **Show login instructions**, and sign in.</if>
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Getting Started](?lab=getting-started) page.
 
 - You completed the following labs in this workshop:
 
     <if type="paid">- [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous)</if>
     <if type="freetier">- [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous)</if>
-    <if type="livelabs">- [Register an Autonomous Database](?lab=lab-1-provision-register-autonomous)</if>
+    <if type="livelabs">- [Register an Autonomous Database](?lab=lab-1-register-autonomous-database)</if>
     - [Provision Audit and Alert Policies](?lab=lab-2-provision-audit-alert-policies)
 
 - Your data values will be different than those shown in the screenshots in this lab.
@@ -261,7 +261,7 @@ This lab assumes the following:
 
 
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -271,7 +271,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 9, 2021
-
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021

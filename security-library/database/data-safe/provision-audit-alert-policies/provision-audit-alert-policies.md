@@ -26,8 +26,8 @@ To complete this lab, you need the following:
 
 ### Assumptions
 
-- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. <if type="paid">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="freetier">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="livelabs">If not, please scroll to the bottom of this page, click **Show login instructions**, and sign in.</if>
-<if type="paid">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="freetier">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="livelabs">- You completed the [Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if>
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Getting Started](?lab=getting-started) page.
+<if type="paid">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="freetier">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="livelabs">- You completed the [Register an Autonomous Database](?lab=lab-1-register-autonomous-database) lab in this workshop.</if>
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
 
@@ -183,7 +183,7 @@ There is an audit policy named `APP_USER_NOT_APP_SERVER` in your database that i
 
   ![Dashboard after provisioning audit and alert policies](images/dashboard-post-audit-alert-policy-provisioning.png)
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -194,6 +194,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 9, 2021
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021

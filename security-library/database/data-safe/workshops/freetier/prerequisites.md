@@ -157,7 +157,7 @@ You need to create a compartment in your tenancy to store an Autonomous Database
 5. Click **Create Compartment**.
 
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 
 
@@ -173,7 +173,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 12, 2021
-
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021
