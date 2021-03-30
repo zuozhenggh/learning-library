@@ -26,7 +26,7 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
 
     Click the **Mobile Applications** tab on the left to hide the Mobile Apps pane and create more room for the Page Designer. You may also want to widen your browser window.
 
-3.  Click **Components**, scroll down to Collection in the Components palette, and drag a **List View** component to the page's Content Placeholder section.
+3.  In the Components palette, scroll down to Collection and drag a **List View** component to the page's Content Placeholder section.
 
 4.  In the Properties pane, click **Add Data** to open the Add Data Quick Start.
 
