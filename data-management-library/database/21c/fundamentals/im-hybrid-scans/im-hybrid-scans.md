@@ -61,15 +61,12 @@ The `IM_Hybrid_setup.sh` shell script configures the IM column store to 110M, cr
     ORACLE instance started.
     ...
     SQL> CREATE TABLESPACE imtbs DATAFILE '/u02/app/oracle/oradata/pdb21/imtbs1.dbf' SIZE 500M;
-
     Tablespace created.
 
     SQL> CREATE USER imu IDENTIFIED BY password DEFAULT TABLESPACE imtbs;
-
     User created.
 
     SQL> GRANT create session, create table, unlimited tablespace TO imu;
-
     Grant succeeded.
 
     SQL>
@@ -109,9 +106,7 @@ The `IM_Hybrid_setup.sh` shell script configures the IM column store to 110M, cr
     $ <copy>sqlplus system@PDB21</copy>
 
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Enter password: <b><i>WElcome123##</i></b>
-
     Last Successful login time: Wed Jan 08 2020 12:03:56 +00:00
 
     Connected to:
@@ -119,13 +114,9 @@ The `IM_Hybrid_setup.sh` shell script configures the IM column store to 110M, cr
     ```
 
     SQL> <copy>COL table_name FORMAT A10</copy>
-
     SQL> <copy>COL inmemory_compression FORMAT A11</copy>
-
     SQL> <copy>COL COL_NO_INMEM FORMAT 9999999999999999999999</copy>
-
     SQL> <copy>COL COL_INMEM FORMAT 9999999999999999999999</copy>
-
     SQL> <copy>COL segment_name FORMAT A12</copy>
 
     SQL>
@@ -310,7 +301,6 @@ The `IM_Hybrid_setup.sh` shell script configures the IM column store to 110M, cr
 
     ```
     SQL> <copy>DROP USER imu CASCADE;</copy>
-
     User dropped.
 
     SQL> <copy>EXIT</copy>

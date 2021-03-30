@@ -20,7 +20,3 @@ Copyright (c) 2014, 2021 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
 See [LICENSE](LICENSE.md) for details.
 
-## Need Help?
-Please submit feedback or ask for help with the [OCI Team within livelabs](mailto:livelabs-help-oci_us@oracle.com).
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

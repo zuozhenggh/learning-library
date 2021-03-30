@@ -350,7 +350,3 @@ You may now [proceed to the next lab](#next) or paste it in the LiveLabs reserva
 - **Author** - Dan Kingsley, Enablement Specialist, OSPA
 - **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, October 2020
 - **Workshop (or Lab) Expiry Date** - March 27, 2021
-
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name. You can also include screenshots and attach files.

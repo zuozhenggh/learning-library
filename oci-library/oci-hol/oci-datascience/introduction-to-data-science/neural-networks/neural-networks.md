@@ -69,10 +69,10 @@ In this lab you will:
 
     ```bash
     <copy>
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/odca/b/mnist/o/t10k-labels-idx1-ubyte.gz
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/odca/b/mnist/o/t10k-images-idx3-ubyte.gz
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/odca/b/mnist/o/train-images-idx3-ubyte.gz
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/odca/b/mnist/o/train-labels-idx1-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Ho9fpzRD-oStl0uhuDUlZGPbx0ViU66I7oZ1vnUm2k_IIjO5LTVh6jOooThfCxFY/n/odca/b/datascienceworkshop/o/t10k-images-idx3-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/3PRsmdGc7G3cRm6wQ2nMuWPQQjakgqulvGy7_arPExK8QDa5zp9_NwYJqSpI3Ymj/n/odca/b/datascienceworkshop/o/t10k-labels-idx1-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/kGVKLYuKWDoVeUHthfQ3nximY9ZThHKwFzG5B9bEVr11OXlL6u-mq0D0srcnTHWJ/n/odca/b/datascienceworkshop/o/train-images-idx3-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/RzExCygu_bw-C57Dq6gy-UCL3r1ttYiAqxfy1uiejt35JDYwP7zLB_AYQSB-J6Xa/n/odca/b/datascienceworkshop/o/train-labels-idx1-ubyte.gz
     </copy>
     ```
 
@@ -383,7 +383,3 @@ Congratulations on completing this lab!
 * **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
 * **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

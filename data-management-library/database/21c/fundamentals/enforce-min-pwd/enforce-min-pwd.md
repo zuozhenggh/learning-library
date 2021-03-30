@@ -27,15 +27,10 @@ In this lab, you will:
     $ <copy>sqlplus sys@CDB21 AS SYSDBA</copy>
 
     SQL*Plus: Release 21.0.0.0.0 - Production on Wed Aug 12 09:45:45 2020
-
     Version 21.1.0.0.0
-
     Enter password: <i>WElcome123##</i>
-
     Connected to:
-
     Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Development
-
     Version 21.1.0.0.0
 
     SQL>
@@ -59,43 +54,24 @@ In this lab, you will:
                 WHERE profile='C##PROF_MIN_PASS_LEN' AND resource_type='PASSWORD';</copy>
 
     RESOURCE_NAME                  LIMIT                          MAN
-
     ------------------------------ ------------------------------ ---
-
     PASSWORD_VERIFY_FUNCTION       FROM ROOT                      YES
-
     FAILED_LOGIN_ATTEMPTS                                         YES
-
     PASSWORD_LIFE_TIME                                            YES
-
     PASSWORD_REUSE_TIME                                           YES
-
     PASSWORD_REUSE_MAX                                            YES
-
     PASSWORD_LOCK_TIME                                            YES
-
     PASSWORD_GRACE_TIME                                           YES
-
     INACTIVE_ACCOUNT_TIME                                         YES
-
     PASSWORD_ROLLOVER_TIME                                        YES
-
     PASSWORD_VERIFY_FUNCTION       ORA12C_STIG_VERIFY_FUNCTION    YES
-
     FAILED_LOGIN_ATTEMPTS                                         YES
-
     PASSWORD_LIFE_TIME                                            YES
-
     PASSWORD_REUSE_TIME                                           YES
-
     PASSWORD_REUSE_MAX                                            YES
-
     PASSWORD_LOCK_TIME                                            YES
-
     PASSWORD_GRACE_TIME                                           YES
-
     INACTIVE_ACCOUNT_TIME                                         YES
-
     PASSWORD_ROLLOVER_TIME                                        YES
 
     18 rows selected.
@@ -108,7 +84,6 @@ In this lab, you will:
 1. Set the initialization parameter
     ```
     SQL> <copy>ALTER SYSTEM SET mandatory_user_profile=C##PROF_MIN_PASS_LEN;</copy>
-
     System altered.
 
     SQL> <copy>SHOW PARAMETER mandatory_user_profile</copy>
@@ -153,33 +128,25 @@ In this lab, you will:
     SQL> <copy>CONNECT system@PDB21</copy>
 
     Enter password: <i>Welcome123##</i>
-
     Connected.
     ```
     ```
 
     SQL> <copy>CREATE USER john IDENTIFIED BY pass;</copy>
-
     CREATE USER john IDENTIFIED BY pass
-
     *
-
     ERROR at line 1:
-
     ORA-28219: password verification failed for mandatory profile
-
     ORA-20000: password length less than 10 characters
     ```
     ```
 
     SQL> <copy>CREATE USER john IDENTIFIED BY password123;</copy>
-
     User created.
     ```
     ```
 
     SQL> <copy>DROP USER john CASCADE;</copy>
-
     User dropped.
 
     SQL>
@@ -192,51 +159,32 @@ In this lab, you will:
 
     ```
     SQL> <copy>CONNECT sys@cdb21 AS SYSDBA</copy>
-
     Connected.
     ```
     ```
 
     SQL> <copy>DROP PROFILE c##prof_min_pass_len;</copy>
-
     DROP PROFILE c##prof_min_pass_len
-
     *
-
     ERROR at line 1:
-
     ORA-02381: cannot drop C##PROF_MIN_PASS_LEN profile
     ```
     ```
 
     SQL> <copy>!oerr ora 2381</copy>
-
     02381, 00000, "cannot drop %s profile"
-
     //  *Cause:  An attempt was made to drop PUBLIC_DEFAULT or a mandatory profile,
-
     //           which is not allowed due to following restrictions:
-
     //             * PUBLIC_DEFAULT profile can be dropped only when the database
-
     //               is in migration mode.
-
     //             * A mandatory profile can be dropped only if it is not set as a
-
     //               mandatory profile in root container (CDB$ROOT) of a multitenant
-
     //               container database (CDB) or in a Pluggable Database (PDB).
-
     //  *Action: If you are trying to drop the PUBLIC_DEFAULT profile, try dropping
-
     //           it during migration mode. If you are trying to drop a mandatory
-
     //           profile, check the MANDATORY_USER_PROFILE system parameter setting
-
     //           in the root container (CDB$ROOT) or in a Pluggable Database (PDB)
-
     //           and retry the operation after resetting the MANDATORY_USER_PROFILE
-
     //           system parameter by executing ALTER SYSTEM RESET DDL statement.
 
     SQL>
@@ -246,7 +194,6 @@ In this lab, you will:
 
     ```
     SQL> <copy>ALTER SYSTEM RESET mandatory_user_profile;</copy>
-
     System altered.
     ```
     ```
@@ -254,21 +201,15 @@ In this lab, you will:
     SQL> <copy>SHOW PARAMETER mandatory_user_profile</copy>
 
     NAME                                 TYPE        VALUE
-
     ------------------------------------ ----------- ------------------------------
-
     mandatory_user_profile               string      C##PROF_MIN_PASS_LEN
     ```
     ```
 
     SQL> <copy>DROP PROFILE c##prof_min_pass_len;</copy>
-
     DROP PROFILE c##prof_min_pass_len
-
     *
-
     ERROR at line 1:
-
     ORA-02381: cannot drop C##PROF_MIN_PASS_LEN profile
 
     SQL><copy>exit;</copy>
@@ -283,22 +224,18 @@ In this lab, you will:
 4. Connect to the instance and remove the profile
     ```
     SQL> <copy>sqlplus sys@cdb21 AS SYSDBA</copy>
-
     Connected.
     ```
     ```
     SQL> <copy>SHOW PARAMETER mandatory_user_profile</copy>
 
     NAME                                 TYPE        VALUE
-
     ------------------------------------ ----------- ------------------------------
-
     mandatory_user_profile               string
     ```
     ```
 
     SQL> <copy>DROP PROFILE c##prof_min_pass_len;</copy>
-
     Profile dropped.
 
     SQL> <copy>EXIT</copy>

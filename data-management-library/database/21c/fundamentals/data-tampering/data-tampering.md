@@ -237,13 +237,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
 
     $ <copy>/home/oracle/labs/M104784GC10/app_SH_tables.sh</copy>				  
-
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
     Last Successful login time: Wed Mar 25 2020 03:20:17 +00:00
-
     Connected to:
-
     525 rows updated.
 
     Commit complete.
@@ -271,9 +267,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
             WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
     CHECKSUM(AMOUNT_SOLD)
-
     ---------------------
-
                   835564
 
     SQL>
@@ -290,21 +284,16 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     $ <copy>sqlplus sh@PDB21</copy>
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
     Enter password: password
-
     Last Successful login time: Wed Mar 25 2020 03:28:37 +00:00
-
     Connected to:
     ```
     ```
 
     SQL> <copy>UPDATE sh.sales SET amount_sold = amount_sold*2 WHERE time_id='30-NOV-98';</copy>
-
     525 rows updated.
 
     SQL> <copy>ROLLBACK;</copy>
-
     Rollback complete.
 
     SQL>
@@ -411,9 +400,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
         WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
     CHECKSUM(AMOUNT_SOLD)
-
     ---------------------
-
                         0
 
     SQL>
@@ -430,9 +417,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
           WHERE fiscal_month_number = 12 AND fiscal_year = 1998;</copy>
 
       CHECKSUM(DISTINCTQUANTITY_SOLD)
-
       -------------------------------
-
                                 65515
 
       SQL>
@@ -485,7 +470,6 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     1684 rows updated.
 
     SQL> <copy>COMMIT;</copy>
-
     Commit complete.
 
     SQL>
@@ -500,7 +484,6 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
     CUST_EMAIL
     --------------------------------------------------
-
 
     SQL> <copy>SELECT CHECKSUM(cust_email) FROM sh.customers;</copy>
 
