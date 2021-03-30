@@ -15,7 +15,7 @@ For More Details About ORDS [Click here](#Appendix:MoreaboutORDS)
 
 ### Objectives
 In this lab, you will:
-* Connect the oracle SQL developer to Setup the environment for ORDS lab. 
+* Connect the oracle SQL developer to Setup the environment for ORDS lab.
 * Start ORDS in Standalone Mode.
 * Create RESTful Services for JSON, XML, Spatial data.
 
@@ -25,10 +25,10 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-     - Lab :  Login to Oracle Cloud
-     - Lab :  Generate SSH Key
-     - Lab :  Create Compute instance
-     - Lab :  Environment setup
+    - Lab : Login to Oracle Cloud
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab : Environment setup
 
 ## **STEP 1**: Start ORDS in standalone mode
 
@@ -1164,5 +1164,3 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Author** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-

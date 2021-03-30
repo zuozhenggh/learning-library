@@ -4,7 +4,7 @@
 
 In this lab we will build a Neural Network to recognize handwritten digits. We will cover the required theory behind Neural Networks first, after which you will go on and put the theory into practice using the OCI Data Science service.
 
-Estimated lab time: 60 minutes (video 30 minutes, exercise +/- 30 minutes)
+Estimated lab time: 45 minutes (video +/- 15 minutes, exercise +/- 30 minutes)
 
 This video will cover the theory behind Neural Networks.
 
@@ -43,7 +43,7 @@ In this lab you will:
 
 ## **STEP 2:** Install additional Python library idx2numpy
 
-   In this lab we will require a Python library that by default is not installed in Data Science, called `"idx2numpy"`. The source images are in IDX format, but we need a native array format for our Neural Network. This library takes care of the conversion from IDX to native array format.
+   In this lab we will require two Python library that by default are not installed in this Conda environment. We need `keras` to construct our model. And we need `idx2numpy` to convert the source images from IDX format to a native array format for our Neural Network. We need.
 
    1. Open terminal
 
@@ -53,28 +53,26 @@ In this lab you will:
 
 2. Install the new library
 
-   PIP is a command line tool to install Python packages. Copy the following command into the terminal.
+   Switch to the right Conda environment, then use the PIP command tool to install the additional Python package.
 
-    ```bash
-    <copy>
-    pip install idx2numpy
-    </copy>
-    ```
+   ```bash
+   <copy>
+   conda activate /home/datascience/conda/mlcpuv1
+   pip install keras
+   pip install idx2numpy
+   </copy>
+   ```
 
 ## **STEP 3:** Downloading and unpacking the data
 
-1. Create a new Jupyter notebook.
-
-   ![create jupyter notebook](images/createjupyternotebook.png)
-
-2. Download the MNIST data
+1. Still in the terminal, download the MNIST data
 
     ```bash
     <copy>
-    !wget http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
-    !wget http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
-    !wget http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
-    !wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Ho9fpzRD-oStl0uhuDUlZGPbx0ViU66I7oZ1vnUm2k_IIjO5LTVh6jOooThfCxFY/n/odca/b/datascienceworkshop/o/t10k-images-idx3-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/3PRsmdGc7G3cRm6wQ2nMuWPQQjakgqulvGy7_arPExK8QDa5zp9_NwYJqSpI3Ymj/n/odca/b/datascienceworkshop/o/t10k-labels-idx1-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/kGVKLYuKWDoVeUHthfQ3nximY9ZThHKwFzG5B9bEVr11OXlL6u-mq0D0srcnTHWJ/n/odca/b/datascienceworkshop/o/train-images-idx3-ubyte.gz
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/RzExCygu_bw-C57Dq6gy-UCL3r1ttYiAqxfy1uiejt35JDYwP7zLB_AYQSB-J6Xa/n/odca/b/datascienceworkshop/o/train-labels-idx1-ubyte.gz
     </copy>
     ```
 
@@ -84,16 +82,24 @@ In this lab you will:
 
     ```bash
     <copy>
-    !gunzip train-images-idx3-ubyte.gz
-    !gunzip train-labels-idx1-ubyte.gz
-    !gunzip t10k-images-idx3-ubyte.gz
-    !gunzip t10k-labels-idx1-ubyte.gz
+    gunzip train-images-idx3-ubyte.gz
+    gunzip train-labels-idx1-ubyte.gz
+    gunzip t10k-images-idx3-ubyte.gz
+    gunzip t10k-labels-idx1-ubyte.gz
     </copy>
     ```
 
+    ![MNIST files are now visible in the file explorer](images/mnist-in-explorer.png)
+
 ## **STEP 4:** Data Access and Exploration
 
-1. Load the data into memory
+1. Start the Python notebook
+
+   It is important to select the Python environment with the Conda environment that we just installed. Look for the notebook that uses Conda **"mlcpuv1"** and open it.
+
+   ![Start Python notebook](images/start-python-notebook.png)
+
+2. Load the data into memory
 
    Every time you see a piece of code as the following, please paste it into the notebook and click the run icon.
 
@@ -245,23 +251,19 @@ In this lab you will:
 
 4. Check the results
 
-Let's check the result by again displaying our example digit at index 5.
+   Let's check the result by again displaying our example digit at index 5. You will see that there are no rows anymore in the array (it's 1D now), and that the values are between 0.0 and 1.0.
 
-You will see that there are no rows anymore in the array (it's 1D now), and that the values are between 0.0 and 1.0.
-
-    ```python
-    <copy>
-    x_train[5]
-    </copy>
-    ```
+   ```python
+   <copy>
+   x_train[5]
+   </copy>
+   ```
 
 ## **STEP 6:** Model build and training
 
 1. Doublecheck the shapes
 
    Let's doublecheck the shapes of the input data before we start the training process.
-
-   You should see `x_train shape: (60000, 784)`, Number of images in x_train 60000, Number of images in x_test 10000.
 
     ```python
     <copy>
@@ -270,6 +272,8 @@ You will see that there are no rows anymore in the array (it's 1D now), and that
     print('Number of images in x_test', x_test.shape[0])
     </copy>
     ```
+
+    You should see `x_train shape: (60000, 784)`, `Number of images in x_train 60000`, `Number of images in x_test 10000`.
 
 2. Construct the model
 
@@ -282,6 +286,7 @@ You will see that there are no rows anymore in the array (it's 1D now), and that
     ```python
     <copy>
     import tensorflow as tf
+    import keras
     from keras.models import Sequential
     from keras.layers import Dense
     model = Sequential()
@@ -375,10 +380,6 @@ Congratulations on completing this lab!
 [Proceed to the next section](#next).
 
 ## Acknowledgements
-* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
 * **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

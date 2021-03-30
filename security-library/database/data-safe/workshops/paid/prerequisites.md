@@ -1,5 +1,5 @@
 
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
@@ -48,29 +48,18 @@ After the Oracle Data Safe environment is set up by your tenancy administrator, 
 
 3. When you're ready to sign in, click the **Sign in to your new user account** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
 
-
 4. Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud user name.
 
-
 5. In the **PASSWORD** field, enter the temporary password provided to you by your tenancy administrator.
-
 
 6. Click **Sign In**.
 
 7. If prompted by your browser to save the password, click **Never**.
 
-
-
 8. If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Save New Password**. After you sign in, the message **Email Activation Complete** is displayed.
-
-
-
-
 
 You are ready to begin the labs. Start with the [**Introduction**](?lab=introduction).
 
-
-If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
 
 
 ## **STEP 3** Set Up an Oracle Data Safe Environment
@@ -155,31 +144,20 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
 6. From the **COMPARTMENT** drop-down list, select the **root** compartment.
 
-7. In the **Policy Builder** section, do the following:
+7. In the **Policy Builder** section, click **Customize (Advanced)** to display the field instead of the Policy Builder.
 
-    a) From the **POLICY USE CASES** drop-down list, select **Compartment Management**.
+8. In the policy field, enter the following policy statements. Substitute {group name} and {compartment name} with your own values.
 
-    b) From the **COMMON POLICY TEMPLATES** drop-down list, select **Let compartment admins manage the compartment**.
+    ```
+    Allow group {group name} to manage all-resources in compartment {compartment name}
+    Allow group {group name} to use autonomous-database in compartment {compartment name}
+    ```
+    The first statement allows the user to create and manage an Autonomous Database in his or her own compartment. The second statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe. If you are providing an Autonomous Database for the user instead of the user creating one during the lab, you can swap out the first policy statement with the following statement:
 
-    c) From the **GROUPS** drop-down list, select the user group, for example, `dsg01`.
-
-    d) From the **LOCATIONS** drop-down list, select the user's compartment, for example, **dsc01**.
-
-    e) Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**. This statement allows the user to create and manage an Autonomous Database.
-
-
-8. Click **Create**.
-
-9. Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
-
-10. Click **+ Another Statement**.
-
-11. In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
-
-12. Click **Save Changes**.
-
-
-
+    ```
+    Allow group {group name} to manage data-safe in compartment {compartment name}
+    ```
+9. Click **Create**.
 
 
 
@@ -219,15 +197,15 @@ When you are done setting up the environment, email the user with the following 
 - The user's compartment name.
 
 
+You may [now proceed to the next lab](#next).
+
+
 ## Learn More
 
-- [ Oracle Cloud Infrastructure documentation - Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm)
+- [ Oracle Cloud Infrastructure documentation - Signing In to the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm)
 
 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, December 14, 2020
-
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021
