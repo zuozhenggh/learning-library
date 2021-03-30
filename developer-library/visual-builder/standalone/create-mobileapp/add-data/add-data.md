@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial shows you how to add data to a mobile application by importing the data from a file.
+This lab shows you how to add data to a mobile application by importing the data from a file.
 
 ### Estimated Lab Time: 5 minutes
 

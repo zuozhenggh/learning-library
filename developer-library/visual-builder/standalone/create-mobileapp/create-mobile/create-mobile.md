@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial shows you how to create a basic mobile application in Oracle Visual Builder and populate it with data from a business object.
+This lab shows you how to create a basic mobile application in Oracle Visual Builder and populate it with data from a business object.
 ### Estimated Lab Time:  10 minutes
 
 ### Background
@@ -28,7 +28,7 @@ You’ll create a business object and a mobile application that you'll later use
 
     ![](./images/vbmca_cra_04.png)
 
-4.  Click **Mobile Apps** and click **\+ Mobile Application** in the Mobile Apps tab.
+4.  Click **Mobile Apps** and click **\+ Mobile Application** in the Mobile Apps pane.
 
 5.  In the General Information screen of the Create Mobile Application wizard, enter `hrmobileapp` in the **Application Name** field, select **None** as the navigation style, and click **Next.**
 

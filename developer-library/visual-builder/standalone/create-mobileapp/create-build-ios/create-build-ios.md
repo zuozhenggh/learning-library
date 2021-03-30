@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This tutorial shows you how to create a build configuration to install a mobile application on iOS devices. 
+This lab shows you how to create a build configuration to install a mobile application on iOS devices. 
 
 ### Estimated Lab Time:  10 minutes
 
 ### Background
 
-In the previous tutorial, you defined application settings and a build configuration to deploy your mobile application on the Android platform; you'll do the same for the iOS platform in this tutorial. You'll then use these settings to build the mobile application for installation on both Android and iOS devices in a later tutorial.
+In the previous lab, you defined a build configuration to deploy your mobile application on the Android platform; you'll do the same for the iOS platform in this lab. You'll then use these settings to build the mobile application for installation on both Android and iOS devices in a later lab.
 
 ## **STEP 1**: Enroll in an iOS Developer Program
 
@@ -22,32 +22,19 @@ You must have a provisioning profile to deploy an iOS application (.IPA file) to
 
 Use the iOS Provisioning Portal, accessible only to members of the iOS Developer Program, to create a provisioning profile. For more information, review the [iOS Developer Support page](https://developer.apple.com/support/).
 
-## **STEP 3**: Configure Application Settings
+## **STEP 3**: Define a Build Configuration
+
+A build configuration includes deployment configuration information, such as the credentials of the certificate that you use to sign the application, and other information, such as the build type, bundle ID, and bundle version. You'll want to create separate builds: one for development and another for production, especially because iOS requires you to provide a certificate that can be used for production. For the purposes of this lab, however, we'll use one build configuration for both environments.
 
 These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
 
-1.  If necessary, click the **Mobile Applications ![](images/vbcsio_mob_mob_icon.png)** tab in the Navigator.
-2.  Click the **hrmobileapp** node and click the **Settings** tab.
-3.  In the General tab, review Application Settings. If you already looked over the values when creating an Android build configuration in the previous tutorial and are comfortable with the settings, skip this step. Otherwise, revise values that are displayed to the users (as suggested in the following examples):
+1.  If necessary, click the **Mobile Applications ![](images/vbcsio_mob_mob_icon.png)** tab in the Navigator. Click the **hrmobileapp** node, then the **Settings** tab.
 
-    -   **App Name**: Accept the default value or specify an alternative value for the app name. The value specified is the name that is displayed when the app is installed on a mobile device.  
-
-    -   **URL Scheme:** Accept the default value. This value specifies the URL scheme for the app.
-    -   **Package Name / Bundle ID Default:** Accept the default value. This value specifies the package name for the app. To avoid naming conflicts, iOS uses reverse package names, such as `com.company.application`. For more information, refer to the iOS Developer Library.
-    -   **Lock Portrait Mode:** Accept the default value to render the application in Portrait mode on the mobile device. Deselecting the check box renders the mobile application in both Landscape and Portrait mode.  
-
-    ![](images/vbcsio_mob_gen_s3.png)
-
-
-## **STEP 4**: Define a Build Configuration
-
-A build configuration includes deployment configuration information, such as the credentials of the certificate that you use to sign the application, and other information, such as the build type, bundle ID, and bundle version. You'll want to create separate builds: one for development and another for production, especially because iOS requires you to provide a certificate that can be used for production. For the purposes of this tutorial, however, we'll use one build configuration for both environments.
-
-1.  Click the **Build Configurations** tab and select **iOS** in the + Configuration drop-down list.
+2.  Click the **Build Configurations** tab and select **iOS** in the + Configuration drop-down list.
 
     ![](images/vbcsio_mob_bp_s1.png)
 
-2.   In the iOS Build Configuration dialog box, enter:
+3.   In the iOS Build Configuration dialog box, enter:
     -   **Configuration Name:** Enter the configuration name, for example, `MyiOSBuildConfiguration`.
     -   **Build Type:** Set the build type to **Debug**. Options are **Debug** or **Release**.
     -   **Bundle ID:** Enter a unique bundle ID for the application, for example, `com.myOrg.myComp.ios.hrmobileapp`. This ID must be unique for each application installed on an iOS device and must adhere to reverse-package style naming conventions (`com._organization_name_._company name_`). The application ID must adhere to the format set in the iOS Provisioning Portal and cannot contain any spaces. For more information, refer to the iOS Developer Library.  
@@ -62,11 +49,11 @@ A build configuration includes deployment configuration information, such as the
 
     ![](images/vbcsio_mob_bp_s2.png)
 
-3.  Click **Save Configuration**. The new build configuration is displayed on the Build Configurations page.
+4.  Click **Save Configuration**. The new build configuration is displayed on the Build Configurations page.
 
   ![](images/vbcsio_mob_bp_result.png)
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - February 2021
+**Last Updated** - March 2021

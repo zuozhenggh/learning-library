@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-This workshop shows you how to develop a mobile application in Visual Builder that displays a user interface in which your users can view, edit, and create data. You'll also learn how to install the mobile application, either as a native app on Android or iOS devices or as a Progressive Web Application (PWA).
+This workshop shows you how to develop a mobile application in Visual Builder for users to view, edit, and create data. You'll also learn how to install the mobile application on Android or iOS devices, either as a native mobile app or as a Progressive Web Application (PWA).
 
-Estimated Lab Time: 50 minutes
+Estimated Lab Time: 80 minutes
 
 ### What Is Oracle Visual Builder?
 Oracle Visual Builder provides easy access to data from any REST-based service, and enables the creation of reusable business objects for storing and managing data. Using the cloud-based visual development tools, you can create and test responsive web applications and native mobile apps without the need to install any additional software. The visual designer enables you to quickly layout pages in your applications by dragging and dropping UI components, customizing their attributes, and defining their behavior.  

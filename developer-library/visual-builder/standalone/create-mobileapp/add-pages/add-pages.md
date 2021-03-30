@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial shows you how to use the Quick Starts provided with Oracle Visual Builder to generate pages, buttons, and swipe actions that enable you to view, edit, and delete data in a mobile application.
+This lab shows you how to use the Quick Starts provided with Oracle Visual Builder to generate pages, buttons, and swipe actions that enable you to view, edit, and delete data in a mobile application.
 
 ### Estimated Lab Time:  10 minutes
 
