@@ -429,7 +429,7 @@ Create a parallel stage to group the likely buyers by type and by zip code.
 
     ![](./images/likelybuyersbytypeandzipvisual.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)

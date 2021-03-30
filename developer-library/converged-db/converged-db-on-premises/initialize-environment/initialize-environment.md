@@ -81,7 +81,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 This will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

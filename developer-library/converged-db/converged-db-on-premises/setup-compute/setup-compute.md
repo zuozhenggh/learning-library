@@ -378,7 +378,7 @@ If you have other compute instances you are not using, you can go to those insta
 12. Click **Save Changes**
 13. Click **Terraform Actions** -> **Apply**
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

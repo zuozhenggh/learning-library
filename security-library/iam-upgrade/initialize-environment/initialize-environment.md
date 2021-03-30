@@ -175,7 +175,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
     ```
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 Use these links to get more information about Oracle Identity and Access Management:

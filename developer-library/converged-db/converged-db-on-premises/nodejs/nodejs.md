@@ -138,7 +138,7 @@ This lab assumes you have:
 
     ![](./images/postman_after_update.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
  - [Node-js](https://nodejs.org/en/)

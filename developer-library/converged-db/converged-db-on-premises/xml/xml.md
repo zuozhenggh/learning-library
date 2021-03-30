@@ -342,7 +342,7 @@ This lab assumes you have:
 
     ![](./images/xml_m10_ba.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## **Appendix 1**: More about Oracle XML
 ### **XML with Oracle Database**

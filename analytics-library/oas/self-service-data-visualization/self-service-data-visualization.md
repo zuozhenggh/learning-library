@@ -300,7 +300,7 @@ Oracle Analytics provides users choice and flexibility with deployment.  Users c
 2. Download the “Circle Pack” and “Calendar Heatmap” extensions.
    ![](./images/uscve2.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)

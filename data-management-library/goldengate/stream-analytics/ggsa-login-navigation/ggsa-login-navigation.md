@@ -215,7 +215,7 @@ A `Target` is a destination environment downstream that is usually used when we 
 
 6. Click on the ReplenishAlert target and repeat all the steps the same as NotifyMaintenance target. Do not make any changes to these targets. This target should have (about 12 fields).
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)

@@ -376,7 +376,7 @@ For this , we will create two views next
 
     ![](./images/json_fun_5b.png " ")  
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## **Appendix 1**: Loading JSON Documents into the database  
 

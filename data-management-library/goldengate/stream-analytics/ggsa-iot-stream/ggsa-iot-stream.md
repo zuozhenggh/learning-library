@@ -200,7 +200,7 @@ The next stage is in a parallel branch of the pipeline where we are interested t
 3. Click on the *`Visualizations`* tab to view the bar chart for the average temperature of all machines that malfunctioned by type.
 4. Clik on *Done* to exit the pipeline.
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
