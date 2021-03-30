@@ -60,4 +60,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Charlie Berger, Senior Director of Product Management, Data Mining and Advanced Analytics
 * **Contributors** -  Anoosha Pilli, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
-* **Workshop Expiry Date** - March 2022
