@@ -156,7 +156,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 10. Member Selection:
 
-    a. Drag Scenario from POV tool bar to the sheet.
+    a. Click on ‘POV’ in ‘Essbase’ ribbon again.
 
     ![](./images/image14_23.png "")
 
@@ -176,7 +176,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     b. Start by creating smart view analysis report.
 
-    c. Create below report by zooming into the Year & Measures dimension.
+    c. Create the below report by zooming into the Year & Measures dimension.
 
     ![](./images/image14_26.png "")
 
@@ -227,7 +227,6 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 2.	On the Essbase Files dialog box, under Catalog, go to ‘gallery/Technical/Table Format’ as shown below, then select a sample tabular data file: `Unstr_Hints.xlsx`.
 
- The table format workbook have Intrinsic headers that uses table.column format.
  ![](./images/image14_44.png "")
 
 3.	Double click on the above directed file.  
@@ -271,7 +270,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
     ![](./images/image14_53.png "")
 
-2. By choosing the Inspect option for each application, you can see application specific logs, audit files, configuration files, etc.
+2. By choosing the Inspect option for application, you can see application specific logs, audit files, configuration files, etc.
 
     ![](./images/image14_54.png "")
     ![](./images/image14_55.png "")
@@ -352,7 +351,7 @@ You can create and run new jobs using this tab, as shown below.
 
 1. Many cube operations require connection information to access remote source data or hosts. You can define ‘Connections’ and ‘Datasources’ once and reuse them in various operations.
    
-A connection stores login credentials required to access an external source. A Datasource points to an external source of information.
+   A connection stores login credentials required to access an external source. A Datasource points to an external source of information.
 
     ![](./images/image14_72.png "")
 
@@ -362,7 +361,7 @@ A connection stores login credentials required to access an external source. A D
 
     *	Export Utility: Command-Line tool for exporting the outline of a cube and other related elements into a application workbook.
     *	LCM: Life-Cycle Management tool is used for backing up and restoring the Essbase artifacts.  
-    *	Command-Line Tool: CLI utility for On-Premise Essbase platform.  
+    *	Command-Line Tool: CLI utility to perform administrative actions on On-Premise Essbase platform.
     *	Migration Utility: This utility is used for migrating Essbase artifacts  between Essbase instances and environments. This tab also contains the download links for Smart View and Cube Designer add-ins. Extensions and Essbase Client tools such as MaxL, Java API, and others are also available in the Desktop Tools section.
 
     ![](./images/image14_73.png "")
