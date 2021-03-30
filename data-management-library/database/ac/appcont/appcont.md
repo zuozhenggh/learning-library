@@ -27,55 +27,17 @@ Estimated Lab Time: 30 Minutes
     cd /home/oracle
     unzip ACDemo_19c.zip
     ````
-    The directory **acdemo** will be created with the following files:
+    The directory **acdemo** will be created with the following structure and files:
+
     ````
     unzip ACDemo_19c.zip
     Archive:  ACDemo_19c.zip
     creating: acdemo/
-     inflating: acdemo/ac_noreplay.sbs
-     inflating: acdemo/ac_replay.sbs
-     inflating: acdemo/ac_setup_sql.sbs
-     inflating: acdemo/build.xml
-    creating: acdemo/classes/
+     reating: acdemo/classes/
     creating: acdemo/classes/acdemo/
-     inflating: acdemo/classes/acdemo/ACDemo.class
-     inflating: acdemo/classes/acdemo/PrintACStatThread.class
-     inflating: acdemo/classes/acdemo/PrintStatThread.class
-     inflating: acdemo/classes/acdemo/Worker.class
-     inflating: acdemo/kill_session.txt
     creating: acdemo/lib/
-     inflating: acdemo/lib/acdemo.jar
-     inflating: acdemo/lib/ojdbc8-19.8.0.0.jar
-     inflating: acdemo/lib/ons-19.8.0.0.jar
-     inflating: acdemo/lib/oraclepki-19.8.0.0.jar
-     inflating: acdemo/lib/orai18n-19.8.0.0.jar
-     inflating: acdemo/lib/orajsoda-1.1.4.jar
-     inflating: acdemo/lib/osdt_cert-19.8.0.0.jar
-     inflating: acdemo/lib/osdt_core-19.8.0.0.jar
-     inflating: acdemo/lib/ucp-19.8.0.0.jar
-     extracting: acdemo/MANIFEST.MF
-     inflating: acdemo/my_setup.sql
-     inflating: acdemo/README.txt
-     inflating: acdemo/runnoreplay
-     inflating: acdemo/runreplay
     creating: acdemo/src/
-    creating: acdemo/src/acdemo/
-     inflating: acdemo/src/acdemo/ACDemo.class
-     inflating: acdemo/src/acdemo/ACDemo.java
-     inflating: acdemo/src/acdemo/PrintACStatsThread.java
-     inflating: acdemo/src/acdemo/PrintStatThread.class
-     inflating: acdemo/src/acdemo/PrintStatThread.java
-     inflating: acdemo/src/acdemo/Worker.class
-     inflating: acdemo/src/acdemo/Worker.java
     creating: acdemo/win/
-     inflating: acdemo/win/ac_noreplay.install
-     inflating: acdemo/win/ac_noreplay.properties
-     inflating: acdemo/win/ac_replay.install
-     inflating: acdemo/win/create_hr.sql
-     inflating: acdemo/win/hr_tab.sql
-     inflating: acdemo/win/replace.bat
-     inflating: acdemo/win/replace.vbs
-     inflating: acdemo/win/SETUP_AC_TEST.bat
     inflating: README.txt
     inflating: SETUP_AC_TEST.sh
     ````

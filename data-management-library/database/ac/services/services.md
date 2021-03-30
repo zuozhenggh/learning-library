@@ -9,8 +9,7 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-- Lab: Fast Application Notification
-- Lab: Install Sample Schema
+
 
 ### About Oracle Database services
 
@@ -104,14 +103,15 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 8.  Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
     ````
     <copy>
-    lsnrctl services
+    ORACLE_HOME=/u01/app/19.0.0.0/grid
+    $ORACLE_HOME/bin/lsnrctl services
     </copy>
     ````
     ![](./images/lsnrctl-node1.png " ")
     ![](./images/lsnrctl-node2.png " ")
 
 
-    Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com"*
+    Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.pub.racdblab.oraclevcn.com"*
 
 9.  Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information about the SCAN Listeners.  Run the lsnrctl command below on **node 2** as the *grid*.
 
@@ -353,12 +353,12 @@ where you will see similar to:
 
     ````
     Alias (or URL) = (DESCRIPTION =
-   (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
-   (ADDRESS_LIST =(LOAD_BALANCE=on)
+    (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
+    (ADDRESS_LIST =(LOAD_BALANCE=on)
       (ADDRESS = (PROTOCOL = TCP)(HOST=primary-scan)(PORT=1521)))
-   (ADDRESS_LIST =(LOAD_BALANCE=on)
+    (ADDRESS_LIST =(LOAD_BALANCE=on)
       (ADDRESS = (PROTOCOL = TCP)(HOST=secondary-scan)(PORT=1521)))
-   (CONNECT_DATA=(SERVICE_NAME = gold-cloud))
+    (CONNECT_DATA=(SERVICE_NAME = gold-cloud))
     ````    
 
 8.  Update your tnsnames.ora file to specify a configuration similar to that below.
@@ -368,6 +368,8 @@ where you will see similar to:
     </copy>
     ````
 
+and add similar to the following:
+
     ````
     <copy>
     RECSRV=(DESCRIPTION =
@@ -375,7 +377,7 @@ where you will see similar to:
     (ADDRESS_LIST =(LOAD_BALANCE=on)
       (ADDRESS = (PROTOCOL = TCP)(HOST=lvracdb-<replaceThisSection>-scan.pub.racdblab.oraclevcn.com)(PORT=1521)))
     (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
-   </copy>
+    </copy>
     ````
 
    ![](./images/tnsnames-3.png " ")
@@ -387,16 +389,18 @@ where you will see similar to:
 FAN, connection identifier, TAC, AC, switchover, consumer groups, and many other features and operations are predicated on the use of services. Do not use the default database service (the service created automatically with the same name as the database or PDB) as this service cannot be disabled, relocated, or restricted and so has no high availability support. The services you use are associated with a specific primary or standby role in a Data Guard environment. Do not use the initialization parameter *service_names* for application usage.
 
 **Note:** If you need to find your database name run the command:
+
    ````
    <copy>
    srvctl config database
    </copy>
    ````
-1. Attributes set on the service enable applications to use Application Continuity. Create a service, setting the attributes **failover_restore**, **commit_outcome**, and **failovertype** for **Transparent Application Continuity (TAC)**. Replace the values for \-d, \-s, \-preferred and \-available with those of your system.
+
+1. Attributes set on the service enable applications to use Application Continuity. Create a service, setting the attributes **failover_restore**, **commit_outcome**, and **failovertype** for **Application Continuity (AC)**. Replace the values for "-d", "-s", "-preferred" and "-available" with those of your system.
 
    ````
    <copy>
-   srvctl add service -d <addDatabaseName> -s <myServiceName> -commit_outcome TRUE -failovertype AUTO -failover_restore AUTO -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
+   srvctl add service -d <addDatabaseName> -s <myServiceName> -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
    </copy>
    ````
 2. Create a service named **noac** with no AC settings
@@ -418,7 +422,7 @@ The two services you have just created (one named **noac** and another you named
 You may now *proceed to the next lab*.  
 
 ## Acknowledgements
-* **Authors** - Troy Anthony, Anil Nair
+* **Authors** - Troy Anthony
 * **Contributors** - Kay Malcolm
 * **Last Updated By/Date** - Kay Malcolm, October 2020
 
