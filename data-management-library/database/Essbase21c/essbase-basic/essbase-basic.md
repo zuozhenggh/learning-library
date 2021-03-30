@@ -35,7 +35,8 @@ This lab requires:
 
     ![](./images/image14_2.png "")
 
-4.	Select “Sample_Basic.xlsx” file  from Catalog -> All Files -> Gallery Templates.
+4.	Select “Sample_Basic.xlsx” file  from:   
+    All Files -> Gallery -> Applications ->Demo Samples-> Block Storage.
 
     ![](./images/image14_3.png "")
 
@@ -51,16 +52,16 @@ This concludes the creation of sample application from the “Catalog” in the 
 
 ## **Step 2:** Analyzing Essbase data using Smart View Add-ins
 
-In this section, we will be doing the following -
+In this section, The following topics will be covered:  
 
 * Connect to Data Sources
 * Explore the Smart View interface
 * Create ad hoc grids
 * Use Audit Trail
 
-After installing Oracle Smart View for Office, you can create connections to Essbase. Connections require information about the server and port. 
+After installing Oracle Smart View for Office, you can create connections to Essbase. 
 
-*To create a private connection to Essbase:*
+*TSteps o create a private connection to Essbase:*
 
 1. In Excel, select the Smart View ribbon, and then click Panel.
 
@@ -76,9 +77,9 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     ![](./images/image14_7.png "")
 
-6. After successful login, you can now begin working with data in Essbase. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application. Double click on the ‘Sales’ cube.
+6. After successful login, you can now begin working with data in Essbase. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application. click on ‘Sales’ and 'connect' and then click on 'Ad hoc analysis'.
    
-   Click Ad hoc analysis.
+   
 
    ![](./images/image14_8.png "")
 
