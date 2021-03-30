@@ -29,32 +29,32 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
         }, 
         {
-            "title": "Lab 1: Introduction to Essbase",
+            "title": "Lab 4: Introduction to Essbase",
             "publisheddate": "09/03/2020",
             "filename": "../../intro-essbase/intro-essbase.md"
         },
         {
-            "title": "Lab 2: Initialize Environment",
+            "title": "Lab 5: Initialize Environment",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-initialize-env/essbase-initialize-env.md"
         },
         {
-            "title": "Lab 3: Essbase Features: Basic",
+            "title": "Lab 6: Essbase Features: Basic",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-basic/essbase-basic.md"
         },
         {
-            "title": "Lab 4: Essbase Features: Advanced",
+            "title": "Lab 7: Essbase Features: Advanced",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-advanced/essbase-advanced.md"
         },
         {
-            "title": "Lab 5: Essbase Drill Thru Feature",
+            "title": "Lab 8: Essbase Drill Thru Feature",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-drill-thru/essbase-drill-thru.md"
         },
         {
-            "title": "Lab 6: Scenario Management",
+            "title": "Lab 9: Scenario Management",
             "publisheddate": "09/03/2020",
             "filename": "../../scenario/scenario.md"
         }
