@@ -23,19 +23,19 @@ In this workshop, you will:
 
 More specifically, you will:
 
-| Step  | Task |
+| STEP  | Task |
 | --- | --- |
 | [1](#Step1:GatherInformation) | Gather information you'll need for subsequent steps in this lab: <br/> - the ***SSH file*** associated with your cluster<br/> - the ***private IP address*** of the ***first*** utility node in the cluster<br/> - the ***public IP address*** of the ***first*** utility node in the cluster<br/> - the ***private IP address*** of the ***second*** utility node in the cluster<br/> - the ***public IP address*** of the ***second*** utility node in the cluster |
 | [2](#Step2:CopySSLCertificatesfromtheCluster) | Download the ***SSL certificate*** and ***key*** files from the first and second utility nodes of your cluster.  <br/><br/>**Note:** For highest security on a production system, you should obtain certificates from a trusted SSL certificate authority like IdenTrust or DigiCert. However, Big Data Service includes certificate and key files which you can use for learning and testing. (The certificates are self-signed, which means that the certificates aren't issued by a trusted certificate authority.) |
-| [3](#Step3:CreatetheLoadBalancer) | a. Create the ***load balancer***. <br/><br/>b. Create a ***backend set*** for Cloudera Manager. A backend set routes incoming traffic to the specified target(s), checks the health of the server, and optionally uses SSL to encrypt traffic. You'll complete the configuration of this backend set in Step 5. <br/><br/>c. Create a ***listener*** for Cloudera Manager. A listener is an entity that checks for incoming traffic on the load balancer's IP address. You'll complete the configuration of this listener in Step 11. |
-| [4](#Step4:CreateaCertificateBundle) | Create ***certificate bundles*** from the SSL certificates and keys you downloaded from your cluster in Step 2. <br/><br/>You'll create one bundle with the files downloaded from the first utility node (for Cloudera Manager) and another bundle with the files downloaded from the second utility node (for Hue and Data Studio). In later steps, you'll apply these bundles to your backend sets and listeners, to implement SSL for the load balancer. |
-| [5](#Step5:ConfiguretheBackendSetforClouderaManager) | Complete the configuration of the ***backend set*** you created in Step 3, for Cloudera Manager. You'll apply the first certificate bundle you created in Step 4 here. |
+| [3](#Step3:CreatetheLoadBalancer) | a. Create the ***load balancer***. <br/><br/>b. Create a ***backend set*** for Cloudera Manager. A backend set routes incoming traffic to the specified target(s), checks the health of the server, and optionally uses SSL to encrypt traffic. You'll complete the configuration of this backend set in STEP 5. <br/><br/>c. Create a ***listener*** for Cloudera Manager. A listener is an entity that checks for incoming traffic on the load balancer's IP address. You'll complete the configuration of this listener in STEP 11. |
+| [4](#Step4:CreateaCertificateBundle) | Create ***certificate bundles*** from the SSL certificates and keys you downloaded from your cluster in STEP 2. <br/><br/>You'll create one bundle with the files downloaded from the first utility node (for Cloudera Manager) and another bundle with the files downloaded from the second utility node (for Hue and Data Studio). In later steps, you'll apply these bundles to your backend sets and listeners, to implement SSL for the load balancer. |
+| [5](#Step5:ConfiguretheBackendSetforClouderaManager) | Complete the configuration of the ***backend set*** you created in STEP 3, for Cloudera Manager. You'll apply the first certificate bundle you created in STEP 4 here. |
 | [6](#Step6:CreateaBackendSetforHue) | Create and configure the ***backend set*** for Hue. |
 | [7](#Step7:CreateaBackendSetforBigDataStudio) | Create and configure the ***backend set*** for Oracle Data Studio. |
-| [8](#Step8:AddaBackendServerforClouderaManager) | Add a ***backend server*** to the backend set you created for Cloudera Manager in Step 3. <br/><br/>Backend servers receive incoming TCP or HTTP traffic and generate content in reply. For this load balancer, you'll use two backend servers: the first utility node of your cluster (where Cloudera Manager runs) and the second utility node (where Hue and Data Studio  run). |
+| [8](#Step8:AddaBackendServerforClouderaManager) | Add a ***backend server*** to the backend set you created for Cloudera Manager in STEP 3. <br/><br/>Backend servers receive incoming TCP or HTTP traffic and generate content in reply. For this load balancer, you'll use two backend servers: the first utility node of your cluster (where Cloudera Manager runs) and the second utility node (where Hue and Data Studio  run). |
 | [9](#Step9:AddaBackendServerforHue) | Add the ***backend server*** for Hue.|
 | [10](#Step10:AddaBackendServerforBigDataStudio) | Add the ***backend server*** for Data Studio. |
-| [11](#Step11:ConfiguretheListenerforClouderaManager) | Complete the configuration of the ***listener*** for Cloudera Manager, which you created in Step 3.  You'll apply the second certificate bundle you created in Step 4 here. |
+| [11](#Step11:ConfiguretheListenerforClouderaManager) | Complete the configuration of the ***listener*** for Cloudera Manager, which you created in STEP 3.  You'll apply the second certificate bundle you created in STEP 4 here. |
 | [12](#Step12:CreateaListenerforHue) | Create and configure a ***listener*** for Hue. |
 | [13](#Step13:CreateaListenerforBigDataStudio) | Create and configure a ***listener*** for Big Data Studio. |
 | [14](#Step14:AccesstheCluster) | Access Cloudera Manager, Hue, and Data Studio by using the IP address assigned to the load balancer, appended by the port number for the service. |
@@ -56,7 +56,7 @@ More specifically, you will:
     * **Lab 2: Create a BDS Hadoop Cluster**
     * **Lab 4: Access a BDS Node Using a Public IP Address**
 
-    Once you've completed those labs, you can start with [Step 1: Gather Information](#Step1:GatherInformation), below.
+    Once you've completed those labs, you can start with [STEP 1: Gather Information](#Step1:GatherInformation), below.
 
 If you choose ***not*** to complete the [Getting Started with Oracle Big Data Service (HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=674&session=3565379308288) workshop, you must create and configure:
 
@@ -71,7 +71,7 @@ If you choose ***not*** to complete the [Getting Started with Oracle Big Data Se
 * **Access to the cluster file system** (via SSH). You must be able to connect directly to the first and second utility nodes of your cluster. To do this, prior to creating a load balancer, you must set up your environment to allow that access. For example you can use Oracle FastConnect or Oracle IpSec VPN, you can set up a bastion host, or you can map private IPs to public IP addresses. See  [Establish Connections to Nodes with Private IP Addresses](https://docs.oracle.com/en/cloud/paas/big-data-service/user/establish-connections-nodes-private-ip-addresses.html) in *Using Big Data Service*.
 
 
-## **Step 1:** Gather Information
+## **STEP 1:** Gather Information
 
 Gather the following information before you start:
 
@@ -109,7 +109,7 @@ To copy the files:
     <!--![](./images/launch-powershell.png "Launch Powershell")-->
     ![](./images/launch-powershell.png "")
 
-    **Note:** If you use a Virtual Private Network (VPN), you may need to disconnect from VPN before using PowerShell to connect to your cluster. Re-establish your VPN connection when you move on to **Step 3: Create the Load Balancer,** below.
+    **Note:** If you use a Virtual Private Network (VPN), you may need to disconnect from VPN before using PowerShell to connect to your cluster. Re-establish your VPN connection when you move on to **STEP 3: Create the Load Balancer,** below.
 
 2. In PowerShell, use `ssh` with your private key to connect to the first utility node:
 
@@ -152,7 +152,7 @@ To copy the files:
     node.key
       ```
 
-  4. Copy and save the file *names* of the PEM files for the first and second utility nodes. You can identify them by looking at the first parts of the names, where ``<cluster>`` is the first seven letters of the cluster name, `un0` identifies the first utility node, and  `un1` identifies the second utility node. For example, in a cluster named `mycluster`, the first utility node is:
+4. Copy and save the file *names* of the PEM files for the first and second utility nodes. You can identify them by looking at the first parts of the names, where ``<cluster>`` is the first seven letters of the cluster name, `un0` identifies the first utility node, and  `un1` identifies the second utility node. For example, in a cluster named `mycluster`, the first utility node is:
 
     `node_`**`myclustun0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
 
@@ -250,7 +250,7 @@ To copy the files:
 
 10. Close Windows PowerShell.
 
-## **Step 3:** Create the Load Balancer
+## **STEP 3:** Create the Load Balancer
 
 1.   **Note:** If you use VPN to connect to Oracle Cloud, and you disconnected from VPN to perform STEP 2, above, reconnect to VPN before continuing.
 
@@ -261,12 +261,12 @@ To copy the files:
     <!--![](./images/start-nav-menu.png "Open Load Balancer")-->
     ![](./images/start-nav-menu.png "")
 
-2. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster, and then click **Create Load Balancer**.
+3. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster, and then click **Create Load Balancer**.
 
     <!--![](./images/start-create-load-balancer.png "Start Create Load Balancer")-->
     ![](./images/start-create-load-balancer.png "")
 
-3. On the **Add Details** page of the **Create Load Balancer** wizard, enter the following information:
+4. On the **Add Details** page of the **Create Load Balancer** wizard, enter the following information:
 
     * **Load Balancer Name:** Enter a name to identify the load balancer; for example, `bds-load-balancer`.
 
@@ -285,9 +285,9 @@ To copy the files:
     <!--![](./images/create-lb-add-details.png "Create load balancer - Add details")-->
     ![](./images/create-lb-add-details.png "")
 
-4. Click **Next**.
+5. Click **Next**.
 
-5.  On the **Choose Backends** page of the wizard, enter the following information to create a backend set for Cloudera Manager:
+6. On the **Choose Backends** page of the wizard, enter the following information to create a backend set for Cloudera Manager:
 
     * **Specify a Load Balancing Policy:** Accept the default **Weighted Round Robin**.
 
@@ -316,9 +316,9 @@ To copy the files:
 
     **Note:** When the load balancer is created, it will include this backend set for Cloudera Manager. The name of the backend set will be something like **bs\_lb\_&lt;date-timestamp&gt;**; for example, **bs\_lb\_2020-1117-1226**. You can't change this name.
 
-6. Click **Next**.
+7. Click **Next**.
 
-7. On the **Configure Listener** page of the wizard, enter the following information:
+8. On the **Configure Listener** page of the wizard, enter the following information:
 
     * **Listener Name:** Enter a name for the listener for Cloudera Manager; for example, `cm-listener`.
 
@@ -329,12 +329,12 @@ To copy the files:
     <!--![](./images/create-lb-add-listener.png "Create load balancer - Add listener")-->
     ![](./images/create-lb-add-listener.png "")
 
-8. Click **Submit**. When the large load balancer status icon at the top of the **Load Balancer Details** page turns from orange to green and the label is "Active," you can continue with the steps below. It may take a few minutes to create the load balancer.
+9. Click **Submit**. When the large load balancer status icon at the top of the **Load Balancer Details** page turns from orange to green and the label is "Active," you can continue with the steps below. It may take a few minutes to create the load balancer.
 
   <!--![](./images/lb-status-large-icon.png "Load balancer status icon")-->
   ![](./images/lb-status-large-icon.png "")
 
-## **Step 4:** Create Certificate Bundles
+## **STEP 4:** Create Certificate Bundles
 
 In this step, you'll create two certificate bundles with the SSL certificate and key files that you downloaded in **STEP 2: Copy SSL Certificates from the Cluster**. You'll use them later to configure SSL for backend sets and listeners.  
 
@@ -398,9 +398,9 @@ In this step, you'll create two certificate bundles with the SSL certificate and
     **Note:** If you get an error that the certificate and key files don't match, check to make sure that you added the PEM and KEY files that you downloaded from the same (second) utility node.
 
 
-## **Step 5:** Configure the Backend Set for Cloudera Manager
+## **STEP 5:** Configure the Backend Set for Cloudera Manager
 
-1. On the left side of the **Certificates** page, under **Resources**, click **Backend Sets**. The backend set you created for Cloudera Manager in [Step 3: Create the Load Balancer](#Step3:CreatetheLoadBalancer) is displayed in the **Backend Sets** table, with a name like **`bs_lb_<date-timestamp>`**; for example, **bs\_lb\_2020-1117-1226**. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing this backend set, and select **Edit**.
+1. On the left side of the **Certificates** page, under **Resources**, click **Backend Sets**. The backend set you created for Cloudera Manager in [STEP 3: Create the Load Balancer](#Step3:CreatetheLoadBalancer) is displayed in the **Backend Sets** table, with a name like **`bs_lb_<date-timestamp>`**; for example, **bs\_lb\_2020-1117-1226**. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing this backend set, and select **Edit**.
 
     <!--![](./images/edit-cm-backend-set.png "Edit CM backend set")-->
     ![](./images/edit-cm-backend-set.png "")
@@ -427,7 +427,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
     <!-- ![](./images/cipher-suite.png "Cipher suite field")-->
     ![](./images/cipher-suite.png "")
 
-## **Step 6:** Create a Backend Set for Hue
+## **STEP 6:** Create a Backend Set for Hue
 
 1. Remain on the **Backed Sets** page and click **Create Backend Set**. On the **Create Backend Set** page, enter the following information.
 
@@ -455,7 +455,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
 
-## **Step 7:** Create a Backend Set for Big Data Studio
+## **STEP 7:** Create a Backend Set for Big Data Studio
 
 1. Remain on the **Backend Sets** page and click **Create Backend Set** again. On the **Create Backend Sets** page, enter the following information.
 
@@ -481,7 +481,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
 2. Click **Create Backend Set**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend set to be added to the **Backend Sets** table.
 
-## **Step 8:** Add a Backend Server for Cloudera Manager
+## **STEP 8:** Add a Backend Server for Cloudera Manager
 
 1. Remain on the **Backend Sets** page. In the **Backend Sets** table, click the name of the backend set for Cloudera Manager; for example, **bs\_lb\_2020-0928-1136**. (Remember, the **Create Load Balancer** wizard assigned this name to first backend set; that is, the one for Cloudera Manager.)
 
@@ -505,7 +505,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
 4. Click **Add**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend server to be added to the **Backends** table.
 
-## **Step 9:** Add a Backend Server for Hue
+## **STEP 9:** Add a Backend Server for Hue
 
 1. Click **Backend Sets** in the breadcrumbs at the top of the page to return to the **Backend Sets** page. In the **Backend Sets** table, click the name of the backend set you created for Hue; for example, **hue-backend-set**.
 
@@ -523,7 +523,7 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
 4. Click **Add**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend server to be added to the **Backends** table.
 
-## **Step 10:** Add a Backend Server for Big Data Studio
+## **STEP 10:** Add a Backend Server for Big Data Studio
 
 1. Click **Backend Sets** in the breadcrumbs at the top of the page to return to the **Backend Sets** page. In the **Backend Sets** table, click the name of the backend set you created for Big Data Studio; for example, **data-studio-backend-set**.
 
@@ -541,32 +541,32 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
 4. Click **Add**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the backend server to be added to the **Backends** table.
 
-## **Step 11:** Configure the Listener for Cloudera Manager
+## **STEP 11:** Configure the Listener for Cloudera Manager
 
-1. Click **Load Balancer Details** in the breadcrumbs at the top of the page. On the left side of the **Load Balancer Details** page, under **Resources**, click **Listeners**. Notice that the **Listeners** table includes the listener you created for Cloudera Manager in **Step 3: Create the Load Balancer**; for example, **cm-listener**.
+1. Click **Load Balancer Details** in the breadcrumbs at the top of the page. On the left side of the **Load Balancer Details** page, under **Resources**, click **Listeners**. Notice that the **Listeners** table includes the listener you created for Cloudera Manager in **STEP 3: Create the Load Balancer**; for example, **cm-listener**.
 
 2. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing the listener, and select **Edit**.
 
-3. On the **Edit Listener** page, enter the following information. (Most of these options were set when you created the load balancer in **Step 3: Create the Load Balancer**, above. The option you'll change in this step is **Use SSL**.)
+3. On the **Edit Listener** page, enter the following information. (Most of these options were set when you created the load balancer in **STEP 3: Create the Load Balancer**, above. The option you'll change in this step is **Use SSL**.)
 
     * **Name:** Read only.
 
-    * **Protocol:** Select **HTTP**. (This should be set already, because you selected it in **Step 3: Create the Load Balancer**.)
+    * **Protocol:** Select **HTTP**. (This should be set already, because you selected it in **STEP 3: Create the Load Balancer**.)
 
-    * **Port:** Enter **`7183`**, which is the port on which Cloudera Manager listens.  (This should be set already, because you selected it in **Step 3: Create the Load Balancer**.)
+    * **Port:** Enter **`7183`**, which is the port on which Cloudera Manager listens.  (This should be set already, because you selected it in **STEP 3: Create the Load Balancer**.)
 
     * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the ***first*** utility node; for example, **first-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 
-    * **Backend Set:** From the list, select the backend set you created for Cloudera Manager; for example, **bs\_lb\_2020-0928-1136**.  (This should be set already, because you selected it in **Step 3: Create the Load Balancer**. Remember, the wizard assigned this name when you created the load balancer.)
+    * **Backend Set:** From the list, select the backend set you created for Cloudera Manager; for example, **bs\_lb\_2020-0928-1136**.  (This should be set already, because you selected it in **STEP 3: Create the Load Balancer**. Remember, the wizard assigned this name when you created the load balancer.)
 
     <!--![](./images/edit-listener-cm.png "Edit listener page")-->
     ![](./images/edit-listener-cm.png "")
 
 4. Click **Update Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be updated in the **Listeners** table, so that **Use SSL** is **Yes**.
 
-## **Step 12:** Create a Listener for Hue
+## **STEP 12:** Create a Listener for Hue
 
 1. Remain on the **Listeners** page and click **Create Listener**. Then, on the **Create Listener** page, enter the following information:
 
@@ -580,12 +580,12 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 
-    * **Backend Set:** From the list, select the backend set you created for Hue in **Step 6: Create a Backend Set for Hue**; for example, **hue-backend-set**.
+    * **Backend Set:** From the list, select the backend set you created for Hue in **STEP 6: Create a Backend Set for Hue**; for example, **hue-backend-set**.
 
 
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
-## **Step 13:** Create a Listener for Big Data Studio
+## **STEP 13:** Create a Listener for Big Data Studio
 
 1. Remain on the **Listeners** page. Click **Create Listener** again. Then, on the **Create Listener** page, enter the following information:
 
@@ -599,11 +599,11 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
     * **Verify Peer Certificate:** Leave this box unchecked.
 
-    * **Backend Set:** From the list, select the backend set you created for Big Data Studio in **Step 7: Create a Backend Set for Big Data Studio**; for example, **data-studio-backend-set**.
+    * **Backend Set:** From the list, select the backend set you created for Big Data Studio in **STEP 7: Create a Backend Set for Big Data Studio**; for example, **data-studio-backend-set**.
 
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
-## **Step 14:** Access the Cluster
+## **STEP 14:** Access the Cluster
 
 It may take a few minutes for the backend sets and listeners to be ready to receive requests. To open the services included in this load balancer:
 
