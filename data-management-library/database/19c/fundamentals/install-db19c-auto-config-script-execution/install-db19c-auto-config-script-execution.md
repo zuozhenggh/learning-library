@@ -3,9 +3,9 @@
 
 ## Introduction
 
-During installation, certain operations must be performed by the `root` user. Starting with Oracle Database 19c, the Oracle Universal Installer includes the option to run configuration scripts automatically for you as the `root` user. You can also choose to run these scripts manually, like you do for an Oracle Database 18c installation. Setting up permissions for configuration scripts to run without user intervention can simplify database installation and help avoid inadvertent permission errors.
+Certain operations must be performed by the `root` user when you install and configure an Oracle database. Starting with Oracle Database 19c, the Oracle Universal Installer includes an option to run configuration scripts automatically for you as the `root` user. Setting up permissions for configuration scripts to run without user intervention can simplify database installation and help avoid inadvertent permission errors. If you prefer, you can still choose to run the scripts manually, like you would do for an Oracle Database 18c installation.
 
-This lab shows you how to install Oracle Database 19c with the new option to run configuration scripts automatically. You also examine the response file and resulting container database (CDB) and pluggable database (PDB). 
+This lab shows you how to install Oracle Database 19c with the new option to run configuration scripts automatically. You also examine the response file and resulting container database (CDB) and pluggable database (PDB).
 
 
 Estimated Lab Time: 15 minutes
@@ -18,7 +18,7 @@ In this lab, you'll:
 - Create the Oracle base and Oracle inventory directories
 - Download the Oracle Database installation image files to a stage directory
 - Create an OFA-compliant Oracle home directory and extract the image files into that directory
-- Install the database software
+- Install the database software by using the Oracle Database Setup Wizard
 - Review the response file
 - Discover the container database (CDB) and pluggable database (PDB)
 - Uninstall Oracle Database 19c (optional)
@@ -38,35 +38,34 @@ To complete this lab, you need to have the following:
 
 Create the Oracle installation user account (`oracle`) that you want to own the software binaries.
 
-1. On your Linux machine, sign in to the terminal as the `root` user.
+1. In your Linux terminal, switch to the `root` user. You are prompted to enter a password.
 
-    ````
+    ```
     # <copy>su -</copy>
-    <enter the password>
-    ````
+    ```
 2. Create a `dba` group.
 
-    ````
+    ```
     # <copy>groupadd dba</copy>
-    ````
+    ```
 
 3. Create an `oinstall` group.
 
-    ````
+    ```
     # <copy>groupadd oinstall</copy>
-    ````
+    ```
 
 4. Create the `oracle` user and add the user to both the `oinstall` group and the `dba` group.
 
-    ````
+    ```
     # <copy>useradd -m -g oinstall -G dba oracle</copy>
-    ````
+    ```
 
-5. Set the password for the `oracle` user.
+5. Set the password for the `oracle` user. You are prompted to enter and confirm a password.
 
-    ````
+    ```
     # <copy>passwd oracle</copy>
-    <enter and confirm a password>
+    ```
 
 
 ## **STEP 2**: Create the Oracle base and Oracle inventory directories
@@ -96,7 +95,7 @@ Still as the `root` user, create two directories as per the Oracle Optimal Flexi
     # <copy>chown -R oracle:oinstall /u01/app/oraInventory</copy>
     ````
 
-5. Set the permissions on the `/u01/app` directory and all if its subdirectories (which includes the Oracle base and Oracle inventory directories) so that owner and group can read, write, and execute.
+5. Set the permissions on the `/u01/app` directory and all if its subdirectories (which includes the Oracle base and Oracle inventory directories) so that owner and group can read, write, and execute on the directories.
 
     ````
     # <copy>chmod -R 775 /u01/app</copy>
@@ -125,13 +124,13 @@ The Oracle Database installation image files are packaged in a ZIP file on Oracl
     $ <copy>mkdir -p /stage</copy>
     ````
 
-2. Start the Firefox web browser. The & starts Firefox in the background.
+2. Start the Firefox web browser. The & in the command below starts Firefox in the background.
 
     ````
     $ <copy>firefox &</copy>
     ````
 
-3. In the browser, access the URL: https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html
+3. In the browser, access the URL: `https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html`.
 
 
 4. Click to download the ZIP file named `LINUX.X64_19100000_db_home.zip`, and save the file to the `/stage` directory.
@@ -167,7 +166,7 @@ It's important that the Oracle home directory is in compliance with the Oracle O
 
 
 
-## **STEP 5**: Install the database software
+## **STEP 5**: Install the database software by using the Oracle Database Setup Wizard
 
 As the `oracle` user, install Oracle Database 19c using the Oracle Database Setup Wizard. During installation, choose to automatically run the configuration scripts.  
 
@@ -184,7 +183,7 @@ As the `oracle` user, install Oracle Database 19c using the Oracle Database Setu
 
 3. On the **Select Configuration Option** page, select **Create and configure a single instance database**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
 
-4. On the **Select System Class* page, select **Desktop Class*, and then click **Next**.
+4. On the **Select System Class** page, select **Desktop Class**, and then click **Next**.
 
 5. On the **Select Database Edition** page, select **Standard Edition 2**, and click **Next**.
 
@@ -198,16 +197,16 @@ REVIEWER: You could select Enterprise Edition instead?
 
 9. On the **Database Identifiers** page, set the default values as follows, and then click **Next**:
 
-    - Global database name: **orcl.localdomain**
-    - Oracle system identifier (SID): **oradb** [REVIEWER: SHOULD WE SET THIS TO ORCL?]
+    - Global database name: **ORCL.localdomain**
+    - Oracle system identifier (SID): **ORCL**
     - Create as Container database (selected)
-    - Pluggable database name **pdb1**
+    - Pluggable database name **PDB1**
 
 10. On the **Specify Configuration Options** page, leave the following default settings as is, and then click **Next**:
 
     - Automatic Memory Management is not enabled.
-    - The character set is set to Unicode (AL32UTF8).
-    - The sample schemas will not be installed.
+    - The character set is set to **Unicode (AL32UTF8)**.
+    - The sample schemas are not to be installed.
 
 11. On the **Database Storage** page, leave the default file system path (`u01/app/oracle/oradata`) as is, and then click **Next**.
 
@@ -219,7 +218,9 @@ REVIEWER: You could select Enterprise Edition instead?
 
 15. On the **Operating System Groups** page, set all of the groups (except for the Databse Operator group) to `oinstall`, and then click **Next**.
 
-16. On the **Root script execution** page, select the **Automatically run configuration scripts** check box. Leave **Use "root" user credential** selected, and enter the `root` user's password. This is the new feature that this lab is all about. Click **Next**.
+16. On the **Root script execution** page, select the **Automatically run configuration scripts** check box. Leave **Use "root" user credential** selected, and enter the `root` user's password. Click **Next**.
+
+  *This is the new feature that this lab is all about!*
 
 17. On the **Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements.
 
@@ -242,7 +243,9 @@ REVIEWER: You could select Enterprise Edition instead?
 22. On the **Finish** page, click **Close**. The installation is finished.
 
 
-## STEP 6: Review the Response File
+
+
+## **STEP 6**: Review the Response File
 
 1. Change to the response file directory.
 
@@ -270,7 +273,7 @@ REVIEWER: You could select Enterprise Edition instead?
     ```
 
 
-** **STEP 7**: Discover the container database (CDB) and pluggable database (PDB)
+## **STEP 7**: Discover the container database (CDB) and pluggable database (PDB)
 
 1. Set the Oracle environment variables. You need to set these each time you open a new terminal window.
 
@@ -337,7 +340,7 @@ The `SHOW` command is a tool-specific command, and is supported in SQL*Plus, SQL
 5. Show the current container name. Because you're currently connected to the root container, the name should be `CDB$ROOT`.
 
     ```
-    SQL> <copy>SHOW con_name
+    SQL> <copy>SHOW con_name</copy>
 
     CON_NAME
     -------------------
@@ -345,22 +348,19 @@ The `SHOW` command is a tool-specific command, and is supported in SQL*Plus, SQL
     SQL>
     ```
 
-6. Show the current container id. Because you're currently connected to the `root` container, the id should be 1.
+
+6. List all the containers in the CDB by querying the `V$CONTAINERS` view. The results should list three containers - the root container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`PDB1`).
+
+  a) Set the format.
 
     ```
-    SQL> <copy>SHOW con_id
-
-    CON_ID
-    -------------------
-    1
-    SQL>
+    SQL> <copy>COLUMN name FORMAT A8</copy>
     ```
 
-7. List all the containers in your CDB by querying the V$CONTAINERS view. The results should list three containers - the root container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and `PDB1`.
+  b) Query `V$CONTAINERS`.
 
     ```
-    SQL> COLUMN name FORMAT A8
-    SQL> SELECT name, con_id FROM v$containers ORDER BY con_id;
+    SQL> <copy>SELECT name, con_id FROM v$containers ORDER BY con_id;</copy>
 
 
     NAME         CON_ID
@@ -371,7 +371,7 @@ The `SHOW` command is a tool-specific command, and is supported in SQL*Plus, SQL
     SQL>
     ```
 
-8. Exit SQL*Plus.
+7. Exit SQL*Plus.
 
     ```
     $ <copy>EXIT</copy>
@@ -379,7 +379,7 @@ The `SHOW` command is a tool-specific command, and is supported in SQL*Plus, SQL
 
 
 
-## STEP 8: Uninstall Oracle Database 19c (Optional)
+## **STEP 8**: Uninstall Oracle Database 19c (Optional)
 
 If you need to uninstall the database, follow the steps below. If you plan to continue on to the other labs in this workshop, do not uninstall the database.
 
