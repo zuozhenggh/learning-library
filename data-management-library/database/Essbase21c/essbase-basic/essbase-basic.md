@@ -115,13 +115,13 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_12.png "")
 
-4. Double click or zoom in to Measures and Year. You will now see the measures by Quarters.
+4. Double click or zoom in to Year. You will now see the Quarter level data.
 
     ![](./images/image14_13.png "")
 
     ![](./images/image14_14.png "")
 
-5. Go to Year. Click on Zoom in – All levels. You will now see the numbers drill down to leaf level(Months). ‘Zoom in’ drills down to display details. To zoom in on a member, perform one of the following actions:
+5. Go to Year. Click on Keep only. Using this option, only the Year Dimension will be displayed and all the Quarters are removed.
 
     a. Select the member and then, on the Essbase ribbon, click Zoom In.
     b. Double-click the member.
@@ -130,7 +130,8 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_16.png "")
 
-6. Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Select Sales and click Keep Only. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
+
+6. Go to Year. Click on Zoom in-All levels.You will now see the numbers drill down to leaf level(Months).
 
     ![](./images/image14_17.png "")
 
@@ -140,7 +141,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 8. In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
 
-9. Pivot to POV:
+9.  Pivot to POV:
 
     a. Click on ‘POV’ in ‘Essbase’ ribbon.
 
