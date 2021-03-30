@@ -2,24 +2,29 @@
 
 ## Introduction
 
-This lab walks you through some of the advanced features on Essbase 19c platform such as data load to cubes and execution of Calculation scripts followed by utilities for Migration to Cloud and brief overview of automation using REST APIs.
+This lab will walk you through some of the advanced features of Essbase 21c. For example:
+* Data load to cubes 
+* Execution of Calculation scripts 
+* Utilities for Migration to Essbase 21c 
+* Overview of automation using REST APIs
 
-Estimated Lab Time: 25 minutes.
+Estimated Lab Time: *25 minutes*.
 
 ### Objectives
 
-* Learn how to build rules/calculations and run corresponding jobs.
-* Learn the migration process between Cloud environments.
+* Learn how to build rules, calculations and run corresponding jobs.
+* Learn the migration process from 11g to 21c environments.
 * Understand the Essbase REST API functionality.
 
 ### Prerequisites
 
 This lab requires -
 
-* An Oracle Public Cloud account-Essbase 19c instance
+* An Oracle Public Cloud account-Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
+----doubt
 *Note:* Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.
 
 ## **Step 1:** Data Load to Cube

@@ -18,7 +18,7 @@ This lab will require the following -
 
 * An Oracle public cloud tenancy where you have the resources available to provision an ATP instance with 1 OCPU, an Essbase instance with 1 OCPU.
 
-* [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
+* [Smartview Plugin](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/download-and-run-smart-view-installer.html) (Steps provided in this lab)
 
 
 ## **Step 1:** Features of Oracle Essbase
@@ -27,9 +27,9 @@ This lab will require the following -
 
 2. Both large organizations and small teams can share data easily, without the need to manage or consolidate multiple versions of spreadsheets, and quickly perform ad hoc analysis of the spreadsheet data.
 
-3. Application developers can utilize interfaces that enable them to extend, customize, and embed rich analytic experiences in the application flow.
+3. Application developers can utilize interfaces that enable them to extend, customize and embed rich analytic experiences in the application flow.
 
-4. Oracle Essbase, is a multi-dimensional engine that allows you to extract data from any source, handle real-time data and collaborate easily.
+4. Oracle Essbase is a multi-dimensional engine that allows you to extract data from any source, handle real-time data and collaborate easily.
 
 5. With Essbase you can create and manage Essbase applications from Microsoft Excel by using Cube Designer.
 
@@ -37,13 +37,13 @@ This lab will require the following -
 
 7. We can use Essbase to collect collaborative data, create scenarios, and perform what-if analysis using Smart View.
 
-## **Step 2:** Essbase Architecture on OCI
+## **Step 2:** Essbase 21c Architecture
 
-  ![](./images/notionalarchitecture.png "")
+  ![](./images/notionalarchitecture21c.png "")
 
 ## **Step 3:** Working with Essbase
 
-During our workshop we will help a fictitious company Dynamic Corporation to perform financial analysis. Dynamic Corp. is a high-tech manufacturer of hard disk drives. It is headquartered in California, Bay Area. Dynamic Corp., has its operations spread across multiple regions. Various departments within Dynamic Corp. performs financial analysis.
+During our workshop we will help a fictitious company Dynamic Corporation to perform financial analysis. Dynamic Corp. is a high-tech manufacturer of hard disk drives. It is headquartered in California, Bay Area. Dynamic Corp. has its operations spread across multiple regions. Various departments within Dynamic Corp. performs financial analysis.
 
 While doing financial analysis the number of reports developed are as follows:
 
@@ -79,7 +79,7 @@ Note: The steps going forward will have to followed in a Windows operating syste
 
 ## **Step 4:** Installing Smart View Plugin
 
-#### Smart View Prerequisites
+### **Smart View Prerequisites**
 1. The latest release of Smart View
 2. On the Oracle Technology Network Downloads tab, the latest release for Smart View is always certified.
 3. Microsoft Office 2010, 2013 or 2016
@@ -87,7 +87,7 @@ Note: The steps going forward will have to followed in a Windows operating syste
 
 **Note: You must use .NET Framework 4.5 if you are installing Smart View from Essbase without saving the installer locally.**
 
-#### Installation Steps
+### **Installation Steps**
 1. Navigate to [link](https://www.oracle.com/middleware/technologies/epm-smart-view-downloads.html) to download latest Smart View for office.
 2. On the Smart View download page on Oracle Technology Network, click Download Now, and then click Accept License Agreement. If the Oracle sign-in page is displayed, then sign in with your Oracle user name (usually your email address) and password.
 3. Follow the steps for your browser to download the .zip file, and save it to a folder on your computer.
@@ -99,11 +99,12 @@ Note: The steps going forward will have to followed in a Windows operating syste
 You may proceed to the next lab.
 
 
-## Acknowledgements
 
-* Author - NATD Cloud Engineering - Bangalore Analytics (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
-* Reviewed by - Ashish Jain, Product Management
-* Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
+
+## Acknowledgements
+* **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, March 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
