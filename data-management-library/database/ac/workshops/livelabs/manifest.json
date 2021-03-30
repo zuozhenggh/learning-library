@@ -1,0 +1,39 @@
+{
+    "workshoptitle": "RAC Fundamentals",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+         {
+            "title": "Introduction",
+            "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Build a DB System",
+            "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
+            "filename": "../../setup/setup-compute-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Services",
+            "description": "This lab walks you through some of the characteristics of database services.",
+            "filename": "../../services/services.md"
+        },
+        {
+            "title": "Lab 3: Application Continuity",
+            "description": "This lab walks you through some of the characteristics of database services.",
+            "filename": "../../appcont/appcont.md"
+        },        {
+            "title": "Lab 4: Fast Application Notification",
+            "description": "This lab examines FAN events.",
+            "filename": "../../clusterware/fan_callouts.md"
+        },
+        {
+            "title": "Lab 5: Install Sample Schema",
+            "description": "This lab walks you through installing the sample schema.",
+            "filename": "../../services/setup.md"
+        }
+    ]
+}
