@@ -10,25 +10,24 @@
         {
             "title": "Introduction",
             "description": "Brief Introduction on Oracle HPC",
-            "filename": "../../intro/intro.md"   
+            "filename": "../../intro/intro.md"
         },
         {
             "title": "LS-DYNA Introduction",
             "description": "Introduction to the software",
-            "filename": "../../ls-dyna/ls-dyna-intro.md"      
+            "filename": "../../ls-dyna/ls-dyna-intro.md"
         },
         {
             "title": "Lab 1: Launch HPC Cluster Network",
             "description": "Steps to launch HPC Cluster Network",
-            "filename": "../../launch-cluster/launch-cluster.md"        
+            "filename": "../../launch-cluster/launch-cluster.md"
         },
         {
             "title": "Lab 2: Access your Cluster",
             "description": "Steps to access the cluster",
             "filename": "../../access-cluster/access-cluster.md"
-            
         },
-        {         
+        {
             "title": "Lab 3: Configure Visualization",
             "description": "Setup and configure Visualization Tools",
             "filename": "../../config-visualization/config-visualization.md"
@@ -49,7 +48,11 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+<<<<<<< HEAD
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+=======
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+>>>>>>> upstream/master
         }
     ]
 }

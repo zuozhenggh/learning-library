@@ -21,7 +21,9 @@ Watch our short video that explains key features in Oracle Data Safe [here](http
 
 [![Introducing Oracle Data Safe](https://img.youtube.com/vi/wU-M5BlU0po/0.jpg)](http://www.youtube.com/watch?v=wU-M5BlU0po)
 
-### Objectives
+## Objectives
+
+The objectives of this workshop are as follows:
 
 - Get comfortable with Oracle's public cloud services
 - Provision an Autonomous Database on Shared Exadata Infrastructure and register it with Oracle Data Safe
@@ -34,6 +36,7 @@ Watch our short video that explains key features in Oracle Data Safe [here](http
 <if type="freetier">
 - Discover and mask sensitive data in Oracle Data Safe</if>
 
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -45,9 +48,9 @@ The following links provide more information about Oracle Data Safe:
 - [Oracle Data Safe data sheet](https://www.oracle.com/a/tech/docs/dbsec/data-safe/ds-security-data-safe.pdf)
 - [Oracle Data Safe frequently asked questions](https://www.oracle.com/a/tech/docs/dbsec/data-safe/faq-security-data-safe.pdf)
 
+
+
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 9, 2021
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021

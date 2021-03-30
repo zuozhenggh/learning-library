@@ -1,7 +1,7 @@
 {
-    "workshoptitle": "Modernize Enterprise Apps",
-    "help": "livelabs-help-db_us@oracle.com",
-    "tutorials": [
+  "workshoptitle": "Modernize Enterprise Apps",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction to Modernize Enterprise Apps",
@@ -49,7 +49,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }
