@@ -88,7 +88,7 @@ A failover means that the old primary, in our case the DB in AD2, will be disabl
     -> DB Systems
 
 2. And select ADGHOLAD1.
-3. Then scroll down and click on HOLDG database.
+3. Then scroll down and click on DGHOL database.
 
     ![](./images/failover-09.png)
 
