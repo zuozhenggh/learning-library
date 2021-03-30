@@ -31,7 +31,7 @@ You will also download Oracle SQL Developer to help execute the programs associa
 - Oracle SQL Developer client
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [What is a converged database?](https://blogs.oracle.com/database/what-is-a-converged-database)
