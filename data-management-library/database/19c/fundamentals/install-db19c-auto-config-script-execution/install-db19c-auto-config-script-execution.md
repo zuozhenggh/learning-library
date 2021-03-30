@@ -14,7 +14,7 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you'll:
 
-- Create an Oracle installation user account (`oracle`)
+- Create users and groups in the Linux operating system
 - Create the Oracle base and Oracle inventory directories
 - Download the Oracle Database installation image files to a stage directory
 - Create an OFA-compliant Oracle home directory and extract the image files into that directory
@@ -34,36 +34,26 @@ To complete this lab, you need to have the following:
 
 - You are using an Linux operating system.
 
-## **STEP 1**: Create an Oracle installation user account (`oracle`)
+## **STEP 1**: Create users and groups in the Linux operating system
 
-Create the Oracle installation user account (`oracle`) that you want to own the software binaries.
+You need to create an Oracle installation user account (`oracle`) that will own the installation software binaries.
 
-1. In your Linux terminal, switch to the `root` user. You are prompted to enter a password.
+1. At a terminal prompt, switch to the `root` user. You are prompted to enter a password.
 
-    ```
+    ```nohighlighting
     # <copy>su -</copy>
     ```
-2. Create a `dba` group.
+2. Create a `dba` group, `oinstall` group, and an `oracle` user account. Add `oracle` to both the `oinstall` and `dba` groups.
 
-    ```
+    ```nohighlighting
     # <copy>groupadd dba</copy>
-    ```
-
-3. Create an `oinstall` group.
-
-    ```
     # <copy>groupadd oinstall</copy>
-    ```
-
-4. Create the `oracle` user and add the user to both the `oinstall` group and the `dba` group.
-
-    ```
     # <copy>useradd -m -g oinstall -G dba oracle</copy>
     ```
 
-5. Set the password for the `oracle` user. You are prompted to enter and confirm a password.
+3. Set the password for the `oracle` user. You are prompted to enter and confirm a password.
 
-    ```
+    ```nohighlighting
     # <copy>passwd oracle</copy>
     ```
 
