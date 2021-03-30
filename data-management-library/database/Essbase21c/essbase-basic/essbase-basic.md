@@ -162,11 +162,13 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     b. Click on Scenario
 
-    c. Click on Member Selection in the Essbase ribbon. Select Actual.
+    c. Click on Member Selection in the Essbase ribbon. Select Actual and Refresh.
+
+    ![](./images/image14_25.png "")
 
     ![](./images/image14_24.png "")
 
-    ![](./images/image14_25.png "")
+    
 
 11. Free Form processing:
 
@@ -174,7 +176,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     b. Start by creating smart view analysis report.
 
-    c. Create report by zooming into the Year & Measures dimension.
+    c. Create below report by zooming into the Year & Measures dimension.
 
     ![](./images/image14_26.png "")
 
@@ -225,11 +227,11 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 2.	On the Essbase Files dialog box, under Catalog, go to ‘gallery/Technical/Table Format’ as shown below, then select a sample tabular data file: `Unstr_Hints.xlsx`.
 
-The table format workbook have Intrinsic headers that uses table.column format.
+ The table format workbook have Intrinsic headers that uses table.column format.
+ ![](./images/image14_44.png "")
 
-    ![](./images/image14_44.png "")
-
-3.	Double click on the above directed file.
+3.	Double click on the above directed file.  
+ The table format workbook have Intrinsic headers that uses table.column format.
 
 4.	On the `Cube Designer` ribbon, select `Transform Data`.
 
@@ -288,16 +290,18 @@ The table format workbook have Intrinsic headers that uses table.column format.
 
     ![](./images/image14_60.png "")
 
+    ![](./images/image14_61.png "")
+
 6. We now have to add a formula to this new member using the pencil icon under the ‘formula’ tab as shown. We will use **Spend + Invoice**;.
    
-    ![](./images/image14_61.png "")
+    
 
 
 7. Once added, we need to verify the formula and then select Apply and Close.
 
     ![](./images/image14_62.png "")
 
-8. You can also specify other options such as Data storage type and ‘Sort/Inspect’ of members in a dimension using the options in the web interface. You can use the ‘Skip’ option to skip missing values as shown below. Save all the changes.
+8. You can also specify other options such as Data storage type and ‘Sort/Inspect’ of members in a dimension using the options in the web interface. 
 
     ![](./images/image14_63.png "")
 
@@ -313,7 +317,7 @@ You can create and run new jobs using this tab, as shown below.
 
     ![](./images/image14_65.png "")
 
-2. You can see the status of the job in Essbase web interface once it is submitted. For more detials about the job you can click on "Actions".
+2. You can see the status of the job in Essbase web interface once it is submitted. For more details about the job you can click on "Actions".
 
     ![](./images/image14_66.png "")
 
@@ -379,7 +383,7 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, March 2021
 
 ## Need Help?
