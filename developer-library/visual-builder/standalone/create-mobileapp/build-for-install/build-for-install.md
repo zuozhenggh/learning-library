@@ -8,7 +8,9 @@ This lab shows you how to build a mobile application for installation on Android
 
 ### Background
 
-After you define build configurations that define deployment information for the Android and iOS platforms, you are ready to build the mobile application and stage it for testing. Visual Builder generates a QR code and a link to an installation file for each platform after the build process is complete. Because you've enabled the mobile app as a Progressive Web App (PWA), a QR code is generated for the PWA as well. Users can scan the QR code or download the installation file to install the mobile application.
+After you define build configurations that define deployment information for the Android and iOS platforms, you are ready to build the mobile application and stage it for testing. Visual Builder generates a QR code and a link to an installation file for each platform after the build process is complete. Users can scan the QR code or download the installation file to install the mobile application.
+
+Because you've enabled the mobile app as a Progressive Web App (PWA), a QR code is generated for the PWA as well. You can scan the QR code to install the app on a device, or simply launch it in your device's browser. For demonstration  purposes, this is the easiest option.  
 
 In this lab, you'll build a mobile application to generate QR codes and installation files for both the Android and iOS platforms. The steps to build a mobile application for installation on any one platform (either Android or iOS) are identical, except that a QR code and an installation file are only generated for the specified platform.
 
