@@ -201,21 +201,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 4. Follow the prompts to install the extension.
 
-5. Now, in the Essbase 21c web interface , click ‘Console’.
 
-6. On the ‘Desktop Tools’ tab, to the right of Cube Designer Extension, click ‘Download’.
-
-    ![](./images/image14_40.png "")
-
-7. In the ‘CubeDesignerInstaller.svext’ dialog box, select ‘Save File’ and click ‘OK’. Save the file to a local directory.
-
-    ![](./images/image14_41.png "")
-
-8. Close all Microsoft Office applications and make sure Microsoft Office applications are not running in the background.
-
-9. Double click the ‘CubeDesignerInstaller.svext’ file we downloaded to local directory.
-
-10. Restart Microsoft Office applications.
 
 
 ## **Step 5:** Creating a Cube from Tabular Data in Cube Designer
