@@ -29,7 +29,7 @@
         {
             "title": "Lab 3: Install Oracle Database 19c with Automatic Configuration Script Execution",
             "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution.",
-            "filename": "./../../install-db19c-auto-config-scripts/install-db19c-auto-config-scripts.md"
+            "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-config-script-execution.md"
         },
         {
             "title": "Need Help?",
