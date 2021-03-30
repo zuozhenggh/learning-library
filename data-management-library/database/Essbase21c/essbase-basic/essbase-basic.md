@@ -22,7 +22,7 @@ This lab requires:
 
 ## **Step 1:** Creating a Sample Application in Essbase21c
 
-1.	Login to the Essbase 21c web interface  using the Essbase URL. i.e. https://ip:9000/essbase/jet
+1.	Login to the Essbase 21c web interface  using the Essbase URL. i.e. http://ip:9000/essbase/jet
 
 2.	On the Applications tab click on “Import” option from the Essbase web interface as shown below.
 
@@ -58,7 +58,7 @@ In this section, The following topics will be covered:
 
 After installing Oracle Smart View for Office, you can create connections to Essbase. 
 
-*TSteps o create a private connection to Essbase:*
+*Steps to create a private connection to Essbase:*
 
 1. In Excel, select the Smart View ribbon, and then click Panel.
 
@@ -120,7 +120,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 5. Go to Year. Click on Keep only. Using this option, only the Year Dimension will be displayed and all the Quarters are removed.
 
-    a. Select the member and then, on the Essbase ribbon, click Zoom In.
+    a. Select the member and then, on the Essbase ribbon, click Zoom In.  
     b. Double-click the member.
 
     ![](./images/image14_15.png "")
@@ -131,10 +131,9 @@ You use Smart View panel to connect to your smart view data sources and manage c
 6. Go to Year. Click on Zoom in-All levels.You will now see the numbers drill down to leaf level(Months).
 
     ![](./images/image14_17.png "")
+    ![](./images/image14_18.png "")
 
 7. In the Smart View ribbon click 'Undo'. Undo reverses the last change you made to the data.
-
-    ![](./images/image14_18.png "")
 
 8. In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
 
