@@ -19,9 +19,6 @@ This lab requires:
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
------*doubt*
-*Note:* Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.
------*doubt*
 
 ## **Step 1:** Creating a Sample Application in Essbase21c
 
