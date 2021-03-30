@@ -65,7 +65,7 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     ![](./images/image14_6.png "")
 
-3. Enter the URL for the data source to create a connection. The URL syntax: `http://ip:9000/essbase/smartview`
+3. Enter the URL to create a connection. URL syntax: `http://ip:9000/essbase/smartview`
 
 4. Click Go.
 
@@ -73,7 +73,9 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     ![](./images/image14_7.png "")
 
-6. After successful login, you can now begin working with data in Essbase. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application. click on ‘Sales’ and 'connect' and then click on 'Ad hoc analysis'.
+6. After successful login, you can now begin working with data in Essbase. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application. 
+   click on ‘Sales’ and 'connect'.  
+   click on 'Ad hoc analysis'.  
    
    
 
@@ -105,7 +107,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 2. In the Connection Manager panel to your right, click ‘DynamicCorp’ – ‘Sales’. Click Connect and then Ad hoc analysis.
 
-    ![](./images/image14_11.png "")
+    ![](./images/image14_8.png "")
 
 3. After connecting to an Essbase server and opening the worksheet, you can initiate ad hoc reports against databases on the connected server. The Adhoc report on a blank worksheet returns data from the top levels of each database dimension.
 
