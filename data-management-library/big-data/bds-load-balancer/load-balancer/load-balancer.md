@@ -11,7 +11,7 @@ One advantage of using a load balancer is that you can configure it to use the S
 When you complete this lab, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number on which each service listens. For example, if the IP address of the load balancer is `203.0.113.1`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://203.0.113.1:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://203.0.113.1:8889`.
 
 
-Estimated lab time: 90 minutes, if you've already created the environment and cluster, as explained in [Prerequisites?](#prerequisites), below.
+Estimated lab time: 90 minutes, if you've already created the environment and cluster, as explained in [Prerequisites](#prerequisites), below.
 
 ### Objectives
 
@@ -52,7 +52,7 @@ More specifically, you will:
 
   This workshop assumes you're using a recent installation of Windows, such as Windows 10, which includes Windows PowerShell, `ssh`, and `scp`.  
 
-  * An **Oracle Cloud Infrastructure environment** with a **Virtual Cloud Network (VCN)**, a **public subnet**, the appropriate **security rules** for creating a load balancer, and a **Big Data Service non-HA cluster**. The fastest way to set up the environment for this workshop is to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop. You can complete the entire workshop if you want, but you must complete at least the following labs:
+  * An **Oracle Cloud Infrastructure environment** with a **Virtual Cloud Network (VCN)**, a **public subnet**, the appropriate **security rules** for creating a load balancer, and a **Big Data Service non-HA cluster**. The fastest way to set up the environment for this workshop is to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop. You can complete the entire workshop if you want, but you must complete at least the following labs:
 
     * **Lab 1: Set Up Your BDS Environment**
     * **Lab 2: Create a BDS Hadoop Cluster**
@@ -60,7 +60,7 @@ More specifically, you will:
 
     Once you've completed those labs, you can start with [Step 1: Gather Information](#Step1:GatherInformation), below.
 
-If you choose ***not*** to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, you must create and configure:
+If you choose ***not*** to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop, you must create and configure:
 
 * A **non-HA Oracle Big Data Service cluster** running in a **VCN** with an internet gateway and a public regional subnet (for a public load balancer). See [Set Up Oracle Cloud Infrastructure for Oracle Big Data Service](https://docs-uat.us.oracle.com/en/cloud/paas/big-data-service/user/set-oracle-cloud-infrastructure-oracle-big-data-service.html) and [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
 
@@ -79,9 +79,9 @@ Gather the following information before you start:
 
   | Information | What It Is and Where To Find It |
 | :--- | :--- |
-| SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br/><br/>The public key was associated with the cluster when the cluster was created. (See [Lab 2: Create a BDS Hadoop Cluster](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=lab-2-create-bds-hadoop-cluster) in the "Getting Started with Oracle Big Data Service (non-HA)" workshop.) If you don't have the private key, contact the cluster administrator or the person who created the cluster.<br/><br/>In the examples shown in this workshop, the example SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key). In the examples, the private key is located in `C:\Users\MYHOME\bds\ssh\`. |
+| SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br/><br/>The public key was associated with the cluster when the cluster was created. (See "Lab 2: Create a BDS Hadoop Cluster" in [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288).) If you don't have the private key, contact the cluster administrator or the person who created the cluster.<br/><br/>In the examples shown in this workshop, the example SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key). In the examples, the private key is located in `C:\Users\MYHOME\bds\ssh\`. |
 |Private IP address of the first utility node |The private IP address assigned to the first utility node when it was created. <br/><br/> Find this address in the **Node Information** box on the **Big Data > Clusters > Cluster Details > Nodes > Node Details** page for the first utility node of your cluster.<br/><br/>In the example shown in this workshop, the private IP address is `198.51.100.0`. Your IP address will be different. |
-|Public IP address of the first utility node |The public IP address of the first utility node. <br/><br/>If you followed the steps in the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-non-ha/workshops/freetier/?lab=introduction-oracle-big-data-service) workshop, this is the public IP address that you mapped to the node's private IP address. <br/><br/>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.  Note that IP addresses available via these solutions aren't reachable from the public internet. However, for convenience, they are called "public" in this lab.<br/><br/>In the examples shown in this workshop, the public IP address is `192.0.2.0`. Your IP address will be different.|
+|Public IP address of the first utility node |The public IP address of the first utility node. <br/><br/>If you followed the steps in the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop, this is the public IP address that you mapped to the node's private IP address. <br/><br/>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.  Note that IP addresses available via these solutions aren't reachable from the public internet. However, for convenience, they are called "public" in this lab.<br/><br/>In the examples shown in this workshop, the public IP address is `192.0.2.0`. Your IP address will be different.|
 
 
 ## **Step 2:** Copy SSL Certificates from the Cluster
