@@ -9,8 +9,8 @@ Estimated Lab Time: 15 minutes
 ### About Product/Technology
 
 The business problem defined here is to find a good wine that is less than 30 dollars using Oracle Machine Learning models to predict a wine's score.
-- Good wine have a score of greater than 90 points (GT_90_POINTS)
-- Bad wine have a score of less than 90 points (LT_90_POINTS)
+- Good wine have a score of greater than 90 points (GT\_90\_POINTS)
+- Bad wine have a score of less than 90 points (LT\_90\_POINTS)
 - Create models that will predict greater than or less than 90 points based on attributes
 
 The data that we are using is not a standard structured data set. For example, we have wine reviews that say "Oh this wine has a very robust flavor!", "It smelt the aroma of cherries" and so on. So, we are using Oracle Machine Learning with text mining to filter all the unstructured data stored in the database as Character Large Object (CLOB) data types.
@@ -75,7 +75,7 @@ In this lab, you will:
 
     ![](./images/notebook.png " ")
 
-## **STEP 2**: Prepare and Run your Notebook
+## **STEP 2**: Run the Notebook
 
 1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on the **gear** icon in the upper right. 
 
@@ -94,51 +94,51 @@ In this lab, you will:
     ![](./images/run-all-paragraphs.png " ")
 
 ## **STEP 3**: Explore the Notebook
-Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
+### Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
 
 ![](./images/explore.png " ")
 
-1. Before converting the description into a clob object, first, alter the table to add a points_bin column to the table.
+1. Before converting the description into a CLOB object, first, alter the table to add a POINTS_BIN column to the table.
 
     ![](./images/add-points-bin-column.png " ")
 
-2. Populate the points_bin column to do a classification to know whether a wine is good or bad i.e., as greater than 90 points and less than 90 points.
+2. Populate the points\_bin column with a classification derived from the value of the POINTS column to know whether a wine is good or bad i.e., GT\_90\_Points vs LT\_90\_Points.
 
     ![](./images/populate.png " ")
 
-3. Divide the table to segregate all of the wines to have points greater than 90 with a tag greater than 90 points and similarly less than 90 with the tag less than 90 points.
+3. View the updated WineReviews130k_bin table.
 
-    Scroll right to the table to view the points_bin column with the tags .
+    Scroll right on the table to view the added POINTS_BIN column.
 
     ![](./images/seggregate.png " ")
 
     ![](./images/populate-points.png " ")
 
-4. Then divide the table into trainer and test data set, to run or build our model on training data and then test model on testing data.
+4. Next, we use 60% of our dataset to construct a model and reserve the other 40% of our data to test the accuracy of the model we created. We don't use stratified sampling here because the amount of data we have is relatively balanced, the data is not overwhelmingly weighted toward GT_90_POINTS or LT_90_POINTS such that it would be impossible for Oracle Machine Learning to correlate attributes with scores.
 
     ![](./images/train-test-data.png " ")
 
-5. We will be converting the description column from varchar2 to clob object by adding a new column, setting the previous description column to a new column and then dropping the old column. This is for use in Oracle text mining.
+5. We will be converting the description column from VARCHAR2 to CLOB by adding a new column, setting the previous description column to a new column and then dropping the old column. We can't perform sampling on CLOB due to limitations, which is why we're converting from VARCHAR2 to CLOB after that is complete.
 
     ![](./images/description-to-clob.png " ")
 
-6. Notice that the description is now clob data type.
+6. Notice that the description is now CLOB data type.
 
     ![](./images/description-clob.png " ")
 
-7. Change the Description attribute from varchar2 to clob for training data and display the metadata.
+7. Change the Description attribute from VARCHAR2 to CLOB for training data and display the metadata.
 
     ![](./images/train-data.png " ")
 
     ![](./images/train-data1.png " ")
 
-8. Change the Description attribute from varchar2 to clob for test data and display the metadata.
+8. Change the Description attribute from VARCHAR2 to CLOB for test data and display the metadata.
 
     ![](./images/test-data.png " ")
 
     ![](./images/test-data1.png " ")
 
-## **STEP 4**: Data Understanding
+### Data Understanding
 
 Now, let us understand how the data is distributed in our table to see how many reviews or how many wines are in our data set, and which wines are greater than 90 points and less than 90 points.
 
