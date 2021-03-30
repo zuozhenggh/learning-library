@@ -26,8 +26,8 @@ To complete this lab, you need the following:
 
 ### Assumptions
 
-- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. <if type="paid">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="freetier">If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.</if><if type="livelabs">If not, please scroll to the bottom of this page, click **Show login instructions**, and sign in.</if>
-<if type="paid">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="freetier">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="livelabs">- You completed the [Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if>
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Getting Started](?lab=getting-started) page.
+<if type="paid">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="freetier">- You completed the [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.</if><if type="livelabs">- You completed the [Register an Autonomous Database](?lab=lab-1-register-autonomous-database) lab in this workshop.</if>
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
 
@@ -59,7 +59,7 @@ To complete this lab, you need the following:
 
   ![Green check mark under Retrieval Status](images/retrieval-status-green-checkmark.png)
 
-5. On the **Review and Provision Audit and Alert Policies** page, review the types of audit policies already enabled on your target database, and then click your target database name to provision more policies.
+5. On the **Review and Provision Audit and Alert Policies** page, review the types of audit policies already enabled on your target database.
 
     - The check mark under **Additional Policies** means that your target database has one or more predefined audit policies enabled on it.
 
@@ -69,7 +69,12 @@ To complete this lab, you need the following:
 
     ![Review and Provision Audit and Alert Policies page with pre-enabled audit policies](images/review-and-provision-audit-and-alert-policies-page.png)
 
-6. In the **Edit Policies** dialog box, the **Audit Policies** tab shows that the following **Basic Auditing** and **Admin Activity Auditing** policies are selected by default to be provisioned (meaning, created and enabled). Oracle recommends that you provision these policies. They are not provisioned by default.
+6. Click your target database name to provision more policies.
+
+    ![target name in table](images/click-target-name.png)
+
+
+7. On the **Audit Policies** tab in the **Edit Policies** dialog box, notice that the **Basic Auditing** and **Admin Activity Auditing** policies are selected to be provisioned. Oracle recommends that they be provisioned, so you can leave them selected. They are as follows:
       - Critical Database Activity
       - Login Events
       - Database Schema Changes (DDL)
@@ -77,15 +82,15 @@ To complete this lab, you need the following:
 
     ![Audit Policies tab in the Edit Policies dialog box](images/edit-policies-dialog-box-top-half.png)
 
-7. Expand **Custom Policies**.
+8. Expand **Custom Policies** to view the list of custom policies on your target database.
 
-    - If a custom policy is selected, it means that it is already created and enabled on your target database. There are two such policies in your database: `EMPSEARCH_SELECT_USAGE_BY_PETE` and `EMP_RECORD_CHANGES`.
+    - If a custom policy is selected, it means that it is already created and enabled on your target database. There are two such policies on your database: `EMPSEARCH_SELECT_USAGE_BY_PETE` and `EMP_RECORD_CHANGES`.
 
-    - If a custom policy is not selected, it means that it is created on your target database, but not yet enabled. There is one such policy in your database: `APP_USER_NOT_APP_SERVER`.
+    - If a custom policy is not selected, it means that it is created on your target database, but not yet enabled. There is one such policy on your database: `APP_USER_NOT_APP_SERVER`.
 
     ![Custom policies](images/custom-audit-policies.png)
 
-8. Expand **Oracle Pre-defined Policies** to view the list of Oracle predefined audit policies available on your target database. By default, the following policies are provisioned on an Autonomous Transaction Processing database:
+9. Expand **Oracle Pre-defined Policies** to view the list of Oracle predefined audit policies on your target database. By default, the following policies are provisioned on an Autonomous Transaction Processing database:
     - `ORA_ACCOUNT_MGMT`
     - `ORA_DATABASE_PARAMETER`
     - `ORA_SECURECONFIG`
@@ -101,13 +106,12 @@ To complete this lab, you need the following:
 
     ![Oracle Pre-defined policies](images/oracle-predefined-policies.png)
 
-9. Next to **Audit Compliance Standards**, notice that the **Center for Internet Security (CIS) Configuration** policy is created and enabled by default. The **Security Technical Implementation Guidelines (STIG)** policy is not provisioned by default.
+10. Next to **Audit Compliance Standards**, notice that the **Center for Internet Security (CIS) Configuration** policy is created and enabled by default. The **Security Technical Implementation Guidelines (STIG)** policy is not provisioned by default.
 
   ![Audit compliance standards](images/audit-compliance-standards.png)
 
-10. Click the **Alert Policies** tab.
+11. Click the **Alert Policies** tab and review the alert policies selected to be provisioned. Oracle recommends that you provision all of the alert policies. They are as follows:
 
-11. Review the selected alert policies, and then click **Provision**. Oracle recommends that you provision all of the alert policies, which are as follows:
     - Failed Logins by Admin User
     - Profile Changes
     - Database Parameter Changes
@@ -118,11 +122,13 @@ To complete this lab, you need the following:
 
   ![Selected alert polices](images/alert-policies.png)
 
-12. On the **Review and Provision Audit and Alert Policies** page, wait for check marks to appear under all audit policy types, except for **All User Activity**, and then click **Continue**.
+12. Click **Provision** to start provisioning the audit and alert policies on your target database.
+
+13. On the **Review and Provision Audit and Alert Policies** page, wait for check marks to appear under all audit policy types, except for **All User Activity**, and then click **Continue**.
 
   ![Audit policies enabled](images/audit-policies-enabled.png)
 
-13. On the **Start Audit Collection** page, observe the following defaults:
+14. On the **Start Audit Collection** page, observe the following defaults:
 
     - The audit trail location is automatically set to `UNIFIED_AUDIT_TRAIL`, which is the default audit trail for Autonomous Databases.
     - Audit collection is not yet started.
@@ -131,29 +137,40 @@ To complete this lab, you need the following:
 
   ![Start Audit Collection page](images/start-audit-collection-page.png)
 
-14. In the **Collect Audit Data From** column, click the calendar widget, configure a start date of 12 months ago, and then click **Done**.
+15. In the **Collect Audit Data From** column, click the calendar widget, and then configure a start date of 12 months ago, and then click **Done**.
 
   ![Collection start date](images/collection-start-date.png)
 
-15. Wait for the **To Be Collected**, **Collected**, and **Total** columns to populate, review their values, and then click **Start** to start collecting audit data. Don't worry if your numbers are different than those shown in the screenshot below.
+16. Wait for the **To Be Collected**, **Collected**, and **Total** columns to populate. Don't worry if your numbers are different than those shown in the screenshot below.
 
     - The **To Be Collected** column shows you the number of records to be retrieved for the selected audit trail since the specified start date.
     - The **Collected** column shows the number of audit records already collected for the current month for the target database (includes audit data collected from all the audit trails for the target database). This value helps you to determine whether you are going to exceed your monthly quota of one million records.
     - The **Total** column totals the **To Be Collected** and **Collected** values for a target database. This value tells you the overall number of audit records you are going to collect for a target database for the current month.
 
-  ![To Be Collected, Collected, and Total columns](images/to-be-collected-data.png)
+  ![To Be Collected, Collected, and Total columns](images/collection-values.png)
 
-16. In the **Start Audit Collection** dialog box, click **Start** to confirm that you want to start the `UNIFIED_AUDIT_TRAIL`.
+17. Click **Start** to start collecting audit data.
+
+  ![Start button](images/click-start.png)
+
+
+17. In the **Start Audit Collection** dialog box, click **Start** to confirm that you want to start the `UNIFIED_AUDIT_TRAIL`.
 
   ![Start Audit Collection dialog box](images/start-audit-collection-dialog-box.png)
 
-17. Wait for the message at the top of the page, which states that the `UNIFIED_AUDIT_TRAIL` is successfully created.
+18. Wait for the message at the top of the page, which states that the `UNIFIED_AUDIT_TRAIL` is successfully created.
 
-18. Click **Done**. You are directed to the **Audit Trails** page. From the **Audit Trails** page, you can manage all of the audit trails for your target databases. 
+19. Click **Done**.
+
+  ![Done button at the bottom of page](images/click-done.png)
+
+20. Notice that you are directed to the **Audit Trails** page. From the **Audit Trails** page, you can manage all of the audit trails for your target databases. 
 
    ![Audit Trails page](images/audit-trails-page.png)
 
-19. Observe that the **Collection State** column value changes from  `STARTING` to `COLLECTING`, and then to `IDLE`. Collection takes approximately 2 minutes.
+21. Observe that the **Collection State** column value changes from  `RUNNING` to `COLLECTING`, and then to `IDLE`. Collection takes approximately 2 minutes.
+
+
 
 ## **STEP 3**: View details for an audit trail
 
@@ -169,7 +186,7 @@ To complete this lab, you need the following:
 
 ## **STEP 4**: Enable a custom audit policy on your target database
 
-There is an audit policy named `APP_USER_NOT_APP_SERVER` in your database that is not yet enabled.
+There is an audit policy named `APP_USER_NOT_APP_SERVER` on your database that is not yet enabled.
 
 1. Click the **Audit Policies** tab.
 
@@ -183,7 +200,7 @@ There is an audit policy named `APP_USER_NOT_APP_SERVER` in your database that i
 
   ![Dashboard after provisioning audit and alert policies](images/dashboard-post-audit-alert-policy-provisioning.png)
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -194,6 +211,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, March 9, 2021
-
-
+* **Last Updated By/Date** - Jody Glover, March 29, 2021
