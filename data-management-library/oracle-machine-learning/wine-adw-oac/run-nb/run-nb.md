@@ -8,27 +8,25 @@ Estimated Lab Time: 15 minutes
 
 ### About Product/Technology
 
-With the classification techniques, the business problem defined here is a good model with
-- Whether it is a good or bad bottle of wine
-- Good wine having a score of greater than 90 points
-- Bad wine having a score of less than 90 points
+The business problem defined here is to find a good wine that is less than 30 dollars using Oracle Machine Learning models to predict a wine's score.
+- Good wine have a score of greater than 90 points (GT_90_POINTS)
+- Bad wine have a score of less than 90 points (LT_90_POINTS)
+- Create models that will predict greater than or less than 90 points based on attributes
 
-The data that we are using is not a standard structured data set. For example, we have wine reviews saying "Oh this wine has a very robust flavor!", "It smelt the aroma of cherries" and so on.
-
-So we are using Oracle text mining to filter all the unstructured data stored in the database as a (character large object).
+The data that we are using is not a standard structured data set. For example, we have wine reviews that say "Oh this wine has a very robust flavor!", "It smelt the aroma of cherries" and so on. So, we are using Oracle Machine Learning with text mining to filter all the unstructured data stored in the database as Character Large Object (CLOB) data types.
 
 ### Objectives
 
 In this lab, you will:
-* Upload the provided OML notebook
-* Run the OML notebook
-* Explore the notebook features
+* Upload an OML notebook
+* Run the notebook
+* Explore the notebook
 
 ### Prerequisites
 
-* Provisioned an ADB instance
+* Provisioned an Autonomous Database instance
 * Created an OMLUSER account
-* Uploaded data for OMLUSER
+* Uploaded data
 
 
 ## **STEP 1**: Upload Notebook to Oracle Machine Learning
@@ -279,7 +277,7 @@ Now let's apply the model to specific data points.
 
     ![](./images/remove-prediction-table.png " ")
 
-5. Create a new "WinePredictions" table in ADW to be accessed by Oracle Analytics Cloud and run our model on the entire data set to gain more visual insights.
+5. Create a new "WinePredictions" table in ADB to be accessed by Oracle Analytics Cloud and run our model on the entire data set to gain more visual insights.
 
     ![](./images/create-table-oac.png " ")
 
@@ -291,6 +289,6 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - Charlie Berger & Dhvani Sheth, Data Mining and Advanced Analytics
+* **Author** - Charlie Berger & Dhvani Sheth, Machine Learning, AI and Cognitive Analytics
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
