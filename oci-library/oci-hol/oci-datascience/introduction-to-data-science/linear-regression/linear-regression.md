@@ -29,7 +29,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 
 1. Download the terraform configuration source
 
-    Download [Terraform configuration source](files/oci-ods-orm.zip) and store it on your local PC. Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .zip
+    Download [Terraform configuration source](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Y1AdqPkxQdFho1SEuMMO7W8DlMWAkr0FUwdnL-m3ysgXirfHz9IV48yyAkRARF-b/n/odca/b/datascienceworkshop/o/oci-ods-orm.zip) and store it on your local PC. Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .zip
 
 2. In your Oracle Cloud console, open the menu.
    ![](./images/openmenu.png)
