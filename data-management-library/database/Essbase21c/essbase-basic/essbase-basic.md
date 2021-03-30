@@ -51,10 +51,9 @@ This concludes the creation of sample application from the “Catalog” in the 
 
 In this section, The following topics will be covered:  
 
-* Connect to Data Sources
 * Explore the Smart View interface
-* Create ad hoc grids
-* Use Audit Trail
+* Create Ad Hoc grids
+* Overview of Web user interface
 
 After installing Oracle Smart View for Office, you can create connections to Essbase. 
 
