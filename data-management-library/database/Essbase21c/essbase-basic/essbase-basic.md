@@ -15,7 +15,7 @@ Estimated Lab Time: 20 minutes.
 
 This lab requires:
 
-* An Oracle Public Cloud account-Essbase 21c instance
+* Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
