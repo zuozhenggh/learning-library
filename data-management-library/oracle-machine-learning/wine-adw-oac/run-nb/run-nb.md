@@ -288,6 +288,13 @@ Now let's apply the model to specific data points.
 
     ![](./images/show-table-oac.png " ")
 
+### Notebook Complete ###
+
+Whew! That was a lot of information to work through, but now you've successfully created, tested, and implemented an Oracle Machine Learning model! Grab a glass of wine and celebrate!
+
+![](./images/congrats.png " ")
+
+
 You may now [proceed to the next lab](#next).
 
 
