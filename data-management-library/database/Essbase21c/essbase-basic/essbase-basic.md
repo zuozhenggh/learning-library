@@ -344,7 +344,8 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 1. Many cube operations require connection information to access remote source data or hosts. You can define ‘Connections’ and ‘Datasources’ once and reuse them in various operations.
    
-   A connection stores login credentials required to access an external source. A Datasource points to an external source of information.
+   A connection stores login credentials required to access an external source. A Datasource points to an external source of information.  
+   More details on this will be covered in an upcoming lab. 
 
     ![](./images/image14_72.png "")
 
