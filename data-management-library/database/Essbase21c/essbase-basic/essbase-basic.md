@@ -246,7 +246,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 10.  The newly created application and cube are listed on the Applications home page in the user interface. Now the cube has been created from the tabular data, you can export the cube to an application workbook.
 
-11.	On the `Cube Designer` ribbon, select `Private / Local`, then select `Export Cube to Application Workbook`
+11.	On the `Cube Designer` ribbon, select `Local`, then select `Export Cube to Application Workbook`
 
     ![](./images/image14_48.png "")
 
