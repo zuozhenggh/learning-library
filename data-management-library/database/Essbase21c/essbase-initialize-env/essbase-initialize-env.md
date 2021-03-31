@@ -21,17 +21,17 @@ This lab assumes you have:
 ## **STEP 1**: Login To Oracle Essbase 21c Web UI
 This lab has been designed to be executed end-to-end with any modern browser on your laptop or workstation. Proceed as detailed below to login.
 ### UI Access
-1. Launch your browser to the following URL to access Oracle Essbase 21c UI
+1. Launch your browser to the following URL to access Oracle Essbase 21c UI  
+
     ```
-    <copy>
-    http://[Instance-public-ip]:9000/essbase/jet
-    </copy>
+    <copy>http://[Instance-public-ip]:9000/essbase/jet</copy>
     ```
+    
     ![](./images/ess-environment1.png " ")
 
 ***Note:*** While application processes are automatically started upon instance boot up, it takes approximately 15 minutes for this URL to become active after all processes have fully started. If the URL remains inactive even after 15 minutes, refer to **Step 2** below for manual start-up.
 
-2. Login with the below credentials
+1. Login with the below credentials
     ```
     Username	: <copy>Weblogic</copy>
     ```
@@ -54,16 +54,22 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 1. First login as “*opc*” using your SSH Private Key
 ​
 2. Then login to *oracle*.
+
+
     ```
     <copy>sudo su - oracle</copy>
     ```
+
+
     ![](./images/ess-environment2.png " ")
 3.  Go to this folder /u01/scripts to find the manual startup script
+
     ```
     <copy>cd /u01/scripts/</copy>
     ```
     ![](./images/ess-environment3.png " ")
 4.  Start the env_startup_script to start all the services of Database and Essbase.
+
     ```
     <copy>./env_start_script.sh</copy>
     ```
