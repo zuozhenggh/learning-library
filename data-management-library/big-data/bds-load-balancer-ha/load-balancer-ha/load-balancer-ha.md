@@ -1,4 +1,4 @@
-#  Use a Load Balancer to Access Services on Big Data Service (HA Cluster)
+#  Create the Load Balancer
 
 Follow these steps to create and use a load balancer for a highly-available (HA) Big Data Service cluster.
 
@@ -535,51 +535,9 @@ In this step, you'll create two certificate bundles with the SSL certificate and
 
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
 
-## **STEP 14:** Access the Cluster
+You may now [proceed to the next lab](#next).
 
-It may take a few minutes for the backend sets and listeners to be ready to receive requests. To open the services included in this load balancer:
-
-1. Find the IP address or the hostname used for your load balancer.
-
-    * **IP address**
-
-      Find the IP address in the **Load Balancer Information** panel at the top of the load balancer pages.
-
-      <!--![](./images/load-balancer-info.png "Load Balancer Information")-->
-      ![](./images/load-balancer-info.png "")
-
-    * **DNS hostname**
-
-      (DNS hostname is optional.) After the load balancer is created and it's been given an IP address, you or another administrator must add a DNS entry to your DNS name servers, to resolve your desired hostname (for example, `bds-frontend.mycompany.com`) to the public IP address of the load balancer. Then, the services registered in the load balancer will be accessible by using that hostname; for example, `bds-frontend.mycompany.com:7183` for Cloudera Manager.
-
-      For information about using DNS in Oracle Cloud Infrastructure, see [Overview of the DNS Service](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm) in the Oracle Cloud Infrastructure documentation.
-
-2. In a web browser, enter the address as follows:
-
-    * To use the load balancer's IP address: `https://`*`<load-balancer-ip-address>`*:*`<port>`*
-
-    * To use the load balancer's hostname in a domain: `https://`*`<hostname>`*:*`<port>`*
-
-    That is, for Cloudera Manager:
-
-    * `https://`*`<load-balancer-ip-address>`*`:7183`
-
-      <!--![](./images/cm-url.png "Address bar")-->
-      ![](./images/cm-url.png "")
-
-      * `https://`*`<hostname>`*`:7183`
-
-    For Hue:
-      * `https://`*`<load-balancer-ip-address>`*`:8889`
-      * `https://`*`<hostname>`*`:8889`
-
-    For Big Data Studio:
-      * `https://`*`<load-balancer-ip-address>`*`:30000`
-      * `https://`*`<hostname>`*`:30000`
-
-**This concludes this workshop.**
-
-## Want to Learn More?
+## Learn More
 
 * [Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/)
 
@@ -590,10 +548,3 @@ It may take a few minutes for the backend sets and listeners to be ready to rece
 ## Acknowledgements
 
 * **Last Updated Date:** March 2021
-
-
-## Need Help?
-
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

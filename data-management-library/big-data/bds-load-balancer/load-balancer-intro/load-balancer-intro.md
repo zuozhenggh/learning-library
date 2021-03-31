@@ -1,6 +1,6 @@
-#  Introduction
+# Introduction
 
-## Introduction and Overview of the Workshop
+## About This Workshop
 
 In this workshop, you'll create a load balancer that can be used as a front end for securely accessing Cloudera Manager, Hue, and Oracle Data Studio on your non-highly-available (non-HA) Big Data Service cluster.
 
@@ -72,6 +72,8 @@ If you choose ***not*** to complete the [Getting Started with Oracle Big Data Se
 
 * **Access to the cluster file system** (via SSH). You must be able to connect directly to the first utility node of your cluster. To do this, prior to creating a load balancer, you must set up your environment to allow that access. For example you can use Oracle FastConnect or Oracle IpSec VPN, you can set up a bastion host, or you can map private IPs to public IP addresses. See  [Establish Connections to Nodes with Private IP Addresses](https://docs.oracle.com/en/cloud/paas/big-data-service/user/establish-connections-nodes-private-ip-addresses.html) in *Using Big Data Service*.
 
+You may now [proceed to the next lab](#next).
+
 ## Want to Learn More?
 
 * [Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/)
@@ -83,10 +85,3 @@ If you choose ***not*** to complete the [Getting Started with Oracle Big Data Se
 ## Acknowledgements
 
 * **Last Updated Date:** March 2021
-
-
-## Need Help?
-
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
