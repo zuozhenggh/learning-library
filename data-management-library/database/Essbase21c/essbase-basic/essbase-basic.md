@@ -302,8 +302,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 1. The Jobs tab displays all the information about the jobs that have been executed in the Essbase web user interface.  
 
-You can create and run new jobs using this tab, as shown below.
-
+   You can create and run new jobs using this tab, as shown below.
     ![](./images/image14_64.png "")
 
 1. Execute a Build Dimension job by selecting the application and cube. The ‘Script’ file is the rule[.rul] file where the dimension build script exists. Select the pre-existing ‘DimBuild.rul’ file and its corresponding ‘DimensionsCSV.txt’ pair as the Data File and execute the job.
