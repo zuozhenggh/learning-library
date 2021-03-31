@@ -9,9 +9,9 @@ Estimated Lab Time: 15 minutes
 ### About Product/Technology
 
 The business problem defined here is to find a good wine that is less than 30 dollars using Oracle Machine Learning models to predict a wine's score.
-- Good wine have a score of greater than 90 points (GT\_90\_POINTS)
-- Bad wine have a score of less than 90 points (LT\_90\_POINTS)
-- Predict probability of a wine being GT\_90\_POINTS based on attributes
+- Good wine have a score of greater than 90 points (GT\_90\_Points)
+- Bad wine have a score of less than 90 points (LT\_90\_Points)
+- Predict probability of a wine being GT\_90\_Points based on attributes
 
 The data that we are using is not a standard structured data set. For example, we have wine reviews that say "Oh this wine has a very robust flavor!", "It smelt the aroma of cherries" and so on. So, we are using Oracle Machine Learning with text mining to filter all the unstructured data stored in the database as Character Large Object (CLOB) data types.
 
@@ -118,7 +118,7 @@ In this lab, you will:
 
     ![](./images/populate-points.png " ")
 
-4. Next, we use 60% of our dataset to construct a model and reserve the other 40% of our data to test the accuracy of the model we created. We don't use stratified sampling here because the amount of data we have is relatively balanced, the data is not overwhelmingly weighted toward GT_90_POINTS or LT_90_POINTS such that it would be impossible for Oracle Machine Learning to correlate attributes with scores.
+4. Next, we use 60% of our dataset to construct a model and reserve the other 40% of our data to test the accuracy of the model we created. We don't use stratified sampling here because the amount of data we have is relatively balanced, the data is not overwhelmingly weighted toward GT\_90\_Points or LT\_90\_Points such that it would be impossible for Oracle Machine Learning to correlate attributes with scores.
 
     ![](./images/train-test-data.png " ")
 
@@ -144,9 +144,9 @@ In this lab, you will:
 
 ### Data Understanding
 
-Now, let us understand how the data is distributed in our table to see how many reviews or how many wines are in our data set, and which wines are GT\_90\_POINTS or LT\_90\_POINTS.
+Now, let us understand how the data is distributed in our table to see how many reviews or how many wines are in our data set, and which wines are GT\_90\_Points or LT\_90\_Points.
 
-1. In the wine points ratings distribution, you can see that the lighter shade of blue are LT\_90\_POINTS and darker shade of the blue are GT\_90\_POINTS.
+1. In the wine points ratings distribution, you can see that the lighter shade of blue are LT\_90\_Points and darker shade of the blue are GT\_90\_Points.
 
     ![](./images/distribution.png " ")
 
@@ -168,7 +168,7 @@ Now, let us understand how the data is distributed in our table to see how many 
 
     ![](./images/pie-chart1.png " ")
 
-5.  We are doing this as a classification problem but the model we created has a attribute column POINTS we derived GT\_90\_POINTS or LT\_90\_POINTS from, which we don't need anymore. Create a new table WineReviews130KTarget without the POINTS attribute from WineReviews130K.
+5.  We are doing this as a classification problem but the model we created has a attribute column POINTS we derived GT\_90\_Points or LT\_90\_Points from, which we don't need anymore. Create a new table WineReviews130KTarget without the POINTS attribute from WineReviews130K.
 
     ![](./images/drop-points.png " ")
 
@@ -229,7 +229,7 @@ Now, let's build an attribute importance model using both structured and unstruc
 
 After we built our attribute importance model, we will build a classification model using both structured and unstructured (wine\_reviews) data.
 
-1. Build a supervised learning classification model - "Wine\_CLASS\_MODEL\_SVM" that predicts good wine (GT\_90\_POINTS) using Oracle Machine Learning Support Vector Machine Algorithm.
+1. Build a supervised learning classification model - "Wine\_CLASS\_MODEL\_SVM" that predicts good wine (GT\_90\_Points) using Oracle Machine Learning Support Vector Machine Algorithm.
 
     ![](./images/svm-classification-model.png" ")
 
@@ -255,19 +255,19 @@ Now that we have built a machine learning model, let's evaluate the model.
 
 Now let's apply the model to specific data points.
 
-1. Explore the wines that are predicted to be good wines based on the classification we preformed i.e., GT\_90\_POINTS or LT\_90\_POINTS. Each row in our test table displays the predicted result.
+1. Explore the wines that are predicted to be good wines based on the classification we preformed i.e., GT\_90\_Points or LT\_90\_Points. Each row in our test table displays the predicted result.
 
     ![](./images/model-deployement.png " ")
 
-2. Focusing on the wines that have been predicted to be the good wines i.e., GT\_90\_POINTS, and comparing them with the bad wines i.e., LT\_90\_POINTS., we are apply our model result on the actual dataset and then predict the result.
+2. Focusing on the wines that have been predicted to be the good wines i.e., GT\_90\_Points, and comparing them with the bad wines i.e., LT\_90\_Points., we are apply our model result on the actual dataset and then predict the result.
 
-    As we are applying the model, we get a prediction result of: which wine falls into which category, it's probability of being GT\_90\_POINTS, the actual wine description and country along with a few other parameters.
+    As we are applying the model, we get a prediction result of: which wine falls into which category, it's probability of being GT\_90\_Points, the actual wine description and country along with a few other parameters.
 
-    For example, the first record in the screenshot, ID - 127518 shows the prediction to be greater than 90 points and has the probability - 0.905 (approximately 90%) in which it is GT\_90\_POINTS. Notice that the description for this record mentions all the characteristics of a good wine.
+    For example, the first record in the screenshot, ID - 127518 shows the prediction to be greater than 90 points and has the probability - 0.905 (approximately 90%) in which it is GT\_90\_Points. Notice that the description for this record mentions all the characteristics of a good wine.
 
     ![](./images/actual-data-result.png " ")
 
-3. As we wanted inexpensive wines, this graphs shows 1000 good wines that are less than $15 and with predictions of being GT\_90\_POINTS by countries, based on our data set and model.
+3. As we wanted inexpensive wines, this graphs shows 1000 good wines that are less than $15 and with predictions of being GT\_90\_Points by countries, based on our data set and model.
 
     From the graph, notice that France has a good number of wines that are good as well as cheap and then US followed by Italy and Chile.
 
