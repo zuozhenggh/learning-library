@@ -154,14 +154,14 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 ## **Step 2:** Calculating Essbase Cube
 
-A cube contains two types of values: values that you enter, called input data, and values that are calculated from input data.
+A cube contains two types of values: values that you enter called input data and values that are calculated from input data.
 
-A cube can be calculated using one of two methods. Outline calculation, which is the simplest calculation method, bases the calculation of a cube on the relationships between members in the cube outline and on any formulas that are associated with members in the outline.
+A cube can be calculated using one of two methods:
+*  Outline calculation: This is the simplest calculation method, bases the calculation of a cube on the relationships between members in the cube outline(the hierarchy) and on any formulas that are associated with members in the outline. 
 
-A calculation script, which contains a series of calculation commands, equations, and formulas, allows you to define calculations other than those defined by the database outline.
-
-You create calculation scripts using a script editor in the Essbase web interface.
-Calculation scripts do not apply to aggregate storage applications.
+* Script based calculations:This contains a series of calculation commands, equations, and formulas, allows you to define calculations other than those defined by the database outline.  
+  You create calculation scripts using a script editor in the Essbase web interface.  
+  Calculation scripts do not apply to aggregate storage applications.
 
 1.	On the Application page, expand the application.
 
@@ -173,7 +173,7 @@ Calculation scripts do not apply to aggregate storage applications.
 
     ![](./images/image14_85.png)
 
-4.	Click Add   to create a new calculation script.
+4.	Click Add  to create a new calculation script.
 
 5.	If member names are required in your calculation script, drill into the Member Tree to find the members you want to add.
 Right-click dimension or member names to insert them into the script.
@@ -187,7 +187,7 @@ See the Function description under the menu to read descriptions of each functio
 		CALC DIM(Year, Measures, Market, Product);
 		ENDFIX
 
-8. In the name field of script editor give the name to script as CalcActual
+1. In the name field of script editor give the name to script as CalcActual
 
     ![](./images/image14_86.png)
 
