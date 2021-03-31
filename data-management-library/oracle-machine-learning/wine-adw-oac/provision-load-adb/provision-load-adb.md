@@ -10,8 +10,8 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you will:
 - Provision an Autonomous Database instance
-- Create and grant privileges to a user in the Autonomous Database instance
-- Load data into the Autonomous Database instance
+- Create and grant privileges to a user in the Autonomous Database
+- Load data into the Autonomous Database
 
 ### Prerequisites
 
