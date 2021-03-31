@@ -1,17 +1,16 @@
-## MyToDoReact version 1.0.
-##
-## Copyright (c) 2021 Oracle, Inc.
-## Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+# MyToDoReact version 1.0.
+Copyright (c) 2021 Oracle, Inc.
+Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
 # Build and Deploy My ToDo List React application for Java developers
 ## Introduction and Overview
 
 In this workshop, you will deploy a simple Cloud native application using the most commonly used frameworks and the Oracle Cloud Infrastructure services
 
-You will will learn how to use the Autonomous Database, the Container Registry, the Kubernetes Cluster (OKE) , Helidon, and the API Gateway managed services of the Oracle Cloud Infrastructure through the deployment of a simple ToDo List react application.
+You will will learn how to use the Autonomous Database, the Container Registry, the Kubernetes Cluster (OKE) , Helidon, and the API Gateway managed services of the Oracle Cloud Infrastructure through the deployment of a simple MyToDo List React JS application.
 ![](./images/architecture.png " ")
 
-### Let's Get Started!
+## Let's Get Started!
 
 Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Set up Dev Environment](?setup-dev-environment/README.md).
 
