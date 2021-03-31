@@ -114,7 +114,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_12.png "")
 
-4. Double click or zoom in to Year. You will now see the Quarter level data.
+4. Double click on year or in to next level. You will now see the Quarter level data.
 
 
     ![](./images/image14_14.png "")
