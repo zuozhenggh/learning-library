@@ -221,17 +221,17 @@ See the Function description under the menu to read descriptions of each functio
 
 ## **Step 3:** Migration Utilities
 
-This exercise will introduce how to automate tasks using Essbase Command Line Interface.
+With this exercise you will learn how to automate tasks using Essbase Command Line Interface.
 
-Import base cube using Application Workbook structures sheet from CLI
+1. **Import Sample Basic from CLI**:
 
 Before you start, copy the provided file [Sample_Basic.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/84mR3q7KTI_8Fnno0QzJRAMX4HsPPTmU2863GqOo-ok/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic.xlsx) to your CLI directory.
 
   ![](./images/image14_89.png)
 
-The file Sample_Basic.xlsx will be imported using CLI and form the starting point for the rest of the exercise   
+The file Sample_Basic.xlsx will be imported using CLI and it will be used for rest of the exercise   
 
-1. Next deploy the the Sample cube using the Sample_Basic.xlsx file.  Call the application Sample01
+1. Enter below command to deploy the the Sample cube using the Sample_Basic.xlsx file.  Name the application **Sample01** and cube as **base**.
 
     ```
     <copy> esscs.bat deploy --help
@@ -270,7 +270,7 @@ The file Sample_Basic.xlsx will be imported using CLI and form the starting poin
 
 ## **Step 4:** REST APIs
 
-Using the REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
+REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
 
 You can view a list of all REST Endpoints.
 
@@ -279,7 +279,7 @@ You can view a list of all REST Endpoints.
 The Swagger interface for Essbase REST enables you to try out REST requests in a visual interface, even before you have set up cURL or another API implementation method.
 To use the Swagger interface,
 
-1. In a web browser, enter the URL for the Essbase web interface. For example: https://ip/essbase/jet
+1. In a web browser, enter the URL for the Essbase web interface. For example: http://ip:9000/essbase/jet
 
 2. Log in.
 
