@@ -56,31 +56,31 @@ Create a rule file that is based on a sample file from the data warehouse.
 8.	On the home page, expand the DynamicCorp application, and select the Sales cube.
 
 9.	Now create the load rule.  
-    a. From the Actions menu to the right of the Sales cube, launch the inspector.
+    a. In the Sales cube, from the right side hamburger, Click on "Inspect".  
        ![](./images/image14_77.png)
 
-	b. Select the Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
-	c. Click Create and select Data Load to define the load data rule.
+	b. On the Scripts tab, select Rules. The Rules editor will show defined rules.  
+	c. Click on Create and select Data Load to define the load data rule.  
 
 	  ![](./images/image14_78.png)
 
-	d. In the New Rule dialog box, enter LoadCorp as the name of the rule.
+	d. In the New Rule dialog box, enter LoadCorp as the name of rule.
 
 	e. Enter Measures as the data dimension.
 
 	f. Under Preview Data, select File for flat file input.
 
-	g. Click the browse icon to locate the file data-basic.txt that you downloaded, and click Open to select it.
+	g. Browse to the file data-basic.txt that you downloaded. Click Open to select it.
 
-	h.	As you saw earlier, the first row of the flat file doesn't contain header values. Deselect the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.
+	h.	As you saw earlier, the first row of the flat file doesn't contain header values. De-select the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.  
 
-	i.	Select Comma as the Delimiter value, based on the file format.
+	i.	Select Comma as the Delimiter value, based on the file format.  
 
-	j.	Click Proceed.
+	j.	Click Proceed.  
 
 	  ![](./images/image14_79.png)
 
-1.  You can now see the preview of the data in the Rules editor, based on the input flat file.
+1.  You can now see the preview of the data in the Rules editor based on the input flat file.
 
   	![](./images/image14_80.png)
 
