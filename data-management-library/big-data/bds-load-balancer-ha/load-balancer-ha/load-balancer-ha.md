@@ -1,5 +1,7 @@
 #  Create the Load Balancer
 
+## Introduction
+
 Follow these steps to create and use a load balancer for a highly-available (HA) Big Data Service cluster.
 
 
