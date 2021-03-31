@@ -1,5 +1,7 @@
 #  Use a Load Balancer to Access Services on Big Data Service (Non-HA Cluster)
 
+Follow these steps to create and use a load balancer for a non-highly-available (non-HA) Big Data Service cluster.
+
 ## **STEP 1:** Gather Information
 
 Gather the following information before you start:

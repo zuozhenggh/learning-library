@@ -7,6 +7,11 @@
          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
       },
       {
+         "title": "Introduction",
+         "description": "Introduction",
+         "filename": "./../../load-balancer-ha-intro/load-balancer-ha-intro.md"
+      },
+      {
           "title": "Use a Load Balancer to Access Services on Big Data Service (HA Cluster)",
           "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
           "filename": "./../../load-balancer-ha/load-balancer-ha.md"
