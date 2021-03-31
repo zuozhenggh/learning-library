@@ -20,12 +20,10 @@ Estimated Lab Time: *25 minutes*.
 
 This lab requires -
 
-* An Oracle Public Cloud account-Essbase 21c instance
+* Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
-----doubt
-*Note:* Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.
 
 ## **Step 1:** Data Load to Cube
 
@@ -33,7 +31,7 @@ DataCorp IT group stores data in an Oracle Data warehouse that is being used to 
 
 Loading data is the process of adding data values to a cube from any number of data sources or SQL database. Since data sources seldom are configured solely to support Essbase dimension build and data load processes, a rule file is generally used to create Essbase-compatible directives to be applied to the data source.
 
-Create a rule file that is based on sample file from the data warehouse.
+Create a rule file that is based on a sample file from the data warehouse.
 
 1.	Download the rules file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pnp9bHy2Ja5o7FQILaBFhCd02G4LM9Z1buBnCIjhW84/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Data_Basic.txt)
 
@@ -51,40 +49,38 @@ Create a rule file that is based on sample file from the data warehouse.
 
   	b. Rules file: LoadCorp.rul
 
-6.	Open the downloaded data file, data-basic.txt, in a formatted text editor. Notice that there's no header row and that the file delimiter is a comma.
+6.	Open the downloaded data file "data-basic.txt" in a formatted text editor. Notice that there's no header row and the file delimiter is a comma.
 
 7.	Sign in to the Essbase web interface.
 
 8.	On the home page, expand the DynamicCorp application, and select the Sales cube.
 
-9.	Now create the load rule.
+9.	Now create the load rule.  
+    a. From the Actions menu to the right of the Sales cube, launch the inspector.
+       ![](./images/image14_77.png)
 
-  	a.	From the Actions menu to the right of the Sales cube, launch the inspector.
-
-	  ![](./images/image14_77.png)
-
-	  b.	Select the Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
-	  c.	Click Create and select Data Load to define the load data rule.
+	b. Select the Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
+	c. Click Create and select Data Load to define the load data rule.
 
 	  ![](./images/image14_78.png)
 
-	  d.	In the New Rule dialog box, enter LoadCorp as the name of the rule.
+	d. In the New Rule dialog box, enter LoadCorp as the name of the rule.
 
-	  e.	Enter Measures as the data dimension.
+	e. Enter Measures as the data dimension.
 
-	  f.	Under Preview Data, select File for flat file input.
+	f. Under Preview Data, select File for flat file input.
 
-	  g.	Click the browse icon to locate the file data-basic.txt that you downloaded, and click Open to select it.
+	g. Click the browse icon to locate the file data-basic.txt that you downloaded, and click Open to select it.
 
-	  h.	As you saw earlier, the first row of the flat file doesn't contain header values. Deselect the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.
+	h.	As you saw earlier, the first row of the flat file doesn't contain header values. Deselect the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.
 
-	  i.	Select Comma as the Delimiter value, based on the file format.
+	i.	Select Comma as the Delimiter value, based on the file format.
 
-	  j.	Click Proceed.
+	j.	Click Proceed.
 
 	  ![](./images/image14_79.png)
 
-10. You can now see the preview of the data in the Rules editor, based on the input flat file.
+1.  You can now see the preview of the data in the Rules editor, based on the input flat file.
 
   	![](./images/image14_80.png)
 

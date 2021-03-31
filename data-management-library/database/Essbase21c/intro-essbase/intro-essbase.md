@@ -16,7 +16,7 @@ Estimated Lab Time: 15 minutes.
 
 This lab will require the following -
 
-* An Oracle public cloud tenancy where you have the resources available to provision an ATP instance with 1 OCPU, an Essbase instance with 1 OCPU.
+* Essbase 21c Instance
 
 * [Smartview Plugin](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/download-and-run-smart-view-installer.html) (Steps provided in this lab)
 

@@ -24,11 +24,11 @@ This lab requires:
 
 1.	Login to the Essbase 21c web interface  using the Essbase URL. i.e. http://ip:9000/essbase/jet
 
-2.	On the Applications tab click on “Import” option from the Essbase web interface as shown below.
+2.	On the Applications tab click “Import” option in the Essbase web interface as shown below.
 
     ![](./images/image14_1.png "")
 
-3.	 From the Import dialog box, click Catalog.
+3.	Click Catalog.
 
     ![](./images/image14_2.png "")
 
@@ -73,9 +73,10 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     ![](./images/image14_7.png "")
 
-6. After successful login, you can now begin working with data in Essbase. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application. 
-   click on ‘Sales’ and 'connect'.  
-   click on 'Ad hoc analysis'.  
+6. After successful login, you can now begin working with data in Essbase. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application.    
+   
+   Click on ‘Sales’ and 'connect'.  
+   Click on 'Ad hoc analysis'.  
    
    
 
@@ -109,36 +110,43 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_8.png "")
 
-3. After connecting to an Essbase server and opening the worksheet, you can initiate ad hoc reports against databases on the connected server. The Adhoc report on a blank worksheet returns data from the top levels of each database dimension.
+3. After connecting to an Essbase server, you can initiate Ad Hoc reports against databases on the connected server. The Adhoc report on a blank worksheet returns data from the top levels of each database dimension.
 
     ![](./images/image14_12.png "")
 
 4. Double click or zoom in to Year. You will now see the Quarter level data.
 
-    ![](./images/image14_13.png "")
 
     ![](./images/image14_14.png "")
 
 5. Go to Year. Click on Keep only. Using this option, only the Year Dimension will be displayed and all the Quarters are removed.
 
-    a. Select the member and then, on the Essbase ribbon, click Zoom In.  
-    b. Double-click the member.
+6. Go to Year. Click on Zoom in-All levels.You will now see the numbers drill down to leaf level(Months).
+
 
     ![](./images/image14_15.png "")
 
     ![](./images/image14_16.png "")
 
 
-6. Go to Year. Click on Zoom in-All levels.You will now see the numbers drill down to leaf level(Months).
+7. Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Select Sales and click Keep Only. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
 
     ![](./images/image14_17.png "")
+
+8. In the Smart View ribbon click 'Undo'. Undo reverses the last change you made to the data.
     ![](./images/image14_18.png "")
 
-7. In the Smart View ribbon click 'Undo'. Undo reverses the last change you made to the data.
 
-8. In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
 
-9.  Pivot to POV:
+9. In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
+
+
+10. Click on Year and select Keep only. Click on Sales and change it to Measures.
+    Create the below report by zooming into next level of Year Dimension and Measures Dimension.
+    ![](./images/image14_99.png "")
+    
+
+11.  Pivot to POV:
 
     a. Click on ‘POV’ in ‘Essbase’ ribbon.
 
@@ -154,7 +162,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_22.png "")
 
-10. Member Selection:
+12. Member Selection:
 
     a. Click on ‘POV’ in ‘Essbase’ ribbon again.
 
@@ -170,7 +178,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     
 
-11. Free Form processing:
+13. Free Form processing:
 
     a. You can enter a member combination on a sheet. Click Refresh. The sheet will be updated to show the results of the query in your free form sheet.
 
@@ -180,9 +188,9 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_26.png "")
 
-12. You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
+14. You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
 
-13. Click on the Profit cell, replace with Sales, hit and select refresh.
+15. Click on the Profit cell, replace with Sales, hit and select refresh.
 
     ![](./images/image14_27.png "")
 
