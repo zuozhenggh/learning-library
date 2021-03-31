@@ -145,6 +145,8 @@ You use Smart View panel to connect to your smart view data sources and manage c
     Create the below report by zooming into next level of Year Dimension and Measures Dimension.
     ![](./images/image14_99.png "")
     
+    
+    
 
 11.  Pivot to POV:
 
