@@ -1,4 +1,4 @@
-# RAC SQL and PL2./SQL - Sequences
+# Application Continuity
 
 ## Introduction
 
@@ -20,7 +20,7 @@ Estimated Lab Time: 30 Minutes
 
 2. Connect to the **oracle** user and download the sample program from the Object Store
     ````
-    wget <<ADD Link to ACDemo_19c.zip>>
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/O8AOujhwl1dSTqhfH69f3nkV6TNZWU3KaIF4TZ-XuCaZ5w-xHEQ14ViOVhUXQjPB/n/oradbclouducm/b/LiveLabTemp/o/ACDemo_19c.zip
     ````
 3. Unzip the ACDemo_19c.zip file
     ````

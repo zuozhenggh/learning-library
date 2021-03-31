@@ -29,11 +29,6 @@
             "title": "Lab 4: Fast Application Notification",
             "description": "This lab examines FAN events.",
             "filename": "../../clusterware/fan_callouts.md"
-        },
-        {
-            "title": "Lab 5: Install Sample Schema",
-            "description": "This lab walks you through installing the sample schema.",
-            "filename": "../../services/setup.md"
         }
     ]
 }
