@@ -269,7 +269,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
     ![](./images/image14_54.png "")
     ![](./images/image14_55.png "")
 
-3. You can access outlines and cube specific options by selecting Inspect for each cube.
+3. You can access cube specific options by selecting Inspect for each cube.
 
     ![](./images/image14_56.png "")
     ![](./images/image14_57.png "")
