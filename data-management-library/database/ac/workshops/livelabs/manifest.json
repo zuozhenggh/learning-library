@@ -28,7 +28,7 @@
         },        {
             "title": "Lab 4: Optional Lab: Fast Application Notification",
             "description": "This lab examines FAN events.",
-            "filename": "../../clusterware/fan_callouts.md"
+            "filename": "../../fan/fan.md"
         }
     ]
 }
