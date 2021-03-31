@@ -191,7 +191,7 @@ In this step, you will use Hue to access the cluster. In an HA cluster, Hue runs
   ![](./images/hue-logout.png " ")
 
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 

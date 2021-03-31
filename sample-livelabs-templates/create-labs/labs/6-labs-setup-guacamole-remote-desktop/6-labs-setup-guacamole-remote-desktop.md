@@ -347,7 +347,7 @@ For ease of access to desktop applications provided on the instance and needed t
 
     ![](./images/create-shortcut-6.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
