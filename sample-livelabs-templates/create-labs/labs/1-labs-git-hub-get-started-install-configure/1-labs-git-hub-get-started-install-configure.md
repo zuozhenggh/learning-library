@@ -124,7 +124,7 @@ To clone the forked repository:
 
 ![](./images/github-desktop-sync.png " ")
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 

@@ -64,6 +64,7 @@ To add the connection, use following information:
 
     * Name: sys@ADGHOLAD1
     * Username: sys
+    * Password: WElcome123##
     * Role: SYSDBA
     * Hostname: The Public IP Address you found in the step above
     * Service name: The service name you found in the step above (the part after the / (slash)).
@@ -114,6 +115,7 @@ To add the connection, use following information:
 
     * Name: sys@ADGHOLAD2
     * Username: sys
+    * Password: WElcome123##
     * Role: SYSDBA
     * Hostname: The Public IP Address you found in the step above
     * Service name: The service name you found in the step above (the part after the / (slash)).

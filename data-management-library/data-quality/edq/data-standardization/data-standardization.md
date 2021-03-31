@@ -141,7 +141,7 @@ This lab assumes you have:
 
 Now, you can see the standardized data in the Result Browser by clicking on Writer component.
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)

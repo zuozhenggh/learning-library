@@ -1,22 +1,17 @@
-# Provision and Load Data into Autonomous Database Instance[Workshop Under Construction]
+# Provision and Load Data into an Autonomous Database Instance
 
 ## Introduction
 
-In this lab, you will provision the Oracle Autonomous Database, upload data file into Oracle Cloud Infrastructure(OCI) object storage, set up credentials, create table, load data into tables from files from OCI object storage files.
+In this lab, you will provision the Oracle Autonomous Database instance, create and grant privileges to a user in the Autonomous Database Instance, and load data into it. 
 
-*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
-
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
 - Provision an Autonomous Database instance
-- Upload files to the OCI Object Storage
-- Define object store credentials for your Autonomous Database instance
-- Setup SQL Developer Web to load data into an Autonomous Database table
-- Create tables in your database
-- Load data from the Object Store
+- Create and grant privileges to a user in Autonomous Database instance
+- Load data into Autonomous Database instance
 
 ### Prerequisites
 
@@ -28,7 +23,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
 [](youtube:UDwlTpbhPX0)
 
-## **STEP 1**: Provision an ADW instance
+## **STEP 1**: Provision an Autonomous Database Instance
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 
@@ -38,7 +33,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
 3. Once you are logged in, you can view the cloud services dashboard where all the services available to you. Click on hamburger menu, search for Autonomous Data Warehouse and select it.
 
-    **Note:** You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the **Quick Actions** section of the dashboard.
+    **Note:** You can also directly access your Autonomous Data Warehouse service in the **Quick Actions** section of the dashboard.
 
     ![](./images/choose-adb.png " ")
 
@@ -77,224 +72,174 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/create.png " ")
 
-9.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+9.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Database instance is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](./images/provision.png " ")
 
     ![Database instance homepage.](./images/provision-2.png " ")
 
-## **STEP 2:** Download the Credentials Wallet
+## **STEP 2:** Create OMLUSER in ADB Instance
 
-1.  On the instance details page, click **Service Console**.
-
-    ![](./images/service-console.png  " ")
-
-2.  Click on **Administration** on the left menu.
-
-    ![](./images/administration.png  " ")
-
-3. Now select **Download Client Credentials (Wallet)**.
-
-    ![](./images/download-wallet.png  " ")
-
-4.  Specify a password of your choice for the wallet. You will need this password when connecting to the database later. Click **Download** to download the wallet file to your client machine.
-
-    ![](./images/wallet-password.png  " ")
-
-5.  Unzip the downloaded wallet file, note the cwallet.sso file, you will need it later in this lab.
-
-    ![](./images/wallet-files.png  " ")
-
-## **STEP 3:** Create a Bucket and Upload Your Data
-
-1.  Click [here]() to download **WineReviews130K.csv** file.
-
-2.  Click the hamburger menu and select **Object Storage**.
-
-    ![](./images/object-storage.png  " ")
-
-3.  Select the **Compartment** from the compartment drop-down and click **Create Bucket**.
-
-    ![](./images/create-bucket.png  " ")
-
-4. Provide the **Bucket Name** and click **Create**
-
-    ![](./images/bucket-name.png  " ")
-
-5. Once the bucket is created, click on the bucket you created.
-
-    ![](./images/click-bucket.png  " ")
-
-6. Click **Upload** under Objects and click **select files** to upload WineReviews130K.csv and cwallet.sso files that you just downloaded and click **Upload**.
-
-    ![](./images/upload.png  " ")
-
-    ![](./images/upload-objects.png  " ")
-
-7.  For the WineReviews130K.csv object, click on the ellipses menu on the right  and click **View Object Details**. Copy the URL Path to a notepad and click Cancel. We will need the URL path later in this lab.
-
-    ![](./images/view-object-details.png  " ")
-
-    ![](./images/copy-uri.png  " ")
-
-8. Take a look at the URL path you copied. In this example above, the region name is us-ashburn-1, the Namespace is id05dmgeno0f, and the bucket name is WineBucket.
-
-    Note: The URL can also be constructed as below:
-
-    `https://objectstorage.<region name>.oraclecloud.com/n/<namespace name>/b/<bucket name>/o`
-
-## **STEP 4:** Creating an Object Store Auth Token
-
-To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token.
-
-1. Go to Profile menu, click **User Settings** to view user details.
-
-    ![](./images/user-settings.png  " ")
-
-2.  Remember the username as you will need it in the next step.
-
-    ![](./images/copy-user.png  " ")
-
-3.  On the left side of the User Details page, under Resources, click **Auth Tokens**, and then **Generate Token**.
-
-    ![](./images/create-auth.png  " ")
-
-4. In the Generate Token description box, give the token a name and click **Generate Token**. In this lab, we call it **wine_token**. *Note: Be sure to copy it to notepad as you won't be able to see it again.*
-
-    ![](./images/token.png  " ")
-
-    ![](./images/copy.png  " ")
-
-## **STEP 5:** Log in to SQL Developer Web
-
-Now, let's log into the SQL Developer Web.
-
-1.  Click on hamburger menu, search for Autonomous Data Warehouse and select it. Click on your ADB instance and navigate to  instance details page, and click on **Service Console**.
+1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
 
     ![](./images/choose-adb.png " ")
 
-    ![](./images/adb-instance.png  " ")
+    ![](./images/choose-adb-adw.png " ")
 
-    ![](./images/service-console.png  " ")
+2.  Select **Tools** on the Autonomous Database Details page.
 
-2.  Click on **Development**.
+    ![](./images/tools.png " ")
 
-  ![](./images/development.png  " ")
+3.  Select **Open Oracle ML User Administration** under the tools menu.
 
-3.  Choose **SQL Developer Web**.
+    ![](./images/open-ml-admin.png " ")
 
-    ![](./images/sql-web.png  " ")
+4. Sign in as **Username - ADMIN** and with the password you used when you created your Autonomous instance.
 
-4.  Log into SQL Developer Web with **Username** - **admin**, and with the **password**, you created for the ADW Instance back in step 1 and click **Sign in**.
+    ![](./images/ml-login.png  " ")
 
-    ![](./images/login.png  " ")
+5.  Click **Create** to create a new ML user.
 
-5. Once you log into SQL Developer Web from your ADW instance, your screen should look like the following:
+    ![](./images/create-user.png  " ")
 
-    ![](./images/sql-page.png  " ")
+6. On the Create User form, enter **Username - OMLUSER**, an e-mail address (you can use admin@oracle.com), un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
 
-## **STEP 6:** Create Database Credential for your User
+    ![](./images/create-user-details.png  " ")
 
-To access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
+7. Notice that the **OMLUSER** is created.
 
-1.  Connected as your ADMIN user in SQL Developer Web, copy and paste the code to SQL Developer worksheet. Specify the credentials for your Oracle Cloud Infrastructure Object Storage service and run the script:
+    ![](./images/create-user-created.png " ")
 
-    - **credential_name**: Replace `<your auth token name>` with your token name created in step 4.
-    - **username**: Replace `<your cloud username>` with the OCI Username noted in step 4 (which is not the same as your database username).
-    - **password**: Replace `<Auth Token>` with the OCI Object Store Auth Token you generated  generated in step 4.
+## **STEP 3**: Grant OMLUSER privileges to ADB Actions
 
-    In this example, the credential object named wine_token is created. You reference this credential name in the following steps.
+1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
-    ```
+    ![](./images/choose-adb.png " ")
+
+    ![](./images/choose-adb-adw.png " ")
+
+2.  Select **Tools** on the Autonomous Database Details page.
+
+    ![](./images/tools.png " ")
+
+3. Select **Open Database Actions** under the tools menu.
+
+    ![](./images/open-database-actions.png  " ")
+
+4. On the Database Actions login page, log in with your ADW credentials, provide the **Username - ADMIN** and click **Next**. Then provide the <if type="freetier">**Password** you created for the Autonomous instance.</if><if type="livelabs">password **WELcome__1234**</if> and click **Sign in**.
+
+    ![](./images/db-admin.png " ")
+
+    ![](./images/db-admin-password.png " ")
+
+5. From the Database Action menu, select **SQL**.
+
+    ![](./images/sql.png " ")
+
+6. Dismiss the Help by clicking on the **X** in the popup.
+
+    ![](./images/click-x.png  " ")
+
+7.  By default, only the ADMIN user can use the SQL Developer Web. To enable OMLUSER to use it, you need to enter the following and execute the procedure to grant SQL developer web access to OMLUSER.
+
+    ````
     <copy>
     BEGIN
-      DBMS_CLOUD.CREATE_CREDENTIAL(
-        credential_name => '< your auth token name >',
-        username => '< your cloud username >',
-        password => '< generated auth token >'
+      ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'OMLUSER',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'OMLUSER',
+        p_auto_rest_auth => TRUE
       );
+      COMMIT;
     END;
     /
     </copy>
-    ```
+    ````
+    ![](./images/mluser-access-granted.png " ")
 
-    ![](./images/create-cred.png  " ")
-
-    Now you are ready to load data from the Object Store.
-
-## **STEP 7:** Loading Data Using dbms\_cloud.copy\_data package
-
-1.  First, create your table. Enter the following in the SQL Developer Web and run the script.
+8.  Grant storage privileges to OMLUSER.
 
     ````
     <copy>
-    create table admin.WINEREVIEWS130KTEXT
-    ( id number(22),
-        country varchar2(52),
-        description clob,
-        designation varchar2(200),
-        points number(22),
-        price number(22),
-        province varchar2(52),
-        region_1 varchar2(200),
-        region_2 varchar2(52),
-        taster_name varchar2(52),
-        taster_twitter_handle varchar2(52),
-        title varchar2(200),
-        variety varchar2(200),
-        winery varchar2(200)
-    );
-
-    grant select any table to public;
+    alter user OMLUSER quota 500m on data;
     </copy>
     ````
 
-    ![](./images/create-table.png  " ")
+    ![](./images/storage-privileges.png " ")
 
-2.  Click on the refresh button.
+## **STEP 4**: Download the Necessary Data
 
-    ![](./images/click-refresh.png  " ")
+1.  Click the link below to download the Wine Reviews CSV file.
 
-3. Notice that the table `WINEREVIEWS130KTEXT` is created. Click on the expand button to view all the columns created
+    [WINEREVIEWS130KTEXT.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0dPIVvUpDxQWiDolBn8uJnTKkeoMg-ZNx5DQCXKAI06Vgxm00F5BKuN18iQum9tN/n/c4u03/b/data-management-library-files/o/WINEREVIEWS130KTEXT.csv)
 
-    ![](./images/table-created.png " " )
+2.  Save the WINEREVIEWS130KTEXT.csv to a location and note the path for later.
 
-4.  Copy the following code snippet, replace the fields with your values and then execute it:
+    ![](./images/download-csv.png  " ")
 
-    - **table_name**: Give the table name just created - WINEREVIEWS130KTEXT.
-    - **credential_name**: Replace `<wine_token>` with your token name created in step 4.
-    - **file\_uri\_list**: - Replace the file\_uri\_list with the `URL Path` for WineReviews130K object you copied earlier in step 3, from the Bucket created in Object Storage.
+## **STEP 5**: Upload the Data File to the ADB Instance
 
-    ````
-    <copy>
-    begin
-    dbms_cloud.copy_data(
-        table_name =>'WINEREVIEWS130KTEXT',
-        credential_name =>'wine_token',
-        file_uri_list => 'https://objectstorage.<your data center - eg us-ashburn-1>/n/<your tenant - eg id05dmgeno0f>/WineBucket/o/WineReviews130K.csv',
-        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'blankasnull' value 'true', 'delimiter' value ',', 'skipheaders' value '1')
-    );
-    end;
-    /
-    </copy>
-    ````
+1. On the tab with your ADB instance, click on **Open Database Actions** under Tools.
 
-4.  Given that you entered the correct URL path, the data should be loaded. To verify that the data is loaded, run the command:
+    ![](./images/open-database-actions.png  " ")
 
-    ```
-    <copy>
-    select * from WINEREVIEWS130KTEXT;
-    </copy>
-    ```
 
-Please *proceed to the next lab*.
+2. Sign in as **ADMIN**. Provide the **Username - ADMIN** and click **Next**. Then provide the password for your ADMIN and click **Sign in**.
+
+    ![](images/db-admin.png)
+    
+    ![](images/db-admin-password.png)
+
+3. In the webpage's URL, find the section that says **ADMIN** and change it to **OMLUSER**, then press enter.
+
+    ![](images/admin-url.png)
+
+    ![](images/omluser-url1.png)
+
+4. This time sign in as **OMLUSER**. Provide the **Username - OMLUSER** and the password for your OMLUSER and click **Sign in**.
+
+    ![](images/omluser-login1.png)
+
+5. Select **Data Load** from Database Actions menu.
+
+    ![](images/data-load.png)
+
+6. Leave the default selections - **Load data** and **Local File** and click **Next**.
+
+    ![](images/to-load-data.png)
+
+7. Drag and drop the **WINEREVIEWS130KTEXT.csv** from the location where you downloaded it onto the Drag and Drop target or click on **Select files** to browse the WINEREVIEWS130KTEXT.csv file and upload it.
+
+    ![](images/select-files.png)
+
+8. When the upload is complete, click **Start** and click **Run** in the Run Data Load Job confirmation dialog box.
+
+    ![](images/upload-run.png)
+
+    ![](images/upload-run2.png)
+
+9. Notice the *Status: Running(0/1)* while loading the data. The status will be updated to *Status: Completed(1/1)* once the data loading job is completed.
+
+    ![](./images/upload-loading.png " ")
+
+    ![](images/upload-done.png)
+
+10. Click on the hamburger menu and click on **Development**. From the database actions development menu, select **SQL**.
+
+    ![](images/upload-sql1.png)
+
+11. Click on the **X** in the popup to dismiss the Help.
+
+    ![](./images/sql-close.png  " ")
+
+12. The SQL Web Developer shows the table has been successfully created (and associated with OMLUSER).
+
+    ![](images/sql-table.png)
+
+[Please proceed to the next lab](#next).
 
 ## Acknowledgements
-
-* **Contributors** -  Anoosha Pilli, Database Product Management
-* **Last Updated By/Date** - Anoosha Pilli, December 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-machine-learning). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Author** - Anoosha Pilli & Didi Han, Database Product Management
+* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021

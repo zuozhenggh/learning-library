@@ -49,6 +49,8 @@ The first session will be used to perform the actions in the database, the secon
 1. On the first session of the primary, set the environment and log on to the database
 
     ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Public IP Address>>
+    [opc@vmadgholad1 ~]$ sudo su - oracle
     [oracle@vmadgholad1 ~]$ . oraenv
     ORACLE_SID = [DGHOL] ?
     The Oracle base remains unchanged with value /u01/app/oracle
@@ -80,6 +82,7 @@ The first session will be used to perform the actions in the database, the secon
 2. On the second session, set the environment and put a tail -f on the alert log.
 
     ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Public IP Address>>
     [opc@vmadgholad1 ~]$ sudo su - oracle
     Last login: Sun Feb 28 09:36:30 UTC 2021
     [oracle@vmadgholad1 ~]$ . oraenv
