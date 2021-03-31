@@ -160,7 +160,7 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
     ```
     ![](./images/cd15.png)
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
