@@ -311,7 +311,7 @@ This lab assumes you have completed the following labs:
 
 13. Select **Overall Credit Profile**. This provides an overall measure of the credit across the entire 100k credit database. This scoring of 100k customers with 10 variables takes less than a second. *This shows Alpha Office has 12k customers with a 100 percent probability of good credit, 22k customers with a 50.7 probability of good credit, and 66k customers with a 1.2 percent probability of good credit*. (Note: your values may differ slightly.)
 
-    ![](./images/overall-profile.png  " ")
+    ![](./images/overall-profile-1.png  " ")
 
 ## **STEP 5:** Expose the ml model as a REST end point so any application can call it
 
@@ -374,7 +374,3 @@ This concludes this lab and this workshop.
 - **Author** - Derrick Cameron
 - **Contributors** - Anoosha Pilli, Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
-
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

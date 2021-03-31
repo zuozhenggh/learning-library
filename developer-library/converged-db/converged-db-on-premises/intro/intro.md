@@ -12,6 +12,9 @@ You don't need to manage and maintain multiple systems or worry about having to 
 ### Objectives
 In this workshop, you will gain first-hand experience of using data types beyond relational data - JSON, XML, Spatial and Graph.
 
+**Workshop Architecture**
+![](images/Architecture_converged.png " ")
+
 Once you complete your setup, the next four labs in this workshop cover these individual data types, and the final lab consists of multi-model examples:
 
 - Lab : NODE.JS
@@ -28,7 +31,7 @@ You will also download Oracle SQL Developer to help execute the programs associa
 - Oracle SQL Developer client
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [What is a converged database?](https://blogs.oracle.com/database/what-is-a-converged-database)

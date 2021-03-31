@@ -1,5 +1,7 @@
 # Automatic Block Media Recovery
-In this lab we will see how Active Data Guard Automatic Block media recovery works.
+
+## Introduction
+In this lab, we will see how Active Data Guard Automatic Block media recovery works.
 
 Block corruptions are a common source of database outages. A database block is
 corrupted when its cont-ent has changed from what Oracle Database expects to find. If
@@ -10,9 +12,21 @@ Data Guard maintains a copy of your data in a standby database that is continuou
 
 In this lab we will introduce a block corruption in the database and see Active Data Guard repairing it.
 
-> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the Remote Desktop environment and paste inside the Remote Desktop environment, additional **enters** or CRLF characters are pasted causing some commands to fail. 
+Estimated Lab Time: 30 Minutes
 
-## Preparation
+### Objectives
+- Setup your environment
+- Corrupt the datafile
+- Access the table
+
+### Prerequisites
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab 3: Connect to the Database
+- Lab 4: Perform a switchover
+- Lab 5: Perform a failover
+- Lab 6: Enable Active Data Guard DML Redirection
+
+## **STEP 1**: Set the environment
 
 First download the 3 sql scripts we will need in this Lab.
 
@@ -23,7 +37,7 @@ First download the 3 sql scripts we will need in this Lab.
 [03-abmr.sql](./scripts/03-abmr.sql)
 
 
-Also find back the ssh keys which were created in Lab 1 and Lab 2 in order to connect to the hosts where the primary and standby database are located. 
+Also find your ssh keys which were created earlier in order to connect to the hosts where the primary and standby database are located. 
 
 We need 4 sessions
 
@@ -35,6 +49,8 @@ The first session will be used to perform the actions in the database, the secon
 1. On the first session of the primary, set the environment and log on to the database
 
     ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Public IP Address>>
+    [opc@vmadgholad1 ~]$ sudo su - oracle
     [oracle@vmadgholad1 ~]$ . oraenv
     ORACLE_SID = [DGHOL] ?
     The Oracle base remains unchanged with value /u01/app/oracle
@@ -66,6 +82,7 @@ The first session will be used to perform the actions in the database, the secon
 2. On the second session, set the environment and put a tail -f on the alert log.
 
     ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Public IP Address>>
     [opc@vmadgholad1 ~]$ sudo su - oracle
     Last login: Sun Feb 28 09:36:30 UTC 2021
     [oracle@vmadgholad1 ~]$ . oraenv
@@ -76,7 +93,7 @@ The first session will be used to perform the actions in the database, the secon
 
 Repeat these steps on the standby consoles.
 
-## **Step 1**: Setup the environment
+## **Step 2**: Setup the environment
 
 1. In the SQL Plus console from the primary database, run the 01-abmr.sql script. 
     You can open this script and copy/paste this or copy it over to the host, just as you prefer.
@@ -150,7 +167,7 @@ Repeat these steps on the standby consoles.
 
 In this example, you will need to remember the number 15.
 
-## **Step 2**: Corrupt the datafile
+## **Step 3**: Corrupt the datafile
 1. In the same session, execute script 02-abmr.sql.
     This script will ask for a number. This is the number from the first step and this will be used to corrupt the datafile which the first script has created. 
 
@@ -168,7 +185,7 @@ In this example, you will need to remember the number 15.
 At this point, we have a corrupt datafile, but the database is not aware of it yet. 
 
 
-## **Step 3**: Access the table 
+## **Step 4**: Access the table 
 
 By accessing the table, Oracle will need to read the data. This demo database is not very active, so it will be necessary to flush the caches before we access the table. That way, the data needs to be read from disk. This data is corrupt and without any error returned to the user, Active Data Guard will repair the corrupt block before returning the query result. 
 
@@ -238,7 +255,7 @@ By accessing the table, Oracle will need to read the data. This demo database is
     ...
     ````
 
-## **Step 4**: Cleanup
+## **Step 5**: Cleanup
 
 To clean this excercise, just drop the tablespace.
 1. In the sqlplus window, use this command:
@@ -257,5 +274,5 @@ You have now seen Active Data Guard Automatic Block media recovery working. You 
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management, PTS EMEA
+- **Contributors** - Robert Pastijn, Database Product Management
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021

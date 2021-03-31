@@ -20,7 +20,7 @@ In this lab, you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Knowledge of Oracle IAM 11g
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle Identity Management 12.2.1.4.0](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
