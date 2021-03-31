@@ -123,7 +123,7 @@ This lab assumes you have:
     </copy>
     ````
 
-    If you don not want to edit the file by yourself, there is a config file for DB12 stored already:
+    If you do not want to edit the file by yourself, there is a config file for DB12 stored already:
 
     ````
     <copy>
@@ -134,7 +134,7 @@ This lab assumes you have:
 
 ##  **STEP 3**: Analyze
 
-1. You could run the autoupgrade directly, but it is best practice to run an analyze at first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
+1. You could run the autoupgrade directly, but it is best practice to run an analyze first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
 
     ````
     <copy>
