@@ -322,10 +322,3 @@ Estimated Lab Time: 2 hour
 ## Acknowledgements
 * **Author** -  Ken Keil
 * **Last Updated By/Date** - Rajsagar Rawool, January 2021
-
-## Need Help?
-If you are doing this module as part of an instructor-led lab, take advantage and ask the instructor.
-
-If you are working through this module self-guided, please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please mention your workshop name and lab name.  Please also have screenshots and attach files when appropriate.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one

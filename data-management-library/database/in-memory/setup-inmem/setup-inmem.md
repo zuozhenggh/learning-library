@@ -41,7 +41,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/VjasX-FQboFKG2QuIBUBxgnTmTDi3lhpvWiruDx_4znxOp6D7PqVySELcWQRwmWp/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/SMU58aojlIQoVIH8BcY42Hu1yYk3MRKLwlQscZmQiRwKzvnDJDIzVc-QlRcmmrk5/n/c4u03/b/labfiles/o/inmemoryscript.sh
     chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     </copy>

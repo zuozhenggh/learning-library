@@ -1,6 +1,7 @@
 {
-  "workshoptitle": "OCI Command Line Interface",
-    "tutorials": [
+    "workshoptitle": "OCI Command Line Interface",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Login to Oracle Cloud",
@@ -18,6 +19,11 @@
         {
             "title": "Lab 2: Getting started with the OCI Command Line Interface (CLI)",
             "filename": "../../oci-cli/oci-cli.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

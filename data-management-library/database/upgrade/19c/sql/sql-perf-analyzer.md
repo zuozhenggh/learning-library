@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this Hands-On Lab you will use the SQL Performance Analyzer (SPA) which is a part of the Real Application Testing (RAT). You will compare statements collected before the upgrade to a simulation of these statements after upgrade. You will use the SQL Tuning Sets collected earlier in the workshop.
+In this Lab, you will use the SQL Performance Analyzer (SPA) which is a part of the Real Application Testing (RAT). You will compare statements collected before the upgrade to a simulation of these statements after upgrade. You will use the SQL Tuning Sets collected earlier in the workshop.
 
 ![](./images/spa.png " ")
 
@@ -11,7 +11,7 @@ You have collected SQL statements from the first load of HammerDB earlier in thi
     STS_CaptureAWR
     STS_CaptureCursorCache
 
-You will “test execute” now the statements of one of the SQL Tuning Sets (you can do both if time allows) and generate a comparison report.
+You will “test execute” the statements of one of the SQL Tuning Sets (you can do both if time allows) and generate a comparison report.
 
 *Estimated Lab Time*: 30 minutes
 
@@ -90,7 +90,7 @@ This lab assumes you have:
     ````
     ![](./images/sql_per_4.png " ")
 
-7. Finally generate the HTML Report containing the results below
+7. Finally, generate the HTML Report containing the results below
 
     ````
     <copy>

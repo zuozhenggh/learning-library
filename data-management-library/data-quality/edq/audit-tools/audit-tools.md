@@ -123,7 +123,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 We now have a better understanding of our data and its issues. Next step is to create a process that will fix those issues.
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)

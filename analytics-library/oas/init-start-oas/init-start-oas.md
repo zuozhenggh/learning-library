@@ -100,7 +100,7 @@ Your workshop instance is configured to automatically start all processes needed
     <copy>sudo systemctl stop oas</copy>
     ```
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn more
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
