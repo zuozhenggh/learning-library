@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will migrate the FTEX database directly into a PDB2 using Full Transportable Export/Import, an extension of Transportable Tablespaces where Data Pump takes over the manual work you have had to with plain TTS. It works cross-platform and cross-Endianness with at least an Oracle 11.2.0.3 source database.
+In this lab, you will migrate the FTEX database directly into a PDB2 using Full Transportable Export/Import, an extension of Transportable Tablespaces where Data Pump takes over the manual work you have had to with plain TTS. It works cross-platform and cross-Endianness with at least an Oracle 11.2.0.3 source database.
 
 As part of the lab, you will move an Oracle 11.2.0.4 database, FTEX, directly into an 19c PDB2 which is part of CDB2.
 
