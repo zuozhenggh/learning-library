@@ -1,7 +1,7 @@
 # Create Linux based Compute VM with Web Server
 
 ## Introduction
-In this lab, you wil learn how to provision a compute instance. Furthermoe, you will install a web server on the provisioned VM.
+In this lab, you wil learn how to provision a compute instance. Furthermore, you will install a web server on the provisioned VM.
 You will also learn how to update the Network Security Lists in order to allow incoming traffic.
 
 Estimated time: 45 minutes
