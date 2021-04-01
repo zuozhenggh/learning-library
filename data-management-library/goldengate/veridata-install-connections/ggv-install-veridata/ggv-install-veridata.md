@@ -209,11 +209,6 @@ To deploy agents:
 * [Oracle GoldenGate Veridata Blogs](https://blogs.oracle.com/dataintegration/entry/oracle_goldengate_veridata_repair_is)
 
 ## Acknowledgements
-
-* **Authors:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate Documentation
-* **Reviewed by:**
-      + Sukin Varghese, Senior Member of Technical staff, Database Testing
-      + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021

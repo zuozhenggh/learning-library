@@ -119,12 +119,8 @@ To execute a job:
 * [Compare Pairs](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-055CE119-0307-4826-98C7-A51F53E28763)
 * [Jobs](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-EE434517-18EB-4827-A05F-D420D9E5B0DD)
 
+
 ## Acknowledgements
-
-* **Author:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Reviewed by:**
-    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-    + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
-
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021

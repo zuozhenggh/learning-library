@@ -9,11 +9,11 @@
         }
         ,
         {
-              "title": "Lab 1: Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Marketplace Instance",
+              "title": "Lab: Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Marketplace Instance",
               "description": "This lab walks you through the required and optional tasks to install Oracle GoldenGate Veridata.",
               "filename": "./../../create-em-mp-image/create-em-mp-image.md"
         }
-        
+
 
        ]
     }

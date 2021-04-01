@@ -60,11 +60,6 @@ This lab assumes you have:
 * [Generate SQL File](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-0AA3E8E2-BAD3-41D2-83CD-E8986C69A3AB)
 
 ## Acknowledgements
-
-* **Author:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Reviewed by:**
-    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-    + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
-
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021

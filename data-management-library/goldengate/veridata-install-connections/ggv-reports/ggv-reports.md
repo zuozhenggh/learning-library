@@ -22,9 +22,9 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-  * Oracle GoldenGate Veridata installed
-  * Groups and Compare Pairs have been created as described in Lab 4
-  * Jobs have been created and executed as described in Lab 4
+    * Oracle GoldenGate Veridata installed
+    * Groups and Compare Pairs have been created as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
+    * Jobs have been created and executed as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
 
 ## **STEP 1:** View a Report
 
@@ -52,11 +52,6 @@ This lab assumes you have:
 
 
 ## Acknowledgements
-
-* **Author:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Reviewed by:**
-    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-    + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
-
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021

@@ -28,9 +28,9 @@ In this lab, you will:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-  * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
-  * Prior knowledge of Database basic concepts
-You may now proceed to Lab 1: Install and Configure Oracle GoldenGate Veridata
+    * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
+    * Prior knowledge of Database basic concepts
+You may now proceed to Lab: Install and Configure Oracle GoldenGate Veridata
 
 ## Learn More
 
@@ -41,11 +41,6 @@ Use these links to get more information about Oracle GoldenGate Veridata:
 
 
 ## Acknowledgements
-
-* **Author:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Reviewed by:**
-    + Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021

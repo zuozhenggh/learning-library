@@ -3,6 +3,7 @@
 ## About this Workshop                             
 
 The lab in this workshop walks you through all the steps to install Oracle GoldenGate Enteprise Manager Plug-in on Marketplace and monitor the Oracle GoldenGate Marketplace instance using the Enterprise Manager Marketplace instance.
+
 *Estimated Lab Time*: 45 mins
 
 ### About Oracle GoldenGate on Marketplace
@@ -31,7 +32,8 @@ This workshop assumes you have:
     * [More information on installing Enterprise Manager on OCI Marketplace - Phase 2](https://blogs.oracle.com/oem/enterprise-manager-on-oci-installation-phase-2-installing-the-em-app-into-your-oci-compartment)
     * [Create Oracle GoldenGate Marketplace Service](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/getting-started-oracle-cloud-marketplace.html#GUID-3E46AF16-F118-4B9E-9504-E05AF131E629)
     * [Installed Oracle GoldenGate Enterprise Manager Plug-in] (https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.1/install/deploying-plug.html#GUID-D024EC6B-75A8-4333-BCEF-04B154614C6F)
-You can get started with Lab 1: Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager
+
+You can get started with Lab: Monitor the Oracle GoldenGate Marketplace Instance using the Enterprise Manager
 
 ## Learn More
 
@@ -43,13 +45,6 @@ Use these links to get more information about Oracle GoldenGate Enterprise Manag
 * [New Route to Discovery in Oracle GoldenGate Enterprise Manager Plug-in 13.4.2.0.0](https://blogs.oracle.com/dataintegration/new-route-to-discovery-in-oracle-goldengate-enterprise-manager-plug-in)
 
 
-## Acknowledgements
-
-* **Author:**
-    + Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate User Assistance
-* **Reviewed by:**
-    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-    + Vetrivel Saravanan, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
-
-
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji (PM), Sarvanan Vetrivel (QA), GoldenGate
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021

@@ -5,7 +5,7 @@ This lab describes how to Monitor the GoldenGate Marketplace instance (Classic a
 
 It describes how to open the Oracle GoldenGate Services ports from the Oracle Cloud Infrastructure (OCI) console, open the proxy ports on Oracle GoldenGate Microservices Marketplace instance, and discover and monitor the Oracle GoldenGate instances on Oracle Enterprise Manager on Marketplace.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 45 minutes
 
 ### Objectives
 In this lab, you will:
@@ -164,12 +164,9 @@ Watch this video if you want to know more about Setting Credentials for Oracle G
 * [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/empug/setting-enterprise-manager-oracle-goldengate.html#GUID-DC4F56DF-CB20-4F50-BF07-B9E42C5819BC)
 * [A Simple Guide to Oracle GoldenGate Enterprise Manager Plug-in -Blog](https://blogs.oracle.com/dataintegration/a-simple-guide-to-oracle-goldengate-enterprise-manager-plug-in)
 * [New Route to Discovery in Oracle GoldenGate Enterprise Manager Plug-in 13.4.2](https://blogs.oracle.com/dataintegration/new-route-to-discovery-in-oracle-goldengate-enterprise-manager-plug-in)
+
 ## Acknowledgements
 
-* **Author:**
-    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Reviewed by:**
-    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
-    + Vetrivel Saravanan, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
-
-* **Last Updated By/Date:** Anuradha Chepuri, April 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji (PM), Sarvanan Vetrivel (QA), GoldenGate
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
