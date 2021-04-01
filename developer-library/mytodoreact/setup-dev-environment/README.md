@@ -131,7 +131,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 3. Set **Compartment, Database Name and Display Name**.
    - Set the workload type to "Transaction Processing".
    - Accept the default Deployment Type "Shared Infrastructure".
-![](images/config-1.png " ")
+![](images/ATP-config-1.png " ")
 
 4.  Set **ADMIN password, Network Access Type and License Type**
     - Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
@@ -140,7 +140,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
    - Set the license type to "Bring Your Own License (BYOL)" (does not matter for this workshop)
    - Click on "Create Autonomous Database"
 
-![](images/config-2.png " ")
+![](images/ATP-config-2.png " ")
 
 The database creation will take a few minutes.
 
