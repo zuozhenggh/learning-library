@@ -418,6 +418,92 @@ If you need to uninstall the database, follow the steps below. If you plan to co
     $ <copy>exit</copy>
     ```
 
+
+
+
+## Some other activities to consider - from the compute setup lab by Kay
+
+## **STEP 5**: Verify the ORCL database is up
+
+Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
+1.  From your connected session of choice **tail** the last 10 lines of the **dbsingle.log** file.  This file configures the database.  
+    ````
+    <copy>
+    tail -10 /u01/ocidb/buildsingle1.log
+    </copy>
+    ````
+    ![](./images/workshop-014.png " ")
+
+2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.  Please see troubleshooting tips if you have issues here.
+
+    ![](./images/build-complete.png " ")
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
+
+3. Run the following command to verify the database with the SID **ORCL** is up and running
+
+    ````
+    <copy>
+    ps -ef | grep ORCL
+    </copy>
+    ````
+    ![](./images/pseforcl.png " ")
+
+4. Verify the listener is running
+    ````
+    <copy>
+    ps -ef | grep tns
+    </copy>
+    ````
+
+    ![](./images/pseftns.png " ")
+
+5. Switch to the oracle user.
+      ````
+    <copy>
+    sudo su - oracle
+    </copy>
+    ````
+
+    ![](./images/sudo-oracle.png " ")
+
+6.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORCL
+    ````
+    ![](./images/oraenv.png " ")
+
+7.  Login using SQL*Plus as the **oracle** user.  
+
+    ````
+    <copy>
+    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
+    ![](./images/sqlplus.png " ")
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
+
+7.  Exit the sqlplus session and switch back to the opc user.  Verify that you are now the opc user.
+
+    ````
+    SQL> <copy>exit
+    </copy>
+    ````
+
+    ````
+    [oracle@server ~]$ <copy>exit
+    whoami
+    </copy>
+    ````
+    ![](./images/whoami.png " ")
+
+Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute. 
+
+
+
+
 ## Learn More
 
 - [Get Started with Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/)
