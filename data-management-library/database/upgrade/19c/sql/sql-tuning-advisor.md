@@ -11,7 +11,7 @@ Analyze the SQL Tuning Set and generate recommendations
 
 A complete script is provided: sta_cc.sql.  
 
-*Estimated Lab Time:* 30 minutes
+*Estimated Lab Time:* 20 minutes
 
 ### About SQL Tuning Advisor
 SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.

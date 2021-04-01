@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this lab you will capture and preserve SQL statements and information as well as the AWR. We will use this collection later on following a performance stability method guideline.
+In this lab, you will capture and preserve SQL statements and information as well as the AWR. We will use this collection later on following a performance stability method guideline.
 
 ![](./images/capturesql.png " ")
 
-*Estimated Lab Time*:30 minutes
+*Estimated Lab Time*: 15 minutes
 
 ### About SQL Tuning Sets
 A SQL tuning set (STS) is a database object that you can use as input to tuning tools. The database stores the SQL tuning sets in a database-provided schema. An STS includes:
