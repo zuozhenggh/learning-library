@@ -162,7 +162,7 @@ Your instance at this point is ready for clean capture. Proceed to OCI console t
 6. After successful instance creation, logon to the host and validate
 
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle Cloud Marketplace Partner Portal Documentation](https://docs.oracle.com/en/cloud/marketplace/partner-portal/index.html)

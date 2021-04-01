@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab you will now unplug an Oracle 12.2.0.1 pluggable database (PDB) from CDB1 and plug it into 19c’s CDB2, including all the necessary steps.
+In this lab, you will now unplug an Oracle 12.2.0.1 pluggable database (PDB) from CDB1 and plug it into 19c’s CDB2, including all the necessary steps.
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time*: 40 minutes
 
 ### About Unplug Plug Upgrade
 You can upgrade PDBs by unplugging a PDB from an earlier release CDB, plugging it into a later release CDB, and then upgrading that PDB to the later release.
@@ -13,8 +13,8 @@ CDBs can contain zero, one, or more pluggable databases (PDBs). After you instal
 
 ![](./images/unplug-plug-upgrade.png " ")
 
-1. Unplug PDBs from one source Oracle Database 12.2 CDB (CDB1, with pdba and pdbb) and plug them into a new release target CDB (CDB3).
-2. Unplug PDBs from multiple source CDBs (Oracle Database 12.2 on CDB1, pdba and pdbb), and Oracle Database 18c, CDB2, pdbc and pdbd), and plug them into a new release target CDB (CDB3).
+* Unplug PDBs from one source Oracle Database 12.2 CDB (CDB1, with pdba and pdbb) and plug them into a new release target CDB (CDB3).
+* Unplug PDBs from multiple source CDBs (Oracle Database 12.2 on CDB1, pdba and pdbb), and Oracle Database 18c, CDB2, pdbc and pdbd), and plug them into a new release target CDB (CDB3).
 
 
 ### Objectives
@@ -36,7 +36,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Preparation work in CDB1
 
-1. The PDB3 we will use in this part of the lab is created already in CDB1 – but you need to startup CDB1 and PDB3.
+1. The PDB3 we will utilize in this part of the lab has already been created in CDB1 – but you will need to startup CDB1 and PDB3.
 
     ````
     <copy>
@@ -44,7 +44,7 @@ This lab assumes you have:
     sqlplus / as sysdba
     </copy>
     ````
-    ![](./images/unplug_1.png " ")
+![](./images/unplug_1.png " ")
 
     ````
     <copy>
@@ -54,11 +54,11 @@ This lab assumes you have:
     exit
     </copy>
     ````
-    ![](./images/unplug_2.png " ")
+![](./images/unplug_2.png " ")
 
 ## **STEP 2**: Preupgrade.jar and Unplug
 
-2. Run the preupgrade.jar but only on container PDB3
+1. Run the preupgrade.jar but only on container PDB3.
 
     ````
     <copy>
@@ -67,11 +67,11 @@ This lab assumes you have:
     ````
     ![](./images/unplug_3.png " ")
 
-3. This will execute preupgrade.jar only in container “PDB3”.  Follow the advice of preupgrade.jar‘s output. You can leave all underscore parameters in
+2. This will execute preupgrade.jar only in container “PDB3”.  Follow the advice of preupgrade.jar‘s output. You can leave all the underscore parameters in.
 
-4. Be aware: If you’d remove  for instance the \_fix\_control, you’d remove this setting for the entire CDB. This would affect other PDBs as well which may still remain in the 12.2.0.1 environment. That’s why we will leave all underscores as is.
+3. Be aware: If you would remove  for example the \_fix\_control, you would remove this setting for the entire CDB. This would affect other PDBs as well which may still remain in the 12.2.0.1 environment. That is why we will leave all underscores as it is.
 
-5. Open a second terminal window (or a new tab in your existing one) and logon at first to CDB$ROOT. Then change to PDB3 to complete the steps recommended by preupgrade.jar.
+4. Open a second terminal window (or a new tab in your existing one) and at first login to CDB$ROOT. Then change to PDB3 to complete the steps recommended by preupgrade.jar.
 
     ````
     <copy>
@@ -100,7 +100,7 @@ This lab assumes you have:
     ````
     ![](./images/unplug_8.png " ")
 
-6. Unplugging into a *.pdp does create a zip archive including all necessary files. It will take 30 seconds or more.
+5. Unplugging into a *.pdp does create a zip archive including all necessary files. It will take 30 seconds or more.
 
     ````
     <copy>
@@ -112,7 +112,7 @@ This lab assumes you have:
 
 ## **STEP 3**: Plugin
 
-1. In this step you’ll plugin PDB3 into CDB2.
+1. In this step, you will plugin PDB3 into CDB2.
 
     ````
     <copy>
@@ -122,7 +122,7 @@ This lab assumes you have:
     ````
     ![](./images/unplug_10.png " ")
 
-2. At first, you’ll do a compatibility check and find out, why the action is classified as “not compatible”:
+2. At first, you will do a compatibility check and find out, why the action is classified as “not compatible”.
 
     ````
     <copy>
@@ -141,7 +141,7 @@ This lab assumes you have:
     ````
     ![](./images/unplug_11.png " ")
 
-3. If the result is “NO“, check PDB\_PLUG\_IN\_VIOLATIONS for the reason:
+3. If the result is “NO“, check PDB\_PLUG\_IN\_VIOLATIONS for the reason.
     
     ````
     <copy>
@@ -166,7 +166,7 @@ This lab assumes you have:
     dates are installed in the PDB
     ```` -->
 
-4. The first one is correct and makes sense. The second and third one can be ignored as it doesn’t matter if PDB3 has a different patch level in 12.2.0.1 – you will upgrade it to 19c anyway. You may read a bit more about PDB\_PLUG\_IN\_VIOLATIONS here.  Plugin the PDB3, the open it in UPGRADE mode:
+4. The first one is correct and makes sense. The second and third one can be ignored as it doesn’t matter if PDB3 has a different patch level in 12.2.0.1 – you will upgrade it to 19c anyway. You may read a bit more about PDB\_PLUG\_IN\_VIOLATIONS here.  Plugin the PDB3, the open it in UPGRADE mode.
 
     ````
     <copy>
@@ -176,9 +176,10 @@ This lab assumes you have:
     </copy>
     ````
     ![](./images/unplug_13.png " ")
+
 ## **STEP 4**: Upgrade PDB3
 
-1. As final action, as a PDB has its own data dictionary, you need to upgrade PDB3 now.
+1. As a final action, as PDB has its own data dictionary, you need to upgrade PDB3 now.
 
     ````
     <copy>
@@ -189,7 +190,7 @@ This lab assumes you have:
     ![](./images/unplug_14.png " ")
     ![](./images/unplug_15.png " ")
 
-2. Once the upgrade has been completed, you need to recompile and run the postupgrade_fixups.sql as usual:
+2. Once the upgrade has been completed, you need to recompile and run the postupgrade_fixups.sql as usual.
 
     ````
     <copy>
@@ -229,9 +230,9 @@ This lab assumes you have:
     ````
     ![](./images/unplug_22.png " ")
 
-3. If you’d like, you can now try some fallback exercises. For this part of the lab you should restore the initial snapshot again.
+3. If you would like, you can now try some fallback exercises. For this part of the lab you should restore the initial snapshot again.
 
-4. Mark the initial snapshot in the VirtualBox Manager with the mouse click
+4. Mark the initial snapshot in the VirtualBox Manager with the mouse click.
 
 5. Then click on the Restore icon.
 

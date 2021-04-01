@@ -131,7 +131,7 @@ To create your lab and workshop content:
 
 3. To stop the **atom-live-server**, go back to **Atom**, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)

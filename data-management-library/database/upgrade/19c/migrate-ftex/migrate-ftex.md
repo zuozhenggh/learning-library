@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this part of the Hands-On Lab you will migrate the FTEX database directly into a PDB2 using Full Transportable Export/Import, an extension of Transportable Tablespaces where Data Pump takes over the manual work you’ve had to with plain TTS. It works cross-platform and cross-Endianness with at least an Oracle 11.2.0.3 source database.
+In this lab, you will migrate the FTEX database directly into a PDB2 using Full Transportable Export/Import, an extension of Transportable Tablespaces where Data Pump takes over the manual work you have had to with plain TTS. It works cross-platform and cross-Endianness with at least an Oracle 11.2.0.3 source database.
 
-In the case of the lab, you will move an Oracle 11.2.0.4 database, FTEX, directly into an 19c PDB2 which is part of CDB2.
+As part of the lab, you will move an Oracle 11.2.0.4 database, FTEX, directly into an 19c PDB2 which is part of CDB2.
 
 It is important to mention that this feature works cross-platform and cross-Endianness!
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time*: 30 minutes
 
 ### About Transportable Export/Import
 You can use full transportable export/import to upgrade a database from an Oracle Database 11g Release 2 (11.2.0.3) or later to Oracle Database 19c.
@@ -37,7 +37,7 @@ This lab assumes you have:
 
 At first, as with every other Transportable Tablespace migration, we need to create a database – or in our case, a PDB – as target as first.
 
-1. Login to CDB2 and create a new PDB:
+1. Login to CDB2 and create a new PDB.
 
     ````
     <copy>
@@ -79,7 +79,7 @@ At first, as with every other Transportable Tablespace migration, we need to cre
 
 Before we can transport anything, we need to prepare the FTEX database.
 
-1. First of all, you need to start it up. Then you will switch the one tablespace we’ll migrate to Read-Only:
+1. Firstly, we need to start the database. Then you will switch the one tablespace we will migrate to Read-Only.
 
     ````
     <copy>
@@ -98,7 +98,7 @@ Before we can transport anything, we need to prepare the FTEX database.
     ````
     ![](./images/trans_exp_6.png " ")
 
-3. Migrate FTEX into PDB2.  At first of course you need to transfer the file as well to the new environment:
+2. Migrate FTEX into PDB2.  At first of course you need to transfer the file as well to the new environment.
 
     ````
     <copy>
@@ -107,7 +107,7 @@ Before we can transport anything, we need to prepare the FTEX database.
     ````
     ![](./images/trans_exp_7.png " ")
 
-4. Then you need to initiate the transport operation. In this case Data Pump will take over the usual manual steps from Transportable Tablespaces. The keywords TRANSPORTABLE=ALWAYS and FULL=Y advice Data Pump to use the Full Transportable Export/Import feature. VERSION=12 is needed as we use an 11g database as source.
+3. Then you need to initiate the transport operation. In this case Data Pump will take over the usual manual steps from Transportable Tablespaces. The keywords TRANSPORTABLE=ALWAYS and FULL=Y advice Data Pump to use the Full Transportable Export/Import feature. VERSION=12 is needed as we use an 11g database as source.
 
     ````
     <copy>
@@ -117,7 +117,7 @@ Before we can transport anything, we need to prepare the FTEX database.
     ````
     ![](./images/trans_exp_8.png " ")
 
-5. Once the operation is completed (it takes between 2 and 3 minutes) you can shutdown FTEX.  You’ll find some error messages. This particular one can be safely ignored as the object belongs to Advanced Replication:
+4. Once the operation is completed (it takes between 2 and 3 minutes) you can shutdown FTEX.  You will find some error messages. This particular one can be safely ignored as the object belongs to Advanced Replication.
     ![](./images/trans_exp_9.png " ")
 
     <!-- ````
@@ -131,7 +131,7 @@ Before we can transport anything, we need to prepare the FTEX database.
 
     W-1      Completed 4 PROCACT_SYSTEM objects in 25 seconds
     ```` -->
-6. ONLY in case copy/paste does not work correctly, there’s a prepared file with all the parameters in /home/oracle/IMP. Use “impdp parfile=/home/oracle/IMP/ft.par” instead.
+5. In case copy/paste does not work correctly, there is a prepared file with all the parameters in /home/oracle/IMP. Use “impdp parfile=/home/oracle/IMP/ft.par” instead.
 
     ````
     <copy>
@@ -147,7 +147,7 @@ Before we can transport anything, we need to prepare the FTEX database.
     ````
     ![](./images/trans_exp_10.png " ")
 
-7. You can now connect to the migrated PDB with:
+6. You can now connect to the migrated PDB.
 
     ````
     <copy>
@@ -166,14 +166,11 @@ Before we can transport anything, we need to prepare the FTEX database.
     ````
     ![](./images/trans_exp_12.png " ")
 
-8. Note: You have to switch into the 19c environment to do this. If you’ll execute the same “show” commands from the 11.2 SQL*Plus, you will receive errors.
+7. Note: You have to switch into the 19c environment to do this. If you execute the same “show” commands from the 11.2 SQL*Plus, you will receive errors.
 
-## **STEP 4**: Migration to Oracle Cloud or Cloud Machine
+## **STEP 3**: Migration to Oracle Cloud or Cloud Machine
 
-This feature can be used of course to migrate to the Oracle Cloud or ExaCC machines.
-
-See a real-time video here:
-How to migrate an entire database with Full Transportable Export/import to the Oracle DBCS Cloud
+The Migration to Oracle Cloud or Cloud Machine feature can be used to migrate to Oracle Cloud or ExaCC machines.
 
 You may now [proceed to the next lab](#next).
 

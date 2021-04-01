@@ -12,7 +12,7 @@ Data Guard maintains a copy of your data in a standby database that is continuou
 
 In this lab we will introduce a block corruption in the database and see Active Data Guard repairing it.
 
-Estimated Lab Time: 30 Minutes
+Estimated Lab Time: 40 Minutes
 
 ### Objectives
 - Setup your environment
@@ -22,9 +22,7 @@ Estimated Lab Time: 30 Minutes
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab 3: Connect to the Database
-- Lab 4: Perform a switchover
-- Lab 5: Perform a failover
-- Lab 6: Enable Active Data Guard DML Redirection
+
 
 ## **STEP 1**: Set the environment
 
@@ -48,7 +46,38 @@ The first session will be used to perform the actions in the database, the secon
 
 1. On the first session of the primary, set the environment and log on to the database
 
+### **Option 1:** MAC or Windows CYGWIN Emulator
+1.  Go to ***Overview >> Bare Metal, VM and Exadata >> DB Systems*** and select the First Database system ***ADGHOLAD1*** 
+2.  On the DB System homepage, Scroll downd to ***Nodes(1)*** find the Public IP address for your Virtual Machine.
+3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
+
     ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+    ![](./images/em-mac-linux-ssh-login.png " ")
+
+
+### **Option 2:** Windows using Putty
+On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
+
+1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)
+2.  Run the PuTTY program. On your computer, go to **All Programs > PuTTY > PuTTY**
+3. Go to ***Overview >> Bare Metal, VM and Exadata >> DB Systems*** and select the First Database system ***ADGHOLAD1*** 
+4.   On the DB System homepage, Scroll downd to ***Nodes(1)*** find the Public IP address for your Virtual Machine.
+5. Select or enter the following information:
+    - Category: _Session_
+    - IP address: _Your service instance’s public IP address_
+    - Port: _22_
+    - Connection type: _SSH_
+
+    ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
+
+### Create all the sessions accordinghly
+ In the terminal, connect to the Database. We use the SYS user for this and we can login with ***sqlplus / as sysdba***
+ 
+    
+````
+    [opc@vmadgholad1 ~]$ sudo su - oracle
     [oracle@vmadgholad1 ~]$ . oraenv
     ORACLE_SID = [DGHOL] ?
     The Oracle base remains unchanged with value /u01/app/oracle
@@ -65,21 +94,22 @@ The first session will be used to perform the actions in the database, the secon
     Version 19.9.0.0.0
 
     SQL>
-    ````
+````
 
-    Then alter your session to connect to the pdb.
+Then alter your session to connect to the pdb.
 
-    ````
+````
     SQL> alter session set container=mypdb;
 
     Session altered.
 
     SQL>
-    ````
+````
 
 2. On the second session, set the environment and put a tail -f on the alert log.
 
     ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Public IP Address>>
     [opc@vmadgholad1 ~]$ sudo su - oracle
     Last login: Sun Feb 28 09:36:30 UTC 2021
     [oracle@vmadgholad1 ~]$ . oraenv
@@ -94,6 +124,17 @@ Repeat these steps on the standby consoles.
 
 1. In the SQL Plus console from the primary database, run the 01-abmr.sql script. 
     You can open this script and copy/paste this or copy it over to the host, just as you prefer.
+    
+Another option instead of copy/paste is to use wget on the command line from the host. 
+To do this, open a new SSH connection to the host as the opc user.
+Next ***sudo su - oracle*** to switch to the Oracle user and then issue the following wget commands:
+
+````
+wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/01-abmr.sql
+wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/02-abmr.sql
+wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/03-abmr.sql
+
+````
 
 2. This script creates a tablespace, adds a table in it and inserts a row. This will also return the rowID. Take a note of this number as you will need it in step 2, the step that will introduce corruption.
 
