@@ -120,29 +120,29 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 ## **STEP 4**: Create the ATP database
 
-1. Set some values for some environment variables
-```
-<copy>export WORKINGDIR=workingdir; export MTDRWORKSHOP_COMPARTMENT_ID=$(cat $WORKINGDIR/mtdrworkshopcompartmentid.txt);echo console created MTDRWORKSHOP_COMPARTMENT_ID... $MTDRWORKSHOP_COMPARTMENT_ID</copy>
+1. 1. Open up the hamburger menu in the top-left corner of the Console and select **Autonomous Transaction Processing**.
 
-```
+![](images/menu-autonomous.png " ")
 
-2. Create the MTDRDB database by copying and replacing <MTDRDB ADMIN PASSWORD> with the actual password in the following command.
+2. Click on **Create Autonomous Database**.
 
-```
-<copy>oci db autonomous-database create --admin-password <MTRDB ADMIN PASSWORD> --compartment-id $MTDRWORKSHOP_COMPARTMENT_ID --cpu-core-count 1 --data-storage-size-in-tbs 1 --db-name MTDRDB --display-name MTDRDB| jq --raw-output '.data | .["id"] ' > $WORKINGDIR/mtdrworkshopdbid.txt</copy>
-```
-Please note the ADMIN password for configuring the backend, later.
+![](images/create-autonomous.png " ")
 
-3. Export the following environment variable and notice the creation of the MTDRDB.
-```
-<copy>export MTDRWORKSHOP_MTDRDBDB_ID=$(cat $WORKINGDIR/mtdrworkshopdbid.txt);
-echo MTDRWORKSHOP_MTDRDB_ID... $MTDRWORKSHOP_MTDRDBDB_ID
-</copy>
-```
+3. Set **Compartment, Database Name and Display Name**.
+   - Set the workload type to "Transaction Processing".
+   - Accept the default Deployment Type "Shared Infrastructure".
+![](images/config-1.png " ")
 
-   ![](images/createATPoutput.png " ")
+4.  Set **ADMIN password, Network Access Type and License Type**
+    - Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
+    Please note the ADMIN password for configuring the backend, later.
+   - Set the Network Access type to "Allow secure access from everywhere".
+   - Set the license type to "Bring Your Own License (BYOL)" (does not matter for this workshop)
+   - Click on "Create Autonomous Database"
 
-   _the OCID for the PDB is stored and will be used later to create kubernetes secret that the microservice will use to access it._
+![](images/config-2.png " ")
+
+The database creation will take a few minutes.
 
 
 ## **STEP 5**: Create an OCI Registry and Auth key and login to it from Cloud Shell
