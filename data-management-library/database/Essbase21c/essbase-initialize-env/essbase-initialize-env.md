@@ -31,7 +31,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
 
 ***Note:*** While application processes are automatically started upon instance boot up, it takes approximately 15 minutes for this URL to become active after all processes have fully started. If the URL remains inactive even after 15 minutes, refer to **Step 2** below for manual start-up.
 
-1. Login with the below credentials
+2. Login with the below credentials
     ```
     Username	: <copy>Weblogic</copy>
     ```
@@ -49,7 +49,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
  - Authentication method - *SSH RSA Key*
  - OS User – “*oracle*”.
 
-​Your workshop instance is configured to start all processes automatically needed for the labs. Perform these steps only if you are unable launch Essbase 21c UI in **Step1**
+​Your workshop instance is configured to start all processes automatically needed for the labs. Perform these steps only if you are unable to launch Essbase 21c UI in **Step1**
 
 1. First login as “*opc*” using your SSH Private Key
 ​
@@ -74,7 +74,10 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>./env_start_script.sh</copy>
     ```
     ![](./images/ess-environment4.png " ")
-Your script should be started and wait for the confirmation on start of servers.
+5.  Your services should be started and wait for the confirmation on start of servers.
+
+    ![](./images/ess-environment5.png " ")
+
 You may now *proceed to the next lab*.
 
 ## Acknowledgements
