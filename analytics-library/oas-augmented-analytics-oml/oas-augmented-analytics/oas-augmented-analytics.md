@@ -424,7 +424,7 @@ These classification rules are generated when we train a model using training da
 35. This will take you to the project for existing employees filtered for the employee you highlighted.
   ![](./images/OMLP35.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn more
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)

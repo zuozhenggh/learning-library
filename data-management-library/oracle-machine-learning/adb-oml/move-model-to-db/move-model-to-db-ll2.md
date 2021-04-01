@@ -131,7 +131,7 @@ This lab assumes you have completed the following labs:
 
 6.  Click **Create** to create a new ML user.
 
-    ![](./images/atp-create.png  " ")
+    ![](./images/create-ml-user.png  " ")
 
 7. On the Create User form, enter **Username - ML\_USER**, an e-mail address (you can use admin@oracle.com), un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
 
@@ -261,7 +261,7 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 6:** Generate the Auth Token
 
-To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token.
+To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload data) to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token.
 
 1.   Go to Profile menu, click **User Settings** to view user details.
 

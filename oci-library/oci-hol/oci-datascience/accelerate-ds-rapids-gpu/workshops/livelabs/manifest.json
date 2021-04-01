@@ -1,6 +1,7 @@
 {
-      "workshoptitle": "GPU Accelerated Data Science with NVIDIA RAPIDS",
-      "tutorials": [
+    "workshoptitle": "GPU Accelerated Data Science with NVIDIA RAPIDS",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction to the Data Science Service",
@@ -35,6 +36,11 @@
             "title": "Lab 6: Terminate your Notebook Session",
             "description": "Terminate your notebook session.",
             "filename": "./../../../common/notebook-shutdown.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

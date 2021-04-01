@@ -46,39 +46,29 @@ In this lab, you will:
     ```
 
     $ <copy>cd /home/oracle/labs/M104780GC10</copy>
-
     $ <copy>/home/oracle/labs/M104780GC10/setup_LOB.sh</copy>
-
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL ;
-
     ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL
 
     *
 
     ERROR at line 1:
-
     ORA-28389: cannot close auto login wallet
-
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
-
     keystore altered.
 
     ...
 
     SQL> DROP TABLESPACE users INCLUDING CONTENTS AND DATAFILES CASCADE CONSTRAINTS;
-
     Tablespace dropped.
 
     SQL> CREATE TABLESPACE users DATAFILE '/u02/app/oracle/oradata/pdb21/users01.dbf' SIZE 500M;
-
     Tablespace created.
 
     SQL> create user hr identified by password default tablespace users;
-
     User created.
 
     SQL> grant dba to hr;
-
     Grant succeeded.
 
     SQL> exit
@@ -93,19 +83,14 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus system@PDB21</copy>
-
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Enter password: <i>WElcome123##</i>
-
     Last Successful login time: Fri Dec 13 2019 10:42:50 +00:00
-
     Connected to:
     ```
     ```
 
     SQL> <copy>CREATE TABLE hr.t1 ( a CLOB) LOB(a) STORE AS SECUREFILE TABLESPACE users;</copy>
-
     Table created.
 
     SQL> <copy>alter database datafile '/u02/app/oracle/oradata/pdb21/users01.dbf' autoextend on;</copy>
@@ -161,11 +146,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
 
     SQL> <copy>INSERT INTO hr.t1 values ('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');</copy>
-
     1 row created.
 
     SQL> <copy>INSERT INTO hr.t1 Select * from hr.t1;</copy>
-
     1 row created.
 
     SQL> <copy>INSERT INTO hr.t1 Select * from hr.t1;</copy>
