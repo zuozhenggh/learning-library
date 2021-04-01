@@ -30,6 +30,7 @@ In this lab, you will:
 * The following are required to complete this lab:
   * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
   * Prior knowledge of Database basic concepts
+You may now proceed to Lab 1: Install and Configure Oracle GoldenGate Veridata
 
 ## Learn More?
 
@@ -47,8 +48,4 @@ Use these links to get more information about Oracle GoldenGate Veridata:
     + Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
 
-
 * **Last Updated By/Date:** Anuradha Chepuri, April 2021
-
-## What's Next?
-**You are all set to begin the labs! Click Lab 1: Install and Configure Oracle GoldenGate Veridata in the Contents menu**.
