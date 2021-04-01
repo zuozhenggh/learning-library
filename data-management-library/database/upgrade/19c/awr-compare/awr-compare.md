@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which have roughly the same load and duration.
+In this lab, you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which have roughly the same load and duration.
 
 ![](./images/awr-compare.png " ")
 
@@ -42,7 +42,7 @@ This lab assumes you have:
 	````
    ![](./images/upgrade_19c_29.png " ")
 
-2. At first, create an AWR snapshot BEFORE load, then AFTER load.Note down the snapshot numbers again.
+2. At first, create an AWR snapshot BEFORE load, then AFTER load. Note down the snapshot numbers again.
    
 	````
 	<copy>
@@ -173,7 +173,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	![](./images/upgrade_19c_39.png " ")
 	![](./images/upgrade_19c_40.png " ")
 
-10. Compare things such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run. Also, browse through the SQL statistics and see if you find remarkable differences between the two runs.  Overall, you won will not see any significant differences. The purpose of this lab exercise is for you to simply recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
+10. Compare things such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run. Also, browse through the SQL statistics and see if you find remarkable differences between the two runs.  Overall, you will not see any significant differences. The purpose of this lab exercise is for you to simply recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
 
 You may now [proceed to the next lab](#next).
 
