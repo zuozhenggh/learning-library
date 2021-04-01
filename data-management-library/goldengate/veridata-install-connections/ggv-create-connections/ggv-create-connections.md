@@ -53,7 +53,7 @@ To create connections:
   ![](./images/5-new-connection-assistant-create-another-connection.png " ")
 7. Follow points 3 to 6 to create another connection (for example, **TargetConnection**) for the target database.
 
-## Learn More?
+## Learn More
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Connections](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-75005B4D-5C24-4467-A68B-1FE66A168905)

@@ -32,7 +32,7 @@ In this lab, you will:
   * Prior knowledge of Database basic concepts
 You may now proceed to Lab 1: Install and Configure Oracle GoldenGate Veridata
 
-## Learn More?
+## Learn More
 
 Use these links to get more information about Oracle GoldenGate Veridata:
 

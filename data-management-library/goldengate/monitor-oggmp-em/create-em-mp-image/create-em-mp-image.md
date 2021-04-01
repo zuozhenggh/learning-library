@@ -5,9 +5,27 @@ This lab describes how to Monitor the GoldenGate Marketplace instance (Classic a
 
 It describes how to open the Oracle GoldenGate Services ports from the Oracle Cloud Infrastructure (OCI) console, open the proxy ports on Oracle GoldenGate Microservices Marketplace instance, and discover and monitor the Oracle GoldenGate instances on Oracle Enterprise Manager on Marketplace.
 
-### What Do You Need?
+*Estimated Lab Time*: 15 minutes
 
-+ **You have gone through the Introduction Lab and Prerequisites**
+### Objectives
+In this lab, you will:
+* Open the Oracle GoldenGate Services Ports from the OCI Console and the Proxy ports on Oracle GoldenGate Microservices Marketplace instance.
+* Create the default ingress rule (in the Network’s VCN) to open the Microservices Port.
+* Discover Oracle GoldenGate Microservices instances in Oracle Enterprise Manager on Marketplace
+* Set Monitoring and Preferred Credentials to Oracle GoldenGate Microservices Marketplace in Enterprise Manager Plug-in
+
+### Prerequisites
+This lab assumes you have:
+
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Environment Setup
+    * Lab: Initialize Environment
+* The following are required to complete this lab:
+    * Introduction and Prerequisites
 
 **STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console and the Proxy ports on Oracle GoldenGate Microservices Marketplace instance
 
@@ -141,7 +159,7 @@ To set the Monitoring credentials:
 Watch this video if you want to know more about Setting Credentials for Oracle GoldenGate targets (both MA and Classic) in Enterprise Manager Plug-in 13.4.1.0.0 release.
       [](youtube:zFaX348_LiA)
 
-## Want to Learn More?
+## Learn More
 * [Oracle GoldenGate Enterprise Manager Plug-in Documentation](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/index.html)
 * [Discovering Oracle GoldenGate Targets](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/empug/setting-enterprise-manager-oracle-goldengate.html#GUID-DC4F56DF-CB20-4F50-BF07-B9E42C5819BC)
 * [A Simple Guide to Oracle GoldenGate Enterprise Manager Plug-in -Blog](https://blogs.oracle.com/dataintegration/a-simple-guide-to-oracle-goldengate-enterprise-manager-plug-in)
@@ -149,14 +167,9 @@ Watch this video if you want to know more about Setting Credentials for Oracle G
 ## Acknowledgements
 
 * **Author:**
-    + Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate User Assistance
+    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Reviewed by:**
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
     + Vetrivel Saravanan, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
-* **Last Updated By/Date:** Anuradha Chepuri, March 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*. Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date:** Anuradha Chepuri, April 2021

@@ -46,7 +46,7 @@ This lab assumes you have:
       ![](./images/3-reports-view-download-option.png " ")
 6. Click **Download this Report** in case you want to download and save the report for a future reference.  
 
-## Learn More?
+## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Comparision Report](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-8E57CC45-33E3-4068-8B19-47E222F70BF1)
 
