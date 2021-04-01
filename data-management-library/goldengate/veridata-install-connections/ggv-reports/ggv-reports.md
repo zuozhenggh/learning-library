@@ -4,11 +4,27 @@
 A comparison report is generated for each job, group, and compare pair that is finished being processed. It contains summary details about out-of-sync row counts, the number of records processed, performance statistics, errors, and so forth.
 
 The comparison report tells you how extensive an out-of-sync problem is. It also provides performance statistics and, optionally, column details. The comparison report can be viewed by any user role.
-### What Do You Need?
 
-+ **Oracle GoldenGate Veridata installed**
-+ **Groups and Compare Pairs have been created as described in Lab 4**
-+ **Jobs have been created and executed as described in Lab 4**
+*Estimated Lab Time*: 15 minutes
+
+### Objectives
+In this lab, you will:
+* View your job report.
+
+### Prerequisites
+This lab assumes you have:
+
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Environment Setup
+    * Lab: Initialize Environment
+* The following are required to complete this lab:
+  * Oracle GoldenGate Veridata installed
+  * Groups and Compare Pairs have been created as described in Lab 4
+  * Jobs have been created and executed as described in Lab 4
 
 ## **STEP 1:** View a Report
 
@@ -30,7 +46,7 @@ The comparison report tells you how extensive an out-of-sync problem is. It also
       ![](./images/3-reports-view-download-option.png " ")
 6. Click **Download this Report** in case you want to download and save the report for a future reference.  
 
-## Want to Learn More?
+## Learn More?
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Comparision Report](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-8E57CC45-33E3-4068-8B19-47E222F70BF1)
 

@@ -3,10 +3,25 @@
 ## Introduction
 This lab describes how to configure datasource connections. The Oracle GoldenGate Veridata  Server must be able to connect to an Oracle GoldenGate Veridata Agent for each database that contains source and target data that you want to compare. A connection is defined by a host, the port number of an Oracle GoldenGate Veridata Agent (or Manager, if a C-agent), and the datasource that is accessed by the agent. You need to create connections before you create any of the GoldenGate Veridata objects, such as groups, compare pairs, profiles, or jobs.
 
-### What Do You Need?
+*Estimated Lab Time*: 15 minutes
 
-+ **Oracle GoldenGate Veridata installed**
-+ **Oracle Database 19c (19.3.0.0) (for the repository)**
+### Objectives
+In this lab, you will:
+* Create a Connection in Oracle GoldenGate Veridata.
+
+### Prerequisites
+This lab assumes you have:
+
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Environment Setup
+    * Lab: Initialize Environment
+* The following are required to complete this lab:
+    * Oracle GoldenGate Veridata installed
+    * Oracle Database 19c (19.3.0.0) (for the repository)
 
 ## **STEP 1:** Login to Oracle GoldenGate Veridata
   To login to GoldenGate Veridata:
@@ -38,7 +53,7 @@ To create connections:
   ![](./images/5-new-connection-assistant-create-another-connection.png " ")
 7. Follow points 3 to 6 to create another connection (for example, **TargetConnection**) for the target database.
 
-## Want to Learn More?
+## Learn More?
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Connections](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-75005B4D-5C24-4467-A68B-1FE66A168905)
@@ -51,7 +66,7 @@ To create connections:
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
     + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
-* **Last Updated By/Date:** Anuradha Chepuri, March 2021
+* **Last Updated By/Date:** Anuradha Chepuri, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*. Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.

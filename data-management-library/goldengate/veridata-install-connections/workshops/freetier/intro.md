@@ -1,33 +1,37 @@
-# Overview                                
+# Introduction
+
+## About this Workshop                             
 
 The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, create groups, configure compare pairs, create and execute jobs, view reports, repair data, and generate SQL files.
 
-## What is Oracle GoldenGate Veridata?
+*Estimated Lab Time*: 2 hours and 15 mins
+
+### About Oracle GoldenGate Veridata
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
 
 
-## Workshop Objectives
-  - Install Oracle GoldenGate Veridata
-  - Create Datasource Connections for source and target databases.
-  - Create Groups, Compare Pairs, and jobs.
-  - Run jobs.
-  - Repair data and generate SQL files.
-  - View Reports.
+### Objectives
+In this lab, you will:
+* Install Oracle GoldenGate Veridata
+* Create Datasource Connections for source and target databases.
+* Create Groups, Compare Pairs, and jobs.
+* Run jobs.
+* Repair data and generate SQL files.
+* View Reports.
 
-## Lab Breakdown
-  - **Lab 1:** Install and Configure Oracle GoldenGate Veridata
-  - **Lab 2:** Create Datasource Connections
-  - **Lab 3:** Create Groups, Compare Pairs, and Jobs
-  - **Lab 4:** Repair Out-of-Sync Jobs and Generate SQL Files
-  - **Lab 5:** View Reports
-
-
-## Workshop Prerequisites
+### Prerequisites
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Environment Setup
+    * Lab: Initialize Environment
+* The following are required to complete this lab:
   * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
   * Prior knowledge of Database basic concepts
 
-
-## Want to Learn More?
+## Learn More?
 
 Use these links to get more information about Oracle GoldenGate Veridata:
 
@@ -44,9 +48,7 @@ Use these links to get more information about Oracle GoldenGate Veridata:
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
 
 
-* **Last Updated By/Date:** Anuradha Chepuri, March 2021
+* **Last Updated By/Date:** Anuradha Chepuri, April 2021
 
 ## What's Next?
 **You are all set to begin the labs! Click Lab 1: Install and Configure Oracle GoldenGate Veridata in the Contents menu**.
-
-

@@ -9,13 +9,28 @@ Oracle GoldenGate Veridata provides the Generate SQL functionality which generat
 
 You can also look at these SQL Statements before the Oracle GoldenGate Veridata executes them onto the target database, or execute these SQL statements by yourself on any of the other database tools. With the Generate Repair SQL functionality, you can generate the SQL statements for all your out-of-sync-records, and can also execute them at your convenience.
 
-### What Do You Need?
+*Estimated Lab Time*: 15 minutes
 
-+ **Oracle GoldenGate Veridata installed**
-+ **Groups and Compare Pairs have been created as described in Lab 3**
-+ **Jobs have been created and executed as described in Lab 3**
+### Objectives
+In this lab, you will:
+* Repair out-of-sync jobs.
+* Generate SQL files for out-of-sync jobs.
 
-To begin with, ensure that you have completed Lab 3.
+### Prerequisites
+This lab assumes you have:
+
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Environment Setup
+    * Lab: Initialize Environment
+* The following are required to complete this lab:
+    * Oracle GoldenGate Veridata installed
+    * Groups and Compare Pairs have been created as described in Lab 3
+    * Jobs have been created and executed as described in Lab 3
+
 ## **STEP 1:** Repair Out-of-Sync Jobs
   To repair out-of-sync jobs:
   1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for generating SQL statements.
@@ -39,7 +54,7 @@ To begin with, ensure that you have completed Lab 3.
     ![](./images/4-unzip-generated-sql.png " ")
 
 
-## Want to Learn More?
+## Learn More?
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Repair Data](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-B46185DF-4B7E-4647-8BE2-F7176E1FFDFF)
 * [Generate SQL File](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-0AA3E8E2-BAD3-41D2-83CD-E8986C69A3AB)
@@ -52,7 +67,7 @@ To begin with, ensure that you have completed Lab 3.
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
     + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
-* **Last Updated By/Date:** Anuradha Chepuri, March 2021
+* **Last Updated By/Date:** Anuradha Chepuri, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*. Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.

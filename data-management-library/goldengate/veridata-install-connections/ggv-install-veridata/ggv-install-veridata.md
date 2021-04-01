@@ -1,13 +1,37 @@
-# Install and Configure Oracle GoldenGate Veridata                                   
+# Install and Configure Oracle GoldenGate Veridata
+
+##Introduction                                  
 
 This lab describes how to install and configure the Oracle GoldenGate Veridata.
 For proof-of-concept, you can install the following on one host: Oracle WebLogic Server, Fusion Middleware Infrastructure, and Oracle GoldenGate Veridata.
 
-## What do you Need?
-+ **Linux**
-+ **Oracle Database 19c (19.3.0.0) (for the repository)**
-+ **Java 1.8 or higher**
-+ **[Oracle GoldenGate Veridata Software](https://www.oracle.com/middleware/technologies/goldengate-downloads.html)**
+*Estimated Lab Time*: 1 hour and 15 minutes
+
+### Objectives
+In this lab, you will:
+* Install and configure the Back End Servers and Infrastructure
+* Install the Fusion Middleware Infrastructure
+* Install Oracle GoldenGate Veridata
+* Apply the Oracle GoldenGate Veridata Patch
+* Configure RCU
+* Create a Domain
+* Deploy Agents
+
+### Prerequisites
+This lab assumes you have:
+
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Environment Setup
+    * Lab: Initialize Environment
+* The following are required to complete this lab:
+    * Linux
+    * Oracle Database 19c (19.3.0.0) (for the repository)
+    * Java 1.8 or higher
+    * [Oracle GoldenGate Veridata Software](https://www.oracle.com/middleware/technologies/goldengate-downloads.html)
 
 ## **STEP 1:** Install and Configuring the Back End Servers and Infrastructure
 In a nutshell, the installation process includes the following four major tasks. After completing these steps, you can configure the Oracle GoldenGate Veridata Agents:
@@ -178,7 +202,7 @@ To deploy agents:
     <pre
     /u01/ogg/agents/veridata/agent1/agent.sh start</pre>
 
-## Want to Learn More About Oracle GoldenGate Veridata?
+## Learn More
 
 * [Oracle GoldenGate Veridata (12.2.1.4.0) Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Oracle Fusion Middleware Supported System Configurations](https://www.oracle.com/middleware/technologies/fusion-certification.html)
@@ -193,4 +217,4 @@ To deploy agents:
       + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
 
 
-* **Last Updated By/Date:** Anuradha Chepuri, March 2021
+* **Last Updated By/Date:** Anuradha Chepuri, April 2021

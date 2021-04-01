@@ -9,10 +9,28 @@ A compare pair is the logical relationship between a source table or file and a 
 
 You must create and execute the job to run the comparisons. The job configuration determines which compare pair groups are processed.
 
-### What Do You Need?
+*Estimated Lab Time*: 15 minutes
 
-+ **Oracle GoldenGate Veridata installed**
-+ **Source and Target connections as described in Lab 2**
+### Objectives
+In this lab, you will:
+* Create a Group.
+* Create Compare Pairs (on Manual Mapping and Pattern Mapping tabs).
+* Create a job for the Compare Pair Groups.
+* Run the job.
+
+### Prerequisites
+This lab assumes you have:
+
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Environment Setup
+    * Lab: Initialize Environment
+* The following are required to complete this lab:
+    * Oracle GoldenGate Veridata installed
+    * Source and Target connections as described in Lab 2
 
 ## **STEP 1:** Create a Group
 
@@ -95,7 +113,7 @@ To execute a job:
 
     [](youtube:N28CsAr5kjw)
 
-## Want to Learn More?
+## Learn More?
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Groups](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-70B42ABB-EA8E-4ADF-8414-7EA1752CA7E6)
 * [Compare Pairs](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-055CE119-0307-4826-98C7-A51F53E28763)
@@ -109,7 +127,7 @@ To execute a job:
     + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
     + Sukin Varghese, Senior Member of Technical staff, Database Test Dev/Tools/Platform Testing
 
-* **Last Updated By/Date:** Anuradha Chepuri, March 2021
+* **Last Updated By/Date:** Anuradha Chepuri, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*. Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.
