@@ -10,7 +10,6 @@ One advantage of using a load balancer is that you can configure it to use the S
 
 When you complete this lab, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number on which each service listens. For example, if the IP address of the load balancer is `203.0.113.1`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://203.0.113.1:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://203.0.113.1:8889`.
 
-
 Estimated lab time: 90 minutes, if you've already created the environment and cluster, as explained in [Prerequisites](#prerequisites), below.
 
 ### Objectives
