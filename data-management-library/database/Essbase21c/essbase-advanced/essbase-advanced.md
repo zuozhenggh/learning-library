@@ -6,14 +6,14 @@ This lab will walk you through some of the advanced features of Essbase 21c. For
 * Data load to cubes 
 * Execution of Calculation scripts 
 * Utilities for Migration to Essbase 21c 
-* Overview of automation using REST APIs
+* Overview of Essbase REST API Functionality
 
-Estimated Lab Time: *25 minutes*.
+Estimated Lab Time: *60 minutes*.
 
 ### Objectives
 
 * Learn how to build rules, calculations and run corresponding jobs.
-* Learn the migration process from 11g to 21c environments.
+* Understand the Migration Utilities
 * Understand the Essbase REST API functionality.
 
 ### Prerequisites
@@ -35,31 +35,21 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 1.	Download the rules file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pnp9bHy2Ja5o7FQILaBFhCd02G4LM9Z1buBnCIjhW84/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Data_Basic.txt)
 
+
+    Open the downloaded data file "Data_Basic.txt". Notice that there's no header row and the file delimiter is a comma.
+
     ![](./images/image14_76.png)
 
-2.	Set the rule file to ignore extra fields.
+2.	Sign in to the Essbase web interface.
 
-3.	Define the data load properties.
+3.	On the home page, expand the DynamicCorp application, and select the Sales cube.
 
-4.	Validate and save the rule file as LoadCorp.
-
-5.	Load data to Sales and specify the following options.
-
-  	a. Data Source: Data-Basic.txt
-
-  	b. Rules file: LoadCorp.rul
-
-6.	Open the downloaded data file "data-basic.txt" in a formatted text editor. Notice that there's no header row and the file delimiter is a comma.
-
-7.	Sign in to the Essbase web interface.
-
-8.	On the home page, expand the DynamicCorp application, and select the Sales cube.
-
-9.	Now create the load rule.  
+4.	Now create the load rule.  
     a. In the Sales cube, from the right side hamburger, Click on "Inspect".  
        ![](./images/image14_77.png)
 
 	b. On the Scripts tab, select Rules. The Rules editor will show defined rules.  
+
 	c. Click on Create and select Data Load to define the load data rule.  
 
 	  ![](./images/image14_78.png)
@@ -70,11 +60,11 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	f. Under Preview Data, select File for flat file input.
 
-	g. Browse to the file data-basic.txt that you downloaded. Click Open to select it.
+	g. Browse to the file Data_Basic.txt that you downloaded. Click Open to select it.
 
-	h.	As you saw earlier, the first row of the flat file doesn't contain header values. De-select the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.  
+	h.	As you saw earlier, the first row of the flat file doesn't contain header values. Uncheck the Header Row, if it is selected. When the header row is present the columns are mapped automatically.  
 
-	i.	Select Comma as the Delimiter value, based on the file format.  
+	i.	Select Comma as the Delimiter value based on the file format.  
 
 	j.	Click Proceed.  
 
@@ -82,39 +72,38 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 1.  You can now see the preview of the data in the Rules editor based on the input flat file.
 
-  	![](./images/image14_80.png)
+    The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
 
-11.	The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
+    Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
 
-12.	Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
+2. In the Rules editor, you can now set up the rule fields.
 
-13. In the Rules editor, you can now set up the rule fields.
+    ![](./images/image14_80.png)
 
-    ![](./images/image14_81.png)
+    a. Click Create drop-down menu, and map the fields as below:.
 
-    a. Click Create drop-down menu, and start setting the field names.
+    * Field 1 - Product
+    * Field 2 - Market
+    * Field 3 - Year
+    * Field 4 - Scenario
+    * Field 5 - Sales
+    * Field 6 - COGS
+    * Field 7 - Marketing
+    * Field 8 - Payroll
+    * Field 9 - Misc
+    * Field 10 - Opening Inventory
+    * Field 11 - Additions  
+  
+       All dimensions must be represented in the load data rule before any data can be loaded.
 
-    * Set Field (column) 1 to Product.
-    * Set Field 2 to Market.
-    * Set Field 3 to Year.
-    * Set Field 4 to Scenario.
-    * Set Field 5 to Sales.
-    * Set Field 6 to COGS.
-    * Set Field 7 to Marketing.
-    * Set Field 8 to Payroll.
-    * Set Field 9 to Misc.
-    * Set Field 10 to Opening Inventory.
-    * Set Field 11 to Additions. All dimensions must be represented in the load data rule before any data can be loaded.
+    b. After defining the rule with global and field options, click Verify on the Global toolbar to validate the syntax and then click Save and Close.
 
-    b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
+    c. Click Refresh. See that the created rule is now listed in the Rules pane of the Scripts tab.
 
-    c. After syntax is validated, click Save and Close.
+    d. Click Close to return to the Applications home page. Next create a job to load the data using the rule.
 
-    d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then    clicking Proceed.
-
-    e. Click Close to return to the Applications home page. Next, create a job to load the data using the rule.
-
-14. On the home page, select Jobs, and then New Job.
+3. On the home page, select Jobs and then New Job.
+    ![](./images/image15_60.png)
 
     a. Select Load Data.
 
@@ -136,36 +125,37 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     i. On the Jobs page, click Refresh to monitor the job status.
 
-    ![](./images/image14_83.png)
 
-15. After the job is completed, verify that the input records were processed and loaded.
+4. After the job is completed, verify that the input records were processed and loaded.
 
-    a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
+    a.	Select Job Details to check the load data job details.
 
-    b.	Select Job Details to check the load data job details.
+    b.	Click Close when done.
+     ![](./images/image14_83.png)
 
-    c.	Click Close when done.
+9.	On the Applications page, click the Actions to the right of the DynamicCorp - Sales cube and click Inspect.
 
-    d.	On the Applications page, click the Actions menu on the cube row to the right of the Sample cube, and click Inspect.
+10. Select Statistics to view the resulting statistics for the Sales cube.
 
-    e.	Select Statistics to view the resulting statistics for the Sales cube.
+    ![](./images/image15_61.png)
 
-16. You have now completed loading data using a rule.
+    You have now completed the data load using rule file.
 
 ## **Step 2:** Calculating Essbase Cube
 
 A cube contains two types of values: values that you enter called input data and values that are calculated from input data.
 
 A cube can be calculated using one of two methods:
-*  Outline calculation: This is the simplest calculation method, bases the calculation of a cube on the relationships between members in the cube outline(the hierarchy) and on any formulas that are associated with members in the outline. 
+*  Outline calculation: The calculation of a cube is based on the relationships between members in the cube outline(the hierarchy) and on any formulas that are associated with members in the outline. 
 
-* Script based calculations:This contains a series of calculation commands, equations, and formulas, allows you to define calculations other than those defined by the database outline.  
+* Script based calculations: This contains a series of calculation commands, equations, and formulas, which allows you to define calculations other than those defined by the database outline calculation.  
+  
   You create calculation scripts using a script editor in the Essbase web interface.  
   Calculation scripts do not apply to aggregate storage applications.
 
 1.	On the Application page, expand the application.
 
-2.	From the Actions menu, to the right of the cube name, launch the inspector.
+2.	From the Actions menu on the right of the cube, click on Inspect.
 
     ![](./images/image14_84.png)
 
@@ -175,63 +165,94 @@ A cube can be calculated using one of two methods:
 
 4.	Click Add  to create a new calculation script.
 
-5.	If member names are required in your calculation script, drill into the Member Tree to find the members you want to add.
-Right-click dimension or member names to insert them into the script.
+    Note:   
+    If member names are required in your calculation script, drill into the Member Tree to find the members you want to add.
+    Right-click dimension or member names to insert them into the script.  
 
-6.	If function names are required in your calculation script, use the Function Name menu to find calculation functions and add them to the script.
-See the Function description under the menu to read descriptions of each function.
+    If function names are required in your calculation script, use the Function Name menu to find calculation functions and add them to the script.
+    See the Function description under the menu to read descriptions of each function.
 
-7.	The following calculation script, based on the DynamicCorp.Sales database, calculates the Actual values from the Year, Measures, Market, and Product dimensions:
+5.	The following calculation script, based on the DynamicCorp.Sales database, calculates the Actual values from the Year, Measures, Market, and Product dimensions:
 
-		FIX (Actual)
+    ```
+    <copy>        
+          FIX (Actual)
 		CALC DIM(Year, Measures, Market, Product);
-		ENDFIX
+	ENDFIX</copy>
+    ````
 
-1. In the name field of script editor give the name to script as CalcActual
+
+1. In the name field of script editor give the name to script as CalcActual.
 
     ![](./images/image14_86.png)
 
-9.	Click **Validate** before saving your script. Validating a script verifies the script syntax. For example, incorrectly spelled function names and omitted end-of-line semicolons are identified. Validation also verifies dimension names and member names.
+7.	Click **Validate** before saving your script. Validating a script verifies the script syntax. For example, incorrectly spelled function names and omitted end-of-line semicolons are identified. Validation also verifies dimension names and member names.
 
-10.	Correct any validation errors.
+8.	Correct any validation errors.
 
-11.	Click Save.
+9.	Click Save and Close.
 
-12.	Click Close.
+10.  After creating and saving calculation scripts, use the Jobs page to execute them and perform the calculations on data loaded in your cube.
 
-13. After creating and saving calculation scripts, you use the Jobs page to execute them and perform the calculations on data loaded in your cube.
 
-14.	Create your calculation script, or upload an existing calculation script.
-
-15.	In Essbase, click Jobs.
-
-16.	On the Jobs page, click New Job and select Run Calculation.
+11.	On the Jobs page, click New Job and select Run Calculation.
 
     ![](./images/image14_87.png)
 
-17.	On the Run Calculation dialog box, select the application - DynamicCorp and cube – Sales.
+12.	On the Run Calculation dialog box, select the application - DynamicCorp and cube – Sales.
 
-18.	Select the script – CalcActual.
+13.	Select the script – CalcActual.
 
     ![](./images/image14_88.png)
 
-19.	Click OK to start the calculation.
+14.	Click OK to start the calculation.
 
-20.	Click Refresh to see the status of your calculation.
+15.	Click Refresh to see the status of your calculation.
 
 ## **Step 3:** Migration Utilities
 
-With this exercise you will learn how to automate tasks using Essbase Command Line Interface.
+1. Download and configure CLI:  
 
-1. **Import Sample Basic from CLI**:
+  a. Login to Essbase web user interface.  
+  
+  b. Click on the Console tab at the top. Navigate to the Desktop tools on the left pane.  
+  
+  c. Expand the Command Line Tools section.  
+  
+  d. Download the Command-line Tool.  
 
-Before you start, copy the provided file [Sample_Basic.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/84mR3q7KTI_8Fnno0QzJRAMX4HsPPTmU2863GqOo-ok/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic.xlsx) to your CLI directory.
+     ![](./images/image15_62.png)
+  
+  e. Unzip the cli.zip file in a directory e.g. C:\app\cli  
+  
+  f. Open a command shell window and change directory to where you unzipped the the CLI tool.  
+ 
+ **    Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error
+    C:\app\cli>esscs.bat
+    Install JDK8 and set JAVA_HOME variable to JDK8 installed location**  
+   
+  g. From the command window type esscs.bat to get a list of the available command. 
+     ![](./images/image15_63.png) 
 
-  ![](./images/image14_89.png)
+  h. Next login using below commad:
+      ```
+    <copy>        
+          esscs.bat login -url http://ip:9000/essbase -u userid
+	</copy>
+    ````
+     ![](./images/image15_64.png) 
+   
 
-The file Sample_Basic.xlsx will be imported using CLI and it will be used for rest of the exercise   
 
-1. Enter below command to deploy the the Sample cube using the Sample_Basic.xlsx file.  Name the application **Sample01** and cube as **base**.
+2. Import Sample Basic from CLI:
+
+   a. Download the file [Sample_Basic.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/84mR3q7KTI_8Fnno0QzJRAMX4HsPPTmU2863GqOo-ok/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic.xlsx) to your CLI directory.
+
+     ![](./images/image14_89.png)
+
+      This file will be imported using CLI and it will be used for rest of the exercise.   
+
+   b. Enter below command to deploy the the Sample cube using the Sample_Basic.xlsx file.  Name the application **Sample01** and cube as **Base**.
 
     ```
     <copy> esscs.bat deploy --help
@@ -240,28 +261,27 @@ The file Sample_Basic.xlsx will be imported using CLI and it will be used for re
 
     ![](./images/image14_90.png)
 
-2. Next, review the newly create cube from the Essbase Web Interface.
+   c. Next, review the newly create cube from the Essbase Web Interface.
 
     ![](./images/image14_91.png)
 
-3. LcmExport: Back Up Cube Files. The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. To export Sample application deployed in last step use command.
+3. LcmExport: The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. To export Sample application deployed in last step use command.
+
 
     ```
-    <copy> lcmExport [-verbose] -application appname [-zipfilename filename] [-localDirectory path] [-threads threadscount] [-skipdata] [-overwrite] [-generateartifactlist] [-include-server-level] </copy>
-    ```
-    ```
-    <copy> esscs lcmExport -application Sample -zipfilename Sample.zip </copy>
+    <copy> 
+    esscs.bat lcmExport --help  
+    esscs lcmExport -application Sample01 -zipfilename Sample01.zip </copy>
     ```
 
     ![](./images/image14_92.png)
 
-4. LcmImport: Restore Cube Files. Restores cube artifacts from a Lifecycle Management (LCM) .zip file.
+4. LcmImport: Restores cube artifacts from a Lifecycle Management (LCM) .zip file.
 
     ```
-    <copy> lcmImport [-verbose] -zipfilename filename [-overwrite] [-targetappName targetApplicationName] [-artifactlist artifactList] </copy>
-    ```
-    ```
-		<copy> Command example : esscs lcmImport -z  C:/cli/Sample.zip -o </copy>
+		<copy> 
+        esscs.bat lcmImport --help 
+        esscs lcmImport -z  C:/cli/Sample01.zip -o </copy>
     ```
 
     *NOTE:* The mentioned path should not contain spaces.
@@ -270,47 +290,45 @@ The file Sample_Basic.xlsx will be imported using CLI and it will be used for re
 
 ## **Step 4:** REST APIs
 
-REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
+REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over HTTP.
 
 You can view a list of all REST Endpoints.
 
 **Explore the Swagger Interface**
 
-The Swagger interface for Essbase REST enables you to try out REST requests in a visual interface, even before you have set up cURL or another API implementation method.
+The Swagger interface for Essbase REST enables you to try out REST requests in a visual interface, even before you have set up cURL(Client URL) or another API implementation method. cURL is a command-line data transfer tool you can use for making HTTP requests and other requests.
+
 To use the Swagger interface,
 
-1. In a web browser, enter the URL for the Essbase web interface. For example: http://ip:9000/essbase/jet
+1. Login Essbase web interface with url. For example: http://ip:9000/essbase/jet
 
-2. Log in.
+2. In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. For example, change the URL to:  http://ip:9000/essbase/rest/doc/
 
-3. In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. For example, change the URL to:  https://ip/essbase/rest/doc/
+3. On Swagger web interface, you will be presented with number of different REST APIs.  
 
-4. On Swagger web interface, you will be presented with number of different REST APIs.  
-
-5.	Under Application logs, click on the second GET button (Download All Logs).
+4.	Under Application logs, click on the second GET button (Download All Logs).
 
     ![](./images/image14_94.png)
 
     ![](./images/image14_95.png)
 
-6.	Click the Try it Out button.
+5.	Click the Try it Out button.
 
     ![](./images/image14_96.png)
 
-7.	Enter the name of application.
+6.	Enter the name of application.
 
     ![](./images/image14_97.png)
 
-8.	Click the Execute button.
+7.	Click the Execute button.
 
-9.	Look under the Server Response section. If the request was successful, then you should see a 200 response with a body such as the following:
+8.	Look under the Server Response section. If the request was successful, then you should see a 200 response with a body such as the following:
 
     ![](./images/image14_98.png)
 
-10.	Click on the Download File link to download zip file containing application log.
+9.	Click on the Download File link to download zip file containing application log.
 
-11. You can integrate REST APIs with cURL in order to automate various Essbase tasks. cURL is a command-line data transfer tool you can use for making HTTP requests and other requests.
-
+10. You can integrate REST APIs with cURL in order to automate various Essbase tasks. 
 You may proceed to the next lab.
 
 ## Acknowledgements

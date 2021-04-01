@@ -4,7 +4,14 @@
 
 This lab walks you through the major features of Essbase 21c and their functionalities across the platform along with Overview of the Essbase 21c Web interface.
 
-Estimated Lab Time: 20 minutes.
+In this lab, the following topics will be covered:  
+
+* Explore the Smart View interface
+* Create Ad Hoc grids
+* Overview of Web user interface
+
+
+Estimated Lab Time: *30 minutes*.
 
 ### Objectives
 
@@ -48,12 +55,6 @@ This lab requires:
 This concludes the creation of sample application from the “Catalog” in the Essabase 21c Web Interface.
 
 ## **Step 2:** Analyzing Essbase data using Smart View Add-ins
-
-In this section, The following topics will be covered:  
-
-* Explore the Smart View interface
-* Create Ad Hoc grids
-* Overview of Web user interface
 
 After installing Oracle Smart View for Office, you can create connections to Essbase. 
 
