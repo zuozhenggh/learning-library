@@ -1,8 +1,9 @@
 ## MyToDoReact version 1.0.
 Copyright (c) 2021 Oracle, Inc.
+
 Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Lab 1 --  MyToDoReact Setup OCI, OKE, ATP and Cloud shell
+# Lab 1 --  Setup OCI, OKE, ATP and Cloud shell
 
 ## Introduction
 
@@ -36,9 +37,9 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 1. Open up Cloud Shell and clone the github repo.
 
-    ````shell
+    ````
     <copy>
-    git clone https://github.com/oracle/MyToDoReact.git
+    git clone https://orahub.oci.oraclecorp.com/ora-jdbc-dev/mtdrworkshop.git
     </copy>
     ````
 
@@ -54,21 +55,21 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
  1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
 
-       ![](images/15-identity-compartments.png " ")
+  ![](images/15-identity-compartments.png " ")
 
  2. Click **Create Compartment** with the following parameters then click **Create Compartment**:
         - Compartment name: `mtdrworkshop`
         - Description: `My ToDo React workshop compartment`
 
-        ![](images/16-create-compartment.png " ")
+  ![](images/16-create-compartment.png " ")
 
-        ![](images/17-create-compartment2.png " ")
+  ![](images/17-create-compartment2.png " ")
 
   3. Once the compartment is created, click the name of the compartment and then click **Copy** to copy the OCID.
 
-        ![](images/19-compartment-name-ocid.png " ")
+  ![](images/19-compartment-name-ocid.png " ")
 
-        ![](images/20-compartment-ocid.png " ")
+  ![](images/20-compartment-ocid.png " ")
 
   4. Go back into your cloud shell and verify you are in the `~/mtdrworkshop` directory.
 
@@ -81,19 +82,19 @@ Click the Cloud Shell icon in the top-right corner of the Console.
   6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left
             corner of the Console and go to **Developer Services > Kubernetes Clusters**.
 
-          ![](images/27-dev-services-oke.png " ")
+  ![](images/27-dev-services-oke.png " ")
 
   7. Make sure you are in the newly created compartment and click **Create Cluster**.
      (Please use the default schema in the unlikely situation that the newly created compartment is not quickly visible on the left pickler)
 
-          ![](images/28-create-oke.png " ")
+  ![](images/28-create-oke.png " ")
 
   8. Choose **Quick Create** as it will create the new cluster along with the new network
         resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT
         Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load
         balancers. Click **Launch Workflow**.
 
-          ![](images/29-create-oke-wizard.png " ")
+  ![](images/29-create-oke-wizard.png " ")
 
 
   9. Change the name of the cluster to `mtdrworkshopcluster`, accept all the other defaults, and click **Next** to review the cluster settings.
@@ -101,18 +102,18 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   10. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
 
-          ![](images/31-create-oke-wizard3.png " ")
+  ![](images/31-create-oke-wizard3.png " ")
 
   11. Close the creation window once you can.
 
-          ![](images/32-close-cluster-create.png " ")
+  ![](images/32-close-cluster-create.png " ")
 
   12. Once launched it should usually take around 5-10 minutes for the cluster to be
         fully provisioned and the Cluster Status should show Active.
 
-          ![](images/33-click-cluster-name.png " ")
+  ![](images/33-click-cluster-name.png " ")
 
-          ![](images/34-copy-cluster-id.png " ")
+  ![](images/34-copy-cluster-id.png " ")
 
         _There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step._
 
