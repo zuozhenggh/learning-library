@@ -2,7 +2,9 @@
 
 It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests.
 
-To open the services included in this load balancer:
+## Access the Services on the Cluster
+
+To access the services included in this load balancer:
 
 1. Find the IP address or the hostname used for your load balancer.
 

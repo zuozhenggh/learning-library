@@ -1,6 +1,6 @@
 #  Use the Load Balancer to Access Services on the Cluster
 
-It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests. 
+It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests.
 
 ## Access the Services on the Cluster
 
