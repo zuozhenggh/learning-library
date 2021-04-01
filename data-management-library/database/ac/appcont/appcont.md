@@ -4,7 +4,7 @@
 
 This lab walks you through the use and functioning of Application Continuity.
 
-Estimated Lab Time: 30 Minutes
+Estimated Lab Time: 60 Minutes
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -19,6 +19,7 @@ Estimated Lab Time: 30 Minutes
 **Note:** The initial lab on building the DB System has instructions on how to connect to either node using different methods.
 
 2. Connect to the **oracle** user and download the sample program from the Object Store
+
     ````
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/O8AOujhwl1dSTqhfH69f3nkV6TNZWU3KaIF4TZ-XuCaZ5w-xHEQ14ViOVhUXQjPB/n/oradbclouducm/b/LiveLabTemp/o/ACDemo_19c.zip
     ````
@@ -33,14 +34,15 @@ Estimated Lab Time: 30 Minutes
     unzip ACDemo_19c.zip
     Archive:  ACDemo_19c.zip
     creating: acdemo/
-    creating: acdemo/classes/
-    creating: acdemo/lib/
-    creating: acdemo/src/
-    creating: acdemo/win/
+       creating: acdemo/classes/
+       creating: acdemo/lib/
+       creating: acdemo/src/
+       creating: acdemo/win/
     inflating: README.txt
     inflating: SETUP_AC_TEST.sh
     ````
 4. Set the execute bit **+x** on the SETUP_AC_TEST.sh script
+
     ````
     chmod +x SETUP_AC_TEST.sh
     ````
@@ -112,9 +114,10 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
    The sample program is called **acdemo**
    There is an **acdemo/** directory in the *oracle* users home directory (if you unpacked the ZIP file here). The acdemo/ directory contains:
 
+    ````
       classes/   
           acdemo/    <--- Compiled versions of the acdemo application classes
-      lib/           <--- The JDBC libraries and the packaged acdemo classes in *acdemo.jar*
+      lib/           <--- The JDBC libraries and the packaged acdemo classes in acdemo.jar
       src/
          acdemo/
             ACDemo.java             <-- main program file
@@ -130,7 +133,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
       runtacreplay                  <--- shell script to start ACDemo using ac_replay.properties file
       kill_session.sh               <--- shell script to kill database sessions connected to a named service
       build.xml                     <--- A buildfile for ANT (ANT not installed on these systems)
-
+    ````
 
 ## **STEP 3:**  NO Replay
 
@@ -168,10 +171,10 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     Connect to the node containing that instance
 
     ````
-    [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ srvctl status service -d `srvctl config database` -s noac
+    $ srvctl status service -d `srvctl config database` -s noac
          Service noac is running on instance(s) racHPNUY2
 
-    [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ ps -ef | grep smon
+    $ ps -ef | grep ora_smon
          root     39708     1  1 Mar30 ?        00:08:33 /u01/app/19.0.0.0/grid/bin/osysmond.bin
          grid     45180     1  0 Mar30 ?        00:00:00 asm_smon_+ASM2
          oracle   71378 75971  0 06:26 pts/0    00:00:00 grep --color=auto smon
@@ -239,17 +242,21 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
 2. Crash the instance by killing SMON
 
     Substitute your AC service in the command below (in this example my AC-enabled service is named ac_service)
+
     ````
     srvctl status service -d `srvctl config database` -s ac_service
     ps -ef | grep ora_smon
     kill -9 mySMONPID
+    ````
+    For example:
 
-    [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ srvctl status service -d `srvctl config database` -s ac_service
-                     Service ac_service is running on instance(s) racHPNUY2
-    [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ ps -ef | grep ora_smon
-                oracle   68325     1  0 07:52 ?        00:00:00 ora_smon_racHPNUY2
-                oracle   99444 81136  0 08:19 pts/1    00:00:00 grep --color=auto ora_smon
-    [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ kill -9 68325
+    ````
+    $ srvctl status service -d `srvctl config database` -s ac_service
+             Service ac_service is running on instance(s) racHPNUY2
+    $ ps -ef | grep ora_smon
+          oracle   68325     1  0 07:52 ?        00:00:00 ora_smon_racHPNUY2
+          oracle   99444 81136  0 08:19 pts/1    00:00:00 grep --color=auto ora_smon
+    $ kill -9 68325
     ````
 
     ![](./images/ac_failover.png " ")
@@ -301,13 +308,17 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
         srvctl status service -d `srvctl config database` -s ac_service
         ps -ef | grep ora_smon
         kill -9 mySMONPID
+        ````
+        For example:
 
-        [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ srvctl status service -d `srvctl config database` -s tac_service
+        ````
+        $ srvctl status service -d `srvctl config database` -s tac_service
                          Service ac_service is running on instance(s) racHPNUY2
-        [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ ps -ef | grep ora_smon
+
+        $ ps -ef | grep ora_smon
                     oracle   68325     1  0 07:52 ?        00:00:00 ora_smon_racHPNUY2
                     oracle   99444 81136  0 08:19 pts/1    00:00:00 grep --color=auto ora_smon
-        [oracle@lvracdb-s01-2021-03-30-2046032 acdemo]$ kill -9 68325
+        $ kill -9 68325
         ````
 
         ![](./images/tac_failover.png " ")

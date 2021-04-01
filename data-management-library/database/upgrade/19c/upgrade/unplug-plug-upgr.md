@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will now unplug an Oracle 12.2.0.1 pluggable database (PDB) from CDB1 and plug it into 19c’s CDB2, including all the necessary steps.
+In this lab, you will now unplug an Oracle 12.2.0.1 pluggable database (PDB) from CDB1 and plug it into 19c’s CDB2, including all the necessary steps.
 
 *Estimated Lab Time*: 40 minutes
 
@@ -112,7 +112,7 @@ This lab assumes you have:
 
 ## **STEP 3**: Plugin
 
-1. In this step you will plugin PDB3 into CDB2.
+1. In this step, you will plugin PDB3 into CDB2.
 
     ````
     <copy>

@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "RAC Fundamentals",
+    "workshoptitle": "Application Continuity",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -23,12 +23,12 @@
         },
         {
             "title": "Lab 3: Application Continuity",
-            "description": "This lab walks you through some of the characteristics of database services.",
+            "description": "This lab walks you through the function of Application Continuity.",
             "filename": "../../appcont/appcont.md"
         },        {
-            "title": "Lab 4: Fast Application Notification",
+            "title": "Lab 4: Optional Lab: Fast Application Notification",
             "description": "This lab examines FAN events.",
-            "filename": "../../clusterware/fan_callouts.md"
+            "filename": "../../fan/fan.md"
         }
     ]
 }
