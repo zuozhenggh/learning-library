@@ -28,12 +28,16 @@ The backend is implemented using the following Java classes (under ./backend/src
 1. Set the environment variable "DOCKER_REGISTRY" to push the docker image to the OCI image registry. If the variable is not set or set to an empty string the push will fail (but the docker image will be built).
 
 
-2. Set the database ADMIN password in the ./backend/target/classes/application.yaml file
+2. Pick a database service alias from ./backend/target/classes/wallet/tnsnames.ora i.e., mtdrdb_tp
+
+![](images/tnsnames-ora.png " ")
+
+3. Edit ./backend/target/classes/application.yaml to set the database service and user password
 
    ![](images/application-yaml.png " ")
 
 
-3. Run the `build.sh` script to build and push the
+4. Run the `build.sh` script to build and push the
     microservices images into the repository
 
     ```
@@ -46,12 +50,12 @@ The backend is implemented using the following Java classes (under ./backend/src
 
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
-4.  Go to the Console, click the hamburger menu in the top-left corner and open
+5.  Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
-5. Mark all the images as public (**Actions** > **Change to Public**):
+6. Mark all the images as public (**Actions** > **Change to Public**):
 
   ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
 

@@ -3,6 +3,6 @@ server:
   host: 0.0.0.0
 
 database:
-  url: "jdbc:oracle:thin:@<YOUR ADB SERVICE>?TNS_ADMIN=target/classes/wallet"
-  user: ADMIN
-  password: <YOUR ADMIN PASSWORD>
+  url: "jdbc:oracle:thin:@<your SERVICE alias>?TNS_ADMIN=target/classes/wallet"
+  user: Todouser
+  password: <Database user PASSWORD>
