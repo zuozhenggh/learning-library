@@ -51,7 +51,7 @@ Understanding Spatial Studio capabilities to
 ## Acknowledgements
 
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Last Updated By/Date** - David Lapp, Database Product Management, February 2021
+* **Last Updated By/Date** - David Lapp, Database Product Management, April 2021
 
 
 ## Need Help?
