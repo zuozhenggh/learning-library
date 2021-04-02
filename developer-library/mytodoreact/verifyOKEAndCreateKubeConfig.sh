@@ -5,7 +5,7 @@
 ## Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
 echo ________________________________________
-echo verifying OKE cluster creation,  create ~/.kube/config, create mtdrworkshop namespace, and set Jaeger UI Address ..../verify
+echo verifying OKE cluster creation,  create ~/.kube/config, create mtdrworkshop namespace, and ..../verify
 echo ________________________________________
 
 export WORKINGDIR=workingdir
@@ -17,7 +17,7 @@ echo MTDRWORKSHOP_REGION... $MTDRWORKSHOP_REGION
 export MTDRWORKSHOP_COMPARTMENT_ID=$(cat $WORKINGDIR/mtdrworkshopcompartmentid.txt)
 echo MTDRWORKSHOP_COMPARTMENT_ID... $MTDRWORKSHOP_COMPARTMENT_ID
 echo
-oci ce cluster list --compartment-id $MTDRWORKSHOP_COMPARTMENT_ID --lifecycle-state ACTIVE | jq '.data[]  | select(.name == "mtdrworkshopcluster") | .id' | tr -d '"' > $WORKINGDIR/mtdrworkshopclusterid.txt
+#oci ce cluster list --compartment-id $MTDRWORKSHOP_COMPARTMENT_ID --lifecycle-state ACTIVE | jq '.data[]  | select(.name == "mtdrworkshopcluster") | .id' | tr -d '"' > $WORKINGDIR/mtdrworkshopclusterid.txt
 cat $WORKINGDIR/mtdrworkshopclusterid.txt
 export MTDRWORKSHOP_CLUSTER_ID=$(cat $WORKINGDIR/mtdrworkshopclusterid.txt)
 echo MTDRWORKSHOP_CLUSTER_ID... $MTDRWORKSHOP_CLUSTER_ID

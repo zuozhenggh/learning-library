@@ -195,11 +195,9 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   * `<USERNAME>` - is the username used to log in (typically your email address). If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something.com`
 
-  * `"<AUTH_TOKEN>"` - paste the generated token value and enclose the value in quotes. For example `docker loging oracleidentitycloudservice/user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
+  * `"<AUTH_TOKEN>"` - paste the generated token value and enclose the value in quotes.
 
-  ```
-  <copy>docker login $MTDRWORKSHOP_REGION.ocir.io -u $MTDRWORKSHOP_OCIR_NAMESPACE/$MTDRWORKSHOP_OCIR_USER -p <AUTH_TOKEN</copy>
-  ```
+  For example `dockerLogin.sh user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
 
 8. Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
 
@@ -210,13 +208,18 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
 ## **STEP 6**: Access OKE from the Cloud Shell
 
-1. Run `./verifyOKEAndCreateKubeConfig.sh`
+1. Copy the mdtrworkshopcluster id
+![](images/mtdrworkshop-cluster-id.png " ")
+
+2. Edit mtdrworkshop/workingdir/mtdrworkshopclusterid.txt and paste the mdtrworkshopcluster id
+
+3. Run `./verifyOKEAndCreateKubeConfig.sh`
 
  ```
  <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
  ```
 
-2. Notice `/.kube/config` is created for the cluster and the `mtdrworkshop` namespace is also created.
+Notice `/.kube/config` is created for the cluster and the `mtdrworkshop` namespace is also created.
 
   ![](images/verifyOKEOutput.png " ")
 
