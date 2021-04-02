@@ -1,6 +1,7 @@
 {
     "workshoptitle": "Get Started with Oracle Database",
     "help": "livelabs-help-db_us@oracle.com",    
+
     "tutorials": [
         {
             "title": "Introduction",
