@@ -6,9 +6,10 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 
 # Lab 4 -- Frontend (React JS)
 
+## **Summary**
 The application is so simple that there is really no need to know React to understand the code.
 
-The application uses Functional Components with the State Hooks to manage the states. There is one main component called "App" which renders another component called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" components displays the text field to add a new item.
+The application uses Functional Components with State Hooks for managing states. There is a main component called "App" which renders another component called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" component displays the text field to add a new item.
 
 The App component includes the "items" state ([]) which contains the list of todo items. When setItems is called with a new array of items the component will re-render.
 
@@ -26,6 +27,7 @@ The index.css file contains all the styles for the application.
 ## **STEP 1**: Getting started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 1. clone the MyToDoReact git repository (we only need the front end in this lab)
 ```
 <copy>git clone git@orahub.oci.oraclecorp.com:ora-jdbc-dev/mtdrworkshop.git</copy>
@@ -43,7 +45,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. Create a "mytodoreact" object storage in your tenancy
 
-Open up the hamburger menu in the top-left corner of the Console and select **Object Storage > Object Storage**.
+Open up the hamburger menu in the top-left corner of the Console and select
+**Object Storage > Object Storage**.
 
 ![](images/frontendimg1.png " ")
 

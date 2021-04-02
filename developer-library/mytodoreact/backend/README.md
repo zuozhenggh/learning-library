@@ -5,7 +5,7 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 
 # Lab 3 -- Backend (Java/Helidon)
 
-## **Summary**: MyToDoReact backend
+## **Summary**
 
 As with most React applications (https://reactjs.org/), this todo application uses remote APIs to handle data persistence. The backend exposes 5 REST APIs including:
 - 1) retrieving the current list of todo items
@@ -76,7 +76,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
   ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
 
-## kubectl create -f app.yaml
+2. kubectl create -f app.yaml
 ```
   <copy>kubectl create -f app.yaml</copy>
 ```
@@ -84,8 +84,8 @@ The backend is implemented using the following Java classes (under ./backend/src
 service/todolistapp-helidon-se-service created
 deployment.apps/todolistapp-helidon-se-deployment created
 
-2. Check the status using the following commands
-## $ kubectl get services
+3. Check the status using the following commands
+$ kubectl get services
 ```
   <copy>kubectl get services</copy>
 ```
@@ -93,7 +93,7 @@ NAME                             TYPE           CLUSTER-IP     EXTERNAL-IP    PO
 kubernetes                       ClusterIP      10.96.0.1      <none>         443/TCP        36d
 todolistapp-helidon-se-service   LoadBalancer   10.96.74.197   130.61.66.27   80:32344/TCP   33s
 
-## $ kubectl get pods
+4. $ kubectl get pods
 ```
   <copy>kubectl get pods</copy>
 ```
@@ -101,13 +101,13 @@ NAME                                                 READY   STATUS    RESTARTS 
 todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv   1/1     Running   0          5m40s
 todolistapp-helidon-se-deployment-7fd6dcb778-gjdfv   1/1     Running   0          5m39s
 
+5. Continuously tailing the logs
 
+$ kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
+$ kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-gjdfv
 
-## $ kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
-## $ kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-gjdfv
-
-Returns the todolist:
-http://130.61.66.27/todolist
+6. Returns the todolist:
+  http://130.61.66.27/todolist
 
 
 ## **STEP 4**: ReDeploy on Kubernetes
@@ -118,12 +118,14 @@ If the image has changed, just delete the pod and it will be recreated
   <copy>cd $MTDRWORKSHOP_LOCATION/backend; ./undeploy.sh</copy>
 ```
 
-## $ kubectl delete pod todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
-pod "todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv" deleted
+2. $ kubectl delete pod todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
 
 ```
-## kubectl delete deployment todolistapp-helidon-se-deployment -n todoapp
-## kubectl delete service todolistapp-helidon-se-service -n todoapp
+<copy>kubectl delete deployment todolistapp-helidon-se-deployment -n todoapp
+</copy>
+```
+```
+<copy>kubectl delete service todolistapp-helidon-se-service -n todoapp </copy>
 
 ```
 

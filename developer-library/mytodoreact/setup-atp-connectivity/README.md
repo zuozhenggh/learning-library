@@ -119,11 +119,12 @@ Close the Pre-Authenticated Request window when done.
 <copy>cd mtdrworkshop/backend/target/classes/wallet</copy>
 ```
 
-2. Download the Wallet zip file using the Pre-Authenticated URL saved in the previous steps
+2. Download the Wallet zip file using the Pre-Authenticated URL saved in a previous steps (copy the command an replace the placehodler before executing)
+Example
+crl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/........./Wallet_MTDRDB.zip --output wallet.zip
 
-https://objectstorage.us-phoenix-1.oraclecloud.com/p/DX4nwVB7O4trriaEbI3KNvLsIbxyqVdLALuNcv7-Q5EvLiaC0CMFVrAnC_0tCGDV/n/oracleonpremjava/b/mtdrworkshop/o/Wallet_MTDRDB.zip
 ```
-<copy>curl -sL $1 --output wallet.zip
+<copy>curl -sL <Pre-Auth URL> --output wallet.zip
 ```
 3. Unzip the walletPassword
 ```
