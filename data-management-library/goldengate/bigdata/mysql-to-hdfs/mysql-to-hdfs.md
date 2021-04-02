@@ -20,8 +20,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
@@ -269,7 +269,7 @@ The stats command displays the statistics of the data that GoldenGate processed 
 
 
   ![](./images/b19.png " ")
-  
+
   select **ggtarget2hdfs_csv.emp**
 
   ![](./images/b16.png " ")
@@ -290,6 +290,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-
-

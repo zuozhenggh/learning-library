@@ -169,31 +169,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     SQL> <copy>SELECT * FROM trades;</copy>
 
           ACNO        TID TDAY      TTYP     AMOUNT TICK
-
     ---------- ---------- --------- ---- ---------- ----
-
           123          1 08-APR-20 buy        1000 CSCO
-
           123          1 08-APR-20 buy         400 JNPR
-
           123          3 10-APR-20 buy        2000 SYMC
-
           123          4 10-APR-20 buy        1200 CSCO
-
           123          5 10-APR-20 buy         500 JNPR
-
           123          6 12-APR-20 buy         200 CSCO
-
           123          7 12-APR-20 buy         100 CSCO
-
           123          9 13-APR-20 buy         400 JNPR
-
           123         10 13-APR-20 buy         200 GOOG
-
           123         11 13-APR-20 buy        1000 JNPR
-
           123         12 13-APR-20 buy        4000 JNPR
-
           123         13 16-APR-20 buy        2000 HPQ
 
     12 rows selected.
@@ -218,31 +205,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
         WINDOW W AS (PARTITION BY trades.acno ORDER BY trades.tday ROWS BETWEEN 4 PRECEDING AND CURRENT ROW);</copy>
 
               ACNO TDAY      SUM(AGG.SUMA)OVERW
-
     ---------- --------- ------------------
-
           123 08-APR-20               1400
-
           123 08-APR-20               2800
-
           123 10-APR-20               6500
-
           123 10-APR-20              10200
-
           123 10-APR-20              13900
-
           123 12-APR-20              12800
-
           123 12-APR-20              11700
-
           123 13-APR-20              13600
-
           123 13-APR-20              15500
-
           123 13-APR-20              17400
-
           123 13-APR-20              22700
-
           123 16-APR-20              24400
 
     12 rows selected.
@@ -270,9 +244,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
         SELECT acno, tday, SUM(amount) OVER W, COUNT(DISTINCT ticker) OVER W
                                                                         *
-
     ERROR at line 1:
-
     ORA-30487: ORDER BY not allowed here
 
     SQL>
@@ -289,31 +261,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
         WINDOW W AS (PARTITION BY acno ORDER BY tday GROUPS BETWEEN 4 PRECEDING AND CURRENT ROW);</copy>
 
           ACNO TDAY      SUM(AMOUNT)OVERW COUNT(TICKER)OVERW
-
     ---------- --------- ---------------- ------------------
-
           123 08-APR-20             1400                  2
-
           123 08-APR-20             1400                  2
-
           123 10-APR-20             5100                  5
-
           123 10-APR-20             5100                  5
-
           123 10-APR-20             5100                  5
-
           123 12-APR-20             5400                  7
-
           123 12-APR-20             5400                  7
-
           123 13-APR-20            11000                 11
-
           123 13-APR-20            11000                 11
-
           123 13-APR-20            11000                 11
-
           123 13-APR-20            11000                 11
-
           123 16-APR-20            13000                 12
 
     12 rows selected.
@@ -333,43 +292,33 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
 
     SQL> <copy>@/home/oracle/labs/M104784GC10/create_T_table.sql</copy>
-
     SQL> SET ECHO ON
 
     SQL> DROP TABLE t;
-
     Table dropped.
 
     SQL> CREATE TABLE t (v NUMBER);
-
     Table created.
 
     SQL> INSERT INTO t VALUES (1);
-
     1 row created.
 
     SQL> INSERT INTO t VALUES (1);
-
     1 row created.
 
     SQL> INSERT INTO t VALUES (3);
-
     1 row created.
 
     SQL> INSERT INTO t VALUES (5);
-
     1 row created.
 
     SQL> INSERT INTO t VALUES (5);
-
     1 row created.
 
     SQL> INSERT INTO t VALUES (5);
-
     1 row created.
 
     SQL> INSERT INTO t VALUES (6);
-
     1 row created.
 
     SQL> COMMIT;
@@ -406,7 +355,6 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
 
     SQL> <copy>SELECT * FROM t;</copy>
-
             V
     ----------
             1

@@ -4,7 +4,7 @@
 
 Protection for issues during upgradeHOL 19c - Fallback - Issues During the Upgrade
 
-In this lab you will use two techniques to protect your database for issues happening during the upgrade. Or simply, if you would like to test multiple times.
+In this lab, you will use two techniques to protect your database for issues happening during the upgrade. Or simply, if you would like to test multiple times.
 You will evaluate two options: Partial Offline Backups and Guaranteed Restore Points.
 
 ![](./images/fallback_before_diag.png " ")
@@ -318,7 +318,7 @@ This lab assumes you have:
     ````
     ![](./images/fallback_before_34.png " ")
 
-7. Clean up and drop the restore points .Or else at some point you will run out of archive space. In addition you will turn off ARCHIVELOG mode now as we would not need it for the next exercises.
+7. Clean up and drop the restore points. Or else at some point you will run out of archive space. In addition you will turn off ARCHIVELOG mode now as we would not need it for the next exercises.
 
     ````
     <copy>
