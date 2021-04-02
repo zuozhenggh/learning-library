@@ -25,42 +25,6 @@ b) how to create the database user todouser and the todoitem table.
 * OKE cluster and the ATP databases created
 * Microservices code from GitHub (or zip) built and deployed
 
-## **STEP 1-old**: Create the Wallet for Connecting To ATP DB
-You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instance provisioned earlier.
-
-1.  Change directory into atp-secrets-setup.
-
-    ```
-    <copy>cd $MTDRWORKSHOP_LOCATION/setup-atp-connectivity</copy>
-    ```
-
-2. Run ../addAndSourcePropertiesInBashrc.sh
-
-```
-<copy>../addAndSourcePropertiesInBashrc.sh</copy>
-```
-
-3. Run `createAll.sh` and notice output creating secrets.
-
-    ```
-    <copy>./createAll.sh</copy>
-    ```
-
-  ![](images/createAll.png " ")
-
-4.  Execute `mtdrworkshop` and notice the secrets for the database and user.
-    ```
-    <copy>mtdrworkshop</copy>
-    ```
-    ![](images/mtdrworkshop_secrets.png " ")
-
-    If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace
-    ```
-    <copy>./deleteAll.sh</copy>
-    ```
-
-    ![](images/deleteAll.png " ")
-
 ## **STEP 1**: Download the database Wallet
 
 Select Autonomous Transaction Processing from the side menu in the OCI Console
@@ -77,6 +41,7 @@ Select Regional Wallet from the drop-down menu and click the Download Wallet but
 
 Provide a password and click the Download button to save the wallet zip file to your computer.
 ![](images/password-and-Download.png " ")
+Close the Database Connection window
 
 ## **STEP 2**: Upload the Wallet to an Object Storage bucket
 
@@ -119,11 +84,11 @@ Close the Pre-Authenticated Request window when done.
 <copy>cd mtdrworkshop/backend/target/classes/wallet</copy>
 ```
 
-2. Download the Wallet zip file using the Pre-Authenticated URL saved in the previous steps
+2. Download the Wallet zip file using the Pre-Authenticated URL saved in the previous steps.
+Example
 
-https://objectstorage.us-phoenix-1.oraclecloud.com/p/DX4nwVB7O4trriaEbI3KNvLsIbxyqVdLALuNcv7-Q5EvLiaC0CMFVrAnC_0tCGDV/n/oracleonpremjava/b/mtdrworkshop/o/Wallet_MTDRDB.zip
 ```
-<copy>curl -sL $1 --output wallet.zip
+<copy>curl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/DX4nwVB7O4trriaEbI3KNvLsIbxyqVdLALuNcv7-Q5EvLiaC0CMFVrAnC_0tCGDV/n/oracleonpremjava/b/mtdrworkshop/o/Wallet_MTDRDB.zip --output wallet.zip
 ```
 3. Unzip the walletPassword
 ```
@@ -148,40 +113,41 @@ The wallet directory should look like the following picture
 3. Click on Tools
   ![](images/MTDRDB-Tools.png " ")
 
-4. Click on "Open SQL Developer Web"
-  ![](images/SQLDevWeb.png " ")
+4. Click on "Open Database Actions"
+  ![](images/DatabaseActions.png " ")
 
    A new tab appears
 
-5. Login using Admin and the default Admin password (Welcome12345)
+5. Login using Admin and the Admin password
   ![](images/createUser.png " ")
 
-6. Create Todouser using SQL Developer Web
+6. Click on SQL under Development
+![](images/Database-Actions-SQL.png " ")
 
-   Copy the following command in the Worksheet.
-   ```
-   <copy>create user todouser identified by MyToDoReactWorkshop123 default tablespace DATA quota unlimited on DATA;</copy>
-   ```
-   Press the execute (green) button.
-   ![](images/createUser.png " ")
+7. Create a database user e.g., Todouser
 
-   Copy the following command in the Worksheet and execute.
+   Copy the following command in the Worksheet and replace "<User Password>" with the actual password
+   ```
+   <copy>create user todouser identified by <User Password> default tablespace DATA quota unlimited on DATA;</copy>
+   ```
+   Press the execute (green) button at the top of the Worksheet
+   ![](images/Create-TodoUser.png " ")
+
+  8. Copy the following command in the Worksheet and execute.
    ```
    <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
    ```
    Press the execute (green) button and observe the successful completion of the command.
    ![](images/GrantOk.png " ")
 
-7. Connect as the newly created todouser using SQL Developer Web
+9. Connect as the newly created todouser using Database Actions | SQL
 
    a. Click the hamburger menu (top left of the SQL Developer Web tab)
    ![](images/hamburger2.png " ")
 
    b. A "Database Action" sidebar column appears to the left
-   ![](images/hamburger2.png " ")
 
    c. Click on "Administration" then "Database Users"
-   ![](images/hamburger2.png " ")
 
    d. Select TODOUSER at the right bottom of the new page then REST Enable it
    ![](images/TODOUSER.png " ")
@@ -189,19 +155,10 @@ The wallet directory should look like the following picture
    e. REST Enable Todouser
    ![](images/EnableREST.png " ")
 
-  f. Logout as Admin user
-  ![](images/LogoutAdmin.png " ")
+  f. Click the icon and sign in as TODOUSER
+  ![](images/TodoUser-Login.png " ")
 
-  g. Sign in as TODOUSER
-  ![](images/SIgnin.png " ")
-
-  Then click next
-  Enter TODOUSER then click next
-  ![](images/TodouserLogin.png " ")
-
-  Enter the password for TODOUSER  then click Sign in
-
-  h. Select the SQL box (Execute SQL queries ...)
+  g. Select the SQL box (Execute SQL queries ...)
 
   ![](images/DevWorksheet.png " ")
 
