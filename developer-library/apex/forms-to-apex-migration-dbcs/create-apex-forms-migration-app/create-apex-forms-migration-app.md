@@ -17,7 +17,7 @@ Estimated Lab Time: 5 minutes
 
 ### Prerequisites
 
-- Have Oracle Autonomous Database already running in OCI.
+- Have DBCS Database already running in OCI.
 - Have Oracle APEX Workspace defined for the migration project
 
 
@@ -74,8 +74,8 @@ You may now *proceed to the next lab*.
 ## **Acknowledgements**
 
   - **Author** -  Vanitha Subramanyam, Senior Solution Architect
-  - **Contributors** - Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
-  - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
+  - **Contributors** - Vanitha Subramanyam, Senior Solution Architect
+  - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, March 2021
 ## Need Help?
   Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
