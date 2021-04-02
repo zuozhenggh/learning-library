@@ -1,6 +1,6 @@
 {
   "workshoptitle": "Building Microservices with Oracle Converged Database",
-  "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+  "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
         "title": "Introduction",
@@ -19,7 +19,7 @@
         "filename": "./build-code-deploy-microservices/build-code-deploy-microservices.md"
       },
       {
-        "title": "Lab 3: Setup database connection secrets, tables, and AQ messaging",
+        "title": "Lab 3: Setup database connection secrets, tables and AQ messaging",
         "filename": "./setup-atp-connectivity-data-and-messaging/setup-atp-connectivity-data-and-messaging.md"
       },
       {

@@ -27,7 +27,7 @@ The following image shows a folder structure of the "Getting Started with Oracle
     The following screen shows a sample `manifest.json` file that is opened in the **Atom** Editor.
     ![](./images/temp-folder-structure-manifest-json.png " ")
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 
@@ -47,5 +47,4 @@ The following image shows a folder structure of the "Getting Started with Oracle
 
 * **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+

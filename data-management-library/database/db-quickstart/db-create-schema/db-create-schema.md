@@ -319,3 +319,4 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt
 - **Contributor** - Supriya Ananth
 - **Adapted for Cloud by** - Rick Green
 - **Last Updated By/Date** - Rick Green, April 2021
+

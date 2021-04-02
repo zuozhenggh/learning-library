@@ -68,3 +68,4 @@ For more information on the SH schema, see the documentation on [Sample Schemas]
 
 - **Author** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, April 2021
+

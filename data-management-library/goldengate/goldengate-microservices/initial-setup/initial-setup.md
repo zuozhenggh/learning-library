@@ -16,8 +16,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
 ## **STEP 0**: Running your Lab
@@ -54,6 +54,17 @@ This lab assumes you have:
       - Setting DB parameter `enable_goldengate_replication` to  true
       - Creating GoldenGate users in the database
 
+
+2. Create some additional tables that we will be using later in our labs for CDR purposes.
+
+    ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab10 
+    ./db_createTable.sh
+    </copy>
+    ```
+    ![](./images/create_tables.png " ")
+
 You may now *proceed to the next lab*.
 
 ## Learn More
@@ -64,8 +75,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Zia Khan, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

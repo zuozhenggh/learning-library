@@ -1,15 +1,25 @@
 # New Set Operators
 
 ## Introduction
+This lab introduces new operators, parameters, expressions and SQL Macros available in the latest release of Oracle Database, 21c. Oracle 21c introduces three new operators, EXCEPT, EXCEPT ALL and INTEREST ALL. The SQL set operators now support all keywords as defined in ANSI SQL. The new operator EXCEPT [ALL] is functionally equivalent to MINUS [ALL]. The operators MINUS and INTERSECT now support the keyword ALL.
+
+Set operators are nothing new to the Oracle Database.  They join the following SQL set operators introduced prior to 21c.
+- UNION
+- UNION ALL
+- INTERSECT
+- MINUS
+- ORDER BY
 
 This lab shows how to use the new set operators, EXCEPT, EXCEPT ALL and INTERSECT ALL.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Setup the environment
+<if type="atp">* Login to SQL Developer Web as the Order Entry (OE) user
+* Run queries using the new 21c operators EXCEPT and INTERSECT </if>
+<if type="dbcs">* Run queries on Order Entry data using the new 21c operators EXCEPT and INTERSECT</if>
 
 ### Prerequisites
 <if type="dbcs">
@@ -18,7 +28,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 </if>
-<if type="21c">
+<if type="atp">
 
 * An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
 * Lab: Provision ADB
@@ -30,7 +40,13 @@ In this lab, you will:
 
 In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables.sh` shell script. The shell script creates and loads the `OE.INVENTORIES`, `OE.ORDERS` and `OE.ORDER_ITEMS` tables.
 
-1.  Change to the lab directory and run the shell script to setup the tables
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the 21c instance in DB Systems.  Switch to the oracle user.
+	````
+	ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address
+	sudo su - oracle
+	````
+
+2.  Change to the lab directory and run the shell script to setup the tables
 
 	```
 
@@ -55,22 +71,36 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 
 	```
 </if>
-<if type="21c">
+<if type="atp">
 ## **STEP  1**: Login to SQL Developer Web on ADB
 
-1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing** 
-      ![](./images/select-atp.png " ")
+There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
-2.  Click on the **Display Name** to go to your ADB main page.
-      ![](./images/display-name.png " ")
+1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
+      ![](./images/21c-home-adb.png " ")
 
-3.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
-      ![](./images/sql.png " ")
+2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
+3.  Click on the **Display Name** to go to your ADB main page.
+      ![](./images/21c-adb.png " ")
 
-4.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
-5.  Click on the SQL button.
+4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
+      ![](./images/tools.png " ")
+
+6.  Enter the username *oe* and password *WElcome123##*
+7.  Click on the **SQL** button.
+
+
+## **STEP  1B**: Login to ADB using SQL Plus
+1. If you aren't logged into the cloud, log back in
+2. Open up Cloud Shell 
+3. Connect to the OE user using sqlplus by entering the commands below.
+   
+    ```
+    export TNS_ADMIN=$(pwd)/wallet
+    sqlplus /nolog
+	conn oe/WElcome123##@adb1_high
+	```
 </if>
-
 ## **STEP  2**: Test the set operator with the `EXCEPT` clause
 
 <if type="dbcs">
@@ -86,8 +116,8 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 	SQL>
 	```
 </if>
-<if type="21c">
-For the subsequent sections you will be pasting sql into the SQL worksheet and pressing the green play button or Ctrl+Enter to execute the highlighted statement. 
+<if type="atp">
+For the subsequent sections you will be pasting sql into the SQL worksheet and pressing the green play button or Ctrl+Enter to execute the highlighted statement.  You can also run this in the terminal by logging in to sqlplus as oe/WElcome123##@adb1_high.
 
 1. Click the admin drop down and scroll down and choose the OE schema.  Note that there are 3 tables that you setup in the previous lab.  Enter the following sql queries to explore set operators.
 </if>
@@ -97,10 +127,16 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 	```
 	SQL> <copy>SELECT count(distinct product_id) FROM inventories;</copy>
 
+	<if type="atp">
+	```
+    ![](images/select-product.png)
+	</if>
+	<if type="dbcs">
 	COUNT(PRODUCT_ID)
 	-----------------
 				208
 	```
+	</if>
 
 3. Run a count in the `ORDER_ITEMS` table.  Note the difference.
 
@@ -108,12 +144,17 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 
 	SQL> <copy>SELECT count(distinct product_id) FROM order_items;</copy>
 
+	<if type="atp">
+	```
+    ![](images/select-product.png)
+	</if>
+	<if type="dbcs">	
 	COUNT(PRODUCT_ID)
 	-----------------
 				185
 	SQL>
-
 	```
+	</if>
 
 4. How many products are in the inventory that were never ordered? Use the `EXCEPT` operator to retrieve only unique rows returned by the first query but not by the second.
 
@@ -145,10 +186,8 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 		</copy>
 
 	COUNT(*)
-
 	----------
-
-		61
+    61
 
 	SQL>
 
@@ -159,7 +198,6 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 1. Would the usage of ALL in the set operator defined in a query in a previous step mean anything? Run the SQL statement using the *EXCEPT ALL* operator.
 
 	```
-
 	SQL> <copy>SELECT product_id FROM inventories
 		EXCEPT ALL
 		SELECT product_id FROM order_items;</copy>
@@ -169,15 +207,6 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 		1729
 		1729
 		1729
-		1729
-		1729
-		1729
-		1733
-		1733
-		1733
-		1733
-		1733
-		1733
 		1733
 		1733
 		1733
@@ -278,5 +307,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
+* **Last Updated By/Date** -  Kay Malcolm, March 2020
 
