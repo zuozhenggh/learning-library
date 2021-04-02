@@ -48,7 +48,7 @@ This time, because you are now familiar with the benchmark process, the 8 sessio
 
 The benchmark will produce a similar performance summary to the first execution.
 
-    ![](./images/through4.png " ")
+![](./images/through4.png " ")
 
 As mentioned earlier, your results will be different, but using the results in the image above, you can observe that with the revised design which has eliminated triggers:
 
@@ -56,7 +56,7 @@ As mentioned earlier, your results will be different, but using the results in t
 - Elapsed time per session has improved to **31** seconds (down from 52)
 - CPU time is still at only **51** percent of the total benchmark time
 
-The results here should not be understated. Often when tuning applications, a few percentage points is seen as a "win" but in this instance, simply utilising the DEFAULT ON NULL database feature, the performance has almost doubled. However, CPU is still not the major contributor of total elapsed time, so this suggests there are potentially more benefits to be found.
+The results here should not be understated. Often when tuning applications, a few percentage points is seen as a "win" but in this instance, simply utilizing the DEFAULT ON NULL database feature, the performance has almost doubled. However, CPU is still not the major contributor of total elapsed time, so this suggests there are potentially more benefits to be found.
 
 If you not have done so already, press Enter to exit the benchmark and please **proceed to the next lab.**
 

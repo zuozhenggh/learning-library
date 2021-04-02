@@ -16,9 +16,9 @@ Estimated lab time: 15 minutes
 
 ### Prerequisites
 
--   This lab requires completion of the prior labs in this workshop: **Prerequisites** and **Provision an Autonomous Database**, in the Contents menu on the left.
+-   This lab requires completion of the prior labs in this workshop: **Getting Started** and **Provision an Autonomous Database**, in the Contents menu on the left.
 
-## **STEP:** Obtain database credentials
+## **STEP 1:** Obtain Database Credentials
 
 In order to perform a secure connection to your autonomous database, you need a database wallet which securely holds those credentials. These can be download from the console of your autonomous database.
 1. In your database's details page, click the **DB Connection** button.
@@ -33,7 +33,7 @@ In order to perform a secure connection to your autonomous database, you need a 
 
     ![](./images/connect3.png " ")
 
-## **STEP:** Launch Cloud Shell
+## **STEP 2:** Launch Cloud Shell
 
 Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal accessible from the Oracle Cloud Console. Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, a pre-authenticated Ansible installation, and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. 
 1. In your database's details page, click the **Cloud Shell** button at the top right. The bottom portion of the browser page should initiate a cloud shell session.
@@ -49,7 +49,9 @@ Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal ac
 
     ![](./images/connect7.png " ")
     
-3. Drag (or click "select from your computer") the wallet file you downloaded in the previous step of this lab. Then click **Upload** to transfer the wallet file to your home directory under cloud shell.
+3. Drag (or click "select from your computer") the wallet file you downloaded in the previous step of this lab. Then click **Upload** to transfer the wallet file to your home directory under cloud shell.  Download the zip file below and repeat this step for devlivelab.zip.
+
+    [devlivelab.zip](./files/devlivelab.zip)
 
     ![](./images/connect8.png " ")
 
@@ -63,7 +65,7 @@ Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal ac
 
     ![](./images/connect9.png " ")
 
-5. Verify connectivity to your autonomous database. You will use the SQLcl command line interface to set your wallet credentials and connect to the database as the ADMIN user.
+5. Verify connectivity to your autonomous database. You will use the SQLcl command line interface to set your wallet credentials and connect to the database as the ADMIN user. Exit will bring you out of SQL and back to the shell.
 
     ````
     <copy>
@@ -80,13 +82,12 @@ Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal ac
     
 You may now **proceed to the next step.**
 
-## **STEP:** Create the initial schema
+## **STEP 3:** Create the initial schema
 
 1. Retrieve the zip file that contains all of the supporting files for this lab
 
     ````
     <copy>
-    scp oradocs_BLAHBLAH devlivelab.zip
     unzip devlivelab.zip
     ls -l
     </copy>
@@ -96,11 +97,15 @@ You may now **proceed to the next step.**
 
     ![](./images/seed1.png " ")
 
-2. The file *credential.sql* is a central place where your database credentials will be stored to avoid the need to continuously re-enter them during the benchmark. Using vi, edit the file so that it reflects the password and service names for your autonmous database. *If you are following this lab "to the letter" it is likely that you do not need to make any changes at all.*
+2. The file *credential.sql* is a central place where your database credentials will be stored to avoid the need to continuously re-enter them during the benchmark. Using VI, edit the file so that it reflects the password and service names for your autonomous database. *If you are following this lab "to the letter" it is likely that you do not need to make any changes at all.*
+
+    ````
+    <copy>vi credential.sql</copy>
+    ````
 
     ![](./images/seed2.png " ")
 
-    Save your changes and you are ready to build the initial database schema.
+    Save your changes and you are ready to build the initial database schema. To save, type **":wq"** while in VI.
 
 3. Run the schema setup script. This script will connect to the database and create a schema called DEVLIVE. Note that this schema will be dropped if it already exists.
     
@@ -115,7 +120,7 @@ You may now **proceed to the next step.**
     ![](./images/seed3.png " ")
 
 
-## **STEP:** View the data model with Database Actions
+## **STEP 4:** View the data model with Database Actions
 
 Note: This step is not mandatory for your performance benchmark investigation, but offers a glimpse at the web based tools *other* than Cloud Shell in order to interact with your database.
 
@@ -129,6 +134,8 @@ Although you can connect to your autonomous database from local PC desktop tools
     ![](./images/model2.png " ")
 
 3. Database Actions opens with a launch menu with the various actions available to you on your database. Choose **Data Modeller** to launch the web based data modelling tool.
+
+    ***I'm not OCD, but the box in this picture is just.... off***
 
     ![](./images/model3.png " ")
 
