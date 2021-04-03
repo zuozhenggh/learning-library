@@ -30,7 +30,6 @@ In this lab, you will:
     ...
 
     Commit complete.
-
     PL/SQL procedure successfully completed.
 
     SQL> EXIT
@@ -45,41 +44,27 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus SYSTEM@PDB21</copy>
-
     Enter password: <b><i>WElcome123##</i></b>
-
     Connected to:
     ```
     ```
 
     SQL> <copy>SELECT compression, compress_for FROM DBA_TABLES WHERE table_name='EMPLOYEES';</copy>
-
     COMPRESS COMPRESS_FOR
-
     -------- ------------------------------
-
     DISABLED
 
     SQL> <copy>COL INDEX_NAME FORMAT A30</copy>
 
     SQL> <copy>SELECT index_name, compression FROM dba_indexes WHERE table_name='EMPLOYEES';</copy>
-
     INDEX_NAME                     COMPRESSION
-
     ------------------------------ -------------
-
     EMP_NAME_IX                    DISABLED
-
     EMP_EMAIL_UK                   DISABLED
-
     EMP_EMP_ID_PK                  DISABLED
-
     EMP_DEPARTMENT_IX              DISABLED
-
     EMP_JOB_IX                     DISABLED
-
     EMP_MANAGER_IX                 DISABLED
-
     6 rows selected.
 
     SQL>
@@ -92,11 +77,9 @@ In this lab, you will:
     ```
 
     SQL> <copy>CREATE OR REPLACE DIRECTORY dp_dir AS '/home/oracle/labs';</copy>
-
     Directory created.
 
     SQL> <copy>GRANT read, write ON DIRECTORY dp_dir TO hr;</copy>
-
     Grant succeeded.
 
     SQL> <copy>EXIT</copy>
@@ -146,17 +129,13 @@ Export the `HR.EMPLOYEES` table. Ignore any Database Vault warning.
     ```
 
     $ <copy>sqlplus SYSTEM@PDB21</copy>
-
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Last Successful login time: Wed Apr 08 2020 16:24:56 +00:00
-
     Connected to:
     ```
     ```
 
     SQL> <copy>DROP TABLE hr.employees CASCADE CONSTRAINTS;</copy>
-
     Table dropped.
 
     SQL> <copy>EXIT</copy>
@@ -171,39 +150,22 @@ Export the `HR.EMPLOYEES` table. Ignore any Database Vault warning.
     ```
 
     $ <copy>impdp hr@PDB21 FULL=Y DUMPFILE=PDB21.dmp DIRECTORY=dp_dir TRANSFORM=TABLE_COMPRESSION_CLAUSE:\"COMPRESS BASIC\" TRANSFORM=INDEX_COMPRESSION_CLAUSE:\"COMPRESS ADVANCED LOW\" EXCLUDE=CONSTRAINT</copy>
-
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-
     Password: <b><i>WElcome123##</i></b>
-
     Master table "HR"."SYS_IMPORT_FULL_01" successfully loaded/unloaded
-
     Starting "HR"."SYS_IMPORT_FULL_01":  hr/********@PDB21 FULL=Y DUMPFILE=PDB21.dmp DIRECTORY=dp_dir TRANSFORM=TABLE_COMPRESSION_CLAUSE:"COMPRESS BASIC" TRANSFORM=INDEX_COMPRESSION_CLAUSE:"COMPRESS ADVANCED LOW" EXCLUDE=CONSTRAINT
-
     Processing object type TABLE_EXPORT/TABLE/TABLE
-
     Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
-
     . . imported "HR"."EMPLOYEES"                            17.08 KB     107 rows
-
     Processing object type TABLE_EXPORT/TABLE/COMMENT
-
     Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX
-
     ORA-39083: Object type INDEX:"HR"."EMP_EMP_ID_PK" failed to create with error:
-
     ORA-25193: cannot use COMPRESS option for a single column key
-
     Failing sql is:
-
     CREATE UNIQUE INDEX "HR"."EMP_EMP_ID_PK" ON "HR"."EMPLOYEES" ("EMPLOYEE_ID") PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPRESS ADVANCED LOW  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "USERS"
-
     Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
-
     Processing object type TABLE_EXPORT/TABLE/TRIGGER
-
     Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
-
     Processing object type TABLE_EXPORT/TABLE/STATISTICS/MARKER
 
     Job "HR"."SYS_IMPORT_FULL_01" completed with 1 error(s) at Wed Apr 8 16:39:55 2020 elapsed 0 00:00:36
@@ -221,40 +183,26 @@ Export the `HR.EMPLOYEES` table. Ignore any Database Vault warning.
 
     $ <copy>sqlplus SYSTEM@PDB21</copy>
 
-
-
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Last Successful login time: Wed Apr 08 2020 16:38:57 +00:00
-
     Connected to:
     ```
     ```
 
     SQL> <copy>SELECT compression, compress_for FROM DBA_TABLES WHERE table_name='EMPLOYEES';</copy>
-
     COMPRESS COMPRESS_FOR
-
     -------- ------------------------------
-
     ENABLED  BASIC
 
     SQL> <copy>COL INDEX_NAME FORMAT A30</copy>
 
     SQL> <copy>SELECT index_name, compression FROM dba_indexes WHERE table_name='EMPLOYEES';</copy>
-
     INDEX_NAME                     COMPRESSION
-
     ------------------------------ -------------
-
     EMP_DEPARTMENT_IX              ADVANCED LOW
-
     EMP_JOB_IX                     ADVANCED LOW
-
     EMP_MANAGER_IX                 ADVANCED LOW
-
     EMP_NAME_IX                    ADVANCED LOW
-
     SQL> <copy>EXIT</copy>
 
     $
