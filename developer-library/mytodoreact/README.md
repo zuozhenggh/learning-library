@@ -6,7 +6,9 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 # Build and Deploy My ToDo List React application for Java developers
 ## Introduction and Overview
 
-In this workshop, you will deploy a simple Cloud native application using the most commonly used frameworks and the Oracle Cloud Infrastructure services
+In this workshop, you will deploy a simple Cloud native application using the most commonly used frameworks and the Oracle Cloud Infrastructure services.
+
+![](./images/Application.png " ")
 
 You will will learn how to use the Autonomous Database, the Container Registry, the Kubernetes Cluster (OKE) , Helidon, and the API Gateway managed services of the Oracle Cloud Infrastructure through the deployment of a simple MyToDo List React JS application.
 ![](./images/architecture.png " ")
