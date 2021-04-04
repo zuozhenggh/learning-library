@@ -7,7 +7,7 @@ FROM openjdk:11
 # and in the IDE, we need to copy the wallet directory under /target/classes/wallet.
 # This way the JDBC URL can point to jdbc:oracle:thin:@xxx?TNS_ADMIN=target/classes/wallet-->
 
-ADD /target/classes/wallet /target/classes/wallet
-ADD /target/libs /target/libs
-ADD /target/todolistapp-helidon-se.jar /target/todolistapp-helidon-se.jar
+ADD target/classes/wallet /target/classes/wallet
+ADD target/libs /target/libs
+ADD target/todolistapp-helidon-se.jar /target/todolistapp-helidon-se.jar
 ENTRYPOINT ["java", "-jar", "/target/todolistapp-helidon-se.jar"]
