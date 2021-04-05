@@ -37,7 +37,9 @@ The backend is implemented using the following Java classes (under ./backend/src
    ![](images/application-yaml.png " ")
 
 
-4. Run the `build.sh` script to build and push the
+4. Copy the edited ./backend/target/classes/application.yaml to backend./src/main/resources/application.yaml
+
+5. Run the `build.sh` script to build and push the
     microservices images into the repository
 
     ```
@@ -50,12 +52,12 @@ The backend is implemented using the following Java classes (under ./backend/src
 
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
-5.  Go to the Console, click the hamburger menu in the top-left corner and open
+6.  Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
-6. Mark all the images as public (**Actions** > **Change to Public**):
+7. Mark all the images as public (**Actions** > **Change to Public**):
 
   ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
 
