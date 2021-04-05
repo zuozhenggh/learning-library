@@ -204,9 +204,15 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ```
     <copy>docker images </copy>
     ```
+## **STEP 6**: Install GraalVM for JDK 11 in Cloud Shell
 
+1. Run `./installGraalVM.sh`
 
-## **STEP 6**: Access OKE from the Cloud Shell
+```
+<copy>./installGraalVM.sh</copy>
+```
+
+## **STEP 7**: Access OKE from the Cloud Shell
 
 1. Copy the mdtrworkshopcluster id
 ![](images/mtdrworkshop-cluster-id.png " ")
