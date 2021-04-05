@@ -25,42 +25,6 @@ b) how to create the database user todouser and the todoitem table.
 * OKE cluster and the ATP databases created
 * Microservices code from GitHub (or zip) built and deployed
 
-## **STEP 1-old**: Create the Wallet for Connecting To ATP DB
-You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instance provisioned earlier.
-
-1.  Change directory into atp-secrets-setup.
-
-    ```
-    <copy>cd $MTDRWORKSHOP_LOCATION/setup-atp-connectivity</copy>
-    ```
-
-2. Run ../addAndSourcePropertiesInBashrc.sh
-
-```
-<copy>../addAndSourcePropertiesInBashrc.sh</copy>
-```
-
-3. Run `createAll.sh` and notice output creating secrets.
-
-    ```
-    <copy>./createAll.sh</copy>
-    ```
-
-  ![](images/createAll.png " ")
-
-4.  Execute `mtdrworkshop` and notice the secrets for the database and user.
-    ```
-    <copy>mtdrworkshop</copy>
-    ```
-    ![](images/mtdrworkshop_secrets.png " ")
-
-    If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace
-    ```
-    <copy>./deleteAll.sh</copy>
-    ```
-
-    ![](images/deleteAll.png " ")
-
 ## **STEP 1**: Download the database Wallet
 
 Select Autonomous Transaction Processing from the side menu in the OCI Console
@@ -72,7 +36,7 @@ Select the correct compartment on the left-hand side (if not already selected) a
 Click the DB Connection button
 ![](images/selectDbConn.png " ")
 
-Select Regional Wallet from the drop-down menu and click the Download Wallet button.
+Select Instance Wallet from the drop-down menu and click the Download Wallet button.
 ![](images/selectWalletnDownload.png " ")
 
 Provide a password and click the Download button to save the wallet zip file to your computer.
@@ -113,10 +77,10 @@ Close the Pre-Authenticated Request window when done.
 
 ## **STEP 4**: Download the Wallet from Object Storage into the workshop Cloud environment
 
-1. Run `cd mtdrworkshop/backend/target/classes/wallet`
+1. Run `cd ~/mtdrworkshop/backend/target/classes/wallet`
 
 ```
-<copy>cd mtdrworkshop/backend/target/classes/wallet</copy>
+<copy>cd ~/mtdrworkshop/backend/target/classes/wallet</copy>
 ```
 
 2. Download the Wallet zip file using the Pre-Authenticated URL saved in a previous steps (copy the command an replace the placehodler before executing)
@@ -126,17 +90,38 @@ crl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/........./Wallet_MT
 ```
 <copy>curl -sL <Pre-Auth URL> --output wallet.zip
 ```
-3. Unzip the walletPassword
+3. Unzip the wallet
 ```
 <copy>unzip wallet.zip</copy>
-```
-4. Drop the zip file
-```
- <copy>rm wallet.zip</copy>
 ```
 
 The wallet directory should look like the following picture
   ![](images/WalletFiles.png " ")
+
+4. cd  ~/mtdrworkshop/backend/src/main/resources/wallet/
+```
+<copy>cd  ~/mtdrworkshop/backend/src/main/resources/wallet/</copy>
+```
+
+5. cp ~/mtdrworkshop/backend/target/classes/wallet/wallet.zip .
+```
+<copy>cp ~/mtdrworkshop/backend/target/classes/wallet/wallet.zip .</copy>
+```
+
+6. Unzip the wallet
+
+```
+<copy>unzip wallet.zip</copy>
+```
+
+7. Drop the zip files
+ ```
+ <copy>rm ~/mtdrworkshop/backend/target/classes/wallet/wallet.zip</copy>
+  ```  
+
+  ```
+  <copy>rm wallet.zip</copy>
+   ```  
 
 ## **STEP 5**: Create the Database User and Table
 
