@@ -135,11 +135,11 @@ For a technical overview of this lab step, please watch the following video:
 
 	```
 	<copy>
-	MAP public."Countries", TARGET admin.Countries;
-	MAP public."Cities", TARGET admin.Cities;
-	MAP public."Parkings", TARGET admin.Parkings;
-	MAP public."ParkingData", TARGET admin.ParkingData;
-	MAP public."PaymentData", TARGET admin.PaymentData;
+	MAP public."Countries", TARGET Parking.Countries;
+	MAP public."Cities", TARGET Parking.Cities;
+	MAP public."Parkings", TARGET Parking.Parkings;
+	MAP public."ParkingData", TARGET Parking.ParkingData;
+	MAP public."PaymentData", TARGET Parking.PaymentData;
 	</copy>
 	```
 	
