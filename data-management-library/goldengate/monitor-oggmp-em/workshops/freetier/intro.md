@@ -2,7 +2,7 @@
 
 ## About this Workshop                             
 
-The lab in this workshop walks you through all the steps to install Oracle GoldenGate Enteprise Manager Plug-in on Marketplace and monitor the Oracle GoldenGate Marketplace instance using the Enterprise Manager Marketplace instance.
+The lab in this workshop walks you through all the steps to install Oracle GoldenGate Enterprise Manager Plug-in on Marketplace and monitor the Oracle GoldenGate Marketplace instance using the Enterprise Manager Marketplace instance.
 
 *Estimated Lab Time*: 45 mins
 
