@@ -2,24 +2,24 @@
 
 ## Introduction
 
-In this lab, we will learn how to build an Essbase cube sourcing data from Autonomous Data Warehouse (ADW Database). We will build dimensions and load data using ADW data. We will use Essbase drill-through functionality to display additional detailed data that is retrieved from Autonomous Data Warehouse. Through Essbase Smart View for Office, we will interactively investigate the data in Essbase, slice and dice the data, and do ad hoc analysis on it.
+In this lab, we will learn how to build an Essbase cube sourcing data from Autonomous Data Warehouse (ADW Database). We will build dimensions and load data using Oracle Database. We will use Essbase drill-through functionality to display additional detailed data that is retrieved from Database. Through Essbase Smart View for Office, we will interactively investigate the data in Essbase, slice and dice the data, and do ad hoc analysis on it.
 
-Estimated Lab Time: 20 minutes.
+Estimated Lab Time: *20 minutes*
 
 ### Objectives
 
-* Procuring ADW instance
-* Loading data to ADW instance
-* Create a connection from Essbase 19c to ADW
-* Build dimension using ADW data
-* Load data from ADW to Essbase cube
-* View / Analyze ADW data in Smart View
-* Drill through to ADW data from Smart View
+* Connecting and Loading Data to Oracle Database.
+* Create a connection from Essbase 19c to Oracle Database
+* Build dimension using data in database
+* Load data from Database to Essbase cube
+* View / Analyze data from database in Smart View
+* Drill through to data in database from Smart View
 
 ### Prerequisites
 
-* The following lab requires an Oracle Public Cloud account with an Essbase 19c instance and corresponding access to create a new Autonomous Database.
-*	Smart View plugin for Excel.
+* Essbase 21c instance.
+* Database conection details.
+* Smart View plugin for Excel.
 
 
 ##  **Step 1:** Provisiioning an ADW Instance
