@@ -15,7 +15,7 @@ In this lab, you will:
 * Set Monitoring and Preferred Credentials to Oracle GoldenGate Microservices Marketplace in Enterprise Manager Plug-in
 
 ### Prerequisites
-This lab assumes you have:
+This lab assumes you have:  
 
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
@@ -27,9 +27,9 @@ This lab assumes you have:
 * The following are required to complete this lab:
     * Introduction and Prerequisites
 
-**STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console and the Proxy ports on Oracle GoldenGate Microservices Marketplace instance
+**STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console
 
-Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console. If the Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
+Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console, and the Proxy ports on Oracle GoldenGate Microservices Marketplace instance. If the Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
 
 You may choose to white-list the ports to Oracle Enterprise Manager Marketplace instance. By doing this, no other instances will be able access the GoldenGate Marketplace instance ports, hence making  secured.
 

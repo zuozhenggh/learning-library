@@ -22,11 +22,6 @@ In this lab, you will:
 ### Prerequisites
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
-* You have completed:
-    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
-    * Lab: Environment Setup
-    * Lab: Initialize Environment
 * The following are required to complete this lab:
     * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
     * Prior knowledge of Database basic concepts
