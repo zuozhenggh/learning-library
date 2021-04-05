@@ -1,5 +1,6 @@
 {
   "workshoptitle": "IAM 11g to 12c In-Place Upgrade Workshop",
+  "help": "livelabs-help_us@oracle.com",
   "tutorials": [
     {
       "title": "Getting Started",
@@ -25,6 +26,11 @@
     {
       "title": "Lab 3: Upgrade IAM 11g to 12c",
       "filename": "../../upgrade/upgrade.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

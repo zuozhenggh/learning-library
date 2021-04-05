@@ -53,8 +53,3 @@ Application Continuity extends the MAA architecture to the application tier.
 
 - **Authors/Contributors** - Troy Anthony, Ian Cookson
 - **Last Updated By/Date** - Troy Anthony, March 2021
-
-
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
