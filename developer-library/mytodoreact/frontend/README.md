@@ -32,27 +32,70 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
 <copy>git clone git@orahub.oci.oraclecorp.com:ora-jdbc-dev/mtdrworkshop.git</copy>
 ```
-2. Run `npm ci` to install the required packages
+2. Run the following npm commands to install the required packages
+
+npm install --save typescript
 ```
-<copy>npm ci</copy>
+<copy>npm install --save typescript</copy>
+```
+npm audit fix --force
+
+```
+<copy>npm audit fix --force</copy>
 ```
 3. `npm start` to run the application in development mode
 ```
 <copy>npm start</copy>
 ```
 
-## **STEP 2**: Hosting on the Oracle Cloud's object storage
+## **STEP 2**: Run in Dev Mode then Build for Production
+
+1. In the project directory, run the following command:
+
+```
+<copy>npm start</copy>
+```
+
+2. Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+3. The page will reload if you make edits.<br />
+   You will also see any lint errors in the console.
+
+4. Cancel the developer mode execution and build the app for production to the `build` folder.<br />
+
+- Issue "Ctrl-c" to cancel the developer mode executions
+
+- Execute npm run build
+```
+<copy>npm run build</copy>
+```
+It correctly bundles React in production mode (into the build folder) and optimizes the build for the best performance.
+
+![](images/Run-build.png " ")
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## **STEP 3**: Hosting on the Oracle Cloud's object storage
 
 1. Create a "mytodoreact" object storage in your tenancy
 
-Open up the hamburger menu in the top-left corner of the Console and select
+- Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
 
 ![](images/frontendimg1.png " ")
 
-Change the default name into "mytodoreact"; accept all other default settings; then click on Create at the left bottom corner
+- Change the default name into "mytodoreact"; accept all other default settings; then click on Create at the left bottom corner
 
 ![](images/frontendimg2.png " ")
+
+- Copy the link to the object store
+
+![](images/object-store.png " ")
+
 
 2. Install the Staci utility for copying directories to OCI object storage with folder hierarchies
 
@@ -88,39 +131,15 @@ Change the default name into "mytodoreact"; accept all other default settings; t
   <copy>go build</copy>
   ```
 
-3. Upload a static build into your tenancy
+3. Upload a static build into your tenancy, using the staci binary 
 
 ```
-<copy>staci -source build -target mytodoreact</copy>
+<copy>../staci/staci -source build -target mtdrworkshop</copy>
 ```
 
-Then the application is visible here
-https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/<tenancy>/b/mytodoreact/o/index.html
+Then the application is visible in tour tenancy
+https://objectstorage.us-phoenix-1.oraclecloud.com/n/oracleonpremjava/b/mtdrworkshop/o/index.html
 
-## **STEP 3**: Run in Dev Mode then Build for Production
-
-1. In the project directory, run the following command:
-
-```
-<copy>npm start</copy>
-```
-
-2. Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-3. The page will reload if you make edits.<br />
-   You will also see any lint errors in the console.
-
-4. Builds the app for production to the `build` folder.<br />
-```
-<copy>npm build</copy>
-```
-
-It correctly bundles React in production mode and optimizes the build for the best performance.
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## **Learn More**
 
