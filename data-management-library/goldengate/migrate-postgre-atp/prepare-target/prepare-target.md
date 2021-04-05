@@ -45,12 +45,11 @@ For a technical overview of this lab step, please watch the following video:
 	![](/images/sql_dev_2.png)
 
 	There should be **5** tables created after script execution.
-	
-	![](/images/sql_dev_6.png)
+
 
 ## **Step 3**: Enable GGADMIN 
 
-1. Now let's unlock and change the password for Oracle GoldenGate user (ggadmin) in the Autonomous Database. Enable GGADMIN by running the following query.
+1. Now let's continue to unlock and change the password for Oracle GoldenGate user (ggadmin) in the Autonomous Database. Enable GGADMIN by running the following query.
 
 	```
 	<copy>
@@ -68,15 +67,15 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-3. If value is _**FALSE**_, then modify the parameter, else go to next step.
+	![](/images/sql_dev_4.png)
+	
+3. If value is _**FALSE**_ then modify the parameter, else go to next step.
 
 	```
 	<copy>
 	alter system set enable_goldengate_replication = true scope=both;
 	</copy>
 	```
-
-	![](/images/sql_dev_4.png)
 
 	We successfully enabled GGADMIN in our target Autonomous Database and created target table structures. 
 
