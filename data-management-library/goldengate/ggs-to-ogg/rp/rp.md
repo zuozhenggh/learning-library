@@ -27,7 +27,7 @@ In this lab, you will create and run a path on the Oracle GoldenGate Receiver Se
 
 6. Enable **Use Basic Authentication**.
 
-7. For **Source Host**, enter the OCI GoldenGate hostname in the following format: **\<domain\>.deployment.goldengate.us-\<region\>-1.oci.oraclecloud.com:443**. You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window.
+7. For **Source Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com:443**. You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window.
 
 8. For **Source Trail Name**, enter the name of the OCI GoldenGate Trail file you're sending to Oracle GoldenGate.
 
