@@ -68,9 +68,9 @@ In this case, once the new home is installed, the existing Grid Infrastructure s
 ### New Cluster or Restart provisioning
 If you need to provision the GI working copy on a brand new cluster, once the servers have been set up to host the cluster (this is a step that you need to take care of, either manually or using your favorite OS configuration management tool), all you need to do is to run `rhpctl add workingcopy` specifying the response file to be passed to gridSetup.sh.
 
-## Step 1: Provision the Restart environment on a new target using the response file
+## Step 1: Prepare the response file
 
-Prepare a response file containing the following content:
+On the FPP Server, prepare a response file containing the following content:
 
 ```
 # ~grid/fppc.rsp
@@ -92,5 +92,150 @@ oracle.install.asm.monitorPassword=WelcomeWelcome##123
 
 Alternatively, you can download it directly on the host:
 ```
-wget 
+[grid@fpps01 ~]$ wget  https://github.com/lcaldara-oracle/learning-library/raw/master/data-management-library/database/fpp/03-gi-home/files/fppc.rsp
 ```
+
+## Step 2: Provision the Restart environment on a new target using the response file
+On the FPP Server, run the following command to provision and configure the GI home on the target. The password is `FPPll##123`. (Est. 8 minutes)
+
+```
+[grid@fpps01 ~]$ rhpctl add workingcopy -workingcopy WC_gi_19_10_0_FPPC \
+  -image gi_19_10_0_oci -responsefile ~/fppc.rsp \
+  -path /u01/app/grid/WC_gi_19_10_0_FPPC -user oracle -oraclebase /u01/app/oracle \
+  -targetnode fppc -sudouser opc -sudopath /bin/sudo -ignoreprereq
+
+Enter user "opc" password:
+fpps01.pub.fpplivelab.oraclevcn.com: Storing metadata in repository for working copy "WC_gi_19_10_0_FPPC" ...
+fpps01.pub.fpplivelab.oraclevcn.com: Creating snapshot "tmpgi_19_10_0_ociWC_gi_19_10_0_FPPC" ...
+fpps01.pub.fpplivelab.oraclevcn.com: Changing the home ownership to user oracle...
+fpps01.pub.fpplivelab.oraclevcn.com: Copying software contents to Local File System ...
+fpps01.pub.fpplivelab.oraclevcn.com: Changing the home ownership to user oracle...
+fpps01.pub.fpplivelab.oraclevcn.com: Starting clone operation...
+fppc:
+fppc:
+fppc: [INFO] [INS-32183] Use of clone.pl is deprecated in this release. Clone operation is equivalent to performing a Software Only installation from the image.
+fppc: You must use /u01/app/grid/WC_gi_19_10_0_FPPC/gridSetup.sh script available to perform the Software Only install. For more details on image based installation, refer to help documentation.
+fppc:
+fppc: Starting Oracle Universal Installer...
+fppc:
+fppc: ..................................................   5% Done.
+fppc: ..................................................   10% Done.
+fppc: ..................................................   15% Done.
+fppc: ..................................................   20% Done.
+fppc: ..................................................   25% Done.
+fppc: ..................................................   30% Done.
+fppc: ..................................................   35% Done.
+fppc: ..................................................   40% Done.
+fppc: ..................................................   45% Done.
+fppc: ..................................................   50% Done.
+fppc: ..................................................   55% Done.
+fppc: ..................................................   60% Done.
+fppc: ..................................................   65% Done.
+fppc: ..................................................   70% Done.
+fppc: ..................................................   75% Done.
+fppc: ..................................................   80% Done.
+fppc: ..................................................   85% Done.
+fppc: ..........
+fppc: Copy files in progress.
+fppc:
+fppc: Copy files successful.
+fppc:
+fppc: Link binaries in progress.
+fppc: ..........
+fppc: Link binaries successful.
+fppc:
+fppc: Setup files in progress.
+fppc: ..........
+fppc: Setup files successful.
+fppc:
+fppc: Setup Inventory in progress.
+fppc:
+fppc: Setup Inventory successful.
+fppc: ..........
+fppc: Finish Setup successful.
+fppc: The cloning of WC_gi_19_10_0_FPPC was successful.
+fppc: Please check '/u01/app/oraInventory/logs/cloneActions2021-03-31_01-22-27PM.log' for more details.
+fppc:
+fppc: Setup Oracle Base in progress.
+fppc:
+fppc: Setup Oracle Base successful.
+fppc: ..................................................   95% Done.
+fppc:
+fppc: As a root user, execute the following script(s):
+fppc:   1. /u01/app/oraInventory/orainstRoot.sh
+fppc:   2. /u01/app/grid/WC_gi_19_10_0_FPPC/root.sh
+fppc:
+fppc:
+fppc:
+fppc: ..................................................   100% Done.
+fpps01.pub.fpplivelab.oraclevcn.com: Successfully executed clone operation.
+fpps01.pub.fpplivelab.oraclevcn.com: Executing root script on nodes [fppc].
+fppc: Changing permissions of /u01/app/oraInventory.
+fppc: Adding read,write permissions for group.
+fppc: Removing read,write,execute permissions for world.
+fppc:
+fppc: Changing groupname of /u01/app/oraInventory to oinstall.
+fppc: The execution of the script is complete.
+fpps01.pub.fpplivelab.oraclevcn.com: Successfully executed root script on nodes [fppc].
+fpps01.pub.fpplivelab.oraclevcn.com: Executing configuration script on nodes [fppc]
+fpps01.pub.fpplivelab.oraclevcn.com: Successfully executed configuration script on nodes [fppc]
+fpps01.pub.fpplivelab.oraclevcn.com: Executing root script on nodes [fppc].
+fppc: Check /u01/app/grid/WC_gi_19_10_0_FPPC/install/root_fppc_2021-03-31_13-24-06-546102180.log for the output of root script
+fpps01.pub.fpplivelab.oraclevcn.com: Successfully executed root script on nodes [fppc].
+fpps01.pub.fpplivelab.oraclevcn.com: Executing post configuration script on nodes [fppc]
+fpps01.pub.fpplivelab.oraclevcn.com: Successfully executed post configuration script on nodes fppc]
+fpps01.pub.fpplivelab.oraclevcn.com: Oracle home provisioned.
+fpps01.pub.fpplivelab.oraclevcn.com: Working copy creation completed.
+[grid@fpps01 ~]$
+```
+
+## Step 3: Connect to the target and verify the Restart Environment
+From either the FPP Server or your SSH client, connect as `opc` to the FPP target publid IP address and become `oracle`:
+```
+[grid@fpps01 ~]$ ssh opc@fppc
+opc@fppc's password:
+Last login: Wed Mar 31 13:23:58 2021
+[opc@fppc ~]$ sudo su - oracle
+Last login: Wed Mar 31 13:27:56 GMT 2021
+[oracle@fppc ~]$
+```
+
+Set the environment and verify that Restart is up and running:
+```
+[oracle@fppc ~]$ . oraenv
+ORACLE_SID = [oracle] ?
+ORACLE_HOME = [/home/oracle] ? /u01/app/grid/WC_gi_19_10_0_FPPC
+The Oracle base has been set to /u01/app/oracle
+[oracle@fppc ~]$ crsctl stat res -t
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.DATA.dg
+               ONLINE  ONLINE       fppc                     STABLE
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       fppc                     STABLE
+ora.asm
+               ONLINE  ONLINE       fppc                     Started,STABLE
+ora.ons
+               OFFLINE OFFLINE      fppc                     STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.cssd
+      1        ONLINE  ONLINE       fppc                     STABLE
+ora.diskmon
+      1        OFFLINE OFFLINE                               STABLE
+ora.evmd
+      1        ONLINE  ONLINE       fppc                     STABLE
+--------------------------------------------------------------------------------
+[oracle@fppc ~]$
+```
+
+Congratulations! You have successfully configured an Oracle Restart environment with a single command. Easy, huh? You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+- **Author** - Ludovico Caldara
+- **Contributors** -
+- **Last Updated By/Date** -  Ludovico Caldara, April 2021
