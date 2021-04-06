@@ -3,8 +3,6 @@
 ## Introduction
 In the previous lab you created an ADB instance.  In this lab you will connect to the ADB instance from Oracle Cloud Shell.
 
-*This lab is under construction*
-
 *Estimated time:* 20 Minutes
 
 ### Objectives
@@ -61,7 +59,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 3.  Under the **User Information** tab, click the **Copy** button to copy your User OCID.
       ![](./images/copy-user-ocid.png " ")
 
-4.  Create your auth token using the command below substituting your actual *user id* for the userid below.  *Note: If you already have an auth token, you may get an error if you try to create more than 2 per user*
+4.  Create your auth token using the command below substituting your actual *user OCID* for the userid below.  *Note: If you already have an auth token, you may get an error if you try to create more than 2 per user*
    
       ````
       <copy>
@@ -88,7 +86,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       </copy>
       ````
 
-3.   Run the load script passing in the arguments from your notepad.  two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  Your ATP name should be the name of your ADB instance.  In the example below we used *adb1*.  This load script takes approximately 3 minutes to run.  *Note : If you use a different ADB name, replace adb1 with your adb instance name*
+3.   Run the load script passing in the two arguments from your notepad, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  Your ATP name should be the name of your ADB instance.  In the example below we used *adb1*.  This load script takes approximately 3 minutes to run.  *Note : If you use a different ADB name, replace adb1 with your adb instance name*
 
       ``` 
       <copy> 
