@@ -188,10 +188,12 @@ This section demonstrates how to import a table to ADW instance.
       *  field #4:  Year
       *  field #5:  Sales
       *  field #3:  Scenario
+   
+   ![](./images/imageDT_22.png "")
 
-1. Click the Source button at the top. In the General tab, nn the Name field, enter the valid OCI connection string – $OCI$IP:1521/orcl. 
+4. Click the Source button at the top. In the General tab, nn the Name field, enter the valid OCI connection string – $OCI$IP:1521/orcl. 
 
-2. Click the SQL/Datasource Properties tab, enter below SQL statement in the Query field. Click Ok. 
+5. Click the SQL/Datasource Properties tab, enter below SQL statement in the Query field. Click Ok. 
 
    ```
     <copy>        
@@ -204,7 +206,8 @@ This section demonstrates how to import a table to ADW instance.
 6.	Click Verify. 
 7.	Click Save and Close.
 8.	Close the database inspector.
-9.	Next, load the data from Jobs. 
+9.	Next, load the data from Jobs:   
+    
     a.	On the home page select Jobs.   
     b.	Click New Job.   
     c.	Select Load Data as the job type.   
