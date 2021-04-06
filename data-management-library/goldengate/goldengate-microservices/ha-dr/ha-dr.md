@@ -330,7 +330,7 @@ In this step we will use a script to invoke Swingbench to apply data to the sour
 
     ![](./images/verify_cdr_tablenames_combined_removed_sh.png " ")
 
-You may now *proceed to the next lab*
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
