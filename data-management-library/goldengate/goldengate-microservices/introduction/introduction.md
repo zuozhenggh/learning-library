@@ -42,6 +42,8 @@ GoldenGate Users (c##ggate, ggate): ggate
 GoldenGate Admin(oggadmin): Welcome1
 ```  
 
+You may now [proceed to the next lab](#next).
+
 ## Learn More
 
 * [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
@@ -50,7 +52,3 @@ GoldenGate Admin(oggadmin): Welcome1
 * **Author** - Brian Elliott, Data Integration Team, Oracle, November 2020
 * **Contributors** -Zia Khan, Meghana Banka, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-You may now *proceed to the next lab*.
-
-
