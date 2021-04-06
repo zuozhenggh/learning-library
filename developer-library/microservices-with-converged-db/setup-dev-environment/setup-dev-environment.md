@@ -36,8 +36,14 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 2. Change directory into the cd microservices-datadriven/grabdish directory:
 
     ```
-    <copy>cd microservices-datadriven/grabdish</copy>
+    <copy>cd ~/microservices-datadriven/grabdish</copy>
     ```
+   
+   NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY. 
+   
+   IF YOU ARE DISCONNECTED OR LOG OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE `~/microservices-datadriven/grabdish` DIRECTORY.
+  
+   
 
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
 
@@ -250,7 +256,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 Run the `installGraalVMJaegerAndFrontendLB.sh` script to install both GraalVM and Jaeger.
 
  ```
- <copy>cd $MSDATAWORKSHOP_LOCATION; ./installGraalVMJaegerAndFrontendLB.sh</copy>
+ <copy>cd ~/microservices-datadriven/grabdish; ./installGraalVMJaegerAndFrontendLB.sh</copy>
  ```
 
 You may now proceed to the next lab.
