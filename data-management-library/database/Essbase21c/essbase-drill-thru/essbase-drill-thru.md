@@ -77,10 +77,10 @@ This section demonstrates how to import a table to ADW instance.
 3. Check the database table SALES\_BREAKDOWN\_SB. Type the query: 
 
     ```
-        <copy>        
-            Select * from SALES_BREAKDOWN_SB
-        </copy>
-        ````
+    <copy>        
+          Select * from SALES_BREAKDOWN_SB
+	</copy>
+    ````
   ![](./images/imageDT_07.png "")
 
 
@@ -229,7 +229,7 @@ This section demonstrates how to import a table to ADW instance.
     Execute the drill-through report defined in cell E5 by clicking Drill-through in the Essbase ribbon.  
     You will land in a new sheet with the results of the drill-through report execution. It contains the detailed breakdown. 
     
-    Note:
+    Note:  
     1) There are 6 states in Central Region with Sales for April. This matches the Sales query results from the relational table. Check Column C Statename showing the breakdown.  
     2) Enter a formula in cell F8 to sum the Sales numbers for the States: =SUM(F2:F7). The sum is 1207 which is the same value as the summarized Sales for Region Central in the Essbase cube.  
     3) The column names A1 to F1 for the drill-through table matches the Alias you specified in the drill-through datasource definition.   
