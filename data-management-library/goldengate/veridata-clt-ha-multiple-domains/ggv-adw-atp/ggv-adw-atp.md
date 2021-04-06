@@ -91,6 +91,6 @@ To add proxy information, replace the Oracle proxy and port in below example wit
 * **Reviewed by:**
     + Jonathan Fu, Director, Product Development, GoldenGate Development
 
-* **Last Updated By/Date:** Anuradha Chepuri, December 2020
+* **Last Updated By/Date:** Anuradha Chepuri, January 2021
 
 
