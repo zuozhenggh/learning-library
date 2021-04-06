@@ -33,7 +33,7 @@ Loading data is the process of adding data values to a cube from any number of d
 
 Create a rule file that is based on a sample file from the data warehouse.
 
-1.	Download the rules file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pnp9bHy2Ja5o7FQILaBFhCd02G4LM9Z1buBnCIjhW84/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Data_Basic.txt)
+1.	Download the data file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pnp9bHy2Ja5o7FQILaBFhCd02G4LM9Z1buBnCIjhW84/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Data_Basic.txt)
 
 
     Open the downloaded data file "Data_Basic.txt". Notice that there's no header row and the file delimiter is a comma.
@@ -70,17 +70,17 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	  ![](./images/image14_79.png)
 
-1.  You can now see the preview of the data in the Rules editor based on the input flat file.
+5.  You can now see the preview of the data in the Rules editor based on the input flat file.
 
     The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
 
     Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
 
-2. In the Rules editor, you can now set up the rule fields.
+6. In the Rules editor, you can now set up the rule fields.
 
     ![](./images/image14_80.png)
 
-    a. Click Create drop-down menu, and map the fields as below:.
+    a. Map the fields as below:
 
     * Field 1 - Product
     * Field 2 - Market
@@ -96,13 +96,13 @@ Create a rule file that is based on a sample file from the data warehouse.
   
        All dimensions must be represented in the load data rule before any data can be loaded.
 
-    b. After defining the rule with global and field options, click Verify on the Global toolbar to validate the syntax and then click Save and Close.
+    b. After defining the rule with field options, click Verify on the Global toolbar to validate the syntax and then click Save and Close.
 
     c. Click Refresh. See that the created rule is now listed in the Rules pane of the Scripts tab.
 
     d. Click Close to return to the Applications home page. Next create a job to load the data using the rule.
 
-3. On the home page, select Jobs and then New Job.
+7. On the home page, select Jobs and then New Job.
     ![](./images/image15_60.png)
 
     a. Select Load Data.
@@ -126,7 +126,7 @@ Create a rule file that is based on a sample file from the data warehouse.
     i. On the Jobs page, click Refresh to monitor the job status.
 
 
-4. After the job is completed, verify that the input records were processed and loaded.
+8. After the job is completed, verify that the input records were processed and loaded.
 
     a.	Select Job Details to check the load data job details.
 
@@ -135,10 +135,8 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 9.	On the Applications page, click the Actions to the right of the DynamicCorp - Sales cube and click Inspect.
 
-10. Select Statistics to view the resulting statistics for the Sales cube.
-
+10. Select Statistics to view the resulting statistics for the Sales cube.  
     ![](./images/image15_61.png)
-
     You have now completed the data load using rule file.
 
 ## **Step 2:** Calculating Essbase Cube
@@ -209,6 +207,8 @@ A cube can be calculated using one of two methods:
 
 15.	Click Refresh to see the status of your calculation.
 
+To verify if the data is aggregated at all the dimension levels for Actual, you can go to Excel and build a retrieval sheet using Smart view.
+
 ## **Step 3:** Migration Utilities
 
 1. Download and configure CLI:  
@@ -220,21 +220,19 @@ A cube can be calculated using one of two methods:
   c. Expand the Command Line Tools section.  
   
   d. Download the Command-line Tool.  
-
      ![](./images/image15_62.png)
-  
   e. Unzip the cli.zip file in a directory e.g. C:\app\cli  
   
-  f. Open a command shell window and change directory to where you unzipped the the CLI tool.  
+  f. Open a command prompt window and change directory to where you unzipped the the CLI tool.  
  
- **    Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error
-    C:\app\cli>esscs.bat
-    Install JDK8 and set JAVA_HOME variable to JDK8 installed location**  
+    **Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error**
+    **C:\app\cli>esscs.bat**
+    **Install JDK8 and set JAVA_HOME variable to JDK8 installed location**  
    
   g. From the command window type esscs.bat to get a list of the available command. 
      ![](./images/image15_63.png) 
 
-  h. Next login using below commad:
+  h. Use the below command and enter the password to login:
       ```
     <copy>        
           esscs.bat login -url http://ip:9000/essbase -u userid
