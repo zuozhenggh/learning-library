@@ -10,8 +10,8 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you will:
 - Provision an Autonomous Database instance
-- Create and grant privileges to a user in Autonomous Database instance
-- Load data into Autonomous Database instance
+- Create and grant privileges to a user in the Autonomous Database
+- Load data into the Autonomous Database
 
 ### Prerequisites
 
@@ -78,9 +78,9 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![Database instance homepage.](./images/provision-2.png " ")
 
-## **STEP 2:** Create OMLUSER in ADB Instance
+## **STEP 2:** Create OMLUSER in Autonomous Database Instance
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
     ![](./images/choose-adb.png " ")
 
@@ -110,7 +110,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/create-user-created.png " ")
 
-## **STEP 3**: Grant OMLUSER privileges to ADB Actions
+## **STEP 3**: Grant OMLUSER privileges to Database Actions
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
@@ -126,7 +126,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/open-database-actions.png  " ")
 
-4. On the Database Actions login page, log in with your ADW credentials, provide the **Username - ADMIN** and click **Next**. Then provide the <if type="freetier">**Password** you created for the Autonomous instance.</if><if type="livelabs">password **WELcome__1234**</if> and click **Sign in**.
+4. On the Database Actions login page, log in with your ADB credentials, provide the **Username - ADMIN** and click **Next**. Then provide the <if type="freetier">**Password** you created for the Autonomous instance.</if><if type="livelabs">password **WELcome__1234**</if> and click **Sign in**.
 
     ![](./images/db-admin.png " ")
 
@@ -179,7 +179,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     ![](./images/download-csv.png  " ")
 
-## **STEP 5**: Upload the Data File to the ADB Instance
+## **STEP 5**: Upload the Data File
 
 1. On the tab with your ADB instance, click on **Open Database Actions** under Tools.
 
@@ -192,7 +192,7 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
     
     ![](images/db-admin-password.png)
 
-3. In the webpage's URL, find the section that says **ADMIN** and change it to **OMLUSER**, then press enter.
+3. In the webpage's URL, find the section that says **ADMIN** and change it to **OMLUSER**, then press enter. You may want to bookmark this page to access it faster in the future.
 
     ![](images/admin-url.png)
 
