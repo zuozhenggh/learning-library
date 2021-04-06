@@ -59,13 +59,13 @@ This lab assumes you have:
 
     ```
     <copy>
-    cd ~/Desktop/Scripts/HOL/Lab10 
+    cd ~/Desktop/Scripts/HOL/Lab10
     ./db_createTable.sh
     </copy>
     ```
     ![](./images/create_tables.png " ")
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

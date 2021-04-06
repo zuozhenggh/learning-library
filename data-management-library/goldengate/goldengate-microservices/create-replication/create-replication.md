@@ -321,7 +321,7 @@ The objectives of the lab was to familiarize you with the process to create data
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

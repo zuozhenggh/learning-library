@@ -328,7 +328,7 @@ In this step we will mask the email ID field extracted at the source and replace
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-You may now *proceed to the next lab*.
+*Congratulations!* You have completed this workshop!
 
 ## Learn More
 
@@ -338,5 +338,3 @@ You may now *proceed to the next lab*.
 * **Author** - Madhu Kumar S. Data Integration, December 2020
 * **Contributors** - Brian Elliott, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-
