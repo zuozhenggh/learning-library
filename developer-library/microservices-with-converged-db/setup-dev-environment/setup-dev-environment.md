@@ -142,23 +142,25 @@ Click the Cloud Shell icon in the top-right corner of the Console.
    
       ![](images/createmasterencryptionkey.png " ")
         
-3. Click **Secrets** , click **Create Secret**, enter a name, description, encryption key (created in previous step), leave the default **Plain-Text** Secret Type Template, and provide a DB password (in the **Secret Contents** field) for the database users you will create later and click **Create Secret**
+4. Decide upon a password to be used for all database users that follows the Oracle requirements found here (eg `Welcome12345`: https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/keeping-your-oracle-database-secure.html#GUID-451679EB-8676-47E6-82A6-DF025FD65156 
+
+5. Click **Secrets** , click **Create Secret**, enter a name, description, encryption key (created in previous step), leave the default **Plain-Text** Secret Type Template, and provide the DB password (in the **Secret Contents** field) for the database users you will create later and click **Create Secret**
    
       ![](images/createsecret.png " ")
       
    COPY THE OCID OF THIS DB PASSWORD SECRET AND NOTE IT FOR LATER USE.
         
-4. Repeat the process to create a secret for the FrontEnd microservice authentication
+6. Repeat the process to create a secret for the FrontEnd microservice authentication
    
      ![](images/createfrontendauthpwsecret.png " ")
         
    COPY THE OCID OF THIS FRONTEND MICROSERVICE AUTH PASSWORD SECRET AND NOTE IT FOR LATER USE.
    
-5. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Dynamic Groups**.
+7. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Dynamic Groups**.
 
      ![](images/dynamicgroupmenu.png " ")
 
-6. Click **Create Dynamic Group** , specify a name, add the following matching rule providing your compartment ocid
+8. Click **Create Dynamic Group** , specify a name, add the following matching rule providing your compartment ocid
 
      `All {instance.compartment.id = 'ocid1.compartment.oc1..aaaaaaaaaaaputyourcompartmentidhere'}`
      
@@ -166,11 +168,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
      ![](images/createdynamicgroup.png " ")
      
-7. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Policies**:
+9. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Policies**:
 
      ![](images/policymenu.png " ")
      
-8. Click **Create Policy** specify a name and the following matching rule providing your compartment and vault ocids
+10. Click **Create Policy** specify a name and the following matching rule providing your compartment and vault ocids
    
    `Allow dynamic-group yourdynamicgroupname to manage secret-family in compartment id ocid1.compartment.oc1..yourcompartmentid where target.vault.id = 'ocid1.vault.oc1.phx.yourvaultid'`
   
