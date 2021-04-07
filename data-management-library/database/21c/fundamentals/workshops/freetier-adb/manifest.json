@@ -36,6 +36,10 @@
             "title": "Lab 5: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "atp"
+        },{
+            "title": "Lab 5: SQM Scalar and Table Expressions dbcs test",
+            "filename": "../../sql-macro/sql-macro.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 6: Bitwise Aggregate Functions",
