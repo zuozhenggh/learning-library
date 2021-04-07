@@ -25,8 +25,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -321,7 +321,7 @@ The objectives of the lab was to familiarize you with the process to create data
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -331,5 +331,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Zia Khan, Meghana Banka, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-

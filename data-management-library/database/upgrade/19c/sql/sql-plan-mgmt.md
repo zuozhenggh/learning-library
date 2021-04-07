@@ -4,15 +4,15 @@
 
 In the previous section you did find slow SQL statements with the SQL Performance Analyzer. Now we can use SQL Plan Management to fix the plans. The question is: Is this always necessary and useful?
 
-The SQL Performance Analyzer reports showed overall good results for the run in Oracle 19c.
+The SQL Performance Analyzer reports overall showed good results for the run in Oracle 19c.
 
-But still you could now try to fix a specific plan which has been changed. Or just write down all plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Lets see if the result is good. Or if it may be better to allow the optimizer to find newer paths.
+You could now try to fix a specific plan which has been changed or just write down all the plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Let us see if the results are good or if it is a better option to allow the optimizer to find newer paths.
 
 ![](./images/sql-plan-mgmt.png " ")
 
-In this exercise we use scripts written by Carlos Sierra.
+In this lab we use scripts written by Carlos Sierra.
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time:* 30 minutes
 
 ### About SQL Plan Management
 SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.
@@ -61,7 +61,7 @@ This lab assumes you have:
       ````
       ![](./images/fix_a_1.png " ")
 
-2. Here we’ll use one of Carlos Sierra’s scripts: spb_create.sql:
+2. Here we will use one of Carlos Sierra’s scripts: spb_create.sql:
 
       ````
       <copy>
@@ -105,13 +105,13 @@ This lab assumes you have:
       SQL_59a879455619c567           SQL_PLAN_5ma3t8pb1mjb766511f85 YES YES
 
       ```` -->
-If you like to dig deeper “Why this plan has changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
+If you like to dig deeper “Why has this plan changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
 
 ## **STEP 2**: Fix all statements
 
 Now we pin down all possible statements collected in the SQL Tuning Set STS_CaptureCursorCache – and verify with SQL Performance Analyzer again the effect.
 
-1. Use spm_load_all.sql:
+1. Use spm\_load\_all.sql
 
       ````
       <copy>
@@ -120,7 +120,7 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
       ````
       ![](./images/fix_a_7.png " ")
 
-2. Check what has happened:
+2. Observe the changes that have taken place
 
       ````
       <copy>
@@ -128,41 +128,7 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
       </copy>
       ````
       ![](./images/fix_a_8.png " ")
-
-      <!-- SQL_HANDLE           PLAN_NAME                      ENA ACC
-      ——————– —————————— — —
-      SQL_0c79b6d2c87ca446 SQL_PLAN_0sydqub47t926ee6188f4 YES YES
-      SQL_1465e6eba9245647 SQL_PLAN_18tg6xfnk8pk7f4091add YES YES
-      SQL_1d3eb12408a63da1 SQL_PLAN_1ugpj4h4acgd12e067175 YES YES
-      SQL_2469648692a7cf75 SQL_PLAN_28ub4hu9agmvp341d91fc YES YES
-      SQL_248d6d8dbf8dc7a0 SQL_PLAN_293bdjqzsvjx06e1fb41e YES YES
-      SQL_2f304ba11a91bba2 SQL_PLAN_2yc2bn4d93fx23efd80e4 YES YES
-      SQL_3276f16ef07d6f11 SQL_PLAN_34xrjdvs7uvsj872680f9 YES YES
-      SQL_356b057a1f6de0db SQL_PLAN_3aus5g8gqvs6vdda5da8a YES YES
-      SQL_3f06a4b1f7e2279b SQL_PLAN_3y1p4q7vy49wva9df0a29 YES YES
-      SQL_46bd0ca6de6f98d0 SQL_PLAN_4dg8cnvg6z66h341d91fc YES YES
-      SQL_4719eac4b4e7caec SQL_PLAN_4f6gaskufgkrc341d91fc YES YES
-      SQL_48be4eb9876ae7d4 SQL_PLAN_4jgkfr63qptynb5a27b1c YES YES
-      SQL_59a879455619c567 SQL_PLAN_5ma3t8pb1mjb745221865 YES YES
-      SQL_59a879455619c567 SQL_PLAN_5ma3t8pb1mjb766511f85 YES YES
-      SQL_683745e98d7cb1f6 SQL_PLAN_6hdu5x66rtcgqb77b2865 YES YES
-      SQL_6b4e05515d733fb5 SQL_PLAN_6qmh5a5fr6gxp3d347ecd YES YES
-      SQL_7eee136bc66cdb19 SQL_PLAN_7xvhmdg36tqst3f568acb YES YES
-      SQL_87d3a723fbe4eab5 SQL_PLAN_8gnx74gxy9upp872680f9 YES YES
-      SQL_922be39ed0f149cd SQL_PLAN_94az3mv8g2kfd4036fd75 YES YES
-      SQL_945ea9d5e1ba14fa SQL_PLAN_98rp9urhvn57uad9ddf9f YES YES
-      SQL_98685f091b440961 SQL_PLAN_9hu2z14dn82b13f568acb YES YES
-      SQL_9ade74d66fd8cd75 SQL_PLAN_9prmnutrxjmbp4036fd75 YES YES
-      SQL_a4621efe3a403847 SQL_PLAN_a8shyzsx40f273e83d5c2 YES YES
-      SQL_cba8d9b390654cbf SQL_PLAN_cra6tqf86am5z452bbf3f YES YES
-      SQL_cbeeaa37269264a6 SQL_PLAN_crvpa6wm94t56702cc8e9 YES YES
-      SQL_e6de372a14bff12f SQL_PLAN_fdrjr58abzw9g95d362e3 YES YES
-      SQL_eb19550280bd4f5d SQL_PLAN_fq6ap0a0bumux198236ef YES YES
-      SQL_f59c951fdf367160 SQL_PLAN_gb74p3zgmcwb0872680f9 YES YES
-      SQL_f7db40080b18fe6a SQL_PLAN_ggqu0105jjzma6d5a2ea5 YES YES
-      SQL_fc5efaa8ffabe508 SQL_PLAN_gsrrup3zurt88e90e4d55 YES YES
-      ```` -->
-
+      
 3. You ACCEPTED all previous plans from before the upgrade and added them to the SQL Plan Baseline.  Once you “fixed” the plans, use the SQL Performance Analyzer to verify the plans and the performance.
 
       ````
@@ -178,10 +144,10 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
       </copy>
       ````
 
-4. Compare the two resulting reports again – and compare them to the two examples from the previous run.
+4. Open a remote desktop( guacamole) and compare the two resulting reports again. Then compare them to the two examples from the previous run.
       ![](./images/sql_per_5.png " ")
 
-      Do you recognize that fixing all statements resulted in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c was better!
+      Do you realize that fixing all statements resulting in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c was better!
       This is one of the reasons why you should test your plans instead of just “fixing them to behave as before”.
 
       What is the outcome?
@@ -197,13 +163,13 @@ You may now [proceed to the next lab](#next).
 ## Learn More
 
 MOS Note: 789888.1
-How to Load SQL Plans into SQL Plan Management (SPM) from the Automatic Workload Repository (AWR)
+[How to Load SQL Plans into SQL Plan Management (SPM) from the Automatic Workload Repository (AWR)](https://support.oracle.com/epmos/faces/DocumentDisplay?id=789888.1)
 
 MOS Note: 456518.1
-How to Use SQL Plan Management (SPM) – Plan Stability Worked Example
+[How to Use SQL Plan Management (SPM) – Plan Stability Worked Example](https://support.oracle.com/epmos/faces/DocumentDisplay?id=456518.1)
 
 White Paper:
-SQL Plan Management with Oracle Database 12c Release 2
+[SQL Plan Management with Oracle Database 12c Release 2](http://www.oracle.com/technetwork/database/bi-datawarehousing/twp-sql-plan-mgmt-12c-1963237.pdf)
 
 ## Acknowledgements
 * **Author** - Mike Dietrich, Carlos Sierra
