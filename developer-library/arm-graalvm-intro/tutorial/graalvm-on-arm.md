@@ -2,6 +2,10 @@
 
 This tutorial describes how to get started with GraalVM on Arm compute shapes in Oracle Cloud Infrastructure (OCI). You can use GraalVM to improve the performance of your existing applications and build lightweight polyglot applications for the cloud. It’s an ideal companion for the OCI Arm compute shapes, which provide linear scalability and an unbeatable price-performance ratio.
 
+## Deploying your workloads on OCI A1 compute shapes
+
+The Oracle A1 compute shapes based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
+
 ## What is GraalVM ?
 
 GraalVM is a high-performance runtime for applications written in Java, JavaScript, LLVM-based languages such as C and C++, and other dynamic languages. It significantly improves application performance and efficiency, so it can help you run your existing applications more efficiently on cloud platforms. 
