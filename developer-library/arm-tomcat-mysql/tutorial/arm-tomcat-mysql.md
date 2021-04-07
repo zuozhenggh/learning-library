@@ -1,10 +1,10 @@
 # Run Apache Tomcat with MySQL on OCI
 
-This example shows how to run a Java web application on Apache Tomcat using MySQL on OCI A1.
+This example shows how to run a Java web application on Apache Tomcat using MySQL on OCI Arm A1 compute platform.
 
-## Deploying your workloads on OCI A1 compute shapes
+## Deploying your workloads on OCI Arm A1 compute platform
 
-The Oracle A1 compute shapes based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
+The OCI Arm A1 compute platform based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
 
 ## Get started with Arm on OCI
 
@@ -12,12 +12,12 @@ Get started with your Arm-based development project using [Oracle Cloud Free Tie
 
 ## Prerequisites
 
-To run this example, you need to have an Oracle Cloud Infrastructure A1 compute instance that you can [access by using SSH](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/managingkeypairs.htm#one).  
+To run this example, you need to have an OCI Arm A1 compute instance that you can [access by using SSH](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/managingkeypairs.htm#one).  
 Also, [allow traffic](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm#working) on port 8080. 
   
 ## How to run this example
 
-To run this application, first prepare an A1 instance with a few required packages, such as container tools and `git`. Then, clone the repository and build the application by using the included Maven `pom.xml`. Lastly, start the MySQL and Tomcat docker containers by using the container tools.
+To run this application, first prepare an OCI Arm A1 compute instance with a few required packages, such as container tools and `git`. Then, clone the repository and build the application by using the included Maven `pom.xml`. Lastly, start the MySQL and Tomcat docker containers by using the container tools.
 
 ## Install the container tools
 
@@ -67,9 +67,9 @@ podman run -it --rm --name todo-build \
 ```
 This command creates a `target` directory and the WAR file inside it. Note that we aren’t installing Maven but instead running the build tooling inside the container.
 
-### Run the application on the A1 compute shapes
+### Run the application on the OCI Arm A1 compute platform
 
-The application uses the Tomcat servlet container and the MySQL database. Both Tomcat and the MySQL database support the ARM64v8 architecture that the Oracle Cloud Infrastructure A1 compute shape uses.
+The application uses the Tomcat servlet container and the MySQL database. Both Tomcat and the MySQL database support the ARM64v8 architecture that the OCI Arm A1 compute platform uses.
 
 1. Create a pod using Podman.
     ```
