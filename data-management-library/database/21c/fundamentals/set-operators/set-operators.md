@@ -324,6 +324,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
-* **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  Kay Malcolm, March 2020
+* **Contributors** -  David Start, Kay Malcolm, Didi Han, Database Product Management
+* **Last Updated By/Date** -  Didi Han, April 2021
 
