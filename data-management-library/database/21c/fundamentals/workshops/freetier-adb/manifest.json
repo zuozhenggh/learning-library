@@ -37,7 +37,7 @@
             "filename": "../../sql-macro/sql-macro.md",
             "type": "atp"
         },{
-            "title": "Lab 5: SQM Scalar and Table Expressions dbcs test",
+            "title": "Lab 5: dbcs test DELETE THIS",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "dbcs"
         },
@@ -45,6 +45,11 @@
             "title": "Lab 6: Bitwise Aggregate Functions",
             "filename": "../../bitwise-agg/bitwise-agg.md",
             "type": "atp"
+        },
+        {
+            "title": "Lab 6: dbcs test DELETE",
+            "filename": "../../bitwise-agg/bitwise-agg.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 7: Enhanced Analytic Functions",
