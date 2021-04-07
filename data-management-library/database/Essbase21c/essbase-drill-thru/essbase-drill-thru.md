@@ -206,10 +206,10 @@ This section demonstrates how to import a table to ADW instance.
 
 5. Click the SQL/Datasource Properties tab, enter below SQL statement in the Query field. Click Ok. 
 
-    <copy>        
-          select product, market, scenario, year, sales from SALES_BREAKDOWN_SB
-	</copy>
-    
+        <copy>        
+            select product, market, scenario, year, sales from SALES_BREAKDOWN_SB
+        </copy>
+        
    ![](./images/imageDT_23.png "")
    ![](./images/imageDT_24.png "")
 
@@ -244,7 +244,7 @@ This section demonstrates how to import a table to ADW instance.
     We want to see the detailed breakdown of Sales by States in Central Region. 
 
     Click on cell E5 1207.   
-    
+
     Execute the drill-through report defined in cell E5 by clicking Drill-through in the Essbase ribbon.  
     You will land in a new sheet with the results of the drill-through report execution. It contains the detailed breakdown. 
     
