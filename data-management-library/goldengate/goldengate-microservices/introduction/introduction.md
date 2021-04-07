@@ -4,9 +4,9 @@ This hands-on lab is designed to demonstrate how Oracle GoldenGate 19c Microserv
 
 The labs will walk the end-user through how to add all components of Oracle GoldenGate replication.
 
-*Estimated Lab Time*: 3 hours
+*Estimated Lab Time*: 4 hours
 
-### About Oracle GoldentGate Microservices
+### About Oracle GoldenGate Microservices
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating four scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
 ### Lab Architecture
@@ -51,4 +51,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, November 2020
 * **Contributors** -Zia Khan, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021
