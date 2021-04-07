@@ -6,13 +6,13 @@ In this lab you will build a Micronaut application locally that connects to Orac
 If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command to checkout the code:
 
     <copy>
-    git clone -b lab5 https://github.com/graemerocher/micronaut-hol-example.git
+    git clone -b lab3 https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
 
 If you were unable to setup the Autonomous Database and necessary cloud resources you can also checkout a version of the code that uses an in-memory database:
 
     <copy>
-    git clone -b lab5-h2 https://github.com/graemerocher/micronaut-hol-example.git
+    git clone -b lab3-h2 https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
 
 
@@ -35,7 +35,7 @@ In this lab you will:
 
 ## **STEP 1**: Create Micronaut Data entities that map Oracle Database tables
 
-The process in Lab 3 created a Schema using the following SQL statements:
+In the previous lab Flyway was used to setup the following schema:
 
 
     CREATE TABLE "PET" ("ID" VARCHAR(36),"OWNER_ID" NUMBER(19) NOT NULL,"NAME" VARCHAR(255) NOT NULL,"TYPE" VARCHAR(255) NOT NULL);
@@ -454,23 +454,16 @@ Notice that `javax.transaction.Transactional` is declared on the method which en
 If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL logging:
 
 ```xml
-<logger name="io.micronaut.data.query" level="debug" />
-```
-
-## **STEP 5**: Write Integration Tests for the Micronaut Application
-
-The application will already have been setup with a single test that tests the application can startup successfully (and hence will test the logic of the `init` method defined in the previous section).
-
-To execute your tests make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab and then execute:
-
-```bash
 <copy>
-export TNS_ADMIN=[Your absolute path to wallet]
-export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
+<logger name="io.micronaut.data.query" level="debug" />
 </copy>
 ```
 
-Then if you are using Gradle use the `test` task to execute your tests:
+## **STEP 5**: Run Integration Tests for the Micronaut Application
+
+The application will already have been setup with a single test that tests the application can startup successfully (and hence will test the logic of the `init` method defined in the previous section).
+
+To execute your tests if you are using Gradle use the `test` task to execute your tests:
 
 ```bash
 <copy>
@@ -488,16 +481,7 @@ Alternatively if you chose Maven use the `test` goal:
 
 ## **STEP 6**: Run the Micronaut application locally
 
-To run the application locally and test against the Autonomous Database that was setup in the previous labs. Make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab:
-
-```bash
-<copy>
-export TNS_ADMIN=[Your absolute path to wallet]
-export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
-</copy>
- ```
-
-Then if you are using Gradle using the `run` task to start the application:
+To run the application locally if you are using Gradle using the `run` task to start the application:
 
 ```bash
 <copy>

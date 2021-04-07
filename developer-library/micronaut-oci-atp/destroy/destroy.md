@@ -7,22 +7,35 @@ Estimated Lab Time: 5 minutes
 
 ### Objectives
 In this lab you will:
-* Use your Terraform Stack to tear down OCI resources
+* Terminate the Autonomous Database Instance used for this lab
+* Terminate the Oracle Cloud Compute Instance used for this lab
 
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
   
-## **STEP 1:** Destroying 
+## **STEP 1**: Stopping the Autonomous Database Instance 
 
-To clean up all of the OCI resources created by Terraform at the start of this lab perform the following steps:
+To shutdown the Autonomous database instance follow these steps:
 
-1. Navigate to the Stack you created in the Oracle Cloud Console by going to **Resource Manager** -> **Stacks** and selecting your stack under **Stacks**
+1. On the "Autonomous Database Details" page click "More Actions" and then "Terminate"
 
-2. Under **Terraform Actions** select **Destroy** then click the **Destroy** button
+![Clicking Terminate](images/db1.png)
 
-    ![Destroy Stack](images/destroy_stack.png)
+2. Enter the database name to confirm termination:
 
-The Terraform automation will tear down the VMs and the Autonomous Database created as the start of this lab.
+![Confirm Terminate](images/db2.png)
+
+## **STEP 2**: Terminating the Oracle Cloud Compute Instance
+
+To shutdown the Compute Instance instance follow these steps:
+
+1. On the "Instance Details" page click "More Actions" and then "Terminate"
+
+![Clicking Terminate](images/instance1.png)
+
+2. Click "Terminate Instance" to confirm termination:
+
+![Confirm Terminate](images/instance2.png)
 
 *Congratulations! You have successfully completed the lab.*
 

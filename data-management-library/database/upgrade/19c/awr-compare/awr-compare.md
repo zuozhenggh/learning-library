@@ -2,16 +2,16 @@
 
 ## Introduction
 
-In this lab you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which had roughly the same load and duration.
+In this lab, you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which have roughly the same load and duration.
 
 ![](./images/awr-compare.png " ")
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Comparing Database Performance Over Time
-Performance degradation of the database occurs when your database was performing optimally in the past, but has over time gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time.
+Performance degradation of the database occurs when your database was performing optimally in the past, but over time has gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time.
 
-An AWR Compare Periods report, on the other hand, shows the difference between two periods in time (or two AWR reports, which equates to four snapshots). Using AWR Compare Periods reports helps you to identify detailed performance attributes and configuration settings that differ between two time periods:  before upgrade and after upgrade.
+An AWR Compare Periods report, shows the difference between two periods in time (or two AWR reports, which equates to four snapshots). Using AWR Compare Periods reports helps you to identify detailed performance attributes and configuration settings that differ between two time periods:  before upgrade and after upgrade.
 
 ### Objectives
 
@@ -42,7 +42,7 @@ This lab assumes you have:
 	````
    ![](./images/upgrade_19c_29.png " ")
 
-2. At first, create an AWR snapshot BEFORE load, then AFTER load, and note down the snapshot numbers again.
+2. At first, create an AWR snapshot BEFORE load, then AFTER load. Note down the snapshot numbers again.
    
 	````
 	<copy>
@@ -66,7 +66,7 @@ This lab assumes you have:
 
 6. Please NOTE down the snapshot number.
    ![](./images/upgrade_19c_31.png " ")
-
+   
 ## **STEP 2**: AWR Diff Report
 
 In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a snapshot period AFTER upgrade.
@@ -117,13 +117,10 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Enter value for num_days:
 	```` -->
 
-
-
-
-4.  Type: **2** and click **RETURN**
+3.  Type: **2** and click **RETURN**
    ![](./images/upgrade_19c_34.png " ")
 
-5. Now you need to define the first snapshot interval – please fill in the snapshot IDs you noted down during the first HammerDB run.
+4. Now you need to define the first snapshot interval – therefore, fill in the snapshot ID's you noted down during the first HammerDB run.
 	<!-- ````
 	Enter value for num_days: 2
 
@@ -143,20 +140,21 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Enter value for begin_snap:
 	```` -->
 
-6. Type: 150  <== Your actual snapshot ID may be different – please check your notes!  Hit RETURN.
+5. Type: 150. (Your actual snapshot ID may be different – please check your notes!) Hit RETURN.
    ![](./images/upgrade_19c_35.png " ")
    ![](./images/upgrade_19c_36.png " ")
 
 
-7. Type: 2.  Hit **RETURN**
+6. Type: **2** and hit **RETURN**
    ![](./images/upgrade_19c_37.png " ")
 
-    Type: 175 <== Your actual snapshot ID may be different – please check your notes!
+    Type: 175 (Your actual snapshot ID may be different – please check your notes!)
 	![](./images/upgrade_19c_38.png " ")
-8. Hit **RETURN**
+
+7. Hit **RETURN**
    ![](./images/upgrade_19c_41.png " ")
 
-9.  Enter awrdiff and hit RETURN. Wait until the HTML output has been generated
+8.  Enter awrdiff and hit RETURN. Wait until the HTML output has been generated
 
 	````
 	<copy>
@@ -164,7 +162,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	</copy>
 	````
 
-9. In your xterm start Mozilla Firefox with the awr diff report:
+9. In your remote desktop(Guacamole) start Mozilla Firefox with the awr diff report.
     
 
 	````
@@ -175,7 +173,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	![](./images/upgrade_19c_39.png " ")
 	![](./images/upgrade_19c_40.png " ")
 
-10. Compare things such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run.  Browse also through the SQL statistics and see if you find remarkable differences between the two runs.  Overall, you won’t see any significant differences. The purpose of this lab exercise is simply that you recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
+10. Compare things such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run. Also, browse through the SQL statistics and see if you find remarkable differences between the two runs.  Overall, you will not see any significant differences. The purpose of this lab exercise is for you to simply recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
 
 You may now [proceed to the next lab](#next).
 

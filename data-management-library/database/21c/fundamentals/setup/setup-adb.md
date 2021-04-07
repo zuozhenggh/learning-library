@@ -17,7 +17,8 @@ In the previous lab you created an ADB instance.  In this lab you will connect t
 ## **STEP 1:** Create Oracle Wallet in Cloud Shell
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
-1.  Login to the Oracle Cloud if you aren't logged in
+1.  Login to the Oracle Cloud if you aren't logged in already.
+   
 2.  Click the Cloud Shell icon to start up Cloud Shell
       ![](./images/cloud-shell.png " ")
 3.  While your Cloud Shell is starting up, click on the Hamburger Menu -> **Autonomous Transaction Processing** 
@@ -40,7 +41,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ![](./images/wallet.png " ")
 
-8.  Press copy to copy the OCID from Step 5 and fill in the autonomous database ocid that is listed in the output section of your terraform.  Click enter
+8.  Press copy to copy the OCID from Step 5 and fill in the autonomous database ocid that is listed in the output section of your terraform.  Make sure there is a space between the --autonomous-database-id phrase and the ocid.  Click **enter**.  Be patient, it takes about 20 seconds.
 
 9.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
 
@@ -81,8 +82,9 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       <copy>
       cd $HOME
       pwd
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G-3O894R-xUdJ9uf-keoHUZ3YTaNWIuhPry9sRKFmvEhhf503MbRXAxlA3-bSMxQ/n/idma9bvgdlpn/b/adb1-adb/o/load-21c.sh
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/0xufCY8gkEkZdjUfDhTqaOh4dd8yaUDYvW4tFmJYGE0GbP5yWQGNYOsqw2sZpo5X/n/idma9bvgdlpn/b/db21c-adb/o/load-21c.sh
       chmod +x load-21c.sh
+      export PATH=$PATH:/usr/lib/oracle/19.10/client64/bin
       </copy>
       ````
 
@@ -98,23 +100,25 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 4.  As the script is running, you will note failures on the DBA role. The DBA role is not available in Autonomous Database, the DWROLE is used instead. This error is expected. 
 
       ![](./images/load21c-2.png " ")   
-5.  Test to ensure that your data has loaded by logging into SQL Developer Web and issuing the command below. *Note* The Username and Password for SQL Developer Web are admin/WElcome123##. There should be 665 items.
+
+## **STEP 4:** Login to SQL Developer Web
+
+1.  Test to ensure that your data has loaded by logging into SQL Developer Web. 
+2.  Go back to your Autonomous Database Homepage
+3.  Click on the **Tools** tab
+4.  Click **Database Actions**
+5.  Select *admin* for your username
+6.  Password:  *WElcome123##*
+7.  Verify that there are 665 items
 
       ````
       <copy>
-      sqlplus admin/WElcome123##@adb1_high
       select count(*) from oe.order_items;
       </copy>
       ````
+8.  Click the down arrow next to the word *ADMIN*
+9.  Click **Sign Out**
 
-*Note: If you are unable to login, set your TNS_ADMIN variable to your home directory/wallet*
-
-6. Exit the sql prompt
-
-    ````
-    exit
-    ````
-    ![](./images/exit.png " ")
 
 You may now [proceed to the next lab](#next).
 

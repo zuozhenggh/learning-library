@@ -28,29 +28,37 @@ In this lab, you will:
 
 1. Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
 
-2. After you log in to the Console, open the navigation menu, and then under **Database Related Services**, select **GoldenGate**.
+2.  After you log in to the Console, open the navigation menu, and then under **Database Related Services**, select **GoldenGate**.
 
-   ![Select GoldenGate Deployments in Navigation menu](images/01-01-02.png "Access GoldenGate service")
+    ![Select GoldenGate Deployments in Navigation menu](images/01-01-02.png "Access GoldenGate service")
 
-   You're brought to the **Deployments** page.
+    You're brought to the **Deployments** page.
 
-   ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
+    ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
 
-3. In your Chrome browser address bar, click the padlock icon.
+3.  In your Chrome browser address bar, click the padlock icon, and then click **Certficiate (Verified)**.
 
-4. In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
+    ![Certificate](images/01-04-certificate.png)
 
-   Another Certificate window opens, now displaying the details for the root DigiCert certificate.
+4.  In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
 
-5. Click **Details**, and then **click Copy to File**.
+    Another Certificate window opens, now displaying the details for the root DigiCert certificate.
 
-6. In the Certificate Export Wizard, click **Next**.
+    ![DigiCert Root](images/01-04-digicert.png)
 
-7. Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
+5.  Click **Details**, and then click **Copy to File**.
 
-8. Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
+    ![Copy to File](images/01-05.png)
 
-9. Click **Next**, and then click **Finish**.
+6.  In the Certificate Export Wizard, click **Next**.
+
+7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
+
+    ![Base-64](images/01-07.png)
+
+8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
+
+9.  Click **Next**, and then click **Finish**.
 
 A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
 
@@ -112,7 +120,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 * **Contributors** -  Werner He, Database Product Management
 * **Last Updated By/Date** - March 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

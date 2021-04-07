@@ -2,15 +2,15 @@
 
 ## Introduction
 
-In this part of the Hands-On Lab you will now plugin UPGR into CDB2.
+In this Lab, you will plugin UPGR into CDB2.
 
-We could have done this with AutpUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
+We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
 
 CDB2 is a Multitenant Container database. UPGR will be converted into a PDB, and then become a pluggable database.
 
 The key is, that – in order to plugin a non-CDB such as the UPGR database – it has to be upgraded first to the same release as the CDB it gets plugged into.
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time:* 20 minutes
 
 ### About Oracle Multitenant
 The multitenant architecture enables an Oracle database to function as a multitenant container database (CDB).
@@ -21,7 +21,7 @@ A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A
 
 Every CDB has the following containers:
 
-Exactly one CDB root container
+ Exactly one CDB root container
 
 - The CDB root is a collection of schemas, schema objects, and nonschema objects to which all PDBs belong .
 
@@ -44,8 +44,8 @@ Exactly one seed PDB
 ### Objectives
 
 In this lab, you will:
-* Preparation UPGR as non-CDB
-* Compatibility check
+* Prepare UPGR as non-CDB
+* Perform compatibility check
 * Plugin Operation
 
 ### Prerequisites
@@ -58,9 +58,9 @@ This lab assumes you have:
     - Lab: Environment Setup
 		- Lab: Initialize Environment
 
-## **STEP 1**: Preparation UPGR as non-CDB
+## **STEP 1**: Preparation of UPGR as non-CDB
 
-1. Switch to the UPGR database in 18c environment:
+1. Switch to the UPGR database in 19c environment.
 
     ````
     <copy>
@@ -70,7 +70,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_1.png " ")
 
-2. Shutdown UPGR and start it up read only:
+2. Shutdown UPGR and start it as read only.
 
     ````
     <copy>
@@ -80,7 +80,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_2.png " ")
 
-3. Create the XML manifest file describing UPGR’s layout and information:
+3. Create the XML manifest file describing UPGR’s layout and information.
 
     ````
     <copy>
@@ -89,7 +89,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_3.png " ")
 
-4. Shutdown UPGR:
+4. Shutdown UPGR.
 
     ````
     <copy>
@@ -99,7 +99,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_4.png " ")
 
-5. Switch to CDB2:
+5. Switch to CDB2.
 
     ````
     <copy>
@@ -111,7 +111,7 @@ This lab assumes you have:
 
 ## **STEP 2**: Compatibility check
 
-1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO.  Compatibility check.
+1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO compatibility check.
 
     ````
     <copy>
@@ -128,11 +128,11 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_6.png " ")
 
-2. If the result is “NO” (and it is NO very often), then don’t be in panic. Check for TYPE='ERROR' in PDB\_PLUG\_IN\_VIOLATIONS. n this case, the result should be “YES“.
+2. If the result is “NO” (and it is NO very often), then check for TYPE='ERROR' in PDB\_PLUG\_IN\_VIOLATIONS. In this case, the result should be “YES“.
 
 ## **STEP 3**: Plugin Operation
 
-1. Plugin UPGR with its new name PDB1 – from this point there’s no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
+1. Plugin UPGR with its new name PDB1 – from this point there is no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
 
     Please use the proposed naming as the FILE\_NAME\_CONVERT parameter and TNS setup have been done already.
     Use the NOCOPY option for this lab to avoid additional copy time and disk space consumption. The show pdbs command will display you all existing PDBs in this CDB2.
@@ -147,7 +147,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_10.png " ")
 
-    As you couldn’t do a compatibility check beforehand, you’ll open the PDB now and you will recognize that it opens only with errors.
+    As you couldn not execute a compatibility check beforehand, you will open the PDB now and you will recognize that it opens only with errors.
 
     ````
     <copy>
@@ -184,7 +184,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_13.png " ")
 
-4. Now SAVE STATE. This ensures, that PDB1 will be opened automatically whenever you restart CDB2. Before you must restart the PDB as otherwise it opens only in RESTRICTED mode.
+4. Now SAVE STATE. This ensures, that PDB1 will be opened automatically whenever you restart CDB2. Before you must restart the PDB or else it opens only in RESTRICTED mode.
 
     ````
     <copy>
@@ -198,7 +198,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_14.png " ")
 
-5. Try to connect directly to PDB1 – notice that you can’t just connect without specifying the service name as PDB1 is not visible on the OS level.
+5. Try to connect directly to PDB1 – notice that you cannot just connect without specifying the service name, as PDB1 is not visible on the OS level.
 
     ````
     <copy>
@@ -208,7 +208,7 @@ This lab assumes you have:
     ````
     ![](./images/plugin_upgr_15.png " ")
 
-6. As alternative you could also use the EZconnect (speak: Easy Connect)
+6. As an alternative you could also use the EZconnect (speak: Easy Connect)
 
     ````
     <copy>

@@ -86,11 +86,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
       ![](./images/tools.png " ")
 
-5.  Login with the *admin* user, click **Next**.  Enter the password *WElcome123##* 
-6.  Click on the **SQL** button.
-7.  Change the word *admin* in the URL to *oe*.  You will be logging in to the admin schema
-8.  Enter the username *oe* and password *WElcome123##*
-</if>
+6.  Enter the username *oe* and password *WElcome123##*
+7.  Click on the **SQL** button.
+
 
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
@@ -102,7 +100,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     sqlplus /nolog
 	conn oe/WElcome123##@adb1_high
 	```
-
+</if>
 ## **STEP  2**: Test the set operator with the `EXCEPT` clause
 
 <if type="dbcs">

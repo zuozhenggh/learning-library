@@ -16,6 +16,13 @@ In this lab, you will learn how to:
 * Work with Partitioned Models
 * Use the Model Explainability feature to rank attributes
 
+
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab3_in-db_algo.json?download=1).
+
+[](include:import)
+
 ## **Step 1**: Import libraries
 
 1. Run the following script to import the `oml` package, the python packages - Pandas, Numpy, and matplotlib:

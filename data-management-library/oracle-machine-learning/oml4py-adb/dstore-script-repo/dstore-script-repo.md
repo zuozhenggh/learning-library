@@ -28,6 +28,12 @@ In this lab, you will learn how to:
 * Delete datastores
 
 
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab4_datastores.json?download=1).
+
+[](include:import)
+
 ## **Step 1**: Import libraries supporting OML4Py and create data table
 
 To use OML4Py, first import the package `oml`. Also import the pandas package for pandas-specific functionality.

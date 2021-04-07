@@ -27,5 +27,3 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Orlando Gentil, March 2021
 
-## Need Help?
-Please submit feedback or ask for help by sending an email to livelabs-help-oci_us@oracle.com. Please make sure to include your workshop name and lab name. You can also include screenshots and attach files.

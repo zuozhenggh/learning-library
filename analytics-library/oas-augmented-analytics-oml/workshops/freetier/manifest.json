@@ -1,5 +1,6 @@
 {
-  "workshoptitle": "Oracle Analytics Server-Augmented Analytics & Oracle Converged Database-Machine Learning",
+  "workshoptitle": "Oracle Analytics Server Augmented Analytics & Oracle Converged Database-Machine Learning",
+  "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
       "title": "Getting Started",
@@ -34,14 +35,19 @@
       "filename": "../../init-start-oas/init-start-oas.md"
     },
     {
-      "title": "Lab 5: OAS Augmented Analytics and Data Visulization",
-      "description": "OAS Augmented Analytics and Data Visulization",
+      "title": "Lab 5: OAS Augmented Analytics and Data Visualization",
+      "description": "OAS Augmented Analytics and Data Visualization",
       "filename": "../../oas-augmented-analytics/oas-augmented-analytics.md"
     },
     {
       "title": "Lab 6: Oracle Converged Database: Machine Learning ",
       "description": "Oracle Converged Database: Machine Learning ",
       "filename": "../../machine-learning-oracle-database/machine-learning-oracle-database.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }
