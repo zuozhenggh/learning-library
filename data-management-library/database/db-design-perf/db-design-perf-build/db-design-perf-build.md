@@ -49,9 +49,7 @@ Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal ac
 
     ![](./images/connect7.png " ")
 
-3. Drag (or click "select from your computer") the wallet file you downloaded in the previous step of this lab. Then click **Upload** to transfer the wallet file to your home directory under cloud shell.  Download the zip file below and repeat this step for devlivelab.zip.
-
-    [devlivelab.zip](./files/devlivelab.zip)
+3. Drag (or click "select from your computer") the wallet file you downloaded in the previous step of this lab. Then click **Upload** to transfer the wallet file to your home directory under cloud shell.
 
     ![](./images/connect8.png " ")
 
@@ -86,9 +84,6 @@ Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal ac
     </copy>
     ```
 
-
-You may now **proceed to the next step.**
-
 ## **STEP 3:** Create the initial schema
 
 1. Retrieve the zip file that contains all of the supporting files for this lab.
@@ -101,7 +96,7 @@ You may now **proceed to the next step.**
     </copy>
     ```
 
-    There should be a listing of numerous files suffixed with SQL and SH. *Note that that listing may be slightly different to the image below as the lab evolves over time*
+    There should be a listing of numerous files suffixed with SQL and SH. *Note that that listing may be slightly different to the image below as the lab evolves over time.*
 
     ![](./images/seed1.png " ")
 
@@ -169,7 +164,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
     ![](./images/model9.png " ")
 
-    Exit Database Modeller and Database Actions and please **proceed to the next lab.**
+    Exit Database Modeler and Database Actions and please **proceed to the next lab.**
 
 ## Want to Learn More?
 
@@ -178,4 +173,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 ## Acknowledgements
 
 - **Author** - Connor McDonald, Database Advocate
-- **Last Updated By/Date** - Connor McDonald, March 2021
+- **Last Updated By/Date** - Connor McDonald, April 2021
