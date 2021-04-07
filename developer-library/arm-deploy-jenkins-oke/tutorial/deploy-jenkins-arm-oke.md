@@ -4,9 +4,9 @@ Quick delivery of software has become a competitive advantage for companies. Aut
 
 This tutorial explains how to deploy Jenkins on Oracle Cloud Infrastructure (OCI) to centralize build automation and scale Jenkins build agents by using OCI Container Engine for Kubernetes. Kubernetes ensures that resources are used efficiently and that servers aren’t overloaded or idle. The ability of Kubernetes to orchestrate container deployment ensures that Jenkins always has the right amount of resources available. GitHub is used to manage source code in this tutorial.
 
-## Deploying your workloads on OCI A1 compute shapes
+## Deploying your workloads on OCI Arm A1 compute platform
 
-The Oracle A1 compute shapes based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
+The OCI Arm A1 compute platform based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
 
 
 ## Create a Kubernetes Cluster
@@ -23,7 +23,7 @@ Container Engine for Kubernetes is easy to start using, and combined with OCI Cl
 
 3. On the Create Cluster page, choose some basic configuration options, like the version of Kubernetes that you want to run and the number and shape of the nodes for your cluster. For this tutorial, choose the Oracle A1 shape for the nodes. 
 
-> Choose the Oracle A1 shape for the nodes. !!! Update screenshots!!!
+> Choose the OCI Arm A1 compute shape for the nodes. !!! Update screenshots!!!
 
 ![](./images/03_create_workflow.png)
 
