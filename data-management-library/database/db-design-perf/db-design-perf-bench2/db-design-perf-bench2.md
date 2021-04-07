@@ -67,4 +67,4 @@ For more information on the [DEFAULT ON NULL](https://blogs.oracle.com/oraclemag
 ## Acknowledgements
 
 - **Author** - Connor McDonald, Database Advocate
-- **Last Updated By/Date** - Connor McDonald, March 2021
+- **Last Updated By/Date** - Connor McDonald, April 2021
