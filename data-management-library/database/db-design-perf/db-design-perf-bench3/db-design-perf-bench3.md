@@ -64,7 +64,7 @@ Estimated lab time: 15 minutes
 
     The performance benefits are very good, but the CPU utilization is still approximately half of the machine capacity which suggests there are still benefits to be found by adjusting the design.
 
-2. If you not have done so already, press Enter to exit the benchmark and please **proceed to the next step.**
+2. If you not have done so already, press Enter to exit the benchmark.
 
 
 ## **STEP 3:** Final benchmark
@@ -84,7 +84,7 @@ Estimated lab time: 15 minutes
 
     From the previous benchmark, components _gc index operation_ and _buffer busy waits_ are indicators that multiple session are competing for common blocks in memory. A block is the fundamental unit of Oracle Database storage for both tables and indexes. As sessions are trying to rapidly insert rows into the database, common blocks are being competed for in memory.
 
-    By utilising the _Partitioning_ faciltiies available in the Oracle Database, a single database object (such as a table or index) can be split into multiple physical objects in the database. This has the effect of distributing competition for the blocks across multiple physical objects, thus reducing contention and allowing for greater performance.
+    By utilizing the _Partitioning_ facilities available in the Oracle Database, a single database object (such as a table or index) can be split into multiple physical objects in the database. This has the effect of distributing competition for the blocks across multiple physical objects, thus reducing contention and allowing for greater performance.
 
     ![](./images/concp1.png " ")
 
@@ -129,4 +129,4 @@ For more information on the [caching](https://docs.oracle.com/en/database/oracle
 ## Acknowledgements
 
 - **Author** - Connor McDonald, Database Advocate
-- **Last Updated By/Date** - Connor McDonald, March 2021
+- **Last Updated By/Date** - Connor McDonald, April 2021
