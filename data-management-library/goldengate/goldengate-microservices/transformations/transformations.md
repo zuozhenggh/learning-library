@@ -14,7 +14,7 @@ It is easily extensible and flexible to stream transformed data to other relatio
 
 ### Objectives
 
-To use GoldegGate to perform transformations on the data during the replication process. Even though GoldenGate is primarily a real time data replication tool, it does have the ability to create data transformations. In this lab we will create sample transformations to showcase this feature of GoldenGate.
+To use GoldenGate to perform transformations on the data during the replication process. Even though GoldenGate is primarily a real time data replication tool, it does have the ability to create data transformations. In this lab we will create sample transformations to showcase this feature of GoldenGate.
 
 
 ### Prerequisites
@@ -328,7 +328,7 @@ In this step we will mask the email ID field extracted at the source and replace
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-*Congratulations!* You have completed this workshop!
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

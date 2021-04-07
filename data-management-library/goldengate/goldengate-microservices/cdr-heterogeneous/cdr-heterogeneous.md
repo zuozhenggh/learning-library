@@ -7,8 +7,6 @@ Since we have already setup Active-Active configuration on CDRDEMO table, we wil
 *Estimated Lab Time*:  60 minutes
 
 ### Objectives
-
-
 - Resolve the different types of conflict using one or more resolution methods.
 
 
@@ -17,8 +15,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: Create One-Way Replication
@@ -477,7 +475,7 @@ To resolve the case where the target row is missing. The logical resolution, and
     ![](./images/urm_pm_db_1.png " ")
     ![](./images/urm_pm_db_2.png " ")
 
-You may now [proceed to the next lab](#next).
+*Congratulations!* You have completed this workshop!
 
 ## Learn More
 * [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
@@ -485,9 +483,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Nishant Kaushik, Data Integration, December 2020
 * **Contributors** - Brian Elliott, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021
