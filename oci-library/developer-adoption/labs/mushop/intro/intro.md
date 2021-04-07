@@ -1,8 +1,8 @@
 # Introduction
 
-## Build and Deploy your First Cloud Native App
+## Build and Deploy the MuShop App
 
-Learn how to deploy applications into a cloud-native microservice-based development framework leveraging the Oracle Cloud Native solutions. You will deploy an eCommerce application with polyglot microservices for each component of a highly scalable architecture leveraging Kubernetes and Oracle Cloud Infrastructure components.
+Learn how to deploy the MuShop App into a cloud-native microservice-based development framework leveraging the Oracle Cloud Native solutions. You will deploy an eCommerce application with polyglot microservices for each component of a highly scalable architecture leveraging Kubernetes and Oracle Cloud Infrastructure components.
 
 Estimated time: 2 hours
 

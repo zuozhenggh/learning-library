@@ -23,15 +23,7 @@
             "filename": "../../labs/mushop/observability/monitoring.md"
         },
         {
-            "title": "Functions Prerequisites",
-            "filename": "../../../da-functions-load-file-into-adw-python/prerequisites/functions.md"
-        },
-        {
-            "title": "Lab 4: Functions",
-            "filename": "../../../da-functions-load-file-into-adw-python/fn-lab/lab.md"
-        },
-        {
-            "title": "Lab 5 (OPTIONAL): Clean Up",
+            "title": "Lab 4: Clean Up",
             "filename": "../../labs/mushop/cleanup/cleanup.md"
         },
         {
