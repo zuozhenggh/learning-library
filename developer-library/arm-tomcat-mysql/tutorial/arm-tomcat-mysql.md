@@ -1,6 +1,6 @@
 # Run Apache Tomcat with MySQL on OCI
 
-This example shows how to run a Java web application on Apache Tomcat using MySQL on OCI Arm A1 compute platform.
+This example shows how to run a containerized Java web application on Apache Tomcat on OCI Arm A1 compute platform.
 
 ## Deploying your workloads on OCI Arm A1 compute platform
 
