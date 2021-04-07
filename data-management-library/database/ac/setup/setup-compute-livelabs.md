@@ -56,7 +56,7 @@ For more information about Terraform and Resource Manager, please see the append
 
 1.  To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-    ![](../clusterware/images/start-cloudshell.png " ")
+    ![](./images/start-cloudshell.png " ")
 
 2.  Using one of the Public IP addresses, enter the command below to login as the *opc* user and verify connection to your nodes.    
 

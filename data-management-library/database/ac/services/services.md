@@ -36,14 +36,14 @@ You should have already identified your database name and instance name.  Each p
 3.  Start Cloudshell in each.  Maximize both cloudshell instances.
 
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
-    ![](../clusterware/images/start-cloudshell.png " ")
+    ![](./images/start-cloudshell.png " ")
 
 4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
-    ![](../clusterware/images/racnode1-login.png " ")
+    ![](./images/racnode1-login.png " ")
 
 5. Repeat this step for node 2.
 
@@ -51,7 +51,7 @@ You should have already identified your database name and instance name.  Each p
     ssh -i ~/.ssh/sshkeyname opc@<<Node 2 Public IP Address>>
     ps -ef | grep pmon
     ````
-    ![](./clusterware/images/racnode2-login.png " ")  
+    ![](./images/racnode2-login.png " ")  
 
 6. Run the command to determine your database name and additional information about your cluster on **node 1**.  Run this as the *grid* user.
 
@@ -61,9 +61,9 @@ You should have already identified your database name and instance name.  Each p
     crsctl stat res -t
     </copy>
     ````
-    ![](./../clusterware/images/crsctl-1.png " ")
+    ![](./images/crsctl-1.png " ")
 
-    ![](./../clusterware/images/crsctl-2.png " ")
+    ![](./images/crsctl-2.png " ")
 
 7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab.
 
@@ -91,7 +91,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     ![](./images/lab6-step1-num6.png " ")
 
-7. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
+2. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
 
     ````
     <copy>
@@ -100,7 +100,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     ![](./images/lab6-step1-num7.png " ")
 
-8.  Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
+3.  Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
     ````
     <copy>
     ORACLE_HOME=/u01/app/19.0.0.0/grid
@@ -108,12 +108,12 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     </copy>
     ````
     ![](./images/lsnrctl-node1.png " ")
-    ![](./images/lsnrctl-node2.png " ")
+    ![](./images/lsnrctl-node-2.png " ")
 
 
     Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.pub.racdblab.oraclevcn.com"*
 
-9.  Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information about the SCAN Listeners.  Run the lsnrctl command below on **node 2** as the *grid*.
+4.  Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information about the SCAN Listeners.  Run the lsnrctl command below on **node 2** as the *grid*.
 
     ````
     <copy>
@@ -123,7 +123,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     ![](./images/scan-node2.png " ")
 
-10. Repeat it on **node 1** as well.
+5. Repeat it on **node 1** as well.
 
     ![](./images/scan-node1.png " ")
 
@@ -245,20 +245,20 @@ where you will see similar to:
 
     You should notice that an entry for this service is configured for each instance.
 
-1. Set your oracle environment and edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from).
+3. Set your oracle environment and edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from).
 
-   ````
-   . oraenv
-   <<Press enter>>
-   /u01/app/oracle/product/19.0.0.0/dbhome_1
-   vi $ORACLE_HOME/network/admin/tnsnames.ora
-   ````
-   ![](./images/oraenv.png " ")
+    ````
+    . oraenv
+    <<Press enter>>
+    /u01/app/oracle/product/19.0.0.0/dbhome_1
+    vi $ORACLE_HOME/network/admin/tnsnames.ora
+    ````
+    ![](./images/oraenv.png " ")
 
-   ![](./images/tnsnames-1.png " ")
+    ![](./images/tnsnames-1.png " ")
 
 
-2. Add the following two entries.  Click **:wq!** to save.
+4. Add the following two entries.  Click **:wq!** to save.
 
     *Note:* that these tnsnames entries do not comply with the recommended format for continuous availability. They are only used to be illustrative of connection load balancing (CLB)
 
@@ -280,7 +280,7 @@ where you will see similar to:
 
     ![](./images/tnsnames-2.png " ")
 
-3. Create 10 connections using the alias CLBTEST and look at where the connections were established
+5. Create 10 connections using the alias CLBTEST and look at where the connections were established
 
     ````
     SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
@@ -296,7 +296,7 @@ where you will see similar to:
 
     The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances. You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
 
-4. Now do the same with the CLBTEST-LOCAL alias (close the first sessions as it will make it easier to illustrate what happens)
+6. Now do the same with the CLBTEST-LOCAL alias (close the first sessions as it will make it easier to illustrate what happens)
 
     ````  
     INST_ID     SERVICE_NAME          COUNT(*)
@@ -311,7 +311,7 @@ where you will see similar to:
     ---------- -------------------- ----------
       1         unisrv                   10
     ````
-5. What if an instance is not available?  Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
+7. What if an instance is not available?  Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
     ````
     <copy>
     srvctl stop instance -d aTFdbVm_replacename -i aTFdbVm2 -f
@@ -319,11 +319,10 @@ where you will see similar to:
     </copy>
     ````
 
-6. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the following:
-
+8. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the following:
    ````
-   sudo su - oracle
-   [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
+    sudo su - oracle
+    [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
     SQL*Plus: Release 19.0.0.0.0 - Production on Mon Aug 24 08:34:32 2020
     Version 19.7.0.0.0
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
@@ -332,9 +331,11 @@ where you will see similar to:
     ORA-12514: TNS:listener does not currently know of service requested in connect descriptor
     Enter user-name:
     ````
+
     This address could be repeatedly tried \(it is a random access\)    
 
     The CLBTEST alias uses the SCAN address and will only send requests to the available instances
+
 
     ````
     [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST
@@ -349,7 +350,7 @@ where you will see similar to:
     SQL>
     ````
 
-7. The recommended connect string for all Oracle Drivers of version 12.2 or later is:
+9. The recommended connect string for all Oracle Drivers of version 12.2 or later is:
 
     ````
     Alias (or URL) = (DESCRIPTION =
@@ -361,7 +362,7 @@ where you will see similar to:
     (CONNECT_DATA=(SERVICE_NAME = gold-cloud))
     ````    
 
-8.  Update your tnsnames.ora file to specify a configuration similar to that below.
+10.  Update your tnsnames.ora file to specify a configuration similar to that below.
     ````
     <copy>
     vi /u01/app/oracle/product/19.0.0.0/dbhome_1/network/admin/tnsnames.ora
@@ -371,18 +372,17 @@ where you will see similar to:
 and add similar to the following:
 
     ````
-    <copy>
     RECSRV=(DESCRIPTION =
     (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
     (ADDRESS_LIST =(LOAD_BALANCE=on)
       (ADDRESS = (PROTOCOL = TCP)(HOST=lvracdb-<replaceThisSection>-scan.pub.racdblab.oraclevcn.com)(PORT=1521)))
     (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
-    </copy>
     ````
 
    ![](./images/tnsnames-3.png " ")
 
-9.  Verify you can connect using this alias.
+11.  Verify you can connect using this alias.
+
 
 ## **STEP 5:** Services configured for Application Continuity
 
@@ -393,7 +393,6 @@ FAN, connection identifier, TAC, AC, switchover, consumer groups, and many other
    ````
    <copy>
    srvctl config database
-   </copy>
    ````
 
 1. Attributes set on the service enable applications to use Application Continuity. Create a service, setting the attributes **failover_restore**, **commit_outcome**, and **failovertype** for **Application Continuity (AC)**. Replace the values for "-d", "-s", "-preferred" and "-available" with those of your system.
@@ -401,21 +400,18 @@ FAN, connection identifier, TAC, AC, switchover, consumer groups, and many other
    ````
    <copy>
    srvctl add service -d <addDatabaseName> -s <myServiceName> -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
-   </copy>
    ````
 2. Create a service named **noac** with no AC settings
 
    ````
    <copy>
    srvctl add service -d <addDatabaseName> -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
-   </copy>
    ````
 3. Start both services   
    ````
    <copy>
    srvctl start service -d <addDatabaseName> -s noac
    srvctl start service -d <addDatabaseName> -s <myServiceName>
-   </copy>
    ````
 The two services you have just created (one named **noac** and another you named) will be used in the next lab.
 

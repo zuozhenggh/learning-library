@@ -42,7 +42,7 @@ A number of shortcut commands are provided in order to analyze and debug the wor
 
 `deletepod` - Deletes a given pod/container and can use abbreviated names for arguments, such as `deletepod admin` or `deletepod order`
 
-As the deployments in the workshop are configured with `imagePullPolicy: Always` you can develop and test changes to a microservice using the following sequence...
+As the deployments in the workshop are configured with `imagePullPolicy: Always` , once you have finished the workshop, you can develop and test changes to a microservice using the following sequence...
     
     1. Modify microservice source
     2. Run `./build.sh` to build and push the newly modified microservice image to the repository
