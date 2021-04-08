@@ -3,7 +3,7 @@
 ## Introduction
 
 As explained in the lab *Install the Oracle Database homes (working copies)* , FPP implements out-of-place patching.
-From the command ling point of view, this is achieved by passing the **source working copy** (the non-patched Oracle Home) and the **target working copy** (the patched Oracle Home). Again, FPP knows where these two working copies are, so there is no need to pass the target nodes.
+From the command line point of view, this is achieved by passing the **source working copy** (the non-patched Oracle Home) and the **target working copy** (the patched Oracle Home). Again, FPP knows where these two working copies are, so there is no need to pass the target nodes.
 
 Along with these two parameters, you can pass a **list of databases** (by default all the databases hosted in the source working copy are patched).
 
@@ -13,7 +13,7 @@ If the database is in RAC mode (it is not the case in this workshop), FPP reloca
 Again, this is achieved with a single line of code.
 
 ## Step 1: Run the patching evaluation
-All the disruptive FPP commands can be run with the `-eval` switch to evaluate the basic requirements before executing the actual patching.
+Like all the disruptive FPP commands, `rhpctl move database` can be run with the `-eval` switch to evaluate the basic requirements before executing the actual patching.
 It is recommended to use `-eval` whenever possible. For patching, it is a good idea to run it hours or days before the intervention, so that any errors or missing requirements can be fixed in time.
 
 Run the following command:
@@ -21,7 +21,7 @@ Run the following command:
 [grid@fpps01 ~]$ rhpctl move database -sourcewc  WC_db_19_9_0_FPPC \
    -patchedwc WC_db_19_10_0_FPPC -dbname fpplive1_site1 \
    -sudouser opc -sudopath /bin/sudo -eval
-Enter user "opc" password:
+Enter user "opc" password: FPPll##123
 fpps01.pub.fpplivelab.oraclevcn.com: Audit ID: 27
 fpps01.pub.fpplivelab.oraclevcn.com: Evaluation in progress for "move database" ...
 fpps01.pub.fpplivelab.oraclevcn.com: verifying versions of Oracle homes ...
@@ -40,12 +40,12 @@ PRGO-1619 : The groups "OSOPER=oper" of the source home are not configured in th
 ```
 
 ## Step 2: Patch the database
-The command to run is the same as before, but without the `-eval` switch:
+The command is the same as before, but without the `-eval` switch:
 ```
 [grid@fpps01 ~]$ rhpctl move database -sourcewc  WC_db_19_9_0_FPPC \
    -patchedwc WC_db_19_10_0_FPPC -dbname fpplive1_site1 \
    -sudouser opc -sudopath /bin/sudo
-Enter user "opc" password:
+Enter user "opc" password: FPPll##123
 fpps01.pub.fpplivelab.oraclevcn.com: Audit ID: 28
 fpps01.pub.fpplivelab.oraclevcn.com: verifying versions of Oracle homes ...
 fpps01.pub.fpplivelab.oraclevcn.com: verifying owners of Oracle homes ...
@@ -59,7 +59,7 @@ fppc: trying datapatch run for fpplive1site, attempt### 1 ###
 Connect to the target node as `oracle`:
 ```
 [grid@fpps01 ~]$ ssh opc@fppc
-opc@fppc's password:
+opc@fppc's password: FPPll##123
 Last login: Wed Apr  7 13:50:14 2021
 [opc@fppc ~]$ sudo su - oracle
 Last login: Wed Apr  7 13:56:39 GMT 2021 on pts/0

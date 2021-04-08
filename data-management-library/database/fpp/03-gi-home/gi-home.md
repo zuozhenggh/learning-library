@@ -62,8 +62,8 @@ Usage: rhpctl add workingcopy -workingcopy <workingcopy_name>
 ```
 
 ### Software Only provisioning
-If the target server already has a GI stack (either Oracle Restart or a full GI stack), the new working copy is provisioned as Software Only: the existing stack is untouched.
-In this case, once the new home is installed, the existing Grid Infrastructure stack can be patched or upgraded by using either `rhpctl move gihome` or `rhpctl upgrade gihome`. FPP automates all the steps, including the stop, move, rootupgrade and start of the Clusterware stack.
+If the target server already has a GI stack (either Oracle Restart or a full GI stack), then the new working copy is provisioned as Software Only: the existing stack is untouched.
+In this case, once the new home is installed, the existing Grid Infrastructure stack can be patched or upgraded by using respectively `rhpctl move gihome` or `rhpctl upgrade gihome`. FPP automates all the steps, including the stop, move, rootupgrade and start of the Clusterware stack.
 
 ### New Cluster or Restart provisioning
 If you need to provision the GI working copy on a brand new cluster, once the servers have been set up to host the cluster (this is a step that you need to take care of, either manually or using your favorite OS configuration management tool), all you need to do is to run `rhpctl add workingcopy` specifying the response file to be passed to gridSetup.sh.
@@ -104,7 +104,7 @@ On the FPP Server, run the following command to provision and configure the GI h
   -path /u01/app/grid/WC_gi_19_10_0_FPPC -user oracle -oraclebase /u01/app/oracle \
   -targetnode fppc -sudouser opc -sudopath /bin/sudo -ignoreprereq
 
-Enter user "opc" password:
+Enter user "opc" password: FPPll##123
 fpps01.pub.fpplivelab.oraclevcn.com: Storing metadata in repository for working copy "WC_gi_19_10_0_FPPC" ...
 fpps01.pub.fpplivelab.oraclevcn.com: Creating snapshot "tmpgi_19_10_0_ociWC_gi_19_10_0_FPPC" ...
 fpps01.pub.fpplivelab.oraclevcn.com: Changing the home ownership to user oracle...
@@ -193,7 +193,7 @@ fpps01.pub.fpplivelab.oraclevcn.com: Working copy creation completed.
 From either the FPP Server or your SSH client, connect as `opc` to the FPP target publid IP address and become `oracle`:
 ```
 [grid@fpps01 ~]$ ssh opc@fppc
-opc@fppc's password:
+opc@fppc's password: FPPll##123
 Last login: Wed Mar 31 13:23:58 2021
 [opc@fppc ~]$ sudo su - oracle
 Last login: Wed Mar 31 13:27:56 GMT 2021
@@ -234,8 +234,3 @@ ora.evmd
 ```
 
 Congratulations! You have successfully configured an Oracle Restart environment with a single command. Easy, huh? You may now [proceed to the next lab](#next).
-
-## Acknowledgements
-- **Author** - Ludovico Caldara
-- **Contributors** -
-- **Last Updated By/Date** -  Ludovico Caldara, April 2021

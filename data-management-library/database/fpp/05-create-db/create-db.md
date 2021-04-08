@@ -15,7 +15,7 @@ Run the following command on the FPP Server (Est. 14-15 minutes):
 [grid@fpps01 ~]$ rhpctl add database -workingcopy  WC_db_19_9_0_FPPC  \
   -dbname fpplive1_site1 -datafileDestination DATA -dbtype SINGLE \
   -sudouser opc -sudopath /bin/sudo
-Enter user "opc" password:
+Enter user "opc" password: FPPll##123
 fpps01.pub.fpplivelab.oraclevcn.com: Audit ID: 20
 fpps01.pub.fpplivelab.oraclevcn.com: Starting database creation on node fppc ...
 fppc: SYS_PASSWORD_PROMPT

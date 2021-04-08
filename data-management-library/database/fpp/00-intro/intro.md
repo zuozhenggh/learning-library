@@ -43,9 +43,9 @@ Estimated Workshop Time:  4 hours
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Ludovico Caldara
-- **Last Updated By/Date** - Ludovico Caldara
-
+- **Author** - Ludovico Caldara
+- **Contributors** -
+- **Last Updated By/Date** -  Ludovico Caldara, April 2021
 
 ## Need Help?
 

@@ -20,15 +20,6 @@ For instance, the following names refer to the same thing:
 You may also hear some Oracle employees referring to *FPP* as *RHP*. Again, they refers to the same product.
 
 
-### Objectives
-- Verify the FPP Server and Clusterware status
-- Use the rhpctl inline help
-- Find the rhpserver log
-
-### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
-
-
 ## Step 1: Connect to the FPP Server via SSH
 Connect to the FPP Server via SSH using the user `opc` and the private key that you have created during the LiveLab setup.
 As IP address, specify the public address of the FPP Server.

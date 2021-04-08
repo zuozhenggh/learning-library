@@ -16,7 +16,7 @@ fpps01.pub.fpplivelab.oraclevcn.com: Copying files...
 fpps01.pub.fpplivelab.oraclevcn.com: Copying home contents...
 fpps01.pub.fpplivelab.oraclevcn.com: Changing the home ownership to user grid...
 fpps01.pub.fpplivelab.oraclevcn.com: Changing the home ownership to user grid...
-[grid@fpps01 ~]$ date
+[grid@fpps01 ~]$
 ```
 Notice the `-imagetype ORACLEGISOFTWARE` that tells FPP which image it is about to import
 
@@ -205,9 +205,3 @@ Groups configured in the image: OSDBA=dba,OSOPER=dbaoper,OSBACKUP=dba,OSDG=dba,O
 This information is inherited from the original image, and at any subsequent provisioning of the same image, FPP will try to set the same groups **unless specific groups are specified**. This is something important to remind in general, because databases cannot be moved (patched) between working copies with different administrative groups.
 
 You have successfully imported the gold images int the FPP Server. You may now [proceed to the next lab](#next).
-
-## Acknowledgements
-
-- **Author** - Ludovico Caldara
-- **Contributors** -
-- **Last Updated By/Date** -  Ludovico Caldara, April 2021
