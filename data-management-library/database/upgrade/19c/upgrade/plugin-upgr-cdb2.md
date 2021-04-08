@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this part of the Hands-On Lab you will plugin UPGR into CDB2.
+In this Lab, you will plugin UPGR into CDB2.
 
 We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
 
@@ -60,7 +60,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Preparation of UPGR as non-CDB
 
-1. Switch to the UPGR database in 18c environment.
+1. Switch to the UPGR database in 19c environment.
 
     ````
     <copy>

@@ -27,24 +27,26 @@ In this lab you will:
 
 This guide shows how to use the Resource Manager to provision the service using Resource Manager. This process is mostly automated. However, if you prefer a step-by-step manual approach to control every aspect of the provisioning, please follow the following instructions instead: [manual provisioning steps](https://docs.cloud.oracle.com/en-us/iaas/data-science/data-science-tutorial/tutorial/get-started.htm#concept_tpd_33q_zkb).
 
-1. In your Oracle Cloud console, open the menu.
+1. Download the terraform configuration source
+
+    Download [Terraform configuration source](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Y1AdqPkxQdFho1SEuMMO7W8DlMWAkr0FUwdnL-m3ysgXirfHz9IV48yyAkRARF-b/n/odca/b/datascienceworkshop/o/oci-ods-orm.zip) and store it on your local PC. Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .zip
+
+2. In your Oracle Cloud console, open the menu.
    ![](./images/openmenu.png)
 
-2. Select Resource Manager -> Stacks.
+3. Select Resource Manager -> Stacks.
 
    ![](./images/resourcemanager.png)
 
-3. Click the "Create Stack" button.
+4. Click the "Create Stack" button.
 
    ![](./images/createstackbutton.png)
 
-4. Choose "Template" and click the button "Select Template".
+5. Select the configuration source you download earlier
 
-   ![](./images/newimage1.png)
+    Select ".ZIP" and drag the file you downloaded to the box.
 
-5. Check the "Data Science" solution and click "Select Template".
-
-   ![](./images/newimage2.png)
+    ![](./images/select-zip.png)
 
 6. Choose a compartment that you've created or use Root.
 
@@ -54,13 +56,11 @@ This guide shows how to use the Resource Manager to provision the service using 
 
    ![](./images/newimage4.png)
 
-8. Configure the Project and Notebook Session
+8. Disable Project and Notebook creation
 
-   Leave most settings at default values, with the exception of the following: Scroll down to the section "Project and Notebook Configuration" and check the checkbox "Create a Project and Notebook Session".
+    In the section "Project and Notebook Configuration" *uncheck* the checkbox "Create a Project and Notebook Session" (we will create them using the console later).
 
-   We recommend you choose VM.Standard2.8 (*not* VM.Standard.*E*2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
-
-   ![](./images/newimage5b.png)
+    ![](./images/disable-ods-creation.png)
 
 9. Make sure "Enable Vault Support" is disabled
 
@@ -86,21 +86,36 @@ This guide shows how to use the Resource Manager to provision the service using 
 
 14. Click Apply once more to confirm the submission of the job.
 
-   Provisioning should take about 20 minutes after which the status of the Job should become "Succeeded".
+   Provisioning should take about 5 minutes after which the status of the Job should become "Succeeded".
+
+15. Create Oracle Data Science Project
+
+    Open the OCI Data Science projects and choose "Create Project".
+
+    ![](./images/open-ods.png)
+
+    ![](./images/create-project-1.png)
+
+    Choose a name and description and press "Create".
+
+    ![](./images/create-project-2.png)
+
+16. Provision an Oracle Data Science notebook
+
+    ![](./images/create-notebook-1.png)
+
+    - Select a name.
+    - We recommend you choose VM.Standard2.8 (*not* VM.Standard.*E*2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
+    - Set blockstorage to 50 GByte.
+    - Select defaults for VCN and subnet. These should point to the resources that were created earlier by the resource manager.
+
+    ![](./images/create-notebook-2.png)
+
+    Finally click "Create". The process should finish after about 5 minutes and the status of the notebook will change to "Active".
 
 ## **STEP 2:** Open the OCI Data Science notebook
 
-1. Open OCI Data Science projects console
-
-   ![](./images/open-projects.png)
-
-2. Open the project that was provisioned
-
-   The name of the project may be different than shown here in the screenshot.
-
-   ![](./images/open-project.png)
-
-3. Open the notebook that was provisioned
+1. Open the notebook that was provisioned
 
    The name of the notebook may be different than shown here in the screenshot.
 
@@ -123,9 +138,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 
 1. Download the dataset with the house prices and characteristics.
 
-    Download [The training dataset](files/housesales.csv) (the dataset is public)
-
-    The way to download varies by browser. In some browsers you can left-click, then use the `"Raw"` button and then right click `"Save As"`. In other browsers you can right-click and choose `"Save As"`. Make sure to save these with extension `CSV`. Some browsers try to convert this to Excel format, which is incorrect.
+    Download [The training dataset](files/housesales.csv) (the dataset is public). Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .csv
 
 2. Review the dataset (e.g. use a text editor).
 
@@ -670,9 +683,7 @@ How accurate is our model? We will use the Test dataset for this.
 
 1. Make sure you have a working model
 
-    The following requires that you built a model successfully in steps 1 to 9. If you had any problems, you can download a [prebuilt notebook](files/house-price-prediction.ipynb) with all the steps done for you.
-
-    The way to download varies by browser. In some browsers you can left-click, then use the `"Raw"` button and then right click `"Save As"`. In other browsers you can right-click and choose `"Save As"`. Make sure to save these with extension `ipynb`. Some browsers try to convert this to Excel format, which is incorrect.
+    The following requires that you built a model successfully in steps 1 to 9. If you had any problems, you can download a [prebuilt notebook](files/house-price-prediction.ipynb) with all the steps done for you. Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .ipynb
 
     After you've downloaded it, drag it into OCI Data Science and open it (using the right Conda environment "mlcpuv1". Then  run all the cells before going to the next step.
 
@@ -729,9 +740,7 @@ How accurate is our model? We will use the Test dataset for this.
 
 1. Download the notebook
 
-  Download the [AutoML and Model Evaluation notebook](files/lab100-bonus-1.ipynb).
-
-  The way to download varies by browser. In some browsers you can left-click, then use the `"Raw"` button and then right click `"Save As"`. In other browsers you can right-click and choose `"Save As"`. Make sure to save these with extension `ipynb`. Some browsers try to convert this to text format, which is incorrect.
+  Download the [AutoML and Model Evaluation notebook](files/lab100-bonus-1.ipynb). Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .ipynb
 
 2. Upload the notebook to OCI Data Science by dragging it to the left panel.
 
@@ -757,7 +766,3 @@ How accurate is our model? We will use the Test dataset for this.
 * **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
 * **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

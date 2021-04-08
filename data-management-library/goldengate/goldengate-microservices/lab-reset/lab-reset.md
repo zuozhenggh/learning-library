@@ -17,8 +17,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
 ## **STEP 1**: Remove Deployments.
@@ -103,7 +103,7 @@ In this step you will run several scripts.
 
         [oracle@OGG181DB183 db]$ ./clone_pdb_182.sh
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -114,5 +114,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Zia Khan
 * **Last Updated By/Date** - Brian Elliott, December 2020
-
-

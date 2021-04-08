@@ -350,13 +350,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
 
 			HOUSE COUNT(HOUSE)
-
 	---------- ------------
-
 			1         4608
-
 			2           80
-
 			3           80
 
 
@@ -370,13 +366,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 					GROUP BY house;</copy>
 
 		HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
-
 	---------- ------------ ------------- -------------- ---------------
-
 			1   2.57050631    2.57134341      5.7418481      5.74371797
-
 			2   1.13841996     1.1602897     1.49637083      1.52511703
-
 			3            0             0     -.12735442      -.12980098
 	```
 <if type="atp">
@@ -397,7 +389,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 You may now [proceed to the next lab](#next).
 
 ## References 
-[Skewness Kurtosis Blog](https://www.sisense.com/blog/understanding-outliers-with-skew-and-kurtosis/)
+- [Skewness Kurtosis Blog](https://www.sisense.com/blog/understanding-outliers-with-skew-and-kurtosis/)
 
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
