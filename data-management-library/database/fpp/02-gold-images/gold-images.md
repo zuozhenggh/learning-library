@@ -167,6 +167,43 @@ Complete: TRUE
 [grid@fpps01 ~]$
 ```
 
+Get the detail of the other one:
+```
+[grid@fpps01 ~]$ rhpctl query image -image db_19_10_0_oci
+fpps01.pub.fpplivelab.oraclevcn.com: Audit ID: 23
+Image name: db_19_10_0_oci
+Owner: grid@dbSysaoe2qhga
+Site: dbSysaoe2qhga
+Access control: USER:grid@dbSysaoe2qhga
+Access control: ROLE:OTHER
+Access control: ROLE:GH_IMG_PUBLISH
+Access control: ROLE:GH_IMG_ADMIN
+Access control: ROLE:GH_IMG_VISIBILITY
+Parent Image:
+Software home path: /rhp_storage/images/idb_19_10_0_oci868088/.ACFS/snaps/idb_19_10_0_oci/swhome
+Image state: PUBLISHED
+Image size: 9624 Megabytes
+Image Type: ORACLEDBSOFTWARE
+Image Version: 19.0.0.0.0:19.9.0.0.0
+Groups configured in the image: OSDBA=dba,OSOPER=dbaoper,OSBACKUP=dba,OSDG=dba,OSKM=dba,OSRAC=dba
+Image platform: Linux_AMD64
+Interim patches installed: 31668882,29997959,31465389,30432118,31772784,31771877
+Contains a non-rolling patch: TRUE
+Complete: TRUE
+```
+
+Now, take a closer look at the groups:
+```
+# first
+Groups configured in the image: OSDBA=dba,OSOPER=oper,OSBACKUP=backupdba,OSDG=dgdba,OSKM=kmdba,OSRAC=racdba
+```
+
+```
+# second
+Groups configured in the image: OSDBA=dba,OSOPER=dbaoper,OSBACKUP=dba,OSDG=dba,OSKM=dba,OSRAC=dba
+```
+This information is inherited from the original image, and at any subsequent provisioning of the same image, FPP will try to set the same groups **unless specific groups are specified**. This is something important to remind in general, because databases cannot be moved (patched) between working copies with different administrative groups.
+
 You have successfully imported the gold images int the FPP Server. You may now [proceed to the next lab](#next).
 
 ## Acknowledgements

@@ -122,12 +122,13 @@ fpps01.pub.fpplivelab.oraclevcn.com: Working copy creation completed.
 [grid@fpps01 ~]$
 ```
 
-Second one (Est. 8-9 minutes):
+Second one (Est. 8-9 minutes), **please note the additional -groups** parameter passed here:
 ```
 [grid@fpps01 ~]$ rhpctl add workingcopy -image db_19_10_0_oci -workingcopy WC_db_19_10_0_FPPC \
   -storagetype LOCAL -user oracle -oraclebase /u01/app/oracle   -targetnode fppc \
   -path /u01/app/oracle/product/19.0.0.0/WC_db_19_10_0_FPPC  \
-   -sudouser opc -sudopath /bin/sudo
+  -groups  OSDBA=dba,OSOPER=oper,OSBACKUP=backupdba,OSDG=dgdba,OSKM=kmdba,OSRAC=racdba \
+  -sudouser opc -sudopath /bin/sudo
 
 Enter user "opc" password:
 fpps01.pub.fpplivelab.oraclevcn.com: Audit ID: 12
