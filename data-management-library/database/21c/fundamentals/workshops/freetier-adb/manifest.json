@@ -47,14 +47,14 @@
             "type": "atp"
         },
         {
-            "title": "Lab 6: dbcs test DELETE",
-            "filename": "../../bitwise-agg/bitwise-agg.md",
-            "type": "dbcs"
-        },
-        {
             "title": "Lab 7: Enhanced Analytic Functions",
             "filename": "../../enhanced-analytics/enhanced-analytics.md",
             "type": "atp"
+        },
+        {
+            "title": "Lab 7: dbcs test DELETE",
+            "filename": "../../enhanced-analytics/enhanced-analytics.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 8: Measuring Asymmetry in Data",
