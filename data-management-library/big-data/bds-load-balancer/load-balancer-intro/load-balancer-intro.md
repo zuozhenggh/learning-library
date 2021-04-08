@@ -8,7 +8,7 @@ Typically, a load balancer is used to spread workloads across multiple mirrored 
 
 One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. SSL uses digital certificates and keys to encrypt and decrypt transmitted data, to ensure the identities of the sender and the receiver of data, and to sign the data to verify its integrity.  In this workshop, you'll implement end-to-end SSL, which means that the load balancer will accept SSL encrypted traffic from clients and encrypt traffic to the cluster.
 
-When you complete this lab, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number on which each service listens. For example, if the IP address of the load balancer is `203.0.113.1`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://203.0.113.1:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://203.0.113.1:8889`.
+When you complete this workshop, you'll be able to open Cloudera Manager, Hue, and Oracle Data Studio by using the IP address (or hostname) of the load balancer, plus the port number on which each service listens. For example, if the IP address of the load balancer is `203.0.113.1`, and Cloudera Manager listens on port `7183`, you can open Cloudera Manager by entering `https://203.0.113.1:7183` in your web browser. Hue listens on port `8889`, so you can open Hue by entering `https://203.0.113.1:8889`.
 
 Estimated lab time: 90 minutes, if you've already created the environment and cluster, as explained in [Prerequisites](#prerequisites), below.
 
@@ -43,6 +43,8 @@ More specifically, you will:
 
 **Note:** If you want to create a load balancer for an HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-load-balancer-ha/workshops/freetier/?lab=use-load-balancer-access-services-on-big) workshop.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
+### Prerequisites
+
 * This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page.
 
 * Any operating system command shell containing **Secure Shell (SSH)** and **Secure Copy (SCP)**. You can also use the open source PuTTY network file transfer application. See PuTTY documentation for instructions.
@@ -71,14 +73,6 @@ If you choose ***not*** to complete the [Getting Started with Oracle Big Data Se
 
 You may now [proceed to the next lab](#next).
 
-## Want to Learn More?
-
-* [Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/)
-
-* [Overview of Load Balancing](https://docs.cloud.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
-
-* [Managing SSL Certificates](https://docs.cloud.oracle.com/en-us/iaas/Content/Balance/Tasks/managingcertificates.htm)
-
 ## Acknowledgements
 
-* **Last Updated Date:** March 2021
+* **Last Updated Date:** April 2021

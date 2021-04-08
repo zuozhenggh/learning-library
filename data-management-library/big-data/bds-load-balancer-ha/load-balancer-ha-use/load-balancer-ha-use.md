@@ -4,7 +4,7 @@ It may take a few minutes after completing all the steps in the previous lab for
 
 ## Access the Services on the Cluster
 
-To open the services included in this load balancer:
+To access the services included in this load balancer:
 
 1. Find the IP address or the hostname used for your load balancer.
 
@@ -52,4 +52,4 @@ To open the services included in this load balancer:
 
 ## Acknowledgements
 
-* **Last Updated Date:** March 2021
+* **Last Updated Date:** April 2021
