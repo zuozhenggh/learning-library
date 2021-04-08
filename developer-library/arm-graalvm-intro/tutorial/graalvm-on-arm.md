@@ -1,6 +1,6 @@
-# GraalVM on ARM
+# GraalVM on OCI Arm A1
 
-This tutorial describes how to get started with GraalVM on Arm compute shapes in Oracle Cloud Infrastructure (OCI). You can use GraalVM to improve the performance of your existing applications and build lightweight polyglot applications for the cloud. It’s an ideal companion for the OCI Arm compute shapes, which provide linear scalability and an unbeatable price-performance ratio.
+This tutorial describes how to get started with GraalVM on OCI Arm A1 compute platform. You can use GraalVM to improve the performance of your existing applications and build lightweight polyglot applications for the cloud. It’s an ideal companion for the OCI OCI Arm A1 compute shapes, which provide linear scalability and an unbeatable price-performance ratio.
 
 ## Deploying your workloads on OCI Arm A1 compute platform
 
