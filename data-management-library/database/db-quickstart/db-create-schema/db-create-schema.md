@@ -300,14 +300,14 @@ In this section, you execute the `REVOKE` statement to revoke user and role syst
 
 1. You are signed in to SQL Developer Web as the **online\_shoppe** user. Sign out of SQL Developer Web. Sign back in to SQL Developer Web as the **admin** user and open SQL Developer Web. Revoke the `CONNECT` privilege for the ONLINE\_SHOPPE user.
 
-    `REVOKE CONNECT FROM online_shoppe;`
+    `REVOKE CREATE SESSION FROM online_shoppe;`
 
-  ![](./images/revoke-connect.png " ")
+  ![](./images/revoke-create-session.png " ")
 
 2. Attempt to sign back in to SQL Developer Web as the **online_shoppe** user, by pasting into your browser the URL containing the alias that you used back in **Step 4: Log in to SQL Developer Web as the Database User and Create Tables**.
 
   ![](./images/revoked-unauthorized.png " ")
-    You cannot sign in because you no longer have the `CONNECT` privilege.
+    You cannot sign in because you no longer have the `CREATE SESSION` privilege.
 
 ## Want to Learn More?
 
@@ -318,9 +318,5 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt
 - **Author** - Rick Green, Principal Developer, Database User Assistance
 - **Contributor** - Supriya Ananth
 - **Adapted for Cloud by** - Rick Green
-- **Last Updated By/Date** - Rick Green, October 2020
+- **Last Updated By/Date** - Rick Green, April 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -34,11 +34,11 @@ To access the EnterpriseOne HTML server:
 
 2.  Using the Public IP Address for the instance and port number (Lab 2, Exercise 3, Step 1a) assigned to the HTML server as part of the final configuration and security list, enter the following URL into the browser:
 
-        https://"ip address:port"/jde
+        https://"ip address:port"/jde/owhtml/index.html
 
     For example:
 
-        https://132.145.187.16:8080/jde
+        https://129.146.104.179:8080/jde/owhtml/index.html
 
 3.  If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. Click ***Advanced*** and then ***Add Exception*** to confirm that the connection is trusted.
 
@@ -229,11 +229,14 @@ To access the Oracle BI Publisher Server:
 
 For additional information, refer to these resources:
 
-*	Learning Path
-https://apexapps.oracle.com/pls/apex/f?p=44785:50:0:::50:P50_EVENT_ID,P50_COURSE_ID:6152,395
+*	[JDE Learning Path](https://apexapps.oracle.com/pls/apex/f?p=44785:50:0:::50:P50_EVENT_ID,P50_COURSE_ID:6152,395)
 
-*	Marketplace Listing
-https://console.us-ashburn-1.oraclecloud.com/marketplace/application/51184836/overview
+
+*   [General Learning Paths](https://apexapps.oracle.com/pls/apex/f?p=44785:50:102950731364668:::::)
+
+
+*	[Marketplace Listing](https://console.us-ashburn-1.oraclecloud.com/marketplace/application/51184836/overview)
+
 
 ## Summary
 Your enviornment is now fully functional and reeady to go. Enjoy JDE on OCI!  
@@ -249,7 +252,3 @@ Your enviornment is now fully functional and reeady to go. Enjoy JDE on OCI!
 * **Last Updated By/Date:** AJ Kurzman, Cloud Engineering, 11/18/2020
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/migrate-saas-to-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

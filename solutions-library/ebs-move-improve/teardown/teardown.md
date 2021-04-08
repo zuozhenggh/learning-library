@@ -6,11 +6,11 @@ In this lab, we will use the Oracle E-Business Suite Cloud Manager to destroy yo
 Estimated Lab Time: 15 minutes
 
 
-### Objectives
+### **Objectives**
 * Delete your EBS environments
 * Destroy OCI Resources used for Cloud Manager
 
-### Prerequisites
+### **Prerequisites**
 * Tenancy Admin User
 * Tenancy Admin Password
 * Cloud Manager Admin Credentials
@@ -67,7 +67,4 @@ Estimated Lab Time: 15 minutes
   - Mitsu Mehta, Cloud Engineering
 * **Last Updated By/Date:** William Masdon, Cloud Engineering, Oct 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
