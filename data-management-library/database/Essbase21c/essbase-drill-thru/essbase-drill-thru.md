@@ -130,7 +130,7 @@ This section demonstrates how to import a table to ADW instance.
 
 7. Close the application inspector by clicking Close.
 
-## **Step 5:** Exercise 1-6	Define Drill-through Report
+## **Step 5:** Define Drill-through Report
 1. Navigate to the database inspector for the application SampleDT and database Basic. Click on Scripts.   
 
    Select the -> Drill Through Reports on left navigation section.   
