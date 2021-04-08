@@ -43,8 +43,6 @@ More specifically, you will:
 
 **Note:** If you want to create a load balancer for an HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-load-balancer-ha/workshops/freetier/?lab=use-load-balancer-access-services-on-big) workshop.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
-### Prerequisites
-
 * This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page.
 
 * Any operating system command shell containing **Secure Shell (SSH)** and **Secure Copy (SCP)**. You can also use the open source PuTTY network file transfer application. See PuTTY documentation for instructions.
