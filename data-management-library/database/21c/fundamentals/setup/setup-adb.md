@@ -178,5 +178,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors** - Kay Malcolm
+* **Contributors** - Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, April 2021
 
