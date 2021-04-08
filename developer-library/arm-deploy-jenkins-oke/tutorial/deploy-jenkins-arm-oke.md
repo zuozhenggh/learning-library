@@ -1,4 +1,4 @@
-# Deploying Jenkins on an OCI A1 based Kubernetes cluster
+# Deploying Jenkins on an OCI Arm A1 based Kubernetes cluster
 
 Quick delivery of software has become a competitive advantage for companies. Automated development processes facilitate speed and consistency, which led to the rise of continuous integration (CI) and continuous delivery and deployment (CD) pipelines. Jenkins, a popular product among Oracle Cloud Infrastructure customers, can automate all phases of CI and CD.
 
