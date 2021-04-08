@@ -30,6 +30,10 @@ This lab assumes you have:
 
 2. First login as “*opc*” using your SSH Private Key
 
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+
 3. Then sudo to “*oracle*”.
 
     ```
@@ -59,13 +63,13 @@ This lab assumes you have:
 
     ```
     <copy>
-    cd ~/Desktop/Scripts/HOL/Lab10 
+    cd ~/Desktop/Scripts/HOL/Lab10
     ./db_createTable.sh
     </copy>
     ```
     ![](./images/create_tables.png " ")
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

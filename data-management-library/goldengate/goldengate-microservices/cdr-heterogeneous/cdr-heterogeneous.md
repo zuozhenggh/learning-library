@@ -7,8 +7,6 @@ Since we have already setup Active-Active configuration on CDRDEMO table, we wil
 *Estimated Lab Time*:  60 minutes
 
 ### Objectives
-
-
 - Resolve the different types of conflict using one or more resolution methods.
 
 
@@ -17,8 +15,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: Create One-Way Replication
@@ -46,7 +44,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     Go back to your browser and open Atlanta adminserver, click the <b>Action</b> dropdown of extract EXTSOE and choose <b>Details</b>.
 
     ![](./images/edit_param_1.png " ")
-    
+
 
     Click on <b>Parameters</b>
 
@@ -65,13 +63,13 @@ To resolve an insert where the row exists in the source and target, but some or 
     ```
 
     and replace Table SOE.CDRDEMO with below line:
-    
+
     ```
     <copy>
     TABLE SOE.CDRDEMO, GETBEFORECOLS (ON UPDATE ALL, ON DELETE ALL);
     </copy>
     ```
-    
+
     ![](./images/edit_param_5.png " ")
 
 
@@ -84,13 +82,13 @@ To resolve an insert where the row exists in the source and target, but some or 
     ```
 
     and replace Table SOE.CDRDEMO with below line:
-    
+
     ```
     <copy>
     TABLE SOE.CDRDEMO, GETBEFORECOLS (ON UPDATE ALL, ON DELETE ALL);
     </copy>
     ```
-    
+
     ![](./images/extsoe1_param_edit.png " ")
 
     **NOTE** : The same steps will be repeated for editing parameter for extract or replicat on any of the two deployments (Boston and Atlanta).
@@ -105,7 +103,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     </copy>
     ```
     **NOTE** : Do not forget to edit the above parameter with correct database name. Example - OGGOOW19 in IREP parameter and OGGOOW191 in IREP1 paramter.
-    
+
 4.  To raise the conflict execute the below script which is going to insert same primary key row with different values for non-primary key column, so when all the process will start it raises the conflict.
 
     <b>insert into soe.cdrdemo(id,name,balance) values(99,'oggoow19',200);</b> on OGGOOW19 database and <br/>
@@ -137,7 +135,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     ![](./images/pm_irep1.png " ")
     ![](./images/ire_pm_db_1.png " ")
     ![](./images/ire_pm_db_2.png " ")
-    
+
 
 
 ## **STEP 2**: UPDATEROWEXISTS with USEDELTA and USEMAX
@@ -183,7 +181,7 @@ To resolve the condition where a target row exists on UPDATE but non-key columns
     ```
 
 5. Open a browser tab session to the Performance Metrics Server for Boston Deployment
-   
+
     ```
     <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
     ```
@@ -191,7 +189,7 @@ To resolve the condition where a target row exists on UPDATE but non-key columns
     ![](./images/pm_irep_boston.png " ")
     ![](./images/ure_pm_db_1.png " ")
     ![](./images/ure_pm_db_2.png " ")
-    
+
 
 
 
@@ -271,7 +269,7 @@ To resolve the case where the source row was deleted but the target row exists. 
 
 
 5. Open a browser tab session to the Performance Metrics Server for Boston Deployment
-   
+
     ```
     <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
     ```
@@ -279,7 +277,7 @@ To resolve the case where the source row was deleted but the target row exists. 
     ![](./images/pm_irep_boston.png " ")
     ![](./images/dre_pm_db_1.png " ")
     ![](./images/dre_pm_db_2.png " ")
-    
+
 
 
 ## **STEP 4**: DELETEROWMISSING with DISCARD Resolution
@@ -343,7 +341,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
     </copy>
     ```
     ![](./images/check_records.png " ")
-    
+
 7. Execute the below sql statements in sequence to raise the delete row missing conflict.
 
     Connect to database as sysdba
@@ -383,7 +381,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
     ```
 
 8. Open a browser tab session to the Performance Metrics Server for Boston Deployment
-   
+
     ```
     <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
     ```
@@ -391,7 +389,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
     ![](./images/pm_irep_boston.png " ")
     ![](./images/drm_pm_db_1.png " ")
     ![](./images/drm_pm_db_2.png " ")
-    
+
 
 ## **STEP 5**: UPDATEROWMISSING with OVERWRITE Resolution
 
@@ -468,7 +466,7 @@ To resolve the case where the target row is missing. The logical resolution, and
     ```
 
 6. Open a browser tab session to the Performance Metrics Server for Boston Deployment
-   
+
     ```
     <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
     ```
@@ -477,16 +475,12 @@ To resolve the case where the target row is missing. The logical resolution, and
     ![](./images/urm_pm_db_1.png " ")
     ![](./images/urm_pm_db_2.png " ")
 
-## Learn More
+*Congratulations!* You have completed this workshop!
 
+## Learn More
 * [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
 
 ## Acknowledgements
 * **Author** - Nishant Kaushik, Data Integration, December 2020
 * **Contributors** - Brian Elliott, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021

@@ -200,7 +200,7 @@ The objective for our lab is to retrieve information about castles in Europe, an
 
 1.  Run this script to create a function to get country information from the GeoNames web service  *Note: Remember to replace ***&YourGeoNameUsername*** with the username of your account on GeoNames, or fill in your username in the popup dialog.*
 
-
+    ````
     <copy>
     create or replace function get_country_info (countryCode in VARCHAR2) return clob
       is
@@ -219,7 +219,7 @@ The objective for our lab is to retrieve information about castles in Europe, an
       end;
     /
     </copy>
-
+    ````
 
    ![](./images/getcountryinfo.png " ")
 
