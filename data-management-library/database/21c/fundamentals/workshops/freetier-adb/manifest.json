@@ -33,6 +33,11 @@
             "type": "atp"
         },
         {
+            "title": "Lab 4: test",
+            "filename": "../../set-operators/set-operators.md",
+            "type": "dbcs"
+        },
+        {
             "title": "Lab 5: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "atp"
@@ -52,8 +57,8 @@
             "type": "atp"
         },
         {
-            "title": "Lab 7: dbcs test DELETE",
-            "filename": "../../enhanced-analytics/enhanced-analytics.md",
+            "title": "Lab 8: dbcs test DELETE",
+            "filename": "../../skewness/skewness.md",
             "type": "dbcs"
         },
         {
