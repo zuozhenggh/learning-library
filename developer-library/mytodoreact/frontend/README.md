@@ -43,7 +43,19 @@ npm audit fix --force
 ```
 <copy>npm audit fix --force</copy>
 ```
-3. `npm start` to run the application in development mode
+3. Update API_LIST in API.js
+
+- Navigate to Developer Services -> API management
+- Click on your Gateway and go to Deployment
+- Copy the Endpoint
+![](images/Api-gtw-deploy.png " ")
+
+- Paste the endpoint as the value of API_LIST an append "/todolist"
+  Example
+  const API_LIST = 'https://<characters>.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
+- Save he file
+
+4. `npm start` to run the application in development mode
 ```
 <copy>npm start</copy>
 ```
@@ -131,15 +143,17 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   <copy>go build</copy>
   ```
 
-3. Upload a static build into your tenancy, using the staci binary 
+3. Upload a static build into your tenancy, using the staci binary
 
 ```
 <copy>../staci/staci -source build -target mtdrworkshop</copy>
 ```
 
-Then the application is visible in tour tenancy
-https://objectstorage.us-phoenix-1.oraclecloud.com/n/oracleonpremjava/b/mtdrworkshop/o/index.html
+- The application is visible in the 'mtdrworkshop' bucket of your tenancy
 
+- Click on the index.html object and copy the URL of the index object
+
+![](images/bucket-index.png " ")
 
 ## **Learn More**
 

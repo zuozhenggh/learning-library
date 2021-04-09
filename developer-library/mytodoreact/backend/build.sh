@@ -15,9 +15,12 @@ if [ -z "DOCKER_REGISTRY" ]; then
 fi
 
 export IMAGE=${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}
-
+# Make a copy of the wallet directory before mvn install
+cp -R target/classes/wallet wallet_backup
 mvn install
-docker build -t $IMAGE -f src/main/docker/Dockerfile .
+# Restore the wallet directory before docker build
+cp -R  wallet_backup target/classes/wallet
+docker build -f src/main/docker/Dockerfile -t $IMAGE .
 # mvn package docker:build
 
 # if [ $DOCKERBUILD_RETCODE -ne 0 ]; then
