@@ -213,7 +213,7 @@ On Windows:
 
 
 
-## **STEP 7**: Connect to your compute instance from your local machine
+## **STEP 7**: Connect to your compute instance from your local machine using X forwarding
 
 ### Connect via PuTTY (Windows):
 
