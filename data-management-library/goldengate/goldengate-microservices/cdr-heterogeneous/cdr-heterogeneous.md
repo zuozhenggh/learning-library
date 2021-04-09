@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: Create One-Way Replication
-    - Lab: GoldenGate Microservices Active-Active and Auto CDR
+    - Lab: Create HA/DR Replication
 
 ## **STEP 1**: INSERTROWEXISTS with the USEMAX Resolution
 
@@ -62,7 +62,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     </copy>
     ```
 
-    and replace Table SOE.CDRDEMO with below line:
+    Add below line and comment/remove the line <b>Table SOE.CDRDEMO</b> if exist:
 
     ```
     <copy>
@@ -81,7 +81,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     </copy>
     ```
 
-    and replace Table SOE.CDRDEMO with below line:
+    Add below line and comment/remove the line <b>Table SOE.CDRDEMO</b> if exist:
 
     ```
     <copy>
@@ -95,7 +95,7 @@ To resolve an insert where the row exists in the source and target, but some or 
 
 3. Modify the Replicat parameter file.
 
-    In both the replicat replace "map <oggoow191||oggoow19>.soe.cdrdemo,target soe.cdrdemo;" with line below:
+    In both the replicat(IREP and IREP1) comment/remove "map <oggoow191||oggoow19>.soe.cdrdemo,target soe.cdrdemo;" if exist and add below lines:
 
     ```
     <copy>
@@ -151,7 +151,7 @@ To resolve the condition where a target row exists on UPDATE but non-key columns
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -206,7 +206,7 @@ To resolve the case where the source row was deleted but the target row exists. 
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -293,7 +293,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -321,7 +321,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
 
     ```
     <copy>
-    ./alter_extract.sh EXTSOE 16001
+    ./alterExtract.sh EXTSOE 16001
     </copy>
     ```
     ![](./images/alter_extract.png " ")
@@ -404,7 +404,7 @@ To resolve the case where the target row is missing. The logical resolution, and
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -482,5 +482,5 @@ To resolve the case where the target row is missing. The logical resolution, and
 
 ## Acknowledgements
 * **Author** - Nishant Kaushik, Data Integration, December 2020
-* **Contributors** - Brian Elliott, Meghana Banka, Rene Fontcha
+* **Contributors** - Zia Khan, Meghana Banka, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021
