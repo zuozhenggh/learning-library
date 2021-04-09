@@ -12,7 +12,7 @@ In this lab you will use Oracle Analytics Cloud to build a ML model that assess 
 
 Estimated lab time: 80 minutes (video 10 minutes, provisioning 30 minutes, exercise 40 minutes)
 
-This video will cover the theory behind Neural Networks.
+This video will cover Oracle Analytics.
 [](youtube:ywstbYbIlPg)
 
 ### Objectives
@@ -26,7 +26,7 @@ In this lab you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 
-## **STEP 1:** Provision Oracle Analytics Cloud
+## **STEP 1:** Provision and Start Oracle Analytics Cloud
 
 You will provision Oracle Analytics Cloud.
 
@@ -46,15 +46,15 @@ You will provision Oracle Analytics Cloud.
 
 2. Configure OAC
 
-   Choose to create a new OAC instance.
+    Choose to create a new OAC instance.
 
-   In the configuration screen, do the following:
+    In the configuration screen, do the following:
 
-   Instance name: Any name you choose,
-   Feature Set: Enterprise Analytics,
-   OCPU: 2,
-   Network access: Public,
-   License type: "Subscribe to a new Analytics Cloud...".
+    - Instance name: Any name you choose
+    - Feature Set: Enterprise Analytics
+    - OCPU: 2
+    - Network access: Public
+    - License type: "License included..."
 
 3. Start provisioning
 
@@ -64,21 +64,29 @@ You will provision Oracle Analytics Cloud.
 
    ![](images/oac8.png)
 
+4. Go to the Oracle Analytics Cloud homepage
+
+    When the provisioning is completed, the status for the instance will change to "Active".
+
+    Click on "Analytics Homepage".
+
+    ![](images/start-oac.png)
+
+      It's useful to add a Bookmark in your browser to this URL.
+
 ## **STEP 2:** Data preparation
 
    First we have to upload the data that's required for our model. In this case, the dataset with historical credit assessments is mostly ready to go, without requiring any changes.
 
 1. Download the training dataset
 
-   Download the [training dataset](files/MLTD2-german-credit-applications.csv) with historical credit information.
+    Download [The training dataset](files//MLTD2-german-credit-applications.csv) with historical credit information.
 
-   Click on the link, then use the "Raw" button and then right click "Save As". **Make sure to save these with extension CSV.** Some browsers try to convert this to Excel format, which is incorrect.
+    The original dataset contains 1000 entries with 20 categorical and numerical attributes prepared by Professor Hofmann and each entry in the dataset represents a PERSON who took a credit and classified as good or bad credit risk.
 
-   The original dataset contains 1000 entries with 20 categorical and numerical attributes prepared by Professor Hofmann and each entry in the dataset represents a PERSON who took a credit and classified as good or bad credit risk.
+    The dataset provided to you as part of the material was obtained from the following location: https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)
 
-   The dataset provided to you as part of the material was obtained from the following location: https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)
-
-   We will try to capture the knowledge that this person applies to assessing credits in a ML model.
+    We will try to capture the knowledge that this person applies to assessing credits in a ML model.
 
 2. Upload the dataset into Oracle Analytics Cloud
 
@@ -86,10 +94,10 @@ You will provision Oracle Analytics Cloud.
 
    ![](images/img2.jpg)
 
-   To import the dataset click on "Create", "Data Set", and select the file that you downloaded earlier.
+   To import the dataset click on "Create", "Data Set", and drag over the file that you downloaded earlier.
 
    ![](images/img3.jpg)
-   ![](images/img4.jpg)
+   ![](images/upload-file.png)
 
    You see a preview of the dataset. Complete the process by clicking "Add"
 ![](images/img5.jpg)
@@ -110,7 +118,8 @@ You will provision Oracle Analytics Cloud.
 
 1. Create a project
 
-   Create a project in order to investigate the dataset using visualizations by clicking on the burger menu associated with our dataset and "Select Project".
+   Create a project in order to investigate the dataset using visualizations. If you stil have the Dataset open, then you'll find a button "Create Project" on the top right.
+   If you closed the dataset, then you can create a project by clicking on the burger menu associated with our dataset and then selecting "Create Project".
    ![](images/img10.jpg)
 
 2. Add a calculation
@@ -121,8 +130,11 @@ You will provision Oracle Analytics Cloud.
    The name of the field can be anything, e.g. "# Count". Then add a counter by Double-clicking on ‘Count’ in the ‘Aggregation’ list of options.
    ![](images/img12.jpg)
 
-   Define the counter by selecting the column "recid", then click "Save".
-   ![](images/img13.jpg)
+   Select the * and drag the "recid" column over it to replace it.
+   ![](images/create-count.png)
+   ![](images/create-count2.png)
+
+     Then click "Save".
 
 3. Create a new visualization
 
@@ -134,21 +146,22 @@ You will provision Oracle Analytics Cloud.
 
 4. Review the visualization
 
-   You see that 70% out of 1000 credit applications were good and 30% were bad for the target called ‘class’
+   You see that 70% out of 1000 credit applications were good and 30% were bad for the target called ‘class’.
    ![](images/img16.jpg)
 
 5. Review colinearity
 
-   Remember the colinearity issue from the previous labs? Colinearity is the effect of multiple attributes that supply similar information. When we train our model, we should try to only supply attributes that provide unique pieces of information. To investigate this issue, we will create a correlation diagram between the input features. Do this by selecting all the fields from "duration" until "num_dependants". Choose "Pick Visualization" and select "Correlation Matrix".
-   ![](images/img20.jpg)
+    Colinearity is the effect of multiple attributes that supply similar information. When we train our model, we should try to only supply attributes that provide unique pieces of information. To investigate this issue, we will create a correlation diagram between the input features. Do this by selecting all the fields from "duration" until "num_dependants". Choose "Pick Visualization" and select "Correlation Matrix".
+    ![](images/img20.jpg)
+    ![](images/correlation-matrix.png)
 
-   Now you see the correlation matrix visualization. Although there is some correlation between the fields, the correlation does not appear to be too high in any place. Therefore there's no colinearity and no action to be taken.
-   ![](images/img23.jpg)
+    Now you see the correlation matrix visualization. Although there is some correlation between the fields, the correlation does not appear to be too high in any place. Therefore there's no colinearity and no action to be taken.
+    ![](images/img23.jpg)
 
-   Save the results of the Data Exploration. Give it a logical name.
-   ![](images/img25.jpg)
+    Save the results of the Data Exploration. Give it a logical name.
+    ![](images/img25.jpg)
 
-   At the is point you are doing with the investigation of the dataset and move on the next task
+    At the is point you are doing with the investigation of the dataset and move on the next task
 
 ## **STEP 4:** Train the model
 
@@ -191,7 +204,7 @@ You will provision Oracle Analytics Cloud.
 
 6. Execute the Data Flow to train the model
 
-   Next, we can finally execute the Data Flow. Effectively this will train the model. Click on "Run Data Flow" (top right). This could take up to 10 minutes, depending on the speed of your PC. A message will appear saying that the data flow was run successfully.
+   Next, we can finally execute the Data Flow. Effectively this will train the model. Click on "Run Data Flow" (top right). This could take a few minutes. A message will appear saying that the data flow was run successfully.
    ![](images/img38.jpg)
 
 ## **STEP 5:** Evaluate the model
@@ -215,27 +228,34 @@ You will provision Oracle Analytics Cloud.
 
 1. Download new dataset to score
 
-   Download the new applications [here](files/MLTD2-german-credit-new-applications.csv). Click on the link, then use the "Raw" button and then right click "Save As". **Make sure to save these with extension CSV.** Some browsers try to convert this to Excel format, which is incorrect.
+    Download [new applications](files//MLTD2-german-credit-new-applications.csv), these are the additional records that we want to score.
 
 2. Create new dataset
 
-   Again, create a new dataset, and set the "Treat As" for attribute "recid" to "attribute". The dataset should be named "MLTD2-german-credit-NEW-applications".
+   Again, create a new dataset by uploading it. Similarly as before, set the "Treat As" for attribute "recid" to "attribute". The dataset should be named "MLTD2-german-credit-NEW-applications".
    ![](images/newupload.png)
 
 3. Create new Data Flow to score the dataset
 
-   You'll notice that this dataset does -not- have the class column yet. In fact, that is what we will predict now. Create a new Data Flow to score the new dataset.
-   ![](images/createdataflow.png)
+    ![](images/createdataflow.png)
 
-4. Configure the Data Flow - remove "recid"
+    Upon creating the dataflow, you'll be asked for a dataset. Make sure to select the *new* dataset.
 
-   Select the new dataset. Deselect the "recid" column, as this does not have any predicted value.
-   ![](images/selectdatasetnew.png)
+    ![](images/select-new-dataset.png)
+
+    You'll notice that this dataset does -not- have the class column yet. In fact, that is what we will predict now. Create a new Data Flow to score the new dataset.
+
+4. Remove "recid"
+
+   Deselect the "recid" column, as this does not have any predicted value.
+   ![](images/deselect-recid.png)
 
 5. Add Apply Model to perform the scoring
 
-   Add a "Apply Model" step in the dataflow and select the model that we trained earlier.
+   Add a "Apply Model" step in the dataflow.
    ![](images/addapplymodel.png)
+
+   Select the model that we trained earlier.
    ![](images/selectmodel.png)
 
    Verify the next dialog. You see that the Apply Model step will create two new columns: PredictedValue and PredictionConfidence. You also see that the columns of our NEW dataset are automatically aligned with the input features of the model.
@@ -243,7 +263,10 @@ You will provision Oracle Analytics Cloud.
 
 6. Add a final step to Save the Data
 
-   Add a "Save Data" step. Name the new dataset "Scored New Applications"
+   Add a "Save Data" step.
+   ![](images/save-data.png)
+
+   Name the new dataset "Scored New Applications".
    ![](images/savedatastep.png)
 
 7. Save the Data Flow
@@ -253,7 +276,7 @@ You will provision Oracle Analytics Cloud.
 
 8. Run the Data Flow
 
-   Run the new Data Flow. This typically takes a few minutes depending on the speed of your PC.
+   Run the new Data Flow. This typically takes a few minutes.
    ![](images/runapply.png)
 
 ## **STEP 7:** Verify the predictions
@@ -269,6 +292,7 @@ You will provision Oracle Analytics Cloud.
 
    Imagine we want to see all applications that the model has assessed with a "bad" credit scoring. We want to simply display all the results in a table. Select all columns (use Shift), then right click "Pick Visualization", and choose the Table visualization.
    ![](images/selectallcolumns.png)
+   ![](images/select-table-vis.png)
 
 3. Show only bad credit rating using a filter
 
@@ -281,15 +305,13 @@ You will provision Oracle Analytics Cloud.
    We see that there are a handful of applications (of the 20+ that we provided) that have been assessed as "bad".
    ![](images/result.png)
 
+Because machine learning is available in an easy way through Oracle Analytics, it means the power of predictions become available to a very wide audience of users.
+
 Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
 ## Acknowledgements
-* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
 * **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,4 +1,4 @@
-# Tear down
+# Decommissioning the environments
 
 ## Introduction
 

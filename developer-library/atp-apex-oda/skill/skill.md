@@ -128,11 +128,11 @@ Time to **integrate** your **Custom Component with the Intent** `ListTasks` crea
 
     The **Flows** section should look like this one:
 
-    ![Flows 3](./images/flows_3_2.png)
+    ![Flows 3](./images/flows_3_3.png)
 
-3. **Make sure** the syntax is correct. **Click** on the `Validate` button. **Be sure** that you get the **correct validation message** on the top of the page as you can see on the image below:
+3. **Make sure** the syntax is correct. **Click** on the `Validate` button. You will get a warning message **We have identified some issues that might cause problems with the my tasks skill. Open the logger window to see more details.** on the top of the page as you can see on the image below. You can explore the warning on **View validation results** section to learn. We can proceed with next steps.
 
-    ![Flows 4](./images/flows_4_2.png)
+    ![Flows 4](./images/flows_4_3.png)
 
 4. Click **Train** button to run the **Machine Learning Algorithm**.
 
@@ -201,7 +201,3 @@ Continue to Next Steps for more information!
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

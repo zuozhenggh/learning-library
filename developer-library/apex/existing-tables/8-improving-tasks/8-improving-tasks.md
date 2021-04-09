@@ -141,7 +141,7 @@ The Tasks Calendar page shows numerous tasks; however, there is no way to direct
 5. In the Link Builder dialog, enter the following:
     - Target > Page - select **7**
     - Set Items > Name - select **P7_ID**
-    - Set Items > Value - select **ID** (Returns **&ID**)
+    - Set Items > Value - select **ID** (Returns **&ID.**)
     - Clear / Reset > Clear Cache - enter **7**
 
 6. Click **OK**

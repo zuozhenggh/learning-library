@@ -148,5 +148,3 @@ At this point, it's assumed that the test instance created in the previous lab h
 * **Contributors** - - -
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

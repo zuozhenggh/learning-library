@@ -16,8 +16,8 @@ Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are ad
 - [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=637)
 - [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631)
 - [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
-- [Datbase 21c on DB Systems](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=737)
-- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Database 21c on DB Systems](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=737)
+- [Database 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
 - [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
 - [Create a Docker registry in OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=590)
 
@@ -51,6 +51,6 @@ The Universal Permissive License (UPL), Version 1.0
 See [LICENSE](LICENSE.md) for details.
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please first consult the "Need Help?" lab located at the bottom of your workshop to see if our FAQ can solve your problem.  If you have an issue that is specific to the contents of the workshop, please reach out to the author located in the "Acknowledgements" section at the bottom of each lab via email. Please include your workshop name and lab name. You can also include screenshots and attach files. If you have a more general issue, or would like to reach out to the LiveLabs management team, email us [here](mailto:livelabs-help_us@oracle.com).   
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

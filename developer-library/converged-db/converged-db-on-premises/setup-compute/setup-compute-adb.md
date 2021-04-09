@@ -281,7 +281,3 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
-
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
