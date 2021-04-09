@@ -1,7 +1,7 @@
 # Get Started with OML4Py on Autonomous Database
 
 ## Introduction
-This lab walks you through the steps to create a Zeppelin notebook and connect to the Python interpreter.
+This lab walks you through the steps to create an OML notebook and connect to the Python interpreter.
 
 Estimated Lab Time: 15 minutes
 
@@ -11,10 +11,10 @@ In this lab, you will learn how to:
 <if type="freetier">* Provision an autonomous database
 * Create an OML user</if>
 * Access OML Notebooks
-* Create a Zeppelin Notebook
-* Familiarize with the Zeppelin Notebook toolbar
-* Familiarize with the Zeppelin Notebook interpreter bindings
-* Familiarize with the Zeppelin Notebook interpreters
+* Create an OML Notebook
+* Familiarize with the OML Notebook toolbar
+* Familiarize with the OML Notebook interpreter bindings
+* Familiarize with the OML Notebook interpreters
 * Connect to the Python Interpreter
 * Verify Connection to the Autonomous Database
 * View help files
@@ -196,8 +196,8 @@ To download the notebook version of this lab (without screenshots), click <if ty
 
 [](include:import)
 
-<if type="livelabs">## **Step 4:** Create a Zeppelin Notebook</if>
-<if type="freetier">## **Step 5:** Create a Zeppelin Notebook</if>
+<if type="livelabs">## **Step 4:** Create an OML Notebook</if>
+<if type="freetier">## **Step 5:** Create an OML Notebook</if>
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization and collaboration. To create a notebook:
 1. <if type="freetier">Click the hamburger menu, search for Notebooks, and click on it. </if>In the Notebooks page, click **Create.** The Create Notebook window appears.
@@ -213,9 +213,9 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 **Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
 
-### About Zeppelin Notebooks
+### About OML Notebooks
 
-The Zeppelin notebook toolbar contains buttons to run code in paragraphs, for configuration settings, and display options.
+The OML notebook toolbar contains buttons to run code in paragraphs, for configuration settings, and display options.
 
 For example, it displays the current status and the number of users connected to the notebook. It also contains a menu item for keyboard shortcuts and options to show or hide the markdown editor and paragraph output. Additional settings are shown in the illustration here.
     ![](images/notebook_toolbar.png)
