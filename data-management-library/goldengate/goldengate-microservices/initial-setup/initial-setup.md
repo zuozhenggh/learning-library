@@ -30,6 +30,10 @@ This lab assumes you have:
 
 2. First login as “*opc*” using your SSH Private Key
 
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+
 3. Then sudo to “*oracle*”.
 
     ```
@@ -54,7 +58,18 @@ This lab assumes you have:
       - Setting DB parameter `enable_goldengate_replication` to  true
       - Creating GoldenGate users in the database
 
-You may now *proceed to the next lab*.
+
+2. Create some additional tables that we will be using later in our labs for CDR purposes.
+
+    ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab10
+    ./db_createTable.sh
+    </copy>
+    ```
+    ![](./images/create_tables.png " ")
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

@@ -1,4 +1,4 @@
-# Provisioning Autonomous Database (ATP and ATP)
+# Provisioning Autonomous Database (ADW and ATP)
 
 ## Introduction
 
@@ -64,9 +64,10 @@ Watch a video demonstration of provisioning a new <if type="atp">Autonomous Tran
 
     ![Enter the required details.](./images/Picture100-26.png " ")
 
-4. Choose the workload type:  ATP. 
+4. Choose the workload type:  <if type="atp">Transaction Processing</if><if type="adw">Data Warehouse</if>. 
 
-    ![Choose a workload type.](./images/Picture100-26b.png " ")
+    <if type="atp">![Choose a workload type.](./images/Picture100-26a.png " ")</if>
+    <if type="adw">![Choose a workload type.](./images/Picture100-26b.png " ")</if>
 
 5. Choose the deployment type: Shared Infrastructure. Select the deployment type for your database from the choices:
 
