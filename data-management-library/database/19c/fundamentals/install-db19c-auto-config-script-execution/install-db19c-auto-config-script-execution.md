@@ -435,4 +435,4 @@ Congratulations! You have a fully functional Oracle Database 19c instance runnin
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
 - **Technical Contributors** - James Spiller, Principal User Assistance Developer, Database Development; Dragos Negru, Principal Cloud Specialist - Data Management, TE Hub
-- **Last Updated By/Date** - Jody Glover, Database team, April 8 2021
+- **Last Updated By/Date** - Jody Glover, Database team, April 9 2021
