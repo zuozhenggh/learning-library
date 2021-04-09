@@ -139,7 +139,6 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 3. Run a count in the `ORDER_ITEMS` table.  Note the difference.
 
 	```
-
 	SQL> <copy>SELECT count(distinct product_id) FROM order_items;</copy>
 	<if type="atp">
 	```
@@ -153,11 +152,10 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 	```
 	</if>
 
-4. How many products are in the inventory that were never ordered? Use the `EXCEPT` operator to retrieve only unique rows returned by the first query but not by the second. For multi-line statements, select all the lines you want to run before hitting the Run Statement button, or click Run Script and select the Query Result tab.
+4. How many products are in the inventory that were never ordered? Use the `EXCEPT` operator to retrieve only unique rows returned by the first query but not by the second. For multi-line statements, select all the lines you want to run before hitting the Run Statement button.
 
 
 	```
-
 	SQL> <copy>SELECT count(*) FROM
 			(SELECT product_id FROM inventories
 				EXCEPT
