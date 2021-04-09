@@ -1,9 +1,7 @@
 # Create a Compute Instance
 
 ## Introduction
-This lab shows you how to quickly create and configure a compute instance in preparation for an Oracle Database 19c installation. To perform many of the tasks, you use Cloud Shell, which is a free Linux shell (within monthly tenancy limits) in Oracle Cloud Infrastructure.
-
-
+This lab shows you how to quickly create and configure a compute instance in preparation for an Oracle Database 19c installation. To perform many of the tasks, you use Cloud Shell, which is a free Linux shell (within monthly tenancy limits) in Oracle Cloud Infrastructure. Depending on the type of personal computer that you have (Windows, Mac, Linux), you can choose to do steps 5, 6, or 7.
 
 Estimated Lab Time:  25 minutes
 
@@ -244,18 +242,18 @@ Currently, your compute instance has 8GB of free swap space. The Oracle Database
 
 ## **STEP 4**: Configure X11 forwarding on your compute instance
 
-The Oracle Database 19c Installation Wizard has a graphical user interface. To run the installer from a personal computer (Windows, Mac, or Linux), you need to set up X11 forwarding using Secure Shell (SSH) or virtual network computing (VNC) on your compute instance.
+The Oracle Database 19c Installation Wizard has a graphical user interface. To run the installer from a personal computer (Windows, Mac, or Linux), you need to set up X11 forwarding using Secure Shell (SSH) or virtual network computing (VNC) on your compute instance. This example shows you how to set up X11 forwarding.
 
 1. As the `root` user, use `yum` to install all the dependencies needed to run X11 applications.
 
     ```nohighlighting
-    # yum install -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-utils xorg-x11-apps xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1
+    # <copy>yum install -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-utils xorg-x11-apps xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1</copy>
     ```
 
 2. Open the `sshd_config file`, which is the configuration file for the SSH service.
 
     ```nohighlighting
-    # vi /etc/ssh/sshd_config
+    # <copy>vi /etc/ssh/sshd_config</copy>
     ```
 
 3. Edit the following lines to be as follows:
@@ -273,18 +271,14 @@ The Oracle Database 19c Installation Wizard has a graphical user interface. To r
 5. Restart the SSH service so the new settings take effect.
 
     ```nohighlighting
-    # systemctl restart sshd
+    # <copy>systemctl restart sshd</copy>
     ```
 
 
 
-## **STEP 5**: Connect to your compute instance from your personal computer
+## **STEP 5**: (Windows) Connect to your compute instance from your personal Windows computer
 
-In this step, you learn how to connect to your compute instance from your personal computer. There are instructions for Windows 10, Mac, cygwin emulator, and Linux. Follow the instructions that pertain to your personal environment.
-
-### Windows 10
-
-Using X11 forwarding in an SSH session on your local Windows computer lets you securely run graphical applications (X clients). For X11 forwarding in SSH to work, your local computer must be running an X server program, such as Xming or VcXsvr. The steps below show you how to configure X11 forwarding on your compute instance and how to install and configure VcXvr (an X server) on your local Windows computer. The X server program manages the interaction between the remote application (the X client, and in this case, the Oracle Database 19c installer) and your computer's hardware.
+Using X11 forwarding in an SSH session on your local Windows computer lets you securely run graphical applications (X clients). For X11 forwarding in SSH to work, your local computer must be running an X server program, such as Xming or VcXsvr. The X server program manages the interaction between the remote application (the X client, and in this case, the Oracle Database 19c installer) and your computer's hardware. This example shows you how to install and configure VcXvr on your local Windows computer.
 
 
 #### Part A - Install VcXsrv
@@ -292,7 +286,7 @@ Using X11 forwarding in an SSH session on your local Windows computer lets you s
 1. In a browser on your Windows machine, access the following URL:
 
     ```nohighlighting
-    https://sourceforge.net/projects/vcxsrv/
+    <copy>https://sourceforge.net/projects/vcxsrv/</copy>
     ```
 
 2. Click **Download**.
@@ -317,12 +311,12 @@ Using X11 forwarding in an SSH session on your local Windows computer lets you s
 
 12. Click **Finish**. Leave VcXsrv running.
 
-13. In the bottom right corner, a VcXsrv icon is displayed. If you need to stop XLaunch for some reason, double-click the icon and click **Exit**.
+  In the bottom right corner, a VcXsrv icon is displayed. If you need to stop XLaunch for some reason, double-click the icon and click **Exit**.
 
 
 #### Part B - Convert your private key to a .ppk file
 
-You need to convert your private key into a .ppk file format so that you can use it with PuTTY.
+You need to convert the private key that you obtained from Oracle Cloud Infrastructure into a .ppk file format so that you can use it with PuTTY.
 
 1. Open **PuTTY Key Generator**.
 
@@ -339,14 +333,14 @@ You need to convert your private key into a .ppk file format so that you can use
 7. Close PuTTY Key Generator.
 
 
-#### Part C - Configure an X11 forwarding connection in PuTTY and connect to your compute instance
+#### Part C - Configure an X11 forwarding connection in PuTTY that connects to your compute instance
 
 1. Open PuTTY on your local Windows computer.
 
 2. On the **Session** tab, configure the following:
 
-  - **Hostname**: Enter the public IP address for your compute instance
-  - **Port**: Leave port **22** as is.
+    - **Hostname**: Enter the public IP address for your compute instance.
+    - **Port**: Leave port **22** as is.
 
 3. Browse to **Connection** > **SSH** > **Auth**, and configure the following:
 
@@ -365,11 +359,13 @@ You need to convert your private key into a .ppk file format so that you can use
 
   In the future, you can simply load your saved session and quickly connect.
 
-5. Click **Open**. A message is displayed that the server's host key is not cached in the registry.
+5. Click **Open**.
 
-6. Click **Yes** because you trust this host. You are now logged in as the `opc` user.
+  A message is displayed that the server's host key is not cached in the registry.
 
-  The following line is displayed:
+6. Click **Yes** because you trust this host.
+
+  You are now logged in as the `opc` user. Notice that the following line is displayed:
 
   `/usr/bin/xauth: file /home/opc/.Xauthority does not exist`
 
@@ -378,33 +374,36 @@ You need to convert your private key into a .ppk file format so that you can use
 7. Display the authorization information for the `opc` user used to connect to the X server.
 
     ```
-    xauth list
-    ```
-    The output is similar to the following:
-    ```
+    $ <copy>xauth list</copy>
+
     compute1.subnet03311012.vcn03311012.oraclevcn.com:10  MIT-MAGIC-COOKIE-1  9055a7967897789f94fd6a3fbc1b4b90
     ```
 
 8. View the `DISPLAY` environment variable.
 
     ```
-    echo $DISPLAY
+    $ <copy>echo $DISPLAY</copy>
     ```
-    The output should be `your-computer-ip:10.0`. Notice that the `10` is also part of the authentication information in the previous step.
+    The output is `your-computer-ip:10.0`. Notice that the `10` is also part of the authentication information in the previous step.
 
 9. Test that the `opc` user can open a graphical user interface application like `xeyes`.
 
     ```
-    $ xeyes
+    $ <copy>xeyes</copy>
     ```
-  A pair of eyes is displayed in a separate window. If you move your cursor over the eyes, the eyes will follow it.
+  A pair of eyes is displayed in a separate window. If you move your cursor over the eyes, the eyes follow it.
 
-8. Hover over the XLaunch application icon. The application indicates that there is one client connected.
+8. Hover your cursor over the XLaunch application icon.
 
-9. Close `xclock`. The XLaunch application icon indicates that there are zero clients connected.
+  The application indicates that there is one client connected.
+
+9. Close `xclock`.
+
+  The XLaunch application icon indicates that there are zero clients connected.
 
 
-### Mac or cygwin emulator
+## **STEP 6**: (Mac or cygwin emulator) Connect to your compute instance from your personal Mac computer
+
 REVIEWER: This section is still a work in progress.
 To install X11 on macOS, download and install the XQuartz Application from: http://xquartz.macosforge.org/
 
@@ -429,8 +428,8 @@ ssh –Y root@server-name
 
 
 
+## **STEP 7**: (Linux) Connect to your compute instance from your personal Linux computer
 
-### Linux
 
 (need steps)
 
