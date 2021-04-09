@@ -1,7 +1,7 @@
 # Create a Compute Instance
 
 ## Introduction
-This lab shows you how to quickly create and configure a compute instance in preparation for an Oracle Database 19c installation. To perform many of the tasks, you use Cloud Shell, which is a free Linux shell (within monthly tenancy limits) in Oracle Cloud Infrastructure. Depending on the type of personal computer that you have (Windows, Mac, Linux), you can choose to do steps 5, 6, or 7.
+This lab shows you how to quickly create and configure a compute instance in preparation for an Oracle Database 19c installation. To perform many of the tasks, you use Cloud Shell, which is a free Linux shell (within monthly tenancy limits) in Oracle Cloud Infrastructure. Depending on the type of personal computer that you have (Windows, Mac, Linux), you can choose to do step 5, 6, or 7.
 
 Estimated Lab Time:  25 minutes
 
