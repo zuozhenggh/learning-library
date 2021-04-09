@@ -1,6 +1,7 @@
 {
   "workshoptitle": "Getting Started with Weather Prediction using WRF",
-    "tutorials": [
+    "help": "livelabs-help-hpc_us@oracle.com",
+	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Get a Free Trial",
@@ -9,7 +10,7 @@
         {
             "title": "Introduction",
             "description": "Small excerpt on WRF, prequsites, and objectives for this lab.",
-            "filename": "../../introduction/introduction.md"        
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Lab 1: Create SSH Keys",
@@ -33,6 +34,11 @@
             "title": "Lab 5: WRF/WPS Install, Setup and Run on HPC Cluster",
             "description": "Guide on setting up, configuring, and running WRF on two node HPC cluster on OCI",
             "filename": "../../wrf-wps-setup-install-run-cluster/wrf-wps-setup-install-run-cluster.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

@@ -39,6 +39,8 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## **STEP 2:** Add Transaction Data and a Checkpoint Table
 
+*Note: Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
+
 1.  Open the navigation menu and then click **Configuration**.
 
     ![](images/02-01-nav-config.png)

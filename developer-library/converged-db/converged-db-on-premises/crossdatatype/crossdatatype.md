@@ -11,11 +11,11 @@ JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON 
 
 ### Objectives
 In this lab, you will:
-* Setup the environment for Cross Datatype lab. 
+* Setup the environment for Cross Datatype lab.
 * Connect the oracle SQL developer to access the JSON, XML, Spatial data in Relational formate by using different type of function.
 * Learn about how to use Cross data function :
     - JSON with Relational
-    - XML with Relational 
+    - XML with Relational
     - JSON with Spatial
 
 ### Prerequisites
@@ -23,8 +23,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only) 
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -160,7 +160,7 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
     ```
     ![](./images/cd15.png)
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
@@ -180,5 +180,3 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-

@@ -57,5 +57,4 @@ Use these links to get more information about Oracle Autonomous Database:
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, April 2020
-
+- **Last Updated By/Date** - Richard Green, April 2021

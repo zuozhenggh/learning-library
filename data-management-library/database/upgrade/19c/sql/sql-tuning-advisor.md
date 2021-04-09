@@ -2,16 +2,16 @@
 
 ## Introduction
 
-In the previous section you fixed plans with SQL Plan Management. But lets see what else could be done and ask the SQL Tuning Advisor (STA).
+In the previous section you fixed plans with SQL Plan Management. But let us see what else could be done and ask the SQL Tuning Advisor (STA).
 
 ![](./images/sql-tuning-advisor.png " ")
 
-You’ll pass the SQL Tuning Set from the “Load” exercise where you captured the HammerDB workload directly from Cursor Cache to the SQL Tuning Advisor and check the results.
+You will pass the SQL Tuning Set from the “Load” exercise where you captured the HammerDB workload directly from Cursor Cache to the SQL Tuning Advisor and check the results.
 Analyze the SQL Tuning Set and generate recommendations
 
 A complete script is provided: sta_cc.sql.  
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time:* 20 minutes
 
 ### About SQL Tuning Advisor
 SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.
@@ -37,7 +37,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Generate a Tuning Task
 
-1. Execute the script
+1. Execute the script.
    
     ````
     <copy>
@@ -55,7 +55,7 @@ This lab assumes you have:
     ````
 
 
-2. It will take 30 seconds – check the output by scrolling up.  At first, the findings, here I display just the first two findings for a COUNT statement on the CUSTOMER table:
+2. It will take 30 seconds to check the output by scrolling up. Displayed below are the first two findings for a COUNT statement on the CUSTOMER table.
     ![](./images/sql_tun_2.png " ")
     ![](./images/sql_tun_3.png " ")
 
@@ -65,11 +65,11 @@ This lab assumes you have:
     ![](./images/sql_tun_4.png " ")
 
   
-3. First of all, remove the duplicate recommendations (you won’t need 3 identical indexes with different names on TPCC.CUSTOMER for sure) marked in BLUE.  Fix everything.  This is an exercise. Please don’t do this in a real environment without proper verification. But let us implement all the recommendations and see what happens.  Execute all the recommendations from the Advisor.
+3. Firstly, remove the duplicate recommendations (you will not need 3 identical indexes with different names on TPCC.CUSTOMER for sure) marked in BLUE.  Fix everything.  This is an exercise. Please do not do this in a real environment without proper verification. But let us implement all the recommendations and see what happens.  Execute all the recommendations from the Advisor.
       ![](./images/sql_tun_5.png " ")
 
 
-4. Wait a bit until all statements have been executed. Afterwards repeat the SQL Performance Analyzer runs from the previous exersize and verify the results:
+4. Wait for a while until all statements have been executed. Subsequently, repeat the SQL Performance Analyzer runs from the previous exersize and verify the results.
     ````
     <copy>
     @/home/oracle/scripts/spa_cpu.sql
@@ -90,7 +90,7 @@ This lab assumes you have:
     </copy>
     ````
 
-5. Compare the two resulting reports again – and compare them to the examples from the previous run.
+5. Open a remote desktop (Guacamole) and compare the two resulting reports again. Then compare them to the examples from the previous run.
 
     ````
     <copy>
@@ -100,13 +100,11 @@ This lab assumes you have:
     ````
     ![](./images/sql_per_5.png " ")
 
-    It should look similar to the ones below. More isn’t always better 😉 Be careful just implementing recommendations. Test and verify them step by step.
+    It should look similar to the ones below. More isn not always better. Be careful just implementing recommendations. Test and verify them step by step.
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [SQL Tuning Advisor](https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/sql-tuning-advisor.html#GUID-8E1A39CB-A491-4254-8B31-9B1DF7B52AA1)
 

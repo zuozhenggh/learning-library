@@ -175,7 +175,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
     ```
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 Use these links to get more information about Oracle Identity and Access Management:
@@ -188,6 +188,3 @@ Use these links to get more information about Oracle Identity and Access Managem
 * **Author** - Anbu Anbarasu, Director, Cloud Platform COE  
 * **Contributors** -  Eric Pollard, Rene Fontcha  
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
-
-## Need Help?
-Please submit feedback or ask for help by sending an email to [livelabs-help-iam_us@oracle.com](livelabs-help-iam_us@oracle.com). Please make sure to include your workshop name and lab name. You can also include screenshots and attach files.
