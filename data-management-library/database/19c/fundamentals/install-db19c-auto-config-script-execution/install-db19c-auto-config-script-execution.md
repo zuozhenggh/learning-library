@@ -3,26 +3,26 @@
 
 ## Introduction
 
-When you install and configure Oracle Database, certain operations must be performed by the `root` user. Starting with Oracle Database 19c, the Oracle Universal Installer includes an option to run configuration scripts automatically for you as the `root` user. It also includes the option run the scripts as a sudo user, which gives the specified user root permissions when running the scripts.
+When you install and configure Oracle Database, certain operations must be performed by the `root` user. Starting with Oracle Database 19c, the Oracle Universal Installer includes options for automatically running the configuration scripts. You can choose to run them as the `root` user, which requires you to know the `root` user password. Or, you can choose to run the scripts as a sudo user (password is also required), which gives the specified user root permissions when running the scripts.
 
 Setting up permissions for configuration scripts to run without user intervention can simplify database installation and help avoid inadvertent permission errors. If you prefer, you can still choose to run the scripts manually, like you would do for an Oracle Database 18c installation.
 
-This lab shows you how to install Oracle Database 19c with the new option to run configuration scripts automatically as a sudo user. You also examine the response file and resulting container database (CDB) and pluggable database (PDB).
+This lab shows you how to install Oracle Database 19c with the new option to run configuration scripts automatically with an `oracle` sudo user. You also examine the response file after you complete the installation as well as the resulting container database (CDB) and pluggable database (PDB).
 
 
 Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-- Download the Oracle Database 19c installation ZIP file to your local computer
-- Upload the Oracle Database 19c installation ZIP file to object storage in Oracle Cloud Infrastructure
+In this lab, you learn how to do the following:
+
+- Stage the Oracle Database 19c ZIP file installer in object storage in Oracle Cloud Infrastructure
 - Run the Oracle Database Preinstaller
 - Create an `oracle` user account and two groups (`dba` and `oinstall`) on your compute instance
 - Allow the `oracle` user to perform any operation as `root`
 - Create the Oracle base and Oracle inventory directories
 - Download the Oracle Database 19c installation ZIP file to a `stage` directory on your compute instance
 - Create an OFA-compliant Oracle home directory and extract the Oracle Database 19c installation ZIP file into that directory
-- Increase the swap space on your compute instance
 - Install the database software by using the Oracle Database Setup Wizard
 - Review the response file
 - Discover the container database (CDB) and pluggable database (PDB)
@@ -33,10 +33,10 @@ Estimated Lab Time: 30 minutes
 - You have an Oracle Cloud account. You can use the account you created when you signed up for a free trial, one that was given to you through your own organization, or one provided to you by LiveLabs.
 - You have a compartment in Oracle Cloud Infrastructure.
 - Windows users: You have PuTTY installed on your local computer.
-- You created a compute instance in Oracle Cloud Infrastructure that can support Oracle Database 19c. If not, see [Create Compute Instance](?lab=lab-1-create-compute-instance).
+- You created a compute instance in Oracle Cloud Infrastructure that can support Oracle Database 19c. If not, see [Create Compute Instance](?lab=create-compute-instance).
 
 
-## **STEP 1**: Download the Oracle Database 19c installation ZIP file to your local computer
+## **STEP 1**: Stage the Oracle Database 19c installation ZIP file in object storage in Oracle Cloud Infrastructure
 
 1. In a browser on your local machine, access `https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#19c`.
 
@@ -46,42 +46,39 @@ Estimated Lab Time: 30 minutes
 
 4. Click the **Download LINUX.X64_193000_db_home.zip** button, and download the file to your browser's download directory.
 
+5. From the Oracle Cloud Infrastructure navigation menu, select **Object Storage**, and then **Object Storage**. The **Objects Storage** page is displayed.
 
-## **STEP 2**: Upload the Oracle Database 19c installation ZIP file to object storage in Oracle Cloud Infrastructure
+6. On the right, click **Create Bucket**. The **Create Bucket** dialog box is displayed.
 
-1. From the Oracle Cloud Infrastructure navigation menu, select **Object Storage**, and then **Object Storage**. The **Objects Storage** page is displayed.
+7. Leave the default values as is, and click **Create**.
 
-2. On the right, click **Create Bucket**. The **Create Bucket** dialog box is displayed.
+8. Click the name of your bucket, and then scroll down to the **Object** section.
 
-3. Leave the default values as is, and click **Create**.
+9. Click **Upload**. The **Upload Objects** dialog box is displayed.
 
-4. Click the name of your bucket, and then scroll down to the **Object** section.
+10. In the **Choose Files from your Computer** area, click **select files**. The **File Upload** dialog box is displayed.
 
-5. Click **Upload**. The **Upload Objects** dialog box is displayed.
+11. Browse to and select your Oracle Database 19c install ZIP file, and then click **Open**. The install ZIP file for Oracle Database 19.3 is 2.86 GB.
 
-6. In the **Choose Files from your Computer** area, click **select files**. The **File Upload** dialog box is displayed.
+12. Click **Upload**.
 
-7. Browse to and select your Oracle Database 19c install ZIP file, and then click **Open**. The install ZIP file for Oracle Database 19.3 is 2.86 GB.
+13. Wait for the upload to finish. It takes about 15 minutes.
 
-8. Click **Upload**.
+14. Click the three dots in the object storage table for your ZIP file, and select **Create Pre-Authentication Request**. The **Create Pre-Authentication Request** dialog box is displayed.
 
-9. Wait for the upload to finish. It takes about 15 minutes.
+15. In the **Expiration** field, click the calendar icon, and set a date in the future for the pre-authentication request to end.
 
-10. Click the three dots in the object storage table for your ZIP file, and select **Create Pre-Authentication Request**. The **Create Pre-Authentication Request** dialog box is displayed.
+16. Leave the other settings as is to permit reads on the object, and click **Create Pre-Authentication Request**. The **Pre-Authenticated Request Details** dialog box is displayed.
 
-11. In the **Expiration** field, click the calendar icon, and set a date in the future for the pre-authentication request to end.
+17. Copy the pre-authenticated request URL to the clipboard. You can use the copy button.
 
-12. Leave the other settings as is to permit reads on the object, and click **Create Pre-Authentication Request**. The **Pre-Authenticated Request Details** dialog box is displayed.
+18. Paste the url into a text editor, such as Notepad, where you can access it later.
 
-13. Copy the pre-authenticated request URL to the clipboard. You can use the copy button.
-
-14. Paste the url into a text editor, such as Notepad, where you can access it later.
-
-15. Click **Close**.
+19. Click **Close**.
 
 
 
-## **STEP 3**: Run the Oracle Database Preinstaller
+## **STEP 2**: Run the Oracle Database Preinstaller
 
 You can complete most preinstallation configuration tasks by using the Oracle Database preinstaller.
 
@@ -93,7 +90,7 @@ Execute the following command to run the preinstaller:
 
 
 
-## **STEP 4**: Create an `oracle` user account and two groups (dba and oinstall) on your compute instance
+## **STEP 3**: Create an `oracle` user account and two groups (dba and oinstall) on your compute instance
 
 You need to create an Oracle installation user account (`oracle`) that will own the installation software binaries.
 
@@ -126,7 +123,7 @@ You need to create an Oracle installation user account (`oracle`) that will own 
 
 
 
-## **STEP 5**: Allow the `oracle` user to perform any operation as `root`
+## **STEP 4**: Allow the `oracle` user to perform any operation as `root`
 
 During installation, you specify the `oracle` user as a sudo user so that the installer can run configuration scripts as the `oracle` user. This step gives the `oracle` user root permission without the need for them to know the root password. Sudoers must be edited by running `visudo`.
 
@@ -151,7 +148,7 @@ During installation, you specify the `oracle` user as a sudo user so that the in
 
 
 
-## **STEP 6**: Create the Oracle base and Oracle inventory directories
+## **STEP 5**: Create the Oracle base and Oracle inventory directories
 
 Still as the `root` user, create the **Oracle base** and **Oracle inventory** directories as per the Oracle Optimal Flexible Architecture (OFA) recommendations. Also specify the owner, group, and permissions for these directories. All files in Linux belong to an owner and a group.
 
@@ -177,7 +174,7 @@ Still as the `root` user, create the **Oracle base** and **Oracle inventory** di
 
 
 
-## **STEP 7**: Download the Oracle Database 19c installation ZIP file to a stage directory on your compute instance
+## **STEP 6**: Download the Oracle Database 19c installation ZIP file to a stage directory on your compute instance
 
 In an earlier step, you uploaded the Oracle Database 19c installation ZIP file to object storage in Oracle Cloud Infrastructure. In this step, you download it to your compute instance.
 
@@ -212,7 +209,7 @@ wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/m3rTsRbg5ofiqEWJtqo-
     ```
 
 
-## **STEP 8**: Create an OFA-compliant Oracle home directory and extract the Oracle Database 19c installation ZIP file into that directory
+## **STEP 7**: Create an OFA-compliant Oracle home directory and extract the Oracle Database 19c installation ZIP file into that directory
 
 It's important that the Oracle home directory is in compliance with the Oracle Optimal Flexible Architecture recommendations. Make sure that the current user is still `oracle`.  
 
@@ -239,152 +236,17 @@ It's important that the Oracle home directory is in compliance with the Oracle O
 
 
 
-## **STEP 9**: Increase the swap space on your compute instance
-
-The Oracle Database 19c installer expects at least 16GB of free total swap space available on the compute instance. If you followed the [Create a Compute Instance](?lab=lab-1-create-compute-instance) lab to create your compute instance, you need to create a swap file and add it to the swap.
-
-
-1. Find out how many swap partitions exist on your compute instance.
-
-    ```nohighlighting
-    # <copy>swapon -s</copy>
-
-    Filename                                Type            Size    Used    Priority
-    /dev/sda2                               partition       8388604 0       -2
-    ```
-  The output indicates that there is one swap partition, and it is 8GB.
-
-
-2. View details about partitions.
-
-    ```nohighlighting
-    # <copy>free -m</copy>
-
-                  total        used        free      shared  buff/cache   available
-    Mem:          31824        1151       19582           8       11091       30209
-    Swap:          8191           0        8191
-    ```
-
-  The output indicates that there is one partition set up.
-
-
-3. Identify a file system that has space available.  
-
-   ```nohighlighting
-   # <copy>df -h</copy>
-
-    Filesystem      Size  Used Avail Use% Mounted on
-    devtmpfs         16G     0   16G   0% /dev
-    tmpfs            16G     0   16G   0% /dev/shm
-    tmpfs            16G  8.8M   16G   1% /run
-    tmpfs            16G     0   16G   0% /sys/fs/cgroup
-    /dev/sda3        39G   13G   26G  34% /
-    /dev/sda1       200M  8.6M  192M   5% /boot/efi
-    tmpfs           3.2G     0  3.2G   0% /run/user/0
-    tmpfs           3.2G     0  3.2G   0% /run/user/994
-    tmpfs           3.2G     0  3.2G   0% /run/user/1000
-    ```
-
-  The output indicates that ``/dev/sda3` has 26G available.
-
-
-4. Find the current swap space.
-
-    ```nohighlighting
-    # <copy>cat /etc/fstab</copy>
-
-    #
-    # /etc/fstab
-    # Created by anaconda on Wed Mar 17 22:21:38 2021
-    #
-    # Accessible filesystems, by reference, are maintained under '/dev/disk'
-    # See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
-    #
-    UUID=8381a3a6-892e-40a0-bbaf-3423632fdf6c /                       xfs     defaults,_netdev,_netdev 0 0
-    UUID=0F1D-8861          /boot/efi               vfat    defaults,uid=0,gid=0,umask=0077,shortname=winnt,_netdev,_netdev,x-initrd.mount 0 0
-    UUID=154d2352-4fc7-471b-a4bb-efd52ae00a8b swap                    swap    defaults,_netdev,x-initrd.mount 0 0
-    ######################################
-    ## ORACLE CLOUD INFRASTRUCTURE CUSTOMERS
-    ##
-    ## If you are adding an iSCSI remote block volume to this file you MUST
-   ## include the '_netdev' mount option or your instance will become
-    ## unavailable after the next reboot.
-    ## SCSI device names are not stable across reboots; please use the device UUID instead of /dev path.
-    ##
-    ## Example:
-    ## UUID="94c5aade-8bb1-4d55-ad0c-388bb8aa716a"   /data1    xfs       defaults,noatime,_netdev      0      2
-    ##
-    ```
-  The output indicates that the current swap space is :
-
-  `UUID=154d2352-4fc7-471b-a4bb-efd52ae00a8b swap                   swap   defaults,_netdev,x-initrd.mount 0 0`
-
-
-5. Allocate 8GB of swap space.
-
-    ```nohighlighting
-    # <copy>fallocate -l 8G /swapfile</copy>
-    ```
-
-6. Allow only the `root` user to read/write to swap.
-
-    ```nohighlighting
-    # <copy>chmod 600 /swapfile</copy>
-    ```
-
-7. Format the file to make it a swap file.
-
-    ```nohighlighting
-    # <copy>mkswap /swapfile</copy>
-
-    Setting up swapspace version 1, size = 8388604 KiB
-    no label, UUID=322b862d-083d-429c-b5b8-a71fff68fa5d
-    ```
-
-8. Enable `/swapfile`.
-
-    ```nohighlighting
-    # <copy>swapon /swapfile</copy>
-    ```
-
-9. Check that the compute instance now has enough free swap space.
-
-    ```nohighlighting
-    # <copy>free -m</copy>
-
-                  total        used        free      shared  buff/cache   available
-    Mem:          31824        1158       19572           8       11093       30201
-    Swap:         16383           0       16383
-    ```
-
-  The output indicates that the compute instance now has 16GB of free swap space.
-
-10. Make the changes permanent.
-
-  a) Using the `vi` editor, open `/etc/fstab`.
-
-    ```nohighlighting
-    # <copy>vi /etc/fstab</copy>
-    ```
-
-  b) Scroll to the bottom and add the following as the last line.
-
-    ```nohighlighting
-    <copy>/swapfile swap swap defaults 0 2</copy>
-    ```
 
 
 
+## **STEP 8**: Install the database software by using the Oracle Database Setup Wizard
 
+### Windows 10
 
-## **STEP 10**: Install the database software by using the Oracle Database Setup Wizard
-
-### On Windows 10
-
-In this step, you need to use PuTTY. As the `oracle` user, you install Oracle Database 19c using the Oracle Database Setup Wizard. During installation, choose to automatically run the configuration scripts (*new feature!*).
+If you are running Windows on your personal computer, you can connect to your compute instance with PuTTY. The following steps show you how to install Oracle Database 19c using the Oracle Database Setup Wizard. During installation, choose to automatically run the configuration scripts (*new feature!*) as the sudo `oracle` user.
 
 1. Open PuTTY and connect to your compute instance as the `opc` user using X forwarding. In the  
-[Create Compute Instance](?lab=lab-1-create-compute-instance) lab, you save a configuration in PuTTY that you can load here to make it fast and easy to get connected.
+[Create Compute Instance](?lab=create-compute-instance) lab, you saved a connection configuration in PuTTY that you can load here to connect quickly.
 
 2. As the `opc` user, copy the Xauthority file from the `opc` user to the `oracle` user so that `oracle` can display the graphical user interface of the Oracle Database 19c installer.
 
@@ -442,7 +304,7 @@ In this step, you need to use PuTTY. As the `oracle` user, you install Oracle Da
 
 
 
-## **STEP 11**: Review the Response File
+## **STEP 9**: Review the Response File
 
 1. Change to the response file directory.
 
@@ -466,7 +328,7 @@ In this step, you need to use PuTTY. As the `oracle` user, you install Oracle Da
 
 
 
-## **STEP 12**: Discover the container database (CDB) and pluggable database (PDB)
+## **STEP 10**: Discover the container database (CDB) and pluggable database (PDB)
 
 1. Set the Oracle environment variables. You need to set these each time you open a new terminal window and want to access your database.
 
