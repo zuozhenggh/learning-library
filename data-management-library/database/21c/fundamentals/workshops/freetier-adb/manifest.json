@@ -41,7 +41,8 @@
             "title": "Lab 5: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "atp"
-        },{
+        },
+        {
             "title": "Lab 5: dbcs test DELETE THIS",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "dbcs"
@@ -70,6 +71,11 @@
             "title": "Lab 9: Measuring Tailedness of Data",
             "filename": "../../kurtosis/kurtosis.md",
             "type": "atp"
+        },
+        {
+            "title": "Lab 9: dbcs test DELETE",
+            "filename": "../../kurtosis/kurtosis.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 10: SecureFile LOBs",
