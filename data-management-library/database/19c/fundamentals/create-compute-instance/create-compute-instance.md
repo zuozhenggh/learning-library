@@ -77,13 +77,13 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
 
   c) Move your private key to the `.ssh` directory. In the code below, replace `private-key-filename` with the name of own private key file.
 
-    ```
-    <copy>mv private-key-filename.key .ssh</copy>
+    ```nohighlighting
+    $ <copy>mv private-key-filename.key .ssh</copy>
     ```
 
   d) Set permissions on the `.ssh` directory so that only you (the owner) can read, write, and execute on the directory. Also set permissions on the private key itself so that only you (the owner) can read and write (but not execute) on the private key file.
 
-    ```
+    ```nohighlighting
     $ <copy>chmod 700 ~/.ssh</copy>
     $ <copy>cd .ssh</copy>
     $ <copy>chmod 600 *</copy>
@@ -93,8 +93,8 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
 
 4. Enter the following `ssh` command to connect to your compute instance, replacing `private-key-file` and `public-ip-address` values with your own values.
 
-    ```
-    ssh -i ~/.ssh/private-key-file.key opc@public-ip-address
+    ```nohighlighting
+    $ <copy>ssh -i ~/.ssh/private-key-file.key opc@public-ip-address</copy>
     ```
 
     You receive a message stating that the authenticity of your compute instance can't be established. Do you want to continue connecting?
@@ -111,8 +111,8 @@ Currently, your compute instance has 8GB of free swap space. The Oracle Database
 
 1. Switch to the `root` user.
 
-      ```
-      $ sudo su -
+      ```nohighlighting
+      $ <copy>sudo su -</copy>
       ```
 
 2. Find out how many swap partitions exist on your compute instance.
