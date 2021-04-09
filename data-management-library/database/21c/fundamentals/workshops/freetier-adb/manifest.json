@@ -81,6 +81,11 @@
             "title": "Lab 10: SecureFile LOBs",
             "filename": "../../securefile-lobs/securefile-lobs.md",
              "type": "atp"
+        },
+        {
+            "title": "Lab 10: test",
+            "filename": "../../securefile-lobs/securefile-lobs.md",
+             "type": "dbcs"
         }, 
         {
             "title": "Lab 11: Advanced JSON",

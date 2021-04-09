@@ -37,7 +37,7 @@ In this lab, you will:
 <if type="dbcs">
 ## **STEP 1:** Set up the environment
 
-1. Connect to `PDB1` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with data.
+1. Connect to `PDB1` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL script to create a table with data.
 
      ```
 
