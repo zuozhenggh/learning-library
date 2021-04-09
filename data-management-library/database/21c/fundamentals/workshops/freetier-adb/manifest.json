@@ -33,9 +33,18 @@
             "type": "atp"
         },
         {
+            "title": "Lab 4: test",
+            "filename": "../../set-operators/set-operators.md",
+            "type": "dbcs"
+        },
+        {
             "title": "Lab 5: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "atp"
+        },{
+            "title": "Lab 5: dbcs test DELETE THIS",
+            "filename": "../../sql-macro/sql-macro.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 6: Bitwise Aggregate Functions",
@@ -46,6 +55,11 @@
             "title": "Lab 7: Enhanced Analytic Functions",
             "filename": "../../enhanced-analytics/enhanced-analytics.md",
             "type": "atp"
+        },
+        {
+            "title": "Lab 8: dbcs test DELETE",
+            "filename": "../../skewness/skewness.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 8: Measuring Asymmetry in Data",
