@@ -33,19 +33,9 @@
             "type": "atp"
         },
         {
-            "title": "Lab 4: test",
-            "filename": "../../set-operators/set-operators.md",
-            "type": "dbcs"
-        },
-        {
             "title": "Lab 5: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "atp"
-        },
-        {
-            "title": "Lab 5: dbcs test DELETE THIS",
-            "filename": "../../sql-macro/sql-macro.md",
-            "type": "dbcs"
         },
         {
             "title": "Lab 6: Bitwise Aggregate Functions",
@@ -58,11 +48,6 @@
             "type": "atp"
         },
         {
-            "title": "Lab 8: dbcs test DELETE",
-            "filename": "../../skewness/skewness.md",
-            "type": "dbcs"
-        },
-        {
             "title": "Lab 8: Measuring Asymmetry in Data",
             "filename": "../../skewness/skewness.md",
             "type": "atp"
@@ -73,20 +58,10 @@
             "type": "atp"
         },
         {
-            "title": "Lab 9: dbcs test DELETE",
-            "filename": "../../kurtosis/kurtosis.md",
-            "type": "dbcs"
-        },
-        {
             "title": "Lab 10: SecureFile LOBs",
             "filename": "../../securefile-lobs/securefile-lobs.md",
-             "type": "atp"
+            "type": "atp"
         },
-        {
-            "title": "Lab 10: test",
-            "filename": "../../securefile-lobs/securefile-lobs.md",
-             "type": "dbcs"
-        }, 
         {
             "title": "Lab 11: Advanced JSON",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/adb-json/json-adb-advanced.md"
