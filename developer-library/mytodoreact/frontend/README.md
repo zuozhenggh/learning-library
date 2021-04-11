@@ -32,18 +32,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
 <copy>git clone git@orahub.oci.oraclecorp.com:ora-jdbc-dev/mtdrworkshop.git</copy>
 ```
-2. Run the following npm commands to install the required packages
+2. cd frontend
 
-npm install --save typescript
+3. Run the following npm commands to install the required packages
+
 ```
 <copy>npm install --save typescript</copy>
 ```
-npm audit fix --force
 
 ```
 <copy>npm audit fix --force</copy>
 ```
-3. Update API_LIST in API.js
+4. Update API_LIST in API.js
 
 - Navigate to Developer Services -> API management
 - Click on your Gateway and go to Deployment
@@ -51,14 +51,16 @@ npm audit fix --force
 ![](images/Api-gtw-deploy.png " ")
 
 - Paste the endpoint as the value of API_LIST an append "/todolist"
-  Example
+
+  Example  
   const API_LIST = 'https://<characters>.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 - Save he file
 
-4. `npm start` to run the application in development mode
+5. `npm start` to run the application in development mode
 ```
 <copy>npm start</copy>
 ```
+A browser Tab shows the application
 
 ## **STEP 2**: Run in Dev Mode then Build for Production
 

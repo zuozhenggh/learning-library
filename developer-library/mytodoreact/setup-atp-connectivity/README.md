@@ -75,12 +75,12 @@ Copy the value of the Pre-Authenticated Request URL as it will be used i te next
 
 Close the Pre-Authenticated Request window when done.
 
-## **STEP 4**: Download the Wallet from Object Storage into the workshop Cloud environment
+## **STEP 4**: Download the Wallet from Object Storage into the workshop  environment
 
-1. Run `cd ~/mtdrworkshop/backend/target/classes/wallet`
+1. Create the wallet directory under target/classes/
 
 ```
-<copy>cd ~/mtdrworkshop/backend/target/classes/wallet</copy>
+<copy>mkdir ~/mtdrworkshop/backend/target/classes/wallet; cd ~/mtdrworkshop/backend/target/classes/wallet</copy>
 ```
 
 2. Download the Wallet zip file using the Pre-Authenticated URL saved in a previous steps (copy the command an replace the placehodler before executing)
@@ -98,30 +98,16 @@ crl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/........./Wallet_MT
 The wallet directory should look like the following picture
   ![](images/WalletFiles.png " ")
 
-4. cd  ~/mtdrworkshop/backend/src/main/resources/wallet/
-```
-<copy>cd  ~/mtdrworkshop/backend/src/main/resources/wallet/</copy>
-```
-
-5. cp ~/mtdrworkshop/backend/target/classes/wallet/wallet.zip .
-```
-<copy>cp ~/mtdrworkshop/backend/target/classes/wallet/wallet.zip .</copy>
-```
-
-6. Unzip the wallet
+4. Copy the wallet directory onto src/main/resources/wallet/
 
 ```
-<copy>unzip wallet.zip</copy>
+<copy>cp -R  ~/mtdrworkshop/backend/target/classes/wallet ~/mtdrworkshop/backend/src/main/resources/wallet/</copy>
 ```
 
-7. Drop the zip files
+7. Drop the wallet zip file
  ```
  <copy>rm ~/mtdrworkshop/backend/target/classes/wallet/wallet.zip</copy>
   ```  
-
-  ```
-  <copy>rm wallet.zip</copy>
-   ```  
 
 ## **STEP 5**: Create the Database User and Table
 

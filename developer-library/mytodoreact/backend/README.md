@@ -62,13 +62,7 @@ The backend is implemented using the following Java classes (under ./backend/src
   ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
 
 
-## **STEP 2**: Run the image in a local container
-
-```
-<copy>docker run -p 8080:8080 eu-frankfurt-1.ocir.io/oracleonpremjava/jean.de.lavarene/global/todolistapp-helidon-se</copy>
-```
-
-## **STEP 3**: Deploy on Kubernetes and Check the Status
+## **STEP 2**: Deploy on Kubernetes and Check the Status
 
 1. Run the `deploy.sh` script
 

@@ -6,7 +6,7 @@
 SCRIPT_DIR=$(dirname $0)
 export CURRENTTIME=$( date '+%F_%H:%M:%S' )
 echo CURRENTTIME is $CURRENTTIME  ...this will be appended to generated deployment yaml
-cp todolistapp-helidon-se-deployment.yaml todolistapp-helidon-se-deployment-$CURRENTTIME.yaml
+cp backend/src/main/k8s/app.yaml todolistapp-helidon-se-deployment-$CURRENTTIME.yaml
 #may hit sed incompat issue with mac
 sed -i "s|%DOCKER_REGISTRY%|${DOCKER_REGISTRY}|g" todolistapp-helidon-se-deployment-$CURRENTTIME.yaml
 if [ -z "$1" ]; then
