@@ -58,5 +58,3 @@ You may now proceed to the next lab.
 * **Author:** Quintin Hill, Cloud Engineering
 * **Contributors:** Kumar Varun, Product Management Logging Analytics
 * **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Mar 2021
-
-#
