@@ -44,5 +44,3 @@ Transparent Application Continuity is enabled by default in the Oracle Autonomou
 - **Author** - Troy Anthony, Database Product Manager
 - **Last Updated By/Date** - Troy Anthony, DB Product Management, April 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly. 

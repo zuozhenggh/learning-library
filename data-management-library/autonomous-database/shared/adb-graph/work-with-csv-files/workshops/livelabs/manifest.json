@@ -23,6 +23,11 @@
         {
             "title": "Lab 3: Query and visualize the graph",
             "filename": "../../query-graph/query-graph.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

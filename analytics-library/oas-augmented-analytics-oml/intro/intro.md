@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-This workshop is designed to illustrate how organizations can blend the capabilities found in both of these offerings to uncover value across the entire data lifecycle in a way that holistically meets the needs of both **citizen & professional** data scientists. 
+This workshop is designed to illustrate how organizations can blend the capabilities found in both of these offerings to uncover value across the entire data lifecycle in a way that holistically meets the needs of both **citizen & professional** data scientists.
 
-*Estimated Workshop Time:* 1 hour
+*Estimated Workshop Time*: 1 hour
 
 ### About Product/Technology
 Oracle Analytics Server (OAS) is a comprehensive enterprise analytics solution that empowers you to ask any question – of any data – in any environment – on any device.   The extensive augmented analytic capabilities surfaced throughout the product truly differentiate it from other analytic offerings.  These augmented analytics are designed to enable and support the needs of “citizen” data scientists.
@@ -26,11 +26,9 @@ In this lab you will:
 * Learn and use Oracle Machine Learning (OML) algorithms of oracle converged database.
 
 ### Prerequisites
-
  -	An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
- -	Provide Access to Oracle Analytics Server 
- -	Download collateral required in order to complete lab exercises.
 
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
@@ -43,13 +41,10 @@ In this lab you will:
 * [Oracle Machine Learning for R Learning Path](https://apexapps.oracle.com/pls/apex/f?p=44785:24:9589340370727:PRODUCT:NO::P24_CONTENT_ID,P24_PREV_PAGE,P24_PROD_SECTION_GRP_ID:8984,141,)
 * [Partner Built Tutorial On YouTube](https://www.youtube.com/playlist?list=PL99-DcFspRUq8VbbgXe2lQ559VDr7BSCr)
 
-
-
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - John Miller, Jyotsana Rawat
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, NA Technology, February 2021
-
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

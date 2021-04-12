@@ -22,7 +22,7 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Initialize IAM 11g Environment",
+      "title": "Lab 4: Initialize Environment",
       "description": "Lab to Initialize IAM 11g Baseline Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },

@@ -42,7 +42,3 @@ Oracle Database Product Management Videos on Multitenant
 - **Last Updated By/Date** - Kay Malcolm, March 2020
 - **Workshop Expiration Date** - March 31, 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

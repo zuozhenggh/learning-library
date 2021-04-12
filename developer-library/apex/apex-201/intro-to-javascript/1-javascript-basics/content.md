@@ -160,5 +160,3 @@ This completes Lab 1. At this point, you should be getting comfortable working w
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Jeffrey Malcolm Jr, LiveLabs QA, June 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

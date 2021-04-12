@@ -74,5 +74,3 @@ The above copyright notice and this permission notice shall be included in all c
 - **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

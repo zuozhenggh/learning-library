@@ -181,5 +181,3 @@ You may now proceed to the next lab.
 * **Author** - Oracle NATD Solution Engineering
 * **Last Updated By/Date** - Anoosha Pilli, April 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

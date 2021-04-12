@@ -66,5 +66,3 @@ You now know how to enhance a faceted search page and have been introduced to Pa
  - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

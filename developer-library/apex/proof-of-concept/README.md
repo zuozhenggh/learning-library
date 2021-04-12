@@ -54,5 +54,3 @@ Click the navigation menu icon, in the upper-left corner of the header, to see a
 - Community   https://apex.oracle.com/community
 - External Site + Slack   http://apex.world
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

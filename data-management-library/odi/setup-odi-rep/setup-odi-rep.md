@@ -228,5 +228,3 @@ Congratulations!  Now you have the environment to run the ODI labs.
 - **Author** - Jayant Mahto, July 2020
 - **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

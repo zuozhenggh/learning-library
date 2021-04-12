@@ -6,6 +6,10 @@ In Lab 2, you built a model and in Lab 3, you imported that model into a new dat
 
 Estimated lab time: 20 - 30 minutes
 
+Watch this short video to preview how to use prediction in an application.
+
+[](youtube:e0TILs7IDgU)
+
 ### Before You Begin
 
 We will start this lab with some more setup, loading both data and an APEX application, the Alpha Office Customer Service application. Once those are ready we will show you three ways that you could deploy this model.
@@ -361,6 +365,3 @@ This concludes this lab and this workshop.
 - **Contributors** - Anoosha Pilli, Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, March 2021
 
-## Need Help?
-
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

@@ -823,5 +823,3 @@ In this lab, you had an opportunity to examine the Automatic Indexing capabiliti
 - **Contributors** - Anoosha Pilli, Product Manager, DB Product Management | Dylan McLeod, LiveLabs QA Intern
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

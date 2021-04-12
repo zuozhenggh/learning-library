@@ -147,5 +147,3 @@ In this workshop, you will:
 * **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date** - Anoosha Pilli, February 2021
 
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
