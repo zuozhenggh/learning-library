@@ -27,7 +27,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 1. To work with application code, you need to make a clone from the GitHub repository using the following command. The workshop assumes this is done from your root directory.
 
     ```
-    <copy>cd ~ ; git clone https://github.com/oracle/microservices-datadriven.git</copy>
+    <copy>cd ~ ; git clone https://github.com/paulparkinson/microservices-datadriven.git --branch 1.1</copy>
     ```
 
   You should now see `microservices-datadriven` in your root directory
