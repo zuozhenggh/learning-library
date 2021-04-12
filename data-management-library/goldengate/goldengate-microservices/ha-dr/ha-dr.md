@@ -4,7 +4,7 @@
 This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availability / Disaster Recovery using Active-Active Technology.
 Since we have already done multiple labs, this one will take what we used so far to script this using DB container reset scripts, SQL scripts to setup AutoCDR in the database, OGGCA silent deployment scripts and GG REST API scripts to do a rapid deployment.
 
-*Estimated Lab Time*:  60 minutes
+*Estimated Lab Time*:  45 minutes
 
 ### Lab Architecture
   ![](./images/ggmicroservicesarchitecture.png " ")
