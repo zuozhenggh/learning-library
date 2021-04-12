@@ -119,6 +119,8 @@ Now that you have completed these steps you can go to the Log Explorer and view 
 
 This will now complete the Creating Entities Log Groups and associate Log Sources lab for this workshop.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 * **Author** - Quintin Hill, Cloud Engineering, Packaged Applications
 * **Contributors** -  Kumar Varun, Logging Analytics Product Management

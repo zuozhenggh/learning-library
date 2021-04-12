@@ -176,6 +176,8 @@ allow service loganalytics to {VNIC_READ} in tenancy
 
 This will now complete the Onboarding of Logging Analytics Lab for this workshop.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 * **Author** - Quintin Hill, Cloud Engineering, Packaged Applications
 * **Contributors** -  Kumar Varun, Logging Analytics Product Management

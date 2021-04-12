@@ -236,6 +236,8 @@ Note: You can also follow the recommended procedure of deleting your key file fr
 
 This will now complete the Ingest Logs to Logging Analytics Lab for this workshop.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 * **Author** - Quintin Hill, Cloud Engineering, Packaged Applications
 * **Contributors** -  Kumar Varun, Logging Analytics Product Management
