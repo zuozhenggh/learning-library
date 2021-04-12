@@ -4,11 +4,11 @@
 
 This lab will onboard OCI Logging Analytics Service.
 
-**Estimated Lab Time: 30 minutes**
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-**In this lab, you will:**
+In this lab, you will:
 * Onboard Logging Analytics (including policies, users, groups, and dynamic groups for using Logging Analytics Service)
 * At the end of this lab you will have Logging Analytics onboarded in your OCI tenancy
 
