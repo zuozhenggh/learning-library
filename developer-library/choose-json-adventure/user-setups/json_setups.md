@@ -31,41 +31,21 @@ Estimated Lab Time: 10 minutes
 
     Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
 
-
-    Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look similar to the following image:
+    Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. 
+    
+    In the right column of options, find the **Quota on tablespace DATA** dropdown select list. Choose *Unlimited** for this lab.
+    
+    Your panel should look similar to the following image:
 
     ![Create User Slide Out Panel](./images/setups-3.png)
 
-4. Once you are ready, click the Create User button on the bottom of the panel to create the database user.
+4. Next, click the **Granted Roles** tab. Use the **Granted** column and select the following checkboxes; PDB_DBA and SODA_APP.
 
-5. We next need to give this new user some space to create objects and data. For this, we need to go back to the SQL worksheet and run a simple statement. To get back to the SQL Worksheet, again click the Database Actions menu in the upper left and select SQL in the Development List.
+    ![Granted Roles Slide Out Panel](./images/setups-4.png)
 
-    ![Database Actions Menu, Development then SQL](./images/setups-4.png)
+5. Once you are ready, click the **Create User** button on the bottom of the panel to create the database user.
 
-6. On the SQL Canvas, copy and paste the following statement:
-    ````
-    <copy>alter user gary quota unlimited on data;</copy>
-    ````
-    Once copied on the canvas, click the run button on the worksheet toolbar.
-
-    ![Click RUN on the SQL Worksheet Toolbar](./images/setups-5.png)
-
-7. On the bottom of the worksheet, in the Script Output, you should see that the user Gary has been altered and the quota granted.
-
-    ![SQL Output indicates User Altered](./images/setups-6.png)
-
-8. We now need to grant this user the ability to use the SODA APIs for later in this LiveLab. On the SQL Canvas, copy and paste the following statement:
-    ````
-    <copy>grant SODA_APP to gary;</copy>
-    ````
-    Once copied on the canvas, click the run button on the worksheet toolbar.
-
-    ![Click RUN on the SQL Worksheet Toolbar](./images/setups-7.png)
-
-7. On the bottom of the worksheet, in the Script Output, you should see that the user Gary has been altered and the role granted.
-
-    ![SQL Output indicates User Altered](./images/setups-8.png)
-
+    ![Create User Button](./images/setups-5.png)
 
 ## Conclusion
 
