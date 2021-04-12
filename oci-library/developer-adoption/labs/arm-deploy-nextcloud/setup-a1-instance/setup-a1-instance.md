@@ -43,12 +43,6 @@ Estimated time: 20 minutes
 
   ![AppDev Compartment](images/compartment-create.png " ")
 
-1. Click the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
-
-  ![CloudShell](images/cloudshell-1.png " ")
-
-  ![CloudShell](images/cloudshell-2.png " ")
-
 Now you are ready to move on to Step 3.
 
 ## **STEP 3:** Create OCI Arm A1 compute instance
@@ -65,6 +59,10 @@ Now you are ready to move on to Step 3.
 
    ![ Create Instance](images/03_create_instance02.png " ")
 
+1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. Name the instance  **Nextcloud** and click the **Change Shape** button to see the available compute shapes.
+
+   ![ Create Instance](images/03_create_instance02.png " ")
+   
 1. Choose the Ampere Arm based processor in the choice for shape series. Choose the `VM.Standard.A1.Flex` shape from the list of shapes with Ampere Arm based processors.
    ![ Choose Shape](images/04_create_instance03.png " ")
    OCI Arm A1 shapes are flexible and you can freely modify the number of cores and the amount of memory. Choose 1 core and 6 GB of memory for the VM.
