@@ -87,7 +87,7 @@ Create Logging Analytics Group Logging Analytics Super Admins
 
   e. Add the following rule:
 
-  All {resource.type = 'managementagent', resource.compartment.id = '<Compartment OCID of ebshol_compartment>'}
+  All {resource.type = 'managementagent', resource.compartment.id = 'Compartment OCID of ebshol_compartment'}
 
   Note: Fill in the Compartment OCID with the OCID of the ebshol compartment.
 
