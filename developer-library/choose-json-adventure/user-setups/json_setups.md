@@ -2,7 +2,7 @@
 
 ## Introduction
 
-create user
+In this part of the lab, we will be using the Database Actions set of UIs to create a user, granted the necessary roles and quota to perform the lab, then log back into Database Actions as this user.
 
 Estimated Lab Time: 10 minutes
 
@@ -46,6 +46,15 @@ Estimated Lab Time: 10 minutes
 5. Once you are ready, click the **Create User** button on the bottom of the panel to create the database user.
 
     ![Create User Button](./images/setups-5.png)
+
+6. Now that the user is created, we need to log back into Database Actions as this user. On the Database Users admin page, find the Gary user tile and left click the **Open in New Tab** icon link ![New Tab Icon](./images/newTab.png) in the lower right.
+
+    ![Open in New Tab Link on User Card](./images/setups-6.png)
+
+7. Login to Database Actions using the user and password we just created in the previous steps in the new browser tab. Provide the Username, Password then left click the blue Sign In button.
+
+    ![Log into Database Actions](./images/setups-7.png)
+
 
 ## Conclusion
 
