@@ -11,8 +11,8 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Running Java Web Applications on Oracle Arm A1",
-      "description": "This workshop guides the user through building a nd deploying a Java web application running on Apache Tomcat 9.0 and MariaDB on OCI Arm A1 Compute platform.",
+      "title": "Running Java web applications on Oracle Arm A1",
+      "description": "This workshop guides the user through building and deploying a Java web application running on OCI Arm A1 Compute platform. The sample application is deployed on Apache Tomcat 9.0 and uses MariaDB as a database.",
       "filename": "../../tutorial/arm-tomcat-mysql.md"
     }
   ]

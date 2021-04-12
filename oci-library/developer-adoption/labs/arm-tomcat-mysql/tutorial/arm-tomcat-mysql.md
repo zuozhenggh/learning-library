@@ -85,7 +85,7 @@ The application uses the Tomcat servlet container and the MySQL database. Both T
     -e MYSQL_USER=todo-user \
     -e MYSQL_PASSWORD=todo-pass \
     --name todo-mysql \
-    -v "$(pwd)"/src/main/sql:/docker-entrypoint-initdb.d:z \
+    -v "${pwd}"/src/main/sql:/docker-entrypoint-initdb.d:z \
     mariadb:latest
     ```
 
