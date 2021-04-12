@@ -55,7 +55,6 @@ Estimated Lab Time: 10 minutes
 
     ![Log into Database Actions](./images/setups-7.png)
 
-
 ## Conclusion
 
 In this section, we created a new database user and granted them the needed roles and quota to perform this LiveLab.
@@ -63,5 +62,5 @@ In this section, we created a new database user and granted them the needed role
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - February 2021
-- **Workshop Expiry Date** - February 2022
+- **Last Updated By/Date** - April 2021
+- **Workshop Expiry Date** - April 2022
