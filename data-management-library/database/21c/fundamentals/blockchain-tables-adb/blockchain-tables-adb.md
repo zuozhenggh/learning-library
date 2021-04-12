@@ -36,17 +36,31 @@ Please proceed to next step if you are already connected to Autonomous Database 
 
 2. To navigate to your Autonomous Database, click on the hamburger menu on the top left corner of the Oracle Cloud console and select the Autonomous Database flavor (ATP, ADW or AJD) you provisioned.
 
+	![](./images/step1-2.png " ")
+
 3. If you can't find your ADB instance, ensure you are in the correct region, compartment and have chosen the right flavor of your ADB instance.
+
+	![](./images/step1-3.png " ")
 
 4. Click on the Display Name of your ADB instance to navigate to your ADB instance details page.
 
+	![](./images/step1-4.png " ")
+
 5. Click on the **Tools** tab, select **Database Actions**, a new tab will open up.
+
+	![](./images/step1-5.png " ")
 
 6. Provide the **Username - ADMIN** and click **Next**.
 
+	![](./images/step1-6.png " ")
+
 7. Now provide the **Password - WElcome123##** for the ADMIN user you created when you provisioned your ADB instance and click **Sign in** to sign in to Database Actions.
 
+	![](./images/step1-7.png " ")
+
 8. Click on **SQL** under the Development section to sign in to SQL Developer Web as an ADMIN user.
+
+	![](./images/step1-8.png " ")
 
 ## **STEP 2:** Create a blockchain table and insert rows
 
@@ -63,7 +77,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/table-created.png " ")
+	![](./images/step2-1.png " ")
 
 2. Describe the `bank_ledger` blockchain table to view the columns. Notice that the description displays only the visible columns.
 
@@ -73,7 +87,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/describe.png " ")
+	![](./images/step2-2.png " ")
 
 3. Insert records into the `bank_ledger` blockchain table.
 
@@ -91,7 +105,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/insert.png " ")
+	![](./images/step2-3.png " ")
 
 4. Query the `bank_ledger` blockchain table to show the records.
 
@@ -101,7 +115,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/select-all.png " ")
+	![](./images/step2-4.png " ")
 
 5. Run the command to view all the blockchain tables.
 
@@ -110,6 +124,8 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	select * from user_blockchain_tables;
 	</copy>
 	```
+
+	![](./images/step2-5.png " ")
 
 6. Verify the attributes set for the blockchain table in the appropriate data dictionary view.
 
@@ -120,6 +136,8 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
     ```
 
+	![](./images/step2-6.png " ")
+
 7. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
 
 	```
@@ -129,6 +147,8 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	ORDER BY internal_column_id;
 	</copy>
 	```
+
+	![](./images/step2-7.png " ")
 
 8. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
 
@@ -142,6 +162,8 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
+	![](./images/step2-8.png " ")
+
 ## **STEP 3:** Manage blockchain tables and rows in a blockchain table
 
 When you try to manage the rows using update, delete, truncate you get the error `operation not allowed on the blockchain table` if the rows are not outside the retention period.
@@ -154,7 +176,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/update.png " ")
+	![](./images/step3-1.png " ")
 
 2. Delete a record in the `bank_ledger` blockchain table.
 
@@ -164,7 +186,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/delete.png " ")
+	![](./images/step3-2.png " ")
 
 3. Truncating the table `bank_ledger`.
 
@@ -174,7 +196,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/truncate.png " ")
+	![](./images/step3-3.png " ")
 
 Similar to managing rows within the retention period, managing the blockchain table using alter, drop will throw an error.
 
@@ -186,7 +208,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/drop.png " ")
+	![](./images/step3-4.png " ")
 
 5. Alter the table `bank_ledger` to not delete the rows until 20 days after insert.
 
@@ -196,7 +218,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-1.png " ")
+	![](./images/step3-5.png " ")
 
 6. Create another table `bank_ledger_2`.
 
@@ -209,7 +231,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/create-new-table.png " ")
+	![](./images/step3-6.png " ")
 
 7. Alter the table `bank_ledger_2` by specifying that the rows cannot be deleted until 20 days after they were inserted.
 
@@ -219,7 +241,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-new-table.png " ")
+	![](./images/step3-7.png " ")
 
 8. Run the command to view all the blockchain tables.
 
@@ -228,6 +250,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	select * from user_blockchain_tables;
 	</copy>
 	```
+
+	![](./images/step3-8.png " ")
 
 ## **STEP 4:** Verify rows without signature
 
@@ -250,7 +274,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/verify.png " ")
+	![](./images/step4-1.png " ")
 
 2. DBA view of blockchain tables.
 
@@ -259,6 +283,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	select * from dba_blockchain_tables;
 	</copy>
 	```
+
+	![](./images/step4-2.png " ")
 
 ## **STEP 5:** Create a certificate directory and add your certificate
 
@@ -270,9 +296,11 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/cert-dir.png " ")
+	![](./images/step5-1.png " ")
 
 2. Connect to Oracle cloud shell to generate your x509 keypair.
+
+	![](./images/step5-2.png " ")
 
 3. Create a folder `demo` and navigate into the folder.
 
@@ -284,6 +312,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
+	![](./images/step5-3.png " ")
+
 4. Run the command to generate your x509 key pair - *user01.key*, *user01.pem*.
 
 	Press enter after providing each detail - Country Name, State, Locality Name, Organization name, Common name, Email address.
@@ -294,13 +324,16 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
+	![](./images/step5-4a.png " ")
+
 	Notice that your *user01.key*, *user01.pem* key pair is created.
 
 	```
 	<copy>ls</copy>
 	```
 
-	![](./images/pem.png " ")
+	![](./images/step5-4b.png " ")
+	
 
 5. Copy the below command and replace the `<namespace>` and `<bucketname>` with the namespace and bucket name you copied earlier in lab 2 step 1 to upload the `user01.pem` key to object storage.
 
@@ -309,6 +342,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	oci os object put -ns <namespace> -bn <bucketname> --file user01.pem
 	</copy>
 	```
+
+	![](./images/step5-5.png " ")
 
 6. Navigate to your SQL Developer Web, copy the below procedure and replace the `<namespace>`, `<bucketname>` with the namespace and bucket name to download the `user01.pem` key from object storage to ATP using the `atp1` credential created earlier in lab 2 step 7.
 
