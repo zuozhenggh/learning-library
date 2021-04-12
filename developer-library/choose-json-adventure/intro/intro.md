@@ -1,34 +1,49 @@
 # Introduction
 
-## About this Workshop
+## About JSON and the Oracle Database
 
-This lab will walk you through creating a REST service using Oracle REST Data Services (ORDS) on an Autonomous Database. You will start by creating an application user whom you will use throughout all the lab steps. Once created, we will load data and create a table in our database. Using the same UI, we will REST enable that table so that endpoints created for all major operations (create, update, query, delete). Lastly, we will use OAuth to secure the REST service endpoints. This lab will be done entirely from the Database Actions UI that is provided with all Oracle REST Data Services (ORDS) installs and with the Autonomous Database in Oracle Cloud Infrastructure.
+Did you know that the Oracle Database fully supports schema-less application development using the JSON data model? In addition, in the same database, that developers can use SQL over the same data for analytics or reporting?
 
-Estimated Workshop Time: 30-45 minutes
-
-### About Oracle REST Data Services
-
-Oracle REST Data Services (ORDS) bridges HTTPS and your Oracle Database. A mid-tier Java application, ORDS provides a Database Management REST API, a web based SQL, JSON and REST workshops, a PL/SQL Gateway, SODA for REST, and the ability to publish RESTful Web Services for interacting with the data and stored procedures in your Oracle Database.
-
-The Java EE implementation offers increased functionality including a command line based configuration, enhanced security, file caching, and RESTful web services. Oracle REST Data Services also provides increased flexibility by supporting deployments using Oracle WebLogic Server, Apache Tomcat, and a standalone mode. Oracle REST Data Services further simplifies the deployment process because there is no Oracle home required, as connectivity is provided using an embedded JDBC driver.
-
-Watch the video below for a comprehensive overview of REST and how ORDS provides what you need to deliver RESTful Services for your Oracle Database.
-
-[](youtube:rvxTbTuUm5k)
+This workshop will provide a walkthrough on how the Oracle Database can not only store, index and have transactional consistency (ACID) with JSON documents, but how you can leverage all the power of the database for advanced security, application development and a whole suite of Simple Oracle Document Access (SODA) APIs. 
 
 ### Objectives
 
-- Connect to your Autonomous Database using SQL Developer Web
-- Create a user for Application development
-- Load data into the database
-- Auto-REST enable a table
-- Securing the REST endpoint
+-   Load JSON into the Oracle Database
+-   Work with JSON in the Oracle Database with relational tables
+-   Work with JSON in the Oracle Database as JSON documents
+-   Provide developer endpoints for relation or schemaless application development
+
+### Required Artifacts
+
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 ### Prerequisites
+This lab assumes you have completed the following labs:
+* Lab: [Login to Oracle Cloud]()
+* Lab: [Provision an Autonomous Database]() or have access to a 19c or greater Oracle Database
 
-- This workshop assumes you have  Oracle cloud account and signed in to your cloud account.
+
+# Choose your Own JSON Adventure: Relational or Document Store
+
+In this lab you will work with JSON in the Oracle Database with the intent of exposing the data for application development.
+
+## **Step 1:** Connect to your Database using SQL Developer Web
+
+## **Step 2:** Create a user for working with JSON in the Oracle Database
+
+## **Step 3:** Load JSON into the database and work with relational tables
+
+## **Step 4:** Load JSON into the database and work with JSON documents and collections
+
+## **Step 5:** Expose the JSON data for application development via a REST endpoint
+
+## **Step 6:** Extra Credit: Deploy a sample application and consume the REST endpoint
+
+## Conclusion
+ In this lab, you had an opportunity to work with JSON in the Oracle Database
 
 ## Acknowledgements
 
- - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Product Manager
- - **Last Updated By/Date** - February 2021
+- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
+- **Last Updated By/Date** - April 2021
+- **Workshop Expiry Date** - April 2022
