@@ -43,11 +43,9 @@ In this lab, you will:
     ```
     ```
     SQL> <copy>CREATE TABLESPACE users DATAFILE '/u02/app/oracle/oradata/CDB21/users01.dbf' SIZE 50M;</copy>
-
     Tablespace created.
 
     SQL> <copy>ALTER TABLESPACE users READ ONLY;</copy>
-
     Tablespace altered.
 
     SQL> <copy>EXIT</copy>
@@ -92,17 +90,13 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus sys@PDB21 AS SYSDBA</copy>                   
-
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Enter password: <b><i>WElcome123##</i></b>
-
     Connected to:
     ```
     ```
 
     SQL> <copy>ALTER TABLESPACE users READ WRITE;</copy>
-
     Tablespace altered.
 
     SQL> <copy>EXIT</copy>

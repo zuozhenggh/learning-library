@@ -1,6 +1,6 @@
 {
     "workshoptitle":"Autonomous Database Quickstart Workshop",
-    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+    "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
         "title": "Introduction",
@@ -18,8 +18,8 @@
           "filename": "./../../adb-provision/adb-provision.md"
       },
       {
-          "title": "Lab 2: Explore SQL Developer Web",
-          "description": "Explore SQL Developer Web",
+          "title": "Lab 2: Explore SQL Worksheet",
+          "description": "Explore SQL Worksheet",
           "filename": "./../../adb-sqldevweb/adb-sqldevweb.md"
       },
       {

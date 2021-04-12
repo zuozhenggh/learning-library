@@ -17,7 +17,7 @@ In this lab you will:
 1. Login to the ATP database for *`dev`*: 
 
   - Go to **Oracle Databases -> Autonomous Transaction Processing** in your compartment
-  - Click the database for dev (*APEX_DEV* if you used the default names)
+  - Click the database for dev (*APEX\_DEV* if you used the default names)
 
     ![](./images/db-list.png)
 
@@ -33,7 +33,7 @@ In this lab you will:
 
     ![](./images/ws_signin.png =50%x*)
 
-  - Enter the credentials for the Workspace Admin user (*WS_ADMIN* if you used the default names) found in the *`dev.env`* file (WORKSPACE_ADMIN and WORKSPACE_ADMIN_PWD)
+  - Enter the credentials for the Workspace Admin user (*WS\_ADMIN* if you used the default names) found in the *`dev.env`* file (WORKSPACE\_ADMIN and WORKSPACE\_ADMIN_PWD)
 
     If you used the defaults, the values are as follow:
     - Worspace: `WS`
@@ -52,13 +52,13 @@ In this lab you will:
 
 4. Click **Install**
 
-5. When installed, make sure to click **Manage** and then UNLOCK the app before the next steps:
+5. When installed, make sure to click **Manage** and then **UNLOCK** the app before the next steps:
 
   ![](./images/unlock.png)
 
 6. Run the application:
 
-  - Sign in with the WS_ADMIN credentials
+  - Sign in with the WS\_ADMIN credentials
 
 7. On first run, you're asked to configure the application. Click Finish configuration.
 

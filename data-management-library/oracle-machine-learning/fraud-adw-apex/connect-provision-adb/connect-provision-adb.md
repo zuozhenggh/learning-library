@@ -165,8 +165,7 @@ First, we are going to create an ADW Instance.
 
     ![](images/datatools-sql-dev-tables-loaded.png)
 
-
-Please proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

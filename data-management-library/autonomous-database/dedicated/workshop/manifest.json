@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Oracle Autonomous Database Dedicated Workshop",
-    "help": "LIVELABS-HELP-DB_US@ORACLE.COM",
+    "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction to ADB Dedicated",
@@ -68,7 +68,7 @@
             "filename": "./../adb-using-cli-commands/adb-using-cli-commands.md"
         },
         {
-            "title": "Lab 14: SQL Developer Web Console",
+            "title": "Lab 14: Database Actions Console",
             "description": "Using sql*developer web console",
             "filename": "./../adb-sql-developer-web/adb-sql-developer-web.md"
         },

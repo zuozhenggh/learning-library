@@ -1,15 +1,17 @@
 {
-    "workshoptitle": "Get Started with Oracle Database",    
+    "workshoptitle": "Get Started with Oracle Database",
+    "help": "livelabs-help-db_us@oracle.com",    
+
     "tutorials": [
         {
-            "title": "Prerequisites",
-            "description": "Get a Free Trial",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "./intro.md"
         },
         {
-          "title": "Introduction",
-          "description": "Introduction",
-          "filename": "./intro.md"
+            "title": "Getting Started",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Provision an Autonomous Database",
@@ -35,6 +37,11 @@
             "title": "Lab 5: Create a Schema",
             "description": "Create a Schema",
             "filename": "./../db-create-schema/db-create-schema.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
