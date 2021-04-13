@@ -26,11 +26,11 @@ In the previous lab you created an ADB instance.  In this lab you will connect t
 
       ![](./images/step1-3.png " ")
 
-4. Name your bucket **atp1** and click **Create**.
+4. Name your bucket **adb1** and click **Create**.
 
       ![](./images/step1-4.png " ")
 
-5. Once the bucket is created, click on the bucket and make note of the bucket name and namespace.
+5. Once the bucket is created, click on the bucket and make note of the `bucket name` and `namespace`.
 
       ![](./images/step1-5.png " ")
 
@@ -228,7 +228,7 @@ To access data in the Object Store you have to enable your database user to auth
 
 1. Copy and paste this the code snippet in to SQL Developer worksheet. Specify the credentials for your Oracle Cloud Infrastructure Object Storage service by replacing the `<username>` and `<token>` with the following username and password:
 
-	- Credential name: Description of the auth token. In this example, the auth token is created with the description - `atp1` from step 1
+	- Credential name: Description of the auth token. In this example, the auth token is created with the description - `adb1` from step 1
 	- Username: The username will be the OCI Username you noted in step 3
 	- Password: The password will be the OCI Object Store Auth Token you generated in step 3.
 
@@ -236,7 +236,7 @@ To access data in the Object Store you have to enable your database user to auth
 	<copy>
 	BEGIN
   		DBMS_CLOUD.CREATE_CREDENTIAL(
-    		credential_name => 'atp1',
+    		credential_name => 'adb1',
     		username => '<username>',
     		password => '<token>'
   		);

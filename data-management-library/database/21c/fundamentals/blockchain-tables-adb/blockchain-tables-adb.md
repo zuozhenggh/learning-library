@@ -127,18 +127,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 
 	![](./images/step2-5.png " ")
 
-6. Verify the attributes set for the blockchain table in the appropriate data dictionary view.
-
-	```
-	<copy>
-	SELECT table_name, row_retention, row_retention_locked, table_inactivity_retention, hash_algorithm 
-	FROM user_blockchain_tables;
-	</copy>
-    ```
-
-	![](./images/step2-6.png " ")
-
-7. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
+6. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
 
 	```
 	<copy>
@@ -150,7 +139,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 
 	![](./images/step2-7.png " ")
 
-8. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
+7. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
 
 	```
 	<copy>
@@ -288,7 +277,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 ## **STEP 5:** Create a certificate directory and add your certificate
 
-1.  create a `CERT_DIR` certificate directory.
+1.  Create a `CERT_DIR` certificate directory.
 
 	```
 	<copy>
@@ -333,7 +322,6 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	```
 
 	![](./images/step5-4b.png " ")
-	
 
 5. Copy the below command and replace the `<namespace>` and `<bucketname>` with the namespace and bucket name you copied earlier in lab 2 step 1 to upload the `user01.pem` key to object storage.
 
@@ -345,21 +333,23 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/step5-5.png " ")
 
-6. Navigate to your SQL Developer Web, copy the below procedure and replace the `<namespace>`, `<bucketname>` with the namespace and bucket name to download the `user01.pem` key from object storage to ATP using the `atp1` credential created earlier in lab 2 step 7.
+6. Copy the region.
+
+7. Navigate to your SQL Developer Web, copy the below procedure and replace the `<region>`, `<namespace>`, `<bucketname>` with the namespace and bucket name to download the `user01.pem` key from object storage to ATP using the `adb1` credential created earlier in lab 2 step 7.
 
 	```
 	<copy>
 	BEGIN
 	DBMS_CLOUD.GET_OBJECT(
-		credential_name => 'atp1',
-		object_uri => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/<namespace>/b/<bucketname>/o/user01.pem',
+		credential_name => 'adb1',
+		object_uri => 'https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucketname>/o/user01.pem',
 		directory_name => 'CERT_DIR');
 	END;
 	/
 	</copy>
 	```
 
-7. List files in the `CERT_DIR` certificate directory and notice the `user01.pem` key is uploaded to ATP.
+8. List files in the `CERT_DIR` certificate directory and notice the `user01.pem` key is uploaded to ATP.
 
 	```
 	<copy>
@@ -367,7 +357,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-8. Before you register your key to sign, you need to create a certificate. `Make sure to copy the **Certificate GUID** value as it is not shown again.`
+9. Before you register your key to sign, you need to create a certificate. `Make sure to copy the **Certificate GUID** value as it is not shown again.`
 
 	```
 	<copy>
@@ -390,7 +380,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/add-cert.png " ")
 
-9. To verify the certificate is created, view **CERTIFICATE_GUID** value in raw format by selecting all the columns from `USER_CERTIFICATES` table ordered by user\_name.
+10. To verify the certificate is created, view **CERTIFICATE_GUID** value in raw format by selecting all the columns from `USER_CERTIFICATES` table ordered by user\_name.
 	```
 	<copy>
 	SELECT * FROM USER_CERTIFICATES ORDER BY user_name;
@@ -451,14 +441,14 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/row-byte-created.png " ")
 
-4. Put the `row_data` file in object storage. Replace the `<namespace>`, `<bucketname>` with the namespace and bucket name to upload the `row_data` to object storage from ATP using the `atp1` credential created.
+4. Put the `row_data` file in object storage. Replace the `<region>`, `<namespace>`, `<bucketname>` with the namespace and bucket name to upload the `row_data` to object storage from ATP using the `adb1` credential created.
 
 	```
 	<copy>
 	BEGIN
 	DBMS_CLOUD.PUT_OBJECT (
-		credential_name      => 'atp1',		
-		object_uri           => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/<namespace>/b/<bucketname>/o/',		
+		credential_name      => 'adb1',		
+		object_uri           => 'https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucketname>/o/',		
 		directory_name       => 'CERT_DIR',
 		file_name            => 'row_data');	
 	END;
@@ -508,14 +498,14 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-8. Navigate back to the SQL Developer web and replace the `<namespace>`, `<bucketname>` with the namespace and your bucket name to download the `row1.sha256` from object storage to ATP using the `atp1` credential created.
+8. Navigate back to the SQL Developer web and replace the `<region>`, `<namespace>`, `<bucketname>` with the namespace and your bucket name to download the `row1.sha256` from object storage to ATP using the `adb1` credential created.
 
 	```
 	<copy>
 	BEGIN
 	DBMS_CLOUD.GET_OBJECT(
-		credential_name => 'atp1',
-		object_uri => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/<namespace>/b/<bucketname>/o/row1.sha256',
+		credential_name => 'adb1',
+		object_uri => 'https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucketname>/o/row1.sha256',
 		directory_name => 'CERT_DIR');
 	END;
 	/
@@ -530,7 +520,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-10. Now let's sign the row. Replace the `<B6622BA923717399E0530400000AA85A>` value with your **CERTIFICATE\_GUID** value you saved earlier. Update `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` value `1` with the values for which you generated the row bytes and run the command.
+10. Now let's sign the row. Replace `<B6622BA923717399E0530400000AA85A>` value with your **CERTIFICATE\_GUID** value you saved earlier. Update `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` value `1` with the values for which you generated the row bytes and run the command.
 
 	```
 	<copy>
@@ -538,7 +528,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
     	file BFILE;
     	amount NUMBER := 32767;
         	signature RAW(32767);
-        	cert_guid RAW (16) := HEXTORAW('B759871FE24EE279E0533D11000AE5DC');
+        	cert_guid RAW (16) := HEXTORAW('<B759871FE24EE279E0533D11000AE5DC>');
     	inst_id binary_integer;
     	chain_id binary_integer;
     	sequence_no binary_integer;
