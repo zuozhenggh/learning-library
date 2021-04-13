@@ -10,7 +10,7 @@ During installation, you can configure the `root` user or a sudoer user to run t
 You can perform most of the steps in this lab using Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. To run the graphical Oracle Database 19c installer, you need to use a terminal on your personal computer, and not Cloud Shell. To display the graphical interface of the installer, X11 forwarding using Secure Shell (SSH) or virtual network computing (VNC) on your compute instance is required. This lab shows you how to set up X11 forwarding.
 
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 45 minutes
 
 ### Objectives
 
