@@ -8,7 +8,7 @@ Blockchain tables enable you to implement a centralized ledger model where all p
 
 A centralized ledger model reduces administrative overheads of setting a up a decentralized ledger network, leads to a relatively lower latency compared to decentralized ledgers, enhances developer productivity, reduces the time to market, and leads to significant savings for the organization. Database users can continue to use the same tools and practices that they would use for other database application development.
 
-This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table and manage the blockchain table.
+This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table and manage the blockchain table. Then you will explore how to sign a row and verify the blockchain table by creating a certificates directory and adding your certificate to it, generating the row bytes for the row you want to sign and signing the row and then verifying the blockchain table.
 
 Estimated Lab Time: 30 minutes
 
@@ -19,7 +19,7 @@ In this lab, you will:
 * Create the Blockchain table and insert rows
 * Manage blockchain tables and rows in a blockchain table
 * Create a certificate directory and add your certificate
-* Sign a row in the blockchain table
+* Generate row bytes for a row and sign the row in blockchain table
 * Check the validity of rows in the blockchain table with and without signature
 
 ### Prerequisites
@@ -276,6 +276,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	![](./images/step4-2.png " ")
 
 ## **STEP 5:** Create a certificate directory and add your certificate
+
+In this lab, we will mock the key management service (a feature of Oracle that stores the keys securely) by generating the keys in Oracle Cloud Shell and storing them on Autonomous Database instance and Object storage as storing keys securely is not the main focus of this lab.
 
 1.  Create a `CERT_DIR` certificate directory.
 
