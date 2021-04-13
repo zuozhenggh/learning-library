@@ -46,8 +46,10 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ![](./images/select-atp.png " ")
 
 4.  Click on the **Display Name** to go to your ADB main page.
+
+      ![](./images/step2-4.png " ")
    
-5.  Locate the **OCID** (Oracle Cloud ID) you will need that in a few minutes. 
+5.  Locate and copy the **OCID** (Oracle Cloud ID) you will need that in a few minutes. 
 
       ![](./images/locate-ocid.png " ")
 
@@ -96,8 +98,8 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
       ![](./images/token.png " ")
 
-6.  Identify the line in the output that starts with "token".
-7.  Copy the value for the token somewhere safe, you will need it for the next step.
+6.  Identify the line in the output that starts with **"token"**.
+7.  Copy the value for the **token** somewhere safe, you will need it in the following steps.
 
 ## **STEP 4:**  Load ADB Instance with Application Schemas
 
@@ -228,9 +230,9 @@ To access data in the Object Store you have to enable your database user to auth
 
 1. Copy and paste this the code snippet in to SQL Developer worksheet. Specify the credentials for your Oracle Cloud Infrastructure Object Storage service by replacing the `<username>` and `<token>` with the following username and password:
 
-	- Credential name: Description of the auth token. In this example, the auth token is created with the description - `adb1` from step 1
-	- Username: The username will be the OCI Username you noted in step 3
-	- Password: The password will be the OCI Object Store Auth Token you generated in step 3.
+	- Credential name: Description of the auth token. In this example, the auth token is created with the description - `adb1` from step 1.
+	- Username: The username will be the **OCI Username** you noted in step 3
+	- Password: The password will be the OCI Object Store Auth **Token** you generated in step 3.
 
 	```
 	<copy>
