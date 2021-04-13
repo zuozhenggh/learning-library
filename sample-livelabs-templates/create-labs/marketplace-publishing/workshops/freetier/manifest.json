@@ -1,0 +1,15 @@
+{
+  "workshoptitle": "Prepare and Submit Marketplace Listing",
+  "tutorials": [
+    {
+      "title": "Lab 1: Deploy Guacamole",
+      "description": "Deploy Guacamole",
+      "filename": "../../setup-guacamole-remote-desktop/setup-guacamole-remote-desktop.md"
+    },
+    {
+      "title": "Lab 2: Publish Listing on OCI Marketplace",
+      "description": "Publish Listing on OCI Marketplace",
+      "filename": "../../publish-listing/publish-listing.md"
+    }
+  ]
+}

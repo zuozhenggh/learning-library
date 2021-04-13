@@ -1,4 +1,4 @@
-# Lab 4: Reviewing and Updating a Topology
+# Reviewing and Updating a Topology
 
 ## Introduction
 
@@ -23,34 +23,42 @@ In this lab you will:
 
 ## **STEP 1**: Defining a Topology
 
-1.	Navigate to **Dashboard** > **Topology** > **PUM Fulltier** topology. This topology will be used to create a new environment. 
+1.	Navigate to **Dashboard** > **Topology**.
+    Click the radio button next to **PUM Fulltier** and then click **Clone**
+    ![](./images/clonetop1.png "")
 
-    ![](./images/1.png "")
+    Give the cloned Topology a name: **Fulltier** and click **Clone**
+    ![](./images/clonetop2.png "")
+2. Now let's edit the Topogy we just created. 
+    Click **Fulltier**
+    ![](./images/editFull.png "")
 
-2.	Review the nodes and update the Shapes.  Click **Full Tier** node and select a shape that is available in your AD 2. (Click on the down arrow to see the shapes) 
-In this case, select **VM.Standard2.1** or **VM.Standard2.2**. 
+    You should see 2 Nodes like this:
+    ![](./images/nodes2.png "")
 
-    ![](./images/topology.png "")
+3.  Click **Full Tier** under Environment Type and select **VM.Standard2.1** 
 
-3.	Delete the Windows node from the topology. Click **Delete** on the page shown below and save the topology. 
+    ![](./images/lintop.png "")
 
-    ![](./images/3.png "")
+    Click **Done**.
 
-4.	When you are ready, click **Save**. The topology should now look as shown below.
+    Now, let's edit the other node. Click **PeopleSoft Client** and then **Delete** this node.
+    ![](./images/winNodeDelete.png "")
 
-    ![](./images/4.png "")
+4.	When you have something like this, click **Save**. 
+
+    ![](./images/justlinux.png "")
 
 You may now proceed to the next lab.
 
 ## Acknowledgements
 
 **Created By/Date**   
-- Rich Konopka, Peoplesoft Specialist, October 2020  
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020  
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
 
-**Last Updated By/Date**    
-- Sara Lipowsky, Cloud Solutions Engineer, October 2020  
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab** and **step** in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.  
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

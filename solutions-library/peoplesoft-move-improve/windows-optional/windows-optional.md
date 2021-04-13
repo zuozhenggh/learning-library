@@ -15,10 +15,8 @@ In this lab, you will:
 * Access the Windows Instance with Remote Desktop Connection
 
 ### Prerequisites
-
-1. Permissions to create compute instances in OCI
-
-2. Remote Desktop Connection downloaded
+- Permissions to create compute instances in OCI
+- Remote Desktop Connection downloaded
 
 ## **STEP 1**: Create Windows Instance
 
@@ -62,29 +60,29 @@ In this lab, you will:
 
   ![](./images/pwin6.png "")
 
-Click Connect.
-Enter the default password you noted from the instance details page.
+	Click Connect.
+	Enter the default password you noted from the instance details page.
 
-**Steps for Mac machine**: Depending on the software, these steps might differ. Click on + sign and select Desktop or Add PC. Enter the Public IP address. Give Username as opc and password that you copied previously.
+	**Steps for Mac machine**: Depending on the software, these steps might differ. Click on + sign and select Desktop or Add PC. Enter the Public IP address. Give Username as opc and password that you copied previously.
 
   ![](./images/gi1.png "")
 
 3. Click Yes on the security message, which mentions that the identity of the remote computer cannot be verified.
 
-4. Change the password to: 
-  ```
-  <copy>Psft@12345678</copy>
-  ```
+4. Change the password to:
+
+	```
+	<copy>Psft@12345678</copy>
+	```
 
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
 
-* **Last Updated By/Date** 
-- Sara Lipowsky, Cloud Engineer, October 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

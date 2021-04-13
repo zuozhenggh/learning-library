@@ -25,12 +25,12 @@
             "filename": "../../configure-cm/configure-cm.md"
         },
         {
-            "title": "Lab 4: Reviewing and Updating the Topology",
-            "filename": "../../topology/topology.md"
+            "title": "Lab 4: Subscribing to PeopleSoft Download Channels",
+            "filename": "../../channels/channels.md"
         },
         {
-            "title": "Lab 5: Subscribing to PeopleSoft Download Channels",
-            "filename": "../../channels/channels.md"
+            "title": "Lab 5: Reviewing and Updating the Topology",
+            "filename": "../../topology/topology.md"
         },
         {
             "title": "Lab 6: Creating a new Environment Template",

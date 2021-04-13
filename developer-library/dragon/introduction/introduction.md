@@ -2,55 +2,33 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
+This workshop introduces the Oracle DRAGON stack project, a simple way to deploy applications using an Oracle Autonomous Database, using an Always Free Oracle Autonomous Transaction Processing (ATP), Oracle Autonomous JSON Database, or Oracle Autonomous Data Warehouse. In this short workshop, you'll download the DRAGON Stack manager and deploy a React based stack on Oracle Cloud.
 
-Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+Estimated Workshop Time: 30 minutes
 
-### About Product/Technology
-Enter background information here....
+### About the DRAGON Stack manager
+The DRAGON Stack manager is an open-source project which provides the fastest way to build and run applications connected to an Autonomous Database shared infrastructure. It can indeed:
+ - provision and configure an Autonomous Database as well as load JSON data into collections while taking care of the side resources such as Oracle Cloud Infrastructure Object Storage buckets
+ - integrates SQL Developer Web and Oracle REST Data Services integration with standard application development frameworks such as React or Spring-Boot
+ - generates project source code to start coding as soon as possible!  
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
-
-### Objectives
-
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
-
-In this lab, you will:
-* Provision
-* Setup
-* Data Load
-* Query
-* Analyze
-* Visualize
+  ![DRAGON Stack manager speeds up application development](./images/dragon-stack-manager-overview.png)
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
-
-*At the conclusion of the lab add this statement: Note how you can link to whatever lab follows by using #next as the target*
 You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [DRAGON Stack manager portal](https://bit.ly/DRAGONStackManager)
+* [DRAGON Stack manager on GitHub](https://bit.ly/DragonStack)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Loic Lefevre, Principal Product Manager
+* **Last Updated By/Date** - Tom McGinn, Database Product Management, November 2020
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -101,15 +101,21 @@ In this lab, you will:
     ```
 **Note:** This is **not** configured for a production environment. **This is just for demo purposes.**
 
-## **STEP 1:** Deploying with OCI Resource Manager.
+## **STEP 1:** Deploying with OCI Resource Manager
 
 The following section will show you how to configure resource manager to make the deployment easier. You will not be able to configure anything that is shaded out on the page.
 
 1. Configuration 
 
-    -  Navigate to the resource manager tab in oci. Next upload the zip file to the stack.
+    -  Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stacks**.
 
-        ![](./screenshots/setup-screenshots/resource-manager-files/resourcemanager.png)
+        ![](./screenshots/setup-screenshots/resource-manager-files/CreateStack00.png " ")
+
+    Click **Create Stack**.
+
+      - Select **My Configuration**, choose the **.ZIP FILE** button, click **Browse** link and select the zip file. Click **Select**.
+
+        ![](./screenshots/setup-screenshots/resource-manager-files/zip-file.png)
         
     -  Input the configuration for the instances.
 
@@ -175,7 +181,7 @@ The following section will show you how to configure resource manager to make th
 
   ![](./screenshots/setup-screenshots/secondary-app-server.png)
  
-## **STEP 2:** Configuring the DNS for failover.
+## **STEP 2:** Configuring the DNS for Failover
 
 1. Create a Health Check
 
@@ -262,6 +268,6 @@ You may proceed to the next lab.
 * **Last Updated By** - Mark Vong, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
