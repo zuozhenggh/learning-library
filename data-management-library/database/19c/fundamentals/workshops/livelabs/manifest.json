@@ -21,13 +21,7 @@
             "type": "livelabs"
         },
         {
-            "title": "Lab 1: Create a Compute Instance",
-            "description": "Create a compute instance, virtual cloud network, and SSH keys. Upload the Oracle Database 19c installation ZIP file into Object Storage.",
-            "filename": "./../../create-compute-instance/create-compute-instance.md",
-            "type": "livelabs"
-        },
-        {
-            "title": "Lab 2: Install Oracle Database 19c with Automatic Configuration Script Execution",
+            "title": "Lab 1: Install Oracle Database 19c with Automatic Configuration Script Execution",
             "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution.",
             "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-config-script-execution.md",
             "type": "livelabs"

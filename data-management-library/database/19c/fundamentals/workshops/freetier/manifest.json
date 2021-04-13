@@ -17,13 +17,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Create a Compute Instance",
-            "description": "Create a compute instance, virtual cloud network, and SSH keys. Upload the Oracle Database 19c installation ZIP file into Object Storage.",
-            "filename": "./../../create-compute-instance/create-compute-instance.md",
-            "type": "freetier"
-        },
-        {
-            "title": "Lab 2: Install Oracle Database 19c with Automatic Configuration Script Execution",
+            "title": "Lab 1: Install Oracle Database 19c with Automatic Configuration Script Execution",
             "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution.",
             "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-config-script-execution.md",
             "type": "freetier"
