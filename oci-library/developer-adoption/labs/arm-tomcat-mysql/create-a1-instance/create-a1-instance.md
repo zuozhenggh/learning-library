@@ -2,7 +2,7 @@
 
 ## Introduction
 
-You will take on the persona of an Operations Engineer. You will initiate the Oracle cloud environment that will be used to create and deploy your Nextcloud server. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy the Oracle Cloud Infrastructure Arm A1 compute instance to host the Nextcloud server containers.
+You will take on the persona of an Operations Engineer. You will initiate the Oracle cloud environment that will be used to create and deploy your Java EE application. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy the Oracle Cloud Infrastructure Arm A1 compute instance to host a Java EE application using the Tomcat 9.0 and MySQL server containers.
 
 Estimated time: 20 minutes
 
@@ -55,11 +55,7 @@ Now you are ready to move on to Step 3.
 
    ![Create Instance](images/02_create_instance.png " ")
 
-1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. Name the instance  **Nextcloud** and click the **Change Shape** button to see the available compute shapes.
-
-   ![ Create Instance](images/03_create_instance02.png " ")
-
-1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. Name the instance  **Nextcloud** and click the **Change Shape** button to see the available compute shapes.
+1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. Name the instance  **JavaApp** and click the **Change Shape** button to see the available compute shapes.
 
    ![ Create Instance](images/03_create_instance02.png " ")
    
