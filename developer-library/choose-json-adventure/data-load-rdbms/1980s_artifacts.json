@@ -1,0 +1,113 @@
+[
+    {
+        "id": 101,
+        "title": "Top Gun",
+        "category": "VHS",
+        "condition": "like new",
+        "price": 8,
+        "starring": [
+            "Tom Cruise",
+            "Kelly McGillis",
+            "Anthony Edwards",
+            "Val Kilmer"
+        ],
+        "year": 1986,
+        "decade": "80s"
+    },
+    {
+        "id": 102,
+        "title": "Amiga 500",
+        "category": "Vintage Computer",
+        "condition": "slighlty yellow",
+        "item_comments": "Bottom trapdoor missing, 512KB",
+        "price": 129,
+        "year": 1991,
+        "decade": "90s"
+    },
+    {
+        "id": 103,
+        "title": "ET Doll",
+        "category": "Merchandise",
+        "condition": "slightly yellow",
+        "item_comments": "extremely rare",
+        "price": 350,
+        "year": 1982,
+        "decade": "80s"
+    },
+    {
+        "id": 104,
+        "title": "Tamagotchi",
+        "category": "Toy",
+        "condition": "some scratches",
+        "color": "pink/yellow",
+        "item_comments": "works, has new battery",
+        "price": 39,
+        "year": 1998,
+        "decade": "90s"
+    },
+    {
+        "id": 106,
+        "title": "Back to the future",
+        "category": "VHS",
+        "condition": "new",
+        "quantity": 1,
+        "price": 19,
+        "item_comments": "still wrapped",
+        "starring": [
+            "Michael J. Fox",
+            "Christopher Lloyd",
+            "Crispin Glover",
+            "Lea Thompson"
+        ],
+        "year": 1985,
+        "decade": "80s"
+    },
+    {
+        "id": 107,
+        "title": "E.T. The Extra-Terrestiral",
+        "category": "VHS",
+        "condition": "Average",
+        "quantity": 1,
+        "price": 8,
+        "year": 1982,
+        "decade": "80s"
+    },
+    {
+        "id": 108,
+        "title": "Ghostbusters",
+        "category": "Laserdisk",
+        "condition": "good",
+        "quantity": 1,
+        "price": 19,
+        "year": 1984,
+        "decade": "80s"
+    },
+    {
+        "id": 109,
+        "title": "Die Hard",
+        "category": "DVD",
+        "condition": "used",
+        "quantity": 1,
+        "price": 6,
+        "item_comments": "good condition",
+        "starring": [],
+        "year": 1980,
+        "decade": "80s"
+    },
+    {
+        "id": 110,
+        "title": "Rain Man",
+        "category": "DVD",
+        "condition": "new",
+        "quantity": 2,
+        "price": 6,
+        "starring": [
+            "Dustin Hoffmann",
+            "Tom Cruise",
+            "Valeria Golina"
+        ],
+        "music": "Hans Zimmer",
+        "year": 1980,
+        "decade": "80s"
+    }
+]
