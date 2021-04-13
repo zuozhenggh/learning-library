@@ -8,8 +8,7 @@ Estimated Lab Time: 15 minutes
 ### Objectives
 
 In this lab, you will learn how to:
-<if type="freetier">* Provision an autonomous database
-* Create an OML user</if>
+* Create an OML user
 * Access OML Notebooks
 * Create an OML Notebook
 * Familiarize with the OML Notebook toolbar
@@ -19,79 +18,7 @@ In this lab, you will learn how to:
 * Verify Connection to the Autonomous Database
 * View help files
 
-<if type="freetier">### Prerequisites
-* Sign up for a free tier Oracle Cloud account.
-
-_Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time._
-</if>
-
-<if type="livelabs">## **Step 1:** Launch the workshop
-
-*Note: it takes approximately 20 minutes to create your workshop environment.*
-
-1. After you have logged in to your LiveLabs environment, click on the menu icon and then select Autonomous Data Warehouse from the menu.
-
-    ![](images/open-adw.png)
-
-2. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
-
-    ![](images/select-compartment.png)
-
-    ![](images/adw-instance.png)
-
-</if>
-
-<if type="freetier">## **Step 1:** Provision an Autonomous Database
-
-To provision an Autonomous Database:
-
-1. Click the hamburger menu, search for **Autonomous Data Warehouse**, and click on it.
-
-    ![](images/create-adw.png)
-
-2. From the Oracle Cloud Infrastructure Console, on the Autonomous Database page choose your region and select a compartment.
-
-3. Click **Create Autonomous Database**.
-
-    ![](images/create-autonomous-db.png)
-
-4. Provide basic information for the Autonomous Database.
-
-    Enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.
-
-    ![](images/create-autonomous-db-1.png)
-
-5. For Workload Type, click **Data Warehouse**.
-
-6. For Deployment, select **Shared Infrastructure**.
-
-7. For Database configuration, select the following:
-
-    - **Choose database version:** Select the database version. The available database version is **19c**.
-    - **OCPU Count:** Enter 1. This is number of CPU cores for your database.
-    - **Storage (TB):** Specify the storage you wish to make available to your database, in terabytes. Enter 1 TB.
-    - **Auto Scaling:** By default auto scaling is enabled to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
-
-    ![](images/create-adw-config.png)
-
-8. For Administrator credentials, enter and re-confirm a password.
-
-9. For Network Access, select Allow Secure access from everywhere.
-
-    ![](images/create-adw-network.png)
-
-10. For License, select **License Included**.
-
-    ![](images/create-adw-license.png)
-
-11. Click **Create Autonomous Database**. The Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the hamburger menu to see a list of Autonomous Database in your console.
-
-12. Click the ADW instance you just created.
-
-    ![](images/adb_instance.png)
-</if>
-
-## **Step 2**: Create an OML User
+## **Step 1**: Create an OML User
 
 An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
 **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface. To create a user account:
@@ -145,7 +72,7 @@ An administrator creates a new user account and user credentials for Oracle Mach
 </if>
 
 
-## **Step 3:** Access Oracle Machine Learning Notebooks
+## **Step 2:** Access Oracle Machine Learning Notebooks
 
 You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
 
@@ -167,8 +94,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
     ![](images/open-notebooks.png)
 
-
-<if type="freetier">## **Step 4:** Create Tables and Views, and Grant Access
+<if type="freetier">## **Step 3:** Create Tables and Views, and Grant Access
 
 This workshop uses tables and views which need to be created before proceeding with the workshop. To create these tables and views:
 
@@ -190,7 +116,7 @@ The prerequisite scripts have run successfully.
 
 </if>
 
-## (Optional) Download and View the Notebook File
+## **Step 4:** (Optional) Download and View the Notebook File
 
 To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./../notebooks/lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./../notebooks/lab1_get_started_livelabs.json?download=1)</if>.
 
