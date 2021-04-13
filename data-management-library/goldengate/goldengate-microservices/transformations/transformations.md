@@ -6,7 +6,7 @@ This lab is intended to give you familiarity with how to configure GG for databa
 secured, reliable and fault-tolerant in data delivery. It is easy to install, configure and maintain real-time changed data.
 It is easily extensible and flexible to stream transformed data to other relational targets
 
-*Estimated Lab Time*:  60 minutes
+*Estimated Lab Time*:  30 minutes
 
 ### Lab Architecture
 
@@ -70,7 +70,7 @@ In this lab we will setup GoldenGate Microservices Transformations
     ![](./images/i02.png " ")
 
 ## **STEP 2:** Concatenating the source *m* columns into target single *n* columns
-The picture below represent the summary of the transformations we will be performing in this step
+The picture below represents the summary of the transformations we will be performing in this step
 
   ![](./images/c1.png " ")
 
