@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to decide which Oracle Database you are going to use for the workshop, and then create an APEX workspace in that database.
+Oracle Application Express (APEX) is a feature of Oracle Database that you can use to build low code applications rapidly and also accelerates the modernization of the legacy applications.
 
 If you already have an APEX 20.2 Workspace provisioned, you can skip this lab.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 45 minutes
 
 ### Objectives
 
@@ -17,6 +17,7 @@ Estimated Lab Time: 30 minutes
 ### Prerequisites
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision database using Public Cloud Database Service
+- PUTTY, Filezilla if you have Windows Machine.
 
 
 ## About Oracle APEX
@@ -24,64 +25,50 @@ Estimated Lab Time: 30 minutes
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. APEX applications are built on top of these database objects.
 
-### How Do I Find My APEX Release Version?
-To determine which release of Oracle Application Express you are currently running, do one of the following:
-* View the release number on the Workspace home page:
-    - Sign in to Oracle Application Express. The Workspace home page appears. The current release version displays in bottom right corner.
-
-    ![](images/release-number.png " ")
-    ![](images/release-number2.png " ")
-
-* View the About Application Express page:
-    - Sign in to Oracle Application Express. The Workspace home page appears.
-    - Click the Help menu at the top of the page and select About. The About Application Express page appears.
-
-    ![](images/version.png)
 
 ### Where to Run the Lab
 You can run this lab in any Oracle Database with APEX 20.2 installed. This includes the APEX Application Development Service , Database in Public Cloud Database Service, your on-premises Oracle Database (providing APEX 20.2 is installed), on a third party cloud provider where APEX 20.2 is installed, or even on your laptop by installing Oracle XE or Oracle VirtualBox App Dev VM and installing APEX 20.2.
 
-Below are steps on how to provision database on *Public Cloud Database Service* cloud service .
-
-You will be creating two databases to support the following labs that migrate data from a source ('on-premise') database to a target database.  The first database will be called workshop1\_db.  This is the 'on-premise' source database.  After you initiate the creation of this database we will create a second database called workshop1\_db2.  This second database will be used at the target instance.
+Below are steps on how to provision database on *Database Cloud Service* .
 
 ## **Step 1**:  Create Database in OCI DBCS Service
 
-- Navigate to **Bare Metal, VM, and Exadata**.
+1. Navigate to **Bare Metal, VM, and Exadata**.
 
 	![](images/025.png " ")
 
-- Select **Create DB System**.  
+2. Select **Create DB System**.  
 
 	![](images/db_system_1.png " ")
 
-- Enter the following details and hit **Next**.
+3. Enter the following details and hit **Next**.
 
   ![](images/db_system_2.png " ")
   ![](images/db_system_3.png " ")
   ![](images/db_system_4.png " ")
-- Scroll down and paste your public key.
+
+  Scroll down and paste your public key.
 
   ![](images/db_system_5.png " ")
 
-- Scroll down further, select your network, enter a hostname prefix, and then select **Next**.
+4. Scroll down further, select your network, enter a hostname prefix, and then select **Next**.
 
   ![](images/db_system_6.png " ")
   ![](images/db_system_7.png " ")
   ![](images/db_system_8.png " ")
   ![](images/db_system_8-1.png " ")
 
-- Enter the following details and then select **Create DB System**.
+5. Enter the following details and then select **Create DB System**.
 
   ![](images/db_system_9.png " ")
   ![](images/db_system_10.png " ")
   ![](images/db_system_11.png " ")
 
-- Wait until the Status changes from Provisioning to Available
+6. Wait until the Status changes from Provisioning to Available
   ![](images/provisioning.png " ")
   ![](images/success.png " ")
 
-- Navigate to the node to retrieve the public IP address.
+7. Navigate to the node to retrieve the public IP address.
 
   ![](images/node.png " ")
   ![](images/node-ip.png " ")
@@ -89,7 +76,7 @@ You will be creating two databases to support the following labs that migrate da
 
 ## **Step 2**:  Install Oracle APEX in DBCS.
 
-- Oracle APEX is not preinstalled in the database cloud service like how it is done with ATP or ADW , we will go through the install and configuration of APEX
+  Oracle APEX is not preinstalled in the database cloud service like how it is done with ATP or ADW , we will go through the install and configuration of APEX
 
   The software packages we will be installing are
       - APEX 20.2x
@@ -97,11 +84,11 @@ You will be creating two databases to support the following labs that migrate da
       - Apache Tomcat
 
 
-  1. Download the [Latest APEX version](https://www.oracle.com/tools/downloads/apex-v191-downloads.html) and save it to a folder.  
+1. Download the [Latest APEX version](https://www.oracle.com/tools/downloads/apex-v191-downloads.html) and save it to a folder.  
 
-  2. Download the [Latest Oracle REST Data Services version](https://www.oracle.com/database/technologies/appdev/rest-data-services-downloads.html) and save it to a folder.  
+2. Download the [Latest Oracle REST Data Services version](https://www.oracle.com/database/technologies/appdev/rest-data-services-downloads.html) and save it to a folder.  
 
-  3. Open a command window in the workshop directory and scp the downloaded files to /tmp dbcs.  Enter the following command.  
+3. Open a command window in the workshop directory and scp the downloaded files to /tmp dbcs.  Enter the following command.  
   ```
   <copy>
   scp -i keys/<private key> apex_20.2.zip opc@<DBCS IP>:/tmp
@@ -109,9 +96,9 @@ You will be creating two databases to support the following labs that migrate da
   ```
   If you have windows system , you can copy with Filezilla or Winscp
 
-  4. SSH to dbcs from the terminal window or using PUTTY.
+4. SSH to dbcs from the terminal window or using PUTTY.
 
-  5. Unzip the file in a new folder as root user, change directory into it and then become user oracle:
+5. Unzip the file in a new folder as root user, change directory into it and then become user oracle:
   ```
   <copy>
   [opc@linux ~]$ sudo su -
@@ -122,7 +109,7 @@ You will be creating two databases to support the following labs that migrate da
   [root@linux app]# cd apex
   [root@linux app]# su oracle
   ```
-  6. Let’s connect to the pluggable database. Keep in mind that your PDB will have a different name so change the second SQL command accordingly:
+6. Let’s connect to the pluggable database. Keep in mind that your PDB will have a different name so change the second SQL command accordingly:
 
   ```
   <copy>
@@ -135,7 +122,6 @@ You will be creating two databases to support the following labs that migrate da
     SQL> ALTER SESSION SET CONTAINER=F2ADBCS_PDB1;
     Session altered.
  ```
-
 
 7. We’ll create a new and dedicated tablespace for APEX data:
 
@@ -192,6 +178,7 @@ SQL> @apexins.sql APEX APEX TEMP /i/
   SQL> ALTER USER apex_public_user PROFILE password_unlimited;
   SQL> exit
   ```
+
 ## **Step 3**:  Install Oracle REST Data Services in DBCS.
 
 
@@ -242,7 +229,6 @@ SQL> @apexins.sql APEX APEX TEMP /i/
   You can leave the rest as I have in my file.
 
 
-
 4. Use the “ords.war” file to specify the configuration directory using the following command. The file name “ords.war” will result in a URL containing “/ords/”. If you want a different URL, rename the WAR file accordingly. In this post I will use the original name.
 As ROOT user (if you are tomcat type exit to become root again) type:
   ```
@@ -251,7 +237,8 @@ As ROOT user (if you are tomcat type exit to become root again) type:
    INFO: Set config.dir to /u01/app/ords/conf in: /u01/app/ords/ords.war
   ```
 
-5. Install ORDS using the following command. This is the equivalent of specifying the “install simple” command line parameters.Type in sys as sysdba as the administrator username. Provide the passwords for the users like we did in point 1.b) and press 1 to use PL/SQL Gateway
+5. Install ORDS using the following command. This is the equivalent of specifying the “install simple” command line parameters.Type in sys as sysdba as the administrator username. Provide the passwords for the users and press 1 to use PL/SQL Gateway
+
   ```
   <copy>
   [root@linux ords]# /usr/bin/java -jar ords.war
@@ -278,41 +265,44 @@ As ROOT user (if you are tomcat type exit to become root again) type:
   Enter 1 if you wish to start in standalone mode or 2 to exit [1]:2
   ```
 
-  ## **Step 3**:  Downloading and installing Tomcat.
+## **Step 4**:  Downloading and installing Tomcat.
 
   1. Download Tomcat 9 from [HERE](https://tomcat.apache.org/download-90.cgi)  , use the tar.gz link and copy it, then downloaded directly to the cloud database  in a new directory as user root, change it’s owner and unzip it :
-  ```
-  <copy>
-  [root@linux ords]# mkdir /u01/app/tomcat
-  [root@linux ords]# -d /u01/app/tomcat/
-  [root@linux ords]# chown -R tomcat:tomcat /u01/app/tomcat/
-  [root@linux ords]# su tomcat
-  [tomcat@linux ords]$ cd /u01/app/tomcat/
-  [tomcat@linux ords]$ wget  https://downloads.apache.org/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
-  [tomcat@linux tomcat]$ tar zxvf apache-tomcat-9.0.44.tar.gz
-  ```
+    ```
+    <copy>
+    [root@linux ords]# mkdir /u01/app/tomcat
+    [root@linux ords]# -d /u01/app/tomcat/
+    [root@linux ords]# chown -R tomcat:tomcat /u01/app/tomcat/
+    [root@linux ords]# su tomcat
+    [tomcat@linux ords]$ cd /u01/app/tomcat/
+    [tomcat@linux ords]$ wget  https://downloads.apache.org/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
+    [tomcat@linux tomcat]$ tar zxvf apache-tomcat-9.0.44.tar.gz
+    ```
 
   2. Let’s start up Tomcat web server:
-  ```
-  <copy>
-  [tomcat@linux tomcat]$ /u01/app/tomcat/apache-tomcat-9.0.44/bin/startup.sh
-  ```
+    ```
+    <copy>
+    [tomcat@linux tomcat]$ /u01/app/tomcat/apache-tomcat-9.0.44/bin/startup.sh
+    ```
 
   3. Now we need to open the web server port to allow incoming access, first in the Linux console and then on the Oracle Cloud. Switch to root user and add this port to iptables and save it:
-  ```
-  <copy>
-  [tomcat@linux tomcat]$ exit
-  [root@linux tomcat]# iptables -I INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
-  [root@linux tomcat]# service iptables save
-  [root@linux tomcat]# service iptables reload
-  ```
+    ```
+    <copy>
+    [tomcat@linux tomcat]$ exit
+    [root@linux tomcat]# iptables -I INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
+    [root@linux tomcat]# service iptables save
+    [root@linux tomcat]# service iptables reload
+    ```
 
   4. Go to the web console and open port 8080 on the Oracle Cloud firewall in the Security Lists of the VCN you are using for the database. It should like like this:
+  ![](images/seclist.png " ")
 
   5. Test that Tomcat is working fine and the web page is loading. Type in your web browser the IP address of your cloud database followed by the 8080 port;
-  http://<DBCS IP>:8080
+  http://(Enter DBCS IP):8080
+  ![](images/tomcat-success.png " ")
 
-  6. Some automation is needed now so that Tomcat starts when our instance is up with runlevel script. The script has to be created as OS user root. In one of the first lines, I have set a sleep command to be sure that the database is available before the application server starts.
+
+  6. Some automation is needed now so that Tomcat starts when Linux instance is rebooted with runlevel script. The script has to be created as OS user root. In one of the first lines, setup a sleep command to be sure that the database is available before the application server starts.
 
     ```
     [root@linux tomcat]#   vi /etc/init.d/tomcat
@@ -328,7 +318,7 @@ As ROOT user (if you are tomcat type exit to become root again) type:
     # Sleep 20 seconds until database is started sucessfully
     sleep 20
     RETVAL=$?
-    CATALINA_HOME="/u01/app/tomcat/apache-tomcat-9.0.26"
+    CATALINA_HOME="/u01/app/tomcat/apache-tomcat-9.0.44"
     case "$1" in
     start)
     if [ -f $CATALINA_HOME/bin/startup.sh ];
@@ -353,43 +343,76 @@ As ROOT user (if you are tomcat type exit to become root again) type:
     ```
 
   7. Add the script to the runlevel environment level 3 and 5:
-  ```
-  <copy>
-  [root@linux tomcat]#   chmod 755 /etc/init.d/tomcat
-  [root@linux tomcat]#   cd /etc/rc3.d
-  [root@linux tomcat]#   ln -s /etc/init.d/tomcat S99tomcat
-  [root@linux tomcat]#   cd /etc/rc5.d
-  [root@linux tomcat]#   ln -s /etc/init.d/tomcat S99tomcat
-  ```
+      ```
+      <copy>
+      [root@linux tomcat]#   chmod 755 /etc/init.d/tomcat
+      [root@linux tomcat]#   cd /etc/rc3.d
+      [root@linux tomcat]#   ln -s /etc/init.d/tomcat S99tomcat
+      [root@linux tomcat]#   cd /etc/rc5.d
+      [root@linux tomcat]#   ln -s /etc/init.d/tomcat S99tomcat
+      ```
 
   8. Linking Tomcat with APEX
    Switch back to the Tomcat OS user and copy the APEX images to the Tomcat “webapps” directory.
-  ```
-  <copy>
 
-  [root@linux tomcat]#   su tomcat
-  [tomcat@linux tomcat]$   mkdir /u01/app/tomcat/apache-tomcat-9.0.26/webapps/i/
-  [tomcat@linux tomcat]$   cp -R /u01/app/apex/images/* /u01/app/tomcat/apache-tomcat-9.0.26/webapps/i/
-  [tomcat@linux tomcat]$   cp /u01/app/ords/ords.war /u01/app/tomcat/apache-tomcat-9.0.26/webapps/
-  ```
+    ```
+    <copy>
 
-  9. Login into Oracle Application Express — add /ords at the end of the application server URL like http://<DBCS IP>:8080/ords
+    [root@linux tomcat]#   su tomcat
+    [tomcat@linux tomcat]$   mkdir /u01/app/tomcat/apache-tomcat-9.0.26/webapps/i/
+    [tomcat@linux tomcat]$   cp -R /u01/app/apex/images/* /u01/app/tomcat/apache-tomcat-9.0.26/webapps/i/
+    [tomcat@linux tomcat]$   cp /u01/app/ords/ords.war /u01/app/tomcat/apache-tomcat-9.0.26/webapps/
+    ```
 
-  You can fill in the INTERNAL workspace and use the Admin and the password we gave in first part of the post to log in.
-  ![](images/apex-builder.png " ")
+  9. Login into Oracle Application Express — add /ords at the end of the application server URL like http://DBCS IP:8080/ords.
+
+    You can fill in the INTERNAL workspace and use the Admin and the password you have given to log in.
+
+    ![](images/admin-Login.png " ")
+
+## **Step 5**:  Create APEX workspace
+
+1. Click **Create Workspace**.
+
+    ![](images/create_workspace.png " ")
+
+2. In the Create Workspace dialog, enter the following:
+
+    | Property | Value |
+    | --- | --- |
+    | Database User | DEMO |
+    | Password | **`<enter passowrd>`** |
+    | Workspace Name | DEMO |
+
+    Click **Create Workspace**.
+
+    Enter Workspace Name
+    ![](images/workspace-step-1.png " ")
+
+    Enter the schema ,you can name the schema to be same as workspace name and enter password
+    ![](images/workspace-step-2.png " ")
+
+    Create user for Workspace administrator to login and create applications
+    ![](images/workspace-step-3.png " ")
+
+    Review the details and Create the workspace
+    ![](images/workspace-review.png " ")
+
+    ![](images/workspace-create-success.png " ")
+
 
 
 ## **Summary**
 
- At this point, you know how to create an APEX Workspace and you are now ready to start migrating forms Application.
+ At this point, you know how to create an DBCS database, install APEX and ORDS and create APEX Workspace and you are now ready to start migrating forms Application.
 
 You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 
 - **Author** -  Vanitha Subramanyam, Senior Solution Architect
-- **Contributors** - Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
-- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
+- **Contributors** - Vanitha Subramanyam, Senior Solution Architect
+- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, April 2021
 
 
 
