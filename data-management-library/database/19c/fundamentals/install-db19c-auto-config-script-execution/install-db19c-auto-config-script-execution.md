@@ -507,7 +507,7 @@ In this step, you enable the `oracle` user to run the graphical Oracle Database 
 
   ![Install Product page](images/install-product-page.png)
 
-14. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes about 15 minutes to complete.
+14. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes between 15 to 20 minutes to complete.
 
   ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png)
 
