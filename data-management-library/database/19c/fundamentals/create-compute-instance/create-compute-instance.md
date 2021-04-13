@@ -1,7 +1,7 @@
 # Create a Compute Instance
 
 ## Introduction
-This lab shows you how to quickly create and configure a compute instance in preparation for an Oracle Database 19c installation. To perform many of the tasks, you use Cloud Shell, which is a free Linux shell (within monthly tenancy limits) in Oracle Cloud Infrastructure. Depending on the type of personal computer that you have (Windows, Mac, Linux), you can choose to do step 5, 6, or 7.
+This lab shows you how to quickly create and configure a compute instance in Oracle Cloud Infrastructure in preparation for an Oracle Database 19c installation. To perform many of the tasks, you use Cloud Shell, which is a free Linux shell (within monthly tenancy limits) in Oracle Cloud Infrastructure. Depending on the type of personal computer that you have (Windows or Mac), you can choose to do step 5 or 6.
 
 Estimated Lab Time:  25 minutes
 
@@ -11,9 +11,8 @@ In this lab, you learn how to do the following:
 
 - Create a VM instance quickly and easily in Oracle Cloud Infrastructure
 - Connect to your compute instance from your Cloud Shell machine
-- Increase the swap space on your compute instance to 16GB to support an Oracle Database 19c installation
 - Configure X11 forwarding on your compute instance
-- Connect to your compute instance from your personal computer (Windows, Mac, or Linux operating system)
+- Connect to your compute instance from your personal computer (Windows or Mac)
 
 
 ### Prerequisites
@@ -73,15 +72,16 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
 
   b) Click **select from your computer**. Browse to and select your private key file, and then click **Open**. Click **Upload**. Your private key is uploaded to the `home` directory on your Cloud Shell machine.
 
-  c) Move your private key to the `.ssh` directory. In the code below, replace `private-key-filename` with the name of own private key file.
+  c) Move your private key to the `.ssh` directory. In the code below, replace `private-key-filename` with the name of own private key file. Be sure to include the slash (/) after .ssh in the command to ensure that the file gets moved to a directory.
 
     ```nohighlighting
-    $ <copy>mv private-key-filename.key .ssh</copy>
+    $ <copy>mv private-key-filename.key .ssh/</copy>
     ```
 
   d) Set permissions on the `.ssh` directory so that only you (the owner) can read, write, and execute on the directory. Also set permissions on the private key itself so that only you (the owner) can read and write (but not execute) on the private key file.
 
     ```nohighlighting
+
     $ <copy>chmod 700 ~/.ssh</copy>
     $ <copy>cd .ssh</copy>
     $ <copy>chmod 600 *</copy>
@@ -103,144 +103,8 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
 
 
 
-## **STEP 3**: Increase the swap space on your compute instance to 16GB to support an Oracle Database 19c installation
 
-Currently, your compute instance has 8GB of free swap space. The Oracle Database 19c installer requires at least 16GB, so you need to increase the amount on your compute instance.
-
-1. Switch to the `root` user.
-
-      ```nohighlighting
-      $ <copy>sudo su -</copy>
-      ```
-
-2. Find out how many swap partitions exist on your compute instance.
-
-    ```nohighlighting
-    # <copy>swapon -s</copy>
-
-    Filename                                Type            Size    Used    Priority
-    /dev/sda2                               partition       8388604 0       -2
-    ```
-    The output indicates that there is one swap partition, and it is 8GB.
-
-
-3. View details about the swap partition.
-
-    ```nohighlighting
-    # <copy>free -m</copy>
-
-                  total        used        free      shared  buff/cache   available
-    Mem:          31824        1151       19582           8       11091       30209
-    Swap:          8191           0        8191
-    ```
-
-    The output indicates that there is 8GB of free swap space.
-
-4. Identify a file system that has space available that you can turn into free swap space.  
-
-    ```nohighlighting
-    # <copy>df -h</copy>
-
-    Filesystem      Size  Used Avail Use% Mounted on
-    devtmpfs         16G     0   16G   0% /dev
-    tmpfs            16G     0   16G   0% /dev/shm
-    tmpfs            16G  8.8M   16G   1% /run
-    tmpfs            16G     0   16G   0% /sys/fs/cgroup
-    /dev/sda3        39G   13G   26G  34% /
-    /dev/sda1       200M  8.6M  192M   5% /boot/efi
-    tmpfs           3.2G     0  3.2G   0% /run/user/0
-    tmpfs           3.2G     0  3.2G   0% /run/user/994
-    tmpfs           3.2G     0  3.2G   0% /run/user/1000
-    ```
-
-    The output indicates that `/dev/sda3` has 26G available.
-
-5. Find the current swap space.
-
-    ```nohighlighting
-    # <copy>cat /etc/fstab</copy>
-
-    #
-    # /etc/fstab
-    # Created by anaconda on Wed Mar 17 22:21:38 2021
-    #
-    # Accessible filesystems, by reference, are maintained under '/dev/disk'
-    # See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
-    #
-    UUID=8381a3a6-892e-40a0-bbaf-3423632fdf6c /                       xfs     defaults,_netdev,_netdev 0 0
-    UUID=0F1D-8861          /boot/efi               vfat    defaults,uid=0,gid=0,umask=0077,shortname=winnt,_netdev,_netdev,x-initrd.mount 0 0
-    UUID=154d2352-4fc7-471b-a4bb-efd52ae00a8b swap                    swap    defaults,_netdev,x-initrd.mount 0 0
-    ######################################
-    ## ORACLE CLOUD INFRASTRUCTURE CUSTOMERS
-    ##
-    ## If you are adding an iSCSI remote block volume to this file you MUST
-    ## include the '_netdev' mount option or your instance will become
-    ## unavailable after the next reboot.
-    ## SCSI device names are not stable across reboots; please use the device UUID instead of /dev path.
-    ##
-    ## Example:
-    ## UUID="94c5aade-8bb1-4d55-ad0c-388bb8aa716a"   /data1    xfs       defaults,noatime,_netdev      0      2
-    ##
-    ```
-    The output indicates that the current swap space is:
-
-    `UUID=154d2352-4fc7-471b-a4bb-efd52ae00a8b swap                   swap   defaults,_netdev,x-initrd.mount 0 0`
-
-
-6. Allocate 8GB of swap space.
-
-    ```nohighlighting
-    # <copy>fallocate -l 8G /swapfile</copy>
-    ```
-
-7. Allow only the `root` user to read/write to swap.
-
-    ```nohighlighting
-    # <copy>chmod 600 /swapfile</copy>
-    ```
-
-8. Format the file to make it a swap file.
-
-    ```nohighlighting
-    # <copy>mkswap /swapfile</copy>
-
-    Setting up swapspace version 1, size = 8388604 KiB
-    no label, UUID=322b862d-083d-429c-b5b8-a71fff68fa5d
-    ```
-
-9. Enable the swap file.
-
-    ```nohighlighting
-    # <copy>swapon /swapfile</copy>
-    ```
-
-10. Check that the compute instance now has enough free swap space (16GB).
-
-    ```nohighlighting
-    # <copy>free -m</copy>
-
-                  total        used        free      shared  buff/cache   available
-    Mem:          31824        1158       19572           8       11093       30201
-    Swap:         16383           0       16383
-    ```
-
-    The output indicates that the compute instance now has 16GB of free swap space.
-
-11. Make the changes permanent.
-
-  a) Using the `vi` editor, open `/etc/fstab`.
-
-    ```nohighlighting
-    # <copy>vi /etc/fstab</copy>
-    ```
-
-  b) Scroll to the bottom and add the following as the last line.
-
-    ```nohighlighting
-    <copy>/swapfile swap swap defaults 0 2</copy>
-    ```
-
-## **STEP 4**: Configure X11 forwarding on your compute instance
+## **STEP 3**: Configure X11 forwarding on your compute instance
 
 The Oracle Database 19c Installation Wizard has a graphical user interface. To run the installer from a personal computer (Windows, Mac, or Linux), you need to set up X11 forwarding using Secure Shell (SSH) or virtual network computing (VNC) on your compute instance. This example shows you how to set up X11 forwarding.
 
@@ -250,7 +114,7 @@ The Oracle Database 19c Installation Wizard has a graphical user interface. To r
     # <copy>yum install -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-utils xorg-x11-apps xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1</copy>
     ```
 
-2. Open the `sshd_config file`, which is the configuration file for the SSH service.
+2. Open the `sshd_config` file, which is the configuration file for the SSH service.
 
     ```nohighlighting
     # <copy>vi /etc/ssh/sshd_config</copy>
@@ -276,9 +140,9 @@ The Oracle Database 19c Installation Wizard has a graphical user interface. To r
 
 
 
-## **STEP 5**: (Windows) Connect to your compute instance from your personal Windows computer
+## **STEP 4**: (Windows) Connect to your compute instance from your personal Windows computer
 
-Using X11 forwarding in an SSH session on your local Windows computer lets you securely run graphical applications (X clients). For X11 forwarding in SSH to work, your local computer must be running an X server program, such as Xming or VcXsvr. The X server program manages the interaction between the remote application (the X client, and in this case, the Oracle Database 19c installer) and your computer's hardware. This example shows you how to install and configure VcXvr on your local Windows computer.
+Using X11 forwarding in an SSH session on your local Windows computer lets you securely run graphical applications (X clients). For X11 forwarding in SSH to work, your local computer must be running an X server program, such as Xming or VcXsvr. The X server program manages the interaction between the remote application (the X client, and in this case, the Oracle Database 19c installer) and your computer's hardware. This lab uses PuTTY and VcXsrv.
 
 
 #### Part A - Install VcXsrv
@@ -342,28 +206,30 @@ You need to convert the private key that you obtained from Oracle Cloud Infrastr
     - **Hostname**: Enter the public IP address for your compute instance.
     - **Port**: Leave port **22** as is.
 
-3. Browse to **Connection** > **SSH** > **Auth**, and configure the following:
+3. Browse to **Connection** > **Data**, and enter `opc` as the **Auto-login username**.
+
+4. Browse to **Connection** > **SSH** > **Auth**, and configure the following:
 
   a) In the **Authentication parameters** area, click **Browse**.
 
   b) Browse to your private key directory, select your private key (in `PPK` format), and then click **Open**.
 
-4. Browse to **Connection** > **SSH** > **X11**, and configure the following:
+5. Browse to **Connection** > **SSH** > **X11**, and configure the following:
 
   a) Select **Enable X11 forwarding**.
 
   b) Leave the **X display location** box empty.
 
 
-5. Return to the **Session** tab. In the **Saved Sessions** box, enter the name of your compute instance, and then click **Save**.
+6. Return to the **Session** tab. In the **Saved Sessions** box, enter the name of your compute instance, and then click **Save**.
 
   In the future, you can simply load your saved session and quickly connect.
 
-5. Click **Open**.
+7. Click **Open**.
 
   A message is displayed that the server's host key is not cached in the registry.
 
-6. Click **Yes** because you trust this host.
+8. Click **Yes** because you trust this host.
 
   You are now logged in as the `opc` user. Notice that the following line is displayed:
 
@@ -371,7 +237,7 @@ You need to convert the private key that you obtained from Oracle Cloud Infrastr
 
   The .Xauthority file is automatically generated the first time you log in to your compute instance. For subsequent logins, you do not see this message. The .Xauthority file stores credentials in cookies used by `xauth` for authentication of X sessions. Once an X session is started, the cookie is used to authenticate connections to that specific display.
 
-7. Display the authorization information for the `opc` user used to connect to the X server.
+9. Display the authorization information for the `opc` user used to connect to the X server.
 
     ```
     $ <copy>xauth list</copy>
@@ -379,34 +245,34 @@ You need to convert the private key that you obtained from Oracle Cloud Infrastr
     compute1.subnet03311012.vcn03311012.oraclevcn.com:10  MIT-MAGIC-COOKIE-1  9055a7967897789f94fd6a3fbc1b4b90
     ```
 
-8. View the `DISPLAY` environment variable.
+10. View the `DISPLAY` environment variable.
 
     ```
     $ <copy>echo $DISPLAY</copy>
     ```
     The output is `your-computer-ip:10.0`. Notice that the `10` is also part of the authentication information in the previous step.
 
-9. Test that the `opc` user can open a graphical user interface application like `xeyes`.
+11. Test that the `opc` user can open a graphical user interface application like `xeyes`.
 
     ```
     $ <copy>xeyes</copy>
     ```
   A pair of eyes is displayed in a separate window. If you move your cursor over the eyes, the eyes follow it.
 
-8. Hover your cursor over the XLaunch application icon.
+12. Hover your cursor over the XLaunch application icon.
 
   The application indicates that there is one client connected.
 
-9. Close `xclock`.
+13. Close `xclock`.
 
   The XLaunch application icon indicates that there are zero clients connected.
 
 
-## **STEP 6**: (Mac or cygwin emulator) Connect to your compute instance from your personal Mac computer
+## **STEP 5**: (Mac) Connect to your compute instance from your personal Mac computer
 
 REVIEWER: This section is still a work in progress.
 To install X11 on macOS, download and install the XQuartz Application from: http://xquartz.macosforge.org/
-
+This lab uses XQuartz. See: https://researchit.las.iastate.edu/x-forwarding-mac-and-windows
 
 
 1. Open a terminal window by selecting **Applications**, then **Utilities**, and then **Terminal**.
@@ -427,11 +293,6 @@ ssh –Y root@server-name
   The RSA key is added to the list of known hosts. You will not see this warning again when you connect in the future.
 
 
-
-## **STEP 7**: (Linux) Connect to your compute instance from your personal Linux computer
-
-
-(need steps)
 
 
 
