@@ -1,8 +1,12 @@
 # Introduction
 
-## Java applications on OCI Arm A1 compute platform
+## Deploying Nextcloud on OCI Arm A1 compute platform
 
-Learn how to build and deploy Java applications as containers on the OCI Arm A1 compute platform. You will deploy a Todo application with a database as containers running on the OCI Arm A1 compute platform. Additonally, you will use the new set of container tools such as [Podman](podman.io) that are part of the container tools 
+This tutorial walks you through how to get started with Nextcloud on the OCI Arm A1 compute platform. 
+
+Nextcloud is a suite of file hosting and collaboration tools. While functionally similar to Dropbox, Google Drive or Office365, Nextcloud is free and open-source and can be self hosted on any cloud infrastructure platform. Nextcloud can be accessed over the web interface or iOS and Android apps for devices that can keep your photos and documents automatically synced with your Nextcloud server on OCI. OCI Arm A1 provides a robust and efficient platform for hosting your own private file hosting and collaboration cloud. 
+
+Additonally, you will use the new set of tools such as [Podman](podman.io) that are part of the container tools package in Oracle Linux 8.
 
 Estimated time: 45 minutes
 
@@ -11,10 +15,9 @@ Estimated time: 45 minutes
 In this lab, you will:
 
 * Create an OCI Arm A1 compute instance 
-* Build a Java EE application that manages Todo notes.
-* Deploy the application to Tomcat 9
-* Connect the application to a database and manage the deployment as a Pod. 
-* Run and test the application
+* Prepare the compute instance for deploying containerized applicaions
+* Deploy Nextcloud as a set of containers.
+* Connect the application and setup file sync.
 * Clean up the deployments
 
 ### Prerequisites

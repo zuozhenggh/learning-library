@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Running Tomcat & MySQL on Oracle A1",
+  "workshoptitle": "Deploying Nextcloud on the OCI Arm A1 compute platform",
   "tutorials": [
     {
       "title": "Getting Started",
@@ -11,9 +11,13 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Running Java web applications on Oracle Arm A1",
-      "description": "This workshop guides the user through building and deploying a Java web application running on OCI Arm A1 Compute platform. The sample application is deployed on Apache Tomcat 9.0 and uses MariaDB as a database.",
-      "filename": "../../tutorial/arm-tomcat-mysql.md"
+      "title": "Create an OCI Arm A1 instance",
+      "filename": "../../create-a1-instance/create-a1-instance.md"
+    },
+    {
+      "title": "Deploying Nextcloud on the OCI Arm A1 compute platform",
+      "description": "This workshop guides the user on how to get started with Nextcloud on the OCI Arm A1 compute platform. Nextcloud is a suite of file hosting and collaboration tools, and can be used for collaborative working as well as personal file management and sync in the cloud. ",
+      "filename": "../../tutorial/deploy-nextcloud-a1.md"
     }
   ]
 }
