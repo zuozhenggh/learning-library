@@ -42,7 +42,7 @@ Estimated Lab Time: 30-45 minutes
 
     **(right-click and download the file with the following link)**
 
-    [1980's Artifacts](https://some_url/1980s_artifacts.json)
+    [1980's Artifacts](https://some_url/artifacts1980.json)
 
 6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
