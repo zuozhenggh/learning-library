@@ -8,7 +8,6 @@ Oracle Fleet Patching and Provisioning can be configured, stopped and started wi
 
 In this workshop, the FPP server is already configured, so beside checking the FPP Server status, you will use `rhpctl` most of the time.
 
-
 ### FPP or RHP?
 When it has been released in 2013, the original name of the product was *Rapid Home Provisioning*, or *RHP*. All the commands, logs and component names have been named after the original name.
 A few years later many features have been added and the name has been changed to *Fleet Patching and Provisioning*, or *FPP*. Now the name reflects better what the product does, but the underlying components and commands still use the old acronym. When talking about the product, both acronyms will show up. Most of the time, they are referring to the same thing.
@@ -19,6 +18,7 @@ For instance, the following names refer to the same thing:
 
 You may also hear some Oracle employees referring to *FPP* as *RHP*. Again, they refers to the same product.
 
+**Estimated time to complete this lab: 5 minutes.**
 
 ## Step 1: Connect to the FPP Server via SSH
 Connect to the FPP Server via SSH using the user `opc` and the private key that you have created during the LiveLab setup.

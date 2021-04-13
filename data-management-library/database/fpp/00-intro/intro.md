@@ -14,8 +14,6 @@ FPP commands can be ran simultaneously on hundreds of targets, making possible t
 A single command line, or a single RESTful API call, replaces dozens or hundreds of manual tasks.
 Forget about boring and time-consuming patching campaigns: Fleet Patching and Provisioning gives you the automation, standardization and protection level that your auditors are looking for.
 
-Watch the video below for an overview of Fleet Patching and Provisioning.
-
 ### About this Workshop
 
 Fleet Patching and Provisioning 19c is meant to be used by customers to patch their database fleet on-premises. It is generally not recommended to use it for patching Oracle Cloud database services, because the current version does not integrate with the OCI automation tooling (please note that is not completely true: Oracle does use FPP internally to patch some OCI services, but this is not visible to our customers). However, in this workshop we will use OCI services to setup and test FPP.

@@ -7,6 +7,8 @@ By provisioning databases with FPP you don't have to spend time to run dbca in s
 * a DBCA Template Database, either local on the client or included in the gold image (standard templates such as General_Purpose.dbt work perfectly well)
 * one rhpctl command to provision the database on the target node or cluster
 
+**Estimated time to complete this lab: 20 minutes.**
+
 ## Step 1: Provision the database using the standard template
 
 Run the following command on the FPP Server (Est. 14-15 minutes):

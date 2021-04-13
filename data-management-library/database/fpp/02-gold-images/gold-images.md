@@ -4,6 +4,8 @@
 Oracle Fleet Patching and Provisioning stores Oracle Home images into its ACFS filesystems.
 You can build your images with the required release updates and one-off patches and import them into FPP. From there, you can provision the same image everywhere in your server fleet: this ensure that all your Oracle Homes are standard and compliant with your patching requirements.
 
+**Estimated time to complete this lab: 25 minutes.**
+
 ## Step 1: Import the local FPP Homes as Gold Images
 Import the Oracle Homes that are already installed and configured on the FPP Server as new gold images.
 
@@ -127,7 +129,7 @@ fpps01.pub.fpplivelab.oraclevcn.com: Successfully executed detach home operation
 We have already patched it for you with the DB 19.9.0 Release Update, so you do not have to do it yourself. However, in real life this is a task that you would have to do.
 
 Because it comes from a non-verified source, FPP will uncompress the image and verify it by configuring it and relinking it.
-This is an extra step to make sure that the image is usable and can be provisioned as working copy on the remote targets without problem. This, however, require 2-3 additional minutes.
+This is an extra step to make sure that the image is usable and can be provisioned as working copy on the remote targets without problem. This, however, requires 2-3 additional minutes.
 
 ## Step 3: Query the Gold Images
 Once the images have been imported into the FPP Server, you can query them:

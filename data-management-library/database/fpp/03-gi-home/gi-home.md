@@ -3,6 +3,8 @@
 ## Introduction
 Oracle Fleet Patching and provisioning can provision Grid Infrastructure software on remote targets using the command `rhpctl add workingcopy`.
 
+**Estimated time to complete this lab: 15 minutes.**
+
 ```
 [grid@fpps01 ~]$ rhpctl add workingcopy -help GRIDHOMEPROV
 
@@ -190,7 +192,7 @@ fpps01.pub.fpplivelab.oraclevcn.com: Working copy creation completed.
 ```
 
 ## Step 3: Connect to the target and verify the Restart Environment
-From either the FPP Server or your SSH client, connect as `opc` to the FPP target publid IP address and become `oracle`:
+From either the FPP Server or your SSH client, connect as `opc` to the FPP target public IP address and become `oracle`:
 ```
 [grid@fpps01 ~]$ ssh opc@fppc
 opc@fppc's password: FPPll##123

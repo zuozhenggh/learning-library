@@ -12,6 +12,11 @@
             "description": "This lab gives you a basic overview of Fleet Patching and Provisioning",
             "filename": "../../00-intro/intro.md"
         },
+         {
+            "title": "Get the Public IP of the FPP Server",
+            "description": "If you are not running the Terraform stack yourself, you will need the Public IP",
+            "filename": "../../00e-get-public-ip/get-public-ip.md"
+        },
         {
             "title": "Lab 1: Get acquainted with the environment and the rhpctl command line tool",
             "description": "This lab walks you through the steps to start using Oracle Fleet Patching and Provisioning",

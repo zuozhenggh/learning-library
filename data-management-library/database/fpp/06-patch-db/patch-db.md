@@ -12,6 +12,8 @@ FPP detects automatically the type of deployment (cluster or single node), type 
 If the database is in RAC mode (it is not the case in this workshop), FPP relocates gracefully the services and move one instance at the time to the new home, then runs datapatch at the end.
 Again, this is achieved with a single line of code.
 
+**Estimated time to complete this lab: 10 minutes.**
+
 ## Step 1: Run the patching evaluation
 Like all the disruptive FPP commands, `rhpctl move database` can be run with the `-eval` switch to evaluate the basic requirements before executing the actual patching.
 It is recommended to use `-eval` whenever possible. For patching, it is a good idea to run it hours or days before the intervention, so that any errors or missing requirements can be fixed in time.
@@ -28,7 +30,6 @@ fpps01.pub.fpplivelab.oraclevcn.com: verifying versions of Oracle homes ...
 fpps01.pub.fpplivelab.oraclevcn.com: verifying owners of Oracle homes ...
 fpps01.pub.fpplivelab.oraclevcn.com: verifying groups of Oracle homes ...
 fpps01.pub.fpplivelab.oraclevcn.com: Evaluation finished successfully for "move database".
-Wed Apr  7 13:46:17 UTC 2021
 ```
 
 Because you have specified the correct groups when adding the working copy, this command succeeds.
@@ -53,6 +54,8 @@ fpps01.pub.fpplivelab.oraclevcn.com: verifying groups of Oracle homes ...
 fpps01.pub.fpplivelab.oraclevcn.com: starting to move the following databases: "fpplive1_site1"
 fpps01.pub.fpplivelab.oraclevcn.com: restarting databases: "fpplive1_site1" ...
 fppc: trying datapatch run for fpplive1site, attempt### 1 ###
+fppc: datapatch completed successfully for database : fpplive1_site1
+fpps01.pub.fppllvcn.oraclevcn.com: Completed the 'move database' operation for databases: "fpplive1_site1"
 ```
 
 ## Step 3: Verify that the DB is patched and running in the new Oracle Home
@@ -91,5 +94,35 @@ OSOPER group:
 Database instance: fpplive1site
 ```
 It is running in the new Oracle Home, the `srvctl` configuration has been adapted as well!
+
+Let's see the patching level:
+```
+[oracle@fppc ~]$ sqlplus / as sysdba
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Tue Apr 13 14:22:47 2021
+Version 19.10.0.0.0
+
+Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.10.0.0.0
+
+SQL> set lines 220
+SQL> select PATCH_ID, PATCH_UID, STATUS, DESCRIPTION from DBA_REGISTRY_SQLPATCH;
+
+  PATCH_ID  PATCH_UID STATUS                    DESCRIPTION
+---------- ---------- ------------------------- ----------------------------------------------------------------------------------------------------
+  31771877   23869227 SUCCESS                   Database Release Update : 19.9.0.0.201020 (31771877)
+  32067171   23947975 SUCCESS                   OJVM RELEASE UPDATE: 19.10.0.0.210119 (32067171)
+  32218454   24018797 SUCCESS                   Database Release Update : 19.10.0.0.210119 (32218454)
+  31465389   23988611 SUCCESS                   RMAN RECOVER FAILS FOR PDB$SEED DATAFILES RMAN-06163 RMAN-06166
+
+SQL> exit
+Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.10.0.0.0
+```
+From the output you can see that the Database has been patched correctly.
 
 Congratulations! You have completed all the labs in this workshop. We hope you have liked it!

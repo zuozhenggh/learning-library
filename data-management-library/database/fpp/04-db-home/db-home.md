@@ -5,9 +5,11 @@ The main reason for starting using Oracle Fleet Patching and Provisioning is pro
 
 In this Lab, we will provision two Oracle Homes, with different patch levels.
 
+**Estimated time to complete this lab: 25 minutes.**
+
 ### In-place vs out-of-place patching
 When it comes to patching the binaries, a common approach is **in-place patching**, where customers follow these macro-steps:
-- Stage the latest `opatch` and patch bundle on the server (e.g. latest Realease Update)
+- Stage the latest `opatch` and patch bundle on the server (e.g. latest Release Update)
 - Stop the databases (downtime starts)
 - Update `opatch`
 - Apply the patch
@@ -18,7 +20,7 @@ The downtime window must be large enough to accommodate the patching operation a
 
 **Our-of-place patching** is generally a better approach, that consists in the following steps:
 - Prepare a new Oracle Home which contains the required patches
-- Stop the databases (all, or one at he time)
+- Stop the databases (all, or one at the time)
 - Restart the databases in the new Oracle Home
 - Run `datapatch`
 
@@ -48,7 +50,7 @@ First one, opc password is always `FPPll##123` unless you have changed it (Est. 
 [grid@fpps01 ~]$ rhpctl add workingcopy -image db_19_9_0  -workingcopy WC_db_19_9_0_FPPC \
    -storagetype LOCAL -user oracle -oraclebase /u01/app/oracle \
    -targetnode fppc -path /u01/app/oracle/product/19.0.0.0/WC_db_19_9_0_FPPC \
-   -sudouser opc -sudopath /bin/sudo ; date
+   -sudouser opc -sudopath /bin/sudo
 Enter user "opc" password: FPPll##123
 fpps01.pub.fpplivelab.oraclevcn.com: Audit ID: 11
 fpps01.pub.fpplivelab.oraclevcn.com: Storing metadata in repository for working copy "WC_db_19_9_0_FPPC" ...
@@ -122,6 +124,7 @@ fpps01.pub.fpplivelab.oraclevcn.com: Working copy creation completed.
 [grid@fpps01 ~]$
 ```
 
+## Step 2: Provision the second workingcopy
 Second one (Est. 8-9 minutes), **please note the additional -groups** parameter passed here:
 ```
 [grid@fpps01 ~]$ rhpctl add workingcopy -image db_19_10_0_oci -workingcopy WC_db_19_10_0_FPPC \
@@ -203,7 +206,7 @@ fpps01.pub.fpplivelab.oraclevcn.com: Working copy creation completed.
 [grid@fpps01 ~]$
 ```
 
-## Step 2: Verify the working copies
+## Step 3: Verify the working copies
 On the server:
 ```
 [grid@fpps01 ~]$ rhpctl query workingcopy
