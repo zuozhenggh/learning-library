@@ -21,8 +21,6 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs, and your deployment is in the Active state.
 
-*Note: If you encounter into an error when you run the Extract or Replicat, then you must delete and recreate the Extract or Replicat after you resolve the issue before trying again.*
-
 ## **STEP 1**: Log in to the Oracle GoldenGate deployment console
 
 1.  Log in to Oracle Cloud Infrastructure and navigate to the **GoldenGate** service using the Console navigation menu.
@@ -40,6 +38,8 @@ This lab assumes that you completed all preceding labs, and your deployment is i
     You're brought to the OCI GoldenGate Deployment Console Home page after successfully signing in.
 
 ## **STEP 2:** Add Transaction Data and a Checkpoint Table
+
+*Note: Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
 
 1.  Open the navigation menu and then click **Configuration**.
 
