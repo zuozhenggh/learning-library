@@ -583,6 +583,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Mark Rakhmilevich, Anoosha Pilli
+* **Author** - Rayes Huang, Mark Rakhmilevich, Anoosha Pilli
 * **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
 * **Last Updated By/Date** - Anoosha Pilli, April 2021
