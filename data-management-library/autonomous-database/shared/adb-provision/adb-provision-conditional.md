@@ -37,7 +37,12 @@ Watch a video demonstration of provisioning a new <if type="atp">Autonomous Tran
 
 4. Make sure your workload type is __Data Warehouse__ or __All__ to see your <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if> instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
 
+    <if type="adw">
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
+    </if>
+    <if type="atp">
+    ![Check the workload type on the left.](images/livelabs-atp.png " ")
+    </if>
 
    *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
 
@@ -78,7 +83,7 @@ Watch a video demonstration of provisioning a new <if type="atp">Autonomous Tran
 
 6. Configure the database:
 
-    - __Always Free__ - An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
+    - __Always Free__ - An always free database comes with 1 CPU and 20 GB of storage. <if type="adw">For this lab, we recommend you leave Always Free unchecked.</if>
     - __Choose database version__ - <if type="atp">21c</if><if type="adw">19c</if>
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
