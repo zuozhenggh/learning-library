@@ -234,9 +234,9 @@ Notice `/.kube/config` is created for the cluster and the `mtdrworkshop` namespa
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Application by** - Jean de Lavarene, Sr Director of Development, JDBC/UCP
-* **Workshop by** - Kuassi Mensah, Dr Product Management, JDBC/UCP, OJVM
-* **Original scripts by** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Workshop by** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Application by** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Original scripts by** - Paul Parkinson, Developer Evangelist, Microservices
 
 ## Need Help?
 Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request.

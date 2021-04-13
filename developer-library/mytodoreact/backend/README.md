@@ -22,11 +22,17 @@ The backend is implemented using the following Java classes (under ./backend/src
 - ToDoItemStorage.java: storing the Todo item in a persistent storage using the Oracle database
 - ToDoListAppService.java: implements the Helidon service and exposes the REST APIs
 
+## **STEP 0**: Chmod all shell scripts
+
+```
+  <copy>chmod +x *.sh</copy>
+```
 
 ## **STEP 1**: Build and push the Docker images
 
-1. Set the environment variable "DOCKER_REGISTRY" to push the docker image to the OCI image registry. If the variable is not set or set to an empty string the push will fail (but the docker image will be built).
-
+1. Set the environment variable "DOCKER_REGISTRY" to push the docker image to the OCI image registry.
+ Example: <region-key>.ocir.io/<object-storage-namespace>/<firstname.lastname>/<repo-name>"
+ If the variable is not set or set to an empty string the push will fail (but the docker image will be built).
 
 2. Pick a database service alias from ./backend/target/classes/wallet/tnsnames.ora i.e., mtdrdb_tp
 
@@ -85,9 +91,10 @@ $ kubectl get services
 ```
   <copy>kubectl get services</copy>
 ```
-NAME                             TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
-kubernetes                       ClusterIP      10.96.0.1      <none>         443/TCP        36d
-todolistapp-helidon-se-service   LoadBalancer   10.96.74.197   130.61.66.27   80:32344/TCP   33s
+
+![](images/K8-service-Ext-IP.png " ")
+
+Notice the External IP
 
 4. $ kubectl get pods
 ```
@@ -97,38 +104,31 @@ NAME                                                 READY   STATUS    RESTARTS 
 todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv   1/1     Running   0          5m40s
 todolistapp-helidon-se-deployment-7fd6dcb778-gjdfv   1/1     Running   0          5m39s
 
-5. Continuously tailing the logs
+5. Continuously tailing the log of one of the pods
 
-$ kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
-$ kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-gjdfv
+$ kubectl logs -f <pod name>
+  Examaple kubectl lgs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
 
-6. Returns the todolist:
+  Returns:
   http://130.61.66.27/todolist
 
+## **STEP 4**: Configure the API Gateway
 
-## **STEP 4**: ReDeploy on Kubernetes
-If the image has changed, just delete the pod and it will be recreated
+1.
+
+## **STEP 5**: UnDeploy
+If the image has changed, delete the service and the pods by running undeploy.sh
 
 1. Run the `undeploy.sh` script
 ```
   <copy>cd $MTDRWORKSHOP_LOCATION/backend; ./undeploy.sh</copy>
 ```
-
-2. $ kubectl delete pod todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
-
-```
-<copy>kubectl delete deployment todolistapp-helidon-se-deployment -n todoapp
-</copy>
-```
-```
-<copy>kubectl delete service todolistapp-helidon-se-service -n todoapp </copy>
-
-```
+2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 ## Acknowledgements
-* **Application by** - Jean de Laverene, Senior Director, Oracle JDBC and UCP development
-* **Workshop by** - Kuassi Mensah, Director, Oracle JDBC, UCP and OJVM product management"
-* **Original scripts by** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Workshop by** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Application by** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Original scripts by** - Paul Parkinson, Developer Evangelist, Microservices
 
 ## Need Help?
 Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request.
