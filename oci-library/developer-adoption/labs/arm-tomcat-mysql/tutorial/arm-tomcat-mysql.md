@@ -85,8 +85,8 @@ The application uses the Tomcat servlet container and the MySQL database. Both T
     -e MYSQL_USER=todo-user \
     -e MYSQL_PASSWORD=todo-pass \
     --name todo-mysql \
-    -v "${pwd}"/src/main/sql:/docker-entrypoint-initdb.d:z \
-    mariadb:latest
+    -v "${PWD}"/src/main/sql:/docker-entrypoint-initdb.d:z \
+    mysql/mysql-server:8.0
     ```
 
     For the MySQL database, the database initialization scripts are provided to the container, which creates the required database users and tables at startup. For more options, including how to export and back up data, see the [documentation](https://hub.docker.com/_/mysql).
@@ -96,7 +96,7 @@ The application uses the Tomcat servlet container and the MySQL database. Both T
     ```
     podman run --pod todo-app \
     --name todo-tomcat \
-    -v "$(pwd)"/target/todo.war:/usr/local/tomcat/webapps/todo.war:z \
+    -v "${PWD}"/target/todo.war:/usr/local/tomcat/webapps/todo.war:z \
     tomcat:9
     ```
 
