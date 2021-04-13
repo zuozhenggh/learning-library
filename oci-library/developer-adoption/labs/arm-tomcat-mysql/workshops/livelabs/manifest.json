@@ -11,8 +11,12 @@
       "filename": "../../intro/intro.md"
     },
     {
+      "title": "Create an OCI Arm A1 instance",
+      "filename": "../../create-a1-instance/create-a1-instance.md"
+    },
+    {
       "title": "Running Java web applications on Oracle Arm A1",
-      "description": "This workshop guides the user through building and deploying a Java web application running on OCI Arm A1 Compute platform. The sample application is deployed on Apache Tomcat 9.0 and uses MariaDB as a database.",
+      "description": "This workshop guides the user through building and deploying a Java web application running on OCI Arm A1 Compute platform. The sample application is deployed on Apache Tomcat 9.0 and uses MySQL as a database.",
       "filename": "../../tutorial/arm-tomcat-mysql.md"
     }
   ]
