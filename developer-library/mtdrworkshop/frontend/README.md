@@ -56,9 +56,9 @@ In your Cloud  tenancy, open up the hamburger menu in the top-left corner of the
 - Copy the endpoint
 ![](images/Api-gtw-deploy.png " ")
 
-- In API.js, paste the endpoint as the value of API_LIST an append "/todolist"
+- In API.js, paste the endpoint as the value of API_LIST and append "/todolist"
   Example
-  const API_LIST = 'https://<xxxxxxxxxx>.apigateway.us-phoenix-1.oci.customer-oci.com/todolist';
+  const API_LIST = 'https://xxxxxxxxxx.apigateway.us-phoenix-1.oci.customer-oci.com/todolist';
 
 - Save the file
 
@@ -103,7 +103,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 1. Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
 
-- Select the 'mtdrworkshop' bucket and copy the link 
+- Select the 'mtdrworkshop' bucket and copy the link
 
 ![](images/object-store.png " ")
 
