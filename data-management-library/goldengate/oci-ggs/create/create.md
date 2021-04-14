@@ -33,6 +33,8 @@ This lab assumes that you completed all preceding labs.
 
     ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
 
+2.  If you're prompted to select a compartment, select the compartment associated to your LiveLab workshop. For example, if your LiveLab username is LL6150-user, select the compartment **LL6150-COMPARTMENT**.
+
 2.  On the Deployments page, click **Create Deployment**.
 
     ![Click Create Deployment](images/01-02-01.png "Create a deployment")

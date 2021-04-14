@@ -7,8 +7,6 @@ Since we have already setup Active-Active configuration on CDRDEMO table, we wil
 *Estimated Lab Time*:  60 minutes
 
 ### Objectives
-
-
 - Resolve the different types of conflict using one or more resolution methods.
 
 
@@ -17,12 +15,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: Create One-Way Replication
-    - Lab: GoldenGate Microservices Active-Active and Auto CDR
+    - Lab: Create HA/DR Replication
 
 ## **STEP 1**: INSERTROWEXISTS with the USEMAX Resolution
 
@@ -64,7 +62,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     </copy>
     ```
 
-    and replace Table SOE.CDRDEMO with below line:
+    Add below line and comment/remove the line <b>Table SOE.CDRDEMO</b> if exist:
 
     ```
     <copy>
@@ -83,7 +81,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     </copy>
     ```
 
-    and replace Table SOE.CDRDEMO with below line:
+    Add below line and comment/remove the line <b>Table SOE.CDRDEMO</b> if exist:
 
     ```
     <copy>
@@ -97,7 +95,7 @@ To resolve an insert where the row exists in the source and target, but some or 
 
 3. Modify the Replicat parameter file.
 
-    In both the replicat replace "map <oggoow191||oggoow19>.soe.cdrdemo,target soe.cdrdemo;" with line below:
+    In both the replicat(IREP and IREP1) comment/remove "map <oggoow191||oggoow19>.soe.cdrdemo,target soe.cdrdemo;" if exist and add below lines:
 
     ```
     <copy>
@@ -153,7 +151,7 @@ To resolve the condition where a target row exists on UPDATE but non-key columns
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -208,7 +206,7 @@ To resolve the case where the source row was deleted but the target row exists. 
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -295,7 +293,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -323,7 +321,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
 
     ```
     <copy>
-    ./alter_extract.sh EXTSOE 16001
+    ./alterExtract.sh EXTSOE 16001
     </copy>
     ```
     ![](./images/alter_extract.png " ")
@@ -406,7 +404,7 @@ To resolve the case where the target row is missing. The logical resolution, and
     </copy>
     ```
 
-2. In both the replicat paramter file modify the paramter mapping <b>SOE.CDRDEMO</b> table, with below statement
+2. In both the replicat paramter file modify the paramter mapping on <b>SOE.CDRDEMO</b> table, with below statement:
 
      ```
     <copy>
@@ -477,17 +475,12 @@ To resolve the case where the target row is missing. The logical resolution, and
     ![](./images/urm_pm_db_1.png " ")
     ![](./images/urm_pm_db_2.png " ")
 
-You may now [proceed to the next lab](#next).
+*Congratulations!* You have completed this workshop!
 
 ## Learn More
 * [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
 
 ## Acknowledgements
 * **Author** - Nishant Kaushik, Data Integration, December 2020
-* **Contributors** - Brian Elliott, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Contributors** - Zia Khan, Meghana Banka, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021

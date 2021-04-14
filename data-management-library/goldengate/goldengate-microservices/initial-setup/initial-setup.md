@@ -23,12 +23,22 @@ This lab assumes you have:
 ## **STEP 0**: Running your Lab
 ### Login to Host using SSH Key based authentication
 
+1. Select the hamburger menu and select **Compute** > **Instances**
+  ![](./images/select-compute.png " ")  
+
+2. Select your compartment. You should see your Compute Instance Public IP address. 
+    ![](./images/ip-address.png " ")
+
 1. If needed, refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
     - Authentication OS User - “*opc*”
     - Authentication method - *SSH RSA Key*
     - OS User – “*oracle*”.
 
 2. First login as “*opc*” using your SSH Private Key
+
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
 
 3. Then sudo to “*oracle*”.
 
