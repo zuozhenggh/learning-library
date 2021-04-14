@@ -93,3 +93,56 @@ The objective of this lab is to become familiar with Enterprise Monitoring capab
 
   12.	The right hand pane of the Enterprise Summary page also has Inventory and Usage, Compliance Summary, and Patch Recommendations sections. Inventory and Usage shows a breakdown of database inventory by release. Compliance Summary shows the compliance score for the selected targets as well as security recommendations. Patch Recommendations links to MOS and shows the recommended patches for your targets.
         ![](images/emmonlab1step12.png " ")
+
+## **STEP 2:** Incident Manager
+Incident Manager provides in one location the ability to search, view, manage, and resolve events, incidents and problems impacting your environment.
+1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
+     ![](images/emmonlab2Step1.png " ")
+
+2.	Navigate to “Enterprise >> Monitoring >> Incident Manager”.
+     ![](images/emmonlab2Step2.png " ")
+
+3.	In Incident Manager, the Views section contains out-of-box views that comes shipped with Enterprise Manager. You can create your own views and share with others as well. By default, “All open incidents” view is displayed.
+     ![](images/emmonlab2Step3.png " ")
+
+4.	We will triage unassigned incidents and then acknowledge and assign an incident to an owner. Highlight the first incident. Details of the incident will be displayed in the bottom pane.
+     ![](images/emmonlab2Step4.png " ")
+
+5.	Click on “Open in new tab” link to open the incident on a separate tab. You may need to temporarily allow popups in the browser.
+     ![](images/emmonlab2Step5.png " ")
+
+6.	The General tab of an incident contains 3 sections.
+- Incident Details contains information about the incident such as target name, creation date, type, and summary.
+- Tracking provides the priority, status, and ability to manage the incident.
+- Guided Resolution contains recommendations for incident resolution and provides the ability to diagnose and take action to resolve the incident.
+     ![](images/emmonlab2Step6.png " ")
+
+7.	Click on “Acknowledge” in the Tracking section to acknowledge the incident. This will automatically assign the incident to the user acknowledging the incident.
+     ![](images/emmonlab2Step7a.png " ")
+
+     ![](images/emmonlab2Step7b.png " ")
+
+8.	Click on “Manage”.
+     ![](images/emmonlab2Step8.png " ")
+
+9.	Update the Status, Priority, and Escalation fields. Add a short comment and click OK
+     ![](images/emmonlab2Step9.png " ")
+
+10.	A confirmation is displayed with the Tracking section updated.
+     ![](images/emmonlab2Step10.png " ")
+
+11.	Close the Incident Details tab and go back to the Incident Manager tab.
+
+12.	Click on the Dashboard button next to “Incident Manager: All open incidents”.
+     ![](images/emmonlab2Step12.png " ")
+
+13.	Incident Dashboard provides a holistic view of your incidents. It contains 3 sections.
+
+- Summary: Instant count of incidents that are open, fatal, escalated, unassigned, and unacknowledged. These are the incidents that need to be triaged or worked on immediately. Fatal and Escalated count are highlighted in Red by default.
+- Charts: Provides an easy-to-understand look at the current incident distribution and management status for each incident. Drill down capability with stackable filters to slice and dice data any way you like. Customize to add/update/remove charts to provide a personalized view in Incident Manager.
+- Incident List: Shows the open incidents listed in reverse chronological order by last updated time stamp. From this list, you can perform requisite incident lifecycle actions such as escalating, prioritizing, acknowledging, assigning owners, and adding comments to the incident. The incident list will reflect any filters applied.
+
+     ![](images/emmonlab2Step13.png " ")
+
+14.	Click on the “Fatal” link to drill down into these incidents.
+     ![](images/emmonlab2Step14.png " ")
