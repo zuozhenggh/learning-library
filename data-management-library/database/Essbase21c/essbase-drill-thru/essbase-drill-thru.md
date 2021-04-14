@@ -137,12 +137,10 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 ## **Step 5:** Define Drill-through Report
 1. Navigate to the database inspector for the application SampleDT and database Basic. Click on Scripts.   
 
-   a) Select Drill Through Reports on left navigation section.   
-
-   b) On the Create menu to the right, Select Datasource.
+2. Select Drill Through Reports on left navigation section. On the Create menu to the right, Select Datasource.
    ![](./images/imageDT_16.png "")
 
-2. Enter Name "SalesBreakdown". 
+3. Enter Name "SalesBreakdown". 
 
    a) Click dropdown for Datasource and select the data source "SAMPLEDT.SalesTable".
    
@@ -157,10 +155,10 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 
    ![](./images/imageDT_17.png "")
 
-3. Select Drillable Regions on the left navigation bar, click the “+” icon and enter @Children("Market").
+4. Select Drillable Regions on the left navigation bar, click the “+” icon and enter @Children("Market").
    ![](./images/imageDT_18.png "")
 
-4. Click Save and Close. Click Close to close the database inspector.
+5. Click Save and Close. Click Close to close the database inspector.
    
 
 
@@ -174,7 +172,7 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 
    You will see data cells E2 – E5 and E7 – E10 enabled for drill-through reports.  
 
-   This is the same region where we created the drill-through report through Essbase Cloud UI and represent summarized Sales for the different Regions.  
+   This is the same region where we created the drill-through report through Essbase UI and represent summarized Sales for the different Regions.  
    ![](./images/imageDT_19.png "")
 
    Next, we will load data and drill through to the detailed breakdown of data in the Oracle Database table.
@@ -187,13 +185,14 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
    b) Launch the database inspector by clicking the icon under Actions and selecting Inspect.   
    
    c) Click Scripts. On the left navigation bar select -> Rules. Click Create menu to the right.  
+   ![](./images/imageDT_20.png "")
    
    d) In the drop down menu, select Data Load.    
      * In the Name field, provide the name of the rules file as SalesDataload.  
      * For Data Dimension, select “Measures” dimension.  
      * Click Proceed.   
     
-   ![](./images/imageDT_20.png "")
+   
    ![](./images/imageDT_21.png "")
 
 2. Click Create and select “Regular” from the drop down options. Do the same 3 more times to have 5 fields.
@@ -232,11 +231,11 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 
     d. For Scripts, select the name of the data load rules file you created, SalesDataload.rul. 
 
-    e. Enter the user name and password of your SQL database schema user. Click OK.
+    e. Enter the user name and password of your SQL database schema. Click OK.
 
     ![](./images/imageDT_25.png "")
 
-8. Click Refresh to update the status and when the job is completed, click Job details from the right side dropdown to check Job execution status. 
+8. Click Refresh to update the status. Once the job is completed, click Job details from the right side dropdown to check Job execution status. 
     ![](./images/imageDT_26.png "")
 
 
@@ -246,7 +245,7 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 
 2.	The sales for the month of April in the Central Region is 1207. 
 
-    To see the detailed breakdown of Sales by States in Central Region, Click on cell E5 1207.   
+    To see the detailed breakdown of Sales by States in Central Region, Double Click on cell E5 1207.   
 
     Execute the drill-through report defined in cell E5 by clicking Drill-through in the Essbase ribbon.
 
