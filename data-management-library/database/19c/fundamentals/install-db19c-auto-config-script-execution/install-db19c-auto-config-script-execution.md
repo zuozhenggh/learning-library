@@ -9,6 +9,8 @@ In the Oracle Database 19c Installation Wizard, you can configure the `root` use
 
 You can perform most of the steps in this lab by using Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. To run the graphical Oracle Database 19c installer, you need to use a terminal on your personal computer (not Cloud Shell) and set up X11 forwarding using Secure Shell (SSH) or virtual network computing (VNC) on your compute instance. This lab shows you how to use PuTTY and X11 forwarding to connect to your compute instance from your personal computer and run the graphical installer.
 
+The last step in the lab has you terminate your compute instance. In subsequent labs, you rebuild your environment using Resource Manager so that you can work with the latest version of Oracle Database 19c (version 19.10). The version that you install in this lab is 19.3. But for the purpose of this lab, version 19.3 is fine.
+
 
 Estimated Lab Time: 45 minutes
 
@@ -25,11 +27,12 @@ In this lab, you learn how to do the following:
 - Install the database software by using the Oracle Database Setup Wizard
 - Review the response file
 - Discover the container database (CDB) and pluggable database (PDB)
+- Terminate your compute instance
 
 
 ### Prerequisites
 
-- You have an Oracle Cloud account. You can use the account you created when you signed up for a free trial, one that was given to you through your own organization, or one provided to you by LiveLabs.
+- You have an Oracle account. You can obtain a free account by using Oracle Free Tier or you can use a paid account provided to you by your own organization.
 - You have a compartment in Oracle Cloud Infrastructure.
 - You have PuTTY installed on your local computer.
 
@@ -79,7 +82,9 @@ In this lab, you learn how to do the following:
 
 To connect to your compute instance using Cloud Shell, you need to add your private key to the `.ssh` directory on your Cloud Shell machine. The `.ssh` directory already exists on your machine so you do not need to create it. You only need to add your private key once (step 2 below). After your private key is in its proper place, you can simply SSH to connect in future sessions (step 4 below).
 
-1. On the toolbar, click the **Cloud Shell** icon. A Cloud Shell machine is created for you. Wait for the prompt to be displayed.
+1. On the toolbar in Oracle Cloud Infrastructure, click the **Cloud Shell** icon to open the Cloud Shell window, and wait for a terminal prompt to be displayed.
+
+  ![Cloud Shell icon](images/cloud-shell-icon.png)
 
 2. Do this once: Upload your private key to the `.ssh` directory on your Cloud Shell machine.
 
@@ -104,7 +109,7 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
 
 3. On the **Instance Information** tab for your compute instance, find the public IP address and copy it to the clipboard.
 
-4. Enter the following `ssh` command to connect to your compute instance, replacing `private-key-file` and `public-ip-address` values with your own values.
+4. Enter the following `ssh` command to connect to your compute instance, replacing `private-key-file` and `public-ip-address` with your own values.
 
     ```nohighlighting
     $ <copy>ssh -i ~/.ssh/private-key-file.key opc@public-ip-address</copy>
@@ -993,6 +998,26 @@ You can continue to use your PuTTY connection for this step.
 
 Congratulations! You have a fully functional Oracle Database 19c instance running on a compute instance in Oracle Cloud Infrastructure.
 
+
+## **STEP 10**: Terminate your compute instance
+
+Now that you are familiar with the new feature of installing Oracle Database 19c with automatic `root` script execution, you are ready to try the next feature. Before doing so, terminate the compute instance that you build in this lab because you create a new compute instance and database in the next lab.
+
+1. From the navigation menu in Oracle Cloud Infrastructure, select **Compute**, and then **Instances**.
+
+2. Select the compartment in which your compute instance resides.
+
+3. Select your compute instance.
+
+4. From the **More Actions** drop-down on the **Instance Details** page, select **Terminate**. A **Terminate Instance** dialog box is displayed.
+
+5. Select the check box to **Permanently delete the attached boot volume**, and then click **Terminate Instance**.
+
+  ![Terminate Instance dialog box](images/terminate-instance.png)
+
+  Your compute instances is terminated when the status changes to **TERMINATED**.
+
+You may now [proceed to the next lab](#next).
 
 
 ## Learn More
