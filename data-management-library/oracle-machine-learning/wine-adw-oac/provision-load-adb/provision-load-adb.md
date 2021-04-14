@@ -56,9 +56,9 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
     - **Choose a workload type** - For this lab, choose __Data Warehouse__ as the workload type.
     - **Choose a deployment type** - For this lab, choose **Shared Infrastructure** as the deployment type.
     - **Always Free** - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    - **Choose database version** - Select a database version from the available versions.
-    - **OCPU count** - Number of CPUs for your service. Leave as it is, or if you choose an Always Free database, it comes with 1 CPU.
-    - **Storage (TB)** - Select your storage capacity in terabytes. Leave as it is or, if you choose an Always Free database, it comes with 20 GB of storage.
+    - **Choose database version** - For this lab, choose **19c**.
+    - **OCPU count** - Number of CPUs for your service. For this lab, change this number to **2**.
+    - **Storage (TB)** - Select your storage capacity in terabytes. Leave it as **1**.
     - **Auto Scaling** - For this lab, keep auto scaling enabled.
 
     ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
@@ -67,8 +67,8 @@ Watch a video demonstration on getting started with Oracle Machine Learning and 
 
     - **Password** - Specify the password for **ADMIN** user of the service instance.
     - **Confirm Password** - Re-enter the password to confirm it. Make a note of this password.
-    - **Choose network access** - For this lab, accept the default, "Allow secure access from everywhere".
-    - **Choose a license type** - For this lab, choose **License Included**.
+    - **Choose network access** - For this lab, accept the default **Allow secure access from everywhere**.
+    - **Choose a license type** - For this lab, choose **Bring Your Own License**.
 
     ![](./images/create.png " ")
 
