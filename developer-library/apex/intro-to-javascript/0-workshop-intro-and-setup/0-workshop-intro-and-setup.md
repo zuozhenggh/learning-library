@@ -18,7 +18,7 @@ Estimated Time: 160 minutes
 
 | # | Lab | Est. Time |
 | --- | --- | --- |
-| 1 | [Signing up for an APEX Workspace](?lab=sign-up-for-apex-workspace) | 5 minutes |
+|   | [Signing up for an APEX Workspace](?lab=sign-up-for-apex-workspace) | 5 minutes |
 | 1 | [JavaScript Basics](?lab=lab-1-javascript-basics) | 20 minutes |
 | 2 | [Adding JavaScript to APEX Apps](?lab=lab-2-adding-javascript-apex-apps) | 60 minutes |
 | 3 | [Working with jQuery and the DOM](?lab=lab-3-working-dom-jquery) | 60 minutes |

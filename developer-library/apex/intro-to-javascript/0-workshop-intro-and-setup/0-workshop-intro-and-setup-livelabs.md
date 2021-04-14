@@ -8,7 +8,7 @@ For developers that know SQL and PL/SQL, no other framework is as empowering as 
 
 APEX developers only need to know a little bit of JavaScript to have a significant impact, and that's what this hands-on lab is all about! You'll start by learning some of the basics of JavaScript, then learn how to add JavaScript to APEX apps, and finally, you will learn to use jQuery to work with the DOM.
 
-Before continuing to the first lab, follow the steps below to create an APEX workspace using the LiveLabs environment created for you. 
+Before continuing to the first lab, follow the steps below to create an APEX workspace using the LiveLabs environment created for you.
 
 Estimated Time: 160 minutes
 
@@ -18,7 +18,7 @@ Estimated Time: 160 minutes
 
 | # | Lab | Est. Time |
 | --- | --- | --- |
-| 1 | [Create an APEX Workspace](?lab=create-apex-workspace) | 5 minutes |
+|   | [Create an APEX Workspace](?lab=create-apex-workspace) | 5 minutes |
 | 1 | [JavaScript Basics](?lab=lab-1-javascript-basics) | 20 minutes |
 | 2 | [Adding JavaScript to APEX Apps](?lab=lab-2-adding-javascript-apex-apps) | 60 minutes |
 | 3 | [Working with jQuery and the DOM](?lab=lab-3-working-dom-jquery) | 60 minutes |
