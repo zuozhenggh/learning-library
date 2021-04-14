@@ -68,6 +68,6 @@ In this lab you will work with JSON in the Oracle Database with the intent of ex
 
 ## Acknowledgements
 
-- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
+- **Authors** - Jeff Smith, Beda Hammerschmidt and Brian Spendolini
 - **Last Updated By/Date** - April 2021
 - **Workshop Expiry Date** - April 2022

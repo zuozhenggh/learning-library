@@ -97,3 +97,21 @@ Estimated Lab Time: 30-45 minutes
 14. In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
+
+### **STEP 2**: Working with JSON Data in a Relational Table
+
+XXX
+
+
+
+
+
+
+
+
+
+## Acknowledgements
+
+- **Authors** - Jeff Smith, Beda Hammerschmidt and Brian Spendolini
+- **Last Updated By/Date** - April 2021
+- **Workshop Expiry Date** - April 2022
