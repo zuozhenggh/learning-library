@@ -2,20 +2,21 @@
     "workshoptitle":"Oracle Database 19c New Features",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
+      {
+          "title": "Getting Started",
+          "description": "Log in to Oracle Cloud",
+          "partnumber": "Ennnnn_01",
+          "publisheddate": "03/10/2020",
+          "contentid": "12nnnn",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
           {
-              "title": "Introduction",
+              "title": "Introduction to Oracle Database 19c",
               "description": "Introduction to the Oracle Database 19c New Features Workshop",
               "filename": "./../../intro/intro.md",
               "type": "paid"
           },
-          {
-              "title": "Getting Started",
-              "description": "Log in to Oracle Cloud",
-              "partnumber": "Ennnnn_01",
-              "publisheddate": "03/10/2020",
-              "contentid": "12nnnn",
-              "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-          },
+
           {
               "title": "Lab 1: Install Oracle Database 19c with Automatic Configuration Script Execution",
               "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution.",

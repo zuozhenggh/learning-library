@@ -1,13 +1,13 @@
 
-# Install Oracle Database 19c with Automatic Configuration Script Execution
+# Install Oracle Database 19c with Automatic Root Script Execution
 
 ## Introduction
 
-In this lab, you create a compute instance in Oracle Cloud Infrastructure (OCI) and install Oracle Database 19c on it. During installation, you opt to use a new feature in 19c where the installer runs the configuration scripts for you automatically. This feature simplifies the installation process and helps you avoid inadvertent permission errors. Note that manual script execution is still available, if you prefer that method instead.
+In this lab, you create a compute instance in Oracle Cloud Infrastructure (OCI) and install Oracle Database 19c on it. During installation, you opt to use a new feature in Oracle Database 19c, where the installer automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you avoid inadvertent permission errors. Note that manual script execution is still available, if you prefer that method instead.
 
-During installation, you can configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password. In this lab, you create an `oracle` user as a sudoer and specify `oracle` as the user to run the configuration scripts. After the database is installed, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
+In the Oracle Database 19c Installation Wizard, you can configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password. In this lab, you create an `oracle` user as a sudoer and specify `oracle` as the user to run the configuration scripts. After the database is installed, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
 
-You can perform most of the steps in this lab using Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. To run the graphical Oracle Database 19c installer, you need to use a terminal on your personal computer, and not Cloud Shell. To display the graphical interface of the installer, X11 forwarding using Secure Shell (SSH) or virtual network computing (VNC) on your compute instance is required. This lab shows you how to set up X11 forwarding.
+You can perform most of the steps in this lab by using Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. To run the graphical Oracle Database 19c installer, you need to use a terminal on your personal computer (not Cloud Shell) and set up X11 forwarding using Secure Shell (SSH) or virtual network computing (VNC) on your compute instance. This lab shows you how to use PuTTY and X11 forwarding to connect to your compute instance from your personal computer and run the graphical installer.
 
 
 Estimated Lab Time: 45 minutes
@@ -32,6 +32,10 @@ In this lab, you learn how to do the following:
 - You have an Oracle Cloud account. You can use the account you created when you signed up for a free trial, one that was given to you through your own organization, or one provided to you by LiveLabs.
 - You have a compartment in Oracle Cloud Infrastructure.
 - You have PuTTY installed on your local computer.
+
+### Assumptions
+
+- You are signed in to Oracle Cloud Infrastructure.
 
 
 ## **STEP 1**: Create a compute instance in Oracle Cloud Infrastructure
