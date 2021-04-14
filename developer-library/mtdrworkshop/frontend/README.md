@@ -7,9 +7,9 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 # Lab 4 -- Frontend (React JS)
 
 ## **Summary**
-The application is so simple that there is really no need to know React to understand the code.
+The application is so simple that there is really no need to know React JS to understand the code. The application uses Function Components and State Hooks for keeping local states in a function component.
 
-The application uses Functional Components with State Hooks for managing states. There is a main component called "App" which renders another component called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" component displays the text field to add a new item.
+The main component called "App" renders another component called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" component displays the text field to add a new item.
 
 The App component includes the "items" state ([]) which contains the list of todo items. When setItems is called with a new array of items the component will re-render.
 
@@ -34,7 +34,7 @@ The index.css file contains all the styles for the application.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-1. clone the MyToDoReact git repository (we only need the front end in this lab)
+1. clone the MyToDoReact git repository (we only need the frontend folder in this lab)
 ```
 <copy>git clone git@orahub.oci.oraclecorp.com:ora-jdbc-dev/mtdrworkshop.git</copy>
 ```
@@ -44,22 +44,23 @@ npm install --save typescript
 ```
 <copy>npm install --save typescript</copy>
 ```
-npm audit fix --force
+3. npm audit fix --force
 
 ```
 <copy>npm audit fix --force</copy>
 ```
-3. Update API_LIST in API.js
+4. Update API_LIST in API.js
 
-- Navigate to Developer Services -> API management
-- Click on your Gateway and go to Deployment
-- Copy the Endpoint
+In your Cloud  tenancy, open up the hamburger menu in the top-left corner of the Console and navigate to  **Developer Services > API Management**.
+- Click on your **API Gateway > Deployment**
+- Copy the endpoint
 ![](images/Api-gtw-deploy.png " ")
 
-- Paste the endpoint as the value of API_LIST an append "/todolist"
+- In API.js, paste the endpoint as the value of API_LIST an append "/todolist"
   Example
-  const API_LIST = 'https://<characters>.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
-- Save he file
+  const API_LIST = 'https://<xxxxxxxxxx>.apigateway.us-phoenix-1.oci.customer-oci.com/todolist';
+
+- Save the file
 
 4. `npm start` to run the application in development mode
 ```

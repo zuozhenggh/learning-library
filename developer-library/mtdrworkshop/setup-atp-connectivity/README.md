@@ -88,7 +88,7 @@ Example
 crl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/........./Wallet_MTDRDB.zip --output wallet.zip
 
 ```
-<copy>curl -sL <Pre-Auth URL> --output wallet.zip
+<copy>curl -sL <Pre-Auth URL> --output wallet.zip</copy>
 ```
 3. Unzip the wallet
 ```
@@ -209,7 +209,7 @@ Press the execute (green) button and observe the successful completion of the co
 
 9. While still connected as TODOUSER, insert a row manually into todoitem table by executing the following command
  ```
-<copy>insert into todoitem  (description) values ('Manual item insert #2');</copy>
+<copy>insert into todoitem  (description) values ('Manual item insert');</copy>
  ```
 Then commit the inserted row
 ```

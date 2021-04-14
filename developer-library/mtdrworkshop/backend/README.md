@@ -113,11 +113,11 @@ http://130.61.66.27/todolist
 
 ![](images/Deployment-menu.png " ")
 
-4. Create and Edit a new deployment
+4. Create new deployment
 
 ![](images/Basic-info-API_Policies.png " ")
 
-Click Next then set your Object Storage
+Click Next then set CORS Policy (your Object Storage region and the external IP of the Kubernetes service postfixed by ":8780"
 
 ![](images/Origins-Methods.png " ")
 
