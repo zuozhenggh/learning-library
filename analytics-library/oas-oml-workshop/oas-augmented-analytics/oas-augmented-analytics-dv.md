@@ -14,9 +14,11 @@ As well as the pre-built options available in the user interface, you can also c
 *Estimated Lab Time: 30 Minutes*
 
 ### Objectives ###
-This exercise will introduce you to the capability to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
+* This exercise will introduce you to the capability to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
 
-In this lab, you will play the role of an HR Analyst.  The VP of HR has noticed an increasing rate of attrition.  As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk. Additionally, you will identify those employees who are at greatest risk for leaving.  
+* In this lab, you will play the role of an HR Analyst.  The VP of HR has noticed an increasing rate of attrition.  
+
+* As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk. Additionally, you will identify those employees who are at greatest risk for leaving.  
 
 
 ### Prerequisites ###
