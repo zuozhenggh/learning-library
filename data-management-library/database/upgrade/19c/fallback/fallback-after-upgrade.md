@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will use two techniques to protect your database, but this time for issues happening after the upgrade. You can call this “Downgrade“.
+In this lab, you will use two techniques to protect your database, but this time for issues happening after the upgrade. You can call this “Downgrade“.
 
 *Estimated Lab Time*: 30 minutes
 
@@ -191,7 +191,6 @@ This lab assumes you have:
 
     The downgrade should have removed the XDB component as well. Did it?
 
-    You can watch an entire database downgrade in this short video as well:
 
 You may now [proceed to the next lab](#next).
 
