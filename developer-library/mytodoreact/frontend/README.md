@@ -95,14 +95,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## **STEP 3**: Hosting on the Oracle Cloud's object storage
 
-1. Create a "mytodoreact" object storage in your tenancy
+1. Create a "mtdrworkshop" object storage in your tenancy
 
 - Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
 
 ![](images/frontendimg1.png " ")
 
-- Change the default name into "mytodoreact"; accept all other default settings; then click on Create at the left bottom corner
+- Change the default name into "mtdrworkshop"; accept all other default settings; then click on Create at the left bottom corner
 
 ![](images/frontendimg2.png " ")
 

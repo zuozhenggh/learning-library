@@ -107,7 +107,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ![](images/frontendimg1.png " ")
 
-- Change the default name into "mytodoreact"; accept all other default settings; then click on Create at the left bottom corner
+- Change the default name into "mtdrworkshop"; accept all other default settings; then click on Create at the left bottom corner
 
 ![](images/frontendimg2.png " ")
 
