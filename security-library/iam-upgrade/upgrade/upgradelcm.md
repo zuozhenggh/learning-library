@@ -26,13 +26,18 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
+```
+- As part of pre-upgrade steps, customers have to delete any 10g agents in oamconsole. If they fail to do this UA readiness check will fail indicating presence of 10g agents. As part of pre-upgrade steps for OAM, delete any 10g agents in oamconsole.  UA readiness check will fail if 10g agents exist
+- UA readiness check with fail at System Components Infrastructure with error OHS_managed_template.jar missing. This can be ignored as we are not upgrading OHS
+```
+
 ## About the In-Place Upgrade Strategy
 
 There are different upgrade strategies that you can employ for an upgrade of Oracle Internet Directory, Oracle Unified Directory, and Oracle Identity and Access Management. The strategy you choose will depend mainly on your business needs. This lab uses a Multi-hop in-place upgrade outlined in the Upgrade strategies document :
-[IAM Upgrade Strategies](https://docs.oracle.com/en/middleware/fusion-middleware/iamus/place-upgrade-strategies.html#GUID-9F906AE2-5BDF-426D-A97C-AC546ABFBD28)  
+[Oracle IAM Upgrade Strategies](https://docs.oracle.com/en/middleware/fusion-middleware/iamus/place-upgrade-strategies.html#GUID-9F906AE2-5BDF-426D-A97C-AC546ABFBD28)  
 
 
-The in-place upgrade allows you to take your existing deployment and upgrade it in site.
+The in-place upgrade allows you to take your existing deployment and upgrade it in place.
 
 - When performing an upgrade, you should make as few changes as possible in each stage to ensure that the upgrade is successful.
 - For example, it is not recommended to perform multiple upgrade activities such as upgrading Oracle Identity and Access Management, changing the directory, updating the operating system, and so on, all at the same time.
@@ -65,8 +70,8 @@ Please follow the instructions below to execute each step.
 
 ### *Step 1.1:* Upgrade OUD from 11.1.2.3 to 12.2.1.3
 
-- Upgrade OUD using the instructions below
-  - [6.6 Upgrading an Existing Oracle Unified Directory Server Instance](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-506B9DAC-2FDB-47C9-8E00-CC1F99215E81)
+Perform all steps outlined in *section 6.6* of Upgrading Oracle Unified Directory guide
+- [6.6 Upgrading an Existing Oracle Unified Directory Server Instance](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-506B9DAC-2FDB-47C9-8E00-CC1F99215E81)
 
 ### *Step 1.2:*  Update the keystore encryption strength
 
@@ -207,7 +212,7 @@ Upgrade OIM using the Upgrade Advisor for OIM 12cR2 PS4 (OAM 12.2.1.4.0)
 ![](./images/step7.png " ")
 
 
-### *Step 2.d:* Apply 12.2.1.4 patches mentioned in stack patch Bundle:
+### *Step 2.4:* Apply 12.2.1.4 patches mentioned in stack patch Bundle:
 
 Apply Stack Patch Bundle for Oracle Identity Management Products using the MOS document link provided below:
 
@@ -235,37 +240,37 @@ Configure OAM WebGate:
 - Copy all the artifacts under *OAM\_DOMAIN\_HOME/output/OAM\_Webgate\_IDM11g* directory over to *OHSDOMAIN\_HOME/config/fmwconfig/components/OHS/ohs1/webgate/config* directory
 - After the copy command, *OHSDOMAIN\_HOME/config/fmwconfig/components/OHS/ohs1/webgate/config* directory should have the following files and directories
 ```
-- aaa\_cert.pem
+- aaa_cert.pem
 
-- aaa\_key.pem
+- aaa_key.pem
 
 - cwallet.sso
 
 - ObAccessClient.xml
 
-- oblog\_config\_wg.xml
+- oblog_config_wg.xml
 
 - password.xml
 
 - wallet directory with cwallet.sso file
 
-- Simple directory with aaa\_cert.pem and aaa\_key.pem
+- Simple directory with aaa_cert.pem and aaa_key.pem
 ```
 
-- If simple directory doesn&#39;t exist, Create one and copy the \*.pem files over
+- If simple directory doesnt exist, Create one and copy the \*.pem files over
 
 - Make the following changes in oamconsole,
 ```
 - Navigate to oamconsole: Configuration/Settings/Access Manager Settings/Webgate Traffic Load Balancer/OAM Server port
 - Change the port to OAM server port 14100
 
-- Navigate to Oamconsole: Application Security/Agents/Webgate\_IDM\_11g
+- Navigate to Oamconsole: Application Security/Agents/Webgate_IDM_11g
 - Replace the existing User Defined Parameter contents with the below list,  
 
 maxSessionTimeUnits=minutes
 OAMRestEndPointHostName=wsidmhost.idm.oracle.com
-client\_request\_retry\_attempts=1
-proxySSLHeaderVar=IS\_SSL
+client_request_retry_attempts=1
+proxySSLHeaderVar=IS_SSL
 inactiveReconfigPeriod=10
 OAMRestEndPointPort=14100
 URLInUTF8Format=true
@@ -286,7 +291,7 @@ OAMServerCommunicationMode=HTTP
 Test OAM and OIG using the steps in *section 2.4.7* in the documentation below
 - [Functionally Testing the Access Manager and Oracle Identity Governance Integration](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/idmig/integrating-oracle-identity-governance-and-oracle-access-manager-using-ldap-connectors.html#GUID-3803AA41-A882-41C9-B1E8-0BBCBD581CE9)
 
-Example for OAM validation:
+### Example for OAM validation:
 
 - Access [OAM Admin Server Console](http://wsidmhost.idm.oracle.com:7001/oamconsole) and login as *oamadmin*
     - Validates OAM Admin Server is functioning properly
@@ -298,12 +303,33 @@ Example for OAM validation:
     - It should return LISTEN
     - Validates OAM server is listening on OAP port
 
+### Example OIM validation:  
+
+- Access the Oracle Identity Governance pagees with the following URL:
+    - [Oracle Identity Self Service](http://wsidmhost.idm.oracle.com:7778/identity)
+    - [Oracle Identity System Administration](http://wsidmhost.idm.oracle.com:7778/sysadmin)
+- Verify the links for "Forgot Password", "Register New Account" and "Track User Registration" features appear in the login page and that they work.
+- Log in to [Oracle Identity Self Service](http://wsidmhost.idm.oracle.com:7778/identity) as *xelsysadm*
+- Create a new user
+- Logout as *xelsysadm* and login as the user created in *step 4*.
+    - When prompted for login, provide valid credentials for the newly-created user.
+- Provide a new password and select three challenge question and answers.
+    - The new user should now be logged in.
+- Verify the lock/disable feature works by opening a new private browser and logging in as a *xelsysadm*
+    - Now lock or disable the user account created in step 4.
+- Now back in the broswer where the new user is logged try clicking on any new links, user should be redirected back to the login page.
+- Verify the SSO logout feature works by logging out Oracle Identity Self Service page where *xelsysadm* is still logged out.
+    - Upon logout from the page, you are redirected to the SSO logout page.
+
+
 ## Acknowledgements
 * **Author** - Anbu Anbarasu, Director, Cloud Platform COE  
 * **Contributors** -  Eric Pollard - Sustaining Engineering, Ajith Puthan - IAM Support  
 * **Last Updated By/Date** - Anbu, COE, February 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+For all technical issues related to the IAM upgrade lab, please contact Oracle support through the same Proactive SR that was created to initiate this lab.  
+
+For other issues, please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
