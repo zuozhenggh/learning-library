@@ -327,7 +327,16 @@ SQL/JSON condition json_exists lets you use a SQL/JSON path expression as a row 
 SELECT a.id FROM airportdelays a
   WHERE json_exists(a.Statistics, '$."Minutes Delayed".Total');
 
+X. Reverse!
 
+select json_object ( * ) jdoc
+from   emps;
+
+X. Putting it all together
+
+select *
+from   departments_json d
+where  json_value ( department_data, '$.department' ) = 'Accounting';
 
 ## Acknowledgements
 
