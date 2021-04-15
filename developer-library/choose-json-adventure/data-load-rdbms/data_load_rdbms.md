@@ -122,6 +122,12 @@ select a.statistics
         "Late Aircraft": 312,
         "National Aviation System": 1080,
         "Security": 14,
+        "Weather Codes": [
+            "SNW",
+            "RAIN",
+            "SUN",
+            "CLDY"
+        ],
         "Weather": 59
     },
     "Carriers": {
@@ -141,6 +147,12 @@ select a.statistics
         "National Aviation System": 45407,
         "Security": 1138,
         "Total": 90487,
+        "Weather Codes": [
+            "SNW",
+            "RAIN",
+            "SUN",
+            "CLDY"
+        ],
         "Weather": 3390
     }
 }
