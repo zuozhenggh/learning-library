@@ -185,9 +185,103 @@ select a.name,
 
 #### **Part 2 - SQL/JSON Path Expressions**
 
-sss
+Oracle also has many built in JSON functions for working with document data which elevates the functionality found with Dot-Notation. 
 
+1. 
 
+json_mergepatch
+You can use the JSON_MERGEPATCH function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch.
+
+```
+update airportdelays
+set    statistics = json_mergepatch ( 
+         statistics,
+         '{"Carriers" : {"Names" : "'||
+         (select replace(a.statistics.Carriers.Names,'United Air Lines Inc.,','Oracle Air Lines Inc.,') from airportdelays a where  id = 10)
+         ||'"}}'
+       )
+where  id = 10;
+```
+
+```
+select a.statistics.Carriers.Names from airportdelays a where  a.id = 10;
+```
+
+json_transform (21c)
+You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data.
+
+```
+"Minutes Delayed": {
+    "Carrier": 61606,
+    "Late Aircraft": 68335,
+    "National Aviation System": 118831,
+    "Security": 518,
+    "Total": 268764,
+    "Weather": 19474
+}
+```
+
+```
+update airportdelays  
+set    statistics = json_transform (
+  statistics, 
+  replace '$."Minutes Delayed".Total' = '0'
+)
+where  id = 10;
+```
+
+```
+select a.statistics."Minutes Delayed" from airportdelays a where  id = 10;
+```
+
+```
+select a.statistics."Minutes Delayed".Total from airportdelays a where  id = 10;
+```
+
+```
+update airportdelays  
+set    statistics = json_transform (
+  statistics, 
+  remove '$."Minutes Delayed".Carrier',
+)
+where  id = 10;
+```
+
+....etc
+
+then for the rest of the fields or we can chain the statements with json_transform:
+
+```
+update airportdelays  
+set    statistics = json_transform (
+  statistics, 
+  replace '$."Minutes Delayed".Total' = '0',
+  remove '$."Minutes Delayed".Carrier',
+  remove '$."Minutes Delayed"."Late Aircraft"'
+)
+where  id = 10;
+```
+
+json_value
+The SQL/JSON function JSON_VALUE finds a specified scalar JSON value in JSON data and returns it as a defined SQL value (date, number, timestamp, sdo_geometry, etc). 
+
+```
+select json_value (
+         time, 
+         '$.Label'
+       ) date_label
+from   airportdelays a
+where a.id = 5;
+```
+
+```
+select json_value (
+         Statistics, 
+         '$.Flights.Cancelled' returning number
+       ) cancled_flights
+from   airportdelays a
+where a.id = 5;
+```
 
 
 
