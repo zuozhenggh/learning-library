@@ -194,13 +194,13 @@ You can use the JSON_MERGEPATCH function to update specific portions of a JSON d
 
 ```
 update airportdelays
-set    statistics = json_mergepatch ( 
+   set statistics = json_mergepatch ( 
          statistics,
          '{"Carriers" : {"Names" : "'||
          (select replace(a.statistics.Carriers.Names,'United Air Lines Inc.,','Oracle Air Lines Inc.,') from airportdelays a where  id = 10)
          ||'"}}'
        )
-where  id = 10;
+ where id = 10;
 ```
 
 ```
@@ -223,11 +223,11 @@ You can use the JSON_TRANSFORM function to change input JSON data (or pieces of 
 
 ```
 update airportdelays  
-set    statistics = json_transform (
+   set statistics = json_transform (
   statistics, 
   replace '$."Minutes Delayed".Total' = '0'
 )
-where  id = 10;
+ where id = 10;
 ```
 
 ```
@@ -240,11 +240,11 @@ select a.statistics."Minutes Delayed".Total from airportdelays a where  id = 10;
 
 ```
 update airportdelays  
-set    statistics = json_transform (
+   set statistics = json_transform (
   statistics, 
   remove '$."Minutes Delayed".Carrier',
 )
-where  id = 10;
+ where id = 10;
 ```
 
 ....etc
@@ -253,13 +253,13 @@ then for the rest of the fields or we can chain the statements with json_transfo
 
 ```
 update airportdelays  
-set    statistics = json_transform (
+   set statistics = json_transform (
   statistics, 
   replace '$."Minutes Delayed".Total' = '0',
   remove '$."Minutes Delayed".Carrier',
   remove '$."Minutes Delayed"."Late Aircraft"'
 )
-where  id = 10;
+ where id = 10;
 ```
 
 json_value
@@ -270,8 +270,8 @@ select json_value (
          time, 
          '$.Label'
        ) date_label
-from   airportdelays a
-where a.id = 5;
+  from airportdelays a
+ where a.id = 5;
 ```
 
 ```
@@ -279,8 +279,8 @@ select json_value (
          Statistics, 
          '$.Flights.Cancelled' returning number
        ) cancled_flights
-from   airportdelays a
-where a.id = 5;
+  from airportdelays a
+ where a.id = 5;
 ```
 
 
