@@ -1,5 +1,11 @@
 # Introduction
 
+You are in a meeting where your team is asked to create an application on a set of data...no problem! You have done this multiple times before...should be simple. At the end of the meeting, after reviewing the requirements, UX and timelines, you are given the data. 
+
+**Its 4400 records in JSON format.**
+
+What do you do?
+
 ## About JSON
 
 JSON is a human-readable, self-describing format to represent data in a hierarchical format. This is best illustrated by an example:
