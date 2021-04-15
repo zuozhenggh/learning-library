@@ -106,13 +106,16 @@ Dot notation is designed for easy, general use and common use cases of querying 
 
 1. Let's start simple and query the table and return a count(*). We are going to bring back the statistics JSON column based on an airport code. 
 
+```
 select a.statistics 
   from airportdelays a
  where a.airportcode = 'SFO'
  fetch first 1 row only;
+```
 
  and the result will be similar to the following (formatted for readability):
 
+```
 {
     "# of Delays": {
         "Carrier": 416,
@@ -141,35 +144,43 @@ select a.statistics
         "Weather": 3390
     }
 }
+```
 
 2. Now what if we wanted to filter this based on the month and year which is in the **time** column which contains JSON. We want to find where the airport code is SFO, where the month is June and the year is 2010. The JSON we are looking for in the time column would look like this:
 
+```
 {"Label":"2010/06","Month":6,"Month Name":"June","Year":2010}
+```
 
 So we can use the following which has a where clause on "Month Name" and "Year":
 
+```
 select a.statistics 
   from airportdelays a
  where a.airportcode = 'SFO'
    and a.time."Month Name" = 'June'
    and a.time.Year = '2010';
+```
 
 Or we could just use the "Label" item:
 
+```
 select a.statistics 
   from airportdelays a
  where a.airportcode = 'SFO'
    and a.time.Label = '2010/06';
+```
 
 In either instance, we see we can traverse down the JSON with the Dot-Notation.
 
 3. We can also use analytical functions such as sum using the Dot-Notation as well. Very helpful for creating charts and graphs on this data for reporting purposes. For this example, we are going to add up (sum) the number of minutes delayed for each airport across this entire dataset and group by airport:
 
+```
 select a.name, 
        sum(a.statistics."Minutes Delayed".Carrier) "Minutes Delayed" from airportdelays a
  group by a.name
  order by a.name;
-
+```
 
 
 #### **Part 2 - SQL/JSON Path Expressions**
