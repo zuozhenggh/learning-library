@@ -401,6 +401,6 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
-* **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
-* **Last Updated By/Date** - Bilegt Bat-Ochir 3/22/2021
+* **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
+* **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
+* **Last Updated By/Date** - Bilegt Bat-Ochir 4/15/2021

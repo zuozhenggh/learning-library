@@ -30,7 +30,7 @@ For a technical overview of this lab step, please watch the following video:
 
 ### Prerequisites
 
-* Successfully completed **Prerequisites** lab and ready to continue
+* Successfully completed **Lab 0: Prerequisites** and ready to continue
 
 ## **Step 1**: Clone Lab Repository
 
@@ -130,6 +130,6 @@ However, if you are unable to resolve it using above fix, please skip to the **N
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
-* **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
-* **Last Updated By/Date** - Bilegt Bat-Ochir 3/24/2021
+* **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
+* **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
+* **Last Updated By/Date** - Bilegt Bat-Ochir 4/15/2021
