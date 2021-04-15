@@ -1,15 +1,19 @@
 {
   "workshoptitle": "JavaScript for APEX Developers",
-  "help": "livelabs-help-analytics_us@oracle.com",
+  "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
-    {
-      "title": "Introduction",
-      "filename": "../../0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
-    },
     {
       "title": "Login to Oracle Cloud",
       "description": "Register for Free Tier Account",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../0-workshop-intro-and-setup/0-workshop-intro-and-setup-livelabs.md"
+    },
+    {
+      "title": "Create an APEX Workspace",
+      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
     },
     {
 
