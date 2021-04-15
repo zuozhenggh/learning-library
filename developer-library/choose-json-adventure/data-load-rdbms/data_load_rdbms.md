@@ -187,9 +187,8 @@ select a.name,
 
 Oracle also has many built in JSON functions for working with document data which elevates the functionality found with Dot-Notation. 
 
-1. 
+1. json_mergepatch
 
-json_mergepatch
 You can use the JSON_MERGEPATCH function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch.
 
 ```
@@ -207,7 +206,8 @@ update airportdelays
 select a.statistics.Carriers.Names from airportdelays a where  a.id = 10;
 ```
 
-json_transform (21c)
+2. json_transform (21c)
+
 You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data.
 
 ```
@@ -262,7 +262,8 @@ update airportdelays
  where id = 10;
 ```
 
-json_value
+3. json_value
+
 The SQL/JSON function JSON_VALUE finds a specified scalar JSON value in JSON data and returns it as a defined SQL value (date, number, timestamp, sdo_geometry, etc). 
 
 ```
@@ -282,7 +283,51 @@ select json_value (
   from airportdelays a
  where a.id = 5;
 ```
+4. json_table
 
+The SQL/JSON function JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
+
+```
+select a.name, v.*
+from   airportdelays a, json_table (
+         a.time, '$' 
+    		columns (
+                Label
+                
+    ) )v
+where  a.id = 100;
+```
+
+```
+select a.name, v.*, q.*
+from   airportdelays a, 
+    json_table (
+             a.time, '$' 
+                columns (
+                    Label,
+                    "Month Name",
+                    Year
+        ) )v,
+	json_table (
+         a.Statistics, '$."Minutes Delayed"' 
+    		columns (
+                Carrier,
+	            "National Aviation System",
+                "Late Aircraft",
+                Security,
+                Weather,
+                Total
+                
+    ) ) q
+where  a.id = 100;
+```
+
+5. json_exists
+
+SQL/JSON condition json_exists lets you use a SQL/JSON path expression as a row filter, to select rows based on the content of JSON documents.
+
+SELECT a.id FROM airportdelays a
+  WHERE json_exists(a.Statistics, '$."Minutes Delayed".Total');
 
 
 
