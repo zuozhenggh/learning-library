@@ -38,7 +38,7 @@ If you have a question during this workshop then use the <a href="https://cloudc
 
 Are you are completely new to the **Cloud Customer Connect**</a> forums? Visit our <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="\_blank">**Getting Started forum page**</a> to learn how to best leverage community resources.
 
-**You are all set. Let's begin! Click Lab 1 in the Contents menu on the right.**
+**You are all set. Let's begin! Click Getting Started in the Contents menu on the left.**
 
 ## Want to Learn More About Autonomous Database?
 
