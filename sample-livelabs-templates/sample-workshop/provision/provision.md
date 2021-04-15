@@ -71,7 +71,7 @@ Oracle Database - Cloud Shell - Bare Metal, VM, Exadata - DBCS
 Oracle Database - GoldenGate - Golden Gate - GG
 0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
 
-	![](https://github.com/oracle/learning-library/blob/master/common/images/console/database-goldengate.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
 
 Developer Services - Resource Manager Stacks - ResMgr Stacks
 0. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
