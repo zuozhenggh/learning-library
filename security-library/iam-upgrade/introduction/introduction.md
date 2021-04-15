@@ -13,7 +13,7 @@ In addition, we now offer an innovative, fully integrated service that delivers 
 You can find more information about the latest version of IAM [here](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
 
 
-Estimated Lab Time: 12-24 Hours
+Estimated Lab Time: 48-72 Hours
 
 ### Objectives
 
