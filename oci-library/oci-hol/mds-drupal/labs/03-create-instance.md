@@ -6,7 +6,7 @@
 
 ### Create Oracle Linux instance to host your Apache web server.
 
-1. Open the Oracle Cloud Infrastructure main menu.
+1. Open the Oracle Cloud Infrastructure navigation menu.
 
 2. Select **Compute** then **Instances**.
 
@@ -62,7 +62,7 @@
 
 ### Install and configure Apache HTTP server with PHP
 
-1. Open the Oracle Cloud Infrastructure main menu.
+1. Open the Oracle Cloud Infrastructure Navigation menu.
 
 2. Select **Compute** then **Instances**.
 
