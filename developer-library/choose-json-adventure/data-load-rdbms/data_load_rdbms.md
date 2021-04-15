@@ -305,26 +305,54 @@ select a.name, v.*
  where a.id = 100;
 ```
 
+nested arrays
+
+```
+select t.*
+  from airportdelays2,
+       json_table(Statistics, '$."Minutes Delayed"'
+            columns(
+                Carrier NUMBER PATH '$.Carrier',
+                test varchar2(200) FORMAT JSON PATH '$."Weather Codes"',
+                NESTED PATH '$."Weather Codes"'
+            columns(
+                code1 VARCHAR2(100) PATH '$[0]',
+                code2 VARCHAR2(100) PATH '$[1]',
+                code3 VARCHAR2(100) PATH '$[2]',
+                code4 VARCHAR2(100) PATH '$[3]')
+                    )
+                ) AS t
+ where id = 100;
+```
+
 ```
 select a.name, v.*, q.*
   from airportdelays a, 
-        json_table (
-             a.time, '$' 
+       json_table (
+            a.time, '$' 
                 columns (
                     Label,
                     "Month Name",
                     Year
-        ) )v,
+                ) 
+        )v,
 	    json_table (
-             a.Statistics, '$."Minutes Delayed"' 
-    	    	columns (
+            a.Statistics, '$."Minutes Delayed"' 
+                columns (
                     Carrier,
-	                "National Aviation System",
+                    "National Aviation System",
                     "Late Aircraft",
                     Security,
                     Weather,
-                    Total
-        ) ) q
+                    NESTED PATH '$."Weather Codes"'
+                    COLUMNS
+                    (code1 VARCHAR2(100) PATH '$[0]',
+                    code2 VARCHAR2(100) PATH '$[1]',
+                    code3 VARCHAR2(100) PATH '$[2]',
+                    code4 VARCHAR2(100) PATH '$[3]'),
+                    Total               
+                )
+        ) q
  where a.id = 100;
 ```
 
