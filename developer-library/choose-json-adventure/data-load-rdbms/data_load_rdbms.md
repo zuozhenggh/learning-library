@@ -289,37 +289,35 @@ The SQL/JSON function JSON_TABLE creates a relational view of JSON data. It maps
 
 ```
 select a.name, v.*
-from   airportdelays a, json_table (
+  from airportdelays a, json_table (
          a.time, '$' 
     		columns (
-                Label
-                
+                Label      
     ) )v
-where  a.id = 100;
+ where a.id = 100;
 ```
 
 ```
 select a.name, v.*, q.*
-from   airportdelays a, 
-    json_table (
+  from airportdelays a, 
+        json_table (
              a.time, '$' 
                 columns (
                     Label,
                     "Month Name",
                     Year
         ) )v,
-	json_table (
-         a.Statistics, '$."Minutes Delayed"' 
-    		columns (
-                Carrier,
-	            "National Aviation System",
-                "Late Aircraft",
-                Security,
-                Weather,
-                Total
-                
-    ) ) q
-where  a.id = 100;
+	    json_table (
+             a.Statistics, '$."Minutes Delayed"' 
+    	    	columns (
+                    Carrier,
+	                "National Aviation System",
+                    "Late Aircraft",
+                    Security,
+                    Weather,
+                    Total
+        ) ) q
+ where a.id = 100;
 ```
 
 5. json_exists
