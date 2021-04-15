@@ -20,7 +20,7 @@ In the previous lab you created an ADB instance.  In this lab you will connect t
 
 2. Click on the hamburger menu and navigate to Object Storage and click on **Object Storage**.
 
-      ![](./images/step1-2.png " ")
+      ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 3. Choose the compartment where your ATP is provisioned and click **Create Bucket**.
 
@@ -43,7 +43,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 2.  Click the Cloud Shell icon to start up Cloud Shell
       ![](./images/cloud-shell.png " ")
 3.  While your Cloud Shell is starting up, click on the Hamburger Menu -> **Autonomous Transaction Processing** 
-      ![](./images/select-atp.png " ")
+      ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 4.  Click on the **Display Name** to go to your ADB main page.
 
