@@ -10,20 +10,15 @@ This lab will show you how to correctly change the SYS password in a Data Guard 
 
 Doing this right is important. When you change the SYS password in a Data Guard environment, Data Guard will propagate password changes for the SYS user to the standby database.
 
-Estimated Lab Time: 5 Minutes
+Estimated Lab Time: 15 Minutes
 
 ### Objectives
 - Change the SYS password
 - Log in to the database as the SYS user
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
-- Lab: Connect to the Database
-- Lab: Perform a switchover
-- Lab: Perform a failover
-- Lab: Enable Active Data Guard DML Redirection
-- Lab: Automatic block media recovery
-- Lab: Restore point propagation
+- An Oracle LiveLabs or Paid Oracle Cloud account
+
 
 ## **STEP 1**: Change the SYS password
 

@@ -9,7 +9,7 @@ A switchover is a role reversal between the primary database and one of its stan
 
 A failover is a role transition in which one of the standby databases is transitioned to the primary role after the primary database (all instances in the case of an Oracle RAC database) fails or has become unreachable. A failover may or may not result in data loss depending on the protection mode in effect at the time of the failover.
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 15 Minutes
 
 ### Performing a Failover
 
@@ -26,9 +26,9 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Perform a failover
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
-- Lab: Connect to the Database
-- Lab: Perform a switchover
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab 3: Connect to the Database
+- Lab 4: Perform a switchover
 
 ## **STEP 1**: Verify the database roles in the database
 
@@ -88,7 +88,7 @@ A failover means that the old primary, in our case the DB in AD2, will be disabl
     -> DB Systems
 
 2. And select ADGHOLAD1.
-3. Then scroll down and click on HOLDG database.
+3. Then scroll down and click on DGHOL database.
 
     ![](./images/failover-09.png)
 

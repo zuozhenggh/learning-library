@@ -11,20 +11,20 @@ The primary database can be either a single-instance Oracle database or an Oracl
 
 ![](./images/primary.png)
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 45 Minutes
 
 ### Objectives
 -   Create the primary database
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
+- An Oracle LiveLabs or Paid Oracle Cloud account
 
 ## **STEP**: Create the primary database
 
 To create the primary database we need to follow a wizard. 
 1. Click the hamburger menu at the top left then select **Bare Metal, VM and Exadata**
 
-    ![](./images/menu-dbcs.png)
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
     This will bring you to the Database As A Service DB Systems page.
 2. To start creating the primary database, click the **Create DB System** Button.
@@ -110,5 +110,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management
+- **Contributors** - Robert Pastijn, Kamryn Vinson
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021

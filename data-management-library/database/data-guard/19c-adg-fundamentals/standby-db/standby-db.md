@@ -11,14 +11,14 @@ Similar to a primary database, a standby database can be either a single-instanc
 
 ![](./images/standby.png)
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 45 Minutes
 
 ### Objectives
 -   Create the standby database
 
 ### Prerequisites
-- - An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
-- Lab: Create the primary database
+- - An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab 1: Create the primary database
 
 ## **STEP**: Create the Standby database
 
@@ -77,5 +77,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
-- **Contributors** - Robert Pastijn, Database Product Management
+- **Contributors** - Robert Pastijn, Kamryn Vinson
 - **Last Updated By/Date** -  Kamryn Vinson, March 2021

@@ -4,11 +4,11 @@
 
 This lab will ingest network, audit, server and application logs into OCI Logging Analytics Service
 
-**Estimated Lab Time: 1 hour**
+Estimated Lab Time: 1 hour
 
 ### Objectives
 
-**In this lab, you will:**
+In this lab, you will:
 * Pull data from Logging Entities: Servers, EBS Application and Database, Network and Audit Flow logs
 * At the end of this lab you will have your log data in Logging Analytics
 
@@ -54,7 +54,7 @@ This lab will ingest network, audit, server and application logs into OCI Loggin
 
 4. Once complete your Logs should look like this:
 
-![](./images/subnetlogs.png " ")
+  ![](./images/subnetlogs.png " ")
 
 ## **STEP 2:** Create Service Connectors for Audit and Network Logs
     
@@ -94,11 +94,11 @@ This lab will ingest network, audit, server and application logs into OCI Loggin
 
 3. You can now go to Logging Analytics - Administration
 
-**You will now see entities have been automatically created.**
+  **You will now see entities have been automatically created.**
 
-**You can also go to Logging Analytics - Log Explorer and should see a pie with data similar to what is shown below**
+  **You can also go to Logging Analytics - Log Explorer and should see a pie with data similar to what is shown below**
       
-![](./images/firstlogexview.png " ")
+  ![](./images/firstlogexview.png " ")
 
 ## **STEP 3:** Install Management Agents on your Hosts
 
@@ -202,7 +202,7 @@ Now we will walk through installing management agents on our hosts. Because we a
     </copy>
     ```
 
-![](./images/startagent.png " ")
+  ![](./images/startagent.png " ")
 
 10. Now to install our agent on the other instances built with our cloud manager we will move the `ebs_agent_key.txt` and oracle mgmt agent to our Oracle Home Directory
 
@@ -236,12 +236,11 @@ Note: You can also follow the recommended procedure of deleting your key file fr
 
 This will now complete the Ingest Logs to Logging Analytics Lab for this workshop.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 * **Author** - Quintin Hill, Cloud Engineering, Packaged Applications
 * **Contributors** -  Kumar Varun, Logging Analytics Product Management
 * **Last Updated By/Date** - Quintin Hill, Cloud Engineering, Mar 8 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "19c Active Data Guard Fundamentals",
+    "workshoptitle": "19c Active Data Guard Fundamentals on DBCS",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -7,11 +7,6 @@
             "description":"Workshop Overview",
             "publisheddate": "26/02/2021",
             "filename":"../../introduction/introduction.md"
-        },
-        {
-            "title": "Getting Started",
-            "description": "Get a Free Trial",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Create the primary database",

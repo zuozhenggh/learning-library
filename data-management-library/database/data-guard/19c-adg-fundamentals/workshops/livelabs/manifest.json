@@ -1,17 +1,17 @@
 {
-    "workshoptitle": "19c Active Data Guard Fundamentals",
+    "workshoptitle": "19c Active Data Guard Fundamentals on DBCS",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
         {
             "title": "Introduction",
             "description":"Workshop Overview",
             "publisheddate": "26/02/2021",
             "filename":"../../introduction/introduction.md"
-        },
-        {
-            "title": "Getting Started",
-            "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Lab 1: Connecting to the Database ",
@@ -67,9 +67,9 @@
             "filename":"../../standby-db/standby-db.md"
         },
         {
-          "title": "Need Help?",
-          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

@@ -13,7 +13,7 @@ To avoid this, we are now forwarding the restore points automatically, that in c
 
 To accommodate this, the `v$restore_point` view was updated with a `REPLICATED` column and the restore point name is suffixed with `_PRIMARY`.
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 20 Minutes
 
 ### Objectives
 - Create a restore point in the primary database
@@ -21,12 +21,9 @@ Estimated Lab Time: 10 Minutes
 - Drop the restore point in the primary database
 
 ### Prerequisites
-- An Oracle LiveLabs, Free Tier or Paid Oracle Cloud account
-- Lab: Connect to the Database
-- Lab: Perform a switchover
-- Lab: Perform a failover
-- Lab: Enable Active Data Guard DML Redirection
-- Lab: Automatic block media recovery
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab 3: Connect to the Database
+- Lab 6: Enable Active Data Guard DML Redirection
 
 ## **STEP 1**: Create a restore point in the primary
 
