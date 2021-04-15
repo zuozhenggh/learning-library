@@ -189,7 +189,7 @@ Oracle also has many built in JSON functions for working with document data whic
 
 1. json_mergepatch
 
-You can use the JSON_MERGEPATCH function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch.
+You can use the JSON_MERGEPATCH function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch. 
 
 ```
 update airportdelays
@@ -208,7 +208,7 @@ select a.statistics.Carriers.Names from airportdelays a where  a.id = 10;
 
 2. json_transform (21c)
 
-You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data.
+You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data. Unlike json_mergepatch, json_transform can target the specific attributes you want to change.
 
 ```
 "Minutes Delayed": {
@@ -283,7 +283,15 @@ select json_value (
   from airportdelays a
  where a.id = 5;
 ```
-4. json_table
+4. json_query
+
+```
+select JSON_QUERY(statistics, '$."# of Delays"')
+  from airportdelays
+ where id = 1032;
+```
+
+5. json_table
 
 The SQL/JSON function JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
 
@@ -320,19 +328,46 @@ select a.name, v.*, q.*
  where a.id = 100;
 ```
 
-5. json_exists
+6. json_exists
 
 SQL/JSON condition json_exists lets you use a SQL/JSON path expression as a row filter, to select rows based on the content of JSON documents.
-
+```
 SELECT a.id FROM airportdelays a
   WHERE json_exists(a.Statistics, '$."Minutes Delayed".Total');
+```
 
-X. Reverse!
+```
+SELECT a.id FROM airportdelays a
+  WHERE json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")');  
+```
 
+```
+SELECT a.id, a.airportcode, a.Statistics."Minutes Delayed".Total FROM airportdelays a
+  WHERE json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
+    and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 500000)');  
+```
+
+```
+ SELECT a.id, a.airportcode, a.Statistics."Minutes Delayed".Total FROM airportdelays a
+  WHERE a.time.Year  = 2004
+    and a.time.Month = 6
+    and a.Statistics."Minutes Delayed".Total > 500000; 
+```
+
+Compare explain plans here and see that the SQL/JSON path expressions are much more efficient.
+
+7. Reverse! I need to create JSON out of relational data.
+
+```
 select json_object ( * ) jdoc
-from   emps;
+from   airportdelays;
+```
 
-X. Putting it all together
+8. Putting it all together
+
+SELECT a.id, a.Statistics."Minutes Delayed".Total, a.airportcode FROM airportdelays a
+  WHERE json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
+    and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 700000)');
 
 select *
 from   departments_json d
