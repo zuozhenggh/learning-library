@@ -17,23 +17,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 1**:  Install a load testing tool and start an external load balancer for the Order service
 
-1. Install a load testing tool.  
-
-    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
-    
-   ``` 
-   <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
-   ```
-
-   ![](images/install-k6.png " ")
-
-   (Alternatively) To install artillery:
-
-   ``` 
-   <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; npm install artillery@1.6</copy>
-   ```
-
-2. Start an external load balancer for the order service.
+1. Start an external load balancer for the order service.
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
@@ -53,6 +37,22 @@ This lab assumes that you have already completed labs 1 through 4.
     <copy>export LB='123.123.123.123'</copy>
     ```
 
+2. Install a load testing tool.  
+
+    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
+    
+   ``` 
+   <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
+   ```
+
+   ![](images/install-k6.png " ")
+
+   (Alternatively) To install artillery:
+
+   ``` 
+   <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; npm install artillery@1.6</copy>
+   ```
+
 ## **STEP 2**: Load test and scale the application tier
 
 1.  Execute a load test using the load testing tool you have installed.  
@@ -70,7 +70,7 @@ This lab assumes that you have already completed labs 1 through 4.
     (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
     ```
 
 2. Scale to 2 service replicas.
@@ -103,7 +103,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
     ```
 
 
@@ -137,7 +137,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
     ```
 
 ## **STEP 3**: Load test and scale the database tier
@@ -171,7 +171,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
     ```
 
 ## **STEP 4**: Scale down the application and database tiers
