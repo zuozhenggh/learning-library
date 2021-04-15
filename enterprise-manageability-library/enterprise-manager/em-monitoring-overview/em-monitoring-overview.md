@@ -265,3 +265,318 @@ Corrective Actions automates response to metric alerts and events. A Corrective 
 
 17.	Click Continue again the OK.
      ![](images/emmonlab4Step17.png " ")
+
+## **Step 5:** Metric Extensions
+Metric Extensions expand Oracle's monitoring capabilities to monitor conditions specific to your IT environment. It allows you to create custom metrics on any target type. You can create it once and deploy it to multiple targets at once.
+
+1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
+     ![](images/emmonlab5Step1.png " ")
+
+2.	Navigate to “Enterprise >> Monitoring >> Metric Extensions”.
+     ![](images/emmonlab5Step2.png " ")
+
+3.	Highlight ME$RunawaySQL metric extension.
+     ![](images/emmonlab5Step3.png " ")
+
+4.	Click on Actions >> Edit.
+     ![](images/emmonlab5Step4.png " ")
+
+5.	Click on Next until you reach “Step 5 of 6”.
+     ![](images/emmonlab5Step5.png " ")
+
+6.	Click Add to select targets to test the Metric Extension.
+     ![](images/emmonlab5Step6.png " ")
+
+7.	Hold down the SHIFT key and select 2 database instance targets to test the Metric Extension.
+     ![](images/emmonlab5Step7.png " ")
+
+8.	Click on Run Test.
+     ![](images/emmonlab5Step8.png " ")
+
+9.	The Test Results section shows the results of running the Metric Extension on the selected targets.
+     ![](images/emmonlab5Step9.png " ")
+
+10.	Click Finish.
+     ![](images/emmonlab5Step10.png " ")
+
+11.	Highlight ME$RunawaySQL metric extension again and select Actions >> Save as Deployable Draft.
+     ![](images/emmonlab5Step11.png " ")
+
+12.	Click on Actions >> Publish Metric Extension.
+     ![](images/emmonlab5Step12.png " ")
+
+13.	Click on Deploy To Targets.
+     ![](images/emmonlab5Step13.png " ")
+
+14.	Click Add and select the same targets that you tested on.
+     ![](images/emmonlab5Step14.png " ")
+
+15.	Click Submit to deploy the metric extension to the selected targets.
+     ![](images/emmonlab5Step15.png " ")
+
+16.	A confirmation banner will appear confirming the deployment has been submitted. The Status of the deployment will be “Scheduled”. Manually click on the page refresh icon.
+     ![](images/emmonlab5Step16.png " ")
+
+17.	When the list is empty in the Pending Operations page, it means the deployment has completed. Click on the Metric Extensions link.
+     ![](images/emmonlab5Step17.png " ")
+
+18.	The Metric Extensions page shows the ME$RunawaySQL metric extension has been deployed to 2 targets.
+     ![](images/emmonlab5Step18.png " ")
+
+## **Step 6:** Monitoring Templates
+Monitoring templates enable you to deploy standardized monitoring setting across the targets in your data center. Enterprise Manager allows you to define monitoring settings on one target, and deploy the same settings to other targets. This feature is called Monitoring Template. When a change is made to a template, you can reapply the template across affected targets in order to propagate the new changes. The apply operation can be automated using Administration Groups and Template Collections. For any target, you can preserve custom monitoring settings by specifying metric settings that can never be overwritten by a template.
+
+1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
+     ![](images/emmonlab6Step1.png " ")
+
+2.	Navigate to “Enterprise >> Monitoring >> Monitoring Templates”.
+     ![](images/emmonlab6Step2.png " ")
+
+3.	Click on Create.
+     ![](images/emmonlab6Step3.png " ")
+
+4.	Click on the Search icon.
+     ![](images/emmonlab6Step4.png " ")
+
+5.	Select Database Instance target type then select cdb186.subnet.vcn.oraclevcn.com.
+     ![](images/emmonlab6Step5.png " ")
+
+6.	Click Continue.
+     ![](images/emmonlab6Step6.png " ")
+
+7.	Give the Monitoring Template a meaningful name then click on “Metric Thresholds” tab.
+     ![](images/emmonlab6Step7.png " ")
+
+8.	Any changes can be made to Metric Thresholds and Other Collected Items before saving the Monitoring Template. Click OK to save the template.
+     ![](images/emmonlab6Step8.png " ")
+
+9.	The Monitoring Template is created and we will apply the template to another Database Instance target. Highlight the Monitoring Template you just created and click Apply.
+     ![](images/emmonlab6Step9.png " ")
+
+10.	Click on Add and select db19c.subnet.vcn.oraclevcn.com target.
+       ![](images/emmonlab6Step10.png " ")
+
+11.	Click Finish to apply the Monitoring Template to the selected target.
+       ![](images/emmonlab6Step11.png " ")
+
+12.	A Confirmation banner will appear and the Status of the Apply Operation shows Pending.
+       ![](images/emmonlab6Step12.png " ")
+
+13.	Manually click on the Page Refresh icon. The status of the template apply operation is now Passed.
+       ![](images/emmonlab6Step13.png " ")
+
+## **Step 7:** Administration Groups and Template Collections
+Administration groups are designed to simplify the process of setting up targets for management in Enterprise Manager. Typically, management settings such as monitoring settings and compliance standards are applied to a target manually or by custom scripts defined by the administrator. With Administration Groups, you can combine these management settings (e.g. monitoring settings, compliance standards and cloud policies) into a container (called template collections) and associate them with the Administration Group. Once that one-time setup is done, all you need to do is add the target to the Administration Group, and Enterprise Manager will automatically apply the associated management settings to the target as it joins the group.  This greatly simplifies and streamlines the process of target setup. It also enables a datacenter to easily scale as new targets are added to Enterprise Manager for management.
+
+1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
+     ![](images/emmonlab7Step1.png " ")
+
+2.	Navigate to "Setup >> Add Target >> Administration Groups".
+     ![](images/emmonlab7Step2.png " ")
+
+3.	Click on the Overview tab.
+     ![](images/emmonlab7Step3.png " ")
+
+4.	The Overview tab of Administration Groups and Template Collections provides an introduction of how to get started along with detailed steps to walk you through the process. For the purpose of this lab, we have already created the hierarchy, template collections and associations. However, we will look at each step to see how the Administration Group was designed and constructed.
+     ![](images/emmonlab7Step4.png " ")
+
+5.	There are 4 steps involved to setup an Administration Group and Template Collection.
+  - Step 1: Setup the Administration Groups Hierarchy
+  - Step 2: Create Template Collections
+  - Step 3: Associate Template Collections to Administration Groups
+  - Step 4: Synchronize the targets with the selected items
+
+    ![](images/emmonlab7Step5.png " ")
+
+6.	Click on the Hierarchy tab.
+     ![](images/emmonlab7Step6.png " ")
+
+7.	The Hierarchy tab is where you design the hierarchical levels of your Administration Group. This is accomplished by selecting one or more target properties which will define the membership criteria for the Administration Group. In this lab, we have already selected Lifecycle Status target property for this Admin Group, with target property values of Test, Development, and Production.
+     ![](images/emmonlab7Step7.png " ")     
+
+8.	Click on the Template Collections tab.
+     ![](images/emmonlab7Step8.png " ")
+
+9.	Template Collections is a combination of Monitoring Templates, Compliance Standards and/or Cloud Policies that are applied to targets upon joining an Administration Group. In this lab, we have already created two template collections. Highlight “Non-Production Template Collection” and click View.
+     ![](images/emmonlab7Step9.png " ")
+
+10.	The Non-Production Template Collection contains two Monitoring Templates. Click OK once you are done reviewing the templates.
+
+  - Dev_Test_PDB_Monitoring_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Test" or “Development”.
+
+  - Dev_Test_DB_Instance_Monitoring_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Test" or “Development”.
+
+     ![](images/emmonlab7Step10.png " ")
+
+11.	Highlight “Production Template Collection” and click View.
+     ![](images/emmonlab7Step11.png " ")
+
+12.	The Production Template Collection contains 3 Monitoring Templates. Click OK once you are done reviewing the templates.
+
+  - Prod_PDB_Monitoring_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+
+  - Prod_DB_Instance_Monitoring_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+
+  - Prod_Host_Monitoring_Template: This monitoring template will be applied to Host targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+
+     ![](images/emmonlab7Step12.png " ")
+
+13.	Click on the Associations tab.
+     ![](images/emmonlab7Step13.png " ")
+
+14.	The Associations tab is where the association between Template Collections and Administration Groups take place. In this lab we have already associated the “Production Template Collection” with “Prod-Grp” Admin Group. Any target that joins “Prod-Grp” Admin Group will automatically have the Monitoring Templates from “Production Template Collection” applied.
+     ![](images/emmonlab7Step14.png " ")
+
+15.	We will go through the exercise of associating a Template Collection with “Test-Grp”. Select “Test-Grp” Admin Group and click on "Associate Template Collection".
+     ![](images/emmonlab7Step15.png " ")
+
+16.	Highlight "Non-Production Template Collection" and click Select.
+     ![](images/emmonlab7Step16.png " ")     
+
+17.	A Confirmation window will indicate the number of targets that will have Monitoring Templates applied after associating the Template Collection. Click Continue.
+     ![](images/emmonlab7Step17.png " ")
+
+18.	A Confirmation banner will display an “Association is successful” message and the “Test-Grp” Admin Group is now associated with “Non-Production Template Collection”.
+     ![](images/emmonlab7Step18.png " ")
+
+19.	Select “Deve-Grp” Admin Group and click on "Associate Template Collection".
+     ![](images/emmonlab7Step19.png " ")
+
+20.	Highlight "Non-Production Template Collection" and click Select.
+     ![](images/emmonlab7Step20.png " ")
+
+21.	There are no targets listed because currently there are no members in the “Deve-Grp” Admin Group. Click Continue.
+     ![](images/emmonlab7Step21.png " ")
+
+22.	We will add a target to “Deve-Grp” Admin Group and confirm the monitoring template has been being applied to the target. Navigate to “Targets >> Databases”.
+     ![](images/emmonlab7Step22.png " ")
+
+23.	Click on “cd186.subnet.vcn.oraclevcn.com” target.
+     ![](images/emmonlab7Step23.png " ")
+
+24.	Navigate to “Oracle Database >> Target Setup >> Properties”.
+     ![](images/emmonlab7Step24.png " ")
+
+25.	Click Edit and set the Lifecycle Status for this target to “Development”. Click OK.
+     ![](images/emmonlab7Step25.png " ")
+
+26.	Navigate to “Setup >> Add Target >> Administration Groups”.
+     ![](images/emmonlab7Step26.png " ")
+
+27.	Click on “Deve-Grp” Admin Group link to go to the Admin Group homepage.
+     ![](images/emmonlab7Step27.png " ")
+
+28.	Notice in the Synchronization Status section, there is now one synchronized target for Monitoring Templates.
+     ![](images/emmonlab7Step28.png " ")
+
+## **Step 8:** Incident Rules
+A rule set is a collection of rules that apply to a common set of targets such as hosts, databases, groups, jobs, and take appropriate actions to automate the business processes underlying the incident. Enterprise Manager ships with out-of-the-box rule sets to get you started. Out-of-the-box rule sets have a Lock icon next to them because they cannot be modified. We recommend making a copy of the rule set, and modifying the copy to suit your needs. Alternatively, you can create new rule sets from scratch.
+
+1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
+     ![](images/emmonlab8Step1.png " ")
+
+2.	Navigate to "Setup >> Incidents >> Incident Rules".
+     ![](images/emmonlab8Step2.png " ")
+
+3.	Expand “Incident management rule set for all targets” rule set.
+     ![](images/emmonlab8Step3.png " ")
+
+4. The “Incident management rule set for all targets” rule set covers common use cases where most of our customers would like to get notified, such as Target Down and Metric Violation events. You can enable the rules for events you want to be alerted on and disable rules for events you don’t want to be alerted on. If you want to change a rule, you should make a copy of the rule set and modify it. Highlight "Create incident for critical metric alerts" and click View.
+     ![](images/emmonlab8Step4.png " ")
+
+5.	The "Create incident for critical metric alerts" incident rule will create an incident when the event type is a metric alert and the Severity is Critical.
+     ![](images/emmonlab8Step5.png " ")
+
+6.	Click on the “Incident Rules” link to go back to Incident Rules page.
+     ![](images/emmonlab8Step6.png " ")
+
+7.	Scroll down and expand "Compress Related Events into a Single Incident" rule set.
+     ![](images/emmonlab8Step7.png " ")
+
+8.	The “Compress Related Events into a Single Incident” rule set is a rule set that we created to showcase the new compression feature in EM 13c. Here we have 4 common use cases which are independent from one another. For each of these use cases, Enterprise Manager will compress the related events into a single incident. From a manageability standpoint, it will be much easier for the Administrator to manage one incident containing multiple events as a logical unit, as opposed to managing individual events all generated from the same root cause. The Rule set covers the use cases of receiving ONE alert email when:
+
+    - One or more members of cluster database targets go down.
+    - One or more targets with different target types on the same host go down.
+    - One or more members of Weblogic Domain target cross the metric threshold.
+    - One or more hosts or entire site goes down (e.g., Site wide outage).
+
+     ![](images/emmonlab8Step8.png " ")
+
+9.	In this lab, we will create a new rule set and add a rule to notify the DBA when there is a critical DB alert. Click on “Create Rule Set”.
+
+     ![](images/emmonlab8Step9.png " ")
+
+10.	Provide a name for the Rule Set and select the following target types.
+
+  - Database Instance
+  - Database System
+  - Pluggable Database
+
+     ![](images/emmonlab8Step10.png " ")
+
+11.	Scroll down and click Create in the Rules section.
+
+     ![](images/emmonlab8Step11.png " ")
+
+12.	Keep the default selection of "Incoming events and updates to events" and click Continue.
+
+     ![](images/emmonlab8Step12.png " ")
+
+13.	Configure the following fields and click Next.\
+Type: Metric Alert, All events of type Metric Alert\
+Severity: In Critical
+
+     ![](images/emmonlab8Step13.png " ")
+
+14.	Click Add in the "Create New Rule: Add Actions" page.
+
+     ![](images/emmonlab8Step14.png " ")
+
+15.	Configure the following fields and click Continue.\
+Conditions for actions:  Only execute the actions if specified conditions match\
+Event has been open for specified duration: 5 Minutes\
+Email To:  DB Target User
+
+     ![](images/emmonlab8Step15.png " ")
+
+16.	Click OK in the Warning popup.
+
+     ![](images/emmonlab8Step16.png " ")
+
+17.	Click Next.
+
+     ![](images/emmonlab8Step17.png " ")
+
+18.	Enter a name for the Rule and click Next.
+
+     ![](images/emmonlab8Step18.png " ")
+
+19.	Click Continue.
+
+     ![](images/emmonlab8Step19.png " ")  
+
+20.	Click Save.
+
+     ![](images/emmonlab8Step20.png " ")
+
+21.	The new rule set now appears at the bottom of the Incident Rules page.
+
+     ![](images/emmonlab8Step21.png " ")  
+
+
+## Want to Learn More?
+
+  - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
+  - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
+  - [Enterprise Monitoring](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/emadm/enterprise-monitoring.html#GUID-7BB979B8-7C87-4FC2-9E17-D2F5246A120F)
+
+## Acknowledgements
+- **Author** - Karilyn Loui, Oracle Enterprise Manager Product Management
+- **Contributing Author** - Ana McCollum, Oracle Enterprise Manager Product Management
+- **Adapted for Cloud** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
+- **Last Updated By/Date** – Daniel Suherman - Enterprise Manager Product Management [Apr 2021]
+
+  ## Need Help?
+  Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+  If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
