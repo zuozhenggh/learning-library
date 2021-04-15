@@ -146,3 +146,122 @@ Incident Manager provides in one location the ability to search, view, manage, a
 
 14.	Click on the “Fatal” link to drill down into these incidents.
      ![](images/emmonlab2Step14.png " ")
+
+15.	Incident Dashboard is filtered for incidents with “Fatal” severity.
+     ![](images/emmonlab2Step15.png " ")
+
+## **Step 3:** Metric and Collection Settings
+Metric and Collection Settings page is where we can view and configure thresholds, collection schedules, and Corrective Actions for the metrics being monitored for the target.
+
+1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
+     ![](images/emmonlab3Step1.png " ")
+
+2.	Navigate to “Targets >> Databases” to see the list of Database targets.
+     ![](images/emmonlab3Step2.png " ")
+
+3.	Click on “cdb186.subnet.vcn.oraclevcn.com” to go to the target home page.
+     ![](images/emmonlab3Step3.png " ")
+
+4.	Navigate to “Oracle Database >> Monitoring >> Metric and Collection Settings”.
+     ![](images/emmonlab3Step4.png " ")
+
+5.	Oracle ships with default OOTB Metrics and settings. This includes Metrics, Thresholds, and Collection Schedules. This aims to cover generic use cases to get you started. We recommend that you customize the monitoring settings of your targets according to your requirements.
+What we’re looking at right now are database metrics with default settings. These are recommended settings; however, you can modify anything to suit your needs.
+
+As Best Practice:
+- Disable collection for metrics you don’t care about.
+- Set thresholds only on metrics you want to be alerted on.
+- Adjust metric thresholds based on metric trend.
+- Save the modified metric settings and apply to targets using monitoring templates.
+
+     ![](images/emmonlab3Step5.png " ")
+
+6.	By default, the "Metrics with thresholds" view is displayed. This view will show metrics with a Warning or Critical threshold defined.
+     ![](images/emmonlab3Step6.png " ")
+
+7.	There are other out-of-box views available to select from.
+     ![](images/emmonlab3Step7.png " ")
+
+8.	Scroll down to “Archive Area Used (%) metric and click on the “Every 15 Minutes” Collection Schedule link.
+     ![](images/emmonlab3Step8.png " ")
+
+9.	Change the Collection Schedule to 30 minutes and click Continue.
+     ![](images/emmonlab3Step9.png " ")
+
+10.	Scroll down to Archive Area Used (%) metric again. Click on the Edit icon to change the Warning and Critical thresholds.
+     ![](images/emmonlab3Step10.png " ")
+
+11.	Currently the Warning threshold is set to >80% and Critical threshold is set to >95%. Change the Warning threshold to 85% and Critical threshold to 90% and click OK.
+     ![](images/emmonlab3Step11.png " ")
+
+12.	Click OK in the Confirmation window.
+     ![](images/emmonlab3Step12.png " ")
+
+13.	Navigate to “Database >> Monitoring >> All Metrics”.
+     ![](images/emmonlab3Step13.png " ")
+
+14.	The All Metrics page shows the collected data for all of the metrics on the target.
+     ![](images/emmonlab3Step14.png " ")
+
+15.	Expand and highlight the “Archive Area” Metric Group.
+     ![](images/emmonlab3Step15.png " ")
+
+16.	Click on the Edit icon next to the Collection Schedule field.
+     ![](images/emmonlab3Step16.png " ")
+
+17.	Change the Collection Schedule back to 15 minutes and click OK.
+     ![](images/emmonlab3Step17.png " ")
+
+## **Step 4:** Corrective Actions
+Corrective Actions automates response to metric alerts and events. A Corrective Action can start the DB listener when it unexpectedly goes down or it can run shell scripts to collect diagnostic data. You can create a custom Corrective Action once and grant access for other Admins to use. We ship with a long list of pre-defined Corrective Actions to get you started.
+
+1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
+     ![](images/emmonlab4Step1.png " ")
+
+2.	Navigate to “Enterprise >> Monitoring >> Corrective Actions”.
+     ![](images/emmonlab4Step2.png " ")
+
+3.	Select “Add Space to Tablespace” from the “Create Library Corrective Action” drop down field and click Go. This Corrective Action will automatically increase tablespaces should they reach a user defined threshold.
+     ![](images/emmonlab4Step3.png " ")
+
+4.	Give the Corrective Action a name and click on the “Parameters” tab.
+     ![](images/emmonlab4Step4.png " ")
+
+5.	There are a number of parameters available for the Add Space to Tablespace corrective action. These parameters can be adjusted according to your needs. For the purpose of this lab, we will leave the parameter values as is and click on Save to Library.
+     ![](images/emmonlab4Step5.png " ")
+
+6.	The Corrective Action is created in Draft status. Click on Publish to publish the Corrective Action.
+     ![](images/emmonlab4Step6.png " ")
+
+7.	Click on Yes to confirm you want to publish the Corrective Action.
+     ![](images/emmonlab4Step7.png " ")
+
+8.	A Confirmation banner will appear at the top of the page.
+     ![](images/emmonlab4Step8.png " ")
+
+9.	Navigate to “Targets >> Databases”.
+     ![](images/emmonlab4Step9.png " ")
+
+10.	Click on the link for “finance.subnet.vcn.oraclevcn.com” database instance.
+     ![](images/emmonlab4Step10.png " ")
+
+11.	Navigate to “Oracle Database >> Monitoring >> Metric and Collection Settings”.
+     ![](images/emmonlab4Step11.png " ")
+
+12.	Scroll down to “Tablespace Space Used (%)” metric and click on the Edit icon.
+     ![](images/emmonlab4Step12.png " ")
+
+13.	Click on Edit in the “Monitored Objects” section.
+     ![](images/emmonlab4Step13.png " ")
+
+14.	Click Add next to the Warning field under the Corrective Actions section.
+     ![](images/emmonlab4Step14.png " ")
+
+15.	Select the Add Space to Tablespace Corrective Action that you just created and click Continue.
+     ![](images/emmonlab4Step15.png " ")
+
+16.	Notice there is now a Corrective Action specified for Warning threshold violations. The Corrective Action will trigger when Tablespace Space Used (%) >= 85%. Click Continue.
+     ![](images/emmonlab4Step16.png " ")
+
+17.	Click Continue again the OK.
+     ![](images/emmonlab4Step17.png " ")
