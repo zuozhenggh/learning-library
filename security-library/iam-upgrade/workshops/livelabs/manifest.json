@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "IAM 11g to 12c In-Place Upgrade Workshop",
+  "workshoptitle": "IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -28,7 +28,7 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 4: Upgrade IAM 11g to 12c",
+      "title": "Lab 4: Upgrade IAM 11.1.2.3 to 12.2.1.4",
       "filename": "../../upgrade/upgradelcm.md"
     }
   ]
