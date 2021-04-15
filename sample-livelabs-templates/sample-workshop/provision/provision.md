@@ -34,57 +34,57 @@ In this lab, you will:
 Cloud Navigation Picture Paths:
 
 Analytics - Cloud - OAC
-0. Click the **Hamburger Button** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
+0. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 Compute - Instances
-0. Click the **Hamburger Button** in the upper left, navigate to **Compute**, and select **Instances**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 Database - Autonomous Data Warehouse - ADW
-0. Click the **Hamburger Button** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 	
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 Database - Autonomous JSON Database - AJD
-0. Click the **Hamburger Button** in the upper left, navigate to **Oracle Database**, and select **Autonomous JSON Database**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous JSON Database**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-ajd.png " ")
 
 Database - Autonomous Transaction Processing - ATP
-0. Click the **Hamburger Button** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 Oracle Database - Data Safe
-0. Click the **Hamburger Button** in the upper left, navigate to **Oracle Database**, and select **Data Safe**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Data Safe**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-datasafe.png " ")
 
 Oracle Database - Cloud Shell - Bare Metal, VM, Exadata - DBCS
-0. Click the **Hamburger Button** in the upper left, navigate to **Oracle Database**, and select **Bare Metal, VM, and Exadata**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Bare Metal, VM, and Exadata**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
 Oracle Database - GoldenGate - Golden Gate - GG
-0. Click the **Hamburger Button** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
 
 	![](https://github.com/oracle/learning-library/blob/master/common/images/console/database-goldengate.png " ")
 
 Developer Services - Resource Manager Stacks - ResMgr Stacks
-0. Click the **Hamburger Button** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
 Networking - Virtual Cloud Networks - VCN
-0. Click the **Hamburger Button** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 Storage - Buckets
-0. Click the **Hamburger Button** in the upper left, navigate to **Storage**, and select **Buckets**.
+0. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
