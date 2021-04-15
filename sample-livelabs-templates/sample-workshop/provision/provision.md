@@ -27,6 +27,58 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
+## **STEP 0**: Use these Standardized Pictures for Oracle Cloud Navigation (Commonly for Provisioning)
+
+***Please use the absolute path pictures in this section when describing Oracle Cloud navigation in your workshops. This will enable us to quickly update all workshops in the future if there happens to be an Oracle Cloud user interface change.  It also increases consistency across LiveLabs workshops and contributes to a more professional feel.  Browse below and view the markdown in an editor to find the related images. We highly recommend you copy this whole section in the markdown file and paste it to a text document for easy copy and pasting of links.***
+
+Cloud Navigation Picture Paths:
+
+1. Analytics - Cloud - OAC
+  
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
+
+2. Compute - Instances
+  
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+
+3. Database - Autonomous Data Warehouse - ADW
+  
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+4. Database - Autonomous JSON Database - AJD
+  
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-ajd.png " ")
+
+5. Database - Autonomous Transaction Processing - ATP
+  
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+
+6. Oracle Database - Data Safe
+
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-datasafe.png " ")
+
+7. Oracle Database - Cloud Shell - Bare Metal, VM, Exadata - DBCS
+
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
+
+8. Oracle Database - GoldenGate - Golden Gate - GG
+
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
+
+9. Developer Services - Resource Manager Stacks - ResMgr Stacks
+
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
+
+10. Networking - Virtual Cloud Networks - VCN
+
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+
+11. Storage - Buckets
+  
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
+
+
+
 ## **STEP 1**: title
 
 Step 1 opening paragraph.
