@@ -67,7 +67,7 @@ This lab assumes you have:
     ```
     <copy>
     {
-      "pid": "488",
+      "pid": "490",
       "category": "Puma Shoe ",
       "title": "Puma-shoe Demo3",
       "details": "Puma-shoe-Original",
@@ -96,7 +96,7 @@ This lab assumes you have:
 
     - To get the specific product details by using PID enter URL:  
     ```
-    <copy>http://localhost:3001/products/31</copy>
+    <copy>http://localhost:3001/products/490</copy>
     ```
     - Click on the **Send** button, Postman return the HTTP 200 Ok which is a successful GET.
 
@@ -168,7 +168,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

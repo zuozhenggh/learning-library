@@ -7,17 +7,14 @@ Estimated Lab Time: 25 minutes
 
 ### Objectives
 In this lab, you will:
-* Show how zone maps are not created without DBA intervention
+* Explore how zone maps are not created without DBA intervention
 * Enable automatic zone maps
-* Show how automatic zone maps are created without DBA intervention
 * Drop the table
 
 ### Prerequisites
-
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Lab: SSH Keys
-* Lab: Create a DBCS VM Database
-* Lab: 21c Setup
+* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* Lab: Provision ADB
+* Lab: Setup
 
 
 ## **STEP 1:** Show how zone maps are not created without DBA intervention
@@ -919,11 +916,7 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
+* **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
 * **Last Updated By/Date** -  David Start, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

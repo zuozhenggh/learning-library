@@ -13,7 +13,7 @@ Estimated Time: 20 mins
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Login to Oracle Cloud/Sign Up for Free Tier
+* Sign Up for Free Tier/Login to Oracle Cloud
 
 *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
@@ -165,15 +165,10 @@ First, we are going to create an ADW Instance.
 
     ![](images/datatools-sql-dev-tables-loaded.png)
 
-
-Please proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
 - **Last Updated By/Date** - Tom McGinn, Product Manager, Database Product Management, March 2021
 
-## Need Help?
-Please submit an e-mail to **livelabs-help-db_us@oracle.com**. Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
