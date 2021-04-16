@@ -18,7 +18,7 @@ Estimated Lab Time: 30-45 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-### **STEP 1**: Loading Data in a Relational Table
+### **STEP 1: Loading Data in a Relational Table**
 
 1. After logging into Database Actions in the previous section, we come to the Getting Started/Database Actions Overview page. Start by clicking the SQL tile.
 
@@ -213,7 +213,7 @@ select a.name,
 
 Oracle also has many built in JSON functions for working with document data which elevates the functionality found with Dot-Notation. 
 
-1. json_value
+**1. json_value**
 
 The SQL/JSON function JSON_VALUE finds a specified scalar JSON value in JSON data and returns it as a defined SQL value (date, number, timestamp, sdo_geometry, etc). 
 
@@ -238,7 +238,7 @@ select json_value (
  where a.id = 5;
 ```
 
-2. json_mergepatch
+**2. json_mergepatch**
 
 You can use the **json_mergepatch** function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch. 
 
@@ -274,7 +274,7 @@ American Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Line
 
 
 
-3. json_transform (21c)
+**3. json_transform (21c)**
 
 You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data. Unlike json_mergepatch, json_transform can target the specific attributes you want to change.
 
@@ -351,7 +351,7 @@ select a.statistics."Minutes Delayed"
  where id = 10;
 ```
 
-4. json_query
+**4. json_query**
 
 ```
 select JSON_QUERY(statistics, '$."# of Delays"')
@@ -359,7 +359,7 @@ select JSON_QUERY(statistics, '$."# of Delays"')
  where id = 1032;
 ```
 
-5. json_table
+**5. json_table**
 
 The SQL/JSON function JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
 
@@ -426,7 +426,7 @@ select a.name, t.*, md.*
  where a.id = 100;
 ```
 
-6. json_exists
+**6. json_exists**
 
 SQL/JSON condition json_exists lets you use a SQL/JSON path expression as a row filter, to select rows based on the content of JSON documents.
 ```
@@ -458,14 +458,14 @@ select a.id, a.airportcode, a.Statistics."Minutes Delayed".Total
 
 Compare explain plans here and see that the SQL/JSON path expressions are much more efficient.
 
-7. Reverse! I need to create JSON out of relational data.
+**7. Reverse! I need to create JSON out of relational data**
 
 ```
 select json_object ( * ) jdoc
   from airportdelays;
 ```
 
-8. Putting it all together
+**8. Putting it all together**
 
 select a.id, a.Statistics."Minutes Delayed".Total, a.airportcode from airportdelays a
   where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
