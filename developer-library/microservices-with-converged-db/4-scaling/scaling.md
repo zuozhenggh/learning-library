@@ -20,7 +20,7 @@ This lab assumes that you have already completed labs 1 through 4.
 1. Start an external load balancer for the order service.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
+    <copy>cd $GRABDISH_HOME/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
     ```
 
     Repeatedly view the ext-order LoadBalancer service.  Make note of the external IP address.
@@ -42,7 +42,7 @@ This lab assumes that you have already completed labs 1 through 4.
     You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
     
    ``` 
-   <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
+   <copy>cd $GRABDISH_HOME/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
    ```
 
    ![](images/install-k6.png " ")
@@ -50,7 +50,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) To install artillery:
 
    ``` 
-   <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; npm install artillery@1.6</copy>
+   <copy>cd $GRABDISH_HOME/artillery; npm install artillery@1.6</copy>
    ```
 
 ## **STEP 2**: Load test and scale the application tier
@@ -60,7 +60,7 @@ This lab assumes that you have already completed labs 1 through 4.
     Here is an example using k6:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
     Note the request rate. This is the number of http requests per second that were processed.
@@ -70,7 +70,7 @@ This lab assumes that you have already completed labs 1 through 4.
     (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 2. Scale to 2 service replicas.
@@ -93,7 +93,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    For example:
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
    Note the average response time for the requests.  Throughput has increased and response time has returned to normal.
@@ -103,7 +103,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 
@@ -127,7 +127,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    For example:
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
   Note the median response time for the requests and the request rate.  Note how the response time is still degraded and the request rate has not improved significantly.
@@ -137,7 +137,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 ## **STEP 3**: Load test and scale the database tier
@@ -161,7 +161,7 @@ This lab assumes that you have already completed labs 1 through 4.
    For example:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
    Note the request rate.  Throughput has increased.
@@ -171,7 +171,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 ## **STEP 4**: Scale down the application and database tiers

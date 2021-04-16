@@ -19,7 +19,7 @@ This lab assumes you have already completed Labs 1 through 4.
     inventory-helidon folder, using the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./undeploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
     ```
 
    ![](images/undeploy-inventory-helidon-mp.png " ")
@@ -33,19 +33,19 @@ In this step you can choose between three different implementations of the Inven
    If you selected Java Helidon SE, deploy this service:
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon-se; ./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
     ```
 
    If you selected Python, deploy this service:
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-python; ./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-python; ./deploy.sh</copy>
     ```
 
    If you selected Node.js, deploy this service:
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-nodejs; ./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-nodejs; ./deploy.sh</copy>
     ```
 
 ## **STEP 3**: Verify application functionality
@@ -57,7 +57,7 @@ In this step you can choose between three different implementations of the Inven
 1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon-se; ./undeploy.sh; cd $MSDATAWORKSHOP_LOCATION/inventory-python; ./undeploy.sh; cd $MSDATAWORKSHOP_LOCATION/inventory-nodejs; ./undeploy.sh; cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./undeploy.sh; cd $GRABDISH_HOME/inventory-python; ./undeploy.sh; cd $GRABDISH_HOME/inventory-nodejs; ./undeploy.sh; cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh</copy>
     ```
 
 ## Acknowledgements

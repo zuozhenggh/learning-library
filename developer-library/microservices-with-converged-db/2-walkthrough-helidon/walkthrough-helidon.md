@@ -371,7 +371,7 @@ This web component allows to simply integrate mapping into Oracle JET and Oracle
 
 ## **STEP 7**: Verify metrics
 
-1. Notice @Timed and @Counted annotations on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
+1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
    ![](images/OrderResourceAnnotations.png " ")
 
@@ -391,11 +391,11 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/healthliveliness.png " ")
 
-2. Notice health check class at `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
+2. Notice health check class at `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
 
     ![](images/c6b4bf43b0ed4b9b4e67618b31560041.png " ")
 
-3. Notice liveness probe specified in `$MSDATAWORKSHOP_LOCATION/order-helidon/order-helidon-deployment.yaml` The `livenessProbe` can be set up with different criteria, such as reading from a file or an HTTP GET request. In this example the OKE health probe will use HTTP GET to check the /health/live and /health/ready addresses every 3 seconds, to see the liveness and readiness of the service.
+3. Notice liveness probe specified in `$GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml` The `livenessProbe` can be set up with different criteria, such as reading from a file or an HTTP GET request. In this example the OKE health probe will use HTTP GET to check the /health/live and /health/ready addresses every 3 seconds, to see the liveness and readiness of the service.
 
    ![](images/livenessprobeinyaml.png " ")
 
