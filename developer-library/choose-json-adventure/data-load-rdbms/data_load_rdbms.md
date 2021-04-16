@@ -1,4 +1,4 @@
-# Loading JSON into the Autonomous Database Part 1: Relational
+# Loading JSON into the Oracle Database Part 1: Relational
 
 ## Introduction
 
