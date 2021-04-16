@@ -32,7 +32,10 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
 
-<copy>mkdir grabdish; cd grabdish</copy>
+```
+<copy>mkdir grabdish; cd grabdish
+</copy>
+```
 
 Note, you must change directory to the directory that you have created or the setup will fail.
 
@@ -40,7 +43,7 @@ Note, you must change directory to the directory that you have created or the se
 
 To work with application code, you need to make a clone from the GitHub repository using the following command. 
 
-```bash
+```
 <copy>git clone -b terraform-etc --single-branch https://github.com/oracle/microservices-datadriven.git
 </copy>
 ```
