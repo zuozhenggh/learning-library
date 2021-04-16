@@ -242,11 +242,7 @@ You can use the JSON_MERGEPATCH function to update specific portions of a JSON d
 ```
 update airportdelays
    set statistics = json_mergepatch ( 
-         		statistics,
-         			'{"Carriers" : {"Names" : "'||
-         				(select replace(json_value (
-         					Statistics, '$.Carriers.Names')
-                            ,'United Air Lines Inc.,','Oracle Air Lines Inc.,')
+         		statistics,'{"Carriers" : {"Names" : "'||(select replace(json_value (Statistics, '$.Carriers.Names'),'United Air Lines Inc.,','Oracle Air Lines Inc.,')
                            from airportdelays a
                           where id = 10)||'"}
                      }'
