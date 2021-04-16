@@ -518,7 +518,7 @@ Airbus ["A320","A321","A330","A340","A350","A380"]
 We can even go one step further and pivot nested arrays as columns as seen in this next example:
 
 ```
-select a.name, t.*, md.*
+select a.airportcode, t.*, md.*
   from airportdelays a, 
        json_table (
             a.time, '$' 
@@ -550,20 +550,18 @@ select a.name, t.*, md.*
  where a.id = 100;
 ```
 with the results being:
+
 ```
-NAME                                        LABEL   MONTH NAME YEAR CARRIER NATIONAL AVIATION SYSTEM LATE AIRCRAFT SECURITY WEATHER WEATHER CODES               TOTAL CODE1 CODE2 CODE3 CODE4 
-------------------------------------------- ------- ---------- ---- ------- ------------------------ ------------- -------- ------- --------------------------- ----- ----- ----- ----- ----- 
-New York, NY: John F. Kennedy International 2003/09 September  2003 13176   14391                    7732          93       996     ["SNW","RAIN","SUN","CLDY"] 36388 SNW   RAIN  SUN   CLDY 
+AIRPORTCODE LABEL   MONTH NAME YEAR CARRIER NATIONAL AVIATION SYSTEM LATE AIRCRAFT SECURITY WEATHER WEATHER CODES               TOTAL CODE1 CODE2 CODE3 CODE4 
+----------- ------- ---------- ---- ------- ------------------------ ------------- -------- ------- --------------------------- ----- ----- ----- ----- ----- 
+JFK         2003/09 September  2003 13176   14391                    7732          93       996     ["SNW","RAIN","SUN","CLDY"] 36388 SNW   RAIN  SUN   CLDY
 ```
 
 **6. json_exists**
 
-SQL/JSON condition json_exists lets you use a SQL/JSON path expression as a row filter, to select rows based on the content of JSON documents.
-```
-select a.id 
-  from airportdelays a
- where json_exists(a.Statistics, '$."Minutes Delayed".Total');
-```
+The SQL/JSON condition json_exists lets you use a SQL/JSON path expression as a row filter, to select rows based on the content of JSON documents.
+
+Again, lets start easy and bring back all the ids where the year is 2004 and the month is 6 (June):
 
 ```
 select a.id 
@@ -571,12 +569,36 @@ select a.id
  where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")');  
 ```
 
+Lets take this a step further and not only bring back all the ids where the year is 2004 and the month is 6 (June), but where the total minutes delayed is greater than 500000:
+
 ```
 select a.id, a.airportcode, a.Statistics."Minutes Delayed".Total 
   from airportdelays a
  where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
    and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 500000)');  
 ```
+with the result being:
+
+```
+ ID AIRPORTCODE MINUTES DELAYED 
+--- ----------- --------------- 
+349 ATL         714316          
+369 ORD         554653          
+355 DFW         520185 
+```
+
+So you can see, json_exists will allow us to quickly and efficiently filter our JSON documents to get the results we want. Want more proof? Run an explain plan on the following SQL we just used:
+
+```
+select a.id, a.airportcode, a.Statistics."Minutes Delayed".Total 
+  from airportdelays a
+ where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
+   and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 500000)');  
+```
+SQL/JSON explain plan:
+    ![SQL/JSON explain plan](./images/sdw-32.png)
+
+and now with SQL using the Dot-Notation format:
 
 ```
 select a.id, a.airportcode, a.Statistics."Minutes Delayed".Total 
@@ -585,8 +607,11 @@ select a.id, a.airportcode, a.Statistics."Minutes Delayed".Total
    and a.time.Month = 6
    and a.Statistics."Minutes Delayed".Total > 500000; 
 ```
+Dot-Notation explain plan
+    ![Dot-Notation explain plan](./images/sdw-33.png)
 
-Compare explain plans here and see that the SQL/JSON path expressions are much more efficient.
+You can see that the SQL/JSON path expressions are much more efficient.
+
 
 **7. Reverse! I need to create JSON out of relational data**
 
