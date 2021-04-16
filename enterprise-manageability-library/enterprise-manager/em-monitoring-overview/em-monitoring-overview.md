@@ -65,9 +65,11 @@ The objective of this lab is to become familiar with Enterprise Monitoring capab
 
   3.	Enterprise Summary presents a single pane of glass view of the health of your Enterprise assets.\
 The Overview pane shows the Target Status of your IT estate. The Status section shows aggregated target availability so you can get a sense of what percentage is UP vs DOWN at a quick glance. The Green slice of the pie are your targets that are up. The Red slice of the pie are the targets that are down. Targets in red may be down due to unscheduled outages. Let’s drill down and take a look at them.
+
       ![](images/emmonlab1step3.png " ")
 
   4.  Click on the Red slice of the pie in the “Status” section.
+
       ![](images/emmonlab1step4.png " ")  
 
   5.	In Enterprise Manager we have an “All Targets” page, which shows all of the targets being monitored by EM. When we clicked on the Red slice of the pie, we essentially placed a filter on the All Targets page to display only Down targets. From here, you can click on the individual target to go to the Target Home Page and take necessary actions such as starting up a Database System or Database Instance.
