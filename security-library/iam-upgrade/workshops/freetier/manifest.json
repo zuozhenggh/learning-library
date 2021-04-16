@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
+  "workshoptitle": "Oracle IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -22,12 +22,12 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Initialize IAM 11.1.2.3 Environment",
+      "title": "Lab 4: Initialize Oracle IAM 11.1.2.3 Environment",
       "description": "Lab to Initialize IAM 11.1.2.3 Baseline Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 5: Upgrade IAM 11.1.2.3 to 12.2.1.4",
+      "title": "Lab 5: Upgrade Oracle IAM 11.1.2.3 to 12.2.1.4",
       "filename": "../../upgrade/upgradelcm.md"
     }
   ]

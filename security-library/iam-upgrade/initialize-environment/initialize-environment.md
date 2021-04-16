@@ -7,7 +7,7 @@ In this lab we will review and setup all components required to successfully upg
 *Estimated Lab Time*:  30 minutes
 
 ### Objectives
-- Initialize the IAM 11g baseline workshop environment.
+- Initialize the IAM 11.1.2.3 baseline workshop environment.
 
 ### Prerequisites
 This lab assumes you have:
@@ -61,9 +61,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-Follow the steps below to initialize the IAM 11g components.
+Follow the steps below to initialize the IAM 11.1.2.3 components.
 
-## **STEP 2**: Start IAM 11g Components
+## **STEP 2**: Start Oracle IAM 11.1.2.3 Components
 
 1.  From any of the terminal session started above, proceed as shown below to start all components as “*oracle*” user
 

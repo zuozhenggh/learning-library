@@ -10,7 +10,7 @@ Oracle IAM enables organizations to effectively manage the end-to-end lifecycle 
 Oracle IAM is a member of the Oracle Fusion Middleware family of products, which brings greater agility, better decision-making, and reduced cost and risk to diverse IT environments today.
 In addition, we now offer an innovative, fully integrated service that delivers all the core identity and access management capabilities through a multi-tenant Cloud platform, Oracle Identity Cloud Service.
 
-You can find more information about the latest version of IAM [here](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+You can find more information about the latest version of Oracle IAM [here](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
 
 
 Estimated Lab Time: 48-72 Hours
@@ -18,13 +18,13 @@ Estimated Lab Time: 48-72 Hours
 ### Objectives
 
 In this lab, you will:
-* Initialize the IAM 11.1.2.3 baseline environment
-* Upgrade the IAM 11.1.2.3 environment to 12.2.1.4
+* Initialize the Oracle IAM 11.1.2.3 baseline environment
+* Upgrade the Oracle IAM 11.1.2.3 environment to 12.2.1.4
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Knowledge of Oracle IAM 11g
+* Knowledge of Oracle IAM 11.1.2.3
 
 ## Learn More
 

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
+  "workshoptitle": "Oracle IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -8,7 +8,7 @@
     },
     {
       "title": "Introduction",
-      "description": "Introduction to GGBD",
+      "description": "Introduction",
       "filename": "../../introduction/introduction.md"
     },
     {
@@ -23,12 +23,12 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
     },
     {
-      "title": "Lab 3: Initialize IAM 11g Environment",
-      "description": "Lab to Initialize IAM 11g Environment",
+      "title": "Lab 3: Initialize Oracle IAM 11.1.2.3 Environment",
+      "description": "Lab to Initialize IAM 11.1.2.3 Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 4: Upgrade IAM 11.1.2.3 to 12.2.1.4",
+      "title": "Lab 4: Upgrade Oracle IAM 11.1.2.3 to 12.2.1.4",
       "filename": "../../upgrade/upgradelcm.md"
     }
   ]
