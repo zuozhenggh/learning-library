@@ -217,6 +217,8 @@ Oracle also has many built in JSON functions for working with document data whic
 
 The SQL/JSON function JSON_VALUE finds a specified scalar JSON value in JSON data and returns it as a defined SQL value (date, number, timestamp, sdo_geometry, etc). 
 
+
+We can start easy by just getting the **Label** item in the time JSON block:
 ```
 select json_value (
          time, 
@@ -226,6 +228,7 @@ select json_value (
  where a.id = 5;
 ```
 
+Let's get a bit deeper and get the number of **flights cancelled** thats in the Statistics JSON block. We will also tell the query to return this value as a number by using **returning number** after the JSON path:
 ```
 select json_value (
          Statistics, 
@@ -237,8 +240,9 @@ select json_value (
 
 2. json_mergepatch
 
-You can use the JSON_MERGEPATCH function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch. 
+You can use the **json_mergepatch** function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch. 
 
+Say you wanted your airline to look really really good and remove them from the string of airlines in the Names section of the statistics JSON block. We can do this by replacing or updating the name with another one in that particular portion of the JSON document. Let's remove United and replace it with Oracle:
 ```
 update airportdelays
    set statistics = json_mergepatch ( 
@@ -253,6 +257,7 @@ update airportdelays
        			)
  where id = 10;
 ```
+New we check our devious work:
 
 ```
 select json_value (
@@ -262,7 +267,7 @@ select json_value (
   from airportdelays a 
  where  a.id = 10;
 ```
-and we can see the change we just did in the result
+and we can see the change we just did in the result:
 
 
 American Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Lines Inc.,AirTran Airways Corporation,America West Airlines Inc.,Northwest Airlines Inc.,ATA Airlines d/b/a ATA,**Oracle Air Lines Inc.**,US Airways Inc.,Southwest Airlines Co.
@@ -272,6 +277,8 @@ American Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Line
 3. json_transform (21c)
 
 You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data. Unlike json_mergepatch, json_transform can target the specific attributes you want to change.
+
+Continuing our underhanded data alterations, lets work with the **Minutes Delayed** JSON section and see if we can make our numbers look a bit more favorable. Here is a sample of the JSON we will be working with:
 
 ```
 "Minutes Delayed": {
@@ -284,6 +291,8 @@ You can use the JSON_TRANSFORM function to change input JSON data (or pieces of 
 }
 ```
 
+We can use json_transform to replace the value of Total to be 0 with the following SQL:
+
 ```
 update airportdelays  
    set statistics = json_transform (
@@ -293,17 +302,24 @@ update airportdelays
  where id = 10;
 ```
 
+And checking our work. First we can look at the entire section of JSON:
+
 ```
 select a.statistics."Minutes Delayed" 
   from airportdelays a 
  where id = 10;
 ```
 
+Or just look at that particular attribute:
+
+
 ```
 select a.statistics."Minutes Delayed".Total 
   from airportdelays a 
  where id = 10;
 ```
+
+We get back a result of 0; mischief managed! We can also use json_transform to remove entire attributes. If we wanted to remove multiple attributes in this Minutes Delayed section, we can issue the following SQL for each attribute:
 
 ```
 update airportdelays  
@@ -314,9 +330,7 @@ update airportdelays
  where id = 10;
 ```
 
-....etc
-
-then for the rest of the fields or we can chain the statements with json_transform:
+Or we can chain multiple remove and replace statements with json_transform:
 
 ```
 update airportdelays  
@@ -328,6 +342,8 @@ update airportdelays
             )
  where id = 10;
 ```
+
+And as always, let's check our work to make sure the deed is done:
 
 ```
 select a.statistics."Minutes Delayed" 
@@ -378,25 +394,7 @@ select t.*
 Nested Arrays pivoted as columns
 
 ```
-select t.*
-  from airportdelays,
-       json_table(Statistics, '$."Minutes Delayed"'
-            columns(
-                Carrier number path '$.Carrier',
-                "Weather Codes" varchar2(200) format json path '$."Weather Codes"',
-                nested path '$."Weather Codes"'
-                columns(
-                    code1 varchar2(100) path '$[0]',
-                    code2 varchar2(100) path '$[1]',
-                    code3 varchar2(100) path '$[2]',
-                    code4 varchar2(100) path '$[3]')
-                )
-            ) as t
- where id = 100;
-```
-
-```
-select a.name, v.*, q.*
+select a.name, t.*, md.*
   from airportdelays a, 
        json_table (
             a.time, '$' 
@@ -405,7 +403,7 @@ select a.name, v.*, q.*
                     "Month Name",
                     Year
                 ) 
-        )v,
+        ) t,
 	    json_table (
             a.Statistics, '$."Minutes Delayed"' 
                 columns (
@@ -414,6 +412,7 @@ select a.name, v.*, q.*
                     "Late Aircraft",
                     Security,
                     Weather,
+                    "Weather Codes" varchar2(200) format json path '$."Weather Codes"',
                     nested path '$."Weather Codes"'
                     columns (
                         code1 varchar2(100) path '$[0]',
@@ -423,7 +422,7 @@ select a.name, v.*, q.*
                     ),
                     Total               
                 )
-        ) q
+        ) md
  where a.id = 100;
 ```
 
