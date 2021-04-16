@@ -258,11 +258,15 @@ update airportdelays
 select json_value (
          Statistics, 
          '$.Carriers.Names' 
-       ) "Airline Names" from airportdelays a where  a.id = 10;
+       ) "Airline Names" 
+  from airportdelays a 
+ where  a.id = 10;
 ```
 and we can see the change we just did in the result
 
+
 American Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Lines Inc.,AirTran Airways Corporation,America West Airlines Inc.,Northwest Airlines Inc.,ATA Airlines d/b/a ATA,**Oracle Air Lines Inc.**,US Airways Inc.,Southwest Airlines Co.
+
 
 
 3. json_transform (21c)
@@ -292,21 +296,21 @@ update airportdelays
 ```
 select a.statistics."Minutes Delayed" 
   from airportdelays a 
- where  id = 10;
+ where id = 10;
 ```
 
 ```
 select a.statistics."Minutes Delayed".Total 
   from airportdelays a 
- where  id = 10;
+ where id = 10;
 ```
 
 ```
 update airportdelays  
    set statistics = json_transform (
-  statistics, 
-  remove '$."Minutes Delayed".Carrier',
-)
+            statistics, 
+                remove '$."Minutes Delayed".Carrier',
+        )
  where id = 10;
 ```
 
@@ -328,7 +332,7 @@ update airportdelays
 ```
 select a.statistics."Minutes Delayed" 
   from airportdelays a 
- where  id = 10;
+ where id = 10;
 ```
 
 4. json_query
@@ -408,26 +412,30 @@ select a.name, v.*, q.*
 
 SQL/JSON condition json_exists lets you use a SQL/JSON path expression as a row filter, to select rows based on the content of JSON documents.
 ```
-SELECT a.id FROM airportdelays a
-  WHERE json_exists(a.Statistics, '$."Minutes Delayed".Total');
+select a.id 
+  from airportdelays a
+ where json_exists(a.Statistics, '$."Minutes Delayed".Total');
 ```
 
 ```
-SELECT a.id FROM airportdelays a
-  WHERE json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")');  
+select a.id 
+  from airportdelays a
+ where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")');  
 ```
 
 ```
-SELECT a.id, a.airportcode, a.Statistics."Minutes Delayed".Total FROM airportdelays a
-  WHERE json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
-    and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 500000)');  
+select a.id, a.airportcode, a.Statistics."Minutes Delayed".Total 
+  from airportdelays a
+ where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
+   and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 500000)');  
 ```
 
 ```
- SELECT a.id, a.airportcode, a.Statistics."Minutes Delayed".Total FROM airportdelays a
-  WHERE a.time.Year  = 2004
-    and a.time.Month = 6
-    and a.Statistics."Minutes Delayed".Total > 500000; 
+select a.id, a.airportcode, a.Statistics."Minutes Delayed".Total 
+  from airportdelays a
+ where a.time.Year  = 2004
+   and a.time.Month = 6
+   and a.Statistics."Minutes Delayed".Total > 500000; 
 ```
 
 Compare explain plans here and see that the SQL/JSON path expressions are much more efficient.
@@ -436,13 +444,13 @@ Compare explain plans here and see that the SQL/JSON path expressions are much m
 
 ```
 select json_object ( * ) jdoc
-from   airportdelays;
+  from airportdelays;
 ```
 
 8. Putting it all together
 
-SELECT a.id, a.Statistics."Minutes Delayed".Total, a.airportcode FROM airportdelays a
-  WHERE json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
+select a.id, a.Statistics."Minutes Delayed".Total, a.airportcode from airportdelays a
+  where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
     and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 700000)');
 
 select *
