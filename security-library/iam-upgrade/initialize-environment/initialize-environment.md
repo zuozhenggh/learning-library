@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will review and setup all components required to successfully upgrade IAM 11g to 12c version.  
+In this lab we will review and setup all components required to successfully upgrade IAM 11.1.2.3 to 12.2.1.4 version.  
 
 *Estimated Lab Time*:  30 minutes
 
@@ -89,7 +89,7 @@ Use these links to get more information about Oracle Identity and Access Managem
 
 ## Acknowledgements
 * **Author** - Anbu Anbarasu, Director, Cloud Platform COE  
-* **Contributors** -  Eric Pollard, Sustaining Engineering  
+* **Contributors** -  Eric Pollard - Sustaining Engineering, Ajith Puthan - IAM Support  
 * **Last Updated By/Date** - Anbu, COE, February 2021
 
 

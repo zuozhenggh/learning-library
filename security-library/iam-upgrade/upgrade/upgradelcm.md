@@ -1,8 +1,8 @@
-# IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade
+# Oracle IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade
 
 This section guides you through the steps to upgrade 11.1.2.3 LCM based OIM-OAM integrated environment with OUD as backend Directory Server &amp; OHS as webserver to 12.2.1.4
 
-An Oracle Identity and Access Management deployment consists of a number of different components:
+An Oracle Identity and Access Management (IAM) deployment consists of a number of different components:
 - A database
 - An LDAP directory to store user information
 - Oracle Access Manager for Authentication
@@ -47,16 +47,16 @@ The in-place upgrade allows you to take your existing deployment and upgrade it 
 Steps involved in the upgrade process are below :
 
 *Step 1:* Upgrade IAM Components from 11.1.2.3 to 12.2.1.3
-  - Upgrade OUD from 11.1.2.3 - 12.2.1.3
+  - Upgrade OID 11.1.2.3 to OUD 12.2.1.3
   - Upgrade OAM 11.1.2.3 - 12.2.1.3
-  - Upgrade OIM 11.1.2.3 - 12.2.1.3
-  - Apply OAM and OIM latest Stack patch Bundle for 12.2.1.3  
+  - Upgrade OIM 11.1.2.3 to OIG 12.2.1.3
+  - Apply OAM and OIG latest Stack patch Bundle for 12.2.1.3  
 
 *Step 2:* Upgrade IAM Components from 12.2.1.3 to 12.2.1.4
   - Upgrade OUD from 12.2.1.3 to 12.2.1.4
   - Upgrade OAM 12.2.1.3 to 12.2.1.4
-  - Upgrade OIM 12.2.1.3 to 12.2.1.4
-  - Apply OAM and OIM latest Stack patch Bundle for 12.2.1.4  
+  - Upgrade OIG 12.2.1.3 to 12.2.1.4
+  - Apply OAM and OIG latest Stack patch Bundle for 12.2.1.4  
 
 *Step 3:* Integrate OIG and OAM using LDAP Connector  
 
@@ -68,7 +68,7 @@ Please follow the instructions below to execute each step.
 
 ##  **STEP 1**: Upgrade IAM Components from 11.1.2.3 to 12.2.1.3
 
-### *Step 1.1:* Upgrade OUD from 11.1.2.3 to 12.2.1.3
+### *Step 1.1:* Upgrade OID 11.1.2.3 to OUD 12.2.1.3
 
 Perform all steps outlined in *section 6.6* of Upgrading Oracle Unified Directory guide
 - [6.6 Upgrading an Existing Oracle Unified Directory Server Instance](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-506B9DAC-2FDB-47C9-8E00-CC1F99215E81)
@@ -173,7 +173,7 @@ updateskeytool -list -v -keystore /u01/app/oracle/config/domains/IAMGovernanceDo
 - Click OK
 ```  
 
-### *Step 1.3:* Upgrade OIM and OAM from 11.1.2.3 to 12.2.1.3
+### *Step 1.3:* Upgrade OIM/OAM from 11.1.2.3 to OIG/OAM 12.2.1.3
 
 Use the Upgrade Advisor to upgrade OAM and OIM integrated environment. You will need to login with your Oracle support login credentials. The link to the MOS document is provided below:
 - [Upgrade to 12c (12.2.1.3) Advisor For Integrated OAM / OIM Environments](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=318814815527407&id=2342931.2&_adf.ctrl-state=13r3ivrcxc_57)
@@ -187,7 +187,7 @@ Use the Upgrade Advisor to upgrade OAM and OIM integrated environment. You will 
 ### *Step 1.4:* Apply 12.2.1.3 patches mentioned in the Stack Patch Bundle:
 
 Apply Stack Patch Bundle for Oracle Identity Management Products using the MOS document link provided below:
-- [Stack Patch Bundle Page for OIM](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=320313382903924&id=2657920.1&_adf.ctrl-state=13r3ivrcxc_110)  
+- [Stack Patch Bundle Page for OIG](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=320313382903924&id=2657920.1&_adf.ctrl-state=13r3ivrcxc_110)  
 - [Download and Apply SPB for 12.2.1.3](https://support.oracle.com/epmos/faces/PatchSearchResults?_adf.ctrl-state=r390fd14k_135&_afrLoop=321341144687003)
 
 ##  **STEP 2**: Upgrade IAM Components from 12.2.1.3 to 12.2.1.4
@@ -198,16 +198,16 @@ Upgrade OUD using the instructions in *section 6.4* of the documentation below
 
 ### *Step 2.2:* Upgrade OAM 12.2.1.3 to 12.2.1.4:
 Upgrade OAM using the Upgrade Advisor for OAM 12cR2 PS4 (OAM 12.2.1.4.0)  
-- [Upgrade to Oracle Access Manager 12cR2 PS4)](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=320632596387945&id=2564763.2&_adf.ctrl-state=13r3ivrcxc_167)
+- [Upgrade to Oracle Access Manager 12cR2 PS4](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=320632596387945&id=2564763.2&_adf.ctrl-state=13r3ivrcxc_167)
 - Navigate to *step 4: Configure* and select *Upgrade*
 
 ![](./images/step6.png " ")
 
 
-### *Step 2.3:* Upgrade OIM 12.2.1.3 to 12.2.1.4  
-Upgrade OIM using the Upgrade Advisor for OIM 12cR2 PS4 (OAM 12.2.1.4.0)  
+### *Step 2.3:* Upgrade OIG 12.2.1.3 to 12.2.1.4  
+Upgrade OIG using the Upgrade Advisor for OIG 12cR2 PS4 (OAM 12.2.1.4.0)  
 - [Upgrade Advisor for Oracle Identity Governance/Oracle Identity Manager 12cR2 PS4](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=320673956019924&id=2667893.2&_adf.ctrl-state=13r3ivrcxc_220)
- - Navigate to Step 4: Configure/Upgrade
+ - Navigate to *step 4: Configure/Upgrade*
 
 ![](./images/step7.png " ")
 
@@ -220,7 +220,7 @@ Apply Stack Patch Bundle for Oracle Identity Management Products using the MOS d
 - [Download and Apply 12.2.1.4 SPB](https://support.oracle.com/epmos/faces/ui/patch/PatchDetail.jspx?parent=DOCUMENT&sourceId=2657920.1&patchId=32395452)
 
 
-##  **STEP 3**: Integrate OIG and OIM using LDAP Connector
+##  **STEP 3**: Integrate OIG and OAM using LDAP Connector
 
 Configure OIG and OAM integration using the step by step instructions in *section 2.3* of the below documentation:
 - [Configuring Oracle Identity Governance and Oracle Access Manager Integration](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/idmig/integrating-oracle-identity-governance-and-oracle-access-manager-using-ldap-connectors.html#GUID-9FD153DD-1497-4846-8D39-813B20E29B40)
@@ -234,8 +234,8 @@ Follow the steps below to install and configure OHS:
 
 Configure OAM WebGate:
 
-- Complete all 6 steps under *Configuring Oracle HTTP Server WebGate* in this document.
-  - [Configure WebGate](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/wgins/configuring-oracle-http-server-webgate-oracle-access-manager.html#GUID-79326DB8-CCB1-47F6-8CC2-80B6402C13FC)
+- Complete all 6 steps under *Configuring Oracle HTTP Server WebGate* in the following document.
+    - [Configure WebGate](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/wgins/configuring-oracle-http-server-webgate-oracle-access-manager.html#GUID-79326DB8-CCB1-47F6-8CC2-80B6402C13FC)
 - We will use the same agent profile as used in 11.1.2.3 - Webgate\_IDM\_11g
 - Copy all the artifacts under *OAM\_DOMAIN\_HOME/output/OAM\_Webgate\_IDM11g* directory over to *OHSDOMAIN\_HOME/config/fmwconfig/components/OHS/ohs1/webgate/config* directory
 - After the copy command, *OHSDOMAIN\_HOME/config/fmwconfig/components/OHS/ohs1/webgate/config* directory should have the following files and directories
@@ -286,7 +286,7 @@ OAMServerCommunicationMode=HTTP
 
 - Start OHS server
 
-##  **STEP 5**: Validation
+##  **STEP 5**: Validate the IAM 12.2.1.4 Integrated environment
 
 Test OAM and OIG using the steps in *section 2.4.7* in the documentation below
 - [Functionally Testing the Access Manager and Oracle Identity Governance Integration](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/idmig/integrating-oracle-identity-governance-and-oracle-access-manager-using-ldap-connectors.html#GUID-3803AA41-A882-41C9-B1E8-0BBCBD581CE9)
@@ -303,7 +303,7 @@ Test OAM and OIG using the steps in *section 2.4.7* in the documentation below
     - It should return LISTEN
     - Validates OAM server is listening on OAP port
 
-### Example OIM validation:  
+### Example OIG validation:  
 
 - Access the Oracle Identity Governance pagees with the following URL:
     - [Oracle Identity Self Service](http://wsidmhost.idm.oracle.com:7778/identity)

@@ -47,7 +47,7 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+* **Contributors** -  Eric Pollard - Sustaining Engineering, Ajith Puthan - IAM Support  
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
