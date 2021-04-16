@@ -2,16 +2,10 @@
 
 ## About this Workshop
 
-Oracle Identity and Access Management (IAM) can be deployed in a number of different ways. This upgrade workshop provides instructions for the single node deployment topology using In-Place upgrade strategy. You can upgrade to Oracle IAM 12.2.1.4 from a supported 11.1.2.3 release.
-This workshop is intended to guide you through the upgrade process using a step-by-step approach.  
+Oracle IAM comprising of Oracle Identity Manager (OIM/OIG), Oracle Access Manager (OAM) and Oracle Directory Services (OID/OUD) can be deployed in several ways and Customers have choices on how to upgrade them. This upgrade workshop demonstrates an In-Place upgrade of a single node deployment of Oracle IAM 11gPS3 to 12cPS4. The workshop offers you the real-life experience of a full upgrade cycle using the Oracle published "upgrade advisor" and supporting documentation and tools. The full upgrade can be completed within the time allotted for the workshop!
 
 ### About Oracle Identity and Access Management (IAM)
-Oracle IAM enables organizations to effectively manage the end-to-end lifecycle of user identities across all enterprise resources, both within and beyond the firewall and into the cloud. The Oracle Identity Management platform delivers scalable solutions for identity governance, access management and directory services. This modern platform helps organizations strengthen security, simplify compliance and capture business opportunities around mobile and social access.
-Oracle IAM is a member of the Oracle Fusion Middleware family of products, which brings greater agility, better decision-making, and reduced cost and risk to diverse IT environments today.
-In addition, we now offer an innovative, fully integrated service that delivers all the core identity and access management capabilities through a multi-tenant Cloud platform, Oracle Identity Cloud Service.
-
 You can find more information about the latest version of Oracle IAM [here](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
-
 
 Estimated Lab Time: 48-72 Hours
 

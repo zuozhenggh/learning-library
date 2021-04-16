@@ -11,7 +11,7 @@ In this lab we will review and setup all components required to successfully upg
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- A Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
