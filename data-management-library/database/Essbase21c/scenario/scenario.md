@@ -4,7 +4,7 @@
 
 Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow, which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
 
-Estimated Lab Time: 15 minutes.
+Estimated Lab Time: *30 minutes*.
 
 ### Objectives
 
@@ -17,10 +17,10 @@ To understand the following:
 *	Changing Sandbox Data
 *	Scenario Workflow
 
-### Required Artifacts
+### Prerequisites
 
-* An Oracle Public Cloud account-Essbase 19c instance with Service administrator role
-* Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
+* Essbase 21 instance with Service administrator role.
+* Windows Operating System for Essbase add-ins (Smart View and Cube Designer).
 * Smart View plugin enabled for Excel.
 
 ## Overview – Understand Scenario
@@ -41,168 +41,199 @@ The exercises contained within this lesson will allow the user to get acquainted
 
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
-1.	In the Essbase web interface, click Import.
+1. Download the worksheet SandboxApp.xlsx [here](./files/SandboxApp.xlsx).
 
-    ![](./images/image17_1.png "")
+   Open the SandboxApp.xlsx file.
 
-2.	Click Catalog.
+2. Change the Application name (sheet Essbase.Cube) to Sample_Scenario.
 
-    ![](./images/image17_2.png "")
+3.	Navigate to the Cube.Settings sheet and check the properties section and the Scenario Sandboxes properties.
 
-3.	Drill down into the Gallery, Cubes, and General folders. Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
+    ![](./images/imageSM_01.png "")
 
-    ![](./images/image17_3.png "")
+4. Save your file as SandboxApp.xlsx and create a new cube with the help of **Lab6->Step1**. Make sure to check that Load Data option is selected under Advanced Option.
 
-4.	Download the [Sample_Basic_Scenario.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SnwdapEvpeFJVEahs5vIqgjd-tPBAhSKXX8OluI_IQ4/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic_Scenario.xlsx) file. Select `Sample_Basic_Scenario.xlsx` and click Select.
+    ![](./images/imageSM_02.png "")
 
-5.	Provide a unique name and click OK.
-
-    ![](./images/image17_4.png "")
-
-    ![](./images/extrasmall_1.png "")
-
-## **Step 2:** Creating a Scenario
-
-**Adding a Scenario to a Sandbox-Enabled Cube**
-
-To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
-
-1.	In Essbase, login as a user with database update (or higher) permission to at least one application.
-
-2.	Click Scenarios.
-
-3.	Click Create Scenario.
-
-    ![](./images/image17_5.png "")
-
-4.	On the General Information tab, enter a scenario name and select a Priority (optional), Due Date, Application, and Database (cube). You will only see applications for which you have minimum database update permission.
-
-    ![](./images/image17_6.png "")
-
-5.	Turn on Use Calculated Values if you want to merge calculated values to base values when running calculation scripts on scenarios.
-
-6.	(Optional) Enter a description.
-
-7.	On the Users tab, click Add   for a list of users.
-
-8.	Add the users that you want.
-
-9.	Close the Add Users dialog box.
-
-10.	For each user, keep the default (Participant), or select Approver.
-
-11.	Select Approver. Scenario user roles determine the workflow for the scenario.
-
-    ![](./images/image17_7.png "")
-
-12.	Save your change.
-
-## **Step 3:** Lightweight Sandboxes
+## **Step 2:** Lightweight Sandboxes
 
 **Show that Sandboxes are lightweight**  
 
-This exercise shows that creating sandboxes has little impact on resource usage such as disk space.
+This Step shows that creating sandboxes has little impact on resource usage such as disk space.
 
-1. Connect to `Sample_Scenario_Basic` in Smart View analysis.
+1. Download SmartView.xlsx file [here](./files/SmartView.xlsx).
+   
+   Open SmartView.xlsx  and go to sheet1 tab.
+   ![](./images/imageSM_03.png "")
 
-    ![](./images/image17_8.png "")
+2. Go to the smartview, Create a private connection to Essbase: http://IP:9000/essbase/smartview.
 
-2. Create a private connection to your environment, `http://<MachineIP>/essbase/smartview` If you are not already connected, log in.
+   Login and Select the “Sample_Scenario” Application and “Sandbx” Cube.
+   
+   In order to query the selected Cube, choose the option -> “Set Active Connection for this Worksheet”.
 
 3. Refresh the data.
+   ![](./images/imageSM_04.png "")
 
-**Questions:**
+   **Note:**
 
-1. Do you see Data for the sandboxes (sb#)?
+   By default, all Sandboxes you create have the same values as the data loaded into the base. The data in the sandbox is dynamically queried and will not use any extra storage disk space. Only values that are modified as part of a scenario will be stored. This makes creating and using most scenarios a very light weight operation.  
 
-2. Is there a variance between any of the sb# members and Base?
+## **Step 3:** Scenario Management
+This Step is geared towards developing an understanding of security for Essbase and also the workflow aspects of Scenario Management.  In addition, you will create a couple of calculation scripts and leverage run-time substitution variables from within Smart View.
 
-3. If the loaded file contained no references to any sb# members how did the data get there?`
+1. Add Users:   
+   Go to security tab to add Users
+   
+   a) Under Users tab, click on Add user
+   ![](./images/imageSM_05.png "")
+   
+   b) Provide the details for adding user: "Frank"
+     * Id: Frank
+     * Role: user
+     * Password: password
+    ![](./images/imageSM_06.png "")
 
-**Takeaway:**
+   c) Repeat above steps for adding George, William and Susan.
+    ![](./images/imageSM_07.png "")
 
-By default, all Sandboxes you create have the same values as the data loaded into the base. The data in the sandbox is dynamically queried and will not use any extra storage disk space. Only values that are modified as part of a scenario will be stored. This makes creating and using most scenarios a very light weight operation.  
+2.	Defining Security:  
 
-## **Step 4:**	Model Data
+    We will define security roles for several people to be used throughout the next several exercises. Once the security is defined validate the privileges by logging in as each user and pay attention to the differences from user to user.
+    
+   a) On the home page, navigate to the “Sample_Scenario” Application. Launch the application inspector by clicking the button under Actions and selecting Inspect.
+   ![](./images/imageSM_08.png "")
 
-As a scenario user, you can model data slices in your own scenario.
+   b) On the application inspector, click the Permissions tab. Click the + icon on this page to add users to this application.
+   ![](./images/imageSM_09.png "")
 
-1.	In Essbase, click Scenario.
+   c) Search for Frank, Susan, George & William and click the + icon next to their ids to add the to the application.
 
-2.	On the Scenarios page, locate the scenario in which you want to model data.
+   d) by default all users have the Database Access Roles.
 
-3.	Launch Smart View by clicking the Excel   icon before the scenario name.
+   e) Assign the following roles to the new ids added and Click Close:
+      * Frank -> Database Manager
+      * George -> Database Update
+      * William -> Database Update
+      * Susan -> Database Update
 
-4.	Make data changes and perform your what-if analysis in Smart View.
+    f) Go to Smartview and disconnect from the current connection.
 
-    ![](./images/image17_9.png "")
+    g) Open the Smart View.xlsx file and go to the Sheet3 tab.
 
-5. Or you can make use of [this excel file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). (Use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
+    h) Connect as Frank, William and Susan drilling down and up on the Sandbox dimension for each user. 
 
-    ![](./images/extrasmall_2.png "")
+       **Note: To easily switch between users – select Disconnect All from the SmartView Panel and then re-log in**
 
-6.	Open the Scenario Comparison file and create connection with Sample Scenario – Basic.
 
-7.	Change the data value for the sandbox member sb0 Actual and submit data.
+3. Creating Scenarios:
+   
+   In this exercise you log in as Susan creating a new scenario defining William as a participant.  Validate the impact of the security changes for each user Frank, Susan, William and George.  Without logging out from Smart View, make George a Scenario Approver, then refresh the data in Smart View validate the change to his security.
+    
+   a) Go to the Web UI, logging in as Susan.
 
-    ![](./images/image17_10.png "")
+   b) Navigate to Scenarios tab. Click Create Scenario button.
 
-8. You will notice updated data will reflect only against sb0 dimension intersection.
+   c) Give the scenario a name:**What-If** and a due date. Add William as a Participant by selecting the Users tab and click the + icon. By default a user is added as a Participant. 
+      
+      Click Save.
 
-## **Step 5:**	Scenario Workflow
+   d) Identify which sandbox member your scenario is using by clicking on the name of the scenario once it is created.
 
-You can review a scenario using an optional approval workflow.
+   e) Go back to Smart View.
 
-  ![](./images/imagenew.png "")
+   f) Go to Excel and on the Sheet3 tab connect as Frank, William, and Susan drilling down and up on the Sandbox dimension for each user.
 
-In the real use case, the scenario flow that we will simulate is:
+   g) Go to the Web UI, logging in as Susan and assign George the approver role to the sandbox.
 
-*	Participant user performs What-if analysis on base data within Sandbox.
-*	After analysis Participant user submits the data changes for approval.
-*	Approver user can review the data and decides to approve/reject.
-*	Once data is approved, Data can be applied to the Base by Participant.
+   h) Go to Smart View and connect as George drilling down on the Sandbox dimension.
 
-**Understand Scenario User Roles**
 
-*	Scenario user role assignments determine the workflow for scenarios. You must have at least one approver to enable the scenario workflow. Without an approver, participants do not have the option to submit the scenario for approval, for example, and there is no option to approve or reject the scenario.
+4. Changing Sandbox Data:
+   As William, you will change some data for the scenario that was just created and, using the Essbase Web UI shows the differences between Base and the scenario.
 
-*	Participants can participate in a what-if analysis. They must have Database Update or Database Access user role. Adding participants is not mandatory.
+   a) Go to Excel and in the Smart View.xlsx 
 
-*	Approvers monitor the process and approve or reject scenarios. They must have Database Access or higher role. Scenarios can have multiple approvers, in which case each one must approve the scenario before it can be submitted.
+   b) Go to the DataSheet tab and connect to the database as William, ensure the the POV has the correct sandbox member identified in the previous exercise
 
-* Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. Since you are doing it by yourself, you will need to play roles of both participant and approver.
+   c) Go to the cell C12 enter a number then click submit (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
 
-Let’s start:
+   d) Go to Essbase Web UI, navigate to the Scenarios tab and filter for “Sandbx” database under WkrShpL<Student ID> application. Select the scenario What-if01 and click the Actions icon.
 
-1.	Login to Essbase. (Consider yourself as participant user). Navigate to scenarios.
+   e) Click on the icon in the Show Changes column, to show the changes in the UI.
 
-2.	Highlight the scenario you created previously.
+5. Calculations in a Sandbox: 
+Create a calculation script that will create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
 
-3.	Select Actions->Submit, and enter a comment if needed
+   a) Login to Essbase Web UI as Frank.
 
-    ![](./images/image17_11.png "")
+   b) Navigate to the database inspector for the “Sandbx” database under the “WrkShpL<Student ID>” application.
 
-    *Tip: If you don’t have an Approver assigned for the scenario, the action Submit will not be available.*
+   c) Click on the Scripts tab on the database inspector and select Calculation Scripts from the left navigation menu.
 
-4.	Highlight the scenario created previously, select Actions->Approve, and enter a comment if needed. (Consider yourself an approver).
+   d) Click the + icon on the right to create a calculation script. Name the script as Feed16, type the below content in the scripts section (code can also be found in the Seed_16.csc file):
 
-    ![](./images/image17_12.png "")
 
-5.	Login to the Essbase. (Consider yourself a participant).
+    ```
+    <copy>        
+    set updatecalc off;
+    SET CREATENONMISSINGBLK ON;
+    Fix("XXU","Automotive","[USA].[ORCL US].[ORCL USA]", @Children(FY2016), "sb1")
+    "CD" (@Prior(Base, 8, @LevMbrs(Time,0)) * 1.15;)
+    "USD" (@Prior(Base, 8, @LevMbrs(Time,0)) * 1.15;)
+    EndFix
 
-6.	Highlight the scenario you created previously.
+	</copy>
+    ````
 
-7.	Select Actions->Apply
+   e) Validate the script.
+ 
+   f) Save and Close the script.
 
-    ![](./images/image17_13.png "")
+   g) To execute the script, navigate to the Jobs tab and create a new job by clicking New Job -> Run Calculation.
 
-8. Download the file by clicking [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). Go to Smart View and retrieve data into the Comparison tab (make sure you have an active connection in the ‘Comparison’ tab to the same application you connected to while submitting the data)
+   h) Select the Application and database and the calc script that was just created. For Variables select the “sb1” as Value for the sandbox variable.
 
-    ![](./images/extrasmall_3.png "")
+   i) Click OK.
 
-9. You should see the changes have been applied to the Base.
+   f) Click refresh icon, to see the job status.
 
-You may proceed to the next lab.
+   g) Go to Smart View and retrieve data into the DataSheet tab. Also review the comparison tab.
+
+   i) Go to Essbase Web UI as William, Navigate to the Scenarios tab. Filter for WrkShpL<Student ID>.Sandbx database. Click on the icon under Actions and select Show Changes, to show the changes in the UI
+
+1. Scenario Workflow:
+   
+   At this point two things happened with our Sandbox. William entered some data using Smart View and Frank run a calc script that created some data for 2016. Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. The flow that we will simulate is:
+
+   * Susan is submitting the data for approval
+   * William can review the data and decides to approve
+   * Once Susan sees that william approve, she can apply the data to the Base
+
+
+   Since you are doing it by yourself, you will need to play both Susan and George. If you have two different browsers (e.g. Firefox and Chrome) you can log in as each participant in a different browser and jump between the two personas. The instructions will assume that you are using the same browser for both (and therefore logout and login will be needed).
+
+   Let’s start:
+
+   a) Login to Essbase Web UI as Susan. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
+
+   b) Under Actions, click the “->” icon to Submit, enter a comment if needed. The status should now be submitted.
+
+   c) Go to Smart View and retrieve data into the Comparison tab.
+
+   d) Go to the Web UI logging in as William. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
+
+   e) Under Actions, click the   icon to Approve, enter a comment if needed.
+
+   f) Go to Smart View and retrieve data into the Comparison tab.
+
+   g) Login to Essbase Web UI as Susan. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
+
+   h) Under Actions, click the   icon to Apply sandbox “sb1” to the Base, enter a comment if needed.
+
+   i) Go to Smart View and retrieve data into the Comparison tab
+
+
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology

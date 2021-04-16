@@ -2,10 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn how to analyze and interactively report the data in Essbase.  
-We will use Essbase drill-through functionality to display additional detailed data that is retrieved from the external data sources.   
-
-When you create an Essbase cube, you do not use all the data from an external data source. You choose and summarize the data in the cube for Essbase users to analyze. Using Essbase drill-through, you can create reports that display additional detailed data that is retrieved from the external data sources. This additional detailed data is not available in the Essbase cube.
+In this lab, you will use Essbase drill-through functionality to display additional detailed data that is retrieved from the external data sources. When you create an Essbase cube, you do not use all the data from an external data source. You choose and summarize the data in the cube for Essbase users to analyze. The additional detailed data is not available in the Essbase cube.
 
 Estimated Lab Time: *60 minutes*
 
