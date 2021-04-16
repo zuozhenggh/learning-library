@@ -362,6 +362,24 @@ nested arrays
 ```
 select t.*
   from airportdelays,
+       json_table(Statistics, '$.Carriers."Aircraft Types"[*]'
+            columns(
+            	make varchar2(400) path '$.make',
+                	nested path '$.models[*]'
+                    	columns(
+                        	models varchar2(400) format json path '$'
+                			   )
+                   )
+                    
+            ) as t
+ where id = 100;
+```
+
+Nested Arrays pivoted as columns
+
+```
+select t.*
+  from airportdelays,
        json_table(Statistics, '$."Minutes Delayed"'
             columns(
                 Carrier number path '$.Carrier',
