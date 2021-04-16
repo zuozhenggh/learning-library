@@ -364,16 +364,16 @@ select t.*
   from airportdelays,
        json_table(Statistics, '$."Minutes Delayed"'
             columns(
-                Carrier NUMBER PATH '$.Carrier',
-                "Weather Codes" varchar2(200) FORMAT JSON PATH '$."Weather Codes"',
-                NESTED PATH '$."Weather Codes"'
-            columns(
-                code1 VARCHAR2(100) PATH '$[0]',
-                code2 VARCHAR2(100) PATH '$[1]',
-                code3 VARCHAR2(100) PATH '$[2]',
-                code4 VARCHAR2(100) PATH '$[3]')
-                    )
-                ) AS t
+                Carrier number path '$.Carrier',
+                "Weather Codes" varchar2(200) format json path '$."Weather Codes"',
+                nested path '$."Weather Codes"'
+                columns(
+                    code1 varchar2(100) path '$[0]',
+                    code2 varchar2(100) path '$[1]',
+                    code3 varchar2(100) path '$[2]',
+                    code4 varchar2(100) path '$[3]')
+                )
+            ) as t
  where id = 100;
 ```
 
@@ -396,12 +396,13 @@ select a.name, v.*, q.*
                     "Late Aircraft",
                     Security,
                     Weather,
-                    NESTED PATH '$."Weather Codes"'
-                    COLUMNS
-                    (code1 VARCHAR2(100) PATH '$[0]',
-                    code2 VARCHAR2(100) PATH '$[1]',
-                    code3 VARCHAR2(100) PATH '$[2]',
-                    code4 VARCHAR2(100) PATH '$[3]'),
+                    nested path '$."Weather Codes"'
+                    columns (
+                        code1 varchar2(100) path '$[0]',
+                        code2 varchar2(100) path '$[1]',
+                        code3 varchar2(100) path '$[2]',
+                        code4 varchar2(100) path '$[3]'
+                    ),
                     Total               
                 )
         ) q
