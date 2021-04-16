@@ -615,6 +615,8 @@ You can see that the SQL/JSON path expressions are much more efficient.
 
 **7. Reverse! I need to create JSON out of relational data**
 
+Need to make a JSON document out of the relational table? Here you go!
+
 ```
 select json_object ( * ) jdoc
   from airportdelays;
