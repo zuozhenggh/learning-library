@@ -26,7 +26,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 - Access to OAS URL. Details are provided in lab4.
-- Graphical desktop access(Guacamole). Details are provided in lab4
+- Graphical desktop access(Guacamole). Details are provided in lab4.
 - The following files are required to complete this lab. These files are part of workshop artifacts, steps to download the artifacts are mentioned in **Lab4>>Step2**.
 
     - DATA TO BE IMPORTED IN ORACLE DB:
