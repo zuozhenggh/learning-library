@@ -64,11 +64,11 @@ Estimated Lab Time: 30-45 minutes
 
     ![Next button on modal](./images/sdw-23.png)
 
-11. On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
+10. On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
 
     ![The Data Definition Language preview for the table and data](./images/sdw-24.png)
 
-12. When you are done taking a look, click the Finish button in the lower right of the modal.
+11. When you are done taking a look, click the Finish button in the lower right of the modal.
 
     ![Click Finish in the Data Loading Modal](./images/sdw-25.png)
 
@@ -80,11 +80,11 @@ Estimated Lab Time: 30-45 minutes
 
     ![Row indicating data load is finished in the Data Loading Tab of the SQL Worksheet](./images/sdw-29.png)
 
-13. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
+12. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/sdw-30.png)
 
-14. In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
+13. In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
@@ -121,6 +121,30 @@ select a.statistics
         "Weather": 59
     },
     "Carriers": {
+        "Aircraft Types": [
+            {
+                "make": "Boeing",
+                "models": [
+                    "717",
+                    "737",
+                    "757",
+                    "767",
+                    "777",
+                    "787"
+                ]
+            },
+            {
+                "make": "Airbus",
+                "models": [
+                    "A320",
+                    "A321",
+                    "A330",
+                    "A340",
+                    "A350",
+                    "A380"
+                ]
+            }
+        ],
         "Names": "American Airlines Inc.,Alaska Airlines Inc.,Continental Air Lines Inc.,Delta Air Lines Inc.,America West Airlines Inc.,American Eagle Airlines Inc.,Northwest Airlines Inc.,SkyWest Airlines Inc.,ATA Airlines d/b/a ATA,United Air Lines Inc.,US Airways Inc.",
         "Total": 11
     },
@@ -189,82 +213,7 @@ select a.name,
 
 Oracle also has many built in JSON functions for working with document data which elevates the functionality found with Dot-Notation. 
 
-1. json_mergepatch
-
-You can use the JSON_MERGEPATCH function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch. 
-
-```
-update airportdelays
-   set statistics = json_mergepatch ( 
-         statistics,
-         '{"Carriers" : {"Names" : "'||
-         (select replace(a.statistics.Carriers.Names,'United Air Lines Inc.,','Oracle Air Lines Inc.,') from airportdelays a where  id = 10)
-         ||'"}}'
-       )
- where id = 10;
-```
-
-```
-select a.statistics.Carriers.Names from airportdelays a where  a.id = 10;
-```
-
-2. json_transform (21c)
-
-You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data. Unlike json_mergepatch, json_transform can target the specific attributes you want to change.
-
-```
-"Minutes Delayed": {
-    "Carrier": 61606,
-    "Late Aircraft": 68335,
-    "National Aviation System": 118831,
-    "Security": 518,
-    "Total": 268764,
-    "Weather": 19474
-}
-```
-
-```
-update airportdelays  
-   set statistics = json_transform (
-  statistics, 
-  replace '$."Minutes Delayed".Total' = '0'
-)
- where id = 10;
-```
-
-```
-select a.statistics."Minutes Delayed" from airportdelays a where  id = 10;
-```
-
-```
-select a.statistics."Minutes Delayed".Total from airportdelays a where  id = 10;
-```
-
-```
-update airportdelays  
-   set statistics = json_transform (
-  statistics, 
-  remove '$."Minutes Delayed".Carrier',
-)
- where id = 10;
-```
-
-....etc
-
-then for the rest of the fields or we can chain the statements with json_transform:
-
-```
-update airportdelays  
-   set statistics = json_transform (
-  statistics, 
-  replace '$."Minutes Delayed".Total' = '0',
-  remove '$."Minutes Delayed".Carrier',
-  remove '$."Minutes Delayed"."Late Aircraft"'
-)
- where id = 10;
-```
-
-3. json_value
+1. json_value
 
 The SQL/JSON function JSON_VALUE finds a specified scalar JSON value in JSON data and returns it as a defined SQL value (date, number, timestamp, sdo_geometry, etc). 
 
@@ -285,6 +234,102 @@ select json_value (
   from airportdelays a
  where a.id = 5;
 ```
+
+2. json_mergepatch
+
+You can use the JSON_MERGEPATCH function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch. 
+
+```
+update airportdelays
+   set statistics = json_mergepatch ( 
+         		statistics,
+         			'{"Carriers" : {"Names" : "'||
+         				(select replace(json_value (
+         									Statistics, '$.Carriers.Names' 
+  													),'United Air Lines Inc.,','Oracle Air Lines Inc.,'
+                            			) from airportdelays a where  id = 10)
+         				||'"}}'
+       				)
+ where id = 10;
+```
+
+```
+select json_value (
+         Statistics, 
+         '$.Carriers.Names' 
+       ) "Airline Names" from airportdelays a where  a.id = 10;
+```
+and we can see the change we just did in the result
+
+American Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Lines Inc.,AirTran Airways Corporation,America West Airlines Inc.,Northwest Airlines Inc.,ATA Airlines d/b/a ATA,**Oracle Air Lines Inc.**,US Airways Inc.,Southwest Airlines Co.
+
+
+3. json_transform (21c)
+
+You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data. Unlike json_mergepatch, json_transform can target the specific attributes you want to change.
+
+```
+"Minutes Delayed": {
+    "Carrier": 61606,
+    "Late Aircraft": 68335,
+    "National Aviation System": 118831,
+    "Security": 518,
+    "Total": 268764,
+    "Weather": 19474
+}
+```
+
+```
+update airportdelays  
+   set statistics = json_transform (
+                statistics, 
+                replace '$."Minutes Delayed".Total' = '0'
+            )
+ where id = 10;
+```
+
+```
+select a.statistics."Minutes Delayed" 
+  from airportdelays a 
+ where  id = 10;
+```
+
+```
+select a.statistics."Minutes Delayed".Total 
+  from airportdelays a 
+ where  id = 10;
+```
+
+```
+update airportdelays  
+   set statistics = json_transform (
+  statistics, 
+  remove '$."Minutes Delayed".Carrier',
+)
+ where id = 10;
+```
+
+....etc
+
+then for the rest of the fields or we can chain the statements with json_transform:
+
+```
+update airportdelays  
+   set statistics = json_transform (
+                statistics, 
+                    replace '$."Minutes Delayed".Total' = '0',
+                    remove '$."Minutes Delayed".Carrier',
+                    remove '$."Minutes Delayed"."Late Aircraft"'
+            )
+ where id = 10;
+```
+
+```
+select a.statistics."Minutes Delayed" 
+  from airportdelays a 
+ where  id = 10;
+```
+
 4. json_query
 
 ```
@@ -311,11 +356,11 @@ nested arrays
 
 ```
 select t.*
-  from airportdelays2,
+  from airportdelays,
        json_table(Statistics, '$."Minutes Delayed"'
             columns(
                 Carrier NUMBER PATH '$.Carrier',
-                test varchar2(200) FORMAT JSON PATH '$."Weather Codes"',
+                "Weather Codes" varchar2(200) FORMAT JSON PATH '$."Weather Codes"',
                 NESTED PATH '$."Weather Codes"'
             columns(
                 code1 VARCHAR2(100) PATH '$[0]',
