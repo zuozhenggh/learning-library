@@ -238,6 +238,16 @@ select json_value (
  where a.id = 5;
 ```
 
+What if we select a value we know is going to be an array? (Let's also add **error on error** so we don't just get back null)
+
+```
+select json_value(statistics, '$."Carriers"."Aircraft Types"[*].models' error on error)
+  from airportdelays
+ where id = 1032;
+```
+
+we see the error **ORA-40470: JSON_VALUE evaluated to multiple values**. json_value can only return scalar JSON values (number, string, Boolean or null)
+
 **2. json_mergepatch**
 
 You can use the **json_mergepatch** function to update specific portions of a JSON document. You can think of JSON Merge Patch as merging the contents of the source and the patch. 
@@ -353,24 +363,59 @@ select a.statistics."Minutes Delayed"
 
 **4. json_query**
 
+The SQL/JSON function json_query selects and returns one or more values from JSON data and returns those values. You can thus use json_query to retrieve fragments of a JSON document in JSON.
+
+We can run the following query for a quick example:
 ```
 select JSON_QUERY(statistics, '$."# of Delays"')
   from airportdelays
  where id = 1032;
 ```
 
+
+Let's revisit an issue we had previously with json_value and returning arrays. Can json_query come to the rescue?
+
+```
+select json_query(statistics, '$."Carriers"."Aircraft Types"[*].models' error on error)
+  from airportdelays
+ where id = 1032;
+```
+and we get: ORA-40480: result cannot be returned without array wrapper
+
+Oh...ok...so lets add **with array wrapper** to the query:
+
+```
+select JSON_QUERY(statistics, '$."Carriers"."Aircraft Types"[*].models' with array wrapper error on error)
+  from airportdelays
+ where id = 1032;
+```
+and problem solved with the result being:
+
+[["717","737","757","767","777","787"],["A320","A321","A330","A340","A350","A380"]]
+
 **5. json_table**
 
 The SQL/JSON function JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
 
+We can start by taking the time JSON and turning it into a table:
 ```
 select a.name, v.*
   from airportdelays a, json_table (
          a.time, '$' 
     		columns (
-                Label      
+                Label,
+                Year,
+                Month,
+                "Month Name"
     ) )v
  where a.id = 100;
+```
+and we see the following:
+
+```
+NAME                                        LABEL   YEAR MONTH MONTH NAME 
+------------------------------------------- ------- ---- ----- ---------- 
+New York, NY: John F. Kennedy International 2003/09 2003 9     September  
 ```
 
 nested arrays
