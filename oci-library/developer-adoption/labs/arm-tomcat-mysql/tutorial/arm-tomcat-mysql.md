@@ -5,15 +5,6 @@ This example shows how to run a containerized Java web application on Apache Tom
 ## Deploying your workloads on OCI Arm A1 compute platform
 
 The OCI Arm A1 compute platform based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
-
-## Get started with Arm on OCI
-
-Get started with your Arm-based development project using [Oracle Cloud Free Tier](https://www.oracle.com/cloud/free/) with Always Free Arm resources and $300 in free credits for 30 days. Oracle offers the most generous Always Free Arm resources (4 OCPUs, 24GB Memory) in the industry.  Do you need to run more Arm-based workloads and for a longer duration? Apply for the Arm Accelerator and get free Oracle Cloud credits valid for 365 days. 
-
-## Prerequisites
-
-To run this example, you need to have an OCI Arm A1 compute instance that you can [access by using SSH](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/managingkeypairs.htm#one).  
-Also, [allow traffic](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm#working) on port 8080. 
   
 ## How to run this example
 
@@ -37,13 +28,13 @@ Oracle Linux 8 uses Podman to run and manage containers. Podman is a daemonless 
 
 3. Set SELinux to be in permissive mode so that Podman can easily interact with the host.
 
-**Note**: This is not recommended for production use. However, setting up SELinux policies for containers are outside the scope of this tutorial. For details, see the Oracle Linux 8 documentation.
+  **Note**: This is not recommended for production use. However, setting up SELinux policies for containers are outside the scope of this tutorial. For details, see the Oracle Linux 8 documentation.
 
     ```
     sudo setenforce 0
     ```
 
-### Clone the source code
+## Clone the source code
 
 To get started, use SSH to log in to the compute instance and clone the repository.
 ```
@@ -53,7 +44,7 @@ cd oci-arch-tomcat-mds/java
 
 
 
-### Build the web application
+## Build the web application
 
 Java web applications are packaged as web application archives, or WAR files. WAR files are zip files with metadata that describes the application to a servlet container like Tomcat. This example uses Apache Maven to build the WAR file for the application. 
 To build the application, run the following command. Be sure to run the command from the location where the source files were cloned to.
@@ -67,7 +58,7 @@ podman run -it --rm --name todo-build \
 ```
 This command creates a `target` directory and the WAR file inside it. Note that we aren’t installing Maven but instead running the build tooling inside the container.
 
-### Run the application on the OCI Arm A1 compute platform
+## Run the application on the OCI Arm A1 compute platform
 
 The application uses the Tomcat servlet container and the MySQL database. Both Tomcat and the MySQL database support the ARM64v8 architecture that the OCI Arm A1 compute platform uses.
 
@@ -107,7 +98,7 @@ The application uses the Tomcat servlet container and the MySQL database. Both T
 
 4. Enter the public IP address of the compute instance in a browser, with port `8080`. You should be able to see the application. `http://<ip_address>:8080/todo/`
 
-### Debugging and Troubleshooting
+## Debugging and Troubleshooting
 
 Podman containers can be inspected just like Docker containers (you can even alias `podman` as `docker`). Here are some common commands for inspecting the containers:
 
