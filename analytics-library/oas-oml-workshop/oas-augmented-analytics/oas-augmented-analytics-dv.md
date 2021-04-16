@@ -90,7 +90,7 @@ Note: This lab's Step 3 builds on this concept by showing how to identify Cluste
 
 We will use the data profiling and semantic recommendations functionality to repair and enrich your data. These recommendations are based on the system automatically detecting a specific semantic type during the data profiling step.
 
-You will learn how the Explain feature uses machine learning so you don't have to waste time guessing and dropping random data elements on the canvas to create a visualization for data insight. Explain helps eliminate bias from your analysis.  Consider  asking 10 different people in your organization why employees are leaving.  Likely you’d get 10 different opinions and such scenarios often lead to wasted time as each tries to prove their hypothesis.   In contrast, Explain runs a series of algorithms against the data giving you an unbiased view of key attributes and measures which contributed to the employees leaving.
+You will learn how the Explain feature uses machine learning so you don't have to waste time guessing and dropping random data elements on the canvas to create a visualization for data insight. Explain helps eliminate bias from your analysis.  Consider  asking 10 different people in your organization why employees are leaving.  Likely you’d get 10 different opinions and such scenarios often lead to wasted time as each tries to prove their hypothesis. In contrast, Explain runs a series of algorithms against the data giving you an unbiased view of key attributes and measures which contributed to the employees leaving.
 
 We will also leverage the BI Ask functionality as part of data visualization. This feature provides an interactive way to integrate data into your visualization projects.
 
@@ -147,7 +147,7 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
   ![](./images/OML08.png " ") 
 
 7.  On the left-hand pane notice that the transformation and enrichment operations are displayed.
-    Select “**Apply Script**”. Then select the “**Visualize**” tab at the top RHS of the page..
+    Select “**Apply Script**”. Then select the “**Visualize**” tab at the top RHS of the page.
   ![](./images/OML09.png " ") 
   ![](./images/OML09-1.png " ") 
 
