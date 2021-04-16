@@ -32,7 +32,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
 
-    ```
+    ``` bash
     <copy>mkdir grabdish; cd grabdish</copy>
     ```
 
@@ -116,11 +116,11 @@ TODO: When we publish this will change to clone from the main branch.
 
    If any of the setup jobs are still running you can monitor their progress with 
 
-    ```
-    <copy>
-    ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
-    </copy>
-    ```
+     ```
+     <copy>
+     ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
+     </copy>
+     ```
 
    Their log files are located in the $GRABDISH_LOG directory.
 

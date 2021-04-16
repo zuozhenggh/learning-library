@@ -37,8 +37,7 @@ If changes have been made to the deployment yaml then re-run `./deploy.sh` in th
 
 ## **STEP 2**: Deploy and access FrontEnd UI microservice
 
-1.  Run the deploy script.  This will create the deployment and pod for this image in the OKE
-    cluster `msdataworkshop` namespace:
+1.  Run the deploy script.  This will create the deployment and pod for this image in the OKE cluster `msdataworkshop` namespace:
 
     ```
     <copy>cd $GRABDISH_HOME/frontend-helidon;./deploy.sh</copy>
