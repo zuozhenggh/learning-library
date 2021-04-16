@@ -245,9 +245,9 @@ update airportdelays
          		statistics,
          			'{"Carriers" : {"Names" : "'||
          				(select replace(json_value (
-         						Statistics, '$.Carriers.Names' 
-  									),'United Air Lines Inc.,','Oracle Air Lines Inc.,'
-                            	) from airportdelays a where  id = 10)
+         					Statistics, '$.Carriers.Names'
+  								),'United Air Lines Inc.,','Oracle Air Lines Inc.,'
+                            ) from airportdelays a where  id = 10)
          				||'"}}'
        				)
  where id = 10;
