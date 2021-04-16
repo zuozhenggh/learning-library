@@ -7,15 +7,13 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 
 ## Introduction
 
-Welcome to the MyToDo React workshop. In this lab you will be able to: (1) register and get a Free Tier Cloud instance in Oracle Cloud Infrastructure (OCI; (2) create an OCI compartment; (3) create a Kubernetes cluster in the Oracle Kubernetes Engine (OKE)
-
 ### Objectives
 
 * Register to an OCI Free Tier instance
 * Download the workshop code and scripts
 * Collect information that will be used later throughout this workshop
-* Set up a two nodes OKE cluster: mtdrworkshopcluster
-* Create the mdtrdb ATP database
+* Set up a two nodes OKE cluster
+* Create the ATP database
 * Create an OCI Registry and Auth key
 
 ### What Do You Need?
@@ -51,6 +49,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     <copy>cd mtdrworkshop</copy>
 
     ```
+    - Run the followig Shell script
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
 
  1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
@@ -79,8 +78,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
        `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`
 
-  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left
-            corner of the Console and go to **Developer Services > Kubernetes Clusters**.
+  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left corner of the Console and go to **Developer Services > Kubernetes Clusters**.
 
   ![](images/27-dev-services-oke.png " ")
 
@@ -118,7 +116,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
         _There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step._
 
 
-## **STEP 4**: Create the ATP database
+## **STEP 4**: Create the ATP database, TODOUSER and the TODOITEM table
 
 1. 1. Open up the hamburger menu in the top-left corner of the Console and select **Autonomous Transaction Processing**.
 
@@ -134,7 +132,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 ![](images/ATP-config-1.png " ")
 
 4.  Set **ADMIN password, Network Access Type and License Type**
-    - Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
+   - Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
     Please note the ADMIN password for configuring the backend, later.
    - Set the Network Access type to "Allow secure access from everywhere".
    - Set the license type to "Bring Your Own License (BYOL)" (does not matter for this workshop)
@@ -144,9 +142,74 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 The database creation will take a few minutes.
 
+5. Generate the Wallet for your ATP Connectivity
+   - From the Cloud console, copy the OCID of the newly created database
+     ![](images/42-copy-atp-ocids2.png " ")
 
-## **STEP 5**: Create an OCI Registry and Auth key and login to it from Cloud Shell
-You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
+   - Go back into your cloud shell and verify you are in the
+      `~/mtdrworkshop/setup-dev-environment` directory.
+
+   - Copy the following command and replace $OCID by the
+     copied OCID.
+
+     ```
+     <copy>./generateWallet.sh $OCID</copy>
+     ```
+     - Execute generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....
+
+      You will be requested to enter a password for wallet encryption, this is separate for the ADMIN password but you could reuse the statement.
+      A wallet.zip file will be created in the current directory.
+
+6. Create TODOUSER using SQLcl in Cloud shell
+
+    - Stay in mtdrwokshop/setup-dev-environment directory and launch SQLcl
+      ![](images/SQLCL-Cloud-Shell.png " ")
+
+   - Point the tool at your wallet.zip file
+     SQL> set cloudconfig wallet.zip
+
+     SQL> show tns
+
+
+     - Connect to mtdrdb_tp service, as database ADMIN user (remember the password above)
+      SQL> connect ADMIN@mtdrdb_tp
+
+      - Create TODOUSER (replace "passwor" by a strong password)
+      ```
+      <copy> CREATE USER todouser IDENTIFIE BY "<password>" DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;</copy>
+      ```
+       SQL> CREATE USER todouser IDENTIFIED BY "<password>" DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;
+
+       - Grant some privileges to TODOUSER by executing the following command under SQLCl
+      ```
+      <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
+      ```
+      - Connect as TODOUSER
+        SQL> connect todouser@mtdrdb_tp
+
+      - Create TODOITEM table
+
+         Copy the following command in the Worksheet and execute.
+         ```
+         <copy>CREATE TABLE todoitem (
+           id NUMBER GENERATED ALWAYS AS IDENTITY,
+           description VARCHAR2(4000),
+           creation_ts TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+           done NUMBER(1,0),
+           PRIMARY KEY (id)
+          );</copy>
+         ```
+      - Insert the first row, manually into TODOITEM table
+       ```
+      <copy>insert into todoitem  (description) values ('Manual item insert');</copy>
+       ```
+      Then commit the inserted row
+      ```
+      <copy>commit;</copy>
+      ```
+
+## **STEP 5**: Create an OCI Registry and Auth key
+You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. The Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
 1. Open up the hamburger menu in the top-left corner of the console and go to **Developer Services > Container Registry**.
 
@@ -158,13 +221,8 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 ![](images/22-create-repo.png " ")
 
  Click **Create Repository** , specify the following details for your new repository, and click **Create Repository**.
-    - Repository Name: `<tenancy name>/mtdrworkshop`
+  - Repository Name: `<tenancy name>/mtdrworkshop`
 	- Access: `Public`
-
-  Make sure that access is marked as `Public`.  
-
-
-  ![](images/22-create-repo2.png " ")
 
   Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments
 
@@ -230,8 +288,7 @@ Notice `/.kube/config` is created for the cluster and the `mtdrworkshop` namespa
   ![](images/verifyOKEOutput.png " ")
 
 
-
-You may now proceed to the next lab.
+Congratulations, you have completed Part-1; you may now proceed to the next part.
 
 ## Acknowledgements
 * **Workshop by** - Kuassi Mensah, Dir. Product Management, Java Database Access

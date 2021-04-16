@@ -532,7 +532,7 @@ limitations under the License.
 ==========================================================================
 Third Party Dependencies
 ==========================================================================
-This project includes or depends on code from third party projects.
+Helidon includes or depends on code from third party projects.
 Attributions are contained in THIRD_PARTY_LICENSES.txt. You can
 find a copy in the Helidon GitHub repository:
 https://github.com/oracle/helidon/blob/${project.version}/THIRD_PARTY_LICENSES.txt

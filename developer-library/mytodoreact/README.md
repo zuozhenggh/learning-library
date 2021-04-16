@@ -3,7 +3,7 @@ Copyright (c) 2021 Oracle, Inc.
 
 Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Build and Deploy My ToDo List React application for Java developers
+# My ToDo List React application for Java developers
 ## Introduction and Overview
 
 In this workshop, you will deploy a simple Cloud native application using the most commonly used frameworks and the Oracle Cloud Infrastructure services.

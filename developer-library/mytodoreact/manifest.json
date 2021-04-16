@@ -6,19 +6,15 @@
         "filename": "./README.md"
       },
       {
-        "title": "Lab 1: MYToDoReact - Setup OCI, OKE, ATP and Cloud shell",
+        "title": "Part 1: Setup OCI Cloud services: ATP, OKE, OCIR",
         "filename": "./setup-dev-environment/README.md"
       },
       {
-        "title": "Lab 2: MyToDoReact - Setup ATP Connectivity",
-        "filename": "./setup-atp-connectivity/README.md"
-      },
-      {
-        "title": "Lab 3: MyToDoReact backend (Java/Helidon)",
+        "title": "Part 2: MyToDoReact backend (Java/Helidon)",
         "filename": "./backend/README.md"
       },
       {
-        "title": "Lab 4: MyToDoReact - Frontend (React JS)",
+        "title": "Part 3: MyToDoReact - Frontend (React JS)",
         "filename": "./frontend/README.md"
       }
 
