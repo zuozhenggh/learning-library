@@ -42,7 +42,7 @@ Estimated Lab Time: 30-45 minutes
 
     **(right-click and download the file with the following link)**
 
-    [1980's Artifacts](https://some_url/artifacts1980.json)
+    [Airport Delays 2003-2016](https://some_url/airportDelays.json)
 
 6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
@@ -60,27 +60,17 @@ Estimated Lab Time: 30-45 minutes
 
     ![Click the PK checkbox for the ID Column](./images/sdw-22.png)
 
-9. For embedded JSON arrays, we need to set the column type to CLOB (JSON). 
+9. Click Next on the bottom right of the modal when done.
 
-    ![JSON Arrays in a Column](./images/sdw-23.png)
-
-    Use the **Column Type** dropdown for the STARRING column and select **CLOB (JSON)**. 
-
-    ![Change Column Type](./images/sdw-24.png)
-
-    We will work with these arrays later in this lab.
-
-10. Click Next on the bottom right of the modal when done.
-
-    ![Next button on modal](./images/sdw-25.png)
+    ![Next button on modal](./images/sdw-23.png)
 
 11. On the last step of the modal, we can see the DDL (Data Definition Language) for creating the table, table name and if you scroll down, the column mappings.
 
-    ![The Data Definition Language preview for the table and data](./images/sdw-26.png)
+    ![The Data Definition Language preview for the table and data](./images/sdw-24.png)
 
 12. When you are done taking a look, click the Finish button in the lower right of the modal.
 
-    ![Click Finish in the Data Loading Modal](./images/sdw-27.png)
+    ![Click Finish in the Data Loading Modal](./images/sdw-25.png)
 
     The Data Loader will now process the file by creating a table and loading the JSON file data into that table. 
 
