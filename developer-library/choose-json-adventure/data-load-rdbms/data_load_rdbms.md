@@ -1,4 +1,4 @@
-# Loading JSON into the Oracle Database Part 1: Relational
+# JSON in the Oracle Database Part 1: Relational
 
 ## Introduction
 
