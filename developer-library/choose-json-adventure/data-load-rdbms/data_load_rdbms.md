@@ -418,7 +418,48 @@ NAME                                        LABEL   YEAR MONTH MONTH NAME
 New York, NY: John F. Kennedy International 2003/09 2003 9     September  
 ```
 
-nested arrays
+we have taken the time JSON
+
+```
+ "Time": {
+            "Label": "2003/09",
+            "Month": 9,
+            "Month Name": "September",
+            "Year": 2003
+        }
+```
+and created a relational table result from it.
+
+Want more than one row? We can alter the SQL to fetch say 10 rows thus bringing back multiple rows in a single table format:
+```
+select a.name, v.*
+  from airportdelays a, json_table (
+         a.time, '$' 
+    		columns (
+                Label,
+                Year,
+                Month,
+                "Month Name"
+    ) )v
+ fetch first 10 rows only;
+```
+and the result:
+```
+NAME                                                         LABEL   YEAR MONTH MONTH NAME 
+------------------------------------------------------------ ------- ---- ----- ---------- 
+Dallas/Fort Worth, TX: Dallas/Fort Worth International       2003/06 2003 6     June       
+Detroit, MI: Detroit Metro Wayne County                      2003/06 2003 6     June       
+Newark, NJ: Newark Liberty International                     2003/06 2003 6     June       
+New York, NY: John F. Kennedy International                  2003/06 2003 6     June       
+Las Vegas, NV: McCarran International                        2003/06 2003 6     June       
+Los Angeles, CA: Los Angeles International                   2003/06 2003 6     June       
+Fort Lauderdale, FL: Fort Lauderdale-Hollywood International 2003/06 2003 6     June       
+Washington, DC: Washington Dulles International              2003/06 2003 6     June       
+Houston, TX: George Bush Intercontinental/Houston            2003/06 2003 6     June       
+Atlanta, GA: Hartsfield-Jackson Atlanta International        2003/06 2003 6     June  
+```
+
+What about getting at data in nested arrays?
 
 ```
 select t.*
@@ -428,15 +469,53 @@ select t.*
             	make varchar2(400) path '$.make',
                 	nested path '$.models[*]'
                     	columns(
-                        	models varchar2(400) format json path '$'
+                        	models varchar2(400) path '$'
                 			   )
-                   )
-                    
+                   )    
             ) as t
  where id = 100;
 ```
 
-Nested Arrays pivoted as columns
+will return
+```
+MAKE   MODELS 
+------ ------ 
+Boeing 717    
+Boeing 737    
+Boeing 757    
+Boeing 767    
+Boeing 777    
+Boeing 787    
+Airbus A320   
+Airbus A321   
+Airbus A330   
+Airbus A340   
+Airbus A350   
+Airbus A380 
+```
+You can see we can get data from arrays with the json_table function in combination with **nested path**.
+
+We can also combine both relational tables and JSON. Instead of a new row per model, lets collapse them back into just 2 rows:
+```
+select t.*
+  from airportdelays,
+       	json_table(Statistics, '$.Carriers."Aircraft Types"[*]'
+            columns(
+            	make varchar2(400) path '$.make',
+                models varchar2(400) format json path '$.models'
+            )       
+       	) as t
+ where id = 100;
+```
+we combined the second nested path and told the query to output or format the result in JSON with **format json**. The results are as follows:
+```
+MAKE   MODELS                                      
+------ ------------------------------------------- 
+Boeing ["717","737","757","767","777","787"]       
+Airbus ["A320","A321","A330","A340","A350","A380"] 
+```
+
+We can even go one step further and pivot nested arrays as columns as seen in this next example:
 
 ```
 select a.name, t.*, md.*
@@ -469,6 +548,12 @@ select a.name, t.*, md.*
                 )
         ) md
  where a.id = 100;
+```
+with the results being:
+```
+NAME                                        LABEL   MONTH NAME YEAR CARRIER NATIONAL AVIATION SYSTEM LATE AIRCRAFT SECURITY WEATHER WEATHER CODES               TOTAL CODE1 CODE2 CODE3 CODE4 
+------------------------------------------- ------- ---------- ---- ------- ------------------------ ------------- -------- ------- --------------------------- ----- ----- ----- ----- ----- 
+New York, NY: John F. Kennedy International 2003/09 September  2003 13176   14391                    7732          93       996     ["SNW","RAIN","SUN","CLDY"] 36388 SNW   RAIN  SUN   CLDY 
 ```
 
 **6. json_exists**
