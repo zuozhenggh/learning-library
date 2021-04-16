@@ -4,6 +4,8 @@
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
+This lab walks you through the steps to ...
+
 Estimated Lab Time: n minutes
 
 ### About Product/Technology
@@ -28,8 +30,14 @@ In this lab, you will:
 *This is the "fold" - below items are collapsed by default*
 
 
+## **STEP 1**: Login to Oracle Analytics Cloud
 
-## **STEP 3**: Create Visualizations using your data sets
+
+## **STEP 2**: 
+
+
+
+## **STEP 1**: Create Visualizations using your data sets
 
 1. Create a new project by clicking **Create Project**.
 
