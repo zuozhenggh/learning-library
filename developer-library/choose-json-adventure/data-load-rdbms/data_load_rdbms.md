@@ -624,13 +624,47 @@ select json_object ( * ) jdoc
 
 **8. Putting it all together**
 
-select a.id, a.Statistics."Minutes Delayed".Total, a.airportcode from airportdelays a
-  where json_exists(a.time, '$?(@.Year  == "2004" && @.Month == "6")')
-    and json_exists(a.Statistics, '$?(@."Minutes Delayed".Total > 700000)');
+Lets analyze this data a bit....we have delays...so maybe we can take a look at which airports had the most weather delays in each month over the span of this data.
 
-select *
-from   departments_json d
-where  json_value ( department_data, '$.department' ) = 'Accounting';
+```
+with weather_delays as (
+    select json_value(time, '$.Label') time_label, 
+           max(json_value(statistics,'$."# of Delays".Weather' returning number error on error)) max_weather
+      from airportdelays a 
+     group by json_value(time, '$.Label')
+)
+select a.airportcode, 
+       json_value(a.time, '$.Label') "Year/Month", 
+       json_value(a.statistics, '$."# of Delays".Weather' returning number) "Weather Delays"
+  from airportdelays a,
+       weather_delays wd
+ where wd.time_label = json_value(a.time, '$.Label')
+   and json_value(a.statistics, '$."# of Delays".Weather' returning number) = wd.max_weather
+ order by json_value(a.time, '$.Label');
+```
+
+```
+AIRPORTCODE YEAR/MONTH WEATHER DELAYS 
+----------- ---------- -------------- 
+ATL         2003/06               328 
+ATL         2003/07               367 
+ATL         2003/08               361 
+ATL         2003/09               161 
+ATL         2003/10               170 
+ORD         2003/11               202 
+SLC         2003/12               282 
+ATL         2004/01               599 
+ATL         2004/02               787 
+ATL         2004/03               227 
+DFW         2004/04               217 
+ATL         2004/05               556 
+DFW         2004/06               729 
+ATL         2004/07               491 
+DFW         2004/08               469 
+ATL         2004/09               362 
+ATL         2004/10               500 
+...
+```
 
 ## Acknowledgements
 
