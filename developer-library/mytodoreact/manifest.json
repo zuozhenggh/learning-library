@@ -6,15 +6,15 @@
         "filename": "./README.md"
       },
       {
-        "title": "Part 1: Setup OCI Cloud services: ATP, OKE, OCIR",
+        "title": "Part I: Setup OCI Cloud services: ATP, OKE, OCIR",
         "filename": "./setup-dev-environment/README.md"
       },
       {
-        "title": "Part 2: MyToDoReact backend (Java/Helidon)",
+        "title": "Part II: Configure and Deploy the Backend (Java/Helidon)",
         "filename": "./backend/README.md"
       },
       {
-        "title": "Part 3: MyToDoReact - Frontend (React JS)",
+        "title": "Part III: Configure and Deploy the Frontend (React JS)",
         "filename": "./frontend/README.md"
       }
 

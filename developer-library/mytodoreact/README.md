@@ -15,16 +15,9 @@ You will will learn how to use the Autonomous Database, the Container Registry, 
 
 ## Let's Get Started!
 
-## **STEP 0**: Chmod all shell scripts
-
-```
-  <copy>chmod +x *.sh</copy>
-```
+This lab has 3 parts however, you need first to setup a Cloud account
 ## **STEP 1**: Sign up for a Free Trial Cloud Account
-Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Set up Dev Environment](?setup-dev-environment/README.md).
-
-Access a complete walkthrough video of this lab [here](https://tinyurl.com/...).
-
+Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Part 1: Setup Dev Environment](?setup-dev-environment/README.md).
 
 ## Want to Learn More?
 

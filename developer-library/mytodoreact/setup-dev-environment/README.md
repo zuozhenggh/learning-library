@@ -3,28 +3,30 @@ Copyright (c) 2021 Oracle, Inc.
 
 Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Lab 1 --  Setup OCI, OKE, ATP and Cloud shell
+# Part 1 --  Setup OCI, Cloud shell, OKE, ATP and
 
-## Introduction
+## **Summary**
 
-### Objectives
+In this part of the lab, you will configure your development environment and collect information that will be used later throughout this workshop
 
-* Register to an OCI Free Tier instance
-* Download the workshop code and scripts
-* Collect information that will be used later throughout this workshop
-* Set up a two nodes OKE cluster
-* Create the ATP database
+### Objectives of Part I
+
+* Setup an OCI account
+* Launch Cloud Shell
+* Download the workshop code and scripts from GitHub
+* Set up an OCI Compartment and install a two nodes OKE cluster
+* Create the ATP database, the user schema and a database table
+* Install GraalVM  
 * Create an OCI Registry and Auth key
 
-### What Do You Need?
+## **STEP 1**: Setup your OCI Account and Launch the Cloud Shell
 
-* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-
+ 1. An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
  You will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
-## **STEP 1**: Launch the Cloud Shell
+2. Launch Cloud Shell
 
-Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated CLI which is set to the OCI Console tenancy home page region. It also provides up-to-date tools and utilities.
+Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. It comes with a pre-authenticate CLI pre-installed and configured so you can immediately start working in your tenancy without having to spend time on installation and configuration!
 
 Click the Cloud Shell icon in the top-right corner of the Console.
 
@@ -33,7 +35,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 ## **STEP 2**: Clone mtdrworkshop GitHup repository
 
-1. Open up Cloud Shell and clone the github repo.
+1. Open up Cloud Shell and clone the GitHub repo.
 
     ````
     <copy>
@@ -49,7 +51,15 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     <copy>cd mtdrworkshop</copy>
 
     ```
-    - Run the followig Shell script
+3. Set the execution mode for all Shell scripts
+
+```
+<copy>cd mtdrworkshop</copy>
+
+```
+```
+<copy>chmod +x *.sh */*.sh</copy>
+```
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
 
  1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
@@ -133,7 +143,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 4.  Set **ADMIN password, Network Access Type and License Type**
    - Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
-    Please note the ADMIN password for configuring the backend, later.
+    Please note the ADMIN password; irt will be required later.
    - Set the Network Access type to "Allow secure access from everywhere".
    - Set the license type to "Bring Your Own License (BYOL)" (does not matter for this workshop)
    - Click on "Create Autonomous Database"
@@ -162,16 +172,17 @@ The database creation will take a few minutes.
 
 6. Create TODOUSER using SQLcl in Cloud shell
 
-    - Stay in mtdrwokshop/setup-dev-environment directory and launch SQLcl
+    - Stay in mtdrwokshop/setup-dev-environment directory and launch SQLcl with /nolog option
+
       ![](images/SQLCL-Cloud-Shell.png " ")
 
    - Point the tool at your wallet.zip file
      SQL> set cloudconfig wallet.zip
 
      SQL> show tns
+     ![](images/Show-tns.png " ")
 
-
-     - Connect to mtdrdb_tp service, as database ADMIN user (remember the password above)
+     - Connect to mtdrdb_tp service, as database ADMIN user (remember the password given to ADMIN above)
       SQL> connect ADMIN@mtdrdb_tp
 
       - Create TODOUSER (replace "passwor" by a strong password)
@@ -262,9 +273,11 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ```
     <copy>docker images </copy>
     ```
-## **STEP 6**: Install GraalVM for JDK 11 in Cloud Shell
+## **STEP 6**: Install GraalVM in Cloud Shell
 
-1. Run `./installGraalVM.sh`
+We will be using JDK 11 in Cloud Shell; we will not use GraalVM Native Image
+
+1. Run the following command
 
 ```
 <copy>./installGraalVM.sh</copy>
@@ -288,7 +301,7 @@ Notice `/.kube/config` is created for the cluster and the `mtdrworkshop` namespa
   ![](images/verifyOKEOutput.png " ")
 
 
-Congratulations, you have completed Part-1; you may now proceed to the next part.
+Congratulations, you have completed Part I; you may now proceed to Part II.
 
 ## Acknowledgements
 * **Workshop by** - Kuassi Mensah, Dir. Product Management, Java Database Access
