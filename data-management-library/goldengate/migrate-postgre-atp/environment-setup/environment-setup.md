@@ -90,7 +90,7 @@ For a technical overview of this lab step, please watch the following video:
 	terraform apply --auto-approve
 	</copy>
 	```
-	If you see an error **Service limits exceeded** in output, please visit the Appendix section for instructions to correct the issue.
+	After you ran the apply command, terraform will start installation of several virtual machines and an autonomous database. Be patient, it will take some time. But, if you see an error **Service limits exceeded** in output, please visit the Appendix section for instructions to correct the issue.
 	
 3. Make a copy of your output results in your notepad for later use.
 
