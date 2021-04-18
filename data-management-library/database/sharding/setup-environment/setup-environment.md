@@ -18,7 +18,7 @@ This lab assumes you have already completed the following:
 
 Click on the link below to download the Resource Manager zip files you need to build your enviornment.
 
-- [sdb19c-market-num.zip](https://github.com/minqiaowang/oracle-sharded-database/raw/main/setup-environment/sdb19c-market-num.zip) - Packaged terraform primary database instances creation script.
+- [sdb19c-market-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yFTb0ghnGHTjSYPGegZ0kq0ta9CkgbsDUeW-lpZ9ddc953NcuJzW9K7J-PpkqRS4/n/c4u03/b/data-management-library-files/o/Oracle%20Sharding/sdb19c-market-num.zip) - Packaged terraform primary database instances creation script.
 
 
 
