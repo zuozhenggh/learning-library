@@ -185,7 +185,7 @@ You may proceed to the next lab.
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
 * **Contributors** -  
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Mar 2021
+* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Apr 2021
 * **Workshop Expiry Date** - 
 
 ## See an issue?
