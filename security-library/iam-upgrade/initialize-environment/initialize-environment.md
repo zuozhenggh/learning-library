@@ -14,8 +14,8 @@ This lab assumes you have:
 - A Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (Free-tier and Paid Tenants Only)
+    - Lab: Prepare Setup (Free-tier and Paid Tenants Only)
     - Lab: Environment Setup
 
 ## **STEP 1:** Running your Lab
@@ -81,6 +81,7 @@ Follow the steps below to initialize the IAM 11.1.2.3 components.
     User        xelsysadm
     Password    IAMUpgrade12c##
     ```
+You may now [proceed to the next lab](#next)
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:

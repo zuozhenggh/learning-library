@@ -4,26 +4,6 @@
 
 This section guides you through the steps to upgrade 11.1.2.3 LCM based OIM-OAM integrated environment with OUD as backend Directory Server &amp; OHS as webserver to 12.2.1.4.
 
-Steps involved in the upgrade process are below :
-
-*Step 1:* Upgrade IAM Components from 11.1.2.3 to 12.2.1.3
-  - Upgrade OID 11.1.2.3 to OUD 12.2.1.3
-  - Upgrade OAM 11.1.2.3 - 12.2.1.3
-  - Upgrade OIM 11.1.2.3 to OIG 12.2.1.3
-  - Apply OAM and OIG latest Stack patch Bundle for 12.2.1.3  
-
-*Step 2:* Upgrade IAM Components from 12.2.1.3 to 12.2.1.4
-  - Upgrade OUD from 12.2.1.3 to 12.2.1.4
-  - Upgrade OAM 12.2.1.3 to 12.2.1.4
-  - Upgrade OIG 12.2.1.3 to 12.2.1.4
-  - Apply OAM and OIG latest Stack patch Bundle for 12.2.1.4  
-
-*Step 3:* Integrate OIG and OAM using LDAP Connector  
-
-*Step 4:* Transition OHS from 11.1.1.9 to 12.2.1.4  
-
-*Step 5:* Validate the IAM 12.2.1.4 Integrated environment   
-
 *Estimated Lab Time*:  48-72 Hours
 
 ### About Oracle IAM Upgrade Strategies
