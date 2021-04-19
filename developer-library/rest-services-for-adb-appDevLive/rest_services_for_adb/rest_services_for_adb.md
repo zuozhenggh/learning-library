@@ -1,61 +1,24 @@
-# RESTful Services for your Autonomous Database
+# Modern App Dev with Oracle REST Data Services
 
 ## Introduction
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
 
-Estimated Lab Time: 30-45 minutes
+Estimated Lab Time: 60 minutes
 
 ### Objectives
 
-- Enable a user for REST access
-- Publish a RESTful service for a database table
-- Secure the REST service
+- Create and Auto-REST enable a table
+- Load data into the database
+- Publish a RESTful service for various database objects
+- Securing the REST endpoints
 
 ### Prerequisites
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 
-## **STEP 1**: Create a user for Application Development
-
-1. First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
-
-    ![Database Actions Menu, Administration then Users](./images/sdw-1.png)
-
-2. Now, click the Create User button on the left side of the page. This will slide out the Create User panel.
-
-    ![Create User button on the left side of the page](./images/sdw-2.png)
-
-3. Start by entering a user name. Let's use GARY as the username. Next we need to enter a password. The password must be complex enough to pass the password profile set by the database. The rules are as follows:
-
-    Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
-
-
-    Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. Your panel should look similar to the following image:
-
-    ![Create User Slide Out Panel](./images/sdw-3.png)
-
-4. Once you are ready, click the Create User button on the bottom of the panel to create the database user.
-
-5. We next need to give this new user some space to create objects and data. For this, we need to go back to the SQL worksheet and run a simple statement. To get back to the SQL Worksheet, again click the Database Actions menu in the upper left and select SQL in the Development List.
-
-    ![Database Actions Menu, Development then SQL](./images/sdw-4.png)
-
-6. On the SQL Canvas, copy and paste the following statement:
-    ````
-    <copy>alter user gary quota unlimited on data;</copy>
-    ````
-    Once copied on the canvas, click the run button on the worksheet toolbar.
-
-    ![Click RUN on the SQL Worksheet Toolbar](./images/sdw-5.png)
-
-7. On the bottom of the worksheet, in the Script Output, you should see that the user Gary has been altered and the quota granted.
-
-    ![SQL Output indicates User Altered](./images/sdw-6.png)
-
-
-## **STEP 2**: Load data into the Database
+## **STEP 1**: Load data into the Database
 
 We need to load some data into the database so that we can create some REST services upon those tables and data. To do this, we need to login as our newly created user. We have two ways to switch users.
 
