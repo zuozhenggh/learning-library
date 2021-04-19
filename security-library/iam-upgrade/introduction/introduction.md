@@ -10,13 +10,11 @@ Oracle Identity Management provides a unified, integrated security platform desi
 *Estimated Lab Time:* 48-72 Hours
 
 ### Objectives
-
 In this lab, you will:
 * Initialize the Oracle IAM 11.1.2.3 baseline environment
 * Upgrade the Oracle IAM 11.1.2.3 environment to 12.2.1.4
 
 ### Prerequisites
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Knowledge of Oracle IAM 11.1.2.3
 

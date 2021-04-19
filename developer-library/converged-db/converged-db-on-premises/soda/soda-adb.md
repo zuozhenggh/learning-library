@@ -6,6 +6,10 @@ In this lab you will be introduced to using the Oracle SODA APIs for Python. But
 
 *Estimated Lab Time:* 30 Minutes
 
+Watch the video below for an overview of the SODA lab
+[](youtube:uHaxtbmFEjk)
+
+
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -369,7 +373,7 @@ Now that your environment is configured and you can connect to database from Pyt
 In this section you will connect to the Oracle database you provisioned in your previous lab. This is the database environment that you configured your Python programs to connect to.
 
 1. Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
-    ![](./images/select-atp.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2. Click on the **Display Name,**
 
@@ -532,7 +536,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** - Sean Stacey
 * **Last Updated By/Date** - Kay Malcolm, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/soda). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

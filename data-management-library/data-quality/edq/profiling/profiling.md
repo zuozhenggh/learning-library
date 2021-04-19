@@ -4,7 +4,7 @@
 
 Data profiling is a process of understanding the data in EDQ. The first step in improving the quality of your data is to understand it. You have data but is it good data? EDQ allows to quickly assess, find, investigate and understand anomalies regarding data content, standardization, relationships and duplication among others.
 
-*Estimated Lab Time* - 30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 * Work with Quickstats Profiler - A Bird's-eye view of the data
@@ -16,12 +16,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Access and Configure EDQ
+    - Lab: Initialize Environment
 
-## **STEP 1**: Quickstats Profiler
+## **Step 1**: Quickstats Profiler
 1.	In the Project Browser, right-click on “Processes” under your project, then select “New Process”.
 
     ![](./images/image1200_25.png " ")
@@ -39,6 +39,7 @@ This lab assumes you have:
 4.	Provide the following information:
     - **Name**: Profiling – Understanding your Data
     - **Description**: Understanding US CUSTOMERS Data
+
 5.	Click on “Finish” button.
 
     ![](./images/image1200_28.png " ")
@@ -77,7 +78,8 @@ This lab assumes you have:
 
     ![](./images/image1200_35.png " ")
 
-  The “Quickstats Profiler” provides fundamental quality metrics for the selected attributes. It highlights:
+    The “Quickstats Profiler” provides fundamental quality metrics for the selected attributes. It highlights:
+
     - Candidate key columns
     - Completeness and missing data
     - Duplication
@@ -105,7 +107,7 @@ This lab assumes you have:
 
 17.	Click the “Back” icon in the "Results Browser" panel as many times as needed to return to the results of the “Quickstats Profiler”.
 
-## **STEP 2**: Frequency Profiler
+## **Step 2**: Frequency Profiler
 1.	In the "Tool Palette" find the “Frequency Profiler” processor.
 
     ![](./images/image1200_40.png " ")
@@ -154,7 +156,7 @@ This lab assumes you have:
 
     By now, you will surely see that this dataset needs some fine tuning to make it usable for accurate analytics. For instance, 19.5% of the gender values above are blank.
 
-## **STEP 3**: Record Completeness Profiler
+## **Step 3**: Record Completeness Profiler
 
 1.	Now, Let’s explore record completeness profiler. In the “Profiling Tool Palette" find “Record Completeness” processor and “Record Duplication” processor. Drag and drop each processor to the "Project Canvas".
 
@@ -171,11 +173,11 @@ This lab assumes you have:
     ![](./images/image1200_49.png " ")
 
 6.	Click the “Run” icon in the toolbar (top of the Project Canvas) to run the process.
-7.	Click on the “Record Completeness Profiler” processor to view the results in the Results Browser. You can see that only 294 of the customers have all 15 of 15 attributes filled. Click the "Show Additional Information" icon.
+7.	Click on the “Record Completeness Profiler” processor to view the results in the Results Browser. You can see that only 196 of the customers have all 17 of 17 attributes filled. Click the "Show Additional Information" icon.
 
     ![](./images/image1200_50.png " ")
 
-    Notice that those 294 complete records only make up 5.4% of the entire dataset.
+    Notice that those 196 complete records only make up 3.6% of the entire dataset.
 
     ![](./images/image1200_51.png " ")
 
@@ -188,7 +190,7 @@ This lab assumes you have:
     ![](./images/image1200_53.png " ")
 
 10.	Connect the “Record Duplication” processor to “Pattern Profiler” processor, the dialog applet will come up.
-11.	Click on “Zip” from “Available Attributes” section, then click the “Select” icon to move the attribute to the “Selected Attributes” section. Click "OK".
+11.	Click on “Cell” from “Available Attributes” section, then click the “Select” icon to move the attribute to the “Selected Attributes” section. Click "OK".
 
     ![](./images/image1200_54.png " ")
 
@@ -196,17 +198,28 @@ This lab assumes you have:
 
     While we can continue to add Profilers to further investigate the data, perhaps it is best to move on to explore the next family of EDQ Processors: Audit – which will help us check and standardize the data.
 
-You may now *proceed to the next lab*.  
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -5,7 +5,7 @@ This workshop will help you get started with Oracle Enterprise Data Quality (EDQ
 ## About Oracle Enterprise Data Quality
 Oracle Enterprise Data Quality provides a comprehensive data quality management environment, used to understand, improve, protect and govern data quality. The software facilitates best practice Master Data Management, Data Governance, Data Integration, Business Intelligence and data migration initiatives, as well as providing integrated data quality in CRM and other applications and cloud services.
 
-*Estimated Workshop Time* -  4 Hours
+*Estimated Lab Time*: 3 Hours
 
   ![](./images/edq_architecture.png " ")
 
@@ -35,7 +35,4 @@ Key reasons why companies choose Oracle Enterprise Data Quality for their data q
 * **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
