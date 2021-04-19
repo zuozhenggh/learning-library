@@ -39,7 +39,7 @@ Estimated Lab Time: 15 minutes
 
 1. Go to the **Autonomous Transaction Processing (ATP)** menu:
 
-    ![Menu ATP](./images/menu_atp.png)
+    ![Menu ATP](./images/menu_atp_1.png)
 
     Check if you are in the **root compartment** that is fine for testing.
 
