@@ -307,6 +307,7 @@ We have one last data setup to do on the Apply node. We need to specify what dat
  
     It is now up to you to decide how you are going to use this clustering information in an operational or strategic way in your organization.
 
+**This concludes this lab.**
 <!-- **Summary**
 In this workshop, you examined and solved a "Clustering" data mining business problem by using the Oracle Data Miner graphical user interface, which is included as an extension to SQL Developer.
 
