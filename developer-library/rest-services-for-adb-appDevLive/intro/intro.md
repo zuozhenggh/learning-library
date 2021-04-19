@@ -38,7 +38,7 @@ In this lab you will use the browser-based SQL and REST workshop tools, connect 
 
 ### **Lab 2:** Connect to your Autonomous Database using SQL Developer Web
 
-### **Lab 3:** Create a user
+### **Lab 3:** User Setups
 
 ### **Lab 4:** Create and Auto-REST enable a table
 
