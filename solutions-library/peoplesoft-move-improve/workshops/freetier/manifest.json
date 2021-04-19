@@ -42,6 +42,10 @@
               "filename": "../../psft-env/psft-env.md"
           },
           {
+            "title": "Lab 8: Refresh",
+            "filename": "../../refresh/refresh.md"
+          },
+          {
               "title": "Additional Lab: Provisioning Environments with Windows Clients",
               "filename": "../../windows-env/windows-env.md"
           },
