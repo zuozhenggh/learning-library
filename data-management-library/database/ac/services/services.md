@@ -25,7 +25,7 @@ Application Continuity is set as an attribute of a service.
 
 Oracle recommends that all users who share a service have the same service level requirements. You can define specific characteristics for services and each service can represent a separate unit of work. There are many options that you can take advantage of when using services. Although you do not have to implement these options, using them helps optimize application operation and performance.
 
-For more information on Oracle Database Services visit http://www.oracle.com/goto/ac
+For more information on Oracle Database Services visit [http://www.oracle.com/goto/ac](http://www.oracle.com/goto/ac)
 
  [](https://youtu.be/dIMgaujSydQ)
 
@@ -320,7 +320,8 @@ where you will see similar to:
     ````
 
 8. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the following:
-   ````
+
+    ````
     sudo su - oracle
     [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
     SQL*Plus: Release 19.0.0.0.0 - Production on Mon Aug 24 08:34:32 2020
@@ -363,13 +364,14 @@ where you will see similar to:
     ````    
 
 10.  Update your tnsnames.ora file to specify a configuration similar to that below.
+
     ````
     <copy>
     vi /u01/app/oracle/product/19.0.0.0/dbhome_1/network/admin/tnsnames.ora
     </copy>
     ````
 
-and add similar to the following:
+    and add similar to the following:
 
     ````
     RECSRV=(DESCRIPTION =
@@ -390,30 +392,31 @@ FAN, connection identifier, TAC, AC, switchover, consumer groups, and many other
 
 **Note:** If you need to find your database name run the command:
 
-   ````
-   <copy>
-   srvctl config database
-   ````
+````
+<copy>
+srvctl config database
+````
 
-1. Attributes set on the service enable applications to use Application Continuity. Create a service, setting the attributes **failover_restore**, **commit_outcome**, and **failovertype** for **Application Continuity (AC)**. Replace the values for "-d", "-s", "-preferred" and "-available" with those of your system.
+1. Attributes set on the service enable applications to use Application Continuity. Create a service, setting the attributes **failover\_restore**, **commit\_outcome**, and **failovertype** for **Application Continuity (AC)**. Replace the values for "-d", "-s", "-preferred" and "-available" with those of your system.
 
-   ````
-   <copy>
-   srvctl add service -d <addDatabaseName> -s <myServiceName> -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
-   ````
+    ````
+    <copy>
+    srvctl add service -d (addDatabaseName) -s (myServiceName) -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred (YourInstance1) -available (YourInstance2) -clbgoal LONG -rlbgoal NONE
+    ````
 2. Create a service named **noac** with no AC settings
 
-   ````
-   <copy>
-   srvctl add service -d <addDatabaseName> -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
-   ````
+    ````
+    <copy>
+    srvctl add service -d (addDatabaseName) -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred (YourInstance1) -available (YourInstance2) -clbgoal LONG -rlbgoal NONE
+    ````
 3. Start both services   
-   ````
-   <copy>
-   srvctl start service -d <addDatabaseName> -s noac
-   srvctl start service -d <addDatabaseName> -s <myServiceName>
-   ````
-The two services you have just created (one named **noac** and another you named) will be used in the next lab.
+    ````
+    <copy>
+    srvctl start service -d (addDatabaseName) -s noac
+    srvctl start service -d (addDatabaseName) -s (myServiceName)
+    ````
+    
+    The two services you have just created (one named **noac** and another you named) will be used in the next lab.
 
 You may now *proceed to the next lab*.  
 
