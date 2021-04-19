@@ -309,13 +309,14 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
      d.	Notice the default selections and that “sb0” was selected for the Sandbox to merge  
 
      e.	Change the propmts:  
-            i)  Product = XXU  
-            ii)  Customer = Automotive (Hint: Use the search feature to find the member)  
-            iii) Region = USA  
-            iv) Periods = FYQ1-FY2016, FYQ2-FY2016, FYQ3-FY2016, FYQ4-FY2016  
-            v)  Sandbox = sb0  
+
+        i)  Product = XXU  
+        ii)  Customer = Automotive (Hint: Use the search feature to find the member)  
+        iii) Region = USA  
+        iv) Periods = FYQ1-FY2016, FYQ2-FY2016, FYQ3-FY2016, FYQ4-FY2016  
+        v)  Sandbox = sb0  
             
-        ![](./images/imageSM_37.png "")
+    ![](./images/imageSM_37.png "")
 
 11. Click launch.
 
