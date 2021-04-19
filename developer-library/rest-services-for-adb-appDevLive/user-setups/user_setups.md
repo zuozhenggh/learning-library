@@ -1,4 +1,4 @@
-# Setups for the Modern App Dev with Oracle REST Data Services LiveLab
+# User Creation and Setups for the Modern App Dev with Oracle REST Data Services LiveLab
 
 ## Introduction
 
@@ -39,7 +39,7 @@ Estimated Lab Time: 10 minutes
 
     ![Create User Slide Out Panel](./images/setups-3.png)
 
-4. Next, click the **Granted Roles** tab. Use the **Granted** column and select the following checkboxes; PDB_DBA and SODA_APP.
+4. Next, click the **Granted Roles** tab. Use the **Granted** column and select the **PDB_DBA** checkbox.
 
     ![Granted Roles Slide Out Panel](./images/setups-4.png)
 
