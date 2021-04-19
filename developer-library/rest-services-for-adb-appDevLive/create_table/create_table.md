@@ -1,4 +1,4 @@
-# Modern App Dev with Oracle REST Data Services - Creating a Table
+# Modern App Dev with Oracle REST Data Services - Creating and auto-REST enable a Table
 
 ## Introduction
 
