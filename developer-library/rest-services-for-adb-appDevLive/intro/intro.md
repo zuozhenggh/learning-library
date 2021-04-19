@@ -19,7 +19,7 @@ Estimated Workshop Time: 30-45 minutes
 ### Objectives
 
 - Connect to your Autonomous Database using SQL Developer Web
-- Create a user for Application development
+- Create a user for application development
 - Auto-REST enable a table
 - Load data into the database
 - Publish a RESTful service for various database objects
@@ -40,9 +40,11 @@ In this lab you will use the browser-based SQL and REST workshop tools, connect 
 
 ### **Step 3:** Auto-REST enable a table
 
-### **Step 4:** Load data into the database
+### **Step 4:** Load data and create business logic in the database
 
-### **Step 5:** Securing the REST endpoint
+### **Step 5:** REST enable tables and business logic
+
+### **Step 6:** Securing the REST endpoints
 
 ## Conclusion
  In this lab, you had an opportunity to get an introduction to REST services.
