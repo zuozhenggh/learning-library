@@ -422,5 +422,5 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Authors** - Troy Anthony
-* **Contributors** - Kay Malcolm
-* **Last Updated By/Date** - Kay Malcolm, October 2020
+* **Contributors** - Kay Malcolm, Kamryn Vinson
+* **Last Updated By/Date** - Kamryn Vinson, April 2021
