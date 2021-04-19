@@ -49,9 +49,9 @@ Complete Lab 1 and 2 of this workshop
     - Create an Entity with Entity Type: EBS Concurrent Processing Node
     - Name: EBS CM CPN
     - Management Agent: ebscmagent
-    - Properties
-      omc_ebs_applcsf: /u01/install/APPS/fs_ne/inst/ebsdb_apps/
-      omc_ebs_appllog: /logs/appl/conc/log
+    - Properties:
+        - ```omc_ebs_applcsf: /u01/install/APPS/fs_ne/inst/<instance_name>/```
+        - ```omc_ebs_appllog: /logs/appl/conc/log```
 
   ![](./images/createcpn.png " ")
 
@@ -105,7 +105,7 @@ Now that you have your entities go to Logging Analytics - Administration - Sourc
 
   ![](./images/associatecpnsource.png " ")
 
-  f. Repeat for the following Log Sources: EBS Concurrent Request Logs, EBS Conflict Resolution Manager Log, EBS Internal Concurrent Manager log, EBS Transaction Manager Logs
+  f. Repeat for the following Log Sources: EBS Concurrent Request Logs, EBS Conflict Resolution Manager Log, EBS Internal Concurrent Manager log, EBS Transaction Manager Logs, Output Post Processor Logs
 
 ## **STEP 4:** View your logs in the Log Explorer
 

@@ -28,11 +28,10 @@ In this lab, you will:
 
 ## Lab Breakdown
 
-* Lab 1: Set Up the Environment
-* Lab 2: Create the Oracle Cloud Infrastructure GoldenGate Deployment
-* Lab 3: Register Databases
-* Lab 4: Create and Run the Extract and Replicat
-* Lab 5: Monitor the Extract and Replicat
+* Lab 1: Create the Oracle Cloud Infrastructure GoldenGate Deployment
+* Lab 2: Register Databases
+* Lab 3: Create and Run the Extract and Replicat
+* Lab 4: Monitor the Extract and Replicat
 
 ## Learn More
 
