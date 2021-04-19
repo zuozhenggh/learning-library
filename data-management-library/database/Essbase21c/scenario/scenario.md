@@ -88,13 +88,13 @@ This Step is geared towards developing an understanding of security for Essbase 
    a) Under Users tab, click on Add user
    ![](./images/imageSM_05.png "")
    
-   b) Provide the details for adding user: "Frank"
-     * Id: Frank
+   b) Provide the details for adding user: "John"
+     * Id: John
      * Role: user
      * Password: password
     ![](./images/imageSM_06.png "")
 
-   c) Repeat above steps for adding George, William and Susan.
+   c) Repeat above steps for adding  Maria, Phillip & Sam.
     ![](./images/imageSM_07.png "")
 
 2.	Defining Security:  
@@ -107,69 +107,81 @@ This Step is geared towards developing an understanding of security for Essbase 
    b) On the application inspector, click the Permissions tab. Click the + icon on this page to add users to this application.
    ![](./images/imageSM_09.png "")
 
-   c) Search for Frank, Susan, George & William and click the + icon next to their ids to add the to the application.
+   c) Search for John, Maria, Phillip & Sam and click the + icon next to their ids to add the to the application.
+     ![](./images/imageSM_10.png "")
+     ![](./images/imageSM_11.png "")
 
    d) by default all users have the Database Access Roles.
 
    e) Assign the following roles to the new ids added and Click Close:
-      * Frank -> Database Manager
-      * George -> Database Update
-      * William -> Database Update
-      * Susan -> Database Update
+      * John -> Database Manager
+      * Phillip -> Database Update
+      * Sam -> Database Update
+      * Maria -> Database Update
+      ![](./images/imageSM_12.png "")
 
     f) Go to Smartview and disconnect from the current connection.
 
     g) Open the Smart View.xlsx file and go to the Sheet3 tab.
 
-    h) Connect as Frank, William and Susan drilling down and up on the Sandbox dimension for each user. 
+    h) Connect as John, Sam and Maria drilling down and up on the Sandbox dimension for each user. 
 
        **Note: To easily switch between users – select Disconnect All from the SmartView Panel and then re-log in**
 
 
-3. Creating Scenarios:
+1. Creating Scenarios:
    
-   In this exercise you log in as Susan creating a new scenario defining William as a participant.  Validate the impact of the security changes for each user Frank, Susan, William and George.  Without logging out from Smart View, make George a Scenario Approver, then refresh the data in Smart View validate the change to his security.
+   In this exercise you log in as Maria creating a new scenario defining Sam as a participant.  Validate the impact of the security changes for each user John, Maria, Sam and Phillip.  Without logging out from Smart View, make Phillip a Scenario Approver, then refresh the data in Smart View validate the change to his security.
     
-   a) Go to the Web UI, logging in as Susan.
+   a) Go to the Web UI, logging in as Maria.
 
    b) Navigate to Scenarios tab. Click Create Scenario button.
+      ![](./images/imageSM_13.png "")
+   c) Give the scenario a name:**What-If** and a due date. Add Sam as a Participant by selecting the Users tab and click the + icon. By default a user is added as a Participant. 
+      ![](./images/imageSM_14.png "")
+      ![](./images/imageSM_15.png "")
 
-   c) Give the scenario a name:**What-If** and a due date. Add William as a Participant by selecting the Users tab and click the + icon. By default a user is added as a Participant. 
-      
       Click Save.
 
    d) Identify which sandbox member your scenario is using by clicking on the name of the scenario once it is created.
+     ![](./images/imageSM_16.png "")
+     ![](./images/imageSM_17.png "")
 
    e) Go back to Smart View.
 
-   f) Go to Excel and on the Sheet3 tab connect as Frank, William, and Susan drilling down and up on the Sandbox dimension for each user.
+   f) Go to Excel and on the Sheet3 tab connect as John, Sam, and Maria drilling down and up on the Sandbox dimension for each user.
 
-   g) Go to the Web UI, logging in as Susan and assign George the approver role to the sandbox.
+   g) Go to the Web UI, logging in as Maria and assign Phillip the approver role to the sandbox.
+      ![](./images/imageSM_18.png "")
 
-   h) Go to Smart View and connect as George drilling down on the Sandbox dimension.
+   h) Go to Smart View and connect as Phillip drilling down on the Sandbox dimension.
 
 
-4. Changing Sandbox Data:
-   As William, you will change some data for the scenario that was just created and, using the Essbase Web UI shows the differences between Base and the scenario.
+2. Changing Sandbox Data:
+   As Sam, you will change some data for the scenario that was just created and, using the Essbase Web UI shows the differences between Base and the scenario.
 
    a) Go to Excel and in the Smart View.xlsx 
 
-   b) Go to the DataSheet tab and connect to the database as William, ensure the the POV has the correct sandbox member identified in the previous exercise
+   b) Go to the DataSheet tab and connect to the database as Sam, ensure the the POV has the correct sandbox member identified in the previous exercise.
+      ![](./images/imageSM_19.png "")
 
    c) Go to the cell C12 enter a number then click submit (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
+      ![](./images/imageSM_20.png "")
 
    d) Go to Essbase Web UI, navigate to the Scenarios tab and filter for “Sandbx” database under WkrShpL<Student ID> application. Select the scenario What-if01 and click the Actions icon.
 
    e) Click on the icon in the Show Changes column, to show the changes in the UI.
+      ![](./images/imageSM_21.png "")
 
-5. Calculations in a Sandbox: 
+3. Calculations in a Sandbox: 
 Create a calculation script that will create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
 
-   a) Login to Essbase Web UI as Frank.
+   a) Login to Essbase Web UI as John.
 
    b) Navigate to the database inspector for the “Sandbx” database under the “WrkShpL<Student ID>” application.
 
    c) Click on the Scripts tab on the database inspector and select Calculation Scripts from the left navigation menu.
+     ![](./images/imageSM_22.png "")
 
    d) Click the + icon on the right to create a calculation script. Name the script as Feed16, type the below content in the scripts section (code can also be found in the Seed_16.csc file):
 
@@ -185,53 +197,108 @@ Create a calculation script that will create data for ORCL USA->XXU->Automotive 
 
 	</copy>
     ````
+    
+    ![](./images/imageSM_23.png "")
 
    e) Validate the script.
  
    f) Save and Close the script.
 
    g) To execute the script, navigate to the Jobs tab and create a new job by clicking New Job -> Run Calculation.
+     ![](./images/imageSM_24.png "")
 
    h) Select the Application and database and the calc script that was just created. For Variables select the “sb1” as Value for the sandbox variable.
 
    i) Click OK.
+     ![](./images/imageSM_25.png "")
 
    f) Click refresh icon, to see the job status.
+      ![](./images/imageSM_26.png "")
 
    g) Go to Smart View and retrieve data into the DataSheet tab. Also review the comparison tab.
 
-   i) Go to Essbase Web UI as William, Navigate to the Scenarios tab. Filter for WrkShpL<Student ID>.Sandbx database. Click on the icon under Actions and select Show Changes, to show the changes in the UI
+   i) Go to Essbase Web UI as Sam, Navigate to the Scenarios tab. Filter for WrkShpL<Student ID>.Sandbx database. Click on the icon under Actions and select Show Changes, to show the changes in the UI
+      ![](./images/imageSM_27.png "")
 
 1. Scenario Workflow:
    
-   At this point two things happened with our Sandbox. William entered some data using Smart View and Frank run a calc script that created some data for 2016. Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. The flow that we will simulate is:
+   At this point two things happened with our Sandbox. Sam entered some data using Smart View and John run a calc script that created some data for 2016. Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. The flow that we will simulate is:
 
-   * Susan is submitting the data for approval
-   * William can review the data and decides to approve
-   * Once Susan sees that william approve, she can apply the data to the Base
+   * Maria is submitting the data for approval
+   * Sam can review the data and decides to approve
+   * Once Maria sees that Phillip approve, she can apply the data to the Base
 
 
-   Since you are doing it by yourself, you will need to play both Susan and George. If you have two different browsers (e.g. Firefox and Chrome) you can log in as each participant in a different browser and jump between the two personas. The instructions will assume that you are using the same browser for both (and therefore logout and login will be needed).
+   Since you are doing it by yourself, you will need to play both Maria and Phillip. If you have two different browsers (e.g. Firefox and Chrome) you can log in as each participant in a different browser and jump between the two personas. The instructions will assume that you are using the same browser for both (and therefore logout and login will be needed).
 
    Let’s start:
 
-   a) Login to Essbase Web UI as Susan. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
+   a) Login to Essbase Web UI as Maria. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
 
    b) Under Actions, click the “->” icon to Submit, enter a comment if needed. The status should now be submitted.
+      ![](./images/imageSM_28.png "")
 
    c) Go to Smart View and retrieve data into the Comparison tab.
 
-   d) Go to the Web UI logging in as William. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
+   d) Go to the Web UI logging in as Phillip. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
 
-   e) Under Actions, click the   icon to Approve, enter a comment if needed.
+   e) Under Actions, click the  icon to Approve, enter a comment if needed.
+      ![](./images/imageSM_29.png "")
+      ![](./images/imageSM_30.png "")
 
    f) Go to Smart View and retrieve data into the Comparison tab.
 
-   g) Login to Essbase Web UI as Susan. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
+   g) Login to Essbase Web UI as Maria. Navigate to the Scenarios tab and filter for Database as “Sandbx” and application as “WrkShpL<Student ID>” and select Scenario What-if01.
 
    h) Under Actions, click the   icon to Apply sandbox “sb1” to the Base, enter a comment if needed.
+      ![](./images/imageSM_31.png "")
 
    i) Go to Smart View and retrieve data into the Comparison tab
+
+## **Step 4:** Run-time Substitution Variables
+
+Upload the Merge calculation script to your database and review it.  Then, in Smart View, execute the script using the selections in step 7e.  After the script has run validate the data in the Base member.
+
+1. Log on to Essbase Web UI as John.
+
+2. Launch the database inspector for the application “WrkShpL<Student ID>” and database “Sandbx”. Select Files tab and click Upload Files.
+   ![](./images/imageSM_32.png "")
+
+3. Drag or select the provided Merge.csc file.
+   ![](./images/imageSM_33.png "")
+
+4. Click Close.
+
+5. Select the Scripts tab on the database inspector.
+
+6. Click on the Merge Script to view/edit it.
+   ![](./images/imageSM_34.png "")
+
+7. Look through it. Validate the script.
+   ![](./images/imageSM_35.png "")
+
+8. Click on Roles tab. Click on the + icon and add Maria.
+
+9. Click Close to close the database inspector. 
+
+10. Go to Smart View and make sure you are logged in as Maria. On the Comparison tab 
+        a.	Select the “sb1” cell(D2 if unadulterated)
+        b.	Click on Calculate on the Essbase ribbon.
+        c.	Select the Merge calculation script
+        d.	Notice the default selections and that “sb1” was selected for the Sandbox to merge
+        e.	Change the propmts:
+                i.	Product = XXU
+                ii.	Customer = Automotive (Hint: Use the search feature to find the member)
+                iii.	Region = USA
+                iv.	Periods = FYQ1-FY2016, FYQ2-FY2016, FYQ3-FY2016, FYQ4-FY2016
+                v.	Sandbox = sb1
+    ![](./images/imageSM_36.png "")
+
+11. Click launch.
+
+12. Retrieve data.
+    ![](./images/imageSM_37.png "")
+
 
 
 

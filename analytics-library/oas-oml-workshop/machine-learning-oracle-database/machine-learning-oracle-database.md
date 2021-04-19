@@ -145,29 +145,32 @@ This lab assumes you have:
   Note the "Support Vector Machine" model seems to be the best predictor of attrition.
   ![](./images/ml1.17.png " ")
 
-20. Right click the "EMPLOYEE\_DATA" data source node then choose "View Data".
+20. Now click the Lift tab on the top of the chart to reveal the Cumulative gain.    Such charts are very helpful in visually understanding which model performs best.  If interested see [http://mlwiki.org/index.php/ROC\_Analysis](http://mlwiki.org/index.php/ROC\_Analysis),  [http://mlwiki.org/index.php/Cumulative\_Gain\_Chart](http://mlwiki.org/index.php/Cumulative\_Gain\_Chart) and [https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic](https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic) on how ROC, Lift and Gain charts help data scientists determine the best models.
+   ![](./images/ml1.1701.png " ")
+
+21. Right click the "EMPLOYEE\_DATA" data source node then choose "View Data".
   ![](./images/ml1.18.png " ")
 
 
-21. This Data Source node points to the "EMPLOYEE\_DATA" table imported in **Ponit 6**. 
+22. This Data Source node points to the "EMPLOYEE\_DATA" table imported in **Ponit 6**. 
     
   Recall that these are employees still with the organization that we want to run through our newly trained Support Vector Machine model in order to predict employees most likely to leave.
   ![](./images/ml1.19.png " ")
 
-22. Click the "Apply" node to see how we can apply the Support Vector Machine model to predict employees likely to leave the organization.
+23. Click the "Apply" node to see how we can apply the Support Vector Machine model to predict employees likely to leave the organization.
   ![](./images/ml1.20.png " ")
 
-23. Right click the "EMPLOYEE\_PREDICTION" node to the adjacent right and choose "Run".  
+24. Right click the "EMPLOYEE\_PREDICTION" node to the adjacent right and choose "Run".  
   ![](./images/ml1.21.png " ")
 
-24. Right click the "EMPLOYEE\_PREDICTION" data source node then choose "View Data". 
+25. Right click the "EMPLOYEE\_PREDICTION" data source node then choose "View Data". 
   Double click the column header "CLAS-SVM\_1\_66\_Prob\_YES" to see those employees at highest risk of leaving the organization. 
   ![](./images/ml1.22.png " ") 
 
-25. NOTE : The Data Miner GUI enables developers to quickly and graphically create workflows by dragging and dropping nodes from the workflow editor out onto the design pallet. Each node is then configured in accordance with the task to be performed. To form a workflow each node is connected by right clicking it, selecting Connect, then dragging the connection point to the intended node.
+26. NOTE : The Data Miner GUI enables developers to quickly and graphically create workflows by dragging and dropping nodes from the workflow editor out onto the design pallet. Each node is then configured in accordance with the task to be performed. To form a workflow each node is connected by right clicking it, selecting Connect, then dragging the connection point to the intended node.
    ![](./images/ml1.23.png " ")
 
-26. Lastly, any workflow can be readily output as SQL statements to be run as a script or to incorporate the logic into an application. This is accomplished by simply right clicking any node then choosing "Save SQL".
+27. Lastly, any workflow can be readily output as SQL statements to be run as a script or to incorporate the logic into an application. This is accomplished by simply right clicking any node then choosing "Save SQL".
   ![](./images/ml1.24.png " ")
 
 ## **STEP** 2: Using SQL to Train, Test and Evaluate a Machine Learning Model
