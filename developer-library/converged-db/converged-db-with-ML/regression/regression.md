@@ -30,11 +30,11 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 
-## **STEP:1** Create a Data Miner Project
+## **STEP 1:** Create a Data Miner Project
 
 To create a Data Miner Project, perform the following steps.
 
-1. In the Data Miner tab, right-click the data mining user connection that you previously created, and select **New Project**, as shown here:
+1. In the Data Miner tab, right-click the data mining user connection that you previously created, and select **New Project**, as shown here.
 
     ![](./images/regression1.png " ")
 
@@ -48,7 +48,7 @@ To create a Data Miner Project, perform the following steps.
 
     ![](./images/regression3.png " ")
 
-## **STEP:2** Build a Data Miner Workflow
+## **STEP 2:** Build a Data Miner Workflow
 
 To create the workflow for this process, perform the following steps.
 
@@ -104,7 +104,7 @@ At the bottom of the wizard window, click **Finish**.
   - You can add descriptive information about any node by using the Details tab in the Property Inspector.
   - The Thumbnail tab also provides a smaller display of the larger workflow window. As you drag nodes around the workflow window, the thumbnail view automatically adjusts.
 
-## **STEP:3** Examine the Source Data
+## **STEP 3:** Examine the Source Data
 
 You can use an Explore Data node to examine the source data. Although this is an optional step, Oracle Data Miner provides this tool to enable you to verify if the selected data meets the criteria to solve the stated business problem.
 
@@ -170,7 +170,7 @@ Follow these steps:
 
     ![](./images/regression21.png " ")
 
-## **STEP:4** Build the Models
+## **STEP 4:** Build the Models
 
 In this topic, you build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
@@ -184,20 +184,19 @@ In this topic, you build the selected models against the source data. This opera
 
 3. The GUI shows that the node has no data associated with it. Therefore, it cannot be built.
 
-    ![](./images/regression22.png " ")
+  ![](./images/regression22.png " ")
 
 4. Right-click, and click Connect the data to regression node. Drag the line to the Regression node and click again
 
-5. The **Edit Regression Build Node** dialog box opens. 
+5. The **Edit Regression Build Node** dialog box opens.
+   The Build tab enables you to specify or change the characteristics of the models to build. To edit the characteristics of the model to build, follow these steps.
 
-  - The Build tab enables you to specify or change the characteristics of the models to build. To edit the characteristics of the model to build, follow these steps:
-
-  - In the Target field, select a target from the drop-down list. The list consist of attributes from the table or view specified in the Data Source node that is connected to the build node. For our use case, we select the TOTALAMOUNT_SUM column
-  - You must specify a target. All models in the node have the same target.
-  - In the Case ID field, select one attribute from the drop-down list. 
-  - This attribute must uniquely identify a case. We will select the column CUSTOMERID.
-
-    In the Models Settings list, select which models you want to build. You can build Support Vector Machine (SVM) and Generalized Linear Models (GLM). You can delete any of these models by selecting the model and clicking
+     - In the Target field, select a target from the drop-down list. The list consist of attributes from the table or view specified in the Data Source node that is connected to the build node. For our use case, we select the TOTALAMOUNT_SUM column
+     - You must specify a target. All models in the node have the same target.
+     - In the Case ID field, select one attribute from the drop-down list. 
+     - This attribute must uniquely identify a case. We will select the column CUSTOMERID.
+    
+    In the Models Settings list, select which models you want to build. You can build Support Vector Machine (SVM) and Generalized Linear Models (GLM). You can delete any of these models by selecting the model and clicking.
 
 6. To delete any model, select the model and click x. We will keep both the models. 
 
@@ -207,7 +206,7 @@ In this topic, you build the selected models against the source data. This opera
 
     ![](./images/regression24.png " ")
 
-## **STEP:5** Compare the Models
+## **STEP 5:** Compare the Models
 
 After you build/train the selected models, you can view and evaluate the results for all of the models in a comparative format. Here, you compare the relative results of all four classification models. Follow these steps:
 
@@ -249,7 +248,7 @@ After you build/train the selected models, you can view and evaluate the results
 
     ![](./images/regression27.png " ")
 
-## **STEP:6** Select and Examine a Specific Model
+## **STEP 6:** Select and Examine a Specific Model
 
 1. Using the analysis performed in the past topic.
 
@@ -258,7 +257,7 @@ After you build/train the selected models, you can view and evaluate the results
 
   ![](./images/regression29.png " ")
 
-## **STEP:7** Apply the Model
+## **STEP 7:** Apply the Model
 
 In this topic, you apply the Regression model and then create a table to display the results. You "apply" a model in order to make predictions - in this case to predict which customers are likely to buy insurance.
 
@@ -314,5 +313,5 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
-* **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, David Start, Pragati Mourya.
+* **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, Pragati Mourya
 * **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021

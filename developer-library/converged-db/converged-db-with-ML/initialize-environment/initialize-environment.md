@@ -86,7 +86,6 @@ This will start the database, listener, oracle rest data service and our eshop a
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Acknowledgements
-
-- **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
-- **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021
+* **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
+* **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, Pragati Mourya.
+* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021

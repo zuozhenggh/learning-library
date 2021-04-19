@@ -32,12 +32,12 @@ This lab assumes you have:
 
 
 
-## **STEP:1** Start creating a Data Miner Project
+## **STEP 1:** Start creating a Data Miner Project
 Before you begin working on a Data Miner Workflow, you must create a Data Miner Project, which serves as a container for one or more Workflows.
 Create a SQL Developer connection for a data mining user named dmuser. This user has access to the sample data that you will be mining.
 
 `Note:` If you have not yet set up Oracle Data Miner, or have not created the data mining user, you must first complete the tasks presented in the tutorial Setting Up Oracle Data Miner 19c Release 2,
-To create a Data Miner Project, perform the following steps:
+To create a Data Miner Project, perform the following steps.
 
 1. In the Data Miner tab, right-click the data mining user connection that you previously created, and select **New Project**, as shown here.
     ![](./images/mba1.jpg " ")
@@ -52,7 +52,7 @@ To create a Data Miner Project, perform the following steps:
 
     ![](./images/mba3.jpg " ")
 
-## **STEP:2** Build a Data Miner Workflow
+## **STEP 2:** Build a Data Miner Workflow
 
 A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
 
@@ -71,7 +71,7 @@ A workflow.
 
 To create the workflow for this process, perform the below steps.
 
-## **STEP:3** Create a Workflow and Add data for the workflow
+## **STEP 3:** Create a Workflow and Add data for the workflow
 
 1. Right-click your project (Retail\_Data\_Analysis) and select New Workflow from the menu. 
  
@@ -86,7 +86,7 @@ To create the workflow for this process, perform the below steps.
     **Result**:
     - In the middle of the SQL Developer window, an empty workflow canvas opens with the name that you specified.
     - On the right-hand side of the interface, the Component Palette tab of the Workflow Editor appears (shown below with a red border).
-    - In addition, three other Oracle Data Miner interface elements are opened:
+    - In addition, three other Oracle Data Miner interface elements are opened.
         * The Thumbnail tab
         * The Workflow Jobs tab
         * The Property Inspector tab
@@ -94,7 +94,7 @@ To create the workflow for this process, perform the below steps.
     ![](./images/mba6.jpg " ")
 
 3. The first element of any workflow is the source data. We will extract data from JSON and XML table.
-    In the Component Palette, click the **Data** category. A list of data nodes appear, as shown here:
+    In the Component Palette, click the **Data** category. A list of data nodes appear, as shown here.
 
     ![](./images/mba7.jpg " ")
 
@@ -106,7 +106,7 @@ To create the workflow for this process, perform the below steps.
     ![](./images/mba8.jpg " ")
 
 5. In Step 1 of the wizard
-    Select JSON_XML_REL_COMBINED from the Available Tables/Views list, as shown here:
+    Select JSON_XML_REL_COMBINED from the Available Tables/Views list, as shown here.
 
     ![](./images/mba9.jpg " ")
 
@@ -123,13 +123,13 @@ To create the workflow for this process, perform the below steps.
 
     ![](./images/mba11.jpg " ")
 
-7. Similarly add another source table TRANSFORMED_REL_DATA into the workflow.
+7. Similarly add another source table TRANSFORMED\_REL\_DATA into the workflow.
 
     ![](./images/mba12.jpg " ")
 
     ![](./images/mba13.jpg " ")
 
-## **STEP:4** Build the Models
+## **STEP 4:** Build the Models
 
 In this topic, you build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
@@ -174,7 +174,7 @@ A common data mining practice is to build (or train) your model against part of 
 
     ![](./images/mba24.jpg " ")
 
-## **STEP:5** Interpreting the results of the market basket analysis
+## **STEP 5:** Interpreting the results of the market basket analysis
 
 Referring to the association rules of the relational data table, there are almost 1386 association rules generated from the analysis we did. That’s a lot. So, we can basically interpret the results shown in Data Miner with rationale such as:
 
@@ -208,7 +208,7 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
-* **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, David Start, Pragati Mourya.
+* **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, Pragati Mourya.
 * **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021
 
  

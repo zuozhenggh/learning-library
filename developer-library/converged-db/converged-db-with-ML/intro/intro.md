@@ -43,7 +43,7 @@ Users should not have to create and manage multiple databases to access differen
 Once you complete your setup, the next four labs in this workshop cover these individual data types, and the final lab consists of multi-model examples:
 
   - Lab : OML Data Miner
-  - Lab : OML Data PreparationON
+  - Lab : OML Data Preparation
   - Lab : OML Regression
   - Lab : OML Market Basket Analysis
   - Lab : OML Clustering
@@ -60,6 +60,6 @@ You will also download Oracle SQL Developer to help execute the programs associa
 
 ## Acknowledgements
 - **Owners** - Balasubramanian Ramamoorthy, Amith Ghosh
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K., Robbie Ruppel, David Start
+- **Contributors** - Laxmi Amarappanavar, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K
 - **Team** - North America Database Specialists
 - **Last Updated By** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021

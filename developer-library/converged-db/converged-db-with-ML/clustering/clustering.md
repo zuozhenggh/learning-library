@@ -30,10 +30,10 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 
-## **STEP:1** Create a Data Miner Project
+## **STEP 1:** Create a Data Miner Project
 To create a Data Miner Project, perform the following steps:
 
-1.	In the Data Miner tab, right-click the data mining user connection that you previously created, and select **New Project**, as shown here:
+1.	In the Data Miner tab, right-click the data mining user connection that you previously created, and select **New Project**, as shown here.
     ![](./images/clustering_6.jpg " ") 
  
 2.	In the Create Project window, enter a project name (in this example Clustering) and then **click OK**.
@@ -46,40 +46,40 @@ To create a Data Miner Project, perform the following steps:
     ![](./images/clustering_8.png " ")
   
  
-## **STEP:2** Build a Data Miner Workflow
+## **STEP 2:** Build a Data Miner Workflow
 
-A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
-A workflow:
-  - Provides directions for the Data Mining server. For example, the workflow says, "Build a model with these characteristics." The data-mining server builds the model with the results returned to the workflow.
-  - Enables you to interactively build, analyze, and test a data mining process within a graphical environment.
-  - Might be used to test and analyze only one cycle within a particular phase of a larger process, or it may encapsulate all phases of a process designed to solve a particular business problem.
+1. A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
+    A workflow:
+     - Provides directions for the Data Mining server. For example, the workflow says, "Build a model with these characteristics." The data-mining server builds the model with the results returned to the workflow.
+     - Enables you to interactively build, analyze, and test a data mining process within a graphical environment.
+     - Might be used to test and analyze only one cycle within a particular phase of a larger process, or it may encapsulate all phases of a process designed to solve a particular business problem.
   
-    **What Does a Data Miner Workflow Contain?**
+2. **What Does a Data Miner Workflow Contain?**
 
-    Visually, the workflow window serves as a canvas on which you build the graphical representation of a data mining process flow, like the one shown here:
+    Visually, the workflow window serves as a canvas on which you build the graphical representation of a data mining process flow, like the one shown here.
 
     ![](./images/clustering_9.jpg " ")
 
     ***Notes:***
-    - Each element in the process is represented by a graphical icon called a node.
-    - Each node has a specific purpose, contains specific instructions, and may be modified individually in numerous ways.
-    - When linked together, workflow nodes construct the modeling process by which your particular data mining problem is solved.
+     - Each element in the process is represented by a graphical icon called a node.
+     - Each node has a specific purpose, contains specific instructions, and may be modified individually in numerous ways.
+     - When linked together, workflow nodes construct the modeling process by which your particular data mining problem is solved.
   
     As you will learn, any node may be added to a workflow by simply dragging and dropping it onto the workflow area. Each node contains a set of default properties. You modify the properties as desired until you are ready to move onto the next step in the process.
 
-## **STEP:3** Sample Data Mining Scenario
+3. **Sample Data Mining Scenario**
+   
+    In this topic, you will create a data mining process that groups customers into clusters based on their attributes like items purchased, spending, location etc. This technique is called Clustering. Typically clustering is used in customer segmentation analysis to try an better understand what type of customers you have.
 
-In this topic, you will create a data mining process that groups customers into clusters based on their attributes like items purchased, spending, location etc. This technique is called Clustering. Typically clustering is used in customer segmentation analysis to try an better understand what type of customers you have.
+     Like with all data mining techniques, Clustering will not tell you or give you some magic insight into your data. Instead, it gives you more information for you to interpret and add the business meaning to them. With Clustering, you can explore the data that forms each cluster to understand what it really means.
+     To accomplish this goal, you build a workflow that enables you to:
 
-Like with all data mining techniques, Clustering will not tell you or give you some magic insight into your data. Instead, it gives you more information for you to interpret and add the business meaning to them. With Clustering, you can explore the data that forms each cluster to understand what it really means.
-To accomplish this goal, you build a workflow that enables you to:
-
-- Build and compare several Clustering models
-- Select and run the models that produce the most actionable results
+     - Build and compare several Clustering models
+     - Select and run the models that produce the most actionable results
   
-To create the workflow for this process, perform the below steps.
+    To create the workflow for this process, perform the below steps.
 
-## **STEP:4** Create a Workflow and Add data for the workflow
+## **STEP 3:** Create a Workflow and Add data for the workflow
 
 1.	Right-click your project (Retail\_Data\_Analysis) and select New Workflow from the menu.
     ![](./images/clustering_10.jpg " ")
@@ -133,7 +133,7 @@ To create the workflow for this process, perform the below steps.
  
   ![](./images/clustering_23.png " ")
 
-## **STEP:5** Build the Models
+## **STEP 4:** Build the Models
 
 In this topic, you build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
@@ -151,60 +151,59 @@ By default, the models are all tested. The test data is created by randomly spli
        
 3. At this point, we can run the Clustering Build node or we can have a look at the setting for each algorithm.
 
-## **STEP:6** The Clustering Algorithm settings
+**The Clustering Algorithm settings**
 
-1. To setup the Cluster Build node you will need to double click on the node to open the properties window. The first thing that you need to do is to specify the Case ID (i.e. the primary key). In our example, this is the **CUSTOMERID**.
+4. To setup the Cluster Build node you will need to double click on the node to open the properties window. The first thing that you need to do is to specify the Case ID (i.e. the primary key). In our example, this is the **CUSTOMERID**.
     ![](./images/clustering_27.png " ")
 
-2. Oracle Data Miner has three clustering algorithms. The first of these is the **expectation-maximization** clustering, the second clustering algorithm is the well know **k-Means** (it is an enhanced version of it) and the third is O-Cluster. To look at the settings for each algorithm, click on the model listed under Model Settings and then click on the **Edit Advanced** icon as shown below.
+5. Oracle Data Miner has three clustering algorithms. The first of these is the **expectation-maximization** clustering, the second clustering algorithm is the well know **k-Means** (it is an enhanced version of it) and the third is O-Cluster. To look at the settings for each algorithm, click on the model listed under Model Settings and then click on the **Edit Advanced** icon as shown below.
     ![](./images/clustering_28.png " ") ![](./images/clustering_29.png " ")
 
-3. A new window will open that lists all the attributes for the in the data source. The CUSTOMERID is unchecked as we said that this was the CASE\_ID.
+6. A new window will open that lists all the attributes for the in the data source. The CUSTOMERID is unchecked as we said that this was the CASE\_ID.
 
-4. Click on the Algorithm Settings tab to see the internal settings for the **k-means algorithm**. All of these settings have a default value. Oracle has worked out what the optimal setting are for you. The main setting that you might want to play with is the Number of Clusters to build. The default is 10, but you might want to play with numbers between 5 and 15 depending on the number of clusters or segments you want to see in your data.
+7. Click on the Algorithm Settings tab to see the internal settings for the **k-means algorithm**. All of these settings have a default value. Oracle has worked out what the optimal setting are for you. The main setting that you might want to play with is the Number of Clusters to build. The default is 10, but you might want to play with numbers between 5 and 15 depending on the number of clusters or segments you want to see in your data.
 
-5. To view the algorithm settings for **O-Cluster** or **EM Cluster** click on this under the Model Setting. We have less internal settings to worry about here, but we again can determine how many clusters we want to produce.
+8. To view the algorithm settings for **O-Cluster** or **EM Cluster** click on this under the Model Setting. We have less internal settings to worry about here, but we again can determine how many clusters we want to produce.
 
-6. For our scenario, we are going to take the default settings.
+9. For our scenario, we are going to take the default settings.
     ![](./images/clustering_30.png " ")
 
-## **STEP:7** Run/Generate the Clustering models
+**Run/Generate the Clustering models**
 
-At this stage we have the data set-up, the Cluster Build node created and the algorithm setting all set to what we want.
-Now we are ready to run the Cluster Build node.
+10. At this stage we have the data set-up, the Cluster Build node created and the algorithm setting all set to what we want. Now we are ready to run the Cluster Build node.
 
-To do this, right click on the Cluster Build node and click run. ODM will go create a job that will contain PL/SQL code that will generate a cluster model based on K-Means and a second cluster model based on O-Cluster. This job is submitted to the database and when it is complete, we will get the little green tick mark on the top right hand corner of the Cluster Build node.
+11. To do this, right click on the Cluster Build node and click run. ODM will go create a job that will contain PL/SQL code that will generate a cluster model based on K-Means and a second cluster model based on O-Cluster. This job is submitted to the database and when it is complete, we will get the little green tick mark on the top right hand corner of the Cluster Build node.
     ![](./images/clustering_31.png " ") ![](./images/clustering_32.png " ")
                
-## **STEP:8** View the Cluster Models
+## **STEP 5:** View the Cluster Models/Rules
 
-To view the the cluster modes we need to right click the Cluster Build node and select View Models from the drop down list. We get an additional down down menu that gives the names of the three cluster models that were developed.
+1. To view the the cluster modes we need to right click the Cluster Build node and select View Models from the drop down list. We get an additional down down menu that gives the names of the three cluster models that were developed.
 
-In my case, these are **CLUS\_EM_1\_8, CLUS\_KM\_1\_8 and CLUS\_OC\_1\_8**. You may get different numbers on your model names. These numbers are generated internally in ODM.
+2. In my case, these are **CLUS\_EM_1\_8, CLUS\_KM\_1\_8 and CLUS\_OC\_1\_8**. You may get different numbers on your model names. These numbers are generated internally in ODM.
 The first one that we will look at will be the K-Mean Cluster Model (**CLUS\_KM\_1\_8**). 
 
     Select this from the menu.
     ![](./images/clustering_33.png " ")
  
-## **STEP:9** View the Cluster Rules
+**View the Cluster Rules**
 
-1. The hierarchical K-Mean cluster mode will be displayed. You might need to readjust/resize some of the worksheets/message panes etc in ODM to get the good portion of the diagram to display.
+3. The hierarchical K-Mean cluster mode will be displayed. You might need to readjust/resize some of the worksheets/message panes etc in ODM to get the good portion of the diagram to display.
     
     ![](./images/clustering_34.png " ") ![](./images/clustering_35.png " ")
 
     With ODM you cannot change, alter, merge, split, etc. any of the clusters that were generated. 
 
-2. To see that the cluster rules are for each cluster you can click on a cluster. When you do this you should get a pane (under the cluster diagram) that will contain two tabs, Centroid and Cluster Rule.
+4. To see that the cluster rules are for each cluster you can click on a cluster. When you do this you should get a pane (under the cluster diagram) that will contain two tabs, Centroid and Cluster Rule.
 
-3. The Centroid tab provides a list of the attributes that best define the selected cluster, along with the average value for each attribute and some basic statistical information.
+5. The Centroid tab provides a list of the attributes that best define the selected cluster, along with the average value for each attribute and some basic statistical information.
 
   ![](./images/clustering_36.png " ")  ![](./images/clustering_37.png " ")
  
-4. For each cluster in the tree we can see the number of cases in each cluster the percentage of overall cases for this cluster. Work your way down the tree exploring each of the clusters produced.
+6. For each cluster in the tree we can see the number of cases in each cluster the percentage of overall cases for this cluster. Work your way down the tree exploring each of the clusters produced.
 
     The further down the tree you go the smaller the percentage of cases will fall into each cluster.
 
-## **STEP:10** Compare Clusters
+## **STEP 6:** Compare Clusters
 
 1. In addition to the cluster tree, ODM also has two addition tabs to allow us to explore the clusters. These are Cluster and Compare tabs.
 
@@ -215,9 +214,9 @@ The first one that we will look at will be the K-Mean Cluster Model (**CLUS\_KM\
 3. We can use this important to start building up a picture of what each cluster might represent based on the values (and their distribution) for each cluster.
     ![](./images/clustering_39.png " ")
  
-## **STEP:11** Multi-Cluster – Multi-variable Comparison of Clusters
+**Multi-Cluster – Multi-variable Comparison of Clusters**
 
-1. The next level of comparison and evaluation of the clusters can be found under the Compare tab.
+4. The next level of comparison and evaluation of the clusters can be found under the Compare tab.
 This lets us compare two clusters against each other at an attribute level. For example, let us compare cluster 3 and 11. The attribute and graphics section is updated to reflect the data for each of cluster.   
 
     These are color coded to distinguish the two clusters.
@@ -226,60 +225,59 @@ This lets us compare two clusters against each other at an attribute level. For 
  
     We can work our way down through each attribute and again we can use this information to help us to understand what each cluster might represent.
 
-2. An additional feature here is that we can do multi-variable (attribute) comparison. Holding down the control button select STATE, UNITPRICE\_SUM and QUANTITY\_SUM. With each selection, we get a new graph appearing at the bottom of the screen. This shows the distribution of the values by attribute for each cluster.  We can learn a lot from this.
+5. An additional feature here is that we can do multi-variable (attribute) comparison. Holding down the control button select STATE, UNITPRICE\_SUM and QUANTITY\_SUM. With each selection, we get a new graph appearing at the bottom of the screen. This shows the distribution of the values by attribute for each cluster.  We can learn a lot from this.
 
     ![](./images/clustering_41.png " ")
 
     So one possible conclusion we could draw from this data would be that Cluster 3 has customers from Arkansas and Cluster 11 has customers only from Louisiana.
 
-## **STEP:12** Renaming Clusters
+**Renaming Clusters**
 
-When you have discovered a possible meaning for a Cluster, you can give it a meaningful name instead of it having a number. In our example, we would like to re-label Cluster 3 to ‘Arkansas Customers’. To do this click on the Edit button that is beside the drop down that has cluster 3. Enter the new label and click OK.
+6. When you have discovered a possible meaning for a Cluster, you can give it a meaningful name instead of it having a number. In our example, we would like to re-label Cluster 3 to ‘Arkansas Customers’. To do this click on the Edit button that is beside the drop down that has cluster 3. Enter the new label and click OK.
 
     ![](./images/clustering_42.png " ")
  
-    In the drop down, we will now get the new label appearing instead of the cluster number.
+7. In the drop down, we will now get the new label appearing instead of the cluster number.
     Similarly, we can do this for the other cluster **e.g. ‘Louisiana Customer’**.
 
     ![](./images/clustering_43.png " ")
  
-We have just looked at how to explore our **K-Means** model. You can do similar exploration of the **O-Cluster** and **EM** (**expectation maximization**) model.
+    We have just looked at how to explore our **K-Means** model. You can do similar exploration of the **O-Cluster** and **EM** (**expectation maximization**) model.
   
-We have now explored our clusters and we have decided which of our Clustering Models best suits our needs. In our scenario, we are going to select the **K-Mean** model to apply and label our new data.
+    We have now explored our clusters and we have decided which of our Clustering Models best suits our needs. In our scenario, we are going to select the **K-Mean** model to apply and label our new data.
 
-## **STEP:13** Create the Apply Node
+## **STEP 7:** Create the Apply Node
 
 We have already setup our sample of data that we are going to use as our Apply Data Set. We did this when we setup the two different Sample node.
 
 We are going to use the Sample node that was set to 40%.
 
-The first step requires us to create an Apply Node. This is under the Model Operations tab, in the components panel. Click on the Apply node, move the mouse to the workflow worksheet and click near the Sample Apply node.
+1. The first step requires us to create an Apply Node. This is under the Model Operations tab, in the components panel. Click on the Apply node, move the mouse to the workflow worksheet and click near the Sample Apply node.
 
     ![](./images/clustering_44.png " ") 
  
-    To connect the two nodes, move the mouse to the Sample Apply node and right click. Select Connect from the drop down menu and then move the mouse to the Apply node and click again. A connection arrow appears joining these nodes.
+2. To connect the two nodes, move the mouse to the Sample Apply node and right click. Select Connect from the drop down menu and then move the mouse to the Apply node and click again. A connection arrow appears joining these nodes.
 
     ![](./images/clustering_45.png " ") ![](./images/clustering_46.png " ")
              
-## **STEP:14** Specify the Clustering Model to use & Output Data**
-
-Now we will select the clustering model we want to apply to our new data.
-1. We need to connect the **Cluster Build** node to the **Apply** node. Move the mouse to the Cluster Build node; **right click** and select connect from the drop down menu. Move the mouse to the **Apply** node and click. We get the connection arrow between the two nodes.
+**Specify the Clustering Model to use & Output Data**
+3. Now we will select the clustering model we want to apply to our new data.
+    We need to connect the **Cluster Build** node to the **Apply** node. Move the mouse to the Cluster Build node; **right click** and select connect from the drop down menu. Move the mouse to the **Apply** node and click. We get the connection arrow between the two nodes.
 
     ![](./images/clustering_47.png " ")
  
-2. The final step is to specify what clustering mode we would like to use. In our scenario, we are going to specify the K-Mean model.
+4. The final step is to specify what clustering mode we would like to use. In our scenario, we are going to specify the K-Mean model.
 
     (Single) Click the Cluster Build node. We now need to use the Property Inspector to select the K-Means model for the apply set. 
 
     ![](./images/clustering_48.png " ")
  
-3. In the Models tab of the Property Inspector, we should have our three cluster models listed. Under the Output column click in the box for the O-Cluster and EM Cluster, model. We should now get a little red ‘x’ mark appearing. The K-Mean model should still have the green arrow under the Output column.
+5. In the Models tab of the Property Inspector, we should have our three cluster models listed. Under the Output column click in the box for the O-Cluster and EM Cluster, model. We should now get a little red ‘x’ mark appearing. The K-Mean model should still have the green arrow under the Output column.
 
     ![](./images/clustering_49.png " ")
  
 
-## **STEP:15** Run the Apply Node
+## **STEP 8:** Run the Apply Node/View Result
 
 We have one last data setup to do on the Apply node. We need to specify what data from the apply data set we want to include in the output from the Apply node.  For simplicity, we will include the primary key, but you could include all the attributes.  In addition to including the attributes from the apply data source, the Apply Node will also create some attributes based on the Cluster model we selected. In our scenario, the K-Means model will create two additional attributes. One of these will contain the Cluster ID and the other attribute will be the probability of the cluster being valid.
 
@@ -299,24 +297,24 @@ We have one last data setup to do on the Apply node. We need to specify what dat
 
     ![](./images/clustering_53.png " ")
  
-## **STEP:14** View the Results
+**View the Results**
 
-To view the results and the output produced by the Apply node, right click on the Apply node and select View Data from the drop down menu.
+5. To view the results and the output produced by the Apply node, right click on the Apply node and select View Data from the drop down menu.
 
-We get a new tab opened in SQL Developer that will contain the data. This will consist of the CUSTOMERID, the K-means Cluster ID and the Cluster Probability. You will see that the some of the clusters assigned will have a number and some will have the cluster labels that we assigned in a previous step.
+    We get a new tab opened in SQL Developer that will contain the data. This will consist of the CUSTOMERID, the K-means Cluster ID and the Cluster Probability. You will see that the some of the clusters assigned will have a number and some will have the cluster labels that we assigned in a previous step.
 
     ![](./images/clustering_54.png " ")
  
     It is now up to you to decide how you are going to use this clustering information in an operational or strategic way in your organization.
 
-**Summary**
+<!-- **Summary**
 In this workshop, you examined and solved a "Clustering" data mining business problem by using the Oracle Data Miner graphical user interface, which is included as an extension to SQL Developer.
 
  In this tutorial, you have learned how to:
 
   -  Identify Data Miner interface components
   - Create a Data Miner project
-  - Build a Workflow document that uses Clustering models for market research to segment the customers based  on their choice and preference.
+  - Build a Workflow document that uses Clustering models for market research to segment the customers based  on their choice and preference. -->
 
 ## Learn More
  - [ML](https://www.oracle.com/in/data-science/machine-learning/what-is-machine-learning/)
@@ -338,5 +336,5 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
-* **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, David Start, Pragati Mourya.
+* **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, Pragati Mourya.
 * **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021
