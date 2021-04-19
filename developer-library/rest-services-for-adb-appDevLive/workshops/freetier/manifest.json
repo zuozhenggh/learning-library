@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "RESTful Services for your Autonomous Database",
+  "workshoptitle": "Modern App Dev with Oracle REST Data Services",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
@@ -23,10 +23,15 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md"
         },
         {
-            "title": "Lab 3: RESTul Services",
+            "title": "Lab 3: User Setups",
             "description": "RESTful Services for your Autonomous Database",
-            "filename": "../../rest_services_for_adb/rest_services_for_adb.md"
+            "filename": "../../user_setups/user_setups.md"
         },
+        {
+            "title": "Lab 4: RESTul Services",
+            "description": "Modern App Dev with Oracle REST Data Services",
+            "filename": "../../rest_services_for_adb/rest_services_for_adb.md"
+        },        
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
