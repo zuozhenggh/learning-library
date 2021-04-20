@@ -121,7 +121,9 @@ There it is, the final cURL command we will use to load the data into the table.
 8. When the command is finished, you should see that all 2,097,148 records were inserted into the table.
 
     ```
-    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:123456ZAQWSX!! "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
+    -H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
+    "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 
     #INFO Number of rows processed: 2,097,148
     #INFO Number of rows in error: 0
@@ -139,7 +141,9 @@ copy BATH LOAD command
 append to the following format:
 
 
-curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:PASSWORD "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"\
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H \
+"Content-Type:text/csv" --user gary:PASSWORD \
+"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"\
 
 download csv file via PAR
 
@@ -150,6 +154,11 @@ bspendol@cloudshell:~ (eu-frankfurt-1)$ curl --write-out '%{time_total}' -X POST
 #INFO Number of rows in error: 0
 #INFO Last row processed in final committed batch: 2,097,148
 0 - SUCCESS: Load processed without errors
+
+
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
+-H "Content-Type:text/csv" --user gary:WElcome11##11 \
+"https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 
 SQL WOrksheet
 
