@@ -4,7 +4,7 @@ Estimated time: 45 minutes
 
 ## Introduction
 
-In this tutorial, we will install Nextcloud on a minimal footprint and examine expansion options. We use a single OCI Arm A1 instance for the server to begin with. We shall also run Nextcloud as a set of containers, using the Podman. Podman is a container engine for managing and running containers using the Open Container Initiative standards. It offers full API compatibility with Docker and acts as a drop in replacement for the `docker` command. It however offers some benefits compared to Docker, which include a daemonless architecture, support for rootless containers and cgroupsv2 support.
+In this tutorial, you will install Nextcloud, the popular open source collaboration platform on Oracle Cloud Infrastructure (OCI). You will use a single OCI Arm A1 instance for the Nextcloud server. You shall also run Nextcloud as a set of containers, using Podman. Podman is a container engine for managing and running containers using the Open Container Initiative standards. It offers full API compatibility with Docker and acts as a drop in replacement for the `docker` command. It however offers some benefits compared to Docker, which include a daemonless architecture, support for rootless containers and cgroupsv2 support.
 
 Nextcloud offers docker container images which support the Arm architecture. Nextcloud also requires a database, for which we can use MySQL or MariaDB. For more scalable deployments, you can consider using the MySQL database service on OCI which makes it easy to scale, back up and manage your MySQL database. 
 
@@ -21,7 +21,7 @@ With these components, we have a basic topology for our deployment.
 In this lab, you will:
 
 * Create an OCI Arm A1 compute instance 
-* Prepare the compute instance for deploying containerized applicaions
+* Prepare the compute instance for deploying containerized applications
 * Deploy Nextcloud as a set of containers.
 * Connect the application and setup file sync.
 * Clean up the deployments

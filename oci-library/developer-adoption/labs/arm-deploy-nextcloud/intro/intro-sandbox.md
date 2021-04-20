@@ -1,21 +1,27 @@
-# Introduction
-
-## Deploying Nextcloud on OCI Arm A1 compute platform
-
-This tutorial walks you through how to get started with Nextcloud on the OCI Arm A1 compute platform. 
-
-Nextcloud is a suite of file hosting and collaboration tools. While functionally similar to Dropbox, Google Drive or Office365, Nextcloud is free and open-source and can be self hosted on any cloud infrastructure platform. Nextcloud can be accessed over the web interface or iOS and Android apps for devices that can keep your photos and documents automatically synced with your Nextcloud server on OCI. OCI Arm A1 provides a robust and efficient platform for hosting your own private file hosting and collaboration cloud. 
-
-Additonally, you will use the new set of tools such as [Podman](podman.io) that are part of the container tools package in Oracle Linux 8.
+# Deploying Nextcloud on OCI Arm A1 compute platform 
 
 Estimated time: 45 minutes
+
+## Introduction
+
+In this tutorial, you will install Nextcloud, the popular open source collaboration platform on Oracle Cloud Infrastructure (OCI). You will use a single OCI Arm A1 instance for the Nextcloud server. You shall also run Nextcloud as a set of containers, using Podman. Podman is a container engine for managing and running containers using the Open Container Initiative standards. It offers full API compatibility with Docker and acts as a drop in replacement for the `docker` command. It however offers some benefits compared to Docker, which include a daemonless architecture, support for rootless containers and cgroupsv2 support.
+
+Nextcloud offers docker container images which support the Arm architecture. Nextcloud also requires a database, for which we can use MySQL or MariaDB. For more scalable deployments, you can consider using the MySQL database service on OCI which makes it easy to scale, back up and manage your MySQL database. 
+
+Data created inside a container is not persisted, and Nextcloud requires persistent storage to store the files we upload, and for internal state. To persist data, we can use volumes using the OCI Block Storage service. A volume is a storage device created and managed by Podman. Volumes are created directly using the `podman volume` command or during container creation.  
+
+To enable the Nextcloud web based UI and the services, we need to make the necessary changes to the OCI Network security list to allow traffic.   
+
+With these components, we have a basic topology for our deployment.
+
+![Architecture](./images/arch.png)
 
 ### Objectives
 
 In this lab, you will:
 
 * Create an OCI Arm A1 compute instance 
-* Prepare the compute instance for deploying containerized applicaions
+* Prepare the compute instance for deploying containerized applications
 * Deploy Nextcloud as a set of containers.
 * Connect the application and setup file sync.
 * Clean up the deployments

@@ -15,6 +15,10 @@
       "filename": "../../create-a1-instance/create-a1-instance.md"
     },
     {
+      "title": "Expose application ports to users",
+      "filename": "../../allow-traffic/allow-traffic.md"
+    },
+    {
       "title": "Deploying Nextcloud on the OCI Arm A1 compute platform",
       "description": "This workshop guides the user on how to get started with Nextcloud on the OCI Arm A1 compute platform. Nextcloud is a suite of file hosting and collaboration tools, and can be used for collaborative working as well as personal file management and sync in the cloud. ",
       "filename": "../../tutorial/deploy-nextcloud-a1.md"
