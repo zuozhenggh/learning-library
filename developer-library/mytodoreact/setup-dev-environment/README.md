@@ -138,7 +138,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 4.  Set **ADMIN password, Network Access Type and License Type**
    - Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
-    Please note the ADMIN password; irt will be required later.
+    Please note the ADMIN password; it will be required later.
    - Set the Network Access type to "Allow secure access from everywhere".
    - Set the license type to "Bring Your Own License (BYOL)" (does not matter for this workshop)
    - Click on "Create Autonomous Database"
@@ -165,12 +165,12 @@ The database creation will take a few minutes.
       You will be requested to enter a password for wallet encryption, this is separate for the ADMIN password but you could reuse the statement.
       A wallet.zip file will be created in the current directory.
 
-6. Create TODOUSER using SQLcl in Cloud shell
+6. Create TODOUSER using sql utility in Cloud shell
 
    - Stay in mtdrwokshop/setup-dev-environment directory and launch
      sql with /nolog option
 
-      ![](images/SQLCL-Cloud-Shell.png " ")
+      ![](images/SQLCl-Cloud-Shell.png " ")
 
    - Point the tool at your wallet.zip file
      SQL> set cloudconfig wallet.zip
@@ -180,23 +180,13 @@ The database creation will take a few minutes.
 
      - Connect to mtdrdb_tp service, as database ADMIN user (remember the
        password given to ADMIN above)
+       
       SQL> connect ADMIN@mtdrdb_tp
 
       - Create TODOUSER (replace <password> by a strong password)
-      ```
-      <copy> CREATE USER todouser IDENTIFIED BY <password>              DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;</copy>
-      ```
-       SQL> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;
-
-       - In case of ORA-00922, perform the operation in two steps and omit
-         UNLIMITED QUOTA ON data
-       ```
-       <copy> CREATE USER todouser IDENTIFIED BY <password>;
         ```
+        <copy> CREATE USER todouser IDENTIFIED BY JDBCmytodo123# DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
         ```
-        <copy>ALTER USER todouser DEFAULT TABLESPACE data;</copy>
-       ```
-
        - Grant some privileges to TODOUSER by executing the following command under SQLCl
       ```
       <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
