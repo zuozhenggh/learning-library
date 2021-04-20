@@ -34,8 +34,6 @@ Estimated Workshop Time:  2 hours
 Oracle Application Continuity provides:
 * Continuous availability for applications
 
-Need something here
-
 ![](./images/RACandRACFamily.png " ")
 
 ## Application Continuity and MAA
