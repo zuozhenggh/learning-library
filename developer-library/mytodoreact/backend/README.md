@@ -38,7 +38,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 ## **STEP 1**: Set values for workshop environment variables
 
-1. Set the root directoey of the workshop
+1. Set the root directory of the workshop
 ```
 <copy>export MTDRWORKSHOP_LOCATION=~/mtdrworkshop<copy>
 ```
@@ -142,8 +142,11 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 1. From the hamburger  menu navigate **Developer Services** > **API Management**
    ![](images/API-Gateway-menu.png " ")
 
-2. Click on Todolist gateway
-   ![](images/Gateway.png " ")
+2. Configure the basic info: name, compartment, VCN and Subnet
+    - VCN: pick on of the vitual circuit network
+    - Subnet pick the public subnet   
+    The click "Create"
+  ![](images/Basic-gateway.png " ")
 
 3. Click on Deployments
    ![](images/Deployment-menu.png " ")
@@ -151,11 +154,8 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 4. Create a todolist deployment
    ![](images/Deployment.png " ")
 
-5. Configure the basic info: name, compartment, VCN and Subnet
-    - VCN: pick on of the vitual circuit network
-    - Subnet pick the public subnet   
-    The click "Create"
-  ![](images/Basic-gateway.png " ")
+5. Click on Todolist gateway
+     ![](images/Gateway.png " ")
 
 6. Configure Cross-origin resource sharing (CORS) policies
   CORS is a security mechanism that will prevent  running application loaded from origin A  from using resources from another origin B.
