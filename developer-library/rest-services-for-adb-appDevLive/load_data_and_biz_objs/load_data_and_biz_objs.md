@@ -4,7 +4,7 @@
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Database, create and REST enable a table.
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
