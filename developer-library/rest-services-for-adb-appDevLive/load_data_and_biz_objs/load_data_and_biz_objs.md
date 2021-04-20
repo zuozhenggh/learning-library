@@ -19,3 +19,52 @@ Estimated Lab Time: 20 minutes
 - Completed the Create and auto-REST enable a table lab
 
 ## **STEP 1**: Load data into the Database
+
+open cURL slideout
+
+copy BATH LOAD command
+
+append to the following format:
+
+
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:PASSWORD "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"\
+
+download csv file via PAR
+
+run command in cloud console
+
+bspendol@cloudshell:~ (eu-frankfurt-1)$ curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:PASSWORD "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+#INFO Number of rows processed: 2,097,148
+#INFO Number of rows in error: 0
+#INFO Last row processed in final committed batch: 2,097,148
+0 - SUCCESS: Load processed without errors
+
+SQL WOrksheet
+
+select count(*) from csv_data
+
+add business logic procedure
+
+
+create or replace procedure csv_biz_logic as
+
+begin
+
+    null;
+
+end csv_biz_logic;
+
+test business logic
+
+exec csv_biz_logic;
+
+## Conclusion
+
+In this lab, you loaded over two million rows into a table with curl and REST as well as added a business logic procedure to the database.
+
+## Acknowledgements
+
+- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
+- **Last Updated By/Date** - February 2021
+- **Workshop Expiry Date** - February 2022
+
