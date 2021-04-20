@@ -2,7 +2,7 @@
 
 ## Java applications on OCI Arm A1 compute platform
 
-Learn how to build and deploy Java applications as containers on the OCI Arm A1 compute platform. You will deploy a Todo application with a database as containers running on the OCI Arm A1 compute platform. Additonally, you will use the new set of container tools such as [Podman](podman.io) that are part of the container tools 
+Learn how to build and deploy Java applications as containers on the OCI Arm A1 compute platform. You will deploy a Todo application with a database, as containers running on the OCI Arm A1 compute platform. Additionally, you will use the new set of container tools such as [Podman](podman.io) that are available in Oracle Linux 8.0
 
 Estimated time: 45 minutes
 
@@ -27,11 +27,10 @@ In this lab, you will:
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
+### Learn More
 
-* [Cloud Native on OCI using MuShop sample](https://oracle-quickstart.github.io/oci-cloudnative/)
-* [Reference Architecture: Deploy a microservices-based application in Kubernetes](https://docs.oracle.com/en/solutions/cloud-native-ecommerce/index.html#GUID-CB180453-1F32-4465-8F27-EA7300ECF771)
-* [Overview of Functions](https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm)
+* [OCI Arm A1 compute platform](https://developer.oracle.com/arm)
+
 
 ## Acknowledgements
 

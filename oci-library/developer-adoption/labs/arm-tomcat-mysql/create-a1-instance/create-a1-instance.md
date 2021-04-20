@@ -4,7 +4,7 @@
 
 You will take on the persona of an Operations Engineer. You will initiate the Oracle cloud environment that will be used to create and deploy your Java EE application. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy the Oracle Cloud Infrastructure Arm A1 compute instance to host a Java EE application using the Tomcat 9.0 and MySQL server containers.
 
-Estimated time: 20 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
@@ -51,17 +51,24 @@ Now you are ready to move on to Step 3.
 
    ![Instances Menu](images/01_nav_instances.png " ")
 
-1. Verify you are in the **AppDev** Compartment and click **Create Instance**.
+1. Open the  instance creation flow.
+   1. Verify you are in the **AppDev** Compartment 
+   1. Click **Create Instance**.
 
    ![Create Instance](images/02_create_instance.png " ")
 
-1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. Name the instance  **JavaApp** and click the **Change Shape** button to see the available compute shapes.
+1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. 
+   1. Name the instance  **JavaApp** 
+   1. Click the **Change Shape** button to see the available compute shapes.
 
    ![ Create Instance](images/03_create_instance02.png " ")
    
-1. Choose the Ampere Arm based processor in the choice for shape series. Choose the `VM.Standard.A1.Flex` shape from the list of shapes with Ampere Arm based processors.
+1. Configure the resources for your instance. 
+   1. Choose the Ampere Arm based processor in the choice for shape series. 
+   1. Choose the `VM.Standard.A1.Flex` shape from the list of shapes with Ampere Arm based processors. OCI Arm A1 shapes are flexible and you can modify the number of cores and the amount of memory. Choose 1 core and 6 GB of memory for the VM.
+
    ![ Choose Shape](images/04_create_instance03.png " ")
-   OCI Arm A1 shapes are flexible and you can freely modify the number of cores and the amount of memory. Choose 1 core and 6 GB of memory for the VM.
+   
 
 1. Choose your networking options. Create a new VCN and subnet for your next cloud deployment. Make sure you choose to assigna public IP address for your instance. 
 
@@ -71,9 +78,8 @@ Now you are ready to move on to Step 3.
 
    ![Network options](images/06_create_instance05.png " ")
 
-1. Click create the create the networking resources and launch the compute instance.
+1. Click **Create** to create the networking resources and launch the compute instance.
    ![launch instance](images/07_create_instance06.png " ")
-
 
 You may now [proceed to the next lab](#next).
 

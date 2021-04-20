@@ -1,10 +1,19 @@
 # Running Java applications on OCI Arm A1 compute platform 
 
-This example shows how to run a containerized Java web application on Apache Tomcat on OCI Arm A1 compute platform.
+This example shows how to run a containerized Java web application on the OCI Arm A1 compute platform using Apache Tomcat and MySQL. The OCI Arm A1 compute platform based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
 
-## Deploying your workloads on OCI Arm A1 compute platform
 
-The OCI Arm A1 compute platform based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
+Estimated time: 20 minutes
+
+### Objectives
+
+- Build and deploy a Java EE application on an OCI Arm A1 instance 
+
+### Prerequisites
+
+- Your Oracle Cloud Trial Account
+- You have already created an OCI Arm A1 instance.
+- You have already setup security rules and firewall options to enable application connectivity
   
 ## How to run this example
 
@@ -14,21 +23,17 @@ To run this application, first prepare an OCI Arm A1 compute instance with a few
 
 Oracle Linux 8 uses Podman to run and manage containers. Podman is a daemonless container engine for developing, managing, and running Open Container Initiative containers and container images on your Linux system. Podman provides a Docker-compatible command line front end that can alias the Docker CLI: `alias docker=podman`.
 
+1. Login to the instance using SSH. Use the key you either generated or provided during the instance creation step. The default username for instances using the Oracle Linux operating system is `opc`.
+
 1. Install the `container-tools` module that pulls in all the tools required to work with containers.
     ```
     sudo dnf module install container-tools:ol8
     sudo dnf install git
     ```
 
-2. Open the port to expose for the application. 
-    ```
-    sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
-    sudo firewall-cmd --reload
-    ```
-
-3. Set SELinux to be in permissive mode so that Podman can easily interact with the host.
-
-  **Note**: This is not recommended for production use. However, setting up SELinux policies for containers are outside the scope of this tutorial. For details, see the Oracle Linux 8 documentation.
+1. Set SELinux to be in permissive mode so that Podman can easily interact with the host.
+    
+    **Note**: This is not recommended for production use. However, setting up SELinux policies for containers are outside the scope of this tutorial. For details, see the Oracle Linux 8 documentation.
 
     ```
     sudo setenforce 0
@@ -41,8 +46,6 @@ To get started, use SSH to log in to the compute instance and clone the reposito
 git clone https://github.com/oracle-quickstart/oci-arch-tomcat-mds.git
 cd oci-arch-tomcat-mds/java
 ```
-
-
 
 ## Build the web application
 
