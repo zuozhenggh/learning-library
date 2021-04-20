@@ -2,7 +2,7 @@
 
 ## About This Workshop
 
-This workshop covers how to load data in CSV files into the database and introduces key graph data modeling and analysis concepts and the interactive Graph Studio for working with graphs in an Autonomous Database. It shows you how to use graph queries to find circular payments, i.e. potentially fraudulent transactions. You will load data from CSV files containing (artificial) Account and Transaction information. Then create a graph and finally query it and visualize the results.
+This workshop introduces key graph data modeling and analysis concepts and the interactive Graph Studio for working with graphs in an Autonomous Database. It shows you how to create a graph from existing database tables or views, and then use graph queries to find circular payments, i.e. potentially fraudulent transactions. You will load data from CSV files containing (artificial) Account and Transaction information. Then create a graph and finally query it and visualize the results.
 
 Estimated Workshop Time: 45 minutes
 
@@ -27,9 +27,7 @@ In this workshop you will:
  
 ### Prerequisites
 
-* Oracle Cloud Account
-* Provisioned Autonomous Database-Shared instance
-* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)  
+* An Oracle Account
   
   
 
