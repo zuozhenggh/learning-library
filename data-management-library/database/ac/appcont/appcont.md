@@ -165,6 +165,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````    
 
     This will return an instance name, for example:
+    
     ````
     $ srvctl status service -d `srvctl config database` -s noac
         Service noac is running on instance(s) racHPNUY2
