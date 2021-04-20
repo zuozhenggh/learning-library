@@ -44,7 +44,93 @@ curl --location --request POST \
 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/' 
 ```
 
-4.  We are going to alter this a bit for our data load. First, we need to be in either the OCI Cloud Shell or a local computer with cURL installed. Every OCI account has Cloud Shell so we would encourage using that. To use the Cloud Shell, after logging into your OCI account, 
+**Save this code in a text editor or a notes application, we will be using it in just a bit.**
+
+4.  We are going to alter this a bit for our data load. First, we need to be in either the **OCI Cloud Shell** or a local computer with cURL installed. Every OCI account has Cloud Shell so we would encourage using that. 
+
+    To use the Cloud Shell, after logging into your OCI account, click the Cloud Shell icon in the upper right of the OCI banner:
+
+    ![Cloud Shell on OCI Banner](./images/ld-5.png)
+
+    The Cloud Shell will open on the lower part of the web browser:
+
+    ![Cloud Shell on bottom of browser](./images/ld-6.png)
+
+    We will be using the OCI CLoud Shell for examples in this lab going forward.
+
+5. Time to get ready for the data load. To start, we need to download the csv file. Using the Cloud Shell, enter the following command:
+
+    ````
+    <copy>curl -o 2M.csv PAR_URL_HERE</copy>
+    ````
+
+6. Now that we have the file local, we can load it into the database. Remember that cURL command we saved just a bit ago? Time to alter a few commands in there and run it via the Cloud Shell. 
+
+**Seeing we are going to be constructing a command, please use a text editor or notes application.**
+
+The cURL we had for **BATCH LOAD** was similar to the following:
+
+```
+curl --location --request POST \
+--data-binary @<FILE_NAME> \
+'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/' 
+```
+
+Let's add a few modifications. First, we can add **--write-out '%{time_total}'** so we can see exactly how long this data load took. 
+
+```
+curl --write-out '%{time_total}'
+```
+
+Now we need to tell the REST endpoint this is a POST operation with **-X POST**.
+
+```
+curl --write-out '%{time_total}' -X POST
+```
+
+File Time! We indicate that we have this csv file we want to use and the file name itself with the following addition to the command: **--data-binary "@2M.csv"**
+
+```
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv"
+```
+
+Time to set the headers of this HTTP request. We are going to set the content type and tell it we are sending over a csv file. -H indicated we are setting header variables and we want to set the Content-Type one: **-H "Content-Type:text/csv"**
+
+```
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv"
+```
+
+Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user gary:PASSWORD**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
+
+```
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:PASSWORD
+```
+
+Finally, we need to add the URL we copied previously. We will be appending **batchload?batchRows=5000&errorsMax=20** to indicate that this is a batch load, we want to load them in groups of 5000, and to stop running if we hit 20 errors:
+
+```
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:123456ZAQWSX!! "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+```
+
+There it is, the final cURL command we will use to load the data into the table. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
+
+7. Using the Cloud Console, paste your constructed cURL command at the prompt.
+
+    ![running the command in cloud shell](./images/ld-7.png)
+
+8. When the command is finished, you should see that all 2,097,148 records were inserted into the table.
+
+    ```
+    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:123456ZAQWSX!! "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+
+    #INFO Number of rows processed: 2,097,148
+    #INFO Number of rows in error: 0
+    #INFO Last row processed in final committed batch: 2,097,148
+    0 - SUCCESS: Load processed without errors
+    29.447
+    ```
+    the 29.447 is the result of the **--write-out '%{time_total}'** command we added indicating it took about 30 seconds to load 2 million records.
+
 
 open cURL slideout
 
