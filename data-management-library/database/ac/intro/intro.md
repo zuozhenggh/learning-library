@@ -3,7 +3,7 @@
 ## Introduction to Application Continuity ##
 Application Continuity (AC) is a feature available with the Oracle Real Application Clusters (RAC), Oracle RAC One Node and Oracle Active Data Guard options that masks outages from end users and applications by recovering the in-flight database sessions following recoverable outages. Application Continuity performs this recovery beneath the application so that the outage appears to the application as a slightly delayed execution.
 
-Application Continuity improves the user experience for both unplanned outages and planned maintenance. Application Continuity enhances the fault tolerance of systems and applications that use an Oracle database.
+Application Continuity improves the user experience for both planned maintenance and unplanned outages. Application Continuity enhances the fault tolerance of systems and applications that use an Oracle database.
 
 Watch the video below for an overview of Oracle RAC.
 
