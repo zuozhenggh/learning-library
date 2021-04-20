@@ -103,13 +103,16 @@ curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Typ
 Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user gary:PASSWORD**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
 
 ```
-curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:PASSWORD
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
+-H "Content-Type:text/csv" --user gary:PASSWORD
 ```
 
 Finally, we need to add the URL we copied previously. We will be appending **batchload?batchRows=5000&errorsMax=20** to indicate that this is a batch load, we want to load them in groups of 5000, and to stop running if we hit 20 errors:
 
 ```
-curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv" --user gary:123456ZAQWSX!! "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
+-H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
+"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 ```
 
 There it is, the final cURL command we will use to load the data into the table. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
@@ -120,18 +123,35 @@ There it is, the final cURL command we will use to load the data into the table.
 
 8. When the command is finished, you should see that all 2,097,148 records were inserted into the table.
 
-    ```
-    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
-    -H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
-    "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+```
+curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
+-H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
+"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 
-    #INFO Number of rows processed: 2,097,148
-    #INFO Number of rows in error: 0
-    #INFO Last row processed in final committed batch: 2,097,148
-    0 - SUCCESS: Load processed without errors
-    29.447
-    ```
-    the 29.447 is the result of the **--write-out '%{time_total}'** command we added indicating it took about 30 seconds to load 2 million records.
+#INFO Number of rows processed: 2,097,148
+#INFO Number of rows in error: 0
+#INFO Last row processed in final committed batch: 2,097,148
+0 - SUCCESS: Load processed without errors
+29.447
+```
+    
+the 29.447 is the result of the **--write-out '%{time_total}'** command we added indicating it took about 30 seconds to load 2 million records.
+
+9. Back in the SQL worksheet, we can verify the load by running the following SQL. In the worksheet, enter the following statement:
+
+    ````
+    <copy>select count(*) from csv_data;</copy>
+    ````
+
+    You can highlight the command with your mouse/point and click the green run button in the tool bar or press ctrl-enter/return while on the same line as the statement in the worksheet.
+
+    ![running a SQL command in the sql worksheet](./images/ld-8.png)
+
+    Either method will give the following result:
+
+    ![SQL results](./images/ld-9.png)
+
+10. 
 
 
 open cURL slideout
