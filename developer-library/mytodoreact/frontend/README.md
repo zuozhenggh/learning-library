@@ -150,6 +150,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ![](images/bucket-index.png " ")
 
+- You may not run the application from Object store, using the URL of the inex copied above.
+
+Congratulations for completing the entire lab!!
+
 ## **Learn More**
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

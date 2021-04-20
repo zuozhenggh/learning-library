@@ -125,7 +125,7 @@ $ kubectl logs -f <pod name>
 
 ## **STEP 4**: UnDeploy
 
-  If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 1, 2 & 3.
+  If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
 
   1. Run the `undeploy.sh` script
   ```

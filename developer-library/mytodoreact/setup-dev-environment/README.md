@@ -54,10 +54,6 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 3. Set the execution mode for all Shell scripts
 
 ```
-<copy>cd mtdrworkshop</copy>
-
-```
-```
 <copy>chmod +x *.sh */*.sh</copy>
 ```
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
@@ -116,8 +112,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/32-close-cluster-create.png " ")
 
-  12. Once launched it should usually take around 5-10 minutes for the cluster to be
-        fully provisioned and the Cluster Status should show Active.
+  12. Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and the Cluster Status should show Active.
 
   ![](images/33-click-cluster-name.png " ")
 
@@ -172,7 +167,8 @@ The database creation will take a few minutes.
 
 6. Create TODOUSER using SQLcl in Cloud shell
 
-    - Stay in mtdrwokshop/setup-dev-environment directory and launch SQLcl with /nolog option
+   - Stay in mtdrwokshop/setup-dev-environment directory and launch
+     sql with /nolog option
 
       ![](images/SQLCL-Cloud-Shell.png " ")
 
@@ -182,14 +178,24 @@ The database creation will take a few minutes.
      SQL> show tns
      ![](images/Show-tns.png " ")
 
-     - Connect to mtdrdb_tp service, as database ADMIN user (remember the password given to ADMIN above)
+     - Connect to mtdrdb_tp service, as database ADMIN user (remember the
+       password given to ADMIN above)
       SQL> connect ADMIN@mtdrdb_tp
 
-      - Create TODOUSER (replace "passwor" by a strong password)
+      - Create TODOUSER (replace <password> by a strong password)
       ```
-      <copy> CREATE USER todouser IDENTIFIE BY "<password>" DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;</copy>
+      <copy> CREATE USER todouser IDENTIFIED BY <password>              DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;</copy>
       ```
-       SQL> CREATE USER todouser IDENTIFIED BY "<password>" DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;
+       SQL> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data UNLIMITED QUOTA ON data;
+
+       - In case of ORA-00922, perform the operation in two steps and omit
+         UNLIMITED QUOTA ON data
+       ```
+       <copy> CREATE USER todouser IDENTIFIED BY <password>;
+        ```
+        ```
+        <copy>ALTER USER todouser DEFAULT TABLESPACE data;</copy>
+       ```
 
        - Grant some privileges to TODOUSER by executing the following command under SQLCl
       ```
