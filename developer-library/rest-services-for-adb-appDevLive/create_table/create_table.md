@@ -112,7 +112,7 @@ Estimated Lab Time: 15 minutes
 
     ![the cURL for the table CSV_DATA side out panel](./images/sdw-38.png)
 
-5. Here we can work with the various REST endpoints. To try one, click the copy icon ![copy icon](./images/copy-copy.png) for the GET ALL endpoint.
+5. Here we can work with the various REST endpoints. To try one, click the copy icon ![copy icon](./images/copy-copy.png) for the **GET ALL** endpoint.
 
     ![Click the copy icon for GET ALL](./images/sdw-39.png)
 

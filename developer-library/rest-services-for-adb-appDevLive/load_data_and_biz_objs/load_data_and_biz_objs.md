@@ -20,6 +20,32 @@ Estimated Lab Time: 20 minutes
 
 ## **STEP 1**: Load data into the Database
 
+1. Start by again using the cURL slide out on our REST enabled table.
+
+    ![right click the table name in the navigator, select REST, then cURL Command](./images/ld-1.png)
+
+2. We now have the cURL for the table CSV_DATA slideout. 
+
+    ![cURL for the table CSV_DATA slideout](./images/ld-2.png)
+
+    Left click the **BATCH LOAD** side tab.
+
+    ![left click the BATCH LOAD side tab](./images/ld-3.png)
+
+3. Next, click the copy icon ![copy icon](./images/copy-copy.png) for the **BATCH LOAD** endpoint.
+
+    ![left click the BATCH LOAD side tab](./images/ld-4.png)
+
+    It should be similar to the following:
+
+```
+curl --location --request POST \
+--data-binary @<FILE_NAME> \
+'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/' 
+```
+
+4.  We are going to alter this a bit for our data load. First, we need to be in either the OCI Cloud Shell or a local computer with cURL installed. Every OCI account has Cloud Shell so we would encourage using that. To use the Cloud Shell, after logging into your OCI account, 
+
 open cURL slideout
 
 copy BATH LOAD command
