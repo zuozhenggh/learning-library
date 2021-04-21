@@ -1,10 +1,10 @@
-# RESTful Services for your Autonomous Database
+# RESTful Services for your Autonomous Database - Securing a REST Endpoint
 
 ## Introduction
 
-In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
+In this lab you will Securing the REST Endpoint
 
-Estimated Lab Time: 30-45 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -16,7 +16,9 @@ Estimated Lab Time: 30-45 minutes
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-
+- Completed the [User Setups Lab](../user-setups/user-setups.md)
+- Completed the Create and auto-REST enable a table lab
+- Completed the Loading Data and Creating Business Objects Lab
 
 ## **STEP 4**: Securing the REST Endpoint
 
