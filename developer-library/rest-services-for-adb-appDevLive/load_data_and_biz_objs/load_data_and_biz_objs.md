@@ -166,6 +166,11 @@ Copy and paste this code into the SQL Worksheet and left click the **Run Script*
 
 11.
 
+function
+give number/letter and returns count 
+
+REST object return reports with input of num/letter
+
 
 add business logic procedure
 
