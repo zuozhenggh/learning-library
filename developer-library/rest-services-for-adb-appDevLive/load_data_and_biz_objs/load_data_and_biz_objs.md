@@ -155,8 +155,8 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
     The following function returns a count of all the rows that match the input provided to col2 in the table:
 
-    ```
-    create or replace function return_count (p_input in varchar2) return number 
+    ````
+    <copy>create or replace function return_count (p_input in varchar2) return number 
     is
 
         l_count number;
@@ -170,8 +170,8 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
         return l_count;
 
-    end return_count;
-    ```
+    end return_count;</copy>
+    ````
 
     Copy and paste this code into the SQL Worksheet and left click the **Run Script** button on the toolbar:
 
