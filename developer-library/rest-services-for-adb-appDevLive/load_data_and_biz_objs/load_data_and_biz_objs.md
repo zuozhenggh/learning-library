@@ -151,41 +151,37 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
     ![SQL results](./images/ld-9.png)
 
-10. Business logic is up next. We will be adding a function and a procedure to our database schema. 
+10. Business logic is up next. We will be adding a function to our database schema to simulate some business logic. 
 
-The following function returns 
+    The following function returns a count of all the rows that match the input provided to col2 in the table:
 
-Copy and paste this code into the SQL Worksheet and left click the **Run Script** button on the toolbar:
+    ```
+    create or replace function return_count (p_input in varchar2) return number 
+    is
 
+        l_count number;
 
-And this procedure does
+    begin
 
+        select count(*) 
+        into l_count
+        from csv_data
+        where col2 = p_input;
 
-Copy and paste this code into the SQL Worksheet and left click the **Run Script** button on the toolbar:
+        return l_count;
 
+    end return_count;
+    ```
 
-11.
+    Copy and paste this code into the SQL Worksheet and left click the **Run Script** button on the toolbar:
 
-function
-give number/letter and returns count 
+    ![compile the function in the sql worksheet](./images/ld-9.png)
 
-REST object return reports with input of num/letter
+11. We can test this function with a quick select statement. Copy and paste the following into the SQL Worksheet and run the statement:
 
-
-add business logic procedure
-
-
-create or replace procedure csv_biz_logic as
-
-begin
-
-    null;
-
-end csv_biz_logic;
-
-test business logic
-
-exec csv_biz_logic;
+    ````
+    <copy>select return_count('1b') from dual;</copy>
+    ````
 
 ## Conclusion
 
