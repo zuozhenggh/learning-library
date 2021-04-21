@@ -28,9 +28,9 @@ For more information about Terraform and Resource Manager, please see the append
 
 3.  From the hamburger menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category.
 
-  ![](./images/setup-compute-1.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
-2.  Identify your database system from your My Reservations page in LiveLabs and click it.  (Note:  Remember to choose the compartment that you were assigned if running on LiveLabs)
+2.  Identify your database system from your My Reservations page in LiveLabs and click it.  (Note:  Remember to choose the compartment and region that you were assigned if running on LiveLabs)
 
   ![](./images/setup-compute-2.png " ")
 
