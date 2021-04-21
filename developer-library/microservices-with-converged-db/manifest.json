@@ -27,12 +27,16 @@
         "filename": "./4-scaling/scaling.md"
       },
       {
-        "title": "Lab 5: Create an APEX App to Make Sense of the Data",
-        "filename": "./5-apex/apex.md"
+        "title": "Lab 5: Tracing Using Jaeger",
+        "filename": "./5-tracing/tracing.md"
       },
       {
-        "title": "Lab 6: Tear Down",
-        "filename": "./6-teardown/teardown.md"
+        "title": "Lab 6: Create an APEX App to Make Sense of the Data",
+        "filename": "./6-apex/apex.md"
+      },
+      {
+        "title": "Lab 7: Tear Down",
+        "filename": "./7-teardown/teardown.md"
       },
       {
         "title": "Need Help?",

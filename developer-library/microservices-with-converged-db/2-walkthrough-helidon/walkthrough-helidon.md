@@ -415,27 +415,9 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/lastcontainerstartuptime2.png " ")
 
-## **STEP 9**: Verify tracing
-
-1. Notice @Traced annotations on `placeOrder` method of `$GRABDISH_HOME/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java` and `placeOrder` method of `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
-   Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
-
-   ![](images/ordertracingsrc.png " ")
-
-2. Place an order if one was not already created successfully in STEP 1 of this Lab.
-
-3. Click **Show Tracing** to open the Jaeger UI. Select `frontend.msdataworkshop` from the `Service` dropdown menu and click **Find Traces**.
-
-    ![](images/jaegertrace.png " ")
-
-   Select a trace with a large number of spans and drill down on the various spans of the trace and associated information. In this case we see placeOrder order, saga, etc. information in logs, tags, and baggage.
-
-   *If it has been more than an hour since the trace you are looking for, select a an appropriate value for Lookback and click Find Traces.*
-
-    ![](images/jaegertracedetail.png " ")
-
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+               Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern

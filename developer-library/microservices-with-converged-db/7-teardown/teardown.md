@@ -1,4 +1,5 @@
-# Teardown
+# Lab 7: Teardown
+
 ## Introduction
 
 In this 20-minute lab we will provision and setup the resources in your tenancy to install and execute microservices.  will show you how to set up the Oracle Cloud Infrastructure (OCI) Container Engine for Kubernetes (OKE) for creating and deploying a front-end Helidon application which accesses the backend Oracle Autonomous Database (ATP).

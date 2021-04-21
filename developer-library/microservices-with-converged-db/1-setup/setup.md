@@ -1,4 +1,5 @@
-# Setup
+# Lab 1: Setup
+
 ## Introduction
 
 In this 20-minute lab we will provision and setup the resources in your tenancy to install and execute microservices.  

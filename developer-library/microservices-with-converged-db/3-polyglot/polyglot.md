@@ -1,4 +1,5 @@
-# Polyglot Microservices
+# Lab 3: Polyglot Microservices
+
 ## Introduction
 
 This lab will show you how to switch the Inventory microservice to a Python, Node.js or Java Helidon SE implementation while retaining the same application functionality.
