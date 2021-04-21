@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you can trace misroservice activity using Jaeger.
+This lab will show you can trace microservice activity using Jaeger.
 
 ### Objectives
 
