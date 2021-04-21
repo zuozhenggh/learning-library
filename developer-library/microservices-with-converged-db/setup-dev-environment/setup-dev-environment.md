@@ -21,7 +21,7 @@ Cloud Shell is a small virtual machine running a Bash shell which you access thr
 
 Click the Cloud Shell icon in the top-right corner of the Console.
 
-  ![](images/7-open-cloud-shell.png " ")
+Just responded in email as well
 
 ## **STEP 2**: Make a clone of the workshop source code
 1. To work with application code, you need to make a clone from the GitHub repository using the following command. The workshop assumes this is done from your root directory.
