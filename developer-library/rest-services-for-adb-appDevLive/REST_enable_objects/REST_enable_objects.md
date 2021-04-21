@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab you will use Database Actions to REST enable your function and a custom SQL Statement that take in inputs.
+In this lab, you will use Database Actions and the REST console to build a REST API using a parametrized PL/SQL procedure and SQL statement. 
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 #### About RESTful Web Services
 
@@ -38,10 +38,14 @@ select empno, ename, dept from emp where empno = :id
 **HTTP operation**: HTTP (HyperText Transport Protocol) defines standard methods that can be performed on resources: GET (retrieve the resource contents), POST (store a new resource), PUT (update an existing resource), and DELETE (remove a resource).
 
 
+
+![ORDS Termonology](./images/ords-module-template-uri.png)
+
+
 ### Objectives
 
-- REST Enable Custom SQL that Accepts an Input
-- REST Enable Business Logic
+- Publish REST API using Custom SQL
+- Publish REST API using stored PL/SQL program
 
 
 ### Prerequisites
@@ -172,15 +176,62 @@ select empno, ename, dept from emp where empno = :id
 
     ![submitted URL and working REST service](./images/rest-24.png)
 
-## **STEP 1**: REST Enable Business Logic (a function)
+## **STEP 1**: REST Enable Business Logic (PL/SQL procedure)
 
+1. It's now time to REST enable our Business Logic or PL/SQL procedure we created in the previous lab. To start, left click out module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
 
-BEGIN
+    ![Database Actions breadcrumbs](./images/rest-25.png)
 
-    return_count(p_input => :id,
-                 p_output => :output);
+2. As before, we are going to create a new **Template**. Left click the **+ Create Template** button on the right side of the page, right under our module.
 
-end;
+    ![Left click the + Create Template button](./images/rest-9.png)
+
+3. The **Create Template** slider comes out of the right of the page. 
+
+    ![Create Template slider](./images/rest-10.png)
+    
+10. In the **URI Template** template field, enter bizlogic
+
+    ````
+    <copy>bizlogic</copy>
+    ````
+
+    ![URI Template field](./images/rest-26.png)
+
+11. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+
+    ![Create Modules slider with all info, left click create](./images/rest-27.png)
+
+12. Click the **+ Create Handler** button on the right of the page, just below our newly created template just as we did before.
+
+    ![Left click the + Create Handler button](./images/rest-28.png)
+
+13. The **Create Handler** slider comes out of the right of the page. 
+
+    ![Create Handler slider](./images/rest-29.png)
+
+14. We need to change the **Method** from GET to POST because we are submitting a value to the REST Service. Use the dropdown in the **Method** field to select **POST**.
+
+    ![Selecting POST using the dropdown in the Method field](./images/rest-30.png)
+
+    Upon chaning the **Method** to post, we see the **Source Type** change to PL/SQL.
+
+15. Now, in the **Source** field, enter the following PL/SQL
+
+    ````
+    <copy>
+    BEGIN
+
+        return_count(p_input => :id,
+                    p_output => :output);
+
+    end;
+    </copy>
+    ````
+
+16. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+
+    ![Create Handler slider with all info, left click create](./images/rest-31.png)
 
 
 curl --location --request POST \
