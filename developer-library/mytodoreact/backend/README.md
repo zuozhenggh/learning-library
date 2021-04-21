@@ -46,7 +46,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 The following command will set the values of environment variables in mtdrworkshop.properties and source ~/.bashrc
 ```
-<copy>cd $MSDATAWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
+<copy>cd $MTDRWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
 ```
 
 ## **STEP 2**: Build and push the Docker images
@@ -55,17 +55,22 @@ The following command will set the values of environment variables in mtdrworksh
  Example: <region-key>.ocir.io/<object-storage-namespace>/<firstname.lastname>/<repo-name>"
  If the variable is not set or set to an empty string the push will fail (but the docker image will be built).
 
-2. Pick mtdrb_tp service alias; you may select a iffertn service alias from
-   ./backend/target/classes/wallet/tnsnames.ora
+2. Make sure to be in backend/target/classes/wallet directory then execute
+   ```
+   <copy>Unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
+   ```
+
+3. Pick mtdrb_tp service alias (see the list of aliases in
+   ./backend/target/classes/wallet/tnsnames.ora)
 
 ![](images/tnsnames-ora.png " ")
 
-3. Edit ./backend/target/classes/application.yaml to set the database service and user password
+4. Edit ./backend/target/classes/application.yaml to set the database service and user password
 ![](images/application-yaml.png " ")
 
-4. Copy the edited ./backend/target/classes/application.yaml to backend./src/main/resources/application.yaml
+5. Copy the edited ./backend/target/classes/application.yaml to backend./src/main/resources/application.yaml
 
-5. Run the `build.sh` script to build and push the
+6. Run the `build.sh` script to build and push the
     microservices images into the repository
 
     ```
@@ -73,12 +78,13 @@ The following command will set the values of environment variables in mtdrworksh
     ```
   In a couple of minutes, you should have successfully built and pushed the images into the OCIR repository.
 
-6.  Check your container registry in the root compartment
+7.  Check your container registry in the root compartment
     - Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
    ![](images/Registry-root-compart.png " ")
-7. Mark Access as Public  (if Private)  (**Actions** > **Change to Public**):
+
+8. Mark Access as Public  (if Private)  (**Actions** > **Change to Public**):
 
    ![](images/Public-access.png " ")
 

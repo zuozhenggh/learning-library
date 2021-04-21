@@ -147,11 +147,16 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 The database creation will take a few minutes.
 
-5. Generate the Wallet for your ATP Connectivity
-   - From the Cloud console, copy the OCID of the newly created database
-     ![](images/42-copy-atp-ocids2.png " ")
+5. Populate mtdrworkshopdbid.txt with the database OCID
+  -
+  - Copy the OCID of the newly created database from the Cloud console and
+    add it to the  `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
 
-   - Go back into your cloud shell and verify you are in the
+    ![](images/42-copy-atp-ocids2.png " ")
+
+6. Generate the Wallet for your ATP Connectivity
+
+   - Still in Cloud Shell, make sure you are in the
       `~/mtdrworkshop/setup-dev-environment` directory.
 
    - Copy the following command and replace $OCID by the
@@ -165,7 +170,9 @@ The database creation will take a few minutes.
       You will be requested to enter a password for wallet encryption, this is separate for the ADMIN password but you could reuse the statement.
       A wallet.zip file will be created in the current directory.
 
-6. Create TODOUSER using sql utility in Cloud shell
+
+
+7. Create TODOUSER using sql utility in Cloud shell
 
    - Stay in mtdrwokshop/setup-dev-environment directory and launch
      sql with /nolog option
@@ -180,7 +187,7 @@ The database creation will take a few minutes.
 
      - Connect to mtdrdb_tp service, as database ADMIN user (remember the
        password given to ADMIN above)
-       
+
       SQL> connect ADMIN@mtdrdb_tp
 
       - Create TODOUSER (replace <password> by a strong password)
@@ -271,13 +278,18 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ```
 ## **STEP 6**: Install GraalVM in Cloud Shell
 
-We will be using JDK 11 in Cloud Shell; we will not use GraalVM Native Image
+We will be using JDK 11 in Cloud Shell to build the Java/Helidon image
+1.  Set some environment variables and run the following commands
 
-1. Run the following command
-
-```
-<copy>./installGraalVM.sh</copy>
-```
+   ```
+   <copy>export MTDRWORKSHOP_LOCATION=~/mtdrworkshop</copy>
+   ```
+   ```
+   <copy>export WORKINGDIR=$MTDRWORKSHOP_LOCATION/workingdir</copy>
+   ```   
+   ```
+   <copy>./installGraalVM.sh</copy>
+  ```
 
 ## **STEP 7**: Access OKE from the Cloud Shell
 
@@ -292,7 +304,7 @@ We will be using JDK 11 in Cloud Shell; we will not use GraalVM Native Image
  <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
  ```
 
-Notice `/.kube/config` is created for the cluster and the `mtdrworkshop` namespace is also created.
+Notice `/.kube/config` is created for the OKE cluster.
 
   ![](images/verifyOKEOutput.png " ")
 
