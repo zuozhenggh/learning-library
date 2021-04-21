@@ -2,43 +2,46 @@
     "workshoptitle":"Oracle Database 19c New Features",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
+
     {
-        "title": "Getting Started",
-        "description": "Log in to Oracle Cloud",
-        "partnumber": "Ennnnn_01",
-        "publisheddate": "03/10/2020",
-        "contentid": "12nnnn",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        "title": "Introduction",
+        "description": "Introduction to Oracle Database 19c and the workshop.",
+        "filename": "./../../intro/intro.md",
+        "type": "freetier"
     },
         {
-            "title": "Introduction to Oracle Database 19c",
-            "description": "Introduction to the Oracle Database 19c New Features Workshop",
-            "filename": "./../../intro/intro.md",
+            "title": "Getting Started",
+            "description": "Get an Oracle Cloud Free Tier account and sign in.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md",
             "type": "freetier"
         },
         {
-            "title": "Lab 1: Install Oracle Database 19c with Automatic Configuration Script Execution",
-            "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution.",
-            "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-config-script-execution.md",
+            "title": "Lab 1: Generate SSH Keys - Cloud Shell",
+            "description": "Steps to generate SSH keys using Cloud Shell.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md",
             "type": "freetier"
         },
         {
-            "title": "Lab 2: Install Oracle Database 19c by Using Resource Manager",
-            "description": "This lab shows you how to create a compute instance, create a virtual cloud network, and install Oracle Database 19 by using a terraform script and Resource Manager.",
-            "filename": "./../../install-db19c-resourcemanager/install-db19c-resourcemanager.md"
-        },
-        {
-            "title": "Lab 2: Generate SSH Keys by Using Cloud Shell",
-            "description": "Generate SSH Key",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
-        },
-        {
-            "title": "Lab 3: Set Up a Compute Instance with Oracle Database 19c by Using Terraform",
-            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
-            "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
+        "title": "Lab 2: Install Oracle Database 19c with Automatic Root Script Execution",
+        "description": "Install Oracle Database 19c with automatic configuration script execution. You access a Gaucamole desktop on your compute instance from a browser.",
+        "filename": "./../../install-db19c-auto-config-script-execution-guac/install-db19c-auto-config-script-execution-guac.md",
+        "type": "freetier"
          },
-
+          {
+              "title": "Lab 3: Deploy an Oracle Database 19c Image",
+              "description": "Deploy a compute instance running Oracle Database 19c by using Resource Manager",
+              "filename": "./../../deploy-db19c-resourcemanager/deploy-db19c-resourcemanager.md",
+              "type": "freetier"
+          },
+          {
+              "title": "Appendix A: Install Oracle Database 19c with Automatic Root Script Execution - X11 Forwarding",
+              "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution. You run the Oracle Database installer by using X11 forwarding.",
+              "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-root-script-execution-x11.md",
+              "type": "freetier"
+          },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",

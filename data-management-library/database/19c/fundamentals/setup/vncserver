@@ -1,0 +1,107 @@
+In this lab, we will see how to setup secure VNC server using SSH tunnel in RHEL/OEL/CentOS based OCI instances.
+As you know, VNC protocol is un-encrypted. Even though the log in process has some encryption, it is possible to sniff VNC traffic and collect sensitive information. You can fully secure a VNC session by tunneling it via a SSH tunnel. Another advantage of tunneling VNC via SSH is that you do not need to open VNC ports – TCP 590X on your Subnet’s Security List. The existing rule for SSH traffic will do fine.
+
+I expect you have desktop environment installed on the instance. By default, VNC is configured to use Xterm as the terminal emulator and twm as the window manager for the X Window System.
+
+VNCtest: ssh -i ~/.ssh/cloudshellkey.key opc@130.61.63.34
+
+You need to be root to perform these installs:
+sudo su -
+
+Create an oracle user
+groupadd -g 54321 oinstall
+groupadd -g 54322 dba
+groupadd -g 54323 oper
+useradd -u 54321 -g oinstall -G dba,oper oracle
+
+Set the password for the oracle user
+passwd oracle
+JJjj__1234
+
+
+Install the Gnome Desktop
+yum -y groupinstall "Server with GUI"
+
+Install the VNC Server
+In this example, tigervnc-server.x86_64 0:1.8.0-22.el7 will be installed
+yum -y install tigervnc-server
+
+---
+FROM MOS NOTE: yum -y install tigervnc-server pixman pixman-devel libXfont
+--------
+
+
+Copy the default configuration file
+cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
+
+
+Edit the service unit file
+vi /etc/systemd/system/vncserver@:1.service
+- replace <USER> with oracle on the ExecStop line: ExecStart=/usr/bin/vncserver_wrapper oracle %i
+
+To activate the changes, reload the systemd daemon
+systemctl daemon-reload
+
+
+Assign a vcn password to the user defined in the service unit file.
+To assign password to a normal user, you must first log in as "root" and then switch user
+su - oracle
+
+vncpasswd
+enter password:
+LiveLabs.Rocks_99
+Enter "n" to view only question.
+
+Set screen resolution
+vi $HOME/.vnc/config
+comment out geometry and set to 1920x1080
+comment out localhost. the parameter “-localhost” makes VNC server to listen on loopback interface and accept connection from a tunnel only.
+
+exit (switch back to root user)
+
+Start and Enable the VNC Service at boot:
+systemctl enable vncserver@:1.service
+systemctl start vncserver@:1.service
+systemctl status vncserver@:1.service
+
+
+
+Set the firewall rule
+# firewall-cmd --zone=public --permanent --add-service=vnc-server
+# firewall-cmd --zone=public --permanent --add-port=5901/tcp
+# firewall-cmd  --reload
+
+Windows:
+PuTTY - create SSH tunnel for you to use for VNC
+Note: from a terminal window, you would do this: $ ssh -L 5901:localhost:5901 opc@158.101.161.116
+130.61.185.156, port 22
+user: opc
+upload ppk key file
+tunnel: source port: 5901
+        destination <publicip>:5901  -- > localhost:5901
+        All VNC traffic is routed through this SSH tunnel on Port 22, hence no additional port needs to be opened via Security Lists.
+Click Yes to trust the host.
+> Authenticating with public key "imported-openssh-key"
+Last login: Mon Apr 19 16:10:47 2021 from 158.101.161.116
+
+Note: Make sure you're not on a VPN as it might not let you connect to your compute instance.
+
+Mac OS/Linux:
+$ ssh -i /path/to/key -L 5901:localhost:5901 -N -f opc@<PublicIP>
+
+
+Start VNC VIEWER
+File > New Connection
+General tab:
+-Enter the public IP address of your compute instance; NO! enter localhost:5901
+-(Optional) Enter a friendly name for your connection
+Options tab:
+- Picture quality: high
+- Scaling: Automatic
+Click Ok.
+Right-click the connection name, and click Connect.
+In the Encryption dialog box, click Continue.
+In the Authentication dialog box, enter the vnc password for oracle user (LiveLabs.Rocks_99).
+click OK.
+
+Click through the Gnome desktop setup screens. Accept all the defaults.

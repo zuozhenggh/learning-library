@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance and install Oracle Database 19c (release 19.7) on it. You can use this database to try out all the new features that are covered in later labs.
+In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance and install Oracle Database 19c on it. You can use this database to try out all the new features that are covered in later labs.
 
-In Resource Manager, you create a stack that utilizes a terraform script provided by LiveLabs. This script outlines the Oracle Cloud resources that you need to provision, including a compute instance running Linux 7.8, a virtual cloud network (VCN), and Oracle Database 19c (release 19.7). After you create the stack, you apply it to start the provisioning job in OCI. When the job is completed, you connect to your compute instance and database. To learn more about Resource Manager, view this [video](https://youtu.be/udJdVCz5HYs).
+In Resource Manager, you create a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs and specifies a compute instance running Linux 7.8, a virtual cloud network (VCN), and Oracle Database 19c (release 19.7). After you create the stack, you apply it to start the provisioning job in OCI. When the job is completed, you connect to your compute instance and database. To learn more about Resource Manager, view this [video](https://youtu.be/udJdVCz5HYs).
 
-This lab uses Cloud Shell to connect to your compute instance and database. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. With Cloud Shell, you always use SSH (Secure Shell protocol) with an SSH key pair (public key and private key) to connect to your compute instance. You need to create the SSH key pair before creating the stack in Resource Manager.
+In this lab, you use Cloud Shell to connect to your compute instance and database. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. With Cloud Shell, you always use SSH (Secure Shell protocol) with an SSH key pair (public key and private key) to connect to your compute instance. You need to create the SSH key pair before creating the stack in Resource Manager.
 
 
 ### Objectives
@@ -33,13 +33,25 @@ In this lab, you learn how to do the following:
 
   ![Cloud Shell icon](images/cloud-shell-icon.png)
 
-2. Change to the `.SSH` directory.
+2. Create a `.ssh` directory to store your private key.
 
     ```nohighlighting
-    $ <copy>cd .ssh</copy>
+    $ <copy>mkdir .ssh</copy>
     ```
 
-3. Generate an SSH key pair. This lab specifies `cloudshellkey` as the key name, however, you can use any name you like. When prompted, press **Enter** to not enter a passphrase.
+3. Set permissions on the `.ssh` directory so that only you (the owner) can read, write, and execute on the directory. Also set permissions on the private key itself so that only you (the owner) can read and write (but not execute) on the private key file.
+
+  *REVIEWER*: Is this needed? I think you need to make sure the private key has chmod 600 * applied to it
+
+    ```nohighlighting
+
+    $ <copy>chmod 700 ~/.ssh</copy>
+    $ <copy>cd .ssh</copy>
+    $ <copy>chmod 600 *</copy>
+    ```
+
+
+4. While you are in the `.ssh` directory, generate an SSH key pair. This lab specifies `cloudshellkey` as the key name, however, you can use any name you like. When prompted, press **Enter** to not enter a passphrase.
 
     ```nohighlighting
     $ <copy>ssh-keygen -b 2048 -t rsa -f cloudshellkey
@@ -65,7 +77,7 @@ In this lab, you learn how to do the following:
     +----[SHA256]-----+</copy>
     ```
 
-4. Confirm the private key and public key files exist in the `.ssh` directory. In this example, there is a private key named `cloudshellkey` and a public key named `cloudshellkey.pub`. For security reasons, it's important that you keep the private key safe and don't share its content with anyone.
+5. Confirm the private key and public key files exist in the `.ssh` directory. In this example, there is a private key named `cloudshellkey` and a public key named `cloudshellkey.pub`. For security reasons, it's important that you keep the private key safe and don't share its content with anyone.
 
     ```nohighlighting
     $ <copy>ls</copy>
@@ -73,7 +85,7 @@ In this lab, you learn how to do the following:
     cloudshellkey  cloudshellkey.pub
     ```
 
-5. Show the contents of the public key. It starts with `ssh-rsa`.
+6. Show the contents of the public key. It starts with `ssh-rsa`.
 
     ```nohighlighting
     $ <copy>cat cloudshellkey.pub</copy>
@@ -81,7 +93,7 @@ In this lab, you learn how to do the following:
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDqs9uly7HqmiJlaSQmgJ8gmJ65avZt5KBGN+kgcgxKDbLdmVqaN0Ois3vnrMeHYN+gHFp2qRM4RV7bAwbrHaTo6PqAhqMqmF/k5o5c23/+WlL+HUOS00UXBBYLVz2v2kz3dq10E7zwX68DKqaBRo5iPSoLGssh2lWq8yTMFnD04nma5DSzV5LpIa9bWTaUU4jVGVhvAdX+832yOfzflkEWdaaX6rh17t6IuY5aiOWgDJmdNQouXsmqDHFS98tJFqmNDzrx7qL5tP0q0HzcQ7BNkdWamy1znwJBiRferLGzlLvOEEDpjgTzmgRKzeoLieFACQh+iXbTJ4jfyTrP9va1jody_glove@2ff9ae3459e2
     ```
 
-6. Copy the contents of the public key to the clipboard and save it somewhere (for example, in NotePad++) for later. Make sure you remove any hard returns that sometimes get added when copying text. The public key needs to be all on one line.  
+7. Copy the contents of the public key to the clipboard and save it somewhere (for example, in NotePad++) for later. Make sure you remove any hard returns that sometimes get added when copying text. The public key needs to be all on one line.  
 
   Tip: In NotePad++, you can view hard returns by selecting **View**, then **Show Symbol**, and then **Show All Characters**.  
 
@@ -141,6 +153,8 @@ In this lab, you learn how to do the following:
 8. When the job is finished, inspect the log. The last line should read `Apply complete!`.
 
 
+
+
 ## **STEP 3**: Connect to your compute instance from Cloud Shell
 
 1. From the navigation menu, select **Compute**, and then **Instances**.
@@ -164,13 +178,20 @@ In this lab, you learn how to do the following:
 
 ## **STEP 4**: Discover the container database (CDB) and pluggable database (PDB)
 
-1. View the last 10 lines of the `dbsingle.log` file, which configures the database.
+1. Switch to the `oracle` user.
 
     ```nohighlighting
-    $ <copy>tail -10 /u01/ocidb/buildsingle1.log</copy>
+    [opc@workshop ~]$ <copy>sudo su - oracle</copy>
+    ```
 
-    INFO (node:workshop): Running on: workshop as oracle: export ORACLE_HOME=/u01/app/oracle/product/19c/dbhome_1; export ORACLE_BASE=/u01/app/oracle; /u01/app/oracle/product/19c/dbhome_1/bin/dbca -silent -createDatabase  -emConfiguration NONE  -templateName 'General_Purpose.dbc' -storageType FS -datafileDestination '/u01/app/oracle/oradata' -datafileJarLocation '/u01/app/oracle/product/19c/dbhome_1/assistants/dbca/templates' -sampleSchema false -oratabLocation /etc/oratab  -runCVUChecks false -continueOnNonFatalErrors true -createAsContainerDatabase true -numberOfPDBs 1 -pdbName orclpdb -gdbName 'ORCL' -sid 'ORCL' -initParams filesystemio_options=setall -ignorePrereqs
-    **********
+2. Track the database installation and configuration by viewing the `dbsingle.log` file.
+
+    ```nohighlighting
+    [oracle@workshop ~]$ <copy>tail -f /u01/ocidb/buildsingle.log</copy>
+    ```
+    ...
+    INFO (node:workshop): Creating database (ORCL) (Single Instance)
+    ...
     Prepare for db operation
     8% complete
     Copying database files
@@ -178,105 +199,29 @@ In this lab, you learn how to do the following:
     Creating and starting Oracle instance
     32% complete
     36% complete
+    ...
     ```
 
-2. Wait for the log to state that the single instance is running. It takes *approximately 20 minutes* for the database to be configured and ready for use.
+3. Wait for the log to state the following information. It takes *approximately 20-30 minutes* for the database to be configured and ready for use.
 
     ```nohighlighting
-    INFO (node:workshop): Current Single Instance state (22:29:38)...
-    oracle    4574     1  0 21:50 ?        00:00:00 /u01/app/oracle/product/19c/dbhome_1/bin/tnslsnr LISTENER -inherit
-    oracle   10432     1  0 22:29 ?        00:00:00 ora_dbw0_ORCL
-
-    INFO (node:workshop): Single Instance running (see output above)
-
-    2021-04-14 22:29:38:[singlestate:Time :workshop] Completed successfully in 0 seconds (0h:00m:00s)
-    2021-04-14 22:29:38:[buildsingle:Done :workshop] Building 19c Single Instance
-    2021-04-14 22:29:38:[buildsingle:Time :workshop] Completed successfully in 2367 seconds (0h:39m:27s)
+    ...
+    21-04-18 22:29:38:[buildsingle:Done :workshop] Building 19c Single Instance
+    2021-04-18 22:29:38:[buildsingle:Time :workshop] Completed successfully in 2367 seconds (0h:39m:27s)
     ```
 
-3. Run the following command to verify the database is running.
+4. Run the following command to verify the database is running.
 
     ```nohighlighting
     $ <copy>ps -ef | grep ORCL</copy>
 
-    oracle   10396     1  0 22:29 ?        00:00:00 ora_pmon_ORCL
-    oracle   10398     1  0 22:29 ?        00:00:00 ora_clmn_ORCL
-    oracle   10400     1  0 22:29 ?        00:00:00 ora_psp0_ORCL
-    oracle   10403     1  0 22:29 ?        00:00:05 ora_vktm_ORCL
-    oracle   10408     1  0 22:29 ?        00:00:00 ora_gen0_ORCL
-    oracle   10410     1  0 22:29 ?        00:00:00 ora_mman_ORCL
-    oracle   10414     1  0 22:29 ?        00:00:00 ora_gen1_ORCL
-    oracle   10417     1  0 22:29 ?        00:00:00 ora_diag_ORCL
-    oracle   10419     1  0 22:29 ?        00:00:00 ora_ofsd_ORCL
-    oracle   10422     1  0 22:29 ?        00:00:00 ora_dbrm_ORCL
-    oracle   10424     1  0 22:29 ?        00:00:00 ora_vkrm_ORCL
-    oracle   10426     1  0 22:29 ?        00:00:00 ora_svcb_ORCL
-    oracle   10428     1  0 22:29 ?        00:00:00 ora_pman_ORCL
-    oracle   10430     1  0 22:29 ?        00:00:00 ora_dia0_ORCL
-    oracle   10432     1  0 22:29 ?        00:00:00 ora_dbw0_ORCL
-    oracle   10434     1  0 22:29 ?        00:00:00 ora_lgwr_ORCL
-    oracle   10436     1  0 22:29 ?        00:00:00 ora_ckpt_ORCL
-    oracle   10438     1  0 22:29 ?        00:00:00 ora_lg00_ORCL
-    oracle   10440     1  0 22:29 ?        00:00:00 ora_smon_ORCL
-    oracle   10442     1  0 22:29 ?        00:00:00 ora_lg01_ORCL
-    oracle   10444     1  0 22:29 ?        00:00:00 ora_smco_ORCL
-    oracle   10446     1  0 22:29 ?        00:00:00 ora_reco_ORCL
-    oracle   10448     1  0 22:29 ?        00:00:00 ora_w000_ORCL
-    oracle   10450     1  0 22:29 ?        00:00:00 ora_lreg_ORCL
-    oracle   10452     1  0 22:29 ?        00:00:00 ora_w001_ORCL
-    oracle   10454     1  0 22:29 ?        00:00:00 ora_pxmn_ORCL
-    oracle   10458     1  0 22:29 ?        00:00:02 ora_mmon_ORCL
-    oracle   10460     1  0 22:29 ?        00:00:00 ora_mmnl_ORCL
-    oracle   10462     1  0 22:29 ?        00:00:00 ora_d000_ORCL
-    oracle   10464     1  0 22:29 ?        00:00:00 ora_s000_ORCL
-    oracle   10466     1  0 22:29 ?        00:00:00 ora_tmon_ORCL
-    oracle   10471     1  0 22:29 ?        00:00:00 ora_m000_ORCL
-    oracle   10473     1  0 22:29 ?        00:00:02 ora_m001_ORCL
-    oracle   10480     1  0 22:29 ?        00:00:00 ora_tt00_ORCL
-    oracle   10482     1  0 22:29 ?        00:00:00 ora_tt01_ORCL
-    oracle   10484     1  0 22:29 ?        00:00:00 ora_tt02_ORCL
-    oracle   10489     1  0 22:29 ?        00:00:00 ora_w002_ORCL
-    oracle   10491     1  0 22:29 ?        00:00:00 ora_aqpc_ORCL
-    oracle   10495     1  0 22:29 ?        00:00:00 ora_p000_ORCL
-    oracle   10497     1  0 22:29 ?        00:00:00 ora_p001_ORCL
-    oracle   10499     1  0 22:29 ?        00:00:00 ora_p002_ORCL
-    oracle   10501     1  0 22:29 ?        00:00:00 ora_p003_ORCL
-    oracle   10503     1  0 22:29 ?        00:00:00 ora_p004_ORCL
-    oracle   10505     1  0 22:29 ?        00:00:00 ora_p005_ORCL
-    oracle   10507     1  0 22:29 ?        00:00:00 ora_p006_ORCL
-    oracle   10509     1  0 22:29 ?        00:00:00 ora_p007_ORCL
-    oracle   10511     1  0 22:29 ?        00:00:00 ora_p008_ORCL
-    oracle   10513     1  0 22:29 ?        00:00:00 ora_p009_ORCL
-    oracle   10515     1  0 22:29 ?        00:00:00 ora_p00a_ORCL
-    oracle   10517     1  0 22:29 ?        00:00:00 ora_p00b_ORCL
-    oracle   10519     1  0 22:29 ?        00:00:00 ora_p00c_ORCL
-    oracle   10521     1  0 22:29 ?        00:00:00 ora_p00d_ORCL
-    oracle   10523     1  0 22:29 ?        00:00:00 ora_p00e_ORCL
-    oracle   10525     1  0 22:29 ?        00:00:00 ora_p00f_ORCL
-    oracle   10528     1  0 22:29 ?        00:00:01 ora_cjq0_ORCL
-    oracle   10733     1  0 22:29 ?        00:00:00 ora_w003_ORCL
-    oracle   10745     1  0 22:29 ?        00:00:00 ora_w004_ORCL
-    oracle   10778     1  0 22:29 ?        00:00:00 ora_qm02_ORCL
-    oracle   10782     1  0 22:29 ?        00:00:00 ora_q002_ORCL
-    oracle   10784     1  0 22:29 ?        00:00:00 ora_q003_ORCL
-    oracle   10788     1  0 22:29 ?        00:00:00 ora_w005_ORCL
-    oracle   10797     1  0 22:29 ?        00:00:00 ora_m002_ORCL
-    oracle   10831     1  0 22:29 ?        00:00:00 ora_m004_ORCL
-    oracle   11354     1  0 22:29 ?        00:00:00 ora_w006_ORCL
-    oracle   12015     1  0 22:39 ?        00:00:00 ora_m003_ORCL
-    oracle   12019     1  0 22:39 ?        00:00:00 ora_w007_ORCL
-    oracle   12026     1  0 22:39 ?        00:00:00 ora_w008_ORCL
-    oracle   12030     1  0 22:39 ?        00:00:00 ora_w009_ORCL
-    oracle   12048     1  0 22:39 ?        00:00:00 ora_w00a_ORCL
-    oracle   12064     1  0 22:39 ?        00:00:00 ora_w00b_ORCL
-    oracle   12071     1  0 22:39 ?        00:00:00 ora_w00c_ORCL
-    oracle   12093     1  0 22:40 ?        00:00:00 ora_w00d_ORCL
+    ...
     oracle   12100     1  0 22:40 ?        00:00:00 ora_w00e_ORCL
     oracle   12104     1  0 22:40 ?        00:00:00 ora_w00f_ORCL
     opc      12412 10323  0 22:44 pts/1    00:00:00 grep --color=auto ORCL
     ```
 
-4. Verify the listener is running.
+5. Verify the listener is running.
 
     ```nohighlighting
     $ <copy>ps -ef | grep tns</copy>
@@ -286,19 +231,13 @@ In this lab, you learn how to do the following:
     opc      12602 10323  0 22:46 pts/1    00:00:00 grep --color=auto tns
     ```
 
-5. Switch to the `oracle` user.
-
-    ```nohighlighting
-    $ <copy>sudo su - oracle</copy>
-    ```
-
 6. Set the environment variables to point to the Oracle binaries. When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
 
     ```nohighlighting
     $ <copy>. oraenv</copy>
-    ORCL
-
-    The Oracle base remains unchanged with value /u01/app/oracle
+    ORACLE_SID = [oracle] ? ORCL
+    The Oracle base has been set to /u01/app/oracle
+    [oracle@workshop ~]$
     ```
 
 7. Using SQLPlus, connect to the `root` container of your database. SQL*Plus is an interactive and batch query tool that is installed with every Oracle Database installation.
@@ -307,14 +246,14 @@ In this lab, you learn how to do the following:
     $ <copy>sqlplus / as sysdba</copy>
 
     SQL*Plus: Release 19.0.0.0.0 - Production on Wed Apr 14 22:52:11 2021
-    Version 19.7.0.0.0
+    Version 19.10.0.0.0
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
 
     Connected to:
     Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.7.0.0.0
+    Version 19.10.0.0.0
 
     SQL>
     ```
@@ -367,10 +306,12 @@ In this lab, you learn how to do the following:
     ```nohighlighting
     $ <copy>sqlplus system/Ora_DB4U@localhost:1521/orclpdb</copy>      
     ```
-11. Exit SQL*Plus.
+13. Exit SQL*Plus.
 
     ```nohighlighting
     SQL> <copy>EXIT</copy>
+    Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.10.0.0.0
 
     $
     ```

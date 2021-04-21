@@ -2,37 +2,43 @@
     "workshoptitle":"Oracle Database 19c New Features",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
+    {
+        "title": "Introduction",
+        "description": "Introduction to Oracle Database 19c and the workshop.",
+        "filename": "./../../intro/intro.md",
+        "type": "livelabs"
+    },
          {
             "title": "Getting Started",
-            "description": "Log in to Oracle Cloud",
+            "description": "Create an Oracle account and request a workshop reservation.",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md",
             "type": "livelabs"
         },
         {
-            "title": "Introduction to Oracle Database 19c",
-            "description": "Introduction to the Oracle Database 19c Workshop",
-            "filename": "./../../intro/intro.md",
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Steps to generate SSH keys using Cloud Shell, Mac OS, Windows 10, and Git for Windows.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md",
             "type": "livelabs"
         },
         {
-            "title": "Lab 1: Install Oracle Database 19c with Automatic Configuration Script Execution",
-            "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution.",
-            "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-config-script-execution.md",
-            "type": "livelabs"
-        },
+        "title": "Lab 2: Install Oracle Database 19c with Automatic Root Script Execution",
+        "description": "Install Oracle Database 19c with automatic configuration script execution. You access a Gaucamole desktop on your compute instance from a browser.",
+        "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-config-script-execution-guac.md",
+        "type": "livelabs"
+         },
         {
-            "title": "(For reference only) Lab 1: Verify Setup",
-            "description": "Finish LiveLabs setup",
-            "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/verify-setup-19c-livelabs.md",
-            "type": "livelabs"
-        },
-        {
-            "title": "(For reference only) 3: Start Labs Here",
-            "description": "Duplicate this folder and rename based on lab name",
-            "filename": "./../../analyze/analyze.md",
-            "type": "livelabs"
-        },
+             "title": "Lab 3: Verify Setup",
+             "description": "Verify the compute instance with Oracle Database 19.10, provided by LiveLabs, is set up.",
+             "publisheddate": "3/24/2020",
+             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/verify-setup-19c-livelabs.md",
+             "type": "livelabs"
+         },
+         {
+             "title": "Appendix A: Install Oracle Database 19c with Automatic Root Script Execution - X11 Forwarding",
+             "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution. You run the Oracle Database installer by using X11 forwarding.",
+             "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-root-script-execution-x11.md",
+             "type": "livelabs"
+         },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",

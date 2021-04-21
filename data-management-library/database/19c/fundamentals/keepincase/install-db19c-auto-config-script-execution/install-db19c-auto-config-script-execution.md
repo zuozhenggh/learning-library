@@ -38,7 +38,8 @@ In this lab, you learn how to do the following:
 
 ### Assumptions
 
-- You are signed in to Oracle Cloud Infrastructure.
+- You are connected to your compute instance that has the Oracle Database 19c installation files staged on it. In the LiveLabs tenancy, this instance is called `workshop-staged`.
+- All prerequisite tasks for installing Oracle database are completed. If you are using the compute instance created by , your compute instance already has these tasks completed. If you are using a different compute instance, perhaps one that you created based on the instructions in one of the Appendix A or B labs, then make sure to follow the instructions in those labs to complete the prerequisite tasks.
 
 
 ## **STEP 1**: Create a compute instance in Oracle Cloud Infrastructure
@@ -80,25 +81,31 @@ In this lab, you learn how to do the following:
 
 ## **STEP 2**: Connect to your compute instance from your Cloud Shell machine
 
-To connect to your compute instance using Cloud Shell, you need to add your private key to the `.ssh` directory on your Cloud Shell machine. The `.ssh` directory already exists on your machine so you do not need to create it. You only need to add your private key once (step 2 below). After your private key is in its proper place, you can simply SSH to connect in future sessions (step 4 below).
+To connect to your compute instance using Cloud Shell, you need to add your private key to an `.ssh` directory on your Cloud Shell machine. You only need to add your private key once (step 2 below). After your private key is in its proper place, you can simply SSH to connect in future sessions (step 4 below).
 
 1. On the toolbar in Oracle Cloud Infrastructure, click the **Cloud Shell** icon to open the Cloud Shell window, and wait for a terminal prompt to be displayed.
 
   ![Cloud Shell icon](images/cloud-shell-icon.png)
 
-2. Do this once: Upload your private key to the `.ssh` directory on your Cloud Shell machine.
+2. Upload your private key to the `.ssh` directory on your Cloud Shell machine.
 
   a) From the **Cloud Shell** menu, select **Upload**. The **File Upload to your Home Directory** dialog box is displayed.
 
   b) Click **select from your computer**. Browse to and select your private key file, and then click **Open**. Click **Upload**. Your private key is uploaded to the `home` directory on your Cloud Shell machine.
 
-  c) Move your private key to the `.ssh` directory. In the code below, replace `private-key-filename` with the name of own private key file. Be sure to include the slash (/) after .ssh in the command to ensure that the file gets moved to a directory.
+  d) Create an `.ssh` directory in the `home` directory.
+
+    ```nohighlighting
+    $ <copy>mkdir .ssh/</copy>
+    ```
+
+  e) Move your private key to the `.ssh` directory. In the code below, replace `private-key-filename` with the name of own private key file. Be sure to include the slash (/) after .ssh in the command to ensure that the file gets moved to a directory.
 
     ```nohighlighting
     $ <copy>mv private-key-filename.key .ssh/</copy>
     ```
 
-  d) Set permissions on the `.ssh` directory so that only you (the owner) can read, write, and execute on the directory. Also set permissions on the private key itself so that only you (the owner) can read and write (but not execute) on the private key file.
+  f) Set permissions on the `.ssh` directory so that only you (the owner) can read, write, and execute on the directory. Also set permissions on the private key itself so that only you (the owner) can read and write (but not execute) on the private key file.
 
     ```nohighlighting
 
@@ -297,8 +304,8 @@ For your convenience, LiveLabs stores the Oracle Database 19c installer ZIP file
 5. Create an **Oracle home** directory and change to that directory. It's important that the Oracle home directory is in compliance with the Oracle Optimal Flexible Architecture recommendations. Make sure that the current user is still `oracle`.
 
     ```nohighlighting
-    $ <copy>mkdir -p /u01/app/oracle/product/19.10.0/dbhome_1</copy>
-    $ <copy>cd /u01/app/oracle/product/19.10.0/dbhome_1</copy>
+    $ <copy>mkdir -p /u01/app/oracle/product/19.0.0.0/dbhome_1</copy>
+    $ <copy>cd /u01/app/oracle/product/19.0.0.0/dbhome_1</copy>
     ```
 
 6. Extract the Oracle Database 19c installation ZIP file from the `stage` directory into the Oracle home directory.
@@ -466,7 +473,7 @@ In this step, you enable the `oracle` user to run the graphical Oracle Database 
 3. Change to the Oracle home directory.
 
     ```nohighlighting
-    $ <copy>cd /u01/app/oracle/product/19.10.0/dbhome_1</copy>
+    $ <copy>cd /u01/app/oracle/product/19.0.0.0/dbhome_1</copy>
     ```
 4. Launch the Oracle Database 19c installer. It's important that you run the `runInstaller` command from the Oracle home directory only.
 
@@ -482,7 +489,7 @@ In this step, you enable the `oracle` user to run the graphical Oracle Database 
 
   ![Select System Class page](images/select-system-class-page.png)
 
-7. On the **Typical Installation** page, leave the default entries as is. For the **Password** and **Confirm password** boxes, enter a password for the database `admin` user. Make note of this password as you will need it later. The name of the pluggable database is `orclpdb`. Click **Next**.
+7. On the **Typical Installation** page, do the following:leave the default entries as is. For the **Password** and **Confirm password** boxes, enter a password for the database `admin` user. Make note of this password as you will need it later. The name of the pluggable database is `orclpdb`. Click **Next**.
 
   ![Typical Install Configuration page](images/typical-install-configuration-page.png)
 
