@@ -114,11 +114,37 @@ select empno, ename, dept from emp where empno = :id
 
     ![URI Template field](./images/rest-11.png)
 
-7. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+11. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
     ![Create Modules slider with all info, left click create](./images/rest-12.png)
 
-8. 
+12. Now that the template has been created
+
+    ![Templates Page](./images/rest-13.png)
+
+    we need to create the **Handler** that will contain the SQL Statement. Click the **+ Create Handler** button on the right of the page, just below our newly created template.
+
+    ![Left click the + Create Handler button](./images/rest-14.png)
+
+13. The **Create Handler** slider comes out of the right of the page. 
+
+    ![Create Handler slider](./images/rest-15.png)
+
+    Here we will be entering the SQL the REST endpoint will use.
+
+14. Enter **select * from csv_data where col2 = :id** in the **Source** section of the **Create Handler** slider:
+
+    ````
+    <copy>select * from csv_data where col2 = :id</copy>
+    ````
+
+    ![Source Field](./images/rest-16.png)
+
+15. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+
+    ![Create Handler slider with all info, left click create](./images/rest-17.png)
+
+16. 
 
 ## Conclusion
 
