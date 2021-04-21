@@ -70,7 +70,16 @@ The following command will set the values of environment variables in mtdrworksh
 
 5. Copy the edited ./backend/target/classes/application.yaml to backend./src/main/resources/application.yaml
 
-6. Run the `build.sh` script to build and push the
+6. Edit ./backend/src/main/java/com/oracle/todoapp/Main.java
+ -  Locate the following code fragment
+    `.allowOrigins("http://localhost:3000",
+       "https://objectstorage.eu-frankfurt-1.oraclecloud.com",
+       "https://petstore.swagger.io")`
+ - Replace `eu-frankfurt-1` in  `"https://objectstorage.eu-frankfurt-1.oraclecloud.com"` by your region
+
+ - Save the file
+
+7. Run the `build.sh` script to build and push the
     microservices images into the repository
 
     ```
@@ -78,13 +87,13 @@ The following command will set the values of environment variables in mtdrworksh
     ```
   In a couple of minutes, you should have successfully built and pushed the images into the OCIR repository.
 
-7.  Check your container registry in the root compartment
+8.  Check your container registry from the root compartment
     - Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
    ![](images/Registry-root-compart.png " ")
 
-8. Mark Access as Public  (if Private)  (**Actions** > **Change to Public**):
+9. Mark Access as Public  (if Private)  (**Actions** > **Change to Public**):
 
    ![](images/Public-access.png " ")
 
