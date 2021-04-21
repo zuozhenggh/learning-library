@@ -45,7 +45,7 @@ More specifically, you will:
 
 ### Prerequisites
 
-* This workshop requires an **Oracle Cloud account**. You may use your own cloud account or you can get a Free Trial account as described in the [Get Started with Oracle Cloud](?lab=get-started-oracle-cloud) lab in the **Contents** menu on the left side of this page.
+* This workshop requires an **Oracle Cloud account**. For the HA cluster that this workshop requires, you must use your own cloud account. See []()
 
 * Any operating system command shell containing **Secure Shell (SSH)** and **Secure Copy (SCP)**. You can also use the open source PuTTY network file transfer application. See PuTTY documentation for instructions.
 
