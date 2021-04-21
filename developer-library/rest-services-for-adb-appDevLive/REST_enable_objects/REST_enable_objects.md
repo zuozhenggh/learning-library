@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will use Database Actions to REST enable your function and a custom SQL Statement.
+In this lab you will use Database Actions to REST enable your function and a custom SQL Statement that take in inputs.
 
 Estimated Lab Time: 10 minutes
 
@@ -40,8 +40,9 @@ select empno, ename, dept from emp where empno = :id
 
 ### Objectives
 
-- Load a CSV of over 2 million rows into the CSV_DATA table
-- Create PL/SQL business objects in the database
+- REST Enable Custom SQL that Accepts an Input
+- REST Enable Business Logic
+
 
 ### Prerequisites
 
@@ -65,15 +66,33 @@ select empno, ename, dept from emp where empno = :id
 
 3. On the Modules page, left click the **+ Create Module** button in the upper right.
 
-    ![Left click the + Create Modules button](./images/rest-2.png)
+    ![Left click the + Create Modules button](./images/rest-3.png)
 
-4. 
+4. The **Create Module** slider comes out from the right of the page.
 
+    ![Create Modules slider](./images/rest-4.png)
 
+5. Using the **Create Module** slider, we start with the Module name. The example we have here is **com.oracle.example.api**. Lets use the following:
 
+    ````
+    <copy>com.oracle.livelab.api</copy>
+    ````
 
+    ![Create Modules slider](./images/rest-5.png)
 
+6. For the **Base Path** field, we can use the default of **/api/**. Enter /api/ in the base path field.
 
+    ````
+    <copy>/api/</copy>
+    ````
+
+    ![Create Modules slider](./images/rest-6.png)
+
+7. When the **Create Module** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+
+    ![Create Modules slider](./images/rest-7.png)
+
+8. 
 
 ## Conclusion
 
