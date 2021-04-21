@@ -1,6 +1,6 @@
 # Introduction
 
-Oracle Data Guard provide disaster recovery for your Oracle databases.  A standby database is set up to receive redo "transaction" logs from the primary database.  In the event of a disaster on the primary database, a failover to the standby database will occur.  
+Oracle Data Guard provide disaster recovery for your Oracle databases.  A standby database is set up to receive redo transaction logs from the primary database.  In the event of a disaster on the primary database, a failover to the standby database will occur.  
 
 For disaster recovery, it is a best practice to set up the primary and standby database in two different data centers preferably located in different geographies.  In this guide we will be setting up Oracle Data Guard between two cloud regions using Oracle Database Cloud Service.  
 
