@@ -131,24 +131,24 @@ In order to refresh an environment you will need an environment created from a t
 1.	First we will create a target environment for our refresh. 
     Navigate to **Dashboard** > **Environment**.
     Click the down arrow on your source environment (**RefreshDB**) and then click **Clone Environment**.
-    ![](./images/clonetop1.png "")
+    ![](./images/clone.png "")
 
     Provide a unique environment name such as **TestRefresh**. Leave everything else as default and then click **Clone**.
-    ![](./images/clonetop1.png "")
+    ![](./images/testrefresh.png "")
 
 2.  Once the source and target environments are both running, we can then create
     a backup from the source environment. We will use this backup to refresh the target environment.
     On your source environment (**RefreshDB**), click the down arrow and then click **Backup and Restore**. 
-    ![](./images/editFull.png "")
+    ![](./images/backup.png "")
 
-    Provide a unique backup name such as **TestBackup**. Click **Backup**.
-    ![](./images/nodes2.png "")
+    Provide a unique backup name such as **TestBackup**. Leave everything else as default and then click **Backup**.
+    ![](./images/testbackup.png "")
 
 3.  Once the backup has finished we are ready to refresh the target environment. 
     On your target (**TestRefresh**) environment, click the down arrow and then click **Refresh**.
-    ![](./images/lintop.png "")
+    ![](./images/refreshtest.png "")
 
-    Enter the following details
+    Enter the following details:
     * Source Type: **OCI Backup**
     * Environment Name: Your source environment (**RefreshDB**)
     * Backup ID: **TestBackup**
@@ -158,7 +158,6 @@ In order to refresh an environment you will need an environment created from a t
     ![](./images/lintop.png "")
 
     Click **Done**.
-    ![](./images/lintop.png "")
 
 You may now proceed to the next lab.
 
