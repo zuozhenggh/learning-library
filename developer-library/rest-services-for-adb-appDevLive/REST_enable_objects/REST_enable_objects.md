@@ -144,7 +144,33 @@ select empno, ename, dept from emp where empno = :id
 
     ![Create Handler slider with all info, left click create](./images/rest-17.png)
 
-16. 
+16. Back on Template page, we can try our handler out. Click the **execute** button ![execute query button](./images/execute-button.png) in the **Source** section of the page.
+
+    ![Execute button in source section of the page](./images/rest-18.png)
+
+17. After clicking the **execute** button ![execute query button](./images/execute-button.png), a **Bind Variables** modal will appear. Enter **a1** for the value in **id field** 
+
+    ![id field in the Bind Variables modal](./images/rest-19.png)
+
+    and then left click **OK** on the modal.
+
+    ![Bind Variables modal](./images/rest-20.png)
+
+18. You can see the results of the query just below the **Source** section. (You may need to scroll the page down)
+
+    ![Source query results](./images/rest-21.png)
+
+19. We can try the REST endpoint by clicking the pop out icon ![pop out icon](./images/popout.png) in the Template region on the top of the page.
+
+    ![pop out icon in the Template region on the top of the page](./images/rest-22.png)
+
+20. In the new browser tab/window with the REST endpoint URL
+
+    ![URL with bind variable](./images/rest-23.png)
+
+    replace the :id with a1 and submit the URL
+
+    ![submitted URL and working REST service](./images/rest-24.png)
 
 ## Conclusion
 
