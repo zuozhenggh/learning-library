@@ -5,9 +5,9 @@ This lab walks you through the steps to refresh an environment.
 
 ### Objectives
 In this lab you will:
-* Create a clone of an environment
-* Create a backup of an environment
-* Use a backup to refresh an environment
+* Create an environment using DBaaS
+* Create a clone and backup of an environment
+* Refresh an environment
 
 ### Prerequisites
 - Access to the Cloud Manager console.
@@ -19,29 +19,20 @@ In order to refresh an environment you will need a topology with DBaaS. If you a
 1.  Navigate to **Dashboard** > **Topology**. Click **Add New Topology**.
     ![](./images/topology.png "")
 
-2.  Give the topology a name such as **RefreshDBaaS** and enter a description. Now we will add 3 new nodes. First we will add the Middle Tier node. Click **Add Node**.
+2.  Give the topology a name such as **RefreshDBaaS** and enter a description. Now we will add 3 new nodes. Click **Add Node**.
     ![](./images/topname.png "")
 
-    Enter the following details:
-    * Operating System: Linux
-    * Environment Type: Middle Tier
-    * Shape Name: VM.Standard2.1
-    * Leave rest as default and click **Done**
+    First we will add the Middle Tier node. Select the following:
     ![](./images/mid.png "")
+    Click **Done**.
     
-    Next the DB Systems node:
-    * Operating System: Linux
-    * Environment Type: DB Systems
-    * Shape Name: VM.Standard2.1
-    * Leave Disk Space as default and click **Done**
+    Click **Add Node** again and then select the following for the DB Systems node: 
     ![](./images/db.png "")
+    Click **Done**.
     
-    Finally the Peoplesoft Client node:
-    * Operating System: Windows
-    * Environment Type: PeopleSoft Client
-    * Shape Name: VM.Standard2.1
-    * Leave Disk Space as default and click **Done**
+    Click **Add Node** one last time then select the following for the PeopleSoft Client node: 
     ![](./images/client.png "")
+    Click **Done**.
 
     Your topology should look like the following:
     ![](./images/topologyfinal.png "")
@@ -154,7 +145,7 @@ In order to refresh an environment you will need an environment created from a t
     * Backup ID: **TestBackup**
     * Use Latest Backup: **YES**
     * App Refresh: **NO**
-    * Source TDE KeyStore (Wallet) Password: DB Admin password (**Psft1234##**)
+    * Source TDE KeyStore (Wallet) Password: DB Admin password (**PSft1234##**)
     ![](./images/lintop.png "")
 
     Click **Done**.
@@ -166,7 +157,7 @@ You may now proceed to the next lab.
 **Created By/Date**   
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
 * **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
+* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
