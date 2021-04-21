@@ -32,9 +32,11 @@ This section introduces some common terms that are used throughout this lab:
 **URI template**: A simple grammar that defines the specific patterns of URIs that a given resource template can handle. For example, the pattern employees/{id} will match any URI whose path begins with employees/, such as employees/2560.
 
 **Resource handler**: Provides the logic required to service a specific HTTP method for a specific resource template. For example, the logic of the GET HTTP method for the preceding resource template might be:
-    ```
-    select empno, ename, dept from emp where empno = :id
-    ```
+
+```
+select empno, ename, dept from emp where empno = :id
+```
+
 **HTTP operation**: HTTP (HyperText Transport Protocol) defines standard methods that can be performed on resources: GET (retrieve the resource contents), POST (store a new resource), PUT (update an existing resource), and DELETE (remove a resource).
 
 
