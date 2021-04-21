@@ -4,7 +4,7 @@
 
 In this lab, you will use Database Actions and the REST console to build a REST API using a parametrized PL/SQL procedure and SQL statement. 
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 #### About RESTful Web Services
 
