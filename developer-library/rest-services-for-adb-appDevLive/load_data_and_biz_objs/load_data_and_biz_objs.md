@@ -17,7 +17,6 @@ Estimated Lab Time: 10 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - Completed the [User Setups Lab](../user-setups/user_setups.md)
 - Completed the [Create and auto-REST enable a table lab](../create_table/create_table.md)
-- Completed the [Loading Data and Creating Business Objects Lab](../load_data_and_biz_objs/load_data_and_biz_objs.md)
 
 ## **STEP 1**: Load data into the Database
 
