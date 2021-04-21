@@ -1,6 +1,8 @@
 # Deploying Nextcloud on OCI Arm A1 
 
-This tutorial shows how to run Nextcloud on the OCI Arm A1 compute platform as a container workload. This tutorial also uses the new container tools such as Podman,  included in Oracle Linux 8 to manage container workloads. Podman provides a lightweight utility to run and manage Open Container Initiative (OCI) compatible containers. A Podman deployment can re-use existing container images.
+This tutorial describes how to run Nextcloud on the OCI Arm A1 compute platform as a container deployment. The OCI Arm A1 compute platform based on Ampere Altra CPUs represent a generational shift for enterprises and application developers that are building workloads that can scale from edge devices to cloud data centers. The unique design of this  platform delivers consistent and predictable performance as there are no resource contention within a compute core and offers more isolation and security. This new class of compute shapes on Oracle Cloud Infrastructure  provide an unmatched platform that combines power of the Altra CPUs with the security, scalability and eco-system of services on OCI.
+
+This tutorial also uses the new container tools such as Podman,  included in Oracle Linux 8. Podman provides a lightweight utility to run and manage Open Container Initiative (OCI) compatible containers. A Podman deployment can re-use existing container images.
 Podman does not require a running daemon and enables containers to start and run without root permissions. To learn more about Podman on Oracle Linux, visit the [official documentation](https://docs.oracle.com/en/operating-systems/oracle-linux/podman/index.html)
 
 
@@ -20,7 +22,7 @@ Estimated time: 20 minutes
 
 Once the instance has been created with Oracle Linux 8.x, we can install the `container-tools` package to prepare our instance with the required tools to deploy containerized workloads.  
 
-1. Login to the instance using SSH. Use the key you either generated or provided during the instance creation step. The default username for instances using the Oracle Linux operating system is `opc`.
+1. Login to the instance using SSH. Use the key you either generated or provided during the instance creation step. The default username for instances running on the Oracle Linux operating system is `opc`.
 
 1. Install the `container-tools` module that pulls in all the tools required to work with containers.
     ```
@@ -30,7 +32,7 @@ Once the instance has been created with Oracle Linux 8.x, we can install the `co
 
 1. Set SELinux to be in permissive mode so that Podman can easily interact with the host.
     
-    **Note**: This is not recommended for production use. However, setting up SELinux policies for containers are outside the scope of this tutorial. For details, see the [official documentation](https://docs.oracle.com/en/operating-systems/oracle-linux/podman/index.html).
+    >**Note**: This setting is not recommended for production use. However, setting up SELinux policies for containers are outside the scope of this tutorial. For details, see the [official documentation](https://docs.oracle.com/en/operating-systems/oracle-linux/podman/index.html).
 
     ```
     sudo setenforce 0
@@ -38,18 +40,23 @@ Once the instance has been created with Oracle Linux 8.x, we can install the `co
 
 ## Creating a pod definition
 
-Podman can manage groups of containers called Pods. Formally, pods are a group of one or more containers sharing the same network, pid and ipc namespaces. This concept was initially introduced by the kubernetes project, and Podman pods are very similar to [Kubernetes Pods](https://kubernetes.io/docs/concepts/workloads/pods/). 
+Podman can manage groups of containers called Pods. Formally, pods are a group of one or more containers sharing the same network, pid and ipc namespaces. This concept was initially introduced by the Kubernetes project, and Podman pods are very similar to [Kubernetes Pods](https://kubernetes.io/docs/concepts/workloads/pods/). 
 
 In many ways a pod behaves like a virtual host on which the services within each container are run. This means that each container can access the services on each other container as if they were running on the same host. Running containers in this way can remove a lot of complexity around networking and can make it easier to limit public exposure of ports that are only intended for use by services within the application itself. 
 
-Pods are a great way to manage related containers, like when an application is made up of multiple containers.  Here we shall deploy Nextcloud as a single Pod. The containers required for NextCloud are contained inside our Pod, and started and stopped together. The first step in managing our application as a Pod is to create an empty pod definition.
+Pods are a great way to manage related containers, like when an application is made up of multiple containers.  In this tutorial, you shall deploy Nextcloud as a Pod. The containers required for NextCloud are contained inside our Pod, and started and stopped together. The first step in managing our application as a Pod is to create an empty pod definition.
 
-1. Here we create a Pod definition, name that pod 'nextcloud' and set the hostname for that pod to 'nextcloud'
-1. We also create a port binding from port 8080 on the host to port 80 on the Pod. 
+Create a Pod with the command below 
 
-    ```
-    podman pod create --hostname nextcloud --name nextcloud -p 8080:80
-    ```
+  ```
+  podman pod create --hostname nextcloud --name nextcloud --publish 8080:80
+  ```
+    
+  1. `podman pod create` - creates a pod.
+  2. `--hostname nextcloud` - sets the hostname for the pod as `nextcloud`
+  3. `--name nextcloud` - sets the name of the pod as `nextcloud`
+  4. `--publish 8080:80` - publish port `80` on the pod to port `8080` on the host.
+  
 ## Defining storage volumes
 
 Now that the pod is defined, we should define some storage options as well before we populate the Pod with our containers. Containers use writable containers layers by default for all files created inside a container. This means that the files and data created by the processes ina container are not persisted and is lost when the container is removed or terminated. It also makes it hard to share the data across containers. Volumes are the preferred way to persist data created by containers. They can be thought of as storage abstractions for storage locations on the host machine, but  managed independent of the container's lifecycle. They also make it easy to share data between containers by simultaneously mounting them on multiple containers.
