@@ -4,36 +4,84 @@
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-This lab walks you through the steps to ...
+This lab walks you through the steps to visualize the data we're processed into easily digestible canvases using the functionalities of Oracle Cloud Analytics.  
+
+We connected to our ADB instance **ADWWINE** in the previous Lab, and registered the Machine Learning Model. In this step, we'll add the datasets from the ADB instance to Oracle Cloud Analytics so we can use the data in projects for visualization.
 
 Estimated Lab Time: n minutes
 
 ### About Product/Technology
-Enter background information here..
+
+Oracle Cloud Analytics snippet here
 
 ### Objectives
 
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Import Project
+* Utilize Project Canvases
+* Interpret Data
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+Previous lab stuff -come back to this
 
 *This is the "fold" - below items are collapsed by default*
 
 
-## **STEP 1**: Login to Oracle Analytics Cloud
 
+## **STEP 1**: Import Project
 
-## **STEP 2**: 
+1. Download the project DVA file from the link below.
+
+  [link](urlhere)
+
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
+
+3. Under **Compartment**, make sure you select the compartment **OACWINE** is located in. Then in the OACWINE instance row, click the **Three Dots** to expand out the menu and select **Analytics Home Page**. Feel free to bookmark this page to navigate back to it easier.
+
+  ![](./images/analytics-home-button.png " ")
+
+4. Click the **Page Menu** in the upper left, and select **Import Project/Flow**.
+
+5. Click **Select File** and select the DVA file you downloaded from step 1. Then, click **Import**.
+
+6. You will be prompted to enter a password, paste in **WELcome__1234** and click **OK**.
+
+7. Import successful! Click **OK**.
+
+## **STEP 2**: Project Setup
+
+1. Open up the imported project called **Picking a Good Wine** by clicking the picture.
+
+2. This project contains 6 empty canvases that have been prepared for you, we have to add the datasets from Lab 3 to the project in order to make use of them.
+
+3. In the top bar, click **Prepare** and then click the **+** sign in the middle of the page to add datasets to the project.
+
+4. Select **all 4** of the datasets we added previously by holding control or shift, and then click **Add to Project**.
+
+5. In the top bar, click back to **Visualize**. You should see all the datasets and their respective column data as individual items in the panel to the left. Use the slider bar to scroll, we'll be pulling data from these datasets to populate the canvases in the next step.
+
+## **STEP 3**: Populate the Canvases
+
+  In this section, we will be adding data to the 6 prepared canvases in order to visualize the data we processed into useful presentations. Feel free to skip around or modify any of the canvases to suit your own needs or curiosities.
+
+### **Canvas 1:** Price by Country
+
+1. 
+
+### **Canvas 2:** Price/Points by Variety
+
+### **Canvas 3:** Pick a Variety
+
+### **Canvas 4:** Attributes of Good Wine
+
+### **Canvas 5:** Wine Reviews Tag Cloud
+
+### **Canvas 6:** Spending Limits for Wine
 
 
 
