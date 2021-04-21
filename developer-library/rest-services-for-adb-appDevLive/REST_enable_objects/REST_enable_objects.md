@@ -233,6 +233,15 @@ select empno, ename, dept from emp where empno = :id
 
     ![Create Handler slider with all info, left click create](./images/rest-31.png)
 
+17. Next step we need to create an output parameter so we can return the result; the count or rows where the passed in value is equal to the values in col2 in our table. On the bottom on the bizlogic details page, under the **Source** area, we see the **+ Create Parameter** button. Left click the **+ Create Parameter** button.
+
+    ![Left click the + Create Parameter button](./images/rest-32.png)
+
+18. The **Create Parameter** slider comes out of the right of the page. 
+
+    ![Create Parameter slider](./images/rest-33.png)
+
+19. 
 
 curl --location --request POST \
 'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic/id' \
