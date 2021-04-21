@@ -3,6 +3,8 @@
 ## Introduction
 This lab walks you through the steps to refresh an environment.
 
+Estimated Lab Time: 1 hour
+
 ### Objectives
 In this lab you will:
 * Create an environment using DBaaS
@@ -125,7 +127,7 @@ In order to refresh an environment you will need an environment created from a t
     ![](./images/clone.png "")
 
     Provide a unique environment name such as **TestRefresh**. Leave everything else as default and then click **Clone**.
-    ![](./images/testrefresh.png "")
+    ![](./images/testrefresh.png "")    
 
 2.  Once the source and target environments are both running, we can then create
     a backup from the source environment. We will use this backup to refresh the target environment.
@@ -135,8 +137,19 @@ In order to refresh an environment you will need an environment created from a t
     Provide a unique backup name such as **TestBackup**. Leave everything else as default and then click **Backup**.
     ![](./images/testbackup.png "")
 
-3.  Once the backup has finished we are ready to refresh the target environment. 
-    On your target (**TestRefresh**) environment, click the down arrow and then click **Refresh**.
+3.  This backup will take a few minutes to complete. To check the status of the backup click the down arrow on your source environment (**RefreshDB**) and then click **Details**.
+    ![](./images/details.png "")
+
+4.  On the side menu select **Provision Task Status**. You will then be able to see the start time and status of your backup. If under **Status** you see a gear icon (like the picture below), this means that the backup is still in progress.
+    ![](./images/gears.png "")
+    You can also select **Logs** on the side menu and follow along from there as well.
+    ![](./images/logs.png "")
+
+    Once **Status** changes to a green checkmark (like the picture below) you can continue on with this lab. 
+    ![](./images/green.png "")   
+
+5.  Now that the backup has finished we are ready to refresh the target environment. 
+    On your target environment (**TestRefresh**), click the down arrow and then click **Refresh**.
     ![](./images/refreshtest.png "")
 
     Enter the following details:
