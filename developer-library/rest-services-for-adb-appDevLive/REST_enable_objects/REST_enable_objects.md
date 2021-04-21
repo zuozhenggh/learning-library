@@ -291,32 +291,31 @@ select empno, ename, dept from emp where empno = :id
 
     ![cURL Command modal](./images/rest-43.png)
 
-    Use the **Fill Bind Variables Values** icon ![Fill Bind Variables Values icon](./images/fill-bind.png) to fill in the 
+    Use the **Fill Bind Variables Values** icon ![Fill Bind Variables Values icon](./images/fill-bind.png) to fill in the **id** field with the value of **a1** in the **Substitutions** modal. Then click OK when done.
+    
+    ![Substitutions modal](./images/rest-44.png)
 
+29. Click the copy icon ![Fill Bind Variables Values icon](./images/copy-copy.png) to copy the cURL command with the added Substitution value.
 
+    ![Copied cURL command](./images/rest-45.png)
 
-We see the parameter has been created.
+30. Using the OCI Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
 
-    ![Parameter created in report](./images/rest-33.png)
-
-curl --location --request POST \
-'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic/id' \
---header 'Content-Type: application/json' \
---data-binary '{
-  "id": "a1"
-}'
-
+```
 curl --location --request POST \
 'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
 --header 'Content-Type: application/json' \
 --data-binary '{
-  "id": "c9"
+  "id": "a1",
+  "output": "" 
 }'
-
+{"output":8204}%                                                                
+```
 
 ## Conclusion
 
-In this lab, you loaded over two million rows into a table with curl and REST as well as added business logic to the database.
+XXX
+
 
 ## Acknowledgements
 
