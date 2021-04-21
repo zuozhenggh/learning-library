@@ -100,6 +100,26 @@ select empno, ename, dept from emp where empno = :id
 
     ![Left click the + Create Template button](./images/rest-9.png)
 
+9. The **Create Template** slider comes out of the right of the page. 
+
+    ![Create Template slider](./images/rest-10.png)
+    
+    Here we will create the endpoint or URL location for our REST enabled SQL Statement that takes in a value.
+
+10. In the **URI Template** template field, enter sqlreport/:id
+
+    ````
+    <copy>sqlreport/:id</copy>
+    ````
+
+    ![URI Template field](./images/rest-11.png)
+
+7. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+
+    ![Create Modules slider with all info, left click create](./images/rest-12.png)
+
+8. 
+
 ## Conclusion
 
 In this lab, you loaded over two million rows into a table with curl and REST as well as added business logic to the database.
