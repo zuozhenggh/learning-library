@@ -92,7 +92,13 @@ select empno, ename, dept from emp where empno = :id
 
     ![Create Modules slider](./images/rest-7.png)
 
-8. 
+8. Our module has now been created.
+
+    ![The Modules page](./images/rest-8.png)
+
+    We are now going to create a **Template** for the newly created module. Start by left clicking the **+ Create Template** button on the right side of the page, right under our module we just created.
+
+    ![Left click the + Create Template button](./images/rest-9.png)
 
 ## Conclusion
 
