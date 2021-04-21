@@ -14,7 +14,7 @@ Estimated Lab Time: 15 minutes
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- Completed the User Setups Lab
+- Completed the [User Setups Lab](../user-setups/user_setups.md)
 
 ## **STEP 1**: Load data into the Database
 
