@@ -303,7 +303,7 @@ select empno, ename, dept from emp where empno = :id
 
 ```
 curl --location --request POST \
-'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
 --header 'Content-Type: application/json' \
 --data-binary '{
   "id": "a1",
@@ -311,10 +311,12 @@ curl --location --request POST \
 }'
 {"output":8204}%                                                                
 ```
+    ![Cloud shell and cURL](./images/rest-46.png)
+
 
 ## Conclusion
 
-XXX
+In this lab, you published a REST API using Custom SQL and accepting an input as well as published a REST API using a stored PL/SQL procedure.
 
 
 ## Acknowledgements
