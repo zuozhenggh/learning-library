@@ -178,7 +178,7 @@ select empno, ename, dept from emp where empno = :id
 
 ## **STEP 1**: REST Enable Business Logic (PL/SQL procedure)
 
-1. It's now time to REST enable our Business Logic or PL/SQL procedure we created in the previous lab. To start, left click out module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
+1. It's now time to REST enable our Business Logic or PL/SQL procedure we created in the previous lab. To start, left click our module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
 
     ![Database Actions breadcrumbs](./images/rest-25.png)
 
@@ -241,7 +241,63 @@ select empno, ename, dept from emp where empno = :id
 
     ![Create Parameter slider](./images/rest-33.png)
 
-19. 
+19. For the **Parameter Name** field, enter **output**
+
+    ````
+    <copy>output</copy>
+    ````
+
+    ![Create Parameter name field](./images/rest-34.png)
+
+20. For the **Bind Variable Name** field, enter **output**
+
+    ````
+    <copy>output</copy>
+    ````
+
+    ![Bind Variable Name field](./images/rest-35.png)
+
+21. For the **Source Type** field, use the dropdown and select **Response**
+
+    ![Source Type field](./images/rest-36.png)
+
+22. For the **Parameter Type** field, use the dropdown and select **INT**. (We are returning a number remember)
+
+    ![Parameter Type field](./images/rest-37.png)
+
+23. Lastly, for the **Access Method**, use the dropdown and select **Output**
+
+    ![Access Method field](./images/rest-38.png)
+
+24. When the **Create Parameter** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+
+    ![Create Parameter slider with all info, left click create](./images/rest-39.png)
+
+25. You will see the newly created parameter in the parameters table on the bottom of the page.
+
+    ![Parameter created in report](./images/rest-40.png)
+
+    We are now ready to test this REST API.
+
+26. Left click **bizlogic** in the Database Actions breadcrumbs in the upper left of the page.
+
+    ![bizlogic breadcrumb](./images/rest-41.png)
+
+27. Now, using the popout menu icon ![popout menu icon](./images/pop-menu.png) on our bizlogic POST tile, select **Get cURL command**.
+
+    ![selecting Get cURL command](./images/rest-42.png)
+
+28. The cURL Command modal pops up.
+
+    ![cURL Command modal](./images/rest-43.png)
+
+    Use the **Fill Bind Variables Values** icon ![Fill Bind Variables Values icon](./images/fill-bind.png) to fill in the 
+
+
+
+We see the parameter has been created.
+
+    ![Parameter created in report](./images/rest-33.png)
 
 curl --location --request POST \
 'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic/id' \
