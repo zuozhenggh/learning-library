@@ -7,11 +7,6 @@
          "description": "Introduction",
          "filename": "./../../load-balancer-ha-intro/load-balancer-ha-intro.md"
       },
-
-
-
-
-
       {
           "title": "Create the Load Balancer",
           "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
