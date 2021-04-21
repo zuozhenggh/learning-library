@@ -1,10 +1,12 @@
 #  Use the Load Balancer to Access Services on the Cluster
 
+After you've completed the steps in the previous lab, you can access the services through the load balancer.
+
+## Introduction
 It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests.
 
-## Access the Services on the Cluster
+## STEP 1: Access the Services on the Cluster
 
-To access the services included in this load balancer:
 
 1. Find the IP address or the hostname used for your load balancer.
 

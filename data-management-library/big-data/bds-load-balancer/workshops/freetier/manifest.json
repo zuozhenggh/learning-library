@@ -3,22 +3,22 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
-         "title": "Introduction",
+         "title": "Lab 1: Introduction",
          "description": "Introduction",
          "filename": "./../../load-balancer-intro/load-balancer-intro.md"
       },
       {
-          "title": "Get Started",
+          "title": "Lab 2: Get Started",
           "description": "Get a Free Trial",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
       },
       {
-          "title": "Create the Load Balancer",
+          "title": "Lab 3: Create the Load Balancer",
           "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
           "filename": "./../../load-balancer/load-balancer.md"
       },
       {
-          "title": "Use the Load Balancer to Access Services on the Cluster",
+          "title": "Lab 4: Use the Load Balancer to Access Services on the Cluster",
           "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
           "filename": "./../../load-balancer-use/load-balancer-use.md"
       },
