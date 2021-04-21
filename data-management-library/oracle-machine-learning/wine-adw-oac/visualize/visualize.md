@@ -63,7 +63,29 @@ Previous lab stuff -come back to this
 
 4. Select **all 4** of the datasets we added previously by holding control or shift, and then click **Add to Project**.
 
-5. In the top bar, click back to **Visualize**. You should see all the datasets and their respective column data as individual items in the panel to the left. Use the slider bar to scroll, we'll be pulling data from these datasets to populate the canvases in the next step.
+5. Select the **Data Diagram** tab at the bottom on the page. You should see all the datasets and their respective column data as individual items in the panel to the left. We'll need to correct some data types here in order to correctly display the data.
+
+  * WINEREVIEWS130KTEXT:
+    - Select **ID** and in the bottom panel, switch **Treat As** from Measure -> **Attribute**
+    - Select **Points** and in the bottom panel, switch **Treat As** from Measure -> **Attribute**
+    - Select **Price** and in the bottom panel, switch **Aggregation** from Sum -> **Average**
+
+  * BEST_WINES:
+    - Select **ID** and in the bottom panel, switch **Treat As** from Measure -> **Attribute**
+    - Select **Price** and in the bottom panel, switch **Aggregation** from Sum -> **Average**
+    - Select **PREDICTION_PROBABILITY** and in the bottom panel, switch **Aggregation** from Sum -> **Average**
+
+6. Next, we need to blend the WINEREVIEWS130KTEXT and BEST_WINES datasets together by matching their identical columns. This will enable us to pull columns from both datasets for our canvases. Hover your cursor over the area between the two diagrams and click the link between them. 
+
+7. Click **Add Another Match**.
+
+8. In the left column, select **ID**.
+
+9. In the right column, select **ID** as well.
+
+10. Repeat steps 7-9 for ** Then click **OK**.
+
+10. WINEREVIEWS130KTEXT and BEST_WINES should now be grouped together in the the panel to the left. In the top bar, click back to **Visualize**.
 
 ## **STEP 3**: Populate the Canvases
 
@@ -71,7 +93,29 @@ Previous lab stuff -come back to this
 
 ### **Canvas 1:** Price by Country
 
-1. 
+1. Left Visualization (Map)
+  * WINEREVIEWS130KTEXT
+    - Drag **COUNTRY** to **Category (Location)**
+    - Drag **PRICE** to **Color**
+
+2. Top Right Visualization (Table)
+  * WINEREVIEWS130KTEXT
+    - Drag **ID** to **Rows**
+    - Drag **COUNTRY** to **Rows**
+    - Drag **POINTS** to **Rows**
+    - Drag **PRICE** to **Rows**
+    - Drag **VARIETY** to **Rows**
+  * BEST_WINES
+    - Drag **PREDICTION_PROBABILITY** to **Rows**
+
+3. Bottom Right Visualization (Graph)
+  * BEST_WINES
+    - Drag **PREDICTION_PROBABILITY** to **Values (Y-Axis)**
+    - Drag **PRICE** to **Values (X-Axis)**
+    - Drag **VARIETY** to **Shape**
+
+4. Take a look at your visualizations. There is some good information to be gleamed from them right now, but with the use of filters, we can make them ever more valuable. 
+
 
 ### **Canvas 2:** Price/Points by Variety
 
