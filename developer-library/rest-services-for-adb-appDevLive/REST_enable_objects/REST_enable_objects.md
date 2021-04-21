@@ -52,7 +52,7 @@ select empno, ename, dept from emp where empno = :id
 - Completed the Create and auto-REST enable a table lab
 - Completed the Loading Data and Creating Business Objects Lab
 
-## **STEP 2**: REST Enable a custom SQL Statement
+## **STEP 1**: REST Enable a custom SQL Statement
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -171,6 +171,32 @@ select empno, ename, dept from emp where empno = :id
     replace the :id with a1 and submit the URL
 
     ![submitted URL and working REST service](./images/rest-24.png)
+
+## **STEP 1**: REST Enable Business Logic (a function)
+
+
+BEGIN
+
+    return_count(p_input => :id,
+                 p_output => :output);
+
+end;
+
+
+curl --location --request POST \
+'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic/id' \
+--header 'Content-Type: application/json' \
+--data-binary '{
+  "id": "a1"
+}'
+
+curl --location --request POST \
+'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+--header 'Content-Type: application/json' \
+--data-binary '{
+  "id": "c9"
+}'
+
 
 ## Conclusion
 

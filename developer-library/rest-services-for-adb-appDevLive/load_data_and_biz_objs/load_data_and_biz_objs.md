@@ -156,7 +156,8 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
     The following function returns a count of all the rows that match the input provided to col2 in the table:
 
     ````
-    <copy>create or replace function return_count (p_input in varchar2) return number 
+    <copy>create or replace procedure return_count (p_input in varchar2,
+                                                    p_output out number) 
     is
 
         l_count number;
@@ -164,26 +165,40 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
     begin
 
         select count(*) 
-        into l_count
-        from csv_data
-        where col2 = p_input;
-
-        return l_count;
-
-    end return_count;</copy>
+          into p_output
+          from csv_data
+         where col2 = p_input;
+ 
+    end return_count;
+    /
+    </copy>
     ````
 
     Copy and paste this code into the SQL Worksheet and left click the **Run Script** button on the toolbar:
 
     ![compile the function in the sql worksheet](./images/ld-10.png)
 
-11. We can test this function with a quick select statement. Copy and paste the following into the SQL Worksheet and run the statement:
+11. We can test this function with a quick PL/SQL procedure. Copy and paste the following into the SQL Worksheet and run the procedure with the **Run Script** button:
 
     ````
-    <copy>select return_count('1b') from dual;</copy>
+    <copy>
+    declare
+
+        l_output number;
+
+    begin
+
+        return_count(p_input => 'a1',
+                    p_output => l_output);
+
+    dbms_output.put_line(l_output);
+
+    end;
+    /
+    </copy>
     ````
 
-    ![SQL to try out the function](./images/ld-11.png)
+    ![SQL to try out the procedure](./images/ld-11.png)
 
 ## Conclusion
 
