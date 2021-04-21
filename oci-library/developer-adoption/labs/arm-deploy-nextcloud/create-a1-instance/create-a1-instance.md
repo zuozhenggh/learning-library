@@ -60,6 +60,7 @@ Now you are ready to move on to Step 3.
 1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. 
    1. Name the instance  **Nextcloud** 
    1. Click the **Change Shape** button to see the available compute shapes.
+   1. Ensure that the operating system selected is Oracle Linux 8 or newer. 
 
    ![ Create Instance](images/03_create_instance02.png " ")
    
