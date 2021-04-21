@@ -175,13 +175,15 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
     Copy and paste this code into the SQL Worksheet and left click the **Run Script** button on the toolbar:
 
-    ![compile the function in the sql worksheet](./images/ld-9.png)
+    ![compile the function in the sql worksheet](./images/ld-10.png)
 
 11. We can test this function with a quick select statement. Copy and paste the following into the SQL Worksheet and run the statement:
 
     ````
     <copy>select return_count('1b') from dual;</copy>
     ````
+
+    ![SQL to try out the function](./images/ld-11.png)
 
 ## Conclusion
 
