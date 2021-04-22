@@ -2,11 +2,16 @@
 
 After you've completed the steps in the previous lab, you can access the services through the load balancer.
 
-## Introduction
-It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests.
+## Objective
+* Access services like Hue on the cluster by using the load balancer address appended by the port on which the service runs.
+
+This lab assumes you have successfully completed **Lab 3 Create the Load Balancer** in this workshop. It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests.
+
+Estimated lab time: 10 minutes
 
 ## STEP 1: Access the Services on the Cluster
 
+To access the services configured with this load balancer:
 
 1. Find the IP address or the hostname used for your load balancer.
 
