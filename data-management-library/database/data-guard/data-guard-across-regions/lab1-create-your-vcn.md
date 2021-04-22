@@ -7,7 +7,7 @@
 3. Select your region and compartment
 
 
-![image-20210121174143796](images\image-20210121174143796.png)
+![image-20210121174143796](./images/image-20210121174143796.png)
 
 4. Go to Networking/Virtual Cloud Network
 5. Click Start VCN Wizard
@@ -34,12 +34,7 @@ ie: 10.0.0.0/16 for one region and 11.0.0.0/16 for the peer region.
 
 ![image-20210121181204561](images\image-20210121181204561.png)
 
-11. Click Next and then Click Create.  Your cloud network will be created quickly. 
+11. Click Next and then Click Create.  Your cloud network will be created quickly.
 12. Now do the same steps and create another VCN on your peer region.  
 
 Switch to your peer region and create your VCN.  Remember it must be in the same compartment.
-
-
-
-
-
