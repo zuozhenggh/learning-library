@@ -53,7 +53,7 @@ Learn how to
 
 3.  Click next to get a suggested model. We will edit and update this model.  
 
-    The suggested model has BANK_ACCOUNTS as a vertex and BANK_TXNS as an edge.   
+    The suggested model has `BANK_ACCOUNTS` as a vertex and `BANK_TXNS` as an edge.   
 
   ![](./images/18-ll-modeler-suggested-model.png " ")    
 
