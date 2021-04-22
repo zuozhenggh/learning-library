@@ -147,3 +147,6 @@ GraalVM can create self-contained executable binaries from your Java application
 
 The key takeaway here is that regardless of how simple or complex your application is, GraalVM native images can give you an immediate performance boost. Combined with the latest Arm-based compute shapes and GraalVM Enterprise, Oracle Cloud Infrastructure provides an unmatched platform for building and evolving your enterprise workloads.
 
+## Next Steps
+
+This tutorial covered how you can get started with building and deploying Java applications and micro services on the OCI Arm A1 platform using GraalVM. As a drop in replacement for the typical JRE, you can quickly validate your applications on GraalVM. The OCI Arm A1 platform with up to 160 cores offers opportunities to vertically scale your multi-threaded applications and micro services quickly and seamlessly. You can also move your existing workloads to the platform using hte same approaches described in the tutorial. Both Java SE as well as GraalVM Enterprise Edition are included in the OCI subscription.  

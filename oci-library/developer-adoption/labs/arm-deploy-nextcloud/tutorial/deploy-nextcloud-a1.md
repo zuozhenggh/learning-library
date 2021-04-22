@@ -140,3 +140,8 @@ podman run --detach --pod=nextcloud \
 
 Once the start up is complete, you can navigate to to `http://<your_public_ip>:8080` to reach your Nextcloud server. 
 
+## Next Steps
+
+This tutorial covered how you can get started with using Nextcloud on the OCI Arm A1 platform. Nextcloud comes with mobile applications as well that you can use to sync your photos and other documents from your mobile devices to your personal nextcloud server. You can also expand on this deployment to support more users, add more server capacity by scaling the compute and storage used by your deployment. When scaling out, it is recommended that you move out from the containerized deployment of MySQL to the much more robust managed service that OCI provides. It provides automated backups and you can seamlessly deploy your database in a highly available manner. 
+
+

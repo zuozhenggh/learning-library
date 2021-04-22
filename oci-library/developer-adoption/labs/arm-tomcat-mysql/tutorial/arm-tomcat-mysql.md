@@ -107,3 +107,7 @@ Podman containers can be inspected just like Docker containers (you can even ali
 
 - `podman ps -pa` - shows running and exited containers, and the pods they belong to. 
 - `podman logs -f todo-mysql` - shows the output from the specified container (`todo-mysql` in this example). Press `Ctrl+c` to exit.
+
+## Next Steps
+
+This tutorial covered how you can get started with building and deploying  Java and Java EE applications on the OCI Arm A1 platform. The OCI Arm A1 platform with up to 160 cores offers opportunities to vertically scale your multi-threaded applications and micro services. You can also move your existing workloads to the platform using the same approaches described in the tutorial. Both Java SE as well as GraalVM Enterprise Edition are included in the OCI subscription. When deploying production workloads, it is recommended that you move out from the containerized deployment of MySQL to the much more robust managed service that OCI provides. It provides automated backups and you can seamlessly deploy your database in a highly available manner. 
