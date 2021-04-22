@@ -21,8 +21,6 @@ The first version of *OCI Anomaly Detection Service* which is serverless, multi-
 * Learn how to deploy the trained model into production for future anomaly detection
 * Time series is a series of data points ordered by time.  Time series analysis and modeling have a wide range of industry applications from finance, retail to transportation.   In time series modeling, the goal is to create a model that describes the pattern of the data as it changes over time.  
 
-![](../images/oci.png " ")
-
 ### Prerequisites:
 * An Oracle Free Tier, Always Free, or Paid Cloud Account
 * Approved access to be whitelisted to use OCI ADS

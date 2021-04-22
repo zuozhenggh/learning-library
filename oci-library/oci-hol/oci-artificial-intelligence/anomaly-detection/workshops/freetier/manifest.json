@@ -8,7 +8,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 0: Anomaly Detection",
+            "title": "Introduction: Anomaly Detection",
             "description": "Learn how to build anomaly detection model.",
             "filename": "../../anomalies/anomaly-detection.md"
         },
@@ -20,7 +20,7 @@
         {
             "title": "Lab 2: Prepare Training Data and Detection Data",
             "description": "Learn how to process data for AD Service.",
-            "filename": "../../anomalies/anomaly-detection.md"
+            "filename": "../../anomalies/data-preparation.md"
         },
         {
             "title": "Lab 3: Create Anomaly Detection Project",
