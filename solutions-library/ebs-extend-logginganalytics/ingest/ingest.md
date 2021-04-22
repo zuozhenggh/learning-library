@@ -224,7 +224,7 @@ Now we will walk through installing management agents on our hosts. Because we a
 
 12. Go to the /tmp folder and using vi, edit the `ebs_agent_key.txt` file and change the name to refer to the server. We will use the same .txt file. 
   
-13. Once you edited the `ebs_agent_key.txt` file you can repeat the steps for install starting from `g.` to `j.` on each instance you want to monitor then exit to repeat. 
+13. Once you edited the `ebs_agent_key.txt` file you can repeat the steps for install starting from `6.` to `9.` on each instance you want to monitor then exit to repeat. 
 
 Note: You can also follow the recommended procedure of deleting your key file from your instance one the agent has been installed and is configured properly 
     

@@ -13,7 +13,7 @@ Estimated Workshop Time: 2-3 hours
 
 ### Prerequisites
 - A paid Oracle Cloud account
-- Familiarity with Oracle Cloud Integration (OCI) and database terms is helpful
+- Familiarity with Oracle Autonomous Database (ADB) and database terms is helpful
 - An understanding of Disaster Recovery concepts would be useful for this workshop
 
 ### Architecture Overview
