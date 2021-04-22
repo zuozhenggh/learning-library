@@ -20,7 +20,7 @@ In the previous lab you created an ADB instance.  In this lab you will connect t
 
 2. Click on the hamburger menu and navigate to Object Storage and click on **Object Storage**.
 
-      ![](./images/step1-2.png " ")
+      ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 3. Choose the compartment where your ATP is provisioned and click **Create Bucket**.
 
@@ -43,11 +43,13 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 2.  Click the Cloud Shell icon to start up Cloud Shell
       ![](./images/cloud-shell.png " ")
 3.  While your Cloud Shell is starting up, click on the Hamburger Menu -> **Autonomous Transaction Processing** 
-      ![](./images/select-atp.png " ")
+      ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 4.  Click on the **Display Name** to go to your ADB main page.
+
+      ![](./images/step2-4.png " ")
    
-5.  Locate the **OCID** (Oracle Cloud ID) you will need that in a few minutes. 
+5.  Locate and copy the **OCID** (Oracle Cloud ID) you will need that in a few minutes. 
 
       ![](./images/locate-ocid.png " ")
 
@@ -96,8 +98,8 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
       ![](./images/token.png " ")
 
-6.  Identify the line in the output that starts with "token".
-7.  Copy the value for the token somewhere safe, you will need it for the next step.
+6.  Identify the line in the output that starts with **"token"**.
+7.  Copy the value for the **token** somewhere safe, you will need it in the following steps.
 
 ## **STEP 4:**  Load ADB Instance with Application Schemas
 
@@ -228,9 +230,9 @@ To access data in the Object Store you have to enable your database user to auth
 
 1. Copy and paste this the code snippet in to SQL Developer worksheet. Specify the credentials for your Oracle Cloud Infrastructure Object Storage service by replacing the `<username>` and `<token>` with the following username and password:
 
-	- Credential name: Description of the auth token. In this example, the auth token is created with the description - `adb1` from step 1
-	- Username: The username will be the OCI Username you noted in step 3
-	- Password: The password will be the OCI Object Store Auth Token you generated in step 3.
+	- Credential name: Description of the auth token. In this example, the auth token is created with the description - `adb1` from step 1.
+	- Username: The username will be the **OCI Username** you noted in step 3
+	- Password: The password will be the OCI Object Store Auth **Token** you generated in step 3.
 
 	```
 	<copy>
