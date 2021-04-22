@@ -15,6 +15,8 @@ In this section we will download sample Ansible resources and configure it to wo
 
     ```
     <copy>
+    mkdir ansible
+    cd ansible
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LG9tAGM2XJghv_CYDsXOhbnS-3Qf4kTjFisIJnQl__LFXbzPtU3hzGHugAgl8tUQ/n/c4u03/b/oci-library/o/oci_ansible.zip
     unzip oci_ansible.zip
     </copy>
@@ -22,17 +24,20 @@ In this section we will download sample Ansible resources and configure it to wo
 
 2. Ansible will use your CLI credentials to authenticate and authorize access to OCI.  You will need to configure details of which compartment, region and compute shape.  Modify the **env-vars** file to update these values.
 
-**NOTE:** You need to find your compartment OCID and your Availability Domain ID. If running in Ashburn instead of Phoenix, just move the **#** to comment out the line for the region you are not using.
-
-    ````
-    <copy>
-    vi env_vars
-    </copy>
-    ````
-
+    **NOTE:** You need to find your compartment OCID and your Availability Domain ID. If running in Ashburn instead of Phoenix, just move the **#** to comment out the line for the region you are not using.
 
     ```
-    <copy>
+    oci iam availability-domain list
+    GrCh:US-ASHBURN-AD-1
+
+    oci compute image list -c $TENANCY_ID --region us-ashburn-1 --query "data[*]".{'name:"display-name",id:id'} --output table
+
+    ocid1.image.oc1.iad.aaaaaaaapxf2h62uxysjewwrgo5tkohb5frlf2wpzawmxgncxdy7vwnm7aza
+
+
+    $ vi env_vars
+    
+
     # OCID of assigned compartment
     export compartment_ocid=[your compartment id goes here - without square brackets]
 
@@ -86,7 +91,7 @@ In this section we will download sample Ansible resources and configure it to wo
     ```
 
 5. You will also need to update the ``oci_inventory.ini`` file for the dynamic inventory script.  Uncomment the compartment setting and replace the value with your compartment ocid.
-    ![](../images/ansible_004.png " ")
+    ![](../labs/images/ansible_004.png " ")
 
 6. Run the first sample playbook.  This will list some information about any compute resources you have in the compartment (should be the one you are using right now).
 
@@ -95,7 +100,7 @@ In this section we will download sample Ansible resources and configure it to wo
     ansible-playbook sample.yaml
     </copy>
     ```
-    ![](../images/ansible_001.jpg " ")
+    ![](../images/ansible_003.jpg " ")
 
 7. If the output is devoid of errors, it is time to deploy our sample infrastructure.
 
