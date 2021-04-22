@@ -17,7 +17,7 @@ Learn how to
 
 ### Prerequisites
 
-- Labs 1 and 2 of this workshop. That is, you are logged into Graph Studio and the `BANK_GRAPH` has been created and loaded into memory. 
+- Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
 
 ## **STEP 1**: Create a notebook  
 
