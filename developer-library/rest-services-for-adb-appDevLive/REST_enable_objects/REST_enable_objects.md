@@ -314,6 +314,7 @@ select empno, ename, dept from emp where empno = :id
 
     ![Cloud shell and cURL](./images/rest-46.png)
 
+    You can test other values by changing the id variable. Valid combinations are the first character is a lowercase **a** through **f** and the second character can be *1* though **9**. Valid examples are a1, e9, d3, b6, etc.
 
 ## Conclusion
 

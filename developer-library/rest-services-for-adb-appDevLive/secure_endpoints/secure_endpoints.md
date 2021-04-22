@@ -21,21 +21,21 @@ Estimated Lab Time: 10 minutes
 - Completed the [Loading Data and Creating Business Objects Lab](../load_data_and_biz_objs/load_data_and_biz_objs.md)
 - Completed the [REST Enable Business Logic and Custom SQL Lab](../REST_enable_objects/REST_enable_objects.md)
 
-## **STEP 4**: Securing the REST Endpoint
+## **STEP 1**: Securing the REST Endpoint
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
-1. So, we have a REST enabled table ready to be used by our applications but we need to ensure not just anyone can use it; we need to secure access to the table. To do this, let's use the Database Actions menu in the upper left of the page and choose REST.
+1. If not already there from the previous lab, we need to be on the **REST Database Actions** page. To do this, use the Database Actions menu in the upper left of the page and choose **REST** in the Development list.
 
-    ![Database Actions Menu, Development then REST](./images/sdw-44.png)
+    ![Database Actions Menu, Development then REST](./images/sec-1.png)
 
-2. The REST pages let you create REST endpoints just as we did with the auto REST option. Here, we want to select the Security Tab on the top of the page and then select OAuth Clients.
+2. Next, we want to select the **Security Tab** on the top of the page and then select **OAuth Clients**.
 
-    ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/sdw-45.png)
+    ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/sec-2.png)
 
-3. To create our OAuth client, we will secure our REST endpoints with, click the Create OAuth Client button in the upper right of the page.
+3. To create our OAuth client we will secure our REST endpoints with, click the **+ Create OAuth Client** button in the upper right of the page.
 
-    ![Click the Create OAuth Client button](./images/sdw-46.png)
+    ![Click the Create OAuth Client button](./images/sec-3.png)
 
 4. The Create OAuth Client slider will come out on the right of the page. In this form we first need to name our OAuth Client. We can name it **garysec**. Next we can give it a description; anything will do here. The follow field, support URI, is where a client will be taken upon an authorization error or failure. Finally, we need an support email for contacting someone. Once your form looks similar to the image below:
 
