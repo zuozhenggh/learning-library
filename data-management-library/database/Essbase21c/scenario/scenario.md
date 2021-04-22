@@ -112,8 +112,9 @@ This Step is geared towards developing an understanding of security for Essbase 
      ![](./images/imageSM_11.png "")
 
    d) by default all users have the Database Access Roles.
+     ![](./images/imageSM_11.png "")
 
-   e) Assign the following roles to the new ids added and Click Close:
+   e) Assign the following roles to the below users and Click Close:
       * John -> Database Manager
       * Phillip -> Database Update
       * Sam -> Database Update
@@ -131,13 +132,14 @@ This Step is geared towards developing an understanding of security for Essbase 
 
 1. Creating Scenarios:
    
-   In this exercise you log in as Maria creating a new scenario defining Sam as a participant.  Validate the impact of the security changes for each user John, Maria, Sam and Phillip.  Without logging out from Smart View, make Phillip a Scenario Approver, then refresh the data in Smart View validate the change to his security.
+   In this exercise you will login as Maria and create a new scenario defining Sam as a participant. Validate the impact of the security changes for each user John, Maria, Sam and Phillip.  Without logging out from Smart View, make Phillip a Scenario Approver, then refresh the data in Smart View validate the change to his security.
     
    a) Go to the Web UI, logging in as Maria.
 
    b) Navigate to Scenarios tab. Click Create Scenario button.
       ![](./images/imageSM_13.png "")
-   c) Give the scenario a name:**What-If** and a due date. Add Sam as a Participant by selecting the Users tab and click the + icon. By default a user is added as a Participant. 
+
+   c) Give the scenario a name:**What-If** and a due date. On the Users tab Click the "+" icon and add Sam as a Participant. By default a user is added as a Participant. 
       ![](./images/imageSM_14.png "")
       ![](./images/imageSM_15.png "")
 
@@ -149,9 +151,9 @@ This Step is geared towards developing an understanding of security for Essbase 
 
    e) Go back to Smart View.
 
-   f) Go to Excel and on the Sheet3 tab connect as John, Sam, and Maria drilling down and up on the Sandbox dimension for each user.
+   f) Go to SmartView Excel and on the Sheet3 tab connect as John, Sam, and Maria drilling down and up on the Sandbox dimension for each user.
 
-   g) Go to the Web UI, logging in as Maria and assign Phillip the approver role to the sandbox.
+   g) Go to the Web UI, login in as Maria and assign Phillip the approver role to the sandbox.
       ![](./images/imageSM_18.png "")
 
    h) Go to Smart View and connect as Phillip drilling down on the Sandbox dimension.
@@ -159,33 +161,35 @@ This Step is geared towards developing an understanding of security for Essbase 
 
 
 2. Changing Sandbox Data:
-   As Sam, you will change some data for the scenario that was just created and, using the Essbase Web UI shows the differences between Base and the scenario.
+   As Sam, you will change some data for the scenario that was just created and using the Essbase Web UI you can see the differences between Base and the scenario.
 
    a) Go to Excel and in the Smart View.xlsx 
 
-   b) Go to the DataSheet tab and connect to the database as Sam, ensure the the POV has the correct sandbox member identified in the previous exercise.
+   b) Go to the DataSheet tab and connect to the database as Sam, ensure the the POV has the correct sandbox member(sb0). 
       ![](./images/imageSM_19.png "")
 
-   c) Go to the cell C12 enter a number then click submit (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
+   c) Go to the cell C12 enter a number(for e.g, 2000) then click submit (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
       ![](./images/imageSM_20.png "")
 
-   d) Go to Essbase Web UI, navigate to the Scenarios tab and filter for “Sandbx” database under Sample_Scenario application. Select the scenario What-if and click the Actions icon.
+   d) Go to Essbase Web UI, navigate to the Scenarios tab. Select the scenario What-if and click the Actions icon.
 
-   e) Click on the icon in the Show Changes column, to show the changes in the UI.
+   e) Click on the Show Changes button, to show the changes in the UI.
       ![](./images/imageSM_21.png "")
+
+      Verify the changes:
       ![](./images/imageSM_21.1.png "")
 
 3. Calculations in a Sandbox: 
-Create a calculation script that will create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
+In this step you will create a calculation script that will create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
 
    a) Login to Essbase Web UI as John.
 
-   b) Navigate to the database inspector for the “Sandbx” database under the “WSample_Scenario” application.
+   b) Navigate to the database inspector for the “Sandbx” database under the “Sample_Scenario” application.
 
    c) Click on the Scripts tab on the database inspector and select Calculation Scripts from the left navigation menu.
      ![](./images/imageSM_22.png "")
 
-   d) Click the + icon on the right to create a calculation script. Name the script as Feed16, type the below content in the scripts section (code can also be found in the Seed_16.csc file):
+   d) Click the + icon on the right to create a calculation script. Name the script as **Feed16**, type the below content in the scripts section:
 
 
     ```
@@ -202,12 +206,12 @@ Create a calculation script that will create data for ORCL USA->XXU->Automotive 
     
     ![](./images/imageSM_23.png "")
 
-   e) Validate the script. Save and Close the script.
+   e) Validate the script. Click Save and Close.
 
    f) To execute the script, navigate to the Jobs tab and create a new job by clicking New Job -> Run Calculation.
      ![](./images/imageSM_24.png "")
 
-   g) Select the Application and database and the calc script that was just created. For Variables select the “sb0” as Value for the sandbox variable.
+   g) Select the Application and database and the calc script that was just created(Feed16). For Variables select the “sb0” as Value for the sandbox variable.
 
    h) Click OK.
      ![](./images/imageSM_25.png "")
@@ -222,21 +226,21 @@ Create a calculation script that will create data for ORCL USA->XXU->Automotive 
       Comparison:
       ![](./images/imageSM_26.2png "")
 
-      Note: in Smartview you are already logged in as Sam.
+      Note: In Smartview you are already logged in as Sam.
 
-   k) Go to Essbase Web UI as Sam, Navigate to the Scenarios tab. For What-If Scenario, click on the icon under Actions and select Show Changes, to show the changes in the UI.
+   k) Go to Essbase Web UI as Sam, Navigate to the Scenarios tab. For What-If Scenario, click on the icon under Actions and select Show Changes to show the changes in the UI.
       ![](./images/imageSM_27.png "")
 
       Verify the Changes:
       ![](./images/imageSM_27.1.png "")
 
-1. Scenario Workflow:
+4. Scenario Workflow:
    
    At this point two things happened with our Sandbox. Sam entered some data using Smart View and John run a calc script that created some data for 2016. Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. The flow that we will simulate is:
 
-   * Maria is submitting the data for approval
-   * Sam can review the data and decides to approve
-   * Once Maria sees that Phillip approve, she can apply the data to the Base
+   * Maria is submitting the data for approval.
+   * Phillip can review the data and decides to approve.
+   * Once Maria sees that Phillip approve, she can apply the data to the Base.
 
    Since you are doing it by yourself, you will need to play both Maria and Phillip. If you have two different browsers (e.g. Firefox and Chrome) you can log in as each participant in a different browser and jump between the two personas. The instructions will assume that you are using the same browser for both (and therefore logout and login will be needed).
 
@@ -252,7 +256,7 @@ Create a calculation script that will create data for ORCL USA->XXU->Automotive 
 
    d) Go to the Web UI logging in as Phillip. Navigate to the Scenarios tab and select Scenario What-if.
 
-   e) Under Actions, click the  icon to Approve, enter a comment if needed.
+   e) Under Actions, click the ![](./images/approveicon.png "") icon to Approve, enter a comment if needed.
       ![](./images/imageSM_30.png "")
       ![](./images/imageSM_31.png "")
 
@@ -260,17 +264,19 @@ Create a calculation script that will create data for ORCL USA->XXU->Automotive 
 
    g) Login to Essbase Web UI as Maria. Navigate to the Scenarios tab and select Scenario What-if.
 
-   h) Under Actions, click the   icon to Apply sandbox “sb0” to the Base, enter a comment if needed.
+   h) Under Actions, click the ![](./images/applyicon.png "")  icon to Apply sandbox “sb0” to the Base, enter a comment if needed.
       ![](./images/imageSM_32.png "")
 
    i) Go to Smart View and retrieve data into the Comparison tab.
 
     ![](./images/imageSM_32.2.png "")
 
+    Note: Notice that changes still not been updated to base.
+
 
 ## **Step 4:** Run-time Substitution Variables
 
-Upload the Merge calculation script to your database and review it.  Then, in Smart View, execute the script using the selections in step 7e.  After the script has run validate the data in the Base member.
+Upload the Merge calculation script to your database and review it.  Then, in Smart View, execute the script using the selections (mentioned in Point 10e).  After the script has run validate the data in the Base member.
 
 1. Log on to Essbase Web UI as John.
 
@@ -320,16 +326,21 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 11. Click launch.
 
-12. Retrieve data.
+12. Retrieve data in comparison tab.
     ![](./images/imageSM_38.png "")
 
+    Notice now th changes are applied to the base.
 
+
+Note:
+Notice that John having "Database Manager" permission, was able to define who can update the changes in the base(database). Also, Maria after creating scenario was not able to apply the changes to base(database) because she was having only "Database Access" permission.
+Hence, we have learnt how to define and control the security in Essbase.
 
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
-* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, March 2021
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
