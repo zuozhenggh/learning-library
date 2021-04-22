@@ -8,11 +8,11 @@
         },
         {
             "title": "Introduction",
-            "filename": "./../../intro/intro.md"
+            "filename": "./../../labs/intro.md"
         },
         {
             "title": "Lab 1: Using OCI Audit Service",
-            "filename": "./../../audit-service/audit-service.md"
+            "filename": "./../../labs/audit-service.md"
         },
         {
             "title": "Need Help?",
