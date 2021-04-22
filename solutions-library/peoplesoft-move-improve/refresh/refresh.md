@@ -26,14 +26,17 @@ In order to refresh an environment you will need a topology with DBaaS. If you a
 
     First we will add the Middle Tier node. Select the following:
     ![](./images/mid.png "")
+    
     Click **Done**.
     
     Click **Add Node** again and then select the following for the DB Systems node: 
     ![](./images/db.png "")
+    
     Click **Done**.
     
     Click **Add Node** one last time then select the following for the PeopleSoft Client node: 
     ![](./images/client.png "")
+    
     Click **Done**.
 
     Your topology should look like the following:
@@ -82,7 +85,7 @@ In order to refresh an environment you will need an environment template that is
     * Click **Next**
     ![](./images/testpacl.png "")
 
-5. On the Summary page:
+5.  On the Summary page:
     * Review the details and click **Submit**
     ![](./images/save.png "")
 
@@ -116,12 +119,24 @@ In order to refresh an environment you will need an environment created from a t
     Click **Done**.
     ![](./images/clonetop1.png "")
 
-4. Click **Accept** on the license.
-   ![](./images/license.png "")
+4.  Click **Accept** on the license.
+    ![](./images/license.png "")
+
+5.  This environment will take a few minutes to provision. Refresh the page. On our newly created **RefreshDB** environment you should see an orange dot with a status of **Infra Creation in Progress**. Click the down arrow button and then **Details**.
+    ![](./images/details2.png "")
+    
+    On the side menu select **Logs** and you can monitor the status of your environment from here.
+    ![](./images/createenv.png "")
+    
+    You can also go to **Provision Task Status** on the side menu to see detailed progress status for every step.
+    ![](./images/provisionstatus.png "")
+    
+    Once the environment has a green dot with a status of **Running** we are ready to move on to the next step.
+    ![](./images/.png "")
 
 ## **STEP 4**: Refreshing an Environment
 
-1.	First we will create a target environment for our refresh. 
+1.  First we will create a target environment for our refresh. 
     Navigate to **Dashboard** > **Environment**.
     Click the down arrow on your source environment (**RefreshDB**) and then click **Clone Environment**.
     ![](./images/clone.png "")
@@ -140,8 +155,9 @@ In order to refresh an environment you will need an environment created from a t
 3.  This backup will take a few minutes to complete. To check the status of the backup click the down arrow on your source environment (**RefreshDB**) and then click **Details**.
     ![](./images/details.png "")
 
-4.  On the side menu select **Provision Task Status**. You will then be able to see the start time and status of your backup. If under **Status** you see a gear icon (like the picture below), this means that the backup is still in progress.
+    On the side menu select **Provision Task Status**. You will then be able to see the start time and status of your backup. If under **Status** you see a gear icon (like the picture below), this means that the backup is still in progress.
     ![](./images/gears.png "")
+    
     You can also select **Logs** on the side menu and follow along from there as well.
     ![](./images/logs.png "")
 
@@ -159,7 +175,7 @@ In order to refresh an environment you will need an environment created from a t
     * Use Latest Backup: **YES**
     * App Refresh: **NO**
     * Source TDE KeyStore (Wallet) Password: DB Admin password (**PSft1234##**)
-    ![](./images/lintop.png "")
+    ![](./images/addrefresh.png "")
 
     Click **Done**.
 
