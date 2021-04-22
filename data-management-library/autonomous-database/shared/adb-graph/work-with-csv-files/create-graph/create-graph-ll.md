@@ -34,8 +34,8 @@ Learn how to
    If your tenancy administrator provided you the Graph Studio URL to connect directly then use that instead.
 
 
-3. Enter your Autonomous Database account credentials (e.g. `GRAPHUSER`) into the login screen:
- 
+3. Enter your Autonomous Database account credentials (`GRAPHUSER`/`gs_LLwid770#`) into the login screen:
+
     ![](./images/14-graph-studio-login.png " ")
 
 4. Then click the "Sign In" button. You should see the studio home page.   
@@ -53,18 +53,19 @@ Learn how to
 
 3.  Click next to get a suggested model. We will edit and update this model.  
 
-    The suggested model has each table as a vertex since there are no foreign key constraints specified for BANK_TXNS.   
+    The suggested model has BANK_ACCOUNTS as a vertex and BANK_TXNS as an edge.   
 
-  ![](./images/18-modeler-suggested-model.png " ")    
+  ![](./images/18-ll-modeler-suggested-model.png " ")    
 
-  We will replace the default incorrect CREATE PROPERTY GRAPH statement with an updated definition.  
-
-  ![](images/18b-incorrect-ddl.png " ")
+  We wish to update the default vertex and edge labels and then confirm that the edge has the right direction from source `from_acct_id` to destination `to_acct_id`. 
 
 4.  Click the Source tab to bring up the existing statement and the edit dialog.  
-  ![](./images/19-modeler-correct-ddl.png " ")   
+    
+    If the generated Create Property Graph statement looks the same as the one in the screenshot below then proceed to creating the graph.  
 
-  Replace the existing statement with the following one which specifies that `BANK_ACCOUNTS` is a vertex table and `BANK_TXNS` is an edge table.  
+  ![](./images/19-ll-modeler-correct-ddl.png " ")   
+
+  Otherwise replace the existing statement with the following one which specifies that `BANK_ACCOUNTS` is a vertex table with label `ACCOUNTS` and `BANK_TXNS` is an edge table with label `TRANSFERS`. And the directed edge is from the source `from_acct_id` to destination `to_acct_id`.  
     ```
     <copy>
     CREATE PROPERTY GRAPH bank_graph
