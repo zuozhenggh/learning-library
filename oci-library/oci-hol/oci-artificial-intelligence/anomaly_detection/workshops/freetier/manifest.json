@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "Anomaly Detection with OCI Artificial Intelligence",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 0: Anomaly Detection",
+            "description": "Learn how to build anomaly detection model.",
+            "filename": "../../anomalies/anomaly-detection.md"
+        },
+        {
+            "title": "Lab 1: Configure AD Service",
+            "description": "Learn how to configure AD Service.",
+            "filename": "../../configure-ad-service/configure-ad-service.md"
+        },
+        {
+            "title": "Lab 2: Prepare Training Data and Detection Data",
+            "description": "Learn how to process data for AD Service.",
+            "filename": "../../anomalies/anomaly-detection.md"
+        },
+        {
+            "title": "Lab 3: Create Anomaly Detection Project",
+            "description": "Learn how to create AD Service.",
+            "filename": "../../anomalies/anomaly-detection-project.md"
+        },
+        {
+            "title": "Lab 4: Train Anomaly Detection Project",
+            "description": "Learn how to create AD Service.",
+            "filename": "../../anomalies/anomaly-detection-model.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}
