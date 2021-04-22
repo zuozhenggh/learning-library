@@ -11,7 +11,7 @@ Oracle Autonomous Database contains features that enable it to function as a sca
 
 Watch the following two videos for more information. The first is an introduction to property graphs and their use cases. The second is a tour of the Graph Studio interface. 
 
-[](youtube:7NUoSNm3zyE)   Simply Graph Analytics with Autonomous Database   
+[](youtube:v55hU30Mb0s)   Simply Graph Analytics with Autonomous Database   
 
 [](youtube:URdchKSsy3E)   A tour of the Graph Studio interface
 
@@ -27,16 +27,12 @@ In this workshop you will:
  
 ### Prerequisites
 * Oracle Cloud Account
-* Provisioned ADB-Shared instance
+* A provisioned Autonomous Database on Shared Infrastructure
   
 
 ## Acknowledgements
 * **Author** - Korbi Schmidt, Product Development
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Feb 2021
+* **Last Updated By/Date** - Jayant Sharma, April 2021
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

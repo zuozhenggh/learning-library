@@ -45,6 +45,3 @@ Feel free to share this LiveLabs workshop with your colleagues on social media
 - **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K., Robbie Ruppel, David Start, Paul Sonderegger, Kamryn Vinson
 - **Last Updated By** - Kay Malcolm, January 2021
 
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.

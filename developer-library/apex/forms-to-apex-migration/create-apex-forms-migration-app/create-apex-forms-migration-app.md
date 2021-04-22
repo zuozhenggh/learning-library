@@ -13,7 +13,6 @@ Estimated Lab Time: 5 minutes
 ### Objectives
 
 * Create the Schema for Oracle APEX application
-* Create Migration Project
 
 
 ### Prerequisites
@@ -44,7 +43,8 @@ In order to start the conversion process, the database objects associated with y
 
 4. **Run** the script to create the schema objects for customer and orders form ![](images/scripts_run.png " ")
 
-## **STEP 3**: Create Conversion Project
+
+## **STEP 3**: **Create Migration Project**
 
 Create a conversion project by running Create Migration Project Wizard and loading the application metadata extracted from Forms to XML.
 
@@ -74,12 +74,8 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 
+
 - **Author** -  Vanitha Subramanyam, Senior Solution Architect
 - **Contributors** - Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
-- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
+- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
 
-## Need Help?
-
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-  If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

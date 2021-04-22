@@ -1,7 +1,7 @@
 # OCI Move and Improve Workshop
 
 ## Introduction
-This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with the necessary infrastructure like Networking, Security Lists, and route rules. The workshop will also walk you through the process of making the application highly-available. Later you will learn how to handle the case of high availability by leveraging Oracle's Load Balancer and DNS services for traffic steering. The workshop also focuses on how to connect your eCommerce application to MDS (MySQL Database Service) on OCI. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) to show how you can gain even more insight into your application data.
+This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with the necessary infrastructure like Networking, Security Lists, and route rules. The workshop will also walk you through the process of making the application highly-available. Later you will learn how to handle the case of high availability by leveraging Oracle's Load Balancer and DNS services for traffic steering. The workshop also focuses on how to connect your eCommerce application to MDS (MySQL Database Service) on OCI and how to enable the Heatwave Cluster for MDS which significantly improves the query execution process. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) to show how you can gain even more insight into your application data.
 
 For a technical overview of the workshop, watch the following video below.
 [](youtube:KuT6DksQpKc)
@@ -39,10 +39,3 @@ Oracle offers a complete portfolio of products, services, and differentiated cap
 ## Acknowledgements
 * **Author** - Rajsagar Rawool, Akinade Oladipupo, Saurabh Salunkhe, Mitsu Mehta, Ken Keil
 * **Last Updated By/Date** - Rajsagar Rawool, January 2021
-
-## Need Help?
-If you are doing this module as part of an instructor-led lab, take advantage and ask the instructor.
-
-If you are working through this module self-guided, please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please mention your workshop name and lab name.  Please also have screenshots and attach files when appropriate.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one

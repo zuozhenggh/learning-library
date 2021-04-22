@@ -24,7 +24,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 1.  Before starting this section make sure you have exited out of your compute instance and are back in your cloudshell home.  
 
       If you did not copy your autonomous\_database\_ocid, select **Resource Manager** > **Stacks** and select your stack.
-      ![](./images/em-nav-to-orm.png " ")
+      ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
       ![](./images/select-stack.png " ")
 
       Select your apply job and select **Outputs**. 
@@ -81,7 +81,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
 ## **STEP 3:** Connect to SQL Developer and Create Credentials
 1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
-      ![](./images/select-atp.png " ")
+      ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  Click on the **Display Name** to go to your ADB main page.
       ![](./images/display-name.png " ")
@@ -139,7 +139,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ![](./images/oraenv.png " ")
    
-5. Substitute your instance name with *your adb instance name* (e.g convgdb_high) and the password you used
+5. Run the wget command to download the load_atp.sh script from object storage.
 
       ````
       <copy>
@@ -202,6 +202,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** - Ashish Kumar, Madhu Rao, Yaisah Granillo, Kay Malcolm
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com). Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
