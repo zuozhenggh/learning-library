@@ -31,12 +31,6 @@ In this step you can choose between three different implementations of the Inven
 
 1. Select one of the alternate implementations and deploy the service for the selected implementation.  
 
-   If you selected Java Helidon SE, deploy this service:
-
-    ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
-    ```
-
    If you selected Python, deploy this service:
 
     ```
@@ -49,6 +43,24 @@ In this step you can choose between three different implementations of the Inven
     <copy>cd $GRABDISH_HOME/inventory-nodejs; ./deploy.sh</copy>
     ```
 
+   If you selected .NET, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-dotnet; ./deploy.sh</copy>
+    ```
+
+   If you selected Go, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-go; ./deploy.sh</copy>
+    ```
+
+   If you selected Java Helidon SE, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
+    ```
+
 ## **STEP 3**: Verify application functionality
 
 1. Repeat Lab 2 Step 5 to verify the order and inventory functionality of the GrabDish store remains the same using new order ID's, for example 166 and 167.
@@ -58,11 +70,11 @@ In this step you can choose between three different implementations of the Inven
 1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following command.
 
     ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./undeploy.sh; cd $GRABDISH_HOME/inventory-python; ./undeploy.sh; cd $GRABDISH_HOME/inventory-nodejs; ./undeploy.sh; cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./undeploy.sh; cd $GRABDISH_HOME/inventory-python; ./undeploy.sh; cd $GRABDISH_HOME/inventory-nodejs; cd $GRABDISH_HOME/inventory-dotnet; cd $GRABDISH_HOME/inventory-goe; ./undeploy.sh; cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh</copy>
     ```
 
 ## Acknowledgements
-* **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture;
+* **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
