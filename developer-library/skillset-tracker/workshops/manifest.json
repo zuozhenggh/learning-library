@@ -1,0 +1,56 @@
+{
+  "workshoptitle": "Skillset Tracker Application",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+    {
+      "title": "Introduction and Overview",
+      "description": "Introduction to Skillset Tracker Application",
+      "filename": "../0-intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Key",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Login to Oracle Cloud",
+      "description":   "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Lab 3: Install and prepare prerequisites",
+      "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+      "filename": "../3-prerequisites/3-prerequisites.md"
+    },
+    {
+      "title": "Lab 4: Autonomous JSON Database & SODA Collections",
+      "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+      "filename": "../4-autonomous-json-db/4-autonomous-json-db.md"
+    },
+    {
+      "title": "Lab 5: Build an OracleJET Web Application",
+      "description": "This lab describes the prescribed folder structure that we need follow for developing labs and workshops.",
+      "filename": "../5-ojet/5-ojet.md"
+    },
+    {
+      "title": "Lab 6: Build NodeJS APIs",
+      "description": "This lab shows you how to develop your lab (markdown) content using an editor, such as **Atom** and starting the atom-live-server.",
+      "filename": "../6-nodejs-api/6-nodejs-api.md"
+    },
+    {
+      "title": "Lab 7: Set up the Development Environment",
+      "description": "This lab shows you how to map a node's private IP address to a public IP address",
+      "filename": "../7-dev-env/7-dev-env.md"
+    },
+    {
+      "title": "Lab 8: Integration with Oracle Digital Assistant and Slack",
+      "description": "This lab shows you how to integrate Slack and Oracle Digital Assistant into your application",
+      "filename": "../8-oda/8-oda.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}
