@@ -37,4 +37,4 @@ ie: 10.0.0.0/16 for one region and 11.0.0.0/16 for the peer region.
 11. Click Next and then Click Create.  Your cloud network will be created quickly.
 12. Now do the same steps and create another VCN on your peer region.  
 
-Switch to your peer region and create your VCN.  Remember it must be in the same compartment.
+Switch to your peer region and create your VCN.  Remember it must be in the same compartment but with a different CIDR block.
