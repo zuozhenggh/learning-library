@@ -13,13 +13,8 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision and Load Data into Autonomous Database Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision-load-adb/provision-load-adb.md"
-        },
-        {
-            "title": "Lab 2: Run the Notebook",
-            "filename": "../../run-nb/run-nb.md"
+            "title": "Lab 1: Verify Setup and Run the Notebook",
+            "filename": "../../run-nb/run-nb-ll.md"
         },
         {
             "title": "Need Help?",
