@@ -166,7 +166,7 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
 
   In this case it will perform automatic aggregations on the distinct rows.
 
-  Attrition is a binary variable so it will be split into a yes or a no. the pie chart at the top shows a breakdown of employees who did or didn't leave the company.
+  Attrition is a binary variable so it will be split into a yes or a no. The pie chart at the top shows a breakdown of employees who did or didn't leave the company.
   
   ![](./images/OML11.png " ") 
 
