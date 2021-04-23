@@ -56,5 +56,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics
-* **Contributors** -  Anoosha Pilli, Database Product Management
+* **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
