@@ -305,4 +305,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Charlie Berger & Dhvani Sheth, Machine Learning, AI and Cognitive Analytics
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
-* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
+* **Last Updated By/Date** - Didi Han, Database Product Management, April 2021

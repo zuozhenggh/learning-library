@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and establish a connection between the provisioned Oracle Autonomous Database instance and Oracle Analytics Cloud. Then you will register the Oracle Machine Learning model we created in the previous lab with Oracle Analytics Cloud, in order to create visualizations using the produced datasets in the following Visualizations lab.
+This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and establish a connection between the provisioned Oracle Autonomous Database instance and Oracle Analytics Cloud. Then you will register the Oracle Machine Learning model we created in the previous lab with Oracle Analytics Cloud, add the datasets from the ADB instance to Oracle Cloud Analytics so we can use the data in projects for visualization.
 
 Estimated Lab Time: 15 minutes
 
@@ -174,19 +174,19 @@ In this lab, you will:
 
   ![](./images/step5-7.png " ")
 
-8. Repeat steps 1-6 with the **BEST_WINES** table.
+8. Repeat steps 1-6 with the **BEST\_WINES** table.
 
   ![](./images/step5-8a.png " ")
 
   ![](./images/step5-8b.png " ")
 
-9. Repeat step 1-6 with the **DM$VAGOOD_WINE_AI** table.
+9. Repeat step 1-6 with the **DM$VAGOOD\_WINE\_AI** table.
 
   ![](./images/step5-9a.png " ")
 
   ![](./images/step5-9b.png " ")
 
-10. Repeat step 1-6 with the **DM$VLWINE_CLASS_MODEL_SVM** table.
+10. Repeat step 1-6 with the **DM$VLWINE\_CLASS\_MODEL\_SVM** table.
 
   ![](./images/step5-10a.png " ")
 
