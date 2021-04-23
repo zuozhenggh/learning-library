@@ -1,12 +1,7 @@
-# Visualize Your Data[Workshop Under Construction]
+# Visualize Your Data
 
 ## Introduction
-
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-This lab walks you through the steps to visualize the data we're processed into easily digestible canvases using the functionalities of Oracle Cloud Analytics.  
-
-We connected to our ADB instance **ADWWINE** in the previous Lab, and registered the Machine Learning Model. In this step, we'll add the datasets from the ADB instance to Oracle Cloud Analytics so we can use the data in projects for visualization.
+We connected to our ADB instance **ADWWINE**, registered the Machine Learning Model and added the datasets from the ADB instance to Oracle Cloud Analytics instance in the previous Lab. This lab walks you through the steps to visualize the data we're processed into easily digestible canvases using the functionalities of Oracle Cloud Analytics.projects for visualization.
 
 Estimated Lab Time: n minutes
 
@@ -16,8 +11,6 @@ Oracle Cloud Analytics snippet here
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
 * Import Project
 * Utilize Project Canvases
@@ -25,11 +18,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-Previous lab stuff -come back to this
-
-*This is the "fold" - below items are collapsed by default*
-
-
+- Have successfully completed all the previous labs
 
 ## **STEP 1**: Import Project
 
@@ -144,7 +133,7 @@ Previous lab stuff -come back to this
 
   ![](./images/step3-canvas1.png  " ")
 
-4. First thing we will do is set a global filter across all canvases limiting our results to wines that are predicted to be GT_90_Points. In this way, PREDICTION_PROBABILITY becomes a measure of probability for which wine with be good. From BEST\_WINES, drag **PREDICTION** to the top filter bar and select **GT_90_Points**. The top filter bar will apply the filter to all visualizations in a particular canvas, but you can also put filters for individual visualizations in their respective Filters property at the bottom of their panel. Click the **Pin** to the left of PREDICTION, this will apply the filter across all 6 of our canvases. 
+4. First thing we will do is set a global filter across all canvases limiting our results to wines that are predicted to be GT\_90\_Points. In this way, PREDICTION_PROBABILITY becomes a measure of probability for which wine with be good. From BEST\_WINES, drag **PREDICTION** to the top filter bar and select **GT\_90\_Points**. The top filter bar will apply the filter to all visualizations in a particular canvas, but you can also put filters for individual visualizations in their respective Filters property at the bottom of their panel. Click the **Pin** to the left of PREDICTION, this will apply the filter across all 6 of our canvases. 
 
   ![](./images/step3-4.png  " ")
 

@@ -1,11 +1,11 @@
 {
-    "workshoptitle": "Picking a Good Wine Using ADW, OML and OAC",
+    "workshoptitle": "Picking a Good Wine Using ADW, OML, and OAC",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
             "description": "Prerequisites",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Introduction",
@@ -13,7 +13,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Verify Setup and Run the Notebook",
+            "title": "Lab 1: Import and Run the Machine Learning Notebook",
             "filename": "../../run-nb/run-nb-ll.md"
         },
         {
