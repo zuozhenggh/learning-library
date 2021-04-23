@@ -135,7 +135,7 @@ This lab assumes you have:
   Note the "Support Vector Machine" model seems to be the best predictor of attrition.
   ![](./images/ml1.17.png " ")
 
-20. Now click the Lift tab on the top of the chart to reveal the Cumulative gain. Such charts are very helpful in visually understanding which model performs best.  If interested see [ROC\_Analysis](http://mlwiki.org/index.php/ROC\_Analysis),  [Cumulative\_Gain\_Chart](http://mlwiki.org/index.php/Cumulative\_Gain\_Chart) and [Receiver\_operating\_characteristic](https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic) on how ROC, Lift and Gain charts help data scientists determine the best models.
+20. Now click the Lift tab on the top of the chart to reveal the Cumulative gain. Such charts are very helpful in visually understanding which model performs best.  If interested see [ROC Analysis](http://mlwiki.org/index.php/ROC\_Analysis),  [Cumulative Gain Chart](http://mlwiki.org/index.php/Cumulative\_Gain\_Chart) and [Receiver Operating Characteristic](https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic) on how ROC, Lift and Gain charts help data scientists determine the best models.
    ![](./images/ml1.1701.png " ")
 
 21. Right click the "EMPLOYEE\_DATA" data source node then choose "View Data".
