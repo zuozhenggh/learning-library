@@ -7,7 +7,7 @@
 3. Select your region and compartment
 
 
-![region-compartment](./images/region-compartment.png)
+![select-compartment](./images/select-compartment.png)
 
 4. Go to Networking/Virtual Cloud Network
 5. Click Start VCN Wizard
