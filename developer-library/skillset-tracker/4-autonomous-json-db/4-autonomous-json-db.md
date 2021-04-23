@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Some intro about the db, JSON documents and collections.
+**Oracle Autonomous JSON Database** is a cloud document database service that makes it easier to develop applications that use JSON documents. It allows using **SODA** (Simple Oracle Document Access) in order to easily build REST APIs to manipulate the data. In this lab, you will go through a series of steps to create an Autonomous JSON Database in OCI and import sample JSON files into SODA Document Collections. These collections will be later used to build REST APIs using SODA for NodeJS.
 
-Estimated Lab Time: 25 minutes
+Estimated Lab Time: TBD
 
 ### Objectives
 * Create Autonomous JSON Database in OCI.
@@ -13,13 +13,15 @@ Estimated Lab Time: 25 minutes
 * Use SODA for PL/SQL to check the data in the collections.
 
 ### Prerequisites
-* An OCI Account
+* An OCI Account.
 * A tenancy where you have the resources available to provision an Autonomous JSON Database and a Standard Object Storage Bucket.
 * An existing compartment in which the ADB will reside.
+* SQL Developer Installed on your local machine.
 
 ## **Step 1:** Understand the sample JSON files
+TBD
 ```
-{
+[{
   "name": "Cloud EngineerA",
   "manager": "Manager Name1",
   "email": "CLOUD.ENGINEER1@ORACLE.COM",
@@ -34,20 +36,7 @@ Estimated Lab Time: 25 minutes
             "oracle_based": 1,
             "value": 2
           },
-          {
-            "skill": "Ansible",
-            "oracle_based": 0,
-            "value": 0
-          }]
-       },
-       {
-         "area": "Language and Frameworks",
-         "skills":
-         [{
-             "skill": "JavaEE",
-             "oracle_based": 1,
-             "value": 1
-           }, ...
+   ...
 ```
 
 ## **Step 2:** Create Autonomous JSON Database
@@ -58,28 +47,24 @@ In order to create an Autonomous JSON Database you must first login on the OCI C
 2. Choose to create a new database by clicking **Create Autonomous Database**.
 3. Fill in the form by providing basic information for the ADB such as: compartment, display name and database name. For the workload type choose **JSON** and **Shared Infrastructure** for the deployment type. The database version is 19c with 1 OCPU count and 1TB of storage. Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access for everywhere**. Click **Create Autonomous Database**.
 
-## **Step 3:** Download and Install SQL Developer
-  **Note**: notes...
-
-Installation steps:
-1. ...
-
-
-## **Step 4:** Download database Wallet & connect to the database
+## **Step 3:** Download database Wallet & connect to the database
 In order to connect to the database using SQL Developer, you must first download the wallet to you local machine.
 1. After the database has provisioned, click on the **DB Connection** button in the OCI Console to download the database wallet.
 2. Select **Instance Wallet** from the drop-down list, click **Download Wallet** and provide the password that you chose previously for ADMIN.
 3. Open SQL Developer and from the **Connections** window click on the green **+** sign to add a new connection.
-4. Provide a name for the connection (any name can be chosen) as well as the user (_ADMIN_) and the password you've set at **Step 1 - Download database Wallet & connect to the database**. For the **Connection Type** choose **Cloud Wallet** from the drop-down list, browse to the location of the wallet zip file and select the desired service (here skillsetdb_high). Test the connection and if the test succeeds you can connect to the database.
+4. Provide a name for the connection (any name can be chosen) as well as the user (_ADMIN_) and the password you've set at **Step 2 - Create Autonomous JSON Database**. For the **Connection Type** choose **Cloud Wallet** from the drop-down list, browse to the location of the wallet zip file and select the desired service (here skillsetdb_high). Test the connection and if the test succeeds you can connect to the database.
 
-## **Step 5:** Create new database user and grant needed roles
+## **Step 4:** Create new database user and grant needed roles
 Considering the fact that you previously connected to the database using the _ADMIN_ user, you need to run the following commands in order to create a new user _SKILLSET_ which will be used by the application.
 1. Create user _SKILLSET_ with a password of your choice (here 'Password12345').
 ```
+<copy>
 CREATE USER skillset IDENTIFIED BY Password12345;
+</copy>
 ```
 2. Grant the needed roles for this user.
 ```
+<copy>
 GRANT CONNECT TO skillset;
 GRANT CONNECT, RESOURCE TO skillset;
 GRANT CREATE SESSION TO skillset;
@@ -88,9 +73,10 @@ GRANT CREATE VIEW TO skillset;
 GRANT SODA_APP TO skillset;
 GRANT EXECUTE ON DBMS_CLOUD TO skillset;
 GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO skillset;
+</copy>
 ```
 
-## **Step 6:** Upload sample JSON files in Object Storage & create PAR URL for each of them
+## **Step 5:** Upload sample JSON files in Object Storage & create PAR URL for each of them
 In order to be able to create the SODA document collections in the database from the sample JSON files, you must first upload them in a Standard Object Storage Bucket.
 1. Download the two sample JSON files **here**.
 2. Log in on the OCI Console and from the top-left hamburger menu choose **Object Storage -> Object Storage**.
@@ -100,11 +86,12 @@ In order to be able to create the SODA document collections in the database from
 6. Create Pre-Authenticated Requests for each of these files as shown in the images below.
 7. Save the PAR URL somewhere. You will need it later and it will not be shown again. You should have two PAR URLs, one for the **skills.json** file and one for **users.json** file.
 
-## **Step 7:** Create SODA Collections
+## **Step 6:** Create SODA Collections
 Login in SQL Developer using the _**SKILLSET**_ user created at **Step 4 - Create new database user and grant needed roles** and run the following commands to create the two collections (skills and users), as well as unique indexes for the **email** field in each of them.
 ...more details about the structure of the sample json files...
 1. Create the _skills_ collection. Add in the following code the PAR URL for the **skills.json** file.
 ```
+<copy>
 --CREATE SKILLS COLLECTION
 SET DEFINE OFF
 BEGIN
@@ -116,16 +103,19 @@ format =>
 '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
 END;
 /
+</copy>
 ```
 2. Run the following query to check the data in the collection. The collection should have the same data as the sample JSON file
 ```
+<copy>
 --CHECK DATA IN COLLECTION
 SELECT a.*, json_serialize(a.json_document) json FROM skillscollection a;
+</copy>
 ```
 3. Using the same JSON, create another collection which will be later used for seeing the progress of skills. The following code is using the same PAR URL for the **skills.json** file.
 ```
+<copy>
 --CREATE SKILLS ARCH/HISTORY COLLECTION (same json as skills collection)
-
 SET DEFINE OFF
 DECLARE
 collection SODA_COLLECTION_T;
@@ -154,7 +144,6 @@ IF document IS NOT NULL THEN
 jsonClob := json_query(document.get_blob, '$' PRETTY);
 jsonClob := substr(jsonClob, 0, length(jsonClob)-1) || ',"action":"INSERTED"}';
 
-
 document2 := SODA_DOCUMENT_T(
 b_content => utl_raw.cast_to_raw(jsonClob));
 new_doc := collection.find().key(document.get_key).replace_one_and_get(document2);
@@ -164,10 +153,12 @@ END LOOP;
 status := cur.close;
 END;
 /
+</copy>
 ```
 4. Create a unique index for the _skillscollection_ so that each employee's skils will only be added once, based on his/her email address.
 
 ```
+<copy>
 --CREATE SKILLS COLLECTION INDEX - UNIQUE EMAIL FIELD
 DECLARE
 collection SODA_COLLECTION_T;
@@ -176,7 +167,6 @@ status NUMBER;
 BEGIN
 -- Open the collection
 collection := DBMS_SODA.open_collection('skillscollection');
-
 -- Define the index specification
 spec := '{"name" : "SKILLS_EMAIL_IDX1",
 "fields" : [{"path" : "email",
@@ -188,9 +178,11 @@ status := collection.create_index(spec);
 DBMS_OUTPUT.put_Line('Status: ' || status);
 END;
 /
+</copy>
 ```
 5. Create the users collection.
 ```
+<copy>
 --CREATE USERS COLLECTION
 SET DEFINE OFF
 BEGIN
@@ -202,14 +194,18 @@ format =>
 '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
 END;
 /
+</copy>
 ```
 6. Run the following query to check the data in the collection. The collection should have the same data as the sample JSON file ,
 ```
+<copy>
 --CHECK DATA IN COLLECTION
 SELECT a.*, json_serialize(a.json_document) json FROM userscollection a;
+</copy>
 ```
 7. Create a unique index on the _email_ field so that each employee will only have one user defined in the application, based on his/her email address.
 ```
+<copy>
 --CREATE USERS COLLECTION INDEX - UNIQUE EMAIL FIELD
 DECLARE
 collection SODA_COLLECTION_T;
@@ -218,7 +214,6 @@ status NUMBER;
 BEGIN
 -- Open the collection
 collection := DBMS_SODA.open_collection('userscollection');
-
 -- Define the index specification
 spec := '{"name" : "USER_EMAIL_IDX1",
 "fields" : [{"path" : "email",
@@ -230,12 +225,14 @@ status := collection.create_index(spec);
 DBMS_OUTPUT.put_Line('Status: ' || status);
 END;
 /
+</copy>
 ```
 
-## **Step 8:** Create a view on a collection
+## **Step 7:** Create a view on a collection
 The application is also using a view (called _SKILLSVIEW_) on the _skillscollection_ and since it would be hard to write the SQL script by hand, you can use the PL/SQL block below to dynamically build the **create view** script and execute it.
 1. Run the PL/SQL script to create the view
 ```
+<copy>
 --DYNAMICALLY CREATE VIEW ON SKILLS COLLECTION
 SET SERVEROUTPUT ON;
 BEGIN
@@ -279,16 +276,19 @@ EXECUTE IMMEDIATE query;
 END;
 END;
 /
+</copy>
 ```
 2. Run the following query to check the data in the view
 ```
+<copy>
 --CHECK DATA IN VIEW
 SELECT * FROM skillsview;
+</copy>
 ```
 
 ## Want to Learn More?
-
-* [Some link](https://otube.oracle.com/media/Setting+Up+GitHub/0_93stcjpb)
+* [Oracle Autonomous JSON Databases](https://www.oracle.com/autonomous-database/autonomous-json-database/)
+* [SODA for PL/SQL](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/plsql/19/adsdp/soda-pl-sql-overview.html#GUID-34D59D45-F9FA-4B36-BA17-E13D7B11E97E)
 
 ## Acknowledgements
 

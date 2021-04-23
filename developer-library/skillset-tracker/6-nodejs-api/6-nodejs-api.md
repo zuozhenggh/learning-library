@@ -2,16 +2,15 @@
 
 ## Introduction
 
-Intro about NodeJS and APIs
+Intro about NodeJS and APIs - TBD
 
-Estimated Lab Time: 25 minutes
+Estimated Lab Time: TBD
 
 ### Objectives
 
 * Provision a Linux Instance in OCI and install the needed packages.
 * Build a basic NodeJS application that will make calls to the database.
 * Run & test the application.
-
 
 ### What Do You Need?
 * An IDE, such as **Visual Studio Code**
@@ -20,7 +19,8 @@ Estimated Lab Time: 25 minutes
 * An existing compartment and a VCN in which the Instance will reside.
 
 ### Prerequisites
-* Lab 2 - Step 1 - Creating the Virtual Cloud Network
+* **Lab 5 - Build an OracleJET Web Application** -> **Step 1 - Creating a Virtual Cloud Network**
+* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3 - Install and prepare prerequisites**
 
 ## **Step 1:** Creating a Linux Instance in OCI
 1. From the top-left hamburger menu, locate and select **Compute -> Instances**. Click the blue button **Create Instance**.
@@ -110,13 +110,418 @@ sudo cp * /opt/oracle/instantclient_21_1/network/admin/
 WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="?/network/admin")))
 SSL_SERVER_DN_MATCH=yes
 ```
-## **Step 4:** TBD - NodeJS code
-TBD
 
+  **Note**: If you want to run the code developed in the next step on your local machine as well, consider the fact that you should have Instant Client installed and you should also copy the content of the wallet directory to **<your_path_to_instant_client>/network/admin** and check the **sqlnet.ora** file as mentioned at point 10.
+
+## **Step 4:** Create a simple NodeJS application with APIs
+You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
+
+  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3 - Install and prepare prerequisites**.
+
+The final structure of the project you are going to create will look as in the picture below.
+
+![Project Structure](./images/nodej-api-project-structure.PNG)
+
+1. Create a new directory for your application. In our case, it is called _SkillsetTracking_.
+2. Since it would be easier for the _npm_ command to install all the needed packages at the beginning, create a new file in the application folder: _package.json_ and paste the following content in it.
+```
+{
+  "name": "skillsettrackingapi",
+  "version": "1.0.0",
+  "description": "An Oracle application using SODA for NodeJS",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "oracledb": "^4.2.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {},
+  "private": true,
+  "main": "app.js",
+  "author": "",
+  "license": "ISC"
+}
+```
+2. In the same folder create a new file _app.js_ and add the following code in it.
+```
+async function startup() {
+  console.log('Starting application');
+}
+startup();
+
+async function shutdown(e) {
+  let err = e;
+  console.log('Shutting down application');
+  console.log('Exiting process');
+  if (err) {
+    process.exit(1); // Non-zero failure code
+  } else {
+    process.exit(0);
+  }
+}
+
+process.on('SIGTERM', () => {
+  console.log('Received SIGTERM');
+  shutdown();
+});
+
+process.on('SIGINT', () => {
+  console.log('Received SIGINT');
+  shutdown();
+});
+
+process.on('uncaughtException', err => {
+  console.log('Uncaught exception');
+  console.error(err);
+  shutdown(err);
+});
+```
+3. Now that you have the basic content of the application, you can test it by running the following commands.
+  * Install _npm_ packages using ``npm install``
+  * Run the application using ``node app.js``
+
+4. In the application folder, create two new folders: _config_ and _services_.
+5. Navigate to _config_ folder and create a new file _web-server.js_. Add the following content to it. This file sets up the default port on which the application will run. You can set up any port you want, but make sure that you have the rights to use it and it is not used by any other application.
+```
+require('dotenv').config();
+module.exports = {
+  port: process.env.HTTP_PORT || 8000
+};
+```
+6. Navigate to the _services_ folder and create a new file _web-server.js_. Paste the following content in this file. This is the actual code for running the web server.
+```
+const http = require('http');
+const express = require('express');
+const morgan = require('morgan');
+const webServerConfig = require('../config/web-server.js');
+const cors = require('cors');
+let httpServer;
+
+function initialize() {
+  return new Promise((resolve, reject) => {
+    const app = express();
+    httpServer = http.createServer(app);
+    // Combines logging info from request and response
+    app.use(morgan('combined'));
+    // Parse incoming JSON requests and revive JSON.
+    app.use(express.json({
+      reviver: reviveJson
+    }));
+    //Accept calls from OJET instance
+    app.use(cors());
+    app.get('/', function (req, res) {
+      res.send('...Skillset APIs are running...');
+    });
+    httpServer.listen(webServerConfig.port)
+      .on('listening', () => {
+        console.log(`Web server listening on localhost:${webServerConfig.port}`);
+        resolve();
+      })
+      .on('error', err => {
+        reject(err);
+      });
+  });
+}
+
+module.exports.initialize = initialize;
+
+function close() {
+  return new Promise((resolve, reject) => {
+    httpServer.close((err) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve();
+    });
+  });
+}
+
+module.exports.close = close;
+
+const iso8601RegExp = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z$/;
+function reviveJson(key, value) {
+  // revive ISO 8601 date strings to instances of Date
+  if (typeof value === 'string' && iso8601RegExp.test(value)) {
+    return new Date(value);
+  } else {
+    return value;
+  }
+}
+```
+7. Add the needed code to open the web server in _app.js_.
+* In the **startup()** function:
+```
+async function startup() {
+  console.log('Starting application');
+  try {
+    console.log('Initializing web server module');
+
+    await webServer.initialize();
+  } catch (err) {
+    console.error(err);
+
+    process.exit(1); // Non-zero failure code
+  }
+}
+```
+* In the **shutdown()** function:
+```
+async function shutdown(e) {
+  let err = e;
+  console.log('Shutting down application');
+  try {
+    console.log('Closing web server module');
+    await webServer.close();
+  } catch (e) {
+    console.error(e);
+    err = err || e;
+  }
+  console.log('Exiting process');
+  if (err) {
+    process.exit(1); // Non-zero failure code
+  } else {
+    process.exit(0);
+  }
+}
+```
+At this point you are now able to run the application using the ``node app.js`` command and see the running application in browser.
+![Running app in browser](./images/running-application-in-browser.PNG)
+
+8. Let's connect the application to the database. In the project folder, create a new file _.env_ and add the connection details for your database. Here we are using the Autonomous JSON Database created in **Lab 4: Autonomous JSON Database & SODA Collections**.
+```
+NODE_ORACLEDB_USER=SKILLSET
+NODE_ORACLEDB_PASSWORD=Password12345
+NODE_ORACLEDB_CONNECTIONSTRING=skillsetdb_lows
+```
+9. Navigate to the _conf_ folder and create a new file _database.js_. Paste the following content in this file.
+```
+// save environment variables in dotenv
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({ path: __dirname + '/../.env' });
+module.exports = {
+  dbPool: {
+    user: process.env.NODE_ORACLEDB_USER,
+    password: process.env.NODE_ORACLEDB_PASSWORD,
+    connectString: process.env.NODE_ORACLEDB_CONNECTIONSTRING,
+    poolMin: 10,
+    poolMax: 30,
+    poolIncrement: 1
+  },
+  dbtype: {
+    dbname: process.env.SKILLSET_DB || "jsondb"
+  }
+};
+```
+10. Navigate to the _services_ folder and create a new file _skill-jsondb.js_. Add the following code to this file. The code in this file is meant to open the connection to the database, open the SODA collection from the database and make the queries to get the data.
+  **Note**: Read more about SODA for NodeJS [here](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/nodejs/).
+```
+var oracledb = require('oracledb');
+var dbconfig = require('../config/database.js');
+
+async function initialize() {
+  oracledb.autoCommit = true;
+  await oracledb.createPool(dbconfig.dbPool);
+  var conn = await oracledb.getConnection();
+  var soda = conn.getSodaDatabase();
+  //Creating the first collection - skillscollection
+  var collection = await soda.createCollection('skillscollection');
+}
+async function close() {
+  await oracledb.getPool().close();
+}
+async function get(qbe, coll_name) {
+  var conn = await oracledb.getConnection();
+  var collection = await getCollection(conn, coll_name);
+  var builder = collection.find();
+  if (qbe != null) {
+    builder.filter(JSON.parse(qbe));
+  }
+  var docs = await builder.getDocuments();
+  var res = toJSON(docs);
+  conn.close(res);
+  return res;
+}
+async function getCollection(conn, coll_name) {
+  var soda = conn.getSodaDatabase();
+  return await soda.openCollection(coll_name);
+}
+function toJSON(documents) {
+  var result = [];
+  for (let i = 0; i < documents.length; i++) {
+    var doc = documents[i];  // the document (with key, metadata, etc)
+    var key = doc.key;
+    content = doc.getContent();
+    content.id = key;        // inject key into content
+    result.push(content);
+  }
+  return result;
+}
+module.exports.initialize = initialize;
+module.exports.close = close;
+module.exports.get = get;
+```
+11. Update the _app.js_ file as follows. Then try running the application again using ``node app.js`` to check if the connection to the database is made successfully.
+* In the **startup()** function:
+```
+async function startup() {
+  console.log('Starting application');
+  try {
+    console.log('Initializing database module');
+    await database.initialize();
+  } catch (err) {
+    console.error(err);
+    process.exit(1); // Non-zero failure code
+  }
+  try {
+    console.log('Initializing web server module');
+    await webServer.initialize();
+  } catch (err) {
+    console.error(err);
+    process.exit(1); // Non-zero failure code
+  }
+}
+```
+* In the **shutdown()** function:
+```
+async function shutdown(e) {
+  let err = e;
+  console.log('Shutting down application');
+  try {
+    console.log('Closing web server module');
+    await webServer.close();
+  } catch (e) {
+    console.error(e);
+    err = err || e;
+  }
+  try {
+    console.log('Closing database module');
+    await database.close();
+  } catch (e) {
+    console.error(e);
+    err = err || e;
+  }
+  console.log('Exiting process');
+  if (err) {
+    process.exit(1); // Non-zero failure code
+  } else {
+    process.exit(0);
+  }
+}
+```
+12. The next step would be to add some API routes to get the data from the database. In the _services_ folder, create a new file _api-router.js_ and paste the following code in it.
+```
+var express = require('express');
+var router = express.Router();
+var dbconfig = require('../config/database.js');
+var db = require('./skill-' + dbconfig.dbtype.dbname + '.js');
+
+/* GET home page */
+router.get('/', function (req, res, next) {
+  response.render('index', { title: 'Express' });
+});
+
+/* Function to handle errors */
+function handle(err, response) {
+  response.status(500).send('Error: ' + err);
+}
+
+/* GET route for all the data in skillscollection with no filter condition */
+router.get('/skillset', async function (request, response) {
+  try {
+    var result = await db.get(null, 'skillscollection');
+    response.send(result);
+  }
+  catch (err) {
+    handle(err, response);
+  }
+});
+
+/* GET route for the data in skillscollection with a simple condition */
+router.get('/skillset/:email', async function (request, response) {
+  try {
+    let qbe = '{ "email": "' + request.params.email + '" }';
+    var result = await db.get(qbe, 'skillscollection');
+    response.send(result);
+  }
+  catch (err) {
+    handle(err, response);
+  }
+});
+module.exports = router;
+```
+As you can see in the code above, there are two different GET routes available:
+  * **router.get('/skillset'...** - route to get all the data from the _skillscollection_;
+  * **router.get('/skillset/:email'...** - route to get the data from the _skillscollection_ with an equality condition for the _email_ field;
+
+You can customize the routes as you need and you can also add calls for other operations like POST, PUT or DELETE, depending on what you are looking for.
+
+13. Now that the API routes are defined, they only need to be added in the web server. Open the _services/web-server.js_ file and add the following code.
+  * Add the declaration for the API router:
+```
+...
+const cors = require('cors');
+<copy>const apiRouter = require('./api_router.js');</copy>
+...
+```
+  * Mount the router at _/api_ path:
+```
+...
+app.get('/', function (req, res) {
+  res.send('...Skillset APIs are running...');
+});
+
+<copy>
+// Mount the router at /api so all its routes start with /api
+app.use('/api', apiRouter);
+</copy>
+
+httpServer.listen(webServerConfig.port)
+...
+```
+14. Now that everything is set up, you should be able to run the application using ``node app.js``. If you go into the  browser and browse to the URL of your APIs, you should be able to see the results returned from the database, as in the example below.
+
+![API call results in browser](./images/api-call-results-in-browser.png)
+
+15. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
+  **Note**: Before copying the code from your local machine to the instance, delete the _node_modules_ folder.
+```
+<copy>
+cd <path_to_the_project_folder>
+scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+</copy>
+```
+
+16. After you uploaded the code on the instance, you can either run it with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**.
+```
+<copy>
+sudo crontab -e
+</copy>
+```
+Press ***insert*** to enter the _edit_ mode and paste the following.
+```
+<copy>
+@reboot node /home/opc/SkillsetTracking/app.js
+</copy>
+```
+Press ***Esc***, the ***:wq***. After the crontab is saved, reboot the istance.
+```
+<copy>
+sudo reboot
+</copy>
+```
+
+You should now be able to see the application running in browser at **http://<your_instance_public_ip>:8000/** or run an API at **http://<your_instance_public_ip>:8000/api/skillset**.
 
 ## Want to Learn More?
-[Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
-[LiveLabs Markdown Template Features](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+Features)
+* [SODA for NodeJS](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/nodejs/)
+* [SODA Filter Specifications (QBEs)](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda-filter-specifications-qbes.html#GUID-CB09C4E3-BBB1-40DC-88A8-8417821B0FBE)
 
 ## Acknowledgements
 
