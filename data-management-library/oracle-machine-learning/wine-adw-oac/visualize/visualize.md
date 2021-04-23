@@ -279,13 +279,13 @@ The visualization on the right is a word cloud of the 25 most positive attribute
 
 ## **STEP 4:** Summarize
 
-To recap, we first take the top-down approach in the initial canvas where we take a global perspective to identify the wines based on the price and quality worldwide, which is achieved using the map visualization.
+To recap, we first took the top-down approach in the initial canvas where we take a global perspective to identify the wines based on the price and quality worldwide, which is achieved using the map visualization.
 
 Then, we drilled down further in the next canvas in order to find wines based on average price by variety and by region as each person has different preferences. 
 
 Next, we dedicated a canvas page on displaying wine prices by country with coloring to depict how likely those wines were to be good. We also demonstrated the handiness of having a dedicated list box in which to filter wine variety, and the convenience of OAC automated Language Narrative visualization without having to write anything.
 
-An important feature while making any data driven decisions is to know how important each attribute is in comparison to the bigger picture. In the following 2 canvases we created, we first created a tag cloud visualization to show the top 50 most important attributes, then we used 2 more tag clouds to distinguish between the Top 25 best (positive) attributes and Bottom 25 worst (negative) attributes that contributed to our prediction of whether a wine is good or bad.  Knowing these attributes can assist you making the decision to buy after reading wine descriptions.
+An important feature while making any data driven decisions is to know how important each attribute is in comparison to the bigger picture. In the following 2 canvases, we first created a tag cloud visualization to show the top 50 most important attributes, then we used 2 more tag clouds to distinguish between the Top 25 best (positive) attributes and Bottom 25 worst (negative) attributes that contributed to our prediction of whether a wine is good or bad.  Knowing these attributes can assist you making the decision to buy after reading wine descriptions.
 
 Lastly, we created a canvas to provide us price and location insights when we select a variety from the scatter plot, and put in filters to help us find a wine under $30 that has a high probability of being good.
 
