@@ -45,7 +45,7 @@ Note, you must change directory to the directory that you have created or the se
 To work with application code, you need to make a clone from the GitHub repository using the following command. 
 
 ```
-<copy>git clone -b terraform-etc --single-branch https://github.com/oracle/microservices-datadriven.git
+<copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
 </copy>
 ```
 
