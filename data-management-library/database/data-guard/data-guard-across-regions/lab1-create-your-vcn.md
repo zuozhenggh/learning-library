@@ -4,16 +4,15 @@
 
 2. Create a Virtual Cloud Network.  You will provision the Oracle Database Cloud Service on this network.
 
-3. Select your region and compartment
+3. Go to the Networking menu and select Virtual Cloud Network
 
+4. Select your region and compartment
 
 ![select-compartment](./images/select-compartment.png)
 
-4. Go to Networking/Virtual Cloud Network
 5. Click Start VCN Wizard
 
 ![image-20210121173942686](./images/image-20210121173942686.png)
-
 
 
 6. Select VCN with Internet Connectivity to create your cloud network.
