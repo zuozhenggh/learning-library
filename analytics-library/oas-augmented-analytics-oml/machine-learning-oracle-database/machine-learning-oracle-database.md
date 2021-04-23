@@ -10,7 +10,7 @@ In such situations, a professional data scientist may wish to leverage the more 
 
 ### Objectives ###
 
-* This lab will introduces you with Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. 
+* This lab will introduces you to Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. 
 * You will implement Oracle Data Miner workflow using a series of SQL statements. 
 * You will learn how developers can readily incorporate machine learning into their applications.
 
