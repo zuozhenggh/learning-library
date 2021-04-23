@@ -4,16 +4,15 @@
 
 Previous Lab above illustrates how citizen data scientists can train their own machine learning models in OAS then apply that model to a dataset in order to predict what employees are most likely to leave the organization.  While OAS offers a handful of native ML algorithms that work fine against reasonably sized data sets, you may find your organization has larger, more complex data sets than OAS can reasonably handle.  It’s also possible you may wish to evaluate a more comprehensive and varied set of algorithms as compared to what OAS natively supports.
 
-In such situations, a professional data scientist may wish to leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses.   OML not only affords you the ability to leverage more algorithms, but because the Oracle Database leverages advanced parallel processing capabilities, in memory constructs and sophisticated query plans you’re able to work with significantly larger, more complex data sets.   A final advantage of doing such work in an Oracle database is that once trained your machine learning algorithms can be quickly and readily operationalized via simple SQL statements.   This is a far easier and more approachable mechanism than say trying to teach your application developers languages such as Python and R.   
-
+In such situations, a professional data scientist may wish to leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses.   OML not only affords you the ability to leverage more algorithms, but because the Oracle Database leverages advanced parallel processing capabilities, in memory constructs and sophisticated query plans you’re able to work with significantly larger, more complex data sets.   A final advantage of doing such work in an Oracle database is that once trained your machine learning algorithms can be quickly and readily operationalized via simple SQL statements.   This is a far easier and more approachable mechanism than say trying to teach your application developers languages such as Python and R. 
 
 *Estimated Lab Time:  45 minutes*
 
 ### Objectives ###
 
-In this lab, Step 1 we’ll show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
+* In Step 1 we’ll show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
 
-And in Step 2 we’ll implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine 
+* In Step 2 we’ll implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine 
 
 ### Prerequisites ###
 
@@ -136,7 +135,7 @@ This lab assumes you have:
   Note the "Support Vector Machine" model seems to be the best predictor of attrition.
   ![](./images/ml1.17.png " ")
 
-20. Now click the Lift tab on the top of the chart to reveal the Cumulative gain.    Such charts are very helpful in visually understanding which model performs best.  If interested see [http://mlwiki.org/index.php/ROC\_Analysis](http://mlwiki.org/index.php/ROC\_Analysis),  [http://mlwiki.org/index.php/Cumulative\_Gain\_Chart](http://mlwiki.org/index.php/Cumulative\_Gain\_Chart) and [https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic](https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic) on how ROC, Lift and Gain charts help data scientists determine the best models.
+20. Now click the Lift tab on the top of the chart to reveal the Cumulative gain. Such charts are very helpful in visually understanding which model performs best.  If interested see [ROC\_Analysis](http://mlwiki.org/index.php/ROC\_Analysis),  [Cumulative\_Gain\_Chart](http://mlwiki.org/index.php/Cumulative\_Gain\_Chart) and [Receiver\_operating\_characteristic](https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic) on how ROC, Lift and Gain charts help data scientists determine the best models.
    ![](./images/ml1.1701.png " ")
 
 21. Right click the "EMPLOYEE\_DATA" data source node then choose "View Data".
