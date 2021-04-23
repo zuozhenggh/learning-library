@@ -2,7 +2,7 @@
 
 1. Sign in to Oracle Cloud
 
-2. Create an Oracle cloud network called a Virtual Cloud Network.  You will provision the Oracle Database Cloud Service on this network.
+2. Create a Virtual Cloud Network.  You will provision the Oracle Database Cloud Service on this network.
 
 3. Select your region and compartment
 
