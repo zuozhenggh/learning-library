@@ -31,8 +31,8 @@ This lab assumes you have:
     - Lab: Prepare Setup (Free Tier and Paid Account only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
-- Access to OAS URL: Details are provided in lab4.
-- The following files are required to complete this lab. These files are part of workshop artifacts, steps to download the artifacts are mentioned in **Lab4>>Step2**.
+- Access to OAS URL: Details are provided in lab: Initialize Environment.
+- The following files are required to complete this lab. These files are part of workshop artifacts, steps to download the artifacts are mentioned in **Lab: Initialize Environment>>Step2**.
 
     - File to be downloaded:
          - AttritionTraining .xlsx
@@ -89,7 +89,7 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
 1. In this exercise we use a data set on employee attrition to explore information related to experience, performance and incentive information and use this to predict whether the employee has left the organization.
 
    Please download this to your local machine: **AttritionTraining .xlsx**.   
-   Note: This file is part of workshop artifacts, steps to download the artifacts are mentioned in **Lab4>>Step2**.
+   Note: This file is part of workshop artifacts, steps to download the artifacts are mentioned in **Lab: Initialize Environment>>Step2**.
    
    ![](./images/OML01-0.png " ") 
 
@@ -377,7 +377,7 @@ It’s worth noting this type of work may be more efficiently off-loaded to the 
 
 13. Import the “**Employee_Analysis.dva**” file.
 
-   Note: This file **Employee_Analysis.dva** is part of workshop artifacts, steps to download the artifacts are mentioned in **Lab4>>Step2**.
+   Note: This file **Employee_Analysis.dva** is part of workshop artifacts, steps to download the artifacts are mentioned in **Lab: Initialize Environment>>Step2**.
 
    ![](./images/OMLP13.png " ")
    ![](./images/OMLP13-01.png " ")

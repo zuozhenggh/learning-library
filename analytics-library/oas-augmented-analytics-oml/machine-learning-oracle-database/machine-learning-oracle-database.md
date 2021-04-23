@@ -25,9 +25,9 @@ This lab assumes you have:
     - Lab: Prepare Setup (Free Tier and Paid Account only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
-- Access to OAS URL. Details are provided in lab4.
-- Graphical desktop access(Guacamole). Details are provided in lab4.
-- The following files are required to complete this lab. These files are part of workshop artifacts, steps to download the artifacts are mentioned in **Lab4>>Step2**.
+- Access to OAS URL. Details are provided in lab: Initialize Environment.
+- Graphical desktop access(Guacamole). Details are provided in lab: Initialize Environment.
+- The following files are required to complete this lab. These files are part of workshop artifacts, steps to download the artifacts are mentioned in **Lab: Initialize Environment>>Step2**.
 
     - DATA TO BE IMPORTED IN ORACLE DB:
          - Employee_Attrition.csv file 
@@ -244,7 +244,7 @@ In this exercise we’ll implement essentially that exact workflow using a serie
 
 3. Select the **EmployeeAttrition\_OML.dva** file. 
    
-   Note: This file is part of workshop artifacts, steps to download the artifacts are mentioned in **Lab4>>Step2**.
+   Note: This file is part of workshop artifacts, steps to download the artifacts are mentioned in **Lab: lab: Initialize Environment>>Step2**.
    
   When prompted input “Admin123” as the password in order to import the project.
   ![](./images/ml3.3.png " ")
