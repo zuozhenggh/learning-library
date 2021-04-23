@@ -45,9 +45,9 @@ In this lab, you will:
 
 <if type="livelabs">
 
-## **Step 1:** Launch the workshop
+## **STEP 1:** Launch the workshop
 
-*Note: it takes approximately 20 minutes to create your workshop environment.*
+*Note: It takes approximately 20 minutes to create your workshop environment.*
 
 1. After you receive the e-mail stating that your environment is ready, go back to the My Reservations page and click **Launch Workshop**.
 
