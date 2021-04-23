@@ -3,7 +3,7 @@
 ## Introduction
 In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and "unplugging" a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active.
 
-*Estimated Workshop Time*: 3 hours
+*Estimated Workshop Time*: 1 hour
 
 [](youtube:kzTQGs75IjA)
 
@@ -64,7 +64,6 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ```
     <copy>
-    sudo su - oracle
     cd /home/oracle/labs/multitenant
     </copy>
     ```
@@ -79,12 +78,13 @@ This section looks at how to login and create a new PDB. You will create a plugg
     ```
     <copy>
     sqlplus /nolog
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
     </copy>
     ```
 
     ```
-    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
+    <copy>
+    connect sys/oracle@localhost:1523/cdb1 as sysdba
+    </copy>
     ```
 
     ![](./images/step1.2-connectoraenv.png " ")
@@ -152,16 +152,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
     grant create table, unlimited tablespace to pdb_admin;
 
     </copy>
-    ```
-
-    ```
-    <copy>
-    create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
-    alter database default tablespace Users;
-    grant create table, unlimited tablespace to pdb_admin;
-
-    </copy>
-    ```
+    ````
 
    ![](./images/grantsysdba.png " ")
 
