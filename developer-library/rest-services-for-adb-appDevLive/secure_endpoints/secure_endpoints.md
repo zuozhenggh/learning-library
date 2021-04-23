@@ -1,16 +1,16 @@
-# RESTful Services for your Autonomous Database - Securing a REST Endpoint
+# Modern App Dev with Oracle REST Data Services - Securing a REST Endpoint
 
 ## Introduction
 
-In this lab you will Securing the REST Endpoint
+In this lab you will Securing the REST Endpoint XXX
 
 Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-- Enable a user for REST access
-- Publish a RESTful service for a database table
-- Secure the REST service
+- XXX
+- XXX
+- XXX
 
 ### Prerequisites
 
@@ -29,17 +29,132 @@ Estimated Lab Time: 10 minutes
 
     ![Database Actions Menu, Development then REST](./images/sec-1.png)
 
+2. Next, we want to select the **Security Tab** on the top of the page and then select **Roles**.
+
+    ![On the Top Menu Bar, click Security Tab then select Roles](./images/sec-2.png)
+
+
+3. On the **Roles** page, start by left clicking the **+ Create Role** button in the upper right of the page.
+
+    ![Click the Create Role button](./images/sec-3.png)
+
+4. The **Role Definition** modal will pop up.
+
+    ![Role Definition Modal](./images/sec-4.png)
+
+5.  Use the **Role Name** field to name our role. Let's use **oracle.livelabs.role.gary**.
+
+    ![Role Name Field](./images/sec-5.png)
+
+6.  When your **Role Definition** modal looks like the below image, click the **Create** button.
+
+    ![Click the Create button](./images/sec-6.png)
+
+7. We now must assign **privileges** to this role. Again using the REST Tab Bar on the top of the page, left click **Security** and select **Privileges**
+
+    ![On the Top Menu Bar, click Security Tab then select privileges](./images/sec-7.png)
+
+8. On the **Privileges** page, start by left clicking the **+ Create Privilege** button in the upper right of the page.
+
+    ![Click the Create Privilege button](./images/sec-8.png)
+
+9. The **Create Privilege** slider appears from the right.
+
+    ![Create Privilege slider](./images/sec-9.png)
+
+10. In the **Label** field, we can name this privilege **Livelabs REST Privilege**.
+
+     ````
+    <copy>Livelabs REST Privilege</copy>
+    ````
+
+    ![Label Field](./images/sec-10.png)
+
+11. For the **Name** field, we can enter this **oracle.livelabs.privilege.gary**.
+
+     ````
+    <copy>oracle.livelabs.privilege.gary</copy>
+    ````
+
+    ![Name Field](./images/sec-11.png)
+
+12. Next, in the **Description** field, enter **Livelabs Privilege for Business Logic REST Services**.
+
+     ````
+    <copy>Livelabs Privilege for Business Logic REST Services</copy>
+    ````
+
+    ![Description Field](./images/sec-12.png)
+
+13. When your **Create Privilege** slider looks like the following image
+
+    ![completcompleted Create Privilege** slider](./images/sec-13.png)
+
+    left click the **Roles** tab on the top of the slider.
+
+    ![Roles tab on the top of the slider](./images/sec-14.png)
+
+14. On the **Roles** tab, use the shuttle to move the role we created, **oracle.livelabs.role.gary**, to the right side. We can do this by double left clicking on it or by left clicking it and then clicking the single arrow pointing to the right. Ensure the shuttle looks like the below image where **oracle.livelabs.role.gary** is on the right side.
+
+    ![Roles shuttle](./images/sec-15.png)
+
+    You can see that when we auto-REST enabled our table, privileges and roles where automatically created for us (oracle.dbtools.role.autorest.GARY.CSV_DATA)
+
+15. When the single role have been moved to the right of the shuttle, left click the **Protected Modules** tab on the top of the **Create Privilege** slider.
+
+    ![Protected Modules tab](./images/sec-16.png)
+
+16. We see on the **Protected Modules tab** the module name we created in the pervious lab; **com.oracle.livelab.api**. Just as we did in the previous shuttle, move **com.oracle.livelab.api** from the left side to the right side. 
+
+    ![Protected Modules shuttle](./images/sec-17.png)
+
+    When done, left click the **Create** button on the **Create Privilege** slider.
+
+    ![click the Create button on the Create Privilege slider](./images/sec-18.png)
+
 2. Next, we want to select the **Security Tab** on the top of the page and then select **OAuth Clients**.
 
-    ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/sec-2.png)
+    ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/sec-19.png)
 
 3. To create our OAuth client we will secure our REST endpoints with, click the **+ Create OAuth Client** button in the upper right of the page.
 
-    ![Click the Create OAuth Client button](./images/sec-3.png)
+    ![Click the Create OAuth Client button](./images/sec-20.png)
 
-4. The Create OAuth Client slider will come out on the right of the page. In this form we first need to name our OAuth Client. We can name it **garysec**. Next we can give it a description; anything will do here. The follow field, support URI, is where a client will be taken upon an authorization error or failure. Finally, we need an support email for contacting someone. Once your form looks similar to the image below:
+4. The **Create OAuth Client** slider will come out on the right of the page. 
 
-    ![The OAuth Client Slide Out Panel](./images/sdw-47.png)
+    ![Create OAuth Client slider](./images/sec-21.png)
+
+    In this form we first need to name our OAuth Client. Enter **oauthclient** into the **Name** field. 
+    
+    ![Name Field](./images/sec-22.png)
+    
+    Next we can give it a description. Let use **Security on my REST Service** as a value in the **Description Field**.
+    
+    ````
+    <copy>Security on my REST Service</copy>
+    ````
+
+    ![Description Field](./images/sec-23.png)
+
+    The following field, **Support URI**, is where a client will be taken upon an authorization error or failure. For this lab, we will use "https://www.oracle.com/rest/"
+    
+     ````
+    <copy>https://www.oracle.com/rest/</copy>
+    ````
+    
+    ![Support URI Field](./images/sec-24.png)
+
+    Finally, we need an **support email** for contacting someone. You can enter your email address or use gary@dinosaurfootball.com in the **Support Email** field of the form.
+    
+    ![Support Email Field](./images/sec-25.png)
+
+    Once your form looks similar to the image below:
+
+    ![Support Email Field](./images/sec-26.png)    
+    
+    left click the Roles Tab on the top of the Create OAuth Client slider.
+
+    ![Roles Tab on the OAuth Client Slide Out Panel](./images/sec-27.png)
 
 5. Click the Roles tab on the top of the Create OAuth Client slider
 

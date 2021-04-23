@@ -76,7 +76,7 @@ select empno, ename, dept from emp where empno = :id
 
     ![Create Modules slider](./images/rest-4.png)
 
-5. Using the **Create Module** slider, we start with the Module name. The example we have here is **com.oracle.example.api**. Lets use the following:
+5. Using the **Create Module** slider, we start with the Module name. Lets use the following value of **com.oracle.livelab.api**:
 
     ````
     <copy>com.oracle.livelab.api</copy>
