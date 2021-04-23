@@ -43,17 +43,9 @@ This lab assumes you have:
 ## **STEP** 1: Adding Trend Line, Forecast, Clusters and Outliers to charts
 This exercise will introduce you to the capability to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
 
-1. Login to Oracle Analytics by entering the OAS URL and login credentials:
-      ```
-      URL: <copy>http://[your instance public-ip address]:9502/dv/ui</copy>
-      ```
-      ```
-      Username: <copy>biworkshopuser</copy>
-      ```
-      ```
-      Password: <copy>Admin123</copy>
-      ```
+1. Login to Oracle Analytics by entering the OAS URL.
 
+   Please refer to **Lab: Initialize Environment** for OAS URL and Login details.
    ![](./images/OAA01.png " ")
 
 2. Click on **Create** -> **Project** to start a new self-service project. 

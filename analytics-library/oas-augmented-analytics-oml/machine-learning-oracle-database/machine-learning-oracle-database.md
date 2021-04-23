@@ -10,9 +10,10 @@ In such situations, a professional data scientist may wish to leverage the more 
 
 ### Objectives ###
 
-* In Step 1 we’ll show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
+* This lab will introduces you with Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. 
+* You will implement Oracle Data Miner workflow using a series of SQL statements. 
+* You will learn how developers can readily incorporate machine learning into their applications.
 
-* In Step 2 we’ll implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine 
 
 ### Prerequisites ###
 
@@ -52,19 +53,19 @@ This lab assumes you have:
          - EmployeeAttrition_OML.dva 
 
 ## **STEP** 1: Using Data Miner GUI to Train, Test and Evaluate a Machine Learning Model
+In this exercise, we’ll show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
 
-1. Login to via Guacamole by entering the URL and credentials.
 
-  Note: Details to access Guacamole are given in Lab4 -> environment access.
-   ![](./images/ml1.0.png " ")
+1. From your Guacamole remote desktop session, click on SQL Developer to launch it.
 
-2. Launch SQL Developer using the icon on the desktop.
+   Please refer to **Lab: Initialize Environment** for Gucamole access details.
+
    ![](./images/ml1.1.png " ")
 
-3. Expand biworkshopuser01 to open a connection, Right-Click on Tables, then select Import Data.
+2. Expand biworkshopuser01 to open a connection, Right-Click on Tables, then select Import Data.
     ![](./images/ml1.2.png " ")
 
-4. Click Browse and go to:
+3. Click Browse and go to:
       ```
       <copy> /opt/oracle/stage/OAS_OML_Workshop_LabFiles/</copy>
       ```
@@ -164,6 +165,9 @@ This lab assumes you have:
   ![](./images/ml1.24.png " ")
 
 ## **STEP** 2: Using SQL to Train, Test and Evaluate a Machine Learning Model
+In this exercise we’ll implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine.
+
+
 1. In SQL Developer, from the top menu bar choose File, then select open. Now, navigate to the SQL files for this lab and find "AttritionSQL\Step01\_Employee\_Attrition.sql".
 ![](./images/ml2.1.png " ")
 
