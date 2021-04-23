@@ -227,19 +227,12 @@ In this exercise we’ll implement essentially that exact workflow using a serie
 ## **STEP** 3: Using OAS to Understand the Data Machine and call OML in the Oracle DB
 
 1. Login to Oracle Analytics by entering the URL and login credentials:
-      ```
-      URL: <copy>http://[your instance public-ip address]:9502/dv/ui</copy>
-      ```
-      ```
-      Username: <copy>biworkshopuser</copy>
-      ```
-      ```
-      Password: <copy>Admin123</copy>
-      ```
+
+   Please refer to **Lab: Initialize Environment** for OAS URL and Login details.
 
   ![](./images/ml3.1.png " ")
 
-2. From the OAS Home page select "Import Project/Flow” using the Page Menu (hamburger along the top right side of page) to import a project that illustrates how we can leverage Oracle DB Machine Learning (OML) from OAS Data Visualization.
+1. From the OAS Home page select "Import Project/Flow” using the Page Menu (hamburger along the top right side of page) to import a project that illustrates how we can leverage Oracle DB Machine Learning (OML) from OAS Data Visualization.
   ![](./images/ml3.2.png " ")
 
 3. Select the **EmployeeAttrition\_OML.dva** file. 
