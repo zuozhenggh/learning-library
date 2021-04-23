@@ -13,6 +13,7 @@ In such situations, a professional data scientist may wish to leverage the more 
 * This lab will introduces you to Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. 
 * You will implement Oracle Data Miner workflow using a series of SQL statements. 
 * You will learn how developers can readily incorporate machine learning into their applications.
+* You will use OAS to illustrate how data, predictions and the supporting metadata from the OML models trained in the Oracle DB can be viewed from any application using SQL statements.
 
 
 ### Prerequisites ###
@@ -225,6 +226,7 @@ In this exercise we’ll implement essentially that exact workflow using a serie
   The next lab uses OAS Data Visualization to illustrate how this same query could be run in any application to quickly and effectively “operationalize” machine learning.
 
 ## **STEP** 3: Using OAS to Understand the Data Machine and call OML in the Oracle DB
+In this exercise we’ll use OAS to illustrate how data, predictions and the supporting metadata like lift and cumulative gain from the OML models trained in the Oracle DB can easily and readily be viewed from any application using SQL statements.  This also illustrates how any application that supports SQL can quickly incorporate the models enabling you to effectively “operationalize” them.
 
 1. Login to Oracle Analytics by entering the URL and login credentials:
 
