@@ -23,7 +23,7 @@ In this section, you will provision an ADWC database, create an OML user account
 
 First, we are going to create an ADW Instance.
 
-0. Click the **Hamburger Button** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 	
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
