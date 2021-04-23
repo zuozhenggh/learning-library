@@ -13,20 +13,20 @@ The process will begin to make the standby database the primary.
 
 
 
-![image-20210121222215264](images\image-20210121222215264.png?lastModify=1611298659)
+![image-20210121222215264](./images/image-20210121222215264.png?lastModify=1611298659)
 
 3. Enter the database password for sys when prompted.
 
 
 
-![image-20210121225450775](images\image-20210121225450775.png)
+![image-20210121225450775](./images/image-20210121225450775.png)
 
 
 
-![image-20210121225530925](images\image-20210121225530925.png)
+![image-20210121225530925](./images/image-20210121225530925.png)
 
 
 
-![image-20210121225620549](images\image-20210121225620549.png)
+![image-20210121225620549](./images/image-20210121225620549.png)
 
 In a few minutes the roles will be changed and the standby database will become the primary.  This use case can be used for maintenance operations in the primary region.
