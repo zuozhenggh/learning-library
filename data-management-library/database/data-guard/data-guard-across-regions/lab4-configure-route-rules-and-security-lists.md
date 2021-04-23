@@ -4,11 +4,11 @@ After creating your VCN and DRG on both regions.  You will need to set the route
 
 Let's start on the standby side.  From your VCN hosting your standby database, select Route Tables.
 
-![image-20210122202020691](images\image-20210122202020691.png)
+![image-20210122202020691](./images/image-20210122202020691.png)
 
 1. Select the private subnet route table or click Create Route Table if the private subnet route table is not there.
 
-2. Click Add Route Rules 
+2. Click Add Route Rules
 
 3. Select the Target Type as Dynamic Routing Gateways and select the name of the DRG gateway you created.
 
@@ -21,13 +21,13 @@ Let's start on the standby side.  From your VCN hosting your standby database, s
 
 
 
-![image-20210122200451778](images\image-20210122200451778.png)
+![image-20210122200451778](./images/image-20210122200451778.png)
 
 
 
 Now configure the security list.  
 
-7. Click Create Security List and name it something like Sec-List-Private-Subnet. 
+7. Click Create Security List and name it something like Sec-List-Private-Subnet.
 
 8. Ensure you are in the correct compartment.
 
@@ -47,7 +47,7 @@ Now configure the security list.
 
 16. Add a description if desired.
 
-![image-20210122200918911](images\image-20210122200918911.png)
+![image-20210122200918911](./images/image-20210122200918911.png)
 
 
 
@@ -67,11 +67,8 @@ Now configure the security list.
 
 24. Click Create Security List
 
-![image-20210122201351067](images\image-20210122201351067.png)
+![image-20210122201351067](./images/image-20210122201351067.png)
 
 
 
 Now do the same steps for the primary side.  This time the CIDR should be different since they can not overlap with the standby.
-
-
-

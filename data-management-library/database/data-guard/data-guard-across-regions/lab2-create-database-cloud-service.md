@@ -21,7 +21,7 @@ Data Guard supports RAC databases, but we'll use a single instance database in t
 
 Standard Edition does not support Data Guard, select the other editions.
 
-![image-20210121184635385](images\image-20210121184635385.png)
+![image-20210121184635385](./images/image-20210121184635385.png)
 
 
 
@@ -33,7 +33,7 @@ Standard Edition does not support Data Guard, select the other editions.
 
 
 
-![image-20210121184848646](images\image-20210121184848646.png)
+![image-20210121184848646](./images/image-20210121184848646.png)
 
 
 
@@ -49,7 +49,7 @@ Standard Edition does not support Data Guard, select the other editions.
 
 
 
-![image-20210121185143404](images\image-20210121185143404.png)
+![image-20210121185143404](./images/image-20210121185143404.png)
 
 15. Provide a database name, must be 8 characters or less.
 
@@ -61,4 +61,4 @@ Standard Edition does not support Data Guard, select the other editions.
 
 
 
-![image-20210121185604333](images\image-20210121185604333.png)
+![image-20210121185604333](./images/image-20210121185604333.png)

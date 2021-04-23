@@ -13,7 +13,7 @@ A picture of the remote VCN peering is shown below.
 
 
 
-![This image shows the basic layout of two VCNs that are remotely peered, each with a remote peering connection on the DRG](images\network_remote_peering_basic.png)
+![This image shows the basic layout of two VCNs that are remotely peered, each with a remote peering connection on the DRG](./images/network_remote_peering_basic.png)
 
 
 
@@ -21,7 +21,7 @@ If you don't have admin policies you will need to add remote peering policies.  
 
 
 
-![This image shows the two policies for VCNs in different regions but in the same tenancy.](images\network_remote_peering_policy_same_tenancy.png)
+![This image shows the two policies for VCNs in different regions but in the same tenancy.](./images/network_remote_peering_policy_same_tenancy.png)
 
 
 
@@ -35,9 +35,9 @@ The route rule and security list must also be configured to access the resources
 
 2. Pick a region to start with.  You can pick either the primary side or the standby.
 
-3. Select the menu Networking 
+3. Select the menu Networking
 
-4. Ensure you are in the right region and compartment 
+4. Ensure you are in the right region and compartment
 
 5. Select Dynamic Routing Gateways
 
@@ -48,7 +48,7 @@ The route rule and security list must also be configured to access the resources
 8. Perform the same steps in the second region.
 
 
-![image-20210124110913518](images\image-20210124110913518.png)
+![image-20210124110913518](./images/image-20210124110913518.png)
 
 
 
@@ -68,7 +68,7 @@ The route rule and security list must also be configured to access the resources
 
 
 
-![image-20210124111112366](images\image-20210124111112366.png)
+![image-20210124111112366](./images/image-20210124111112366.png)
 
 
 
@@ -82,7 +82,7 @@ For our lab, we'll use the standby side as the acceptor, and the primary side as
 
 17. Record the OCID of the RPC on the standby side.  You will provide this to the primary side later to establish the peering.
 
-![image-20210124114804001](images\image-20210124114804001.png)
+![image-20210124114804001](./images/image-20210124114804001.png)
 
 
 
@@ -94,7 +94,7 @@ For our lab, we'll use the standby side as the acceptor, and the primary side as
 
 
 
-![image-20210124114006763](images\image-20210124114006763.png)
+![image-20210124114006763](./images/image-20210124114006763.png)
 
 21. Enter the standby region you will establish the connection with.
 
@@ -104,7 +104,7 @@ For our lab, we'll use the standby side as the acceptor, and the primary side as
 
 
 
-![image-20210124114207345](images\image-20210124114207345.png)
+![image-20210124114207345](./images/image-20210124114207345.png)
 
 
 
