@@ -4,7 +4,7 @@ Copyright (c) 2021 Oracle, Inc.
 
 Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Lab 4 -- Frontend (React JS)
+# Part III -- Frontend (React JS)
 
 ## **Summary**
 The application is so simple that there is really no need to know React to understand the code.
@@ -51,7 +51,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. clone the MyToDoReact git repository (we only need the front end in this lab)
 ```
-<copy>git clone git@orahub.oci.oraclecorp.com:ora-jdbc-dev/mtdrworkshop.git</copy>
+<copy>git clone https://github.com/oracle/oci-react-samples/mtdrworkshop.git</copy>
 ```
 
 2. cd frontend
@@ -68,9 +68,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  ```
 <copy>npm audit fix --force</copy>
 ```
+- Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
+
 4. Update API_LIST in API.js
 
-- Navigate to Developer Services -> API management
+- Make sure to be in frontend/src directory
+ ```
+ <copy>cd frontend/src</copy>
+ ```
+- In the Cloud console, navigate to **Developer Services > API Management**
 - Click on your Gateway and go to Deployment
 - Copy the Endpoint
 ![](images/Api-gtw-deploy.png " ")

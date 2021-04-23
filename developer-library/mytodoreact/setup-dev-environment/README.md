@@ -39,7 +39,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
     ````
     <copy>
-    git clone https://orahub.oci.oraclecorp.com/ora-jdbc-dev/mtdrworkshop.git
+    git clone https://github.com/oracle/oci-react-samples/mtdrworkshop.git
     </copy>
     ````
 
@@ -148,9 +148,13 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 The database creation will take a few minutes.
 
 5. Populate mtdrworkshopdbid.txt with the database OCID
-  -
+  - Create  the `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
+    ```
+    <copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
+    ```
+
   - Copy the OCID of the newly created database from the Cloud console and
-    add it to the  `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
+    add it into `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
 
     ![](images/42-copy-atp-ocids2.png " ")
 
@@ -190,14 +194,15 @@ The database creation will take a few minutes.
 
       SQL> connect ADMIN@mtdrdb_tp
 
-      - Create TODOUSER (replace <password> by a strong password)
+      - Create TODOUSER (replace <password> by a strong password).
+
         ```
-        <copy> CREATE USER todouser IDENTIFIED BY JDBCmytodo123# DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
+        <copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
         ```
-       - Grant some privileges to TODOUSER by executing the following command under SQLCl
-      ```
-      <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
-      ```
+       - Grant some privileges to TODOUSER by executing the following command
+        ```
+        <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
+        ```
       - Connect as TODOUSER
         SQL> connect todouser@mtdrdb_tp
 
@@ -262,8 +267,9 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/26-save-auth-token.png " ")
 
-7. Go to Cloud Shell and run docker login ...
- `docker login  <USERNAME> "<AUTH_TOKEN>"` where
+7. Go to Cloud Shell, at the workshop root directory and run the
+   dockerLogin.sh scripts ...
+ `./dockerLogin.sh  <USERNAME> "<AUTH_TOKEN>"` where
 
   * `<USERNAME>` - is the username used to log in (typically your email address). If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something.com`
 
@@ -278,7 +284,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ```
 ## **STEP 6**: Install GraalVM in Cloud Shell
 
-We will be using JDK 11 in Cloud Shell to build the Java/Helidon image
+ We will be using JDK 11 in Cloud Shell to build the Java/Helidon image
 1.  Set some environment variables and run the following commands
 
    ```
@@ -286,17 +292,24 @@ We will be using JDK 11 in Cloud Shell to build the Java/Helidon image
    ```
    ```
    <copy>export WORKINGDIR=$MTDRWORKSHOP_LOCATION/workingdir</copy>
-   ```   
+   ```  
+   - Make sure to be in mtdrwokshop/setup-dev-environment directory then execute the following script
    ```
    <copy>./installGraalVM.sh</copy>
   ```
 
 ## **STEP 7**: Access OKE from the Cloud Shell
 
-1. Copy the mdtrworkshopcluster id
+1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
+
+  ```
+  <copy>touch mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
+  ```
+2. Navigate to **Developer Services > Kubernetes Clusters**
+
+3. Copy the mdtrworkshopcluster id and paste into the newly created file
 ![](images/mtdrworkshop-cluster-id.png " ")
 
-2. Edit mtdrworkshop/workingdir/mtdrworkshopclusterid.txt and paste the mdtrworkshopcluster id
 
 3. Run `./verifyOKEAndCreateKubeConfig.sh`
 
@@ -304,7 +317,7 @@ We will be using JDK 11 in Cloud Shell to build the Java/Helidon image
  <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
  ```
 
-Notice `/.kube/config` is created for the OKE cluster.
+ Notice `/.kube/config` is created for the OKE cluster.
 
   ![](images/verifyOKEOutput.png " ")
 

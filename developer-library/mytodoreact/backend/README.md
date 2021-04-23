@@ -3,7 +3,7 @@ Copyright (c) 2021 Oracle, Inc.
 
 Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Lab 3 -- Backend (Java/Helidon)
+# Part II -- Backend (Java/Helidon)
 
 ## **Summary**
 
@@ -40,24 +40,27 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 1. Set the root directory of the workshop
 ```
-<copy>export MTDRWORKSHOP_LOCATION=~/mtdrworkshop<copy>
+<copy>export MTDRWORKSHOP_LOCATION=~/mtdrworkshop</copy>
 ```
 2. Run source addAndSourcePropertiesInBashrc.sh
 
 The following command will set the values of environment variables in mtdrworkshop.properties and source ~/.bashrc
-```
-<copy>cd $MTDRWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
+
+ ```
+ <copy>cd $MTDRWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh
+ </copy>
 ```
 
-## **STEP 2**: Build and push the Docker images
+## **STEP 2**: Build and push the Docker images to the OCI Registry
 
-1. Set the environment variable "DOCKER_REGISTRY" to push the docker image to the OCI image registry.
+1. Ensure that the "DOCKER_REGISTRY" variable is set
+
  Example: <region-key>.ocir.io/<object-storage-namespace>/<firstname.lastname>/<repo-name>"
- If the variable is not set or set to an empty string the push will fail (but the docker image will be built).
+ If the variable is not set or is an empty string, the push will fail (but the docker image will be built).
 
 2. Make sure to be in backend/target/classes/wallet directory then execute
    ```
-   <copy>Unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
+   <copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
    ```
 
 3. Pick mtdrb_tp service alias (see the list of aliases in
@@ -72,9 +75,7 @@ The following command will set the values of environment variables in mtdrworksh
 
 6. Edit ./backend/src/main/java/com/oracle/todoapp/Main.java
  -  Locate the following code fragment
-    `.allowOrigins("http://localhost:3000",
-       "https://objectstorage.eu-frankfurt-1.oraclecloud.com",
-       "https://petstore.swagger.io")`
+    ![](images/CORS-Main.png " ")
  - Replace `eu-frankfurt-1` in  `"https://objectstorage.eu-frankfurt-1.oraclecloud.com"` by your region
 
  - Save the file
@@ -105,15 +106,10 @@ The following command will set the values of environment variables in mtdrworksh
   <copy>cd $MTDRWORKSHOP_LOCATION/backend; ./deploy.sh</copy>
 ```
 
-2. kubectl create -f app.yaml
-```
-  <copy>kubectl create -f app.yaml</copy>
-```
-
 --> service/todolistapp-helidon-se-service created
 --> deployment.apps/todolistapp-helidon-se-deployment created
 
-3. Check the status using the following commands
+2. Check the status using the following commands
 $ kubectl get services
 
 The following command returns the Kubernetes service of MyToDo application with a load balancer exposed through an external API
@@ -138,7 +134,7 @@ $ kubectl logs -f <pod name>
   Returns:
   http://130.61.66.27/todolist
 
-## **STEP 4**: UnDeploy
+## **STEP 4**: UnDeploy (optional)
 
   If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
 
@@ -154,7 +150,7 @@ $ kubectl logs -f <pod name>
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics and logging.
 Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
 
-1. From the hamburger  menu navigate **Developer Services** > **API Management**
+1. From the hamburger  menu navigate **Developer Services** > **API Management > Create Gateway**
    ![](images/API-Gateway-menu.png " ")
 
 2. Configure the basic info: name, compartment, VCN and Subnet
@@ -163,18 +159,19 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
     The click "Create"
   ![](images/Basic-gateway.png " ")
 
-3. Click on Deployments
+3. Click on Todolist gateway
+       ![](images/Gateway.png " ")
+
+4. Click on Deployments
    ![](images/Deployment-menu.png " ")
 
-4. Create a todolist deployment
+5. Create a todolist deployment
    ![](images/Deployment.png " ")
 
-5. Click on Todolist gateway
-     ![](images/Gateway.png " ")
 
 6. Configure Cross-origin resource sharing (CORS) policies
   CORS is a security mechanism that will prevent  running application loaded from origin A  from using resources from another origin B.
-  Allowed Origins: is the list of all the servers from which the react application will be loaded.
+  Allowed Origins: is the list of all servers (origins) that are allowed to access the API deployment typically your Kubernetes cluster IP.
   Allowed methods: GET, PUT, DELETE, POST, OPTIONS are all needed.
   ![](images/Origins-Methods.png " ")
 
