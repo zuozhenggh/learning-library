@@ -53,7 +53,7 @@ Refer to *Lab Environment Setup* for the detailed instructions relevant to your 
     lsnrctl status LISTCDB1
     lsnrctl status LISTCDB2
     cd
-      
+
     </copy>
     ```
 
@@ -119,11 +119,13 @@ This section looks at how to login and create a new PDB. You will create a plugg
     ```
 
     ```
-    <copy>create pluggable database PDB2 admin user PDB_Admin identified by oracle;
+    <copy>
+    create pluggable database PDB2 admin user PDB_Admin identified by oracle;
 
     alter pluggable database PDB2 open;
 
-    show pdbs;</copy>
+    show pdbs;
+    </copy>
     ```
 
     ![](./images/showpdbsbefore.png " ")
@@ -143,7 +145,8 @@ This section looks at how to login and create a new PDB. You will create a plugg
 6. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.
 
     ```
-    <copy>grant sysdba to pdb_admin;
+    <copy>
+    grant sysdba to pdb_admin;
     create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
     alter database default tablespace Users;
     grant create table, unlimited tablespace to pdb_admin;
@@ -152,7 +155,8 @@ This section looks at how to login and create a new PDB. You will create a plugg
     ```
 
     ```
-    <copy>create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
+    <copy>
+    create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
     alter database default tablespace Users;
     grant create table, unlimited tablespace to pdb_admin;
 
@@ -170,7 +174,8 @@ This section looks at how to login and create a new PDB. You will create a plugg
 8. Create a table **MY_TAB** in **PDB2**.
 
     ```
-    <copy>create table my_tab(my_col number);
+    <copy>
+    create table my_tab(my_col number);
     insert into my_tab values (1);
     commit;
     </copy>
@@ -896,7 +901,7 @@ The tasks you will accomplish in this step are:
     <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ```
 
-2. Create a pluggable database **OE\_REFRESH**` with manual refresh mode from the database link **oe@cdb1\_link**.
+2. Create a pluggable database **OE\_REFRESH** with manual refresh mode from the database link **oe@cdb1\_link**.
 
     ```
     <copy>create pluggable database oe_refresh from oe@cdb1_link refresh mode manual;</copy>
@@ -908,7 +913,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/step8.2-createoerefresh.png " ")
 
-3. Connect as **SOE** to the pluggable database **OE\_REFRESH**` and count the number of records in the **sale\_orders** table.
+3. Connect as **SOE** to the pluggable database **OE\_REFRESH** and count the number of records in the **sale\_orders** table.
 
     ```
     <copy>conn soe/soe@localhost:1524/oe_refresh</copy>
@@ -920,7 +925,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/step8.3-connectassoe.png " ")
 
-4. Close the pluggable database **OE_REFRESH**` and refresh it from the **OE** pluggable database.
+4. Close the pluggable database **OE_REFRESH** and refresh it from the **OE** pluggable database.
 
     ```
     <copy>conn sys/oracle@localhost:1524/oe_refresh as sysdba</copy>
@@ -944,7 +949,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/step8.4-closeoerefresh.png " ")
 
-5. Connect as **SOE** to the pluggable database **OE\_REFRESH**` and count the number of records in the **sale\_orders** table. You should see the number of records change.
+5. Connect as **SOE** to the pluggable database **OE\_REFRESH** and count the number of records in the **sale\_orders** table. You should see the number of records change.
 
     ```
     <copy>conn soe/soe@localhost:1524/oe_refresh</copy>
