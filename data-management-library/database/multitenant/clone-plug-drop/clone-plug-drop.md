@@ -64,7 +64,6 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ```
     <copy>
-    sudo su - oracle
     cd /home/oracle/labs/multitenant
     </copy>
     ```
@@ -79,12 +78,13 @@ This section looks at how to login and create a new PDB. You will create a plugg
     ```
     <copy>
     sqlplus /nolog
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
     </copy>
     ```
 
     ```
-    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
+    <copy>
+    connect sys/oracle@localhost:1523/cdb1 as sysdba
+    </copy>
     ```
 
     ![](./images/step1.2-connectoraenv.png " ")
@@ -152,16 +152,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
     grant create table, unlimited tablespace to pdb_admin;
 
     </copy>
-    ```
-
-    ```
-    <copy>
-    create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
-    alter database default tablespace Users;
-    grant create table, unlimited tablespace to pdb_admin;
-
-    </copy>
-    ```
+    ````
 
    ![](./images/grantsysdba.png " ")
 
