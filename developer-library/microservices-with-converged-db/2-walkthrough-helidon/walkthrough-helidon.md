@@ -37,10 +37,10 @@ If changes have been made to the deployment yaml then re-run `./deploy.sh` in th
 
 ## **STEP 2**: Deploy and access FrontEnd UI microservice
 
-1.  Run the deploy script.  This will create the deployment and pod for this image in the OKE cluster `msdataworkshop` namespace:
+1.  Run the deploy script.  This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
     ```
-    <copy>cd $GRABDISH_HOME/frontend-helidon;./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
     ```
 
    ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
@@ -127,154 +127,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
     under `@Named` as “orderpdb” and “inventorypdb” which were mentioned in the
     `microprofile-config.properties` file.
 
-4.  Go into the ATP admin folder.
-
-    ```
-    <copy>cd $GRABDISH_HOME/admin-helidon</copy>
-    ```
-
-5.  Setup information necessary for ATP DB links and AQ propagation and create the `admin-helidon` deployment and `admin` service using the following command.
-
-    ```
-    <copy>./deploy.sh</copy>
-    ```
-
-  ![](images/2d0ad754b2c2fa85abe1f3dd6dbdf367.png " ")
-
-6.  Once successfully deployed, verify the existence of the deployment and
-    service using the following command. You should notice that we now have the
-    `admin-helidon` pod up and running.
-
-    ```
-    <copy>pods</copy>
-    ```
-
-  ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
-
-7.  Use the frontend LoadBalancer URL `https://<external-IP>:443` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
-
-  ![](images/testdatasourcescreen.png " ")
-
-8. Click **Datasources** tab and then **Test Data Sources** button.
-
-  ![](images/testdatasourcescreen-withoutput.png " ")
-
-  The frontend is calling the `admin` service and has successfully established
-  connections to both databases `orderpdb` and `inventorypdb`.
-
-9.  Open the frontend microservice home page and click **Setup (and Tear Down) Data and Messaging** from the Labs pane.
-
- Click the following buttons in order: **Create Users**, **Create Inventory Table**, **Create Database Links**,
-    **Setup Tables Queues and Propagation**.
-
-  ![](images/setupteardownpage.png " ")
-
-  The results of `Setup Tables Queues and Propagation` should take a couple of minutes
-  to complete, therefore we could open the Cloud Shell and check the logs, as we
-  are waiting until all the messages have been received and confirmed.
-
-10. (Optional) While waiting for `Setup Tables Queues and Propagation` to complete, open the Cloud Shell and check the logs using the following command:
-
-    ```
-    <copy>logpod admin</copy>
-    ```
-
-  ![](images/6edf793e660c40736681881d4d59362e.png " ")
-
-  We will see testing messages going in both directions between the two ATP
-  instances across the DB link.
-
-  _If the process gets stuck, use `Ctrl-C` to exit._
-
-  ![](images/cf0526b6ef1c3f21bb865947462bdb17.png " ")
-
-11. (Optional) If it is necessary to restart, rerun the process or clean up the
-    database:
-
-    If **Setup Tables Queues and Propagation** was executed, you need to run
-    **Unschedule Propagation** first.
-
-    Afterwards, click **Delete Users**.
-
-## **STEP 4**: Deploy GrabDish store services
-
-1. After you have successfully set up the databases, you can now test the
-    “GrabDish” Food Order application. You will interact with several
-    different data types, check the event-driven communication, saga, event-sourcing
-    and Command Query Responsibility Segregation via order and inventory
-    services. Go ahead and deploy the related order, inventory and supplier
-    Helidon services. The Food Order application consists of the following
-    tables shown in the ER diagram:
-
-   ![](images/a0f7c519ae73acfed3a5e47dfc74b324.png " ")
-
-    The Food Order application consists of a mock Mobile App (Frontend Helidon
-    microservice) that places and shows orders via REST calls to the order-helidon
-    microservice. Managing inventory is done with calls to the
-    supplier-helidon microservice.  
-    When an order is placed, the order service inserts the order in JSON format and in the same local transaction sends an `orderplaced` message using AQ JMS.
-    The inventory service dequeues this message, validates and adjusts inventory, and enqueues a message stating the inventory location for the item ordered or an `inventorydoesnotexist` status if there is insufficient inventory.
-    This dequeue, database operation, and enqueue are done within the same local transaction.
-    Finally, the order service dequeues the inventory status message for the order and returns the resultant order success or failure to the frontend service.
-
-    This is shown in the below architecture diagram.
-
-   ![](images/grubdash-app-arch.png " ")
-
-2. Open the Cloud Shell and go to the order folder, using the following command.
-
-    ```
-    <copy>cd $GRABDISH_HOME/order-helidon</copy>
-    ```
-
-   ![](images/38c28676009bd795b82d21e8ba640224.png " ")
-
-3. Deploy it.
-
-    ```
-    <copy>./deploy.sh</copy>
-    ```
-
-   ![](images/fa8d34335bbf7bd8b98a2f210580135d.png " ")
-
-4. Go ahead and execute the same steps for deploying the inventory
-    Helidon service, using the following command.
-
-    ```
-
-    <copy>cd $GRABDISH_HOME/inventory-helidon  ; ./deploy.sh</copy>
-
-    ```
-
-   ![](images/2ee20f868b1d740d8ce7d3a7ec37fc03.png " ")
-
-   Once the image has been deployed in a pod, you should see the following message.
-
-   ![](images/d6bf26644dfc30c29ef27d64d4c5c5c9.png " ")
-
-5. Use the same method to deploy the supplier Helidon service. Use
-    the following command.
-
-    ```
-    <copy>cd $GRABDISH_HOME/supplier-helidon-se ; ./deploy.sh</copy>
-    ```
-
-   ![](images/3e833f33e529bdd714c5e6b94b6dfb94.png " ")
-
-6. You can check that all images have been successfully deployed in pods by executing the following command.
-
-    ```
-    <copy>pods</copy>
-    ```
-
-   ![](images/5fad32d4c759a78653a31f68cffedfac.png " ")
-
-7. The services are ready, and you can proceed to test the application
-    mechanisms.
-
-
-
-## **STEP 5**: Verify order and inventory activity of GrabDish store
+## **STEP 4**: Verify order and inventory activity of GrabDish store
 
 1.   Open the frontend microservices home page from the previous lab.
   If you need the URL again, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
@@ -341,7 +194,7 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
 You have successfully configured the databases with the necessary users, tables and message propagation across the two ATP instances. You may proceed to the next step.
 
-## **STEP 6**: Verify spatial
+## **STEP 5**: Verify spatial
 
 1. Click **Spatial** on the **Transactional** tab 
 
@@ -368,7 +221,7 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
 This web component allows to simply integrate mapping into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
 
-## **STEP 7**: Verify metrics
+## **STEP 6**: Verify metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
@@ -383,7 +236,7 @@ This web component allows to simply integrate mapping into Oracle JET and Oracle
 
    ![](images/metrics.png " ")
 
-## **STEP 8**: Verify health
+## **STEP 7**: Verify health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
