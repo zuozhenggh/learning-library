@@ -79,7 +79,7 @@ In this lab, you will:
 
 10. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
 
-  Cloning is a popular feature for Cloud Manager. Trial accounts don't have enough resources to accomodate a cloned environment. Please switch to a paid account for that feature.
+  Cloning is a popular feature for Cloud Manager. Trial accounts don't have enough resources to accommodate a cloned environment. Please switch to a paid account for that feature.
 
   ![](./images/e11.png "")
 
