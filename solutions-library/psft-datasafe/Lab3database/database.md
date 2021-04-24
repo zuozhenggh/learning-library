@@ -45,17 +45,28 @@ First, we must download a file from the Data Safe console that will give the cre
 
     ![](./images/5.png " ")
 
-3. (Optional) Login to your Bastion Host using ssh and its public IP address if necessary to connect to your database.
+3. Login to your Bastion Host using ssh and its public IP address if necessary to connect to your database.
 
         <copy>
         ssh -i <private-ssh-key-filepath> opc@<Bastion-Host-public-IP>
         </copy>
+    Cloud Manager:
+    ``cd Documents/keys``
+    ``ssh -f -C -q -N -i id_rsa -L 2222:10.0.1.2:22 opc@132.145.214.16``
+    ``ssh -p 2222 opc@localhost -i id_rsa``
+
 
 4. Login to your database using the database's private IP address. 
 
         <copy>
         ssh <database-private-IP>
         </copy>
+
+    ``[opc@psftcm12test ~]$ sudo su - psadm2``
+    ``[psadm2@psftcm12test ~]$ ssh -i /home/psadm2/psft/data/cloud/ocihome/keys/cm_adm_pvt_key opc@10.0.1.9``
+    ``[opc@hcm-lnxdb-2 ~]$ ls``
+    ``cloud  datasafe_privileges.sql  log psc_linux_remote_executor_sh_20210325.log``
+    
 
 5. Copy over the ``datasafe_privileges.sql`` file we downloaded in part 2. 
 
@@ -84,6 +95,19 @@ In this step, we will create a database user and grant them privileges which wil
         sqlplus / as sysdba
         </copy>
 
+    MUST CHANGE TO oracle2 USER FIRST!
+
+    ``[opc@hcm-lnxdb-2 ~]$ sudo su - oracle``
+    ``[oracle@hcm-lnxdb-2 ~]$ sqlplus / as sysdba``
+
+    ``SQL> show pdbs;    ``               
+
+    CON_ID CON_NAME			  OPEN MODE  RESTRICTED
+    ---------- ------------------------------ ---------- ----------
+	 2 PDB$SEED			  READ ONLY  NO
+	 3 DFLTDB			  READ WRITE NO
+	 4 PSPDB			  READ WRITE NO
+
 2. Connect to the pdb 
 
         <copy>
@@ -91,6 +115,8 @@ In this step, we will create a database user and grant them privileges which wil
         </copy>
 
     ![](./images/6.png " ")
+
+    ``SQL> alter session set container="PSPDB";``
 
   Make sure the pdb's name is in quotation marks. If you are unsure of the pdb name, enter the following command into sqlplus. 
 
@@ -116,6 +142,10 @@ In this step, we will create a database user and grant them privileges which wil
 
     ![](./images/7.png " ")
 
+    ``SQL> CREATE USER DATASAFE_ADMIN IDENTIFIED BY PSft1234##``
+    ``2  DEFAULT TABLESPACE DATASAFE_TABLE``
+    ``3  TEMPORARY TABLESPACE TEMP;``
+
 5. Grant permissions to this user. 
 
         <copy>
@@ -140,7 +170,11 @@ In this step, we will create a database user and grant them privileges which wil
 
     ![](./images/9.png " ")
 
+    ``SQL> select sys_context('userenv', 'service_name') from dual;``
 
+    ``SYS_CONTEXT('USERENV','SERVICE_NAME')``
+    ``-----------------------------------------------------------------------``
+    ``pspdb.sub03232254351.psftcm2subnet.oraclevcn.com``
 You may now move on to the next lab. 
 
 

@@ -12,19 +12,19 @@
         },
         {
             "title": "Lab 1: Configure PSFT Environment",
-            "filename": "../../Lab1/psft.md"
+            "filename": "../../Lab1psftEnv/psft.md"
         },
         {
             "title": "Lab 2: Enable Data Safe",
-            "filename": "../../enable/enable.md"
+            "filename": "../../Lab2enable/enable.md"
         },
         {
             "title": "Lab 3: Configure the Target Database",
-            "filename": "../../database/database.md"
+            "filename": "../../Lab3database/database.md"
         },
         {
             "title": "Lab 4: Monitor the Target Database on Data Safe",
-            "filename": "../../monitor/monitor.md"
+            "filename": "../../Lab4monitor/monitor.md"
         }
     ]
 }

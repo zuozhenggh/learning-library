@@ -68,6 +68,7 @@ In this lab, you will:
 5. Once the connection has been verified, click **Register Target**. 
 
     ![](./images/10.png " ")
+    ![](./images/targetdb.png " ")
 
 Congratulations! You have successfully registered a database with Data Safe. You can now go to the **Home** tab on Data Safe and begin running assessments to gain additional insight into your EBS data. 
 
