@@ -180,10 +180,10 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 
     ```
     DGMGRL> <copy>connect sys/Ora_DB4U@orcl_nrt1d4</copy>
-Connected to "ORCL_nrt1d4"
+    Connected to "ORCL_nrt1d4"
     Connected as SYSDBA.
     
-DGMGRL> <copy>shutdown immediate</copy>
+    DGMGRL> <copy>shutdown immediate</copy>
     Database closed.
     Database dismounted.
     ORACLE instance shut down.
