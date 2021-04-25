@@ -3,11 +3,13 @@
 ## Introduction
 We connected to our ADB instance **ADWWINE**, registered the Machine Learning Model and added the datasets from the ADB instance to Oracle Cloud Analytics instance in the previous Lab. This lab walks you through the steps to visualize the data we're processed into easily digestible canvases using the functionalities of Oracle Cloud Analytics.projects for visualization.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 30 minutes
 
 ### About Product/Technology
 
-Oracle Cloud Analytics snippet here
+Oracle Analytics Cloud is a scalable and secure public cloud service that provides a full set of capabilities to explore and perform collaborative analytics for you, your workgroup, and your enterprise. 
+
+In this workshop, we'll be utilizing Oracle Analytics Cloud's robust data preparation and visualization features to quickly digest the data from our Oracle Machine Learning model in order to solve our business problem: Picking a good wine under 30$.
 
 ### Objectives
 
@@ -24,7 +26,7 @@ In this lab, you will:
 
 1. Download the project DVA file from the link below.
 
-  [Picking-a-Good-Wine.dva](files/Picking-a-Good-Wine.dva?download=1)
+  [Picking-a-Good-Wine.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SOa4ci8oBIiQXz_g2LNLGzXN2SPwuuMW4U9RgVJ__HkWcsBlLEiQXNzrZjK81B_Y/n/c4u03/b/data-management-library-files/o/oracle-machine-learning/Picking-a-Good-Wine.dva)
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**. 
 	
@@ -141,11 +143,11 @@ In this lab, you will:
 
   ![](./images/step3-5.png  " ")
 
-6. If you know what you're looking for, you can make your visualizations ever more relevant and valuable by utilizing filters. You may have noticed that the map and graph visualization have a blue filter symbol in the top left. This can be toggled by right clicking the visualization and selecting **Use as Filter**.  Leave them checked for now, it will enable us to quickly set filters for other visualizations in the case by simply selecting the elements in a visualization.
+6. If you know what you're looking for, you can make your visualizations ever more relevant and valuable by utilizing filters. You may have noticed that the map and graph visualization have a blue filter symbol in the top left. This can be toggled by right clicking the visualization and selecting **Use as Filter**.  Leave them checked for now, it will enable us to quickly set filters for other visualizations in the canvas by simply selecting the elements in a visualization.
 
   ![](./images/step3-6.png  " ")
 
-7. In this example, we're going to narrow our search to the United States. Click the **United States** in the map visualizations to add a filter for US to the other visualizations in the canvas. 
+7. In this example, we're going to narrow our search to the United States. Click the **United States** in the map visualization which will automatically filter the data in the other visualizations within the canvas. 
 
   ![](./images/step3-7.png  " ")
 
@@ -172,7 +174,7 @@ In this lab, you will:
 2. Right Visualization (Tag Cloud)
     * WINEREVIEWS130KTEXT
         - Drag **PRICE** to **Values (Size)**
-        - Drag **REGION_2** to **CATEGORY**
+        - Drag **REGION_2** to **Category**
 
   ![](./images/step3-canvas2.png  " ")
 
@@ -234,7 +236,7 @@ This visualization provides a word cloud of attributes in the wine review descri
     * DM$VLWINE\_CLASS\_MODEL\_SVM
         - Drag **COEFFICIENT** to **Values (Size)**
         - Drag **ATTRIBUTE_SUBNAME** to **Category**
-        - Drag **COEFFICIENT** to the bottom **Filters**, right click and select Filter Type -> **Top Bottom N** and select **Bottom 25** by **All Attribute in Visual**
+        - Drag **COEFFICIENT** to the bottom **Filters**, right click and select Filter Type -> **Top Bottom N** and select **Top 25** by **All Attribute in Visual**
 
   ![](./images/step3-canvas5.png  " ")
 
@@ -274,7 +276,24 @@ The visualization on the right is a word cloud of the 25 most positive attribute
 
   ![](./images/step3-canvas6.png  " ")
 
-***You've completed this workshop!***
+
+## **STEP 4:** Summarize
+
+To recap, we first took the top-down approach in the initial canvas where we take a global perspective to identify the wines based on the price and quality worldwide, which is achieved using the map visualization.
+
+Then, we drilled down further in the next canvas in order to find wines based on average price by variety and by region as each person has different preferences. 
+
+Next, we dedicated a canvas page on displaying wine prices by country with coloring to depict how likely those wines were to be good. We also demonstrated the handiness of having a dedicated list box in which to filter wine variety, and the convenience of OAC automated Language Narrative visualization without having to write anything.
+
+An important feature while making any data driven decisions is to know how important each attribute is in comparison to the bigger picture. In the following 2 canvases, we first created a tag cloud visualization to show the top 50 most important attributes, then we used 2 more tag clouds to distinguish between the Top 25 best (positive) attributes and Bottom 25 worst (negative) attributes that contributed to our prediction of whether a wine is good or bad.  Knowing these attributes can assist you making the decision to buy after reading wine descriptions.
+
+Lastly, we created a canvas to provide us price and location insights when we select a variety from the scatter plot, and put in filters to help us find a wine under $30 that has a high probability of being good.
+
+To conclude, from canvas to canvas we gather more and more information about wines and eventually were able to answer questions that someone such as yourself might have. What are the best wines? Where can I find the wines which I like ? What's the price that I am willing to pay? What are the attributes of a good wine? etc. From a technical standpoint, we saw how we can leverage Oracle's two major products, Oracle Autonomous Database and Oracle Analytics Cloud, to make more informed decisions.
+
+Congratulations!!! You've completed this workshop!
+
+As you have experienced, the development of the canvases and visualizations is pretty simple and straightforward. Oracle Analytics Cloud has other features included which we encourage you to try out for both your work related and personal activities. They will help you make effective decisions based on data while reducing personal bias.
 
 ## Acknowledgements
 * **Author** - Charlie Berger & Siddesh Prabhu, Machine Learning, AI and Cognitive Analytics
