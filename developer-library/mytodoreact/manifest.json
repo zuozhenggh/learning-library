@@ -6,7 +6,7 @@
         "filename": "./README.md"
       },
       {
-        "title": "Part I: Setup OCI Cloud services: ATP, OKE, OCIR",
+        "title": "Part I: Setup OCI Cloud services: ATP, OKE, and OCIR",
         "filename": "./setup-dev-environment/README.md"
       },
       {

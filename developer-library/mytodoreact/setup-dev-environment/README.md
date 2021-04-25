@@ -3,7 +3,7 @@ Copyright (c) 2021 Oracle, Inc.
 
 Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Part 1 --  Setup OCI, Cloud shell, OKE, ATP and
+# Part 1 --  Setup OCI, Cloud shell, OKE, ATP and OCIR
 
 ## **Summary**
 
@@ -139,11 +139,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 4.  Set **ADMIN password, Network Access Type and License Type**
    - Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
     Please note the ADMIN password; it will be required later.
-   - Set the Network Access type to "Allow secure access from everywhere".
+   - Set the Network Access type to "Allow secure access from specific IPs an VCNs".
    - Set the license type to "Bring Your Own License (BYOL)" (does not matter for this workshop)
    - Click on "Create Autonomous Database"
 
-![](images/ATP-config-2.png " ")
+![](images/ADB-setup.png " ")
 
 The database creation will take a few minutes.
 
