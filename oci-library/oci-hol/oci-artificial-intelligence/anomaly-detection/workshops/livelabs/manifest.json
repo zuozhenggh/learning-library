@@ -1,40 +1,36 @@
 {
-    "workshoptitle": "Time Series Forecasting with fb Prophet",
+    "workshoptitle": "Anomaly Detection with OCI Artificial Intelligence",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
             "title": "Getting Started",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Introduction",
-            "description": "Introduction to the Data Science Service",
-            "filename": "../../../common/odsc-intro.md"
+            "title": "Introduction: Anomaly Detection",
+            "description": "Learn how to build anomaly detection model.",
+            "filename": "../../anomalies/anomaly-detection.md"
         },
         {
-            "title": "Lab 1: Create a Project",
-            "description": "Create a project to contain the Data Science Notebooks.",
-            "filename": "../../../common/project-setup-green-button.md"
+            "title": "Lab 1: Configure AD Service",
+            "description": "Learn how to configure AD Service.",
+            "filename": "../../configure-ad-service/configure-ad-service.md"
         },
         {
-            "title": "Lab 2: Create a Notebook Session",
-            "description": "Create a Notebook Session and launch it.",
-            "filename": "../../../common/notebook-setup-green-button.md"
+            "title": "Lab 2: Prepare Training Data and Detection Data",
+            "description": "Learn how to process data for AD Service.",
+            "filename": "../../anomalies/data-preparation.md"
         },
         {
-            "title": "Lab 3: Conda Environments",
-            "description": "Introduction to conda environments.",
-            "filename": "../../condas-intro/condas-intro.md"
+            "title": "Lab 3: Create Anomaly Detection Project",
+            "description": "Learn how to create AD Service.",
+            "filename": "../../anomalies/anomaly-detection-project.md"
         },
         {
-            "title": "Lab 4: Time Series Forecasting Models",
-            "description": "Learn how to build time series forecasting models.",
-            "filename": "../../time-series/time-series.md"
-        },
-        {
-            "title": "Lab 5: Shutting Down a Notebook Session",
-            "description": "Deactivate or terminate a notebook session.",
-            "filename": "../../../common/notebook-shutdown.md"
+            "title": "Lab 4: Train Anomaly Detection Project",
+            "description": "Learn how to create AD Service.",
+            "filename": "../../anomalies/anomaly-detection-model.md"
         },
         {
             "title": "Need Help?",
