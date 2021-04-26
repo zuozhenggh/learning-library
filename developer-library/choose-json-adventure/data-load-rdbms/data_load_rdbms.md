@@ -1,4 +1,4 @@
-# JSON in the Oracle Database Part 1: Relational
+# Choose your Own JSON Adventure: Relational or Document Store: Relational
 
 ## Introduction
 
