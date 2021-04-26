@@ -4,7 +4,7 @@ Copyright (c) 2021 Oracle, Inc.
 
 Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Lab 4 -- Frontend (React JS)
+# Part III -- Frontend (React JS)
 
 ## **Summary**
 The application is so simple that there is really no need to know React to understand the code.
@@ -24,14 +24,36 @@ The App component also maintains the following states:
 The index.css file contains all the styles for the application.
 
 
-## **STEP 1**: Getting started
+## **STEP 1**: Prerequisites
+
+1. You will be using the npm command, make sure it is installed
+
+```
+<copy>npm --version</copy>
+```
+
+2. Install Node
+
+- if not please install Node for your laptop, using the following link.  
+https://www.freecodecamp.org/news/how-to-install-node-in-your-machines-macos-linux-windows/
+
+3. Install Go (see https://golang.org/doc/)
+
+  "go version" -> go version go1.15.2 darwin/amd64
+
+  ```
+  <copy>go version</copy>
+  ```
+
+## **STEP 2**: Getting started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 1. clone the MyToDoReact git repository (we only need the front end in this lab)
 ```
-<copy>git clone git@orahub.oci.oraclecorp.com:ora-jdbc-dev/mtdrworkshop.git</copy>
+<copy>git clone https://github.com/oracle/oci-react-samples/mtdrworkshop.git</copy>
 ```
+
 2. cd frontend
 
 3. Run the following npm commands to install the required packages
@@ -39,13 +61,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
 <copy>npm install --save typescript</copy>
 ```
-
 ```
+<copy>npm install</copy>
+```
+- In case of errors, try the following command
+ ```
 <copy>npm audit fix --force</copy>
 ```
+- Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
+
 4. Update API_LIST in API.js
 
-- Navigate to Developer Services -> API management
+- Make sure to be in frontend/src directory
+ ```
+ <copy>cd frontend/src</copy>
+ ```
+- In the Cloud console, navigate to **Developer Services > API Management**
 - Click on your Gateway and go to Deployment
 - Copy the Endpoint
 ![](images/Api-gtw-deploy.png " ")
@@ -54,24 +85,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   Example  
   const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
-- Save the file
 
-5. `npm start` to run the application in development mode
-```
-<copy>npm start</copy>
-```
-A browser Tab shows the application
+- Save the modifoed API.js file
 
-## **STEP 2**: Run in Dev Mode then Build for Production
+## **STEP 3**: Run in Dev Mode then Build for Production
 
-1. In the project directory, run the following command:
+1. In the project directory, run the app in the development mode <br />
 
 ```
 <copy>npm start</copy>
 ```
 
-2. Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 3. The page will reload if you make edits.<br />
    You will also see any lint errors in the console.
@@ -93,26 +118,15 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## **STEP 3**: Hosting on the Oracle Cloud's object storage
-
+## **STEP 4**: Hosting on the Oracle Cloud's object storage
 
 1. Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
 
-- Select the 'mtdrworkshop' bucket and copy the link
+- Create the 'mtdrworkshop' bucket
 
-![](images/object-store.png " ")
-
-
-2. Install the Staci utility for copying directories to OCI object storage with folder hierarchies
-
-  - Prerequisite: install Go (see https://golang.org/doc/)
-
-    "go version" -> go version go1.15.2 darwin/amd64
-
-    ```
-    <copy>go version</copy>
-    ```
+2. Install the Staci utility for copying directories to OCI object storage
+   bucket with folder hierarchies
 
   - git clone https://github.com/maxjahn/staci.git
 
@@ -138,7 +152,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   <copy>go build</copy>
   ```
 
-3. Upload a static build into your tenancy, using the staci binary
+3. Upload a static build into the bucket, using the staci binary
 
 ```
 <copy>../staci/staci -source build -target mtdrworkshop</copy>
@@ -150,7 +164,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ![](images/bucket-index.png " ")
 
-- You may not run the application from Object store, using the URL of the inex copied above.
+- You may now run the application from Object store, using the URL of the index that you've copied above.
+
+![](images/MyToDo.png " ")
 
 Congratulations for completing the entire lab!!
 
