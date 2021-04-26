@@ -25,7 +25,7 @@ This lab assumes you have:
 
   ![](./images/em-oci-landing.png " ")
 
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
@@ -85,7 +85,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
   ![](./images/em-oci-landing.png " ")
 
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
@@ -257,7 +257,7 @@ To save all your settings:
 3.  In the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Appendix 1:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.

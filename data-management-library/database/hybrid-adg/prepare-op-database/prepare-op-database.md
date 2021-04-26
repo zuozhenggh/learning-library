@@ -108,14 +108,14 @@ Oracle MAA best practice recommends using Oracle Transparent Data Encryption (TD
      [oracle@workshop ~]$ sqlplus / as sysdba
      
      SQL*Plus: Release 19.0.0.0.0 - Production on Fri Jan 31 03:26:52 2020
-     Version 19.7.0.0.0
+     Version 19.10.0.0.0
      
      Copyright (c) 1982, 2019, Oracle.  All rights reserved.
      
      
      Connected to:
      Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-     Version 19.7.0.0.0
+     Version 19.10.0.0.0
      
      SQL> administer key management create keystore '/u01/app/oracle/admin/ORCL/wallet' identified by "Ora_DB4U";
      
@@ -336,7 +336,7 @@ VPN connection or Oracle Net encryption is also required for encryption-in-fligh
      
      SQL> exit
      Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-     Version 19.7.0.0.0
+     Version 19.10.0.0.0
      [oracle@primary ~]$
      ```
 
@@ -369,14 +369,14 @@ VPN connection or Oracle Net encryption is also required for encryption-in-fligh
      [oracle@workshop ~]$ sqlplus / as sysdba
      
      SQL*Plus: Release 19.0.0.0.0 - Production on Fri Jan 31 03:51:46 2020
-     Version 19.7.0.0.0
+     Version 19.10.0.0.0
      
      Copyright (c) 1982, 2019, Oracle.  All rights reserved.
      
      
      Connected to:
      Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-     Version 19.7.0.0.0
+     Version 19.10.0.0.0
      
      SQL> set linesize 120
      SQL> col network_service_banner for a85

@@ -39,6 +39,8 @@ To complete this lab, you need to have the following:
 - Access to a compartment in Oracle Cloud Infrastructure
 <if type="livelabs">- Access to an Autonomous Transaction Processing database in your compartment</if>
 
+<if type="livelabs">Your are provided with all of the above items when using the LiveLabs tenancy.</if>
+
 ### Assumptions
 
 - You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Getting Started](?lab=getting-started) page.

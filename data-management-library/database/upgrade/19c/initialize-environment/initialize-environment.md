@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will generate an application load on the UPGR database before upgrade and use an external load tool, HammerDB.  At a later stage we will compare statements and overall performance-before/after upgrade.  You can use your own load scripts as well.
+In this lab, you will generate an application load on the UPGR database before upgrade and use an external load tool, HammerDB.  At a later stage we will compare statements and overall performance-before/after upgrade.  You can use your own load scripts as well.
 
 *Estimated Lab Time:* 30 Minutes.
 
@@ -44,7 +44,8 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 1. Launch your browser to the following URL
 
     ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    e.g: http://111.888.111.888:8080/guacamole
     ```
 
 2. Provide login credentials
@@ -199,4 +200,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Mike Dietrich, Database Product Management
 * **Contributors** -  Roy Swonger, Kay Malcolm, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
-
