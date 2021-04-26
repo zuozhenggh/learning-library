@@ -48,9 +48,9 @@ Estimated Lab Time: 30-45 minutes
 
     ![left click the Create button](./images/json-5.png)
 
-#### **Create a Collection using the SODA REST APIs**
+#### **Create a Collection using the SODA for REST APIs**
 
-1. We can create a collection with the **SODA REST APIs** as well. To do this, open an **OCI Cloud Shell**. We can do this by clicking the Cloud Shell icon in the upper right of the OCI web console.
+1. We can create a collection with the **SODA for REST APIs** as well. To do this, open an **OCI Cloud Shell**. We can do this by clicking the Cloud Shell icon in the upper right of the OCI web console.
 
     ![Cloud Console Link in OCI Web Console](./images/json-6.png)
 
@@ -58,7 +58,7 @@ Estimated Lab Time: 30-45 minutes
 
     ![OCI Cloud Shell](./images/json-7.png)
 
-3. To use the SODA REST APIs, we need to construct the URL. To start, we use cURL and pass in the username/password combination. Be sure to use the password that you set for our user back in the User Setups lab.
+3. To use the SODA for REST APIs, we need to construct the URL. To start, we use cURL and pass in the username/password combination. Be sure to use the password that you set for our user back in the User Setups lab.
 
     ```
     curl -u "gary:PASSWORD"
@@ -319,7 +319,7 @@ $startsWith — whether a string field value starts with a given substring
     </copy>
     ````
 
-3. Its important to note that any QBE we create and run here can be used via the SODA REST APIs. So taking the cURL examples for loading and creating collections, we can create a similar one but pass the **action** of **query** instead of insert as we previously did. Use the OCI Cloud Shell for running this cURL command.
+3. Its important to note that any QBE we create and run here can be used via the SODA for REST APIs. So taking the cURL examples for loading and creating collections, we can create a similar one but pass the **action** of **query** instead of insert as we previously did. Use the OCI Cloud Shell for running this cURL command.
 
     We start with a POST and the user/password combination
     
@@ -360,7 +360,7 @@ $startsWith — whether a string field value starts with a given substring
     Aircraft":18648,"National Aviation System":12615,"Security":165,"Total":50961,"Weather Codes":["SNW","RAIN","SUN","CLDY"],"Weather":2704}}}}],
     "hasMore":false,"count":1}%    
     ```
-4. We can also use cURL to get a single record. Just place the system created id at the end if the SODA REST URL. Looking at the above return JSON, the id is in the first line (**"id":"6C5C28DB03FF4C838DD0E8379B5F42D9"**):
+4. We can also use cURL to get a single record. Just place the system created id at the end if the SODA for REST URL. Looking at the above return JSON, the id is in the first line (**"id":"6C5C28DB03FF4C838DD0E8379B5F42D9"**):
 
     ```
     {"items":[{"id":"6C5C28DB03FF4C838DD0E8379B5F42D9","etag":"1F5AC6CAB64740F9A79912D65514BBE0","lastModified":"2021-04-25T23:40:51.197350000Z",
@@ -447,8 +447,45 @@ $startsWith — whether a string field value starts with a given substring
     </copy>
     ````
 
+#### **Updating a Document Using the UI and SODA for REST**
 
+1. To update a JSON document using the UI, you can just double click on the record and bring out the **JSON Document Content** slider. Select any JSON document to bring out the slider.
 
+   ![Collection Navigator](./images/json-12.png)
+
+2. Updating this JSON is as easy as clicking into this slider and changing a value. Find the **Names** node under **Statistics** then **Carriers**. Just left click the beginning of the value and add **Oracle Airlines,** (remember the comma). When done, click the **save** button on the bottom of the slider. Thats it, the JSON document has been updated.
+
+   ![Collection Navigator](./images/json-13.png)
+
+#### **Creating a Search Index and the $contains Operator**
+
+1. We can index all the text in our JSON collection/documents by adding an index. Add this index is as simple as a single click of the mouse. To start, in the JSON worksheet, on the left of the page is the **Collection Navigator**.
+
+   ![Collection Navigator](./images/json-14.png)
+
+2. Find the airportdelayscollection collection and right click on it. This will bring up a menu where we can select **Search Index** and then left click **Create**.
+
+   ![JSON Document Content slider](./images/json-15.png)
+
+    This will bring up the **Create Search Index** modal.
+
+   ![Create Search Index modal](./images/json-16.png)
+
+3. Using the **Create Search Index** find the **Index Name** field. Enter **jsonindex** into this field.
+
+   ![Index Name field](./images/json-17.png)
+
+4. Once your **Create Search Index** looks like the below image, left click the **OK** button.
+
+   ![Create Search Index modal](./images/json-18.png)
+
+5. We can now use the **$contains** operator in our QBEs. Lets try the following. XXXXXXX, we changed one of the United entries to be Oracle. We can now directly find this record by just using the contains operator on the Statistics.Carriers.Names node. Copy and paste it into your JSON worksheet and run the QBE.
+
+    ````
+    </copy>
+    {"Statistics.Carriers.Names": {"$contains": "Oracle"}}
+    </copy>
+    ````
 
 {
     "$query": {"$and" : [{"Statistics.Flights.Cancelled": {"$gt": 400}}, {"Time.Year": 2010 }, {"Time.Month": 5}]},
@@ -516,4 +553,59 @@ Updated the doc to just {"AirportCode" : "RDU"}?
   "Statistics.# of Delays.Weather": {
     "$gt": 15
   }
+}
+
+curl -X POST -u "gary:WElcome11##11" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=update" -H "Content-Type: application/json" --data-binary '{"$query": {"id": 1}, "$patch": [{"op": "test","path": "/Statistics/# of Delays/Carrier","value": "1009"},{"op": "replace","path": "/Statistics/# of Delays/Carrier","value": "1019"}]}'
+
+
+curl -X POST --data-binary @qbePatch.json -H "Content-Type: application/json"
+http://localhost:8080/ords/database-schema/soda/latest/custom-actions/update/MyCollection
+
+curl -X POST -u "gary:WElcome11##11" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=update" -H "Content-Type: application/json" --data-binary '{
+    "$query": {"id": 1},
+    "$patch": [
+        {
+            "op": "test",
+            "path": "/Time/Year",
+            "value": 2003
+        },
+        {
+            "op": "replace",
+            "path": "/Time/Year",
+            "value": 20031
+        }
+    ]
+}'
+
+curl -X POST -u "gary:WElcome11##11" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=update" -H "Content-Type: application/json" --data-binary '{
+    "$query": {"id": 1},
+    "$patch": [
+        {
+            "op": "test",
+            "path": "/Statistics/# of Delays/Carrier",
+            "value": 1009
+        },
+        {
+            "op": "replace",
+            "path": "/Statistics/# of Delays/Carrier",
+            "value": 1019
+        }
+    ]
+}'
+
+
+{
+    "$query": {"id": 1},
+    "$patch": [
+        {
+            "op": "test",
+            "path": "/Statistics/# of Delays/Carrier",
+            "value": "1009"
+        },
+        {
+            "op": "replace",
+            "path": "/Statistics/# of Delays/Carrier",
+            "value": "1019"
+        }   
+    ]
 }
