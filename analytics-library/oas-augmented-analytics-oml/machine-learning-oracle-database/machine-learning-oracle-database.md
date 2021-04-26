@@ -2,15 +2,15 @@
 
 ## Introduction ##
 
-Previous Lab above illustrates how citizen data scientists can train their own machine learning models in OAS then apply that model to a dataset in order to predict what employees are most likely to leave the organization.  While OAS offers a handful of native ML algorithms that work fine against reasonably sized data sets, you may find your organization has larger, more complex data sets than OAS can reasonably handle.  It’s also possible you may wish to evaluate a more comprehensive and varied set of algorithms as compared to what OAS natively supports.
+The previous Lab illustrates how citizen data scientists can train their own machine learning models in OAS and then apply that model to a dataset in order to predict which employees are most likely to leave the organization.  While OAS offers a handful of native ML algorithms that work fine against reasonably sized data sets, you may find your organization has larger, more complex data sets than what the OAS can reasonably handle.  It is also possible you may wish to evaluate a more comprehensive and varied set of algorithms as compared to what OAS natively supports.
 
-In such situations, a professional data scientist may wish to leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses.   OML not only affords you the ability to leverage more algorithms, but because the Oracle Database leverages advanced parallel processing capabilities, in memory constructs and sophisticated query plans you’re able to work with significantly larger, more complex data sets.   A final advantage of doing such work in an Oracle database is that once trained your machine learning algorithms can be quickly and readily operationalized via simple SQL statements.   This is a far easier and more approachable mechanism than say trying to teach your application developers languages such as Python and R. 
+In such situations, a professional data scientist may wish to leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses.  OML not only affords you the ability to leverage more algorithms, but because the Oracle Database leverages advanced parallel processing capabilities, in memory constructs and sophisticated query plans you are able to work with significantly larger, more complex data sets.   A final advantage of doing such work in an Oracle database is that once trained your machine learning algorithms can be quickly and readily operationalized via simple SQL statements.   This is a far easier and more approachable mechanism than say trying to teach your application developers languages such as Python and R. 
 
 *Estimated Lab Time:  45 minutes*
 
 ### Objectives ###
 
-* This lab will introduces you to Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. 
+* This lab will introduce you to Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. 
 * You will implement Oracle Data Miner workflow using a series of SQL statements. 
 * You will learn how developers can readily incorporate machine learning into their applications.
 * You will use OAS to illustrate how data, predictions and the supporting metadata from the OML models trained in the Oracle DB can be viewed from any application using SQL statements.
@@ -54,7 +54,7 @@ This lab assumes you have:
          - EmployeeAttrition_OML.dva 
 
 ## **STEP** 1: Using Data Miner GUI to Train, Test and Evaluate a Machine Learning Model
-In this exercise, we’ll show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
+In this exercise, we will show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
 
 
 1. From your Guacamole remote desktop session, click on SQL Developer to launch it.
@@ -76,97 +76,97 @@ In this exercise, we’ll show Oracle Data Miner which enables developers to wor
 
   ![](./images/ml1.3.png " ")
 
-5. Scroll down the list of tables to locate your newly imported table, then Select the table and click on the Data tab to verify your data was properly imported.  
+4. Scroll down the list of tables to locate your newly imported table, then Select the table and click on the Data tab to verify your data was properly imported.  
    
   This is a file of employees we will use to train our machine learning models containing employees who have left the organization as well as some who have not.
   ![](./images/ml1.4.png " ")
 
-6. Repeat step (3 and 4) above but this time select the file "Employee\_Data.csv", and click Open to import/create table "EMPLOYEE\_DATA".  
+5. Repeat step (3 and 4) above but this time select the file "Employee\_Data.csv", and click Open to import/create table "EMPLOYEE\_DATA".  
    Accept all defaults but name the table "EMPLOYEE\_DATA" when prompted.
 
   ![](./images/ml1.5.png " ")
 
-7. Scroll down the list of tables to locate your newly imported table, then Select the table and click on the Data tab to verify your data was properly imported.  
+6. Scroll down the list of tables to locate your newly imported table, then Select the table and click on the Data tab to verify your data was properly imported.  
    
-  This is a file of employees still with the organization that we will run through our trained Machine Learning model in order to predict which employees are most likely to leave.
+  This is a file of the employees still with the organization that we will run through our trained Machine Learning model in order to predict which employees are most likely to leave.
   ![](./images/ml1.6.png " ")
 
-8. Select **Data Miner** tab, Right-Click on **biworkshopuser01** connection, select "**New Project"** and name it **Employee Attrition**.
+7. Select **Data Miner** tab, Right-Click on **biworkshopuser01** connection, select "**New Project"** and name it **Employee Attrition**.
 
   ![](./images/ml1.7.png " ")
 
-9. Right-Click the new Employee Attrition project you created and Select "Import Workflow".
+8. Right-Click on the new Employee Attrition project you created and Select "Import Workflow".
   ![](./images/ml1.8-1.png " ") 
 
-10. Now navigate to the lab file "Employee Attriton.xml" and Open it.  
+9. Now navigate to the lab file "Employee Attriton.xml" and Open it.  
   
   Accept the defaults and import the workflow.
   ![](./images/ml1.8.png " ")
-11.  Right click the "EMPLOYEE\_ATTRITION" data source node then select "View Data".
+10.  Right click on the "EMPLOYEE\_ATTRITION" data source node then select "View Data".
   ![](./images/ml1.9.png " ")
 
-12. This Data Source node points to the "EMPLOYEE\_ATTRITION" table imported in **step 3**.  
+11. This Data Source node points to the "EMPLOYEE\_ATTRITION" table imported in **STEP 3**.  
     
   As noted earlier this table represents employees we will use to train our machine learning models and is a representative sample of employees who have left the organization as well as some who have not.
   ![](./images/ml1.10.png " ")
 
-13. Right click the Sample node to the adjacent right and choose "Run".
+12. Right click on the Sample node to the adjacent right and choose "Run".
   ![](./images/ml1.11.png " ")
 
-14. Double click the Sample node.
+13. Double click on the Sample node.
     
-  Note that we’re selecting approx 1/3rd of the data to use for training our machine learning models.
+  Note that we are selecting approximately 1/3rd of the data to use for training our machine learning models.
   ![](./images/ml1.12.png " ")
-15. Next Right click the "Key Attributes and Data Profiling" node to the adjacent right of Sample and choose "Run".
+14. Next Right click on the "Key Attributes and Data Profiling" node to the adjacent right of Sample and choose "Run".
     
   After it completes Right Click and choose "View Attribute Importance" to see those attributes which are most influential in determining attrition. 
   ![](./images/ml1.13.png " ")
 
-16. JOBROLE, OVERTIME, TOTALWORKINGYEARS, etc. are clearly key attributes that determine if an employee is likely to leave or not.
+15. JOBROLE, OVERTIME, TOTALWORKINGYEARS, etc. are clearly key attributes that determine if an employee is likely to leave or not.
   ![](./images/ml1.14.png " ")
 
-17. Next click the classification node named "Four Attrition Models" to the adjacent right and choose "Run". 
+16. Next,click on the classification node named "Four Attrition Models" to the adjacent right and choose "Run". 
   ![](./images/ml1.15.png " ")    
 
   Notice this classification node actually trains 4 separate Machine Learning models (Generalized Linear Model, Support Vector Machine, Decision Tree & Naïve Bayes) in parallel showcasing how moving the algorithms to the data helps speed up processing.  
 
-18. Right click the "Four Attrition Models" node to the adjacent right of Sample and choose "Compare Test Results" to see which model does the best job of predicting attrition.
+17. Right click on the "Four Attrition Models" node to the adjacent right of Sample and choose "Compare Test Results" to see which model does the best job of predicting attrition.
   ![](./images/ml1.16.png " ")
 
-19. Double click on the "Overall Accuracy %" column header.
+18. Double click on the "Overall Accuracy %" column header.
   Note the "Support Vector Machine" model seems to be the best predictor of attrition.
   ![](./images/ml1.17.png " ")
 
-20. Now click the Lift tab on the top of the chart to reveal the Cumulative gain. Such charts are very helpful in visually understanding which model performs best.  If interested see [ROC Analysis](http://mlwiki.org/index.php/ROC\_Analysis),  [Cumulative Gain Chart](http://mlwiki.org/index.php/Cumulative\_Gain\_Chart) and [Receiver Operating Characteristic](https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic) on how ROC, Lift and Gain charts help data scientists determine the best models.
+19. Now click on the Lift tab on the top of the chart to reveal the Cumulative gain. Such charts are very helpful in visually understanding which model performs best.  If interested see [ROC Analysis](http://mlwiki.org/index.php/ROC\_Analysis),  [Cumulative Gain Chart](http://mlwiki.org/index.php/Cumulative\_Gain\_Chart) and [Receiver Operating Characteristic](https://en.wikipedia.org/wiki/Receiver\_operating\_characteristic) on how ROC, Lift and Gain charts help data scientists determine the best models.
    ![](./images/ml1.1701.png " ")
 
-21. Right click the "EMPLOYEE\_DATA" data source node then choose "View Data".
+20. Right click on the "EMPLOYEE\_DATA" data source node then choose "View Data".
   ![](./images/ml1.18.png " ")
 
 
-22. This Data Source node points to the "EMPLOYEE\_DATA" table imported in **Ponit 6**. 
+21. This Data Source node points to the "EMPLOYEE\_DATA" table imported in **Ponit 5**. 
     
   Recall that these are employees still with the organization that we want to run through our newly trained Support Vector Machine model in order to predict employees most likely to leave.
   ![](./images/ml1.19.png " ")
 
-23. Click the "Apply" node to see how we can apply the Support Vector Machine model to predict employees likely to leave the organization.
+23. Click on the "Apply" node to see how we can apply the Support Vector Machine model to predict employees likely to leave the organization.
   ![](./images/ml1.20.png " ")
 
-24. Right click the "EMPLOYEE\_PREDICTION" node to the adjacent right and choose "Run".  
+24. Right click on the "EMPLOYEE\_PREDICTION" node to the adjacent right and choose "Run".  
   ![](./images/ml1.21.png " ")
 
-25. Right click the "EMPLOYEE\_PREDICTION" data source node then choose "View Data". 
-  Double click the column header "CLAS-SVM\_1\_66\_Prob\_YES" to see those employees at highest risk of leaving the organization. 
+25. Right click on the "EMPLOYEE\_PREDICTION" data source node and then choose "View Data". 
+  Double click on the column header "CLAS-SVM\_1\_66\_Prob\_YES" to see those employees at highest risk of leaving the organization. 
   ![](./images/ml1.22.png " ") 
 
 26. NOTE : The Data Miner GUI enables developers to quickly and graphically create workflows by dragging and dropping nodes from the workflow editor out onto the design pallet. Each node is then configured in accordance with the task to be performed. To form a workflow each node is connected by right clicking it, selecting Connect, then dragging the connection point to the intended node.
    ![](./images/ml1.23.png " ")
 
-27. Lastly, any workflow can be readily output as SQL statements to be run as a script or to incorporate the logic into an application. This is accomplished by simply right clicking any node then choosing "Save SQL".
+27. Lastly, any workflow can be readily output as SQL statements to be run as a script or to incorporate the logic into an application. This is accomplished by simply right clicking on any node then choosing "Save SQL".
   ![](./images/ml1.24.png " ")
 
 ## **STEP** 2: Using SQL to Train, Test and Evaluate a Machine Learning Model
-In this exercise we’ll implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine.
+In this exercise we will implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine.
 
 
 1. In SQL Developer, from the top menu bar choose File, then select open. Now, navigate to the SQL files for this lab and find "AttritionSQL\Step01\_Employee\_Attrition.sql".
@@ -223,10 +223,10 @@ In this exercise we’ll implement essentially that exact workflow using a serie
     
   This SQL statement applies our SUPPORT VECTOR MACHINES model to all employees in order to identify the employees with the highest risk of leaving.
 
-  The next lab uses OAS Data Visualization to illustrate how this same query could be run in any application to quickly and effectively “operationalize” machine learning.
+  The next step uses OAS Data Visualization to illustrate how this same query could be run in any application to quickly and effectively “operationalize” machine learning.
 
 ## **STEP** 3: Using OAS to Understand the Data Machine and call OML in the Oracle DB
-In this exercise we’ll use OAS to illustrate how data, predictions and the supporting metadata like lift and cumulative gain from the OML models trained in the Oracle DB can easily and readily be viewed from any application using SQL statements.  This also illustrates how any application that supports SQL can quickly incorporate the models enabling you to effectively “operationalize” them.
+In this exercise we will use OAS to illustrate how data, predictions and the supporting metadata like lift and cumulative gain from the OML models trained in the Oracle DB can easily and readily be viewed from any application using SQL statements.  This also illustrates how any application that supports SQL can quickly incorporate the models enabling you to effectively “operationalize” them.
 
 1. Login to Oracle Analytics by entering the URL and login credentials:
 
@@ -234,7 +234,7 @@ In this exercise we’ll use OAS to illustrate how data, predictions and the sup
 
   ![](./images/ml3.1.png " ")
 
-1. From the OAS Home page select "Import Project/Flow” using the Page Menu (hamburger along the top right side of page) to import a project that illustrates how we can leverage Oracle DB Machine Learning (OML) from OAS Data Visualization.
+2. From the OAS Home page select "Import Project/Flow” using the Page Menu (hamburger along the top right side of page) to import a project that illustrates how we can leverage Oracle DB Machine Learning (OML) from OAS Data Visualization.
   ![](./images/ml3.2.png " ")
 
 3. Select the **EmployeeAttrition\_OML.dva** file. 
@@ -252,7 +252,7 @@ In this exercise we’ll use OAS to illustrate how data, predictions and the sup
 
   Note that many of these are similar to charts surfaced in Lab 1: Exercise 2 which introduced the Explain feature.
 
-6. Now let’s see where this data comes from. 
+6. Now let us see where this data comes from. 
      - 1st choose the Prepare tab at the top left of the page. 
      - 2nd select the "EMPLOYEE\_ATTRITION" dataset at the bottom of the page. 
      - 3rd click the Edit Data Set icon at the top RHS under the Save button.
@@ -270,7 +270,7 @@ In this exercise we’ll use OAS to illustrate how data, predictions and the sup
 
 9. The Predicted Attritions canvas surfaces data from the "OML\_PredictAttrition"  query enabling us to immediately and easily “operationalize” the  Support Vector Machines algorithm that we trained on the Oracle DB to dynamically predict potential attritions.
 
-  The charts enable us to visualize what employees are most likely to leave which can help us figure out appropriate programs we may want to put in place in order to prevent unwanted turnover.
+  The charts enable us to visualize which employees are most likely to leave . This can help us figure out appropriate programs we may want to put in place in order to prevent unwanted turnover.
   ![](./images/ml3.9.png " ")
 
 10.  Looking at the **OML\_PredictAttrition** data set we can view the query that dynamically calls the attrition\_model\_SVM algorithm to generate a **ATTRITTION\_PREDICTION** column indicating if that employee is likely to leave as well as a  **ATTRITION\_PREDICTION\_PCT** indicating how confident we are in that prediction. 
@@ -281,7 +281,7 @@ In this exercise we’ll use OAS to illustrate how data, predictions and the sup
 
 With this, you have learned that OAS affords end users the ability to perform augmented analytics readily and easily on their own without requiring the assistance from a data scientist.  Examples include the ability to readily explain any metric or attribute, adding a forecast, trendline, or identify outliers /clusters in your data with a single click, data prep recommendations that significantly improve your data for analysis, natural language processing when interacting with data and the ability to create data flows that train and apply ML models are all included in OAS.    
 
-Oracle’s converged database Machine Learning (OML) capabilities enable end users to work with data scientists inside your organization to enhance and extend the OAS capabilities.  OML affords access to more models as well as more sophisticated algorithms including R scripts and these enhanced capabilities are now included for free in your database license.   Oracle Converged Database enables you to build and train models using significantly more data and attributes than is possible using OAS alone.  
+Oracle’s converged database Machine Learning (OML) capabilities enable end users to work with data scientists inside your organization to enhance and extend the OAS capabilities.  OML affords access to more models as well as more sophisticated algorithms including R scripts and these enhanced capabilities are now included for free in your database license.  Oracle Converged Database enables you to build and train models using significantly more data and attributes than is possible using OAS alone.  
 
 Finally, the more sophisticated data models your data science team crafts in OML can quickly and readily be surfaced via OAS (or any other application) using a few SQL statements.  This is because all aspects of OML can be wrapped in a series of SQL statements, making it extremely fast and easy to operationalize the models you build
 
