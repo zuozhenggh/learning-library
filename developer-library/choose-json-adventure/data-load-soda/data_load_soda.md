@@ -457,6 +457,95 @@ $startsWith — whether a string field value starts with a given substring
 
    ![Collection Navigator](./images/json-13.png)
 
+3. We can also update one or multiple documents via the SODA for REST APIs. For this, we use the **$patch** operator when writing the JSON to update the document. For this example, we will be using a method that could update one or multiple documents; its dependent on the query we include. The JSON we will use is as follows:
+
+    ```
+    '{
+        "$query": {"id": 1},
+        "$patch": [
+            {
+                "op": "test",
+                "path": "/Statistics/# of Delays/Carrier",
+                "value": 1009
+            },
+            {
+                "op": "replace",
+                "path": "/Statistics/# of Delays/Carrier",
+                "value": 1019
+            }
+        ]
+    }'
+    ```
+
+    Whis the above is saying is 
+        1) Find me all the JSON documents who's id is 1. 
+        2) In the Operation (op) test, see if we have a value of 1009 using the path "/Statistics/# of Delays/Carrier" and the document is id 1.
+        3) If we pass the test operation, replace the value with 1019.
+
+4. To make this change, we use cURL with the **action** being **update** with the format **action=update** in the URL. The cURL command is very similar to the previous commands with it being:
+
+    ```
+    curl -X POST -u "gary:PASSWORD" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=update" -H "Content-Type: application/json" --data-binary '{
+        "$query": {"id": 1},
+        "$patch": [
+            {
+                "op": "test",
+                "path": "/Statistics/# of Delays/Carrier",
+                "value": 1009
+            },
+            {
+                "op": "replace",
+                "path": "/Statistics/# of Delays/Carrier",
+                "value": 1019
+            }
+        ]
+    }'
+    ```
+
+    and running this command will result in the following:
+
+    ```
+    {"count":1,"itemsUpdated":1}%    
+    ```
+
+    So one document matched and one was updated.
+
+5. Using the JSON worksheet, we can query for this document and see the change right away. Copy and paste it into your JSON worksheet and run the QBE.
+
+    ````
+    </copy>
+    {"id": 1}
+    </copy>
+    ````
+
+    You can see the updated value in the document results on the bottom of the page with **Carrier** now being 1019.
+
+    ```
+{
+        "id": 1,
+        "AirportCode": "ATL",
+        "Name": "Atlanta, GA: Hartsfield-Jackson Atlanta International",
+        "Time": {
+            "Label": "2003/06",
+            "Month": 6,
+            "Month Name": "June",
+            "Year": 2003
+        },
+        "Statistics": {
+            "# of Delays": {
+                "Late Aircraft": 1275,
+                "National Aviation System": 3217,
+                "Security": 17,
+                "Weather Codes": [
+                    "SNW",
+                    "RAIN",
+                    "SUN",
+                    "CLDY"
+                ],
+                "Weather": 328,
+                "Carrier": 1019
+    ```
+
 #### **Creating a Search Index and the $contains Operator**
 
 1. We can index all the text in our JSON collection/documents by adding an index. Add this index is as simple as a single click of the mouse. To start, in the JSON worksheet, on the left of the page is the **Collection Navigator**.
@@ -487,125 +576,65 @@ $startsWith — whether a string field value starts with a given substring
     </copy>
     ````
 
-{
-    "$query": {"$and" : [{"Statistics.Flights.Cancelled": {"$gt": 400}}, {"Time.Year": 2010 }, {"Time.Month": 5}]},
+#### **Using an $orderby Clause**
+
+1. The JSON worksheet has some built-in functions we can use with one being the **$orderby** clause. This clause sorts our results based on a path we provide the QBE. Lets start with a QBE we used previously. Copy and paste it into your JSON worksheet and run the QBE.
+
+    ````
+    </copy>
+    {"$and" : [{"Statistics.Flights.Cancelled": {"$gt": 400}}, {"Time.Year": 2010 }, {"Time.Month": 5}]}
+    </copy>
+    ````
+
+2. Use the **Add Clause** dropdown and select **$orderby**
+
+   ![Add Clause dropdown and select $orderby](./images/json-19.png)
+
+3. Our QBE is reformatted and the **$orderby** clause is added
+
+   ![reformatted QBE](./images/json-20.png)
+
+4. In the **$orderby** JSON
+
+    ```
     "$orderby": {
-        "$fields": [
-            {
-                "path": "AirportCode",
-                "datatype": "varchar2",
-                "order": "asc"
-            }
-        ],
-        "$scalarRequired": false,
-        "$lax": false
-    }
-}
-
-SUM
-
-[{"$uniqueCount" : "zebra.name"},
- {"$sum"         : {"path"  : "zebra.price",                                       "bucket : [{"$lt"  : 3000},                               {"$gte" : 3000}]}, {"$avg"         : "zebra.rating"}]
-
-
- {"id": 5}
-
-
-create index using UI
-
-{"Statistics.Carriers.Names": {"$contains": "United"}}
-
-
-
-2644
-
-curl -X PUT -u "gary:PASSWORD" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=query" -H "Content-Type: application/json" --data-binary '{"AirportCode": "DCA",
-"Statistics.Flights.Cancelled": {"$gt": 400},
-"Time.Year": 2011
-}'
-
-
-
-
-
-curl -i -X POST -u "gary:WElcome11##11" -d @airportDelays.json -H "Content-Type: application/json" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
-
-curl -i -X POST -u "gary:WElcome11##11" -d @airportDelays.json -H "Content-Type: application/json" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=insert"
-
-
-HTTP/1.1 100 Continue
-
-HTTP/1.1 200 OK
-Date: Wed, 14 Apr 2021 17:15:38 GMT
-Content-Type: application/json
-Content-Length: 736197
-Connection: keep-alive
-X-Frame-Options: SAMEORIGIN
-Cache-Control: private,must-revalidate,max-age=0
-
-
-curl -i -X PUT -u "PASSWORD" -H "Content-Type: application/json" --data-binary '{"AirportCode" : "RDU"}' "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection/6C5C28DB03FF4C838DD0E8379B5F42D9" 
-
-Updated the doc to just {"AirportCode" : "RDU"}?
-
-
-{
-  "Statistics.# of Delays.Weather": {
-    "$gt": 15
-  }
-}
-
-curl -X POST -u "gary:WElcome11##11" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=update" -H "Content-Type: application/json" --data-binary '{"$query": {"id": 1}, "$patch": [{"op": "test","path": "/Statistics/# of Delays/Carrier","value": "1009"},{"op": "replace","path": "/Statistics/# of Delays/Carrier","value": "1019"}]}'
-
-
-curl -X POST --data-binary @qbePatch.json -H "Content-Type: application/json"
-http://localhost:8080/ords/database-schema/soda/latest/custom-actions/update/MyCollection
-
-curl -X POST -u "gary:WElcome11##11" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=update" -H "Content-Type: application/json" --data-binary '{
-    "$query": {"id": 1},
-    "$patch": [
-        {
-            "op": "test",
-            "path": "/Time/Year",
-            "value": 2003
-        },
-        {
-            "op": "replace",
-            "path": "/Time/Year",
-            "value": 20031
+            "$fields": [
+                {
+                    "path": "",
+                    "datatype": "varchar2",
+                    "order": "asc"
+                }
+            ],
+            "$scalarRequired": false,
+            "$lax": false
         }
-    ]
-}'
+    ```
+    Find the path node and replace "" with "AirportCode"
 
-curl -X POST -u "gary:WElcome11##11" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=update" -H "Content-Type: application/json" --data-binary '{
-    "$query": {"id": 1},
-    "$patch": [
-        {
-            "op": "test",
-            "path": "/Statistics/# of Delays/Carrier",
-            "value": 1009
-        },
-        {
-            "op": "replace",
-            "path": "/Statistics/# of Delays/Carrier",
-            "value": 1019
+    ```
+    "$orderby": {
+            "$fields": [
+                {
+                    "path": "AirportCode",
+                    "datatype": "varchar2",
+                    "order": "asc"
+                }
+            ],
+            "$scalarRequired": false,
+            "$lax": false
         }
-    ]
-}'
+    ```
 
+   ![updated path](./images/json-21.png)
 
-{
-    "$query": {"id": 1},
-    "$patch": [
-        {
-            "op": "test",
-            "path": "/Statistics/# of Delays/Carrier",
-            "value": "1009"
-        },
-        {
-            "op": "replace",
-            "path": "/Statistics/# of Delays/Carrier",
-            "value": "1019"
-        }   
-    ]
-}
+5. Run the QBE and you will see the results have been ordered by Airport Code.
+
+## Conclusion
+
+In this lab, you loaded JSON into a collection and worked with that collection using SODA for REST APIs as well as the Database Actions JSON worksheet.
+
+## Acknowledgements
+
+- **Authors** - Jeff Smith, Beda Hammerschmidt and Brian Spendolini
+- **Last Updated By/Date** - April 2021
+- **Workshop Expiry Date** - April 2022

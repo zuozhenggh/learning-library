@@ -674,6 +674,11 @@ ATL         2004/10               500
 ...
 ```
 
+## Conclusion
+
+In this lab, you loaded JSON into a relational table and worked with that data using SQL and JSON/SQL functions using the Database Actions SQL worksheet.
+
+
 ## Acknowledgements
 
 - **Authors** - Jeff Smith, Beda Hammerschmidt and Brian Spendolini
