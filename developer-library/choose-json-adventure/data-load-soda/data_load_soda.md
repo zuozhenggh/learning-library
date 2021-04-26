@@ -22,7 +22,34 @@ Estimated Lab Time: 30-45 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-### **STEP 1: Loading JSON Data in a Collection**
+### **STEP 1: Creating and Loading JSON Data in a Collection**
+
+**If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+
+
+#### **STEP 1: Creating and Loading JSON Data in a Collection**
+
+1. The first step here is to create a **collection** for our JSON Documents. We can do this two ways. The first method is to use the UI in Database Actions. We can start by selecting **JSON** in the **Database Actions Menu**.
+
+    ![JSON in the Database Actions Menu](./images/json-1.png)
+
+2. On the JSON worksheet, left click the **Create Collection** button in the middle of the page.
+
+    ![JSON in the Database Actions Menu](./images/json-2.png)
+
+3. Using the **New Collection** slider
+
+    ![JSON in the Database Actions Menu](./images/json-3.png)
+
+    enter **airportdelayscollection** in the **Collection Name** field
+
+    ![JSON in the Database Actions Menu](./images/json-4.png)
+
+4. When your **New Collection** slider looks like the below image, left click the **Create** button.
+
+    ![JSON in the Database Actions Menu](./images/json-5.png)
+
+
 
 > curl -u "gary:WElcome11##11" -i -X PUT https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelays
 
