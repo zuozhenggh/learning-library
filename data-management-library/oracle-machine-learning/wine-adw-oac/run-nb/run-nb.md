@@ -288,10 +288,6 @@ Now let's apply the model to specific data points.
 
     ![](./images/show-table-oac.png " ")
 
-7. View the "Best_Wines" table created.
-
-    ![](./images/best-wines.png " ")
-
 ### Notebook Complete ###
 
 Whew! That was a lot of information to work through, but now you've successfully created, tested, and implemented an Oracle Machine Learning model! Grab a glass of wine and celebrate!
@@ -305,4 +301,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics & Dhvani Sheth, Senior Cloud Engineer, Emerging Cloud Solution
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
-* **Last Updated By/Date** - Didi Han, Database Product Management, April 2021
+* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021

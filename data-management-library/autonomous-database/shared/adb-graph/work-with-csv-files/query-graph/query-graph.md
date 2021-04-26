@@ -17,14 +17,14 @@ Learn how to
 
 ### Prerequisites
 
-- Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
+- Labs 1 and 2 of this workshop. That is, you are logged into Graph Studio and the `BANK_GRAPH` has been created and loaded into memory. 
 
 ## **STEP 1**: Create a notebook  
 
 1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon and verify that `BANK_GRAPH` is loaded into memory. If it isn't then click on the action menu on that row and select `Load into memory`. 
 
 2. Next click on the `Notebooks` menu icon and then on `Create`, on the top right side of that page, to create a new notebook.  
-Name it `Learn/BankGraph: Find Circular Payments`.  
+Name it `Learn/Bank_Graph_PGQL_Queries`.  
 
    ![](./images/24-create-notebook.png " ")  
 
@@ -42,24 +42,23 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	```
 	<copy>
 	%md
-	## Sample notebook to find circular payment chains and determine key accounts
-
-	The `BANK_GRAPH` consists of ACCOUNTS as vertices and TRANSACTIONS as edges.  
-	This notebook shows examples of finding patterns, such as circular payment chains, in the transactions and determining key accounts.  
-	This is done in a few sets of steps:
-	- Query and visualize 100 element of the `BANK GRAPH` to get an idea of the graph
-	- List the top 10 accounts with the most number of transactions, i.e. important accounts are those that have the most transactions.
-	- Look for circular payments chains of specified length that originate at the top account in terms of number of transactions 
-	- Compute the PageRank of the accounts to assess an alternate notion of importance
-	- Compare the two notions of importance
+	### Sample notebook with `%pgql-pgx` paragraphs to:
+	- Query and visualize 100 elements of the `BANK_GRAPH`
+	- List the top 10 accounts with the most number of deposits (incoming transfers) 
+	- Check if there are any circular payment chains of length 5 (i.e. 5-hops) starting from account #934
+	- Query and display the 5-hops including the account which makes the transfer into account #934
+	- Query and display the 6-hops including the account which makes the transfer into account #934
+	- Query and display all the accounts involved in the 5-hop circular payment chain
 	</copy>
 	```
 
 	Click the Play, or Run, icon to execute this paragraph.  
 
+	![](images/26-md-paragraph.png " ")   
+
 	Then click the Eye (visibility) icon to turn off the Code listing and only display the result.   
 
-	![](images/27a-md-turn-off-code-listing.png " ")  
+	![](images/27-md-paragraph-turn-off-code-listing.png " ")  
 
 4. Add a new paragraph. Hover over the bottom middle portion of the first paragraph. Click the + icon when it is displayed.  
 	![](images/28-add-new-paragraph.png " ")  
@@ -109,47 +108,27 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
    ![](images/34-viz-concentric-layout.png " ")
 
-3. Add a Markdown paragraph describing the next step which to look for circular transfers.   
-    Create a new paragraph and enter the following text into it and execute it.   
-	```
-	<copy>
-	%md
-	### Find potential fraud patterns, e.g. circular payment chain
-
-	Circular payments chains are often of length between 5 and 7, i.e. payments pass through 5 or 6 intermediate accounts before 
-	landing back at the original account.   
-	First list the top ten accounts in terms of number of incoming or outgoing transfers. 
-	Then let's check if there are any such payment chains that start from one of those accounts, e.g. account # 934.
-	</copy>
-	```
-
-    ![](images/34a-md-circular-transfers.png " ")
-
-4. Next let's use PGQL to find the top 10 accounts in terms of number of transfers.  
-	PGQL has built-in functions `IN_DEGREE` and `OUT_DEGREE` which returns the number of incoming and outgoing edges of a node. So we can use them in this query.   
+3. Next let's use PGQL to find the top 10 accounts in terms of number of incoming transfers.  
+	PGQL has a built-in function `IN_DEGREE` which returns the number of incoming edges of a node. So we can use that in this query.   
 	Add a new paragraph. Then copy and paste the following text into it and run it.  
 	```
 	<copy>
 	%pgql-pgx
-	/* List 10 accounts with the most number of transactions (i.e. incoming + outgoing edges) */
-	select a.acct_id, (in_degree(a) + out_degree(a)) as num_transactions 
+	/* List 10 accounts with the most number of incoming edges (i.e. deposits) */
+	select a.acct_id, in_degree(a) as num_deposits 
 	from match (a) on bank_graph 
-	order by num_transactions desc 
-	limit 10 
+	order by num_deposits desc
+	limit 10
 	</copy>
 	```
 
-	![](images/35-num-transfers-top-10-query.png " ")  
+	![](images/35-2nd-pgql-indegree-query.png " ")  
 
-	We see that accounts 387 and 934 are high on the list.  
+	We see that accounts 135 and 934 are high on the list.  
 
-5.  This step is optional. It demonstrates some layout settings of the notebook.  
-    Since the table has just two columns we may want to reduce its width and place two paragraphs and result side by side.  
-	Click on the gear icon at the top right to open the paragraph settings.  Move the width slider to about halfway or a little less.  
+	![](images/36-pgql-indegree-results.png " ")
 
-	![](images/35a-adjust-top-ten-para-width.png " ")  
-
-6.  Now check if there are any circular transfers originating and terminating at account 934.   
+4. So let's check if there are any circular transfers originating and terminating at account 934.   
 	Add a new paragraph. Then copy and paste the following text into it and run it.  
 	```
 	<copy>
@@ -173,12 +152,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	
 	It does not display all the paths or any intermediate nodes.
 
-7. If you did not do step 5 to adjust the paragraph width then you needn't do this step either.  
-   Adjust the width of the paragraph so that the top ten table query and the circular transfer query paragraphs are side by side.  
-
-   	![](images/38a-adjust-width-circular-transfer.png " ")
-
-8. We can modify the above query to include the node which made the deposit into account 934. This will display all the paths.   
+5. We can modify the above query to include the node which made the deposit into account 934. This will display all the paths.   
 	Add a new paragraph. Then copy and paste the following text into it and run it.  
 	```
 	<copy>
@@ -200,7 +174,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 	![](images/41-4th-query-concentric-layout.png " ")
 
-9. The next query finds and displays the 6-hop circular payment chains originating at account 934.  
+6. The next query finds and displays the 6-hop circular payment chains originating at account 934.  
 	
 	Add a new paragraph. Then copy and paste the following text into it and run it.  
 	```
@@ -219,7 +193,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 	![](images/43-5th-query-viz.png " ")  
 
-10. We may want also to display all the intermediate nodes, i.e. accounts through which the money was transferred. 
+7. We may want also to display all the intermediate nodes, i.e. accounts through which the money was transferred. 
 
 	Let's that for the 5-hop case. Add a new paragraph. Then copy and paste the following text into it and run it.  
 	```
@@ -252,209 +226,11 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 	![](images/49-query-6-highlight-resulting-viz.png " ")
 
-11. The remainder of this lab illustrate additional query features and the use of the JAVA API to execute graph algorithms.  
-    Add a new Markdown paragraph, enter the following text, and exceute the paragraph.  
 
-	```
-	<copy>
-	%md
-	The queries above looked for paths of a specific length.  
-	The next query looks for paths of length between 3 and 5 hops and let's the user enter the account number (i.e. the source account in the circular chain) ay runtime.
-	</copy>
-	```
-
-    ![](images/50-md-bind-params.png " ")
-
-12. This shows the use of bind parameters in a query. The account id value is supplied and used at runtime.  
-    Add a new paragraph. Paste the following PGQL query, enter 534 as the account id, and then execute the paragraph.  
-
-	```
-	<copy>
-	%pgql-pgx
-	/* Check if there are any circular payment chains of between 3 and 5 hops starting from the user-supplied account # */
-	select * 
-	from match (a)-/:TRANSFERS{2,4}/->(d)-[t]->(a) on bank_graph
-	where a.acct_id=${account_id}
-	</copy>
-	```
-
-    ![](images/51-bind-params-in-query.png " ")
-
-13. Now let's run the PageRank graph algorithm.  Add a paragraph.  Paste the following Markdown text and execute it.  
-    ```
-	<copy>
-	%md 
-
-	[PageRank](https://en.wikipedia.org/wiki/PageRank) is a measure of relative importance.  Let's compute the PageRank for the accounts in our graph.  
-	Algorithms are executed on the in-memory graph via the Java API for PGX.
-
-	First we get a handle to the graph we wish to analyze, i.e. `BANK_GRAPH`, from the implicitly created `session` object.   
-	The `session`, `analyst`, and `instance` objects are implicitly created when the in-memory graph server is created. That is, when the envrionment is created.   
-	Next we execute the PageRank algorithm, with default parameters, on the graph. The computed value is stored in an attrbute named `pagerank` that is added to each vertex.
-	</copy>
-	```
-
-    ![](images/52-md-page-rank.png " ")
-
-14. Add a paragraph to execute Java code snippets.  
-    Paste the following text in the paragraph and then execute it.  
-
-	```
-	<copy>
-	%java-pgx
-	PgxGraph bgraph1 = session.getGraph("BANK_GRAPH");
-	analyst.pagerank(bgraph1);
-	</copy>
-	```
-
-    ![](images/53-java-pagerank.png " ")
-
-15. Now let's use the computed PageRank value in visualizing a PGQL query result.  
-    First add a Markdown paragraph outlining the next step.  
-
-	```
-	<copy>
-	%md
-	Now query the graph again and use the PageRank value when symbolizing the account nodes.  
-	Nodes with a PageRank above a ceratin value are displayed as larger circles.
-	</copy>
-	```
-
-	![](images/54-md-use-pagerank-in-viz.png " ")
-	
-16. Next add a paragraph to query the 6-hop transfers starting at account #934.  
-    
-	```
-	<copy>
-	%pgql-pgx
-	/* Add highlights to symbolize account nodes by pagerank values. This shows that 934 is connected to other accounts with higher PageRank values. */
-	SELECT *
-	FROM MATCH(n)-/:Transfers{1,6}/->(m) on bank_graph
-	WHERE n.acct_id = 934 limit 100
-	</copy>
-	```
-
-   After the query has executed and a result is displayed click on visualization settings. Then on the Highlights tab.  
-   ![](images/55a-highlights-for-pagerank.png " ")  
-
-   Then click on `New Higlight` and enter the following details to create it.  
-   Specify pagerank >= 0.0035 as the condition, size = 3X as the visula effect.  
-
-   ![](images/55b-new-hightlight-for-pagerank.png " ")  
-
-   The result should look as shown below.  
-
-   ![](images/55-query-with-pagerank.png " ")
-
-
-17. Now lets compare the top ten accounts by PageRank and number of transactions.  
-
-    Add a Markdown paragraph.  
-
-    ```
-	<copy>
-	%md
-	Now lets compare the two notions of importance: PageRank (relative importance of the accounts) and Aggregation (counting the number of transactions)
-	</copy>
-	```
-
-	![](images/56-compare-top-ten.png " ")
-
-18. Then add a paragraph to show the top ten accounts by PageRank.  
- 
-    ```
-	<copy>
-	%pgql-pgx
-	/* List top ten accounts by pagerank */
-	select a.acct_id, a.pagerank
-	from match (a) on bank_graph 
-	order by a.pagerank desc limit 10
-	</copy>
-	```
-
-	![](images/57-top-ten-pagerank.png " ")    
-
-19. And one to show top ten accounts by number of transfers.  
-
-    ```
-	<copy>
-	%pgql-pgx
-	/* List 10 accounts with the most number of edges (i.e. transfers) */
-	select a.acct_id, in_degree(a) + out_degree(a) as num_transfers 
-	from match (a) on bank_graph 
-	order by num_transfers desc limit 10
-	</copy>
-	```
-
-	![](images/58-top-ten-num-transfers.png " ")    
-
-20. Account #222 is in the top ten by PageRank but not by # of transfers. So let us look at that account and its immediate neighbors in the graph.  
-    Add a markdown paragraph.
-
-	```
-	<copy>
-	Notice that account **#222** is in the top ten list by PageRank but not in the list by count of # of transactions.   
-	So lets look at the immediate neighbors of it and symbolize them by pagerank with large nodes having higher values.  
-	The immediate neighbors are those that made a deposit into account #222, or those that received a deposit from account #222.  
-
-	We see that #222 has neighbors with a higher pagerank value and hence it itself has a high pagerank.
-	</copy>
-	```
-
-    ![](images/59-md-account-222.png " ") 
-
-21. Add a paragraph to display account 222 and its neighbors. 
-
-    ```
-	<copy>
-	%pgql-pgx
-	/* show the transactions for acct id 222 */
-	select * from match (v1)-[e1]->(a)-[e2]->(v2) on bank_graph where a.acct_id=222
-	</copy>
-	```
-
-	![](images/60-account-222-and-neighbors.png " ")    
-    
-22. Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.   
-    So let us look at those two and their neighbors.  
-
-	First add a Markdown paragraph.  
-
-    ```
-	<copy>
-	%md 
-
-	Lastly, account **#4** is in the top ten list on the left (by PageRank) but not the right (# of transactions) while account **#380** is in the list on right but not the one on the left.  
-	So lets us query and visualize those two accoutns and their neighbors. And once again larger nodes have a higher pagerank.   
-	We see that account #380 is mostly connected to accounts with lower pagerank values while account #4 is connected to accounts with a higher pagerank.
-
-	</copy>
-	```
-
-	![](images/61-md-account-4-and-380.png " ")  
-
-
-23.	Then add a pararaph to query them and their neighbors.  
-
-    ```
-	<copy>
-	%pgql-pgx
-	/* Query and visualize elements (nodes and edges) of BANK_GRAPH for accts 4 and 380 */
-	select * 
-	from match (s)-[t]->(d) on bank_graph where s.acct_id = 4 or s.acct_id = 380 or d.acct_id = 4 or d.acct_id = 380
-	</copy>
-	```
-
-    Change the graph visualization layout to `Hierarchical`. 
-
-	![](images/62-viz-account-4-and-380.png " ")  	  
-
-
-
-**Congratulations** on successfuly completing this workshop.
+Congratulations on successfuly completing this workshop.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, Jan 2021
   
