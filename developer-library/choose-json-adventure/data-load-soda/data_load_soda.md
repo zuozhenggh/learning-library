@@ -260,7 +260,7 @@ A filter specification is also called a query-by-example (QBE), or simply a filt
 
 A query-by-example (QBE) comparison operator tests whether a given JSON object field satisfies some conditions.
 
-The comparison operators are the following:
+    The comparison operators are the following:
 
     ```
     $all — whether an array field value contains all of a set of values
