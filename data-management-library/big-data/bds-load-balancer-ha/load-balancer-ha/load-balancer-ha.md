@@ -4,7 +4,6 @@
 
 Follow these steps to create and use a load balancer for a highly-available (HA) Big Data Service cluster.
 
-Estimated lab time: 90 minutes
 
 ## **STEP 1:** Gather Information
 

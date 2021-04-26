@@ -17,7 +17,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Clone, Plug and Drop
 
-## Step 0: Connect to Your Instance and Login
+## **Step 0:** Connect to Your Instance and Login
 
 This Lab assumes that you have already Initialized your environment as instructed in "*Lab: Clone, Plug and Drop*". If you haven't please return to that lab and execute "*Step 0*" at the minimum.
 
@@ -43,7 +43,6 @@ This Lab assumes that you have already Initialized your environment as instructe
     ```
     <copy>
     sqlplus /nolog
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
     </copy>
     ```
 
