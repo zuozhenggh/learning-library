@@ -96,81 +96,85 @@ Dot notation is designed for easy, general use and common use cases of querying 
 
 1. Let's start simple and query the table and return a count(*). We are going to bring back the statistics JSON column based on an airport code. 
 
-```
-select a.statistics 
-  from airportdelays a
- where a.airportcode = 'SFO'
- fetch first 1 row only;
-```
+    ````
+    <copy>
+    select a.statistics 
+    from airportdelays a
+    where a.airportcode = 'SFO'
+    fetch first 1 row only;
+    </copy>
+    ````
 
  and the result will be similar to the following (formatted for readability):
 
-```
-{
-    "# of Delays": {
-        "Carrier": 416,
-        "Late Aircraft": 312,
-        "National Aviation System": 1080,
-        "Security": 14,
-        "Weather Codes": [
-            "SNW",
-            "RAIN",
-            "SUN",
-            "CLDY"
-        ],
-        "Weather": 59
-    },
-    "Carriers": {
-        "Aircraft Types": [
-            {
-                "make": "Boeing",
-                "models": [
-                    "717",
-                    "737",
-                    "757",
-                    "767",
-                    "777",
-                    "787"
-                ]
-            },
-            {
-                "make": "Airbus",
-                "models": [
-                    "A320",
-                    "A321",
-                    "A330",
-                    "A340",
-                    "A350",
-                    "A380"
-                ]
-            }
-        ],
-        "Names": "American Airlines Inc.,Alaska Airlines Inc.,Continental Air Lines Inc.,Delta Air Lines Inc.,America West Airlines Inc.,American Eagle Airlines Inc.,Northwest Airlines Inc.,SkyWest Airlines Inc.,ATA Airlines d/b/a ATA,United Air Lines Inc.,US Airways Inc.",
-        "Total": 11
-    },
-    "Flights": {
-        "Cancelled": 83,
-        "Delayed": 1880,
-        "Diverted": 9,
-        "On Time": 8211,
-        "Total": 10183
-    },
-    "Minutes Delayed": {
-        "Carrier": 22673,
-        "Late Aircraft": 17879,
-        "National Aviation System": 45407,
-        "Security": 1138,
-        "Total": 90487,
-        "Weather Codes": [
-            "SNW",
-            "RAIN",
-            "SUN",
-            "CLDY"
-        ],
-        "Weather": 3390
+    ````
+    <copy>
+    {
+        "# of Delays": {
+            "Carrier": 416,
+            "Late Aircraft": 312,
+            "National Aviation System": 1080,
+            "Security": 14,
+            "Weather Codes": [
+                "SNW",
+                "RAIN",
+                "SUN",
+                "CLDY"
+            ],
+            "Weather": 59
+        },
+        "Carriers": {
+            "Aircraft Types": [
+                {
+                    "make": "Boeing",
+                    "models": [
+                        "717",
+                        "737",
+                        "757",
+                        "767",
+                        "777",
+                        "787"
+                    ]
+                },
+                {
+                    "make": "Airbus",
+                    "models": [
+                        "A320",
+                        "A321",
+                        "A330",
+                        "A340",
+                        "A350",
+                        "A380"
+                    ]
+                }
+            ],
+            "Names": "American Airlines Inc.,Alaska Airlines Inc.,Continental Air Lines Inc.,Delta Air Lines Inc.,America West Airlines Inc.,American Eagle Airlines Inc.,Northwest Airlines Inc.,SkyWest Airlines Inc.,ATA Airlines d/b/a ATA,United Air Lines Inc.,US Airways Inc.",
+            "Total": 11
+        },
+        "Flights": {
+            "Cancelled": 83,
+            "Delayed": 1880,
+            "Diverted": 9,
+            "On Time": 8211,
+            "Total": 10183
+        },
+        "Minutes Delayed": {
+            "Carrier": 22673,
+            "Late Aircraft": 17879,
+            "National Aviation System": 45407,
+            "Security": 1138,
+            "Total": 90487,
+            "Weather Codes": [
+                "SNW",
+                "RAIN",
+                "SUN",
+                "CLDY"
+            ],
+            "Weather": 3390
+        }
     }
-}
-```
+    </copy>
+    ````
 
 2. Now what if we wanted to filter this based on the month and year which is in the **time** column which contains JSON. We want to find where the airport code is SFO, where the month is June and the year is 2010. The JSON we are looking for in the time column would look like this:
 
@@ -180,22 +184,26 @@ select a.statistics
 
 So we can use the following which has a where clause on "Month Name" and "Year":
 
-```
-select a.statistics 
-  from airportdelays a
- where a.airportcode = 'SFO'
-   and a.time."Month Name" = 'June'
-   and a.time.Year = '2010';
-```
+    ````
+    <copy>
+    select a.statistics 
+      from airportdelays a
+     where a.airportcode = 'SFO'
+       and a.time."Month Name" = 'June'
+       and a.time.Year = '2010';
+    </copy>
+    ````
 
 Or we could just use the "Label" item:
 
-```
-select a.statistics 
-  from airportdelays a
- where a.airportcode = 'SFO'
-   and a.time.Label = '2010/06';
-```
+    ````
+    <copy>
+    select a.statistics 
+      from airportdelays a
+     where a.airportcode = 'SFO'
+       and a.time.Label = '2010/06';
+    </copy>
+    ````
 
 In either instance, we see we can traverse down the JSON with the Dot-Notation.
 

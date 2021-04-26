@@ -150,7 +150,7 @@ Estimated Lab Time: 30-45 minutes
     the full cURL command will be similar to the following. **REMEMBER to use your password in place of PASSWORD**
 
     ```
-    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
+    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=insert"
     ```
 
     and we can run this in the OCI cloud shell. 
@@ -165,7 +165,7 @@ Estimated Lab Time: 30-45 minutes
 3. Now that we have the file staged, we can run the full cURL command to load the JSON into our collection. Use the OCI Cloud Shell to do this:
 
     ```
-    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
+    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=insert"
     ```
 
     and you will see it start loading
@@ -196,36 +196,64 @@ Estimated Lab Time: 30-45 minutes
 
     indicating that all 4408 JSON documents have been loaded.
 
-### **STEP 3**: Working with JSON Data in a Document Store
-
-Show diagram in UI
-
+### **STEP 3**: Working with JSON Data in a Document Store: QBEs
 
 A filter specification is a pattern expressed in JSON. You use it to select, from a collection, the JSON documents whose content matches it, meaning that the condition expressed by the pattern evaluates to true for the content of (only) those documents.
 
 A filter specification is also called a query-by-example (QBE), or simply a filter.
 
-Because a QBE selects documents from a collection, you can use it to drive read and write operations on those documents. For example, you can use a QBE to remove all matching documents from a collection. 
+1. Let's start working with our documents in the airportdelayscollection collection. We will be using the **JSON worksheet** in Database Actions. In the worksheet, we have the main canvas area; similar to what we would see with the SQL Worksheet or SQL Developer.
 
-{
-    "AirportCode": "SFO"
-}
+    ![JSON Worksheet main canvas](./images/json-9.png)
 
-{
-    "AirportCode": "SFO",
-    "Time": {
-        "Month Name": "June",
-        "Year": 2010
+    Once you find the main canvas, click the **Run Query** button on the toolbar.
+
+    ![Run Query Button](./images/json-10.png)
+
+    This returns all the documents in our collection on the bottom section of the page because we issued an empty QBE indicated by **{}**. This is where we will see the results of the follwing QBE's we will be executing.
+
+    ![QBE Resulsts](./images/json-11.png)
+
+2. To start, we can make a similar query as we did when we were working with relational data. If you remember, the first SQL statement retrieved records where airportcode = 'SFO'. We can issue a QBE that does the exact same search. Copy and paste the below code into the JSON worksheet and run the query.
+
+    ````
+    <copy>
+    {
+        "AirportCode": "SFO"
     }
-}
+    </copy>
+    ````
 
-{
-    "AirportCode": "SFO",
-    "Time": {
-        "Label": "2010/06"
+    You can see that all the results on the bottom on the page have the Airport Code of SFO.
+
+3. We can add to the QBE like we did with the SQL and further filter the results down to all documents who also have the month name of June and the Year of 2010. Copy and paste this QBE into the worksheet and run the query
+
+    ````
+    <copy>
+    {
+        "AirportCode": "SFO",
+        "Time": {
+            "Month Name": "June",
+            "Year": 2010
+        }
     }
-}
+    </copy>
+    ````
 
+    again, we see the results on the bottom of the page. And as we did with SQL, we can just use the Label to find the exact same set of results
+
+    ````
+    <copy>
+    {
+        "AirportCode": "SFO",
+        "Time": {
+            "Label": "2010/06"
+        }
+    }
+    </copy>
+    ````
+
+4. 
 SUM
 
 [{"$uniqueCount" : "zebra.name"},
