@@ -348,7 +348,17 @@ $startsWith — whether a string field value starts with a given substring
     with the results being the same as in the JSON worksheet
 
     ```
-    {"items":[{"id":"6C5C28DB03FF4C838DD0E8379B5F42D9","etag":"1F5AC6CAB64740F9A79912D65514BBE0","lastModified":"2021-04-25T23:40:51.197350000Z","created":"2021-04-25T23:40:51.197350000Z","links":[{"rel":"self","href":"https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com:443/ords/gary/soda/latest/airportdelayscollection/6C5C28DB03FF4C838DD0E8379B5F42D9"}],"value":{"id":2644,"AirportCode":"DCA","Name":"Washington, DC: Ronald Reagan Washington National","Time":{"Label":"2011/01","Month":1,"Month Name":"January","Year":2011},"Statistics":{"# of Delays":{"Carrier":331,"Late Aircraft":314,"National Aviation System":348,"Security":4,"Weather Codes":["SNW","RAIN","SUN","CLDY"],"Weather":38},"Carriers":{"Aircraft Types":[{"make":"Boeing","models":["717","737","757","767","777","787"]},{"make":"Airbus","models":["A320","A321","A330","A340","A350","A380"]}],"Names":"American Airlines Inc.,Alaska Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Lines Inc.,Atlantic Southeast Airlines,Frontier Airlines Inc.,AirTran Airways Corporation,American Eagle Airlines Inc.,United Air Lines Inc.,US Airways Inc.,ExpressJet Airlines Inc.","Total":12},"Flights":{"Cancelled":550,"Delayed":1038,"Diverted":22,"On Time":5173,"Total":6783},"Minutes Delayed":{"Carrier":16829,"Late Aircraft":18648,"National Aviation System":12615,"Security":165,"Total":50961,"Weather Codes":["SNW","RAIN","SUN","CLDY"],"Weather":2704}}}}],"hasMore":false,"count":1}%    
+    {"items":[{"id":"6C5C28DB03FF4C838DD0E8379B5F42D9","etag":"1F5AC6CAB64740F9A79912D65514BBE0","lastModified":"2021-04-25T23:40:51.197350000Z",
+    "created":"2021-04-25T23:40:51.197350000Z","links":[{"rel":"self","href":"https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com:443/
+    ords/gary/soda/latest/airportdelayscollection/6C5C28DB03FF4C838DD0E8379B5F42D9"}],"value":{"id":2644,"AirportCode":"DCA","Name":"Washington, DC:
+    Ronald Reagan Washington National","Time":{"Label":"2011/01","Month":1,"Month Name":"January","Year":2011},"Statistics":{"# of Delays":{"Carrier":331,
+    "Late Aircraft":314,"National Aviation System":348,"Security":4,"Weather Codes":["SNW","RAIN","SUN","CLDY"],"Weather":38},"Carriers":{"Aircraft Types":
+    [{"make":"Boeing","models":["717","737","757","767","777","787"]},{"make":"Airbus","models":["A320","A321","A330","A340","A350","A380"]}],
+    "Names":"American Airlines Inc.,Alaska Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Lines Inc.,Atlantic Southeast Airlines,
+    Frontier Airlines Inc.,AirTran Airways Corporation,American Eagle Airlines Inc.,United Air Lines Inc.,US Airways Inc.,ExpressJet Airlines Inc.",
+    "Total":12},"Flights":{"Cancelled":550,"Delayed":1038,"Diverted":22,"On Time":5173,"Total":6783},"Minutes Delayed":{"Carrier":16829,"Late 
+    Aircraft":18648,"National Aviation System":12615,"Security":165,"Total":50961,"Weather Codes":["SNW","RAIN","SUN","CLDY"],"Weather":2704}}}}],
+    "hasMore":false,"count":1}%    
     ```
 4. We can also use cURL to get a single record. Just place the system created id at the end if the SODA REST URL. Looking at the above return JSON, the id is in the first line (**"id":"6C5C28DB03FF4C838DD0E8379B5F42D9"**):
 
