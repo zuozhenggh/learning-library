@@ -1,0 +1,51 @@
+{
+    "workshoptitle": "Fleet Patching and Provisioning",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+         {
+            "title": "Introduction",
+            "description": "This lab gives you a basic overview of Fleet Patching and Provisioning",
+            "filename": "../../00-intro/intro.md"
+        },
+         {
+            "title": "Get the Public IP of the FPP Server",
+            "description": "If you are not running the Terraform stack yourself, you will need the Public IP",
+            "filename": "../../00e-get-public-ip/get-public-ip.md"
+        },
+        {
+            "title": "Lab 1: Get acquainted with the environment and the rhpctl command line tool",
+            "description": "This lab walks you through the steps to start using Oracle Fleet Patching and Provisioning",
+            "filename": "../../01-environment/environment.md"
+        },
+        {
+            "title": "Lab 2: Import Gold Images",
+            "description": "This lab shows how to import and query gold images into the FPP Server",
+            "filename": "../../02-gold-images/gold-images.md"
+        },
+        {
+            "title": "Lab 3: Provision an Oracle Restart environment",
+            "description": "This lab shows how FPP can provision Grid Infrastructure and Oracle Restart environments",
+            "filename": "../../03-gi-home/gi-home.md"
+        },
+        {
+            "title": "Lab 4: Install the Oracle Database homes (working copies)",
+            "description": "This lab shows how to provision working copies to remote targets",
+            "filename": "../../04-db-home/db-home.md"
+        },
+        {
+            "title": "Lab 5: Provision a new database",
+            "description": "This lab ",
+            "filename": "../../05-create-db/create-db.md"
+        },
+        {
+            "title": "Lab 6: Patch the database",
+            "description": "This lab shows how FPP can patch databases",
+            "filename": "../../06-patch-db/patch-db.md"
+        }
+    ]
+}

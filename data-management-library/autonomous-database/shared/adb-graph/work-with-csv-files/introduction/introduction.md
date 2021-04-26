@@ -26,16 +26,14 @@ In this workshop you will:
 * Query and visualize the graph using PGQL notebook paragraphs
  
 ### Prerequisites
-
 * Oracle Cloud Account
-* Provisioned Autonomous Database-Shared instance
-* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)  
-  
+* Provisioned ADB-Shared instance
+* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)
   
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, January 2021
 
 

@@ -4,8 +4,6 @@
 
 Follow these steps to create and use a load balancer for a non-highly-available (non-HA) Big Data Service cluster.
 
-Estimated lab time: 60 minutes
-
 ## **STEP 1:** Gather Information
 
 Gather the following information before you start:
