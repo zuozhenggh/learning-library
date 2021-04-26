@@ -19,7 +19,7 @@ For more information about Terraform and Resource Manager, please see the append
 
 *  Click on the link below to download the Resource Manager zip file you need to build your environment.
 
- tf-fpp-oci-resmgr.zip
+[tf-fpp-1.0.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SiXU2m1mrYj_HApnyJ11Ze7r4pcxpVhVBwM1NoBFlMggfi6fqaH8EqtMTS3H1CeW/n/c4u03/b/data-management-library-files/o/tf-fpp-1.0.zip)
 
 * Login to Oracle Cloud
 * Select the correct region
@@ -27,7 +27,7 @@ For more information about Terraform and Resource Manager, please see the append
 * In the left pane, select the compartment where you would like to create the environment. It is recommended that you choose an empty compartment.
 * Click on Create Stack
 ![](./images/01-resmgr-compartment.png)
-* Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (tf-fpp-oci-resmgr.zip) that you downloaded. Click **Select**.
+* Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (tf-fpp-1.0.zip) that you downloaded. Click **Select**.
 ![](./images/02-resmgr-zip.png)
 * Make sure that the base information is populated properly
 ![](./images/03-resmgr-stack-info.png)
