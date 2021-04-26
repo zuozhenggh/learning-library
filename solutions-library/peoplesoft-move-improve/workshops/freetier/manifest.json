@@ -14,32 +14,32 @@
           {
               "title": "Lab 1: Creating Identity and Access Management (IAM) Resources",
               "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-              "filename": "../../iam/iam.md"
+              "filename": "../../Lab1iam/iam.md"
           },
           {
               "title": "Lab 2: Provisioning the PeopleSoft Cloud Manager using Marketplace",
-              "filename": "../../provision-cm/provision-cm.md"
+              "filename": "../../Lab2provision-cm/provision-cm.md"
           },
           {
               "title": "Lab 3: Configuring Cloud Manager Settings",
-              "filename": "../../configure-cm/configure-cm.md"
+              "filename": "../../Lab3configure-cm/configure-cm.md"
           },
           {
             "title": "Lab 4: Subscribing to PeopleSoft Download Channels",
-            "filename": "../../channels/channels.md"
+            "filename": "../../Lab4channels/channels.md"
           },
           {
               "title": "Lab 5: Reviewing and Updating the Topology",
-              "filename": "../../topology/topology.md"
+              "filename": "../../Lab5topology/topology.md"
           },
           
           {
               "title": "Lab 6: Creating a new Environment Template",
-              "filename": "../../env-template/env-template.md"
+              "filename": "../../Lab6env-template/env-template.md"
           },
           {
               "title": "Lab 7: Creating Environment in PeopleSoft",
-              "filename": "../../psft-env/psft-env.md"
+              "filename": "../../Lab7psft-env/psft-env.md"
           },
           {
             "title": "Lab 8: Cloning an Environment",

@@ -135,7 +135,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
     ![](./images/newgroup.png "")
    
-## **STEP 5:** Creating Policies to Control Access
+## **STEP 5:** Creating a Policy
 
 Now, let’s create a security policy that gives your group permissions in your assigned Compartment. In this case, we will create a policy that permits users belonging to group **'oci-group' to provision Peoplesoft Cloud Manager in Compartment 'Demo'**:
 
@@ -161,10 +161,13 @@ Now, let’s create a security policy that gives your group permissions in your 
     ``` 
     c) Verify it's in the **root** compaartment
 
-    ![](./images/customPolicy.png "")
-4. Click **Customize(Advanced)**
+    d) Toggle the radio button to **"Show manual editor"**
+
+    ![](./images/policybuilder.png "")
+
+4. Add Policy Statements **Show manual editor**
     
-    a) Enter the following Statements:
+    a) Enter the following Statements to the empty field:
     
     ```
     <copy>Allow group oci-group to manage all-resources in compartment Demo
@@ -175,6 +178,8 @@ Now, let’s create a security policy that gives your group permissions in your 
     ![](./images/finalPolicy.png "")    
 
     b) Click **Create**.
+
+    *NOTE*: If you used a different name for the group or compartment, then you'll need to adjust these statements accordingly.
 
 ## **STEP 6:** Creating a User
 
@@ -235,13 +240,15 @@ Set a **Temporary Password** for the newly created User. After the user is creat
 
     This time, you will sign in using the local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
 
-7. Click the arrow to expand OCI Direct Sign-In. Here, enter the username **User01** and the password that you copied to your notepad.
+7. Click **Oracle Cloud Infrastructure Direct Sign-In** 
+    
+    This will expand fields for non-federated accounts. Enter the username **User01** and the password that you copied to your notepad.
 
     ![](./images/newSignin.png "")
 
-    ```
-    Note: Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture.
-    ```
+
+    *Note*: Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture below.
+    
 
 8. Set the new password to **Psft@1234**. Click on **Save New Password**. 
     ```
@@ -251,6 +258,103 @@ Set a **Temporary Password** for the newly created User. After the user is creat
 
 
     You are now logged in as local user: **User01**
+
+## **STEP 8:** Generating Keys
+
+**Choose either Option A OR Option B. (Option A is easier)**
+
+**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 9: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
+
+**Option B:** If you would like to generate your own keys, continue here:
+1. Ensure Git Bash is installed on your laptop/workstation.
+
+2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4siaoXfcndYoTXRI9y7evzGbNLgCcLt1YjMpb76eW87EAVGoGJCkzFxWk1S-EMn8/n/c4u03/b/solutions-library/o/make_keys.sh)
+
+3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded. For example, if the file was downloaded in the Downloads folder, you can type the following command:
+
+    ```
+    <copy>
+    cd ~/Downloads
+    </copy>
+    ```
+
+4. Give permission to the file by typing in the command line: 
+
+    ```
+    <copy>
+    chmod u+rx make_keys.sh
+    </copy>
+    ```
+
+5. For Windows, run the script:
+
+    ```
+    <copy>
+    bash make_keys.sh
+    </copy>
+    ```
+
+  For Mac terminal run the command:
+
+    ```
+    <copy>
+    ./make_keys.sh
+    </copy>
+    ```
+
+    ![](./images/4.png "")
+
+6. The command will generate the following sets of key files:
+
+	**I.	API Signing keys**: ``api_key`` and ``api_key.pub``
+
+	**II.	SSH key pair**: ``id_rsa`` and ``id_rsa.pub``
+
+    
+    *Note*: These Keys are necessary for you to be able to securely connect into your PeopleSoft Cloud Tenancy.
+    
+    ![](./images/apikeypub.png "")
+
+## **STEP 9**: Setting API Keys for User01
+
+Verify you have the following 4 keys: 
+* **API Signing keys**: ``api_key`` and ``api_key.pub``
+* **SSH key pair**: ``id_rsa`` and ``id_rsa.pub``
+
+1. Copy the contents of api_key.pub key (the one you have created through the script) as follows: 
+    - Right click on the api_key.pub and open with a text editor as shown below. 
+
+    ![](./images/apikeys.png "")  
+
+    
+    *Note*: Copy EVERYTHING from the text editor (including the beginning and ending "---") and keep it in your clipboard to paste it in the OCI console.
+    
+
+2. Now, go back to the OCI console where you should still be logged in as **User01**. After you are successfully logged in, click on the **profile button on top right**. Click on your user name - **User01**.
+
+    ![](./images/api.png "")
+
+2. Scroll to the bottom, on the left side click on **API Keys** and then click on **Add Public Key**
+
+    ![](./images/apisetup.png "")
+
+3. Click on **Paste public keys** and paste the content of **api_key.pub** (the one you just copied above). Click on **Add**.  
+
+    ![](./images/apikeypub.png "")
+
+    ![](./images/apipaste.png "")
+
+## **STEP 10**: Gather Information for the Cloud Manager Stack
+
+Paste the below information in a notepad. You will need it later while creating the stack.
+
+1. From the same User detail page, copy the OCID by clicking on **copy** and paste it in your notepad. 
+
+    ![](./images/ocid.png "")
+
+2. On the top right, click on the region. Note the home region displayed in your notepad as well. 
+
+    ![](./images/homeregion.png "")
 
 You may now proceed to the next lab.
 

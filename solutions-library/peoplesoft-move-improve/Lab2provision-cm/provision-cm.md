@@ -23,103 +23,7 @@ In this lab, you will:
 - Admin privileges on your local machine or Windows instance on Cloud.
 
 
-## **STEP 1**: Generating Keys
-
-**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 2: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
-
-**Option B:** If you would like to generate your own keys, continue here:
-1. Ensure Git Bash is installed on your laptop/workstation.
-
-2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4siaoXfcndYoTXRI9y7evzGbNLgCcLt1YjMpb76eW87EAVGoGJCkzFxWk1S-EMn8/n/c4u03/b/solutions-library/o/make_keys.sh)
-
-3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded. For example, if the file was downloaded in the Downloads folder, you can type the following command:
-
-    ```
-    <copy>
-    cd ~/Downloads
-    </copy>
-    ```
-
-4. Give permission to the file by typing in the command line: 
-
-    ```
-    <copy>
-    chmod u+rx make_keys.sh
-    </copy>
-    ```
-
-5. For Windows, run the script:
-
-    ```
-    <copy>
-    bash make_keys.sh
-    </copy>
-    ```
-
-  For Mac terminal run the command:
-
-    ```
-    <copy>
-    ./make_keys.sh
-    </copy>
-    ```
-
-    ![](./images/4.png "")
-
-6. The command will generate the following sets of key files:
-
-	**I.	API Signing keys**: ``api_key`` and ``api_key.pub``
-
-	**II.	SSH key pair**: ``id_rsa`` and ``id_rsa.pub``
-
-    ```
-    Note: These Keys are necessary for you to be able to securely connect into your PeopleSoft Cloud Tenancy.
-    ```
-    ![](./images/apikeypub.png "")
-
-## **STEP 2**: Setting API Keys for User01
-
-Verify you have the following 4 keys: 
-* **API Signing keys**: ``api_key`` and ``api_key.pub``
-* **SSH key pair**: ``id_rsa`` and ``id_rsa.pub``
-
-1. Copy the contents of api_key.pub key (the one you have created through the script) as follows: 
-    - Right click on the api_key.pub and open with a text editor as shown below. 
-
-    ![](./images/apikeys.png "")  
-
-    ```
-    Note: Copy EVERYTHING from the text editor (including the beginning and ending "---") and keep it in your clipboard to paste it in the OCI console.
-    ```
-
-2. In a browser, launch the OCI console. Login as **User01**. After you are successfully logged in, click on the **profile button on top right**. Click on your user name - **User01**.
-   (Refer to Lab 1 for details on how to login as User01.)
-
-    ![](./images/api.png "")
-
-2. Scroll to the bottom, on the left side click on **API Keys** and then click on **Add Public Key**
-
-    ![](./images/apisetup.png "")
-
-3. Click on **Paste public keys** and paste the content of **api_key.pub** (the one you just copied above). Click on **Add**.  
-
-    ![](./images/apikeypub.png "")
-
-    ![](./images/apipaste.png "")
-
-## **STEP 3**: Gather Information for the Cloud Manager Stack
-
-Paste the below information in a notepad. You will need it later while creating the stack.
-
-1. From the same User detail page, copy the OCID by clicking on **copy** and paste it in your notepad. 
-
-    ![](./images/ocid.png "")
-
-2. On the top right, click on the region. Note the home region displayed in your notepad. 
-
-    ![](./images/homeregion.png "")
-
-## **STEP 4**: Obtain the PeopleSoft Cloud Manager Stack from the Marketplace
+## **STEP 1**: Obtain the PeopleSoft Cloud Manager Stack from the Marketplace
 
 To obtain the PeopleSoft Cloud Manager stack:
 
@@ -143,9 +47,9 @@ Click **Launch Stack**.
 
     ![](./images/psftname.png "")
 
-    Continue with the steps in Enter Cloud Manager Instance Values.
+    Continue with the steps in Enter Cloud Manager Instance Variables.
 
-## **STEP 5**: Enter Cloud Manager Instance Values and provision PSFT Cloud
+## **STEP 2**: Configure Cloud Manager Instance Variables
 
 The Create Stack, Configure Variables page includes a list of the parameters needed to create and configure the Cloud Manager instance.
 
@@ -163,11 +67,15 @@ The Create Stack, Configure Variables page includes a list of the parameters nee
 
 7. Leave API Private passphrase as blank (Enter if you have created one).
 
-8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have noted this down in your notepad in Step 3)
+8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have noted this down in your notepad in the last Lab)
 
     ![](./images/varscm1.png "")
 
-9. Enter following password values:
+## **STEP 3**: Enter Cloud Manager Passwords
+
+1. Enter following password values:
+
+    *Note*: They are all the same **except** Db Admin Password (in screenshot it is blue)
 
     Attribute | Value
     --------- | -----
@@ -182,63 +90,55 @@ The Create Stack, Configure Variables page includes a list of the parameters nee
 
     ![](./images/varscm2.png "")
 
-10. In the Networking section, enter a host name for the Cloud Manager instance.
-This name will be used as part of the URL you use to access Cloud Manager in a browser. We'll use **psftcm**.
+## **STEP 4**: Enter My Oracle Support Credentials
 
-11. Select the option **Create Network Resources**
+1. My Oracle Support (MOS) credentials are the same as the username and password you enter when you access http://support.oracle.com. Please make sure that you have an account and you can access [website](http://support.oracle.com). This is required to download DPKs and PRPs automatically. 
 
-12. For **Network Name**, enter **OCIHOLVCN**
+    ![](./images/varscmmos.png "")
 
-13. Select the option **Create Private Subnets**
+## **STEP 5**: Enter Networking Information
 
-14. Select the option **Create Subnets for Peoplesoft Components**
+We will be provisioning our Cloud Manager instance in Private Cloud. For more information on the default subnets and ports that will automatically get created in hte following steps, please visit: [website](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/install_cloud_manager_resource_manager_psft_cm_oci/index.html#EnterValuesforaNewVirtualCloudNetwork)
 
-15. Select the option for **Create a Jump Host**
-
-16. Using the drop-down, select **US-ASHBURN-AD-1** for the **Availability Domain for Jump Host** 
+1. In the Networking section, enter a host name for the Cloud Manager instance. We'll use **psftcm**.
+2. Select the option **Create Network Resources**
+3. For **Network Name**, enter **OCIHOLVCN** (Stands for Oracle Cloud Infrastructure, Hands On Lab, Virtual Cloud Network)
+4. Select the option **Create Private Subnets**
+5. Select the option **Create Subnets for Peoplesoft Components**
+6. Select the option for **Create a Jump Host**
+7. Using the drop-down, select **US-ASHBURN-AD-1** for the **Availability Domain for Jump Host** 
+8. Using the drop-down, select **VM.Standard2.1** for the **Shape for Jump Host** 
 
     ![](./images/varscm3.png "")
 
-17. Click **Next**. Review the configuration variables, and then click **Create**.  
+9. Click **Next**. Review the configuration variables, and then click **Create**.  
+    ![](./images/review.png "")
 
-18.	This will add a new stack. Click on **stack details**. You can navigate to **Variables** to see all the assigned variables.
+## **STEP 6**: Monitor Stack Creation and Gather Outputs
 
-    ![](./images/variablestack.png "")
+This page shows the terraform job status and details. All the information we provided is being used to create our Cloud Manager Stack.
+Spinning up resources, such as our Virtual Cloud Network, compute instances for Jump Host and Cloud Manager will take a few minutes. 
 
-19. Click on **Terraform Actions** > **Plan**.
+![](./images/rmj.png "")
 
-    ![](./images/plan.png "")
+Over these few minutes, you can refresh the page until you see the RMJ has succeeded as indicated with a green box. Once you do:
+1. Click on **Logs** under **Resources** on the left side. 
+2. Scroll all the way down in the black box, copy and paste these values into your Notepad.
+    ![](./images/rmjsuccess.png "")
 
-20. Give plan name as **plan-job-1** and click on **Plan**
 
-    ![](./images/plandetail.png "")
 
-21. Refresh the page after a few minutes, and it will say the plan is succeeded. Navigate back to **Stack Details** page, click on **Terraform Actions** > **Apply**.
-
-    ![](./images/plans.png "")
-
-    ![](./images/apply.png "")
-
-22. Give name as **apply-job-1** and click on **Apply**.
-
-    ![](./images/applydetail.png "")
-
-    Wait a few minutes for the job to finish. You may have to refresh this page.
-
-    On the Apply Job details page, click on **Logs** under **Resources** on the left side. 
-
-    Scroll to the very bottom to find the **Outputs**. Copy and paste the following lines to your notepad. (Wait for a while if you can't see this information). 
-
+    Close up view:
     ![](./images/output2.png "")
 
-    NOTE: If you don't have admin access in your laptop, before proceeding with Step 6, please follow the 
+    *NOTE*: If you don't have admin access in your laptop, before proceeding with Step 7, please follow the 
     **Windows VM Compute Lab:** 
 
     ![](./images/wlab.png "")
 
-Depending on your workstation, choose Step 6 (for Mac) or 7 (for Windows)
+Depending on your workstation, choose Step 7 (for Mac) or 8 (for Windows)
 
-## **STEP 6**: FOR MAC USERS- Accessing Cloud Manager using SSH 
+## **STEP 7**: FOR MAC USERS- Accessing Cloud Manager using SSH 
 
 SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was created in Step 1 of Lab 2. 
 
@@ -256,7 +156,7 @@ For example: ```cd ~/Downloads/keys ```
     ssh -f -C -q -N -i id_rsa -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
     </copy>
     ``` 
-    *Example:* ``` ssh -f -C -q -N -i id_rsa -L 2222:10.X.X.X:22 opc@XXX.XXX.XXX.XXX```
+    *Example:* ``` ssh -i id_rsa -f -C -q -N -L 2222:10.X.X.X:22 opc@XXX.XXX.XXX.XXX```
 
 4. Now, let's connect through SSH. Run this command in the keys directory as well.
 
@@ -265,7 +165,7 @@ For example: ```cd ~/Downloads/keys ```
     ssh –p 2222 opc@localhost -i id_rsa
     </copy>
     ```
-## **STEP 7**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
+## **STEP 8**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
 Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those if you haven't already.
 
 1. Open up PuTTYgen. Click **Conversions** --> **Import key**. 
