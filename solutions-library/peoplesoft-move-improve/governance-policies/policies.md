@@ -1,185 +1,109 @@
-# Refreshing an Environment
+# Setting up Governance Policies
 
 ## Introduction
-This lab walks you through the steps to refresh an environment.
+This lab walks you through the steps to set up governance policies on CM12.
 
-Estimated Lab Time: 1 hour
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 In this lab you will:
-* Create an environment using DBaaS
-* Create a clone and backup of an environment
-* Refresh an environment
+* Create a policy group
+* Create multiple policies
+* Execute start and stop policies
 
 ### Prerequisites
 - Access to the Cloud Manager console.
+- Environment up and running
 
-## **STEP 1**: Creating a New Topology With DBaaS
+## **STEP 1**: Creating a Policy Group
 
-In order to refresh an environment you will need a topology with DBaaS. If you already have a topology with DBaaS you can skip this step.
+Before creating policies you need to create a policy group. Policy groups are used to map policies to specific environments.
 
-1.  Navigate to **Dashboard** > **Topology**. Click **Add New Topology**.
-    ![](./images/topology.png "")
+1.  Navigate to **Dashboard** > **Governance**. Click **Policy Groups** on the side menu and click the plus button to add a new policy group.
+    ![](./images/policygroup.png "")
 
-2.  Give the topology a name such as **RefreshDBaaS** and enter a description. Now we will add 3 new nodes. Click **Add Node**.
-    ![](./images/topname.png "")
+2.  Under name, enter the name of the environment that this policy group is for. For example, I will name my policy group **WorkshopEnvironment**. Enter a description, then click save.
+    ![](./images/policysave.png "")
 
-    First we will add the Middle Tier node. Select the following:
-    ![](./images/mid.png "")
-    
-    Click **Done**.
-    
-    Click **Add Node** again and then select the following for the DB Systems node: 
-    ![](./images/db.png "")
-    
-    Click **Done**.
-    
-    Click **Add Node** one last time then select the following for the PeopleSoft Client node: 
-    ![](./images/client.png "")
-    
-    Click **Done**.
+## **STEP 2**: Creating Policies
 
-    Your topology should look like the following:
-    ![](./images/topologyfinal.png "")
-    
-    Click **Save**.
+1.  Navigate to **Dashboard** > **Governance**. Click **PolicyEditor** on the side menu then click **Add Policy**    
+    ![](./images/policyadd.png "")
 
-## **STEP 2**: Creating a New Environment Template
+2.  First we will create a start policy for our environment. Type the information as shown below. If you are using an environment other than **WorkshopEnvironment**, be sure to update **PolicyGroup** and **PolicyConditions** as appropriate.
+    ![](./images/start.png "")
 
-In order to refresh an environment you will need an environment template that is using a topology with DBaaS. If you already have this you can skip this step.
+    Click **Schedule** and enter a time/date for when you want this policy to take affect. This can be changed later on, for now just put some time in the future. Click **Save** and then click **Save** on the main policy page.
+    ![](./images/schedule.png "")
 
-1.  Navigate to **Dashboard** > **Environment Template**. 
-    Click **Add New Template**.
-    ![](./images/template.png "")
+    Next we will create a stop policy. Click **Add Policy** again and type the information as shown below:
+    ![](./images/stop.png "")
 
-2.  On the General Details page:
-    * Give the template a name such as **RefreshDBaaS** and enter a description
-    * Click on the search icon next to PeopleSoft Image and select **PEOPLESOFT HCM UPDATE IMAGE 9.2.037 - NATIVE OS** 
-    * Click **Next**
-    ![](./images/tempname.png "")
+    Set a schedule then click **Save** and then **Save** again.
 
-3.  On the Select Topology page:
-    * Click on the search icon under Topology Name and select **RefreshDBaaS**
-    * Expand the **Custom Attributes** section and select **RefreshDBaaS** again in  the dropdown
-    * Click on **Edit Custom Attributes**
-    ![](./images/attributes.png "")   
-    * Expand the **Region and Availability Domains** section and select the following: 
-    ![](./images/regionad.png "")
-    * Expand **Middle Tier** > **Network Settings** and select the following:
-        * Subnet For Primary Instance: **mt**
-    * Expand **DB Systems** > **General Settings** and make the following changes:
-        * Database Operator Id: **PS**
-        * Database Name: **HCMDBAAS**
-    ![](./images/dbps.png "")
-    * Expand **DB Systems** > **Network Settings** and select the following:
-        * Subnet For Primary Instance: **db**
-    * Expand **DB Systems** > **DB System Options** and select the following:
-    ![](./images/dboptions.png "")
-    * Expand **PeopleSoft Client** > **Network Settings** and select the following:
-        * Subnet For Primary Instance: **win**
-    * Click **Next**
+    Next we will create a scale-up policy. Click **Add Policy** again and type the information as shown below:
+    ![](./images/scaleup.png "")
 
-4.  On the Define Security page:
-    * Click on the search icon under Zone Name and select **Test**
-    * Click on the search icon under Role Name and select **PACL_CAD**
-    * Click **Next**
-    ![](./images/testpacl.png "")
+    Set a schedule then click **Save** and then **Save** again.
 
-5.  On the Summary page:
-    * Review the details and click **Submit**
-    ![](./images/save.png "")
+    Next we will create a scale-down policy. Click **Add Policy** again and type the information as shown below:
+    ![](./images/scaledown.png "")
 
-## **STEP 3**: Creating a New Environment
+    Set a schedule then click **Save** and then **Save** again.
 
-In order to refresh an environment you will need an environment created from a template with DBaaS. If you already have this you can skip this step.
-
-1.  Navigate to **Dashboard** > **Environments**. Click **Create Environment**.
-    ![](./images/env.png "")
-
-2.  Provide a unique environment name such as **RefreshDB** and enter a description. For Template Name select the template we created in the previous step: **RefreshDBaaS**. 
-    ![](./images/envcreate.png "")
-
-3.  Expand **Environment Attributes** > **Middle Tier**. Assign the following values to each field:
-    * Weblogic Administrator Password: **Psft1234**
-    * Gateway Administrator Password: **Psft1234**
-    * Web Profile Password for user PTWEBSERVER: **Psft1234**
-    ![](./images/midcred.png "")
-
-    Expand **Environment Attributes** > **DB Systems**. Assign the following values to each field:
-    * Database Administrator Password: **PSft1234##**
-    * Database Connect Password: **Psft1234**
-    * Database Access Password: **Psft1234**
-    * Database Operator Password: **Psft1234**
-    ![](./images/dbcred.png "")
-
-    Expand **Environment Attributes** > **PeopleSoft Client**. Assign the following value to the field:
-    * Windows Administrator Password: **Psft12345678#**
-    ![](./images/pscred.png "")
-    
-    Click **Done**.
-    ![](./images/clonetop1.png "")
-
-4.  Click **Accept** on the license.
-    ![](./images/license.png "")
-
-5.  This environment will take a few minutes to provision. Refresh the page. On our newly created **RefreshDB** environment you should see an orange dot with a status of **Infra Creation in Progress**. Click the down arrow button and then **Details**.
-    ![](./images/details2.png "")
-    
-    On the side menu select **Logs** and you can monitor the status of your environment from here.
-    ![](./images/createenv.png "")
-    
-    You can also go to **Provision Task Status** on the side menu to see detailed progress status for every step.
-    ![](./images/provisionstatus.png "")
-    
-    Once the environment has a green dot with a status of **Running** we are ready to move on to the next step.
-    ![](./images/.png "")
-
-## **STEP 4**: Refreshing an Environment
-
-1.  First we will create a target environment for our refresh. 
-    Navigate to **Dashboard** > **Environment**.
-    Click the down arrow on your source environment (**RefreshDB**) and then click **Clone Environment**.
-    ![](./images/clone.png "")
-
-    Provide a unique environment name such as **TestRefresh**. Leave everything else as default and then click **Clone**.
-    ![](./images/testrefresh.png "")    
-
-2.  Once the source and target environments are both running, we can then create
-    a backup from the source environment. We will use this backup to refresh the target environment.
-    On your source environment (**RefreshDB**), click the down arrow and then click **Backup and Restore**. 
+    Next we will create a backup policy. Click **Add Policy** again and type the information as shown below:
     ![](./images/backup.png "")
 
-    Provide a unique backup name such as **TestBackup**. Leave everything else as default and then click **Backup**.
-    ![](./images/testbackup.png "")
+    Set a schedule then click **Save** and then **Save** again.
 
-3.  This backup will take a few minutes to complete. To check the status of the backup click the down arrow on your source environment (**RefreshDB**) and then click **Details**.
-    ![](./images/details.png "")
+    Finally we will create a refresh policy. Click **Add Policy** again and type the information as shown below. For now we are just using a dummy value under **Action Parameters** for **Environment Name**. For **Source TDE KeyStore (Wallet) Password** enter **Psft1234**
+    ![](./images/refresh.png "")
 
-    On the side menu select **Provision Task Status**. You will then be able to see the start time and status of your backup. If under **Status** you see a gear icon (like the picture below), this means that the backup is still in progress.
-    ![](./images/gears.png "")
-    
-    You can also select **Logs** on the side menu and follow along from there as well.
-    ![](./images/logs.png "")
+    Set a schedule then click **Save** and then **Save** again.
 
-    Once **Status** changes to a green checkmark (like the picture below) you can continue on with this lab. 
-    ![](./images/green.png "")   
+    Expand **WorkshopEnvironment** and now as you can see we have multiple policies mapped under a single policy group for easy reference.
+    ![](./images/policyview.png "")
 
-5.  Now that the backup has finished we are ready to refresh the target environment. 
-    On your target environment (**TestRefresh**), click the down arrow and then click **Refresh**.
-    ![](./images/refreshtest.png "")
+3.  You can also view all of these policies directly from your environment. Navigate to **Dashboard** > **Environments**. On **WorkshopEnvironment** (or whichever environment you created the previous policies for) click the down arrow and then **Details**
+    ![](./images/workshopdetail.png "")
 
-    Enter the following details:
-    * Source Type: **OCI Backup**
-    * Environment Name: Your source environment (**RefreshDB**)
-    * Backup ID: **TestBackup**
-    * Use Latest Backup: **YES**
-    * App Refresh: **NO**
-    * Source TDE KeyStore (Wallet) Password: DB Admin password (**PSft1234##**)
-    ![](./images/addrefresh.png "")
+4.  On the side menu select **Policies**. Here you will be able to see all of the policies we recently created for this environment.
+    ![](./images/addpolicy.png "")
 
-    Click **Done**.
+## **STEP 3**: Executing Policies
 
-You may now proceed to the next lab.
+1.  Now we will execute our stop policy. If you want a policy to execute immediately you can set the start date for a time in the past. Navigate to **Dashboard** > **Governance**. Click **Policy Editor** on the side menu then click the arrow under **View/Edit** next to our **WorkshopEnvironment Stop** policy.
+    ![](./images/stoppolicy.png "")
+
+2.  Click **Schedule** then set a **Start Date** and **Start Time** that has occurred in the past. Click **Save** and then click **Save** on the main policy page.
+    ![](./images/pastdate.png "")
+
+3.  Answer **Yes** when the popup asks you if you are sure you want to re-generate existing policy.
+    ![](./images/pop.png "")
+
+4.  Navigate to **Dashboard** > **Environments**. You will see that our environment is in the **Stopping** phase which means that our policy has been executed and has initiated the stop of the environment.    
+    ![](./images/stopprocess.png "")
+
+5.  To see the status of the policy which we just executed navigate to **Dashboard** > **Governance** and on the side menu click **PolicyMonitor**. Click the arrow under **Status** next to **WorkshopEnvironment Stop**.
+    ![](./images/monitorpolicy.png "")
+
+    You will see that the status of the policy is **Running**.
+    ![](./images/policystatus.png "")
+
+    Once you see the status of your environment changed to **Stopped** the policy has successfully executed.
+    ![](./images/stopped.png "")
+
+6.  We can now execute our start policy to bring the environment back up. Navigate to **Dashboard** > **Governance**. Click **Policy Editor** on the side menu then click the arrow under **View/Edit** next to our **WorkshopEnvironment Start** policy.
+    ![](./images/startback.png "")
+
+7.  Click **Schedule** then set a **Start Date** and **Start Time** that has occurred in the past. Click **Save** and then click **Save** on the main policy page.
+    ![](./images/pastdate.png "")
+
+8.  Answer **Yes** when the popup asks you if you are sure you want to re-generate existing policy.
+    ![](./images/pop.png "")
+
+9.  Navigate to **Dashboard** > **Environments**. You will see that our environment is in the **Starting** phase which means that our policy has been executed and has initiated the start of the environment.    
+    ![](./images/startagain.png "")
 
 ## Acknowledgements
 

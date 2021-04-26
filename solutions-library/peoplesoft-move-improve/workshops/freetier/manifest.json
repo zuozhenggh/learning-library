@@ -46,7 +46,11 @@
             "filename": "../../clone/clone.md"
           },
           {
-            "title": "Lab 9 (Optional): Refreshing an Environment",
+            "title": "Lab 9: Setting Governance Policies",
+            "filename": "../../governance-policies/policies.md"
+          },
+          {
+            "title": "Lab 10 (Optional): Refreshing an Environment",
             "filename": "../../refresh/refresh.md"
           },
           {
