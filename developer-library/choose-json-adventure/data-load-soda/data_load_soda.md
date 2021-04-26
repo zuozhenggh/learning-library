@@ -298,7 +298,7 @@ $regex — whether a string field value matches a given regular expression
 $startsWith — whether a string field value starts with a given substring
 ```
 
-1. Let's try a **comparison operator** on our documents. Here, again similar to what we did with SQL, we want to see all the records with DCA as the airport code that have more than 400 canceled flights. The QBE would be as follows:
+1. Let's try a **comparison operator** on our documents. Here, again similar to what we did with SQL, we want to see all the records with DCA as the airport code that have more than 400 canceled flights. The QBE would be as follows using the greater than operator **$gt**:
 
     ````
     <copy>
@@ -366,18 +366,33 @@ $startsWith — whether a string field value starts with a given substring
     {"items":[{"id":"6C5C28DB03FF4C838DD0E8379B5F42D9","etag":"1F5AC6CAB64740F9A79912D65514BBE0","lastModified":"2021-04-25T23:40:51.197350000Z",
     ```
 
-    Take that id and append it to the SODA URL as follows:
+    Take that id (**"id":"6C5C28DB03FF4C838DD0E8379B5F42D9"**) and append it to the SODA URL as follows:
 
     curl -X GET -u "gary:PASSWORD" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection/6C5C28DB03FF4C838DD0E8379B5F42D9"
 
     Running that cURL command in the OCI Cloud Shell will return that single record just as above.
 
 
-QBE Operator $not 
+#### **QBE Operator $not**
 
-{"Statistics.Flights.Cancelled": {"$gt": 400},
-"AirportCode":{"$not" : {"$eq" : "DCA"}}
-}
+1. The QBE Operator $not allows even greater functionality when writing QBEs. It lets us evaluate an attribute and exclude results which contain that contain that value. For example, lets take our QBE where we used the greater than operator (**$gt**) and instead of only bringing back records where the Airport Code was DCA, lets use the **$not** operator and bring back all the records where the Airport Code is **not** DCA. 
+
+The statement
+    ```
+    AirportCode":{"$not" : {"$eq" : "DCA"}}
+    ```
+is saying Airportcode is not equal (**$eq**) to DCA.
+
+Copy and paste this into the JSON worksheet to try it out.
+
+    </copy>
+    ````
+    {"Statistics.Flights.Cancelled": {"$gt": 400},
+    "AirportCode":{"$not" : {"$eq" : "DCA"}}
+    }
+    </copy>
+    ````
+
 
 QBE Logical Combining Operators 
 
