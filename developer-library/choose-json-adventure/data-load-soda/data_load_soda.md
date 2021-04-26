@@ -202,6 +202,8 @@ A filter specification is a pattern expressed in JSON. You use it to select, fro
 
 A filter specification is also called a query-by-example (QBE), or simply a filter.
 
+#### **Simple Filtering**
+
 1. Let's start working with our documents in the airportdelayscollection collection. We will be using the **JSON worksheet** in Database Actions. In the worksheet, we have the main canvas area; similar to what we would see with the SQL Worksheet or SQL Developer.
 
     ![JSON Worksheet main canvas](./images/json-9.png)
@@ -252,50 +254,32 @@ A filter specification is also called a query-by-example (QBE), or simply a filt
     }
     </copy>
     ````
+ 
 
-4. 
-SUM
+#### **QBE Comparison Operators**
 
-[{"$uniqueCount" : "zebra.name"},
- {"$sum"         : {"path"  : "zebra.price",                                       "bucket : [{"$lt"  : 3000},                               {"$gte" : 3000}]}, {"$avg"         : "zebra.rating"}]
-
-
- {"id": 5}
+A query-by-example (QBE) comparison operator tests whether a given JSON object field satisfies some conditions.
 
 The comparison operators are the following:
 
+```
     $all — whether an array field value contains all of a set of values
-
     $between — whether a field value is between two string or number values (inclusive)
-
     $eq — whether a field value is equal to a given scalar
-
     $exists — whether a given field exists
-
     $gt — whether a field value is greater than a given scalar value
-
     $gte — whether a field value is greater than or equal to a given scalar
-
     $hasSubstring — whether a string field value has a given substring (same as $instr)
-
     $in — whether a field value is a member of a given set of scalar values
-
     $instr — whether a string field value has a given substring (same as $hasSubstring)
-
     $like — whether a field value matches a given SQL LIKE pattern
-
     $lt — whether a field value is less than a given scalar value
-
     $lte — whether a field value is less than or equal to a given scalar value
-
     $ne — whether a field valueis different from a given scalar value
-
     $nin — whether a field value is not a member of a given set of scalar values
-
     $regex — whether a string field value matches a given regular expression
-
     $startsWith — whether a string field value starts with a given substring
-
+```
 
  {"AirportCode": "DCA",
 "Statistics.Flights.Cancelled": {"$gt": 400}
@@ -348,6 +332,14 @@ QBE Logical Combining Operators
                    "datatype" :  "varchar2",
                    "order" :     "desc" },
                   }
+
+SUM
+
+[{"$uniqueCount" : "zebra.name"},
+ {"$sum"         : {"path"  : "zebra.price",                                       "bucket : [{"$lt"  : 3000},                               {"$gte" : 3000}]}, {"$avg"         : "zebra.rating"}]
+
+
+ {"id": 5}
 
 
 create index using UI
