@@ -37,5 +37,30 @@ Select Submit. If the steps till now are done right, we should see the following
 
 ### Detect Anomaly with new Data
 * Upload to UI
+To start the  process of anomaly detection select detect anomalies.
+![](../images/upload_data.png " ")
+
+Select a file from local filesystem or drag and drop the desired file.
+![](../images/detect_anomalies_result.png " ")
+
+Now press detect.
+
 * See result in graph
+Once the test file is submitted, you have the option to select the column to see anomalies for.
+![](../images/select_column.png " ")
+
+Use the drop wizard to select column. The columns for which the model has detected anomalies will be labelled as such.
+![](../images/select_column_drop.png " ")
+
+ Lets select sensor 8 to see where the model has detected an anomaly.
+ ![](../images/graph.png " ")
+
+The part of the signal where the model has determined to be an anomaly is highlighted. There is also an option to download the anomaly detection result.
+
 * Download anomaly file
+ ![](../images/graph_highlighted.png " ")
+
+This will download a file named anomalies.json Lets peek at the contents
+ ![](../images/anomalies_json.png " ")
+
+ We see that the results for all the anomalies are within their own key. And each value is a further a tuple that contains the timestamp, actual value and what the model expects the value to be.
