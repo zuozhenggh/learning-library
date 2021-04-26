@@ -377,32 +377,77 @@ $startsWith — whether a string field value starts with a given substring
 
 1. The QBE Operator $not allows even greater functionality when writing QBEs. It lets us evaluate an attribute and exclude results which contain that contain that value. For example, lets take our QBE where we used the greater than operator (**$gt**) and instead of only bringing back records where the Airport Code was DCA, lets use the **$not** operator and bring back all the records where the Airport Code is **not** DCA. 
 
-The statement
+    The statement
     ```
     AirportCode":{"$not" : {"$eq" : "DCA"}}
     ```
-is saying Airportcode is not equal (**$eq**) to DCA.
+    is saying Airportcode is not equal (**$eq**) to DCA.
 
-Copy and paste this into the JSON worksheet to try it out.
+    Copy and paste this into the JSON worksheet to try it out.
 
-    </copy>
     ````
+    </copy>
     {"Statistics.Flights.Cancelled": {"$gt": 400},
     "AirportCode":{"$not" : {"$eq" : "DCA"}}
     }
     </copy>
     ````
 
+#### **QBE Logical Combining Operators: $and, $or, and $nor**
 
-QBE Logical Combining Operators 
+1. We can structure our QBEs similar to how we structure where clauses in SQL with the **$and** and **$or** clauses. QBEs also give us the ability to use **$nor**.
 
-{ "$and" : [{"Statistics.Flights.Cancelled": {"$gt": 400}}, {"Time.Year": 2010 }, {"AirportCode": "ORD"}]}
+    We can start with **$and**. This is actually used implicitly and we have been using it for multple QBEs already. Just look back in this lab and we can see the implicit use of $and in many QBEs. For example, here
+
+    ```
+    {"AirportCode": "DCA",
+    "Statistics.Flights.Cancelled": {"$gt": 400},
+    "Time.Year": 2011
+    }
+    ```
+
+    $and is implicitly used where the commas are. We are saying get back documents where Airport Code is DCA **$and** Flights Cancled are greater than 400 **$and** the Year is 2011. We can explicity use it as we see in the following. Copy and paste it into your JSON worksheet and run the QBE.
+
+    ````
+    </copy>
+    { "$and" : [
+        {"Statistics.Flights.Cancelled": {"$gt": 400}},
+        {"Time.Year": 2010 },
+        {"AirportCode": "ORD"}
+    ]}
+    </copy>
+    ````
+
+2. Next up is **$or**. Just as it does with SQL or most any programming language, it matches results where one or the other values in the or condition exists. In this example, we are looking for documents where the Airport Code is DCA, implicitly using and for the Year being 2012 and using the **$or** for being in month 6 (June) or month 7 (July). Copy and paste it into your JSON worksheet and run the QBE.
+
+    ````
+    </copy>
+    {"AirportCode": "DCA",
+    "Time.Year": 2012,
+    "$or" : [{"Time.Month": {"$eq": 6}}, {"Time.Month": {"$eq": 7}}]
+    }
+    </copy>
+    ````
+
 
 {"Statistics.Flights.Cancelled": {"$gt": 400},
 "Time.Year": 2010,
 "AirportCode":{"$not" : {"$eq" : "DCA"}},
 "$or" : [{"Time.Month": {"$eq": 6}}, {"Time.Month": {"$eq": 7}}]
 }
+
+3. Lastly, we can take a look at **$nor**. Acting like an opposite of **$or**, using it will exclude records that match the condition. We can use the example we used for **$or** but change it to **$nor**. Now, instead of returning 2 records, it will return 10 and exclude month 6 (June) or month 7 (July). Copy and paste it into your JSON worksheet and run the QBE.
+
+    ````
+    </copy>
+    {"AirportCode": "DCA",
+    "Time.Year": 2012,
+    "$nor" : [{"Time.Month": {"$eq": 6}}, {"Time.Month": {"$eq": 7}}]
+    }
+    </copy>
+    ````
+
+
 
 
 {
