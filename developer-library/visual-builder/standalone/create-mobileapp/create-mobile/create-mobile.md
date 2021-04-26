@@ -9,7 +9,7 @@ This lab shows you how to create a basic mobile application in Oracle Visual Bui
 
 Oracle Visual Builder is a development tool for creating web and mobile applications that lets you create an application by dragging and dropping components onto a page. It also allows you to manipulate the application and your business objects through the underlying source code, to create types and variables, to access REST endpoints, and to create action chains.
 
-You’ll create a business object and a mobile application that you'll later use to display, edit, and delete data about departments. You’ll also create build configurations that enable Oracle Visual Builder to build mobile applications for Android and iOS.
+You’ll create a business object and a mobile application that you'll later use to display, edit, and delete data about departments. You'll also enable the mobile application to run as a Progressive Web App as well as create build configurations that enable Oracle Visual Builder to build mobile applications for installation on Android and iOS devices.
 
 ![](./images/vbmca_dbdiagram.png)
 

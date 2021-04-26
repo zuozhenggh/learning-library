@@ -10,7 +10,9 @@ This lab shows how to configure a mobile application's settings and enable the a
 
 PWAs are designed to be capable, reliable, and installable to provide a user experience that feels like a platform-specific application. When you enable a mobile app as a PWA in Visual Builder, it can be installed directly from the browser on an Android or iOS device. Much like a native mobile app, it opens in a standalone window (instead of a browser tab) and users interact with it pretty much like a native app. You can also make progressive enhancements as new browser capabilities become available. Most importantly for you as a developer, you won't have to publish your app to an app store.
 
-In this lab, you'll configure the HR mobile application to run as a PWA. You'll also review the app's settings to make sure the values are what you want your user to see. You'll use these settings along with build configurations (which you'll define in later labs) to build the mobile application for installation on Android or iOS devices.
+You can also install PWAs on laptops (for example, as a Chrome app). This means that unlike native mobile apps that are limited to Android and iOS devices, PWAs can also run on Windows, Mac, and other operating systems.
+
+In this lab, you'll configure the HR mobile application to run as a PWA. You'll also review the app's settings to make sure the values are what you want your user to see. You'll use these settings to launch your PWA from a browser.
 
 ## **STEP 1**: Configure Application Settings
 
@@ -41,8 +43,41 @@ In this lab, you'll configure the HR mobile application to run as a PWA. You'll 
 
     The Resources section is where you'd customize your app's splash screen and icons. The Advanced File Caching section lists the flows and pages to be cached on the user’s device when the PWA is first launched. For demonstration purposes, we'll accept the default settings in both sections.
 
+## **STEP 3**: Run the Mobile App as a PWA
+
+1. Click **Preview** ![](./images/vbcsia_mob_run_icon.png).
+
+  When the application opens in another browser tab, notice that it's now possible for you to generate a QR code for the app, even though you haven't defined build configurations. That's because PWAs don't require build configurations like native mobile apps.
+
+  ![](images/vbcsia_mob_pwa_ready.png)
+
+3. Click **Build my App**.
+
+4. In the Stage Application dialog box, select **Populate Stage with Development data** and click **Stage**.
+
+    ![](images/vbcsia_mob_pwa_stage.png)
+
+    When the build is complete, you can scan the QR code that's generated to install the mobile app as a PWA on a device. Alternatively, you can launch it directly from your laptop or device browser. For demonstration purposes, this is the easiest option, so that's what we'll do.   
+
+5. Click the **Launch in Browser** link to open the app on your laptop or device browser.
+
+  ![](images/vbcsia_mob_pwa_launchinbrowser.png)
+
+6.  When prompted, click **Add** in the Add to Home Screen dialog box, then **Install** in the Install app? dialog box.
+
+  ![](images/hrmobileapp_pwa_add.png)
+
+   The hrmobileapp opens as an app on your device.
+
+   ![](images/hrmobileapp_pwa.png)
+
+7. Try out the app and test its functionality. When you are done, click **X** to close the app. Remember to also close the preview tab or window.
+
+   You can always click ![](images/pwa-desktop-icon.png) on your device's home screen or desktop to open the app again.
+
+If you only want to try your mobile app as a PWA, skip to Lab 9 to see how to publish the live version of your app. But if you want to build your app for installation on Android and iOS, you'll need to create build configurations, as described in Labs 6, 7, and 8.
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - March 2021
+**Last Updated** - April 2021

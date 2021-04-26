@@ -10,9 +10,9 @@ This lab shows you how to publish a mobile application.
 
 After you successfully test the staged application, you can publish it and make the application live. Users who have the proper credentials can view the live application. You can’t make changes to an application once it's published. Instead, you must create and edit a new version.
 
-## **STEP 1**: Publish the Application
+## **STEP 1**: Enable Build Configurations for Release
 
-These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
+If you built the mobile app for installation on Android and iOS devices, you'll need to release the build configuration before you can publish the app. If you built the mobile app only as a PWA, jump to step 2.
 
 1.  If necessary, click the **Mobile Applications** ![](images/vbmpu_mob_mob_icon.png) tab, then click the **hrmobileapp** node and the **Settings** tab.
 2.  In the **Build Configurations** tab, select the Android build configuration, click **Options** ![](images/vbmpu_menu_icon.png), and select **Edit**.
@@ -23,18 +23,20 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
 
     **Note:** Remember that  for demonstration purposes, we're using the same builds for development and production. When defining your build configurations for a mobile application, make sure you create different builds for the different environments.  
 
-5.  Click **Oracle Visual Builder** to return to the Visual Applications page:
+## **STEP 2**: Publish the Application
+
+1.  Click **Oracle Visual Builder** to return to the Visual Applications page:
 
     ![](./images/vbmca_homeicon.png)
 
-6.  Click **Options** ![](./images/vbmpu_menu_icon.png) for the HR Application, and select **Publish**.
-7.  In the Publish Application dialog box, select **Include data from Stage**, and click **Publish**.
+2.  Click **Options** ![](./images/vbmpu_menu_icon.png) for the HR Application, and select **Publish**.
+3.  In the Publish Application dialog box, select **Include data from Stage**, and click **Publish**.
 
     ![](./images/vbmpu_pub_s8.png)
 
     The schema and data from the staging database are copied to the live database. The application is now live.
 
-8.  On the Visual Applications page, click **Live** and select **hrmobileapp**.
+4.  On the Visual Applications page, click **Live** and select **hrmobileapp**.
 
     ![](./images/vbmpu_pub_s9.png)
 
@@ -44,4 +46,4 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - March 2021
+**Last Updated** - April 2021

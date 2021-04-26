@@ -78,7 +78,7 @@ Oracle Visual Builder provides Quick Starts that create pages to help you quickl
 
 1.  Click **Preview** ![](./images/vbmda_run_icon.png).
 
-    The application opens in another browser tab or window. 
+    The application opens in another browser tab or window. For now, ignore the message about not having any build configurations or PWA settings for this app.
 
 2.  On the Departments page, click **Administration** to open the Department Detail page. Make sure you click near the Id field to open the detail page.
 
@@ -102,4 +102,4 @@ Oracle Visual Builder provides Quick Starts that create pages to help you quickl
 ## Acknowledgements
 **Author** - Sheryl Manoharan
 
-**Last Updated** - February 2021
+**Last Updated** - April 2021
