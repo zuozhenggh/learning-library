@@ -262,24 +262,39 @@ A query-by-example (QBE) comparison operator tests whether a given JSON object f
 
 The comparison operators are the following:
 
-```
+    ```
     $all — whether an array field value contains all of a set of values
+    
     $between — whether a field value is between two string or number values (inclusive)
+    
     $eq — whether a field value is equal to a given scalar
+    
     $exists — whether a given field exists
+    
     $gt — whether a field value is greater than a given scalar value
+    
     $gte — whether a field value is greater than or equal to a given scalar
+    
     $hasSubstring — whether a string field value has a given substring (same as $instr)
+    
     $in — whether a field value is a member of a given set of scalar values
+    
     $instr — whether a string field value has a given substring (same as $hasSubstring)
+    
     $like — whether a field value matches a given SQL LIKE pattern
+    
     $lt — whether a field value is less than a given scalar value
+    
     $lte — whether a field value is less than or equal to a given scalar value
+    
     $ne — whether a field valueis different from a given scalar value
+    
     $nin — whether a field value is not a member of a given set of scalar values
+    
     $regex — whether a string field value matches a given regular expression
+    
     $startsWith — whether a string field value starts with a given substring
-```
+    ```
 
  {"AirportCode": "DCA",
 "Statistics.Flights.Cancelled": {"$gt": 400}
