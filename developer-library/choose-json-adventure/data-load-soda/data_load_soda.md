@@ -26,8 +26,7 @@ Estimated Lab Time: 30-45 minutes
 
 **If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
-
-#### **Create a Collection using the Database Actions UI**
+### **Create a Collection using the Database Actions UI**
 
 1. The first step here is to create a **collection** for our JSON Documents. We can do this two ways. The first method is to use the UI in Database Actions. We can start by selecting **JSON** in the **Database Actions Menu**.
 
@@ -61,83 +60,80 @@ Estimated Lab Time: 30-45 minutes
 
 3. To use the SODA REST APIs, we need to construct the URL. To start, we use cURL and pass in the username/password combination. Be sure to use the password that you set for our user back in the User Setups lab.
 
-  ```
-  curl -u "gary:PASSWORD"
-  ```
+    ```
+    curl -u "gary:PASSWORD"
+    ```
 
-  Also, we can add the -i which tells the cURL command to include the HTTP response headers in the output. This is helpful with debugging
+    Also, we can add the -i which tells the cURL command to include the HTTP response headers in the output. This is helpful with debugging
 
-  ```
-  curl -u "gary:PASSWORD" -i
-  ```
+    ```
+    curl -u "gary:PASSWORD" -i
+    ```
 
-  next, this is going to create a collection, so we will use the **PUT HTTP method**. 
+    next, this is going to create a collection, so we will use the **PUT HTTP method**. 
 
-  ```
-  curl -u "gary:PASSWORD" -i -X PUT
-  ```
+    ```
+    curl -u "gary:PASSWORD" -i -X PUT
+    ```
 
-  Lastly, we will add the URL. The URL is built up with the hostname followed by ords, followed by our schema name gary
+    Lastly, we will add the URL. The URL is built up with the hostname followed by ords, followed by our schema name gary
 
-  ```
-  https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/
-  ```
+    ```
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/
+    ```
 
-  then, add soda to indicate we want to use the SODA APIs followed by latest and the name of the collection airportdelayscollection. Your URL should look similar to the below one. (Your hostname will be different then this sample)
+    then, add soda to indicate we want to use the SODA APIs followed by latest and the name of the collection airportdelayscollection. Your URL should look similar to the below one. (Your hostname will be different then this sample)
 
-  ```
-  https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
-  ```
+    ```
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
+    ```
 
-  And when we put it all together, we get the following:
+    And when we put it all together, we get the following:
 
-  ```
-  curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
-  ```
+    ```
+    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
+    ```
 
 4. We now can take this cURL command and run it in the OCI Cloud Shell. **REMEMBER to use your password in place of PASSWORD!**
 
-  ![OCI Cloud Shell with cURL command](./images/json-8.png)
+    ![OCI Cloud Shell with cURL command](./images/json-8.png)
 
-  ```
-  curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
-  HTTP/1.1 201 Created
-  Date: Mon, 26 Apr 2021 15:53:46 GMT
-  Content-Length: 0
-  Connection: keep-alive
-  X-Frame-Options: SAMEORIGIN
-  Cache-Control: private,must-revalidate,max-age=0
-  Location: https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection/
-  ```
+    ```
+    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
+    HTTP/1.1 201 Created
+    Date: Mon, 26 Apr 2021 15:53:46 GMT
+    Content-Length: 0
+    Connection: keep-alive
+    X-Frame-Options: SAMEORIGIN
+    Cache-Control: private,must-revalidate,max-age=0
+    Location: https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection/
+    ```
+    If the collection already exists, you will get a message similar to the following:
 
-
-
-  If the collection already exists, you will get a message similar to the following:
-
-  ```
-  HTTP/1.1 200 OK
-  Date: Mon, 26 Apr 2021 16:07:38 GMT
-  Content-Length: 0
-  Connection: keep-alive
-  X-Frame-Options: SAMEORIGIN
-  Cache-Control: private,must-revalidate,max-age=0
-  ```
+    ```
+    HTTP/1.1 200 OK
+    Date: Mon, 26 Apr 2021 16:07:38 GMT
+    Content-Length: 0
+    Connection: keep-alive
+    X-Frame-Options: SAMEORIGIN
+    Cache-Control: private,must-revalidate,max-age=0
+    ```
 
 ### **STEP 2: Loading JSON Data into a Collection**
 
 1. The SODA APIs will be used to load the records into the collection. We will build the cURL command up similar as we did in the previous step. We start with again the user/password combination.
 
-  curl -u "gary:WElcome11##11"
+    curl -u "gary:WElcome11##11"
 
-  And as with before, we need to add the -i for the header return information
+    And as with before, we need to add the -i for the header return information
 
-  curl -u "gary:WElcome11##11" -i
+    curl -u "gary:WElcome11##11" -i
 
-  now the HTTP method. For the loading of data, we will use a **POST**
+    now the HTTP method. For the loading of data, we will use a **POST**
 
-  curl -u "gary:WElcome11##11" -i -X POST
+    curl -u "gary:WElcome11##11" -i -X POST
 
-  next, we need to indicate the file we want to load. Use **-d** then **@airportDelays.json**
+    next, we need to indicate the file we want to load. Use **-d** then **@airportDelays.json**
 
 curl -i -X POST -u "gary:WElcome11##11" -d @airportDelays.json -H "Content-Type: application/json" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
 
