@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and establish a connection between the provisioned Oracle Autonomous Database instance and Oracle Analytics Cloud. Then you will register the Oracle Machine Learning model we created in the previous lab with Oracle Analytics Cloud, in order to create visualizations using the produced datasets in the following Visualizations lab.
+This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and establish a connection between the provisioned Oracle Autonomous Database instance and Oracle Analytics Cloud. Then you will register the Oracle Machine Learning model we created in the previous lab with Oracle Analytics Cloud, add the datasets from the ADB instance to Oracle Cloud Analytics so we can use the data in projects for visualization.
 
 Estimated Lab Time: 15 minutes
 
@@ -28,9 +28,9 @@ In this lab, you will:
 
     ![](./images/sso-login1.png " ")
 
-3. In the upper left, click the **Hamburger Button** and scroll down to **Solutions and Platform** in the menu. Then expand **Analytics** and select **Analytics Cloud**.
-
-    ![](./images/analytics-cloud.png " ")
+3. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 4. Under **Compartment**, make sure you select the same compartment you created the Good Wine Autonomous Database instance in. Then click **Create Instance**. 
 
@@ -92,9 +92,9 @@ In this lab, you will:
 ## **STEP 3**: Establish Connection Between the Autonomous Database and Oracle Analytics Cloud
 
 
-1. In the upper left, click the **Hamburger Button** and scroll down to **Solutions and Platform** in the menu. Then expand **Analytics** and select **Analytics Cloud**.
-
-    ![](./images/analytics-cloud.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 2. Under **Compartment**, make sure you select the compartment **OACWINE** is located in. Then in the OACWINE instance row, click the **Three Dots** to expand out the menu and select **Analytics Home Page**. Feel free to bookmark this page to navigate back to it easier.
 
@@ -144,10 +144,57 @@ In this lab, you will:
 
     ![](./images/svm-connection2.png " ")
 
+## **STEP 5**: Add Datasets
+
+1. The click **Create** button to the upper right, and then select **Data Set**.
+
+  ![](./images/step5-1.png " ")
+
+2. Select the **GoodWineOAC** connection.
+
+  ![](./images/step5-2.png " ")
+
+3. Select the **OMLUSER** schema.
+
+  ![](./images/step5-3.png " ")
+
+4. Select the **WINEREVIEWS130KTEXT** table.
+
+  ![](./images/step5-4.png " ")
+
+5. Click the **Add All** button to add all the columns to the dataset, then **Add** to add the dataset to your OAC instance.
+
+  ![](./images/step5-5.png " ")
+
+6. Click the **Back Arrow** in the upper left to return to the OAC homepage.
+
+  ![](./images/step5-6.png " ")
+
+7. The newly created **WINEREVIEWS130KTEXT** dataset should be be displayed.
+
+  ![](./images/step5-7.png " ")
+
+8. Repeat steps 1-6 with the **BEST\_WINES** table.
+
+  ![](./images/step5-8a.png " ")
+
+  ![](./images/step5-8b.png " ")
+
+9. Repeat step 1-6 with the **DM$VAGOOD\_WINE\_AI** table.
+
+  ![](./images/step5-9a.png " ")
+
+  ![](./images/step5-9b.png " ")
+
+10. Repeat step 1-6 with the **DM$VLWINE\_CLASS\_MODEL\_SVM** table.
+
+  ![](./images/step5-10a.png " ")
+
+  ![](./images/step5-10b.png " ")
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Charlie Berger & Siddesh Prabhu, Data Mining and Advanced Analytics
+* **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics & Siddesh Ujjni, Staff Cloud Engineer, Analytics to Cloud
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
-* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
+* **Last Updated By/Date** - Didi Han, Database Product Management, April 2021

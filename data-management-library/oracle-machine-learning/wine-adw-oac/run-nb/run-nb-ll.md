@@ -2,9 +2,13 @@
 
 ## Introduction
 
-Oracle Machine Learning notebook Apache Zeppelin comes with your Autonomous Database. Once data is loaded into the Autonomous Database, you can start using Oracle Machine Learning notebooks to investigate the data and run machine learning models with it. In this lab, you will import, run and explore the Oracle Machine Learning notebook. We'll walk through each step in the notebook and explain the processes used to create a useful model in solving our business problem.
+Oracle Machine Learning notebook apache zeppelin comes with your Autonomous Database. Once the data is in ADW, you can start using oracle machine learning notebooks to investigate the data and run machine learning models with it. An Autonomous Database instance is pre-provisioned and the dataset is loaded for you as OMLUSER. In this lab, you will verify your environment setup and then you will import, run and explore the Oracle Machine Learning notebook as an OMLUSER. We'll walk through each step in the notebook and explain the processes used to create a useful model in solving our business problem.
 
 Estimated Lab Time: 15 minutes
+
+Walk through of importing and running the Machine Learning Notebook.
+
+[](youtube:Yf9ArSO1lxQ)
 
 ### About Product/Technology
 
@@ -20,22 +24,20 @@ As an brief summary of the process we'll be following within the notebook: we wi
 ### Objectives
 
 In this lab, you will:
+* Verify the Setup
 * Upload an OML notebook
 * Run the notebook
 * Explore the notebook
 
 ### Prerequisites
 
-* Provisioned an Autonomous Database instance
-* Created an OMLUSER account
-* Uploaded data
+This lab assumes you have completed the following labs:
 
+* Launch the workshop (in the Introduction)
 
-## **STEP 1**: Upload Notebook to Oracle Machine Learning
+## **STEP 1**: Import Notebook to Oracle Machine Learning
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your Autonomous Database instance.
-
-    ![](./images/choose-adb.png " ")
+1. Once you are in the compartment where your ADW instance is created, click on your ADW instance. Display Name would be ADW followed by Reservation id, for example, ADW1135.
 
     ![](./images/choose-adb-adw.png " ")
 
@@ -47,29 +49,28 @@ In this lab, you will:
 
     ![](./images/open-ml-admin.png " ")
 
-4. Sign in as **Username - ADMIN** with the password you used when you created your Autonomous Database instance.
+4. Sign in as **Username - ADMIN** with the password as **WELcome__1234**.
 
     ![](./images/ml-login.png  " ")
 
 5.  Click the **Home Icon** in the top right corner.
-
     ![](./images/oml-home.png  " ")
 
-6. Sign in as **Username - OMLUSER** and with the password you used when you created the OMLUSER account.
+6. Log in as **Username: OMLUSER** and provide the Password for the OMLUSER as **WELcome__1234** . Before you log in, you may wish to bookmark this page..
 
     ![](./images/oml-user-login.png  " ")
 
-7.  We will be importing a **Picking-Good-Wines-$30-Using-Wine-Reviews.json** ML notebook in this lab. Click the link below to download the notebook. 
+7.  We will be importing a **Picking-Good-Wines-$30-Using-Wine-Reviews.json** ML notebook in this lab. Click the link below to download the notebook.
 
     [Picking-Good-Wines-$30-Using-Wine-Reviews.json](files/Picking-Good-Wines-$30-Using-Wine-Reviews.json?download=1)
 
-8. Click on the upper-left hamburger menu and select **Notebooks**.
+8.  Click on the upper-left hamburger menu and select **Notebooks**.
 
     ![](./images/nb-menu.png  " ")
 
     ![](./images/notebooks.png  " ")
 
-9. Click on **Import** and upload the notebook downloaded earlier.
+9.  Click on **Import** and upload the notebook downloaded earlier.
 
     ![](./images/import.png " ")
 
@@ -81,7 +82,7 @@ In this lab, you will:
 
 ## **STEP 2**: Run the Notebook
 
-1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on the **gear** icon in the upper right. 
+1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on the **gear** icon in the upper right.
 
     ![](./images/binding.png " ")
 
@@ -89,7 +90,7 @@ In this lab, you will:
 
     ![](./images/binding2.png " ")
 
-3. Click on run button. 
+3. Click on run button.
 
     ![](./images/run.png " ")
 
@@ -98,6 +99,7 @@ In this lab, you will:
     ![](./images/run-all-paragraphs.png " ")
 
 ## **STEP 3**: Explore the Notebook
+
 ### Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
 
 ![](./images/explore.png " ")
@@ -204,7 +206,6 @@ In order to use the reviews in the description column of the WineReviews130KTarg
 
     ![](./images/create-policy.png " ")
 
-
 ### Build Attribute Importance Model
 
 Now, let's build an attribute importance model using both structured and unstructured (wine reviews) data.
@@ -288,17 +289,22 @@ Now let's apply the model to specific data points.
 
     ![](./images/show-table-oac.png " ")
 
+7. View the "Best_Wines" table created.
+
+    ![](./images/best-wines.png " ")
+
 ### Notebook Complete ###
 
 Whew! That was a lot of information to work through, but now you've successfully created, tested, and implemented an Oracle Machine Learning model! Grab a glass of wine and celebrate!
 
 ![](./images/congrats.png " ")
 
+## Learn More
 
-You may now [proceed to the next lab](#next).
-
+* [Picking a good inexpensive wine <$30 using Oracle Machine Learning blog](https://blogs.oracle.com/machinelearning/picking-a-good-inexpensive-wine-%3c30-using-oracle-machine-learning)
+* [Preview this video about picking a good inexpensive wine using Oracle Machine Learning.](https://www.youtube.com/watch?v=nKDWODevoKQ&t=5s)
 
 ## Acknowledgements
-* **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics & Dhvani Sheth, Senior Cloud Engineer, Emerging Cloud Solution
-* **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
-* **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
+
+* **Author** -  Anoosha Pilli & Didi Han, Database Product Management
+* **Last Updated By/Date** - Anoosha Pilli, April 2021
