@@ -19,7 +19,11 @@ Estimated Lab Time: TBD
 * SQL Developer Installed on your local machine.
 
 ## **Step 1:** Understand the sample JSON files
-TBD
+In this step you are going to understand the structure of the two sample JSON files (_sample\_skills.json_ and _sample\_users.json_). However, you should know that you can change these ones in any way, depending on your business need.
+
+The first, and the most important one is the _sample\_skills.json_ file. This file represents the main data source for the application that is going to be build in these labs.
+
+As you can see in the snippet below, the JSON consists of a set of data about employees and their skills, where the employee's **email** address represents the unique key. Each employee has two main areas of development, a **primary** one and a **secondary** one. The **areas** tag represents an array of objects (areas of development). Each area has several skills, and for each of the skills, the **value** tag represents the knowledge level for the employee and takes values from 0 to 5 (where 0 means "no knowledge" and 5 means "expert"). The **oracle_based** tag categorizes each skill in one of the two categories: **Oracle Based Skills** (1) or **Non-Oracle Skills** (0).
 ```
 [{
   "name": "Cloud EngineerA",
@@ -39,20 +43,85 @@ TBD
    ...
 ```
 
+As mentioned before, the keys in this JSON file can be customized in any way. An example would be to keep data regarding a list of products and product specifications.
+
+```
+[{
+  "product_name": "Smartphone X",
+  "brand": "Product Brand",
+  "code": "PROD12345",
+  "specifications":
+    [{
+      "spec_category": "Display",
+      "characteristics":
+        [{
+            "name": "Screen size (in inches)",
+            "value": 7
+          },
+   ...
+```
+
+The second JSON file (_sample\_users.json_) represents the data regarding some sample users for the application and will be used to emphasize the authorization in the application.
+
+```
+[{
+  "name":"ADMIN",
+  "email":"ADMIN@ORACLE.COM",
+  "is_admin":"Y",
+  "is_mgr":"N"
+ },
+...
+```
+The users in the application presented will have 3 roles which will be determined based on the **is\_admin** and **is\_mgr** tags, as shown in the table below.
+
+| ROLE    | VALUE FOR is_admin | VALUE FOR is_mgr |
+|---------|--------------------|------------------|
+| ADMIN   | Y                  | Y or N           |
+| MANAGER | Y or N             | Y                |
+| USER    | N                  | N                |
+
 ## **Step 2:** Create Autonomous JSON Database
 
 In order to create an Autonomous JSON Database you must first login on the OCI Console, then follow the steps, as described below:
 
 1. In the top-left hamburger menu navigate to **Autonomous JSON Database** which can be found under **Oracle Database** category.
+
+![create ADB menu](./images/create-adb-menu.PNG)
+
 2. Choose to create a new database by clicking **Create Autonomous Database**.
-3. Fill in the form by providing basic information for the ADB such as: compartment, display name and database name. For the workload type choose **JSON** and **Shared Infrastructure** for the deployment type. The database version is 19c with 1 OCPU count and 1TB of storage. Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access for everywhere**. Click **Create Autonomous Database**.
+
+![create ADB button](./images/create-adb-btn.PNG)
+
+3. Fill in the form by providing basic information for the ADB such as: compartment, display name and database name. For the workload type choose **JSON** and **Shared Infrastructure** for the deployment type.
+
+![create ADB form step 1](./images/create-adb-form-1.PNG)
+
+ The database version is 19c with 1 OCPU count and 1TB of storage.
+
+![create ADB form step 2](./images/create-adb-form-2.PNG)
+
+Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access for everywhere**. Click **Create Autonomous Database**.
+
+![create ADB form step 3](./images/create-adb-form-3.PNG)
 
 ## **Step 3:** Download database Wallet & connect to the database
 In order to connect to the database using SQL Developer, you must first download the wallet to you local machine.
+
 1. After the database has provisioned, click on the **DB Connection** button in the OCI Console to download the database wallet.
+
+![db connection button](./images/dbconnection-button.PNG)
+
 2. Select **Instance Wallet** from the drop-down list, click **Download Wallet** and provide the password that you chose previously for ADMIN.
+
+![download wallet](./images/download-wallet.PNG)
+
 3. Open SQL Developer and from the **Connections** window click on the green **+** sign to add a new connection.
+
+![SQL Developer new conection](./images/sql-developer-new-connection.PNG)
+
 4. Provide a name for the connection (any name can be chosen) as well as the user (_ADMIN_) and the password you've set at **Step 2 - Create Autonomous JSON Database**. For the **Connection Type** choose **Cloud Wallet** from the drop-down list, browse to the location of the wallet zip file and select the desired service (here skillsetdb_high). Test the connection and if the test succeeds you can connect to the database.
+
+![SQL Developer conection form](./images/sql-developer-connection-form.PNG)
 
 ## **Step 4:** Create new database user and grant needed roles
 Considering the fact that you previously connected to the database using the _ADMIN_ user, you need to run the following commands in order to create a new user _SKILLSET_ which will be used by the application.
@@ -78,13 +147,33 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO skillset;
 
 ## **Step 5:** Upload sample JSON files in Object Storage & create PAR URL for each of them
 In order to be able to create the SODA document collections in the database from the sample JSON files, you must first upload them in a Standard Object Storage Bucket.
+
 1. Download the two sample JSON files **here**.
+
 2. Log in on the OCI Console and from the top-left hamburger menu choose **Object Storage -> Object Storage**.
+
+![Object Storage menu](./images/object-storage-menu.PNG)
+
 3. Choose the option to **Create Bucket**.
+
+![Object Storage menu](./images/create-bucket-button.PNG)
+
 4. Set up a name for the bucket and select **Standard** for the Default Storage Tier field.
+
+![Object Storage menu](./images/create-bucket-form.PNG)
+
 5. After the bucket was created, navigate to **Objects** and click **Upload** then select the files to be uploaded.
+
+![Object Storage menu](./images/upload-object.PNG)
+
 6. Create Pre-Authenticated Requests for each of these files as shown in the images below.
+
+![Object Storage menu](./images/create-par-button.PNG)
+![Object Storage menu](./images/create-par-form.PNG)
+
 7. Save the PAR URL somewhere. You will need it later and it will not be shown again. You should have two PAR URLs, one for the **skills.json** file and one for **users.json** file.
+
+![Object Storage menu](./images/create-par-result-url.PNG)
 
 ## **Step 6:** Create SODA Collections
 Login in SQL Developer using the _**SKILLSET**_ user created at **Step 4 - Create new database user and grant needed roles** and run the following commands to create the two collections (skills and users), as well as unique indexes for the **email** field in each of them.
@@ -292,4 +381,4 @@ SELECT * FROM skillsview;
 
 ## Acknowledgements
 
-**Authors/Contributors** -
+**Authors/Contributors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina

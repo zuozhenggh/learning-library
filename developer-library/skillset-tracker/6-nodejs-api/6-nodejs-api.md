@@ -2,9 +2,11 @@
 
 ## Introduction
 
-Intro about NodeJS and APIs - TBD
+In this lab you are going to go through a series of steps for provisioning a **Linux Instance** and deploying a **NodeJS** application. The application that is going to be developed in this lab uses **SODA for NodeJS** to create APIs to perform create, read, update, and delete (**CRUD**) operations on document collections from an Autonomous JSON Database.
 
-Estimated Lab Time: TBD
+SODA for NodeJS is part of the Oracle NodeJS driver, **node-oracledb**, and doesn't need any additional installation.
+
+Estimated Lab Time: 1 hour
 
 ### Objectives
 
@@ -13,97 +15,150 @@ Estimated Lab Time: TBD
 * Run & test the application.
 
 ### What Do You Need?
-* An IDE, such as **Visual Studio Code**
-* An OCI Account
+* An IDE, such as **Visual Studio Code**.
+* An OCI Account.
 * A tenancy where you have the resources available to provision a Linux Instance.
 * An existing compartment and a VCN in which the Instance will reside.
 
 ### Prerequisites
-* **Lab 5 - Build an OracleJET Web Application** -> **Step 1 - Creating a Virtual Cloud Network**
-* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3 - Install and prepare prerequisites**
+* **Lab 5: Build an OracleJET Web Application** -> **Step 1: Creating a Virtual Cloud Network**
+* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
 
 ## **Step 1:** Creating a Linux Instance in OCI
 1. From the top-left hamburger menu, locate and select **Compute -> Instances**. Click the blue button **Create Instance**.
-2. Make sure you are in the desired compartment (here _skillset_).
-3. Configure your instance by naming it, choosing your AD, image, shape, VCN, subnet, public IP address.
-4. Since you need to authenticate as a remote user to the instance, you should upload your SSH public key from your SSH key pair generated on your local environment.
-5. Click the **Create** button.
+
+![create instance menu](./images/create-instance-menu.PNG)
+
+2. Make sure you are in the desired compartment (here _skillset_). Configure your instance by naming it, choosing your Availability Domain, Image and Shape. Chose the VCN in which the instance will reside, as well as the Subnet. To simplify everything, chose to assign a Public IP to the instance, in order to make it accessible from the Internet.
+
+![create instance form](./images/create-instance-form.JPG)
+
+3. Since you will need to connect to the instance, you should also upload your SSH public key. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH key**.
+
+![add SSH key to instance](./images/create-instance-form-ssh-key.JPG)
+
+4. Click the **Create** button.
 
 ## **Step 2:** Connecting to the Instance and installing the needed packages
-1. From the OCI Console, copy the public IP address of your new created instance and open a CMD or Windows PowerShell screen.
-2. The user is `opc`, so the next step for connecting to the instance is to run the following command in CMD or Windows PowerShell
+
+1. From the OCI Console, copy the public IP address of your new created instance and open a terminal, CMD or Windows PowerShell screen.
+
+![OCI Console - Instance Public IP](./images/instance-public-ip.JPG)
+
+2. The next step for connecting to the instance is to run the following command in a terminal, CMD or Windows PowerShell.
 ```
+<copy>
 ssh opc@<your_public_ip>
+</copy>
 ```
-3. After the connection was successful we need to run the some commands in order to make the configuration complete.
+![ssh connection](./images/instance-ssh-connection.JPG)
+
+3. After the connection is successful you need to run some commands in order to make the configuration complete.
 * Before beginning to install anything on the instance, run the following command.
 ```
+<copy>
 sudo yum update
+</copy>
 ```
-* Open the port needed for the application. In this case, 8000, the default port for an Oracle Jet application.
+* Open the port needed for the application. In this case, 8000.
 ```
+<copy>
 sudo firewall-cmd --permanent --zone=public --add-port=8000/tcp
 sudo firewall-cmd --reload
+</copy>
 ```
-* Install **curl** package
+* Install **curl** package.
 ```
+<copy>
 sudo yum install curl
 sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+</copy>
 ```
-* Install **NodeJS** package
+* Install **NodeJS** package.
 ```
+<copy>
 sudo yum install -y nodejs
+</copy>
 ```
 4. [Optional] If there are going to be more people that would need to connect to the instance, their SSH keys need to be added on the instance as well. In order to do this, connect to the instance using SSH and run the following commands.
 ```
+<copy>
 ssh opc@<instance_public_ip>
 cd ~/.ssh
 nano authorized_keys
+</copy>
 ```
 Paste the key that needs to be added at the end of the file on the instance and save the file (**Ctrl+O** then **Ctrl+X**).
 
 ## **Step 3:** Installing Oracle Instant Client
+
 1. Before downloading **Instant Client**, create a new directory for it and navigate to that directory.
 ```
+<copy>
 sudo mkdir /opt/oracle
 cd /opt/oracle
+</copy>
 ```
 2. Download Oracle Instant Client.
 ```
+<copy>
 sudo wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-basic-linuxx64.zip
+</copy>
 ```
 3. Unzip the archive downloaded at the previous step.
 ```
+<copy>
 sudo unzip instantclient-basic-linuxx64.zip
+</copy>
 ```
 4. Install **libaio** package and add Instant Client to the environment variables using the following commands.
 ```
+<copy>
 sudo yum install libaio
 sudo sh -c "echo /opt/oracle/instantclient_21_1 > /etc/ld.so.conf.d/oracle-instantclient.conf"
 sudo ldconfig
-sudo export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_1:$LD_LIBRARY_PATH
+</copy>
 ```
-5. Open OCI Console and navigate to the Autonomous Database Created in Lab 1. Download the wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
-6. After downloading the wallet to you local machine, unzip the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
 ```
+<copy>
+sudo su
+export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_1:$LD_LIBRARY_PATH
+exit
+</copy>
+```
+5. Open OCI Console and navigate to the Autonomous Database created in **Lab 4: Autonomous JSON Database & SODA Collections**. Download the databsae wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
+
+6. After downloading the wallet to you local machine, extract the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
+
+```
+<copy>
 cd <path_to_the_wallet_folder>
 scp -r <wallet_folder_name>/ opc@<instance_public_ip>:/home/opc/
+</copy>
 ```
+
 7. After all the files were uploaded to the instance you can connect to it using SSH, as done previously.
 ```
+<copy>
 ssh opc@<instance_public_ip>
+</copy>
 ```
-8. Navigate to the Instant Client directory (**/opt/oracle/instantclient_21_1/**) and check if there is a directory **./network/admin**. If not, you will need to create these two directories so that you will be able to access the following path: **/opt/oracle/instantclient_21_1/network/admin/** using the following commands.
+
+8. Navigate to the Instant Client directory (**/opt/oracle/instantclient\_21\_1/**) and check if there is a directory **./network/admin**. If not, you will need to create these two directories so that you will be able to access the following path: **/opt/oracle/instantclient\_21\_1/network/admin/**. Use the following commands to do this (only if it is needed).
 ```
+<copy>
 cd /opt/oracle/instantclient_21_1/
 sudo mkdir network
 cd network
 sudo mkdir admin
+</copy>
 ```
-9. Navigate to the wallet directory and copy all its content to **/opt/oracle/instantclient_21_1/network/admin/**
+9. Navigate to the wallet directory and copy all its content to **/opt/oracle/instantclient\_21\_1/network/admin/**
 ```
+<copy>
 cd /home/opc/<wallet_folder_name>
 sudo cp * /opt/oracle/instantclient_21_1/network/admin/
+</copy>
 ```
 10. In the wallet folder, check the **sqlnet.ora** and update it, if necessary, so that it will have the correct path to **/network/admin** directory. The content of the file should look similar to this.
 ```
@@ -111,12 +166,12 @@ WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="?/network
 SSL_SERVER_DN_MATCH=yes
 ```
 
-  **Note**: If you want to run the code developed in the next step on your local machine as well, consider the fact that you should have Instant Client installed and you should also copy the content of the wallet directory to **<your_path_to_instant_client>/network/admin** and check the **sqlnet.ora** file as mentioned at point 10.
+  **Note**: If you want to run the code developed in the next step on your local machine as well, consider the fact that you should have Instant Client installed and you should also copy the content of the wallet directory to **<your\_path\_to\_instant\_client>/network/admin** and check the **sqlnet.ora** file as mentioned at point 10.
 
 ## **Step 4:** Create a simple NodeJS application with APIs
 You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
 
-  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3 - Install and prepare prerequisites**.
+  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
 
 The final structure of the project you are going to create will look as in the picture below.
 
@@ -125,6 +180,7 @@ The final structure of the project you are going to create will look as in the p
 1. Create a new directory for your application. In our case, it is called _SkillsetTracking_.
 2. Since it would be easier for the _npm_ command to install all the needed packages at the beginning, create a new file in the application folder: _package.json_ and paste the following content in it.
 ```
+<copy>
 {
   "name": "skillsettrackingapi",
   "version": "1.0.0",
@@ -146,9 +202,11 @@ The final structure of the project you are going to create will look as in the p
   "author": "",
   "license": "ISC"
 }
+</copy>
 ```
 2. In the same folder create a new file _app.js_ and add the following code in it.
 ```
+<copy>
 async function startup() {
   console.log('Starting application');
 }
@@ -180,21 +238,27 @@ process.on('uncaughtException', err => {
   console.error(err);
   shutdown(err);
 });
+</copy>
 ```
 3. Now that you have the basic content of the application, you can test it by running the following commands.
+  * Open a terminal and navigate to you application folder.
   * Install _npm_ packages using ``npm install``
   * Run the application using ``node app.js``
 
 4. In the application folder, create two new folders: _config_ and _services_.
+
 5. Navigate to _config_ folder and create a new file _web-server.js_. Add the following content to it. This file sets up the default port on which the application will run. You can set up any port you want, but make sure that you have the rights to use it and it is not used by any other application.
 ```
+<copy>
 require('dotenv').config();
 module.exports = {
   port: process.env.HTTP_PORT || 8000
 };
+</copy>
 ```
 6. Navigate to the _services_ folder and create a new file _web-server.js_. Paste the following content in this file. This is the actual code for running the web server.
 ```
+<copy>
 const http = require('http');
 const express = require('express');
 const morgan = require('morgan');
@@ -253,10 +317,18 @@ function reviveJson(key, value) {
     return value;
   }
 }
+</copy>
 ```
 7. Add the needed code to open the web server in _app.js_.
+* At the beginning of the file:
+```
+<copy>
+const webServer = require('./services/web-server.js');
+</copy>
+```
 * In the **startup()** function:
 ```
+<copy>
 async function startup() {
   console.log('Starting application');
   try {
@@ -269,9 +341,11 @@ async function startup() {
     process.exit(1); // Non-zero failure code
   }
 }
+</copy>
 ```
 * In the **shutdown()** function:
 ```
+<copy>
 async function shutdown(e) {
   let err = e;
   console.log('Shutting down application');
@@ -289,19 +363,22 @@ async function shutdown(e) {
     process.exit(0);
   }
 }
+</copy>
 ```
 At this point you are now able to run the application using the ``node app.js`` command and see the running application in browser.
 ![Running app in browser](./images/running-application-in-browser.PNG)
 
 8. Let's connect the application to the database. In the project folder, create a new file _.env_ and add the connection details for your database. Here we are using the Autonomous JSON Database created in **Lab 4: Autonomous JSON Database & SODA Collections**.
 ```
+<copy>
 NODE_ORACLEDB_USER=SKILLSET
-NODE_ORACLEDB_PASSWORD=Password12345
-NODE_ORACLEDB_CONNECTIONSTRING=skillsetdb_lows
+NODE_ORACLEDB_PASSWORD=YourPassword
+NODE_ORACLEDB_CONNECTIONSTRING=skillsetdb_low
+</copy>
 ```
-9. Navigate to the _conf_ folder and create a new file _database.js_. Paste the following content in this file.
+9. Navigate to the _config_ folder and create a new file _database.js_. Paste the following content in this file.
 ```
-// save environment variables in dotenv
+<copy>
 const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config({ path: __dirname + '/../.env' });
@@ -318,10 +395,13 @@ module.exports = {
     dbname: process.env.SKILLSET_DB || "jsondb"
   }
 };
+</copy>
 ```
 10. Navigate to the _services_ folder and create a new file _skill-jsondb.js_. Add the following code to this file. The code in this file is meant to open the connection to the database, open the SODA collection from the database and make the queries to get the data.
+
   **Note**: Read more about SODA for NodeJS [here](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/nodejs/).
 ```
+<copy>
 var oracledb = require('oracledb');
 var dbconfig = require('../config/database.js');
 
@@ -366,10 +446,25 @@ function toJSON(documents) {
 module.exports.initialize = initialize;
 module.exports.close = close;
 module.exports.get = get;
+</copy>
 ```
 11. Update the _app.js_ file as follows. Then try running the application again using ``node app.js`` to check if the connection to the database is made successfully.
+* At the beginning of the file:
+```
+const webServer = require('./services/web-server.js');
+<copy>
+const database = require('./services/skill-jsondb.js');
+const dbConfig = require('./config/database.js');
+const defaultThreadPoolSize = 10;
+
+// Increase thread pool size by poolMax
+process.env.UV_THREADPOOL_SIZE = dbConfig.dbPool.poolMax + defaultThreadPoolSize;
+</copy>
+async function startup() {
+```
 * In the **startup()** function:
 ```
+<copy>
 async function startup() {
   console.log('Starting application');
   try {
@@ -387,9 +482,11 @@ async function startup() {
     process.exit(1); // Non-zero failure code
   }
 }
+</copy>
 ```
 * In the **shutdown()** function:
 ```
+<copy>
 async function shutdown(e) {
   let err = e;
   console.log('Shutting down application');
@@ -414,9 +511,11 @@ async function shutdown(e) {
     process.exit(0);
   }
 }
+</copy>
 ```
-12. The next step would be to add some API routes to get the data from the database. In the _services_ folder, create a new file _api-router.js_ and paste the following code in it.
+12. The next step would be to add some API routes to get the data from the database. In the _services_ folder, create a new file _api\_router.js_ and paste the following code in it.
 ```
+<copy>
 var express = require('express');
 var router = express.Router();
 var dbconfig = require('../config/database.js');
@@ -455,6 +554,7 @@ router.get('/skillset/:email', async function (request, response) {
   }
 });
 module.exports = router;
+</copy>
 ```
 As you can see in the code above, there are two different GET routes available:
   * **router.get('/skillset'...** - route to get all the data from the _skillscollection_;
@@ -490,15 +590,27 @@ httpServer.listen(webServerConfig.port)
 ![API call results in browser](./images/api-call-results-in-browser.png)
 
 15. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
-  **Note**: Before copying the code from your local machine to the instance, delete the _node_modules_ folder.
-```
-<copy>
-cd <path_to_the_project_folder>
-scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
-</copy>
-```
 
-16. After you uploaded the code on the instance, you can either run it with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**.
+  **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder.
+
+  * On the instance:
+  ```
+  <copy>
+  cd /home/opc
+  mkdir SkillsetTracking
+  </copy>
+  ```
+  * On your local machine:
+  ```
+  <copy>
+  cd <project_folder_path>
+  rm node_modules
+  scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+  scp -r .env opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+  </copy>
+  ```
+
+16. After you uploaded the code on the instance, you need to run the ``npm install`` command in the application folder. Then you can either run it with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**.
 ```
 <copy>
 sudo crontab -e
@@ -510,14 +622,14 @@ Press ***insert*** to enter the _edit_ mode and paste the following.
 @reboot node /home/opc/SkillsetTracking/app.js
 </copy>
 ```
-Press ***Esc***, the ***:wq***. After the crontab is saved, reboot the istance.
+Press ***Esc***, then ***:wq***. After the crontab is saved, reboot the instance.
 ```
 <copy>
 sudo reboot
 </copy>
 ```
 
-You should now be able to see the application running in browser at **http://<your_instance_public_ip>:8000/** or run an API at **http://<your_instance_public_ip>:8000/api/skillset**.
+You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.
 
 ## Want to Learn More?
 * [SODA for NodeJS](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/nodejs/)
@@ -525,4 +637,4 @@ You should now be able to see the application running in browser at **http://<yo
 
 ## Acknowledgements
 
-**Authors/Contributors** -
+**Authors/Contributors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina

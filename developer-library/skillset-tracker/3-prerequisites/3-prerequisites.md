@@ -39,4 +39,4 @@ You should also add _C:\\oracle\\instantclient_19_9_ in your environment variabl
 More information about Instant Client can be found [here](https://www.oracle.com/database/technologies/instant-client/).
 
 ## Acknowledgements
-**Authors/Contributors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina, Paraschiv Laura, Digori Gheorghe
+**Authors/Contributors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina, Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe
