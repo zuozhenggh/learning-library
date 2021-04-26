@@ -568,7 +568,7 @@ $startsWith — whether a string field value starts with a given substring
 
    ![Create Search Index modal](./images/json-18.png)
 
-5. We can now use the **$contains** operator in our QBEs. Lets try the following. In the updating section of this lab, we changed added Oracle Airlines to a document. We can now directly find this record by just using the contains operator on the Statistics.Carriers.Names node. Copy and paste it into your JSON worksheet and run the QBE.
+5. We can now use the **$contains** operator in our QBEs. Lets try the following. In the updating section of this lab, we added Oracle Airlines to a document. We can now directly find this record by just using the contains operator on the Statistics.Carriers.Names node. Copy and paste it into your JSON worksheet and run the QBE.
 
     ````
     </copy>
