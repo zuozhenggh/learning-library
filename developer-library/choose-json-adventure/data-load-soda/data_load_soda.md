@@ -94,7 +94,7 @@ Estimated Lab Time: 30-45 minutes
     curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
     ```
 
-4. We now can take this cURL command and run it in the OCI Cloud Shell. **REMEMBER to use your password in place of PASSWORD!**
+4. We now can take this cURL command and run it in the OCI Cloud Shell. **REMEMBER to use your password in place of PASSWORD**
 
     ![OCI Cloud Shell with cURL command](./images/json-8.png)
 
@@ -121,36 +121,82 @@ Estimated Lab Time: 30-45 minutes
 
 ### **STEP 2: Loading JSON Data into a Collection**
 
-1. The SODA APIs will be used to load the records into the collection. We will build the cURL command up similar as we did in the previous step. We start with again the user/password combination.
+1. The SODA APIs will be used to load the records into the collection. We will build the cURL command up similar as we did in the previous step. We start with again the user/password combination. **REMEMBER to use your password in place of PASSWORD**
 
-    curl -u "gary:WElcome11##11"
+    curl -u "gary:PASSWORD"
 
     And as with before, we need to add the -i for the header return information
 
-    curl -u "gary:WElcome11##11" -i
+    curl -u "gary:PASSWORD" -i
 
     now the HTTP method. For the loading of data, we will use a **POST**
 
-    curl -u "gary:WElcome11##11" -i -X POST
+    curl -u "gary:PASSWORD" -i -X POST
 
     next, we need to indicate the file we want to load. Use **-d** then **@airportDelays.json**
 
-curl -i -X POST -u "gary:WElcome11##11" -d @airportDelays.json -H "Content-Type: application/json" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
+    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json
 
-curl -i -X POST -u "gary:WElcome11##11" -d @airportDelays.json -H "Content-Type: application/json" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=insert"
+    the content type headers need to be set to indicate we are passing over JSON
 
+    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json"
 
-HTTP/1.1 100 Continue
+    Lastly we add the URL but append an insert action on the end with **?action=insert**. So we take the URL we constructed previously and append the action.
 
-HTTP/1.1 200 OK
-Date: Wed, 14 Apr 2021 17:15:38 GMT
-Content-Type: application/json
-Content-Length: 736197
-Connection: keep-alive
-X-Frame-Options: SAMEORIGIN
-Cache-Control: private,must-revalidate,max-age=0
+    ```
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
+    ```
 
-### **STEP 2**: Working with JSON Data in a Document Store
+    the full cURL command will be similar to the following. **REMEMBER to use your password in place of PASSWORD**
+
+    ```
+    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
+    ```
+
+    and we can run this in the OCI cloud shell. 
+    
+    
+2. We first need to stage the airportDelays.json file. Issue the following command in the OCI Cloud Shell:
+
+    ```
+    curl -o airportDelays.json PAR_HERE
+    ```
+
+3. Now that we have the file staged, we can run the full cURL command to load the JSON into our collection. Use the OCI Cloud Shell to do this:
+
+    ```
+    curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
+    ```
+
+    and you will see it start loading
+
+    ```
+    HTTP/1.1 100 Continue
+
+    HTTP/1.1 200 OK
+    Date: Mon, 26 Apr 2021 16:46:50 GMT
+    Content-Type: application/json
+    Content-Length: 736197
+    Connection: keep-alive
+    X-Frame-Options: SAMEORIGIN
+    Cache-Control: private,must-revalidate,max-age=0
+
+    {"items":[{"id":"6E7AD2EE1E6B452D954AB4F87C1B1953","etag":"3C144144B1374205A6635923E92E2546","lastModified":"2021-04-26T16:46:30.428087","created":"2021-04-26T16:46:30.428087"},{"id":"5C8FD6CE99774C6D940B82F94D960E11","etag":"53C68394591B49E88A21D64BDE5D102F","lastModified":"2021-04-26T16:46:30.428087","created":"2021-04-26T16:46:30.428087"}........
+    ```
+    many records loaded......
+    ```
+    ......{"id":"D8883CB8103645C2AE7A462A7CCF6EC7","etag":"3E32619CBDBB45B09466A727FA79F5B8","lastModified":"2021-04-26T16:46:30.428087","created":"2021-04-26T16:46:30.428087"},{"id":"79FDFCC218F84B2BA60FC17440CAD50B","etag":"EE635498227B46478A0C32AC2F979A95","lastModified":"2021-04-26T16:46:30.428087","created":"2021-04-26T16:46:30.428087"},{"id":"D5210F98995A4677906715C9EB41FE17","etag":"729F41684B444883A7835ABE17B3AFC1","lastModified":"2021-04-26T16:46:30.428087","created":"2021-04-26T16:46:30.428087"}],"hasMore":false,"count":4408,"itemsInserted":4408}%
+    ```
+
+    and once completed, you should see a message like the following at the end of the load:
+
+    ```
+    "hasMore":false,"count":4408,"itemsInserted":4408}%  
+    ```
+
+    indicating that all 4408 JSON documents have been loaded.
+
+### **STEP 3**: Working with JSON Data in a Document Store
 
 Show diagram in UI
 
@@ -288,3 +334,22 @@ curl -X PUT -u "gary:PASSWRD" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.
 "Statistics.Flights.Cancelled": {"$gt": 400},
 "Time.Year": 2011
 }'
+
+
+
+
+
+curl -i -X POST -u "gary:WElcome11##11" -d @airportDelays.json -H "Content-Type: application/json" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/planeDelays?action=insert"
+
+curl -i -X POST -u "gary:WElcome11##11" -d @airportDelays.json -H "Content-Type: application/json" "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection?action=insert"
+
+
+HTTP/1.1 100 Continue
+
+HTTP/1.1 200 OK
+Date: Wed, 14 Apr 2021 17:15:38 GMT
+Content-Type: application/json
+Content-Length: 736197
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+Cache-Control: private,must-revalidate,max-age=0
