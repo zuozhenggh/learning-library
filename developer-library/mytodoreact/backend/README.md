@@ -7,7 +7,7 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 
 ## **Summary**
 
-In this Part, you will build and deploy the Helidon Java backend Docker image to OKE, then configure the API Gateway
+In this ~25-minute Part II if the lab, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway
 
 As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements 5 REST APIs including:
 - 1) retrieving the current list of todo items
@@ -26,7 +26,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 ![](images/Backend-APIs.png " ")
 
-## **Objectives**
+### **Objectives**
 
 * Set values for environment variables
 * Build and deploy the Docker image of the application

@@ -19,9 +19,18 @@ This lab has 3 parts however, you need first to setup a Cloud account
 ## **STEP 1**: Sign up for a Free Trial Cloud Account
 Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Part 1: Setup Dev Environment](?setup-dev-environment/README.md).
 
-## Want to Learn More?
 
-* [https://developer.oracle.com/](https://developer.oracle.com/)
+## Rate this Workshop
+
+When you are finished don't forget to rate this workshop! We rely on this feedback to help us improve and refine our LiveLabs catalog. Follow the steps to submit your rating.
+
+Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
+
+Click on the **Brown Button** to re-access the workshop
+![](./images/workshop-homepage-2.png " ")
+
+Click **Rate this workshop**
+![](./images/rate-this-workshop.png " ")
 
 ## Acknowledgements
 * **Workshop by** - Kuassi Mensah, Dir. Product Management, Java Database Access

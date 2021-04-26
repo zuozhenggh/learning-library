@@ -7,7 +7,10 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 # Part III -- Frontend (React JS)
 
 ## **Summary**
-The application is so simple that there is really no need to know React to understand the code.
+
+In this ~15-minute Part III of the lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle CLOud Infrastucture.
+
+The application is simple; that there is really no need to know React to understand the code.
 
 The application uses Functional Components with State Hooks for managing states. There is a main component called "App" which renders another component called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" component displays the text field to add a new item.
 
@@ -23,6 +26,9 @@ The App component also maintains the following states:
 
 The index.css file contains all the styles for the application.
 
+### Objectives
+
+
 
 ## **STEP 1**: Prerequisites
 
@@ -35,7 +41,7 @@ The index.css file contains all the styles for the application.
 2. Install Node
 
 - if not please install Node for your laptop, using the following link.  
-https://www.freecodecamp.org/news/how-to-install-node-in-your-machines-macos-linux-windows/
+  https://bit.ly/3evGlEo
 
 3. Install Go (see https://golang.org/doc/)
 
@@ -69,6 +75,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <copy>npm audit fix --force</copy>
 ```
 - Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
+  If npm version < 6.14.x then install the latest Node using
+   https://bit.ly/3evGlEo
 
 4. Update API_LIST in API.js
 

@@ -7,9 +7,9 @@ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.or
 
 ## **Summary**
 
-In this part of the lab, you will configure your development environment and collect information that will be used later throughout this workshop
+In this ~25-30 minute Part I of the lab, you will configure your development environment and collect information that will be used later throughout this workshop
 
-### Objectives of Part I
+### Objectives
 
 * Setup an OCI account
 * Launch Cloud Shell
@@ -18,6 +18,7 @@ In this part of the lab, you will configure your development environment and col
 * Create the ATP database, the user schema and a database table
 * Install GraalVM  
 * Create an OCI Registry and Auth key
+* Access OKE from the Cloud Shell
 
 ## **STEP 1**: Setup your OCI Account and Launch the Cloud Shell
 
@@ -48,7 +49,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 2. Change to the mtdrworkshop directory:
 
     ```
-    <copy>cd mtdrworkshop</copy>
+    <copy>cd ~mtdrworkshop</copy>
 
     ```
 3. Set the execution mode for all Shell scripts
@@ -56,6 +57,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 ```
 <copy>chmod +x *.sh */*.sh</copy>
 ```
+
+NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY.
+
+IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE ~/mtdrworkshop DIRECTORY.
+
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
 
  1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
@@ -321,6 +327,26 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/verifyOKEOutput.png " ")
 
+4. Configuring Network Security Rules
+The network security rules control the inbound (Ingres) and the outbound (Egress) traffic. As we will be configuring the API Gateway in Part II, we will not set tight security rules at the Kubernetes cluster level.
+- Navigate to **Developer Services > Kubernetes Clusters**
+
+- Click on the **mtdrworkshopcluster**
+- Click on VCN Name
+  ![](images/VCN-name.png " ")
+- Click on  the VCN named starting with oke-svclbsubnet-quick-mtdrworkshpcluster
+  ![](images/oke-svclbsubnet.png " ")
+
+- Click on the existing security list
+  ![](images/Add-security-lists.png " ")
+
+- Add an Ingress Rule
+  Set the Destination CIDR  as indicated (leave other fields as is) then Click `Add Ingress Rules` 
+  ![](images/Ingress-rule.png " ")
+
+- Add an Egress Rule
+  Set Stateless and Destination CIDR as indicated in the image (leave other fields as-is) then Click `Add Egress Rules`  
+![](images/Egress-rule.png " ")
 
 Congratulations, you have completed Part I; you may now proceed to Part II.
 
