@@ -16,9 +16,7 @@ In this lab, you will:
 
 ### Understanding the ReactJS application
 
-The application is simple; that there is really no need to know React to understand the code.
-
-The application uses Functional Components with State Hooks for managing states. There is a main component called "App" which renders another component called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" component displays the text field to add a new item.
+The application is simple; it uses Functional Components with State Hooks for managing states. There is a main component called "App" which renders another component called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" component displays the text field to add a new item.
 
 The App component includes the "items" state ([]) which contains the list of todo items. When setItems is called with a new array of items the component will re-render.
 
@@ -45,13 +43,14 @@ The index.css file contains all the styles for the application.
 - if not please install Node for your laptop, using the following link.  
   https://bit.ly/3evGlEo
 
-3. Install Go (see https://golang.org/doc/)
+3. The las also requires Go lang.
 
   "go version" -> go version go1.15.2 darwin/amd64
 
   ```
   <copy>go version</copy>
   ```
+If no, please install Go (see https://golang.org/doc/)
 
 ## **STEP 1**: Configure API.js
 
