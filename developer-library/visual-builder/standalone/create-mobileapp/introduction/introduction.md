@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop shows you how to develop a mobile application in Visual Builder for users to view, edit, and create data. You'll also learn how to run the mobile application on Android and iOS devices, either as a native mobile app or as a Progressive Web Application.
+This workshop shows you how to develop a mobile application in Visual Builder for users to view, edit, and create data. You'll also learn how to run the mobile application, either as a native mobile app on Android and iOS devices or as a Progressive Web Application.
 
 Estimated Lab Time: 80 minutes
 
@@ -11,7 +11,7 @@ Oracle Visual Builder provides easy access to data from any REST-based service, 
 
 You can also run your mobile app as a Progressive Web App (PWA) to combine the advantages of native mobile apps and web apps. PWAs allow your users to leverage device-specific features such as camera access and location information and offer a user experience akin to native mobile apps. They can be distributed fairly easily like web apps, so users won't need to go to the app store to install them. Also, because PWAs can be installed on laptops, users can run them on Windows, Mac, and other operating systems, not just Android and iOS.
 
-Whatever app you're building, the visual designer enables you to quickly layout pages in your applications by dragging and dropping UI components, customizing their attributes, and defining their behavior.
+Whatever app you're building, visual designer capabilities enable you to quickly design pages by dragging and dropping UI components, customizing their attributes, and defining their behavior.
 
 Take a look at this video to learn more, or just dive right into the labs.
 
