@@ -80,7 +80,7 @@ Estimated Lab Time: 30-45 minutes
 
     ![Row indicating data load is finished in the Data Loading Tab of the SQL Worksheet](./images/sdw-29.png)
 
-12. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
+12. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name (AIRPORTDELAYS) and select Open from the pop up menu.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/sdw-30.png)
 
