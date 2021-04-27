@@ -1,14 +1,13 @@
 {
   "workshoptitle": "Oracle IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
-  "help": "livelabs-help-iam_us@oracle.com",
   "tutorials": [
-    {
-      "title": "Getting Started",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
     {
       "title": "Introduction",
       "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Getting Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
@@ -30,11 +29,6 @@
     {
       "title": "Lab 5: Upgrade Oracle IAM 11.1.2.3 to 12.2.1.4",
       "filename": "../../upgrade/upgradelcm.md"
-    },
-    {
-      "title": "Need Help?",
-      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

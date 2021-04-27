@@ -6,7 +6,7 @@
         {
             "title": "Introduction",
             "description": "Introduction",
-            "filename": "./../intro.md"
+            "filename": "./../../db-quickstart-workshop/intro.md"
         },
         {
             "title": "Getting Started",

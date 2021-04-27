@@ -247,7 +247,7 @@ Now that we have built a machine learning model, let's evaluate the model.
 
 2. Here is the result of the data mining model we just created with the TARGET\_VALUE, ATTRIBUTE\_NAME, COEFFICIENT, REVERSED\_COEFFICIENT.  
 
-    You may be wondering where DM$VLWINE\_CLASS\_MODEL\_SVM came from. DM$VLmodel\_name is Oracle Machine Learning's Model Detail View for Support Vector Machine which describes linear coefficient views. To learn more, click [this link](https://docs.oracle.com/en/database/oracle/oracle-database/18/dmprg/model-detail-views.html#GUID-3B46FDE8-DA4F-4E5C-80E1-F984942E496D).
+    You may be wondering where DM$VLWINE\_CLASS\_MODEL\_SVM came from. DM$VLmodel\_name is Oracle Machine Learning's Model Detail View for Support Vector Machine which describes linear coefficient views. To learn more, click [this link](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmprg/model-detail-views.html#GUID-E40F3A3A-0158-45B4-8FD9-ADF6CA3FB9A6).
 
     ![](./images/ml-model-output.png " ")
 
@@ -288,10 +288,6 @@ Now let's apply the model to specific data points.
 
     ![](./images/show-table-oac.png " ")
 
-7. View the "Best_Wines" table created.
-
-    ![](./images/best-wines.png " ")
-
 ### Notebook Complete ###
 
 Whew! That was a lot of information to work through, but now you've successfully created, tested, and implemented an Oracle Machine Learning model! Grab a glass of wine and celebrate!
@@ -303,6 +299,6 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - Charlie Berger & Dhvani Sheth, Machine Learning, AI and Cognitive Analytics
+* **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics & Dhvani Sheth, Senior Cloud Engineer, Emerging Cloud Solution
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management,  March 2021
