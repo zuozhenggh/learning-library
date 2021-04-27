@@ -6,6 +6,12 @@ In this lab, you will provision the Oracle Autonomous Database instance, create 
 
 Estimated Lab Time: 30 minutes
 
+Quick walk through on how to provision and load data into an Autonomous Database Instance.
+
+[](youtube:YCxjo_TjqpE)
+
+*Note: The OCI Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
+
 ### Objectives
 
 In this lab, you will:
@@ -16,12 +22,6 @@ In this lab, you will:
 ### Prerequisites
 
 - This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
-
-### Video Preview
-
-Watch a video demonstration on getting started with Oracle Machine Learning and Oracle Autonomous Database.
-
-[](youtube:UDwlTpbhPX0)
 
 ## **STEP 1**: Provision an Autonomous Database Instance
 
