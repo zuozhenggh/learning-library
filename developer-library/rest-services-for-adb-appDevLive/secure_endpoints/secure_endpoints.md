@@ -222,7 +222,7 @@ Estimated Lab Time: 10 minutes
     We can add this to our cURL command as follows:
 
     ```
-    curl --location --request POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
+    curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
@@ -234,7 +234,7 @@ Estimated Lab Time: 10 minutes
 32. Now using the OCI Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
 
     ```
-    curl --location --request POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
+    curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
@@ -255,41 +255,44 @@ Estimated Lab Time: 10 minutes
     https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/<VALUE>
     ```
 
-34
+    So we can try out the following (**NOTE: your URL hostname will be different than the below command**):
+    
+    ```
+    curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1'
+    ```
+
+    and as expection, we get **Unauthorized**.
+
+34. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
+
+    ```
+    curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1'
+    ```
+
+    and we see the results we expect
+
+    ```
+    {"items":[{"col1":"798812df","col2":"a1","col3":"4166997"},{"col1":"59fd433c","col2":"a1","col3":"32470891"},{"col1":"6c1298ef","col2":"a1",
+    "col3":"506747"},{"col1":"243f5660","col2":"a1","col3":"87300261"},{"col1":"f62af3d4","col2":"a1","col3":"31094545"},{"col1":"af2fc686","col2":"a1",
+    "col3":"48206518"},{"col1":"9d4f725e","col2":"a1","col3":"36224185"},{"col1":"041d6b03","col2":"a1","col3":"23890702"},{"col1":"f8c87baa","col2":"a1",
+    "col3":"852530"},{"col1":"d98f3e5b","col2":"a1","col3":"9864895"},{"col1":"5cbb6ddc","col2":"a1","col3":"60428923"},{"col1":"474c024a","col2":"a1",
+    "col3":"85183686"},{"col1":"a0707a73","col2":"a1","col3":"167176502"},{"col1":"3447e214","col2":"a1","col3":"110333373"},{"col1":"69face01",
+    "col2":"a1","col3":"18449519"},{"col1":"9198731a","col2":"a1","col3":"150740437"},{"col1":"55789f0a","col2":"a1","col3":"119272860"},
+    {"col1":"03801afd","col2":"a1","col3":"75179648"},{"col1":"dbdf5867","col2":"a1","col3":"91475805"},{"col1":"93adc64d","col2":"a1","col3":"39287205"},
+    {"col1":"2b130ef8","col2":"a1","col3":"206753925"},{"col1":"1f6bec10","col2":"a1","col3":"17745238"},{"col1":"81f46a8d","col2":"a1","col3":"54692392"}
+    ,{"col1":"2ebd5ecb","col2":"a1","col3":"94437756"},{"col1":"4d514c12","col2":"a1","col3":"145885382"}],"hasMore":true,"limit":25,"offset":0,
+    "count":25,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1"},
+    {"rel":"describedby","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/metadata-catalog/api/sqlreport/item"},
+    {"rel":"first","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1"},{"rel":"next",
+    "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1?offset=25"}]}% 
+    ```
 
 ## Conclusion
 
-In this lab, you had an opportunity to get an introduction to REST services using an easy to follow User Interface. REST enable your tables and database objects in minutes with zero code.
+In this lab, you secured your custom REST APIs with OAuth2 authentication.
 
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
 - **Last Updated By/Date** - February 2021
 - **Workshop Expiry Date** - February 2022
-
-
-tW-AM_cDQu0l8oAsh707vw
-
-curl \
---user u0cCf0OmeK5bOLVdseMR7A..:LcLLuCTOTVckUu3dakuuJw.. \
---data 'grant_type=client_credentials' \
-https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/oauth/token
-
-
-curl --location --request POST \
-'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
---header 'Content-Type: application/json' \
---data-binary '{
-"id": "a1",
-"output": "" 
-}'
-
-curl --location --request POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
-'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
---header 'Content-Type: application/json' \
---data-binary '{
-"id": "a1",
-"output": "" 
-}'
-
-curl --location --request GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1'

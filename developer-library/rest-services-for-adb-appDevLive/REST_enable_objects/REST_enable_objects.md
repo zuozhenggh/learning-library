@@ -302,7 +302,7 @@ select empno, ename, dept from emp where empno = :id
 30. Using the OCI Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
 
     ```
-    curl --location --request POST \
+    curl -X POST \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
