@@ -63,6 +63,8 @@ In this lab you will work with JSON in the Oracle Database with the intent of ex
 
 ### **Step 4:** Load JSON into the database and work with JSON documents and collections
 
+### **Step 5:** Exposing the Data for Applications
+
 ## Conclusion
  In this lab, you had an opportunity to work with JSON in the Oracle Database
 

@@ -6,7 +6,7 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
 ## Introduction
 
-In this lab you will use the SQL Developer Web browser-based tool, connect to your Database and load JSON data into relational tables. You will then work with this data to understand how it is accessed and stored.
+In this lab you will use the SQL Developer Web browser-based tool, connect to your Database and load JSON data into a collection. You will then work with this data to understand how it is accessed and stored.
 
 Estimated Lab Time: 30-45 minutes
 
