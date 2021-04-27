@@ -6,7 +6,7 @@
 2. Start atom-live-server (Atom) or live-server (Visual Studio Code)
 3. We precreated 7 folders.  A workshop is created out of multiple labs.  
 4. Make sure you stick to all lower case and dashes for spaces
-5. Your image names should have descriptive names. Not just adb1, adb2, adb3.  For handicap accessiblity we need the image descriptions to explain what the image looks like.  Remember all lower case and dashes.
+5. Your image names should have descriptive names. Not just adb1, adb2, adb3.  For handicap accessibility we need the image descriptions to explain what the image looks like.  Remember all lower case and dashes.
 6. Make sure you watch this [video](https://otube.oracle.com/media/1_ucr6grc6) for how to do Self QA of a workshop.  These are the standards that need to be met before going to production.  (It's short don't worry!)
 7. Download our [QA Feedback doc](https://confluence.oraclecorp.com/confluence/download/attachments/1966947336/LiveLabs-QA-Feedback-Form-v2.docx?version=2&modificationDate=1598913736000&api=v2) as well.  We find workshops get in production quicker when you know what's needed to move to production up front and you use the skeleton.
 
@@ -75,4 +75,3 @@ This [APEX Workshop](https://oracle.github.io/learning-library/developer-library
 
 * [Creating the Structure of Markdown Labs](https://confluence.oraclecorp.com/confluence/display/DCS/Creating+the+Structure+of+Markdown+Labs)
 * [See a working example on GitHub](https://github.com/oracle/learning-library/tree/master/data-management-library/autonomous-database/shared)
-
