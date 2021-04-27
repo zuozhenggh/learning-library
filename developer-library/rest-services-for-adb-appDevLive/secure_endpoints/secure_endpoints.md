@@ -2,15 +2,15 @@
 
 ## Introduction
 
-In this lab you will Securing the REST Endpoint XXX
+In this lab you will Securing the REST Endpoints you created in the previous lab.
 
 Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-- XXX
-- XXX
-- XXX
+- Create an OAuth2 token
+- Secure REST endpoints
+- Test the secure end to end flow
 
 ### Prerequisites
 
@@ -112,23 +112,27 @@ Estimated Lab Time: 10 minutes
 
     ![click the Create button on the Create Privilege slider](./images/sec-18.png)
 
-2. Next, we want to select the **Security Tab** on the top of the page and then select **OAuth Clients**.
+17. Next, we want to select the **Security Tab** on the top of the page and then select **OAuth Clients**.
 
     ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/sec-19.png)
 
-3. To create our OAuth client we will secure our REST endpoints with, click the **+ Create OAuth Client** button in the upper right of the page.
+18. To create our OAuth client we will secure our REST endpoints with, click the **+ Create OAuth Client** button in the upper right of the page.
 
     ![Click the Create OAuth Client button](./images/sec-20.png)
 
-4. The **Create OAuth Client** slider will come out on the right of the page. 
+19. The **Create OAuth Client** slider will come out on the right of the page. 
 
     ![Create OAuth Client slider](./images/sec-21.png)
 
-    In this form we first need to name our OAuth Client. Enter **oauthclient** into the **Name** field. 
-    
+20. In this form we first need to name our OAuth Client. Enter **oauthclient** into the **Name** field. 
+
+    ````
+    <copy>oauthclient</copy>
+    ````
+
     ![Name Field](./images/sec-22.png)
     
-    Next we can give it a description. Let use **Security on my REST Service** as a value in the **Description Field**.
+21. Next we can give it a description. Let use **Security on my REST Service** as a value in the **Description Field**.
     
     ````
     <copy>Security on my REST Service</copy>
@@ -136,7 +140,7 @@ Estimated Lab Time: 10 minutes
 
     ![Description Field](./images/sec-23.png)
 
-    The following field, **Support URI**, is where a client will be taken upon an authorization error or failure. For this lab, we will use "https://www.oracle.com/rest/"
+22. The following field, **Support URI**, is where a client will be taken upon an authorization error or failure. For this lab, we will use "https://www.oracle.com/rest/"
     
      ````
     <copy>https://www.oracle.com/rest/</copy>
@@ -144,98 +148,114 @@ Estimated Lab Time: 10 minutes
     
     ![Support URI Field](./images/sec-24.png)
 
-    Finally, we need an **support email** for contacting someone. You can enter your email address or use gary@dinosaurfootball.com in the **Support Email** field of the form.
+23. Finally, we need an **support email** for contacting someone. You can enter your email address or use gary@dinosaurfootball.com in the **Support Email** field of the form.
     
     ![Support Email Field](./images/sec-25.png)
 
-    Once your form looks similar to the image below:
+24. Once your form looks similar to the image below:
 
     ![Support Email Field](./images/sec-26.png)    
     
-    left click the Roles Tab on the top of the Create OAuth Client slider.
+    left click the **Roles Tab** on the top of the Create OAuth Client slider.
 
     ![Roles Tab on the OAuth Client Slide Out Panel](./images/sec-27.png)
 
-5. Click the Roles tab on the top of the Create OAuth Client slider
+25. Use the **shuttle** to move the **oracle.livelabs.role.gary** role to the right side.
 
-    ![Click the Roles tab on the top of the Create OAuth Client slider](./images/sdw-48.png)
+    ![Use the shuttle to move the oracle.livelabs.role.gary role to the right side](./images/sec-28.png)
 
-6. Now, use the shuttle to move the Role **oracle.dbtools.role.autorest.GARY.MAY2018** over to the right side, then click the Create button on the lower right. Moving the Role says that we want all REST services with this role to be secure and by using the auto REST feature, the service has created a role for us and all the endpoints we have used in this lab.
+26. When your **Roles Tab** looks like the below image in the  Create OAuth Client slider, left click the **Create** button.
 
-    ![use the shuttle to move the Role over to the right side, then click the Create button](./images/sdw-49.png)
+    ![left click the create button](./images/sec-29.png)
 
-    We now have an OAuth Client we can secure our REST service with.
+27. You can now see the created **OAuth Client** tile on the OAuth Clients page.
 
-    ![Created OAuth Client Details Tile](./images/sdw-50.png)
+    ![OAuth Client tile on the OAuth Clients page](./images/sec-30.png)
 
-7. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
+28. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
 
-    ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/sdw-51.png)
+    ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/sec-31.png)
 
-8. The OAuth Token modal will provide the token text in **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this text. Save it because we will need it when calling the secured REST service. The modal also gives us a curl command to get a token if we need to include this in our applications.
+29. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this token text. Save it to a text document or notes application because we will need it when calling the secured REST service. The modal also gives us a cURL command to get a token if we need to include this in our applications.
 
-    ![Click the copy icon to save the Token Text](./images/sdw-52.png)
+    ![Click the copy icon to save the Token Text](./images/sec-32.png)
 
-9. Time to secure the REST service. Using the tab bar on the top of the page, select AutoREST.
+    Left click the **OK** button when you are done getting and saving the token text. 
 
-    ![Use the tab bar on the top of the page, select AutoREST](./images/sdw-53.png)
+    ![Left click the OK button](./images/sec-33.png)
 
-10. Here we can see the table we autoREST enabled previously. Click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on the MAY2018 title and select Edit.
+30. Now its the moment you have been waiting for; time to secure the REST service. Actually, its already secure. When we created the OAuth client with the role, the modules we protected are now secure. We can try this by running a previously working REST API. (**NOTE: your URL hostname will be different than the below command**)
 
-    ![Click the pop out menu icon on the MAY2018 title and select Edit](./images/sdw-54.png)
+    Remember in the last lab, we created a REST API for our bizlogic? Let's take that cURL command again:
 
-11. In the REST Enable Object slider, click the Require Authentication toggle button, then click Save in the lower right of the slider. That's it, the service it now secure.
+    ```
+    curl --location --request POST \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    --header 'Content-Type: application/json' \
+    --data-binary '{
+    "id": "a1",
+    "output": "" 
+    }'
+    ```
+    and using the OCI Cloud Shell, run it again:
 
-    ![click the Require Authentication toggle button then click Save in the lower right of the slider](./images/sdw-55.png)
-
-12. We can try out this security using curl and the OCI Cloud Shell. We can immediately see that we have a new green lock icon on out autoREST table tile. To see the new curl commands, use the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) and select Get Curl.
-
-    ![Use the pop out menu icon and select Get Curl](./images/sdw-56.png)
-
-13. We are going to use the GET Single curl command just as we did before. Start by clicking on Get Single, enter **hv70116556** in the ID field and click the Next button on the lower right of the slide out.
-
-    ![clicking on Get Single, enter the above value in the ID field and click the Next button on the lower right of the slide out](./images/sdw-39.png)
-
-14. On the following page of the slider, we can see the curl command now contains some header information:
-
-    **--header 'Authorization: Bearer VALUE'**
-
-    ![curl command now contains some header information](./images/sdw-57.png)
-
-    and if we run the original curl command using the OCI Cloud Shell without this information, we get Unauthorized:
-
-    ````
-    > curl --location \
-    'https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556'
+    ```
+    > curl --location --request POST \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    --header 'Content-Type: application/json' \
+    --data-binary '{
+    "id": "a1",
+    "output": ""
+    }'
 
     {
         "code": "Unauthorized",
         "message": "Unauthorized",
         "type": "tag:oracle.com,2020:error/Unauthorized",
-        "instance": "tag:oracle.com,2020:ecid/c755a84b26f02aba9ce630f831ee721c"
-    }
-    ````
+        "instance": "tag:oracle.com,2020:ecid/8576f44b797d6adfbe7b21e3718bf3b6"
+    }%  
+    ```
+    We are not not authorized to use this REST endpoint any longer.
 
-15. Take the token text we previously copied and replace <VALUE> in the curl command with that text. Then run the curl command using the OCI Cloud Shell:
+31. To get this REST API working again, we need to add **--header 'Authorization: Bearer VALUE'** to our cURL command. The **VALUE** is going to be the token text we saved off from a few steps back. (**NOTE: your URL hostname will be different than the below command**)
 
-    ````
-    > curl --location '\
-    https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556' \
-    --header 'Authorization: Bearer yuNINeg1uqHIivqDDgJnfQ' 
-    ````
+    We can add this to our cURL command as follows:
 
-16. We can see that we have been authenticated and are able to use the REST endpoint to retrieve the record.
+    ```
+    curl --location --request POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    --header 'Content-Type: application/json' \
+    --data-binary '{
+    "id": "a1",
+    "output": "" 
+    }'
+    ```    
 
-    ````
-    {"id":"hv70116556","time":"2018-05-04T22:32:54.650Z","latitude":19.3181667,"longitude":-154.9996667,"depth":5.81,
-    "mag":6.9,"magtype":"mw","nst":"63","gap":"210","dmin":"0.11","rms":"0.11","net":"hv","updated":"2020-08-15T02:55:22.135Z",
-    "place":"19km SSW of Leilani Estates, Hawaii","type":"earthquake","horizontalerror":"0.52","deptherror":"0.31",
-    "magerror":null,"magnst":"10","status":"reviewed","locationsource":"hv","magsource":"hv","links":[{"rel":"self",
-    "href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556"},{"rel":"edit",
-    "href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/hv70116556"},
-    {"rel":"describedby","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/metadata-catalog/may2018/item"},
-    {"rel":"collection","href":"https://myrestenabledtable-dcc.adb.us-ashburn-1.oraclecloudapps.com/ords/gary/may2018/"}]}
-    ````
+32. Now using the OCI Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
+
+    ```
+    curl --location --request POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    --header 'Content-Type: application/json' \
+    --data-binary '{
+    "id": "a1",
+    "output": ""
+    }'
+    ``` 
+
+    We now see that we do get a value back from the REST API
+    ```
+    {"output":8204}% 
+    ```
+33. We can also use this on our other REST API that takes in a value and returns a report. (**NOTE: your URL hostname will be different than the below command**)
+
+    The endpoint for that REST API was
+
+    ```
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/<VALUE>
+    ```
+
+34
 
 ## Conclusion
 
@@ -246,3 +266,30 @@ In this lab, you had an opportunity to get an introduction to REST services usin
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
 - **Last Updated By/Date** - February 2021
 - **Workshop Expiry Date** - February 2022
+
+
+tW-AM_cDQu0l8oAsh707vw
+
+curl \
+--user u0cCf0OmeK5bOLVdseMR7A..:LcLLuCTOTVckUu3dakuuJw.. \
+--data 'grant_type=client_credentials' \
+https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/oauth/token
+
+
+curl --location --request POST \
+'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+--header 'Content-Type: application/json' \
+--data-binary '{
+"id": "a1",
+"output": "" 
+}'
+
+curl --location --request POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
+'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+--header 'Content-Type: application/json' \
+--data-binary '{
+"id": "a1",
+"output": "" 
+}'
+
+curl --location --request GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1'
