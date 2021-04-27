@@ -1,6 +1,5 @@
 {
-  "workshoptitle": "IAM 11g to 12c In-Place Upgrade Workshop",
-  "help": "livelabs-help_us@oracle.com",
+  "workshoptitle": "Oracle IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
   "tutorials": [
     {
       "title": "Introduction",
@@ -23,18 +22,13 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Initialize Environment",
-      "description": "Lab to Initialize IAM 11g Baseline Environment",
+      "title": "Lab 4: Initialize Oracle IAM 11.1.2.3 Environment",
+      "description": "Lab to Initialize IAM 11.1.2.3 Baseline Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 5: Upgrade IAM 11g to 12c",
-      "filename": "../../upgrade/upgrade.md"
-    },
-    {
-      "title": "Need Help?",
-      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      "title": "Lab 5: Upgrade Oracle IAM 11.1.2.3 to 12.2.1.4",
+      "filename": "../../upgrade/upgradelcm.md"
     }
   ]
 }
