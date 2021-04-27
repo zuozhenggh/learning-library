@@ -27,8 +27,8 @@ Estimated Workshop Time: 30-45 minutes
 
 ### Prerequisites
 This lab assumes you have completed the following labs:
-* Lab: [Login to Oracle Cloud]()
-* Lab: [Provision an Autonomous Database]()
+* Lab: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab: [Provision an Autonomous Database](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md)
 
 # Developing RESTful Services in Autonomous Database
 

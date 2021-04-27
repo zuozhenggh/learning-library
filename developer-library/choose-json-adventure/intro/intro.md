@@ -8,7 +8,7 @@ You are in a meeting where your team is asked to create an application on a set 
 
 What do you do?
 
-## About JSON
+### About JSON
 
 JSON is a human-readable, self-describing format to represent data in a hierarchical format. This is best illustrated by an example:
 
@@ -32,7 +32,7 @@ JSON arrays and objects can be recursively nested so that the structure resemble
 JSON has no fixed schema, no upfront definition of key names or data types is required to work with JSON. This makes JSON very attractive to developers who can easily add make r application changes without having to maintain a matching relational schema (no more ALTER TABLE ADD COLUMN). For example, we could easily add a new key-value pair for 'language' or 'ratings'.  Another benefit of JSON is that it avoids normalization: look at the JSON array for "starring". How would that be modeled relationally? We would likely have used a separate table for it so that every 'movie' retrieval would require a join on multiple tables and every insertion of a new 'movie' object would require inserts into multiple tables. JSON is therefore also called 'denormalized' as it stores values together instead of normalizing them into separate tables/relations.
 
 
-## About JSON and the Oracle Database
+### About JSON and the Oracle Database
 
 Did you know that the Oracle Database fully supports schema-less application development using the JSON data model? In addition, in the same database, that developers can use SQL over the same data for analytics or reporting?
 
@@ -45,14 +45,10 @@ This workshop will provide a walkthrough on how the Oracle Database can not only
 -   Work with JSON in the Oracle Database as JSON documents
 -   Provide developer endpoints for relation or schemaless application development
 
-### Required Artifacts
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-
 ### Prerequisites
 This lab assumes you have completed the following labs:
-* Lab: [Login to Oracle Cloud]()
-* Lab: [Provision an Autonomous Database]() or have access to a 19c or greater Oracle Database
+* Lab: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab: [Provision an Autonomous Database](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md)
 
 
 # Choose your Own JSON Adventure: Relational or Document Store
@@ -66,10 +62,6 @@ In this lab you will work with JSON in the Oracle Database with the intent of ex
 ### **Step 3:** Load JSON into the database and work with relational tables
 
 ### **Step 4:** Load JSON into the database and work with JSON documents and collections
-
-### **Step 5:** Expose the JSON data for application development via a REST endpoint
-
-### **Step 6:** Extra Credit: Deploy a sample application and consume the REST endpoint
 
 ## Conclusion
  In this lab, you had an opportunity to work with JSON in the Oracle Database
