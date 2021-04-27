@@ -195,6 +195,6 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Charlie Berger & Siddesh Prabhu, Machine Learning, AI and Cognitive Analytics
+* **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics & Siddesh Ujjni, Staff Cloud Engineer, Analytics to Cloud
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management, April 2021
