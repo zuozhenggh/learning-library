@@ -159,7 +159,7 @@ Estimated Lab Time: 30-45 minutes
 2. We first need to stage the airportDelays.json file. Issue the following command in the OCI Cloud Shell:
 
     ```
-    curl -o airportDelays.json PAR_HERE
+    curl -o airportDelays.json https://objectstorage.us-ashburn-1.oraclecloud.com/p/rQEg_sXqFmCO8Swe5vVesi3-hmiCfLsY0Yc8mr_k0zdX2NWhhm34zrwhs0uvg8K-/n/c4u03/b/developer-library/o/airportDelays.json
     ```
 
 3. Now that we have the file staged, we can run the full cURL command to load the JSON into our collection. Use the OCI Cloud Shell to do this:
