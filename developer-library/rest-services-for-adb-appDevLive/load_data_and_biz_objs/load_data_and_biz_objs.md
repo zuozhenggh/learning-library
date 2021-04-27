@@ -61,7 +61,7 @@ curl --location --request POST \
 5. Time to get ready for the data load. To start, we need to download the csv file. Using the Cloud Shell, enter the following command:
 
     ````
-    <copy>curl -o 2M.csv PAR_URL_HERE</copy>
+    <copy>curl -o 2M.csv https://objectstorage.us-ashburn-1.oraclecloud.com/p/mkaVVqrFZ0ziKvP8zNUgIVgeDhC9AukEe-nRc5wbqMzJvWQ46x-ZgYLNDYqOrnGN/n/c4u03/b/developer-library/o/2M.csv</copy>
     ````
 
 6. Now that we have the file local, we can load it into the database. Remember that cURL command we saved just a bit ago? Time to alter a few commands in there and run it via the Cloud Shell. 
