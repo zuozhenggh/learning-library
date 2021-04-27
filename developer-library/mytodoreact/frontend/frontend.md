@@ -1,14 +1,20 @@
-## MyToDoReact version 1.0.
+# Frontend (ReactJS)
 
-Copyright (c) 2021 Oracle, Inc.
+## Introduction
 
-Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+In this lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastucture.
 
-# Part III -- Frontend (React JS)
+Estimated Lab Time: 15-minutes
 
-## **Summary**
+### Objectives
 
-In this ~15-minute Part III of the lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle CLOud Infrastucture.
+In this lab, you will:
+- Clone the workshop git repository on your laptop
+- Set the API Gateway endpoint
+- Run the ReactJS frontend code in Dev Mode then Build for Production
+- Host the production build on the Oracle Cloud's object storage
+
+### Understanding the ReactJS application
 
 The application is simple; that there is really no need to know React to understand the code.
 
@@ -26,19 +32,15 @@ The App component also maintains the following states:
 
 The index.css file contains all the styles for the application.
 
-### Objectives
+### Prerequisites
 
+1. This lab requires the completion of lab 1 and 2
 
-
-## **STEP 1**: Prerequisites
-
-1. You will be using the npm command, make sure it is installed
+2. You will be using the npm command, make sure it is installed
 
 ```
 <copy>npm --version</copy>
 ```
-
-2. Install Node
 
 - if not please install Node for your laptop, using the following link.  
   https://bit.ly/3evGlEo
@@ -51,7 +53,7 @@ The index.css file contains all the styles for the application.
   <copy>go version</copy>
   ```
 
-## **STEP 2**: Getting started
+## **STEP 1**: Configure API.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -94,9 +96,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   Example  
   const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
-- Save the modifoed API.js file
+- Save the modified API.js file
 
-## **STEP 3**: Run in Dev Mode then Build for Production
+## **STEP 2**: Run in Dev Mode then Build for Production
 
 1. In the project directory, run the app in the development mode <br />
 
@@ -126,7 +128,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## **STEP 4**: Hosting on the Oracle Cloud's object storage
+## **STEP 3**: Hosting on the Oracle Cloud's object storage
 
 1. Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
@@ -178,40 +180,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Congratulations for completing the entire lab!!
 
-## **Learn More**
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
 ## Acknowledgements
-* **Workshop by** - Kuassi Mensah, Dir. Product Management, Java Database Access
-* **Application by** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Original scripts by** - Paul Parkinson, Developer Evangelist, Microservices
 
-## Need Help?
-Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request.
+* **Author** -  - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Kuassi Mensah, Database Product Management,  April 2021

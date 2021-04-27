@@ -1,13 +1,24 @@
-## MyToDoReact version 1.0.
-Copyright (c) 2021 Oracle, Inc.
+# Backend (Java/Helidon)
 
-Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+## Introduction
 
-# Part II -- Backend (Java/Helidon)
+In this lab, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
+Estimated time: ~25-minutes
 
-## **Summary**
+### Objectives
 
-In this ~25-minute Part II if the lab, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway
+* Set values for environment variables
+* Build and deploy the Docker image of the application
+* Deploy the image on the Oracle Kubernetes Engine (OKE)
+* Describe the steps for Undeploying
+* Configure the API Gateway
+* Test the backend application
+
+### Prerequisites
+
+This lab requires the completion of lab 1 and the provision of the OCI components.
+
+### Understanding the Java/backend application
 
 As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements 5 REST APIs including:
 - 1) retrieving the current list of todo items
@@ -25,15 +36,6 @@ The backend is implemented using the following Java classes (under ./backend/src
 - ToDoListAppService.java: implements the Helidon service and exposes the REST APIs
 
 ![](images/Backend-APIs.png " ")
-
-### **Objectives**
-
-* Set values for environment variables
-* Build and deploy the Docker image of the application
-* Deploy the image on the Oracle Kubernetes Engine (OKE)
-* Describe the steps for Undeploying
-* Configure the API Gateway
-* Test the backend application
 
 
 ## **STEP 1**: Set values for workshop environment variables
@@ -197,12 +199,10 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
   It should display the Todo Item(s) in the TodoItem table. At least the row you have created in Part I.
 
-Congratulations, you have completed Part II; you may now proceed to the final part (i.e., Part III).
+Congratulations, you have completed Part II; you may now proceed to the final lab.
 
 ## Acknowledgements
-* **Workshop by** - Kuassi Mensah, Dir. Product Management, Java Database Access
-* **Application by** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Original scripts by** - Paul Parkinson, Developer Evangelist, Microservices
 
-## Need Help?
-Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request.
+* **Author** -  - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Kuassi Mensah, Database Product Management,  April 2021
