@@ -6,13 +6,13 @@ In this lab you are going to go through a series of steps for provisioning a **L
 
 SODA for NodeJS is part of the Oracle NodeJS driver, **node-oracledb**, and doesn't need any additional installation.
 
-Estimated Lab Time: 1 hour
+Estimated Lab Time: 50 minutes
 
 ### Objectives
 
 * Provision a Linux Instance in OCI and install the needed packages.
 * Build a basic NodeJS application that will make calls to the database.
-* Run & test the application.
+* Run and test the application.
 
 ### What Do You Need?
 * An IDE, such as **Visual Studio Code**.
