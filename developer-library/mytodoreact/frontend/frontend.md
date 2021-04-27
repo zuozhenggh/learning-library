@@ -36,74 +36,72 @@ The index.css file contains all the styles for the application.
 
 2. You will be using the npm command, make sure it is installed
 
-```
-<copy>npm --version</copy>
-```
+  ```
+  <copy>npm --version</copy>
+  ```
 
-- if not please install Node for your laptop, using the following link.  
-  https://bit.ly/3evGlEo
+  if not please install Node for your laptop, using the following
+  link: `https://bit.ly/3evGlEo`.
 
-3. The las also requires Go lang.
+3. The lab requires also Go lang.
 
-  "go version" -> go version go1.15.2 darwin/amd64
+  "go version" -> `go version go1.15.2 darwin/amd64`
 
   ```
   <copy>go version</copy>
   ```
-If no, please install Go (see https://golang.org/doc/)
+If not installed, please install Go (see https://golang.org/doc/)
 
 ## **STEP 1**: Configure API.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-1. clone the MyToDoReact git repository (we only need the front end in this lab)
-```
-<copy>git clone https://github.com/oracle/oci-react-samples/mtdrworkshop.git</copy>
-```
+1. clone again the git repository to a directory on your laptop (we only need the front end in this lab)
+  ```
+  <copy>git clone https://github.com/oracle/oci-react-samples/mtdrworkshop.git</copy>
+  ```
 
 2. cd frontend
 
 3. Run the following npm commands to install the required packages
 
-```
-<copy>npm install --save typescript</copy>
-```
-```
-<copy>npm install</copy>
-```
-- In case of errors, try the following command
+  ```
+  <copy>npm install --save typescript</copy>
+  ```
+  ```
+  <copy>npm install</copy>
+  ```
+  - In case of errors, try the following command
  ```
-<copy>npm audit fix --force</copy>
-```
-- Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
+ <copy>npm audit fix --force</copy>
+ ```
+  - Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
   If npm version < 6.14.x then install the latest Node using
    https://bit.ly/3evGlEo
 
 4. Update API_LIST in API.js
 
-- Make sure to be in frontend/src directory
+  - Make sure to be in frontend/src directory
  ```
  <copy>cd frontend/src</copy>
  ```
-- In the Cloud console, navigate to **Developer Services > API Management**
-- Click on your Gateway and go to Deployment
-- Copy the Endpoint
-![](images/Api-gtw-deploy.png " ")
-
-- Paste the endpoint as the value of API_LIST and append "/todolist"
+ - In the Cloud console, navigate to **Developer Services > API Management**
+ - Click on your Gateway and go to Deployment
+ - Copy the Endpoint
+ - Paste the endpoint as the value of API_LIST and append "/todolist"
 
   Example  
   const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
-- Save the modified API.js file
+  - Save the modified API.js file
 
 ## **STEP 2**: Run in Dev Mode then Build for Production
 
 1. In the project directory, run the app in the development mode <br />
 
-```
-<copy>npm start</copy>
-```
+  ```
+  <copy>npm start</copy>
+  ```
 
 2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -115,12 +113,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Issue "Ctrl-c" to cancel the developer mode executions
 
 - Execute npm run build
-```
-<copy>npm run build</copy>
-```
+  ```
+  <copy>npm run build</copy>
+  ```
 It correctly bundles React in production mode (into the build folder) and optimizes the build for the best performance.
 
-![](images/Run-build.png " ")
+    ![](images/Run-build.png " ")
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
@@ -132,7 +130,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 1. Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
 
-- Create the 'mtdrworkshop' bucket
+    - Create the 'mtdrworkshop' bucket
 
 2. Install the Staci utility for copying directories to OCI object storage
    bucket with folder hierarchies
@@ -164,18 +162,18 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 3. Upload a static build into the bucket, using the staci binary
 
 ```
-<copy>../staci/staci -source build -target mtdrworkshop</copy>
+<copy>./staci/staci -source build -target mtdrworkshop</copy>
 ```
 
 - The application is visible in the 'mtdrworkshop' bucket of your tenancy
 
 - Click on the index.html object and copy the URL of the index object
 
-![](images/bucket-index.png " ")
+  ![](images/bucket-index.png " ")
 
 - You may now run the application from Object store, using the URL of the index that you've copied above.
 
-![](images/MyToDo.png " ")
+  ![](images/MyToDo.png " ")
 
 Congratulations for completing the entire lab!!
 
