@@ -1,4 +1,5 @@
-# Create an APEX App to Make Sense of the Data
+# Lab 6: Create an APEX App to Make Sense of the Data
+
 ## Overview
 
 This lab will show you how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.

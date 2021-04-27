@@ -1,102 +1,133 @@
-# Data-centric microservices walkthrough with Helidon MP
+# Lab 2: Data-centric microservices walkthrough with Helidon MP
 
 ## Introduction
 
-This lab will show you how to deploy and run data-centric microservices highlighting use of different data types, data and transaction patterns, and various Helidon MP features.
-The lab will then show you metrics, health checks and probes, and tracing that have been enabled via Helidon annotations and configuration.
-
+This lab will show you how to deploy the microservices on your Kubernetes cluster, walk throught the functionality and explain how it works.
 
 ### Objectives
--   Create and bind OCI Service Broker to existing ATP instance
--   Set up Oracle Advanced Queuing in existing ATP instances
+
+  -   Deploy and access the microservices
+  -   Learn how they work
 
 ### What Do You Need?
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* OKE cluster and the ATP databases created
-* Microservices code from GitHub built and deployed
+* The OKE cluster and the ATP databases that you created in Lab 1
 
+## **STEP 1**: Understand shortcut commands and development process
 
+A number of shortcut commands are provided in order to analyze and debug the workshop kubernetes environment including the following:
 
-## **STEP 1**: Deploy GrabDish store services
+`msdataworkshop` - Lists all of the kubernetes resources (deployments, pods, services, secrets) involved in the workshop
 
-1. After you have successfully set up the databases, you can now test the
-    “GrabDish” Food Order application. You will interact with several
-    different data types, check the event-driven communication, saga, event-sourcing
-    and Command Query Responsibility Segregation via order and inventory
-    services. Go ahead and deploy the related order, inventory and supplier
-    Helidon services. The Food Order application consists of the following
-    tables shown in the ER diagram:
+`describepod` - Gives information on a given pod and can use abbreviated names for arguments, such as `describepod admin` or `describepod order`
 
-   ![](images/a0f7c519ae73acfed3a5e47dfc74b324.png " ")
+`logpod` - Provides the logs for a given pod/container and can use abbreviated names for arguments, such as `logpod admin` or `logpod order`
 
-    The Food Order application consists of a mock Mobile App (Frontend Helidon
-    microservice) that places and shows orders via REST calls to the order-helidon
-    microservice. Managing inventory is done with calls to the
-    supplier-helidon microservice.  
-    When an order is placed, the order service inserts the order in JSON format and in the same local transaction sends an `orderplaced` message using AQ JMS.
-    The inventory service dequeues this message, validates and adjusts inventory, and enqueues a message stating the inventory location for the item ordered or an `inventorydoesnotexist` status if there is insufficient inventory.
-    This dequeue, database operation, and enqueue are done within the same local transaction.
-    Finally, the order service dequeues the inventory status message for the order and returns the resultant order success or failure to the frontend service.
+`deletepod` - Deletes a given pod/container and can use abbreviated names for arguments, such as `deletepod admin` or `deletepod order`
 
-    This is shown in the below architecture diagram.
+As the deployments in the workshop are configured with `imagePullPolicy: Always` , once you have finished the workshop, you can develop and test changes to a microservice using the following sequence...
+    
+    1. Modify microservice source
+    2. Run `./build.sh` to build and push the newly modified microservice image to the repository
+    3. Run `deletepod` (eg `deletepod admin`, `deletepod order`, etc.) to delete the old pod and start a new pod with the new image.
+    4. Verify changes.
+    
+If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
-   ![](images/grubdash-app-arch.png " ")
+## **STEP 2**: Deploy and access FrontEnd UI microservice
 
-2. Open the Cloud Shell and go to the order folder, using the following command.
+1.  Run the deploy script.  This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon</copy>
+    <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
     ```
 
-   ![](images/38c28676009bd795b82d21e8ba640224.png " ")
+   ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
 
-3. Deploy it.
-
-    ```
-    <copy>./deploy.sh</copy>
-    ```
-
-   ![](images/fa8d34335bbf7bd8b98a2f210580135d.png " ")
-
-4. Go ahead and execute the same steps for deploying the inventory
-    Helidon service, using the following command.
+2.  Once successfully created, check that the frontend pod is running:
 
     ```
-
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon  ; ./deploy.sh</copy>
-
+    <copy>kubectl get pods --all-namespaces</copy>
     ```
 
-   ![](images/2ee20f868b1d740d8ce7d3a7ec37fc03.png " ")
+  ![](images/bf1ec14ebd4cb789fca7f77bb2d4b2d3.png " ")
 
-   Once the image has been deployed in a pod, you should see the following message.
+  Alternatively, you can execute the `pods` shortcut command:
 
-   ![](images/d6bf26644dfc30c29ef27d64d4c5c5c9.png " ")
+  ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
-5. Use the same method to deploy the supplier Helidon service. Use
-    the following command.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/supplier-helidon-se ; ./deploy.sh</copy>
-    ```
-
-   ![](images/3e833f33e529bdd714c5e6b94b6dfb94.png " ")
-
-6. You can check that all images have been successfully deployed in pods by executing the following command.
+3. Check that the load balancer service is running, and write down the external IP
+    address.
 
     ```
-    <copy>pods</copy>
+    <copy>kubectl get services --all-namespaces</copy>
     ```
 
-   ![](images/5fad32d4c759a78653a31f68cffedfac.png " ")
+  ![](images/frontendservicekubectloutput.png " ")
 
-7. The services are ready, and you can proceed to test the application
-    mechanisms.
+  Alternatively, you can execute the `services` shortcut command.
 
+  ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
+4. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
 
-## **STEP 2**: Verify order and inventory activity of GrabDish store
+  `https://<EXTERNAL-IP>`
+
+  Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
+  
+  You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the one you entered in Lab 1.
+  
+  ![](images/frontendauthlogin.png " ")
+  
+  You should then see the Front End home page. You've now deployed and accessed your first microservice of the lab!
+  
+  Note that links on Front End will not work yet as they access microservices that will be created and deployed in subsequent labs.
+
+  We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
+  
+  ![](images/frontendhome.png " ")
+
+## **STEP 3**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
+You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
+
+1.  First, let’s analyze the Kubernetes deployment YAML file: `admin-helidon-deployment.yaml`.
+
+    ```
+    <copy>cat $GRABDISH_HOME/admin-helidon/admin-helidon-deployment.yaml</copy>
+    ```
+
+    The volumes are set up and credentials are brought from each of the bindings
+    (inventory and order). The credential files in the secret are base64 encoded
+    twice and hence they need to be decoded for the program to use them, which
+    is what the `initContainer` takes care. Once done, they will be mounted for
+    access from the container `helidonatp`. The container also has the DB
+    connection information such as the JDBC URL, DB credentials and Wallet,
+    created in the previous step.
+
+2.  Let’s analyze the `microprofile-config.properties` file.
+
+    ```
+    <copy>cat $GRABDISH_HOME/admin-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
+    ```
+
+    This file defines the `microprofile` standard. It also has the definition of
+    the data sources that will be injected. You will be using the universal
+    connection pool which takes the JDBC URL and DB credentials to connect and
+    inject the datasource. The file has default values which will be overwritten
+    with the values specific for our Kubernetes deployment.
+
+3.  Let’s also look at the microservice source file `ATPAQAdminResource.java`.
+
+    ```
+    <copy>cat $GRABDISH_HOME/admin-helidon/src/main/java/oracle/db/microservices/ATPAQAdminResource.java</copy>
+    ```
+
+    Look for the inject portion. The `@Inject` will have the two data sources
+    under `@Named` as “orderpdb” and “inventorypdb” which were mentioned in the
+    `microprofile-config.properties` file.
+
+## **STEP 4**: Verify order and inventory activity of GrabDish store
 
 1.   Open the frontend microservices home page from the previous lab.
   If you need the URL again, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
@@ -163,7 +194,7 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
 You have successfully configured the databases with the necessary users, tables and message propagation across the two ATP instances. You may proceed to the next step.
 
-## **STEP 3**: Verify spatial
+## **STEP 5**: Verify spatial
 
 1. Click **Spatial** on the **Transactional** tab 
 
@@ -190,9 +221,9 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
 This web component allows to simply integrate mapping into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
 
-## **STEP 4**: Verify metrics
+## **STEP 6**: Verify metrics
 
-1. Notice @Timed and @Counted annotations on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
+1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
    ![](images/OrderResourceAnnotations.png " ")
 
@@ -205,18 +236,18 @@ This web component allows to simply integrate mapping into Oracle JET and Oracle
 
    ![](images/metrics.png " ")
 
-## **STEP 5**: Verify health
+## **STEP 7**: Verify health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
 
    ![](images/healthliveliness.png " ")
 
-2. Notice health check class at `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
+2. Notice health check class at `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
 
     ![](images/c6b4bf43b0ed4b9b4e67618b31560041.png " ")
 
-3. Notice liveness probe specified in `$MSDATAWORKSHOP_LOCATION/order-helidon/order-helidon-deployment.yaml` The `livenessProbe` can be set up with different criteria, such as reading from a file or an HTTP GET request. In this example the OKE health probe will use HTTP GET to check the /health/live and /health/ready addresses every 3 seconds, to see the liveness and readiness of the service.
+3. Notice liveness probe specified in `$GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml` The `livenessProbe` can be set up with different criteria, such as reading from a file or an HTTP GET request. In this example the OKE health probe will use HTTP GET to check the /health/live and /health/ready addresses every 3 seconds, to see the liveness and readiness of the service.
 
    ![](images/livenessprobeinyaml.png " ")
 
@@ -237,29 +268,9 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/lastcontainerstartuptime2.png " ")
 
-## **STEP 6**: Verify tracing
-
-1. Notice @Traced annotations on `placeOrder` method of `$MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java` and `placeOrder` method of `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
-   Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
-
-   ![](images/ordertracingsrc.png " ")
-
-2. Place an order if one was not already created successfully in STEP 1 of this Lab.
-
-3. Click **Show Tracing** to open the Jaeger UI. Select `frontend.msdataworkshop` from the `Service` dropdown menu and click **Find Traces**.
-
-    ![](images/jaegertrace.png " ")
-
-   Select a trace with a large number of spans and drill down on the various spans of the trace and associated information. In this case we see placeOrder order, saga, etc. information in logs, tags, and baggage.
-
-   *If it has been more than an hour since the trace you are looking for, select a an appropriate value for Lookback and click Find Traces.*
-
-    ![](images/jaegertracedetail.png " ")
-
-
-
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+               Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern

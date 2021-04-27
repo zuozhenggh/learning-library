@@ -12,7 +12,7 @@ You will create a highly scalable application that relies on Oracle Container En
 
 ### Let's Get Started!
 
-Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Provision a DevCS Instance](?lab=lab-1-setup-oci,-oke,-atp-cloud-shell).
+Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Setup](?lab=1-setup,-oke,-atp-cloud-shell).
 
 Access a complete walkthrough video of this lab [here](https://tinyurl.com/helidonoracledb-msdataworkshop). 
 Note that a few minor steps (such as the creation of OCI Vault secrets, etc.) have changed from this video and the documentation should be followed. 
@@ -29,7 +29,7 @@ If you need any help please join the databasehome.slack.com (#microservices) cha
 * [https://developer.oracle.com/](https://developer.oracle.com/)
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon, Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
