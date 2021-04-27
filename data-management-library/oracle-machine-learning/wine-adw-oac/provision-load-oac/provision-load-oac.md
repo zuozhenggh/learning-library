@@ -6,6 +6,12 @@ This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC
 
 Estimated Lab Time: 15 minutes
 
+Quick walk through on how to provision and register an Oracle Machine Learning model into Oracle Analytics Cloud.
+
+[](youtube:Jv8070F5Uw8)
+
+*Note: The OCI Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
+
 ### Objectives
 
 In this lab, you will:
