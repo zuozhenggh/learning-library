@@ -142,7 +142,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/delete-auth-token.png " ")
 
-5. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, OCI Registry Repositories and an OCI Object Storage wallet.  You can monitor it's progress by duplicting the current browser window.  It is best not to use the original browser tab as this may interupt the setup.
+5. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
+
+6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
+
+7. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, OCI Registry Repositories and an OCI Object Storage wallet.  You can monitor it's progress by duplicting the current browser window.  It is best not to use the original browser tab as this may interupt the setup.
 
   ![](images/duplicate-browser-tab.png " ")
 
@@ -150,21 +154,17 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/select-compartment.png " ")
 
-6. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
-
-7. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
-
 8. When the setup.sh script completes it will provide a summary of the setup status.  If everything has completed you will see the following status.
 
   ![](images/all-done.png " ")
 
-   If any of the setup jobs are still running you can monitor their progress with 
+   If any of the setup jobs are still running you can monitor their progress with the following command.
 
-     ```
-     <copy>
-     ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
-     </copy>
-     ```
+    ```
+    <copy>
+    ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
+    </copy>
+    ```
 
    Their log files are located in the $GRABDISH_LOG directory.
 
@@ -174,7 +174,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-   Once the setup has completed you are ready to move on to Lab 2
+   Once the setup has completed you are ready to move on to Lab 2.  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are not required until Lab 3 and so you can continue with Lab 2 while the builds run in the background.
 
 ## Acknowledgements
 
