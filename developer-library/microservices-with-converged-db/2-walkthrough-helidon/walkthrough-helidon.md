@@ -181,7 +181,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
 4. In order to observe how OKE will manage the pods, the microservice has been created with the possibility to set up the liveliness to “false”. Click **Get Last Container Start Time** and note the time the container started.
 
-   ![](images/health-get-last-started.png " ")
+   ![](images/health-get-last-start.png " ")
 
 5. Click **Set Liveness to False** . This will cause the Helidon Health Check to report false for liveness which will result in OKE restarting the pod/microservice
 
@@ -198,7 +198,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
 ## **STEP 7**: Understand Passing Database Credentials to a Microservice
 
-In order to connect to an ATP database you need the following four things:
+In order to connect to an ATP database you need the following four pieces of information:
    - Database user name
    - Database user password
    - Database Wallet
@@ -206,9 +206,9 @@ In order to connect to an ATP database you need the following four things:
    
 Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.yaml` to see how this is done.
 
-    ```
-    <copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
-    ```
+```
+<copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
+```
 
 1. The database user name is passed as an environment variable:
 

@@ -13,17 +13,17 @@ In this 20-minute lab we will provision and setup the resources in your tenancy 
 
 Run the following command to delete the resources created in you tenancy.  It will delete everything except the compartment.  It will take several minutes to run.  The script will delete the Object Storage bucket, OCI Registry repositories, OKE cluster, listeners, VCN and databases.
 
-    ```
-    <copy>source destroy.sh</copy>
-    ```
+```
+<copy>source destroy.sh</copy>
+```
 
 ## **STEP 2**: Delete the Directory
 
 Delete the directory in your cloud shell where you installed the workshop.
 
-    ```
-    <copy>rm -rf <directory name></copy>
-    ```
+```
+rm -rf <directory name>
+```
 
 ## **STEP 3**: Delete the Compartment
 
