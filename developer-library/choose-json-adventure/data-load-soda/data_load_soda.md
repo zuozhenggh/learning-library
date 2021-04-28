@@ -1,14 +1,14 @@
 # Choose your Own JSON Adventure: Relational or Document Store: JSON Documents and SODA
 
-## Overview of SODA
-
-Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents (in particular JSON) in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database. 
-
 ## Introduction
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Database and load JSON data into a collection. You will then work with this data to understand how it is accessed and stored.
 
 Estimated Lab Time: 30-45 minutes
+
+### Overview of SODA
+
+Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents (in particular JSON) in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database. 
 
 ### Objectives
 
@@ -22,7 +22,7 @@ Estimated Lab Time: 30-45 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-### **STEP 1: Creating a Collection**
+## **STEP 1:** Creating a Collection
 
 **If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -48,7 +48,7 @@ Estimated Lab Time: 30-45 minutes
 
     ![left click the Create button](./images/json-5.png)
 
-#### **Create a Collection using the SODA for REST APIs**
+### **Create a Collection using the SODA for REST APIs**
 
 1. We can create a collection with the **SODA for REST APIs** as well. To do this, open an **OCI Cloud Shell**. We can do this by clicking the Cloud Shell icon in the upper right of the OCI web console.
 
@@ -119,7 +119,7 @@ Estimated Lab Time: 30-45 minutes
     Cache-Control: private,must-revalidate,max-age=0
     ```
 
-### **STEP 2: Loading JSON Data into a Collection**
+## **STEP 2:** Loading JSON Data into a Collection
 
 1. The SODA APIs will be used to load the records into the collection. We will build the cURL command up similar as we did in the previous step. We start with again the user/password combination. **REMEMBER to use your password in place of PASSWORD**
 
@@ -206,13 +206,13 @@ Estimated Lab Time: 30-45 minutes
 
     indicating that all 4408 JSON documents have been loaded.
 
-### **STEP 3**: Working with JSON Data in a Document Store: QBEs
+## **STEP 3**: Working with JSON Data in a Document Store: QBEs
 
 A filter specification is a pattern expressed in JSON. You use it to select, from a collection, the JSON documents whose content matches it, meaning that the condition expressed by the pattern evaluates to true for the content of (only) those documents.
 
 A filter specification is also called a query-by-example (QBE), or simply a filter.
 
-#### **Simple Filtering**
+### **Simple Filtering**
 
 1. Let's start working with our documents in the airportdelayscollection collection. We will be using the **JSON worksheet** in Database Actions. In the worksheet, we have the main canvas area; similar to what we would see with the SQL Worksheet or SQL Developer.
 
@@ -268,7 +268,7 @@ A filter specification is also called a query-by-example (QBE), or simply a filt
     ````
  
 
-#### **QBE Comparison Operators**
+### **QBE Comparison Operators**
 
 A query-by-example (QBE) comparison operator tests whether a given JSON object field satisfies some conditions.
 
@@ -398,7 +398,7 @@ $startsWith — whether a string field value starts with a given substring
     Copy and paste this into the JSON worksheet to try it out.
 
     ````
-    </copy>
+    <copy>
     {"Statistics.Flights.Cancelled": {"$gt": 400},
     "AirportCode":{"$not" : {"$eq" : "DCA"}}
     }
@@ -421,7 +421,7 @@ $startsWith — whether a string field value starts with a given substring
     $and is implicitly used where the commas are. We are saying get back documents where Airport Code is DCA **$and** Flights Cancled are greater than 400 **$and** the Year is 2011. We can explicity use it as we see in the following. Copy and paste it into your JSON worksheet and run the QBE.
 
     ````
-    </copy>
+    <copy>
     { "$and" : [
         {"Statistics.Flights.Cancelled": {"$gt": 400}},
         {"Time.Year": 2010 },
@@ -433,7 +433,7 @@ $startsWith — whether a string field value starts with a given substring
 2. Next up is **$or**. Just as it does with SQL or most any programming language, it matches results where one or the other values in the or condition exists. In this example, we are looking for documents where the Airport Code is DCA, implicitly using and for the Year being 2012 and using the **$or** for being in month 6 (June) or month 7 (July). Copy and paste it into your JSON worksheet and run the QBE.
 
     ````
-    </copy>
+    <copy>
     {"AirportCode": "DCA",
     "Time.Year": 2012,
     "$or" : [{"Time.Month": {"$eq": 6}}, {"Time.Month": {"$eq": 7}}]
@@ -442,16 +442,16 @@ $startsWith — whether a string field value starts with a given substring
     ````
 
 
-{"Statistics.Flights.Cancelled": {"$gt": 400},
-"Time.Year": 2010,
-"AirportCode":{"$not" : {"$eq" : "DCA"}},
-"$or" : [{"Time.Month": {"$eq": 6}}, {"Time.Month": {"$eq": 7}}]
-}
+    {"Statistics.Flights.Cancelled": {"$gt": 400},
+    "Time.Year": 2010,
+    "AirportCode":{"$not" : {"$eq" : "DCA"}},
+    "$or" : [{"Time.Month": {"$eq": 6}}, {"Time.Month": {"$eq": 7}}]
+    }
 
 3. Lastly, we can take a look at **$nor**. Acting like an opposite of **$or**, using it will exclude records that match the condition. We can use the example we used for **$or** but change it to **$nor**. Now, instead of returning 2 records, it will return 10 and exclude month 6 (June) or month 7 (July). Copy and paste it into your JSON worksheet and run the QBE.
 
     ````
-    </copy>
+    <copy>
     {"AirportCode": "DCA",
     "Time.Year": 2012,
     "$nor" : [{"Time.Month": {"$eq": 6}}, {"Time.Month": {"$eq": 7}}]
@@ -525,7 +525,7 @@ $startsWith — whether a string field value starts with a given substring
 5. Using the JSON worksheet, we can query for this document and see the change right away. Copy and paste it into your JSON worksheet and run the QBE.
 
     ````
-    </copy>
+    <copy>
     {"id": 1}
     </copy>
     ````
@@ -583,7 +583,7 @@ $startsWith — whether a string field value starts with a given substring
 5. We can now use the **$contains** operator in our QBEs. Lets try the following. In the updating section of this lab, we added Oracle Airlines to a document. We can now directly find this record by just using the contains operator on the Statistics.Carriers.Names node. Copy and paste it into your JSON worksheet and run the QBE.
 
     ````
-    </copy>
+    <copy>
     {"Statistics.Carriers.Names": {"$contains": "Oracle"}}
     </copy>
     ````
@@ -593,7 +593,7 @@ $startsWith — whether a string field value starts with a given substring
 1. The JSON worksheet has some built-in functions we can use with one being the **$orderby** clause. This clause sorts our results based on a path we provide the QBE. Lets start with a QBE we used previously. Copy and paste it into your JSON worksheet and run the QBE.
 
     ````
-    </copy>
+    <copy>
     {"$and" : [{"Statistics.Flights.Cancelled": {"$gt": 400}}, {"Time.Year": 2010 }, {"Time.Month": 5}]}
     </copy>
     ````
@@ -648,5 +648,4 @@ In this lab, you loaded JSON into a collection and worked with that collection u
 ## Acknowledgements
 
 - **Authors** - Jeff Smith, Beda Hammerschmidt and Brian Spendolini
-- **Last Updated By/Date** - April 2021
-- **Workshop Expiry Date** - April 2022
+- **Last Updated By/Date** - Anoosha Pilli, April 2021

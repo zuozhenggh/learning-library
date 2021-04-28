@@ -50,26 +50,21 @@ This lab assumes you have completed the following labs:
 * Lab: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
 * Lab: [Provision an Autonomous Database](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md)
 
-
-# Choose your Own JSON Adventure: Relational or Document Store
+## Choose your Own JSON Adventure: Relational or Document Store
 
 In this lab you will work with JSON in the Oracle Database with the intent of exposing the data for application development.
 
-### **Step 1:** Connect to your Database using SQL Developer Web
+### **STEP 1:** Connect to your Database using SQL Developer Web
 
-### **Step 2:** Create a user for working with JSON in the Oracle Database
+### **STEP 2:** Create a user for working with JSON in the Oracle Database
 
-### **Step 3:** Load JSON into the database and work with relational tables
+### **STEP 3:** Load JSON into the database and work with relational tables
 
-### **Step 4:** Load JSON into the database and work with JSON documents and collections
+### **STEP 4:** Load JSON into the database and work with JSON documents and collections
 
-### **Step 5:** Exposing the Data for Applications
-
-## Conclusion
- In this lab, you had an opportunity to work with JSON in the Oracle Database
+### **STEP 5:** Exposing the Data for Applications
 
 ## Acknowledgements
 
 - **Authors** - Jeff Smith, Beda Hammerschmidt and Brian Spendolini
-- **Last Updated By/Date** - April 2021
-- **Workshop Expiry Date** - April 2022
+- **Last Updated By/Date** - Anoosha Pilli, April 2021
