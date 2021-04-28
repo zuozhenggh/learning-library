@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the steps to migrate the 'on-premises' application database to the database provisioned on OCI using Datapump.
+This lab walks you through the steps to migrate the on-premises application database to the database provisioned on OCI using DataPump.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 10 minutes.
 
 ### About Product/Technology
 
-- DataPump is a tool that is part of the oracle Database set of utilities.
+- DataPump is a tool that is part of the Oracle database set of utilities.
 - DataPump export function creates a DDL + data dump of the user schema.
 - DataPump import function imports the data into the database.
 
@@ -18,24 +18,24 @@ In this workshop we will be using wrapper scripts to export, move the data to th
 
 In this lab you will:
 
-- Get shell access to the 'on-premises' database
-- Use a datapump script to export the database schema to migrate
-- Edit the datapump import script with the information collected in the DB provisioning lab
-- Run a datapump import script to migrate the database schema to OCI
+- Get shell access to the on-premises database.
+- Use a DataPump script to export the database schema to migrate.
+- Edit the DataPump import script with the information collected in the database provisioning lab.
+- Run a DataPump import script to migrate the database schema to OCI.
 
 ### Prerequisites
 
 To run this lab you need:
 
-- To have provisioned the on-premises demo environment that includes the source database to migrate
-- To have provisioned the target database on OCI
-- To have gathered information about the passthrough-server to the DB, and the DB node IP and domain name which is part of the connection string.
+- To have provisioned the on-premises demo environment that includes the source database to migrate.
+- To have provisioned the target database on OCI.
+- To have gathered information about the passthrough-server to the database, and the database node IP and domain name which is part of the connection string.
 
-## **STEP 1:** Get a shell inside the 'on-premises' database instance
+## **STEP 1:** Get a Shell Inside the On-Premises Database Instance
 
 ### If you used the Docker environment:
 
-1. You should already be inside the DB container from the SSH key creation step. If not, use: 
+1. You should already be inside the database container from the SSH key creation step. If not, use:
 
       ```
       <copy>
@@ -52,14 +52,16 @@ To run this lab you need:
       ```
 
 
-### If you used the Workshop image:
+### If you used the workshop image:
 
 1. You should already be logged into the instance and switched to the `oracle` user. If not use:
 
       ```bash
       ssh opc@<public-ip>
       ```
-      then 
+      
+      Then:
+      
       ```bash
       sudo su - oracle
       ```
@@ -74,7 +76,7 @@ To run this lab you need:
 
       The script itself is commented to explain what it does.
 
-      It sets up the directory to backup to, and uses datapump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
+      It sets up the directory to backup to, and uses DataPump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
 
 <details><summary>View the <code>datapump_export.sh</code> script</summary>
 
@@ -89,10 +91,10 @@ rm -rf ~/datapump/export && mkdir -p ~/datapump/export
 # drop directory if it exists
 echo "DROP DIRECTORY ${EXPORT_DB_DIRNAME};" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
 
-# create a directory object in the DB for export with datapump, pointing to the folder created above
+# create a directory object in the DB for export with DataPump, pointing to the folder created above
 echo "CREATE DIRECTORY ${EXPORT_DB_DIRNAME} AS '/home/oracle/datapump/export/';" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
 
-# export the schema 'RIDERS' with datapump, which is our user schema with the Tour de France Riders data
+# export the schema 'RIDERS' with DataPump, which is our user schema with the Tour de France Riders data
 expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDERS DIRECTORY=${EXPORT_DB_DIRNAME}
 ```
 </details>
@@ -107,7 +109,8 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
       </copy>
       ```
 
-      The output will look like
+      The output will look like:
+
         ![](./images/migrate-db-1.png)
 
 
@@ -126,38 +129,27 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
       </copy>
       ```
 
-2. Enter the `BASTION_IP`
+2. Enter the `BASTION_IP`.
 
-      <if type="oci">
-     If you provisioned in a *Private Subnet* the `BASTION_IP` is the **public IP** of the Bastion Instance.
-     
-     If you provisioned in a *Public Subnet* the `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
+      The `BASTION_IP` is the **public IP** of the Bastion Instance.
 
-     Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**
-
-       ![](./images/migrate-db-2.png)
-      </if>
-      <if type="oke">
-      The `BASTION_IP` is the **public IP** of the Bastion Instance
-      </if>
-
-3. Enter the `TARGET_DB_HOST` **private IP address**
+3. Enter the `TARGET_DB_HOST` **private IP address**.
  
-     This IP address was gathered from the Database System details, under **Database System -> details -> Nodes**
+     This IP address was gathered from the Database System details, under **Database System -> details -> Nodes**.
 
        ![](./images/provision-db-26-nodeip.png)
 
 
-4. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. 
+4. Enter the `TARGET_DB_DOMAIN` name, from the database connection string.
 
       If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
-      ![](./images/provision-db-27-connection2.png =70%x*)
+      ![](./images/provision-db-27-connection2.png)
 
 
-## **STEP 4:** Import the data into the target database on OCI
+## **STEP 4:** Import the Data into the Target Database
 
-1. Run the `datapump_import.sh` script you edited at the previous step
+1. Run the `datapump_import.sh` script you edited at the previous step:
 
       ```bash
       <copy>
@@ -169,11 +161,11 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
 The import script runs in 4 phases:
 
-- It copies the files over to the OCI DB node
-- then runs the `impdp` import command once.
+- It copies the files over to the OCI database node.
+- It runs the `impdp` import command once.
 You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace.
-- the script then edits the `RIDERS` user tablespace quota
-- and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
+- The script edits the `RIDERS` user tablespace quota.
+- And re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
 The database is now migrated to OCI.
 
