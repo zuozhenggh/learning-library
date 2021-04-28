@@ -154,11 +154,9 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/select-compartment.png " ")
 
-8. When the setup.sh script completes it will provide a summary of the setup status.  If everything has completed you will see the following status.
+8. Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message "SETUP_VERIFIED completed".
 
-  ![](images/all-done.png " ")
-
-   If any of the setup jobs are still running you can monitor their progress with the following command.
+   If any of the background setup jobs are still running you can monitor their progress with the following command.
 
     ```
     <copy>
@@ -174,7 +172,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-   Once the setup has completed you are ready to move on to Lab 2.  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds run in the background.
+   Once the setup has completed you are ready to move on to Lab 2.  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 ## Acknowledgements
 
