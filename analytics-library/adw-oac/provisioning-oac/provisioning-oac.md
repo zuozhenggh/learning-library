@@ -1,7 +1,5 @@
 # Provisioning your Oracle Analytics Cloud (OAC) instance
 
-![Oracle Analytics Cloud](./images/oac_banner.png)
-
 ## Introduction
 
 This section describes the process of deploying **Oracle Analytics Cloud** instances on Oracle Cloud Infrastructure Gen 2, which is the default for newly provisioned accounts in **EMEA** and **US**.
@@ -52,11 +50,11 @@ in the top right hand side of your screen. If your username is shown as:
 
     [More information about federated users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
 
-2. Return to the *Home Console Page* and navigate to **Analytics & AI** section and then **Analytics Cloud**.
+2. Return to the **Home Console Page** and navigate to **Analytics & AI** section and then **Analytics Cloud**.
 
     ![Oracle Analytics Console](./images/lab200_5_2.png)
 
-    > **Note**: You must be connected as a **Single Sign On** (**Federated** user) user to a tenancy, which has available cloud credits to see this menu item. Local OCI users are not able to do this.
+    > **Note**: You must be connected as a **Single Sign On** (**Federated user**) user to a tenancy, which has available cloud credits to see this menu item. Local OCI users are not able to do this.
 
 3. Select **Create Instance**.
 
@@ -80,18 +78,16 @@ in the top right hand side of your screen. If your username is shown as:
 
 5. On the **Confirmation** screen, select **Create**.
 
-    The Analytics instance page will be displayed with a status of ***CREATING***.
+    The Analytics instance page will be displayed with a status of **CREATING**.
 
     ![OAC Instance Creating](./images/lab200_7.png)
 
     ***Reminder***: Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
-6. The Analytics instance page will be displayed with a status of ***ACTIVE***.
+6. The Analytics instance page will be displayed with a status of **ACTIVE**.
 
     ![OAC Instance Active](./images/lab200_8.png)
 
-
-*You can proceed to the next lab…*
 
 ## **Acknowledgements**
 
