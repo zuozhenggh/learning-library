@@ -33,7 +33,7 @@ Estimated Lab Time: 10 minutes
 
     Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. 
     
-    In the right column of options, find the **Quota on tablespace DATA** dropdown select list. Choose *Unlimited** for this lab.
+    In the right column of options, find the **Quota on tablespace DATA** dropdown select list. Choose **Unlimited** for this lab.
     
     Your panel should look similar to the following image:
 
