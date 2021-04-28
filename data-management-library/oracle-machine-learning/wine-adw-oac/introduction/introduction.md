@@ -45,9 +45,9 @@ In this lab, you will:
 
 <if type="livelabs">
 
-## **Step 1:** Launch the workshop
+## **STEP 1:** Launch the workshop
 
-*Note: it takes approximately 20 minutes to create your workshop environment.*
+*Note: It takes approximately 20 minutes to create your workshop environment.*
 
 1. After you receive the e-mail stating that your environment is ready, go back to the My Reservations page and click **Launch Workshop**.
 
@@ -67,7 +67,7 @@ In this lab, you will:
 
 5. Click on the menu icon and then select Autonomous Data Warehouse from the menu.
 
-    ![](images/open-adw.png)
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 6. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
 

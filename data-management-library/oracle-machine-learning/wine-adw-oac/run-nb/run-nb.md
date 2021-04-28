@@ -6,6 +6,12 @@ Oracle Machine Learning notebook Apache Zeppelin comes with your Autonomous Data
 
 Estimated Lab Time: 15 minutes
 
+Quick walk through on how to import and run the Machine Learning notebook.
+
+[](youtube:qx2S7Eyuuec)
+
+*Note: The OCI Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
+
 ### About Product/Technology
 
 The business problem defined here is to find a good wine that is less than 30 dollars using Oracle Machine Learning models to predict a wine's score.
@@ -35,7 +41,7 @@ In this lab, you will:
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your Autonomous Database instance.
 
-    ![](./images/choose-adb.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![](./images/choose-adb-adw.png " ")
 
@@ -247,7 +253,7 @@ Now that we have built a machine learning model, let's evaluate the model.
 
 2. Here is the result of the data mining model we just created with the TARGET\_VALUE, ATTRIBUTE\_NAME, COEFFICIENT, REVERSED\_COEFFICIENT.  
 
-    You may be wondering where DM$VLWINE\_CLASS\_MODEL\_SVM came from. DM$VLmodel\_name is Oracle Machine Learning's Model Detail View for Support Vector Machine which describes linear coefficient views. To learn more, click [this link](https://docs.oracle.com/en/database/oracle/oracle-database/18/dmprg/model-detail-views.html#GUID-3B46FDE8-DA4F-4E5C-80E1-F984942E496D).
+    You may be wondering where DM$VLWINE\_CLASS\_MODEL\_SVM came from. DM$VLmodel\_name is Oracle Machine Learning's Model Detail View for Support Vector Machine which describes linear coefficient views. To learn more, click [this link](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmprg/model-detail-views.html#GUID-E40F3A3A-0158-45B4-8FD9-ADF6CA3FB9A6).
 
     ![](./images/ml-model-output.png " ")
 
@@ -303,6 +309,6 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - Charlie Berger & Dhvani Sheth, Machine Learning, AI and Cognitive Analytics
+* **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics & Dhvani Sheth, Senior Cloud Engineer, Emerging Cloud Solution
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management, April 2021
