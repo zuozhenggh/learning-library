@@ -43,7 +43,7 @@ This lab will require the following -
 
 ## **Step 3:** Working with Essbase
 
-During our workshop we will help a fictitious company Dynamic Corporation to perform financial analysis. Dynamic Corp. is a high-tech manufacturer of hard disk drives. It is headquartered in California, Bay Area. Dynamic Corp. has its operations spread across multiple regions. Various departments within Dynamic Corp. performs financial analysis.
+During our workshop we will help a fictitious company Dynamic Corporation to perform financial analysis. Dynamic Corp. is a high-tech manufacturer of hard disk drives. It is headquartered in Bay Area, California. Dynamic Corp. has its operations spread across multiple regions. Various departments within Dynamic Corp. performs financial analysis.
 
 While doing financial analysis the number of reports developed are as follows:
 
@@ -91,7 +91,7 @@ Note: The steps going forward will have to followed in a Windows operating syste
 1. Navigate to [link](https://www.oracle.com/middleware/technologies/epm-smart-view-downloads.html) to download latest Smart View for office.
 2. On the Smart View download page on Oracle Technology Network, click Download Now, and then click Accept License Agreement. If the Oracle sign-in page is displayed, then sign in with your Oracle user name (usually your email address) and password.
 3. Follow the steps for your browser to download the .zip file, and save it to a folder on your computer.
-4. Go to the folder that you used in Step 5, and then double click smartview.exe to start the installation wizard.
+4. Go to the folder that you used in Step 3, and then double click smartview.exe to start the installation wizard.
 5. Select a destination folder for Smart View, and then click OK. For new installations, Smart View is installed by default in: ``C:\Oracle\smartview``
 9. If you are upgrading an installation of Smart View, then the installer defaults to the folder where you previously installed Smart View.
 10. When the installation is complete, click OK.

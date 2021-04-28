@@ -334,7 +334,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 Note:
 Notice that John having "Database Manager" permission, was able to define who can update the changes in the base(database). Also, Maria after creating scenario was not able to apply the changes to base(database) because she was having only "Database Access" permission.
-Hence, we have learnt how to define and control the security in Essbase.
+
 
 
 ## Acknowledgements
