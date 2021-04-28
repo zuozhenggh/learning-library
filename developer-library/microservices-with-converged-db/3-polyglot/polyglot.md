@@ -63,14 +63,18 @@ In this step you can choose between three different implementations of the Inven
 
 ## **STEP 3**: Verify application functionality
 
-1. Repeat Lab 2 Step 3 to verify the order and inventory functionality of the GrabDish store remains the same using new order ID's, for example 166 and 167.
+1. Repeat [Lab 2 Step 3](#step-3-verify-the-order-and-inventory-functionality-of-grabdish-store) to verify the order and inventory functionality of the GrabDish store remains the same using the new implementation.  You will need to use different order ID's, for example 166 and 167.
 
 ## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
 
 1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following command.
 
     ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./undeploy.sh; cd $GRABDISH_HOME/inventory-python; ./undeploy.sh; cd $GRABDISH_HOME/inventory-nodejs; cd $GRABDISH_HOME/inventory-dotnet; cd $GRABDISH_HOME/inventory-go; ./undeploy.sh; cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh</copy>
+    <copy>
+    for i in inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done 
+    cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
+    cd $GRABDISH_HOME
+    </copy>
     ```
 
 ## Acknowledgements
