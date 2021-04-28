@@ -4,7 +4,6 @@
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
-
 ### Objectives
 -   Install a load testing tool
 -   Start the external load balancer for the order-helidon microservice

@@ -70,7 +70,7 @@ In this step you can choose between three different implementations of the Inven
 1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following command.
 
     ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./undeploy.sh; cd $GRABDISH_HOME/inventory-python; ./undeploy.sh; cd $GRABDISH_HOME/inventory-nodejs; cd $GRABDISH_HOME/inventory-dotnet; cd $GRABDISH_HOME/inventory-goe; ./undeploy.sh; cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./undeploy.sh; cd $GRABDISH_HOME/inventory-python; ./undeploy.sh; cd $GRABDISH_HOME/inventory-nodejs; cd $GRABDISH_HOME/inventory-dotnet; cd $GRABDISH_HOME/inventory-go; ./undeploy.sh; cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh</copy>
     ```
 
 ## Acknowledgements

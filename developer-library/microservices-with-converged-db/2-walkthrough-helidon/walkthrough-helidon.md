@@ -62,7 +62,7 @@ If changes have been made to the deployment yaml then re-run `./deploy.sh` in th
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
-  ![](images/frontendservice.png " ")
+  ![](images/frontend-service.png " ")
 
   Alternatively, you can execute the `services` shortcut command.
 
@@ -88,37 +88,37 @@ We created a self-signed certificate to protect the frontend-helidon service.  T
 
 1. Click **Transactional** under **Labs**.
 
-   ![](images/transactionalpage-blank.png " ")
+   ![](images/tx-select.png " ")
 
 3. Check the inventory of a given item such as sushi, by typing `sushi`
     in the `food` field and clicking **Get Inventory**. You should see the inventory
     count result 0.
 
-   ![](images/sushicount0.png " ")
+   ![](images/tx-get-inventory.png " ")
 
 4. (Optional) If for any reason you see a different count, click **Remove Inventory** to bring back the count to 0.
 
 5. Let’s try to place an order for sushi by clicking **Place Order**.
 
-   ![](images/placeorderpending.png " ")
+   ![](images/tx-place-order-66.png " ")
 
 6. To check the status of the order, click **Show Order**. You should see a failed
     order status.
 
-   ![](images/showorderfailed.png " ")
+   ![](images/tx-show-order-66.png " ")
 
    This is expected, because the inventory count for sushi was 0.
 
 7. Click **Add Inventory** to add the sushi in the inventory. You
     should see the outcome being an incremental increase by 1.
 
-   ![](images/sushicount1.png " ")
+   ![](images/tx-add-inventory.png " ")
 
 8. Go ahead and place another order by increasing the order ID by 1 (67) and then clicking **Place Order**. Next click **Show Order** to check the order status.
 
-   ![](images/placeorderpending2.png " ")
+   ![](images/tx-place-order-67.png " ")
 
-   ![](images/showordersuccess2.png " ")
+   ![](images/tx-show-order-67.png " ")
 
    The order should have been successfully placed, which is demonstrated with the order status showing success.
 
@@ -145,74 +145,77 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
 1. Click **Spatial** on the **Transactional** tab 
 
-   ![](images/spatial1.png " ")
+   ![](images/spatial-select.png " ")
 
 2. Check **Show me the Fusion** menu to make your choices for the Fusion Cuisine 
 
-   ![](images/spatial2.png " ")
+   ![](images/spatial-fusion-menu.png " ")
 
 3. Click the plus sign to add Makizushi, Miso Soup, Yakitori and Tempura to your order and click **Ready to Order**. 
 
-   ![](images/spatial3.png " ")
+   ![](images/spatial-choose-menu-items.png " ")
 
 4. Click **Deliver here** to deliver your order to the address provided on the screen
 
-   ![](images/spatial4.png " ")
+   ![](images/spatial-deliver-here.png " ")
 
 5. Your order is being fulfilled and will be delivered via the fastest route.
 
-   ![](images/spatial5.png " ")
+   ![](images/spatial-delivery.png " ")
+
+6. Hit the back button on your browser to the `Transactional` screen.
+
+   ![](images/tx-show-order-67.png " ")
 
 This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates. 
-Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. 
-This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
+Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
 ## **STEP 6**: Verify metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
-   ![](images/OrderResourceAnnotations.png " ")
+   ![](images/metrics-annotations.png " ")
 
 
 2. Click **Tracing, Metrics, and Health**
 
-   ![](images/tracingmetricshealth-blankpage.png " ")
+   ![](images/metrics-select.png " ")
 
 3. Click **Show Metrics** and notice the long string of metrics (including those from placeOrder timed and counted) in prometheus format.
 
-   ![](images/metrics.png " ")
+   ![](images/metrics-show.png " ")
 
 ## **STEP 7**: Verify health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
 
-   ![](images/healthliveliness.png " ")
+   ![](images/health-liveness.png " ")
 
 2. Notice health check class at `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
 
-    ![](images/c6b4bf43b0ed4b9b4e67618b31560041.png " ")
+    ![](images/health-liveness-code.png " ")
 
 3. Notice liveness probe specified in `$GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml` The `livenessProbe` can be set up with different criteria, such as reading from a file or an HTTP GET request. In this example the OKE health probe will use HTTP GET to check the /health/live and /health/ready addresses every 3 seconds, to see the liveness and readiness of the service.
 
-   ![](images/livenessprobeinyaml.png " ")
+   ![](images/health-liveness-yaml.png " ")
 
 4. In order to observe how OKE will manage the pods, the microservice has been created with the possibility to set up the liveliness to “false”. Click **Get Last Container Start Time** and note the time the container started.
 
-   ![](images/lastcontainerstarttime1.png " ")
+   ![](images/health-get-last-started.png " ")
 
 5. Click **Set Liveness to False** . This will cause the Helidon Health Check to report false for liveness which will result in OKE restarting the pod/microservice
 
-   ![](images/setlivenesstofalse.png " ")
+   ![](images/health-set-liveness-false.png " ")
 
 6. Click **Get Last Container Start Time**.
    It will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
 
-   ![](images/connectionrefused.png " ")
+   ![](images/health-liveness-connection-refused.png " ")
 
    Eventually you will see the container restart and note the new/later container startup time reflecting that the pod was restarted.
 
-   ![](images/lastcontainerstartuptime2.png " ")
+   ![](images/health-liveness-restarted.png " ")
 
 ## **STEP 8**: Understand Passing Database Credentials to a Microservice
 
