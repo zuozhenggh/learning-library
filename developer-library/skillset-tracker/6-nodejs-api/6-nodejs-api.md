@@ -6,13 +6,14 @@ In this lab you are going to go through a series of steps for provisioning a **L
 
 SODA for NodeJS is part of the Oracle NodeJS driver, **node-oracledb**, and doesn't need any additional installation.
 
-Estimated Lab Time: 50 minutes
+Estimated Lab Time: 1 hour
 
 ### Objectives
 
 * Provision a Linux Instance in OCI and install the needed packages.
 * Build a basic NodeJS application that will make calls to the database.
 * Run and test the application.
+* Test the APIs using Postman.
 
 ### What Do You Need?
 * An IDE, such as **Visual Studio Code**.
@@ -631,9 +632,200 @@ sudo reboot
 
 You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.
 
+## **Step 5:** Testing APIs using Postman
+
+In this step you are going to make two types of API calls: ***GET*** and ***POST***. Since in the previous steps of this lab you only created paths for the GET operation, you must first update the code of the application.
+
+1. Update the application code as follows.
+
+* In the _services/skill-jsondb.js_ add the following function
+```
+<copy>
+async function create(skillset, coll_name) {
+  var conn = await oracledb.getConnection();
+  var collection = await getCollection(conn, coll_name);
+  var result = await collection.insertOneAndGet(skillset);
+  var key = result.key;
+  conn.close();
+  return key;
+}
+</copy>
+```
+and the following `export` statement at the end of the file
+```
+<copy>
+module.exports.create = create;
+</copy>
+```
+
+* In the _services/api\_router.js_ add the following route, at the end, before the `export` statement
+```
+<copy>
+/* POST route for inserting a document in the collection */
+router.post('/skillset', async function (request, response) {
+  var review = request.body;
+  //force capital letters on the email field in the JSON
+  review.email = review.email.toUpperCase();
+  try {
+    var key = await db.create(review, 'skillscollection');
+    response.send({ 'generatedKey': key });
+  } catch (err) {
+    handle(err, response);
+  }
+});
+</copy>
+```
+
+Save the files, run the ``npm install`` command if needed and then run the application using ``node app.js`` as shown in the previous step of this lab.
+
+2. Download and install Postman by going to [Postman Downloads](https://www.postman.com/downloads/) page and choosing the version suitable for your computer. After installing the application, login or create a new account.  
+
+![postman download](./images/postman-download.png)
+
+3. After connecting to your Postman account, navigate to **Workspaces** -> **My Workspace**.
+
+![postman my workspace](./images/postman-my-workspace.png)
+
+4. Create a new Postman collection to save all the requests (here _SkillsetAPIs_).
+
+![create postman collection btn](./images/create-postman-collection-btn.png)
+
+5. Add a new request in the collection previously created.
+
+![add new request](./images/add-new-request.png)
+
+6. Give the new request a name, select the _GET_ type for the call and then paste the URL from your previously created application: **http://your\_public\_ip:8000/api/skillset**. Click **Send**. You should get a ***200 OK*** status message and the results in the body which indicates that your test has run successfully. Click the **Save** button to save the request created.
+
+![simple GET call result](./images/simple-get-result.png)
+
+7. Create a new request for the _GET_ call that has a path parameter for filtering the data by _email_. Give the request a name, select the _GET_ type for the call and paste the URL: **http://your\_public\_ip:8000/api/skillset/:email**.
+
+In the **Params** section add a new path variable with the key **email** and the value **CLOUD.ENGINEER3@ORACLE.COM**. Click **Send**. You should get a ***200 OK*** status message and the results in the body which indicates that your test has run successfully. The result in the body should only show the employee that has the email address equal to **CLOUD.ENGINEER3@ORACLE.COM**. Click the **Save** button to save the request created.
+
+![GET with path parameter](./images/get-with-param-call.png)
+
+8. The POST request is a little bit different than the GET request. Create a new request and give it a name. Paste the URL for the call: **http://your\_public\_ip:8000/api/skillset**. Go to the **Body** section of the request and select the **raw** type and **JSON**. Paste the following JSON in the body, to add a new employee in the collection.
+
+```
+<copy>
+    {
+        "name": "Cloud EngineerWXYZ",
+        "manager": "Manager Name3",
+        "email": "CLOUD.ENGINEERWXYZ@ORACLE.COM",
+        "primary": "Developer Tools",
+        "secondary": "Cloud Native",
+        "areas": [
+            {
+                "area": "Developer Tools",
+                "skills": [
+                    {
+                        "skill": "Oracle Cloud Shell",
+                        "oracle_based": 1,
+                        "value": 2
+                    },
+                    {
+                        "skill": "Ansible",
+                        "oracle_based": 0,
+                        "value": 3
+                    },
+                    {
+                        "skill": "Chef",
+                        "oracle_based": 0,
+                        "value": 0
+                    },
+                    {
+                        "skill": "Terraform",
+                        "oracle_based": 0,
+                        "value": 4
+                    }
+                ]
+            },
+            {
+                "area": "Language and Frameworks",
+                "skills": [
+                    {
+                        "skill": "JavaEE",
+                        "oracle_based": 1,
+                        "value": 1
+                    },
+                    {
+                        "skill": "Helidon",
+                        "oracle_based": 1,
+                        "value": 0
+                    },
+                    {
+                        "skill": "Ojet",
+                        "oracle_based": 1,
+                        "value": 0
+                    },
+                    {
+                        "skill": "SpringBoot",
+                        "oracle_based": 0,
+                        "value": 0
+                    },
+                    {
+                        "skill": "Python",
+                        "oracle_based": 0,
+                        "value": 3
+                    },
+                    {
+                        "skill": "Django",
+                        "oracle_based": 0,
+                        "value": 0
+                    },
+                    {
+                        "skill": "NodeJS",
+                        "oracle_based": 0,
+                        "value": 2
+                    },
+                    {
+                        "skill": "GO",
+                        "oracle_based": 0,
+                        "value": 1
+                    },
+                    {
+                        "skill": "React",
+                        "oracle_based": 0,
+                        "value": 2
+                    },
+                    {
+                        "skill": "Angular",
+                        "oracle_based": 0,
+                        "value": 0
+                    }
+                ]
+            }
+        ]
+    }
+</copy>
+```
+
+Click **Send**. You should get a ***200 OK*** status message and a request body similar with the one in the image below.
+
+![POST request](./images/post-request.png)
+
+9. You can add some tests for the request you just created by clicking on a certain request, navigating to the **Tests** tab and writing some code or selecting a predefined template from the right side of the page. Here we selected ***Status code: Code is 200***. We did this for all three requests created previously.
+
+![test Postman requests](./images/test-postman-request.png)
+
+10. You can run the entire collection by navigating to your collection on the left side of the screen, then click the **Run** button.
+
+![run Postman collection](./images/run-postman-collection-btn.png)
+
+Fill in the form and click **Run**.
+
+![run Postman collection](./images/run-postman-collection.png)
+
+Your results should look similar to the ones in the image below.
+
+Since we didn't update the JSON from the POST body request, the test for this one failed due to the fact that there is a unique constraint in the database for the _email_ field and this test is trying to add a new employee with the same email address. For this request to work you would need to edit the JSON in order to add a new employee with a different email address.
+
+![run Postman collection results](./images/run-postman-collection-result.png)
+
 ## Want to Learn More?
 * [SODA for NodeJS](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/nodejs/)
 * [SODA Filter Specifications (QBEs)](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda-filter-specifications-qbes.html#GUID-CB09C4E3-BBB1-40DC-88A8-8417821B0FBE)
+* [Postman](https://www.postman.com/)
 
 ## Acknowledgements
 
