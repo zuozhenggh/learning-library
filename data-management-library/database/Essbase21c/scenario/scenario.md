@@ -47,11 +47,13 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 2. Change the Application name (sheet Essbase.Cube) to Sample_Scenario.
 
+   ![](./images/imageDT_01.0.png "")
+
 3.	Navigate to the Cube.Settings sheet and check the properties section and the Scenario Sandboxes properties.
 
     ![](./images/imageSM_01.png "")
 
-4. Save your file as SandboxApp.xlsx and create a new cube with the help of **Lab6->Step1**. Make sure to check that Load Data option is selected under Advanced Option.
+1. Save your file as SandboxApp.xlsx and create a new cube with the help of **Lab6->Step1**. Make sure to check that Load Data option is selected under Advanced Option.
 
     ![](./images/imageSM_02.png "")
 
