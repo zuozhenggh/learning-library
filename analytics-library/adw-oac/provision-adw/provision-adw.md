@@ -1,6 +1,4 @@
-# Provisioning your Autonomous Database instance
-
-![Autonomous Databases](./images/adb_banner2.png)
+# Create a new Autonomous Data Warehouse Database
 
 ## Introduction
 
@@ -36,7 +34,7 @@ Estimated Lab Time: 15 minutes
 
 1. Click on the hamburger **MENU** link at the upper left corner of the page.
 
-    This will produce a drop-down menu, where you should select **Autonomous Data Warehouse.**
+    This will produce a drop-down menu, where you should select **Autonomous Data Warehouse**.
 
     ![Oracle Cloud Web Console](./images/lab100_1_2.png)
 
@@ -86,7 +84,7 @@ Estimated Lab Time: 15 minutes
 
 3. Under **Create administration credentials** section:
 
-    > **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is ADWwelcome-1234.
+    > **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is **ADWwelcome-1234**.
     >
     > **Reminder:** Note your password in a safe location as this cannot be easily reset.
 
@@ -104,11 +102,11 @@ Estimated Lab Time: 15 minutes
 
     ![ADB Creation](./images/lab100_6.png)
 
-5. The Autonomous Database **Details** page will show information about your new instance. You should notice the various menu buttons that help you manage your new instance -- because the instance is currently being provisioned all the management buttons are greyed out.
+5. The Autonomous Database **Details** page will show information about your new instance. You should notice the various menu buttons that help you manage your new instance - because the instance is currently being provisioned all the management buttons are greyed out.
 
     ![ADB Creation Provisioning](./images/lab100_7.png)
 
-6. A summary of your instance status is shown in the large box on the left. In this example, the color is amber and the status is **Provisioning.**
+6. A summary of your instance status is shown in the large box on the left. In this example, the color is amber and the status is **Provisioning**.
 
     ![ADB Creation Provisioning Amber](./images/lab100_8.png)
 
@@ -132,7 +130,6 @@ Estimated Lab Time: 15 minutes
 
 You have just created an Autonomous Database with the latest features of Oracle Databases.
 
-*You can proceed to the next lab…*
 
 ## **Acknowledgements**
 
@@ -140,3 +137,7 @@ You have just created an Autonomous Database with the latest features of Oracle 
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
