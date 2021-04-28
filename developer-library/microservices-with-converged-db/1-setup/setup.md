@@ -32,7 +32,7 @@ If you have a fresh free trial account with credits then you can be sure that yo
 If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table. 
 
 | Service          | Limit Name                                           | Requirement |
-|:----------------:|------------------------------------------------------|:-----------:|
+|------------------|------------------------------------------------------|:-----------:|
 | Compute          | Cores for Standard.E2 based VM and BM Instances      | 3           |
 | Container Engine | Cluster Count                                        | 1           |
 | Database         | Autonomous Transaction Processing Total Storage (TB) | 2           |
@@ -72,7 +72,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
    All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  
 
-2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For exmaple:
+2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
     ```
     <copy> cd grabdish
@@ -81,7 +81,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 ## **STEP 5**: Make a Clone of the Workshop Setup Scripta and Source Code
 
-1. To work with application code, you need to make a clone from the GitHub repository using the following command.  
+1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
     <copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
@@ -90,7 +90,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
    You should now see the directory `microservices-datadriven` in the directory that you created.
 
-2. Run the following command to edit your .bashrc file so that you will be returned to the workshop directory when you connect to the cloud shell.
+2. Run the following command to edit your .bashrc file so that you will be returned to the workshop directory when you connect to the cloud shell in the future.
 
     ```
     <copy>
@@ -110,7 +110,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
    
-   Note, The cloud shell will disconnect after a period of inactivity. If that happens, you can reconnect and run this command to resume the setup:
+   Note, The cloud shell will disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
 
     ```
     <copy>
@@ -146,7 +146,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-7. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, OCI Registry Repositories and an OCI Object Storage wallet.  You can monitor it's progress by duplicting the current browser window.  It is best not to use the original browser tab as this may interupt the setup.
+7. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, OCI Registry Repositories and an OCI Object Storage wallet.  You can monitor its progress from a different browser window.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
   ![](images/duplicate-browser-tab.png " ")
 
@@ -174,7 +174,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-   Once the setup has completed you are ready to move on to Lab 2.  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are not required until Lab 3 and so you can continue with Lab 2 while the builds run in the background.
+   Once the setup has completed you are ready to move on to Lab 2.  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds run in the background.
 
 ## Acknowledgements
 
