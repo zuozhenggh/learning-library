@@ -13,7 +13,7 @@ You will create a highly scalable application that relies on Oracle Container En
 
 ### Let's Get Started!
 
-Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Setup](?lab=1-setup).
+Click on [Sign Up For a Free Trial](http://oracle.com/cloud/free) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Setup](?lab=1-setup).
 
 Access a complete walkthrough video of this lab [here](https://tinyurl.com/helidonoracledb-msdataworkshop). 
 Note that a few minor steps (such as the setup steps and creation of OCI Vault secrets, etc.) have changed from this video and the documentation should be followed.  We will be updating the video soon.

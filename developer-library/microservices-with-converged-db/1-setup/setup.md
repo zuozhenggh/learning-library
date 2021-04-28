@@ -2,70 +2,115 @@
 
 ## Introduction
 
-In this 20-minute lab we will provision and setup the resources in your tenancy to install and execute microservices.  
+In this 25-minute lab we will provision and setup the resources to execute microservices in your tenancy.  
 
 ### Objectives
 
-* Clone the microservices code
+* Clone the setup and microservices code
 * Execute setup
 
 ### What Do You Need?
 
 * An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 
-You will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
+Note, you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
 ## **STEP 1**: Login to the OCI Console
 
-Logon to the OCI console for your tenancy.  Be sure to select the **home region** in your tenancy.  This workshop setup will only work in the home region.
+Logon to the OCI console for your tenancy.  
+
+## **STEP 2**: Select the Home Region
+
+Be sure to select the **home region** of your tenancy.  Setup will only work in the home region.
 
   ![](images/home-region.png " ")
   
-## **STEP 2**: Launch the Cloud Shell
+## **STEP 3**: Check Your Tenancy Quota
 
-Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated CLI which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
+If you have a fresh free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed top the next step. 
+
+If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table. 
+
+| Service          | Limit Name                                           | Requirement |
+|:----------------:|------------------------------------------------------|:-----------:|
+| Compute          | Cores for Standard.E2 based VM and BM Instances      | 3           |
+| Container Engine | Cluster Count                                        | 1           |
+| Database         | Autonomous Transaction Processing Total Storage (TB) | 2           |
+|                  | Autonomous Transaction Processing OCPU Count         | 4           |
+| LbaaS            | 10Mbps Load Balancer                                 | 3           |
+
+Quota usage and limits can be check through the console:
+
+  ![](images/limits-quota-usage.png " ")
+
+The Tenancy Explorer may be used to locate existing resources:
+
+  ![](images/tenancy-explorer.png " ")
+
+Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
+
+  ![](images/show-subcompartments.png " ")
+
+It may be necessary to remove some resources in order to make space to run this workshop.  When you have sufficent space you may proceed to the next step.
+
+## **STEP 4**: Launch the Cloud Shell
+
+Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
 Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
-## **STEP 3**: Create a Folder to Contain the Workshop Code
+## **STEP 5**: Create a Folder to Contain the Workshop Code
 
-Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, containing only letters or numbers, starting with a letter.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
+1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
-```
-<copy>mkdir grabdish; cd grabdish
-</copy>
-```
+    ```
+    <copy>mkdir grabdish
+    </copy>
+    ```
 
-Note, you must change directory to the directory that you have created or the setup will fail.
+   All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  
 
-## **STEP 4**: Make a clone of the workshop source code
+2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For exmaple:
 
-To work with application code, you need to make a clone from the GitHub repository using the following command. 
+    ```
+    <copy> cd grabdish
+    </copy>
+    ```
 
-```
-<copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
-</copy>
-```
+## **STEP 5**: Make a Clone of the Workshop Setup Scripta and Source Code
 
-You should now see the directory `microservices-datadriven` in your directory.
+1. To work with application code, you need to make a clone from the GitHub repository using the following command.  
 
-## **STEP 5**: Running the Setup Script
+    ```
+    <copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
+    </copy>
+    ```
 
-1. Execute the following sequence of commands to start the setup.  Note, the commands will also change your .bashrc file so that you will always return to the right place when you connect:
+   You should now see the directory `microservices-datadriven` in the directory that you created.
+
+2. Run the following command to edit your .bashrc file so that you will be returned to the workshop directory when you connect to the cloud shell.
 
     ```
     <copy>
     sed -i.bak '/grabdish/d' ~/.bashrc
     echo "source $PWD/microservices-datadriven/grabdish/env.sh" >>~/.bashrc
+    </copy>
+    ```
+
+## **STEP 6**: Run the Setup
+
+1. Execute the following sequence of commands to start the setup.  
+
+    ```
+    <copy>
     source microservices-datadriven/grabdish/env.sh
     source setup.sh
-
     </copy>
     ```
    
-   NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY. If that happens, you can reconnect and run this command to resume the setup:
+   Note, The cloud shell will disconnect after a period of inactivity. If that happens, you can reconnect and run this command to resume the setup:
 
     ```
     <copy>
@@ -105,9 +150,9 @@ You should now see the directory `microservices-datadriven` in your directory.
 
   ![](images/select-compartment.png " ")
 
-6. Once the database is created, the setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
+6. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
-7. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you enter it as you will need it later.  The UI password must be 8 to 30 characters
+7. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
 8. When the setup.sh script completes it will provide a summary of the setup status.  If everything has completed you will see the following status.
 
@@ -133,8 +178,7 @@ You should now see the directory `microservices-datadriven` in your directory.
 
 ## Acknowledgements
 
-* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon, 
-  Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
