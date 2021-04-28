@@ -62,5 +62,4 @@ In this section, we created a new database user and granted them the needed role
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - April 2021
-- **Workshop Expiry Date** - April 2022
+- **Last Updated By/Date** - Anoosha Pilli, Database Product Management, April 2021
