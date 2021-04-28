@@ -1,4 +1,4 @@
-# Modern App Dev with Oracle REST Data Services - Securing a REST Endpoint
+# Modern Application Development with Oracle REST Data Services - Securing a REST Endpoint
 
 ## Introduction
 

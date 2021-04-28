@@ -14,7 +14,7 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 
 1. After logging into your Oracle Cloud account, click on **Networking -> Virtual Cloud Networks** from the menu.
 
-  ![](images/open-vcn-instances.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Click on your VCN from the list of instances. If your instance is not shown, be sure you have the correct compartment selected.
 
