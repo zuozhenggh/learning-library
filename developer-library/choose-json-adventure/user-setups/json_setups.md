@@ -39,7 +39,7 @@ Estimated Lab Time: 10 minutes
 
     ![Create User Slide Out Panel](./images/setups-3.png)
 
-4. Next, click the **Granted Roles** tab. Use the **Granted** column and select the following checkboxes; PDB_DBA and SODA_APP.
+4. Next, click the **Granted Roles** tab. Use the **Granted** column and select the following checkboxes; PDB\_DBA and SODA\_APP.
 
     ![Granted Roles Slide Out Panel](./images/setups-4.png)
 
@@ -62,5 +62,4 @@ In this section, we created a new database user and granted them the needed role
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - April 2021
-- **Workshop Expiry Date** - April 2022
+- **Last Updated By/Date** - Anoosha Pilli, April 2021
