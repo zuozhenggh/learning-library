@@ -43,7 +43,9 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 6.	Open the query worksheet QueryDT.Sample within Sample\_Basic\_DT.xlsx.   
     Login to Smart View. Select the application SampleDT and click connect.
 
-7.  Go to SmartView Ribbon –> Options –> Cell Styles –> Essbase –> Data Cells and pick colors for    Drill-through (blue), Read-Only (pink), Writable (green) and Linked Objects (yellow). 
+7.  Go to SmartView Ribbon, Click on Options –> Cell Styles –> Essbase –> Data Cells and pick colors for  Drill-through (blue), Read-Only (pink), Writable (green) and Linked Objects (yellow). 
+   
+   For example, Select "Drill-Thorugh" and double click on it and then double click on "Backgroud" to pick the required  color.
 
     Click OK.
     
@@ -62,6 +64,8 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
    Enter the details: Connection Name, Username, Password, Hostname(IP), Port, Service name.
 
    ![](./images/imageDT_05.png "")
+
+   Password for Esscs Schema: "Admin123".
 
 2. Query the data in the relational table:
    Right click on Connection name -> Open SQL Worksheet. Type the query and check the result:   
@@ -192,7 +196,7 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
    
    ![](./images/imageDT_21.png "")
 
-2. Click Create and select “Regular” from the drop down options. Do the same 3 more times to have 5 fields.
+2. Click Create and select “Regular” from the drop down options. Do the same 4 more times to have 5 fields.
 
 3. Map the fields as following:
       *  Field - 1:  Product 
@@ -200,7 +204,9 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
       *  Field - 3:  Scenario
       *  Field - 4:  Year
       *  Field - 5:  Sales
-  
+
+   Make Sure to give "Storage Type" for "Sales" field as "Sum".
+
    
    ![](./images/imageDT_22.png "")
 

@@ -29,7 +29,9 @@ This lab requires:
 
 ## **Step 1:** Creating a Sample Application in Essbase21c
 
-1.	Login to the Essbase 21c web interface  using the Essbase URL. i.e. http://ip:9000/essbase/jet
+1.	Login to the Essbase 21c web interface  using the Essbase URL. i.e. http://ip:9000/essbase/jet.
+    
+    Note: Please replace ip with your instance's IP Address.
 
 2.	On the Applications tab click “Import” option in the Essbase web interface as shown below.
 
@@ -115,12 +117,13 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_12.png "")
 
-4. Double click on year or in to next level. You will now see the Quarter level data.
+4. Double click on year or Zoom in to next level. You will now see the Quarter level data.
 
 
     ![](./images/image14_14.png "")
 
-5. Go to Year. Click on Keep only. Using this option, only the Year Dimension will be displayed and all the Quarters are removed.
+5. Go to Year. Navigate to Essbase Ribbon and Click on Keep only. Using this option, only the Year Dimension will be displayed and all the Quarters are removed.
+    ![](./images/image14_14.0.png "")
 
 6. Go to Year. Click on Zoom in-All levels.You will now see the numbers drill down to leaf level(Months).
 
@@ -130,19 +133,29 @@ You use Smart View panel to connect to your smart view data sources and manage c
     ![](./images/image14_16.png "")
 
 
-7. Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Select Sales and click Keep Only. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
+7. Double Click on Measures. It will Zoom into next level. 
+   ![](./images/image14_17.0.png "")
+   
+   Now double click on Profit, it will take you further next level.
+   ![](./images/image14_17.1.png "")
+
+    Now double click on Margin, it will take you further to next level(i.e, at sales level).
+   ![](./images/image14_17.2.png "")
+   
+   Select Sales and click Keep Only. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
 
     ![](./images/image14_17.png "")
 
-8. In the Smart View ribbon click 'Undo'. Undo reverses the last change you made to the data.
+8.  In the Smart View ribbon click 'Undo'. Undo reverses the last change you made to the data.
     ![](./images/image14_18.png "")
 
 
 
-9. In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
+9.  In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
 
 
-10. Click on Year and select Keep only. Click on Sales and change it to Measures.
+10. Click on Year and select Keep only. Click on Sales and change it to Measures by clicking "zoom out" on sales 3 times.
+
     Create the below report by zooming into next level of Year Dimension and Measures Dimension.
     ![](./images/image14_99.png "")
     
@@ -166,6 +179,8 @@ You use Smart View panel to connect to your smart view data sources and manage c
     ![](./images/image14_22.png "")
 
 12. Member Selection:
+
+    Note: Revert the last step changes by Selecting Market and Scenario in the POV and Click on refresh.
 
     a. Click on ‘POV’ in ‘Essbase’ ribbon again.
 
@@ -193,7 +208,9 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 14. You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
 
-15. Click on the Profit cell, replace with Sales, hit and select refresh.
+15. Click on the Profit cell, and write Sales, hit enter and select refresh.
+    
+    ![](./images/image14_27.0.png "")
 
     ![](./images/image14_27.png "")
 
@@ -211,6 +228,8 @@ You use Smart View panel to connect to your smart view data sources and manage c
 3. Locate the extension named Oracle ‘Cube Designer’ and click ‘Install’ to start the installer.
 
 4. Follow the prompts to install the extension.
+   
+   Note: Please give 1 or 2 minutes for cube designer to complete the installation. 
 
 
 
@@ -220,7 +239,10 @@ You use Smart View panel to connect to your smart view data sources and manage c
 This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Design and Manage Cubes from Tabular Data](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-manage-cubes-tabular-data.html)
 
 
-1.	In Excel, on the ‘Cube Designer’ ribbon, click ‘Catalog’.
+1. In the Cube Designer ribbon, click connections -> select the current connection from the dropdown menu to connect to Essbase. 
+   ![](./images/image14_44.0.png "")
+   
+   In Excel, on the ‘Cube Designer’ ribbon, click ‘Catalog’.
 
 2.	On the Essbase Files dialog box, under Catalog, go to ‘gallery/Technical/Table Format’ as shown below, then select a sample tabular data file: `Unstr_Hints.xlsx`.
 
@@ -235,7 +257,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
     ![](./images/image14_45.png "")
 
-6. The application name is based on the source file name without the extension and the cube name is based on the worksheet name.
+1. The application name is based on the source file name without the extension and the cube name is based on the worksheet name.
 
     `Unstr_Hints.xlsx: Application name is Unstr_Hints and the cube name is SpendHistory`
 
@@ -305,10 +327,14 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 1. The Jobs tab displays all the information about the jobs that have been executed in the Essbase web user interface.  
 
-   You can create and run new jobs using this tab, as shown below.
+   You can create and run new jobs using this tab by clicking on "New Job", as shown below.
     ![](./images/image14_64.png "")
 
-1. Execute a Build Dimension job by selecting the application and cube. The ‘Script’ file is the rule[.rul] file where the dimension build script exists. Select the pre-existing ‘DimBuild.rul’ file and its corresponding ‘DimensionsCSV.txt’ pair as the Data File and execute the job.
+1. Execute a Build Dimension job by selecting the application(Unstr_Hints) and cube(SpendHistory).
+
+   The ‘Script’ file is the rule[.rul] file where the dimension build script exists.
+
+   Select the pre-existing ‘DimBuild.rul’ file and its corresponding ‘DimensionsCSV.txt’ pair as the Data File, select the Restructure Options as "Preserve all data" and execute the job.
 
     ![](./images/image14_65.png "")
 

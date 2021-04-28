@@ -33,8 +33,7 @@ Loading data is the process of adding data values to a cube from any number of d
 
 Create a rule file that is based on a sample file from the data warehouse.
 
-1.	Download the data file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pnp9bHy2Ja5o7FQILaBFhCd02G4LM9Z1buBnCIjhW84/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Data_Basic.txt)
-
+1.	Download the data file [here](./files/Data_Basic.txt)
 
     Open the downloaded data file "Data_Basic.txt". Notice that there's no header row and the file delimiter is a comma.
 
@@ -111,11 +110,11 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     c. In the Database list, select the Sales cube.
 
-    d. In the Script list, select the load data rule that you created, LoadCorp.rul.
+    d. For Load Type, select File.
 
-    e. For Load Type, select File.
+    e. Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
 
-    f. Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
+    f. In the Script list, select the load data rule that you created, LoadCorp.rul
 
     g. Optional: select the Abort on error check box if you want the load to stop if an error occurs.
 
@@ -219,15 +218,18 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
   
   c. Expand the Command Line Tools section.  
   
-  d. Download the Command-line Tool.  
+  d. Download the Command-line Tool by clicking on the hightlighted download button for "Command-Line Tool".  
      ![](./images/image15_62.png)
   e. Unzip the cli.zip file in a directory e.g. C:\app\cli  
   
-  f. Open a command prompt window and change directory to where you unzipped the the CLI tool.  
+  f. In your machine, search for Command Prompt. Open it by right clicking "Run as administrator".
+    Change directory to where you unzipped the the CLI tool.  
  
     **Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error**
     **C:\app\cli>esscs.bat**
     **Install JDK8 and set JAVA_HOME variable to JDK8 installed location**  
+
+    Note: Please check the links; [link1](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html),  [link2](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) to install jdk8 and above and set JAVA_HOME path.
    
   g. From the command window type esscs.bat to get a list of the available command. 
      ![](./images/image15_63.png) 
@@ -235,7 +237,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
   h. Use the below command and enter the password to login:
       ```
     <copy>        
-          esscs.bat login -url http://ip:9000/essbase -u userid
+          esscs login -url http://ip:9000/essbase -u userid
 	</copy>
     ````
      ![](./images/image15_64.png) 
@@ -304,7 +306,7 @@ To use the Swagger interface,
 
 3. On Swagger web interface, you will be presented with number of different REST APIs.  
 
-4.	Under Application logs, click on the second GET button (Download All Logs).
+4.	Under Application logs, click on the second GET button (Download Latest Log).
 
     ![](./images/image14_94.png)
 
