@@ -1,4 +1,4 @@
-# Modern App Dev with Oracle REST Data Services - REST Enable Business Logic and Custom SQL
+# Modern Application Development with Oracle REST Data Services - REST Enable Business Logic and Custom SQL
 
 ## Introduction
 

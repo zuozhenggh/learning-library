@@ -1,4 +1,4 @@
-# Modern App Dev with Oracle REST Data Services - Loading Data and Creating Business Objects
+# Modern Application Development with Oracle REST Data Services - Loading Data and Creating Business Objects
 
 ## Introduction
 

@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "RESTful Services for your Autonomous Database",
+  "workshoptitle": "Modern Application Development with Oracle REST Data Services",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction",
-            "description": "About the Introduction to REST Services Workshop",
+            "description": "Modern Application Development with Oracle REST Data Services Introduction",
             "filename": "../../intro/intro.md"
         },
         {
