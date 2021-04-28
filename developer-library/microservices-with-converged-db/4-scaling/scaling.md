@@ -5,15 +5,15 @@
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
 ### Objectives
--   Install a load testing tool
 -   Start the external load balancer for the order-helidon microservice
+-   Install a load testing tool
 -   Test the performance of the existing deployment and identify the point at which performance begins to degrade
 -   Scale the application tier to improve performance and identify the point at which further application tier scaling does not help
 -   Scale the database tier and demonstrate how performance is improved
 
 ### What Do You Need?
 
-This lab assumes that you have already completed labs 1 through 4.
+This lab assumes that you have already completed the previous labs.
 
 ## **STEP 1**:  Install a load testing tool and start an external load balancer for the Order service
 
@@ -73,7 +73,7 @@ This lab assumes that you have already completed labs 1 through 4.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-2. Scale to 2 service replicas.
+2. Scale to **2 service replicas**.
 
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=2 -n msdataworkshop</copy>
@@ -106,8 +106,7 @@ This lab assumes that you have already completed labs 1 through 4.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-
-4. Scale to 3 Replicas.
+4. Scale to **3 Replicas**.
 
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=3 -n msdataworkshop</copy>
@@ -142,7 +141,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 3**: Load test and scale the database tier
 
-1. To scale the Order DB ATP database to 2 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+1. To scale the Order DB ATP database to **2 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
    ![](images/35-open-atp-menu.png " ")
 
@@ -176,7 +175,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 4**: Scale down the application and database tiers
 
-1. To scale the Order DB ATP database down to 1 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+1. To scale the Order DB ATP database down to **1 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
    ![](images/35-open-atp-menu.png " ")
 
@@ -186,7 +185,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/ScaleTo1dbocpuScreen2.png " ")
 
-3. Scale the order-helidon service back to 1 replica.
+3. Scale the order-helidon service back to **1 replica**.
 
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=1 -n msdataworkshop</copy>
