@@ -11,13 +11,13 @@ In this 25-minute lab we will provision and setup the resources to execute micro
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](#previous).
 
 Note, you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
 ## **STEP 1**: Login to the OCI Console
 
-Logon to the OCI console for your tenancy.  
+If you haven't already, Sign in to your account.
 
 ## **STEP 2**: Select the Home Region
 
