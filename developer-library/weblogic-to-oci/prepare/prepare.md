@@ -13,7 +13,7 @@ In this lab you will:
 - Create a Vault.
 - Create a Key.
 - Create a Secret to hold the WebLogic Admin password.
-- Copy the Secret OCID to use during the provisioning stage
+- Copy the Secret OCID to use during the provisioning stage.
 
 ### Prerequisites
 

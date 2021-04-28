@@ -316,10 +316,10 @@ The import script runs in 8 phases:
 - It creates a SSH tunnel to access the ATP database locally.
 - It sets up the `sqlnet.ora` file to point to the wallet.
 - It adds the hostname of the ATP database into the `/etc/hosts` file to point to `localhost` so that connection attempts go through the tunnel we created.
-- Then it runs the `impdp` import command once.
+- It runs the `impdp` import command once.
 You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace.
-- The script then edits the `RIDERS` user tablespace quota.
-- And re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
+- The script edits the `RIDERS` user tablespace quota.
+- It re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
 The database is now migrated to OCI, but we also need to set up the wallet on the WLS servers.
 

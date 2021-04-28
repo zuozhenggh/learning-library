@@ -13,7 +13,7 @@ Estimated Lab Time: 30 minutes.
 In this lab you will:
 
 - Get the Docker environment files.
-- Startup the Docker-based on-premises demo environment.
+- Start up the Docker-based on-premises demo environment.
 - Check that the environment is running properly.
 - Create an SSH key pair to communicate with the OCI services.
 
@@ -162,7 +162,7 @@ This repository makes use of Oracle docker images which are licensed and need to
 
 ## **STEP 3:** Start the Local Environment
 
-*Startup the local environment stack that will simulate our on-premises environment*.
+*Start up the local environment stack that will simulate our on-premises environment*.
 
 1. Make sure you are using the `oracle` user and run:
 

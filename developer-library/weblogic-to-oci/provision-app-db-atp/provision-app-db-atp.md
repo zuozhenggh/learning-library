@@ -49,7 +49,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
   ![](./images/vcn-nsg2.png)
 
-  Then click **Create**.
+7. Click **Create**.
 
   ![](./images/vcn-nsg3.png)
 

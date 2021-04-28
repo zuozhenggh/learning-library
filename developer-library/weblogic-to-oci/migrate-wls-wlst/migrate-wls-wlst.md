@@ -90,7 +90,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-    Then 
+    Then run:
     
     ```bash
     <copy>
@@ -98,7 +98,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-    Then get into the admin server with SSH:
+    Get into the admin server with SSH:
 
     ```bash
     <copy>
@@ -115,7 +115,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-    Then:
+    Then run:
     
     ```bash
     <copy>
@@ -123,7 +123,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-    Then get into the admin server with SSH:
+    Get into the admin server with SSH:
 
     ```bash
     <copy>

@@ -36,11 +36,11 @@ For this lab, you need to have prepared the OCI tenancy with:
 
    ![](./images/provision-3.png)
 
-4. **Name** the stack and click **Next**.
+4. Name the stack and click **Next**.
 
    ![](./images/provision-4.png)
 
-5. **Enter** a **Resource Name Prefix**.
+5. Enter a **Resource Name Prefix**.
 
   It will be used to prefix the name of all the resources (domain, managed servers, admin server, cluster, machines...).
 
@@ -48,7 +48,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
   ![](./images/provision-6-prefix.png)
 
-6. **Select** a **Shape**.
+6. Select a **Shape**.
 
    In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.E2.1** shape, the **VM.Standard.E2.2** shape or a suitable shape that is available in your tenancy.
 
@@ -56,7 +56,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
    To check shape availability, you can go to **Governance -> Limits and Quotas** in another tab, and verify you have a specific shape available.
 
-7. **SSH key**
+7. Provision an **SSH key**
 
    To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. 
    
@@ -80,7 +80,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
     **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI).
 
-8. **Select** a **Node count**. In this lab, we'll provision 2 nodes.
+8. Select a **Node count**. In this lab, we'll provision 2 nodes.
 
   ![](./images/provision-10-nodes.png)
 
@@ -88,11 +88,11 @@ For this lab, you need to have prepared the OCI tenancy with:
 
   ![](./images/provision-11-admin-name.png)
 
-10. **Paste** the **OCID** of the **Secret** generated previously for the **Secret OCID for WebLogic Admin Password**.
+10. Paste the **OCID** of the **Secret** generated previously for the **Secret OCID for WebLogic Admin Password**.
 
   ![](./images/provision-12-secret.png)
 
-11. **Check** the checkbox for **WebLogic Server Advanced Server Configuration**
+11. Check the checkbox for **WebLogic Server Advanced Server Configuration**
    Here you can see all the default ports, which we will keep as-is.
 
   ![](./images/provision-13-advanced.png)
@@ -109,7 +109,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
   ![](./images/provision-16-create-vcn.png)
 
-15. **Name** the VCN `wls`.
+15. Name the VCN `wls`.
 
   ![](./images/provision-17-vcn-name.png)
 
@@ -139,7 +139,7 @@ For this lab, you need to have prepared the OCI tenancy with:
     ![](./images/private-subnet.png)
 
 
-19. **Check** the **Provision Load Balancer** checkbox and keep the defaults.
+19. Check the **Provision Load Balancer** checkbox and keep the defaults.
 
   ![](./images/provision-20-lb2.png)
 

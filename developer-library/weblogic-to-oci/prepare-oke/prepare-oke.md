@@ -14,13 +14,13 @@ In this lab you will:
 - Create a Key.
 - Create a Secret to hold the WebLogic Admin password.
 - Create a Secret to hold the OCI Docker Image Registry Auth Token.
-- Copy the Secrets OCIDs to use during the provisioning stage
+- Copy the Secrets OCIDs to use during the provisioning stage.
 
 ### Prerequisites
 
 For this lab you will need:
 
-- An OCI account with a compartment created
+- An OCI account with a compartment created.
 
 ## **STEP 1:** Create a vault
 
@@ -98,7 +98,7 @@ For this lab you will need:
 
 6. Click **Create Secret**.
 
-7. Click the **OCIR** secret you created and make a note of the **OCID** of the Secret for later use.
+7. Click the **OCIR** secret you created and make a note of the **OCID** of the secret for later use.
 
 That is all that's needed to get started.
 
