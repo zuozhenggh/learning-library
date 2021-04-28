@@ -12,7 +12,7 @@ This lab walks you through the steps to create an instance of an Oracle Virtual 
 
 1. From the Console menu, select **Networking > Virtual Cloud Networks**.
 
-  ![](images/virtual-cloud-networks.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
 

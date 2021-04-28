@@ -32,9 +32,9 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
 
     > **Note**: Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
 
-2. In the **Oracle Console Home** Page, click on the **Burger Menu** link at the upper left corner of the page and go to the **Autonomous Data Warehouse** section.
-
-    ![Oracle Console SignIn](./images/lab300_1.png)
+2. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+	
+	![Oracle Console SignIn](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     You can see all the **ADW** instances that you have **created**.
     **Select** the instance that we created before.
@@ -67,7 +67,7 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
     **Return** to the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
     **Navigate** to **Analytics** and then **Analytics Cloud**.
 
-    ![OAC Web Console](./images/lab300_7.png)
+    ![OAC Web Console](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 7. **Open** the Cloud Analytics **URL** associated with your instance (the one that we created in Lab 2) by using the dots menu button on the right-hand side of your instance information and selecting **Open URL**.
 

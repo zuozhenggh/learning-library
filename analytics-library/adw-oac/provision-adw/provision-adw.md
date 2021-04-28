@@ -36,7 +36,7 @@ Estimated Lab Time: 15 minutes
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse**.
 
-    ![Oracle Cloud Web Console](./images/lab100_1_2.png)
+    ![Oracle Cloud Web Console](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     This will take you to the management console page.
 
