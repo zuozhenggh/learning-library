@@ -201,7 +201,7 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
   postfix the gateway endpoint with "/todolist" as shown in the image below
    ![](images/Backend-Testing.png " ")
 
-  It should display the Todo Item(s) in the TodoItem table. At least the row you have created in Part I.
+  It should display the Todo Item(s) in the TodoItem table. At least the row you have created in Lab 1.
 
 Congratulations, you have completed lab 2; you may now [proceed to the next lab](#next).
 
@@ -209,4 +209,4 @@ Congratulations, you have completed lab 2; you may now [proceed to the next lab]
 
 * **Author** -  - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Kuassi Mensah, Database Product Management,  April 2021
+* **Last Updated By/Date** - Anoosha Pilli, Database Product Management,  April 2021
