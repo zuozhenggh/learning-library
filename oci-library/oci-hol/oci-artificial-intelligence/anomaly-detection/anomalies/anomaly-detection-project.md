@@ -1,4 +1,4 @@
-### Lab 3: Create AD Project
+# Lab 3: Create AD Project
 
 ## Introduction
 ## Create a Project

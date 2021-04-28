@@ -8,6 +8,9 @@ The core of our Anomaly Detection service is built on the MSET algorithm, which 
 
 The Anomaly Detection Service will create customized Machine Learning models, by taking the data uploaded by users, using MSET to train the model, and deploying the model into the cloud environment to be ready for detection. Users can then send new data to the detection endpoints to get the detected anomaly results.
 
+[Anomaly Detection Demonstration Video](youtube:aL_05XKProc)
+
+
 The first version of *OCI Anomaly Detection Service* which is serverless, multi-tenant service, will cover multivariate *time series data, accessible over public REST APIs* by authenticated users via OCI CLI, SDK or Cloud Console.
 
 *Estimated Lab Time*: 60 minutes
