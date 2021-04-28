@@ -31,7 +31,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 ## **STEP 3**: Create a Folder to Contain the Workshop Code
 
-Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
+Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, containing only letters or numbers, starting with a letter.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
 
 ```
 <copy>mkdir grabdish; cd grabdish
@@ -49,9 +49,7 @@ To work with application code, you need to make a clone from the GitHub reposito
 </copy>
 ```
 
-You should now see `microservices-datadriven` in your folder
-
-TODO: When we publish this will change to clone from the main branch.
+You should now see the directory `microservices-datadriven` in your directory.
 
 ## **STEP 5**: Running the Setup Script
 
@@ -78,7 +76,6 @@ TODO: When we publish this will change to clone from the main branch.
    The setup process will typically take around 20 minutes to complete.  
 
 2. The setup will ask for you to enter your User OCID.  This can be found in the OCI console.
-
 
   ![](images/get-user-ocid.png " ")
 
@@ -141,6 +138,4 @@ TODO: When we publish this will change to clone from the main branch.
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Tom McGinn, June 2020
-
-
+* **Last Updated By/Date** - Richard Exley, April 2021

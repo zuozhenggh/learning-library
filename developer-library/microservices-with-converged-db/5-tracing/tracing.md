@@ -49,5 +49,4 @@ This lab will show you can trace microservice activity using Jaeger.
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Tom McGinn, June 2020
-
+* **Last Updated By/Date** - Richard Exley, April 2021

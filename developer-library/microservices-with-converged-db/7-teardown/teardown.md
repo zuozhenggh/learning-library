@@ -35,6 +35,4 @@ In the OCI console navigate to the Identity -> Compartments screen.  Select the 
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Tom McGinn, June 2020
-
-
+* **Last Updated By/Date** - Richard Exley, April 2021
