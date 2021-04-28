@@ -12,7 +12,7 @@ This lab will show you how to switch the Inventory microservice to a Python, Nod
 
 ### What Do You Need?
 
-This lab assumes you have already completed Labs 1 through 4.
+This lab assumes you have already completed the previous labs.
 
 ## **STEP 1**: Undeploy the Java Helidon MP Inventory Microservice
 
