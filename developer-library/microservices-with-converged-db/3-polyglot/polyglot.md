@@ -31,31 +31,31 @@ In this step you can choose between three different implementations of the Inven
 
 1. Select one of the alternate implementations and deploy the service for the selected implementation.  
 
-   If you selected Python, deploy this service:
+   If you selected **Python**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-python; ./deploy.sh</copy>
     ```
 
-   If you selected Node.js, deploy this service:
+   If you selected **Node.js**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-nodejs; ./deploy.sh</copy>
     ```
 
-   If you selected .NET, deploy this service:
+   If you selected **.NET**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-dotnet; ./deploy.sh</copy>
     ```
 
-   If you selected Go, deploy this service:
+   If you selected **Go**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-go; ./deploy.sh</copy>
     ```
 
-   If you selected Java Helidon SE, deploy this service:
+   If you selected **Java Helidon SE**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
@@ -63,7 +63,7 @@ In this step you can choose between three different implementations of the Inven
 
 ## **STEP 3**: Verify application functionality
 
-1. Repeat Lab 2 Step 5 to verify the order and inventory functionality of the GrabDish store remains the same using new order ID's, for example 166 and 167.
+1. Repeat Lab 2 Step 3 to verify the order and inventory functionality of the GrabDish store remains the same using new order ID's, for example 166 and 167.
 
 ## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
 

@@ -17,7 +17,7 @@ Note, you will not be able to complete this workshop with the 'Always Free' acco
 
 ## **STEP 1**: Login to the OCI Console
 
-If you haven't already, Sign in to your account.
+If you haven't already, sign in to your account.
 
 ## **STEP 2**: Select the Home Region
 
@@ -27,7 +27,7 @@ Be sure to select the **home region** of your tenancy.  Setup will only work in 
   
 ## **STEP 3**: Check Your Tenancy Quota
 
-If you have a fresh free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step. 
+If you have a **fresh** free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step. 
 
 If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table. 
 
@@ -110,7 +110,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
    
-   Note, The cloud shell will disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
+   Note, the cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
 
     ```
     <copy>
@@ -146,13 +146,22 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-7. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, OCI Registry Repositories and an OCI Object Storage wallet.  You can monitor its progress from a different browser window.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
+7. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, several OCI Registry Repositories, and an OCI Object Storage wallet.  You can monitor its progress from a different browser window.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
-  ![](images/duplicate-browser-tab.png " ")
+   ![](images/duplicate-browser-tab.png " ")
 
-   In the new tab, select the resources you are interested in and select your new compartment.  Here we show the database resources that have been created.
+   In the new browser window or tab, select the resources that you are interested in and select your new compartment.  Here is a table summarizing where the newly created resources can be found in the OCI console:
+   
+   | Resources               | OCI Console Navigation                                                        |
+   |-------------------------|-------------------------------------------------------------------------------|
+   | Object Storage Buckets  | Storage --> Object Storage --> Buckets                                        |
+   | Databases               | Oracle Database --> Autonomous Database --> Autonomous Transaction Processing |
+   | OKE Cluster             | Developer Services --> Containers --> Kubernetes Clusters (OKE)               |
+   | Registry Repositories   | Developer Services --> Containers --> Container Registry                      |
+   
+   For example, here we show the database resources that have been created:
 
-  ![](images/select-compartment.png " ")
+   ![](images/select-compartment.png " ")
 
 8. Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message "SETUP_VERIFIED completed".
 
@@ -172,7 +181,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-   Once the setup has completed you are ready to move on to Lab 2.  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+   Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 ## Acknowledgements
 

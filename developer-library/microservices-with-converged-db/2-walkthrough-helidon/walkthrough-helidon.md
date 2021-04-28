@@ -63,7 +63,7 @@ You should then see the Front End home page. You've now accessed your first micr
 
 We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display the frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
-## **STEP 3**: Verify order and inventory activity of GrabDish store
+## **STEP 3**: Verify the Order and Inventory Functionality of GrabDish store
 
 1. Click **Transactional** under **Labs**.
 
@@ -210,14 +210,14 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 <copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
 ```
 
-1. The database user name is passed as an environment variable:
+1. The **database user name** is passed as an environment variable:
 
     ```
     - name: oracle.ucp.jdbc.PoolDataSource.orderpdb.user
       value: "ORDERUSER"
     ```
 
-2. The database user password is passed as an environment variable with the value coming from a kubernetes secret:
+2. The **database user password** is passed as an environment variable with the value coming from a kubernetes secret:
 
     ```
     - name: dbpassword
@@ -229,7 +229,7 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 
    Note, code has also been implemented to accept the password from an OCI vault, however, this is not implemented in the workshop at this time.
 
-   The secret itself was created during the setup using the password that you entered. 
+   The secret itself was created during the setup using the password that you entered.  See `utils/main-setup.sh` for more details.
 
     ```
     <copy>
@@ -239,7 +239,7 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 
    ![](images/db-user-secret.png " ")
 
-3. The database wallet is defined as a volume with the contents coming from a kubernetes secret:
+3. The **database wallet** is defined as a volume with the contents coming from a kubernetes secret:
 
     ```
     volumes:
@@ -286,9 +286,9 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 
 Let’s analyze the `microprofile-config.properties` file.
 
-    ```
-    <copy>cat $GRABDISH_HOME/order-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
-    ```
+```
+<copy>cat $GRABDISH_HOME/order-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
+```
 
 This file defines the `microprofile` standard. It also has the definition of the data sources that will be injected. The universal connection pool takes the JDBC URL and DB credentials to connect and inject the datasource. The file has default values which will be overwritten by the environment variables that are passed in.  
    
@@ -296,17 +296,17 @@ The `dbpassword` environment variable is read and set as the password unless and
 
 Let’s also look at the microservice source file `OrderResource.java`.
 
-    ```
-    <copy>cat $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java</copy>
-    ```
+```
+<copy>cat $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java</copy>
+```
 
 Look for the inject portion. The `@Inject` has the data source under `@Named` as “orderpdb” which was mentioned in the `microprofile-config.properties` file.
 
-    ```
-    @Inject
-    @Named("orderpdb")
-    PoolDataSource atpOrderPdb;
-    ```
+```
+@Inject
+@Named("orderpdb")
+PoolDataSource atpOrderPdb;
+```
 
 ## **STEP 9**: Understand shortcut commands and development process
 
@@ -322,10 +322,10 @@ A number of shortcut commands are provided in order to analyze and debug the wor
 
 As the deployments in the workshop are configured with `imagePullPolicy: Always` , once you have finished the workshop, you can develop and test changes to a microservice using the following sequence...
     
-    1. Modify microservice source
-    2. Run `./build.sh` to build and push the newly modified microservice image to the repository
-    3. Run `deletepod` (e.g. `deletepod order`) to delete the old pod and start a new pod with the new image
-    4. Verify changes
+1. Modify microservice source
+2. Run `./build.sh` to build and push the newly modified microservice image to the repository
+3. Run `deletepod` (e.g. `deletepod order`) to delete the old pod and start a new pod with the new image
+4. Verify changes
     
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
