@@ -350,4 +350,4 @@ Congratulations, you have completed lab 1; you may now [proceed to the next lab]
 
 * **Author** -  - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Kuassi Mensah, Database Product Management,  April 2021
+* **Last Updated By/Date** - Anoosha Pilli, Database Product Management,  April 2021
