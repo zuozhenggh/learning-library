@@ -20,22 +20,22 @@ A number of shortcut commands are provided in order to analyze and debug the wor
 
 `msdataworkshop` - Lists all of the kubernetes resources (deployments, pods, services, secrets) involved in the workshop
 
-`describepod` - Gives information on a given pod and can use abbreviated names for arguments, such as `describepod admin` or `describepod order`
+`describepod` - Gives information on a given pod and can use abbreviated names for arguments, such as `describepod inventory` or `describepod order`
 
-`logpod` - Provides the logs for a given pod/container and can use abbreviated names for arguments, such as `logpod admin` or `logpod order`
+`logpod` - Provides the logs for a given pod/container and can use abbreviated names for arguments, such as `logpod inventory` or `logpod order`
 
-`deletepod` - Deletes a given pod/container and can use abbreviated names for arguments, such as `deletepod admin` or `deletepod order`
+`deletepod` - Deletes a given pod/container and can use abbreviated names for arguments, such as `deletepod inventory` or `deletepod order`
 
 As the deployments in the workshop are configured with `imagePullPolicy: Always` , once you have finished the workshop, you can develop and test changes to a microservice using the following sequence...
     
     1. Modify microservice source
     2. Run `./build.sh` to build and push the newly modified microservice image to the repository
-    3. Run `deletepod` (eg `deletepod admin`, `deletepod order`, etc.) to delete the old pod and start a new pod with the new image.
-    4. Verify changes.
+    3. Run `deletepod` (e.g. `deletepod order`) to delete the old pod and start a new pod with the new image
+    4. Verify changes
     
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
-## **STEP 2**: Deploy and access FrontEnd UI microservice
+## **STEP 2**: Deploy all the Microservices and the FrontEnd UI
 
 1.  Run the deploy script.  This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
@@ -43,19 +43,17 @@ If changes have been made to the deployment yaml then re-run `./deploy.sh` in th
     <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
     ```
 
-   ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
+   ![](images/deploy-all.png " ")
 
-2.  Once successfully created, check that the frontend pod is running:
+2.  Once successfully created, check that the services are running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
     ```
 
-  ![](images/bf1ec14ebd4cb789fca7f77bb2d4b2d3.png " ")
+  ![](images/pods-all-after-deploy.png " ")
 
   Alternatively, you can execute the `pods` shortcut command:
-
-  ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
 3. Check that the load balancer service is running, and write down the external IP
     address.
@@ -64,80 +62,31 @@ If changes have been made to the deployment yaml then re-run `./deploy.sh` in th
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
-  ![](images/frontendservicekubectloutput.png " ")
+  ![](images/frontendservice.png " ")
 
   Alternatively, you can execute the `services` shortcut command.
 
-  ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
+## **STEP 3**: Access the FrontEnd UI
 
-4. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
+You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
 
-  `https://<EXTERNAL-IP>`
+`https://<EXTERNAL-IP>`
 
-  Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
-  
-  You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the one you entered in Lab 1.
-  
-  ![](images/frontendauthlogin.png " ")
-  
-  You should then see the Front End home page. You've now deployed and accessed your first microservice of the lab!
-  
-  Note that links on Front End will not work yet as they access microservices that will be created and deployed in subsequent labs.
+Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
 
-  We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
-  
-  ![](images/frontendhome.png " ")
+You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the one you entered in Lab 1.
 
-## **STEP 3**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
-You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
+![](images/frontendauthlogin.png " ")
 
-1.  First, let’s analyze the Kubernetes deployment YAML file: `admin-helidon-deployment.yaml`.
+You should then see the Front End home page. You've now accessed your first microservice of the lab!
 
-    ```
-    <copy>cat $GRABDISH_HOME/admin-helidon/admin-helidon-deployment.yaml</copy>
-    ```
+![](images/ui-home-page.png " ")
 
-    The volumes are set up and credentials are brought from each of the bindings
-    (inventory and order). The credential files in the secret are base64 encoded
-    twice and hence they need to be decoded for the program to use them, which
-    is what the `initContainer` takes care. Once done, they will be mounted for
-    access from the container `helidonatp`. The container also has the DB
-    connection information such as the JDBC URL, DB credentials and Wallet,
-    created in the previous step.
-
-2.  Let’s analyze the `microprofile-config.properties` file.
-
-    ```
-    <copy>cat $GRABDISH_HOME/admin-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
-    ```
-
-    This file defines the `microprofile` standard. It also has the definition of
-    the data sources that will be injected. You will be using the universal
-    connection pool which takes the JDBC URL and DB credentials to connect and
-    inject the datasource. The file has default values which will be overwritten
-    with the values specific for our Kubernetes deployment.
-
-3.  Let’s also look at the microservice source file `ATPAQAdminResource.java`.
-
-    ```
-    <copy>cat $GRABDISH_HOME/admin-helidon/src/main/java/oracle/db/microservices/ATPAQAdminResource.java</copy>
-    ```
-
-    Look for the inject portion. The `@Inject` will have the two data sources
-    under `@Named` as “orderpdb” and “inventorypdb” which were mentioned in the
-    `microprofile-config.properties` file.
+We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display the frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
 ## **STEP 4**: Verify order and inventory activity of GrabDish store
 
-1.   Open the frontend microservices home page from the previous lab.
-  If you need the URL again, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
-    ```
-    <copy>services</copy>
-    ```
-
-     ![](images/frontendservicekubectloutput.png " ")
-
-2. Click **Transactional** under **Labs**.
+1. Click **Transactional** under **Labs**.
 
    ![](images/transactionalpage-blank.png " ")
 
@@ -188,13 +137,11 @@ This architecture is tied with the Command Query Responsibility Segregation (CQR
 
 Let’s look at the Java source code to understand how Advanced Queuing and Oracle database work together.
 
-![](images/614cf30e428caffbd7b373d5c4d91708.png " ")
+![](images/getDBConnection.png " ")
 
 What is unique to Oracle and Advanced Queuing is that a JDBC connection can be invoked from an AQ JMS session. Therefore we are using this JMS session to send and receive messages, while the JDBC connection is used to manipulate the datastore. This mechanism allows for both the JMS session and JDBC connection to exist within same atomic local transaction.
 
-You have successfully configured the databases with the necessary users, tables and message propagation across the two ATP instances. You may proceed to the next step.
-
-## **STEP 5**: Verify spatial
+## **STEP 5**: Verify Spatial Functionality
 
 1. Click **Spatial** on the **Transactional** tab 
 
@@ -218,8 +165,7 @@ You have successfully configured the databases with the necessary users, tables 
 
 This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates. 
 Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. 
-This web component allows to simply integrate mapping into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
-
+This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
 ## **STEP 6**: Verify metrics
 
@@ -267,6 +213,118 @@ requests or not). In this STEP you will see how the probes pick up the health th
    Eventually you will see the container restart and note the new/later container startup time reflecting that the pod was restarted.
 
    ![](images/lastcontainerstartuptime2.png " ")
+
+## **STEP 8**: Understand Passing Database Credentials to a Microservice
+
+In order to connect to an ATP database you need the following four things:
+   - Database user name
+   - Database user password
+   - Database Wallet
+   - Connect alias, string or URL
+   
+Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.yaml` to see how this is done.
+
+    ```
+    <copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
+    ```
+
+1. The database user name is passed as an environment variable:
+
+    ```
+    - name: oracle.ucp.jdbc.PoolDataSource.orderpdb.user
+      value: "ORDERUSER"
+    ```
+
+2. The database user password is passed as an environment variable with the value coming from a kubernetes secret:
+
+    ```
+    - name: dbpassword
+      valueFrom:
+        secretKeyRef:
+          name: dbuser
+          key:  dbpassword
+    ```
+
+   Note, code has also been implemented to accept the password from an OCI vault, however, this is not implemented in the workshop at this time.
+
+   The secret itself was created during the setup using the password that you entered. 
+
+    ```
+    <copy>
+    kubectl describe secret dbuser -n msdataworkshop
+    </copy>
+    ```
+
+   ![](images/db-user-secret.png " ")
+
+3. The database wallet is defined as a volume with the contents coming from a kubernetes secret:
+
+    ```
+    volumes:
+      - name: creds
+        secret:
+          secretName: db-wallet-secret
+    ```
+
+   The volume is mounted as a filesystem:
+
+    ```
+    volumeMounts:
+      - name: creds
+        mountPath: /msdataworkshop/creds
+    ```
+
+   And finally, when connecting the TNS_ADMIN is pointed to the mounted filesystem:
+
+    ```
+    - name: oracle.ucp.jdbc.PoolDataSource.orderpdb.URL
+      value: "jdbc:oracle:thin:@%ORDER_PDB_NAME%_tp?TNS_ADMIN=/msdataworkshop/creds"
+    ```
+
+   Setup had previeously downloaded a regional database wallet and created the db-wallet-secret secret containing the wallet files.  See `utils/db-setup.sh` for more details.
+    
+    ```
+    <copy>
+    kubectl describe secret db-wallet-secret -n msdataworkshop
+    </copy>
+    ```
+   
+   ![](images/db-wallet-secret.png " ")
+
+4. The database connection URL is passed in as an environment variable.  
+
+    ```
+    - name: oracle.ucp.jdbc.PoolDataSource.orderpdb.URL
+      value: "jdbc:oracle:thin:@%ORDER_PDB_NAME%_tp?TNS_ADMIN=/msdataworkshop/creds"
+    ```
+
+   The URL references a TNS alias that is defined in the tnsnames.ora file that is contained within the wallet.
+
+## **STEP 9**: Understand How Database Credentials are Used by a Helidon Microservice
+
+Let’s analyze the `microprofile-config.properties` file.
+
+    ```
+    <copy>cat $GRABDISH_HOME/order-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
+    ```
+
+This file defines the `microprofile` standard. It also has the definition of the data sources that will be injected. The universal connection pool takes the JDBC URL and DB credentials to connect and inject the datasource. The file has default values which will be overwritten by the environment variables that are passed in.  
+   
+The `dbpassword` environment variable is read and set as the password unless and vault OCID is provided.  
+
+Let’s also look at the microservice source file `OrderResource.java`.
+
+    ```
+    <copy>cat $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java</copy>
+    ```
+
+Look for the inject portion. The `@Inject` has the data source under `@Named` as “orderpdb” which was mentioned in the `microprofile-config.properties` file.
+
+    ```
+    @Inject
+    @Named("orderpdb")
+    PoolDataSource atpOrderPdb;
+    ```
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon

@@ -27,7 +27,7 @@ Be sure to select the **home region** of your tenancy.  Setup will only work in 
   
 ## **STEP 3**: Check Your Tenancy Quota
 
-If you have a fresh free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed top the next step. 
+If you have a fresh free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step. 
 
 If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table. 
 
