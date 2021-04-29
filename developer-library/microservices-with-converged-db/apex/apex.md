@@ -1,19 +1,21 @@
-# Lab 6: Create an APEX App to Make Sense of the Data
+# Create an APEX App to Make Sense of the Data
 
 ## Overview
 
 This lab will show you how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
+
+Estimated Lab Time - 
 
 ### Objectives
 
 * Create an APEX workspace in ATP
 * Create an APEX app using a file
 
-### What Do You Need?
+### Prerequisites
 
 * An ATP database (created in Lab 1)
 
-## **Step 1:** Create a new workspace in APEX
+## **STEP 1:** Create a new workspace in APEX
 
 When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 
@@ -43,7 +45,7 @@ When you first access APEX you will need to log in as an APEX instance administr
 
 You have successfully created an APEX workspace where you can begin creating applications.
 
-## **Step 2:** Create a new APEX App
+## **STEP 2:** Create a new APEX App
 
 In this step, you will create a new APEX app based on a file that contains a small sample of the type of data that the microservices would collect.
 
@@ -130,3 +132,10 @@ In this step, you will create a new APEX app based on a file that contains a sma
 
     ![](images/app-home-page.png)
 
+## Acknowledgements
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+               Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Last Updated By/Date** - Tom McGinn, June 2020

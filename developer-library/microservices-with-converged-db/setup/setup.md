@@ -1,57 +1,59 @@
-# Lab 1: Setup
+# Setup
 
 ## Introduction
 
-In this 20-minute lab we will provision and setup the resources in your tenancy to install and execute microservices.  
+In this lab, we will provision and setup the resources in your tenancy to install and execute microservices.
+
+Estimated Lab Time - 20 minutes
 
 ### Objectives
 
 * Clone the microservices code
 * Execute setup
 
-### What Do You Need?
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 
-You will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
+	Note that you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
-## **STEP 1**: Login to the OCI Console
+## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
 
-Logon to the OCI console for your tenancy.  Be sure to select the **home region** in your tenancy.  This workshop setup will only work in the home region.
+1. Log in to the OCI console for your tenancy.  Be sure to select the **home region** in your tenancy.  This workshop setup will only work in the home region.
 
   ![](images/home-region.png " ")
-  
+
 ## **STEP 2**: Launch the Cloud Shell
 
-Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated CLI which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
+1. Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated CLI which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
-Click the Cloud Shell icon in the top-right corner of the Console.
+2. Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
 ## **STEP 3**: Create a Folder to Contain the Workshop Code
 
-Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
+1. Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
 
-```
-<copy>mkdir grabdish; cd grabdish
-</copy>
-```
+	```
+	<copy>mkdir grabdish; cd grabdish
+	</copy>
+	```
 
-Note, you must change directory to the directory that you have created or the setup will fail.
+	Note, you must change directory to the directory that you have created or the setup will fail.
 
 ## **STEP 4**: Make a clone of the workshop source code
 
-To work with application code, you need to make a clone from the GitHub repository using the following command. 
+1. To work with application code, you need to make a clone from the GitHub repository using the following command. 
 
-```
-<copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
-</copy>
-```
+	```
+	<copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
+	</copy>
+	```
 
-You should now see `microservices-datadriven` in your folder
+	You should now see `microservices-datadriven` in your folder
 
-TODO: When we publish this will change to clone from the main branch.
+	TODO: When we publish this will change to clone from the main branch.
 
 ## **STEP 5**: Running the Setup Script
 
@@ -77,14 +79,13 @@ TODO: When we publish this will change to clone from the main branch.
 
    The setup process will typically take around 20 minutes to complete.  
 
-2. The setup will ask for you to enter your User OCID.  This can be found in the OCI console.
-
+2. The setup will ask for you to enter your User OCID.  This can be found in the OCI console. Copy and paste the OCID in cloud shell and press Enter.
 
   ![](images/get-user-ocid.png " ")
 
   ![](images/example-user-ocid.png " ")
 
-3. The setup will automatically configure key based access to the OCI command line interface.  To do this it may need to generate and upload a new API Key to your tenancy.  
+3. The setup will automatically configure key based access to the OCI command line interface.  To do this it may need to generate and upload a new API Key to your tenancy.
 
    To generate a key the setup will ask you to enter a passphrase.  If that happens then hit return (empty passphrase).  Do not enter a passphrase or setup will fail.
    
@@ -141,6 +142,6 @@ TODO: When we publish this will change to clone from the main branch.
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Tom McGinn, June 2020
+* **Last Updated By/Date** - Anoosha Pilli, Database Product Management, April 2021
 
 
