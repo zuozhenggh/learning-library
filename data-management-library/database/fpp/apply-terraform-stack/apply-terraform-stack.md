@@ -82,4 +82,4 @@ You may now [proceed to the next lab](#next) and connect to the server.
 
 - **Author** - Ludovico Caldara
 - **Contributors** - Kamryn Vinson
-- **Last Updated By/Date** -  Ludovico Caldara, April 2021
+- **Last Updated By/Date** -  Kamryn Vinson, April 2021

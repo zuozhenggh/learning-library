@@ -270,4 +270,4 @@ All the database homes are there! Now they are ready to run databases. You may n
 
 - **Author** - Ludovico Caldara
 - **Contributors** - Kamryn Vinson
-- **Last Updated By/Date** -  Ludovico Caldara, April 2021
+- **Last Updated By/Date** -  Kamryn Vinson, April 2021

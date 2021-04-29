@@ -141,4 +141,4 @@ The database is there, wasn't that easy? You may now [proceed to the next lab](#
 
 - **Author** - Ludovico Caldara
 - **Contributors** - Kamryn Vinson
-- **Last Updated By/Date** -  Ludovico Caldara, April 2021
+- **Last Updated By/Date** -  Kamryn Vinson April 2021

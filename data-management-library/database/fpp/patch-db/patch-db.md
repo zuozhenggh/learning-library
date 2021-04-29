@@ -161,4 +161,4 @@ Congratulations! You have completed all the labs in this workshop. We hope you h
 
 - **Author** - Ludovico Caldara
 - **Contributors** - Kamryn Vinson
-- **Last Updated By/Date** -  Ludovico Caldara, April 2021
+- **Last Updated By/Date** -  Kamryn Vinson, April 2021
