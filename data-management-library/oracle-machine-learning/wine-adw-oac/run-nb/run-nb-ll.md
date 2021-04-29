@@ -248,7 +248,7 @@ Now that we have built a machine learning model, let's evaluate the model.
 
 2. Here is the result of the data mining model we just created with the TARGET\_VALUE, ATTRIBUTE\_NAME, COEFFICIENT, REVERSED\_COEFFICIENT.  
 
-    You may be wondering where DM$VLWINE\_CLASS\_MODEL\_SVM came from. DM$VLmodel\_name is Oracle Machine Learning's Model Detail View for Support Vector Machine which describes linear coefficient views. To learn more, click [this link](https://docs.oracle.com/en/database/oracle/oracle-database/18/dmprg/model-detail-views.html#GUID-3B46FDE8-DA4F-4E5C-80E1-F984942E496D).
+    You may be wondering where DM$VLWINE\_CLASS\_MODEL\_SVM came from. DM$VLmodel\_name is Oracle Machine Learning's Model Detail View for Support Vector Machine which describes linear coefficient views. To learn more, click [this link](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmprg/model-detail-views.html#GUID-E40F3A3A-0158-45B4-8FD9-ADF6CA3FB9A6).
 
     ![](./images/ml-model-output.png " ")
 
@@ -306,5 +306,5 @@ Whew! That was a lot of information to work through, but now you've successfully
 
 ## Acknowledgements
 
-* **Author** -  Anoosha Pilli, Database Product Management
-* **Last Updated By/Date** - Anoosha Pilli, April 2020
+* **Author** -  Anoosha Pilli & Didi Han, Database Product Management
+* **Last Updated By/Date** - Anoosha Pilli, April 2021

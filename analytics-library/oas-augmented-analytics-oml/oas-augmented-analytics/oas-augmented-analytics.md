@@ -82,7 +82,7 @@ Note: This lab's Step 3 builds on this concept by showing how to identify Cluste
 
 We will use the data profiling and semantic recommendations functionality to repair and enrich your data. These recommendations are based on the system automatically detecting a specific semantic type during the data profiling step.
 
-You will learn how the Explain feature uses machine learning so you don't have to waste time guessing and dropping random data elements on the canvas to create a visualization for data insight. Explain helps eliminate bias from your analysis.  Consider  asking 10 different people in your organization why employees are leaving.  Likely you’d get 10 different opinions and such scenarios often lead to wasted time as each tries to prove their hypothesis. In contrast, Explain runs a series of algorithms against the data giving you an unbiased view of key attributes and measures which contributed to the employees leaving.
+You will learn how the Explain feature uses machine learning so you don't have to waste time guessing and dropping random data elements on the canvas to create a visualization for data insight. Explain helps eliminate bias from your analysis.  Consider  asking 10 different people in your organization why employees are leaving. It is very likely that you will get 10 different opinions and such scenarios often lead to wasted time as each tries to prove their hypothesis. In contrast, Explain runs a series of algorithms against the data giving you an unbiased view of key attributes and measures which contributed to the employees leaving.
 
 We will also leverage the BI Ask functionality as part of data visualization. This feature provides an interactive way to integrate data into your visualization projects.
 
@@ -214,7 +214,7 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
    ![](./images/OML17.png " ")  
 
 
-15.  We can do further explain functions on other attributes in our project data set, and for each column we explain and generate visualizations for a new explain canvas tab will be added to the project.
+15.  We can perform further explain functions on other attributes in our project data set, and for each column we explain and generate visualizations for a new explain canvas tab will be added to the project.
 
    Try explaining the 'Education' attribute and add some visualizations to the project
 
@@ -226,6 +226,7 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
 
     
    ![](./images/OML18.png " ") 
+
 16. Select ‘**Add Selected**’ to the project.
 
     Add a new canvas to the project and we will continue building up the analysis.
@@ -260,15 +261,15 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
     
    ![](./images/OML22.png " ")  
 
-20. Using the chart type selector at the top RHS of the chart change it to a horizontal stacked chart.
+20. Using the chart type selector at the top RHS of the chart and change it to a horizontal stacked chart.
    
    ![](./images/OML23.png " ")
 
-   We can now see more men than women left the organization but proportionally more women actually left
+   We can now see that more men than women left the organization but proportionally more women actually left.
 
-   Let’s use the in-built advanced analytics features to determine potentially why this might be
+   Let us use the in-built advanced analytics features to determine potentially why this might be the case.
    
-    
+  
 
 21. Select the **“x”** to remove your BI Ask elements.
    ![](./images/OML24.png " ")
@@ -303,7 +304,7 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
 
 This exercise explores how self-service machine learning models are available and can be leveraged within OAS to enable various forms of predictive  analysis.   
 
-It’s worth noting this type of work may be more efficiently off-loaded to the Oracle Database where it’s possible to handle significantly more data, many more attributes and to evaluate & leverage more machine learning algorithms than one might wish to attempt using OAS.  In fact, the current roadmap for OAS calls for a transparent mechanism which will effectively and transparently offload a majority of machine learning processing to the Oracle Database.
+It is worth noting that this type of work may be more efficiently off-loaded to the Oracle Database where it is possible to handle significantly more data, many more attributes and to evaluate & leverage more machine learning algorithms than one might wish to attempt using OAS.  In fact, the current roadmap for OAS calls for a transparent mechanism which will effectively and transparently offload a majority of machine learning processing to the Oracle Database.
 
 1. We are now going to extend our analysis by seeing how we can predict whether an employee is likely to leave the organization.
 
@@ -362,13 +363,13 @@ It’s worth noting this type of work may be more efficiently off-loaded to the 
   ![](./images/OMLP10.png " ") 
 
 
-11. We can inspect the Quality  of our Machine Learning model to determine how well it might do in predicting employees likely to leave.
+11. We can inspect the Quality of our Machine Learning model to determine how well it might do in predicting employees likely to leave.
 
    Right Click and select **Inspect**.
    ![](./images/OMLP11.png " ") 
 
 
-12. Now we’ll use a current, data set for remaining  employees and apply our machine learning model in order to predict those employees most likely to next leave the organization.
+12. Now we will use a current, data set for remaining  employees and apply our machine learning model in order to predict those employees most likely to next leave the organization.
 
 
    In order to do this we go back to the Home page and select ‘Create’/‘import’ in the Page Menu (hamburger) to import a project previously created which analyzes the current employees of our organization
