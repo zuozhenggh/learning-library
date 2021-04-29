@@ -14,6 +14,8 @@ FPP commands can be ran simultaneously on hundreds of targets, making possible t
 A single command line, or a single RESTful API call, replaces dozens or hundreds of manual tasks.
 Forget about boring and time-consuming patching campaigns: Fleet Patching and Provisioning gives you the automation, standardization and protection level that your auditors are looking for.
 
+Estimated Workshop Time:  4 hours
+
 ### About this Workshop
 
 Fleet Patching and Provisioning 19c is meant to be used by customers to patch their database fleet on-premises. It is generally not recommended to use it for patching Oracle Cloud database services, because the current version does not integrate with the OCI automation tooling (please note that is not completely true: Oracle does use FPP internally to patch some OCI services, but this is not visible to our customers). However, in this workshop we will use OCI services to setup and test FPP.
@@ -31,10 +33,13 @@ FPP is part of the Oracle Grid Infrastructure stack: the FPP Server requires the
 * Installing Oracle Homes (Working Copies)
 * Creating and patching Oracle Databases
 
-Estimated Workshop Time:  4 hours
+### Workshop Prerequisites
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
 
 
-## More Information on Oracle Fleep Patching & Provisioning
+
+## More Information on Oracle Fleet Patching & Provisioning
 
 * [FPP documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/fppad/fleet-patching-provisioning.html)
 * [FPP website](https://www.oracle.com/database/technologies/rac/fpp.html)
@@ -42,9 +47,7 @@ Estimated Workshop Time:  4 hours
 ## Acknowledgements
 
 - **Author** - Ludovico Caldara
-- **Contributors** -
+- **Contributors** - Kamryn Vinson
 - **Last Updated By/Date** -  Ludovico Caldara, April 2021
 
-## Need Help?
 
-Please submit feedback or ask for help by sending an email to livelabs-help-db_us@oracle.com. Please make sure to include your workshop name and lab name.  You can also include screenshots and attach files.
