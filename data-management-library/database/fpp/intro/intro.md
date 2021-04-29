@@ -16,6 +16,9 @@ Forget about boring and time-consuming patching campaigns: Fleet Patching and Pr
 
 Estimated Workshop Time:  4 hours
 
+Watch the video below for an overview on Oracle Fleet Patching and Provisioning.
+[](youtube:jFAOPGNpcoY)
+
 ### About this Workshop
 
 Fleet Patching and Provisioning 19c is meant to be used by customers to patch their database fleet on-premises. It is generally not recommended to use it for patching Oracle Cloud database services, because the current version does not integrate with the OCI automation tooling (please note that is not completely true: Oracle does use FPP internally to patch some OCI services, but this is not visible to our customers). However, in this workshop we will use OCI services to setup and test FPP.
