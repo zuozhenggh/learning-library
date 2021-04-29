@@ -63,11 +63,11 @@ In this step you can choose between three different implementations of the Inven
 
 ## **STEP 3**: Verify application functionality
 
-1. Repeat [Lab 2 Step 3](../2-walkthrough-helidon/walkthrough-helidon.md#step-3-verify-the-order-and-inventory-functionality-of-grabdish-store) to verify the order and inventory functionality of the GrabDish store remains the same using the new implementation.  You will need to use different order ID's, for example 166 and 167.
+1. Repeat [Lab 2 Step 3](../2-walkthrough-helidon/walkthrough-helidon.md) to verify that the functionality of the GrabDish store remains the same while using the new implementation.  You will need to use different order ID's, for example 166 and 167.
 
 ## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
 
-1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following command.
+1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following commands.
 
     ```
     <copy>
