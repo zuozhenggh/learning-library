@@ -52,7 +52,7 @@ in the top right hand side of your screen. If your username is shown as:
 
 2. Return to the **Home Console Page** and navigate to **Analytics & AI** section and then **Analytics Cloud**.
 
-    ![Oracle Analytics Console](./images/lab200_5_2.png)
+    ![Oracle Analytics Console](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
     > **Note**: You must be connected as a **Single Sign On** (**Federated user**) user to a tenancy, which has available cloud credits to see this menu item. Local OCI users are not able to do this.
 
