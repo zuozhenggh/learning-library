@@ -80,7 +80,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 1.3 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
