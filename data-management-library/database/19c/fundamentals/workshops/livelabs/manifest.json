@@ -21,28 +21,46 @@
             "type": "livelabs"
         },
         {
-        "title": "Lab 2: Install Oracle Database 19c with Automatic Root Script Execution",
-        "description": "Install Oracle Database 19c with automatic configuration script execution. You access a Gaucamole desktop on your compute instance from a browser.",
-        "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-config-script-execution-guac.md",
-        "type": "livelabs"
-         },
+        "title": "Lab 2: Obtain a Compute Image with Staged Oracle Database 19c Installer Files",
+        "description": "Obtain a compute instance wtih staged Oracle Database 19c installer files by using Resource Manager.",
+        "filename": "./../../obtain-compute-image-19c-staged/obtain-compute-image-19c-staged.md",
+        "type": "freetier"
+    },
+
         {
-             "title": "Lab 3: Verify Setup",
-             "description": "Verify the compute instance with Oracle Database 19.10, provided by LiveLabs, is set up.",
-             "publisheddate": "3/24/2020",
-             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/verify-setup-19c-livelabs.md",
-             "type": "livelabs"
+        "title": "Lab 3: Install Oracle Database 19c with Automatic Root Script Execution",
+        "description": "Install Oracle Database 19c with automatic configuration script execution.",
+        "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md",
+        "type": "freetier"
          },
-         {
-             "title": "Appendix A: Install Oracle Database 19c with Automatic Root Script Execution - X11 Forwarding",
-             "description": "This lab shows you how to install the Oracle Database 19c with automatic configuration script execution. You run the Oracle Database installer by using X11 forwarding.",
-             "filename": "./../../install-db19c-auto-config-script-execution/install-db19c-auto-root-script-execution-x11.md",
-             "type": "livelabs"
-         },
+          {
+              "title": "Lab 4: Obtain a Compute Image with Oracle Database 19c Installed",
+              "description": "Obtain a compute instance that has Oracle Database 19c already installed by using Resource Manager",
+              "filename": "./../../obtain-compute-image-19c-installed/obtain-compute-image-19c-installed.md",
+              "type": "freetier"
+          },
+          {
+              "title": "Appendix A: Create a Compute Instance with X11 Forwarding",
+              "description": "This lab shows you how to create a compute instance and configure it for X11 forwarding in preparation for an Oracle Database 19c installation.",
+              "filename": "./../../create-compute-instance-x11/create-compute-instance-x11.md",
+              "type": "freetier"
+          },
+          {
+              "title": "Appendix B: Create a Compute Instance with VNC Server",
+              "description": "This lab shows you how to create a compute instance and configure it with VNC Server in preparation for an Oracle Database 19c installation.",
+              "filename": "./../../create-compute-instance-vncserver/create-compute-instance-vncserver.md",
+              "type": "freetier"
+          },
+          {
+              "title": "Appendix C: Perform Prerequisite Tasks for an Oracle Database 19c Installation",
+              "description": "This lab shows you how to prepare your compute instance for an Oracle Database 19c Installation.",
+              "filename": "./../../perform-db19c-prerequisite-tasks/perform-db19c-prerequisite-tasks.md",
+              "type": "freetier"
+          },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

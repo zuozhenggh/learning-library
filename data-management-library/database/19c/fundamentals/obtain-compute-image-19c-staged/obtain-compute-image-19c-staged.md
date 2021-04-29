@@ -1,9 +1,11 @@
-# Deploy a Compute Image with Staged Oracle Database 19c Installer Files
+# Obtain a Compute Image with Staged Oracle Database 19c Installer Files
 
 ## Introduction
 In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance that has the Oracle Database 19c installer files staged on it. This lab creates the environment that you will use in the [Install ORacle Database 19c using Automatic Root Script Execution](?lab="install-db19c-auto-config-script-execution.md") lab
 
 In Resource Manager, you begin by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs and loads a custom image stored in Oracle Cloud Marketplace. Guacomole is installed on the image to provide a friendly user interface. You can also access a terminal window on the image. After you create the stack, you apply it to start the provisioning job in OCI. When the job is completed, you log in to your compute instance through a browser.
+
+*If you are working in the LiveLabs tenancy, you can skip STEP 1 because it has already been done for you.*
 
 
 ### Objectives
@@ -25,6 +27,8 @@ In this lab, you learn how to do the following:
 - You are signed in to Oracle Cloud Infrastructure.
 
 ## **STEP 1**: Create and apply a stack in Resource Manager
+
+*If you are working in the LiveLabs tenancy, you can skip this step and proceed to STEP 2*.
 
 1. Download [livelabs-db19installed-0421.zip](https://apexapps-stage.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=667) to a directory on your local computer. This ZIP file contains the terraform script.
 

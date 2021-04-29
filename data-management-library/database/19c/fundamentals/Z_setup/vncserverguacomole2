@@ -5,6 +5,14 @@ Reference:
 - https://guacamole.apache.org/doc/gug/guacamole-architecture.html
 - https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/?lab=optional-lab-6-setup-guacamole-remote-desktop-on#Step2:ConfigureDesktop
 
+#---------------------------------
+# Create a VCN
+#---------------------------------
+Name: livelabs
+compartment: livelabs
+CIDR blocks: 10.0.0.0/24
+Select "USE DNS HOSTNAMES IN THIS VCN"
+
 #----------------------------------
 #Create a compute instance via OCI
 #-----------------------------------
@@ -19,9 +27,27 @@ Configure:
  Availability Domain: Accept the default values
  Image: Oracle Linux 7.9
  Shape: VM.Standard.E2.4
- Networking: Accept the defaults
+ Networking:
+
+ virtual cloud network should be "livelabs" so that you get a DNS domain name: livelabs.oraclevcn.com
+
+DNS Domain Name: livelabs.oraclevcn.com
+ NAME THE VCN AND SUBNET  vcnLiveLabs, subnetLiveLabs
+ VCN: display_name   = "labVCN"
+      dns_label      = "labVCN"
+SUBNET:  display_name        = "lab-public-subnet1"
+         dns_label           = "subnet1"
+
+GATEWAY:   display_name   = "lab-internet-gateway"
+
+workshop-staged.livelabs.oraclevcn.com  workshop-staged
+### SUBNET NAME -
+
+
  Generate SSH key pair. Save both the public key and private key locally as cloudshellkey.pub (public key) and cloudshellkey.key (private key).
  Boot volume: Accept the default values
+
+ Download both private and public keys
 
 Click Create.
 
@@ -34,7 +60,7 @@ In OCI, open Cloud Shell.
 
 From the **Cloud Shell** menu, select **Upload**. The **File Upload to your Home Directory** dialog box is displayed.
 
-Click **select from your computer**. Browse to and select your private key file, and then click **Open**. Click **Upload**. Your private key is uploaded to the `home` directory on your Cloud Shell machine.
+Click **select from your computer**. Browse to and select your private key file (cloudshell.key), and then click **Open**. Click **Upload**. Your private key is uploaded to the `home` directory on your Cloud Shell machine.
 
 Create an `.ssh` directory in the `home` directory.
 
@@ -42,7 +68,7 @@ Create an `.ssh` directory in the `home` directory.
 
 Move your private key to the `.ssh` directory. In the code below, replace `private-key-filename` with the name of own private key file. Be sure to include the slash (/) after .ssh in the command to ensure that the file gets moved to a directory.
 
-  mv cloudshellkey.key .ssh/
+  mv cloudshell.key .ssh/
 
 
 Set permissions on the `.ssh` directory so that only you (the owner) can read, write, and execute on the directory. Also set permissions on the private key itself so that only you (the owner) can read and write (but not execute) on the private key file.
@@ -55,7 +81,9 @@ On the **Instance Information** tab for your compute instance, find the public I
 
 Enter the following `ssh` command to connect to your compute instance, replacing `private-key-file` and `public-ip-address` with your own values.
 
-$ ssh -i ~/.ssh/cloudshellkey.key opc@public-ip-address
+$ ssh -i ~/.ssh/cloudshell.key opc@public-ip-address
+
+eg. ssh -i ~/.ssh/cloudshell.key opc@158.101.172.236
 
     You receive a message stating that the authenticity of your compute instance can't be established. Do you want to continue connecting?
 
@@ -73,7 +101,7 @@ cat /etc/hosts
 
 Review the correct hostname in the "/etc/hostname" file.
 cat /etc/hostname
-workshop
+workshop-staged (or workshop-installed)
 
 #--------------------------------------------------------
 #Update the packages and run Oracle Database preinstaller
@@ -81,6 +109,9 @@ workshop
 
 Switch to root user
 sudo su - || sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd; sudo su -
+
+NOte from Rene: Sudo if unlocked, otherwise unlock then sudo. Per marketplace requirements root must be locked and is done so prior to snapping the custom image.
+But if you need to get in as root for whatever reason when it has been locked then that's the command to run
 
 
 Update the existing packages on the image
@@ -97,8 +128,18 @@ Set the password for the oracle user
   passwd oracle
   Ora4U_1234
 
-Set the appuser variable to oracle
+NOT DOING: Set the appuser variable to oracle
     export appuser=oracle
+
+Set up X11 forwarding
+
+yum install -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-utils xorg-x11-apps xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1
+vi /etc/ssh/sshd_config
+- `X11Forwarding yes` (already set by default)
+- `X11DisplayOffset 10`
+- `X11UseLocalhost no`
+
+systemctl restart sshd
 
 
 #---------------------------------------
@@ -116,10 +157,14 @@ Install VNC Server
 #------------------------
 
 Copy the default VNC Server configuration file
-    cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver_${appuser}@:1.service
+DIDN'T DO:    cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver_${appuser}@:1.service
+
+DID DO: cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver_oracle@:1.service
 
 Replace <USER> with ${appuser} the service unit file
-    sed -i "s/<USER>/${appuser}/g" /etc/systemd/system/vncserver_${appuser}@:1.service
+DIDN'T DO:    sed -i "s/<USER>/${appuser}/g" /etc/systemd/system/vncserver_${appuser}@:1.service
+
+DID DO: sed -i "s/<USER>/oracle/g" /etc/systemd/system/vncserver_oracle@:1.service
 
 Set the firewall rule
 firewall-cmd --zone=public --permanent --add-service=vnc-server
@@ -130,24 +175,30 @@ Activate the changes
   systemctl daemon-reload
 
 Enable the VNC service at boot
-  systemctl enable vncserver_${appuser}@:1.service
-  >Created symlink from /etc/systemd/system/multi-user.target.wants/vncserver_oracle@:1.service to /etc/systemd/system/vncserver_oracle@:1.service
+DIDN'T DO:  systemctl enable vncserver_${appuser}@:1.service
+
+DID do: systemctl enable vncserver_oracle@:1.service
+> Created symlink from /etc/systemd/system/multi-user.target.wants/vncserver_oracle@:1.service to /etc/systemd/system/vncserver_oracle@:1.service.
+
 
 Activate the changes again
   systemctl daemon-reload
 
 Set the password for the VNC user
-  vncpasswd ${appuser}
+DIDN'T DO:   vncpasswd ${appuser}
+Did do: vncpasswd oracle
 
     enter password:
     LiveLabs.Rocks_99
     Enter "n" to view only question.
 
 Su over to the VNC user account and enforce the password when prompted
-  sudo su - ${appuser}
+DIDN'T DO:   sudo su - ${appuser}
+
+DID DO: sudo su - oracle
   vncserver
   Enter LiveLabs.Rocks_99 as password
-  Enter N to not do view-only
+  Enter n to not do view-only
   > xauth:  file /home/oracle/.Xauthority does not exist
   Creating default startup script /home/oracle/.vnc/xstartup
   Creating default config /home/oracle/.vnc/config
@@ -157,17 +208,22 @@ Su over to the VNC user account and enforce the password when prompted
 Set screen resolution
   vi $HOME/.vnc/config
   comment out geometry and set to 1920x1080
-  comment out localhost. the parameter “-localhost” makes VNC server to listen on loopback interface and accept connection from a tunnel only.
+  DIDN'T DO: comment out localhost. the parameter “-localhost” makes VNC server to listen on loopback interface and accept connection from a tunnel only.
 
 Stop the newly started VNC Server running on :1
   vncserver -kill :1
+  > Killing Xvnc process ID 27998
 
 Switch to root user
     exit
 
 Start the VNC Server using systemctl and check the status.
-    systemctl start vncserver_${appuser}@:1.service
-    systemctl status vncserver_${appuser}@:1.service
+DIDN'T DO:    systemctl start vncserver_${appuser}@:1.service
+             systemctl status vncserver_${appuser}@:1.service
+
+Did do:
+systemctl start vncserver_oracle@:1.service
+systemctl status vncserver_oracle@:1.service
 
 
 #---------------------------------------------------------
@@ -176,12 +232,27 @@ Start the VNC Server using systemctl and check the status.
 
 In this step, you create a tunnel for VNC through SSH so that all data is sent through an encrypted tunnel.
 
-Using puttygen, convert your cloudshellkey.key into ppk format
+Using puttygen, convert your cloudshell.key into ppk format
+You need to convert the private key that you obtained from Oracle Cloud Infrastructure into a .ppk file format so that you can use it with PuTTY.
+
+1. Open **PuTTY Key Generator**.
+
+2. From the **Conversions** menu, select **Import key**.
+
+3. Browse to and select the private key file (.key) that was generated for you when you created your compute instance, and click **Open**. Your private key is converted into PPK format.
+
+4. Leave **RSA** as the type of key to generate, and click **Save private key**.
+
+5. Click **Yes** to save without a passphrase.
+
+6. Enter a name for your private key (cloudshell.ppk), and click **Save**. It's helpful to use the same name as your original `KEY` file, but with a `PPK` file extension.
+
+7. Close PuTTY Key Generator.
 
 Configure a PuTTY connection
 Note: from a terminal window, you would do this: $ ssh -L 5901:localhost:5901 opc@130.61.185.156
 
-130.61.185.156, port 22
+<public ip address>, port 22
 user: opc
 upload ppk key file
 tunnel: source port: 5901
@@ -203,17 +274,17 @@ File > New connection
 
 General tab:
 -VNC Server: localhost:5901
--Name: Workshop
+-Name: Workshop-Staged or Workshop-Installed
 
 Options tab:
-- Picture quality: high
+- Picture quality: High
 - Scaling: Automatic
 
 Click Ok.
 
 Right-click the connection name, and click Connect.
 
-In the Encryption dialog box, click Continue.
+In the Encryption dialog box, select "Don't warn me about this again", and click Continue.
  (unencrypted-connection-dialog.png)
 
 In the Authentication dialog box, enter the vnc password for oracle user (LiveLabs.Rocks_99).
@@ -253,13 +324,13 @@ In PuTTY, enter exit.
 Apache Guacamole is a free and open source web application which lets you access your dashboard from anywhere using a modern web browser. It is a clientless remote desktop gateway which only requires Guacamole installed on a server and a web browser supporting HTML5.
 Guacamole system is made up of two separate parts: Guacamole server, and Guacamole Client. For Guacamole to work, both of these tools must be installed.
 
-Make sure you are logged in as the root user ([root@workshop ~]#)
+In Cloud Shell, make sure you are logged in as the root user.
 
 Check Java version (required for tomcat)
 java -version
-  > openjdk version "1.8.0_282"
-  OpenJDK Runtime Environment (build 1.8.0_282-b08)
-  OpenJDK 64-Bit Server VM (build 25.282-b08, mixed mode)
+  > openjdk version "1.8.0_292"
+OpenJDK Runtime Environment (build 1.8.0_292-b10)
+OpenJDK 64-Bit Server VM (build 25.292-b10, mixed mode)
 
 
 Install the required dependencies. Includes tomcat.
@@ -275,7 +346,7 @@ libpng-devel \
 libssh2-devel \
 libtelnet-devel \
 libtool \
-libuv-devel  \
+libuv-devel \
 libvncserver-devel \
 libvorbis-devel \
 libwebp-devel \
@@ -343,7 +414,8 @@ systemctl restart tomcat
 systemctl status tomcat
 systemctl enable guacd
 > guacd.service is not a native service, redirecting to /sbin/chkconfig.
-Executing /sbin/chkconfig guacd on
+  Executing /sbin/chkconfig guacd on
+
 
 systemctl start guacd
 systemctl status guacd
@@ -393,6 +465,7 @@ Create guacamole user mapping file "/etc/guacamole/user-mapping.xml". Replace th
   vi /etc/guacamole/user-mapping.xml
 
 paste and save:
+Note: Make sure that when you paste, the first line isn't cut off
 
 <user-mapping>
    <authorize username="oracle" password="33e3cc7ec32572a99ce33db0b2f08643" encoding="md5">
@@ -443,7 +516,7 @@ Make sure you're not connected to VPN
 
 In a browser, enter:
  http://compute-public-ip:8080/guacamole
-http://130.61.185.156:8080/guacamole
+http://158.101.172.236:8080/guacamole
 
 
 Enter oracle, password = Guac.LiveLabs_, and click Login.  (don't forget the underscore at the end)
@@ -481,13 +554,15 @@ Add a shortcut of FireFox browser.
 
 Repeat steps above to add any other required Application the workshop may need to the Desktop (e.g. Terminal, SQL Developer, etc…)
 
-
+Close the browser (http://130.61.185.156:8080)
 
 
 #--------------------------------------------------------------
 # Prerequisite Tasks before an Oracle Database 19c installation
 #--------------------------------------------------------------
-Make sure you are the root user.
+
+Return to Cloud Shell, connect to your instance as opc user, and switch to root user.
+
 
 Make the oracle user a sudoer
   Run visudo
@@ -524,24 +599,263 @@ Increase swap space to 16GB
 
 
 #----------------------------------------
-# Stage the Oracle Database 19c installer
+# Stage all of the Oracle Database 19c installation ZIP files
 #----------------------------------------
+
+Include the following files in the /stage folder:
+- 19c (19.3) installer
+- OPatch
+- 19.11 RU
+- Class Files
+* Note: These ZIP files are stored in object storage in c4u03 tenancy (LiveLabs) in the ll-19c bucket.
+Nav menu > Storage > buckets > 11-19c
 
 Continuing as the root user, create a /stage directory to store the Oracle Database 19c installation ZIP file.
 mkdir -p /stage
 chown -R oracle:oinstall /stage
 su - oracle
+Ora4U_1234
+
+Switch to the /stage directory
+cd /stage
 
 Download the installer files for 19c (19.3)
-wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ctKiGcfEEKkmzP2gw5aa-vMpsrSIClu314i8Zv8dH3W4qBdjY7tV3cjQp1qFloEn/n/frmwj0cqbupb/b/bucket-20210401-1123/o/LINUX.X64_193000_db_home.zip -P /stage
+wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/i8c_TURS4YjjPZhO2mquk3jpvR7nF08CLfTg5xnGkzu3fKnJ0czlPYjD3GKRdkaJ/n/c4u03/b/ll-19c/o/LINUX.X64_193000_db_home.zip
+
+Download the 19.11 RU
+wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/xaU_BDn_ntl9trrfKzCu2jzMKmE-rYZWzR0Coo_5U3ROPDCzFqvxJ3P_9lYdZO_R/n/c4u03/b/ll-19c/o/1911RUp32545013_190000_Linux-x86-64.zip
+
+Download OPatch
+wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/ZNRZvvLLYKBHp90zDH9u5njWczT03Pb8Eks6qwN7TSjjK-AXO4QVMel2jboxzukn/n/c4u03/b/ll-19c/o/OPatchp6880880_190000_Linux-x86-64.zip
+
+Download the class files
+wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/dgt7lH1w1nKOyJO3NLtuuKmW7PM1gImaZuLziTb1UCLUQDTkzVbI8RadVKk6WzRM/n/c4u03/b/ll-19c/o/19cNewFeaturesLabFiles19cNewFeatures.zip
 
 cd /stage
 ls
 
+
+Extract the 19.3 ZIP and 19.11 RU
+---------------------
 Create an Oracle home directory and change to that directory.
-mkdir -p /u01/app/oracle/product/19.3.0/dbhome_1
-cd /u01/app/oracle/product/19.3.0/dbhome_1
+mkdir -p /u01/app/oracle/product/19.11.0/dbhome_1
+cd /u01/app/oracle/product/19.11.0/dbhome_1
 
 Extract the Oracle Database 19c installation ZIP file from the stage directory into the Oracle home directory
 unzip -q /stage/LINUX.X64_193000_db_home.zip
+
+
+List the files/folders of the home directory and make sure that you have several, including OPatch and 32545013 directories
 ls
+
+Create a `patch/RU` directory in the Oracle home directory
+---------------------------
+It's important to use separate directories for the patches; otherwise, their XML files overwrite each other.
+
+mkdir -p /u01/app/oracle/product/19.11.0/dbhome_1/patch/RU
+
+
+
+Extract the 19.11 RU ZIP into the home directory
+--------------------------------------------------
+cd /u01/app/oracle/product/19.11.0/dbhome_1/patch
+unzip -q /stage/1911RUp32545013_190000_Linux-x86-64.zip
+
+
+
+Install OPatch
+--------------------------
+Currently, the version of OPatch is not correct so you need to update it.
+
+1. While in the Oracle home directory, back up the old OPatch utility.
+
+    ```nohighlighting
+    $ <copy>cd /u01/app/oracle/product/19.11.0/dbhome_1/</copy>
+    $ <copy>mv OPatch/ OPatch_backup</copy>
+    ```
+
+2. Make sure that the `OPatch` directory doesn't exists now. Instead, you now have `OPatch_backup`.
+
+    ```nohighlighting
+    $ <copy>ls</copy>
+    ```
+
+3.  Unzip the OPatch ZIP file into the Oracle home directory.
+
+    ```nohighlighting
+    $ <copy>unzip -q /stage/OPatchp6880880_190000_Linux-x86-64.zip</copy>
+    ```
+
+4. List the files and folders in the Oracle home directory and verify that you now have an `OPatch` directory.
+
+    ```nohighlighting
+    $ <copy>ls</copy>
+    ```
+5. View the version of the OPatch utility and verify that it is version 12.2.0.1.23 or later.
+
+    ```nohighlighting
+    $ <copy>OPatch/opatch version</copy>
+    OPatch Version: 12.2.0.1.24
+
+    OPatch succeeded.
+    ```
+
+Extract the lab files
+-----------------------
+1. As the `oracle ` user, change to the home directory
+
+ cd ~/
+
+2. List the contents. You should have:
+ Desktop  Documents  Downloads   Music  Pictures   Public  Templates   Videos
+
+3. Create a `lab` directory, set permissions, and change to it.
+
+    ```nohighlighting
+    $ <copy>mkdir -p ~/labs/</copy>
+    $ <copy>chown -R oracle:oinstall ~/labs</copy>
+    $ <copy>cd ~/labs
+
+4.  Unzip the lab files.
+
+    ```nohighlighting
+    $ <copy>unzip -q /stage/19cNewFeaturesLabFiles19cNewFeatures.zip</copy>
+    ```
+
+5. Verify that you have the following:
+ls
+admin  DB  db.rsp  DIAG  DW HA  OBEs PERF SEC  Videos
+
+
+########################################################
+# Create Custom OCI Compute Image for Marketplace Publishing
+##########################################################
+1. As opc, run sudo su - to login as root
+sudo su - || sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd; sudo su -
+
+2. Make a bootstrap directory and change to that directory
+mkdir -p /root/bootstrap
+cd /root/bootstrap
+
+3. vi firstboot.sh
+
+#!/bin/bash
+# Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
+################################################################################
+#
+# Name: "firstboot.sh"
+#
+# Description:
+#   Script to perform one-time adjustment to an OCI instance upon booting for the
+#   first time to preserve a static hostname across reboots and adjust any setting
+#   specific to a given workshop
+#
+#  Pre-requisite: This should be executed as "root" user.
+#
+#  AUTHOR(S)
+#  -------
+#  Rene Fontcha, Oracle LiveLabs Platform Lead
+#
+#  MODIFIED        Date                 Comments
+#  --------        ----------           -----------------------------------
+#  Rene Fontcha    02/17/2021           Initial Creation
+#
+###############################################################################
+
+# Preserve user configured hostname across instance reboots
+sed -i -r 's/^PRESERVE_HOSTINFO.*$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
+
+# Preserve hostname info and set it for current boot
+hostnamectl set-hostname workshop-staged.livelabs.oraclevcn.com
+
+# Add static name to /etc/hosts
+echo "\$(oci-metadata -g privateIp --value-only | head -1)   workshop-staged.livelabs.oraclevcn.com  workshop-staged" >>/etc/hosts
+
+
+From Jody:
+<!--- Comment: If you are testing in your own tenancy, you need to change the /etc/hosts file. The line that has workshop-staged.livelabs.oraclevcn.com only works in the livelabs tenancy. If you only have this line, the installer will fail. Add a line with your own subnet and vcn names; for example: 130.61.85.145   workshop-staged.subnet04291456.vcn04291456.oraclevcn.com -->
+
+
+4. Make script /root/bootstrap/firstboot.sh executable, add soft link to /var/lib/cloud/scripts/per-instance and run it
+
+chmod +x /root/bootstrap/firstboot.sh
+
+ln -sf /root/bootstrap/firstboot.sh /var/lib/cloud/scripts/per-instance/firstboot.sh
+
+/var/lib/cloud/scripts/per-instance/firstboot.sh
+
+hostname
+> workshop-staged.livelabs.oraclevcn.com
+
+exit
+
+5. Clean up the image for image capture
+a) As user opc, Download the latest oci-image-cleanup.sh script.
+
+cd /tmp
+
+wget https://raw.githubusercontent.com/oracle/oci-utils/master/libexec/oci-image-cleanup -O /tmp/oci-image-cleanup.sh
+
+chmod +x oci-image-cleanup.sh
+
+b) Create a `/tmp/cleanup.sh` script.
+
+vi /tmp/cleanup.sh
+
+paste:
+
+#!/bin/bash
+sudo service rsyslog stop
+sudo service auditd stop
+sudo sh -c 'yes| /tmp/oci-image-cleanup.sh'
+sudo find /var/log -type f -exec cp /dev/null {} \;
+sudo find /var/log -type f -size 0 -exec rm {} +
+sudo rm -rf /var/lib/cloud/instances/*
+sudo rm -f /home/opc/get-pip.py
+sudo rm -f /home/opc/.bashrc-orig
+sudo rm -f /home/oracle/.bash_history
+sudo sed -i -e 's|\\\(^.*PermitRootLogin.*$\\\)|PermitRootLogin no|g' /etc/ssh/sshd_config
+sudo sed -i -e 's|root:x:0:0:root:/root:/bin/bash|root:x:0:0:root:/root:/sbin/nologin|g' /etc/passwd
+sudo ln -sf /root/bootstrap/firstboot.sh /var/lib/cloud/scripts/per-instance/firstboot.sh
+sudo ln -sf /root/bootstrap/eachboot.sh /var/lib/cloud/scripts/per-boot/eachboot.sh
+sudo rm -f /var/log/audit/audit.log
+
+
+c) Set permissions on the cleanup.sh
+chmod +x /tmp/cleanup.sh
+
+d) Run cleanup.sh
+
+/tmp/cleanup.sh
+
+6. Clean up the /etc/hosts file
+Make sure there is no entry with a public IP. The startup script will add the IP address automatically on boot.
+vi /etc/hosts
+delete any lines that start with 10.0.0....
+Keep the first two lines.
+
+
+###################################################
+# Create custom image in OCI
+#############################################
+Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
+
+1. From the navigation menu in OCI, select Compute > Instances.
+
+2. Select the instance on which you just performed the prior cleanup steps. Make sure to select the right compartment.
+
+3. From the More Actions menu, select Create Custom Image. The create Custom Image dialog box is displayed.
+
+4. Select Custom-Images compartment.
+
+5. Enter workshop-staged for the image name.
+
+6. Click Create Custom Image.
+
+7. When the image is created, navigate to your custom image:
+a) From the navigation menu, select Compute > Custom Images.
+b) Click your custom image.
+
+8. To test the image, click Create Instance from the custom image page.
+
+9 After successful instance creation, logon to the host and validate.

@@ -100,7 +100,7 @@ ignoring for now
     /usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/u01/app/oracle/product/19c/dbhome_1/bin:/u01/app/oracle/product/19c/dbhome_1/OPatch:/home/oracle/.local/bin:/home/oracle/bin
     ```
 
-## Install the Database patch
+## Install the Database release update January 19, 2021 (Patch 32218454, 19.10.0.0.210119)
 
 1. Sign in to the database.
 
@@ -376,6 +376,7 @@ OPatch succeeded.
 
 
 
+## Post UPDATE
 
 1. Load modified SQL files into the database. For each separate database running on the same shared Oracle home being patched, run the datapatch utility. The datapatch utility runs the necessary apply scripts to load the modified SQL files into the database. An entry is added to the dba_registry_sqlpatch view reflecting the patch application. In the dba_registry_sqlpatch view, verify the Status for the APPLY is "SUCCESS". For the last step, be patient as it takes a while to install the patches.   
 

@@ -1,10 +1,12 @@
-# Install Oracle Database 19c with Automatic Root Script Execution - X11 Forwarding
+# Create a Compute Instance with X11 Forwarding
 
 ## Introduction
 
 In this lab, you create a compute instance in Oracle Cloud Infrastructure (OCI), configure X11 forwarding, and prepare the instance for an Oracle Database 19c installation.
+Using X11 forwarding in an SSH session on your local personal computer is one way that you can securely run graphical applications (X clients). For X11 forwarding in SSH to work, your local computer must be running an X server program. The X server program manages the interaction between the remote application (the X client, and in this case, the Oracle Database 19c installer) and your computer's hardware. In this lab, you use PuTTY on Windows 10 with VcXsrv (X server).
 
 You can perform most of the steps in this lab by using Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. You also learn how to use PuTTY and X11 forwarding to connect to your compute instance from your personal computer.
+
 
 
 Estimated Lab Time: 45 minutes
@@ -16,9 +18,12 @@ In this lab, you learn how to do the following:
 - Create a compute instance in Oracle Cloud Infrastructure
 - Connect to your compute instance from your Cloud Shell machine
 - Configure X11 forwarding on your compute instance
-- Perform pre-installation tasks for Oracle Database 19c
-- Download and stage the Oracle Database 19c installer files in the Oracle home directory on your compute instance
-- Connect to your compute instance from your personal computer
+- Install an X Server on your local computer
+- Convert your private key to a .ppk file
+- Configure an X11 forwarding connection in PuTTY that connects to your compute instance
+- Test that X forwarding is working
+- Configure X11 forwarding for an `oracle` user
+
 
 
 ### Prerequisites
@@ -153,174 +158,12 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
     ```
 
 
-
-## **STEP 4**: Perform pre-installation tasks
-The preinstaller for Oracle Database 19c performs many pre-installation and pre-configuration tasks for you. It also creates a `dba` and `oinstall` group, creates an `oracle` user, and adds the `oracle` user to the `dba` and `oinstall` groups.
-
-1. Continuing as the `root` user, execute the following command to run the preinstaller.
-
-    ```nohighlighting
-    # <copy>yum install oracle-database-preinstall-19c</copy>
-    ```
-
-2. Set the password for the `oracle` user. You are prompted to enter and confirm a password.
-
-    ```nohighlighting
-    # <copy>passwd oracle</copy>
-    ```
-
-3. Allow the `oracle` user to perform any operation as `root`. This step gives the `oracle` user root permission without the need for them to know the root password. Sudoers must be edited by running `visudo`. You need to do this step so that later in the Oracle Database 19c installer, you can specify the `oracle` user as the sudo user to run configuration scripts.
-
-  a) Run `visudo`.
-
-    ```nohighlighting
-    # <copy>sudo visudo</copy>
-    ```
-
-  b) Insert the following line after the `root    ALL=(ALL)       ALL` line:
-
-    ```nohighlighting
-    <copy>oracle  ALL=(root)      ALL</copy>
-    ```
-
-    Tip: Press **i** to insert text.
-
-  c) Save the changes.
-
-    Tip: To save, press **Esc**, enter **:wq**, and then press **Enter.
-
-4. Create the **Oracle base** and **Oracle inventory** directories.
-
-    ```nohighlighting
-    # <copy>mkdir -p /u01/app/oracle</copy>
-    # <copy>mkdir -p /u01/app/oraInventory</copy>
-    ```
-
-5. Specify `oracle` as the owner and `oinstall` as the group for the Oracle base and Oracle inventory directories.
-
-    ```nohighlighting
-    # <copy>chown -R oracle:oinstall /u01/app/oracle</copy>
-    # <copy>chown -R oracle:oinstall /u01/app/oraInventory</copy>
-    ```
-6. Set the permissions on the `/u01/app` directory and all if its subdirectories (which includes the Oracle base and Oracle inventory directories) so that the owner and group can read, write, and execute on the directories.
-
-    ```nohighlighting
-    # <copy>chmod -R 775 /u01/app</copy>
-    ```
-7. Increase the swap space on your compute instance to 16GB. Currently, your compute instance has 8GB of free swap space. The Oracle Database 19c installer requires at least 16GB, so you need to increase the amount on your compute instance.
-
-  a) Allocate 8GB of swap space.
-
-    ```nohighlighting
-    # <copy>fallocate -l 8G /swapfile</copy>
-    ```
-
-  b) Allow only the `root` user to read/write to swap.
-
-    ```nohighlighting
-    # <copy>chmod 600 /swapfile</copy>
-    ```
-
-  c) Format the file to make it a swap file.
-
-    ```nohighlighting
-    # <copy>mkswap /swapfile</copy>
-
-    Setting up swapspace version 1, size = 8388604 KiB
-    no label, UUID=322b862d-083d-429c-b5b8-a71fff68fa5d
-    ```
-
-  d) Enable the swap file.
-
-    ```nohighlighting
-    # <copy>swapon /swapfile</copy>
-    ```
-
-  e) Check that the compute instance now has enough free swap space (16GB).
-
-    ```nohighlighting
-    # <copy>free -m</copy>
-
-                  total        used        free      shared  buff/cache   available
-    Mem:          31824        1158       19572           8       11093       30201
-    Swap:         16383           0       16383
-    ```
-
-    The output indicates that the compute instance now has 16GB of free swap space.
-
-  g) Using the `vi` editor, open `/etc/fstab`.
-
-    ```nohighlighting
-    # <copy>vi /etc/fstab</copy>
-    ```
-
-  h) Scroll to the bottom, add the following as the last line, and save the file. This step makes the changes permanent.
-
-    ```nohighlighting
-    <copy>/swapfile swap swap defaults 0 2</copy>
-    ```
-
-## **STEP 5**: Download and stage the Oracle Database 19c installer files in the Oracle home directory on your compute instance
-
-For your convenience, LiveLabs stores the Oracle Database 19c installer ZIP file in its tenancy in object storage. In this step, you download this file to your compute instance and extract it into the Oracle home directory.
-
-1. Continuing as the `root` user, create a `/stage` directory to store the Oracle Database 19c installation ZIP file. Grant the `oracle` user read, write, and execute permissions on the directory.
-
-    ```nohighlighting
-    # <copy>mkdir -p /stage</copy>
-    # <copy>chown -R oracle:oinstall /stage</copy>
-    ```
-
-2. Change the current user to `oracle`.
-
-    ```nohighlighting
-    # <copy>su - oracle</copy>
-    ```
-
-3. Use the `wget` command to download the Oracle Database 19c installation ZIP file from object storage (in the LiveLabs tenancy) to the `stage` directory.
-
-    ```nohighlighting
-    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/oLJlacFqVtVHOBctOs9-lQlNDQMSVzl9YytidymEaYU2z99DvhagnwIoJOh7ZxkD/n/cfhteam1/b/data-safe/o/LINUX.X64_193000_db_home.zip -P /stage</copy>
-    ```
-
-4. Change to the `stage` directory and verify that the Oracle Database 19c installation ZIP file is there.
-
-    ```nohighlighting
-    $ <copy>cd /stage </copy>
-    $ <copy>ls</copy>
-    ```
-
-
-5. Create an **Oracle home** directory and change to that directory. It's important that the Oracle home directory is in compliance with the Oracle Optimal Flexible Architecture recommendations. Make sure that the current user is still `oracle`.
-
-    ```nohighlighting
-    $ <copy>mkdir -p /u01/app/oracle/product/19.0.0/dbhome_1</copy>
-    $ <copy>cd /u01/app/oracle/product/19.10.0/dbhome_1</copy>
-    ```
-
-6. Extract the Oracle Database 19c installation ZIP file from the `stage` directory into the Oracle home directory.
-
-    ```nohighlighting
-    $ <copy>unzip -q /stage/LINUX.X64_193000_db_home.zip</copy>
-    ```
-
-7. List the files. You should have several directories and files.
-
-    ```nohighlighting
-    $ <copy>ls</copy>
-    ```
-
-8. Exit Cloud Shell.
-
-
-## **STEP 6**: Connect to your compute instance from your personal computer
+## **STEP 4** Install an X Server on your local computer
 
 From this point on in the lab, you need to use your personal computer to connect to your compute instance as you cannot run the graphical user interface of the Oracle Database 19c installer from Cloud Shell.
 
-Using X11 forwarding in an SSH session on your local personal computer is one way that you can securely run graphical applications (X clients). For X11 forwarding in SSH to work, your local computer must be running an X server program. The X server program manages the interaction between the remote application (the X client, and in this case, the Oracle Database 19c installer) and your computer's hardware. In this lab, you use PuTTY on Windows 10 with VcXsrv (X server).
+On Windows, you can install the X Server called VcXsrv.
 
-
-#### Part A - Install VcXsrv
 
 1. In a browser on your Windows machine, access the following URL:
 
@@ -353,7 +196,7 @@ Using X11 forwarding in an SSH session on your local personal computer is one wa
   In the bottom right corner, a VcXsrv icon is displayed. If you need to stop XLaunch for some reason, double-click the icon and click **Exit**.
 
 
-#### Part B - Convert your private key to a .ppk file
+## **STEP 5**: Convert your private key to a .ppk file
 
 You need to convert the private key that you obtained from Oracle Cloud Infrastructure into a .ppk file format so that you can use it with PuTTY.
 
@@ -372,7 +215,7 @@ You need to convert the private key that you obtained from Oracle Cloud Infrastr
 7. Close PuTTY Key Generator.
 
 
-#### Part C - Configure an X11 forwarding connection in PuTTY that connects to your compute instance
+## **STEP 6**: Configure an X11 forwarding connection in PuTTY that connects to your compute instance
 
 1. Open PuTTY on your local Windows computer.
 
@@ -427,35 +270,56 @@ You need to convert the private key that you obtained from Oracle Cloud Infrastr
     ```
     The output is `your-computer-ip:10.0`. Notice that the `10` is also part of the authentication information in the previous step.
 
-11. Test that the `opc` user can open a graphical user interface application like `xeyes`.
+
+## **STEP 7**: Test that X forwarding is working
+
+1. Test that the `opc` user can open a graphical user interface application like `xeyes`.
 
     ```
     $ <copy>xeyes</copy>
     ```
   A pair of eyes is displayed in a separate window. If you move your cursor over the eyes, the eyes follow it.
 
-12. Hover your cursor over the XLaunch application icon.
+2. Hover your cursor over the XLaunch application icon.
 
   The application indicates that there is one client connected.
 
-13. Close `xclock`.
+3. Close `xclock`.
 
   The XLaunch application icon indicates that there are zero clients connected.
 
-14. As the `opc` user, copy the Xauthority file from the `opc` user to the `oracle` user so that `oracle` can display the graphical user interface of the Oracle Database 19c installer.
+
+
+## **STEP 8**: Configure X11 forwarding for an `oracle` user
+
+It's important to configure X11 forwarding for the `oracle` user too because eventually, you need to be able to display the graphical user interfaces, such as the Oracle Database 19c installer, as the `oracle` user.
+
+1. Create an `oracle` user. The following commands are used to create an `oracle` user in preparation for an Oracle Database 19c installation.
+
+    ```nohighlighting
+    $ <copy>groupadd -g 54321 oinstall</copy>
+    $ <copy>groupadd -g 54322 dba</copy>
+    $ <copy>groupadd -g 54323 oper</copy>
+    $ <copy>useradd -u 54321 -g oinstall -G dba,oper oracle</copy>
+    ```
+
+2. *IMPORTANT!* As the `opc` user, copy the Xauthority file from the `opc` user to the `oracle` user.
 
     ```nohighlighting
     $ <copy>sudo cp ~/.Xauthority /home/oracle/.Xauthority</copy>
     ```
 
 
-15. Switch to the `oracle` user and enter the password.
+3. Switch to the `oracle` user and enter the password.
 
     ```nohighlighting
     $ <copy>su - oracle</copy>
     ```
 
 
+## What's Next?
+
+If you intend to install Oracle Database 19c on your compute instance, you need to complete the prerequisite tasks first. See the [Perform Prerequisite Tasks for an Oracle Database 19c Installation](?lab=perform-db19c-prerequisite-tasks.md) lab.
 
 
 

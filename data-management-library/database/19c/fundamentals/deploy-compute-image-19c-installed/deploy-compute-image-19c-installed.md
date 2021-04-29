@@ -1,10 +1,10 @@
-# Create a Compute Instance with Resource Manager
+# Deploy a Compute Image with Oracle Database 19c Installed
 
 ## Introduction
 
-In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance that has the Oracle Database 19c installer files staged on it. This lab creates the environment that you will use in the [Install ORacle Database 19c using Automatic Root Script Execution](?lab="install-db19c-auto-config-script-execution.md") lab.
+In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute image that has Oracle Database 19c installed on it. Guacamole is also installed to provide a friendly user interface.
 
-In Resource Manager, you begin by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs and loads a custom image stored in Oracle Cloud Marketplace. Guacomole is installed on it to provide a friendly user interface. You can also access a terminal window. After you create the stack, you apply it to start the provisioning job in OCI. When the job is completed, you log in to your compute instance. To learn more about Resource Manager, view this [video](https://youtu.be/udJdVCz5HYs).
+You begin in Resource Manager by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs as a downloadable ZIP file and loads a custom image stored in Oracle Cloud Marketplace. After you create the stack, you apply it to start a provisioning job. When the job is completed, you verify that you can connect to your compute instance via a browser and Cloud Shell.
 
 
 ### Objectives
@@ -12,8 +12,10 @@ In Resource Manager, you begin by creating a stack, which is a collection of Ora
 In this lab, you learn how to do the following:
 
 - Create and apply a stack in Resource Manager
-- Connect to your compute instance from Cloud Shell
-- Discover the container database (CDB) and pluggable database (PDB)
+- Obtain the public IP address of your compute instance
+- Connect to your compute instance via a browser
+- Connect to your compute instance via Cloud Shell
+- Discover the container database (CDB) and pluggable database (PDB) on your compute instance
 
 ### Prerequisites
 
@@ -78,31 +80,55 @@ In this lab, you learn how to do the following:
 
 8. When the job is finished, inspect the log. The last line should read `Apply complete!`.
 
+## **STEP 2**: Obtain the public IP address of your compute instance
+
+1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Compute**, and then **Instances**.
+
+2. Select your compartment.
+
+3. Find the public IP address of the compute instance called **workshop-installed** in the table and jot it down.
+
+4. (Optional) Click the **workshop-installed** compute instance to view all of its details.
 
 
 
-## **STEP 3**: Connect to your compute instance from Cloud Shell
+## **STEP 3**: Connect to your compute instance via a browser
 
-1. From the navigation menu, select **Compute**, and then **Instances**.
+1. On your local computer, open a browser, and enter the following url. Replace `compute-public-ip` with the public IP address of your compute instance.
 
-2. Find the compute instance that you created (called **Workshop**) and make note of its public IP address.
+    ```nohighlighting
+    <copy>compute-public-ip:8080/guacamole</copy>
+    ```
 
-3. Open Cloud Shell if it not already opened.
+2. Enter `oracle` as the username and `Guac.LiveLabs_` as the password, and then click Login. Don't forget the underscore at the end of the password!
+    (guacamole-login-page.png)
 
-4. Enter the following `ssh` command to connect to your compute instance. Replace `private-key-file` with the name of your private key file. In this example, we use `cloudshellkey`. Replace `public-ip-address` with the public IP address of your compute instance.
+   You are presented with a Guacamole desktop. The desktop provides shortcuts to Firefox and a terminal window.
+
+## **STEP 4**: Connect to your compute instance via Cloud Shell
+
+1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
+
+  ![Cloud Shell icon](images/cloud-shell-icon.png)
+
+  A terminal window opens at the bottom of the page.
+
+2. Enter the following `ssh` command to connect to your compute instance. Replace `public-ip-address` with the public IP address of your compute instance.
+
+  `cloudshellkey` is the name of the private key file that you created in the [Generate SSH Keys - Cloud Shell](?lab=https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md) lab. If your private key has a different name, then replace `cloudshellkey` with it.
 
     ```nohighlighting
     $ <copy>ssh -i ~/.ssh/cloudshellkey opc@public-ip-address</copy>
     ```
 
-    You receive a message stating that the authenticity of your compute instance can't be established. Do you want to continue connecting?
+    A message states that the authenticity of your compute instance can't be established. Do you want to continue connecting?
 
-5. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
+3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
 
-  The terminal prompt becomes `[opc@compute-instance-name ~]$` (for example, `opc@workshop`), where `compute-instance-name` is the name of your compute instance and `opc` is your user account on your compute instance. You are now connected to your new compute instance.
+  You are now connected to your new compute instance via Cloud Shell.
 
 
-## **STEP 4**: Discover the container database (CDB) and pluggable database (PDB)
+## **STEP 5**: Discover the container database (CDB) and pluggable database (PDB)
 
 1. Switch to the `oracle` user.
 
@@ -244,3 +270,13 @@ In this lab, you learn how to do the following:
 Congratulations! You have a fully functional Oracle Database 19c instance running on a compute instance in Oracle Cloud Infrastructure.
 
 You may now [proceed to the next lab](#next).
+
+
+## Learn More
+
+- [Resource Manager Video](hhttps://youtu.be/udJdVCz5HYs)
+
+## Acknowledgements
+
+- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, April 22 2021
