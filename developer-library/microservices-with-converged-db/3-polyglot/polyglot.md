@@ -63,7 +63,7 @@ In this step you can choose between three different implementations of the Inven
 
 ## **STEP 3**: Verify application functionality
 
-1. Repeat **Lab 2: Step 3** to verify that the functionality of the GrabDish store remains the same while using the new implementation.  You will need to use different order ID's, for example 166 and 167.
+1. Repeat [Lab 2 Step 3](../2-walkthrough-helidon/walkthrough-helidon.md) to verify that the functionality of the GrabDish store remains the same while using the new implementation.  You will need to use different order ID's, for example 166 and 167.
 
 ## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
 
@@ -71,7 +71,7 @@ In this step you can choose between three different implementations of the Inven
 
     ```
     <copy>
-    for i in inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
+    for i in inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done 
     cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
     cd $GRABDISH_HOME
     </copy>
