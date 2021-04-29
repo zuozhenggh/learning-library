@@ -34,8 +34,9 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
     - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/R_vJuMUIrsFofKYcTuJOsDiXl2xdSjHNQU7yjQPtnh4/n/c4u03/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 2.  Save in your downloads folder.
 3.  Login to your Oracle Cloud account.
-4.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**.
-   ![Create a stack](images/db19c-freetier-step1.png " ")
+4.  Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
 5.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Select**.
 
@@ -68,10 +69,13 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 ## **STEP 3**: Gather compute instance details
-1. Go to the hamburger menu (in the top left corner) and click **Compute** -> **Instances**
-   ![Create a stack](images/workshop-011.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+
 2. Look for the instance you just created and jot down the public IP address.
-   ![Create a stack](images/workshop-012.png " ")
+    
+    ![Create a stack](images/workshop-012.png " ")
 
 ## **STEP 4**: Connect to your instance
 
