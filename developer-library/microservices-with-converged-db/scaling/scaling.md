@@ -1,42 +1,29 @@
 # Scaling the Application
+
 ## Introduction
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
+Estimated Lab Time - 
 
 ### Objectives
+
 -   Install a load testing tool
 -   Start the external load balancer for the order-helidon microservice
 -   Test the performance of the existing deployment and identify the point at which performance begins to degrade
 -   Scale the application tier to improve performance and identify the point at which further application tier scaling does not help
 -   Scale the database tier and demonstrate how performance is improved
 
-### What Do You Need?
+### Prerequisites
 
 This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 1**:  Install a load testing tool and start an external load balancer for the Order service
 
-1. Install a load testing tool.  
-
-    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
-    
-   ``` 
-   <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
-   ```
-
-   ![](images/install-k6.png " ")
-
-   (Alternatively) To install artillery:
-
-   ``` 
-   <copy>cd $MSDATAWORKSHOP_LOCATION/artillery; npm install artillery@1.6</copy>
-   ```
-
-2. Start an external load balancer for the order service.
+1. Start an external load balancer for the order service.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
+    <copy>cd $GRABDISH_HOME/order-helidon; kubectl create -f ext-order-service.yaml -n msdataworkshop</copy>
     ```
 
     Repeatedly view the ext-order LoadBalancer service.  Make note of the external IP address.
@@ -53,6 +40,22 @@ This lab assumes that you have already completed labs 1 through 4.
     <copy>export LB='123.123.123.123'</copy>
     ```
 
+2. Install a load testing tool.  
+
+    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
+    
+	``` 
+	<copy>cd $GRABDISH_HOME/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
+	```
+
+	![](images/install-k6.png " ")
+
+	(Alternatively) To install artillery:
+
+	``` 
+	<copy>cd $GRABDISH_HOME/artillery; npm install artillery@1.6</copy>
+	```
+
 ## **STEP 2**: Load test and scale the application tier
 
 1.  Execute a load test using the load testing tool you have installed.  
@@ -60,7 +63,7 @@ This lab assumes that you have already completed labs 1 through 4.
     Here is an example using k6:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
     Note the request rate. This is the number of http requests per second that were processed.
@@ -70,7 +73,7 @@ This lab assumes that you have already completed labs 1 through 4.
     (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 2. Scale to 2 service replicas.
@@ -93,7 +96,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    For example:
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
    Note the average response time for the requests.  Throughput has increased and response time has returned to normal.
@@ -103,7 +106,7 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 
@@ -127,7 +130,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    For example:
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
   Note the median response time for the requests and the request rate.  Note how the response time is still degraded and the request rate has not improved significantly.
@@ -137,14 +140,14 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 ## **STEP 3**: Load test and scale the database tier
 
-1. To scale the Order DB ATP database to 2 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+1. To scale the Order DB ATP database to 2 OCPUs, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-   ![](images/35-open-atp-menu.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2. Click **Scale Up/Down** and enter 2 in the OCPU field. Click **Update**.
 
@@ -161,7 +164,7 @@ This lab assumes that you have already completed labs 1 through 4.
    For example:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
    Note the request rate.  Throughput has increased.
@@ -171,14 +174,14 @@ This lab assumes that you have already completed labs 1 through 4.
    (Alternatively) Using artillery:
     
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
 ## **STEP 4**: Scale down the application and database tiers
 
-1. To scale the Order DB ATP database down to 1 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+1. To scale the Order DB ATP database down to 1 OCPUs, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-   ![](images/35-open-atp-menu.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2. Click **Scale Up/Down** and enter 1 in the OCPU field. Click **Update**.
 
@@ -193,7 +196,7 @@ This lab assumes that you have already completed labs 1 through 4.
     ```
 
 ## Acknowledgements
-* **Authors** - Richard Exley, Maximum Avaiability Architecture; Curtis Dinkel, Maximum Avaiability Architecture; Rena Granat, Maximum Avaiability Architecture;
+* **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture;
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
