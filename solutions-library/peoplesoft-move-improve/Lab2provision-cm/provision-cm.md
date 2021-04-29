@@ -140,7 +140,7 @@ Depending on your workstation, choose Step 7 (for Mac) or 8 (for Windows)
 
 ## **STEP 7**: FOR MAC USERS- Accessing Cloud Manager using SSH 
 
-SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was created in Step 1 of Lab 2. 
+SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was downloaded/created in Lab 1: IAM, Step 8: Generating Keys. 
 
 **NOTE**: Make sure you are off VPN.
 
@@ -153,7 +153,7 @@ For example: ```cd ~/Downloads/keys ```
    
     ```
     <copy>
-    ssh -f -C -q -N -i id_rsa -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
+    ssh -i id_rsa -f -C -q -N -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
     </copy>
     ``` 
     *Example:* ``` ssh -i id_rsa -f -C -q -N -L 2222:10.X.X.X:22 opc@XXX.XXX.XXX.XXX```
@@ -225,7 +225,7 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 
 
 
-## **STEP 8**: Monitoring Cloud Manager
+## **STEP 9**: Monitoring Cloud Manager
 
 1. SSH into Cloud Manager instance to check status of the deployment.  Monitor Cloud Manager bootstrap installation using the below command.
 
@@ -237,23 +237,17 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 
     ![](./images/tail.png "")
 
-2. While Cloud Manager is being installed, review **Associated Resources** for the list of all resources created by automation.
-
-    The deployment automation (Resource Manager Stack) provisions numerous resources in the tenancy.  To find the list of resources that were created, navigate to OCI console, then go to **Resource Manager** > **Jobs** and click on the job you wish to view. Then on this page, click **Associated Resources** under **Resources** (on the left side of the webpage).  
-
-    ![](./images/19.png "")
-
-3. After Cloud Manager bootstrap is complete, the CloudManagerStatus.log will show the following messages. 
+2. After Cloud Manager bootstrap is complete, the CloudManagerStatus.log will show the following messages. 
 
 		The PeopleSoft Environment Setup Process Ended.
 		CM installed successfully
 		Cloud Manager PIA URL: http://psftcm.cm.ociholvcn.oraclevcn.com:8000 
 		Cloud Manager PIA SSL URL: https://psftcm.cm.ociholvcn.oraclevcn.com:8443
 
-    *NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
+    *NOTE*: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Until the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
 
-## **STEP 9**: Set up SOCKS Proxy to Access Cloud Manager in Browser
+## **STEP 10**: Set up SOCKS Proxy to Access Cloud Manager in Browser
 
 **NOTE**: Make sure you are off VPN. 
 
