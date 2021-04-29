@@ -53,7 +53,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
     ![](./images/imageSM_01.png "")
 
-1. Save your file as SandboxApp.xlsx and create a new cube with the help of **Lab6->Step1**. Make sure to check that Load Data option is selected under Advanced Option.
+1. Save your file as SandboxApp.xlsx and close it. Create a new cube with the help of **Lab6->Step1**. Make sure to check that Load Data option is selected under Advanced Option.
 
     ![](./images/imageSM_02.png "")
 
@@ -69,8 +69,12 @@ This Step shows that creating sandboxes has little impact on resource usage such
    ![](./images/imageSM_03.png "")
 
 2. Go to the smartview, Create a private connection to Essbase: http://IP:9000/essbase/smartview.
+   
+   Note: Replace the IP with your instance's ip.
 
    Login and Select the “Sample_Scenario” Application and “Sandbx” Cube.
+   
+   ![](./images/imageSM_04.0.png "")
    
    In order to query the selected Cube, choose the option -> “Set Active Connection for this Worksheet”.
 
@@ -151,9 +155,9 @@ This Step is geared towards developing an understanding of security for Essbase 
      ![](./images/imageSM_16.png "")
      ![](./images/imageSM_17.png "")
 
-   e) Go back to Smart View.
+   e) Go back to Smart View.-----remove
 
-   f) Go to SmartView Excel and on the Sheet3 tab connect as John, Sam, and Maria drilling down and up on the Sandbox dimension for each user.
+   f) Go to SmartView Excel and on the Sheet3 tab connect as John, Sam, and Maria drilling down and up on the Sandbox dimension for each user.----remove
 
    g) Go to the Web UI, login in as Maria and assign Phillip the approver role to the sandbox.
       ![](./images/imageSM_18.png "")
