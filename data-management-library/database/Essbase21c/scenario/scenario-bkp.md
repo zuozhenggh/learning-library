@@ -49,7 +49,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
    ![](./images/imageDT_01.0.png "")
 
-3.	Navigate to the Cube.Settings sheet and check the properties section and the Scenario Sandboxes properties. Here you are verifying that this is scenario enabled cube beacuse Scenario Sandboxes(scenario-based members) are there. 
+3.	Navigate to the Cube.Settings sheet and check the properties section and the Scenario Sandboxes properties.
 
     ![](./images/imageSM_01.png "")
 
@@ -134,6 +134,12 @@ This Step is geared towards developing an understanding of security for Essbase 
        
       Close the Smart View.xlsx excelsheet.
 
+    g) Open the Smart View.xlsx file and go to the Sheet3 tab.
+
+    h) Connect as John, Sam and Maria drilling down and up on the Sandbox dimension for each user. 
+
+    **Note: To easily switch between users – select Disconnect All from the SmartView Panel and then re-log in.**
+
 
 1. Creating Scenarios:
    
@@ -144,38 +150,39 @@ This Step is geared towards developing an understanding of security for Essbase 
    b) Navigate to Scenarios tab. Click Create Scenario button.
       ![](./images/imageSM_13.png "")
 
-   c) Give the scenario a name:**What-If** and a due date. On the Users tab Click the "+" icon and add Sam and Phillip. By default a user is added as a Participant. Change Phillip's role to approver 
+   c) Give the scenario a name:**What-If** and a due date. On the Users tab Click the "+" icon and add Sam as a Participant. By default a user is added as a Participant. 
       ![](./images/imageSM_14.png "")
       ![](./images/imageSM_15.png "")
 
-      ![](./images/imageSM_18.png "")
       Click Save.
 
-   d) Once created, click on **What-If** scenario and identify which sandbox member your scenario is using. It would be using sandbox "sb0".
-     
+   d) Identify which sandbox member your scenario is using by clicking on the name of the scenario once it is created.
      ![](./images/imageSM_16.png "")
      ![](./images/imageSM_17.png "")
 
+   e) Go back to Smart View.-----remove
 
+   f) Go to SmartView Excel and on the Sheet3 tab connect as John, Sam, and Maria drilling down and up on the Sandbox dimension for each user.----remove
+
+   g) Go to the Web UI, login in as Maria and assign Phillip the approver role to the sandbox.
+      ![](./images/imageSM_18.png "")
+
+   h) Go to Smart View and connect as Phillip drilling down on the Sandbox dimension.
+      ![](./images/imageSM_18.1.png "")
 
 
 2. Changing Sandbox Data:
    As Sam, you will change some data for the scenario that was just created and using the Essbase Web UI you can see the differences between Base and the scenario.
 
-   a) Open the Smart View.xlsx.
+   a) Go to Excel and in the Smart View.xlsx 
 
-   b) Go to the DataSheet tab and connect to the database as Sam, ensure the the POV has the correct sandbox member(sb0).
+   b) Go to the DataSheet tab and connect to the database as Sam, ensure the the POV has the correct sandbox member(sb0). 
       ![](./images/imageSM_19.png "")
 
    c) Go to the cell C12 enter a number(for e.g, 2000) then click submit (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
-
-      Please verify the intersection as mentioned.
-
       ![](./images/imageSM_20.png "")
 
    d) Go to Essbase Web UI, navigate to the Scenarios tab. Select the scenario What-if and click the Actions icon.
-      
-      Note: Maria is looged in web UI.
 
    e) Click on the Show Changes button, to show the changes in the UI.
       ![](./images/imageSM_21.png "")
@@ -188,8 +195,7 @@ In this step you will create a calculation script that will create data for ORCL
 
    a) Login to Essbase Web UI as John.
 
-   b) Expand the “Sample_Scenario” application and navigate to the database inspector for the “Sandbx” database.
-    ![](./images/imageSM_22.0.png "")
+   b) Navigate to the database inspector for the “Sandbx” database under the “Sample_Scenario” application.
 
    c) Click on the Scripts tab on the database inspector and select Calculation Scripts from the left navigation menu.
      ![](./images/imageSM_22.png "")
@@ -216,7 +222,7 @@ In this step you will create a calculation script that will create data for ORCL
    f) To execute the script, navigate to the Jobs tab and create a new job by clicking New Job -> Run Calculation.
      ![](./images/imageSM_24.png "")
 
-   g) Select the Application: **Sample_Scenario** and database: **Sandbx** and the calc script that was just created(**Feed16**). For Variables select the “sb0” as Value for the sandbox variable.
+   g) Select the Application and database and the calc script that was just created(Feed16). For Variables select the “sb0” as Value for the sandbox variable.
 
    h) Click OK.
      ![](./images/imageSM_25.png "")
@@ -224,17 +230,14 @@ In this step you will create a calculation script that will create data for ORCL
    i) Click refresh icon, to see the job status.
       ![](./images/imageSM_26.png "")
 
-   j) Go to Smart View and DataSheet tab. Click on "set Active connection for this worksheet" and then refresh to retrive the data.
-   
-      ![](./images/imageSM_26.3.png "")
-
+   j) Go to Smart View and retrieve data into the DataSheet tab. Also review the comparison tab.
+      Datasheet:
       ![](./images/imageSM_26.1.png "")
-    
-    Go to the Comparison tab Click again on "set Active connection for this worksheet" and then refresh.
       
-      ![](./images/imageSM_26.2.png "")
+      Comparison:
+      ![](./images/imageSM_26.2png "")
 
-      Note: In Smartview you are already logged in as Sam. Also before refreshing any excelsheet tab in smartview, always click on "set Active connection for this worksheet".
+      Note: In Smartview you are already logged in as Sam.
 
    k) Go to Essbase Web UI as Sam, Navigate to the Scenarios tab. For What-If Scenario, click on the icon under Actions and select Show Changes to show the changes in the UI.
       ![](./images/imageSM_27.png "")
@@ -242,7 +245,7 @@ In this step you will create a calculation script that will create data for ORCL
       Verify the Changes:
       ![](./images/imageSM_27.1.png "")
 
-1. Scenario Workflow:
+4. Scenario Workflow:
    
    At this point two things happened with our Sandbox. Sam entered some data using Smart View and John run a calc script that created some data for 2016. Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. The flow that we will simulate is:
 
@@ -252,43 +255,34 @@ In this step you will create a calculation script that will create data for ORCL
 
    Since you are doing it by yourself, you will need to play both Maria and Phillip. If you have two different browsers (e.g. Firefox and Chrome) you can log in as each participant in a different browser and jump between the two personas. The instructions will assume that you are using the same browser for both (and therefore logout and login will be needed).
 
-
    Let’s start:
 
-   a) Login to Essbase Web UI as Maria. Navigate to the Scenarios tab.
+   a) Login to Essbase Web UI as Maria. Navigate to the Scenarios tab and select Scenario What-if.
       ![](./images/imageSM_28.png "")
 
-   b) For "What-if" scenario, under Actions, click the “->” icon to Submit, enter a comment if needed(for e.g., submitted for approval). The status should now be submitted.
+   b) Under Actions, click the “->” icon to Submit, enter a comment if needed. The status should now be submitted.
       ![](./images/imageSM_29.png "")
 
    c) Go to Smart View and retrieve data into the Comparison tab.
-     
-      Note: In Smartview you are already logged in as Sam. Also before refreshing any excelsheet tab in smartview, always click on "set Active connection for this worksheet".
 
-   d) Go to the Web UI logging in as Phillip. Navigate to the Scenarios tab. 
+   d) Go to the Web UI logging in as Phillip. Navigate to the Scenarios tab and select Scenario What-if.
 
-   e) For "What-if" scenario, under Actions, click the ![](./images/approveicon.png "") icon to Approve, enter a comment if needed(for e.g., submitted for approval).
+   e) Under Actions, click the ![](./images/approveicon.png "") icon to Approve, enter a comment if needed.
       ![](./images/imageSM_30.png "")
       ![](./images/imageSM_31.png "")
 
    f) Go to Smart View and retrieve data into the Comparison tab.
-     
-     Note: In Smartview you are already logged in as Sam. Also before refreshing any excelsheet tab in smartview, always click on "set Active connection for this worksheet".
 
-   g) Login to Essbase Web UI as Maria. Navigate to the Scenarios tab.
+   g) Login to Essbase Web UI as Maria. Navigate to the Scenarios tab and select Scenario What-if.
 
-   h) For "What-if" scenario, under Actions, click the ![](./images/applyicon.png "")  icon to Apply sandbox “sb0” to the Base, enter a comment if needed(for e.g., applied).
+   h) Under Actions, click the ![](./images/applyicon.png "")  icon to Apply sandbox “sb0” to the Base, enter a comment if needed.
       ![](./images/imageSM_32.png "")
 
    i) Go to Smart View and retrieve data into the Comparison tab.
 
-    Note: In Smartview you are already logged in as Sam. Also before refreshing any excelsheet tab in smartview, always click on "set Active connection for this worksheet".
-
     ![](./images/imageSM_32.2.png "")
 
     Note: Notice that changes still not been updated to base.
-
-    
 
 
 ## **Step 4:** Run-time Substitution Variables
@@ -299,11 +293,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 2. Download the file Merge.csc [here](./files/Merge.csc).
 
-   Launch the database inspector for the database “Sandbx” under application “Sample_Scenario”. 
-   
-   ![](./images/imageSM_33.0.png "")
-
-   Select Files tab and click Upload Files.
+   Launch the database inspector for the application “Sample_Scenario” and database “Sandbx”. Select Files tab and click Upload Files.
 
    ![](./images/imageSM_33.png "")
 
@@ -325,30 +315,24 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 9. Click Close to close the database inspector. 
 
-10.  Go to Smart View and on the Comparison tab.  
-
-   Disconnect from the current connection by clicking "more" and then "disconnect".
-     ![](./images/imageSM_36.4.png "") 
-   
-   Click on the -> arrow(as shown below) to login as maria.
-     ![](./images/imageSM_36.5.png "") 
-
+10. Go to Smart View and make sure you are logged in as Maria. On the Comparison tab.  
      a.	Select the “sb0” cell(C2 if unadulterated)  
 
      b.	Click on Calculate on the Essbase ribbon.  
             ![](./images/imageSM_36.2.png "")  
 
-     c.	Select the Merge calculation script. 
+     c.	Select the Merge calculation script 
 
-     d.	Change the prompts:  
+     d.	Notice the default selections and that “sb0” was selected for the Sandbox to merge  
+
+     e.	Change the propmts:  
 
         i)  Product = XXU  
         ii)  Customer = Automotive (Hint: Use the search feature to find the member)  
         iii) Region = USA  
         iv) Periods = FYQ1-FY2016, FYQ2-FY2016, FYQ3-FY2016, FYQ4-FY2016  
         v)  Sandbox = sb0  
-     
-     e.  Notice the default selections and that “sb0” was selected for the Sandbox to merge.
+            
     ![](./images/imageSM_37.png "")
 
 11. Click launch.
@@ -356,11 +340,11 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 12. Retrieve data in comparison tab.
     ![](./images/imageSM_38.png "")
 
-    Notice now the changes are applied to the base.
+    Notice now th changes are applied to the base.
 
 
 Note:
-Notice that John having "Database Manager" permission, was able to define who can update the changes in the base(database). Also, Maria after creating scenario was not able to apply the changes to base(database) because she was having only "Database Update" permission.
+Notice that John having "Database Manager" permission, was able to define who can update the changes in the base(database). Also, Maria after creating scenario was not able to apply the changes to base(database) because she was having only "Database Access" permission.
 
 
 
