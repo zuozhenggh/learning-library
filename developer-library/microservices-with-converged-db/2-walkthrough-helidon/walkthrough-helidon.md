@@ -122,15 +122,15 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
 ## **STEP 4**: Verify Spatial Functionality
 
-1. Click **Spatial** on the **Transactional** tab 
+1. Click **Spatial** on the **Transactional** tab
 
    ![](images/spatial-select.png " ")
 
-2. Check **Show me the Fusion** menu to make your choices for the Fusion Cuisine 
+2. Check **Show me the Fusion** menu to make your choices for the Fusion Cuisine
 
    ![](images/spatial-fusion-menu.png " ")
 
-3. Click the plus sign to add Makizushi, Miso Soup, Yakitori and Tempura to your order and click **Ready to Order**. 
+3. Click the plus sign to add Makizushi, Miso Soup, Yakitori and Tempura to your order and click **Ready to Order**.
 
    ![](images/spatial-choose-menu-items.png " ")
 
@@ -146,10 +146,10 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
    ![](images/tx-show-order-67.png " ")
 
-This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates. 
+This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates.
 Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
-## **STEP 5**: Verify metrics
+## **STEP 5**: Show Metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
@@ -164,7 +164,7 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
 
    ![](images/metrics-show.png " ")
 
-## **STEP 6**: Verify health
+## **STEP 6**: Verify Health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
@@ -196,14 +196,14 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/health-liveness-restarted.png " ")
 
-## **STEP 7**: Understand Passing Database Credentials to a Microservice
+## **STEP 7**: Understand Passing Database Credentials to a Microservice (Study)
 
 In order to connect to an ATP database you need the following four pieces of information:
    - Database user name
    - Database user password
    - Database Wallet
    - Connect alias, string or URL
-   
+
 Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.yaml` to see how this is done.
 
 ```
@@ -264,13 +264,13 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
     ```
 
    Setup had previeously downloaded a regional database wallet and created the db-wallet-secret secret containing the wallet files.  See `utils/db-setup.sh` for more details.
-    
+
     ```
     <copy>
     kubectl describe secret db-wallet-secret -n msdataworkshop
     </copy>
     ```
-   
+
    ![](images/db-wallet-secret.png " ")
 
 4. The database connection URL is passed in as an environment variable.  
@@ -282,7 +282,7 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 
    The URL references a TNS alias that is defined in the tnsnames.ora file that is contained within the wallet.
 
-## **STEP 8**: Understand How Database Credentials are Used by a Helidon Microservice
+## **STEP 8**: Understand How Database Credentials are Used by a Helidon Microservice (Study)
 
 Let’s analyze the `microprofile-config.properties` file.
 
@@ -291,7 +291,7 @@ Let’s analyze the `microprofile-config.properties` file.
 ```
 
 This file defines the `microprofile` standard. It also has the definition of the data sources that will be injected. The universal connection pool takes the JDBC URL and DB credentials to connect and inject the datasource. The file has default values which will be overwritten by the environment variables that are passed in.  
-   
+
 The `dbpassword` environment variable is read and set as the password unless and vault OCID is provided.  
 
 Let’s also look at the microservice source file `OrderResource.java`.
@@ -308,7 +308,7 @@ Look for the inject portion. The `@Inject` has the data source under `@Named` as
 PoolDataSource atpOrderPdb;
 ```
 
-## **STEP 9**: Understand shortcut commands and development process
+## **STEP 9**: Understand shortcut commands and development process (Study)
 
 A number of shortcut commands are provided in order to analyze and debug the workshop kubernetes environment including the following:
 
@@ -321,12 +321,12 @@ A number of shortcut commands are provided in order to analyze and debug the wor
 `deletepod` - Deletes a given pod/container and can use abbreviated names for arguments, such as `deletepod inventory` or `deletepod order`
 
 As the deployments in the workshop are configured with `imagePullPolicy: Always` , once you have finished the workshop, you can develop and test changes to a microservice using the following sequence...
-    
+
 1. Modify microservice source
 2. Run `./build.sh` to build and push the newly modified microservice image to the repository
 3. Run `deletepod` (e.g. `deletepod order`) to delete the old pod and start a new pod with the new image
 4. Verify changes
-    
+
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
 ## Acknowledgements

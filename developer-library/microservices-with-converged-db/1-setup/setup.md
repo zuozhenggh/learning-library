@@ -24,24 +24,28 @@ If you haven't already, sign in to your account.
 Be sure to select the **home region** of your tenancy.  Setup will only work in the home region.
 
   ![](images/home-region.png " ")
-  
-## **STEP 3**: Check Your Tenancy Quota
 
-If you have a **fresh** free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step. 
+## **STEP 3**: Check Your Tenancy Service Limits
 
-If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table. 
+If you have a **fresh** free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step.
 
-| Service          | Limit Name                                           | Requirement |
-|------------------|------------------------------------------------------|:-----------:|
-| Compute          | Cores for Standard.E2 based VM and BM Instances      | 3           |
-| Container Engine | Cluster Count                                        | 1           |
-| Database         | Autonomous Transaction Processing Total Storage (TB) | 2           |
-|                  | Autonomous Transaction Processing OCPU Count         | 4           |
-| LbaaS            | 10Mbps Load Balancer                                 | 3           |
+If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table.
+
+| Service          | Scope  | Resource                                             | Available | Free Account Limit |
+|------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
+| Compute          | AD-1   | Cores for Standard.E2 based VM and BM Instances      | **3**     | 6                  |
+| Container Engine | Region | Cluster Count                                        | **1**     | 1                  |
+| Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **2**     | 2                  |
+|                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
+| LbaaS            | Region | 10Mbps Load Balancer Count                           | **3**     | 3                  |
 
 Quota usage and limits can be check through the console:
 
   ![](images/limits-quota-usage.png " ")
+
+For example:
+
+  ![](images/service-limit-example.png " ")
 
 The Tenancy Explorer may be used to locate existing resources:
 
@@ -79,7 +83,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-## **STEP 5**: Make a Clone of the Workshop Setup Scripta and Source Code
+## **STEP 5**: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
@@ -99,7 +103,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-## **STEP 6**: Run the Setup
+## **STEP 6**: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -109,7 +113,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     source setup.sh
     </copy>
     ```
-   
+
    Note, the cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
 
     ```
@@ -129,7 +133,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 3. The setup will automatically configure key based access to the OCI command line interface.  To do this it may need to generate and upload a new API Key to your tenancy.  
 
    To generate a key the setup will ask you to enter a passphrase.  If that happens then hit return (empty passphrase).  Do not enter a passphrase or setup will fail.
-   
+
    If there is no space for a new key in OCI, the setup will ask you to remove an existing key to make room.  This can be done through the OCI console.
 
   ![](images/get-user-ocid.png " ")
@@ -146,42 +150,46 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-7. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, several OCI Registry Repositories, and an OCI Object Storage wallet.  You can monitor its progress from a different browser window.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
+## **STEP 7**: Monitor the Setup
+
+The setup will provision the following resources in your tenancy:
+
+| Resources              | OCI Console Navigation                                                        |
+|------------------------|-------------------------------------------------------------------------------|
+| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+| Databases (2)          | Oracle Database --> Autonomous Database --> Autonomous Transaction Processing |
+| OKE Cluster            | Developer Services --> Containers --> Kubernetes Clusters (OKE)               |
+| Registry Repositories  | Developer Services --> Containers --> Container Registry                      |
+
+You can monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
    ![](images/duplicate-browser-tab.png " ")
 
-   In the new browser window or tab, select the resources that you are interested in and select your new compartment.  Here is a table summarizing where the newly created resources can be found in the OCI console:
-   
-   | Resources               | OCI Console Navigation                                                        |
-   |-------------------------|-------------------------------------------------------------------------------|
-   | Object Storage Buckets  | Storage --> Object Storage --> Buckets                                        |
-   | Databases               | Oracle Database --> Autonomous Database --> Autonomous Transaction Processing |
-   | OKE Cluster             | Developer Services --> Containers --> Kubernetes Clusters (OKE)               |
-   | Registry Repositories   | Developer Services --> Containers --> Container Registry                      |
-   
-   For example, here we show the database resources that have been created:
+ From the new browser window or tab, navigate around the console to view the resources within the new compartment.  The table includes the console navigation for each resource.  For example, here we show the database resources:
 
    ![](images/select-compartment.png " ")
 
-8. Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message "SETUP_VERIFIED completed".
+## **STEP 8**: Complete the Setup
 
-   If any of the background setup jobs are still running you can monitor their progress with the following command.
+Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
-    ```
-    <copy>
-    ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
-    </copy>
-    ```
+If any of the background setup jobs are still running you can monitor their progress with the following command.
 
-   Their log files are located in the $GRABDISH_LOG directory.
+```
+<copy>
+ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
+</copy>
+```
 
-    ```
-    <copy>
-    ls -al $GRABDISH_LOG
-    </copy>
-    ```
+Their log files are located in the $GRABDISH_LOG directory.
 
-   Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+```
+<copy>
+ls -al $GRABDISH_LOG
+</copy>
+```
+
+Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 ## Acknowledgements
 
