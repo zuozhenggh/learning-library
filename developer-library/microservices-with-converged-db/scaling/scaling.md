@@ -145,9 +145,9 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 3**: Load test and scale the database tier
 
-1. To scale the Order DB ATP database to 2 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+1. To scale the Order DB ATP database to 2 OCPUs, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-   ![](images/35-open-atp-menu.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2. Click **Scale Up/Down** and enter 2 in the OCPU field. Click **Update**.
 
@@ -179,9 +179,9 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 4**: Scale down the application and database tiers
 
-1. To scale the Order DB ATP database down to 1 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+1. To scale the Order DB ATP database down to 1 OCPUs, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-   ![](images/35-open-atp-menu.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2. Click **Scale Up/Down** and enter 1 in the OCPU field. Click **Update**.
 

@@ -25,7 +25,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
 	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/big-data.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. You can use the context menu to view the cluster's details, add nodes, add block storage, add Cloud SQL, rename the cluster, remove Cloud SQL (if it's already added), and terminate the Big Data cluster.
 
