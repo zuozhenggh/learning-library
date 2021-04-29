@@ -191,7 +191,7 @@ This Step is geared towards developing an understanding of security for Essbase 
 
       ![](./images/imageSM_20.png "")
 
-   d) Go to Essbase Web UI, navigate to the Scenarios tab. Select the scenario What-if and click the Actions icon.
+   d) Go to Essbase Web UI, navigate to the Scenarios tab. For What-if scenario, click on Actions icon.
       
       Note: Maria is looged in web UI.
 
