@@ -53,7 +53,16 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
     ![](./images/imageSM_01.png "")
 
-1. Save your file as SandboxApp.xlsx and close it. Create a new cube with the help of **Lab6->Step1**. Make sure to check that Load Data option is selected under Advanced Option.
+4. Save your file as SandboxApp.xlsx and close it. 
+
+5. Go to the Essbase Web UI and click on Import.
+   
+   ![](./images/imageSM_01.0.png "")
+
+6. Click on "File Browser", and browse to select SandboxApp.xlsx excelsheet.
+   ![](./images/imageSM_01.1.png "")
+  
+  Make sure to check that Load Data option is selected under Advanced Option. Click OK.
 
     ![](./images/imageSM_02.png "")
 
@@ -127,15 +136,24 @@ This Step is geared towards developing an understanding of security for Essbase 
       * Maria -> Database Update
       ![](./images/imageSM_12.png "")
 
-    f) Go to Smartview, click on "more" and then and click on "disconnect" to from the current connection.
+   f) Go to Smartview, click on "more" and then and click on "disconnect" to from the current connection.
        
       ![](./images/imageSM_12.0.png "")
       ![](./images/imageSM_12.1.png "")
-       
+
+   g) Click on -> (arrow mark as shown below) to login as John.  
+      ![](./images/imageSM_12.3.png "")
+
+      Expand Sample_Scenarion application and select Sandbx database. Click on "connect" and then "Set Active Connection for this Worksheet". Refresh the data.
+
+      ![](./images/imageSM_12.4.png "")
+
       Close the Smart View.xlsx excelsheet.
 
+   Note: Follow the steps mentioned in f) and g) above points to switch between different users.
 
-1. Creating Scenarios:
+
+3. Creating Scenarios:
    
    In this exercise you will login as Maria and create a new scenario defining Sam as a participant. Validate the impact of the security changes for each user John, Maria, Sam and Phillip.  Without logging out from Smart View, make Phillip a Scenario Approver, then refresh the data in Smart View validate the change to his security.
     
@@ -159,7 +177,7 @@ This Step is geared towards developing an understanding of security for Essbase 
 
 
 
-2. Changing Sandbox Data:
+4. Changing Sandbox Data:
    As Sam, you will change some data for the scenario that was just created and using the Essbase Web UI you can see the differences between Base and the scenario.
 
    a) Open the Smart View.xlsx.
@@ -183,7 +201,7 @@ This Step is geared towards developing an understanding of security for Essbase 
       Verify the changes:
       ![](./images/imageSM_21.1.png "")
 
-3. Calculations in a Sandbox: 
+5. Calculations in a Sandbox: 
 In this step you will create a calculation script that will create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
 
    a) Login to Essbase Web UI as John.
@@ -242,7 +260,7 @@ In this step you will create a calculation script that will create data for ORCL
       Verify the Changes:
       ![](./images/imageSM_27.1.png "")
 
-1. Scenario Workflow:
+6. Scenario Workflow:
    
    At this point two things happened with our Sandbox. Sam entered some data using Smart View and John run a calc script that created some data for 2016. Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. The flow that we will simulate is:
 
