@@ -19,13 +19,13 @@ My Oracle Support (MOS) account credentials.
 * User ID
 * Password
 
-## **STEP 1**: Uploading SSH public keys
+## **STEP 1**: Uploading SSH public key
 
-1. Navigate to **Cloud Manager Dashboard** > **Cloud Manager Settings** > **My Settings**.
+1. Navigate to **Cloud Manager Dashboard** > **My Settings**.
 
     ![](./images/4.png "")
 
-2. Navigate to the folder where you generated the keys (Lab 2, Step 1) and open the file **id_rsa.pub**.
+2. Navigate to the folder where you generated the keys (Lab 1, Step 8) and open the file **id_rsa.pub**.
 
     ![](./images/5.png "")
 
@@ -33,20 +33,14 @@ My Oracle Support (MOS) account credentials.
 
     ![](./images/6.png "")
 
-## **STEP 2**: Entering My Oracle Support Credentials
+## **STEP 2**: Updating Infrastructure Settings
 
-1.	Navigate to **Cloud Manager Dashboard** > **Cloud Manager Settings** > **Cloud Manager Settings**.
+Go back to the **Cloud Manager Dashboard** > **Cloud Manager Settings**. 
+    ![](./images/cmhome.png "")
+1.  Navigate to Infrastructure Settings on the left and update Operating System Images.     
+    * For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list (see the screenshot below).
 
-2.	Update **My Oracle Support (MOS) Credentials**. These credentials are the same as the username and password you enter when you access http://support.oracle.com. Please make sure that you have an account and you can access [website](http://support.oracle.com), this is required to download DPKs and PRPs automatically. Once you have entered your **User ID** and **Password**, click **Save Settings** at the top of the page.
-
-    ![](./images/1.png "")
-    
-## **STEP 3**: Updating Infrastructure Settings
-
-1.	Navigate to Infrastructure Settings on the left and update Operating System Images.     
-    For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list (see the screenshot below).
-
-    For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.oracle.com/en-us/iaas/images/image/943bdefa-8858-4b37-98e0-fd710c4aea1e/).
+    * For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.oracle.com/en-us/iaas/images/image/943bdefa-8858-4b37-98e0-fd710c4aea1e/).
 
     For example, in this lab, we selected our Availability Domain to be us-ashburn-1 so our OCID is:    
     **ocid1.image.oc1.iad.aaaaaaaa74rl4tzxblzk2sqm43k62srh6bv4hbxkkewlbyar6ximerilowyq**
@@ -57,7 +51,7 @@ My Oracle Support (MOS) account credentials.
 
 3.	Click **Refresh OCI Metadata** button on top of the page and wait for a few minutes.
 
-## **STEP 4**: Configuring File Server System
+## **STEP 3**: Configuring File Server System
 
 1.	Navigate to **File Server tab** on the left.  Accept the defaults. For Mount Target field, type “**lab**”.
 
@@ -68,9 +62,8 @@ My Oracle Support (MOS) account credentials.
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
