@@ -7,8 +7,6 @@ The 21c generation of Oracle's converged database offers customers; best of bree
 
 21c is the latest and greatest way to get the latest and greatest technologies out to our customers so as they start considering new applications, they can start now and be ready for the next long term support release.  Our current long term support release is Oracle Database 19c.
 
- ![Oracle DB 21c Advantages](images/21c-support.png "Oracle DB 21c Advantages")
-
 Oracle Database 21c enables SQL, REST and API transactions across all types of data models.  It is being released cloud-first with on-premises following shortly after. Some key inovations are:
 * Native JSON binary data type
 * Blockchain Tables
@@ -28,12 +26,16 @@ Watch the video below to see how Oracle Database 21c enables a data-driven futur
 
 ### Prerequisites
 <if type="dbcs">
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * Working knowledge of vi
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 </if>
 <if type="atp">
-* An Oracle Always Free/Free Tier, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * Working knowledge of SQL
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 </if>
 
 You may now [proceed to the next lab](#next).

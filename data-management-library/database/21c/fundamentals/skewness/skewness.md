@@ -41,12 +41,12 @@ In this lab, you will:
 <if type="dbcs">
 ## **STEP 1:** Set up the environment
 
-1. Connect to `PDB1` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with skewed data.
+1. Connect to `PDB1` as `REPORT` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with skewed data.
 
 	```
 
 	$ <copy>cd /home/oracle/labs/M104784GC10</copy>
-	$ <copy>sqlplus system@PDB21</copy>
+	$ <copy>sqlplus report@PDB21</copy>
 
 	Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
@@ -124,7 +124,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	```
 </if>
 <if type="atp">
-1.  If you aren't logged in to SQL Developer Web, login as the *REPORT* user.
+1.  If you aren't logged in to SQL Developer Web, login as the *REPORT* user. 
 
 </if>
 2. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other. With Skewness, you measure whether there is more data towards the left or the right end of the tail (positive/negative) or how close you are to a normal distribution (skewness = 0).

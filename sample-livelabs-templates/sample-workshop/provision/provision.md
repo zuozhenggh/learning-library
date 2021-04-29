@@ -20,12 +20,73 @@ In this lab, you will:
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
 *This is the "fold" - below items are collapsed by default*
+
+## **STEP 0**: Use these Standardized Pictures for Oracle Cloud Navigation (Commonly for Provisioning)
+
+***Please use the absolute path pictures in this section when describing Oracle Cloud navigation in your workshops. This will enable us to quickly update all workshops in the future if there happens to be an Oracle Cloud user interface change.  It also increases consistency across LiveLabs workshops and contributes to a more professional feel.  Browse below and view the markdown in an editor to find the related images. We highly recommend you copy this whole section in the markdown file and paste it to a text document for easy copy and pasting of links.***
+
+Cloud Navigation Picture Paths:
+
+Analytics - Cloud - OAC
+0. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
+
+Compute - Instances
+0. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+
+Database - Autonomous Data Warehouse - ADW
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+Database - Autonomous JSON Database - AJD
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous JSON Database**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-ajd.png " ")
+
+Database - Autonomous Transaction Processing - ATP
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+
+Oracle Database - Data Safe
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Data Safe**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-datasafe.png " ")
+
+Oracle Database - Cloud Shell - Bare Metal, VM, Exadata - DBCS
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Bare Metal, VM, and Exadata**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
+
+Oracle Database - GoldenGate - Golden Gate - GG
+0. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
+
+Developer Services - Resource Manager Stacks - ResMgr Stacks
+0. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
+
+Networking - Virtual Cloud Networks - VCN
+0. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+
+Storage - Buckets
+0. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 ## **STEP 1**: title
 
