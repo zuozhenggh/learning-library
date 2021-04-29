@@ -11,16 +11,16 @@ You will create a highly scalable application that relies on Oracle Container En
 
 ![](./images/architecture.png " ")
 
-Access a complete walkthrough video of this lab [here](https://tinyurl.com/helidonoracledb-msdataworkshop). 
+Access a complete walkthrough video of this lab [here](https://tinyurl.com/helidonoracledb-msdataworkshop).
 Note that a few minor steps (such as the setup steps and creation of OCI Vault secrets, etc.) have changed from this video and the documentation should be followed.  We will be updating the video soon.
 
 If you need any help please join the databasehome.slack.com (#microservices) channel.
 
 ### Let's Get Started!
 
-If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Setup](#lab-1-setup).
+If you already have an Oracle Free Trial or Paid account, you can proceed to **Lab 1: Setup**.
 
-Otherwise, [proceed to the next lab](#next) to get your Oracle Free Trial Account. 
+Otherwise, [proceed to the next lab](#next) to get your Oracle Free Trial Account.
 
 ## Want to Learn More?
 
