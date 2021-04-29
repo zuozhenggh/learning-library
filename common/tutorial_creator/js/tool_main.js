@@ -46,7 +46,7 @@ let images_md = [], images_dir = [];
 
 // document.ready function
 $(() => {
-    $('#lastmodified').text(document.lastModified); //sets the value for the last modified date in the HTML output
+    $('#lastmodified').text('Thu Apr 29 2021 15:55:23 GMT+0530'); //sets the value for the last modified date in the HTML output
     loadFile(nav_pages[0].html); //loads the first page in the array by default
 
     window.localStorage.removeItem("manifestValue"); // REMOVE LATER (after manifest page is fixed)
