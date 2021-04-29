@@ -286,7 +286,7 @@ Oracle also has many built in JSON functions for working with document data whic
 
     American Airlines Inc.,JetBlue Airways,Continental Air Lines Inc.,Delta Air Lines Inc.,AirTran Airways Corporation,America West Airlines Inc.,Northwest Airlines Inc.,ATA Airlines d/b/a ATA,**Oracle Air Lines Inc.**,US Airways Inc.,Southwest Airlines Co.
 
-3. **json\_transform (21c)** - You can use the JSON_TRANSFORM function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data. Unlike json\_mergepatch, json_transform can target the specific attributes you want to change.
+3. **json\_transform (21c)** - You can use the json\_transform function to change input JSON data (or pieces of JSON data), by specifying one or more modifying operations that perform changes to the JSON data. Unlike json\_mergepatch, json_transform can target the specific attributes you want to change.
 
     Continuing our underhanded data alterations, lets work with the **Minutes Delayed** JSON section and see if we can make our numbers look a bit more favorable. Here is a sample of the JSON we will be working with:
 
