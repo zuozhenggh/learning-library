@@ -39,23 +39,15 @@ If, however, you have already used up some of the quota on your tenancy, perhaps
 |                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
 | LbaaS            | Region | 10Mbps Load Balancer Count                           | **3**     | 3                  |
 
-Quota usage and limits can be check through the console:
-
-  ![](images/limits-quota-usage.png " ")
-
-For example:
+Quota usage and limits can be check through the console: **Governance & Administration** --> **Governance** --> **Limits, Quotas and Usage**, For example:
 
   ![](images/service-limit-example.png " ")
 
-The Tenancy Explorer may be used to locate existing resources:
-
-  ![](images/tenancy-explorer.png " ")
-
-Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
+The Tenancy Explorer may be used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
   ![](images/show-subcompartments.png " ")
 
-It may be necessary to remove some resources in order to make space to run this workshop.  When you have sufficent space you may proceed to the next step.
+It may be necessary to delete some resources in order to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
 
 ## **STEP 4**: Launch the Cloud Shell
 
