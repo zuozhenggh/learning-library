@@ -1,18 +1,21 @@
-# Lab 3: Polyglot Microservices
+# Polyglot Microservices
 
 ## Introduction
 
 This lab will show you how to switch the Inventory microservice to a Python, Node.js or Java Helidon SE implementation while retaining the same application functionality.
 
+Estimates Lab Time - 
+
 ![](images/architecture.png " ")
 
 ### Objectives
+
 -   Undeploy the existing Java Helidon MP Inventory microservice
 -   Deploy an alternate implementation of the Inventory microservice and test the application functionality
 
-### What Do You Need?
+### Prerequisites
 
-This lab assumes you have already completed Labs 1 through 4.
+- This lab assumes you have already completed Labs 1 through 4.
 
 ## **STEP 1**: Undeploy the Java Helidon MP Inventory Microservice
 

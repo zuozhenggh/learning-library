@@ -1,18 +1,20 @@
-# Lab 4: Scaling the Application
+# Scaling the Application
 
 ## Introduction
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
+Estimated Lab Time - 
 
 ### Objectives
+
 -   Install a load testing tool
 -   Start the external load balancer for the order-helidon microservice
 -   Test the performance of the existing deployment and identify the point at which performance begins to degrade
 -   Scale the application tier to improve performance and identify the point at which further application tier scaling does not help
 -   Scale the database tier and demonstrate how performance is improved
 
-### What Do You Need?
+### Prerequisites
 
 This lab assumes that you have already completed labs 1 through 4.
 
@@ -42,17 +44,17 @@ This lab assumes that you have already completed labs 1 through 4.
 
     You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
     
-   ``` 
-   <copy>cd $GRABDISH_HOME/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
-   ```
+	``` 
+	<copy>cd $GRABDISH_HOME/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
+	```
 
-   ![](images/install-k6.png " ")
+	![](images/install-k6.png " ")
 
-   (Alternatively) To install artillery:
+	(Alternatively) To install artillery:
 
-   ``` 
-   <copy>cd $GRABDISH_HOME/artillery; npm install artillery@1.6</copy>
-   ```
+	``` 
+	<copy>cd $GRABDISH_HOME/artillery; npm install artillery@1.6</copy>
+	```
 
 ## **STEP 2**: Load test and scale the application tier
 

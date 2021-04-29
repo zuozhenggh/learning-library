@@ -1,15 +1,17 @@
-# Lab 2: Data-centric microservices walkthrough with Helidon MP
+# Data-centric microservices walkthrough with Helidon MP
 
 ## Introduction
 
 This lab will show you how to deploy the microservices on your Kubernetes cluster, walk throught the functionality and explain how it works.
 
+Estimated Lab Time - 
+
 ### Objectives
 
-  -   Deploy and access the microservices
-  -   Learn how they work
+-   Deploy and access the microservices
+-   Learn how they work
 
-### What Do You Need?
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * The OKE cluster and the ATP databases that you created in Lab 1

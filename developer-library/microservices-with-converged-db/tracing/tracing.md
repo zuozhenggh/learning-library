@@ -1,14 +1,15 @@
-# Lab 5: Tracing Using Jaeger
+# Tracing Using Jaeger
 
 ## Introduction
 
 This lab will show you can trace microservice activity using Jaeger.
 
+Estimated lab Time - 
+
 ### Objectives
 
-  -   Open t
-  -   Learn how they work
-
+-   Open t
+-   Learn how they work
 
 ## **STEP 1**: Verify tracing
 
