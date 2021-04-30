@@ -120,9 +120,9 @@ In Steps 1 and 2, you created an ADW table and loaded it with sample data from y
 
 In OCI Object Storage, a bucket is the terminology for a container of multiple files.
 
-1. Now you set up the OCI Object Store. From the Autonomous Data Warehouse console, pull out the left side menu from the top-left corner and select **Object Storage > Object Storage**. To revisit signing-in and navigating to ADW, please see [Lab 1](?lab=lab-1-provision-autonomous-database).
+1. Now you set up the OCI Object Store. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**. To revisit signing-in and navigating to ADW, please see [Lab 1](?lab=lab-1-provision-autonomous-database).
 
-  ![Select Object Storage from the left navigation window in the Oracle Cloud homepage.](images/snap0014294.jpg " ")
+  ![Select Object Storage from the left navigation window in the Oracle Cloud homepage.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
   *To learn more about the OCI Object Storage, refer to its <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
 
