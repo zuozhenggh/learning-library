@@ -73,14 +73,13 @@ In the tutorial Setting up Oracle Data Miner 11g Release 2, you learned how to c
 
 ## **STEP 3:** Build a Data Miner Workflow
 
-A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
+1. A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
+   A workflow.
+      - Provides directions for the Data Mining server. For example, the workflow says, "Build a model with these characteristics." The data-mining server builds the model with the results returned to the workflow.
+      - Enables you to interactively build, analyze, and test a data mining process within a graphical environment.
+      - Might be used to test and analyze only one cycle within a particular phase of a larger process, or it may encapsulate all phases of a process designed to solve a particular business problem.
 
-A workflow.
-   - Provides directions for the Data Mining server. For example, the workflow says, "Build a model with these characteristics." The data-mining server builds the model with the results returned to the workflow.
-   - Enables you to interactively build, analyze, and test a data mining process within a graphical environment.
-   - Might be used to test and analyze only one cycle within a particular phase of a larger process, or it may encapsulate all phases of a process designed to solve a particular business problem.
-
-    **What Does a Data Miner Workflow Contain?**
+2. What Does a Data Miner Workflow Contain?
     - Visually, the workflow window serves as a canvas on which you build the graphical representation of a data mining process flow, like the one shown here.
 
    ![](./images/data-preparation-9.png " ")
@@ -92,10 +91,9 @@ A workflow.
 
     As you will learn, any node may be added to a workflow by simply dragging and dropping it onto the workflow area. Each node contains a set of default properties. You modify the properties as desired until you are ready to move onto the next step in the process.
 
-    **Sample Data Mining Scenario**
+3. Sample Data Mining Scenario
 
     In this topic, you will create a data mining process that predicts the revenue of customers. 
-
     To accomplish this goal, you build a workflow that enables you to:
 
     - Identify and examine the source data
@@ -275,7 +273,7 @@ Follow these steps.
   
     Next, you move from a high-level manual analytic exercise to using the power of database data mining.
 
-## **STEP 6:** Append Data from DATA\_REL and JSON\_XML\_COMBINED
+## **STEP 6:** Append Data from Two Different Table
 
 1. Now we can append the data from `DATA_REL` and `JSON_XML_COMBINED` into a single table using the `UNION ALL` query in the `SQL Query` control and store the data in a output table. Steps will be similar to what we had mentioned earlier. 
 Before we `JOIN` the tables, we will update the some of the attributes to numeric type, so that the data types of both tables match during the join.  Add a `Transform` node and connect the `DATA_REL` table to the `Transform` node. 
@@ -288,13 +286,13 @@ Before we `JOIN` the tables, we will update the some of the attributes to numeri
 
 3.  The edit Wizard comes up for the `Transform` Node. Click on the Browse table button, and select the XML\_JSON\_COMBINED data table.  Click on the `Add Custom Transformation` button as marked in the image.
 
-   `![](./images/data-preparation-34.png " ") 
+    ![](./images/data-preparation-34.png " ") 
 
 4. We want to convert the datatype of Quantity column from Varchar2 to Numeric. From the `Functions` tab, expand `Conversion` and click on the `TO_NUMBER` function to bring it to the `Expression` panel.
 
     ![](./images/data-preparation-35.png " ")
 
-5. Now select the `Attributes` Tab and Click on `OUANTITY`, to select this attribute.  Type the `Column Name`. Keep it same `QUANTITY`.  Now `validate` the expression by clicking the Validate button. After successful validation, click on the `OK` button.
+5. Now select the `Attributes` Tab and Click on `QUANTITY`, to select this attribute.  Type the `Column Name`. Keep it same `QUANTITY`.  Now `validate` the expression by clicking the Validate button. After successful validation, click on the `OK` button.
 
     ![](./images/data-preparation-36.png " ")
 
@@ -325,7 +323,7 @@ Before we `JOIN` the tables, we will update the some of the attributes to numeri
 
     ![](./images/data-preparation-41.png " ")
 
-10. Now, write click on the `SQL Query` node and select `Run`.  After successful completion, a green tick mark will appear on the node. 
+10. Now, Right click on the `SQL Query` node and select `Run`.  After successful completion, a green tick mark will appear on the node. 
 
     ![](./images/data-preparation-42.png " ")
 
@@ -416,7 +414,7 @@ Now we will create 3 new attributes with the aggregate function. Three attribute
     ![](./images/data-preparation-67.png " ") 
     ![](./images/data-preparation-67a.png " ") 
 
-## **STEP 8:** Join the Two table using JOIN Node
+## **STEP 8:** Join the Two Tables Using Join Node
 
 1. Drag a `Join` node into the Canvas. Connect the `Join` node with the two output tables, containing the aggregated data (Sum Aggregation and Distinct Count aggregated data).
 

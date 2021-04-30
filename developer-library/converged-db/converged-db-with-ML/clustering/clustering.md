@@ -1,7 +1,7 @@
 # OML Clustering
 
 ## Introduction
-In this workshop, you examined and solved a "Clustering" prediction data mining business problem by using the Oracle Data Miner graphical user interface, which is included as an extension to SQL Developer.
+In this lab, you will examine and solve a "Clustering" prediction data mining business problem by using the Oracle Data Miner graphical user interface, which is included as an extension to SQL Developer.
 
 *Estimated Lab Time*: 30 Minutes
 
@@ -54,7 +54,7 @@ To create a Data Miner Project, perform the following steps:
      - Enables you to interactively build, analyze, and test a data mining process within a graphical environment.
      - Might be used to test and analyze only one cycle within a particular phase of a larger process, or it may encapsulate all phases of a process designed to solve a particular business problem.
   
-2. **What Does a Data Miner Workflow Contain?**
+2. What Does a Data Miner Workflow Contain?
 
     Visually, the workflow window serves as a canvas on which you build the graphical representation of a data mining process flow, like the one shown here.
 
@@ -67,7 +67,7 @@ To create a Data Miner Project, perform the following steps:
   
     As you will learn, any node may be added to a workflow by simply dragging and dropping it onto the workflow area. Each node contains a set of default properties. You modify the properties as desired until you are ready to move onto the next step in the process.
 
-3. **Sample Data Mining Scenario**
+3. Sample Data Mining Scenario
    
     In this topic, you will create a data mining process that groups customers into clusters based on their attributes like items purchased, spending, location etc. This technique is called Clustering. Typically clustering is used in customer segmentation analysis to try an better understand what type of customers you have.
 
@@ -285,7 +285,7 @@ We have one last data setup to do on the Apply node. We need to specify what dat
 
     ![](./images/clustering_50.png " ")
  
-2. To add the attributes from the source data, click on the **Additional Output tab**, click in the **reset** option and then click on the green **‘+’** symbol. For simplicity, just select the CUSTOMERID. Click the OK button to finish.
+2. To add the attributes from the source data, click on the **Additional Output tab**, click on the **reset** option and then click on the green **‘+’** symbol. For simplicity, just select the CUSTOMERID. Click the OK button to finish.
 
     ![](./images/clustering_51.png " ")
  

@@ -1,7 +1,7 @@
 # OML Regression
 
 ## Introduction
-In this workshop, you examined and solved a "Regression" prediction data mining business problem by using the Oracle Data Miner graphical user interface, which is included as an extension to SQL Developer.
+In this Lab, you examined and solved a "Regression" prediction data mining business problem by using the Oracle Data Miner graphical user interface, which is included as an extension to SQL Developer.
 
 *Estimated Lab Time*: 30 Minutes
 
