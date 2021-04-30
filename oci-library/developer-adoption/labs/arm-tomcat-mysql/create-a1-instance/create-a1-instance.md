@@ -60,6 +60,8 @@ Now you are ready to move on to Step 3.
 1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. 
    1. Name the instance  **JavaApp** 
    1. Click the **Change Shape** button to see the available compute shapes.
+   1. Click the **Change Image** button to see the available compute images. Choose the Oracle Linux 8 image
+
 
    ![ Create Instance](images/03_create_instance02.png " ")
    
@@ -70,7 +72,7 @@ Now you are ready to move on to Step 3.
    ![ Choose Shape](images/04_create_instance03.png " ")
    
 
-1. Choose your networking options. Create a new VCN and subnet for your next cloud deployment. Make sure you choose to assigna public IP address for your instance. 
+1. Choose your networking options. Create a new VCN and subnet for your next cloud deployment. Make sure you choose to assign a public IP address for your instance. 
 
    ![Network options](images/05_create_instance04.png " ")
 
