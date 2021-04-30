@@ -150,10 +150,10 @@ This Step is geared towards developing an understanding of security for Essbase 
 
       Close the Smart View.xlsx excelsheet.
 
-   Note: Follow the steps mentioned in f) and g) above points to switch between different users.
+   Note: Follow the steps mentioned in f) and g) above to switch between different users.
 
 
-3. Creating Scenarios:
+1. Creating Scenarios:
    
    In this exercise you will login as Maria and create a new scenario defining Sam as a participant. Validate the impact of the security changes for each user John, Maria, Sam and Phillip.  Without logging out from Smart View, make Phillip a Scenario Approver, then refresh the data in Smart View validate the change to his security.
     
@@ -177,7 +177,7 @@ This Step is geared towards developing an understanding of security for Essbase 
 
 
 
-4. Changing Sandbox Data:
+2. Changing Sandbox Data:
    As Sam, you will change some data for the scenario that was just created and using the Essbase Web UI you can see the differences between Base and the scenario.
 
    a) Open the Smart View.xlsx.
@@ -201,7 +201,7 @@ This Step is geared towards developing an understanding of security for Essbase 
       Verify the changes:
       ![](./images/imageSM_21.1.png "")
 
-5. Calculations in a Sandbox: 
+3. Calculations in a Sandbox: 
 In this step you will create a calculation script that will create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
 
    a) Login to Essbase Web UI as John.
