@@ -18,7 +18,7 @@ Visit the Apple website and enroll for the iOS Developer Program or iOS Develope
 
 ## **STEP 2**: Create a Provisioning Profile
 
-You must have a provisioning profile to deploy an iOS application (.IPA file) to an iOS-powered device or to publish it either to the App Store or to an internal hosted download site. A provisioning profile contains development certificates and an application ID. You'll need the exact application ID and the certificate's signing identity for the iOS build configuration you'll define in the next step.
+You must have a provisioning profile to deploy an iOS application (.IPA file) to an iOS-powered device or to publish it either to the App Store or to an internal hosted download site. A provisioning profile contains an application ID as well as signing certificate(s), either a *distribution* certificate or one or more *developer* certificates depending on the profile type. You'll need the exact application ID and the certificate's signing identity for the iOS build configuration you'll define in the next step.
 
 Use the iOS Provisioning Portal, accessible only to members of the iOS Developer Program, to create a provisioning profile. For more information, review the [iOS Developer Support page](https://developer.apple.com/support/).
 
