@@ -60,7 +60,7 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
 During the workshop, you might face problems related to service limits. 
 
-Please check that you have the required resources in Availability Domains 1, 2 AND 3.
+Please check that you have the required resources in Availability Domain 1
 
 1. To check the service limit, navigate to the three-line menu on the top left and click on **Governance -> Limits, Quotas, and Usage**.
 
@@ -71,17 +71,17 @@ Please check that you have the required resources in Availability Domains 1, 2 A
     * Scope:  **US-ASHBURN-AD-1** 
     * Resource: **Cores for Standard2 based VM and BM Instances**
 
-    Make sure you have 2 cores Available in the chart below. Repeat by changing Scope to **US-ASHBURN-AD-2** AND **US-ASHBURN-AD-3** for a toal of 6 cores.
+    Make sure you have 6 cores Available in the chart below.
 
     ![](./images/newScope.png " ")
 
-**Note**: If you do not have any for Standard2 based VM and BM Instances, try selecting **Cores for Standard1 based VM and BM Instances** for the Resource instead.
+**Note**: We will be using all 6, so if you would like to spin up any other compute resources that require Standard2 based VM and BMs for the duration of the trial, be sure to use a different Availability Domain.
 
 ## **STEP 3:** Creating a Demo Compartment
 **Compartments Overview:**
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie, when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
-1.	Click on the three-line menu, which is on the top left of the console. Scroll down till the bottom of the menu, click on **Identity -> Compartments**. Click on the blue **Create Compartment** button to create a sub-compartment.
+1.	Click on the three-line menu, which is on the top left of the console. Scroll down till the bottom of the menu, click on **Identity & Security -> Compartments**. Click on the blue **Create Compartment** button to create a sub-compartment.
 
     ![](./images/compartmentn.png " ")
 
@@ -109,7 +109,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 We'll create a user, a group, and a security policy to understand the concept.
 
-1.	After signing in to the console, click on the three-line menu on the top left. Click on **Identity -> Groups**.
+1.	After signing in to the console, click on the three-line menu on the top left. Click on **Identity & Security -> Groups**.
 
     ![](./images/group.png "")
 
@@ -139,7 +139,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 Now, let’s create a security policy that gives your group permissions in your assigned Compartment. In this case, we will create a policy that permits users belonging to group **'oci-group' to provision Peoplesoft Cloud Manager in Compartment 'Demo'**:
 
-1. Click on the three-line Menu button on the top left. Click on **Identity -> Policies**.
+1. Click on the three-line Menu button on the top left. Click on **Identity & Security -> Policies**.
     
     ![](./images/policyn.png "")    
 
@@ -185,8 +185,8 @@ Now, let’s create a security policy that gives your group permissions in your 
 
 Create a **New User**
    
-1. Click on three-line menu on top left, and click on **Identity -> Users**.
-
+1. Click on three-line menu on top left, and click on **Identity & Security -> Users**.
+    ![](./images/user.png "") 
 2. Click **Create User**.
 
 3. Select IAM user. 
@@ -360,9 +360,8 @@ You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, April 2021
 
 
 ## Need Help?

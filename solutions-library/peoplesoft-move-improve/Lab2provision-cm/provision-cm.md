@@ -29,7 +29,7 @@ To obtain the PeopleSoft Cloud Manager stack:
 
 1. On the Oracle Cloud Infrastructure console home page, click the top left three-line menu icon and select **Marketplace** > **Applications**.
 
-    ![](./images/marketplace.png "")
+    ![](./images/marketplacemenu.png "")
 
 2. Under Filters on the left, select **Stack** from the Type drop-down list, and **Oracle** from the Publisher drop-down list. Search for **Peoplesoft** on the search bar. Select **PeopleSoft Cloud Manager for OCI**.
 
@@ -53,23 +53,23 @@ Click **Launch Stack**.
 
 The Create Stack, Configure Variables page includes a list of the parameters needed to create and configure the Cloud Manager instance.
 
-1. In the Cloud Manager Instance section, select the **Availability Domain** as **US-ASHBURN-AD-2**. 
+1. In the Cloud Manager Instance section, select the **Availability Domain** as **US-ASHBURN-AD-1**. 
 
-2. For **Shape**, select **VM.Standard2.1**. 
+2. For **Shape**, select **VM.Standard2.2**. 
 
 3. Select the **storage volume size in GBs** for the secondary block volume for the Cloud Manager instance. We will set it as **200 GBs**.
 
 4. For SSH public key, enter the contents of your ``id_rsa.pub`` from your keys folder in a single line, with no line feeds or spaces.
 
-5. Enter your **User OCID** (you have copied this in your notepad in Step 3) in a single line, with no line feeds or spaces.
+5. Enter your **User OCID** (you have copied this in your notepad in Lab 1, Step 10) in a single line, with no line feeds or spaces.
 
 6. For API private key, enter the contents of your ``api_key`` file.   
 
 7. Leave API Private passphrase as blank (Enter if you have created one).
 
-8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have noted this down in your notepad in the last Lab)
+8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have also noted this down from Lab 1, Step 10)
 
-    ![](./images/varscm1.png "")
+    ![](./images/vars1.png "")
 
 ## **STEP 3**: Enter Cloud Manager Passwords
 
@@ -92,41 +92,40 @@ The Create Stack, Configure Variables page includes a list of the parameters nee
 
 ## **STEP 4**: Enter My Oracle Support Credentials
 
-1. My Oracle Support (MOS) credentials are the same as the username and password you enter when you access http://support.oracle.com. Please make sure that you have an account and you can access [website](http://support.oracle.com). This is required to download DPKs and PRPs automatically. 
+1. My Oracle Support (MOS) credentials are the same as the username and password you enter when you access [http://support.oracle.com](http://support.oracle.com). Please sign in now to ensure that you have an account and the accurate credentials for My Oracle Support. This is required to download DPKs and PRPs automatically. 
 
     ![](./images/varscmmos.png "")
 
 ## **STEP 5**: Enter Networking Information
 
-We will be provisioning our Cloud Manager instance in Private Cloud. For more information on the default subnets and ports that will automatically get created in hte following steps, please visit: [website](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/install_cloud_manager_resource_manager_psft_cm_oci/index.html#EnterValuesforaNewVirtualCloudNetwork)
+We will be provisioning our Cloud Manager instance in Private Cloud. Click [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/install_cloud_manager_resource_manager_psft_cm_oci/index.html#EnterValuesforaNewVirtualCloudNetwork) or more information on the default subnets and ports that will automatically get created in the following steps.
 
 1. In the Networking section, enter a host name for the Cloud Manager instance. We'll use **psftcm**.
 2. Select the option **Create Network Resources**
-3. For **Network Name**, enter **OCIHOLVCN** (Stands for Oracle Cloud Infrastructure, Hands On Lab, Virtual Cloud Network)
+3. For **Network Name**, enter **OCIHOLVCN** (Oracle Cloud Infrastructure, Hands On Lab, Virtual Cloud Network)
 4. Select the option **Create Private Subnets**
 5. Select the option **Create Subnets for Peoplesoft Components**
 6. Select the option for **Create a Jump Host**
 7. Using the drop-down, select **US-ASHBURN-AD-1** for the **Availability Domain for Jump Host** 
-8. Using the drop-down, select **VM.Standard2.1** for the **Shape for Jump Host** 
+8. Using the drop-down, select **VM.Standard2.2** for the **Shape for Jump Host** 
 
-    ![](./images/varscm3.png "")
+    ![](./images/vars3.png "")
 
-9. Click **Next**. Review the configuration variables, and then click **Create**.  
-    ![](./images/review.png "")
+9. Click **Next**. 
+10. Review the configuration variables, and then click **Create**.  
+    ![](./images/review1.png "")
 
 ## **STEP 6**: Monitor Stack Creation and Gather Outputs
 
 This page shows the terraform job status and details. All the information we provided is being used to create our Cloud Manager Stack.
 Spinning up resources, such as our Virtual Cloud Network, compute instances for Jump Host and Cloud Manager will take a few minutes. 
 
-![](./images/rmj.png "")
+![](./images/rmj1.png "")
 
 Over these few minutes, you can refresh the page until you see the RMJ has succeeded as indicated with a green box. Once you do:
 1. Click on **Logs** under **Resources** on the left side. 
 2. Scroll all the way down in the black box, copy and paste these values into your Notepad.
-    ![](./images/rmjsuccess.png "")
-
-
+    ![](./images/rmjsuccess1.png "")
 
     Close up view:
     ![](./images/output2.png "")
@@ -136,35 +135,54 @@ Over these few minutes, you can refresh the page until you see the RMJ has succe
 
     ![](./images/wlab.png "")
 
-Depending on your workstation, choose Step 7 (for Mac) or 8 (for Windows)
+Depending on your workstation, choose Step 7 (for Mac) OR Step 8 (for Windows)
 
 ## **STEP 7**: FOR MAC USERS- Accessing Cloud Manager using SSH 
 
-SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was created in Step 1 of Lab 2. 
+SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was downloaded/created in Lab 1: IAM, Step 8: Generating Keys. 
 
 **NOTE**: Make sure you are off VPN.
 
-1.	Retrieve the **Cloud Manager Output Variables** you just copied to your Notepad. We will need them.
+1.	Retrieve the **Cloud Manager Output Variables** you just copied to your Notepad and edit the **sample\_command\_for\_ssh\_tunnel** so that it looks like this:
+    ![](./images/sshedit.png "")
+
+Here's a template for reference:
+    ![](./images/sshtemplate.png "")
+
     
-2.  Launch terminal or Git Bash and navigate to the keys folder. 
-For example: ```cd ~/Downloads/keys ```
-
-3.	Once you're in the directory, create an SSH tunnel using this command: (Be sure to replace the **CM private IP** and the **Jump Host public IP** from the variables in your Notepad.)
-   
-    ```
-    <copy>
-    ssh -f -C -q -N -i id_rsa -L 2222:<CM_private_ip>:22 opc@<jumphost_public_IP>
-    </copy>
-    ``` 
-    *Example:* ``` ssh -i id_rsa -f -C -q -N -L 2222:10.X.X.X:22 opc@XXX.XXX.XXX.XXX```
-
+2.  Launch terminal and navigate to the keys folder. (For example: ```cd ~/Downloads/keys ```) Now, paste in the command we just edited. 
+3. Type in "yes" to continue connecting.
 4. Now, let's connect through SSH. Run this command in the keys directory as well.
 
+    ```ssh –p 2222 opc@localhost -i id_rsa```
+5. Again, type in "yes" to authenticate the host.
+
+All together, it should look like this:
+    ![](./images/sshcm.png "")
+
+Now that you've SSH'ed into your Cloud Manager instance, let's check status of the deployment. 
+
+6. Monitor Cloud Manager bootstrap installation using the below command.
+
     ```
     <copy>
-    ssh –p 2222 opc@localhost -i id_rsa
+    tail -f /home/opc/bootstrap/CloudManagerStatus.log
     </copy>
     ```
+
+    ![](./images/tail.png "")
+
+7. After Cloud Manager bootstrap is complete, the CloudManagerStatus.log will show the following messages. 
+
+		The PeopleSoft Environment Setup Process Ended.
+		CM installed successfully
+		Cloud Manager PIA URL: http://psftcm.cm.ociholvcn.oraclevcn.com:8000 
+		Cloud Manager PIA SSL URL: https://psftcm.cm.ociholvcn.oraclevcn.com:8443
+
+    *NOTE*: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Until the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
+
+You may skip down to Step 9 while waiting for Cloud Manager to finish deploying.
+
 ## **STEP 8**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
 Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those if you haven't already.
 
@@ -223,11 +241,9 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
     ![](./images/puttycmconnect.png "")
 
 
+Now that you've SSH'ed into your Cloud Manager instance, let's check status of the deployment. 
 
-
-## **STEP 8**: Monitoring Cloud Manager
-
-1. SSH into Cloud Manager instance to check status of the deployment.  Monitor Cloud Manager bootstrap installation using the below command.
+6. Monitor Cloud Manager bootstrap installation using the below command.
 
     ```
     <copy>
@@ -237,20 +253,16 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 
     ![](./images/tail.png "")
 
-2. While Cloud Manager is being installed, review **Associated Resources** for the list of all resources created by automation.
-
-    The deployment automation (Resource Manager Stack) provisions numerous resources in the tenancy.  To find the list of resources that were created, navigate to OCI console, then go to **Resource Manager** > **Jobs** and click on the job you wish to view. Then on this page, click **Associated Resources** under **Resources** (on the left side of the webpage).  
-
-    ![](./images/19.png "")
-
-3. After Cloud Manager bootstrap is complete, the CloudManagerStatus.log will show the following messages. 
+7. After Cloud Manager bootstrap is complete, the CloudManagerStatus.log will show the following messages. 
 
 		The PeopleSoft Environment Setup Process Ended.
 		CM installed successfully
 		Cloud Manager PIA URL: http://psftcm.cm.ociholvcn.oraclevcn.com:8000 
 		Cloud Manager PIA SSL URL: https://psftcm.cm.ociholvcn.oraclevcn.com:8443
 
-    *NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
+    *NOTE*: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Until the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
+
+You may complete Step 9 while waiting for Cloud Manager to finish deploying.
 
 
 ## **STEP 9**: Set up SOCKS Proxy to Access Cloud Manager in Browser
@@ -261,7 +273,7 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 
     ![](./images/firefoxpref.png "")
 
-2. Scroll down to the bottom to navigate to **Network Settings**
+2. Click **General** on the left and scroll all the way down to the bottom to **Network Settings**
 
     ![](./images/foxpref.png "")
 
@@ -270,14 +282,15 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
     * Toggle Manual Proxy Configuration
     * SOCKS host: localhost and Port: 8123
     * Toggle SOCKS v5
-    * Select both Proxy DNS when using SOCKS v5 and Enable DNS over HTTPS
+    * No proxy for: localhost, 127.0.0.1
+    * Select Proxy DNS when using SOCKS v5 
 
     Click OK
 
 
     ![](./images/firefox.png "")
 
-4.  Launch terminal or Git Bash and navigate to the keys folder. Run the following command to create the SOCKS proxy making sure to replace the **Jump Host Public IP**.
+4.  Launch terminal (Mac) or Git Bash (Windows) and navigate to the keys folder again. Run the following command to create the SOCKS proxy making sure to replace the **Jump Host Public IP**.
 
     ```
     <copy>    
@@ -285,6 +298,8 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
     </copy>
     ```
     *Example:* ``` ssh -D 8123 -f -C -q -N -i id_rsa opc@XXX.XXX.XXX.XXX ```
+    ![](./images/port.png "")
+
 
 5. Enter your **Cloud Manager PIA URL** (``CM_http_url``) in Firefox
 
@@ -304,9 +319,8 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 **Created By/Date**   
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, April 2021
 * **Lab Expiry Date** - June 30, 2021 
 
 ## Need Help?
