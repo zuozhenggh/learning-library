@@ -23,7 +23,7 @@ In this lab, you'll configure the HR mobile application to run as a PWA. You'll 
     -   **App Name**: Accept the default value or specify another name to be displayed when the app is installed on a mobile device.
     -   **URL Scheme:** Accept the default value for the app's URL scheme.
     -   **Package name / Bundle ID Default:** Accept the default value for the app's package name. To avoid naming conflicts, Android uses reverse package names, such as `com.company.application`. For more information, refer to the Android Developers website.
-    -   **Lock Portrait Mode:** Accept the default value to display the app in Portrait mode on the mobile device. Deselecting the check box renders the mobile application in both Landscape and Portrait mode.
+    -   **Lock Portrait Mode:** Accept the default value to display the app in Portrait mode on the mobile device. Or deselect the check box to render the mobile application in both Landscape and Portrait mode.
 
     ![](images/vbcsia_mob_gen_s3.png)
 
@@ -47,7 +47,7 @@ In this lab, you'll configure the HR mobile application to run as a PWA. You'll 
 
 1. Click **Preview** ![](./images/vbcsia_mob_run_icon.png).
 
-  When the application opens in another browser tab, notice that it's now possible for you to generate a QR code for the app, even though you haven't defined build configurations. That's because PWAs don't require build configurations like native mobile apps.
+  When the application opens in another browser tab, notice that it's now possible for you to generate a QR code for the app.
 
   ![](images/vbcsia_mob_pwa_ready.png)
 
@@ -67,11 +67,15 @@ In this lab, you'll configure the HR mobile application to run as a PWA. You'll 
 
   ![](images/hrmobileapp_pwa_add.png)
 
-   The hrmobileapp opens as an app on your device.
+   If you're running the PWA on an iOS device, you'll need to use the Action (Share) icon to add the app to the device's home screen as shown here:
+
+   ![](images/pwa_ios_home_screen.png)
+
+7. Once the app opens on your device, try it out and test its functionality.
 
    ![](images/hrmobileapp_pwa.png)
 
-7. Try out the app and test its functionality. When you are done, click **X** to close the app. Remember to also close the preview tab or window.
+   When you are done, click **X** to close the app. Remember to also close the preview tab or window.
 
    You can always click ![](images/pwa-desktop-icon.png) on your device's home screen or desktop to open the app again.
 

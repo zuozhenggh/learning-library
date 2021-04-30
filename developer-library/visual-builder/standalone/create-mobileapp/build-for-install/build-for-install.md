@@ -20,7 +20,7 @@ After you create the build configuration for both Android and iOS, you can gener
 
     ![](images/vbcsio_mob_install_s1.png)
 
-    Because we previously enabled the mobile app as a PWA, you'll see the **PWA** tab in addition to the **Native app** tab. The PWA tab will contain a QR code and a **Launch in browser** link to install or open the app as a PWA. Since we've gone over this in an earlier lab, we'll focus on native mobile app installation here.
+    Because we previously enabled the mobile app as a PWA, you'll see the **PWA** tab in addition to the **Native app** tab. The PWA tab will contain a QR code and a **Launch in browser** link to install or open the app as a PWA. Since we've gone over this in an earlier lab, we'll focus on native mobile app installation here. Note that unlike native mobile apps, PWAs don't require build configurations.
 
 2.  Click **Rebuild my App**.
 
