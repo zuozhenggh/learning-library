@@ -54,6 +54,12 @@ Analytics - Digital Assistant
 	
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-assist.png " ")
 
+Analytics - Machine Learning - Data Science
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
+
+
 Compute - Instances
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
