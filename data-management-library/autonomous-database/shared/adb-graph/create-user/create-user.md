@@ -19,6 +19,8 @@ Learn how to
 
 ## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
 
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in the full resolution.**
+
 1. Open the service detail page for your Autonomous Database instance in the OCI console. 
 
    ![](images/adb-details-page.png " ")
