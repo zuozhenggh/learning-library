@@ -34,6 +34,7 @@ In this lab, you will:
 Cloud Navigation Picture Paths:
 
 Administration - Tenancy Details
+
 1. Click the **Navigation Menu** in the upper left, navigate to **Governance & Administration**, and select **Tenancy Details**. 
 	
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/admin-details.png " ")
@@ -97,6 +98,17 @@ Developer Services - Resource Manager Stacks - ResMgr Stacks
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
+
+Developer Services - Containers - Kubernetes Clusters (OKE)
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Kubernetes Clusters (OKE)**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-OKE.png " ")
+
+Developer Services - Containers - Container Registry
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Container Registry**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-container-registry.png " ")
+
 	
 Developer Services - APEX
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **APEX**.
