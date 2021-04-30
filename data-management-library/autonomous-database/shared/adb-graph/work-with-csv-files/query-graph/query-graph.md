@@ -8,7 +8,7 @@ The following video shows the steps you will execute in this lab.
 
 [](youtube:DLRlnw-NI1g) Graph Studio: Query a graph.
 
-Estimated Lab Time: 15 minutes. 
+Estimated Lab Time: 30 minutes. 
 
 ### Objectives
 
@@ -21,7 +21,13 @@ Learn how to
 
 ## **STEP 1**: Create a notebook  
 
-1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon and verify that `BANK_GRAPH` is loaded into memory. If it isn't then click on the action menu on that row and select `Load into memory`. 
+1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon 
+   ![](images/radar-chart.svg " ")
+   and verify that `BANK_GRAPH` is loaded into memory. If it isn't then click on the action menu 
+   ![](images/ellipsis-v.svg " ")
+   on that row and select `Load into memory`. 
+
+   ![](images/load-bank-graph-into-memory.png " ")
 
 2. Next click on the `Notebooks` menu icon and then on `Create`, on the top right side of that page, to create a new notebook.  
 Name it `Learn/BankGraph: Find Circular Payments`.  
@@ -37,7 +43,11 @@ Name it `Learn/BankGraph: Find Circular Payments`.
       - `%pgql-pgx` for Property Graph Query Language ([PGQL](https://pgql-lang.org)) 
       - `%java-pgx` for executing built-in graph algorithms with the Property Graph Java API  
   
-3. Let's enter a Markdown paragraph which outlines the notebook content. Copy and paste the following text into the first blank paragraph.
+3. Add a new paragraph. **Hover over the bottom middle portion of the first paragraph**. Click the + icon 
+   ![](images/plus-circle.svg " ") when it is displayed.  
+	![](images/28-add-new-paragraph.png " ") 
+
+4. Let's enter a Markdown paragraph which outlines the notebook content. Copy and paste the following text into the first blank paragraph.
 
 	```
 	<copy>
@@ -55,14 +65,15 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	</copy>
 	```
 
-	Click the Play, or Run, icon to execute this paragraph.  
+	Click the Run icon ![](images/play.svg " ") to execute this paragraph.  
 
-	Then click the Eye (visibility) icon to turn off the Code listing and only display the result.   
+	Then click the Eye (visibility) icon 
+	![](images/eye.svg " ")  
+	to turn off the Code listing and only display the result.   
 
 	![](images/27a-md-turn-off-code-listing.png " ")  
 
-4. Add a new paragraph. Hover over the bottom middle portion of the first paragraph. Click the + icon when it is displayed.  
-	![](images/28-add-new-paragraph.png " ")  
+ 
 
 ## **STEP 2**: Query the `BANK_GRAPH` and visualize the results 
 
@@ -93,15 +104,19 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 2. Now let's explore some features of the visualization component. We will add the `acct_id` as node (or vertex) labels and use a differnet graph layout algorithm.  
    
-   Click the visualization settings icon (the fourth icon from the left at the top of the visualization panel).  
+   Click the visualization settings icon 
+   ![](images/sliders.svg " ")  
+   (the fourth icon from the left at the top of the visualization panel).  
 
    ![](images/31-viz-open-settings.png " ")   
 
-   Click the `Visualization` tab in the `Settings` dialog. Scroll down and pick `ACCT_ID` from the `Labeling` drop-down list.  
+    In this `Settings` dialog, click the `Visualization` tab. Then scroll down and pick `ACCT_ID` from the `Labeling`, `Vertex Label` drop-down list.  
 
    ![](images/32-viz-add-vertex-label.png " ")  
 
-   Click the `X` on the top-right to exit the settings dialog. The graph should look as shown below.  
+   Click the `X` on the top-right to exit the settings dialog. The resulting visualization should be similar to the screenshot below.   
+
+   **Note: The colors and layout shown in the screenshots may differ from those in your results.**
 
    ![](images/33-viz-labels-shown.png " ")   
 
@@ -234,7 +249,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	![](images/44-6th-query-show-all-5-hops.png " ")  
 
 	This result might be better viewed in a different graph layout.  
-	Open the visualization settings dialog and select `Hierarchical` from the Layout drop-down list.  
+	Open the visualization settings dialog and select `Hierarchical` from the `Layouts` drop-down list.  Leave the Direction as `Top-Down` and Algorithm Type as `Network Simplex`.
 
 	![](images/45-6th-query-hierarchical-layout.png " ")  
 
@@ -252,7 +267,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 	![](images/49-query-6-highlight-resulting-viz.png " ")
 
-11. The remainder of this lab illustrate additional query features and the use of the JAVA API to execute graph algorithms.  
+11. The remainder of this lab illustrates additional query features and the use of the JAVA API to execute graph algorithms.  
+    
     Add a new Markdown paragraph, enter the following text, and exceute the paragraph.  
 
 	```
@@ -266,7 +282,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
     ![](images/50-md-bind-params.png " ")
 
 12. This shows the use of bind parameters in a query. The account id value is supplied and used at runtime.  
-    Add a new paragraph. Paste the following PGQL query, enter 534 as the account id, and then execute the paragraph.  
+    Add a new paragraph. Paste the following PGQL query, **enter 534 as the account id**, and then execute the paragraph.  
 
 	```
 	<copy>
@@ -342,7 +358,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
    ![](images/55b-new-hightlight-for-pagerank.png " ")  
 
-   The result should look as shown below.  
+   The result should be similar to the screenshot shown below.  
 
    ![](images/55-query-with-pagerank.png " ")
 
