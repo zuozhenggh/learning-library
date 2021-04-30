@@ -60,9 +60,9 @@ In this part, you will create an Oracle APEX Application Development Service tri
 
 3. From within your Oracle Cloud environment, you will create an instance of the Oracle APEX Application Development Service.
 
-    From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **APEX Application Development** then select **APEX Instances**.
+    Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **APEX**.
 
-    ![](images/select-apxs-in-nav-menu.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-apex.png " ")
 
 4. Select a Compartment and Click **Create APEX Service**.
 
