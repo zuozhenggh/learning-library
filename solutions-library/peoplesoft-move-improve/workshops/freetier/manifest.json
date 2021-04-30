@@ -50,7 +50,11 @@
             "filename": "../../governance-policies/policies.md"
           },
           {
-            "title": "Lab 10 (Optional): Refreshing an Environment",
+            "title": "Lab 10: Selective Adoption",
+            "filename": "../../selective-adoption/adoption.md"
+          },
+          {
+            "title": "Lab 11 (Optional): Refreshing an Environment",
             "filename": "../../refresh/refresh.md"
           },
           {
