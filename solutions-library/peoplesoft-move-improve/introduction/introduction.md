@@ -70,6 +70,8 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 
 **Tenancy** – When you sign up for Oracle Cloud Infrastructure, Oracle creates a tenancy for your company, which is a secure and isolated partition within Oracle Cloud Infrastructure where you can create, organize, and administer your cloud resources.
 
+
+
 ## Acknowledgements
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
 * **Contributor** -  Sara Lipowsky, Cloud Engineer

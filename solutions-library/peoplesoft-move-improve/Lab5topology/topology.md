@@ -23,31 +23,28 @@ In this lab you will:
 
 ## **STEP 1**: Defining a Topology
 
-1.	Navigate to **Dashboard** > **Topology**.
-    Click the radio button next to **PUM Fulltier** and then click **Clone**
-    ![](./images/clonetop1.png "")
+1.	Navigate to **Cloud Manager Dashboard** > **Topology**
+    ![](./images/dashtopology.png "")
 
-    Give the cloned Topology a name: **Fulltier** and click **Clone**
-    ![](./images/clonetop2.png "")
-2. Now let's edit the Topogy we just created. 
-    Click **Fulltier**
-    ![](./images/editFull.png "")
 
-    You should see 2 Nodes like this:
-    ![](./images/nodes2.png "")
+2. Click **PUM Fulltier**
+    ![](./images/2selectPUMFT.png "")
 
-3.  Click **Full Tier** under Environment Type and select **VM.Standard2.1** 
+    Here we have 2 nodes: Full Tier (Linux) and PeolpeSoft Client (Windows), but they are missing shapes. 
 
-    ![](./images/lintop.png "")
+3. Let's edit the **Full Tier** node first. Using the dropdown, select **VM.Standard2.1** 
+    ![](./images/4addlinuxshape.png "")
 
-    Click **Done**.
+    Click **Done**
 
-    Now, let's edit the other node. Click **PeopleSoft Client** and then **Delete** this node.
-    ![](./images/winNodeDelete.png "")
+4. Do the same for the **PeopleSoft Client** node. Using the dropdown, select **VM.Standard2.1** 
+    ![](./images/5editwindowsshape.png "")
+    
+    Click **Done**
 
-4.	When you have something like this, click **Save**. 
+5. When you have this, Click **Save**
+    ![](./images/6bothnodes.png "")
 
-    ![](./images/justlinux.png "")
 
 You may now proceed to the next lab.
 

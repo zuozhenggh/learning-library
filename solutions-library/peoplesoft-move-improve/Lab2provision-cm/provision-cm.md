@@ -35,7 +35,7 @@ To obtain the PeopleSoft Cloud Manager stack:
 
     ![](./images/searchpsft.png "")
 
-3. On the Overview page for the PeopleSoft Cloud Manager stack, select the compartment to install the instance. If it's a nested compartment, make sure to click on **+** to navigate to your sub-compartment.   
+3. On the Overview page for the PeopleSoft Cloud Manager stack, select the compartment to install the instance. If it's a nested compartment, make sure to click on **+** to navigate to your **Demo** sub-compartment.   
 Review the **Oracle terms**, and then select the option indicating that you have reviewed and understand the conditions.
 Click **Launch Stack**. 
 
@@ -54,28 +54,21 @@ Click **Launch Stack**.
 The Create Stack, Configure Variables page includes a list of the parameters needed to create and configure the Cloud Manager instance.
 
 1. In the Cloud Manager Instance section, select the **Availability Domain** as **US-ASHBURN-AD-1**. 
-
-2. For **Shape**, select **VM.Standard2.2**. 
-
+2. For **Shape**, select **VM.Standard2.1**. 
 3. Select the **storage volume size in GBs** for the secondary block volume for the Cloud Manager instance. We will set it as **200 GBs**.
-
 4. For SSH public key, enter the contents of your ``id_rsa.pub`` from your keys folder in a single line, with no line feeds or spaces.
-
 5. Enter your **User OCID** (you have copied this in your notepad in Lab 1, Step 10) in a single line, with no line feeds or spaces.
-
 6. For API private key, enter the contents of your ``api_key`` file.   
-
 7. Leave API Private passphrase as blank (Enter if you have created one).
-
 8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have also noted this down from Lab 1, Step 10)
 
-    ![](./images/vars1.png "")
+    ![](./images/vars1v2.png "")
 
 ## **STEP 3**: Enter Cloud Manager Passwords
 
 1. Enter following password values:
 
-    *Note*: They are all the same **except** Db Admin Password (in screenshot it is blue)
+    *Note*: They are all the same **except** DB Admin Password (in screenshot it is blue)
 
     Attribute | Value
     --------- | -----
@@ -107,25 +100,27 @@ We will be provisioning our Cloud Manager instance in Private Cloud. Click [here
 5. Select the option **Create Subnets for Peoplesoft Components**
 6. Select the option for **Create a Jump Host**
 7. Using the drop-down, select **US-ASHBURN-AD-1** for the **Availability Domain for Jump Host** 
-8. Using the drop-down, select **VM.Standard2.2** for the **Shape for Jump Host** 
+8. Using the drop-down, select **VM.Standard2.1** for the **Shape for Jump Host** 
 
-    ![](./images/vars3.png "")
+    ![](./images/vars3v2.png "")
 
 9. Click **Next**. 
 10. Review the configuration variables, and then click **Create**.  
-    ![](./images/review1.png "")
+    ![](./images/review1v2.png "")
 
 ## **STEP 6**: Monitor Stack Creation and Gather Outputs
 
-This page shows the terraform job status and details. All the information we provided is being used to create our Cloud Manager Stack.
+This page shows the terraform job status and details. Under the yellow box that has **RMJ** (Resource Manager Job), you'll see the status is **"Accepted"** 
+    ![](./images/rmjaccepted.png "")
+
+Refresh the page, and you should see the status has now changed to **"In Progress"**. All the information we provided in the Marketplace is now being used to create our Cloud Manager Stack.
 Spinning up resources, such as our Virtual Cloud Network, compute instances for Jump Host and Cloud Manager will take a few minutes. 
+    ![](./images/rmj1.png "")
 
-![](./images/rmj1.png "")
-
-Over these few minutes, you can refresh the page until you see the RMJ has succeeded as indicated with a green box. Once you do:
+Over these few minutes, you can refresh the page until you see the **RMJ** has succeeded as indicated with a green box and **Succeeded** status. Once you do:
 1. Click on **Logs** under **Resources** on the left side. 
 2. Scroll all the way down in the black box, copy and paste these values into your Notepad.
-    ![](./images/rmjsuccess1.png "")
+    ![](./images/rmjsuccess1v2.png "")
 
     Close up view:
     ![](./images/output2.png "")
@@ -157,10 +152,10 @@ Here's a template for reference:
     ```ssh –p 2222 opc@localhost -i id_rsa```
 5. Again, type in "yes" to authenticate the host.
 
-All together, it should look like this:
+    All together, it should look like this:
     ![](./images/sshcm.png "")
 
-Now that you've SSH'ed into your Cloud Manager instance, let's check status of the deployment. 
+    Now that you've SSH'ed into your Cloud Manager instance, let's check status of the deployment. 
 
 6. Monitor Cloud Manager bootstrap installation using the below command.
 
@@ -189,7 +184,7 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 1. Open up PuTTYgen. Click **Conversions** --> **Import key**. 
     ![](./images/puttykey.png "")
 
-    Now, select the ```id_rsa``` key from Step 1 of Lab 2, and click **Open**
+    Now, select the ```id_rsa``` key from Step 8 of Lab 1, and click **Open**
 
     ![](./images/puttyloadkey.png "")
 
@@ -290,18 +285,18 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
 
     ![](./images/firefox.png "")
 
-4.  Launch terminal (Mac) or Git Bash (Windows) and navigate to the keys folder again. Run the following command to create the SOCKS proxy making sure to replace the **Jump Host Public IP**.
+4.  Go back to your outputs and edit the **sample\_command\_for\_socks\_proxy** as shown below, adding in 
 
-    ```
-    <copy>    
-    ssh -D 8123 -f -C -q -N -i id_rsa opc@<jump_host_public_IP>
-    </copy>
-    ```
-    *Example:* ``` ssh -D 8123 -f -C -q -N -i id_rsa opc@XXX.XXX.XXX.XXX ```
-    ![](./images/port.png "")
+    ![](./images/ssheditport.png "")
+
+5. Launch terminal (Mac) or Git Bash (Windows) and navigate to the keys folder again. Then, run the command we just edited to create the SOCKS proxy.
+
+    *Example:* ``` ssh -i id_rsa -D 8123 -f -C -q -N opc@XXX.XXX.XXX.XXX ```
+
+    ![](./images/terminalproxy.png "")
 
 
-5. Enter your **Cloud Manager PIA URL** (``CM_http_url``) in Firefox
+5. Enter your **Cloud Manager PIA URL** (``CM_http_url`` from the Outputs) in Firefox
 
 6. To login, use the username **CLADM** and password as **Psft1234**.
     ```

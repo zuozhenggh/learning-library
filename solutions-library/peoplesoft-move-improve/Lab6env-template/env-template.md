@@ -24,65 +24,86 @@ We have already provisioned Cloud Manager in a private subnet and the Jump Host 
 - A PeopleSoft Cloud Manager Instance
 - A downloaded PeopleSoft Image
 
-## **STEP 1**: Creating a New Environment Template
+## **STEP 1**: Creating a New Environment Template and General Details
 
-Navigate to Cloud Manager Dashboard -> **Environment Template**.  
+Navigate to Cloud Manager Dashboard -> **Environment Template**
+    ![](./images/1dashtemp.png "")
+
   Click **Add New Template** button.
+  ![](./images/2addtemp.png "")
 
-1. On the General Details page, provide the values below: 
-    * Give your environment a unique **Name** such as **TestWorkshop** 
-    * For **Description**, we'll use **Workshop Test environment**
-    * Click on the **Search Icon**. Do NOT type anything. If your DPK was downloaded properly, it should appear in the Search Results. If you can't see it yet, please wait and refresh the page after awhile. Since we subscribed to the HCM channel in the previous lab, we see **PEOPLESOFT HCM UPDATE IMAGE 9.2.037 - NATIVE OS** (see 2nd screenshot below).
+1. Fill out the General Settings as follows:
+  - Name: **PUMFT**
+  - Description **HCM 9.2 FT: Linux and Windows node**
+  ![](./images/tempnamedescription.png "")
 
-  ![](./images/Template2.png "")
+2. For Select PeopleSoft Image, click the **search icon**. Do NOT type anything. If your DPK was downloaded properly, it should appear in the Search Results. If you can't see it yet, please wait and refresh the page after awhile. Since we subscribed to the HCM channel in the Lab 4, we see **PEOPLESOFT HCM UPDATE IMAGE 9.2.038 - NATIVE OS** 
+  ![](./images/imagesearch.png "")
+  ![](./images/4hcmlookup.png "")
 
-  ![](./images/lookup.png "")
+  Click **Next** when you have this:
+  ![](./images/3tempname.png "")
+## **STEP 2**: Select Topology
+1. Click the **search icon** and select **PUM Fulltier** for the topology
+2. Expand **Custom Attributes** and select **PUM Fulltier** again from the dropdown.
+3. Click on **Edit Custom Attributes**
+  ![](./images/5selecttopv2.png "")
+4. Fill in the Region and Availability Domains as follows:
+  * Region: **us-ashburn-1**
+  * Primary Availability Domain: **KuGX:US-ASHBURN-AD-1**
+  * Default Compartment: **Demo**
+  * Default Virtual Cloud Network: **OCIHOLVCN(Demo)** 
+  ![](./images/6region.png "")
+5. Now, expand **Full Tier** > **General Settings**
+  * Line 8- Database Name: **MYPUMDB**
+  * Line 10- Database Operator Id: **PS**
+  ![](./images/7ftgeneral.png "")
+6. Now, expand **Full Tier** > **Network Settings**
+  * Compartment: **Demo**
+  * Subnet For Primary Instance: **ft**
+  ![](./images/8ftnetwork.png "")
+7. Now, expand **PeopleSoft Client** > **Network Settings**
+  * Compartment: **Demo**
+  * Subnet For Primary Instance: **win**
+  ![](./images/9clientnetwork.png "")
+8. Scroll back up and click on **Validate Network**
+  ![](./images/10validatenetwork.png "")
 
-  Click **Next**.
+  You should see something like this:
+  ![](./images/11validationok.png "")
 
-2. On the Select Topology page: 
-    * Click on the **Search Icon** to search for a topology and select **Fulltier** topology. 
-    * Expand the **Custom Attributes** section and select **Fulltier** again in the dropdown. 
-    * Click on **Edit Custom Attributes**
+Click **Next**
 
-  ![](./images/topology3.png "")
+## **STEP 3**: Security and Policies
 
-    * Expand the **Region and Availability Domains** section and select the following from the corresponding dropdowns:
+Now, we'll select the Zone and Role Names
 
-  ![](./images/s5.png "")
+1. Click the **search icon** for **Zone Name**
+  ![](./images/12searchzone.png "")
 
-    * Expand the **Full Tier** -> **General Settings** and make the following 2 changes:
-      - Database Operator Id: **PS** 
-      - Database Name: **MYPUMDB**
+  Select **Test**
+  ![](./images/13searchtest.png "")
 
-  ![](./images/s7.png "")
+2. Click the **search icon** for **Role Name**
+  ![](./images/14searchrole.png "")
 
-    * Expand **Subnet Settings** and select **cm**
+  Expand the **Search Criteria** at the top, type in **PACL\_CAD**, and click **Search**
+  ![](./images/15searchrole.png "")
+  Select **PACL\_CAD**
+  ![](./images/16searchrole.png "")
 
-  ![](./images/cm.png "")
+When you see this, click **Next**
+  ![](./images/17next.png "")
 
 
-  Click **Next**
+## **STEP 4**: Summary
 
-3. 	On the Define Security page:
+Review the Environment Template and click **Submit**
+  ![](./images/18submit.png "")
 
-    * Click on the Search Icon and Select **Test** for Zone Name from the Search Results
-  ![](./images/zoneName.png "")
-    * Click on the Search Icon again for Role Name. This time, expand **Search Criteria**, type **PACL_CAD** and click Search. Select it under Role Name. 
+You should now see your Environment Template here:
+  ![](./images/19templist.png "")
 
-  ![](./images/s9.png "")
-
-  Your screen should look like this:
-
-  ![](./images/defineSec.png "")
-
-  Click **Next**
-
-4. On the Summary page:
-
-    * Review the details and click **Submit** to save the template. 
-
-  ![](./images/submit.png "")
 
 You may proceed to the next lab.
 
