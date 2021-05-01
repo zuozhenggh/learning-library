@@ -164,7 +164,7 @@ In order to refresh an environment you will need an environment created from a t
     Once **Status** changes to a green checkmark (like the picture below) you can continue on with this lab. 
     ![](./images/green.png "")   
 
-5.  Now that the backup has finished we are ready to refresh the target environment. 
+4.  Now that the backup has finished we are ready to refresh the target environment. 
     On your target environment (**TestRefresh**), click the down arrow and then click **Refresh**.
     ![](./images/refreshtest.png "")
 

@@ -51,13 +51,8 @@ Before creating policies you need to create a policy group. Policy groups are us
 
     Set a schedule then click **Save** and then **Save** again.
 
-    Next we will create a backup policy. Click **Add Policy** again and type the information as shown below:
+    Finally we will create a backup policy. Click **Add Policy** again and type the information as shown below:
     ![](./images/backup.png "")
-
-    Set a schedule then click **Save** and then **Save** again.
-
-    Finally we will create a refresh policy. Click **Add Policy** again and type the information as shown below. For now we are just using a dummy value under **Action Parameters** for **Environment Name**. For **Source TDE KeyStore (Wallet) Password** enter **Psft1234**
-    ![](./images/refresh.png "")
 
     Set a schedule then click **Save** and then **Save** again.
 
