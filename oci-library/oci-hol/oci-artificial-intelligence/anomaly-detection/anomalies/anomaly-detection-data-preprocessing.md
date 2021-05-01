@@ -1,4 +1,4 @@
-# Lab 2: Prepare Training Data and Detection Data
+# Lab 6: (Advanced Session) How to Preprocess Raw Data for Training and Detection
 
 Due to the natural of time-series anomaly detection, the data required for training any ML models needs to be formatted properly. Similarly here, our core ML algorithm behind our service has some requirements on the data to train an effective model. In this section, we can discuss the requirements and share some examples to show the user how to prepare and process raw data for training the model.  
 
@@ -22,11 +22,6 @@ Additionally, the algorithm also has some requirements on format, minimum attrib
 ### Objectives
 
 * After this session, you should be able to learn some basic technicals to transform/preprocess the raw data into proper format for using our service to build AD models.
-
-**Note: User can also skip this session, by directly downloading the preprocessed training and detecting data here to jump to next steps.**
-
-* [processed training data](../data/example2.csv)
-* [processed testing data](../data/example2.csv)
 
 ### Prerequisites
 
