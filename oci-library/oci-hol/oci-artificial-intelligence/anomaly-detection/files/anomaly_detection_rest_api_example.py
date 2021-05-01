@@ -1,42 +1,11 @@
-# Lab 5: (Advanced Session) Access AD Service with REST API
-
-## Introduction
-
-Our anomaly detection services also support to use CLI tool `oci` or REST API calls to perform model and data operations.
-
-In this lab session, we will show several code snippets to integrate with our service endpoints.
-
-*Estimated Lab Time*: 30 minutes
-
-### Objectives:
-
-* Learn how to use REST API to communicate with our anomaly detection service endpoints.
-
-### Prerequisites:
-* Familiar with Python programming is required
-* Have a Python environment ready in local or use our [Data Science Platform](https://www.oracle.com/data-science/)
-* Familiar with local editing tools, vi and nano
-* Installed with Python libraries: `oci` and `requests`
-
-## REST API Endpoints
-
-Our service supports CURD actions on the four different resource types involved, including Project, Data Asset, Model, and Deployment.
-
-The following are a few examples of accessing those API endpoints using Python. The complete code file can be [downloaded here](../../files/anomaly_detection_rest_api_example.py).
-
-
-### **STEP 1:** Authentication
-
-This code snippet showed you how to perform authentication before other operations.
-
-```Python
 import oci
+import time
 import json
 import requests
 
 # replace with the location of your oci config file
 CONFIG_FILENAME = "~/.oci/config"
-config = oci.config.from_file(CONFIG_FILENAME, profile_name="DEFAULT")
+config = oci.config.from_file(CONFIG_FILENAME, profile_name="TEST")
 
 auth = oci.signer.Signer(
   tenancy=config['tenancy'],
@@ -49,17 +18,16 @@ auth = oci.signer.Signer(
 CLOUD_ENV_URL = "https://aiservicepreprod.us-ashburn-1.oci.oraclecloud.com"
 COMPARTMENT_ID = "YOUR_COMPARYMENY_ID"
 
-```
+headers = { 'Content-Type': 'application/json', 'User-Agent': 'any-user' }
 
-### **STEP 2:** Creating a Project
+### **STEP 1:** Creating a Project
 
-```Python
+
 PROJECT_URL = f"{CLOUD_ENV_URL}/20210101/projects"
 
 payload = { "displayName": "Sample Project",
                  "compartmentId": COMPARTMENT_ID,
                  "description" : "SAMPLE PROJECT FOR ANOMALY DETECTION" }
-headers = { 'Content-Type': 'application/json', 'User-Agent': 'any-user' }
 
 session = requests.Session()
 create_project_res = session.request("POST", PROJECT_URL, headers=headers, data=json.dumps(payload),
@@ -86,11 +54,11 @@ while True:
         print("FAILED...")
         break
     time.sleep(10)
-```
 
-### **STEP 3:** Creating the DataAsset
 
-```Python
+### **STEP 2:** Creating the DataAsset
+
+
 DATA_ASSET_URL = f"{CLOUD_ENV_URL}/20210101/dataAssets"
 BUCKET_NAME = "Your bucket name of the object"
 NAME_SPACE = "Your namespace of the object"
@@ -134,10 +102,10 @@ while True:
         print("FAILED...")
         break
     time.sleep(10)
-```
 
-### **STEP 4:** Creating the Train Model
-```Python
+
+### **STEP 3:** Creating the Train Model
+
 TRAIN_URL = f"{CLOUD_ENV_URL}/20210101/models"
 
 param_fap = 0.01 # Model parameter: False Acceptance Percentage, have to be in range [0.01, 0.05]
@@ -181,10 +149,10 @@ while True:
         print("FAILED")
         break
     time.sleep(10)
-```
 
-### **STEP 5:** Deploying the Model
-```Python
+
+### **STEP 4:** Deploying the Model
+
 DEPLOY_URL = f"{CLOUD_ENV_URL}/20210101/modelDeployments"
 deploy_payload = {
   "compartmentId": COMPARTMENT_ID,
@@ -219,10 +187,10 @@ while True:
         print("FAILED")
         break
     time.sleep(10)
-```
 
-### **STEP 6:** Detection with the Model
-```Python
+
+### **STEP 5:** Detection with the Model
+
 DETECT_URL = f"{CLOUD_ENV_URL}/20210101/modelDeployments/{deploy_id}/actions/detectAnomalies"
 
 data_payload = {
@@ -231,25 +199,12 @@ data_payload = {
   "data": [
     {
       "timestamp": "2020-10-01T09:22:59.000Z",
-      "value": [ 0.8885, 0.975, 1.25, 0.01, 0, 0.8885, 0.975, 1.25, 0.01, -2165 ]
+      "value": [ 0.8885, 0.975, 1.25, 0.01, 0, 0.8885, 0.975, 1.25, 0.01, -21654546980 ]
     }
   ]
 }
 
 session = requests.Session()
-detect_res = session.request("POST", DETECT_URL, headers=headers, data=json.dumps(data_payload),
-                              allow_redirects=True, auth=auth)
+detect_res = session.request("POST", DETECT_URL, headers=headers, data=json.dumps(data_payload), allow_redirects=True, auth=auth)
 print(detect_res.json())
 print(detect_res.headers)
-```
-
-Congratulations on completing this lab!
-
-[Proceed to the next section](#next).
-
-## Acknowledgements
-* **Authors**
-    * Jason Ding - Principal Data Scientist - Oracle AI Services
-    * Haad Khan - Senior Data Scientist - Oracle AI Services
-* **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, May 2021
