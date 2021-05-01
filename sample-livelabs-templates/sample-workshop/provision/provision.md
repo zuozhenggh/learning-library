@@ -47,7 +47,7 @@ Analytics - Cloud - OAC
 Analytics - Big Data
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
 	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/big-data.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
 	
 Analytics - Digital Assistant
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**. 
@@ -119,6 +119,11 @@ Developer Services - APEX
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **APEX**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-apex.png " ")
+
+Developer Services - Functions - Applications
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Applications**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-functions-applications.png " ")
 
 Networking - Virtual Cloud Networks - VCN
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
