@@ -148,7 +148,7 @@ You can define numerous settings to further improve the generated SQL. You can c
     In the Settings dialog, enter the following:
     - Object Prefix - enter **hol**
     - On Delete - select **Restrict**
-    - Primary Keys -  select **12c Identity Data Types**
+    - Primary Keys -  select **Identity Column**
     - Date Data Type - select **TIMESTAMP WITH LOCAL TIME ZONE**
     - Audit Columns - **Check**
     - Row Version Number - **Check**
