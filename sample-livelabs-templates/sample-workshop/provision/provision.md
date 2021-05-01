@@ -114,7 +114,6 @@ Developer Services - Containers - Container Registry
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Container Registry**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-container-registry.png " ")
-
 	
 Developer Services - APEX
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **APEX**.
@@ -160,6 +159,12 @@ Policies
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")	
+
+Identity & Security - Audit
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-audit.png " ")
+
 
 ## **STEP 1**: title
 
