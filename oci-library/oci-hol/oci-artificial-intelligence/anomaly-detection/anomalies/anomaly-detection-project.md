@@ -4,7 +4,7 @@
 
 In this session, we will show you how to create the anomaly detection project, upload data into object storage, and create the data assets.
 
-***Estimated Lab Time***: 10 minutes
+***Estimated Lab Time***: 15 minutes
 
 ### Objectives
 

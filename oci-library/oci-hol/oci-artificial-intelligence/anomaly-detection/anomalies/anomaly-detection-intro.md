@@ -10,8 +10,9 @@ The Anomaly Detection Service will create customized Machine Learning models by 
 
 [Anomaly Detection Demonstration Video](youtube:aL_05XKProc)
 
-
 The first version of *OCI Anomaly Detection Service* which is serverless, multi-tenant service, will cover multivariate *time series data, accessible over public REST APIs* by authenticated users via OCI CLI, SDK or Cloud Console.
+
+This workshop contains 3 required lab sessions for user to get familiar with required data, and the full cycle of building the anomaly detection model and make predictions, and 2 optional advanced sessions that help in-depth users to seamlessly integrate our services and understand how the training data should be prepared.
 
 *Estimated Lab Time*: 60 minutes
 

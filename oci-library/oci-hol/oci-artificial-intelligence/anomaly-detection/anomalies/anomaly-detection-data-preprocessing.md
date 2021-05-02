@@ -1,32 +1,23 @@
-# Lab 6: (Advanced Session) How to Preprocess Raw Data for Training and Detection
-
-Due to the natural of time-series anomaly detection, the data required for training any ML models needs to be formatted properly. Similarly here, our core ML algorithm behind our service has some requirements on the data to train an effective model. In this section, we can discuss the requirements and share some examples to show the user how to prepare and process raw data for training the model.  
+# Lab 5: (Advanced Session) How to Preprocess Raw Data for Training and Detection
 
 ## Introduction
-The core of our Anomaly Detection service is a multivariate anomaly detection algorithm, which has two major data quality requirements on the training data:
 
-* The training data should be anomaly-free (without outliers), containing observations that have normal conditions ONLY.
-* The training data should cover all the normal scenarios which contain the full value ranges on all attributes.
+In real-world business scenarios, the actual use case of anomaly detection might be very different, hence the collected raw data may be very different, which requires data analysis and preprocessing before used in model training.
 
-Additionally, the algorithm also has some requirements on format, minimum attributes/observations, and others as follows:
+In this session, we will discuss several common scenarios in general and show how to handle them properly, in order to inspire you to prepare the real data in your actual application.
 
-* The data should have a 2-D matrix shape for CSV format:
-    - columns containing timestamp, and other numeric attributes/signals/sensors
-    - each row representing one observation of those attributes/signals/sensors at a given timestamp.
-    - The data should be strictly ordered by timestamp, and no duplicated timestamps.
-* The data should have at least 3 highly correlated attributes.
-* At least one attribute does not have a missing value.
-* The number of observations/timestamps in training data should be at least 8 * number of attributes or 40, whichever is greater.
-* The later sections are basically follow those requirements to preprocess the data and provide some recommendations.
+***Estimated Lab Time***: 60 minutes
 
 ### Objectives
-
-* After this session, you should be able to learn some basic technicals to transform/preprocess the raw data into proper format for using our service to build AD models.
+In this lab, you will:
+- learn some basic technicals to perform data analysis and preprocessing
+- Be able to prepare raw data into the format required for model training
 
 ### Prerequisites
-
-* User should have a Python or Anaconda environment to perform data transformation and analysis. User can either set it up on their local machine, or signup our Oracle [Data Science Platform](https://www.oracle.com/data-science/).
-* Install a few Python libraries, such as `pandas`, `numpy`, `scipy`
+- Be familiar with Python programming
+- Have a Python or Anaconda environment to perform data analysis and preprocessing
+    - User can either set it up on their local machine, or signup our Oracle [Data Science Platform](https://www.oracle.com/data-science/)
+- Install a few Python libraries, such as `pandas`, `numpy`, `scipy`
 
 ## **STEP 1:** Preparing Data
 
@@ -38,6 +29,11 @@ The collected data typically is a like 2-D matrix, where the first column stands
 
 However, in reality, the data may come from different data sources, with different formats that not match with our requirements. We first suggest user to understand the meaning of datasets, attributes, observations, and data types. Based on the actual scenario, they use may need to take the following recommendations and check the examples.
 
+***Note***: All the data files needed in this session can be downloaded here:
+* [Example data](../files/example.csv) : an example data to show missing values, data status, distributions, monotonic attributes, etc.
+* [Building temperature data](../files/building_temperature.csv): temperature data for 2 buildings for later combination
+* [Building pressure data](../files/building_pressure.csv): pressure data for 2 buildings for later combination
+
 ### Loading single data source
 Data can come from different data sources, resulting into different formats, such as database tables, json documents, csv/txt files, etc. For our analysis, those non-csv file formats should be converted into a 2-D matrix format and saved into csv files for next step. Domain knowledge may be required to do the proper conversion.
 
@@ -48,25 +44,31 @@ Loading the data with dataframe from csv file.
 ```Python
 import pandas as pd
 import numpy as np
+from datetime import datetime
+import matplotlib.pyplot as plt
 import random
 import json
 import os
 
-DATA_PATH = '~/dev/demo-data/'
-file_name = DATA_PATH + 'example2.csv'
-df = pd.read_csv(file_name)
-df['timestamp'] = pd.to_datetime(df['timestamp'])
-df.head()
+# Please specify the data path of the files you downloaded
+DATA_PATH = '../files/'
+
+file_name = DATA_PATH + 'example.csv'
+
+dateparse = lambda x: datetime.strptime(x, '%Y-%m-%dT%H:%M:%SZ')
+example_df = pd.read_csv(file_name, parse_dates=['timestamp'], date_parser=dateparse)
+example_df.head()
 ```
+
 Results of the data loading:
 
 | | timestamp | sensor1 | sensor2 | sensor3 | sensor4 | sensor5 | sensor6 | sensor7 | sensor8 | sensor9 | sensor10 | sensor11 | location | status
 |---|---|---|---|---|---|---|---|---|---|---|
-|0 | 2018-01-03 16:00:00-08:00 | 0.8885 | 0.6459 | -0.0016 | -0.9061 | 0.1349 | -0.4967 | 0.4335 | 2.0000 | -2.7237 | 0.2734 | 0.0475 | building1 | active
-|1 | 2018-01-04 16:00:00-08:00 | 1.1756 | -2.5364 | -0.1524 | -0.0804 | -0.2209 | 0.4321 | -0.6206 | 1.9920 | -3.0462 | -0.3083 | NaN | building2 | active
-|2 | 2018-01-05 16:00:00-08:00 | 0.4132 | -0.0290 | 0.2968 | 0.3098 | -0.1143 | -0.1990 | 0.7020 | 1.9840 | -2.2769 | -0.1828 | 0.8852 | building1 | active
-|3 | 2018-01-06 16:00:00-08:00 | 0.2385 | 0.0092 | 0.4114 | 0.4846 | 0.4818 | 0.2670 | 0.1959 | 1.9760 | -2.2664 | 0.4710 | 0.0798 | building1 | active
-|4 | 2018-01-07 16:00:00-08:00 | 0.3327 | 0.4728 | 0.3623 | 0.1414 | 0.1824 | -0.0412 | 0.2011 | 1.9679 | -2.4895 | -0.3409 | NaN | building1 | active
+|0 | 2018-01-03 16:00:00 | 0.8885 | 0.6459 | -0.0016 | -0.9061 | 0.1349 | -0.4967 | 0.4335 | 2.0000 | -2.7237 | 0.2734 | 0.0475 | building1 | active
+|1 | 2018-01-04 16:00:00 | 1.1756 | -2.5364 | -0.1524 | -0.0804 | -0.2209 | 0.4321 | -0.6206 | 1.9920 | -3.0462 | -0.3083 | NaN | building2 | active
+|2 | 2018-01-05 16:00:00 | 0.4132 | -0.0290 | 0.2968 | 0.3098 | -0.1143 | -0.1990 | 0.7020 | 1.9840 | -2.2769 | -0.1828 | 0.8852 | building1 | active
+|3 | 2018-01-06 16:00:00 | 0.2385 | 0.0092 | 0.4114 | 0.4846 | 0.4818 | 0.2670 | 0.1959 | 1.9760 | -2.2664 | 0.4710 | 0.0798 | building1 | active
+|4 | 2018-01-07 16:00:00 | 0.3327 | 0.4728 | 0.3623 | 0.1414 | 0.1824 | -0.0412 | 0.2011 | 1.9679 | -2.4895 | -0.3409 | NaN | building1 | active
 
 
 ### Combine different data sources
@@ -84,10 +86,13 @@ In those cases, we need to normalize the data files properly to have cohesive ti
 Assume we have the following data files:
 * file1 with information of pressure sensor 1 to 6 for building 1 and building 2
 * file2 with information of temperature sensor 1 to 4 for building 1 and building 2
+
 ```Python
 file_name = DATA_PATH + 'building_temperature.csv'
-df1 = pd.read_csv(file_name)
-df1.head(5)
+
+dateparse = lambda x: datetime.strptime(x, '%Y-%m-%dT%H:%M:%SZ')
+raw_temerature_df = pd.read_csv(file_name, parse_dates=['timestamp'], date_parser=dateparse)
+raw_temerature_df.head(5)
 ```
 
 | |timestamp|building_name|sensor_name|sensor_value|
@@ -100,8 +105,10 @@ df1.head(5)
 
 ```Python
 file_name = DATA_PATH + 'building_pressure.csv'
-df2 = pd.read_csv(file_name)
-df2.head(3)
+
+dateparse = lambda x: datetime.strptime(x, '%Y-%m-%dT%H:%M:%SZ')
+raw_pressure_df = pd.read_csv(file_name, parse_dates=['timestamp'], date_parser=dateparse)
+raw_pressure_df.head(5)
 ```
 | |timestamp|building_name|sensor_name|sensor_value
 |---|---|---|---|---|
@@ -122,9 +129,9 @@ def convert_df_to_sensor_columns(df):
     newdf.reset_index(inplace=True) # Get timestamp and building_name as regular column
     return newdf
 
-new_df1 = convert_df_to_sensor_columns(df1)
-new_df2 = convert_df_to_sensor_columns(df2)
-new_df2.head()
+new_temperature_df = convert_df_to_sensor_columns(raw_temerature_df)
+new_pressure_df = convert_df_to_sensor_columns(raw_pressure_df)
+new_pressure_df.head()
 ```
 
 | |timestamp |building_name |pressure_1 |pressure_2 |pressure_3 |pressure_4 |pressure_5 |pressure_6
@@ -135,9 +142,9 @@ new_df2.head()
 
 #### Step B: Join two dataframes together
 ```Python
-new_df = new_df1.join(new_df2.set_index(['timestamp', 'building_name']), on=['timestamp', 'building_name'], how='outer')
-new_df = new_df.sort_values(by='timestamp', ignore_index=True)
-new_df.head(5)
+new_combined_df = new_temperature_df.join(new_pressure_df.set_index(['timestamp', 'building_name']), on=['timestamp', 'building_name'], how='outer')
+new_combined_df = new_combined_df.sort_values(by='timestamp', ignore_index=True)
+new_combined_df.head(5)
 ```
 
 ||timestamp|building_name|temperature_1|temperature_2|temperature_3|temperature_4|pressure_1|pressure_2|pressure_3|pressure_4|pressure_5|pressure_6
@@ -160,9 +167,9 @@ For example, in a large HVAC monitoring system that supports multiple buildings 
 In the above case, it seems there are two different buildings, and pressure and temperature readings are likely independent between buildings. We would recommend to split the data to train separate model.
 
 ```Python
-new_df1 = new_df[lambda x: x.building_name == 'building1'][:]
-new_df2 = new_df[lambda x: x.building_name == 'building2'][:]
-new_df2.head(6)
+combined_building1_df = new_combined_df[lambda x: x.building_name == 'building1'][:].reset_index(drop=True)
+combined_building2_df = new_combined_df[lambda x: x.building_name == 'building2'][:].reset_index(drop=True)
+combined_building2_df.head(6)
 ```
 ||timestamp|building_name|temperature_1|temperature_2|temperature_3|temperature_4|pressure_1|pressure_2|pressure_3|pressure_4|pressure_5|pressure_6
 |---|---|---|---|---|---|---|---|---|
@@ -193,16 +200,16 @@ Note: Since our algorithm/service also support missing values, the user can also
 
 ```Python
 # Drop no-use attributes
-new_df1.drop(['building_name'], inplace=True, axis=1)
+combined_building1_df.drop(['building_name'], inplace=True, axis=1)
 
 # Backfill missing values due to timestamp are not aligned
-new_df1.bfill(inplace=True) # Note, this step may not be needed, as our algorithm can also fill missing values
+combined_building1_df.bfill(inplace=True) # Note, this step may not be needed, as our algorithm can also fill missing values
 
 # Add a key to help remove row with duplicated days
-new_df1['date_till_hour'] = new_df1['timestamp'].apply(lambda x: x[0:13])
-new_df1.drop_duplicates(subset='date_till_hour', keep='first', inplace=True)
-new_df1.drop(['date_till_hour'], inplace=True, axis=1)
-new_df1.head()
+combined_building1_df['date_till_hour'] = combined_building1_df['timestamp'].apply(lambda x: x.strftime('%Y-%m-%d %H'))
+combined_building1_df.drop_duplicates(subset='date_till_hour', keep='first', inplace=True)
+combined_building1_df.drop(['date_till_hour'], inplace=True, axis=1)
+combined_building1_df.head()
 ```
 
 ||timestamp|temperature_1|temperature_2|temperature_3|temperature_4|pressure_1|pressure_2|pressure_3|pressure_4|pressure_5|pressure_6
@@ -213,7 +220,11 @@ new_df1.head()
 |8|2019-01-04 10:00:00|40.3813|47.8455|48.2189|45.1182|97.8415|95.3202|104.4023|86.1341|101.2670|100.6572
 |13|2019-01-05 10:00:00|37.0101|36.7964|37.0605|36.4162|106.1279|121.4773|92.4937|110.3053|92.8647|110.9284
 
-As suggested, your data need to be in CSV format, and first line should be the header, starting with `timestamp` as first column. Other column is representing a signal/sensor or attribute. Each row represents an observation of the system, with values of those signals/sensors/attributes aligned properly. We also support JSON format, which later will explain what that format looks like.
+As suggested, your data need to be in CSV format, and first line should be the header, starting with `timestamp` as first column.
+
+Other column is representing a signal/sensor or attribute.
+
+Each row represents an observation of the system, with values of those signals/sensors/attributes aligned properly. We also support JSON format, which later will explain what that format looks like.
 
 ##  **STEP 2:** Exploring Data
 
@@ -224,11 +235,14 @@ There are many ways of data exploration, and can be very dependent on particular
 Here we only introduce some basic methods which are appropriate to time-series data.
 
 **Check data types and missing values**
-Use the following command, one can understand the data types being loaded and any non-nullable values.
+    * Use the following command, one can understand the data types being loaded and any non-nullable values.
+
 ```Python
-file_name = os.path.expanduser(DATA_PATH + 'example2.csv')
-df = pd.read_csv(file_name)
-df.info()
+file_name = DATA_PATH + 'example.csv'
+
+dateparse = lambda x: datetime.strptime(x, '%Y-%m-%dT%H:%M:%SZ')
+example_df = pd.read_csv(file_name, parse_dates=['timestamp'], date_parser=dateparse)
+example_df.info()
 ```
 ```pre
   <class 'pandas.core.frame.DataFrame'>
@@ -255,7 +269,7 @@ df.info()
 ```
 
 ```Python
-df.describe()
+example_df.describe()
 ```
 ||sensor1|sensor2|sensor3|sensor4|sensor5|sensor6|sensor7|sensor8|sensor9|sensor10|sensor11|
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -276,8 +290,9 @@ In this example, the sensor11 has 25 values (others are missing value), use may 
 
 ```Python
 # Checking non-missing value rates for each attributes
-df.count() / len(df)
+example_df.count() / len(example_df)
 ```
+
 ```pre
 timestamp    1.000
 sensor1      1.000
@@ -297,22 +312,22 @@ dtype: float64
 ```
 
 ```Python
-df.drop(['sensor11'], inplace=True, axis=1)
+example_df.drop(['sensor11'], inplace=True, axis=1)
 ```
 
 #### Plot distributions of every attribute
 Use the following function to plot the distribution of every attribute to understand if the value ranges and distribution are making sense or not.
 
 ```Python
-sensor_cols = [e for e in df.columns if e != 'timestamp']
-df[sensor_cols].hist(bins=100, figsize=(15, 6))
+sensor_cols = [e for e in example_df.columns if e != 'timestamp']
+example_df[sensor_cols].hist(bins=100, figsize=(15, 6))
 ```
 ![](../images/lab2-data-distribution-image.png)
 
 In this above example, the sensor10 seems to have a much wider range than other, more deeper check may reveal what happens.
 
-```
-df[['sensor10']].apply(pd.Series.value_counts, bins=[-60, -20, -5, 0, 0.5, 1])
+```Python
+example_df[['sensor10']].apply(pd.Series.value_counts, bins=[-60, -20, -5, 0, 0.5, 1])
 ```
 
 ||sensor10|
@@ -326,21 +341,21 @@ df[['sensor10']].apply(pd.Series.value_counts, bins=[-60, -20, -5, 0, 0.5, 1])
 It looks like that there are some extreme values in the [-60, -5] range, we can filter them out based on domain knowledge.
 
 ```Python
-df[lambda x: x['sensor10']<-5][:].head()
+example_df[lambda x: x['sensor10']<-5][:].head()
 ```
 
 | |timestamp|sensor1|sensor2|sensor3|sensor4|sensor5|sensor6|sensor7|sensor8|sensor9|sensor10|location|status
 |---|---|---|---|---|---|---|---|---|---|---|---|
-|97|2018-04-10T16:00-08:00|0.7468|1.2587|0.3632|0.2091|1.2539|0.4938|1.0273|1.2224|-2.5654|-60.0|building1|active
-|142|2018-05-25T16:00-08:00|0.4374|-0.6623|0.2805|-0.2146|0.1622|-0.3386|-0.2518|0.8617|-1.0349|-60.0|building1|active
-|191|2018-07-13T16:00-08:00|-0.3555|-0.3829|-1.3414|-0.6930|-0.9549|-0.0544|-0.4447|0.4689|-0.2439|-60.0|building1|active
+|97|2018-04-10T16:00:00|0.7468|1.2587|0.3632|0.2091|1.2539|0.4938|1.0273|1.2224|-2.5654|-60.0|building1|active
+|142|2018-05-25T16:00:00|0.4374|-0.6623|0.2805|-0.2146|0.1622|-0.3386|-0.2518|0.8617|-1.0349|-60.0|building1|active
+|191|2018-07-13T16:00:00|-0.3555|-0.3829|-1.3414|-0.6930|-0.9549|-0.0544|-0.4447|0.4689|-0.2439|-60.0|building1|active
 
 
 #### Plot data on time window
 For time-series data, it is necessary to plot each attribute on the timestamp axis to see the data trend, gaps, or any other issues. Since we require the first column to be timestamp, one can run the following example to plot the data.
 
 ```Python
-df.plot(x='timestamp', figsize=(14,3), ylim=[-3, 3]) # Plot all numeric data
+example_df.plot(x='timestamp', figsize=(14,3), ylim=[-3, 3]) # Plot all numeric data
 ```
 ![](../images/lab2-time-series-plot.png)
 
@@ -356,7 +371,7 @@ When observing the plots, pay attention to the data points don't follow the tren
 
 Based on the graph of time-series, one may identify monotonic features, which may not be useful for model training, and can be removed.
 ```Python
-df[['sensor8', 'sensor9', 'timestamp']].plot(x='timestamp', ylim=[-3, 3], figsize=(14,3)) # Plot individual column
+example_df[['timestamp', 'sensor8', 'sensor9']].plot(x='timestamp', figsize=(14,3)) # Plot individual column
 ```
 ![](../images/lab2-time-series-plot2-motonic-signals.png)
 
@@ -375,7 +390,7 @@ A little bit more advanced technique is to calculate correlations between the si
 **Example**
 
 ```Python
-corr = df.corr()
+corr = example_df.corr()
 
 import seaborn as sns
 %matplotlib notebook
@@ -384,8 +399,8 @@ import seaborn as sns
 plt.figure(figsize = (10, 8))
 
 sns.heatmap(corr.abs(), cmap='BuGn', cbar=False, vmin=0, vmax=1, annot=True, fmt='.2f')
-plt.xticks(rotation=90, fontsize=15)
-plt.yticks(rotation=0, fontsize=15)
+plt.xticks(rotation=90, fontsize=12)
+plt.yticks(rotation=0, fontsize=12)
 plt.title('Correlation Heatmap', fontsize=20)
 plt.show()
 ```
@@ -404,14 +419,15 @@ Meanwhile, if the sensor attributes are mostly NULL or NAN values (e.g., more th
 
 ```Python
 # Example of removing all null columns
-null_cols = df.columns[df.isnull().all()] # identify columns thare all null
+# Example of removing all null columns
+null_cols = example_df.columns[example_df.isnull().all()] # identify columns thare all null
 print(null_cols)
-df.drop(null_cols, axis = 1, inplace = True) # drop nan columns in place
+example_df.drop(null_cols, axis = 1, inplace = True) # drop nan columns in place
 
 # Example of keeping only the timestamp and numeric columns
 # Only keep timestamp, and numeric sensor columns
-valid_sensor_columns = [col for col, typ in df.dtypes.items() if (col == 'timestamp') or (typ == 'float64' or typ == 'float32' or typ == 'int') ]
-data_df = df[valid_sensor_columns].copy()
+valid_sensor_columns = [col for col, typ in example_df.dtypes.items() if (col == 'timestamp') or (typ == 'float64' or typ == 'float32' or typ == 'int64') ]
+data_df = example_df[valid_sensor_columns].copy()
 data_df.head()
 ```
 
@@ -421,11 +437,11 @@ Based on previous distribution analysis, if some values of a particular attribut
 
 Some examples can be like the following:
 ```Python
-clean_df = df[lambda x: ~pandas.isna(x[column])][:] # remove missing value rows
+clean_df = example_df[lambda x: ~pd.isna(x['sensor10'])][:] # remove missing value rows
 
-clean_df = df[lambda x: x[column1]>0][:] # remove observations with negative values in column1
+clean_df = example_df[lambda x: x['sensor4']>0][:] # remove observations with negative values in sensor4
 
-clean_df = df[lambda x: (x[column1]>0) & (x[column2]<0) ][:] # remove observations with negative values in column1 and positive values in column2
+clean_df = example_df[lambda x: (x['sensor1']>0) & (x['sensor2']<0) ][:] # remove observations with negative values in column1 and positive values in column2
 ```
 
 For example, we know in sensor10, there are some extreme values, and let say from domain perspective, it deemed as invalid and should be removed.
@@ -472,10 +488,10 @@ The user can also use all of their historical data as training set to build ML m
 In order to learn the full pattern of data and train a high performant model, we require the training set should have the full value range for every attribute. Once this condition is satisfied, the user can pick a timestamp to split the data, e.g., maintaining a 70%/30% training-testing ratio, or up to 90%/10%.
 ```Python
 split_ratio = 0.9
-split_idx = int(df.shape[0] * split_ratio)
-train_df = df[0:split_idx]
-test_df = df[split_idx:]
-print(f"training set size: {train_df.shape}, testing set size: {test_df.shape}")
+split_idx = int(combined_building1_df.shape[0] * split_ratio)
+train_building1_df = combined_building1_df[0:split_idx]
+test_building1_df = combined_building1_df[split_idx:]
+print(f"training set size: {train_building1_df.shape}, testing set size: {test_building1_df.shape}")
 ```
 
 ### Formatting
@@ -521,16 +537,34 @@ Here is a simple function to convert the dataframe into this JSON format.
 ```Python
 def convert_df_to_json(df, outfile_name):
 # NOTE: Assume the first column or the index in dataframe is the timestamp, will force to change it as timestamp in output
-    out_json = {'columnLabels': [], 'data': []}
+    out_json = {'requestType': 'INLINE', 'columnLabels': [], 'data': []}
     column_0 = list(df.columns)[0]
     if df.index.name == None:
         df.index = df[column_0]
         df.drop([column_0], inplace=True, axis=1)
     out_json['columnLabels'] = list(df.columns)
-    out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%S'), 'value': list(row.values)} for index, row in df.iterrows()]
+    out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%S.000Z'), 'value': list(row.values)} for index, row in df.iterrows()]
 
     with open(outfile_name, 'w') as file:
         file.write(json.dumps(out_json, indent=2))
-    print(f"Json output file save to {outfile_name}")
+    print(f"JSON output file save to {outfile_name}")
     return out_json
 ```
+
+#### Final Data Samples
+After those above steps, you should now be able to transform the raw data provided earlier to be like the following:
+
+* [processed training csv data](../files/demo-training-data.csv)
+    - 11 signals with timestamp column, with 7299 observations
+* [processed testing json data](../files/demo-testing-data.json)
+    - same 11 signals with timestamp column, 100 observations
+
+Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.
+
+
+## Acknowledgements
+* **Authors**
+    * Jason Ding - Principal Data Scientist - Oracle AI Services
+    * Haad Khan - Senior Data Scientist - Oracle AI Services
+* **Last Updated By/Date**
+    * Jason Ding - Principal Data Scientist, May 2021

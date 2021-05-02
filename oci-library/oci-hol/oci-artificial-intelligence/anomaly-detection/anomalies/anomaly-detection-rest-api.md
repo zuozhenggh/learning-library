@@ -1,4 +1,4 @@
-# Lab 5: (Advanced Session) Access AD Service with REST API
+# Lab 4: (Advanced Session) Access AD Service with REST API
 
 ## Introduction
 
