@@ -6,7 +6,7 @@ Due to the nature of time-series anomaly detection, the data required for traini
 
 In this session, we will discuss the data requirements and formats, and provide some sample datasets as examples. We will also show you how to upload to Oracle object storage for later to create data assets and train the model.
 
-***Estimated Lab Time***: 20 minutes
+***Estimated Lab Time***: 25 minutes
 
 ### Objectives
 
@@ -81,9 +81,9 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like. You can download them for next step.
 
 * [processed training csv data](../files/demo-training-data.csv)
-    - 11 signals with timestamp, with 7299 observations
+    - 11 signals with timestamp column, with 7299 observations
 * [processed testing json data](../files/demo-testing-data.json)
-    - same 11 signals with timestmap, 100 observations
+    - same 11 signals with timestamp column, 100 observations
 
 
 ## **STEP 3:** Upload Data to Object Storage

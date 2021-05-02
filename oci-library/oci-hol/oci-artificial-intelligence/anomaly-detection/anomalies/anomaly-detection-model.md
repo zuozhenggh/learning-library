@@ -147,6 +147,10 @@ We see that the results for all the anomalies are within their own key. And each
 
 Congratulations on completing this lab!
 
+You now have completed the full cycle of using the training data to create a model and deploy, and also making predictions with testing data.
+
+The next 2 sessions are optional for advanced users, which cover the topic on using REST API to integrate our services and how to prepare the training and testing data from raw data in different scenarios.
+
 [Proceed to the next section](#next).
 
 ## Acknowledgements
