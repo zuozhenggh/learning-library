@@ -333,13 +333,13 @@ In this lab you will use the results from a **Database Security Assessment Tool 
     - Open a new Web Browser tab at the URL *`https://<AVS-VM_@IP-Public>`*
     - Login to Audit Vault Web Console as *`AVADMIN`* with the password "*`T06tron.`*" (keep it open for the rest of the lab)
 
-      ````
-      <copy>AVADMIN</copy>
-      ````
+          ````
+          <copy>AVADMIN</copy>
+          ````
 
-      ````
-      <copy>T06tron.</copy>
-      ````
+          ````
+          <copy>T06tron.</copy>
+          ````
 
           ![](./images/avdf-400.png " ")
 
@@ -1743,4 +1743,4 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian, Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021
