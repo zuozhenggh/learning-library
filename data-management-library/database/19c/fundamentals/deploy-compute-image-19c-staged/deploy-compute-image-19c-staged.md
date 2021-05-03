@@ -15,6 +15,7 @@ In this lab, you learn how to do the following:
 - Create and apply a stack in Resource Manager
 - Obtain the public IP address of your compute instance
 - Connect to your compute instance from a browser
+- Enable copying and pasting from your local computer to your Guacamole desktop
 - Connect to your compute instance from Cloud Shell
 
 ### Prerequisites
@@ -96,6 +97,7 @@ In Resource Manager, you begin by creating a stack, which is a collection of Ora
 4. (Optional) Click the **workshop-staged** compute instance to view all of its details.
 
 
+
 ## **STEP 3**: Connect to your compute instance via a browser
 
 1. On your local computer, open a browser, and enter the following url. Replace `compute-public-ip` with the public IP address of your compute instance.
@@ -109,8 +111,26 @@ In Resource Manager, you begin by creating a stack, which is a collection of Ora
 
    You are presented with a Guacamole desktop. The desktop provides shortcuts to Firefox and a terminal window.
 
+## **STEP 4**: Enable copying and pasting from your local computer to your Guacamole desktop
+During your labs you may need to copy text from your local PC or Mac to the remote Guacamole desktop. For example, you may want to copy commands from the lab guide and paste them into the terminal window. While such direct copying and pasting isn't supported on the Guacamole desktop, you can enable an alternative local-to-remote clipboard by using the Input Text field.
 
-   ## **STEP 4**: Connect to your compute instance via Cloud Shell
+1. On your compute instance, enter **CTRL+ALT+SHIFT** (Windows) or **CTRL+CMD+SHIFT** (Mac).
+
+2. Select **Text Input**.
+
+  A black Text Input field is added to the bottom of your screen. In this field, you can paste any text copied from your local environment.
+
+       ![](./images/guacamole-clipboard-2.png " ")
+
+3. Test copy and pasting the following text. Prior to pasting, ensure that the cursor is placed at the location where you want to paste the text, then right-click inside the black *Text Input* field, and paste the text.
+
+    ```nohighlighting
+    <copy>echo "This text is copied from my local desktop on to my remote session"</copy>
+    ```
+    ![](./images/guacamole-clipboard-3.png " ")
+
+
+   ## **STEP 5**: Connect to your compute instance via Cloud Shell
 
    1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
 

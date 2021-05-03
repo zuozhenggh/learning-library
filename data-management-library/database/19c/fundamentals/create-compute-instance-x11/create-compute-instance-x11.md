@@ -1,4 +1,4 @@
-# Create a Compute Instance with X11 Forwarding
+# Appendix A: Create a Compute Instance with X11 Forwarding
 
 ## Introduction
 
@@ -125,7 +125,8 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
 
 
 
-## **STEP 3**: Configure X11 forwarding on your compute instance
+
+## **STEP 2**: Configure X11 forwarding on your compute instance
 
 1. As the `root` user, use `yum` to install all the dependencies needed to run X11 applications.
 

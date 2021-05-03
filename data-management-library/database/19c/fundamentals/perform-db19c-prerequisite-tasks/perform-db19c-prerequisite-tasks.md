@@ -15,6 +15,7 @@ In this lab, you learn how to do the following:
 - Install OPatch to the required version
 - Download the Database Release Update 19.11.0.0 and extract it into the Oracle home directory
 - Download the lab files to your compute instance
+- Configure the /etc/hosts file on your compute instance
 
 ## Prerequisites
 - You created a compute instance.
@@ -353,5 +354,17 @@ In the Oracle Database 19c New Features workshop, you run many prebuilt scripts.
     ```
 
 5. Verify that you have the following in the `labs` directory:
-  ls
-admin  DB  db.rsp  DIAG  DW HA  OBEs PERF SEC  Videos
+    ```nohighlighting
+    $ <copy>ls</copy>
+
+    admin  DB  db.rsp  DIAG  DW HA  OBEs PERF SEC  Videos
+    ```
+
+
+## **STEP 9**: Configure the `/etc/hosts` file on your compute instance
+
+Using the vi editor, open the `/etc/hosts` file and add the following line to the end of the file. Replace private-ip-address and host-name with your own values.
+
+    ```nohighlighting
+    <copy>private-ip-address   host-name-livelabs.oraclevcn.com   host-name</copy>
+    ```

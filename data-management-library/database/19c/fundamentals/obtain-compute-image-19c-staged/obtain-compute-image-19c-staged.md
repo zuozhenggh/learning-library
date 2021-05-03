@@ -15,6 +15,7 @@ In this lab, you learn how to do the following:
 - Create and apply a stack in Resource Manager
 - Obtain the public IP address of your compute instance
 - Connect to your compute instance from a browser
+- Enable copying and pasting from your local computer to your Guacamole desktop
 - Connect to your compute instance from Cloud Shell
 
 ### Prerequisites
@@ -108,27 +109,46 @@ In this lab, you learn how to do the following:
    You are presented with a Guacamole desktop. The desktop provides shortcuts to Firefox and a terminal window.
 
 
-   ## **STEP 4**: Connect to your compute instance via Cloud Shell
+## **STEP 4**: Enable copying and pasting from your local computer to your Guacamole desktop
+During your labs you may need to copy text from your local PC or Mac to the remote Guacamole desktop. For example, you may want to copy commands from the lab guide and paste them into the terminal window. While such direct copying and pasting isn't supported on the Guacamole desktop, you can enable an alternative local-to-remote clipboard by using the Input Text field.
 
-   1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
+1. On your compute instance, enter **CTRL+ALT+SHIFT** (Windows) or **CTRL+CMD+SHIFT** (Mac).
 
-     ![Cloud Shell icon](images/cloud-shell-icon.png)
+2. Select **Text Input**.
 
-     A terminal window opens at the bottom of the page.
+  A black Text Input field is added to the bottom of your screen. In this field, you can paste any text copied from your local environment.
 
-   2. Enter the following `ssh` command to connect to your compute instance. Replace `public-ip-address` with the public IP address of your compute instance.
+  ![](./images/guacamole-clipboard-2.png " ")
 
-     `cloudshellkey` is the name of the private key file that you created in the [Generate SSH Keys - Cloud Shell](?lab=https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md) lab. If your private key has a different name, then replace `cloudshellkey` with it.
+3. Test copy and pasting the following text. Prior to pasting, ensure that the cursor is placed at the location where you want to paste the text, then right-click inside the black **Text Input** field, and paste the text.
 
-       ```nohighlighting
-       $ <copy>ssh -i ~/.ssh/cloudshellkey opc@public-ip-address</copy>
-       ```
+    ```nohighlighting
+    <copy>echo "This text was copied from my local desktop on to my remote session"</copy>
+    ```
+    ![](./images/guacamole-clipboard-3.png " ")
 
-       A message states that the authenticity of your compute instance can't be established. Do you want to continue connecting?
 
-   3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
+## **STEP 5**: Connect to your compute instance via Cloud Shell
 
-     You are now connected to your new compute instance via Cloud Shell.
+1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
+
+  ![Cloud Shell icon](images/cloud-shell-icon.png)
+
+  A terminal window opens at the bottom of the page.
+
+2. Enter the following `ssh` command to connect to your compute instance. Replace `public-ip-address` with the public IP address of your compute instance.
+
+  `cloudshellkey` is the name of the private key file that you created in the [Generate SSH Keys - Cloud Shell](?lab=https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md) lab. If your private key has a different name, then replace `cloudshellkey` with it.
+
+    ```nohighlighting
+    $ <copy>ssh -i ~/.ssh/cloudshellkey opc@public-ip-address</copy>
+    ```
+
+    A message states that the authenticity of your compute instance can't be established. Do you want to continue connecting?
+
+3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
+
+  You are now connected to your new compute instance via Cloud Shell.
 
 
 You may now [proceed to the next lab](#next).

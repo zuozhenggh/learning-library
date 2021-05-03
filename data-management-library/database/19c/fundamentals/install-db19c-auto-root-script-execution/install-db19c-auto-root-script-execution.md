@@ -31,35 +31,47 @@ In this lab, you learn how to do the following:
 
 - You are signed in to your compute instance as the `oracle` user.
 
-
 ### Tip
-To copy and paste text from an external source to your Guacamole Desktop, use the black Text Input field at the bottom of your desktop. For example, suppose you copy text from this lab page. Position your cursor in the terminal window on your Guacamole desktop where you wish to paste the text, and then right-click inside the black **Text Input** field, and select **Paste**.
+To copy and paste text from your local machine into an application on your Guacamole desktop, you can do the following:
+1.  On your compute instance, enter **CTRL+ALT+SHIFT** (Windows) or **CTRL+CMD+SHIFT** (Mac).
+
+2. Select **Text Input**.
+
+  A black Text Input field is displayed at the bottom of the Guacamole desktop.
+
+3. Position your cursor where you want to paste the text.
+
+4. Copy text from your local machine.
+
+5. Paste the copied text into the black Text Input field.
 
 
 ## **STEP 1**: Install Oracle Database 19c using the new automatic root script execution feature
 
-1. If you are signed in to the Gaucamole desktop on your compute instance, open a terminal window. There is a shortcut to the terminal window on your desktop.
+1. Open a terminal window.
 
-2. Open a terminal window.
+  - If you are using the Guacamole desktop provided for this lab, you can double-click the **Terminal Window** shortcut on the desktop.
+  - If you created your own custom compute instance, then open a terminal window on your local machine. In this case, be sure that you have configured your machine and compute instance to display graphical applications. You can find help in Appendix A, B, and C at the end of this workshop.
 
-3. If needed, switch to the `oracle` user, and enter the password (Ora4U_1234).
+2. Switch to the `oracle` user, and enter the password (`Ora4U_1234`). If you are using the Guacamole desktop, you can skip this step because you are automatically signed in as the `oracle` user.
 
     ```nohighlighting
     $ <copy>su - oracle</copy>
     ```
-4. Change to the Oracle home directory.
+
+3. Change to the Oracle home directory.
 
     ```nohighlighting
     $ <copy>cd /u01/app/oracle/product/19c/dbhome_1</copy>
     ```
 
-5. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32545013` directory, which is the Oracle Database release update for 19.11.0.0.
+4. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32545013` directory, which is the Oracle Database release update for 19.11.0.0.
 
     ```nohighlighting
     <copy>ls</copy>
     ```
 
-6. Launch the Oracle Database 19c installer. In the command below, the `applyRU` parameter applies the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes up about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value.
+5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes up about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value.
 
   It's important that you run the `runInstaller` command from the Oracle home directory and as the `oracle` user.
 
@@ -67,37 +79,35 @@ To copy and paste text from an external source to your Guacamole Desktop, use th
     <copy>./runInstaller -applyRU 32545013</copy>
     ```
 
-7. On the **Select Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
+6. On the **Select Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
 
   ![Select Configuration Option page](images/select-configuration-option-page.png)
 
-8. On the **Select System Class** page, leave **Desktop Class** selected, and click **Next**.
+7. On the **Select System Class** page, leave **Desktop Class** selected, and click **Next**.
 
   ![Select System Class page](images/select-system-class-page.png)
 
-9. On the **Typical Installation** page, leave all the default values as is, except for the following:
+8. On the **Typical Installation** page, leave all the default values as is, except for the following:
 
   a) In the **Global database name** box, enter the following name. Make sure to capitalize `ORCL`.
-
-  *Note: If you are working in your tenancy and not the LiveLabs tenancy, enter `ORCL.database-domain-name.oraclevcn.com`, replacing `database-domain-name`
- with the name of your own virtual cloud network; for example: `ORCL.subnet04291456.vcn04291456.oraclevcn.com`.*
 
     ```nohighlighting
     <copy>ORCL.livelabs.oraclevcn.com</copy>
     ```
+
   b) In the **Password** and **Confirm Password** boxes, enter `Welcome_1`. This will be the password for the `admin` database user.
 
   c) In the **Pluggable database name** box, enter **PDB1**.
 
     ![Typical Install Configuration page](images/typical-install-configuration-page.png)
 
-10. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
+9. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
 
   ![Create Inventory page](images/create-inventory-page.png)
 
-11. On the **Root script execution configuration** page, do the following:
+10. On the **Root script execution configuration** page, do the following:
 
-  a) Select the **Automatically run configuration scripts** check box. *This is the new feature that this lab is all about!*
+  a) Select the **Automatically run configuration scripts** check box. *This is the new feature!*
 
   b) Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
 
@@ -105,17 +115,15 @@ To copy and paste text from an external source to your Guacamole Desktop, use th
 
   c) Click **Next**.
 
-
-
   ![Root script execution configuration page](images/root-script-execution-configuration-page.png)
 
-12. On the **Perform Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements. If everything is fine, the **Summary** page is displayed.
+11. On the **Perform Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements. If everything is fine, the **Summary** page is displayed.
 
   ![Perform Prerequisite Checks page](images/prerequisite-checks-page.png)
 
   ![Summary page](images/summary-page.png)
 
-13. On the **Summary** page, save the response file.
+12. On the **Summary** page, save the response file.
 
   a) Click **Save Response File**. The **Save Response File** dialog box is displayed.
 
@@ -123,17 +131,17 @@ To copy and paste text from an external source to your Guacamole Desktop, use th
 
   c) Leave **db.rsp** as the name, and click **Save**.
 
-14. Click **Install** to begin installing the software.
+13. Click **Install** to begin installing the software.
 
-15. On the **Install Product** page, monitor the progress of the steps being executed.
+14. On the **Install Product** page, monitor the progress of the steps being executed.
 
   ![Install Product page](images/install-product-page.png)
 
-16. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes between 15 to 20 minutes to complete.
+15. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes between 15 to 20 minutes to complete.
 
   ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png)
 
-17. On the **Finish** page, click **Close**. The installation is finished.
+16. On the **Finish** page, click **Close**. The installation is finished.
 
     ![Finish page](images/finish-page.png)
 
