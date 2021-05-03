@@ -159,4 +159,4 @@ The next 2 sessions are optional for advanced users, which cover the topic on us
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, May 2021
+    * Haad Khan - Senior Data Scientist, May 2021

@@ -46,7 +46,7 @@ This workshop contains 3 required lab sessions for user to get familiar with req
 At a high level, here are the process of completing a full cycle of using anomaly detection service.
 
 1. Create a project. A project is used to include and organize different assets, models, deployments in the same workspace.
-2. Create a data asset. Data asset is an abstracted data representation for a data source. Currently only it only supports Oracle object storage. Additional source types are in development.
+2. Create a data asset. Data asset is an abstracted data representation for a data source. Currently it only supports Oracle object storage; additional source types are in development.
 3. Train a model. After specifying a data asset and the training parameters, you can train an anomaly detection model. It will take 5 minutes or longer depending on the data size and target parameter FAP.
 4. Deploy a model. Once a model is trained successfully, user can deploy it to have a deployment endpoint ready to take any new incoming testing data.
 5. Detection with new data. User can send newer data with same attributes of the training data to the deployment endpoint or upload to the deployment UI to get detection result.
