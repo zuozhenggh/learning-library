@@ -143,9 +143,13 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
 
 2. Login to Oracle Key Vault Web Console as *`KVRESTADMIN`* with the password "*`T06tron.`*"
 
-          ````
-        <copy>T06tron.</copy>
-          ````
+      ````
+      <copy>KVRESTADMIN</copy>
+      ````
+
+      ````
+      <copy>T06tron.</copy>
+      ````
 
    ![](./images/okv-001.png " ")
 
