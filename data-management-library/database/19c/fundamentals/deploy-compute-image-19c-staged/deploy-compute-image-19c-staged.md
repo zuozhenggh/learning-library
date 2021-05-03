@@ -1,9 +1,11 @@
 # Deploy a Compute Image with Staged Oracle Database 19c Installer Files
 
 ## Introduction
-In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance that has the Oracle Database 19c installer files staged on it. This lab creates the environment that you will use in the [Install ORacle Database 19c using Automatic Root Script Execution](?lab="install-db19c-auto-config-script-execution.md") lab
+In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance that has the Oracle Database 19c installer files staged on it. This lab creates the environment that you will use in the [Install ORacle Database 19c using Automatic Root Script Execution](?lab="install-db19c-auto-config-script-execution.md") lab.
 
-In Resource Manager, you begin by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs and loads a custom image stored in Oracle Cloud Marketplace. Guacomole is installed on the image to provide a friendly user interface. You can also access a terminal window on the image. After you create the stack, you apply it to start the provisioning job in OCI. When the job is completed, you log in to your compute instance through a browser.
+*If you working in the LiveLabs tenancy, then you can skip STEP 1 because LiveLabs provides you a preconfigured compute when register for the workshop.*
+
+
 
 
 ### Objectives
@@ -25,6 +27,8 @@ In this lab, you learn how to do the following:
 - You are signed in to Oracle Cloud Infrastructure.
 
 ## **STEP 1**: Create and apply a stack in Resource Manager
+
+In Resource Manager, you begin by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs and loads a custom image stored in Oracle Cloud Marketplace. Guacomole is installed on the image to provide a friendly user interface. You can also access a terminal window on the image. After you create the stack, you apply it to start the provisioning job in OCI. When the job is completed, you log in to your compute instance through a browser.
 
 1. Download [livelabs-db19installed-0421.zip](https://apexapps-stage.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=667) to a directory on your local computer. This ZIP file contains the terraform script.
 
@@ -57,6 +61,8 @@ In this lab, you learn how to do the following:
   e) Leave **VMStandard.E2.4** selected as the instance shape. This shape meets the memory requirements for installing Oracle Database 19c.
 
   f) Leave the network settings as is.
+
+  If you choose to use an existing virtual cloud network instead of leaving the network settings as is, then be sure to create an ingress rule that allows communication on port 8080 for the Guacamole Desktop. Please refer to the Appendix A at the end of this lab for help.
 
   ![Configure Variables](images/configure-variables-page.png)
 
@@ -128,6 +134,27 @@ In this lab, you learn how to do the following:
 
 
 You may now [proceed to the next lab](#next).
+
+## Appendix A: Create an Ingress Rule to Allow Connections on Port 8080
+To access the Guacamole desktop on your Linux compute instance, port 8080 needs to be open.
+
+1.  From the navigation menu in OCI, select  **Networking**, and then **Virtual Cloud Networks**.
+
+2.  Click the name of the virtual cloud network that you want to use for this lab.
+
+3.  Under **Resources**, click **Security Lists**.
+
+4.  Click the default security list for your virtual cloud network.
+
+5.  Click **Add Ingress Rule**.
+
+6.  Enter the following:  
+
+  - Source CIDR: **0.0.0.0/0**
+  - Destination Port Range: **8080**
+
+7.  Click **Add Ingress Rules**.
+
 
 ## Learn More
 

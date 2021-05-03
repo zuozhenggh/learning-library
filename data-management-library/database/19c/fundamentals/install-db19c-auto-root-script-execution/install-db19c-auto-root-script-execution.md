@@ -6,6 +6,9 @@ In this lab, you learn how to use a new feature in the Oracle Database 19c insta
 
 Because you install release 19.3 and upgrade to 19.11 at the same time in this lab, you create the CDB and PDB after you complete the installation. This avoids any post-installation tasks.
 
+
+
+
 Estimated Lab Time: 30 minutes
 
 ### Objectives
@@ -15,7 +18,6 @@ In this lab, you learn how to do the following:
 - Install Oracle Database 19c using the new automatic root script execution feature
 - Review the response file
 - Discover the container database (CDB) and pluggable database (PDB)
-- Terminate your compute instance
 
 
 ### Prerequisites
@@ -27,11 +29,12 @@ In this lab, you learn how to do the following:
 
 ### Assumptions
 
-- You are signed in to your compute instance as the `oracle` user either through a browser (Guacamole desktop) or a terminal window (Cloud Shell).
-- You have the following lab script files available in the `/home/oracle/labs/19cnf/admin` directory:
-    - profile.sql
-    - flashback.sql
-    - hr_main.sql
+- You are signed in to your compute instance as the `oracle` user.
+
+
+### Tip
+To copy and paste text from an external source to your Guacamole Desktop, use the black Text Input field at the bottom of your desktop. For example, suppose you copy text from this lab page. Position your cursor in the terminal window on your Guacamole desktop where you wish to paste the text, and then right-click inside the black **Text Input** field, and select **Paste**.
+
 
 ## **STEP 1**: Install Oracle Database 19c using the new automatic root script execution feature
 
@@ -47,7 +50,7 @@ In this lab, you learn how to do the following:
 4. Change to the Oracle home directory.
 
     ```nohighlighting
-    $ <copy>cd /u01/app/oracle/product/19.11.0/dbhome_1</copy>
+    $ <copy>cd /u01/app/oracle/product/19c/dbhome_1</copy>
     ```
 
 5. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32545013` directory, which is the Oracle Database release update for 19.11.0.0.
@@ -136,7 +139,6 @@ In this lab, you learn how to do the following:
 
 
 
-
 ## **STEP 2**: Review the response file
 
 You can continue to use your PuTTY connection for this step.
@@ -194,7 +196,7 @@ You can continue to use your PuTTY connection for this step.
 
     OLD_ORACLE_BASE=
     ORACLE_BASE=/u01/app/oracle
-    ORACLE_HOME=/u01/app/oracle/product/19.11.0/dbhome_1
+    ORACLE_HOME=/u01/app/oracle/product/19c/dbhome_1
     ORACLE_SID=ORCL
     $
     ```
@@ -205,12 +207,14 @@ You can continue to use your PuTTY connection for this step.
     ```nohighlighting
     $ <copy>sqlplus / as sysdba</copy>
 
-    SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 8 21:08:02 2021
+    SQL*Plus: Release 19.0.0.0.0 - Production on Sun May 2 14:58:59 2021
     Version 19.11.0.0.0
 
-    Copyright (c) 1982, 2020, Oracle. All rights reserved.
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
 
-    Connected to an idle instance.
+    Connected to:
+    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.11.0.0.0
 
     SQL>
     ```

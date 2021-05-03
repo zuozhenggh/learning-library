@@ -14,7 +14,9 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out many of the Oracle Database 19c new features, including general, security, performance, Big Data and Data Warehouse, and diagnose-ability enhancements. All labs are independent of each other, so you don't need to do them in any particular order. Labs 2 and 3 are special cases and are described below.
+This workshop lets you try out many of the Oracle Database 19c new features, including general, security, performance, Big Data and Data Warehouse, and diagnose-ability enhancements. When you reserve this workshop in the LiveLabs tenancy, you are provided two compute instances. One instance has the Oracle Database 19c installer files staged on it; the other has Oracle Database 19c already installed. To access these instances, you use SSH keys. Therefore, when you reserve this workshop in the LiveLabs tenancy, you need to provide your public SSH key on the registration page. For help on generating SSH keys, see the lab called Generate SSH Keys. If you are working in your own tenancy, whether free or paid, you are guided through the steps to create the two compute instances.
+
+All labs are independent of each other, so you don't need to do them in any particular order. Labs 2 and 3 are special cases, however, and are described below.
 
 ### Lab 2: Install Oracle Database 19c with Automatic Root Script Execution
 In Lab 2, you learn how to install Oracle Database 19c using automatic `root` script execution, which is a new feature in Oracle Database 19c. The Oracle Database 19c installer has a graphical interface. To be able to view it when you run it on a Linux operating system, you need to have VNC Server or Xll forwarding configured on your compute instance. Therefore, we've provided a few options for trying out this new feature:
