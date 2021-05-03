@@ -128,6 +128,7 @@ Estimated Lab Time: 15 minutes
 The next lab will go over using the **BATCH LOAD** endpoint.
 
 
+
 ## Conclusion
 
 In this lab, you created a table from a csv file and REST enabled it with auto-REST.

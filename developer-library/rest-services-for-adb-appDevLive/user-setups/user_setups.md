@@ -55,6 +55,7 @@ Estimated Lab Time: 10 minutes
 
     ![Log into Database Actions](./images/setups-7.png)
 
+
 ## Conclusion
 
 In this section, we created a new database user and granted them the needed roles and quota to perform this LiveLab.
