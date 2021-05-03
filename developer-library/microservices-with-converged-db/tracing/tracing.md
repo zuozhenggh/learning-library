@@ -4,7 +4,7 @@
 
 This lab will show you can trace microservice activity using Jaeger.
 
-Estimated lab Time - 
+Estimated lab Time - 10 minutes
 
   -   Open the Jaeger User Interface and view traces
   -   Learn how they work

@@ -7,12 +7,9 @@ Often there are tough architecture choices for setting up the infrastructure, op
 
 This workshop will help you understand the technical capabilities inside and outside the Oracle database to support a scalable data and event-driven microservices architecture.
 
-You will create a highly scalable application that relies on Oracle Container Engine for Kubernetes to build, deploy and manage the Helidon microservices and Oracle JET front-end that interact through Oracle Cloud Infrastructure Service Broker, JMS and Kafka streaming platform with the back-end datastores deployed as Oracle pluggable databases inside Oracle Autonomous Transaction Processing.
+You will create a highly scalable application that relies on Oracle Container Engine for Kubernetes to build, deploy and manage the Helidon microservices and Javscript front-end that interact through Oracle Cloud Infrastructure Service Broker, JMS and Kafka streaming platform with the back-end datastores deployed as Oracle pluggable databases inside Oracle Autonomous Transaction Processing.
 
 ![](./images/architecture.png " ")
-
-Access a complete walkthrough video of this lab [here](https://tinyurl.com/helidonoracledb-msdataworkshop).
-Note that a few minor steps (such as the setup steps and creation of OCI Vault secrets, etc.) have changed from this video and the documentation should be followed.  We will be updating the video soon.
 
 If you need any help please join the databasehome.slack.com (#microservices) channel.
 

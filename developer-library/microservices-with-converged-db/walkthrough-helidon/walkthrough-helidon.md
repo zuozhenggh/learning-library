@@ -4,7 +4,7 @@
 
 This lab will show you how to deploy the microservices on your Kubernetes cluster, walk throught the functionality and explain how it works.
 
-Estimated Lab Time -
+Estimated Lab Time - 10 minutes
 
 ### Objectives
 

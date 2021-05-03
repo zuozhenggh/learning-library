@@ -2,11 +2,15 @@
 
 ## Introduction
 
-This lab will show you how to switch the Inventory microservice to a Python, Node.js or Java Helidon SE implementation while retaining the same application functionality.
-
-Estimates Lab Time - 
+The illustration below shows four microservices – Order, Inventory, Delivery, Supplier, and the infrastructure required to run them.
 
 ![](images/architecture.png " ")
+
+For more information on microservices visit http://developer.oracle.com/microservices
+
+This lab will show you how to switch the Inventory microservice to a Python, Node.js, .NET, Go or Java Helidon SE implementation while retaining the same application functionality.
+
+Estimates Lab Time - 10 minutes
 
 ### Objectives
 
