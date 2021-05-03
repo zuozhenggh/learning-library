@@ -77,7 +77,7 @@ In order to refresh an environment you will need an environment template that is
     ![](./images/dboptions.png "")
     * Expand **PeopleSoft Client** > **Network Settings** and select the following:
         * Subnet For Primary Instance: **win**
-    * Click **Next**
+    * Click **Next**.
 
 4.  On the Define Security page:
     * Click on the search icon under Zone Name and select **Test**
@@ -106,7 +106,7 @@ In order to refresh an environment you will need an environment created from a t
     ![](./images/midcred.png "")
 
     Expand **Environment Attributes** > **DB Systems**. Assign the following values to each field:
-    * Database Administrator Password: **PSft1234##**
+    * Database Administrator Password: **Psft1234##**
     * Database Connect Password: **Psft1234**
     * Database Access Password: **Psft1234**
     * Database Operator Password: **Psft1234**
@@ -116,8 +116,7 @@ In order to refresh an environment you will need an environment created from a t
     * Windows Administrator Password: **Psft12345678#**
     ![](./images/pscred.png "")
     
-    Click **Done**.
-    ![](./images/clonetop1.png "")
+    Scroll up and click **Done** in the top right.
 
 4.  Click **Accept** on the license.
     ![](./images/license.png "")
@@ -184,8 +183,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 **Created By/Date**   
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
 * **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
 
 ## Need Help?

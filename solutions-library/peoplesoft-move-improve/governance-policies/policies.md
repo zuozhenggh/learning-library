@@ -103,8 +103,7 @@ Before creating policies you need to create a policy group. Policy groups are us
 ## Acknowledgements
 
 **Created By/Date**   
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
 * **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
 
 ## Need Help?

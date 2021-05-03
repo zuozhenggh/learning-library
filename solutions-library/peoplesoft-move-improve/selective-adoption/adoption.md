@@ -1,7 +1,7 @@
-# Setting up Governance Policies
+# Selective Governance
 
 ## Introduction
-This lab walks you through the steps to set up governance policies on CM12.
+This lab walks you through 
 
 Estimated Lab Time: 30 minutes
 
@@ -17,7 +17,7 @@ In this lab you will:
 
 ## **STEP 1**: Create Source Template
 
-We first need to create a new template for our source environment. The DB name of our source environment and target environment **must** be different, which is why we cannot use an existing template. As for our target environment we will be using the environment created in the previous labs, **WorkshopEnvironment**.
+We first need to create a new template for our source environment. *The DB name of our source environment and target environment must be different*, which is why we cannot use an existing template. As for our target environment we will be using the environment created in the previous labs, **WorkshopEnvironment**.
 
 1.  Navigate to **Dashboard** > **Environment Template**. Click **Add New Template**.
     ![](./images/template.png "")
@@ -25,25 +25,30 @@ We first need to create a new template for our source environment. The DB name o
 2.  On the General Details page:
     * Give the template a name such as **PUMFT38** and enter a description
     * Click on the search icon next to PeopleSoft Image and select **PEOPLESOFT HCM UPDATE IMAGE 9.2.038 - NATIVE OS**
-    ![](./images/.png "")
     * Click **Next**
-
+    ![](./images/fulltiertemp.png "")
+    
 3.  On the Select Topology page:
-    * Click on the search icon under Topology Name and select **Fulltier**
-    * Expand the **Custom Attributes** section and select **Fulltier** again in the dropdown
+    * Click on the search icon under Topology Name and select **PUM Fulltier**
+    * Expand the **Custom Attributes** section and select **PUM Fulltier** again in the dropdown
     * Click on **Edit Custom Attributes**
-    ![](./images/attributes.png "")
+    ![](./images/selecttop.png "")
 
     * Expand the **Region and Availability Domains** section and select the following: 
-    ![](./images/regionad.png "")
+    ![](./images/selectregion.png "")
 
     * Expand **Full Tier** > **General Settings** and make the following changes:
-        * Database Operator Id: **PS**
         * Database Name: **SOURCEDB**
-    ![](./images/dbps.png "")
+        * Database Operator Id: **PS**
+    ![](./images/selectiveft.png "")
 
-    * Expand **Subnet Settings** and select **cm**
-    ![](./images/dbps.png "")
+    * Expand **Full Tier** > **Network Settings** and select the following:
+    ![](./images/8ftnetwork.png "")
+
+    * Expand **PeopleSoft Client** > **Network Settings** and select the following:
+    ![](./images/9clientnetwork.png "")
+
+    * Click **Next**.
 
 4.  On the Define Security page:
     * Click on the search icon under Zone Name and select **Test**
@@ -53,53 +58,63 @@ We first need to create a new template for our source environment. The DB name o
 
 5.  On the Summary page:
     * Review the details and click **Submit**
-    ![](./images/save.png "")
+    ![](./images/saveselect.png "")
 
 ## **STEP 2**: Create Source Environment
 
 1.  Navigate to **Dashboard** > **Environments**. Click **Create Environment**.
-    ![](./images/.png "")
+    ![](./images/env.png "")
 
 2. Provide a unique environment name such as **SourceEnv** and enter a description. For Template Name select the template we created in the previous step: **PUMFT38**.
-    ![](./images/.png "")
+    ![](./images/selectenv.png "")
 
-3.  Expand **Environment Attributes** > **Region and Availability Domains** > **Credentials**. Assign the following values to each field:
-    * Weblogic Administrator Password: **Psft1234**
+3.  Expand **Environment Attributes** > **Full Tier** > **Credentials**. Assign the following values to each field:
+    * Database Administrator Password: **Psft1234##**
     * Gateway Administrator Password: **Psft1234**
     * Web Profile Password for user PTWEBSERVER: **Psft1234**
-    * Database Administrator Password: **PSft1234##**
     * Database Connect Password: **Psft1234**
+    * Weblogic Administrator Password: **Psft1234**
     * Database Access Password: **Psft1234**
     * Database Operator Password: **Psft1234**
+    ![](./images/ftcred.png "")
+
+    Expand **Environment Attributes** > **PeopleSoft Client** > **Credentials**. Assign the following value to the field:
     * Windows Administrator Password: **Psft12345678#**
     ![](./images/pscred.png "")
     
-    Click **Done**.
-    ![](./images/clonetop1.png "")
+    Scroll up and click **Done** in the top right.
 
 4.  Click **Accept** on the license.
     ![](./images/license.png "")
 
+    This environment will take a few minutes to provision. Refresh the page. On our newly created **SourceEnv** environment you should see an orange dot with a status of **Infra Creation in Progress**. Once the environment has a green dot with a status of **Running** you can move on to the next step.
+
 ## **STEP 3**: Create PUM Connection
 
-1.  Navigate to **Dashboard** > **Environments**. On **SourceEnv** click the down arrow button and then click **Details**
-    ![](./images/.png "")
+1.  Navigate to **Dashboard** > **Environments**. On **SourceEnv** click the down arrow button and then click **Details**.
+    ![](./images/sourcedetails.png "")
 
     Click **Manage PUM Connections** on the side menu then click **Add Target**.
+    ![](./images/managepum.png "")
+
+2.  Select **WorkshopEnvironment** as your target environment and for client select the windows client. Click **Add**.
+    ![](./images/selecttarget.png "")
+
+    Under **Target Databases** you should now see your new PUM connection. Notice how under **Upload target to PUM Source** the status is **in progress**. Wait until the status says **COMPLETE**, then you can move on to the next step.
+    ![](./images/.png "")
     ![](./images/.png "")
 
-    Select **WorkshopEnvironment** as your target environment and for client select the windows client. Click **Add**.
-    ![](./images/.png "")
+## **STEP 4**: Logging into PUM Source
 
-Once creating the PUM connection is completed, you will see the uploaded target database information on the PUM source. If you want to apply some packages to the target DB, use PIA URL to log into the PUM source and manually apply change package. 
+If you want to apply some packages to the target DB you can use the PIA URL to log into the PUM source and manually apply a change package. 
 
-2.  We are now going to log into our source environment. On the side menu click **Environment Details** and then click on the URL.
+1.  We are now going to log into our source environment. On the side menu click **Environment Details** and then click on the URL.
     ![](./images/.png "")
 
     Enter your User ID (**PS**) and Password (**Psft1234**) to sign in.
     ![](./images/.png "")
 
-3.  Click the navigation icon to open the navigation menu.
+2.  Click the navigation icon to open the navigation menu.
     ![](./images/.png "")
 
     Navigate to **PeopleTools** > **Lifecycle Tools** > **Update Manager** > **Update Manager Dashboard**
@@ -113,9 +128,8 @@ Once creating the PUM connection is completed, you will see the uploaded target 
 ## Acknowledgements
 
 **Created By/Date**   
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
+* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
