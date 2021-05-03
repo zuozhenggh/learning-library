@@ -185,7 +185,6 @@ You can enable Oracle Data Safe in multiple regions of your tenancy, if needed. 
 4. For the user group that you created (for example, `dsg01`), select **Manage** from the **All Features** drop-down list.
 
 5. Click **Save**. The regular user can now access Oracle Data Safe.
-  here
 
 
 ### **Send information to the user**

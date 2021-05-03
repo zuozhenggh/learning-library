@@ -41,7 +41,7 @@ In this step, you use Oracle Database Actions to query sensitive data in your da
 
 2. In the Oracle Cloud Infrastructure Console, make sure the correct region is selected in your tenancy.
 
-3. From the navigation menu, select **Autonomous Transaction Processing**.
+3. From the navigation menu, select **Oracle Database**, and then **Autonomous Transaction Processing**.
 
 4. Under **COMPARTMENT**, make sure that your compartment is selected.
 
