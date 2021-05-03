@@ -6,7 +6,7 @@ Our anomaly detection services also support to use CLI tool `oci` or REST API ca
 
 In this lab session, we will show several code snippets to integrate with our service endpoints.
 
-*Estimated Lab Time*: 30 minutes
+*Estimated Lab Time*: 45 minutes
 
 ### Objectives:
 

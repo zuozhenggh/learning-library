@@ -6,7 +6,7 @@ In real-world business scenarios, the actual use case of anomaly detection might
 
 In this session, we will discuss several common scenarios in general and show how to handle them properly, in order to inspire you to prepare the real data in your actual application.
 
-***Estimated Lab Time***: 60 minutes
+***Estimated Lab Time***: 75 minutes
 
 ### Objectives
 In this lab, you will:
@@ -18,6 +18,7 @@ In this lab, you will:
 - Have a Python or Anaconda environment to perform data analysis and preprocessing
     - User can either set it up on their local machine, or signup our Oracle [Data Science Platform](https://www.oracle.com/data-science/)
 - Install a few Python libraries, such as `pandas`, `numpy`, `scipy`
+- Download the related data files and this [Python notebook](../files/anomaly-detection-data-preparation-notebook.ipynb)
 
 ## **STEP 1:** Preparing Data
 

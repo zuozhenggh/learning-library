@@ -14,7 +14,7 @@ The first version of *OCI Anomaly Detection Service* which is serverless, multi-
 
 This workshop contains 3 required lab sessions for user to get familiar with required data, and the full cycle of building the anomaly detection model and make predictions, and 2 optional advanced sessions that help in-depth users to seamlessly integrate our services and understand how the training data should be prepared.
 
-*Estimated Lab Time*: 60 minutes
+*Estimated Lab Time*: 70 minutes (3 regular sessions) + 120 minutes (2 advanced sessions)
 
 ### Objectives:
 
