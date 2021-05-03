@@ -33,7 +33,7 @@ Estimated Lab Time: ~25 minutes
 
     ````
     <copy>
-    git clone https://github.com/oracle/oci-react-samples/mtdrworkshop.git
+    git clone https://github.com/oracle/oci-react-samples.git
     </copy>
     ````
 
@@ -42,7 +42,7 @@ Estimated Lab Time: ~25 minutes
 2. Change to the mtdrworkshop directory:
 
     ```
-    <copy>cd ~mtdrworkshop</copy>
+    <copy>cd ~/oci-react-samples; mv mtdrworkshop ..</copy>
 
     ```
 3. Set the execution mode for all Shell scripts
