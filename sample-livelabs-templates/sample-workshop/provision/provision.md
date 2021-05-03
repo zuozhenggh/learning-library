@@ -47,7 +47,7 @@ Analytics - Cloud - OAC
 Analytics - Big Data
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
 	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/big-data.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
 	
 Analytics - Digital Assistant
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**. 
