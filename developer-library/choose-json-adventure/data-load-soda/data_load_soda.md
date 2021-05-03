@@ -165,6 +165,8 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
     and we can run this in the OCI cloud shell. 
     
+    **Please refer to step 1 for a reminder on how to access the OCI Cloud Shell**
+
     
 2. We first need to stage the airportDelays.json file. Issue the following command in the OCI Cloud Shell:
 
