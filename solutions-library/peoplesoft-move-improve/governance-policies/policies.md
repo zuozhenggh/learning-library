@@ -95,8 +95,6 @@ Before creating any policies you need to create a policy group. Policy groups ar
 9.  Navigate to **Dashboard** > **Environments**. You will see that our environment is in the **Starting** phase which means that our policy has been executed and has initiated the start of the environment.    
     ![](./images/startagain.png "")
 
-You may now proceed to the next lab.
-
 ## Acknowledgements
 
 **Created By/Date**   

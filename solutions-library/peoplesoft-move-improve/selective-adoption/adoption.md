@@ -1,126 +1,51 @@
-# Selective Governance
+# Selective Adoption
 
 ## Introduction
-This lab walks you through 
+This lab walks you through selective adoption on CM12.
 
 Estimated Lab Time: 30 minutes
 
 ### Objectives
 In this lab you will:
-* x
-* y
-* z
+* Create a PUM Connection from one PeopleSoft environment to another
 
 ### Prerequisites
-- Access to the Cloud Manager console.
-- Environment up and running
+- Two PeopleSoft environments up and running. One that will be used as a source environment and one that will be used as a target environment. The source environment must have a newer image version than the target environment.
 
-## **STEP 1**: Create Source Template
+For additional information on selective adoption please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to Chapter 6.
 
-We first need to create a new template for our source environment. *The DB name of our source environment and target environment must be different*, which is why we cannot use an existing template. As for our target environment we will be using the environment created in the previous labs, **HCMFT**.
+## **STEP 1**: Create PUM Connection
 
-1.  Navigate to **Dashboard** > **Environment Template**. Click **Add New Template**.
-    ![](./images/template.png "")
-
-2.  On the General Details page:
-    * Give the template a name such as **PUMFT38** and enter a description
-    * Click on the search icon next to PeopleSoft Image and select **PEOPLESOFT HCM UPDATE IMAGE 9.2.038 - NATIVE OS**
-    * Click **Next**
-    ![](./images/fulltiertemp.png "")
-    
-3.  On the Select Topology page:
-    * Click on the search icon under Topology Name and select **PUM Fulltier**
-    * Expand the **Custom Attributes** section and select **PUM Fulltier** again in the dropdown
-    * Click on **Edit Custom Attributes**
-    ![](./images/selecttop.png "")
-
-    * Expand the **Region and Availability Domains** section and select the following: 
-    ![](./images/selectregion.png "")
-
-    * Expand **Full Tier** > **General Settings** and make the following changes:
-        * Database Name: **SOURCEDB**
-        * Database Operator Id: **PS**
-    ![](./images/selectiveft.png "")
-
-    * Expand **Full Tier** > **Network Settings** and select the following:
-    ![](./images/8ftnetwork.png "")
-
-    * Expand **PeopleSoft Client** > **Network Settings** and select the following:
-    ![](./images/9clientnetwork.png "")
-
-    * Click **Next**.
-
-4.  On the Define Security page:
-    * Click on the search icon under Zone Name and select **Test**
-    * Click on the search icon under Role Name and select **PACL_CAD**
-    * Click **Next**
-    ![](./images/testpacl.png "")
-
-5.  On the Summary page:
-    * Review the details and click **Submit**
-    ![](./images/saveselect.png "")
-
-## **STEP 2**: Create Source Environment
-
-1.  Navigate to **Dashboard** > **Environments**. Click **Create Environment**.
-    ![](./images/env.png "")
-
-2. Provide a unique environment name such as **SourceEnv** and enter a description. For Template Name select the template we created in the previous step: **PUMFT38**.
-    ![](./images/selectenv.png "")
-
-3.  Expand **Environment Attributes** > **Full Tier** > **Credentials**. Assign the following values to each field:
-    * Database Administrator Password: **Psft1234##**
-    * Gateway Administrator Password: **Psft1234**
-    * Web Profile Password for user PTWEBSERVER: **Psft1234**
-    * Database Connect Password: **Psft1234**
-    * Weblogic Administrator Password: **Psft1234**
-    * Database Access Password: **Psft1234**
-    * Database Operator Password: **Psft1234**
-    ![](./images/ftcred.png "")
-
-    Expand **Environment Attributes** > **PeopleSoft Client** > **Credentials**. Assign the following value to the field:
-    * Windows Administrator Password: **Psft12345678#**
-    ![](./images/pscred.png "")
-    
-    Scroll up and click **Done** in the top right.
-
-4.  Click **Accept** on the license.
-    ![](./images/license.png "")
-
-    This environment will take a few minutes to provision. Refresh the page. On our newly created **SourceEnv** environment you should see an orange dot with a status of **Infra Creation in Progress**. Once the environment has a green dot with a status of **Running** you can move on to the next step.
-
-## **STEP 3**: Create PUM Connection
-
-1.  Navigate to **Dashboard** > **Environments**. On **SourceEnv** click the down arrow button and then click **Details**.
+1.  Navigate to **Dashboard** > **Environments**. On your source environment click the down arrow button and then click **Details**.
     ![](./images/sourcedetails.png "")
 
     Click **Manage PUM Connections** on the side menu then click **Add Target**.
     ![](./images/managepum.png "")
 
-2.  Select **HCMFT** as your target environment and for client select the windows client. Click **Add**.
+2.  Select your desired target environment and for client select the windows client. Click **Add**.
     ![](./images/selecttarget.png "")
 
     Under **Target Databases** you should now see your new PUM connection. Notice how under **Upload target to PUM Source** the status is **in progress**. Wait until the status says **COMPLETE**, then you can move on to the next step.
     ![](./images/.png "")
     ![](./images/.png "")
 
-## **STEP 4**: Logging into PUM Source
+## **STEP 2**: Logging into PUM Source
 
-If you want to apply some packages to the target DB you can use the PIA URL to log into the PUM source and manually apply a change package. 
+If you want to apply packages to the target DB you can use the PIA URL to log into the PUM source and manually apply a change package. 
 
-1.  Navigate to **Dashboard** > **Environments**. On **SourceEnv** click the down arrow button and then click **Details**. 
+1.  Navigate to **Dashboard** > **Environments**. On your source environment click the down arrow button and then click **Details**. 
     ![](./images/sourcedetails.png "")
 
     On the side menu click **Environment Details** and then click on the URL.
     ![](./images/url.png "")
 
-    Enter your User ID (**PS**) and Password (**Psft1234**) to sign in.
+    Enter your User ID (**PS** if you are using an HCM instance) and Password to sign in.
     ![](./images/login.png "")
 
 2.  Click the navigation icon in the top right to open the navigation menu.
     ![](./images/nav.png "")
 
-    Navigate to **PeopleTools** > **Lifecycle Tools** > **Update Manager** > **Update Manager Dashboard**
+    Navigate to **PeopleTools** > **Lifecycle Tools** > **Update Manager** > **Update Manager Dashboard**.
     ![](./images/updatedash.png "")
 
     From here you will be able to see the uploaded target DB information.
@@ -128,8 +53,6 @@ If you want to apply some packages to the target DB you can use the PIA URL to l
 
     From **Define Change Package** on the side menu you will be able to apply packages to the target DB.
     ![](./images/define.png "")
-
-You may now proceed to the next lab.
 
 ## Acknowledgements
 

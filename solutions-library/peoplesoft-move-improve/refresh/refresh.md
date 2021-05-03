@@ -178,8 +178,6 @@ In order to refresh an environment you will need an environment created from a t
 
     Click **Done**.
 
-You may now proceed to the next lab.
-
 ## Acknowledgements
 
 **Created By/Date**   
