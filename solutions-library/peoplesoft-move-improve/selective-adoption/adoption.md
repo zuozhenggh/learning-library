@@ -17,7 +17,7 @@ In this lab you will:
 
 ## **STEP 1**: Create Source Template
 
-We first need to create a new template for our source environment. *The DB name of our source environment and target environment must be different*, which is why we cannot use an existing template. As for our target environment we will be using the environment created in the previous labs, **WorkshopEnvironment**.
+We first need to create a new template for our source environment. *The DB name of our source environment and target environment must be different*, which is why we cannot use an existing template. As for our target environment we will be using the environment created in the previous labs, **HCMFT**.
 
 1.  Navigate to **Dashboard** > **Environment Template**. Click **Add New Template**.
     ![](./images/template.png "")
@@ -97,7 +97,7 @@ We first need to create a new template for our source environment. *The DB name 
     Click **Manage PUM Connections** on the side menu then click **Add Target**.
     ![](./images/managepum.png "")
 
-2.  Select **WorkshopEnvironment** as your target environment and for client select the windows client. Click **Add**.
+2.  Select **HCMFT** as your target environment and for client select the windows client. Click **Add**.
     ![](./images/selecttarget.png "")
 
     Under **Target Databases** you should now see your new PUM connection. Notice how under **Upload target to PUM Source** the status is **in progress**. Wait until the status says **COMPLETE**, then you can move on to the next step.
@@ -108,22 +108,28 @@ We first need to create a new template for our source environment. *The DB name 
 
 If you want to apply some packages to the target DB you can use the PIA URL to log into the PUM source and manually apply a change package. 
 
-1.  We are now going to log into our source environment. On the side menu click **Environment Details** and then click on the URL.
-    ![](./images/.png "")
+1.  Navigate to **Dashboard** > **Environments**. On **SourceEnv** click the down arrow button and then click **Details**. 
+    ![](./images/sourcedetails.png "")
+
+    On the side menu click **Environment Details** and then click on the URL.
+    ![](./images/url.png "")
 
     Enter your User ID (**PS**) and Password (**Psft1234**) to sign in.
-    ![](./images/.png "")
+    ![](./images/login.png "")
 
-2.  Click the navigation icon to open the navigation menu.
-    ![](./images/.png "")
+2.  Click the navigation icon in the top right to open the navigation menu.
+    ![](./images/nav.png "")
 
     Navigate to **PeopleTools** > **Lifecycle Tools** > **Update Manager** > **Update Manager Dashboard**
-    ![](./images/.png "")
+    ![](./images/updatedash.png "")
 
     From here you will be able to see the uploaded target DB information.
-    ![](./images/.png "")
+    ![](./images/dbinfo.png "")
 
     From **Define Change Package** on the side menu you will be able to apply packages to the target DB.
+    ![](./images/define.png "")
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

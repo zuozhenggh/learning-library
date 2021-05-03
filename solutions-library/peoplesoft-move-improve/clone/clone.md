@@ -10,21 +10,21 @@ In this lab you will:
 * Clone an existing environment
 
 ### Prerequisites
-- Access to the Cloud Manager console.
-- Environment up and running
+- Access to the Cloud Manager console
+- A PeopleSoft Environment up and running on Cloud Manager
 
 ## **STEP 1**: Creating a Clone of an Environment
 
-1.  Navigate to **Dashboard** > **Environments**. On the environment that we just created (**WorkshopEnvironment**) click the down arrow and then click **Clone Environment**.
+1.  Navigate to **Dashboard** > **Environments**. On the environment that we just created (**HCMFT**) click the down arrow and then click **Clone Environment**.
     ![](./images/cloneworkshop.png "")
 
-2.  Give the new environment a name such as **WorkshopClone**. Click **Clone**.
-    ![](./images/workclone.png "")
+2.  Give the new environment a name such as **HCMFTClone**. Click **Clone**.
+    ![](./images/workshopclone.png "")
 
     When asked if you want too proceed with Clone Operation click **Yes**.
     ![](./images/proceed.png "")
 
-3.  Refresh the page. You should now see the **WorkshopClone** Environment. This environment will take a few minutes to provision. Click the down arrow and then click **Details**
+3.  Refresh the page. You should now see the **WorkshopClone** Environment. This environment will take a few minutes to provision. Click the down arrow and then click **Details**.
     ![](./images/initiating.png "")
 
     Note on the **Environment Details** page, under **Status** you will see a red exclamation point. This will remain until the entire environment has successfully provisioned. Once provisioned, the status will change to a green checkmark.
@@ -38,6 +38,8 @@ In this lab you will:
 
     Once the environment has a green dot with a status of **Running** you have successfully created a clone of your environment.
     ![](./images/running.png "")
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
