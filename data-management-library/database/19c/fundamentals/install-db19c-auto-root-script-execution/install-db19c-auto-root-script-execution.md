@@ -24,12 +24,12 @@ In this lab, you learn how to do the following:
 
 - You have an Oracle account. You can obtain a free account by using Oracle Free Tier or you can use a paid account provided to you by your own organization.
 - You have a compartment in Oracle Cloud Infrastructure.
-- All prerequisite tasks for installing Oracle Database 19c are completed on your compute instance. If you completed the [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged.md) lab, then you're all set. Otherwise, please make sure that the steps outlined in the [Perform Pre-installation Tasks for Oracle Database 19c](?lab=perform-db19c-prerequisite-tasks.md) appendix are completed on your compute instance before starting this lab so that your installation is successful.
-
 
 ### Assumptions
 
-- You are signed in to your compute instance as the `oracle` user.
+You obtained a compute instance one of the following ways:
+  - You completed the [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged.md) lab.
+  - You created your own compute instance in Oracle Cloud Infrastructure by following the steps in [Appendix A: Create a Compute Instance with X11 Forwarding](?lab="create-compute-instance-x11") and [Appendix B: Perform Oracle Database 19c Prerequisite Tasks](?lab="perform-db19c-prerequisite-tasks").
 
 ### Tip
 To copy and paste text from your local machine into an application on your Guacamole desktop, you can do the following:
@@ -51,9 +51,11 @@ To copy and paste text from your local machine into an application on your Guaca
 1. Open a terminal window.
 
   - If you are using the Guacamole desktop provided for this lab, you can double-click the **Terminal Window** shortcut on the desktop.
-  - If you created your own custom compute instance, then open a terminal window on your local machine. In this case, be sure that you have configured your machine and compute instance to display graphical applications. You can find help in Appendix A, B, and C at the end of this workshop.
+  - If you created your own custom compute instance, then open a terminal window on your local machine and connect to your compute instance.
 
-2. Switch to the `oracle` user, and enter the password (`Ora4U_1234`). If you are using the Guacamole desktop, you can skip this step because you are automatically signed in as the `oracle` user.
+2. Switch to the `oracle` user, and enter the password (`Ora4U_1234`).
+
+  *If you are using the Guacamole desktop, you can skip this step because you are automatically signed in as the `oracle` user in the terminal window.*
 
     ```nohighlighting
     $ <copy>su - oracle</copy>
@@ -93,6 +95,12 @@ To copy and paste text from your local machine into an application on your Guaca
 
     ```nohighlighting
     <copy>ORCL.livelabs.oraclevcn.com</copy>
+    ```
+
+    *If you are using your own custom compute instance, be sure that you properly configured the `/etc/hosts` file as outlined in [Appendix B: Perform Oracle Database 19c Prerequisite Tasks](?lab="perform-db19c-prerequisite-tasks") for this workshop. The `hosts` file needs to contain the following line, otherwise the installation will fail. Replace `private-ip-address` and `compute-instance-name` with your own values.*
+
+    ```nohighlighting
+    private-ip-address   compute-instance-name.livelabs.oraclevcn.com    compute-instance-name
     ```
 
   b) In the **Password** and **Confirm Password** boxes, enter `Welcome_1`. This will be the password for the `admin` database user.

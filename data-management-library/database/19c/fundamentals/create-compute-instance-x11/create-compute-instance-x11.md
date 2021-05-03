@@ -8,8 +8,7 @@ Using X11 forwarding in an SSH session on your local personal computer is one wa
 You can perform most of the steps in this lab by using Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. You also learn how to use PuTTY and X11 forwarding to connect to your compute instance from your personal computer.
 
 
-
-Estimated Lab Time: 45 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 

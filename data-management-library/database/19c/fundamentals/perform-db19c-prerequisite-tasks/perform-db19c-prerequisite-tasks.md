@@ -1,7 +1,9 @@
-# Appendix C Perform Pre-installation Tasks for Oracle Database 19c
+# Appendix B: Perform Pre-installation Tasks for Oracle Database 19c
 
 ## Overview
 This lab shows you what you need to do to your compute instance before you can install Oracle Database 19c on it.
+
+Estimated Lab Time: 15 minutes
 
 ## Objectives
 In this lab, you learn how to do the following:
