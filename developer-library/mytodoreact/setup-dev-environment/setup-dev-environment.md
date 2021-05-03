@@ -29,7 +29,7 @@ Estimated Lab Time: ~25 minutes
   Click the Cloud Shell icon in the top-right corner of the Console.
   ![](images/7-open-cloud-shell.png " ")
 
-2. Clone the GitHub repo.
+2. Clone the GitHub repo and move up the `mtdrworkshop` directory.
 
     ````
     <copy>
@@ -37,23 +37,31 @@ Estimated Lab Time: ~25 minutes
     </copy>
     ````
 
+    ````
+    <copy>
+    cd ~/oci-react-samples; mv mtdrworkshop ..
+    </copy>
+    ````
+
   You should now see `mtdrworkshop` in your root directory
 
-2. Change to the mtdrworkshop directory:
+3. Change to `mtdrworkshop` directory.
 
-    ```
-    <copy>cd ~/oci-react-samples; mv mtdrworkshop ..</copy>
+	````
+	<copy>
+	cd ~/mtdrworkshop
+	</copy>
+	````
 
-    ```
-3. Set the execution mode for all Shell scripts
+4. Set the execution mode for all Shell scripts.
 
     ```
     <copy>chmod +x *.sh */*.sh</copy>
     ```
 
-NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY.
+	NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY.
 
-IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE ~/mtdrworkshop DIRECTORY.
+	IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE ~/mtdrworkshop DIRECTORY.
 
 ## **STEP 2**: Create an OCI compartment and an OKE cluster in that compartment
 
