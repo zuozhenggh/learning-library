@@ -2,74 +2,111 @@
 
 ## Introduction
 
-In this lab, we will provision and setup the resources in your tenancy to install and execute microservices.
-
-Estimated Lab Time - 20 minutes
+In this 25-minute lab we will provision and setup the resources to execute microservices in your tenancy.  
 
 ### Objectives
 
-* Clone the microservices code
+* Clone the setup and microservices code
 * Execute setup
 
 ### Prerequisites
 
-* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](#previous).
 
-	Note that you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
+Note, you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
 ## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
 
-1. Log in to the OCI console for your tenancy.  Be sure to select the **home region** in your tenancy.  This workshop setup will only work in the home region.
+If you haven't already, sign in to your account.
+
+## **STEP 2**: Select the Home Region
+
+Be sure to select the **home region** of your tenancy.  Setup will only work in the home region.
 
   ![](images/home-region.png " ")
 
-## **STEP 2**: Launch the Cloud Shell
+## **STEP 3**: Check Your Tenancy Service Limits
 
-1. Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated CLI which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
+If you have a **fresh** free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step.
+
+If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table.
+
+| Service          | Scope  | Resource                                             | Available | Free Account Limit |
+|------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
+| Compute          | AD-1   | Cores for Standard.E2 based VM and BM Instances      | **3**     | 6                  |
+| Container Engine | Region | Cluster Count                                        | **1**     | 1                  |
+| Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **2**     | 2                  |
+|                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
+| LbaaS            | Region | 10Mbps Load Balancer Count                           | **3**     | 3                  |
+
+Quota usage and limits can be check through the console: **Governance & Administration** --> **Governance** --> **Limits, Quotas and Usage**, For example:
+
+  ![](images/service-limit-example.png " ")
+
+The Tenancy Explorer may be used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
+
+  ![](images/show-subcompartments.png " ")
+
+It may be necessary to delete some resources in order to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
+
+## **STEP 4**: Launch the Cloud Shell
+
+Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
 2. Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
-## **STEP 3**: Create a Folder to Contain the Workshop Code
+## **STEP 5**: Create a Folder to Contain the Workshop Code
 
-1. Create a directory to contain the workshop code and change directory to that directory.  The directory name will also be used to create a compartment of the same name in your tenancy.  Make sure that a compartment of the same name does not already exist or the setup will fail.  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  Here is an example:
+1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
-	```
-	<copy>mkdir grabdish; cd grabdish
-	</copy>
-	```
+    ```
+    <copy>mkdir grabdish
+    </copy>
+    ```
 
-	Note, you must change directory to the directory that you have created or the setup will fail.
+   All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  
 
-## **STEP 4**: Make a clone of the workshop source code
+2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
-1. To work with application code, you need to make a clone from the GitHub repository using the following command. 
+    ```
+    <copy> cd grabdish
+    </copy>
+    ```
 
-	```
-	<copy>git clone -b 1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
-	</copy>
-	```
+## **STEP 5**: Make a Clone of the Workshop Setup Script and Source Code
 
-	You should now see `microservices-datadriven` in your folder
+1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
-	TODO: When we publish this will change to clone from the main branch.
+    ```
+    <copy>git clone -b 1.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+    </copy>
+    ```
 
-## **STEP 5**: Running the Setup Script
+   You should now see the directory `microservices-datadriven` in the directory that you created.
 
-1. Execute the following sequence of commands to start the setup.  Note, the commands will also change your .bashrc file so that you will always return to the right place when you connect:
+2. Run the following command to edit your .bashrc file so that you will be returned to the workshop directory when you connect to the cloud shell in the future.
 
     ```
     <copy>
     sed -i.bak '/grabdish/d' ~/.bashrc
     echo "source $PWD/microservices-datadriven/grabdish/env.sh" >>~/.bashrc
-    source microservices-datadriven/grabdish/env.sh
-    source setup.sh
-
     </copy>
     ```
-   
-   NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY. If that happens, you can reconnect and run this command to resume the setup:
+
+## **STEP 6**: Start the Setup
+
+1. Execute the following sequence of commands to start the setup.  
+
+    ```
+    <copy>
+    source microservices-datadriven/grabdish/env.sh
+    source setup.sh
+    </copy>
+    ```
+
+   Note, the cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
 
     ```
     <copy>
@@ -79,7 +116,7 @@ Estimated Lab Time - 20 minutes
 
    The setup process will typically take around 20 minutes to complete.  
 
-2. The setup will ask for you to enter your User OCID.  This can be found in the OCI console. Copy and paste the OCID in cloud shell and press Enter.
+2. The setup will ask for you to enter your User OCID.  This can be found in the OCI console.
 
   ![](images/get-user-ocid.png " ")
 
@@ -88,7 +125,7 @@ Estimated Lab Time - 20 minutes
 3. The setup will automatically configure key based access to the OCI command line interface.  To do this it may need to generate and upload a new API Key to your tenancy.
 
    To generate a key the setup will ask you to enter a passphrase.  If that happens then hit return (empty passphrase).  Do not enter a passphrase or setup will fail.
-   
+
    If there is no space for a new key in OCI, the setup will ask you to remove an existing key to make room.  This can be done through the OCI console.
 
   ![](images/get-user-ocid.png " ")
@@ -101,47 +138,55 @@ Estimated Lab Time - 20 minutes
 
   ![](images/delete-auth-token.png " ")
 
-5. The setup will provision two databases (for orders and inventory), an Oracle Kubernetes Engine (OKE) cluster, OCI Registry Repositories and an OCI Object Storage wallet.  You can monitor it's progress by duplicting the current browser window.  It is best not to use the original browser tab as this may interupt the setup.
+5. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
-  ![](images/duplicate-browser-tab.png " ")
+6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-   In the new tab, select the resources you are interested in and select your new compartment.  Here we show the database resources that have been created.
+## **STEP 7**: Monitor the Setup
 
-  ![](images/select-compartment.png " ")
+The setup will provision the following resources in your tenancy:
 
-6. Once the database is created, the setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
+| Resources              | OCI Console Navigation                                                        |
+|------------------------|-------------------------------------------------------------------------------|
+| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+| Databases (2)          | Oracle Database --> Autonomous Database --> Autonomous Transaction Processing |
+| OKE Cluster            | Developer Services --> Containers --> Kubernetes Clusters (OKE)               |
+| Registry Repositories  | Developer Services --> Containers --> Container Registry                      |
 
-7. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you enter it as you will need it later.  The UI password must be 8 to 30 characters
+You can monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
-8. When the setup.sh script completes it will provide a summary of the setup status.  If everything has completed you will see the following status.
+   ![](images/duplicate-browser-tab.png " ")
 
-  ![](images/all-done.png " ")
+ From the new browser window or tab, navigate around the console to view the resources within the new compartment.  The table includes the console navigation for each resource.  For example, here we show the database resources:
 
-   If any of the setup jobs are still running you can monitor their progress with 
+   ![](images/select-compartment.png " ")
 
-     ```
-     <copy>
-     ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
-     </copy>
-     ```
+## **STEP 8**: Complete the Setup
 
-   Their log files are located in the $GRABDISH_LOG directory.
+Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
-    ```
-    <copy>
-    ls -al $GRABDISH_LOG
-    </copy>
-    ```
+If any of the background setup jobs are still running you can monitor their progress with the following command.
 
-   Once the setup has completed you are ready to move on to Lab 2
+```
+<copy>
+ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
+</copy>
+```
+
+Their log files are located in the $GRABDISH_LOG directory.
+
+```
+<copy>
+ls -al $GRABDISH_LOG
+</copy>
+```
+
+Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 ## Acknowledgements
 
-* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon, 
-  Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Anoosha Pilli, Database Product Management, April 2021
-
-
+* **Last Updated By/Date** - Richard Exley, April 2021
