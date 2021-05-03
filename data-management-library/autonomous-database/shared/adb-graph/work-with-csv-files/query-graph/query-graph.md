@@ -19,6 +19,8 @@ Learn how to
 
 - Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
 
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
+
 ## **STEP 1**: Create a notebook  
 
 1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon 
@@ -102,9 +104,9 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	See the [PGQL site](https://pgql-lang.org) and specification for more details on the syntax and features of the language.  
 	The Getting Started notebook folder also contains a tutorial on PGQL.  
 
-2. Now let's explore some features of the visualization component. We will add the `acct_id` as node (or vertex) labels and use a differnet graph layout algorithm.  
+2. Now let's explore some features of the visualization component. We will add the `acct_id` as node (or vertex) labels and use a different graph layout algorithm.  
    
-   Click the visualization settings icon 
+   Click the visualization `settings` icon 
    ![](images/sliders.svg " ")  
    (the fourth icon from the left at the top of the visualization panel).  
 
@@ -253,6 +255,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 	![](images/45-6th-query-hierarchical-layout.png " ")  
 
+    Use the `Settings` icon and Visualization tab to label the vertices with the `ACCT_ID` for the resulting graph.   
 	Lastly, let's change the source node's size to highlight it.   
 	Open the visualization settings dialog and select the `Highlights` tab.   
 	Click on `New Highlight`.   
@@ -353,8 +356,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
    After the query has executed and a result is displayed click on visualization settings. Then on the Highlights tab.  
    ![](images/55a-highlights-for-pagerank.png " ")  
 
-   Then click on `New Higlight` and enter the following details to create it.  
-   Specify pagerank >= 0.0035 as the condition, size = 3X as the visula effect.  
+   Then click on `New Highlight` and enter the following details to create it.  
+   Specify pagerank >= 0.0035 as the condition, size = 3X as the visual effect.  
 
    ![](images/55b-new-hightlight-for-pagerank.png " ")  
 
@@ -387,6 +390,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	order by a.pagerank desc limit 10
 	</copy>
 	```
+
+    Click the `Table` icon to visualize the results as a table, if necessary.  
 
 	![](images/57-top-ten-pagerank.png " ")    
 
@@ -429,6 +434,9 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	</copy>
 	```
 
+    Choose a `Grid` layout for the visualization.  
+	Add a new highlight with pagerank >= 0.0035 as the condition, size = 3X as the visual effect.  
+	 
 	![](images/60-account-222-and-neighbors.png " ")    
     
 22. Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.   
@@ -472,5 +480,5 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, May 2021
   
