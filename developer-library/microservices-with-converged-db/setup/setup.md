@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this 25-minute lab we will provision and setup the resources to execute microservices in your tenancy.  
+In this lab we will provision and setup the resources to execute microservices in your tenancy.  
+
+Estimates Lab Time - 25 minutes
 
 ### Objectives
 
