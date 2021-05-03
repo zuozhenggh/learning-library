@@ -31,7 +31,7 @@ Estimated Lab Time: 10 minutes
 
     Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
 
-    Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. 
+    Once we enter the password twice, ensure the **Web Access** button is on. This will allow us to use REST services with this database schema from the start as well as use the Database Actions tools. 
     
     In the right column of options, find the **Quota on tablespace DATA** dropdown select list. Choose *Unlimited** for this lab.
     
