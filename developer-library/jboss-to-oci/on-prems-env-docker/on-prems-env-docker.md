@@ -6,7 +6,7 @@ This lab will walk you through setting up a local environment to simulate an est
 
 At the end of this lab, you will have a local environment running with an Oracle 12c Database and JBoss/WildFly 20.0.Final with a simple application and a datasource connecting to the database.
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -279,5 +279,5 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, October 2020
+ - **Author** - Emmanuel Leroy
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

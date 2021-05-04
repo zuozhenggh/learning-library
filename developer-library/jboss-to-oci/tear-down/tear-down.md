@@ -4,7 +4,7 @@
 
 In this lab, we will tear down the infrastructure deployed on OCI as well as the local Docker environment.
 
-Estimated Lab Time: 5 minutes.
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
@@ -65,5 +65,5 @@ In this lab, you will tear down and clean up resources.
 
 
 ## Acknowledgements
- - **Author** - Subash Singh, Emmanuel Leroy, October 2020
+ - **Author** - Subash Singh, Emmanuel Leroy
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

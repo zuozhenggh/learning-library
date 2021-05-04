@@ -4,7 +4,7 @@
 
 In this lab, we will explain how to scale the number of JBoss/WildFly nodes on Oracle Cloud Infrastructure.
 
-Estimated Lab Time: 5 minutes.
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
@@ -60,5 +60,5 @@ You're done!
 
 
 ## Acknowledgements
- - **Author** - Subash Singh, Emmanuel Leroy, October 2020
+ - **Author** - Subash Singh, Emmanuel Leroy
  - **Last Updated By/Date** - Emmanuel Leroy, October 2020

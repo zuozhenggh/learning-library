@@ -6,7 +6,7 @@ WildFly is the open source version of the well-known JBoss web server.
 
 This lab will walk you through the process of migrating an existing on-premises JBoss application to WildFly on Oracle Cloud Infrastructure (OCI). The application we will migrate is a Java application with a datasource connecting to a database that will be migrated to Oracle Autonomous Database on OCI along with the application.
 
-Estimated Lab Time: 80 minutes.
+Estimated Lab Time: 80 minutes
 
 ### About Product/Technology
 
@@ -44,5 +44,5 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 
- - **Author** - Subash Singh, Emmanuel Leroy, October 2020
+ - **Author** - Subash Singh, Emmanuel Leroy
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021
