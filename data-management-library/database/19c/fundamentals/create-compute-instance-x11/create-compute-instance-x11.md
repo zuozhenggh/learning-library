@@ -6,7 +6,7 @@ In this lab, you create a compute instance in Oracle Cloud Infrastructure (OCI) 
 
 For X11 forwarding in SSH to work, your local computer must be running an X server program. The X server program manages the interaction between the remote application (the X client, such as the Oracle Database 19c installer) and your computer's hardware.
 
-This lab shows you how to set up X11 forwarding on Windows 10 and MacOS. The Windows 10 example uses PuTTY with VcXsrv (X Server). Some of the steps for Windows involve Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. The macOS example uses XQuartz.
+This lab shows you how to set up X11 forwarding on Windows 10 and macOS. The Windows 10 example uses PuTTY with VcXsrv (X Server). Some of the steps for Windows involve Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. The macOS example uses XQuartz.
 
 
 Estimated Lab Time: 30 minutes
@@ -179,7 +179,7 @@ The SSH (Secure Shell) protocol is a method for secure remote login from one com
     # <copy>yum install -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-utils xorg-x11-apps xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1</copy>
     ```
 
-    *REVIEWER: Other sources (https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/run-graphical-apps-securely-on-oci.pdf) say to install:
+    *REVIEWER: Other sources () say to install:
     sudo yum -y install xauth
     sudo yum -y install xterm
     and that's it*
@@ -493,14 +493,14 @@ It's important to configure X11 forwarding for the `oracle` user too because eve
 
 ## What's Next?
 
-If you intend to install Oracle Database 19c on your compute instance, you need to complete the prerequisite tasks first. See the [Perform Prerequisite Tasks for an Oracle Database 19c Installation](?lab=perform-db19c-prerequisite-tasks.md) lab.
+If you intend to do the [Install Oracle Database 19c with Automatic Root Script Execution](?lab=install-db19c-auto-root-script-execution.md) lab using the compute instance that you created in this lab, you need to complete the prerequisite tasks beforehand. See the [Perform Prerequisite Tasks for an Oracle Database 19c Installation](?lab=perform-db19c-prerequisite-tasks.md) lab.
 
 
 
 ## Learn More
 
-- [Get Started with Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/)
-- [Install and Upgrade to Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/install-and-upgrade.html)
+- [Running Graphical Applications Securely on Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/run-graphical-apps-securely-on-oci.pdf)
+
 
 ## Acknowledgements
 
@@ -509,4 +509,4 @@ If you intend to install Oracle Database 19c on your compute instance, you need 
     - James Spiller, Principal User Assistance Developer, Database Development
     - Dragos Negru, Principal Cloud Specialist - Data Management, TE Hub
     - Jean-Francois Verrier, User Assistance Director, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, April 21 2021
+- **Last Updated By/Date** - Jody Glover, Database team, May 3 2021
