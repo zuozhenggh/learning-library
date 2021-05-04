@@ -27,6 +27,8 @@ In this lab you will:
 
 ## **STEP 1:** Use the Template
 
+The demo project repository is located at [https://github.com/oracle-quickstart/oke-k8s-atp-boilerplate](https://github.com/oracle-quickstart/oke-k8s-atp-boilerplate)
+
 1. To use the template, click **Use this Template**.
 
     ![](./images/template.png)

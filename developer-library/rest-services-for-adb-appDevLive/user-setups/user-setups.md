@@ -31,9 +31,9 @@ Estimated Lab Time: 10 minutes
 
     Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
 
-    Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. 
+    Once we enter the password twice, ensure the **Web Access** button is on. This will allow us to use REST services with this database schema from the start as well as use the Database Actions tools. 
     
-    In the right column of options, find the **Quota on tablespace DATA** dropdown select list. Choose *Unlimited** for this lab.
+    In the right column of options, find the **Quota on tablespace DATA** dropdown select list. Choose **Unlimited** for this lab.
     
     Your panel should look similar to the following image:
 
@@ -55,6 +55,7 @@ Estimated Lab Time: 10 minutes
 
     ![Log into Database Actions](./images/setups-7.png)
 
+
 ## Conclusion
 
 In this section, we created a new database user and granted them the needed roles and quota to perform this LiveLab.
@@ -62,4 +63,5 @@ In this section, we created a new database user and granted them the needed role
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Anoosha Pilli, Database Product Management, April 2021
+- **Last Updated By/Date** - April 2021
+- **Workshop Expiry Date** - April 2022
