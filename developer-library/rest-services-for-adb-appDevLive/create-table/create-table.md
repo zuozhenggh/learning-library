@@ -131,6 +131,9 @@ The next lab will go over using the **BATCH LOAD** endpoint.
 
 In this lab, you created a table from a csv file and REST enabled it with auto-REST.
 
+You may now [proceed to the next lab](#next).
+
+
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager

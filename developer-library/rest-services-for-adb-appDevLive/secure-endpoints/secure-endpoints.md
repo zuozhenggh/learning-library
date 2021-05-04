@@ -291,6 +291,8 @@ Estimated Lab Time: 10 minutes
 
 In this lab, you secured your custom REST APIs with OAuth2 authentication.
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
