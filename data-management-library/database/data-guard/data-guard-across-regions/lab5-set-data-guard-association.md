@@ -42,7 +42,7 @@ Navigate to your Database Cloud Service in your primary region.
 
 ![image-20210121190326859](./images/image-20210121190326859.png)
 
-Data Guard is defaulted to Maximum Performance Protection Mode which means the redo log is transmitted to the standby immediately and does not wait for the standby to complete the redo apply.  It is also set the Async Transport type.  Maximum Protection mode is not available at this time.
+Data Guard is defaulted to Maximum Performance Protection Mode which means the redo log is transmitted to the standby immediately and does not wait for the standby to complete the redo apply.  It is also set to Async Transport type.  Maximum Protection mode is not available at this time.
 
 5. Enter a name for your peer standby database.
 

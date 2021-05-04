@@ -12,7 +12,7 @@ Let's start on the standby side.  From your VCN hosting your standby database, s
 
 3. Select the Target Type as Dynamic Routing Gateways and select the name of the DRG gateway you created.
 
-4. Enter the Destination CIDR Block.  The destination will be the primary region.  You can enter the CIDR block for the primary VCN or the primary private subnet CIDR block.  ie: 11.0.0.0/16.
+4. Enter the Destination CIDR Block.  The destination will be the primary region.  You can enter the CIDR block for the primary VCN or the primary private subnet CIDR block.  ie: 10.0.0.0/16 or 10.0.1.0/24
 
 5. Add description if desired.
 
@@ -37,7 +37,7 @@ Now configure the security list.
 
 11. Source Type is CIDR
 
-12. Source CIDR is from your primary VCN or private subnet.  ie: 11.0.0.0/16 or 11.0.1.0/24.
+12. Source CIDR is from your primary VCN or private subnet.  ie: 10.0.0.0/16 or 10.0.1.0/24.
 
 13. IP Protocol is TCP
 
@@ -57,7 +57,7 @@ Now configure the security list.
 
 19. Destination Type is CIDR.
 
-20. Destination CIDR is your primary VCN or private subnet CIDR Block.  ie: 11.0.0.0/16 or 11.0.1.0/24.
+20. Destination CIDR is your primary VCN or private subnet CIDR Block.  ie: 10.0.0.0/16 or 10.0.1.0/24.
 
 21. IP Protocol is TCP
 

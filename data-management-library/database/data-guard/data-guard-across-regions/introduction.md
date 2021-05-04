@@ -14,7 +14,7 @@ Prerequisites
 
 - Compartment to work on
 
-Although the primary database will be in one region and the standby in another region, they must both be in the same compartment.  And they must both not have overlapping VCN IP address blocks.
+Although the primary database will be in one region and the standby in another region, they must both be in the same compartment.  And they must both not have overlapping VCN IP address blocks.  This lab assumes you understand CIDR blocks and subnets.
 
 Estimated lab time:  30 minutes
 
@@ -32,5 +32,5 @@ Estimated lab time:  30 minutes
 
 - **Author** - Milton Wan, Database Product Management, January 2021
 - **Contributors** -
-- **Last Updated By/Date** - Milton Wan, Database Product Management, January 24, 2021
+- **Last Updated By/Date** - Milton Wan, Database Product Management, May 4, 2021
 - **Workshop Expiry Date** - January 2023
