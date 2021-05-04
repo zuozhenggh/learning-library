@@ -27,7 +27,7 @@ This lab assumes that you completed all preceding labs.
 
 1.  In the OCI Console, open the navigation menu, and then in the **Oracle Database** menu, select **GoldenGate**.
 
-    ![Select GoldenGate Deployments in Navigation menu](images/01-01-02.png "Access GoldenGate service")
+    ![Select GoldenGate Deployments in Navigation menu](images/database-goldengate.png "Access GoldenGate service")
 
     You're brought to the **Deployments** page.
 
@@ -100,4 +100,4 @@ In this lab, you created an OCI Deployment and reviewed its Deployment details. 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2021
+* **Last Updated By/Date** - Jenny Chan, May 2021

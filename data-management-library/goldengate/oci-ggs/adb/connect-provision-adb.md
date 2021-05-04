@@ -22,9 +22,9 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 ## **STEP 1:** Create a VCN and subnet
 
-1.  In the Console navigation menu, under **Core Infrastructure**, in the **Networking** submenu, select **Virtual Cloud Networks**
+1.  In the Console navigation menu, under **Networking**, select **Virtual Cloud Networks**
 
-    ![Select Virtual Cloud Networks](./images/00-01-vcn.png)
+    ![Select Virtual Cloud Networks](./images/networking-vcn.png)
 
 2.  Click **Start VCN Wizard**.
 
@@ -46,7 +46,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  In the Console navigation menu, under **Oracle Database**, select **Autonomous Transaction Processing**.
 
-    ![Select Autonomous Transaction Processing](./images/01-01-atp.png)
+    ![Select Autonomous Transaction Processing](./images/database-atp.png)
 
 2.  Click **Create Autonomous Database**.
 
@@ -133,7 +133,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  In the Console navigation menu, under **Oracle Database**, select **Autonomous Data Warehouse**.
 
-    ![Select Autonomous Data Warehouse](./images/03-01-adw.png)
+    ![Select Autonomous Data Warehouse](./images/database-adw.png)
 
 2.  Click **Create Autonomous Database**.
 
@@ -205,5 +205,5 @@ Please proceed to the next [lab](#next).
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - April 2021
+- **Last Updated** - May 2021
 - **PAR Expiration date** - March 31, 2022
