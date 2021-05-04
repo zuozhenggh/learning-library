@@ -4,7 +4,7 @@
 
 In this lab, we will deploy a WildFly Cluster on Oracle Cloud Infrastructure (OCI) with Terraform, along with an Autonomous Transaction Processing Database.
 
-Estimated Lab Time: 25 minutes.
+Estimated Lab Time: 25 minutes
 
 ### Objectives
 
@@ -35,9 +35,9 @@ For this lab, you need:
 
 2. Get your `compartment OCID`.
 
-    - In the OCI web console, go to **Identity -> Compartments**.
+    - In the OCI web console, go to **Identity & Security -> Compartments**.
 
-    ![](./images/setup-tf-compartment.png)
+    ![](./images/compartments.png)
 
     - Navigate to the compartment where you want to deploy the infrastructure.
 
@@ -193,5 +193,5 @@ To run the deployment, you need to define a few settings in a file named `terraf
 You may proceed to the next lab.
 
 ## Acknowledgements
- - **Author** - Subash Singh, Emmanuel Leroy, October 2020
+ - **Author** - Subash Singh, Emmanuel Leroy
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

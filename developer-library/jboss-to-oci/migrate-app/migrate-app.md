@@ -4,7 +4,7 @@
 
 In this lab, we will migrate the application to the JBoss/WildFly cluster on Oracle Cloud Infrastructure (OCI).
 
-Estimated Lab Time: 10 minutes.
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -106,5 +106,5 @@ For this lab, you need to have provisioned the WildFly cluster on OCI.
 You may proceed to the next lab.
 
 ## Acknowledgements
- - **Author** - Subash Singh, Emmanuel Leroy, October 2020
+ - **Author** - Subash Singh, Emmanuel Leroy
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

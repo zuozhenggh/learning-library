@@ -4,7 +4,7 @@
 
 In this lab, we will migrate the on-premises database to the Oracle Autonomous Database on Oracle Cloud Infrastructure (OCI).
 
-Estimated Lab Time: 10 minutes.
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -113,7 +113,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
 
 ## **STEP 2:** Create an OCI Object Storage Bucket
 
-1. Go to **Core Infrastructure -> Object Storage**.
+1. Go to **Storage -> Object Storage**.
 
     ![](./images/migrate-db-oss-1.png)
 
@@ -234,6 +234,8 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
 ## **STEP 5:** Get the OCID of the Database
 
 1. Go to **Oracle Database -> Autonomous Transaction Processing**.
+
+    ![](./images/atp.png)
 
 2. Make sure you are in the right compartment and **click** the database you provisioned earlier to get to the details.
 
@@ -500,5 +502,5 @@ The database has been migrated.
 You may proceed to the next lab.
 
 ## Acknowledgements
- - **Author** - Subash Singh, Emmanuel Leroy, October 2020
+ - **Author** - Subash Singh, Emmanuel Leroy
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021
