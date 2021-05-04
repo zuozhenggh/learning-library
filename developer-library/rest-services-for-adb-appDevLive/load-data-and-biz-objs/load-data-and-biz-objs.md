@@ -100,18 +100,18 @@ Time to set the headers of this HTTP request. We are going to set the content ty
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv"
 ```
 
-Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user gary:PASSWORD**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
+Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user "gary:PASSWORD"**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user gary:PASSWORD
+-H "Content-Type:text/csv" --user "gary:PASSWORD"
 ```
 
 Finally, we need to add the URL we copied previously. We will be appending **batchload?batchRows=5000&errorsMax=20** to indicate that this is a batch load, we want to load them in groups of 5000, and to stop running if we hit 20 errors:
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
+-H "Content-Type:text/csv" --user "gary:123456ZAQWSX!!" \
 "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 ```
 
@@ -125,7 +125,7 @@ There it is, the final cURL command we will use to load the data into the table.
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
+-H "Content-Type:text/csv" --user "gary:123456ZAQWSX!!" \
 "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 
 #INFO Number of rows processed: 2,097,148
