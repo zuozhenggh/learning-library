@@ -88,6 +88,14 @@ This lab assumes you have:
 
     - Login to the HR Application as *`hradmin`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
    ![](./images/nne-009.png " ")
 
    ![](./images/nne-010.png " ")
@@ -206,4 +214,4 @@ Technical Documentation: [Oracle Native Network Encryption 19c](https://docs.ora
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

@@ -156,17 +156,16 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
     The following function returns a count of all the rows that match the input provided to col2 in the table:
 
     ````
-    <copy>create or replace procedure return_count (p_input in varchar2,
-                                                    p_output out number) 
+    <copy>
+    create or replace procedure return_count (p_input in varchar2, p_output out number) 
     is
 
     begin
-
         select count(*) 
           into p_output
           from csv_data
          where col2 = p_input;
- 
+
     end return_count;
     /
     </copy>
@@ -176,21 +175,16 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
     ![compile the function in the sql worksheet](./images/ld-10.png)
 
-11. We can test this function with a quick PL/SQL procedure. Copy and paste the following into the SQL Worksheet and run the procedure with the **Run Script** button:
+1.  We can test this function with a quick PL/SQL procedure. Copy and paste the following into the SQL Worksheet and run the procedure with the **Run Script** button:
 
     ````
     <copy>
     declare
-
         l_output number;
-
     begin
-
         return_count(p_input => 'a1',
                     p_output => l_output);
-
     dbms_output.put_line(l_output);
-
     end;
     /
     </copy>
@@ -202,9 +196,11 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
 In this lab, you loaded over two million rows into a table with curl and REST as well as added business logic to the database.
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - April 2021
+- **Last Updated By/Date** - Kay Malcolm, May 2021
 - **Workshop Expiry Date** - April 2022
 

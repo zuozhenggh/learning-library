@@ -132,6 +132,14 @@ In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outsi
     - Open a web browser window to *`http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`*
     - Login to the HR Application as *`hradmin`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
       ![](./images/ua-008.png " ")
 
       ![](./images/ua-009.png " ")
@@ -380,4 +388,4 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021
