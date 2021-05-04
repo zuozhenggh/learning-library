@@ -34,7 +34,7 @@ Additionally, the algorithm also has some requirements on data type, minimum num
     - rows that are strictly ordered by timestamp, without duplicated timestamps.
 * The training data should have at least 3 highly correlated attributes.
 * At least one attribute does not have a missing value.
-* The number of observations/timestamps in training data should be at least 8 * number of attributes or 40, whichever is greater.
+* The number of observations/timestamps in training data should be at least eight times of attributes or 40, whichever is greater.
 
 The testing/detecting data is also required to only contain columns like timestamp and other numeric attributes that match with the training data; observations are strictly ordered by unique timestamps. No further requirements on testing data.
 
@@ -45,6 +45,10 @@ The service can accept two types of data: CSV format, and JSON format. The data 
 #### CSV format
 CSV-formatted data should have comma-separated lines, with first line as the header, and other lines as data. Note the first column is the timestamp column.
 
+**Note:**
+* Missing value is permitted(with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
+* Do not have a new line as the last line. The last line should still be an observation with other attributes/signals.
+
 Here is an example of CSV-formatted data:
 ```csv
 timestamp,sensor1,sensor2,sensor3,sensor4,sensor5
@@ -52,13 +56,13 @@ timestamp,sensor1,sensor2,sensor3,sensor4,sensor5
 2020-07-13T14:04:46Z,0.1756,-0.5364,-0.1524,-0.6792,1
 2020-07-13T14:05:46Z,0.4132,-0.029,,0.679,0
 ```
-**Note:**
-* Missing value is permitted(with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
-* Do not have a new line as the last line. The last line should still be an observation with other attributes/signals.
-
 
 #### JSON format
 Similarly, JSON-formatted data should also contain timestamps and numeric attributes only, with the following keys:
+
+**Note:**
+* Missing value is coded as null without quote.
+
 ```json
 { "requestType": "INLINE",
   "columnLabels": ["sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10"],
@@ -68,8 +72,6 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
   ]
 }
 ```
-**Note:**
-* Missing value is coded as null without quote.
 
 **Best practices**
 * The training data should cover all the normal system conditions with the full value ranges for all attributes/signals.
@@ -78,7 +80,7 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 
 ## **STEP 2:** Download Sample Data
 
-Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like. You can download them for next step.
+Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
 * [processed training csv data](../files/demo-training-data.csv)
     - 11 signals with timestamp column, with 7299 observations

@@ -1,10 +1,12 @@
-# Lab 4: (Advanced Session) Access AD Service with REST API
+# Lab 4: (Advanced Session) Access Anomaly Detection Service with REST API
 
 ## Introduction
 
 Our anomaly detection services also support to use CLI tool `oci` or REST API calls to perform model and data operations.
 
 In this lab session, we will show several code snippets to integrate with our service endpoints.
+
+You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration. 
 
 *Estimated Lab Time*: 45 minutes
 
@@ -20,7 +22,7 @@ In this lab session, we will show several code snippets to integrate with our se
 
 ## REST API Endpoints
 
-Our service supports CURD actions on the four different resource types involved, including Project, Data Asset, Model, and Deployment.
+Our service supports CRUD (Create, Read, Update, Delete) actions on the four different resource types involved, including Project, Data Asset, Model, and Deployment.
 
 The following are a few examples of accessing those API endpoints using Python. The complete code file can be [downloaded here](../../files/anomaly_detection_rest_api_example.py).
 
