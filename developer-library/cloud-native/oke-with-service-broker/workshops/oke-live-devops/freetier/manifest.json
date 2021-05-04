@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Develop, debug and deploy Kubernetes applications in a remote OKE cluster",
+    "workshoptitle": "Develop, Debug and Deploy Kubernetes Applications in a Remote OKE Cluster",
     "help": "livelabs-help-weblogic_us@oracle.com",
     "tutorials": [
         {
@@ -38,7 +38,7 @@
             "filename": "../../../skaffold/skaffold.md"
         },
         {
-            "title": "Lab 6: Debugging Remote Containers",
+            "title": "Lab 6: Debug Remote Containers",
             "publisheddate": "01/07/2021",
             "filename": "../../../skaffold-debug/skaffold-debug.md"
         },
