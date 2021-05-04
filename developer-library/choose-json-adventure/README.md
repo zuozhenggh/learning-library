@@ -10,7 +10,8 @@ What do you do?
 
 JSON is a human-readable, self-describing format to represent data in a hierarchical format. This is best illustrated by an example:
 
-Example1:
+Example 1:
+```
 {
 	"id": 100,
 	"title": "Coming to America",
@@ -22,6 +23,7 @@ Example1:
 	"year": 1988,
 	"decade": "80s"
 }
+```
 
 Example 1 shows one JSON string (also called document) with information about a movie. The main building blocks are key-value pairs. The key is always a string - syntactically identified by being enclosed in double quotes. A key is on the left side of a colon. On the right side of the colon is the corresponding value. Key-Value pairs are encapsulating in a JSON Object - identified by the curly brackets {…}. The order or key-value pairs in an object is not significant. 
 A value (right side of colon) can also be a string ("DVD"), a number (5), a Boolean, null or an Object or Array. What is an array? Think of it as a list of values. In this example the key "starring" points to a JSON array of 4 string value. In a JSON array the order matters. 

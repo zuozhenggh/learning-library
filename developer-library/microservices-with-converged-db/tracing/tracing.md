@@ -4,12 +4,10 @@
 
 This lab will show you can trace microservice activity using Jaeger.
 
-Estimated lab Time - 
+Estimated lab Time - 10 minutes
 
-### Objectives
-
--   Open t
--   Learn how they work
+  -   Open the Jaeger User Interface and view traces
+  -   Learn how they work
 
 ## **STEP 1**: Verify tracing
 
@@ -18,7 +16,7 @@ Estimated lab Time -
 
    ![](images/ordertracingsrc.png " ")
 
-2. Place an order if one was not already created successfully in STEP 1 of this Lab.
+2. Place an order if one was not already created successfully in Lab 2 Step 3.
 
 3. Identify the external IP address of the Jaeger Load Balancer by executing the following command:
 
@@ -50,5 +48,4 @@ Estimated lab Time -
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Tom McGinn, June 2020
-
+* **Last Updated By/Date** - Richard Exley, April 2021

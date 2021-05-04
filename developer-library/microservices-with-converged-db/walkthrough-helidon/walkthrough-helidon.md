@@ -4,7 +4,7 @@
 
 This lab will show you how to deploy the microservices on your Kubernetes cluster, walk throught the functionality and explain how it works.
 
-Estimated Lab Time - 
+Estimated Lab Time - 10 minutes
 
 ### Objectives
 
@@ -16,28 +16,7 @@ Estimated Lab Time -
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * The OKE cluster and the ATP databases that you created in Lab 1
 
-## **STEP 1**: Understand shortcut commands and development process
-
-A number of shortcut commands are provided in order to analyze and debug the workshop kubernetes environment including the following:
-
-`msdataworkshop` - Lists all of the kubernetes resources (deployments, pods, services, secrets) involved in the workshop
-
-`describepod` - Gives information on a given pod and can use abbreviated names for arguments, such as `describepod admin` or `describepod order`
-
-`logpod` - Provides the logs for a given pod/container and can use abbreviated names for arguments, such as `logpod admin` or `logpod order`
-
-`deletepod` - Deletes a given pod/container and can use abbreviated names for arguments, such as `deletepod admin` or `deletepod order`
-
-As the deployments in the workshop are configured with `imagePullPolicy: Always` , once you have finished the workshop, you can develop and test changes to a microservice using the following sequence...
-    
-    1. Modify microservice source
-    2. Run `./build.sh` to build and push the newly modified microservice image to the repository
-    3. Run `deletepod` (eg `deletepod admin`, `deletepod order`, etc.) to delete the old pod and start a new pod with the new image.
-    4. Verify changes.
-    
-If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
-
-## **STEP 2**: Deploy and access FrontEnd UI microservice
+## **STEP 1**: Deploy all the Microservices and the FrontEnd UI
 
 1.  Run the deploy script.  This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
@@ -45,133 +24,82 @@ If changes have been made to the deployment yaml then re-run `./deploy.sh` in th
     <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
     ```
 
-   ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
+   ![](images/deploy-all.png " ")
 
-2.  Once successfully created, check that the frontend pod is running:
+2.  Once successfully created, check that the services are running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
     ```
 
-  ![](images/bf1ec14ebd4cb789fca7f77bb2d4b2d3.png " ")
+  ![](images/pods-all-after-deploy.png " ")
 
   Alternatively, you can execute the `pods` shortcut command:
 
-  ![](images/d575874fe6102633c10202c74bf898bc.png " ")
-
-3. Check that the load balancer service is running, and write down the external IP
+3. Check that the **frontend** load balancer service is running, and write down the external IP
     address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
-  ![](images/frontendservicekubectloutput.png " ")
+  ![](images/frontend-service.png " ")
 
   Alternatively, you can execute the `services` shortcut command.
 
-  ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
+## **STEP 2**: Access the FrontEnd UI
 
-4. You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
+You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
 
-  `https://<EXTERNAL-IP>`
+`https://<EXTERNAL-IP>`
 
-  Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
-  
-  You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the one you entered in Lab 1.
-  
-  ![](images/frontendauthlogin.png " ")
-  
-  You should then see the Front End home page. You've now deployed and accessed your first microservice of the lab!
-  
-  Note that links on Front End will not work yet as they access microservices that will be created and deployed in subsequent labs.
+Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
 
-  We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
-  
-  ![](images/frontendhome.png " ")
+You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the one you entered in Lab 1.
 
-## **STEP 3**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
-You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
+![](images/frontendauthlogin.png " ")
 
-1.  First, let’s analyze the Kubernetes deployment YAML file: `admin-helidon-deployment.yaml`.
+You should then see the Front End home page. You've now accessed your first microservice of the lab!
 
-    ```
-    <copy>cat $GRABDISH_HOME/admin-helidon/admin-helidon-deployment.yaml</copy>
-    ```
+![](images/ui-home-page.png " ")
 
-    The volumes are set up and credentials are brought from each of the bindings
-    (inventory and order). The credential files in the secret are base64 encoded
-    twice and hence they need to be decoded for the program to use them, which
-    is what the `initContainer` takes care. Once done, they will be mounted for
-    access from the container `helidonatp`. The container also has the DB
-    connection information such as the JDBC URL, DB credentials and Wallet,
-    created in the previous step.
+We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display the frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
-2.  Let’s analyze the `microprofile-config.properties` file.
+## **STEP 3**: Verify the Order and Inventory Functionality of GrabDish store
 
-    ```
-    <copy>cat $GRABDISH_HOME/admin-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
-    ```
+1. Click **Transactional** under **Labs**.
 
-    This file defines the `microprofile` standard. It also has the definition of
-    the data sources that will be injected. You will be using the universal
-    connection pool which takes the JDBC URL and DB credentials to connect and
-    inject the datasource. The file has default values which will be overwritten
-    with the values specific for our Kubernetes deployment.
-
-3.  Let’s also look at the microservice source file `ATPAQAdminResource.java`.
-
-    ```
-    <copy>cat $GRABDISH_HOME/admin-helidon/src/main/java/oracle/db/microservices/ATPAQAdminResource.java</copy>
-    ```
-
-    Look for the inject portion. The `@Inject` will have the two data sources
-    under `@Named` as “orderpdb” and “inventorypdb” which were mentioned in the
-    `microprofile-config.properties` file.
-
-## **STEP 4**: Verify order and inventory activity of GrabDish store
-
-1.   Open the frontend microservices home page from the previous lab.
-  If you need the URL again, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
-    ```
-    <copy>services</copy>
-    ```
-
-     ![](images/frontendservicekubectloutput.png " ")
-
-2. Click **Transactional** under **Labs**.
-
-   ![](images/transactionalpage-blank.png " ")
+   ![](images/tx-select.png " ")
 
 3. Check the inventory of a given item such as sushi, by typing `sushi`
     in the `food` field and clicking **Get Inventory**. You should see the inventory
     count result 0.
 
-   ![](images/sushicount0.png " ")
+   ![](images/tx-get-inventory.png " ")
 
 4. (Optional) If for any reason you see a different count, click **Remove Inventory** to bring back the count to 0.
 
 5. Let’s try to place an order for sushi by clicking **Place Order**.
 
-   ![](images/placeorderpending.png " ")
+   ![](images/tx-place-order-66.png " ")
 
 6. To check the status of the order, click **Show Order**. You should see a failed
     order status.
 
-   ![](images/showorderfailed.png " ")
+   ![](images/tx-show-order-66.png " ")
 
    This is expected, because the inventory count for sushi was 0.
 
 7. Click **Add Inventory** to add the sushi in the inventory. You
     should see the outcome being an incremental increase by 1.
 
-   ![](images/sushicount1.png " ")
+   ![](images/tx-add-inventory.png " ")
 
 8. Go ahead and place another order by increasing the order ID by 1 (67) and then clicking **Place Order**. Next click **Show Order** to check the order status.
 
-   ![](images/placeorderpending2.png " ")
+   ![](images/tx-place-order-67.png " ")
 
-   ![](images/showordersuccess2.png " ")
+   ![](images/tx-show-order-67.png " ")
 
    The order should have been successfully placed, which is demonstrated with the order status showing success.
 
@@ -190,91 +118,222 @@ This architecture is tied with the Command Query Responsibility Segregation (CQR
 
 Let’s look at the Java source code to understand how Advanced Queuing and Oracle database work together.
 
-![](images/614cf30e428caffbd7b373d5c4d91708.png " ")
+![](images/getDBConnection.png " ")
 
 What is unique to Oracle and Advanced Queuing is that a JDBC connection can be invoked from an AQ JMS session. Therefore we are using this JMS session to send and receive messages, while the JDBC connection is used to manipulate the datastore. This mechanism allows for both the JMS session and JDBC connection to exist within same atomic local transaction.
 
-You have successfully configured the databases with the necessary users, tables and message propagation across the two ATP instances. You may proceed to the next step.
+## **STEP 4**: Verify Spatial Functionality
 
-## **STEP 5**: Verify spatial
+1. Click **Spatial** on the **Transactional** tab
 
-1. Click **Spatial** on the **Transactional** tab 
+   ![](images/spatial-select.png " ")
 
-   ![](images/spatial1.png " ")
+2. Check **Show me the Fusion** menu to make your choices for the Fusion Cuisine
 
-2. Check **Show me the Fusion** menu to make your choices for the Fusion Cuisine 
+   ![](images/spatial-fusion-menu.png " ")
 
-   ![](images/spatial2.png " ")
+3. Click the plus sign to add Makizushi, Miso Soup, Yakitori and Tempura to your order and click **Ready to Order**.
 
-3. Click the plus sign to add Makizushi, Miso Soup, Yakitori and Tempura to your order and click **Ready to Order**. 
-
-   ![](images/spatial3.png " ")
+   ![](images/spatial-choose-menu-items.png " ")
 
 4. Click **Deliver here** to deliver your order to the address provided on the screen
 
-   ![](images/spatial4.png " ")
+   ![](images/spatial-deliver-here.png " ")
 
 5. Your order is being fulfilled and will be delivered via the fastest route.
 
-   ![](images/spatial5.png " ")
+   ![](images/spatial-delivery.png " ")
 
-This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates. 
-Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. 
-This web component allows to simply integrate mapping into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
+6. Hit the back button on your browser to the `Transactional` screen.
 
+   ![](images/tx-show-order-67.png " ")
 
-## **STEP 6**: Verify metrics
+This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates.
+Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
+
+## **STEP 5**: Show Metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
-   ![](images/OrderResourceAnnotations.png " ")
+   ![](images/metrics-annotations.png " ")
 
 
 2. Click **Tracing, Metrics, and Health**
 
-   ![](images/tracingmetricshealth-blankpage.png " ")
+   ![](images/metrics-select.png " ")
 
 3. Click **Show Metrics** and notice the long string of metrics (including those from placeOrder timed and counted) in prometheus format.
 
-   ![](images/metrics.png " ")
+   ![](images/metrics-show.png " ")
 
-## **STEP 7**: Verify health
+## **STEP 6**: Verify Health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
 
-   ![](images/healthliveliness.png " ")
+   ![](images/health-liveness.png " ")
 
 2. Notice health check class at `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
 
-    ![](images/c6b4bf43b0ed4b9b4e67618b31560041.png " ")
+    ![](images/health-liveness-code.png " ")
 
 3. Notice liveness probe specified in `$GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml` The `livenessProbe` can be set up with different criteria, such as reading from a file or an HTTP GET request. In this example the OKE health probe will use HTTP GET to check the /health/live and /health/ready addresses every 3 seconds, to see the liveness and readiness of the service.
 
-   ![](images/livenessprobeinyaml.png " ")
+   ![](images/health-liveness-yaml.png " ")
 
 4. In order to observe how OKE will manage the pods, the microservice has been created with the possibility to set up the liveliness to “false”. Click **Get Last Container Start Time** and note the time the container started.
 
-   ![](images/lastcontainerstarttime1.png " ")
+   ![](images/health-get-last-start.png " ")
 
 5. Click **Set Liveness to False** . This will cause the Helidon Health Check to report false for liveness which will result in OKE restarting the pod/microservice
 
-   ![](images/setlivenesstofalse.png " ")
+   ![](images/health-set-liveness-false.png " ")
 
 6. Click **Get Last Container Start Time**.
    It will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
 
-   ![](images/connectionrefused.png " ")
+   ![](images/health-liveness-connection-refused.png " ")
 
    Eventually you will see the container restart and note the new/later container startup time reflecting that the pod was restarted.
 
-   ![](images/lastcontainerstartuptime2.png " ")
+   ![](images/health-liveness-restarted.png " ")
+
+## **STEP 7**: Understand Passing Database Credentials to a Microservice (Study)
+
+In order to connect to an ATP database you need the following four pieces of information:
+   - Database user name
+   - Database user password
+   - Database Wallet
+   - Connect alias, string or URL
+
+Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.yaml` to see how this is done.
+
+```
+<copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
+```
+
+1. The **database user name** is passed as an environment variable:
+
+    ```
+    - name: oracle.ucp.jdbc.PoolDataSource.orderpdb.user
+      value: "ORDERUSER"
+    ```
+
+2. The **database user password** is passed as an environment variable with the value coming from a kubernetes secret:
+
+    ```
+    - name: dbpassword
+      valueFrom:
+        secretKeyRef:
+          name: dbuser
+          key:  dbpassword
+    ```
+
+   Note, code has also been implemented to accept the password from an OCI vault, however, this is not implemented in the workshop at this time.
+
+   The secret itself was created during the setup using the password that you entered.  See `utils/main-setup.sh` for more details.
+
+    ```
+    <copy>
+    kubectl describe secret dbuser -n msdataworkshop
+    </copy>
+    ```
+
+   ![](images/db-user-secret.png " ")
+
+3. The **database wallet** is defined as a volume with the contents coming from a kubernetes secret:
+
+    ```
+    volumes:
+      - name: creds
+        secret:
+          secretName: db-wallet-secret
+    ```
+
+   The volume is mounted as a filesystem:
+
+    ```
+    volumeMounts:
+      - name: creds
+        mountPath: /msdataworkshop/creds
+    ```
+
+   And finally, when connecting the TNS_ADMIN is pointed to the mounted filesystem:
+
+    ```
+    - name: oracle.ucp.jdbc.PoolDataSource.orderpdb.URL
+      value: "jdbc:oracle:thin:@%ORDER_PDB_NAME%_tp?TNS_ADMIN=/msdataworkshop/creds"
+    ```
+
+   Setup had previeously downloaded a regional database wallet and created the db-wallet-secret secret containing the wallet files.  See `utils/db-setup.sh` for more details.
+
+    ```
+    <copy>
+    kubectl describe secret db-wallet-secret -n msdataworkshop
+    </copy>
+    ```
+
+   ![](images/db-wallet-secret.png " ")
+
+4. The database connection URL is passed in as an environment variable.  
+
+    ```
+    - name: oracle.ucp.jdbc.PoolDataSource.orderpdb.URL
+      value: "jdbc:oracle:thin:@%ORDER_PDB_NAME%_tp?TNS_ADMIN=/msdataworkshop/creds"
+    ```
+
+   The URL references a TNS alias that is defined in the tnsnames.ora file that is contained within the wallet.
+
+## **STEP 8**: Understand How Database Credentials are Used by a Helidon Microservice (Study)
+
+Let’s analyze the `microprofile-config.properties` file.
+
+```
+<copy>cat $GRABDISH_HOME/order-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
+```
+
+This file defines the `microprofile` standard. It also has the definition of the data sources that will be injected. The universal connection pool takes the JDBC URL and DB credentials to connect and inject the datasource. The file has default values which will be overwritten by the environment variables that are passed in.  
+
+The `dbpassword` environment variable is read and set as the password unless and vault OCID is provided.  
+
+Let’s also look at the microservice source file `OrderResource.java`.
+
+```
+<copy>cat $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java</copy>
+```
+
+Look for the inject portion. The `@Inject` has the data source under `@Named` as “orderpdb” which was mentioned in the `microprofile-config.properties` file.
+
+```
+@Inject
+@Named("orderpdb")
+PoolDataSource atpOrderPdb;
+```
+
+## **STEP 9**: Understand shortcut commands and development process (Study)
+
+A number of shortcut commands are provided in order to analyze and debug the workshop kubernetes environment including the following:
+
+`msdataworkshop` - Lists all of the kubernetes resources (deployments, pods, services, secrets) involved in the workshop
+
+`describepod` - Gives information on a given pod and can use abbreviated names for arguments, such as `describepod inventory` or `describepod order`
+
+`logpod` - Provides the logs for a given pod/container and can use abbreviated names for arguments, such as `logpod inventory` or `logpod order`
+
+`deletepod` - Deletes a given pod/container and can use abbreviated names for arguments, such as `deletepod inventory` or `deletepod order`
+
+As the deployments in the workshop are configured with `imagePullPolicy: Always` , once you have finished the workshop, you can develop and test changes to a microservice using the following sequence...
+
+1. Modify microservice source
+2. Run `./build.sh` to build and push the newly modified microservice image to the repository
+3. Run `deletepod` (e.g. `deletepod order`) to delete the old pod and start a new pod with the new image
+4. Verify changes
+
+If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-               Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Tom McGinn, June 2020
-
+* **Last Updated By/Date** - Richard Exley, April 2021

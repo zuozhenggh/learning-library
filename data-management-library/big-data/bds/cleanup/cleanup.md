@@ -27,7 +27,7 @@ If you want to list the resources in your **`training-compartment`**, you can us
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
 	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/big-data.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button, and then select **Terminate Big Data Cluster** from the context menu.
 
