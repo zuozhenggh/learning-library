@@ -12,7 +12,7 @@ This lab will show you how to deploy and Configure a self-contained Guacamole In
 This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **Step 1**: Deploy Guacamole
+## **STEP 1**: Deploy Guacamole
 1.  As opc, run *sudo su -* to login as root
 
     ```
@@ -278,7 +278,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **Step 2**: Configure Desktop   
+## **STEP 2**: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings some settings to ensure a better user experience.
 
 1. Launch your browser to the following URL
@@ -321,7 +321,7 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
     ![](./images/desktop-display-1.png " ")
     ![](./images/desktop-display-2.png " ")
 
-## **Step 3**: Add Applications to Desktop   
+## **STEP 3**: Add Applications to Desktop   
 For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut of *FireFox* browser.
 
 1. On the desktop from the previous setup, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *FireFox*

@@ -134,5 +134,5 @@ In this lab, you created a table from a csv file and REST enabled it with auto-R
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - February 2021
-- **Workshop Expiry Date** - February 2022
+- **Last Updated By/Date** - April 2021
+- **Workshop Expiry Date** - April 2022

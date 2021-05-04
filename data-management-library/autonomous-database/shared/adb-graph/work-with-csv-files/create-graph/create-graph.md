@@ -20,13 +20,15 @@ Learn how to
 - The following lab requires an Autonomous Database - Shared Infrastructure account. 
 - And that the Graph-enabled user has been created. That is, a database user with the correct roles and privileges exists.
 
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
+
 ## **STEP 1**: Connect to your Autonomous Database using Graph Studio
 
 1. If you have the Graph Studio URL then proceed to step 4. 
 
     Log in to the OCI Console, choose the Autonomous Database instance, then click on the Tools tab on the details page menu on the left. 
 
-   ![OCI Console](./images/oci-console-adb-tools-graph-studio-link.png)
+   ![OCI Console](./images/adw-details-tools-graph-studio.png)
 
 
 2. Click on the Graph Studio card to open in a new page or tab in your browser.   
@@ -36,11 +38,11 @@ Learn how to
 
 3. Enter your Autonomous Database account credentials (e.g. `GRAPHUSER`) into the login screen:
  
-    ![](./images/14-graph-studio-login.png " ")
+    ![](./images/adw-graph-studio-login.png " ")
 
 4. Then click the "Sign In" button. You should see the studio home page.   
 
-    ![](./images/15-graph-studio-home.png " ") 
+    ![](./images/gs-graphuser-home-page.png " ") 
 
 ## **STEP 2**: Create a graph of accounts and transactions from the corresponding tables
 
@@ -53,11 +55,11 @@ Learn how to
 
 3.  Click next to get a suggested model. We will edit and update this model.  
 
-    The suggested model has each table as a vertex since there are no foreign key constraints specified for BANK_TXNS.   
+    The suggested model has each table as a vertex since there are no foreign key constraints specified for `BANK_TXNS`.   
 
   ![](./images/18-modeler-suggested-model.png " ")    
 
-  We will replace the default incorrect CREATE PROPERTY GRAPH statement with an updated definition.  
+  We will replace this CREATE PROPERTY GRAPH with an updated definition that explicitly includes an edge table.   The edge table would automatically have been part of CREATE PROPERTY GRAPH if there were foreign key constraints connecting `BANK_TXNS` to `BANK_ACCOUNTS`.  
 
   ![](images/18b-incorrect-ddl.png " ")
 
@@ -85,12 +87,12 @@ Learn how to
     </copy>
     ```
 
-5. Click the Save (floppy disk icon) to commit the changes. Then click the Designer tab to confirm that the model now has a vertex table and en edge table.  
+5. **Important:** Click the **Save** (floppy disk icon) to commit the changes. Then click the Designer tab to confirm that the model now has a vertex table and en edge table.  
   ![](./images/20-modeler-fix-txn-label.png " ")  
 
-6. Click `Create Graph` to move on to the next step in the flow.   
+6. Click `Next` and then click `Create Graph` to move on to the next step in the flow.   
 
-   Enter the prompted details. That is, supply a graph name (e.g. `bank_graph`), a model name (e.g. `bank_graph_model`), and other optional information.  
+   Enter the prompted details. That is, supply a graph name (`bank_graph`), a model name (e.g. `bank_graph_model`), and other optional information.  
    ![](./images/22-modeler-create-graph.png " ")
 
 7. Graph Studio modeler will now save the metadata and start a job to create the graph.  
@@ -106,5 +108,5 @@ Please **proceed to the next lab** to do so.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, May 2021
   
