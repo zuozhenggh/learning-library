@@ -121,6 +121,8 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
 ## **STEP 2:** Loading JSON Data into a Collection
 
+In this section, you will start by building up a URL that will allow you to access the SODA for REST APIs. You will then stage a file and use the newly created URL via cURL to load the file into the collection.
+
 1. The SODA APIs will be used to load the records into the collection. We will build the cURL command up similar as we did in the previous step. We start with again the user/password combination. **REMEMBER to use your password in place of PASSWORD**
 
     ```
@@ -165,8 +167,11 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
     and we can run this in the OCI cloud shell. 
     
+    **Please refer to step 1 for a reminder on how to access the OCI Cloud Shell**
+
     
 2. We first need to stage the airportDelays.json file. Issue the following command in the OCI Cloud Shell:
+
 
     ```
     curl -o airportDelays.json https://objectstorage.us-ashburn-1.oraclecloud.com/p/rQEg_sXqFmCO8Swe5vVesi3-hmiCfLsY0Yc8mr_k0zdX2NWhhm34zrwhs0uvg8K-/n/c4u03/b/developer-library/o/airportDelays.json

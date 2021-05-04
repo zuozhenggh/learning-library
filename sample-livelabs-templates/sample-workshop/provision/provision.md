@@ -59,7 +59,6 @@ Analytics - Machine Learning - Data Science
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 
-
 Compute - Instances
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
@@ -120,11 +119,30 @@ Developer Services - Containers - Container Registry
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-container-registry.png " ")
 
-
 Developer Services - APEX
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **APEX**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-apex.png " ")
+
+Developer Services - Functions - Applications
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Applications**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-functions-applications.png " ")
+
+Developer Services - Application Integration - Integration
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Notifications**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-application-integration.png " ")
+
+Developer Services - Application Integration - Notifications
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Notifications**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-application-notification.png " ")
+
+Developer Services - Application Integration - Email Delivery
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Email Delivery**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-application-emaildelivery.png " ")
 
 Networking - Virtual Cloud Networks - VCN
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
@@ -165,6 +183,12 @@ Policies
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+
+Identity & Security - Audit
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-audit.png " ")
+
 
 ## **STEP 1**: title
 

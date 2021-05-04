@@ -19,7 +19,7 @@ Estimated Lab Time: 10 minutes
 
 ## **STEP 1**: Create a user
 
-1. First, we want to create a database schema for our tables. JSON and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
+1. First, we want to create a database schema for our tables. business logic and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
     ![Database Actions Menu, Administration then Users](./images/setups-1.png)
 
@@ -31,7 +31,7 @@ Estimated Lab Time: 10 minutes
 
     Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
 
-    Once we enter the password twice, ensure the REST Enable button is on. This will allow us to use REST services with this database schema from the start. 
+    Once we enter the password twice, ensure the **Web Access** button is on. This will allow us to use REST services with this database schema from the start as well as use the Database Actions tools. 
     
     In the right column of options, find the **Quota on tablespace DATA** dropdown select list. Choose **Unlimited** for this lab.
     
