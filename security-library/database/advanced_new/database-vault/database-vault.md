@@ -81,6 +81,14 @@ This lab assumes you have:
 
 2. Login to the application as *`hradmin`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
    ![](./images/dv-030.png " ")
 
 3. Click **Search Employee**
@@ -456,4 +464,4 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Alan Williams, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021
