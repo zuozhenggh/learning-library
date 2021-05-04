@@ -34,9 +34,12 @@ Before you develop you should ensure you have the latest content from production
    
   ![](./images/git-hub-merge-branch-2.png " ")
 
-4. Press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+4. Finally, select **Push Origin**
+  ![](./images/push-origin.png " ")
 
-  ![](./images/git-hub-merge-ahead.png " ")
+4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![](./images/git-hub-sync-ahead.png " ")
 
 
 ## **STEP 2:** Commit your Changes in your Clone
@@ -147,6 +150,26 @@ Now that your workshop is in the learning library, change your status.  If you a
 
 You may now [proceed to the next lab](#next).
 
+## **Appendix**: Troubleshooting Tips
+### Issue: Conflicts
+![](./images/behind.png " ")
+
+1. To fix this, in Github Desktop select **Fetch Origin**
+  ![](./images/fetch-origin.png " ")
+
+2. Next, select **Branch -> Merge into Current Branch**
+  ![](./images/branch.png " ")
+
+3. Then, click **Upstream/Master -> Merge Upstream/Master into Master**
+  ![](./images/merge.png " ")
+
+4. Finally, select **Push Origin**
+  ![](./images/push-origin.png " ")
+
+4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![](./images/git-hub-sync-ahead.png " ")
+
 ## Want to Learn More?
 
 * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
@@ -161,6 +184,6 @@ You may now [proceed to the next lab](#next).
 * **Reviewed by:**  
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Kay Malcolm, March 2020
+* **Last Updated By/Date:** Kamryn Vinson, May 2021
 
 
