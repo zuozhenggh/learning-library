@@ -41,7 +41,7 @@ The preinstaller for Oracle Database 19c performs many pre-installation and pre-
     # <copy>yum install oracle-database-preinstall-19c</copy>
     ```
 
-2. Set the password for the `oracle` user. You are prompted to enter and confirm a password.
+2. Set the password for the `oracle` user as `WElcome123##`. You are prompted to enter and confirm the password.
 
     ```nohighlighting
     # <copy>passwd oracle</copy>
@@ -50,7 +50,7 @@ The preinstaller for Oracle Database 19c performs many pre-installation and pre-
 
 ## **STEP 2**: Make the `oracle` user a sudoer
 
-Allow the `oracle` user to perform any operation as `root`. This step gives the `oracle` user root permission without the need for them to know the root password. Sudoers must be edited by running `visudo`. You need to do this step so that later when you install Oracle Database 19c in another lab, you can specify the `oracle` user as the sudo user to run configuration scripts.
+Allow the `oracle` user to perform any operation as `root`. This step gives the `oracle` user root permission without the need for them to know the `root` password. Sudoers must be edited by running `visudo`. You need to do this step so that later when you install Oracle Database 19c in another lab, you can specify the `oracle` user as the sudo user to run configuration scripts.
 
 1. Run `visudo`.
 

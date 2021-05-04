@@ -7,6 +7,7 @@ In Resource Manager, you begin by creating a stack, which is a collection of Ora
 
 *If you are working in the LiveLabs tenancy, you can skip STEP 1 because it has already been done for you.*
 
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 

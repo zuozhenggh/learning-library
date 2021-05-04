@@ -6,9 +6,6 @@ In this lab, you learn how to use a new feature in the Oracle Database 19c insta
 
 Because you install release 19.3 and upgrade to 19.11 at the same time in this lab, you create the CDB and PDB after you complete the installation. This avoids any post-installation tasks.
 
-
-
-
 Estimated Lab Time: 30 minutes
 
 ### Objectives
@@ -53,7 +50,7 @@ To copy and paste text from your local machine into an application on your Guaca
   - If you are using the Guacamole desktop provided for this lab, you can double-click the **Terminal Window** shortcut on the desktop.
   - If you created your own custom compute instance, then open a terminal window on your local machine and connect to your compute instance.
 
-2. Switch to the `oracle` user, and enter the password (`Ora4U_1234`).
+2. Switch to the `oracle` user, and enter the password `WElcome123##`.
 
   *If you are using the Guacamole desktop, you can skip this step because you are automatically signed in as the `oracle` user in the terminal window.*
 
@@ -103,7 +100,7 @@ To copy and paste text from your local machine into an application on your Guaca
     private-ip-address   compute-instance-name.livelabs.oraclevcn.com    compute-instance-name
     ```
 
-  b) In the **Password** and **Confirm Password** boxes, enter `Welcome_1`. This will be the password for the `admin` database user.
+  b) In the **Password** and **Confirm Password** boxes, enter `WElcome123##`. This will be the password for the `admin` database user.
 
   c) In the **Pluggable database name** box, enter **PDB1**.
 
@@ -119,7 +116,7 @@ To copy and paste text from your local machine into an application on your Guaca
 
   b) Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
 
-  c) Enter the password for the `oracle` user (`Ora4U_1234`).
+  c) Enter the password for the `oracle` user (`WElcome123##`).
 
   c) Click **Next**.
 

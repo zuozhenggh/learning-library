@@ -2,12 +2,13 @@
 
 ## Introduction
 
-In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute image that has Oracle Database 19c installed on it. Guacamole is also installed to provide a friendly user interface.
+In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute image that has Oracle Database 19c installed on it. Guacamole is also installed to provide a friendly user interface. You can use this compute instance to complete the remaining labs in this workshop.
 
 You begin in Resource Manager by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs as a downloadable ZIP file and loads a custom image stored in Oracle Cloud Marketplace. After you create the stack, you apply it to start a provisioning job. When the job is completed, you verify that you can connect to your compute instance via a browser and Cloud Shell.
 
 *If you are working in the LiveLabs tenancy, you can skip STEP 1 because it has already been done for you.*
 
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 

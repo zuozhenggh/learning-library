@@ -2,10 +2,11 @@
 
 ## Introduction
 
-In this lab, you create a compute instance in Oracle Cloud Infrastructure (OCI), configure X11 forwarding, and prepare the instance for an Oracle Database 19c installation.
-Using X11 forwarding in an SSH session on your local personal computer is one way that you can securely run graphical applications (X clients). For X11 forwarding in SSH to work, your local computer must be running an X server program. The X server program manages the interaction between the remote application (the X client, and in this case, the Oracle Database 19c installer) and your computer's hardware. In this lab, you use PuTTY on Windows 10 with VcXsrv (X server).
+In this lab, you create a compute instance in Oracle Cloud Infrastructure (OCI) and configure X11 forwarding. Using X11 forwarding in an SSH session on your local personal computer is one way that you can securely run graphical applications (X clients). The advantages of using X11 over an SSH tunnel to run individual applications is that little setup is required and you don’t need to have a desktop environment running in the background on your compute instance. You can just start and stop applications as needed.
 
-You can perform most of the steps in this lab by using Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. You also learn how to use PuTTY and X11 forwarding to connect to your compute instance from your personal computer.
+For X11 forwarding in SSH to work, your local computer must be running an X server program. The X server program manages the interaction between the remote application (the X client, such as the Oracle Database 19c installer) and your computer's hardware.
+
+This lab shows you how to set up X11 forwarding on Windows 10 and MacOS. The Windows 10 example uses PuTTY with VcXsrv (X Server). Some of the steps for Windows involve Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell, which you can access through the OCI console. The macOS example uses XQuartz.
 
 
 Estimated Lab Time: 30 minutes
@@ -14,13 +15,13 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you learn how to do the following:
 
+- Create SSH keys
 - Create a compute instance in Oracle Cloud Infrastructure
-- Connect to your compute instance from your Cloud Shell machine
+- Connect to your compute instance
 - Configure X11 forwarding on your compute instance
 - Install an X Server on your local computer
-- Convert your private key to a .ppk file
-- Configure an X11 forwarding connection in PuTTY that connects to your compute instance
-- Test that X forwarding is working
+- Connect to your compute instance from your local machine
+- Test X11 forwarding
 - Configure X11 forwarding for an `oracle` user
 
 
@@ -29,40 +30,111 @@ In this lab, you learn how to do the following:
 
 - You have an Oracle account. You can obtain a free account by using Oracle Free Tier or you can use a paid account provided to you by your own organization.
 - You have a compartment in Oracle Cloud Infrastructure.
-- You have PuTTY installed on your local computer.
+- (Windows) You have PuTTY and PuTTYgen installed on your local computer.
 
 ### Assumptions
 
 - You are signed in to Oracle Cloud Infrastructure.
 
+## **STEP 1**: Create SSH keys
 
-## **STEP 1**: Create a compute instance in Oracle Cloud Infrastructure
+The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
+
+1. Open a terminal window.
+
+  - Windows: On the OCI toolbar, click the **Cloud Shell** icon.
+  - MacOS: From the **Go** menu, select **Utilities**, and then double-click **Terminal**.
+
+2. Create a `.ssh` directory.
+
+    ```nohighlighting
+    $ <copy>mkdir ~/.ssh</copy>
+    ```
+
+3. Change to the `.ssh` directory.
+
+    ```nohighlighting
+    $ <copy>cd ~/.ssh</copy>
+    ```
+
+4. Generate an SSH key pair by using the `ssh-keygen` command. The following command creates a private key named `cloudshellkey` and a public key named `cloudshellkey.pub`. When prompted to enter a passphrase, click **Enter** twice to not enter a passphrase.
+
+    ```nohighlighting
+    $ <copy>ssh-keygen -b 2048 -t rsa -f cloudshellkey</copy>
+
+    Generating public/private rsa key pair.
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved in cloudshellkey.
+    Your public key has been saved in cloudshellkey.pub.
+    The key fingerprint is:
+    SHA256:EJBYzyxwwHi9y4jc+pqWVjSvFtiv2xmj+K9C4IovcSY jody_glove@2ff9ae3459e2
+    The key's randomart image is:
+    +---[RSA 2048]----+
+    | oo=+o.          |
+    |. +oo+ .         |
+    | .  ..=          |
+    |.  o.. .         |
+    |+.=oo.  S        |
+    |E=+=o.           |
+    |+=+ +o           |
+    |+*ooo.+          |
+    |o*BB=+           |
+    +----[SHA256]-----+
+    ```
+
+5. Confirm the private key and public key files exist in the `.ssh` directory.
+
+    ```nohighlighting
+    $ <copy>ls</copy>
+
+    cloudshellkey  cloudshellkey.pub
+    ```
+
+6. Set the file permissions so that only you can read the file.
+
+    ```nohighlighting
+    chmod 400 cloudshellkey
+    ```
+
+7. Show the contents of the public key. In the next step when you create a compute instance, you copy this key to the clipboard and paste it into the SSH keys box.
+
+    ```nohighlighting
+    $ <copy>cat cloudshellkey.pub</copy>
+
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDqs9uly7HqmiJlaSQmgJ8gmJ65avZt5KBGN+kgcgxKDbLdmVqaN0Ois3vnrMeHYN+gHFp2qRM4RV7bAwbrHaTo6PqAhqMqmF/k5o5c23/+WlL+HUOS00UXBBYLVz2v2kz3dq10E7zwX68DKqaBRo5iPSoLGssh2lWq8yTMFnD04nma5DSzV5LpIa9bWTaUU4jVGVhvAdX+832yOfzflkEWdaaX6rh17t6IuY5aiOWgDJmdNQouXsmqDHFS98tJFqmNDzrx7qL5tP0q0HzcQ7BNkdWamy1znwJBiRferLGzlLvOEEDpjgTzmgRKzeoLieFACQh+iXbTJ4jfyTrP9va1 jody_glove@da779ce27a8a
+    ```
+
+7. Leave the terminal window open.
+
+
+## **STEP 2**: Create a compute instance in Oracle Cloud Infrastructure
 
 1. On the **Home** page in Oracle Cloud Infrastructure, under **Quick Actions**, click **Create a VM instance**.
 
   The **Create Compute Instance** page is displayed.
 
-2. For **Name**, enter a name for your instance; for example, **compute-1**.
+2. For **Name**, enter **workshop**.
 
 3. For **Create in compartment**, select the compartment that you created or was provided to you.
 
-4. For **Placement**, leave as is. Oracle automatically chooses an availability domain for you, sets the capacity type to **On-demand capacity**, and chooses the best fault domain for you.
+4. For **Placement**, select an availability domain.
 
 5. For **Image and shape**, do the following:
 
   a) Click **Edit**.
 
-  b) Leave **Oracle Linux 7.9** selected as the image build. This installs Linux Kernel version 5.4.17-2036.104.5.el7uek.x86_64.
+  b) Leave **Oracle Linux 7.9** selected as the image build. This option installs Linux Kernel version 5.4.17-2036.104.5.el7uek.x86_64.
 
   c) Click **Change Shape**. In the **Browse All Shapes** window, scroll down and select **VM.Standard.E2.4**. Click **Select Shape**. This shape has enough memory to run the database 19c binaries.
 
-6. For **Networking**, leave the default values as is. Oracle provides a default VCN and subnet name and assigns your compute instance a public IPv4 address so that you can access it from the internet.
+6. For **Networking**, select **Create new virtual cloud network** and **Create new public subnet**. These options create a VCN and subnet, and assigns your compute instance a public IPv4 address so that you can access the compute instance from the internet.
 
 7. For **Add SSH keys**, do the following:
 
-  a) Leave **Generate SSH key pair** selected.
+  a) Select **Paste public keys**.
 
-  b) *IMPORTANT!* Click **Save Private Key**. Download and save the private key to a local directory on your computer so that you can later connect to your instance using SSH. Be sure to select a directory on which only you (the owner of the directory) has permissions to access.
+  b) In the **SSH keys** box, paste the public key that you copied from the terminal window. Be careful not to include any carriage returns.
 
 8. For **Boot** volume, do not select any of the options.
 
@@ -73,65 +145,44 @@ In this lab, you learn how to do the following:
 10. Wait for the status of the compute instance to turn to **RUNNING**.
 
 
-## **STEP 2**: Connect to your compute instance from your Cloud Shell machine
+## **STEP 3**: Connect to your compute instance
 
-To connect to your compute instance using Cloud Shell, you need to add your private key to an `.ssh` directory on your Cloud Shell machine. You only need to add your private key once (step 2 below). After your private key is in its proper place, you can simply SSH to connect in future sessions (step 4 below).
 
-1. On the toolbar in Oracle Cloud Infrastructure, click the **Cloud Shell** icon to open the Cloud Shell window, and wait for a terminal prompt to be displayed.
+1. On the **Instance Information** tab for your compute instance, find the public IP address and copy it to the clipboard. Also, jot down the public IP address so that you can refer to it later.
 
-  ![Cloud Shell icon](images/cloud-shell-icon.png)
-
-2. Upload your private key to the `.ssh` directory on your Cloud Shell machine.
-
-  a) From the **Cloud Shell** menu, select **Upload**. The **File Upload to your Home Directory** dialog box is displayed.
-
-  b) Click **select from your computer**. Browse to and select your private key file, and then click **Open**. Click **Upload**. Your private key is uploaded to the `home` directory on your Cloud Shell machine.
-
-  d) Create an `.ssh` directory in the `home` directory.
+2. In the terminal window, enter the following `ssh` command to connect to your compute instance, replacing `compute-public-ip` with your own values.
 
     ```nohighlighting
-    $ <copy>mkdir .ssh/</copy>
-    ```
-
-  e) Move your private key to the `.ssh` directory. In the code below, replace `private-key-filename` with the name of own private key file. Be sure to include the slash (/) after .ssh in the command to ensure that the file gets moved to a directory.
-
-    ```nohighlighting
-    $ <copy>mv private-key-filename.key .ssh/</copy>
-    ```
-
-  f) Set permissions on the `.ssh` directory so that only you (the owner) can read, write, and execute on the directory. Also set permissions on the private key itself so that only you (the owner) can read and write (but not execute) on the private key file.
-
-    ```nohighlighting
-
-    $ <copy>chmod 700 ~/.ssh</copy>
-    $ <copy>cd .ssh</copy>
-    $ <copy>chmod 600 *</copy>
-    ```
-
-3. On the **Instance Information** tab for your compute instance, find the public IP address and copy it to the clipboard.
-
-4. Enter the following `ssh` command to connect to your compute instance, replacing `private-key-file` and `public-ip-address` with your own values.
-
-    ```nohighlighting
-    $ <copy>ssh -i ~/.ssh/private-key-file.key opc@public-ip-address</copy>
+    $ <copy>ssh -i ~/.ssh/cloudshellkey opc@compute-public-ip</copy>
     ```
 
     You receive a message stating that the authenticity of your compute instance can't be established. Do you want to continue connecting?
 
-5. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
+3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
 
-  The terminal prompt becomes `[opc@compute-instance-name ~]$`, where `compute-instance-name` is the name of your compute instance and `opc` is your user account on your compute instance. You are now connected to your new compute instance.
-
-
+  The terminal prompt becomes `[opc@workshop ~]$`, where `workshop` is the name of your compute instance and `opc` is your user account on your compute instance. You are now connected to your new compute instance.
 
 
-## **STEP 2**: Configure X11 forwarding on your compute instance
 
-1. As the `root` user, use `yum` to install all the dependencies needed to run X11 applications.
+
+## **STEP 4**: Configure X11 forwarding on your compute instance
+
+1. Switch to the `root` user.
+
+    ```nohighlighting
+    $ <copy>sudo su -</copy>
+    ```
+
+2. Use `yum` to install all the dependencies needed to run X11 applications.
 
     ```nohighlighting
     # <copy>yum install -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-utils xorg-x11-apps xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1</copy>
     ```
+
+    *REVIEWER: Other sources (https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/run-graphical-apps-securely-on-oci.pdf) say to install:
+    sudo yum -y install xauth
+    sudo yum -y install xterm
+    and that's it*
 
 2. Open the `sshd_config` file, which is the configuration file for the SSH service.
 
@@ -160,10 +211,9 @@ To connect to your compute instance using Cloud Shell, you need to add your priv
 
 ## **STEP 4** Install an X Server on your local computer
 
-From this point on in the lab, you need to use your personal computer to connect to your compute instance as you cannot run the graphical user interface of the Oracle Database 19c installer from Cloud Shell.
+Now you need to set up an X Server on your local computer so that you can run graphical applications on your compute instance. For Windows 10, you can install VcXsrv. For macOS, you can install XQuartz.
 
-On Windows, you can install the X Server called VcXsrv.
-
+### Windows 10 - Install VcXsrv
 
 1. In a browser on your Windows machine, access the following URL:
 
@@ -196,66 +246,127 @@ On Windows, you can install the X Server called VcXsrv.
   In the bottom right corner, a VcXsrv icon is displayed. If you need to stop XLaunch for some reason, double-click the icon and click **Exit**.
 
 
-## **STEP 5**: Convert your private key to a .ppk file
+### macOS - Install XQuartz
 
-You need to convert the private key that you obtained from Oracle Cloud Infrastructure into a .ppk file format so that you can use it with PuTTY.
+1. In a browser on your local machine, enter the following url:
 
-1. Open **PuTTY Key Generator**.
+    ```nohighlighting
+    <copy>http://www.xquartz.org</copy>
+    ```
 
-2. From the **Conversions** menu, select **Import key**.
+2. Click **XQuartz-2.8.1.dmg** to download the file. At the time of this writing, the XQuartz version is 2.8.1 for macOS 10.9 or later.
 
-3. Browse to and select the private key file (.key) that was generated for you when you created your compute instance, and click **Open**. Your private key is converted into PPK format.
+3. Double-click the downloaded DMG file and wait a moment for an XQuartz.pkg file to be displayed.
 
-4. Leave **RSA** as the type of key to generate, and click **Save private key**.
+4. Double-click **XQuartz.pkg** to install XQuartz.
 
-5. Click **Yes** to save without a passphrase.
+  A message lets you know that the package will run a program to determine if the software can be installed.
 
-6. Enter a name for your private key, and click **Save**. It's helpful to use the same name as your original `KEY` file, but with a `PPK` file extension.
+5. Click **Continue**.
 
-7. Close PuTTY Key Generator.
+  The installer is displayed.
+
+6. On the **Introduction** page, click **Continue**.
+
+7. On the **Read Me** page, click **Continue**.
+
+8. On the **License** page, read the software license agreement, and then click **Continue**.
+
+9. In the dialog box, click **Agree** to agree to the terms of the license software agreement.
+
+10. On the **Installation Type** page, click **Install** to perform a standard installation.
+
+11. Close any open applications, including the browser and terminal window.
+
+12. Click **Continue Installation**.
+
+13. In the dialog box, enter your computer user's password to allow the installation, and then click **Install Software**.
+
+  The **Installation** page is displayed showing the installation activities. When the installation is completed, the **Summary** page is displayed.
+
+14. Click **Log Out** to finish.
+
+15. In the dialog box, click **Move to Trash** to delete the installer package.
+
+16. *IMPORTANT!* Reboot your local computer.
 
 
-## **STEP 6**: Configure an X11 forwarding connection in PuTTY that connects to your compute instance
+## **STEP 5**: Connect to your compute instance from your local machine
 
-1. Open PuTTY on your local Windows computer.
 
-2. On the **Session** tab, configure the following:
+### Windows
+
+Download your private key from Cloud Shell, convert it to PPK file format, and then connect to your compute instance using PuTTY.
+
+1. Download your private key from Cloud Shell.
+
+  a) From the Cloud Shell menu, select **Download**.
+
+    The **Download File** dialog box is displayed.
+
+  b) Enter **.ssh/cloudshellkey**, and then click **Download**.
+
+    The file is transferred and the **Opening cloudshellkey** dialog box is displayed.
+
+  c) Select **Save File** (even if it's selected already), and click **OK**.
+
+  d) Browse to a directory on your local computer to which only you have access, and then click **Save**.
+
+  e) If you haven't set up permissions on the folder to which you just saved your SSH private key, you need to do that before continuing on.
+
+2. Convert your private key to PPK file format.
+
+  a) Open **PuTTY Key Generator**.
+
+  b) From the **Conversions** menu, select **Import key**.
+
+  c) Browse to and select the private key file (.key) that was generated for you when you created your compute instance, and click **Open**. Your private key is converted into PPK format.
+
+  d) Leave **RSA** as the type of key to generate, and click **Save private key**.
+
+  e) Click **Yes** to save without a passphrase.
+
+  f) Enter a name for your private key, and click **Save**. It's helpful to use the same name as your original `KEY` file, but with a `PPK` file extension.
+
+  g) Close PuTTY Key Generator.
+
+
+3. Configure an X11 forwarding connection in PuTTY that connects to your compute instance.
+
+  a) Open PuTTY on your local Windows computer.
+
+  b) On the **Session** tab, configure the following:
 
     - **Hostname**: Enter the public IP address for your compute instance.
     - **Port**: Leave port **22** as is.
 
-3. Browse to **Connection** > **Data**, and enter `opc` as the **Auto-login username**.
+  c) Browse to **Connection** > **Data**, and enter `opc` as the **Auto-login username**.
 
-4. Browse to **Connection** > **SSH** > **Auth**, and configure the following:
+  d) Browse to **Connection** > **SSH** > **Auth**, and configure the following:
 
-  a) In the **Authentication parameters** area, click **Browse**.
+    - In the **Authentication parameters** area, click **Browse**.
 
-  b) Browse to your private key directory, select your private key (in `PPK` format), and then click **Open**.
+    - Browse to your private key directory, select your private key (in `PPK` format), and then click **Open**.
 
-5. Browse to **Connection** > **SSH** > **X11**, and configure the following:
+  e) Browse to **Connection** > **SSH** > **X11**, and configure the following:
 
-  a) Select **Enable X11 forwarding**.
+    - Select **Enable X11 forwarding**.
 
-  b) Leave the **X display location** box empty.
+    - Leave the **X display location** box empty.
 
+  f) Return to the **Session** tab. In the **Saved Sessions** box, enter the name of your compute instance, and then click **Save**. In the future, you can simply load your saved session and quickly connect.
 
-6. Return to the **Session** tab. In the **Saved Sessions** box, enter the name of your compute instance, and then click **Save**.
+  g) Click **Open**. A message is displayed that the server's host key is not cached in the registry.
 
-  In the future, you can simply load your saved session and quickly connect.
+  h) Click **Yes** because you trust this host. You are now logged in as the `opc` user. Notice that the following line is displayed:
 
-7. Click **Open**.
-
-  A message is displayed that the server's host key is not cached in the registry.
-
-8. Click **Yes** because you trust this host.
-
-  You are now logged in as the `opc` user. Notice that the following line is displayed:
-
-  `/usr/bin/xauth: file /home/opc/.Xauthority does not exist`
+    ```
+    /usr/bin/xauth: file /home/opc/.Xauthority does not exist
+    ```
 
   The .Xauthority file is automatically generated the first time you log in to your compute instance. For subsequent logins, you do not see this message. The .Xauthority file stores credentials in cookies used by `xauth` for authentication of X sessions. Once an X session is started, the cookie is used to authenticate connections to that specific display.
 
-9. Display the authorization information for the `opc` user used to connect to the X server.
+4. Display the authorization information for the `opc` user used to connect to the X server.
 
     ```
     $ <copy>xauth list</copy>
@@ -263,15 +374,53 @@ You need to convert the private key that you obtained from Oracle Cloud Infrastr
     compute1.subnet03311012.vcn03311012.oraclevcn.com:10  MIT-MAGIC-COOKIE-1  9055a7967897789f94fd6a3fbc1b4b90
     ```
 
-10. View the `DISPLAY` environment variable.
+5. View the `DISPLAY` environment variable.
 
     ```
     $ <copy>echo $DISPLAY</copy>
+
+    10.0.0.95:10.0
     ```
-    The output is `your-computer-ip:10.0`. Notice that the `10` is also part of the authentication information in the previous step.
+    The output is `compute-private-ip:10.0`. Notice that the `10` is also part of the authentication information in the previous step.
 
 
-## **STEP 7**: Test that X forwarding is working
+
+### macOS
+
+1. From the **Go** menu, select **Utilities**, and then double-click the **XQuartz** icon.
+
+  A terminal window is displayed.
+
+2. Connect to your compute instance. To use X11 forwarding to your Mac, you can use the -X switch. In the following command, replace `compute-public-ip` with the public IP address of your compute instance.
+
+    ```nohighlighting
+    $ <copy>ssh -X -i ~/.ssh/cloudshellkey opc@compute-public-ip
+
+    /usr/bin/xauth: file /home/opc/.Xauthority does not exist.
+    ```
+    The .Xauthority file is automatically generated the first time you log in to your compute instance. For subsequent logins, you do not see this message. The .Xauthority file stores credentials in cookies used by `xauth` for authentication of X sessions. Once an X session is started, the cookie is used to authenticate connections to that specific display.
+
+3. Display the authorization information for the `opc` user used to connect to the X server.
+
+    ```nohighlighting
+    $ <copy>xauth list</copy>
+
+    workshop.subnet03311012.vcn03311012.oraclevcn.com:10  MIT-MAGIC-COOKIE-1  9055a7967897789f94fd6a3fbc1b4b90
+    ```
+
+4. View the `DISPLAY` environment variable.
+
+      ```
+      $ <copy>echo $DISPLAY</copy>
+
+      10.0.0.95:10.0
+      ```
+      The output is `compute-private-ip:10.0`. Notice that the `10` is also part of the authentication information in the previous step.
+
+
+
+
+## **STEP 6**: Test X11 forwarding
 
 1. Test that the `opc` user can open a graphical user interface application like `xeyes`.
 
@@ -286,15 +435,21 @@ You need to convert the private key that you obtained from Oracle Cloud Infrastr
 
 3. Close `xclock`.
 
-  The XLaunch application icon indicates that there are zero clients connected.
+  (Windows) The XLaunch application icon indicates that there are zero clients connected.
 
 
 
-## **STEP 8**: Configure X11 forwarding for an `oracle` user
+## **STEP 7**: Configure X11 forwarding for an `oracle` user
 
 It's important to configure X11 forwarding for the `oracle` user too because eventually, you need to be able to display the graphical user interfaces, such as the Oracle Database 19c installer, as the `oracle` user.
 
-1. Create an `oracle` user. The following commands are used to create an `oracle` user in preparation for an Oracle Database 19c installation.
+1. Switch to the `root` user.
+
+    ```nohighlighting
+    $ <copy>sudo su -</copy>
+    ```
+
+2. Create an `oracle` user. The following commands are used to create an `oracle` user in preparation for an Oracle Database 19c installation.
 
     ```nohighlighting
     $ <copy>groupadd -g 54321 oinstall</copy>
@@ -302,18 +457,37 @@ It's important to configure X11 forwarding for the `oracle` user too because eve
     $ <copy>groupadd -g 54323 oper</copy>
     $ <copy>useradd -u 54321 -g oinstall -G dba,oper oracle</copy>
     ```
+3. Set the password for the `oracle` user as **Ora4U_1234**.
 
-2. *IMPORTANT!* As the `opc` user, copy the Xauthority file from the `opc` user to the `oracle` user.
+    ```nohighlighting
+    $ <copy>passwd oracle</copy>
+    ```
+
+    Enter and confirm **Ora4U_1234** as the password.
+
+4. Return to the `opc` user.
+
+    ```nohighlighting
+    # <copy>exit</copy>
+    ```
+
+5. *IMPORTANT!* As the `opc` user, copy the Xauthority file from the `opc` user to the `oracle` user.
 
     ```nohighlighting
     $ <copy>sudo cp ~/.Xauthority /home/oracle/.Xauthority</copy>
     ```
 
 
-3. Switch to the `oracle` user and enter the password.
+6. Switch to the `oracle` user and enter the password **Ora4U_1234**.
 
     ```nohighlighting
     $ <copy>su - oracle</copy>
+    ```
+
+7. Test that the `oracle` user can open a graphical user interface application like `xeyes`.
+
+    ```
+    $ <copy>xeyes</copy>
     ```
 
 
