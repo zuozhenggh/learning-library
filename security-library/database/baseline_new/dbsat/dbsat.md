@@ -104,6 +104,10 @@ This lab assumes you have:
 
 5. When prompted, enter the password "*`Oracle123`*"
 
+      ````
+      <copy>Oracle123</copy>
+      ````
+
    ![](./images/dbsat-003.png " ")
 
     **Note**:
@@ -129,6 +133,10 @@ This lab assumes you have:
     - If you choose not to encrypt data, the four report files are generated in the specified directory
 
 2. DBSAT will prompt the user for one password – the password used when running the collector so it can unzip the file – followed by another password prompt that will be used to protect the reports zip file, plus the password confirmation: stick to "*`Oracle123`*"
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
    ![](./images/dbsat-004.png " ")
 
@@ -448,6 +456,14 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
       ````
 
 7. Enter *`DBSAT_ADMIN`* as the username and "*`Oracle123`*" as the password
+
+      ````
+      <copy>DBSAT_ADMIN</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
    ![](./images/dbsat-030.png " ")
 
@@ -1098,4 +1114,4 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

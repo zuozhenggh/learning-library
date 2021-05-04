@@ -143,6 +143,14 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
 
 2. Login to Oracle Key Vault Web Console as *`KVRESTADMIN`* with the password "*`T06tron.`*"
 
+      ````
+      <copy>KVRESTADMIN</copy>
+      ````
+
+      ````
+      <copy>T06tron.</copy>
+      ````
+
    ![](./images/okv-001.png " ")
 
 3. Click [**Endpoints**]
@@ -184,6 +192,10 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
         <copy>./okv_crea_config_script.sh</copy>
           ````
 
+          ````
+        <copy>T06tron.</copy>
+          ````
+
        ![](./images/okv-005a.png " ")
        ![](./images/okv-005b.png " ")
        ![](./images/okv-005c.png " ")
@@ -205,6 +217,14 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
 
           ````
         <copy>./okv_change_endpoint_pwd.sh</copy>
+          ````
+
+          ````
+        <copy>change-on-install</copy>
+          ````
+
+          ````
+        <copy>Oracle123</copy>
           ````
 
        ![](./images/okv-007.png " ")
@@ -256,6 +276,10 @@ Typically, the first thing that users will do is upload their existing Oracle Wa
 
       ````
     <copy>./okv_upload_wallet.sh</copy>
+      ````
+
+      ````
+    <copy>Oracle123</copy>
       ````
 
    ![](./images/okv-013.png " ")
@@ -644,4 +668,4 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Peter Wahl, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021
