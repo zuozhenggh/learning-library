@@ -41,7 +41,7 @@ The preinstaller for Oracle Database 19c performs many pre-installation and pre-
     # <copy>yum install oracle-database-preinstall-19c</copy>
     ```
 
-2. Set the password for the `oracle` user as `WElcome123##`. You are prompted to enter and confirm the password.
+2. Set the password for the `oracle` user as `Ora4U_1234`. You are prompted to enter and confirm the password.
 
     ```nohighlighting
     # <copy>passwd oracle</copy>
