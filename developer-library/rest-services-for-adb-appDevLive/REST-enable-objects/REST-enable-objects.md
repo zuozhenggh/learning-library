@@ -176,7 +176,7 @@ select empno, ename, dept from emp where empno = :id
 
     ![submitted URL and working REST service](./images/rest-24.png)
 
-## **STEP 2**: REST Enable Business Logic (PL/SQL procedure)
+## **STEP 1**: REST Enable Business Logic (PL/SQL procedure)
 
 1. It's now time to REST enable our Business Logic or PL/SQL procedure we created in the previous lab. To start, left click our module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
 
