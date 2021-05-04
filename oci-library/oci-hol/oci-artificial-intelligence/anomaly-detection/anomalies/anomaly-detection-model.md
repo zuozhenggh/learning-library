@@ -36,7 +36,12 @@ Now that we have a data asset to train a model, let train an anomaly detection m
 This time, the data asset previously created should show up on the default panel. Select Next
 ![](../images/choose_an_existing_dataset.png " ")
 
-This takes us to train a model menu. Among options like naming the model and providing description which are option since they relate to housekeeping we also have an option to specify FAP(false alarm probability) and Train Fraction Ratio. The default values for these are 0.01 and 0.7 implying 70% respectively.
+
+This takes us to train a model menu. Among options like naming the model and providing description which are option since they relate to housekeeping we also have an option to specify FAP(false alarm probability) and Train Fraction Ratio. The default values for these are 0.01 and 0.7 (implying 70%) respectively.
+
+FAP stands for False Alarm Probability. In other words, this basically specifies how much accurate the model needs to be. A high FAP model means the likelihood of an anomaly flagged by AD service to be a false alarm is high. If this is not desired, depending on the sensitivity requirements of a user, they can specify it to be low. One thing to keep in mind is by specifying a lower FAP, the model needs more time to train.
+
+Train Fraction Ratio specifies to the model on how much of the data to use for training. So the default value 0.7 or 70% specifies the model to use 70% of the data for training.
 
 The default value 0.01 is very less so in order to save on the training time, we will dial up the FAP to 0.05. The training fraction ratio can be left as it is.
 ![](../images/create_and_train_model.png " ")
@@ -144,6 +149,8 @@ This will download a file named anomalies.json Lets peek at the contents
  ```
 
 We see that the results for all the anomalies are within their own key. And each value is a further a tuple that contains the timestamp, actual value and what the model expects the value to be.
+
+In the results pay attention to the  difference between the estimatedValue and actualValue. Generally some error is expected but in this particular values are what the AD service deemed to be anomalous.
 
 Congratulations on completing this lab!
 

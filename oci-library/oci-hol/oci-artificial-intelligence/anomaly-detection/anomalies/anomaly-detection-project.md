@@ -25,6 +25,8 @@ As mentioned, Project is a way to organize multiple data assets, models, deploym
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Anomaly Detection item under AI services.
 
+Note: Users can select any compartment where they want the AD service project to reside.
+
 ![](../images/1_navigate_to_ad_menu.png " ")
 
 Clicking the Anomaly Detection Option will navigate one to the Anomaly Detection Console. Once here, select Create Project.
@@ -36,19 +38,7 @@ The Create Project button navigates User to a form where they can specify the co
 Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane. From here onwards, select livelabs_demo.
 ![](../images/4_project_pane.png " ")
 
-## **STEP 2:** Upload Data to Object Storage
-
-In previous lab session, if you have already uploaded the data to object storage, you can skip this step. Otherwise, you can follow the following instructions to upload a training data to object storage.
-
-Click the Burger Menu on the top left corner again, and select Storage menu, and then click Buckets.
-![](../images/object-storage-1-select-menu.png " ")
-
-Click Create Bucket button if you do not have an existing bucket; otherwise, click a bucket, and continue to next page.
-
-Click the Upload button and select the training data you downloaded from previous session to upload.
-![](../images/object-storage-2-upload-file.png " ")
-
-## **STEP 3:** Create a Data Asset
+## **STEP 2:** Create a Data Asset
 
 We now need to create a data asset to refer to the previously uploaded object storage.
 
