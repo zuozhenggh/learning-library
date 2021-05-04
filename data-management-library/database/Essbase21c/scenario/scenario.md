@@ -185,7 +185,7 @@ This Step is geared towards developing an understanding of security for Essbase 
    b) Go to the DataSheet tab and connect to the database as Sam, ensure the the POV has the correct sandbox member(sb0).
       ![](./images/imageSM_19.png "")
 
-   c) Go to the cell C12 enter a number(for e.g, 2000) then click submit (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
+   c) Go to the cell C13 enter a number(for e.g, 2000) then click submit (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
 
       Please verify the intersection as mentioned.
 
