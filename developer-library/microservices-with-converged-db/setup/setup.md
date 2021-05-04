@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this 25-minute lab we will provision and setup the resources to execute microservices in your tenancy.  
+In this lab we will provision and setup the resources to execute microservices in your tenancy.  
+
+Estimates Lab Time - 25 minutes
 
 ### Objectives
 
@@ -37,7 +39,7 @@ If, however, you have already used up some of the quota on your tenancy, perhaps
 | Container Engine | Region | Cluster Count                                        | **1**     | 1                  |
 | Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **2**     | 2                  |
 |                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
-| LbaaS            | Region | 10Mbps Load Balancer Count                           | **3**     | 3                  |
+| LbaaS            | Region | 100Mbps Load Balancer Count                           | **3**     | 3                  |
 
 Quota usage and limits can be check through the console: **Governance & Administration** --> **Governance** --> **Limits, Quotas and Usage**, For example:
 

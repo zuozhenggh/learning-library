@@ -4,6 +4,8 @@
 
 In this lab we will tear down the resources created in your tenancy and the directory in cloud shell.
 
+Estimates Lab Time - 10 minutes
+
 ### Objectives
 
 * Clone the setup and microservices code

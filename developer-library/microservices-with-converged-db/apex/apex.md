@@ -4,7 +4,7 @@
 
 This lab will show you how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
 
-Estimated Lab Time - 
+Estimated Lab Time - 10 minutes
 
 ### Objectives
 
