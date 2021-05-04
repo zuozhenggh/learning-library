@@ -160,8 +160,6 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
                                                     p_output out number) 
     is
 
-        l_count number;
-
     begin
 
         select count(*) 
