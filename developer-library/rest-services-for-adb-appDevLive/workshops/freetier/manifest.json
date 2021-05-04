@@ -40,7 +40,7 @@
         {
             "title": "Lab 6: REST enable tables and business logic",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../REST-enable-objects/REST-enable-objects.md"
+            "filename": "../../rest-enable-objects/rest-enable-objects.md"
         },
         {
             "title": "Lab 7: Securing the REST endpoints",
