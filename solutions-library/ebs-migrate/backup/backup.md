@@ -84,6 +84,14 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     </copy>
     ```
 
+    If you run into a symbol lookup error stating "undefined symbol: Perl_xs_handshake," run the following command and then rerun the above command.
+
+    ```
+    <copy>
+    unset PERL5LIB
+    </copy>
+    ```
+
     ![](./images/25.png " ")
 
 4. On the first screen, choose **Option 1**, "Create E-Business Suite Backup and Upload to Oracle Cloud Infrastructure".
@@ -122,7 +130,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
             OS User Custom Private Key [skip if not applicable] : Press Enter to skip     
             OS User Passphrase [skip if not applicable] : Press Enter to skip
         
-            Context File : **/u01/install/APPS/12.1.0/appsutil/ebsdb_apps.xml**
+            Context File : **/u01/install/APPS/19.0.0/appsutil/ebsdb_apps.xml**
         
             Database Transparent Data Encrypted ( TDE ): ( Yes | No ) : **No**
 
