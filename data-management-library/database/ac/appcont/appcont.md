@@ -165,6 +165,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````    
 
     This will return an instance name, for example:
+
     ````
     $ srvctl status service -d `srvctl config database` -s noac
         Service noac is running on instance(s) racHPNUY2
@@ -381,8 +382,8 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
 
 5. Connect to the database with SQL\*Plus as the HR user over the TAC-enabled service
     ````
-    sqlplus hr/W3lc0m3#W3lc0m3#@"(DESCRIPTION=(CONNECT_TIMEOUT=90)(RETRY_COUNT=50)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)(ADDRESS_LISTADDRESS=(PROTOCOL=tcp)(HOST=lvracdb-s01-2021-03-30-204603-scan.pub.racdblab.oraclevcn.com)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=tac_service.pub.racdblab.oraclevcn.com)))"
-    ```` 
+    sqlplus hr/W3lc0m3#W3lc0m3#@"(DESCRIPTION=(CONNECT_TIMEOUT=90)(RETRY_COUNT=50)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=tcp)(HOST=lvracdb-s01-2021-03-30-204603-scan.pub.racdblab.oraclevcn.com)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=tac_service.pub.racdblab.oraclevcn.com)))"
+    ````
 
     Update a row in the table EMP4AC.
     For example:
@@ -511,4 +512,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Authors** - Troy Anthony
 * **Contributors** - Kay Malcolm
-* **Last Updated By/Date** - Troy Anthony, March 2021
+* **Last Updated By/Date** - Troy Anthony, April 2021
