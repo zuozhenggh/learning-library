@@ -209,9 +209,9 @@ The SSH (Secure Shell) protocol is a method for secure remote login from one com
     ```
 
 
-## **STEP 4** Install an X Server on your local computer
+## **STEP 5**: Install an X Server on your local computer
 
-Now you need to set up an X Server on your local computer so that you can run graphical applications on your compute instance. For Windows 10, you can install VcXsrv. For macOS, you can install XQuartz.
+Set up an X Server on your local computer so that you can run graphical applications on your compute instance. For Windows 10, you can install VcXsrv. For macOS, you can install XQuartz.
 
 ### Windows 10 - Install VcXsrv
 
@@ -291,7 +291,9 @@ Now you need to set up an X Server on your local computer so that you can run gr
 16. *IMPORTANT!* Reboot your local computer.
 
 
-## **STEP 5**: Connect to your compute instance from your local machine
+## **STEP 6**: Connect to your compute instance from your local machine
+
+An `.Xauthority` file is automatically generated the first time you log in to your compute instance. This file stores credentials in cookies used by `xauth` for authentication of X sessions. Once an X session is started, the cookie is used to authenticate connections to that specific display.
 
 
 ### Windows
@@ -364,14 +366,12 @@ Download your private key from Cloud Shell, convert it to PPK file format, and t
     /usr/bin/xauth: file /home/opc/.Xauthority does not exist
     ```
 
-  The .Xauthority file is automatically generated the first time you log in to your compute instance. For subsequent logins, you do not see this message. The .Xauthority file stores credentials in cookies used by `xauth` for authentication of X sessions. Once an X session is started, the cookie is used to authenticate connections to that specific display.
-
 4. Display the authorization information for the `opc` user used to connect to the X server.
 
     ```
     $ <copy>xauth list</copy>
 
-    compute1.subnet03311012.vcn03311012.oraclevcn.com:10  MIT-MAGIC-COOKIE-1  9055a7967897789f94fd6a3fbc1b4b90
+    workshop.subnet03311012.vcn03311012.oraclevcn.com:10  MIT-MAGIC-COOKIE-1  9055a7967897789f94fd6a3fbc1b4b90
     ```
 
 5. View the `DISPLAY` environment variable.
@@ -391,14 +391,14 @@ Download your private key from Cloud Shell, convert it to PPK file format, and t
 
   A terminal window is displayed.
 
-2. Connect to your compute instance. To use X11 forwarding to your Mac, you can use the -X switch. In the following command, replace `compute-public-ip` with the public IP address of your compute instance.
+2. Connect to your compute instance. To use X11 forwarding to your Mac, you can use the `-X` switch. In the following command, replace `compute-public-ip` with the public IP address of your compute instance.
 
     ```nohighlighting
     $ <copy>ssh -X -i ~/.ssh/cloudshellkey opc@compute-public-ip
 
     /usr/bin/xauth: file /home/opc/.Xauthority does not exist.
     ```
-    The .Xauthority file is automatically generated the first time you log in to your compute instance. For subsequent logins, you do not see this message. The .Xauthority file stores credentials in cookies used by `xauth` for authentication of X sessions. Once an X session is started, the cookie is used to authenticate connections to that specific display.
+
 
 3. Display the authorization information for the `opc` user used to connect to the X server.
 
@@ -422,7 +422,9 @@ Download your private key from Cloud Shell, convert it to PPK file format, and t
 
 ## **STEP 6**: Test X11 forwarding
 
-1. Test that the `opc` user can open a graphical user interface application like `xeyes`.
+Test that the `opc` user can open a graphical user interface application like `xeyes`.
+
+1. As the `opc` user, launch `xeyes`.
 
     ```
     $ <copy>xeyes</copy>
@@ -433,7 +435,7 @@ Download your private key from Cloud Shell, convert it to PPK file format, and t
 
   The application indicates that there is one client connected.
 
-3. Close `xclock`.
+3. Close `xeyes`.
 
   (Windows) The XLaunch application icon indicates that there are zero clients connected.
 
@@ -441,7 +443,7 @@ Download your private key from Cloud Shell, convert it to PPK file format, and t
 
 ## **STEP 7**: Configure X11 forwarding for an `oracle` user
 
-It's important to configure X11 forwarding for the `oracle` user too because eventually, you need to be able to display the graphical user interfaces, such as the Oracle Database 19c installer, as the `oracle` user.
+The Oracle Universal Installer also has a graphical user interface and should be run by the `oracle` user. Therefore, if you plan to do an Oracle Database 19c installation on your compute instance, you need to configure X11 forwarding for the `oracle` user.
 
 1. Switch to the `root` user.
 
@@ -457,13 +459,13 @@ It's important to configure X11 forwarding for the `oracle` user too because eve
     $ <copy>groupadd -g 54323 oper</copy>
     $ <copy>useradd -u 54321 -g oinstall -G dba,oper oracle</copy>
     ```
-3. Set the password for the `oracle` user as **Ora4U_1234**.
+3. Set the password for the `oracle` user as `Ora4U_1234`.
 
     ```nohighlighting
     $ <copy>passwd oracle</copy>
     ```
 
-    Enter and confirm **Ora4U_1234** as the password.
+    Enter and confirm `Ora4U_1234` as the password.
 
 4. Return to the `opc` user.
 
@@ -471,14 +473,14 @@ It's important to configure X11 forwarding for the `oracle` user too because eve
     # <copy>exit</copy>
     ```
 
-5. *IMPORTANT!* As the `opc` user, copy the Xauthority file from the `opc` user to the `oracle` user.
+5. *IMPORTANT!* As the `opc` user, copy the `Xauthority` file from the `opc` user to the `oracle` user.
 
     ```nohighlighting
     $ <copy>sudo cp ~/.Xauthority /home/oracle/.Xauthority</copy>
     ```
 
 
-6. Switch to the `oracle` user and enter the password **Ora4U_1234**.
+6. Switch to the `oracle` user and enter the password `Ora4U_1234`.
 
     ```nohighlighting
     $ <copy>su - oracle</copy>
@@ -493,7 +495,7 @@ It's important to configure X11 forwarding for the `oracle` user too because eve
 
 ## What's Next?
 
-If you intend to do the [Install Oracle Database 19c with Automatic Root Script Execution](?lab=install-db19c-auto-root-script-execution.md) lab using the compute instance that you created in this lab, you need to complete the prerequisite tasks beforehand. See the [Perform Prerequisite Tasks for an Oracle Database 19c Installation](?lab=perform-db19c-prerequisite-tasks.md) lab.
+Be sure to complete the [Perform Prerequisite Tasks for an Oracle Database 19c Installation](?lab=perform-db19c-prerequisite-tasks.md) prior to doing the [Install Oracle Database 19c with Automatic Root Script Execution](?lab=install-db19c-auto-root-script-execution.md) lab.
 
 
 
@@ -509,4 +511,4 @@ If you intend to do the [Install Oracle Database 19c with Automatic Root Script 
     - James Spiller, Principal User Assistance Developer, Database Development
     - Dragos Negru, Principal Cloud Specialist - Data Management, TE Hub
     - Jean-Francois Verrier, User Assistance Director, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, May 3 2021
+- **Last Updated By/Date** - Jody Glover, Database team, May 4 2021

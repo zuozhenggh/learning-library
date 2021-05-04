@@ -158,7 +158,7 @@ The LiveLabs tenancy provides you with an Autonomous Transaction Processing data
 
 ## **STEP 2**: Register your Autonomous Database with Oracle Data Safe
 
-By default, when you register an Autonomous Database, you are automatically granted privileges in Oracle Data Safe to use the User Assessment, Security Assessment, and Activity Auditing features with your database. On your actual database, all Oracle Data Safe features are enabled by default, except Data Masking.
+By default, when you register an Autonomous Database, you are automatically granted privileges in Oracle Data Safe to use the User Assessment, Security Assessment, and Activity Auditing features with your database. On your database, all Oracle Data Safe features are enabled by default, except Data Masking.
 
 1. On the **Autonomous Database Information** tab, under **Data Safe**, click **Register**.  <if type="paid">If there is no **Register** option, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. If you are the tenancy administrator, please enable Oracle Data Safe in your tenancy and region. Otherwise, please contact your tenancy administrator to gain access to an appropriate region.</if> <if type="freetier">If there is no **Register** option, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. As the tenancy administrator, please refer to the prerequisites to enable Oracle Data Safe in a region of your tenancy.</if><if type="livelabs">If there is no **Register** option, it is because Oracle Data Safe is not yet enabled in the region you have selected. For help, please click the **Need Help** button on the toolbar.</if>
 
@@ -292,7 +292,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 8. Click the name of your target database to view its details.
 
 
-9. In the **Target Details** dialog box, review the read-only connection information for your database.
+9. In the **Target Details** dialog box, review the connection information for your database. The information is read only.
       - You cannot edit the registration details for an Autonomous Database.
       - You can view the compartment to which the database belongs. The compartment for an Autonomous Database is the same compartment in Oracle Cloud Infrastructure in which the database resides.
       - Oracle Data Safe connects to the database via a TLS connection.
@@ -335,4 +335,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, March 29, 2021
+  * **Last Updated By/Date** - Jody Glover, May 4 2021
