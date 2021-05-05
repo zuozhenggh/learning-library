@@ -6,6 +6,9 @@ In real-world business scenarios, the actual use case of anomaly detection might
 
 In this session, we will discuss several common scenarios in general and show how to handle them properly, in order to inspire you to prepare the real data in your actual application.
 
+Here is a case study on using a few preprocessing techniques to prepare raw data from a transportation domain for anomaly detection.
+[Case Study on Data Preprocessing to Use Anomaly Detection Service](youtube:8JNKD2fi_eQ)
+
 ***Estimated Lab Time***: 75 minutes
 
 ### Objectives

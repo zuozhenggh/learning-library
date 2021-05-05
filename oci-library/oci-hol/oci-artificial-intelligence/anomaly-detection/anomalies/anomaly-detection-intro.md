@@ -58,5 +58,6 @@ Note that one project can have multiple data assets, multiple models, multiple d
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
+    * Marianne Liu - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
     * Jason Ding - Principal Data Scientist, May 2021
