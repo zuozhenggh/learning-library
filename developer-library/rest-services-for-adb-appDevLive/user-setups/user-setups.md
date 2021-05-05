@@ -60,6 +60,8 @@ Estimated Lab Time: 10 minutes
 
 In this section, we created a new database user and granted them the needed roles and quota to perform this LiveLab.
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager

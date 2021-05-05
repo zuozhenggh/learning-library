@@ -99,11 +99,9 @@ We will be walking through series of steps on how to create Customer Summary Rep
 4. There is only one LOV for **Sales Rep LOV** , Click on the pencil icon , Copy the **Record Group Query**
   ![](images/record-group-details.png " ")
 
-      ````
-      <copy>
-      select id, first_name||' '||last_name Name from s_emp where title='Sales Representative' order by last_name
-      </copy>
-      ````
+      ```
+      <copy>select id, first_name||' '||last_name Name from s_emp where title='Sales Representative' order by last_name
+      ```
 5. Go to your Application Home Page, Click on **Shared Components** and Click on **List of Values**
   ![](images/apex_lov.png " ")
 
@@ -185,9 +183,8 @@ That completes the List of Values section of the Migration.
     ![](images/customer_tree.png " ")  
 
         Enter the below SQL
-        ````
-        <copy>
-        SELECT CASE
+        ```
+        <copy>SELECT CASE
            WHEN connect_by_isleaf = 1 THEN 0
            WHEN LEVEL = 1 THEN 1
            ELSE -1
@@ -220,8 +217,7 @@ That completes the List of Values section of the Migration.
                   FROM   s_customer e)
           START WITH parent_id IS NULL
           CONNECT BY parent_id = PRIOR id
-        </copy>
-        ````
+        ```
   8. In order for the Tree to show up , make the changes as shown below to **Settings** under **Attributes** Section
         ![](images/change_tree_attribute.png " ")   and save the form.
 
@@ -284,8 +280,3 @@ Once the page is created, you can go to the page and make the changes you need. 
  - **Author** -  Vanitha Subramanyam, Senior Solution Architect
  - **Contributors** -Vanitha Subramanyam, Senior Solution Architect
  - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -100,18 +100,18 @@ Time to set the headers of this HTTP request. We are going to set the content ty
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv"
 ```
 
-Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user gary:PASSWORD**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
+Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user "gary:PASSWORD"**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user gary:PASSWORD
+-H "Content-Type:text/csv" --user "gary:PASSWORD"
 ```
 
 Finally, we need to add the URL we copied previously. We will be appending **batchload?batchRows=5000&errorsMax=20** to indicate that this is a batch load, we want to load them in groups of 5000, and to stop running if we hit 20 errors:
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
+-H "Content-Type:text/csv" --user "gary:123456ZAQWSX!!" \
 "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 ```
 
@@ -125,7 +125,7 @@ There it is, the final cURL command we will use to load the data into the table.
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user gary:123456ZAQWSX!! \
+-H "Content-Type:text/csv" --user "gary:123456ZAQWSX!!" \
 "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
 
 #INFO Number of rows processed: 2,097,148
@@ -156,19 +156,16 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
     The following function returns a count of all the rows that match the input provided to col2 in the table:
 
     ````
-    <copy>create or replace procedure return_count (p_input in varchar2,
-                                                    p_output out number) 
+    <copy>
+    create or replace procedure return_count (p_input in varchar2, p_output out number) 
     is
 
-        l_count number;
-
     begin
-
         select count(*) 
           into p_output
           from csv_data
          where col2 = p_input;
- 
+
     end return_count;
     /
     </copy>
@@ -178,21 +175,16 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
     ![compile the function in the sql worksheet](./images/ld-10.png)
 
-11. We can test this function with a quick PL/SQL procedure. Copy and paste the following into the SQL Worksheet and run the procedure with the **Run Script** button:
+1.  We can test this function with a quick PL/SQL procedure. Copy and paste the following into the SQL Worksheet and run the procedure with the **Run Script** button:
 
     ````
     <copy>
     declare
-
         l_output number;
-
     begin
-
         return_count(p_input => 'a1',
                     p_output => l_output);
-
     dbms_output.put_line(l_output);
-
     end;
     /
     </copy>
@@ -204,9 +196,11 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
 In this lab, you loaded over two million rows into a table with curl and REST as well as added business logic to the database.
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - April 2021
+- **Last Updated By/Date** - Kay Malcolm, May 2021
 - **Workshop Expiry Date** - April 2022
 
