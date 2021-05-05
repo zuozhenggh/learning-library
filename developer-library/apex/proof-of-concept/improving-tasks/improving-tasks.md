@@ -116,7 +116,7 @@ If you review the Milestones select list you will notice that all milestones are
 4. From the List of Values page, click **Copy**.
 
     In the Copy List of Values dialog enter the following:
-    - Copy List of Values - select **HOL_MILESTONES - Dynamic**
+    - Copy List of Values - select **HOL_MILESTONES.NAME - Dynamic**
     - New List of Values Name - enter **HOL_MILESTONES.NAME PAGE 8**
 
     Click **Copy**.
