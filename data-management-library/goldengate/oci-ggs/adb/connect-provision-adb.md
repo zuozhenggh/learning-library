@@ -23,9 +23,9 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 ## **STEP 1:** Create a VCN and subnet
 
 
-1.  Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
+1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2.  Click **Start VCN Wizard**.
 
@@ -45,9 +45,9 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 ## **STEP 2:** Create an ATP Instance
 
-1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  Click **Create Autonomous Database**.
 
@@ -133,9 +133,9 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 ## **STEP 4:** Create an ADW Instance
 
 
-1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 2.  Click **Create Autonomous Database**.
 
