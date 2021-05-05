@@ -20,13 +20,15 @@ Learn how to
 - The following lab requires an Autonomous Database - Shared Infrastructure account. 
 - And that the Graph-enabled user has been created. That is, a database user with the correct roles and privileges exists.
 
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
+
 ## **STEP 1**: Connect to your Autonomous Database using Graph Studio
 
 1. If you have the Graph Studio URL then proceed to step 4. 
 
     Log in to the OCI Console, choose the Autonomous Database instance, then click on the Tools tab on the details page menu on the left. 
 
-   ![OCI Console](./images/oci-console-adb-tools-graph-studio-link.png)
+   ![OCI Console](./images/adw-details-tools-graph-studio.png)
 
 
 2. Click on the Graph Studio card to open in a new page or tab in your browser.   
@@ -36,13 +38,28 @@ Learn how to
 
 3. Enter your Autonomous Database account credentials (`GRAPHUSER`/`gs_LLwid770#`) into the login screen:
 
-    ![](./images/14-graph-studio-login.png " ")
+    ![](./images/adw-graph-studio-login.png " ")
 
 4. Then click the "Sign In" button. You should see the studio home page.   
 
-    ![](./images/15-graph-studio-home.png " ") 
+    ![](./images/gs-graphuser-home-page.png " ") 
 
-## **STEP 2**: Create a graph of accounts and transactions from the corresponding tables
+
+## **Step 2**: Create a small 2Gb execution environment
+
+1. Before creating a graph we will create an execution environemnt for running notebook paragraphs and loading the graph into an in-memory representation.   
+   
+   Click on the pull-down menu under the username `GRAPHUSER` shown in the top right corner of the Graph Studio browser window.  Select the `Environment` menu item.  
+
+   ![](images/ll-user-pulldown-menu.png " ")
+2. Enter a value of 2 (gb) for the memory size and then click `Create`.  
+
+   ![](images/ll-create-env-detail.png " ") 
+3. The Jobs page will show the status. Meanwhile let's start modeling and creating a graph from the existing tables.  
+
+   ![](images/ll-create-env-status.png " ")
+
+## **STEP 3**: Create a graph of accounts and transactions from the corresponding tables
 
 1. Click on the Models icon to naviagte to the start of the modeling workflow. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
 ![](./images/16-modeler-view-tables.png " ")
@@ -86,12 +103,12 @@ Learn how to
     </copy>
     ```
 
-5. Click the Save (floppy disk icon) to commit the changes. Then click the Designer tab to confirm that the model now has a vertex table and en edge table.  
+5. **Important:** Click the **Save** (floppy disk icon) to commit the changes. Then click the Designer tab to confirm that the model now has a vertex table and an edge table.  
   ![](./images/20-modeler-fix-txn-label.png " ")  
 
-6. Click `Create Graph` to move on to the next step in the flow.   
+6. Click `Next` and then click `Create Graph` to move on to the next step in the flow.   
 
-   Enter the prompted details. That is, supply a graph name (e.g. `bank_graph`), a model name (e.g. `bank_graph_model`), and other optional information.  
+   Enter the prompted details. That is, supply a graph name (`bank_graph`), a model name (e.g. `bank_graph_model`), and other optional information.  
    ![](./images/22-modeler-create-graph.png " ")
 
 7. Graph Studio modeler will now save the metadata and start a job to create the graph.  

@@ -1,4 +1,4 @@
-# Using Kustomize for templated environments
+# Using Kustomize for Templated Environments
 
 ## Introduction
 
@@ -44,7 +44,7 @@ One of the challenges of developing on a live cluster is that pods need to be re
 
 For that reason, the development tools like **Skaffold** (which we will cover in a later lab) assume that a development environment is meant to be brought up and torn down at each launch/stop of the tool. This is default behavior, and although it can be overriden, it is also best practice to insure components are up-to-date.
 
-However that does not play well with infrastructure like PaaS services that take time to provision, like the Autonomous Database.
+However that does not play well with infrastructure like PaaS services that take time to provision, like the Oracle Autonomous Database.
 
 It makes sense to separate the *`infrastructure`* components of the deployment (Streaming Service, Autonomous Database) from the *`app`* to be actively developed.
 
@@ -466,9 +466,9 @@ The same goes for the *`app`* templates:
     </copy>
     ```
 
-    Then open if you code editor or diff tool of choice to highlight the differences.
+    Then open it in your code editor or diff tool of choice to highlight the differences.
 
-3. Another way if you enjoy reading shell output, is to use the *`diff`* tool to inspect changes, like:
+3. Another way, if you enjoy reading shell output, is to use the *`diff`* tool to inspect changes, like:
 
     ```bash
     <copy>
