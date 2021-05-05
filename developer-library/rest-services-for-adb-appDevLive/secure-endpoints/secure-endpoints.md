@@ -44,6 +44,10 @@ Estimated Lab Time: 10 minutes
 
 5.  Use the **Role Name** field to name our role. Let's use **oracle.livelabs.role.admin**.
 
+     ````
+    <copy>oracle.livelabs.role.admin</copy>
+    ````
+
     ![Role Name Field](./images/sec-5.png)
 
 6.  When your **Role Definition** modal looks like the below image, click the **Create** button.
@@ -149,7 +153,11 @@ Estimated Lab Time: 10 minutes
     ![Support URI Field](./images/sec-24.png)
 
 23. Finally, we need an **support email** for contacting someone. You can enter your email address or use admin@dinosaurfootball.com in the **Support Email** field of the form.
-    
+
+     ````
+    <copy>admin@dinosaurfootball.com</copy>
+    ````
+
     ![Support Email Field](./images/sec-25.png)
 
 24. Once your form looks similar to the image below:
