@@ -2,7 +2,16 @@
 
 ## Introduction
 
-Some intro
+In this lab you are going to go through a series of steps for provisioning a **Linux Instance** and deploying an **OracleJET** application. The application that is going to be developed in this lab uses **OracleJET** elements (both **JavaScript** and **HTML**) to create a basic application that shows an Oracle JET tree map structure based on a JSON file stored inside the project.
+
+A **tree map** is **an interactive data visualization** in which hierarchical data is represented across two dimensions by the size and color of nested rectangular nodes.
+
+Treemap Characteristics:
+
+* Treemaps display 2 dimensions of hierarchical data using the size and color of the nodes.
+* Emphasizes the leaf nodes in the hierarchy.
+* To emphasize data of the entire hierarchy, consider using a sunburst instead.
+* Treemaps are extremely effective in small form factors.
 
 Estimated Lab Time: 50 minutes
 
