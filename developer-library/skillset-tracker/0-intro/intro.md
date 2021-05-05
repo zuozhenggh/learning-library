@@ -2,14 +2,14 @@
 
 The goal of this workshop is to build a customizable application starting from a ***simple JSON file***, using an ***Oracle Autonomous JSON Database*** to store the data in ***SODA Document Collections***. The application is using ***NodeJS*** and ***SODA*** on the server-side, and ***OracleJET*** for the interface. There is also an integration with ***Oracle Digital Assistant (ODA)***.
 
-The infrastructure of the application is build in Oracle Cloud Infrastructure and will use several resouces, as shown in the architecture diagram below.
+The infrastructure of the application is build in Oracle Cloud Infrastructure and will use several resources, as shown in the architecture diagram below.
 
 ![architecture diagram](./images/architecture-diagram.png)
 
 ## Is it customizable?
 The application presented in the following labs is based on a sample JSON file with data regarding a group of employees and details about them and their skills on certain categories of skills and areas of development. The JSON can be easily updated in order to fit any other business need.
 
-For example, you can build up a JSON with information for an online shop if instead of having details about employees and their skills you have details about products in the shop and product specifications for each of them.Another idea would be to have information regarding the physical stores a company owns as well as the categories of products and the product list for each store.
+For example, you can build up a JSON with information for an online shop if instead of having details about employees and their skills you have details about products in the shop and product specifications for each of them. Another idea would be to have information regarding the physical stores a company owns as well as the categories of products and the product list for each store.
 
 It's up to you to customize the JSON according to your business need.
 
