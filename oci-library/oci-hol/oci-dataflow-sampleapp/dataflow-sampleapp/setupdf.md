@@ -27,7 +27,7 @@ Before you Begin with Data Flow lab, you must have:
 
 ## **STEP 1**: Object Store: Setting Up Storage
 
-1. Before running application in Data Flow service, create two storage buckets that are required in object storage
+1. Before running application in Data Flow service, create two storage buckets that are required in object storage. If you   are 
 
      * A bucket to store the logs (both standard out and standard err) for every application run.Create a standard storage tier bucket called `dataflow-logs` in the Object Store service. The location of the bucket must follow the pattern:
 
