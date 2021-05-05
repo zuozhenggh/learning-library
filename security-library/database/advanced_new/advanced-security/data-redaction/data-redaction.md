@@ -152,4 +152,4 @@ Technical Documentation: [Data Redaction 19c](https://docs.oracle.com/en/databas
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

@@ -1,4 +1,4 @@
-# Continuous Integration/Continuous Deployment (CI/CD) with GitHub actions
+# Continuous Integration/Continuous Deployment (CI/CD) with GitHub Actions
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Continuous Integration / Continuous Deployment (CI/CD) principles take advantage
 
 We'll look at configuring GitHub actions to test our code and optionally deploy it to staging or production.
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 20 minutes.
 
 ### Objectives
 
@@ -21,7 +21,7 @@ In this lab you will:
 
 1. GitHub Actions are available to run tasks, using a yaml configuration file under `.github/workflow`.
 
-2. GitHub Actions use Secrets to provide the task with credentials. This is a potential security risk if you do ot trust GitHub to hold credentials to your Docker Image registry or Kubernetes Cluster.
+2. GitHub Actions use Secrets to provide the task with credentials. This is a potential security risk if you do not trust GitHub to hold credentials to your Docker Image registry or Kubernetes Cluster.
 
     Note that you can use other preferred methods to do CI/CD, like other CI services or your own Jenkins instance.
 
@@ -168,13 +168,13 @@ In this lab you will:
 
 2. You need to provide the secrets to your GitHub repo fort this action script to work properly. (you may already have received a failure notification when you created the repository from the template).
 
-3. Go to the **Settings -> Secrets**
+3. Go to the **Settings -> Secrets**.
 
     ![](./images/settings.png)
 
     ![](./images/secrets.png)
 
-4. Click **New Repository Secret**
+4. Click **New Repository Secret**.
 
 5. Create 3 secrets for your OCIR Docker Image Registry on OCI:
 
@@ -223,8 +223,10 @@ In this lab you will:
 
     - Uncomment the commented yaml in the `ci.yaml` file.
     - Create a development branch in git, and push some changes.
-    - create a PR from development to master, which should trigger a deployment to the `stage-ns` namespace in the cluster.
-    - Merge the PR, and create a release based on master, which should trigger a deployment to the `prod-ns` namespace.
+    - Create a Pull Request (PR) from development to master, which should trigger a deployment to the `stage-ns` namespace in the cluster.
+    - Merge the Pull Request, and create a release based on master, which should trigger a deployment to the `prod-ns` namespace.
+
+    This is left as an exercise to the user.
 
 You may proceed to the next lab.
 
