@@ -25,27 +25,27 @@
         {
             "title": "Lab 3: User Setups",
             "description": "RESTful Services for your Autonomous Database",
-            "filename": "../../user_setups/user_setups.md"
+            "filename": "../../user-setups/user-setups.md"
         },
         {
             "title": "Lab 4: Create and Auto-REST enable a table",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../create_table/create_table.md"
+            "filename": "../../create-table/create-table.md"
         },
         {
             "title": "Lab 5: Load data and create business logic in the database",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../load_data_and_biz_objs/load_data_and_biz_objs.md"
+            "filename": "../../load-data-and-biz-objs/load-data-and-biz-objs.md"
         },
         {
             "title": "Lab 6: REST enable tables and business logic",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../REST_enable_objects/REST_enable_objects.md"
+            "filename": "../../REST-enable-objects/REST-enable-objects.md"
         },
         {
             "title": "Lab 7: Securing the REST endpoints",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../secure_endpoints/secure_endpoints.md"
+            "filename": "../../secure-endpoints/secure-endpoints.md"
         },  
         {
             "title": "Need Help?",

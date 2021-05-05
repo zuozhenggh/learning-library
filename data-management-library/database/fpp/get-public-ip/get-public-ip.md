@@ -23,6 +23,7 @@ In this lab, you will:
 
 ## **Step 2:** Verify your Region and Compartment
 1. Make sure that the **Region** (top-right corner) corresponds to the one you received in the reservation confirmation.
+    ![](./images/region.png)
 
 2. Navigate from the Hamburger Menu (top-left corner) to **Oracle Database** -> **Bare Metal, VM, and Exadata**.
 ![](./images/bare-metal.png)
@@ -31,7 +32,7 @@ In this lab, you will:
     ![](./images/02-select-compartment.png)
 
 ## **Step 3:** Get the Public IP of the FPP Server
-1. Click on the DB System name **fpps-cluster-wxyz** (wxyz is your reservation number: the number that compose also your Compartment name, e.g. LLwxyz-COMPARTMENT).
+1. Click on the DB System name **fpps-cluster-xxxx** (xxxx is your reservation number: the number that compose also your Compartment name, e.g. LLxxxx-COMPARTMENT).
 
     The DB System Details page appears:
     ![](./images/03-dbsystem-status.png)
@@ -45,4 +46,4 @@ You may now [proceed to the next lab](#next) and connect to the server.
 
 - **Author** - Ludovico Caldara
 - **Contributors** - Kamryn Vinson
-- **Last Updated By/Date** -  Kamryn Vinson, April 2021
+- **Last Updated By/Date** -  Kamryn Vinson, May 2021
