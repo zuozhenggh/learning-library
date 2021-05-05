@@ -31,7 +31,7 @@ You can run this lab in any Oracle Database with APEX 20.2 installed. This inclu
 
 Below are steps on how to provision database on *Database Cloud Service* .
 
-## **Step 1**:  Create Database in OCI DBCS Service
+## **STEP 1**:  Create Database in OCI DBCS Service
 
 1. Navigate to **Bare Metal, VM, and Exadata**.
 
@@ -74,7 +74,7 @@ Below are steps on how to provision database on *Database Cloud Service* .
   ![](images/node-ip.png " ")
 
 
-## **Step 2**:  Install Oracle APEX in DBCS.
+## **STEP 2**:  Install Oracle APEX in DBCS.
 
   Oracle APEX is not preinstalled in the database cloud service like how it is done with ATP or ADW , we will go through the install and configuration of APEX
 
@@ -90,8 +90,7 @@ Below are steps on how to provision database on *Database Cloud Service* .
 
 3. Open a command window in the workshop directory and scp the downloaded files to /tmp dbcs.  Enter the following command.  
   ```
-  <copy>
-  scp -i keys/<private key> apex_20.2.zip opc@<DBCS IP>:/tmp
+  <copy>scp -i keys/<private key> apex_20.2.zip opc@<DBCS IP>:/tmp
   scp -i keys/<private key> ords-20.4.3.050.1904.zip opc@<DBCS IP>:/tmp
   ```
   If you have windows system , you can copy with Filezilla or Winscp
@@ -100,8 +99,7 @@ Below are steps on how to provision database on *Database Cloud Service* .
 
 5. Unzip the file in a new folder as root user, change directory into it and then become user oracle:
   ```
-  <copy>
-  [opc@linux ~]$ sudo su -
+  <copy>[opc@linux ~]$ sudo su -
   [root@linux ~]# cd /tmp
   [root@linux tmp]# unzip apex_20.2.zip /u01/app/ -d /u01/app/
   [root@linux apex]# cd /u01/app
@@ -112,8 +110,7 @@ Below are steps on how to provision database on *Database Cloud Service* .
 6. Let’s connect to the pluggable database. Keep in mind that your PDB will have a different name so change the second SQL command accordingly:
 
   ```
-  <copy>
-  [oracle@linux apex]$ sqlplus / as sysdba
+  <copy>[oracle@linux apex]$ sqlplus / as sysdba
   SQL> SHOW PDBS
     CON_ID CON_NAME                       OPEN MODE  RESTRICTED
     ---------- ------------------------------ ---------- ----------
@@ -126,22 +123,20 @@ Below are steps on how to provision database on *Database Cloud Service* .
 7. We’ll create a new and dedicated tablespace for APEX data:
 
  ```
- <copy>
- SQL> CREATE TABLESPACE apex DATAFILE SIZE 100M AUTOEXTEND ON NEXT 1M;
+ <copy>SQL> CREATE TABLESPACE apex DATAFILE SIZE 100M AUTOEXTEND ON NEXT 1M;
  Tablespace created.
  ```
 
 8. We will install APEX 19 in this PDB:
-```
-<copy>
-SQL> @apexins.sql APEX APEX TEMP /i/
-```
+	```
+	<copy>SQL> @apexins.sql APEX APEX TEMP /i/
+	```
+
 
 9. Change the admin password for the INTERNAL workspace with @apxchpwd.sql, this is the password we will be using to login to APEX administration Console
 
   ```
-  <copy>
-  Leave blank in the name to use the ADMIN one, and just fill in the password you want to use for ADMIN.
+  <copy>Leave blank in the name to use the ADMIN one, and just fill in the password you want to use for ADMIN.
   SQL> ALTER SESSION SET CONTAINER=F2ADBCS_PDB1;
   SQL> @apxchpwd.sql
   ...set_appun.sql
@@ -158,11 +153,10 @@ SQL> @apexins.sql APEX APEX TEMP /i/
 
   ```
 
-10. Create the APEX_LISTENER and APEX_REST_PUBLIC_USER users by running the **@apex_rest_config.sql** script. Again create a password for these accounts and type them in:
+10. Create the APEX_LISTENER and APEX_REST_PUBLIC_USER users by running the **@apex\_rest\_config.sql** script. Again create a password for these accounts and type them in:
 
   ```
-  <copy>
-  SQL> @apex_rest_config.sql
+  <copy>SQL> @apex_rest_config.sql
   Enter a password for the APEX_LISTENER user              []
   Enter a password for the APEX_REST_PUBLIC_USER user              []
   ...set_appun.sql
@@ -172,20 +166,18 @@ SQL> @apexins.sql APEX APEX TEMP /i/
 11. Set password for the APEX_PUBLIC_USER and unlock the account. I also made a new profile so that the password for apex_public_user never expires.
 
   ```
-  <copy>
-  SQL> ALTER USER apex_public_user IDENTIFIED BY <password> ACCOUNT UNLOCK;
+  <copy>SQL> ALTER USER apex_public_user IDENTIFIED BY <password> ACCOUNT UNLOCK;
   SQL> CREATE PROFILE password_unlimited LIMIT PASSWORD_LIFE_TIME UNLIMITED;
   SQL> ALTER USER apex_public_user PROFILE password_unlimited;
   SQL> exit
   ```
 
-## **Step 3**:  Install Oracle REST Data Services in DBCS.
+## **STEP 3**:  Install Oracle REST Data Services in DBCS.
 
 
 1. As user root let’s create the TOMCAT Linux user (we will need it later when we install Tomcat), then make a new directory for ORDS files and unzip it there:
   ```
-  <copy>
-  [opc@linux tmp]$ sudo su -
+  <copy>[opc@linux tmp]$ sudo su -
   [root@linux ]# adduser tomcat
   [root@linux ]# mkdir /u01/app/ords
   [root@linux ]# mv /tmp/ords-20.4.3.050.1904.zip /u01/app/ords
@@ -197,14 +189,12 @@ SQL> @apexins.sql APEX APEX TEMP /i/
 
 2. Make a directory to hold the configuration.
   ```
-  <copy>
-  [tomcat@linux ords]# mkdir -p /u01/app/ords/conf
+  <copy>[tomcat@linux ords]# mkdir -p /u01/app/ords/conf
   ```
 
 3. Edit the configuration file (still as user tomcat) and change the contents accordingly.
   ```
-  <copy>
-  [tomcat@linux ords]# vi /u01/app/ords/params/ords_params.properties
+  <copy>[tomcat@linux ords]# vi /u01/app/ords/params/ords_params.properties
     db.hostname=fta
     db.port=1521
     db.servicename=f2adbcs_pdb1.appsubnet.ocivcn.oraclevcn.com
@@ -232,16 +222,14 @@ SQL> @apexins.sql APEX APEX TEMP /i/
 4. Use the “ords.war” file to specify the configuration directory using the following command. The file name “ords.war” will result in a URL containing “/ords/”. If you want a different URL, rename the WAR file accordingly. In this post I will use the original name.
 As ROOT user (if you are tomcat type exit to become root again) type:
   ```
-  <copy>
-  [root@linux ords]# /usr/bin/java -jar ords.war configdir /u01/app/ords/conf
+  <copy>[root@linux ords]# /usr/bin/java -jar ords.war configdir /u01/app/ords/conf
    INFO: Set config.dir to /u01/app/ords/conf in: /u01/app/ords/ords.war
   ```
 
 5. Install ORDS using the following command. This is the equivalent of specifying the “install simple” command line parameters.Type in sys as sysdba as the administrator username. Provide the passwords for the users and press 1 to use PL/SQL Gateway
 
   ```
-  <copy>
-  [root@linux ords]# /usr/bin/java -jar ords.war
+  <copy>[root@linux ords]# /usr/bin/java -jar ords.war
   Enter the database password for ORDS_PUBLIC_USER:
   Confirm password:
   Requires to login with administrator privileges to verify Oracle REST Data Services schema.
@@ -265,12 +253,11 @@ As ROOT user (if you are tomcat type exit to become root again) type:
   Enter 1 if you wish to start in standalone mode or 2 to exit [1]:2
   ```
 
-## **Step 4**:  Downloading and installing Tomcat.
+## **STEP 4**:  Downloading and installing Tomcat.
 
   1. Download Tomcat 9 from [HERE](https://tomcat.apache.org/download-90.cgi)  , use the tar.gz link and copy it, then downloaded directly to the cloud database  in a new directory as user root, change it’s owner and unzip it :
     ```
-    <copy>
-    [root@linux ords]# mkdir /u01/app/tomcat
+    <copy>[root@linux ords]# mkdir /u01/app/tomcat
     [root@linux ords]# -d /u01/app/tomcat/
     [root@linux ords]# chown -R tomcat:tomcat /u01/app/tomcat/
     [root@linux ords]# su tomcat
@@ -281,14 +268,12 @@ As ROOT user (if you are tomcat type exit to become root again) type:
 
   2. Let’s start up Tomcat web server:
     ```
-    <copy>
-    [tomcat@linux tomcat]$ /u01/app/tomcat/apache-tomcat-9.0.44/bin/startup.sh
+    <copy>[tomcat@linux tomcat]$ /u01/app/tomcat/apache-tomcat-9.0.44/bin/startup.sh
     ```
 
   3. Now we need to open the web server port to allow incoming access, first in the Linux console and then on the Oracle Cloud. Switch to root user and add this port to iptables and save it:
     ```
-    <copy>
-    [tomcat@linux tomcat]$ exit
+    <copy>[tomcat@linux tomcat]$ exit
     [root@linux tomcat]# iptables -I INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
     [root@linux tomcat]# service iptables save
     [root@linux tomcat]# service iptables reload
@@ -305,7 +290,7 @@ As ROOT user (if you are tomcat type exit to become root again) type:
   6. Some automation is needed now so that Tomcat starts when Linux instance is rebooted with runlevel script. The script has to be created as OS user root. In one of the first lines, setup a sleep command to be sure that the database is available before the application server starts.
 
     ```
-    [root@linux tomcat]#   vi /etc/init.d/tomcat
+    <copy>[root@linux tomcat]#   vi /etc/init.d/tomcat
     Paste this inside the file:
     #!/bin/bash
     #
@@ -344,8 +329,7 @@ As ROOT user (if you are tomcat type exit to become root again) type:
 
   7. Add the script to the runlevel environment level 3 and 5:
       ```
-      <copy>
-      [root@linux tomcat]#   chmod 755 /etc/init.d/tomcat
+      <copy>[root@linux tomcat]#   chmod 755 /etc/init.d/tomcat
       [root@linux tomcat]#   cd /etc/rc3.d
       [root@linux tomcat]#   ln -s /etc/init.d/tomcat S99tomcat
       [root@linux tomcat]#   cd /etc/rc5.d
@@ -356,9 +340,7 @@ As ROOT user (if you are tomcat type exit to become root again) type:
    Switch back to the Tomcat OS user and copy the APEX images to the Tomcat “webapps” directory.
 
     ```
-    <copy>
-
-    [root@linux tomcat]#   su tomcat
+    <copy>[root@linux tomcat]#   su tomcat
     [tomcat@linux tomcat]$   mkdir /u01/app/tomcat/apache-tomcat-9.0.26/webapps/i/
     [tomcat@linux tomcat]$   cp -R /u01/app/apex/images/* /u01/app/tomcat/apache-tomcat-9.0.26/webapps/i/
     [tomcat@linux tomcat]$   cp /u01/app/ords/ords.war /u01/app/tomcat/apache-tomcat-9.0.26/webapps/
@@ -370,7 +352,7 @@ As ROOT user (if you are tomcat type exit to become root again) type:
 
     ![](images/admin-Login.png " ")
 
-## **Step 5**:  Create APEX workspace
+## **STEP 5**:  Create APEX workspace
 
 1. Click **Create Workspace**.
 
@@ -413,10 +395,3 @@ You may now *proceed to the next lab*.
 - **Author** -  Vanitha Subramanyam, Senior Solution Architect
 - **Contributors** - Vanitha Subramanyam, Senior Solution Architect
 - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, April 2021
-
-
-
-## Need Help?
- Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
- If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
