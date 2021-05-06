@@ -6,17 +6,17 @@ Este lab de cinco minutos te guiará nos passos para que possa obter uma conta n
 
 ### Duas Ofertas de Cloud em Uma
 
-Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first.
+Oracle Cloud Modo Gratuito permite que você se inscreva em uma conta da Oracle Cloud a qual provê um número de serviços de Uso Livre e uma Avaliação Gratuita com US$300 em crédito grátis para uso em todos os serviços elegíveis da Oracle Cloud por até 30 dias. Os serviços de Uso Livre estão disponíveis por tempo ilimitado. Os serviços de Avaliação Gratuita podem ser usados até que seus US$300 em créditos gratuitos sejam consumidos ou os 30 dias expirem, o que ocorrer primeiro.
 
-![](images/freetrial.png " ")
+![](images/pt_BR-freetrial.png " ")
 
-### Prerequisites
+### Pré-requisitos
 
-* A valid email address
-* Ability to receive SMS text verification (only if your email isn't recognized)
-* Credit card (you will not be charged unless you elect to upgrade the account later.)
+* Um endereço de email válido
+* Possibilidade de receber um texto de verificação por SMS (apenas se seu email não for reconhecido)
+* Cartão de crédito (você não será cobrado a não ser que escolha fazer upgrade da conta depois.)
 
-## **Step 1:** Create Your Free Trial Account
+## **Passo 1:** Crie Sua Conta de Teste Gratuito
 
 In this section, you will fill out the registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
 

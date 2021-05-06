@@ -9,25 +9,25 @@ Assista a este vídeo para criar sua conta de Avaliação Gratuita de 30 dias na
 
 ### Contas Cloud Existentes
 
-If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
+Se você já possui acesso a uma conta da Oracle Cloud, incluindo uma conta da Oracle Cloud que usa [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), avance para o **PASSO 2** para entrar na sua Cloud Tenancy.
 
 ### Duas Ofertas de Cloud em Uma
 
-Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$500 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$500 of free credits are consumed or the 30 days has expired, whichever comes first.
+Oracle Cloud Modo Gratuito permite que você se inscreva em uma conta da Oracle Cloud a qual provê um número de serviços de Uso Livre e uma Avaliação Gratuita com US$300 em crédito grátis para uso em todos os serviços elegíveis da Oracle Cloud por até 30 dias. Os serviços de Uso Livre estão disponíveis por tempo ilimitado. Os serviços de Avaliação Gratuita podem ser usados até que seus US$300 em créditos gratuitos sejam consumidos ou os 30 dias expirem, o que ocorrer primeiro.
 
-### What you will need
+### O que você vai precisar
 
-* A valid email address
-* Ability to receive SMS text verification (only if your email isn't recognized)
+* Um endereço de email válido
+* Possibilidade de receber um texto de verificação por SMS (apenas se seu email não for reconhecido)
 
-## **STEP 1**: Create Your Free Trial Account
+## **PASSO 1**: Crie Sua Conta de Avaliação Gratuita
 
-If you already have a cloud account, skip to **STEP 2**.
+Caso você já tem uma conta Cloud, avance para o **PASSO 2**.
 
 1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
 
 2.  You will be presented with a registration page.
-    ![](images/cloud-infrastructure.png " ")
+    ![](images/pt_BR-cloud-infrastructure.png " ")
 
 3.  Enter the following information to create your Oracle Cloud Free Tier account.
     * Choose your **Country**

@@ -6,27 +6,27 @@ Antes de tudo, você irá precisar de uma conta na Oracle Cloud. Este lab de cin
 
 ### Contas Cloud Existentes
 
-If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
+Se você já possui acesso a uma conta da Oracle Cloud, incluindo uma conta da Oracle Cloud que usa [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), avance para o **PASSO 2** para entrar na sua Cloud Tenancy.
 
 ### Duas Ofertas de Cloud em Uma
 
-Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first.
+Oracle Cloud Modo Gratuito permite que você se inscreva em uma conta da Oracle Cloud a qual provê um número de serviços de Uso Livre e uma Avaliação Gratuita com US$300 em crédito grátis para uso em todos os serviços elegíveis da Oracle Cloud por até 30 dias. Os serviços de Uso Livre estão disponíveis por tempo ilimitado. Os serviços de Avaliação Gratuita podem ser usados até que seus US$300 em créditos gratuitos sejam consumidos ou os 30 dias expirem, o que ocorrer primeiro.
 
-![](images/freetrial.png " ")
+![](images/pt_BR-freetrial.png " ")
 
-### What you will need
+### O que você vai precisar
 
-* A valid email address
-* Ability to receive SMS text verification (only if your email isn't recognized)
+* Um endereço de email válido
+* Possibilidade de receber um texto de verificação por SMS (apenas se seu email não for reconhecido)
 
-## **STEP 1**: Create Your Free Trial Account
+## **PASSO 1**: Crie Sua Conta de Avaliação Gratuita
 
-If you already have a cloud account, skip to **STEP 2**.
+Caso você já tem uma conta Cloud, avance para o **PASSO 2**.
 
 1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
 2.  You will be presented with a registration page.
-       ![](images/cloud-infrastructure.png " ")
-3.  Enter the following information to create your Oracle Cloud Free Tier account.
+       ![](images/pt_BR-cloud-infrastructure.png " ")
+3.  Enter the following information to create your Oracle Cloud Modo Gratuito account.
     * Choose your **Country**
     * Enter your **Name** and **Email**.
 
@@ -39,7 +39,7 @@ If you already have a cloud account, skip to **STEP 2**.
 
 6. Select the link (if possible) or copy and paste the link into your browser.
 
-7. Enter the following information to create your Oracle Cloud Free Tier account.
+7. Enter the following information to create your Oracle Cloud Modo Gratuito account.
        * Choose a **Password**
        * Enter your **Company Name**
        * Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
@@ -64,13 +64,13 @@ If you already have a cloud account, skip to **STEP 2**.
 9.  Choose the verification method.  In this case click the **Credit Card** button. Enter your information and payment details.  *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account*.
        ![](images/free-tier-payment-2.png " ")
 
-10. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
+10. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my Avaliação Gratuita** button.
        ![](images/free-tier-agreement.png " ")
 
 11. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
        ![](images/account-provisioned.png " ")
 
-## **STEP 2**: Sign in to Your Account
+## **PASSO 2**: Sign in to Your Account
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
