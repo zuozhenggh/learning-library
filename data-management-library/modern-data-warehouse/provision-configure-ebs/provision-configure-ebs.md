@@ -16,10 +16,10 @@ Estimated Lab Time: 60 minutes
 
 - Terminal on Unix/Linux or Putty on Windows.
 - Access to the following files:
-    - [etl_audit_tbl.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FBxg5-Eac3jlPXPddxo9FYHPJxUDmC1lJ3PIfG-koiFTCBKr-sUzOdqrQVOiIySm/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/etl_audit_tbl.sql)
+    - [etl\_audit\_tbl.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FBxg5-Eac3jlPXPddxo9FYHPJxUDmC1lJ3PIfG-koiFTCBKr-sUzOdqrQVOiIySm/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/etl_audit_tbl.sql)
     - [controlling\_project\_expenditure.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1-UhNagNzes6rDY22uGAR6-CpnJvOAxY6h6YsWX8JTjQpbPVaJeijwJdkKJ3vtVJ/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/controlling_project_expenditure.sql)
     
-Note: Please download the files above before continuing.
+**Note**: Please download the files above before continuing.
 
 ## **STEP 1:** Create a new security list and a public subnet in VCN
 

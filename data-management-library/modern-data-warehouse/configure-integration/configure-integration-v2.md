@@ -74,15 +74,18 @@ A data server stores information according to a specific technical logic which i
     
 **Note**: In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:
 
-        sudo su - oracle
+<copy>  
+    
+    sudo su - oracle
 
-        export ORACLE_HOME=/u01/install/APPS/12.1.0
+    export ORACLE_HOME=/u01/install/APPS/12.1.0
 
-        export ORACLE_SID=ebsdb
+    export ORACLE_SID=ebsdb
 
-        export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
+    export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
         
-        sqlplus
+    sqlplus
+    
         
 Now, try logging in as the **apps** user. If you are successfully able to login, test the connection again. If not then you might have to debug the issue.
 
@@ -271,7 +274,7 @@ Now that you have configured your connections to your source and destination, we
 You may now proceed to Lab 6.
 
 ## Acknowledgements
-- **Authors** - Yash Lamba, Srinidhi Koushik, April 2021
-- **Contributor** - Clarence Ondieki
+- **Authors** - Yash Lamba, April 2021
+- **Contributor** - Srinidhi Koushik
 - **Last Updated By/Date** - Yash Lamba, April 2021
 
