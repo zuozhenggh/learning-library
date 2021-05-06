@@ -4,7 +4,7 @@ The goal of this workshop is to build a customizable application starting from a
 
 The infrastructure of the application is build in Oracle Cloud Infrastructure and will use several resources, as shown in the architecture diagram below.
 
-![architecture diagram](./images/architecture-diagram.PNG)
+![architecture diagram](./images/architecture-diagram.png)
 
 ## Is it customizable?
 The application presented in the following labs is based on a sample JSON file with data regarding a group of employees and details about them and their skills on certain categories of skills and areas of development. The JSON can be easily updated in order to fit any other business need.
