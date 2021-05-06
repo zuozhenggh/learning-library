@@ -136,6 +136,10 @@ This lab assumes you have:
       <copy>./avs_register_pdb.sh</copy>
       ````
 
+      ````
+      <copy>Oracle123</copy>
+      ````
+
    ![](./images/avdf-006.png " ")
 
     **Note**:
@@ -169,6 +173,14 @@ This lab assumes you have:
 
     - Open a new Web Browser tab at the URL *`https://<AVS-VM_@IP-Public>`*
     - Login to Audit Vault Web Console as *`AVAUDITOR`* with the password "*`T06tron.`*" (keep it open for the rest of the lab)
+
+      ````
+      <copy>AVAUDITOR</copy>
+      ````
+
+      ````
+      <copy>T06tron.</copy>
+      ````
 
        ![](./images/avdf-300.png " ")
 
@@ -321,6 +333,14 @@ In this lab you will use the results from a **Database Security Assessment Tool 
     - Open a new Web Browser tab at the URL *`https://<AVS-VM_@IP-Public>`*
     - Login to Audit Vault Web Console as *`AVADMIN`* with the password "*`T06tron.`*" (keep it open for the rest of the lab)
 
+          ````
+          <copy>AVADMIN</copy>
+          ````
+
+          ````
+          <copy>T06tron.</copy>
+          ````
+
           ![](./images/avdf-400.png " ")
 
     - Upload the `pdb1_dbsat_discover.csv` file you downloaded earlier into AVDF Console
@@ -424,6 +444,14 @@ The first thing we need to do is to set up the database to be ready for Golden G
 
     - Open a new Web Browser tab at the URL *`http://<DBSECLAB-VM_@IP-Public>:50002/`*
     - Login to Golden Gate Web Console as *oggadmin* with the password "*Oracle123*"
+
+      ````
+      <copy>oggadmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
        ![](./images/avdf-029.png " ")
 
@@ -785,6 +813,14 @@ In this lab you will modify the Glassfish connection (instead of connecting dire
     **Note**: Take the URL and use it to verify that the application functions **before** we make any changes to connection string!
 
 2. Login to the application as *`hradmin`* with the password "*`Oracle123`*"
+
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
    ![](./images/avdf-111.png " ")
 
@@ -1707,4 +1743,4 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian, Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

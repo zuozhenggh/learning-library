@@ -51,6 +51,14 @@ This lab assumes you have:
 
 2. Login to Oracle Enterprise Manager 13c Console as *`SYSMAN`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>SYSMAN</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
    ![](./images/dms-001.png " ")
 
 3. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling** as follow:
@@ -1217,4 +1225,4 @@ Video
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Manish Choudhary, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

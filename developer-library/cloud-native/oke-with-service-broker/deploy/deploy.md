@@ -1,8 +1,8 @@
-# Deploy an OKE cluster with OCI Service Broker (OSB)
+# Deploy an OKE Cluster with OCI Service Broker (OSB)
 
 ## Introduction
 
-In this lab we will deploy the OKE cluster with the OCI Service Broker, using the quickstart repository at [https://github.com/oracle-quickstart/oke-with-service-broker](https://github.com/oracle-quickstart/oke-with-service-broker).
+In this lab we will deploy the Oracle Kubernetes Engine (OKE) cluster with the OCI Service Broker, using the quickstart repository at [https://github.com/oracle-quickstart/oke-with-service-broker](https://github.com/oracle-quickstart/oke-with-service-broker).
 
 Estimated Lab Time: 30 minutes.
 
@@ -118,7 +118,7 @@ For this lab you will need to have installed the required software:
         </copy>
         ```
 
-        And copy the full output and then paste it into the `terraform.tfvars` file within the quotes.
+        Copy the full output and then paste it into the `terraform.tfvars` file within the quotes.
 
     - If you wish to encrypt Kubernetes secrets at rest, provide an encryption key OCID for `secrets_encryption_key_ocid`.
 

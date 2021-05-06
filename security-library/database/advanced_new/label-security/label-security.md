@@ -188,12 +188,28 @@ Different applications have different purposes:
 
 5. Login to the application as *`can_candy`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>can_candy</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
     - Select "**Search Employees**" and click [**Search**]
     - See the result before enabling OLS policy
 
    ![](./images/ols-017.png " ")
 
 6. Logout and login as *`eu_evan`* with the password "*`Oracle123`*"
+
+      ````
+      <copy>eu_evan</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
     - Select "**Search Employees**" and click [**Search**]
     - You can see all employees data with no geographic restriction
@@ -258,6 +274,14 @@ Different applications have different purposes:
 
 11. Go back to your Glassfish app and login as *`can_candy`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>can_candy</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
     - Select "**Search Employees**" and click [**Search**]
     - Now, you will see there is a difference after enabling OLS policy: `CAN_CANDY` can only see **Canadian-labeled users**!
 
@@ -265,12 +289,28 @@ Different applications have different purposes:
 
 12. Logout and login as *`eu_evan`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>eu_evan</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
     - Select "**Search Employees**" and click [**Search**]
     - Notice that `EU_EVAN` can only see **EU-labeled users**!
 
    ![](./images/ols-021.png " ")
 
 13. Logout and login as *`hradmin`* with the password "*`Oracle123`*"
+
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
     - Select "**Search Employees**" and click [**Search**]
     - Notice that accordingly to the OLS policy, `HRADMIN` can still see **all users**!
@@ -319,4 +359,4 @@ Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Alan Williams, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - April 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

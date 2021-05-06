@@ -24,8 +24,8 @@ Estimated Lab Time: 5 minutes
 
 ## **STEP 1**: **Download the Sample Scripts and Form**
 
-Download the  sample database DDL  scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jrxGuOZ6rX5Ih1zMyt6eFWqWKy3Kwo9rR5fgKGauY1VEDhYis3m58I_b-pa3FkSG/n/c4u03/b/developer-library/o/forms_conversion_ddl.sql) and sample data insert scripts from [here](
-https://objectstorage.us-ashburn-1.oraclecloud.com/p/nrcRTwPDRP9SkWGWtkOEzY8OyskzhnHtSJDINe4TcaWCRqJ8kuHNyQ49ffnHJxRB/n/c4u03/b/developer-library/o/conversion_data_insert.sql)
+Download the  sample database DDL  scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jrxGuOZ6rX5Ih1zMyt6eFWqWKy3Kwo9rR5fgKGauY1VEDhYis3m58I_b-pa3FkSG/n/c4u03/b/developer-library/o/forms\_conversion\_ddl.sql) and sample data insert scripts from [here](
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/nrcRTwPDRP9SkWGWtkOEzY8OyskzhnHtSJDINe4TcaWCRqJ8kuHNyQ49ffnHJxRB/n/c4u03/b/developer-library/o/conversion\_data\_insert.sql)
 to use in the lab to your desktop
 
 
@@ -77,7 +77,3 @@ You may now *proceed to the next lab*.
   - **Author** -  Vanitha Subramanyam, Senior Solution Architect
   - **Contributors** - Vanitha Subramanyam, Senior Solution Architect
   - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, March 2021
-## Need Help?
-  Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-  If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
