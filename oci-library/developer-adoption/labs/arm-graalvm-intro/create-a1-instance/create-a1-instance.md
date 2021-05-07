@@ -2,7 +2,7 @@
 
 ## Introduction
 
-You will take on the persona of an Operations Engineer. You will initiate the Oracle cloud environment that will be used to create and deploy your Java EE application. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy the Oracle Cloud Infrastructure Arm A1 compute instance to host a Java EE application using the Tomcat 9.0 and MySQL server containers.
+You will begin by initiating the Oracle cloud environment that will be used to create and deploy your Java EE application. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment.  You will create an Ampere A1 compute instance to install and run your applications using GraalVM Enterprise Edition. 
 
 Estimated time: 10 minutes
 
@@ -18,21 +18,9 @@ Estimated time: 10 minutes
 - Your Oracle Cloud Trial Account
 - You have already applied for and received your Oracle Cloud Free Tier Account.
 
-## **STEP 1:** Log into OCI Tenancy
-
-   Log in to your OCI dashboard and retrieve information required to create resources.
-
-1. Once you log in you will see a page similar to the one below. Click on "Infrastructure Dashboard."
-
-  ![Landing Screen](images/landingScreen2.png " ")
-
-## **STEP 2:** Basic OCI Infrastructure Setup
+## Basic OCI Infrastructure Setup
 
 1. Open the navigation menu. Under Governance and Administration, go to **Identity** and click **Compartments**. From this screen, you will see a list of compartments, click **Create Compartment**.
-
-   ![Menu Compartments](images/OCI-1.png " ")
-
-   ![Compartment Screen](images/compartmentScreen.png " ")
 
 1. Enter the following:
       - Name: Enter **"AppDev".**
@@ -41,37 +29,43 @@ Estimated time: 10 minutes
       - Click **Create Compartment**.
       - Your compartment is displayed in the list.
 
-  ![AppDev Compartment](images/compartment-create.png " ")
+   ![AppDev Compartment](images/compartment-create.png " ")
 
-Now you are ready to move on to Step 3.
 
-## **STEP 3:** Create OCI Arm A1 compute instance
+## Create Ampere A1 Compute Instance
 
-1. To create an A1 compute instance, open up the hamburger button in the top-left corner of the Console and go to **Compute** >   **Instances**.
+1. To create an Ampere A1 compute instance, open up the hamburger button in the top-left corner of the Console and go to **Compute** >   **Instances**.
 
    ![Instances Menu](images/01_nav_instances.png " ")
 
-1. Open the  instance creation flow.
-   1. Verify you are in the **AppDev** Compartment 
-   1. Click **Create Instance**.
+1. Start the instance creation flow.
+
+      1. Verify you are in the **AppDev** Compartment 
+      1. Click **Create Instance**.
 
    ![Create Instance](images/02_create_instance.png " ")
 
 1. In the create instance page you will create the new instance along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG)and more. 
-   1. Name the instance  **JavaApp** 
-   1. Click the **Change Shape** button to see the available compute shapes.
-   1. Click the **Change Image** button to see the available compute images. Choose the Oracle Linux 7.9 image
+
+      1. Name the instance  **GraalVMApp** 
+      1. Update the Image selection to use Oracle Linux 8 or newer 
+      1. Click the **Change Shape** button to see the available compute shapes.
 
    ![ Create Instance](images/03_create_instance02.png " ")
-   
+
+1. Configure the image for your instance.  
+      1. Click the **Change Image** button to see available OS images. 
+      1. Choose **Oracle Linux 8** or newer.
+   ![Choose Oracle Linux 8](images/03_create_instance02_1.png)
+
 1. Configure the resources for your instance. 
-   1. Choose the Ampere Arm based processor in the choice for shape series. 
-   1. Choose the `VM.Standard.A1.Flex` shape from the list of shapes with Ampere Arm based processors. OCI Arm A1 shapes are flexible and you can modify the number of cores and the amount of memory. Choose 1 core and 6 GB of memory for the VM.
+      1. Choose the Ampere Arm based processor in the choice for shape series. 
+      1. Choose the `VM.Standard.A1.Flex` shape from the list of shapes with Ampere Arm based processors. Ampere A1 shapes are flexible and you can modify the number of cores and the amount of memory. Choose 1 core and 6 GB of memory for the VM.
 
    ![ Choose Shape](images/04_create_instance03.png " ")
    
 
-1. Choose your networking options. Create a new VCN and subnet for your next cloud deployment. Make sure you choose to assigna public IP address for your instance. 
+1. Choose your networking options. Create a new VCN and subnet for your next cloud deployment. Make sure you choose to assign a public IP address for your instance. 
 
    ![Network options](images/05_create_instance04.png " ")
 
@@ -81,8 +75,6 @@ Now you are ready to move on to Step 3.
 
 1. Click **Create** to create the networking resources and launch the compute instance.
    ![launch instance](images/07_create_instance06.png " ")
-
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
