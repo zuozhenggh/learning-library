@@ -21,13 +21,13 @@ Let's start on the standby side.  From your VCN hosting your standby database, s
 
 
 
-![drg-route-rule](./images/drg-route-rule.png)
+![image-20210122200451778](./images/image-20210122200451778.png)
 
 
 
 Now configure the security list.  
 
-7. Click Create Security List and name it something like Sec-List-Private-Subnet.
+7. Navigate to Security Lists and click Create Security List and name it something like Sec-List-Private-Subnet.
 
 8. Ensure you are in the correct compartment.
 
