@@ -10,9 +10,7 @@ Estimated Lab Time: 10 minutes.
 
 ### Objectives
 
-In this lab you will:
-
-- Configure VSCode to use the debugger run by **Skaffold**.
+In this lab you will configure VSCode to use the debugger run by **Skaffold**.
 
 ## **STEP 1:** Skaffold Debug Config
 
@@ -139,9 +137,9 @@ In this lab you will:
 
 3. In VSCode, choose the container service to debug, and click the run icon to debug.
 
-    ![](./images/vscode-debug.png =50%x*)
+    ![](./images/vscode-debug.png)
 
-    ![](./images/vscode-debug2.png =50%x*)
+    ![](./images/vscode-debug2.png)
 
 4. One caveat is that the code starts running before the debugger is attached, which may make it difficult to debug startup code, unless a delay is voluntarily inserted. Debugging effectively starts when the local VSCode is connected to the remote debugger.
 
