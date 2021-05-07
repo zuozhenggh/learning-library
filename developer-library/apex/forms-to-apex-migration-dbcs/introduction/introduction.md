@@ -17,11 +17,12 @@ Estimated Lab Time: 120 minutes
 * Modernize the Customer Form
 
 *Note: This lab assumes you are using Oracle APEX 20.2.*
-*If you are a Oracle Forms developer and have  experience with Oracle Forms then you can skip <b>Setup Oracle Forms and convert the sample Forms to XML section<b>*
+*If you are a Oracle Forms developer and have  experience with Oracle Forms then you can skip <b>Setup Oracle Forms and convert the sample Forms to XML section</b>*
 
 ### Prerequisites
-- Sign Up for Free Trial/Login to Oracle Cloud
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Learn More
 
@@ -31,8 +32,8 @@ Estimated Lab Time: 120 minutes
 - [External Site + Slack](http://apex.world)
 - [Oracle Forms to Apex Migration BLOG](https://blogs.oracle.com/apex/modernizing-an-oracle-forms-application-to-an-oracle-apex-application)
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** -  Vanitha Subramanyam, Senior Solution Architect
 - **Contributors** - Vanitha Subramanyam, Senior Solution Architect
-- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
+- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, May 2021
