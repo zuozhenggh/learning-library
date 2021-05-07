@@ -53,7 +53,7 @@ This lab assumes you have:
     ###############################################################################
 
     # Preserve user configured hostname across instance reboots
-    sed -i -r 's/^PRESERVE_HOSTINFO.*$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
+    sed -i -r 's/^PRESERVE_HOSTINFO.*\$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
 
     # Preserve hostname info and set it for current boot
     hostnamectl set-hostname <host>.livelabs.oraclevcn.com
