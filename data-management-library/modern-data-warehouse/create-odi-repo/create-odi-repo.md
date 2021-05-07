@@ -125,7 +125,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
 
 **Note**: The repository should be up and running in a couple of minutes.
 
-    ![](./images/4.22.png " ")
+![](./images/4.22.png " ")
 
 ## **STEP 5:** Connect to the Work Repository
 

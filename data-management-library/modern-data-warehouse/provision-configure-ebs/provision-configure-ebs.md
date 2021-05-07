@@ -105,7 +105,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
 
 1. Open a terminal and scp the 'etl_audit_tbl.sql' file onto the EBS instance with the following command:
 
-        scp -i <path_to_private_key> <path_to_etl_audit_tbl.sql> opc@<ebs_instance_public_ip>:
+    <copy>scp -i &lt;path_to_private_key&gt; &lt;path_to_etl_audit_tbl.sql&gt; opc@&lt;ebs_instance_public_ip&gt;:</copy>
 
 2. Login to the EBS instance as the opc user using the following command:
     

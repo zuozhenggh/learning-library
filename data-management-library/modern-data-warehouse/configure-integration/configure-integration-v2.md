@@ -72,19 +72,17 @@ A data server stores information according to a specific technical logic which i
     
     ![](./images/5.16.png " ")
     
-**Note**: In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:
-
-<copy>  
+**Note**: In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:  
     
-    sudo su - oracle
+        sudo su - oracle
 
-    export ORACLE_HOME=/u01/install/APPS/12.1.0
+        export ORACLE_HOME=/u01/install/APPS/12.1.0
 
-    export ORACLE_SID=ebsdb
+        export ORACLE_SID=ebsdb
 
-    export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
+        export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
         
-    sqlplus
+        sqlplus
     
         
 Now, try logging in as the **apps** user. If you are successfully able to login, test the connection again. If not then you might have to debug the issue.

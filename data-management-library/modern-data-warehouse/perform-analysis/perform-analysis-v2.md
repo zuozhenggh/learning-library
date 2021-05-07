@@ -24,7 +24,7 @@ Estimated Lab Time: 15 minutes
 
 As previously mentioned, when you spin up the stack the links to some resources do not show up in the **Associated Resources** tab. In our case, we want to get to our Analytics Cloud instance, but the link is not provided.
 
-    ![](./images/6.1.png " ")
+![](./images/6.1.png " ")
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
 
