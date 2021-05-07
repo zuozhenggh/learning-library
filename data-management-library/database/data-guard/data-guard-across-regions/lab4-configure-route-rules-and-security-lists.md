@@ -21,7 +21,7 @@ Let's start on the standby side.  From your VCN hosting your standby database, s
 
 
 
-![image-20210122200451778](./images/image-20210122200451778.png)
+![drg-route-rule](./images/drg-route-rule.png)
 
 
 
