@@ -221,10 +221,7 @@ select empno, ename, dept from emp where empno = :id
     ````
     <copy>
     BEGIN
-
-        return_count(p_input => :id,
-                    p_output => :output);
-
+        return_count(p_input => :id, p_output => :output);
     end;
     </copy>
     ````
@@ -303,7 +300,7 @@ select empno, ename, dept from emp where empno = :id
 
     ```
     curl -X POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
@@ -320,8 +317,12 @@ select empno, ename, dept from emp where empno = :id
 
 In this lab, you published a REST API using Custom SQL and accepting an input as well as published a REST API using a stored PL/SQL procedure.
 
+You may now [proceed to the next lab](#next).
+
 
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Anoosha Pilli, Database Product Management, April 2021
+- **Last Updated By/Date** - Anoosha Pilli, Kay Malcolm, May 2021
+- **Workshop Expiry Date** - April 2022
+

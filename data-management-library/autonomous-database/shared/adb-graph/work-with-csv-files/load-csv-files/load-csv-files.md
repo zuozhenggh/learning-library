@@ -26,6 +26,8 @@ Learn how to
 
 ## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
 
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
+
 1. Open the service detail page for your Autonomous Database instance in the OCI console.  
 
    ![](images/../../query-graph/images/adb-details-page.png " ")  
@@ -62,7 +64,11 @@ Learn how to
 
 ## **STEP 4**: Upload using Database Actions SQL
 
-1. Click on the Data tab in the SQLDeveloperWeb worksheet. Then click on `Select Files`.
+1. Click on the Data Loading tab in the SQL worksheet. 
+   
+   ![](images/data-loading-sql-worksheet.png " ")
+   
+   Then click on `Select Files`.
 
    ![](./images/03-upload-first-file.png)
 
@@ -112,5 +118,5 @@ Please **proceed to the next lab** to create a graph from these tables.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, May 2021
   

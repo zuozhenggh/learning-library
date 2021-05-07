@@ -19,9 +19,11 @@ Learn how to
 
 ## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
 
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
+
 1. Open the service detail page for your Autonomous Database instance in the OCI console. 
 
-   ![](images/adb-details-page.png " ")
+   ![](images/adw-details-page.png " ")
 
 2. Click on the Tools tab and then the Database Actions link to open it. 
    
@@ -47,9 +49,7 @@ Learn how to
 
 **Note: Please do not Graph Enable the ADMIN user and do not login to Graph Studio as the ADMIN user.**
 
-1. Click the `Create User` button at the bottom of the panel to create the user with the specified credentials.
-   
-   ![](./images/create-user.png " ")  
+   Click the `Create User` button at the bottom of the panel to create the user with the specified credentials
 
    The newly created user will now be listed.
 
@@ -57,7 +57,7 @@ Learn how to
 
    **Note: The UI steps above can be instead done by executing the following sql commands listed below when logged in as ADMIN. So step 2 below is not necessary. It shows an alternative way of creating and enabling GRAPHUSER.**
    
-2. Allocate a desired table space quota to the newly created user. Open the SQL page and issue the alter command.  
+5. Allocate a desired table space quota to the newly created user. Open the SQL page and issue the alter command.  
    For example, 
    `ALTER USER GRAPHUSER QUOTA UNLIMITED ON DATA;`   
    will allocate a quota the user `GRAPHUSER` in the tablespace named `DATA`.  
@@ -86,7 +86,7 @@ Learn how to
 
    ![](./images/user-altered.png " ") 
  
- 3. You can similarly use SQL statements to verify that GRAPHUSER has been set up correctly.  
+ 6. You can similarly use SQL statements to verify that GRAPHUSER has been set up correctly.  
     You must be logged into Data Actions SQL as `ADMIN`.  
     then enter the following SQL statements and execute them. 
      
@@ -109,5 +109,5 @@ Please **proceed to the next lab** to learn how to create and analyze graphs in 
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Development
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, May 2021
   

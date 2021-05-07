@@ -19,7 +19,9 @@ Learn how to
 
 - Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
 
-## **STEP 1**: Create a notebook  
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
+
+## **STEP 1**: Verify that `BANK_GRAPH` is loaded into memory  
 
 1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon 
    ![](images/radar-chart.svg " ")
@@ -29,7 +31,35 @@ Learn how to
 
    ![](images/load-bank-graph-into-memory.png " ")
 
-2. Next click on the `Notebooks` menu icon and then on `Create`, on the top right side of that page, to create a new notebook.  
+## **Step 2a**: Alternate and optional step. Import the notebook
+
+The instructions below show you how to create each notebook paragraph, execute it, and modify default visualization settings as needed.  
+If you prefer you can simply **import** the notebook and then execite each paragraph in sequence.   
+
+1. Download the exported notebook from the Object Store. 
+   Use the following Pre-authenticated Request, or PAR, to download the exported notebook onto your machine.  
+   Note where it is downloaded. 
+
+   https://objectstorage.us-ashburn-1.oraclecloud.com/p/dN9WXYJWoyjV89xlRm-ARrhQi7GOwzHu0nt7NjAn6eN6RTEHKT5bt67HyxjRUIyx/n/c4u03/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb
+
+
+2. Click on the `Notebooks` menu icon and then on the Import Notebook icon on the top right.  
+
+   ![](images/import-notebook.png " ")  
+
+3. Drag and drop the downloaded file or navigate t the correct folder and select it for upload.  
+   ![](images/choose-exported-file.png " ")  
+
+4. Click `Import`. 
+   ![](images/notebook-file-chosen.png " ")  
+5. Once the file is imported it should open in Graph Studio.  
+   
+   ![](images/notebook-imported.png " ")  
+
+   You can execute the paragraphs in sequence and modify visualizations settings as described in **Step 3** of this lab.  
+   
+## **Step 2**: Create a notebook
+1. Click on the `Notebooks` menu icon and then on `Create`, on the top right side of that page, to create a new notebook.  
 Name it `Learn/BankGraph: Find Circular Payments`.  
 
    ![](./images/24-create-notebook.png " ")  
@@ -43,11 +73,11 @@ Name it `Learn/BankGraph: Find Circular Payments`.
       - `%pgql-pgx` for Property Graph Query Language ([PGQL](https://pgql-lang.org)) 
       - `%java-pgx` for executing built-in graph algorithms with the Property Graph Java API  
   
-3. Add a new paragraph. **Hover over the bottom middle portion of the first paragraph**. Click the + icon 
+2. Add a new paragraph. **Hover over the bottom middle portion of the first paragraph**. Click the + icon 
    ![](images/plus-circle.svg " ") when it is displayed.  
 	![](images/28-add-new-paragraph.png " ") 
 
-4. Let's enter a Markdown paragraph which outlines the notebook content. Copy and paste the following text into the first blank paragraph.
+3. Let's enter a Markdown paragraph which outlines the notebook content. Copy and paste the following text into the first blank paragraph.
 
 	```
 	<copy>
@@ -75,7 +105,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
  
 
-## **STEP 2**: Query the `BANK_GRAPH` and visualize the results 
+## **STEP 3**: Query the `BANK_GRAPH` and visualize the results 
 
 1. Copy and paste the following text into this new paragraph.  
 	```
@@ -102,9 +132,9 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	See the [PGQL site](https://pgql-lang.org) and specification for more details on the syntax and features of the language.  
 	The Getting Started notebook folder also contains a tutorial on PGQL.  
 
-2. Now let's explore some features of the visualization component. We will add the `acct_id` as node (or vertex) labels and use a differnet graph layout algorithm.  
+2. Now let's explore some features of the visualization component. We will add the `acct_id` as node (or vertex) labels and use a different graph layout algorithm.  
    
-   Click the visualization settings icon 
+   Click the visualization `settings` icon 
    ![](images/sliders.svg " ")  
    (the fourth icon from the left at the top of the visualization panel).  
 
@@ -253,6 +283,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 	![](images/45-6th-query-hierarchical-layout.png " ")  
 
+    Use the `Settings` icon and Visualization tab to label the vertices with the `ACCT_ID` for the resulting graph.   
 	Lastly, let's change the source node's size to highlight it.   
 	Open the visualization settings dialog and select the `Highlights` tab.   
 	Click on `New Highlight`.   
@@ -353,8 +384,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
    After the query has executed and a result is displayed click on visualization settings. Then on the Highlights tab.  
    ![](images/55a-highlights-for-pagerank.png " ")  
 
-   Then click on `New Higlight` and enter the following details to create it.  
-   Specify pagerank >= 0.0035 as the condition, size = 3X as the visula effect.  
+   Then click on `New Highlight` and enter the following details to create it.  
+   Specify pagerank >= 0.0035 as the condition, size = 3X as the visual effect.  
 
    ![](images/55b-new-hightlight-for-pagerank.png " ")  
 
@@ -387,6 +418,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	order by a.pagerank desc limit 10
 	</copy>
 	```
+
+    Click the `Table` icon to visualize the results as a table, if necessary.  
 
 	![](images/57-top-ten-pagerank.png " ")    
 
@@ -429,6 +462,9 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	</copy>
 	```
 
+    Choose a `Grid` layout for the visualization.  
+	Add a new highlight with pagerank >= 0.0035 as the condition, size = 3X as the visual effect.  
+	 
 	![](images/60-account-222-and-neighbors.png " ")    
     
 22. Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.   
@@ -472,5 +508,6 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, May 2021
+* **Lab Expiry Date** - May 2022
   
