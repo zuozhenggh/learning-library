@@ -26,7 +26,7 @@ Estimated Lab Time: 60 minutes
 
     ![](./images/5.2.png " ")
     
-3.	Click on the magnifying glass icon to select the path to the EBS_ODI_ADW.xml file. We downloaded it to the home folder of the oracle user in step 1 of Lab 3. Hence, the path should be **/home/oracle/EBS_ODI_ADW.xml**. After finding the file, click on the **Next** button.
+3.	Click on the magnifying glass icon to select the path to the **EBS_ODI_ADW.xml** file. We downloaded it to the home folder of the oracle user in step 1 of Lab 3. Hence, the path should be **/home/oracle/EBS_ODI_ADW.xml**. After finding the file, click on the **Next** button.
 
     ![](./images/5.3.png " ")
     
