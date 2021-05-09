@@ -60,7 +60,7 @@ For ease of execution of this workshop, your *dbseclab* VM instance has been pre
         - Prod        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
         - Dev         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
 
-### **Enable Copy/Paste from local to remote desktop (noVNC clipboard)**
+## **STEP 2:** Enable Copy/Paste from Local to Remote Desktop (noVNC clipboard)
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. From your remote desktop session, click on the small gray tab on the middle-left side of your screen to open the control bar
@@ -77,7 +77,42 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     *Note:* Please make sure you initialize your clipboard with steps *[1-3]* shown above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function grayed out in step 4 when attempting to paste.
 
-## **STEP 2:** Login to Host using SSH Key Based Authentication (Optional)
+## **STEP 3:** Open Workshop Guide from the Remote Desktop
+LiveLabs workshop guides make an extensive use of *Click-to-Copy* function, providing convenient and effective way to quickly copy a predefined text or block of text without the need to first highlight it. This also help avoid mistakes that may occur when doing it manually such as copying extra or fewer characters than intended.
+
+As a result, launching your workshop guide from the remote desktop will further enhance your experience. It will greatly help speed up your labs execution by removing the need to constantly switch between the guide from your local computer and the remote desktop, and minimize the need for the 3-steps *copy/paste/paste* described in *STEP 2* above.
+
+1. From your remote desktop session, launch *Firefox*, browse to *LiveLabs* if not already opened, then click on *Sign In*
+
+    ```
+    <copy>http://bit.ly/golivelabs</copy>
+    ```
+
+    ![](./images/livelabs-login-1.png " ")
+
+2. Provide your login credentials and click on *Sign In*
+
+    ![](./images/livelabs-login-2.png " ")
+
+3. Click on *My Reservations*
+
+    ![](./images/livelabs-reservations-1.png " ")
+
+4. Click on *Launch Workshop*
+
+    ![](./images/livelabs-reservations-2.png " ")
+
+5. Click on *-* next to *Workshop Details* and *Let's Get Started* to collapse
+
+    ![](./images/livelabs-reservations-3.png " ")
+
+6. Click on *Open the workshop instructions in a new tab*
+
+    ![](./images/livelabs-reservations-4.png " ")
+
+    ![](./images/livelabs-reservations-5.png " ")
+
+## **STEP 4:** Login to Host using SSH Key Based Authentication (Optional)
 
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
 
