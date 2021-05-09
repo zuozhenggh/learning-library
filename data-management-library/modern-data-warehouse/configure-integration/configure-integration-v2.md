@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will configure and run the ODI integrations. For the EBS data source, you will use smart import in ODI and use a pre-developed mapping. For the ADW data source, you will create the mapping between the source and destination databases.  
+In this lab, you will configure and run the ODI integrations. For the EBS data source, you will use smart import in ODI and use an available mapping. For the ADW data source, you will create the mapping between the source and destination databases.  
 
 Estimated Lab Time: 60 minutes
 
@@ -16,7 +16,7 @@ Estimated Lab Time: 60 minutes
 
 - Credentials and details of the EBS database, the source ADW, the target ADW and the ODI repositories.
 
-## **STEP 1:** Use Smart Import to import pre-developed mappings and other objects
+## **STEP 1:** Use Smart Import to import mappings and other objects
 
 1. Click on the **Designer** tab. Press the dropdown in the top right of the **Designer** pane as shown in the image below. Then, select **Import**.
 
@@ -26,7 +26,7 @@ Estimated Lab Time: 60 minutes
 
     ![](./images/5.2.png " ")
     
-3.	Click on the magnifying glass icon to select the path to the 'EBS_ODI_ADW.xml' file. We downloaded it to the home folder of the oracle user in step 1 of Lab 3. Hence, the path should be '/home/oracle/EBS_ODI_ADW.xml'. After finding the file, click on the **Next** button.
+3.	Click on the magnifying glass icon to select the path to the EBS_ODI_ADW.xml file. We downloaded it to the home folder of the oracle user in step 1 of Lab 3. Hence, the path should be **/home/oracle/EBS_ODI_ADW.xml**. After finding the file, click on the **Next** button.
 
     ![](./images/5.3.png " ")
     
@@ -72,7 +72,7 @@ A data server stores information according to a specific technical logic which i
     
     ![](./images/5.16.png " ")
     
-**Note**: In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:  
+**Note:** In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:  
     
         sudo su - oracle
 
@@ -117,11 +117,11 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
     ![](./images/5.22a.png " ")
     
-**Note**: Secure copying the ADW wallet onto the ODI instance is one of the easiest ways in which you can make the credential file of an ADW available to ODI. This method works for any ADW instance regardless of whether it is in the same compartment as the ODI instance or not. We will show an even easier method in Step 5, but it is applicable only to the ADW instances that share the compartment with the ODI instance.
+**Note:** Secure copying the ADW wallet onto the ODI instance is one of the easiest ways in which you can make the credential file of an ADW available to ODI. This method works for any ADW instance regardless of whether it is in the same compartment as the ODI instance or not. We will show an even easier method in Step 5, but it is applicable only to the ADW instances that share the compartment with the ODI instance.
 
 ## **STEP 4:** Configure and run the integration
 
-1.  Return to the **Designer** tab and click on the refresh button. A project name **EBS_ADWC_Data_Mgration** will appear.
+1.  Return to the **Designer** tab and click on the refresh button. A project name **EBS_ADWC_Data_Migration** will appear.
 
     ![](./images/5.23.png " ")
     
@@ -163,7 +163,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
     ![](./images/5.36.png " ")
     
-**Note**: With the completion of this step, you have successfully executed an integration and moved data from EBS onto the target ADW. In addition, you have also created some views on top of the tables. We encourage EBS users to explore the data in the tables and views in the next lab.
+**Note:** With the completion of this step, you have successfully executed an integration and moved data from EBS onto the target ADW. In addition, you have also created some views on top of the tables. We encourage EBS users to explore the data in the tables and views in the next lab.
 
 ## **STEP 5:** Set up another Data Server
 
@@ -231,11 +231,11 @@ Now that you have configured your connections to your source and destination, we
     
     ![](./images/5.51.png " ")
 
-**Note**: For more about ODI integration projects, click [here](https://docs.oracle.com/middleware/1212/odi/ODIDG/projects.htm#ODIDG311).
+**Note:** For more about ODI integration projects, click [here](https://docs.oracle.com/middleware/1212/odi/ODIDG/projects.htm#ODIDG311).
 
 ## **STEP 9:** Design your Mapping and Run the Integration
 
-1. Go back to the **Projects** section and expand your project. Under **First Folder**, **right click** on **Mappings** and create a new mapping with a name of your choosing. Make sure to deselect **Create Empty Dataset**.
+1. Go back to the **Projects** section and expand your project. Under **First Folder**, **right click** on **Mappings** and create a new mapping with a name of your choosing. Make sure to deselect **Create Empty Data Set**.
 
     ![](./images/5.52.png " ")
     
@@ -273,6 +273,6 @@ You may now proceed to Lab 6.
 
 ## Acknowledgements
 - **Authors** - Yash Lamba, April 2021
-- **Contributor** - Srinidhi Koushik
+- **Contributor** - Srinidhi Koushik, April 2021
 - **Last Updated By/Date** - Yash Lamba, April 2021
 

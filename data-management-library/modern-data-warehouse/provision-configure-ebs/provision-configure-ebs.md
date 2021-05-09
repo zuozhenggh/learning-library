@@ -19,7 +19,7 @@ Estimated Lab Time: 60 minutes
     - [etl\_audit\_tbl.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FBxg5-Eac3jlPXPddxo9FYHPJxUDmC1lJ3PIfG-koiFTCBKr-sUzOdqrQVOiIySm/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/etl_audit_tbl.sql)
     - [controlling\_project\_expenditure.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1-UhNagNzes6rDY22uGAR6-CpnJvOAxY6h6YsWX8JTjQpbPVaJeijwJdkKJ3vtVJ/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/controlling_project_expenditure.sql)
     
-**Note**: Please download the files above before continuing.
+**Note:** Please download the files above before continuing.
 
 ## **STEP 1:** Create a new security list and a public subnet in VCN
 
@@ -103,7 +103,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
 
 ## **STEP 3:** SSH into the EBS instance and configure EBS
 
-1. Open a terminal and scp the 'etl_audit_tbl.sql' file onto the EBS instance with the following command:
+1. Open a terminal and scp the **etl_audit_tbl.sql** file onto the EBS instance with the following command:
 
     <copy>scp -i &lt;path_to_private_key&gt; &lt;path_to_etl_audit_tbl.sql&gt; opc@&lt;ebs_instance_public_ip&gt;:</copy>
 
@@ -111,7 +111,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
     
         ssh -i <path_to_private_key> opc@<ebs_instance_public_ip>
         
-3. Now, switch to the root user and move the 'etl_audit_tbl.sql' file into the home directory of the **oracle** user and make oracle user the owner of the file. The file will be used towards the end of this lab. 
+3. Now, switch to the root user and move the **etl_audit_tbl.sql** file into the home directory of the **oracle** user and make oracle user the owner of the file. The file will be used towards the end of this lab. 
         
         sudo su
         
@@ -131,7 +131,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
 
     ![](./images/2.29.png " ")
     
-6. Update all the presently installed packages to their latest available versions using the yum command. You will be asked to agree to the download in a couple of minutes. Enter 'y' to agree to the download. The entire process should take approximately 20 minutes. While you wait, you can proceed to Step 4 and Step 5 of this lab. If you choose to do so, please remember to come back and finish the rest of Step 3.
+6. Update all the presently installed packages to their latest available versions using the yum command. You will be asked to agree to the download in a couple of minutes. Enter **y** to agree to the download. The entire process should take approximately 20 minutes. While you wait, you can proceed to Step 4 and Step 5 of this lab. If you choose to do so, please remember to come back and finish the rest of Step 3.
         
         yum update
 
@@ -268,11 +268,11 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
 
 1. Use SQL Developer to connect to your newly created Autonomous Database. Instructions for connecting to an Autonomous Database via SQL Developer can be found [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-sql-dev182.html#GUID-14217939-3E8F-4782-BFF2-021199A908FD).
 
-2. Now, go ahead and run the 'controlling\_project\_expenditure.sql' script to create the tables.
+2. Now, go ahead and run the **controlling\_project\_expenditure.sql** script to create the tables.
 
 3. The following tables should be visible: COST, COUNTRY\_FORECAST, PPM\_BUDGET\_VS\_ACTUAL, PPM\_ROLLED\_UP, STEEL\_TARIFF, STEEL\_TOTAL\_COST\_FORECAST.
 
-**Note**: If you haven't completed step 3, please return and complete it now.
+**Note:** If you haven't completed step 3, please return and complete it now.
 
 You may now proceed to Lab 3.
 

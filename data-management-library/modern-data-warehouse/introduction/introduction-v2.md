@@ -48,15 +48,15 @@ Lab 4 - Create and connect to ODI Repository (30 minutes)
 Lab 5 - Configure Integration and load data into ADW using ODI (60 minutes)
 
 - Use Smart Import to create an integration that moves data from your EBS to the destination data warehouse.
-- Connect to source ADW's tables and views. 
+- Connect to tables and views in the source ADW. 
 - Configure mapping between source and target.
 - Run integrations to move data from the two sources to ADW.
 
 Lab 6 - Perform Analysis - Import Dashboards (15 minutes)
 
-- Upload DVA file to OAC.
-- Connect ADWs to Analytics instance and create data sets.
-- Make Dashboards use data sets in ADW.
+- Import analytics project.
+- Connect to ADW and create data sets.
+- Analyse data.
 
 **You are all set. Let us begin!**
 

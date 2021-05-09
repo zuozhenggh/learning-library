@@ -37,7 +37,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/1.6.png " ")
 
-7. Open the token.tok file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
+7. Open the **token.tok** file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
 
     ![](./images/1.7.png " ")
 
@@ -97,7 +97,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/1.30.png " ")
     
-**Note**: You may use any names for the files and folders. We will be using the names that we mentioned above.
+**Note:** You may use any names for the files and folders. We will be using the names that we mentioned above.
 
 ## **STEP 3:** Download Autonomous Data Warehouse wallet file
 

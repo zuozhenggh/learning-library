@@ -21,7 +21,7 @@ Estimated Lab Time: 30 minutes
 
 1. Connect to the Autonomous Data Warehouse that we created as part of the ODI-ADW-OAC stack as the ADMIN user via SQL Developer. We downloaded the wallet to the local machine in the previous lab.
 
-2. Run the commands below to create a schema for the metadata repository. We will call this schema 'ODI'. Replace 'MyPassword' in the first command with a password of your choosing.
+2. Run the commands below to create a schema for the metadata repository. We will call this schema **ODI**. Replace **MyPassword** in the first command with a password of your choosing.
     
         create user ODI identified by MyPassword;
     
@@ -31,7 +31,7 @@ Estimated Lab Time: 30 minutes
     
         grant PDB_DBA to ODI;   
 
-3. Now, run the following commands to create 'EBS' schema for the target tables. Replace 'MyPassword' in the first command with a password of your choosing.
+3. Now, run the following commands to create **EBS** schema for the target tables. Replace **MyPassword** in the first command with a password of your choosing.
 
         create user EBS identified by MyPassword;
     
@@ -41,7 +41,7 @@ Estimated Lab Time: 30 minutes
     
         grant PDB_DBA to EBS;   
     
-4. Connect to the ADW instance, again, but this time as the EBS user and execute the 'ModernDW\_Schema.sql' script to create empty target tables for our integration under the EBS schema. 
+4. Connect to the ADW instance, again, but this time as the EBS user and execute the **ModernDW\_Schema.sql** script to create empty target tables for our integration under the EBS schema. 
    
 ## **STEP 2:** Create ODI Master Repository
 
@@ -59,7 +59,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
 
     ![](./images/4.3.png " ")
     
-4. From the **Technology** drop down, select **Oracle**. Select the **Use Credential File** option and click on the magnifying glass icon in front of the **Credential File** field. The file should be in '/home/Oracle/Desktop'. Thereafter, choose the high connection in the **Connection Details** drop down. The JDBC URL will get auto-populated. Now, enter **ODI** as the user and provide the password for the ODI schema. The DBA User would be ADMIN. Please enter its password, as well.
+4. From the **Technology** drop down, select **Oracle**. Select the **Use Credential File** option and click on the magnifying glass icon in front of the **Credential File** field. The file should be in **/home/Oracle/Desktop**. Thereafter, choose the high connection in the **Connection Details** drop down. The JDBC URL will get auto-populated. Now, enter **ODI** as the user and provide the password for the ODI schema. The DBA User would be ADMIN. Please enter its password, as well.
 
     ![](./images/4.4.png " ")
     
@@ -123,7 +123,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
     
     ![](./images/4.21.png " ")
 
-**Note**: The repository should be up and running in a couple of minutes.
+**Note:** The repository should be up and running in a couple of minutes.
 
 ![](./images/4.22.png " ")
 

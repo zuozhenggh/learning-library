@@ -4,7 +4,7 @@
 
 In this lab, you will connect to the Data Integrator that we provisioned in Lab 1, using VNC Viewer. The stack we provisioned in Lab 1 created the Data Integrator instance in a private subnet, which is a good practice from a security standpoint. However, because of it being in a private subnet, the only way to connect to the instance is through the bastion instance that was created in the public subnet. Hence, we will create an SSH tunnel and use that to connect to ODI using VNC viewer.
 
-**Note**: Below you will find instructions on how to establish the connection if you are using a terminal in Unix/Linux. If you are using a program such as Putty on Windows, please make sure that you perform the same operations, accordingly.
+**Note:** Below you will find instructions on how to establish the connection if you are using a terminal in Unix/Linux. If you are using a program such as Putty on Windows, please make sure that you perform the same operations, accordingly.
 
 Estimated Lab Time: 15 minutes
 
@@ -24,7 +24,7 @@ Estimated Lab Time: 15 minutes
 
 ## **STEP 1:** SSH into Bastion Node, connect to ODI instance and secure copy ADW wallet file onto it
 
-1. Open a Terminal and alter the permissions of the private key file to make it read-only for the current user. Assuming the key file is saved as odi\_adw\_oac in a folder named odi-adw-oac in the current working directory, run the following command:
+1. Open a Terminal and alter the permissions of the private key file to make it read-only for the current user. Assuming the key file is saved as **odi\_adw\_oac** in a folder named **odi-adw-oac** in the current working directory, run the following command:
 
         chmod 400 odi-adw-oac/odi_adw_oac
     
@@ -36,7 +36,7 @@ Estimated Lab Time: 15 minutes
     
         ssh -i odi-adw-oac/odi_adw_oac -L 5901:localhost:5901 opc@<bastion_host_public_ip>
         
-**Note**: Since, this is your first time logging into the the machine, you might be asked if you want to continue. In this case, type yes and hit enter to continue.
+**Note:** Since, this is your first time logging into the the machine, you might be asked if you want to continue. In this case, type yes and hit enter to continue.
         
 4. You should find yourself logged into the bastion instance with part of the tunnel created. Now, in the bastion machine, create a file and store the private key in the file. If are using nano to create the file, use the command given below to create a new file and paste the key in the file. Then, press **Ctrl+O** to write the contents of the file and press **Ctrl+X** to exit.
 

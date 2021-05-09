@@ -2,25 +2,25 @@
 
 ## Introduction
 
-In this lab, you will use a DVA file to get started with the analysis of the EBS data in Oracle Analytics Cloud.
+In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, we will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualisations. You will then connect to the destination ADW to explore the data.
 
 Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-- Create connections to ADWs and create data sets.
-- Upload DVA file and refresh the data flowing through the connection.
-- View analysis.
+- Import analytics project.
+- Connect to ADW and create data sets.
+- Analyse data.
 
 ### Prerequisites
 
 - The source and destination Autonomous Data Warehouses (ADW) and Analytics Cloud (OAC) instance.
-- Access to the ModernDW file needed to recreate this demo.
+- Access to the ModernDW file needed to recreate an analytics project.
     - [ModernDW.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_DhuXYUewHtA48gaEaBEZSH-L7MjSe309RqyHDTgActtB9hVZeDSJc1KGqWs3KKC/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/ModernDW.dva)
 
-**Note**: Please download the file above before continuing.
+**Note:** Please download the file above before continuing.
 
-## **STEP 1:** Set up the Analytics Project in OAC
+## **STEP 1:** Set up the Analytics Project in OAC 
 
 As previously mentioned, when you spin up the stack the links to some resources do not show up in the **Associated Resources** tab. In our case, we want to get to our Analytics Cloud instance, but the link is not provided.
 
@@ -48,7 +48,7 @@ As previously mentioned, when you spin up the stack the links to some resources 
 
     ![](./images/6.8.png " ")
 
-5. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab. You should see a connection named 'EBS\_ADW\_OAC'.
+5. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab. You should see a connection named **EBS\_ADW\_OAC**.
 
     ![](./images/6.9.png " ")
 
@@ -118,4 +118,4 @@ We will now leave it up to your imagination to analyse the data sets that have b
 
 ## Acknowledgements
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
-- **Last Updated By/Date** - Yash Lamba, April 2021
+- **Last Updated By/Date** - Yash Lamba, May 2021
