@@ -32,12 +32,12 @@ This lab assumes you have:
 4. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
 ## **Step 2:** Choose a path
-Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2C)
+Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell ([Step 2C]((#Step2C:UploadKeytoCloudShellandConnect)))
 
 Your options are:
-1. Step 2A: Connect using MAC or a Windows CYGWIN Emulator
-2. Step 2B: Connect using Putty *(Requires you to install applications on your machine)*
-3. Step 2C: Connect using Cloud Shell *(recommended)*
+1. [Step 2A: Connect using MAC or a Windows CYGWIN Emulator](#Step2A:ConnectviaMACorWindowsCYGWINEmulator)
+2. [Step 2B: Connect using Putty](#Step2B:ConnectviaWindowsusingPutty) *(Requires you to install applications on your machine)*
+3. [Step 2C: Connect using Cloud Shell](#Step2C:UploadKeytoCloudShellandConnect) *(recommended)*
 
 
 ## **Step 2A:** Connect via MAC or Windows CYGWIN Emulator
@@ -79,7 +79,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 1.  In the category section, **Click** Auth.
 2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.  
-3.  If you do not have a .ppk extension see the Appendix for instructions for converting your private key to .ppk format using PuttyGen.
+3.  If you do not have a .ppk extension see the [Appendix](#Appendix:TroubleshootingTips) for instructions for converting your private key to .ppk format using PuttyGen.
 
     ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
@@ -92,7 +92,9 @@ You may now [proceed to the next lab](#next).
 
 ## **Step 2C:** Upload Key to Cloud Shell and Connect
 
-1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
+1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment)
+
+2.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.  *Note: Ensure before you click the console you have selected your assigned compartment or you will get an error.*
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
@@ -128,7 +130,7 @@ You may now [proceed to the next lab](#next).
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
 
-6.  Secure Shell into the copute instance using your uploaded key name
+6.  Secure Shell into the compute instance using your uploaded key name
    
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
