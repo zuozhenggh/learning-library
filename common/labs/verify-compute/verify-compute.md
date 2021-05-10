@@ -138,7 +138,7 @@ You may now [proceed to the next lab](#next).
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/em-mac-linux-ssh-login.png " ")
+    ![](./images/em-cloudshell-ssh.png " ")
 
     *Note:* Make sure you are in the region and compartment you were assigned. If you are unable to ssh in, check out the troubleshooting tips below.
 
