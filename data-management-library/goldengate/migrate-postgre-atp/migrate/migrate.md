@@ -59,7 +59,7 @@ For a technical overview of this lab step, please watch the following video:
 
 ## **Step 5**: Open Target Administration Server
 
-1. In this lab scope, we will only migrate to ATP with help of initload. Click on Target Receiver server port **9021**, it will redirect you to new tab. Provide your credentials again for username **oggadmin**.
+1. Click on Target Receiver server port **9021**, it will redirect you to new tab. Provide your credentials again for username **oggadmin**.
 
 	![](/images/micro_oggadmin_0.png)
 
@@ -169,7 +169,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/pg_select_0.png)
 	
-2. Go to the **cloud-shell** environment and issue the below command with the source database. **Make sure** you changed _**ip address**_ with your source database's IP Address! 
+2. Go to the **cloud-shell home** environment and issue the below command with the source database. **Make sure** you changed _**ip address**_ with your source database's IP Address!
 
 	```
 	<copy>
@@ -178,6 +178,8 @@ For a technical overview of this lab step, please watch the following video:
 	```
 
 	This command issues an update statement at the source database. Our extract processes **EXTTAR** will capture the change and **EXTDMP** will ship them to Microservices. Let's add another replication for our captured change data in Microservices.
+
+	![](/images/pg_update.png)
 
 ## **Step 12**: Add The Change Capture Replication
 
