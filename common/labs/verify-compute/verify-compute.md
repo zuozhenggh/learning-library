@@ -32,7 +32,7 @@ This lab assumes you have:
 4. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
 ## **Step 2:** Choose a path
-Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell ([Step 2C]((#Step2C:UploadKeytoCloudShellandConnect)))
+Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell [Step 2C](#Step2C:UploadKeytoCloudShellandConnect).
 
 Your options are:
 1. [Step 2A: Connect using MAC or a Windows CYGWIN Emulator](#Step2A:ConnectviaMACorWindowsCYGWINEmulator)
