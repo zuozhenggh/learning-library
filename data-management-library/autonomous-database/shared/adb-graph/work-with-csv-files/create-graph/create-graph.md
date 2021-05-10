@@ -44,9 +44,22 @@ Learn how to
 
     ![](./images/gs-graphuser-home-page.png " ") 
 
+    Graph Studio consists of a set of pages accessed from the menu on the left. 
+
+    The Home icon ![](images/home.svg " ") takes you to the Home page you see above.  
+    The Models icon ![](images/code-fork.svg " ") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instanstiate, a graph.  
+    The Graph page ![](images/radar-chart.svg " ") lists existing graphs which can be used in notebooks.  
+    The Notebook page ![](images/notebook.svg " ") lists existing notebooks and lets you create a new one.  
+    The Jobs page ![](images/server.svg " ") lists the status of background jobs and lets you view the associated log if any.  
+
+
 ## **STEP 2**: Create a graph of accounts and transactions from the corresponding tables
 
-1. Click on the Models icon to naviagte to the start of the modeling workflow. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
+1. Click on the Models icon to navigate to the start of the modeling workflow.  
+   Then click on `Create`.  
+   ![](images/models-create.png " ")  
+
+2. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
 ![](./images/16-modeler-view-tables.png " ")
 
 2. Move them to the right, i.e. click the first icon on the shuttle control.   
@@ -92,15 +105,18 @@ Learn how to
 
 6. Click `Next` and then click `Create Graph` to move on to the next step in the flow.   
 
-   Enter the prompted details. That is, supply a graph name (`bank_graph`), a model name (e.g. `bank_graph_model`), and other optional information.  
-   ![](./images/22-modeler-create-graph.png " ")
+   Enter `bank_graph` as the graph name.  
+   That graph name is used throughout the next lab.  Do not enter a different name because then the queries and code snippets in the next lab will fail.  
+   
+   Enter a model name (e.g. `bank_graph_model`), and other optional information.  
+   ![](./images/create-bank-graph-dialog.png " ")
 
 7. Graph Studio modeler will now save the metadata and start a job to create the graph.  
    The Jobs page shows the status of this job. 
 
    ![](./images/23-jobs-create-graph.png " ")  
 
-   Once the graph has been created and loaded into memory, if you enabled that radio button, you can then query and visualize it in a notebook.
+   Once the graph has been created and loaded into memory, you can query and visualize it in a notebook.
 
 
 Please **proceed to the next lab** to do so.
