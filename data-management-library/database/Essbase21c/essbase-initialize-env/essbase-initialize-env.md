@@ -40,7 +40,15 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     Password	: <copy>EssbaseTechBang123</copy>
     ````
 
-## **STEP 2**: Login to Host for manual startup (Optional)
+## **STEP 2:** Download and Stage Workshop Artifacts
+
+
+1. Download [`essbase_21c_labfiles.zip`](./files/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
+
+2. Uncompress the ZIP archive.
+
+
+## **STEP 3**: Login to Host for manual startup (Optional)
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
 
 ### Start Script
@@ -77,6 +85,10 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 5.  Your services should be started and wait for the confirmation on start of servers.
 
     ![](./images/ess-environment5.png " ")
+
+
+
+
 
 You may now *proceed to the next lab*.
 

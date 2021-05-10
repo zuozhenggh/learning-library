@@ -23,6 +23,7 @@ This lab requires -
 * Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
+* Files: Sample\_Basic.xlsx, Data\_Basic.txt
 
 
 ## **Step 1:** Data Load to Cube
@@ -33,8 +34,10 @@ Loading data is the process of adding data values to a cube from any number of d
 
 Create a rule file that is based on a sample file from the data warehouse.
 
-1.	Download the data file [here](./files/Data_Basic.txt)
-
+1.	Download the data file Data_Basic.txt.
+ 
+    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
+   
     Open the downloaded data file "Data_Basic.txt". Notice that there's no header row and the file delimiter is a comma.
 
     ![](./images/image14_76.png)
@@ -69,13 +72,13 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	  ![](./images/image14_79.png)
 
-5.  You can now see the preview of the data in the Rules editor based on the input flat file.
+1.  You can now see the preview of the data in the Rules editor based on the input flat file.
 
     The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
 
     Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
 
-6. In the Rules editor, you can now set up the rule fields.
+2. In the Rules editor, you can now set up the rule fields.
 
     ![](./images/image14_80.png)
 
@@ -101,7 +104,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     d. Click Close to return to the Applications home page. Next create a job to load the data using the rule.
 
-7. On the home page, select Jobs and then New Job.
+3. On the home page, select Jobs and then New Job.
     ![](./images/image15_60.png)
 
     a. Select Load Data.
@@ -125,7 +128,7 @@ Create a rule file that is based on a sample file from the data warehouse.
     i. On the Jobs page, click Refresh to monitor the job status.
 
 
-8. After the job is completed, verify that the input records were processed and loaded.
+4. After the job is completed, verify that the input records were processed and loaded.
 
     a.	Select Job Details to check the load data job details.
 
@@ -246,7 +249,9 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
 2. Import Sample Basic from CLI:
 
-   a. Download the file [Sample_Basic.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/84mR3q7KTI_8Fnno0QzJRAMX4HsPPTmU2863GqOo-ok/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic.xlsx) to your CLI directory.
+   a. Download the file Sample_Basic.xlsx.
+
+     This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
 
      ![](./images/image14_89.png)
 

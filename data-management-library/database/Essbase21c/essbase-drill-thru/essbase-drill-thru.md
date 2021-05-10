@@ -21,6 +21,7 @@ Estimated Lab Time: *60 minutes*
 * Database Conection details(Refer to Lab5).  
 * Smart View plugin for Excel.
 * SQL Developer Client(Optional)
+* Files: Sample\_Basic\_DT.xlsx
 
 
 ## **Step 1:** Create the cube
@@ -28,7 +29,9 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 
 1. Log in to Essbase Web User Interface.
 
-2. Download the worksheet Sample\_Basic\_DT.xlsx [here](./files/Sample_Basic_DT.xlsx).  
+2. Download the worksheet Sample\_Basic\_DT.xlsx.  
+   
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
 
 3. On the Home page, click on Import and create the cube using the worksheet Sample\_Basic\_DT.xlsx.  
  Change application Sample to SampleDT. 

@@ -22,6 +22,7 @@ To understand the following:
 * Essbase 21 instance with Service administrator role.
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer).
 * Smart View plugin enabled for Excel.
+* Files: SandboxApp.xlsx, SmartView.xlsx, Merge.csc
 
 ## Overview – Understand Scenario
 
@@ -41,7 +42,9 @@ The exercises contained within this lesson will allow the user to get acquainted
 
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
-1. Download the worksheet SandboxApp.xlsx [here](./files/SandboxApp.xlsx).
+1. Download the worksheet SandboxApp.xlsx.
+
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
 
    Open the SandboxApp.xlsx file.
 
@@ -72,7 +75,9 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 This Step shows that creating sandboxes has little impact on resource usage such as disk space.
 
-1. Download SmartView.xlsx file [here](./files/SmartView.xlsx).
+1. Download SmartView.xlsx file.
+
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
    
    Open SmartView.xlsx  and go to sheet1 tab.
    ![](./images/imageSM_03.png "")
@@ -315,7 +320,9 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 1. Log on to Essbase Web UI as John.
 
-2. Download the file Merge.csc [here](./files/Merge.csc).
+2. Download the file Merge.csc.
+
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
 
    Launch the database inspector for the database “Sandbx” under application “Sample_Scenario”. 
    
