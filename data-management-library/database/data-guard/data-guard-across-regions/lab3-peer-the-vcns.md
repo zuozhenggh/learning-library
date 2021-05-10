@@ -47,7 +47,7 @@ The route rule and security list must also be configured to access the resources
 7. Name your DRG and click create
 
 
-![drg-create](./images/drg-create.png)
+![drg-create](./images/drg-create-copy.png)
 
 
 After creating the DRG, you must attach it to your VCN.
@@ -56,7 +56,7 @@ After creating the DRG, you must attach it to your VCN.
 
 9. Select your compartment and DRG
 
-![attach-drg](./images/attach-drg.png)
+![attach-drg](./images/attach-drg-copy.png)
 
 Do the same steps above in your second region.
 

@@ -74,7 +74,7 @@ Check your standby region.  A standby database should be provisioning.
 
 
 
-![dbstby-provisioning](./images/dbstby-provisioning.png)
+![dbstby-provisioning](./images/dbstby-provisioning-copy.png)
 
 
 
