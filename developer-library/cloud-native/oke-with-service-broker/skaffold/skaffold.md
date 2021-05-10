@@ -9,7 +9,7 @@ In the **Kustomize** lab, we saw how resource templates were combined and overla
 In this lab we'll look at the **Skaffold** configuration and usage to develop applications on a remote cluster.
 
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 10 minutes.
 
 ### Objectives
 
@@ -83,7 +83,7 @@ In this lab you will:
 
 7. The *`deploy`* section defines how to deploy, with *`kustomize`* and what overlay to deploy.
 
-8. Running `skaffold build` (with some options) will build all the docker images tag them with git commit hashes and push them to our registry.
+8. Running `skaffold build` (with some options) will build all the docker images, tag them with git commit hashes and push them to our registry.
 
     The makefile abstracts the options so you can simply run:
 
@@ -276,7 +276,7 @@ In this lab you will:
     </copy>
     ```
 
-    this will deploy to the *`prod-ns`* namespace using the *`production`* overlays.
+    This will deploy to the *`prod-ns`* namespace using the *`production`* overlays.
 
 7. Note that the *`deploy-infra`* task actually calls *`clean-all-jobs`* before running, because **Skaffold** adds *`runIds`* to each resource labels, however **Jobs** are immutable and the call would fail unless the db-init Job is cleaned up before deploying.
 
