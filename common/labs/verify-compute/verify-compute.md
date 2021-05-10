@@ -123,6 +123,7 @@ You may now [proceed to the next lab](#next).
     </copy>
     ````
     ````
+    chmod 600 <<keyname>>
     mv <<keyname>> .ssh
     ls .ssh
     cd ~
