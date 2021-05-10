@@ -100,7 +100,11 @@ Learn how to
     </copy>
     ```
 
-5. **Important:** Click the **Save** (floppy disk icon) to commit the changes. Then click the Designer tab to confirm that the model now has a vertex table and en edge table.  
+   ![](images/correct-ddl-save.png " " )  
+
+   **Important:** Click the **Save** (floppy disk icon) to commit the changes.
+
+5. Then click the Designer tab to confirm that the model now has a vertex table and en edge table.  
   ![](./images/20-modeler-fix-txn-label.png " ")  
 
 6. Click `Next` and then click `Create Graph` to move on to the next step in the flow.   
