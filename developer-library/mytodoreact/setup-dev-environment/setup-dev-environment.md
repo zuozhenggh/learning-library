@@ -29,31 +29,39 @@ Estimated Lab Time: ~25 minutes
   Click the Cloud Shell icon in the top-right corner of the Console.
   ![](images/7-open-cloud-shell.png " ")
 
-2. Clone the GitHub repo.
+2. Clone the GitHub repo and move up the `mtdrworkshop` directory.
 
     ````
     <copy>
-    git clone https://github.com/oracle/oci-react-samples/mtdrworkshop.git
+    git clone https://github.com/oracle/oci-react-samples.git
+    </copy>
+    ````
+
+    ````
+    <copy>
+    cd ~/oci-react-samples; mv mtdrworkshop ..
     </copy>
     ````
 
   You should now see `mtdrworkshop` in your root directory
 
-2. Change to the mtdrworkshop directory:
+3. Change to `mtdrworkshop` directory.
 
-    ```
-    <copy>cd ~mtdrworkshop</copy>
+	````
+	<copy>
+	cd ~/mtdrworkshop
+	</copy>
+	````
 
-    ```
-3. Set the execution mode for all Shell scripts
+4. Set the execution mode for all Shell scripts.
 
     ```
     <copy>chmod +x *.sh */*.sh</copy>
     ```
 
-NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY.
+	NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY.
 
-IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE ~/mtdrworkshop DIRECTORY.
+	IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE ~/mtdrworkshop DIRECTORY.
 
 ## **STEP 2**: Create an OCI compartment and an OKE cluster in that compartment
 
@@ -199,15 +207,18 @@ IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU A
         <copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
         ```
        - Grant some privileges to TODOUSER by executing the following command
+        
         ```
         <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
         ```
+
       - Connect as TODOUSER
         SQL> connect todouser@mtdrdb_tp
 
       - Create TODOITEM table
 
          Copy the following command in the Worksheet and execute.
+         
          ```
          <copy>CREATE TABLE todoitem (
            id NUMBER GENERATED ALWAYS AS IDENTITY,
@@ -217,11 +228,15 @@ IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU A
            PRIMARY KEY (id)
           );</copy>
          ```
+
       - Insert the first row, manually into TODOITEM table
+        
         ```
         <copy>insert into todoitem  (description) values ('Manual item insert');</copy>
         ```
+
       Then commit the inserted row
+        
         ```
         <copy>commit;</copy>
         ```
@@ -291,29 +306,32 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ```
     <copy>export MTDRWORKSHOP_LOCATION=~/mtdrworkshop</copy>
     ```
+    
     ```
     <copy>export WORKINGDIR=$MTDRWORKSHOP_LOCATION/workingdir</copy>
     ```  
    
-   	- Make sure to be in mtdrwokshop/setup-dev-environment directory then execute the following script
-		```
-		<copy>./installGraalVM.sh</copy>
-		```
+   	Make sure to be in mtdrwokshop/setup-dev-environment directory then execute the following script
+		
+      ```
+      <copy>./installGraalVM.sh</copy>
+      ```
 
 ## **STEP 6**: Access OKE from the Cloud Shell
 
 1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
     ```
-    <copy>touch mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
+    <copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
     ```
+
 2. Navigate to **Developer Services > Kubernetes Clusters**
 
 3. Copy the mdtrworkshopcluster id and paste into the newly created file
   ![](images/mtdrworkshop-cluster-id.png " ")
 
 
-3. Run `./verifyOKEAndCreateKubeConfig.sh`
+4. Run `./verifyOKEAndCreateKubeConfig.sh`
 
     ```
     <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
