@@ -119,4 +119,5 @@ Please **proceed to the next lab** to create a graph from these tables.
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
 * **Last Updated By/Date** - Jayant Sharma, May 2021
+* **Lab Expiry Date** - Nov 2021
   
