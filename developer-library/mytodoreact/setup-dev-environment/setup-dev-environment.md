@@ -207,15 +207,18 @@ Estimated Lab Time: ~25 minutes
         <copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
         ```
        - Grant some privileges to TODOUSER by executing the following command
+        
         ```
         <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
         ```
+
       - Connect as TODOUSER
         SQL> connect todouser@mtdrdb_tp
 
       - Create TODOITEM table
 
          Copy the following command in the Worksheet and execute.
+         
          ```
          <copy>CREATE TABLE todoitem (
            id NUMBER GENERATED ALWAYS AS IDENTITY,
@@ -225,11 +228,15 @@ Estimated Lab Time: ~25 minutes
            PRIMARY KEY (id)
           );</copy>
          ```
+
       - Insert the first row, manually into TODOITEM table
+        
         ```
         <copy>insert into todoitem  (description) values ('Manual item insert');</copy>
         ```
+
       Then commit the inserted row
+        
         ```
         <copy>commit;</copy>
         ```
@@ -299,29 +306,32 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ```
     <copy>export MTDRWORKSHOP_LOCATION=~/mtdrworkshop</copy>
     ```
+    
     ```
     <copy>export WORKINGDIR=$MTDRWORKSHOP_LOCATION/workingdir</copy>
     ```  
    
-   	- Make sure to be in mtdrwokshop/setup-dev-environment directory then execute the following script
-		```
-		<copy>./installGraalVM.sh</copy>
-		```
+   	Make sure to be in mtdrwokshop/setup-dev-environment directory then execute the following script
+		
+      ```
+      <copy>./installGraalVM.sh</copy>
+      ```
 
 ## **STEP 6**: Access OKE from the Cloud Shell
 
 1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
     ```
-    <copy>touch mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
+    <copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
     ```
+
 2. Navigate to **Developer Services > Kubernetes Clusters**
 
 3. Copy the mdtrworkshopcluster id and paste into the newly created file
   ![](images/mtdrworkshop-cluster-id.png " ")
 
 
-3. Run `./verifyOKEAndCreateKubeConfig.sh`
+4. Run `./verifyOKEAndCreateKubeConfig.sh`
 
     ```
     <copy>./verifyOKEAndCreateKubeConfig.sh</copy>

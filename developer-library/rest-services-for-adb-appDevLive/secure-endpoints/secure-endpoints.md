@@ -42,7 +42,11 @@ Estimated Lab Time: 10 minutes
 
     ![Role Definition Modal](./images/sec-4.png)
 
-5.  Use the **Role Name** field to name our role. Let's use **oracle.livelabs.role.gary**.
+5.  Use the **Role Name** field to name our role. Let's use **oracle.livelabs.role.admin**.
+
+     ````
+    <copy>oracle.livelabs.role.admin</copy>
+    ````
 
     ![Role Name Field](./images/sec-5.png)
 
@@ -70,10 +74,10 @@ Estimated Lab Time: 10 minutes
 
     ![Label Field](./images/sec-10.png)
 
-11. For the **Name** field, we can enter this **oracle.livelabs.privilege.gary**.
+11. For the **Name** field, we can enter this **oracle.livelabs.privilege.admin**.
 
      ````
-    <copy>oracle.livelabs.privilege.gary</copy>
+    <copy>oracle.livelabs.privilege.admin</copy>
     ````
 
     ![Name Field](./images/sec-11.png)
@@ -94,11 +98,11 @@ Estimated Lab Time: 10 minutes
 
     ![Roles tab on the top of the slider](./images/sec-14.png)
 
-14. On the **Roles** tab, use the shuttle to move the role we created, **oracle.livelabs.role.gary**, to the right side. We can do this by double left clicking on it or by left clicking it and then clicking the single arrow pointing to the right. Ensure the shuttle looks like the below image where **oracle.livelabs.role.gary** is on the right side.
+14. On the **Roles** tab, use the shuttle to move the role we created, **oracle.livelabs.role.admin**, to the right side. We can do this by double left clicking on it or by left clicking it and then clicking the single arrow pointing to the right. Ensure the shuttle looks like the below image where **oracle.livelabs.role.admin** is on the right side.
 
     ![Roles shuttle](./images/sec-15.png)
 
-    You can see that when we auto-REST enabled our table, privileges and roles where automatically created for us (oracle.dbtools.role.autorest.GARY.CSV_DATA)
+    You can see that when we auto-REST enabled our table, privileges and roles where automatically created for us (oracle.dbtools.role.autorest.ADMIN.CSV_DATA)
 
 15. When the single role have been moved to the right of the shuttle, left click the **Protected Modules** tab on the top of the **Create Privilege** slider.
 
@@ -148,8 +152,12 @@ Estimated Lab Time: 10 minutes
     
     ![Support URI Field](./images/sec-24.png)
 
-23. Finally, we need an **support email** for contacting someone. You can enter your email address or use gary@dinosaurfootball.com in the **Support Email** field of the form.
-    
+23. Finally, we need an **support email** for contacting someone. You can enter your email address or use admin@dinosaurfootball.com in the **Support Email** field of the form.
+
+     ````
+    <copy>admin@dinosaurfootball.com</copy>
+    ````
+
     ![Support Email Field](./images/sec-25.png)
 
 24. Once your form looks similar to the image below:
@@ -160,9 +168,9 @@ Estimated Lab Time: 10 minutes
 
     ![Roles Tab on the OAuth Client Slide Out Panel](./images/sec-27.png)
 
-25. Use the **shuttle** to move the **oracle.livelabs.role.gary** role to the right side.
+25. Use the **shuttle** to move the **oracle.livelabs.role.admin** role to the right side.
 
-    ![Use the shuttle to move the oracle.livelabs.role.gary role to the right side](./images/sec-28.png)
+    ![Use the shuttle to move the oracle.livelabs.role.admin role to the right side](./images/sec-28.png)
 
 26. When your **Roles Tab** looks like the below image in the  Create OAuth Client slider, left click the **Create** button.
 
@@ -190,7 +198,7 @@ Estimated Lab Time: 10 minutes
 
     ```
     curl --location --request POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
@@ -201,7 +209,7 @@ Estimated Lab Time: 10 minutes
 
     ```
     > curl --location --request POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
@@ -223,7 +231,7 @@ Estimated Lab Time: 10 minutes
 
     ```
     curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
@@ -235,7 +243,7 @@ Estimated Lab Time: 10 minutes
 
     ```
     curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/bizlogic' \
+    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
@@ -252,13 +260,13 @@ Estimated Lab Time: 10 minutes
     The endpoint for that REST API was
 
     ```
-    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/<VALUE>
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/<VALUE>
     ```
 
     So we can try out the following (**NOTE: your URL hostname will be different than the below command**):
     
     ```
-    curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1'
+    curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'
     ```
 
     and as expection, we get **Unauthorized**.
@@ -266,7 +274,7 @@ Estimated Lab Time: 10 minutes
 34. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
 
     ```
-    curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1'
+    curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'
     ```
 
     and we see the results we expect
@@ -281,17 +289,22 @@ Estimated Lab Time: 10 minutes
     {"col1":"03801afd","col2":"a1","col3":"75179648"},{"col1":"dbdf5867","col2":"a1","col3":"91475805"},{"col1":"93adc64d","col2":"a1","col3":"39287205"},
     {"col1":"2b130ef8","col2":"a1","col3":"206753925"},{"col1":"1f6bec10","col2":"a1","col3":"17745238"},{"col1":"81f46a8d","col2":"a1","col3":"54692392"}
     ,{"col1":"2ebd5ecb","col2":"a1","col3":"94437756"},{"col1":"4d514c12","col2":"a1","col3":"145885382"}],"hasMore":true,"limit":25,"offset":0,
-    "count":25,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1"},
-    {"rel":"describedby","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/metadata-catalog/api/sqlreport/item"},
-    {"rel":"first","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1"},{"rel":"next",
-    "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/api/sqlreport/a1?offset=25"}]}% 
+    "count":25,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1"},
+    {"rel":"describedby","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/api/sqlreport/item"},
+    {"rel":"first","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1"},{"rel":"next",
+    "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1?offset=25"}]}% 
     ```
 
 ## Conclusion
 
 In this lab, you secured your custom REST APIs with OAuth2 authentication.
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Anoosha Pilli, Database Product Management, April 2021
+
+- **Last Updated By/Date** - April 2021
+- **Workshop Expiry Date** - April 2022
+
