@@ -41,7 +41,7 @@ Estimated Lab Time: 10 minutes
 ```
 curl --location --request POST \
 --data-binary @<FILE_NAME> \
-'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/' 
+'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/' 
 ```
 
 **Save this code in a text editor or a notes application, we will be using it in just a bit.**
@@ -73,7 +73,7 @@ The cURL we had for **BATCH LOAD** was similar to the following:
 ```
 curl --location --request POST \
 --data-binary @<FILE_NAME> \
-'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/' 
+'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/' 
 ```
 
 Let's add a few modifications. First, we can add **--write-out '%{time_total}'** so we can see exactly how long this data load took. 
@@ -100,19 +100,19 @@ Time to set the headers of this HTTP request. We are going to set the content ty
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv"
 ```
 
-Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user "gary:PASSWORD"**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
+Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user "admin:PASSWORD"**. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user "gary:PASSWORD"
+-H "Content-Type:text/csv" --user "admin:PASSWORD"
 ```
 
 Finally, we need to add the URL we copied previously. We will be appending **batchload?batchRows=5000&errorsMax=20** to indicate that this is a batch load, we want to load them in groups of 5000, and to stop running if we hit 20 errors:
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user "gary:123456ZAQWSX!!" \
-"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+-H "Content-Type:text/csv" --user "admin:123456ZAQWSX!!" \
+"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload?batchRows=5000&errorsMax=20"
 ```
 
 There it is, the final cURL command we will use to load the data into the table. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
@@ -125,8 +125,8 @@ There it is, the final cURL command we will use to load the data into the table.
 
 ```
 curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
--H "Content-Type:text/csv" --user "gary:123456ZAQWSX!!" \
-"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/csv_data/batchload?batchRows=5000&errorsMax=20"
+-H "Content-Type:text/csv" --user "admin:123456ZAQWSX!!" \
+"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload?batchRows=5000&errorsMax=20"
 
 #INFO Number of rows processed: 2,097,148
 #INFO Number of rows in error: 0
@@ -157,10 +157,11 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
 
     ````
     <copy>
-    create or replace procedure return_count (p_input in varchar2, p_output out number) 
+    create or replace procedure return_count (p_input in varchar2, 
+                                              p_output out number) 
     is
-
     begin
+
         select count(*) 
           into p_output
           from csv_data
@@ -182,9 +183,12 @@ the 29.447 is the result of the **--write-out '%{time_total}'** command we added
     declare
         l_output number;
     begin
+
         return_count(p_input => 'a1',
-                    p_output => l_output);
+                     p_output => l_output);
+
     dbms_output.put_line(l_output);
+
     end;
     /
     </copy>
@@ -201,6 +205,6 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Kay Malcolm, May 2021
-- **Workshop Expiry Date** - April 2022
+- **Last Updated By/Date** - May 2021
+- **Workshop Expiry Date** - May 2022
 

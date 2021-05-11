@@ -38,15 +38,13 @@ In this lab you will use the browser-based SQL and REST workshop tools, connect 
 
 ### **Lab 2:** Connect to your Autonomous Database using SQL Developer Web
 
-### **Lab 3:** User Setups
+### **Lab 3:** Create and Auto-REST enable a table
 
-### **Lab 4:** Create and Auto-REST enable a table
+### **Lab 4:** Load data and create business logic in the database
 
-### **Lab 5:** Load data and create business logic in the database
+### **Lab 5:** REST enable tables and business logic
 
-### **Lab 6:** REST enable tables and business logic
-
-### **Lab 7:** Securing the REST endpoints
+### **Lab 6:** Securing the REST endpoints
 
 ## Acknowledgements
 

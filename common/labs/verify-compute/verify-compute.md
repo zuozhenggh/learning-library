@@ -32,12 +32,12 @@ This lab assumes you have:
 4. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
 ## **Step 2:** Choose a path
-Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2C)
+Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell [Step 2C](#Step2C:UploadKeytoCloudShellandConnect).
 
 Your options are:
-1. Step 2A: Connect using MAC or a Windows CYGWIN Emulator
-2. Step 2B: Connect using Putty *(Requires you to install applications on your machine)*
-3. Step 2C: Connect using Cloud Shell *(recommended)*
+1. [Step 2A: Connect using MAC or a Windows CYGWIN Emulator](#Step2A:ConnectviaMACorWindowsCYGWINEmulator)
+2. [Step 2B: Connect using Putty](#Step2B:ConnectviaWindowsusingPutty) *(Requires you to install applications on your machine)*
+3. [Step 2C: Connect using Cloud Shell](#Step2C:UploadKeytoCloudShellandConnect) *(recommended)*
 
 
 ## **Step 2A:** Connect via MAC or Windows CYGWIN Emulator
@@ -79,7 +79,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 1.  In the category section, **Click** Auth.
 2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.  
-3.  If you do not have a .ppk extension see the Appendix for instructions for converting your private key to .ppk format using PuttyGen.
+3.  If you do not have a .ppk extension see the [Appendix](#Appendix:TroubleshootingTips) for instructions for converting your private key to .ppk format using PuttyGen.
 
     ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
@@ -92,7 +92,9 @@ You may now [proceed to the next lab](#next).
 
 ## **Step 2C:** Upload Key to Cloud Shell and Connect
 
-1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
+1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment)
+
+2.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.  *Note: Ensure before you click the console you have selected your assigned compartment or you will get an error.*
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
@@ -101,11 +103,11 @@ You may now [proceed to the next lab](#next).
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
 
 2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
-   
+
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
 
 3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
-   
+
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
 
 4. Be patient while the key file uploads to your Cloud Shell directory
@@ -113,7 +115,7 @@ You may now [proceed to the next lab](#next).
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
 
-5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Change the permissions to 600 and move it into your .ssh directory
 
     ````
     <copy>
@@ -121,6 +123,7 @@ You may now [proceed to the next lab](#next).
     </copy>
     ````
     ````
+    chmod 600 <<keyname>>
     mv <<keyname>> .ssh
     ls .ssh
     cd ~
@@ -128,14 +131,18 @@ You may now [proceed to the next lab](#next).
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
 
-6.  Secure Shell into the copute instance using your uploaded key name
-   
+6.  If you didn't jot down your compute instance public IP address, go to *Compute* -> *Instance* and select the instance you created (make sure you choose the correct compartment). Alternatively, you can navigate to *My Reservations* in LiveLabs, click on *Launch Workshop* and get your public IP.
+
+7.  Secure Shell into the compute instance using your uploaded key name
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/em-mac-linux-ssh-login.png " ")
+    ![](./images/em-cloudshell-ssh.png " ")
 
-If you are unable to ssh in, check out the troubleshooting tips below.
+    *Note:* Make sure you are in the region and compartment you were assigned. If you are unable to ssh in, check out the troubleshooting tips below.
+
+8.  When prompted, answer **yes** to continue connecting.
 
 You may now [proceed to the next lab](#next).
 
@@ -161,7 +168,7 @@ Participant is unable to login to instance
 #### Tips for fixing Issue #1
 If you want to use Putty to connect to your server, you must convert your SSH key into a format compatible with Putty. To convert your key into the required .ppk format, you can use PuTTYgen.
 
-[Download PuTTYgen](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtZLx47DwAhUYKFkFHf99BmAQFjAAegQIAxAD&url=https%3A%2F%2Fwww.puttygen.com%2F&usg=AOvVaw1fagG6hM51oZWfQB_rqn2t) 
+[Download PuTTYgen](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtZLx47DwAhUYKFkFHf99BmAQFjAAegQIAxAD&url=https%3A%2F%2Fwww.puttygen.com%2F&usg=AOvVaw1fagG6hM51oZWfQB_rqn2t)
 
 To use PuTTYgen to convert a key into .ppk format, complete the following steps:
 
@@ -171,9 +178,7 @@ To use PuTTYgen to convert a key into .ppk format, complete the following steps:
 4. Go to **File**, and then click **Save private key** to save the key in .ppk format.
 
 
-
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** - Kay Malcolm
 * **Last Updated By/Date** - Kay Malcolm, May 2021
-
