@@ -60,7 +60,7 @@ Create the cluster as follows:
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and then select **Big Data**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/big-data.png " ")
+![](./images/big-data.png " ")
 
     <if type="livelabs">
 5. On the **Clusters** page, click **Create Cluster**.
