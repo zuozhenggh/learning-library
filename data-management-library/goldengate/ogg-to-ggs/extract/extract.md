@@ -13,9 +13,7 @@ An Extract is a process that extracts, or captures, data from a source database.
 
 In this lab, you will:
 * Log in to the Oracle GoldenGate deployment console
-* Add transaction data and a checkpoint table
 * Add and run an Extract
-* Add and run a Replicat
 
 ### Prerequisites
 
@@ -37,43 +35,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     You're brought to the OCI GoldenGate Deployment Console Home page after successfully signing in.
 
-## **STEP 2:** Add Transaction Data and a Checkpoint Table
-
-*Note: Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
-
-1.  Open the navigation menu and then click **Configuration**.
-
-    ![](images/02-01-nav-config.png)
-
-2.  Click **Connect to database SourceATP**.
-
-    ![](images/02-02-connect-source.png)
-
-3.  Next to **TRANDATA Information** click **Add TRANDATA**.
-
-    ![](images/02-03-trandata.png)
-
-4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**.
-
-5.  To verify, you can enter **SRC\_OCIGGLL** into the Search field and click **Search**.
-
-    ![](images/01-05-trandata.png)
-
-6.  Click **Connect to database TargetADW**.
-
-    ![](images/02-05-connect-target.png)
-
-7.  Next to Checkpoint, click **Add Checkpoint**.
-
-    ![](images/02-06-add-checkpoint.png)
-
-8.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
-
-    ![](images/02-07-checktable.png)
-
-To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
-
-## **STEP 3:** Add and Run an Extract
+## **STEP 2:** Add and Run an Extract
 
 1.  On the GoldenGate Deployment Console Home page, click the plus (+) icon for Extracts.
 
@@ -113,44 +75,6 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## **STEP 4**: Add and Run the Replicat
-
-1.  On the GoldenGate Deployment Console Home page, click the plus (+) icon for Replicats.
-
-    ![Click Add Replicat](images/03-01-ggs-add-replicat.png)
-
-2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
-
-3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
-
-4.  For **Credential Domain**, select **OracleGoldenGate**.
-
-5.  For **Credential Alias**, select **TargetADW**.
-
-6.  For **Trail Name**, enter E1.
-
-7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
-
-    ![Add Replicat - Basic Information](images/03-05-ggs-replicat-basicInfo.png)
-
-6.  Under **Managed Options**, enable **Critical to deployment health**.
-
-7.  Click **Next**.
-
-8.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
-
-    ![Add Replicat - Parameter File](images/03-08-param-file.png)
-
-9.  Click **Create**.
-
-10. In the Rep Replicat **Action** menu, select **Start**.
-
-    ![Replicat Actions Menu - Start](images/03-10-ggs-start-replicat.png)
-
-    The yellow exclamation point icon changes to a green checkmark.
-
-In this lab, you created and ran an Extract and Replicat. You may now [proceed to the next lab](#next), to monitor these processes.
-
 ## Learn More
 
 * [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
@@ -158,5 +82,5 @@ In this lab, you created and ran an Extract and Replicat. You may now [proceed t
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2021
+* **Contributors** -  Julien Testut, Database Product Management
+* **Last Updated By/Date** - Jenny Chan, May 2021

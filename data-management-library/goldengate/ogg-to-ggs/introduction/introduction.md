@@ -18,13 +18,13 @@ In this lab, you will:
 ### Prerequisites
 To successfully complete this LiveLab, you must have the following:
 * An on premise or Marketplace Oracle GoldenGate installation
-* A Trail File to send to OCI GoldenGate
 * An OCI GoldenGate deployment created, with public IP enabled
 
 ### Lab Breakdown
 
 * Lab 1: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
-* Lab 2: Send a Trail File from Oracle GoldenGate to OCI GoldenGate
+* Lab 2: Create and run an Extract
+* Lab 3: Send a Trail File from Oracle GoldenGate to OCI GoldenGate
 
 ## Learn More
 
@@ -34,7 +34,5 @@ To successfully complete this LiveLab, you must have the following:
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He, Database Product Management
-* **Last Updated By/Date** - April 2021
-
-
+* **Contributors** -  Werner He and Julien Testut, Database Product Management
+* **Last Updated By/Date** - May 2021

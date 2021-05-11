@@ -23,11 +23,9 @@ In this lab, you will create and run a path on the Distribution Server to send a
 
 4. For **Description**, describe the purpose of this Path.
 
-5. Enable **Reverse Proxy enabled?**.
+5. Enable **Use Basic Authentication**.
 
-6. Enable **Use Basic Authentication**.
-
-7. For **Source Trail File**, enter the name of the OGG Trail file you're sending to OCI GoldenGate.
+6. For **Source Trail File**, select the OGG Trail file you're sending to OCI GoldenGate.
 
 8. For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com:443**. You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window.
 
@@ -52,7 +50,5 @@ In this lab, you created and ran a Path on your on premise Oracle GoldenGate Dis
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He, Database Product Management
-* **Last Updated By/Date** - March 2021
-
-
+* **Contributors** -  Werner He and Julien Testut, Database Product Management
+* **Last Updated By/Date** - May 2021
