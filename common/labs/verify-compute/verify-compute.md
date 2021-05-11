@@ -103,11 +103,11 @@ You may now [proceed to the next lab](#next).
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
 
 2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
-   
+
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
 
 3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
-   
+
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
 
 4. Be patient while the key file uploads to your Cloud Shell directory
@@ -115,7 +115,7 @@ You may now [proceed to the next lab](#next).
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
 
-5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Change the permissions to 600 and move it into your .ssh directory
 
     ````
     <copy>
@@ -131,14 +131,18 @@ You may now [proceed to the next lab](#next).
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
 
-6.  Secure Shell into the compute instance using your uploaded key name
-   
+6.  If you didn't jot down your compute instance public IP address, go to *Compute* -> *Instance* and select the instance you created (make sure you choose the correct compartment). Alternatively, you can navigate to *My Reservations* in LiveLabs, click on *Launch Workshop* and get your public IP.
+
+7.  Secure Shell into the compute instance using your uploaded key name
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/em-mac-linux-ssh-login.png " ")
+    ![](./images/em-cloudshell-ssh.png " ")
 
-If you are unable to ssh in, check out the troubleshooting tips below.
+    *Note:* Make sure you are in the region and compartment you were assigned. If you are unable to ssh in, check out the troubleshooting tips below.
+
+8.  When prompted, answer **yes** to continue connecting.
 
 You may now [proceed to the next lab](#next).
 
@@ -164,7 +168,7 @@ Participant is unable to login to instance
 #### Tips for fixing Issue #1
 If you want to use Putty to connect to your server, you must convert your SSH key into a format compatible with Putty. To convert your key into the required .ppk format, you can use PuTTYgen.
 
-[Download PuTTYgen](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtZLx47DwAhUYKFkFHf99BmAQFjAAegQIAxAD&url=https%3A%2F%2Fwww.puttygen.com%2F&usg=AOvVaw1fagG6hM51oZWfQB_rqn2t) 
+[Download PuTTYgen](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtZLx47DwAhUYKFkFHf99BmAQFjAAegQIAxAD&url=https%3A%2F%2Fwww.puttygen.com%2F&usg=AOvVaw1fagG6hM51oZWfQB_rqn2t)
 
 To use PuTTYgen to convert a key into .ppk format, complete the following steps:
 
@@ -174,9 +178,7 @@ To use PuTTYgen to convert a key into .ppk format, complete the following steps:
 4. Go to **File**, and then click **Save private key** to save the key in .ppk format.
 
 
-
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** - Kay Malcolm
 * **Last Updated By/Date** - Kay Malcolm, May 2021
-
