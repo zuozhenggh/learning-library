@@ -19,7 +19,7 @@ In this lab you will:
 In order to refresh an environment you will need a topology with DBaaS. If you already have a topology with DBaaS you can skip this step.
 
 1.  Navigate to **Dashboard** > **Topology**. Click **Add New Topology**.
-    ![](./images/topology.png "")
+    ![](./images/addtop.png "")
 
 2.  Give the topology a name such as **RefreshDBaaS** and enter a description. Now we will add 3 new nodes. Click **Add Node**.
     ![](./images/topname.png "")
@@ -54,7 +54,7 @@ In order to refresh an environment you will need an environment template that is
 
 2.  On the General Details page:
     * Give the template a name such as **RefreshDBaaS** and enter a description
-    * Click on the search icon next to PeopleSoft Image and select **PEOPLESOFT HCM UPDATE IMAGE 9.2.037 - NATIVE OS** 
+    * Click on the search icon next to PeopleSoft Image and select **PEOPLESOFT HCM UPDATE IMAGE 9.2.038 - NATIVE OS** 
     * Click **Next**
     ![](./images/tempname.png "")
 
@@ -141,7 +141,7 @@ In order to refresh an environment you will need an environment created from a t
     ![](./images/clone.png "")
 
     Provide a unique environment name such as **TestRefresh**. Leave everything else as default and then click **Clone**.
-    ![](./images/testrefresh.png "")    
+    ![](./images/testrefresh.png "") *CHANGE*    
 
 2.  Once the source and target environments are both running, we can then create
     a backup from the source environment. We will use this backup to refresh the target environment.
@@ -173,12 +173,10 @@ In order to refresh an environment you will need an environment created from a t
     * Backup ID: **TestBackup**
     * Use Latest Backup: **YES**
     * App Refresh: **NO**
-    * Source TDE KeyStore (Wallet) Password: DB Admin password (**PSft1234##**)
+    * Source TDE KeyStore (Wallet) Password: DB Admin password (**Psft1234##**)
     ![](./images/addrefresh.png "")
 
     Click **Done**.
-
-You may now proceed to the next lab.
 
 ## Acknowledgements
 

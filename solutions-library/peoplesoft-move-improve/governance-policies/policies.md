@@ -8,21 +8,21 @@ Estimated Lab Time: 30 minutes
 ### Objectives
 In this lab you will:
 * Create a policy group
-* Create multiple policies
-* Execute start and stop policies
+* Create policies
+* Execute policies
 
 ### Prerequisites
-- Access to the Cloud Manager console.
-- Environment up and running
+- Access to the Cloud Manager console
+- A PeopleSoft Environment up and running
 
 ## **STEP 1**: Creating a Policy Group
 
-Before creating policies you need to create a policy group. Policy groups are used to map policies to specific environments.
+Before creating any policies you need to create a policy group. Policy groups are used to map policies to specific environments.
 
 1.  Navigate to **Dashboard** > **Governance**. Click **Policy Groups** on the side menu and click the plus button to add a new policy group.
     ![](./images/policygroup.png "")
 
-2.  Under name, enter the name of the environment that this policy group is for. For example, I will name my policy group **WorkshopEnvironment**. Enter a description, then click save.
+2.  Under name, enter the name of the PeopleSoft environment that this policy group is for. For demo purposes we will be using the **HCMFT** environment. Enter a description, then click save.
     ![](./images/policysave.png "")
 
 ## **STEP 2**: Creating Policies
@@ -30,7 +30,7 @@ Before creating policies you need to create a policy group. Policy groups are us
 1.  Navigate to **Dashboard** > **Governance**. Click **PolicyEditor** on the side menu then click **Add Policy**    
     ![](./images/policyadd.png "")
 
-2.  First we will create a start policy for our environment. Type the information as shown below. If you are using an environment other than **WorkshopEnvironment**, be sure to update **PolicyGroup** and **PolicyConditions** as appropriate.
+2.  First we will create a start policy for our environment. Type the information as shown below. If you are using an environment other than **HCMFT**, be sure to update **PolicyGroup** and **PolicyConditions** as appropriate.
     ![](./images/start.png "")
 
     Click **Schedule** and enter a time/date for when you want this policy to take affect. This can be changed later on, for now just put some time in the future. Click **Save** and then click **Save** on the main policy page.
@@ -46,20 +46,15 @@ Before creating policies you need to create a policy group. Policy groups are us
 
     Set a schedule then click **Save** and then **Save** again.
 
-    Next we will create a scale-down policy. Click **Add Policy** again and type the information as shown below:
+    Finally we will create a scale-down policy. Click **Add Policy** again and type the information as shown below:
     ![](./images/scaledown.png "")
 
     Set a schedule then click **Save** and then **Save** again.
 
-    Finally we will create a backup policy. Click **Add Policy** again and type the information as shown below:
-    ![](./images/backup.png "")
-
-    Set a schedule then click **Save** and then **Save** again.
-
-    Expand **WorkshopEnvironment** and now as you can see we have multiple policies mapped under a single policy group for easy reference.
+    Expand **HCMFT** and now as you can see we have multiple policies mapped under a single policy group for easy reference.
     ![](./images/policyview.png "")
 
-3.  You can also view all of these policies directly from your environment. Navigate to **Dashboard** > **Environments**. On **WorkshopEnvironment** (or whichever environment you created the previous policies for) click the down arrow and then **Details**
+3.  You can also view all of these policies directly from your environment. Navigate to **Dashboard** > **Environments**. On **HCMFT** (or whichever environment you created the previous policies for) click the down arrow and then **Details**
     ![](./images/workshopdetail.png "")
 
 4.  On the side menu select **Policies**. Here you will be able to see all of the policies we recently created for this environment.
@@ -67,7 +62,7 @@ Before creating policies you need to create a policy group. Policy groups are us
 
 ## **STEP 3**: Executing Policies
 
-1.  Now we will execute our stop policy. If you want a policy to execute immediately you can set the start date for a time in the past. Navigate to **Dashboard** > **Governance**. Click **Policy Editor** on the side menu then click the arrow under **View/Edit** next to our **WorkshopEnvironment Stop** policy.
+1.  Now we will execute our stop policy. If you want a policy to execute immediately you can set the start date for a time in the past. Navigate to **Dashboard** > **Governance**. Click **Policy Editor** on the side menu then click the arrow under **View/Edit** next to our **HCMFT Stop** policy.
     ![](./images/stoppolicy.png "")
 
 2.  Click **Schedule** then set a **Start Date** and **Start Time** that has occurred in the past. Click **Save** and then click **Save** on the main policy page.
@@ -79,7 +74,7 @@ Before creating policies you need to create a policy group. Policy groups are us
 4.  Navigate to **Dashboard** > **Environments**. You will see that our environment is in the **Stopping** phase which means that our policy has been executed and has initiated the stop of the environment.    
     ![](./images/stopprocess.png "")
 
-5.  To see the status of the policy which we just executed navigate to **Dashboard** > **Governance** and on the side menu click **PolicyMonitor**. Click the arrow under **Status** next to **WorkshopEnvironment Stop**.
+5.  To see the status of the policy which we just executed navigate to **Dashboard** > **Governance** and on the side menu click **PolicyMonitor**. Click the arrow under **Status** next to **HCMFT Stop**.
     ![](./images/monitorpolicy.png "")
 
     You will see that the status of the policy is **Running**.
@@ -88,14 +83,14 @@ Before creating policies you need to create a policy group. Policy groups are us
     Once you see the status of your environment changed to **Stopped** the policy has successfully executed.
     ![](./images/stopped.png "")
 
-6.  We can now execute our start policy to bring the environment back up. Navigate to **Dashboard** > **Governance**. Click **Policy Editor** on the side menu then click the arrow under **View/Edit** next to our **WorkshopEnvironment Start** policy.
+6.  We can now execute our start policy to bring the environment back up. Navigate to **Dashboard** > **Governance**. Click **Policy Editor** on the side menu then click the arrow under **View/Edit** next to our **HCMFT Start** policy.
     ![](./images/startback.png "")
 
 7.  Click **Schedule** then set a **Start Date** and **Start Time** that has occurred in the past. Click **Save** and then click **Save** on the main policy page.
     ![](./images/pastdate.png "")
 
 8.  Answer **Yes** when the popup asks you if you are sure you want to re-generate existing policy.
-    ![](./images/pop.png "")
+    ![](./images/pop2.png "")
 
 9.  Navigate to **Dashboard** > **Environments**. You will see that our environment is in the **Starting** phase which means that our policy has been executed and has initiated the start of the environment.    
     ![](./images/startagain.png "")
