@@ -2,21 +2,20 @@
 
 ## About this Workshop
 
-This hands-on lab provides users with step-by-step instructions for preparing their **Oracle Cloud Infrastructure (OCI) Tenancy**, including setting up a user group, adding a user and policies, as well as a compartment to house **Cloud Manager 11 using Marketplace**. The final sections provide guidance for **provisioning a PeopleSoft environment**, followed by interactive, yet simple excercises to familiarize users with the system.
+This hands-on lab provides users with step-by-step instructions for preparing their **Oracle Cloud Infrastructure (OCI) Tenancy**, including setting up a user group, adding a user and policies, as well as a compartment to house **Cloud Manager 12 using Marketplace**. The final sections provide guidance for **provisioning a PeopleSoft environment**, followed by interactive, yet simple excercises to familiarize users with the system.
 
 
 Estimated Lab Time: 6 hours, including provisioning time. 
 
 
-**Note**:
-
 - The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
 - Follow all naming conventions (compartment, group, etc..) and passwords as directed.   
 - IP addresses and URLs in the screenshots in this workbook may differ from what you use in the labs as these are dynamically generated.
+- The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes to the Peoplesoft Cloud Manager for the Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
 
 ### Architecture Diagram
 
-  ![](./images/newArch.png " ")
+  ![](./images/archnew12.png " ")
 
 
 ### Objectives
@@ -29,12 +28,12 @@ In this lab, you will:
 * Subscribe to PeopleSoft Channels (Lab 4)
 * Review and Update a Topology (Lab 5)
 * Create a New Environment Template (Lab 6)
-* Create Environment in PeopleSoft (Lab 7)
+* Deploy a PeopleSoft Environment (Lab 7)
 
 
 
 ### Prerequisites
-* User already has a tenancy with Administrator user access. If not, please reach out to us during the session so that we can help you to create windows instance. 
+* An OCI tenancy with administrator user access. 
 * My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
 * User should have their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
 * User has access to a workstation/laptop with the following installed:
@@ -73,9 +72,8 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 
 
 ## Acknowledgements
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer, Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

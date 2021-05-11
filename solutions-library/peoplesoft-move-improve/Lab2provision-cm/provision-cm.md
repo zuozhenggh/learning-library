@@ -53,14 +53,14 @@ Click **Launch Stack**.
 
 The Create Stack, Configure Variables page includes a list of the parameters needed to create and configure the Cloud Manager instance.
 
-1. In the Cloud Manager Instance section, select the **Availability Domain** as **US-ASHBURN-AD-1**. 
+1. In the Cloud Manager Instance section, select the **Availability Domain** as **US-ASHBURN-AD-1** (or AD-1 of your selected region noted down in **Details.txt #4)
 2. For **Shape**, select **VM.Standard2.1**. 
 3. Select the **storage volume size in GBs** for the secondary block volume for the Cloud Manager instance. We will set it as **200 GBs**.
 4. For SSH public key, enter the contents of your ``id_rsa.pub`` from your keys folder in a single line, with no line feeds or spaces.
-5. Enter your **User OCID** (you have copied this in your notepad in Lab 1, Step 10) in a single line, with no line feeds or spaces.
+5. Enter your **User OCID** (you have copied this in your **Details.txt** #5) in a single line, with no line feeds or spaces.
 6. For API private key, enter the contents of your ``api_key`` file.   
 7. Leave API Private passphrase as blank (Enter if you have created one).
-8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have also noted this down from Lab 1, Step 10)
+8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (**Details.txt** #4)
 
     ![](./images/vars1v2.png "")
 
@@ -91,7 +91,7 @@ The Create Stack, Configure Variables page includes a list of the parameters nee
 
 ## **STEP 5**: Enter Networking Information
 
-We will be provisioning our Cloud Manager instance in Private Cloud. Click [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/install_cloud_manager_resource_manager_psft_cm_oci/index.html#EnterValuesforaNewVirtualCloudNetwork) or more information on the default subnets and ports that will automatically get created in the following steps.
+We will be provisioning our Cloud Manager instance in Private Cloud. Click [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/install_cloud_manager_resource_manager_psft_cm_oci/index.html#EnterValuesforaNewVirtualCloudNetwork) for more information on the default subnets and ports that will automatically get created in the following steps.
 
 1. In the Networking section, enter a host name for the Cloud Manager instance. We'll use **psftcm**.
 2. Select the option **Create Network Resources**
@@ -119,13 +119,13 @@ Spinning up resources, such as our Virtual Cloud Network, compute instances for 
 
 Over these few minutes, you can refresh the page until you see the **RMJ** has succeeded as indicated with a green box and **Succeeded** status. Once you do:
 1. Click on **Logs** under **Resources** on the left side. 
-2. Scroll all the way down in the black box, copy and paste these values into your Notepad.
+2. Scroll all the way down in the black box, copy and paste these values into **Details.txt** (#9). 
     ![](./images/rmjsuccess1v2.png "")
 
     Close up view:
     ![](./images/output2.png "")
 
-    *NOTE*: If you don't have admin access in your laptop, before proceeding with Step 7, please follow the 
+    *NOTE*: If you don't have admin access in your laptop, before proceeding with Step 7 or 8, please follow the 
     **Windows VM Compute Lab:** 
 
     ![](./images/wlab.png "")
@@ -138,18 +138,20 @@ SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud M
 
 **NOTE**: Make sure you are off VPN.
 
-1.	Retrieve the **Cloud Manager Output Variables** you just copied to your Notepad and edit the **sample\_command\_for\_ssh\_tunnel** so that it looks like this:
+1. Retrieve the **Cloud Manager Output Variables** you just copied to **Details.txt** 
+2. In **Details.txt** #10, edit the **sample\_command\_for\_ssh\_tunnel** by adding **-i id_rsa** like so:
     ![](./images/sshedit.png "")
 
-Here's a template for reference:
+
+    -    The overall format of the command should look like this:
     ![](./images/sshtemplate.png "")
 
     
-2.  Launch terminal and navigate to the keys folder. (For example: ```cd ~/Downloads/keys ```) Now, paste in the command we just edited. 
-3. Type in "yes" to continue connecting.
-4. Now, let's connect through SSH. Run this command in the keys directory as well.
+3. Launch terminal and navigate to the keys folder. (For example: ```cd ~/Downloads/psftKeys ```) Now, paste in the ssh tunnel command we just edited . 
+4. Type in "yes" to continue connecting.
+5. Now, let's connect through SSH. Run this command (**Details.txt** #11) in the keys directory as well.
 
-    ```ssh –p 2222 opc@localhost -i id_rsa```
+    ```ssh -p 2222 opc@localhost -i id_rsa```
 5. Again, type in "yes" to authenticate the host.
 
     All together, it should look like this:
@@ -285,9 +287,12 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
 
     ![](./images/firefox.png "")
 
-4.  Go back to your outputs and edit the **sample\_command\_for\_socks\_proxy** as shown below, adding in 
+4.  Go back to your outputs and edit **Details.txt** #12, the **sample\_command\_for\_socks\_proxy** as shown below, adding in **-i id_rsa** like so:
 
     ![](./images/ssheditport.png "")
+
+    -   The overall format of the command should look like this:
+    ssh -i id_rsa -D 8123 -f -C -q -N opc@jumphost\_public\_ip
 
 5. Launch terminal (Mac) or Git Bash (Windows) and navigate to the keys folder again. Then, run the command we just edited to create the SOCKS proxy.
 
@@ -298,7 +303,7 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
 
 5. Enter your **Cloud Manager PIA URL** (``CM_http_url`` from the Outputs) in Firefox
 
-6. To login, use the username **CLADM** and password as **Psft1234**.
+6. To login, use the username **CLADM** and password as **Psft1234**. (**Details.txt** #13 & 14)
     ```
     <copy>CLADM</copy>
     ```
@@ -316,7 +321,7 @@ You may now proceed to the next lab.
 **Created By/Date**   
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, April 2021
-* **Lab Expiry Date** - June 30, 2021 
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

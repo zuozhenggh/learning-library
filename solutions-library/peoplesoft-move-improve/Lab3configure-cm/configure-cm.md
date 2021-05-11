@@ -9,15 +9,14 @@ Estimated Lab Time: 10 minutes.
 The purpose of this lab is to show you how to configure Cloud Manager settings.
 
 In this lab, you will:
-* Upload SSH public keys
+* Upload SSH public key
 * Update My Oracle Support Credentials
 * Input the image OCID for the Cloud Manager
 * Create a Mount Target for a File System
 
 ### Prerequisites
-My Oracle Support (MOS) account credentials.
-* User ID
-* Password
+* Keys generated in Lab 1, Step 8
+
 
 ## **STEP 1**: Uploading SSH public key
 
@@ -38,7 +37,7 @@ My Oracle Support (MOS) account credentials.
 Go back to the **Cloud Manager Dashboard** > **Cloud Manager Settings**. 
     ![](./images/cmhome.png "")
 1.  Navigate to Infrastructure Settings on the left and update Operating System Images.     
-    * For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list (see the screenshot below).
+    * For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list. The OCID should populate automatically.
 
     * For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.oracle.com/en-us/iaas/images/image/943bdefa-8858-4b37-98e0-fd710c4aea1e/).
 
@@ -63,7 +62,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, April 2021
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -3,7 +3,7 @@
 ## Introduction
 This lab walks you through the steps to prepare your Orace Cloud Infrastructure Tenancy
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 30 minutes
 
 ### About Identity and Access Management (IAM)
 The Oracle Cloud Infrastructure (OCI) Identity and Access Management (IAM) Service allows you to control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. 
@@ -15,11 +15,11 @@ The purpose of this lab is to give you an overview of the IAM Service components
 In this lab, you will:
 * Sign-in to your OCI Tenancy to access the Console
 * Verify the Service Limit
-* Manage access by creating a 
+* Manage access by creating 
     - Demo Compartment
     - OCI Group
     - Policies
-    - New User
+    - New Local User
 
 
 ### Prerequisites
@@ -31,9 +31,12 @@ In this lab, you will:
     - Tenant, User name and Password
     - URL for the Console: [https://oracle.com] (https://oracle.com)
     - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
+    - Please download this file: [Details.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFAPdfoRcY01Baa_b6mv7eCzg3rg6IL9olmt-P6OdlAf-B_0h0LnmI_DARqiK2Qr/n/orasenatdpltoci03/b/TestDrive/o/Details.txt.zip)
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
+Please click this link to download **Details.txt**, a file in which you will be noting down important information throughout the lab. 
+
 In this section, sign in to the Oracle Cloud Infrastructure console using your credentials.
 
 1.	Open a supported browser and go to the Console URL: [https://oracle.com] (https://oracle.com).
@@ -42,11 +45,11 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
     ![](./images/1.png " ")
 
-3.	Enter the name of your tenancy (aka your account name, NOT your user name), then click on the **Next** button.
+3.	Enter your Cloud Account name (aka tenancy name), NOT your user name), note it down in **Details.txt** (#1). Click on the **Next** button. 
 
     ![](./images/tenancy.png " ")
 
-4.	Oracle Cloud Infrastructure is integrated with Identity Cloud Services. You will see a screen validating your Identity Provider. Click **Continue**. Enter your username and password and click **Sign In**. 
+4.	Oracle Cloud Infrastructure is integrated with Identity Cloud Services. You will see a screen validating your Identity Provider. Click **Continue**. Enter your username and password and click **Sign In**. Put these credentials in **Details.txt** (#2 & 3).
 
     ![](./images/continue.png " ") 
 
@@ -55,6 +58,12 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 5.	When you sign in to the Console, the dashboard is displayed.
 
     ![](./images/homepage.png " ")
+
+    On the top right, click on the region. Note the home region displayed in **Details.txt** (#4) as well. 
+
+    ![](./images/homeregion.png "")
+
+
 
 ## **STEP 2:** Verifying Service Limits
 
@@ -75,7 +84,7 @@ Please check that you have the required resources in Availability Domain 1
 
     ![](./images/newScope.png " ")
 
-**Note**: We will be using all 6, so if you would like to spin up any other compute resources that require Standard2 based VM and BMs for the duration of the trial, be sure to use a different Availability Domain.
+**Note**: We will be using all 6 (Jumphost is 1, Cloud Manager is 1, PSFT Environment is 2, Cloning Environment is 2), so if you would like to spin up any other compute resources that require Standard2 based VM and BMs for the duration of the trial, be sure to use a different Availability Domain.
 
 ## **STEP 3:** Creating a Demo Compartment
 **Compartments Overview:**
@@ -189,7 +198,7 @@ Create a **New User**
     ![](./images/user.png "") 
 2. Click **Create User**.
 
-3. Select IAM user. 
+3. Select **IAM user**. This is crucial. Do *NOT* create an IDCS user.
 
     ![](./images/UserTypeIAM.png "")    
 
@@ -211,38 +220,40 @@ Create a **New User**
     b) Click **Create**.
 
 ## **STEP 7:** Managing User
+1. From the same User Details page, copy the OCID by clicking on **copy** and paste it in **Details.txt** (#5). 
 
-Set a **Temporary Password** for the newly created User. After the user is created, you can see the user details.
+    ![](./images/ocid.png "")
 
-1. Click **Create/Reset Password**.
+
+2. Now, let's set a password. Click **Create/Reset Password**.
 
     ![](./images/userdetail.png "")
 
-2. In the dialog, click **Create/Reset Password**.
+3. In the dialog, click **Create/Reset Password**.
 
     ![](./images/13.png "")
 
-3. The new one-time password is displayed. Click the **Copy** button, save this to your notepad for later, and then click **Close**.
+4. The new one-time password is displayed. Click the **Copy** button, save this to **Details.txt** (#6) for later, and then click **Close**.
     
     ![](./images/newpassword.png "")
 
-4. Scroll down and click on **Add User to Group**.
+5. Scroll down and click on **Add User to Group**.
 
     ![](./images/scrolladdgroup.png "")
 
-5. Select the group you just created, and click on **Add**.
+6. Select the group you just created, and click on **Add**.
 
     ![](./images/adduser.png "")
 
-6. Click on **top-right icon button** and **Sign out** of the admin user account.
+7. Click on **top-right icon button** and **Sign out** of the admin user account.
 
     ![](./images/signout.png "")
 
     This time, you will sign in using the local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
 
-7. Click **Oracle Cloud Infrastructure Direct Sign-In** 
+8. Click **Oracle Cloud Infrastructure Direct Sign-In** 
     
-    This will expand fields for non-federated accounts. Enter the username **User01** and the password that you copied to your notepad.
+    This will expand fields for non-federated accounts. Enter the username **User01** and the password that you copied to **Details.txt** (#6).
 
     ![](./images/newSignin.png "")
 
@@ -250,7 +261,7 @@ Set a **Temporary Password** for the newly created User. After the user is creat
     *Note*: Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture below.
     
 
-8. Set the new password to **Psft@1234**. Click on **Save New Password**. 
+9. Set the new password to **Psft@1234**. Click on **Save New Password**. 
     ```
     <copy>Psft@1234</copy>
     ```
@@ -261,11 +272,14 @@ Set a **Temporary Password** for the newly created User. After the user is creat
 
 ## **STEP 8:** Generating Keys
 
-**Choose either Option A OR Option B. (Option A is easier)**
+1. **For your convenience, you can use these pre-generated keys for the purpose of the demo and skip to Step 9: [psftKeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TfT512KHmcXTOfylHmEBrBeZNmjDsjVSB4sjSO0Oq2KN2KVE4Dz4bwvI5nOhzrqB/n/orasenatdpltoci03/b/TestDrive/o/psftKeys.zip)**
+<!-- For your convenience, you can use these pre-generated keys for the purpose of the demo and skip to Step 9: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip) -->
 
-**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 9: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
+You may now skip down to Step 9.
 
-**Option B:** If you would like to generate your own keys, continue here:
+**OPTIONALLY**, 
+
+If you would like to generate your own keys, continue here:
 1. Ensure Git Bash is installed on your laptop/workstation.
 
 2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4siaoXfcndYoTXRI9y7evzGbNLgCcLt1YjMpb76eW87EAVGoGJCkzFxWk1S-EMn8/n/c4u03/b/solutions-library/o/make_keys.sh)
@@ -311,7 +325,7 @@ Set a **Temporary Password** for the newly created User. After the user is creat
 	**II.	SSH key pair**: ``id_rsa`` and ``id_rsa.pub``
 
     
-    *Note*: These Keys are necessary for you to be able to securely connect into your PeopleSoft Cloud Tenancy.
+    *Note* : These Keys are necessary for you to be able to securely connect into your PeopleSoft Cloud Tenancy.
     
     ![](./images/apikeypub.png "")
 
@@ -321,7 +335,7 @@ Verify you have the following 4 keys:
 * **API Signing keys**: ``api_key`` and ``api_key.pub``
 * **SSH key pair**: ``id_rsa`` and ``id_rsa.pub``
 
-1. Copy the contents of api_key.pub key (the one you have created through the script) as follows: 
+1. Copy the contents of api_key.pub key (the one you downloaded or created through the script) as follows: 
     - Right click on the api_key.pub and open with a text editor as shown below. 
 
     ![](./images/apikeys.png "")  
@@ -334,17 +348,21 @@ Verify you have the following 4 keys:
 
     ![](./images/api.png "")
 
-2. Scroll to the bottom, on the left side click on **API Keys** and then click on **Add Public Key**
+3. Scroll to the bottom, on the left side click on **API Keys** and then click on **Add Public Key**
 
     ![](./images/apisetup.png "")
 
-3. Click on **Paste public keys** and paste the content of **api_key.pub** (the one you just copied above). Click on **Add**.  
+4. Click on **Paste public keys** and paste the content of **api_key.pub** (the one you just copied above). Click on **Add**.  
 
     ![](./images/apikeypub.png "")
 
     ![](./images/apipaste.png "")
 
-## **STEP 10**: Gather Information for the Cloud Manager Stack
+Verify that you have entries #1-8 filled out in **Details.txt**
+
+
+
+<!-- ## **STEP 10**: Gather Information for the Cloud Manager Stack
 
 Paste the below information in a notepad. You will need it later while creating the stack.
 
@@ -354,15 +372,15 @@ Paste the below information in a notepad. You will need it later while creating 
 
 2. On the top right, click on the region. Note the home region displayed in your notepad as well. 
 
-    ![](./images/homeregion.png "")
+    ![](./images/homeregion.png "") -->
 
 You may now proceed to the next lab.
 
 
 ## Acknowledgements
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, April 2021
-
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
+* **Lab Expiry Date** - October 1, 2021 
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

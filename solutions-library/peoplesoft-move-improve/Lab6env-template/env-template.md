@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create a new environment template from the previously downloaded PeopleSoft Image
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 The purpose of this lab is to show you how to create a new environment template from a downloaded PeopleSoft Image in order to create a new PeopleSoft Environment.
@@ -14,11 +14,12 @@ In this lab, you will:
 
 Let's take a look at the Network Topology again, so we can understand what we are configuring.
 
-We have already provisioned Cloud Manager in a private subnet and the Jump Host in a public Subnet. We are now working towards provisioning our PeopleSoft Environment in Availability Domain-3. 
+We have already provisioned Cloud Manager in a private subnet (cm) and the Jump Host in a public subnet (jumphost). We created a template of 2 nodes:
+* Linux Full Tier in private subnet (ft)
+* PeopleSoft Client in private subnet (win)
 
-*Note:* The reason we have separated it out into 3 ADs for this workshop is because of compute Service Limit constraints in a trial environment. For production environment, it is suggested to have all the tiers of Peoplesoft in one Availability Domain, maintaining High Availability through Fault Domain.
 
-![](./images/newArch.png "")
+![](./images/archnew12.png "")
 
 ### Prerequisites
 - A PeopleSoft Cloud Manager Instance
@@ -110,9 +111,8 @@ You may proceed to the next lab.
 ## Acknowledgements
 
 **Authors** 
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

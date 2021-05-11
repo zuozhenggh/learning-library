@@ -57,6 +57,15 @@
             "title": "Lab 11 (Optional): Refreshing an Environment",
             "filename": "../../refresh/refresh.md"
           },
+
+          {
+            "title": "Patching an Environment",
+            "filename": "../../patching/patching.md"
+          },
+          {
+            "title": "Upgrading an Environment",
+            "filename": "../../upgrading/upgrading.md"
+          },
           {
               "title": "Additional Lab: Provisioning Environments with Windows Clients",
               "filename": "../../windows-env/windows-env.md"

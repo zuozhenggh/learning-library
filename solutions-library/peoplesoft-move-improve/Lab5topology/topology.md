@@ -8,8 +8,11 @@ Cloud Manager provisions PeopleSoft environments on-demand with just a few click
 3. Create Environment
 
 Topology defines the infrastructure layout that will be created on Oracle Cloud by Cloud Manager. An administrator defines a template for creating an environment. The topology is encapsulated inside the template. 
-
 Users can select a template, override topologies, change any attributes, if needed, and provision PeopleSoft environments on demand. Users are allowed to perform actions on a running environment, such as stop, view details, create new template from it, and so on.
+
+We will be creating a PUM Full Tier Topology with 2 nodes:
+* Linux Full Tier in private subnet (ft)
+* PeopleSoft Client in private subnet (win)
 
 Estimated Time: 5 minutes
 
@@ -53,7 +56,7 @@ You may now proceed to the next lab.
 **Created By/Date**   
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
 * **Contributor** -  Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
