@@ -34,6 +34,7 @@ This lab assumes you have:
 5. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
 ## **Step 2:** Choose a path
+
 Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 
 Your options are:
@@ -65,6 +66,7 @@ Your options are:
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
 
 6. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory and change the permissions.
 
@@ -132,7 +134,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 1.  In the category section, **Click** Auth.
 2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.  
-3.  If you do not have a .ppk extension see the Appendix for instructions for converting your private key to .ppk format using PuttyGen.
+3.  If you do not have a .ppk extension see the [Appendix](#Appendix:TroubleshootingTips) for instructions for converting your private key to .ppk format using PuttyGen.
 
     ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
