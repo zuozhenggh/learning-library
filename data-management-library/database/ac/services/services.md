@@ -232,13 +232,13 @@ srvctl config database
 
     ````
     <copy>
-    srvctl add service -d (addDatabaseName) -s (myServiceName) -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred (YourInstance1) -available (YourInstance2) -clbgoal LONG -rlbgoal NONE
+    srvctl add service -d (addDatabaseName) -s (myServiceName) -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred (YourInstance1) -available (YourInstance2) -pdb pdb1 -clbgoal LONG -rlbgoal NONE
     ````
 2. Create a service named **noac** with no AC settings
 
     ````
     <copy>
-    srvctl add service -d (addDatabaseName) -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred (YourInstance1) -available (YourInstance2) -clbgoal LONG -rlbgoal NONE
+    srvctl add service -d (addDatabaseName) -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred (YourInstance1) -available (YourInstance2) -pdb pdb1 -clbgoal LONG -rlbgoal NONE
     ````
 3. Start both services   
     ````

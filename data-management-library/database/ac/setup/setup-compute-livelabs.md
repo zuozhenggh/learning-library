@@ -54,20 +54,54 @@ For more information about Terraform and Resource Manager, please see the append
 
 ## **STEP 2**: Oracle Cloud Shell
 
-1.  To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
-    ![](./images/start-cloudshell.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
-2.  Using one of the Public IP addresses, enter the command below to login as the *opc* user and verify connection to your nodes.    
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+
+2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+
+3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+
+4. Be patient while the key file uploads to your Cloud Shell directory
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory
+
+    ````
+    <copy>
+    ls
+    </copy>
+    ````
+    ````
+    mv <<keyname>> .ssh
+    ls .ssh
+    cd ~
+    ````
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+
+
+6.  Using one of the Public IP addresses, enter the command below to login as the *opc* user and verify connection to your nodes.    
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
-3.  When prompted, answer **yes** to continue connecting.
-4.  Repeat step 2 for your 2nd node.
-5.  You may now *proceed to the next lab*.  
+7.  When prompted, answer **yes** to continue connecting.
+8.  Repeat step 2 for your 2nd node.
+9.  You may now *proceed to the next lab*.  
 
 
 ## **STEP 3**: MAC or Windows CYGWIN Emulator
@@ -233,4 +267,3 @@ If you have other compute instances you are not using, you can go to those insta
 * **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, October 2020
-
