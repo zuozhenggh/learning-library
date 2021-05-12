@@ -23,8 +23,7 @@ To successfully complete this LiveLab, you must have the following:
 ### Lab Breakdown
 
 * Lab 1: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
-* Lab 2: Create and run an Extract
-* Lab 3: Send a Trail File from Oracle GoldenGate to OCI GoldenGate
+* Lab 2: Send a Trail File from Oracle GoldenGate to OCI GoldenGate
 
 ## Learn More
 
