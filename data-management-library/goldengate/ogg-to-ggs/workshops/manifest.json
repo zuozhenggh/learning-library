@@ -13,7 +13,7 @@
         },
         {
           "title": "Lab 2: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
-          "description": "Create an Extract, Distribution Path, and Replicat."
+          "description": "Create an Extract, Distribution Path, and Replicat.",
           "filename": "../extract/extract.md"
         },
         {
