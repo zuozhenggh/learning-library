@@ -1,6 +1,10 @@
 # Peer the VCN Together
 
-Prerequisite
+In order to configure Data Guard across regions we must first set up remote VCN peering.  Remote VCN peering connects VCNs in different regions together.  The peering allows resources such as the database with private IP address to communicate across regions.
+
+### Estimated lab time: 10 minutes
+
+### Prerequisite
 
 - User policies to set up the VCN peering  (if you do not have admin policies, refer to the documentation to add peering policies)
 
@@ -8,7 +12,7 @@ Prerequisite
 
 - Oracle Database Cloud Service created in your primary region
 
-In order to configure Data Guard across regions we must first set up remote VCN peering.  Remote VCN peering connects VCNs in different regions together.  The peering allows resources such as the database with private IP address to communicate across regions.
+
 
 A picture of the remote VCN peering is shown below.  
 

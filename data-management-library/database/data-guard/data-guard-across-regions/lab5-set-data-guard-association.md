@@ -4,7 +4,9 @@
 
 Setting up Data Guard for Database Cloud Service is a simple process.  We enable Data Guard in the primary database and the standby database is automatically created.
 
-Prerequisite
+### Estimated lab time:  10 minutes
+
+### Prerequisite
 
 - VCN for both the primary and standby regions are created
 

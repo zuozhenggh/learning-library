@@ -2,6 +2,8 @@
 
 After creating your VCN and DRG on both regions.  You will need to set the route rules and security lists so that the primary and standby databases can communicate.
 
+### Estimated lab time:  10 minutes
+
 Let's start on the standby side.  From your VCN hosting your standby database, select Route Tables.
 
 ![image-20210122202020691](./images/image-20210122202020691.png)

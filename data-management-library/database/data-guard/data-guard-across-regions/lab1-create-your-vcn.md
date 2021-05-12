@@ -1,5 +1,10 @@
 # Create your VCN
 
+Create the Virtual Cloud Network on the primary region and the secondary region.  Although they are in different regions, the VCNs must both be in the same compartment. And they must not have overlapping VCN IP address blocks. 
+
+### Estimated lab time:  5 minutes
+
+
 1. Sign in to Oracle Cloud
 
 2. Create a Virtual Cloud Network.  You will provision the Oracle Database Cloud Service on this network.
