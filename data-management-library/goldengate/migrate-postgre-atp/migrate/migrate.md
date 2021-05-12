@@ -107,7 +107,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/micro_initload_1.png)
 
-3. Provide your name for the replicat process, for example, **initload**, the process name has to be unique and 8 characters long. It is better if you give some meaningful names to identify them later on. Let's name it as **initload**, because this is currently our initial load process.
+3. Provide a name for the replicat process, for example, **initload**. The process name has to be unique and 8 characters long and it is better if you give some meaningful names to identify them later on. Let's name it **initload**, because this is currently our initial load process.
 
 	![](/images/micro_initload_2_1.png)
 
@@ -115,11 +115,11 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/micro_initload_2_2.png)
 
-5. Scroll below and find "Trail Name", add **il** as trail name, because we defined this in our extract parameter, so it _**cannot**_ be a random name.
+5. Scroll below and find "Trail Name", add _**il**_ as trail name, because we defined this in our extract parameter, so it _**cannot**_ be a random name.
 
 	![](/images/micro_initload_2_3.png)
 
-6. Also provide **/u02/trails** in the "Trail Subdirectory" and choose a **Checkpoint Table** from the drop-down list. It is **GGADMIN.CHKPT** in our case. Review everything then click **Next**
+6. Also provide _**/u02/trails**_ in the "Trail Subdirectory" and choose a **Checkpoint Table** from the drop-down list. It is **GGADMIN.CHKPT** in our case. Review everything then click **Next**
 
 7. Microservices has created a draft parameter file for your convenience. Erase only below line from the existing draft parameter:
 
@@ -138,6 +138,8 @@ For a technical overview of this lab step, please watch the following video:
 	MAP public."PaymentData", TARGET Parking.PaymentData;
 	</copy>
 	```
+
+	Parameter file should be looking like the below image.
 
 	![](/images/micro_initload_3_2.png)
 
@@ -177,13 +179,13 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	This command issues an update statement at the source database. Our extract processes **EXTTAR** will capture the change and **EXTDMP** will ship them to Microservices. Let's add another replication for our captured change data in Microservices.
+	This command issues an update statement at the source database. Our extract processes **EXTTAR** will capture the change and **EXTDMP** will ship them to Microservices. Let's add another replicate process for our captured data in Microservices.
 
 	![](/images/pg_update.png)
 
 ## **Step 12**: Add The Change Capture Replication
 
-1. On the overview page, go to Replicat part and click on **+** to create our second replicat process.
+1. Same as step 9, go to **Replicats** area in the overview page, then click on **+** to create our second replicat process.
 
 	![](/images/ch_1.png)
 
@@ -191,7 +193,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/ch_2.png)
 
-3. Provide your name for the replicat process, let's name it as **changes**, because this is our change replication process.
+3. Provide a name for this replicat process, let's name it to **changes** as this is our replication process for changed data.
 
 	![](/images/ch_3.png)
 
@@ -199,11 +201,11 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/ch_4.png)
 
-5. Scroll below and find "Trail Name", add **pd** as trail name, because we defined this in **EXTDMP** extract parameter, so it _**cannot**_ be a random name.
+5. Scroll below and find "Trail Name", add _**pd**_ as trail name, because we defined this in **EXTDMP** extract parameter, so it _**cannot**_ be a random name.
 
 	![](/images/ch_5.png)
 
-6. Also provide **/u02/trails** in the "Trail Subdirectory" and choose a **Checkpoint Table** from the drop-down list. It is **GGADMIN.CHKPT** in our case. Review everything then click **Next**
+6. Please provide _**/u02/trails**_ in the "Trail Subdirectory" and choose a **Checkpoint Table** from the drop-down list. It is **GGADMIN.CHKPT** in our case. Review everything then click **Next**
 
 7. Microservices has created a draft parameter file for your convenience. Erase only below line from the existing draft parameter:
 
@@ -223,13 +225,15 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
+	Parameter file should be looking like the below image.
+
 	![](/images/ch_7.png)
 
-9. Make sure everything is correct until this stage. Click **Create and Run** to start our replicat.
+9. Make sure everything is correct until this stage. Click on **Create and Run** to start our replicat.
 
 	![](/images/micro_initload_4.png)
 
-## **Step 13**: Check the Initial Load Status
+## **Step 13**: Check the Continuous Replication Status
 
 1. In the overview dashboard, you should now be seeing the running CHANGES replication. Click on **Action** button, choose **Details**.
 
@@ -239,7 +243,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/ch_9.png)
 	
-3. You can also check this record again from **SQL Developer Web** in Autonomous Database dashboard.
+3. You can also re-check this record using **SQL Developer Web** in Autonomous Database dashboard. The row value is already updated at source database and GoldenGate had replicated to our target Autonomous Database.
 
 	![](/images/pg_select.png)
 
