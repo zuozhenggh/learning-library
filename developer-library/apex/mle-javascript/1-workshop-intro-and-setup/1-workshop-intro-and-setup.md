@@ -1,13 +1,14 @@
-# Introduction
+# APEX + Server-Side JavaScript
 
-## **What is APEX?**
-Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. Oracle APEX is a low-code development environment with various features and tools, where you can create an application fast. In the future, rather than emailing spreadsheets around to gather information, you will know how to easily create an app in minutes using APEX and email the URL instead. The result will be a secure, scalable, multi-user app that provides a single source-of-truth for your data!
+## **Introduction**
+In this workshop you will use In-Database JavaScript feature available in Oracle Database 21c. You will create a quick application from a Spreadsheet and then extend the application using Server-Side JavaScript instead of PL/SQL.
+Next, you will learn how to load external JavaScript modules and leverage some of the useful libraries in your APEX application. 
 
 Estimated Time: 55 minutes
 
 ### Objectives
 
-* Obtain a APEX free development environment
+* Obtain APEX free development environment
 * Build your app through uploading a Spreadsheet
 * Prepare the Report and Write Pseudo Code
 * Extending APEX Application Using JavaScript
