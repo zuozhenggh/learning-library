@@ -12,13 +12,9 @@
             "filename": "../create/create.md"
         },
         {
-          "title": "Lab 2: Create and run an Extract",
-          "description": "Use a self-signed certificate to create a trusted connection.",
+          "title": "Lab 2: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
+          "description": "Create an Extract, Distribution Path, and Replicat."
           "filename": "../extract/extract.md"
-        },
-        {
-            "title": "Lab 3: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
-            "filename": "../dp/dp.md"
         },
         {
             "title": "Need Help?",

@@ -108,21 +108,29 @@ The following instructions show you how to download the Root Certificate using a
 
 ## **STEP 3:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
-1. Launch the OCI GoldenGate Deployment Console, sign in, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
+1.  Launch the OCI GoldenGate Deployment Console, sign in, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
-2. Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
+    ![](images/03-01.png)
 
-3. Sign in to the on premise or Marketplace Oracle GoldenGate Adminstration Server, and then use the Navigation menu to open the Configuration screen.
+2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
 
-4. Under the Database tab, click **Add Credential**, and then complete the following fields:
+    ![](images/03-02.png)
 
-   * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
-   * For **Credential Alias**,  enter a name
-   * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
-   * For **Password**, enter the password associated to the user entered for User ID.
-   * For **Verify Password**, re-enter the password for verification purposes.
+    ![](images/03-02b.png)
 
-5. Click **Submit**.
+3.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server, and then use the Navigation menu to open the **Configuration** screen.
+
+4.  Under the Database tab, click **Add Credential**, and then complete the following fields:
+
+    * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
+    * For **Credential Alias**,  enter a name
+    * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
+    * For **Password**, enter the password associated to the user entered for User ID.
+    * For **Verify Password**, re-enter the password for verification purposes.
+
+    ![](images/03-04.png)
+
+5.  Click **Submit**.
 
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
 
