@@ -2,12 +2,12 @@
 
 ## Introduction
 
-This lab walks you through the steps to create an Extract and a Distribution Server Path in the on premise or Marketplace Oracle GoldenGate Administration Server console.
+This lab walks you through the steps to capture and send data to OCI GoldenGate using an on premise or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Distribution Path to initiate sending the data to the target, and a Replicat to consume the data received.
 
 Estimated Lab Time: 5 minutes
 
-### About Extracts and Distribution Server Paths
-An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Server.
+### About Extracts, Paths, and Replicats
+An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Server. A Replicat is a process that delivers data to the target.
 
 ### Objectives
 

@@ -10,8 +10,10 @@ Estimated Lab Time: 5 minutes
 ### Before You Begin
 
 To successfully complete this lab, you must have:
+
 * An on premise or Marketplace Oracle GoldenGate instance running
-* The URL and log in
+* The URL and log in credentials for the Oracle GoldenGate Service Manager
+* The log in credentials for the OCI GoldenGate Deployment Console
 
 ### Objectives
 
@@ -26,7 +28,7 @@ The following instructions show you how to download the Root Certificate using a
 
 1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
 
-2.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Verified)**.
+2.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Valid)**.
 
     ![Certificate](images/01-04-certificate.png)
 

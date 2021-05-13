@@ -11,7 +11,7 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed cloud service that use
 
 ### Objectives
 
-In this lab, you will:
+In this workshop, you will:
 * Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
 * Create and run a distribution path on Oracle GoldenGate
 
