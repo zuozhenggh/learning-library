@@ -20,7 +20,7 @@ In this lab, you will:
 - Be familiar with Python programming
 - Have a Python or Anaconda environment to perform data analysis and preprocessing
     - User can either set it up on their local machine, or signup our Oracle [Data Science Platform](https://www.oracle.com/data-science/)
-- Install the following Python libraries, `pandas`, `numpy`, `matplotlib` or using the default Conda package on Data Science Platform
+- Install the following Python libraries, `pandas`, `numpy`, `matplotlib` or using the default `conda` package on Data Science Platform
 - Download the related data files and this [Python notebook](../files/anomaly-detection-data-preparation-notebook.ipynb)
 
 ## **STEP 1:** Preparing Data

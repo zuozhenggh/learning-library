@@ -64,11 +64,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 2. Make sure to be in backend/target/classes/wallet directory then execute
 	
    ```
-	<copy>
-   cd backend/target/classes
-   mkdir wallet; cd wallet
-   unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip
-   </copy>
+	<copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
 	```
 
 3. Pick mtdrb_tp service alias (see the list of aliases in
