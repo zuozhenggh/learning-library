@@ -1,15 +1,15 @@
 # Selective Adoption
 
 ## Introduction
-This lab walks you through selective adoption on CM12.
+Cloud Manager enables customers to take advantage of Selective Adoption by quickly creating PUM environments in Oracle Cloud and automating configuration of target databases in PUM source. Once target databases are configured, standard procedure should be followed to apply updates to target environments.
 
 Estimated Lab Time: 30 minutes
 
-### Objectives
+### **Objectives**
 In this lab you will:
 * Create a PUM Connection from one PeopleSoft environment to another
 
-### Prerequisites
+### **Prerequisites**
 - Two PeopleSoft environments up and running. One that will be used as a source environment and one that will be used as a target environment. The source environment must have a newer image version than the target environment.
 
 For additional information on selective adoption please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to Chapter 6.
@@ -54,10 +54,12 @@ If you want to apply packages to the target DB you can use the PIA URL to log in
     From **Define Change Package** on the side menu you will be able to apply packages to the target DB.
     ![](./images/define.png "")
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
 **Created By/Date**   
-* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Technologist
 * **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, May 2021
 
 ## Need Help?

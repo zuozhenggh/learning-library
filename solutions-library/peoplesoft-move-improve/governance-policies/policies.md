@@ -1,23 +1,23 @@
 # Setting up Governance Policies
 
 ## Introduction
-This lab walks you through the steps to set up governance policies on CM12.
+Cloud Manger provides the ability to define and manage policies. Using the governance framework, administrators can manage life cycle activities of environments. Policies can be scheduled or executed realtime by connecting through events.
 
 Estimated Lab Time: 30 minutes
 
-### Objectives
+### **Objectives**
 In this lab you will:
 * Create a policy group
 * Create policies
 * Execute policies
 
-### Prerequisites
+### **Prerequisites**
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running
 
 ## **STEP 1**: Creating a Policy Group
 
-Before creating any policies you need to create a policy group. Policy groups are used to map policies to specific environments.
+Before creating any policies we will create a policy group. Policy groups are optional and are used to group policies together for display.
 
 1.  Navigate to **Dashboard** > **Governance**. Click **Policy Groups** on the side menu and click the plus button to add a new policy group.
     ![](./images/policygroup.png "")
@@ -95,10 +95,12 @@ Before creating any policies you need to create a policy group. Policy groups ar
 9.  Navigate to **Dashboard** > **Environments**. You will see that our environment is in the **Starting** phase which means that our policy has been executed and has initiated the start of the environment.    
     ![](./images/startagain.png "")
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
 **Created By/Date**   
-* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Technologist
 * **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
 
 ## Need Help?

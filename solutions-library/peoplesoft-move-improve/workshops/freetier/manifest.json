@@ -50,25 +50,24 @@
             "filename": "../../backup/backup.md"
           },
           {
-            "title": "Lab 10: Setting Governance Policies",
-            "filename": "../../governance-policies/policies.md"
-          },
-          {
-            "title": "Lab 11: Selective Adoption",
-            "filename": "../../selective-adoption/adoption.md"
-          },
-          {
-            "title": "Lab 12: Refreshing an Environment",
-            "filename": "../../refresh/refresh.md"
-          },
-
-          {
-            "title": "Patching an Environment",
+            "title": "Lab 10: Patching an Environment",
             "filename": "../../patching/patching.md"
           },
           {
-            "title": "Upgrading an Environment",
+            "title": "Lab 11: Upgrading an Environment",
             "filename": "../../upgrading/upgrading.md"
+          },
+          {
+            "title": "Lab 12: Setting Governance Policies",
+            "filename": "../../governance-policies/policies.md"
+          },
+          {
+            "title": "Lab 13: Selective Adoption",
+            "filename": "../../selective-adoption/adoption.md"
+          },
+          {
+            "title": "Lab 14: Refreshing an Environment",
+            "filename": "../../refresh/refresh.md"
           },
           {
               "title": "Additional Lab: Provisioning Environments with Windows Clients",

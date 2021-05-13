@@ -1,17 +1,17 @@
 # Refreshing an Environment
 
 ## Introduction
-This lab walks you through the steps to refresh an environment.
+You can refresh DB Systems environments managed by Cloud Manager from a backup in Object Store or from another DB system managed by Cloud Manager. This lab will take you through the steps to refresh from another DB system. If you are wanting to refresh using a backup from object store or are wanting to refresh an ATP-D environment please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to page 144.
 
 Estimated Lab Time: 1 hour
 
-### Objectives
+### **Objectives**
 In this lab you will:
 * Create an environment using DBaaS
 * Create a clone and backup of an environment
 * Refresh an environment
 
-### Prerequisites
+### **Prerequisites**
 - Access to the Cloud Manager console.
 
 ## **STEP 1**: Creating a New Topology With DBaaS
@@ -181,7 +181,7 @@ In order to refresh an environment you will need an environment created from a t
 ## Acknowledgements
 
 **Created By/Date**   
-* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Technologist
 * **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
 
 ## Need Help?

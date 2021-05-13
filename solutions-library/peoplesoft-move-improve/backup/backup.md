@@ -1,16 +1,16 @@
-# Backing up and Restoring an environment
+# Backing up and Restoring an Environment
 
 ## Introduction
-This lab walks you through the steps to backup and restore an environment.
+The Backup and Restore action can be used to take a backup or restore an environment from the backup. The Backup action will backup all nodes in the environment. It is recommended to take a backup: before applying a PeopleTools Patch, before applying a PeopleTools upgrade, or before adding or removing a node. When you select to restore an environment from a backup: the Restore overwrites all the data on the target instance, the Target instance will be unavailable during the restore process, and only one instance at a time can be restored on a target instance.
 
 Estimated Lab Time: 30 minutes
 
-### Objectives
+### **Objectives**
 In this lab you will:
 * Take a backup of a running environment
 * Restore an environment to a backup
 
-### Prerequisites
+### **Prerequisites**
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running on Cloud Manager
 
