@@ -16,7 +16,7 @@ For disaster recovery, it is a common practice to set up the primary and standby
 
 This workshop assumes you understand Oracle Cloud, VCNs, CIDR blocks and subnets.
 
-### Estimated workshop time:  45 minutes
+Estimated workshop time:  45 minutes
 
 
 

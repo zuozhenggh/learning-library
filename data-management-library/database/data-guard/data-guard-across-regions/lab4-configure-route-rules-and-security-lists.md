@@ -2,12 +2,17 @@
 
 After creating your VCN and DRG on both regions.  You will need to set the route rules and security lists so that the primary and standby databases can communicate.
 
-### Estimated lab time:  10 minutes
+Estimated lab time:  10 minutes
 
-Let's start on the standby side.  From your VCN hosting your standby database, select Route Tables.
+### Objective
+- Configure the routing and security list for the connection
+
 
 ![image-20210122202020691](./images/image-20210122202020691.png)
 
+Let's start on the standby side.  From your VCN details select Route Tables.
+
+## STEPS
 1. Select the private subnet route table or click Create Route Table if the private subnet route table is not there.
 
 2. Click Add Route Rules
@@ -73,4 +78,6 @@ Now configure the security list.
 
 
 
-Now do the same steps for the primary side.  This time the CIDR should be different since they can not overlap with the standby.
+Now do the same steps for the primary side.  This time the CIDR block should be different since they can not overlap with the standby.
+
+You may now proceed to the next lab.

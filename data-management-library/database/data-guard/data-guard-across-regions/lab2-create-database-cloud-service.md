@@ -2,15 +2,17 @@
 
 The Oracle Database Cloud Service automates the provisioning and management of the Oracle database in the cloud.  We will create the Oracle Database Cloud Service as the primary database in one of the cloud regions.  The standby database will be automatically created when we set Data Guard association later.
 
-### Estimated lab time:  5 minutes
-### Estimated wait time: 20 minutes to create database
+Estimated lab time:  5 minutes
+Estimated wait time: 20 minutes to create database
+
+### Objective
+- Create the Oracle Database Cloud Service as the primary database
 
 ### Prerequisite
-
 - VCN with private subnet
 
 
-
+## STEPS
 1. Select a region for your primary database.
 2. Select the menu Oracle Databases then Bare Metal, VM, and Exadata.
 3. Select your compartment.
@@ -67,3 +69,5 @@ Standard Edition does not support Data Guard, select the other Enterprise editio
 
 
 ![image-20210121185604333](./images/image-20210121185604333.png)
+
+You may now proceed to the next lab.

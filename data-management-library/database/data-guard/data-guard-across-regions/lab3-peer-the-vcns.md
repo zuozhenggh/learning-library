@@ -1,8 +1,11 @@
-# Peer the VCN Together
+# Connect the VCNs by Peering
 
 In order to configure Data Guard across regions we must first set up remote VCN peering.  Remote VCN peering connects VCNs in different regions together.  The peering allows resources such as the database with private IP address to communicate across regions.
 
-### Estimated lab time: 10 minutes
+Estimated lab time: 10 minutes
+
+### Objective
+- Peer the VCNs together
 
 ### Prerequisite
 
@@ -36,6 +39,7 @@ The DRG or Dynamic Routing Gateway must be set up on both VCNs and the RPC or Re
 
 The route rule and security list must also be configured to access the resources in the VCN.  
 
+## STEPS
 1. Create the DRGs in both VCNs.  
 
 2. Select a region to start with.  You can pick either the primary side or the standby.
@@ -124,3 +128,5 @@ For our lab, we'll use the standby side as the acceptor, and the primary side as
 
 
 The Peering Status will show Peered if it is successful.
+
+You may now proceed to the next lab.

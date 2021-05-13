@@ -1,10 +1,13 @@
 
 
-# Enable Oracle Data Guard for Oracle Database Cloud Service
+# Set Data Guard Association
 
-Setting up Data Guard for Database Cloud Service is a simple process.  We enable Data Guard in the primary database and the standby database is automatically created.
+Setting up Data Guard for Database Cloud Service is a simple process called association.  We enable Data Guard in the primary database and the standby database is automatically created.
 
-### Estimated lab time:  10 minutes
+Estimated lab time:  10 minutes
+
+### Objective
+- Enable Data Guard for Oracle Database Cloud Service
 
 ### Prerequisite
 
@@ -26,7 +29,7 @@ Navigate to your Database Cloud Service in your primary region.
 ![image-20210121190217365](./images/image-20210121190217365.png)
 
 
-
+## STEPS
 1. Go to your database details page.
 
 2. Select your database under resources.
@@ -88,3 +91,5 @@ Completed. The standby database is now ready for a failover.
 
 
 ![image-20210121222339306](./images/image-20210121222339306.png)
+
+You may now proceed to the next lab.
