@@ -73,6 +73,7 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 4. Click Go.
 
 5. On the login window, enter your login credentials.
+   Note: login with your IP address. 
 
     ![](./images/image14_7.png "")
 
@@ -288,6 +289,8 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 1. Applications tab gives us the information about the Essbase applications and their respective cubes.
 
     ![](./images/image14_53.png "")
+
+   Note: You can try below options for any application. For example, in below screenshots we are taking the ASOSamp or UnitHints Applications.
 
 2. By choosing the Inspect option for application, you can see application specific logs, audit files, configuration files, etc.
 

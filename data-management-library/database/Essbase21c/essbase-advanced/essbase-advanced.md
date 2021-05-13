@@ -163,7 +163,7 @@ A cube can be calculated using one of two methods:
 
     ![](./images/image14_85.png)
 
-4.	Click Add  to create a new calculation script.
+4.	Click '+' icon to create a new calculation script.
 
     Note:   
     If member names are required in your calculation script, drill into the Member Tree to find the members you want to add.
@@ -217,8 +217,8 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
   a. Login to Essbase web user interface.  
   
-  b. Click on the Console tab at the top. Navigate to the Desktop tools on the left pane.  
-  
+  b. Navigate to top left hand corner, click the hamburger, select console and then desktop tools.
+ 
   c. Expand the Command Line Tools section.  
   
   d. Download the Command-line Tool by clicking on the hightlighted download button for "Command-Line Tool".  
@@ -286,7 +286,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
     ```
 		<copy> 
         esscs.bat lcmImport --help 
-        esscs lcmImport -z  C:/cli/Sample01.zip -o </copy>
+        esscs lcmImport -z  C:/app/cli/Sample01.zip -o </copy>
     ```
 
     *NOTE:* The mentioned path should not contain spaces.

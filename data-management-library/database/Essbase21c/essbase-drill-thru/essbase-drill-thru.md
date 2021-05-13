@@ -33,9 +33,12 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
    
    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
 
-3. On the Home page, click on Import and create the cube using the worksheet Sample\_Basic\_DT.xlsx.  
- Change application Sample to SampleDT. 
- ![](./images/imageDT_01.png "")
+3. On the Home page, click on Import.
+
+   Click on "File Browser", and browse to select Sample\_Basic\_DT.xlsx excelsheet.
+   
+   Change application name Sample to SampleDT. 
+  ![](./images/imageDT_01.png "")
 
 4. Go to Home. Expand application SampleDT<StudentID>, cube Basic, select Actions and click on Outline. Click on the Market Dimension and check that Regions are at leaf level. 
   ![](./images/imageDT_02.png "")
@@ -44,7 +47,7 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 5.  Close the outline browser tab.
 
 6.	Open the query worksheet QueryDT.Sample within Sample\_Basic\_DT.xlsx.   
-    Login to Smart View. Select the application SampleDT and click connect.
+   Login to Smart View. Select the application SampleDT and click connect and click "set active connection".
 
 7.  Go to SmartView Ribbon, Click on Options –> Cell Styles –> Essbase –> Data Cells and pick colors for  Drill-through (blue), Read-Only (pink), Writable (green) and Linked Objects (yellow). 
    
@@ -104,6 +107,8 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 
 5. Provide the connection details under Create Connection:   
    Name, Host, User, Password, Port, Service Name. 
+
+   Password for the schema: "Admin123"
 
 6. Click Test to check that the connection to the database is successful. Click Create. 
    ![](./images/imageDT_10.png "")
