@@ -29,6 +29,8 @@ If you just created a new Cloud account following the instructions in Getting St
 
     ![](./images/detail.png)
 
+5. Confirm your selections and click **Create**.
+
     When the instance has finished provisioning, you'll receive an email.  
 
 5. From the menu on the Instances page, click **Open Visual Builder Home Page**.
