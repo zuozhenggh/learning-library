@@ -5,12 +5,12 @@ The Backup and Restore action can be used to take a backup or restore an environ
 
 Estimated Lab Time: 30 minutes
 
-### **Objectives**
+### Objectives
 In this lab you will:
 * Take a backup of a running environment
 * Restore an environment to a backup
 
-### **Prerequisites**
+### Prerequisites
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running on Cloud Manager
 

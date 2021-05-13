@@ -5,11 +5,11 @@ Cloud Manager enables customers to take advantage of Selective Adoption by quick
 
 Estimated Lab Time: 30 minutes
 
-### **Objectives**
+### Objectives
 In this lab you will:
 * Create a PUM Connection from one PeopleSoft environment to another
 
-### **Prerequisites**
+### Prerequisites
 - Two PeopleSoft environments up and running. One that will be used as a source environment and one that will be used as a target environment. The source environment must have a newer image version than the target environment.
 
 For additional information on selective adoption please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to Chapter 6.

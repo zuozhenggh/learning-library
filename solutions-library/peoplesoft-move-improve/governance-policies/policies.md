@@ -5,13 +5,13 @@ Cloud Manger provides the ability to define and manage policies. Using the gover
 
 Estimated Lab Time: 30 minutes
 
-### **Objectives**
+### Objectives
 In this lab you will:
 * Create a policy group
 * Create policies
 * Execute policies
 
-### **Prerequisites**
+### Prerequisites
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running
 

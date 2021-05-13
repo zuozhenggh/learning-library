@@ -5,13 +5,13 @@ You can refresh DB Systems environments managed by Cloud Manager from a backup i
 
 Estimated Lab Time: 1 hour
 
-### **Objectives**
+### Objectives
 In this lab you will:
 * Create an environment using DBaaS
 * Create a clone and backup of an environment
 * Refresh an environment
 
-### **Prerequisites**
+### Prerequisites
 - Access to the Cloud Manager console.
 
 ## **STEP 1**: Creating a New Topology With DBaaS

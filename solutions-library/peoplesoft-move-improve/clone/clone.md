@@ -5,11 +5,11 @@ The Clone Environment action can be used to duplicate an exact copy of an existi
 
 Estimated Lab Time: 30 minutes
 
-### **Objectives**
+### Objectives
 In this lab you will:
 * Clone an existing environment
 
-### **Prerequisites**
+### Prerequisites
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running on Cloud Manager
 
