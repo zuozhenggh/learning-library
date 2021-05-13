@@ -1,4 +1,4 @@
-# OPTIONAL - Setup Guacamole Remote Desktop
+# Setup Guacamole Remote Desktop
 
 ## Introduction
 This lab will show you how to deploy and Configure a self-contained Guacamole Instance with VNC on the same host for remote desktop access.
