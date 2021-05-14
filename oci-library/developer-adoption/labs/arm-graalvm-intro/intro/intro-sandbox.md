@@ -1,4 +1,4 @@
-# Get started with GraalVM on Ampere A1 in Oracle Cloud Infrastructure 
+# Get started with GraalVM on Ampere A1 on Oracle Cloud Infrastructure 
 
 This tutorial describes how to get started with GraalVM on Ampere A1 compute platform in Oracle Cloud Infrastructure (OCI). You will first run a Spring Boot application in the JVM mode and then build and run a Micronaut.io application as a native binary. You can use GraalVM to improve the performance of your existing applications and build lightweight polyglot applications for the cloud. It’s an ideal companion for the Ampere A1 compute shapes, which provide linear scalability and an unbeatable price-performance ratio.
 

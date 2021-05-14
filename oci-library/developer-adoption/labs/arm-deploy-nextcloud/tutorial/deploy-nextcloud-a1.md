@@ -1,20 +1,7 @@
 ## Deploy Nextcloud on Ampere A1 
 
-Now you can run Nextcloud on the Ampere A1 compute platform as a container deployment. You will also use the new container tools such as Podman, included in Oracle Linux 8. Podman provides a lightweight utility to run and manage Open Container Initiative (OCI) compatible containers. A Podman deployment can re-use existing container images.
+Now you can run Nextcloud on the Ampere A1 compute platform as a container deployment. You will also use the new container tools such as Podman,  included in Oracle Linux 8. Podman provides a lightweight utility to run and manage Open Container Initiative (OCI) compatible containers. A Podman deployment can re-use existing container images.
 Podman does not require a running daemon and enables containers to start and run without root permissions. To learn more about Podman on Oracle Linux, visit the [official documentation](https://docs.oracle.com/en/operating-systems/oracle-linux/podman/index.html)
-
-
-Estimated time: 20 minutes
-
-### Objectives
-
-- Deploy Nextcloud as a set of containers on OCI Arm A1
-
-### Prerequisites
-
-- Your Oracle Cloud Trial Account
-- You have already created an OCI Arm A1 instance.
-- You have already setup security rules and firewall options to enable application connectivity
 
 ### Install the Container Tools
 
@@ -36,7 +23,7 @@ Once the instance has been created with Oracle Linux 8.x, we can install the `co
     sudo setenforce 0
     ``` -->
 
-## Create a Pod Definition
+### Create a Pod Definition
 
 Podman can manage groups of containers called Pods. Formally, pods are a group of one or more containers sharing the same network, pid and ipc namespaces. This concept was initially introduced by the Kubernetes project, and Podman pods are very similar to [Kubernetes Pods](https://kubernetes.io/docs/concepts/workloads/pods/). 
 
@@ -55,9 +42,9 @@ Create a Pod with the command below
   3. `--name nextcloud` - sets the name of the pod as `nextcloud`
   4. `--publish 8080:80` - publish port `80` on the pod to port `8080` on the host.
   
-## Define Storage Volumes
+### Define Storage Volumes
 
-Now that the pod is defined, we should define some storage options as well before we populate the Pod with our containers. Containers use writable containers layers by default for all files created inside a container. This means that the files and data created by the processes ina container are not persisted and is lost when the container is removed or terminated. It also makes it hard to share the data across containers. Volumes are the preferred way to persist data created by containers. They can be thought of as storage abstractions for storage locations on the host machine, but  managed independent of the container's lifecycle. They also make it easy to share data between containers by simultaneously mounting them on multiple containers.
+Now that the pod is defined, we should define some storage options as well before we populate the Pod with our containers. Containers use writable containers layers by default for all files created inside a container. This means that the files and data created by the processes in a container are not persisted and is lost when the container is removed or terminated. It also makes it hard to share the data across containers. Volumes are the preferred way to persist data created by containers. They can be thought of as storage abstractions for storage locations on the host machine, but  managed independent of the container's lifecycle. They also make it easy to share data between containers by simultaneously mounting them on multiple containers.
 
 Based on Nextcloud recommendations, we use 3 volumes to manage data.
 1. The volume named `nextcloud-appdata` will store the main application state for next cloud
@@ -70,7 +57,7 @@ Based on Nextcloud recommendations, we use 3 volumes to manage data.
      podman volume create nextcloud-db
     ```
 
-## Run MySQL Database
+### Run MySQL Database
 
 Now you can start the database for Nextcloud with the volume attached. The database container is started in the pod that has already been created. The database used by Nextcloud is MySQL, and here we are running it as a container in the pod. For a more robust and fully managed deployment, you can replace this container with the OCI MySQL database service. 
 
@@ -105,7 +92,7 @@ podman logs -f nextcloud-db
 ```
 
 
-## Deploy Nextcloud
+### Deploy Nextcloud
 
 Now you can deploy Nextcloud itself as another container in the same pod.  The parameters are similar to the previous command, and here you are passing in the database connectivity details about the database that Nextcloud should use. 
 
@@ -136,7 +123,8 @@ podman run --detach --pod=nextcloud \
   podman logs -f nextcloud-db
   ```
 
-Once the start up is complete, you can navigate to to `http://<your_public_ip>:8080` to reach your Nextcloud server.  
+Once the start up is complete, you can navigate to to `http://<your_public_ip>:8080` to reach your Nextcloud server. 
+
 
 ## Next Steps
 

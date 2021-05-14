@@ -3,14 +3,13 @@
 OCI offers Oracle GraalVM Enterprise Edition for free to its customers. GraalVM Enterprise support is included in the Oracle Cloud subscription. The combination of high-performance Arm-based compute shapes and GraalVM Enterprise on OCI provides a compelling platform for both existing and new enterprise applications.
 
 1. Navigate the the instance details page for the instance that you have created. **Compute** >   **Instances**  > *Click on the instance you have created*. 
-1. Copy the public AP address of your instance. 
-   ![select subnet](./images/01_setup_instance_firewall_01.png " ")
+1. Copy the public IP address of your instance. 
 1. Login to the instance using SSH. Use the key you either generated or provided during the instance creation step. The default username for instances using the Oracle Linux operating system is `opc`.  
 
-To install GraalVM on OCI, run the following command:
+To install GraalVM and Git on OCI, run the following command:
  
 ```
-sudo yum install graalvm21-ee-11
+sudo yum install graalvm21-ee-11 git
 ```
 
 After it’s installed, GraalVM is available in the `/usr/lib64/graalvm` directory.
@@ -81,28 +80,27 @@ GraalVM can create self-contained executable binaries from your Java application
 1. To start, install the native image tooling. These packages are available in the yum repositories for OCI but are not installed by default.
 
     ```
+    cd ~
     sudo yum install  graalvm21-ee-11-native-image
     ```
 
    For this tutorial, we’re using Micronaut to build the application because Micronaut uses a dependency injection and aspect-oriented runtime that doesn’t use reflection.
 
-2. Clone the repository and get started:
+2. Generate a new project on using [micronaut.io/launch](https://micronaut.io/launch) using the commands below to get started:
 
     ```
-    git clone https://github.com/micronaut-guides/micronaut-creating-first-graal-app.git
-    cd micronaut-creating-first-graal-app/complete
+    curl --location --request GET 'https://launch.micronaut.io/create/default/com.example.graal-on-arm?lang=JAVA&build=MAVEN&test=JUNIT&javaVersion=JDK_11&features=graalvm' --output graal-on-arm.zip
+    unzip graal-on-arm.zip -d graal-on-arm
+    cd graal-on-arm
     ```
 
 3. Run the application to see how long it takes for it to start on a JVM:
 
     ```
-    ./gradlew run
+    ./mvnw mn:run
     ```
 
    You should see output similar to the following example:
-
-   
-    Task :complete:run
 	
 	```
     __  __ _                                  _
@@ -110,7 +108,7 @@ GraalVM can create self-contained executable binaries from your Java application
     | |\/| | |/ __| '__/ _ \| '_ \ / _` | | | | __|
     | |  | | | (__| | | (_) | | | | (_| | |_| | |_
     |_|  |_|_|\___|_|  \___/|_| |_|\__,_|\__,_|\__|
-      Micronaut (v2.3.4)
+      Micronaut (v2.5.3)
 
     09:59:34.504 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 755ms. Server Running: http://localhost:8080
     ```
@@ -120,14 +118,14 @@ GraalVM can create self-contained executable binaries from your Java application
 4. Now, build a native image for the application and compare the startup time:
 
     ```
-    ./gradlew nativeImage
+    ./mvnw package -Dpackaging=native-image
     ```
-   It takes about 5 minutes to build the native image. After it’s built, the native image is placed in the  `build/native-image/application` directory. 
+   It takes about 5 minutes to build the native image. After it’s built, the native image is placed in the  `target` directory, and will be named with the name of the project. 
 
 5. Run the native image.
 
     ```
-    ./build/native-image/application
+    ./target/graal-on-arm
     ```
 
    You should see output similar to the following example:
@@ -138,7 +136,7 @@ GraalVM can create self-contained executable binaries from your Java application
     | |\/| | |/ __| '__/ _ \| '_ \ / _` | | | | __|
     | |  | | | (__| | | (_) | | | | (_| | |_| | |_
     |_|  |_|_|\___|_|  \___/|_| |_|\__,_|\__,_|\__|
-      Micronaut (v2.3.4)
+      Micronaut (v2.5.3)
 
     09:59:18.558 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 18ms. Server Running: http://localhost:8080
     ```
