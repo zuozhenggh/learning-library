@@ -16,11 +16,11 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -38,18 +38,18 @@ Follow the steps below to install GoldenGate, or optionally you can select “I�
 
 3. Review the labmenu, then Select **Q** to quit to install GoldenGate Big Data Adapter Handlers
 
-The following Lab Menu will be displayed
+  The following Lab Menu will be displayed
 
-  ![](./images/labmenu_opt1.png " ")
+    ![](./images/labmenu_opt1.png " ")
 
 ## **STEP 1**: Performing the Install
 
 1.  **Select Option 1**
 
-Review the overview notes on the following screen, Select **Q** to quit.
+  Review the overview notes on the following screen, Select **Q** to quit.
       ![](./images/labmenu_opt1.png " ")
 
-These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+  These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 2. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
@@ -63,7 +63,7 @@ These online notes have been provided so you can cut/paste file names to another
     <copy>./ggsci</copy>
 
     <copy>info all</copy>
-    
+
     <copy>exit</copy>
     ```
     **type**
@@ -115,7 +115,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

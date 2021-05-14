@@ -60,9 +60,9 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     ![](./../grafana/images/Grafana_015.PNG " ")
 
-2. From the OCI Services menu, Click **Object Storage**.
+2. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
-    ![](./../using-service-gateway/images/SGW_031.PNG " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 3. Ensure correct Compartment (Left side of the OCI console).
 
@@ -121,7 +121,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
-15. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+15. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 16. Fill out the dialog box:
 
@@ -458,7 +458,4 @@ Using Servie Gateway, compute instance was able to access Object stored in Objec
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
 

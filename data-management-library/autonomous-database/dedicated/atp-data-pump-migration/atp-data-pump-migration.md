@@ -36,8 +36,9 @@ As a database admin or user,
 
 - Login to your OCI account with your user credentials.
 
-- Naviage to Object Storage from top left hamburger menu.
-    ![nav-to-obj-store](./images/nav-to-obj-store.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 - Pick a compartment you have priviledge to,
     ![pick-compartment](./images/pick-compartment.png " ")
@@ -167,5 +168,3 @@ You may now connect to your autonomous database using a SQL client and validate 
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

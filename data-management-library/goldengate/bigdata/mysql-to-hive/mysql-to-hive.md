@@ -18,12 +18,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -45,7 +45,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 2. Select **R** to reset the lab then Option **4**
 
-![](./images/labmenu_opt1.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 3. Review the overview notes on the following screen, then select **Q** to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
@@ -151,7 +151,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
     ```
     <copy> start *</copy>
     ```
- 
+
     ```
     <copy> info all</copy>
     ```
@@ -164,25 +164,25 @@ Now that the source side is setup, let us configure GG on the target side (Hive 
 
   ![](./images/c6.png " ")
 
-```
-<copy>cd /u01/gg4hadoop123010/dirprm</copy>
-```
-```
-<copy> vi rhive.properties</copy>
-```
+    ```
+    <copy>cd /u01/gg4hadoop123010/dirprm</copy>
+    ```
+    ```
+    <copy> vi rhive.properties</copy>
+    ```
 
 2. Remove "--" from the items below as highlighted above
 
-```
- ---hdfs
- ---avro_op_ocf
- ---/user/ggtarget/hive/data
- ---/user/ggtarget/hive/schema
- ---.avro
- ---jdbc:hive2://localhost:10000
- ---ORACLEWALLETUSERNAME myalias
- ---ORACLEWALLETPASSWORD myalias
-```
+    ```
+    ---hdfs
+    ---avro_op_ocf
+    ---/user/ggtarget/hive/data
+    ---/user/ggtarget/hive/schema
+    ---.avro
+    ---jdbc:hive2://localhost:10000
+    ---ORACLEWALLETUSERNAME myalias
+    ---ORACLEWALLETPASSWORD myalias
+    ```
 
 3. Now create and start the Hive replicat process:
 
@@ -207,7 +207,7 @@ Now that the source side is setup, let us configure GG on the target side (Hive 
     ```
     <copy> info all</copy>
     ```
-## **STEP 4**:GoldenGate Kafka Target
+## **STEP 4**:GoldenGate Hive Target
 
 Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on the MySQL database `ggsource` and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory `/user/ggtarget/hive/data`.
 
@@ -242,14 +242,14 @@ Now that GG processes have been created and started on both the source and targe
 ## **STEP 5**: GoldenGate Results using HUE
 
 1. Open a Browser window from your local machine to visualize data from HUE frontend application.
- - URL
+    - URL
 
     ```
     <copy>http://<Your Host Public IP address>:8888</copy>
     e.g: http://111.222.111.222:8888
     ```
 
- - Credentials: cloudera/cloudera
+    - Credentials: cloudera/cloudera
 
 2. Click on Query, Editor, Select Hive
 
@@ -260,7 +260,7 @@ Now that GG processes have been created and started on both the source and targe
 
   ![](./images/hive3.png " ")
 
-![](./images/hive23.png " ")
+  ![](./images/hive23.png " ")
 
   **Schema:**
 
@@ -268,13 +268,13 @@ Now that GG processes have been created and started on both the source and targe
 
   ![](./images/c26.png " ")
 
-**Data**
+  **Data**
 
    **`/user/ ggtarget/ hive/ data/ ggtarget2hive_avro.dept.avsc`**
 
-![](./images/hive24.png " ")
+  ![](./images/hive24.png " ")
 
-![](./images/hive25.png " ")
+  ![](./images/hive25.png " ")
 
 ## Summary
 In summary, we loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rhive` read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: `/user/ggtarget/hive/data/*` and `/user/ggtarget/hive/schema`
@@ -289,6 +289,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

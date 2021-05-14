@@ -105,7 +105,7 @@ Refer [Register Your ATP-D](https://github.com/labmaterial/adbguides-dev/blob/ma
    ![](./images/Img12.png " ")
 - Scroll through the report to review the findings. For example, the following findings have a **Pass status**.
 
-   ![](./images/Img13.png " ")
+   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 ## Step 6: Rerun Security Assessment and compare the results to the first assessment
 
@@ -132,5 +132,3 @@ Currently, there's no compare functionality in the product so to compare assessm
 - **Last Updated By/Date** - Kris Bhanushali, September 2020
 
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

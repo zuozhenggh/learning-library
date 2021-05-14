@@ -12,13 +12,9 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 
 ## **STEP 1**: Add an Ingress Rule to your Virtual Cloud Network instance
 
-1. After logging into your Oracle Cloud account, click on **Networking -> Virtual Cloud Networks** from the menu.
+1. After logging into your Oracle Cloud account, click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-  ![](images/open-vcn-instances.png " ")
-
-2. Click on your VCN from the list of instances. If your instance is not shown, be sure you have the correct compartment selected.
-
-  ![](images/select-vcn.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 3. On the left menu, click **Security Lists**.
 
@@ -53,6 +49,3 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 * **Author** -Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Last Updated By/Date** - Tom McGinn, March 2020
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

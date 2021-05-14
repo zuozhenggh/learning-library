@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will create retrieve the code for the Terraform infrastructure and learn how to configure it to use it with Oracle Cloud Infrastructure.
+In this lab, you will retrieve the code for the Terraform infrastructure and learn how to configure it to use it with Oracle Cloud Infrastructure.
 
 Estimated Lab Time: 20 minutes
  
@@ -146,5 +146,3 @@ You can get more info [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Co
 - **Contributors** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Frédéric Descamps, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 

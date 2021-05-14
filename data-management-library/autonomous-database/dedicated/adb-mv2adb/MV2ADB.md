@@ -23,7 +23,7 @@ As a LOB user
 ## STEP 1: Create a Bucket
 
 - Login to the OCI tenancy. Goto Menu => Core Infrastructure => Oject Storage => Object Storage
-   ![](./images/Img13.png " ") 
+   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ") 
    
 - Ensure you are in the right compartment and Click on Create Bucket.
    ![](./images/Img14.png " ") 
@@ -214,5 +214,3 @@ We had migrated a sample HR schema in this lab. Let's connect to the ATPD (Targe
 - **Last Updated By/Date** - Jayshree Chatterjee, July 2020
 
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

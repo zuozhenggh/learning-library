@@ -23,7 +23,8 @@ We will do the following:
 
 3. Click the hamburger menu at the upper right, and select **Autonomous Transaction Processing** under Oracle Database.
 
-4. Select your compartment. <if type="livelabs">Your compartment should begin with the username you logged in with. Do not select the root compartment. <if>Leave Transaction Processing selected. Click **Create Autonomous Database**.
+4. Select your compartment. <if type="livelabs">Your compartment should begin with the username you logged in with. Do not select the root compartment.
+</if>Leave Transaction Processing selected. Click **Create Autonomous Database**.
 
 5. Fill out the dialog box:
 
@@ -210,5 +211,3 @@ We will do the following:
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Tom McGinn, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

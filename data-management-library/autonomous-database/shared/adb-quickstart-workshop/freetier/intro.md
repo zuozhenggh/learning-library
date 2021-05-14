@@ -23,7 +23,7 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 
 ## Lab Breakdown
 - **Lab 1:** Provision your first Autonomous Data Warehouse.
-- **Lab 2:** Explore SQL Developer Web with provided sample data sets.
+- **Lab 2:** Explore the provided sample data sets that come with your Autonomous Database.
 - **Lab 3:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
 - **Lab 4:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
 - **Lab 5:** Visualize your data using Oracle Analytics Desktop.
@@ -38,7 +38,7 @@ If you have a question during this workshop then use the <a href="https://cloudc
 
 Are you are completely new to the **Cloud Customer Connect**</a> forums? Visit our <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="\_blank">**Getting Started forum page**</a> to learn how to best leverage community resources.
 
-**You are all set. Let's begin! Click Lab 1 in the Contents menu on the right.**
+**You are all set. Let's begin! Click Getting Started in the Contents menu on the left.**
 
 ## Want to Learn More About Autonomous Database?
 
@@ -56,7 +56,4 @@ Use these links to get more information about Oracle Autonomous Database:
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+- **Last Updated By/Date** - Richard Green, April 2021

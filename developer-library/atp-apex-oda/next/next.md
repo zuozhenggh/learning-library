@@ -41,7 +41,7 @@ Remember that you will see **Always Free** logo next to the name of your databas
 
 You have learned how to Upgrade your Always Free Account to a subscription model!
 
-## **STEP 2**: Want to learn more?
+## **STEP 2**: Learn More?
 
 If you enjoy the workshop, give me a star on Github: [click here](https://github.com/vmleon/oracle-atp-da)!
 ![Github start](./images/github.png)
@@ -56,11 +56,9 @@ Learn about HTTP security with [Oracle Cloud Web Application Firewall](https://g
 
 Check [Oracle Tech Exchange](https://fnimphiu.github.io/OracleTechExchange/) contains a lot of short tutorials about Oracle Digital Assistant
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

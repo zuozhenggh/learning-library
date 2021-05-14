@@ -85,7 +85,7 @@ From the download link:
 
   1. Download the hol zip file.
 
-  2. Open Windows Explorer and nagivate to the downloaded zip file.
+  2. Open Windows Explorer and navigate to the downloaded zip file.
 
   3. Move the zip file to your folder Desktop
 
@@ -97,7 +97,7 @@ From the download link:
 
   1. Download the hol zip file.
 
-  2. Open Finder and nagivate to the downloaded zip file.
+  2. Open Finder and navigate to the downloaded zip file.
 
   3. Move the zip file to your Desktop
 
@@ -140,5 +140,4 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 * **Contributors:** Santiago Bastidas, Product Management Director
 * **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+

@@ -67,14 +67,11 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
   ![](images/oci-console-home-page.png " ")
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Last Updated By/Date**
-    - [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
-    - Kay Malcolm, Database Product Management, June 2020
+- **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

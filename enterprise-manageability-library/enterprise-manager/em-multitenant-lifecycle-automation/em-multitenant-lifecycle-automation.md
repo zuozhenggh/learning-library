@@ -227,7 +227,7 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
   ![](images/8ed5400adb044b81194db800cfd4c953.jpg " ")
 
-2.  After which, **Click** Add and choose the row with your PDB, then **Click** OK  
+2.  After which, **Click** Add and choose the row with your PDB, then **Click** OK
 
 3. In the Save Association dialog box, **Click** Yes
 
@@ -494,6 +494,3 @@ That concludes this lab.
 - **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

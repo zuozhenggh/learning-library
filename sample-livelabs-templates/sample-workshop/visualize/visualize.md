@@ -18,12 +18,16 @@ In this lab, you will:
 * Objective 2
 * Objective 3
 
+To link to other areas in document use this [syntax](#STEP1:title)
+
 ### Prerequisites
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * Item no 2 with url - [URL Text](https://www.oracle.com).
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -85,8 +89,8 @@ Step 1 opening paragraph.
   <copy>ssh -i <ssh-key-file></copy>
   ```
 
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+*At the conclusion of the lab add this statement: note this is the last lab in the workshop*
+Congratulations! You have completed this workshop!
 
 ## Learn More
 
@@ -100,6 +104,3 @@ You may proceed to the next lab.
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

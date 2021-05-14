@@ -26,16 +26,29 @@ This workshop walks you through the steps to get started using the **Oracle Auto
 
 - Perfect for Developers!
 
-Estimated Lab Time: 10 minutes
+Watch our short video that explains Lab 1 - Create Autonomous Database and Lab 2 - Create APEX workshop and REST API:
+
+[](youtube:S9WPR0N0f2E)
+
+Estimated Lab Time: 15 minutes
+
+Watch the video below for an overview of the Create Autonomous Database lab
+[](youtube:tNBDb47sNmc)
 
 ### Objectives
+
+In this lab, you will:
 - Create an Autonomous Database with the latest features of Oracle Databases
+
+### Prerequisites
+
+- This lab assumes you have logged into your to Oracle Cloud account.
 
 ## **STEP 1**: Create a new Autonomous Transaction Processing
 
 1. Go to the **Autonomous Transaction Processing (ATP)** menu:
 
-    ![Menu ATP](./images/menu_atp.png)
+    ![Menu ATP](./images/menu_atp_1.png)
 
     Check if you are in the **root compartment** that is fine for testing.
 
@@ -49,7 +62,7 @@ Estimated Lab Time: 10 minutes
 
 2. Make sure you select **Transaction Processing** and **Shared Infrastructure**.
 
-    ![ATP Creation](./images/atp_creation_1.png)
+    ![ATP Creation](./images/atp_creation_1_2.png)
 
 3. You can select **Always Free** configuration to start enjoying your Free Autonomous Database. You will have visible the **Always Free** logo next to the name of your database:
 
@@ -82,13 +95,11 @@ Estimated Lab Time: 10 minutes
 
     ![Always Free Logo](./images/always_free_logo.png)
 
-*You can proceed to the next lab…*
+You may now [proceed to the next lab](#next).
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,4 +1,4 @@
-# Lab 6 - Create the Customer_360 graph from the tables
+# Create the Graph
 
 ## Introduction
 
@@ -6,256 +6,198 @@ Now, the tables are created and populated with data. Let's create a graph repres
 
 Estimated time: 5 minutes
 
-### Steps
-- Modify the graph server configuration to disable Transport Layer Security (TLS) / Secure Sockets Layer (SSL) for this lab
-- Check the JDBC URL and modify if needed
-- Modify a default grant setting for publishing a graph
-- Restart the graph server
-- Start a client (JShell) that connects to the server
-- Setup a Property Graph Query Language (PGQL) connection to the database
-- Use PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
+### Objectives
 
+Learn how to create a graph from relational data sources by:
+- Restarting the graph server
+- Starting a client (Python shell) that connects to the server
+- Using PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
 
-## **Step 1:** Modify the graph server config file
+### Prerequisites
 
-1. SSH into the compute instance where you installed the graph server.
-    First navigate to the folder where you created your SSH Keys. And connect using:
-    ```
-    <copy>ssh -i &lt;private_key> opc@&lt;public_ip_for_compute></copy>
-    ```
+- This lab assumes you have successfully completed the lab - Create and populate tables.
 
-2. Then edit the `/etc/oracle/graph/server.conf` file.
-    ```
-    <copy>vi /etc/oracle/graph/server.conf</copy>
-    ```
+## **STEP 1:** Start the Python client
 
-    Change the line  
-    ` "enable_tls": true,`
-    to  
-    ` "enable_tls": false,`  
-
-3. Save the file and exit.
-
-    ![](images/change_tls.png " ")
-
-4. Edit the Graph Server (PGX) config file.
-   ```
-   <copy>vi /etc/oracle/graph/pgx.conf</copy>
-   ```
-   Modify the line   
-   `"grant": "PGX_SESSION_GET_PUBLISHED_GRAPH"`  
-   to  
-   `"grant": "PGX_SESSION_ADD_PUBLISHED_GRAPH"`  
-   in the entry for `"pgx_role": "GRAPH_DEVELOPER"`.  
-
-   Check the `"jdbc_url"` value in the `"pgx_realm"` entry and update it if necessary.
-
-## **Step 2:** Restart the graph server
-
-1. Starting with version 20.3 the Graph Server is started, stopped, or restarted with systemctl. 
-   Check it's status and restart or start it as follows.
-   ```
-   <copy>
-   systemctl status pgx
-   sudo systemctl restart pgx
-   </copy>
-   ```
-
-## **Step 3:** Start a client shell
-
-1. Once the graph server is up and running start a client shell to access it. This is based on `jshell` and requires JDK 11.  Version 20.3 also has a new authentication mechanism that requires a token to be used in all requests from the client to the graph server.  
-Albert Godfrind has written some utility scripts and Java methods that simplify the process. We will use his graph token shell utility in this workshop.  
-Download the code from his [Git repo](https://github.com/agodfrind/graph-token-shell) (https://github.com/agodfrind/graph-token-shell).  
-Copy it to the compute instance like you copied the ADB Wallet. e.g. on your machine
+Start a client shell instance that connects to the server
 
 ```
-<copy>scp -i private_key ~/Downloads/graph-token-shell.zip opc@public_ip_for_compute:/home/opc</copy>
+<copy>
+opgpy -b https://localhost:7007 --username customer_360
+</copy>
 ```
 
-2. Unzip the shell utility you copied above on the compute instance that you ssh'd into.
+You should see the following if the client shell starts up successfully.
 
 ```
-<copy>unzip graph-token-shell.zip</copy>
+enter password for user customer_360 (press Enter for no password):
+Oracle Graph Client Shell 21.1.0
+>>>
 ```
 
-3. Then start a client shell instance that connects to the server
-    ```
-    <copy>
-    cd graph-token-shell
-    ./opg-jshell --base_url http://localhost:7007 -u customer_360 -p Welcome1_C360</copy>
-    ```
-    You should see the following if the client shell starts up successfully.
+## **STEP 2:** Create the graph
 
-    ```
-    For an introduction type: /help intro
-    Oracle Graph Server Shell 20.3.0
-    PGX server version: 20.1.1 type: SM
-    PGX server API version: 3.8.1
-    PGQL version: 1.3
-    Variables instance, session, and analyst ready to use.
-    opg-jshell>
-    ```
+Set up the create property graph statement, which creates the graph from the existing tables.
 
-## **Step 4:** Create the graph
+```    
+<copy>
+statement = '''
+CREATE PROPERTY GRAPH "customer_360"
+  VERTEX TABLES (
+    customer
+  , account
+  , merchant
+  )
+  EDGE TABLES (
+    account
+      SOURCE KEY(id) REFERENCES account
+      DESTINATION KEY(customer_id) REFERENCES customer
+      LABEL owned_by PROPERTIES (id)
+  , parent_of
+      SOURCE KEY(customer_id_parent) REFERENCES customer
+      DESTINATION KEY(customer_id_child) REFERENCES customer
+  , purchased
+      SOURCE KEY(account_id) REFERENCES account
+      DESTINATION KEY(merchant_id) REFERENCES merchant
+  , transfer
+      SOURCE KEY(account_id_from) REFERENCES account
+      DESTINATION KEY(account_id_to) REFERENCES account
+  )
+'''
+</copy>
+```
 
-The username and password in the step above was just used to get an authentication token for the graph client. It does not set up a database connection. That will be done below in order to create a graph from the database tables.
+For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that **all columns of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties)**. For `owned_by` edge, only `id` property is given with `PROPERTIES` keyword for edge ID generation purpose, and the other properties are not given, because they are already hold by the account vertices. 
 
-Enter the following sets of commands in the JShell.
+Now execute the PGQL DDL to create the graph.
 
-1. First setup the database connection. Enter the following into the JShell.  
-   
-    Replace *{db\_tns\_name}* with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `atpfinance_low`, if you follow the previous labs exactly).
-    *Please refer back to Lab 4, Step 4, to check the content of `tnsnames.ora` file.*
+```
+<copy>
+session.prepare_pgql(statement).execute()
+</copy>
 
-    Replace *{wallet_location}* with the full path to the directory which has the unzipped wallet (e.g. `/home/oraclegraph/wallets`).
+False   // This is the expected result
+```
 
-    ```
-    <copy>var jdbcUrl = "jdbc:oracle:thin:@{db_tns_name}?TNS_ADMIN={wallet_location}";</copy>
-    ```
+## **STEP 3:** Check the newly created graph
 
-    ```
-    <copy>var user = "customer_360";</copy>
-    ```
+Check that the graph was created. Copy, paste, and run the following statements in the Python shell.
 
-    ```
-    <copy>var pass = "Welcome1_C360";</copy>
-    ```
+Attach the graph to check that the graph was created.
+```
+<copy>
+graph = session.get_graph("customer_360")
+graph
+</copy>
 
-    ```
-    <copy>var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;</copy>
-    // example jshell output
-    // conn ==> oracle.jdbc.driver.T4CConnection@54d11c70
-    ```
+PgxGraph(name: customer_360, v: 15, e: 24, directed: True, memory(Mb): 0)
+```
 
-2. Then create a PGQL connection and set its properties.
+Run some PGQL queries.
 
-    ```
-    // Get a PGQL connection in order to run PGQL statements
-    // Set auto commit to false for PGQL
-    <copy>conn.setAutoCommit(false);</copy>
-    ```
+The list of the vertex labels:
+```
+<copy>
+graph.query_pgql("""
+  SELECT DISTINCT LABEL(v) FROM MATCH (v)
+""").print()
+</copy>
 
-    ```
-    <copy>var pgql = PgqlConnection.getConnection(conn);</copy>
++----------+
+| LABEL(v) |
++----------+
+| ACCOUNT  |
+| CUSTOMER |
+| MERCHANT |
++----------+
+```
 
-    // example jshell output
-    // pgql ==> oracle.pg.rdbms.pgql.PgqlConnection@6493f780
-    ```
+How many vertices with each label:
+```
+<copy>
+graph.query_pgql("""
+  SELECT COUNT(v), LABEL(v) FROM MATCH (v) GROUP BY LABEL(v)
+""").print()
+</copy>
 
-3. Next set up the create property graph statement.
++---------------------+
+| COUNT(v) | LABEL(v) |
++---------------------+
+| 5        | MERCHANT |
+| 6        | ACCOUNT  |
+| 4        | CUSTOMER |
++---------------------+
+```
 
-    ```
-    
-    // create the graph from the existing tab
-    <copy>
-    var cpgStmtStr = "CREATE PROPERTY GRAPH customer_360 " +
-    "    VERTEX TABLES (" +
-    "     customer " +
-    "     PROPERTIES (type, name, age, location, gender, student) " +
-    "   , account " +
-    "     PROPERTIES (type, account_no, balance) " +
-    " , merchant " +
-    "     PROPERTIES (type, name) " +
-    " ) " +
-    " EDGE TABLES ( " +
-    "   owned_by " +
-    "     SOURCE KEY(from_id) REFERENCES account " +
-    "     DESTINATION KEY(to_id) REFERENCES customer " +
-    "     LABEL owned_by " +
-    "     PROPERTIES (since) " +
-    " , parent_of " +
-    "     SOURCE KEY(from_id) REFERENCES customer " +
-    "     DESTINATION KEY(to_id) REFERENCES customer " +
-    "     LABEL parent_of " +
-    " , purchased " +
-    "     SOURCE KEY(from_id) REFERENCES account " +
-    "     DESTINATION KEY(to_id) REFERENCES merchant " +
-    "     LABEL purchased " +
-    "     PROPERTIES (amount) " +
-    " , transfer " +
-    "     SOURCE KEY(from_id) REFERENCES account " +
-    "     DESTINATION KEY(to_id) REFERENCES account " +
-    "     LABEL transfer " +
-    "     PROPERTIES (amount, date)" +
-    " )" ;
-    </copy>
-    // example jshell output
-    // cpgStmtStr ==> "CREATE PROPERTY GRAPH customer_360     VERTEX TABLES (     customer      PROPERTIES (type, name, age, location, gender, student)    , account      PROPERTIES (type, account_no, balance)  , merchant      PROPERTIES (type, name)  )  EDGE TABLES (    owned_by      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES customer      LABEL owned_by      PROPERTIES (since)  , parent_of      SOURCE KEY(from_id) REFERENCES customer      DESTINATION KEY(to_id) REFERENCES customer      LABEL parent_of  , purchased      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES merchant      LABEL purchased      PROPERTIES (amount)  , transfer      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES account      LABEL transfer      PROPERTIES (amount, date) )"
-    ```
+The list of the edge labels:
+```
+<copy>
+graph.query_pgql("""
+  SELECT DISTINCT LABEL(e) FROM MATCH ()-[e]->()
+""").print()
+</copy>
 
-    ![](images/create_graph_1.png " ")
++-----------+
+| LABEL(e)  |
++-----------+
+| OWNED_BY  |
+| PARENT_OF |
+| PURCHASED |
+| TRANSFER  |
++-----------+
+```
 
-4. Now execute the PGQL DDL to first DROP any existing graph of the same name before CREATEing it.
+How many edges with each label:
+```
+<copy>
+graph.query_pgql("""
+  SELECT COUNT(e), LABEL(e) FROM MATCH ()-[e]->() GROUP BY LABEL(e)
+""").print()
+</copy>
 
-    ```
-    <copy>var dropPgStmt = "DROP PROPERTY GRAPH customer_360";</copy>
-    ```
++----------------------+
+| COUNT(e) | LABEL(e)  |
++----------------------+
+| 4        | OWNED_BY  |
+| 8        | TRANSFER  |
+| 1        | PARENT_OF |
+| 11       | PURCHASED |
++----------------------+
+```
 
-    ```
-    // drop any existing garph
-    <copy>pgql.prepareStatement(dropPgStmt).execute();</copy>
-    ```
+## **STEP 4:** Publish the graph (optional)
 
-    ```
-    // Now create the graph 
-    <copy>pgql.prepareStatement(cpgStmtStr).execute();</copy>
-    // example jshell output
-    // $12 ==> false
-    ```
+The newly created graph is "private" by default, and is accessible only from the current session. To access the graph from new sessions in future, you can "publish" the graph.
 
-    The create graph process can take 3-4 minutes depending on various factors such as network bandwidth and database load.
+First, login to SQL Developer Web as the `admin` user, and give permission to publish graphs to the `customer_360` user.
+```
+GRANT PGX_SESSION_ADD_PUBLISHED_GRAPH TO customer_360;
+```
 
-    ![](images/create_graph_2.png  " ")
+Exit the Python shell and re-connect to pick up the updated permissions, then create the graph again and publish it.
+```
+<copy>
+opgpy -b https://localhost:7007 --username customer_360
+</copy>
+```
+```
+<copy>
+graph.publish()
+</copy>
+```
 
-## **Step 5:** Check the newly created graph
+Next time you connect you can access the graph in-memory without re-loading it, if the graph server has not been shutdown or restarted between logins.
+```
+<copy>
+graph = session.get_graph("customer_360")
+</copy>
+```
 
-Check that the graph was created. Copy, paste, and run the following statements in the JShell.
-
-1. Copy the following code, paste, and execute it in the JShell.
-
-    ```
-    // create a helper method for preparing, executing, and printing the results of PGQL statements
-    <copy>Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }</copy>
-    // sample jshell output
-    // query ==> $Lambda$583/0x0000000800695c40@65021bb4
-    ```
-
-2. Then copy, paste, and execute the following.
-
-    ```
-    // query the graph
-
-    // what are the edge labels i.e. categories of edges
-    <copy>query.accept("select distinct label(e) from customer_360 match ()-[e]->()");</copy>
-    ```
-
-    ```
-    // what are the vertex types i.e. values of the property named "type"
-    <copy>query.accept("select distinct v.type from customer_360 match (v)-[e]->()");</copy>
-    ```
-
-    ```
-    // how many vertices with each type/category
-    <copy>query.accept("select count(distinct v), v.type from customer_360 match (v) group by v.type");</copy>
-    ```
-
-    ```
-    // how many edges with each label/category
-    <copy>query.accept("select count(e), label(e) from customer_360 match ()-[e]->() group by label(e)");</copy>
-    ```
-
-    ![](images/check_graph.png " ")
-    
-    You may now *proceed to the next lab* (query and analyse the graph in JShell)
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+- **Author** - Jayant Sharma, Product Manager, Spatial and Graph
+- **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management
+- **Last Updated By/Date** - Ryota Yamanaka, Feburary 2020
 
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management.  
-  Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
-
-- **Last Updated By/Date** - Jayant Sharma, October 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

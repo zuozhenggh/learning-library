@@ -4,7 +4,7 @@
 
 This lab will walk you through the steps to visualize graph queries on the Customer 360 graph.
 
-Estimated time: 4 minutes
+Estimated Lab Time: 4 minutes
 
 ### Objectives
 
@@ -17,9 +17,11 @@ In this lab, you will:
 
 ## **STEP 1:** Open the graph viz web page
 
-1. Open Graph Visualization and check if this graph is successfully loaded.
+1. Replace *your-instance-ip-address* with your instance IP address in the URL and open Graph Visualization and check if this graph is successfully loaded.
 
-    [http://localhost:7007/ui/](http://localhost:7007/ui/)
+    ```
+    http://your-instance-ip-address:7007/ui/
+    ```
 
 ## **STEP 2:** Run some queries and visualize the results
 
@@ -102,5 +104,3 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 * **Contributors** - Ryota Yamanaka
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

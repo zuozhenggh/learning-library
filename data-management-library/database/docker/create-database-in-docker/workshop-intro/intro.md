@@ -28,6 +28,7 @@ Each of the labs is 5 -10 minutes in length, so you will be up and running in no
 ### Prerequisites
 Free Trial or an existing Oracle Cloud account (Not all services in this workshop are Always Free services)
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ### **Let's Get Started!**
 
@@ -48,5 +49,3 @@ Free Trial or an existing Oracle Cloud account (Not all services in this worksho
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

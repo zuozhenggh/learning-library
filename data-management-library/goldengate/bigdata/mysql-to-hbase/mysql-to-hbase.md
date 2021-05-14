@@ -19,12 +19,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -84,40 +84,40 @@ Now we need to start the GG manager process on both the source and target. Keep 
 
   ![](./images/d2.png " ")
 
-  ```
-  <copy> cd /u01/gg4mysql
-  ./ggsci</copy>
-  ```
-  ```
-  <copy> info all</copy>
-  ```
-  ```
-  <copy> start mgr</copy>		
-   ```
-   ```
-  <copy> info all</copy>
-  ```
+    ```
+    <copy> cd /u01/gg4mysql
+    ./ggsci</copy>
+    ```
+    ```
+    <copy> info all</copy>
+    ```
+    ```
+    <copy> start mgr</copy>		
+    ```
+    ```
+    <copy> info all</copy>
+    ```
 
 2. In the second or `target` terminal session, go to the **GG Home for Hadoop**, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
   ![](./images/d3.png " ")
 
-  ```
-  <copy> cd /u01/gg4hadoop123010
-  ./ggsci</copy>
-  ```
-  ```
-  <copy> info all</copy>	 
-  ```
-  ```
-  <copy> start mgr</copy>		
-  ```
-  ```
-  <copy> info all</copy>	 
-  ```
-  ```
-  <copy> exit</copy>
-  ```
+    ```
+    <copy> cd /u01/gg4hadoop123010
+    ./ggsci</copy>
+    ```
+    ```
+    <copy> info all</copy>	 
+    ```
+    ```
+    <copy> start mgr</copy>		
+    ```
+    ```
+    <copy> info all</copy>	 
+    ```
+    ```
+    <copy> exit</copy>
+    ```
 
 3. In the first or `source` terminal session (**GG for MySQL ggsci session**), we will create and start the GG extract process:
 
@@ -246,14 +246,14 @@ Now that the source side is setup, let us configure GG on the target side (HBase
 ## **STEP 4**: GoldenGate Results using HUE
 
 1. Open a Browser window from your local machine to visualize data from HUE frontend application.
- - URL
+    - URL
 
     ```
     <copy>http://<Your Host Public IP address>:8888</copy>
     e.g: http://111.222.111.222:8888
     ```
 
- - Credentials: cloudera/cloudera
+    - Credentials: cloudera/cloudera
 
 2. Click on *Data Browser > HBase > ggtarget2hbase:emp*
 
@@ -284,7 +284,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

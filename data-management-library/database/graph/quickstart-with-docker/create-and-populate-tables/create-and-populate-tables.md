@@ -18,13 +18,19 @@ In this lab, you will:
 
 ## **STEP 1:** Load the data
 
-1. Connect to the database as "sys" user, and create a user, "customer_360".
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
+
+    ```
+    ssh -i ./your-key-name opc@your-instance-ip-address
+    ```
+
+2. Connect to the database as "sys" user, and create a user, "customer_360".
 
     ```
     $ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
     ```
 
-2. At the SQL prompt enter:
+3. At the SQL prompt enter:
 
     ```
     <copy>
@@ -33,13 +39,13 @@ In this lab, you will:
     </copy>
     ```
 
-3. Connect to the database as the "customer_360" user, and create tables.
+4. Connect to the database as the "customer_360" user, and create tables.
 
     ```
     $ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>
     ```
 
-4. At the SQL prompt enter:
+5. At the SQL prompt enter:
 
     ```
     <copy>
@@ -53,9 +59,6 @@ You may now proceed to the next lab and create the graph.
 ## Acknowledgements ##
 
 * **Author** -  Jayant Sharma, Product Manager
-* **Contributors** - Ryota Yamanaka
+* **Contributors** - Ryota Yamanaka, Anoosha Pilli, Product Manager
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 

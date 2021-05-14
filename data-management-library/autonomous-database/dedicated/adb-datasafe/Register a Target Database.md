@@ -28,9 +28,3 @@ However, with the Autonomous Database, the entire registration is reduced to a s
 - **Last Updated By/Date** - Jayshree Chatterjee, July 2020
 
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
-
-
-
-

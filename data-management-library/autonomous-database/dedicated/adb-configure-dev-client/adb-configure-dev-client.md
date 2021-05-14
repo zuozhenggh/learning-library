@@ -27,8 +27,8 @@ As a database user, DBA or application developer,
 We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
 - Log into your cloud account using your tenant name, username and password.
-- Click Compute Instance in the left side menu under services.
-    ![](./images/createcompute.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 - Click create Instance.
     ![](./images/createcomputebutton.png " ")
@@ -277,5 +277,3 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

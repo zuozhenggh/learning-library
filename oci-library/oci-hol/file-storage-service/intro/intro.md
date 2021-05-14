@@ -25,5 +25,3 @@ Oracle Cloud Infrastructure File Storage Service provides a durable, scalable, d
 - **Contributors** - LiveLabs QA Team (Arabella Yao, Product Manager Intern | Isa Kessinger, QA Intern | Kamryn Vinson, QA Intern)
 - **Last Updated By/Date** - Tom McGinn, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

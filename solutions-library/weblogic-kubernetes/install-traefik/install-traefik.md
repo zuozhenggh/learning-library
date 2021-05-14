@@ -19,9 +19,15 @@ Create a namespace for Traefik:
 <copy>kubectl create namespace traefik</copy>
 ```
 Install the Traefik operator in the `traefik` namespace with the provided sample values:
+
+```bash
+<copy>helm repo add traefik https://helm.traefik.io/traefik</copy>
+```
+
+
 ```bash
 <copy>helm install traefik-operator \
-stable/traefik \
+traefik/traefik \
 --namespace traefik \
 --values kubernetes/samples/charts/traefik/values.yaml  \
 --set "kubernetes.namespaces={traefik}" \
@@ -88,6 +94,3 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Maciej Gruszka, Peter Nagy, September 2020
 * **Last Updated By/Date**
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

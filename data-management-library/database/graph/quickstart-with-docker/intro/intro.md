@@ -6,7 +6,7 @@ In this workshop, you will work with Docker images for an Oracle Database and de
 
 Next, you will load data, create a graph, and query and analyze the graph and visualize query results. The data consists of information about customers, their social network, their accounts, their purchases, and the stores where they made these purchases.
 
-Estimated Workshop Time: 75 minutes.
+Estimated Workshop Time: 130 minutes.
 
 ### About Oracle Property Graph
 
@@ -31,7 +31,9 @@ In this workshop, you will:
 
 ### Prerequisites
 
-- This workshop requires Docker and Git. You must have Docker and Git installed and running on your machine.
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Acknowledgements
 
@@ -39,5 +41,3 @@ In this workshop, you will:
 * **Contributors** - Ryota Yamanaka
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

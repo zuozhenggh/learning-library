@@ -6,7 +6,7 @@
 
 This workshop walks you through the steps to use **Autonomous Database** and **Application Express (APEX)** to store information, offer a **REST API** with **Oracle REST Data Services (ORDS)** and enable you to interact with your customers by keeping a conversation with **Digital Assistant**.
 
-Estimated Workshop Time: 120 minutes
+Estimated Workshop Time: 90 minutes
 
 ### Objectives
 
@@ -27,7 +27,7 @@ Estimated Workshop Time: 120 minutes
     As a **Windows user** you need to type on the **Windows Search** Icon:
 
     ```
-    cmd
+    <copy>cmd</copy>
     ```
 
     and select **Command Prompt**.
@@ -71,16 +71,16 @@ We are going to **install** Node.js, if you have done this you can skip this ste
 
     Check if the installation went **well**. Open a Command Prompt, or Terminal in Linux and MacOS and run the following commands:
 
-    ```bash
-    node -v
+    ```
+    <copy>node -v</copy>
     ```
 
-    ```bash
-    npm -v
+    ```
+    <copy>npm -v</copy>
     ```
 
-    ```bash
-    npx @oracle/bots-node-sdk -v
+    ```
+    <copy>npx @oracle/bots-node-sdk -v</copy>
     ```
 
     Like this:
@@ -95,5 +95,3 @@ At this point, you are ready to start learning!
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

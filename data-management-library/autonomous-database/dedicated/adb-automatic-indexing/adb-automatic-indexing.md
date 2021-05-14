@@ -182,5 +182,3 @@ This view shows all auto indexing activities incuding statements used for index 
 - **Contributors** - Kris Bhanushali, Govardhanan Ramachandran
 - **Last Updated By/Date** - Kris Bhanushali, May 2020
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

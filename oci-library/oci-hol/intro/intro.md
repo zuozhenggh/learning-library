@@ -12,3 +12,4 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 - Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
 Click here to request your trial account: [Try It!](https://cloud.oracle.com/tryit)
+

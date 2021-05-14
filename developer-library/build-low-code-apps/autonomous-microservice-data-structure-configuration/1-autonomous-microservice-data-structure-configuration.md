@@ -70,9 +70,9 @@ Estimated time: 30 minutes
 
 5.  Download the Data Pump Export File [Here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/spw-appDev-DevOps-files/o/expdp_alpha121.dmp).
 
-6.  Navigate to Object Storage
+6.  Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
-      ![](images/image26.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 7.  Select the **AppDev** Compartment and click **Create Bucket**
 
@@ -96,9 +96,9 @@ Estimated time: 30 minutes
 
 ## **STEP 3:** Setup Product Catalog MicroService Data in ATP
 
-1.  Navigate to Autonomous Transaction Processing
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-      ![](images/image5.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  Select the **AppDev** Compartment and click on **ProductCatalog** Database.
 
@@ -228,9 +228,9 @@ Estimated time: 30 minutes
 
 ## **STEP 4:** Setup User Catalog MicroService Data in ATP
 
-1.  Navigate to Autonomous Transaction Processing
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-     ![](images/image5.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  Select the **AppDev** Compartment and click on **UserCatalog** Database.
 
@@ -325,5 +325,4 @@ This step is optional and can be done in both the Product and User ATP instances
 - **Last Updated By/Date** -
 - **Workshop Expiration Date** - May 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+

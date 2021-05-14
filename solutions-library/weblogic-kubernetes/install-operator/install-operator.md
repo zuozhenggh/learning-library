@@ -77,7 +77,7 @@ Execute the following `helm install`:
 <copy>helm install sample-weblogic-operator \
   kubernetes/charts/weblogic-operator \
   --namespace sample-weblogic-operator-ns \
-  --set image=oracle/weblogic-kubernetes-operator:3.0.0 \
+  --set image=ghcr.io/oracle/weblogic-kubernetes-operator:3.0.0 \
   --set serviceAccount=sample-weblogic-operator-sa \
   --set "domainNamespaces={}"</copy>
 ```
@@ -114,6 +114,3 @@ The WebLogic Server Kubernetes Operator has been installed. You may now **procee
 ## Acknowledgements
 * **Author** - Maciej Gruszka, Peter Nagy, September 2020
 * **Last Updated By/Date**
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

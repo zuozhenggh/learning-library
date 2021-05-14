@@ -20,7 +20,3 @@ Execute EM workshops in LiveLabs. [Click to begin!](http://bit.ly/golivelabs)
 - [Log Analytics for Database Troubleshooting and Root-Cause Analysis](management_cloud/log_analytics_of_databases.md)
 - [Manage Oracle E-Business Suite Infrastructure](management_cloud/omcebs.md)
 - [Unified Application Infrastructure Visibility, Diagnostics Capacity](management_cloud/omcunified.md)
-
-
-## Need Help?
-Please submit feedback or ask for help using our [Oracle Communities Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with us.

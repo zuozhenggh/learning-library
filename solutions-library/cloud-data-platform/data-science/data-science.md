@@ -21,9 +21,9 @@ Estimated Lab Time: 20 minutes.
 
 ## **STEP 1**: Create the necessary networking components
 
-1. Inside of the OCI Console, click on the top left menu **hamburger icon**. Then, in the side menu, navigate to **Networking**, then select **Virtual Cloud Networks**.  
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-    ![](./images/1.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Make sure you are in the desired compartment of choice to create resources (such as **CloudDataWorkshop**) and proceed by selecting the **Start VCN Wizard** option.
 
@@ -148,5 +148,4 @@ To learn more about OCI Data Science, feel free to explore the capabilities by c
 - **Author** - NATD Cloud Engineering - Austin (Khader Mohiuddin, Philip Pavlov, Patrick Guha)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+

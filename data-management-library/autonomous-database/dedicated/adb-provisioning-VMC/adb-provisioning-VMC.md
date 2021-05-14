@@ -31,7 +31,7 @@ Watch the video below for step by step directions on creating an Autonomous VM C
 *Login to your OCI account as a fleet administrator*
 
 Navigate to the 'Exadata Cloud@Customer' option in the top left hamburger menu from your OCI home screen.
-    ![create_aei1](./images/create_EI1.png " ")
+    ![create_aei1](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/hybrid-exadata.png " ")	
 
 
 
@@ -65,5 +65,3 @@ Once created, your Autonomous Exadata VM Cluster is ready to deploy Autonomous C
 - **Author** - Simon Law & Kris Bhanushali
 - **Last Updated By/Date** - Kris Bhanushali, July 2020
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

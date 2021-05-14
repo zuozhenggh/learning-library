@@ -368,5 +368,3 @@ Hurray! You have completed the replication setup. To test, simply connect to you
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
 
-## See an issue or have feedback?  
-Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

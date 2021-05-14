@@ -24,10 +24,9 @@ Estimated Lab Time: 10 minutes
 
 In this step, you will create a *Virtual Cloud Network (VCN)*, i.e. a software-defined private network in the Oracle Cloud Infrastructure. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs.htm) for more details on VCN.
 
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-1. Log on the OCI console, select **Networking** in **Core Infrastructure** (top left hamburger button) then **Virtual Cloud Networks**.
-
-    ![](.././images/lab2-1.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Make sure your "root" compartment is selected.
 
@@ -43,11 +42,9 @@ In this step, you will create a *Virtual Cloud Network (VCN)*, i.e. a software-d
 
     ![](.././images/lab2-3.png " ")
 
-6. Clicking **Next** will display a summary of the VCN configuration. Review it and click **Create** to actually create the VCN.
+6. Clicking **Next** will display a summary of the VCN configuration. Review it and click **Create** to actually create the VCN. After a couple of seconds, your VCN will be created (including a public and a private subnet, routing tables, an internet gateway, etc.).
 
-After a couple of seconds, your VCN will be created (including a public and a private subnet, routing tables, an internet gateway, etc.).
-
-![](.././images/lab2-4.png " ")
+    ![](.././images/lab2-4.png " ")
 
 You still need to do one thing, i.e. configure a security rule to allow requests coming from the Internet to reach your Java application(s) running on OCI. For this, you will define an *Ingress Rule* on the VCN public subnet (not the private one!) to open port 8080.
 
@@ -109,9 +106,9 @@ You must save the generated private key on your machine. Without it, your instan
 
 6. You can now click **Create**.
 
-After 60~90 seconds, the big left square will switch from the **PROVISIONING** state (orange) to the **RUNNING** state (green). That means that your instance is up and running.
+- After 60~90 seconds, the big left square will switch from the **PROVISIONING** state (orange) to the **RUNNING** state (green). That means that your instance is up and running.
 
-![](.././images/lab2-11.png " ") 
+    ![](.././images/lab2-11.png " ") 
 
 ⚠️ Make sure to write down the Public IP Address of your instance as you will need it!
 
@@ -140,15 +137,15 @@ You will get a message saying "The authenticity of host '158.xxx.xxx.xxx' can't 
 ## **STEP 3**: Configure the instance for Java development
 
 
-You know have a VM running Linux on OCI. Next, you will install the latest version of OpenJDK and other tools required for the Lab (Maven, Git, Helidon).
+You now have a VM running Linux on OCI. Next, you will install the latest version of OpenJDK and other tools required for the Lab (Maven, Git, Helidon).
 
-In your instance, run the following command:
+1. In your instance, run the following command:
 
-```
-source <(curl -L https://gist.githubusercontent.com/delabassee/a11e09dcf5a85dae87a5fd6a96ce77ea/raw/ed200268f5d6cdcbb2a9f16d91e5b5f23a4a682e/vm-setup.sh)
-```
+    ```
+    source <(curl -L https://gist.githubusercontent.com/delabassee/a11e09dcf5a85dae87a5fd6a96ce77ea/raw/ed200268f5d6cdcbb2a9f16d91e5b5f23a4a682e/vm-setup.sh)
+    ```
 
-The script should take around ~90 seconds. In the meantime, you can check what it is doing by typing its URL (https://gist.githubusercontent.com/delabassee/...) in a browser. In a nutshell, the script: 
+2. The script should take around ~90 seconds. In the meantime, you can check what it is doing by typing its URL (https://gist.githubusercontent.com/delabassee/...) in a browser. In a nutshell, the script: 
 * fixes the "LC_CTYPE: cannot change locale" warning,
 * installs various tools (git, tree, bat)
 * installs the latest OpenJDK version,
@@ -157,17 +154,12 @@ The script should take around ~90 seconds. In the meantime, you can check what i
 * configures the VM firewall to open the 8080 port,
 * handles some miscellaneous details (ex. setting the path). 
 
-Once the script has been executed, you can test your instance by issuing, for example, `java -version`.
+3. Once the script has been executed, you can test your instance by issuing, for example, `java -version`.
 
-Congratulations, everything is now correctly set-up! You can proceed to the next lab…
+*Congratulations, everything is now correctly set-up! You can proceed to the next lab…*
 
 ## Acknowledgements
 
  - **Author** - [David Delabassee](https://delabassee.com)
- - **Last updated By** - Kamryn Vinson, September 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
-
+ - **Last updated By** - Kamryn Vinson, October 2020
 

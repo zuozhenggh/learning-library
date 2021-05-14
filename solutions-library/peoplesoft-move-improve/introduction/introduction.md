@@ -2,111 +2,76 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
+This hands-on lab provides users with step-by-step instructions for preparing their **Oracle Cloud Infrastructure (OCI) Tenancy**, including setting up a user group, adding a user and policies, as well as a compartment to house **Cloud Manager 11 using Marketplace**. The final sections provide guidance for **provisioning a PeopleSoft environment**, followed by interactive, yet simple excercises to familiarize users with the system.
 
-Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
-### About Product/Technology
-Enter background information here....
+Estimated Lab Time: 6 hours, including provisioning time. 
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
 
-  [](youtube:zNKxJjkq0Pw)
+**Note**:
+
+- The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
+- Follow all naming conventions (compartment, group, etc..) and passwords as directed.   
+- IP addresses and URLs in the screenshots in this workbook may differ from what you use in the labs as these are dynamically generated.
+
+### Architecture Diagram
+
+  ![](./images/newArch.png " ")
+
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
-
 In this lab, you will:
-* Provision
-* Setup
-* Data Load
-* Query
-* Analyze
-* Visualize
+* Set up an Oracle Cloud Infrastructure Account (Prerequisites) 
+* Create Identity and Access Management (IAM) Resources (Lab 1) 
+* Provision the Peoplesoft Cloud Manager using Marketplace (Lab 2)
+* Configure Cloud Manager Settings (Lab 3)
+* Subscribe to PeopleSoft Channels (Lab 4)
+* Review and Update a Topology (Lab 5)
+* Create a New Environment Template (Lab 6)
+* Create Environment in PeopleSoft (Lab 7)
+
+
 
 ### Prerequisites
+* User already has a tenancy with Administrator user access. If not, please reach out to us during the session so that we can help you to create windows instance. 
+* My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
+* User should have their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
+* User has access to a workstation/laptop with the following installed:
+    * If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win. Please also download Putty from the following site: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html. In the Package Files section, click on an installer depending on 32/64 bits.
+    * Firefox to connect to Cloud Manager PIA.
+    * A different web browser (i.e. Chrome) to connect to OCI web console. 
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+## Appendix
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+*Terminology*
 
-*This is the "fold" - below items are collapsed by default*
+The following terms are commonly employed in Peoplesoft cloud operations and used throughout our documentation:
 
-## **STEP 1**: title
+**Availability Domain** – One or more data centers located within a region.
 
-Step 1 opening paragraph.
+**Bucket** – A logical container used by Object Storage for storing your data and files. A bucket can contain an unlimited number of objects.
 
-1. Sub step 1
+**Compartments** – Allows you to organize and control access to your cloud resources. A compartment is a collection of related resources (such as instances, virtual cloud networks, block volumes) that can be accessed only by certain groups.
 
-  To create a link to local file you want the reader to download, use this format:
+**Peoplesoft Cloud Manager (PSFT)** - Oracle Peoplesoft Cloud Manager is a Peoplesoft lifecycle management application used for creating, managing, and configuring Peoplesoft environments on Oracle Cloud Infrastructure.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+**PSFT Cloud Manager infrastructure** – Virtual network resources, compute resources, and policies required to run PSFT Cloud Manager on Oracle Cloud Infrastructure.
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+**Virtual Cloud Network (VCN)** – Networking and compute resources required to run PSFT on Oracle Cloud Infrastructure. The PSFT VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle Peoplesoft on OCI.
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+**Oracle Cloud Infrastructure (OCI)** – Combines the elasticity and utility of public cloud with the granular control, security, and predictability of on-premises infrastructure to deliver high-performance, high availability, and cost-effective infrastructure services.
 
-    ![Image alt text](images/sample1.png "Image title")
+**Region** – Oracle Cloud Infrastructure are hosted in regions, which are located in different metropolitan areas. Regions are completely independent of other regions and can be separated by vast distances – across countries or even continents. Generally, you would deploy an application in the region where it is most heavily used, since using nearby resources is faster than using distant resources.
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+**Subnet, Private** - Instances created in priate subnets do not have direct access to the Internet. In this lab, we will be provisioning the Cloud Manager stack in Resource Manager, and creating private subnets. We will then choose to create a "jump host", or bastion host, as part of the installation. The IP for a private subnet cannot be accessed directly from the Internet. To access our CM instance in a private subnet, we will set up a jump host to enable SSH tunneling and Socket Secure (SOCKS) proxy connection to the Cloud Manager web server (PIA). The jump host is created using an Oracle Linux platform image, and will be created inside the VCN.
 
-    ![Image alt text](images/sample1.png)
+**Subnet, Public** - Instances that you create in a public subnet have public IP addresses, and can be accessed from the Internet.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. One example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy&gt;</copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+**Tenancy** – When you sign up for Oracle Cloud Infrastructure, Oracle creates a tenancy for your company, which is a secure and isolated partition within Oracle Cloud Infrastructure where you can create, organize, and administer your cloud resources.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
+* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
