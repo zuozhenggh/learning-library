@@ -10,39 +10,42 @@ The following video shows the steps you will execute in this lab.
 [](youtube:F_3xe18kWoo) Graph Studio: Load CSV Files.
 
 
-
 Estimated Lab Time: 10 minutes. 
 
 ### Objectives
 
 Learn how to
-- load CSV files into an Autonomous Database using Database Actions SQL (aka SQLDeveloperWeb)
+- load CSV files into an Autonomous Database using Database Actions SQL.
 
 
 ### Prerequisites
 
-- The following lab requires an ADB-Shared (ADW/ATP) account. 
-- A Graph-enabled and REST-enabled user has been created. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions (aka SqlDeveloperWeb).
+- The following lab requires an Autonomous Database - Shared Infrastructure account. 
+- It assumes that a Graph and Web-Access enabled user has been created. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions SQL.
 
 
-## **STEP 1**: Connect to the Database Actions (aka SQL Developer Web) for your ADB instance
+## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
 
-1. Open the service detail page for your ADB instance in the OCI console. 
+**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
 
-2. Click on the Tools tab and then the Database Actions link to open it. Or click on the Service Console link and then the Development link and open Database Actions (or SQL  Developer Web).
-   ![](./images/01-launch-SDW-tools-page.png " ")
+1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+
+   ![](images/../../query-graph/images/adb-details-page.png " ")  
+
+2. Click on the Tools tab and then the Database Actions link to open it.
+   ![](images/../../query-graph/images/adb-tools-tab-db-actions.png " ")
 
 ## **STEP 2**: Login as the graph-enabled user
 
-1. Login as the graph user (e.g. AGDLATEST) for your ADB instance. 
-
+1. Login as the graph user (e.g. `GRAPHUSER`) for your Autonomous Database instance. 
+   
     ![](./images/02-SDW-login.png " ")  
 
     **Note:** If necessary, do the following to create the user with the right roles and privileges:
-    - Log in to Database Actions (SQL Developer Web) as the ADMIN user for your ADB.
+    - Log in to Database Actions as the ADMIN user for your Autonomous Database.
     - Select Administration and then Database Users from the navigation menu
     - Click on Create User
-    - Turn on the REST-enable and Graph-enable buttons
+    - Turn on the Web-Access and Graph-enable buttons
 
 ## **STEP 3**: Download the sample datasets from the ObjectStore
 
@@ -59,9 +62,13 @@ Learn how to
 
 2. Unzip the archive into a local directory such as ~/downloads.
 
-## **STEP 4**: Upload using SQLDeveloperWeb
+## **STEP 4**: Upload using Database Actions SQL
 
-1. Click on the Data tab in the SQLDeveloperWeb worksheet. Then click on `Select Files`.
+1. Click on the Data Loading tab in the SQL worksheet. 
+   
+   ![](images/data-loading-sql-worksheet.png " ")
+   
+   Then click on `Select Files`.
 
    ![](./images/03-upload-first-file.png)
 
@@ -111,5 +118,6 @@ Please **proceed to the next lab** to create a graph from these tables.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Jan 2021
+* **Last Updated By/Date** - Jayant Sharma, May 2021
+* **Lab Expiry Date** - Nov 2021
   

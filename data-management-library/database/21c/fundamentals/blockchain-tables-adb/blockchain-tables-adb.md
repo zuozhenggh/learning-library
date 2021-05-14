@@ -8,7 +8,7 @@ Blockchain tables enable you to implement a centralized ledger model where all p
 
 A centralized ledger model reduces administrative overheads of setting a up a decentralized ledger network, leads to a relatively lower latency compared to decentralized ledgers, enhances developer productivity, reduces the time to market, and leads to significant savings for the organization. Database users can continue to use the same tools and practices that they would use for other database application development.
 
-This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table and manage the blockchain table.
+This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table and manage the blockchain table. Then you will explore how to sign a row and verify the blockchain table by creating a certificates directory and adding your certificate to it, generating the row bytes for the row you want to sign and signing the row and then verifying the blockchain table.
 
 Estimated Lab Time: 30 minutes
 
@@ -19,7 +19,7 @@ In this lab, you will:
 * Create the Blockchain table and insert rows
 * Manage blockchain tables and rows in a blockchain table
 * Create a certificate directory and add your certificate
-* Sign a row in the blockchain table
+* Generate row bytes for a row and sign the row in blockchain table
 * Check the validity of rows in the blockchain table with and without signature
 
 ### Prerequisites
@@ -36,17 +36,31 @@ Please proceed to next step if you are already connected to Autonomous Database 
 
 2. To navigate to your Autonomous Database, click on the hamburger menu on the top left corner of the Oracle Cloud console and select the Autonomous Database flavor (ATP, ADW or AJD) you provisioned.
 
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+
 3. If you can't find your ADB instance, ensure you are in the correct region, compartment and have chosen the right flavor of your ADB instance.
+
+	![](./images/step1-3.png " ")
 
 4. Click on the Display Name of your ADB instance to navigate to your ADB instance details page.
 
+	![](./images/step1-4.png " ")
+
 5. Click on the **Tools** tab, select **Database Actions**, a new tab will open up.
+
+	![](./images/step1-5.png " ")
 
 6. Provide the **Username - ADMIN** and click **Next**.
 
+	![](./images/step1-6.png " ")
+
 7. Now provide the **Password - WElcome123##** for the ADMIN user you created when you provisioned your ADB instance and click **Sign in** to sign in to Database Actions.
 
+	![](./images/step1-7.png " ")
+
 8. Click on **SQL** under the Development section to sign in to SQL Developer Web as an ADMIN user.
+
+	![](./images/step1-8.png " ")
 
 ## **STEP 2:** Create a blockchain table and insert rows
 
@@ -63,7 +77,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/table-created.png " ")
+	![](./images/step2-1.png " ")
 
 2. Describe the `bank_ledger` blockchain table to view the columns. Notice that the description displays only the visible columns.
 
@@ -73,7 +87,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/describe.png " ")
+	![](./images/step2-2.png " ")
 
 3. Insert records into the `bank_ledger` blockchain table.
 
@@ -91,7 +105,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/insert.png " ")
+	![](./images/step2-3.png " ")
 
 4. Query the `bank_ledger` blockchain table to show the records.
 
@@ -101,7 +115,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-	![](./images/select-all.png " ")
+	![](./images/step2-4.png " ")
 
 5. Run the command to view all the blockchain tables.
 
@@ -111,16 +125,9 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-6. Verify the attributes set for the blockchain table in the appropriate data dictionary view.
+	![](./images/step2-5.png " ")
 
-	```
-	<copy>
-	SELECT table_name, row_retention, row_retention_locked, table_inactivity_retention, hash_algorithm 
-	FROM user_blockchain_tables;
-	</copy>
-    ```
-
-7. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
+6. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
 
 	```
 	<copy>
@@ -130,7 +137,9 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	</copy>
 	```
 
-8. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
+	![](./images/step2-7.png " ")
+
+7. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
 
 	```
 	<copy>
@@ -141,6 +150,8 @@ Please proceed to next step if you are already connected to Autonomous Database 
 	ORABCTAB_SIGNATURE_CERT$ from bank_ledger;
 	</copy>
 	```
+
+	![](./images/step2-8.png " ")
 
 ## **STEP 3:** Manage blockchain tables and rows in a blockchain table
 
@@ -154,7 +165,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/update.png " ")
+	![](./images/step3-1.png " ")
 
 2. Delete a record in the `bank_ledger` blockchain table.
 
@@ -164,7 +175,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/delete.png " ")
+	![](./images/step3-2.png " ")
 
 3. Truncating the table `bank_ledger`.
 
@@ -174,7 +185,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/truncate.png " ")
+	![](./images/step3-3.png " ")
 
 Similar to managing rows within the retention period, managing the blockchain table using alter, drop will throw an error.
 
@@ -186,7 +197,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/drop.png " ")
+	![](./images/step3-4.png " ")
 
 5. Alter the table `bank_ledger` to not delete the rows until 20 days after insert.
 
@@ -196,7 +207,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-1.png " ")
+	![](./images/step3-5.png " ")
 
 6. Create another table `bank_ledger_2`.
 
@@ -209,7 +220,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/create-new-table.png " ")
+	![](./images/step3-6.png " ")
 
 7. Alter the table `bank_ledger_2` by specifying that the rows cannot be deleted until 20 days after they were inserted.
 
@@ -219,7 +230,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-new-table.png " ")
+	![](./images/step3-7.png " ")
 
 8. Run the command to view all the blockchain tables.
 
@@ -228,6 +239,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	select * from user_blockchain_tables;
 	</copy>
 	```
+
+	![](./images/step3-8.png " ")
 
 ## **STEP 4:** Verify rows without signature
 
@@ -250,7 +263,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/verify.png " ")
+	![](./images/step4-1.png " ")
 
 2. DBA view of blockchain tables.
 
@@ -260,9 +273,13 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
+	![](./images/step4-2.png " ")
+
 ## **STEP 5:** Create a certificate directory and add your certificate
 
-1.  create a `CERT_DIR` certificate directory.
+In this lab, we will mock the key management service (a feature of Oracle that stores the keys securely) by generating the keys in Oracle Cloud Shell and storing them on Autonomous Database instance and Object storage as storing keys securely is not the main focus of this lab.
+
+1.  Create a `CERT_DIR` certificate directory.
 
 	```
 	<copy>
@@ -270,9 +287,11 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/cert-dir.png " ")
+	![](./images/step5-1.png " ")
 
 2. Connect to Oracle cloud shell to generate your x509 keypair.
+
+	![](./images/step5-2.png " ")
 
 3. Create a folder `demo` and navigate into the folder.
 
@@ -284,6 +303,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
+	![](./images/step5-3.png " ")
+
 4. Run the command to generate your x509 key pair - *user01.key*, *user01.pem*.
 
 	Press enter after providing each detail - Country Name, State, Locality Name, Organization name, Common name, Email address.
@@ -294,13 +315,15 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
+	![](./images/step5-4a.png " ")
+
 	Notice that your *user01.key*, *user01.pem* key pair is created.
 
 	```
 	<copy>ls</copy>
 	```
 
-	![](./images/pem.png " ")
+	![](./images/step5-4b.png " ")
 
 5. Copy the below command and replace the `<namespace>` and `<bucketname>` with the namespace and bucket name you copied earlier in lab 2 step 1 to upload the `user01.pem` key to object storage.
 
@@ -310,21 +333,29 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-6. Navigate to your SQL Developer Web, copy the below procedure and replace the `<namespace>`, `<bucketname>` with the namespace and bucket name to download the `user01.pem` key from object storage to ATP using the `atp1` credential created earlier in lab 2 step 7.
+	![](./images/step5-5.png " ")
+
+6. Copy the region.
+
+	![](./images/step5-6.png " ")
+
+7. Navigate to your SQL Developer Web, copy the below procedure and replace the `<region>`, `<namespace>`, `<bucketname>` with the namespace and bucket name to download the `user01.pem` key from object storage to ATP using the `adb1` credential created earlier in lab 2 step 7.
 
 	```
 	<copy>
 	BEGIN
 	DBMS_CLOUD.GET_OBJECT(
-		credential_name => 'atp1',
-		object_uri => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/<namespace>/b/<bucketname>/o/user01.pem',
+		credential_name => 'adb1',
+		object_uri => 'https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucketname>/o/user01.pem',
 		directory_name => 'CERT_DIR');
 	END;
 	/
 	</copy>
 	```
 
-7. List files in the `CERT_DIR` certificate directory and notice the `user01.pem` key is uploaded to ATP.
+	![](./images/step5-7.png " ")
+
+8. List files in the `CERT_DIR` certificate directory and notice the `user01.pem` key is uploaded to ATP.
 
 	```
 	<copy>
@@ -332,7 +363,9 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-8. Before you register your key to sign, you need to create a certificate. `Make sure to copy the **Certificate GUID** value as it is not shown again.`
+	![](./images/step5-8.png " ")
+
+9. Before you register your key to sign, you need to create a certificate. `Make sure to copy the **Certificate GUID** value as it is not shown again.`
 
 	```
 	<copy>
@@ -353,22 +386,22 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/add-cert.png " ")
+	![](./images/step5-9.png " ")
 
-9. To verify the certificate is created, view **CERTIFICATE_GUID** value in raw format by selecting all the columns from `USER_CERTIFICATES` table ordered by user\_name.
+10. To verify the certificate is created, view **CERTIFICATE_GUID** value in raw format by selecting all the columns from `USER_CERTIFICATES` table ordered by user\_name.
 	```
 	<copy>
 	SELECT * FROM USER_CERTIFICATES ORDER BY user_name;
 	</copy>
 	```
 
-	![](./images/select.png " ")
+	![](./images/step5-10.png " ")
 
 ## **STEP 6**: Sign a row and verify the rows with signature
 
 1. Query the Blockchain table and make note of the `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` column values for the row you want to sign.
 
-	In this example, we will be signing the row with ORABCTAB\_INST\_ID$ - 1, ORABCTAB\_CHAIN\_ID$ - 17 and ORABCTAB\_SEQ\_NUM$ - 1.
+	In this example, we will be signing the row with ORABCTAB\_INST\_ID$ - **1**, ORABCTAB\_CHAIN\_ID$ - **19** and ORABCTAB\_SEQ\_NUM$ - **1**.
 
 	```
 	<copy>
@@ -379,6 +412,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	ORABCTAB_SIGNATURE_CERT$ from bank_ledger;
 	</copy>
 	```
+
+	![](./images/step6-1.png " ")
 
 2. To sign the row we need the bytes of the row that writes to a file. Replace the existing `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` value `1` with the values you just noted and run the command to get the bytes for the row and write to a file called `row_data`.
 
@@ -404,7 +439,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/row-byte.png " ")
+	![](./images/step6-2.png " ")
 
 3. Notice the `row_data` file is created in the `CERT_DIR` directory.
 
@@ -414,22 +449,24 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/row-byte-created.png " ")
+	![](./images/step6-3.png " ")
 
-4. Put the `row_data` file in object storage. Replace the `<namespace>`, `<bucketname>` with the namespace and bucket name to upload the `row_data` to object storage from ATP using the `atp1` credential created.
+4. Put the `row_data` file in object storage. Replace the `<region>`, `<namespace>`, `<bucketname>` with the namespace and bucket name to upload the `row_data` to object storage from ATP using the `adb1` credential created.
 
 	```
 	<copy>
 	BEGIN
 	DBMS_CLOUD.PUT_OBJECT (
-		credential_name      => 'atp1',		
-		object_uri           => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/<namespace>/b/<bucketname>/o/',		
+		credential_name      => 'adb1',		
+		object_uri           => 'https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucketname>/o/',		
 		directory_name       => 'CERT_DIR',
 		file_name            => 'row_data');	
 	END;
 	/
 	</copy>
 	```
+
+	![](./images/step6-4.png " ")
 
 5. Navigate to the `demo` directory in cloud shell and download the `row_data` object from Object Storage. Replace the `<bucketname>` with your bucket name.
 
@@ -439,6 +476,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
+	![](./images/step6-5a.png " ")
+
 	Notice that your `row_data` file is downloaded to your demo directory.
 
 	```
@@ -446,6 +485,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	ls
 	</copy>
 	```
+
+	![](./images/step6-5b.png " ")
 
 6. Now generate the `row1.sha256` for the `row_data` file.
 
@@ -455,6 +496,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
+	![](./images/step6-6a.png " ")
+
     Note that the `row1.sha256` file is created.
 
 	```
@@ -463,7 +506,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/row-sha-created.png " ")
+	![](./images/step6-6b.png " ")
 
 7. Upload the `row1.sha256` file to object storage.
 
@@ -473,19 +516,23 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-8. Navigate back to the SQL Developer web and replace the `<namespace>`, `<bucketname>` with the namespace and your bucket name to download the `row1.sha256` from object storage to ATP using the `atp1` credential created.
+	![](./images/step6-7.png " ")
+
+8. Navigate back to the SQL Developer web and replace the `<region>`, `<namespace>`, `<bucketname>` with the namespace and your bucket name to download the `row1.sha256` from object storage to ATP using the `adb1` credential created.
 
 	```
 	<copy>
 	BEGIN
 	DBMS_CLOUD.GET_OBJECT(
-		credential_name => 'atp1',
-		object_uri => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/<namespace>/b/<bucketname>/o/row1.sha256',
+		credential_name => 'adb1',
+		object_uri => 'https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucketname>/o/row1.sha256',
 		directory_name => 'CERT_DIR');
 	END;
 	/
 	</copy>
 	```
+
+	![](./images/step6-8.png " ")
 
 9. List the files in `CERT_DIR` directory and notice that `row1.sha256` is downloaded to ATP from object storage.
 
@@ -495,7 +542,9 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-10. Now let's sign the row. Replace the `<B6622BA923717399E0530400000AA85A>` value with your **CERTIFICATE\_GUID** value you saved earlier. Update `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` value `1` with the values for which you generated the row bytes and run the command.
+	![](./images/step6-9.png " ")
+
+10. Now let's sign the row. Replace `<B6622BA923717399E0530400000AA85A>` value with your **CERTIFICATE\_GUID** value you saved earlier. Update `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` value `1` with the values for which you generated the row bytes and run the command.
 
 	```
 	<copy>
@@ -503,7 +552,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
     	file BFILE;
     	amount NUMBER := 32767;
         	signature RAW(32767);
-        	cert_guid RAW (16) := HEXTORAW('B759871FE24EE279E0533D11000AE5DC');
+        	cert_guid RAW (16) := HEXTORAW('<B6622BA923717399E0530400000AA85A>');
     	inst_id binary_integer;
     	chain_id binary_integer;
     	sequence_no binary_integer;
@@ -519,7 +568,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/sign.png " ")
+	![](./images/step6-10.png " ")
 
 11. Update `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` value `1` with the values for which you created the signature and query all the columns from the `bank_ledger` blockchain table and notice the signature is updated for the row.
 
@@ -533,7 +582,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/check.png " ")
+	![](./images/step6-11.png " ")
 
 13. Verify the rows with signature.
 
@@ -552,12 +601,12 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/verify-rows.png " ")
+	![](./images/step6-12.png " ")
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Mark Rakhmilevich, Anoosha Pilli
-* **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
+* **Author** - Rayes Huang, Mark Rakhmilevich, Anoosha Pilli
+* **Contributors** - Anoosha Pilli, Didi Han, Database Product Management, Oracle Database
 * **Last Updated By/Date** - Anoosha Pilli, April 2021

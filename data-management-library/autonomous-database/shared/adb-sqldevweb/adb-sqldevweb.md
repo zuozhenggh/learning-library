@@ -4,6 +4,8 @@
 
 In this lab, you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) instance using SQL Worksheet.
 
+Estimated Lab Time: 5 minutes
+
 ### Before You Begin
 
 This lab uses SQL Worksheet, one of the features of the Database Actions web-based interface for Oracle Autonomous Database.
@@ -31,7 +33,8 @@ Although you can connect to your autonomous database using local PC desktop tool
 
 1.  If you are not logged in to Oracle Cloud Console, log in and select **Autonomous Data Warehouse** from the hamburger menu and navigate into your ADW Finance Mart instance.
 
-    ![Oracle Home page left navigation menu.](images/step1.1-LabGuide1-39fb4a5b.png " ")
+    ![Oracle Home page left navigation menu.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
 
     ![Autonomous Databases homepage.](images/step1.1-adb.png " ")
 
