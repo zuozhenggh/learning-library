@@ -37,22 +37,24 @@ In order to start the conversion process, the database objects associated with y
 1. From the VNC session created in previous step, Open the Oracle APEX Workspace log in page, enter **``SecretPassw0rd``** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
     ![](images/log-in-to-workspace.png " ")
 
-2. Navigate to **SQL scripts** from the Oracle APEX home Page
+2. Navigate to **SQL scripts** from the Oracle APEX home Page.
     ![](images/scipts_upload.png " ")
 
-3. Upload the scripts **forms_conversion_ddl.sql** and  **conversion_data_insert.sql** from your local desktop into APEX ![](images/script_upload1.png " ")
+3. Upload the scripts **forms_conversion_ddl.sql** and  **conversion_data_insert.sql** from your local desktop into APEX.
+![](images/script_upload1.png " ")
 
-4. **Run** the script to create the schema objects for customer and orders form ![](images/scripts_run.png " ")
+4. **Run** the script to create the schema objects for customer and orders form.
+ ![](images/scripts_run.png " ")
 
 
-## **STEP 3**: **Create Migration Project**
+## **STEP 3**: Create Migration Project
 
 Create a conversion project by running Create Migration Project Wizard and loading the application metadata extracted from Forms to XML.
 
-1. From the Apex workspace click on **Oracle Forms Migration** on the bottom right corner of the screen
+1. From the Apex workspace click on **Oracle Forms Migration** on the bottom right corner of the Screen.
 ![](images/forms_migration.png " ")
 
-2. Click on **Create Project** to import XML files that is generated from Forms files.
+2. Click on **Create Project** to import XML files that is generated from Forms Files.
 ![](images/create_migration_project.png " ")
 
 3. Enter **Project Name**, Choose ``DEMO`` schema and the XML file that is derived from fmb and click Next.

@@ -65,7 +65,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 1. SSH into your dev client compute instance with public ip details we got from instance details.
 
     ```
-    <copy>$ ssh -i <private-key> opc@PublicIP
+    <copy>$ ssh -i <private-key> opc@PublicIP</copy>
     ```
 2. When you login, the Oracle Forms Installation will continue and you will be prompted with if you want to use DBCS, choose N
 
@@ -151,7 +151,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 4.   Start your VNC server with the following command,
 
         ```
-        <copy>$ vncserver -geometry 1280x1024
+        <copy>$ vncserver -geometry 1280x1024</copy>
         ```
 
         ```
@@ -237,7 +237,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
         scp -i  ~/.ssh/<privake key> ./files/forms_conversion.sql opc@<public ip>:/home/opc/oracle/formsmodules
         scp -i  ~/.ssh/<privake key> ./files/forms_conversion_data_insert.sql opc@<public ip>:/home/opc/oracle/formsmodules
         scp -i  ~/.ssh/<privake key> ./files/frmf2xml.sh opc@<public ip>:/home/opc/oracle/formsmodules
-        scp -i  ~/.ssh/<privake key> ./files/formsXMLconvert.sh opc@<public ip>:/home/opc/oracle/formsmodules        
+        scp -i  ~/.ssh/<privake key> ./files/formsXMLconvert.sh opc@<public ip>:/home/opc/oracle/formsmodules </copy>       
       ````
 
 ## **STEP 4**: Connect to your DB in Development system using SQL Developer
@@ -249,7 +249,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     *Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry.*
 
     ````
-    <copy>SetJavaHome /usr/java/jdk1.8.0_231-amd64
+    <copy>SetJavaHome /usr/java/jdk1.8.0_231-amd64</copy>
     ````
 
 2. Create an new connection in sql*developer and provide the following information,
@@ -281,7 +281,7 @@ Before migrating  to Oracle Applications Express, Forms file have to be converte
 
     ````
     <copy>cd oracle/formsmodules/
-      sh formsXMLconvert.sh
+      sh formsXMLconvert.sh</copy>
 
     ````  
 After the script is run verify that you can see customers_fmb.xml
