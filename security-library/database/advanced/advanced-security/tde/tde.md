@@ -29,9 +29,9 @@ This lab assumes you have:
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Allow DB Restore | 5 minutes  |
-| 2 | Create Keystore | 5 minutes |
-| 3 | Create Master Key | 5 minutes |
-| 4 | Create Auto-login Wallet | 5 minutes |
+| 2 | Create Keystore | <5 minutes |
+| 3 | Create Master Key | <5 minutes |
+| 4 | Create Auto-login Wallet | <5 minutes |
 | 5 | Encrypt Existing Tablespace | 5 minutes |
 | 6 | Encyrpt All New Tablespaces | 5 minutes |
 | 7 | Rekey Master Key | 5 minutes |
