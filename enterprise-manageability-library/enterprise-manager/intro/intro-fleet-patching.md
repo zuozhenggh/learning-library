@@ -9,7 +9,7 @@ Join Oracle's ***Wim Coekaerts***, *senior vice president of software developmen
 
 ## Workshop Description
 The Automated Database Patching at Scale with Fleet Maintenance is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
-- This Workshop VM comes preinstalled with Enterprise Manager 13.4 Release Update 5 and Oracle Database targets - 18.3, 18.8 and 19.7
+- This Workshop VM comes preinstalled with Enterprise Manager 13.5 and Oracle Database targets - 18.3, 18.8, 18.10, 19.3 and 19.10
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
 ### Applicable Enterprise Manager Management Packs
@@ -54,6 +54,11 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 - Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
 - Host security compliance using custom compliance standard
 
+### 5. Job System Automation
+* Understand how to create an OS Command Job
+* Create a SQL command Job
+* Create Database Backup Job using Wizard
+
 ## More Information on Oracle Enterprise Manager
 Managing Your Hybrid Database Fleet
 [](youtube:TUaAweMX3S4)
@@ -61,13 +66,13 @@ Managing Your Hybrid Database Fleet
 Drive Your Autonomous Future with Oracle Enterprise Manager
 [](youtube:7khTglg0_3g)
 
-- [Enterprise Manager Cloud Control Solutions](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/emcon/enterprise-manager-management-focus-areas.html#GUID-7F3BF18C-97DF-44BC-8BB7-6A864AF1A150)
-- [Enterprise Manager Cloud Control 13.4 Getting Started](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/index.html)
-- [Architecture of Enterprise Manager Cloud Control](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/emcon/enterprise-manager-cloud-control-architecture.html#GUID-1A384373-7CD5-434D-9939-874E940CBF21)
-- [Installation and Upgrade](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/install.html)
+- [Enterprise Manager Cloud Control Solutions](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emcon/enterprise-manager-management-focus-areas.html#GUID-7F3BF18C-97DF-44BC-8BB7-6A864AF1A150)
+- [Enterprise Manager Cloud Control 13.5 Getting Started](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/index.html)
+- [Architecture of Enterprise Manager Cloud Control](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emcon/enterprise-manager-cloud-control-architecture.html#GUID-1A384373-7CD5-434D-9939-874E940CBF21)
+- [Installation and Upgrade](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/install.html)
 - [Enterprise Manager Blogs](https://blogs.oracle.com/oem/)
-- [Enterprise Manager Videos](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/videos.html)
-- [Enterprise Manager Licensing Guide](https://docs.oracle.com/cd/E63000_01/OEMLI/introduction.htm#OEMLI108)
+- [Enterprise Manager Videos](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/videos.html)
+- [Enterprise Manager Licensing Guide](https://www.oracle.com/pls/topic/lookup?ctx=en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5&id=OEMLI-GUID-7B2095D3-4E88-4346-9566-638219FF1130)
 - [oracle.com/enterprisemanager](https://www.oracle.com/enterprise-manager/)
 
 ## Acknowledgements
