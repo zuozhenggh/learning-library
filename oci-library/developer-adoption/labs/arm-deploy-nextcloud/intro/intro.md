@@ -1,6 +1,7 @@
 # Deploy Nextcloud on Ampere A1 in Oracle Cloud Infrastructure
 
 Estimated time: 45 minutes
+Note : This lab can be performed on a Free Trial, Always-Free Tier, or paid subscription accounts. 
 
 ## Introduction
 

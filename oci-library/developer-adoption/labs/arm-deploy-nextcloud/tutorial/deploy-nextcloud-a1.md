@@ -34,7 +34,7 @@ Pods are a great way to manage related containers, like when an application is m
 Create a Pod with the command below 
 
   ```
-  podman pod create --hostname nextcloud --name nextcloud --publish 8080:80
+  $ <copy>podman pod create --hostname nextcloud --name nextcloud --publish 8080:80</copy>
   ```
     
   1. `podman pod create` - creates a pod.
@@ -52,9 +52,9 @@ Based on Nextcloud recommendations, we use 3 volumes to manage data.
 1. The volume named `nextcloud-db` will store the database files for the MySQL database. 
  
     ```
-     podman volume create nextcloud-appdata 
-     podman volume create nextcloud-files
-     podman volume create nextcloud-db
+     $ <copy>podman volume create nextcloud-appdata</copy>
+     $ <copy>podman volume create nextcloud-files</copy>
+     $ <copy>podman volume create nextcloud-db</copy>
     ```
 
 ### Run MySQL Database
@@ -66,15 +66,15 @@ The command to start the database is shown below, and each of the options are ex
   >**Note** : Ensure to provide strong passwords for `MYSQL_PASSWORD` and `MYSQL_ROOT_PASSWORD` variables below.
 
  ```
-  podman run --detach --pod=nextcloud \
-  --env MYSQL_DATABASE=nextcloud \
-  --env MYSQL_USER=nextcloud \
-  --env MYSQL_PASSWORD=NEXTCLOUD_PASSWORD \
-  --env MYSQL_ROOT_PASSWORD=MYSQL_ROOT_PASSWORD \
-  --volume nextcloud-db:/var/lib/mysql:Z \
-  --restart on-failure \
-  --name nextcloud-db \
-  mysql/mysql-server:8.0 
+ $ <copy>podman run --detach --pod=nextcloud \</copy>
+  <copy>--env MYSQL_DATABASE=nextcloud \</copy>
+  <copy>--env MYSQL_USER=nextcloud \</copy>
+  <copy>--env MYSQL_PASSWORD=NEXTCLOUD_PASSWORD \</copy>
+  <copy>--env MYSQL_ROOT_PASSWORD=MYSQL_ROOT_PASSWORD \</copy>
+  <copy>--volume nextcloud-db:/var/lib/mysql:Z \</copy>
+  <copy>--restart on-failure \</copy>
+  <copy>--name nextcloud-db \</copy>
+  <copy>mysql/mysql-server:8.0 </copy>
   ```
   1. `podman run` - the run command tells podman to run a command in a container with the given parameters. The command to be run is typically defined in the image itself.
   2. `--detach` - Detached mode: run the container in the background and print the new container ID.
@@ -88,7 +88,7 @@ The command to start the database is shown below, and each of the options are ex
 Since you are running the container in detached mode, Podman will start it in the background and exit. To see the status of the startup and logs, you can execute the following command. Press `Ctrl+C` to stop following the logs.
 
 ```
-podman logs -f nextcloud-db
+$ <copy>podman logs -f nextcloud-db</copy>
 ```
 
 
@@ -99,19 +99,19 @@ Now you can deploy Nextcloud itself as another container in the same pod.  The p
 > **Note**: Ensure that the values for the variables `MYSQL_DATABASE`, `MYSQL_USER` and `MYSQL_PASSWORD` are the same that you provided when you started the database. 
 
 ```
-podman run --detach --pod=nextcloud \
-  --env MYSQL_HOST=127.0.0.1 \
-  --env MYSQL_DATABASE=nextcloud \
-  --env MYSQL_USER=nextcloud \
-  --env MYSQL_PASSWORD=DB_USER_PASSWORD \
-  --env NEXTCLOUD_ADMIN_USER=NC_ADMIN \
-  --env NEXTCLOUD_ADMIN_PASSWORD=NC_PASSWORD \
-  --env NEXTCLOUD_TRUSTED_DOMAINS=<your public IP> \
-  --volume nextcloud-appdata:/var/www/html:Z \
-  --volume nextcloud-files:/var/www/html/data:Z \
-  --restart on-failure \
-  --name nextcloud-app \
-  docker.io/library/nextcloud:21
+$ <copy>podman run --detach --pod=nextcloud \</copy>
+  <copy>--env MYSQL_HOST=127.0.0.1 \</copy>
+  <copy>--env MYSQL_DATABASE=nextcloud \</copy>
+  <copy>--env MYSQL_USER=nextcloud \</copy>
+  <copy>--env MYSQL_PASSWORD=DB_USER_PASSWORD \</copy>
+  <copy>--env NEXTCLOUD_ADMIN_USER=NC_ADMIN \</copy>
+  <copy>--env NEXTCLOUD_ADMIN_PASSWORD=NC_PASSWORD \</copy>
+  <copy>--env NEXTCLOUD_TRUSTED_DOMAINS=<your public IP> \</copy>
+  <copy>--volume nextcloud-appdata:/var/www/html:Z \</copy>
+  <copy>--volume nextcloud-files:/var/www/html/data:Z \</copy>
+  <copy>--restart on-failure \</copy>
+  <copy>--name nextcloud-app \</copy>
+  <copy>docker.io/library/nextcloud:21</copy>
 ```
 
  1. `--env MYSQL_HOST=127.0.0.1` - Since both the database and the application are in the same pod, the application can access the database container  using `127.0.0.1`, as if they were both running on the same host.
@@ -120,7 +120,7 @@ podman run --detach --pod=nextcloud \
  To see the startup logs you can use :
 
   ```
-  podman logs -f nextcloud-db
+  $<copy>podman logs -f nextcloud-db</copy>
   ```
 
 Once the start up is complete, you can navigate to to `http://<your_public_ip>:8080` to reach your Nextcloud server. 
