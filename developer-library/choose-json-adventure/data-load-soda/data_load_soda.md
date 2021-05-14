@@ -121,25 +121,37 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
 ## **STEP 2:** Loading JSON Data into a Collection
 
+In this section, you will start by building up a URL that will allow you to access the SODA for REST APIs. You will then stage a file and use the newly created URL via cURL to load the file into the collection.
+
 1. The SODA APIs will be used to load the records into the collection. We will build the cURL command up similar as we did in the previous step. We start with again the user/password combination. **REMEMBER to use your password in place of PASSWORD**
 
+    ```
     curl -u "gary:PASSWORD"
+    ```
 
     And as with before, we need to add the -i for the header return information
 
+    ```
     curl -u "gary:PASSWORD" -i
+    ```
 
     now the HTTP method. For the loading of data, we will use a **POST**
 
+    ```
     curl -u "gary:PASSWORD" -i -X POST
-
+    ```
+    
     next, we need to indicate the file we want to load. Use **-d** then **@airportDelays.json**
 
+    ```
     curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json
+    ```
 
     the content type headers need to be set to indicate we are passing over JSON
 
+    ```
     curl -u "gary:PASSWORD" -i -X POST -d @airportDelays.json -H "Content-Type: application/json"
+    ```
 
     Lastly we add the URL but append an insert action on the end with **?action=insert**. So we take the URL we constructed previously and append the action.
 
@@ -155,8 +167,11 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
     and we can run this in the OCI cloud shell. 
     
+    **Please refer to step 1 for a reminder on how to access the OCI Cloud Shell**
+
     
 2. We first need to stage the airportDelays.json file. Issue the following command in the OCI Cloud Shell:
+
 
     ```
     curl -o airportDelays.json https://objectstorage.us-ashburn-1.oraclecloud.com/p/rQEg_sXqFmCO8Swe5vVesi3-hmiCfLsY0Yc8mr_k0zdX2NWhhm34zrwhs0uvg8K-/n/c4u03/b/developer-library/o/airportDelays.json
@@ -368,8 +383,10 @@ $startsWith — whether a string field value starts with a given substring
 
     Take that id (**"id":"6C5C28DB03FF4C838DD0E8379B5F42D9"**) and append it to the SODA URL as follows:
 
+    ```
     curl -X GET -u "gary:PASSWORD" "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection/6C5C28DB03FF4C838DD0E8379B5F42D9"
-
+    ```
+    
     Running that cURL command in the OCI Cloud Shell will return that single record just as above.
 
 
