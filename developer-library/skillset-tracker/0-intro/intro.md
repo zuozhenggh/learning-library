@@ -1,6 +1,6 @@
 # Introduction to Skillset Tracking Application                                   
 
-The goal of this workshop is to build a customizable application starting from a ***simple JSON file***, using an ***Oracle Autonomous JSON Database*** to store the data in ***SODA Document Collections***. The application is using ***NodeJS*** and ***SODA*** on the server-side, and ***OracleJET*** for the interface. There is also an integration with ***Oracle Digital Assistant (ODA)***.
+The goal of this workshop is to build a customizable application starting from a ***simple JSON file***, using an ***Oracle Autonomous JSON Database*** to store the data in ***SODA Document Collections***. The application is using ***NodeJS*** and ***SODA*** on the server-side, and ***OracleJET*** for the interface. There is also an integration with ***Oracle Digital Assistant (ODA)*** and ***Slack***, as well as one with ***OKE***.
 
 The infrastructure of the application is build in Oracle Cloud Infrastructure and will use several resources, as shown in the architecture diagram below.
 
@@ -42,6 +42,7 @@ As stated on [oracle.com](https://www.oracle.com/autonomous-database/autonomous-
 - **Lab 6:** Build NodeJS APIs
 - **Lab 7:** Set up the Development Environment
 - **Lab 8:** Integration with Oracle Digital Assistant and Slack
+- **Lab 9:** Deployment on OKE
 
 ## Want to Learn More?
 * [Oracle Autonomous JSON Databases](https://www.oracle.com/autonomous-database/autonomous-json-database/)

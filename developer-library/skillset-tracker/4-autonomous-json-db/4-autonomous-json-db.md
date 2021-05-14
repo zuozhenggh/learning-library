@@ -4,7 +4,7 @@
 
 **Oracle Autonomous JSON Database** is a cloud document database service that makes it easier to develop applications that use JSON documents. It allows using **SODA** (Simple Oracle Document Access) in order to easily build REST APIs to manipulate the data. In this lab, you will go through a series of steps to create an Autonomous JSON Database in OCI and import sample JSON files into SODA Document Collections. These collections will be later used to build REST APIs using SODA for NodeJS.
 
-Estimated Lab Time: 40 minutes
+Estimated Lab Time: 1 hour
 
 ### Objectives
 * Create Autonomous JSON Database in OCI.

@@ -13,7 +13,7 @@ Treemap Characteristics:
 * To emphasize data of the entire hierarchy, consider using a sunburst instead.
 * Treemaps are extremely effective in small form factors.
 
-Estimated Lab Time: 50 minutes
+Estimated Lab Time: 1 hour
 
 ### Objectives
 
