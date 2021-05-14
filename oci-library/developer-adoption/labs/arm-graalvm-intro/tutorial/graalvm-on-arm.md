@@ -9,7 +9,7 @@ OCI offers Oracle GraalVM Enterprise Edition for free to its customers. GraalVM 
 To install GraalVM and Git on OCI, run the following command:
  
 ```
-sudo yum install graalvm21-ee-11 git
+$<copy>sudo yum install graalvm21-ee-11 git</copy>
 ```
 
 After it’s installed, GraalVM is available in the `/usr/lib64/graalvm` directory.
@@ -19,7 +19,7 @@ After it’s installed, GraalVM is available in the `/usr/lib64/graalvm` directo
 GraalVM includes a JDK, and by default it replaces the top-tier Java JIT compiler with the GraalVM compiler. The new and innovative GraalVM compiler can improve the performance of your existing JVM language applications. After installing GraalVM, the `java` runtime is available on your system and you can check the version with the following command. 
 
 ```
-java -version
+$<copy>java -version</copy>
 
 java version "11.0.10" 2021-01-19 LTS
 Java(TM) SE Runtime Environment GraalVM EE 21.0.0.2 (build 11.0.10+8-LTS-jvmci-21.0-b06)
@@ -31,21 +31,21 @@ As an example of an existing Java application, we can run the [Spring PetClinic]
 1. Clone the repository to get started. 
 
     ```
-    git clone https://github.com/spring-projects/spring-petclinic.git
+    $<copy>git clone https://github.com/spring-projects/spring-petclinic.git</copy>
     ```
 
 2. To run the sample application without modifications, open the port on which the application will listen (8080 by default). 
 
     ```
-    sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp 
-    sudo firewall-cmd --reload
+    $<copy>sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp </copy>
+    $<copy>sudo firewall-cmd --reload</copy>
     ```
 
 3. Build and run the application.
 
     ```
-    cd spring-petclinic
-    ./mvnw spring-boot:run 
+    $<copy>cd spring-petclinic</copy>
+    $<copy>./mvnw spring-boot:run </copy>
     ```
    The first time you run the application, Maven downloads the dependencies. It could take several minutes before the downloads are complete.
    You should see output similar to the following example:
@@ -80,8 +80,8 @@ GraalVM can create self-contained executable binaries from your Java application
 1. To start, install the native image tooling. These packages are available in the yum repositories for OCI but are not installed by default.
 
     ```
-    cd ~
-    sudo yum install  graalvm21-ee-11-native-image
+    $<copy>cd ~</copy>
+    $<copy>sudo yum install  graalvm21-ee-11-native-image</copy>
     ```
 
    For this tutorial, we’re using Micronaut to build the application because Micronaut uses a dependency injection and aspect-oriented runtime that doesn’t use reflection.
@@ -89,15 +89,15 @@ GraalVM can create self-contained executable binaries from your Java application
 2. Generate a new project on using [micronaut.io/launch](https://micronaut.io/launch) using the commands below to get started:
 
     ```
-    curl --location --request GET 'https://launch.micronaut.io/create/default/com.example.graal-on-arm?lang=JAVA&build=MAVEN&test=JUNIT&javaVersion=JDK_11&features=graalvm' --output graal-on-arm.zip
-    unzip graal-on-arm.zip -d graal-on-arm
-    cd graal-on-arm
+    $<copy>curl --location --request GET 'https://launch.micronaut.io/create/default/com.example.graal-on-arm?lang=JAVA&build=MAVEN&test=JUNIT&javaVersion=JDK_11&features=graalvm' --output graal-on-arm.zip</copy>
+    $<copy>unzip graal-on-arm.zip -d graal-on-arm</copy>
+    $<copy>cd graal-on-arm</copy>
     ```
 
 3. Run the application to see how long it takes for it to start on a JVM:
 
     ```
-    ./mvnw mn:run
+    $<copy>./mvnw mn:run</copy>
     ```
 
    You should see output similar to the following example:
@@ -118,14 +118,14 @@ GraalVM can create self-contained executable binaries from your Java application
 4. Now, build a native image for the application and compare the startup time:
 
     ```
-    ./mvnw package -Dpackaging=native-image
+    $<copy>./mvnw package -Dpackaging=native-image</copy>
     ```
    It takes about 5 minutes to build the native image. After it’s built, the native image is placed in the  `target` directory, and will be named with the name of the project. 
 
 5. Run the native image.
 
     ```
-    ./target/graal-on-arm
+    $<copy>./target/graal-on-arm</copy>
     ```
 
    You should see output similar to the following example:
