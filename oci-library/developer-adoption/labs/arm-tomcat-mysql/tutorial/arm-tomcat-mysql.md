@@ -27,8 +27,8 @@ Oracle Linux 8 uses Podman to run and manage containers. Podman is a daemonless 
 
 1. Install the `container-tools` module that pulls in all the tools required to work with containers.
     ```
-    sudo dnf module install container-tools:ol8
-    sudo dnf install podman-docker git
+    $<copy>sudo dnf module install container-tools:ol8</copy>
+    $<copy>sudo dnf install podman-docker git</copy>
     ```
 
 <!-- 1. Set SELinux to be in permissive mode so that Podman can easily interact with the host.
@@ -44,8 +44,8 @@ Oracle Linux 8 uses Podman to run and manage containers. Podman is a daemonless 
 To get started, use SSH to log in to the compute instance and clone the repository.
 
 ```
-git clone https://github.com/oracle-quickstart/oci-arch-tomcat-mds.git
-cd oci-arch-tomcat-mds/java
+$<copy>git clone https://github.com/oracle-quickstart/oci-arch-tomcat-mds.git</copy>
+$<copy>cd oci-arch-tomcat-mds/java</copy>
 ```
 
 ## Build the Web Application
@@ -54,10 +54,10 @@ Java web applications are packaged as web application archives, or WAR files. WA
 To build the application, run the following command. Be sure to run the command from the location where the source files were cloned to.
 
 ```
-podman run -it --rm --name todo-build \
-    -v "$(pwd)":/usr/src:z \
-    -w /usr/src \
-    maven:3 mvn clean install
+$<copy>podman run -it --rm --name todo-build \</copy>
+<copy>    -v "$(pwd)":/usr/src:z \</copy>
+<copy>    -w /usr/src \</copy>
+<copy>    maven:3 mvn clean install</copy>
 ```
 This command creates a `target` directory and the WAR file inside it. Note that we aren’t installing Maven, but instead running the build tooling inside the container.
 
@@ -67,20 +67,20 @@ The application uses the Tomcat servlet container and the MySQL database. Both T
 
 1. Create a pod using Podman.
     ```
-    podman pod create --name todo-app -p 8080:8080
+    $<copy>podman pod create --name todo-app -p 8080:8080</copy>
     ```
 
 2. Start the database container in the pod.
 
     ```
-    podman run --pod todo-app -d \
-    -e MYSQL_ROOT_PASSWORD=pass \
-    -e MYSQL_DATABASE=demo \
-    -e MYSQL_USER=todo-user \
-    -e MYSQL_PASSWORD=todo-pass \
-    --name todo-mysql \
-    -v "${PWD}"/src/main/sql:/docker-entrypoint-initdb.d:z \
-    mysql/mysql-server:8.0
+    $<copy>podman run --pod todo-app -d \</copy>
+    <copy>-e MYSQL_ROOT_PASSWORD=pass \</copy>
+    <copy>-e MYSQL_DATABASE=demo \</copy>
+    <copy>-e MYSQL_USER=todo-user \</copy>
+    <copy>-e MYSQL_PASSWORD=todo-pass \</copy>
+    <copy>--name todo-mysql \</copy>
+    <copy>-v "${PWD}"/src/main/sql:/docker-entrypoint-initdb.d:z \</copy>
+    <copy>mysql/mysql-server:8.0</copy>
     ```
 
     For the MySQL database, the database initialization scripts are provided to the container, which creates the required database users and tables at startup. This is done by mounting the `/src/main/sql` directory from the host as `/docker-entrypoint-initdb.d` inside the container. The official MySQL image you are using here is configured to execute `.sql` files in this directory at startup.  For more options, including how to export and back up data, see the [documentation](https://hub.docker.com/_/mysql).
@@ -89,10 +89,10 @@ The application uses the Tomcat servlet container and the MySQL database. Both T
 3. Deploy the application that you built as a WAR file with a Tomcat server.
    
    ```
-    podman run --pod todo-app \
-    --name todo-tomcat \
-    -v "${PWD}"/target/todo.war:/usr/local/tomcat/webapps/todo.war:z \
-    tomcat:9
+    $<copy>podman run --pod todo-app \</copy>
+    <copy>--name todo-tomcat \</copy>
+    <copy>-v "${PWD}"/target/todo.war:/usr/local/tomcat/webapps/todo.war:z \</copy>
+   <copy> tomcat:9</copy>
     ```
 
     The database connect information and the application are provided to the Apache Tomcat container though the `src/main/resources/todo.properties`. The JDBC URL uses `localhost` as the MySQL server host. This is because containers within the same pod can communicate with each other using `localhost`. The application WAR file is provided as a mount to the container.

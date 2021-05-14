@@ -1,5 +1,8 @@
 # Deploy Java applications on Ampere A1 on Oracle Cloud Infrastructure
 
+Estimated time: 45 minutes
+Note : This lab can be performed on a Free Trial, Always-Free Tier, or paid subscription accounts. 
+
 Learn how to build and deploy Java applications as containers on the Ampere A1 compute platform in Oracle Cloud Infrastructure(OCI). You will deploy a Todo application with a database, as containers running on the Ampere A1 compute platform. Additionally, you will use the new set of container tools such as [Podman](podman.io) that are available in Oracle Linux 8.0.
 
 
