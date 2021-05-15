@@ -509,5 +509,5 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
 * **Last Updated By/Date** - Jayant Sharma, May 2021
-* **Lab Expiry Date** - May 2022
+* **Lab Expiry Date** - May 31, 2022
   

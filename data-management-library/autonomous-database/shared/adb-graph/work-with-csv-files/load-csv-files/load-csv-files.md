@@ -45,24 +45,24 @@ Learn how to
     - Log in to Database Actions as the ADMIN user for your Autonomous Database.
     - Select Administration and then Database Users from the navigation menu
     - Click on Create User
-    - Turn on the Web-Access and Graph-enable buttons
+    - Turn on the Web-Access and Graph buttons
 
 ## **STEP 3**: Download the sample datasets from the ObjectStore
 
-1. Use `wget` or `curl` to download the sample data, i.e. CSV files, to you computer. Or copy and paste the url in your browser for the zip archive, i.e.  
+1. Use `wget` or `curl` to download the sample data to you computer. Or copy and paste the url in your browser for the zip archive, i.e.  
 
     ```
-    https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
     A sample `curl` request is:
     ```
-    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
 2. Unzip the archive into a local directory such as ~/downloads.
 
-## **STEP 4**: Upload using Database Actions SQL
+## **STEP 4**: Upload using Database Actions Data Load
 
 1. Click on the Data Loading tab in the SQL worksheet. 
    
@@ -119,5 +119,5 @@ Please **proceed to the next lab** to create a graph from these tables.
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
 * **Last Updated By/Date** - Jayant Sharma, May 2021
-* **Lab Expiry Date** - Nov 2021
+* **Lab Expiry Date** - May 31, 2022
   
