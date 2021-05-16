@@ -111,7 +111,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 
       The output will look like:
 
-        ![](./images/migrate-db-1.png)
+      ![](./images/migrate-db-1.png)
 
 
 
