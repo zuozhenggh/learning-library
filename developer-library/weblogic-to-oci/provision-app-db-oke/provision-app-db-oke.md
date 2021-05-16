@@ -43,7 +43,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-5-ingress1521.png)
 
-6. For **Source CIDR**, use (`10.0.0.0/16`) and for **Destination Port Range** enter **1521**.
+6. For **Source CIDR**, use `10.0.0.0/16` and for **Destination Port Range** enter **1521**.
 
   ![](./images/provision-db-5-ingress1521boke.png)
 
