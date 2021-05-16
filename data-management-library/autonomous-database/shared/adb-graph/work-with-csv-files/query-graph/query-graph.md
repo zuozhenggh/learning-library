@@ -19,8 +19,6 @@ Learn how to
 
 - Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
 
-**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
-
 ## **STEP 1**: Verify that `BANK_GRAPH` is loaded into memory  
 
 1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon 
