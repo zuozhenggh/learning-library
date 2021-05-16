@@ -13,7 +13,7 @@ In this session, we will discuss the data requirements and formats, and provide 
 In this lab, you will:
 - Understand the data requirements and data formats for training and detecting with the model
 - Be able to download prepared sample datasets
-- Upload the downloaded dataset into OCI object storage
+- Upload the downloaded dataset into OCI (Oracle Cloud Infrastructure) object storage
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
