@@ -16,7 +16,7 @@ Estimated Lab Time: 60 minutes.
 *Deploy Oracle SOA Suite on Kubernetes.*
 
 In this lab, you will:
-- Install the requirements to deploy on Oracle Cloud Infrastructure.
+- Install the prerequisites to deploy Oracle SOA Suite on Oracle Cloud Infrastructure.
 - Provision the infrastructure with Terraform.
 - Deploy Oracle SOA Suite with Helm.
 - Learn to scale the SOA Suite domain.

@@ -17,6 +17,7 @@ In this lab, you will provision:
 For this lab, you need:
 
 * Git installed.
+* OCI Command Line Interface (CLI) installed.
 * Terraform installed. 
 * Helm 3.x installed
 
@@ -85,7 +86,7 @@ In order to run the deployment, you need to define a few settings in a file name
 
         ![](./images/setup-tf-compartment-ocid.png)
 
-3. Get your `user OCID`:
+<!-- 3. Get your `user OCID`:
 
     - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **click** your user name.
         
@@ -101,7 +102,8 @@ In order to run the deployment, you need to define a few settings in a file name
     
     Make sure this is the one matching the oci public key you created for terraform.
 
-        ![](./images/setup-tf-fingerprint.png)
+        ![](./images/setup-tf-fingerprint.png) -->
+
 
 5. The rest of the variables can be left as defaults, although we strongly recommend you change the password values.
 
