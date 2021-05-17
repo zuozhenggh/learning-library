@@ -8,7 +8,7 @@ The core algorithm of our Anomaly Detection service is an Oracle-patented multiv
 
 The Anomaly Detection Service at OCI (Oracle Cloud Infrastructure) will create customized Machine Learning models by taking the data uploaded by users, using the core algorithm to train the model, and deploying the model into the cloud environment to be ready for detection. Users can then send new data to the detection endpoints to get detected anomaly results.
 
-[Anomaly Detection Demonstration Video](youtube:aL_05XKProc)
+[Anomaly Detection Demonstration Video](youtube:LamMjG3mD-s)
 
 The *OCI Anomaly Detection Service* which is serverless, multi-tenant service, will cover multivariate *time series data, accessible over public REST APIs* by authenticated users via OCI CLI, SDK or Cloud Console.
 
@@ -26,7 +26,7 @@ This workshop contains 3 required lab sessions for user to get familiar with req
 * (In Advanced Sessions) Learn basic data analysis preprocessing techniques to prepare data for model training
 
 ### Prerequisites:
-* An Oracle Free Tier, Always Free, or Paid Cloud Account
+* An Oracle Free Tier, or Paid Cloud Account
 * Additional prerequisites (cloud services) are mentioned per lab
 * Familiar with services on Oracle Cloud Infrastructure (OCI), such as Object Storage
 * Familiar with machine learning, data processing, statistics is desirable, but not required
