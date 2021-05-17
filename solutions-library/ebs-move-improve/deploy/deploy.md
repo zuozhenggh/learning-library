@@ -85,7 +85,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
       1. **Compartment**: (the one chosen previously)
 
-      2. **Terraform Version**: 0.11.x
+      2. **Terraform Version**: 0.12.x
 
     d. Click Next
 
@@ -151,11 +151,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
   After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.
 
-11. On the **Application Information** tab you will find the details related to the EBS Cloud Manager Instance and Load Balancer.
-
-  ![](./images/10.png " ")
-
-12. This information can also be found at the bottom of your log outputs as shown below:
+11. You will find the details related to the EBS Cloud Manager Instance and Load Balancer at the bottom of your log outputs as shown below:
 
   Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``key-data.txt``. These variables are needed for the remainder of the procedures in this lab.
 
