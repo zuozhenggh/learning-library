@@ -25,7 +25,7 @@ We offer two types of Cloud Accounts:
 ## **Step 1:**  Login to Oracle Cloud
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+1. Go to [cloud.oracle.com](https://cloud.oracle.com) and enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
     ![](images/cloud-oracle.png " ")
 
@@ -48,7 +48,3 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
 - **Last Updated By** - Rene Fontcha, February 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

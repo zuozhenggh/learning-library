@@ -21,9 +21,9 @@ In this lab, you will:
 
 ## **STEP 1:** Add ingress rules and verify setup environment
 
-1. On Oracle cloud homepage, click on the hamburger, navigate to **Networking** in Core Infrastucture section and click on **Virtual Cloud Networks**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-  ![](./images/selectvcn.png)
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Select your compartment from the list and navigate to the vcn you created for this workshop earlier in lab 2.
 
@@ -528,7 +528,3 @@ You may now proceed to the next lab.
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 * **Lab Expiry Date** - November 30, 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

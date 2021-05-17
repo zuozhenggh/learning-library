@@ -28,7 +28,7 @@ In this lab, you will:
 2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    $ <copy>ssh -i <<sshkeyname>> opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
     [opc@tmdb1 ~]$
@@ -124,7 +124,7 @@ In this lab, you will:
     </copy>
     ```
 
-4. Ensure that the TNS alias have been created for `CDB21`, `PDB21` and `PDB21_2` in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`
+4. Ensure that the TNS alias have been created for `CDB21`, `PDB21` and `PDB21_2` in the tnsnames.ora file. If they are not there then you will need to add them. The file is located in `/u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora`.
 
     ```
 	  <copy>
@@ -171,7 +171,7 @@ In this lab, you will:
 
     ````
 
-7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus.
+7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus using the password **WElcome123##**.
 
     ````
 	  <copy>
@@ -179,7 +179,7 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-8. Verify that the container name is CDB$ROOT.
+8. Verify that the container name is **CDB$ROOT**.
 
     ````
     <copy>
@@ -187,7 +187,7 @@ In this lab, you will:
 	  </copy>
 	  ````
 
-9. Test the connection to PDB21
+9. Test the connection to PDB21 using the same password used in the earlier step.
 
     ````
     <copy>
@@ -195,7 +195,7 @@ In this lab, you will:
     </copy>
     ````
 
-10.  Show the container name
+10.  Show the container name. It should now display **PDB21**.
 
     ````
     <copy>
@@ -203,7 +203,7 @@ In this lab, you will:
     </copy>
     ````
 
-11. Exit SQL*Plus
+11. Exit SQL*Plus.
 
     ````
     <copy>
@@ -214,11 +214,7 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
+* **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
 * **Last Updated By/Date** -  David Start, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

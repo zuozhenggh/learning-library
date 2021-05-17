@@ -1,72 +1,34 @@
 # Oracle ORDS
 
 ## Introduction
-
 This lab walks you through the steps of creating RESTful Services for `JSON`, `XML` and `Spatial` data using Oracle REST data services. As part of this lab, `ORDS is pre-installed` and you will walk through the steps of rest enabling schema and its tables.
 Also later in the steps you will perform activities like `retrieving data`, `inserting data`, `updating data` and `deleting data` using `GET`, `POST`, `PUT` and `DELETE` methods respectively.
 
-*Estimated Lab Time:* 30 Minutes
+*Estimated Lab Time*: 30 Minutes
 
 ### **About Oracle ORDS**
-
 ORDS is a Java application that enables developers with SQL and database skills to develop REST APIs for the Oracle Database, the Oracle Database 12c JSON Document store, and the Oracle NoSQL Database. Any application developer can use these APIs from any language environment, without installing and maintaining client drivers, in the same way they access other external services using the most widely used API technology: REST.
-
-For more info see this [blog](https://www.oracle.com/tools/technologies/faq-rest-data-services.html)
-post
 
 ![](./images/ords1.png " ")
 
-**Install ORDS using SQL Developer**
+For More Details About ORDS [Click here](#Appendix:MoreaboutORDS)
 
-Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use [SQL Developer](https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html) to install the ORDS version or install ORDS standalone.
+### Objectives
+In this lab, you will:
+* Connect the oracle SQL developer to Setup the environment for ORDS lab.
+* Start ORDS in Standalone Mode.
+* Create RESTful Services for JSON, XML, Spatial data.
 
-As part of this lab , ORDS is pre-installed and ready for use. Check this [link](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/aelig/installing-REST-data-services.html#GUID-B6661F35-3EE3-4CB3-9379-40D0B8E24635) for ORDS installation steps.
-
-**About RESTful Services**
-
-Representational State Transfer (REST) is a style of software architecture for distributed hypermedia systems such as the World Wide Web. A service is described as RESTful when it conforms to the tenets of REST.  RESTful Service has the following characteristics:
-
-•	Data is modeled as a set of resources. Resources are identified by URIs.
-
-•	A small, uniform set of operations are used to manipulate resources (for example, GET, POST, PUT, DELETE).
-
-•	A resource can have multiple representations (for example, a blog might have a HTML representation and a RSS representation).
-
-•	Services are stateless and since it is likely that the client will want to access related resources, these should be identified in the representation returned, typically by providing hypertext links.
-
-
-**RESTful Services Terminology**
-
-Common terms that are used throughout this lab:
-
-- `RESTful Service` : An HTTP web service that conforms to the tenets of the RESTful Architectural Style, as described in "About RESTful Services" above.
-
-- `Resource Module` : An organizational unit that is used to group related Resource Templates together.
-
-- `Resource Template` : An individual RESTful ervice that is able to service requests for some set of URIs (Universal Resource Identifiers). The set of URIs is defined by the URI Template of the Resource Template.
-
-- `Route Patterns` : A simple grammar that defines the particular patterns of URIs that a given Resource Template can handle. For example, the pattern, employees/, will match any URI whose path begins with employees/.
-
-    Example: `http://localhost:8888/ords/hr/demo/employees/`
-- `Resource Handler` : Provides the logic required to service a particular HTTP method, for a specific Resource Template. For example the logic of the GET HTTP method for the above Resource Template might be:
-
-    select empno, ename, dept from emp where empno = :id
-- `HTTP Operation` : HTTP (HyperText Transport Protocol) defines a number of standard methods that can be performed on resources:
-
-	1. `GET` : Retrieve the resource contents.
-	2. `POST` : Store a new resource.
-	3. `PUT` : Update an existing resource.
-	4. `DELETE` : Remove a resource.
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-     - Lab :  Login to Oracle Cloud
-     - Lab :  Generate SSH Key
-     - Lab :  Create Compute instance
-     - Lab :  Environment setup
+    - Lab : Login to Oracle Cloud
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab : Environment setup
 
 ## **STEP 1**: Start ORDS in standalone mode
 
@@ -1135,16 +1097,70 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
     ![](./images/ordslab3.39.png " ")
 
 
+**This concludes this lab.**
+
+## **Appendix**: More about ORDS
+**Install ORDS using SQL Developer**
+
+Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use [SQL Developer](https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html) to install the ORDS version or install ORDS standalone.
+
+As part of this lab , ORDS is pre-installed and ready for use. Check this [link](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/aelig/installing-REST-data-services.html#GUID-B6661F35-3EE3-4CB3-9379-40D0B8E24635) for ORDS installation steps.
+
+**About RESTful Services**
+
+Representational State Transfer (REST) is a style of software architecture for distributed hypermedia systems such as the World Wide Web. A service is described as RESTful when it conforms to the tenets of REST.  RESTful Service has the following characteristics:
+
+•	Data is modeled as a set of resources. Resources are identified by URIs.
+•	A small, uniform set of operations are used to manipulate resources (for example, GET, POST, PUT, DELETE).
+•	A resource can have multiple representations (for example, a blog might have a HTML representation and a RSS representation).
+•	Services are stateless and since it is likely that the client will want to access related resources, these should be identified in the representation returned, typically by providing hypertext links.
+
+
+**RESTful Services Terminology**
+
+Common terms that are used throughout this lab:
+
+- `RESTful Service` : An HTTP web service that conforms to the tenets of the RESTful Architectural Style, as described in "About RESTful Services" above.
+
+- `Resource Module` : An organizational unit that is used to group related Resource Templates together.
+
+- `Resource Template` : An individual RESTful ervice that is able to service requests for some set of URIs (Universal Resource Identifiers). The set of URIs is defined by the URI Template of the Resource Template.
+
+- `Route Patterns` : A simple grammar that defines the particular patterns of URIs that a given Resource Template can handle. For example, the pattern, employees/, will match any URI whose path begins with employees/.
+
+    Example: `http://localhost:8888/ords/hr/demo/employees/`
+- `Resource Handler` : Provides the logic required to service a particular HTTP method, for a specific Resource Template. For example the logic of the GET HTTP method for the above Resource Template might be:
+
+    select empno, ename, dept from emp where empno = :id
+- `HTTP Operation` : HTTP (HyperText Transport Protocol) defines a number of standard methods that can be performed on resources:
+
+	1. `GET` : Retrieve the resource contents.
+	2. `POST` : Store a new resource.
+	3. `PUT` : Update an existing resource.
+	4. `DELETE` : Remove a resource.
+
+
 ## Learn More
-- [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
+
+- [ORDS Documentation](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
+- [ORDS Blog post](https://www.oracle.com/tools/technologies/faq-rest-data-services.html)
+
+## Rate this Workshop
+When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+
+1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
+2.  Click on the **Brown Button** to re-access the workshop  
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+
+3.  Click **Rate this workshop**
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+
+If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 
 * **Author** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

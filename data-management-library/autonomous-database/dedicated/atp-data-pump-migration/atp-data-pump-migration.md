@@ -36,8 +36,9 @@ As a database admin or user,
 
 - Login to your OCI account with your user credentials.
 
-- Naviage to Object Storage from top left hamburger menu.
-    ![nav-to-obj-store](./images/nav-to-obj-store.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 - Pick a compartment you have priviledge to,
     ![pick-compartment](./images/pick-compartment.png " ")
@@ -167,7 +168,3 @@ You may now connect to your autonomous database using a SQL client and validate 
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

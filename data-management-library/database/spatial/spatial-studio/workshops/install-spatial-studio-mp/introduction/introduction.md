@@ -5,7 +5,7 @@
 
 In this workshop you will provision Spatial Studio to the Oracle Cloud from the OCI Cloud Marketplace and prepare a schema in Autonomous Database to be used as Spatial Studio's metadata repository.
 
-Estimated Workshop Time: 45 minutes
+Estimated Workshop Time: 60 minutes
 
 ### About Oracle Spatial Studio
 
@@ -33,6 +33,9 @@ For more information please visit [https://oracle.com/goto/spatialstudio] (https
 - If you already have access to these, then following this Introduction you may skip to the Lab 3. 
 - Otherwise you should proceed to Lab 1.
 - No previous experience with Oracle Spatial is required.
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 
 ## Acknowledgements
@@ -41,7 +44,3 @@ For more information please visit [https://oracle.com/goto/spatialstudio] (https
 * **Last Updated By/Date** - David Lapp, Database Product Management, January 2021
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-spatial). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

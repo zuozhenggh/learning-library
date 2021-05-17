@@ -16,7 +16,7 @@ You can use a 1-node virtual database system to complete labs and tutorials that
 
 1. From the Console menu, click on **Bare Metal, VM, and Exadata**.
 
-  ![](images/bare-metal-vm-exadata.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
 2. Select the compartment you want to create the database in and click on **Create DB System**.
 
@@ -94,8 +94,3 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

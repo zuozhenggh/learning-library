@@ -1,10 +1,14 @@
 # LiveLabs Complete Template
 
-*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with ![this Confluence page](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) and then follow it with ![this page](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+New+Features+and+Fixed).*
+*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) page.*
 
 ## Introduction
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the Steps to ...
+
+*You may add an option video, using this format: [](youtube:YouTube video id)*
+
+  [](youtube:zNKxJjkq0Pw)
 
 Estimated Lab Time: n minutes
 
@@ -19,13 +23,16 @@ In this lab, you will:
 * Objective 1
 * Objective 2
 * Objective 3
+* [relative lab url test](?lab=need-help)
 
 ### Prerequisites
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * Item no 2 with url - [URL Text](https://www.oracle.com).
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -63,8 +70,8 @@ In this lab, you will:
 
 6. You can also include bulleted lists - make sure to indent 4 spaces:
 
-   - List item 1
-   - List item 2
+    - List item 1
+    - List item 2
 
 7. Inline monospaced font is done with a single back ticks, for example `this is code`.
 
@@ -84,6 +91,46 @@ In this lab, you will:
 
   	```
     <copy>ssh -i <ssh-key-file></copy>
+    ```
+
+11. Syntax highlighting examples
+
+    ```
+    <copy>select * from employees;</copy>
+    ```
+
+    ```
+    <copy>class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }</copy>
+    ```
+
+    ```
+    <copy>{  
+        "employee": {  
+            "name":       "sonoo",   
+            "salary":      56000,   
+            "married":    true  
+        }  
+    }</copy>
+    ```
+
+    ```
+    <copy># This program prints Hello, world!
+
+    print('Hello, world!')</copy>
+    ```
+
+12. You may want to turn highlighting off, to do so, use `nohighlight`:
+
+    ```nohighlight
+    <copy>class Simple{  
+      public static void main(String args[]){  
+        System.out.println("Hello Java");  
+      }  
+    }</copy>
     ```
 
 ## **Step 2:** Optional Advanced features
@@ -142,7 +189,17 @@ In this lab, you will:
   ![](./images/pic2.png =50%x50%)
 
 
-This is an example of a segment of the Markdown file injected before rendering:
+4. Conditional content example (type="livelabs")
+
+    Select your compartment. <if type="livelabs">If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked,</if><if type="alwaysfree">Choose any compartment, select "Always Free",</if> and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
+
+    ![](images/atp-settings-1.png)
+    <if type="livelabs">![](images/atp-settings-2-notaf.png)</if>
+    <if type="alwaysfree">![](images/atp-settings-2.png)</if>
+    ![](images/atp-settings-3.png)
+
+
+5. This is an example of a segment of the Markdown file injected before rendering:
 
 [](include:injected-step.md)
 
@@ -161,11 +218,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-## Need Help?  
-<!-- optional: you can define a single support URL for a workshop in the manifest, for example:
-"support": "https://community.oracle.com/tech/developers/categories/livelabsdiscussions",
--->
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
