@@ -1,4 +1,4 @@
-# OPTIONAL - Setup Graphical Remote Desktop
+# Setup Graphical Remote Desktop
 
 ## Introduction
 This lab will show you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance.
@@ -323,5 +323,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
-* **Contributors** - Robert Pastijn 
+* **Contributors** - Robert Pastijn
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021
