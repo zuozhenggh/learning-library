@@ -40,17 +40,17 @@
     {
       "title": "Lab 7: Integration with Oracle Digital Assistant and Slack",
       "description": "This lab shows you how to integrate Slack and Oracle Digital Assistant into your application.",
-      "filename": "../8-oda/8-oda.md"
+      "filename": "../7-oda/7-oda.md"
     },
     {
       "title": "Lab 8: Deployment on OKE",
       "description": "This lab shows you how to deploy the application using OKE.",
-      "filename": "../9-oke/9-oke.md"
+      "filename": "../8-oke/8-oke.md"
     },
     {
       "title": "Lab 9: Set up the Development Environment",
       "description": "Put it all together in one single application.",
-      "filename": "../7-dev-env/7-dev-env.md"
+      "filename": "../9-dev-env/9-dev-env.md"
     },
     {
       "title": "Need Help?",
