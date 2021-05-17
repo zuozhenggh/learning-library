@@ -19,12 +19,12 @@
     },
     {
       "title": "Lab 3: Install and prepare prerequisites",
-      "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+      "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop.",
       "filename": "../3-prerequisites/3-prerequisites.md"
     },
     {
       "title": "Lab 4: Autonomous JSON Database & SODA Collections",
-      "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+      "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop.",
       "filename": "../4-autonomous-json-db/4-autonomous-json-db.md"
     },
     {
@@ -38,19 +38,19 @@
       "filename": "../6-nodejs-api/6-nodejs-api.md"
     },
     {
-      "title": "Lab 7: Set up the Development Environment",
-      "description": "This lab shows you how to map a node's private IP address to a public IP address",
-      "filename": "../7-dev-env/7-dev-env.md"
-    },
-    {
-      "title": "Lab 8: Integration with Oracle Digital Assistant and Slack",
-      "description": "This lab shows you how to integrate Slack and Oracle Digital Assistant into your application",
+      "title": "Lab 7: Integration with Oracle Digital Assistant and Slack",
+      "description": "This lab shows you how to integrate Slack and Oracle Digital Assistant into your application.",
       "filename": "../8-oda/8-oda.md"
     },
     {
-      "title": "Lab 9: Deployment on OKE",
-      "description": "",
+      "title": "Lab 8: Deployment on OKE",
+      "description": "This lab shows you how to deploy the application using OKE.",
       "filename": "../9-oke/9-oke.md"
+    },
+    {
+      "title": "Lab 9: Set up the Development Environment",
+      "description": "Put it all together in one single application.",
+      "filename": "../7-dev-env/7-dev-env.md"
     },
     {
       "title": "Need Help?",
