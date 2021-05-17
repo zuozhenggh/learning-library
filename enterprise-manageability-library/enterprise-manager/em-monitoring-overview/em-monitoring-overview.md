@@ -92,7 +92,7 @@ Incident Manager provides in one location the ability to search, view, manage, a
 3.	In Incident Manager, the Views section contains out-of-box views that comes shipped with Enterprise Manager. You can create your own views and share with others as well. By default, “All open incidents” view is displayed.
      ![](images/emmonlab2step3.png " ")
 
-4.	We will triage unassigned incidents and then acknowledge and assign an incident to an owner. Highlight the first incident. Details of the incident will be displayed in the bottom pane.
+4.	We will triage unassigned incidents and then acknowledge and assign an incident to an owner. Click on the incident with Summary text “Target is down; 1 member is down; db19c.subnet.vcn.oraclevcn.com”. Details of the incident will be displayed in the bottom pane.
      ![](images/emmonlab2step4.png " ")
 
 5.	Click on “Open in new tab” link to open the incident on a separate tab. You may need to temporarily allow popups in the browser.
@@ -137,7 +137,7 @@ Incident Manager provides in one location the ability to search, view, manage, a
 15.	Incident Dashboard is filtered for incidents with “Fatal” severity.
      ![](images/emmonlab2step15.png " ")
 
-## **step 3:** Metric and Collection Settings
+## **Step 3:** Metric and Collection Settings
 Metric and Collection Settings page is where we can view and configure thresholds, collection schedules, and Corrective Actions for the metrics being monitored for the target.
 
 1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
@@ -169,19 +169,21 @@ As Best Practice:
 7.	There are other out-of-box views available to select from.
      ![](images/emmonlab3step7.png " ")
 
-8.	Scroll down to “Archive Area Used (%) metric and click on the “Every 15 Minutes” Collection Schedule link.
+8.	Scroll down to “Dump Area Used (%) metric and click on the “Every 30 Minutes” Collection Schedule link.
      ![](images/emmonlab3step8.png " ")
 
-9.	Change the Collection Schedule to 30 minutes and click Continue.
+9.	Change the Collection Schedule to 15 minutes and click Continue.
      ![](images/emmonlab3step9.png " ")
 
-10.	Scroll down to Archive Area Used (%) metric again. Click on the Edit icon to change the Warning and Critical thresholds.
+10.	Scroll down to Dump Area Used (%) metric again. Click on the Edit icon to change the Warning and Critical thresholds.
      ![](images/emmonlab3step10.png " ")
 
-11.	Currently the Warning threshold is set to >80% and Critical threshold is set to >95%. Change the Warning threshold to 85% and Critical threshold to 90% and click OK.
+11.	Currently the Warning threshold is set to > 95%. Change the Warning threshold to 85% and Critical threshold to 95% and click Continue.
      ![](images/emmonlab3step11.png " ")
+     The new thresholds should appear in the main Metric and Collection settings page.
 
-12.	Click OK in the Confirmation window.
+
+12.	Click OK to save changes, then you should see a Confirmation message . Click OK.
      ![](images/emmonlab3step12.png " ")
 
 13.	Navigate to “Database >> Monitoring >> All Metrics”.
@@ -190,14 +192,17 @@ As Best Practice:
 14.	The All Metrics page shows the collected data for all of the metrics on the target.
      ![](images/emmonlab3step14.png " ")
 
-15.	Expand and highlight the “Archive Area” Metric Group.
+15.	Expand and highlight the Dump Area Metric Group.
      ![](images/emmonlab3step15.png " ")
 
-16.	Click on the Edit icon next to the Collection Schedule field.
+16.	Click on Dump Area Used(%) under the All Metrics palette and then click on the ‘background’ first row in the Dump Area Used(%) table.  
      ![](images/emmonlab3step16.png " ")
 
-17.	Change the Collection Schedule back to 15 minutes and click OK.
+17.	You should see the metric data for Dump Area Used(%) for the background processes.  By default, the last 24 hours are shown but you can change time periods using the View Data dropdown.  In the metric chart, click on Options to view different options for the chart, then click on the Show Thresholds option.
      ![](images/emmonlab3step17.png " ")
+
+18. 18.	The Warning and Critical thresholds for the metric will now be shown with the chart as yellow and red lines respectively.  As you review the metric, you can also visually see how close the metric values are to its Warning and Critical thresholds
+     ![](images/emmonlab3step18.png " ")
 
 ## **step 4:** Corrective Actions
 Corrective Actions automates response to metric alerts and events. A Corrective Action can start the DB listener when it unexpectedly goes down or it can run shell scripts to collect diagnostic data. You can create a custom Corrective Action once and grant access for other Admins to use. We ship with a long list of pre-defined Corrective Actions to get you started.
@@ -217,7 +222,7 @@ Corrective Actions automates response to metric alerts and events. A Corrective 
 5.	There are a number of parameters available for the Add Space to Tablespace corrective action. These parameters can be adjusted according to your needs. For the purpose of this lab, we will leave the parameter values as is and click on Save to Library.
      ![](images/emmonlab4step5.png " ")
 
-6.	The Corrective Action is created in Draft status. Click on Publish to publish the Corrective Action.
+6.	The Corrective Action is created in Draft status. This gives you an opportunity to test your Corrective Action first before making it available for general use.  For this lab, let’s assume we are ready to make it available for general use. Click on Publish to publish the Corrective Action.
      ![](images/emmonlab4step6.png " ")
 
 7.	Click on Yes to confirm you want to publish the Corrective Action.
@@ -247,7 +252,7 @@ Corrective Actions automates response to metric alerts and events. A Corrective 
 15.	Select the Add Space to Tablespace Corrective Action that you just created and click Continue.
      ![](images/emmonlab4step15.png " ")
 
-16.	Notice there is now a Corrective Action specified for Warning threshold violations. The Corrective Action will trigger when Tablespace Space Used (%) >= 85%. Click Continue.
+16.	Notice there is now a Corrective Action specified for Warning threshold violations. The Corrective Action will trigger when Tablespace Space Used (%) >= 85%. Also notice the Warning message at the top of the screen indicating that the metric settings for the target are managed by the monitoring templates associated through the Administration Groups.  Administration Groups will be discussed in Step 7 below, but this message indicates that if we want to keep this setting (i.e. associating the corrective action for this metric), you will also need to click on the ‘Template Override’ option at the bottom of the screen. Click Continue.
      ![](images/emmonlab4step16.png " ")
 
 17.	Click Continue again the OK.
@@ -274,7 +279,7 @@ Metric Extensions expand Oracle's monitoring capabilities to monitor conditions 
 6.	Click Add to select targets to test the Metric Extension.
      ![](images/emmonlab5step6.png " ")
 
-7.	Hold down the SHIFT key and select 2 database instance targets to test the Metric Extension.
+7.	Hold down the SHIFT key (or the Command Key on Mac) and select 2 database instance targets to test the Metric Extension.
      ![](images/emmonlab5step7.png " ")
 
 8.	Click on Run Test.
@@ -340,8 +345,10 @@ Monitoring templates enable you to deploy standardized monitoring setting across
 9.	The Monitoring Template is created and we will apply the template to another Database Instance target. Highlight the Monitoring Template you just created and click Apply.
      ![](images/emmonlab6step9.png " ")
 
-10.	Click on Add and select db19c.subnet.vcn.oraclevcn.com target.
-       ![](images/emmonlab6step10.png " ")
+10.	In the screen that comes up, click on ‘Add’ to add a target.
+       ![](images/emmonlab6step10a.png " ")
+    and then Click on Add and select db19c.subnet.vcn.oraclevcn.com target.   
+       ![](images/emmonlab6step10.png " ")  
 
 11.	Click Finish to apply the Monitoring Template to the selected target.
        ![](images/emmonlab6step11.png " ")
@@ -378,7 +385,7 @@ Administration groups are designed to simplify the process of setting up targets
 6.	Click on the Hierarchy tab.
      ![](images/emmonlab7step6.png " ")
 
-7.	The Hierarchy tab is where you design the hierarchical levels of your Administration Group. This is accomplished by selecting one or more target properties which will define the membership criteria for the Administration Group. In this lab, we have already selected Lifecycle Status target property for this Admin Group, with target property values of Test, Development, and Production.
+7.	The Hierarchy tab is where you design the hierarchical levels of your Administration Group. This is accomplished by selecting one or more target properties which will define the membership criteria for the Administration Group. In this lab, we have already selected Lifecycle Status target property for this Admin Group, with target property values of Test, and Production.
      ![](images/emmonlab7step7.png " ")     
 
 8.	Click on the Template Collections tab.
@@ -426,16 +433,16 @@ Administration groups are designed to simplify the process of setting up targets
 18.	A Confirmation banner will display an “Association is successful” message and the “Test-Grp” Admin Group is now associated with “Non-Production Template Collection”.
      ![](images/emmonlab7step18.png " ")
 
-19.	Select “Deve-Grp” Admin Group and click on "Associate Template Collection".
+19.	Click on the “Test-Grp” group name to go to its homepage.
      ![](images/emmonlab7step19.png " ")
 
-20.	Highlight "Non-Production Template Collection" and click Select.
+20.	In the group homepage for Test-Grp, review the Synchronization Status region.  Notice there are 3 targets pending synchronization (i.e. applying of templates) and it is scheduled for a future date specified in the Next Synchronization field.    Instead of waiting for the synchronization to occur, let’s do the synchronization process now by clicking on the “Start Synchronization” button..
      ![](images/emmonlab7step20.png " ")
 
-21.	There are no targets listed because currently there are no members in the “Deve-Grp” Admin Group. Click Continue.
+21.	After about a minute or so, you should see the 3 targets synchronized.   You may have to hit the page refresh button to see this.
      ![](images/emmonlab7step21.png " ")
 
-22.	We will add a target to “Deve-Grp” Admin Group and confirm the monitoring template has been being applied to the target. Navigate to “Targets >> Databases”.
+22.	We will add a target to “Test-Grp” Admin Group and confirm the monitoring template has been being applied to the target. Navigate to “Targets >> Databases”.
      ![](images/emmonlab7step22.png " ")
 
 23.	Click on “cd186.subnet.vcn.oraclevcn.com” target.
@@ -444,16 +451,16 @@ Administration groups are designed to simplify the process of setting up targets
 24.	Navigate to “Oracle Database >> Target Setup >> Properties”.
      ![](images/emmonlab7step24.png " ")
 
-25.	Click Edit and set the Lifecycle Status for this target to “Development”. Click OK.
+25.	Click Edit and set the Lifecycle Status for this target to “Test”. Click OK.
      ![](images/emmonlab7step25.png " ")
 
 26.	Navigate to “Setup >> Add Target >> Administration Groups”.
      ![](images/emmonlab7step26.png " ")
 
-27.	Click on “Deve-Grp” Admin Group link to go to the Admin Group homepage.
+27.	Click on “Test-Grp” Admin Group link to go to the Admin Group homepage.
      ![](images/emmonlab7step27.png " ")
 
-28.	Notice in the Synchronization Status section, there is now one synchronized target for Monitoring Templates.
+28.	Notice in the Synchronization Status section, there is now one additional (total of 4) synchronized targets for Monitoring Templates. Note: You may need to click on the page refresh icon if the count under Synchronized Targets doesn’t update right away.
      ![](images/emmonlab7step28.png " ")
 
 ## **step 8:** Incident Rules
@@ -484,7 +491,7 @@ A rule set is a collection of rules that apply to a common set of targets such a
 
     - One or more members of cluster database targets go down.
     - One or more targets with different target types on the same host go down.
-    - One or more members of Weblogic Domain target cross the metric threshold.
+    - One or more members of WebLogic Domain target cross the metric threshold.
     - One or more hosts or entire site goes down (e.g., Site wide outage).
 
      ![](images/emmonlab8step8.png " ")
@@ -496,7 +503,6 @@ A rule set is a collection of rules that apply to a common set of targets such a
 10.	Provide a name for the Rule Set and select the following target types.
 
   - Database Instance
-  - Database System
   - Pluggable Database
 
      ![](images/emmonlab8step10.png " ")
@@ -520,46 +526,77 @@ Severity: In Critical
      ![](images/emmonlab8step14.png " ")
 
 15.	Configure the following fields and click Continue.\
-Conditions for actions:  Only execute the actions if specified conditions match\
-Event has been open for specified duration: 5 Minutes\
-Email To:  DB Target User
+Conditions for actions                      
+•	Keep the default of “Always execute the actions”
+Create Incident or Update Incident  
+•	Click on option “Create incident (if not associated with one)”   
+•	Keep the default of  “Each event creates a new incident”
+
 
      ![](images/emmonlab8step15.png " ")
 
-16.	Click OK in the Warning popup.
+16.	Click Next.
 
      ![](images/emmonlab8step16.png " ")
 
-17.	Click Next.
+17.	Enter a name for the Rule and click Next.
 
      ![](images/emmonlab8step17.png " ")
 
-18.	Enter a name for the Rule and click Next.
+18.	Click Continue.
 
      ![](images/emmonlab8step18.png " ")
 
-19.	Click Continue.
+19.	You’ll be brought back to the main page for Create Rule Set.  Scroll down to the Rules section and click on ‘Create’.
 
      ![](images/emmonlab8step19.png " ")  
 
-20.	Click Save.
+20.	Choose the option “Newly created incidents or updates to incidents” and click Continue.
 
      ![](images/emmonlab8step20.png " ")
 
-21.	The new rule set now appears at the bottom of the Incident Rules page.
+21.	Choose “Specific Incidents”.   And under this option,  select “Rules that created the incidents” and then select the rule that you just created in the previous step.   Then click Next.
 
      ![](images/emmonlab8step21.png " ")  
 
+22.	Click ‘Add’
+
+     ![](images/emmonlab8step22.png " ")
+
+23.	In the ‘Email To” field,  specify DB TARGET USER       Then click Continue.
+
+     ![](images/emmonlab8step23.png " ")
+
+24.	Click Next.
+
+     ![](images/emmonlab8step24.png " ")
+
+25.	Enter a name for the Rule and click Next.
+
+     ![](images/emmonlab8step25.png " ")
+
+26.	Click Continue.
+
+     ![](images/emmonlab8step26.png " ")
+
+27.	Click Save
+
+     ![](images/emmonlab8step27.png " ")
+
+28.	The new rule set now appears at the bottom of the Incident Rules page.
+
+     ![](images/emmonlab8step28.png " ")
+Note:  Rule Sets are evaluated and executed in the order specified under the Order column.  When you create your own rule set that has an action to create an incident, you typically want to reorder it such that its order is ahead of the out-of-box rule sets.  This is to ensure that your rule set that creates the incident will be used instead of the out-of-box rule set.   However, for this lab exercise, we can skip this step.
 
 ## Want to Learn More?
 
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
-  - [Enterprise Monitoring](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/emadm/enterprise-monitoring.html#GUID-7BB979B8-7C87-4FC2-9E17-D2F5246A120F)
+  - [Enterprise Monitoring](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emadm/enterprise-monitoring.html#GUID-7BB979B8-7C87-4FC2-9E17-D2F5246A120F)
 
 ## Acknowledgements
 - **Author** - Karilyn Loui, Oracle Enterprise Manager Product Management
-- **Contributing Author** - Ana McCollum, Oracle Enterprise Manager Product Management
+- **Contributing Author** - Ana McCollum, Daniel Suherman, Murtaza Husain, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Last Updated By/Date** – Daniel Suherman - Enterprise Manager Product Management [Apr 2021]
 
