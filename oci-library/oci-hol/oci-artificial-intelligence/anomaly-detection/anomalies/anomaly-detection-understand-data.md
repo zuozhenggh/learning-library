@@ -84,7 +84,7 @@ Here are two prepared sample datasets to help you to easily understand how the t
 
 * [processed training csv data](../files/demo-training-data.csv)
     - 11 signals with timestamp column, with 7299 observations
-* [processed testing json data](../files/demo-testing-data.json)
+* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
     - same 11 signals with timestamp column, 100 observations
 
 
