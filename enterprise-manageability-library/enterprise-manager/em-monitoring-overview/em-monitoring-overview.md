@@ -47,12 +47,13 @@ The objective of this lab is to become familiar with Enterprise Monitoring capab
      ![](images/emmonlab1step1.png " ")
 
   2.  Navigate to “Enterprise >> Summary”.
+
      ![](images/emmonlab1step2.png " ")
 
   3.	Enterprise Summary presents a single pane of glass view of the health of your Enterprise assets.
 The Overview pane shows the Target Status of your IT estate. The Status section shows aggregated target availability so you can get a sense of what percentage is UP vs DOWN at a quick glance. The Green slice of the pie are your targets that are up. The Red slice of the pie are the targets that are down. Targets in red may be down due to unscheduled outages. Let’s drill down and take a look at them.
 
-      ![](images/emmonlab1step3.png " ")
+     ![](images/emmonlab1step3.png " ")
 
   4.  Click on the Red slice of the pie in the “Status” section.
 
@@ -65,6 +66,7 @@ The Overview pane shows the Target Status of your IT estate. The Status section 
         ![](images/emmonlab1step6.png " ")
 
   7.	Any Incidents, Problems, and Jobs requiring attention is displayed on the Enterprise Summary page with the ability to drill down into them. Click on the incidents link ![](images/noentry.svg " ") for Availability.
+
         ![](images/emmonlab1step7.png " ")
 
   8.	A list of critical incidents is displayed in Incident Manager. You can manage the incidents by acknowledging, assigning ownership, changing the priority or status, and more.
