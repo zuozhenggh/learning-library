@@ -115,7 +115,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
     (depending on your browser you may need to encode the space in "wonderful sushi" as %20. I didn't need to).
 
     5. RESTful Queries - A PL/SQL example
-    
+   
     By default the REST call returns the first 25 records. If you scroll down you will see that it lists "hasMore" : "true" towards the end.  So it tells us that there are more than 25 hits, but not how many hits there are in total.  That's because a simple SQL query can't provide that information.  However, for Oracle Text or JSON search queries, we can get the total count by calling a PL/SQL function CTX_QUERY.COUNT_HITS (this is much faster than doing a separate SELECT COUNT(*) query, which has to actually fetch all the hits to count them). If we're doing PL/SQL we could also get a "snippet" - a fragment of the text with search terms highlighted.
 
     Let's go back to the "yelp" module in APEX and create a new template. We'll call this one "plsqlquery". Within the template, create a new Handler. This time, leave the Method as GET but set the Source Type to PL/SQL.
