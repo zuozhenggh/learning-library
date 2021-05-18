@@ -36,7 +36,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 1.	Download the data file Data_Basic.txt.
  
-    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
+    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
    
     Open the downloaded data file "Data_Basic.txt". Notice that there's no header row and the file delimiter is a comma.
 
@@ -249,9 +249,9 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
 2. Import Sample Basic from CLI:
 
-   a. Download the file Sample_Basic.xlsx.
+   a. Download the file Sample_Basic.xlsx. Copy the file to the folder: C:\app\cli.
 
-     This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
+     This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
 
      ![](./images/image14_89.png)
 
@@ -261,7 +261,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
     ```
     <copy> esscs.bat deploy --help
-    esscs.bat deploy -a Sample01 -db Basic -file Sample_Basic.xlsx </copy>
+    esscs.bat deploy -a Sample01 -db Basic -file C:\app\cli\Sample_Basic.xlsx </copy>
     ```
 
     ![](./images/image14_90.png)

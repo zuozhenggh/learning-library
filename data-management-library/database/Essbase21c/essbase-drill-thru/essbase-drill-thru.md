@@ -77,7 +77,7 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
    Right click on Connection name -> Open SQL Worksheet. Type the query and check the result:   
     ```
     <copy>        
-          select product, market, statename, scenario, year, sales from SALES_BREAKDOWN_SB order by product, market, scenario, year, sales
+          select product, market, statename, scenario, year, sales from SALES_BREAKDOWN_SB order by product, market, scenario, year, sales;
 	</copy>
     ````
   ![](./images/imageDT_06.png "")
@@ -108,7 +108,7 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 5. Provide the connection details under Create Connection:   
    Name, Host, User, Password, Port, Service Name. 
 
-   Password for the schema: "Admin123"
+   Password for the schema: "Admin123".
 
 6. Click Test to check that the connection to the database is successful. Click Create. 
    ![](./images/imageDT_10.png "")

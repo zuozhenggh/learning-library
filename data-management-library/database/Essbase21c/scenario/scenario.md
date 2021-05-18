@@ -129,7 +129,7 @@ This Step is geared towards developing an understanding of security for Essbase 
 
    c) Search for John, Maria, Phillip & Sam and click the + icon next to their ids to add the to the application.
      ![](./images/imageSM_10.png "")
-     ![](./images/imageSM_11.png "")
+     
 
    d) by default all users have the Database Access Roles.
      ![](./images/imageSM_11.png "")

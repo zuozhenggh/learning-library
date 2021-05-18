@@ -46,7 +46,7 @@ This lab requires:
 
     ![](./images/image14_3.png "")
 
-5.	Name the application “DynamicCorp,” and name the cube “Sales” and click OK.
+5.	Name the application “DynamicCorp” and the cube “Sales”. Click OK.
 
     ![](./images/image14_4.png "")
 
