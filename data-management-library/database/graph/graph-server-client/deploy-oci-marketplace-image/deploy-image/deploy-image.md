@@ -39,9 +39,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
     - Paste your public SSH key. This is used when you ssh into the provisioned compute later.
     - Choose an existing virtual cloud network.
     - Select a subnet compartment and subnet.
-    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you will have uploaded and unzipped the wallet, e.g. `jdbc:oracle:thin:@atpgraph_low?TNS_ADMIN=/etc/oracle/graph/wallets`
-
-    ***Note: This JDBC URL is stored in a configuration which can be updated later if necessary.***
+    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you **will** have uploaded and unzipped the wallet **on the VM**, so please set: `jdbc:oracle:thin:@atpgraph_low?TNS_ADMIN=/etc/oracle/graph/wallets` where the database name is `atpgraph`. (This JDBC URL is stored in `/etc/oracle/graph/pgx.conf` which can be updated later if necessary.)
 
     ![](images/ConfigureStackVariables_211_1.jpg)
     ![](images/ConfigureStackVariables_211_2.jpg)
@@ -54,7 +52,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/RMJobStarted_Sombrero203.png)
 
-    Once the job has successfully completed the status will change from "In Progess" to "Succeeded".
+    Once the job has successfully completed the status will change from "In Progess" to "Succeeded". If you get **"shape VM.Standard.E2.1.Micro not found"** error, the availability domain cannot provide the selected shape. Please edt the job and change the availability domain and retry.
 
     ![](images/RMJobCompleted_211.jpg)
 
