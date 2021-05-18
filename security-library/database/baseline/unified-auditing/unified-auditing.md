@@ -33,8 +33,8 @@ This lab assumes you have:
 |--|------------------------------------------------------------|-------------|
 | 1 | Display the current audit settings | 5 minutes |
 | 2 | Audit Non App Usage | 10 minutes |
-| 3 | Audit Database Role Usage | 10 minutes |
-| 4 | Audit Data Pump Usage | 10 minutes |
+| 3 | Audit Database Role Usage | <10 minutes |
+| 4 | Audit Data Pump Usage | <10 minutes |
 | 5 | Cleanup the Unified Auditing configuration | <5 minutes |
 
 ## **STEP 1**: Display the current audit settings
