@@ -84,7 +84,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     </copy>
     ```
 
-    If you run into a symbol lookup error stating "undefined symbol: Perl_xs_handshake," run the following command and then rerun the above command.
+    If you run into a symbol lookup error stating "undefined symbol: Perl\_xs\_handshake," run the following command and then rerun the above command.
 
     ```
     <copy>
@@ -182,7 +182,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
 
         WebLogic Server Admin Password (example: **welcome1**) : <weblogic_password>
         
-        ![](./images/30.png " ")
+    ![](./images/30.png " ")
 
 9. Enter details to specify how you want to create the backup on Oracle Cloud Infrastructure Object Storage.
 

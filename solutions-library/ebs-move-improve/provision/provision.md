@@ -156,9 +156,6 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
       ![](./images/11.png " ")
 
 
-
-
-
 ## **STEP 5:** Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 1. Click the Cloud Manager Environment: "ebsholenv1"
