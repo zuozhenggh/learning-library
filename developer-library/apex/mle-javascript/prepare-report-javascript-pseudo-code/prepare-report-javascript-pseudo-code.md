@@ -67,7 +67,7 @@ Reviewing the above requirement, we can test the In-Database JavaScript code usi
     ```
 5. Paste the PL/SQL in the **SQL Commands**.
    
-   et the **Language** attribute to **PL/SQL**.
+   Set the **Language** attribute to **PL/SQL**.
    
    Click the **Run** button and note the IDs for the extended tasks.
 

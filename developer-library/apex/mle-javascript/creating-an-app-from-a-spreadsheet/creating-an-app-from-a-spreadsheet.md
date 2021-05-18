@@ -7,7 +7,7 @@ Now that you are logged into your workspace, you can start creating APEX applica
 
 While APEX developers spend the majority of their time in the App Builder, you should also investigate the SQL Workshop, where you can create and maintain database objects, Team Development, where you can track large APEX development projects, and the App Gallery, which contains numerous productivity and sample apps that can be installed within minutes.
 
-Estimated Time: 5 minutes
+Estimated Lab Time: 5 minutes
 
 ## **STEP 1**: Loading project and tasks data  
 
