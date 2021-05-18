@@ -1,7 +1,4 @@
 
-![](images/livelabs-homepage-march.png)
-
-
 ![](images/NFWhiteBG.jpg)
 
 NetFoundry helps you spin up automated, zero trust, network-as-code connections between Oracle Cloud and any other location without waiting for infrastructure, MPLS, or VPNs. This gives the business unprecedented speed, agility, and security with a cloud-based Total Cost of Ownership (TCO) built on the principles of Gen 2 Cloud (elastic, autonomous and secure by design).
