@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will execute a JavaScript code to extend the project tasks once click on Extend Project Task button. Next, you will add a JavaScript validation to the form page to prevent updating a task's owner if the task's status is Closed.
 
-Estimated Time: 15 minutes
+Estimated Lab Time: 15 minutes
 
 ## **STEP 1**: Extend Report with JavaScript Process
 
@@ -54,7 +54,7 @@ Estimated Time: 15 minutes
 
     ![](images/3-process-condition.png " ")
 
-4. Select the **Email Integration** project form the project's select list. 
+4. Select the **Email Integration** project from the project's select list. 
    
    If you click on **Extend Project Tasks** button you will notice that the tasks with non closed status will be extended.
 
