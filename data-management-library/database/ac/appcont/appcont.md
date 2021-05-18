@@ -5,6 +5,11 @@
 This lab walks you through the use and functioning of Application Continuity.
 
 Estimated Lab Time: 60 Minutes
+
+Watch the video below for an overview of the Application Continuity lab
+[](youtube:KkwxbwII3O4)
+
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -488,12 +493,17 @@ You may now *proceed to the next lab*.
 #### Fix for Issue #1
 1.  Recompile and re-package ACDemo with the installed JDK
     ````
-    cd /home/oracle/acdemo/src/acdemo
-    $ORACLE_HOME/jdk/bin/javac  -classpath ../../lib/ucp-19.10.0.0.jar:../../lib/ojdbc8-19.10.0.0.jar:../../lib/ons-19.10.0.0.jar:../../lib/oraclepki-19.10.0.0.jar:../..//lib/osdt_cert-19.10.0.0.jar:../../lib/osdt_core-19.10.0.0.jar:.  ACDemo.java Worker.java PrintStatThread.java
-    mv *.class ../classes/acdemo
-    cd ../classes
-    $ORACLE_HOME/jdk/bin/jar -cvf acdemo.jar acdemo ../MANIFEST.MF
-    mv acdemo.jar ../lib
+    cd /home/oracle/acdemo/src/acdemo  
+
+    $ORACLE_HOME/jdk/bin/javac  -classpath ../../lib/ucp-19.10.0.0.jar:../../lib/ojdbc8-19.10.0.0.jar:../../lib/ons-19.10.0.0.jar:../../lib/oraclepki-19.10.0.0.jar:../..//lib/osdt_cert-19.10.0.0.jar:../../lib/osdt_core-19.10.0.0.jar:.  ACDemo.java Worker.java PrintStatThread.java  
+
+    mv *.class ../classes/acdemo  
+
+    cd ../classes  
+
+    $ORACLE_HOME/jdk/bin/jar -cvf acdemo.jar acdemo ../MANIFEST.MF  
+
+    mv acdemo.jar ../lib  
     ````
 ### Issue 2 Instance not restarting
     ![](./images/InstanceDown_error.png  " ")
