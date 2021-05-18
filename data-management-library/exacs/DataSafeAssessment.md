@@ -3,7 +3,14 @@
 ## Introduction
 Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
+Watch the video below for an overview on how to assess Database Configurations with Oracle Data Safe
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_37ja7d6d&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_1zb7pdz7" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -22,11 +29,11 @@ Suppose that you are notified by the “Audit and Compliance” department that 
 
 ## Steps
 
-### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
+### **Step 1:** Connect to your ExaCS database as the SYS user with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Step 2: In the Oracle Data Safe Console, generate a Comprehensive Assessment report
+### **Step 2:** In the Oracle Data Safe Console, generate a Comprehensive Assessment report
 - Return to the Oracle Data Safe Console.
 - Click the **Home** tab and then **Security Assessment**.
 
@@ -58,7 +65,7 @@ This table compares the number of findings for each category and counts the numb
 
 ![](./images/dbsec/datasafe/assessment/summary.png " ")
 
-### Step 3: Review the Medium Risk, Low Risk, and Advisory findings
+### **Step 3:** Review the Medium Risk, Low Risk, and Advisory findings
 - At the top of the report, click **Medium Risk** to filter the report to show only the medium risk findings.
 - Deselect all other risk levels.
 - Scroll through the report to view the medium risk findings.
@@ -69,7 +76,7 @@ This table compares the number of findings for each category and counts the numb
 - Deselect all other risk levels.
 - Review the advisory findings.
 
-### Step 4: Review the Evaluate findings and fix some of them, if possible
+### **Step 4:** Review the Evaluate findings and fix some of them, if possible
 
 - At the top of the report, click **Evaluate** to filter the report to show only the Evaluate findings.
 
@@ -108,7 +115,7 @@ This table compares the number of findings for each category and counts the numb
 - Unified Auditing is the recommended audit method and is available in Oracle Database 12.1 and later releases. Not using Unified Auditing or disabling unified auditing policies is a risk. Verify that unified audit policies are enabled on the database. Audit all sensitive operations, including privileged user activities. Also audit access to application data that bypasses the application.
 - How many unified audit policies are on your target database and how many of them are enabled?
 
-### Step 5: Review the Pass findings
+### **Step 5:** Review the Pass findings
 
 - At the top of the report, click **Advisory** to filter the report to show only the Advisory findings.
 
@@ -144,7 +151,7 @@ This table compares the number of findings for each category and counts the numb
 
   - ....and more
 
-### Step 6: Rerun Security Assessment and compare the results to the first assessment
+### **Step 6:** Rerun Security Assessment and compare the results to the first assessment
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **Security Assessment**.
 - On the **Security Assessment** page, select the check box for your target database, and then click **Assess**.

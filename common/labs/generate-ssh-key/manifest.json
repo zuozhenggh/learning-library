@@ -1,20 +1,21 @@
 {
-    "tutorials": [
-        {         
-            "title": "Lab: Generate SSH Key",
+    "workshoptitle": "Create SSH Keys and Login to Oracle Cloud",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Lab: Create SSH Key",
             "description": "Generate SSH Key",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
             "filename": "generate-ssh-keys.md"
         },
-        {         
+        {
             "title": "Lab: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "cloud-login.md"
+            "filename": "../cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

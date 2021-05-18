@@ -1,4 +1,4 @@
-# Workshop Introduction and Overview
+# Introduction
 
 The labs in this workshop walk you through all the steps to get started using the **Oracle Autonomous Database on Shared Infrastructure (ADB-S)**. You will provision a new ADB instance, load data from the object store and troubleshoot data loads, query external data residing on the object store, manage an ADB instance, scale an ADB instance, and use Oracle Machine Learning notebooks.
 
@@ -24,29 +24,25 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 - Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality
 
 ## Lab Breakdown
-- **Lab 1:** Log in to Oracle Cloud and access the Oracle Autonomous Data Warehouse console.
-- **Lab 2:** Provision your first Autonomous Data Warehouse.
-- **Lab 3:** Explore the provided sample data sets that come with your Autonomous Database.
-- **Lab 4:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
-- **Lab 5:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
-- **Lab 6:** Visualize your data using Oracle Analytics Desktop.
-- **Lab 7:** Use wallets for secure connections to the autonomous database.
-- **Lab 8:** Manage and monitor your autonomous Database.
-- **Lab 9:** Scale up your Oracle Autonomous Database service to have more CPUs.
-- **Lab 10:** Create Oracle Machine Learning SQL notebooks.
-- **Lab 11:** Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality.
+- **Lab 1:** Provision your first Autonomous Data Warehouse.
+- **Lab 2:** Explore the provided sample data sets that come with your Autonomous Database.
+- **Lab 3:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
+- **Lab 4:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
+- **Lab 5:** Visualize your data using Oracle Analytics Desktop.
+- **Lab 6:** Use wallets for secure connections to the autonomous database.
+- **Lab 7:** Manage and monitor your autonomous Database.
+- **Lab 8:** Scale up your Oracle Autonomous Database service to have more CPUs.
+- **Lab 9:** Create Oracle Machine Learning SQL notebooks.
+- **Lab 10:** Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality.
 
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-###Getting Help During This Workshop
-If you have a question during this workshop then use the <a href="https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary" target="\_blank">**Autonomous Data Warehouse Forum**</a> on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Autonomous Data Warehouse.
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-Are you are completely new to the **Cloud Customer Connect**</a> forums? Visit our <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="\_blank">**Getting Started forum page**</a> to learn how to best leverage community resources.
-
-**You are all set; let's begin! Click Lab 1 in the Contents menu on the right.**
+**You are all set; let's begin! Click Getting Started in the Contents menu on the left.**
 
 ## Want to Learn More About Autonomous Database?
 
@@ -64,6 +60,4 @@ Use these links to get more information about Oracle Autonomous Database:
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, April 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
+- **Last Updated By/Date** - Richard Green, April 2021

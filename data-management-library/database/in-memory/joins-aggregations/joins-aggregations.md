@@ -2,27 +2,33 @@
 
 ## Introduction
 
-### Objectives
-
--   Learn how to enable In-Memory on the Oracle Database
--   Perform various queries on the In-Memory Column Store
-
-### Lab Prerequisites
-
-This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
-* Lab: Enabling In-Memory
-* Lab: Querying the IMC
-
-### Lab Preview
+In this lab, you will explore how to enable In-Memory on the Oracle Database and perform various queries on the In-Memory Column Store.
 
 Watch the video below to get an overview of joins using Database In-Memory.
 
 [](youtube:y3tQeVGuo6g)
 
-## Step: In-Memory Joins and Aggregation
+Quick walk through on how to perform In-Memory Joins and Aggregations.
+
+[](youtube:-yactiOo8fA)
+
+Estimated Lab Time: 15 minutes
+
+### Objectives
+
+-   Learn how to enable In-Memory on the Oracle Database
+-   Perform various queries on the In-Memory Column Store
+
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
+* Lab: Enabling In-Memory
+* Lab: Querying the IMC
+
+
+## **STEP 1:** In-Memory Joins and Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the  fact table, LINEORDER, and a dimension table and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond the basic performance benefits of scanning data in a columnar format.
 
@@ -33,7 +39,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
     set pages 9999
     set lines 100
-    <copy>    
+    </copy>    
     ````
 
     ![](images/num1.png " ") 
@@ -139,6 +145,6 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, April 2020
+- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

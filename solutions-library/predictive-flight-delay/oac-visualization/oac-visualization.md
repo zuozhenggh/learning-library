@@ -96,4 +96,4 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 - **Author** - NATD Solution Engineering - Austin Hub (Joowon Cho)
 - **Last Updated By/Date** - Joowon Cho, Solutions Engineer, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+

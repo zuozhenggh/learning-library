@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Installing Node js](#installing-node-js)
 
@@ -47,7 +47,7 @@ Oracle Autonomous Transaction Processing delivers a self-driving, self-securing,
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-## Pre-Requisites
+## Prerequisites
 
 1. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
@@ -72,7 +72,7 @@ Oracle Autonomous Transaction Processing delivers a self-driving, self-securing,
 
 2. Click on the Clipboard icon and select **Paste to remote session**.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/clipboard.png" alt="image-alt-text">
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/clipboard.png)
 
 3. Click into the pop up window and press Ctrl-V.
 
@@ -82,7 +82,7 @@ Oracle Autonomous Transaction Processing delivers a self-driving, self-securing,
 
 5. Open a Git-Bash window.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/gitBash.png" alt="image-alt-text">
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/gitBash.png)
 
 6. Navigate to the root folder of the C: drive.
 
@@ -220,3 +220,5 @@ node example.js
 4. Oracle Instant Client : http://www.oracle.com/technetwork/database/database-technologies/instant-client/overview/index.html
 
 5. Example.js Node Application used : https://github.com/oracle/oracle-db-examples/blob/master/exadata-express/Example.js
+
+

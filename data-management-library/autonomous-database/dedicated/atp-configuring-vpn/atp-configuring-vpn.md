@@ -145,7 +145,7 @@ You may also setup your VPN server with multiple users. Follow the OpenVPN confi
     *Note: Your SQL Developer version needs to be 18.3 or higher to connect to a cloud database using a wallet.*
         ![](./images/atpd_conn.png " ")
     
-- Follow detailed instructions on downloading your database credentials wallet refer to [Lab 4](?lab=lab-4-provisioning-databases) 
+- Follow detailed instructions on downloading your database credentials wallet refer to [Lab 8](?lab=lab-8-configuring-development-system) 
 
 - You may also connect to APEX or SQL Developer Web directly from your local browser. Simply get the URL from the console and launch in a browser window.
     ![](./images/atpd_application_apex.png " ")
@@ -158,4 +158,4 @@ You may also setup your VPN server with multiple users. Follow the OpenVPN confi
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+

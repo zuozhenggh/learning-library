@@ -10,7 +10,7 @@ Estimated time: 15 - 20 min
 
 * Learn how to check the working of deployed microservices
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial
@@ -183,5 +183,3 @@ You can proceed to the next lab.
 ## Acknowledgements
 * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
 * **Last Updated By/Date** - Tom McGinn, April 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

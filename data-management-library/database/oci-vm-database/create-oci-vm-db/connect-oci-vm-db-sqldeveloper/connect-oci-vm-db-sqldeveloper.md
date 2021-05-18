@@ -17,13 +17,13 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 
 1. From the menu, click on **Bare Metal, VM, and Exadata**.
 
-  ![](images/bare-metal-vm-exadata.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
 2. Use the Compartment drop down list to select the compartment that contains your database and click on the **Display name** for your database to open the details page..
 
   ![](images/select-db-system.png " ")
 
-3. Copy the **Host Domain Name** - you'll need this later when you create a connection in SQL Developer.
+3. Copy the **Host Domain Name** - you will need this later when you create a connection in SQL Developer.
 
   ![](images/db-system-details.png " ")
 
@@ -59,5 +59,3 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 ## Acknowledgements
 * **Author** -Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, February 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

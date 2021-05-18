@@ -6,7 +6,7 @@ At this point we have all the components we need to deploy our Python micro web 
 
 Automated deployment uses YML templates received from the original [vltabacaru/orcl-ws-cicd] GitHub repository we forked.
 
-## Step 1: Add Pipeline to Wercker.YML
+## **Step 1:** Add Pipeline to Wercker.YML
 
 Add this section at the end of your wercker.yml file (leave a blank line between build section and deploy section):
 
@@ -72,7 +72,7 @@ deploy:
 ...
 ````
 
-## Step 2: Deploy Pipeline
+## **Step 2:** Deploy Pipeline
 
 We need to add the second pipeline to Wercker **Workflows** using the console. Click **Add New Pipeline** button.
 
@@ -136,7 +136,7 @@ kubernetes-bootcamp   1/1     1            1           11m
 orcl-ws-app           1/1     1            1           3m34s
 ````
 
-## Step 3: Run Web Service
+## **Step 3:** Run Web Service
 
 Open Kubernetes Dashboard, login using the token, and check the deployment on Overview under **Deployments**. Go down on the page, and view our Python microservice under **Services**, **orcl-ws-app**. Copy the IP address of this microservice under External endpoints, [orcl-ws-app-IP]. 
 
@@ -189,5 +189,8 @@ exit
 - **Author** - Valentin Leonard Tabacaru
 - **Last Updated By/Date** - Valentin Leonard Tabacaru, Principal Product Manager, DB Product Management, May 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

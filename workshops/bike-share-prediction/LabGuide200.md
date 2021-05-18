@@ -8,8 +8,10 @@ Updated: October 8, 2019
 This lab walks you through the steps to upload the required datasets to the Autonomous Data Warehouse (ADW) instance that you provisioned in the previous lab. You will use SQL Developer as an interface to the ADW instance for uploading and preparing the dataset.
 
 
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 -   Learn how to connect to your new Autonomous Data Warehouse
 -   Learn how to load the required datasets to the ADW instance

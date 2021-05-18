@@ -18,5 +18,3 @@ Please proceed to the next lab.
 - **Authors/Contributors** - Troy Anthony
 - **Last Updated By/Date** - Troy Anthony, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
-

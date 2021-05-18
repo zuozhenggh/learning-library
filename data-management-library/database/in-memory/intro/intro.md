@@ -1,11 +1,18 @@
 # Workshop Introduction and Overview #
 
-## Introduction to Oracle In-Memory ##
+## Introduction to Oracle Database In-Memory ##
 Database In-Memory features a highly optimized In-Memory Column Store (IM column store) maintained alongside the existing row formatted buffer cache as depicted below. The primary purposeof the IM column store is to accelerate column-oriented data accesses made by analytics operations. It is similar in spirit to having a conventional index (for analytics) on every column in a table. However, it is much more lightweight than a conventional index, requiring no logging, or any writes to the database. Just as the performance benefit to an application from conventionalindexes depends on the amount of time the application spends accessing data in the tables that are indexed, the benefit from the IM column store also depends on the amount of time the application spends on data access for analytic operations. 
 
 Watch the video below for an overview of Oracle In-Memory.
 
 [](youtube:JGM1taVRZHs)
+
+
+### Prerequisites
+
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Database In-Memory and Performance
 
@@ -34,12 +41,11 @@ Database In-Memory Channel
 Oracle Database Product Management Videos on In-Memory
 <a href="https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ/search?query=in-memory">![](./images/youtube.png " ") </a>
 
-Please proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Authors/Contributors** - Andy Rivenes, Senior Principal Product Manager, In-Memory
-- **Last Updated By/Date** - Kay Malcolm, March 2020
-- **Workshop Expiration Date** - March 31, 2021
+- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

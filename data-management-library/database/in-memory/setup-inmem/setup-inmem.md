@@ -2,26 +2,30 @@
 
 ## Introduction
 
-### Objectives
-
--   Learn how to enable In-Memory on the Oracle Database
--   Explore various views to monitor In-Memory
-
-### Lab Prerequisites
-
-This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
-
-### Lab Preview
+In this lab, you will explore how to enable In-Memory on the Oracle Database and various views to monitor In-Memory.
 
 Watch the video below to get an explanation of enabling the In-Memory column store.
 
 [](youtube:dZ9cnIL6KKw)
 
+Quick walk through on how to enable In-Memory.
 
-## Step 0: Download the Lab Files
+[](youtube:oCES149OPeE)
+
+Estimated Lab Time: 30 minutes
+
+### Objectives
+
+-   Learn how to enable In-Memory on the Oracle Database
+-   Explore various views to monitor In-Memory
+
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
+
+## **STEP 0:** Download the Lab Files
 
 1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
 
@@ -33,28 +37,27 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/HHDcZVcYLzrexbQymlN6Laak0DwWtDrd3lTAOu1gmJTK37uSOB_-4AD-VwNePJvR/n/c4u03/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     </copy>
     ````
-    ![](./images/step5.png " ")  
 
-## Step 1: Run the In-Memory Setup Scripts
+## **STEP 1:** Run the In-Memory Setup Scripts
 1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
 
 
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/axp5T8m0cF0_p1N832Qo6ImwczP_V6bSQi9ABLti6Ug/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/SMU58aojlIQoVIH8BcY42Hu1yYk3MRKLwlQscZmQiRwKzvnDJDIzVc-QlRcmmrk5/n/c4u03/b/labfiles/o/inmemoryscript.sh
     chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     </copy>
     ````
     ![](./images/ssbexists.png " ") 
 
-2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
+2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expected.  The script should finish with 1 error*
 
     ````
     <copy>
@@ -63,7 +66,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
     ![](./images/inmemcomplete.png " ") 
 
-## Step 2: Logging In and Enabling In-Memory
+## **STEP 2:** Logging In and Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -78,7 +81,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
 2. In-Memory is integrated into Oracle Database 12c and higher.  The IM column store is not enabled by default, but can be easily enabled via a few steps.  Before you enable it, let's take a look at the default configuration. Set your oracle environment
 
     ````
-    . oraenv
+    <copy>. oraenv</copy>
     ORCL
     ````
      ![](images/step1num1.png) 
@@ -101,6 +104,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
     <copy>
     alter system set inmemory_size=2G scope=spfile;
+    alter system set db_keep_cache_size=2G scope=spfile;
     shutdown immediate;
     startup;
     </copy>
@@ -120,7 +124,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
      ![](images/step1num4.png) 
 
-## Step 3: Enabling In-Memory
+## **STEP 3:** Enabling In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
 
@@ -196,7 +200,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     ````
      ![](images/step2num5.png)   
 
-By default the IM column store is only populated when the object is accessed.
+    By default the IM column store is only populated when the object is accessed.
 
 6.  Let's populate the store with some simple queries.
 
@@ -248,15 +252,15 @@ By default the IM column store is only populated when the object is accessed.
 
 In this Step you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features. 
 
-You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this Lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
+You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
+- **Contributors** - Kay Malcolm, Director, DB Product Management
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

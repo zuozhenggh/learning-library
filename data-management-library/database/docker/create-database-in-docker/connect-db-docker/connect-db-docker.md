@@ -1,9 +1,12 @@
 # Connect to an Oracle Database in a Docker Container
-## Before You Begin
 
-This lab walks you through the steps to connect to an Oracle Database running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQL Developer.
+## Introduction
 
-### What Do You Need?
+This lab walks you through the steps to connect to an Oracle Database running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
+
+Estimated Lab Time: 10 minutes
+
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
@@ -31,6 +34,9 @@ This lab walks you through the steps to connect to an Oracle Database running in
    ![](images/sd-new-connection.png " ")
 
 4. Click **Test** to check your connection. You will see a Success message in the **Status** field.
+
+  *Note: If you see `The Network Adapter could not establish the connection` error, you may want to check if the Source CIDR of Ingress Rule was entered correctly in the previous lab.*  
+
 5. Click **Save** to save your connection details and then click **Connect**.
 
   ![](images/sd-save.png " ")
@@ -48,7 +54,8 @@ This lab walks you through the steps to connect to an Oracle Database running in
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, March 2020
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+

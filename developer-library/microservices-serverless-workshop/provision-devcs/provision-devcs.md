@@ -4,14 +4,14 @@
 
 In this lab you will provision an Oracle Developer Cloud Service instance, gather data from your Oracle Cloud Tenancy and use the data to configure your Developer Cloud Service instance.
 
-Estimated time: 15 - 20 min
+Estimated time: 20 - 30 min
 
 ### Objectives
 
 * Learn how to provision an Oracle Developer Cloud Service instance
 * Learn how to configure an Oracle Developer Cloud Service instance
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial
@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/image17.png " ")
 
-This process will take some time. Proceed to the next step to gather the data you'll need to configure the Developer Cloud Service Instance when it is ready.
+This process will take some time. Proceed to the next step to gather the data you will need to configure the Developer Cloud Service Instance when it is ready.
 
 ## **Step 2**: Gather Key Config Data from the Oracle Cloud Tenancy
 
@@ -145,7 +145,5 @@ You can proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
-* **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs Intern
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, April 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

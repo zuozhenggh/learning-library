@@ -8,8 +8,10 @@ Updated: January 4, 2019
 This lab walks you through the steps to create a linear regression model in the Oracle Machine Learning tool and apply it to the dataset in the Autonomous Datawarehouse. Also, we will show you how you can use the Oracle Analytics Cloud to visualize the results of the model created in OML.
 
 
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 -   Learn how to create machine learning models in Oracle Machine Learning Tool
 -   Learn how to visualize the results in Oracle Analytics Cloud

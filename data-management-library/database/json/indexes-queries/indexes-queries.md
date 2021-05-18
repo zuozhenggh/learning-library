@@ -5,7 +5,11 @@ In this lab we will create some indexes on our JSON data. We will create two typ
 
 Estimated time: 20 minutes, plus around 30 minutes for the search index to complete.
 
+<<<<<<< HEAD
 ## Step 1: Functional indexes
+=======
+## **Step 1:** Functional indexes
+>>>>>>> upstream/master
 
 All our data is now loaded, and we can proceed to creating indexes.  The main index we’ll be using is a “json search index” on the REVIEWS table. This is a JSON full-text index which indexes ALL of the JSON in the table, and allows for word-based searching on textual fields.
 
@@ -36,7 +40,11 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
     ```
     That will probably take 5 to 6 minutes to run.
 
+<<<<<<< HEAD
 ## Step 2: Creating a search index
+=======
+## **Step 2:** Creating a search index
+>>>>>>> upstream/master
 
 A search index indexes **all** the JSON in a collection. It is particularly useful if
 -    You don't know the schema (layout) of the JSON in advance. Creating a functional index _requires_ you to know the name of the element (such as business_id) on which you wish to create the index.
@@ -88,7 +96,11 @@ Search indexes take a significant time to create on large collections. As earlie
     ```
 
    
+<<<<<<< HEAD
 ## Step 3: Queries
+=======
+## **Step 3:** Queries
+>>>>>>> upstream/master
 
 **Note:** All queries in SQL Developer Web should be run using the "Run Statement" button. If you run them using "Run Script", the query will run to completion, which may fetch many thousands of rows and take some minutes to run.
 
@@ -135,7 +147,11 @@ Search indexes take a significant time to create on large collections. As earlie
     select u.jtext.name, r.jtext.text
     from reviews r, users u
     where json_textcontains(r.jtext, '$.text', 'sushi') 
+<<<<<<< HEAD
     and u.jtext.user_id = r.jtext.user_;
+=======
+    and u.jtext.user_id = r.jtext.user_id;
+>>>>>>> upstream/master
     </copy>
     ```
     And finally to make the query actually useful, we'll get the business name and search only within a range of zip codes. We'll also add some the number of stars, and some column aliases (meaning we can distinguish between user name and business name).
@@ -167,4 +183,11 @@ You may now proceed to the next lab.
 - **Author** - Roger Ford, Principal Product Manager
 - **Last Updated By/Date** - Roger Ford, June 2020
 
+<<<<<<< HEAD
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+=======
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+>>>>>>> upstream/master

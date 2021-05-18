@@ -4,7 +4,7 @@
 
 These labs are designed to be executed in sequence. There are a number of assumptions associated with these labs that are documented.  Please pay attention to those assumptions.
 
-## Overall Cloud Lab Prerequisites
+## Overall Cloud Prerequisites
 -  Cloud Account or Free Tier Account
 -  Docker Account (hub.docker.com)
 -  Putty (Windows users)

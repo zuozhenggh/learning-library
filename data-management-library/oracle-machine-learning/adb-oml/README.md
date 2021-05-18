@@ -9,10 +9,8 @@ Welcome to the Oracle Machine Learning (OML) with Autonomous Database Workshop. 
 -  Become familiar with Oracle Machine Learning Algorithms.
 -  Create a machine learning model to determine factors that predict good credit.
 
-***To log issues***, click here to go to the [issue](https://github.com/oracle/learning-library/issues/new) submission form.
-
 ## Access the Workshop Using Our Web Interface
 
 **Click the image to use our easy to navigate HTML format:**
 
-[![Oracle Machine Learning](images/adboml.png " ")](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml)
+[![Oracle Machine Learning](images/adboml.png " ")](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)

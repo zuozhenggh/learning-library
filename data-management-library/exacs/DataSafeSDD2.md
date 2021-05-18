@@ -3,7 +3,14 @@
 ## Introduction
 Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and by using the Data Discovery wizard.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
+Watch the video below for an overview on how to verify sensitive Data Model with Oracle Data Safe
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_i4slvplf&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_ye07oxoy" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -24,11 +31,11 @@ In this lab, you learn how to do the following:
 
 ## Steps
 
-### Step 1: Connect to ExaCS DB using SQL Developer
+### **Step 1:** Connect to ExaCS DB using SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Step 2: In SQL Developer, add a column to the `EMPLOYEES` table in your database
+### **Step 2:** In SQL Developer, add a column to the `EMPLOYEES` table in your database
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
@@ -47,7 +54,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 - Keep this tab open because you return to it in a later step.
 
-### Step 3: Sign in to the Oracle Data Safe Console in your region
+### **Step 3:** Sign in to the Oracle Data Safe Console in your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -62,7 +69,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 4: Verify your sensitive data model against your database by using the verification option on the Sensitive Data Models page
+### **Step 4:** Verify your sensitive data model against your database by using the verification option on the Sensitive Data Models page
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Data Models**.
 - Select the check box for your sensitive data model that you created in Discovery Lab 1 - Discover Sensitive Data with Oracle Data Safe (**<username> SDM1**).
@@ -85,7 +92,7 @@ The verification job is started.
 
 - Click **Continue**.
 
-### Step 5: Manually add the AGE column to your sensitive data model
+### **Step 5:** Manually add the AGE column to your sensitive data model
 
 - On the Sensitive Data Model: **<username> SDM1** page, click **Add**. The **Add Sensitive Columns** dialog box is displayed.
 
@@ -109,7 +116,7 @@ Your sensitive data model is updated to include the `AGE` column.
 - Click **Save and Continue**.
 - Click **Exit**.
 
-### Step 6: Drop the AGE column in your database
+### **Step 6:** Drop the AGE column in your database
 
 - Return to SQL Developer.
 - On the SQL Worksheet, run the following commands to drop the `HCM1.EMPLOYEES.AGE` column.
@@ -132,7 +139,7 @@ Your sensitive data model is updated to include the `AGE` column.
 - If the AGE column is still there, click the **Refresh** button to refresh the table.
 
 
-### Step 7: Verify your sensitive data model against the database again, but this time using the Data Discovery wizard
+### **Step 7:** Verify your sensitive data model against the database again, but this time using the Data Discovery wizard
 
 - Return to Oracle Data Safe.
 - Click the **Home** tab, and then click **Data Discovery**.
@@ -161,7 +168,7 @@ The Data Discovery wizard identifies the `AGE` column as missing from the databa
 ![](./images/dbsec/datasafe/discovery/missing.png " ")
 
 
-### Step 8: Manually update your sensitive data model from the Library
+### **Step 8:** Manually update your sensitive data model from the Library
 
 You can manually update your sensitive data model while continuing to work in the Data Discovery wizard. In which case, you simply deselect your sensitive column and save your sensitive data model. This part, however, shows you another way to do it from the Library.
 - Click **Exit** to exit the Data Discovery wizard.
