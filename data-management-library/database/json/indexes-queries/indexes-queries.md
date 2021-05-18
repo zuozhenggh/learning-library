@@ -87,7 +87,7 @@ Search indexes take a significant time to create on large collections. As earlie
     </copy>
     ```
 
-  
+   
 ## **Step 3:** Queries
 
 **Note:** All queries in SQL Developer Web should be run using the "Run Statement" button. If you run them using "Run Script", the query will run to completion, which may fetch many thousands of rows and take some minutes to run.
