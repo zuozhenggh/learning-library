@@ -1,12 +1,11 @@
 {
     "workshoptitle": "NetFoundry",
-    "include": {"zero-trust-networking.md":"../../zero-trust-networking/zero-trust-networking.md"},
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
             "title": "Lab 1: Zero Trust Networking",
             "description": "Learn how to use NetFoundry to set up a Zero Trust Network in OCI Cloud",
-            "filename": "../../zero-trust-networking/zero-trust-networking.md"
+            "filename": "./zero-trust-networking/zero-trust-networking.md"
         },
         {
             "title": "Need Help?",
