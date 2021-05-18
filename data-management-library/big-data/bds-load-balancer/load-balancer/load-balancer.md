@@ -4,6 +4,8 @@
 
 Follow these steps to create and use a load balancer for a non-highly-available (non-HA) Big Data Service cluster.
 
+Estimated lab time: 60 minutes
+
 ## **STEP 1:** Gather Information
 
 Gather the following information before you start:
@@ -142,10 +144,9 @@ To copy the files:
 
   Sign in to the **Oracle Cloud Console** as an administrator. See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm).
 
-2. On the banner at the top of the page, click the navigation menu ![Navigation menu](./images/nav-button.png) to open it. Under **Core Infrastructure**, point to **Networking**, and then click **Load Balancers**.
+2. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Load Balancer**.
 
-    <!-- ![](./images/start-nav-menu.png "Open the Load Balancer")-->
-    ![](./images/start-nav-menu.png "")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-loadbalance.png " ")
 
 3. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster, and then click **Create Load Balancer**.
 
