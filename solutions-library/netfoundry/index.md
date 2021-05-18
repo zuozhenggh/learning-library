@@ -1,2 +1,2 @@
 
-Welcome to the NetFoundy Workshops
+Welcome to the NetFoundry Workshops

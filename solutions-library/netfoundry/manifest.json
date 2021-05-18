@@ -5,7 +5,7 @@
         {
             "title": "Lab 1: Zero Trust Networking",
             "description": "Learn how to use NetFoundry to set up a Zero Trust Network in OCI Cloud",
-            "filename": "../../zero-trust-networking/zero-trust-networking.md"
+            "filename": "./zero-trust-networking/zero-trust-networking.md"
         },
         {
             "title": "Need Help?",
