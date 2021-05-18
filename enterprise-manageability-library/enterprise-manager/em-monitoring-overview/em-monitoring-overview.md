@@ -64,7 +64,7 @@ The Overview pane shows the Target Status of your IT estate. The Status section 
   6.	Click on “Enterprise >> Summary” to go back to the Enterprise Summary page.
         ![](images/emmonlab1step6.png " ")
 
-  7.	Any Incidents, Problems, and Jobs requiring attention is displayed on the Enterprise Summary page with the ability to drill down into them. Click on the incidents link for Availability.
+  7.	Any Incidents, Problems, and Jobs requiring attention is displayed on the Enterprise Summary page with the ability to drill down into them. Click on the incidents link ![](images/noentry.svg " ") for Availability.
         ![](images/emmonlab1step7.png " ")
 
   8.	A list of critical incidents is displayed in Incident Manager. You can manage the incidents by acknowledging, assigning ownership, changing the priority or status, and more.
