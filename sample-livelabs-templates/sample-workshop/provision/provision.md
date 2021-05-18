@@ -18,6 +18,8 @@ In this lab, you will:
 * Objective 2
 * Objective 3
 
+To link to other areas in document use this [syntax](#STEP1:title)
+
 ### Prerequisites
 
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported

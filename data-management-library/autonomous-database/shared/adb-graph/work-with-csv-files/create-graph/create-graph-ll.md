@@ -20,8 +20,6 @@ Learn how to
 - The following lab requires an Autonomous Database - Shared Infrastructure account. 
 - And that the Graph-enabled user has been created. That is, a database user with the correct roles and privileges exists.
 
-**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
-
 ## **STEP 1**: Connect to your Autonomous Database using Graph Studio
 
 1. If you have the Graph Studio URL then proceed to step 4. 

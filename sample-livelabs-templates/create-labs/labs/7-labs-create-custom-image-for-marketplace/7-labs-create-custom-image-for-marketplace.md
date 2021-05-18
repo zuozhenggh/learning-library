@@ -1,4 +1,4 @@
-# OPTIONAL - Create Custom OCI Compute Image for Marketplace Publishing
+# Create Custom OCI Compute Image for Marketplace Publishing
 
 ## Introduction
 This lab will show you how to prepare a host for custom image capture and create the custom image that meets stringent OCI marketplace requirements.
