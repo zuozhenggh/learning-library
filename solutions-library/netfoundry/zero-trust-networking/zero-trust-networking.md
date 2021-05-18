@@ -1,4 +1,4 @@
-#NetFoundry Zero Trust Networking
+# NetFoundry Zero Trust Networking
 
 ![](images/NFWhiteBG.jpg)
 
@@ -6,7 +6,7 @@ NetFoundry helps you spin up automated, zero trust, network-as-code connections 
 
 For more information refer to the following <a href="https://blogs.oracle.com/cloud-infrastructure/zero-trust-network-access-with-netfoundry">Oracle NetFoundry blog.</a> 
 
-##NetFoundry Zero Trust Networking Introduction
+## NetFoundry Zero Trust Networking Introduction
 
 The following guide is intended to provide you guidance for your Oracle NetFoundry LiveLab environment. It provides simple network configuration steps to help partners & end-users learn about the building blocks of configuring a NetFoundry network.  It will help outline each element within the NetFoundry network and provide instructions on how to configure a simple design connecting a Windows client to a web application in a Oracle Cloud on a private IPV4 network. (Any application will do but web is easy to test)
 
@@ -17,7 +17,7 @@ The following guide is intended to provide you guidance for your Oracle NetFound
 
   
 
-##Assumptions
+## Assumptions
 
 To get started you'll need to have the following:
 
@@ -44,7 +44,7 @@ To get started you'll need to have the following:
 
  
 
-##Software Components
+## Software Components
 
 Building the NetFoundry SDN framework consists of 7 major elements:
 
@@ -66,7 +66,7 @@ Diagram below for logical reference:
 
 ![](images/diag1.png)
 
-##Cloud application prep - Create Application in Cloud(Oracle Cloud example)
+## Cloud application prep - Create Application in Cloud(Oracle Cloud example)
 
 Identify an application sitting in your Cloud network or create a simple web app (Apache/80). We will provide this example of creating a web server in OCI that your NetFoundry client will access via a private VCN network IP address. If you already have an application in your network, you can skip to the next section(A, B & C).
 
@@ -115,7 +115,7 @@ E. Create/Deploy Endpoints
 F. Create Services/AppWAN**
 
 
-##Create Network (Steps A, B & C)
+## Create Network (Steps A, B & C)
 
 Once you have created your Organization after signing up for the 7 day trial or other, you are ready to create your first network. 
 
@@ -170,7 +170,7 @@ Next click the mouse into the attributes field and select the @fabricrouter you 
 ![](images/diag13.png)
 
 
-##Create Customer Hosted Edge Router (Step D)
+## Create Customer Hosted Edge Router (Step D)
 
 The next element we will deploy is the Edge Router in the customer VCN containing the WebApp we created for this exercise. From the NetFoundry console, in the Manage Edge Routers tab(section), let's create a new Edge Router. Provide a name representing something like "customer-location-edge",
 
@@ -213,7 +213,7 @@ Once registered, you should now have 2 Edge Routers up and running in your Netwo
 ![](images/diag19.png)
 
 
-##Create Endpoint for user access - Windows (Step E)
+## Create Endpoint for user access - Windows (Step E)
 
  
 
