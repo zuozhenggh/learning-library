@@ -4,7 +4,7 @@
 In this workshop you will use In-Database JavaScript feature available in Oracle Database 21c. You will create a quick application from a Spreadsheet and then extend the application using Server-Side JavaScript instead of PL/SQL.
 Next, you will learn how to load external JavaScript modules and leverage some of the useful libraries in your APEX application. 
 
-Estimated Time: 55 minutes
+Estimated Workshop Time: 55 minutes
 
 ### Objectives
 
@@ -25,7 +25,6 @@ Estimated Time: 55 minutes
 | [Extending APEX Application Using JavaScript](?lab=4-extend-app-using-javascript) | 15 minutes |
 | [Use External Modules](?lab=5-use-external-modules) | 20 minutes |
 
-Total estimated time: 55 minutes
 
 ### **Let's Get Started!**
 
