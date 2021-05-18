@@ -41,7 +41,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/OCIMarketplaceFindGraphServer.jpg)
 
-2. Select the stack and then review the System Requirements and Usage Instructions. Then select the latest version and choose a compartment and click on `Launch Stack`.
+2. Select the stack and then review the System Requirements and Usage Instructions. Then select the version **20.4** (18-month patch release) or **21.1** and choose a compartment and click on `Launch Stack`.
 
     ![](images/GSC211LaunchStack.jpg)
 
