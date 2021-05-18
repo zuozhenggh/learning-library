@@ -3,6 +3,10 @@
 
 This workshop will help you understand the technical capabilities inside and outside the Oracle converged database to support a scalable data and event-driven microservices architecture.
 
+<if type="multicloud-freetier">
+The workshop will also help you understand multi-cloud deployments of microservices architectures, observability via Grafana, Kibana, and other tools, and Verrazzano.
+</if>
+
 You will create an application with Helidon microservices and a Javascript front-end, deployed to an OCI Kubernetes cluster, using REST and messaging for communication and accessing pluggable Oracle Autonomous Transaction Processing databases.
 
 ![](./images/architecture.png " ")

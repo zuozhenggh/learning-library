@@ -5,6 +5,10 @@
 In this lab we will provision and setup the resources to execute microservices in your tenancy.  
 
 Estimates Lab Time - 25 minutes
+<if type="multicloud-freetier">
+- Estimates Lab Time - 25 minutes
++ Estimates Lab Time - 25 minutes
+</if>
 
 ### Objectives
 
@@ -178,10 +182,6 @@ Their log files are located in the $GRABDISH_LOG directory.
 ls -al $GRABDISH_LOG
 </copy>
 ```
-
-<if type="multicloud-freetier">
-+ **MULTICLOUD_FREETIER INSTRUCTIONSS HERE**
-</if>
 
 Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
