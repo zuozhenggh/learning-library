@@ -2,9 +2,15 @@
 
 ## Introduction
 
-This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and establish a connection between the provisioned Oracle Autonomous Database instance and Oracle Analytics Cloud. Then you will register the Oracle Machine Learning model we created in the previous lab with Oracle Analytics Cloud, in order to create visualizations using the produced datasets in the following Visualizations lab.
+This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and establish a connection between the provisioned Oracle Autonomous Database instance and Oracle Analytics Cloud. Then you will register the Oracle Machine Learning model we created in the previous lab with Oracle Analytics Cloud, add the datasets from the ADB instance to Oracle Cloud Analytics so we can use the data in projects for visualization.
 
 Estimated Lab Time: 15 minutes
+
+Quick walk through on how to provision and register an Oracle Machine Learning model into Oracle Analytics Cloud.
+
+[](youtube:Jv8070F5Uw8)
+
+*Note: The OCI Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
 
 ### Objectives
 
@@ -37,9 +43,9 @@ In this lab, you will:
     ![](./images/analytics-create-instance.png " ")
 
 5. This bring up the **Create Analytics Instance** screen, specify the configuration of the instance:
-    - **Compartment** - Select the compartment that houses the ADW Good Wine instance from Lab 1 in the drop-down list.
-    - **Instance Name** - Use letters and numbers only, starting with a letter. This lab uses **OACWINE** as the instance name.
+    - **Name** - Use letters and numbers only, starting with a letter. This lab uses **OACWINE** as the instance name.
     - **Description** - This is an optional field to add a description or note to remind yourself of what the instance is for. We added **Oracle Analytics Instance for Good Wine Workshop** for our own reference.
+    - **Create in Compartment** - Select the compartment that houses the ADW Good Wine instance from Lab 1 in the drop-down list.
 
     ![](./images/create-cloud1.png " ")
 
@@ -60,7 +66,7 @@ In this lab, you will:
 
 1. First, you need to download the wallet file containing your credentials. From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your Autonomous Database instance.
 
-    ![](./images/choose-adb.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![](./images/choose-adb-adw.png " ")
 
@@ -174,19 +180,19 @@ In this lab, you will:
 
   ![](./images/step5-7.png " ")
 
-8. Repeat steps 1-6 with the **BEST_WINES** table.
+8. Repeat steps 1-6 with the **BEST\_WINES** table.
 
   ![](./images/step5-8a.png " ")
 
   ![](./images/step5-8b.png " ")
 
-9. Repeat step 1-6 with the **DM$VAGOOD_WINE_AI** table.
+9. Repeat step 1-6 with the **DM$VAGOOD\_WINE\_AI** table.
 
   ![](./images/step5-9a.png " ")
 
   ![](./images/step5-9b.png " ")
 
-10. Repeat step 1-6 with the **DM$VLWINE_CLASS_MODEL_SVM** table.
+10. Repeat step 1-6 with the **DM$VLWINE\_CLASS\_MODEL\_SVM** table.
 
   ![](./images/step5-10a.png " ")
 
@@ -195,6 +201,6 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Charlie Berger & Siddesh Prabhu, Machine Learning, AI and Cognitive Analytics
+* **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, AI and Cognitive Analytics & Siddesh Ujjni, Staff Cloud Engineer, Analytics to Cloud
 * **Contributors** -  Anoosha Pilli & Didi Han, Database Product Management
 * **Last Updated By/Date** - Didi Han, Database Product Management, April 2021

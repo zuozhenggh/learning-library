@@ -4,6 +4,8 @@
 
 In this workshop, you'll create a load balancer that can be used as a front end for securely accessing Cloudera Manager, Hue, and Oracle Data Studio on your highly-available (HA) Big Data Service cluster.
 
+(If you want to create a load balancer for a non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=811) workshop.)  
+
 Typically, a load balancer is used to spread workloads across multiple mirrored servers (for example, cluster nodes), to optimize resource usage and to ensure high-availability (HA). However, in this lab you'll use a load balancer to direct traffic to multiple ports on just two Big Data Service nodes.
 
 One advantage of using a load balancer is that you can configure it to use the Secure Sockets Layer (SSL) protocol to secure traffic to and from the services on your cluster. SSL uses digital certificates and keys to encrypt and decrypt transmitted data, to ensure the identities of the sender and the receiver of data, and to sign the data to verify its integrity.  In this workshop, you'll implement end-to-end SSL, which means that the load balancer will accept SSL encrypted traffic from clients and encrypt traffic to the cluster.
@@ -69,7 +71,7 @@ If you choose ***not*** to complete the [Getting Started with Oracle Big Data Se
 | [13](#Step13:CreateaListenerforBigDataStudio) | Create and configure a ***listener*** for Big Data Studio. |
 | [14](#Step14:AccesstheCluster) | Access Cloudera Manager, Hue, and Data Studio by using the IP address assigned to the load balancer, appended by the port number for the service. |
 
-**Note:** If you want to create a load balancer for a non-HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (non-HA Cluster)](https://oracle.github.io/learning-library/data-management-library/big-data/bds-load-balancer/workshops/freetier/?lab=use-load-balancer-access-services-on-big) workshop.  If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
+**Note:** If you want to use SSL certificates from a trusted certificate authority, see [Use a Load Balancer to Connect to Services on a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-load-balancer-connect-cluster.html) in *Using Big Data Service*.
 
 You may now [proceed to the next lab](#next).
 
