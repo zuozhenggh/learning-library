@@ -375,9 +375,13 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
 4. You can log into the console with the `soa_domain_username` and `soa_domain_password` you specified in the `terraform,.tfvars` file.
 
-5. Check the `ess` endpoint by browsing to http://*PUBLIC_IP*:30305/ess .
+5. Check the `/ess` endpoint by browsing to http://*PUBLIC_IP*:30305/ess .
 
     The username and password is the same as for the console.
+
+6. Check the `/em` endpoint by browsing to http://*PUBLIC_IP*:30305/em .
+
+7. Check the `/soa/composer` endpoint by browsing to http://*PUBLIC_IP*:30305/soa/composer .
 
 You may proceed to the next lab.
 
