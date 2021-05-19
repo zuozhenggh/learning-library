@@ -15,7 +15,9 @@ In this lab, you clean up the environment.
 1. If you deployed everything with Terraform, and you want to clean up the SOA domain only but keep the cluster up you can use:
 
     ```bash
+    <copy>
     terraform destroy --target=null_resource.deploy_soa
+    </copy>
     ```
 
 2. Type `yes` at the prompt and wait for the process to finish.
