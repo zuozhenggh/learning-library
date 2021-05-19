@@ -199,8 +199,7 @@ To deploy agents:
     server.driversLocation=/u01/app/oracle/product/12.1.0/dbhome_1/jdbc/lib
     server.jdbcDriver=odbc8.jar</pre>
 4. To start the Veridata agent, enter:
-    <pre
-    /u01/ogg/agents/veridata/agent1/agent.sh start</pre>
+    <pre>/u01/ogg/agents/veridata/agent1/agent.sh start</pre>
 
 ## Learn More
 
@@ -211,4 +210,4 @@ To deploy agents:
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021

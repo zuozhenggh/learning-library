@@ -82,7 +82,7 @@ To create compare pairs on the **Pattern Mapping** tab:
         ![](./images/10-pattern-mapping-pair-mapping-option3.png " ")
 
 4. Click **Generate Mappings**. The control moves to the **Preview** tab.
-5. Click **Save** save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
+5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
 ## **STEP 4**: Create a Job for the Compare Pair Group
@@ -123,4 +123,4 @@ To execute a job:
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
