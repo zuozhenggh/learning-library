@@ -27,6 +27,11 @@
             "filename": "../../scale/scale.md"
         },
         {
+            "title": "Lab 4: Tear Down",
+            "publisheddate": "05/11/2021",
+            "filename": "../../tear-down/tear-down.md"
+        },
+        {
             "title": "Need Help?",
             "publisheddate": "10/06/2020",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/need-help/need-help.md"

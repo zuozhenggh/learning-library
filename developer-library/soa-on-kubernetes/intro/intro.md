@@ -35,7 +35,7 @@ If you are not an administrator on your tenancy, you must insure that the follow
 
 ```
 <copy>
-!!! Add missing policies for Kubernetes
+Allow group MyGroup to manage clusters in tenancy
 
 Allow group MyGroup to manage dynamic-groups in tenancy
 Allow group MyGroup to manage policies in tenancy
