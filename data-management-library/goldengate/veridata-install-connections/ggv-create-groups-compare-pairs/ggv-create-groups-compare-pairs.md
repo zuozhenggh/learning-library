@@ -42,6 +42,7 @@ This lab assumes you have:
 5. Browse to select the **Source Connection** and **Target Connection** (that you have created in Lab 2).
   ![](./images/3-new-group-connection-information.png " ")
 6. Click **Finish**.
+7. Click **OK**.
 Your new Group has been created.
 
 ## **STEP 2:** Create Compare Pairs (on Manual Mapping Tab)
