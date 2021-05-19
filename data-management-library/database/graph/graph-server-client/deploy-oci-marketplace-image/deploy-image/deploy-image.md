@@ -22,7 +22,7 @@ Oracle Cloud console > Networking > Virtual Cloud Networks > Start VCN Wizard > 
 
 - Configuration
   - VCN NAME: (e.g. `VCN1`)
-  - The rest of itmes: Do not need to change
+  - The rest of the items: Do not need to be changed
 
 Public Subnet vcn1
 
@@ -50,7 +50,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
     - Paste your public SSH key. This is used when you ssh into the provisioned compute later.
     - Choose an existing virtual cloud network.
     - Select a subnet compartment and subnet.
-    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you **will** have uploaded and unzipped the wallet **on the VM**, so please set: `jdbc:oracle:thin:@atpgraph_low?TNS_ADMIN=/etc/oracle/graph/wallets` where the database name is `atpgraph`. (This JDBC URL is stored in `/etc/oracle/graph/pgx.conf` which can be updated later if necessary.)
+    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you **will** have uploaded and unzipped the wallet **on the VM**, so please set: `jdbc:oracle:thin:@atpgraph_low?TNS_ADMIN=/etc/oracle/graph/wallets` where the database name is `atpgraph`. (If you named your database something else, e.g. `myatpgraph` then replace `@atpgraph_low` with `@myatpgraph_low` in the JDBC URL. This JDBC URL is stored in `/etc/oracle/graph/pgx.conf` which can be updated later if necessary.)
 
     ![](images/ConfigureStackVariables_211_1.jpg)
     ![](images/ConfigureStackVariables_211_2.jpg)
@@ -63,7 +63,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/RMJobStarted_Sombrero203.png)
 
-    Once the job has successfully completed the status will change from "In Progess" to "Succeeded". If you get **"shape VM.Standard.E2.1.Micro not found"** error, the availability domain cannot provide the selected shape. Please edt the job and change the availability domain and retry.
+    Once the job has successfully completed the status will change from "In Progess" to "Succeeded". If you get **"shape VM.Standard.E2.1.Micro not found"** error, the availability domain cannot provide the selected shape. Please edit the job and change the availability domain and retry. (An always-free compute VM can only be created in your home region. If you have previously created an always-free compute VM then this new VM.Standard.E2.1.Micro instance can only be created in the same availability domain as the previous one.)
 
     ![](images/RMJobCompleted_211.jpg)
 

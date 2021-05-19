@@ -21,7 +21,7 @@ Estimated time: 7 minutes
 
 ## **STEP 1:** Log in to SQL Developer Web
 
-Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user **using Google Chrome**. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `customer_360`.
+Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user **using Google Chrome**. It is almost the same URL as the one for the Admin user except that `admin` in that url is replaced with the schema-alias we provided, i.e. with `customer_360`.
 
 ![](images/admin_url.jpg)
 
