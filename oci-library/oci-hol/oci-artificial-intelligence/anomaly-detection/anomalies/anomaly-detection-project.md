@@ -14,7 +14,7 @@ In this lab, you will:
 - Learn how to create data asset to refer data in Oracle object storage.
 
 ### Prerequisites
-- A Free tier or paid tenancy account in OCI
+- A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
 - Familiar with OCI object storage to upload data
 - Tenancy is whitelisted to be able to use Anomaly Detection service
 

@@ -15,7 +15,7 @@ In this lab, you will:
 - Upload testing data to check detection result
 
 ### Prerequisites
-- A Free tier or paid tenancy account in OCI
+- A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
 - Understand basic model terminology FAP - False Alarm Probability
 - Tenancy is whitelisted to be able to use Anomaly Detection service
 
@@ -44,7 +44,7 @@ FAP stands for False Alarm Probability. In other words, this basically specifies
 
 ### How to calculate FAP
 ![](../images/fap.png " ")
-As can be inferred from the formula, the more the number of false alarms higher the FAP will be. 
+As can be inferred from the formula, the more the number of false alarms higher the FAP will be.
 
 ###Train Fraction Ratio
 Train Fraction Ratio specifies to the model on how much of the data to use for training. So the default value 0.7 or 70% specifies the model to use 70% of the data for training.
