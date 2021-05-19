@@ -5,6 +5,11 @@
 This lab walks you through the use and functioning of Application Continuity.
 
 Estimated Lab Time: 60 Minutes
+
+Watch the video below for an overview of the Application Continuity lab
+[](youtube:KkwxbwII3O4)
+
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
