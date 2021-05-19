@@ -31,6 +31,13 @@ In this lab, you will:
 * An SSH key-pair.
 * An OCI account with a compartment set up.
 
+Make sure you have available resources and quota for:
+
+- 1 file storage systems.
+- 1 mount target.
+- 1 Oracle database on VM.
+- 1 Kubernetes cluster and node pool with 3 nodes.
+
 If you are not an administrator on your tenancy, you must insure that the following policies have been set for you:
 
 ```

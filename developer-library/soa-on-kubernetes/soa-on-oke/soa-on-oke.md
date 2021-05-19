@@ -68,7 +68,32 @@ You'll find the code on Github.com at [https://github.com/oracle-quickstart/oke-
     </copy>
     ```
 
-## **STEP 3:** Create a `terraform.tfvars` Config File
+
+## **STEP 3**: Gather Required Information
+
+1. Get your `tenancy OCID`:
+
+    - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **Tenancy**.
+
+        ![](./images/setup-tf-tenancy.png)
+
+    - **Copy** the OCID of the tenancy and paste it in your environment file.
+
+        ![](./images/setup-tf-tenancy-ocid.png)
+
+2. Get your `compartment OCID`:
+
+    - In the Oracle Cloud Console, go to **Identity -> Compartments**.
+
+        ![](./images/setup-tf-compartment.png)
+
+    - Navigate to the compartment where you want to deploy the infrastructure.
+
+    - **Copy** the OCID of the compartment.
+
+        ![](./images/setup-tf-compartment-ocid.png)
+
+## **STEP 4:** Create a `terraform.tfvars` Config File
 
 To run the deployment, you need to define a few settings in a file named `terraform.tfvars`.
 
@@ -86,7 +111,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
     Make sure you enter valid values for the credentials required.
 
-    ```hcl
+    ```bash
     <copy>
     ## Copyright © 2021, Oracle and/or its affiliates. 
     ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
@@ -126,23 +151,29 @@ To run the deployment, you need to define a few settings in a file named `terraf
     fss_subnet_id = null
     # If the cluster and VCN are not provided by this template,
     fss_source_cidr = "0.0.0.0/0"
-
+    # File Storage mount target Availability Domain index
+    ad_number = 2
 
     ## Credentials
-    # Container registry login credentials
+    # Input your Container registry login credentials
     container_registry_email    = ""
     container_registry_password = ""
 
-    # SOA Suite domain Admin Console credentials
+    # Create SOA Suite domain Admin Console credentials
     soa_domain_admin_username = ""
+    # Password must contain 1 Upper, 1 number and be at least 8 characters long
     soa_domain_admin_password = ""
 
-    # Database credentials
+    # Create Database credentials
+    # Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. 
+    # The special characters must be _, #, or -.
     db_sys_password = ""
 
-    # RCU Schema credentials
+    # Create RCU Schema credentials
     rcu_prefix = "SOA"
     rcu_username = "rcu"
+    # Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. 
+    # The special characters must be _, #, or -.
     rcu_password = ""
 
     # If connecting to an external DB, specify the jdbc_connection_url
@@ -189,38 +220,27 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
     # Optional parameter, requires a vault and key to be created in the account.
     secrets_encryption_key_ocid = null
-
     </copy>
     ```
 
-## **STEP 4**: Gather Required Information
+3. The default Availability Domain for the File System is set to AD-2 because it is often less used than AD-1.
+    If you are in a single AD region, this may fail.
 
-1. Get your `tenancy OCID`:
+    Change the Availability domain index by changing the default variable:
 
-    - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **Tenancy**.
+    ```hcl
+    ad_number = 2
+    ```
 
-        ![](./images/setup-tf-tenancy.png)
+    to:
 
-    - **Copy** the OCID of the tenancy and paste it in your environment file.
+    ```hcl
+    ad_number = 1
+    ```
 
-        ![](./images/setup-tf-tenancy-ocid.png)
+4. Valid credentials must be provided to access the Oracle Container Registry (your account email and password) to pull the images.
 
-2. Get your `compartment OCID`:
-
-    - In the Oracle Cloud Console, go to **Identity -> Compartments**.
-
-        ![](./images/setup-tf-compartment.png)
-
-    - Navigate to the compartment where you want to deploy the infrastructure.
-
-    - **Copy** the OCID of the compartment.
-
-        ![](./images/setup-tf-compartment-ocid.png)
-
-
-3. Valid credentials must be provided to access the Oracle Container Registry (your account email and password) to pull the images.
-
-4. Provide a username and password compliant with the password requirements for the WebLogic domain:
+5. Provide a username and password compliant with the password requirements for the WebLogic domain:
 
     The password must include 1 uppercase, 1 number and be at least 8 characters long.
 
@@ -229,7 +249,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
     soa_domain_admin_password = ""
     ```
 
-5. Provide credentials for the SYS user of the database, and the RCU Schema password.
+6. Provide credentials for the SYS user of the database, and the RCU Schema password.
 
     Both must container 16 to 30 characters including 1 uppercase, 1 number and 2 special character `-_#!%`.
 
@@ -238,11 +258,11 @@ To run the deployment, you need to define a few settings in a file named `terraf
     rcu_password = ""
     ```
 
-6. The `rcu_prefix` must be unique per domain (when deploying multiple domains).
+7. The `rcu_prefix` must be unique per domain (when deploying multiple domains).
 
-7. The domain name must be unique (when deploying multiple domains).
+8. The domain name must be unique (when deploying multiple domains).
 
-8. Set the `ssh_authorized_key` with your ssh public key.
+9. Set the `ssh_authorized_key` with your ssh public key.
 
     You can get the output of a previously created SSH key with:
 
@@ -250,7 +270,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
     cat ~/.ssh/id_rsa.pub
     ```
 
-9. Save the `terraform.tfvars` file.
+10. Save the `terraform.tfvars` file.
 
 ## **STEP 5:** Run the Deployment
 
@@ -347,13 +367,17 @@ To run the deployment, you need to define a few settings in a file named `terraf
     mysoa-soa-server2   1/1     Running   0          172m   10.1.0.6    10.0.10.16    <none>           <none>
     ```
 
-    Make sure the STATUS is `RUNNING` and that READY is `1/1` for pods above before checking the URL
+    Make sure the STATUS is `RUNNING` and that READY is `1/1` for pods above before checking the URL.
 
 3. With the public IP gathered earlier, browse to http://*PUBLIC_IP*:30305/console to get to the WebLogic console.
+
+    If you see the `Bad Gateway` message, the admin server is not running yet.
 
 4. You can log into the console with the `soa_domain_username` and `soa_domain_password` you specified in the `terraform,.tfvars` file.
 
 5. Check the `ess` endpoint by browsing to http://*PUBLIC_IP*:30305/ess .
+
+    The username and password is the same as for the console.
 
 You may proceed to the next lab.
 

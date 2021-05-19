@@ -66,7 +66,32 @@ You'll find the code on Github.com at [https://github.com/oracle-quickstart/oke-
     </copy>
     ```
 
-## **STEP 3:** Create a `terraform.tfvars` Config File
+## **STEP 3**: Gather Required Information
+
+1. Get your `tenancy OCID`:
+
+    - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **Tenancy**.
+
+        ![](./images/setup-tf-tenancy.png)
+
+    - **Copy** the OCID of the tenancy and paste it in your environment file.
+
+        ![](./images/setup-tf-tenancy-ocid.png)
+
+2. Get your `compartment OCID`:
+
+    - In the Oracle Cloud Console, go to **Identity -> Compartments**.
+
+        ![](./images/setup-tf-compartment.png)
+
+    - Navigate to the compartment where you want to deploy the infrastructure.
+
+    - **Copy** the OCID of the compartment.
+
+        ![](./images/setup-tf-compartment-ocid.png)
+
+
+## **STEP 4:** Create a `terraform.tfvars` Config File
 
 To run the deployment, you need to define a few settings in a file named `terraform.tfvars`.
 
@@ -127,20 +152,25 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
 
     ## Credentials
-    # Container registry login credentials
+    # Input Container registry login credentials
     container_registry_email    = ""
     container_registry_password = ""
 
-    # SOA Suite domain Admin Console credentials
+    # Create SOA Suite domain Admin Console credentials
     soa_domain_admin_username = ""
+    # Password must be at least 8 characters and contain at least 1 uppercase, 1 lowercase, and 1 numeric characters. 
     soa_domain_admin_password = ""
 
-    # Database credentials
+    # Create Database credentials
+    # Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. 
+    # The special characters must be _, #, or -.
     db_sys_password = ""
 
-    # RCU Schema credentials
+    # Create RCU Schema credentials
     rcu_prefix = "SOA"
     rcu_username = "rcu"
+    # Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. 
+    # The special characters must be _, #, or -.
     rcu_password = ""
 
     # If connecting to an external DB, specify the jdbc_connection_url
@@ -191,31 +221,6 @@ To run the deployment, you need to define a few settings in a file named `terraf
     </copy>
     ```
 
-## **STEP 4**: Gather Required Information
-
-1. Get your `tenancy OCID`:
-
-    - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **Tenancy**.
-
-        ![](./images/setup-tf-tenancy.png)
-
-    - **Copy** the OCID of the tenancy and paste it in your environment file.
-
-        ![](./images/setup-tf-tenancy-ocid.png)
-
-2. Get your `compartment OCID`:
-
-    - In the Oracle Cloud Console, go to **Identity -> Compartments**.
-
-        ![](./images/setup-tf-compartment.png)
-
-    - Navigate to the compartment where you want to deploy the infrastructure.
-
-    - **Copy** the OCID of the compartment.
-
-        ![](./images/setup-tf-compartment-ocid.png)
-
-
 3. Valid credentials must be provided to access the Oracle Container Registry (your account email and password) to pull the images.
 
 4. Provide a username and password compliant with the password requirements for the WebLogic domain:
@@ -229,7 +234,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
 5. Provide credentials for the SYS user of the database, and the RCU Schema password.
 
-    Both must container 16 to 30 characters including 1 uppercase, 1 number and 2 special character `-_#!%`.
+    Both must container 9 to 30 characters including 2 uppercase, 2 lowercase, 2 numbers and 2 special characters from `-_#`.
 
     ```hcl
     db_sys_password = ""
