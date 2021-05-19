@@ -78,27 +78,9 @@ As a result, launching your workshop guide from the remote desktop will further 
 
     ![](./images/livelabs-login-1.png " ")
 
-2. Provide your login credentials and click on *Sign In*
+2. Click on *Available Workshops*, type in the name of your workshop in the *search field*, and click on *Launch*. The example shown below searches for *Database Security Fundamentals*, please type in the correct name of your workshop to search.
 
-    ![](./images/livelabs-login-2.png " ")
-
-3. Click on *My Reservations*
-
-    ![](./images/livelabs-reservations-1.png " ")
-
-4. Click on *Launch Workshop*
-
-    ![](./images/livelabs-reservations-2.png " ")
-
-5. Click on *-* next to *Workshop Details* and *Let's Get Started* to collapse
-
-    ![](./images/livelabs-reservations-3.png " ")
-
-6. Click on *Open the workshop instructions in a new tab*
-
-    ![](./images/livelabs-reservations-4.png " ")
-
-    ![](./images/livelabs-reservations-5.png " ")
+    ![](./images/livelabs-search-workshop-1.png " ")
 
 ## **STEP 4:** Start Oracle IAM 11.1.2.3 Components
 
