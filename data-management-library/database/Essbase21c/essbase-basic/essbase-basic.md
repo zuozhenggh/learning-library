@@ -302,7 +302,9 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
     ![](./images/image14_56.png "")
     ![](./images/image14_57.png "")
 
-4. Outline Analysis: The Outline option is equivalent to the EAS console in Essbase on-premises. This is where you can add new dimensions or members under dimensions at any level, as required, and can make changes to existing cubes quickly using the ‘Edit’ option. Select the ‘Outline’ option for the ‘SpendHistory’ cube. [or any cube that is already LIVE on the Essbase 21c web interface ].
+4. Outline Analysis: The Outline option is equivalent to the EAS console in Essbase on-premises.
+
+  This is where you can add new dimensions or members under dimensions at any level, as required, and can make changes to existing cubes quickly using the ‘Edit’ option. Select the ‘Outline’ option for the ‘SpendHistory’ cube. [or any cube that is already LIVE on the Essbase 21c web interface ].
 
     ![](./images/image14_58.png "")
     ![](./images/image14_59.png "")
@@ -325,6 +327,18 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 8. You can also specify other options such as Data storage type and ‘Sort/Inspect’ of members in a dimension using the options in the web interface. 
 
     ![](./images/image14_63.png "")
+
+9. Under Inspect, Click on Display selected columns in the table. You can select the different member properties to display in the outline tab.
+   ![](./images/image1.png "")
+
+   ![](./images/image2.png "")
+
+10. Click on outline properties.
+   ![](./images/image3.png "")
+
+    Outline properties, in part, control the functionality available in an Essbase cube, they also control member naming and member formatting for attribute dimensions, alias tables and text measures.
+    ![](./images/image4.png "")
+
 
 ### Jobs:
 

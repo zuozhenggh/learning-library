@@ -23,10 +23,126 @@ This lab requires -
 * Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
-* Files: Sample\_Basic.xlsx, Data\_Basic.txt
+* Files: Sample\_Basic.xlsx, Data\_Basic.txt, Dim_Market.txt
+
+## **Step 1:** Dimension build using Rule file
+
+You can edit and map dimensions to an Essbase outline using a rule, rather than manually building empty dimensions in the Essbase Outline editor. In this section, we will build dimension from a flat file, using a rule.
+
+When you build using a rule, you define the hierarchical structure of dimensions and member metadata. You can create one or more dimensions using a single rule file, or use one rule file per dimension.
+
+You can build a dimension to add or modify dimensions, but you can’t use it to delete an existing dimension.
+
+1. Download the dimension metadata file, Dim_Market.txt, and open in a formatted text editor. 
+   
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
+
+   Notice that the file doesn't have a header row and that the file delimiter is a comma.
+
+2. Sign into the Essbase web interface.
+
+3. On the home page, expand the DynamicCorp application, and select the Sales cube.
+
+4. Now you create the rule file.
+
+    a. From the Actions menu to the right of the cube, click on Inspect.
+    ![](./images/Dim_1.png)	
+
+    b. Click Scripts, and then Rules. The Rules editor is displayed, showing the currently defined  rules.
+
+    c. Click Create and select Dimension Build (Indexed Based) to define the build dimension rule. 
+    An index-based build dimension rule removes dependency of fields to each other and allows the fields to appear in any order.
+    ![](./images/Dim_2.png)
 
 
-## **Step 1:** Data Load to Cube
+    d. In the New Rule dialog box, enter Dim_market1 as the name of the rule file.
+
+    e. Under Preview Data, select File for the flat file input option.
+
+    f. Click the browse icon and locate the file Dim_Market.txt that you downloaded and click Open to select it.
+    
+    g. As you saw earlier, the first row of the flat file doesn’t contain header values. Deselect the Header Row check box if it is selected.
+
+    h. Specify the Delimiter value as Comma, based on the file format.
+
+    i. Click Proceed.
+    ![](./images/Dim_3.png)
+
+    You can now preview the dimension structure in the Rules editor, with the columns displayed based on the input flat file.
+
+    The top-right toolbar in the Rules editor shows the Global options for a rule. You an change the properties or data source here and view the results. The left toolbar of the Rules editor shows the Field options for the rule.
+
+5. On the Rules editor page, you can now set up and edit the rule.
+
+   a. On the Preview page for the new rule, in the first field (column), click Dimension, and select Market as the dimension name. The Market dimension is now assigned to all fields.
+
+   b. Under Market, in the first field, it, click Type, and select the dimension type, Parent.
+The source file for this rule is in parent-child format. 
+
+   c. Set up the other fields:
+
+      * Set Field 2 Type to Child.  
+      * Set Field 3 Type to Property, and third row Parent/Child box to Child.
+      * For Field 4 and 5, set Type to UDA, and third row Parent/Child boxes to Child.
+      * For Field 6-9, set Type to Alias, third row Alias boxes to ChineseNames, JapaneseNames, RussianNames, and GermanNames respectively; and fourth row boxes to Child.
+      * Set Field 10 Type to Attribute Member, third row box to Population, and fourth row box to Child.
+        ![](./images/Dim_4.png)
+
+    d. Now check the field properties for a field. Select the last field column, Population.
+    
+       On the Field options toolbar, open the Properties tab and verify that the Case option is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
+      ![](./images/Dim_5.png)
+      ![](./images/Dim_6.png)
+
+
+  e. Click on Dimensions under the Global toolbar and select Market.
+
+  f. Go to Advanced and Check Allow Property Changes. Click OK.
+    ![](./images/Dim_7_0.png)
+
+  g. When you have finished defining the rule, click Verify in the Global toolbar, to validate the rule syntax.
+
+  h. Click Save and Close.
+    ![](./images/Dim_7.png)
+
+  i. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. 
+Click Close to return to the home page.	
+
+6. Next, you create and run a job to build the dimension using the rule.
+
+   a. On the home page, select, Jobs, and then New Job.
+
+   b. Select Build Dimension.
+   ![](./images/Dim_8.png)
+
+   c. In the Build Dimension dialog box, from the Application list, select the DynamicCorp application.
+
+   d. In the Database list, select the Sales cube. 
+
+   e. In the Script list, select the build dimension rule that you created, Dim_market1.rul.
+
+   f. For Load Type, select File.
+
+   g. In the Data File list, select the Dim_Market.txt as the data dimension data file. This file is located in the DynamicCorp,Sales folder.
+
+   h. From the Restructure Options list, select the Preserve Input Dataoption for the data you want to preserve.
+
+   For input data, only blocks that contain data being loaded are preserved. 
+   ![](./images/Dim_9.png)
+
+   i. Click OK. The build dimension job is executed.
+
+   j. On the Jobs page, click Refresh to monitor the job status.
+
+   k. When the job completes, click the Actions menu for the executed job, and select Job Details to verify the status of your build job.
+   ![](./images/Dim_10.png)
+   ![](./images/Dim_11.png)
+
+
+7.	On the Applications home page, to the right of the Sales cube in the DynamicCorp application, open Actions, and then Outline to verify the dimension hierarchy. 
+You have now completed building a dimension using a rule.
+
+## **Step 2:** Data Load to Cube
 
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
 
@@ -141,7 +257,7 @@ Create a rule file that is based on a sample file from the data warehouse.
     ![](./images/image15_61.png)
     You have now completed the data load using rule file.
 
-## **Step 2:** Calculating Essbase Cube
+## **Step 3:** Calculating Essbase Cube
 
 A cube contains two types of values: values that you enter called input data and values that are calculated from input data.
 
@@ -211,7 +327,7 @@ A cube can be calculated using one of two methods:
 
 To verify if the data is aggregated at all the dimension levels for Actual, you can go to Excel and build a retrieval sheet using Smart view.
 
-## **Step 3:** Migration Utilities
+## **Step 4:** Migration Utilities
 
 1. Download and configure CLI:  
 
@@ -293,7 +409,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
     ![](./images/image14_93.png)
 
-## **Step 4:** REST APIs
+## **Step 5:** REST APIs
 
 REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over HTTP.
 
