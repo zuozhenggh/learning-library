@@ -1,4 +1,4 @@
-# Create Groups, Compare Pairs, Jobs, and Run Jobs
+# Create Groups and Compare Pairs
 
 ## Introduction
 This lab describes how to groups and compare pairs. Groups are logical containers for one or more compare pairs. They help you to organize and partition large or diverse sets of data into more manageable units. Groups are linked to jobs when jobs are created. Any group can be linked to one or more jobs, allowing you complete control over how and when data is compared.
@@ -6,8 +6,6 @@ This lab describes how to groups and compare pairs. Groups are logical container
 A group is associated with a set of connections to the source and target data.
 
 A compare pair is the logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Because of this, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
-
-You must create and execute the job to run the comparisons. The job configuration determines which compare pair groups are processed.
 
 *Estimated Lab Time*: 15 minutes
 
@@ -84,30 +82,6 @@ To create compare pairs on the **Pattern Mapping** tab:
 4. Click **Generate Mappings**. The control moves to the **Preview** tab.
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
-
-## **STEP 4**: Create a Job for the Compare Pair Group
-  To create a job:
-1. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Job Configuration** page.
-    ![](./images/1a-select-job-configuration.png " ")
-2. Click **New** to display the **New Job Assistant** page.
-3. Enter a **Name** and **Description** for the new job, click **Next**.
-    ![](./images/12-new-job-create-job.png " ")
-4. Enter the **Group Name** that you want to link to this job and click **Apply Filter**.
-    ![](./images/13-create-job-select-group-apply-filter.png " ")
-5. Select the Group and click **Finish**.
-    ![](./images/14-create-job-select-group-click-Finish.png " ")
-A new job is created for the compare pair.
-
-## **STEP 5**: Execute the Job
-To execute a job:
-1. From the left navigation pane, click **Run/Execute Job** to display the **Run configuration** page.
-    [](./images/15a-run-job-run-configuration-page.png " ")
-2. Select the job you just created from the **Job** drop-down list and click **Run Job**.
-    ![](./images/15-run-job.png " ")
-3. From the left navigation pane, click **Running Jobs** to display the status of the jobs that are running.
-  ![](./images/16-running-jobs-status.png " ")
-4. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
-    ![](./images/17-completed-jobs-compare-pair-status-chart.png " ")
 
   Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
