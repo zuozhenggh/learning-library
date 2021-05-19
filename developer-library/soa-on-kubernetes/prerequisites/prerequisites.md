@@ -29,7 +29,7 @@ In this lab you will:
     Press **Enter** to use the defaults for all options.
 
 2. Restart your shell.
-    ```
+    ```bash
     <copy>
     exec -l $SHELL
     </copy>
@@ -37,7 +37,7 @@ In this lab you will:
 
 3. Configure the OCI CLI.
 
-    ```
+    ```bash
     <copy>
     oci setup config
     </copy>
@@ -69,7 +69,7 @@ In this lab you will:
 
     Get the key content with:
 
-    ```
+    ```bash
     <copy>
     cat ~/.oci/oci_api_key_public.pem
     </copy>
@@ -90,7 +90,7 @@ In this lab you will:
 
 6. Test your CLI:
 
-    ```
+    ```bash
     <copy>
     oci os ns get
     </copy>
@@ -98,7 +98,7 @@ In this lab you will:
 
     This command should output the namespace of your tenancy (usually the name of the tenancy or a randomized string).
 
-    ```
+    ```json
     {
         "data": "your-tenancy-namespace"
     }
@@ -115,7 +115,7 @@ In this lab you will:
     ```bash
     <copy>
     PLATFORM=$(uname)
-    curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/${PLATFORM}/amd64/kubectl"
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/${PLATFORM,,}/amd64/kubectl"
     chmod +x ./kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
     </copy>
@@ -158,7 +158,7 @@ In this lab you will:
     
 ## **STEP 4:** Install Terraform
 
-If you are on a Linux based machine or Mac OS X, we recommend using tfswitch [https://tfswitch.warrensbox.com/Install/](https://tfswitch.warrensbox.com/Install/) to install Terraform, as it allows easy switching between Terraform version.
+If you are on a Linux based machine or Mac OS X, we recommend using tfswitch [https://tfswitch.warrensbox.com/Install/](https://tfswitch.warrensbox.com/Install/) to install Terraform, as it allows easy switching between Terraform versions.
 
 Otherwise, if you need guidance to setup Terraform, please visit [https://learn.hashicorp.com/tutorials/terraform/install-cli](https://learn.hashicorp.com/tutorials/terraform/install-cli) and select the path corresponding to your environment.
 
