@@ -37,7 +37,7 @@ The steps are shown here for reference, as you already undeployed the domain on 
 1. Remove the domain manifest using:
 
     ```bash
-    helm upgrade mysoa -n soans \
+    helm upgrade mysoa oracle/soa-suite -n soans \
         --reuse-values \
         --set domain.enabled=false \
         --wait
