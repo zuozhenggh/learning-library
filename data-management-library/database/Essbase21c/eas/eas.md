@@ -64,19 +64,25 @@ To manage an application using EAS Lite:
 2.	Click Launch. If the EAS Lite console doesn't launch, you may need to configure your browser with a Java Web Start (javaws) plugin that can launch .jnlp files.
    ![](./images/EAS_4.png)
 
-3.	Log in with the username and password of your essbase instance.
+   Open the downloaded file: easconsole.jnlp. 
+   
+3. Once the below prompt is displayed, click on Run.
+   ![](./images/eas_run_prompt.png)
+   
+
+4.	Log in with the username and password of your essbase instance.
    ![](./images/EAS_5.png)
 
-4.	Go to Enerprise View-> Essbase Servers-> http: ip:9000/essbase/agent -> Applications -> EAS_Demo
+5.	Go to Enerprise View-> Essbase Servers-> http: ip:9000/essbase/agent -> Applications -> EAS_Demo
    ![](./images/EAS_6.png)
 
-5.	Expand Application “EAS_Demo”. Double click on Sales.
+6.	Expand Application “EAS_Demo”. Double click on Sales.
 
-6.	Right click on outline and go to Edit.
+7.	Right click on outline and go to Edit.
    ![](./images/EAS_7.png)
 
 
-7.	You can perform all the administrative tasks in the outline like the Essbase 11g version such as creation of a cube, dimension build, data loading, creation of calculation scripts, rule file and so on. 
+8.	You can perform all the administrative tasks in the outline like the Essbase 11g version such as creation of a cube, dimension build, data loading, creation of calculation scripts, rule file and so on. 
    ![](./images/EAS_8.png)
 
    **NOTE**: If you want to switch back and make the application web interface managed go to Step 1: Point 6 and uncheck the option Managed by Essbase Administration Services. You cannot manage the application by EAS again, once you uncheck this option.
