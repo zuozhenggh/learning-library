@@ -29,13 +29,31 @@ In this lab you will:
     Press **Enter** to use the defaults for all options.
 
 2. Restart your shell.
+
     ```bash
     <copy>
     exec -l $SHELL
     </copy>
     ```
 
-3. Configure the OCI CLI.
+3. Gather required information
+
+    `tenancy OCID`:
+
+    - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **Tenancy**.
+
+        ![](./images/setup-tf-tenancy.png)
+
+    - **Copy** the OCID of the tenancy and paste it in your environment file.
+
+        ![](./images/setup-tf-tenancy-ocid.png)
+
+    `User OCID`:
+
+    - In the Oracle Cloud Console, go to **User -> User Settings**.
+    - **Copy** the OCID of your user.
+
+4. Configure the OCI CLI.
 
     ```bash
     <copy>
@@ -53,7 +71,6 @@ In this lab you will:
     - name for the key: press **Enter** for the default.
     - Passphrase: press **Enter** for no passphrase.
 
-
     You should see an output like:
 
     ```bash
@@ -62,8 +79,7 @@ In this lab you will:
     Config written to ~/.oci/config
     ```
 
-
-4. Upload the public key to your OCI account
+5. Upload the public key to your OCI account
 
     In order to use the CLI, you need to upload the public key generated to your user account.
 
@@ -77,7 +93,7 @@ In this lab you will:
 
     Or open the file with your prefered editor and copy the full printed output to clipboard.
 
-5. In the OCI web console:
+6. In the OCI web console:
 
     - Under **User -> User Settings**.
     - Click **API Keys**.
@@ -88,7 +104,7 @@ In this lab you will:
 
     You can verify that the Fingerprint generated matches the fingerprint output of the config.
 
-6. Test your CLI:
+7. Test your CLI:
 
     ```bash
     <copy>
@@ -103,8 +119,6 @@ In this lab you will:
         "data": "your-tenancy-namespace"
     }
     ```
-
-7. Make a note of this name for later.
 
 ## **STEP 2:** Install `kubectl`
 
@@ -155,16 +169,25 @@ In this lab you will:
     For more detailed instructions for your specific OS, go to:
     [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/).
 
-    
 ## **STEP 4:** Install Terraform
 
 If you are on a Linux based machine or Mac OS X, we recommend using tfswitch [https://tfswitch.warrensbox.com/Install/](https://tfswitch.warrensbox.com/Install/) to install Terraform, as it allows easy switching between Terraform versions.
 
 Otherwise, if you need guidance to setup Terraform, please visit [https://learn.hashicorp.com/tutorials/terraform/install-cli](https://learn.hashicorp.com/tutorials/terraform/install-cli) and select the path corresponding to your environment.
 
-You may proceed to the next lab.
+1. If you installed tfswitch, select a version with:
+
+    ```bash
+    <copy>
+    tfswitch
+    </copy>
+    ```
+
+    This workshop was tested with Terraform v0.14.11
+
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, May 2021
+ - **Author** - Emmanuel Leroy, Senior Technical Product Manager
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

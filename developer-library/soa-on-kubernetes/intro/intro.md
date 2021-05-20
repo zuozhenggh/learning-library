@@ -4,8 +4,6 @@
 
 This lab will walk you through the process of deploying Oracle SOA Suite on Kubernetes. The lab uses Oracle Kubernetes Engine (OKE) to first deploy the required infrastructure on Oracle Cloud Infrastructure (OCI), and then provision Oracle SOA Suite on the Kubernetes cluster in an automated fashion.
 
-We'll also go over the steps to deploy on any Kubernetes cluster (on premises or on other cloud providers), assuming the required infrastructure has been provisioned.
-
 Attached below is a sample architecture of the solution:
 ![](https://docs.oracle.com/en/solutions/soa-kubernetes-deploy-arch/img/soa-oke.png)
 
@@ -31,6 +29,13 @@ In this lab, you will:
 * An SSH key-pair.
 * An OCI account with a compartment set up.
 
+Make sure you have available resources and quota for:
+
+- 1 file storage systems.
+- 1 mount target.
+- 1 Oracle database on VM.
+- 1 Kubernetes cluster and node pool with 3 nodes.
+
 If you are not an administrator on your tenancy, you must insure that the following policies have been set for you:
 
 ```
@@ -50,9 +55,9 @@ Allow group MyGroup to manage all-resources in compartment MyCompartment
 </copy>
 ```
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, May 2021
+ - **Author** - Emmanuel Leroy, Senior Technical Product Manager
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021
