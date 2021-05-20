@@ -6,7 +6,7 @@
 
 ## Objectives
 
-Estimated Lab Time: xx minutes.
+Estimated Lab Time: 15 minutes.
 
 ## STEP 1: Create Virtual Cloud Network (VCN)
 
@@ -194,7 +194,7 @@ Estimated Lab Time: xx minutes.
     <copy>ssh -i ~/.ssh/bastion opc@PUBLIC_IP</copy>
     ```
 
-    This time you should be inside of the bastion host. This is the machine we will use to access MySQL Database System that lives in a private subnet.
+    This time you should be inside of the bastion host. This is the machine we will use to access MySQL Database Service that lives in a private subnet.
 
 18. **Update** your Linux (it might take few minutes):
 

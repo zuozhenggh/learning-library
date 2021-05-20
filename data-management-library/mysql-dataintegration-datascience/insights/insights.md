@@ -8,7 +8,7 @@
 
 ## Objectives
 
-Estimated Lab Time: xx minutes.
+Estimated Lab Time: 15 minutes.
 
 ## STEP 1: Create Policies
 
@@ -173,7 +173,7 @@ Make sure you are in the `root` compartment.
 
 5. **Double click** on **FishSurvey.ipynb**.
 
-6. Make sure you **modify** `PRIVATE_IP` on the following code in the **Notebook** with the P**rivate IP from your MySQL Database System**.
+6. Make sure you **modify** `PRIVATE_IP` on the following code in the **Notebook** with the P**rivate IP from your MySQL Database Service**.
 
 ```
 <copy>cnx = mysql.connector.connect(

@@ -8,13 +8,13 @@
 
 ---
 
-Lab 2: Create MySQL Database System - Enable HeatWave
+Lab 2: Create MySQL Database Service - Enable HeatWave
 
 Error: `attribute = {heatWaveCluster.shapeFamily}, value = {MySQL.HeatWave.VM.Standard.E3} - for this cluster shape the MySQL instance shape must be the same`
 
 ![](images/heatwave_error_shape.png)
 
-> Note: You need to use HeatWave Shape when you created MySQL Database System.
+> Note: You need to use HeatWave Shape when you created MySQL Database Service.
 >
 > Terminate your current MySQL Instance and create a new one with HeatWave valid shape, for example: `MySQL.HeatWave.VM.Standard.E3`.
 >

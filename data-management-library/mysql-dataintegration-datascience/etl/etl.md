@@ -12,7 +12,7 @@ Data engineers and ETL developers can then analyze or gather insights and use th
 
 ## Objectives
 
-Estimated Lab Time: xx minutes.
+Estimated Lab Time: 30 minutes.
 
 ## STEP 1: Create the Data Flow
 

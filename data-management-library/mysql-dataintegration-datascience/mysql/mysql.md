@@ -1,14 +1,14 @@
-# Create MySQL Database System
+# Create MySQL Database Service
 
-![MySQL Database System](images/mds_banner.png)
+![MySQL Database Service](images/mds_banner.png)
 
 ## Introduction
 
-**MySQL Database System** is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
+**MySQL Database Service** is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
 
 ## Objectives
 
-Estimated Lab Time: xx minutes.
+Estimated Lab Time: 30 minutes.
 
 ## STEP 1: Create an instance of MySQL in the cloud
 
@@ -72,7 +72,10 @@ Estimated Lab Time: xx minutes.
    ![](images/cloud_shell.png)
 
    - SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
-   - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): `curl https://raw.githubusercontent.com/vmleon/mysql-dataintegrator-datascience-workshop/main/mysql/files/create_fish_survey.sql | mysqlsh --sql root@10.0.1.112`
+   - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
+      ```
+      <copy>curl https://raw.githubusercontent.com/vmleon/mysql-dataintegrator-datascience-workshop/main/mysql/files/create_fish_survey.sql | mysqlsh --sql root@PRIVATE_IP</copy>
+      ```
 
    It will ask for the **password** (`Please provide the password for 'root@PRIVATE_IP':`).
 

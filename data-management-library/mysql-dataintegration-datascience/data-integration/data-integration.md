@@ -10,7 +10,7 @@ This Lab walks you through the steps to get started using **Data Integration** o
 
 ## Objectives
 
-Estimated Lab Time: xx minutes.
+Estimated Lab Time: 30 minutes.
 
 ## STEP 1: Create Your OCI Data Integration Instance
 
