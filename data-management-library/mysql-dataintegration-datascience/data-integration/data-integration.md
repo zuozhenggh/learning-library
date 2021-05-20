@@ -10,6 +10,11 @@ This Lab walks you through the steps to get started using **Data Integration** o
 
 ## Objectives
 
+In this lab, you will:
+
+- Create Your OCI Data Integration Instance.
+- Create the Data Assets.
+
 Estimated Lab Time: 30 minutes.
 
 ## STEP 1: Create Your OCI Data Integration Instance

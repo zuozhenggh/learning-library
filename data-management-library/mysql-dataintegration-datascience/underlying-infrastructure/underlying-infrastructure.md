@@ -6,6 +6,12 @@
 
 ## Objectives
 
+In this lab, you will:
+
+- Create Virtual Cloud Network.
+- Create Bastion Host.
+- Create Object Storage and upload files.
+
 Estimated Lab Time: 15 minutes.
 
 ## STEP 1: Create Virtual Cloud Network (VCN)

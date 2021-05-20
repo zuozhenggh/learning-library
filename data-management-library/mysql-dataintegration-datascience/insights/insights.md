@@ -8,6 +8,14 @@
 
 ## Objectives
 
+In this lab, you will:
+
+- Create Policies.
+- Create Policies for Data Science.
+- Create a Data Science Project.
+- Install libraries.
+- Create Jupyter Notebook environment.
+
 Estimated Lab Time: 15 minutes.
 
 ## STEP 1: Create Policies

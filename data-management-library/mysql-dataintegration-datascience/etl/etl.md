@@ -12,6 +12,13 @@ Data engineers and ETL developers can then analyze or gather insights and use th
 
 ## Objectives
 
+In this lab, you will:
+
+- Create the Data Flow.
+- Create the Integration Task.
+- Publish the Integration Task.
+- Run the Task.
+
 Estimated Lab Time: 30 minutes.
 
 ## STEP 1: Create the Data Flow

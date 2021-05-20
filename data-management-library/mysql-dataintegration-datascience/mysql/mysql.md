@@ -8,6 +8,12 @@
 
 ## Objectives
 
+In this lab, you will:
+
+- Create an instance of MySQL in Oracle Cloud.
+- Connect and create the Database.
+- Enable HeatWave Analytics Engine.
+
 Estimated Lab Time: 30 minutes.
 
 ## STEP 1: Create an instance of MySQL in the cloud
