@@ -87,17 +87,17 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
     The properties box provides format and configuration settings.  Settings can be modified as needed.  We are going to join our subject area – SampleApp to our inventory spreadsheet by identifying the key field.
 
     - Within the properties box, navigate to “match” and Click on the "None".
-    ![](./images/asdvff13.png " ")
+    ![](./images/asdvff62.1.png " ")
 
     You will see the SampleApp data source, and it’s data elements. 
 
     -	Select "Products -> Product" from the subject area.
-    ![](./images/asdvff14.png " ")
+    ![](./images/asdvff62.2.png " ")
 
     - **Click** "Add."
     - **Navigate** to the "Visualize" tab, where you can start playing with the data.
 
-    ![](./images/asdvff15.png " ")
+    ![](./images/asdvff62.3.png " ")
 
     Note:  You may also join data sources via the data diagrams tab within the prepare tab of the project. 
     
@@ -223,7 +223,7 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
    Select "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labelled "Click here or drag data to add filter." Filter to "United States" by typing "uni" and select "United States".
 
-   ![](./images/asdvff40.png " ")
+   ![](./images/asdvff62.7.png " ")
 
 6. Select "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas."  Notice that not all states are making a profit. 
    ![](./images/asdvff62.8.png " ")
@@ -249,7 +249,7 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
       - **Select** the red to green gradient second from the bottom right.
       - **Click** "Done".
 
-   ![](./images/asdvff47.png " ")
+   ![](./images/asdvff62.12.png " ")
 
 11. You have successfully completed custom calculations and mapping. Select "Save" to save and update your project.
 

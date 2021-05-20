@@ -80,44 +80,18 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
    Drag and drop, or browse and select the *“Inventory.xlsx”* file from the staging area where you unpacked the downloaded artifacts in *Lab: Initialize Environment*
    ![](./images/asdvff12.png " ")
 
-11. Oracle Analytics Server includes its own light weight data preparation capabilities. When you import the spreadsheet, you will navigate to the preparation tab before adding the data to the project.  Here you can make some modifications to the data elements or make modifications to your data based upon any recommendations Oracle Analytics knowledge service suggests.  Additionally, you can define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis. 
+11. Oracle Analytics Server includes its own light weight data preparation capabilities. When you add your data source it will take you to the Preparation tab before adding the data to the project. Let’s define the relationship between the subject area data source and the spreadsheet. Note here that if the attributes were named exactly the same they would be matched automatically.
 
-    - **Click** on the "Product Name” column.  Note the properties box in the lower left hand corner.
+    - **Click** on "Product Name."  Note the properties box in the lower left hand corner.
+    - **Click** on the "None" link associated with "Match" and select "Products -> Product" from the subject area.
 
-    The properties box provides format and configuration settings.  Settings can be modified as needed.  We are going to join our subject area – SampleApp to our inventory spreadsheet by identifying the key field.
-
-    - Within the properties box, navigate to “match” and Click on the "None".
-    ![](./images/asdvff13.png " ")
-
-    You will see the SampleApp data source, and it’s data elements. 
-
-    -	Select "Products -> Product" from the subject area.
-    ![](./images/asdvff14.png " ")
+   ![](./images/asdvff13.png " ")
+   ![](./images/asdvff14.png " ")
 
     - **Click** "Add."
     - **Navigate** to the "Visualize" tab, where you can start playing with the data.
 
-    ![](./images/asdvff15.png " ")
-
-    Note:  You may also join data sources via the data diagrams tab within the prepare tab of the project. 
-    
-    Once you’ve added the inventory spreadsheet, notice the additional tab “data diagrams” in the bottom left of the work area. 
-
-    ![](./images/asdvff62.4.png " ")
-
-    Click “Data Diagram”.  You will see a graphical representation of the connection. 
-    
-    ![](./images/asdvff62.5.png " ")
-
-    As you become more familiar with the features of Oracle Analytics, you will find there are often multiple ways to execute functions.  
-    
-    Click on the link in between SampleApp and Inventory. 
-    
-    You may set the connection in a similar fashion by clicking on “add another match” .
-
-    ![](./images/asdvff62.6.png " ")
-
-
+   ![](./images/asdvff15.png " ")
 
 12. Explore the data elements panel on the left. Note the Inventory spread sheet is listed under SampleApp. Now, in order to do a mashup of the data sets, **hold control** and **select** "Product -> Product" from the subject area and "Stock" and "Demand" from the spreadsheet source.
 
@@ -211,7 +185,8 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
    Now we will create a new metric called "Profit by Customer Count".
    ![](./images/asdvff36.png " ")
 
-3. We are going to utilize the expression builder to create the calculation.  Notice there are a wide range of functions available for creating custom calculations.
+3. Utilize the expression builder to create the calculation.
+   ![](./images/asdvff37.png " ")
 
 4. **Select** "Profit Value" from "Profit Metrics" and **drag** and **drop** into the calculation dialog. Type "/" after the "Profit Value" then drag and drop "# of Customers" from
 "Revenue Metrics" after "/." Click Validate. Click Save.
@@ -219,30 +194,36 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
    You have successfully created your own custom calculation that can be used like any other metric.
    ![](./images/asdvff38.png " ")
 
-5. Let’s utilize our custom calculation in a couple of visualizations.
+5. There are a wide range of functions available for creating custom calculations.
+   ![](./images/asdvff39.png " ")
 
-   Select "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labelled "Click here or drag data to add filter." Filter to "United States" by typing "uni" and select "United States".
-
+6. **Select** "Country Name" from "Geography" and drag and drop to the top left of the canvas, right above the canvas,  where it is labelled "Click here or drag data to add filter." Filter to "United States" by typing "uni" and select "United States".
    ![](./images/asdvff40.png " ")
 
-6. Select "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas."  Notice that not all states are making a profit. 
-   ![](./images/asdvff62.8.png " ")
+7. **Select** "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas." You will notice that not all states are making a profit.
 
    Let’s see what this looks like on a map.
+   ![](./images/asdvff41.png " ")
 
-7. On the upper right corner of the visual, click the menu hamburger and select "Edit" and then "Duplicate Visualization".
+8. Switch the visualization to horizontal bar graph if needed.
 
-   ![](./images/asdvff62.9.png " ")
+   On the upper right corner of the visual, **click** the menu hamburger and **select** "Edit" and then "Duplicate Visualization".
+   ![](./images/asdvff42.png " ")
 
-8. Change the visualization type for the visualizations by selecting the "change visualization" menu in the upper left-hand corner of the grammar panel.
+   ![](./images/asdvff43.png " ")
 
-   Select map. 
-   ![](./images/asdvff62.10.png " ")
+9. Delete duplicated visualization by right **clicking** visualization and **selecting** "Delete Visualization".
 
-9. Let’s change the default color scheme to a red to green gradient. From Color, click on the down arrow > Manage Assignments
-   ![](./images/asdvff62.11.png " ")
+   Change the visualization type for the visualizations by selecting the "change visualization" menu in the upper left-hand corner of the grammar panel.
 
-10. Scroll to Series, and locate the calculation you created : Profit by Customer Count measure
+   **Select** map.
+   ![](./images/asdvff44.png " ")
+   ![](./images/asdvff45.png " ")
+
+10. Let’s change the default color scheme to a red to green gradient. From Color Assignment, **click** on the down arrow  > Manage Assignments
+   ![](./images/asdvff46.png " ")
+
+11. Scroll to Series, and locate the calculation you created : Profit by Customer Count measure
 
       - **Click** the edit option (the pen) for Profit by Customer Count.
       - **Click** the Down arrow next to the color bar
@@ -250,10 +231,6 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
       - **Click** "Done".
 
    ![](./images/asdvff47.png " ")
-
-11. You have successfully completed custom calculations and mapping. Select "Save" to save and update your project.
-
-   ![](./images/asdvff62.13.png " ")
 
 12. Within the properties box, select the visualization options. Change the "Zoom Control" to "On".
    ![](./images/asdvff48.png " ")
