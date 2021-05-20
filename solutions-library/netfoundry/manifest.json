@@ -3,9 +3,19 @@
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
-            "title": "Lab 1: Zero Trust Networking",
-            "description": "Learn how to use NetFoundry to set up a Zero Trust Network in OCI Cloud",
-            "filename": "./zero-trust-networking/zero-trust-networking.md"
+            "title": "Introduction",
+            "description": "Introducing NetFoundry Zero Trust Networking",
+            "filename": "./intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "",
+            "filename": "./getting-started/getting-started.md"
+        },
+        {
+            "title": "Lab 1: Setup Zero Trust network connectivity from client to an application server",
+            "description": "Learn how to set up a Zero Trust Network in OCI Cloud",
+            "filename": "./lab1/lab1.md"
         },
         {
             "title": "Need Help?",
