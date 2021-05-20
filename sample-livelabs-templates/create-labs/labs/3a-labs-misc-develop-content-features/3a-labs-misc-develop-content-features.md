@@ -1,15 +1,32 @@
-# Miscellaneous Markdown Development Features [Work in Progress]
+# Common Markdown Development Features 
 
 ## Introduction
 
-***WORK IN PROGRESS***
+We'll go over how to implement certain common markdown features and tips in this optional lab.
 
-We'll go over how to implement certain markdown features and tips.
+Here up some resources front and center in case you missed them in the last lab:
+
+- [LiveLabs Lab Markdown Template (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template)
+
+- [Quick Tour of Markdown Syntax (Confluence)](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax)
+
+- [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
+
+- [LiveLabs Markdown Template New Features (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New)
+
+- [LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
+
+- [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
 
 ### Objectives
 
-* 
-
+ * Linking to Absolute Path Images (on github)
+ * Using Conditional Formatting
+ * [Linking within a Workshop (Hotlinks)](#STEP3:LinkingwithinaWorkshop(Hotlinks))
+ * Adding Videos
+ * Scaling an Image
+ * Using the LintChecker
+ * Case Sensitivity **<- This is IMPORANT! Read this!**
 
 ### What Do You Need?
 * An IDE, such as Atom or Visual Studio Code.
@@ -38,7 +55,7 @@ If your workshop supports multiple instance types, but the bulk of the content s
 
   1. Conditional formatting is using the "if" conditional to choose what to display in your markdown, based on an additional attribute "type" you attach to a lab element in your manifest.json file. Take a look at this example to understand the components involved in making conditional formatting work. 
 
-  ![](./images/conditional-vsc.png " ")
+  ![](./images/conditional-vsc1.png " ")
 
   On line 71, you can see the conditional is **if type="freetier"** and the closing **/if** on line 92. That means line 71-92 is only rendered if the type is freetier, and lines 93-98 is only rendered if the type is livelabs. 
 
@@ -80,15 +97,86 @@ Adding videos is very similar to adding images. We most commonly see videos adde
   ![](./images/youtube-url.png " ")
 
 ## **STEP 5:** Scaling an Image
+Without using image scaling, all the screen shots you take for your workshop will be of different sizes (unless you're a master of making pixel perfect crops). To remedy this, we HIGHLY recommend you to stick with a scaling and use it throughout your workshop. This will make all the images scale to the same width (if possible) and contribute to a more consistent and polished feel. You can override the default image scaling by applying these manual controls below. **We highly recommend you use #4's format by default.**
+
+1. This is a demo image with no image sizing applied:
+  
+    ```
+    ![](images/livelabs-homepage.png)
+    ```
+
+  ![](images/livelabs-homepage.png)
+
+2. Use this format to scale the image size in relation to the amount of lab page space available. This example uses 50% of the page width and auto height: 
+  
+    ```
+    ![](images/livelabs-homepage.png =50%x*)
+    ```
+
+  ![](images/livelabs-homepage.png =50%x*)
+
+3. Use this format for an absolute width and auto-scaled height. This example uses 500 pixels for width: 
+  
+    ```
+    ![](images/livelabs-homepage.png =500x*)
+    ```
+
+  ![](./images/livelabs-homepage.png =500x*)
+
+4. Lastly, **this is the format we recommend for all your images** if you don't need a particular scaling to drive emphasis on a subject. It auto-scaled to around ~3/4ths of the page width and it's definition is maintained by the LiveLabs team so we can adjust the scaling platform wide if needed: 
+  
+    ```
+    ![](images/livelabs-homepage.png " ")
+    ```
+
+  ![](./images/livelabs-homepage.png " ")
+
+5. As a final note, it's in your best interest to take as large of a picture as you can and then scale it down using with the parameters above. LiveLabs allows the magnification of images so if you have larger base image, the audience will have more clarity.
 
 
 ## **STEP 6:** Using the LintChecker
+The LintChecker is a great javascript function for QAing that you should take advantage of. It is especially handy in catching some of the more easily overlooked errors such as indentation and syntax errors.
 
+1. To enable the LintChecker, just tack on **?qa=true** to the url. You can do this from the github.io webpage or through LiveServer in your chosen IDE.
+
+  ![](./images/lintchecker.png " ")
+
+  A box will pop up with any errors that the LintChecker caught. Keep in mind that these are not an exhaustive list of errors, they are only the ones that the function has been programed to catch.  Also keep in mind that even though it lists something as an "error", if it was done intentionally by you, you can by all means just ignore it.
+
+
+## **STEP 7:** Case Sensitivity
+
+**THIS IS IMPORTANT.** The majority of us use Windows and MacOS which are **Case Insensitive** systems. This means that Windows and MacOS considers "OrAcLe.PnG" to be the same as "oracle.png" or "Oracle.PNG" for file structure. Github and github pages are **Case Sensitive**, and **do** make that distinction. 
+
+1. This means that, for example, if you had an image file that you tested locally (on LiveServer for your IDE on your local Windows or MacOS machine) for a markdown called "case-sensitive.png", it would display just fine if you used "case-sensitive.png" or "case-sensitive.PNG" as the image link.  But if you viewed it up on github pages at [this link](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/?lab=3a-labs-misc-develop-content-features), only the "case-sensitive.png" image link would be displayed since it matches the image file name perfectly (case sensitive) and it could not find the image link for "case-sensitive.PNG" and so it cannot display it.
+
+  ![](./images/case-sensitive.png " ")
+
+  ![](./images/case-sensitive.PNG " ")
+
+  Do you see one or two images above? 
+  
+  If you are viewing this page via LiveServer from your IDE (on a case insensitive operating system), you should see **two** images.
+
+  If you are viewing this page on github.io, you should only see **one** image.
+
+2. If you do run into a Case Sensitivity error on Windows or MacOS, you cannot simply fix it by renaming it DIRECTLY with the correct case... because the system will not recognize that you are trying to rename it. You have to either rename that item to something else entirely, and the rename it back with the correct case... or you can use **"git mv"** as described [in this article](https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory) for more complicated fixes that involve entire directories.
 
 You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 
+- [LiveLabs Lab Markdown Template (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template)
+
+- [Quick Tour of Markdown Syntax (Confluence)](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax)
+
+- [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
+
+- [LiveLabs Markdown Template New Features (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New)
+
+- [LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
+
+- [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
 
 ## Acknowledgements
 
