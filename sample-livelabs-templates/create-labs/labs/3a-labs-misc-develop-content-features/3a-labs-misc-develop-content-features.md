@@ -18,6 +18,8 @@ Here up some resources front and center in case you missed them in the last lab:
 
 - [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
 
+- [Porting Workshop to LiveLabs - Checklist](https://confluence.oraclecorp.com/confluence/display/LIVELABS/Porting+Workshop+to+LiveLabs+-+Checklist)
+
 ### Objectives
 
  * Linking to Absolute Path Images (on github)
@@ -26,7 +28,7 @@ Here up some resources front and center in case you missed them in the last lab:
  * Adding Videos
  * Scaling an Image
  * Using the LintChecker
- * Case Sensitivity **<- This is IMPORANT! Read this!**
+ * Case Sensitivity **<- This is IMPORTANT! Read this!**
 
 ### What Do You Need?
 * An IDE, such as Atom or Visual Studio Code.
