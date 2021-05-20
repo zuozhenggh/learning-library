@@ -1,4 +1,4 @@
-# Set up a Local (On-Premises) Environment Using Docker
+# Set up a local (on-premises) environment using Docker
 
 ## Introduction
 
@@ -22,11 +22,11 @@ In this lab you will:
 
 To run this lab, you will need:
 
-- Docker installed locally to run the 'on-prems' environment.
+- Docker installed locally to run the on-premises environment.
 
   Get Docker here: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
 
-  ***Note: You need at least 3 CPUs and 6Gb of memory assigned to Docker to run this template.***
+  > **Note: You need at least 3 CPUs and 6Gb of memory assigned to Docker to run this template.**
 
 - Docker-compose installed (on Linux it needs to be installed separately, but it is installed automatically on Mac OS and Windows).
 
@@ -41,7 +41,7 @@ To run this lab, you will need:
 
 ### **On Linux**
 
-*Make sure you followed the installation instructions to set up Docker as root and:*
+Make sure you followed the installation instructions to set up Docker as root and:
 
 1. If you don't have an `oracle` user, create it an add it to a `oracle` group with:
 
@@ -127,8 +127,7 @@ You can also download the code here: [https://objectstorage.us-ashburn-1.oraclec
 
 This repository makes use of Oracle docker images which are licensed and need to be pulled from DockerHub after acknowledging the terms of the license.
 
-1. Sign in to Docker Hub and go to the Weblogic image area at:</br>
-  <a href="https://hub.docker.com/_/oracle-weblogic-server-12c" target="_blank">https://hub.docker.com/_/oracle-weblogic-server-12c</a>.
+1. Sign in to Docker Hub and go to the Weblogic image area at: <a href="https://hub.docker.com/_/oracle-weblogic-server-12c" target="_blank">https://hub.docker.com/_/oracle-weblogic-server-12c</a>.
   
     - Click **Proceed to Checkout**.
     - Fill in your information.
@@ -136,16 +135,14 @@ This repository makes use of Oracle docker images which are licensed and need to
     - click **Get Content**.
 
 
-2. Go to the **Oracle Database** page and accept the license terms at:</br>
-  <a href="https://hub.docker.com/_/oracle-database-enterprise-edition" target="_blank">https://hub.docker.com/_/oracle-database-enterprise-edition</a>.
+2. Go to the **Oracle Database** page and accept the license terms at: <a href="https://hub.docker.com/_/oracle-database-enterprise-edition" target="_blank">https://hub.docker.com/_/oracle-database-enterprise-edition</a>.
 
     - Click **Proceed to Checkout**.
     - Fill in your information.
     - Accept the terms of license.
     - click **Get Content**.
 
-3. Go to the **Instant Client** page and accept the license terms for the SQL Plus client at:</br>
-  <a href="https://hub.docker.com/_/oracle-instant-client" target="_blank">https://hub.docker.com/_/oracle-instant-client</a>.
+3. Go to the **Instant Client** page and accept the license terms for the SQL Plus client at: <a href="https://hub.docker.com/_/oracle-instant-client" target="_blank">https://hub.docker.com/_/oracle-instant-client</a>.
 
     - Click **Proceed to Checkout**.
     - Fill in your information.
@@ -162,7 +159,7 @@ This repository makes use of Oracle docker images which are licensed and need to
 
 ## **STEP 3:** Start the Local Environment
 
-*Start up the local environment stack that will simulate our on-premises environment*.
+Start up the local environment stack that will simulate our on-premises environment.
 
 1. Make sure you are using the `oracle` user and run:
 
@@ -234,17 +231,17 @@ The weblogic container waits for the database to be ready, and the schemas to be
 
     Before proceeding, make sure the local environment has been deployed properly and is running. 
 
-    ![](./images/localhost-admin-console.png)
+    ![](./images/localhost-admin-console.png " ")
 
     The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/)
 
     It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
-    ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
+    ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png " ")
 
 ## **STEP 5:** Create an SSH key
 
-*We'll need an SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
+We'll need an SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.
 
 Since we'll be running all our commands from docker containers, a folder has been mounted on the `~/.ssh/` folder inside both containers, so that it is shared and also accessible from the outside.
 
@@ -273,11 +270,9 @@ We'll create an SSH key pair in this folder.
 
     Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you would need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`.
 
-    **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
+    > **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 
-    **Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
-
-You may proceed to the next lab.
+    > **Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
 
 ## Acknowledgements
 
