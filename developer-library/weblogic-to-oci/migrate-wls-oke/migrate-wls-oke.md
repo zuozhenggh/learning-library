@@ -36,7 +36,7 @@ In this lab, you will:
 To run this lab, you need to:
 
 - Have set up the demo on-premises environment to use as the source domain to migrate.
-- Have deployed a WebLogic on OCI domain using the marketplace.
+- Have deployed a WebLogic on OCI domain using the Oracle Cloud Marketplace.
 - Have migrated the application database from the source environment to OCI.
 
 ## **STEP 1:** Installing WebLogic Deploy Tooling
@@ -73,7 +73,6 @@ To run this lab, you need to:
 
 ### Using the demo workshop marketplace image
 
-
 You should already be in the on-premises environment logged in as the `oracle` user.
 
 1. Run the `install_wdt.sh` script:
@@ -90,7 +89,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
 
 ## **STEP 2:** Discover the On-Premises Domain
 
-The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate 3 files:
+The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate three files:
 
 - `source.yaml`: the model file.
 - `source.properties`: the variables file.
@@ -119,7 +118,7 @@ JDK version is 1.8.0_241-b07
 JAVA_HOME = /u01/jdk
 WLST_EXT_CLASSPATH = /home/oracle/wdt/weblogic-deploy/lib/weblogic-deploy-core.jar
 CLASSPATH = /home/oracle/wdt/weblogic-deploy/lib/weblogic-deploy-core.jar
-WLST_PROPERTIES = -Djava.util.logging.config.class=oracle.weblogic.deploy.logging.WLSDeployCustomizeLoggingConfig -Dcom.oracle.cie.script.throwException=true 
+WLST_PROPERTIES = -Djava.util.logging.config.class=oracle.weblogic.deploy.logging.WLSDeployCustomizeLoggingConfig -Dcom.oracle.cie.script.throwException=true
 /u01/oracle/oracle_common/common/bin/wlst.sh /home/oracle/wdt/weblogic-deploy/lib/python/discover.py -oracle_home /u01/oracle -domain_home /u01/oracle/user_projects/domains/base_domain -archive_file source.zip -model_file source.yaml -variable_file source.properties -domain_type JRF
 
 Initializing WebLogic Scripting Tool (WLST) ...
@@ -415,7 +414,7 @@ appDeployments:
   4. Finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
 
     The new JDBC connection string should be:
-    
+
     ```
     <copy>
     jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
@@ -514,7 +513,7 @@ appDeployments:
     export RHOST=<Private IP of the Admin node>
     </copy>
     ```
-    
+
 	> **Note:** this is NOT the private load balancer IP, this is the **Private IP of the admin node**, found in the **Outputs** of the deployment stack.
 
     ![](./images/admin-ip.png " ")
@@ -545,28 +544,31 @@ appDeployments:
 
 5. Select **Shared Filesystem** for each of the file locations, and type the full path to each file as below.
 
-   - Archive file
-     ```
-     <copy>
-     /u01/shared/source.zip
-     </copy>
-     ```
-     
-   - Model file
-     ```
-     <copy>
-     /u01/shared/source.yaml
-     </copy>
-     ```
-     
-  - Properties file
-     ```
-     <copy>
-     /u01/shared/source.properties
-     </copy>
-     ```
+    - Archive file
 
-   ![](./images/jenkins3.png " ")
+       ```
+       <copy>
+       /u01/shared/source.zip
+       </copy>
+       ```
+
+    - Model file
+
+       ```
+       <copy>
+       /u01/shared/source.yaml
+       </copy>
+       ```
+
+    - Properties file
+
+       ```
+       <copy>
+       /u01/shared/source.properties
+       </copy>
+       ```
+
+    ![](./images/jenkins3.png " ")
 
 6. Run the job with the **Build** button.
 
@@ -584,7 +586,7 @@ appDeployments:
 1. Go to the WebLogic Admin console (at `http://PRIVATE_LOAD_BALANCER_IP/console` under **Deployment** you should see the two applications listed.
 
    ![](./images/oci-deployments.png " ")
-    
+
 2. On the **Core Infrastructure** menu, click **Networking** then click **Load Balancers**.
 
 3. Find the IP of the Public Load Balancer.

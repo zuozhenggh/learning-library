@@ -4,7 +4,7 @@
 
 This lab will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
 
-At the end of this lab, you will have a local environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
+At the end of this lab, you will have a local environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing two applications and a datasource.
 
 Estimated Lab Time: 30 minutes.
 
@@ -26,7 +26,7 @@ To run this lab, you will need:
 
   Get Docker here: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
 
-  > **Note: You need at least 3 CPUs and 6Gb of memory assigned to Docker to run this template.**
+  > **Note: You need at least 3 CPUs and 6 GB of memory assigned to Docker to run this template.**
 
 - Docker-compose installed (on Linux it needs to be installed separately, but it is installed automatically on Mac OS and Windows).
 
@@ -73,7 +73,7 @@ Make sure you followed the installation instructions to set up Docker as root an
     ```bash
     <copy>
     cd ~/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip.
     </copy>
     ```
 
@@ -128,7 +128,7 @@ You can also download the code here: [https://objectstorage.us-ashburn-1.oraclec
 This repository makes use of Oracle docker images which are licensed and need to be pulled from DockerHub after acknowledging the terms of the license.
 
 1. Sign in to Docker Hub and go to the Weblogic image area at: <a href="https://hub.docker.com/_/oracle-weblogic-server-12c" target="_blank">https://hub.docker.com/_/oracle-weblogic-server-12c</a>.
-  
+
     - Click **Proceed to Checkout**.
     - Fill in your information.
     - Accept the terms of license.
@@ -171,9 +171,9 @@ Start up the local environment stack that will simulate our on-premises environm
     </copy>
     ```
 
-    This step can take several minutes because some images need to be built. 
+    This step can take several minutes because some images need to be built.
 
-2. On linux or Windows, Docker permission may cause issues so run:
+2. On Linux or Windows, Docker permission may cause issues so run:
 
     ```bash
     <copy>
@@ -229,11 +229,11 @@ The weblogic container waits for the database to be ready, and the schemas to be
     </copy>
     ```
 
-    Before proceeding, make sure the local environment has been deployed properly and is running. 
+    Before proceeding, make sure the local environment has been deployed properly and is running.
 
     ![](./images/localhost-admin-console.png " ")
 
-    The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/)
+    The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/).
 
     It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 

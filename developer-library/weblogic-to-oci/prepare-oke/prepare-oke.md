@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure from the marketplace.
+In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
 
 Estimated Lab Time: 5 minutes.
 
@@ -14,7 +14,7 @@ In this lab you will:
 - Create a Key.
 - Create a Secret to hold the WebLogic Admin password.
 - Create a Secret to hold the OCI Docker Image Registry Auth Token.
-- Copy the Secrets OCIDs to use during the provisioning stage.
+- Copy the Secret OCIDs to use during the provisioning stage.
 
 ### Prerequisites
 

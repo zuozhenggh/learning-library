@@ -25,11 +25,11 @@ In this lab you will tear down the infrastructure provisioned.
     </copy>
     ```
 
-    > **Note:** the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
+> **Note:** the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
 
-### If you used the workshop image from the marketplace
+### If you used the workshop image from the Oracle Cloud Marketplace
 
-*If you intend on accessing the environment deployed after destroying the demo environment, you must extract the SSH key pair that was created inside the demo VM, or you will lose SSH access to the OCI environment*
+*If you intend on accessing the environment deployed after destroying the demo environment, you must extract the SSH key pair that was created inside the demo VM, or you will lose SSH access to the OCI environment.*
 
 To destroy the demo VM:
 
@@ -79,7 +79,7 @@ To destroy the demo VM:
 
 11. Click **Terminate**.
 
-    > **Note:** You won't be able to proceed until the DB System itself has been terminated.
+> **Note:** You won't be able to proceed until the DB System itself has been terminated.
 
 ## **STEP 3:** Tear down the WebLogic environment
 

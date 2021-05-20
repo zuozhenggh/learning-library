@@ -51,14 +51,14 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
 
 6. Provide an **SSH key**.
 
-   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. 
-   
+   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer.
+
    Since the various commands will be ran from inside the on-premises environment (either the workshop compute instance or the local docker containers), you will need to provide the key generated in the on-premises environment.
 
    ![](./images/provision-8-sshkey.png " ")
 
 7. To output the public key information, use the following command from inside the on-premises environment as the `oracle` user.
-   
+
    ```
     <copy>
     cat ~/.ssh/id_rsa.pub
@@ -71,7 +71,7 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
     ```bash
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlkF23qLyfimJ9Vp4D9psp7bDOB8JvtY/pfYzFxIA2E4v6or+XhvMW5RDhX9Ba54zQNNDLvwUhStdXKkiMXJtEQJarFn45pGy/lyUQKFJolAdHBrXJsg5XWn4DxCFeQUQe1szVfmwDLAktAS14r5g76h3CcA8Kk/cNVqevxVChyejuuOdtAMoriIC8uKV+535qPs/GMiu0zR9aW4w1VodL5eHnXjqdgp8Fr21dVUVQ6of+s/ws0zlQUwghrNguDUqlggzG2mpLBHExypxCrJYmsb05uYjjqVlC3YCatj4nJTIHKLCFiYVY/b8AFkqwXV9EYlja5bjTmunM847dcR8H oracle@ad753161734c
     ```
-	
+
     > **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI)
 
 8. Keep the default of *2* for **Managed Server Count**.
@@ -202,22 +202,22 @@ Once the stack is provisioned, you can find the information regarding the URL an
     ```
 
    Using Putty:
-   1. Create a new Session to `opc@<BASTION_IP>` with port 22.
-   2. In **Host Keys**, locate the `id_rsa` private key obtained earlier.
-   3. On the **Connections** menu, click **SSH**, **Tunnels**, then click **Dynamic**.
-   4. Enter **Source Port: 1088** then **Add**.
-   5. Click **Open** to open the tunnel connection.
+    1. Create a new Session to `opc@<BASTION_IP>` with port 22.
+    2. In **Host Keys**, locate the `id_rsa` private key obtained earlier.
+    3. On the **Connections** menu, click **SSH**, **Tunnels**, then click **Dynamic**.
+    4. Enter **Source Port: 1088** then **Add**.
+    5. Click **Open** to open the tunnel connection.
 
 3. Set up Socksv5 Proxy in Firefox.
 
    In Firefox browser, go to **Preferences**.
- 
+
    1. Search for **Proxy**.
- 
+
       ![](./images/firefox-proxy1.png " ")
- 
+
    2. Click **Settings**.
-   
+
    3. Click **Manual Proxy** setup.
 
    4. Enter **localhost** and port **1088**.

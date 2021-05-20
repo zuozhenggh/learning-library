@@ -25,7 +25,7 @@ For this lab you need:
 
 ## **STEP 1:** Launch the Workshop Marketplace Stack
 
-- Navigate to [Workshop Environment Marketplace Stack](https://cloudmarketplace.oracle.com/marketplace/listing/82173888).
+1. Navigate to [Workshop Environment Marketplace Stack](https://cloudmarketplace.oracle.com/marketplace/listing/82173888).
 
 1. Click **Get App**.
 
