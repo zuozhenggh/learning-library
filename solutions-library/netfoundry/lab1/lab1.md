@@ -72,7 +72,7 @@ While the system is building the Controller, you will see a Grey spinning globe 
 
 ## **Step 2:** Create Hosted Edge Router
 
-The next step (2) is to create the Fabric Router which essentially builds the transport mechanism for the "middle mile". Choose a location that is Geographically in region to your resources in the cloud. Choose Routers and select the + in the upper right corner of the page.
+The next step is to create the Fabric Router which essentially builds the transport mechanism for the "middle mile". Choose a location that is Geographically in region to your resources in the cloud. Choose Routers and select the + in the upper right corner of the page.
 
 ![](images/diag8.png)
 
@@ -89,7 +89,7 @@ Select a name for your Router --- Consider using the the word "Fabric" in the na
 
 ## **Step 3:** Create Edge Router Policy
 
-For Step 3, we will create the Edge Router policy which allows Endpoints transit access to the customer edge network in the Cloud. From the Edge Routers screen, select Manage Edge Router Policies and hit the + in the upper right corner to add a policy.
+For the next step, we will create the Edge Router policy which allows Endpoints transit access to the customer edge network in the Cloud. From the Edge Routers screen, select Manage Edge Router Policies and hit the + in the upper right corner to add a policy.
  
 ![](images/diag12.png)
 
