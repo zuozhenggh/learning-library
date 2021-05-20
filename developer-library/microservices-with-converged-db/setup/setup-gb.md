@@ -13,7 +13,7 @@ Estimates Lab Time - 20 minutes
 
 ### Prerequisites
 
-The following lab requires an Oracle Cloud account and LiveLabs workshop reservation completed successfully.
+The following lab requires an Oracle Cloud account and LiveLabs workshop reservation id.
 
 ## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
 
