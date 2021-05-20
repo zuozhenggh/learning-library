@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will provision and setup the resources to execute microservices in your environment.  The following OCI services are being pre-created during workshop reservation request: 2 Oracle ATPs, Oracle OKE and its components like compartment, VCNs, Load Balancer.
+In this lab we will provision and setup the resources to execute microservices in your environment.
 
 Estimates Lab Time - 20 minutes
 
@@ -13,13 +13,23 @@ Estimates Lab Time - 20 minutes
 
 ### Prerequisites
 
-The following lab requires an Oracle Cloud account and LiveLabs workshop reservation id.
+LiveLabs workshop reservation for this workshop and have launched the console for that reservation.  
 
-## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
+## **STEP 1**: Select Your Compartment
 
-Sign in to your account by clicking Launch Console button on your workshop resrvation page.
+You have been assigned your own OCI compartment for running this workshop.  The name of the compartment is shown on the Launch page.
 
-  ![](images/get-gbuser-ocid.png " ")
+1. Copy the compartment name (not OCID) from the workshop reservation page
+
+![](images/copy-comp-name.png " ")
+
+2. Select the hamburger menu from the top left corner of the OCI Console and navigate to the Compute --> Compute --> Instances page
+
+![](images/select-compute-instances.png " ")
+
+3. Paste the compartment name in the "Compartment" field under "List Scope"
+
+![](images/enter-comp-name.png " ")
 
 ## **STEP 2**: Launch the Cloud Shell
 
@@ -29,13 +39,13 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
- 
+
 ## **STEP 3**: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 1.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 1.4 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -71,55 +81,39 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
    The setup process will typically take around 20 minutes to complete.  
 
-2. The setup will ask for you to enter your User OCID. This can be found in the OCI console.
-
-  ![](images/get-gbuser-ocid.png " ")
-
-  ![](images/example-gbuser-ocid.png " ")
-
-3. The setup will ask for you to enter your Compartment OCID. This can be found in the workshop reservation page console.
+2. The setup will ask for you to enter your Compartment OCID. This can be found in the workshop reservation page console.
 
   ![](images/get-compartment-ocid.png " ")
 
 4. The setup will ask you to enter an Auth Token so that docker can login to the OCI Registry. Please follow these steps to create an Auth Token
 
-   Locate your menu bar and click on the person icon at the far upper right. From the drop-down menu, select your user's name.
+  a. Locate your menu bar and click on the person icon at the far upper right. From the drop-down menu, select your user's name.
 
    ![](images/get-gbuser-ocid.png " ")
 
-   Click the user's name to view the details.
-
-   ![](images/gbuser-profile-details.png " ")
-
-   On the left side of the page, click Auth Tokens and click Generate Token
+  b. On the left side of the page, click Auth Tokens and click Generate Token
 
    ![](images/auth-token-region.png " ")
 
-   Enter a meaningful description for the token and click Generate Token.
+  c. Enter "grabdish" in the description field and click Generate Token
 
    ![](images/generate-auth-token.png " ")
 
-   The new Auth Token is displayed. Click Copy to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next steps. Note: You can't retrieve the Auth Token again after closing the dialog box.
+   The new Auth Token is displayed.
+
+  d. Click Copy to copy the Auth Token to the clipboard.
 
    ![](images/generated-auth-token-value.png " ")
 
-   Click Close to close the Generate Token dialog.
+  e. Paste the Auth Token when requested by Setup.
+
+  f. Click Close to close the Generate Token dialog.
 
 5. The setup will ask you to enter an Admin password for the databases.  For simplicity, the same password will be used for both the Order and Inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
 6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-## **STEP 7**: Monitor the Setup                    |
-
-You can monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
-
-   ![](images/duplicate-browser-tab.png " ")
-
- From the new browser window or tab, navigate around the console to view the resources within the new compartment.  The table includes the console navigation for each resource.  For example, here we show the database resources:
-
-   ![](images/select-compartment.png " ")
-
-## **STEP 8**: Complete the Setup
+## **STEP 5**: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
