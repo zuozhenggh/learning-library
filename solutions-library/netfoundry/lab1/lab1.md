@@ -139,7 +139,7 @@ Once registered, you should now have 2 Edge Routers up and running in your Netwo
 
 
 
-## **Step 4:** Create Endpoint for user access - Windows
+## **Step 5:** Create Endpoint for user access - Windows
 
 The next step in the process is to register your Laptop/Host as an endpoint in the Fabric. From the NetFoundry console. Select Endpoints from either location in the Network Dashboard.
 
