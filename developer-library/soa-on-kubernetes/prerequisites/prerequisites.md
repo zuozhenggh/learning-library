@@ -185,9 +185,9 @@ Otherwise, if you need guidance to setup Terraform, please visit [https://learn.
 
     This workshop was tested with Terraform v0.14.11
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, May 2021
+ - **Author** - Emmanuel Leroy, Senior Technical Product Manager
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

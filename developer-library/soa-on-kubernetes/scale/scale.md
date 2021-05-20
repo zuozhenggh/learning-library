@@ -10,7 +10,10 @@ Estimated Lab Time: 10 minutes.
 
 In this lab, you will scale the number of managed servers in the SOA cluster.
 
-There are 2 ways to do so: editing the domain manifest directly (not recommended) or editing the values in the Helm chart (recommended).
+There are 2 ways to do so:
+
+- Editing the domain manifest directly (not recommended).
+- Editing the values in the Helm chart (recommended).
 
 ## **STEP 1:** Scale by Editing the Domain Manifest
 
@@ -90,8 +93,8 @@ Let's scale the number of managed servers for the OSB cluster this time, and we'
 
     The number of replicas for the SOA cluster known to Helm was 2, so our previous change to 3 is overriden and changed back to 2, causing the mysoa-soa-server3 to be terminated, while the change we just made in the values created a new managed server for the OSB cluster, named `mysoa-osb-server3`.
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
- - **Author** - Subash Singh, Emmanuel Leroy, May 2021
+ - **Author** - Emmanuel Leroy, Senior Technical Product Manager
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

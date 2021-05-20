@@ -55,9 +55,9 @@ Allow group MyGroup to manage all-resources in compartment MyCompartment
 </copy>
 ```
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, May 2021
+ - **Author** - Emmanuel Leroy, Senior Technical Product Manager
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021

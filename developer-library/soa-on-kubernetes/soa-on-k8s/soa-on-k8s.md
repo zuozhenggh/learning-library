@@ -358,8 +358,8 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
 5. Check the `ess` endpoint by browsing to http://*PUBLIC_IP*:30305/ess .
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
- - **Author** - Subash Singh, Emmanuel Leroy, May 2021
+ - **Author** - Emmanuel Leroy, Senior Technical Product Manager
  - **Last Updated By/Date** - Emmanuel Leroy, May 2021
