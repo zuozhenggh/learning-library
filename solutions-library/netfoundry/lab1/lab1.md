@@ -3,7 +3,7 @@
 # Lab 1: Setup Zero Trust network  connectivity from client to an application server
 
 
-## Cloud application prep - Create Application in Cloud(Oracle Cloud example)
+## Cloud application prep - Create Application in Cloud (Oracle Cloud example)
 
 Identify an application sitting in your Cloud network or create a simple web app (Apache/80). We will provide this example of creating a web server in OCI that your NetFoundry client will access via a private VCN network IP address. If you already have an application in your network, you can skip to the next section.
 
@@ -32,9 +32,10 @@ Identify an application sitting in your Cloud network or create a simple web app
 
 You should now have a running web server in your specified VCN.
 
-![](images/diag4.png)
 
 ### Steps to complete
+
+![](images/diag4.png)
 
 1. Create Network
 
