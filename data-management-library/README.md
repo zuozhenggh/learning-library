@@ -1,48 +1,36 @@
-![](common-template/img/data-management-title.png)
+# Welcome
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
 
+The Oracle Data Management LiveLabs is the central location for workshops related to all things Autonomous Database (ADB), Database, Big Data, Data Integration, Machine Learning, Security and more.  Across multiple deployment options:  on-premises and in the cloud.  
 
-The Oracle Data Management Library is the central location for workshops related to all things Autonomous Database (ADB) Database, Big Data, Data Integration, Machine Learning and Security.  Across multiple deployment options:  on-premises and in the cloud.  
+## How do I get started?
+Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are added weekly, please visit frequently for new content.
 
-To get started, choose one (or more!) of the defined learning paths below:
+[![](../common/images/livelabs.png)](http://bit.ly/golivelabs)
 
-## **Autonomous Database Workshop Library Highlights**
+### Featured Workshops - Autonomous Database (ADB) 
+- [Analyzing your Data with ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
+- [Autonomous Database Quick Start](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=582)
+- [Machine Learning on ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)  
+- [Building an Application from a Spreadsheet on ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631) 
 
-|  | OOW19 Drop-in Zip Labs|
-| ------------- | ------------- |
-| ![autonomous-database/ziplabs](common-template/img/oow.png)  | Drop-In labs are short (15-20 mins), self-paced, hands-on labs for the Oracle Cloud. Choose from several labs to explore Autonomous Database using Oracle Trial accounts.   **[Click here to launch the lab series](autonomous-database/ziplabs)**  |
-|  |**Autonomous Database Certification Labs**|
-| ![autonomous-database/certification](common-template/img/autonomousdb.png) | An Oracle Autonomous Database 2019 Specialist has demonstrated the knowledge required to provision, manage, and migrate to Autonomous Transaction Database (ATP) and Autonomous Data Warehouse (ADW).  It is designed for database administrators, monitors, and Dev Ops admins who want to validate their knowledge and skills. To learn more about this certification click [here](https://education.oracle.com/oracle-autonomous-database-cloud-2019-certified-specialist/trackp_OADB19).  The Database PM team partnered with OSPA to create a series of labs to support the certification. **[Click here to launch the lab series](autonomous-database/certification)** |
-| | **ADW Journey Workshop**|
-| ![autononmous-database/autonomous-data-warehouse/journey4-adwc](common-template/img/adb.png) | Provision an ADW instance, run queries, load data, manage, scale and use various tools against the ADW instance (Oracle Machine Learning SQL Notebooks, Data Visualization Desktop and Data Integration Platform Cloud). **[Click here to launch the lab](https://www.oracle.com/goto/adw/tutorial)**
-| | **ADB Dedicated Workshop**|
-| ![autonomous-transaction-processing/dedicated](common-template/img/autonomousdb.png) | Provision Exadataa in a private OCI network, an Autonomous Container Database and databases on your dedicated Exadata Infrastructure.  Build and deploy Python, node.js and Java applications stacks on dedicated autonomoous, use OCI cli commands and more! **[Click here to launch the lab](autonomous-transaction-processing/dedicated/README.md)**
- 
+## Database 19c
+- [Oracle's Converged Database on ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
+- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
+- [Multitenant Fundamentals](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=573)
+- [Database In-Memory](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=566)
+  
+## Enterprise Manager
+- [Enterprise Manager](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
+- [Multitenant Lifecycle Management](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)
 
+## Videos
+- [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-## **Security Workshop Library Highlights**
+## Need Help?
+Please first consult the "Need Help?" lab located at the bottom of your workshop to see if our FAQ can solve your problem.  If you have an issue that is specific to the contents of the workshop, please reach out to the author located in the "Acknowledgements" section at the bottom of each lab via email. Please include your workshop name and lab name. You can also include screenshots and attach files. If you have a more general issue, or would like to reach out to the LiveLabs management team, email us [here](mailto:livelabs-help_us@oracle.com).   
 
-|  | OOW19 Data Safe Labs|
-| ------------- | ------------- |
-| ![security/data-safe/](common-template/img/security.png)| Practice the main features in Oracle Data Safe, including Activity Auditing, Data Discovery, Data Masking, User Assessment, and Security Assessment.   **[Click here to launch the lab series](security/data-safe)**  |
-
-
-
-## **Develop on ADB Library Highlights**
-
-|  | OOW19 APEX Labs|
-| ------------- | ------------- |
-| ![autonomous-database/ziplabs/2019/atp-apex-spreadsheet-app](common-template/img/apex-apps-512.png) |  Upload a spreadsheet into an Oracle database table and create an application based on this new table. You will then play with the Interactive Report and improve the attached form. Lastly add a Calendar page and then link it to the existing form page.   **[Click here to launch the lab series](autonomous-database/ziplabs/2019/atp-apex-spreadsheet-app)**  |
-
-## **Database Tools Library Highlights**
-
-New Library coming soon!
-
-
-
-## Helpful Links ##
-
-**Autonomous Database Cloud Specialist Certification** - [Learn More]([here](https://education.oracle.com/oracle-autonomous-database-cloud-2019-certified-specialist/trackp_OADB19))
-
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 
 
