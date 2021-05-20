@@ -7,6 +7,7 @@ This lab will walk you through some of the advanced features of Essbase 21c. For
 * Execution of Calculation scripts 
 * Utilities for Migration to Essbase 21c 
 * Overview of Essbase REST API Functionality
+* Dimension build using Rule file
 
 Estimated Lab Time: *60 minutes*.
 
@@ -70,7 +71,7 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
     You can now preview the dimension structure in the Rules editor, with the columns displayed based on the input flat file.
 
-    The top-right toolbar in the Rules editor shows the Global options for a rule. You an change the properties or data source here and view the results. The left toolbar of the Rules editor shows the Field options for the rule.
+    The top-right toolbar in the Rules editor shows the Global options for a rule. You can change the properties or data source here and view the results. The left toolbar of the Rules editor shows the Field options for the rule.
 
 5. On the Rules editor page, you can now set up and edit the rule.
 

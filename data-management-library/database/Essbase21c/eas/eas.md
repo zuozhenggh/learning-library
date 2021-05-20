@@ -1,4 +1,4 @@
-# Scenario Management
+# Essbase Administration Services (EAS Lite)
 
 ## Introduction
 
@@ -54,7 +54,7 @@ To manage an application using EAS Lite:
 
    NOTE: Once the application is EAS managed, you can only view the outline in web interface. All the changes to be done in the application will be performed using EAS console.
 
-## **STEP 1:** Access the EAS Lite Web Console 
+## **STEP 2:** Access the EAS Lite Web Console 
 
 1.	Open a web browser and navigate to the URL of the EAS managed server. For example,
    Copy http://ip:9100/easconsole
@@ -92,7 +92,7 @@ To manage an application using EAS Lite:
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
-* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, ApMayril 2021
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
