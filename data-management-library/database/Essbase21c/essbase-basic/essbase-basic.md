@@ -324,7 +324,8 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
     ![](./images/image14_56.png "")
     ![](./images/image14_57.png "")
 
-4. Outline Analysis: The Outline option is equivalent to the EAS console in Essbase on-premises.
+4. **Outline Analysis**: 
+   The Outline option is equivalent to the EAS console in Essbase on-premises.
 
   This is where you can add new dimensions or members under dimensions at any level, as required, and can make changes to existing cubes quickly using the ‘Edit’ option. Select the ‘Outline’ option for the ‘SpendHistory’ cube. [or any cube that is already LIVE on the Essbase 21c web interface ].
 
