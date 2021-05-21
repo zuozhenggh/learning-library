@@ -455,7 +455,7 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, March 2021
 
 ## Need Help?

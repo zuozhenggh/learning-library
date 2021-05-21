@@ -91,7 +91,7 @@ To manage an application using EAS Lite:
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, April 2021
 
 ## Need Help?

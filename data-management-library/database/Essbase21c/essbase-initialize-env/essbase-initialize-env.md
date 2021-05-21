@@ -19,7 +19,10 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 ## **STEP 1**: Login To Oracle Essbase 21c Web UI
+The administrator interface for Essbase 21c is web based. The cubes can be created and managed through the web interface.
+
 This lab has been designed to be executed end-to-end with any modern browser on your laptop or workstation. Proceed as detailed below to login.
+
 ### UI Access
 1. Launch your browser to the following URL to access Oracle Essbase 21c UI  
 
@@ -95,7 +98,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 
 - **Authors** - Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-- **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
+- **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
 - **Last Updated By/Date** - Kowshik Nittala, Associate Solution Engineer, Analytics, NA Technology, March 2021
 
 ## Need Help?

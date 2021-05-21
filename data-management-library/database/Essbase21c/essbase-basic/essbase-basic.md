@@ -283,7 +283,29 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 * In this exercise, you saw how a normal flat file Excel sheet can be converted into an Essbase application and a cube. You can get the application workbook DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by the Cube Designer add-ins.
 
-## **Step 6:** Overview of the WEB-User Interface
+## **Step 6:** Export a Cube to an Application Workbook
+1. In Essbase, expand the application: **DynamicCorp** that contains the cube that you want to export.
+   
+2. From the Actions menu, to the right of the cube name: **Sales**, select **Export to Excel**.
+   
+   ![](./images/image14_49.1.png "")
+
+3. On the Export to Excel dialog box:
+      * Select **Export Data** to export the data from the cube. How the data is exported depends on whether the cube is block storage or aggregate storage.
+           - In block storage cubes, if the size of the data is 400 MB or less, it is exported to the application workbook, on the Data worksheet. If the data size exceeds 400MB, data is exported to a flat file named Cubename.txt, which is included in a file named Cubename.zip on the **Files** page.
+           - In aggregate storage cubes, regardless of the size, data is always exported to a flat file named Cubename.txt, which is included in a file named Cubename.zip on the **Files** page.
+      * Select build method as **Parent-Child**.
+      * Select **Export Calculation Script** to export each of the calculation scripts as a separate worksheet within the application workbook.
+      * Select **Export Member IDs**.
+      
+   ![](./images/image14_49.2.png "")
+
+4. When prompted, save the exported application workbook to your local or network drive or download the exported application workbook and data .zip files from the Files page.
+ 
+   File names do not include spaces because files that are imported to Essbase cannot contain spaces in the file name.
+
+
+## **Step 7:** Overview of the WEB-User Interface
 
 ### Applications:
 1. Applications tab gives us the information about the Essbase applications and their respective cubes.
@@ -309,6 +331,8 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
     ![](./images/image14_58.png "")
     ![](./images/image14_59.png "")
 
+
+
 5. Here, add a new child called ‘TotalA’ under the ‘Measures’ dimension as shown below. Let us now assign an ‘Ignore’ Consolidation operator to the ‘TotalA’ member. The operator defines how a new member rolls up across the hierarchy.
 
     ![](./images/image14_60.png "")
@@ -328,12 +352,39 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
     ![](./images/image14_63.png "")
 
-9. Under Inspect, Click on Display selected columns in the table. You can select the different member properties to display in the outline tab.
+9. **About Time Balance property**: To use time balance property for members, the dimension must
+be tagged as Accounts. You must have a dimension tagged as Accounts and a dimension tagged
+as Time.
+
+   | Settings for Time Balance Property  | Description  |
+   | ------------- | ------------- |   
+   | None | Apply no time balance property. Member values are calculated in the default manner. |  
+   | Average | A parent value represents the average value of a time period. |   
+   | First | A parent value represents the value at the beginning of a time period. |  
+   | Last | A parent value represents the value at the end of a time period. |   
+
+   ![](./images/image14_63.1.png "")
+
+   **About Skip Option property**: Setting this option to None or Missing for a member determines
+    what values are ignored during time balance calculations.
+
+    **None** means that no values are ignored. 
+
+    **Missing** means that #MISSING values are ignored.
+
+    NOTE:
+       1. You can specify skip settings only if the time balance property is set as first, last, or average.
+       2. You can set these properties for any members except **Label Only** members.
+
+       For members with property *Time Balance = Last* and *Skip Option = Missing*, the following icons
+are highlighted when you select that member.
+
+10. Under Inspect, Click on Display selected columns in the table. You can select the different member properties to display in the outline tab.
    ![](./images/image1.png "")
 
    ![](./images/image2.png "")
 
-10. Click on outline properties.
+11.  Click on outline properties.
    ![](./images/image3.png "")
 
     Outline properties, in part, control the functionality available in an Essbase cube, they also control member naming and member formatting for attribute dimensions, alias tables and text measures.
@@ -342,7 +393,16 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 ### Jobs:
 
-1. The Jobs tab displays all the information about the jobs that have been executed in the Essbase web user interface.  
+1. Jobs are operations such as loading data, building dimensions, exporting cubes, running MaxL
+scripts, running calculations, and clearing data. Jobs are asynchronous, meaning they are run in
+the background as a unique thread. Each job has a unique id.
+
+   The Jobs tab displays all the information about the jobs that have been executed in the Essbase web user interface.
+   
+   Job details include information such as script names, data file names, user names, number of records processed and rejected, and completion status. You can also setup and run new jobs
+   from this window, as well as re-run previously executed job.
+
+
 
    You can create and run new jobs using this tab by clicking on "New Job", as shown below.
     ![](./images/image14_64.png "")
@@ -374,6 +434,15 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
     ![](./images/image14_69.png "")
     ![](./images/image14_70.png "")
 
+    **Application workbooks** comprise a series of worksheets, which can appear in any order, and define a cube, including cube settings and dimensional hierarchies. There are strict layout and syntax requirements for application workbooks, and validations to ensure that workbook contents are formatted correctly. The cube building process will fail, if there are any errors.
+
+    Modifications can also be made to the workbook using Designer Panel.
+    
+    Essbase provides application workbook templates for creating block storage and aggregate storage
+applications and cubes.
+    
+    Using a sample application workbook provided in Essbase, you can quickly create sample applications and cubes. The cubes are highly portable, because they are quickly and easily imported and exported.
+
 ### Scenarios:
 
 1. The ‘Scenarios’ tab is where you create scenario modeling on the applications for ‘What-If’ analysis, which empowers the users to analyze the data and get insights from the data. [More details on this will be covered in an upcoming lab. ]
@@ -382,11 +451,21 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 1. The ‘Security’ tab holds the information about the users in Essbase and the roles they’re assigned. You can change the level of access assigned to a particular user.
 
-2. You can add new users/groups by clicking on the ‘Add Role’ option.
+2. You can add new users by clicking on the 'Add User' option.
 
     ![](./images/image14_71.png "")
 
-### Sources:
+    There are three predefined user-level roles in an identity domain.
+    * **Service Administrator**: Administers the entire cloud service instance, including backing up, creating and deleting applications, provisioning users, and running Jobs.
+    * **Power User**: Creates applications and cubes, and grants access to users to perform actions on those cubes.
+    * **User**: Accesses and performs actions on cubes for which access has been granted.
+    User Roles are hierarchical in that access granted to lower-level roles is inherited by higher level roles.
+    
+    ![](./images/image14_71.1.png "")
+
+    For example, Service Administrators inherit the access granted to Power User and User roles.
+
+### **Sources**:
 
 1. Many cube operations require connection information to access remote source data or hosts. You can define ‘Connections’ and ‘Datasources’ once and reuse them in various operations.
    
@@ -395,7 +474,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
     ![](./images/image14_72.png "")
 
-### Console:
+### **Console**:
 
 1. The Console tab is one stop place for Essbase Administrator tools such as:
 
@@ -412,9 +491,9 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
     ![](./images/image14_74.png "")
 
 
-### Academy:
+### **Academy**:
 
-1. This tab contains all the information and documentation links related to Essbase 21c.
+1. Academy has documentation links by topics for users and administrators.
 
     ![](./images/image14_75.png "")
 
@@ -422,8 +501,8 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
-* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, March 2021
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, April 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

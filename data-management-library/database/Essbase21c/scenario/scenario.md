@@ -133,6 +133,13 @@ This Step is geared towards developing an understanding of security for Essbase 
 
    d) by default all users have the Database Access Roles.
      ![](./images/imageSM_11.png "")
+   
+   **Note**:  
+   There are four predefined application-level roles:
+    * **Application Manager**: Creates, deletes, and modifies databases, application settings, and scenarios in an assigned application. Also assigns users to an application.
+    * **Database Manager**: Manages databases, database elements, locks and sessions in an assigned     application; creates and deletes scenarios.
+    * **Database Update**: Reads and updates data values based on assigned scope, uses assigned calculations and filters, and creates and deletes scenarios.
+    * **Database Access**: Accesses scenarios, reads data values in all cells, and accesses specific data and metadata unless restricted by filters
 
    e) Assign the following roles to the below users and Click Close:
       * John -> Database Manager
@@ -391,7 +398,7 @@ Notice that John having "Database Manager" permission, was able to define who ca
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, April 2021
 
 ## Need Help?
