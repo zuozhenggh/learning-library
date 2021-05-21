@@ -28,6 +28,11 @@
       "filename": "./../../3-labs-use-atom-editor-develop-content/3-labs-use-atom-editor-develop-content.md"
     },
     {
+      "title": "Lab 3a: Common Markdown Features for Content Development",
+      "description": "This lab shows you some common markdown features to help create content.",
+      "filename": "./../../3a-labs-misc-develop-content-features/3a-labs-misc-develop-content-features.md"
+    },
+    {
       "title": "Lab 4: Use GitHub Desktop to Commit to the GitHub Repository",
       "description": "This lab shows you how to map a node's private IP address to a public IP address",
       "filename": "./../../4-labs-github-merge-commit-pullrequest/4-labs-github-merge-commit-pullrequest.md"
