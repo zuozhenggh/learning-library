@@ -96,4 +96,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sql
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Arabella Yao, Product Manager Intern | Ayden Smith, QA Intern)
-- **Last Updated By/Date** - Richard Green, March 2021
+- **Last Updated By/Date** - Kamryn Vinson, May 2021
