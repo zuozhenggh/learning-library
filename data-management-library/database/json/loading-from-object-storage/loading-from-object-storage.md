@@ -1,20 +1,33 @@
-# Object Storage
+# Loading from Object Storage
 
 ## Introduction
-In this lab we will create a new instance of Autonomous Transaction Processing (ATP), an Autonomous Database, and use SQL Developer Web to create a new user.
+In this lab, we will create a new instance of Autonomous Transaction Processing (ATP), an Autonomous Database, and use SQL Developer Web to create a new user.
 That user will then go on to load the files from object storage into tables in ATP.
 
-This lab assumes that you have completed the previous lab, Object Storage, and that at least one of the files has finished uploading to object storage. Of course you will not be able to complete this lab until all of the files from that lab have uploaded.
+Estimated time: 45 - 60 minutes
 
-Estimated time: 15 minutes, plus some time for the actual loading, typically around 30-40 minutes.
+### Objectives
 
-## **Step 1:** Provision an Autonomous Transaction Processing Database
+In this lab, you will:
+- Create an ATP database.
+- Learn to interact with the ATP using SQL Developer Web.
+- Create a new user and assign it roles and privileges.
+- Learn to store JSON documents in tables.
+- Transfer files from object storage to the database.
+
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+- Getting Started
+- Upload Files to Object Storage
+
+## **STEP 1:** Provision an Autonomous Transaction Process Database
 
 1.  Log in to the Oracle Cloud console (in a new window if you still have files uploading from the previous lab). Click on the hamburger menu at the top left and choose "Autonomous Transaction Processing under Database
 
     ![](./images/atp.png " ")
 
-2.  Click “Create Automous Database”. 
+2.  Click “Create Autonomous Database”. 
     
     Set the Display Name and Database Name to “yelp”, make sure “Transaction Processing” is selected, and that database version is set to 19c. 
 
@@ -25,7 +38,7 @@ Estimated time: 15 minutes, plus some time for the actual loading, typically aro
 
     ![](./images/atp3.png " ")
 
-##  Step 2: Connecting to the database using SQL Developer Web and Creating a New User
+## **STEP 2:** Connecting to the Database Using SQL Developer Web and Creating a New User
 
 SQL Developer Web (SDW) is an entirely browser-based tool for interacting with the database. Users of the standalone SQL Developer tool will be familiar with most of the interface elements.
 
@@ -76,7 +89,7 @@ SQL Developer Web (SDW) is an entirely browser-based tool for interacting with t
 
     ![](images/create-user.png "")
 
-## **Step 3:**  Log into SQL Developer Web as the new user yelp.
+## **STEP 3:**  Log into SQL Developer Web as the New User "yelp"
 
 We now have a user who has the required privileges, and can use SQL Developer Web.
 
@@ -86,7 +99,7 @@ We now have a user who has the required privileges, and can use SQL Developer We
 
     https://xcs...-yelp.adb.uk-london-1.oraclecloudapps.com/ords/**admin**/_sdw/?nav=worksheet
 
-    We must edit that and and change “admin” to our username “yelp”.
+    We must edit that and change “admin” to our username “yelp”.
 
     https://xcs...-yelp.adb.uk-london-1.oraclecloudapps.com/ords/**yelp**/_sdw/?nav=worksheet
 
@@ -119,7 +132,7 @@ We now have a user who has the required privileges, and can use SQL Developer We
 
     That should create our three table which will contain the JSON we are about to load. The JSON text will be stored in a CLOB column called 'jtext' in each case.
 
-## **Step 4:** Performing the load into the database
+## **STEP 4:** Performing the Load into the Database
 
 We can now load our files from object storage to the database. The business file is small (145MB), so we’ll do first and run it interactively.
 
@@ -153,7 +166,7 @@ We can now load our files from object storage to the database. The business file
 
 3.  Load the other tables via background jobs
 
-    **Note:** The previous lab said you could continue if the review and user files were not completely copied. This next step uses those files, so make sure the relevant file upload is complete before continueing.
+    **Note:** The previous lab said you could continue if the review and user files were not completely copied. This next step uses those files, so make sure the relevant file upload is complete before continuing.
 
     The next table to load is reviews. This is far bigger than businesses, and SQL Developer Web is limited to 15 minutes execution time for any command. Loading will probably take less time than that, but to be safe (and so we can learn how to do it) we’ll submit the load as a scheduler job.  First we create a stored procedure which does the work. This is much like the PL/SQL block we used previously but with a procedure wrapper around it. Don’t forget to substitute the URL for your own file by following the same process in Object Storage as you did for the previous step.
 
@@ -243,9 +256,5 @@ That completes our loading of data. We now have three tables which have all our 
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
-- **Last Updated By/Date** - Roger Ford, June 2020
+- **Last Updated By/Date** - Brianna Ambler, May 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

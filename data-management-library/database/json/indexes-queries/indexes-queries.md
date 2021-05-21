@@ -1,19 +1,33 @@
 # Indexes and Queries
 
 ## Introduction
-In this lab we will create some indexes on our JSON data. We will create two types of index, functional and search. Then we will run some queries against the indexed JSON.
+In this lab, we will create some indexes on our JSON data. We will create two types of index, functional and search. Then we will run some queries against the indexed JSON.
 
-Estimated time: 20 minutes, plus around 30 minutes for the search index to complete.
+Estimated time: 50 minutes
 
-## **Step 1:** Functional indexes
+### Objectives
 
-All our data is now loaded, and we can proceed to creating indexes.  The main index we’ll be using is a “json search index” on the REVIEWS table. This is a JSON full-text index which indexes ALL of the JSON in the table, and allows for word-based searching on textual fields.
+In this lab, you will:
+- Create a functional index on a JSON component.
+- Create a search index on a JSOn collection.
+- Learn how to use Full-text and Basic JSON queries on tables.
+
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+- Getting Started
+- Upload Files to Object Storage
+- Loading from Object Storage
+
+## **STEP 1:** Functional Indexes
+
+All our data is now loaded, and we can proceed to creating indexes. The main index we’ll be using is a “json search index” on the REVIEWS table. This is a JSON full-text index, which indexes ALL of the JSON in the table and allows for word-based searching on textual fields.
 
 1.  Functional index on business_id
     
     We are expected to be in SQL Developer Web at this point.
 
-    We will be joining our three tables, BUSINESSES, REVIEWS and USERS. There is a one-to-many relationship between users and reviews (one user can submit many reviews) and a one-to-many relationship between businesses and reviews (each business may have many reviews about it). To make useful queries (who said what about where) we will need to join these three tables. Since the tables are large, we need indexes to support these joins. The join relationship will be based on USER\_ID and BUSINESS\_ID. Both of these values are embedded in JSON text - they are not in relational columns. But no matter, it's easy to create a functional index on a JSON component using the simple "dot" notation to indentify the value to be indexed.
+    We will be joining our three tables, BUSINESSES, REVIEWS and USERS. There is a one-to-many relationship between users and reviews (one user can submit many reviews) and a one-to-many relationship between businesses and reviews (each business may have many reviews about it). To make useful queries (who said what about where) we will need to join these three tables. Since the tables are large, we need indexes to support these joins. The join relationship will be based on USER\_ID and BUSINESS\_ID. Both of these values are embedded in JSON text - they are not in relational columns. But no matter, it's easy to create a functional index on a JSON component using the simple "dot" notation to identify the value to be indexed.
 
     First we create an index on businesses.jtext.business_id
 
@@ -36,7 +50,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
     ```
     That will probably take 5 to 6 minutes to run.
 
-## **Step 2:** Creating a search index
+## **STEP 2:** Creating a Search Index
 
 A search index indexes **all** the JSON in a collection. It is particularly useful if
 -    You don't know the schema (layout) of the JSON in advance. Creating a functional index _requires_ you to know the name of the element (such as business_id) on which you wish to create the index.
@@ -88,7 +102,7 @@ Search indexes take a significant time to create on large collections. As earlie
     ```
 
    
-## **Step 3:** Queries
+## **STEP 3:** Queries
 
 **Note:** All queries in SQL Developer Web should be run using the "Run Statement" button. If you run them using "Run Script", the query will run to completion, which may fetch many thousands of rows and take some minutes to run.
 
@@ -157,7 +171,7 @@ Search indexes take a significant time to create on large collections. As earlie
 
     ![](images/query5.png)
 
-    Searching within a range of postal codes (all ZIP codes starting 8911) is not the best way to work - it would be better to include a spatial index on the latitude and longitude values within the business data, and that woud allow us to do, for example, a search for only restaurants within five miles miles of a certain location. But spatial indexes are covered in a separate workshop, so we'll leave the query as it is for now.
+    Searching within a range of postal codes (all ZIP codes starting 8911) is not the best way to work - it would be better to include a spatial index on the latitude and longitude values within the business data, and that would allow us to do, for example, a search for only restaurants within five miles miles of a certain location. But spatial indexes are covered in a separate workshop, so we'll leave the query as it is for now.
 
 
 You may now proceed to the next lab.
@@ -165,9 +179,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
-- **Last Updated By/Date** - Roger Ford, June 2020
+- **Last Updated By/Date** - Brianna Ambler, May 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
