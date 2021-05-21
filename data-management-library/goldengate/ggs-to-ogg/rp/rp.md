@@ -54,5 +54,3 @@ In this lab, you created and ran a Path on your on premise Oracle GoldenGate Rec
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He, Database Product Management
 * **Last Updated By/Date** - March 2021
-
-
