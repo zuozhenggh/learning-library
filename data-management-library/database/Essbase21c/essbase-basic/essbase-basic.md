@@ -307,7 +307,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 ## **Step 7:** Overview of the WEB-User Interface
 
-### Applications:
+### **Applications**:
 1. Applications tab gives us the information about the Essbase applications and their respective cubes.
 
     ![](./images/image14_53.png "")
@@ -391,7 +391,7 @@ are highlighted when you select that member.
     ![](./images/image4.png "")
 
 
-### Jobs:
+### **Jobs**:
 
 1. Jobs are operations such as loading data, building dimensions, exporting cubes, running MaxL
 scripts, running calculations, and clearing data. Jobs are asynchronous, meaning they are run in
@@ -419,7 +419,7 @@ the background as a unique thread. Each job has a unique id.
 
     ![](./images/image14_66.png "")
 
-### Files:
+### **Files**:
 
 1. The Files tab is equivalent to the file directory of Essbase. The "Applications" folder consists of  all the files related to applications and their respective cubes.
 
@@ -443,11 +443,11 @@ applications and cubes.
     
     Using a sample application workbook provided in Essbase, you can quickly create sample applications and cubes. The cubes are highly portable, because they are quickly and easily imported and exported.
 
-### Scenarios:
+### **Scenarios**:
 
 1. The ‘Scenarios’ tab is where you create scenario modeling on the applications for ‘What-If’ analysis, which empowers the users to analyze the data and get insights from the data. [More details on this will be covered in an upcoming lab. ]
 
-### Security:
+### **Security**:
 
 1. The ‘Security’ tab holds the information about the users in Essbase and the roles they’re assigned. You can change the level of access assigned to a particular user.
 
@@ -502,7 +502,7 @@ You may proceed to the next lab.
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
-* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, April 2021
+* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
