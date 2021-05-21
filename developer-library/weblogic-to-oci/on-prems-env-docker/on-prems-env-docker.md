@@ -41,7 +41,7 @@ To run this lab, you will need:
 
 ### **On Linux**
 
-Make sure you followed the installation instructions to set up Docker as root and:
+*Make sure you followed the installation instructions to set up Docker as root and:*
 
 1. If you don't have an `oracle` user, create it an add it to a `oracle` group with:
 
