@@ -21,7 +21,7 @@ In this workshop, choose a path to create a demo environment to use as the on-pr
 
 ### Prerequisites
 
-Depending on the path you choose, there a different requirements:
+Depending on the path you choose, there are different requirements:
 
 - For the marketplace environment, you will need one compute instance with 4 OCPU available.
 
