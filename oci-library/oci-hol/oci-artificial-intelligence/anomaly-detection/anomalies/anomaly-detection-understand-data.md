@@ -83,9 +83,9 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
 * [processed training csv data](../files/demo-training-data.csv)
-    - 11 signals with timestamp column, with 7299 observations
+    - 10 signals with timestamp column, with 10,000 observations
 * <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
-    - same 11 signals with timestamp column, 100 observations
+    - same 10 signals with timestamp column, 100 observations
 
 
 ## **STEP 3:** Upload Data to Object Storage
