@@ -1,15 +1,8 @@
 ﻿# Introduction
 
-## About the Workshop
+The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.
 
-<if type="paid">The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You create and register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.</if>
-
-<if type="freetier">The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You create and register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.</if>
-
-<if type="livelabs">The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, and assess the security of your database configurations and users.
-
-*If you want to try the sensitive data discovery and data masking lab, please use the "Free Trial Workshop" or "Run on Your Own Tenancy" version of this workshop.*</if>
-
+> **Note**: If you are working in the LiveLabs environment, the Data Discovery and Data Masking features are not available at this time.
 
 Estimated Workshop Time: 2 hours
 
@@ -17,28 +10,26 @@ Estimated Workshop Time: 2 hours
 
 Oracle Data Safe is Oracle’s platform for securing data in databases. As a native Oracle Cloud Infrastructure service, Oracle Data Safe lets you assess the security of your database configurations, find your sensitive data, mask that data in non-production environments, discover the risks associated with database users, and monitor database activity.
 
-Watch our short video that explains key features in Oracle Data Safe [here](https://youtube.com/watch?v=wU-M5BlU0po).
+Watch our short video that explains key features in Oracle Data Safe.
 
-[![Introducing Oracle Data Safe](https://img.youtube.com/vi/wU-M5BlU0po/0.jpg)](http://www.youtube.com/watch?v=wU-M5BlU0po)
+[//]: # (![Introducing Oracle Data Safe](https://img.youtube.com/vi/wU-M5BlU0po/0.jpg)](http://www.youtube.com/watch?v=wU-M5BlU0po))
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wU-M5BlU0po" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 
 ## Objectives
 
 The objectives of this workshop are as follows:
 
 - Get comfortable with Oracle's public cloud services
-<if type="paid">- Provision an Autonomous Database and register it with Oracle Data Safe</if>
-<if type="freetier">- Provision an Autonomous Database and register it with Oracle Data Safe</if>
-<if type="livelabs">- Register an Autonomous Database with Oracle Data Safe</if>
+- Register an Autonomous Database with Oracle Data Safe
 - Provision audit and alert policies on your database with Oracle Data Safe
 - Analyze alerts and audit reports in Oracle Data Safe
 - Assess the security of your database configurations and users in Oracle Data Safe
-<if type="paid">
-- Discover and mask sensitive data in Oracle Data Safe</if>
-
-<if type="freetier">
-- Discover and mask sensitive data in Oracle Data Safe</if>
-
-You may now [proceed to the next lab](#next).
+- Discover and mask sensitive data in Oracle Data Safe
 
 ## Learn More
 
@@ -55,4 +46,4 @@ The following links provide more information about Oracle Data Safe:
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, May 4 2021
+* **Last Updated By/Date** - Jody Glover, May 22 2021
