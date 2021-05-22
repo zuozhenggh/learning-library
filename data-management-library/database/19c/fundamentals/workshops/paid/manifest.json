@@ -24,24 +24,23 @@
               "type": "paid"
           },
           {
-          "title": "Lab 2: Obtain a Compute Image with Staged Oracle Database 19c Installer Files",
-          "description": "Obtain a compute instance wtih staged Oracle Database 19c installer files by using Resource Manager.",
-          "filename": "./../../obtain-compute-image-19c-staged/obtain-compute-image-19c-staged.md",
+          "title": "Lab 2: Prepare Setup",
+          "description": "Obtain two compute instances by using Resource Manager.",
+          "filename": "./../../prepare-setup/prepare-setup.md",
           "type": "paid"
       },
-
+      {
+      "title": "Lab 3: Verify Setup",
+      "description": "Verify that you can connect to both of your compute instances and that the workshop-installed compute instance has a CDB and PDB1 set up.",
+      "filename": "./../../verify-setup/verify-setup.md",
+      "type": "paid"
+  },
           {
-          "title": "Lab 3: Install Oracle Database 19c with Automatic Root Script Execution",
+          "title": "Lab 4: Install Oracle Database 19c with Automatic Root Script Execution",
           "description": "Install Oracle Database 19c with automatic configuration script execution.",
           "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md",
           "type": "paid"
            },
-            {
-                "title": "Lab 4: Obtain a Compute Image with Oracle Database 19c Installed",
-                "description": "Obtain a compute instance that has Oracle Database 19c already installed by using Resource Manager",
-                "filename": "./../../obtain-compute-image-19c-installed/obtain-compute-image-19c-installed.md",
-                "type": "paid"
-            },
             {
                 "title": "Appendix A: Create a Compute Instance with X11 Forwarding",
                 "description": "This lab shows you how to create a compute instance and configure it for X11 forwarding in preparation for an Oracle Database 19c installation.",
