@@ -53,7 +53,6 @@ For a technical overview of this lab step, please watch the following video:
 	```
 	<copy>
 	tenancy_ocid  = "your_tenancy_value_here"
-	ssh_public_key  = "~/.ssh/oci.pub"
 	region = "your-region-value here"
 	compartment_ocid = "your-tenancy-value_here"
 	</copy>
