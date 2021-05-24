@@ -31,7 +31,7 @@ We will create a variation of the Sample/Basic cube where Market dim has Region 
 
 2. Download the worksheet Sample\_Basic\_DT.xlsx.  
    
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
 
 3. On the Home page, click on Import.
 

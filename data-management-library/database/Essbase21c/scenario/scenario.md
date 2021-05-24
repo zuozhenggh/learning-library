@@ -44,7 +44,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 1. Download the worksheet SandboxApp.xlsx.
 
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
 
    Open the SandboxApp.xlsx file.
 
@@ -77,7 +77,7 @@ This Step shows that creating sandboxes has little impact on resource usage such
 
 1. Download SmartView.xlsx file.
 
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
    
    Open SmartView.xlsx  and go to sheet1 tab.
    ![](./images/imageSM_03.png "")
@@ -329,7 +329,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 2. Download the file Merge.csc.
 
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step3**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
 
    Launch the database inspector for the database “Sandbx” under application “Sample_Scenario”. 
    
