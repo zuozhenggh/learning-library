@@ -52,13 +52,13 @@ spec:
 EOF
 ```
     
-      This manifest contains the following objects and actions :
+  This manifest contains the following objects and actions :
 
-      - A deployment object with the name `tomcat` and label `app: tomcat`. 
-      - The deployment has 3 replicas.
-      - The pods in the deployment have a single container - `tomcat:9`. Note that the manifest does not specify the architecture, making it valid across all architectures. Docker will pull the image that supports the appropriate architecture at runtime. 
-      - A *Volume* object is created from a *ConfigMap*, and mounted in to the container. This ConfigMap will be created later, and will contain the application.
-      - The manifest also contains a Service object, and exposes the deployment over a LoadBalancer. 
+  - A deployment object with the name `tomcat` and label `app: tomcat`. 
+  - The deployment has 3 replicas.
+  - The pods in the deployment have a single container - `tomcat:9`. Note that the manifest does not specify the architecture, making it valid across all architectures. Docker will pull the image that supports the appropriate architecture at runtime. 
+  - A *Volume* object is created from a *ConfigMap*, and mounted in to the container. This ConfigMap will be created later, and will contain the application.
+  - The manifest also contains a Service object, and exposes the deployment over a LoadBalancer. 
 
 1. Download the sample application for Apache Tomcat and create it as a ConfigMap. 
     
