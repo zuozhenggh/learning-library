@@ -42,11 +42,11 @@ In this lab you will:
 
 ## **STEP 3**: Apply Patch to Environment
 
-1. Navigate to **Cloud Manger Dashboard** > **Envronments**
+1. Navigate to **Cloud Manger Dashboard** > **Environments**
     ![](./images/env.png "")
 2. Find the environment you would like to patch, click **V** and **Details**
     ![](./images/details.png "")
-3. Navigate to **Apply PeopleTools Patch**. In the dropdown, select the **8.58.11**, and then click **Update**
+3. Navigate to **Apply PeopleTools Patch**. In the drop down, select the **8.58.11**, and then click **Update**
     ![](./images/patch58.png "")
     - Click **Yes**
     ![](./images/yes58.png "")

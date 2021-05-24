@@ -1,9 +1,9 @@
 # Creating Identity and Access Management (IAM) Resources
 
 ## Introduction
-This lab walks you through the steps to prepare your Oracle Cloud Infrastructure Tenancy
+This lab walks you through the steps to prepare your Orace Cloud Infrastructure Tenancy
 
-Estimated Lab Time: 45 minutes
+Estimated Lab Time: 30 minutes
 
 ### About Identity and Access Management (IAM)
 The Oracle Cloud Infrastructure (OCI) Identity and Access Management (IAM) Service allows you to control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. 
@@ -28,24 +28,24 @@ In this lab, you will:
 
 * To sign in to the Console, you need the following: 
 
-    - Tenant, Username and Password
-    - URL for the Console: [https://cloud.oracle.com] (https://cloud.oracle.com)
+    - Tenant, User name and Password
+    - URL for the Console: [https://oracle.com] (https://oracle.com)
     - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
     - Please download this file: [Details.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFAPdfoRcY01Baa_b6mv7eCzg3rg6IL9olmt-P6OdlAf-B_0h0LnmI_DARqiK2Qr/n/orasenatdpltoci03/b/TestDrive/o/Details.txt.zip)
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
-If you haven't already, please download **Details.txt**, in the **Prerequisites** above. This file will be used note down important information throughout the lab. 
+Please click this link to download **Details.txt**, a file in which you will be noting down important information throughout the lab. 
 
 In this section, sign in to the Oracle Cloud Infrastructure console using your credentials.
 
-1.	Open a supported browser and go to the Console URL: [https://cloud.oracle.com] (https://cloud.oracle.com).
+1.	Open a supported browser and go to the Console URL: [https://oracle.com] (https://oracle.com).
 
 2.	Click on the portrait icon in the top-right section of the browser window, then click on the Sign in to Cloud link.
 
     ![](./images/1.png " ")
 
-3.	Enter your Cloud Account name (aka tenancy name, NOT your user name), note it down in **Details.txt** (#1). Click on the **Next** button. 
+3.	Enter your Cloud Account name (aka tenancy name), NOT your user name), note it down in **Details.txt** (#1). Click on the **Next** button. 
 
     ![](./images/tenancy.png " ")
 
@@ -84,7 +84,7 @@ Please check that you have the required resources in Availability Domain 1
 
     ![](./images/newScope.png " ")
 
-*Note*: We will be using all 6 (Jumphost is 1, Cloud Manager is 1, PSFT Environment is 2, Cloning Environment is 2), so if you would like to spin up any other compute resources that require Standard2 based VM and BMs for the duration of the trial, be sure to use a different Availability Domain.
+**Note**: We will be using all 6 (Jumphost is 1, Cloud Manager is 1, PSFT Environment is 2, Cloning Environment is 2), so if you would like to spin up any other compute resources that require Standard2 based VM and BMs for the duration of the trial, be sure to use a different Availability Domain.
 
 ## **STEP 3:** Creating a Demo Compartment
 **Compartments Overview:**
@@ -168,7 +168,7 @@ Now, let’s create a security policy that gives your group permissions in your 
     ```
     <copy>Policy for OCI Group</copy>
     ``` 
-    c) Verify it's in the **root** compartment
+    c) Verify it's in the **root** compaartment
 
     d) Toggle the radio button to **"Show manual editor"**
 
@@ -272,7 +272,7 @@ Create a **New User**
 
 ## **STEP 8:** Generating Keys
 
-1. **For your convenience, you can use these pre-generated keys for the purpose of the demo and skip to STEP 9: [psftKeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TfT512KHmcXTOfylHmEBrBeZNmjDsjVSB4sjSO0Oq2KN2KVE4Dz4bwvI5nOhzrqB/n/orasenatdpltoci03/b/TestDrive/o/psftKeys.zip)**
+1. **For your convenience, you can use these pre-generated keys for the purpose of the demo and skip to Step 9: [psftKeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TfT512KHmcXTOfylHmEBrBeZNmjDsjVSB4sjSO0Oq2KN2KVE4Dz4bwvI5nOhzrqB/n/orasenatdpltoci03/b/TestDrive/o/psftKeys.zip)**
 <!-- For your convenience, you can use these pre-generated keys for the purpose of the demo and skip to Step 9: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip) -->
 
 You may now skip down to Step 9.
@@ -361,7 +361,20 @@ Verify you have the following 4 keys:
 Verify that you have entries #1-8 filled out in **Details.txt**
 
 
-You may now **proceed to the next lab.**
+
+<!-- ## **STEP 10**: Gather Information for the Cloud Manager Stack
+
+Paste the below information in a notepad. You will need it later while creating the stack.
+
+1. From the same User detail page, copy the OCID by clicking on **copy** and paste it in your notepad. 
+
+    ![](./images/ocid.png "")
+
+2. On the top right, click on the region. Note the home region displayed in your notepad as well. 
+
+    ![](./images/homeregion.png "") -->
+
+You may now proceed to the next lab.
 
 
 ## Acknowledgments

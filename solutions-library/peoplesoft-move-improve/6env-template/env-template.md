@@ -46,7 +46,7 @@ Click **Add New Template** button.
     ![](./images/3tempname.png "")
 ## **STEP 2**: Select Topology
 1. Click the **search icon** and select **PUM Fulltier** for the topology
-2. Expand **Custom Attributes** and select **PUM Fulltier** again from the dropdown.
+2. Expand **Custom Attributes** and select **PUM Fulltier** again from the drop down.
 3. Click on **Edit Custom Attributes**
     ![](./images/5selecttopv2.png "")
 4. Fill in the Region and Availability Domains as follows:

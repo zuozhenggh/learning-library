@@ -34,7 +34,7 @@ In Labs 1-7, you will:
 
 As aforementioned, Labs 1-7 cover the core purpose. 
 Labs 8-14 guide users through executing additional Cloud Manager features:
-One users have spun up a PeopleSoft environment, they can:
+Once users have spun up a PeopleSoft environment, they can:
 * Clone an Existing PeopleSoft Environment (Lab 8) 
 * Backup an Existing PeopleSoft Environment (Lab 9) 
 * Patch an Existing PeopleSoft Environment (Lab 10)
@@ -77,7 +77,7 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 
 **Region** – Oracle Cloud Infrastructure are hosted in regions, which are located in different metropolitan areas. Regions are completely independent of other regions and can be separated by vast distances – across countries or even continents. Generally, you would deploy an application in the region where it is most heavily used, since using nearby resources is faster than using distant resources.
 
-**Subnet, Private** - Instances created in priate subnets do not have direct access to the Internet. In this lab, we will be provisioning the Cloud Manager stack in Resource Manager, and creating private subnets. We will then choose to create a "jump host", or bastion host, as part of the installation. The IP for a private subnet cannot be accessed directly from the Internet. To access our CM instance in a private subnet, we will set up a jump host to enable SSH tunneling and Socket Secure (SOCKS) proxy connection to the Cloud Manager web server (PIA). The jump host is created using an Oracle Linux platform image, and will be created inside the VCN.
+**Subnet, Private** - Instances created in private subnets do not have direct access to the Internet. In this lab, we will be provisioning the Cloud Manager stack in Resource Manager, and creating private subnets. We will then choose to create a "jump host", or bastion host, as part of the installation. The IP for a private subnet cannot be accessed directly from the Internet. To access our CM instance in a private subnet, we will set up a jump host to enable SSH tunneling and Socket Secure (SOCKS) proxy connection to the Cloud Manager web server (PIA). The jump host is created using an Oracle Linux platform image, and will be created inside the VCN.
 
 **Subnet, Public** - Instances that you create in a public subnet have public IP addresses, and can be accessed from the Internet.
 

@@ -37,17 +37,17 @@ In this lab you will:
 2. You can then look at each patch progress status under **Logs**. Select the **Channel Name**, **Log File**, add **Number of Lines to Display**, and click **Fetch Logs**.
     ![](./images/logs59.png "")
 
-3. Once you see this, you may apply the patches to yout environment:
+3. Once you see this, you may apply the patches to your environment:
     ![](./images/859done.png "")
 
 ## **STEP 3**: Apply Upgrade to Environment
 
-1. Navigate to **Cloud Manger Dashboard** > **Envronments**
+1. Navigate to **Cloud Manger Dashboard** > **Environments**
     ![](./images/env.png "")
 
 2. Find the environment you would like to patch, click **V** and **Details**
     ![](./images/details.png "")
-3. Navigate to **Upgrade PeopleTools**. In the dropdown, select the **8.59.01**, and then click **Update**
+3. Navigate to **Upgrade PeopleTools**. In the drop down, select the **8.59.01**, and then click **Update**
     ![](./images/upgrade59.png "")
     - Click **Yes**
     ![](./images/yes59.png "")
