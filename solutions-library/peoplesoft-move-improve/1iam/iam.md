@@ -377,7 +377,7 @@ Paste the below information in a notepad. You will need it later while creating 
 You may now proceed to the next lab.
 
 
-## Acknowledgements
+## Acknowledgments
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 * **Lab Expiry Date** - October 1, 2021 

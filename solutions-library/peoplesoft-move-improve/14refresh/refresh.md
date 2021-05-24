@@ -1,9 +1,9 @@
 # Refreshing an Environment
 
 ## Introduction
-This lab walks you through the steps to refresh an environment.
+You can refresh DB Systems environments managed by Cloud Manager from a backup in Object Store or from another DB system managed by Cloud Manager. This lab will take you through the steps to refresh from another DB system. If you are wanting to refresh using a backup from object store or are wanting to refresh an ATP-D environment please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to page 144.
 
-Estimated Lab Time: 1 hour
+Estimated Lab Time: 30 minutes + 90 minutes for provisioning + 90 minutes for cloning/backing up/refreshing
 
 ### Objectives
 In this lab you will:
@@ -60,7 +60,7 @@ In order to refresh an environment you will need an environment template that is
 
 3.  On the Select Topology page:
     * Click on the search icon under Topology Name and select **RefreshDBaaS**
-    * Expand the **Custom Attributes** section and select **RefreshDBaaS** again in  the dropdown
+    * Expand the **Custom Attributes** section and select **RefreshDBaaS** again in  the drop down
     * Click on **Edit Custom Attributes**
     ![](./images/attributes.png "")   
     * Expand the **Region and Availability Domains** section and select the following: 
@@ -141,7 +141,7 @@ In order to refresh an environment you will need an environment created from a t
     ![](./images/clone.png "")
 
     Provide a unique environment name such as **TestRefresh**. Leave everything else as default and then click **Clone**.
-    ![](./images/testrefresh.png "") *CHANGE*    
+    ![](./images/testrefresh.png "")  
 
 2.  Once the source and target environments are both running, we can then create
     a backup from the source environment. We will use this backup to refresh the target environment.
@@ -160,7 +160,7 @@ In order to refresh an environment you will need an environment created from a t
     You can also select **Logs** on the side menu and follow along from there as well.
     ![](./images/logs.png "")
 
-    Once **Status** changes to a green checkmark (like the picture below) you can continue on with this lab. 
+    Once **Status** changes to a green check mark (like the picture below) you can continue on with this lab. 
     ![](./images/green.png "")   
 
 4.  Now that the backup has finished we are ready to refresh the target environment. 
@@ -178,11 +178,13 @@ In order to refresh an environment you will need an environment created from a t
 
     Click **Done**.
 
-## Acknowledgements
+    You have now successfully refreshed an environment from a backup!
+
+## Acknowledgments
 
 **Created By/Date**   
-* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
-* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Technologist
+* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

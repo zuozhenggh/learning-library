@@ -108,7 +108,7 @@ You should now see your Environment Template here:
 
 You may proceed to the next lab.
 
-## Acknowledgements
+## Acknowledgments
 
 **Authors** 
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer

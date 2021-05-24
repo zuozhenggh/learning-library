@@ -57,7 +57,7 @@ In this lab you will:
     ![](./images/complete58.png "")
    
 
-## Acknowledgements
+## Acknowledgments
 
 **Created By/Date**   
 * **Authors** - Sara Lipowsky, Cloud Engineer

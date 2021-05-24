@@ -60,7 +60,7 @@ Go back to the **Cloud Manager Dashboard** > **Cloud Manager Settings**.
 
 You may now proceed to the next lab.
 
-## Acknowledgements
+## Acknowledgments
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 

@@ -1,9 +1,9 @@
 # Cloning an Environment
 
 ## Introduction
-This lab walks you through the steps to clone an environment.
+The Clone Environment action can be used to duplicate an exact copy of an existing PeopleSoft environment running in Cloud Manager. The new environment is built by reconfiguring the disks from deep clone. This process saves both installation and deployment time. The cloned environment is an exact copy of the existing environment. Once the cloned environment is running, you can perform scaling and Lifecycle Management actions.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 5 minutes + 30 minutes for cloning
 
 ### Objectives
 In this lab you will:
@@ -21,13 +21,13 @@ In this lab you will:
 2.  Give the new environment a name such as **HCMFTClone**. Click **Clone**.
     ![](./images/workshopclone.png "")
 
-    When asked if you want too proceed with Clone Operation click **Yes**.
+    When asked if you want to proceed with Clone Operation click **Yes**.
     ![](./images/proceed.png "")
 
 3.  Refresh the page. You should now see the **WorkshopClone** Environment. This environment will take a few minutes to provision. Click the down arrow and then click **Details**.
     ![](./images/initiating.png "")
 
-    Note on the **Environment Details** page, under **Status** you will see a red exclamation point. This will remain until the entire environment has successfully provisioned. Once provisioned, the status will change to a green checkmark.
+    Note on the **Environment Details** page, under **Status** you will see a red exclamation point. This will remain until the entire environment has successfully provisioned. Once provisioned, the status will change to a green check mark.
     ![](./images/red.png "")
     
     On the side menu click **Logs**. From here you can monitor the status of your clone environment.
@@ -39,13 +39,13 @@ In this lab you will:
     Once the environment has a green dot with a status of **Running** you have successfully created a clone of your environment.
     ![](./images/running.png "")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
-## Acknowledgements
+## Acknowledgments
 
 **Created By/Date**   
 * **Authors** - Hayley Allmand, Cloud Engineer
-* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
+* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

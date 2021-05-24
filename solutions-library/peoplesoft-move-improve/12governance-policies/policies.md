@@ -1,9 +1,9 @@
 # Setting up Governance Policies
 
 ## Introduction
-This lab walks you through the steps to set up governance policies on CM12.
+Cloud Manger provides the ability to define and manage policies. Using the governance framework, administrators can manage life cycle activities of environments. Policies can be scheduled or executed real time by connecting through events.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 30 minutes + 15 minutes for environment starting/stopping
 
 ### Objectives
 In this lab you will:
@@ -17,7 +17,7 @@ In this lab you will:
 
 ## **STEP 1**: Creating a Policy Group
 
-Before creating any policies you need to create a policy group. Policy groups are used to map policies to specific environments.
+Before creating any policies we will create a policy group. Policy groups are optional and are used to group policies together for display.
 
 1.  Navigate to **Dashboard** > **Governance**. Click **Policy Groups** on the side menu and click the plus button to add a new policy group.
     ![](./images/policygroup.png "")
@@ -33,7 +33,7 @@ Before creating any policies you need to create a policy group. Policy groups ar
 2.  First we will create a start policy for our environment. Type the information as shown below. If you are using an environment other than **HCMFT**, be sure to update **PolicyGroup** and **PolicyConditions** as appropriate.
     ![](./images/start.png "")
 
-    Click **Schedule** and enter a time/date for when you want this policy to take affect. This can be changed later on, for now just put some time in the future. Click **Save** and then click **Save** on the main policy page.
+    Click **Schedule** and enter a time/date for when you want this policy to take effect. This can be changed later on, for now just put some time in the future. Click **Save** and then click **Save** on the main policy page.
     ![](./images/schedule.png "")
 
     Next we will create a stop policy. Click **Add Policy** again and type the information as shown below:
@@ -46,7 +46,7 @@ Before creating any policies you need to create a policy group. Policy groups ar
 
     Set a schedule then click **Save** and then **Save** again.
 
-    Finally we will create a scale-down policy. Click **Add Policy** again and type the information as shown below:
+    Finally, we will create a scale-down policy. Click **Add Policy** again and type the information as shown below:
     ![](./images/scaledown.png "")
 
     Set a schedule then click **Save** and then **Save** again.
@@ -57,7 +57,7 @@ Before creating any policies you need to create a policy group. Policy groups ar
 3.  You can also view all of these policies directly from your environment. Navigate to **Dashboard** > **Environments**. On **HCMFT** (or whichever environment you created the previous policies for) click the down arrow and then **Details**
     ![](./images/workshopdetail.png "")
 
-4.  On the side menu select **Policies**. Here you will be able to see all of the policies we recently created for this environment.
+4.  On the side menu select **Policies**. Here you will be able to see all the policies we recently created for this environment.
     ![](./images/addpolicy.png "")
 
 ## **STEP 3**: Executing Policies
@@ -95,11 +95,13 @@ Before creating any policies you need to create a policy group. Policy groups ar
 9.  Navigate to **Dashboard** > **Environments**. You will see that our environment is in the **Starting** phase which means that our policy has been executed and has initiated the start of the environment.    
     ![](./images/startagain.png "")
 
-## Acknowledgements
+You may now **proceed to the next lab.**
+
+## Acknowledgments
 
 **Created By/Date**   
-* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Engineer
-* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
+* **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Technologist
+* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
