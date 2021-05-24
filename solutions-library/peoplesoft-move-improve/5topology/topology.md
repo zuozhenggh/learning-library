@@ -49,7 +49,7 @@ In this lab you will:
     ![](./images/6bothnodes.png "")
 
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 

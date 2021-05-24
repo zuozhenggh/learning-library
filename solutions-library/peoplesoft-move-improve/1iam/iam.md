@@ -361,7 +361,7 @@ Verify you have the following 4 keys:
 Verify that you have entries #1-8 filled out in **Details.txt**
 
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
 
 ## Acknowledgments

@@ -317,7 +317,7 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
     
 You have now signed into Cloud Manager 12.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 

@@ -143,9 +143,7 @@ You may follow the rest of the labs for even more features:
   This option is only available for DBaaS environments.
 
 
-
-
-You may proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer; Hayley Allmand, Cloud Engineer

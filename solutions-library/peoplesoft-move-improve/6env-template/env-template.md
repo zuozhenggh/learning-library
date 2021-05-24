@@ -106,7 +106,7 @@ You should now see your Environment Template here:
     ![](./images/19templist.png "")
 
 
-You may proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 

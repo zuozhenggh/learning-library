@@ -30,7 +30,7 @@ In this lab you will:
 
     ![](./images/s.png "")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer

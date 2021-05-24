@@ -57,6 +57,8 @@ In this lab you will:
     - When it's done, it will say **Completed**
     ![](./images/complete59.png "")
 
+You may now **proceed to the next lab.**
+
 ## Acknowledgments
 
 **Created By/Date**   
