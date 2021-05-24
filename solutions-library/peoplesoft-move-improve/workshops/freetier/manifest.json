@@ -69,10 +69,7 @@
             "title": "Lab 14: Refreshing an Environment",
             "filename": "../../14refresh/refresh.md"
           },
-          {
-              "title": "Additional Lab: Provisioning Environments with Windows Clients",
-              "filename": "../../windows-env/windows-env.md"
-          },
+          
           {
               "title": "Windows VM Compute Lab (Optional): Provisioning Windows Compute in OCI",
               "filename": "../../windows-optional/windows-optional.md"
