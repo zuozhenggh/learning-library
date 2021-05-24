@@ -38,7 +38,7 @@ Navigate to Cloud Manager Dashboard -> **Environment Template**
   - Description **HCM 9.2 FT: Linux and Windows node**
   ![](./images/tempnamedescription.png "")
 
-2. For Select PeopleSoft Image, click the **search icon**. Do NOT type anything. If your DPK was downloaded properly, it should appear in the Search Results. If you can't see it yet, please wait and refresh the page after awhile. Since we subscribed to the HCM channel in the Lab 4, we see **PEOPLESOFT HCM UPDATE IMAGE 9.2.038 - NATIVE OS** 
+2. For Select PeopleSoft Image, click the **search icon**. Do NOT type anything. If your DPK was downloaded properly, it should appear in the Search Results. If you can't see it yet, please wait and refresh the page after a while. Since we subscribed to the HCM channel in the Lab 4, we see **PEOPLESOFT HCM UPDATE IMAGE 9.2.038 - NATIVE OS** 
   ![](./images/imagesearch.png "")
   ![](./images/4hcmlookup.png "")
 
@@ -46,7 +46,7 @@ Navigate to Cloud Manager Dashboard -> **Environment Template**
   ![](./images/3tempname.png "")
 ## **STEP 2**: Select Topology
 1. Click the **search icon** and select **PUM Fulltier** for the topology
-2. Expand **Custom Attributes** and select **PUM Fulltier** again from the dropdown.
+2. Expand **Custom Attributes** and select **PUM Fulltier** again from the drop down.
 3. Click on **Edit Custom Attributes**
   ![](./images/5selecttopv2.png "")
 4. Fill in the Region and Availability Domains as follows:

@@ -1,7 +1,7 @@
 # Creating Identity and Access Management (IAM) Resources
 
 ## Introduction
-This lab walks you through the steps to prepare your Oracle Cloud Infrastructure Tenancy
+This lab walks you through the steps to prepare your Orace Cloud Infrastructure Tenancy
 
 Estimated Lab Time: 30 minutes
 
@@ -28,24 +28,24 @@ In this lab, you will:
 
 * To sign in to the Console, you need the following: 
 
-    - Tenant, Username and Password
-    - URL for the Console: [https://cloud.oracle.com] (https://cloud.oracle.com)
+    - Tenant, User name and Password
+    - URL for the Console: [https://oracle.com] (https://oracle.com)
     - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
     - Please download this file: [Details.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFAPdfoRcY01Baa_b6mv7eCzg3rg6IL9olmt-P6OdlAf-B_0h0LnmI_DARqiK2Qr/n/orasenatdpltoci03/b/TestDrive/o/Details.txt.zip)
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
-If you haven't already, please download **Details.txt**, in the **Prerequisites** above. This file will be used note down important information throughout the lab. 
+Please click this link to download **Details.txt**, a file in which you will be noting down important information throughout the lab. 
 
 In this section, sign in to the Oracle Cloud Infrastructure console using your credentials.
 
-1.	Open a supported browser and go to the Console URL: [https://cloud.oracle.com] (https://cloud.oracle.com).
+1.	Open a supported browser and go to the Console URL: [https://oracle.com] (https://oracle.com).
 
 2.	Click on the portrait icon in the top-right section of the browser window, then click on the Sign in to Cloud link.
 
     ![](./images/1.png " ")
 
-3.	Enter your Cloud Account name (aka tenancy name, NOT your user name), note it down in **Details.txt** (#1). Click on the **Next** button. 
+3.	Enter your Cloud Account name (aka tenancy name), NOT your user name), note it down in **Details.txt** (#1). Click on the **Next** button. 
 
     ![](./images/tenancy.png " ")
 
@@ -168,7 +168,7 @@ Now, let’s create a security policy that gives your group permissions in your 
     ```
     <copy>Policy for OCI Group</copy>
     ``` 
-    c) Verify it's in the **root** compartment
+    c) Verify it's in the **root** compaartment
 
     d) Toggle the radio button to **"Show manual editor"**
 

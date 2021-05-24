@@ -18,7 +18,7 @@ Estimated Time: 5 minutes
 
 ### Objectives
 In this lab you will:
-* Create a topolgy for a template to automatically provision a PeopleSoft environment
+* Create a topology for a template to automatically provision a PeopleSoft environment
 * Give it required attributes including name, description, OS, shape type, and environment type
 
 ### Prerequisites
@@ -33,9 +33,9 @@ In this lab you will:
 2. Click **PUM Fulltier**
     ![](./images/2selectPUMFT.png "")
 
-    Here we have 2 nodes: Full Tier (Linux) and PeolpeSoft Client (Windows), but they are missing shapes. 
+    Here we have 2 nodes: Full Tier (Linux) and PeopleSoft Client (Windows), but they are missing shapes. 
 
-3. Let's edit the **Full Tier** node first. Using the dropdown, select **VM.Standard2.1** 
+3. Let's edit the **Full Tier** node first. Using the drop down, select **VM.Standard2.1** 
     ![](./images/4addlinuxshape.png "")
 
     Click **Done**

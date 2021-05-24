@@ -44,7 +44,7 @@ In this lab, you will:
   6 | Database Access Password | Psft1234
   7 | Database Operator Password | Psft1234
 
-(All are the same except Database Adminitistrator Password)
+(All are the same except Database Administrator Password)
 
   ![](./images/4credentials.png "")
 
@@ -88,7 +88,7 @@ It takes about 10 minutes to see the status change to **Infrastructure Creation 
 2. Again, click the arrow for the **Details**
   ![](./images/12provisioning.png "")
 
-  On the left, click **Provisioning Tasksk Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
+  On the left, click **Provisioning Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
   ![](./images/13tasks.png "")
 
 Provisioning takes about 90 minutes. You can monitor throughout this time.
