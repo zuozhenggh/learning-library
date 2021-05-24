@@ -133,6 +133,15 @@ We will cover Cloud Manager 12 features in depth in the following labs. Here is 
 
   • **Backup and Restore** (Lab 9): Select this option to backup or restore an environment.
 
+You may follow the rest of the labs for even more features:
+  • **Patch Environment** (Lab 10): Patch an environment.
+
+  • **Upgrade Environment** (Lab 11): Upgrade an environment.
+
+  • **Create Policies** (Lab 12): Execute policies such as starting and stopping an environment.
+
+  • **Selective Adoption** (Lab 13): Create a PUM connection between a source and target environment. 
+
   • **Refresh** (Lab 14): Select this option to refresh the database or the database, ps app home and ps cust home.  
   This option is only available for DBaaS environments.
 
@@ -142,7 +151,7 @@ We will cover Cloud Manager 12 features in depth in the following labs. Here is 
 You may proceed to the next lab.
 
 ## Acknowledgments
-* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer; Hayley Allmand, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 ## Need Help?
