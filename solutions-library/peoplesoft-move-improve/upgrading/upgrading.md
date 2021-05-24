@@ -57,7 +57,7 @@ In this lab you will:
     - When it's done, it will say **Completed**
     ![](./images/complete59.png "")
 
-## Acknowledgements
+## Acknowledgments
 
 **Created By/Date**   
 * **Authors** - Sara Lipowsky, Cloud Engineer

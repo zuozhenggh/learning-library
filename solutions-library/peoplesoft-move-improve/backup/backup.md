@@ -3,7 +3,7 @@
 ## Introduction
 The Backup and Restore action can be used to take a backup or restore an environment from the backup. The Backup action will backup all nodes in the environment. It is recommended to take a backup: before applying a PeopleTools Patch, before applying a PeopleTools upgrade, or before adding or removing a node. When you select to restore an environment from a backup: the Restore overwrites all the data on the target instance, the Target instance will be unavailable during the restore process, and only one instance at a time can be restored on a target instance.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 5 minutes + 30 minutes for backing up
 
 ### Objectives
 In this lab you will:
@@ -34,7 +34,7 @@ In this lab you will:
     You can also select **Logs** on the side menu and follow along from there as well.
     ![](./images/logs.png "")
 
-    Once **Status** changes to a green checkmark (like the picture below) you can continue on with this lab. 
+    Once **Status** changes to a green check mark (like the picture below) you can continue on with this lab. 
     ![](./images/green.png "")   
 
 ## **STEP 2**: Restoring an Environment
@@ -48,13 +48,15 @@ In this lab you will:
     Click **Yes** when it asks if you want to proceed.
     ![](./images/hcmpopup.png "")
 
-You may now proceed to the next lab.
+    You have successfully restored an environment from a backup!
 
-## Acknowledgements
+You may now **proceed to the next lab.**
+
+## Acknowledgments
 
 **Created By/Date**   
 * **Authors** - Hayley Allmand, Cloud Engineer
-* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, April 2021
+* **Last Updated By/Date** - Hayley Allmand, Cloud Engineer, May 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

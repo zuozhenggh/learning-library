@@ -51,7 +51,7 @@ In this lab you will:
 
 You may now proceed to the next lab.
 
-## Acknowledgements
+## Acknowledgments
 
 **Created By/Date**   
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer

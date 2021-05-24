@@ -316,7 +316,7 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
 
 You may now proceed to the next lab.
 
-## Acknowledgements
+## Acknowledgments
 
 **Created By/Date**   
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer

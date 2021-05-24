@@ -1,7 +1,7 @@
 # Selective Adoption
 
 ## Introduction
-Cloud Manager enables customers to take advantage of Selective Adoption by quickly creating PUM environments in Oracle Cloud and automating configuration of target databases in PUM source. Once target databases are configured, standard procedure should be followed to apply updates to target environments.
+Cloud Manager enables customers to take advantage of Selective Adoption by quickly creating PUM environments in Oracle Cloud and automating configuration of target databases in PUM source. Once target databases are configured, standard procedure should be followed to apply updates to target environments. For additional information on selective adoption please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to Chapter 6.
 
 Estimated Lab Time: 30 minutes
 
@@ -12,8 +12,6 @@ In this lab you will:
 ### Prerequisites
 - Two PeopleSoft environments up and running. One that will be used as a source environment and one that will be used as a target environment. The source environment must have a newer image version than the target environment.
 
-For additional information on selective adoption please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to Chapter 6.
-
 ## **STEP 1**: Create PUM Connection
 
 1.  Navigate to **Dashboard** > **Environments**. On your source environment click the down arrow button and then click **Details**.
@@ -22,7 +20,7 @@ For additional information on selective adoption please visit [https://docs.orac
     Click **Manage PUM Connections** on the side menu then click **Add Target**.
     ![](./images/managepum.png "")
 
-2.  Select your desired target environment and for client select the windows client. Click **Add**.
+2.  Select your desired target environment and for client select the Windows client. Click **Add**.
     ![](./images/selecttarget.png "")
 
     Under **Target Databases** you should now see your new PUM connection. Notice how under **Upload target to PUM Source** the status is **in progress**. Wait until the status says **COMPLETE**, then you can move on to the next step.
@@ -54,9 +52,9 @@ If you want to apply packages to the target DB you can use the PIA URL to log in
     From **Define Change Package** on the side menu you will be able to apply packages to the target DB.
     ![](./images/define.png "")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
-## Acknowledgements
+## Acknowledgments
 
 **Created By/Date**   
 * **Authors** - Hayley Allmand, Cloud Engineer; Joowon Cho, Cloud Technologist

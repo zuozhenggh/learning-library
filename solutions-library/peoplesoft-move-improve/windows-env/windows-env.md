@@ -38,7 +38,7 @@ The purpose of this lab is to test your knowledge with Labs 1-7 and gain familia
   - Non-alphabetic characters (for example, !, $, #, %)
 
 
-## Acknowledgements
+## Acknowledgments
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
 * **Contributor** -  Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021
