@@ -1,11 +1,26 @@
 # RESTful Queries
 
 ## Introduction
-In previous labs we've shown how to load, index and search our JSON data in the database. But our queries were run in SQL Developer Web. While that's great for developing queries, it can't be used by real-world applications. So how do we make our database available to other applications? Of course you can query a database from many tools and languages, but one of the simplest methods to make queries available is to generate a RESTful API through Oracle' Application Express (APEX). That's what we'll be covering in this lab.
+In previous labs, we've shown how to load, index and search our JSON data in the database. But our queries were run in SQL Developer Web. While that's great for developing queries, it can't be used by real-world applications. So how do we make our database available to other applications? Of course you can query a database from many tools and languages, but one of the simplest methods to make queries available is to generate a RESTful API through Oracle' Application Express (APEX). That's what we'll be covering in this lab.
 
-Estimated time: 20 minutes.
+Estimated time: 20 minutes
 
-## **Step 1:** Create an APEX workspace
+### Objectives
+
+In this lab, you will:
+- Create a workspace.
+- Use APEX to generate a RESTful API.
+- Learn how to utilize RESTful services.
+
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+- Getting Started
+- Upload Files to Object Storage
+- Loading from Object Storage
+- Creating Indexes and Basic Queries
+
+## **STEP 1:** Create an APEX Workspace
 
 All our data is now loaded, and we can proceed to creating indexes.  The main index we’ll be using is a “json search index” on the REVIEWS table. This is a JSON full-text index which indexes ALL of the JSON in the table, and allows for word-based searching on textual fields.
 
@@ -35,7 +50,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
 
     ![](./images/apex5.png)
 
-## **Step 2:** Create a RESTful module, template and handler
+## **STEP 2:** Create a RESTful Module, Template and Handler
 
 1. RESTful Services - Create a module
    
@@ -114,7 +129,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
 
     (depending on your browser you may need to encode the space in "wonderful sushi" as %20. I didn't need to).
 
-    5. RESTful Queries - A PL/SQL example
+4.  RESTful Queries - A PL/SQL example
    
     By default the REST call returns the first 25 records. If you scroll down you will see that it lists "hasMore" : "true" towards the end.  So it tells us that there are more than 25 hits, but not how many hits there are in total.  That's because a simple SQL query can't provide that information.  However, for Oracle Text or JSON search queries, we can get the total count by calling a PL/SQL function CTX_QUERY.COUNT_HITS (this is much faster than doing a separate SELECT COUNT(*) query, which has to actually fetch all the hits to count them). If we're doing PL/SQL we could also get a "snippet" - a fragment of the text with search terms highlighted.
 
@@ -165,9 +180,4 @@ Thank you for taking the time to learn about JSON in Oracle Database 19c.
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
-- **Last Updated By/Date** - Roger Ford, June 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+- **Last Updated By/Date** - Brianna Ambler, May 2021
