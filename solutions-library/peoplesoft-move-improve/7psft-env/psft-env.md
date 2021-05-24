@@ -114,7 +114,7 @@ Provisioning takes about 90 minutes. You can monitor throughout this time.
 
 ## **STEP 5**: Cloud Manager Actions for PeopleSoft Environment
 
-We will cover Cloud Manager 12 features in depth in the following labs; however, here are some actions you can perform at a high level.
+We will cover Cloud Manager 12 features in depth in the following labs. Here is an **Overview** of the actions you can perform.
 
   ![](./images/actions.png "")
   The actions are:
@@ -129,12 +129,13 @@ We will cover Cloud Manager 12 features in depth in the following labs; however,
 
   • **Manage Node**: Select this option to scale environment up or down.
 
-  • **Clone Environment**: Select this option to clone an existing environment.
+  • **Clone Environment** (Lab 8): Select this option to clone an existing environment.
 
-  • **Refresh**: Select this option to refresh the database or the database, ps app home and ps cust home.  
+  • **Backup and Restore** (Lab 9): Select this option to backup or restore an environment.
+
+  • **Refresh** (Lab 14): Select this option to refresh the database or the database, ps app home and ps cust home.  
   This option is only available for DBaaS environments.
 
-  • **Backup and Restore**: Select this option to backup or restore an environment.
 
 
 

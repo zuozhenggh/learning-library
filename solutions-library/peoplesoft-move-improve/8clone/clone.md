@@ -1,7 +1,7 @@
 # Cloning an Environment
 
 ## Introduction
-The Clone Environment action can be used to duplicate an exact copy of an existing PeopleSoft environment running in Cloud Manager. The new environment is built by reconfiguring the disks from deep clone. This process saves both installation and deployment time. The cloned environment is an exact copy of the existing environment. Once the cloned environment is running, you can perform scaling and Lifecycle Management actions.
+The Clone Environment action can be used to duplicate an exact copy of an existing PeopleSoft environment running in Cloud Manager. The new environment is built by reconfiguring the disks from deep clone. This process saves both installation and deployment time. Once the cloned environment is running, you can perform scaling and Lifecycle Management actions.
 
 Estimated Lab Time: 5 minutes + 30 minutes for cloning
 

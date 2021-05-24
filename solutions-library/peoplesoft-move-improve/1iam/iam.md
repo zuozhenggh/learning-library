@@ -28,18 +28,18 @@ In this lab, you will:
 
 * To sign in to the Console, you need the following: 
 
-    - Tenant, User name and Password
-    - URL for the Console: [https://oracle.com] (https://oracle.com)
+    - Tenant, Username and Password
+    - URL for the Console: [https://cloud.oracle.com] (https://cloud.oracle.com)
     - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
     - Please download this file: [Details.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFAPdfoRcY01Baa_b6mv7eCzg3rg6IL9olmt-P6OdlAf-B_0h0LnmI_DARqiK2Qr/n/orasenatdpltoci03/b/TestDrive/o/Details.txt.zip)
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
-Please click this link to download **Details.txt**, a file in which you will be noting down important information throughout the lab. 
+If you haven't already, please download **Details.txt**, in the **Prerequisites** above. This file will be used note down important information throughout the lab. 
 
 In this section, sign in to the Oracle Cloud Infrastructure console using your credentials.
 
-1.	Open a supported browser and go to the Console URL: [https://oracle.com] (https://oracle.com).
+1.	Open a supported browser and go to the Console URL: [https://cloud.oracle.com] (https://cloud.oracle.com).
 
 2.	Click on the portrait icon in the top-right section of the browser window, then click on the Sign in to Cloud link.
 

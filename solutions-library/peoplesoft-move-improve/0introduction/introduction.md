@@ -2,16 +2,18 @@
 
 ## About this Workshop
 
-This hands-on lab provides users with step-by-step instructions for preparing their **Oracle Cloud Infrastructure (OCI) Tenancy**, including setting up a user group, adding a user and policies, as well as a compartment to house **Cloud Manager 12 using Marketplace**. The final sections provide guidance for **provisioning a PeopleSoft environment**, followed by interactive, yet simple excercises to familiarize users with the system.
+This hands-on lab provides users with step-by-step instructions for preparing their **Oracle Cloud Infrastructure (OCI) Tenancy**, including setting up a user group, adding a user and policies, as well as a compartment to house **Cloud Manager 12 using Marketplace** and associated resources. After provisioning and configuring Cloud Manager 12, users will **subscribe to the HCM deployment kit** to then create a **topology**, **environment template**, and **provision a PeopleSoft Environment**. 
 
+In addition to getting a PeopleSoft Environment up and running on Cloud Manager, users can then move on to the simple and interactive Labs (8-14). 
+These optional labs help familiarize users with the features of Cloud Manager and can be completed in any order.
 
-Estimated Lab Time: 6 hours, including provisioning time. 
+Estimated Lab Time: 7.5 hours, including provisioning time (Labs 1-7) 
 
-
+To ensure success:
 - The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
 - Follow all naming conventions (compartment, group, etc..) and passwords as directed.   
-- IP addresses and URLs in the screenshots in this workbook may differ from what you use in the labs as these are dynamically generated.
-- The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes to the Peoplesoft Cloud Manager for the Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
+- IP addresses and URLs in the screenshots in this workshop may differ from what you use in the labs as these are dynamically generated.
+- The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes of Peoplesoft Cloud Manager and Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
 
 ### Architecture Diagram
 
@@ -20,7 +22,7 @@ Estimated Lab Time: 6 hours, including provisioning time.
 
 ### Objectives
 
-In this lab, you will:
+In Labs 1-7, you will:
 * Set up an Oracle Cloud Infrastructure Account (Prerequisites) 
 * Create Identity and Access Management (IAM) Resources (Lab 1) 
 * Provision the Peoplesoft Cloud Manager using Marketplace (Lab 2)
@@ -30,16 +32,28 @@ In this lab, you will:
 * Create a New Environment Template (Lab 6)
 * Deploy a PeopleSoft Environment (Lab 7)
 
-
+As aforementioned, Labs 1-7 cover the core purpose. 
+Labs 8-14 guide users through executing additional Cloud Manager features:
+One users have spun up a PeopleSoft environment, they can:
+* Clone an Existing PeopleSoft Environment (Lab 8) 
+* Backup an Existing PeopleSoft Environment (Lab 9) 
+* Patch an Existing PeopleSoft Environment (Lab 10)
+* Upgrade an Existing PeopleSoft Environment (Lab 11)
+* Create Governance Policies to Schedule Starting and Stopping a PeopleSoft Environment (Lab 12)
+* Create a PUM Connection from a Source PeopleSoft Environment to a Target Environment (Lab 13)
+* Refresh a PeopleSoft Environment from a Backup (Lab 14)
 
 ### Prerequisites
 * An OCI tenancy with administrator user access. 
-* My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
-* User should have their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
-* User has access to a workstation/laptop with the following installed:
-    * If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win. Please also download Putty from the following site: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html. In the Package Files section, click on an installer depending on 32/64 bits.
+* My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to provision Cloud Manager.
+* Workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances
+* The following should be installed:
     * Firefox to connect to Cloud Manager PIA.
     * A different web browser (i.e. Chrome) to connect to OCI web console. 
+    * If you have a windows machine, please download:
+        * Git Bash [https://git-scm.com/download/win](https://git-scm.com/download/win)
+        * Putty [https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). In the Package Files section, click on an installer depending on 32/64 bits.
+
 
 ## Appendix
 
