@@ -1,8 +1,12 @@
-﻿# Introduction
+---
+inject-note: false
+---
+
+# Introduction
 
 The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.
 
-> **Note**: If you are working in the LiveLabs environment, the Data Discovery and Data Masking features are not available at this time.
+> **Note**: If you are working in the LiveLabs or Luna environment, the Data Discovery and Data Masking features are not available at this time.
 
 Estimated Workshop Time: 2 hours
 
@@ -46,4 +50,4 @@ The following links provide more information about Oracle Data Safe:
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, May 22 2021
+* **Last Updated By/Date** - Jody Glover, May 25 2021
