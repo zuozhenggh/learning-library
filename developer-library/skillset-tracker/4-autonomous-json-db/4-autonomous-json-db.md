@@ -19,7 +19,7 @@ Estimated Lab Time: 1 hour
 * SQL Developer Installed on your local machine.
 
 ## **Step 1:** Understand the sample JSON files
-In this step you are going to understand the structure of the two sample JSON files (_sample\_skills.json_ and _sample\_users.json_). However, you should know that you can change these ones in any way, depending on your business need.
+In this step you are going to understand the structure of the two sample JSON files ([sample\_skills.json](https://objectstorage.us-ashburn-1.oraclecloud.com/p/23GO6zKXRyUew-jyfRJ-8zOBp9otsFPQGVZfQ2OPtWLXmig0ilbdhfpas0iRFv5x/n/orasenatdpltintegration03/b/ODA-SkillTracker-dev/o/sample_skills.json) and [sample\_users.json](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4nqL5wz7O8zR56cieXGU8IQM811AcG3GWfJwXQMBJu81lck_5nW4La4hybWWtKw4/n/orasenatdpltintegration03/b/ODA-SkillTracker-dev/o/sample_user.json)). However, you should know that you can change these ones in any way, depending on your business need.
 
 The first, and the most important one is the _sample\_skills.json_ file. This file represents the main data source for the application that is going to be build in these labs.
 

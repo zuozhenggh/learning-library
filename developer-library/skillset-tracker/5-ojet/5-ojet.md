@@ -274,7 +274,7 @@ define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojattributegrouphandler'
 The treemap will need to extract the data from a JSON file which has a specific structure so that it will display the data correctly.
 
 5. Create a new folder under **/src/js** named _data_.
-6. Create a new file named _sampletest.json_ and copy the content of _sample\_test.json_ file attached **here**.
+6. Create a new file named _sampletest.json_ and copy the content of _sample\_test.json_ file attached [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bg5cJbrnD4e9hjpthtpOCVW5lmE6HkoCBcR88OPst-i3l10v3kT6Pkjdi4tf_hSr/n/orasenatdpltintegration03/b/ODA-SkillTracker-dev/o/sampletest.json).
 
 At this moment you have the JSON, JavaScript and HTML file and if you want to see the result, you need to create a new entry in the menu.
 
