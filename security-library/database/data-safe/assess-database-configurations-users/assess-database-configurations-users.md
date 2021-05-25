@@ -1,3 +1,7 @@
+---
+inject-note: true
+---
+
 # Assess Database Configurations and Users
 
 ## Introduction

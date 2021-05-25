@@ -1,3 +1,7 @@
+---
+inject-note: true
+---
+
 # Analyze Alerts and Audit Reports
 
 ## Introduction

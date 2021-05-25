@@ -1,3 +1,7 @@
+---
+inject-note: true
+---
+
 # Prepare Your Environment
 
 ## Introduction

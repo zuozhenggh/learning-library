@@ -1,3 +1,6 @@
+---
+inject-note: true
+---
 
 # Register an Autonomous Database with Oracle Data Safe
 

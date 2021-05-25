@@ -1,3 +1,7 @@
+---
+inject-note: true
+---
+
 # Discover and Mask Sensitive Data
 
 ## Introduction
