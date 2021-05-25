@@ -6,6 +6,8 @@
 
 **MySQL Database Service** is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
 
+[](youtube:f-fVabi1tRA)
+
 ## Objectives
 
 In this lab, you will:

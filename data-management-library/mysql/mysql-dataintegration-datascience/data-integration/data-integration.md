@@ -8,6 +8,8 @@ This Lab walks you through the steps to get started using **Data Integration** o
 
 **OCI Data Integration** is a fully managed, serverless, native cloud service that helps you with common **extract, load, and transform (ETL)** tasks such as ingesting data from different sources, cleansing, transforming, and reshaping that data, and then efficiently loading it to target data sources on OCI.
 
+[](youtube:0BN8Ws2qJGQ)
+
 ## Objectives
 
 In this lab, you will:
