@@ -4,6 +4,9 @@ In order to complete the following labs you might need to install some of the fo
 
 ## Objectives
 * Install SQL Developer.
+* Install and configure OCI CLI to connect to OCI.
+* Install and configure Docker.
+* Install Kubectl.
 
 **Note**: Only if you are going to run the code locally, you should also:
 * Install Visual Studio Code.
@@ -14,6 +17,18 @@ In order to complete the following labs you might need to install some of the fo
 ## Installing SQL Developer
 
 Go to [oracle.com](https://www.oracle.com/tools/downloads/sqldev-downloads.html) and download the proper package for your operating system. It is recommended that you choose the version with the JDK included. You might need to login using an Oracle account in order to start downloading the installation files.
+
+## Installing OCI CLI
+
+Go to [oracle.com](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm) and follow the steps for installing and configuring the OCI CLI on your local machine. After installing it, you can run the ``oci setup config`` command and follow the steps to configure it. Test your configuration using the command: ``oci os ns get``.
+
+## Installing Docker
+
+Go to [docker.com](https://www.docker.com/products/docker-desktop) and download the package suitable for your operating system. Install Docker and Sign In or create a new account.
+
+## Installing Kubectl
+
+Go to [kubernetes.io](https://kubernetes.io/docs/tasks/tools/) and download the suitable package for your operating system and install it according to the steps described on their website.
 
 ## [Optional] Installing Visual Studio Code
 
