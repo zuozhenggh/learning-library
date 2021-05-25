@@ -46,13 +46,15 @@ This lab assumes you have:
   1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for generating SQL statements.
   2. To generate SQL statements for out-of-sync data, select the record from the finished jobs and click **Generate SQL**.
     ![](./images/1-select-out-of-sync-generate-sql.png " ")
-    The SQL file gets generated:
-    ![](./images/2-sql-file-generated.png " ")
-  3. Login to the Oracle GoldenGate Veridata server to view the generated SQL file:
-    ![](./images/3-view-generated-sql.png " ")
-  4. Unzip the SQL file to view its contents.
-    ![](./images/4-unzip-generated-sql.png " ")
+    The SQL file gets generated.
 
+  3. Open a terminal to view the generated SQL file. Navigate to the generated location:
+
+      ![](./images/4-unzip-generated-sql.png " ")
+
+  4. Unzip the SQL file to view its contents.
+
+      ![](./images/3-view-generated-sql.png " ")
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
