@@ -115,7 +115,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
   ![skills](./images/skills.png)
 
-2. Download the **Skill** by accessing this [link]().
+2. Download the **Skill** by accessing this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/QEqP8uWCjLE7zNropmNaZnyc5RtAfecBYTQIijw0Eex1K1cgR2yz2mcaTxJAmlh7/n/orasenatdpltintegration03/b/ODA-SkillTracker-dev/o/SkillTracker(1.0).zip)
 
 3. In the up right corner of the Console, select **Import Skill**.
 
@@ -124,25 +124,68 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 4. Select the downloaded file from your computer then click **Open**
 
 
-## **Step 4:** Test the Skill with Conversation Tester
+## **Step 4:** Integrate the Skill with your app
 
 1. After you import the Skill, you will find it in the Console, under **Development** -> **Skills** cathegory. Now click on it's name, **SkillTracker**.
 
   ![imported skill](./images/imported-skill.png)
 
-2. In the up right corner of the console, click on **Preview** to test the skill.
+
+2. In the left pannel, click on **Components**.
+
+  ![components](./images/components.png)
+
+3. Under Components page, click on **Download package file**.
+
+  ![download component](./images/download-component.png)
+
+4. Unzip the file named my-component-service-1.0.0.tgz, then add this project folder in your code editor (Atom, VSCode etc.).
+
+5. Under package -> components you will find 8 .js files.
+
+  ![folder structure](./images/folder-structure.png)
+
+6. Open each of them and you will find in the code a constant named **restUrl**, for example in the GetAllAreas.js at line 16.
+
+  ```
+  const restUrl = "http://your_public_ip:8000/api/skillset";
+  ```
+
+  You will need to replace **your_public_ip** with the public IP address of your instance created in Lab6, Step 1, in all the 8 .js files. Then save each file.
+
+
+7. Open a terminal an go in the **package** folder. Run the command:
+
+    ```
+    npm pack
+    ```
+
+    ![npm pack](./images/npm-pack.png)
+
+8. A new .tgz file will be created inside the **package** folder.
+
+9. Return in the **Components** section in Digital Assitant Console, and update the my-component-service-1.0.0.tgz file with your new one, that will have the same name.
+
+  ![update component](./images/update-component.png)
+
+10. The status will change in **Awaiting Deployment**  then in **Ready**.
+
+
+## **Step 5:** Test the Skill with Conversation Tester
+
+1. After you update the Custom Component, click on **Preview** to test the skill, in the up right corner of the console.
 
   ![test skill](./images/test-skill.png)
 
-3. A window with **Conversation Tester** will pop-up. You can change the **Channel** to **Slack** for the test. Use the **Utterance** section to enter the text.
+2. A window with **Conversation Tester** will pop-up. You can change the **Channel** to **Slack** for the test. Use the **Utterance** section to enter the text.
 
   ![conversation tester](./images/conversation-tester.png)
 
-4. In the **Utterance** section type _hi_ or _hello_ or how do you want to say hello/wake up the bot, then hit Enter.
+3. In the **Utterance** section type _hi_ or _hello_ or how do you want to say hello/wake up the bot, then hit Enter.
 
   ![first test](./images/first-test.png)
 
-5. You can make now 2 types of testing: _Press the button testing method_ or _User input & Press the button testing method_.
+4. You can make now 2 types of testing: _Press the button testing method_ or _User input & Press the button testing method_.
 
 * **I. Press the button testing method**
 
@@ -186,11 +229,11 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
   After you enter one of the above, you can then press the buttons depending on what do you want to see next.
 
 
-## **Step 5:** Integrate your Digital Assistant with Slack
+## **Step 6:** Integrate your Digital Assistant with Slack
 
 Below are the steps for creating a Slack channel for Digital Assistant.
 
-### **5.1. Get a Slack Workspace**
+### **6.1. Get a Slack Workspace**
 
   To make your digital assistant  available in Slack, you need to have a Slack Workspace available to you where you have the permissions necessary to create a Slack app.
 
@@ -234,7 +277,7 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
 
 
-### **5.2. Create a Slack App**
+### **6.2. Create a Slack App**
 
 1. Go to Slack's [Your Apps](https://api.slack.com/apps) page.
 
@@ -258,7 +301,7 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
 
 
-### **5.3. Add OAuth Scopes for the Slack App**
+### **6.3. Add OAuth Scopes for the Slack App**
 
 You add OAuth scopes for permissions that you want to give to the bot and to the user.
 
@@ -285,7 +328,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
     ![scopes](./images/scopes.png)
 
 
-### **5.4. Add the App to the Workspace**  
+### **6.4. Add the App to the Workspace**  
 
 1. Scroll back to the *top* of the **OAuth & Permissions** page.
 
@@ -303,7 +346,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
   ![app in slack 2](./images/app-in-slack-2.png)
 
 
-### **5.5. Create a Channel in Digital Assistant**  
+### **6.5. Create a Channel in Digital Assistant**  
 
 1. In the Oracle Digital Assitant Instance Console, click on Hamburger menu on the top left to open the navigation menu, select **Development** -> **Channels** -> **Users** -> **Add Channel**.
 
@@ -337,7 +380,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
 
 
-### **5.6. Configure the Webhook URL in the Slack App**  
+### **6.6. Configure the Webhook URL in the Slack App**  
 
 
 1. In the left navigation of the web console for your Slack app, select **Interactivity & Shortcuts** and turn the **Interactivity** switch **ON**.
@@ -415,7 +458,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
   ![success](./images/success.png)
 
 
-## **Step 6:** Test Your Bot in Slack
+## **Step 7:** Test Your Bot in Slack
 
   With the Slack Channel and messaging configuration complete, you can test your Bot in Slack.
 
