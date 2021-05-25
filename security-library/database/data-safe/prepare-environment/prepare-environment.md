@@ -37,7 +37,7 @@ Before starting, be sure the following prerequisites are completed:
 
 Enable Oracle Data Safe in a region of your tenancy. Usually you enable Oracle Data Safe in your home region.
 
-> **Note**: If Oracle Data Safe is already enabled in a region of your tenancy, or you are working in the LiveLabs or Luna environment, you can skip this step. In the LiveLabs and Luna tenancies, Oracle Data Safe is enabled in the region to which you have access.
+> **Note**: If Oracle Data Safe is already enabled in a region of your tenancy, or you are working in the LiveLabs or Luna environment, you can skip this step. In the LiveLabs and Luna environments, Oracle Data Safe is enabled in the region to which you have access.
 
 1. In Oracle Cloud Infrastructure, at the top of the page on the right, select the region in your tenancy in which you want to enable Oracle Data Safe. Usually, you leave your home region selected, for example, **US East (Ashburn)**.
 
@@ -136,7 +136,7 @@ As a tenancy administrator, create an IAM policy that allows the user group (cre
 
 Grant privileges to the user group in the Oracle Data Safe Console so that the user group can use all of the Oracle Data Safe features.
 
-> **Note**: If you are a member of your tenancy's `Administrators` group, or you are using the LiveLabs or Luna environment, you can skip this step. As a tenancy administrator, you automatically have all privileges in Oracle Data Safe. In the LiveLabs tenancy, your temporary user group is granted privileges to use all Oracle Data Safe features, except for Data Discovery and Data Masking.
+> **Note**: If you are a member of your tenancy's `Administrators` group, or you are using the LiveLabs or Luna environment, you can skip this step. As a tenancy administrator, you automatically have all privileges in Oracle Data Safe. In the LiveLabs environment, your temporary user group is granted privileges to use all Oracle Data Safe features, except for Data Discovery and Data Masking.
 
 1. From the navigation menu, select **Oracle Database**, and then **Data Safe**.
 
@@ -157,7 +157,7 @@ Grant privileges to the user group in the Oracle Data Safe Console so that the u
 
 Provision an Autonomous Transaction Processing (ATP) database to use with Oracle Data Safe.
 
-> **Note**: If you plan to use an existing ATP database in your own tenancy, or you are using the LiveLabs or Luna environment, you can skip this step. In the LiveLabs and Luna tenancies, you are provided an ATP database.
+> **Note**: If you plan to use an existing ATP database in your own tenancy, or you are using the LiveLabs or Luna environment, you can skip this step. In the LiveLabs and Luna environments, you are provided an ATP database.
 
 1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Oracle Database**, and then **Autonomous Transaction Processing**.
 

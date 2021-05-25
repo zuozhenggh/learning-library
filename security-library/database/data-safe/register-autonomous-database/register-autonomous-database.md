@@ -11,7 +11,7 @@ To following three security aspects need to be configured for you to use a datab
 - One or more Oracle Data Safe roles are granted to the Oracle Data Safe service account on the Autonomous database. The roles enable Oracle Data Safe features on the database. By default, on an Autonomous Database, the Oracle Data Safe service account has all the roles granted, except for Data Masking.
 - One or more privileges are granted to you in the Oracle Data Safe Console for your Autonomous Database. By default, when you register an Autonomous Database, your user account is automatically granted Oracle Data Safe privileges for that database. The privileges granted depend on whether you are a regular user or an administrator. A regular user can use the User Assessment, Security Assessment, and Activity Auditing features with the database. A tenancy administrator or an Oracle Data Safe administrator can use all of the Oracle Data Safe features on any database, which includes User Assessment, Security Assessment, Activity Auditing, Data Discovery, and Data Masking.
 
-> **Note**: In the LiveLabs tenancy, your temporary Oracle Cloud account is not granted privileges in the Oracle Data Safe Console to use the Data Discovery and Data Masking features with your database.
+> **Note**: In the LiveLabs environment, your temporary Oracle Cloud account is not granted privileges in the Oracle Data Safe Console to use the Data Discovery and Data Masking features with your database.
 
 Begin by registering your Autonomous Transaction Database (ATP) that you created when you prepared your environment. If you are working in a paid, LiveLabs, or Luna tenancy, then you can register the ATP database provided to you.
 
@@ -55,7 +55,7 @@ Before starting, be sure the following prerequisites are completed:
 
 5. On the **Autonomous Database Information** tab, under **Data Safe**, click **Register**.
 
-     ![Register option for your database](images/register-database.png "Register option for your database")
+     ![Register option for your database](images/register-database.png )
 
 2. In the **Register Database with Data Safe** dialog box, click **Confirm**.
 
