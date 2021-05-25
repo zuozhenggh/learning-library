@@ -63,17 +63,17 @@ Estimated Lab Time: 1 hour
 
 8. From the detail page of the VCN navigate to **Security Lists** -> **Your Default Security List**. Select **Ingress Rules** and click on **Add Ingress Rules**. Add all the needed rules so that the lists of rules will be the same as the ones in the images. Here, port 8000 was added since this is the default port of an OracleJET application. This can be changed, if desired, considering the fact that it also needs to be changed in the OJET code as well.
 
-![Ingress Security List Rules](./images/ingres-security-list-rules.PNG)
+![Ingress Security List Rules](./images/ingres-security-list-rules.png)
 
-![Egress Security List Rules](./images/egres-security-list-rules.PNG)
+![Egress Security List Rules](./images/egres-security-list-rules.png)
 
   **Note**: For production instances never open up all traffic via 0.0.0.0/0 on a given port, in this lab this happens only to make the configuration easier.
 
 9. The next step would be to create a public subnet in the VCN. Navigate to **your VCN** -> **Subnets** -> **Create Subnet** and fill in the form with the name of the subnet, the compartment and the CIDR block. For the subnet type select **Regional**, as recommended. Also, chose the Default Route Table and Default Security List created and updated previously.
 
-![create subnet form 1](./images/create-subnet-form-1.PNG)
+![create subnet form 1](./images/create-subnet-form-1.png)
 
-![create subnet form 2](./images/create-subnet-form-2.PNG)
+![create subnet form 2](./images/create-subnet-form-2.png)
 
 
 ## **Step 2:** Creating a Linux Instance in OCI
@@ -82,19 +82,19 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
 1. In the top-left hamburger menu navigate to **Compute** -> **Instances** and choose **Create Instance**. Chose a name for the instance, in this case it would be _ojet-server_, then select the desired compartment and availability domain.
 
-![create instance form step 1](./images/create-instance-form-step1.PNG)
+![create instance form step 1](./images/create-instance-form-step1.png)
 
 2. Select the image and shape as shown in the picture.
 
-![create instance form step 2](./images/create-instance-form-step2.PNG)
+![create instance form step 2](./images/create-instance-form-step2.png)
 
 3. Chose the VCN in which the instance will reside, as well as the subnet created previously. To simplify everything, chose to assign a Public IP to the instance, in order to make it accessible from the Internet.
 
-![create instance form step 3](./images/create-instance-form-step3.PNG)
+![create instance form step 3](./images/create-instance-form-step3.png)
 
 4. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH key**.
 
-![create instance form step 4](./images/create-instance-form-step4.PNG)
+![create instance form step 4](./images/create-instance-form-step4.png)
 
 5. Click the **Create** button.
 

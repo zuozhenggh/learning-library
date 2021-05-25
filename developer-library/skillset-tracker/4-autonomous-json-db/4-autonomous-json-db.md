@@ -86,42 +86,42 @@ In order to create an Autonomous JSON Database you must first login on the OCI C
 
 1. In the top-left hamburger menu navigate to **Autonomous JSON Database** which can be found under **Oracle Database** category.
 
-![create ADB menu](./images/create-adb-menu.PNG)
+![create ADB menu](./images/create-adb-menu.png)
 
 2. Choose to create a new database by clicking **Create Autonomous Database**.
 
-![create ADB button](./images/create-adb-btn.PNG)
+![create ADB button](./images/create-adb-btn.png)
 
 3. Fill in the form by providing basic information for the ADB such as: compartment, display name and database name. For the workload type choose **JSON** and **Shared Infrastructure** for the deployment type.
 
-![create ADB form step 1](./images/create-adb-form-1.PNG)
+![create ADB form step 1](./images/create-adb-form-1.png)
 
  The database version is 19c with 1 OCPU count and 1TB of storage.
 
-![create ADB form step 2](./images/create-adb-form-2.PNG)
+![create ADB form step 2](./images/create-adb-form-2.png)
 
 Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access for everywhere**. Click **Create Autonomous Database**.
 
-![create ADB form step 3](./images/create-adb-form-3.PNG)
+![create ADB form step 3](./images/create-adb-form-3.png)
 
 ## **Step 3:** Download database Wallet & connect to the database
 In order to connect to the database using SQL Developer, you must first download the wallet to you local machine.
 
 1. After the database has provisioned, click on the **DB Connection** button in the OCI Console to download the database wallet.
 
-![db connection button](./images/dbconnection-button.PNG)
+![db connection button](./images/dbconnection-button.png)
 
 2. Select **Instance Wallet** from the drop-down list, click **Download Wallet** and provide the password that you chose previously for ADMIN.
 
-![download wallet](./images/download-wallet.PNG)
+![download wallet](./images/download-wallet.png)
 
 3. Open SQL Developer and from the **Connections** window click on the green **+** sign to add a new connection.
 
-![SQL Developer new conection](./images/sql-developer-new-connection.PNG)
+![SQL Developer new conection](./images/sql-developer-new-connection.png)
 
 4. Provide a name for the connection (any name can be chosen) as well as the user (_ADMIN_) and the password you've set at **Step 2 - Create Autonomous JSON Database**. For the **Connection Type** choose **Cloud Wallet** from the drop-down list, browse to the location of the wallet zip file and select the desired service (here skillsetdb_high). Test the connection and if the test succeeds you can connect to the database.
 
-![SQL Developer conection form](./images/sql-developer-connection-form.PNG)
+![SQL Developer conection form](./images/sql-developer-connection-form.png)
 
 ## **Step 4:** Create new database user and grant needed roles
 Considering the fact that you previously connected to the database using the _ADMIN_ user, you need to run the following commands in order to create a new user _SKILLSET_ which will be used by the application.
@@ -152,28 +152,28 @@ In order to be able to create the SODA document collections in the database from
 
 2. Log in on the OCI Console and from the top-left hamburger menu choose **Object Storage -> Object Storage**.
 
-![Object Storage menu](./images/object-storage-menu.PNG)
+![Object Storage menu](./images/object-storage-menu.png)
 
 3. Choose the option to **Create Bucket**.
 
-![Object Storage menu](./images/create-bucket-button.PNG)
+![Object Storage menu](./images/create-bucket-button.png)
 
 4. Set up a name for the bucket and select **Standard** for the Default Storage Tier field.
 
-![Object Storage menu](./images/create-bucket-form.PNG)
+![Object Storage menu](./images/create-bucket-form.png)
 
 5. After the bucket was created, navigate to **Objects** and click **Upload** then select the files to be uploaded.
 
-![Object Storage menu](./images/upload-object.PNG)
+![Object Storage menu](./images/upload-object.png)
 
 6. Create Pre-Authenticated Requests for each of these files as shown in the images below.
 
-![Object Storage menu](./images/create-par-button.PNG)
-![Object Storage menu](./images/create-par-form.PNG)
+![Object Storage menu](./images/create-par-button.png)
+![Object Storage menu](./images/create-par-form.png)
 
 7. Save the PAR URL somewhere. You will need it later and it will not be shown again. You should have two PAR URLs, one for the **skills.json** file and one for **users.json** file.
 
-![Object Storage menu](./images/create-par-result-url.PNG)
+![Object Storage menu](./images/create-par-result-url.png)
 
 ## **Step 6:** Create SODA Collections
 Login in SQL Developer using the _**SKILLSET**_ user created at **Step 4 - Create new database user and grant needed roles** and run the following commands to create the two collections (skills and users), as well as unique indexes for the **email** field in each of them.

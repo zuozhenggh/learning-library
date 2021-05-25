@@ -28,15 +28,15 @@ Estimated Lab Time: 1 hour and 30 minutes
 ## **Step 1:** Creating a Linux Instance in OCI
 1. From the top-left hamburger menu, locate and select **Compute -> Instances**. Click the blue button **Create Instance**.
 
-![create instance menu](./images/create-instance-menu.PNG)
+![create instance menu](./images/create-instance-menu.png)
 
 2. Make sure you are in the desired compartment (here _skillset_). Configure your instance by naming it, choosing your Availability Domain, Image and Shape. Chose the VCN in which the instance will reside, as well as the Subnet. To simplify everything, chose to assign a Public IP to the instance, in order to make it accessible from the Internet.
 
-![create instance form](./images/create-instance-form.JPG)
+![create instance form](./images/create-instance-form.jpg)
 
 3. Since you will need to connect to the instance, you should also upload your SSH public key. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH key**.
 
-![add SSH key to instance](./images/create-instance-form-ssh-key.JPG)
+![add SSH key to instance](./images/create-instance-form-ssh-key.jpg)
 
 4. Click the **Create** button.
 
@@ -44,7 +44,7 @@ Estimated Lab Time: 1 hour and 30 minutes
 
 1. From the OCI Console, copy the public IP address of your new created instance and open a terminal, CMD or Windows PowerShell screen.
 
-![OCI Console - Instance Public IP](./images/instance-public-ip.JPG)
+![OCI Console - Instance Public IP](./images/instance-public-ip.jpg)
 
 2. The next step for connecting to the instance is to run the following command in a terminal, CMD or Windows PowerShell.
 ```
@@ -52,7 +52,7 @@ Estimated Lab Time: 1 hour and 30 minutes
 ssh opc@<your_public_ip>
 </copy>
 ```
-![ssh connection](./images/instance-ssh-connection.JPG)
+![ssh connection](./images/instance-ssh-connection.jpg)
 
 3. After the connection is successful you need to run some commands in order to make the configuration complete.
 * Before beginning to install anything on the instance, run the following command.
@@ -176,7 +176,7 @@ You can either create and run the following application on your local machine, t
 
 The final structure of the project you are going to create will look as in the picture below.
 
-![Project Structure](./images/nodej-api-project-structure.PNG)
+![Project Structure](./images/nodej-api-project-structure.png)
 
 1. Create a new directory for your application. In our case, it is called _SkillsetTracking_.
 2. Since it would be easier for the _npm_ command to install all the needed packages at the beginning, create a new file in the application folder: _package.json_ and paste the following content in it.
@@ -367,7 +367,7 @@ async function shutdown(e) {
 </copy>
 ```
 At this point you are now able to run the application using the ``node app.js`` command and see the running application in browser.
-![Running app in browser](./images/running-application-in-browser.PNG)
+![Running app in browser](./images/running-application-in-browser.png)
 
 8. Let's connect the application to the database. In the project folder, create a new file _.env_ and add the connection details for your database. Here we are using the Autonomous JSON Database created in **Lab 4: Autonomous JSON Database & SODA Collections**.
 ```
