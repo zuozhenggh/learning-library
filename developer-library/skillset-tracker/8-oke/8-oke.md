@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Some intro
+**Kubernetes** is an open-source container orchestration tool for automating the deployment and management of Cloud Native applications. 
+
+The goal of this Lab is to guide you through the steps that need to be followed in order to create a Docker file and deploy the code from **Lab 6: Build NodeJS APIs to make calls to the database** in **Container Engine for Kubernetes (OKE)**.
 
 Estimated Lab Time: 2 hours
 
@@ -241,7 +243,7 @@ kubectl get svc
 
 9. You should have a result similar to the following. You can test your deployment by accessing in the browser the following paths  ``EXTERNAL-IP:8000`` or ``EXTERNAL-IP:8000/api/skillset``.
 
-![kubectl get svc output](.images/kubectl-get-svc-output.png)
+![kubectl get svc output](./images\kubectl-get-svc-output.png)
 
 
 ## Want to Learn More?
