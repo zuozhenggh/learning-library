@@ -84,8 +84,6 @@ This will start the database, listener, oracle rest data service and our eshop a
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-
-## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
 * **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021

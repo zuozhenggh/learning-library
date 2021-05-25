@@ -25,9 +25,15 @@ This lab assumes you have:
 
 ## **STEP 1:** Login to Oracle GoldenGate Veridata
   To login to GoldenGate Veridata:
-  1. In a browser, enter the URL, for example: http://*veridata_server_host:veridata_server_port-number*/veridata/login.jsf.
-  2. Enter your login credentials and click **Login**:
-      ![](./images/1-login-veridata.png " ")
+  1. In a browser, enter the URL, for example: http://*your public IP address*:8830/veridata/login.jsf
+      OR
+       (http://localhost:8830/veridata/login.jsf)[http://localhost:8830/veridata/login.jsf]
+  2. Enter your login credentials:
+    * **username**: ggadm
+    * **Password**: welcome1
+
+    ![](./images/1-login-veridata.png " ")
+  3. Click **Login**.
 
 ## **STEP 2:** Create a Connection
 To get started with Oracle GoldenGate Veridata, you must define a connection to the source and target databases that contain the data that you want to compare. Oracle GoldenGate Veridata Server uses the connection information to communicate with Oracle GoldenGate Veridata Agent.
@@ -41,17 +47,23 @@ To create connections:
 3. Enter the **Connection Name**, for example, **SourceConnection** and click **Next**.
     ![](./images/3-connection-name-description.png " ")
 4. Enter the following details:
-    * **Host Name or IP Address**: Name of the host where Oracle GoldenGate Veridata Agent is running.
-    * **Port**: The port number for Oracle GoldenGate Veridata Agent on that host.
+    * **Host Name or IP Address**: Name of the host where Oracle GoldenGate Veridata Agent is running. This is *your public IP address* OR localhost.
+    * **Port**: The port number for Oracle GoldenGate Veridata Agent on that host. Here, 7850.
     * **Datasource Type**: The datasource that is associated with this agent.
       ![](./images/4-new-connection-assistant.png " ")
 5. Click **Next** to enter the Datasource Connection credentials:
+    * **User**: source
+    * **Password**: source
     ![](./images/5-new-connection-assistant-datasource-credentials.png " ")
+
 6. Click **Finish**.
-  You have created one connection successfully.
-7. Click **Create another Connection** to create the target connection, and click **OK** to display the **New Connection Assistant** page.
+    You have created one connection successfully.
+7. Click **Create another Connection** to create the target connection:
+    * **User**: target
+    * **Password**: target
+8. Click **OK** to display the **New Connection Assistant** page.
   ![](./images/5-new-connection-assistant-create-another-connection.png " ")
-7. Follow points 3 to 6 to create another connection (for example, **TargetConnection**) for the target database.
+9. Follow points 3 to 6 to create the second connection (for example, **TargetConnection**) for the target database.
 
 
 ## Learn More
