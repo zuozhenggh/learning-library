@@ -127,7 +127,7 @@ export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_1:$LD_LIBRARY_PATH
 exit
 </copy>
 ```
-5. Open OCI Console and navigate to the Autonomous Database created in **Lab 4: Autonomous JSON Database & SODA Collections**. Download the databsae wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
+5. Open OCI Console and navigate to the Autonomous Database created in **Lab 4: Autonomous JSON Database & SODA Collections**. Download the database wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
 
 6. After downloading the wallet to you local machine, extract the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
 
@@ -167,7 +167,7 @@ WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="?/network
 SSL_SERVER_DN_MATCH=yes
 ```
 
-  **Note**: If you want to run the code developed in the next step on your local machine as well, consider the fact that you should have Instant Client installed and you should also copy the content of the wallet directory to **<your\_path\_to\_instant\_client>/network/admin** and check the **sqlnet.ora** file as mentioned at point 10.
+  **Note**: If you want to run the code developed in the next step on your local machine as well, consider the fact that you should have Instant Client installed and you should also copy the content of the wallet directory to **your\_path\_to\_instant\_client/network/admin** and check the **sqlnet.ora** file as mentioned at point 10.
 
 ## **Step 4:** Create a simple NodeJS application with APIs
 You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
