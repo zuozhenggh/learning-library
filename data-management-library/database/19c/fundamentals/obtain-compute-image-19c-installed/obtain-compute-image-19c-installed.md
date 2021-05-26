@@ -34,7 +34,7 @@ Be sure that the following tasks are completed before you start:
 
 ## **STEP 1**: Add security rules to your existing VCN
 
-Configure ingress rules in your default security list to allow traffic on port 22 for SSH connections and traffic on ports 1521, 1523, and 1524 for the DB Listener.
+Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections and traffic on ports 1521, 1523, and 1524 for the DB Listener.
 
 > **Note**: You can skip this step if you plan to create a new VCN when configuring the stack (recommended).
 
@@ -72,7 +72,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
 
     1. Select **My Configuration**.
 
-    2. In the **Stack Configuration** area, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
+    2. In the **Stack Configuration** section, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
 
     3. Leave the default values for **Name** and **Description** as is.
 
@@ -86,7 +86,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
 
     The **Configure Variables** page is displayed.
 
-5. In the **Main Configuration** area, do the following:
+5. In the **Main Configuration** section, do the following:
 
     1. Leave **Instance Count** set to **1**.
 
@@ -104,7 +104,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
 
     3. For **Select OCPUs Count per Instance**, leave 2 selected.
 
-    4. (Optional) If you want to use one of your existing VCNs, select **Use Existing VCN**. Select a VCN that has a regional public subnet and the required security rules. Also select your public subnet.
+    4. (Optional) If you want to use one of your existing VCNs, select **Use Existing VCN**, and then select a VCN that has a regional public subnet and the required security rules. Also select your public subnet.
 
   ![Options section](images/options-section.png "Options section")
 
@@ -114,7 +114,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
 
   ![Review page](images/review-page.png)
 
-9. In the **Run Apply on the created stack** section, select **RUN APPLY** to immediately provision the resources.
+9. In the **Run Apply on the created stack** section, select **RUN APPLY**.
 
   ![Run Apply option](images/run-apply-option.png "Run Apply option")
 
@@ -134,7 +134,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
 
 2. Select your compartment.
 
-3. Find the public IP address of the compute instance called **wdb19-hol-s01-2021-05-25-220137** in the table and jot it down.
+3. Find the public IP address of the compute instance that starts with **db19-hol-s01-...** in the table and jot it down.
 
 
 ## **STEP 4**: Connect to your compute instance via Cloud Shell
@@ -158,7 +158,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
   You are now connected to your new compute instance via Cloud Shell.
 
 
-## **STEP 6**: Download the script files for this workshop
+## **STEP 5**: Download the script files for this workshop
 
 1. Switch to the `oracle` user.
 
@@ -187,7 +187,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
     $ unzip -q 19cNewFeatures.zip
     ```
 
-5. Verify that you have the following directories in the ``/home/oracle/labs` directory:
+5. Verify that you have the following directories in the `/home/oracle/labs` directory:
 
     ```
     ls
@@ -201,7 +201,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
     chmod -R +x ~/labs
     ```
 
-## **STEP 7**: Start the container databases on the compute instance
+## **STEP 6**: Start the container databases on the compute instance
 
 1. Return to the `opc` user.
 
@@ -215,7 +215,7 @@ Configure ingress rules in your default security list to allow traffic on port 2
     cd /tmp/
     ```
 
-3. Download the ZIP file that contains the initialization scripts.
+3. Download a ZIP file that contains initialization scripts.
 
     ```
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/agZ9XqafKHNCN3rpIegRlFFFJXe6YRPMqO7uHsO49vnLgm_3o0H_I_XTemvaAEXu/n/natdsecurity/b/labs-files/o/db-multitenant-prelab-init.zip
@@ -264,14 +264,19 @@ Configure ingress rules in your default security list to allow traffic on port 2
     lsnrctl start LISTCDB2
     ```
 
-12. Restart the two container databases.
+12. Stop the two container databases (CDB1 an CDB2). Wait until they are both stopped.
 
     ```
     ./stop_all.sh
+    ```
+
+13. Start the two container databases.
+
+    ```
     ./start_all.sh
     ```
 
-13. View the status of the listeners and verify that they are running.
+14. View the status of the listeners and verify that the listeners are ready.
 
     ```
     lsnrctl status LISTCDB1
@@ -280,26 +285,37 @@ Configure ingress rules in your default security list to allow traffic on port 2
 
 
 
-## **STEP 8**: Discover the container databases and pluggable databases
+## **STEP 7**: Discover the container databases and pluggable databases
 
 
-1. Set the oracle environment and connect to CDB1.
+1. Set the oracle environment and connect to the CDB1 container database. When prompted for the `ORACLE_SID`, enter **CDB1**.
 
     ```
     $ . oraenv
     ORACLE_SID = [ORCL] ? CDB1
+
     The Oracle base remains unchanged with value /u01/app/oracle
+    ```
 
+2. Connect to the root container using SQL*Plus.
 
-    $ sqlplus /nolog
+    ```
+    $ sqlplus / as sysdba
 
-    $ connect sys/oracle@localhost:1523/cdb1 as sysdba
+    SQL*Plus: Release 19.0.0.0.0 - Production on Wed May 26 20:51:15 2021
+    Version 19.10.0.0.0
+
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+
+    Connected to:
+    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.10.0.0.0
     ```
 
 2. Verify that you are logged in to the `root` container as the `SYS` user.
 
     ```
-    SHOW user
+    SQL> SHOW user
 
     USER is "SYS"
     SQL>
@@ -326,14 +342,15 @@ Configure ingress rules in your default security list to allow traffic on port 2
     -------- ----------
     CDB$ROOT          1
     PDB$SEED          2
-    ORCLPDB           3
+    PDB1              3
+
     SQL>
     ```
 
 5. Exit SQL*Plus.
 
     ```
-    SQL> EXIT
+    SQL> exit
 
     $
     ```
