@@ -336,4 +336,4 @@ Binary classification is a technique of classifying elements of a given dataset 
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Linda Dest, Jyotsana Rawat, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021
