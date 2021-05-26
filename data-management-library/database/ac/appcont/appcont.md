@@ -167,6 +167,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     <copy>
     srvctl status service -d `srvctl config database` -s noac
+    </copy>
     ````    
 
     This will return an instance name, for example:
@@ -488,7 +489,7 @@ You may now *proceed to the next lab*.
 
 ### Issue 1 JNI ERROR
 
-    ![](./images/Issue1_java_mismatch.png  " ")
+    ![](./images/issue1_java_mismatch.png  " ")
 
 #### Fix for Issue #1
 1.  Recompile and re-package ACDemo with the installed JDK
@@ -506,7 +507,7 @@ You may now *proceed to the next lab*.
     mv acdemo.jar ../lib  
     ````
 ### Issue 2 Instance not restarting
-    ![](./images/InstanceDown_error.png  " ")
+    ![](./images/instance_down_error.png  " ")
 
 #### Fix for Issue #2
 1. After crashing an instance a number of times (in a short period), it may not automatically restart. If you notice an instance down, manually restart it (this can lead to application timeouts on failover, as the instance may not start before the application abandons connection attempts)
