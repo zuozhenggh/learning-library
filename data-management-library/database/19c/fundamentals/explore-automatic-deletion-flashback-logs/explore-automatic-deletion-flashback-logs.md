@@ -12,11 +12,14 @@ Learn how to do the following:
 - objective 2 (match step 2 title)
 
 
+
 ### Prerequisites
 
-- You have an Oracle Cloud account.
-- You created SSH keys.
-- You are signed in to Oracle Cloud Infrastructure.
+The following need to be completed before you start:
+
+- Obtain an Oracle Cloud account.
+- Create SSH keys.
+- Sign in to Oracle Cloud Infrastructure.
 
 
 ## **STEP 1**: Step 1 title in sentence case

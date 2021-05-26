@@ -10,6 +10,8 @@ In this lab, you verify that you can connect to both of your compute instances (
 
 ### Prerequisites
 
+Be sure that the following tasks are completed before you start:
+
 - You have an Oracle Free Tier or Paid Cloud account.
 - You have two compute instances available in Oracle Cloud Infrastructure. One compute instance named `workshop-staged` has the Oracle Database 19c installer files staged on it. The other compute instance named `workshop-installed` has Oracle Database 19c fully installed and configured on it.
 

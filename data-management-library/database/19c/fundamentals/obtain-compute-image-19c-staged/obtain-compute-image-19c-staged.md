@@ -23,9 +23,11 @@ Learn how to do the following:
 
 ### Prerequisites
 
-- You have an Oracle Cloud account.
-- You created SSH keys.
-- You are signed in to Oracle Cloud Infrastructure.
+The following need to be completed before you start:
+
+- Obtain an Oracle Cloud account.
+- Create SSH keys.
+- Sign in to Oracle Cloud Infrastructure.
 
 
 ## **STEP 1**: Create and apply a stack in Resource Manager
