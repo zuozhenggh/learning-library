@@ -332,7 +332,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
     SQL>
     ```
 
-4. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
+4. List all of the containers in CDB1 by querying the `V$CONTAINERS` view. The results show that there are three containers: the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`PDB1`).
 
     ```
     SQL> COLUMN name FORMAT A8
