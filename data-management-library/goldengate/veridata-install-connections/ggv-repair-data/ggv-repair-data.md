@@ -42,6 +42,8 @@ This lab assumes you have:
     ![](./images/5-repaired-data.png " ")
 
 ## **STEP 2:** Generate SQL Files
+You can generate SQL files only for Jobs that have been configured for datasource connections with the Oracle datatype.
+
   To generate SQL files:
   1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for generating SQL statements.
   2. To generate SQL statements for out-of-sync data, select the record from the finished jobs and click **Generate SQL**.
