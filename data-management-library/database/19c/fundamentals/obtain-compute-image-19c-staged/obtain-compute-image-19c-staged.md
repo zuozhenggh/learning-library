@@ -5,7 +5,7 @@ Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a co
 
 Begin by creating a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser.
 
-Oracle highly recommends that you create a new VCN when configuring the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs when you configure the stack, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires an ingress security rule to allow traffic on port 8080 so that you can access your compute instance via a browser. STEP 5 covers how to configure the security rule. 
+Oracle highly recommends that you create a new VCN when configuring the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs when you configure the stack, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires an ingress security rule to allow traffic on port 8080 so that you can access your compute instance via a browser. STEP 5 covers how to configure the security rule.
 
 > **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 because it is already done for you.
 
@@ -13,7 +13,7 @@ Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-In this lab, you learn how to do the following:
+Learn how to do the following:
 
 - Create and apply a stack in Resource Manager
 - Obtain the public IP address of your compute instance

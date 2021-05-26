@@ -14,7 +14,7 @@ Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-In this lab, you learn how to do the following:
+Learn how to do the following:
 
 - Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
