@@ -11,7 +11,7 @@ Advanced analytics functions such as forecasting, trend analysis and clustering 
   [](youtube:VlMiMnk287Q)
 
 ### Objectives
-* This exercise will introduce you OAS augmented analytics such as Explain feature, outlier identification, etc.
+* This exercise will introduce you to OAS augmented analytics such as Explain feature, outlier identification, etc.
 * You will explore OAS predictive analytics using built-in  machine learning algorithms.
 * In this lab, you will play the role of an HR Analyst. The VP of HR has noticed an increasing rate of attrition.  
 * As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk. Additionally, you will identify those employees who are at greatest risk for leaving.   
