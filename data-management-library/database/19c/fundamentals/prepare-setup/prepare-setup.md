@@ -1,14 +1,14 @@
 # Prepare Setup
 
 ## Introduction
-In this lab, you use Resource Manager to quickly deploy two compute instances needed for this workshop:
+Use Resource Manager to quickly deploy the following two compute instances:
 
 - **workshop-staged**: This Linux instance has Oracle Database 19c installation files staged on it.
 - **workshop-installed**: This Linux instance has Oracle Database 19c fully installed on it.
 
-We strongly recommend letting Resource Manager create a virtual cloud network (VCN) for you when you build the compute instances. If you would rather use an existing VCN, then be sure to do STEP 3 to add an ingress rule to your existing VCN.
+We strongly recommend letting Resource Manager create a virtual cloud network (VCN) for you when you build the compute instances. If you would rather use an existing VCN, then be sure to complete STEP 3 to add an ingress rule to your existing VCN.
 
-In Resource Manager, you create a stack to generate each compute instance. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configurations that you use in this lab are provided by LiveLabs in the form of two downloadable ZIP files. Both ZIP files load a custom image stored in Oracle Cloud Marketplace onto a compute instance for you. After you create a stack, you apply it to start a provisioning job.
+In Resource Manager, you create a stack to generate each compute instance. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configurations that you use in this lab are provided in the form of two downloadable ZIP files. Both ZIP files load a custom image stored in Oracle Cloud Marketplace onto a compute instance for you. After you create a stack, you apply it to start a provisioning job.
 
 *Estimated Lab Time:* 1 hour
 
@@ -19,13 +19,9 @@ In Resource Manager, you create a stack to generate each compute instance. A sta
 
 ### Prerequisites
 
-- You have an Oracle Free Tier or Paid Cloud account.
+- You have an Oracle Cloud account.
+- You are signed in to the Oracle Cloud Infrastructure Console.
 - You created SSH Keys.
-
-### Assumptions
-
-- You are signed in to Oracle Cloud Infrastructure.
-
 
 
 ## **STEP 1**: Download Oracle Resource Manager stack ZIP files to your local computer.
