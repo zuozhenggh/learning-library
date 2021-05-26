@@ -74,9 +74,6 @@ To create connections:
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
-
-
-
 ## Learn More
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -84,5 +81,5 @@ To create connections:
 
 ### Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese
+* **Last Updated By/Date** - Anuradha Chepuri, June 2021

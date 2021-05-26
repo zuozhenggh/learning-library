@@ -28,9 +28,9 @@ This workshop requires a certain number of ports to be available, a requirement 
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
 | 80             | Application (http)                    |
-| 7001           | Golden Gate Administration Server     |
-| 8830           | Golden Gate Veridata Server           |
-| 7850           | Golden Gate Veridata Agent            |
+| 7001           | GoldenGate Administration Server (WLS)|
+| 8830           | GoldenGate Veridata Server            |
+| 7850           | GoldenGate Veridata Agent             |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
@@ -49,5 +49,5 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 
 ## Acknowledgements
   * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-  * **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
+  * **Contributors** -  Nisharahmed Soneji, Sukin Varghese, GoldenGate
   * **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
