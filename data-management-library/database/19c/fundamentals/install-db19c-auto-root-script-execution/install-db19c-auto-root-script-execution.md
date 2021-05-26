@@ -17,9 +17,11 @@ Learn how to do the following:
 
 ### Prerequisites
 
-- You have an Oracle Cloud account.
-- You have a compartment in Oracle Cloud Infrastructure.
-- You are signed in to your compute instance that you created in [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
+Be sure that the following tasks are completed before you start:
+
+- Obtain Oracle Cloud account.
+- Create or obtain a compartment in Oracle Cloud Infrastructure.
+- Sign in to your compute instance that you created in [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
 
 
 ### Tip

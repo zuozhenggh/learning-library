@@ -14,7 +14,7 @@ Learn how to do the following:
 
 ### Prerequisites
 
-The following need to be completed before you start:
+Be sure that the following tasks are completed before you start:
 
 - Obtain an Oracle Cloud account.
 - Create SSH keys.
