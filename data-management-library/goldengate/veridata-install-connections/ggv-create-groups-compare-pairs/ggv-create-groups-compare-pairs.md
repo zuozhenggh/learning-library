@@ -7,7 +7,7 @@ A group is associated with a set of connections to the source and target data.
 
 A compare pair is the logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Because of this, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 45 minutes
 
 ### Objectives
 In this lab, you will:
@@ -27,8 +27,7 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-    * Oracle GoldenGate Veridata installed
-    * Source and Target connections as described in Lab 2
+    * Source and Target connections are created as described in **Lab: Create Datasource Connections**.
 
 ## **STEP 1:** Create a Group
 
@@ -39,7 +38,7 @@ This lab assumes you have:
 3. Enter the **Name** and **Description** for the Group and click **Next**.
   ![](./images/2-new-group-from-name-description.png " ")
 4. Click **Next** to enter the connection information.
-5. Browse to select the **Source Connection** and **Target Connection** (that you have created in Lab 2).
+5. Browse to select the **Source Connection** and **Target Connection** (that you have created in **Lab: Create Datasource Connections**).
   ![](./images/3-new-group-connection-information.png " ")
 6. Click **Finish**.
 
@@ -67,7 +66,7 @@ To create compare pairs on the **Manual Mapping** tab:
 Similarly, you can create any number of compare pairs for other tables.
 
 ## **STEP 3:** Create Compare Pairs (on Pattern Mapping Tab)
-Use the **Pattern Mapping** tab to map numerous source and target objects at once by using:
+If you don’t want to add new compare pairs, you may directly jump to **Lab Create and Execute Job**. Use the **Pattern Mapping** tab to map numerous source and target objects at once by using:
 
 * An exact name match (for example TAB1=TAB1).
 * A SQL percent (%) wildcard (for example, %_Table)
@@ -81,24 +80,25 @@ To create compare pairs on the **Pattern Mapping** tab:
     * Target schema: **TARGET**
 
 3. Under **Pattern Compare Pair Mapping**, select a **Table Mapping Method**. You can select any of the following:
-    * **Map Source and Target Tables Using Exact Names**: Let's select this option here:
+    a. **Map Source and Target Tables Using Exact Names**: Let's select this option here:
         ![](./images/9-pattern-mapping-pair-mapping-option1.png " ")
-	  * **Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**. Enter:
+	  b.  **Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**. Enter:
         * Where Source Names Like: **%_Table**
         * Where Target Names Like: **%_Table**
         ![](./images/8-pattern-mapping-pair-mapping-option2.png " ")
-    * **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**. Enter:
+    c. **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**. Enter:
         * Pattern for Source Names: **DUMMY_TABLE**
         * Pattern for Target Names: *****
         ![](./images/10-pattern-mapping-pair-mapping-option3.png " ")
-
+    Here, option **3a** has been selected.
 4. Click **Generate Mappings**. The control moves to the **Preview** tab.
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
-  Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
-    [](youtube:N28CsAr5kjw)
+Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
+
+[](youtube:N28CsAr5kjw)
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -109,5 +109,5 @@ To create compare pairs on the **Pattern Mapping** tab:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
+* **Contributors** -  Nisharahmed Soneji and Sukin Varghese
+* **Last Updated By/Date** - Anuradha Chepuri, June 2021

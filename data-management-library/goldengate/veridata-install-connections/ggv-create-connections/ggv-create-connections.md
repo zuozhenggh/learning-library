@@ -3,7 +3,7 @@
 ## Introduction
 This lab describes how to configure datasource connections. The Oracle GoldenGate Veridata  Server must be able to connect to an Oracle GoldenGate Veridata Agent for each database that contains source and target data that you want to compare. A connection is defined by a host, the port number of an Oracle GoldenGate Veridata Agent (or Manager, if a C-agent), and the datasource that is accessed by the agent. You need to create connections before you create any of the GoldenGate Veridata objects, such as groups, compare pairs, profiles, or jobs.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 45 minutes
 
 ### Objectives
 In this lab, you will:
@@ -20,7 +20,6 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-    * Oracle GoldenGate Veridata installed
     * Oracle Database 19c (19.3.0.0) (for the repository)
 
 ## **STEP 1:** Login to Oracle GoldenGate Veridata
@@ -81,5 +80,5 @@ To create connections:
 
 ### Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese
+* **Contributors** -  Nisharahmed Soneji and Sukin Varghese
 * **Last Updated By/Date** - Anuradha Chepuri, June 2021

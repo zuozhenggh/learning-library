@@ -5,7 +5,7 @@ A comparison report is generated for each job, group, and compare pair that is f
 
 The comparison report tells you how extensive an out-of-sync problem is. It also provides performance statistics and, optionally, column details. The comparison report can be viewed by any user role.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:
@@ -22,9 +22,9 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-    * Oracle GoldenGate Veridata installed
-    * Groups and Compare Pairs have been created as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
-    * Jobs have been created and executed as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
+    * Source and Target connections are created as described in **Lab: Create Datasource Connections**.
+    * Groups and Compare Pairs are configured as described in **Lab: Create Groups and Compare Pairs**.
+    * Jobs are created and executed as described in **Lab: Create and Execute Jobs**.
 
 ## **STEP 1:** View a Report
 
@@ -53,5 +53,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
+* **Contributors** -  Nisharahmed Soneji and Sukin Varghese
+* **Last Updated By/Date** - Anuradha Chepuri, June 2021

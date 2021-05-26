@@ -9,7 +9,7 @@ Oracle GoldenGate Veridata provides the Generate SQL functionality which generat
 
 You can also look at these SQL Statements before the Oracle GoldenGate Veridata executes them onto the target database, or execute these SQL statements by yourself on any of the other database tools. With the Generate Repair SQL functionality, you can generate the SQL statements for all your out-of-sync-records, and can also execute them at your convenience.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:
@@ -27,9 +27,9 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-    * Oracle GoldenGate Veridata installed
-    * Groups and Compare Pairs have been created as described in Lab 3
-    * Jobs have been created and executed as described in Lab 3
+    * Source and Target connections are created as described in **Lab: Create Datasource Connections**.
+    * Groups and Compare Pairs are configured as described in **Lab: Create Groups and Compare Pairs**.
+    * Jobs are created and executed as described in **Lab: Create and Execute Jobs**.
 
 ## **STEP 1:** Repair Out-of-Sync Jobs
   To repair out-of-sync jobs:
@@ -63,5 +63,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
+* **Contributors** -  Nisharahmed Soneji and Sukin Varghese
+* **Last Updated By/Date** - Anuradha Chepuri, June 2021

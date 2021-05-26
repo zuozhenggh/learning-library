@@ -5,7 +5,7 @@ This lab describes how to create and execute Jobs.
 
 You must create and execute the job to run the comparisons. The job configuration determines which compare pair groups are processed.
 
-*Estimated Lab Time*: 10 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:
@@ -23,8 +23,8 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-    * Oracle GoldenGate Veridata installed
-    * Source and Target connections as described in Lab 2
+    * Source and Target connections are created as described in **Lab: Create Datasource Connections**.
+    * Groups and Compare Pairs are configured as described in **Lab: Create Groups and Compare Pairs**.
 
 ## **STEP 1**: Create a Job for the Compare Pair Group
   To create a job:
@@ -50,7 +50,7 @@ To execute a job:
 4. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
     ![](./images/17-completed-jobs-compare-pair-status-chart.png " ")
 
-  
+
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Groups](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-70B42ABB-EA8E-4ADF-8414-7EA1752CA7E6)
@@ -60,5 +60,5 @@ To execute a job:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
+* **Contributors** -  Nisharahmed Soneji and Sukin Varghese
+* **Last Updated By/Date** - Anuradha Chepuri, June 2021
