@@ -14,7 +14,7 @@ Lines of business are under enormous pressure to generate more insights, faster,
 
 Oracle Essbase is a business analytics solution that uses a proven, flexible, best-in-class architecture for analysis, reporting, and collaboration. Essbase delivers instant value and greater productivity for your business users, analysts, modelers, and decision-makers, across all lines of business within your organization.
 
-Oracle Essbase helps you to build your company’s On-Prem strategy efficiently by avoiding data and business process fragmentation. Oracle Essbase can be easily deployed on Oracle Cloud Infrastructure, which can then be widely used to solve simple to complex business analytics use cases across all industries. It is designed to help you model business performance levels and deliver what-if analyses for varying conditions. 
+Oracle Essbase helps you to build your company’s On-Premise strategy efficiently by avoiding data and business process fragmentation. Oracle Essbase can be easily deployed on Oracle Cloud Infrastructure, which can then be widely used to solve simple to complex business analytics use cases across all industries. It is designed to help you model business performance levels and deliver what-if analyses for varying conditions. 
 
 ### Objectives
 
@@ -22,8 +22,8 @@ Oracle Essbase helps you to build your company’s On-Prem strategy efficiently 
 
 ### Prerequisites
 
--   An Oracle public cloud tenancy where you have the admin privileges and resources available to provision an ATP instance with 1 OCPU and Essbase 21c instance with 1 OCPU.
--   Smartview Plugin (Steps provided in Essbase lab)
+-   An Oracle public cloud tenancy where you have the admin privileges and resources available to provision an ATP instance with one OCPU and an Essbase 21c instance with one OCPU.
+-   Smartview Plugin (steps provided in Essbase lab)
 
 
 
