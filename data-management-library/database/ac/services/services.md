@@ -5,6 +5,9 @@ This lab walks you through the steps to demonstrate many of the capabilities of 
 
 Estimated Lab Time: 20 Minutes
 
+Watch the video below for an overview of the Services lab
+[](youtube:rPUFNMGCzDc)
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key

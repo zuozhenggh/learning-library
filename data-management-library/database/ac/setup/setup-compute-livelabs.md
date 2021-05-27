@@ -5,6 +5,9 @@ This lab will show you how to connect to your DB System.
 
 Estimated Lab Time:  5 minutes
 
+Watch the video below for an overview of the Build a DB System lab
+[](youtube:hTFSffquzCo)
+
 ### Objectives
 -   Identify DB Instance Public IP Addresses
 -   Connect to the each RAC instance:  Node 1 and Node 2
