@@ -10,7 +10,7 @@ The Oracle Cloud Infrastructure Object Storage service is an internet-scale, hig
 
 [](youtube:RHIfvO9aTQ0)
 
-## Objectives
+### Objectives
 
 In this lab, you will:
 
@@ -20,7 +20,7 @@ In this lab, you will:
 
 Estimated Lab Time: 15 minutes.
 
-## STEP 1: Create Virtual Cloud Network (VCN)
+## **STEP 1:** Create Virtual Cloud Network (VCN)
 
 1. We are going to **create a network with a public subnet** (with access from the Internet) and a **private subnet** (no direct access from the Internet).
 
@@ -89,9 +89,8 @@ Estimated Lab Time: 15 minutes.
 
     ![VCN Security List Rules for MySQL](images/vcn_security_list_for_mysql.png)
 
----
 
-## STEP 2: Create Bastion Host
+## **STEP 2:** Create Bastion Host
 
 1. We are going to **create a compute instance** in the Public Subnet with a public IP; it will be our access point to public and private resources.
 
@@ -234,9 +233,7 @@ Estimated Lab Time: 15 minutes.
     <copy>mysqlsh --version</copy>
     ```
 
----
-
-## STEP 3: Create Object Storage and upload files
+## **STEP 3:** Create Object Storage and upload files
 
 1. Go to **Menu** > **Storage** > **Buckets**.
 
@@ -288,7 +285,6 @@ Estimated Lab Time: 15 minutes.
 
 Congratulations! You are ready to go to the next Lab!
 
----
 
 ## **Acknowledgements**
 

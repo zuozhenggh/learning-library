@@ -1,12 +1,11 @@
 {
   "workshoptitle": "MySQL, Data Integration and Data Science for Marine Life",
-  "include": {},
-  "help": "livelabs-help-**enterarea**_us@oracle.com",
+  "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
-      "filename": "../intro/intro.md"
+      "filename": "../../intro/intro.md"
     },
     {
       "title": "Getting Started",
@@ -15,27 +14,27 @@
     },
     {
       "title": "Lab 1: Underlying Infrastructure",
-      "filename": "../underlying-infrastructure/underlying-infrastructure.md"
+      "filename": "../../underlying-infrastructure/underlying-infrastructure.md"
     },
     {
       "title": "Lab 2: Create MySQL Database Service",
-      "filename": "../mysql/mysql.md"
+      "filename": "../../mysql/mysql.md"
     },
     {
       "title": "Lab 3: Create Data Integration Instance",
-      "filename": "../data-integration/data-integration.md"
+      "filename": "../../data-integration/data-integration.md"
     },
     {
       "title": "Lab 4: Design and Run your ETL Pipeline",
-      "filename": "../etl/etl.md"
+      "filename": "../../etl/etl.md"
     },
     {
       "title": "Lab 5: Transform your Data into Insights",
-      "filename": "../insights/insights.md"
+      "filename": "../../insights/insights.md"
     },
     {
       "title": "Next Steps",
-      "filename": "../next/next.md"
+      "filename": "../../next/next.md"
     },
     {
       "title": "Need Help?",
