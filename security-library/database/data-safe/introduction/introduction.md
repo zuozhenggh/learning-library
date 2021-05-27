@@ -28,7 +28,7 @@ Watch our short video that explains key features in Oracle Data Safe.
 
 ## Objectives
 
-The objectives of this workshop are as follows:
+In this workshop, you learn how to perform the following tasks:
 
 - Get comfortable with Oracle's public cloud services
 - Register an Autonomous Database with Oracle Data Safe

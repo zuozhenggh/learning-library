@@ -11,7 +11,7 @@ Estimated Lab Time: 20 minutes
 
 ### Objectives
 
-You learn how to do the following:
+You learn how to perform the following tasks:
 
 - Sign in to the Oracle Data Safe Console
 - View and close alerts
@@ -23,11 +23,11 @@ You learn how to do the following:
 
 ### Prerequisites
 
-Before starting, be sure the following prerequisites are completed:
+Before starting, be sure that you have completed the following prerequisite tasks:
 
-- You have an Oracle Cloud account and are signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
-- Your environment is prepared. If not, see [Prepare Your Environment](?lab=prepare-environment). It's important that your ATP database is registered with Oracle Data Safe, the Activity Auditing feature is enabled on your database, and you have the appropriate privileges in Oracle Data Safe to use the Activity Auditing feature with your database.
-- Your database is registered with Oracle Data Safe and sample data is loaded into it. If not, see [Register an Autonomous Database](?lab=register-autonomous-database).
+- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
+- You prepared your environment for this workshop. If not, see [Prepare Your Environment](?lab=prepare-environment). It's important that your ATP database is registered with Oracle Data Safe, the Activity Auditing feature is enabled on your database, and you have the appropriate privileges in Oracle Data Safe to use the Activity Auditing feature with your database.
+- You registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. If not, see [Register an Autonomous Database](?lab=register-autonomous-database).
 - Audit data collection is started in Oracle Data Safe for your database. If not, see [Provision Audit and Alert Policies](?lab=provision-audit-alert-policies).
 
 

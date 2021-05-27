@@ -17,7 +17,7 @@ Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-You learn how to do the following:
+You learn how to perform the following tasks:
 
 - Enable Oracle Data Safe
 - Create a compartment
@@ -30,11 +30,9 @@ You learn how to do the following:
 
 ### Prerequisites
 
-Before starting, be sure the following prerequisites are completed:
+Before starting, be sure that you have completed the following prerequisite tasks:
 
-- You have an Oracle Cloud account.
-- You are a member of your tenancy's `Administrators` group. If not, you need to enlist the help of a tenancy administrator to help you prepare your environment.
-- You are signed in to Oracle Cloud Infrastructure.
+- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
 
 
 ## **STEP 1**: Enable Oracle Data Safe

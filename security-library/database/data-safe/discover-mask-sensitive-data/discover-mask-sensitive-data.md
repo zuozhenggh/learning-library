@@ -18,7 +18,7 @@ Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-You learn how to do the following:
+You learn how to perform the following tasks:
 
 - View sensitive data in your database
 - Discover sensitive data in your database by using the Data Discovery feature
@@ -29,11 +29,11 @@ You learn how to do the following:
 
 ### Prerequisites
 
-Before starting, be sure the following prerequisites are completed:
+Before starting, be sure that you have completed the following prerequisite tasks:
 
-- You have an Oracle Cloud account and are signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
-- Your environment is prepared. If not, see [Prepare Your Environment](?lab=prepare-environment). It's important that your ATP database is registered with Oracle Data Safe, the Data Discovery and Data Masking features are enabled on your database, and you have the appropriate privileges in Oracle Data Safe to use the Data Discovery and Data Masking features with your database.
-- Your ATP database is registered with Oracle Data Safe, sample data is loaded into it, and you know the `ADMIN` password for your database. If not, see [Register an Autonomous Database](?lab=register-autonomous-database).
+- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
+- You prepared your environment for this workshop. If not, see [Prepare Your Environment](?lab=prepare-environment). It's important that your ATP database is registered with Oracle Data Safe, the Data Discovery and Data Masking features are enabled on your database, and you have the appropriate privileges in Oracle Data Safe to use the Data Discovery and Data Masking features with your database.
+- You registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. You know the `ADMIN` password for your database. If not, see [Register an Autonomous Database](?lab=register-autonomous-database).
 
 
 ### Assumptions

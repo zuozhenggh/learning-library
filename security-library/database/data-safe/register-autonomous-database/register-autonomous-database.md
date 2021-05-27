@@ -24,7 +24,7 @@ Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-You learn how to do the following:
+You learn how to perform the following tasks:
 
 - Register your ATP database with Oracle Data Safe
 - Run a SQL script using Oracle Database Actions to load sample data into your database
@@ -32,11 +32,11 @@ You learn how to do the following:
 - View the list of registered target databases from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
 
 ### Prerequisites
-Before starting, be sure the following prerequisites are completed:
 
-- You have an Oracle Cloud account.
-- Your environment is prepared. If not, see [Prepare Your Environment](?lab=prepare-environment).
-- You are signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
+Before starting, be sure that you have completed the following prerequisite tasks:
+
+- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
+- You prepared your environment for this workshop. If not, see [Prepare Your Environment](?lab=prepare-environment).
 
 ### Assumptions
 
