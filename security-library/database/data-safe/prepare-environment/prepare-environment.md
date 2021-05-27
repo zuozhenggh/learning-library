@@ -6,7 +6,7 @@ inject-note: true
 
 ## Introduction
 
-You can run this workshop in Oracle's free tier, in your own tenancy using a paid Oracle Cloud account, or in an Oracle-provided environment, such as LiveLabs or Luna. The preparation required depends on how you want to run it.
+The preparation required depends on how you want to run this workshop.
 
 - If you are using the Oracle free tier, then you can skip steps 3, 4, and 5 below.
 - If you are using a paid account provided by your organization, the preparation required depends on the permissions that you have in your organization's tenancy. If you are a member of the tenancy's `Administrators` group, then you can skip steps 3, 4, and 5 below. If you are a regular user, then you need to enlist the help of a tenancy administrator to complete steps 2, 3, 4, and 5 below.
