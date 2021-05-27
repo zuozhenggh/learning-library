@@ -274,7 +274,105 @@ define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojattributegrouphandler'
 The treemap will need to extract the data from a JSON file which has a specific structure so that it will display the data correctly.
 
 5. Create a new folder under **/src/js** named _data_.
-6. Create a new file named _sampletest.json_ and copy the content of _sample\_test.json_ file attached [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bg5cJbrnD4e9hjpthtpOCVW5lmE6HkoCBcR88OPst-i3l10v3kT6Pkjdi4tf_hSr/n/orasenatdpltintegration03/b/ODA-SkillTracker-dev/o/sampletest.json).
+6. Create a new file named _sampletest.json_ and copy the following content in it. You can customize this with as many skill areas, skills and employees as you want.
+
+```
+<copy>
+[{
+        "label": "Cloud Native",
+        "id": 6,
+        "nodes": [
+            {
+                "employeeArray": [
+                    {
+                        "name": "Cloud EngineerA",
+                        "manager": "Manager Name1",
+                        "primary": "Data Management",
+                        "secondary": "Oracle Cloud Infrastructure",
+                        "id": 4,
+                        "skillLevel": 2,
+                        "oracle_based": 1,
+                        "skill": "API Management"
+                    }
+                ],
+                "label": "API Management",
+                "value": 33,
+                "av_value": 2.0625,
+                "id": 7,
+                "max": 4,
+                "min": 1,
+                "noSkilledEng": 16
+            },
+            {
+                "employeeArray": [
+                    {
+                        "name": "Cloud EngineerA",
+                        "manager": "Manager Name1",
+                        "primary": "Data Management",
+                        "secondary": "Oracle Cloud Infrastructure",
+                        "id": 5,
+                        "skillLevel": 1,
+                        "oracle_based": 0,
+                        "skill": "Docker"
+                    },
+                    {
+                        "name": "Cloud EngineerB",
+                        "manager": "Manager Name2",
+                        "primary": "Data Management",
+                        "secondary": "Developer Tools",
+                        "id": 32,
+                        "skillLevel": 1,
+                        "oracle_based": 0,
+                        "skill": "Docker"
+                    }
+                ],
+                "label": "Docker",
+                "value": 40,
+                "av_value": 2,
+                "id": 8,
+                "max": 4,
+                "min": 1,
+                "noSkilledEng": 20
+            },
+            {
+                "employeeArray": [
+                    {
+                        "name": "Cloud EngineerB",
+                        "manager": "Manager Name2",
+                        "primary": "Data Management",
+                        "secondary": "Developer Tools",
+                        "id": 26,
+                        "skillLevel": 2,
+                        "oracle_based": 1,
+                        "skill": "OKE"
+                    },
+                    {
+                        "name": "Cloud EngineerC",
+                        "manager": "Manager Name3",
+                        "primary": "Language and Frameworks",
+                        "secondary": "Developer Tools",
+                        "id": 54,
+                        "skillLevel": 1,
+                        "oracle_based": 1,
+                        "skill": "OKE"
+                    }
+                ],
+                "label": "OKE",
+                "value": 38,
+                "av_value": 2.111111111111111,
+                "id": 29,
+                "max": 4,
+                "min": 1,
+                "noSkilledEng": 18
+            }
+        ],
+        "max": 4,
+        "min": 1,
+        "noSkilledEng": 20,
+        "av_value": 1.8574087042224297
+    }]
+</copy>
+```
 
 At this moment you have the JSON, JavaScript and HTML file and if you want to see the result, you need to create a new entry in the menu.
 

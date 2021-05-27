@@ -2,12 +2,12 @@
 
 ## Introduction
 
-In this lab you are going to go through a series of steps for provisioning an Oracle Digital Assistance Instance, download, import and test a Skill, create a Slack Channel and Workspace and integrate your Bot with Slack channel. BotML was used to create the Skill that you will download for this Demo.
+In this lab you are going to go through a series of steps for provisioning an **Oracle Digital Assistant Instance**, download, import and test a Skill, create a **Slack Channel** and Workspace and integrate your Bot with Slack channel. **BotML** was used to create the Skill that you will download for this Demo.
 
-The Oracle Digital Assistant makes API calls to the Skillset Tracking Application that contains data like names of managers,
+The **Oracle Digital Assistant** makes API calls to the **Skillset Tracking Application** that contains data like names of managers,
 their team members names, development areas, skills for each development area and skill value for each skill. All the data exists in a JSON format and the JSON is parsed to retrieve data from it.
 
-In Slack Workspace, the Data will appear like buttons that you can select and what you have selected it will be sent to Oracle Digital Assistant as a variable, that will trigger another buttons as effect of the states in Flows that exists in the Digital Assistant. At some states you can choose the button or you can type as input/response the name of the manager/name of the employee/name of the skill/what is written on the button.
+In Slack Workspace, the Data will appear like buttons that you can select and what you have selected it will be sent to **Oracle Digital Assistant** as a variable, that will trigger another buttons as effect of the states in Flows that exists in the Digital Assistant. At some states you can choose the button or you can type as input/response the name of the manager/name of the employee/name of the skill/what is written on the button.
 
 ### Terminology
 
@@ -47,7 +47,7 @@ Estimated Lab Time: 2 hours
 
 ### Prerequisites
 
-  * This lab assumes you have an Oracle Cloud account and compartment, user, groups and policies created into it and you are logged in your account. For an overview of compartments, users, groups, policies etc see this [link](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/users-groups-and-policies1.html#GUID-145DC7BA-2A9B-43BD-90A9-6FDBCAEBB7B0).
+  * This lab assumes you have an Oracle Cloud account and compartment, user, groups and policies created into it and you are logged in your account. For an overview of compartments, users, groups, policies etc. see this [link](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/users-groups-and-policies1.html#GUID-145DC7BA-2A9B-43BD-90A9-6FDBCAEBB7B0).
 
 
 
@@ -95,7 +95,7 @@ Estimated Lab Time: 2 hours
 
 Once you have provisioned an instance, you can access it from the **Infrastructure Console** by following these steps:
 
-1. Select your Digital Assistance Instance.
+1. Select your Digital Assistant Instance.
 
   ![select your instance](./images/select-instance.png)
 
@@ -126,12 +126,12 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 ## **Step 4:** Integrate the Skill with your app
 
-1. After you import the Skill, you will find it in the Console, under **Development** -> **Skills** cathegory. Now click on it's name, **SkillTracker**.
+1. After you import the Skill, you will find it in the Console, under **Development** -> **Skills** category. Now click on it's name, **SkillTracker**.
 
   ![imported skill](./images/imported-skill.png)
 
 
-2. In the left pannel, click on **Components**.
+2. In the left panel, click on **Components**.
 
   ![components](./images/components.png)
 
@@ -139,9 +139,9 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
   ![download component](./images/download-component.png)
 
-4. Unzip the file named my-component-service-1.0.0.tgz, then add this project folder in your code editor (Atom, VSCode etc.).
+4. Unzip the file named _my-component-service-1.0.0.tgz_, then add this project folder in your code editor (Atom, VSCode etc.).
 
-5. Under package -> components you will find 8 .js files.
+5. Under package -> components you will find 8 _.js_ files.
 
   ![folder structure](./images/folder-structure.png)
 
@@ -151,7 +151,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
   const restUrl = "http://your_public_ip:8000/api/skillset";
   ```
 
-  You will need to replace **your_public_ip** with the public IP address of your instance created in Lab6, Step 1, in all the 8 .js files. Then save each file.
+  You will need to replace **your\_public\_ip** with the public IP address of your instance created in Lab6, Step 1, in all the 8 _.js_ files. Then save each file.
 
 
 7. Open a terminal an go in the **package** folder. Run the command:
@@ -162,9 +162,9 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
     ![npm pack](./images/npm-pack.png)
 
-8. A new .tgz file will be created inside the **package** folder.
+8. A new _.tgz_ file will be created inside the **package** folder.
 
-9. Return in the **Components** section in Digital Assitant Console, and update the my-component-service-1.0.0.tgz file with your new one, that will have the same name.
+9. Return in the **Components** section in Digital Assistant Console, and update the _my-component-service-1.0.0.tgz_ file with your new one, that will have the same name.
 
   ![update component](./images/update-component.png)
 
@@ -348,7 +348,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
 ### **6.5. Create a Channel in Digital Assistant**  
 
-1. In the Oracle Digital Assitant Instance Console, click on Hamburger menu on the top left to open the navigation menu, select **Development** -> **Channels** -> **Users** -> **Add Channel**.
+1. In the Oracle Digital Assistant Instance Console, click on Hamburger menu on the top left to open the navigation menu, select **Development** -> **Channels** -> **Users** -> **Add Channel**.
 
   ![new channel](./images/new-channel.png)
 
@@ -405,7 +405,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
   ![redirect url2](./images/redirect-2.png)
 
 
-5. In the left navigation, select **App Home**. In the *Your App’s Presence in Slack* section abd turn on the **Always Show My Bot as Online** switch.
+5. In the left navigation, select **App Home**. In the *Your App’s Presence in Slack* section and turn on the **Always Show My Bot as Online** switch.
 
   ![online bot](./images/online-bot.png)
 

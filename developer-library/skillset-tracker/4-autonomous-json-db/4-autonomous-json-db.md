@@ -19,28 +19,75 @@ Estimated Lab Time: 1 hour
 * SQL Developer Installed on your local machine.
 
 ## **Step 1:** Understand the sample JSON files
-In this step you are going to understand the structure of the two sample JSON files ([sample\_skills.json](https://objectstorage.us-ashburn-1.oraclecloud.com/p/23GO6zKXRyUew-jyfRJ-8zOBp9otsFPQGVZfQ2OPtWLXmig0ilbdhfpas0iRFv5x/n/orasenatdpltintegration03/b/ODA-SkillTracker-dev/o/sample_skills.json) and [sample\_users.json](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4nqL5wz7O8zR56cieXGU8IQM811AcG3GWfJwXQMBJu81lck_5nW4La4hybWWtKw4/n/orasenatdpltintegration03/b/ODA-SkillTracker-dev/o/sample_user.json)). However, you should know that you can change these ones in any way, depending on your business need.
+In this step you are going to understand the structure of the two sample JSON files (_sample\_skills.json_ and _sample\_users.json_). However, you should know that you can change these ones in any way, depending on your business need.
 
 The first, and the most important one is the _sample\_skills.json_ file. This file represents the main data source for the application that is going to be build in these labs.
 
 As you can see in the snippet below, the JSON consists of a set of data about employees and their skills, where the employee's **email** address represents the unique key. Each employee has two main areas of development, a **primary** one and a **secondary** one. The **areas** tag represents an array of objects (areas of development). Each area has several skills, and for each of the skills, the **value** tag represents the knowledge level for the employee and takes values from 0 to 5 (where 0 means "no knowledge" and 5 means "expert"). The **oracle_based** tag categorizes each skill in one of the two categories: **Oracle Based Skills** (1) or **Non-Oracle Skills** (0).
+
+Create your  _sample\_skills.json_ file and copy the following content into it. You can update this file with as many employees and skills as you want.
 ```
+<copy>
 [{
-  "name": "Cloud EngineerA",
-  "manager": "Manager Name1",
-  "email": "CLOUD.ENGINEER1@ORACLE.COM",
-  "primary": "Data Management",
-  "secondary": "Oracle Cloud Infrastructure",
-  "areas":
-    [{
-      "area": "Developer Tools",
-      "skills":
-        [{
-            "skill": "Oracle Cloud Shell",
-            "oracle_based": 1,
-            "value": 2
-          },
-   ...
+        "name": "Cloud EngineerA",
+        "manager": "Manager NameA",
+        "email": "CLOUD.ENGINEER1@ORACLE.COM",
+        "primary": "Data Management",
+        "secondary": "Oracle Cloud Infrastructure",
+        "areas": [
+            {
+                "area": "Cloud Native",
+                "skills": [
+                    {
+                        "skill": "OKE",
+                        "oracle_based": 1,
+                        "value": 0
+                    },
+                    {
+                        "skill": "API Management",
+                        "oracle_based": 1,
+                        "value": 2
+                    },
+                    {
+                        "skill": "Docker",
+                        "oracle_based": 0,
+                        "value": 1
+                    },
+                    {
+                        "skill": "Rancher",
+                        "oracle_based": 0,
+                        "value": 0
+                    }
+                ]
+            },
+            {
+                "area": "Data Management",
+                "skills": [
+                    {
+                        "skill": "Oracle DB",
+                        "oracle_based": 1,
+                        "value": 2
+                    },
+                    {
+                        "skill": "MySQL",
+                        "oracle_based": 1,
+                        "value": 1
+                    },
+                    {
+                        "skill": "PostgreSQL",
+                        "oracle_based": 0,
+                        "value": 1
+                    },
+                    {
+                        "skill": "MongoDB",
+                        "oracle_based": 0,
+                        "value": 1
+                    }
+                ]
+            }        
+        ]
+    }]
+</copy>
 ```
 
 As mentioned before, the keys in this JSON file can be customized in any way. An example would be to keep data regarding a list of products and product specifications.
@@ -61,16 +108,29 @@ As mentioned before, the keys in this JSON file can be customized in any way. An
    ...
 ```
 
-The second JSON file (_sample\_users.json_) represents the data regarding some sample users for the application and will be used to emphasize the authorization in the application.
+The second JSON file (_sample\_users.json_) represents the data regarding some sample users for the application and will be used to emphasize the authorization in the application. Create your  _sample\_users.json_ file and copy the following content into it. You can update this file with as many users as you want.
 
 ```
+<copy>
 [{
-  "name":"ADMIN",
-  "email":"ADMIN@ORACLE.COM",
-  "is_admin":"Y",
-  "is_mgr":"N"
- },
-...
+    "name": "ADMIN",
+    "email": "ADMIN@ORACLE.COM",
+    "is_admin": "Y",
+    "is_mgr": "N"
+},
+{
+    "name": "Manager NameA",
+    "email": "MANAGER@ORACLE.COM",
+    "is_admin": "N",
+    "is_mgr": "Y"
+},
+{
+    "name": "Cloud EngineerL",
+    "email": "USER@ORACLE.COM",
+    "is_admin": "N",
+    "is_mgr": "N"
+}]
+</copy>
 ```
 The users in the application presented will have 3 roles which will be determined based on the **is\_admin** and **is\_mgr** tags, as shown in the table below.
 
