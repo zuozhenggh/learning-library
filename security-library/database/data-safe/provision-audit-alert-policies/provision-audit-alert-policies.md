@@ -23,7 +23,7 @@ You learn how to perform the following tasks:
 
 Before starting, be sure that you have completed the following prerequisite tasks:
 
-- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
+- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console.
 - You prepared your environment for this workshop. If not, see [Prepare Your Environment](?lab=prepare-environment). It's important that the Activity Auditing feature is enabled on your database and that you have privileges in Oracle Data Safe to use the Activity Auditing feature with your database.
 - You registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. If not, see [Register an Autonomous Database](?lab=register-autonomous-database).
 

@@ -32,7 +32,7 @@ You learn how to perform the following tasks:
 
 Before starting, be sure that you have completed the following prerequisite tasks:
 
-- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console. If not, see [Getting Started](?lab=getting-started).
+- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console.
 
 
 ## **STEP 1**: Enable Oracle Data Safe
