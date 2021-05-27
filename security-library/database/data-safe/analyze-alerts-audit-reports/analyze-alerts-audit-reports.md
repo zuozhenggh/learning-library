@@ -13,7 +13,6 @@ Estimated Lab Time: 20 minutes
 
 You learn how to perform the following tasks:
 
-- Sign in to the Oracle Data Safe Console
 - View and close alerts
 - Analyze open alerts from the dashboard
 - View all audit records for the past week
@@ -36,7 +35,7 @@ Before starting, be sure that you have completed the following prerequisite task
 - Your data values are most likely different than those shown in the screenshots.
 
 
-## **STEP 1**: Sign in to the Oracle Data Safe Console
+## **STEP 1**: View and close alerts
 
 1. If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
@@ -46,17 +45,14 @@ Before starting, be sure that you have completed the following prerequisite task
     2. From the navigation menu, select **Oracle Database**, and then **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
     3. Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
+3. In Oracle Data Safe Console, click the **Alerts** tab.
 
-## **STEP 2**: View and close alerts
-
-1. In Oracle Data Safe Console, click the **Alerts** tab.
-
-2. View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts. At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
+4. View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts. At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
 
   ![Alert totals](images/totals-alerts-page.png "Alert totals")
 
 
-3. Scroll down to review the alerts in the table.
+5. Scroll down to review the alerts in the table.
 
     - The **DB User** column identifies who is doing the action.
     - The **Operation** column identifies the action.
@@ -65,9 +61,9 @@ Before starting, be sure that you have completed the following prerequisite task
   ![Alerts in the table](images/alert-table.png "Alerts in the table")
 
 
-4. At the bottom of the page, click the page numbers to view other pages of alerts.
+6. At the bottom of the page, click the page numbers to view other pages of alerts.
 
-5. To filter the report to show only open high alerts, at the top of the report, click **+ Filter** and then set the filter to be: **Alert Severity = High**. Click **Apply**.
+7. To filter the report to show only open high alerts, at the top of the report, click **+ Filter** and then set the filter to be: **Alert Severity = High**. Click **Apply**.
 
     - If the filters are not displayed, click **Filters** below the totals at the top of the page.
     - Leave the default filters on **Alert Status** and **Operation Time** set as is.
@@ -76,31 +72,31 @@ Before starting, be sure that you have completed the following prerequisite task
 
   The table shows you the open high alerts.
 
-6. To sort the **Operation** column, position the cursor over the **Operation** column heading, and then click the arrow button.
+8. To sort the **Operation** column, position the cursor over the **Operation** column heading, and then click the arrow button.
 
  ![Sort the DB User column icon](images/sort-operation-column.png "Sort the DB User column icon")
 
-7. To view more detail for an alert, click the alert ID.
+9. To view more detail for an alert, click the alert ID.
 
   ![An alert ID highlighted in the Alerts table](images/click-alert-id.png "An alert ID highlighted in the Alerts table")
 
-8. Review the information in the **Alert Details** dialog box, and then click **X** to close it. You can view the **DB User**, **Operation Status**, **SQL Text**, and much more.
+10. Review the information in the **Alert Details** dialog box, and then click **X** to close it. You can view the **DB User**, **Operation Status**, **SQL Text**, and much more.
 
   ![Alert Details dialog box](images/alert-details-dialog-box.png "Alert Details dialog box")
 
-9. To remove the filters, click the **X** next to each filter, and then click **Apply**.
+11. To remove the filters, click the **X** next to each filter, and then click **Apply**.
 
-10. To create a filter to view the list of alerts for user entitlement changes, do the following:
+12. To create a filter to view the list of alerts for user entitlement changes, do the following:
 
     1. Click **+ Filter**.
     2. Set the filter to be: **Alert = User Entitlement Changes**.
     3. Click **Apply**.
 
-11. Review the alerts.
+13. Review the alerts.
 
   ![User Entitlement Changes alerts](images/user-entitlement-changes.png "User Entitlement Changes alerts")
 
-12. Suppose you are fine with these entitlement changes. Now you can close the alerts.
+14. Suppose you are fine with these entitlement changes. Now you can close the alerts.
 
     1. Select the check box in the top left corner of the table to select all of the alerts displayed.
     2. From the **Mark As** menu, select **Closed**. The alerts selected on this page are closed and the next page is displayed.
@@ -110,13 +106,13 @@ Before starting, be sure that you have completed the following prerequisite task
     3. Because there is another page of alerts that meet the filter criteria, repeat the previous step to mark all alerts with entitlement changes as closed.
     4. Remove the filter **Alert = User Entitlement Changes**. Both open and closed alerts are displayed.
 
-13. To hide closed alerts on the pages, move the **Open Alerts only** slider to the right.
+15. To hide closed alerts on the pages, move the **Open Alerts only** slider to the right.
 
   ![Open Alerts only slider](images/show-open-alerts-only.png "Open Alerts only slider")  
 
 
 
-## **STEP 3**: Analyze open alerts from the dashboard
+## **STEP 2**: Analyze open alerts from the dashboard
 
 1. Click the **Home** tab.
 
@@ -135,7 +131,7 @@ Before starting, be sure that you have completed the following prerequisite task
   ![All Alerts report filtered](images/all-alerts-report-last-seven-days.png "All Alerts report filtered")  
 
 
-## **STEP 4**: View all audit records for the past week
+## **STEP 3**: View all audit records for the past week
 
 1. Click the **Reports** tab.
 
@@ -150,7 +146,7 @@ Before starting, be sure that you have completed the following prerequisite task
    ![Filters automatically set in All Activity Report](images/filters-table-all-activity-report.png "Filters automatically set in All Activity Report")  
 
 
-## **STEP 5**: View a summary of audit events collected and alerts raised
+## **STEP 4**: View a summary of audit events collected and alerts raised
 
 1. On the left, expand **Summary**, and then click **Audit Summary**.
 
@@ -181,7 +177,7 @@ Before starting, be sure that you have completed the following prerequisite task
   ![Database set as a filter](images/last-one-month-filter.png "Database set as a filter")  
 
 
-## **STEP 6**: Create a logins report
+## **STEP 5**: Create a logins report
 
 1. Click the **Reports** tab.
 

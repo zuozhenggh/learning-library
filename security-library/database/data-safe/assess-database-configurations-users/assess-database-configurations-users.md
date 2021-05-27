@@ -16,7 +16,6 @@ Estimated Lab Time: 20 minutes
 
 You learn how to perform the following tasks:
 
-- Sign in to the Oracle Data Safe Console
 - View the initial Security Assessment report for your database
 - Schedule a Security Assessment job against your database
 - Run a Security Assessment job immediately against your database and analyze the results
@@ -40,7 +39,11 @@ Before starting, be sure that you have completed the following prerequisite task
 - Your data values are most likely different than those shown in the screenshots.
 
 
-## **STEP 1**: Sign in to the Oracle Data Safe Console
+
+
+
+
+## **STEP 1**: View the initial Security Assessment report for your Autonomous Database
 
 1. If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
@@ -50,17 +53,14 @@ Before starting, be sure that you have completed the following prerequisite task
     2. From the navigation menu, select **Oracle Database**, and then **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
     3. Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
+2. Click the **Home** tab, and then click **Security Assessment**.
 
-## **STEP 2**: View the initial Security Assessment report for your Autonomous Database
-
-1. Click the **Home** tab, and then click **Security Assessment**.
-
-2. In the **Last Generated Report** column, click **View Report**. The **Comprehensive Assessment** report for your target database is displayed.
+3. In the **Last Generated Report** column, click **View Report**. The **Comprehensive Assessment** report for your target database is displayed.
 
   ![Security Assessment page](images/LL-security-assessment-page.png "Security Assessment page")
 
 
-3. At the top of the report, you can view the following:
+4. At the top of the report, you can view the following:
 
     - Target database name, when the database was assessed, and the database version
     - The total number of findings per risk level (**High Risk**, **Medium Risk**, **Low Risk**, **Advisory**, **Evaluate**, and **Pass**). These totals give you an idea of how secure your database is. The risk levels are color coded to make them easier to identify.
@@ -68,13 +68,13 @@ Before starting, be sure that you have completed the following prerequisite task
 
   ![Top of the Comprehensive Assessment report](images/LL-top-comprehensive-assessment-report.png "Top of the Comprehensive Assessment report")
 
-4. Review the table in the **Summary** category. This table compares the number of findings for each category in the report and counts the number of findings per risk level. These values help you to identify areas that need attention.
+5. Review the table in the **Summary** category. This table compares the number of findings for each category in the report and counts the number of findings per risk level. These values help you to identify areas that need attention.
 
   ![Summary table in the Comprehensive Assessment report](images/LL-summary-table-comprehensive-assessment-report.png "Summary table in the Comprehensive Assessment report")
 
-5. Expand **User Accounts** to view the list of findings that pertain to user accounts.
+6. Expand **User Accounts** to view the list of findings that pertain to user accounts.
 
-6. Expand the subcategories and review the findings.
+7. Expand the subcategories and review the findings.
 
     - You can find more information on the identified risk and how to mitigate it in the **Details** and **Remarks** sections of each risk.
     - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
@@ -82,17 +82,17 @@ Before starting, be sure that you have completed the following prerequisite task
   ![Summary table in the Comprehensive Assessment report](images/LL-findings-user-accounts.png "Summary table in the Comprehensive Assessment report")
 
 
-7. Collapse **User Accounts** and expand **Privileges and Roles**. Review the list of findings.
+8. Collapse **User Accounts** and expand **Privileges and Roles**. Review the list of findings.
 
-8. Scroll down and expand other categories. Each category lists related findings about your database and how you can make changes to improve its security.
+9. Scroll down and expand other categories. Each category lists related findings about your database and how you can make changes to improve its security.
 
-9. To filter the findings by risk level, scroll to the top of the report, and click a risk level. Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed in the report. If you click **Medium Risk** again, the filter is removed.
-
-
+10. To filter the findings by risk level, scroll to the top of the report, and click a risk level. Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed in the report. If you click **Medium Risk** again, the filter is removed.
 
 
 
-## **STEP 3**: Schedule a Security Assessment job against your database
+
+
+## **STEP 2**: Schedule a Security Assessment job against your database
 
 1. Click the **Home** tab, and then click the **Security Assessment** tab.
 
@@ -111,7 +111,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 4**: Run a Security Assessment job immediately against your database and analyze the results
+## **STEP 3**: Run a Security Assessment job immediately against your database and analyze the results
 
 1. Deselect the check box for your database, and then select it again.
 
@@ -131,7 +131,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 5**: View the history of Comprehensive Assessment reports
+## **STEP 4**: View the history of Comprehensive Assessment reports
 
 You can access all of your Comprehensive Assessment reports by viewing the history.
 
@@ -149,7 +149,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
 
 
 
-## **STEP 6**: Set a baseline report and generate a Comparison report
+## **STEP 5**: Set a baseline report and generate a Comparison report
 
 
 1. Click the **Home** tab, and then click **Security Assessment**.
@@ -181,7 +181,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
   ![Comparison Report](images/LL-comparison-report.png "Comparison Report")
 
 
-## **STEP 7**: View the initial User Assessment report for your database
+## **STEP 6**: View the initial User Assessment report for your database
 
 1. Click the **Home** tab, and then click **User Assessment**. The **User Assessment** page is displayed.
 
@@ -215,7 +215,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
 
 
 
-## **STEP 8**: Run a User Assessment job immediately and analyze the results
+## **STEP 7**: Run a User Assessment job immediately and analyze the results
 
 1. Click **Back to User Assessment**.
 
