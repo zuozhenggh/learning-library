@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Kubernetes** is an open-source container orchestration tool for automating the deployment and management of Cloud Native applications. 
+**Kubernetes** is an open-source container orchestration tool for automating the deployment and management of Cloud Native applications.
 
 The goal of this Lab is to guide you through the steps that need to be followed in order to create a Docker file and deploy the code from **Lab 6: Build NodeJS APIs to make calls to the database** in **Container Engine for Kubernetes (OKE)**.
 
@@ -25,7 +25,7 @@ Estimated Lab Time: 2 hours
 * **Lab 6: Build NodeJS APIs to make calls to the database**.
 
 
-## **Step 1:** Prepare the code for running
+## **Step 1:** Create a Docker file, Docker image and run a Docker container
 As a prerequisite for this step you should have available the code from **Lab 6: Build NodeJS APIs to make calls to the database**. In addition, you should download the Database Wallet as shown in **Lab 4: Autonomous JSON Database & SODA Collections**, extract the content of the archive and move the folder with the Wallet content into the project folder (in our example the Wallet folder is named _Wallet\_SkillsetDB_).
 
 1. In the project folder create a new file _Dockerfile_ and paste the following content into it. This are all the commands needed to run in order to install the application on the container.
@@ -57,9 +57,31 @@ CMD [ "node", "app.js" ]
 </copy>
 ```
 
-2. In the project folder create a new folder _k8s-yaml_.
+2. Now that you have the _Dockerfile_ prepared, you can create a **Docker image** by running the following command. In this case we named it _skillset/ojetoraclelinux_. You can give it your own name, this is just an example.
 
-3. Navigate to _k8s-yaml_ and create a new file _oracledb-secret.sh_ and paste the following content into it. Make sure to replace the path with the correct one for the Wallet folder, if needed.
+**Note**: Before running the command, navigate to the directory containing the Docker file in the terminal.
+
+```
+<copy>
+docker build -t skillset/ojetoraclelinux .
+</copy>
+```
+
+3. The next step would be to create a Docker container and mount the connection string and Database Wallet. Use the following command to do this, and add the correct path to your Database Wallet folder.
+
+
+```
+<copy>
+docker run --env-file=.env  -p 8000:8000 -v <path_to_the_wallet_folder>:/opt/oracle/instantclient_21_1/network/admin  -d skillset/ojetoraclelinux
+</copy>
+```
+
+4. Test that the command executed successfully by opening a browser and accessing ``localhost:8000/api/skillset``. You should see the following message _...OJET Skillset APIs are running..._.
+
+## **Step 2:** Create an Oracle Database Secret and a YAML file for the project
+1. In the project folder create a new folder _k8s-yaml_.
+
+2. Navigate to _k8s-yaml_ and create a new file _oracledb-secret.sh_ and paste the following content into it. Make sure to replace the path with the correct one for the Wallet folder, if needed.
 
 ```
 <copy>
@@ -85,7 +107,7 @@ EOF
 </copy>
 ```
 
-4. In the same folder, create a new file _skillset-deployment.yml_ and paste the following content. Note that you would need to update this file later in order to replace **your\_docker\_image** with your own Docker Image name.
+3. In the same folder, create a new file _skillset-deployment.yml_ and paste the following content. Note that you would need to update this file later in order to replace **your\_docker\_image** with your own Docker Image name.
 
 **Note**: The **your\_oracle\_db\_user**, **your\_oracle\_db\_password**, and **your\_oracle\_db\_connection\_string** fields should be encoded for security reasons. In order to do this you can use the following command, or any other option you prefer: ``echo -n "your_text" | base64``
 
@@ -152,29 +174,6 @@ spec:
     app: skillset          
 </copy>
 ```
-
-## **Step 2:** Create a Docker image and run a Docker container
-1. Now that you have the _Dockerfile_ prepared, you can create a **Docker image** by running the following command. In this case we named it _skillset/ojetoraclelinux_. You can give it your own name, this is just an example.
-
-**Note**: Before running the command, navigate to the directory containing the Docker file in the terminal.
-
-```
-<copy>
-docker build -t skillset/ojetoraclelinux .
-</copy>
-```
-
-2. The next step would be to create a Docker container and mount the connection string and Database Wallet. Use the following command to do this, and add the correct path to your Database Wallet folder.
-
-**Note**: Before running the command, navigate to the project directory in the terminal.
-
-```
-<copy>
-docker run --env-file=.env  -p 8000:8000 -v <path_to_the_wallet_folder>:/opt/oracle/instantclient_21_1/network/admin  -d skillset/ojetoraclelinux
-</copy>
-```
-
-3. Test that the command executed successfully by opening a browser and accessing ``localhost:8000/api/skillset``. You should see the following message _...OJET Skillset APIs are running..._.
 
 ## **Step 3:** Push the image to OCI Container Registry (OCIR)
 1. Open the OCI Console and from the top left hamburger menu navigate to **Developer Services** -> **Container Registry**.
