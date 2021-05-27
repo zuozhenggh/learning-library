@@ -18,8 +18,6 @@ Oracle Data Safe is Oracle’s platform for securing data in databases. As a nat
 
 Watch our short video that explains key features in Oracle Data Safe.
 
-[//]: # (![Introducing Oracle Data Safe](https://img.youtube.com/vi/wU-M5BlU0po/0.jpg)](http://www.youtube.com/watch?v=wU-M5BlU0po))
-
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wU-M5BlU0po" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
