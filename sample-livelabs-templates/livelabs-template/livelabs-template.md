@@ -203,9 +203,6 @@ In this lab, you will:
 
 [](include:injected-step.md)
 
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
-
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
