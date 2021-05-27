@@ -20,7 +20,7 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Cloud Database System and the target database is Oracle Autonomous Data Warehouse.
 
-## STEP 1: Add and Run an Extract in Oracle GoldenGate
+## **STEP 1**: Add and Run an Extract in Oracle GoldenGate
 
 This Extract process captures data from the source database to send to OCI GoldenGate.
 
@@ -66,7 +66,7 @@ This Extract process captures data from the source database to send to OCI Golde
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## STEP 2: Add and Run a Distribution Server Path
+## **STEP 2**: Add and Run a Distribution Server Path
 
 The Distribution Path initiates the process to send the Oracle GoldenGate trail file to OCI GoldenGate.
 
@@ -116,7 +116,7 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
 In this lab, you created and ran a Path on your on premise Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
 
-## STEP 3: Add and Run a Replicat
+## **STEP 3**: Add and Run a Replicat
 
 This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
