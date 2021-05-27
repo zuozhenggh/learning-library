@@ -9,8 +9,8 @@ inject-note: true
 The preparation required depends on how you want to run this workshop.
 
 - If you are using the Oracle free tier, then you can skip steps 3, 4, and 5 below.
-- If you are using a paid account provided by your organization, the preparation required depends on the permissions that you have in your organization's tenancy. If you are a member of the tenancy's `Administrators` group, then you can skip steps 3, 4, and 5 below. If you are a regular user, then you need to enlist the help of a tenancy administrator to complete steps 2, 3, 4, and 5 below.
-- If you using an Oracle-provided environment, you can skip all of the steps below, except for STEP 7 (Verify the setup). Your Oracle-provided environment already has the resources and permissions set up for you.
+- If you are using a paid account, the preparation required depends on the permissions that you have in your tenancy. If you are a member of the tenancy's `Administrators` group, then you can skip steps 3, 4, and 5 below. If you are a regular user, then you need to enlist the help of a tenancy administrator in your organization to complete steps 2, 3, 4, and 5 below.
+- If you are using an Oracle-provided environment, you can skip all of the steps below, except for STEP 7 (Verify the setup). Your Oracle-provided environment already has the resources and permissions set up for you.
 
 
 Estimated Lab Time: 15 minutes
