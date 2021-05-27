@@ -18,12 +18,16 @@ In this lab, you will:
 * Objective 2
 * Objective 3
 
+To link to other areas in document use this [syntax](#STEP1:title)
+
 ### Prerequisites
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * Item no 2 with url - [URL Text](https://www.oracle.com).
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -100,8 +104,3 @@ Congratulations! You have completed this workshop!
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

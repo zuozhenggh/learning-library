@@ -23,9 +23,7 @@ In this lab, you will:
 
 1. Install the `TOYS_APP` and the `SALES_TOYS_APP` applications in the `TOYS_ROOT` application container for both `ROBOTS` and `DOLLS` application PDBs. The script defines the application container, installs the two applications in the application container, and finally creates the two application PDBs in the application container.
 
-2. To be able to connect during the shell script execution to `TOYS_ROOT`, `ROBOTS` and `DOLLS`, create the entries in the `tnsnames.ora` file as explained in [practices environment](https://docs-uat.us.oracle.com/en/database/oracle/oracle-database/21/ftnew/practices-environment1.html#GUID-467FB8FF-C8CC-48A0-B39A-5F7E7B9A9CF8__GUID-08108F3C-C78A-45B7-8452-6985DF9EF1DD).
-
-3. Execute the shell script.
+2. Execute the shell script.
 
     ```
 
@@ -42,27 +40,21 @@ In this lab, you will:
     ORA-28389: cannot close auto login wallet
 
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
-
     keystore altered.
     ...
     SQL> ALTER PLUGGABLE DATABASE toys_root CLOSE IMMEDIATE;
-
     Pluggable database altered.
 
     SQL> DROP PLUGGABLE DATABASE robots INCLUDING DATAFILES;
-
     Pluggable database dropped.
 
     SQL> DROP PLUGGABLE DATABASE dolls INCLUDING DATAFILES;
-
     Pluggable database dropped.
 
     SQL> DROP PLUGGABLE DATABASE toys_root INCLUDING DATAFILES;
-
     Pluggable database dropped.
 
     SQL> ALTER SESSION SET db_create_file_dest='/home/oracle/labs/toys_root';
-
     Session altered.
 
     SQL> CREATE PLUGGABLE DATABASE toys_root AS APPLICATION CONTAINER
@@ -73,7 +65,6 @@ In this lab, you will:
     ...
 
     SQL> alter pluggable database dolls open;
-
     Pluggable database altered.
 
     SQL>
@@ -118,13 +109,11 @@ In this lab, you will:
 
     ```
 	  <copy>sqlplus sys@localhost:1521/robots AS SYSDBA</copy>
-
 	  Enter password: WElcome123##
     ```
     ```
 
 	  SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
-
 	  Pluggable database altered.
 
 	  SQL>
@@ -143,11 +132,8 @@ In this lab, you will:
 		ORDER BY 1;</copy>
 
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-
 	---------------- ------------ ------------ ----------
-
 	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-
 	TOYS_APP         1.0          NORMAL       ROBOTS
 
   SQL><copy>exit;</copy>
@@ -171,15 +157,11 @@ In this lab, you will:
 		ORDER BY 1;</copy>
 
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-
 	---------------- ------------ ------------ ----------
-
 	SALES_TOYS_APP   1.0          NORMAL       DOLLS
-
 	TOYS_APP         1.0          NORMAL       DOLLS
 
 	SQL> <copy>CONNECT / AS SYSDBA</copy>
-
 	Connected.
 
 	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
@@ -189,19 +171,12 @@ In this lab, you will:
 		ORDER BY 1;</copy>  
 
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-
 	---------------- ------------ ------------ ----------
-
 	SALES_TOYS_APP   1.0          NORMAL       DOLLS
-
 	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-
 	SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
-
 	TOYS_APP         1.0          NORMAL       DOLLS
-
 	TOYS_APP         1.0          NORMAL       TOYS_ROOT
-
 	TOYS_APP         1.0          NORMAL       ROBOTS
 
 	6 rows selected.
@@ -215,11 +190,7 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Dominique Jeunot, Database UA Team
+* **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
 * **Last Updated By/Date** -  David Start, December 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,7 +1,7 @@
-# Modernizing Customer Oracle Form to Oracle APEX Page
+# Modernizing Oracle Form to Oracle APEX
 
 ## Introduction
-In this lab, You will learn how to create the apex application and learn how to modernize the Customer Form.  The objective is to show you the options for these sample forms and then you can get an idea to modernize your own Forms Application.
+In this lab, You will learn how to create the apex application and learn how to modernize the Customer Form and Order Form.  The objective is to show you the options for these sample forms and then you can get an idea to modernize your own Forms Application.
 
 Depending on your requirements you can take advantage of this modernization to update also the business rules, not just the screens. Because this is not a trivial process, so it's the right moment to review the business logic and check what you need to update or remove.
 
@@ -13,6 +13,7 @@ Estimated Lab Time: 30 minutes
 
 * Creating an Oracle APEX application
 * Modernize the Customer Form from Oracle Forms in Oracle APEX.
+* Modernize the Order Form from Oracle Forms in Oracle APEX.
 
 
 ### Prerequisites
@@ -64,8 +65,11 @@ We will be walking through series of steps on how to create Customer Summary Rep
 8. You will see the Page Created Successfully , you will see 2 pages created
     ![](images/success_form.png " ")
 
+   Wait until the page gets created, the page can take little time to get created, do not click on the **Create** more than once , it can result in unique constraint violation error. 
+
 9. When you run the Page, you will be able to see Report with all the customers listed and you can edit or create new customer from the Report page
     ![](images/interactive_report.png " ")
+
 
 10. **Customer Form** works in the similar way as **Forms Data Block**.
     If you want to manage the create/update operation from the **Interactive Reports** Page you can make the **Customer Form** to be a modal page.
@@ -81,7 +85,8 @@ We will be walking through series of steps on how to create Customer Summary Rep
 
     Creating Customer Modal Form takes care of **Data Block** conversion and **Items** from Forms to APEX
 
-## **STEP 3**: Create List of Values in Oracle APEX page
+## **STEP 3**:Create List of Values in Oracle Customer Form APEX page
+
 
 
 1. From the App Builder Home Page, Click on **Migrations**
@@ -151,15 +156,15 @@ That completes the List of Values section of the Migration.
 7. **CONFIRM_ALERT** is handled by Page setting , Change the **Warn on unsaved changes** to **Page Default**
     ![](images/confirm-revert-alert.png " ")
 
-## **STEP 4**: Migrate Program Units from Forms to APEX  
+## **STEP 5**: Migrate Program Units from Forms to APEX  
     
-- **Program Units** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
+1. **Program Units** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-## **STEP 5**: Migrate Triggers from Forms to APEX  
+## **STEP 6**: Migrate Triggers from Forms to APEX  
 
-- **Triggers** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
+1. **Triggers** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-## **STEP 6**: Recreate Forms Tree Structure Triggers from Forms to APEX  
+## **STEP 7**: Recreate Forms Tree Structure Triggers from Forms to APEX  
 
 - **Customer Form** in the Oracle Forms Service was represented in a **Tree** Structure , You can easily recreate the tree structure in APEX.
 
@@ -239,18 +244,51 @@ That completes the List of Values section of the Migration.
   11. Click on the tree node will open the **Customer Modal Form**
         ![](images/customer-modal-form.png " ")
 
-  Great Job !! You have successfully completed transforming the **Customer** Form to **Interactive Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
+
+  Great Job !! You have successfully completed transforming the **Customer** Form to **Faceted Search Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
+
+## **STEP 8**: Additional Enhancements to Customer Form
+
+We can enhance the customer form in APEX page to utilize the user friendly features in APEX.
+
+### Create the **Static LOV** for *Credit Rating*
+
+1. Go to your Application Home Page, Click on **Shared Components** and Click on **List of Values**
+  ![](images/apex_lov.png " ")
+
+2. Click on Create and choose **Source** as **From Scratch** and Click next
+  ![](images/lov_step1.png " ")
+
+3. Enter the name **CREDIT_RATING_LOV** and Choose **Static** for the list of value type
+   ![](images/static-lov-1.png " ")
+
+4. Enter the values for Display and Return value as outlined
+  ![](images/static-lov-2.png " ")
+
+5. Attach to the **Credit Rating ID** field in the Customer Form
+  ![](images/credit-rating-lov.png " ")
+
+### Customize the Order and Display of columns in the Customer form
+When you create a form using the wizard, it automatically creates an item for each column in the table. Depending on the column type, it creates a Text Field, Textarea, Date Picker or Number Field item.
+
+Once the page is created, you can go to the page and make the changes you need. Select a different type of element, edit the label and more.
+
+1. You can make more than one column to show in the same row by toggling the **Start New Row**
+  ![](images/new-column.png " ")
+
+2. You can organize items by dragging and drop them.
+  ![](images/drag-drop.png " ")
+
+3. Once you finish customizing, when you run the customer form you will see the customized form
+  ![](images/customer-form.png " ")
+
 
 
 
 ## Acknowledgements
 
-- **Author** -  Vanitha Subramanyam, Senior Solution Architect
-- **Contributors** -Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
-- **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
+ - **Author** -  Vanitha Subramanyam, Senior Solution Architect
+ - **Contributors** -Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
+ - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
 
-## Need Help?
 
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

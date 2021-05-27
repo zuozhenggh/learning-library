@@ -14,16 +14,29 @@ Estimated Lab Time: 15 minutes
 ### What Do You Need?
 
 This lab assumes that you have successfully completed the following labs in the **Contents** menu:
+<if type="freetier">
 + **Lab 1: Setup the BDS Environment**
+</if>
+<if type="livelabs">
++ **Lab 1: Review Creating BDS Environment Resources (Optional)**
+</if>
 + **Lab 2: Create a BDS Hadoop Cluster**
 
 ## **STEP 1:** Maintain the Cluster
 
 You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+<if type="livelabs">
+1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
+</if>
 
-2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Data and AI**, select **Big Data**.
+<if type="freetier">
+1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+</if>
+
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and then select **Big Data Service**.
+
+	![](./images/big-data.png " ")
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button to display the context menu.
 
@@ -35,14 +48,19 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
 5. Alternatively, you can click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page. You can use the buttons at the top of the page to do the following:
 
-    + Add nodes to the cluster.
+    + Add Nodes.
     + Add Block Storage.
     + Add Cloud SQL.
     + Change Shape.
-    + Use the **More Actions** drop-down list to rename the cluster, move a resource from the current compartment to a different compartment, add tags, remove Cloud SQL, and terminate Big data Cluster.
+    + Use the **More Actions** drop-down list to rename the cluster, move a resource from the current compartment to a different compartment, add tags, remove Cloud SQL, and terminate Big Data Cluster.
 
+    <if type="freetier">
     ![](./images/maintain-cluster-2.png " ")  
+    </if>
 
+    <if type="livelabs">
+    ![](./images/ll-maintain-cluster-2.png " ")  
+    </if>
 
 ## **STEP 2:** Add Oracle Cloud SQL to the Cluster
 
@@ -58,7 +76,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
   ![](./images/add-cloud-sql-menu.png " ")    
 
-2. In the **Add Cloud SQL** dialog box, provide the following information:
+3. In the **Add Cloud SQL** dialog box, provide the following information:
     + **Query Server Node Shape:** Select **`VM.Standard2.4`**.
     + **Query Server Node Block Storage (In GB):** Enter **`1000`**.
     + **Cluster Admin Password:** Enter your cluster administration password that you chose when you created the cluster such as **`Training123`**.
@@ -67,27 +85,45 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
     **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D) in the Using Oracle Big Data Service documentation.
 
-3. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`6`** instead of **`5`**.
+4. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`6`** instead of **`5`**.
 
-    ![](./images/updating-cluster.png " ")  
+    ![](./images/cluster-redisplayed.png " ")
 
-4. Click the **`training-cluster`** name link in the **Name** column to display the **Cluster Details** page. Click the **Cloud SQL Information** tab to display information about the new Cloud SQL node. In addition, the newly added Cloud SQL node, **`traininqs0`**, is displayed in the **List of cluster nodes** section.
+5. Click the **training-cluster** name link in the **Name** column to display the **Cluster Details** page. Click the **Cloud SQL Information** tab to display information about the new Cloud SQL node. In addition, the newly added Cloud SQL node, **`traininqs0`**, is displayed in the **List of cluster nodes** section.
 
+    <if type="freetier">
     ![](./images/cluster-details-cs.png " ")
+    </if>
 
-5. Navigate to the **Clusters > Cluster Details** page, and then click **Work Requests** in the **Resources** section. In the **Work Requests** section, the **`ADD_CLOUD_SQL`** operation is displayed along with the status of the operation and percent completed. Click the **`ADD_CLOUD_SQL`** link.
+    <if type="livelabs">
+    ![](./images/ll-cluster-details-cs.png " ")
+    </if>
 
+6. Click **Work Requests** in the **Resources** section. In the **Work Requests** section, the **`ADD_CLOUD_SQL`** operation is displayed along with the status of the operation and percent completed. Click the **`ADD_CLOUD_SQL`** link.
+
+  <if type="freetier">
   ![](./images/cloud-sql-wr.png " ")
+  </if>
 
-6. The **Work Request Details** page displays the status, logs, and errors (if any) of adding the Cloud SQL node to the cluster.
+  <if type="livelabs">
+  ![](./images/ll-cloud-sql-wr.png " ")
+  </if>
 
+7. The **Work Request Details** page displays the status, logs, and errors (if any) of adding the Cloud SQL node to the cluster.
+
+  <if type="freetier">
   ![](./images/add-cloud-sql-details.png " ")
+  </if>
 
-8. Click the **Cluster Details** link in the breadcrumbs at the top of the page to re-display the **Cluster Details** page. Once the Cloud SQL node is successfully added to the cluster, the cluster's state changes to **Active** and the number of nodes in the cluster is now **`6`**.
+  <if type="livelabs">
+  ![](./images/ll-add-cloud-sql-details.png " ")
+  </if>
+
+8. Click the **Clusters** link in the breadcrumbs at the top of the page to re-display the **Clusters** page. Once the Cloud SQL node is successfully added to the cluster, the cluster's state changes to **Active** and the number of nodes in the cluster is now **`6`**.
 
     ![](./images/cs-active.png " ")    
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+This concludes this lab. You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 
@@ -101,9 +137,4 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, January 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date:** Lauran Serhal, May 2021

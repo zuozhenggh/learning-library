@@ -19,7 +19,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
 1. Go back to the Cloud Console you used during the provisioning exercise and open the database instance's Details page. From the **action menu**, click **Scale Up/Down**.
 
-    ![Click Scale Up/Down on your database console.](./images/Picture300-2.jpg " ")
+    ![Click Scale Up/Down on your database console.](./images/Picture300-2.png " ")
 
 2.  Fill in the form with the following information:
 
@@ -31,7 +31,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
 3.  Click **Update** after filling in the form. This will take you to the database instance's Details page.
 
-    ![Click Update.](./images/Picture300-3.jpg " ")
+    ![Click Update.](./images/Picture300-3.png " ")
 
     *Note: Applications can continue running during the scale operation without downtime.*
 
@@ -58,9 +58,5 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - LiveLabs QA Team (Jeffrey Malcolm Jr, Ayden Smith, Arabella Yao)
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Last Updated By/Date** - Kamryn Vinson, May 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

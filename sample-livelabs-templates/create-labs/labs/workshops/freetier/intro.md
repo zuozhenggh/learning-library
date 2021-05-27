@@ -2,6 +2,8 @@
 
 The labs in this workshop walk you through all the steps to **develop workshops** for LiveLabs.
 
+*If you are looking for information on creating images for compute instances and storing them in Marketplace, please click this link: [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/).*
+
 ## What are Labs and Workshops?
 A lab is a new model adopted by the DB organization to enhance the tutorial experience. Labs are what the User Assistance community commonly knew as Oracle by example (OBE). Labs can be combined to form a workshop, formerly known as Hands-on Lab or HOL, or a Learning Path.
 
@@ -72,8 +74,3 @@ The following flow chart shows the process that your need to follow to set up th
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 * **Last Updated By/Date:** Anuradha Chepuri, November 2020
-
-## Need Help?  
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

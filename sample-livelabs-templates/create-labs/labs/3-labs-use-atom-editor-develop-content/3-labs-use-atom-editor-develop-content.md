@@ -18,7 +18,7 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 * An IDE, such as Atom.
 * A local web server such as **atom-live-server**, a plugin for `Atom.io`.
 
-## **Step 1:** Install Atom
+## **STEP 1:** Install Atom
 `Atom.io` is a 3rd party IDE freely available under MIT License.
 
 To install Atom:
@@ -27,7 +27,7 @@ To install Atom:
   ![](./images/use-atom-editor-download.png " ")
 3. From the extracted files, click `atom.exe` to launch Atom.
 
-## **Step 2:** Install the atom-live-server Plugin
+## **STEP 2:** Install the atom-live-server Plugin
 You must NOT be connected to Oracle's network or VPN while installing the **atom-live-server** package.
 
 To install **atom-live-server**:
@@ -45,7 +45,7 @@ To install **atom-live-server**:
 The **atom-live-server** plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
-## **Step 3:** Merge Content from Git Before you Start Editing your Content
+## **STEP 3:** Merge Content from Git Before you Start Editing your Content
   Everyday before you start editing your content, ensure to do a Merge in **GitHub Desktop**.
   Merging synchronizes the content in your cloned repository with the latest content on the **upstream/master** repository and ensures that you have the most recent versions of the templates and other workshops/labs.
 
@@ -72,10 +72,12 @@ The **atom-live-server** plugin is added to the **Packages** menu.
 
   ![](./images/git-hub-merge-fetch-origin.png " ")
 
-## **Step 4:** Create your Labs and Workshop Content
+## **STEP 4:** Create your Labs and Workshop Content
 Leverage the content from the **learning-library\sample-livelabs-templates\sample-workshop** folder to start creating lab and workshop content for your project.
 
-**Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **Step 2**) on a regular basis whenever we are working on the markdown files.
+*For screen shots of OCI menu navigation, use the images with absolute links in **Lab 1: Provision an Instance** markdown from the sample-workshop. A preview of the images can be found **[here](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/index.html?lab=provision)** under STEP 0.*
+
+**Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **STEP 2**) on a regular basis whenever we are working on the markdown files.
 
 To create your lab and workshop content:
 1. Submit your workshop to the [LiveLabs Workshop Management System](http://bit.ly/oraclelivelabs) BEFORE you begin development.  No github requests will be approved without an approved LWMS ID.
@@ -106,10 +108,16 @@ To create your lab and workshop content:
 11. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your **workshops\freetier** folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
     ![](./images/use-atom-editor-readme-update.png " ")
 
-In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
+    In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
     ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
 
-## **Step 5:** Preview Your Workshop and Labs Using atom-live-server
+12. For additional information on creating your labs and developing workshop content:
+
+* Click [here](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax) for a quick tour that demonstrates commonly used Markdown syntax and their HTML equivalents.
+
+* Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features.
+
+## **STEP 5:** Preview Your Workshop and Labs Using atom-live-server
 
   To preview your output in a browser:
 1. Start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
@@ -125,11 +133,17 @@ In this example, your project folder **labs** contains 5 labs and a workshop. Yo
 
 3. To stop the **atom-live-server**, go back to **Atom**, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
-[LiveLabs Markdown Template Features](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+Features)
+
+[LiveLabs Markdown Template Features](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New)
+
+[LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
+
+[LiveLabs OCI Menu Navigation Common Path Picture](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
+
 ## Acknowledgements
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
@@ -140,9 +154,6 @@ In this example, your project folder **labs** contains 5 labs and a workshop. Yo
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Anuradha Chepuri, November 2020
+* **Last Updated By/Date:** Yunyidi Han, March 2021
 
-## Need Help?  
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -28,6 +28,7 @@ Each of the labs is 5 -10 minutes in length, so you will be up and running in no
 ### Prerequisites
 Free Trial or an existing Oracle Cloud account (Not all services in this workshop are Always Free services)
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ### **Let's Get Started!**
 
@@ -48,7 +49,3 @@ Free Trial or an existing Oracle Cloud account (Not all services in this worksho
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

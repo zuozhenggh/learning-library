@@ -40,9 +40,9 @@ Create the cluster as follows:
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** page. Under **Data and AI**, select **Big Data**.
-
-   ![](./images/big-data.png " ")
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
 
 3. On the **Clusters** page, click **Create Cluster**.
 
@@ -304,7 +304,3 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
 * **Last Updated By/Date:** Lauran Serhal, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

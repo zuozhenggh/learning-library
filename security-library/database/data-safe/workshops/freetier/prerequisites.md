@@ -1,5 +1,5 @@
 
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
@@ -95,7 +95,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 1. Open a new browser tab.
 
-2. Enter the URL [cloud.oracle.com](https://cloud.oracle.com).
+2. Access Oracle's website at [www.oracle.com](https://www.oracle.com).
 
 3. On the toolbar, click **View Accounts**, and then in the **Cloud Account** section, select **Sign in to Cloud**.
 
@@ -104,16 +104,16 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 4. Enter your **Cloud Account Name**, and then click **Next**. This is the name you chose while creating your account. It is not your email address. If you forget the name, please refer to the confirmation email.
 
-  ![Cloud Account Name page](images/349900292.png)
+  ![Section to enter your cloud account name](images/enter-cloud-account-name.png)
 
 
-5. In the **Oracle Cloud Infrastructure** section, enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+5. On the sign in page, click **Oracle Cloud Infrastructure Direct Sign-in** to expand it. Enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
-  ![SIGN IN page for Oracle Cloud Infrastructure](images/349900293.png)
+  ![SIGN IN page for Oracle Cloud Infrastructure](images/direct-signin.png)
 
-6. You are now signed in to the Oracle Cloud Infrastructure Console as a tenancy administrator. The landing page shows you a dashboard. In the upper-left corner, notice that there is a navigation menu (hamburger menu).
+6. You are now signed in to the Oracle Cloud Infrastructure Console as a tenancy administrator. The Get Started tab is displayed by default with options for quick actions. In the upper-left corner, there is a navigation menu (hamburger menu). On the right, you can view information about your account.
 
-  ![Oracle Cloud Infrastructure Console](images/349900294.png)
+  ![Get Started tab in the Oracle Cloud Infrastructure Console](images/get-started-tab-oci.png)
 
 
 
@@ -124,9 +124,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
    ![Select Home region](images/select-region.png)
 
-2. From the navigation menu, select **Data Safe**.
-
-   ![Select Data Safe from the Navigation menu](images/navigation-menu-select-data-safe.png)
+2. From the navigation menu, select **Oracle Database**, and then **Data Safe**.
 
   The **Overview** page is displayed.
 
@@ -144,7 +142,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 You need to create a compartment in your tenancy to store an Autonomous Database and Oracle Data Safe resources, both of which you create during the workshop. In the labs, this compartment is referred to as "your compartment."
 
-1. From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
+1. From the navigation menu, select **Identity & Security**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
 
 2. Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
 
@@ -157,14 +155,14 @@ You need to create a compartment in your tenancy to store an Autonomous Database
 5. Click **Create Compartment**.
 
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 
 
 
 ## Learn More
 
-- [Oracle Cloud Infrastructure documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/home.htm)
+- [Oracle Cloud Infrastructure documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)
 - [Try Oracle Cloud](https://www.oracle.com/cloud/free/)
 
 
@@ -173,10 +171,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, December 14, 2020
-
-
-## Need Help?
-Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date** - Jody Glover, May 4 2021
