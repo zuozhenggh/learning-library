@@ -318,11 +318,9 @@ If you would like to purge all changes made in this lab, run the following comma
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Spatial product portal] (https://oracle.com/goto/spatial)
+* [Spatial documention](https://docs.oracle.com/en/database/oracle/oracle-database/21/spatl/index.html)
+* [Spatial blogs](https://blogs.oracle.com/oraclespatial/)
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
