@@ -71,6 +71,7 @@ To create your LiveLabs reservation, you used a ssh key that you created on your
     </copy>
     ````
     ````
+    chmod 600 <<keyname>>
     mv <<keyname>> .ssh
     ls .ssh
     cd ~

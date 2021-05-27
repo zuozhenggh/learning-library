@@ -122,5 +122,3 @@ You may now [proceed to the next lab](#next).
 This is an example of a segment of the Markdown file injected before rendering:
 
 [](include:acknowledgements.md)
-
-

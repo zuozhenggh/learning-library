@@ -6,7 +6,7 @@ Our anomaly detection services also support to use CLI tool `oci` or REST API ca
 
 In this lab session, we will show several code snippets to integrate with our service endpoints.
 
-You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration. 
+You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration.
 
 *Estimated Lab Time*: 45 minutes
 
@@ -48,7 +48,10 @@ auth = oci.signer.Signer(
   pass_phrase=config['pass_phrase'])
 
 # Initialize some constants
-CLOUD_ENV_URL = "https://aiservicepreprod.us-ashburn-1.oci.oraclecloud.com"
+CLOUD_ENV_URL = "https://aiservice.us-ashburn-1.oci.oraclecloud.com" # Change this accordingly based on your region
+# https://aiservice.us-ashburn-1.oci.oraclecloud.com
+# https://aiservice.eu-frankfurt-1.oci.oraclecloud.com
+# https://aiservice.ap-mumbai-1.oci.oraclecloud.com
 COMPARTMENT_ID = "YOUR_COMPARYMENY_ID"
 
 ```
@@ -58,9 +61,11 @@ COMPARTMENT_ID = "YOUR_COMPARYMENY_ID"
 ```Python
 PROJECT_URL = f"{CLOUD_ENV_URL}/20210101/projects"
 
-payload = { "displayName": "Sample Project",
+project_name = "Sample Project"
+project_desc = "SAMPLE PROJECT FOR ANOMALY DETECTION"
+payload = { "displayName": project_name,
                  "compartmentId": COMPARTMENT_ID,
-                 "description" : "SAMPLE PROJECT FOR ANOMALY DETECTION" }
+                 "description" :  project_desc}
 headers = { 'Content-Type': 'application/json', 'User-Agent': 'any-user' }
 
 session = requests.Session()
@@ -98,11 +103,13 @@ BUCKET_NAME = "Your bucket name of the object"
 NAME_SPACE = "Your namespace of the object"
 OBJECT_FILE_NAME = "Your object file name in Oracle OCI Object Storage"
 
+asset_name = "Sample dataAsset"
+asset_desc = "Oracle object storage data asset"
 dataasset_payload = {
-  "displayName": "Sample dataAsset",
+  "displayName": asset_name,
   "compartmentId": COMPARTMENT_ID,
   "projectId": project_id,
-  "description": "oracle object storage data asset",
+  "description": asset_desc,
   "dataSourceDetails": {
     "dataSourceType": "ORACLE_OBJECT_STORAGE",
     "bucketName": BUCKET_NAME,
@@ -145,10 +152,12 @@ TRAIN_URL = f"{CLOUD_ENV_URL}/20210101/models"
 param_fap = 0.01 # Model parameter: False Acceptance Percentage, have to be in range [0.01, 0.05]
 param_trainingFac = 0.7 # Model parameter: Training Fraction, a percentage to split data into training and test, value range [0.7, 0.9]
 
+model_name = "Test model"
+model_desc = "Creating a model test"
 train_payload = {
   "compartmentId": COMPARTMENT_ID,
-  "displayName": "Test model",
-  "description": "Creating a model test",
+  "displayName": model_name,
+  "description": model_desc,
   "projectId": project_id,
   "modelCreationDetails": {
     "modelType": "ANOMALY_MULTIVARIATE",
@@ -188,10 +197,13 @@ while True:
 ### **STEP 5:** Deploying the Model
 ```Python
 DEPLOY_URL = f"{CLOUD_ENV_URL}/20210101/modelDeployments"
+
+deploy_name = "Anomaly Multivariate Model Shared Deployment"
+deploy_desc = "E2E Testing MSET Model Shared Deployment"
 deploy_payload = {
   "compartmentId": COMPARTMENT_ID,
-  "displayName": "Anomaly Multivariate Model Shared Deployment",
-  "description": "E2E Testing MSET Model Shared Deployment",
+  "displayName": deploy_name,
+  "description": deploy_desc,
   "modelId": model_id,
   "config": { "sku": "SHARED", "coreCount": "1" }
 }

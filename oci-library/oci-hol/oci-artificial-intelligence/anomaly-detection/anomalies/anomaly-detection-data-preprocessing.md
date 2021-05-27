@@ -20,7 +20,7 @@ In this lab, you will:
 - Be familiar with Python programming
 - Have a Python or Anaconda environment to perform data analysis and preprocessing
     - User can either set it up on their local machine, or signup our Oracle [Data Science Platform](https://www.oracle.com/data-science/)
-- Install the following Python libraries, `pandas`, `numpy`, `matplotlib` or using the default Conda package on Data Science Platform
+- Install the following Python libraries, `pandas`, `numpy`, `matplotlib` or using the default `conda` package on Data Science Platform
 - Download the related data files and this [Python notebook](../files/anomaly-detection-data-preparation-notebook.ipynb)
 
 ## **STEP 1:** Preparing Data
@@ -522,6 +522,7 @@ The JSON format is also straight-forward, it contains a key `columnLabels` listi
 
 ```Json
 {
+    "requestType": "INLINE",
     "columnLabels": [ "sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10" ],
     "data": [
         {
@@ -547,7 +548,10 @@ def convert_df_to_json(df, outfile_name):
         df.index = df[column_0]
         df.drop([column_0], inplace=True, axis=1)
     out_json['columnLabels'] = list(df.columns)
-    out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%S.000Z'), 'value': list(row.values)} for index, row in df.iterrows()]
+    if df.index.dtype == 'O': # If the new index is string object
+        out_json['data'] = [{'timestamp': index, 'value': list(row.values)} for index, row in df.iterrows()]
+    else:
+        out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%SZ'), 'value': list(row.values)} for index, row in df.iterrows()]
 
     with open(outfile_name, 'w') as file:
         file.write(json.dumps(out_json, indent=2))
@@ -559,9 +563,9 @@ def convert_df_to_json(df, outfile_name):
 After those above steps, you should now be able to transform the raw data provided earlier to be like the following:
 
 * [processed training csv data](../files/demo-training-data.csv)
-    - 11 signals with timestamp column, with 7299 observations
-* [processed testing json data](../files/demo-testing-data.json)
-    - same 11 signals with timestamp column, 100 observations
+    - 10 signals with timestamp column, with 10,000 observations
+* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
+    - same 10 signals with timestamp column, 100 observations
 
 Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.
 
