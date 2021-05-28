@@ -50,6 +50,7 @@ To execute a job:
 4. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
     ![](./images/17-completed-jobs-compare-pair-status-chart.png " ")
 
+You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-repair-data)
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)

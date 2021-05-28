@@ -78,6 +78,8 @@ To create connections:
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
+You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-create-groups-compare-pairs)
+
 ## Learn More
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
