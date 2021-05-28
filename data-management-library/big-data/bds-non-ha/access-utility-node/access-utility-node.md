@@ -49,7 +49,7 @@ This lab assumes that you have successfully completed the following labs in the 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation** menu in the upper left, navigate to **Analytics & AI**, and then select **Big Data Service**.
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
 
   ![](./images/big-data.png " ")
 
@@ -169,7 +169,7 @@ In this step, you will set three variables using the **`export`** command. The v
 </if>
 
 
-8.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** list. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
+8.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
 
   <if type="freetier">
   ![](./images/reserved-public-ip.png " ")
@@ -242,7 +242,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
 
 In this step, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP addresses that you created in this lab are displayed in the **Reserved Public IP Addresses** page.
+1. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP addresses that you created in this lab are displayed in the **Reserved Public IP Addresses** page.
 
   <if type="freetier">
   ![](./images/list-public-ip-addresses.png " ")
