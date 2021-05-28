@@ -60,9 +60,9 @@ Before starting, be sure that you have completed the following prerequisite task
 
      ![Register option for your database](images/register-database.png "Register option for your database")
 
-2. In the **Register Database with Data Safe** dialog box, click **Confirm**.
+6. In the **Register Database with Data Safe** dialog box, click **Confirm**.
 
-3. Wait for the registration process to finish and for the status to read **Registered**.
+7. Wait for the registration process to finish and for the status to read **Registered**.
 
     ![Status reads registered](images/status-registered.png "Status reads registered" )
 
@@ -72,7 +72,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 1. On the **Autonomous Database Details** page, click the **Tools** subtab.
 
-2. In the **Database Actions** section, click **Open Database Actions**. A new browser tab is opened displaying the **Oracle Database Actions \| Sign in** page.
+2. In the **Database Actions** section, click **Open Database Actions**. A new browser tab is opened displaying the sign in page for Oracle Database Actions.
 
 3. In the **Username** field, enter `ADMIN`, and then click **Next**.
 
@@ -97,11 +97,8 @@ Before starting, be sure that you have completed the following prerequisite task
     ![Run Script button](images/run-script.png "Run Script button")
 
     - The script takes approximately 1 minute to run.
-
     - In the bottom-left corner, a cog wheel turns as the script is processed. The script output is displayed after the script is finished running.
-
     - Don't worry if you see some error messages on the **Script Output** tab. These are expected the first time you run the script.
-
     - The script ends with the message **END OF SCRIPT**.
 
 11. When the script is finished running, on the **Navigator** tab on the left, select the `HCM1` schema from the first drop-down list. In the second drop-down list, leave **Tables** selected.
@@ -150,17 +147,17 @@ Before starting, be sure that you have completed the following prerequisite task
 
 3. To access the Oracle Data Safe Console from here, under **Data Safe**, click **View**.
 
-  ![View link on the Autonomous Database Details tab](images/access-data-safe-console-from-db-tab.png "View link on the Autonomous Database Details tab")
+    ![View link on the Autonomous Database Details tab](images/access-data-safe-console-from-db-tab.png "View link on the Autonomous Database Details tab")
 
-    A new **Oracle Data Safe \| Home** tab is opened and you are presented with a dashboard. At the top of the page, new features with links to documentation and product announcements are displayed.
+    A new tab for Oracle Data Safe is opened and you are presented with a dashboard. At the top of the page, new features with links to documentation and product announcements are displayed.
 
     ![Initial dashboard](images/dashboard-initial.png "Initial dashboard")
 
 4. Review the dashboard.
 
-      - The dashboard lets you monitor several activities at once.
-      - Above the dashboard, there is a removable filter set on your database name so that the dashboard displays data for your database only.
-      - When you first sign in to the Oracle Data Safe Console, the Security Assessment and User Assessment charts in your dashboard are automatically populated.
+    - The dashboard lets you monitor several activities at once.
+    - Above the dashboard, there is a removable filter set on your database name so that the dashboard displays data for your database only.
+    - When you first sign in to the Oracle Data Safe Console, the Security Assessment and User Assessment charts in your dashboard are automatically populated.
 
 5. Click each top tab and review the content on the page.
 
@@ -186,9 +183,10 @@ Before starting, be sure that you have completed the following prerequisite task
 8. Click the name of your target database to view its details.
 
 9. In the **Target Details** dialog box, review the connection information for your database. The information is read only.
-      - You cannot edit the registration details for an Autonomous Database.
-      - You can view the compartment to which the database belongs. The compartment for an Autonomous Database is the same compartment in Oracle Cloud Infrastructure in which the database resides.
-      - Oracle Data Safe connects to your Autonomous Database via a TLS connection.
+
+    - You cannot edit the registration details for an Autonomous Database.
+    - You can view the compartment to which the database belongs. The compartment for an Autonomous Database is the same compartment in Oracle Cloud Infrastructure in which the database resides.
+    - Oracle Data Safe connects to your Autonomous Database via a TLS connection.
 
 10. Click **Cancel** to close the **Target Details** dialog box.
 
@@ -205,9 +203,9 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
 
 3. From the navigation menu, select **Oracle Database**, and then **Data Safe**.
 
-      - The **Overview** page for the Oracle Data Safe service is displayed. From here you can access the Oracle Data Safe Console and find links to useful information.
-      - There is a message in the upper-right corner stating that **Data Safe is enabled**.
-      - If there is an error on the page, you need to sign in again to Oracle Cloud Infrastructure.
+    - The **Overview** page for the Oracle Data Safe service is displayed. From here you can access the Oracle Data Safe Console and find links to useful information.
+    - There is a message in the upper-right corner stating that **Data Safe is enabled**.
+    - If there is an error on the page, you need to sign in again to Oracle Cloud Infrastructure.
 
 4. On the left, click **Registered Databases**. Your registered database is listed.
 
@@ -225,4 +223,4 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, May 27 2021
+  * **Last Updated By/Date** - Jody Glover, May 28 2021

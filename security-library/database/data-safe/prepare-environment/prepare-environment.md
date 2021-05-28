@@ -47,11 +47,11 @@ Enable Oracle Data Safe in a region of your tenancy. Usually you enable Oracle D
 
 2. From the navigation menu, select **Oracle Database**, and then **Data Safe**.
 
-  The **Overview** page is displayed.
+    The **Overview** page is displayed.
 
 3. Click **Enable Data Safe** and wait a couple of minutes for the service to enable. When it's enabled, a confirmation message is displayed in the upper-right corner.
 
-   ![Enable Data Safe button](images/enable-data-safe-button.png "Enable Data Safe button")
+    ![Enable Data Safe button](images/enable-data-safe-button.png "Enable Data Safe button")
 
 
 
@@ -59,9 +59,7 @@ Enable Oracle Data Safe in a region of your tenancy. Usually you enable Oracle D
 
 As a tenancy administrator, create a compartment in your tenancy to store an Autonomous Database and Oracle Data Safe resources. This compartment from here on in is referred to as "your compartment."
 
-
 > **Note**: If you have an existing compartment in your tenancy that you can use, or you are using an Oracle-provided environment, you can skip this step.
-
 
 1. From the navigation menu, select **Identity & Security**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
 
@@ -123,6 +121,7 @@ A tenancy administrator needs to create an IAM policy that allows the user group
     Allow group {group name} to manage all-resources in compartment {compartment name}
     Allow group {group name} to use autonomous-database in compartment {compartment name}
     ```
+
     The first statement allows the user group to create and manage an Autonomous Database in the specified compartment. The second statement is required so that the user group can successfully register and access the database in Oracle Data Safe. Without it, the user group can register the database with Oracle Data Safe, but not view it in the Oracle Data Safe Console. If an existing Autonomous Database is available for the user, you can swap out the first policy statement with the following statement:
 
     ```
@@ -170,29 +169,17 @@ Provision an Autonomous Transaction Processing (ATP) database to use with Oracle
 5. On the **Create Autonomous Database** page, provide basic information for your database:
 
     - **Compartment** - If needed, select your compartment.
-
     - **Display name** - Enter a memorable name for the database for display purposes, for example, **ad01** (short for Autonomous Database 1).
-
     - **Database Name** - Enter **ad01**. It's important to use letters and numbers only, starting with a letter. The maximum length is 14 characters. Underscores are not supported.
-
     - **Workload Type** - Leave **Transaction Processing** selected.
-
     - **Deployment Type** - Leave **Shared Infrastructure** selected.
-
     - **Always Free** - Leave this option deselected (the slider should be to the left).
-
     - **Database version** - Leave **19c** selected.
-
     - **OCPU Count** - Select **1**.
-
     - **Storage** - Leave **1** selected.
-
     - **Auto scaling** - Leave this checkbox selected.
-
     - **Password** and **Confirm Password** - Specify a password for the `ADMIN` database user and jot it down. The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It cannot contain your username or the double quote (") character.
-
     - **Network Access** - Leave **Secure access from everywhere** selected.
-
     - **License Type** - Select **License Included**.
 
 6. Click **Create Autonomous Database**. The **Autonomous Database Details** page is displayed.
@@ -230,4 +217,4 @@ Verify that you can access your ATP database in your compartment and that its st
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, May 27 2021
+* **Last Updated By/Date** - Jody Glover, May 28 2021

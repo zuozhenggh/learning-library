@@ -49,7 +49,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 4. View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts. At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
 
-  ![Alert totals](images/totals-alerts-page.png "Alert totals")
+    ![Alert totals](images/totals-alerts-page.png "Alert totals")
 
 
 5. Scroll down to review the alerts in the table.
@@ -58,7 +58,7 @@ Before starting, be sure that you have completed the following prerequisite task
     - The **Operation** column identifies the action.
     - The **Alert Severity** column indicates the seriousness of the action.
 
-  ![Alerts in the table](images/alert-table.png "Alerts in the table")
+    ![Alerts in the table](images/alert-table.png "Alerts in the table")
 
 
 6. At the bottom of the page, click the page numbers to view other pages of alerts.
@@ -68,21 +68,21 @@ Before starting, be sure that you have completed the following prerequisite task
     - If the filters are not displayed, click **Filters** below the totals at the top of the page.
     - Leave the default filters on **Alert Status** and **Operation Time** set as is.
 
-  ![Alert filters](images/high-alert-severity.png "Alert filters")
+    ![Alert filters](images/high-alert-severity.png "Alert filters")
 
   The table shows you the open high alerts.
 
 8. To sort the **Operation** column, position the cursor over the **Operation** column heading, and then click the arrow button.
 
- ![Sort the DB User column icon](images/sort-operation-column.png "Sort the DB User column icon")
+    ![Sort the DB User column icon](images/sort-operation-column.png "Sort the DB User column icon")
 
 9. To view more detail for an alert, click the alert ID.
 
-  ![An alert ID highlighted in the Alerts table](images/click-alert-id.png "An alert ID highlighted in the Alerts table")
+    ![An alert ID highlighted in the Alerts table](images/click-alert-id.png "An alert ID highlighted in the Alerts table")
 
 10. Review the information in the **Alert Details** dialog box, and then click **X** to close it. You can view the **DB User**, **Operation Status**, **SQL Text**, and much more.
 
-  ![Alert Details dialog box](images/alert-details-dialog-box.png "Alert Details dialog box")
+    ![Alert Details dialog box](images/alert-details-dialog-box.png "Alert Details dialog box")
 
 11. To remove the filters, click the **X** next to each filter, and then click **Apply**.
 
@@ -94,21 +94,23 @@ Before starting, be sure that you have completed the following prerequisite task
 
 13. Review the alerts.
 
-  ![User Entitlement Changes alerts](images/user-entitlement-changes.png "User Entitlement Changes alerts")
+    ![User Entitlement Changes alerts](images/user-entitlement-changes.png "User Entitlement Changes alerts")
 
 14. Suppose you are fine with these entitlement changes. Now you can close the alerts.
 
     1. Select the check box in the top left corner of the table to select all of the alerts displayed.
+
     2. From the **Mark As** menu, select **Closed**. The alerts selected on this page are closed and the next page is displayed.
 
-  ![Mark As Closed](images/closed-alerts.png "Mark As Closed")
+    ![Mark As Closed](images/closed-alerts.png "Mark As Closed")
 
     3. Because there is another page of alerts that meet the filter criteria, repeat the previous step to mark all alerts with entitlement changes as closed.
+
     4. Remove the filter **Alert = User Entitlement Changes**. Both open and closed alerts are displayed.
 
 15. To hide closed alerts on the pages, move the **Open Alerts only** slider to the right.
 
-  ![Open Alerts only slider](images/show-open-alerts-only.png "Open Alerts only slider")  
+    ![Open Alerts only slider](images/show-open-alerts-only.png "Open Alerts only slider")  
 
 
 
@@ -118,17 +120,17 @@ Before starting, be sure that you have completed the following prerequisite task
 
 2. In the **Open Alerts** chart, notice that the chart shows the number of open alerts for the last 7 days. Click the last node in the chart.
 
-  ![Open Alerts chart](images/last-node-open-alerts-chart.png "Open Alerts chart")  
+    ![Open Alerts chart](images/last-node-open-alerts-chart.png "Open Alerts chart")  
 
 3. In the **Open Alerts** dialog box, view the number of open alerts for the last 7 days.
 
-  ![Open Alerts dialog box](images/open-alerts-last-seven-days.png "Open Alerts dialog box")  
+    ![Open Alerts dialog box](images/open-alerts-last-seven-days.png "Open Alerts dialog box")  
 
 4. Hover over the counts to view the number of **Critical**, **High**, and **Medium** alerts for each day.
 
 5. Click the name of your target database to open the **All Alerts** report. The **All Alerts** report is filtered to show only the open alerts for your target database for the past 7 days.
 
-  ![All Alerts report filtered](images/all-alerts-report-last-seven-days.png "All Alerts report filtered")  
+    ![All Alerts report filtered](images/all-alerts-report-last-seven-days.png "All Alerts report filtered")  
 
 
 ## **STEP 3**: View all audit records for the past week
@@ -139,11 +141,11 @@ Before starting, be sure that you have completed the following prerequisite task
 
 3. At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
 
-  ![Totals in All Activity report](images/all-activity-report-totals.png "Totals in All Activity report")  
+    ![Totals in All Activity report](images/all-activity-report-totals.png "Totals in All Activity report")  
 
 4. Review the data in the table. The report is automatically filtered to show one week's worth of audit data for your target database. If the filter is not displayed, click **Filters**.
 
-   ![Filters automatically set in All Activity Report](images/filters-table-all-activity-report.png "Filters automatically set in All Activity Report")  
+    ![Filters automatically set in All Activity Report](images/filters-table-all-activity-report.png "Filters automatically set in All Activity Report")  
 
 
 ## **STEP 4**: View a summary of audit events collected and alerts raised
@@ -154,7 +156,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 2. View the totals to learn how many target databases are represented in the charts, how many users are audited, and how many client hosts have connected to your target database. The report is filtered to show data for the last week.
 
-  ![Totals in Audit Summary report](images/audit-summary-filters-totals.png "Totals in Audit Summary report")  
+    ![Totals in Audit Summary report](images/audit-summary-filters-totals.png "Totals in Audit Summary report")  
 
 
 3. Review the charts.
@@ -164,17 +166,19 @@ Before starting, be sure that you have completed the following prerequisite task
     - The **Login Activity** chart compares the number of failed and successful logins for the past week.
     - The **All Activity** chart compares the total number of events for the past week.
 
-  ![Audit Summary report charts](images/audit-summary-report-charts.png "Audit Summary report charts")  
+    ![Audit Summary report charts](images/audit-summary-report-charts.png "Audit Summary report charts")  
 
 4. To filter the time period for the report, at the top, select **Last 1 Month**, and then click **Apply**.
 
 5. To filter the target database for the report, do the following:
 
     1. In the **Filters** section, click **All Targets**.
+
     2. In the **Select Targets** dialog box, deselect the check box for **All Targets**, click the field, select your target database, and then click **Done**.
+
     3. Click **Apply**. Your target database is now set as a filter.
 
-  ![Database set as a filter](images/last-one-month-filter.png "Database set as a filter")  
+    ![Database set as a filter](images/last-one-month-filter.png "Database set as a filter")  
 
 
 ## **STEP 5**: Create a logins report
@@ -205,7 +209,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 12. Review the report, and then close it.
 
-  ![Login report](images/login-report-pdf.png "Login report")
+    ![Login report](images/login-report-pdf.png "Login report")
 
 
 ## Learn More
@@ -216,4 +220,4 @@ Before starting, be sure that you have completed the following prerequisite task
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, May 27 2021
+* **Last Updated By/Date** - Jody Glover, May 28 2021

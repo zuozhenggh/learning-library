@@ -59,7 +59,7 @@ Use Oracle Database Actions to query sensitive data in your database. You can ac
 
 7. On the **Autonomous Database Details** page, click the **Tools** subtab.
 
-8. In the **Database Actions** section, click **Open Database Actions**. A new browser tab is opened displaying the **Oracle Database Actions \| Sign in** page.
+8. In the **Database Actions** section, click **Open Database Actions**. A new browser tab is opened displaying the sign in page for Oracle Database Actions.
 
 9. In the **Username** field, enter `ADMIN`, and then click **Next**.
 
@@ -71,30 +71,30 @@ Use Oracle Database Actions to query sensitive data in your database. You can ac
 
 13. On the **Navigator** tab, select the `HCM1` schema from the first drop-down list. In the second drop-down list, leave **Tables** selected.
 
-  ![Navigator tab in Oracle Database Actions](images/select-hcm1.png "Navigator tab in Oracle Database Actions")
+    ![Navigator tab in Oracle Database Actions](images/select-hcm1.png "Navigator tab in Oracle Database Actions")
 
 14. Drag the `EMPLOYEES` table to the worksheet.
 
-  ![EMPLOYEES table](images/drag-employees-table-to-worksheet.png "EMPLOYEES table")
+    ![EMPLOYEES table](images/drag-employees-table-to-worksheet.png "EMPLOYEES table")
 
 15. When prompted to choose an insertion type, click **Select**, and then click **Apply**.
 
- ![Choose the type of insertion dialog box](images/insertion-type-select.png "Choose the type of insertion dialog box")
+   ![Choose the type of insertion dialog box](images/insertion-type-select.png "Choose the type of insertion dialog box")
 
 16. View the SQL query on the worksheet.
 
-  ![Worksheet tab showing EMPLOYEES table](images/query-employees-table.png "Worksheet tab showing EMPLOYEES table")
+    ![Worksheet tab showing EMPLOYEES table](images/query-employees-table.png "Worksheet tab showing EMPLOYEES table")
 
 17. On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
-  ![Run Statement button on toolbar](images/run-statement-button.png "Run Statement button on toolbar")
+    ![Run Statement button on toolbar](images/run-statement-button.png "Run Statement button on toolbar")
 
 18. Review the query results. If needed, click the **Query Result** tab.
 
     - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, and `hire_date`, are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
     - Keep this tab open so that you can return to it later.
 
-  ![Query results](images/original-query-results.png "Query results")
+    ![Query results](images/original-query-results.png "Query results")
 
 
 
@@ -113,27 +113,27 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
 5. On the **Select Target for Sensitive Data Discovery** page, select your target database, and then click **Continue**.
 
-  ![Select Target for Sensitive Data Discovery page](images/select-target-for-sensitive-data-discovery.png "Select Target for Sensitive Data Discovery page")
+    ![Select Target for Sensitive Data Discovery page](images/select-target-for-sensitive-data-discovery.png "Select Target for Sensitive Data Discovery page")
 
 6. On the **Select Sensitive Data Model** page, leave **Create** selected, enter **SDM1** for the name, enable **Show and save sample data**, select your compartment, and then click **Continue**.
 
 7. On the **Select Schemas for Sensitive Data Discovery** page, scroll down and select the **HCM1** schema, and then click **Continue**.
 
-  ![Select Schemas for Sensitive Data Discovery page](images/select-schemas-for-sensitive-data-discovery.png "Select Schemas for Sensitive Data Discovery page")
+    ![Select Schemas for Sensitive Data Discovery page](images/select-schemas-for-sensitive-data-discovery.png "Select Schemas for Sensitive Data Discovery page")
 
 8. On the **Select Sensitive Types for Sensitive Data Discovery** page, expand all of the categories by moving the slider to the right, and then scroll down the page and review the sensitive types. Notice that you can select individual sensitive types, sensitive categories, and all sensitive types.
 
-  ![Select Sensitive Types for Sensitive Data Discovery page](images/select-sensitive-types-expand-all.png "Select Sensitive Types for Sensitive Data Discovery page")
+    ![Select Sensitive Types for Sensitive Data Discovery page](images/select-sensitive-types-expand-all.png "Select Sensitive Types for Sensitive Data Discovery page")
 
 
 9. At the top of the page, select the **Select All** check box, and then click **Continue** to start the data discovery job.
 
-  ![Select All check box selected](images/select-sensitive-types-select-all.png "Select All check box selected")
+    ![Select All check box selected](images/select-sensitive-types-select-all.png "Select All check box selected")
 
 
 10. When the job is completed, ensure that the **Detail** column states **Data discovery job finished successfully**, and then click **Continue**.
 
-  ![Detail column](images/sensitive-data-discovery-complete.png "Detail column")
+    ![Detail column](images/sensitive-data-discovery-complete.png "Detail column")
 
 
 11. On the **Sensitive Data Discovery Result** page, examine the sensitive data model created by the Data Discovery wizard. Oracle Data Safe automatically saves your sensitive data model to the Oracle Data Safe Library.
@@ -157,7 +157,6 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
 15. To generate the **Data Discovery** report, scroll to the bottom of the page, and then click **Report**.
 
-
 16. Review the **Data Discovery** report.
 
     - The chart compares sensitive categories. You can view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns.
@@ -170,24 +169,20 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
     ![Chart's Expand button circled](images/chart-expand-button.png "Chart's Expand button circled")
 
-
 18. Position your mouse over **Identification Info** to view statistics.
 
   ![Statistics](images/identification-info.png "Statistics")
 
-
 19. With your mouse still over **Identification Info**, click the **Expand** button to drill down.
 
-  ![Expand button over Identification Info](images/identification-info-expand-button.png "Expand button over Identification Info")
+    ![Expand button over Identification Info](images/identification-info-expand-button.png "Expand button over Identification Info")
 
 
 20. Notice that the **Identification Info** category is divided into two smaller categories (**Personal IDs** and **Public IDs**). To drill-up, position your mouse over an expanded sensitive category (for example, **Identification Info**), and then click the **Collapse** button.
 
-  ![Collapse button over Identification Info](images/identification-info-collapse-button.png "Collapse button over Identification Info")
-
+    ![Collapse button over Identification Info](images/identification-info-collapse-button.png "Collapse button over Identification Info")
 
 21. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
-
 
 
 ## **STEP 3**: Mask sensitive data by using Data Masking
@@ -198,48 +193,47 @@ The Data Masking wizard generates a masking policy for your target database base
 
 2. On the **Select Target for Data Masking** page, leave your target database selected, and click **Continue**.
 
-   ![Select Target for Data Masking page](images/select-target-for-data-masking.png "Select Target for Data Masking page")
+    ![Select Target for Data Masking page](images/select-target-for-data-masking.png "Select Target for Data Masking page")
 
 3. On the **Masking Policy** page, move the **Expand All** slider to the right to view all of the sensitive columns. Scroll down the page and review the default masking format selected for each sensitive column.
 
- ![Masking Policy page](images/masking-policy-page.png "Masking Policy page")
+    ![Masking Policy page](images/masking-policy-page.png "Masking Policy page")
 
 
 4. For the `HCM1.LOCATIONS.STREET_ADDRESS` column, click the arrow to the right of the masking format to view other masking formats.
 
-  ![HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list](images/view-masking-formats.png "HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list")
+    ![HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list](images/view-masking-formats.png "HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list")
 
 
 5. Next to the arrow, click the **Edit Format** button (pencil icon).
 
- ![Edit Format button](images/edit-format-button.png "Edit Format button")
+    ![Edit Format button](images/edit-format-button.png "Edit Format button")
 
 
 6. In the **Edit Format** dialog box, review the details for the masking format, including the datatype, description, examples, and default configuration. This is where you can modify a masking format, if needed. Click **Cancel**.
 
-   ![Edit Format dialog box](images/edit-format-dialog-box.png "Edit Format dialog box")
+    ![Edit Format dialog box](images/edit-format-dialog-box.png "Edit Format dialog box")
 
 
 7. At the bottom of the page, click **Confirm Policy**.
 
 8. Wait a moment while Data Masking creates the masking policy.
 
-
 9. On the **Schedule the Masking Job** page, leave **Right Now** selected, and click **Review**.
 
-  ![Schedule the Masking Job page](images/schedule-the-masking-job-page.png "Schedule the Masking Job page")
+    ![Schedule the Masking Job page](images/schedule-the-masking-job-page.png "Schedule the Masking Job page")
 
 
 10. On the **Review and Submit** page, review the information, and then click **Submit** to start the data masking job.
 
-  ![Review and Submit page](images/review-and-submit-page.png "Review and Submit page")
+    ![Review and Submit page](images/review-and-submit-page.png "Review and Submit page")
 
 
 11. Wait for the data masking job to finish. It takes a couple of minutes. You can follow the status of the job on the **Masking Jobs** page.
 
 12. When the job is finished, click **Report**.
 
-  ![Masking Jobs page](images/masking-jobs-page.png "Masking Jobs page")
+    ![Masking Jobs page](images/masking-jobs-page.png "Masking Jobs page")
 
 13. Examine the **Data Masking** report.
 
@@ -270,24 +264,21 @@ The Data Masking wizard generates a masking policy for your target database base
   ![Data Masking report in PDF format](images/data-masking-report-pdf.png "Data Masking report in PDF format")
 
 
-
 ## **STEP 5**: Validate the masked data in your database
 
-1. Return to Oracle Database Actions. You should have a browser tab named **Oracle Database Actions \| SQL Worksheet** open.
+1. Return to Oracle Database Actions. You should have a SQL Worksheet open.
 
 2. Take a moment to review the original data.
 
-  ![Query results before masking](images/original-query-results.png "Query results before masking")
-
+    ![Query results before masking](images/original-query-results.png "Query results before masking")
 
 3. On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
 4. If you receive a message stating that your session has expired, click **OK**, sign in again, and then click the **Run Statement** button.
 
-
 5. Review the masked data. You can resize the panel to view more data, and you can scroll down and to the right.
 
-  ![Masked EMPLOYEE data](images/masked-query-results.png "Masked EMPLOYEE data")
+    ![Masked EMPLOYEE data](images/masked-query-results.png "Masked EMPLOYEE data")
 
 
 
@@ -298,4 +289,4 @@ The Data Masking wizard generates a masking policy for your target database base
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, May 27 2021
+* **Last Updated By/Date** - Jody Glover, May 28 2021

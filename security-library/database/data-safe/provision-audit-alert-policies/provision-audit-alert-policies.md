@@ -49,15 +49,15 @@ Before starting, be sure that you have completed the following prerequisite task
 
 4. On the **Select Targets for Auditing** page, select the check box for your target database, and then click **Continue**.
 
-  ![Select Targets for Auditing page](images/select-targets-for-auditing-page.png "Select Targets for Auditing page")
+    ![Select Targets for Auditing page](images/select-targets-for-auditing-page.png "Select Targets for Auditing page")
 
 5. On the **Retrieve Audit Policies** page, select the check box for your target database, and then click **Retrieve** to retrieve the currently deployed audit policies from your database.
 
-  ![Retrieve Audit Policies page](images/retrieve-audit-policies-page.png "Retrieve Audit Policies page")
+    ![Retrieve Audit Policies page](images/retrieve-audit-policies-page.png "Retrieve Audit Policies page")
 
 6. Wait until a green check mark is displayed in the **Retrieval Status** column, and then click **Continue**. The check mark means that all of the audit policies are successfully retrieved.
 
-  ![Green check mark under Retrieval Status](images/retrieval-status-green-checkmark.png "Green check mark under Retrieval Status")
+    ![Green check mark under Retrieval Status](images/retrieval-status-green-checkmark.png "Green check mark under Retrieval Status")
 
 7. On the **Review and Provision Audit and Alert Policies** page, review the types of audit policies already enabled on your target database.
 
@@ -108,7 +108,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 12. Next to **Audit Compliance Standards**, notice that the **Center for Internet Security (CIS) Configuration** policy is created and enabled by default.
 
-  ![Audit compliance standards](images/audit-compliance-standards.png "Audit compliance standards")
+    ![Audit compliance standards](images/audit-compliance-standards.png "Audit compliance standards")
 
 13. Click the **Alert Policies** tab and review the alert policies selected to be provisioned. Oracle recommends that you provision all of these alert policies. They are as follows:
 
@@ -120,13 +120,13 @@ Before starting, be sure that you have completed the following prerequisite task
     - User Entitlement Changes
     - Database Schema Changes
 
-  ![Selected alert polices](images/alert-policies.png "Selected alert polices")
+    ![Selected alert polices](images/alert-policies.png "Selected alert polices")
 
 14. Click **Provision** to start provisioning the audit and alert policies on your target database.
 
 15. On the **Review and Provision Audit and Alert Policies** page, wait for check marks to appear under all audit policy types, except for **All User Activity**, and then click **Continue**.
 
-  ![Audit policies enabled](images/audit-policies-enabled.png "Audit policies enabled")
+    ![Audit policies enabled](images/audit-policies-enabled.png "Audit policies enabled")
 
 16. On the **Start Audit Collection** page, observe the following defaults:
 
@@ -135,11 +135,11 @@ Before starting, be sure that you have completed the following prerequisite task
     - The auto purge feature is not enabled by default. If you are signed in to Oracle Data Safe during a Free Trial, the auto purge option is not displayed.
     - You need to configure an audit collection start date.
 
-  ![Start Audit Collection page](images/start-audit-collection-page.png "Start Audit Collection page")
+    ![Start Audit Collection page](images/start-audit-collection-page.png "Start Audit Collection page")
 
 17. In the **Collect Audit Data From** column, click the calendar widget, and then configure a start date of 12 months ago, and then click **Done**.
 
-  ![Collection start date](images/collection-start-date.png "Collection start date")
+    ![Collection start date](images/collection-start-date.png "Collection start date")
 
 18. Wait for the **To Be Collected**, **Collected**, and **Total** columns to populate. Don't worry if your numbers are different than those shown in the screenshot below.
 
@@ -147,26 +147,26 @@ Before starting, be sure that you have completed the following prerequisite task
     - The **Collected** column shows the number of audit records already collected for the current month for the target database (includes audit data collected from all the audit trails for the target database). This value helps you to determine whether you are going to exceed your monthly quota of one million records.
     - The **Total** column totals the **To Be Collected** and **Collected** values for a target database. This value tells you the overall number of audit records you are going to collect for a target database for the current month.
 
-  ![To Be Collected, Collected, and Total columns](images/collection-values.png "To Be Collected, Collected, and Total columns")
+    ![To Be Collected, Collected, and Total columns](images/collection-values.png "To Be Collected, Collected, and Total columns")
 
 19. Click **Start** to start collecting audit data.
 
-  ![Start button](images/click-start.png "Start button")
+    ![Start button](images/click-start.png "Start button")
 
 
 20. In the **Start Audit Collection** dialog box, click **Start** to confirm that you want to start the `UNIFIED_AUDIT_TRAIL`.
 
-  ![Start Audit Collection dialog box](images/start-audit-collection-dialog-box.png "Start Audit Collection dialog box")
+    ![Start Audit Collection dialog box](images/start-audit-collection-dialog-box.png "Start Audit Collection dialog box")
 
 21. Wait for the message at the top of the page to state that `UNIFIED_AUDIT_TRAIL` is successfully created.
 
 22. Click **Done**.
 
-  ![Done button at the bottom of page](images/click-done.png "Done button at the bottom of page")
+    ![Done button at the bottom of page](images/click-done.png "Done button at the bottom of page")
 
 23. Notice that you are directed to the **Audit Trails** page. From this page, you can manage all of the audit trails for your target databases. 
 
-   ![Audit Trails page](images/audit-trails-page.png "Audit Trails page")
+    ![Audit Trails page](images/audit-trails-page.png "Audit Trails page")
 
 24. Observe that the **Collection State** column value changes from  `RUNNING` to `COLLECTING`, and then to `IDLE`. Collection takes approximately 2 minutes.
 
@@ -176,11 +176,11 @@ Before starting, be sure that you have completed the following prerequisite task
 
 1. In the **Collection State** column on the **Audit Trails** page, click **COLLECTING** or **IDLE** (if the audit data is collected).
 
-  ![Collection State column](images/idle.png "Collection State column")
+    ![Collection State column](images/idle.png "Collection State column")
 
 2. In the **Trail Log** dialog box, review the logs, and then click **X** to close the dialog box.
 
-  ![Trail Log dialog box](images/trail-log-dialog-box.png "Trail Log dialog box")
+    ![Trail Log dialog box](images/trail-log-dialog-box.png "Trail Log dialog box")
 
 
 
@@ -194,11 +194,11 @@ Enable the custom audit policy named `APP_USER_NOT_APP_SERVER` on your Autonomou
 
 3. In the **Edit Policies** dialog box, expand **Custom Policies**, select the `APP_USER_NOT_APP_SERVER` unified auditing policy to enable it, and then click **Provision**.
 
-  ![Select the APP_USER_NOT_APP_SERVER check box](images/app-user-not-app-server.png "Select the APP_USER_NOT_APP_SERVER check box")
+    ![Select the APP_USER_NOT_APP_SERVER check box](images/app-user-not-app-server.png "Select the APP_USER_NOT_APP_SERVER check box")
 
 4. Click the **Home** tab and review the dashboard. Notice that the **All Activity**, **Admin Activity**, **Open Alerts**, **Feature Usage**, and **Audit Trails** charts now have data.
 
-  ![Dashboard after provisioning audit and alert policies](images/dashboard-post-audit-alert-policy-provisioning.png "Dashboard after provisioning audit and alert policies")
+    ![Dashboard after provisioning audit and alert policies](images/dashboard-post-audit-alert-policy-provisioning.png "Dashboard after provisioning audit and alert policies")
 
 
 
@@ -211,4 +211,4 @@ Enable the custom audit policy named `APP_USER_NOT_APP_SERVER` on your Autonomou
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, May 27 2021
+* **Last Updated By/Date** - Jody Glover, May 28 2021
