@@ -4,7 +4,7 @@
 
 This lab walks you through the major features of Essbase 21c and their functionalities across the platform along with Overview of the Essbase 21c Web interface.
 
-In this lab, the following topics will be covered:  
+In this lab, the following topics are covered:  
 
 * Explore the Smart View interface
 * Create Ad Hoc grids
@@ -29,15 +29,15 @@ This lab requires:
 
 ## **Step 1:** Creating a Sample Application in Essbase21c
 
-1.	Login to the Essbase 21c web interface  using the Essbase URL. i.e. http://ip:9000/essbase/jet.
+1.	Login to the Essbase 21c web interface using the Essbase URL. i.e. http://ip:9000/essbase/jet.
     
     Note: Please replace ip with your instance's IP Address.
 
-2.	On the Applications tab click “Import” option in the Essbase web interface as shown below.
+2.	On the Applications tab click **Import** option in the Essbase web interface as shown below.
 
     ![](./images/image14_1.png "")
 
-3.	Click Catalog.
+3.	Click **Catalog**.
 
     ![](./images/image14_2.png "")
 
@@ -46,11 +46,11 @@ This lab requires:
 
     ![](./images/image14_3.png "")
 
-5.	Name the application “DynamicCorp” and the cube “Sales”. Click OK.
+5.	Name the application “DynamicCorp” and the cube “Sales”. Click **OK**.
 
     ![](./images/image14_4.png "")
 
-6.	Once the application is deployed, it will be visible under the "Applications" tab.
+6.	Once the application is deployed, it is visible under the "Applications" tab.
 
     ![](./images/image14_5.png "")
 
@@ -62,7 +62,7 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
 *Steps to create a private connection to Essbase:*
 
-1. In Excel, select the Smart View ribbon, and then click Panel.
+1. In Excel, select the Smart View ribbon, and then click **Panel**.
 
 2. On the Smart View Panel, select the Private Connections from the list.
 
@@ -70,7 +70,7 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
 3. Enter the URL to create a connection. URL syntax: `http://ip:9000/essbase/smartview`
 
-4. Click Go.
+4. Click **Go**.
 
 5. On the login window, enter your login credentials.
    Note: login with your IP address. 
@@ -79,8 +79,8 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
 6. After successful login, you can now begin working with data in Essbase. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application.    
    
-   Click on ‘Sales’ and 'connect'.  
-   Click on 'Ad hoc analysis'.  
+   Click **Sales** and **Connect**.  
+   Click **Ad hoc analysis**.  
    
    
 
@@ -108,9 +108,9 @@ Dimensions that are not displayed in columns or rows of a data grid are displaye
 
 You use Smart View panel to connect to your smart view data sources and manage connections.
 
-1. Open a new Excel. Click Smart View – Panel – Private Connections. Enter the Smart View URL and the credentials.
+1. Open a new excel. Click **Smart View – Panel – Private Connections**. Enter the smart view URL and the credentials.
 
-2. In the Connection Manager panel to your right, click ‘DynamicCorp’ – ‘Sales’. Click Connect and then Ad hoc analysis.
+2. In the Connection Manager panel to your right, Click ‘DynamicCorp’ – ‘Sales’. Click **Connect** and then **Ad hoc analysis**.
 
     ![](./images/image14_8.png "")
 
@@ -123,7 +123,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_14.png "")
 
-5. Go to Year. Navigate to Essbase Ribbon and Click on Keep only. Using this option, only the Year Dimension will be displayed and all the Quarters are removed.
+5. Go to Year. Navigate to Essbase Ribbon and Click on Keep only. Using this option, only the Year Dimension is displayed and all the Quarters are removed.
     ![](./images/image14_14.0.png "")
 
 6. Go to Year. Click on Zoom in-All levels.You will now see the numbers drill down to leaf level(Months).
@@ -134,7 +134,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
     ![](./images/image14_16.png "")
 
 
-7. Double Click on Measures. It will Zoom into next level. 
+7. Double click on Measures. It will Zoom into next level. 
    ![](./images/image14_17.0.png "")
    
    Now double click on Profit, it will take you further next level.
@@ -147,17 +147,17 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_17.png "")
 
-8.  In the Smart View ribbon click 'Undo'. Undo reverses the last change you made to the data.
+8.  In the smart view ribbon click 'Undo'. Undo reverses the last change you made to the data.
     ![](./images/image14_18.png "")
 
 
 
-9.  In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
+9.  In the smart view ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’.
 
 
 10. Click on Year and select Keep only. Click on Sales and change it to Measures by clicking "zoom out" on sales 3 times.
 
-    Create the below report by zooming into next level of Year Dimension and Measures Dimension.
+    Create the below report by zooming into next level of Year dimension and Measures dimension.
     ![](./images/image14_99.png "")
     
     
@@ -181,13 +181,13 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 12. Member Selection:
 
-    Note: Revert the last step changes by Selecting Market and Scenario in the POV and Click on refresh.
+    Note: Revert the last step changes by selecting Market and Scenario in the POV and click on refresh.
 
     a. Click on ‘POV’ in ‘Essbase’ ribbon again.
 
     ![](./images/image14_23.png "")
 
-    b. Click on Scenario
+    b. Click on Scenario.
 
     c. Click on Member Selection in the Essbase ribbon. Select Actual and Refresh.
 
@@ -199,7 +199,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 13. Free Form processing:
 
-    a. You can enter a member combination on a sheet. Click Refresh. The sheet will be updated to show the results of the query in your free form sheet.
+    a. You can enter a member combination on a sheet. Click Refresh. The sheet is updated to show the results of the query in your free form sheet.
 
     b. Start by creating smart view analysis report.
 
@@ -235,9 +235,9 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 
 
-## **Step 5:** Creating a Cube from Tabular Data in Cube Designer
+## **Step 5:** Creating a cube from tabular data in Cube Designer
 
-This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Design and Manage Cubes from Tabular Data](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-manage-cubes-tabular-data.html)
+This workflow uses two sample tabular data excel files to demonstrate the concepts of intrinsic and forced-designation headers. See about [Design and Manage Cubes from Tabular Data](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-manage-cubes-tabular-data.html)
 
 
 1. In the Cube Designer ribbon, click connections -> select the current connection from the dropdown menu to connect to Essbase. 
@@ -270,7 +270,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
     ![](./images/image14_47.png "")
 
-10.  The newly created application and cube are listed on the Applications home page in the user interface. Now the cube has been created from the tabular data, you can export the cube to an application workbook.
+10.  The newly created application and cube are listed on the Applications home page in the user interface. Now the cube is created from the tabular data, you can export the cube to an application workbook.
 
 11.	On the `Cube Designer` ribbon, select `Local`, then select `Export Cube to Application Workbook`
 
@@ -446,7 +446,7 @@ applications and cubes.
 
 ### **Scenarios**:
 
-1. The ‘Scenarios’ tab is where you create scenario modeling on the applications for ‘What-If’ analysis, which empowers the users to analyze the data and get insights from the data. [More details on this will be covered in an upcoming lab. ]
+1. The ‘Scenarios’ tab is where you create scenario modeling on the applications for ‘What-If’ analysis, which empowers the users to analyze the data and get insights from the data. [More details on this are covered in an upcoming lab. ]
 
 ### **Security**:
 
@@ -459,7 +459,7 @@ applications and cubes.
     There are three predefined user-level roles in an identity domain.
     * **Service Administrator**: Administers the entire cloud service instance, including backing up, creating and deleting applications, provisioning users, and running Jobs.
     * **Power User**: Creates applications and cubes, and grants access to users to perform actions on those cubes.
-    * **User**: Accesses and performs actions on cubes for which access has been granted.
+    * **User**: Accesses and performs actions on cubes for which access is granted.
     User Roles are hierarchical in that access granted to lower-level roles is inherited by higher level roles.
     
     ![](./images/image14_71.1.png "")
@@ -471,7 +471,7 @@ applications and cubes.
 1. Many cube operations require connection information to access remote source data or hosts. You can define ‘Connections’ and ‘Datasources’ once and reuse them in various operations.
    
    A connection stores login credentials required to access an external source. A Datasource points to an external source of information.  
-   More details on this will be covered in an upcoming lab. 
+   More details on this are covered in an upcoming lab. 
 
     ![](./images/image14_72.png "")
 

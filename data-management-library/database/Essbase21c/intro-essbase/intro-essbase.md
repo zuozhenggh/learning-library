@@ -16,9 +16,9 @@ Estimated Lab Time: 15 minutes.
 
 This lab will require the following -
 
-* Essbase 21c Instance
+* Essbase 21c instance
 
-* [Smartview Plugin](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/download-and-run-smart-view-installer.html) (Steps provided in this lab)
+* [Smartview Plugin](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/download-and-run-smart-view-installer.html) (steps provided in this lab)
 
 
 ## **Step 1:** Features of Oracle Essbase
