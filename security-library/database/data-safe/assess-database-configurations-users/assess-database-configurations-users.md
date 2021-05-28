@@ -51,14 +51,14 @@ Before starting, be sure that you have completed the following prerequisite task
 
     3. Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
-2. Click the **Home** tab, and then click **Security Assessment**.
+3. Click the **Home** tab, and then click **Security Assessment**.
 
-3. In the **Last Generated Report** column, click **View Report**. The **Comprehensive Assessment** report for your target database is displayed.
+4. In the **Last Generated Report** column, click **View Report**. The **Comprehensive Assessment** report for your target database is displayed.
 
     ![Security Assessment page](images/LL-security-assessment-page.png "Security Assessment page")
 
 
-4. At the top of the report, you can view the following:
+5. At the top of the report, you can view the following:
 
     - Target database name, when the database was assessed, and the database version
     - The total number of findings per risk level (**High Risk**, **Medium Risk**, **Low Risk**, **Advisory**, **Evaluate**, and **Pass**). These totals give you an idea of how secure your database is. The risk levels are color coded to make them easier to identify.
@@ -66,13 +66,13 @@ Before starting, be sure that you have completed the following prerequisite task
 
     ![Top of the Comprehensive Assessment report](images/LL-top-comprehensive-assessment-report.png "Top of the Comprehensive Assessment report")
 
-5. Review the table in the **Summary** category. This table compares the number of findings for each category in the report and counts the number of findings per risk level. These values help you to identify areas that need attention.
+6. Review the table in the **Summary** category. This table compares the number of findings for each category in the report and counts the number of findings per risk level. These values help you to identify areas that need attention.
 
     ![Summary table in the Comprehensive Assessment report](images/LL-summary-table-comprehensive-assessment-report.png "Summary table in the Comprehensive Assessment report")
 
-6. Expand **User Accounts** to view the list of findings that pertain to user accounts.
+7. Expand **User Accounts** to view the list of findings that pertain to user accounts.
 
-7. Expand the subcategories and review the findings.
+8. Expand the subcategories and review the findings.
 
     - You can find more information on the identified risk and how to mitigate it in the **Details** and **Remarks** sections of each risk.
     - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
@@ -80,12 +80,11 @@ Before starting, be sure that you have completed the following prerequisite task
     ![Summary table in the Comprehensive Assessment report](images/LL-findings-user-accounts.png "Summary table in the Comprehensive Assessment report")
 
 
-8. Collapse **User Accounts** and expand **Privileges and Roles**. Review the list of findings.
+9. Collapse **User Accounts** and expand **Privileges and Roles**. Review the list of findings.
 
-9. Scroll down and expand other categories. Each category lists related findings about your database and how you can make changes to improve its security.
+10. Scroll down and expand other categories. Each category lists related findings about your database and how you can make changes to improve its security.
 
-10. To filter the findings by risk level, scroll to the top of the report, and click a risk level. Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed in the report. If you click **Medium Risk** again, the filter is removed.
-
+11. To filter the findings by risk level, scroll to the top of the report, and click a risk level. Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed in the report. If you click **Medium Risk** again, the filter is removed.
 
 
 
@@ -152,7 +151,6 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
 
 ## **STEP 5**: Set a baseline report and generate a Comparison report
 
-
 1. Click the **Home** tab, and then click **Security Assessment**.
 
 2. On the **Security Assessment** page, in the **Differs from Baseline** column, click **Set Baseline** for your target database. The **Select report for baseline** dialog box is displayed.
@@ -168,7 +166,9 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
     - **Yes** means that the baseline report (the first report) differs from the current report (the report you just generated).
     - **No** means that there are no differences between the reports and the Comparison Report has no data.
 
+
     ![Yes differs from baseline](images/LL-yes-differs-from-baseline.png "Yes differs from baseline")
+
 
 5. Review the Comparison Report.
 
@@ -229,6 +229,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
 4. When the user assessment is completed, observe the following on the **User Assessment** page:
 
     - A green check mark is displayed in the **Last Generated Report** column.
+
     - The numbers of **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk** users are updated due to the sample data that you loaded into your database at the start of this workshop.
 
     ![User Assessment page after second assessment](images/LL-second-user-assessment.png "User Assessment page after second assessment")

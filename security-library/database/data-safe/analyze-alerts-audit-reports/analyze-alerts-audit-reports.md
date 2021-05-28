@@ -70,7 +70,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
     ![Alert filters](images/high-alert-severity.png "Alert filters")
 
-  The table shows you the open high alerts.
+    The table shows you the open high alerts.
 
 8. To sort the **Operation** column, position the cursor over the **Operation** column heading, and then click the arrow button.
 
