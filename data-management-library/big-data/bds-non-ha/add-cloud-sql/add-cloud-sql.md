@@ -34,7 +34,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and then select **Big Data Service**.
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
 
 	![](./images/big-data.png " ")
 
