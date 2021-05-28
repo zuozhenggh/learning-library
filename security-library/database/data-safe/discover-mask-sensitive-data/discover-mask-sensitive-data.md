@@ -79,7 +79,7 @@ Use Oracle Database Actions to query sensitive data in your database. You can ac
 
 15. When prompted to choose an insertion type, click **Select**, and then click **Apply**.
 
-   ![Choose the type of insertion dialog box](images/insertion-type-select.png "Choose the type of insertion dialog box")
+    ![Choose the type of insertion dialog box](images/insertion-type-select.png "Choose the type of insertion dialog box")
 
 16. View the SQL query on the worksheet.
 
@@ -171,7 +171,7 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
 18. Position your mouse over **Identification Info** to view statistics.
 
-  ![Statistics](images/identification-info.png "Statistics")
+    ![Statistics](images/identification-info.png "Statistics")
 
 19. With your mouse still over **Identification Info**, click the **Expand** button to drill down.
 

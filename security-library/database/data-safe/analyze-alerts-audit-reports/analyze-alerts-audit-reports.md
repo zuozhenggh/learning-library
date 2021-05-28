@@ -96,19 +96,17 @@ Before starting, be sure that you have completed the following prerequisite task
 
     ![User Entitlement Changes alerts](images/user-entitlement-changes.png "User Entitlement Changes alerts")
 
-14. Suppose you are fine with these entitlement changes. Now you can close the alerts.
+14. Suppose you are fine with these entitlement changes. Now you can close the alerts. Select the check box in the top left corner of the table to select all of the alerts displayed.
 
-    1. Select the check box in the top left corner of the table to select all of the alerts displayed.
-
-    2. From the **Mark As** menu, select **Closed**. The alerts selected on this page are closed and the next page is displayed.
+15. From the **Mark As** menu, select **Closed**. The alerts selected on this page are closed and the next page is displayed.
 
     ![Mark As Closed](images/closed-alerts.png "Mark As Closed")
 
-    3. Because there is another page of alerts that meet the filter criteria, repeat the previous step to mark all alerts with entitlement changes as closed.
+16. Because there is another page of alerts that meet the filter criteria, repeat the previous step to mark all alerts with entitlement changes as closed.
 
-    4. Remove the filter **Alert = User Entitlement Changes**. Both open and closed alerts are displayed.
+17. Remove the filter **Alert = User Entitlement Changes**. Both open and closed alerts are displayed.
 
-15. To hide closed alerts on the pages, move the **Open Alerts only** slider to the right.
+18. To hide closed alerts on the pages, move the **Open Alerts only** slider to the right.
 
     ![Open Alerts only slider](images/show-open-alerts-only.png "Open Alerts only slider")  
 

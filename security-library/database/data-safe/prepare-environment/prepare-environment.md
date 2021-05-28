@@ -139,7 +139,7 @@ A tenancy administrator or an Oracle Data Safe administrator needs to grant the 
 
 1. From the navigation menu, select **Oracle Database**, and then **Data Safe**.
 
-  The **Overview** page is displayed.
+    The **Overview** page is displayed.
 
 2. From the **Overview** page for Oracle Data Safe, click **Service Console** to access the Oracle Data Safe Console.
 
