@@ -1,0 +1,49 @@
+# Introduction
+
+## About Oracle Database Sharding
+Oracle Database Sharding enables globally distributed, linearly scalable, multi-model databases. It distributes segments of a data set—**a shard**—across lots of databases on lots of different computers on-premises or in cloud. It requires no specialized hardware or software. Oracle Sharding does all this while rendering the strong consistency, full power of SQL, support for structured and unstructured data and the Oracle Database ecosystem. It allows you to support applications that require low latency, high availability, and meet data sovereignty requirements.
+
+*Estimated Workshop Time:*  2.5 hours
+
+![](images/sharding1.JPG " ")
+
+It is built on shared-nothing architecture, in which data is horizontally partitioned across databases that share no hardware or software. To learn more, see this [blog](https://blogs.oracle.com/database/sharding-oracle-database-cloud-service-v2).
+
+### Objectives
+In this workshop, you will gain first-hand experience of how Oracle Database can store structured and unstructured data in same database with ten’s of petabytes of data.
+
+**Workshop Architecture**
+![](images/sharding2.JPG " ")
+
+Once you complete your setup, the next lab will cover:
+
+
+- Lab : Sharding in Oracle Database
+
+      - Sharding deployment on Docker
+      - Sample Eshop Application
+      - Text search capabilities
+      - Analytics on sharded tables
+
+
+You will also download Oracle SQL Developer to help execute the programs associated with the lab. We will use Docker containers and demonstrate multiple use cases with a Node.js application.
+
+### Prerequisites
+- Oracle SQL Developer client
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
+You may now [proceed to the next lab](#next).
+
+## Learn More
+- [Oracle Sharding 19c: New Features (PDF)](https://www.oracle.com/a/tech/docs/sharding-19c-new-features.pdf)
+- [Linear Scalability Demonstration on a Sharded Database Running on Oracle Bare Metal Cloud](https://www.oracle.com/technetwork/database/availability/oraclesharding-200-3588532.mp4)
+
+## Acknowledgements
+- **Owners** - Balasubramanian Ramamoorthy,
+- **Contributors** - 
+- **Team** - North America Database Specialists
+- **Last Updated By** - Abhinav Srivastava, Principal Product Marketing Director, Oracle Database, July 2020
+
+
