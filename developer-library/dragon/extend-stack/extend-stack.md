@@ -92,7 +92,7 @@ Of course this is only the beginning. You may add more JSON fields to the [React
 
 * [Oracle REST Data Services](https://www.oracle.com/database/technologies/appdev/rest.html)
 * [DRAGON Project (GitHub)](https://bit.ly/DRAGONStack) and add a star :)
-* [React-Table](https://react-table.tanstack.com/)
+* [React-Table portal](https://react-table.tanstack.com/)
 
 ## Acknowledgements
 * **Author** - Loic Lefevre, Principal Product Manager
