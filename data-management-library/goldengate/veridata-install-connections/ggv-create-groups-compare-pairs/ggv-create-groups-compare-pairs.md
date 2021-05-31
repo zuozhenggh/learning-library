@@ -99,6 +99,8 @@ To create compare pairs on the **Pattern Mapping** tab:
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
 You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-create-execute-jobs)
+
+
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
 [](youtube:N28CsAr5kjw)
