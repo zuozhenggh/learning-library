@@ -13,7 +13,7 @@
         },
         {
             "title": "Lab 0: Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure",
-            "filename": ""
+            "filename": "../../prerequisites/prerequisites.md"
         },
         {
             "title": "Lab 1: Create an OCI Data Integration workspace",

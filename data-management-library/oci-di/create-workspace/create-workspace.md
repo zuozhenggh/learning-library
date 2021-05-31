@@ -6,13 +6,13 @@ This lab will guide you through the steps to set up the necessary policies for O
 
 Estimated Lab Time: 15 minutes
 
-## About Product/Technology
+## OCI Data Integration policies and workspaces
 Oracle Cloud Infrastructure Data Integration uses standard authentication and authorization offered by Oracle Cloud Infrastructure. Policies required for OCI Data Integration will be an addition to the regular policies used in Oracle Cloud Infrastructure for accessing other necessary resources. To control access to Data Integration and the type of access each group of users has, you must create policies. By default, only the users in the Administrators group can access all Data Integration resources. For everyone else who's involved with Data Integration, you must create policies that gives them proper access to Data Integration resources.
 Before you can get started with Data Integration, you must first create a workspace for your data integration solution. A workspace is an organizational construct to keep multiple data integration solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you can have separate workspaces for development, testing, and production. The workspace is the preliminary component of Oracle Cloud Infrastructure Data Integration.
 
 ## Objectives
 In this lab, you will:
-* Create access policies for OCI Data Integration, for users who don't have administrative privileges
+* Create access policies for OCI Data Integration using Policy Builder UI in Oracle Cloud Infrastructure
 * Create a Workspace for Data Integration resources
 
 ## Prerequisites
@@ -67,7 +67,7 @@ Congratulations!  Now you have the workspace that will hold all your Data Integr
 
 
 ## Acknowledgements
-* **Author** - 
+* **Author** -
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
