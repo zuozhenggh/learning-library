@@ -67,7 +67,7 @@ Congratulations!  Now you have the workspace that will hold all your Data Integr
 
 
 ## Acknowledgements
-* **Author** - Theodora Cristea, Aditya Duvuri
+* **Author** - 
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.

@@ -57,7 +57,7 @@ None, however:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Theodora Cristea, Aditya Duvuri
+* **Author** - 
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
