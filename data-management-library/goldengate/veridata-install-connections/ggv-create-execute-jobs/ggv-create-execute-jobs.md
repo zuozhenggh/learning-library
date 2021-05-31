@@ -43,11 +43,14 @@ A new job is created for the compare pair.
 To execute a job:
 1. From the left navigation pane, click **Run/Execute Job** to display the **Run configuration** page.
     [](./images/15a-run-job-run-configuration-page.png " ")
-2. Select the job you just created from the **Job** drop-down list and click **Run Job**.
+2. Select the job you just created from the **Job** drop-down list.
     ![](./images/15-run-job.png " ")
-3. From the left navigation pane, click **Running Jobs** to display the status of the jobs that are running.
+3. Click **Retrieve Compare Pair List** to display the list of Compare Pairs and then click **Run Job**.
+    ![](./images/15b-select-job-retrieve-job.png " ")
+
+4. From the left navigation pane, click **Running Jobs** to display the status of the jobs that are running.
   ![](./images/16-running-jobs-status.png " ")
-4. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
+5. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
     ![](./images/17-completed-jobs-compare-pair-status-chart.png " ")
 
 You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-repair-data)

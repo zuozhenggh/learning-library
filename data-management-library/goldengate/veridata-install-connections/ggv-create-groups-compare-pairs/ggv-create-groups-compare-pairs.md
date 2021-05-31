@@ -91,8 +91,10 @@ To create compare pairs on the **Pattern Mapping** tab:
         * Pattern for Source Names: **DUMMY_TABLE**
         * Pattern for Target Names: *****
         ![](./images/10-pattern-mapping-pair-mapping-option3.png " ")
-    Here, option **3a** has been selected.
-4. Click **Generate Mappings**. The control moves to the **Preview** tab.
+
+4. Click **Generate Mappings**. The control moves to the **Preview** tab. Here, option **3b** has been selected.
+    ![](./images/10-pattern-mapping-pair-mapping-option3b_has_been_selected.png " ")
+
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
